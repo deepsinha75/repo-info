@@ -1,9 +1,9 @@
-# `silverpeas:6.0.1`
+# `silverpeas:6.0.2`
 
 ## Docker Metadata
 
-- Image ID: `sha256:4b0de23db0ae1359985f03b3e3932e976d24af5978d696faf6696a6d1087b9da`
-- Created: `2019-06-19T02:35:12.914648467Z`
+- Image ID: `sha256:d1c0dcc1e6e9e49c9051d5522884525d2acf27fa9bee3d22fa377df0e3543351`
+- Created: `2019-06-20T20:25:36.486467584Z`
 - Virtual Size: ~ 1.53 Gb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
@@ -17,14 +17,14 @@
   - `JAVA_HOME=/docker-java-home`
   - `SILVERPEAS_HOME=/opt/silverpeas`
   - `JBOSS_HOME=/opt/wildfly`
-  - `SILVERPEAS_VERSION=6.0.1`
+  - `SILVERPEAS_VERSION=6.0.2`
   - `WILDFLY_VERSION=10.1.0`
 - Labels:
   - `build=1`
   - `description=Image to install and to run Silverpeas 6`
   - `name=Silverpeas 6`
   - `vendor=Silverpeas`
-  - `version=6.0.1`
+  - `version=6.0.2`
 
 ## `dpkg` (`.deb`-based packages)
 
@@ -4405,15 +4405,9 @@ Licenses: (parsed from: `/usr/share/doc/libsqlite3-0/copyright`)
 - `GPL-2+`
 - `public-domain`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris sqlite3=3.11.0-1ubuntu1.1
-'http://archive.ubuntu.com/ubuntu/pool/main/s/sqlite3/sqlite3_3.11.0-1ubuntu1.1.dsc' sqlite3_3.11.0-1ubuntu1.1.dsc 2658 SHA256:1ba90c1b4ef2beaadc710054368c4e172c46096e36c1fd5a827bd8828432127c
-'http://archive.ubuntu.com/ubuntu/pool/main/s/sqlite3/sqlite3_3.11.0.orig-www.tar.xz' sqlite3_3.11.0.orig-www.tar.xz 3135012 SHA256:99843a91a1da29cf07269df49b37b0cd8a75035a88aacdb1186f94a9a217bab3
-'http://archive.ubuntu.com/ubuntu/pool/main/s/sqlite3/sqlite3_3.11.0.orig.tar.xz' sqlite3_3.11.0.orig.tar.xz 5122440 SHA256:79fb8800b8744337d5317270899a5a40612bb76f81517e131bf496c26b044490
-'http://archive.ubuntu.com/ubuntu/pool/main/s/sqlite3/sqlite3_3.11.0-1ubuntu1.1.debian.tar.xz' sqlite3_3.11.0-1ubuntu1.1.debian.tar.xz 17328 SHA256:85192895cfca4a9a7ccd00d7ac77e2884ade347bc0e11634aeb55b83f65e6cdd
-```
 
 ### `dpkg` source package: `systemd=229-4ubuntu21.21`
 
