@@ -2,16 +2,16 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:d3f5ef1795c3b4fadc58422e753e71673451d537ab55d6b5d81fa2decf973be0`
-- Created: `2019-06-17T21:20:27.179316931Z`
-- Virtual Size: ~ 34.02 Mb  
+- Image ID: `sha256:b290bf6ec58a2af683fe46213ee54f0ead4c4dce234f2c93335d441066506fcf`
+- Created: `2019-06-21T20:28:45.611711858Z`
+- Virtual Size: ~ 34.10 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Command: `["/bin/bash"]`
 - Environment:
   - `PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
 - Labels:
-  - `build-date=20190615`
+  - `build-date=20190621`
   - `name=Photon OS x86_64/3.0 Base Image`
   - `vendor=VMware`
 
@@ -59,7 +59,7 @@ Licenses (from `rpm --query`): GPLv2+
 
 **WARNING:** unable to find source (`yumdownloader` failed or returned no results)!
 
-### `rpm` package: `elfutils-libelf-0.174-3.ph3.x86_64`
+### `rpm` package: `elfutils-libelf-0.176-1.ph3.x86_64`
 
 Licenses (from `rpm --query`): GPLv2+ or LGPLv3+
 
@@ -89,7 +89,7 @@ Licenses (from `rpm --query`): pubkey
 
 **WARNING:** unable to find source (`yumdownloader` failed or returned no results)!
 
-### `rpm` package: `krb5-1.16.1-1.ph3.x86_64`
+### `rpm` package: `krb5-1.17-1.ph3.x86_64`
 
 Licenses (from `rpm --query`): MIT
 
@@ -131,19 +131,19 @@ Licenses (from `rpm --query`): MIT
 
 **WARNING:** unable to find source (`yumdownloader` failed or returned no results)!
 
-### `rpm` package: `nspr-4.20-1.ph3.x86_64`
+### `rpm` package: `nspr-4.21-1.ph3.x86_64`
 
 Licenses (from `rpm --query`): MPLv2.0
 
 **WARNING:** unable to find source (`yumdownloader` failed or returned no results)!
 
-### `rpm` package: `nss-libs-3.39-1.ph3.x86_64`
+### `rpm` package: `nss-libs-3.44-1.ph3.x86_64`
 
 Licenses (from `rpm --query`): MPLv2.0
 
 **WARNING:** unable to find source (`yumdownloader` failed or returned no results)!
 
-### `rpm` package: `openssl-1.0.2r-1.ph3.x86_64`
+### `rpm` package: `openssl-1.0.2s-1.ph3.x86_64`
 
 Licenses (from `rpm --query`): OpenSSL
 
