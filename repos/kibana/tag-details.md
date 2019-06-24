@@ -2,30 +2,30 @@
 
 # Tags of `kibana`
 
--	[`kibana:6.8.0`](#kibana680)
+-	[`kibana:6.8.1`](#kibana681)
 -	[`kibana:7.1.1`](#kibana711)
 
-## `kibana:6.8.0`
+## `kibana:6.8.1`
 
 ```console
-$ docker pull kibana@sha256:b14544ad3fe674e8893f738d8a728ee63c52966c3cf2e70a8125759d9b9c92b4
+$ docker pull kibana@sha256:ff953dbf8636889d8ac513550429f6b0957665440f3364cd225c5ed32f5bb606
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
 -	Platforms:
 	-	linux; amd64
 
-### `kibana:6.8.0` - linux; amd64
+### `kibana:6.8.1` - linux; amd64
 
 ```console
-$ docker pull kibana@sha256:6d487c045e9a8e5bc092325185407216881981843210b35ab1166fcaf6f9472b
+$ docker pull kibana@sha256:8091baebcae15b1d1c08c4c20199e42b5db98805bc210dbb0be2021549af1680
 ```
 
--	Docker Version: 18.09.3
+-	Docker Version: 18.09.6
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **308.3 MB (308296314 bytes)**  
+-	Total Size: **309.8 MB (309829632 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:290cd245e9088917d578a85574e5bfbffa3d95623c911dbc4d28383b3836d8d8`
+-	Image ID: `sha256:f324cd2a216360f021aab7ae7de07cfa004d60c62c4359d7df91b234d7a2f060`
 -	Default Command: `["\/usr\/local\/bin\/kibana-docker"]`
 
 ```dockerfile
@@ -35,33 +35,33 @@ ADD file:074f2c974463ab38cf3532134e8ba2c91c9e346457713f2e8b8e2ac0ee9fd83d in /
 LABEL org.label-schema.schema-version=1.0 org.label-schema.name=CentOS Base Image org.label-schema.vendor=CentOS org.label-schema.license=GPLv2 org.label-schema.build-date=20190305
 # Thu, 14 Mar 2019 21:19:53 GMT
 CMD ["/bin/bash"]
-# Wed, 15 May 2019 20:38:32 GMT
+# Tue, 18 Jun 2019 13:48:45 GMT
 EXPOSE 5601
-# Wed, 15 May 2019 20:38:54 GMT
+# Tue, 18 Jun 2019 13:49:08 GMT
 RUN yum update -y && yum install -y fontconfig freetype && yum clean all
-# Wed, 15 May 2019 20:39:14 GMT
-COPY --chown=1000:0dir:e9bf75c2b64d897db1c026d03e72361dc89f4de63e8cb8baf8dbf68946643c84 in /usr/share/kibana 
-# Wed, 15 May 2019 20:39:15 GMT
+# Tue, 18 Jun 2019 13:49:26 GMT
+COPY --chown=1000:0dir:a2aaf460599079b2e2b5da55ddc33d6e633e237cdbba91b2a62930d94eda5e8f in /usr/share/kibana 
+# Tue, 18 Jun 2019 13:49:27 GMT
 WORKDIR /usr/share/kibana
-# Wed, 15 May 2019 20:39:16 GMT
+# Tue, 18 Jun 2019 13:49:29 GMT
 RUN ln -s /usr/share/kibana /opt/kibana
-# Wed, 15 May 2019 20:39:16 GMT
+# Tue, 18 Jun 2019 13:49:29 GMT
 ENV ELASTIC_CONTAINER=true
-# Wed, 15 May 2019 20:39:16 GMT
+# Tue, 18 Jun 2019 13:49:29 GMT
 ENV PATH=/usr/share/kibana/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Wed, 15 May 2019 20:39:16 GMT
+# Tue, 18 Jun 2019 13:49:29 GMT
 COPY --chown=1000:0file:60b6181f28c99b362092ea6139b6d4112ddd0bef32d52563c33b26bdc2b51318 in /usr/share/kibana/config/kibana.yml 
-# Wed, 15 May 2019 20:39:16 GMT
-COPY --chown=1000:0file:94f5b4926d54efe4eb5f4b03e2f8f43595bdfb03570ece4d02a479728abb58fe in /usr/local/bin/ 
-# Wed, 15 May 2019 20:39:17 GMT
+# Tue, 18 Jun 2019 13:49:29 GMT
+COPY --chown=1000:0file:667858f69402b59b03a033dc059b0ee49aa8f9f6e35631a0b2b69db02aa496b3 in /usr/local/bin/ 
+# Tue, 18 Jun 2019 13:49:31 GMT
 RUN chmod g+ws /usr/share/kibana && find /usr/share/kibana -gid 0 -and -not -perm /g+w -exec chmod g+w {} \;
-# Wed, 15 May 2019 20:39:18 GMT
+# Tue, 18 Jun 2019 13:49:31 GMT
 RUN groupadd --gid 1000 kibana && useradd --uid 1000 --gid 1000 --home-dir /usr/share/kibana --no-create-home kibana
-# Wed, 15 May 2019 20:39:18 GMT
+# Tue, 18 Jun 2019 13:49:31 GMT
 USER kibana
-# Wed, 15 May 2019 20:39:18 GMT
-LABEL org.label-schema.schema-version=1.0 org.label-schema.vendor=Elastic org.label-schema.name=kibana org.label-schema.version=6.8.0 org.label-schema.url=https://www.elastic.co/products/kibana org.label-schema.vcs-url=https://github.com/elastic/kibana license=Elastic License
-# Wed, 15 May 2019 20:39:18 GMT
+# Tue, 18 Jun 2019 13:49:32 GMT
+LABEL org.label-schema.schema-version=1.0 org.label-schema.vendor=Elastic org.label-schema.name=kibana org.label-schema.version=6.8.1 org.label-schema.url=https://www.elastic.co/products/kibana org.label-schema.vcs-url=https://github.com/elastic/kibana license=Elastic License
+# Tue, 18 Jun 2019 13:49:32 GMT
 CMD ["/usr/local/bin/kibana-docker"]
 ```
 
@@ -70,33 +70,33 @@ CMD ["/usr/local/bin/kibana-docker"]
 		Last Modified: Thu, 14 Mar 2019 21:24:11 GMT  
 		Size: 75.4 MB (75403831 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:03111aa4a1aa912f8e54599fabcf44fd8b35dc1c05f360da224150b1292c1a8c`  
-		Last Modified: Mon, 20 May 2019 14:46:47 GMT  
-		Size: 44.8 MB (44809308 bytes)  
+	-	`sha256:59bd074477d705182a995cc9d39ea6906635f0b104f4af85945c15f48fd17e4e`  
+		Last Modified: Fri, 21 Jun 2019 05:51:33 GMT  
+		Size: 46.3 MB (46340110 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:1600339fe71c261b5d6347f1a0e501f154be6e7d2e546aeb7b066c556ea82dfa`  
-		Last Modified: Mon, 20 May 2019 14:47:04 GMT  
-		Size: 188.1 MB (188078789 bytes)  
+	-	`sha256:6bd026f5139e8f2b838138a3510660f704049b92589eb32543e4bcc1be9d62eb`  
+		Last Modified: Fri, 21 Jun 2019 05:52:56 GMT  
+		Size: 188.1 MB (188081296 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:a4259b95413fbb2902f7fa9b057ab3ad8a1dad299fb91ebfc1d2ae3e3166e50a`  
-		Last Modified: Mon, 20 May 2019 14:46:33 GMT  
-		Size: 133.0 B  
+	-	`sha256:01de5ca0b8fe81002febeabac1beb424fc7697bf1316707e0a0aabac32b0a9b8`  
+		Last Modified: Fri, 21 Jun 2019 05:52:18 GMT  
+		Size: 132.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:86dc1db7b94bbe9469402db21dc649bb8a1ad6b09f85c3b67ee10e1635a41fca`  
-		Last Modified: Mon, 20 May 2019 14:46:33 GMT  
-		Size: 392.0 B  
+	-	`sha256:dde5571292ddb928b4c9c7db2efdfe3d62c45f49bac75c2f05b88adaece16702`  
+		Last Modified: Fri, 21 Jun 2019 05:52:17 GMT  
+		Size: 393.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:8ac21d563c0727202e61b81c9593e7bd7f662c408b1f72e9766c20000eb851aa`  
-		Last Modified: Mon, 20 May 2019 14:46:33 GMT  
-		Size: 2.1 KB (2104 bytes)  
+	-	`sha256:81926043a3fa20de2b3380763936aca4beeedbf131683d45bbe2b9d3ca096191`  
+		Last Modified: Fri, 21 Jun 2019 05:52:17 GMT  
+		Size: 2.1 KB (2111 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:fb43bbf0ab8aa8237735ad5ef1511ce5b31fff9c509e84aa5056d080c92a3957`  
-		Last Modified: Mon, 20 May 2019 14:46:33 GMT  
-		Size: 149.0 B  
+	-	`sha256:b81da0c0ebafb857be495d99460df838c37d11bf8f0186614bb70d13dde0ec80`  
+		Last Modified: Fri, 21 Jun 2019 05:52:18 GMT  
+		Size: 150.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:39be997eee6f161c926846426a1567ab82616493592ff0f1f074ec72ccbeb2a1`  
-		Last Modified: Mon, 20 May 2019 14:46:33 GMT  
-		Size: 1.6 KB (1608 bytes)  
+	-	`sha256:b13fd6d81fe0087b851ee0615d12b51d770be5a13ab8d4f6c12cf10b2b7f6367`  
+		Last Modified: Fri, 21 Jun 2019 05:52:18 GMT  
+		Size: 1.6 KB (1609 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `kibana:7.1.1`
