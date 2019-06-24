@@ -6249,15 +6249,9 @@ Binary Packages:
 If source is available (seen below), check the contents of `debian/copyright` within it.
 
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris openssl=1.1.1-1ubuntu2.1~18.04.2
-'http://archive.ubuntu.com/ubuntu/pool/main/o/openssl/openssl_1.1.1-1ubuntu2.1~18.04.2.dsc' openssl_1.1.1-1ubuntu2.1~18.04.2.dsc 2776 SHA256:76bf8091d42b10cd7c2f611643d637f4ee75f653a3f58a2e914489a487886555
-'http://archive.ubuntu.com/ubuntu/pool/main/o/openssl/openssl_1.1.1.orig.tar.gz' openssl_1.1.1.orig.tar.gz 8337920 SHA256:2836875a0f89c03d0fdf483941512613a50cfb421d6fd94b9f41d7279d586a3d
-'http://archive.ubuntu.com/ubuntu/pool/main/o/openssl/openssl_1.1.1.orig.tar.gz.asc' openssl_1.1.1.orig.tar.gz.asc 488 SHA256:f3296150114069ea73a72eafbfdcbb295b770e7cbf3266f9590f3d0932498b3e
-'http://archive.ubuntu.com/ubuntu/pool/main/o/openssl/openssl_1.1.1-1ubuntu2.1~18.04.2.debian.tar.xz' openssl_1.1.1-1ubuntu2.1~18.04.2.debian.tar.xz 88048 SHA256:66fe96a9913d1efbb50d9417a905cc932ed8ecbdb4cd87126104d500143c8fcf
-```
 
 ### `dpkg` source package: `opus=1.1.2-1ubuntu1`
 
@@ -6568,14 +6562,9 @@ Licenses: (parsed from: `/usr/share/doc/libpq-dev/copyright`, `/usr/share/doc/li
 - `nagaysau-ishii`
 - `rijndael`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris postgresql-10=10.8-0ubuntu0.18.04.1
-'http://archive.ubuntu.com/ubuntu/pool/main/p/postgresql-10/postgresql-10_10.8-0ubuntu0.18.04.1.dsc' postgresql-10_10.8-0ubuntu0.18.04.1.dsc 3610 SHA256:a57bfa85468e5c64c826e8753ad32458a53da103250565aee45e3d55a54483ad
-'http://archive.ubuntu.com/ubuntu/pool/main/p/postgresql-10/postgresql-10_10.8.orig.tar.gz' postgresql-10_10.8.orig.tar.gz 24792415 SHA256:369b113dad694389ba4c279a995341c1b1dfcefbe45236ab5abb993b8a98b342
-'http://archive.ubuntu.com/ubuntu/pool/main/p/postgresql-10/postgresql-10_10.8-0ubuntu0.18.04.1.debian.tar.xz' postgresql-10_10.8-0ubuntu0.18.04.1.debian.tar.xz 33328 SHA256:22c8cc9cf9363fd7f68135f1def9cdfcd38cfea9cec0140e5879880dd382494a
-```
 
 ### `dpkg` source package: `procps=2:3.3.12-3ubuntu1.1`
 
@@ -7478,14 +7467,9 @@ Licenses: (parsed from: `/usr/share/doc/libsystemd0/copyright`, `/usr/share/doc/
 - `LGPL-2.1+`
 - `public-domain`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris systemd=237-3ubuntu10.22
-'http://archive.ubuntu.com/ubuntu/pool/main/s/systemd/systemd_237-3ubuntu10.22.dsc' systemd_237-3ubuntu10.22.dsc 5182 SHA256:5babc91496b6459bae68100b927d8dc9e6afefeca08faee4767cf0faf69033c3
-'http://archive.ubuntu.com/ubuntu/pool/main/s/systemd/systemd_237.orig.tar.gz' systemd_237.orig.tar.gz 6871350 SHA256:c83dabbe1c9de6b9db1dafdb7e04140c7d0535705c68842f6c0768653ba4913c
-'http://archive.ubuntu.com/ubuntu/pool/main/s/systemd/systemd_237-3ubuntu10.22.debian.tar.xz' systemd_237-3ubuntu10.22.debian.tar.xz 214680 SHA256:214f523ad94fe40a207a3401a8aa111b9feec319afa37319a0b0e4aaa4dc8559
-```
 
 ### `dpkg` source package: `sysvinit=2.88dsf-59.10ubuntu1`
 
