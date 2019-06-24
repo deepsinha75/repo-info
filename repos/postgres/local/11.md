@@ -1,10 +1,10 @@
-# `postgres:11.3`
+# `postgres:11.4`
 
 ## Docker Metadata
 
-- Image ID: `sha256:4e045cb8eecd48ecf0b5eea966e9a8b0b9332b18e55d40a40f7971a1a0a08cb6`
-- Created: `2019-06-10T23:51:09.624295446Z`
-- Virtual Size: ~ 312.28 Mb  
+- Image ID: `sha256:79db2bf18b4a48fdc4f89b5ca84490ff842d0b45d8dc5e7e26927c6c7ae5e7e5`
+- Created: `2019-06-21T20:32:38.340070952Z`
+- Virtual Size: ~ 312.45 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["docker-entrypoint.sh"]`
@@ -14,7 +14,7 @@
   - `GOSU_VERSION=1.11`
   - `LANG=en_US.utf8`
   - `PG_MAJOR=11`
-  - `PG_VERSION=11.3-1.pgdg90+1`
+  - `PG_VERSION=11.4-1.pgdg90+1`
   - `PGDATA=/var/lib/postgresql/data`
 
 ## `dpkg` (`.deb`-based packages)
@@ -2483,13 +2483,13 @@ Other potentially useful URLs:
 - https://sources.debian.net/src/popt/1.16-10/debian/copyright/ (for direct copyright/license information)
 - http://snapshot.debian.org/package/popt/1.16-10/ (for access to the source package after it no longer exists in the archive)
 
-### `dpkg` source package: `postgresql-11=11.3-1.pgdg90+1`
+### `dpkg` source package: `postgresql-11=11.4-1.pgdg90+1`
 
 Binary Packages:
 
-- `libpq5:amd64=11.3-1.pgdg90+1`
-- `postgresql-11=11.3-1.pgdg90+1`
-- `postgresql-client-11=11.3-1.pgdg90+1`
+- `libpq5:amd64=11.4-1.pgdg90+1`
+- `postgresql-11=11.4-1.pgdg90+1`
+- `postgresql-client-11=11.4-1.pgdg90+1`
 
 Licenses: (parsed from: `/usr/share/doc/libpq5/copyright`, `/usr/share/doc/postgresql-11/copyright`, `/usr/share/doc/postgresql-client-11/copyright`)
 
@@ -2512,10 +2512,10 @@ Licenses: (parsed from: `/usr/share/doc/libpq5/copyright`, `/usr/share/doc/postg
 Source:
 
 ```console
-$ apt-get source -qq --print-uris postgresql-11=11.3-1.pgdg90+1
-'http://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-11/postgresql-11_11.3-1.pgdg90+1.dsc' postgresql-11_11.3-1.pgdg90+1.dsc 2653 SHA256:200d524d48dd2533d149b1b7cbc05d9463cd2f3762c6409cc1ccba4669fb87bd
-'http://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-11/postgresql-11_11.3.orig.tar.bz2' postgresql-11_11.3.orig.tar.bz2 19718775 SHA256:2a85e082fc225944821dfd23990e32dfcd2284c19060864b0ad4ca537d30522d
-'http://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-11/postgresql-11_11.3-1.pgdg90+1.debian.tar.xz' postgresql-11_11.3-1.pgdg90+1.debian.tar.xz 23904 SHA256:edb5a30387ac2ac858a83e08cc3b05a8d8e5c9b08a89960d5111b6c27dd30768
+$ apt-get source -qq --print-uris postgresql-11=11.4-1.pgdg90+1
+'http://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-11/postgresql-11_11.4-1.pgdg90+1.dsc' postgresql-11_11.4-1.pgdg90+1.dsc 2653 SHA256:00e2155dbf505544387bed9960901a960d8710355816415450c3ac3b8764f294
+'http://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-11/postgresql-11_11.4.orig.tar.bz2' postgresql-11_11.4.orig.tar.bz2 19759635 SHA256:02802ddffd1590805beddd1e464dd28a46a41a5f1e1df04bab4f46663195cc8b
+'http://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-11/postgresql-11_11.4-1.pgdg90+1.debian.tar.xz' postgresql-11_11.4-1.pgdg90+1.debian.tar.xz 24196 SHA256:2968833e5fe99ba2dfa4b8dae20bb6e15eccea949d0c67b8201625904d3b238f
 ```
 
 ### `dpkg` source package: `postgresql-common=201.pgdg90+1`
