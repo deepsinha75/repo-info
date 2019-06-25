@@ -1,17 +1,17 @@
-# `znc:1.7.3-slim`
+# `znc:1.7.4-slim`
 
 ## Docker Metadata
 
-- Image ID: `sha256:64b1b88f530fb20cee73df9e3e59f40a090a4723ef129e805a02f4ef5edf4164`
-- Created: `2019-04-01T23:27:42.93084838Z`
-- Virtual Size: ~ 88.62 Mb  
+- Image ID: `sha256:9556d9fec1b5253e04c850356b55a330551b4701292cea970107045066ec433b`
+- Created: `2019-06-25T01:24:21.694157454Z`
+- Virtual Size: ~ 88.60 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["/entrypoint.sh"]`
 - Environment:
   - `PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
   - `GPG_KEY=D5823CACB477191CAC0075555AE420CC0209989E`
-  - `ZNC_VERSION=1.7.3`
+  - `ZNC_VERSION=1.7.4`
 
 ## `apk` (`.apk`-based packages)
 
@@ -171,16 +171,16 @@ GPL-2.0
 ### `apk` package: `ca-certificates`
 
 ```console
-ca-certificates-20171114-r3 description:
+ca-certificates-20190108-r0 description:
 Common CA certificates PEM files
 
-ca-certificates-20171114-r3 webpage:
+ca-certificates-20190108-r0 webpage:
 https://www.mozilla.org/en-US/about/governance/policies/security-group/certs/
 
-ca-certificates-20171114-r3 installed size:
-741376
+ca-certificates-20190108-r0 installed size:
+733184
 
-ca-certificates-20171114-r3 license:
+ca-certificates-20190108-r0 license:
 MPL-2.0 GPL-2.0-or-later
 
 ```
@@ -222,17 +222,17 @@ custom
 ### `apk` package: `heimdal-libs`
 
 ```console
-heimdal-libs-7.5.0-r1 description:
+heimdal-libs-7.5.0-r2 description:
 Heimdal libraries
 
-heimdal-libs-7.5.0-r1 webpage:
+heimdal-libs-7.5.0-r2 webpage:
 http://www.h5l.org/
 
-heimdal-libs-7.5.0-r1 installed size:
+heimdal-libs-7.5.0-r2 installed size:
 3117056
 
-heimdal-libs-7.5.0-r1 license:
-BSD
+heimdal-libs-7.5.0-r2 license:
+BSD-3-Clause
 
 ```
 
@@ -630,16 +630,16 @@ MIT
 ### `apk` package: `tzdata`
 
 ```console
-tzdata-2018f-r0 description:
+tzdata-2019a-r0 description:
 Timezone data
 
-tzdata-2018f-r0 webpage:
+tzdata-2019a-r0 webpage:
 https://www.iana.org/time-zones
 
-tzdata-2018f-r0 installed size:
+tzdata-2019a-r0 installed size:
 3518464
 
-tzdata-2018f-r0 license:
+tzdata-2019a-r0 license:
 Public-Domain
 
 ```

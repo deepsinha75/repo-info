@@ -1,17 +1,17 @@
-# `znc:1.7.3`
+# `znc:1.7.4`
 
 ## Docker Metadata
 
-- Image ID: `sha256:64651629c7d208a102e643b64fadcfd92ebd12e09442fd0a01fde84ca390707a`
-- Created: `2019-04-01T23:28:00.684966193Z`
-- Virtual Size: ~ 364.68 Mb  
+- Image ID: `sha256:356d07a35922490f3bab372e6bfdfe8009e101edb0f885b2229645d73a0c8a22`
+- Created: `2019-06-25T01:24:38.584079821Z`
+- Virtual Size: ~ 364.67 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["/entrypoint.sh"]`
 - Environment:
   - `PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
   - `GPG_KEY=D5823CACB477191CAC0075555AE420CC0209989E`
-  - `ZNC_VERSION=1.7.3`
+  - `ZNC_VERSION=1.7.4`
 
 ## `apk` (`.apk`-based packages)
 
@@ -205,16 +205,16 @@ GPL-2.0
 ### `apk` package: `ca-certificates`
 
 ```console
-ca-certificates-20171114-r3 description:
+ca-certificates-20190108-r0 description:
 Common CA certificates PEM files
 
-ca-certificates-20171114-r3 webpage:
+ca-certificates-20190108-r0 webpage:
 https://www.mozilla.org/en-US/about/governance/policies/security-group/certs/
 
-ca-certificates-20171114-r3 installed size:
-741376
+ca-certificates-20190108-r0 installed size:
+733184
 
-ca-certificates-20171114-r3 license:
+ca-certificates-20190108-r0 license:
 MPL-2.0 GPL-2.0-or-later
 
 ```
@@ -392,17 +392,17 @@ LGPL-3.0
 ### `apk` package: `heimdal-libs`
 
 ```console
-heimdal-libs-7.5.0-r1 description:
+heimdal-libs-7.5.0-r2 description:
 Heimdal libraries
 
-heimdal-libs-7.5.0-r1 webpage:
+heimdal-libs-7.5.0-r2 webpage:
 http://www.h5l.org/
 
-heimdal-libs-7.5.0-r1 installed size:
+heimdal-libs-7.5.0-r2 installed size:
 3117056
 
-heimdal-libs-7.5.0-r1 license:
-BSD
+heimdal-libs-7.5.0-r2 license:
+BSD-3-Clause
 
 ```
 
@@ -1072,16 +1072,16 @@ ISC
 ### `apk` package: `python3`
 
 ```console
-python3-3.6.6-r0 description:
+python3-3.6.8-r0 description:
 A high-level scripting language
 
-python3-3.6.6-r0 webpage:
+python3-3.6.8-r0 webpage:
 http://www.python.org
 
-python3-3.6.6-r0 installed size:
-55545856
+python3-3.6.8-r0 installed size:
+55664640
 
-python3-3.6.6-r0 license:
+python3-3.6.8-r0 license:
 custom
 
 ```
@@ -1225,16 +1225,16 @@ MIT
 ### `apk` package: `tzdata`
 
 ```console
-tzdata-2018f-r0 description:
+tzdata-2019a-r0 description:
 Timezone data
 
-tzdata-2018f-r0 webpage:
+tzdata-2019a-r0 webpage:
 https://www.iana.org/time-zones
 
-tzdata-2018f-r0 installed size:
+tzdata-2019a-r0 installed size:
 3518464
 
-tzdata-2018f-r0 license:
+tzdata-2019a-r0 license:
 Public-Domain
 
 ```
