@@ -242,9 +242,9 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris bzip2=1.0.6-7
-'http://deb.debian.org/debian/pool/main/b/bzip2/bzip2_1.0.6-7.dsc' bzip2_1.0.6-7.dsc 2261 SHA256:098b7e38d1d634fc361847602bf85753dadeca121b9531f6dba2614b16e0637c
-'http://deb.debian.org/debian/pool/main/b/bzip2/bzip2_1.0.6.orig.tar.bz2' bzip2_1.0.6.orig.tar.bz2 708737 SHA256:d70a9ccd8bdf47e302d96c69fecd54925f45d9c7b966bb4ef5f56b770960afa7
-'http://deb.debian.org/debian/pool/main/b/bzip2/bzip2_1.0.6-7.debian.tar.bz2' bzip2_1.0.6-7.debian.tar.bz2 59542 SHA256:17e030ccb2908d15553c1510869e09d8ef41b5f8e72c7c65d1d5503396a5bd3a
+'http://security.debian.org/debian-security/pool/updates/main/b/bzip2/bzip2_1.0.6-7+deb8u1.dsc' bzip2_1.0.6-7+deb8u1.dsc 2462 SHA256:9c4ee0d881c4e63e13882b970a3448b90cb84bf5ca78acddec8ced296d2672b8
+'http://security.debian.org/debian-security/pool/updates/main/b/bzip2/bzip2_1.0.6.orig.tar.bz2' bzip2_1.0.6.orig.tar.bz2 708737 SHA256:d70a9ccd8bdf47e302d96c69fecd54925f45d9c7b966bb4ef5f56b770960afa7
+'http://security.debian.org/debian-security/pool/updates/main/b/bzip2/bzip2_1.0.6-7+deb8u1.debian.tar.bz2' bzip2_1.0.6-7+deb8u1.debian.tar.bz2 60383 SHA256:853d42f87bdc559714b0bb35b207853b99d5b6b9763e7f4a85a79772ef681172
 ```
 
 Other potentially useful URLs:
