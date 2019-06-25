@@ -346,14 +346,9 @@ Licenses: (parsed from: `/usr/share/doc/curl/copyright`, `/usr/share/doc/libcurl
 - `other`
 - `public-domain`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris curl=7.64.0-3ubuntu2
-'http://archive.ubuntu.com/ubuntu/pool/main/c/curl/curl_7.64.0-3ubuntu2.dsc' curl_7.64.0-3ubuntu2.dsc 2766 SHA256:6d2d72fad83d09734cdb2dde61949ba8a0700b785e49ee502a7ff48da6ce5592
-'http://archive.ubuntu.com/ubuntu/pool/main/c/curl/curl_7.64.0.orig.tar.gz' curl_7.64.0.orig.tar.gz 4032645 SHA256:cb90d2eb74d4e358c1ed1489f8e3af96b50ea4374ad71f143fa4595e998d81b5
-'http://archive.ubuntu.com/ubuntu/pool/main/c/curl/curl_7.64.0-3ubuntu2.debian.tar.xz' curl_7.64.0-3ubuntu2.debian.tar.xz 33776 SHA256:e92554e3fdd406e99f8a16bd2f3e690cc95c6e728d1c6750b6c2954fe0720050
-```
 
 ### `dpkg` source package: `cyrus-sasl2=2.1.27+dfsg-1`
 
@@ -507,15 +502,9 @@ Licenses: (parsed from: `/usr/share/doc/e2fsprogs/copyright`, `/usr/share/doc/li
 - `GPL-2`
 - `LGPL-2`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris e2fsprogs=1.45.1-1ubuntu1
-'http://archive.ubuntu.com/ubuntu/pool/main/e/e2fsprogs/e2fsprogs_1.45.1-1ubuntu1.dsc' e2fsprogs_1.45.1-1ubuntu1.dsc 3246 SHA256:9d79c703478429e2411ee5769cefc09e6198ae598ea4b99a10fab8cad49db3b8
-'http://archive.ubuntu.com/ubuntu/pool/main/e/e2fsprogs/e2fsprogs_1.45.1.orig.tar.gz' e2fsprogs_1.45.1.orig.tar.gz 7801837 SHA256:ee69a57e8499814b07b7f72ff6bc4a41c51d729db5bbbc25dcc66888c497287e
-'http://archive.ubuntu.com/ubuntu/pool/main/e/e2fsprogs/e2fsprogs_1.45.1.orig.tar.gz.asc' e2fsprogs_1.45.1.orig.tar.gz.asc 488 SHA256:8c16fb91abdd601f4958fb51fccb8b112746da4b5172dc86536f2e206983f1a2
-'http://archive.ubuntu.com/ubuntu/pool/main/e/e2fsprogs/e2fsprogs_1.45.1-1ubuntu1.debian.tar.xz' e2fsprogs_1.45.1-1ubuntu1.debian.tar.xz 79912 SHA256:284e4e3f5b9c2ce7bec1c6157022690d9d122e90f982ec6ccfc297b1faf3e402
-```
 
 ### `dpkg` source package: `expat=2.2.6-1`
 
@@ -527,14 +516,13 @@ Licenses: (parsed from: `/usr/share/doc/libexpat1/copyright`)
 
 - `MIT`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris expat=2.2.6-1
-'http://archive.ubuntu.com/ubuntu/pool/main/e/expat/expat_2.2.6-1.dsc' expat_2.2.6-1.dsc 1949 SHA256:e14d5e6658592b65821e52371f5036f6a2bdac525ea95014ac99183106917395
-'http://archive.ubuntu.com/ubuntu/pool/main/e/expat/expat_2.2.6.orig.tar.gz' expat_2.2.6.orig.tar.gz 8275473 SHA256:574499cba22a599393e28d99ecfa1e7fc85be7d6651d543045244d5b561cb7ff
-'http://archive.ubuntu.com/ubuntu/pool/main/e/expat/expat_2.2.6-1.debian.tar.xz' expat_2.2.6-1.debian.tar.xz 10688 SHA256:f0bc55f93042b6f517c39b2757021e8f505e19583b1a9d5f11b224825be62037
-```
+The source package *may* still be available for download from:
+
+- http://snapshot.debian.org/package/expat/2.2.6-1/
+
 
 ### `dpkg` source package: `findutils=4.6.0+git+20190209-2`
 
@@ -847,13 +835,13 @@ Licenses: (parsed from: `/usr/share/doc/init-system-helpers/copyright`)
 - `GPL-2`
 - `GPL-2+`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris init-system-helpers=1.56+nmu1
-'http://archive.ubuntu.com/ubuntu/pool/main/i/init-system-helpers/init-system-helpers_1.56+nmu1.dsc' init-system-helpers_1.56+nmu1.dsc 1945 SHA256:96f7d1c696faf801eb5990223b2782dedaf4092efb9b0dcc13d038b91dbb1a51
-'http://archive.ubuntu.com/ubuntu/pool/main/i/init-system-helpers/init-system-helpers_1.56+nmu1.tar.xz' init-system-helpers_1.56+nmu1.tar.xz 40488 SHA256:ecb5b9a0dbf0b7e83ef41bfc15bf9d41868642d4d5f817a0962aa1b980a56368
-```
+The source package *may* still be available for download from:
+
+- http://snapshot.debian.org/package/init-system-helpers/1.56+nmu1/
+
 
 ### `dpkg` source package: `keyutils=1.6-6`
 
