@@ -3,38 +3,198 @@
 # Tags of `adoptopenjdk`
 
 -	[`adoptopenjdk:11.0.3_7-jdk-hotspot`](#adoptopenjdk1103_7-jdk-hotspot)
+-	[`adoptopenjdk:11.0.3_7-jdk-hotspot-bionic`](#adoptopenjdk1103_7-jdk-hotspot-bionic)
+-	[`adoptopenjdk:11.0.3_7-jdk-hotspot-windowsservercore`](#adoptopenjdk1103_7-jdk-hotspot-windowsservercore)
+-	[`adoptopenjdk:11.0.3_7-jdk-hotspot-windowsservercore-1803`](#adoptopenjdk1103_7-jdk-hotspot-windowsservercore-1803)
+-	[`adoptopenjdk:11.0.3_7-jdk-hotspot-windowsservercore-1809`](#adoptopenjdk1103_7-jdk-hotspot-windowsservercore-1809)
+-	[`adoptopenjdk:11.0.3_7-jdk-hotspot-windowsservercore-ltsc2016`](#adoptopenjdk1103_7-jdk-hotspot-windowsservercore-ltsc2016)
 -	[`adoptopenjdk:11.0.3_7-jdk-openj9-0.14.3`](#adoptopenjdk1103_7-jdk-openj9-0143)
+-	[`adoptopenjdk:11.0.3_7-jdk-openj9-0.14.3-bionic`](#adoptopenjdk1103_7-jdk-openj9-0143-bionic)
+-	[`adoptopenjdk:11.0.3_7-jdk-openj9-0.14.3-windowsservercore`](#adoptopenjdk1103_7-jdk-openj9-0143-windowsservercore)
+-	[`adoptopenjdk:11.0.3_7-jdk-openj9-0.14.3-windowsservercore-1803`](#adoptopenjdk1103_7-jdk-openj9-0143-windowsservercore-1803)
+-	[`adoptopenjdk:11.0.3_7-jdk-openj9-0.14.3-windowsservercore-1809`](#adoptopenjdk1103_7-jdk-openj9-0143-windowsservercore-1809)
+-	[`adoptopenjdk:11.0.3_7-jdk-openj9-0.14.3-windowsservercore-ltsc2016`](#adoptopenjdk1103_7-jdk-openj9-0143-windowsservercore-ltsc2016)
 -	[`adoptopenjdk:11.0.3_7-jre-hotspot`](#adoptopenjdk1103_7-jre-hotspot)
+-	[`adoptopenjdk:11.0.3_7-jre-hotspot-bionic`](#adoptopenjdk1103_7-jre-hotspot-bionic)
+-	[`adoptopenjdk:11.0.3_7-jre-hotspot-windowsservercore`](#adoptopenjdk1103_7-jre-hotspot-windowsservercore)
+-	[`adoptopenjdk:11.0.3_7-jre-hotspot-windowsservercore-1803`](#adoptopenjdk1103_7-jre-hotspot-windowsservercore-1803)
+-	[`adoptopenjdk:11.0.3_7-jre-hotspot-windowsservercore-1809`](#adoptopenjdk1103_7-jre-hotspot-windowsservercore-1809)
+-	[`adoptopenjdk:11.0.3_7-jre-hotspot-windowsservercore-ltsc2016`](#adoptopenjdk1103_7-jre-hotspot-windowsservercore-ltsc2016)
 -	[`adoptopenjdk:11.0.3_7-jre-openj9-0.14.3`](#adoptopenjdk1103_7-jre-openj9-0143)
+-	[`adoptopenjdk:11.0.3_7-jre-openj9-0.14.3-bionic`](#adoptopenjdk1103_7-jre-openj9-0143-bionic)
+-	[`adoptopenjdk:11.0.3_7-jre-openj9-0.14.3-windowsservercore`](#adoptopenjdk1103_7-jre-openj9-0143-windowsservercore)
+-	[`adoptopenjdk:11.0.3_7-jre-openj9-0.14.3-windowsservercore-1803`](#adoptopenjdk1103_7-jre-openj9-0143-windowsservercore-1803)
+-	[`adoptopenjdk:11.0.3_7-jre-openj9-0.14.3-windowsservercore-1809`](#adoptopenjdk1103_7-jre-openj9-0143-windowsservercore-1809)
+-	[`adoptopenjdk:11.0.3_7-jre-openj9-0.14.3-windowsservercore-ltsc2016`](#adoptopenjdk1103_7-jre-openj9-0143-windowsservercore-ltsc2016)
 -	[`adoptopenjdk:11-hotspot`](#adoptopenjdk11-hotspot)
+-	[`adoptopenjdk:11-hotspot-bionic`](#adoptopenjdk11-hotspot-bionic)
+-	[`adoptopenjdk:11-hotspot-windowsservercore`](#adoptopenjdk11-hotspot-windowsservercore)
+-	[`adoptopenjdk:11-hotspot-windowsservercore-1803`](#adoptopenjdk11-hotspot-windowsservercore-1803)
+-	[`adoptopenjdk:11-hotspot-windowsservercore-1809`](#adoptopenjdk11-hotspot-windowsservercore-1809)
+-	[`adoptopenjdk:11-hotspot-windowsservercore-ltsc2016`](#adoptopenjdk11-hotspot-windowsservercore-ltsc2016)
 -	[`adoptopenjdk:11-jdk-hotspot`](#adoptopenjdk11-jdk-hotspot)
+-	[`adoptopenjdk:11-jdk-hotspot-bionic`](#adoptopenjdk11-jdk-hotspot-bionic)
+-	[`adoptopenjdk:11-jdk-hotspot-windowsservercore`](#adoptopenjdk11-jdk-hotspot-windowsservercore)
+-	[`adoptopenjdk:11-jdk-hotspot-windowsservercore-1803`](#adoptopenjdk11-jdk-hotspot-windowsservercore-1803)
+-	[`adoptopenjdk:11-jdk-hotspot-windowsservercore-1809`](#adoptopenjdk11-jdk-hotspot-windowsservercore-1809)
+-	[`adoptopenjdk:11-jdk-hotspot-windowsservercore-ltsc2016`](#adoptopenjdk11-jdk-hotspot-windowsservercore-ltsc2016)
 -	[`adoptopenjdk:11-jdk-openj9`](#adoptopenjdk11-jdk-openj9)
+-	[`adoptopenjdk:11-jdk-openj9-bionic`](#adoptopenjdk11-jdk-openj9-bionic)
+-	[`adoptopenjdk:11-jdk-openj9-windowsservercore`](#adoptopenjdk11-jdk-openj9-windowsservercore)
+-	[`adoptopenjdk:11-jdk-openj9-windowsservercore-1803`](#adoptopenjdk11-jdk-openj9-windowsservercore-1803)
+-	[`adoptopenjdk:11-jdk-openj9-windowsservercore-1809`](#adoptopenjdk11-jdk-openj9-windowsservercore-1809)
+-	[`adoptopenjdk:11-jdk-openj9-windowsservercore-ltsc2016`](#adoptopenjdk11-jdk-openj9-windowsservercore-ltsc2016)
 -	[`adoptopenjdk:11-jre-hotspot`](#adoptopenjdk11-jre-hotspot)
+-	[`adoptopenjdk:11-jre-hotspot-bionic`](#adoptopenjdk11-jre-hotspot-bionic)
+-	[`adoptopenjdk:11-jre-hotspot-windowsservercore`](#adoptopenjdk11-jre-hotspot-windowsservercore)
+-	[`adoptopenjdk:11-jre-hotspot-windowsservercore-1803`](#adoptopenjdk11-jre-hotspot-windowsservercore-1803)
+-	[`adoptopenjdk:11-jre-hotspot-windowsservercore-1809`](#adoptopenjdk11-jre-hotspot-windowsservercore-1809)
+-	[`adoptopenjdk:11-jre-hotspot-windowsservercore-ltsc2016`](#adoptopenjdk11-jre-hotspot-windowsservercore-ltsc2016)
 -	[`adoptopenjdk:11-jre-openj9`](#adoptopenjdk11-jre-openj9)
+-	[`adoptopenjdk:11-jre-openj9-bionic`](#adoptopenjdk11-jre-openj9-bionic)
+-	[`adoptopenjdk:11-jre-openj9-windowsservercore`](#adoptopenjdk11-jre-openj9-windowsservercore)
+-	[`adoptopenjdk:11-jre-openj9-windowsservercore-1803`](#adoptopenjdk11-jre-openj9-windowsservercore-1803)
+-	[`adoptopenjdk:11-jre-openj9-windowsservercore-1809`](#adoptopenjdk11-jre-openj9-windowsservercore-1809)
+-	[`adoptopenjdk:11-jre-openj9-windowsservercore-ltsc2016`](#adoptopenjdk11-jre-openj9-windowsservercore-ltsc2016)
 -	[`adoptopenjdk:11-openj9`](#adoptopenjdk11-openj9)
+-	[`adoptopenjdk:11-openj9-bionic`](#adoptopenjdk11-openj9-bionic)
+-	[`adoptopenjdk:11-openj9-windowsservercore`](#adoptopenjdk11-openj9-windowsservercore)
+-	[`adoptopenjdk:11-openj9-windowsservercore-1803`](#adoptopenjdk11-openj9-windowsservercore-1803)
+-	[`adoptopenjdk:11-openj9-windowsservercore-1809`](#adoptopenjdk11-openj9-windowsservercore-1809)
+-	[`adoptopenjdk:11-openj9-windowsservercore-ltsc2016`](#adoptopenjdk11-openj9-windowsservercore-ltsc2016)
 -	[`adoptopenjdk:12.0.1_12-jdk-hotspot`](#adoptopenjdk1201_12-jdk-hotspot)
+-	[`adoptopenjdk:12.0.1_12-jdk-hotspot-bionic`](#adoptopenjdk1201_12-jdk-hotspot-bionic)
+-	[`adoptopenjdk:12.0.1_12-jdk-hotspot-windowsservercore`](#adoptopenjdk1201_12-jdk-hotspot-windowsservercore)
+-	[`adoptopenjdk:12.0.1_12-jdk-hotspot-windowsservercore-1803`](#adoptopenjdk1201_12-jdk-hotspot-windowsservercore-1803)
+-	[`adoptopenjdk:12.0.1_12-jdk-hotspot-windowsservercore-1809`](#adoptopenjdk1201_12-jdk-hotspot-windowsservercore-1809)
+-	[`adoptopenjdk:12.0.1_12-jdk-hotspot-windowsservercore-ltsc2016`](#adoptopenjdk1201_12-jdk-hotspot-windowsservercore-ltsc2016)
 -	[`adoptopenjdk:12.0.1_12-jdk-openj9-0.14.1`](#adoptopenjdk1201_12-jdk-openj9-0141)
+-	[`adoptopenjdk:12.0.1_12-jdk-openj9-0.14.1-bionic`](#adoptopenjdk1201_12-jdk-openj9-0141-bionic)
+-	[`adoptopenjdk:12.0.1_12-jdk-openj9-0.14.1-windowsservercore`](#adoptopenjdk1201_12-jdk-openj9-0141-windowsservercore)
+-	[`adoptopenjdk:12.0.1_12-jdk-openj9-0.14.1-windowsservercore-1803`](#adoptopenjdk1201_12-jdk-openj9-0141-windowsservercore-1803)
+-	[`adoptopenjdk:12.0.1_12-jdk-openj9-0.14.1-windowsservercore-1809`](#adoptopenjdk1201_12-jdk-openj9-0141-windowsservercore-1809)
+-	[`adoptopenjdk:12.0.1_12-jdk-openj9-0.14.1-windowsservercore-ltsc2016`](#adoptopenjdk1201_12-jdk-openj9-0141-windowsservercore-ltsc2016)
 -	[`adoptopenjdk:12.0.1_12-jre-hotspot`](#adoptopenjdk1201_12-jre-hotspot)
+-	[`adoptopenjdk:12.0.1_12-jre-hotspot-bionic`](#adoptopenjdk1201_12-jre-hotspot-bionic)
+-	[`adoptopenjdk:12.0.1_12-jre-hotspot-windowsservercore`](#adoptopenjdk1201_12-jre-hotspot-windowsservercore)
+-	[`adoptopenjdk:12.0.1_12-jre-hotspot-windowsservercore-1803`](#adoptopenjdk1201_12-jre-hotspot-windowsservercore-1803)
+-	[`adoptopenjdk:12.0.1_12-jre-hotspot-windowsservercore-1809`](#adoptopenjdk1201_12-jre-hotspot-windowsservercore-1809)
+-	[`adoptopenjdk:12.0.1_12-jre-hotspot-windowsservercore-ltsc2016`](#adoptopenjdk1201_12-jre-hotspot-windowsservercore-ltsc2016)
 -	[`adoptopenjdk:12.0.1_12-jre-openj9-0.14.1`](#adoptopenjdk1201_12-jre-openj9-0141)
+-	[`adoptopenjdk:12.0.1_12-jre-openj9-0.14.1-bionic`](#adoptopenjdk1201_12-jre-openj9-0141-bionic)
+-	[`adoptopenjdk:12.0.1_12-jre-openj9-0.14.1-windowsservercore`](#adoptopenjdk1201_12-jre-openj9-0141-windowsservercore)
+-	[`adoptopenjdk:12.0.1_12-jre-openj9-0.14.1-windowsservercore-1803`](#adoptopenjdk1201_12-jre-openj9-0141-windowsservercore-1803)
+-	[`adoptopenjdk:12.0.1_12-jre-openj9-0.14.1-windowsservercore-1809`](#adoptopenjdk1201_12-jre-openj9-0141-windowsservercore-1809)
+-	[`adoptopenjdk:12.0.1_12-jre-openj9-0.14.1-windowsservercore-ltsc2016`](#adoptopenjdk1201_12-jre-openj9-0141-windowsservercore-ltsc2016)
 -	[`adoptopenjdk:12-hotspot`](#adoptopenjdk12-hotspot)
+-	[`adoptopenjdk:12-hotspot-bionic`](#adoptopenjdk12-hotspot-bionic)
+-	[`adoptopenjdk:12-hotspot-windowsservercore`](#adoptopenjdk12-hotspot-windowsservercore)
+-	[`adoptopenjdk:12-hotspot-windowsservercore-1803`](#adoptopenjdk12-hotspot-windowsservercore-1803)
+-	[`adoptopenjdk:12-hotspot-windowsservercore-1809`](#adoptopenjdk12-hotspot-windowsservercore-1809)
+-	[`adoptopenjdk:12-hotspot-windowsservercore-ltsc2016`](#adoptopenjdk12-hotspot-windowsservercore-ltsc2016)
 -	[`adoptopenjdk:12-jdk-hotspot`](#adoptopenjdk12-jdk-hotspot)
+-	[`adoptopenjdk:12-jdk-hotspot-bionic`](#adoptopenjdk12-jdk-hotspot-bionic)
+-	[`adoptopenjdk:12-jdk-hotspot-windowsservercore`](#adoptopenjdk12-jdk-hotspot-windowsservercore)
+-	[`adoptopenjdk:12-jdk-hotspot-windowsservercore-1803`](#adoptopenjdk12-jdk-hotspot-windowsservercore-1803)
+-	[`adoptopenjdk:12-jdk-hotspot-windowsservercore-1809`](#adoptopenjdk12-jdk-hotspot-windowsservercore-1809)
+-	[`adoptopenjdk:12-jdk-hotspot-windowsservercore-ltsc2016`](#adoptopenjdk12-jdk-hotspot-windowsservercore-ltsc2016)
 -	[`adoptopenjdk:12-jdk-openj9`](#adoptopenjdk12-jdk-openj9)
+-	[`adoptopenjdk:12-jdk-openj9-bionic`](#adoptopenjdk12-jdk-openj9-bionic)
+-	[`adoptopenjdk:12-jdk-openj9-windowsservercore`](#adoptopenjdk12-jdk-openj9-windowsservercore)
+-	[`adoptopenjdk:12-jdk-openj9-windowsservercore-1803`](#adoptopenjdk12-jdk-openj9-windowsservercore-1803)
+-	[`adoptopenjdk:12-jdk-openj9-windowsservercore-1809`](#adoptopenjdk12-jdk-openj9-windowsservercore-1809)
+-	[`adoptopenjdk:12-jdk-openj9-windowsservercore-ltsc2016`](#adoptopenjdk12-jdk-openj9-windowsservercore-ltsc2016)
 -	[`adoptopenjdk:12-jre-hotspot`](#adoptopenjdk12-jre-hotspot)
+-	[`adoptopenjdk:12-jre-hotspot-bionic`](#adoptopenjdk12-jre-hotspot-bionic)
+-	[`adoptopenjdk:12-jre-hotspot-windowsservercore`](#adoptopenjdk12-jre-hotspot-windowsservercore)
+-	[`adoptopenjdk:12-jre-hotspot-windowsservercore-1803`](#adoptopenjdk12-jre-hotspot-windowsservercore-1803)
+-	[`adoptopenjdk:12-jre-hotspot-windowsservercore-1809`](#adoptopenjdk12-jre-hotspot-windowsservercore-1809)
+-	[`adoptopenjdk:12-jre-hotspot-windowsservercore-ltsc2016`](#adoptopenjdk12-jre-hotspot-windowsservercore-ltsc2016)
 -	[`adoptopenjdk:12-jre-openj9`](#adoptopenjdk12-jre-openj9)
+-	[`adoptopenjdk:12-jre-openj9-bionic`](#adoptopenjdk12-jre-openj9-bionic)
+-	[`adoptopenjdk:12-jre-openj9-windowsservercore`](#adoptopenjdk12-jre-openj9-windowsservercore)
+-	[`adoptopenjdk:12-jre-openj9-windowsservercore-1803`](#adoptopenjdk12-jre-openj9-windowsservercore-1803)
+-	[`adoptopenjdk:12-jre-openj9-windowsservercore-1809`](#adoptopenjdk12-jre-openj9-windowsservercore-1809)
+-	[`adoptopenjdk:12-jre-openj9-windowsservercore-ltsc2016`](#adoptopenjdk12-jre-openj9-windowsservercore-ltsc2016)
 -	[`adoptopenjdk:12-openj9`](#adoptopenjdk12-openj9)
+-	[`adoptopenjdk:12-openj9-bionic`](#adoptopenjdk12-openj9-bionic)
+-	[`adoptopenjdk:12-openj9-windowsservercore`](#adoptopenjdk12-openj9-windowsservercore)
+-	[`adoptopenjdk:12-openj9-windowsservercore-1803`](#adoptopenjdk12-openj9-windowsservercore-1803)
+-	[`adoptopenjdk:12-openj9-windowsservercore-1809`](#adoptopenjdk12-openj9-windowsservercore-1809)
+-	[`adoptopenjdk:12-openj9-windowsservercore-ltsc2016`](#adoptopenjdk12-openj9-windowsservercore-ltsc2016)
 -	[`adoptopenjdk:8-hotspot`](#adoptopenjdk8-hotspot)
+-	[`adoptopenjdk:8-hotspot-bionic`](#adoptopenjdk8-hotspot-bionic)
+-	[`adoptopenjdk:8-hotspot-windowsservercore`](#adoptopenjdk8-hotspot-windowsservercore)
+-	[`adoptopenjdk:8-hotspot-windowsservercore-1803`](#adoptopenjdk8-hotspot-windowsservercore-1803)
+-	[`adoptopenjdk:8-hotspot-windowsservercore-1809`](#adoptopenjdk8-hotspot-windowsservercore-1809)
+-	[`adoptopenjdk:8-hotspot-windowsservercore-ltsc2016`](#adoptopenjdk8-hotspot-windowsservercore-ltsc2016)
 -	[`adoptopenjdk:8-jdk-hotspot`](#adoptopenjdk8-jdk-hotspot)
+-	[`adoptopenjdk:8-jdk-hotspot-bionic`](#adoptopenjdk8-jdk-hotspot-bionic)
+-	[`adoptopenjdk:8-jdk-hotspot-windowsservercore`](#adoptopenjdk8-jdk-hotspot-windowsservercore)
+-	[`adoptopenjdk:8-jdk-hotspot-windowsservercore-1803`](#adoptopenjdk8-jdk-hotspot-windowsservercore-1803)
+-	[`adoptopenjdk:8-jdk-hotspot-windowsservercore-1809`](#adoptopenjdk8-jdk-hotspot-windowsservercore-1809)
+-	[`adoptopenjdk:8-jdk-hotspot-windowsservercore-ltsc2016`](#adoptopenjdk8-jdk-hotspot-windowsservercore-ltsc2016)
 -	[`adoptopenjdk:8-jdk-openj9`](#adoptopenjdk8-jdk-openj9)
+-	[`adoptopenjdk:8-jdk-openj9-bionic`](#adoptopenjdk8-jdk-openj9-bionic)
+-	[`adoptopenjdk:8-jdk-openj9-windowsservercore`](#adoptopenjdk8-jdk-openj9-windowsservercore)
+-	[`adoptopenjdk:8-jdk-openj9-windowsservercore-1803`](#adoptopenjdk8-jdk-openj9-windowsservercore-1803)
+-	[`adoptopenjdk:8-jdk-openj9-windowsservercore-1809`](#adoptopenjdk8-jdk-openj9-windowsservercore-1809)
+-	[`adoptopenjdk:8-jdk-openj9-windowsservercore-ltsc2016`](#adoptopenjdk8-jdk-openj9-windowsservercore-ltsc2016)
 -	[`adoptopenjdk:8-jre-hotspot`](#adoptopenjdk8-jre-hotspot)
+-	[`adoptopenjdk:8-jre-hotspot-bionic`](#adoptopenjdk8-jre-hotspot-bionic)
+-	[`adoptopenjdk:8-jre-hotspot-windowsservercore`](#adoptopenjdk8-jre-hotspot-windowsservercore)
+-	[`adoptopenjdk:8-jre-hotspot-windowsservercore-1803`](#adoptopenjdk8-jre-hotspot-windowsservercore-1803)
+-	[`adoptopenjdk:8-jre-hotspot-windowsservercore-1809`](#adoptopenjdk8-jre-hotspot-windowsservercore-1809)
+-	[`adoptopenjdk:8-jre-hotspot-windowsservercore-ltsc2016`](#adoptopenjdk8-jre-hotspot-windowsservercore-ltsc2016)
 -	[`adoptopenjdk:8-jre-openj9`](#adoptopenjdk8-jre-openj9)
+-	[`adoptopenjdk:8-jre-openj9-bionic`](#adoptopenjdk8-jre-openj9-bionic)
+-	[`adoptopenjdk:8-jre-openj9-windowsservercore`](#adoptopenjdk8-jre-openj9-windowsservercore)
+-	[`adoptopenjdk:8-jre-openj9-windowsservercore-1803`](#adoptopenjdk8-jre-openj9-windowsservercore-1803)
+-	[`adoptopenjdk:8-jre-openj9-windowsservercore-1809`](#adoptopenjdk8-jre-openj9-windowsservercore-1809)
+-	[`adoptopenjdk:8-jre-openj9-windowsservercore-ltsc2016`](#adoptopenjdk8-jre-openj9-windowsservercore-ltsc2016)
 -	[`adoptopenjdk:8-openj9`](#adoptopenjdk8-openj9)
+-	[`adoptopenjdk:8-openj9-bionic`](#adoptopenjdk8-openj9-bionic)
+-	[`adoptopenjdk:8-openj9-windowsservercore`](#adoptopenjdk8-openj9-windowsservercore)
+-	[`adoptopenjdk:8-openj9-windowsservercore-1803`](#adoptopenjdk8-openj9-windowsservercore-1803)
+-	[`adoptopenjdk:8-openj9-windowsservercore-1809`](#adoptopenjdk8-openj9-windowsservercore-1809)
+-	[`adoptopenjdk:8-openj9-windowsservercore-ltsc2016`](#adoptopenjdk8-openj9-windowsservercore-ltsc2016)
 -	[`adoptopenjdk:8u212-b04-jdk-hotspot`](#adoptopenjdk8u212-b04-jdk-hotspot)
+-	[`adoptopenjdk:8u212-b04-jdk-hotspot-bionic`](#adoptopenjdk8u212-b04-jdk-hotspot-bionic)
+-	[`adoptopenjdk:8u212-b04-jdk-hotspot-windowsservercore`](#adoptopenjdk8u212-b04-jdk-hotspot-windowsservercore)
+-	[`adoptopenjdk:8u212-b04-jdk-hotspot-windowsservercore-1803`](#adoptopenjdk8u212-b04-jdk-hotspot-windowsservercore-1803)
+-	[`adoptopenjdk:8u212-b04-jdk-hotspot-windowsservercore-1809`](#adoptopenjdk8u212-b04-jdk-hotspot-windowsservercore-1809)
+-	[`adoptopenjdk:8u212-b04-jdk-hotspot-windowsservercore-ltsc2016`](#adoptopenjdk8u212-b04-jdk-hotspot-windowsservercore-ltsc2016)
 -	[`adoptopenjdk:8u212-b04-jdk-openj9-0.14.2`](#adoptopenjdk8u212-b04-jdk-openj9-0142)
+-	[`adoptopenjdk:8u212-b04-jdk-openj9-0.14.2-bionic`](#adoptopenjdk8u212-b04-jdk-openj9-0142-bionic)
+-	[`adoptopenjdk:8u212-b04-jdk-openj9-0.14.2-windowsservercore`](#adoptopenjdk8u212-b04-jdk-openj9-0142-windowsservercore)
+-	[`adoptopenjdk:8u212-b04-jdk-openj9-0.14.2-windowsservercore-1803`](#adoptopenjdk8u212-b04-jdk-openj9-0142-windowsservercore-1803)
+-	[`adoptopenjdk:8u212-b04-jdk-openj9-0.14.2-windowsservercore-1809`](#adoptopenjdk8u212-b04-jdk-openj9-0142-windowsservercore-1809)
+-	[`adoptopenjdk:8u212-b04-jdk-openj9-0.14.2-windowsservercore-ltsc2016`](#adoptopenjdk8u212-b04-jdk-openj9-0142-windowsservercore-ltsc2016)
 -	[`adoptopenjdk:8u212-b04-jre-hotspot`](#adoptopenjdk8u212-b04-jre-hotspot)
+-	[`adoptopenjdk:8u212-b04-jre-hotspot-bionic`](#adoptopenjdk8u212-b04-jre-hotspot-bionic)
+-	[`adoptopenjdk:8u212-b04-jre-hotspot-windowsservercore`](#adoptopenjdk8u212-b04-jre-hotspot-windowsservercore)
+-	[`adoptopenjdk:8u212-b04-jre-hotspot-windowsservercore-1803`](#adoptopenjdk8u212-b04-jre-hotspot-windowsservercore-1803)
+-	[`adoptopenjdk:8u212-b04-jre-hotspot-windowsservercore-1809`](#adoptopenjdk8u212-b04-jre-hotspot-windowsservercore-1809)
+-	[`adoptopenjdk:8u212-b04-jre-hotspot-windowsservercore-ltsc2016`](#adoptopenjdk8u212-b04-jre-hotspot-windowsservercore-ltsc2016)
 -	[`adoptopenjdk:8u212-b04-jre-openj9-0.14.2`](#adoptopenjdk8u212-b04-jre-openj9-0142)
+-	[`adoptopenjdk:8u212-b04-jre-openj9-0.14.2-bionic`](#adoptopenjdk8u212-b04-jre-openj9-0142-bionic)
+-	[`adoptopenjdk:8u212-b04-jre-openj9-0.14.2-windowsservercore`](#adoptopenjdk8u212-b04-jre-openj9-0142-windowsservercore)
+-	[`adoptopenjdk:8u212-b04-jre-openj9-0.14.2-windowsservercore-1803`](#adoptopenjdk8u212-b04-jre-openj9-0142-windowsservercore-1803)
+-	[`adoptopenjdk:8u212-b04-jre-openj9-0.14.2-windowsservercore-1809`](#adoptopenjdk8u212-b04-jre-openj9-0142-windowsservercore-1809)
+-	[`adoptopenjdk:8u212-b04-jre-openj9-0.14.2-windowsservercore-ltsc2016`](#adoptopenjdk8u212-b04-jre-openj9-0142-windowsservercore-ltsc2016)
 -	[`adoptopenjdk:hotspot`](#adoptopenjdkhotspot)
+-	[`adoptopenjdk:hotspot-bionic`](#adoptopenjdkhotspot-bionic)
+-	[`adoptopenjdk:hotspot-windowsservercore`](#adoptopenjdkhotspot-windowsservercore)
+-	[`adoptopenjdk:hotspot-windowsservercore-1803`](#adoptopenjdkhotspot-windowsservercore-1803)
+-	[`adoptopenjdk:hotspot-windowsservercore-1809`](#adoptopenjdkhotspot-windowsservercore-1809)
+-	[`adoptopenjdk:hotspot-windowsservercore-ltsc2016`](#adoptopenjdkhotspot-windowsservercore-ltsc2016)
 -	[`adoptopenjdk:latest`](#adoptopenjdklatest)
 -	[`adoptopenjdk:openj9`](#adoptopenjdkopenj9)
+-	[`adoptopenjdk:openj9-bionic`](#adoptopenjdkopenj9-bionic)
+-	[`adoptopenjdk:openj9-windowsservercore`](#adoptopenjdkopenj9-windowsservercore)
+-	[`adoptopenjdk:openj9-windowsservercore-1803`](#adoptopenjdkopenj9-windowsservercore-1803)
+-	[`adoptopenjdk:openj9-windowsservercore-1809`](#adoptopenjdkopenj9-windowsservercore-1809)
+-	[`adoptopenjdk:openj9-windowsservercore-ltsc2016`](#adoptopenjdkopenj9-windowsservercore-ltsc2016)
 
 ## `adoptopenjdk:11.0.3_7-jdk-hotspot`
 
@@ -370,6 +530,26 @@ CMD ["jshell"]
 		Size: 175.8 MB (175799592 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
+## `adoptopenjdk:11.0.3_7-jdk-hotspot-bionic`
+
+**does not exist** (yet?)
+
+## `adoptopenjdk:11.0.3_7-jdk-hotspot-windowsservercore`
+
+**does not exist** (yet?)
+
+## `adoptopenjdk:11.0.3_7-jdk-hotspot-windowsservercore-1803`
+
+**does not exist** (yet?)
+
+## `adoptopenjdk:11.0.3_7-jdk-hotspot-windowsservercore-1809`
+
+**does not exist** (yet?)
+
+## `adoptopenjdk:11.0.3_7-jdk-hotspot-windowsservercore-ltsc2016`
+
+**does not exist** (yet?)
+
 ## `adoptopenjdk:11.0.3_7-jdk-openj9-0.14.3`
 
 ```console
@@ -579,6 +759,26 @@ CMD ["jshell"]
 		Last Modified: Tue, 18 Jun 2019 22:16:49 GMT  
 		Size: 198.4 MB (198444517 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+
+## `adoptopenjdk:11.0.3_7-jdk-openj9-0.14.3-bionic`
+
+**does not exist** (yet?)
+
+## `adoptopenjdk:11.0.3_7-jdk-openj9-0.14.3-windowsservercore`
+
+**does not exist** (yet?)
+
+## `adoptopenjdk:11.0.3_7-jdk-openj9-0.14.3-windowsservercore-1803`
+
+**does not exist** (yet?)
+
+## `adoptopenjdk:11.0.3_7-jdk-openj9-0.14.3-windowsservercore-1809`
+
+**does not exist** (yet?)
+
+## `adoptopenjdk:11.0.3_7-jdk-openj9-0.14.3-windowsservercore-ltsc2016`
+
+**does not exist** (yet?)
 
 ## `adoptopenjdk:11.0.3_7-jre-hotspot`
 
@@ -841,6 +1041,26 @@ ENV JAVA_HOME=/opt/java/openjdk PATH=/opt/java/openjdk/bin:/usr/local/sbin:/usr/
 		Size: 38.8 MB (38800985 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
+## `adoptopenjdk:11.0.3_7-jre-hotspot-bionic`
+
+**does not exist** (yet?)
+
+## `adoptopenjdk:11.0.3_7-jre-hotspot-windowsservercore`
+
+**does not exist** (yet?)
+
+## `adoptopenjdk:11.0.3_7-jre-hotspot-windowsservercore-1803`
+
+**does not exist** (yet?)
+
+## `adoptopenjdk:11.0.3_7-jre-hotspot-windowsservercore-1809`
+
+**does not exist** (yet?)
+
+## `adoptopenjdk:11.0.3_7-jre-hotspot-windowsservercore-ltsc2016`
+
+**does not exist** (yet?)
+
 ## `adoptopenjdk:11.0.3_7-jre-openj9-0.14.3`
 
 ```console
@@ -1044,6 +1264,26 @@ ENV JAVA_TOOL_OPTIONS=-XX:+IgnoreUnrecognizedVMOptions -XX:+UseContainerSupport 
 		Last Modified: Tue, 18 Jun 2019 22:21:30 GMT  
 		Size: 42.6 MB (42594232 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+
+## `adoptopenjdk:11.0.3_7-jre-openj9-0.14.3-bionic`
+
+**does not exist** (yet?)
+
+## `adoptopenjdk:11.0.3_7-jre-openj9-0.14.3-windowsservercore`
+
+**does not exist** (yet?)
+
+## `adoptopenjdk:11.0.3_7-jre-openj9-0.14.3-windowsservercore-1803`
+
+**does not exist** (yet?)
+
+## `adoptopenjdk:11.0.3_7-jre-openj9-0.14.3-windowsservercore-1809`
+
+**does not exist** (yet?)
+
+## `adoptopenjdk:11.0.3_7-jre-openj9-0.14.3-windowsservercore-ltsc2016`
+
+**does not exist** (yet?)
 
 ## `adoptopenjdk:11-hotspot`
 
@@ -1379,6 +1619,26 @@ CMD ["jshell"]
 		Size: 175.8 MB (175799592 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
+## `adoptopenjdk:11-hotspot-bionic`
+
+**does not exist** (yet?)
+
+## `adoptopenjdk:11-hotspot-windowsservercore`
+
+**does not exist** (yet?)
+
+## `adoptopenjdk:11-hotspot-windowsservercore-1803`
+
+**does not exist** (yet?)
+
+## `adoptopenjdk:11-hotspot-windowsservercore-1809`
+
+**does not exist** (yet?)
+
+## `adoptopenjdk:11-hotspot-windowsservercore-ltsc2016`
+
+**does not exist** (yet?)
+
 ## `adoptopenjdk:11-jdk-hotspot`
 
 ```console
@@ -1713,6 +1973,26 @@ CMD ["jshell"]
 		Size: 175.8 MB (175799592 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
+## `adoptopenjdk:11-jdk-hotspot-bionic`
+
+**does not exist** (yet?)
+
+## `adoptopenjdk:11-jdk-hotspot-windowsservercore`
+
+**does not exist** (yet?)
+
+## `adoptopenjdk:11-jdk-hotspot-windowsservercore-1803`
+
+**does not exist** (yet?)
+
+## `adoptopenjdk:11-jdk-hotspot-windowsservercore-1809`
+
+**does not exist** (yet?)
+
+## `adoptopenjdk:11-jdk-hotspot-windowsservercore-ltsc2016`
+
+**does not exist** (yet?)
+
 ## `adoptopenjdk:11-jdk-openj9`
 
 ```console
@@ -1922,6 +2202,26 @@ CMD ["jshell"]
 		Last Modified: Tue, 18 Jun 2019 22:16:49 GMT  
 		Size: 198.4 MB (198444517 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+
+## `adoptopenjdk:11-jdk-openj9-bionic`
+
+**does not exist** (yet?)
+
+## `adoptopenjdk:11-jdk-openj9-windowsservercore`
+
+**does not exist** (yet?)
+
+## `adoptopenjdk:11-jdk-openj9-windowsservercore-1803`
+
+**does not exist** (yet?)
+
+## `adoptopenjdk:11-jdk-openj9-windowsservercore-1809`
+
+**does not exist** (yet?)
+
+## `adoptopenjdk:11-jdk-openj9-windowsservercore-ltsc2016`
+
+**does not exist** (yet?)
 
 ## `adoptopenjdk:11-jre-hotspot`
 
@@ -2184,6 +2484,26 @@ ENV JAVA_HOME=/opt/java/openjdk PATH=/opt/java/openjdk/bin:/usr/local/sbin:/usr/
 		Size: 38.8 MB (38800985 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
+## `adoptopenjdk:11-jre-hotspot-bionic`
+
+**does not exist** (yet?)
+
+## `adoptopenjdk:11-jre-hotspot-windowsservercore`
+
+**does not exist** (yet?)
+
+## `adoptopenjdk:11-jre-hotspot-windowsservercore-1803`
+
+**does not exist** (yet?)
+
+## `adoptopenjdk:11-jre-hotspot-windowsservercore-1809`
+
+**does not exist** (yet?)
+
+## `adoptopenjdk:11-jre-hotspot-windowsservercore-ltsc2016`
+
+**does not exist** (yet?)
+
 ## `adoptopenjdk:11-jre-openj9`
 
 ```console
@@ -2387,6 +2707,26 @@ ENV JAVA_TOOL_OPTIONS=-XX:+IgnoreUnrecognizedVMOptions -XX:+UseContainerSupport 
 		Last Modified: Tue, 18 Jun 2019 22:21:30 GMT  
 		Size: 42.6 MB (42594232 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+
+## `adoptopenjdk:11-jre-openj9-bionic`
+
+**does not exist** (yet?)
+
+## `adoptopenjdk:11-jre-openj9-windowsservercore`
+
+**does not exist** (yet?)
+
+## `adoptopenjdk:11-jre-openj9-windowsservercore-1803`
+
+**does not exist** (yet?)
+
+## `adoptopenjdk:11-jre-openj9-windowsservercore-1809`
+
+**does not exist** (yet?)
+
+## `adoptopenjdk:11-jre-openj9-windowsservercore-ltsc2016`
+
+**does not exist** (yet?)
 
 ## `adoptopenjdk:11-openj9`
 
@@ -2597,6 +2937,26 @@ CMD ["jshell"]
 		Last Modified: Tue, 18 Jun 2019 22:16:49 GMT  
 		Size: 198.4 MB (198444517 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+
+## `adoptopenjdk:11-openj9-bionic`
+
+**does not exist** (yet?)
+
+## `adoptopenjdk:11-openj9-windowsservercore`
+
+**does not exist** (yet?)
+
+## `adoptopenjdk:11-openj9-windowsservercore-1803`
+
+**does not exist** (yet?)
+
+## `adoptopenjdk:11-openj9-windowsservercore-1809`
+
+**does not exist** (yet?)
+
+## `adoptopenjdk:11-openj9-windowsservercore-ltsc2016`
+
+**does not exist** (yet?)
 
 ## `adoptopenjdk:12.0.1_12-jdk-hotspot`
 
@@ -2932,6 +3292,26 @@ CMD ["jshell"]
 		Size: 186.0 MB (186026756 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
+## `adoptopenjdk:12.0.1_12-jdk-hotspot-bionic`
+
+**does not exist** (yet?)
+
+## `adoptopenjdk:12.0.1_12-jdk-hotspot-windowsservercore`
+
+**does not exist** (yet?)
+
+## `adoptopenjdk:12.0.1_12-jdk-hotspot-windowsservercore-1803`
+
+**does not exist** (yet?)
+
+## `adoptopenjdk:12.0.1_12-jdk-hotspot-windowsservercore-1809`
+
+**does not exist** (yet?)
+
+## `adoptopenjdk:12.0.1_12-jdk-hotspot-windowsservercore-ltsc2016`
+
+**does not exist** (yet?)
+
 ## `adoptopenjdk:12.0.1_12-jdk-openj9-0.14.1`
 
 ```console
@@ -3141,6 +3521,26 @@ CMD ["jshell"]
 		Last Modified: Tue, 18 Jun 2019 22:23:34 GMT  
 		Size: 202.4 MB (202439990 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+
+## `adoptopenjdk:12.0.1_12-jdk-openj9-0.14.1-bionic`
+
+**does not exist** (yet?)
+
+## `adoptopenjdk:12.0.1_12-jdk-openj9-0.14.1-windowsservercore`
+
+**does not exist** (yet?)
+
+## `adoptopenjdk:12.0.1_12-jdk-openj9-0.14.1-windowsservercore-1803`
+
+**does not exist** (yet?)
+
+## `adoptopenjdk:12.0.1_12-jdk-openj9-0.14.1-windowsservercore-1809`
+
+**does not exist** (yet?)
+
+## `adoptopenjdk:12.0.1_12-jdk-openj9-0.14.1-windowsservercore-ltsc2016`
+
+**does not exist** (yet?)
 
 ## `adoptopenjdk:12.0.1_12-jre-hotspot`
 
@@ -3403,6 +3803,26 @@ ENV JAVA_HOME=/opt/java/openjdk PATH=/opt/java/openjdk/bin:/usr/local/sbin:/usr/
 		Size: 43.8 MB (43785522 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
+## `adoptopenjdk:12.0.1_12-jre-hotspot-bionic`
+
+**does not exist** (yet?)
+
+## `adoptopenjdk:12.0.1_12-jre-hotspot-windowsservercore`
+
+**does not exist** (yet?)
+
+## `adoptopenjdk:12.0.1_12-jre-hotspot-windowsservercore-1803`
+
+**does not exist** (yet?)
+
+## `adoptopenjdk:12.0.1_12-jre-hotspot-windowsservercore-1809`
+
+**does not exist** (yet?)
+
+## `adoptopenjdk:12.0.1_12-jre-hotspot-windowsservercore-ltsc2016`
+
+**does not exist** (yet?)
+
 ## `adoptopenjdk:12.0.1_12-jre-openj9-0.14.1`
 
 ```console
@@ -3606,6 +4026,26 @@ ENV JAVA_TOOL_OPTIONS=-XX:+IgnoreUnrecognizedVMOptions -XX:+UseContainerSupport 
 		Last Modified: Tue, 18 Jun 2019 22:25:21 GMT  
 		Size: 42.7 MB (42731986 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+
+## `adoptopenjdk:12.0.1_12-jre-openj9-0.14.1-bionic`
+
+**does not exist** (yet?)
+
+## `adoptopenjdk:12.0.1_12-jre-openj9-0.14.1-windowsservercore`
+
+**does not exist** (yet?)
+
+## `adoptopenjdk:12.0.1_12-jre-openj9-0.14.1-windowsservercore-1803`
+
+**does not exist** (yet?)
+
+## `adoptopenjdk:12.0.1_12-jre-openj9-0.14.1-windowsservercore-1809`
+
+**does not exist** (yet?)
+
+## `adoptopenjdk:12.0.1_12-jre-openj9-0.14.1-windowsservercore-ltsc2016`
+
+**does not exist** (yet?)
 
 ## `adoptopenjdk:12-hotspot`
 
@@ -3941,6 +4381,26 @@ CMD ["jshell"]
 		Size: 186.0 MB (186026756 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
+## `adoptopenjdk:12-hotspot-bionic`
+
+**does not exist** (yet?)
+
+## `adoptopenjdk:12-hotspot-windowsservercore`
+
+**does not exist** (yet?)
+
+## `adoptopenjdk:12-hotspot-windowsservercore-1803`
+
+**does not exist** (yet?)
+
+## `adoptopenjdk:12-hotspot-windowsservercore-1809`
+
+**does not exist** (yet?)
+
+## `adoptopenjdk:12-hotspot-windowsservercore-ltsc2016`
+
+**does not exist** (yet?)
+
 ## `adoptopenjdk:12-jdk-hotspot`
 
 ```console
@@ -4275,6 +4735,26 @@ CMD ["jshell"]
 		Size: 186.0 MB (186026756 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
+## `adoptopenjdk:12-jdk-hotspot-bionic`
+
+**does not exist** (yet?)
+
+## `adoptopenjdk:12-jdk-hotspot-windowsservercore`
+
+**does not exist** (yet?)
+
+## `adoptopenjdk:12-jdk-hotspot-windowsservercore-1803`
+
+**does not exist** (yet?)
+
+## `adoptopenjdk:12-jdk-hotspot-windowsservercore-1809`
+
+**does not exist** (yet?)
+
+## `adoptopenjdk:12-jdk-hotspot-windowsservercore-ltsc2016`
+
+**does not exist** (yet?)
+
 ## `adoptopenjdk:12-jdk-openj9`
 
 ```console
@@ -4484,6 +4964,26 @@ CMD ["jshell"]
 		Last Modified: Tue, 18 Jun 2019 22:23:34 GMT  
 		Size: 202.4 MB (202439990 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+
+## `adoptopenjdk:12-jdk-openj9-bionic`
+
+**does not exist** (yet?)
+
+## `adoptopenjdk:12-jdk-openj9-windowsservercore`
+
+**does not exist** (yet?)
+
+## `adoptopenjdk:12-jdk-openj9-windowsservercore-1803`
+
+**does not exist** (yet?)
+
+## `adoptopenjdk:12-jdk-openj9-windowsservercore-1809`
+
+**does not exist** (yet?)
+
+## `adoptopenjdk:12-jdk-openj9-windowsservercore-ltsc2016`
+
+**does not exist** (yet?)
 
 ## `adoptopenjdk:12-jre-hotspot`
 
@@ -4746,6 +5246,26 @@ ENV JAVA_HOME=/opt/java/openjdk PATH=/opt/java/openjdk/bin:/usr/local/sbin:/usr/
 		Size: 43.8 MB (43785522 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
+## `adoptopenjdk:12-jre-hotspot-bionic`
+
+**does not exist** (yet?)
+
+## `adoptopenjdk:12-jre-hotspot-windowsservercore`
+
+**does not exist** (yet?)
+
+## `adoptopenjdk:12-jre-hotspot-windowsservercore-1803`
+
+**does not exist** (yet?)
+
+## `adoptopenjdk:12-jre-hotspot-windowsservercore-1809`
+
+**does not exist** (yet?)
+
+## `adoptopenjdk:12-jre-hotspot-windowsservercore-ltsc2016`
+
+**does not exist** (yet?)
+
 ## `adoptopenjdk:12-jre-openj9`
 
 ```console
@@ -4949,6 +5469,26 @@ ENV JAVA_TOOL_OPTIONS=-XX:+IgnoreUnrecognizedVMOptions -XX:+UseContainerSupport 
 		Last Modified: Tue, 18 Jun 2019 22:25:21 GMT  
 		Size: 42.7 MB (42731986 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+
+## `adoptopenjdk:12-jre-openj9-bionic`
+
+**does not exist** (yet?)
+
+## `adoptopenjdk:12-jre-openj9-windowsservercore`
+
+**does not exist** (yet?)
+
+## `adoptopenjdk:12-jre-openj9-windowsservercore-1803`
+
+**does not exist** (yet?)
+
+## `adoptopenjdk:12-jre-openj9-windowsservercore-1809`
+
+**does not exist** (yet?)
+
+## `adoptopenjdk:12-jre-openj9-windowsservercore-ltsc2016`
+
+**does not exist** (yet?)
 
 ## `adoptopenjdk:12-openj9`
 
@@ -5160,6 +5700,26 @@ CMD ["jshell"]
 		Size: 202.4 MB (202439990 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
+## `adoptopenjdk:12-openj9-bionic`
+
+**does not exist** (yet?)
+
+## `adoptopenjdk:12-openj9-windowsservercore`
+
+**does not exist** (yet?)
+
+## `adoptopenjdk:12-openj9-windowsservercore-1803`
+
+**does not exist** (yet?)
+
+## `adoptopenjdk:12-openj9-windowsservercore-1809`
+
+**does not exist** (yet?)
+
+## `adoptopenjdk:12-openj9-windowsservercore-ltsc2016`
+
+**does not exist** (yet?)
+
 ## `adoptopenjdk:8-hotspot`
 
 ```console
@@ -5358,6 +5918,26 @@ ENV JAVA_HOME=/opt/java/openjdk PATH=/opt/java/openjdk/bin:/usr/local/sbin:/usr/
 		Size: 100.6 MB (100572698 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
+## `adoptopenjdk:8-hotspot-bionic`
+
+**does not exist** (yet?)
+
+## `adoptopenjdk:8-hotspot-windowsservercore`
+
+**does not exist** (yet?)
+
+## `adoptopenjdk:8-hotspot-windowsservercore-1803`
+
+**does not exist** (yet?)
+
+## `adoptopenjdk:8-hotspot-windowsservercore-1809`
+
+**does not exist** (yet?)
+
+## `adoptopenjdk:8-hotspot-windowsservercore-ltsc2016`
+
+**does not exist** (yet?)
+
 ## `adoptopenjdk:8-jdk-hotspot`
 
 ```console
@@ -5555,6 +6135,26 @@ ENV JAVA_HOME=/opt/java/openjdk PATH=/opt/java/openjdk/bin:/usr/local/sbin:/usr/
 		Last Modified: Tue, 18 Jun 2019 22:08:21 GMT  
 		Size: 100.6 MB (100572698 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+
+## `adoptopenjdk:8-jdk-hotspot-bionic`
+
+**does not exist** (yet?)
+
+## `adoptopenjdk:8-jdk-hotspot-windowsservercore`
+
+**does not exist** (yet?)
+
+## `adoptopenjdk:8-jdk-hotspot-windowsservercore-1803`
+
+**does not exist** (yet?)
+
+## `adoptopenjdk:8-jdk-hotspot-windowsservercore-1809`
+
+**does not exist** (yet?)
+
+## `adoptopenjdk:8-jdk-hotspot-windowsservercore-ltsc2016`
+
+**does not exist** (yet?)
 
 ## `adoptopenjdk:8-jdk-openj9`
 
@@ -5760,6 +6360,26 @@ ENV JAVA_TOOL_OPTIONS=-XX:+IgnoreUnrecognizedVMOptions -XX:+UseContainerSupport 
 		Size: 116.3 MB (116306882 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
+## `adoptopenjdk:8-jdk-openj9-bionic`
+
+**does not exist** (yet?)
+
+## `adoptopenjdk:8-jdk-openj9-windowsservercore`
+
+**does not exist** (yet?)
+
+## `adoptopenjdk:8-jdk-openj9-windowsservercore-1803`
+
+**does not exist** (yet?)
+
+## `adoptopenjdk:8-jdk-openj9-windowsservercore-1809`
+
+**does not exist** (yet?)
+
+## `adoptopenjdk:8-jdk-openj9-windowsservercore-ltsc2016`
+
+**does not exist** (yet?)
+
 ## `adoptopenjdk:8-jre-hotspot`
 
 ```console
@@ -5957,6 +6577,26 @@ ENV JAVA_HOME=/opt/java/openjdk PATH=/opt/java/openjdk/bin:/usr/local/sbin:/usr/
 		Last Modified: Tue, 18 Jun 2019 22:08:39 GMT  
 		Size: 38.9 MB (38912384 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+
+## `adoptopenjdk:8-jre-hotspot-bionic`
+
+**does not exist** (yet?)
+
+## `adoptopenjdk:8-jre-hotspot-windowsservercore`
+
+**does not exist** (yet?)
+
+## `adoptopenjdk:8-jre-hotspot-windowsservercore-1803`
+
+**does not exist** (yet?)
+
+## `adoptopenjdk:8-jre-hotspot-windowsservercore-1809`
+
+**does not exist** (yet?)
+
+## `adoptopenjdk:8-jre-hotspot-windowsservercore-ltsc2016`
+
+**does not exist** (yet?)
 
 ## `adoptopenjdk:8-jre-openj9`
 
@@ -6162,6 +6802,26 @@ ENV JAVA_TOOL_OPTIONS=-XX:+IgnoreUnrecognizedVMOptions -XX:+UseContainerSupport 
 		Size: 47.9 MB (47929948 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
+## `adoptopenjdk:8-jre-openj9-bionic`
+
+**does not exist** (yet?)
+
+## `adoptopenjdk:8-jre-openj9-windowsservercore`
+
+**does not exist** (yet?)
+
+## `adoptopenjdk:8-jre-openj9-windowsservercore-1803`
+
+**does not exist** (yet?)
+
+## `adoptopenjdk:8-jre-openj9-windowsservercore-1809`
+
+**does not exist** (yet?)
+
+## `adoptopenjdk:8-jre-openj9-windowsservercore-ltsc2016`
+
+**does not exist** (yet?)
+
 ## `adoptopenjdk:8-openj9`
 
 ```console
@@ -6366,6 +7026,26 @@ ENV JAVA_TOOL_OPTIONS=-XX:+IgnoreUnrecognizedVMOptions -XX:+UseContainerSupport 
 		Size: 116.3 MB (116306882 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
+## `adoptopenjdk:8-openj9-bionic`
+
+**does not exist** (yet?)
+
+## `adoptopenjdk:8-openj9-windowsservercore`
+
+**does not exist** (yet?)
+
+## `adoptopenjdk:8-openj9-windowsservercore-1803`
+
+**does not exist** (yet?)
+
+## `adoptopenjdk:8-openj9-windowsservercore-1809`
+
+**does not exist** (yet?)
+
+## `adoptopenjdk:8-openj9-windowsservercore-ltsc2016`
+
+**does not exist** (yet?)
+
 ## `adoptopenjdk:8u212-b04-jdk-hotspot`
 
 ```console
@@ -6563,6 +7243,26 @@ ENV JAVA_HOME=/opt/java/openjdk PATH=/opt/java/openjdk/bin:/usr/local/sbin:/usr/
 		Last Modified: Tue, 18 Jun 2019 22:08:21 GMT  
 		Size: 100.6 MB (100572698 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+
+## `adoptopenjdk:8u212-b04-jdk-hotspot-bionic`
+
+**does not exist** (yet?)
+
+## `adoptopenjdk:8u212-b04-jdk-hotspot-windowsservercore`
+
+**does not exist** (yet?)
+
+## `adoptopenjdk:8u212-b04-jdk-hotspot-windowsservercore-1803`
+
+**does not exist** (yet?)
+
+## `adoptopenjdk:8u212-b04-jdk-hotspot-windowsservercore-1809`
+
+**does not exist** (yet?)
+
+## `adoptopenjdk:8u212-b04-jdk-hotspot-windowsservercore-ltsc2016`
+
+**does not exist** (yet?)
 
 ## `adoptopenjdk:8u212-b04-jdk-openj9-0.14.2`
 
@@ -6768,6 +7468,26 @@ ENV JAVA_TOOL_OPTIONS=-XX:+IgnoreUnrecognizedVMOptions -XX:+UseContainerSupport 
 		Size: 116.3 MB (116306882 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
+## `adoptopenjdk:8u212-b04-jdk-openj9-0.14.2-bionic`
+
+**does not exist** (yet?)
+
+## `adoptopenjdk:8u212-b04-jdk-openj9-0.14.2-windowsservercore`
+
+**does not exist** (yet?)
+
+## `adoptopenjdk:8u212-b04-jdk-openj9-0.14.2-windowsservercore-1803`
+
+**does not exist** (yet?)
+
+## `adoptopenjdk:8u212-b04-jdk-openj9-0.14.2-windowsservercore-1809`
+
+**does not exist** (yet?)
+
+## `adoptopenjdk:8u212-b04-jdk-openj9-0.14.2-windowsservercore-ltsc2016`
+
+**does not exist** (yet?)
+
 ## `adoptopenjdk:8u212-b04-jre-hotspot`
 
 ```console
@@ -6965,6 +7685,26 @@ ENV JAVA_HOME=/opt/java/openjdk PATH=/opt/java/openjdk/bin:/usr/local/sbin:/usr/
 		Last Modified: Tue, 18 Jun 2019 22:08:39 GMT  
 		Size: 38.9 MB (38912384 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+
+## `adoptopenjdk:8u212-b04-jre-hotspot-bionic`
+
+**does not exist** (yet?)
+
+## `adoptopenjdk:8u212-b04-jre-hotspot-windowsservercore`
+
+**does not exist** (yet?)
+
+## `adoptopenjdk:8u212-b04-jre-hotspot-windowsservercore-1803`
+
+**does not exist** (yet?)
+
+## `adoptopenjdk:8u212-b04-jre-hotspot-windowsservercore-1809`
+
+**does not exist** (yet?)
+
+## `adoptopenjdk:8u212-b04-jre-hotspot-windowsservercore-ltsc2016`
+
+**does not exist** (yet?)
 
 ## `adoptopenjdk:8u212-b04-jre-openj9-0.14.2`
 
@@ -7169,6 +7909,26 @@ ENV JAVA_TOOL_OPTIONS=-XX:+IgnoreUnrecognizedVMOptions -XX:+UseContainerSupport 
 		Last Modified: Tue, 18 Jun 2019 22:13:49 GMT  
 		Size: 47.9 MB (47929948 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+
+## `adoptopenjdk:8u212-b04-jre-openj9-0.14.2-bionic`
+
+**does not exist** (yet?)
+
+## `adoptopenjdk:8u212-b04-jre-openj9-0.14.2-windowsservercore`
+
+**does not exist** (yet?)
+
+## `adoptopenjdk:8u212-b04-jre-openj9-0.14.2-windowsservercore-1803`
+
+**does not exist** (yet?)
+
+## `adoptopenjdk:8u212-b04-jre-openj9-0.14.2-windowsservercore-1809`
+
+**does not exist** (yet?)
+
+## `adoptopenjdk:8u212-b04-jre-openj9-0.14.2-windowsservercore-ltsc2016`
+
+**does not exist** (yet?)
 
 ## `adoptopenjdk:hotspot`
 
@@ -7503,6 +8263,26 @@ CMD ["jshell"]
 		Last Modified: Tue, 18 Jun 2019 22:10:50 GMT  
 		Size: 186.0 MB (186026756 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+
+## `adoptopenjdk:hotspot-bionic`
+
+**does not exist** (yet?)
+
+## `adoptopenjdk:hotspot-windowsservercore`
+
+**does not exist** (yet?)
+
+## `adoptopenjdk:hotspot-windowsservercore-1803`
+
+**does not exist** (yet?)
+
+## `adoptopenjdk:hotspot-windowsservercore-1809`
+
+**does not exist** (yet?)
+
+## `adoptopenjdk:hotspot-windowsservercore-ltsc2016`
+
+**does not exist** (yet?)
 
 ## `adoptopenjdk:latest`
 
@@ -8047,3 +8827,23 @@ CMD ["jshell"]
 		Last Modified: Tue, 18 Jun 2019 22:23:34 GMT  
 		Size: 202.4 MB (202439990 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+
+## `adoptopenjdk:openj9-bionic`
+
+**does not exist** (yet?)
+
+## `adoptopenjdk:openj9-windowsservercore`
+
+**does not exist** (yet?)
+
+## `adoptopenjdk:openj9-windowsservercore-1803`
+
+**does not exist** (yet?)
+
+## `adoptopenjdk:openj9-windowsservercore-1809`
+
+**does not exist** (yet?)
+
+## `adoptopenjdk:openj9-windowsservercore-ltsc2016`
+
+**does not exist** (yet?)
