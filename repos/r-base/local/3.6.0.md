@@ -418,14 +418,13 @@ Licenses: (parsed from: `/usr/share/doc/r-cran-cluster/copyright`)
 - `GPL-2`
 - `GPL-2+`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris cluster=2.0.9-1
-'http://http.debian.net/debian/pool/main/c/cluster/cluster_2.0.9-1.dsc' cluster_2.0.9-1.dsc 1828 SHA256:7b52d238e2ae6f88ce3ea5e1d872a7cb6442793b936120ccdb07bf58a7b67565
-'http://http.debian.net/debian/pool/main/c/cluster/cluster_2.0.9.orig.tar.gz' cluster_2.0.9.orig.tar.gz 379341 SHA256:8ee6f02435c8befbdc9effc09478817e67113e9daa5f59cecd40fe45f46ee5ad
-'http://http.debian.net/debian/pool/main/c/cluster/cluster_2.0.9-1.debian.tar.xz' cluster_2.0.9-1.debian.tar.xz 4176 SHA256:d55cf817f16b9ea5eee4158a1a185d3fe5864328c1bfc2a69e3673e1dd24f0d8
-```
+The source package *may* still be available for download from:
+
+- http://snapshot.debian.org/package/cluster/2.0.9-1/
+
 
 ### `dpkg` source package: `codetools=0.2-16-1`
 
