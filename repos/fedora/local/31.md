@@ -419,14 +419,7 @@ Licenses (from `rpm --query`): Public Domain
 
 Licenses (from `rpm --query`): GPLv3+ and GPLv2+ and LGPLv2+ and BSD
 
-Source:
-
-```console
-$ yumdownloader --quiet --source --urls gawk-4.2.1-6.fc31
-Enabling rawhide-source repository
-Enabling rawhide-modular-source repository
-https://d2lzkl7pfhq30w.cloudfront.net/pub/fedora/linux/development/rawhide/Everything/source/tree//Packages/g/gawk-4.2.1-6.fc31.src.rpm
-```
+**WARNING:** unable to find source (`yumdownloader` failed or returned no results)!
 
 ### `rpm` package: `gdbm-libs-1.18-4.fc30.x86_64`
 
@@ -1202,14 +1195,7 @@ https://d2lzkl7pfhq30w.cloudfront.net/pub/fedora/linux/development/rawhide/Every
 
 Licenses (from `rpm --query`): LGPLv2+ and BSD and Public Domain
 
-Source:
-
-```console
-$ yumdownloader --quiet --source --urls libxcrypt-4.4.6-1.fc31
-Enabling rawhide-source repository
-Enabling rawhide-modular-source repository
-https://d2lzkl7pfhq30w.cloudfront.net/pub/fedora/linux/development/rawhide/Everything/source/tree//Packages/l/libxcrypt-4.4.6-1.fc31.src.rpm
-```
+**WARNING:** unable to find source (`yumdownloader` failed or returned no results)!
 
 ### `rpm` package: `libxml2-2.9.9-2.fc30.x86_64`
 
@@ -1377,27 +1363,13 @@ https://d2lzkl7pfhq30w.cloudfront.net/pub/fedora/linux/development/rawhide/Every
 
 Licenses (from `rpm --query`): OpenSSL
 
-Source:
-
-```console
-$ yumdownloader --quiet --source --urls openssl-1.1.1c-3.fc31
-Enabling rawhide-source repository
-Enabling rawhide-modular-source repository
-https://d2lzkl7pfhq30w.cloudfront.net/pub/fedora/linux/development/rawhide/Everything/source/tree//Packages/o/openssl-1.1.1c-3.fc31.src.rpm
-```
+**WARNING:** unable to find source (`yumdownloader` failed or returned no results)!
 
 ### `rpm` package: `openssl-libs-1.1.1c-3.fc31.x86_64`
 
 Licenses (from `rpm --query`): OpenSSL
 
-Source:
-
-```console
-$ yumdownloader --quiet --source --urls openssl-libs-1.1.1c-3.fc31
-Enabling rawhide-source repository
-Enabling rawhide-modular-source repository
-https://d2lzkl7pfhq30w.cloudfront.net/pub/fedora/linux/development/rawhide/Everything/source/tree//Packages/o/openssl-1.1.1c-3.fc31.src.rpm
-```
+**WARNING:** unable to find source (`yumdownloader` failed or returned no results)!
 
 ### `rpm` package: `openssl-pkcs11-0.4.10-1.fc31.x86_64`
 
@@ -1513,14 +1485,7 @@ https://d2lzkl7pfhq30w.cloudfront.net/pub/fedora/linux/development/rawhide/Every
 
 Licenses (from `rpm --query`): MIT and (BSD or ASL 2.0)
 
-Source:
-
-```console
-$ yumdownloader --quiet --source --urls python-setuptools-wheel-41.0.1-1.fc31.noarch
-Enabling rawhide-source repository
-Enabling rawhide-modular-source repository
-https://d2lzkl7pfhq30w.cloudfront.net/pub/fedora/linux/development/rawhide/Everything/source/tree//Packages/p/python-setuptools-41.0.1-1.fc31.src.rpm
-```
+**WARNING:** unable to find source (`yumdownloader` failed or returned no results)!
 
 ### `rpm` package: `python3-3.7.3-3.fc31.x86_64`
 
@@ -1622,14 +1587,7 @@ Licenses (from `rpm --query`): GPLv2+
 
 Licenses (from `rpm --query`): MIT and (BSD or ASL 2.0)
 
-Source:
-
-```console
-$ yumdownloader --quiet --source --urls python3-setuptools-41.0.1-1.fc31.noarch
-Enabling rawhide-source repository
-Enabling rawhide-modular-source repository
-https://d2lzkl7pfhq30w.cloudfront.net/pub/fedora/linux/development/rawhide/Everything/source/tree//Packages/p/python-setuptools-41.0.1-1.fc31.src.rpm
-```
+**WARNING:** unable to find source (`yumdownloader` failed or returned no results)!
 
 ### `rpm` package: `python3-unbound-1.8.3-4.fc30.x86_64`
 
