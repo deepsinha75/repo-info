@@ -319,20 +319,13 @@ Licenses: (parsed from: `/usr/share/doc/cron/copyright`)
 - `ISC`
 - `Paul-Vixie's-license`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris cron=3.0pl1-133
-'http://deb.debian.org/debian/pool/main/c/cron/cron_3.0pl1-133.dsc' cron_3.0pl1-133.dsc 1918 SHA256:d8a4fb0343d028e24d90079c82427439b65e2ed4ae90fca572e10d9984ed5934
-'http://deb.debian.org/debian/pool/main/c/cron/cron_3.0pl1.orig.tar.gz' cron_3.0pl1.orig.tar.gz 59245 SHA256:d931e0688005dfa85cfdb60e19bf0a3848ebfa3ee3415bf2a6ea3ea9e5bcfd21
-'http://deb.debian.org/debian/pool/main/c/cron/cron_3.0pl1-133.diff.gz' cron_3.0pl1-133.diff.gz 100791 SHA256:dd542caabd039da1b3f1bbe8da271c20995e3c32caea26c058ac1d4236896506
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/cron/3.0pl1-133/
 
-- https://sources.debian.net/src/cron/3.0pl1-133/ (for browsing the source)
-- https://sources.debian.net/src/cron/3.0pl1-133/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/cron/3.0pl1-133/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `cyrus-sasl2=2.1.27+dfsg-1`
 
