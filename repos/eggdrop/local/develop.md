@@ -2,17 +2,17 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:98435cd3bd5b8ed648143cf65f4b621b002c9cb908ec5549e4f6ce6f21fe3f77`
-- Created: `2019-03-08T02:49:32.598459344Z`
-- Virtual Size: ~ 36.57 Mb  
+- Image ID: `sha256:9f8d4a03e5ed5e6ce7ca1d48e4932035f895cc3f5d30286fb33a70e3507ff7f1`
+- Created: `2019-06-26T22:20:32.166635207Z`
+- Virtual Size: ~ 36.66 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["/home/eggdrop/eggdrop/entrypoint.sh"]`
 - Command: `["eggdrop.conf"]`
 - Environment:
   - `PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
-  - `EGGDROP_SHA256=18839206eddcc529205328639c064f152316afd240b0ad5df1b53f3ccf623cbf`
-  - `EGGDROP_COMMIT=35808b2bcaaf6a81e43835e4e18ecb4848ded75a`
+  - `EGGDROP_SHA256=8b2ac4ec477cd1c3952ba2bab52d02370ca5fccf5f4c4341096ba294808541ee`
+  - `EGGDROP_COMMIT=c763e7e798f859893d7f9e9eb0f7d53e032b4595`
   - `NICK=`
   - `SERVER=`
   - `LISTEN=3333`
@@ -127,16 +127,16 @@ BSD
 ### `apk` package: `libcrypto1.0`
 
 ```console
-libcrypto1.0-1.0.2q-r0 description:
+libcrypto1.0-1.0.2r-r0 description:
 Crypto library from openssl
 
-libcrypto1.0-1.0.2q-r0 webpage:
+libcrypto1.0-1.0.2r-r0 webpage:
 https://openssl.org
 
-libcrypto1.0-1.0.2q-r0 installed size:
+libcrypto1.0-1.0.2r-r0 installed size:
 2523136
 
-libcrypto1.0-1.0.2q-r0 license:
+libcrypto1.0-1.0.2r-r0 license:
 openssl
 
 ```
@@ -195,16 +195,16 @@ custom
 ### `apk` package: `libssl1.0`
 
 ```console
-libssl1.0-1.0.2q-r0 description:
+libssl1.0-1.0.2r-r0 description:
 SSL shared libraries
 
-libssl1.0-1.0.2q-r0 webpage:
+libssl1.0-1.0.2r-r0 webpage:
 https://openssl.org
 
-libssl1.0-1.0.2q-r0 installed size:
+libssl1.0-1.0.2r-r0 installed size:
 446464
 
-libssl1.0-1.0.2q-r0 license:
+libssl1.0-1.0.2r-r0 license:
 openssl
 
 ```
@@ -297,16 +297,16 @@ MIT
 ### `apk` package: `openssl`
 
 ```console
-openssl-1.0.2q-r0 description:
+openssl-1.0.2r-r0 description:
 Toolkit for SSL v2/v3 and TLS v1
 
-openssl-1.0.2q-r0 webpage:
+openssl-1.0.2r-r0 webpage:
 https://openssl.org
 
-openssl-1.0.2q-r0 installed size:
+openssl-1.0.2r-r0 installed size:
 606208
 
-openssl-1.0.2q-r0 license:
+openssl-1.0.2r-r0 license:
 openssl
 
 ```
