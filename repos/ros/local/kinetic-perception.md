@@ -1360,14 +1360,9 @@ Binary Packages:
 If source is available (seen below), check the contents of `debian/copyright` within it.
 
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris expat=2.1.0-7ubuntu0.16.04.3
-'http://archive.ubuntu.com/ubuntu/pool/main/e/expat/expat_2.1.0-7ubuntu0.16.04.3.dsc' expat_2.1.0-7ubuntu0.16.04.3.dsc 2389 SHA256:30870214df0415be5550b825c612d8de76621bb24480e1b0b7efe4469d868de6
-'http://archive.ubuntu.com/ubuntu/pool/main/e/expat/expat_2.1.0.orig.tar.gz' expat_2.1.0.orig.tar.gz 562616 SHA256:823705472f816df21c8f6aa026dd162b280806838bb55b3432b0fb1fcca7eb86
-'http://archive.ubuntu.com/ubuntu/pool/main/e/expat/expat_2.1.0-7ubuntu0.16.04.3.debian.tar.xz' expat_2.1.0-7ubuntu0.16.04.3.debian.tar.xz 22068 SHA256:691aec15db5b568d90db8f312f66af89e5f6f9848ef6061c65bbf06594f6fdb9
-```
 
 ### `dpkg` source package: `explorercanvas=0.r3-4`
 
@@ -5317,9 +5312,9 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris linux=4.4.0-151.178
-'http://archive.ubuntu.com/ubuntu/pool/main/l/linux/linux_4.4.0-151.178.dsc' linux_4.4.0-151.178.dsc 11909 SHA256:5cdc4d2f0e241d5a74dfee5c8343f07d3a8570bfaff219bc284751031fa40f88
-'http://archive.ubuntu.com/ubuntu/pool/main/l/linux/linux_4.4.0.orig.tar.gz' linux_4.4.0.orig.tar.gz 132860730 SHA256:730e75919b5d30a9bc934ccb300eaedfdf44994ca9ee1d07a46901c46c221357
-'http://archive.ubuntu.com/ubuntu/pool/main/l/linux/linux_4.4.0-151.178.diff.gz' linux_4.4.0-151.178.diff.gz 15506106 SHA256:89121a7aff0dd44e312efd6924072c96d09dcdc7f2ead2b704b16243f4345850
+'http://security.ubuntu.com/ubuntu/pool/main/l/linux/linux_4.4.0-151.178.dsc' linux_4.4.0-151.178.dsc 11909 SHA256:5cdc4d2f0e241d5a74dfee5c8343f07d3a8570bfaff219bc284751031fa40f88
+'http://security.ubuntu.com/ubuntu/pool/main/l/linux/linux_4.4.0.orig.tar.gz' linux_4.4.0.orig.tar.gz 132860730 SHA256:730e75919b5d30a9bc934ccb300eaedfdf44994ca9ee1d07a46901c46c221357
+'http://security.ubuntu.com/ubuntu/pool/main/l/linux/linux_4.4.0-151.178.diff.gz' linux_4.4.0-151.178.diff.gz 15506106 SHA256:89121a7aff0dd44e312efd6924072c96d09dcdc7f2ead2b704b16243f4345850
 ```
 
 ### `dpkg` source package: `lksctp-tools=1.0.16+dfsg-3`
@@ -6745,14 +6740,9 @@ Licenses: (parsed from: `/usr/share/doc/libpoppler58/copyright`)
 
 - `GPL-2`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris poppler=0.41.0-0ubuntu1.13
-'http://archive.ubuntu.com/ubuntu/pool/main/p/poppler/poppler_0.41.0-0ubuntu1.13.dsc' poppler_0.41.0-0ubuntu1.13.dsc 3360 SHA256:93534a893d5ce429203e387fd1ff36ccf72fd0dcb8b043c4fb1a97ec22eea1ac
-'http://archive.ubuntu.com/ubuntu/pool/main/p/poppler/poppler_0.41.0.orig.tar.xz' poppler_0.41.0.orig.tar.xz 1655448 SHA256:420abaab63caed9e1ee28964a0ba216d1979506726164bc99ad5ade289192a1b
-'http://archive.ubuntu.com/ubuntu/pool/main/p/poppler/poppler_0.41.0-0ubuntu1.13.debian.tar.xz' poppler_0.41.0-0ubuntu1.13.debian.tar.xz 49520 SHA256:39318764999e7f8e34b59038bf6dab64cfba4ebe4bb049bb3e8a69e01f41e030
-```
 
 ### `dpkg` source package: `postgresql-9.5=9.5.17-0ubuntu0.16.04.1`
 

@@ -2837,9 +2837,9 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris gst-plugins-base1.0=1.14.1-1ubuntu1~ubuntu18.04.2
-'http://archive.ubuntu.com/ubuntu/pool/main/g/gst-plugins-base1.0/gst-plugins-base1.0_1.14.1-1ubuntu1~ubuntu18.04.2.dsc' gst-plugins-base1.0_1.14.1-1ubuntu1~ubuntu18.04.2.dsc 4485 SHA256:587d19e4d2dcdac4cd853d6fbcd69c9d3ce385acc4548e06cccd18dd1bec141b
-'http://archive.ubuntu.com/ubuntu/pool/main/g/gst-plugins-base1.0/gst-plugins-base1.0_1.14.1.orig.tar.xz' gst-plugins-base1.0_1.14.1.orig.tar.xz 3689184 SHA256:1026c7c3082d825d9b5d034c1a6dd8a4ebab60eb3738b0a0afde4ad2dc0b0db5
-'http://archive.ubuntu.com/ubuntu/pool/main/g/gst-plugins-base1.0/gst-plugins-base1.0_1.14.1-1ubuntu1~ubuntu18.04.2.debian.tar.xz' gst-plugins-base1.0_1.14.1-1ubuntu1~ubuntu18.04.2.debian.tar.xz 45920 SHA256:bac1fb12b23b8432de336833bbde3b88b84a738e20e7463b4a279535136e3b27
+'http://security.ubuntu.com/ubuntu/pool/main/g/gst-plugins-base1.0/gst-plugins-base1.0_1.14.1-1ubuntu1~ubuntu18.04.2.dsc' gst-plugins-base1.0_1.14.1-1ubuntu1~ubuntu18.04.2.dsc 4485 SHA256:587d19e4d2dcdac4cd853d6fbcd69c9d3ce385acc4548e06cccd18dd1bec141b
+'http://security.ubuntu.com/ubuntu/pool/main/g/gst-plugins-base1.0/gst-plugins-base1.0_1.14.1.orig.tar.xz' gst-plugins-base1.0_1.14.1.orig.tar.xz 3689184 SHA256:1026c7c3082d825d9b5d034c1a6dd8a4ebab60eb3738b0a0afde4ad2dc0b0db5
+'http://security.ubuntu.com/ubuntu/pool/main/g/gst-plugins-base1.0/gst-plugins-base1.0_1.14.1-1ubuntu1~ubuntu18.04.2.debian.tar.xz' gst-plugins-base1.0_1.14.1-1ubuntu1~ubuntu18.04.2.debian.tar.xz 45920 SHA256:bac1fb12b23b8432de336833bbde3b88b84a738e20e7463b4a279535136e3b27
 ```
 
 ### `dpkg` source package: `gstreamer1.0=1.14.1-1~ubuntu18.04.2`
@@ -2860,9 +2860,9 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris gstreamer1.0=1.14.1-1~ubuntu18.04.2
-'http://archive.ubuntu.com/ubuntu/pool/main/g/gstreamer1.0/gstreamer1.0_1.14.1-1~ubuntu18.04.2.dsc' gstreamer1.0_1.14.1-1~ubuntu18.04.2.dsc 3114 SHA256:66833777891c59e5622edda47df339e0fb635f4308d7d5ff79158f2f05e19bb1
-'http://archive.ubuntu.com/ubuntu/pool/main/g/gstreamer1.0/gstreamer1.0_1.14.1.orig.tar.xz' gstreamer1.0_1.14.1.orig.tar.xz 3252440 SHA256:28d82b0d261544a9bf85b429399929e4986eb00efcf1ce16cc71d269a4c3186c
-'http://archive.ubuntu.com/ubuntu/pool/main/g/gstreamer1.0/gstreamer1.0_1.14.1-1~ubuntu18.04.2.debian.tar.xz' gstreamer1.0_1.14.1-1~ubuntu18.04.2.debian.tar.xz 43848 SHA256:6d758960d1149044c128795737aba1579e1505989103b54e1159a7e1148bf9c3
+'http://security.ubuntu.com/ubuntu/pool/main/g/gstreamer1.0/gstreamer1.0_1.14.1-1~ubuntu18.04.2.dsc' gstreamer1.0_1.14.1-1~ubuntu18.04.2.dsc 3114 SHA256:66833777891c59e5622edda47df339e0fb635f4308d7d5ff79158f2f05e19bb1
+'http://security.ubuntu.com/ubuntu/pool/main/g/gstreamer1.0/gstreamer1.0_1.14.1.orig.tar.xz' gstreamer1.0_1.14.1.orig.tar.xz 3252440 SHA256:28d82b0d261544a9bf85b429399929e4986eb00efcf1ce16cc71d269a4c3186c
+'http://security.ubuntu.com/ubuntu/pool/main/g/gstreamer1.0/gstreamer1.0_1.14.1-1~ubuntu18.04.2.debian.tar.xz' gstreamer1.0_1.14.1-1~ubuntu18.04.2.debian.tar.xz 43848 SHA256:6d758960d1149044c128795737aba1579e1505989103b54e1159a7e1148bf9c3
 ```
 
 ### `dpkg` source package: `gtk+2.0=2.24.32-1ubuntu1`
@@ -6386,9 +6386,9 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris linux=4.15.0-52.56
-'http://archive.ubuntu.com/ubuntu/pool/main/l/linux/linux_4.15.0-52.56.dsc' linux_4.15.0-52.56.dsc 6909 SHA256:46da6cc23e0e9e4ae8d0ac888584a95034d97562682700b293d61d13c874694c
-'http://archive.ubuntu.com/ubuntu/pool/main/l/linux/linux_4.15.0.orig.tar.gz' linux_4.15.0.orig.tar.gz 157656459 SHA256:c33b8ba5c45a40b689979caa2421c4d933864cd70eb93c00eb69adf43e9a24fc
-'http://archive.ubuntu.com/ubuntu/pool/main/l/linux/linux_4.15.0-52.56.diff.gz' linux_4.15.0-52.56.diff.gz 8799794 SHA256:1ced1739a5c7b50747ff1e88dfdf6e50414023b22c66385410b2084f3f265068
+'http://security.ubuntu.com/ubuntu/pool/main/l/linux/linux_4.15.0-52.56.dsc' linux_4.15.0-52.56.dsc 6909 SHA256:46da6cc23e0e9e4ae8d0ac888584a95034d97562682700b293d61d13c874694c
+'http://security.ubuntu.com/ubuntu/pool/main/l/linux/linux_4.15.0.orig.tar.gz' linux_4.15.0.orig.tar.gz 157656459 SHA256:c33b8ba5c45a40b689979caa2421c4d933864cd70eb93c00eb69adf43e9a24fc
+'http://security.ubuntu.com/ubuntu/pool/main/l/linux/linux_4.15.0-52.56.diff.gz' linux_4.15.0-52.56.diff.gz 8799794 SHA256:1ced1739a5c7b50747ff1e88dfdf6e50414023b22c66385410b2084f3f265068
 ```
 
 ### `dpkg` source package: `lksctp-tools=1.0.17+dfsg-2`
@@ -8111,14 +8111,9 @@ Licenses: (parsed from: `/usr/share/doc/libpoppler-dev/copyright`, `/usr/share/d
 
 - `GPL-2`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris poppler=0.62.0-2ubuntu2.8
-'http://archive.ubuntu.com/ubuntu/pool/main/p/poppler/poppler_0.62.0-2ubuntu2.8.dsc' poppler_0.62.0-2ubuntu2.8.dsc 3354 SHA256:0ef55e0b5aad419026f6dd0bf67bf4bf453b147844ed4bf2d18920305d453cd7
-'http://archive.ubuntu.com/ubuntu/pool/main/p/poppler/poppler_0.62.0.orig.tar.xz' poppler_0.62.0.orig.tar.xz 1423372 SHA256:5b9a73dfd4d6f61d165ada1e4f0abd2d420494bf9d0b1c15d0db3f7b83a729c6
-'http://archive.ubuntu.com/ubuntu/pool/main/p/poppler/poppler_0.62.0-2ubuntu2.8.debian.tar.xz' poppler_0.62.0-2ubuntu2.8.debian.tar.xz 39736 SHA256:03135c87c77249369d286d954f055c5230e4cd07e55c6755a4a336c2056f0856
-```
 
 ### `dpkg` source package: `postgresql-10=10.8-0ubuntu0.18.04.1`
 
