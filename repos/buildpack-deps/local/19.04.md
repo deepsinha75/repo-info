@@ -1116,9 +1116,9 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris glib2.0=2.60.0-1ubuntu0.1
-'http://archive.ubuntu.com/ubuntu/pool/main/g/glib2.0/glib2.0_2.60.0-1ubuntu0.1.dsc' glib2.0_2.60.0-1ubuntu0.1.dsc 3359 SHA256:f3450e6e7ee8a5bd0239ee279ee6587168024bd1fa89f4cd1a2f675bcab963b3
-'http://archive.ubuntu.com/ubuntu/pool/main/g/glib2.0/glib2.0_2.60.0.orig.tar.xz' glib2.0_2.60.0.orig.tar.xz 4584416 SHA256:20865d8b96840d89d9340fc485b4b1131c1bb24d16a258a22d642c3bb1b44353
-'http://archive.ubuntu.com/ubuntu/pool/main/g/glib2.0/glib2.0_2.60.0-1ubuntu0.1.debian.tar.xz' glib2.0_2.60.0-1ubuntu0.1.debian.tar.xz 84128 SHA256:57d0b581a27d83b1e9b074241483d2a2a090093d82affdd93b43c45881b60342
+'http://security.ubuntu.com/ubuntu/pool/main/g/glib2.0/glib2.0_2.60.0-1ubuntu0.1.dsc' glib2.0_2.60.0-1ubuntu0.1.dsc 3359 SHA256:f3450e6e7ee8a5bd0239ee279ee6587168024bd1fa89f4cd1a2f675bcab963b3
+'http://security.ubuntu.com/ubuntu/pool/main/g/glib2.0/glib2.0_2.60.0.orig.tar.xz' glib2.0_2.60.0.orig.tar.xz 4584416 SHA256:20865d8b96840d89d9340fc485b4b1131c1bb24d16a258a22d642c3bb1b44353
+'http://security.ubuntu.com/ubuntu/pool/main/g/glib2.0/glib2.0_2.60.0-1ubuntu0.1.debian.tar.xz' glib2.0_2.60.0-1ubuntu0.1.debian.tar.xz 84128 SHA256:57d0b581a27d83b1e9b074241483d2a2a090093d82affdd93b43c45881b60342
 ```
 
 ### `dpkg` source package: `glibc=2.29-0ubuntu2`

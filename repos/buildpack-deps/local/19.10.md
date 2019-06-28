@@ -106,13 +106,9 @@ Licenses: (parsed from: `/usr/share/doc/apt/copyright`, `/usr/share/doc/libapt-p
 - `GPL-2`
 - `GPLv2+`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris apt=1.8.2+19.10
-'http://archive.ubuntu.com/ubuntu/pool/main/a/apt/apt_1.8.2+19.10.dsc' apt_1.8.2+19.10.dsc 2798 SHA256:fd953be30573086ec9dd38f1306964fd07af603092623d3ddbe30085cb5dfe48
-'http://archive.ubuntu.com/ubuntu/pool/main/a/apt/apt_1.8.2+19.10.tar.xz' apt_1.8.2+19.10.tar.xz 2188172 SHA256:ecfa1723bf88c07a73a853f202a1a93405063dc0e5b11f1a91153432230db433
-```
 
 ### `dpkg` source package: `attr=1:2.4.48-4`
 
