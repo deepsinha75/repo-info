@@ -2,9 +2,9 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:357b304b8dbce6b8e16aa21f6ca0af5b3c30e57ba83c0e849f44bb9aa97d374f`
-- Created: `2019-06-19T04:33:33.331426922Z`
-- Virtual Size: ~ 360.67 Mb  
+- Image ID: `sha256:5b06a66a67ee05fc12c5e754556b6a7f4bc99855d026041c0feca37e85a97cfd`
+- Created: `2019-06-25T20:21:59.182690742Z`
+- Virtual Size: ~ 361.86 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["/opt/ol/helpers/runtime/docker-server.sh"]`
@@ -24,7 +24,7 @@
   - `IBM_JAVA_OPTIONS=-Xshareclasses:name=liberty,nonfatal,cacheDir=/output/.classCache/ `
 - Labels:
   - `org.opencontainers.image.authors=Arthur De Magalhaes, Andy Naumann`
-  - `org.opencontainers.image.revision=cl190520190522-2227`
+  - `org.opencontainers.image.revision=cl190620190617-1530`
   - `org.opencontainers.image.source=https://github.com/OpenLiberty/ci.docker`
   - `org.opencontainers.image.url=https://openliberty.io/`
   - `org.opencontainers.image.vendor=Open Liberty`
@@ -1202,7 +1202,6 @@ $ apt-get source -qq --print-uris openldap=2.4.45+dfsg-1ubuntu1.2
 Binary Packages:
 
 - `libssl1.1:amd64=1.1.1-1ubuntu2.1~18.04.2`
-- `openssl=1.1.1-1ubuntu2.1~18.04.2`
 
 **WARNING:** unable to detect licenses! (package likely not compliant with DEP-5)  
 If source is available (seen below), check the contents of `debian/copyright` within it.
@@ -1211,6 +1210,26 @@ If source is available (seen below), check the contents of `debian/copyright` wi
 **WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
 This is *usually* due to a new package version being released and the old version being removed.
 
+
+### `dpkg` source package: `openssl=1.1.1-1ubuntu2.1~18.04.3`
+
+Binary Packages:
+
+- `openssl=1.1.1-1ubuntu2.1~18.04.3`
+
+**WARNING:** unable to detect licenses! (package likely not compliant with DEP-5)  
+If source is available (seen below), check the contents of `debian/copyright` within it.
+
+
+Source:
+
+```console
+$ apt-get source -qq --print-uris openssl=1.1.1-1ubuntu2.1~18.04.3
+'http://archive.ubuntu.com/ubuntu/pool/main/o/openssl/openssl_1.1.1-1ubuntu2.1~18.04.3.dsc' openssl_1.1.1-1ubuntu2.1~18.04.3.dsc 2776 SHA256:0f6c39f21e30f17f5364e0651d01b5fe82d3299dedc53e2e407b5950cfe796a3
+'http://archive.ubuntu.com/ubuntu/pool/main/o/openssl/openssl_1.1.1.orig.tar.gz' openssl_1.1.1.orig.tar.gz 8337920 SHA256:2836875a0f89c03d0fdf483941512613a50cfb421d6fd94b9f41d7279d586a3d
+'http://archive.ubuntu.com/ubuntu/pool/main/o/openssl/openssl_1.1.1.orig.tar.gz.asc' openssl_1.1.1.orig.tar.gz.asc 488 SHA256:f3296150114069ea73a72eafbfdcbb295b770e7cbf3266f9590f3d0932498b3e
+'http://archive.ubuntu.com/ubuntu/pool/main/o/openssl/openssl_1.1.1-1ubuntu2.1~18.04.3.debian.tar.xz' openssl_1.1.1-1ubuntu2.1~18.04.3.debian.tar.xz 89972 SHA256:4fc846b2ec69b2809832f6e29535873b000c2bcb682fe831d07038f6c187840c
+```
 
 ### `dpkg` source package: `p11-kit=0.23.9-2`
 
