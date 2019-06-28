@@ -2,8 +2,8 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:877a53569182c1c7b77de9624b27d7c2d77912c2cb5ba11a12e82d80d676fe01`
-- Created: `2019-06-11T00:43:32.79190867Z`
+- Image ID: `sha256:f1c13927d193a35037d7776a0aeae96c30ba7aae5a22f7f1d424b992da1a0b00`
+- Created: `2019-06-27T23:02:09.299625628Z`
 - Virtual Size: ~ 869.93 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
@@ -988,9 +988,10 @@ Other potentially useful URLs:
 Binary Packages:
 
 - `dpkg=1.18.25`
+- `dpkg-dev=1.18.25`
 - `libdpkg-perl=1.18.25`
 
-Licenses: (parsed from: `/usr/share/doc/dpkg/copyright`, `/usr/share/doc/libdpkg-perl/copyright`)
+Licenses: (parsed from: `/usr/share/doc/dpkg/copyright`, `/usr/share/doc/dpkg-dev/copyright`, `/usr/share/doc/libdpkg-perl/copyright`)
 
 - `BSD-2-clause`
 - `GPL-2`
@@ -1368,9 +1369,10 @@ Other potentially useful URLs:
 
 Binary Packages:
 
+- `libgdbm-dev:amd64=1.8.3-14`
 - `libgdbm3:amd64=1.8.3-14`
 
-Licenses: (parsed from: `/usr/share/doc/libgdbm3/copyright`)
+Licenses: (parsed from: `/usr/share/doc/libgdbm-dev/copyright`, `/usr/share/doc/libgdbm3/copyright`)
 
 - `GPL-2`
 
