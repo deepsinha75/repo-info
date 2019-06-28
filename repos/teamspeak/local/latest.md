@@ -1,10 +1,10 @@
-# `teamspeak:3.8`
+# `teamspeak:3.9`
 
 ## Docker Metadata
 
-- Image ID: `sha256:ba17568266d3a2743b1377fc3b84785e45568d54bde2080bb9418d089e5edeff`
-- Created: `2019-05-28T23:24:13.457385065Z`
-- Virtual Size: ~ 21.87 Mb  
+- Image ID: `sha256:ae58fc66bffe5f7577fc4ec30704c7b16ea1881f397fe19f9059cb90a7da5d96`
+- Created: `2019-06-25T20:15:44.17989466Z`
+- Virtual Size: ~ 21.95 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["entrypoint.sh"]`
