@@ -1,10 +1,10 @@
-# `websphere-liberty:19.0.0.5-webProfile7`
+# `websphere-liberty:webProfile7`
 
 ## Docker Metadata
 
-- Image ID: `sha256:3f7a7d5a1d3d3537c786e3f400bf7cb0d6a091c10a488b11cdd1133c92c957d1`
-- Created: `2019-06-19T04:28:23.173625399Z`
-- Virtual Size: ~ 455.05 Mb  
+- Image ID: `sha256:c2f16a5845972c1ef81b0a07b327bdcf97998f5a6b056315fee56f50d15be15e`
+- Created: `2019-06-25T20:13:23.984827913Z`
+- Virtual Size: ~ 455.29 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["/opt/ibm/helpers/runtime/docker-server.sh"]`
@@ -14,22 +14,22 @@
   - `JAVA_VERSION=1.8.0_sr5fp36`
   - `JAVA_HOME=/opt/ibm/java/jre`
   - `IBM_JAVA_OPTIONS=-Xshareclasses:name=liberty,nonfatal,cacheDir=/output/.classCache/ -XX:+UseContainerSupport`
-  - `LIBERTY_VERSION=19.0.0_05`
+  - `LIBERTY_VERSION=19.0.0_06`
   - `LOG_DIR=/logs`
   - `WLP_OUTPUT_DIR=/opt/ibm/wlp/output`
   - `RANDFILE=/tmp/.rnd`
   - `KEYSTORE_REQUIRED=true`
 - Labels:
-  - `BuildLabel=cl190520190522-2227`
+  - `BuildLabel=cl190620190617-1530`
   - `ProductID=fbf6a96d49214c0abc6a3bc5da6e48cd`
   - `ProductName=WebSphere Application Server Liberty`
-  - `ProductVersion=19.0.0.5`
+  - `ProductVersion=19.0.0.6`
   - `org.opencontainers.image.authors=Arthur De Magalhaes, Andy Naumann`
   - `org.opencontainers.image.documentation=https://www.ibm.com/support/knowledgecenter/SSAW57_liberty/com.ibm.websphere.wlp.nd.multiplatform.doc/ae/cwlp_about.html`
-  - `org.opencontainers.image.revision=cl190520190522-2227`
+  - `org.opencontainers.image.revision=cl190620190617-1530`
   - `org.opencontainers.image.url=http://wasdev.net`
   - `org.opencontainers.image.vendor=IBM`
-  - `org.opencontainers.image.version=19.0.0.5`
+  - `org.opencontainers.image.version=19.0.0.6`
 
 ## `dpkg` (`.deb`-based packages)
 
