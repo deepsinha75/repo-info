@@ -2049,19 +2049,13 @@ Licenses: (parsed from: `/usr/share/doc/libpaper-utils/copyright`, `/usr/share/d
 
 - `GPL-2`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris libpaper=1.1.26
-'http://deb.debian.org/debian/pool/main/libp/libpaper/libpaper_1.1.26.dsc' libpaper_1.1.26.dsc 1604 SHA256:ccc3995316d28e35f301f0374b65c035ac3007d3f370d816a3dcedc95ad0b6fb
-'http://deb.debian.org/debian/pool/main/libp/libpaper/libpaper_1.1.26.tar.gz' libpaper_1.1.26.tar.gz 42304 SHA256:a6950b67df66a53e974ffe0baec9a52775b909dd2c51497139af2af4e46519b1
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/libpaper/1.1.26/
 
-- https://sources.debian.net/src/libpaper/1.1.26/ (for browsing the source)
-- https://sources.debian.net/src/libpaper/1.1.26/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/libpaper/1.1.26/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `libpng1.6=1.6.36-6`
 
@@ -3330,14 +3324,13 @@ Licenses: (parsed from: `/usr/share/doc/r-base/copyright`, `/usr/share/doc/r-bas
 - `LGPL-2.1`
 - `LGPL-3`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris r-base=3.6.0-2
-'http://http.debian.net/debian/pool/main/r/r-base/r-base_3.6.0-2.dsc' r-base_3.6.0-2.dsc 3008 SHA256:c17181ea9105798a65f467488923e6ae0b0fa4a4d6d8446ce0a247c406439323
-'http://http.debian.net/debian/pool/main/r/r-base/r-base_3.6.0.orig.tar.gz' r-base_3.6.0.orig.tar.gz 30449618 SHA256:36fcac3e452666158e62459c6fc810adc247c7109ed71c5b6c3ad5fc2bf57509
-'http://http.debian.net/debian/pool/main/r/r-base/r-base_3.6.0-2.debian.tar.xz' r-base_3.6.0-2.debian.tar.xz 95464 SHA256:5a18bc5c0b71ce78326bc9a3ff79156eb11ea15a0321ab3b097b1e11a1d2c1bf
-```
+The source package *may* still be available for download from:
+
+- http://snapshot.debian.org/package/r-base/3.6.0-2/
+
 
 ### `dpkg` source package: `r-cran-class=7.3-15-1`
 
