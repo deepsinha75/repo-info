@@ -1,17 +1,17 @@
-# `consul:1.5.1`
+# `consul:1.5.2`
 
 ## Docker Metadata
 
-- Image ID: `sha256:f136343b75e00664a7aa4c477a6d1e7b40a9708610fb6e483e884e0cce691599`
-- Created: `2019-05-23T22:20:02.379676749Z`
-- Virtual Size: ~ 112.52 Mb  
+- Image ID: `sha256:7d52b83f718fbd487246da5f655b048a2078cfb8d21fb6b06539608a3961dcba`
+- Created: `2019-06-28T01:36:35.522558172Z`
+- Virtual Size: ~ 115.46 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["docker-entrypoint.sh"]`
 - Command: `["agent","-dev","-client","0.0.0.0"]`
 - Environment:
   - `PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
-  - `CONSUL_VERSION=1.5.1`
+  - `CONSUL_VERSION=1.5.2`
   - `HASHICORP_RELEASES=https://releases.hashicorp.com`
 
 ## `apk` (`.apk`-based packages)
@@ -121,16 +121,16 @@ MPL-2.0 GPL-2.0-or-later
 ### `apk` package: `curl`
 
 ```console
-curl-7.64.0-r1 description:
+curl-7.64.0-r2 description:
 URL retrival utility and library
 
-curl-7.64.0-r1 webpage:
+curl-7.64.0-r2 webpage:
 https://curl.haxx.se
 
-curl-7.64.0-r1 installed size:
+curl-7.64.0-r2 installed size:
 233472
 
-curl-7.64.0-r1 license:
+curl-7.64.0-r2 license:
 MIT
 
 ```
@@ -240,16 +240,16 @@ OpenSSL
 ### `apk` package: `libcurl`
 
 ```console
-libcurl-7.64.0-r1 description:
+libcurl-7.64.0-r2 description:
 The multiprotocol file transfer library
 
-libcurl-7.64.0-r1 webpage:
+libcurl-7.64.0-r2 webpage:
 https://curl.haxx.se
 
-libcurl-7.64.0-r1 installed size:
+libcurl-7.64.0-r2 installed size:
 487424
 
-libcurl-7.64.0-r1 license:
+libcurl-7.64.0-r2 license:
 MIT
 
 ```
