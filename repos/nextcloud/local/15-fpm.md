@@ -2,9 +2,9 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:073a15cdaac5f15e69aa8b155a328541750a1321bd374a82bbcfe7e6a35a9270`
-- Created: `2019-06-24T23:20:14.578212376Z`
-- Virtual Size: ~ 586.97 Mb  
+- Image ID: `sha256:a13609892f3a0e0a1b28192a1993e1a52b183d0f321677dbeb602ae28f643200`
+- Created: `2019-06-28T02:40:34.819855483Z`
+- Virtual Size: ~ 587.38 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["/entrypoint.sh"]`
@@ -2094,6 +2094,31 @@ Other potentially useful URLs:
 - https://sources.debian.net/src/libunistring/0.9.6+really0.9.3-0.1/ (for browsing the source)
 - https://sources.debian.net/src/libunistring/0.9.6+really0.9.3-0.1/debian/copyright/ (for direct copyright/license information)
 - http://snapshot.debian.org/package/libunistring/0.9.6+really0.9.3-0.1/ (for access to the source package after it no longer exists in the archive)
+
+### `dpkg` source package: `libwebp=0.5.2-1`
+
+Binary Packages:
+
+- `libwebp6:amd64=0.5.2-1`
+
+Licenses: (parsed from: `/usr/share/doc/libwebp6/copyright`)
+
+- `Apache-2.0`
+
+Source:
+
+```console
+$ apt-get source -qq --print-uris libwebp=0.5.2-1
+'http://deb.debian.org/debian/pool/main/libw/libwebp/libwebp_0.5.2-1.dsc' libwebp_0.5.2-1.dsc 2065 SHA256:307e845401cbfa71a0b32c213046cca0253a66c4ca71a9bc126ff65ee2bee1c1
+'http://deb.debian.org/debian/pool/main/libw/libwebp/libwebp_0.5.2.orig.tar.gz' libwebp_0.5.2.orig.tar.gz 1221153 SHA256:b75310c810b3eda222c77f6d6c26b061240e3d9060095de44b2c1bae291ecdef
+'http://deb.debian.org/debian/pool/main/libw/libwebp/libwebp_0.5.2-1.debian.tar.xz' libwebp_0.5.2-1.debian.tar.xz 5404 SHA256:0b7b36a7212e9bbeba5c61bbf3c78ca08f96e700058fbc9ea6835050e1936448
+```
+
+Other potentially useful URLs:
+
+- https://sources.debian.net/src/libwebp/0.5.2-1/ (for browsing the source)
+- https://sources.debian.net/src/libwebp/0.5.2-1/debian/copyright/ (for direct copyright/license information)
+- http://snapshot.debian.org/package/libwebp/0.5.2-1/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `libx11=2:1.6.4-3+deb9u1`
 

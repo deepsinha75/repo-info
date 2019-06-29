@@ -2,9 +2,9 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:2cb5141e91dab68f6b3cb7c554fe38dc817ff1236d617a06147e5d2792f5644a`
-- Created: `2019-06-24T23:20:10.802864387Z`
-- Virtual Size: ~ 320.68 Mb  
+- Image ID: `sha256:6b8a1c4f58e727d2ab15aad423ae2077fe4ba1d49a10db66bfd26b4e7b7e5a5b`
+- Created: `2019-06-28T07:43:43.292529649Z`
+- Virtual Size: ~ 321.25 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["/entrypoint.sh"]`
@@ -81,16 +81,16 @@ GPL2
 ### `apk` package: `argon2-libs`
 
 ```console
-argon2-libs-20171227-r1 description:
+argon2-libs-20171227-r2 description:
 The password hash Argon2, winner of PHC (libraries)
 
-argon2-libs-20171227-r1 webpage:
+argon2-libs-20171227-r2 webpage:
 https://github.com/P-H-C/phc-winner-argon2
 
-argon2-libs-20171227-r1 installed size:
+argon2-libs-20171227-r2 installed size:
 49152
 
-argon2-libs-20171227-r1 license:
+argon2-libs-20171227-r2 license:
 Apache-2.0 CC0-1.0
 
 ```
@@ -653,6 +653,23 @@ libuuid-2.33-r0 installed size:
 
 libuuid-2.33-r0 license:
 GPL-2.0 GPL-2.0-or-later LGPL-2.0-or-later BSD Public-Domain
+
+```
+
+### `apk` package: `libwebp`
+
+```console
+libwebp-1.0.1-r0 description:
+Libraries for working with WebP images
+
+libwebp-1.0.1-r0 webpage:
+https://developers.google.com/speed/webp
+
+libwebp-1.0.1-r0 installed size:
+589824
+
+libwebp-1.0.1-r0 license:
+BSD-3-Clause
 
 ```
 

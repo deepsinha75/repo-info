@@ -2,9 +2,9 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:575aeac6000cb4a9a2001cc6e08f0b29db8304ee128a1026f585c9874ec5a22c`
-- Created: `2019-06-24T23:20:02.89489744Z`
-- Virtual Size: ~ 579.44 Mb  
+- Image ID: `sha256:f4c42161af8f9da1002a72c0a367a83100808ab3fce6cd7872a9900d2ff4ae31`
+- Created: `2019-06-28T07:36:09.079316295Z`
+- Virtual Size: ~ 579.84 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["/entrypoint.sh"]`
@@ -2095,6 +2095,31 @@ Other potentially useful URLs:
 - https://sources.debian.net/src/libunistring/0.9.6+really0.9.3-0.1/debian/copyright/ (for direct copyright/license information)
 - http://snapshot.debian.org/package/libunistring/0.9.6+really0.9.3-0.1/ (for access to the source package after it no longer exists in the archive)
 
+### `dpkg` source package: `libwebp=0.5.2-1`
+
+Binary Packages:
+
+- `libwebp6:amd64=0.5.2-1`
+
+Licenses: (parsed from: `/usr/share/doc/libwebp6/copyright`)
+
+- `Apache-2.0`
+
+Source:
+
+```console
+$ apt-get source -qq --print-uris libwebp=0.5.2-1
+'http://deb.debian.org/debian/pool/main/libw/libwebp/libwebp_0.5.2-1.dsc' libwebp_0.5.2-1.dsc 2065 SHA256:307e845401cbfa71a0b32c213046cca0253a66c4ca71a9bc126ff65ee2bee1c1
+'http://deb.debian.org/debian/pool/main/libw/libwebp/libwebp_0.5.2.orig.tar.gz' libwebp_0.5.2.orig.tar.gz 1221153 SHA256:b75310c810b3eda222c77f6d6c26b061240e3d9060095de44b2c1bae291ecdef
+'http://deb.debian.org/debian/pool/main/libw/libwebp/libwebp_0.5.2-1.debian.tar.xz' libwebp_0.5.2-1.debian.tar.xz 5404 SHA256:0b7b36a7212e9bbeba5c61bbf3c78ca08f96e700058fbc9ea6835050e1936448
+```
+
+Other potentially useful URLs:
+
+- https://sources.debian.net/src/libwebp/0.5.2-1/ (for browsing the source)
+- https://sources.debian.net/src/libwebp/0.5.2-1/debian/copyright/ (for direct copyright/license information)
+- http://snapshot.debian.org/package/libwebp/0.5.2-1/ (for access to the source package after it no longer exists in the archive)
+
 ### `dpkg` source package: `libx11=2:1.6.4-3+deb9u1`
 
 Binary Packages:
@@ -2246,11 +2271,11 @@ Other potentially useful URLs:
 - https://sources.debian.net/src/libxml2/2.9.4+dfsg1-2.2+deb9u2/debian/copyright/ (for direct copyright/license information)
 - http://snapshot.debian.org/package/libxml2/2.9.4+dfsg1-2.2+deb9u2/ (for access to the source package after it no longer exists in the archive)
 
-### `dpkg` source package: `linux=4.9.168-1+deb9u2`
+### `dpkg` source package: `linux=4.9.168-1+deb9u3`
 
 Binary Packages:
 
-- `linux-libc-dev:amd64=4.9.168-1+deb9u2`
+- `linux-libc-dev:amd64=4.9.168-1+deb9u3`
 
 Licenses: (parsed from: `/usr/share/doc/linux-libc-dev/copyright`)
 
@@ -2260,13 +2285,20 @@ Licenses: (parsed from: `/usr/share/doc/linux-libc-dev/copyright`)
 - `Unicode-data`
 - `Xen-interface`
 
-**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
-This is *usually* due to a new package version being released and the old version being removed.
+Source:
 
-The source package *may* still be available for download from:
+```console
+$ apt-get source -qq --print-uris linux=4.9.168-1+deb9u3
+'http://security.debian.org/debian-security/pool/updates/main/l/linux/linux_4.9.168-1+deb9u3.dsc' linux_4.9.168-1+deb9u3.dsc 123228 SHA256:387ac7cf647ff9b6e28cb92cf80f0ad3d390bc4ca24b24586c62ca86aeb5e39a
+'http://security.debian.org/debian-security/pool/updates/main/l/linux/linux_4.9.168.orig.tar.xz' linux_4.9.168.orig.tar.xz 94774584 SHA256:8a2c04045b47472584fc8e72d8663b5c720b8ba5efba878f48ddba93bac29a7f
+'http://security.debian.org/debian-security/pool/updates/main/l/linux/linux_4.9.168-1+deb9u3.debian.tar.xz' linux_4.9.168-1+deb9u3.debian.tar.xz 2749392 SHA256:1157d6ff3934675897a590ad5a87f463d8e96604cd31aed7c4bbb601c029103c
+```
 
-- http://snapshot.debian.org/package/linux/4.9.168-1+deb9u2/
+Other potentially useful URLs:
 
+- https://sources.debian.net/src/linux/4.9.168-1+deb9u3/ (for browsing the source)
+- https://sources.debian.net/src/linux/4.9.168-1+deb9u3/debian/copyright/ (for direct copyright/license information)
+- http://snapshot.debian.org/package/linux/4.9.168-1+deb9u3/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `lsb=9.20161125`
 
