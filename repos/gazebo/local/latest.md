@@ -5364,14 +5364,9 @@ Licenses: (parsed from: `/usr/share/doc/linux-libc-dev/copyright`)
 
 - `GPL-2`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris linux=4.15.0-52.56
-'http://archive.ubuntu.com/ubuntu/pool/main/l/linux/linux_4.15.0-52.56.dsc' linux_4.15.0-52.56.dsc 6909 SHA256:46da6cc23e0e9e4ae8d0ac888584a95034d97562682700b293d61d13c874694c
-'http://archive.ubuntu.com/ubuntu/pool/main/l/linux/linux_4.15.0.orig.tar.gz' linux_4.15.0.orig.tar.gz 157656459 SHA256:c33b8ba5c45a40b689979caa2421c4d933864cd70eb93c00eb69adf43e9a24fc
-'http://archive.ubuntu.com/ubuntu/pool/main/l/linux/linux_4.15.0-52.56.diff.gz' linux_4.15.0-52.56.diff.gz 8799794 SHA256:1ced1739a5c7b50747ff1e88dfdf6e50414023b22c66385410b2084f3f265068
-```
 
 ### `dpkg` source package: `llvm-toolchain-7=1:7-3~ubuntu0.18.04.1`
 
@@ -6529,14 +6524,9 @@ Licenses: (parsed from: `/usr/share/doc/libpoppler-dev/copyright`, `/usr/share/d
 
 - `GPL-2`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris poppler=0.62.0-2ubuntu2.8
-'http://archive.ubuntu.com/ubuntu/pool/main/p/poppler/poppler_0.62.0-2ubuntu2.8.dsc' poppler_0.62.0-2ubuntu2.8.dsc 3354 SHA256:0ef55e0b5aad419026f6dd0bf67bf4bf453b147844ed4bf2d18920305d453cd7
-'http://archive.ubuntu.com/ubuntu/pool/main/p/poppler/poppler_0.62.0.orig.tar.xz' poppler_0.62.0.orig.tar.xz 1423372 SHA256:5b9a73dfd4d6f61d165ada1e4f0abd2d420494bf9d0b1c15d0db3f7b83a729c6
-'http://archive.ubuntu.com/ubuntu/pool/main/p/poppler/poppler_0.62.0-2ubuntu2.8.debian.tar.xz' poppler_0.62.0-2ubuntu2.8.debian.tar.xz 39736 SHA256:03135c87c77249369d286d954f055c5230e4cd07e55c6755a4a336c2056f0856
-```
 
 ### `dpkg` source package: `postgresql-10=10.8-0ubuntu0.18.04.1`
 
