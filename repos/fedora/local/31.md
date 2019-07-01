@@ -26,8 +26,6 @@ Source:
 
 ```console
 $ yumdownloader --quiet --source --urls acl-2.2.53-3.fc30
-http://mirror.stavlor.net/pub/fedora/linux/development/rawhide/Everything/x86_64/os/repodata/repomd.xml: [Errno 12] Timeout on http://mirror.stavlor.net/pub/fedora/linux/development/rawhide/Everything/x86_64/os/repodata/repomd.xml: (28, 'Connection timed out after 30001 milliseconds')
-Trying other mirror.
 Enabling rawhide-source repository
 Enabling rawhide-modular-source repository
 https://d2lzkl7pfhq30w.cloudfront.net/pub/fedora/linux/development/rawhide/Everything/source/tree//Packages/a/acl-2.2.53-3.fc30.src.rpm
