@@ -4258,20 +4258,13 @@ Licenses: (parsed from: `/usr/share/doc/patch/copyright`)
 
 - `GPL`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris patch=2.7.6-3
-'http://deb.debian.org/debian/pool/main/p/patch/patch_2.7.6-3.dsc' patch_2.7.6-3.dsc 1699 SHA256:c84154893834d07a13a760f9be4e7c8fbced41bdb1157db1140c880a90a7c72a
-'http://deb.debian.org/debian/pool/main/p/patch/patch_2.7.6.orig.tar.xz' patch_2.7.6.orig.tar.xz 783756 SHA256:ac610bda97abe0d9f6b7c963255a11dcb196c25e337c61f94e4778d632f1d8fd
-'http://deb.debian.org/debian/pool/main/p/patch/patch_2.7.6-3.debian.tar.xz' patch_2.7.6-3.debian.tar.xz 10608 SHA256:f48c3001906a954b3ea0ff1a6ad347172f1e3453620377d7f1427b62474b047b
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/patch/2.7.6-3/
 
-- https://sources.debian.net/src/patch/2.7.6-3/ (for browsing the source)
-- https://sources.debian.net/src/patch/2.7.6-3/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/patch/2.7.6-3/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `pcre2=10.32-5`
 
