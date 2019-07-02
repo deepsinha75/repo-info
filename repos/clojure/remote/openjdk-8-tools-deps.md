@@ -1,7 +1,7 @@
 ## `clojure:openjdk-8-tools-deps`
 
 ```console
-$ docker pull clojure@sha256:729a6eff9a96a7239a2fed408652e379b52755b14769f7aa686c26306ba19017
+$ docker pull clojure@sha256:124bf76c76814d76d9e1e68c5b3357e01860b14e3a06abffe2af9f4436a81fff
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -525,14 +525,14 @@ CMD ["sh" "-c" "sleep 1 && exec clj"]
 ### `clojure:openjdk-8-tools-deps` - linux; ppc64le
 
 ```console
-$ docker pull clojure@sha256:36ff4f222f98570682ac8c07b68dbb540b9decdf19e99b0ddca6f09fd508969d
+$ docker pull clojure@sha256:a97a4c71cbcbc767fb7eb4aa1d06bd27ad0dee1192001d93317ae525f1290c6b
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **272.6 MB (272598605 bytes)**  
+-	Total Size: **272.6 MB (272605631 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:74cf746745ac58eada114f69fc74347b1086fc9fad45090afdc4728d60ab1b31`
+-	Image ID: `sha256:c9a8005d5c97f2d364e3dc62026bdfbb5f6c9e2c347a62ac84e2b5ef6c63d300`
 -	Default Command: `["sh","-c","sleep 1 && exec clj"]`
 
 ```dockerfile
@@ -562,19 +562,19 @@ ENV JAVA_VERSION=8u212
 ENV JAVA_DEBIAN_VERSION=8u212-b01-1~deb9u1
 # Wed, 08 May 2019 12:54:27 GMT
 RUN set -ex; 		if [ ! -d /usr/share/man/man1 ]; then 		mkdir -p /usr/share/man/man1; 	fi; 		apt-get update; 	apt-get install -y --no-install-recommends 		openjdk-8-jdk="$JAVA_DEBIAN_VERSION" 	; 	rm -rf /var/lib/apt/lists/*; 		[ "$(readlink -f "$JAVA_HOME")" = "$(docker-java-home)" ]; 		update-alternatives --get-selections | awk -v home="$(readlink -f "$JAVA_HOME")" 'index($3, home) == 1 { $2 = "manual"; print | "update-alternatives --set-selections" }'; 	update-alternatives --query java | grep -q 'Status: manual'
-# Wed, 08 May 2019 22:00:55 GMT
+# Tue, 02 Jul 2019 14:36:37 GMT
 LABEL maintainer=Kirill Chernyshov <delaguardo@gmail.com>
-# Wed, 08 May 2019 22:01:02 GMT
+# Tue, 02 Jul 2019 14:36:40 GMT
 ENV CLOJURE_VERSION=1.10.0.442
-# Wed, 08 May 2019 22:01:09 GMT
+# Tue, 02 Jul 2019 14:36:46 GMT
 WORKDIR /tmp
-# Wed, 08 May 2019 22:02:12 GMT
+# Tue, 02 Jul 2019 14:37:15 GMT
 RUN apt-get update && apt-get install -y rlwrap
-# Wed, 08 May 2019 22:02:54 GMT
+# Tue, 02 Jul 2019 14:37:51 GMT
 RUN wget https://download.clojure.org/install/linux-install-$CLOJURE_VERSION.sh     && chmod +x linux-install-$CLOJURE_VERSION.sh     && ./linux-install-$CLOJURE_VERSION.sh
-# Wed, 08 May 2019 22:03:27 GMT
+# Tue, 02 Jul 2019 14:38:15 GMT
 RUN clojure -e "(clojure-version)"
-# Wed, 08 May 2019 22:03:32 GMT
+# Tue, 02 Jul 2019 14:38:19 GMT
 CMD ["sh" "-c" "sleep 1 && exec clj"]
 ```
 
@@ -611,17 +611,17 @@ CMD ["sh" "-c" "sleep 1 && exec clj"]
 		Last Modified: Wed, 08 May 2019 13:19:01 GMT  
 		Size: 125.1 MB (125136529 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:dbac1389e8340bac6b88f715a029e38ffbd6b23366c532dfcad063d3ea0f55e7`  
-		Last Modified: Wed, 08 May 2019 22:11:01 GMT  
-		Size: 12.7 MB (12741184 bytes)  
+	-	`sha256:57cb6ef01bc0667a67edd90e6b28be4dbb68b12f6eaf93cbbc5b581cd41d72ea`  
+		Last Modified: Tue, 02 Jul 2019 14:45:49 GMT  
+		Size: 12.7 MB (12748204 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:ad600519f699be85db4a0f7a90bc8afd4130f32ee849d67d520eaf6fc1fd262f`  
-		Last Modified: Wed, 08 May 2019 22:10:57 GMT  
-		Size: 19.8 MB (19768853 bytes)  
+	-	`sha256:544625e5a46cbc6576dbbbd8ad794b981ef72a45dd516624aaa26cddde75ff01`  
+		Last Modified: Tue, 02 Jul 2019 14:45:49 GMT  
+		Size: 19.8 MB (19768871 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:dd2290ed7dd1a9cdddd6444ea5c9c72236047efbff365cf6ed9b896a7cb7e14a`  
-		Last Modified: Wed, 08 May 2019 22:10:54 GMT  
-		Size: 4.1 MB (4102799 bytes)  
+	-	`sha256:4e7cb91047bea27016b85bcdba35f685fd3417b02edb04afbb9b1ac575790a0e`  
+		Last Modified: Tue, 02 Jul 2019 14:45:47 GMT  
+		Size: 4.1 MB (4102787 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `clojure:openjdk-8-tools-deps` - linux; s390x
