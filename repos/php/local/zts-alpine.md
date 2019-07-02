@@ -1,10 +1,10 @@
-# `php:7.3.6-zts-alpine3.9`
+# `php:7.3.6-zts-alpine3.10`
 
 ## Docker Metadata
 
-- Image ID: `sha256:06aac5c9cfef8af84f5793f9358eac73f22265feeb7b2d2c4f5e26d384eb19a5`
-- Created: `2019-06-17T22:06:51.919086554Z`
-- Virtual Size: ~ 65.20 Mb  
+- Image ID: `sha256:76ee6035cdbc118afeec577fdad56e6a609b532fb84b35c41ed13563babf1d2b`
+- Created: `2019-06-28T02:36:14.623319526Z`
+- Virtual Size: ~ 64.62 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["docker-php-entrypoint"]`
@@ -29,33 +29,33 @@
 ### `apk` package: `alpine-baselayout`
 
 ```console
-alpine-baselayout-3.1.0-r3 description:
+alpine-baselayout-3.1.2-r0 description:
 Alpine base dir structure and init scripts
 
-alpine-baselayout-3.1.0-r3 webpage:
+alpine-baselayout-3.1.2-r0 webpage:
 https://git.alpinelinux.org/cgit/aports/tree/main/alpine-baselayout
 
-alpine-baselayout-3.1.0-r3 installed size:
-409600
+alpine-baselayout-3.1.2-r0 installed size:
+405504
 
-alpine-baselayout-3.1.0-r3 license:
-GPL-2.0
+alpine-baselayout-3.1.2-r0 license:
+GPL-2.0-only
 
 ```
 
 ### `apk` package: `alpine-keys`
 
 ```console
-alpine-keys-2.1-r1 description:
+alpine-keys-2.1-r2 description:
 Public keys for Alpine Linux packages
 
-alpine-keys-2.1-r1 webpage:
-http://alpinelinux.org
+alpine-keys-2.1-r2 webpage:
+https://alpinelinux.org
 
-alpine-keys-2.1-r1 installed size:
+alpine-keys-2.1-r2 installed size:
 98304
 
-alpine-keys-2.1-r1 license:
+alpine-keys-2.1-r2 license:
 MIT
 
 ```
@@ -63,16 +63,16 @@ MIT
 ### `apk` package: `apk-tools`
 
 ```console
-apk-tools-2.10.3-r1 description:
+apk-tools-2.10.4-r1 description:
 Alpine Package Keeper - package manager for alpine
 
-apk-tools-2.10.3-r1 webpage:
+apk-tools-2.10.4-r1 webpage:
 https://git.alpinelinux.org/cgit/apk-tools/
 
-apk-tools-2.10.3-r1 installed size:
+apk-tools-2.10.4-r1 installed size:
 262144
 
-apk-tools-2.10.3-r1 license:
+apk-tools-2.10.4-r1 license:
 GPL2
 
 ```
@@ -80,16 +80,16 @@ GPL2
 ### `apk` package: `argon2-libs`
 
 ```console
-argon2-libs-20171227-r1 description:
+argon2-libs-20171227-r2 description:
 The password hash Argon2, winner of PHC (libraries)
 
-argon2-libs-20171227-r1 webpage:
+argon2-libs-20171227-r2 webpage:
 https://github.com/P-H-C/phc-winner-argon2
 
-argon2-libs-20171227-r1 installed size:
-49152
+argon2-libs-20171227-r2 installed size:
+53248
 
-argon2-libs-20171227-r1 license:
+argon2-libs-20171227-r2 license:
 Apache-2.0 CC0-1.0
 
 ```
@@ -97,16 +97,16 @@ Apache-2.0 CC0-1.0
 ### `apk` package: `busybox`
 
 ```console
-busybox-1.29.3-r10 description:
+busybox-1.30.1-r2 description:
 Size optimized toolbox of many common UNIX utilities
 
-busybox-1.29.3-r10 webpage:
-http://busybox.net
+busybox-1.30.1-r2 webpage:
+https://busybox.net/
 
-busybox-1.29.3-r10 installed size:
-905216
+busybox-1.30.1-r2 installed size:
+942080
 
-busybox-1.29.3-r10 license:
+busybox-1.30.1-r2 license:
 GPL-2.0
 
 ```
@@ -148,16 +148,16 @@ MPL-2.0 GPL-2.0-or-later
 ### `apk` package: `curl`
 
 ```console
-curl-7.64.0-r1 description:
+curl-7.65.1-r0 description:
 URL retrival utility and library
 
-curl-7.64.0-r1 webpage:
-https://curl.haxx.se
+curl-7.65.1-r0 webpage:
+https://curl.haxx.se/
 
-curl-7.64.0-r1 installed size:
-233472
+curl-7.65.1-r0 installed size:
+225280
 
-curl-7.64.0-r1 license:
+curl-7.65.1-r0 license:
 MIT
 
 ```
@@ -182,16 +182,16 @@ BSD
 ### `apk` package: `libcrypto1.1`
 
 ```console
-libcrypto1.1-1.1.1b-r1 description:
+libcrypto1.1-1.1.1c-r0 description:
 Crypto library from openssl
 
-libcrypto1.1-1.1.1b-r1 webpage:
+libcrypto1.1-1.1.1c-r0 webpage:
 https://www.openssl.org
 
-libcrypto1.1-1.1.1b-r1 installed size:
-2748416
+libcrypto1.1-1.1.1c-r0 installed size:
+2760704
 
-libcrypto1.1-1.1.1b-r1 license:
+libcrypto1.1-1.1.1c-r0 license:
 OpenSSL
 
 ```
@@ -199,16 +199,16 @@ OpenSSL
 ### `apk` package: `libcurl`
 
 ```console
-libcurl-7.64.0-r2 description:
+libcurl-7.65.1-r0 description:
 The multiprotocol file transfer library
 
-libcurl-7.64.0-r2 webpage:
-https://curl.haxx.se
+libcurl-7.65.1-r0 webpage:
+https://curl.haxx.se/
 
-libcurl-7.64.0-r2 installed size:
-487424
+libcurl-7.65.1-r0 installed size:
+450560
 
-libcurl-7.64.0-r2 license:
+libcurl-7.65.1-r0 license:
 MIT
 
 ```
@@ -216,16 +216,16 @@ MIT
 ### `apk` package: `libedit`
 
 ```console
-libedit-20181209.3.1-r0 description:
+libedit-20190324.3.1-r0 description:
 BSD line editing library
 
-libedit-20181209.3.1-r0 webpage:
+libedit-20190324.3.1-r0 webpage:
 https://www.thrysoee.dk/editline
 
-libedit-20181209.3.1-r0 installed size:
+libedit-20190324.3.1-r0 installed size:
 200704
 
-libedit-20181209.3.1-r0 license:
+libedit-20190324.3.1-r0 license:
 BSD-3-Clause
 
 ```
@@ -233,50 +233,33 @@ BSD-3-Clause
 ### `apk` package: `libsodium`
 
 ```console
-libsodium-1.0.16-r0 description:
+libsodium-1.0.18-r0 description:
 P(ortable|ackageable) NaCl-based crypto library
 
-libsodium-1.0.16-r0 webpage:
+libsodium-1.0.18-r0 webpage:
 https://github.com/jedisct1/libsodium
 
-libsodium-1.0.16-r0 installed size:
-327680
+libsodium-1.0.18-r0 installed size:
+344064
 
-libsodium-1.0.16-r0 license:
+libsodium-1.0.18-r0 license:
 ISC
-
-```
-
-### `apk` package: `libssh2`
-
-```console
-libssh2-1.8.2-r0 description:
-library for accessing ssh1/ssh2 protocol servers
-
-libssh2-1.8.2-r0 webpage:
-https://libssh2.org/
-
-libssh2-1.8.2-r0 installed size:
-180224
-
-libssh2-1.8.2-r0 license:
-BSD
 
 ```
 
 ### `apk` package: `libssl1.1`
 
 ```console
-libssl1.1-1.1.1b-r1 description:
+libssl1.1-1.1.1c-r0 description:
 SSL shared libraries
 
-libssl1.1-1.1.1b-r1 webpage:
+libssl1.1-1.1.1c-r0 webpage:
 https://www.openssl.org
 
-libssl1.1-1.1.1b-r1 installed size:
+libssl1.1-1.1.1c-r0 installed size:
 536576
 
-libssl1.1-1.1.1b-r1 license:
+libssl1.1-1.1.1c-r0 license:
 OpenSSL
 
 ```
@@ -284,16 +267,16 @@ OpenSSL
 ### `apk` package: `libtls-standalone`
 
 ```console
-libtls-standalone-2.7.4-r6 description:
+libtls-standalone-2.9.1-r0 description:
 libtls extricated from libressl sources
 
-libtls-standalone-2.7.4-r6 webpage:
-http://www.libressl.org/
+libtls-standalone-2.9.1-r0 webpage:
+https://www.libressl.org/
 
-libtls-standalone-2.7.4-r6 installed size:
+libtls-standalone-2.9.1-r0 installed size:
 110592
 
-libtls-standalone-2.7.4-r6 license:
+libtls-standalone-2.9.1-r0 license:
 ISC
 
 ```
@@ -301,16 +284,16 @@ ISC
 ### `apk` package: `libxml2`
 
 ```console
-libxml2-2.9.9-r1 description:
+libxml2-2.9.9-r2 description:
 XML parsing library, version 2
 
-libxml2-2.9.9-r1 webpage:
+libxml2-2.9.9-r2 webpage:
 http://www.xmlsoft.org/
 
-libxml2-2.9.9-r1 installed size:
-1220608
+libxml2-2.9.9-r2 installed size:
+1216512
 
-libxml2-2.9.9-r1 license:
+libxml2-2.9.9-r2 license:
 MIT
 
 ```
@@ -318,16 +301,16 @@ MIT
 ### `apk` package: `musl`
 
 ```console
-musl-1.1.20-r4 description:
+musl-1.1.22-r2 description:
 the musl c library (libc) implementation
 
-musl-1.1.20-r4 webpage:
+musl-1.1.22-r2 webpage:
 http://www.musl-libc.org/
 
-musl-1.1.20-r4 installed size:
-602112
+musl-1.1.22-r2 installed size:
+598016
 
-musl-1.1.20-r4 license:
+musl-1.1.22-r2 license:
 MIT
 
 ```
@@ -335,16 +318,16 @@ MIT
 ### `apk` package: `musl-utils`
 
 ```console
-musl-utils-1.1.20-r4 description:
+musl-utils-1.1.22-r2 description:
 the musl c library (libc) implementation
 
-musl-utils-1.1.20-r4 webpage:
+musl-utils-1.1.22-r2 webpage:
 http://www.musl-libc.org/
 
-musl-utils-1.1.20-r4 installed size:
-139264
+musl-utils-1.1.22-r2 installed size:
+147456
 
-musl-utils-1.1.20-r4 license:
+musl-utils-1.1.22-r2 license:
 MIT BSD GPL2+
 
 ```
@@ -352,16 +335,16 @@ MIT BSD GPL2+
 ### `apk` package: `ncurses-libs`
 
 ```console
-ncurses-libs-6.1_p20190105-r0 description:
+ncurses-libs-6.1_p20190518-r0 description:
 Ncurses libraries
 
-ncurses-libs-6.1_p20190105-r0 webpage:
+ncurses-libs-6.1_p20190518-r0 webpage:
 https://www.gnu.org/software/ncurses/
 
-ncurses-libs-6.1_p20190105-r0 installed size:
-499712
+ncurses-libs-6.1_p20190518-r0 installed size:
+503808
 
-ncurses-libs-6.1_p20190105-r0 license:
+ncurses-libs-6.1_p20190518-r0 license:
 MIT
 
 ```
@@ -369,16 +352,16 @@ MIT
 ### `apk` package: `ncurses-terminfo`
 
 ```console
-ncurses-terminfo-6.1_p20190105-r0 description:
+ncurses-terminfo-6.1_p20190518-r0 description:
 Console display library (other terminfo files)
 
-ncurses-terminfo-6.1_p20190105-r0 webpage:
+ncurses-terminfo-6.1_p20190518-r0 webpage:
 https://www.gnu.org/software/ncurses/
 
-ncurses-terminfo-6.1_p20190105-r0 installed size:
-7274496
+ncurses-terminfo-6.1_p20190518-r0 installed size:
+7307264
 
-ncurses-terminfo-6.1_p20190105-r0 license:
+ncurses-terminfo-6.1_p20190518-r0 license:
 MIT
 
 ```
@@ -386,16 +369,16 @@ MIT
 ### `apk` package: `ncurses-terminfo-base`
 
 ```console
-ncurses-terminfo-base-6.1_p20190105-r0 description:
+ncurses-terminfo-base-6.1_p20190518-r0 description:
 Descriptions of common terminals
 
-ncurses-terminfo-base-6.1_p20190105-r0 webpage:
+ncurses-terminfo-base-6.1_p20190518-r0 webpage:
 https://www.gnu.org/software/ncurses/
 
-ncurses-terminfo-base-6.1_p20190105-r0 installed size:
+ncurses-terminfo-base-6.1_p20190518-r0 installed size:
 94208
 
-ncurses-terminfo-base-6.1_p20190105-r0 license:
+ncurses-terminfo-base-6.1_p20190518-r0 license:
 MIT
 
 ```
@@ -403,16 +386,16 @@ MIT
 ### `apk` package: `nghttp2-libs`
 
 ```console
-nghttp2-libs-1.35.1-r0 description:
+nghttp2-libs-1.38.0-r0 description:
 Experimental HTTP/2 client, server and proxy (libraries)
 
-nghttp2-libs-1.35.1-r0 webpage:
+nghttp2-libs-1.38.0-r0 webpage:
 https://nghttp2.org
 
-nghttp2-libs-1.35.1-r0 installed size:
+nghttp2-libs-1.38.0-r0 installed size:
 155648
 
-nghttp2-libs-1.35.1-r0 license:
+nghttp2-libs-1.38.0-r0 license:
 MIT
 
 ```
@@ -420,16 +403,16 @@ MIT
 ### `apk` package: `openssl`
 
 ```console
-openssl-1.1.1b-r1 description:
+openssl-1.1.1c-r0 description:
 Toolkit for Transport Layer Security (TLS)
 
-openssl-1.1.1b-r1 webpage:
+openssl-1.1.1c-r0 webpage:
 https://www.openssl.org
 
-openssl-1.1.1b-r1 installed size:
-675840
+openssl-1.1.1c-r0 installed size:
+679936
 
-openssl-1.1.1b-r1 license:
+openssl-1.1.1c-r0 license:
 OpenSSL
 
 ```
@@ -454,16 +437,16 @@ GPL-2.0
 ### `apk` package: `ssl_client`
 
 ```console
-ssl_client-1.29.3-r10 description:
+ssl_client-1.30.1-r2 description:
 EXternal ssl_client for busybox wget
 
-ssl_client-1.29.3-r10 webpage:
-http://busybox.net
+ssl_client-1.30.1-r2 webpage:
+https://busybox.net/
 
-ssl_client-1.29.3-r10 installed size:
+ssl_client-1.30.1-r2 installed size:
 28672
 
-ssl_client-1.29.3-r10 license:
+ssl_client-1.30.1-r2 license:
 GPL-2.0
 
 ```
@@ -478,7 +461,7 @@ tar-1.32-r0 webpage:
 https://www.gnu.org
 
 tar-1.32-r0 installed size:
-495616
+491520
 
 tar-1.32-r0 license:
 GPL

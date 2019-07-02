@@ -2,8 +2,8 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:731c760de792f3cffc7dcae0b68ea8b9e819745a0f05959e2a2d366d8ec09193`
-- Created: `2019-06-17T21:19:59.024301797Z`
+- Image ID: `sha256:e7d20afcec952b057a087b4010efd930db2ab9eef8b24934fd6951319f149317`
+- Created: `2019-06-28T01:28:06.839696899Z`
 - Virtual Size: ~ 378.21 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
@@ -1838,11 +1838,11 @@ Other potentially useful URLs:
 - https://sources.debian.net/src/libxml2/2.9.4+dfsg1-2.2+deb9u2/debian/copyright/ (for direct copyright/license information)
 - http://snapshot.debian.org/package/libxml2/2.9.4+dfsg1-2.2+deb9u2/ (for access to the source package after it no longer exists in the archive)
 
-### `dpkg` source package: `linux=4.9.168-1+deb9u2`
+### `dpkg` source package: `linux=4.9.168-1+deb9u3`
 
 Binary Packages:
 
-- `linux-libc-dev:amd64=4.9.168-1+deb9u2`
+- `linux-libc-dev:amd64=4.9.168-1+deb9u3`
 
 Licenses: (parsed from: `/usr/share/doc/linux-libc-dev/copyright`)
 
@@ -1852,13 +1852,20 @@ Licenses: (parsed from: `/usr/share/doc/linux-libc-dev/copyright`)
 - `Unicode-data`
 - `Xen-interface`
 
-**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
-This is *usually* due to a new package version being released and the old version being removed.
+Source:
 
-The source package *may* still be available for download from:
+```console
+$ apt-get source -qq --print-uris linux=4.9.168-1+deb9u3
+'http://security.debian.org/debian-security/pool/updates/main/l/linux/linux_4.9.168-1+deb9u3.dsc' linux_4.9.168-1+deb9u3.dsc 123228 SHA256:387ac7cf647ff9b6e28cb92cf80f0ad3d390bc4ca24b24586c62ca86aeb5e39a
+'http://security.debian.org/debian-security/pool/updates/main/l/linux/linux_4.9.168.orig.tar.xz' linux_4.9.168.orig.tar.xz 94774584 SHA256:8a2c04045b47472584fc8e72d8663b5c720b8ba5efba878f48ddba93bac29a7f
+'http://security.debian.org/debian-security/pool/updates/main/l/linux/linux_4.9.168-1+deb9u3.debian.tar.xz' linux_4.9.168-1+deb9u3.debian.tar.xz 2749392 SHA256:1157d6ff3934675897a590ad5a87f463d8e96604cd31aed7c4bbb601c029103c
+```
 
-- http://snapshot.debian.org/package/linux/4.9.168-1+deb9u2/
+Other potentially useful URLs:
 
+- https://sources.debian.net/src/linux/4.9.168-1+deb9u3/ (for browsing the source)
+- https://sources.debian.net/src/linux/4.9.168-1+deb9u3/debian/copyright/ (for direct copyright/license information)
+- http://snapshot.debian.org/package/linux/4.9.168-1+deb9u3/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `lsb=9.20161125`
 

@@ -1,10 +1,10 @@
-# `php:7.4.0alpha1-zts-alpine3.9`
+# `php:7.4.0alpha2-zts-alpine3.9`
 
 ## Docker Metadata
 
-- Image ID: `sha256:cb949f60063f0202bf4f6cb747e01cf25bb0e6e7bf964cfa99fc32b2c7fe89d8`
-- Created: `2019-06-17T21:04:35.849077657Z`
-- Virtual Size: ~ 65.26 Mb  
+- Image ID: `sha256:826d7cedb46baee42d02b59da6f78af3fac50b6c25ffc3ee10572af3219ceb30`
+- Created: `2019-06-28T01:09:31.151155185Z`
+- Virtual Size: ~ 67.36 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["docker-php-entrypoint"]`
@@ -18,10 +18,10 @@
   - `PHP_CPPFLAGS=-fstack-protector-strong -fpic -fpie -O2`
   - `PHP_LDFLAGS=-Wl,-O1 -Wl,--hash-style=both -pie`
   - `GPG_KEYS=42670A7FE4D0441C8E4632349E4FDC074A4EF02D 5A52880781F755608BF815FC910DEB46F53EA312`
-  - `PHP_VERSION=7.4.0alpha1`
-  - `PHP_URL=https://downloads.php.net/~derick/php-7.4.0alpha1.tar.xz`
-  - `PHP_ASC_URL=https://downloads.php.net/~derick/php-7.4.0alpha1.tar.xz.asc`
-  - `PHP_SHA256=378400b6eced6e358f5db750413a7f9959517b0daef6580b16d640190b7dc364`
+  - `PHP_VERSION=7.4.0alpha2`
+  - `PHP_URL=https://downloads.php.net/~derick/php-7.4.0alpha2.tar.xz`
+  - `PHP_ASC_URL=https://downloads.php.net/~derick/php-7.4.0alpha2.tar.xz.asc`
+  - `PHP_SHA256=8a7308bf012d229252e26e51f5e6383bb3fa6104def5e1b37ce15afdcb56d61f`
   - `PHP_MD5=`
 
 ## `apk` (`.apk`-based packages)
@@ -80,16 +80,16 @@ GPL2
 ### `apk` package: `argon2-libs`
 
 ```console
-argon2-libs-20171227-r1 description:
+argon2-libs-20171227-r2 description:
 The password hash Argon2, winner of PHC (libraries)
 
-argon2-libs-20171227-r1 webpage:
+argon2-libs-20171227-r2 webpage:
 https://github.com/P-H-C/phc-winner-argon2
 
-argon2-libs-20171227-r1 installed size:
+argon2-libs-20171227-r2 installed size:
 49152
 
-argon2-libs-20171227-r1 license:
+argon2-libs-20171227-r2 license:
 Apache-2.0 CC0-1.0
 
 ```

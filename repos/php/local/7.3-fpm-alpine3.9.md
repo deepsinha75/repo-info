@@ -2,8 +2,8 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:bf039e59cbdc7c978b337b5d6d1f2ebf8a2e33f6354655614cc32ff94d4d1315`
-- Created: `2019-06-17T21:56:37.3911521Z`
+- Image ID: `sha256:7b1e87c5c636ca80e3adffbed25dea8e339b1a369a1be93516d74ce36cd02d72`
+- Created: `2019-06-28T02:58:54.186310863Z`
 - Virtual Size: ~ 79.75 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
@@ -80,16 +80,16 @@ GPL2
 ### `apk` package: `argon2-libs`
 
 ```console
-argon2-libs-20171227-r1 description:
+argon2-libs-20171227-r2 description:
 The password hash Argon2, winner of PHC (libraries)
 
-argon2-libs-20171227-r1 webpage:
+argon2-libs-20171227-r2 webpage:
 https://github.com/P-H-C/phc-winner-argon2
 
-argon2-libs-20171227-r1 installed size:
+argon2-libs-20171227-r2 installed size:
 49152
 
-argon2-libs-20171227-r1 license:
+argon2-libs-20171227-r2 license:
 Apache-2.0 CC0-1.0
 
 ```
