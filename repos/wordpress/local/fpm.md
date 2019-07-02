@@ -2,8 +2,8 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:7e98b8b32338941352102fcb511df674ea230e9ee7e8a1ba702c0b4dec99e379`
-- Created: `2019-06-28T01:01:41.035068001Z`
+- Image ID: `sha256:23ff8597e5a43b91d3e9e70cef3b352c6a5c742f802e78406a460fda5d62d7e7`
+- Created: `2019-07-01T22:36:22.783627542Z`
 - Virtual Size: ~ 435.87 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
@@ -693,11 +693,11 @@ Other potentially useful URLs:
 - https://sources.debian.net/src/e2fsprogs/1.43.4-2/debian/copyright/ (for direct copyright/license information)
 - http://snapshot.debian.org/package/e2fsprogs/1.43.4-2/ (for access to the source package after it no longer exists in the archive)
 
-### `dpkg` source package: `expat=2.2.0-2+deb9u1`
+### `dpkg` source package: `expat=2.2.0-2+deb9u2`
 
 Binary Packages:
 
-- `libexpat1:amd64=2.2.0-2+deb9u1`
+- `libexpat1:amd64=2.2.0-2+deb9u2`
 
 **WARNING:** unable to detect licenses! (package likely not compliant with DEP-5)  
 If source is available (seen below), check the contents of `debian/copyright` within it.
@@ -706,17 +706,17 @@ If source is available (seen below), check the contents of `debian/copyright` wi
 Source:
 
 ```console
-$ apt-get source -qq --print-uris expat=2.2.0-2+deb9u1
-'http://deb.debian.org/debian/pool/main/e/expat/expat_2.2.0-2+deb9u1.dsc' expat_2.2.0-2+deb9u1.dsc 2295 SHA256:6d7f96d7148dda2857772b499cbe17d0feb1c016dcf35b1a6da7c846123bd20b
-'http://deb.debian.org/debian/pool/main/e/expat/expat_2.2.0.orig.tar.bz2' expat_2.2.0.orig.tar.bz2 414352 SHA256:d9e50ff2d19b3538bd2127902a89987474e1a4db8e43a66a4d1a712ab9a504ff
-'http://deb.debian.org/debian/pool/main/e/expat/expat_2.2.0-2+deb9u1.debian.tar.xz' expat_2.2.0-2+deb9u1.debian.tar.xz 11448 SHA256:d3e171fc4d2e6173945daab7d7df46d640fa23134c9474080f6d1b65d494b0a5
+$ apt-get source -qq --print-uris expat=2.2.0-2+deb9u2
+'http://security.debian.org/debian-security/pool/updates/main/e/expat/expat_2.2.0-2+deb9u2.dsc' expat_2.2.0-2+deb9u2.dsc 2295 SHA256:20e066f87a64bc5b1aa6c66fdbf042e651691aa758dc8eb9dfbb454cf78c4bb9
+'http://security.debian.org/debian-security/pool/updates/main/e/expat/expat_2.2.0.orig.tar.bz2' expat_2.2.0.orig.tar.bz2 414352 SHA256:d9e50ff2d19b3538bd2127902a89987474e1a4db8e43a66a4d1a712ab9a504ff
+'http://security.debian.org/debian-security/pool/updates/main/e/expat/expat_2.2.0-2+deb9u2.debian.tar.xz' expat_2.2.0-2+deb9u2.debian.tar.xz 11740 SHA256:d15e1b691054dc44388d9fa3d9e93fa88244245037eb19e9b2201ac803226284
 ```
 
 Other potentially useful URLs:
 
-- https://sources.debian.net/src/expat/2.2.0-2+deb9u1/ (for browsing the source)
-- https://sources.debian.net/src/expat/2.2.0-2+deb9u1/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/expat/2.2.0-2+deb9u1/ (for access to the source package after it no longer exists in the archive)
+- https://sources.debian.net/src/expat/2.2.0-2+deb9u2/ (for browsing the source)
+- https://sources.debian.net/src/expat/2.2.0-2+deb9u2/debian/copyright/ (for direct copyright/license information)
+- http://snapshot.debian.org/package/expat/2.2.0-2+deb9u2/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `fftw3=3.3.5-3`
 
@@ -2216,11 +2216,11 @@ Other potentially useful URLs:
 - https://sources.debian.net/src/libzip/1.1.2-1.1/debian/copyright/ (for direct copyright/license information)
 - http://snapshot.debian.org/package/libzip/1.1.2-1.1/ (for access to the source package after it no longer exists in the archive)
 
-### `dpkg` source package: `linux=4.9.168-1+deb9u2`
+### `dpkg` source package: `linux=4.9.168-1+deb9u3`
 
 Binary Packages:
 
-- `linux-libc-dev:amd64=4.9.168-1+deb9u2`
+- `linux-libc-dev:amd64=4.9.168-1+deb9u3`
 
 Licenses: (parsed from: `/usr/share/doc/linux-libc-dev/copyright`)
 
@@ -2230,13 +2230,20 @@ Licenses: (parsed from: `/usr/share/doc/linux-libc-dev/copyright`)
 - `Unicode-data`
 - `Xen-interface`
 
-**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
-This is *usually* due to a new package version being released and the old version being removed.
+Source:
 
-The source package *may* still be available for download from:
+```console
+$ apt-get source -qq --print-uris linux=4.9.168-1+deb9u3
+'http://security.debian.org/debian-security/pool/updates/main/l/linux/linux_4.9.168-1+deb9u3.dsc' linux_4.9.168-1+deb9u3.dsc 123228 SHA256:387ac7cf647ff9b6e28cb92cf80f0ad3d390bc4ca24b24586c62ca86aeb5e39a
+'http://security.debian.org/debian-security/pool/updates/main/l/linux/linux_4.9.168.orig.tar.xz' linux_4.9.168.orig.tar.xz 94774584 SHA256:8a2c04045b47472584fc8e72d8663b5c720b8ba5efba878f48ddba93bac29a7f
+'http://security.debian.org/debian-security/pool/updates/main/l/linux/linux_4.9.168-1+deb9u3.debian.tar.xz' linux_4.9.168-1+deb9u3.debian.tar.xz 2749392 SHA256:1157d6ff3934675897a590ad5a87f463d8e96604cd31aed7c4bbb601c029103c
+```
 
-- http://snapshot.debian.org/package/linux/4.9.168-1+deb9u2/
+Other potentially useful URLs:
 
+- https://sources.debian.net/src/linux/4.9.168-1+deb9u3/ (for browsing the source)
+- https://sources.debian.net/src/linux/4.9.168-1+deb9u3/debian/copyright/ (for direct copyright/license information)
+- http://snapshot.debian.org/package/linux/4.9.168-1+deb9u3/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `lsb=9.20161125`
 
