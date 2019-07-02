@@ -6382,14 +6382,9 @@ Licenses: (parsed from: `/usr/share/doc/linux-libc-dev/copyright`)
 
 - `GPL-2`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris linux=4.15.0-52.56
-'http://security.ubuntu.com/ubuntu/pool/main/l/linux/linux_4.15.0-52.56.dsc' linux_4.15.0-52.56.dsc 6909 SHA256:46da6cc23e0e9e4ae8d0ac888584a95034d97562682700b293d61d13c874694c
-'http://security.ubuntu.com/ubuntu/pool/main/l/linux/linux_4.15.0.orig.tar.gz' linux_4.15.0.orig.tar.gz 157656459 SHA256:c33b8ba5c45a40b689979caa2421c4d933864cd70eb93c00eb69adf43e9a24fc
-'http://security.ubuntu.com/ubuntu/pool/main/l/linux/linux_4.15.0-52.56.diff.gz' linux_4.15.0-52.56.diff.gz 8799794 SHA256:1ced1739a5c7b50747ff1e88dfdf6e50414023b22c66385410b2084f3f265068
-```
 
 ### `dpkg` source package: `lksctp-tools=1.0.17+dfsg-2`
 
