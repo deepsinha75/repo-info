@@ -1,10 +1,10 @@
-# `nextcloud:15.0.8-fpm-alpine`
+# `nextcloud:14.0.13RC1-fpm-alpine`
 
 ## Docker Metadata
 
-- Image ID: `sha256:089512a7071ff97161b8a97b9e5d7e22683e320d50efd15ac3a5200f99613ce7`
-- Created: `2019-07-01T23:28:08.330751646Z`
-- Virtual Size: ~ 322.19 Mb  
+- Image ID: `sha256:ffd5f6a80e3c11c31c2c99278be066f799bdda5cbe3a79956fc02aabf078f7c7`
+- Created: `2019-07-01T23:22:43.046355554Z`
+- Virtual Size: ~ 315.09 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["/entrypoint.sh"]`
@@ -17,13 +17,13 @@
   - `PHP_CFLAGS=-fstack-protector-strong -fpic -fpie -O2`
   - `PHP_CPPFLAGS=-fstack-protector-strong -fpic -fpie -O2`
   - `PHP_LDFLAGS=-Wl,-O1 -Wl,--hash-style=both -pie`
-  - `GPG_KEYS=CBAF69F173A0FEA4B537F470D66C9593118BCCB6 F38252826ACD957EF380D39F2F7956BC5DA04B5D`
-  - `PHP_VERSION=7.3.6`
-  - `PHP_URL=https://www.php.net/get/php-7.3.6.tar.xz/from/this/mirror`
-  - `PHP_ASC_URL=https://www.php.net/get/php-7.3.6.tar.xz.asc/from/this/mirror`
-  - `PHP_SHA256=fefc8967daa30ebc375b2ab2857f97da94ca81921b722ddac86b29e15c54a164`
+  - `GPG_KEYS=1729F83938DA44E27BA0F4D3DBDB397470D12172 B1B44D8F021E4E2D6021E995DC9FF8D3EE5AF27F`
+  - `PHP_VERSION=7.2.19`
+  - `PHP_URL=https://www.php.net/get/php-7.2.19.tar.xz/from/this/mirror`
+  - `PHP_ASC_URL=https://www.php.net/get/php-7.2.19.tar.xz.asc/from/this/mirror`
+  - `PHP_SHA256=4ffa2404a88d60e993a9fe69f829ebec3eb1e006de41b6048ce5e91bbeaa9282`
   - `PHP_MD5=`
-  - `NEXTCLOUD_VERSION=15.0.8`
+  - `NEXTCLOUD_VERSION=14.0.13RC1`
 
 ## `apk` (`.apk`-based packages)
 
@@ -755,23 +755,6 @@ libxml2-2.9.9-r2 installed size:
 
 libxml2-2.9.9-r2 license:
 MIT
-
-```
-
-### `apk` package: `libzip`
-
-```console
-libzip-1.5.2-r0 description:
-C library for manipulating zip archives
-
-libzip-1.5.2-r0 webpage:
-http://www.nih.at/libzip/index.html
-
-libzip-1.5.2-r0 installed size:
-122880
-
-libzip-1.5.2-r0 license:
-BSD-3-Clause
 
 ```
 
