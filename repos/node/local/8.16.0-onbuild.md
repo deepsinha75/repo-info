@@ -3877,6 +3877,10 @@ Licenses: (parsed from: `/usr/share/doc/linux-libc-dev/copyright`)
 **WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
 This is *usually* due to a new package version being released and the old version being removed.
 
+The source package *may* still be available for download from:
+
+- http://snapshot.debian.org/package/linux/4.9.168-1+deb9u2/
+
 
 ### `dpkg` source package: `lsb=9.20161125`
 
