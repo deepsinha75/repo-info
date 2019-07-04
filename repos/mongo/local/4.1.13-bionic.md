@@ -2,8 +2,8 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:a371a342f0b34bed395ad6924c5f8b621b6ee0ee49f8c8b16eed38b0896d9a2b`
-- Created: `2019-06-19T02:54:51.306743324Z`
+- Image ID: `sha256:6e89620d0711aa4fb181fc4e745e0f784f661351766eea848091ea82e8966963`
+- Created: `2019-07-04T01:51:45.931698194Z`
 - Virtual Size: ~ 359.66 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
@@ -1647,11 +1647,11 @@ $ apt-get source -qq --print-uris shadow=1:4.5-1ubuntu2
 'http://archive.ubuntu.com/ubuntu/pool/main/s/shadow/shadow_4.5-1ubuntu2.debian.tar.xz' shadow_4.5-1ubuntu2.debian.tar.xz 471472 SHA256:0025e344b478aae6e2d9ad7657b5e1fd0ebd1fda7a55e7fc144840f75b92d358
 ```
 
-### `dpkg` source package: `sqlite3=3.22.0-1`
+### `dpkg` source package: `sqlite3=3.22.0-1ubuntu0.1`
 
 Binary Packages:
 
-- `libsqlite3-0:amd64=3.22.0-1`
+- `libsqlite3-0:amd64=3.22.0-1ubuntu0.1`
 
 Licenses: (parsed from: `/usr/share/doc/libsqlite3-0/copyright`)
 
@@ -1662,11 +1662,11 @@ Licenses: (parsed from: `/usr/share/doc/libsqlite3-0/copyright`)
 Source:
 
 ```console
-$ apt-get source -qq --print-uris sqlite3=3.22.0-1
-'http://archive.ubuntu.com/ubuntu/pool/main/s/sqlite3/sqlite3_3.22.0-1.dsc' sqlite3_3.22.0-1.dsc 2397 SHA256:6a5c95a5062c19abcfb0492b32b4e4f20634a59fb077da2415ab16e1afdc4ff6
+$ apt-get source -qq --print-uris sqlite3=3.22.0-1ubuntu0.1
+'http://archive.ubuntu.com/ubuntu/pool/main/s/sqlite3/sqlite3_3.22.0-1ubuntu0.1.dsc' sqlite3_3.22.0-1ubuntu0.1.dsc 2496 SHA256:218cd6907a35368906b18150d8bd5053d691ac4172c75bcd3255486622e5c4fd
 'http://archive.ubuntu.com/ubuntu/pool/main/s/sqlite3/sqlite3_3.22.0.orig-www.tar.xz' sqlite3_3.22.0.orig-www.tar.xz 3564688 SHA256:a61a14d6f457bb31ca32f4844398140050597fe4403dc0ee19576111f407e231
 'http://archive.ubuntu.com/ubuntu/pool/main/s/sqlite3/sqlite3_3.22.0.orig.tar.xz' sqlite3_3.22.0.orig.tar.xz 6019648 SHA256:f973ba63b5a1ea1d72e80c585bfb945e71d3f8b74fbecccdf345a84f8c91e5d1
-'http://archive.ubuntu.com/ubuntu/pool/main/s/sqlite3/sqlite3_3.22.0-1.debian.tar.xz' sqlite3_3.22.0-1.debian.tar.xz 17312 SHA256:7fcce88ce9c8fe517fb9fc5b9d67daf14e48da678496fede4b27cbd3ddcbd453
+'http://archive.ubuntu.com/ubuntu/pool/main/s/sqlite3/sqlite3_3.22.0-1ubuntu0.1.debian.tar.xz' sqlite3_3.22.0-1ubuntu0.1.debian.tar.xz 33780 SHA256:1eb9ca29e3cbfd48112b4618daa0fdba75b269a92a286ea22d3d4f1dd0f573ea
 ```
 
 ### `dpkg` source package: `systemd=237-3ubuntu10.22`
