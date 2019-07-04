@@ -1,10 +1,10 @@
-# `irssi:1.2.0-alpine`
+# `irssi:1.2.1-alpine`
 
 ## Docker Metadata
 
-- Image ID: `sha256:b1d704475f684c8740c09ad1a572601cf58c8fbaf30643abdfcbf848ab36995a`
-- Created: `2019-03-08T02:08:18.139394406Z`
-- Virtual Size: ~ 60.62 Mb  
+- Image ID: `sha256:b989e963d0a39cfa5d6a881f13123bd765f8fe56bb2170f398641fdb2f42efca`
+- Created: `2019-07-01T20:21:36.047629641Z`
+- Virtual Size: ~ 60.61 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Command: `["irssi"]`
@@ -12,7 +12,7 @@
   - `PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
   - `HOME=/home/user`
   - `LANG=C.UTF-8`
-  - `IRSSI_VERSION=1.2.0`
+  - `IRSSI_VERSION=1.2.1`
 
 ## `apk` (`.apk`-based packages)
 
@@ -104,16 +104,16 @@ MPL 2.0 GPL2+
 ### `apk` package: `glib`
 
 ```console
-glib-2.54.2-r0 description:
+glib-2.54.2-r1 description:
 Common C routines used by Gtk+ and other libs
 
-glib-2.54.2-r0 webpage:
+glib-2.54.2-r1 webpage:
 https://developer.gnome.org/glib/
 
-glib-2.54.2-r0 installed size:
-3002368
+glib-2.54.2-r1 installed size:
+2994176
 
-glib-2.54.2-r0 license:
+glib-2.54.2-r1 license:
 GPL
 
 ```
@@ -172,16 +172,16 @@ BSD
 ### `apk` package: `libcrypto1.0`
 
 ```console
-libcrypto1.0-1.0.2q-r0 description:
+libcrypto1.0-1.0.2r-r0 description:
 Crypto library from openssl
 
-libcrypto1.0-1.0.2q-r0 webpage:
+libcrypto1.0-1.0.2r-r0 webpage:
 https://openssl.org
 
-libcrypto1.0-1.0.2q-r0 installed size:
+libcrypto1.0-1.0.2r-r0 installed size:
 2523136
 
-libcrypto1.0-1.0.2q-r0 license:
+libcrypto1.0-1.0.2r-r0 license:
 openssl
 
 ```
@@ -291,16 +291,16 @@ custom
 ### `apk` package: `libssl1.0`
 
 ```console
-libssl1.0-1.0.2q-r0 description:
+libssl1.0-1.0.2r-r0 description:
 SSL shared libraries
 
-libssl1.0-1.0.2q-r0 webpage:
+libssl1.0-1.0.2r-r0 webpage:
 https://openssl.org
 
-libssl1.0-1.0.2q-r0 installed size:
+libssl1.0-1.0.2r-r0 installed size:
 446464
 
-libssl1.0-1.0.2q-r0 license:
+libssl1.0-1.0.2r-r0 license:
 openssl
 
 ```
