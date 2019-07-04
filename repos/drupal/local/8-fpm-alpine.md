@@ -2,8 +2,8 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:a25cbd4326bc66b3ef446f76acc97cfaa6356e319a8190f6ae4c1ae1ae07e5f7`
-- Created: `2019-06-28T07:28:14.415817172Z`
+- Image ID: `sha256:ae89a3fef9243f254d52375162232b0667140dbc7c566952af3b4b7e0c0acb82`
+- Created: `2019-07-03T21:32:46.268787185Z`
 - Virtual Size: ~ 156.41 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
@@ -337,16 +337,16 @@ Libpng
 ### `apk` package: `libpq`
 
 ```console
-libpq-11.3-r2 description:
+libpq-11.4-r0 description:
 PostgreSQL libraries
 
-libpq-11.3-r2 webpage:
+libpq-11.4-r0 webpage:
 https://www.postgresql.org/
 
-libpq-11.3-r2 installed size:
+libpq-11.4-r0 installed size:
 315392
 
-libpq-11.3-r2 license:
+libpq-11.4-r0 license:
 PostgreSQL
 
 ```
