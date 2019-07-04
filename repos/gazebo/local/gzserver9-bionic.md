@@ -2718,15 +2718,9 @@ Binary Packages:
 If source is available (seen below), check the contents of `debian/copyright` within it.
 
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris libdrm=2.4.95-1~18.04.1
-'http://archive.ubuntu.com/ubuntu/pool/main/libd/libdrm/libdrm_2.4.95-1~18.04.1.dsc' libdrm_2.4.95-1~18.04.1.dsc 3263 SHA256:f696886efefa1a5845fd425dc17b83cfe72a77c24813e3b97c02924274531f45
-'http://archive.ubuntu.com/ubuntu/pool/main/libd/libdrm/libdrm_2.4.95.orig.tar.gz' libdrm_2.4.95.orig.tar.gz 1125706 SHA256:f0685d8b6ec173d964cd3a5bc98c5fcd89836505c42278863b78cebacae6f7e6
-'http://archive.ubuntu.com/ubuntu/pool/main/libd/libdrm/libdrm_2.4.95.orig.tar.gz.asc' libdrm_2.4.95.orig.tar.gz.asc 879 SHA256:5cee9838bfbe4f137528ce1679675ee869e2ba18c9fb41d9472f235eb7b01298
-'http://archive.ubuntu.com/ubuntu/pool/main/libd/libdrm/libdrm_2.4.95-1~18.04.1.diff.gz' libdrm_2.4.95-1~18.04.1.diff.gz 50691 SHA256:b51c727526d06af97dabb0be3770462c66149d1afe44f031de42e49e819b2a3e
-```
 
 ### `dpkg` source package: `libedit=3.1-20170329-1`
 
@@ -4728,14 +4722,9 @@ Licenses: (parsed from: `/usr/share/doc/libegl-mesa0/copyright`, `/usr/share/doc
 - `GPL`
 - `LGPL`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris mesa=18.2.8-0ubuntu0~18.04.2
-'http://archive.ubuntu.com/ubuntu/pool/main/m/mesa/mesa_18.2.8-0ubuntu0~18.04.2.dsc' mesa_18.2.8-0ubuntu0~18.04.2.dsc 5206 SHA256:2534ab39ff12ccdc19e0359daabc76cc52adf0af29cb1779f0ff25568515d731
-'http://archive.ubuntu.com/ubuntu/pool/main/m/mesa/mesa_18.2.8.orig.tar.gz' mesa_18.2.8.orig.tar.gz 19634803 SHA256:77512edc0a84e19c7131a0e2e5ebf1beaf1494dc4b71508fcc92d06d65f9f4f5
-'http://archive.ubuntu.com/ubuntu/pool/main/m/mesa/mesa_18.2.8-0ubuntu0~18.04.2.diff.gz' mesa_18.2.8-0ubuntu0~18.04.2.diff.gz 110114 SHA256:cb06efc54e1f7222b7e59fec798435c74c1dbb602b80efec199bc3f4ef6fd1ad
-```
 
 ### `dpkg` source package: `mime-support=3.60ubuntu1`
 
