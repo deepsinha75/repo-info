@@ -2,17 +2,17 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:289289d1a15b92ace1a822f9920f5c1477691aa01ca567a8502eb7eb67eb4a80`
-- Created: `2019-06-10T23:20:17.083110434Z`
-- Virtual Size: ~ 318.14 Mb  
+- Image ID: `sha256:21304c8f88a35758d75765950b2fc039a719b0b483f3f14b427b6ae73842549f`
+- Created: `2019-07-03T21:22:01.315887097Z`
+- Virtual Size: ~ 321.35 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Command: `["/bin/bash"]`
 - Environment:
   - `PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
-  - `DISTTAG=f30-updates-candidatecontainer`
-  - `FGC=f30-updates-candidate`
-  - `FBR=f30-updates-candidate`
+  - `DISTTAG=f30container`
+  - `FGC=f30`
+  - `FBR=f30`
 - Labels:
   - `maintainer=Clement Verna <cverna@fedoraproject.org>`
 
@@ -26,10 +26,10 @@ Source:
 
 ```console
 $ yumdownloader --quiet --source --urls acl-2.2.53-3.fc30
+https://dl.fedoraproject.org/pub/fedora/linux/updates/30/Everything/x86_64/repodata/repomd.xml: [Errno -1] repomd.xml does not match metalink for updates
+Trying other mirror.
 Enabling fedora-modular-source repository
 Enabling updates-source repository
-https://d2lzkl7pfhq30w.cloudfront.net/pub/fedora/linux/updates/30/Everything/SRPMS/repodata/repomd.xml: [Errno 14] HTTPS Error 404 - Not Found
-Trying other mirror.
 Enabling updates-modular-source repository
 Enabling fedora-source repository
 https://d2lzkl7pfhq30w.cloudfront.net/pub/fedora/linux/releases/30/Everything/source/tree//Packages/a/acl-2.2.53-3.fc30.src.rpm
@@ -50,19 +50,19 @@ Enabling fedora-source repository
 https://d2lzkl7pfhq30w.cloudfront.net/pub/fedora/linux/releases/30/Everything/source/tree//Packages/c/chkconfig-1.11-4.fc30.src.rpm
 ```
 
-### `rpm` package: `audit-libs-3.0-0.7.20190326git03e7489.fc30.x86_64`
+### `rpm` package: `audit-libs-3.0-0.9.20190507gitf58ec40.fc30.x86_64`
 
 Licenses (from `rpm --query`): LGPLv2+
 
 Source:
 
 ```console
-$ yumdownloader --quiet --source --urls audit-libs-3.0-0.7.20190326git03e7489.fc30
+$ yumdownloader --quiet --source --urls audit-libs-3.0-0.9.20190507gitf58ec40.fc30
 Enabling fedora-modular-source repository
 Enabling updates-source repository
 Enabling updates-modular-source repository
 Enabling fedora-source repository
-https://d2lzkl7pfhq30w.cloudfront.net/pub/fedora/linux/releases/30/Everything/source/tree//Packages/a/audit-3.0-0.7.20190326git03e7489.fc30.src.rpm
+https://d2lzkl7pfhq30w.cloudfront.net/pub/fedora/linux/updates/30/Everything/SRPMS//Packages/a/audit-3.0-0.9.20190507gitf58ec40.fc30.src.rpm
 ```
 
 ### `rpm` package: `basesystem-11-7.fc30.noarch`
@@ -200,19 +200,19 @@ Enabling fedora-source repository
 https://d2lzkl7pfhq30w.cloudfront.net/pub/fedora/linux/releases/30/Everything/source/tree//Packages/c/cracklib-2.9.6-19.fc30.src.rpm
 ```
 
-### `rpm` package: `crypto-policies-20190211-2.gite3eacfc.fc30.noarch`
+### `rpm` package: `crypto-policies-20190527-1.git0b3add8.fc30.noarch`
 
 Licenses (from `rpm --query`): LGPLv2+
 
 Source:
 
 ```console
-$ yumdownloader --quiet --source --urls crypto-policies-20190211-2.gite3eacfc.fc30.noarch
+$ yumdownloader --quiet --source --urls crypto-policies-20190527-1.git0b3add8.fc30.noarch
 Enabling fedora-modular-source repository
 Enabling updates-source repository
 Enabling updates-modular-source repository
 Enabling fedora-source repository
-https://d2lzkl7pfhq30w.cloudfront.net/pub/fedora/linux/releases/30/Everything/source/tree//Packages/c/crypto-policies-20190211-2.gite3eacfc.fc30.src.rpm
+https://d2lzkl7pfhq30w.cloudfront.net/pub/fedora/linux/updates/30/Everything/SRPMS//Packages/c/crypto-policies-20190527-1.git0b3add8.fc30.src.rpm
 ```
 
 ### `rpm` package: `cryptsetup-libs-2.1.0-3.fc30.x86_64`
@@ -260,11 +260,20 @@ Enabling fedora-source repository
 https://d2lzkl7pfhq30w.cloudfront.net/pub/fedora/linux/releases/30/Everything/source/tree//Packages/c/cyrus-sasl-2.1.27-0.6rc7.fc30.src.rpm
 ```
 
-### `rpm` package: `dbus-1.12.14-1.fc30.x86_64`
+### `rpm` package: `dbus-1.12.16-1.fc30.x86_64`
 
 Licenses (from `rpm --query`): (GPLv2+ or AFL) and GPLv2+
 
-**WARNING:** unable to find source (`yumdownloader` failed or returned no results)!
+Source:
+
+```console
+$ yumdownloader --quiet --source --urls dbus-1.12.16-1.fc30
+Enabling fedora-modular-source repository
+Enabling updates-source repository
+Enabling updates-modular-source repository
+Enabling fedora-source repository
+https://d2lzkl7pfhq30w.cloudfront.net/pub/fedora/linux/updates/30/Everything/SRPMS//Packages/d/dbus-1.12.16-1.fc30.src.rpm
+```
 
 ### `rpm` package: `dbus-broker-21-3.fc30.x86_64`
 
@@ -281,17 +290,35 @@ Enabling fedora-source repository
 https://d2lzkl7pfhq30w.cloudfront.net/pub/fedora/linux/updates/30/Everything/SRPMS//Packages/d/dbus-broker-21-3.fc30.src.rpm
 ```
 
-### `rpm` package: `dbus-common-1.12.14-1.fc30.noarch`
+### `rpm` package: `dbus-common-1.12.16-1.fc30.noarch`
 
 Licenses (from `rpm --query`): (GPLv2+ or AFL) and GPLv2+
 
-**WARNING:** unable to find source (`yumdownloader` failed or returned no results)!
+Source:
 
-### `rpm` package: `dbus-libs-1.12.14-1.fc30.x86_64`
+```console
+$ yumdownloader --quiet --source --urls dbus-common-1.12.16-1.fc30.noarch
+Enabling fedora-modular-source repository
+Enabling updates-source repository
+Enabling updates-modular-source repository
+Enabling fedora-source repository
+https://d2lzkl7pfhq30w.cloudfront.net/pub/fedora/linux/updates/30/Everything/SRPMS//Packages/d/dbus-1.12.16-1.fc30.src.rpm
+```
+
+### `rpm` package: `dbus-libs-1.12.16-1.fc30.x86_64`
 
 Licenses (from `rpm --query`): (GPLv2+ or AFL) and GPLv2+
 
-**WARNING:** unable to find source (`yumdownloader` failed or returned no results)!
+Source:
+
+```console
+$ yumdownloader --quiet --source --urls dbus-libs-1.12.16-1.fc30
+Enabling fedora-modular-source repository
+Enabling updates-source repository
+Enabling updates-modular-source repository
+Enabling fedora-source repository
+https://d2lzkl7pfhq30w.cloudfront.net/pub/fedora/linux/updates/30/Everything/SRPMS//Packages/d/dbus-1.12.16-1.fc30.src.rpm
+```
 
 ### `rpm` package: `deltarpm-3.6-29.fc30.x86_64`
 
@@ -398,23 +425,50 @@ Enabling fedora-source repository
 https://d2lzkl7pfhq30w.cloudfront.net/pub/fedora/linux/updates/30/Everything/SRPMS//Packages/d/dnf-4.2.5-1.fc30.src.rpm
 ```
 
-### `rpm` package: `elfutils-default-yama-scope-0.176-2.fc30.noarch`
+### `rpm` package: `elfutils-default-yama-scope-0.176-3.fc30.noarch`
 
 Licenses (from `rpm --query`): GPLv2+ or LGPLv3+
 
-**WARNING:** unable to find source (`yumdownloader` failed or returned no results)!
+Source:
 
-### `rpm` package: `elfutils-libelf-0.176-2.fc30.x86_64`
+```console
+$ yumdownloader --quiet --source --urls elfutils-default-yama-scope-0.176-3.fc30.noarch
+Enabling fedora-modular-source repository
+Enabling updates-source repository
+Enabling updates-modular-source repository
+Enabling fedora-source repository
+https://d2lzkl7pfhq30w.cloudfront.net/pub/fedora/linux/updates/30/Everything/SRPMS//Packages/e/elfutils-0.176-3.fc30.src.rpm
+```
+
+### `rpm` package: `elfutils-libelf-0.176-3.fc30.x86_64`
 
 Licenses (from `rpm --query`): GPLv2+ or LGPLv3+
 
-**WARNING:** unable to find source (`yumdownloader` failed or returned no results)!
+Source:
 
-### `rpm` package: `elfutils-libs-0.176-2.fc30.x86_64`
+```console
+$ yumdownloader --quiet --source --urls elfutils-libelf-0.176-3.fc30
+Enabling fedora-modular-source repository
+Enabling updates-source repository
+Enabling updates-modular-source repository
+Enabling fedora-source repository
+https://d2lzkl7pfhq30w.cloudfront.net/pub/fedora/linux/updates/30/Everything/SRPMS//Packages/e/elfutils-0.176-3.fc30.src.rpm
+```
+
+### `rpm` package: `elfutils-libs-0.176-3.fc30.x86_64`
 
 Licenses (from `rpm --query`): GPLv2+ or LGPLv3+
 
-**WARNING:** unable to find source (`yumdownloader` failed or returned no results)!
+Source:
+
+```console
+$ yumdownloader --quiet --source --urls elfutils-libs-0.176-3.fc30
+Enabling fedora-modular-source repository
+Enabling updates-source repository
+Enabling updates-modular-source repository
+Enabling fedora-source repository
+https://d2lzkl7pfhq30w.cloudfront.net/pub/fedora/linux/updates/30/Everything/SRPMS//Packages/e/elfutils-0.176-3.fc30.src.rpm
+```
 
 ### `rpm` package: `expat-2.2.6-2.fc30.x86_64`
 
@@ -446,17 +500,35 @@ Enabling fedora-source repository
 https://d2lzkl7pfhq30w.cloudfront.net/pub/fedora/linux/releases/30/Everything/source/tree//Packages/f/fedora-repos-30-1.src.rpm
 ```
 
-### `rpm` package: `fedora-release-common-30-3.noarch`
+### `rpm` package: `fedora-release-common-30-4.noarch`
 
 Licenses (from `rpm --query`): MIT
 
-**WARNING:** unable to find source (`yumdownloader` failed or returned no results)!
+Source:
 
-### `rpm` package: `fedora-release-container-30-3.noarch`
+```console
+$ yumdownloader --quiet --source --urls fedora-release-common-30-4.noarch
+Enabling fedora-modular-source repository
+Enabling updates-source repository
+Enabling updates-modular-source repository
+Enabling fedora-source repository
+https://d2lzkl7pfhq30w.cloudfront.net/pub/fedora/linux/updates/30/Everything/SRPMS//Packages/f/fedora-release-30-4.src.rpm
+```
+
+### `rpm` package: `fedora-release-container-30-4.noarch`
 
 Licenses (from `rpm --query`): MIT
 
-**WARNING:** unable to find source (`yumdownloader` failed or returned no results)!
+Source:
+
+```console
+$ yumdownloader --quiet --source --urls fedora-release-container-30-4.noarch
+Enabling fedora-modular-source repository
+Enabling updates-source repository
+Enabling updates-modular-source repository
+Enabling fedora-source repository
+https://d2lzkl7pfhq30w.cloudfront.net/pub/fedora/linux/updates/30/Everything/SRPMS//Packages/f/fedora-release-30-4.src.rpm
+```
 
 ### `rpm` package: `fedora-repos-30-1.noarch`
 
@@ -473,19 +545,19 @@ Enabling fedora-source repository
 https://d2lzkl7pfhq30w.cloudfront.net/pub/fedora/linux/releases/30/Everything/source/tree//Packages/f/fedora-repos-30-1.src.rpm
 ```
 
-### `rpm` package: `file-libs-5.36-2.fc30.x86_64`
+### `rpm` package: `file-libs-5.36-3.fc30.x86_64`
 
 Licenses (from `rpm --query`): BSD
 
 Source:
 
 ```console
-$ yumdownloader --quiet --source --urls file-libs-5.36-2.fc30
+$ yumdownloader --quiet --source --urls file-libs-5.36-3.fc30
 Enabling fedora-modular-source repository
 Enabling updates-source repository
 Enabling updates-modular-source repository
 Enabling fedora-source repository
-https://d2lzkl7pfhq30w.cloudfront.net/pub/fedora/linux/releases/30/Everything/source/tree//Packages/f/file-5.36-2.fc30.src.rpm
+https://d2lzkl7pfhq30w.cloudfront.net/pub/fedora/linux/updates/30/Everything/SRPMS//Packages/f/file-5.36-3.fc30.src.rpm
 ```
 
 ### `rpm` package: `filesystem-3.10-1.fc30.x86_64`
@@ -533,35 +605,80 @@ Enabling fedora-source repository
 https://d2lzkl7pfhq30w.cloudfront.net/pub/fedora/linux/releases/30/Everything/source/tree//Packages/g/gdbm-1.18-4.fc30.src.rpm
 ```
 
-### `rpm` package: `glib2-2.60.3-1.fc30.x86_64`
+### `rpm` package: `glib2-2.60.4-1.fc30.x86_64`
 
 Licenses (from `rpm --query`): LGPLv2+
 
-**WARNING:** unable to find source (`yumdownloader` failed or returned no results)!
+Source:
 
-### `rpm` package: `glibc-2.29-12.fc30.x86_64`
+```console
+$ yumdownloader --quiet --source --urls glib2-2.60.4-1.fc30
+Enabling fedora-modular-source repository
+Enabling updates-source repository
+Enabling updates-modular-source repository
+Enabling fedora-source repository
+https://d2lzkl7pfhq30w.cloudfront.net/pub/fedora/linux/updates/30/Everything/SRPMS//Packages/g/glib2-2.60.4-1.fc30.src.rpm
+```
 
-Licenses (from `rpm --query`): LGPLv2+ and LGPLv2+ with exceptions and GPLv2+ and GPLv2+ with exceptions and BSD and Inner-Net and ISC and Public Domain and GFDL
-
-**WARNING:** unable to find source (`yumdownloader` failed or returned no results)!
-
-### `rpm` package: `glibc-common-2.29-12.fc30.x86_64`
-
-Licenses (from `rpm --query`): LGPLv2+ and LGPLv2+ with exceptions and GPLv2+ and GPLv2+ with exceptions and BSD and Inner-Net and ISC and Public Domain and GFDL
-
-**WARNING:** unable to find source (`yumdownloader` failed or returned no results)!
-
-### `rpm` package: `glibc-langpack-en-2.29-12.fc30.x86_64`
+### `rpm` package: `glibc-2.29-15.fc30.x86_64`
 
 Licenses (from `rpm --query`): LGPLv2+ and LGPLv2+ with exceptions and GPLv2+ and GPLv2+ with exceptions and BSD and Inner-Net and ISC and Public Domain and GFDL
 
-**WARNING:** unable to find source (`yumdownloader` failed or returned no results)!
+Source:
 
-### `rpm` package: `glibc-minimal-langpack-2.29-12.fc30.x86_64`
+```console
+$ yumdownloader --quiet --source --urls glibc-2.29-15.fc30
+Enabling fedora-modular-source repository
+Enabling updates-source repository
+Enabling updates-modular-source repository
+Enabling fedora-source repository
+https://d2lzkl7pfhq30w.cloudfront.net/pub/fedora/linux/updates/30/Everything/SRPMS//Packages/g/glibc-2.29-15.fc30.src.rpm
+```
+
+### `rpm` package: `glibc-common-2.29-15.fc30.x86_64`
 
 Licenses (from `rpm --query`): LGPLv2+ and LGPLv2+ with exceptions and GPLv2+ and GPLv2+ with exceptions and BSD and Inner-Net and ISC and Public Domain and GFDL
 
-**WARNING:** unable to find source (`yumdownloader` failed or returned no results)!
+Source:
+
+```console
+$ yumdownloader --quiet --source --urls glibc-common-2.29-15.fc30
+Enabling fedora-modular-source repository
+Enabling updates-source repository
+Enabling updates-modular-source repository
+Enabling fedora-source repository
+https://d2lzkl7pfhq30w.cloudfront.net/pub/fedora/linux/updates/30/Everything/SRPMS//Packages/g/glibc-2.29-15.fc30.src.rpm
+```
+
+### `rpm` package: `glibc-langpack-en-2.29-15.fc30.x86_64`
+
+Licenses (from `rpm --query`): LGPLv2+ and LGPLv2+ with exceptions and GPLv2+ and GPLv2+ with exceptions and BSD and Inner-Net and ISC and Public Domain and GFDL
+
+Source:
+
+```console
+$ yumdownloader --quiet --source --urls glibc-langpack-en-2.29-15.fc30
+Enabling fedora-modular-source repository
+Enabling updates-source repository
+Enabling updates-modular-source repository
+Enabling fedora-source repository
+https://d2lzkl7pfhq30w.cloudfront.net/pub/fedora/linux/updates/30/Everything/SRPMS//Packages/g/glibc-2.29-15.fc30.src.rpm
+```
+
+### `rpm` package: `glibc-minimal-langpack-2.29-15.fc30.x86_64`
+
+Licenses (from `rpm --query`): LGPLv2+ and LGPLv2+ with exceptions and GPLv2+ and GPLv2+ with exceptions and BSD and Inner-Net and ISC and Public Domain and GFDL
+
+Source:
+
+```console
+$ yumdownloader --quiet --source --urls glibc-minimal-langpack-2.29-15.fc30
+Enabling fedora-modular-source repository
+Enabling updates-source repository
+Enabling updates-modular-source repository
+Enabling fedora-source repository
+https://d2lzkl7pfhq30w.cloudfront.net/pub/fedora/linux/updates/30/Everything/SRPMS//Packages/g/glibc-2.29-15.fc30.src.rpm
+```
 
 ### `rpm` package: `gmp-6.1.2-10.fc30.x86_64`
 
@@ -1334,19 +1451,19 @@ Enabling fedora-source repository
 https://d2lzkl7pfhq30w.cloudfront.net/pub/fedora/linux/releases/30/Everything/source/tree//Packages/u/util-linux-2.33.2-1.fc30.src.rpm
 ```
 
-### `rpm` package: `libsolv-0.7.4-2.fc30.x86_64`
+### `rpm` package: `libsolv-0.7.5-1.fc30.x86_64`
 
 Licenses (from `rpm --query`): BSD
 
 Source:
 
 ```console
-$ yumdownloader --quiet --source --urls libsolv-0.7.4-2.fc30
+$ yumdownloader --quiet --source --urls libsolv-0.7.5-1.fc30
 Enabling fedora-modular-source repository
 Enabling updates-source repository
 Enabling updates-modular-source repository
 Enabling fedora-source repository
-https://d2lzkl7pfhq30w.cloudfront.net/pub/fedora/linux/releases/30/Everything/source/tree//Packages/l/libsolv-0.7.4-2.fc30.src.rpm
+https://d2lzkl7pfhq30w.cloudfront.net/pub/fedora/linux/updates/30/Everything/SRPMS//Packages/l/libsolv-0.7.5-1.fc30.src.rpm
 ```
 
 ### `rpm` package: `libssh-0.8.7-1.fc30.x86_64`
@@ -1364,34 +1481,34 @@ Enabling fedora-source repository
 https://d2lzkl7pfhq30w.cloudfront.net/pub/fedora/linux/releases/30/Everything/source/tree//Packages/l/libssh-0.8.7-1.fc30.src.rpm
 ```
 
-### `rpm` package: `libsss_idmap-2.1.0-2.fc30.x86_64`
+### `rpm` package: `libsss_idmap-2.2.0-1.fc30.x86_64`
 
 Licenses (from `rpm --query`): LGPLv3+
 
 Source:
 
 ```console
-$ yumdownloader --quiet --source --urls libsss_idmap-2.1.0-2.fc30
+$ yumdownloader --quiet --source --urls libsss_idmap-2.2.0-1.fc30
 Enabling fedora-modular-source repository
 Enabling updates-source repository
 Enabling updates-modular-source repository
 Enabling fedora-source repository
-https://d2lzkl7pfhq30w.cloudfront.net/pub/fedora/linux/releases/30/Everything/source/tree//Packages/s/sssd-2.1.0-2.fc30.src.rpm
+https://d2lzkl7pfhq30w.cloudfront.net/pub/fedora/linux/updates/30/Everything/SRPMS//Packages/s/sssd-2.2.0-1.fc30.src.rpm
 ```
 
-### `rpm` package: `libsss_nss_idmap-2.1.0-2.fc30.x86_64`
+### `rpm` package: `libsss_nss_idmap-2.2.0-1.fc30.x86_64`
 
 Licenses (from `rpm --query`): LGPLv3+
 
 Source:
 
 ```console
-$ yumdownloader --quiet --source --urls libsss_nss_idmap-2.1.0-2.fc30
+$ yumdownloader --quiet --source --urls libsss_nss_idmap-2.2.0-1.fc30
 Enabling fedora-modular-source repository
 Enabling updates-source repository
 Enabling updates-modular-source repository
 Enabling fedora-source repository
-https://d2lzkl7pfhq30w.cloudfront.net/pub/fedora/linux/releases/30/Everything/source/tree//Packages/s/sssd-2.1.0-2.fc30.src.rpm
+https://d2lzkl7pfhq30w.cloudfront.net/pub/fedora/linux/updates/30/Everything/SRPMS//Packages/s/sssd-2.2.0-1.fc30.src.rpm
 ```
 
 ### `rpm` package: `libstdc++-9.1.1-1.fc30.x86_64`
@@ -1514,19 +1631,19 @@ Enabling fedora-source repository
 https://d2lzkl7pfhq30w.cloudfront.net/pub/fedora/linux/releases/30/Everything/source/tree//Packages/l/libverto-0.3.0-7.fc30.src.rpm
 ```
 
-### `rpm` package: `libxcrypt-4.4.6-1.fc30.x86_64`
+### `rpm` package: `libxcrypt-4.4.6-2.fc30.x86_64`
 
 Licenses (from `rpm --query`): LGPLv2+ and BSD and Public Domain
 
 Source:
 
 ```console
-$ yumdownloader --quiet --source --urls libxcrypt-4.4.6-1.fc30
+$ yumdownloader --quiet --source --urls libxcrypt-4.4.6-2.fc30
 Enabling fedora-modular-source repository
 Enabling updates-source repository
 Enabling updates-modular-source repository
 Enabling fedora-source repository
-https://d2lzkl7pfhq30w.cloudfront.net/pub/fedora/linux/updates/30/Everything/SRPMS//Packages/l/libxcrypt-4.4.6-1.fc30.src.rpm
+https://d2lzkl7pfhq30w.cloudfront.net/pub/fedora/linux/updates/30/Everything/SRPMS//Packages/l/libxcrypt-4.4.6-2.fc30.src.rpm
 ```
 
 ### `rpm` package: `libxml2-2.9.9-2.fc30.x86_64`
@@ -1604,19 +1721,19 @@ Enabling fedora-source repository
 https://d2lzkl7pfhq30w.cloudfront.net/pub/fedora/linux/releases/30/Everything/source/tree//Packages/l/lz4-1.8.3-2.fc30.src.rpm
 ```
 
-### `rpm` package: `mkpasswd-5.4.2-1.fc30.x86_64`
+### `rpm` package: `mkpasswd-5.4.3-1.fc30.x86_64`
 
 Licenses (from `rpm --query`): GPLv2+
 
 Source:
 
 ```console
-$ yumdownloader --quiet --source --urls mkpasswd-5.4.2-1.fc30
+$ yumdownloader --quiet --source --urls mkpasswd-5.4.3-1.fc30
 Enabling fedora-modular-source repository
 Enabling updates-source repository
 Enabling updates-modular-source repository
 Enabling fedora-source repository
-https://d2lzkl7pfhq30w.cloudfront.net/pub/fedora/linux/releases/30/Everything/source/tree//Packages/w/whois-5.4.2-1.fc30.src.rpm
+https://d2lzkl7pfhq30w.cloudfront.net/pub/fedora/linux/updates/30/Everything/SRPMS//Packages/w/whois-5.4.3-1.fc30.src.rpm
 ```
 
 ### `rpm` package: `mpfr-3.1.6-4.fc30.x86_64`
@@ -1833,16 +1950,7 @@ https://d2lzkl7pfhq30w.cloudfront.net/pub/fedora/linux/updates/30/Everything/SRP
 
 Licenses (from `rpm --query`): BSD
 
-Source:
-
-```console
-$ yumdownloader --quiet --source --urls pcre2-10.33-2.fc30
-Enabling fedora-modular-source repository
-Enabling updates-source repository
-Enabling updates-modular-source repository
-Enabling fedora-source repository
-https://d2lzkl7pfhq30w.cloudfront.net/pub/fedora/linux/updates/30/Everything/SRPMS//Packages/p/pcre2-10.33-2.fc30.src.rpm
-```
+**WARNING:** unable to find source (`yumdownloader` failed or returned no results)!
 
 ### `rpm` package: `popt-1.16-17.fc30.x86_64`
 
@@ -2249,19 +2357,19 @@ Enabling fedora-source repository
 https://d2lzkl7pfhq30w.cloudfront.net/pub/fedora/linux/updates/30/Everything/SRPMS//Packages/s/sqlite-3.26.0-5.fc30.src.rpm
 ```
 
-### `rpm` package: `sssd-client-2.1.0-2.fc30.x86_64`
+### `rpm` package: `sssd-client-2.2.0-1.fc30.x86_64`
 
 Licenses (from `rpm --query`): LGPLv3+
 
 Source:
 
 ```console
-$ yumdownloader --quiet --source --urls sssd-client-2.1.0-2.fc30
+$ yumdownloader --quiet --source --urls sssd-client-2.2.0-1.fc30
 Enabling fedora-modular-source repository
 Enabling updates-source repository
 Enabling updates-modular-source repository
 Enabling fedora-source repository
-https://d2lzkl7pfhq30w.cloudfront.net/pub/fedora/linux/releases/30/Everything/source/tree//Packages/s/sssd-2.1.0-2.fc30.src.rpm
+https://d2lzkl7pfhq30w.cloudfront.net/pub/fedora/linux/updates/30/Everything/SRPMS//Packages/s/sssd-2.2.0-1.fc30.src.rpm
 ```
 
 ### `rpm` package: `sudo-1.8.27-1.fc30.x86_64`
@@ -2399,25 +2507,34 @@ Enabling fedora-source repository
 https://d2lzkl7pfhq30w.cloudfront.net/pub/fedora/linux/releases/30/Everything/source/tree//Packages/u/util-linux-2.33.2-1.fc30.src.rpm
 ```
 
-### `rpm` package: `vim-minimal-8.1.1471-1.fc30.x86_64`
+### `rpm` package: `vim-minimal-8.1.1602-1.fc30.x86_64`
 
 Licenses (from `rpm --query`): Vim and MIT
 
-**WARNING:** unable to find source (`yumdownloader` failed or returned no results)!
+Source:
 
-### `rpm` package: `whois-nls-5.4.2-1.fc30.noarch`
+```console
+$ yumdownloader --quiet --source --urls vim-minimal-8.1.1602-1.fc30
+Enabling fedora-modular-source repository
+Enabling updates-source repository
+Enabling updates-modular-source repository
+Enabling fedora-source repository
+https://d2lzkl7pfhq30w.cloudfront.net/pub/fedora/linux/updates/30/Everything/SRPMS//Packages/v/vim-8.1.1602-1.fc30.src.rpm
+```
+
+### `rpm` package: `whois-nls-5.4.3-1.fc30.noarch`
 
 Licenses (from `rpm --query`): GPLv2+
 
 Source:
 
 ```console
-$ yumdownloader --quiet --source --urls whois-nls-5.4.2-1.fc30.noarch
+$ yumdownloader --quiet --source --urls whois-nls-5.4.3-1.fc30.noarch
 Enabling fedora-modular-source repository
 Enabling updates-source repository
 Enabling updates-modular-source repository
 Enabling fedora-source repository
-https://d2lzkl7pfhq30w.cloudfront.net/pub/fedora/linux/releases/30/Everything/source/tree//Packages/w/whois-5.4.2-1.fc30.src.rpm
+https://d2lzkl7pfhq30w.cloudfront.net/pub/fedora/linux/updates/30/Everything/SRPMS//Packages/w/whois-5.4.3-1.fc30.src.rpm
 ```
 
 ### `rpm` package: `xz-libs-5.2.4-5.fc30.x86_64`
