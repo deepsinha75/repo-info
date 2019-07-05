@@ -1,7 +1,7 @@
 ## `convertigo:openj9`
 
 ```console
-$ docker pull convertigo@sha256:f7a707460bfc52b53660f7c2afffa706114ac76a0776b6c6eb3c30f740ef4160
+$ docker pull convertigo@sha256:bfbcf8d616abe47a4f20c12b66c6fcdb550b5affadacb94e61a459426df17e19
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -11,14 +11,14 @@ $ docker pull convertigo@sha256:f7a707460bfc52b53660f7c2afffa706114ac76a0776b6c6
 ### `convertigo:openj9` - linux; amd64
 
 ```console
-$ docker pull convertigo@sha256:3c82dc06cade4f98ec8c899ce3362b22545f3f4d2d3145f2b80bc7b7abab4da1
+$ docker pull convertigo@sha256:c755423ef1f14728a03dbcb8f3e828ab39347fdea2553d453088d7c05786e972
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **300.7 MB (300708046 bytes)**  
+-	Total Size: **302.5 MB (302514952 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:6f920520e1e3febf5b56aa87db625775c8801bae8cde7a664c577fb9bc10921c`
+-	Image ID: `sha256:a0b9437f72834ca20ab15b1e507388fd59fbcd33d7b2ba8b7655f2e47d6baf02`
 -	Entrypoint: `["tini","--","\/docker-entrypoint.sh"]`
 -	Default Command: `["convertigo"]`
 
@@ -65,65 +65,61 @@ ENV TOMCAT_MAJOR=7
 ENV TOMCAT_VERSION=7.0.94
 # Wed, 19 Jun 2019 05:08:53 GMT
 ENV TOMCAT_SHA512=b16f4b08591199e15f953c34965389a80d5597c28626a51c71ce42695ddd3359dc4df7f333ef0e1a1e8f9b2b6245041d57607c46764f33e560246c119cdc0f7a
-# Wed, 19 Jun 2019 05:08:54 GMT
-ENV TOMCAT_TGZ_URLS=https://www.apache.org/dyn/closer.cgi?action=download&filename=tomcat/tomcat-7/v7.0.94/bin/apache-tomcat-7.0.94.tar.gz 	https://www-us.apache.org/dist/tomcat/tomcat-7/v7.0.94/bin/apache-tomcat-7.0.94.tar.gz 	https://www.apache.org/dist/tomcat/tomcat-7/v7.0.94/bin/apache-tomcat-7.0.94.tar.gz 	https://archive.apache.org/dist/tomcat/tomcat-7/v7.0.94/bin/apache-tomcat-7.0.94.tar.gz
-# Wed, 19 Jun 2019 05:08:54 GMT
-ENV TOMCAT_ASC_URLS=https://www.apache.org/dyn/closer.cgi?action=download&filename=tomcat/tomcat-7/v7.0.94/bin/apache-tomcat-7.0.94.tar.gz.asc 	https://www-us.apache.org/dist/tomcat/tomcat-7/v7.0.94/bin/apache-tomcat-7.0.94.tar.gz.asc 	https://www.apache.org/dist/tomcat/tomcat-7/v7.0.94/bin/apache-tomcat-7.0.94.tar.gz.asc 	https://archive.apache.org/dist/tomcat/tomcat-7/v7.0.94/bin/apache-tomcat-7.0.94.tar.gz.asc
-# Wed, 19 Jun 2019 05:09:33 GMT
-RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 		apt-get install -y --no-install-recommends gnupg dirmngr; 		export GNUPGHOME="$(mktemp -d)"; 	for key in $GPG_KEYS; do 		gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys "$key"; 	done; 		apt-get install -y --no-install-recommends wget ca-certificates; 		success=; 	for url in $TOMCAT_TGZ_URLS; do 		if wget -O tomcat.tar.gz "$url"; then 			success=1; 			break; 		fi; 	done; 	[ -n "$success" ]; 		echo "$TOMCAT_SHA512 *tomcat.tar.gz" | sha512sum --strict --check -; 		success=; 	for url in $TOMCAT_ASC_URLS; do 		if wget -O tomcat.tar.gz.asc "$url"; then 			success=1; 			break; 		fi; 	done; 	[ -n "$success" ]; 		gpg --batch --verify tomcat.tar.gz.asc tomcat.tar.gz; 	tar -xvf tomcat.tar.gz --strip-components=1; 	rm bin/*.bat; 	rm tomcat.tar.gz*; 	command -v gpgconf && gpgconf --kill all || :; 	rm -rf "$GNUPGHOME"; 		nativeBuildDir="$(mktemp -d)"; 	tar -xvf bin/tomcat-native.tar.gz -C "$nativeBuildDir" --strip-components=1; 	apt-get install -y --no-install-recommends 		dpkg-dev 		gcc 		libapr1-dev 		libssl-dev 		make 	; 	( 		export CATALINA_HOME="$PWD"; 		cd "$nativeBuildDir/native"; 		gnuArch="$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)"; 		aprConfig="$(which apr-1-config)"; 		./configure 			--build="$gnuArch" 			--libdir="$TOMCAT_NATIVE_LIBDIR" 			--prefix="$CATALINA_HOME" 			--with-apr="$aprConfig" 			--with-java-home="$JAVA_HOME" 			--with-ssl=yes; 		make -j "$(nproc)"; 		make install; 	); 	rm -rf "$nativeBuildDir"; 	rm bin/tomcat-native.tar.gz; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark > /dev/null; 	find "$TOMCAT_NATIVE_LIBDIR" -type f -executable -exec ldd '{}' ';' 		| awk '/=>/ { print $(NF-1) }' 		| sort -u 		| xargs -r dpkg-query --search 		| cut -d: -f1 		| sort -u 		| xargs -r apt-mark manual 	; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 	rm -rf /var/lib/apt/lists/*; 		find ./bin/ -name '*.sh' -exec sed -ri 's|^#!/bin/sh$|#!/usr/bin/env bash|' '{}' +; 		chmod -R +rX .; 	chmod 777 logs work
-# Wed, 19 Jun 2019 05:09:35 GMT
+# Thu, 04 Jul 2019 03:13:35 GMT
+RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		gnupg dirmngr 		wget ca-certificates 	; 		ddist() { 		local f="$1"; shift; 		local distFile="$1"; shift; 		local success=; 		local distUrl=; 		for distUrl in 			'https://www.apache.org/dyn/closer.cgi?action=download&filename=' 			https://www-us.apache.org/dist/ 			https://www.apache.org/dist/ 			https://archive.apache.org/dist/ 		; do 			if wget -O "$f" "$distUrl$distFile" && [ -s "$f" ]; then 				success=1; 				break; 			fi; 		done; 		[ -n "$success" ]; 	}; 		ddist 'tomcat.tar.gz' "tomcat/tomcat-$TOMCAT_MAJOR/v$TOMCAT_VERSION/bin/apache-tomcat-$TOMCAT_VERSION.tar.gz"; 	echo "$TOMCAT_SHA512 *tomcat.tar.gz" | sha512sum --strict --check -; 	ddist 'tomcat.tar.gz.asc' "tomcat/tomcat-$TOMCAT_MAJOR/v$TOMCAT_VERSION/bin/apache-tomcat-$TOMCAT_VERSION.tar.gz.asc"; 	export GNUPGHOME="$(mktemp -d)"; 	for key in $GPG_KEYS; do 		gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys "$key"; 	done; 	gpg --batch --verify tomcat.tar.gz.asc tomcat.tar.gz; 	tar -xf tomcat.tar.gz --strip-components=1; 	rm bin/*.bat; 	rm tomcat.tar.gz*; 	command -v gpgconf && gpgconf --kill all || :; 	rm -rf "$GNUPGHOME"; 		nativeBuildDir="$(mktemp -d)"; 	tar -xf bin/tomcat-native.tar.gz -C "$nativeBuildDir" --strip-components=1; 	apt-get install -y --no-install-recommends 		dpkg-dev 		gcc 		libapr1-dev 		libssl-dev 		make 	; 	( 		export CATALINA_HOME="$PWD"; 		cd "$nativeBuildDir/native"; 		gnuArch="$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)"; 		aprConfig="$(command -v apr-1-config)"; 		./configure 			--build="$gnuArch" 			--libdir="$TOMCAT_NATIVE_LIBDIR" 			--prefix="$CATALINA_HOME" 			--with-apr="$aprConfig" 			--with-java-home="$JAVA_HOME" 			--with-ssl=yes; 		make -j "$(nproc)"; 		make install; 	); 	rm -rf "$nativeBuildDir"; 	rm bin/tomcat-native.tar.gz; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark > /dev/null; 	find "$TOMCAT_NATIVE_LIBDIR" -type f -executable -exec ldd '{}' ';' 		| awk '/=>/ { print $(NF-1) }' 		| sort -u 		| xargs -r dpkg-query --search 		| cut -d: -f1 		| sort -u 		| xargs -r apt-mark manual 	; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 	rm -rf /var/lib/apt/lists/*; 		find ./bin/ -name '*.sh' -exec sed -ri 's|^#!/bin/sh$|#!/usr/bin/env bash|' '{}' +; 		chmod -R +rX .; 	chmod 777 logs work
+# Thu, 04 Jul 2019 03:13:38 GMT
 RUN set -e 	&& nativeLines="$(catalina.sh configtest 2>&1)" 	&& nativeLines="$(echo "$nativeLines" | grep 'Apache Tomcat Native')" 	&& nativeLines="$(echo "$nativeLines" | sort -u)" 	&& if ! echo "$nativeLines" | grep 'INFO: Loaded APR based Apache Tomcat Native library' >&2; then 		echo >&2 "$nativeLines"; 		exit 1; 	fi
-# Wed, 19 Jun 2019 05:09:35 GMT
+# Thu, 04 Jul 2019 03:13:38 GMT
 EXPOSE 8080
-# Wed, 19 Jun 2019 05:09:35 GMT
+# Thu, 04 Jul 2019 03:13:38 GMT
 CMD ["catalina.sh" "run"]
-# Thu, 27 Jun 2019 22:20:48 GMT
+# Thu, 04 Jul 2019 03:37:42 GMT
 MAINTAINER Nicolas Albert nicolasa@convertigo.com
-# Thu, 27 Jun 2019 22:20:48 GMT
+# Thu, 04 Jul 2019 03:37:42 GMT
 ENV SWT_GTK3=0
-# Thu, 27 Jun 2019 22:20:48 GMT
+# Thu, 04 Jul 2019 03:37:42 GMT
 ENV CATALINA_HOME=/usr/local/tomcat
-# Thu, 27 Jun 2019 22:20:49 GMT
+# Thu, 04 Jul 2019 03:37:43 GMT
 RUN mkdir -p "$CATALINA_HOME"
-# Thu, 27 Jun 2019 22:20:49 GMT
+# Thu, 04 Jul 2019 03:37:43 GMT
 WORKDIR /usr/local/tomcat
-# Thu, 27 Jun 2019 22:21:13 GMT
+# Thu, 04 Jul 2019 03:37:51 GMT
 RUN apt-get update -y   && apt-get install -y --no-install-recommends     ca-certificates     curl     dirmngr     gnupg     unzip   && rm -rf /var/lib/apt/lists/*
-# Thu, 27 Jun 2019 22:21:13 GMT
+# Thu, 04 Jul 2019 03:37:51 GMT
 ENV GOSU_VERSION=1.11
-# Thu, 27 Jun 2019 22:21:14 GMT
+# Thu, 04 Jul 2019 03:37:51 GMT
 ENV GOSU_GPG_KEYS=B42F6819007F00F88E364FD4036A9C25BF357DD4
-# Thu, 27 Jun 2019 22:21:14 GMT
+# Thu, 04 Jul 2019 03:37:51 GMT
 ENV TINI_VERSION=0.18.0
-# Thu, 27 Jun 2019 22:21:14 GMT
+# Thu, 04 Jul 2019 03:37:51 GMT
 ENV TINI_GPG_KEYS=6380DC428747F6C393FEACA59A84159D7001A4E5
-# Thu, 27 Jun 2019 22:21:16 GMT
+# Thu, 04 Jul 2019 03:37:53 GMT
 RUN export GNUPGHOME="$(mktemp -d)"   && ( gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys "$GOSU_GPG_KEYS"   || gpg --batch --keyserver pgp.mit.edu --recv-keys "$GOSU_GPG_KEYS"   || gpg --batch --keyserver keyserver.ubuntu.com --recv-keys "$GOSU_GPG_KEYS"   || gpg --batch --keyserver keyserver.pgp.com --recv-keys "$GOSU_GPG_KEYS" )   && curl -o /usr/local/bin/gosu -fSL "https://github.com/tianon/gosu/releases/download/${GOSU_VERSION}/gosu-$(dpkg --print-architecture)"   && curl -o /usr/local/bin/gosu.asc -fSL "https://github.com/tianon/gosu/releases/download/${GOSU_VERSION}/gosu-$(dpkg --print-architecture).asc"   && gpg --batch --verify /usr/local/bin/gosu.asc /usr/local/bin/gosu   && rm /usr/local/bin/gosu.asc   && chmod +x /usr/local/bin/gosu   && ( gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys "$TINI_GPG_KEYS"   || gpg --batch --keyserver pgp.mit.edu --recv-keys "$TINI_GPG_KEYS"   || gpg --batch --keyserver keyserver.ubuntu.com --recv-keys "$TINI_GPG_KEYS"   || gpg --batch --keyserver keyserver.pgp.com --recv-keys "$TINI_GPG_KEYS" )   && curl -o /usr/local/bin/tini -fSL "https://github.com/krallin/tini/releases/download/v${TINI_VERSION}/tini-$(dpkg --print-architecture)"   && curl -o /usr/local/bin/tini.asc -fSL "https://github.com/krallin/tini/releases/download/v${TINI_VERSION}/tini-$(dpkg --print-architecture).asc"   && gpg --batch --verify /usr/local/bin/tini.asc /usr/local/bin/tini   && rm /usr/local/bin/tini.asc   && chmod +x /usr/local/bin/tini   && rm -rf /tmp/*
-# Thu, 27 Jun 2019 22:21:16 GMT
+# Thu, 04 Jul 2019 03:37:54 GMT
 RUN useradd -s /bin/false -m convertigo     && mkdir -p /workspace/lib /workspace/classes     && chown -R convertigo:convertigo /workspace
-# Thu, 27 Jun 2019 22:21:18 GMT
+# Thu, 04 Jul 2019 03:37:55 GMT
 RUN sed -i.bak         -e '/protocol="AJP/d'         -e '/AprLifecycleListener/d'         -e '/JasperListener/d'         -e 's/port="8080"/port="28080" maxThreads="64000" relaxedQueryChars="{}[]|"/'         conf/server.xml     && sed -i.bak         -e 's,<Context>,<Context sessionCookiePath="/">,'         conf/context.xml     && rm -rf webapps/* bin/*.bat conf/server.xml.bak /tmp/*     && mkdir webapps/ROOT     && chown -R convertigo:convertigo conf temp work logs     && chmod -w conf/*
-# Thu, 27 Jun 2019 22:21:18 GMT
+# Thu, 04 Jul 2019 03:37:55 GMT
 ENV CONVERTIGO_VERSION=7.6.0
-# Thu, 27 Jun 2019 22:21:18 GMT
+# Thu, 04 Jul 2019 03:37:56 GMT
 ENV CONVERTIGO_WAR_URL=https://github.com/convertigo/convertigo/releases/download/7.6.0/convertigo-7.6.0.war
-# Thu, 27 Jun 2019 22:21:18 GMT
+# Thu, 04 Jul 2019 03:37:56 GMT
 ENV CONVERTIGO_GPG_KEYS=6A7779BB78FE368DF74B708FD4DA8FBEB64BF75F
-# Thu, 27 Jun 2019 22:21:25 GMT
+# Thu, 04 Jul 2019 03:38:03 GMT
 RUN export GNUPGHOME="$(mktemp -d)"     && ( gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys "$CONVERTIGO_GPG_KEYS"     || gpg --batch --keyserver pgp.mit.edu --recv-keys "$CONVERTIGO_GPG_KEYS"     || gpg --batch --keyserver keyserver.ubuntu.com --recv-keys "$CONVERTIGO_GPG_KEYS"     || gpg --batch --keyserver keyserver.pgp.com --recv-keys "$CONVERTIGO_GPG_KEYS" )     && curl -fSL -o /tmp/convertigo.war $CONVERTIGO_WAR_URL     && curl -fSL -o /tmp/convertigo.war.asc $CONVERTIGO_WAR_URL.asc     && gpg --batch --verify /tmp/convertigo.war.asc /tmp/convertigo.war     && mkdir -p webapps/ROOT webapps/convertigo     && (cd webapps/convertigo         && unzip -q /tmp/convertigo.war         && (chmod -f a+x WEB-INF/xvnc/* || true)         && (test "$(dpkg --print-architecture)" != "i386" && rm -rf WEB-INF/xulrunner WEB-INF/xvnc WEB-INF/lib/swt_* || true)         && rm -rf /tmp/*)
-# Thu, 27 Jun 2019 22:21:25 GMT
+# Thu, 04 Jul 2019 03:38:03 GMT
 COPY file:394d5b837e94d77b6fb87e0ca8bd50995186aaed1c5f3ab5bc0b482f0f769cc3 in webapps/ROOT/index.html 
-# Thu, 27 Jun 2019 22:21:25 GMT
+# Thu, 04 Jul 2019 03:38:03 GMT
 COPY file:3d23b363cb8f7ffd88d633de8278160be5d335114421b973b9b7c4009f618dd9 in / 
-# Thu, 27 Jun 2019 22:21:25 GMT
+# Thu, 04 Jul 2019 03:38:04 GMT
 WORKDIR /workspace
-# Thu, 27 Jun 2019 22:21:25 GMT
+# Thu, 04 Jul 2019 03:38:04 GMT
 VOLUME [/workspace]
-# Thu, 27 Jun 2019 22:21:26 GMT
+# Thu, 04 Jul 2019 03:38:04 GMT
 EXPOSE 28080
-# Thu, 27 Jun 2019 22:21:26 GMT
+# Thu, 04 Jul 2019 03:38:04 GMT
 ENTRYPOINT ["tini" "--" "/docker-entrypoint.sh"]
-# Thu, 27 Jun 2019 22:21:26 GMT
+# Thu, 04 Jul 2019 03:38:04 GMT
 CMD ["convertigo"]
 ```
 
@@ -156,39 +152,39 @@ CMD ["convertigo"]
 		Last Modified: Wed, 19 Jun 2019 05:10:35 GMT  
 		Size: 138.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:65ca75ba1707c94a9402a8cb85367272d4c326a8dbdf7996b3698449a683f891`  
-		Last Modified: Wed, 19 Jun 2019 05:11:25 GMT  
-		Size: 10.8 MB (10766783 bytes)  
+	-	`sha256:1cb6e64c8c35ca3dc2b5fca689cb293aa4a0f360d7321c1b219589330c238fa5`  
+		Last Modified: Thu, 04 Jul 2019 03:21:12 GMT  
+		Size: 12.6 MB (12573579 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:223648fa095f75bd3d74e63bbcd93e8b24e31d2af527030f1ec12058eefaa573`  
-		Last Modified: Wed, 19 Jun 2019 05:11:23 GMT  
+	-	`sha256:0cac40d0d6895454b793335a0d5a45afc9c17124f5b983c8494832845cbe8b66`  
+		Last Modified: Thu, 04 Jul 2019 03:21:11 GMT  
 		Size: 192.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:fdc673b3752ce96cb5e1df91726bbbb47ab87ff769b97fdf863c11d6ab3f91e4`  
-		Last Modified: Thu, 27 Jun 2019 22:22:15 GMT  
-		Size: 3.1 MB (3128474 bytes)  
+	-	`sha256:9a02bb2a2f9f773da02165153dad0f66822d957f08933e2bb028d985d55324dd`  
+		Last Modified: Thu, 04 Jul 2019 03:38:52 GMT  
+		Size: 3.1 MB (3128618 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:db092a9107f0012119985aece72e05a3e58495dd09397b27632fd52c9f9ddbc1`  
-		Last Modified: Thu, 27 Jun 2019 22:22:14 GMT  
-		Size: 910.0 KB (910021 bytes)  
+	-	`sha256:486511cbeda5e66fb0fa459b4c0a69b17da230ad027daeabd11de59109af2604`  
+		Last Modified: Thu, 04 Jul 2019 03:38:51 GMT  
+		Size: 910.0 KB (910029 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:3a6fcaffafbdd15ccec217dfeaffcaa6415bf1e1340762675a6da3fc1a6f3bb3`  
-		Last Modified: Thu, 27 Jun 2019 22:22:13 GMT  
-		Size: 4.6 KB (4608 bytes)  
+	-	`sha256:41da0f5ec33234da4edc4e490cdc5331660382c904b7681d41d83f08f4f5e1fd`  
+		Last Modified: Thu, 04 Jul 2019 03:38:50 GMT  
+		Size: 4.6 KB (4605 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:109b3566a5cc9ff7993fe5ca029f51b8290c9136ab6c04596a5af7e97aac678f`  
-		Last Modified: Thu, 27 Jun 2019 22:22:13 GMT  
-		Size: 26.4 KB (26356 bytes)  
+	-	`sha256:d454c4af81efba4715ce75a764d6614a4be87371efc3bad7e24f66c65302fa8d`  
+		Last Modified: Thu, 04 Jul 2019 03:38:50 GMT  
+		Size: 26.4 KB (26357 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:09e05b57ba87dcf9077b7274e49c2780508a35f1089f52fc4d26f86c5a156bcb`  
-		Last Modified: Thu, 27 Jun 2019 22:22:23 GMT  
-		Size: 132.3 MB (132332109 bytes)  
+	-	`sha256:9776a887c78f3339d488197a5840a79ef5d79df1b50d36eabf3190a9df247c59`  
+		Last Modified: Thu, 04 Jul 2019 03:39:02 GMT  
+		Size: 132.3 MB (132332067 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:ae3b792ab0c3fda3818cff8509a624d095c4bd7ac51d09d05619218c2428e06b`  
-		Last Modified: Thu, 27 Jun 2019 22:22:13 GMT  
-		Size: 454.0 B  
+	-	`sha256:966ae99dfe572b4c60fd1fd336ef371d346735156be59ed759808f49fdbd5f49`  
+		Last Modified: Thu, 04 Jul 2019 03:38:50 GMT  
+		Size: 456.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:74007b6609fabc19b823f2c8a677c03b80761a63db9b2c9754aff47146bacade`  
-		Last Modified: Thu, 27 Jun 2019 22:22:13 GMT  
+	-	`sha256:469b4b04d25cec0712a8778fddd1417a5b7f06640a9e08322568ab175c8aaf03`  
+		Last Modified: Thu, 04 Jul 2019 03:38:51 GMT  
 		Size: 1.1 KB (1148 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
