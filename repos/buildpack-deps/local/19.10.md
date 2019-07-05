@@ -2053,14 +2053,13 @@ Licenses: (parsed from: `/usr/share/doc/libpng-dev/copyright`, `/usr/share/doc/l
 - `libpng`
 - `libpng OR Apache-2.0 OR BSD-3-clause`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris libpng1.6=1.6.37-1~exp4
-'http://archive.ubuntu.com/ubuntu/pool/main/libp/libpng1.6/libpng1.6_1.6.37-1~exp4.dsc' libpng1.6_1.6.37-1~exp4.dsc 2245 SHA256:f21878ef8952546554adfc77f3ddf22a96a424b36189249b2957a68974049eac
-'http://archive.ubuntu.com/ubuntu/pool/main/libp/libpng1.6/libpng1.6_1.6.37.orig.tar.gz' libpng1.6_1.6.37.orig.tar.gz 1508805 SHA256:ca74a0dace179a8422187671aee97dd3892b53e168627145271cad5b5ac81307
-'http://archive.ubuntu.com/ubuntu/pool/main/libp/libpng1.6/libpng1.6_1.6.37-1~exp4.debian.tar.xz' libpng1.6_1.6.37-1~exp4.debian.tar.xz 31472 SHA256:b06475e93a69f89f9d6e8262053daa9c153aab6a008819a8e09056df15593371
-```
+The source package *may* still be available for download from:
+
+- http://snapshot.debian.org/package/libpng1.6/1.6.37-1~exp4/
+
 
 ### `dpkg` source package: `libpsl=0.20.2-2`
 
@@ -2664,14 +2663,9 @@ Licenses: (parsed from: `/usr/share/doc/linux-libc-dev/copyright`)
 
 - `GPL-2`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris linux=5.0.0-17.18
-'http://archive.ubuntu.com/ubuntu/pool/main/l/linux/linux_5.0.0-17.18.dsc' linux_5.0.0-17.18.dsc 7198 SHA256:87640d0d7c691cd6a32dbda9d37b557b3690d753bca4df241b5069cbc1d29aa6
-'http://archive.ubuntu.com/ubuntu/pool/main/l/linux/linux_5.0.0.orig.tar.gz' linux_5.0.0.orig.tar.gz 162593848 SHA256:d9dcf8bafdd5778274c3f9d2634500d4cc186f3ba80fc71ea1a1a100aa65ad6f
-'http://archive.ubuntu.com/ubuntu/pool/main/l/linux/linux_5.0.0-17.18.diff.gz' linux_5.0.0-17.18.diff.gz 4258079 SHA256:dee951d3e688ee5b7baaf7c5942a32c15523526815d3fca1efc5e2417820603e
-```
 
 ### `dpkg` source package: `lsb=10.2019051400ubuntu1`
 
@@ -2704,14 +2698,9 @@ Licenses: (parsed from: `/usr/share/doc/liblz4-1/copyright`)
 - `GPL-2`
 - `GPL-2+`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris lz4=1.8.3-1ubuntu1
-'http://archive.ubuntu.com/ubuntu/pool/main/l/lz4/lz4_1.8.3-1ubuntu1.dsc' lz4_1.8.3-1ubuntu1.dsc 2064 SHA256:9a83220ca20243e3db648ebc10f403c27a78d9a2d62c1b44ceff24ef6267973b
-'http://archive.ubuntu.com/ubuntu/pool/main/l/lz4/lz4_1.8.3.orig.tar.gz' lz4_1.8.3.orig.tar.gz 327897 SHA256:33af5936ac06536805f9745e0b6d61da606a1f8b4cc5c04dd3cbaca3b9b4fc43
-'http://archive.ubuntu.com/ubuntu/pool/main/l/lz4/lz4_1.8.3-1ubuntu1.debian.tar.xz' lz4_1.8.3-1ubuntu1.debian.tar.xz 11768 SHA256:1e38f532e1b9a93f5537eca97e34eeaaf6e941d6862e5289e78a13225975a02e
-```
 
 ### `dpkg` source package: `lzo2=2.10-0.1`
 
