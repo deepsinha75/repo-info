@@ -2,8 +2,8 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:679c6c20402e9ef28b5811c40cc4924f88d6e928045161e28515607c45aad274`
-- Created: `2019-06-24T22:23:37.96639966Z`
+- Image ID: `sha256:a803b2474b20ba6e3ca7d99b1c81d09a04852183f0d850711aed8df63f6bd07a`
+- Created: `2019-07-02T22:20:56.598507029Z`
 - Virtual Size: ~ 234.95 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
@@ -602,15 +602,15 @@ $ yumdownloader --quiet --source --urls initscripts-9.49.46-1.0.1.el7
 https://yum.oracle.com/repo/OracleLinux/OL7/latest/x86_64//getPackageSource/initscripts-9.49.46-1.0.1.el7.src.rpm
 ```
 
-### `rpm` package: `iproute-4.16.0-1.0.3.el7.x86_64`
+### `rpm` package: `iproute-4.16.0-1.0.5.el7.x86_64`
 
 Licenses (from `rpm --query`): GPLv2+ and Public Domain
 
 Source:
 
 ```console
-$ yumdownloader --quiet --source --urls iproute-4.16.0-1.0.3.el7
-https://yum.oracle.com/repo/OracleLinux/OL7/UEKR5/x86_64//getPackageSource/iproute-4.16.0-1.0.3.el7.src.rpm
+$ yumdownloader --quiet --source --urls iproute-4.16.0-1.0.5.el7
+https://yum.oracle.com/repo/OracleLinux/OL7/UEKR5/x86_64//getPackageSource/iproute-4.16.0-1.0.5.el7.src.rpm
 ```
 
 ### `rpm` package: `iputils-20160308-10.el7.x86_64`
@@ -2010,15 +2010,15 @@ $ yumdownloader --quiet --source --urls util-linux-2.23.2-59.el7_6.1
 https://yum.oracle.com/repo/OracleLinux/OL7/latest/x86_64//getPackageSource/util-linux-2.23.2-59.el7_6.1.src.rpm
 ```
 
-### `rpm` package: `vim-minimal-7.4.160-5.el7.x86_64`
+### `rpm` package: `vim-minimal-7.4.160-6.el7_6.x86_64`
 
 Licenses (from `rpm --query`): Vim
 
 Source:
 
 ```console
-$ yumdownloader --quiet --source --urls vim-minimal-7.4.160-5.el7
-https://yum.oracle.com/repo/OracleLinux/OL7/latest/x86_64//getPackageSource/vim-7.4.160-5.el7.src.rpm
+$ yumdownloader --quiet --source --urls vim-minimal-7.4.160-6.el7_6
+https://yum.oracle.com/repo/OracleLinux/OL7/latest/x86_64//getPackageSource/vim-7.4.160-6.el7_6.src.rpm
 ```
 
 ### `rpm` package: `xz-5.2.2-1.el7.x86_64`
