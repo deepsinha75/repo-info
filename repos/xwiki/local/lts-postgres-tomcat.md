@@ -2,9 +2,9 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:8690d78cb159a5997c7d9b4bcb9597469661777a9600b151078390f9780f6f6f`
-- Created: `2019-06-27T23:19:04.614335718Z`
-- Virtual Size: ~ 1.13 Gb  
+- Image ID: `sha256:87377ed5262e30284813c4a62e47b36a3bdc5b61e3d44b6ca66c2b3f53d7784b`
+- Created: `2019-07-04T03:41:00.515656913Z`
+- Virtual Size: ~ 1.14 Gb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["docker-entrypoint.sh"]`
@@ -23,8 +23,6 @@
   - `TOMCAT_MAJOR=8`
   - `TOMCAT_VERSION=8.5.42`
   - `TOMCAT_SHA512=3e6b38e48d315d142e96f8e3809c86632f3c3903f8751c6602581a587edf840893ff0c737a65fcf9560a495b0118b5b8d60d4d1ce7947fe2abe34a89839b640f`
-  - `TOMCAT_TGZ_URLS=https://www.apache.org/dyn/closer.cgi?action=download&filename=tomcat/tomcat-8/v8.5.42/bin/apache-tomcat-8.5.42.tar.gz 	https://www-us.apache.org/dist/tomcat/tomcat-8/v8.5.42/bin/apache-tomcat-8.5.42.tar.gz 	https://www.apache.org/dist/tomcat/tomcat-8/v8.5.42/bin/apache-tomcat-8.5.42.tar.gz 	https://archive.apache.org/dist/tomcat/tomcat-8/v8.5.42/bin/apache-tomcat-8.5.42.tar.gz`
-  - `TOMCAT_ASC_URLS=https://www.apache.org/dyn/closer.cgi?action=download&filename=tomcat/tomcat-8/v8.5.42/bin/apache-tomcat-8.5.42.tar.gz.asc 	https://www-us.apache.org/dist/tomcat/tomcat-8/v8.5.42/bin/apache-tomcat-8.5.42.tar.gz.asc 	https://www.apache.org/dist/tomcat/tomcat-8/v8.5.42/bin/apache-tomcat-8.5.42.tar.gz.asc 	https://archive.apache.org/dist/tomcat/tomcat-8/v8.5.42/bin/apache-tomcat-8.5.42.tar.gz.asc`
   - `XWIKI_VERSION=10.11.8`
   - `XWIKI_URL_PREFIX=https://maven.xwiki.org/releases/org/xwiki/platform/xwiki-platform-distribution-war/10.11.8`
   - `XWIKI_DOWNLOAD_SHA256=d3ac801e156966b1e5729a5251aa13662262460edcbf903ec8b5e5d98563bf7e`
@@ -2332,29 +2330,29 @@ $ apt-get source -qq --print-uris libpsl=0.19.1-5build1
 'http://archive.ubuntu.com/ubuntu/pool/main/libp/libpsl/libpsl_0.19.1-5build1.debian.tar.xz' libpsl_0.19.1-5build1.debian.tar.xz 9860 SHA256:53285bee66ac22a25dd41f7778cc4e94ae3d61929eb6701a8064a38a964e40e2
 ```
 
-### `dpkg` source package: `libreoffice=1:6.0.7-0ubuntu0.18.04.6`
+### `dpkg` source package: `libreoffice=1:6.0.7-0ubuntu0.18.04.7`
 
 Binary Packages:
 
-- `fonts-opensymbol=2:102.10+LibO6.0.7-0ubuntu0.18.04.6`
-- `libreoffice=1:6.0.7-0ubuntu0.18.04.6`
-- `libreoffice-avmedia-backend-gstreamer=1:6.0.7-0ubuntu0.18.04.6`
-- `libreoffice-base=1:6.0.7-0ubuntu0.18.04.6`
-- `libreoffice-base-core=1:6.0.7-0ubuntu0.18.04.6`
-- `libreoffice-base-drivers=1:6.0.7-0ubuntu0.18.04.6`
-- `libreoffice-calc=1:6.0.7-0ubuntu0.18.04.6`
-- `libreoffice-common=1:6.0.7-0ubuntu0.18.04.6`
-- `libreoffice-core=1:6.0.7-0ubuntu0.18.04.6`
-- `libreoffice-draw=1:6.0.7-0ubuntu0.18.04.6`
-- `libreoffice-impress=1:6.0.7-0ubuntu0.18.04.6`
-- `libreoffice-math=1:6.0.7-0ubuntu0.18.04.6`
-- `libreoffice-report-builder-bin=1:6.0.7-0ubuntu0.18.04.6`
-- `libreoffice-style-galaxy=1:6.0.7-0ubuntu0.18.04.6`
-- `libreoffice-style-tango=1:6.0.7-0ubuntu0.18.04.6`
-- `libreoffice-writer=1:6.0.7-0ubuntu0.18.04.6`
-- `python3-uno=1:6.0.7-0ubuntu0.18.04.6`
-- `uno-libs3=6.0.7-0ubuntu0.18.04.6`
-- `ure=6.0.7-0ubuntu0.18.04.6`
+- `fonts-opensymbol=2:102.10+LibO6.0.7-0ubuntu0.18.04.7`
+- `libreoffice=1:6.0.7-0ubuntu0.18.04.7`
+- `libreoffice-avmedia-backend-gstreamer=1:6.0.7-0ubuntu0.18.04.7`
+- `libreoffice-base=1:6.0.7-0ubuntu0.18.04.7`
+- `libreoffice-base-core=1:6.0.7-0ubuntu0.18.04.7`
+- `libreoffice-base-drivers=1:6.0.7-0ubuntu0.18.04.7`
+- `libreoffice-calc=1:6.0.7-0ubuntu0.18.04.7`
+- `libreoffice-common=1:6.0.7-0ubuntu0.18.04.7`
+- `libreoffice-core=1:6.0.7-0ubuntu0.18.04.7`
+- `libreoffice-draw=1:6.0.7-0ubuntu0.18.04.7`
+- `libreoffice-impress=1:6.0.7-0ubuntu0.18.04.7`
+- `libreoffice-math=1:6.0.7-0ubuntu0.18.04.7`
+- `libreoffice-report-builder-bin=1:6.0.7-0ubuntu0.18.04.7`
+- `libreoffice-style-galaxy=1:6.0.7-0ubuntu0.18.04.7`
+- `libreoffice-style-tango=1:6.0.7-0ubuntu0.18.04.7`
+- `libreoffice-writer=1:6.0.7-0ubuntu0.18.04.7`
+- `python3-uno=1:6.0.7-0ubuntu0.18.04.7`
+- `uno-libs3=6.0.7-0ubuntu0.18.04.7`
+- `ure=6.0.7-0ubuntu0.18.04.7`
 
 Licenses: (parsed from: `/usr/share/doc/fonts-opensymbol/copyright`, `/usr/share/doc/libreoffice/copyright`, `/usr/share/doc/libreoffice-avmedia-backend-gstreamer/copyright`, `/usr/share/doc/libreoffice-base/copyright`, `/usr/share/doc/libreoffice-base-core/copyright`, `/usr/share/doc/libreoffice-base-drivers/copyright`, `/usr/share/doc/libreoffice-calc/copyright`, `/usr/share/doc/libreoffice-common/copyright`, `/usr/share/doc/libreoffice-core/copyright`, `/usr/share/doc/libreoffice-draw/copyright`, `/usr/share/doc/libreoffice-impress/copyright`, `/usr/share/doc/libreoffice-math/copyright`, `/usr/share/doc/libreoffice-report-builder-bin/copyright`, `/usr/share/doc/libreoffice-style-galaxy/copyright`, `/usr/share/doc/libreoffice-style-tango/copyright`, `/usr/share/doc/libreoffice-writer/copyright`, `/usr/share/doc/python3-uno/copyright`, `/usr/share/doc/uno-libs3/copyright`, `/usr/share/doc/ure/copyright`)
 
@@ -2373,13 +2371,13 @@ Licenses: (parsed from: `/usr/share/doc/fonts-opensymbol/copyright`, `/usr/share
 Source:
 
 ```console
-$ apt-get source -qq --print-uris libreoffice=1:6.0.7-0ubuntu0.18.04.6
-'http://archive.ubuntu.com/ubuntu/pool/main/libr/libreoffice/libreoffice_6.0.7-0ubuntu0.18.04.6.dsc' libreoffice_6.0.7-0ubuntu0.18.04.6.dsc 17729 SHA256:9a306c3465fbc5c1cc3ac65234e63a92dbfbf00937db3f5390f9d5786c860954
+$ apt-get source -qq --print-uris libreoffice=1:6.0.7-0ubuntu0.18.04.7
+'http://archive.ubuntu.com/ubuntu/pool/main/libr/libreoffice/libreoffice_6.0.7-0ubuntu0.18.04.7.dsc' libreoffice_6.0.7-0ubuntu0.18.04.7.dsc 17729 SHA256:711b7e1700c35a7f2053251584a10f187e3ec93329723c91fe100b985ebbb938
 'http://archive.ubuntu.com/ubuntu/pool/main/libr/libreoffice/libreoffice_6.0.7.orig-helpcontent2.tar.xz' libreoffice_6.0.7.orig-helpcontent2.tar.xz 2423012 SHA256:41c1ef4b0437acd7e8ba36789b45906e99e0487b12198bce0d30ed74c9e0ccaf
 'http://archive.ubuntu.com/ubuntu/pool/main/libr/libreoffice/libreoffice_6.0.7.orig-tarballs.tar.xz' libreoffice_6.0.7.orig-tarballs.tar.xz 215486780 SHA256:96116dcc195ab1f47fa677bf88f8d233561422dbfe5a0539f7408b56e254c194
 'http://archive.ubuntu.com/ubuntu/pool/main/libr/libreoffice/libreoffice_6.0.7.orig-translations.tar.xz' libreoffice_6.0.7.orig-translations.tar.xz 139598364 SHA256:24a3ef909cfb0722dec3d6e40924681b41641f175e5df90b3e5507fdceb43186
 'http://archive.ubuntu.com/ubuntu/pool/main/libr/libreoffice/libreoffice_6.0.7.orig.tar.xz' libreoffice_6.0.7.orig.tar.xz 183202236 SHA256:fc67036b0c00c1685d39acec6c485a4a250b6bb92fc08a88377d39d2f7fd7923
-'http://archive.ubuntu.com/ubuntu/pool/main/libr/libreoffice/libreoffice_6.0.7-0ubuntu0.18.04.6.debian.tar.xz' libreoffice_6.0.7-0ubuntu0.18.04.6.debian.tar.xz 2173788 SHA256:563c7c036d375401b1ef9ce8ecc4ee5e11fb05da669bb1520246f922edbbc5ca
+'http://archive.ubuntu.com/ubuntu/pool/main/libr/libreoffice/libreoffice_6.0.7-0ubuntu0.18.04.7.debian.tar.xz' libreoffice_6.0.7-0ubuntu0.18.04.7.debian.tar.xz 2174120 SHA256:6b34efe56dc85806dd91a510e788aec7ec4b7d35599c7f53e7bba39a77c2b2be
 ```
 
 ### `dpkg` source package: `librest=0.8.0-2`
@@ -3415,7 +3413,6 @@ $ apt-get source -qq --print-uris openldap=2.4.45+dfsg-1ubuntu1.2
 
 Binary Packages:
 
-- `libssl1.1:amd64=1.1.1-1ubuntu2.1~18.04.2`
 - `openssl=1.1.1-1ubuntu2.1~18.04.2`
 
 **WARNING:** unable to detect licenses! (package likely not compliant with DEP-5)  
@@ -3425,6 +3422,26 @@ If source is available (seen below), check the contents of `debian/copyright` wi
 **WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
 This is *usually* due to a new package version being released and the old version being removed.
 
+
+### `dpkg` source package: `openssl=1.1.1-1ubuntu2.1~18.04.3`
+
+Binary Packages:
+
+- `libssl1.1:amd64=1.1.1-1ubuntu2.1~18.04.3`
+
+**WARNING:** unable to detect licenses! (package likely not compliant with DEP-5)  
+If source is available (seen below), check the contents of `debian/copyright` within it.
+
+
+Source:
+
+```console
+$ apt-get source -qq --print-uris openssl=1.1.1-1ubuntu2.1~18.04.3
+'http://archive.ubuntu.com/ubuntu/pool/main/o/openssl/openssl_1.1.1-1ubuntu2.1~18.04.3.dsc' openssl_1.1.1-1ubuntu2.1~18.04.3.dsc 2776 SHA256:0f6c39f21e30f17f5364e0651d01b5fe82d3299dedc53e2e407b5950cfe796a3
+'http://archive.ubuntu.com/ubuntu/pool/main/o/openssl/openssl_1.1.1.orig.tar.gz' openssl_1.1.1.orig.tar.gz 8337920 SHA256:2836875a0f89c03d0fdf483941512613a50cfb421d6fd94b9f41d7279d586a3d
+'http://archive.ubuntu.com/ubuntu/pool/main/o/openssl/openssl_1.1.1.orig.tar.gz.asc' openssl_1.1.1.orig.tar.gz.asc 488 SHA256:f3296150114069ea73a72eafbfdcbb295b770e7cbf3266f9590f3d0932498b3e
+'http://archive.ubuntu.com/ubuntu/pool/main/o/openssl/openssl_1.1.1-1ubuntu2.1~18.04.3.debian.tar.xz' openssl_1.1.1-1ubuntu2.1~18.04.3.debian.tar.xz 89972 SHA256:4fc846b2ec69b2809832f6e29535873b000c2bcb682fe831d07038f6c187840c
+```
 
 ### `dpkg` source package: `orc=1:0.4.28-1`
 
