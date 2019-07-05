@@ -2,8 +2,8 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:db322a6c3b84b577fb5fdad70bfc82324f77836bf324f5fc369c2d914b69aaef`
-- Created: `2019-06-25T20:12:14.895405533Z`
+- Image ID: `sha256:f05c3eb3cf9175bcadff67f18e72811c0fb3f248c46d81e9a7cd9cc24411d7be`
+- Created: `2019-07-04T02:35:13.090533822Z`
 - Virtual Size: ~ 179.32 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
@@ -14,8 +14,8 @@
   - `OPENSSL_VERSION=1.1.1c`
   - `OPENSSL_SOURCE_SHA256=f6fb3079ad15076154eda9413fed42877d668e7069d9b87396d0804fdb3f4c90`
   - `OPENSSL_PGP_KEY_IDS=0x8657ABB260F056B1E5190839D9C4D26D0E604491 0x5B2545DAB21995F4088CEFAA36CEE4DEB00CFE33 0xED230BEC4D4F2518B9D7DF41F0DB4D21C1D35231 0xC1F33DD8CE1D4CC613AF14DA9195C48241FBF7DD 0x7953AC1FBC3DC8B3B292393ED5E9E43F7DF9EE8C 0xE5E52560DD91C556DDBDA5D02064C53641C25E5D`
-  - `OTP_VERSION=22.0.4`
-  - `OTP_SOURCE_SHA256=71b2fe49ed5ac386ebc189dd2e5f4b95b11b4427936be0e3c5695a903ea9ffcd`
+  - `OTP_VERSION=22.0.5`
+  - `OTP_SOURCE_SHA256=28e42e2cf2e43c187f273540987b0f297c46cff2c5eeba453144bc0d41dafd31`
   - `RABBITMQ_DATA_DIR=/var/lib/rabbitmq`
   - `RABBITMQ_VERSION=3.7.15`
   - `RABBITMQ_PGP_KEY_ID=0x0A9AF2115F4687BD29803A206B73A36E6026DFCA`
@@ -383,11 +383,11 @@ $ apt-get source -qq --print-uris e2fsprogs=1.44.1-1ubuntu1.1
 'http://archive.ubuntu.com/ubuntu/pool/main/e/e2fsprogs/e2fsprogs_1.44.1-1ubuntu1.1.debian.tar.xz' e2fsprogs_1.44.1-1ubuntu1.1.debian.tar.xz 78448 SHA256:4ccbbae034750cb5126618f66abb8e9af7a35d6943c81572168b07279447383f
 ```
 
-### `dpkg` source package: `expat=2.2.5-3`
+### `dpkg` source package: `expat=2.2.5-3ubuntu0.1`
 
 Binary Packages:
 
-- `libexpat1:amd64=2.2.5-3`
+- `libexpat1:amd64=2.2.5-3ubuntu0.1`
 
 Licenses: (parsed from: `/usr/share/doc/libexpat1/copyright`)
 
@@ -396,10 +396,10 @@ Licenses: (parsed from: `/usr/share/doc/libexpat1/copyright`)
 Source:
 
 ```console
-$ apt-get source -qq --print-uris expat=2.2.5-3
-'http://archive.ubuntu.com/ubuntu/pool/main/e/expat/expat_2.2.5-3.dsc' expat_2.2.5-3.dsc 2099 SHA256:21c9f507f332a388a8224ebe19e030bd04a9627d255138acc3efef467604c55f
+$ apt-get source -qq --print-uris expat=2.2.5-3ubuntu0.1
+'http://archive.ubuntu.com/ubuntu/pool/main/e/expat/expat_2.2.5-3ubuntu0.1.dsc' expat_2.2.5-3ubuntu0.1.dsc 2198 SHA256:3632826470a247360d88c662e6defc2ec3d7a20e966a64062f768447ff149754
 'http://archive.ubuntu.com/ubuntu/pool/main/e/expat/expat_2.2.5.orig.tar.gz' expat_2.2.5.orig.tar.gz 8273003 SHA256:b3781742738611eaa737543ee94264dd511c52a3ba7e53111f7d705f6bff65a8
-'http://archive.ubuntu.com/ubuntu/pool/main/e/expat/expat_2.2.5-3.debian.tar.xz' expat_2.2.5-3.debian.tar.xz 10640 SHA256:497d14ac905cb70fc4cacc1e4d92bcccf792237b31fc506a5ea7c4d3aa6c8235
+'http://archive.ubuntu.com/ubuntu/pool/main/e/expat/expat_2.2.5-3ubuntu0.1.debian.tar.xz' expat_2.2.5-3ubuntu0.1.debian.tar.xz 11176 SHA256:a8d7fb711c503bec9050caa87c67c6c69ad10dba2cba77a2a4d86cf431fc1b74
 ```
 
 ### `dpkg` source package: `findutils=4.6.0+git+20170828-2`
