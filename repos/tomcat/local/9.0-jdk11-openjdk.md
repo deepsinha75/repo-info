@@ -2,9 +2,9 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:7f7bbdadd87e6d92445f2cf29a53e19ba3a53419e1e8561d3a7c57336fa988b3`
-- Created: `2019-06-14T22:38:35.266951676Z`
-- Virtual Size: ~ 623.01 Mb  
+- Image ID: `sha256:ed32f52716bc93446784e3ce3bbb1a2c19721545dcc9d2202cd72c20eea643c7`
+- Created: `2019-07-04T02:43:01.950393104Z`
+- Virtual Size: ~ 627.53 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Command: `["catalina.sh","run"]`
@@ -22,8 +22,6 @@
   - `TOMCAT_MAJOR=9`
   - `TOMCAT_VERSION=9.0.21`
   - `TOMCAT_SHA512=a8788ba8187f940b55d3db6cb0108943b8b48aecc2d9a3307409d3cbf72fac9b19fa434baa97aa0d4ac552f7c13967932b8a36dbae5d582bc14ed13bb058ea9b`
-  - `TOMCAT_TGZ_URLS=https://www.apache.org/dyn/closer.cgi?action=download&filename=tomcat/tomcat-9/v9.0.21/bin/apache-tomcat-9.0.21.tar.gz 	https://www-us.apache.org/dist/tomcat/tomcat-9/v9.0.21/bin/apache-tomcat-9.0.21.tar.gz 	https://www.apache.org/dist/tomcat/tomcat-9/v9.0.21/bin/apache-tomcat-9.0.21.tar.gz 	https://archive.apache.org/dist/tomcat/tomcat-9/v9.0.21/bin/apache-tomcat-9.0.21.tar.gz`
-  - `TOMCAT_ASC_URLS=https://www.apache.org/dyn/closer.cgi?action=download&filename=tomcat/tomcat-9/v9.0.21/bin/apache-tomcat-9.0.21.tar.gz.asc 	https://www-us.apache.org/dist/tomcat/tomcat-9/v9.0.21/bin/apache-tomcat-9.0.21.tar.gz.asc 	https://www.apache.org/dist/tomcat/tomcat-9/v9.0.21/bin/apache-tomcat-9.0.21.tar.gz.asc 	https://archive.apache.org/dist/tomcat/tomcat-9/v9.0.21/bin/apache-tomcat-9.0.21.tar.gz.asc`
 
 ## `dpkg` (`.deb`-based packages)
 
@@ -2288,7 +2286,6 @@ Other potentially useful URLs:
 
 Binary Packages:
 
-- `libssl1.1:amd64=1.1.0j-1~deb9u1`
 - `openssl=1.1.0j-1~deb9u1`
 
 **WARNING:** unable to detect licenses! (package likely not compliant with DEP-5)  
@@ -2310,6 +2307,32 @@ Other potentially useful URLs:
 - https://sources.debian.net/src/openssl/1.1.0j-1~deb9u1/ (for browsing the source)
 - https://sources.debian.net/src/openssl/1.1.0j-1~deb9u1/debian/copyright/ (for direct copyright/license information)
 - http://snapshot.debian.org/package/openssl/1.1.0j-1~deb9u1/ (for access to the source package after it no longer exists in the archive)
+
+### `dpkg` source package: `openssl=1.1.0k-1~deb9u1`
+
+Binary Packages:
+
+- `libssl1.1:amd64=1.1.0k-1~deb9u1`
+
+**WARNING:** unable to detect licenses! (package likely not compliant with DEP-5)  
+If source is available (seen below), check the contents of `debian/copyright` within it.
+
+
+Source:
+
+```console
+$ apt-get source -qq --print-uris openssl=1.1.0k-1~deb9u1
+'http://security.debian.org/debian-security/pool/updates/main/o/openssl/openssl_1.1.0k-1~deb9u1.dsc' openssl_1.1.0k-1~deb9u1.dsc 2437 SHA256:81d1127296775e23080740d8bd0f8b8696f0edd6a8cd5c87d95f2dea23d128d9
+'http://security.debian.org/debian-security/pool/updates/main/o/openssl/openssl_1.1.0k.orig.tar.gz' openssl_1.1.0k.orig.tar.gz 5287321 SHA256:efa4965f4f773574d6cbda1cf874dbbe455ab1c0d4f906115f867d30444470b1
+'http://security.debian.org/debian-security/pool/updates/main/o/openssl/openssl_1.1.0k.orig.tar.gz.asc' openssl_1.1.0k.orig.tar.gz.asc 833 SHA256:82b4338a150147d3c67a0bc0aa1ae4b209b8dc985af2bf523d72097bdf12a743
+'http://security.debian.org/debian-security/pool/updates/main/o/openssl/openssl_1.1.0k-1~deb9u1.debian.tar.xz' openssl_1.1.0k-1~deb9u1.debian.tar.xz 71996 SHA256:782054f0183e65469f97402cecff23c0d9fc00a026f263afbca3ba77415ffa27
+```
+
+Other potentially useful URLs:
+
+- https://sources.debian.net/src/openssl/1.1.0k-1~deb9u1/ (for browsing the source)
+- https://sources.debian.net/src/openssl/1.1.0k-1~deb9u1/debian/copyright/ (for direct copyright/license information)
+- http://snapshot.debian.org/package/openssl/1.1.0k-1~deb9u1/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `p11-kit=0.23.3-2`
 

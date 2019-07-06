@@ -2,9 +2,9 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:ed7821d4fc34697cd714fc4ad7428d0fa67f2c7175c4c3189c55b6b3e009a8c1`
-- Created: `2019-06-19T05:04:30.470236218Z`
-- Virtual Size: ~ 342.00 Mb  
+- Image ID: `sha256:7b06162f7c2c1c5597a277642da30481fa36d047a913778f0e5803311f406830`
+- Created: `2019-07-04T02:51:47.959852038Z`
+- Virtual Size: ~ 346.34 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Command: `["catalina.sh","run"]`
@@ -23,8 +23,6 @@
   - `TOMCAT_MAJOR=9`
   - `TOMCAT_VERSION=9.0.21`
   - `TOMCAT_SHA512=a8788ba8187f940b55d3db6cb0108943b8b48aecc2d9a3307409d3cbf72fac9b19fa434baa97aa0d4ac552f7c13967932b8a36dbae5d582bc14ed13bb058ea9b`
-  - `TOMCAT_TGZ_URLS=https://www.apache.org/dyn/closer.cgi?action=download&filename=tomcat/tomcat-9/v9.0.21/bin/apache-tomcat-9.0.21.tar.gz 	https://www-us.apache.org/dist/tomcat/tomcat-9/v9.0.21/bin/apache-tomcat-9.0.21.tar.gz 	https://www.apache.org/dist/tomcat/tomcat-9/v9.0.21/bin/apache-tomcat-9.0.21.tar.gz 	https://archive.apache.org/dist/tomcat/tomcat-9/v9.0.21/bin/apache-tomcat-9.0.21.tar.gz`
-  - `TOMCAT_ASC_URLS=https://www.apache.org/dyn/closer.cgi?action=download&filename=tomcat/tomcat-9/v9.0.21/bin/apache-tomcat-9.0.21.tar.gz.asc 	https://www-us.apache.org/dist/tomcat/tomcat-9/v9.0.21/bin/apache-tomcat-9.0.21.tar.gz.asc 	https://www.apache.org/dist/tomcat/tomcat-9/v9.0.21/bin/apache-tomcat-9.0.21.tar.gz.asc 	https://archive.apache.org/dist/tomcat/tomcat-9/v9.0.21/bin/apache-tomcat-9.0.21.tar.gz.asc`
 
 ## `dpkg` (`.deb`-based packages)
 
@@ -1218,7 +1216,6 @@ $ apt-get source -qq --print-uris openldap=2.4.45+dfsg-1ubuntu1.2
 
 Binary Packages:
 
-- `libssl1.1:amd64=1.1.1-1ubuntu2.1~18.04.2`
 - `openssl=1.1.1-1ubuntu2.1~18.04.2`
 
 **WARNING:** unable to detect licenses! (package likely not compliant with DEP-5)  
@@ -1228,6 +1225,26 @@ If source is available (seen below), check the contents of `debian/copyright` wi
 **WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
 This is *usually* due to a new package version being released and the old version being removed.
 
+
+### `dpkg` source package: `openssl=1.1.1-1ubuntu2.1~18.04.3`
+
+Binary Packages:
+
+- `libssl1.1:amd64=1.1.1-1ubuntu2.1~18.04.3`
+
+**WARNING:** unable to detect licenses! (package likely not compliant with DEP-5)  
+If source is available (seen below), check the contents of `debian/copyright` within it.
+
+
+Source:
+
+```console
+$ apt-get source -qq --print-uris openssl=1.1.1-1ubuntu2.1~18.04.3
+'http://archive.ubuntu.com/ubuntu/pool/main/o/openssl/openssl_1.1.1-1ubuntu2.1~18.04.3.dsc' openssl_1.1.1-1ubuntu2.1~18.04.3.dsc 2776 SHA256:0f6c39f21e30f17f5364e0651d01b5fe82d3299dedc53e2e407b5950cfe796a3
+'http://archive.ubuntu.com/ubuntu/pool/main/o/openssl/openssl_1.1.1.orig.tar.gz' openssl_1.1.1.orig.tar.gz 8337920 SHA256:2836875a0f89c03d0fdf483941512613a50cfb421d6fd94b9f41d7279d586a3d
+'http://archive.ubuntu.com/ubuntu/pool/main/o/openssl/openssl_1.1.1.orig.tar.gz.asc' openssl_1.1.1.orig.tar.gz.asc 488 SHA256:f3296150114069ea73a72eafbfdcbb295b770e7cbf3266f9590f3d0932498b3e
+'http://archive.ubuntu.com/ubuntu/pool/main/o/openssl/openssl_1.1.1-1ubuntu2.1~18.04.3.debian.tar.xz' openssl_1.1.1-1ubuntu2.1~18.04.3.debian.tar.xz 89972 SHA256:4fc846b2ec69b2809832f6e29535873b000c2bcb682fe831d07038f6c187840c
+```
 
 ### `dpkg` source package: `p11-kit=0.23.9-2`
 
