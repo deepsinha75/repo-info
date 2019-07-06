@@ -2,8 +2,8 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:b290bf6ec58a2af683fe46213ee54f0ead4c4dce234f2c93335d441066506fcf`
-- Created: `2019-06-21T20:28:45.611711858Z`
+- Image ID: `sha256:88760685a975782181dead915280a9e960304f634ca355997ec16649b96b77ca`
+- Created: `2019-07-05T21:20:41.735385861Z`
 - Virtual Size: ~ 34.10 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
@@ -11,7 +11,7 @@
 - Environment:
   - `PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
 - Labels:
-  - `build-date=20190621`
+  - `build-date=20190705`
   - `name=Photon OS x86_64/3.0 Base Image`
   - `vendor=VMware`
 
@@ -23,7 +23,7 @@ Licenses (from `rpm --query`): GPLv3
 
 **WARNING:** unable to find source (`yumdownloader` failed or returned no results)!
 
-### `rpm` package: `bzip2-libs-1.0.6-9.ph3.x86_64`
+### `rpm` package: `bzip2-libs-1.0.6-10.ph3.x86_64`
 
 Licenses (from `rpm --query`): BSD
 
