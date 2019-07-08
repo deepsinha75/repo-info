@@ -1,7 +1,7 @@
 ## `yourls:latest`
 
 ```console
-$ docker pull yourls@sha256:389cd2ecb96743d36ba34279ef01598c871accf8b55bb30565d3c6eb225795af
+$ docker pull yourls@sha256:9bdd2d8a6b6be9c1396761a8fd2ef4c8d2415ef9aa3d95d4cb57793a5f134443
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -16,14 +16,14 @@ $ docker pull yourls@sha256:389cd2ecb96743d36ba34279ef01598c871accf8b55bb30565d3
 ### `yourls:latest` - linux; amd64
 
 ```console
-$ docker pull yourls@sha256:34524838aee0290cceef96ae9a01f35f89aa84254c4e7a15eabbd41bfd2b32d1
+$ docker pull yourls@sha256:db7efea8cc23fb1b5f60aa4d10c697c8b3cee50266118c3c5712410c284c8faf
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **139.2 MB (139209710 bytes)**  
+-	Total Size: **139.2 MB (139209765 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:d62411750d58f68aa81bfe8f2038d474e19d35d769bd7420bc0136d6f32640e0`
+-	Image ID: `sha256:7a80caef51b3650faa31ed590effe0a5c6ab7290e83761426aa247c09104594d`
 -	Entrypoint: `["docker-entrypoint.sh"]`
 -	Default Command: `["apache2-foreground"]`
 
@@ -106,13 +106,13 @@ ENV YOURLS_SHA256=301ed5b0bfd63cfaeeafe40de056661302e786542002f479886fcf601bfb9d
 RUN set -eux;     curl -o yourls.tar.gz -fsSL "https://github.com/YOURLS/YOURLS/archive/${YOURLS_VERSION}.tar.gz";     echo "$YOURLS_SHA256 *yourls.tar.gz" | sha256sum -c -;     tar -xf yourls.tar.gz -C /usr/src/;     mv "/usr/src/YOURLS-${YOURLS_VERSION}" /usr/src/yourls;     rm yourls.tar.gz;     chown -R www-data:www-data /usr/src/yourls
 # Thu, 04 Jul 2019 00:57:43 GMT
 COPY file:dae29f9c1e1fe04a79abdb2b0965f1a821bebbe26ab1e1e13cae7fe5fbaf788d in /usr/local/bin/ 
-# Thu, 04 Jul 2019 00:57:43 GMT
-COPY file:3f52182221aa0be7c7b12ddf051434d36a6c19e6da6da6b973ace390c4e1ce25 in /usr/src/yourls/user/ 
-# Thu, 04 Jul 2019 00:57:44 GMT
+# Mon, 08 Jul 2019 20:21:17 GMT
+COPY file:3694b933d9d31fc65ed3f78f65289b778a21bf67c518d2cb89c6294ef1d41b60 in /usr/src/yourls/user/ 
+# Mon, 08 Jul 2019 20:21:18 GMT
 COPY file:5b7ff05d0c98ad759c4bec0ef8a7ce74cae42e95b42564b55f43b341c2c3e3f5 in /usr/src/yourls/ 
-# Thu, 04 Jul 2019 00:57:44 GMT
+# Mon, 08 Jul 2019 20:21:18 GMT
 ENTRYPOINT ["docker-entrypoint.sh"]
-# Thu, 04 Jul 2019 00:57:45 GMT
+# Mon, 08 Jul 2019 20:21:18 GMT
 CMD ["apache2-foreground"]
 ```
 
@@ -189,26 +189,26 @@ CMD ["apache2-foreground"]
 		Last Modified: Thu, 04 Jul 2019 00:59:44 GMT  
 		Size: 1.1 KB (1069 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:0930b957797665866a61bf79b7c92faa6514e0418c0590fb4c3f1b08ee978188`  
-		Last Modified: Thu, 04 Jul 2019 00:59:44 GMT  
-		Size: 1.8 KB (1806 bytes)  
+	-	`sha256:14cfa5218c9e4be18797fee54d064bf62f4e1d838f0b784e32d7497a079fa658`  
+		Last Modified: Mon, 08 Jul 2019 20:21:36 GMT  
+		Size: 1.9 KB (1861 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:df6198d2c1976777a12cf08c64ebb508e21f0c4b1f7cc6781177eb293c301a8e`  
-		Last Modified: Thu, 04 Jul 2019 00:59:44 GMT  
+	-	`sha256:ddda5ba972c6ecb11baf6dd138da75adb6c2db7da841f00c92bbdabdb2c0f378`  
+		Last Modified: Mon, 08 Jul 2019 20:21:36 GMT  
 		Size: 334.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `yourls:latest` - linux; arm variant v5
 
 ```console
-$ docker pull yourls@sha256:68cb86dc00810371547e10de54f62908efee7abdf794b925618ec9e53fbd73c3
+$ docker pull yourls@sha256:168b4ae46c2f9d891ca6909a2ee6517ebed9ff0a227d7e8c7410e13d64d3f2bb
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **126.3 MB (126317767 bytes)**  
+-	Total Size: **126.3 MB (126317830 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:503d876d5b1c881650e7a3dc37c1e66ff0123c110a5bfc469c7959e03566e25d`
+-	Image ID: `sha256:5c2ab00999ed424db1861ff29a57b550c784bb466665d0609dc8a159d8f4a94e`
 -	Entrypoint: `["docker-entrypoint.sh"]`
 -	Default Command: `["apache2-foreground"]`
 
@@ -291,13 +291,13 @@ ENV YOURLS_SHA256=301ed5b0bfd63cfaeeafe40de056661302e786542002f479886fcf601bfb9d
 RUN set -eux;     curl -o yourls.tar.gz -fsSL "https://github.com/YOURLS/YOURLS/archive/${YOURLS_VERSION}.tar.gz";     echo "$YOURLS_SHA256 *yourls.tar.gz" | sha256sum -c -;     tar -xf yourls.tar.gz -C /usr/src/;     mv "/usr/src/YOURLS-${YOURLS_VERSION}" /usr/src/yourls;     rm yourls.tar.gz;     chown -R www-data:www-data /usr/src/yourls
 # Wed, 03 Jul 2019 22:26:59 GMT
 COPY file:dae29f9c1e1fe04a79abdb2b0965f1a821bebbe26ab1e1e13cae7fe5fbaf788d in /usr/local/bin/ 
-# Wed, 03 Jul 2019 22:26:59 GMT
-COPY file:3f52182221aa0be7c7b12ddf051434d36a6c19e6da6da6b973ace390c4e1ce25 in /usr/src/yourls/user/ 
-# Wed, 03 Jul 2019 22:27:00 GMT
+# Mon, 08 Jul 2019 20:48:32 GMT
+COPY file:3694b933d9d31fc65ed3f78f65289b778a21bf67c518d2cb89c6294ef1d41b60 in /usr/src/yourls/user/ 
+# Mon, 08 Jul 2019 20:48:32 GMT
 COPY file:5b7ff05d0c98ad759c4bec0ef8a7ce74cae42e95b42564b55f43b341c2c3e3f5 in /usr/src/yourls/ 
-# Wed, 03 Jul 2019 22:27:01 GMT
+# Mon, 08 Jul 2019 20:48:32 GMT
 ENTRYPOINT ["docker-entrypoint.sh"]
-# Wed, 03 Jul 2019 22:27:01 GMT
+# Mon, 08 Jul 2019 20:48:33 GMT
 CMD ["apache2-foreground"]
 ```
 
@@ -374,26 +374,26 @@ CMD ["apache2-foreground"]
 		Last Modified: Wed, 03 Jul 2019 22:28:26 GMT  
 		Size: 1.1 KB (1066 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:26cd391dc8776b440e0ef3e4b0ac8496a5853e125b43265529905ce1afa57e46`  
-		Last Modified: Wed, 03 Jul 2019 22:28:26 GMT  
-		Size: 1.8 KB (1804 bytes)  
+	-	`sha256:ebb2299e3791fd79edbd389f1385b3beb4df5035ac9eac483b1f4542f464fd7a`  
+		Last Modified: Mon, 08 Jul 2019 20:48:50 GMT  
+		Size: 1.9 KB (1864 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:21d2e6d64771f3095ebbd1ea62e9003e9582fa268c44f31b44f25f9d3988b79c`  
-		Last Modified: Wed, 03 Jul 2019 22:28:26 GMT  
-		Size: 333.0 B  
+	-	`sha256:37987bfe8ae38155e1880d96a49c628908a40b6b3ff62a2d47ccca8a8998ade3`  
+		Last Modified: Mon, 08 Jul 2019 20:48:50 GMT  
+		Size: 336.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `yourls:latest` - linux; arm variant v7
 
 ```console
-$ docker pull yourls@sha256:acb58e232128a5d01f4245e6f924b264703ecadec75d07bb96646133b1478769
+$ docker pull yourls@sha256:73b0ad56523dc4f5f69a4721a7e29d2a470e6138a440ed3c76b16859ff75176b
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **119.1 MB (119132609 bytes)**  
+-	Total Size: **119.1 MB (119132668 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:556522db6bdac31df22f811e313ec84d17e61f5a0a4a1bc2dc51c07401983d19`
+-	Image ID: `sha256:f5dbb2f5645b16bcb091ac61860058f8e20b272441a111cc0e3af9eb3bc8cba1`
 -	Entrypoint: `["docker-entrypoint.sh"]`
 -	Default Command: `["apache2-foreground"]`
 
@@ -476,13 +476,13 @@ ENV YOURLS_SHA256=301ed5b0bfd63cfaeeafe40de056661302e786542002f479886fcf601bfb9d
 RUN set -eux;     curl -o yourls.tar.gz -fsSL "https://github.com/YOURLS/YOURLS/archive/${YOURLS_VERSION}.tar.gz";     echo "$YOURLS_SHA256 *yourls.tar.gz" | sha256sum -c -;     tar -xf yourls.tar.gz -C /usr/src/;     mv "/usr/src/YOURLS-${YOURLS_VERSION}" /usr/src/yourls;     rm yourls.tar.gz;     chown -R www-data:www-data /usr/src/yourls
 # Wed, 03 Jul 2019 22:22:22 GMT
 COPY file:dae29f9c1e1fe04a79abdb2b0965f1a821bebbe26ab1e1e13cae7fe5fbaf788d in /usr/local/bin/ 
-# Wed, 03 Jul 2019 22:22:23 GMT
-COPY file:3f52182221aa0be7c7b12ddf051434d36a6c19e6da6da6b973ace390c4e1ce25 in /usr/src/yourls/user/ 
-# Wed, 03 Jul 2019 22:22:24 GMT
+# Mon, 08 Jul 2019 19:57:45 GMT
+COPY file:3694b933d9d31fc65ed3f78f65289b778a21bf67c518d2cb89c6294ef1d41b60 in /usr/src/yourls/user/ 
+# Mon, 08 Jul 2019 19:57:45 GMT
 COPY file:5b7ff05d0c98ad759c4bec0ef8a7ce74cae42e95b42564b55f43b341c2c3e3f5 in /usr/src/yourls/ 
-# Wed, 03 Jul 2019 22:22:24 GMT
+# Mon, 08 Jul 2019 19:57:46 GMT
 ENTRYPOINT ["docker-entrypoint.sh"]
-# Wed, 03 Jul 2019 22:22:25 GMT
+# Mon, 08 Jul 2019 19:57:46 GMT
 CMD ["apache2-foreground"]
 ```
 
@@ -559,26 +559,26 @@ CMD ["apache2-foreground"]
 		Last Modified: Wed, 03 Jul 2019 22:23:58 GMT  
 		Size: 1.1 KB (1068 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:57f266241023f59dc3cb6f2d9418cb4f0b035827c6ac0a8ff4be3c04b3e5e4ff`  
-		Last Modified: Wed, 03 Jul 2019 22:23:58 GMT  
-		Size: 1.8 KB (1808 bytes)  
+	-	`sha256:e6243fb0afa3648ba2745c372f72bf41755c11a9ab5f5871c932885d9ecea708`  
+		Last Modified: Mon, 08 Jul 2019 19:58:12 GMT  
+		Size: 1.9 KB (1865 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:d1aedaedaaa0c7bdad3217cde2c36efe1f87008ae346cf1ca01c346274ca34a0`  
-		Last Modified: Wed, 03 Jul 2019 22:23:58 GMT  
-		Size: 336.0 B  
+	-	`sha256:3489909f6de760de48f8b3e2c50a28cc1d4f4a60af0dd45b6359cf64ee9d5c3f`  
+		Last Modified: Mon, 08 Jul 2019 19:58:12 GMT  
+		Size: 338.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `yourls:latest` - linux; arm64 variant v8
 
 ```console
-$ docker pull yourls@sha256:b286ff5f9dc42b30223a8a70590f785dd0c55f51122a2bc584f3ae807ff7f202
+$ docker pull yourls@sha256:e1996208f9316e113ba9ae0c8ad435ea152ef689064fa23dae06c9ca5157efc7
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **125.5 MB (125494381 bytes)**  
+-	Total Size: **125.5 MB (125494448 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:79c166c30c4aca5b28b3a0eebb12cd3b97d9fadd0b712a8b3dbad9b48c37fabd`
+-	Image ID: `sha256:947981b4067eb67e6f73e3caf9b6b3866ff1a31ec4538ccfc2b29c2b41f22254`
 -	Entrypoint: `["docker-entrypoint.sh"]`
 -	Default Command: `["apache2-foreground"]`
 
@@ -661,13 +661,13 @@ ENV YOURLS_SHA256=301ed5b0bfd63cfaeeafe40de056661302e786542002f479886fcf601bfb9d
 RUN set -eux;     curl -o yourls.tar.gz -fsSL "https://github.com/YOURLS/YOURLS/archive/${YOURLS_VERSION}.tar.gz";     echo "$YOURLS_SHA256 *yourls.tar.gz" | sha256sum -c -;     tar -xf yourls.tar.gz -C /usr/src/;     mv "/usr/src/YOURLS-${YOURLS_VERSION}" /usr/src/yourls;     rm yourls.tar.gz;     chown -R www-data:www-data /usr/src/yourls
 # Wed, 03 Jul 2019 23:09:40 GMT
 COPY file:dae29f9c1e1fe04a79abdb2b0965f1a821bebbe26ab1e1e13cae7fe5fbaf788d in /usr/local/bin/ 
-# Wed, 03 Jul 2019 23:09:40 GMT
-COPY file:3f52182221aa0be7c7b12ddf051434d36a6c19e6da6da6b973ace390c4e1ce25 in /usr/src/yourls/user/ 
-# Wed, 03 Jul 2019 23:09:41 GMT
+# Mon, 08 Jul 2019 20:43:47 GMT
+COPY file:3694b933d9d31fc65ed3f78f65289b778a21bf67c518d2cb89c6294ef1d41b60 in /usr/src/yourls/user/ 
+# Mon, 08 Jul 2019 20:43:47 GMT
 COPY file:5b7ff05d0c98ad759c4bec0ef8a7ce74cae42e95b42564b55f43b341c2c3e3f5 in /usr/src/yourls/ 
-# Wed, 03 Jul 2019 23:09:41 GMT
+# Mon, 08 Jul 2019 20:43:48 GMT
 ENTRYPOINT ["docker-entrypoint.sh"]
-# Wed, 03 Jul 2019 23:09:41 GMT
+# Mon, 08 Jul 2019 20:43:48 GMT
 CMD ["apache2-foreground"]
 ```
 
@@ -744,26 +744,26 @@ CMD ["apache2-foreground"]
 		Last Modified: Wed, 03 Jul 2019 23:10:52 GMT  
 		Size: 1.1 KB (1068 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:a893c0c9a527fc2dd3ba1b769c600c2b7fc4e19f672e6f80f71e05e27da911bb`  
-		Last Modified: Wed, 03 Jul 2019 23:10:52 GMT  
-		Size: 1.8 KB (1804 bytes)  
+	-	`sha256:bbb84083fa21c37b0aba0939b3e151f94c65b350e4d481b7c1a5da7816108d17`  
+		Last Modified: Mon, 08 Jul 2019 20:44:13 GMT  
+		Size: 1.9 KB (1866 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:14ecca3fa116afa0110b8c2d1cafe7161fd1438fac5910802f5ba491902e26c3`  
-		Last Modified: Wed, 03 Jul 2019 23:10:52 GMT  
-		Size: 333.0 B  
+	-	`sha256:2f10a653e753294760ef086542f793725dfdaf70e6aff35ac67cdabdfd2e8906`  
+		Last Modified: Mon, 08 Jul 2019 20:44:13 GMT  
+		Size: 338.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `yourls:latest` - linux; 386
 
 ```console
-$ docker pull yourls@sha256:6583c09e4febcd227b15f4eb294f1337669700abaaa3d624d0a84f0aacc03eaf
+$ docker pull yourls@sha256:4b888f9218361a685d8d90cd61183ca9fb5c917c7baa77f6e511a729b82ce1e7
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **144.8 MB (144791720 bytes)**  
+-	Total Size: **144.8 MB (144791784 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:dc7d1ae4b37c56713e8f8047cbad628b67eb1139d8c68a421e86b7dc57eef518`
+-	Image ID: `sha256:3c0278abd5d4a17c61db3c0e54144f707ea7c77225aece95725ad8eaf268dbee`
 -	Entrypoint: `["docker-entrypoint.sh"]`
 -	Default Command: `["apache2-foreground"]`
 
@@ -846,13 +846,13 @@ ENV YOURLS_SHA256=301ed5b0bfd63cfaeeafe40de056661302e786542002f479886fcf601bfb9d
 RUN set -eux;     curl -o yourls.tar.gz -fsSL "https://github.com/YOURLS/YOURLS/archive/${YOURLS_VERSION}.tar.gz";     echo "$YOURLS_SHA256 *yourls.tar.gz" | sha256sum -c -;     tar -xf yourls.tar.gz -C /usr/src/;     mv "/usr/src/YOURLS-${YOURLS_VERSION}" /usr/src/yourls;     rm yourls.tar.gz;     chown -R www-data:www-data /usr/src/yourls
 # Thu, 04 Jul 2019 03:21:06 GMT
 COPY file:dae29f9c1e1fe04a79abdb2b0965f1a821bebbe26ab1e1e13cae7fe5fbaf788d in /usr/local/bin/ 
-# Thu, 04 Jul 2019 03:21:06 GMT
-COPY file:3f52182221aa0be7c7b12ddf051434d36a6c19e6da6da6b973ace390c4e1ce25 in /usr/src/yourls/user/ 
-# Thu, 04 Jul 2019 03:21:06 GMT
+# Mon, 08 Jul 2019 20:39:24 GMT
+COPY file:3694b933d9d31fc65ed3f78f65289b778a21bf67c518d2cb89c6294ef1d41b60 in /usr/src/yourls/user/ 
+# Mon, 08 Jul 2019 20:39:24 GMT
 COPY file:5b7ff05d0c98ad759c4bec0ef8a7ce74cae42e95b42564b55f43b341c2c3e3f5 in /usr/src/yourls/ 
-# Thu, 04 Jul 2019 03:21:06 GMT
+# Mon, 08 Jul 2019 20:39:24 GMT
 ENTRYPOINT ["docker-entrypoint.sh"]
-# Thu, 04 Jul 2019 03:21:07 GMT
+# Mon, 08 Jul 2019 20:39:24 GMT
 CMD ["apache2-foreground"]
 ```
 
@@ -929,26 +929,26 @@ CMD ["apache2-foreground"]
 		Last Modified: Thu, 04 Jul 2019 03:22:00 GMT  
 		Size: 1.1 KB (1068 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:ddd80ac29fffe3f4f409874a54795c7590e6f21d318c2acec90520b19729950f`  
-		Last Modified: Thu, 04 Jul 2019 03:22:00 GMT  
-		Size: 1.8 KB (1805 bytes)  
+	-	`sha256:3969854fc5fd894d40b3976b34205d330b3d20c11c1c7274d90a0d284ff48952`  
+		Last Modified: Mon, 08 Jul 2019 20:39:42 GMT  
+		Size: 1.9 KB (1866 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:71b903ad9f58baca93404ce20191251d95c70db77ea918f6fd2bd6ba2574a322`  
-		Last Modified: Thu, 04 Jul 2019 03:22:00 GMT  
-		Size: 334.0 B  
+	-	`sha256:e323776477fc42109676a9abb2c59c9545197f6f1c9cdf4b8d721aebb3155cee`  
+		Last Modified: Mon, 08 Jul 2019 20:39:43 GMT  
+		Size: 337.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `yourls:latest` - linux; ppc64le
 
 ```console
-$ docker pull yourls@sha256:5f0117ae71b42f5e6d6c95732f6192a6a9b35e922f217571bfbe88c4b124fef6
+$ docker pull yourls@sha256:f61bcd42e129e91507bf1e9b4c5c63d1c4355a2fc92cdd2cf1458d775a2b6af1
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **133.5 MB (133535131 bytes)**  
+-	Total Size: **133.5 MB (133535193 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:fb17f6f1aacff1a3255dfa3f939b75ad35c0c8867a1a744092a270b1a618fe68`
+-	Image ID: `sha256:447fd55fb39b7d58d653b53a4fc5b4e8212a4145af475858347b67fd67d77e62`
 -	Entrypoint: `["docker-entrypoint.sh"]`
 -	Default Command: `["apache2-foreground"]`
 
@@ -1031,13 +1031,13 @@ ENV YOURLS_SHA256=301ed5b0bfd63cfaeeafe40de056661302e786542002f479886fcf601bfb9d
 RUN set -eux;     curl -o yourls.tar.gz -fsSL "https://github.com/YOURLS/YOURLS/archive/${YOURLS_VERSION}.tar.gz";     echo "$YOURLS_SHA256 *yourls.tar.gz" | sha256sum -c -;     tar -xf yourls.tar.gz -C /usr/src/;     mv "/usr/src/YOURLS-${YOURLS_VERSION}" /usr/src/yourls;     rm yourls.tar.gz;     chown -R www-data:www-data /usr/src/yourls
 # Thu, 04 Jul 2019 00:56:11 GMT
 COPY file:dae29f9c1e1fe04a79abdb2b0965f1a821bebbe26ab1e1e13cae7fe5fbaf788d in /usr/local/bin/ 
-# Thu, 04 Jul 2019 00:56:13 GMT
-COPY file:3f52182221aa0be7c7b12ddf051434d36a6c19e6da6da6b973ace390c4e1ce25 in /usr/src/yourls/user/ 
-# Thu, 04 Jul 2019 00:56:14 GMT
+# Mon, 08 Jul 2019 20:16:59 GMT
+COPY file:3694b933d9d31fc65ed3f78f65289b778a21bf67c518d2cb89c6294ef1d41b60 in /usr/src/yourls/user/ 
+# Mon, 08 Jul 2019 20:17:00 GMT
 COPY file:5b7ff05d0c98ad759c4bec0ef8a7ce74cae42e95b42564b55f43b341c2c3e3f5 in /usr/src/yourls/ 
-# Thu, 04 Jul 2019 00:56:16 GMT
+# Mon, 08 Jul 2019 20:17:03 GMT
 ENTRYPOINT ["docker-entrypoint.sh"]
-# Thu, 04 Jul 2019 00:56:20 GMT
+# Mon, 08 Jul 2019 20:17:10 GMT
 CMD ["apache2-foreground"]
 ```
 
@@ -1114,11 +1114,11 @@ CMD ["apache2-foreground"]
 		Last Modified: Thu, 04 Jul 2019 00:58:07 GMT  
 		Size: 1.1 KB (1068 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:fb975566ff8245bb5465d82536b541e688314b422d10973dd6d60981d173ed46`  
-		Last Modified: Thu, 04 Jul 2019 00:58:07 GMT  
-		Size: 1.8 KB (1806 bytes)  
+	-	`sha256:52bb208050835cc8410fbf970982cdf80a77ee7e1b31e2c1d64aa3aa4400d610`  
+		Last Modified: Mon, 08 Jul 2019 20:18:19 GMT  
+		Size: 1.9 KB (1866 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:28b2aa524d43bb1fab9058bbbb27614862b56881b0350e14330c59ad61f37ba8`  
-		Last Modified: Thu, 04 Jul 2019 00:58:07 GMT  
-		Size: 336.0 B  
+	-	`sha256:bf87fb7dce73098d5fd1ff8e53821f65664c0ad6bebe856ffb17d1cfbbcf8734`  
+		Last Modified: Mon, 08 Jul 2019 20:18:19 GMT  
+		Size: 338.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
