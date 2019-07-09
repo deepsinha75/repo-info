@@ -1,10 +1,10 @@
-# `python:3.8.0b1-alpine3.10`
+# `python:3.8.0b2-alpine3.10`
 
 ## Docker Metadata
 
-- Image ID: `sha256:ed14cc070982f3914042b63fa240999a1ec1e6cd7d4419f8559687ceda84f2f6`
-- Created: `2019-06-27T22:51:21.688928836Z`
-- Virtual Size: ~ 96.59 Mb  
+- Image ID: `sha256:0b84d95b6d9d99a3db490c51e87d3954e615098ba18a80907eee359a199843d9`
+- Created: `2019-07-09T00:05:39.870555449Z`
+- Virtual Size: ~ 96.68 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Command: `["python3"]`
@@ -12,7 +12,7 @@
   - `PATH=/usr/local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
   - `LANG=C.UTF-8`
   - `GPG_KEY=E3FF2839C048B25C084DEBE9B26995E310250568`
-  - `PYTHON_VERSION=3.8.0b1`
+  - `PYTHON_VERSION=3.8.0b2`
   - `PYTHON_PIP_VERSION=19.1.1`
 
 ## `apk` (`.apk`-based packages)
@@ -122,16 +122,16 @@ MPL-2.0 GPL-2.0-or-later
 ### `apk` package: `expat`
 
 ```console
-expat-2.2.6-r0 description:
+expat-2.2.7-r0 description:
 An XML Parser library written in C
 
-expat-2.2.6-r0 webpage:
+expat-2.2.7-r0 webpage:
 http://www.libexpat.org/
 
-expat-2.2.6-r0 installed size:
-188416
+expat-2.2.7-r0 installed size:
+184320
 
-expat-2.2.6-r0 license:
+expat-2.2.7-r0 license:
 MIT
 
 ```
@@ -207,16 +207,16 @@ MIT
 ### `apk` package: `libbz2`
 
 ```console
-libbz2-1.0.6-r6 description:
+libbz2-1.0.6-r7 description:
 Shared library for bz2
 
-libbz2-1.0.6-r6 webpage:
+libbz2-1.0.6-r7 webpage:
 http://sources.redhat.com/bzip2
 
-libbz2-1.0.6-r6 installed size:
+libbz2-1.0.6-r7 installed size:
 73728
 
-libbz2-1.0.6-r6 license:
+libbz2-1.0.6-r7 license:
 BSD
 
 ```

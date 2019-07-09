@@ -1,10 +1,10 @@
-# `python:3.8.0b1-slim-buster`
+# `python:3.8.0b2-slim-buster`
 
 ## Docker Metadata
 
-- Image ID: `sha256:64e6085ba81ed671b94f55da15fc49bcc7247d1878576838cd1b3ff1f992e401`
-- Created: `2019-06-27T22:46:26.046382788Z`
-- Virtual Size: ~ 178.29 Mb  
+- Image ID: `sha256:7eac7ecc016e9a0e47bfd79dfa8b92f98127e19d120a91b52117c307fa7bfd0d`
+- Created: `2019-07-09T00:03:25.497910456Z`
+- Virtual Size: ~ 178.40 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Command: `["python3"]`
@@ -12,7 +12,7 @@
   - `PATH=/usr/local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
   - `LANG=C.UTF-8`
   - `GPG_KEY=E3FF2839C048B25C084DEBE9B26995E310250568`
-  - `PYTHON_VERSION=3.8.0b1`
+  - `PYTHON_VERSION=3.8.0b2`
   - `PYTHON_PIP_VERSION=19.1.1`
 
 ## `dpkg` (`.deb`-based packages)
@@ -534,23 +534,30 @@ Other potentially useful URLs:
 - https://sources.debian.net/src/e2fsprogs/1.44.5-1/debian/copyright/ (for direct copyright/license information)
 - http://snapshot.debian.org/package/e2fsprogs/1.44.5-1/ (for access to the source package after it no longer exists in the archive)
 
-### `dpkg` source package: `expat=2.2.6-1`
+### `dpkg` source package: `expat=2.2.6-2`
 
 Binary Packages:
 
-- `libexpat1:amd64=2.2.6-1`
+- `libexpat1:amd64=2.2.6-2`
 
 Licenses: (parsed from: `/usr/share/doc/libexpat1/copyright`)
 
 - `MIT`
 
-**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
-This is *usually* due to a new package version being released and the old version being removed.
+Source:
 
-The source package *may* still be available for download from:
+```console
+$ apt-get source -qq --print-uris expat=2.2.6-2
+'http://deb.debian.org/debian/pool/main/e/expat/expat_2.2.6-2.dsc' expat_2.2.6-2.dsc 1949 SHA256:50fb4a3159f1aeb91e23caa1d329579df956514dc42866b4c3fef0e66cb0915e
+'http://deb.debian.org/debian/pool/main/e/expat/expat_2.2.6.orig.tar.gz' expat_2.2.6.orig.tar.gz 8275473 SHA256:574499cba22a599393e28d99ecfa1e7fc85be7d6651d543045244d5b561cb7ff
+'http://deb.debian.org/debian/pool/main/e/expat/expat_2.2.6-2.debian.tar.xz' expat_2.2.6-2.debian.tar.xz 11108 SHA256:678c073cecab66cc5ea0feaf02626db4300008d9c20df9ebe81958944af31673
+```
 
-- http://snapshot.debian.org/package/expat/2.2.6-1/
+Other potentially useful URLs:
 
+- https://sources.debian.net/src/expat/2.2.6-2/ (for browsing the source)
+- https://sources.debian.net/src/expat/2.2.6-2/debian/copyright/ (for direct copyright/license information)
+- http://snapshot.debian.org/package/expat/2.2.6-2/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `findutils=4.6.0+git+20190209-2`
 

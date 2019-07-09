@@ -1,10 +1,10 @@
-# `python:3.7.3-alpine3.9`
+# `python:3.7.4-alpine3.9`
 
 ## Docker Metadata
 
-- Image ID: `sha256:fe3ef29c73f3ebaffa0dead8391b75be18894d771a841c28ca1140fec358c5e2`
-- Created: `2019-05-11T02:03:33.380024518Z`
-- Virtual Size: ~ 86.98 Mb  
+- Image ID: `sha256:20b67cb7184067334bebb7c6d6f8d351c4427c75f2eb79cc2a25abe7d0120da3`
+- Created: `2019-07-09T00:17:25.016642756Z`
+- Virtual Size: ~ 87.06 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Command: `["python3"]`
@@ -12,7 +12,7 @@
   - `PATH=/usr/local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
   - `LANG=C.UTF-8`
   - `GPG_KEY=0D96DF4D4110E5C43FBFB17F2D347EA6AA65421D`
-  - `PYTHON_VERSION=3.7.3`
+  - `PYTHON_VERSION=3.7.4`
   - `PYTHON_PIP_VERSION=19.1.1`
 
 ## `apk` (`.apk`-based packages)
@@ -122,16 +122,16 @@ MPL-2.0 GPL-2.0-or-later
 ### `apk` package: `expat`
 
 ```console
-expat-2.2.6-r0 description:
+expat-2.2.7-r0 description:
 An XML Parser library written in C
 
-expat-2.2.6-r0 webpage:
+expat-2.2.7-r0 webpage:
 http://www.libexpat.org/
 
-expat-2.2.6-r0 installed size:
-188416
+expat-2.2.7-r0 installed size:
+184320
 
-expat-2.2.6-r0 license:
+expat-2.2.7-r0 license:
 MIT
 
 ```
@@ -207,16 +207,16 @@ MIT
 ### `apk` package: `libbz2`
 
 ```console
-libbz2-1.0.6-r6 description:
+libbz2-1.0.6-r7 description:
 Shared library for bz2
 
-libbz2-1.0.6-r6 webpage:
+libbz2-1.0.6-r7 webpage:
 http://sources.redhat.com/bzip2
 
-libbz2-1.0.6-r6 installed size:
+libbz2-1.0.6-r7 installed size:
 73728
 
-libbz2-1.0.6-r6 license:
+libbz2-1.0.6-r7 license:
 BSD
 
 ```
@@ -530,16 +530,16 @@ GPL-2.0
 ### `apk` package: `sqlite-libs`
 
 ```console
-sqlite-libs-3.26.0-r3 description:
+sqlite-libs-3.28.0-r0 description:
 Sqlite3 library
 
-sqlite-libs-3.26.0-r3 webpage:
-http://www.sqlite.org
+sqlite-libs-3.28.0-r0 webpage:
+https://www.sqlite.org/
 
-sqlite-libs-3.26.0-r3 installed size:
-917504
+sqlite-libs-3.28.0-r0 installed size:
+933888
 
-sqlite-libs-3.26.0-r3 license:
+sqlite-libs-3.28.0-r0 license:
 Public-Domain
 
 ```

@@ -1,10 +1,10 @@
-# `python:3.8.0b1-buster`
+# `python:3.8.0b2-buster`
 
 ## Docker Metadata
 
-- Image ID: `sha256:90587b4c845c59ef3fb4cc14e7c00e2a57f34cc93040b7d829b0789003a4f308`
-- Created: `2019-06-27T22:40:42.723265122Z`
-- Virtual Size: ~ 917.42 Mb  
+- Image ID: `sha256:6a22237a6709f661bb84738d78d22bc3437c9c726b5c33f26a210a04c2af2c48`
+- Created: `2019-07-08T23:59:38.695698627Z`
+- Virtual Size: ~ 917.53 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Command: `["python3"]`
@@ -12,7 +12,7 @@
   - `PATH=/usr/local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
   - `LANG=C.UTF-8`
   - `GPG_KEY=E3FF2839C048B25C084DEBE9B26995E310250568`
-  - `PYTHON_VERSION=3.8.0b1`
+  - `PYTHON_VERSION=3.8.0b2`
   - `PYTHON_PIP_VERSION=19.1.1`
 
 ## `dpkg` (`.deb`-based packages)
