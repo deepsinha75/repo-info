@@ -1,10 +1,10 @@
-# `rabbitmq:3.7.15-management-alpine`
+# `rabbitmq:3.7.16-management-alpine`
 
 ## Docker Metadata
 
-- Image ID: `sha256:bc8613986ba5a657eb1520e66bd77a56e1688c00c0e2caf35d264472ce6ff159`
-- Created: `2019-07-04T02:35:45.508516415Z`
-- Virtual Size: ~ 125.89 Mb  
+- Image ID: `sha256:ca30a60b1332ace299808af65b04e17052873471e734ea0bc1154a049a417a1e`
+- Created: `2019-07-08T23:57:02.817179275Z`
+- Virtual Size: ~ 125.93 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["docker-entrypoint.sh"]`
@@ -17,7 +17,7 @@
   - `OTP_VERSION=22.0.5`
   - `OTP_SOURCE_SHA256=28e42e2cf2e43c187f273540987b0f297c46cff2c5eeba453144bc0d41dafd31`
   - `RABBITMQ_DATA_DIR=/var/lib/rabbitmq`
-  - `RABBITMQ_VERSION=3.7.15`
+  - `RABBITMQ_VERSION=3.7.16`
   - `RABBITMQ_PGP_KEY_ID=0x0A9AF2115F4687BD29803A206B73A36E6026DFCA`
   - `RABBITMQ_HOME=/opt/rabbitmq`
   - `RABBITMQ_LOGS=-`
@@ -151,16 +151,16 @@ GPL
 ### `apk` package: `libbz2`
 
 ```console
-libbz2-1.0.6-r6 description:
+libbz2-1.0.6-r7 description:
 Shared library for bz2
 
-libbz2-1.0.6-r6 webpage:
+libbz2-1.0.6-r7 webpage:
 http://sources.redhat.com/bzip2
 
-libbz2-1.0.6-r6 installed size:
+libbz2-1.0.6-r7 installed size:
 69632
 
-libbz2-1.0.6-r6 license:
+libbz2-1.0.6-r7 license:
 BSD
 
 ```

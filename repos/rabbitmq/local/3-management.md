@@ -1,10 +1,10 @@
-# `rabbitmq:3.7.15-management`
+# `rabbitmq:3.7.16-management`
 
 ## Docker Metadata
 
-- Image ID: `sha256:f05c3eb3cf9175bcadff67f18e72811c0fb3f248c46d81e9a7cd9cc24411d7be`
-- Created: `2019-07-04T02:35:13.090533822Z`
-- Virtual Size: ~ 179.32 Mb  
+- Image ID: `sha256:4650e3855566a3c44703327a4daa974a3fff25e97566803e27bce39e59d634d6`
+- Created: `2019-07-08T23:56:34.404519452Z`
+- Virtual Size: ~ 179.37 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["docker-entrypoint.sh"]`
@@ -17,7 +17,7 @@
   - `OTP_VERSION=22.0.5`
   - `OTP_SOURCE_SHA256=28e42e2cf2e43c187f273540987b0f297c46cff2c5eeba453144bc0d41dafd31`
   - `RABBITMQ_DATA_DIR=/var/lib/rabbitmq`
-  - `RABBITMQ_VERSION=3.7.15`
+  - `RABBITMQ_VERSION=3.7.16`
   - `RABBITMQ_PGP_KEY_ID=0x0A9AF2115F4687BD29803A206B73A36E6026DFCA`
   - `RABBITMQ_HOME=/opt/rabbitmq`
   - `RABBITMQ_LOGS=-`
@@ -176,14 +176,9 @@ Licenses: (parsed from: `/usr/share/doc/bash/copyright`)
 
 - `GPL-3`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris bash=4.4.18-2ubuntu1.1
-'http://archive.ubuntu.com/ubuntu/pool/main/b/bash/bash_4.4.18-2ubuntu1.1.dsc' bash_4.4.18-2ubuntu1.1.dsc 2459 SHA256:8b6debcfae9a748006c933229dfec9ca88b3c5527dcd128529ca1ad6b5a6b36c
-'http://archive.ubuntu.com/ubuntu/pool/main/b/bash/bash_4.4.18.orig.tar.xz' bash_4.4.18.orig.tar.xz 5036272 SHA256:704143a7170041ac9f1025455d6d23ff0f353711a3dc557b47d6e6322f24cd02
-'http://archive.ubuntu.com/ubuntu/pool/main/b/bash/bash_4.4.18-2ubuntu1.1.debian.tar.xz' bash_4.4.18-2ubuntu1.1.debian.tar.xz 64264 SHA256:0454a98a54f2c6203d78bfad37a68f8c43567cd072ee8f466c228cdf3f677ee8
-```
 
 ### `dpkg` source package: `bzip2=1.0.6-8.1`
 
