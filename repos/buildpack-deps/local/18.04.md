@@ -278,14 +278,9 @@ Licenses: (parsed from: `/usr/share/doc/bash/copyright`)
 
 - `GPL-3`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris bash=4.4.18-2ubuntu1.1
-'http://archive.ubuntu.com/ubuntu/pool/main/b/bash/bash_4.4.18-2ubuntu1.1.dsc' bash_4.4.18-2ubuntu1.1.dsc 2459 SHA256:8b6debcfae9a748006c933229dfec9ca88b3c5527dcd128529ca1ad6b5a6b36c
-'http://archive.ubuntu.com/ubuntu/pool/main/b/bash/bash_4.4.18.orig.tar.xz' bash_4.4.18.orig.tar.xz 5036272 SHA256:704143a7170041ac9f1025455d6d23ff0f353711a3dc557b47d6e6322f24cd02
-'http://archive.ubuntu.com/ubuntu/pool/main/b/bash/bash_4.4.18-2ubuntu1.1.debian.tar.xz' bash_4.4.18-2ubuntu1.1.debian.tar.xz 64264 SHA256:0454a98a54f2c6203d78bfad37a68f8c43567cd072ee8f466c228cdf3f677ee8
-```
 
 ### `dpkg` source package: `binutils=2.30-21ubuntu1~18.04.2`
 
@@ -1068,14 +1063,9 @@ Licenses: (parsed from: `/usr/share/doc/libglib2.0-0/copyright`, `/usr/share/doc
 
 - `LGPL`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris glib2.0=2.56.4-0ubuntu0.18.04.3
-'http://archive.ubuntu.com/ubuntu/pool/main/g/glib2.0/glib2.0_2.56.4-0ubuntu0.18.04.3.dsc' glib2.0_2.56.4-0ubuntu0.18.04.3.dsc 3567 SHA256:33c41e68f24ef2cc71b4a017d0e760803b2b7c20999f9142f876c00918b98a69
-'http://archive.ubuntu.com/ubuntu/pool/main/g/glib2.0/glib2.0_2.56.4.orig.tar.xz' glib2.0_2.56.4.orig.tar.xz 7029768 SHA256:27f703d125efb07f8a743666b580df0b4095c59fc8750e8890132c91d437504c
-'http://archive.ubuntu.com/ubuntu/pool/main/g/glib2.0/glib2.0_2.56.4-0ubuntu0.18.04.3.debian.tar.xz' glib2.0_2.56.4-0ubuntu0.18.04.3.debian.tar.xz 80820 SHA256:e2fb43642c50c2ef12ae697372a579579e289cf0bac56517b5f0fcf23c7551de
-```
 
 ### `dpkg` source package: `glibc=2.27-3ubuntu1`
 

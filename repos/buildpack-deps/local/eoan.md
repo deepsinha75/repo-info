@@ -300,14 +300,9 @@ Licenses: (parsed from: `/usr/share/doc/binutils/copyright`, `/usr/share/doc/bin
 - `GPL`
 - `LGPL`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris binutils=2.32.51.20190614-0ubuntu1
-'http://archive.ubuntu.com/ubuntu/pool/main/b/binutils/binutils_2.32.51.20190614-0ubuntu1.dsc' binutils_2.32.51.20190614-0ubuntu1.dsc 11174 SHA256:cf079743c715e914056259c92315ba581c3709ea049152590de4bb160f9c91c0
-'http://archive.ubuntu.com/ubuntu/pool/main/b/binutils/binutils_2.32.51.20190614.orig.tar.xz' binutils_2.32.51.20190614.orig.tar.xz 20558108 SHA256:b639355f24e0d095167f5b4ac89721aeff438c1b546c9cb7515e0634fc9236c2
-'http://archive.ubuntu.com/ubuntu/pool/main/b/binutils/binutils_2.32.51.20190614-0ubuntu1.debian.tar.xz' binutils_2.32.51.20190614-0ubuntu1.debian.tar.xz 95732 SHA256:58c36a4e66473bcbe6f315111e471392b55f1380b7d5343d08a0b5661077ac96
-```
 
 ### `dpkg` source package: `bzip2=1.0.6-9`
 
@@ -322,14 +317,13 @@ Licenses: (parsed from: `/usr/share/doc/bzip2/copyright`, `/usr/share/doc/libbz2
 - `BSD-variant`
 - `GPL-2`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris bzip2=1.0.6-9
-'http://archive.ubuntu.com/ubuntu/pool/main/b/bzip2/bzip2_1.0.6-9.dsc' bzip2_1.0.6-9.dsc 2185 SHA256:f27d7febca8dbc1519bdacac3ee0b5a2d9cf9845e50dbb7b13c0e6daa17ab28e
-'http://archive.ubuntu.com/ubuntu/pool/main/b/bzip2/bzip2_1.0.6.orig.tar.bz2' bzip2_1.0.6.orig.tar.bz2 708737 SHA256:d70a9ccd8bdf47e302d96c69fecd54925f45d9c7b966bb4ef5f56b770960afa7
-'http://archive.ubuntu.com/ubuntu/pool/main/b/bzip2/bzip2_1.0.6-9.debian.tar.bz2' bzip2_1.0.6-9.debian.tar.bz2 25873 SHA256:d1a91bf31bc60384f56fa2dd55cfdc07e27dbbbf295db2248b65afed0ca141a2
-```
+The source package *may* still be available for download from:
+
+- http://snapshot.debian.org/package/bzip2/1.0.6-9/
+
 
 ### `dpkg` source package: `bzr=2.7.0+bzr6622-15`
 
@@ -767,14 +761,13 @@ Licenses: (parsed from: `/usr/share/doc/findutils/copyright`)
 - `GFDL-1.3`
 - `GPL-3`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris findutils=4.6.0+git+20190209-2
-'http://archive.ubuntu.com/ubuntu/pool/main/f/findutils/findutils_4.6.0+git+20190209-2.dsc' findutils_4.6.0+git+20190209-2.dsc 2137 SHA256:e09430f44f976ee0e51e3226543247668b4ef88c05d14a84ed2d5a6f1bd07421
-'http://archive.ubuntu.com/ubuntu/pool/main/f/findutils/findutils_4.6.0+git+20190209.orig.tar.xz' findutils_4.6.0+git+20190209.orig.tar.xz 1893084 SHA256:6832b3f6ddc0e2718795e6732ea40cc5309b948505f55fb9935919d6aaac7e9d
-'http://archive.ubuntu.com/ubuntu/pool/main/f/findutils/findutils_4.6.0+git+20190209-2.debian.tar.xz' findutils_4.6.0+git+20190209-2.debian.tar.xz 26628 SHA256:d6f4c6fedc27cf5d616c9fbf41a46b8fb8b078f1f21045b484419b145037e849
-```
+The source package *may* still be available for download from:
+
+- http://snapshot.debian.org/package/findutils/4.6.0+git+20190209-2/
+
 
 ### `dpkg` source package: `fontconfig=2.13.1-2ubuntu2`
 
@@ -898,14 +891,9 @@ Licenses: (parsed from: `/usr/share/doc/cpp-8/copyright`, `/usr/share/doc/g++-8/
 - `GPL-3`
 - `LGPL`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris gcc-8=8.3.0-14ubuntu1
-'http://archive.ubuntu.com/ubuntu/pool/main/g/gcc-8/gcc-8_8.3.0-14ubuntu1.dsc' gcc-8_8.3.0-14ubuntu1.dsc 22715 SHA256:8a72ae695626de5926cab3024fdc40163421abaa38cca0547f671ed584640e06
-'http://archive.ubuntu.com/ubuntu/pool/main/g/gcc-8/gcc-8_8.3.0.orig.tar.gz' gcc-8_8.3.0.orig.tar.gz 85259886 SHA256:561c1bc647ade738c14efe5a298fc0cee2e2efd3dec9fefb66b724dbd50437e6
-'http://archive.ubuntu.com/ubuntu/pool/main/g/gcc-8/gcc-8_8.3.0-14ubuntu1.diff.gz' gcc-8_8.3.0-14ubuntu1.diff.gz 698413 SHA256:01dca0429279ad1b7385e543f41d7584425cc255b29deae446e3f6a5e5959673
-```
 
 ### `dpkg` source package: `gcc-9=9.1.0-4ubuntu1`
 
@@ -933,14 +921,9 @@ Licenses: (parsed from: `/usr/share/doc/gcc-9-base/copyright`, `/usr/share/doc/l
 - `GPL-3`
 - `LGPL`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris gcc-9=9.1.0-4ubuntu1
-'http://archive.ubuntu.com/ubuntu/pool/main/g/gcc-9/gcc-9_9.1.0-4ubuntu1.dsc' gcc-9_9.1.0-4ubuntu1.dsc 36627 SHA256:1945b8df5851a49344e7c518aa0058d9afe77e7622c72e36578fd69eeaeacbc3
-'http://archive.ubuntu.com/ubuntu/pool/main/g/gcc-9/gcc-9_9.1.0.orig.tar.gz' gcc-9_9.1.0.orig.tar.gz 88289133 SHA256:cc88fa6b29ac675426f4456833aecf91e78263a0e96ceed700e9c74c3961b31c
-'http://archive.ubuntu.com/ubuntu/pool/main/g/gcc-9/gcc-9_9.1.0-4ubuntu1.diff.gz' gcc-9_9.1.0-4ubuntu1.diff.gz 4996258 SHA256:9c24ace5c46b9edc798ea1684d7809f6595059b9c783aaa7e9e112e336bcd60d
-```
 
 ### `dpkg` source package: `gcc-defaults=1.181ubuntu3`
 
@@ -954,13 +937,9 @@ Licenses: (parsed from: `/usr/share/doc/cpp/copyright`, `/usr/share/doc/g++/copy
 
 - `GPL`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris gcc-defaults=1.181ubuntu3
-'http://archive.ubuntu.com/ubuntu/pool/main/g/gcc-defaults/gcc-defaults_1.181ubuntu3.dsc' gcc-defaults_1.181ubuntu3.dsc 15790 SHA256:1394125bbef9ad6f461386dff6326ef7bcceec7c117b1603b6f0a289ebce3f5e
-'http://archive.ubuntu.com/ubuntu/pool/main/g/gcc-defaults/gcc-defaults_1.181ubuntu3.tar.gz' gcc-defaults_1.181ubuntu3.tar.gz 210047 SHA256:44141bbb2269adb07e3fd8b74704a7a274bf0066216e879984631b68dd393f77
-```
 
 ### `dpkg` source package: `gdbm=1.18.1-4`
 
@@ -1317,14 +1296,13 @@ Licenses: (parsed from: `/usr/share/doc/libharfbuzz0b/copyright`)
 
 - `MIT`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris harfbuzz=2.4.0-1
-'http://archive.ubuntu.com/ubuntu/pool/main/h/harfbuzz/harfbuzz_2.4.0-1.dsc' harfbuzz_2.4.0-1.dsc 2298 SHA256:db8bf7aeee7225de3a421b8f88287ee622db191c0938bc0ad15a998dbf82c6a4
-'http://archive.ubuntu.com/ubuntu/pool/main/h/harfbuzz/harfbuzz_2.4.0.orig.tar.bz2' harfbuzz_2.4.0.orig.tar.bz2 17922003 SHA256:9035005903da74667d28bb181986e879e11da3d5986722759fa145cca781ead6
-'http://archive.ubuntu.com/ubuntu/pool/main/h/harfbuzz/harfbuzz_2.4.0-1.debian.tar.xz' harfbuzz_2.4.0-1.debian.tar.xz 9760 SHA256:a7c3861ec04e3d554cff11ac995ba670aabeed7114645ccc933c9e723247974e
-```
+The source package *may* still be available for download from:
+
+- http://snapshot.debian.org/package/harfbuzz/2.4.0-1/
+
 
 ### `dpkg` source package: `heimdal=7.5.0+dfsg-3`
 
@@ -2204,14 +2182,13 @@ Licenses: (parsed from: `/usr/share/doc/libsepol1/copyright`, `/usr/share/doc/li
 - `GPL`
 - `LGPL`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris libsepol=2.9-1
-'http://archive.ubuntu.com/ubuntu/pool/main/libs/libsepol/libsepol_2.9-1.dsc' libsepol_2.9-1.dsc 1792 SHA256:83a8f66420339f1e9baba1583ecf5aa0555ce6cec7eb02614671fea6b0428c27
-'http://archive.ubuntu.com/ubuntu/pool/main/libs/libsepol/libsepol_2.9.orig.tar.gz' libsepol_2.9.orig.tar.gz 474861 SHA256:a34b12b038d121e3e459b1cbaca3c9202e983137819c16baf63658390e3f1d5d
-'http://archive.ubuntu.com/ubuntu/pool/main/libs/libsepol/libsepol_2.9-1.debian.tar.xz' libsepol_2.9-1.debian.tar.xz 14120 SHA256:8d7983621ef3dba48a50c8911c6bc58fc66474d4cea6278463007ec198a79876
-```
+The source package *may* still be available for download from:
+
+- http://snapshot.debian.org/package/libsepol/2.9-1/
+
 
 ### `dpkg` source package: `libsigsegv=2.12-2`
 
@@ -3216,14 +3193,13 @@ Licenses: (parsed from: `/usr/share/doc/patch/copyright`)
 
 - `GPL`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris patch=2.7.6-3
-'http://archive.ubuntu.com/ubuntu/pool/main/p/patch/patch_2.7.6-3.dsc' patch_2.7.6-3.dsc 1699 SHA256:c84154893834d07a13a760f9be4e7c8fbced41bdb1157db1140c880a90a7c72a
-'http://archive.ubuntu.com/ubuntu/pool/main/p/patch/patch_2.7.6.orig.tar.xz' patch_2.7.6.orig.tar.xz 783756 SHA256:ac610bda97abe0d9f6b7c963255a11dcb196c25e337c61f94e4778d632f1d8fd
-'http://archive.ubuntu.com/ubuntu/pool/main/p/patch/patch_2.7.6-3.debian.tar.xz' patch_2.7.6-3.debian.tar.xz 10608 SHA256:f48c3001906a954b3ea0ff1a6ad347172f1e3453620377d7f1427b62474b047b
-```
+The source package *may* still be available for download from:
+
+- http://snapshot.debian.org/package/patch/2.7.6-3/
+
 
 ### `dpkg` source package: `pcre2=10.32-5`
 
