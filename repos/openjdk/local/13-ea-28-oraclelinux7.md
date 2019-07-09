@@ -1,10 +1,10 @@
-# `openjdk:13-ea-27-jdk-oraclelinux7`
+# `openjdk:13-ea-28-jdk-oraclelinux7`
 
 ## Docker Metadata
 
-- Image ID: `sha256:3e52c98106d5d36a39b4f337809206ab4ba27a19ad758d6315b3aa721e70ebc0`
-- Created: `2019-07-01T21:29:04.243131096Z`
-- Virtual Size: ~ 465.85 Mb  
+- Image ID: `sha256:52af5e1fd0b23a3ebd662a7906efb5742f10164e34d0870f5e5e5d56efaa1c3e`
+- Created: `2019-07-08T23:54:44.059063875Z`
+- Virtual Size: ~ 465.84 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Command: `["jshell"]`
@@ -12,9 +12,9 @@
   - `PATH=/usr/java/openjdk-13/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
   - `LANG=en_US.UTF-8`
   - `JAVA_HOME=/usr/java/openjdk-13`
-  - `JAVA_VERSION=13-ea+27`
-  - `JAVA_URL=https://download.java.net/java/early_access/jdk13/27/GPL/openjdk-13-ea+27_linux-x64_bin.tar.gz`
-  - `JAVA_SHA256=5a19debb43fece867b7ab2b0d35d8a33ba4568ae01ae443d25f4b53357546044`
+  - `JAVA_VERSION=13-ea+28`
+  - `JAVA_URL=https://download.java.net/java/early_access/jdk13/28/GPL/openjdk-13-ea+28_linux-x64_bin.tar.gz`
+  - `JAVA_SHA256=430d751e2b8041fb8b7f25382f27566f36d3937f3d1cb63636d565932d767d00`
 
 ## `rpm` (`.rpm`-based packages)
 
