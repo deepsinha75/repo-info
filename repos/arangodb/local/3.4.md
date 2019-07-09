@@ -2,20 +2,20 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:7dfb08e29190e3bf0e5e049e4dcbed1176a56f15b401ffed1e5903d2ab242809`
-- Created: `2019-06-07T20:20:09.762323408Z`
-- Virtual Size: ~ 291.78 Mb  
+- Image ID: `sha256:05829bdd0187a8e30fe508566ca3f91cc3b6c3a14dcb14b64967728742d633ec`
+- Created: `2019-07-05T17:20:12.166724996Z`
+- Virtual Size: ~ 295.23 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["/entrypoint.sh"]`
 - Command: `["arangod"]`
 - Environment:
   - `PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
-  - `ARANGO_VERSION=3.4.6.1`
+  - `ARANGO_VERSION=3.4.7`
   - `ARANGO_URL=https://download.arangodb.com/arangodb34/DEBIAN/amd64`
-  - `ARANGO_PACKAGE=arangodb3_3.4.6.1-1_amd64.deb`
-  - `ARANGO_PACKAGE_URL=https://download.arangodb.com/arangodb34/DEBIAN/amd64/arangodb3_3.4.6.1-1_amd64.deb`
-  - `ARANGO_SIGNATURE_URL=https://download.arangodb.com/arangodb34/DEBIAN/amd64/arangodb3_3.4.6.1-1_amd64.deb.asc`
+  - `ARANGO_PACKAGE=arangodb3_3.4.7-1_amd64.deb`
+  - `ARANGO_PACKAGE_URL=https://download.arangodb.com/arangodb34/DEBIAN/amd64/arangodb3_3.4.7-1_amd64.deb`
+  - `ARANGO_SIGNATURE_URL=https://download.arangodb.com/arangodb34/DEBIAN/amd64/arangodb3_3.4.7-1_amd64.deb.asc`
 
 ## `apk` (`.apk`-based packages)
 
@@ -243,16 +243,16 @@ LGPL-2.0-or-later
 ### `apk` package: `libbz2`
 
 ```console
-libbz2-1.0.6-r6 description:
+libbz2-1.0.6-r7 description:
 Shared library for bz2
 
-libbz2-1.0.6-r6 webpage:
+libbz2-1.0.6-r7 webpage:
 http://sources.redhat.com/bzip2
 
-libbz2-1.0.6-r6 installed size:
+libbz2-1.0.6-r7 installed size:
 69632
 
-libbz2-1.0.6-r6 license:
+libbz2-1.0.6-r7 license:
 BSD
 
 ```
