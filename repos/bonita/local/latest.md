@@ -230,14 +230,9 @@ Licenses: (parsed from: `/usr/share/doc/bash/copyright`)
 
 - `GPL-3`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris bash=4.4.18-2ubuntu1.1
-'http://archive.ubuntu.com/ubuntu/pool/main/b/bash/bash_4.4.18-2ubuntu1.1.dsc' bash_4.4.18-2ubuntu1.1.dsc 2459 SHA256:8b6debcfae9a748006c933229dfec9ca88b3c5527dcd128529ca1ad6b5a6b36c
-'http://archive.ubuntu.com/ubuntu/pool/main/b/bash/bash_4.4.18.orig.tar.xz' bash_4.4.18.orig.tar.xz 5036272 SHA256:704143a7170041ac9f1025455d6d23ff0f353711a3dc557b47d6e6322f24cd02
-'http://archive.ubuntu.com/ubuntu/pool/main/b/bash/bash_4.4.18-2ubuntu1.1.debian.tar.xz' bash_4.4.18-2ubuntu1.1.debian.tar.xz 64264 SHA256:0454a98a54f2c6203d78bfad37a68f8c43567cd072ee8f466c228cdf3f677ee8
-```
 
 ### `dpkg` source package: `bzip2=1.0.6-8.1`
 
