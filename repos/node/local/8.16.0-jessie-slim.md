@@ -2,8 +2,8 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:b014ddc88368ce5218e2df4f1d4d2ecdabb433eec41608006b4837c492a46c71`
-- Created: `2019-06-10T23:54:07.918655239Z`
+- Image ID: `sha256:515b727c307163035a8c85624277a6f36ecf52160b7b1f2c6b84a97231fe7e00`
+- Created: `2019-07-10T03:30:25.594494866Z`
 - Virtual Size: ~ 183.33 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
@@ -220,11 +220,11 @@ Other potentially useful URLs:
 - https://sources.debian.net/src/bash/4.3-11+deb8u2/debian/copyright/ (for direct copyright/license information)
 - http://snapshot.debian.org/package/bash/4.3-11+deb8u2/ (for access to the source package after it no longer exists in the archive)
 
-### `dpkg` source package: `bzip2=1.0.6-7`
+### `dpkg` source package: `bzip2=1.0.6-7+deb8u1`
 
 Binary Packages:
 
-- `libbz2-1.0:amd64=1.0.6-7+b3`
+- `libbz2-1.0:amd64=1.0.6-7+deb8u1`
 
 Licenses: (parsed from: `/usr/share/doc/libbz2-1.0/copyright`)
 
@@ -233,7 +233,7 @@ Licenses: (parsed from: `/usr/share/doc/libbz2-1.0/copyright`)
 Source:
 
 ```console
-$ apt-get source -qq --print-uris bzip2=1.0.6-7
+$ apt-get source -qq --print-uris bzip2=1.0.6-7+deb8u1
 'http://security.debian.org/debian-security/pool/updates/main/b/bzip2/bzip2_1.0.6-7+deb8u1.dsc' bzip2_1.0.6-7+deb8u1.dsc 2462 SHA256:9c4ee0d881c4e63e13882b970a3448b90cb84bf5ca78acddec8ced296d2672b8
 'http://security.debian.org/debian-security/pool/updates/main/b/bzip2/bzip2_1.0.6.orig.tar.bz2' bzip2_1.0.6.orig.tar.bz2 708737 SHA256:d70a9ccd8bdf47e302d96c69fecd54925f45d9c7b966bb4ef5f56b770960afa7
 'http://security.debian.org/debian-security/pool/updates/main/b/bzip2/bzip2_1.0.6-7+deb8u1.debian.tar.bz2' bzip2_1.0.6-7+deb8u1.debian.tar.bz2 60383 SHA256:853d42f87bdc559714b0bb35b207853b99d5b6b9763e7f4a85a79772ef681172
@@ -241,9 +241,9 @@ $ apt-get source -qq --print-uris bzip2=1.0.6-7
 
 Other potentially useful URLs:
 
-- https://sources.debian.net/src/bzip2/1.0.6-7/ (for browsing the source)
-- https://sources.debian.net/src/bzip2/1.0.6-7/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/bzip2/1.0.6-7/ (for access to the source package after it no longer exists in the archive)
+- https://sources.debian.net/src/bzip2/1.0.6-7+deb8u1/ (for browsing the source)
+- https://sources.debian.net/src/bzip2/1.0.6-7+deb8u1/debian/copyright/ (for direct copyright/license information)
+- http://snapshot.debian.org/package/bzip2/1.0.6-7+deb8u1/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `ca-certificates=20141019+deb8u4`
 
