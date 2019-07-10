@@ -2,9 +2,9 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:811d02113443a39259c0bbe7beb56960ad6aea52c4b4e6600bf9cf1febe1582b`
-- Created: `2019-06-25T19:25:19.022539117Z`
-- Virtual Size: ~ 126.90 Mb  
+- Image ID: `sha256:d86e5f4dfcfc9f2d0c521c9b4d02c2f08fa8205b44af9b16e5c602562f1c477f`
+- Created: `2019-07-08T23:48:40.618493626Z`
+- Virtual Size: ~ 126.89 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Command: `["httpd-foreground"]`
@@ -14,7 +14,6 @@
   - `HTTPD_VERSION=2.4.39`
   - `HTTPD_SHA256=b4ca9d05773aa59b54d66cd8f4744b945289f084d3be17d7981d1783a5decfa2`
   - `HTTPD_PATCHES=`
-  - `APACHE_DIST_URLS=https://www.apache.org/dyn/closer.cgi?action=download&filename= 	https://www-us.apache.org/dist/ 	https://www.apache.org/dist/ 	https://archive.apache.org/dist/`
 
 ## `apk` (`.apk`-based packages)
 
@@ -293,16 +292,16 @@ custom
 ### `apk` package: `expat`
 
 ```console
-expat-2.2.6-r0 description:
+expat-2.2.7-r0 description:
 An XML Parser library written in C
 
-expat-2.2.6-r0 webpage:
+expat-2.2.7-r0 webpage:
 http://www.libexpat.org/
 
-expat-2.2.6-r0 installed size:
-188416
+expat-2.2.7-r0 installed size:
+184320
 
-expat-2.2.6-r0 license:
+expat-2.2.7-r0 license:
 MIT
 
 ```
@@ -310,16 +309,16 @@ MIT
 ### `apk` package: `expat-dev`
 
 ```console
-expat-dev-2.2.6-r0 description:
+expat-dev-2.2.7-r0 description:
 An XML Parser library written in C (development files)
 
-expat-dev-2.2.6-r0 webpage:
+expat-dev-2.2.7-r0 webpage:
 http://www.libexpat.org/
 
-expat-dev-2.2.6-r0 installed size:
+expat-dev-2.2.7-r0 installed size:
 286720
 
-expat-dev-2.2.6-r0 license:
+expat-dev-2.2.7-r0 license:
 MIT
 
 ```
@@ -378,16 +377,16 @@ GPL-2.0 GPL-2.0-or-later LGPL-2.0-or-later BSD Public-Domain
 ### `apk` package: `libbz2`
 
 ```console
-libbz2-1.0.6-r6 description:
+libbz2-1.0.6-r7 description:
 Shared library for bz2
 
-libbz2-1.0.6-r6 webpage:
+libbz2-1.0.6-r7 webpage:
 http://sources.redhat.com/bzip2
 
-libbz2-1.0.6-r6 installed size:
+libbz2-1.0.6-r7 installed size:
 73728
 
-libbz2-1.0.6-r6 license:
+libbz2-1.0.6-r7 license:
 BSD
 
 ```
@@ -514,16 +513,16 @@ GPL-2.0 GPL-2.0-or-later LGPL-2.0-or-later BSD Public-Domain
 ### `apk` package: `libpq`
 
 ```console
-libpq-11.3-r2 description:
+libpq-11.4-r0 description:
 PostgreSQL libraries
 
-libpq-11.3-r2 webpage:
+libpq-11.4-r0 webpage:
 https://www.postgresql.org/
 
-libpq-11.3-r2 installed size:
+libpq-11.4-r0 installed size:
 315392
 
-libpq-11.3-r2 license:
+libpq-11.4-r0 license:
 PostgreSQL
 
 ```
@@ -939,16 +938,16 @@ ISC
 ### `apk` package: `postgresql-dev`
 
 ```console
-postgresql-dev-11.3-r2 description:
+postgresql-dev-11.4-r0 description:
 A sophisticated object-relational DBMS (development files)
 
-postgresql-dev-11.3-r2 webpage:
+postgresql-dev-11.4-r0 webpage:
 https://www.postgresql.org/
 
-postgresql-dev-11.3-r2 installed size:
-8564736
+postgresql-dev-11.4-r0 installed size:
+8568832
 
-postgresql-dev-11.3-r2 license:
+postgresql-dev-11.4-r0 license:
 PostgreSQL
 
 ```
@@ -956,16 +955,16 @@ PostgreSQL
 ### `apk` package: `postgresql-libs`
 
 ```console
-postgresql-libs-11.3-r2 description:
+postgresql-libs-11.4-r0 description:
 A sophisticated object-relational DBMS (libraries)
 
-postgresql-libs-11.3-r2 webpage:
+postgresql-libs-11.4-r0 webpage:
 https://www.postgresql.org/
 
-postgresql-libs-11.3-r2 installed size:
+postgresql-libs-11.4-r0 installed size:
 200704
 
-postgresql-libs-11.3-r2 license:
+postgresql-libs-11.4-r0 license:
 PostgreSQL
 
 ```
