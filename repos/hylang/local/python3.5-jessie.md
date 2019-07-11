@@ -2,8 +2,8 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:e7b713559d41de09f26c9fc995295476bad71c0015d4384988fe699ab59f86ab`
-- Created: `2019-06-11T12:09:25.025323997Z`
+- Image ID: `sha256:478cf6a6e1f3bdc4e9a4c27cfb423c443eabb18639bf84e06c9463e334df82b4`
+- Created: `2019-07-10T07:44:20.36730719Z`
 - Virtual Size: ~ 165.65 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
@@ -222,11 +222,11 @@ Other potentially useful URLs:
 - https://sources.debian.net/src/bash/4.3-11+deb8u2/debian/copyright/ (for direct copyright/license information)
 - http://snapshot.debian.org/package/bash/4.3-11+deb8u2/ (for access to the source package after it no longer exists in the archive)
 
-### `dpkg` source package: `bzip2=1.0.6-7`
+### `dpkg` source package: `bzip2=1.0.6-7+deb8u1`
 
 Binary Packages:
 
-- `libbz2-1.0:amd64=1.0.6-7+b3`
+- `libbz2-1.0:amd64=1.0.6-7+deb8u1`
 
 Licenses: (parsed from: `/usr/share/doc/libbz2-1.0/copyright`)
 
@@ -235,7 +235,7 @@ Licenses: (parsed from: `/usr/share/doc/libbz2-1.0/copyright`)
 Source:
 
 ```console
-$ apt-get source -qq --print-uris bzip2=1.0.6-7
+$ apt-get source -qq --print-uris bzip2=1.0.6-7+deb8u1
 'http://security.debian.org/debian-security/pool/updates/main/b/bzip2/bzip2_1.0.6-7+deb8u1.dsc' bzip2_1.0.6-7+deb8u1.dsc 2462 SHA256:9c4ee0d881c4e63e13882b970a3448b90cb84bf5ca78acddec8ced296d2672b8
 'http://security.debian.org/debian-security/pool/updates/main/b/bzip2/bzip2_1.0.6.orig.tar.bz2' bzip2_1.0.6.orig.tar.bz2 708737 SHA256:d70a9ccd8bdf47e302d96c69fecd54925f45d9c7b966bb4ef5f56b770960afa7
 'http://security.debian.org/debian-security/pool/updates/main/b/bzip2/bzip2_1.0.6-7+deb8u1.debian.tar.bz2' bzip2_1.0.6-7+deb8u1.debian.tar.bz2 60383 SHA256:853d42f87bdc559714b0bb35b207853b99d5b6b9763e7f4a85a79772ef681172
@@ -243,9 +243,9 @@ $ apt-get source -qq --print-uris bzip2=1.0.6-7
 
 Other potentially useful URLs:
 
-- https://sources.debian.net/src/bzip2/1.0.6-7/ (for browsing the source)
-- https://sources.debian.net/src/bzip2/1.0.6-7/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/bzip2/1.0.6-7/ (for access to the source package after it no longer exists in the archive)
+- https://sources.debian.net/src/bzip2/1.0.6-7+deb8u1/ (for browsing the source)
+- https://sources.debian.net/src/bzip2/1.0.6-7+deb8u1/debian/copyright/ (for direct copyright/license information)
+- http://snapshot.debian.org/package/bzip2/1.0.6-7+deb8u1/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `ca-certificates=20141019+deb8u4`
 
@@ -553,11 +553,11 @@ Other potentially useful URLs:
 - https://sources.debian.net/src/e2fsprogs/1.42.12-2/debian/copyright/ (for direct copyright/license information)
 - http://snapshot.debian.org/package/e2fsprogs/1.42.12-2/ (for access to the source package after it no longer exists in the archive)
 
-### `dpkg` source package: `expat=2.1.0-6+deb8u4`
+### `dpkg` source package: `expat=2.1.0-6+deb8u5`
 
 Binary Packages:
 
-- `libexpat1:amd64=2.1.0-6+deb8u4`
+- `libexpat1:amd64=2.1.0-6+deb8u5`
 
 **WARNING:** unable to detect licenses! (package likely not compliant with DEP-5)  
 If source is available (seen below), check the contents of `debian/copyright` within it.
@@ -566,17 +566,17 @@ If source is available (seen below), check the contents of `debian/copyright` wi
 Source:
 
 ```console
-$ apt-get source -qq --print-uris expat=2.1.0-6+deb8u4
-'http://deb.debian.org/debian/pool/main/e/expat/expat_2.1.0-6+deb8u4.dsc' expat_2.1.0-6+deb8u4.dsc 2292 SHA256:7f7a5fed696e3b17f50e576dbae7013793e59517b04818e8b1688d9581792245
-'http://deb.debian.org/debian/pool/main/e/expat/expat_2.1.0.orig.tar.gz' expat_2.1.0.orig.tar.gz 562616 SHA256:823705472f816df21c8f6aa026dd162b280806838bb55b3432b0fb1fcca7eb86
-'http://deb.debian.org/debian/pool/main/e/expat/expat_2.1.0-6+deb8u4.debian.tar.xz' expat_2.1.0-6+deb8u4.debian.tar.xz 22672 SHA256:e832a0c7f1645bb915310628c38ecc6183f6854b0788332a7be470d06d4d149b
+$ apt-get source -qq --print-uris expat=2.1.0-6+deb8u5
+'http://security.debian.org/debian-security/pool/updates/main/e/expat/expat_2.1.0-6+deb8u5.dsc' expat_2.1.0-6+deb8u5.dsc 2443 SHA256:a3dd7aa5ee6c407abc6e61fb77cfcbf168904086db8f18682f0c31f2bd410a53
+'http://security.debian.org/debian-security/pool/updates/main/e/expat/expat_2.1.0.orig.tar.gz' expat_2.1.0.orig.tar.gz 562616 SHA256:823705472f816df21c8f6aa026dd162b280806838bb55b3432b0fb1fcca7eb86
+'http://security.debian.org/debian-security/pool/updates/main/e/expat/expat_2.1.0-6+deb8u5.debian.tar.xz' expat_2.1.0-6+deb8u5.debian.tar.xz 22932 SHA256:2daf883dd385cf4ae686f8c2a7057e8cdc6a7368893de7f39b5c5577d4a50049
 ```
 
 Other potentially useful URLs:
 
-- https://sources.debian.net/src/expat/2.1.0-6+deb8u4/ (for browsing the source)
-- https://sources.debian.net/src/expat/2.1.0-6+deb8u4/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/expat/2.1.0-6+deb8u4/ (for access to the source package after it no longer exists in the archive)
+- https://sources.debian.net/src/expat/2.1.0-6+deb8u5/ (for browsing the source)
+- https://sources.debian.net/src/expat/2.1.0-6+deb8u5/debian/copyright/ (for direct copyright/license information)
+- http://snapshot.debian.org/package/expat/2.1.0-6+deb8u5/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `findutils=4.4.2-9`
 
