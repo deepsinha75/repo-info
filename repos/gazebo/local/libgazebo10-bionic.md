@@ -1844,14 +1844,9 @@ Licenses: (parsed from: `/usr/share/doc/libglib2.0-0/copyright`, `/usr/share/doc
 
 - `LGPL`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris glib2.0=2.56.4-0ubuntu0.18.04.3
-'http://archive.ubuntu.com/ubuntu/pool/main/g/glib2.0/glib2.0_2.56.4-0ubuntu0.18.04.3.dsc' glib2.0_2.56.4-0ubuntu0.18.04.3.dsc 3567 SHA256:33c41e68f24ef2cc71b4a017d0e760803b2b7c20999f9142f876c00918b98a69
-'http://archive.ubuntu.com/ubuntu/pool/main/g/glib2.0/glib2.0_2.56.4.orig.tar.xz' glib2.0_2.56.4.orig.tar.xz 7029768 SHA256:27f703d125efb07f8a743666b580df0b4095c59fc8750e8890132c91d437504c
-'http://archive.ubuntu.com/ubuntu/pool/main/g/glib2.0/glib2.0_2.56.4-0ubuntu0.18.04.3.debian.tar.xz' glib2.0_2.56.4-0ubuntu0.18.04.3.debian.tar.xz 80820 SHA256:e2fb43642c50c2ef12ae697372a579579e289cf0bac56517b5f0fcf23c7551de
-```
 
 ### `dpkg` source package: `glibc=2.27-3ubuntu1`
 
@@ -8190,14 +8185,9 @@ Licenses: (parsed from: `/usr/share/doc/libzmq3-dev/copyright`, `/usr/share/doc/
 - `LGPL-3.0+`
 - `MIT`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris zeromq3=4.2.5-1ubuntu0.1
-'http://archive.ubuntu.com/ubuntu/pool/universe/z/zeromq3/zeromq3_4.2.5-1ubuntu0.1.dsc' zeromq3_4.2.5-1ubuntu0.1.dsc 1973 SHA256:27d687371526760cdf9c85c398c99f60793abdceeda1354340c0f546dad256b0
-'http://archive.ubuntu.com/ubuntu/pool/universe/z/zeromq3/zeromq3_4.2.5.orig.tar.gz' zeromq3_4.2.5.orig.tar.gz 1409447 SHA256:cc9090ba35713d59bb2f7d7965f877036c49c5558ea0c290b0dcc6f2a17e489f
-'http://archive.ubuntu.com/ubuntu/pool/universe/z/zeromq3/zeromq3_4.2.5-1ubuntu0.1.debian.tar.xz' zeromq3_4.2.5-1ubuntu0.1.debian.tar.xz 21676 SHA256:4b13fef81403573140f75bb8c7e9b28558283a647ba113be768e09bd25323ff1
-```
 
 ### `dpkg` source package: `zlib=1:1.2.11.dfsg-0ubuntu2`
 
