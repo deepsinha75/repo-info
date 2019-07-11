@@ -2,9 +2,9 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:36248dbc0a281dbfe2eba391e56cf2b024e8e3fcc6fc573c97460d0fad678c54`
-- Created: `2019-06-19T02:38:17.426698898Z`
-- Virtual Size: ~ 942.07 Mb  
+- Image ID: `sha256:b5f87c81aef140211b6c34fc350589ab73bab40244562c9248a0cea0a8033c23`
+- Created: `2019-07-10T04:07:02.360016512Z`
+- Virtual Size: ~ 958.81 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["/entrypoint.sh"]`
@@ -287,11 +287,11 @@ $ apt-get source -qq --print-uris coreutils=8.25-2ubuntu3~16.04
 'http://archive.ubuntu.com/ubuntu/pool/main/c/coreutils/coreutils_8.25-2ubuntu3~16.04.debian.tar.xz' coreutils_8.25-2ubuntu3~16.04.debian.tar.xz 28336 SHA256:f6fd913f2b0b08df9109308dfd1202b06060e130b8e6bf94daad32e86a3937cf
 ```
 
-### `dpkg` source package: `couchbase-server=6.0.1-2037-1`
+### `dpkg` source package: `couchbase-server=6.0.2-2413-1`
 
 Binary Packages:
 
-- `couchbase-server=6.0.1-2037-1`
+- `couchbase-server=6.0.2-2413-1`
 
 **WARNING:** unable to detect licenses! (package likely not compliant with DEP-5)  
 If source is available (seen below), check the contents of `debian/copyright` within it.
@@ -483,19 +483,24 @@ $ apt-get source -qq --print-uris e2fsprogs=1.42.13-1ubuntu1
 'http://archive.ubuntu.com/ubuntu/pool/main/e/e2fsprogs/e2fsprogs_1.42.13-1ubuntu1.debian.tar.xz' e2fsprogs_1.42.13-1ubuntu1.debian.tar.xz 69196 SHA256:90326bf4bd93d01fbd9dc73803cc58c8d98ff67e1469e4cbbe672169aa048220
 ```
 
-### `dpkg` source package: `expat=2.1.0-7ubuntu0.16.04.3`
+### `dpkg` source package: `expat=2.1.0-7ubuntu0.16.04.4`
 
 Binary Packages:
 
-- `libexpat1:amd64=2.1.0-7ubuntu0.16.04.3`
+- `libexpat1:amd64=2.1.0-7ubuntu0.16.04.4`
 
 **WARNING:** unable to detect licenses! (package likely not compliant with DEP-5)  
 If source is available (seen below), check the contents of `debian/copyright` within it.
 
 
-**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
-This is *usually* due to a new package version being released and the old version being removed.
+Source:
 
+```console
+$ apt-get source -qq --print-uris expat=2.1.0-7ubuntu0.16.04.4
+'http://archive.ubuntu.com/ubuntu/pool/main/e/expat/expat_2.1.0-7ubuntu0.16.04.4.dsc' expat_2.1.0-7ubuntu0.16.04.4.dsc 2387 SHA256:17e5331ada990fed50e48f39545144f29910bbc178ab9677f3207760bd4d03ff
+'http://archive.ubuntu.com/ubuntu/pool/main/e/expat/expat_2.1.0.orig.tar.gz' expat_2.1.0.orig.tar.gz 562616 SHA256:823705472f816df21c8f6aa026dd162b280806838bb55b3432b0fb1fcca7eb86
+'http://archive.ubuntu.com/ubuntu/pool/main/e/expat/expat_2.1.0-7ubuntu0.16.04.4.debian.tar.xz' expat_2.1.0-7ubuntu0.16.04.4.debian.tar.xz 22376 SHA256:4c01b4cd139ea72605a6020bed02b735bf18517645bb5ea58b549aa4c9119654
+```
 
 ### `dpkg` source package: `fgetty=0.7-1`
 
@@ -1576,11 +1581,11 @@ $ apt-get source -qq --print-uris shadow=1:4.2-3.1ubuntu5.4
 'http://archive.ubuntu.com/ubuntu/pool/main/s/shadow/shadow_4.2-3.1ubuntu5.4.debian.tar.xz' shadow_4.2-3.1ubuntu5.4.debian.tar.xz 506364 SHA256:50ccd266ff5bdc8577fe090b04c9be675340bf59b44fa843cd20174055540a15
 ```
 
-### `dpkg` source package: `sqlite3=3.11.0-1ubuntu1.1`
+### `dpkg` source package: `sqlite3=3.11.0-1ubuntu1.2`
 
 Binary Packages:
 
-- `libsqlite3-0:amd64=3.11.0-1ubuntu1.1`
+- `libsqlite3-0:amd64=3.11.0-1ubuntu1.2`
 
 Licenses: (parsed from: `/usr/share/doc/libsqlite3-0/copyright`)
 
@@ -1588,9 +1593,15 @@ Licenses: (parsed from: `/usr/share/doc/libsqlite3-0/copyright`)
 - `GPL-2+`
 - `public-domain`
 
-**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
-This is *usually* due to a new package version being released and the old version being removed.
+Source:
 
+```console
+$ apt-get source -qq --print-uris sqlite3=3.11.0-1ubuntu1.2
+'http://archive.ubuntu.com/ubuntu/pool/main/s/sqlite3/sqlite3_3.11.0-1ubuntu1.2.dsc' sqlite3_3.11.0-1ubuntu1.2.dsc 2609 SHA256:4ff8c009cfc90745ed22805357a55f653b60c03e116d04227bbd8e444cb5ea94
+'http://archive.ubuntu.com/ubuntu/pool/main/s/sqlite3/sqlite3_3.11.0.orig-www.tar.xz' sqlite3_3.11.0.orig-www.tar.xz 3135012 SHA256:99843a91a1da29cf07269df49b37b0cd8a75035a88aacdb1186f94a9a217bab3
+'http://archive.ubuntu.com/ubuntu/pool/main/s/sqlite3/sqlite3_3.11.0.orig.tar.xz' sqlite3_3.11.0.orig.tar.xz 5122440 SHA256:79fb8800b8744337d5317270899a5a40612bb76f81517e131bf496c26b044490
+'http://archive.ubuntu.com/ubuntu/pool/main/s/sqlite3/sqlite3_3.11.0-1ubuntu1.2.debian.tar.xz' sqlite3_3.11.0-1ubuntu1.2.debian.tar.xz 34840 SHA256:8756e8b38a41cad6c3fca5aeb286f28a8ceab68e193a9a2ca7b2049d43ee3237
+```
 
 ### `dpkg` source package: `sysstat=11.2.0-1ubuntu0.2`
 
@@ -1681,19 +1692,24 @@ $ apt-get source -qq --print-uris tar=1.28-2.1ubuntu0.1
 'http://archive.ubuntu.com/ubuntu/pool/main/t/tar/tar_1.28-2.1ubuntu0.1.debian.tar.xz' tar_1.28-2.1ubuntu0.1.debian.tar.xz 36868 SHA256:1933bd564d70d3d0cf085291969af36b2461265270be25f3819cc033f72c1ac6
 ```
 
-### `dpkg` source package: `tzdata=2019a-0ubuntu0.16.04`
+### `dpkg` source package: `tzdata=2019b-0ubuntu0.16.04`
 
 Binary Packages:
 
-- `tzdata=2019a-0ubuntu0.16.04`
+- `tzdata=2019b-0ubuntu0.16.04`
 
 **WARNING:** unable to detect licenses! (package likely not compliant with DEP-5)  
 If source is available (seen below), check the contents of `debian/copyright` within it.
 
 
-**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
-This is *usually* due to a new package version being released and the old version being removed.
+Source:
 
+```console
+$ apt-get source -qq --print-uris tzdata=2019b-0ubuntu0.16.04
+'http://archive.ubuntu.com/ubuntu/pool/main/t/tzdata/tzdata_2019b-0ubuntu0.16.04.dsc' tzdata_2019b-0ubuntu0.16.04.dsc 2136 SHA256:87c8c88a4bbe5b0c2d463fb845f4649f452093b962fc751536c2bef2f9e15773
+'http://archive.ubuntu.com/ubuntu/pool/main/t/tzdata/tzdata_2019b.orig.tar.gz' tzdata_2019b.orig.tar.gz 384667 SHA256:05d9092c90dcf9ec4f3ccfdea80c7dcea5e882b3b105c3422da172aaa9a50c64
+'http://archive.ubuntu.com/ubuntu/pool/main/t/tzdata/tzdata_2019b-0ubuntu0.16.04.debian.tar.xz' tzdata_2019b-0ubuntu0.16.04.debian.tar.xz 100340 SHA256:41bff0da1b7b22d4b49949148163585acedabf14c8240987ec335348a05ec3fc
+```
 
 ### `dpkg` source package: `ubuntu-keyring=2012.05.19`
 
