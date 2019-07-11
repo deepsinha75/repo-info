@@ -2,9 +2,9 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:b2007b176d7991e7238c380a0eb14cd01ca1e797bf0c307ec4bc83e8ad85e9da`
-- Created: `2019-07-04T01:59:45.335978086Z`
-- Virtual Size: ~ 370.14 Mb  
+- Image ID: `sha256:983655613b9c3c0b38fea30d18bf9e9a0556587f65517865aba7ba915b8094e7`
+- Created: `2019-07-10T02:43:22.789795835Z`
+- Virtual Size: ~ 367.83 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["docker-entrypoint.sh"]`
@@ -2654,12 +2654,12 @@ $ apt-get source -qq --print-uris postgresql-12=12~beta2-1.pgdg100+1
 'http://apt.postgresql.org/pub/repos/apt/pool/12/p/postgresql-12/postgresql-12_12~beta2-1.pgdg100+1.debian.tar.xz' postgresql-12_12~beta2-1.pgdg100+1.debian.tar.xz 21916 SHA256:34d47ff06758a9ccef3ef2162e0e5f7f1ae4ed8ae7f132e43735e0f54aaa8fe3
 ```
 
-### `dpkg` source package: `postgresql-common=201.pgdg100+1`
+### `dpkg` source package: `postgresql-common=203.pgdg100+1`
 
 Binary Packages:
 
-- `postgresql-client-common=201.pgdg100+1`
-- `postgresql-common=201.pgdg100+1`
+- `postgresql-client-common=203.pgdg100+1`
+- `postgresql-common=203.pgdg100+1`
 
 Licenses: (parsed from: `/usr/share/doc/postgresql-client-common/copyright`, `/usr/share/doc/postgresql-common/copyright`)
 
@@ -2669,9 +2669,9 @@ Licenses: (parsed from: `/usr/share/doc/postgresql-client-common/copyright`, `/u
 Source:
 
 ```console
-$ apt-get source -qq --print-uris postgresql-common=201.pgdg100+1
-'http://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-common/postgresql-common_201.pgdg100+1.dsc' postgresql-common_201.pgdg100+1.dsc 1466 SHA256:c05e0e818b3f2459bdaa46a199f7ae5e30e71c63dcb06716f3a962f968782e76
-'http://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-common/postgresql-common_201.pgdg100+1.tar.xz' postgresql-common_201.pgdg100+1.tar.xz 213100 SHA256:f9d694768edcd4229b0b66cd4f79ca9b0bba6d3949f3afe263f3c54070b1d9cd
+$ apt-get source -qq --print-uris postgresql-common=203.pgdg100+1
+'http://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-common/postgresql-common_203.pgdg100+1.dsc' postgresql-common_203.pgdg100+1.dsc 1581 SHA256:267573f7ee956750bfbc10610b7462dc4be321aaef920e314db812b6fa76edf9
+'http://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-common/postgresql-common_203.pgdg100+1.tar.xz' postgresql-common_203.pgdg100+1.tar.xz 214520 SHA256:19a59024f03ea51605b1d9dba053972d4ab885a2965dbc8b6ef573dc6f84f2be
 ```
 
 ### `dpkg` source package: `procps=2:3.3.15-2`
@@ -2949,11 +2949,11 @@ Other potentially useful URLs:
 - https://sources.debian.net/src/shadow/1:4.5-1.1/debian/copyright/ (for direct copyright/license information)
 - http://snapshot.debian.org/package/shadow/1:4.5-1.1/ (for access to the source package after it no longer exists in the archive)
 
-### `dpkg` source package: `sqlite3=3.27.2-2`
+### `dpkg` source package: `sqlite3=3.27.2-3`
 
 Binary Packages:
 
-- `libsqlite3-0:amd64=3.27.2-2`
+- `libsqlite3-0:amd64=3.27.2-3`
 
 Licenses: (parsed from: `/usr/share/doc/libsqlite3-0/copyright`)
 
@@ -2961,13 +2961,21 @@ Licenses: (parsed from: `/usr/share/doc/libsqlite3-0/copyright`)
 - `GPL-2+`
 - `public-domain`
 
-**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
-This is *usually* due to a new package version being released and the old version being removed.
+Source:
 
-The source package *may* still be available for download from:
+```console
+$ apt-get source -qq --print-uris sqlite3=3.27.2-3
+'http://deb.debian.org/debian/pool/main/s/sqlite3/sqlite3_3.27.2-3.dsc' sqlite3_3.27.2-3.dsc 2398 SHA256:4d8c953891d6268911aa273f8cb7c9e0bdd026c7918f6203fd019d3e16cea1cc
+'http://deb.debian.org/debian/pool/main/s/sqlite3/sqlite3_3.27.2.orig-www.tar.xz' sqlite3_3.27.2.orig-www.tar.xz 5602752 SHA256:b50bea0e1974b33bcb2cec4c29fcdeecd8f960020ce0310b15fb123938844bee
+'http://deb.debian.org/debian/pool/main/s/sqlite3/sqlite3_3.27.2.orig.tar.xz' sqlite3_3.27.2.orig.tar.xz 6844832 SHA256:6cb1606bbc38270739d256b5ab1cf94dccf5b2a3b4cbceb0545aac76f6ef40f2
+'http://deb.debian.org/debian/pool/main/s/sqlite3/sqlite3_3.27.2-3.debian.tar.xz' sqlite3_3.27.2-3.debian.tar.xz 30372 SHA256:0a95abfc23baa8d0fa2ec7fc6b96f46e34c37f23ff540bc041eff111e6550af9
+```
 
-- http://snapshot.debian.org/package/sqlite3/3.27.2-2/
+Other potentially useful URLs:
 
+- https://sources.debian.net/src/sqlite3/3.27.2-3/ (for browsing the source)
+- https://sources.debian.net/src/sqlite3/3.27.2-3/debian/copyright/ (for direct copyright/license information)
+- http://snapshot.debian.org/package/sqlite3/3.27.2-3/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `ssl-cert=1.0.39`
 
