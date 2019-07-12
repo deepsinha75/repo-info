@@ -2,8 +2,8 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:e91b0f7c671b36784606e7d89ce2bcd7c72ed1760059afc0bbbf4a97278f52b9`
-- Created: `2019-06-10T23:21:42.739319719Z`
+- Image ID: `sha256:2733e1acba54edb1b1a30e729c9748eaf1df8e486db0e08ce1645b91e605f194`
+- Created: `2019-07-09T21:22:02.757311019Z`
 - Virtual Size: ~ 114.04 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
@@ -223,11 +223,11 @@ Other potentially useful URLs:
 - https://sources.debian.net/src/bash/5.0-4/debian/copyright/ (for direct copyright/license information)
 - http://snapshot.debian.org/package/bash/5.0-4/ (for access to the source package after it no longer exists in the archive)
 
-### `dpkg` source package: `bzip2=1.0.6-9`
+### `dpkg` source package: `bzip2=1.0.6-9.1`
 
 Binary Packages:
 
-- `libbz2-1.0:amd64=1.0.6-9`
+- `libbz2-1.0:amd64=1.0.6-9.1`
 
 Licenses: (parsed from: `/usr/share/doc/libbz2-1.0/copyright`)
 
@@ -237,7 +237,7 @@ Licenses: (parsed from: `/usr/share/doc/libbz2-1.0/copyright`)
 Source:
 
 ```console
-$ apt-get source -qq --print-uris bzip2=1.0.6-9
+$ apt-get source -qq --print-uris bzip2=1.0.6-9.1
 'http://deb.debian.org/debian/pool/main/b/bzip2/bzip2_1.0.6-9.1.dsc' bzip2_1.0.6-9.1.dsc 2348 SHA256:21cab309681e335132b61a2f17910dcb0538697ce1ac4868ec45630fb5e0ca43
 'http://deb.debian.org/debian/pool/main/b/bzip2/bzip2_1.0.6.orig.tar.bz2' bzip2_1.0.6.orig.tar.bz2 708737 SHA256:d70a9ccd8bdf47e302d96c69fecd54925f45d9c7b966bb4ef5f56b770960afa7
 'http://deb.debian.org/debian/pool/main/b/bzip2/bzip2_1.0.6-9.1.debian.tar.bz2' bzip2_1.0.6-9.1.debian.tar.bz2 26512 SHA256:0642536bb5fb5e6b224d3852f72d5401f31e75cb1ac76a2e5daeb6b8780c13b5
@@ -245,9 +245,9 @@ $ apt-get source -qq --print-uris bzip2=1.0.6-9
 
 Other potentially useful URLs:
 
-- https://sources.debian.net/src/bzip2/1.0.6-9/ (for browsing the source)
-- https://sources.debian.net/src/bzip2/1.0.6-9/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/bzip2/1.0.6-9/ (for access to the source package after it no longer exists in the archive)
+- https://sources.debian.net/src/bzip2/1.0.6-9.1/ (for browsing the source)
+- https://sources.debian.net/src/bzip2/1.0.6-9.1/debian/copyright/ (for direct copyright/license information)
+- http://snapshot.debian.org/package/bzip2/1.0.6-9.1/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `cdebconf=0.249`
 
@@ -682,11 +682,11 @@ Other potentially useful URLs:
 - https://sources.debian.net/src/gnupg2/2.2.12-1/debian/copyright/ (for direct copyright/license information)
 - http://snapshot.debian.org/package/gnupg2/2.2.12-1/ (for access to the source package after it no longer exists in the archive)
 
-### `dpkg` source package: `gnutls28=3.6.7-3`
+### `dpkg` source package: `gnutls28=3.6.7-4`
 
 Binary Packages:
 
-- `libgnutls30:amd64=3.6.7-3`
+- `libgnutls30:amd64=3.6.7-4`
 
 Licenses: (parsed from: `/usr/share/doc/libgnutls30/copyright`)
 
@@ -702,13 +702,21 @@ Licenses: (parsed from: `/usr/share/doc/libgnutls30/copyright`)
 - `The MIT License (MIT)`
 - `The main library is licensed under GNU Lesser`
 
-**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
-This is *usually* due to a new package version being released and the old version being removed.
+Source:
 
-The source package *may* still be available for download from:
+```console
+$ apt-get source -qq --print-uris gnutls28=3.6.7-4
+'http://deb.debian.org/debian/pool/main/g/gnutls28/gnutls28_3.6.7-4.dsc' gnutls28_3.6.7-4.dsc 3322 SHA256:ff2e35284ef8002260f628ef2aef82f8f9859ff9ed125e087a97b5490e5ee338
+'http://deb.debian.org/debian/pool/main/g/gnutls28/gnutls28_3.6.7.orig.tar.xz' gnutls28_3.6.7.orig.tar.xz 8153728 SHA256:5b3409ad5aaf239808730d1ee12fdcd148c0be00262c7edf157af655a8a188e2
+'http://deb.debian.org/debian/pool/main/g/gnutls28/gnutls28_3.6.7.orig.tar.xz.asc' gnutls28_3.6.7.orig.tar.xz.asc 534 SHA256:a14d0a7b9295b65ae797a70f8e765024a2e363dca03d008bfce0aec2b3f292b0
+'http://deb.debian.org/debian/pool/main/g/gnutls28/gnutls28_3.6.7-4.debian.tar.xz' gnutls28_3.6.7-4.debian.tar.xz 72820 SHA256:fac0e4910dff5eddc6e25709438f3b3c70239b202f079c4466e81a6fd4cb8a82
+```
 
-- http://snapshot.debian.org/package/gnutls28/3.6.7-3/
+Other potentially useful URLs:
 
+- https://sources.debian.net/src/gnutls28/3.6.7-4/ (for browsing the source)
+- https://sources.debian.net/src/gnutls28/3.6.7-4/debian/copyright/ (for direct copyright/license information)
+- http://snapshot.debian.org/package/gnutls28/3.6.7-4/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `grep=3.3-1`
 

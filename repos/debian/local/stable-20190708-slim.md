@@ -1,10 +1,10 @@
-# `debian:buster`
+# `debian:stable-slim`
 
 ## Docker Metadata
 
-- Image ID: `sha256:098963abf3c3b87b8114ff67d164097dfac2d5659e39f9beb5604db91585f375`
-- Created: `2019-06-10T23:21:37.578047099Z`
-- Virtual Size: ~ 114.04 Mb  
+- Image ID: `sha256:a4eb8e3265f81122f2f2524f8dc94647ef9d4c2c565e142a79131b6be89ef4f2`
+- Created: `2019-07-09T21:30:45.686787611Z`
+- Virtual Size: ~ 69.20 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Command: `["bash"]`
@@ -223,11 +223,11 @@ Other potentially useful URLs:
 - https://sources.debian.net/src/bash/5.0-4/debian/copyright/ (for direct copyright/license information)
 - http://snapshot.debian.org/package/bash/5.0-4/ (for access to the source package after it no longer exists in the archive)
 
-### `dpkg` source package: `bzip2=1.0.6-9`
+### `dpkg` source package: `bzip2=1.0.6-9.1`
 
 Binary Packages:
 
-- `libbz2-1.0:amd64=1.0.6-9`
+- `libbz2-1.0:amd64=1.0.6-9.1`
 
 Licenses: (parsed from: `/usr/share/doc/libbz2-1.0/copyright`)
 
@@ -237,7 +237,7 @@ Licenses: (parsed from: `/usr/share/doc/libbz2-1.0/copyright`)
 Source:
 
 ```console
-$ apt-get source -qq --print-uris bzip2=1.0.6-9
+$ apt-get source -qq --print-uris bzip2=1.0.6-9.1
 'http://deb.debian.org/debian/pool/main/b/bzip2/bzip2_1.0.6-9.1.dsc' bzip2_1.0.6-9.1.dsc 2348 SHA256:21cab309681e335132b61a2f17910dcb0538697ce1ac4868ec45630fb5e0ca43
 'http://deb.debian.org/debian/pool/main/b/bzip2/bzip2_1.0.6.orig.tar.bz2' bzip2_1.0.6.orig.tar.bz2 708737 SHA256:d70a9ccd8bdf47e302d96c69fecd54925f45d9c7b966bb4ef5f56b770960afa7
 'http://deb.debian.org/debian/pool/main/b/bzip2/bzip2_1.0.6-9.1.debian.tar.bz2' bzip2_1.0.6-9.1.debian.tar.bz2 26512 SHA256:0642536bb5fb5e6b224d3852f72d5401f31e75cb1ac76a2e5daeb6b8780c13b5
@@ -245,9 +245,9 @@ $ apt-get source -qq --print-uris bzip2=1.0.6-9
 
 Other potentially useful URLs:
 
-- https://sources.debian.net/src/bzip2/1.0.6-9/ (for browsing the source)
-- https://sources.debian.net/src/bzip2/1.0.6-9/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/bzip2/1.0.6-9/ (for access to the source package after it no longer exists in the archive)
+- https://sources.debian.net/src/bzip2/1.0.6-9.1/ (for browsing the source)
+- https://sources.debian.net/src/bzip2/1.0.6-9.1/debian/copyright/ (for direct copyright/license information)
+- http://snapshot.debian.org/package/bzip2/1.0.6-9.1/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `cdebconf=0.249`
 
@@ -504,34 +504,6 @@ Other potentially useful URLs:
 - https://sources.debian.net/src/e2fsprogs/1.44.5-1/debian/copyright/ (for direct copyright/license information)
 - http://snapshot.debian.org/package/e2fsprogs/1.44.5-1/ (for access to the source package after it no longer exists in the archive)
 
-### `dpkg` source package: `elfutils=0.176-1.1`
-
-Binary Packages:
-
-- `libelf1:amd64=0.176-1.1`
-
-Licenses: (parsed from: `/usr/share/doc/libelf1/copyright`)
-
-- `GPL-2`
-- `GPL-3`
-- `LGPL-`
-
-Source:
-
-```console
-$ apt-get source -qq --print-uris elfutils=0.176-1.1
-'http://deb.debian.org/debian/pool/main/e/elfutils/elfutils_0.176-1.1.dsc' elfutils_0.176-1.1.dsc 2584 SHA256:6d9fa4741e921f58a3e291def1f92a87bed888db15e73d6e29d46fc48b5f615a
-'http://deb.debian.org/debian/pool/main/e/elfutils/elfutils_0.176.orig.tar.bz2' elfutils_0.176.orig.tar.bz2 8646075 SHA256:eb5747c371b0af0f71e86215a5ebb88728533c3a104a43d4231963f308cd1023
-'http://deb.debian.org/debian/pool/main/e/elfutils/elfutils_0.176.orig.tar.bz2.asc' elfutils_0.176.orig.tar.bz2.asc 455 SHA256:51474b579b25fc799de0777e241c83605427d2903f8d28524ef6af42f75931fd
-'http://deb.debian.org/debian/pool/main/e/elfutils/elfutils_0.176-1.1.debian.tar.xz' elfutils_0.176-1.1.debian.tar.xz 31644 SHA256:06d7057e744d3a6138cf43d30237e2b327b6bfe3041a9a4b210414429c1267f1
-```
-
-Other potentially useful URLs:
-
-- https://sources.debian.net/src/elfutils/0.176-1.1/ (for browsing the source)
-- https://sources.debian.net/src/elfutils/0.176-1.1/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/elfutils/0.176-1.1/ (for access to the source package after it no longer exists in the archive)
-
 ### `dpkg` source package: `findutils=4.6.0+git+20190209-2`
 
 Binary Packages:
@@ -682,11 +654,11 @@ Other potentially useful URLs:
 - https://sources.debian.net/src/gnupg2/2.2.12-1/debian/copyright/ (for direct copyright/license information)
 - http://snapshot.debian.org/package/gnupg2/2.2.12-1/ (for access to the source package after it no longer exists in the archive)
 
-### `dpkg` source package: `gnutls28=3.6.7-3`
+### `dpkg` source package: `gnutls28=3.6.7-4`
 
 Binary Packages:
 
-- `libgnutls30:amd64=3.6.7-3`
+- `libgnutls30:amd64=3.6.7-4`
 
 Licenses: (parsed from: `/usr/share/doc/libgnutls30/copyright`)
 
@@ -702,13 +674,21 @@ Licenses: (parsed from: `/usr/share/doc/libgnutls30/copyright`)
 - `The MIT License (MIT)`
 - `The main library is licensed under GNU Lesser`
 
-**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
-This is *usually* due to a new package version being released and the old version being removed.
+Source:
 
-The source package *may* still be available for download from:
+```console
+$ apt-get source -qq --print-uris gnutls28=3.6.7-4
+'http://deb.debian.org/debian/pool/main/g/gnutls28/gnutls28_3.6.7-4.dsc' gnutls28_3.6.7-4.dsc 3322 SHA256:ff2e35284ef8002260f628ef2aef82f8f9859ff9ed125e087a97b5490e5ee338
+'http://deb.debian.org/debian/pool/main/g/gnutls28/gnutls28_3.6.7.orig.tar.xz' gnutls28_3.6.7.orig.tar.xz 8153728 SHA256:5b3409ad5aaf239808730d1ee12fdcd148c0be00262c7edf157af655a8a188e2
+'http://deb.debian.org/debian/pool/main/g/gnutls28/gnutls28_3.6.7.orig.tar.xz.asc' gnutls28_3.6.7.orig.tar.xz.asc 534 SHA256:a14d0a7b9295b65ae797a70f8e765024a2e363dca03d008bfce0aec2b3f292b0
+'http://deb.debian.org/debian/pool/main/g/gnutls28/gnutls28_3.6.7-4.debian.tar.xz' gnutls28_3.6.7-4.debian.tar.xz 72820 SHA256:fac0e4910dff5eddc6e25709438f3b3c70239b202f079c4466e81a6fd4cb8a82
+```
 
-- http://snapshot.debian.org/package/gnutls28/3.6.7-3/
+Other potentially useful URLs:
 
+- https://sources.debian.net/src/gnutls28/3.6.7-4/ (for browsing the source)
+- https://sources.debian.net/src/gnutls28/3.6.7-4/debian/copyright/ (for direct copyright/license information)
+- http://snapshot.debian.org/package/gnutls28/3.6.7-4/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `grep=3.3-1`
 
@@ -811,84 +791,6 @@ Other potentially useful URLs:
 - https://sources.debian.net/src/init-system-helpers/1.56+nmu1/debian/copyright/ (for direct copyright/license information)
 - http://snapshot.debian.org/package/init-system-helpers/1.56+nmu1/ (for access to the source package after it no longer exists in the archive)
 
-### `dpkg` source package: `iproute2=4.20.0-2`
-
-Binary Packages:
-
-- `iproute2=4.20.0-2`
-
-Licenses: (parsed from: `/usr/share/doc/iproute2/copyright`)
-
-- `GPL-2`
-
-Source:
-
-```console
-$ apt-get source -qq --print-uris iproute2=4.20.0-2
-'http://deb.debian.org/debian/pool/main/i/iproute2/iproute2_4.20.0-2.dsc' iproute2_4.20.0-2.dsc 1884 SHA256:006d839d17b2871c8e8b655782b59311b2b56ed883760011173bb4df2da1a0fb
-'http://deb.debian.org/debian/pool/main/i/iproute2/iproute2_4.20.0.orig.tar.xz' iproute2_4.20.0.orig.tar.xz 707016 SHA256:c8adaa6a40f888476b23acb283cfa30c0dd55f07b5aa20663ed5ba2ef1f6fda8
-'http://deb.debian.org/debian/pool/main/i/iproute2/iproute2_4.20.0-2.debian.tar.xz' iproute2_4.20.0-2.debian.tar.xz 144416 SHA256:32220902a0bfdae209ffa7aee610cd70d49c759eeada1d9008b84782d1515e00
-```
-
-Other potentially useful URLs:
-
-- https://sources.debian.net/src/iproute2/4.20.0-2/ (for browsing the source)
-- https://sources.debian.net/src/iproute2/4.20.0-2/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/iproute2/4.20.0-2/ (for access to the source package after it no longer exists in the archive)
-
-### `dpkg` source package: `iptables=1.8.2-4`
-
-Binary Packages:
-
-- `libxtables12:amd64=1.8.2-4`
-
-Licenses: (parsed from: `/usr/share/doc/libxtables12/copyright`)
-
-- `Artistic-2`
-- `GPL-2`
-- `GPL-2+`
-- `custom`
-
-Source:
-
-```console
-$ apt-get source -qq --print-uris iptables=1.8.2-4
-'http://deb.debian.org/debian/pool/main/i/iptables/iptables_1.8.2-4.dsc' iptables_1.8.2-4.dsc 2699 SHA256:926c91a00c449d7999e5d86e7471ea0591d8fd6633aca3649925aa2fea04273a
-'http://deb.debian.org/debian/pool/main/i/iptables/iptables_1.8.2.orig.tar.bz2' iptables_1.8.2.orig.tar.bz2 679858 SHA256:a3778b50ed1a3256f9ca975de82c2204e508001fc2471238c8c97f3d1c4c12af
-'http://deb.debian.org/debian/pool/main/i/iptables/iptables_1.8.2-4.debian.tar.xz' iptables_1.8.2-4.debian.tar.xz 65300 SHA256:e6562e368ed7bff8378c1a31ca0d283f15be3a4c68165786dfaa38cc5e9e9e09
-```
-
-Other potentially useful URLs:
-
-- https://sources.debian.net/src/iptables/1.8.2-4/ (for browsing the source)
-- https://sources.debian.net/src/iptables/1.8.2-4/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/iptables/1.8.2-4/ (for access to the source package after it no longer exists in the archive)
-
-### `dpkg` source package: `iputils=3:20180629-2`
-
-Binary Packages:
-
-- `iputils-ping=3:20180629-2`
-
-Licenses: (parsed from: `/usr/share/doc/iputils-ping/copyright`)
-
-- `GPL`
-
-Source:
-
-```console
-$ apt-get source -qq --print-uris iputils=3:20180629-2
-'http://deb.debian.org/debian/pool/main/i/iputils/iputils_20180629-2.dsc' iputils_20180629-2.dsc 2093 SHA256:c377186ea16ebeb404316f562857e2564e3346b7b0cfd9ef72d88498db6bf3b0
-'http://deb.debian.org/debian/pool/main/i/iputils/iputils_20180629.orig.tar.bz2' iputils_20180629.orig.tar.bz2 157943 SHA256:1a54fe72d67ac00dae328ddb1952110ee5310ccecbfcb97cbb26d4dedc73fe6d
-'http://deb.debian.org/debian/pool/main/i/iputils/iputils_20180629-2.debian.tar.xz' iputils_20180629-2.debian.tar.xz 10212 SHA256:bccf6d3819bbcea59ecade34872fb44f30495baa4878cc32b2ec32b973a7ac58
-```
-
-Other potentially useful URLs:
-
-- https://sources.debian.net/src/iputils/3:20180629-2/ (for browsing the source)
-- https://sources.debian.net/src/iputils/3:20180629-2/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/iputils/3:20180629-2/ (for access to the source package after it no longer exists in the archive)
-
 ### `dpkg` source package: `libcap-ng=0.7.9-2`
 
 Binary Packages:
@@ -915,34 +817,6 @@ Other potentially useful URLs:
 - https://sources.debian.net/src/libcap-ng/0.7.9-2/ (for browsing the source)
 - https://sources.debian.net/src/libcap-ng/0.7.9-2/debian/copyright/ (for direct copyright/license information)
 - http://snapshot.debian.org/package/libcap-ng/0.7.9-2/ (for access to the source package after it no longer exists in the archive)
-
-### `dpkg` source package: `libcap2=1:2.25-2`
-
-Binary Packages:
-
-- `libcap2:amd64=1:2.25-2`
-- `libcap2-bin=1:2.25-2`
-
-Licenses: (parsed from: `/usr/share/doc/libcap2/copyright`, `/usr/share/doc/libcap2-bin/copyright`)
-
-- `BSD-3-clause`
-- `GPL-2`
-- `GPL-2+`
-
-Source:
-
-```console
-$ apt-get source -qq --print-uris libcap2=1:2.25-2
-'http://deb.debian.org/debian/pool/main/libc/libcap2/libcap2_2.25-2.dsc' libcap2_2.25-2.dsc 2196 SHA256:28adc8b721b5a3151afdddc2081149473ec07f362777e25bfc29b3b96ec432f8
-'http://deb.debian.org/debian/pool/main/libc/libcap2/libcap2_2.25.orig.tar.xz' libcap2_2.25.orig.tar.xz 63672 SHA256:693c8ac51e983ee678205571ef272439d83afe62dd8e424ea14ad9790bc35162
-'http://deb.debian.org/debian/pool/main/libc/libcap2/libcap2_2.25-2.debian.tar.xz' libcap2_2.25-2.debian.tar.xz 24876 SHA256:2581cdcaa27cf7e50b8e9f402a8b35ebbf78dd2697fb96bf78f411cd11110a82
-```
-
-Other potentially useful URLs:
-
-- https://sources.debian.net/src/libcap2/1:2.25-2/ (for browsing the source)
-- https://sources.debian.net/src/libcap2/1:2.25-2/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/libcap2/1:2.25-2/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `libffi=3.2.1-9`
 
@@ -1057,33 +931,6 @@ Other potentially useful URLs:
 - https://sources.debian.net/src/libidn2/2.0.5-1/ (for browsing the source)
 - https://sources.debian.net/src/libidn2/2.0.5-1/debian/copyright/ (for direct copyright/license information)
 - http://snapshot.debian.org/package/libidn2/2.0.5-1/ (for access to the source package after it no longer exists in the archive)
-
-### `dpkg` source package: `libmnl=1.0.4-2`
-
-Binary Packages:
-
-- `libmnl0:amd64=1.0.4-2`
-
-Licenses: (parsed from: `/usr/share/doc/libmnl0/copyright`)
-
-- `GPL-2`
-- `GPL-2+`
-- `LGPL-2.1`
-
-Source:
-
-```console
-$ apt-get source -qq --print-uris libmnl=1.0.4-2
-'http://deb.debian.org/debian/pool/main/libm/libmnl/libmnl_1.0.4-2.dsc' libmnl_1.0.4-2.dsc 1994 SHA256:131106bb7eb4a94fa8e8c135f92c38068d0b42681f166eb159137f171c568630
-'http://deb.debian.org/debian/pool/main/libm/libmnl/libmnl_1.0.4.orig.tar.bz2' libmnl_1.0.4.orig.tar.bz2 301270 SHA256:171f89699f286a5854b72b91d06e8f8e3683064c5901fb09d954a9ab6f551f81
-'http://deb.debian.org/debian/pool/main/libm/libmnl/libmnl_1.0.4-2.debian.tar.xz' libmnl_1.0.4-2.debian.tar.xz 7512 SHA256:208d62777081ffe6d7dffde0d7370cefb03fe0a6a0486a1b50f6b7b8e9a5b068
-```
-
-Other potentially useful URLs:
-
-- https://sources.debian.net/src/libmnl/1.0.4-2/ (for browsing the source)
-- https://sources.debian.net/src/libmnl/1.0.4-2/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/libmnl/1.0.4-2/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `libseccomp=2.3.3-4`
 
