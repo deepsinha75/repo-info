@@ -649,15 +649,13 @@ Licenses: (parsed from: `/usr/share/doc/libgpg-error0/copyright`)
 - `LGPL-2.1+`
 - `g10-permissive`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris libgpg-error=1.36-1
-'http://archive.ubuntu.com/ubuntu/pool/main/libg/libgpg-error/libgpg-error_1.36-1.dsc' libgpg-error_1.36-1.dsc 2178 SHA256:d0a8f62d110a6d05b41292fede2d82d823f5f831cea4631f763e4dd235ebf3f8
-'http://archive.ubuntu.com/ubuntu/pool/main/libg/libgpg-error/libgpg-error_1.36.orig.tar.bz2' libgpg-error_1.36.orig.tar.bz2 920542 SHA256:babd98437208c163175c29453f8681094bcaf92968a15cafb1a276076b33c97c
-'http://archive.ubuntu.com/ubuntu/pool/main/libg/libgpg-error/libgpg-error_1.36.orig.tar.bz2.asc' libgpg-error_1.36.orig.tar.bz2.asc 534 SHA256:ef7b12e7a2c348d8e9cb3fb63b4069feeadcfb69074786559064381d179f1df7
-'http://archive.ubuntu.com/ubuntu/pool/main/libg/libgpg-error/libgpg-error_1.36-1.debian.tar.xz' libgpg-error_1.36-1.debian.tar.xz 16112 SHA256:3163e0f20df7c0529a6cd8b11bb714b702b5484e8f96dcf0c2afebb6a0c017c0
-```
+The source package *may* still be available for download from:
+
+- http://snapshot.debian.org/package/libgpg-error/1.36-1/
+
 
 ### `dpkg` source package: `libidn2=2.0.5-1`
 
@@ -735,14 +733,13 @@ Licenses: (parsed from: `/usr/share/doc/libsemanage-common/copyright`, `/usr/sha
 - `GPL`
 - `LGPL`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris libsemanage=2.9-1
-'http://archive.ubuntu.com/ubuntu/pool/main/libs/libsemanage/libsemanage_2.9-1.dsc' libsemanage_2.9-1.dsc 2434 SHA256:09a2712092b6eebaa863da0780d983bf85ae03908d1e103097613449109af2f6
-'http://archive.ubuntu.com/ubuntu/pool/main/libs/libsemanage/libsemanage_2.9.orig.tar.gz' libsemanage_2.9.orig.tar.gz 157690 SHA256:2576349d344492e73b468059767268dec1dabd8c35f3c7222c3ec2448737bc1c
-'http://archive.ubuntu.com/ubuntu/pool/main/libs/libsemanage/libsemanage_2.9-1.debian.tar.xz' libsemanage_2.9-1.debian.tar.xz 17212 SHA256:ae523dea0b990163e0af336612115e5a72ebc28b548793628a2d247c4af25ac3
-```
+The source package *may* still be available for download from:
+
+- http://snapshot.debian.org/package/libsemanage/2.9-1/
+
 
 ### `dpkg` source package: `libsepol=2.9-1`
 
@@ -755,14 +752,13 @@ Licenses: (parsed from: `/usr/share/doc/libsepol1/copyright`)
 - `GPL`
 - `LGPL`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris libsepol=2.9-1
-'http://archive.ubuntu.com/ubuntu/pool/main/libs/libsepol/libsepol_2.9-1.dsc' libsepol_2.9-1.dsc 1792 SHA256:83a8f66420339f1e9baba1583ecf5aa0555ce6cec7eb02614671fea6b0428c27
-'http://archive.ubuntu.com/ubuntu/pool/main/libs/libsepol/libsepol_2.9.orig.tar.gz' libsepol_2.9.orig.tar.gz 474861 SHA256:a34b12b038d121e3e459b1cbaca3c9202e983137819c16baf63658390e3f1d5d
-'http://archive.ubuntu.com/ubuntu/pool/main/libs/libsepol/libsepol_2.9-1.debian.tar.xz' libsepol_2.9-1.debian.tar.xz 14120 SHA256:8d7983621ef3dba48a50c8911c6bc58fc66474d4cea6278463007ec198a79876
-```
+The source package *may* still be available for download from:
+
+- http://snapshot.debian.org/package/libsepol/2.9-1/
+
 
 ### `dpkg` source package: `libtasn1-6=4.13-3`
 
