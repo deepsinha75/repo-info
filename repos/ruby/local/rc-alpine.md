@@ -2,8 +2,8 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:578a3d9c22119706f6623496616cce8f90bd0f0629f40208215f67f0bfa7147b`
-- Created: `2019-06-27T22:57:44.605987691Z`
+- Image ID: `sha256:d31aa8c0895bb3e0fc4945b957492bb9dd097694aa025f63752c0e6a6943de23`
+- Created: `2019-07-12T14:37:57.803759009Z`
 - Virtual Size: ~ 51.63 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
@@ -57,16 +57,16 @@ MIT
 ### `apk` package: `apk-tools`
 
 ```console
-apk-tools-2.10.4-r1 description:
+apk-tools-2.10.4-r2 description:
 Alpine Package Keeper - package manager for alpine
 
-apk-tools-2.10.4-r1 webpage:
+apk-tools-2.10.4-r2 webpage:
 https://git.alpinelinux.org/cgit/apk-tools/
 
-apk-tools-2.10.4-r1 installed size:
+apk-tools-2.10.4-r2 installed size:
 262144
 
-apk-tools-2.10.4-r1 license:
+apk-tools-2.10.4-r2 license:
 GPL2
 
 ```
@@ -91,16 +91,16 @@ GPL-2.0
 ### `apk` package: `bzip2`
 
 ```console
-bzip2-1.0.6-r6 description:
+bzip2-1.0.6-r7 description:
 A high-quality data compression program
 
-bzip2-1.0.6-r6 webpage:
+bzip2-1.0.6-r7 webpage:
 http://sources.redhat.com/bzip2
 
-bzip2-1.0.6-r6 installed size:
+bzip2-1.0.6-r7 installed size:
 278528
 
-bzip2-1.0.6-r6 license:
+bzip2-1.0.6-r7 license:
 BSD
 
 ```
