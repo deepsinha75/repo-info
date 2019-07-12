@@ -2,9 +2,9 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:2b318e6c11a05474d2564c259f25ad04b79ca61001e6158149910fe3bf9b6457`
-- Created: `2019-07-01T22:32:00.566705486Z`
-- Virtual Size: ~ 139.00 Mb  
+- Image ID: `sha256:bdf57981c2d0fbfa2459728338a193f50a1262ef63e2321fe4e6a742bc0344a7`
+- Created: `2019-07-10T04:22:54.177406962Z`
+- Virtual Size: ~ 139.01 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["docker-entrypoint.sh"]`
@@ -18,10 +18,10 @@
   - `PHP_CPPFLAGS=-fstack-protector-strong -fpic -fpie -O2`
   - `PHP_LDFLAGS=-Wl,-O1 -Wl,--hash-style=both -pie`
   - `GPG_KEYS=1729F83938DA44E27BA0F4D3DBDB397470D12172 B1B44D8F021E4E2D6021E995DC9FF8D3EE5AF27F`
-  - `PHP_VERSION=7.2.19`
-  - `PHP_URL=https://www.php.net/get/php-7.2.19.tar.xz/from/this/mirror`
-  - `PHP_ASC_URL=https://www.php.net/get/php-7.2.19.tar.xz.asc/from/this/mirror`
-  - `PHP_SHA256=4ffa2404a88d60e993a9fe69f829ebec3eb1e006de41b6048ce5e91bbeaa9282`
+  - `PHP_VERSION=7.2.20`
+  - `PHP_URL=https://www.php.net/get/php-7.2.20.tar.xz/from/this/mirror`
+  - `PHP_ASC_URL=https://www.php.net/get/php-7.2.20.tar.xz.asc/from/this/mirror`
+  - `PHP_SHA256=eff09da83e235c2ba25c85deea1d4f663bd71d50fd51ad11e1acebe26d733494`
   - `PHP_MD5=`
   - `WORDPRESS_VERSION=5.2.2`
   - `WORDPRESS_SHA1=3605bcbe9ea48d714efa59b0eb2d251657e7d5b0`
@@ -235,16 +235,16 @@ FTL GPL-2.0-or-later
 ### `apk` package: `imagemagick-libs`
 
 ```console
-imagemagick-libs-7.0.8.49-r1 description:
+imagemagick-libs-7.0.8.49-r2 description:
 Collection of tools and libraries for many image formats (libraries)
 
-imagemagick-libs-7.0.8.49-r1 webpage:
+imagemagick-libs-7.0.8.49-r2 webpage:
 https://www.imagemagick.org/
 
-imagemagick-libs-7.0.8.49-r1 installed size:
+imagemagick-libs-7.0.8.49-r2 installed size:
 3244032
 
-imagemagick-libs-7.0.8.49-r1 license:
+imagemagick-libs-7.0.8.49-r2 license:
 ImageMagick
 
 ```
@@ -286,16 +286,16 @@ BSD
 ### `apk` package: `libbz2`
 
 ```console
-libbz2-1.0.6-r6 description:
+libbz2-1.0.6-r7 description:
 Shared library for bz2
 
-libbz2-1.0.6-r6 webpage:
+libbz2-1.0.6-r7 webpage:
 http://sources.redhat.com/bzip2
 
-libbz2-1.0.6-r6 installed size:
+libbz2-1.0.6-r7 installed size:
 73728
 
-libbz2-1.0.6-r6 license:
+libbz2-1.0.6-r7 license:
 BSD
 
 ```
