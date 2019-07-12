@@ -2,8 +2,8 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:d7497d1d03af35cd0c719728c98b0ea1043aec1d968617c38446535742997ac7`
-- Created: `2019-06-27T23:08:56.787424737Z`
+- Image ID: `sha256:df2b31967ad0d3354b0c9682065f6f5640d7b9714b39876456a9ba30085bc82f`
+- Created: `2019-07-12T01:47:58.783346712Z`
 - Virtual Size: ~ 61.51 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
@@ -55,16 +55,16 @@ MIT
 ### `apk` package: `apk-tools`
 
 ```console
-apk-tools-2.10.4-r1 description:
+apk-tools-2.10.4-r2 description:
 Alpine Package Keeper - package manager for alpine
 
-apk-tools-2.10.4-r1 webpage:
+apk-tools-2.10.4-r2 webpage:
 https://git.alpinelinux.org/cgit/apk-tools/
 
-apk-tools-2.10.4-r1 installed size:
+apk-tools-2.10.4-r2 installed size:
 262144
 
-apk-tools-2.10.4-r1 license:
+apk-tools-2.10.4-r2 license:
 GPL2
 
 ```
@@ -123,16 +123,16 @@ MPL-2.0 GPL-2.0-or-later
 ### `apk` package: `expat`
 
 ```console
-expat-2.2.6-r0 description:
+expat-2.2.7-r0 description:
 An XML Parser library written in C
 
-expat-2.2.6-r0 webpage:
+expat-2.2.7-r0 webpage:
 http://www.libexpat.org/
 
-expat-2.2.6-r0 installed size:
-188416
+expat-2.2.7-r0 installed size:
+184320
 
-expat-2.2.6-r0 license:
+expat-2.2.7-r0 license:
 MIT
 
 ```
@@ -208,16 +208,16 @@ MIT
 ### `apk` package: `libbz2`
 
 ```console
-libbz2-1.0.6-r6 description:
+libbz2-1.0.6-r7 description:
 Shared library for bz2
 
-libbz2-1.0.6-r6 webpage:
+libbz2-1.0.6-r7 webpage:
 http://sources.redhat.com/bzip2
 
-libbz2-1.0.6-r6 installed size:
+libbz2-1.0.6-r7 installed size:
 73728
 
-libbz2-1.0.6-r6 license:
+libbz2-1.0.6-r7 license:
 BSD
 
 ```
