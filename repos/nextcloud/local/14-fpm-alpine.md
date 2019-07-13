@@ -2,9 +2,9 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:b5bc52e13fe1b28eb2fc9d8984b3527621232c8c79c010c7b3f29e979c9114d1`
-- Created: `2019-07-09T21:26:39.296796551Z`
-- Virtual Size: ~ 315.18 Mb  
+- Image ID: `sha256:415c2dc41a4359067f0fe930aa3cf3e16ae3bc0e6a82b639dc0fe7942a05f478`
+- Created: `2019-07-12T08:46:20.188582096Z`
+- Virtual Size: ~ 315.19 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["/entrypoint.sh"]`
@@ -18,10 +18,10 @@
   - `PHP_CPPFLAGS=-fstack-protector-strong -fpic -fpie -O2`
   - `PHP_LDFLAGS=-Wl,-O1 -Wl,--hash-style=both -pie`
   - `GPG_KEYS=1729F83938DA44E27BA0F4D3DBDB397470D12172 B1B44D8F021E4E2D6021E995DC9FF8D3EE5AF27F`
-  - `PHP_VERSION=7.2.19`
-  - `PHP_URL=https://www.php.net/get/php-7.2.19.tar.xz/from/this/mirror`
-  - `PHP_ASC_URL=https://www.php.net/get/php-7.2.19.tar.xz.asc/from/this/mirror`
-  - `PHP_SHA256=4ffa2404a88d60e993a9fe69f829ebec3eb1e006de41b6048ce5e91bbeaa9282`
+  - `PHP_VERSION=7.2.20`
+  - `PHP_URL=https://www.php.net/get/php-7.2.20.tar.xz/from/this/mirror`
+  - `PHP_ASC_URL=https://www.php.net/get/php-7.2.20.tar.xz.asc/from/this/mirror`
+  - `PHP_SHA256=eff09da83e235c2ba25c85deea1d4f663bd71d50fd51ad11e1acebe26d733494`
   - `PHP_MD5=`
   - `NEXTCLOUD_VERSION=14.0.13`
 
@@ -64,16 +64,16 @@ MIT
 ### `apk` package: `apk-tools`
 
 ```console
-apk-tools-2.10.4-r1 description:
+apk-tools-2.10.4-r2 description:
 Alpine Package Keeper - package manager for alpine
 
-apk-tools-2.10.4-r1 webpage:
+apk-tools-2.10.4-r2 webpage:
 https://git.alpinelinux.org/cgit/apk-tools/
 
-apk-tools-2.10.4-r1 installed size:
+apk-tools-2.10.4-r2 installed size:
 262144
 
-apk-tools-2.10.4-r1 license:
+apk-tools-2.10.4-r2 license:
 GPL2
 
 ```
@@ -251,16 +251,16 @@ MIT ICU Unicode-TOU
 ### `apk` package: `imagemagick-libs`
 
 ```console
-imagemagick-libs-7.0.8.49-r1 description:
+imagemagick-libs-7.0.8.49-r2 description:
 Collection of tools and libraries for many image formats (libraries)
 
-imagemagick-libs-7.0.8.49-r1 webpage:
+imagemagick-libs-7.0.8.49-r2 webpage:
 https://www.imagemagick.org/
 
-imagemagick-libs-7.0.8.49-r1 installed size:
+imagemagick-libs-7.0.8.49-r2 installed size:
 3244032
 
-imagemagick-libs-7.0.8.49-r1 license:
+imagemagick-libs-7.0.8.49-r2 license:
 ImageMagick
 
 ```
@@ -336,16 +336,16 @@ BSD
 ### `apk` package: `libbz2`
 
 ```console
-libbz2-1.0.6-r6 description:
+libbz2-1.0.6-r7 description:
 Shared library for bz2
 
-libbz2-1.0.6-r6 webpage:
+libbz2-1.0.6-r7 webpage:
 http://sources.redhat.com/bzip2
 
-libbz2-1.0.6-r6 installed size:
+libbz2-1.0.6-r7 installed size:
 73728
 
-libbz2-1.0.6-r6 license:
+libbz2-1.0.6-r7 license:
 BSD
 
 ```
