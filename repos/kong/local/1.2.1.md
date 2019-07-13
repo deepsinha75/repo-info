@@ -2,8 +2,8 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:385a881227d3974459f98be4577ca00b4bc0417b9879f70cfbbbd2d57d973cab`
-- Created: `2019-06-28T21:19:58.455281695Z`
+- Image ID: `sha256:ffea3837901eada5757c022ab5321d91f6a1efcad92000a558742b73490f8313`
+- Created: `2019-07-11T22:54:58.314005021Z`
 - Virtual Size: ~ 128.85 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
@@ -55,16 +55,16 @@ MIT
 ### `apk` package: `apk-tools`
 
 ```console
-apk-tools-2.10.4-r1 description:
+apk-tools-2.10.4-r2 description:
 Alpine Package Keeper - package manager for alpine
 
-apk-tools-2.10.4-r1 webpage:
+apk-tools-2.10.4-r2 webpage:
 https://git.alpinelinux.org/cgit/apk-tools/
 
-apk-tools-2.10.4-r1 installed size:
+apk-tools-2.10.4-r2 installed size:
 262144
 
-apk-tools-2.10.4-r1 license:
+apk-tools-2.10.4-r2 license:
 GPL2
 
 ```
@@ -140,16 +140,16 @@ MIT
 ### `apk` package: `libbz2`
 
 ```console
-libbz2-1.0.6-r6 description:
+libbz2-1.0.6-r7 description:
 Shared library for bz2
 
-libbz2-1.0.6-r6 webpage:
+libbz2-1.0.6-r7 webpage:
 http://sources.redhat.com/bzip2
 
-libbz2-1.0.6-r6 installed size:
+libbz2-1.0.6-r7 installed size:
 73728
 
-libbz2-1.0.6-r6 license:
+libbz2-1.0.6-r7 license:
 BSD
 
 ```
