@@ -1,4 +1,4 @@
-## `buildpack-deps:jessie`
+## `buildpack-deps:oldoldstable`
 
 ```console
 $ docker pull buildpack-deps@sha256:4f55488e392388af5edd41739ccc7000439ee7b50789748f0993bfe9c46972b7
@@ -11,7 +11,7 @@ $ docker pull buildpack-deps@sha256:4f55488e392388af5edd41739ccc7000439ee7b50789
 	-	linux; arm variant v7
 	-	linux; 386
 
-### `buildpack-deps:jessie` - linux; amd64
+### `buildpack-deps:oldoldstable` - linux; amd64
 
 ```console
 $ docker pull buildpack-deps@sha256:a951d57fb8bafc8e5450ce6986bb9d55e0f4ae9890db5d90a842dbb91bd07ff4
@@ -57,7 +57,7 @@ RUN set -ex; 	apt-get update; 	apt-get install -y --no-install-recommends 		auto
 		Size: 132.2 MB (132226322 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
-### `buildpack-deps:jessie` - linux; arm variant v5
+### `buildpack-deps:oldoldstable` - linux; arm variant v5
 
 ```console
 $ docker pull buildpack-deps@sha256:a8a2647f0f814126e7123ad5332a57e5b91e98fb76065d23b65e074d94cfb93c
@@ -103,7 +103,7 @@ RUN set -ex; 	apt-get update; 	apt-get install -y --no-install-recommends 		auto
 		Size: 116.7 MB (116724190 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
-### `buildpack-deps:jessie` - linux; arm variant v7
+### `buildpack-deps:oldoldstable` - linux; arm variant v7
 
 ```console
 $ docker pull buildpack-deps@sha256:1481c53c77de81613238f4315d4c7a7050c23b59c98c2d16140fad424b107c6a
@@ -149,7 +149,7 @@ RUN set -ex; 	apt-get update; 	apt-get install -y --no-install-recommends 		auto
 		Size: 115.0 MB (114987316 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
-### `buildpack-deps:jessie` - linux; 386
+### `buildpack-deps:oldoldstable` - linux; 386
 
 ```console
 $ docker pull buildpack-deps@sha256:174ae0d0efd344fd1c01a9f7cbbc3878c4ad8e6f90a5bfc245ce51acd0e9ca5c
