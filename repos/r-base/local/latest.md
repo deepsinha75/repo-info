@@ -1372,10 +1372,16 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris harfbuzz=2.4.0-2
-'http://http.debian.net/debian/pool/main/h/harfbuzz/harfbuzz_2.4.0-2.dsc' harfbuzz_2.4.0-2.dsc 2298 SHA256:9f9f7b11c25c6ac505a01556eb1503a3b0ed093983968d2547affe70daff706e
-'http://http.debian.net/debian/pool/main/h/harfbuzz/harfbuzz_2.4.0.orig.tar.bz2' harfbuzz_2.4.0.orig.tar.bz2 17922003 SHA256:9035005903da74667d28bb181986e879e11da3d5986722759fa145cca781ead6
-'http://http.debian.net/debian/pool/main/h/harfbuzz/harfbuzz_2.4.0-2.debian.tar.xz' harfbuzz_2.4.0-2.debian.tar.xz 9740 SHA256:6ff20cfd72c5aef592b12295473605b2a124bb1b37e4335056e68ace588627e1
+'http://deb.debian.org/debian/pool/main/h/harfbuzz/harfbuzz_2.4.0-2.dsc' harfbuzz_2.4.0-2.dsc 2298 SHA256:9f9f7b11c25c6ac505a01556eb1503a3b0ed093983968d2547affe70daff706e
+'http://deb.debian.org/debian/pool/main/h/harfbuzz/harfbuzz_2.4.0.orig.tar.bz2' harfbuzz_2.4.0.orig.tar.bz2 17922003 SHA256:9035005903da74667d28bb181986e879e11da3d5986722759fa145cca781ead6
+'http://deb.debian.org/debian/pool/main/h/harfbuzz/harfbuzz_2.4.0-2.debian.tar.xz' harfbuzz_2.4.0-2.debian.tar.xz 9740 SHA256:6ff20cfd72c5aef592b12295473605b2a124bb1b37e4335056e68ace588627e1
 ```
+
+Other potentially useful URLs:
+
+- https://sources.debian.net/src/harfbuzz/2.4.0-2/ (for browsing the source)
+- https://sources.debian.net/src/harfbuzz/2.4.0-2/debian/copyright/ (for direct copyright/license information)
+- http://snapshot.debian.org/package/harfbuzz/2.4.0-2/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `hostname=3.21`
 
