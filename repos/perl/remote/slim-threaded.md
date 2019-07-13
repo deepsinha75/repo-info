@@ -1,7 +1,7 @@
 ## `perl:slim-threaded`
 
 ```console
-$ docker pull perl@sha256:8485516f98b45e2a269b58a8abb3f5cbfe3c35265d737a773723766040116ecf
+$ docker pull perl@sha256:103df363c65c47c43a53bc3873d91b7a66819146e646ce00601706afe77cb6a7
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -62,229 +62,229 @@ CMD ["perl5.30.0" "-de0"]
 ### `perl:slim-threaded` - linux; arm variant v7
 
 ```console
-$ docker pull perl@sha256:02c21613e9cbf3e1b58360416265bf6e2bb39a042063a84bdea35bfa12544d71
+$ docker pull perl@sha256:4af34645d4d3c9242b8fd58bc5be5d14f30c341306b29f3729bb76b7fd1ab238
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **32.8 MB (32779394 bytes)**  
+-	Total Size: **32.8 MB (32779363 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:e110ea78b38c5331a0138fa3d8aa077f8adf3e318de7701a6f66f1e01356250f`
+-	Image ID: `sha256:1957fceeacef03ae3e6973c4bde9ce648f4bbc5d57a1c43e46e2d68942d32209`
 -	Default Command: `["perl5.30.0","-de0"]`
 
 ```dockerfile
-# Tue, 11 Jun 2019 00:03:03 GMT
-ADD file:4102df5a1a0de014e0753e42aec7c4f521a1adb132934625dc3a60945e20b048 in / 
-# Tue, 11 Jun 2019 00:03:04 GMT
+# Tue, 09 Jul 2019 21:13:24 GMT
+ADD file:037a45da4772af5a81829a954c83e37872efba3047c3b29a76067d65bfcbf533 in / 
+# Tue, 09 Jul 2019 21:13:26 GMT
 CMD ["bash"]
-# Tue, 11 Jun 2019 01:32:03 GMT
+# Tue, 09 Jul 2019 23:11:07 GMT
 LABEL maintainer=Peter Martini <PeterCMartini@GMail.com>, Zak B. Elep <zakame@cpan.org>
-# Tue, 11 Jun 2019 01:32:03 GMT
+# Tue, 09 Jul 2019 23:11:08 GMT
 COPY file:3744c5cc39cdbdcae10db09a1f0f399005a79f93c237b387a72ff5710cdd458c in /usr/src/perl/ 
-# Tue, 11 Jun 2019 01:32:04 GMT
+# Tue, 09 Jul 2019 23:11:08 GMT
 WORKDIR /usr/src/perl
-# Tue, 11 Jun 2019 02:02:10 GMT
+# Tue, 09 Jul 2019 23:32:02 GMT
 RUN apt-get update     && apt-get install -y --no-install-recommends        bzip2        ca-certificates        curl        dpkg-dev        gcc        libc6-dev        make        netbase        patch        xz-utils     && curl -SL https://www.cpan.org/src/5.0/perl-5.30.0.tar.xz -o perl-5.30.0.tar.xz     && echo 'ac501cad4af904d33370a9ea39dbb7a8ad4cb19bc7bc8a9c17d8dc3e81ef6306 *perl-5.30.0.tar.xz' | sha256sum -c -     && tar --strip-components=1 -xaf perl-5.30.0.tar.xz -C /usr/src/perl     && rm perl-5.30.0.tar.xz     && cat *.patch | patch -p1     && gnuArch="$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)"     && archBits="$(dpkg-architecture --query DEB_BUILD_ARCH_BITS)"     && archFlag="$([ "$archBits" = '64' ] && echo '-Duse64bitall' || echo '-Duse64bitint')"     && ./Configure -Darchname="$gnuArch" "$archFlag" -Dusethreads -Duseshrplib -Dvendorprefix=/usr/local  -des     && make -j$(nproc)     && TEST_JOBS=$(nproc) make test_harness     && make install     && cd /usr/src     && curl -LO https://www.cpan.org/authors/id/M/MI/MIYAGAWA/App-cpanminus-1.7044.tar.gz     && echo '9b60767fe40752ef7a9d3f13f19060a63389a5c23acc3e9827e19b75500f81f3 *App-cpanminus-1.7044.tar.gz' | sha256sum -c -     && tar -xzf App-cpanminus-1.7044.tar.gz && cd App-cpanminus-1.7044 && perl bin/cpanm . && cd /root     && savedPackages="make netbase"     && apt-mark auto '.*' > /dev/null     && apt-mark manual $savedPackages     && apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false     && rm -fr /var/cache/apt/* /var/lib/apt/lists/*     && rm -fr ./cpanm /root/.cpanm /usr/src/perl /usr/src/App-cpanminus-1.7044* /tmp/*
-# Tue, 11 Jun 2019 02:02:11 GMT
+# Tue, 09 Jul 2019 23:32:03 GMT
 WORKDIR /root
-# Tue, 11 Jun 2019 02:02:11 GMT
+# Tue, 09 Jul 2019 23:32:04 GMT
 CMD ["perl5.30.0" "-de0"]
 ```
 
 -	Layers:
-	-	`sha256:5155b41fe73a7b2fc8284ed1160e8ad046f2bfd1606e73e4bbe3f54b05890fc9`  
-		Last Modified: Tue, 11 Jun 2019 00:09:27 GMT  
-		Size: 19.3 MB (19276185 bytes)  
+	-	`sha256:2eead4197fac409644fd8aaf115559d6383b0d56f1ad04d7116aaabbcbea8bed`  
+		Last Modified: Tue, 09 Jul 2019 21:21:27 GMT  
+		Size: 19.3 MB (19276281 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:eab71060d30bb0f038c402d7aeb48db9dada80bdcb4acc229ecda304128b3083`  
-		Last Modified: Tue, 11 Jun 2019 03:25:56 GMT  
-		Size: 201.0 B  
+	-	`sha256:f363f5fe45f69cbcc4615dd21573f56cc654020536f9e11ee3422f5ce73f2de7`  
+		Last Modified: Wed, 10 Jul 2019 00:12:02 GMT  
+		Size: 203.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:53c2a6f81ea2b2287077950534d774b073fd0743913553ac3fa73c2397857659`  
-		Last Modified: Tue, 11 Jun 2019 03:26:39 GMT  
-		Size: 13.5 MB (13503008 bytes)  
+	-	`sha256:e36574fd128eb770956b027d81bd1dd1eaf2324a677de30224d1e0846d919951`  
+		Last Modified: Wed, 10 Jul 2019 00:12:25 GMT  
+		Size: 13.5 MB (13502879 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `perl:slim-threaded` - linux; arm64 variant v8
 
 ```console
-$ docker pull perl@sha256:00d6198a77fb9ab0d30ada8231e2e08f519f13306132134701f0848e744709fb
+$ docker pull perl@sha256:788c605b886725c6d5318c8f53f51e04f5b9d57259d53f9d4daa4dd304e3fd27
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **34.5 MB (34522727 bytes)**  
+-	Total Size: **34.5 MB (34523303 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:f6aac6ba9602586881d0d59eb512acd1550190ee350c4d4b909ae5dc856956dd`
+-	Image ID: `sha256:b47a0c8fb1cb752da36b9143dfbd88f2ae92c4bf2fd1df6fb31d918856ada171`
 -	Default Command: `["perl5.30.0","-de0"]`
 
 ```dockerfile
-# Mon, 10 Jun 2019 23:41:42 GMT
-ADD file:cd613dd4ee4b2224b6debd778ceb35ef342fc7ea13102853ee42a5abb6f30d76 in / 
-# Mon, 10 Jun 2019 23:41:43 GMT
+# Tue, 09 Jul 2019 21:46:30 GMT
+ADD file:8b61632919a93bc1692421fc52a569f596cc4e1334d8f89828f7ccf3e4b45665 in / 
+# Tue, 09 Jul 2019 21:46:31 GMT
 CMD ["bash"]
-# Tue, 11 Jun 2019 02:19:08 GMT
+# Wed, 10 Jul 2019 01:53:41 GMT
 LABEL maintainer=Peter Martini <PeterCMartini@GMail.com>, Zak B. Elep <zakame@cpan.org>
-# Tue, 11 Jun 2019 02:19:09 GMT
+# Wed, 10 Jul 2019 01:53:41 GMT
 COPY file:3744c5cc39cdbdcae10db09a1f0f399005a79f93c237b387a72ff5710cdd458c in /usr/src/perl/ 
-# Tue, 11 Jun 2019 02:19:09 GMT
+# Wed, 10 Jul 2019 01:53:42 GMT
 WORKDIR /usr/src/perl
-# Tue, 11 Jun 2019 02:40:34 GMT
+# Wed, 10 Jul 2019 02:24:50 GMT
 RUN apt-get update     && apt-get install -y --no-install-recommends        bzip2        ca-certificates        curl        dpkg-dev        gcc        libc6-dev        make        netbase        patch        xz-utils     && curl -SL https://www.cpan.org/src/5.0/perl-5.30.0.tar.xz -o perl-5.30.0.tar.xz     && echo 'ac501cad4af904d33370a9ea39dbb7a8ad4cb19bc7bc8a9c17d8dc3e81ef6306 *perl-5.30.0.tar.xz' | sha256sum -c -     && tar --strip-components=1 -xaf perl-5.30.0.tar.xz -C /usr/src/perl     && rm perl-5.30.0.tar.xz     && cat *.patch | patch -p1     && gnuArch="$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)"     && archBits="$(dpkg-architecture --query DEB_BUILD_ARCH_BITS)"     && archFlag="$([ "$archBits" = '64' ] && echo '-Duse64bitall' || echo '-Duse64bitint')"     && ./Configure -Darchname="$gnuArch" "$archFlag" -Dusethreads -Duseshrplib -Dvendorprefix=/usr/local  -des     && make -j$(nproc)     && TEST_JOBS=$(nproc) make test_harness     && make install     && cd /usr/src     && curl -LO https://www.cpan.org/authors/id/M/MI/MIYAGAWA/App-cpanminus-1.7044.tar.gz     && echo '9b60767fe40752ef7a9d3f13f19060a63389a5c23acc3e9827e19b75500f81f3 *App-cpanminus-1.7044.tar.gz' | sha256sum -c -     && tar -xzf App-cpanminus-1.7044.tar.gz && cd App-cpanminus-1.7044 && perl bin/cpanm . && cd /root     && savedPackages="make netbase"     && apt-mark auto '.*' > /dev/null     && apt-mark manual $savedPackages     && apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false     && rm -fr /var/cache/apt/* /var/lib/apt/lists/*     && rm -fr ./cpanm /root/.cpanm /usr/src/perl /usr/src/App-cpanminus-1.7044* /tmp/*
-# Tue, 11 Jun 2019 02:40:35 GMT
+# Wed, 10 Jul 2019 02:24:51 GMT
 WORKDIR /root
-# Tue, 11 Jun 2019 02:40:37 GMT
+# Wed, 10 Jul 2019 02:24:51 GMT
 CMD ["perl5.30.0" "-de0"]
 ```
 
 -	Layers:
-	-	`sha256:86ef8b977e9b28fc775a14aa2d4243a07dd2d142d19435649d2f478fbbee796b`  
-		Last Modified: Mon, 10 Jun 2019 23:45:15 GMT  
-		Size: 20.3 MB (20333790 bytes)  
+	-	`sha256:494350645e1c39e92e069b34b7ce0310dc6496d163f078bb1400391a3a574105`  
+		Last Modified: Tue, 09 Jul 2019 21:52:36 GMT  
+		Size: 20.3 MB (20334138 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:64bcd68214d6ee828c79c053fd3df7bb6867d92a8d66a551fba3ad4f3b309c8a`  
-		Last Modified: Tue, 11 Jun 2019 03:20:28 GMT  
-		Size: 203.0 B  
+	-	`sha256:a7b4c6e364825fce4c6b23f54147b89d740eab22aadf2a0e65cf13b3c2318ce1`  
+		Last Modified: Wed, 10 Jul 2019 04:01:57 GMT  
+		Size: 202.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:fa5f946c7940cdbf0058dc0f793116b32acbcf27e03020aa995d2c944587c078`  
-		Last Modified: Tue, 11 Jun 2019 03:20:48 GMT  
-		Size: 14.2 MB (14188734 bytes)  
+	-	`sha256:b3447cd4676e9d44e71b186aee23ff53c4597cfb9d2e469d1d725dedd87f7397`  
+		Last Modified: Wed, 10 Jul 2019 04:02:33 GMT  
+		Size: 14.2 MB (14188963 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `perl:slim-threaded` - linux; 386
 
 ```console
-$ docker pull perl@sha256:5af5fc4f48f2620b2b50348cfb7700c677e777b92204222872e70e89b19b59ac
+$ docker pull perl@sha256:086f752b9be7cea629201eb4b7f1421021f79c60f3a3cfb1995beb9856947341
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **37.0 MB (37043321 bytes)**  
+-	Total Size: **37.0 MB (37043372 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:9f801c1b6ce3c0b012b6cb828314a6caefc8b2c6c845a60a8bdb65d828a1575d`
+-	Image ID: `sha256:51769261e06e1cfacc1328845d017dc7e8e6871493cf363bb7e260b33233aafc`
 -	Default Command: `["perl5.30.0","-de0"]`
 
 ```dockerfile
-# Mon, 10 Jun 2019 23:41:36 GMT
-ADD file:a8a0ffd3515eaf371f5ca47de93cd4bfc383ce28f32b9547739ad7403b1bc033 in / 
-# Mon, 10 Jun 2019 23:41:36 GMT
+# Tue, 09 Jul 2019 23:56:15 GMT
+ADD file:8fdbd9ea43cc79115dd10817c2a058f94649822c44f99ea1c5089ecf440bb4cd in / 
+# Tue, 09 Jul 2019 23:56:15 GMT
 CMD ["bash"]
-# Tue, 11 Jun 2019 06:03:57 GMT
+# Wed, 10 Jul 2019 10:51:04 GMT
 LABEL maintainer=Peter Martini <PeterCMartini@GMail.com>, Zak B. Elep <zakame@cpan.org>
-# Tue, 11 Jun 2019 06:03:57 GMT
+# Wed, 10 Jul 2019 10:51:04 GMT
 COPY file:3744c5cc39cdbdcae10db09a1f0f399005a79f93c237b387a72ff5710cdd458c in /usr/src/perl/ 
-# Tue, 11 Jun 2019 06:03:58 GMT
+# Wed, 10 Jul 2019 10:51:05 GMT
 WORKDIR /usr/src/perl
-# Tue, 11 Jun 2019 06:53:24 GMT
+# Wed, 10 Jul 2019 11:19:50 GMT
 RUN apt-get update     && apt-get install -y --no-install-recommends        bzip2        ca-certificates        curl        dpkg-dev        gcc        libc6-dev        make        netbase        patch        xz-utils     && curl -SL https://www.cpan.org/src/5.0/perl-5.30.0.tar.xz -o perl-5.30.0.tar.xz     && echo 'ac501cad4af904d33370a9ea39dbb7a8ad4cb19bc7bc8a9c17d8dc3e81ef6306 *perl-5.30.0.tar.xz' | sha256sum -c -     && tar --strip-components=1 -xaf perl-5.30.0.tar.xz -C /usr/src/perl     && rm perl-5.30.0.tar.xz     && cat *.patch | patch -p1     && gnuArch="$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)"     && archBits="$(dpkg-architecture --query DEB_BUILD_ARCH_BITS)"     && archFlag="$([ "$archBits" = '64' ] && echo '-Duse64bitall' || echo '-Duse64bitint')"     && ./Configure -Darchname="$gnuArch" "$archFlag" -Dusethreads -Duseshrplib -Dvendorprefix=/usr/local  -des     && make -j$(nproc)     && TEST_JOBS=$(nproc) make test_harness     && make install     && cd /usr/src     && curl -LO https://www.cpan.org/authors/id/M/MI/MIYAGAWA/App-cpanminus-1.7044.tar.gz     && echo '9b60767fe40752ef7a9d3f13f19060a63389a5c23acc3e9827e19b75500f81f3 *App-cpanminus-1.7044.tar.gz' | sha256sum -c -     && tar -xzf App-cpanminus-1.7044.tar.gz && cd App-cpanminus-1.7044 && perl bin/cpanm . && cd /root     && savedPackages="make netbase"     && apt-mark auto '.*' > /dev/null     && apt-mark manual $savedPackages     && apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false     && rm -fr /var/cache/apt/* /var/lib/apt/lists/*     && rm -fr ./cpanm /root/.cpanm /usr/src/perl /usr/src/App-cpanminus-1.7044* /tmp/*
-# Tue, 11 Jun 2019 06:53:24 GMT
+# Wed, 10 Jul 2019 11:19:51 GMT
 WORKDIR /root
-# Tue, 11 Jun 2019 06:53:25 GMT
+# Wed, 10 Jul 2019 11:19:51 GMT
 CMD ["perl5.30.0" "-de0"]
 ```
 
 -	Layers:
-	-	`sha256:7e73483a9fb86ce6ccc0a956b2be574fc156ade2d6b1a61a18c9427de2b19f82`  
-		Last Modified: Mon, 10 Jun 2019 23:45:55 GMT  
-		Size: 23.1 MB (23120865 bytes)  
+	-	`sha256:f01e2fc672b937f58be589455802ade04da5bae6a188a46a6090252055118d90`  
+		Last Modified: Wed, 10 Jul 2019 00:06:09 GMT  
+		Size: 23.1 MB (23121158 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:e4e8bd798ccab8d4f7e5c3821818c65ff0fb9d4f8c50437daf3287df1a48443e`  
-		Last Modified: Tue, 11 Jun 2019 08:48:21 GMT  
-		Size: 177.0 B  
+	-	`sha256:56c35567273d85c9f07c692bf834406ff251733f8ac8cc80fcc6a97176295837`  
+		Last Modified: Wed, 10 Jul 2019 12:27:31 GMT  
+		Size: 175.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:1099465a54b11a49961b8b5e482171acc5dff760ca51933d11d18fb103f6609b`  
-		Last Modified: Tue, 11 Jun 2019 08:49:02 GMT  
-		Size: 13.9 MB (13922279 bytes)  
+	-	`sha256:fbf1bd83d47bbfd8761dee600f548e029a5eeb9acbba0d50f164c8b1529b2ffe`  
+		Last Modified: Wed, 10 Jul 2019 12:27:56 GMT  
+		Size: 13.9 MB (13922039 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `perl:slim-threaded` - linux; ppc64le
 
 ```console
-$ docker pull perl@sha256:4bc04e835798f4dca59b500075f38eec08f0f4ceaadfc4b62554f3096fec6c46
+$ docker pull perl@sha256:94925bad726d04eacc7e299e0060e54506203f78632dd58c72dec2984c6b11e4
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **37.0 MB (37002561 bytes)**  
+-	Total Size: **37.0 MB (37002531 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:169c482c2fa1d5686bca03dd9c96f785f67159856ce636125200117e5a98098f`
+-	Image ID: `sha256:e76587b4c70cc93b40c622b91a92a355edd1de92b8c152176a0c8f9b1b8dea2b`
 -	Default Command: `["perl5.30.0","-de0"]`
 
 ```dockerfile
-# Mon, 10 Jun 2019 23:18:56 GMT
-ADD file:cbe9750f9a223a6cdc02ae93dd729d2261ce439e1c7be255cd3a688eebfe62ba in / 
-# Mon, 10 Jun 2019 23:18:59 GMT
+# Tue, 09 Jul 2019 21:49:26 GMT
+ADD file:ebafea5d2111cdfc5c05df86fd03da1577018bb5d6605274e51d31e24dd4feaf in / 
+# Tue, 09 Jul 2019 21:49:31 GMT
 CMD ["bash"]
-# Tue, 11 Jun 2019 05:35:09 GMT
+# Wed, 10 Jul 2019 03:48:07 GMT
 LABEL maintainer=Peter Martini <PeterCMartini@GMail.com>, Zak B. Elep <zakame@cpan.org>
-# Tue, 11 Jun 2019 05:35:10 GMT
+# Wed, 10 Jul 2019 03:48:08 GMT
 COPY file:3744c5cc39cdbdcae10db09a1f0f399005a79f93c237b387a72ff5710cdd458c in /usr/src/perl/ 
-# Tue, 11 Jun 2019 05:35:12 GMT
+# Wed, 10 Jul 2019 03:48:10 GMT
 WORKDIR /usr/src/perl
-# Tue, 11 Jun 2019 06:00:23 GMT
+# Wed, 10 Jul 2019 04:17:49 GMT
 RUN apt-get update     && apt-get install -y --no-install-recommends        bzip2        ca-certificates        curl        dpkg-dev        gcc        libc6-dev        make        netbase        patch        xz-utils     && curl -SL https://www.cpan.org/src/5.0/perl-5.30.0.tar.xz -o perl-5.30.0.tar.xz     && echo 'ac501cad4af904d33370a9ea39dbb7a8ad4cb19bc7bc8a9c17d8dc3e81ef6306 *perl-5.30.0.tar.xz' | sha256sum -c -     && tar --strip-components=1 -xaf perl-5.30.0.tar.xz -C /usr/src/perl     && rm perl-5.30.0.tar.xz     && cat *.patch | patch -p1     && gnuArch="$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)"     && archBits="$(dpkg-architecture --query DEB_BUILD_ARCH_BITS)"     && archFlag="$([ "$archBits" = '64' ] && echo '-Duse64bitall' || echo '-Duse64bitint')"     && ./Configure -Darchname="$gnuArch" "$archFlag" -Dusethreads -Duseshrplib -Dvendorprefix=/usr/local  -des     && make -j$(nproc)     && TEST_JOBS=$(nproc) make test_harness     && make install     && cd /usr/src     && curl -LO https://www.cpan.org/authors/id/M/MI/MIYAGAWA/App-cpanminus-1.7044.tar.gz     && echo '9b60767fe40752ef7a9d3f13f19060a63389a5c23acc3e9827e19b75500f81f3 *App-cpanminus-1.7044.tar.gz' | sha256sum -c -     && tar -xzf App-cpanminus-1.7044.tar.gz && cd App-cpanminus-1.7044 && perl bin/cpanm . && cd /root     && savedPackages="make netbase"     && apt-mark auto '.*' > /dev/null     && apt-mark manual $savedPackages     && apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false     && rm -fr /var/cache/apt/* /var/lib/apt/lists/*     && rm -fr ./cpanm /root/.cpanm /usr/src/perl /usr/src/App-cpanminus-1.7044* /tmp/*
-# Tue, 11 Jun 2019 06:00:26 GMT
+# Wed, 10 Jul 2019 04:17:53 GMT
 WORKDIR /root
-# Tue, 11 Jun 2019 06:00:29 GMT
+# Wed, 10 Jul 2019 04:17:59 GMT
 CMD ["perl5.30.0" "-de0"]
 ```
 
 -	Layers:
-	-	`sha256:d41f2b4ffc1e666af1af85c808fc5e2c1f81602da89d9e81911a402a3e1e69b5`  
-		Last Modified: Mon, 10 Jun 2019 23:24:17 GMT  
-		Size: 22.7 MB (22744910 bytes)  
+	-	`sha256:fa05dcee3c0c86d4f7c7198c7083a2d314b6bfa3fb483e9c6d80317c5d7fe09d`  
+		Last Modified: Tue, 09 Jul 2019 22:01:22 GMT  
+		Size: 22.7 MB (22744947 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c865769b022e9524ad2bd94cef1ba0c139d9dc32605c76b4a2eee3ac9eb78fa9`  
-		Last Modified: Tue, 11 Jun 2019 07:04:27 GMT  
-		Size: 201.0 B  
+	-	`sha256:8550333b6065abbec1b8f9c78193ada0f8b660f6fa87088368bc5e9c1c689b31`  
+		Last Modified: Wed, 10 Jul 2019 05:27:42 GMT  
+		Size: 202.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:9a50b3c430d987c1421c3cc92ef9742fa8cbce4889719342a2b7ea7c662b0c8c`  
-		Last Modified: Tue, 11 Jun 2019 07:05:26 GMT  
-		Size: 14.3 MB (14257450 bytes)  
+	-	`sha256:37588a576c36f7b224eda947e52fde7490fc6aaadeebdd4416dd6406ec596f60`  
+		Last Modified: Wed, 10 Jul 2019 05:28:45 GMT  
+		Size: 14.3 MB (14257382 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `perl:slim-threaded` - linux; s390x
 
 ```console
-$ docker pull perl@sha256:a3c1c6220b032d6f998b16a510e10531cdba23f6d1e79785b650c0e419032df6
+$ docker pull perl@sha256:f08e91e60e2e49cd2d99ea348e51c18731d3e57c1d42af7e34a4dfc7af019249
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **37.2 MB (37161317 bytes)**  
+-	Total Size: **37.2 MB (37161755 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:9d542014c1bc98e988900cf9145ba146058d113015c92aa5cce274688a31c228`
+-	Image ID: `sha256:1b5ebae9a1016bf8f6386c68822e94a66ace1dfc4890024b023ade15652e5d0e`
 -	Default Command: `["perl5.30.0","-de0"]`
 
 ```dockerfile
-# Mon, 10 Jun 2019 23:43:54 GMT
-ADD file:e253b6e8cd43e8026b8cd0ba0bbe34460e255b131bdb2f50d5b8a2cfd5c9495b in / 
-# Mon, 10 Jun 2019 23:43:55 GMT
+# Tue, 09 Jul 2019 21:46:30 GMT
+ADD file:9c51fc3388c171c143f0fabfb0221511318bd9d2540e0e420457fbfa4cd8ba45 in / 
+# Tue, 09 Jul 2019 21:46:31 GMT
 CMD ["bash"]
-# Tue, 11 Jun 2019 00:56:24 GMT
+# Tue, 09 Jul 2019 22:54:17 GMT
 LABEL maintainer=Peter Martini <PeterCMartini@GMail.com>, Zak B. Elep <zakame@cpan.org>
-# Tue, 11 Jun 2019 00:56:24 GMT
+# Tue, 09 Jul 2019 22:54:18 GMT
 COPY file:3744c5cc39cdbdcae10db09a1f0f399005a79f93c237b387a72ff5710cdd458c in /usr/src/perl/ 
-# Tue, 11 Jun 2019 00:56:24 GMT
+# Tue, 09 Jul 2019 22:54:18 GMT
 WORKDIR /usr/src/perl
-# Tue, 11 Jun 2019 01:11:03 GMT
+# Tue, 09 Jul 2019 23:22:00 GMT
 RUN apt-get update     && apt-get install -y --no-install-recommends        bzip2        ca-certificates        curl        dpkg-dev        gcc        libc6-dev        make        netbase        patch        xz-utils     && curl -SL https://www.cpan.org/src/5.0/perl-5.30.0.tar.xz -o perl-5.30.0.tar.xz     && echo 'ac501cad4af904d33370a9ea39dbb7a8ad4cb19bc7bc8a9c17d8dc3e81ef6306 *perl-5.30.0.tar.xz' | sha256sum -c -     && tar --strip-components=1 -xaf perl-5.30.0.tar.xz -C /usr/src/perl     && rm perl-5.30.0.tar.xz     && cat *.patch | patch -p1     && gnuArch="$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)"     && archBits="$(dpkg-architecture --query DEB_BUILD_ARCH_BITS)"     && archFlag="$([ "$archBits" = '64' ] && echo '-Duse64bitall' || echo '-Duse64bitint')"     && ./Configure -Darchname="$gnuArch" "$archFlag" -Dusethreads -Duseshrplib -Dvendorprefix=/usr/local  -des     && make -j$(nproc)     && TEST_JOBS=$(nproc) make test_harness     && make install     && cd /usr/src     && curl -LO https://www.cpan.org/authors/id/M/MI/MIYAGAWA/App-cpanminus-1.7044.tar.gz     && echo '9b60767fe40752ef7a9d3f13f19060a63389a5c23acc3e9827e19b75500f81f3 *App-cpanminus-1.7044.tar.gz' | sha256sum -c -     && tar -xzf App-cpanminus-1.7044.tar.gz && cd App-cpanminus-1.7044 && perl bin/cpanm . && cd /root     && savedPackages="make netbase"     && apt-mark auto '.*' > /dev/null     && apt-mark manual $savedPackages     && apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false     && rm -fr /var/cache/apt/* /var/lib/apt/lists/*     && rm -fr ./cpanm /root/.cpanm /usr/src/perl /usr/src/App-cpanminus-1.7044* /tmp/*
-# Tue, 11 Jun 2019 01:11:04 GMT
+# Tue, 09 Jul 2019 23:22:00 GMT
 WORKDIR /root
-# Tue, 11 Jun 2019 01:11:04 GMT
+# Tue, 09 Jul 2019 23:22:01 GMT
 CMD ["perl5.30.0" "-de0"]
 ```
 
 -	Layers:
-	-	`sha256:7ffdabbd82ddae873be4d1eeb64de2e4b43db4450b465d53b47f3b46eb55bd53`  
-		Last Modified: Mon, 10 Jun 2019 23:46:41 GMT  
-		Size: 22.3 MB (22338852 bytes)  
+	-	`sha256:989ec9c2d5c0faa3c30e41cf0fbdb98632d8d5ef12aa71801d619454a65a3df3`  
+		Last Modified: Tue, 09 Jul 2019 21:52:22 GMT  
+		Size: 22.3 MB (22339068 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:8de78b4ff00a8237e8fa888fd94284cf4f777cb68f0c974c3fe1131078f4c9db`  
-		Last Modified: Tue, 11 Jun 2019 01:37:17 GMT  
-		Size: 175.0 B  
+	-	`sha256:47c0e7776eccac396d94472310d314480ad23832602246d4fe28d270703883e5`  
+		Last Modified: Wed, 10 Jul 2019 00:23:24 GMT  
+		Size: 179.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:3d5aee0d4f8efc025f2271b9138c4acd62c2fd8d066d9b31e5f75e690ad361ff`  
-		Last Modified: Tue, 11 Jun 2019 01:37:31 GMT  
-		Size: 14.8 MB (14822290 bytes)  
+	-	`sha256:7502693c5dd466e5b1301043abe7efc96e8f408118883da0bdf98fc10da80b07`  
+		Last Modified: Wed, 10 Jul 2019 00:24:01 GMT  
+		Size: 14.8 MB (14822508 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
