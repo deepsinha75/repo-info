@@ -1,7 +1,7 @@
-## `debian:stretch-slim`
+## `debian:stretch-20190708-slim`
 
 ```console
-$ docker pull debian@sha256:cc5b2939a0030ddcb08b821fbf3b073661621ca86a811072ae409ebe240557df
+$ docker pull debian@sha256:0c04edb9ae10feb7ac03a659dd41e16c79e04fdb2b10cf93c3cbcef1fd6cc1d5
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -14,33 +14,33 @@ $ docker pull debian@sha256:cc5b2939a0030ddcb08b821fbf3b073661621ca86a811072ae40
 	-	linux; ppc64le
 	-	linux; s390x
 
-### `debian:stretch-slim` - linux; amd64
+### `debian:stretch-20190708-slim` - linux; amd64
 
 ```console
-$ docker pull debian@sha256:0b0812ea86a3fb77cbc6f23bec03097499dd99fe9845af01c7ba24d16170f3e3
+$ docker pull debian@sha256:86bad140e471ab1552e503af4a163a2de48ca5ac8d0a71877cda9ae727d39862
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **22.5 MB (22489302 bytes)**  
+-	Total Size: **22.5 MB (22489470 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:49ec158b98957083d01e03f8bf17202ab8bae6573b421c5cb89d5da80f9f5f3b`
+-	Image ID: `sha256:226ee7ba65a27fa2736fa25cc9fda5e295723609ae2677735671e584663383b7`
 -	Default Command: `["bash"]`
 
 ```dockerfile
-# Mon, 10 Jun 2019 23:24:23 GMT
-ADD file:5ffb798d64089418ef4d3a261df5ad7cfa038eb2ef778db2b92604ac87228d99 in / 
-# Mon, 10 Jun 2019 23:24:23 GMT
+# Tue, 09 Jul 2019 21:32:29 GMT
+ADD file:966bd7368f1e5a3e40fe5fab63ebe3c04719f677cc49385462e4dfda4c4096fb in / 
+# Tue, 09 Jul 2019 21:32:29 GMT
 CMD ["bash"]
 ```
 
 -	Layers:
-	-	`sha256:fc7181108d403205fda45b28dbddfa1cf07e772fa41244e44f53a341b8b1893d`  
-		Last Modified: Mon, 10 Jun 2019 23:28:08 GMT  
-		Size: 22.5 MB (22489302 bytes)  
+	-	`sha256:0a4690c5d889e116874bf45dc757b515565a3bd9b0f6c04054d62280bb4f4ecf`  
+		Last Modified: Tue, 09 Jul 2019 21:42:30 GMT  
+		Size: 22.5 MB (22489470 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
-### `debian:stretch-slim` - linux; arm variant v5
+### `debian:stretch-20190708-slim` - linux; arm variant v5
 
 ```console
 $ docker pull debian@sha256:5ea35b643336bb874b5089374d2df7c7f6375a157629f97d2ba12c2e8b7de6a7
@@ -66,7 +66,7 @@ CMD ["bash"]
 		Size: 21.2 MB (21156035 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
-### `debian:stretch-slim` - linux; arm variant v7
+### `debian:stretch-20190708-slim` - linux; arm variant v7
 
 ```console
 $ docker pull debian@sha256:f241a8a18e6b3544c6cef738c1df10c3de5617e1cf433973b700df1ae1134ad1
@@ -92,7 +92,7 @@ CMD ["bash"]
 		Size: 19.3 MB (19276281 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
-### `debian:stretch-slim` - linux; arm64 variant v8
+### `debian:stretch-20190708-slim` - linux; arm64 variant v8
 
 ```console
 $ docker pull debian@sha256:0949ae4ccb383f19dec01b43a7a1a50a20d3bc97b9ddbeca435a0c776661096b
@@ -118,7 +118,7 @@ CMD ["bash"]
 		Size: 20.3 MB (20334138 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
-### `debian:stretch-slim` - linux; 386
+### `debian:stretch-20190708-slim` - linux; 386
 
 ```console
 $ docker pull debian@sha256:d3d10915bef8e0a1b589df4b8f23836fea7d848db00ecf1cb0d93f024a851190
@@ -144,7 +144,7 @@ CMD ["bash"]
 		Size: 23.1 MB (23121158 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
-### `debian:stretch-slim` - linux; ppc64le
+### `debian:stretch-20190708-slim` - linux; ppc64le
 
 ```console
 $ docker pull debian@sha256:42ac713b45c983f9e280e8178c56c4d6cf267625eb36717dfd5e1fa2814bad99
@@ -170,7 +170,7 @@ CMD ["bash"]
 		Size: 22.7 MB (22744947 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
-### `debian:stretch-slim` - linux; s390x
+### `debian:stretch-20190708-slim` - linux; s390x
 
 ```console
 $ docker pull debian@sha256:11cdbe050b2c7b67db1e949fde0f664086b4973353d64ed054745f6cadea408d

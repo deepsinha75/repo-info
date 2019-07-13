@@ -1,4 +1,4 @@
-## `debian:stable-slim`
+## `debian:stable-20190708-slim`
 
 ```console
 $ docker pull debian@sha256:fb24d5c869a1c878ed22840096d50f7d5459370f64a21191042e2b138244e8ae
@@ -14,7 +14,7 @@ $ docker pull debian@sha256:fb24d5c869a1c878ed22840096d50f7d5459370f64a21191042e
 	-	linux; ppc64le
 	-	linux; s390x
 
-### `debian:stable-slim` - linux; amd64
+### `debian:stable-20190708-slim` - linux; amd64
 
 ```console
 $ docker pull debian@sha256:84058afaa1a2f30daeb35df01acbb25a005005903eb9e5b0db0c6a4ea2bb0273
@@ -40,7 +40,7 @@ CMD ["bash"]
 		Size: 27.1 MB (27094100 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
-### `debian:stable-slim` - linux; arm variant v5
+### `debian:stable-20190708-slim` - linux; arm variant v5
 
 ```console
 $ docker pull debian@sha256:23d419b72b250b0a05d8bf4ea8ce6adcb58e2d76362ba09e939af136b5babe90
@@ -66,7 +66,7 @@ CMD ["bash"]
 		Size: 24.8 MB (24822234 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
-### `debian:stable-slim` - linux; arm variant v7
+### `debian:stable-20190708-slim` - linux; arm variant v7
 
 ```console
 $ docker pull debian@sha256:e4ec5f742e5c9c0a0a568d47a3b733e68583b9e02b2532f3c721bae1e9e5fb6d
@@ -92,7 +92,7 @@ CMD ["bash"]
 		Size: 22.7 MB (22698478 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
-### `debian:stable-slim` - linux; arm64 variant v8
+### `debian:stable-20190708-slim` - linux; arm64 variant v8
 
 ```console
 $ docker pull debian@sha256:d6c18d5875c826bcc8e4a434afb36bcc6eec8b5be74b8a6e20da03f0dca4ac25
@@ -118,7 +118,7 @@ CMD ["bash"]
 		Size: 25.9 MB (25852508 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
-### `debian:stable-slim` - linux; 386
+### `debian:stable-20190708-slim` - linux; 386
 
 ```console
 $ docker pull debian@sha256:f65b6886767b960ef159ff38394dee97f0acfbc97fd7f75e4a9baae3cb638efc
@@ -144,7 +144,7 @@ CMD ["bash"]
 		Size: 27.7 MB (27746252 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
-### `debian:stable-slim` - linux; ppc64le
+### `debian:stable-20190708-slim` - linux; ppc64le
 
 ```console
 $ docker pull debian@sha256:88cab8ddf69dae6800580b250e5b23d4b373197c641f18440a5b31366a4d441e
@@ -170,7 +170,7 @@ CMD ["bash"]
 		Size: 30.5 MB (30515753 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
-### `debian:stable-slim` - linux; s390x
+### `debian:stable-20190708-slim` - linux; s390x
 
 ```console
 $ docker pull debian@sha256:a2223caf72bc8b325ef58116f6c7e44233e39361679e2d13eb4e492c528d386b
