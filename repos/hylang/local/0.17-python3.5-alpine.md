@@ -2,9 +2,9 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:a2c3e8c7c4a6d41a0a60994ccb4b82dfa39a16496813cd0f8b39d903db650cf1`
-- Created: `2019-05-22T22:24:29.862974746Z`
-- Virtual Size: ~ 81.57 Mb  
+- Image ID: `sha256:3e8dbc3c5c81154481cae89629d499a663d4049d8e60bb1d8c9c66957940b573`
+- Created: `2019-07-13T16:27:41.803621176Z`
+- Virtual Size: ~ 95.51 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Command: `["hy"]`
@@ -123,16 +123,16 @@ MPL-2.0 GPL-2.0-or-later
 ### `apk` package: `expat`
 
 ```console
-expat-2.2.6-r0 description:
+expat-2.2.7-r0 description:
 An XML Parser library written in C
 
-expat-2.2.6-r0 webpage:
+expat-2.2.7-r0 webpage:
 http://www.libexpat.org/
 
-expat-2.2.6-r0 installed size:
-188416
+expat-2.2.7-r0 installed size:
+184320
 
-expat-2.2.6-r0 license:
+expat-2.2.7-r0 license:
 MIT
 
 ```
@@ -157,16 +157,16 @@ GPL
 ### `apk` package: `libbz2`
 
 ```console
-libbz2-1.0.6-r6 description:
+libbz2-1.0.6-r7 description:
 Shared library for bz2
 
-libbz2-1.0.6-r6 webpage:
+libbz2-1.0.6-r7 webpage:
 http://sources.redhat.com/bzip2
 
-libbz2-1.0.6-r6 installed size:
+libbz2-1.0.6-r7 installed size:
 73728
 
-libbz2-1.0.6-r6 license:
+libbz2-1.0.6-r7 license:
 BSD
 
 ```
@@ -378,16 +378,16 @@ GPL-2.0
 ### `apk` package: `sqlite-libs`
 
 ```console
-sqlite-libs-3.26.0-r3 description:
+sqlite-libs-3.28.0-r0 description:
 Sqlite3 library
 
-sqlite-libs-3.26.0-r3 webpage:
-http://www.sqlite.org
+sqlite-libs-3.28.0-r0 webpage:
+https://www.sqlite.org/
 
-sqlite-libs-3.26.0-r3 installed size:
-917504
+sqlite-libs-3.28.0-r0 installed size:
+933888
 
-sqlite-libs-3.26.0-r3 license:
+sqlite-libs-3.28.0-r0 license:
 Public-Domain
 
 ```
