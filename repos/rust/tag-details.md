@@ -5,17 +5,25 @@
 -	[`rust:1`](#rust1)
 -	[`rust:1.36`](#rust136)
 -	[`rust:1.36.0`](#rust1360)
+-	[`rust:1.36.0-buster`](#rust1360-buster)
 -	[`rust:1.36.0-slim`](#rust1360-slim)
+-	[`rust:1.36.0-slim-buster`](#rust1360-slim-buster)
 -	[`rust:1.36.0-slim-stretch`](#rust1360-slim-stretch)
 -	[`rust:1.36.0-stretch`](#rust1360-stretch)
+-	[`rust:1.36-buster`](#rust136-buster)
 -	[`rust:1.36-slim`](#rust136-slim)
+-	[`rust:1.36-slim-buster`](#rust136-slim-buster)
 -	[`rust:1.36-slim-stretch`](#rust136-slim-stretch)
 -	[`rust:1.36-stretch`](#rust136-stretch)
+-	[`rust:1-buster`](#rust1-buster)
 -	[`rust:1-slim`](#rust1-slim)
+-	[`rust:1-slim-buster`](#rust1-slim-buster)
 -	[`rust:1-slim-stretch`](#rust1-slim-stretch)
 -	[`rust:1-stretch`](#rust1-stretch)
+-	[`rust:buster`](#rustbuster)
 -	[`rust:latest`](#rustlatest)
 -	[`rust:slim`](#rustslim)
+-	[`rust:slim-buster`](#rustslim-buster)
 -	[`rust:slim-stretch`](#rustslim-stretch)
 -	[`rust:stretch`](#ruststretch)
 
@@ -754,6 +762,10 @@ RUN set -eux;     dpkgArch="$(dpkg --print-architecture)";     case "${dpkgArch#
 		Size: 280.6 MB (280559744 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
+## `rust:1.36.0-buster`
+
+**does not exist** (yet?)
+
 ## `rust:1.36.0-slim`
 
 ```console
@@ -902,6 +914,10 @@ RUN set -eux;     apt-get update;     apt-get install -y --no-install-recommends
 		Last Modified: Wed, 10 Jul 2019 07:56:39 GMT  
 		Size: 322.4 MB (322441937 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+
+## `rust:1.36.0-slim-buster`
+
+**does not exist** (yet?)
 
 ## `rust:1.36.0-slim-stretch`
 
@@ -1297,6 +1313,10 @@ RUN set -eux;     dpkgArch="$(dpkg --print-architecture)";     case "${dpkgArch#
 		Size: 280.6 MB (280559744 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
+## `rust:1.36-buster`
+
+**does not exist** (yet?)
+
 ## `rust:1.36-slim`
 
 ```console
@@ -1445,6 +1465,10 @@ RUN set -eux;     apt-get update;     apt-get install -y --no-install-recommends
 		Last Modified: Wed, 10 Jul 2019 07:56:39 GMT  
 		Size: 322.4 MB (322441937 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+
+## `rust:1.36-slim-buster`
+
+**does not exist** (yet?)
 
 ## `rust:1.36-slim-stretch`
 
@@ -1840,6 +1864,10 @@ RUN set -eux;     dpkgArch="$(dpkg --print-architecture)";     case "${dpkgArch#
 		Size: 280.6 MB (280559744 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
+## `rust:1-buster`
+
+**does not exist** (yet?)
+
 ## `rust:1-slim`
 
 ```console
@@ -1988,6 +2016,10 @@ RUN set -eux;     apt-get update;     apt-get install -y --no-install-recommends
 		Last Modified: Wed, 10 Jul 2019 07:56:39 GMT  
 		Size: 322.4 MB (322441937 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+
+## `rust:1-slim-buster`
+
+**does not exist** (yet?)
 
 ## `rust:1-slim-stretch`
 
@@ -2383,6 +2415,10 @@ RUN set -eux;     dpkgArch="$(dpkg --print-architecture)";     case "${dpkgArch#
 		Size: 280.6 MB (280559744 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
+## `rust:buster`
+
+**does not exist** (yet?)
+
 ## `rust:latest`
 
 ```console
@@ -2776,6 +2812,10 @@ RUN set -eux;     apt-get update;     apt-get install -y --no-install-recommends
 		Last Modified: Wed, 10 Jul 2019 07:56:39 GMT  
 		Size: 322.4 MB (322441937 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+
+## `rust:slim-buster`
+
+**does not exist** (yet?)
 
 ## `rust:slim-stretch`
 
