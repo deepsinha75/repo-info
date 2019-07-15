@@ -1,20 +1,18 @@
-# `bash:4.1.17`
+# `bash:devel-20190705`
 
 ## Docker Metadata
 
-- Image ID: `sha256:f67accb81acdd8529e6cc85684a8972dd352ce0f8a3d6f84a1945fba2c205ab8`
-- Created: `2019-07-13T01:19:37.606846759Z`
-- Virtual Size: ~ 12.63 Mb  
+- Image ID: `sha256:72cdd45eaec43c9ce8208ae36d2631eda982e6365828ab9722f98eead2e419d9`
+- Created: `2019-07-13T01:15:08.032301719Z`
+- Virtual Size: ~ 15.43 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["docker-entrypoint.sh"]`
 - Command: `["bash"]`
 - Environment:
   - `PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
-  - `_BASH_GPG_KEY=7C0135FB088AAF6C66C650B9BB5869F064EA74AB`
-  - `_BASH_VERSION=4.1`
-  - `_BASH_PATCH_LEVEL=0`
-  - `_BASH_LATEST_PATCH=17`
+  - `_BASH_COMMIT=ea578790a910fcd394930de7a1933a9ee24f9119`
+  - `_BASH_COMMIT_DESC=commit bash-20190705 snapshot`
 
 ## `apk` (`.apk`-based packages)
 
