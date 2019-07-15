@@ -28,10 +28,10 @@ Source:
 $ yumdownloader --quiet --source --urls acl-2.2.53-3.fc30
 Enabling fedora-modular-source repository
 Enabling updates-source repository
+https://dl.fedoraproject.org/pub/fedora/linux/updates/30/Everything/SRPMS/repodata/repomd.xml: [Errno -1] repomd.xml does not match metalink for updates-source
+Trying other mirror.
 Enabling updates-modular-source repository
 Enabling fedora-source repository
-http://mirror.stavlor.net/pub/fedora/linux/releases/30/Everything/source/tree/repodata/repomd.xml: [Errno 12] Timeout on http://mirror.stavlor.net/pub/fedora/linux/releases/30/Everything/source/tree/repodata/repomd.xml: (28, 'Connection timed out after 30000 milliseconds')
-Trying other mirror.
 https://d2lzkl7pfhq30w.cloudfront.net/pub/fedora/linux/releases/30/Everything/source/tree//Packages/a/acl-2.2.53-3.fc30.src.rpm
 ```
 
@@ -2412,16 +2412,7 @@ https://d2lzkl7pfhq30w.cloudfront.net/pub/fedora/linux/releases/30/Everything/so
 
 Licenses (from `rpm --query`): Vim and MIT
 
-Source:
-
-```console
-$ yumdownloader --quiet --source --urls vim-minimal-8.1.1602-1.fc30
-Enabling fedora-modular-source repository
-Enabling updates-source repository
-Enabling updates-modular-source repository
-Enabling fedora-source repository
-https://d2lzkl7pfhq30w.cloudfront.net/pub/fedora/linux/updates/30/Everything/SRPMS//Packages/v/vim-8.1.1602-1.fc30.src.rpm
-```
+**WARNING:** unable to find source (`yumdownloader` failed or returned no results)!
 
 ### `rpm` package: `whois-nls-5.4.3-1.fc30.noarch`
 
