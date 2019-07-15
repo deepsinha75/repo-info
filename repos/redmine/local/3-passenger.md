@@ -2,21 +2,21 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:01d4689babc290add0ef3385232d39f33fb3d47ca5c93b973dc9687b6465fbe0`
-- Created: `2019-07-04T02:26:55.002586213Z`
-- Virtual Size: ~ 649.71 Mb  
+- Image ID: `sha256:a5f01b8d79f46bb6b141538913e4c0c38d4c381ee47d74792adbd13378a8377f`
+- Created: `2019-07-12T09:57:45.022806057Z`
+- Virtual Size: ~ 645.03 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["/docker-entrypoint.sh"]`
 - Command: `["passenger","start"]`
 - Environment:
-  - `PATH=/usr/local/bundle/bin:/usr/local/bundle/gems/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
+  - `PATH=/usr/local/bundle/bin:/gems/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
   - `RUBY_MAJOR=2.4`
   - `RUBY_VERSION=2.4.6`
   - `RUBY_DOWNLOAD_SHA256=25da31b9815bfa9bba9f9b793c055a40a35c43c6adfb1fdbd81a09099f9b529c`
   - `RUBYGEMS_VERSION=3.0.3`
   - `GEM_HOME=/usr/local/bundle`
-  - `BUNDLE_PATH=/usr/local/bundle`
+  - `BUNDLE_PATH__SYSTEM=true`
   - `BUNDLE_SILENCE_ROOT_WARNING=1`
   - `BUNDLE_APP_CONFIG=/usr/local/bundle`
   - `RAILS_ENV=production`

@@ -2,20 +2,20 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:3f1c9319f54c4939691eebe00db49d62580dd91b770b02ef1003bd7d2251e1e5`
-- Created: `2019-07-04T02:19:50.908316738Z`
-- Virtual Size: ~ 578.97 Mb  
+- Image ID: `sha256:11ef32aecb4fcba5c2352ec219db59e7c8fba3f8720b2757946cdcb50a29a5c2`
+- Created: `2019-07-12T09:49:32.499406947Z`
+- Virtual Size: ~ 573.58 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["/docker-entrypoint.sh"]`
 - Command: `["rails","server","-b","0.0.0.0"]`
 - Environment:
-  - `PATH=/usr/local/bundle/bin:/usr/local/bundle/gems/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
+  - `PATH=/usr/local/bundle/bin:/gems/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
   - `RUBY_MAJOR=2.6`
   - `RUBY_VERSION=2.6.3`
   - `RUBY_DOWNLOAD_SHA256=11a83f85c03d3f0fc9b8a9b6cad1b2674f26c5aaa43ba858d4b0fcc2b54171e1`
   - `GEM_HOME=/usr/local/bundle`
-  - `BUNDLE_PATH=/usr/local/bundle`
+  - `BUNDLE_PATH__SYSTEM=true`
   - `BUNDLE_SILENCE_ROOT_WARNING=1`
   - `BUNDLE_APP_CONFIG=/usr/local/bundle`
   - `RAILS_ENV=production`
@@ -3694,10 +3694,6 @@ Licenses: (parsed from: `/usr/share/doc/libserf-1-1/copyright`)
 
 **WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
 This is *usually* due to a new package version being released and the old version being removed.
-
-The source package *may* still be available for download from:
-
-- http://snapshot.debian.org/package/serf/1.3.9-3+deb9u1/
 
 
 ### `dpkg` source package: `shadow=1:4.4-4.1`
