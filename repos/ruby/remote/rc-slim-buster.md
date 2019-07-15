@@ -1,7 +1,7 @@
 ## `ruby:rc-slim-buster`
 
 ```console
-$ docker pull ruby@sha256:b0f950c2720009e30bd0071bbff2590d0cc6617d5b8c9c6bed0b424b597e0a65
+$ docker pull ruby@sha256:dbeb897c30e18fb329a95565f7ae46ba831ce016f8c25be70a10b2929215fb29
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -17,14 +17,14 @@ $ docker pull ruby@sha256:b0f950c2720009e30bd0071bbff2590d0cc6617d5b8c9c6bed0b42
 ### `ruby:rc-slim-buster` - linux; amd64
 
 ```console
-$ docker pull ruby@sha256:5c352cbf313eb8e68917daccde90158b53701ae4f449511631e32c5aed29c01d
+$ docker pull ruby@sha256:ce81c5e6f842afbfed97b95a50eb0eb417ab5e13d29e14de94d7befd3e4a5ed0
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
 -	Total Size: **61.5 MB (61512070 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:6338c1433eba36e7c2ffebbf78da3a0e92f863b5ab411c5b1d64c49670f2e5db`
+-	Image ID: `sha256:74f030d968395318a8bfb87f840cb82a933dbedba130d70ef83907f0e8af96e0`
 -	Default Command: `["irb"]`
 
 ```dockerfile
@@ -46,13 +46,13 @@ ENV RUBY_DOWNLOAD_SHA256=8c546df3345398b3edc9d0ab097846f033783d33762889fd0f3dc8b
 RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		autoconf 		bison 		dpkg-dev 		gcc 		libbz2-dev 		libgdbm-compat-dev 		libgdbm-dev 		libglib2.0-dev 		libncurses-dev 		libreadline-dev 		libxml2-dev 		libxslt-dev 		make 		ruby 		wget 		xz-utils 	; 	rm -rf /var/lib/apt/lists/*; 		wget -O ruby.tar.xz "https://cache.ruby-lang.org/pub/ruby/${RUBY_MAJOR%-rc}/ruby-$RUBY_VERSION.tar.xz"; 	echo "$RUBY_DOWNLOAD_SHA256 *ruby.tar.xz" | sha256sum --check --strict; 		mkdir -p /usr/src/ruby; 	tar -xJf ruby.tar.xz -C /usr/src/ruby --strip-components=1; 	rm ruby.tar.xz; 		cd /usr/src/ruby; 		{ 		echo '#define ENABLE_PATH_CHECK 0'; 		echo; 		cat file.c; 	} > file.c.new; 	mv file.c.new file.c; 		autoconf; 	gnuArch="$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)"; 	./configure 		--build="$gnuArch" 		--disable-install-doc 		--enable-shared 	; 	make -j "$(nproc)"; 	make install; 		apt-mark auto '.*' > /dev/null; 	apt-mark manual $savedAptMark > /dev/null; 	find /usr/local -type f -executable -not \( -name '*tkinter*' \) -exec ldd '{}' ';' 		| awk '/=>/ { print $(NF-1) }' 		| sort -u 		| xargs -r dpkg-query --search 		| cut -d: -f1 		| sort -u 		| xargs -r apt-mark manual 	; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 		cd /; 	rm -r /usr/src/ruby; 	! dpkg -l | grep -i ruby; 	[ "$(command -v ruby)" = '/usr/local/bin/ruby' ]; 	ruby --version; 	gem --version; 	bundle --version
 # Wed, 10 Jul 2019 01:47:57 GMT
 ENV GEM_HOME=/usr/local/bundle
-# Fri, 12 Jul 2019 02:59:25 GMT
-ENV BUNDLE_PATH__SYSTEM=true BUNDLE_SILENCE_ROOT_WARNING=1 BUNDLE_APP_CONFIG=/usr/local/bundle
-# Fri, 12 Jul 2019 02:59:25 GMT
-ENV PATH=/usr/local/bundle/bin:/gems/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Fri, 12 Jul 2019 02:59:26 GMT
+# Wed, 10 Jul 2019 01:47:57 GMT
+ENV BUNDLE_PATH=/usr/local/bundle BUNDLE_SILENCE_ROOT_WARNING=1 BUNDLE_APP_CONFIG=/usr/local/bundle
+# Wed, 10 Jul 2019 01:47:57 GMT
+ENV PATH=/usr/local/bundle/bin:/usr/local/bundle/gems/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+# Wed, 10 Jul 2019 01:47:59 GMT
 RUN mkdir -p "$GEM_HOME" && chmod 777 "$GEM_HOME"
-# Fri, 12 Jul 2019 02:59:26 GMT
+# Wed, 10 Jul 2019 01:47:59 GMT
 CMD ["irb"]
 ```
 
@@ -73,8 +73,8 @@ CMD ["irb"]
 		Last Modified: Wed, 10 Jul 2019 02:09:17 GMT  
 		Size: 21.9 MB (21887935 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:4de1e482694b8a40e9fdabfc84a353988b9462b78c2dfc31aa9a5eb82477616f`  
-		Last Modified: Fri, 12 Jul 2019 04:40:16 GMT  
+	-	`sha256:ad87e63f733e21ace8de3d2186417e1b3d30f4ea678a62c5ddd1087fdeea04a5`  
+		Last Modified: Wed, 10 Jul 2019 02:09:10 GMT  
 		Size: 143.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
