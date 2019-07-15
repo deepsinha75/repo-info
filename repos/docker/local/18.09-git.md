@@ -2,9 +2,9 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:7de6ae4ca90e4b4b2530983408de20d09ebd9b126edd4b2a8827b46f7080970c`
-- Created: `2019-06-27T22:20:06.254149747Z`
-- Virtual Size: ~ 192.11 Mb  
+- Image ID: `sha256:4611ce40fc2e68c50404b01d4bc2ddd622dc359ad606a45a3db2c4d16660fcd0`
+- Created: `2019-07-11T22:45:59.76098877Z`
+- Virtual Size: ~ 192.10 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["docker-entrypoint.sh"]`
@@ -53,16 +53,16 @@ MIT
 ### `apk` package: `apk-tools`
 
 ```console
-apk-tools-2.10.4-r1 description:
+apk-tools-2.10.4-r2 description:
 Alpine Package Keeper - package manager for alpine
 
-apk-tools-2.10.4-r1 webpage:
+apk-tools-2.10.4-r2 webpage:
 https://git.alpinelinux.org/cgit/apk-tools/
 
-apk-tools-2.10.4-r1 installed size:
+apk-tools-2.10.4-r2 installed size:
 262144
 
-apk-tools-2.10.4-r1 license:
+apk-tools-2.10.4-r2 license:
 GPL2
 
 ```
@@ -121,16 +121,16 @@ MPL-2.0 GPL-2.0-or-later
 ### `apk` package: `expat`
 
 ```console
-expat-2.2.6-r0 description:
+expat-2.2.7-r0 description:
 An XML Parser library written in C
 
-expat-2.2.6-r0 webpage:
+expat-2.2.7-r0 webpage:
 http://www.libexpat.org/
 
-expat-2.2.6-r0 installed size:
-188416
+expat-2.2.7-r0 installed size:
+184320
 
-expat-2.2.6-r0 license:
+expat-2.2.7-r0 license:
 MIT
 
 ```
