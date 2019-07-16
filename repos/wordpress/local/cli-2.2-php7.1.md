@@ -2,8 +2,8 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:5c5bddb92b9bf892722f767fcfabaa52889d49159c72f7aa2e03b301ed6735e8`
-- Created: `2019-06-28T07:16:02.365083031Z`
+- Image ID: `sha256:0afe9642fc68c127c52ba14ee619b84eba3136f9c372980ffba31521a50b3dad`
+- Created: `2019-07-12T09:10:29.851834822Z`
 - Virtual Size: ~ 125.45 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
@@ -65,16 +65,16 @@ MIT
 ### `apk` package: `apk-tools`
 
 ```console
-apk-tools-2.10.4-r1 description:
+apk-tools-2.10.4-r2 description:
 Alpine Package Keeper - package manager for alpine
 
-apk-tools-2.10.4-r1 webpage:
+apk-tools-2.10.4-r2 webpage:
 https://git.alpinelinux.org/cgit/apk-tools/
 
-apk-tools-2.10.4-r1 installed size:
+apk-tools-2.10.4-r2 installed size:
 262144
 
-apk-tools-2.10.4-r1 license:
+apk-tools-2.10.4-r2 license:
 GPL2
 
 ```
@@ -167,16 +167,16 @@ MIT
 ### `apk` package: `expat`
 
 ```console
-expat-2.2.6-r0 description:
+expat-2.2.7-r0 description:
 An XML Parser library written in C
 
-expat-2.2.6-r0 webpage:
+expat-2.2.7-r0 webpage:
 http://www.libexpat.org/
 
-expat-2.2.6-r0 installed size:
-188416
+expat-2.2.7-r0 installed size:
+184320
 
-expat-2.2.6-r0 license:
+expat-2.2.7-r0 license:
 MIT
 
 ```
@@ -218,16 +218,16 @@ FTL GPL-2.0-or-later
 ### `apk` package: `imagemagick-libs`
 
 ```console
-imagemagick-libs-7.0.8.49-r1 description:
+imagemagick-libs-7.0.8.49-r2 description:
 Collection of tools and libraries for many image formats (libraries)
 
-imagemagick-libs-7.0.8.49-r1 webpage:
+imagemagick-libs-7.0.8.49-r2 webpage:
 https://www.imagemagick.org/
 
-imagemagick-libs-7.0.8.49-r1 installed size:
+imagemagick-libs-7.0.8.49-r2 installed size:
 3244032
 
-imagemagick-libs-7.0.8.49-r1 license:
+imagemagick-libs-7.0.8.49-r2 license:
 ImageMagick
 
 ```
@@ -286,16 +286,16 @@ BSD
 ### `apk` package: `libbz2`
 
 ```console
-libbz2-1.0.6-r6 description:
+libbz2-1.0.6-r7 description:
 Shared library for bz2
 
-libbz2-1.0.6-r6 webpage:
+libbz2-1.0.6-r7 webpage:
 http://sources.redhat.com/bzip2
 
-libbz2-1.0.6-r6 installed size:
+libbz2-1.0.6-r7 installed size:
 73728
 
-libbz2-1.0.6-r6 license:
+libbz2-1.0.6-r7 license:
 BSD
 
 ```

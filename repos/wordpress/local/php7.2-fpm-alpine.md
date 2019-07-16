@@ -2,8 +2,8 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:bdf57981c2d0fbfa2459728338a193f50a1262ef63e2321fe4e6a742bc0344a7`
-- Created: `2019-07-10T04:22:54.177406962Z`
+- Image ID: `sha256:e5b3c369530efab3ad3acf8a0cd05d2fc978da238003f9dae2ae7ca1ee3719e0`
+- Created: `2019-07-12T09:06:29.964733917Z`
 - Virtual Size: ~ 139.01 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
@@ -65,16 +65,16 @@ MIT
 ### `apk` package: `apk-tools`
 
 ```console
-apk-tools-2.10.4-r1 description:
+apk-tools-2.10.4-r2 description:
 Alpine Package Keeper - package manager for alpine
 
-apk-tools-2.10.4-r1 webpage:
+apk-tools-2.10.4-r2 webpage:
 https://git.alpinelinux.org/cgit/apk-tools/
 
-apk-tools-2.10.4-r1 installed size:
+apk-tools-2.10.4-r2 installed size:
 262144
 
-apk-tools-2.10.4-r1 license:
+apk-tools-2.10.4-r2 license:
 GPL2
 
 ```
