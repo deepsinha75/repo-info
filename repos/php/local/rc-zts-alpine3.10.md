@@ -1,10 +1,10 @@
-# `php:7.4.0alpha2-zts-alpine3.10`
+# `php:7.4.0alpha3-zts-alpine3.10`
 
 ## Docker Metadata
 
-- Image ID: `sha256:2fd3a9cb8827602ea4b4f56b80bf920c7bfdc9ca6e1e1a90d704fc289c78f685`
-- Created: `2019-06-28T00:43:48.14047205Z`
-- Virtual Size: ~ 66.79 Mb  
+- Image ID: `sha256:a6fbbfbe149aa6055a4d8b0aa594012bc18956be9bf8653b68bbeb93e905eb30`
+- Created: `2019-07-12T22:15:54.088931367Z`
+- Virtual Size: ~ 66.58 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["docker-php-entrypoint"]`
@@ -18,10 +18,10 @@
   - `PHP_CPPFLAGS=-fstack-protector-strong -fpic -fpie -O2`
   - `PHP_LDFLAGS=-Wl,-O1 -Wl,--hash-style=both -pie`
   - `GPG_KEYS=42670A7FE4D0441C8E4632349E4FDC074A4EF02D 5A52880781F755608BF815FC910DEB46F53EA312`
-  - `PHP_VERSION=7.4.0alpha2`
-  - `PHP_URL=https://downloads.php.net/~derick/php-7.4.0alpha2.tar.xz`
-  - `PHP_ASC_URL=https://downloads.php.net/~derick/php-7.4.0alpha2.tar.xz.asc`
-  - `PHP_SHA256=8a7308bf012d229252e26e51f5e6383bb3fa6104def5e1b37ce15afdcb56d61f`
+  - `PHP_VERSION=7.4.0alpha3`
+  - `PHP_URL=https://downloads.php.net/~derick/php-7.4.0alpha3.tar.xz`
+  - `PHP_ASC_URL=https://downloads.php.net/~derick/php-7.4.0alpha3.tar.xz.asc`
+  - `PHP_SHA256=03babbfc1ae5069e25fae8d91cd664d97108632fcdf877dfe142e606874247b8`
   - `PHP_MD5=`
 
 ## `apk` (`.apk`-based packages)
@@ -63,16 +63,16 @@ MIT
 ### `apk` package: `apk-tools`
 
 ```console
-apk-tools-2.10.4-r1 description:
+apk-tools-2.10.4-r2 description:
 Alpine Package Keeper - package manager for alpine
 
-apk-tools-2.10.4-r1 webpage:
+apk-tools-2.10.4-r2 webpage:
 https://git.alpinelinux.org/cgit/apk-tools/
 
-apk-tools-2.10.4-r1 installed size:
+apk-tools-2.10.4-r2 installed size:
 262144
 
-apk-tools-2.10.4-r1 license:
+apk-tools-2.10.4-r2 license:
 GPL2
 
 ```
