@@ -2086,14 +2086,9 @@ Licenses: (parsed from: `/usr/share/doc/libsystemd0/copyright`, `/usr/share/doc/
 - `LGPL-2.1+`
 - `public-domain`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris systemd=240-6ubuntu5.1
-'http://archive.ubuntu.com/ubuntu/pool/main/s/systemd/systemd_240-6ubuntu5.1.dsc' systemd_240-6ubuntu5.1.dsc 5112 SHA256:193d86a55251c043a0d70bb27dedaf221671255f6275d9315dc08c1910a514d6
-'http://archive.ubuntu.com/ubuntu/pool/main/s/systemd/systemd_240.orig.tar.gz' systemd_240.orig.tar.gz 7582001 SHA256:8f15aec1ac926e13a21a04d0ca3fe371f7004951448142a6f8952075c5b5f0b5
-'http://archive.ubuntu.com/ubuntu/pool/main/s/systemd/systemd_240-6ubuntu5.1.debian.tar.xz' systemd_240-6ubuntu5.1.debian.tar.xz 224816 SHA256:c59f275bac4b638adb94ba790f0c44080eb34e1c4457e085ccd97b7fc086f06d
-```
 
 ### `dpkg` source package: `sysvinit=2.88dsf-59.10ubuntu2`
 

@@ -1093,14 +1093,9 @@ Licenses: (parsed from: `/usr/share/doc/libc-bin/copyright`, `/usr/share/doc/lib
 - `GPL-2`
 - `LGPL-2.1`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris glibc=2.29-0ubuntu2
-'http://archive.ubuntu.com/ubuntu/pool/main/g/glibc/glibc_2.29-0ubuntu2.dsc' glibc_2.29-0ubuntu2.dsc 9367 SHA256:d9b6eeaa98ecd898fe077ab5169b4f3cf693b4fa706a8139705758f04679a9f6
-'http://archive.ubuntu.com/ubuntu/pool/main/g/glibc/glibc_2.29.orig.tar.xz' glibc_2.29.orig.tar.xz 17040280 SHA256:9e383319f5cdb1a9d58a45ea44836c23859b8d580d5748cd93bca35a01ad0669
-'http://archive.ubuntu.com/ubuntu/pool/main/g/glibc/glibc_2.29-0ubuntu2.debian.tar.xz' glibc_2.29-0ubuntu2.debian.tar.xz 858944 SHA256:2b5de1ca6cebdbe07387ce04e8655cfc31c37221440ad0c666962746cb94f1e8
-```
 
 ### `dpkg` source package: `gmp=2:6.1.2+dfsg-4`
 
@@ -1570,14 +1565,13 @@ Licenses: (parsed from: `/usr/share/doc/krb5-multidev/copyright`, `/usr/share/do
 
 - `GPL-2`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris krb5=1.17-3
-'http://archive.ubuntu.com/ubuntu/pool/main/k/krb5/krb5_1.17-3.dsc' krb5_1.17-3.dsc 3302 SHA256:56112c60a10a49126359478893d2f51cee5513e41f6ec7269360c7abe8850f3f
-'http://archive.ubuntu.com/ubuntu/pool/main/k/krb5/krb5_1.17.orig.tar.gz' krb5_1.17.orig.tar.gz 8761763 SHA256:5a6e2284a53de5702d3dc2be3b9339c963f9b5397d3fbbc53beb249380a781f5
-'http://archive.ubuntu.com/ubuntu/pool/main/k/krb5/krb5_1.17-3.debian.tar.xz' krb5_1.17-3.debian.tar.xz 99396 SHA256:35da9d221e3a29c57c38c9d326d625a5b9199f3d7d64983483bd82f871083c9f
-```
+The source package *may* still be available for download from:
+
+- http://snapshot.debian.org/package/krb5/1.17-3/
+
 
 ### `dpkg` source package: `lcms2=2.9-3`
 
@@ -2263,15 +2257,13 @@ Licenses: (parsed from: `/usr/share/doc/libtasn1-6/copyright`)
 - `LGPL`
 - `LGPL-2.1`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris libtasn1-6=4.13-3
-'http://archive.ubuntu.com/ubuntu/pool/main/libt/libtasn1-6/libtasn1-6_4.13-3.dsc' libtasn1-6_4.13-3.dsc 2574 SHA256:15a984daba0bc64819a1203cd28a1e869a30e0edde227237e4cdcfbc86131227
-'http://archive.ubuntu.com/ubuntu/pool/main/libt/libtasn1-6/libtasn1-6_4.13.orig.tar.gz' libtasn1-6_4.13.orig.tar.gz 1891703 SHA256:7e528e8c317ddd156230c4e31d082cd13e7ddeb7a54824be82632209550c8cca
-'http://archive.ubuntu.com/ubuntu/pool/main/libt/libtasn1-6/libtasn1-6_4.13.orig.tar.gz.asc' libtasn1-6_4.13.orig.tar.gz.asc 774 SHA256:90261376528edf44831d1369847088cc2fb48669860d343961daca42e674b226
-'http://archive.ubuntu.com/ubuntu/pool/main/libt/libtasn1-6/libtasn1-6_4.13-3.debian.tar.xz' libtasn1-6_4.13-3.debian.tar.xz 63384 SHA256:1428c31d3d900d8fa1946fc29d9d2839c73c7a4c0ebff7a2571c134aef53c310
-```
+The source package *may* still be available for download from:
+
+- http://snapshot.debian.org/package/libtasn1-6/4.13-3/
+
 
 ### `dpkg` source package: `libthai=0.1.28-2`
 
@@ -3072,15 +3064,13 @@ Licenses: (parsed from: `/usr/share/doc/openssh-client/copyright`)
 - `Powell-BSD-style`
 - `public-domain`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris openssh=1:8.0p1-2
-'http://archive.ubuntu.com/ubuntu/pool/main/o/openssh/openssh_8.0p1-2.dsc' openssh_8.0p1-2.dsc 3276 SHA256:72e795ccc03beb7fb813b5f8355b18f0f30724c093569557a5044238b815616f
-'http://archive.ubuntu.com/ubuntu/pool/main/o/openssh/openssh_8.0p1.orig.tar.gz' openssh_8.0p1.orig.tar.gz 1597697 SHA256:bd943879e69498e8031eb6b7f44d08cdc37d59a7ab689aa0b437320c3481fd68
-'http://archive.ubuntu.com/ubuntu/pool/main/o/openssh/openssh_8.0p1.orig.tar.gz.asc' openssh_8.0p1.orig.tar.gz.asc 683 SHA256:1904abaa20c24f0c8fed8d7708ec13f4ddca0b8f0f3a191b183b93f142111538
-'http://archive.ubuntu.com/ubuntu/pool/main/o/openssh/openssh_8.0p1-2.debian.tar.xz' openssh_8.0p1-2.debian.tar.xz 170996 SHA256:0487d2f34f24c701f9152c56ecbf82eabc75868676f74d93cdff8a8852da6762
-```
+The source package *may* still be available for download from:
+
+- http://snapshot.debian.org/package/openssh/1:8.0p1-2/
+
 
 ### `dpkg` source package: `openssl=1.1.1c-1ubuntu2`
 
@@ -3882,14 +3872,9 @@ Binary Packages:
 If source is available (seen below), check the contents of `debian/copyright` within it.
 
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris unzip=6.0-23ubuntu1
-'http://archive.ubuntu.com/ubuntu/pool/main/u/unzip/unzip_6.0-23ubuntu1.dsc' unzip_6.0-23ubuntu1.dsc 1833 SHA256:430b51f689a478d79a15ff89479a55ae6ec23e5f77190b5aedc88b09c3e3a706
-'http://archive.ubuntu.com/ubuntu/pool/main/u/unzip/unzip_6.0.orig.tar.gz' unzip_6.0.orig.tar.gz 1376845 SHA256:036d96991646d0449ed0aa952e4fbe21b476ce994abc276e49d30e686708bd37
-'http://archive.ubuntu.com/ubuntu/pool/main/u/unzip/unzip_6.0-23ubuntu1.debian.tar.xz' unzip_6.0-23ubuntu1.debian.tar.xz 21624 SHA256:1ecd16578fd136d54759527ae1e3e8b2a2c4a94735af23f77cb3b422a19099c3
-```
 
 ### `dpkg` source package: `utf8proc=2.3.0-1`
 
