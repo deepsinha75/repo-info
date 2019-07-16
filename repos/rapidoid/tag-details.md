@@ -10,7 +10,7 @@
 ## `rapidoid:5`
 
 ```console
-$ docker pull rapidoid@sha256:ae7f24bf31e2201d028085a7b3fd5b83a4700fafbec4826a7f7975e4f9a618e6
+$ docker pull rapidoid@sha256:8f3525451dc51fc84fe16c3a2a438053167f470801cb2131fe69348adcc8fbd9
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -21,89 +21,89 @@ $ docker pull rapidoid@sha256:ae7f24bf31e2201d028085a7b3fd5b83a4700fafbec4826a7f
 ### `rapidoid:5` - linux; amd64
 
 ```console
-$ docker pull rapidoid@sha256:3eab3390ec4548bb06431df268a4b34b3c8179d88d179b6f516f9c75aa960578
+$ docker pull rapidoid@sha256:c8e7f1da8d1e8db6a55e3eaf0e6ed845d5a4d8c0e6b0a25636221b817019602a
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **83.4 MB (83399242 bytes)**  
+-	Total Size: **86.2 MB (86188922 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:f8558d09207ac8045faf46d25a0f1dc214a8527e6aa9e3898d2a76a8c2792996`
+-	Image ID: `sha256:c429eaf60dbaef9a575ca2da9b637f40bb18e88067b8e638d3a075845f6fea93`
 -	Entrypoint: `["\/opt\/entrypoint.sh"]`
 
 ```dockerfile
-# Mon, 10 Jun 2019 23:24:23 GMT
-ADD file:5ffb798d64089418ef4d3a261df5ad7cfa038eb2ef778db2b92604ac87228d99 in / 
-# Mon, 10 Jun 2019 23:24:23 GMT
+# Tue, 09 Jul 2019 21:22:33 GMT
+ADD file:71ac26257198ecf6a4ea05f45e522de961543a965486dd49a86bd6aca8342026 in / 
+# Tue, 09 Jul 2019 21:22:33 GMT
 CMD ["bash"]
-# Tue, 11 Jun 2019 07:18:53 GMT
+# Mon, 15 Jul 2019 23:49:31 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		ca-certificates p11-kit 	; 	rm -rf /var/lib/apt/lists/*
-# Tue, 11 Jun 2019 07:18:53 GMT
+# Mon, 15 Jul 2019 23:49:31 GMT
 ENV LANG=C.UTF-8
-# Tue, 11 Jun 2019 07:20:07 GMT
+# Mon, 15 Jul 2019 23:50:04 GMT
 ENV JAVA_HOME=/usr/local/openjdk-8
-# Tue, 11 Jun 2019 07:20:07 GMT
+# Mon, 15 Jul 2019 23:50:04 GMT
 ENV PATH=/usr/local/openjdk-8/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Tue, 11 Jun 2019 07:20:08 GMT
+# Mon, 15 Jul 2019 23:50:05 GMT
 RUN { echo '#/bin/sh'; echo 'echo "$JAVA_HOME"'; } > /usr/local/bin/docker-java-home && chmod +x /usr/local/bin/docker-java-home && [ "$JAVA_HOME" = "$(docker-java-home)" ]
-# Tue, 11 Jun 2019 07:20:08 GMT
+# Mon, 15 Jul 2019 23:50:05 GMT
 ENV JAVA_VERSION=8u212-b04
-# Tue, 11 Jun 2019 07:21:09 GMT
+# Mon, 15 Jul 2019 23:50:32 GMT
 ENV JAVA_BASE_URL=https://github.com/AdoptOpenJDK/openjdk8-upstream-binaries/releases/download/jdk8u212-b04/OpenJDK8U-jre_
-# Tue, 11 Jun 2019 07:21:09 GMT
+# Mon, 15 Jul 2019 23:50:32 GMT
 ENV JAVA_URL_VERSION=8u212b04
-# Tue, 11 Jun 2019 07:21:29 GMT
+# Mon, 15 Jul 2019 23:50:44 GMT
 RUN set -eux; 		dpkgArch="$(dpkg --print-architecture)"; 	case "$dpkgArch" in 		amd64) upstreamArch='x64' ;; 		arm64) upstreamArch='aarch64' ;; 		*) echo >&2 "error: unsupported architecture: $dpkgArch" ;; 	esac; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		dirmngr 		gnupg 		wget 	; 	rm -rf /var/lib/apt/lists/*; 		wget -O openjdk.tgz.asc "${JAVA_BASE_URL}${upstreamArch}_linux_${JAVA_URL_VERSION}.tar.gz.sign"; 	wget -O openjdk.tgz "${JAVA_BASE_URL}${upstreamArch}_linux_${JAVA_URL_VERSION}.tar.gz" --progress=dot:giga; 		export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys CA5F11C6CE22644D42C6AC4492EF8D39DC13168F; 	gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys EAC843EBD3EFDB98CC772FADA5CD6035332FA671; 	gpg --batch --list-sigs --keyid-format 0xLONG CA5F11C6CE22644D42C6AC4492EF8D39DC13168F | grep '0xA5CD6035332FA671' | grep 'Andrew Haley'; 	gpg --batch --verify openjdk.tgz.asc openjdk.tgz; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME"; 		mkdir -p "$JAVA_HOME"; 	tar --extract 		--file openjdk.tgz 		--directory "$JAVA_HOME" 		--strip-components 1 		--no-same-owner 	; 	rm openjdk.tgz*; 			apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark > /dev/null; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 		{ 		echo '#!/usr/bin/env bash'; 		echo 'set -Eeuo pipefail'; 		echo 'if ! [ -d "$JAVA_HOME" ]; then echo >&2 "error: missing JAVA_HOME environment variable"; exit 1; fi'; 		echo 'cacertsFile=; for f in "$JAVA_HOME/lib/security/cacerts" "$JAVA_HOME/jre/lib/security/cacerts"; do if [ -e "$f" ]; then cacertsFile="$f"; break; fi; done'; 		echo 'if [ -z "$cacertsFile" ] || ! [ -f "$cacertsFile" ]; then echo >&2 "error: failed to find cacerts file in $JAVA_HOME"; exit 1; fi'; 		echo 'trust extract --overwrite --format=java-cacerts --filter=ca-anchors --purpose=server-auth "$cacertsFile"'; 	} > /etc/ca-certificates/update.d/docker-openjdk; 	chmod +x /etc/ca-certificates/update.d/docker-openjdk; 	/etc/ca-certificates/update.d/docker-openjdk; 		find "$JAVA_HOME/lib" -name '*.so' -exec dirname '{}' ';' | sort -u > /etc/ld.so.conf.d/docker-openjdk.conf; 	ldconfig; 		java -version
-# Tue, 11 Jun 2019 17:06:36 GMT
+# Tue, 16 Jul 2019 00:19:29 GMT
 MAINTAINER Nikolche Mihajlovski
-# Tue, 11 Jun 2019 17:06:37 GMT
+# Tue, 16 Jul 2019 00:19:29 GMT
 ENV GPG_KEY=E306FEF548C686C23DC00242B9B08D8F616EF49C
-# Tue, 11 Jun 2019 17:06:37 GMT
+# Tue, 16 Jul 2019 00:19:29 GMT
 ENV RAPIDOID_JAR=/opt/rapidoid.jar
-# Tue, 11 Jun 2019 17:06:37 GMT
+# Tue, 16 Jul 2019 00:19:29 GMT
 ENV RAPIDOID_TMP=/tmp/rapidoid
-# Tue, 11 Jun 2019 17:06:37 GMT
+# Tue, 16 Jul 2019 00:19:29 GMT
 WORKDIR /opt
-# Tue, 11 Jun 2019 17:06:38 GMT
+# Tue, 16 Jul 2019 00:19:29 GMT
 EXPOSE 8888
-# Tue, 11 Jun 2019 17:06:38 GMT
+# Tue, 16 Jul 2019 00:19:30 GMT
 VOLUME [/data]
-# Tue, 11 Jun 2019 17:06:38 GMT
+# Tue, 16 Jul 2019 00:19:30 GMT
 ENV RAPIDOID_VERSION=5.4.6
-# Tue, 11 Jun 2019 17:06:39 GMT
+# Tue, 16 Jul 2019 00:19:30 GMT
 ENV RAPIDOID_URL=https://repo1.maven.org/maven2/org/rapidoid/rapidoid-platform/5.4.6/rapidoid-platform-5.4.6.jar
-# Tue, 11 Jun 2019 17:06:39 GMT
+# Tue, 16 Jul 2019 00:19:30 GMT
 COPY file:54eb4a0f21aca6721ebea0745a2cbfeb12c799c7a0902f588f490fc0afa8e8ea in /opt/ 
-# Tue, 11 Jun 2019 17:06:57 GMT
+# Tue, 16 Jul 2019 00:19:39 GMT
 RUN set -xe     && apt-get update     && apt-get install -y --no-install-recommends         ca-certificates curl dirmngr gnupg     && mkdir /platform     && mkdir -p "$RAPIDOID_TMP" 	&& curl -SL "$RAPIDOID_URL" -o $RAPIDOID_JAR 	&& curl -SL "$RAPIDOID_URL.asc" -o $RAPIDOID_JAR.asc 	&& export GNUPGHOME="$(mktemp -d)" 	&& gpg --keyserver ha.pool.sks-keyservers.net --recv-keys $GPG_KEY 	&& gpg --batch --verify $RAPIDOID_JAR.asc $RAPIDOID_JAR 	&& rm -rf "$GNUPGHOME" 	&& rm "$RAPIDOID_JAR.asc" 	&& rm -rf /var/lib/apt/lists/*
-# Tue, 11 Jun 2019 17:06:57 GMT
+# Tue, 16 Jul 2019 00:19:39 GMT
 ENTRYPOINT ["/opt/entrypoint.sh"]
 ```
 
 -	Layers:
-	-	`sha256:fc7181108d403205fda45b28dbddfa1cf07e772fa41244e44f53a341b8b1893d`  
-		Last Modified: Mon, 10 Jun 2019 23:28:08 GMT  
-		Size: 22.5 MB (22489302 bytes)  
+	-	`sha256:f5d23c7fed465a9eb762fc4c3cccd551a05914aba42492ceb972497db4df38bf`  
+		Last Modified: Tue, 09 Jul 2019 21:38:23 GMT  
+		Size: 27.1 MB (27094119 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:73f08ce352c86de44048828a8c20f22011f46efd4d03cab7269354f97b131688`  
-		Last Modified: Tue, 11 Jun 2019 07:23:33 GMT  
-		Size: 2.9 MB (2905854 bytes)  
+	-	`sha256:eaa7ca9a16a13938523593cf83f34b47a2927f0ef29aa36f14fc4051b4fcf26a`  
+		Last Modified: Mon, 15 Jul 2019 23:53:26 GMT  
+		Size: 3.2 MB (3247322 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:eac271a34b404ba767f634cb690410caaec27aa4e5f1b1bc1c8b73ef11f343c0`  
-		Last Modified: Tue, 11 Jun 2019 07:24:50 GMT  
-		Size: 220.0 B  
+	-	`sha256:57f21f30136f416f9ef715ac6406f7467773280fa77821b553ba178c9a246746`  
+		Last Modified: Mon, 15 Jul 2019 23:53:59 GMT  
+		Size: 210.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:9ba0eff2619227518a10d996a7be0abadb807b670019cec49d95ee300ae1d0fa`  
-		Last Modified: Tue, 11 Jun 2019 07:25:50 GMT  
-		Size: 40.4 MB (40377599 bytes)  
+	-	`sha256:ba3b378b20aa512f8716de2f357adb2eade389956270a45b4ad6f253835963f9`  
+		Last Modified: Mon, 15 Jul 2019 23:54:31 GMT  
+		Size: 40.4 MB (40373262 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:34f25d149961f7c8b517244a73bb71a757e501a4fb501d177be15bb1c329481d`  
-		Last Modified: Tue, 11 Jun 2019 17:07:11 GMT  
-		Size: 367.0 B  
+	-	`sha256:c9545b37a9fcb7619608c5e2a55f3fd7c1bbdcbdc2478afdbe0c6d6d7e146146`  
+		Last Modified: Tue, 16 Jul 2019 00:19:50 GMT  
+		Size: 366.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:dc646ee172f387719e3eeb3bb113264ee439c85e5d90dfee549ab7c63e5eae9c`  
-		Last Modified: Tue, 11 Jun 2019 17:07:14 GMT  
-		Size: 17.6 MB (17625900 bytes)  
+	-	`sha256:b0ea86f322fe0cd8b9aa3aca3c8eb97ebd300ec8e5a04e1836c4ebd13c30767c`  
+		Last Modified: Tue, 16 Jul 2019 00:19:51 GMT  
+		Size: 15.5 MB (15473643 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `rapidoid:5` - linux; arm64 variant v8
@@ -199,7 +199,7 @@ ENTRYPOINT ["/opt/entrypoint.sh"]
 ## `rapidoid:5.4`
 
 ```console
-$ docker pull rapidoid@sha256:ae7f24bf31e2201d028085a7b3fd5b83a4700fafbec4826a7f7975e4f9a618e6
+$ docker pull rapidoid@sha256:8f3525451dc51fc84fe16c3a2a438053167f470801cb2131fe69348adcc8fbd9
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -210,89 +210,89 @@ $ docker pull rapidoid@sha256:ae7f24bf31e2201d028085a7b3fd5b83a4700fafbec4826a7f
 ### `rapidoid:5.4` - linux; amd64
 
 ```console
-$ docker pull rapidoid@sha256:3eab3390ec4548bb06431df268a4b34b3c8179d88d179b6f516f9c75aa960578
+$ docker pull rapidoid@sha256:c8e7f1da8d1e8db6a55e3eaf0e6ed845d5a4d8c0e6b0a25636221b817019602a
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **83.4 MB (83399242 bytes)**  
+-	Total Size: **86.2 MB (86188922 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:f8558d09207ac8045faf46d25a0f1dc214a8527e6aa9e3898d2a76a8c2792996`
+-	Image ID: `sha256:c429eaf60dbaef9a575ca2da9b637f40bb18e88067b8e638d3a075845f6fea93`
 -	Entrypoint: `["\/opt\/entrypoint.sh"]`
 
 ```dockerfile
-# Mon, 10 Jun 2019 23:24:23 GMT
-ADD file:5ffb798d64089418ef4d3a261df5ad7cfa038eb2ef778db2b92604ac87228d99 in / 
-# Mon, 10 Jun 2019 23:24:23 GMT
+# Tue, 09 Jul 2019 21:22:33 GMT
+ADD file:71ac26257198ecf6a4ea05f45e522de961543a965486dd49a86bd6aca8342026 in / 
+# Tue, 09 Jul 2019 21:22:33 GMT
 CMD ["bash"]
-# Tue, 11 Jun 2019 07:18:53 GMT
+# Mon, 15 Jul 2019 23:49:31 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		ca-certificates p11-kit 	; 	rm -rf /var/lib/apt/lists/*
-# Tue, 11 Jun 2019 07:18:53 GMT
+# Mon, 15 Jul 2019 23:49:31 GMT
 ENV LANG=C.UTF-8
-# Tue, 11 Jun 2019 07:20:07 GMT
+# Mon, 15 Jul 2019 23:50:04 GMT
 ENV JAVA_HOME=/usr/local/openjdk-8
-# Tue, 11 Jun 2019 07:20:07 GMT
+# Mon, 15 Jul 2019 23:50:04 GMT
 ENV PATH=/usr/local/openjdk-8/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Tue, 11 Jun 2019 07:20:08 GMT
+# Mon, 15 Jul 2019 23:50:05 GMT
 RUN { echo '#/bin/sh'; echo 'echo "$JAVA_HOME"'; } > /usr/local/bin/docker-java-home && chmod +x /usr/local/bin/docker-java-home && [ "$JAVA_HOME" = "$(docker-java-home)" ]
-# Tue, 11 Jun 2019 07:20:08 GMT
+# Mon, 15 Jul 2019 23:50:05 GMT
 ENV JAVA_VERSION=8u212-b04
-# Tue, 11 Jun 2019 07:21:09 GMT
+# Mon, 15 Jul 2019 23:50:32 GMT
 ENV JAVA_BASE_URL=https://github.com/AdoptOpenJDK/openjdk8-upstream-binaries/releases/download/jdk8u212-b04/OpenJDK8U-jre_
-# Tue, 11 Jun 2019 07:21:09 GMT
+# Mon, 15 Jul 2019 23:50:32 GMT
 ENV JAVA_URL_VERSION=8u212b04
-# Tue, 11 Jun 2019 07:21:29 GMT
+# Mon, 15 Jul 2019 23:50:44 GMT
 RUN set -eux; 		dpkgArch="$(dpkg --print-architecture)"; 	case "$dpkgArch" in 		amd64) upstreamArch='x64' ;; 		arm64) upstreamArch='aarch64' ;; 		*) echo >&2 "error: unsupported architecture: $dpkgArch" ;; 	esac; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		dirmngr 		gnupg 		wget 	; 	rm -rf /var/lib/apt/lists/*; 		wget -O openjdk.tgz.asc "${JAVA_BASE_URL}${upstreamArch}_linux_${JAVA_URL_VERSION}.tar.gz.sign"; 	wget -O openjdk.tgz "${JAVA_BASE_URL}${upstreamArch}_linux_${JAVA_URL_VERSION}.tar.gz" --progress=dot:giga; 		export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys CA5F11C6CE22644D42C6AC4492EF8D39DC13168F; 	gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys EAC843EBD3EFDB98CC772FADA5CD6035332FA671; 	gpg --batch --list-sigs --keyid-format 0xLONG CA5F11C6CE22644D42C6AC4492EF8D39DC13168F | grep '0xA5CD6035332FA671' | grep 'Andrew Haley'; 	gpg --batch --verify openjdk.tgz.asc openjdk.tgz; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME"; 		mkdir -p "$JAVA_HOME"; 	tar --extract 		--file openjdk.tgz 		--directory "$JAVA_HOME" 		--strip-components 1 		--no-same-owner 	; 	rm openjdk.tgz*; 			apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark > /dev/null; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 		{ 		echo '#!/usr/bin/env bash'; 		echo 'set -Eeuo pipefail'; 		echo 'if ! [ -d "$JAVA_HOME" ]; then echo >&2 "error: missing JAVA_HOME environment variable"; exit 1; fi'; 		echo 'cacertsFile=; for f in "$JAVA_HOME/lib/security/cacerts" "$JAVA_HOME/jre/lib/security/cacerts"; do if [ -e "$f" ]; then cacertsFile="$f"; break; fi; done'; 		echo 'if [ -z "$cacertsFile" ] || ! [ -f "$cacertsFile" ]; then echo >&2 "error: failed to find cacerts file in $JAVA_HOME"; exit 1; fi'; 		echo 'trust extract --overwrite --format=java-cacerts --filter=ca-anchors --purpose=server-auth "$cacertsFile"'; 	} > /etc/ca-certificates/update.d/docker-openjdk; 	chmod +x /etc/ca-certificates/update.d/docker-openjdk; 	/etc/ca-certificates/update.d/docker-openjdk; 		find "$JAVA_HOME/lib" -name '*.so' -exec dirname '{}' ';' | sort -u > /etc/ld.so.conf.d/docker-openjdk.conf; 	ldconfig; 		java -version
-# Tue, 11 Jun 2019 17:06:36 GMT
+# Tue, 16 Jul 2019 00:19:29 GMT
 MAINTAINER Nikolche Mihajlovski
-# Tue, 11 Jun 2019 17:06:37 GMT
+# Tue, 16 Jul 2019 00:19:29 GMT
 ENV GPG_KEY=E306FEF548C686C23DC00242B9B08D8F616EF49C
-# Tue, 11 Jun 2019 17:06:37 GMT
+# Tue, 16 Jul 2019 00:19:29 GMT
 ENV RAPIDOID_JAR=/opt/rapidoid.jar
-# Tue, 11 Jun 2019 17:06:37 GMT
+# Tue, 16 Jul 2019 00:19:29 GMT
 ENV RAPIDOID_TMP=/tmp/rapidoid
-# Tue, 11 Jun 2019 17:06:37 GMT
+# Tue, 16 Jul 2019 00:19:29 GMT
 WORKDIR /opt
-# Tue, 11 Jun 2019 17:06:38 GMT
+# Tue, 16 Jul 2019 00:19:29 GMT
 EXPOSE 8888
-# Tue, 11 Jun 2019 17:06:38 GMT
+# Tue, 16 Jul 2019 00:19:30 GMT
 VOLUME [/data]
-# Tue, 11 Jun 2019 17:06:38 GMT
+# Tue, 16 Jul 2019 00:19:30 GMT
 ENV RAPIDOID_VERSION=5.4.6
-# Tue, 11 Jun 2019 17:06:39 GMT
+# Tue, 16 Jul 2019 00:19:30 GMT
 ENV RAPIDOID_URL=https://repo1.maven.org/maven2/org/rapidoid/rapidoid-platform/5.4.6/rapidoid-platform-5.4.6.jar
-# Tue, 11 Jun 2019 17:06:39 GMT
+# Tue, 16 Jul 2019 00:19:30 GMT
 COPY file:54eb4a0f21aca6721ebea0745a2cbfeb12c799c7a0902f588f490fc0afa8e8ea in /opt/ 
-# Tue, 11 Jun 2019 17:06:57 GMT
+# Tue, 16 Jul 2019 00:19:39 GMT
 RUN set -xe     && apt-get update     && apt-get install -y --no-install-recommends         ca-certificates curl dirmngr gnupg     && mkdir /platform     && mkdir -p "$RAPIDOID_TMP" 	&& curl -SL "$RAPIDOID_URL" -o $RAPIDOID_JAR 	&& curl -SL "$RAPIDOID_URL.asc" -o $RAPIDOID_JAR.asc 	&& export GNUPGHOME="$(mktemp -d)" 	&& gpg --keyserver ha.pool.sks-keyservers.net --recv-keys $GPG_KEY 	&& gpg --batch --verify $RAPIDOID_JAR.asc $RAPIDOID_JAR 	&& rm -rf "$GNUPGHOME" 	&& rm "$RAPIDOID_JAR.asc" 	&& rm -rf /var/lib/apt/lists/*
-# Tue, 11 Jun 2019 17:06:57 GMT
+# Tue, 16 Jul 2019 00:19:39 GMT
 ENTRYPOINT ["/opt/entrypoint.sh"]
 ```
 
 -	Layers:
-	-	`sha256:fc7181108d403205fda45b28dbddfa1cf07e772fa41244e44f53a341b8b1893d`  
-		Last Modified: Mon, 10 Jun 2019 23:28:08 GMT  
-		Size: 22.5 MB (22489302 bytes)  
+	-	`sha256:f5d23c7fed465a9eb762fc4c3cccd551a05914aba42492ceb972497db4df38bf`  
+		Last Modified: Tue, 09 Jul 2019 21:38:23 GMT  
+		Size: 27.1 MB (27094119 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:73f08ce352c86de44048828a8c20f22011f46efd4d03cab7269354f97b131688`  
-		Last Modified: Tue, 11 Jun 2019 07:23:33 GMT  
-		Size: 2.9 MB (2905854 bytes)  
+	-	`sha256:eaa7ca9a16a13938523593cf83f34b47a2927f0ef29aa36f14fc4051b4fcf26a`  
+		Last Modified: Mon, 15 Jul 2019 23:53:26 GMT  
+		Size: 3.2 MB (3247322 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:eac271a34b404ba767f634cb690410caaec27aa4e5f1b1bc1c8b73ef11f343c0`  
-		Last Modified: Tue, 11 Jun 2019 07:24:50 GMT  
-		Size: 220.0 B  
+	-	`sha256:57f21f30136f416f9ef715ac6406f7467773280fa77821b553ba178c9a246746`  
+		Last Modified: Mon, 15 Jul 2019 23:53:59 GMT  
+		Size: 210.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:9ba0eff2619227518a10d996a7be0abadb807b670019cec49d95ee300ae1d0fa`  
-		Last Modified: Tue, 11 Jun 2019 07:25:50 GMT  
-		Size: 40.4 MB (40377599 bytes)  
+	-	`sha256:ba3b378b20aa512f8716de2f357adb2eade389956270a45b4ad6f253835963f9`  
+		Last Modified: Mon, 15 Jul 2019 23:54:31 GMT  
+		Size: 40.4 MB (40373262 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:34f25d149961f7c8b517244a73bb71a757e501a4fb501d177be15bb1c329481d`  
-		Last Modified: Tue, 11 Jun 2019 17:07:11 GMT  
-		Size: 367.0 B  
+	-	`sha256:c9545b37a9fcb7619608c5e2a55f3fd7c1bbdcbdc2478afdbe0c6d6d7e146146`  
+		Last Modified: Tue, 16 Jul 2019 00:19:50 GMT  
+		Size: 366.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:dc646ee172f387719e3eeb3bb113264ee439c85e5d90dfee549ab7c63e5eae9c`  
-		Last Modified: Tue, 11 Jun 2019 17:07:14 GMT  
-		Size: 17.6 MB (17625900 bytes)  
+	-	`sha256:b0ea86f322fe0cd8b9aa3aca3c8eb97ebd300ec8e5a04e1836c4ebd13c30767c`  
+		Last Modified: Tue, 16 Jul 2019 00:19:51 GMT  
+		Size: 15.5 MB (15473643 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `rapidoid:5.4` - linux; arm64 variant v8
@@ -388,7 +388,7 @@ ENTRYPOINT ["/opt/entrypoint.sh"]
 ## `rapidoid:5.4.6`
 
 ```console
-$ docker pull rapidoid@sha256:ae7f24bf31e2201d028085a7b3fd5b83a4700fafbec4826a7f7975e4f9a618e6
+$ docker pull rapidoid@sha256:8f3525451dc51fc84fe16c3a2a438053167f470801cb2131fe69348adcc8fbd9
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -399,89 +399,89 @@ $ docker pull rapidoid@sha256:ae7f24bf31e2201d028085a7b3fd5b83a4700fafbec4826a7f
 ### `rapidoid:5.4.6` - linux; amd64
 
 ```console
-$ docker pull rapidoid@sha256:3eab3390ec4548bb06431df268a4b34b3c8179d88d179b6f516f9c75aa960578
+$ docker pull rapidoid@sha256:c8e7f1da8d1e8db6a55e3eaf0e6ed845d5a4d8c0e6b0a25636221b817019602a
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **83.4 MB (83399242 bytes)**  
+-	Total Size: **86.2 MB (86188922 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:f8558d09207ac8045faf46d25a0f1dc214a8527e6aa9e3898d2a76a8c2792996`
+-	Image ID: `sha256:c429eaf60dbaef9a575ca2da9b637f40bb18e88067b8e638d3a075845f6fea93`
 -	Entrypoint: `["\/opt\/entrypoint.sh"]`
 
 ```dockerfile
-# Mon, 10 Jun 2019 23:24:23 GMT
-ADD file:5ffb798d64089418ef4d3a261df5ad7cfa038eb2ef778db2b92604ac87228d99 in / 
-# Mon, 10 Jun 2019 23:24:23 GMT
+# Tue, 09 Jul 2019 21:22:33 GMT
+ADD file:71ac26257198ecf6a4ea05f45e522de961543a965486dd49a86bd6aca8342026 in / 
+# Tue, 09 Jul 2019 21:22:33 GMT
 CMD ["bash"]
-# Tue, 11 Jun 2019 07:18:53 GMT
+# Mon, 15 Jul 2019 23:49:31 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		ca-certificates p11-kit 	; 	rm -rf /var/lib/apt/lists/*
-# Tue, 11 Jun 2019 07:18:53 GMT
+# Mon, 15 Jul 2019 23:49:31 GMT
 ENV LANG=C.UTF-8
-# Tue, 11 Jun 2019 07:20:07 GMT
+# Mon, 15 Jul 2019 23:50:04 GMT
 ENV JAVA_HOME=/usr/local/openjdk-8
-# Tue, 11 Jun 2019 07:20:07 GMT
+# Mon, 15 Jul 2019 23:50:04 GMT
 ENV PATH=/usr/local/openjdk-8/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Tue, 11 Jun 2019 07:20:08 GMT
+# Mon, 15 Jul 2019 23:50:05 GMT
 RUN { echo '#/bin/sh'; echo 'echo "$JAVA_HOME"'; } > /usr/local/bin/docker-java-home && chmod +x /usr/local/bin/docker-java-home && [ "$JAVA_HOME" = "$(docker-java-home)" ]
-# Tue, 11 Jun 2019 07:20:08 GMT
+# Mon, 15 Jul 2019 23:50:05 GMT
 ENV JAVA_VERSION=8u212-b04
-# Tue, 11 Jun 2019 07:21:09 GMT
+# Mon, 15 Jul 2019 23:50:32 GMT
 ENV JAVA_BASE_URL=https://github.com/AdoptOpenJDK/openjdk8-upstream-binaries/releases/download/jdk8u212-b04/OpenJDK8U-jre_
-# Tue, 11 Jun 2019 07:21:09 GMT
+# Mon, 15 Jul 2019 23:50:32 GMT
 ENV JAVA_URL_VERSION=8u212b04
-# Tue, 11 Jun 2019 07:21:29 GMT
+# Mon, 15 Jul 2019 23:50:44 GMT
 RUN set -eux; 		dpkgArch="$(dpkg --print-architecture)"; 	case "$dpkgArch" in 		amd64) upstreamArch='x64' ;; 		arm64) upstreamArch='aarch64' ;; 		*) echo >&2 "error: unsupported architecture: $dpkgArch" ;; 	esac; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		dirmngr 		gnupg 		wget 	; 	rm -rf /var/lib/apt/lists/*; 		wget -O openjdk.tgz.asc "${JAVA_BASE_URL}${upstreamArch}_linux_${JAVA_URL_VERSION}.tar.gz.sign"; 	wget -O openjdk.tgz "${JAVA_BASE_URL}${upstreamArch}_linux_${JAVA_URL_VERSION}.tar.gz" --progress=dot:giga; 		export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys CA5F11C6CE22644D42C6AC4492EF8D39DC13168F; 	gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys EAC843EBD3EFDB98CC772FADA5CD6035332FA671; 	gpg --batch --list-sigs --keyid-format 0xLONG CA5F11C6CE22644D42C6AC4492EF8D39DC13168F | grep '0xA5CD6035332FA671' | grep 'Andrew Haley'; 	gpg --batch --verify openjdk.tgz.asc openjdk.tgz; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME"; 		mkdir -p "$JAVA_HOME"; 	tar --extract 		--file openjdk.tgz 		--directory "$JAVA_HOME" 		--strip-components 1 		--no-same-owner 	; 	rm openjdk.tgz*; 			apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark > /dev/null; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 		{ 		echo '#!/usr/bin/env bash'; 		echo 'set -Eeuo pipefail'; 		echo 'if ! [ -d "$JAVA_HOME" ]; then echo >&2 "error: missing JAVA_HOME environment variable"; exit 1; fi'; 		echo 'cacertsFile=; for f in "$JAVA_HOME/lib/security/cacerts" "$JAVA_HOME/jre/lib/security/cacerts"; do if [ -e "$f" ]; then cacertsFile="$f"; break; fi; done'; 		echo 'if [ -z "$cacertsFile" ] || ! [ -f "$cacertsFile" ]; then echo >&2 "error: failed to find cacerts file in $JAVA_HOME"; exit 1; fi'; 		echo 'trust extract --overwrite --format=java-cacerts --filter=ca-anchors --purpose=server-auth "$cacertsFile"'; 	} > /etc/ca-certificates/update.d/docker-openjdk; 	chmod +x /etc/ca-certificates/update.d/docker-openjdk; 	/etc/ca-certificates/update.d/docker-openjdk; 		find "$JAVA_HOME/lib" -name '*.so' -exec dirname '{}' ';' | sort -u > /etc/ld.so.conf.d/docker-openjdk.conf; 	ldconfig; 		java -version
-# Tue, 11 Jun 2019 17:06:36 GMT
+# Tue, 16 Jul 2019 00:19:29 GMT
 MAINTAINER Nikolche Mihajlovski
-# Tue, 11 Jun 2019 17:06:37 GMT
+# Tue, 16 Jul 2019 00:19:29 GMT
 ENV GPG_KEY=E306FEF548C686C23DC00242B9B08D8F616EF49C
-# Tue, 11 Jun 2019 17:06:37 GMT
+# Tue, 16 Jul 2019 00:19:29 GMT
 ENV RAPIDOID_JAR=/opt/rapidoid.jar
-# Tue, 11 Jun 2019 17:06:37 GMT
+# Tue, 16 Jul 2019 00:19:29 GMT
 ENV RAPIDOID_TMP=/tmp/rapidoid
-# Tue, 11 Jun 2019 17:06:37 GMT
+# Tue, 16 Jul 2019 00:19:29 GMT
 WORKDIR /opt
-# Tue, 11 Jun 2019 17:06:38 GMT
+# Tue, 16 Jul 2019 00:19:29 GMT
 EXPOSE 8888
-# Tue, 11 Jun 2019 17:06:38 GMT
+# Tue, 16 Jul 2019 00:19:30 GMT
 VOLUME [/data]
-# Tue, 11 Jun 2019 17:06:38 GMT
+# Tue, 16 Jul 2019 00:19:30 GMT
 ENV RAPIDOID_VERSION=5.4.6
-# Tue, 11 Jun 2019 17:06:39 GMT
+# Tue, 16 Jul 2019 00:19:30 GMT
 ENV RAPIDOID_URL=https://repo1.maven.org/maven2/org/rapidoid/rapidoid-platform/5.4.6/rapidoid-platform-5.4.6.jar
-# Tue, 11 Jun 2019 17:06:39 GMT
+# Tue, 16 Jul 2019 00:19:30 GMT
 COPY file:54eb4a0f21aca6721ebea0745a2cbfeb12c799c7a0902f588f490fc0afa8e8ea in /opt/ 
-# Tue, 11 Jun 2019 17:06:57 GMT
+# Tue, 16 Jul 2019 00:19:39 GMT
 RUN set -xe     && apt-get update     && apt-get install -y --no-install-recommends         ca-certificates curl dirmngr gnupg     && mkdir /platform     && mkdir -p "$RAPIDOID_TMP" 	&& curl -SL "$RAPIDOID_URL" -o $RAPIDOID_JAR 	&& curl -SL "$RAPIDOID_URL.asc" -o $RAPIDOID_JAR.asc 	&& export GNUPGHOME="$(mktemp -d)" 	&& gpg --keyserver ha.pool.sks-keyservers.net --recv-keys $GPG_KEY 	&& gpg --batch --verify $RAPIDOID_JAR.asc $RAPIDOID_JAR 	&& rm -rf "$GNUPGHOME" 	&& rm "$RAPIDOID_JAR.asc" 	&& rm -rf /var/lib/apt/lists/*
-# Tue, 11 Jun 2019 17:06:57 GMT
+# Tue, 16 Jul 2019 00:19:39 GMT
 ENTRYPOINT ["/opt/entrypoint.sh"]
 ```
 
 -	Layers:
-	-	`sha256:fc7181108d403205fda45b28dbddfa1cf07e772fa41244e44f53a341b8b1893d`  
-		Last Modified: Mon, 10 Jun 2019 23:28:08 GMT  
-		Size: 22.5 MB (22489302 bytes)  
+	-	`sha256:f5d23c7fed465a9eb762fc4c3cccd551a05914aba42492ceb972497db4df38bf`  
+		Last Modified: Tue, 09 Jul 2019 21:38:23 GMT  
+		Size: 27.1 MB (27094119 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:73f08ce352c86de44048828a8c20f22011f46efd4d03cab7269354f97b131688`  
-		Last Modified: Tue, 11 Jun 2019 07:23:33 GMT  
-		Size: 2.9 MB (2905854 bytes)  
+	-	`sha256:eaa7ca9a16a13938523593cf83f34b47a2927f0ef29aa36f14fc4051b4fcf26a`  
+		Last Modified: Mon, 15 Jul 2019 23:53:26 GMT  
+		Size: 3.2 MB (3247322 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:eac271a34b404ba767f634cb690410caaec27aa4e5f1b1bc1c8b73ef11f343c0`  
-		Last Modified: Tue, 11 Jun 2019 07:24:50 GMT  
-		Size: 220.0 B  
+	-	`sha256:57f21f30136f416f9ef715ac6406f7467773280fa77821b553ba178c9a246746`  
+		Last Modified: Mon, 15 Jul 2019 23:53:59 GMT  
+		Size: 210.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:9ba0eff2619227518a10d996a7be0abadb807b670019cec49d95ee300ae1d0fa`  
-		Last Modified: Tue, 11 Jun 2019 07:25:50 GMT  
-		Size: 40.4 MB (40377599 bytes)  
+	-	`sha256:ba3b378b20aa512f8716de2f357adb2eade389956270a45b4ad6f253835963f9`  
+		Last Modified: Mon, 15 Jul 2019 23:54:31 GMT  
+		Size: 40.4 MB (40373262 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:34f25d149961f7c8b517244a73bb71a757e501a4fb501d177be15bb1c329481d`  
-		Last Modified: Tue, 11 Jun 2019 17:07:11 GMT  
-		Size: 367.0 B  
+	-	`sha256:c9545b37a9fcb7619608c5e2a55f3fd7c1bbdcbdc2478afdbe0c6d6d7e146146`  
+		Last Modified: Tue, 16 Jul 2019 00:19:50 GMT  
+		Size: 366.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:dc646ee172f387719e3eeb3bb113264ee439c85e5d90dfee549ab7c63e5eae9c`  
-		Last Modified: Tue, 11 Jun 2019 17:07:14 GMT  
-		Size: 17.6 MB (17625900 bytes)  
+	-	`sha256:b0ea86f322fe0cd8b9aa3aca3c8eb97ebd300ec8e5a04e1836c4ebd13c30767c`  
+		Last Modified: Tue, 16 Jul 2019 00:19:51 GMT  
+		Size: 15.5 MB (15473643 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `rapidoid:5.4.6` - linux; arm64 variant v8
@@ -577,7 +577,7 @@ ENTRYPOINT ["/opt/entrypoint.sh"]
 ## `rapidoid:latest`
 
 ```console
-$ docker pull rapidoid@sha256:ae7f24bf31e2201d028085a7b3fd5b83a4700fafbec4826a7f7975e4f9a618e6
+$ docker pull rapidoid@sha256:8f3525451dc51fc84fe16c3a2a438053167f470801cb2131fe69348adcc8fbd9
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -588,89 +588,89 @@ $ docker pull rapidoid@sha256:ae7f24bf31e2201d028085a7b3fd5b83a4700fafbec4826a7f
 ### `rapidoid:latest` - linux; amd64
 
 ```console
-$ docker pull rapidoid@sha256:3eab3390ec4548bb06431df268a4b34b3c8179d88d179b6f516f9c75aa960578
+$ docker pull rapidoid@sha256:c8e7f1da8d1e8db6a55e3eaf0e6ed845d5a4d8c0e6b0a25636221b817019602a
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **83.4 MB (83399242 bytes)**  
+-	Total Size: **86.2 MB (86188922 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:f8558d09207ac8045faf46d25a0f1dc214a8527e6aa9e3898d2a76a8c2792996`
+-	Image ID: `sha256:c429eaf60dbaef9a575ca2da9b637f40bb18e88067b8e638d3a075845f6fea93`
 -	Entrypoint: `["\/opt\/entrypoint.sh"]`
 
 ```dockerfile
-# Mon, 10 Jun 2019 23:24:23 GMT
-ADD file:5ffb798d64089418ef4d3a261df5ad7cfa038eb2ef778db2b92604ac87228d99 in / 
-# Mon, 10 Jun 2019 23:24:23 GMT
+# Tue, 09 Jul 2019 21:22:33 GMT
+ADD file:71ac26257198ecf6a4ea05f45e522de961543a965486dd49a86bd6aca8342026 in / 
+# Tue, 09 Jul 2019 21:22:33 GMT
 CMD ["bash"]
-# Tue, 11 Jun 2019 07:18:53 GMT
+# Mon, 15 Jul 2019 23:49:31 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		ca-certificates p11-kit 	; 	rm -rf /var/lib/apt/lists/*
-# Tue, 11 Jun 2019 07:18:53 GMT
+# Mon, 15 Jul 2019 23:49:31 GMT
 ENV LANG=C.UTF-8
-# Tue, 11 Jun 2019 07:20:07 GMT
+# Mon, 15 Jul 2019 23:50:04 GMT
 ENV JAVA_HOME=/usr/local/openjdk-8
-# Tue, 11 Jun 2019 07:20:07 GMT
+# Mon, 15 Jul 2019 23:50:04 GMT
 ENV PATH=/usr/local/openjdk-8/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Tue, 11 Jun 2019 07:20:08 GMT
+# Mon, 15 Jul 2019 23:50:05 GMT
 RUN { echo '#/bin/sh'; echo 'echo "$JAVA_HOME"'; } > /usr/local/bin/docker-java-home && chmod +x /usr/local/bin/docker-java-home && [ "$JAVA_HOME" = "$(docker-java-home)" ]
-# Tue, 11 Jun 2019 07:20:08 GMT
+# Mon, 15 Jul 2019 23:50:05 GMT
 ENV JAVA_VERSION=8u212-b04
-# Tue, 11 Jun 2019 07:21:09 GMT
+# Mon, 15 Jul 2019 23:50:32 GMT
 ENV JAVA_BASE_URL=https://github.com/AdoptOpenJDK/openjdk8-upstream-binaries/releases/download/jdk8u212-b04/OpenJDK8U-jre_
-# Tue, 11 Jun 2019 07:21:09 GMT
+# Mon, 15 Jul 2019 23:50:32 GMT
 ENV JAVA_URL_VERSION=8u212b04
-# Tue, 11 Jun 2019 07:21:29 GMT
+# Mon, 15 Jul 2019 23:50:44 GMT
 RUN set -eux; 		dpkgArch="$(dpkg --print-architecture)"; 	case "$dpkgArch" in 		amd64) upstreamArch='x64' ;; 		arm64) upstreamArch='aarch64' ;; 		*) echo >&2 "error: unsupported architecture: $dpkgArch" ;; 	esac; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		dirmngr 		gnupg 		wget 	; 	rm -rf /var/lib/apt/lists/*; 		wget -O openjdk.tgz.asc "${JAVA_BASE_URL}${upstreamArch}_linux_${JAVA_URL_VERSION}.tar.gz.sign"; 	wget -O openjdk.tgz "${JAVA_BASE_URL}${upstreamArch}_linux_${JAVA_URL_VERSION}.tar.gz" --progress=dot:giga; 		export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys CA5F11C6CE22644D42C6AC4492EF8D39DC13168F; 	gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys EAC843EBD3EFDB98CC772FADA5CD6035332FA671; 	gpg --batch --list-sigs --keyid-format 0xLONG CA5F11C6CE22644D42C6AC4492EF8D39DC13168F | grep '0xA5CD6035332FA671' | grep 'Andrew Haley'; 	gpg --batch --verify openjdk.tgz.asc openjdk.tgz; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME"; 		mkdir -p "$JAVA_HOME"; 	tar --extract 		--file openjdk.tgz 		--directory "$JAVA_HOME" 		--strip-components 1 		--no-same-owner 	; 	rm openjdk.tgz*; 			apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark > /dev/null; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 		{ 		echo '#!/usr/bin/env bash'; 		echo 'set -Eeuo pipefail'; 		echo 'if ! [ -d "$JAVA_HOME" ]; then echo >&2 "error: missing JAVA_HOME environment variable"; exit 1; fi'; 		echo 'cacertsFile=; for f in "$JAVA_HOME/lib/security/cacerts" "$JAVA_HOME/jre/lib/security/cacerts"; do if [ -e "$f" ]; then cacertsFile="$f"; break; fi; done'; 		echo 'if [ -z "$cacertsFile" ] || ! [ -f "$cacertsFile" ]; then echo >&2 "error: failed to find cacerts file in $JAVA_HOME"; exit 1; fi'; 		echo 'trust extract --overwrite --format=java-cacerts --filter=ca-anchors --purpose=server-auth "$cacertsFile"'; 	} > /etc/ca-certificates/update.d/docker-openjdk; 	chmod +x /etc/ca-certificates/update.d/docker-openjdk; 	/etc/ca-certificates/update.d/docker-openjdk; 		find "$JAVA_HOME/lib" -name '*.so' -exec dirname '{}' ';' | sort -u > /etc/ld.so.conf.d/docker-openjdk.conf; 	ldconfig; 		java -version
-# Tue, 11 Jun 2019 17:06:36 GMT
+# Tue, 16 Jul 2019 00:19:29 GMT
 MAINTAINER Nikolche Mihajlovski
-# Tue, 11 Jun 2019 17:06:37 GMT
+# Tue, 16 Jul 2019 00:19:29 GMT
 ENV GPG_KEY=E306FEF548C686C23DC00242B9B08D8F616EF49C
-# Tue, 11 Jun 2019 17:06:37 GMT
+# Tue, 16 Jul 2019 00:19:29 GMT
 ENV RAPIDOID_JAR=/opt/rapidoid.jar
-# Tue, 11 Jun 2019 17:06:37 GMT
+# Tue, 16 Jul 2019 00:19:29 GMT
 ENV RAPIDOID_TMP=/tmp/rapidoid
-# Tue, 11 Jun 2019 17:06:37 GMT
+# Tue, 16 Jul 2019 00:19:29 GMT
 WORKDIR /opt
-# Tue, 11 Jun 2019 17:06:38 GMT
+# Tue, 16 Jul 2019 00:19:29 GMT
 EXPOSE 8888
-# Tue, 11 Jun 2019 17:06:38 GMT
+# Tue, 16 Jul 2019 00:19:30 GMT
 VOLUME [/data]
-# Tue, 11 Jun 2019 17:06:38 GMT
+# Tue, 16 Jul 2019 00:19:30 GMT
 ENV RAPIDOID_VERSION=5.4.6
-# Tue, 11 Jun 2019 17:06:39 GMT
+# Tue, 16 Jul 2019 00:19:30 GMT
 ENV RAPIDOID_URL=https://repo1.maven.org/maven2/org/rapidoid/rapidoid-platform/5.4.6/rapidoid-platform-5.4.6.jar
-# Tue, 11 Jun 2019 17:06:39 GMT
+# Tue, 16 Jul 2019 00:19:30 GMT
 COPY file:54eb4a0f21aca6721ebea0745a2cbfeb12c799c7a0902f588f490fc0afa8e8ea in /opt/ 
-# Tue, 11 Jun 2019 17:06:57 GMT
+# Tue, 16 Jul 2019 00:19:39 GMT
 RUN set -xe     && apt-get update     && apt-get install -y --no-install-recommends         ca-certificates curl dirmngr gnupg     && mkdir /platform     && mkdir -p "$RAPIDOID_TMP" 	&& curl -SL "$RAPIDOID_URL" -o $RAPIDOID_JAR 	&& curl -SL "$RAPIDOID_URL.asc" -o $RAPIDOID_JAR.asc 	&& export GNUPGHOME="$(mktemp -d)" 	&& gpg --keyserver ha.pool.sks-keyservers.net --recv-keys $GPG_KEY 	&& gpg --batch --verify $RAPIDOID_JAR.asc $RAPIDOID_JAR 	&& rm -rf "$GNUPGHOME" 	&& rm "$RAPIDOID_JAR.asc" 	&& rm -rf /var/lib/apt/lists/*
-# Tue, 11 Jun 2019 17:06:57 GMT
+# Tue, 16 Jul 2019 00:19:39 GMT
 ENTRYPOINT ["/opt/entrypoint.sh"]
 ```
 
 -	Layers:
-	-	`sha256:fc7181108d403205fda45b28dbddfa1cf07e772fa41244e44f53a341b8b1893d`  
-		Last Modified: Mon, 10 Jun 2019 23:28:08 GMT  
-		Size: 22.5 MB (22489302 bytes)  
+	-	`sha256:f5d23c7fed465a9eb762fc4c3cccd551a05914aba42492ceb972497db4df38bf`  
+		Last Modified: Tue, 09 Jul 2019 21:38:23 GMT  
+		Size: 27.1 MB (27094119 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:73f08ce352c86de44048828a8c20f22011f46efd4d03cab7269354f97b131688`  
-		Last Modified: Tue, 11 Jun 2019 07:23:33 GMT  
-		Size: 2.9 MB (2905854 bytes)  
+	-	`sha256:eaa7ca9a16a13938523593cf83f34b47a2927f0ef29aa36f14fc4051b4fcf26a`  
+		Last Modified: Mon, 15 Jul 2019 23:53:26 GMT  
+		Size: 3.2 MB (3247322 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:eac271a34b404ba767f634cb690410caaec27aa4e5f1b1bc1c8b73ef11f343c0`  
-		Last Modified: Tue, 11 Jun 2019 07:24:50 GMT  
-		Size: 220.0 B  
+	-	`sha256:57f21f30136f416f9ef715ac6406f7467773280fa77821b553ba178c9a246746`  
+		Last Modified: Mon, 15 Jul 2019 23:53:59 GMT  
+		Size: 210.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:9ba0eff2619227518a10d996a7be0abadb807b670019cec49d95ee300ae1d0fa`  
-		Last Modified: Tue, 11 Jun 2019 07:25:50 GMT  
-		Size: 40.4 MB (40377599 bytes)  
+	-	`sha256:ba3b378b20aa512f8716de2f357adb2eade389956270a45b4ad6f253835963f9`  
+		Last Modified: Mon, 15 Jul 2019 23:54:31 GMT  
+		Size: 40.4 MB (40373262 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:34f25d149961f7c8b517244a73bb71a757e501a4fb501d177be15bb1c329481d`  
-		Last Modified: Tue, 11 Jun 2019 17:07:11 GMT  
-		Size: 367.0 B  
+	-	`sha256:c9545b37a9fcb7619608c5e2a55f3fd7c1bbdcbdc2478afdbe0c6d6d7e146146`  
+		Last Modified: Tue, 16 Jul 2019 00:19:50 GMT  
+		Size: 366.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:dc646ee172f387719e3eeb3bb113264ee439c85e5d90dfee549ab7c63e5eae9c`  
-		Last Modified: Tue, 11 Jun 2019 17:07:14 GMT  
-		Size: 17.6 MB (17625900 bytes)  
+	-	`sha256:b0ea86f322fe0cd8b9aa3aca3c8eb97ebd300ec8e5a04e1836c4ebd13c30767c`  
+		Last Modified: Tue, 16 Jul 2019 00:19:51 GMT  
+		Size: 15.5 MB (15473643 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `rapidoid:latest` - linux; arm64 variant v8
