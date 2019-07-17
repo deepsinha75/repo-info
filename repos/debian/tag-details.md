@@ -9727,7 +9727,7 @@ RUN echo 'deb http://deb.debian.org/debian stretch-backports main' > /etc/apt/so
 ## `debian:stretch-slim`
 
 ```console
-$ docker pull debian@sha256:cc5b2939a0030ddcb08b821fbf3b073661621ca86a811072ae409ebe240557df
+$ docker pull debian@sha256:0c04edb9ae10feb7ac03a659dd41e16c79e04fdb2b10cf93c3cbcef1fd6cc1d5
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -9743,27 +9743,27 @@ $ docker pull debian@sha256:cc5b2939a0030ddcb08b821fbf3b073661621ca86a811072ae40
 ### `debian:stretch-slim` - linux; amd64
 
 ```console
-$ docker pull debian@sha256:0b0812ea86a3fb77cbc6f23bec03097499dd99fe9845af01c7ba24d16170f3e3
+$ docker pull debian@sha256:86bad140e471ab1552e503af4a163a2de48ca5ac8d0a71877cda9ae727d39862
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **22.5 MB (22489302 bytes)**  
+-	Total Size: **22.5 MB (22489470 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:49ec158b98957083d01e03f8bf17202ab8bae6573b421c5cb89d5da80f9f5f3b`
+-	Image ID: `sha256:226ee7ba65a27fa2736fa25cc9fda5e295723609ae2677735671e584663383b7`
 -	Default Command: `["bash"]`
 
 ```dockerfile
-# Mon, 10 Jun 2019 23:24:23 GMT
-ADD file:5ffb798d64089418ef4d3a261df5ad7cfa038eb2ef778db2b92604ac87228d99 in / 
-# Mon, 10 Jun 2019 23:24:23 GMT
+# Tue, 09 Jul 2019 21:32:29 GMT
+ADD file:966bd7368f1e5a3e40fe5fab63ebe3c04719f677cc49385462e4dfda4c4096fb in / 
+# Tue, 09 Jul 2019 21:32:29 GMT
 CMD ["bash"]
 ```
 
 -	Layers:
-	-	`sha256:fc7181108d403205fda45b28dbddfa1cf07e772fa41244e44f53a341b8b1893d`  
-		Last Modified: Mon, 10 Jun 2019 23:28:08 GMT  
-		Size: 22.5 MB (22489302 bytes)  
+	-	`sha256:0a4690c5d889e116874bf45dc757b515565a3bd9b0f6c04054d62280bb4f4ecf`  
+		Last Modified: Tue, 09 Jul 2019 21:42:30 GMT  
+		Size: 22.5 MB (22489470 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `debian:stretch-slim` - linux; arm variant v5
