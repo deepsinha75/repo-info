@@ -260,14 +260,9 @@ Licenses: (parsed from: `/usr/share/doc/bash/copyright`)
 
 - `GPL-3`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris bash=4.3-14ubuntu1.3
-'http://archive.ubuntu.com/ubuntu/pool/main/b/bash/bash_4.3-14ubuntu1.3.dsc' bash_4.3-14ubuntu1.3.dsc 2371 SHA256:0befe0110a4febbd1fdcd6feba6be43d146c208611ab63ce8743b262a5ffa5db
-'http://archive.ubuntu.com/ubuntu/pool/main/b/bash/bash_4.3.orig.tar.gz' bash_4.3.orig.tar.gz 7516231 SHA256:b2fe79ddf9e7abdb4695e3070afa866d2a94a58d1cc9d731585330c753815491
-'http://archive.ubuntu.com/ubuntu/pool/main/b/bash/bash_4.3-14ubuntu1.3.debian.tar.xz' bash_4.3-14ubuntu1.3.debian.tar.xz 92988 SHA256:d123130587af5dd35ac45415e29c39e3a568426300c25a3d903ab8f4b86ef5d9
-```
 
 ### `dpkg` source package: `bzip2=1.0.6-8`
 
@@ -3683,14 +3678,9 @@ Binary Packages:
 If source is available (seen below), check the contents of `debian/copyright` within it.
 
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris nss=2:3.28.4-0ubuntu0.16.04.5
-'http://archive.ubuntu.com/ubuntu/pool/main/n/nss/nss_3.28.4-0ubuntu0.16.04.5.dsc' nss_3.28.4-0ubuntu0.16.04.5.dsc 2444 SHA256:36804816909f818b55693499858aefbb32116e9292c4df14f88bf28ae21379f1
-'http://archive.ubuntu.com/ubuntu/pool/main/n/nss/nss_3.28.4.orig.tar.gz' nss_3.28.4.orig.tar.gz 7453282 SHA256:d5d4761778b8d4c378b2174c9e13e7abd20a6961f557d4fcc029af723ffd7189
-'http://archive.ubuntu.com/ubuntu/pool/main/n/nss/nss_3.28.4-0ubuntu0.16.04.5.debian.tar.xz' nss_3.28.4-0ubuntu0.16.04.5.debian.tar.xz 40428 SHA256:9e12581b823991dbe1dc5858653561ec497611bccd12b3670821b41167bf27d7
-```
 
 ### `dpkg` source package: `numactl=2.0.11-1ubuntu1.1`
 
