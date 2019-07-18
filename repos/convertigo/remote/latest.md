@@ -1,7 +1,7 @@
 ## `convertigo:latest`
 
 ```console
-$ docker pull convertigo@sha256:ffd2d2ba5de51702d111211b1f52313dc483568e0a7fb40ac59e2f5a7e2fedab
+$ docker pull convertigo@sha256:cbc84c2d6b498a67af57c2f103099f39c97dbd08de6cb00df3b8592e5fff5599
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -11,14 +11,14 @@ $ docker pull convertigo@sha256:ffd2d2ba5de51702d111211b1f52313dc483568e0a7fb40a
 ### `convertigo:latest` - linux; amd64
 
 ```console
-$ docker pull convertigo@sha256:3ac14a3850602b9e0c82234b7bb5c6383502f821300477904ba59aafe17f670e
+$ docker pull convertigo@sha256:b1866f826f907489bb7bb0715c75e933f654d1fd0f5488494f9c33c6898c4340
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **363.0 MB (363041784 bytes)**  
+-	Total Size: **363.0 MB (363027535 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:c812a08714cad2af1bc217d92f3bba4c3c941f92f7935218fcc70c86dafac722`
+-	Image ID: `sha256:5591ad922fd7a7674af2601fec36ecec5a926fe76e11c882744a949c093b9b9d`
 -	Entrypoint: `["tini","--","\/docker-entrypoint.sh"]`
 -	Default Command: `["convertigo"]`
 
@@ -105,27 +105,27 @@ RUN export GNUPGHOME="$(mktemp -d)"   && ( gpg --batch --keyserver ha.pool.sks-k
 RUN useradd -s /bin/false -m convertigo     && mkdir -p /workspace/lib /workspace/classes     && chown -R convertigo:convertigo /workspace
 # Thu, 18 Jul 2019 04:16:34 GMT
 RUN sed -i.bak         -e '/protocol="AJP/d'         -e '/AprLifecycleListener/d'         -e '/JasperListener/d'         -e 's/port="8080"/port="28080" maxThreads="64000" relaxedQueryChars="{}[]|"/'         conf/server.xml     && sed -i.bak         -e 's,<Context>,<Context sessionCookiePath="/">,'         conf/context.xml     && rm -rf webapps/* bin/*.bat conf/server.xml.bak /tmp/*     && mkdir webapps/ROOT     && chown -R convertigo:convertigo conf temp work logs     && chmod -w conf/*
-# Thu, 18 Jul 2019 04:16:34 GMT
-ENV CONVERTIGO_VERSION=7.6.0
-# Thu, 18 Jul 2019 04:16:35 GMT
-ENV CONVERTIGO_WAR_URL=https://github.com/convertigo/convertigo/releases/download/7.6.0/convertigo-7.6.0.war
-# Thu, 18 Jul 2019 04:16:35 GMT
+# Thu, 18 Jul 2019 16:20:05 GMT
+ENV CONVERTIGO_VERSION=7.6.1
+# Thu, 18 Jul 2019 16:20:06 GMT
+ENV CONVERTIGO_WAR_URL=https://github.com/convertigo/convertigo/releases/download/7.6.1/convertigo-7.6.1.war
+# Thu, 18 Jul 2019 16:20:06 GMT
 ENV CONVERTIGO_GPG_KEYS=6A7779BB78FE368DF74B708FD4DA8FBEB64BF75F
-# Thu, 18 Jul 2019 04:16:43 GMT
+# Thu, 18 Jul 2019 16:20:15 GMT
 RUN export GNUPGHOME="$(mktemp -d)"     && ( gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys "$CONVERTIGO_GPG_KEYS"     || gpg --batch --keyserver pgp.mit.edu --recv-keys "$CONVERTIGO_GPG_KEYS"     || gpg --batch --keyserver keyserver.ubuntu.com --recv-keys "$CONVERTIGO_GPG_KEYS"     || gpg --batch --keyserver keyserver.pgp.com --recv-keys "$CONVERTIGO_GPG_KEYS" )     && curl -fSL -o /tmp/convertigo.war $CONVERTIGO_WAR_URL     && curl -fSL -o /tmp/convertigo.war.asc $CONVERTIGO_WAR_URL.asc     && gpg --batch --verify /tmp/convertigo.war.asc /tmp/convertigo.war     && mkdir -p webapps/ROOT webapps/convertigo     && (cd webapps/convertigo         && unzip -q /tmp/convertigo.war         && (chmod -f a+x WEB-INF/xvnc/* || true)         && (test "$(dpkg --print-architecture)" != "i386" && rm -rf WEB-INF/xulrunner WEB-INF/xvnc WEB-INF/lib/swt_* || true)         && rm -rf /tmp/*)
-# Thu, 18 Jul 2019 04:16:44 GMT
+# Thu, 18 Jul 2019 16:20:16 GMT
 COPY file:394d5b837e94d77b6fb87e0ca8bd50995186aaed1c5f3ab5bc0b482f0f769cc3 in webapps/ROOT/index.html 
-# Thu, 18 Jul 2019 04:16:44 GMT
+# Thu, 18 Jul 2019 16:20:16 GMT
 COPY file:3d23b363cb8f7ffd88d633de8278160be5d335114421b973b9b7c4009f618dd9 in / 
-# Thu, 18 Jul 2019 04:16:44 GMT
+# Thu, 18 Jul 2019 16:20:16 GMT
 WORKDIR /workspace
-# Thu, 18 Jul 2019 04:16:44 GMT
+# Thu, 18 Jul 2019 16:20:16 GMT
 VOLUME [/workspace]
-# Thu, 18 Jul 2019 04:16:44 GMT
+# Thu, 18 Jul 2019 16:20:16 GMT
 EXPOSE 28080
-# Thu, 18 Jul 2019 04:16:44 GMT
+# Thu, 18 Jul 2019 16:20:16 GMT
 ENTRYPOINT ["tini" "--" "/docker-entrypoint.sh"]
-# Thu, 18 Jul 2019 04:16:45 GMT
+# Thu, 18 Jul 2019 16:20:17 GMT
 CMD ["convertigo"]
 ```
 
@@ -186,15 +186,15 @@ CMD ["convertigo"]
 		Last Modified: Thu, 18 Jul 2019 04:17:30 GMT  
 		Size: 26.4 KB (26368 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:a6eb3b35dacea55dc595536e08e5b180455e8c527b8f463cea13549641eac480`  
-		Last Modified: Thu, 18 Jul 2019 04:17:38 GMT  
-		Size: 132.3 MB (132332100 bytes)  
+	-	`sha256:43316ae3438b84a2631ba48c181a552caabbaa2c9f6b1a0153b42ecb6bd2e86a`  
+		Last Modified: Thu, 18 Jul 2019 16:20:56 GMT  
+		Size: 132.3 MB (132317849 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:70790f249ac35930059cd6648a165c83ed688794aff0280c2af8054dc03c091b`  
-		Last Modified: Thu, 18 Jul 2019 04:17:29 GMT  
+	-	`sha256:c07bf9be5e5d5e8e9ca6c2cc6a6fe9735ccde57da05190f0e5078e8a78ab2f99`  
+		Last Modified: Thu, 18 Jul 2019 16:20:46 GMT  
 		Size: 467.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:2e6581d534629a03d5617ab620988636491afa2af14049bc477d1705b42191c2`  
-		Last Modified: Thu, 18 Jul 2019 04:17:29 GMT  
-		Size: 1.1 KB (1147 bytes)  
+	-	`sha256:bc55947cf72b5074f24a2c388d07dd02944f426b4b654045ec1724a0256efa25`  
+		Last Modified: Thu, 18 Jul 2019 16:20:46 GMT  
+		Size: 1.1 KB (1149 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
