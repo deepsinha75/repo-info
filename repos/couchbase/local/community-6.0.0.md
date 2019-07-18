@@ -183,14 +183,9 @@ Licenses: (parsed from: `/usr/share/doc/bash/copyright`)
 
 - `GPL-3`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris bash=4.3-14ubuntu1.3
-'http://archive.ubuntu.com/ubuntu/pool/main/b/bash/bash_4.3-14ubuntu1.3.dsc' bash_4.3-14ubuntu1.3.dsc 2371 SHA256:0befe0110a4febbd1fdcd6feba6be43d146c208611ab63ce8743b262a5ffa5db
-'http://archive.ubuntu.com/ubuntu/pool/main/b/bash/bash_4.3.orig.tar.gz' bash_4.3.orig.tar.gz 7516231 SHA256:b2fe79ddf9e7abdb4695e3070afa866d2a94a58d1cc9d731585330c753815491
-'http://archive.ubuntu.com/ubuntu/pool/main/b/bash/bash_4.3-14ubuntu1.3.debian.tar.xz' bash_4.3-14ubuntu1.3.debian.tar.xz 92988 SHA256:d123130587af5dd35ac45415e29c39e3a568426300c25a3d903ab8f4b86ef5d9
-```
 
 ### `dpkg` source package: `bzip2=1.0.6-8`
 
