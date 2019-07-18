@@ -27,6 +27,7 @@
 -	[`websphere-liberty:latest`](#websphere-libertylatest)
 -	[`websphere-liberty:microProfile1`](#websphere-libertymicroprofile1)
 -	[`websphere-liberty:microProfile2`](#websphere-libertymicroprofile2)
+-	[`websphere-liberty:microProfile3`](#websphere-libertymicroprofile3)
 -	[`websphere-liberty:springBoot1`](#websphere-libertyspringboot1)
 -	[`websphere-liberty:springBoot2`](#websphere-libertyspringboot2)
 -	[`websphere-liberty:webProfile7`](#websphere-libertywebprofile7)
@@ -14328,6 +14329,10 @@ COPY --chown=1001:0file:c77f9f566773f5ad37049c164b44d6eb1acdf61d248cb27e358facac
 		Last Modified: Fri, 28 Jun 2019 21:28:17 GMT  
 		Size: 572.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+
+## `websphere-liberty:microProfile3`
+
+**does not exist** (yet?)
 
 ## `websphere-liberty:springBoot1`
 
