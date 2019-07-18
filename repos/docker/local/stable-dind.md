@@ -1,9 +1,9 @@
-# `docker:18.09.7-dind`
+# `docker:18.09.8-dind`
 
 ## Docker Metadata
 
-- Image ID: `sha256:25a1e57c774167d28c44d88fa296f3e1122c6d79e99b98653c899b170393bbd6`
-- Created: `2019-07-11T22:45:51.483428939Z`
+- Image ID: `sha256:1dce3b128394b9bd923bf49a8c22caece7ed19da755d6b63610310886e0df018`
+- Created: `2019-07-18T01:23:04.602306665Z`
 - Virtual Size: ~ 184.38 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
@@ -11,7 +11,7 @@
 - Environment:
   - `PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
   - `DOCKER_CHANNEL=stable`
-  - `DOCKER_VERSION=18.09.7`
+  - `DOCKER_VERSION=18.09.8`
   - `DIND_COMMIT=37498f009d8bf25fbb6199e8ccd34bed84f2874b`
 
 ## `apk` (`.apk`-based packages)
@@ -206,16 +206,16 @@ GPL-2.0-or-later
 ### `apk` package: `keyutils-libs`
 
 ```console
-keyutils-libs-1.6-r0 description:
+keyutils-libs-1.6-r1 description:
 Key utilities library
 
-keyutils-libs-1.6-r0 webpage:
+keyutils-libs-1.6-r1 webpage:
 http://people.redhat.com/~dhowells/keyutils/
 
-keyutils-libs-1.6-r0 installed size:
+keyutils-libs-1.6-r1 installed size:
 36864
 
-keyutils-libs-1.6-r0 license:
+keyutils-libs-1.6-r1 license:
 GPL-2.0-or-later LGPL-2.0-or-later
 
 ```
