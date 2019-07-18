@@ -2,9 +2,9 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:81290d184cf358403c9afc208fbff2417a68d563d4e5d0edfff33387793c9aae`
-- Created: `2019-07-13T16:26:53.592232428Z`
-- Virtual Size: ~ 161.18 Mb  
+- Image ID: `sha256:af4e224c5edde70db955cbe23a7155cd2becd7a381d6096f6f6560e981ab0333`
+- Created: `2019-07-18T01:07:57.694488632Z`
+- Virtual Size: ~ 157.36 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Command: `["hy"]`
@@ -1110,37 +1110,12 @@ Other potentially useful URLs:
 - https://sources.debian.net/src/netbase/5.4/debian/copyright/ (for direct copyright/license information)
 - http://snapshot.debian.org/package/netbase/5.4/ (for access to the source package after it no longer exists in the archive)
 
-### `dpkg` source package: `openssl=1.1.0j-1~deb9u1`
-
-Binary Packages:
-
-- `openssl=1.1.0j-1~deb9u1`
-
-**WARNING:** unable to detect licenses! (package likely not compliant with DEP-5)  
-If source is available (seen below), check the contents of `debian/copyright` within it.
-
-
-Source:
-
-```console
-$ apt-get source -qq --print-uris openssl=1.1.0j-1~deb9u1
-'http://deb.debian.org/debian/pool/main/o/openssl/openssl_1.1.0j-1~deb9u1.dsc' openssl_1.1.0j-1~deb9u1.dsc 2611 SHA256:3c4f9e2af00c7595218d05d09635746f7edfd13b6c08b6266cd386b195c7889b
-'http://deb.debian.org/debian/pool/main/o/openssl/openssl_1.1.0j.orig.tar.gz' openssl_1.1.0j.orig.tar.gz 5411919 SHA256:31bec6c203ce1a8e93d5994f4ed304c63ccf07676118b6634edded12ad1b3246
-'http://deb.debian.org/debian/pool/main/o/openssl/openssl_1.1.0j.orig.tar.gz.asc' openssl_1.1.0j.orig.tar.gz.asc 488 SHA256:e162322dce0b98f92401a48ba5f088ded64ee308a54580ed9edc3edafd85eebf
-'http://deb.debian.org/debian/pool/main/o/openssl/openssl_1.1.0j-1~deb9u1.debian.tar.xz' openssl_1.1.0j-1~deb9u1.debian.tar.xz 71944 SHA256:737db70af006b984b914ba63ac8cbf012cb0db43df5e31f7dfa95d0b5890910b
-```
-
-Other potentially useful URLs:
-
-- https://sources.debian.net/src/openssl/1.1.0j-1~deb9u1/ (for browsing the source)
-- https://sources.debian.net/src/openssl/1.1.0j-1~deb9u1/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/openssl/1.1.0j-1~deb9u1/ (for access to the source package after it no longer exists in the archive)
-
 ### `dpkg` source package: `openssl=1.1.0k-1~deb9u1`
 
 Binary Packages:
 
 - `libssl1.1:amd64=1.1.0k-1~deb9u1`
+- `openssl=1.1.0k-1~deb9u1`
 
 **WARNING:** unable to detect licenses! (package likely not compliant with DEP-5)  
 If source is available (seen below), check the contents of `debian/copyright` within it.
