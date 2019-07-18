@@ -1,7 +1,7 @@
 ## `openjdk:11-jdk-stretch`
 
 ```console
-$ docker pull openjdk@sha256:77afb1666053d9fdc05e047ffefb72e2610ad4e929630e1aa5390b38cd123e27
+$ docker pull openjdk@sha256:2f0f997165c1fc227cfc003a298ae87269de73ec59ac2be352cd865493447198
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -12,14 +12,14 @@ $ docker pull openjdk@sha256:77afb1666053d9fdc05e047ffefb72e2610ad4e929630e1aa53
 ### `openjdk:11-jdk-stretch` - linux; amd64
 
 ```console
-$ docker pull openjdk@sha256:304d9a1e3bcd71bcd3a6358c62fb5b1f50a531478f341abab48056d5f653288a
+$ docker pull openjdk@sha256:9aa6a3210d3cf270a713a8cf7e24eb82733b9e3f68b6217383e4071f04a7d094
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **310.4 MB (310417511 bytes)**  
+-	Total Size: **311.2 MB (311185643 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:b90bb19c4cb1021d74054b0175fa30b3df6b5bdadfb8660bff71ae24d151cffc`
+-	Image ID: `sha256:eadb8186892521b8526001409a495789270858e93ad5eb15c1ea7fa6ab1fd329`
 -	Default Command: `["jshell"]`
 
 ```dockerfile
@@ -43,15 +43,15 @@ ENV JAVA_HOME=/usr/local/openjdk-11
 ENV PATH=/usr/local/openjdk-11/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
 # Wed, 10 Jul 2019 03:58:48 GMT
 RUN { echo '#/bin/sh'; echo 'echo "$JAVA_HOME"'; } > /usr/local/bin/docker-java-home && chmod +x /usr/local/bin/docker-java-home && [ "$JAVA_HOME" = "$(docker-java-home)" ]
-# Wed, 10 Jul 2019 03:58:49 GMT
-ENV JAVA_VERSION=11.0.3
-# Wed, 10 Jul 2019 03:58:49 GMT
-ENV JAVA_BASE_URL=https://github.com/AdoptOpenJDK/openjdk11-upstream-binaries/releases/download/jdk-11.0.3%2B7/OpenJDK11U-
-# Wed, 10 Jul 2019 03:58:49 GMT
-ENV JAVA_URL_VERSION=11.0.3_7
-# Wed, 10 Jul 2019 03:59:08 GMT
+# Wed, 17 Jul 2019 22:13:27 GMT
+ENV JAVA_VERSION=11.0.4
+# Wed, 17 Jul 2019 22:13:27 GMT
+ENV JAVA_BASE_URL=https://github.com/AdoptOpenJDK/openjdk11-upstream-binaries/releases/download/jdk-11.0.4%2B11/OpenJDK11U-jdk_
+# Wed, 17 Jul 2019 22:13:27 GMT
+ENV JAVA_URL_VERSION=11.0.4_11
+# Wed, 17 Jul 2019 22:13:41 GMT
 RUN set -eux; 		dpkgArch="$(dpkg --print-architecture)"; 	case "$dpkgArch" in 		amd64) upstreamArch='x64' ;; 		arm64) upstreamArch='aarch64' ;; 		*) echo >&2 "error: unsupported architecture: $dpkgArch" ;; 	esac; 		wget -O openjdk.tgz.asc "${JAVA_BASE_URL}${upstreamArch}_linux_${JAVA_URL_VERSION}.tar.gz.sign"; 	wget -O openjdk.tgz "${JAVA_BASE_URL}${upstreamArch}_linux_${JAVA_URL_VERSION}.tar.gz" --progress=dot:giga; 		export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys CA5F11C6CE22644D42C6AC4492EF8D39DC13168F; 	gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys EAC843EBD3EFDB98CC772FADA5CD6035332FA671; 	gpg --batch --list-sigs --keyid-format 0xLONG CA5F11C6CE22644D42C6AC4492EF8D39DC13168F | grep '0xA5CD6035332FA671' | grep 'Andrew Haley'; 	gpg --batch --verify openjdk.tgz.asc openjdk.tgz; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME"; 		mkdir -p "$JAVA_HOME"; 	tar --extract 		--file openjdk.tgz 		--directory "$JAVA_HOME" 		--strip-components 1 		--no-same-owner 	; 	rm openjdk.tgz*; 			{ 		echo '#!/usr/bin/env bash'; 		echo 'set -Eeuo pipefail'; 		echo 'if ! [ -d "$JAVA_HOME" ]; then echo >&2 "error: missing JAVA_HOME environment variable"; exit 1; fi'; 		echo 'cacertsFile=; for f in "$JAVA_HOME/lib/security/cacerts" "$JAVA_HOME/jre/lib/security/cacerts"; do if [ -e "$f" ]; then cacertsFile="$f"; break; fi; done'; 		echo 'if [ -z "$cacertsFile" ] || ! [ -f "$cacertsFile" ]; then echo >&2 "error: failed to find cacerts file in $JAVA_HOME"; exit 1; fi'; 		echo 'trust extract --overwrite --format=java-cacerts --filter=ca-anchors --purpose=server-auth "$cacertsFile"'; 	} > /etc/ca-certificates/update.d/docker-openjdk; 	chmod +x /etc/ca-certificates/update.d/docker-openjdk; 	/etc/ca-certificates/update.d/docker-openjdk; 		find "$JAVA_HOME/lib" -name '*.so' -exec dirname '{}' ';' | sort -u > /etc/ld.so.conf.d/docker-openjdk.conf; 	ldconfig; 		javac --version; 	java --version
-# Wed, 10 Jul 2019 03:59:09 GMT
+# Wed, 17 Jul 2019 22:13:41 GMT
 CMD ["jshell"]
 ```
 
@@ -80,22 +80,22 @@ CMD ["jshell"]
 		Last Modified: Wed, 10 Jul 2019 04:00:54 GMT  
 		Size: 220.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:157b5e84689cf345641f87e01134f30e15227662e2d3861a690dee85a951f3f7`  
-		Last Modified: Wed, 10 Jul 2019 04:01:17 GMT  
-		Size: 195.0 MB (194950700 bytes)  
+	-	`sha256:d65ffa22c95777b4f60c7a1220e11207784c0aabe8d61563079be91cb1f0fc89`  
+		Last Modified: Wed, 17 Jul 2019 22:17:23 GMT  
+		Size: 195.7 MB (195718832 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `openjdk:11-jdk-stretch` - linux; arm64 variant v8
 
 ```console
-$ docker pull openjdk@sha256:e5d754ba3431807894bb685d55fbf42d3391b9764709d1c084d6001fb3692945
+$ docker pull openjdk@sha256:49863f3e2a0311e89e41c985d366d345e700b7a58f4772215196caba6ba1d5a7
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **302.4 MB (302374214 bytes)**  
+-	Total Size: **303.2 MB (303155866 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:db379ee3ba52b18d8044fd03ae99607f0e472a012d24aab329508ac988c195c7`
+-	Image ID: `sha256:97a5c4c7133a85e7132eba8e7ab55480ca10a03a6dc9896a62cd2e153edca2b9`
 -	Default Command: `["jshell"]`
 
 ```dockerfile
@@ -119,15 +119,15 @@ ENV JAVA_HOME=/usr/local/openjdk-11
 ENV PATH=/usr/local/openjdk-11/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
 # Wed, 10 Jul 2019 03:43:32 GMT
 RUN { echo '#/bin/sh'; echo 'echo "$JAVA_HOME"'; } > /usr/local/bin/docker-java-home && chmod +x /usr/local/bin/docker-java-home && [ "$JAVA_HOME" = "$(docker-java-home)" ]
-# Wed, 10 Jul 2019 03:43:32 GMT
-ENV JAVA_VERSION=11.0.3
-# Wed, 10 Jul 2019 03:43:33 GMT
-ENV JAVA_BASE_URL=https://github.com/AdoptOpenJDK/openjdk11-upstream-binaries/releases/download/jdk-11.0.3%2B7/OpenJDK11U-
-# Wed, 10 Jul 2019 03:43:33 GMT
-ENV JAVA_URL_VERSION=11.0.3_7
-# Wed, 10 Jul 2019 03:43:59 GMT
+# Wed, 17 Jul 2019 22:41:50 GMT
+ENV JAVA_VERSION=11.0.4
+# Wed, 17 Jul 2019 22:41:50 GMT
+ENV JAVA_BASE_URL=https://github.com/AdoptOpenJDK/openjdk11-upstream-binaries/releases/download/jdk-11.0.4%2B11/OpenJDK11U-jdk_
+# Wed, 17 Jul 2019 22:41:51 GMT
+ENV JAVA_URL_VERSION=11.0.4_11
+# Wed, 17 Jul 2019 22:42:14 GMT
 RUN set -eux; 		dpkgArch="$(dpkg --print-architecture)"; 	case "$dpkgArch" in 		amd64) upstreamArch='x64' ;; 		arm64) upstreamArch='aarch64' ;; 		*) echo >&2 "error: unsupported architecture: $dpkgArch" ;; 	esac; 		wget -O openjdk.tgz.asc "${JAVA_BASE_URL}${upstreamArch}_linux_${JAVA_URL_VERSION}.tar.gz.sign"; 	wget -O openjdk.tgz "${JAVA_BASE_URL}${upstreamArch}_linux_${JAVA_URL_VERSION}.tar.gz" --progress=dot:giga; 		export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys CA5F11C6CE22644D42C6AC4492EF8D39DC13168F; 	gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys EAC843EBD3EFDB98CC772FADA5CD6035332FA671; 	gpg --batch --list-sigs --keyid-format 0xLONG CA5F11C6CE22644D42C6AC4492EF8D39DC13168F | grep '0xA5CD6035332FA671' | grep 'Andrew Haley'; 	gpg --batch --verify openjdk.tgz.asc openjdk.tgz; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME"; 		mkdir -p "$JAVA_HOME"; 	tar --extract 		--file openjdk.tgz 		--directory "$JAVA_HOME" 		--strip-components 1 		--no-same-owner 	; 	rm openjdk.tgz*; 			{ 		echo '#!/usr/bin/env bash'; 		echo 'set -Eeuo pipefail'; 		echo 'if ! [ -d "$JAVA_HOME" ]; then echo >&2 "error: missing JAVA_HOME environment variable"; exit 1; fi'; 		echo 'cacertsFile=; for f in "$JAVA_HOME/lib/security/cacerts" "$JAVA_HOME/jre/lib/security/cacerts"; do if [ -e "$f" ]; then cacertsFile="$f"; break; fi; done'; 		echo 'if [ -z "$cacertsFile" ] || ! [ -f "$cacertsFile" ]; then echo >&2 "error: failed to find cacerts file in $JAVA_HOME"; exit 1; fi'; 		echo 'trust extract --overwrite --format=java-cacerts --filter=ca-anchors --purpose=server-auth "$cacertsFile"'; 	} > /etc/ca-certificates/update.d/docker-openjdk; 	chmod +x /etc/ca-certificates/update.d/docker-openjdk; 	/etc/ca-certificates/update.d/docker-openjdk; 		find "$JAVA_HOME/lib" -name '*.so' -exec dirname '{}' ';' | sort -u > /etc/ld.so.conf.d/docker-openjdk.conf; 	ldconfig; 		javac --version; 	java --version
-# Wed, 10 Jul 2019 03:44:02 GMT
+# Wed, 17 Jul 2019 22:42:15 GMT
 CMD ["jshell"]
 ```
 
@@ -156,7 +156,7 @@ CMD ["jshell"]
 		Last Modified: Wed, 10 Jul 2019 03:45:30 GMT  
 		Size: 221.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:25725e43a697e742ea991e7a790b605dfb064d64da003ad8f83b3bd16af50fab`  
-		Last Modified: Wed, 10 Jul 2019 03:46:03 GMT  
-		Size: 192.5 MB (192544041 bytes)  
+	-	`sha256:84f19487713b521651eed6e355e629dfdc23639c763fd21a35427ea59ac2951c`  
+		Last Modified: Wed, 17 Jul 2019 22:45:03 GMT  
+		Size: 193.3 MB (193325693 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
