@@ -193,13 +193,9 @@ Licenses: (parsed from: `/usr/share/doc/base-files/copyright`)
 
 - `GPL`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris base-files=10.1ubuntu2.4
-'http://archive.ubuntu.com/ubuntu/pool/main/b/base-files/base-files_10.1ubuntu2.4.dsc' base-files_10.1ubuntu2.4.dsc 1620 SHA256:fce61378a53efa48c497a830f7bea836b984e8462a6f10b033ced440070f5d36
-'http://archive.ubuntu.com/ubuntu/pool/main/b/base-files/base-files_10.1ubuntu2.4.tar.xz' base-files_10.1ubuntu2.4.tar.xz 78128 SHA256:91ef8e0cfad30cd5408b58301a4a31a360b07f836950256384f02ebb75aa8058
-```
 
 ### `dpkg` source package: `base-passwd=3.5.44`
 
@@ -1957,14 +1953,9 @@ Binary Packages:
 If source is available (seen below), check the contents of `debian/copyright` within it.
 
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris nss=2:3.35-2ubuntu2.2
-'http://archive.ubuntu.com/ubuntu/pool/main/n/nss/nss_3.35-2ubuntu2.2.dsc' nss_3.35-2ubuntu2.2.dsc 2347 SHA256:4b16d79ff83c0eb941fdcc200903e52a6e9389677ea150c5cae7d00abc89f0b5
-'http://archive.ubuntu.com/ubuntu/pool/main/n/nss/nss_3.35.orig.tar.gz' nss_3.35.orig.tar.gz 9620041 SHA256:f4127de09bede39f5fd0f789d33c3504c5d261e69ea03022d46b319b3e32f6fa
-'http://archive.ubuntu.com/ubuntu/pool/main/n/nss/nss_3.35-2ubuntu2.2.debian.tar.xz' nss_3.35-2ubuntu2.2.debian.tar.xz 39184 SHA256:b62c0500855dbddd8609ea15c06c82b65e47d63e341152b1069f79322b360832
-```
 
 ### `dpkg` source package: `numactl=2.0.11-2.1ubuntu0.1`
 
