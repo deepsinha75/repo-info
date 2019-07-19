@@ -1,16 +1,16 @@
-# `mono:5.18.1.3-slim`
+# `mono:6.0.0.313-slim`
 
 ## Docker Metadata
 
-- Image ID: `sha256:48686bd2e2551ba2445c4d2d7bf87fe0063fec5cd98e8148363eb4a468de27aa`
-- Created: `2019-06-11T05:24:47.284780238Z`
-- Virtual Size: ~ 220.58 Mb  
+- Image ID: `sha256:107cb94fa5435b16ecc20a83d6d13f5d1ea8ecef885088149dd59ceab8c9fcb2`
+- Created: `2019-07-18T21:25:18.118048294Z`
+- Virtual Size: ~ 238.51 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Command: `["bash"]`
 - Environment:
   - `PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
-  - `MONO_VERSION=5.18.1.3`
+  - `MONO_VERSION=6.0.0.313`
 
 ## `dpkg` (`.deb`-based packages)
 
@@ -346,11 +346,11 @@ Other potentially useful URLs:
 - https://sources.debian.net/src/cdebconf/0.227/debian/copyright/ (for direct copyright/license information)
 - http://snapshot.debian.org/package/cdebconf/0.227/ (for access to the source package after it no longer exists in the archive)
 
-### `dpkg` source package: `cli-common=0.9+xamarin8+debian9b1`
+### `dpkg` source package: `cli-common=0.10xamarin3+debian9b1`
 
 Binary Packages:
 
-- `cli-common=0.9+xamarin8+debian9b1`
+- `cli-common=0.10xamarin3+debian9b1`
 
 Licenses: (parsed from: `/usr/share/doc/cli-common/copyright`)
 
@@ -359,9 +359,9 @@ Licenses: (parsed from: `/usr/share/doc/cli-common/copyright`)
 Source:
 
 ```console
-$ apt-get source -qq --print-uris cli-common=0.9+xamarin8+debian9b1
-'http://download.mono-project.com/repo/debian/pool/main/c/cli-common/cli-common_0.9+xamarin8+debian9b1.dsc' cli-common_0.9+xamarin8+debian9b1.dsc 1114 SHA256:d66a9b5faa7c5b81c6f692a37927e9c3c0bc3697700f109edcd5b0482c527498
-'http://download.mono-project.com/repo/debian/pool/main/c/cli-common/cli-common_0.9+xamarin8+debian9b1.tar.gz' cli-common_0.9+xamarin8+debian9b1.tar.gz 256626 SHA256:1398f91fa73ed71c2d84652fa25219db47232e9509ef90187b79b5ef62d6d51c
+$ apt-get source -qq --print-uris cli-common=0.10xamarin3+debian9b1
+'http://download.mono-project.com/repo/debian/pool/main/c/cli-common/cli-common_0.10xamarin3+debian9b1.dsc' cli-common_0.10xamarin3+debian9b1.dsc 1074 SHA256:38acf0ae221d14c4954c505feaa1d6b5463d95679cec2461b85c926a46816fea
+'http://download.mono-project.com/repo/debian/pool/main/c/cli-common/cli-common_0.10xamarin3+debian9b1.tar.gz' cli-common_0.10xamarin3+debian9b1.tar.gz 282357 SHA256:91db9cafafa86f24ace028c3e0b099d5ef90574356eeca30a7b39b5a27324e0c
 ```
 
 ### `dpkg` source package: `coreutils=8.26-3`
@@ -1103,11 +1103,11 @@ Other potentially useful URLs:
 - https://sources.debian.net/src/mawk/1.3.3-17/debian/copyright/ (for direct copyright/license information)
 - http://snapshot.debian.org/package/mawk/1.3.3-17/ (for access to the source package after it no longer exists in the archive)
 
-### `dpkg` source package: `mono-llvm=6.0+mono20181107231031-0xamarin2+debian9b1`
+### `dpkg` source package: `mono-llvm=6.0+mono20181128173919-0xamarin4+debian9b1`
 
 Binary Packages:
 
-- `mono-llvm-tools=6.0+mono20181107231031-0xamarin2+debian9b1`
+- `mono-llvm-tools=6.0+mono20181128173919-0xamarin4+debian9b1`
 
 Licenses: (parsed from: `/usr/share/doc/mono-llvm-tools/copyright`)
 
@@ -1127,34 +1127,34 @@ Licenses: (parsed from: `/usr/share/doc/mono-llvm-tools/copyright`)
 Source:
 
 ```console
-$ apt-get source -qq --print-uris mono-llvm=6.0+mono20181107231031-0xamarin2+debian9b1
-'http://download.mono-project.com/repo/debian/pool/main/m/mono-llvm/mono-llvm_6.0+mono20181107231031-0xamarin2+debian9b1.dsc' mono-llvm_6.0+mono20181107231031-0xamarin2+debian9b1.dsc 1313 SHA256:e552d6054d5f7cbdc93fee632c65faa4ddc5c128d75bb8f501d1b77b3cbdc276
-'http://download.mono-project.com/repo/debian/pool/main/m/mono-llvm/mono-llvm_6.0+mono20181107231031.orig.tar.gz' mono-llvm_6.0+mono20181107231031.orig.tar.gz 38988641 SHA256:5514dae43de08c2acad7c131e739f41085a37e3ebd5b8968ebafe898b179123a
-'http://download.mono-project.com/repo/debian/pool/main/m/mono-llvm/mono-llvm_6.0+mono20181107231031-0xamarin2+debian9b1.debian.tar.xz' mono-llvm_6.0+mono20181107231031-0xamarin2+debian9b1.debian.tar.xz 5932 SHA256:3a7e410db391cf443abdddec4f2c818f2d78462c292c2385e0d2fb5630de31b8
+$ apt-get source -qq --print-uris mono-llvm=6.0+mono20181128173919-0xamarin4+debian9b1
+'http://download.mono-project.com/repo/debian/pool/main/m/mono-llvm/mono-llvm_6.0+mono20181128173919-0xamarin4+debian9b1.dsc' mono-llvm_6.0+mono20181128173919-0xamarin4+debian9b1.dsc 1313 SHA256:cfaef9726a5d513dda5d083349719d9dcb80972c1d40aeb76c84147f64c31d14
+'http://download.mono-project.com/repo/debian/pool/main/m/mono-llvm/mono-llvm_6.0+mono20181128173919.orig.tar.gz' mono-llvm_6.0+mono20181128173919.orig.tar.gz 39011560 SHA256:1e46595d8a3e7f1d3912d3a1551cae0e0edf2080c93005435ba9688b57b41bdf
+'http://download.mono-project.com/repo/debian/pool/main/m/mono-llvm/mono-llvm_6.0+mono20181128173919-0xamarin4+debian9b1.debian.tar.xz' mono-llvm_6.0+mono20181128173919-0xamarin4+debian9b1.debian.tar.xz 6040 SHA256:afe3831f73a89c6853e8148b04ea5fcf7b772fa52e6c772c384ac6af1ce1752c
 ```
 
-### `dpkg` source package: `mono=5.18.1.3-0xamarin3+debian9b1`
+### `dpkg` source package: `mono=6.0.0.313-0xamarin3+debian9b1`
 
 Binary Packages:
 
-- `ca-certificates-mono=5.18.1.3-0xamarin3+debian9b1`
-- `libmono-btls-interface4.0-cil=5.18.1.3-0xamarin3+debian9b1`
-- `libmono-corlib4.5-cil=5.18.1.3-0xamarin3+debian9b1`
-- `libmono-i18n-west4.0-cil=5.18.1.3-0xamarin3+debian9b1`
-- `libmono-i18n4.0-cil=5.18.1.3-0xamarin3+debian9b1`
-- `libmono-security4.0-cil=5.18.1.3-0xamarin3+debian9b1`
-- `libmono-system-configuration4.0-cil=5.18.1.3-0xamarin3+debian9b1`
-- `libmono-system-core4.0-cil=5.18.1.3-0xamarin3+debian9b1`
-- `libmono-system-numerics4.0-cil=5.18.1.3-0xamarin3+debian9b1`
-- `libmono-system-security4.0-cil=5.18.1.3-0xamarin3+debian9b1`
-- `libmono-system-xml4.0-cil=5.18.1.3-0xamarin3+debian9b1`
-- `libmono-system4.0-cil=5.18.1.3-0xamarin3+debian9b1`
-- `mono-4.0-gac=5.18.1.3-0xamarin3+debian9b1`
-- `mono-gac=5.18.1.3-0xamarin3+debian9b1`
-- `mono-llvm-support=5.18.1.3-0xamarin3+debian9b1`
-- `mono-runtime=5.18.1.3-0xamarin3+debian9b1`
-- `mono-runtime-common=5.18.1.3-0xamarin3+debian9b1`
-- `mono-runtime-sgen=5.18.1.3-0xamarin3+debian9b1`
+- `ca-certificates-mono=6.0.0.313-0xamarin3+debian9b1`
+- `libmono-btls-interface4.0-cil=6.0.0.313-0xamarin3+debian9b1`
+- `libmono-corlib4.5-cil=6.0.0.313-0xamarin3+debian9b1`
+- `libmono-i18n-west4.0-cil=6.0.0.313-0xamarin3+debian9b1`
+- `libmono-i18n4.0-cil=6.0.0.313-0xamarin3+debian9b1`
+- `libmono-security4.0-cil=6.0.0.313-0xamarin3+debian9b1`
+- `libmono-system-configuration4.0-cil=6.0.0.313-0xamarin3+debian9b1`
+- `libmono-system-core4.0-cil=6.0.0.313-0xamarin3+debian9b1`
+- `libmono-system-numerics4.0-cil=6.0.0.313-0xamarin3+debian9b1`
+- `libmono-system-security4.0-cil=6.0.0.313-0xamarin3+debian9b1`
+- `libmono-system-xml4.0-cil=6.0.0.313-0xamarin3+debian9b1`
+- `libmono-system4.0-cil=6.0.0.313-0xamarin3+debian9b1`
+- `mono-4.0-gac=6.0.0.313-0xamarin3+debian9b1`
+- `mono-gac=6.0.0.313-0xamarin3+debian9b1`
+- `mono-llvm-support=6.0.0.313-0xamarin3+debian9b1`
+- `mono-runtime=6.0.0.313-0xamarin3+debian9b1`
+- `mono-runtime-common=6.0.0.313-0xamarin3+debian9b1`
+- `mono-runtime-sgen=6.0.0.313-0xamarin3+debian9b1`
 
 Licenses: (parsed from: `/usr/share/doc/ca-certificates-mono/copyright`, `/usr/share/doc/libmono-btls-interface4.0-cil/copyright`, `/usr/share/doc/libmono-corlib4.5-cil/copyright`, `/usr/share/doc/libmono-i18n-west4.0-cil/copyright`, `/usr/share/doc/libmono-i18n4.0-cil/copyright`, `/usr/share/doc/libmono-security4.0-cil/copyright`, `/usr/share/doc/libmono-system-configuration4.0-cil/copyright`, `/usr/share/doc/libmono-system-core4.0-cil/copyright`, `/usr/share/doc/libmono-system-numerics4.0-cil/copyright`, `/usr/share/doc/libmono-system-security4.0-cil/copyright`, `/usr/share/doc/libmono-system-xml4.0-cil/copyright`, `/usr/share/doc/libmono-system4.0-cil/copyright`, `/usr/share/doc/mono-4.0-gac/copyright`, `/usr/share/doc/mono-gac/copyright`, `/usr/share/doc/mono-llvm-support/copyright`, `/usr/share/doc/mono-runtime/copyright`, `/usr/share/doc/mono-runtime-common/copyright`, `/usr/share/doc/mono-runtime-sgen/copyright`)
 
@@ -1178,10 +1178,10 @@ Licenses: (parsed from: `/usr/share/doc/ca-certificates-mono/copyright`, `/usr/s
 Source:
 
 ```console
-$ apt-get source -qq --print-uris mono=5.18.1.3-0xamarin3+debian9b1
-'http://download.mono-project.com/repo/debian/pool/main/m/mono/mono_5.18.1.3-0xamarin3+debian9b1.dsc' mono_5.18.1.3-0xamarin3+debian9b1.dsc 19105 SHA256:d6c8e6c2bdd3aa697c64ece019896cc0babf774710b9f571cc2d503f4a7be20d
-'http://download.mono-project.com/repo/debian/pool/main/m/mono/mono_5.18.1.3.orig.tar.bz2' mono_5.18.1.3.orig.tar.bz2 245919160 SHA256:b9838f38872cd4ae0a4c45fb8a94fc2b6c9f85b3a7507f7187bcbd49d26f3515
-'http://download.mono-project.com/repo/debian/pool/main/m/mono/mono_5.18.1.3-0xamarin3+debian9b1.debian.tar.xz' mono_5.18.1.3-0xamarin3+debian9b1.debian.tar.xz 156032 SHA256:4b1381d294e88201ef44a52a99431143da6614bacf6b5f1ccde858d266b51740
+$ apt-get source -qq --print-uris mono=6.0.0.313-0xamarin3+debian9b1
+'http://download.mono-project.com/repo/debian/pool/main/m/mono/mono_6.0.0.313-0xamarin3+debian9b1.dsc' mono_6.0.0.313-0xamarin3+debian9b1.dsc 19109 SHA256:bfffd19e7f5ac845cf71dc705ac72936e1d31374bbee80d01aab89c096540f0a
+'http://download.mono-project.com/repo/debian/pool/main/m/mono/mono_6.0.0.313.orig.tar.xz' mono_6.0.0.313.orig.tar.xz 216936504 SHA256:03fb924e3dab1839cf9780a4c6963800781136be65ac54826868b4a00266d980
+'http://download.mono-project.com/repo/debian/pool/main/m/mono/mono_6.0.0.313-0xamarin3+debian9b1.debian.tar.xz' mono_6.0.0.313-0xamarin3+debian9b1.debian.tar.xz 154564 SHA256:6ab638962d57c010ba6cc680e701f4e4098714ecda4c8972c69a8a8836180b46
 ```
 
 ### `dpkg` source package: `ncurses=6.0+20161126-1+deb9u2`
@@ -1236,12 +1236,12 @@ Other potentially useful URLs:
 - https://sources.debian.net/src/netbase/5.4/debian/copyright/ (for direct copyright/license information)
 - http://snapshot.debian.org/package/netbase/5.4/ (for access to the source package after it no longer exists in the archive)
 
-### `dpkg` source package: `openssl=1.1.0j-1~deb9u1`
+### `dpkg` source package: `openssl=1.1.0k-1~deb9u1`
 
 Binary Packages:
 
-- `libssl1.1:amd64=1.1.0j-1~deb9u1`
-- `openssl=1.1.0j-1~deb9u1`
+- `libssl1.1:amd64=1.1.0k-1~deb9u1`
+- `openssl=1.1.0k-1~deb9u1`
 
 **WARNING:** unable to detect licenses! (package likely not compliant with DEP-5)  
 If source is available (seen below), check the contents of `debian/copyright` within it.
@@ -1250,18 +1250,18 @@ If source is available (seen below), check the contents of `debian/copyright` wi
 Source:
 
 ```console
-$ apt-get source -qq --print-uris openssl=1.1.0j-1~deb9u1
-'http://deb.debian.org/debian/pool/main/o/openssl/openssl_1.1.0j-1~deb9u1.dsc' openssl_1.1.0j-1~deb9u1.dsc 2611 SHA256:3c4f9e2af00c7595218d05d09635746f7edfd13b6c08b6266cd386b195c7889b
-'http://deb.debian.org/debian/pool/main/o/openssl/openssl_1.1.0j.orig.tar.gz' openssl_1.1.0j.orig.tar.gz 5411919 SHA256:31bec6c203ce1a8e93d5994f4ed304c63ccf07676118b6634edded12ad1b3246
-'http://deb.debian.org/debian/pool/main/o/openssl/openssl_1.1.0j.orig.tar.gz.asc' openssl_1.1.0j.orig.tar.gz.asc 488 SHA256:e162322dce0b98f92401a48ba5f088ded64ee308a54580ed9edc3edafd85eebf
-'http://deb.debian.org/debian/pool/main/o/openssl/openssl_1.1.0j-1~deb9u1.debian.tar.xz' openssl_1.1.0j-1~deb9u1.debian.tar.xz 71944 SHA256:737db70af006b984b914ba63ac8cbf012cb0db43df5e31f7dfa95d0b5890910b
+$ apt-get source -qq --print-uris openssl=1.1.0k-1~deb9u1
+'http://security.debian.org/debian-security/pool/updates/main/o/openssl/openssl_1.1.0k-1~deb9u1.dsc' openssl_1.1.0k-1~deb9u1.dsc 2437 SHA256:81d1127296775e23080740d8bd0f8b8696f0edd6a8cd5c87d95f2dea23d128d9
+'http://security.debian.org/debian-security/pool/updates/main/o/openssl/openssl_1.1.0k.orig.tar.gz' openssl_1.1.0k.orig.tar.gz 5287321 SHA256:efa4965f4f773574d6cbda1cf874dbbe455ab1c0d4f906115f867d30444470b1
+'http://security.debian.org/debian-security/pool/updates/main/o/openssl/openssl_1.1.0k.orig.tar.gz.asc' openssl_1.1.0k.orig.tar.gz.asc 833 SHA256:82b4338a150147d3c67a0bc0aa1ae4b209b8dc985af2bf523d72097bdf12a743
+'http://security.debian.org/debian-security/pool/updates/main/o/openssl/openssl_1.1.0k-1~deb9u1.debian.tar.xz' openssl_1.1.0k-1~deb9u1.debian.tar.xz 71996 SHA256:782054f0183e65469f97402cecff23c0d9fc00a026f263afbca3ba77415ffa27
 ```
 
 Other potentially useful URLs:
 
-- https://sources.debian.net/src/openssl/1.1.0j-1~deb9u1/ (for browsing the source)
-- https://sources.debian.net/src/openssl/1.1.0j-1~deb9u1/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/openssl/1.1.0j-1~deb9u1/ (for access to the source package after it no longer exists in the archive)
+- https://sources.debian.net/src/openssl/1.1.0k-1~deb9u1/ (for browsing the source)
+- https://sources.debian.net/src/openssl/1.1.0k-1~deb9u1/debian/copyright/ (for direct copyright/license information)
+- http://snapshot.debian.org/package/openssl/1.1.0k-1~deb9u1/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `pam=1.1.8-3.6`
 
