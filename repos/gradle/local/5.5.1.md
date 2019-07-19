@@ -170,13 +170,9 @@ Licenses: (parsed from: `/usr/share/doc/base-files/copyright`)
 
 - `GPL`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris base-files=10.1ubuntu2.4
-'http://archive.ubuntu.com/ubuntu/pool/main/b/base-files/base-files_10.1ubuntu2.4.dsc' base-files_10.1ubuntu2.4.dsc 1620 SHA256:fce61378a53efa48c497a830f7bea836b984e8462a6f10b033ced440070f5d36
-'http://archive.ubuntu.com/ubuntu/pool/main/b/base-files/base-files_10.1ubuntu2.4.tar.xz' base-files_10.1ubuntu2.4.tar.xz 78128 SHA256:91ef8e0cfad30cd5408b58301a4a31a360b07f836950256384f02ebb75aa8058
-```
 
 ### `dpkg` source package: `base-passwd=3.5.44`
 
@@ -1906,6 +1902,10 @@ Licenses: (parsed from: `/usr/share/doc/libserf-1-1/copyright`)
 
 **WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
 This is *usually* due to a new package version being released and the old version being removed.
+
+The source package *may* still be available for download from:
+
+- http://snapshot.debian.org/package/serf/1.3.9-6/
 
 
 ### `dpkg` source package: `shadow=1:4.5-1ubuntu2`
