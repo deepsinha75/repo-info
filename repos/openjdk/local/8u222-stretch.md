@@ -1,10 +1,10 @@
-# `openjdk:8u212-b04-jdk-stretch`
+# `openjdk:8u222-jdk-stretch`
 
 ## Docker Metadata
 
-- Image ID: `sha256:03b20c1fa768b3ba8268ca71377c0f273addc9cf82ec067dcd1f6cc74ffc5f52`
-- Created: `2019-07-10T03:59:31.35164462Z`
-- Virtual Size: ~ 487.91 Mb  
+- Image ID: `sha256:27da2af61908e72e15f2e99f4b18d88996fbad927ede2d16de91b21b3c53010e`
+- Created: `2019-07-17T22:14:52.840773268Z`
+- Virtual Size: ~ 488.07 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Command: `["bash"]`
@@ -12,9 +12,9 @@
   - `PATH=/usr/local/openjdk-8/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
   - `LANG=C.UTF-8`
   - `JAVA_HOME=/usr/local/openjdk-8`
-  - `JAVA_VERSION=8u212-b04`
-  - `JAVA_BASE_URL=https://github.com/AdoptOpenJDK/openjdk8-upstream-binaries/releases/download/jdk8u212-b04/OpenJDK8U-`
-  - `JAVA_URL_VERSION=8u212b04`
+  - `JAVA_VERSION=8u222`
+  - `JAVA_BASE_URL=https://github.com/AdoptOpenJDK/openjdk8-upstream-binaries/releases/download/jdk8u222-b10/OpenJDK8U-jdk_`
+  - `JAVA_URL_VERSION=8u222b10`
 
 ## `dpkg` (`.deb`-based packages)
 

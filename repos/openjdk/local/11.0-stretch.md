@@ -1,10 +1,10 @@
-# `openjdk:11.0.3-jdk-stretch`
+# `openjdk:11.0.4-jdk-stretch`
 
 ## Docker Metadata
 
-- Image ID: `sha256:b90bb19c4cb1021d74054b0175fa30b3df6b5bdadfb8660bff71ae24d151cffc`
-- Created: `2019-07-10T03:59:09.059658817Z`
-- Virtual Size: ~ 603.64 Mb  
+- Image ID: `sha256:eadb8186892521b8526001409a495789270858e93ad5eb15c1ea7fa6ab1fd329`
+- Created: `2019-07-17T22:13:41.982320694Z`
+- Virtual Size: ~ 604.85 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Command: `["jshell"]`
@@ -12,9 +12,9 @@
   - `PATH=/usr/local/openjdk-11/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
   - `LANG=C.UTF-8`
   - `JAVA_HOME=/usr/local/openjdk-11`
-  - `JAVA_VERSION=11.0.3`
-  - `JAVA_BASE_URL=https://github.com/AdoptOpenJDK/openjdk11-upstream-binaries/releases/download/jdk-11.0.3%2B7/OpenJDK11U-`
-  - `JAVA_URL_VERSION=11.0.3_7`
+  - `JAVA_VERSION=11.0.4`
+  - `JAVA_BASE_URL=https://github.com/AdoptOpenJDK/openjdk11-upstream-binaries/releases/download/jdk-11.0.4%2B11/OpenJDK11U-jdk_`
+  - `JAVA_URL_VERSION=11.0.4_11`
 
 ## `dpkg` (`.deb`-based packages)
 

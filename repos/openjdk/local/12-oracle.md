@@ -1,10 +1,10 @@
-# `openjdk:12.0.1-jdk-oraclelinux7`
+# `openjdk:12.0.2-jdk-oraclelinux7`
 
 ## Docker Metadata
 
-- Image ID: `sha256:e92ef2c3a3dd50d4dc7722ff4f77ddf2df8c23c73f18504b836ccd598fdf5321`
-- Created: `2019-06-24T22:41:51.327138994Z`
-- Virtual Size: ~ 469.73 Mb  
+- Image ID: `sha256:ad1c6207e3ad6201ecebfcc6238cb60870ba7b4cce3a553803f6fa99500a0281`
+- Created: `2019-07-17T22:13:22.698171702Z`
+- Virtual Size: ~ 470.48 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Command: `["jshell"]`
@@ -12,9 +12,9 @@
   - `PATH=/usr/java/openjdk-12/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
   - `LANG=en_US.UTF-8`
   - `JAVA_HOME=/usr/java/openjdk-12`
-  - `JAVA_VERSION=12.0.1`
-  - `JAVA_URL=https://download.java.net/java/GA/jdk12.0.1/69cfe15208a647278a19ef0990eea691/12/GPL/openjdk-12.0.1_linux-x64_bin.tar.gz`
-  - `JAVA_SHA256=151eb4ec00f82e5e951126f572dc9116104c884d97f91be14ec11e85fc2dd626`
+  - `JAVA_VERSION=12.0.2`
+  - `JAVA_URL=https://download.java.net/java/GA/jdk12.0.2/e482c34c86bd4bf8b56c0b35558996b9/10/GPL/openjdk-12.0.2_linux-x64_bin.tar.gz`
+  - `JAVA_SHA256=75998a6ebf477467aa5fb68227a67733f0e77e01f737d4dfbc01e617e59106ed`
 
 ## `rpm` (`.rpm`-based packages)
 
