@@ -2,9 +2,9 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:7bb157f0dd75a3ceeee49213b7b5cb036dd3f95f072c6f5d82d6b2fcfba92f3a`
-- Created: `2019-07-10T22:20:30.657488424Z`
-- Virtual Size: ~ 866.68 Mb  
+- Image ID: `sha256:502f2637f6d68d9f54a89c4bd7f38eb30539be93292a520e49eb30322ffd46d2`
+- Created: `2019-07-18T02:37:26.682126212Z`
+- Virtual Size: ~ 867.89 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["./bin/run.sh"]`
@@ -12,9 +12,9 @@
   - `PATH=/usr/local/openjdk-11/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
   - `LANG=C.UTF-8`
   - `JAVA_HOME=/usr/local/openjdk-11`
-  - `JAVA_VERSION=11.0.3`
-  - `JAVA_BASE_URL=https://github.com/AdoptOpenJDK/openjdk11-upstream-binaries/releases/download/jdk-11.0.3%2B7/OpenJDK11U-`
-  - `JAVA_URL_VERSION=11.0.3_7`
+  - `JAVA_VERSION=11.0.4`
+  - `JAVA_BASE_URL=https://github.com/AdoptOpenJDK/openjdk11-upstream-binaries/releases/download/jdk-11.0.4%2B11/OpenJDK11U-jdk_`
+  - `JAVA_URL_VERSION=11.0.4_11`
   - `SONAR_VERSION=7.9.1`
   - `SONARQUBE_HOME=/opt/sonarqube`
   - `SONARQUBE_JDBC_USERNAME=sonar`
