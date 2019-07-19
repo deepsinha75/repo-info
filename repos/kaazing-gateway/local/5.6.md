@@ -2,9 +2,9 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:a495cb93b038b8419689a9fbd2e6241eab76a4e69f5069e43957ba9ea7aae0ee`
-- Created: `2019-07-10T08:04:10.79512868Z`
-- Virtual Size: ~ 266.37 Mb  
+- Image ID: `sha256:82ddbe0338c7a4c8c1aeec7107f421dd00611eea94a5249465ff34718db0eb90`
+- Created: `2019-07-18T02:18:34.218515321Z`
+- Virtual Size: ~ 266.49 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Command: `["gateway.start"]`
@@ -12,9 +12,9 @@
   - `PATH=/usr/local/openjdk-8/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/kaazing-gateway/bin`
   - `LANG=C.UTF-8`
   - `JAVA_HOME=/usr/local/openjdk-8`
-  - `JAVA_VERSION=8u212-b04`
-  - `JAVA_BASE_URL=https://github.com/AdoptOpenJDK/openjdk8-upstream-binaries/releases/download/jdk8u212-b04/OpenJDK8U-jre_`
-  - `JAVA_URL_VERSION=8u212b04`
+  - `JAVA_VERSION=8u222`
+  - `JAVA_BASE_URL=https://github.com/AdoptOpenJDK/openjdk8-upstream-binaries/releases/download/jdk8u222-b10/OpenJDK8U-jre_`
+  - `JAVA_URL_VERSION=8u222b10`
   - `KAAZING_GATEWAY_VERSION=5.6.0`
   - `KAAZING_GATEWAY_URL=https://oss.sonatype.org/content/repositories/releases/org/kaazing/gateway.distribution/5.6.0/gateway.distribution-5.6.0.tar.gz`
   - `GATEWAY_OPTS=-Xmx512m -Djava.security.egd=file:/dev/urandom`
