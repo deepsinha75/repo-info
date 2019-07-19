@@ -182,6 +182,10 @@ Licenses: (parsed from: `/usr/share/doc/bzip2/copyright`, `/usr/share/doc/libbz2
 **WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
 This is *usually* due to a new package version being released and the old version being removed.
 
+The source package *may* still be available for download from:
+
+- http://snapshot.debian.org/package/bzip2/1.0.6-9/
+
 
 ### `dpkg` source package: `cdebconf=0.249ubuntu1`
 
@@ -288,6 +292,10 @@ Licenses: (parsed from: `/usr/share/doc/debianutils/copyright`)
 
 **WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
 This is *usually* due to a new package version being released and the old version being removed.
+
+The source package *may* still be available for download from:
+
+- http://snapshot.debian.org/package/debianutils/4.8.6.1/
 
 
 ### `dpkg` source package: `diffutils=1:3.7-3`
@@ -402,14 +410,9 @@ Licenses: (parsed from: `/usr/share/doc/libc-bin/copyright`, `/usr/share/doc/lib
 - `GPL-2`
 - `LGPL-2.1`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris glibc=2.29-0ubuntu2
-'http://archive.ubuntu.com/ubuntu/pool/main/g/glibc/glibc_2.29-0ubuntu2.dsc' glibc_2.29-0ubuntu2.dsc 9367 SHA256:d9b6eeaa98ecd898fe077ab5169b4f3cf693b4fa706a8139705758f04679a9f6
-'http://archive.ubuntu.com/ubuntu/pool/main/g/glibc/glibc_2.29.orig.tar.xz' glibc_2.29.orig.tar.xz 17040280 SHA256:9e383319f5cdb1a9d58a45ea44836c23859b8d580d5748cd93bca35a01ad0669
-'http://archive.ubuntu.com/ubuntu/pool/main/g/glibc/glibc_2.29-0ubuntu2.debian.tar.xz' glibc_2.29-0ubuntu2.debian.tar.xz 858944 SHA256:2b5de1ca6cebdbe07387ce04e8655cfc31c37221440ad0c666962746cb94f1e8
-```
 
 ### `dpkg` source package: `gmp=2:6.1.2+dfsg-4`
 
@@ -560,6 +563,10 @@ Licenses: (parsed from: `/usr/share/doc/init-system-helpers/copyright`)
 **WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
 This is *usually* due to a new package version being released and the old version being removed.
 
+The source package *may* still be available for download from:
+
+- http://snapshot.debian.org/package/init-system-helpers/1.56+nmu1/
+
 
 ### `dpkg` source package: `libcap-ng=0.7.9-2`
 
@@ -640,6 +647,10 @@ Licenses: (parsed from: `/usr/share/doc/libgpg-error0/copyright`)
 **WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
 This is *usually* due to a new package version being released and the old version being removed.
 
+The source package *may* still be available for download from:
+
+- http://snapshot.debian.org/package/libgpg-error/1.36-1/
+
 
 ### `dpkg` source package: `libidn2=2.0.5-1`
 
@@ -696,14 +707,13 @@ Licenses: (parsed from: `/usr/share/doc/libselinux1/copyright`)
 - `GPL-2`
 - `LGPL-2.1`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris libselinux=2.9-1
-'http://archive.ubuntu.com/ubuntu/pool/main/libs/libselinux/libselinux_2.9-1.dsc' libselinux_2.9-1.dsc 2347 SHA256:e67af66b403132e74d8daf81b38afc9df9e1b295be120f758e9e507e77a43839
-'http://archive.ubuntu.com/ubuntu/pool/main/libs/libselinux/libselinux_2.9.orig.tar.gz' libselinux_2.9.orig.tar.gz 211546 SHA256:1bccc8873e449587d9a2b2cf253de9b89a8291b9fbc7c59393ca9e5f5f4d2693
-'http://archive.ubuntu.com/ubuntu/pool/main/libs/libselinux/libselinux_2.9-1.debian.tar.xz' libselinux_2.9-1.debian.tar.xz 23480 SHA256:0faa5129bc607fbebc908ccf12171c74b2ab1292c2ca5410001fff23c5e295fb
-```
+The source package *may* still be available for download from:
+
+- http://snapshot.debian.org/package/libselinux/2.9-1/
+
 
 ### `dpkg` source package: `libsemanage=2.9-1`
 
@@ -719,6 +729,10 @@ Licenses: (parsed from: `/usr/share/doc/libsemanage-common/copyright`, `/usr/sha
 
 **WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
 This is *usually* due to a new package version being released and the old version being removed.
+
+The source package *may* still be available for download from:
+
+- http://snapshot.debian.org/package/libsemanage/2.9-1/
 
 
 ### `dpkg` source package: `libsepol=2.9-1`
