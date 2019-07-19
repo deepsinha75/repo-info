@@ -6749,9 +6749,9 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris postgresql-9.5=9.5.17-0ubuntu0.16.04.1
-'http://archive.ubuntu.com/ubuntu/pool/main/p/postgresql-9.5/postgresql-9.5_9.5.17-0ubuntu0.16.04.1.dsc' postgresql-9.5_9.5.17-0ubuntu0.16.04.1.dsc 3675 SHA256:1f53e7ad96233833f3c562bd4ab6b64dc8ff02b55f32e36054e69d2104dd5659
-'http://archive.ubuntu.com/ubuntu/pool/main/p/postgresql-9.5/postgresql-9.5_9.5.17.orig.tar.gz' postgresql-9.5_9.5.17.orig.tar.gz 22736126 SHA256:d1b303c0ca8d291b209f64a776fb7dbd420a4bc76929146ea7f4dc23438de3e8
-'http://archive.ubuntu.com/ubuntu/pool/main/p/postgresql-9.5/postgresql-9.5_9.5.17-0ubuntu0.16.04.1.debian.tar.xz' postgresql-9.5_9.5.17-0ubuntu0.16.04.1.debian.tar.xz 27240 SHA256:a1e3b1ff9bcbdc82c323de5bbc3babfc79796f8a4486d0936cb794ea13f49431
+'http://security.ubuntu.com/ubuntu/pool/main/p/postgresql-9.5/postgresql-9.5_9.5.17-0ubuntu0.16.04.1.dsc' postgresql-9.5_9.5.17-0ubuntu0.16.04.1.dsc 3675 SHA256:1f53e7ad96233833f3c562bd4ab6b64dc8ff02b55f32e36054e69d2104dd5659
+'http://security.ubuntu.com/ubuntu/pool/main/p/postgresql-9.5/postgresql-9.5_9.5.17.orig.tar.gz' postgresql-9.5_9.5.17.orig.tar.gz 22736126 SHA256:d1b303c0ca8d291b209f64a776fb7dbd420a4bc76929146ea7f4dc23438de3e8
+'http://security.ubuntu.com/ubuntu/pool/main/p/postgresql-9.5/postgresql-9.5_9.5.17-0ubuntu0.16.04.1.debian.tar.xz' postgresql-9.5_9.5.17-0ubuntu0.16.04.1.debian.tar.xz 27240 SHA256:a1e3b1ff9bcbdc82c323de5bbc3babfc79796f8a4486d0936cb794ea13f49431
 ```
 
 ### `dpkg` source package: `procps=2:3.3.10-4ubuntu2.4`
