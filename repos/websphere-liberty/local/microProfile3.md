@@ -1,10 +1,10 @@
-# `websphere-liberty:webProfile7`
+# `websphere-liberty:microProfile3`
 
 ## Docker Metadata
 
-- Image ID: `sha256:c78c89c544865de620020c32ade330a129e60a76b03b60ae1333114e775d6a82`
-- Created: `2019-07-18T21:58:04.385184512Z`
-- Virtual Size: ~ 455.66 Mb  
+- Image ID: `sha256:8fdd02cec63a25efcd2252e08cc0410a9c8dc0b00928e84354e0d266b54c01d3`
+- Created: `2019-07-18T21:55:50.497283545Z`
+- Virtual Size: ~ 458.74 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["/opt/ibm/helpers/runtime/docker-server.sh"]`
