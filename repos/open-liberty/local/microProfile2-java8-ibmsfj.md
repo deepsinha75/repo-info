@@ -2,9 +2,9 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:dd5861eb0cd8fb37248592b3217a6dc923212770ca5944503a71b0f23dfa117a`
-- Created: `2019-06-28T22:34:14.383965632Z`
-- Virtual Size: ~ 257.74 Mb  
+- Image ID: `sha256:b193ea3dde69c20777b59d9cfc9b1e79827aef788bb16594eedd943eb4ec45e3`
+- Created: `2019-07-19T01:24:20.42134844Z`
+- Virtual Size: ~ 258.45 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["/opt/ol/helpers/runtime/docker-server.sh"]`
@@ -21,7 +21,7 @@
   - `KEYSTORE_REQUIRED=true`
 - Labels:
   - `org.opencontainers.image.authors=Arthur De Magalhaes, Andy Naumann`
-  - `org.opencontainers.image.revision=cl190620190617-1530`
+  - `org.opencontainers.image.revision=cl190720190711-1115`
   - `org.opencontainers.image.source=https://github.com/OpenLiberty/ci.docker`
   - `org.opencontainers.image.url=https://openliberty.io/`
   - `org.opencontainers.image.vendor=Open Liberty`

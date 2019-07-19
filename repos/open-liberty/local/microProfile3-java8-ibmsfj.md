@@ -1,9 +1,9 @@
-# `open-liberty:microProfile1-java8-ibmsfj`
+# `open-liberty:microProfile3-java8-ibmsfj`
 
 ## Docker Metadata
 
-- Image ID: `sha256:2b4692fd695b30af6b60c1a5509a25618800b6e53c6f109838d24fcfad8f4cfe`
-- Created: `2019-07-19T01:24:08.250907791Z`
+- Image ID: `sha256:e5d684051bee206464d235597cf0ecb755fd6b20b70282daa98047df36634928`
+- Created: `2019-07-19T01:24:36.086851567Z`
 - Virtual Size: ~ 258.45 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`

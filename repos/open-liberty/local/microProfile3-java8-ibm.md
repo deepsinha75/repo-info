@@ -1,10 +1,10 @@
-# `open-liberty:javaee8`
+# `open-liberty:microProfile3`
 
 ## Docker Metadata
 
-- Image ID: `sha256:374f732d61789f7e8202999a1ce0b2d27e33a61d98c8a5d4b20cb1da311a4e75`
-- Created: `2019-07-19T01:22:58.41229781Z`
-- Virtual Size: ~ 452.86 Mb  
+- Image ID: `sha256:7ce9d5681cfa2b554b2a0f59d5841dd6d9a190efbdd1837d9d3a951c51ba1778`
+- Created: `2019-07-19T01:24:32.951367249Z`
+- Virtual Size: ~ 472.49 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["/opt/ol/helpers/runtime/docker-server.sh"]`
@@ -18,7 +18,6 @@
   - `WLP_OUTPUT_DIR=/opt/ol/wlp/output`
   - `WLP_SKIP_MAXPERMSIZE=true`
   - `RANDFILE=/tmp/.rnd`
-  - `KEYSTORE_REQUIRED=true`
 - Labels:
   - `org.opencontainers.image.authors=Arthur De Magalhaes, Andy Naumann`
   - `org.opencontainers.image.revision=cl190720190711-1115`
