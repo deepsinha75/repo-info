@@ -16,7 +16,7 @@ repos=( "${repos[@]%/}" )
 
 docker build --pull -t repo-info:remote -q -f Dockerfile.remote . > /dev/null
 trap 'docker rm -f repo-info-remote > /dev/null' EXIT
-docker run -d --name repo-info-remote repo-info:remote daemon > /dev/null
+docker run -e DOCKERHUB_PUBLIC_PROXY -d --name repo-info-remote repo-info:remote daemon > /dev/null
 
 trap 'err="$?"; echo >&2 "ERROR: exit code $err"; ( set -x && docker logs repo-info-remote ); exit "$err"' ERR
 
@@ -62,7 +62,7 @@ xargs <<<"${repos[*]}" -n 1 -P "${PARALLELISM:-8}" bash -Eeuo pipefail -c '
 		for tag in "${tags[@]}"; do
 			echo >&2 "processing: $tag"
 			echo
-			$curl -fsSL "$repoInfoDaemon/markdown/$tag" \
+			$curl "$repoInfoDaemon/markdown/$tag" \
 				| tee "repos/$repo/remote/${tag#*:}.md"
 		done
 		} > "repos/$repo/tag-details.md"
