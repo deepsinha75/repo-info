@@ -1,7 +1,7 @@
 ## `swift:latest`
 
 ```console
-$ docker pull swift@sha256:2f6451d66ffd2bedd71575a8b5e2e15d2a2491537aa53eddb2e602e029dc249f
+$ docker pull swift@sha256:9aa438226863a078f72ce774216c75ebf8e43badada2091234d3ef92008d0474
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -11,14 +11,14 @@ $ docker pull swift@sha256:2f6451d66ffd2bedd71575a8b5e2e15d2a2491537aa53eddb2e60
 ### `swift:latest` - linux; amd64
 
 ```console
-$ docker pull swift@sha256:c42a0d2181c051d6e72502e2cb02766e97b036dc4773e20a5a7afd8458ec46ed
+$ docker pull swift@sha256:0ac41d848b78725a4dc460b9c73a591e3b98da45591ade99eef61a3fd404f9ab
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **462.4 MB (462386623 bytes)**  
+-	Total Size: **462.7 MB (462687246 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:9dc0d914ebd9aaece2c1a626c719a7dace83fbbca0868fca59da9ae49ac02a17`
+-	Image ID: `sha256:25813e4da77c20161ab5923e05a6b36b2c01e39f233432492dc93490ebfc8d2f`
 -	Default Command: `["\/bin\/bash"]`
 
 ```dockerfile
@@ -40,15 +40,15 @@ LABEL Description=Docker Container for the Swift programming language
 RUN export DEBIAN_FRONTEND=noninteractive DEBCONF_NONINTERACTIVE_SEEN=true && apt-get -q update &&     apt-get -q install -y     libatomic1     libbsd0     libcurl4     libxml2     libedit2     libsqlite3-0     libc6-dev     binutils     libgcc-5-dev     libstdc++-5-dev     libpython2.7     tzdata     git     pkg-config     && rm -r /var/lib/apt/lists/*
 # Wed, 19 Jun 2019 02:58:38 GMT
 ARG SWIFT_PLATFORM=ubuntu18.04
-# Wed, 19 Jun 2019 02:58:38 GMT
-ARG SWIFT_BRANCH=swift-5.0.1-release
-# Wed, 19 Jun 2019 02:58:38 GMT
-ARG SWIFT_VERSION=swift-5.0.1-RELEASE
-# Wed, 19 Jun 2019 02:58:38 GMT
-ENV SWIFT_PLATFORM=ubuntu18.04 SWIFT_BRANCH=swift-5.0.1-release SWIFT_VERSION=swift-5.0.1-RELEASE
-# Wed, 19 Jun 2019 02:59:51 GMT
+# Fri, 19 Jul 2019 22:20:05 GMT
+ARG SWIFT_BRANCH=swift-5.0.2-release
+# Fri, 19 Jul 2019 22:20:05 GMT
+ARG SWIFT_VERSION=swift-5.0.2-RELEASE
+# Fri, 19 Jul 2019 22:20:05 GMT
+ENV SWIFT_PLATFORM=ubuntu18.04 SWIFT_BRANCH=swift-5.0.2-release SWIFT_VERSION=swift-5.0.2-RELEASE
+# Fri, 19 Jul 2019 22:21:13 GMT
 RUN SWIFT_URL=https://swift.org/builds/$SWIFT_BRANCH/$(echo "$SWIFT_PLATFORM" | tr -d .)/$SWIFT_VERSION/$SWIFT_VERSION-$SWIFT_PLATFORM.tar.gz     && apt-get update     && apt-get install -y curl     && curl -fSsL $SWIFT_URL -o swift.tar.gz     && curl -fSsL $SWIFT_URL.sig -o swift.tar.gz.sig     && apt-get purge -y curl     && apt-get -y autoremove     && export GNUPGHOME="$(mktemp -d)"     && set -e;         for key in           A62AE125BBBFBB96A6E042EC925CC1CCED3D1561         ; do           gpg --quiet --keyserver ha.pool.sks-keyservers.net --recv-keys "$key";         done     && gpg --batch --verify --quiet swift.tar.gz.sig swift.tar.gz     && tar -xzf swift.tar.gz --directory / --strip-components=1     && rm -r "$GNUPGHOME" swift.tar.gz.sig swift.tar.gz     && chmod -R o+r /usr/lib/swift
-# Wed, 19 Jun 2019 02:59:52 GMT
+# Fri, 19 Jul 2019 22:21:19 GMT
 RUN swift --version
 ```
 
@@ -73,7 +73,7 @@ RUN swift --version
 		Last Modified: Wed, 19 Jun 2019 03:08:09 GMT  
 		Size: 117.5 MB (117543691 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:9e9389153ca2bb412b4c1392a0ab2b81ba5839fbcaa2da2ec8d7ba115ad489bb`  
-		Last Modified: Wed, 19 Jun 2019 03:08:42 GMT  
-		Size: 318.1 MB (318122061 bytes)  
+	-	`sha256:4f59ec180958f0c53ff42af6bbe71fe9ba3ce91940d707f089abc2d75ebc2626`  
+		Last Modified: Fri, 19 Jul 2019 22:27:36 GMT  
+		Size: 318.4 MB (318422684 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
