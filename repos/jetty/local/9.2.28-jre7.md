@@ -324,9 +324,9 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris bzip2=1.0.6-7
-'http://security.debian.org/debian-security/pool/updates/main/b/bzip2/bzip2_1.0.6-7+deb8u1.dsc' bzip2_1.0.6-7+deb8u1.dsc 2462 SHA256:9c4ee0d881c4e63e13882b970a3448b90cb84bf5ca78acddec8ced296d2672b8
+'http://security.debian.org/debian-security/pool/updates/main/b/bzip2/bzip2_1.0.6-7+deb8u2.dsc' bzip2_1.0.6-7+deb8u2.dsc 2462 SHA256:7f1f29e1c032ca64068eb0aa7b9e025b0c9e41218974d8fff3d255397fc691f5
 'http://security.debian.org/debian-security/pool/updates/main/b/bzip2/bzip2_1.0.6.orig.tar.bz2' bzip2_1.0.6.orig.tar.bz2 708737 SHA256:d70a9ccd8bdf47e302d96c69fecd54925f45d9c7b966bb4ef5f56b770960afa7
-'http://security.debian.org/debian-security/pool/updates/main/b/bzip2/bzip2_1.0.6-7+deb8u1.debian.tar.bz2' bzip2_1.0.6-7+deb8u1.debian.tar.bz2 60383 SHA256:853d42f87bdc559714b0bb35b207853b99d5b6b9763e7f4a85a79772ef681172
+'http://security.debian.org/debian-security/pool/updates/main/b/bzip2/bzip2_1.0.6-7+deb8u2.debian.tar.bz2' bzip2_1.0.6-7+deb8u2.debian.tar.bz2 61298 SHA256:49b18ae614a6a92beaf846ae2d5df29687c6d09a158f57db548ff52b882f51b8
 ```
 
 Other potentially useful URLs:
@@ -3150,20 +3150,13 @@ Binary Packages:
 If source is available (seen below), check the contents of `debian/copyright` within it.
 
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris nss=2:3.26-1+debu8u4
-'http://security.debian.org/debian-security/pool/updates/main/n/nss/nss_3.26-1+debu8u4.dsc' nss_3.26-1+debu8u4.dsc 2252 SHA256:8219df0d9c4eeda2086cedbbd09dc391bd0f427afe4ef1a2cc8b7895dffc6c7b
-'http://security.debian.org/debian-security/pool/updates/main/n/nss/nss_3.26.orig.tar.gz' nss_3.26.orig.tar.gz 7386943 SHA256:91783a570ab953693eb977ce47c501f04c104cec287fa011c91bcc8970d1c564
-'http://security.debian.org/debian-security/pool/updates/main/n/nss/nss_3.26-1+debu8u4.debian.tar.xz' nss_3.26-1+debu8u4.debian.tar.xz 36516 SHA256:38df123c4be5903700abcbd34e3f290dc343e0821a2049a86346b359da783667
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/nss/2:3.26-1+debu8u4/
 
-- https://sources.debian.net/src/nss/2:3.26-1+debu8u4/ (for browsing the source)
-- https://sources.debian.net/src/nss/2:3.26-1+debu8u4/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/nss/2:3.26-1+debu8u4/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `openjdk-7=7u221-2.6.18-1~deb8u1`
 
