@@ -2,8 +2,8 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:67034d06af4b692f938f46d468f6bbc2e49a1c319852c29888220e7567fa0c5a`
-- Created: `2019-07-10T08:13:22.467469917Z`
+- Image ID: `sha256:596dfaf7c46e2acc4a59b23ded939bd563e1c70d8d74c4b9d862b848de765549`
+- Created: `2019-07-18T02:27:47.402132512Z`
 - Virtual Size: ~ 1.67 Gb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
@@ -13,9 +13,9 @@
   - `PATH=/opt/nuxeo/server/bin:/usr/local/openjdk-8/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
   - `LANG=C.UTF-8`
   - `JAVA_HOME=/usr/local/openjdk-8`
-  - `JAVA_VERSION=8u212-b04`
-  - `JAVA_BASE_URL=https://github.com/AdoptOpenJDK/openjdk8-upstream-binaries/releases/download/jdk8u212-b04/OpenJDK8U-`
-  - `JAVA_URL_VERSION=8u212b04`
+  - `JAVA_VERSION=8u222`
+  - `JAVA_BASE_URL=https://github.com/AdoptOpenJDK/openjdk8-upstream-binaries/releases/download/jdk8u222-b10/OpenJDK8U-jdk_`
+  - `JAVA_URL_VERSION=8u222b10`
   - `NUXEO_USER=nuxeo`
   - `NUXEO_HOME=/opt/nuxeo/server`
   - `HOME=/opt/nuxeo/server`
@@ -4924,29 +4924,29 @@ Other potentially useful URLs:
 - https://sources.debian.net/src/libraw1394/2.1.2-1/debian/copyright/ (for direct copyright/license information)
 - http://snapshot.debian.org/package/libraw1394/2.1.2-1/ (for access to the source package after it no longer exists in the archive)
 
-### `dpkg` source package: `libreoffice=1:5.2.7-1+deb9u7`
+### `dpkg` source package: `libreoffice=1:5.2.7-1+deb9u9`
 
 Binary Packages:
 
-- `fonts-opensymbol=2:102.7+LibO5.2.7-1+deb9u7`
-- `libreoffice=1:5.2.7-1+deb9u7`
-- `libreoffice-avmedia-backend-gstreamer=1:5.2.7-1+deb9u7`
-- `libreoffice-base=1:5.2.7-1+deb9u7`
-- `libreoffice-base-core=1:5.2.7-1+deb9u7`
-- `libreoffice-base-drivers=1:5.2.7-1+deb9u7`
-- `libreoffice-calc=1:5.2.7-1+deb9u7`
-- `libreoffice-common=1:5.2.7-1+deb9u7`
-- `libreoffice-core=1:5.2.7-1+deb9u7`
-- `libreoffice-draw=1:5.2.7-1+deb9u7`
-- `libreoffice-impress=1:5.2.7-1+deb9u7`
-- `libreoffice-java-common=1:5.2.7-1+deb9u7`
-- `libreoffice-math=1:5.2.7-1+deb9u7`
-- `libreoffice-report-builder-bin=1:5.2.7-1+deb9u7`
-- `libreoffice-style-galaxy=1:5.2.7-1+deb9u7`
-- `libreoffice-writer=1:5.2.7-1+deb9u7`
-- `python3-uno=1:5.2.7-1+deb9u7`
-- `uno-libs3=5.2.7-1+deb9u7`
-- `ure=5.2.7-1+deb9u7`
+- `fonts-opensymbol=2:102.7+LibO5.2.7-1+deb9u9`
+- `libreoffice=1:5.2.7-1+deb9u9`
+- `libreoffice-avmedia-backend-gstreamer=1:5.2.7-1+deb9u9`
+- `libreoffice-base=1:5.2.7-1+deb9u9`
+- `libreoffice-base-core=1:5.2.7-1+deb9u9`
+- `libreoffice-base-drivers=1:5.2.7-1+deb9u9`
+- `libreoffice-calc=1:5.2.7-1+deb9u9`
+- `libreoffice-common=1:5.2.7-1+deb9u9`
+- `libreoffice-core=1:5.2.7-1+deb9u9`
+- `libreoffice-draw=1:5.2.7-1+deb9u9`
+- `libreoffice-impress=1:5.2.7-1+deb9u9`
+- `libreoffice-java-common=1:5.2.7-1+deb9u9`
+- `libreoffice-math=1:5.2.7-1+deb9u9`
+- `libreoffice-report-builder-bin=1:5.2.7-1+deb9u9`
+- `libreoffice-style-galaxy=1:5.2.7-1+deb9u9`
+- `libreoffice-writer=1:5.2.7-1+deb9u9`
+- `python3-uno=1:5.2.7-1+deb9u9`
+- `uno-libs3=5.2.7-1+deb9u9`
+- `ure=5.2.7-1+deb9u9`
 
 Licenses: (parsed from: `/usr/share/doc/fonts-opensymbol/copyright`, `/usr/share/doc/libreoffice/copyright`, `/usr/share/doc/libreoffice-avmedia-backend-gstreamer/copyright`, `/usr/share/doc/libreoffice-base/copyright`, `/usr/share/doc/libreoffice-base-core/copyright`, `/usr/share/doc/libreoffice-base-drivers/copyright`, `/usr/share/doc/libreoffice-calc/copyright`, `/usr/share/doc/libreoffice-common/copyright`, `/usr/share/doc/libreoffice-core/copyright`, `/usr/share/doc/libreoffice-draw/copyright`, `/usr/share/doc/libreoffice-impress/copyright`, `/usr/share/doc/libreoffice-java-common/copyright`, `/usr/share/doc/libreoffice-math/copyright`, `/usr/share/doc/libreoffice-report-builder-bin/copyright`, `/usr/share/doc/libreoffice-style-galaxy/copyright`, `/usr/share/doc/libreoffice-writer/copyright`, `/usr/share/doc/python3-uno/copyright`, `/usr/share/doc/uno-libs3/copyright`, `/usr/share/doc/ure/copyright`)
 
@@ -4961,20 +4961,20 @@ Licenses: (parsed from: `/usr/share/doc/fonts-opensymbol/copyright`, `/usr/share
 Source:
 
 ```console
-$ apt-get source -qq --print-uris libreoffice=1:5.2.7-1+deb9u7
-'http://deb.debian.org/debian/pool/main/libr/libreoffice/libreoffice_5.2.7-1+deb9u7.dsc' libreoffice_5.2.7-1+deb9u7.dsc 28369 SHA256:5e1fdda4e279809d099e8ed6476e40a860b25732f35358e959faa6f0589aebdb
-'http://deb.debian.org/debian/pool/main/libr/libreoffice/libreoffice_5.2.7.orig-helpcontent2.tar.xz' libreoffice_5.2.7.orig-helpcontent2.tar.xz 1446232 SHA256:a25de3b0fc788d1246ecb160718097e8f882b559d4a6536e1521fb0548d1b33a
-'http://deb.debian.org/debian/pool/main/libr/libreoffice/libreoffice_5.2.7.orig-translations.tar.xz' libreoffice_5.2.7.orig-translations.tar.xz 141705808 SHA256:df52c5491e438ac2f33e3c5ee8bb78cb0e0b530bf1a925a360ceba3c1775b867
-'http://deb.debian.org/debian/pool/main/libr/libreoffice/libreoffice_5.2.7.orig.tar.xz' libreoffice_5.2.7.orig.tar.xz 184589464 SHA256:106154a72a329605166a49bfa31c6d1cc03133d600ad0ef340b45e4e2a92891d
-'http://deb.debian.org/debian/pool/main/libr/libreoffice/libreoffice_5.2.7.orig.tar.xz.asc' libreoffice_5.2.7.orig.tar.xz.asc 836 SHA256:317b474e90b32fee6e3b189fe29b2cb6eba3634fada977b05b837ba6318baa52
-'http://deb.debian.org/debian/pool/main/libr/libreoffice/libreoffice_5.2.7-1+deb9u7.debian.tar.xz' libreoffice_5.2.7-1+deb9u7.debian.tar.xz 5398472 SHA256:d920d314113e934c8541ea65347b4181d2d01887ad7e0bfe7aeda710dc2493ac
+$ apt-get source -qq --print-uris libreoffice=1:5.2.7-1+deb9u9
+'http://security.debian.org/debian-security/pool/updates/main/libr/libreoffice/libreoffice_5.2.7-1+deb9u9.dsc' libreoffice_5.2.7-1+deb9u9.dsc 28369 SHA256:d8a7f51426172c6768f5e792ef279adf861f26844a1a620e75a99be2244cb7e4
+'http://security.debian.org/debian-security/pool/updates/main/libr/libreoffice/libreoffice_5.2.7.orig-helpcontent2.tar.xz' libreoffice_5.2.7.orig-helpcontent2.tar.xz 1446232 SHA256:a25de3b0fc788d1246ecb160718097e8f882b559d4a6536e1521fb0548d1b33a
+'http://security.debian.org/debian-security/pool/updates/main/libr/libreoffice/libreoffice_5.2.7.orig-translations.tar.xz' libreoffice_5.2.7.orig-translations.tar.xz 141705808 SHA256:df52c5491e438ac2f33e3c5ee8bb78cb0e0b530bf1a925a360ceba3c1775b867
+'http://security.debian.org/debian-security/pool/updates/main/libr/libreoffice/libreoffice_5.2.7.orig.tar.xz' libreoffice_5.2.7.orig.tar.xz 184589464 SHA256:106154a72a329605166a49bfa31c6d1cc03133d600ad0ef340b45e4e2a92891d
+'http://security.debian.org/debian-security/pool/updates/main/libr/libreoffice/libreoffice_5.2.7.orig.tar.xz.asc' libreoffice_5.2.7.orig.tar.xz.asc 836 SHA256:317b474e90b32fee6e3b189fe29b2cb6eba3634fada977b05b837ba6318baa52
+'http://security.debian.org/debian-security/pool/updates/main/libr/libreoffice/libreoffice_5.2.7-1+deb9u9.debian.tar.xz' libreoffice_5.2.7-1+deb9u9.debian.tar.xz 5400956 SHA256:6026aaaf083cdaf7eb538230cdfc3582b0292fa1367221ae007389960d39f781
 ```
 
 Other potentially useful URLs:
 
-- https://sources.debian.net/src/libreoffice/1:5.2.7-1+deb9u7/ (for browsing the source)
-- https://sources.debian.net/src/libreoffice/1:5.2.7-1+deb9u7/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/libreoffice/1:5.2.7-1+deb9u7/ (for access to the source package after it no longer exists in the archive)
+- https://sources.debian.net/src/libreoffice/1:5.2.7-1+deb9u9/ (for browsing the source)
+- https://sources.debian.net/src/libreoffice/1:5.2.7-1+deb9u9/debian/copyright/ (for direct copyright/license information)
+- http://snapshot.debian.org/package/libreoffice/1:5.2.7-1+deb9u9/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `librest=0.8.0-2`
 
