@@ -1,7 +1,7 @@
 ## `drupal:8-fpm-alpine`
 
 ```console
-$ docker pull drupal@sha256:e96248d702a4a1228af7174d6718d8aff06aa947529a23b0196f949e4dcb6988
+$ docker pull drupal@sha256:ced8f58947ba9fe9515d450d247e423c4e20d2a61f83973a26f6e2ddb862dc2d
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -16,14 +16,14 @@ $ docker pull drupal@sha256:e96248d702a4a1228af7174d6718d8aff06aa947529a23b0196f
 ### `drupal:8-fpm-alpine` - linux; amd64
 
 ```console
-$ docker pull drupal@sha256:2b0bd3ca7f771a77add7e500e5f07658de0895398ae513226261e48cf889d005
+$ docker pull drupal@sha256:9dfe650722a1ec0d985ae53ed1df66bea90c1d78f780765fe08355b26fbdd45e
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **54.5 MB (54450052 bytes)**  
+-	Total Size: **54.5 MB (54451858 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:061657548baeb2a7b5779ecf7e65cc9d577ef119d8bf63b359c9dca6f8df697f`
+-	Image ID: `sha256:6b95f2719df07b318d7308a9b56960f2138df6ec7bd8850a6f90aec4608df676`
 -	Entrypoint: `["docker-php-entrypoint"]`
 -	Default Command: `["php-fpm"]`
 
@@ -86,11 +86,11 @@ RUN set -eux; 		apk add --no-cache --virtual .build-deps 		coreutils 		freetype-
 RUN { 		echo 'opcache.memory_consumption=128'; 		echo 'opcache.interned_strings_buffer=8'; 		echo 'opcache.max_accelerated_files=4000'; 		echo 'opcache.revalidate_freq=60'; 		echo 'opcache.fast_shutdown=1'; 	} > /usr/local/etc/php/conf.d/opcache-recommended.ini
 # Fri, 12 Jul 2019 08:55:03 GMT
 WORKDIR /var/www/html
-# Fri, 12 Jul 2019 08:55:04 GMT
-ENV DRUPAL_VERSION=8.7.4
-# Fri, 12 Jul 2019 08:55:04 GMT
-ENV DRUPAL_MD5=5bd5db96c8a4d017e940a43285f5166b
-# Fri, 12 Jul 2019 08:55:15 GMT
+# Sat, 20 Jul 2019 00:21:44 GMT
+ENV DRUPAL_VERSION=8.7.5
+# Sat, 20 Jul 2019 00:21:44 GMT
+ENV DRUPAL_MD5=39cc326d9db1b4acce9b8716193189fd
+# Sat, 20 Jul 2019 00:21:51 GMT
 RUN set -eux; 	curl -fSL "https://ftp.drupal.org/files/projects/drupal-${DRUPAL_VERSION}.tar.gz" -o drupal.tar.gz; 	echo "${DRUPAL_MD5} *drupal.tar.gz" | md5sum -c -; 	tar -xz --strip-components=1 -f drupal.tar.gz; 	rm drupal.tar.gz; 	chown -R www-data:www-data sites modules themes
 ```
 
@@ -143,22 +143,22 @@ RUN set -eux; 	curl -fSL "https://ftp.drupal.org/files/projects/drupal-${DRUPAL_
 		Last Modified: Fri, 12 Jul 2019 08:58:17 GMT  
 		Size: 325.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:ad4778156fa72b39a2d00ba0643bb6aa2eee73cdc106253609254bea3eb11218`  
-		Last Modified: Fri, 12 Jul 2019 08:58:50 GMT  
-		Size: 18.0 MB (17960837 bytes)  
+	-	`sha256:9a82d887a71d4ca880527adc343dce05512cbc2a4f13ab44c7a4067b7dfc8890`  
+		Last Modified: Sat, 20 Jul 2019 00:25:42 GMT  
+		Size: 18.0 MB (17962643 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `drupal:8-fpm-alpine` - linux; arm variant v6
 
 ```console
-$ docker pull drupal@sha256:d1d5cde70dd747b42996eb4ed74290420fdc18ae0a425e52dbb03b3eccb87a3c
+$ docker pull drupal@sha256:114303b72dff1aa55d431b352737223ed85a892010046c32acc2b687a841c01b
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **52.7 MB (52681742 bytes)**  
+-	Total Size: **52.7 MB (52683507 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:2ebbac1420335d8b32c20840fbca9a60548d6263f6b1263f4b458dfeb06c7c91`
+-	Image ID: `sha256:0f8c9b4ca632ef1dde5bd151d0b870ba9fccdb603498a16b5e912b524bc4ce5b`
 -	Entrypoint: `["docker-php-entrypoint"]`
 -	Default Command: `["php-fpm"]`
 
@@ -221,11 +221,11 @@ RUN set -eux; 		apk add --no-cache --virtual .build-deps 		coreutils 		freetype-
 RUN { 		echo 'opcache.memory_consumption=128'; 		echo 'opcache.interned_strings_buffer=8'; 		echo 'opcache.max_accelerated_files=4000'; 		echo 'opcache.revalidate_freq=60'; 		echo 'opcache.fast_shutdown=1'; 	} > /usr/local/etc/php/conf.d/opcache-recommended.ini
 # Fri, 12 Jul 2019 22:07:44 GMT
 WORKDIR /var/www/html
-# Fri, 12 Jul 2019 22:07:44 GMT
-ENV DRUPAL_VERSION=8.7.4
-# Fri, 12 Jul 2019 22:07:44 GMT
-ENV DRUPAL_MD5=5bd5db96c8a4d017e940a43285f5166b
-# Fri, 12 Jul 2019 22:07:59 GMT
+# Fri, 19 Jul 2019 23:49:24 GMT
+ENV DRUPAL_VERSION=8.7.5
+# Fri, 19 Jul 2019 23:49:25 GMT
+ENV DRUPAL_MD5=39cc326d9db1b4acce9b8716193189fd
+# Fri, 19 Jul 2019 23:49:39 GMT
 RUN set -eux; 	curl -fSL "https://ftp.drupal.org/files/projects/drupal-${DRUPAL_VERSION}.tar.gz" -o drupal.tar.gz; 	echo "${DRUPAL_MD5} *drupal.tar.gz" | md5sum -c -; 	tar -xz --strip-components=1 -f drupal.tar.gz; 	rm drupal.tar.gz; 	chown -R www-data:www-data sites modules themes
 ```
 
@@ -278,22 +278,22 @@ RUN set -eux; 	curl -fSL "https://ftp.drupal.org/files/projects/drupal-${DRUPAL_
 		Last Modified: Fri, 12 Jul 2019 22:10:01 GMT  
 		Size: 325.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c32dd7c023162a36648caaf4cabb1cf8a4f0ba5f0f63966ea58ce29882d6a84d`  
-		Last Modified: Fri, 12 Jul 2019 22:10:14 GMT  
-		Size: 18.0 MB (17961041 bytes)  
+	-	`sha256:d38de8bd356162a15e2e86266b998f8ccb75b645f89ca162aeabd5cb9ab42fd2`  
+		Last Modified: Fri, 19 Jul 2019 23:50:09 GMT  
+		Size: 18.0 MB (17962806 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `drupal:8-fpm-alpine` - linux; arm variant v7
 
 ```console
-$ docker pull drupal@sha256:b4a970936485751ee6b02a515ec1a61500a34c18ad8123c3138dd181e9238000
+$ docker pull drupal@sha256:8bd60e495b35938d18696b651cdee1b4889d6c18f6d860194243a961d768e648
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **51.2 MB (51163706 bytes)**  
+-	Total Size: **51.2 MB (51165456 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:7463fe15835516f16a11ec0991beaa1457ad4433e437bed37f07e1c2b1433850`
+-	Image ID: `sha256:d373d799fa956f9c16b7e71d99d28b8f7a8d09549653f1d5d9de98682d24fb3d`
 -	Entrypoint: `["docker-php-entrypoint"]`
 -	Default Command: `["php-fpm"]`
 
@@ -356,11 +356,11 @@ RUN set -eux; 		apk add --no-cache --virtual .build-deps 		coreutils 		freetype-
 RUN { 		echo 'opcache.memory_consumption=128'; 		echo 'opcache.interned_strings_buffer=8'; 		echo 'opcache.max_accelerated_files=4000'; 		echo 'opcache.revalidate_freq=60'; 		echo 'opcache.fast_shutdown=1'; 	} > /usr/local/etc/php/conf.d/opcache-recommended.ini
 # Fri, 12 Jul 2019 22:47:05 GMT
 WORKDIR /var/www/html
-# Fri, 12 Jul 2019 22:47:06 GMT
-ENV DRUPAL_VERSION=8.7.4
-# Fri, 12 Jul 2019 22:47:06 GMT
-ENV DRUPAL_MD5=5bd5db96c8a4d017e940a43285f5166b
-# Fri, 12 Jul 2019 22:47:21 GMT
+# Fri, 19 Jul 2019 23:58:14 GMT
+ENV DRUPAL_VERSION=8.7.5
+# Fri, 19 Jul 2019 23:58:14 GMT
+ENV DRUPAL_MD5=39cc326d9db1b4acce9b8716193189fd
+# Fri, 19 Jul 2019 23:58:27 GMT
 RUN set -eux; 	curl -fSL "https://ftp.drupal.org/files/projects/drupal-${DRUPAL_VERSION}.tar.gz" -o drupal.tar.gz; 	echo "${DRUPAL_MD5} *drupal.tar.gz" | md5sum -c -; 	tar -xz --strip-components=1 -f drupal.tar.gz; 	rm drupal.tar.gz; 	chown -R www-data:www-data sites modules themes
 ```
 
@@ -413,22 +413,22 @@ RUN set -eux; 	curl -fSL "https://ftp.drupal.org/files/projects/drupal-${DRUPAL_
 		Last Modified: Fri, 12 Jul 2019 22:52:48 GMT  
 		Size: 327.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:55937e3e3ddfc821b5a71434fa1162d38c84218cb2ca311b307b810e832eb373`  
-		Last Modified: Fri, 12 Jul 2019 22:53:18 GMT  
-		Size: 18.0 MB (17961047 bytes)  
+	-	`sha256:514d2e954d2a8bba715ea635e89764fd95a073d81382b67d7659081d75b76707`  
+		Last Modified: Sat, 20 Jul 2019 00:00:13 GMT  
+		Size: 18.0 MB (17962797 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `drupal:8-fpm-alpine` - linux; arm64 variant v8
 
 ```console
-$ docker pull drupal@sha256:ec4fbee18f11689e8e691fd428a90b1def35f9c0c4d2aabdd67d8eefb11531f9
+$ docker pull drupal@sha256:94704b01a9e5a96d29cc5166a977fd45d12e5202df5b25f787257b59c71c327c
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **54.2 MB (54208359 bytes)**  
+-	Total Size: **54.2 MB (54210129 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:a98b779bb45dd1002650137fe7cfe11894b1612e52ef36c0d7a5f078c22beb06`
+-	Image ID: `sha256:986bf6b6cf1521228fc3fb4e58676371f775687a5d5ca5d786cacb80d8624295`
 -	Entrypoint: `["docker-php-entrypoint"]`
 -	Default Command: `["php-fpm"]`
 
@@ -491,11 +491,11 @@ RUN set -eux; 		apk add --no-cache --virtual .build-deps 		coreutils 		freetype-
 RUN { 		echo 'opcache.memory_consumption=128'; 		echo 'opcache.interned_strings_buffer=8'; 		echo 'opcache.max_accelerated_files=4000'; 		echo 'opcache.revalidate_freq=60'; 		echo 'opcache.fast_shutdown=1'; 	} > /usr/local/etc/php/conf.d/opcache-recommended.ini
 # Fri, 12 Jul 2019 17:37:55 GMT
 WORKDIR /var/www/html
-# Fri, 12 Jul 2019 17:37:55 GMT
-ENV DRUPAL_VERSION=8.7.4
-# Fri, 12 Jul 2019 17:37:55 GMT
-ENV DRUPAL_MD5=5bd5db96c8a4d017e940a43285f5166b
-# Fri, 12 Jul 2019 17:38:06 GMT
+# Fri, 19 Jul 2019 23:40:13 GMT
+ENV DRUPAL_VERSION=8.7.5
+# Fri, 19 Jul 2019 23:40:14 GMT
+ENV DRUPAL_MD5=39cc326d9db1b4acce9b8716193189fd
+# Fri, 19 Jul 2019 23:40:24 GMT
 RUN set -eux; 	curl -fSL "https://ftp.drupal.org/files/projects/drupal-${DRUPAL_VERSION}.tar.gz" -o drupal.tar.gz; 	echo "${DRUPAL_MD5} *drupal.tar.gz" | md5sum -c -; 	tar -xz --strip-components=1 -f drupal.tar.gz; 	rm drupal.tar.gz; 	chown -R www-data:www-data sites modules themes
 ```
 
@@ -548,22 +548,22 @@ RUN set -eux; 	curl -fSL "https://ftp.drupal.org/files/projects/drupal-${DRUPAL_
 		Last Modified: Fri, 12 Jul 2019 17:43:01 GMT  
 		Size: 323.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:12b6f72be72793a7360a20cfc68c0929ccb3eeaaddc79119170ea0b69ee676c8`  
-		Last Modified: Fri, 12 Jul 2019 17:43:11 GMT  
-		Size: 18.0 MB (17961026 bytes)  
+	-	`sha256:9cf0a78d183f6d57074a22d1747ee01fb196789da43851e260ae275339eb3858`  
+		Last Modified: Fri, 19 Jul 2019 23:42:03 GMT  
+		Size: 18.0 MB (17962796 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `drupal:8-fpm-alpine` - linux; 386
 
 ```console
-$ docker pull drupal@sha256:63a28be3c104629f7f2366cd3afe2fc6a7592253348e6a731b785c28aaa273d0
+$ docker pull drupal@sha256:2e22e901f1330ffc60d21baa472583e2fa6d0535083649b0de64ba1688d06c7c
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **55.1 MB (55082548 bytes)**  
+-	Total Size: **55.1 MB (55084359 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:5a86209ba15a89d63db44e0a759c89894e714ad122ff379e864fbda835e32e9e`
+-	Image ID: `sha256:6ded868a7501a0d5fafc54620bd289f8547309cfffa5755538e637edd540c252`
 -	Entrypoint: `["docker-php-entrypoint"]`
 -	Default Command: `["php-fpm"]`
 
@@ -626,11 +626,11 @@ RUN set -eux; 		apk add --no-cache --virtual .build-deps 		coreutils 		freetype-
 RUN { 		echo 'opcache.memory_consumption=128'; 		echo 'opcache.interned_strings_buffer=8'; 		echo 'opcache.max_accelerated_files=4000'; 		echo 'opcache.revalidate_freq=60'; 		echo 'opcache.fast_shutdown=1'; 	} > /usr/local/etc/php/conf.d/opcache-recommended.ini
 # Fri, 12 Jul 2019 06:39:27 GMT
 WORKDIR /var/www/html
-# Fri, 12 Jul 2019 06:39:27 GMT
-ENV DRUPAL_VERSION=8.7.4
-# Fri, 12 Jul 2019 06:39:27 GMT
-ENV DRUPAL_MD5=5bd5db96c8a4d017e940a43285f5166b
-# Fri, 12 Jul 2019 06:39:44 GMT
+# Fri, 19 Jul 2019 23:38:52 GMT
+ENV DRUPAL_VERSION=8.7.5
+# Fri, 19 Jul 2019 23:38:53 GMT
+ENV DRUPAL_MD5=39cc326d9db1b4acce9b8716193189fd
+# Fri, 19 Jul 2019 23:39:01 GMT
 RUN set -eux; 	curl -fSL "https://ftp.drupal.org/files/projects/drupal-${DRUPAL_VERSION}.tar.gz" -o drupal.tar.gz; 	echo "${DRUPAL_MD5} *drupal.tar.gz" | md5sum -c -; 	tar -xz --strip-components=1 -f drupal.tar.gz; 	rm drupal.tar.gz; 	chown -R www-data:www-data sites modules themes
 ```
 
@@ -683,22 +683,22 @@ RUN set -eux; 	curl -fSL "https://ftp.drupal.org/files/projects/drupal-${DRUPAL_
 		Last Modified: Fri, 12 Jul 2019 06:42:41 GMT  
 		Size: 325.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:ab9c7188ac12cfb7a7a9b6a41c9dd485ae9cc61639ad3195a4fca91d2ac83ebd`  
-		Last Modified: Fri, 12 Jul 2019 06:43:01 GMT  
-		Size: 18.0 MB (17960837 bytes)  
+	-	`sha256:f9e937cc2d33cf96b51189bed14db4bd7f957017bafd27bbf358396478dc4b27`  
+		Last Modified: Fri, 19 Jul 2019 23:40:07 GMT  
+		Size: 18.0 MB (17962648 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `drupal:8-fpm-alpine` - linux; ppc64le
 
 ```console
-$ docker pull drupal@sha256:c9136f103c6a4fb4e3d10b9020244c3391a09d5c429884a4d5d93d2751137389
+$ docker pull drupal@sha256:ba9f5e1b3595025a4f9d73f424cc74491ac20e0c774115c65115f97078a80834
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **56.1 MB (56143980 bytes)**  
+-	Total Size: **56.1 MB (56145728 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:dd92b44fb0b8c4a723f6eec1f3912343e8afca67b56b5adc10139270e1bfc58a`
+-	Image ID: `sha256:4fe0cdc085cd2a3b9aaa391d34b30b08b3df4eaca1556802b7068a95def2a674`
 -	Entrypoint: `["docker-php-entrypoint"]`
 -	Default Command: `["php-fpm"]`
 
@@ -761,11 +761,11 @@ RUN set -eux; 		apk add --no-cache --virtual .build-deps 		coreutils 		freetype-
 RUN { 		echo 'opcache.memory_consumption=128'; 		echo 'opcache.interned_strings_buffer=8'; 		echo 'opcache.max_accelerated_files=4000'; 		echo 'opcache.revalidate_freq=60'; 		echo 'opcache.fast_shutdown=1'; 	} > /usr/local/etc/php/conf.d/opcache-recommended.ini
 # Fri, 12 Jul 2019 02:51:21 GMT
 WORKDIR /var/www/html
-# Fri, 12 Jul 2019 02:51:23 GMT
-ENV DRUPAL_VERSION=8.7.4
-# Fri, 12 Jul 2019 02:51:25 GMT
-ENV DRUPAL_MD5=5bd5db96c8a4d017e940a43285f5166b
-# Fri, 12 Jul 2019 02:51:43 GMT
+# Sat, 20 Jul 2019 00:17:26 GMT
+ENV DRUPAL_VERSION=8.7.5
+# Sat, 20 Jul 2019 00:17:27 GMT
+ENV DRUPAL_MD5=39cc326d9db1b4acce9b8716193189fd
+# Sat, 20 Jul 2019 00:17:39 GMT
 RUN set -eux; 	curl -fSL "https://ftp.drupal.org/files/projects/drupal-${DRUPAL_VERSION}.tar.gz" -o drupal.tar.gz; 	echo "${DRUPAL_MD5} *drupal.tar.gz" | md5sum -c -; 	tar -xz --strip-components=1 -f drupal.tar.gz; 	rm drupal.tar.gz; 	chown -R www-data:www-data sites modules themes
 ```
 
@@ -818,7 +818,7 @@ RUN set -eux; 	curl -fSL "https://ftp.drupal.org/files/projects/drupal-${DRUPAL_
 		Last Modified: Fri, 12 Jul 2019 02:54:46 GMT  
 		Size: 324.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:37768a13752ee59afceae7265693171aad40c22e55dc4e82c60fdf08a7e68f0d`  
-		Last Modified: Fri, 12 Jul 2019 02:55:23 GMT  
-		Size: 18.0 MB (17961046 bytes)  
+	-	`sha256:483973543eac5814e7b2b470a30a2049900873af0a42e78b1b77277ed829cc33`  
+		Last Modified: Sat, 20 Jul 2019 00:20:01 GMT  
+		Size: 18.0 MB (17962794 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
