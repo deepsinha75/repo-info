@@ -1,10 +1,10 @@
-# `convertigo:7.6.0-openj9`
+# `convertigo:7.6.1-openj9`
 
 ## Docker Metadata
 
-- Image ID: `sha256:a0b9437f72834ca20ab15b1e507388fd59fbcd33d7b2ba8b7655f2e47d6baf02`
-- Created: `2019-07-04T03:38:04.819794957Z`
-- Virtual Size: ~ 516.28 Mb  
+- Image ID: `sha256:63e4717136012af198aafeb8ee58c44d72f612584d6eaa4f90f84cb5a7803a08`
+- Created: `2019-07-18T16:20:38.710361978Z`
+- Virtual Size: ~ 516.29 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["tini","--","/docker-entrypoint.sh"]`
@@ -29,8 +29,8 @@
   - `GOSU_GPG_KEYS=B42F6819007F00F88E364FD4036A9C25BF357DD4`
   - `TINI_VERSION=0.18.0`
   - `TINI_GPG_KEYS=6380DC428747F6C393FEACA59A84159D7001A4E5`
-  - `CONVERTIGO_VERSION=7.6.0`
-  - `CONVERTIGO_WAR_URL=https://github.com/convertigo/convertigo/releases/download/7.6.0/convertigo-7.6.0.war`
+  - `CONVERTIGO_VERSION=7.6.1`
+  - `CONVERTIGO_WAR_URL=https://github.com/convertigo/convertigo/releases/download/7.6.1/convertigo-7.6.1.war`
   - `CONVERTIGO_GPG_KEYS=6A7779BB78FE368DF74B708FD4DA8FBEB64BF75F`
 
 ## `dpkg` (`.deb`-based packages)
@@ -165,13 +165,9 @@ Licenses: (parsed from: `/usr/share/doc/base-files/copyright`)
 
 - `GPL`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris base-files=10.1ubuntu2.4
-'http://archive.ubuntu.com/ubuntu/pool/main/b/base-files/base-files_10.1ubuntu2.4.dsc' base-files_10.1ubuntu2.4.dsc 1620 SHA256:fce61378a53efa48c497a830f7bea836b984e8462a6f10b033ced440070f5d36
-'http://archive.ubuntu.com/ubuntu/pool/main/b/base-files/base-files_10.1ubuntu2.4.tar.xz' base-files_10.1ubuntu2.4.tar.xz 78128 SHA256:91ef8e0cfad30cd5408b58301a4a31a360b07f836950256384f02ebb75aa8058
-```
 
 ### `dpkg` source package: `base-passwd=3.5.44`
 
