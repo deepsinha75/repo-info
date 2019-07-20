@@ -1,24 +1,24 @@
-## `openjdk:14-ea-5-jdk-oraclelinux7`
+## `openjdk:13-ea-30-oraclelinux7`
 
 ```console
-$ docker pull openjdk@sha256:6781551675fad7cdf13b752b5ceff28abc255692308e05a2a80d19ebb2842028
+$ docker pull openjdk@sha256:547ab16af5215be00a6a70cd89a67192f14465c9d5a9e8edefe7c227fdcaa510
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
 -	Platforms:
 	-	linux; amd64
 
-### `openjdk:14-ea-5-jdk-oraclelinux7` - linux; amd64
+### `openjdk:13-ea-30-oraclelinux7` - linux; amd64
 
 ```console
-$ docker pull openjdk@sha256:335d586614aefda3db5b391fc2b50bca8706e72d10a843199bf21a8e3c5c17b0
+$ docker pull openjdk@sha256:ee0dd873366856dbd0ca55428515023bd62522deadc391265b298d4667256fc9
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **246.8 MB (246785870 bytes)**  
+-	Total Size: **246.1 MB (246138032 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:61855a16cb7ac66147eeb2821bd0fe203c3f20c918b16a51d88016b6186714e9`
+-	Image ID: `sha256:2315e77b1ae997cc03f885b504ae510861919824b086c1797121af6499331348`
 -	Default Command: `["jshell"]`
 
 ```dockerfile
@@ -32,19 +32,19 @@ CMD ["/bin/bash"]
 RUN set -eux; 	yum install -y 		gzip 		tar 				freetype fontconfig 	; 	rm -rf /var/cache/yum
 # Mon, 24 Jun 2019 22:40:41 GMT
 ENV LANG=en_US.UTF-8
-# Mon, 15 Jul 2019 23:44:55 GMT
-ENV JAVA_HOME=/usr/java/openjdk-14
-# Mon, 15 Jul 2019 23:44:55 GMT
-ENV PATH=/usr/java/openjdk-14/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Mon, 15 Jul 2019 23:44:55 GMT
-ENV JAVA_VERSION=14-ea+5
-# Mon, 15 Jul 2019 23:44:55 GMT
-ENV JAVA_URL=https://download.java.net/java/early_access/jdk14/5/GPL/openjdk-14-ea+5_linux-x64_bin.tar.gz
-# Mon, 15 Jul 2019 23:44:55 GMT
-ENV JAVA_SHA256=d5b55b255163ed71db7a6c6b62ef8bb1e13f05cbc76f659136f24c70aaa0d9b7
-# Mon, 15 Jul 2019 23:46:05 GMT
+# Mon, 24 Jun 2019 22:40:41 GMT
+ENV JAVA_HOME=/usr/java/openjdk-13
+# Mon, 24 Jun 2019 22:40:41 GMT
+ENV PATH=/usr/java/openjdk-13/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+# Sat, 20 Jul 2019 00:27:41 GMT
+ENV JAVA_VERSION=13-ea+30
+# Sat, 20 Jul 2019 00:27:42 GMT
+ENV JAVA_URL=https://download.java.net/java/early_access/jdk13/30/GPL/openjdk-13-ea+30_linux-x64_bin.tar.gz
+# Sat, 20 Jul 2019 00:27:42 GMT
+ENV JAVA_SHA256=f84884d72f1b7730c013bd4b2263742b48e4a4ea2dd0ff9af57fd07c18a56441
+# Sat, 20 Jul 2019 00:28:31 GMT
 RUN set -eux; 		curl -fL -o /openjdk.tgz "$JAVA_URL"; 	echo "$JAVA_SHA256 */openjdk.tgz" | sha256sum -c -; 	mkdir -p "$JAVA_HOME"; 	tar --extract --file /openjdk.tgz --directory "$JAVA_HOME" --strip-components 1; 	rm /openjdk.tgz; 		ln -sfT "$JAVA_HOME" /usr/java/default; 	ln -sfT "$JAVA_HOME" /usr/java/latest; 	for bin in "$JAVA_HOME/bin/"*; do 		base="$(basename "$bin")"; 		[ ! -e "/usr/bin/$base" ]; 		alternatives --install "/usr/bin/$base" "$base" "$bin" 20000; 	done; 		java -Xshare:dump; 		java --version; 	javac --version
-# Mon, 15 Jul 2019 23:46:05 GMT
+# Sat, 20 Jul 2019 00:28:32 GMT
 CMD ["jshell"]
 ```
 
@@ -57,7 +57,7 @@ CMD ["jshell"]
 		Last Modified: Mon, 24 Jun 2019 22:42:47 GMT  
 		Size: 6.6 MB (6633017 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:5bd3eb9156cc777b4fa83a70a0706de199b2c8f52219d3ce348492b835972de3`  
-		Last Modified: Mon, 15 Jul 2019 23:51:58 GMT  
-		Size: 197.5 MB (197539285 bytes)  
+	-	`sha256:eaa81d35f9de62f217f8f88734dbe837e04844b216d5d8c26cfe753b34f3eb74`  
+		Last Modified: Sat, 20 Jul 2019 00:30:44 GMT  
+		Size: 196.9 MB (196891447 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
