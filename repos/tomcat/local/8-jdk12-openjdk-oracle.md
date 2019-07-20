@@ -2,9 +2,9 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:754d6b537045aa0ec63cb084ad2ba4e42ca4cfd4a69a3883847b998f66f960a0`
-- Created: `2019-07-12T07:15:05.948537052Z`
-- Virtual Size: ~ 504.83 Mb  
+- Image ID: `sha256:c02f30f132a6150130b19dc87695b7c3fb3fd53c92b5293d6f007cc79be368d8`
+- Created: `2019-07-18T02:51:31.174643411Z`
+- Virtual Size: ~ 505.59 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Command: `["catalina.sh","run"]`
@@ -12,9 +12,9 @@
   - `PATH=/usr/local/tomcat/bin:/usr/java/openjdk-12/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
   - `LANG=en_US.UTF-8`
   - `JAVA_HOME=/usr/java/openjdk-12`
-  - `JAVA_VERSION=12.0.1`
-  - `JAVA_URL=https://download.java.net/java/GA/jdk12.0.1/69cfe15208a647278a19ef0990eea691/12/GPL/openjdk-12.0.1_linux-x64_bin.tar.gz`
-  - `JAVA_SHA256=151eb4ec00f82e5e951126f572dc9116104c884d97f91be14ec11e85fc2dd626`
+  - `JAVA_VERSION=12.0.2`
+  - `JAVA_URL=https://download.java.net/java/GA/jdk12.0.2/e482c34c86bd4bf8b56c0b35558996b9/10/GPL/openjdk-12.0.2_linux-x64_bin.tar.gz`
+  - `JAVA_SHA256=75998a6ebf477467aa5fb68227a67733f0e77e01f737d4dfbc01e617e59106ed`
   - `CATALINA_HOME=/usr/local/tomcat`
   - `TOMCAT_NATIVE_LIBDIR=/usr/local/tomcat/native-jni-lib`
   - `LD_LIBRARY_PATH=/usr/local/tomcat/native-jni-lib`
