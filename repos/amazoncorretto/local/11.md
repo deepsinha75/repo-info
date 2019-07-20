@@ -2,9 +2,9 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:19537520a8ba70301115a1d40eb69571dd42cbc7b890139739d6e88eec5be18c`
-- Created: `2019-05-23T22:40:33.584383717Z`
-- Virtual Size: ~ 492.20 Mb  
+- Image ID: `sha256:28e4a5d8512dd0954a429e750849f91cf98b2a4500c1b543c9ae18f54a5a6808`
+- Created: `2019-07-18T01:19:59.134509996Z`
+- Virtual Size: ~ 493.50 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Command: `["/bin/bash"]`
@@ -350,13 +350,13 @@ Enabling amzn2-core-source repository
 https://cdn.amazonlinux.com/2/core/2.0/SRPMS/8cf736cd3252ada92b21e91b8c2a324d05b12ad6ca293a14a6ab7a82326aec43//../../../../../blobstore/1462513d101ab1acbeb7c849948ebaeaa282316958d94c0bb97b5fbcdd752199/gnupg2-2.0.22-5.amzn2.0.3.src.rpm
 ```
 
-### `rpm` package: `gpg-pubkey-c87f5b1a-593863f8`
+### `rpm` package: `gpg-pubkey-67f4fcb4-5d2c28d7`
 
 Licenses (from `rpm --query`): pubkey
 
 **WARNING:** unable to find source (`yumdownloader` failed or returned no results)!
 
-### `rpm` package: `gpg-pubkey-f8152b28-5cb10725`
+### `rpm` package: `gpg-pubkey-c87f5b1a-593863f8`
 
 Licenses (from `rpm --query`): pubkey
 
@@ -398,7 +398,7 @@ Enabling amzn2-core-source repository
 https://cdn.amazonlinux.com/2/core/2.0/SRPMS/8cf736cd3252ada92b21e91b8c2a324d05b12ad6ca293a14a6ab7a82326aec43//../../../../../blobstore/968c079ef8a8a2efee76ff59cd99e06dd242b8813960171d0f5c23f4a6eb0bb2/texinfo-5.1-5.amzn2.src.rpm
 ```
 
-### `rpm` package: `java-11-amazon-corretto-devel-11.0.3.7-1.x86_64`
+### `rpm` package: `java-11-amazon-corretto-devel-11.0.4.11-1.x86_64`
 
 Licenses (from `rpm --query`): ASL 1.1 and ASL 2.0 and BSD and BSD with advertising and GPL+ and GPLv2 and GPLv2 with exceptions and IJG and LGPLv2+ and MIT and MPLv2.0 and Public Domain and W3C and zlib and ISC and FTL and RSA.
 
