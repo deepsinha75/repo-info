@@ -667,16 +667,7 @@ https://d2lzkl7pfhq30w.cloudfront.net/pub/fedora/linux/releases/30/Everything/so
 
 Licenses (from `rpm --query`): GPLv3+
 
-Source:
-
-```console
-$ yumdownloader --quiet --source --urls gnupg2-2.2.16-1.fc30
-Enabling fedora-modular-source repository
-Enabling updates-source repository
-Enabling updates-modular-source repository
-Enabling fedora-source repository
-https://d2lzkl7pfhq30w.cloudfront.net/pub/fedora/linux/updates/30/Everything/SRPMS//Packages/g/gnupg2-2.2.16-1.fc30.src.rpm
-```
+**WARNING:** unable to find source (`yumdownloader` failed or returned no results)!
 
 ### `rpm` package: `gnutls-3.6.8-1.fc30.x86_64`
 
@@ -2488,16 +2479,7 @@ https://d2lzkl7pfhq30w.cloudfront.net/pub/fedora/linux/releases/30/Everything/so
 
 Licenses (from `rpm --query`): Vim and MIT
 
-Source:
-
-```console
-$ yumdownloader --quiet --source --urls vim-minimal-8.1.1661-1.fc30
-Enabling fedora-modular-source repository
-Enabling updates-source repository
-Enabling updates-modular-source repository
-Enabling fedora-source repository
-https://d2lzkl7pfhq30w.cloudfront.net/pub/fedora/linux/updates/30/Everything/SRPMS//Packages/v/vim-8.1.1661-1.fc30.src.rpm
-```
+**WARNING:** unable to find source (`yumdownloader` failed or returned no results)!
 
 ### `rpm` package: `whois-nls-5.4.3-1.fc30.noarch`
 
