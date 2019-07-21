@@ -2,9 +2,9 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:db5b195118816e17517820eb82b591a89a09fad9e8a4c4c14ab99662b436e7cd`
-- Created: `2019-07-10T07:59:07.226195524Z`
-- Virtual Size: ~ 648.26 Mb  
+- Image ID: `sha256:d572102b5ef773005707b520f003ce5130b3212c3b977e52d54944b3a4e0a2ad`
+- Created: `2019-07-18T03:09:47.535470404Z`
+- Virtual Size: ~ 649.46 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Command: `["sh","-c","sleep 1 && exec clj"]`
@@ -12,9 +12,9 @@
   - `PATH=/usr/local/openjdk-11/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
   - `LANG=C.UTF-8`
   - `JAVA_HOME=/usr/local/openjdk-11`
-  - `JAVA_VERSION=11.0.3`
-  - `JAVA_BASE_URL=https://github.com/AdoptOpenJDK/openjdk11-upstream-binaries/releases/download/jdk-11.0.3%2B7/OpenJDK11U-`
-  - `JAVA_URL_VERSION=11.0.3_7`
+  - `JAVA_VERSION=11.0.4`
+  - `JAVA_BASE_URL=https://github.com/AdoptOpenJDK/openjdk11-upstream-binaries/releases/download/jdk-11.0.4%2B11/OpenJDK11U-jdk_`
+  - `JAVA_URL_VERSION=11.0.4_11`
   - `CLOJURE_VERSION=1.10.0.442`
 - Labels:
   - `maintainer=Kirill Chernyshov <delaguardo@gmail.com>`
