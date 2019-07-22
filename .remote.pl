@@ -168,7 +168,7 @@ sub get_image_data_p ($ref) {
 		# Mojo::Promise->map can't handle empty promises
 		push @imageDataPromises, sub { Mojo::Promise->resolve } unless @imageDataPromises;
 
-		return Mojo::Promise->map({ concurrency => 2 }, sub { $_->() }, @imageDataPromises)->then(sub (@images) {
+		return Mojo::Promise->map({ concurrency => 1 }, sub { $_->() }, @imageDataPromises)->then(sub (@images) {
 			@images = map { @$_ } @images;
 			my @layerDataPromises;
 			for my $image (@images) {
@@ -194,7 +194,7 @@ sub get_image_data_p ($ref) {
 				}
 			}
 			return @images unless @layerDataPromises;
-			return Mojo::Promise->map({ concurrency => 2 }, sub { $_->() }, @layerDataPromises)->then(sub (@) {
+			return Mojo::Promise->map({ concurrency => 1 }, sub { $_->() }, @layerDataPromises)->then(sub (@) {
 				return @images;
 			});
 		})->then(sub (@images) {
