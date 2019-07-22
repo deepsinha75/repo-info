@@ -2,9 +2,9 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:1dce3b128394b9bd923bf49a8c22caece7ed19da755d6b63610310886e0df018`
-- Created: `2019-07-18T01:23:04.602306665Z`
-- Virtual Size: ~ 184.38 Mb  
+- Image ID: `sha256:e4157102c815f9ed8fec6118171866b13a331b6329ff8f85017f0bf7652917e9`
+- Created: `2019-07-18T21:22:08.451218895Z`
+- Virtual Size: ~ 185.04 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["dockerd-entrypoint.sh"]`
@@ -12,6 +12,7 @@
   - `PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
   - `DOCKER_CHANNEL=stable`
   - `DOCKER_VERSION=18.09.8`
+  - `DOCKER_TLS_CERTDIR=`
   - `DIND_COMMIT=37498f009d8bf25fbb6199e8ccd34bed84f2874b`
 
 ## `apk` (`.apk`-based packages)
@@ -506,6 +507,23 @@ musl-utils-1.1.22-r2 installed size:
 
 musl-utils-1.1.22-r2 license:
 MIT BSD GPL2+
+
+```
+
+### `apk` package: `openssl`
+
+```console
+openssl-1.1.1c-r0 description:
+Toolkit for Transport Layer Security (TLS)
+
+openssl-1.1.1c-r0 webpage:
+https://www.openssl.org
+
+openssl-1.1.1c-r0 installed size:
+679936
+
+openssl-1.1.1c-r0 license:
+OpenSSL
 
 ```
 

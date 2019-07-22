@@ -2,9 +2,9 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:a1d51df62bd7ec5eba5dc80bdccbbd8957b2b863f93f55c03898ab403545632a`
-- Created: `2019-07-11T22:45:17.346082186Z`
-- Virtual Size: ~ 228.90 Mb  
+- Image ID: `sha256:2953288ccb0fa5ef0bd9505e52ea52866380b22ec4460efea078ace226b6ed14`
+- Created: `2019-07-18T21:21:53.963023366Z`
+- Virtual Size: ~ 229.57 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["dockerd-entrypoint.sh"]`
@@ -12,6 +12,7 @@
   - `PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
   - `DOCKER_CHANNEL=test`
   - `DOCKER_VERSION=19.03.0-rc3`
+  - `DOCKER_TLS_CERTDIR=/certs`
   - `DIND_COMMIT=37498f009d8bf25fbb6199e8ccd34bed84f2874b`
 
 ## `apk` (`.apk`-based packages)
@@ -206,16 +207,16 @@ GPL-2.0-or-later
 ### `apk` package: `keyutils-libs`
 
 ```console
-keyutils-libs-1.6-r0 description:
+keyutils-libs-1.6-r1 description:
 Key utilities library
 
-keyutils-libs-1.6-r0 webpage:
+keyutils-libs-1.6-r1 webpage:
 http://people.redhat.com/~dhowells/keyutils/
 
-keyutils-libs-1.6-r0 installed size:
+keyutils-libs-1.6-r1 installed size:
 36864
 
-keyutils-libs-1.6-r0 license:
+keyutils-libs-1.6-r1 license:
 GPL-2.0-or-later LGPL-2.0-or-later
 
 ```
@@ -506,6 +507,23 @@ musl-utils-1.1.22-r2 installed size:
 
 musl-utils-1.1.22-r2 license:
 MIT BSD GPL2+
+
+```
+
+### `apk` package: `openssl`
+
+```console
+openssl-1.1.1c-r0 description:
+Toolkit for Transport Layer Security (TLS)
+
+openssl-1.1.1c-r0 webpage:
+https://www.openssl.org
+
+openssl-1.1.1c-r0 installed size:
+679936
+
+openssl-1.1.1c-r0 license:
+OpenSSL
 
 ```
 

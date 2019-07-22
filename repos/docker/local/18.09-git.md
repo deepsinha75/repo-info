@@ -2,8 +2,8 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:3f3d2648f581e65287e21d2994603379ac660e88733061cfe7f07988b72d4bc0`
-- Created: `2019-07-18T01:23:09.165582418Z`
+- Image ID: `sha256:9abda5f61d544069a48dcf7da91317e8234784a9247463a9e535bc38c7817c7f`
+- Created: `2019-07-18T21:22:12.858766984Z`
 - Virtual Size: ~ 192.10 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
@@ -13,6 +13,7 @@
   - `PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
   - `DOCKER_CHANNEL=stable`
   - `DOCKER_VERSION=18.09.8`
+  - `DOCKER_TLS_CERTDIR=`
 
 ## `apk` (`.apk`-based packages)
 
