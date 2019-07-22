@@ -1,10 +1,10 @@
-# `drupal:8.7.4-fpm`
+# `drupal:8.7.5-fpm`
 
 ## Docker Metadata
 
-- Image ID: `sha256:9859d0f3d75056bf51d05cd0dc819b7d1ab9e42413bde541d7bf8aca4df3b292`
-- Created: `2019-07-10T04:17:34.205319918Z`
-- Virtual Size: ~ 444.90 Mb  
+- Image ID: `sha256:9ed4d9a278507b89605bcc8aacc39bfa5cbb125e21de2a901f64218364caef6a`
+- Created: `2019-07-20T00:21:40.926504337Z`
+- Virtual Size: ~ 440.67 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["docker-php-entrypoint"]`
@@ -23,8 +23,8 @@
   - `PHP_ASC_URL=https://www.php.net/get/php-7.3.7.tar.xz.asc/from/this/mirror`
   - `PHP_SHA256=ba067200ba649956b3a92ec8b71a6ed8ce8a099921212443c1bcf3260a29274c`
   - `PHP_MD5=`
-  - `DRUPAL_VERSION=8.7.4`
-  - `DRUPAL_MD5=5bd5db96c8a4d017e940a43285f5166b`
+  - `DRUPAL_VERSION=8.7.5`
+  - `DRUPAL_MD5=39cc326d9db1b4acce9b8716193189fd`
 
 ## `dpkg` (`.deb`-based packages)
 
@@ -1845,20 +1845,13 @@ Licenses: (parsed from: `/usr/share/doc/linux-libc-dev/copyright`)
 - `Unicode-data`
 - `Xen-interface`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris linux=4.9.168-1+deb9u3
-'http://security.debian.org/debian-security/pool/updates/main/l/linux/linux_4.9.168-1+deb9u3.dsc' linux_4.9.168-1+deb9u3.dsc 123228 SHA256:387ac7cf647ff9b6e28cb92cf80f0ad3d390bc4ca24b24586c62ca86aeb5e39a
-'http://security.debian.org/debian-security/pool/updates/main/l/linux/linux_4.9.168.orig.tar.xz' linux_4.9.168.orig.tar.xz 94774584 SHA256:8a2c04045b47472584fc8e72d8663b5c720b8ba5efba878f48ddba93bac29a7f
-'http://security.debian.org/debian-security/pool/updates/main/l/linux/linux_4.9.168-1+deb9u3.debian.tar.xz' linux_4.9.168-1+deb9u3.debian.tar.xz 2749392 SHA256:1157d6ff3934675897a590ad5a87f463d8e96604cd31aed7c4bbb601c029103c
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/linux/4.9.168-1+deb9u3/
 
-- https://sources.debian.net/src/linux/4.9.168-1+deb9u3/ (for browsing the source)
-- https://sources.debian.net/src/linux/4.9.168-1+deb9u3/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/linux/4.9.168-1+deb9u3/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `lsb=9.20161125`
 
@@ -2162,11 +2155,11 @@ Other potentially useful URLs:
 - https://sources.debian.net/src/openldap/2.4.44+dfsg-5+deb9u2/debian/copyright/ (for direct copyright/license information)
 - http://snapshot.debian.org/package/openldap/2.4.44+dfsg-5+deb9u2/ (for access to the source package after it no longer exists in the archive)
 
-### `dpkg` source package: `openssl1.0=1.0.2r-1~deb9u1`
+### `dpkg` source package: `openssl1.0=1.0.2s-1~deb9u1`
 
 Binary Packages:
 
-- `libssl1.0.2:amd64=1.0.2r-1~deb9u1`
+- `libssl1.0.2:amd64=1.0.2s-1~deb9u1`
 
 **WARNING:** unable to detect licenses! (package likely not compliant with DEP-5)  
 If source is available (seen below), check the contents of `debian/copyright` within it.
@@ -2175,50 +2168,25 @@ If source is available (seen below), check the contents of `debian/copyright` wi
 Source:
 
 ```console
-$ apt-get source -qq --print-uris openssl1.0=1.0.2r-1~deb9u1
-'http://deb.debian.org/debian/pool/main/o/openssl1.0/openssl1.0_1.0.2r-1~deb9u1.dsc' openssl1.0_1.0.2r-1~deb9u1.dsc 2557 SHA256:f6d40cc0e325d6ca58322b850866223da9c839876525961f1a2e8ca517ff6402
-'http://deb.debian.org/debian/pool/main/o/openssl1.0/openssl1.0_1.0.2r.orig.tar.gz' openssl1.0_1.0.2r.orig.tar.gz 5348369 SHA256:ae51d08bba8a83958e894946f15303ff894d75c2b8bbd44a852b64e3fe11d0d6
-'http://deb.debian.org/debian/pool/main/o/openssl1.0/openssl1.0_1.0.2r.orig.tar.gz.asc' openssl1.0_1.0.2r.orig.tar.gz.asc 488 SHA256:da941c886c404599c6c66fc01e4e0dfd5a0cb60d6b56688858d3128807a5fc64
-'http://deb.debian.org/debian/pool/main/o/openssl1.0/openssl1.0_1.0.2r-1~deb9u1.debian.tar.xz' openssl1.0_1.0.2r-1~deb9u1.debian.tar.xz 94600 SHA256:347d87c07fcc8ac4987dedcb4d5f0404a03fd1c041548194234597767d7b77bc
+$ apt-get source -qq --print-uris openssl1.0=1.0.2s-1~deb9u1
+'http://security.debian.org/debian-security/pool/updates/main/o/openssl1.0/openssl1.0_1.0.2s-1~deb9u1.dsc' openssl1.0_1.0.2s-1~deb9u1.dsc 2383 SHA256:0561eaa55e724d61fbbf30c4207a09e66b7e64c40959c8eb184df9bb53e7db64
+'http://security.debian.org/debian-security/pool/updates/main/o/openssl1.0/openssl1.0_1.0.2s.orig.tar.gz' openssl1.0_1.0.2s.orig.tar.gz 5349149 SHA256:cabd5c9492825ce5bd23f3c3aeed6a97f8142f606d893df216411f07d1abab96
+'http://security.debian.org/debian-security/pool/updates/main/o/openssl1.0/openssl1.0_1.0.2s.orig.tar.gz.asc' openssl1.0_1.0.2s.orig.tar.gz.asc 833 SHA256:9e3c99f4eafbb37d15eaf567057ed670e25d4d39f6b049c4bb097980449eb3c0
+'http://security.debian.org/debian-security/pool/updates/main/o/openssl1.0/openssl1.0_1.0.2s-1~deb9u1.debian.tar.xz' openssl1.0_1.0.2s-1~deb9u1.debian.tar.xz 94636 SHA256:70cb805b84c4e0cd53b2db292de8d078c1d0eed53c9aacf588be72e6e5c5415d
 ```
 
 Other potentially useful URLs:
 
-- https://sources.debian.net/src/openssl1.0/1.0.2r-1~deb9u1/ (for browsing the source)
-- https://sources.debian.net/src/openssl1.0/1.0.2r-1~deb9u1/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/openssl1.0/1.0.2r-1~deb9u1/ (for access to the source package after it no longer exists in the archive)
-
-### `dpkg` source package: `openssl=1.1.0j-1~deb9u1`
-
-Binary Packages:
-
-- `openssl=1.1.0j-1~deb9u1`
-
-**WARNING:** unable to detect licenses! (package likely not compliant with DEP-5)  
-If source is available (seen below), check the contents of `debian/copyright` within it.
-
-
-Source:
-
-```console
-$ apt-get source -qq --print-uris openssl=1.1.0j-1~deb9u1
-'http://deb.debian.org/debian/pool/main/o/openssl/openssl_1.1.0j-1~deb9u1.dsc' openssl_1.1.0j-1~deb9u1.dsc 2611 SHA256:3c4f9e2af00c7595218d05d09635746f7edfd13b6c08b6266cd386b195c7889b
-'http://deb.debian.org/debian/pool/main/o/openssl/openssl_1.1.0j.orig.tar.gz' openssl_1.1.0j.orig.tar.gz 5411919 SHA256:31bec6c203ce1a8e93d5994f4ed304c63ccf07676118b6634edded12ad1b3246
-'http://deb.debian.org/debian/pool/main/o/openssl/openssl_1.1.0j.orig.tar.gz.asc' openssl_1.1.0j.orig.tar.gz.asc 488 SHA256:e162322dce0b98f92401a48ba5f088ded64ee308a54580ed9edc3edafd85eebf
-'http://deb.debian.org/debian/pool/main/o/openssl/openssl_1.1.0j-1~deb9u1.debian.tar.xz' openssl_1.1.0j-1~deb9u1.debian.tar.xz 71944 SHA256:737db70af006b984b914ba63ac8cbf012cb0db43df5e31f7dfa95d0b5890910b
-```
-
-Other potentially useful URLs:
-
-- https://sources.debian.net/src/openssl/1.1.0j-1~deb9u1/ (for browsing the source)
-- https://sources.debian.net/src/openssl/1.1.0j-1~deb9u1/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/openssl/1.1.0j-1~deb9u1/ (for access to the source package after it no longer exists in the archive)
+- https://sources.debian.net/src/openssl1.0/1.0.2s-1~deb9u1/ (for browsing the source)
+- https://sources.debian.net/src/openssl1.0/1.0.2s-1~deb9u1/debian/copyright/ (for direct copyright/license information)
+- http://snapshot.debian.org/package/openssl1.0/1.0.2s-1~deb9u1/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `openssl=1.1.0k-1~deb9u1`
 
 Binary Packages:
 
 - `libssl1.1:amd64=1.1.0k-1~deb9u1`
+- `openssl=1.1.0k-1~deb9u1`
 
 **WARNING:** unable to detect licenses! (package likely not compliant with DEP-5)  
 If source is available (seen below), check the contents of `debian/copyright` within it.
