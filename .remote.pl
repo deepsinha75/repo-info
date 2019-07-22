@@ -11,14 +11,16 @@ $ua->hubProxy($ENV{DOCKERHUB_PUBLIC_PROXY} || die 'missing DOCKERHUB_PUBLIC_PROX
 my @defaultShell = ('/bin/sh', '-c');
 
 sub get_blob_headers_p ($ref) {
+	die "blob missing digest: $ref" unless $ref->digest;
+
 	state %headers;
-	return Mojo::Promise->resolve($headers{$ref}) if $headers{$ref};
+	return Mojo::Promise->resolve($headers{$ref->digest}) if $headers{$ref->digest};
 
 	return $ua->retry_simple_req_p(head => $ua->ref_url($ref, 'blobs'))->then(sub ($headersTx) {
 		if (my $error = $headersTx->error) {
 			die "failed to get blob headers for $ref" . ($error->{code} ? $error->{code} . ' -- ' : '') . $error->{message};
 		}
-		return ($headers{$ref} = $headersTx->res->headers);
+		return ($headers{$ref->digest} = $headersTx->res->headers);
 	});
 }
 
