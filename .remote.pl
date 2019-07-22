@@ -124,11 +124,11 @@ sub get_image_data_p ($ref) {
 
 		# https://docs.docker.com/registry/spec/manifest-v2-1/
 		if ($manifestData->{mediaType} eq Bashbrew::RegistryUserAgent::MEDIA_MANIFEST_V1) {
-			push @imageDataPromises, parse_manifest_v1_data_p($ref, $manifestData->{manifest});
+			push @imageDataPromises, sub { parse_manifest_v1_data_p($ref, $manifestData->{manifest}) };
 		}
 		# https://docs.docker.com/registry/spec/manifest-v2-2/
 		elsif ($manifestData->{mediaType} eq Bashbrew::RegistryUserAgent::MEDIA_MANIFEST_V2) {
-			push @imageDataPromises, parse_manifest_v2_data_p($ref, $manifestData->{manifest});
+			push @imageDataPromises, sub { parse_manifest_v2_data_p($ref, $manifestData->{manifest}) };
 		}
 		elsif ($manifestData->{mediaType} eq Bashbrew::RegistryUserAgent::MEDIA_MANIFEST_LIST) {
 			$data->{manifest} = $manifestData->{manifest};
@@ -139,7 +139,7 @@ sub get_image_data_p ($ref) {
 				die "sub-manifest missing digest!" unless $digest;
 
 				my $subRef = $ref->clone->digest($digest);
-				push @imageDataPromises, $ua->get_manifest_p($subRef)->then(sub ($subManifest) {
+				push @imageDataPromises, sub { $ua->get_manifest_p($subRef)->then(sub ($subManifest) {
 					die "sub-manifest $digest does not exist!" unless $subManifest;
 					die "bad sub-manifest digest! ('$digest' vs '$subManifest->{digest}')" unless $digest eq $subManifest->{digest};
 
@@ -158,17 +158,17 @@ sub get_image_data_p ($ref) {
 					else {
 						die "unknown sub-manifest mediaType $manifestData->{mediaType} for $digest";
 					}
-				});
+				}) };
 			}
 		}
 		else {
 			die "unknown mediaType $manifestData->{mediaType}";
 		}
 
-		# Mojo::Promise->all can't handle empty promises
-		push @imageDataPromises, Mojo::Promise->resolve unless @imageDataPromises;
+		# Mojo::Promise->map can't handle empty promises
+		push @imageDataPromises, sub { Mojo::Promise->resolve } unless @imageDataPromises;
 
-		return Mojo::Promise->all(@imageDataPromises)->then(sub (@images) {
+		return Mojo::Promise->map({ concurrency => 2 }, sub { $_->() }, @imageDataPromises)->then(sub (@images) {
 			@images = map { @$_ } @images;
 			my @layerDataPromises;
 			for my $image (@images) {
@@ -176,25 +176,25 @@ sub get_image_data_p ($ref) {
 				for my $layer (@{ $image->{layers} }) {
 					if (defined $layer->{mediaType} && $layer->{mediaType} eq Bashbrew::RegistryUserAgent::MEDIA_FOREIGN_LAYER) {
 						if (defined $layer->{urls} && @{ $layer->{urls} }) {
-							push @layerDataPromises, get_foreign_headers_p($layer->{urls})->then(sub ($headers) {
+							push @layerDataPromises, sub { get_foreign_headers_p($layer->{urls})->then(sub ($headers) {
 								$layer->{size} //= $headers->content_length;
 								$layer->{lastModified} //= $headers->last_modified;
 								return $layer;
-							});
+							}) };
 						}
 					}
 					else {
-						push @layerDataPromises, get_blob_headers_p($ref->clone->digest($layer->{digest}))->then(sub ($headers) {
+						push @layerDataPromises, sub { get_blob_headers_p($ref->clone->digest($layer->{digest}))->then(sub ($headers) {
 							$layer->{size} //= $headers->content_length;
 							$layer->{mediaType} //= $headers->content_type;
 							$layer->{lastModified} //= $headers->last_modified;
 							return $layer;
-						});
+						}) };
 					}
 				}
 			}
 			return @images unless @layerDataPromises;
-			return Mojo::Promise->all(@layerDataPromises)->then(sub (@) {
+			return Mojo::Promise->map({ concurrency => 2 }, sub { $_->() }, @layerDataPromises)->then(sub (@) {
 				return @images;
 			});
 		})->then(sub (@images) {
