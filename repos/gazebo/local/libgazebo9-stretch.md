@@ -2,8 +2,8 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:40cff770f9af1fef9cddb3236fbc4e68c80bf6c2d47fca555ee11d974e3638fd`
-- Created: `2019-07-10T02:51:01.072348779Z`
+- Image ID: `sha256:5cfbe7d9cf0e537ada7c6c6e858f686afeddb2bc40b272e59fc1dd1d801e0009`
+- Created: `2019-07-18T17:19:33.178296478Z`
 - Virtual Size: ~ 1.74 Gb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
@@ -1873,15 +1873,15 @@ Other potentially useful URLs:
 - https://sources.debian.net/src/game-music-emu/0.6.0-4/debian/copyright/ (for direct copyright/license information)
 - http://snapshot.debian.org/package/game-music-emu/0.6.0-4/ (for access to the source package after it no longer exists in the archive)
 
-### `dpkg` source package: `gazebo9=9.8.0-1~stretch`
+### `dpkg` source package: `gazebo9=9.10.0-1~stretch`
 
 Binary Packages:
 
-- `gazebo9=9.8.0-1~stretch`
-- `gazebo9-common=9.8.0-1~stretch`
-- `gazebo9-plugin-base=9.8.0-1~stretch`
-- `libgazebo9:amd64=9.8.0-1~stretch`
-- `libgazebo9-dev:amd64=9.8.0-1~stretch`
+- `gazebo9=9.10.0-1~stretch`
+- `gazebo9-common=9.10.0-1~stretch`
+- `gazebo9-plugin-base=9.10.0-1~stretch`
+- `libgazebo9:amd64=9.10.0-1~stretch`
+- `libgazebo9-dev:amd64=9.10.0-1~stretch`
 
 Licenses: (parsed from: `/usr/share/doc/gazebo9/copyright`, `/usr/share/doc/gazebo9-common/copyright`, `/usr/share/doc/gazebo9-plugin-base/copyright`, `/usr/share/doc/libgazebo9/copyright`, `/usr/share/doc/libgazebo9-dev/copyright`)
 
@@ -6507,20 +6507,13 @@ Licenses: (parsed from: `/usr/share/doc/linux-libc-dev/copyright`)
 - `Unicode-data`
 - `Xen-interface`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris linux=4.9.168-1+deb9u3
-'http://security.debian.org/debian-security/pool/updates/main/l/linux/linux_4.9.168-1+deb9u3.dsc' linux_4.9.168-1+deb9u3.dsc 123228 SHA256:387ac7cf647ff9b6e28cb92cf80f0ad3d390bc4ca24b24586c62ca86aeb5e39a
-'http://security.debian.org/debian-security/pool/updates/main/l/linux/linux_4.9.168.orig.tar.xz' linux_4.9.168.orig.tar.xz 94774584 SHA256:8a2c04045b47472584fc8e72d8663b5c720b8ba5efba878f48ddba93bac29a7f
-'http://security.debian.org/debian-security/pool/updates/main/l/linux/linux_4.9.168-1+deb9u3.debian.tar.xz' linux_4.9.168-1+deb9u3.debian.tar.xz 2749392 SHA256:1157d6ff3934675897a590ad5a87f463d8e96604cd31aed7c4bbb601c029103c
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/linux/4.9.168-1+deb9u3/
 
-- https://sources.debian.net/src/linux/4.9.168-1+deb9u3/ (for browsing the source)
-- https://sources.debian.net/src/linux/4.9.168-1+deb9u3/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/linux/4.9.168-1+deb9u3/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `llvm-toolchain-3.9=1:3.9.1-9`
 

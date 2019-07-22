@@ -2,9 +2,9 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:845ac76085ee425ef0bccdc16b3d3f0dc92eb22c883252b6b08346d1ec8b6030`
-- Created: `2019-06-19T03:20:42.306918092Z`
-- Virtual Size: ~ 687.32 Mb  
+- Image ID: `sha256:2c4e609500844ec23290af17be46d85085fb6552c1850bc54911767a1d981485`
+- Created: `2019-07-18T16:40:19.203206009Z`
+- Virtual Size: ~ 687.76 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["/gzserver_entrypoint.sh"]`
@@ -1069,14 +1069,14 @@ $ apt-get source -qq --print-uris game-music-emu=0.6.0-3ubuntu0.16.04.1
 'http://archive.ubuntu.com/ubuntu/pool/universe/g/game-music-emu/game-music-emu_0.6.0-3ubuntu0.16.04.1.debian.tar.xz' game-music-emu_0.6.0-3ubuntu0.16.04.1.debian.tar.xz 5592 SHA256:a4d7a4f5d9df23098abc4c1fe82696ed8f93d893c50bb8fc14a4de84e705810d
 ```
 
-### `dpkg` source package: `gazebo9=9.9.0-1~xenial`
+### `dpkg` source package: `gazebo9=9.10.0-1~xenial`
 
 Binary Packages:
 
-- `gazebo9=9.9.0-1~xenial`
-- `gazebo9-common=9.9.0-1~xenial`
-- `gazebo9-plugin-base=9.9.0-1~xenial`
-- `libgazebo9:amd64=9.9.0-1~xenial`
+- `gazebo9=9.10.0-1~xenial`
+- `gazebo9-common=9.10.0-1~xenial`
+- `gazebo9-plugin-base=9.10.0-1~xenial`
+- `libgazebo9:amd64=9.10.0-1~xenial`
 
 Licenses: (parsed from: `/usr/share/doc/gazebo9/copyright`, `/usr/share/doc/gazebo9-common/copyright`, `/usr/share/doc/gazebo9-plugin-base/copyright`, `/usr/share/doc/libgazebo9/copyright`)
 
@@ -1239,20 +1239,25 @@ $ apt-get source -qq --print-uris giflib=5.1.4-0.3~16.04
 'http://archive.ubuntu.com/ubuntu/pool/main/g/giflib/giflib_5.1.4-0.3~16.04.debian.tar.xz' giflib_5.1.4-0.3~16.04.debian.tar.xz 13052 SHA256:04627903c97eaf176bd3d8214b971867bfa21ee4da7336e36a1aae5e738e6bb7
 ```
 
-### `dpkg` source package: `glib2.0=2.48.2-0ubuntu4.2`
+### `dpkg` source package: `glib2.0=2.48.2-0ubuntu4.3`
 
 Binary Packages:
 
-- `libglib2.0-0:amd64=2.48.2-0ubuntu4.2`
-- `libglib2.0-data=2.48.2-0ubuntu4.2`
+- `libglib2.0-0:amd64=2.48.2-0ubuntu4.3`
+- `libglib2.0-data=2.48.2-0ubuntu4.3`
 
 Licenses: (parsed from: `/usr/share/doc/libglib2.0-0/copyright`, `/usr/share/doc/libglib2.0-data/copyright`)
 
 - `LGPL`
 
-**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
-This is *usually* due to a new package version being released and the old version being removed.
+Source:
 
+```console
+$ apt-get source -qq --print-uris glib2.0=2.48.2-0ubuntu4.3
+'http://archive.ubuntu.com/ubuntu/pool/main/g/glib2.0/glib2.0_2.48.2-0ubuntu4.3.dsc' glib2.0_2.48.2-0ubuntu4.3.dsc 3157 SHA256:3651fc1cb14faa739dca58710b09581465c683d31b1928a69ce52f692689ab30
+'http://archive.ubuntu.com/ubuntu/pool/main/g/glib2.0/glib2.0_2.48.2.orig.tar.xz' glib2.0_2.48.2.orig.tar.xz 6408644 SHA256:f25e751589cb1a58826eac24fbd4186cda4518af772806b666a3f91f66e6d3f4
+'http://archive.ubuntu.com/ubuntu/pool/main/g/glib2.0/glib2.0_2.48.2-0ubuntu4.3.debian.tar.xz' glib2.0_2.48.2-0ubuntu4.3.debian.tar.xz 73408 SHA256:969536b2462dc344ff772bd7aef3f5966104e98cbf5a0903c26f880b5acfad55
+```
 
 ### `dpkg` source package: `glibc=2.23-0ubuntu11`
 
@@ -4625,25 +4630,30 @@ $ apt-get source -qq --print-uris pinentry=0.9.7-3
 'http://archive.ubuntu.com/ubuntu/pool/main/p/pinentry/pinentry_0.9.7-3.debian.tar.xz' pinentry_0.9.7-3.debian.tar.xz 13032 SHA256:1d3f5b2ad83234537482ec0b78c5b411b25c84e91dfa1fdbebb1dbc8f1677b8f
 ```
 
-### `dpkg` source package: `poppler=0.41.0-0ubuntu1.13`
+### `dpkg` source package: `poppler=0.41.0-0ubuntu1.14`
 
 Binary Packages:
 
-- `libpoppler58:amd64=0.41.0-0ubuntu1.13`
+- `libpoppler58:amd64=0.41.0-0ubuntu1.14`
 
 Licenses: (parsed from: `/usr/share/doc/libpoppler58/copyright`)
 
 - `GPL-2`
 
-**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
-This is *usually* due to a new package version being released and the old version being removed.
+Source:
 
+```console
+$ apt-get source -qq --print-uris poppler=0.41.0-0ubuntu1.14
+'http://archive.ubuntu.com/ubuntu/pool/main/p/poppler/poppler_0.41.0-0ubuntu1.14.dsc' poppler_0.41.0-0ubuntu1.14.dsc 3376 SHA256:307fd2d79a0b7cd1c0ea2180823d3580dcc5627cee56fe30057b9c995f748d99
+'http://archive.ubuntu.com/ubuntu/pool/main/p/poppler/poppler_0.41.0.orig.tar.xz' poppler_0.41.0.orig.tar.xz 1655448 SHA256:420abaab63caed9e1ee28964a0ba216d1979506726164bc99ad5ade289192a1b
+'http://archive.ubuntu.com/ubuntu/pool/main/p/poppler/poppler_0.41.0-0ubuntu1.14.debian.tar.xz' poppler_0.41.0-0ubuntu1.14.debian.tar.xz 54512 SHA256:797b3e4e06f8c4b891d7301688fb4e5bd48f4facd0ad94c003d73708da86789f
+```
 
-### `dpkg` source package: `postgresql-9.5=9.5.17-0ubuntu0.16.04.1`
+### `dpkg` source package: `postgresql-9.5=9.5.18-0ubuntu0.16.04.1`
 
 Binary Packages:
 
-- `libpq5:amd64=9.5.17-0ubuntu0.16.04.1`
+- `libpq5:amd64=9.5.18-0ubuntu0.16.04.1`
 
 Licenses: (parsed from: `/usr/share/doc/libpq5/copyright`)
 
@@ -4657,10 +4667,10 @@ Licenses: (parsed from: `/usr/share/doc/libpq5/copyright`)
 Source:
 
 ```console
-$ apt-get source -qq --print-uris postgresql-9.5=9.5.17-0ubuntu0.16.04.1
-'http://security.ubuntu.com/ubuntu/pool/main/p/postgresql-9.5/postgresql-9.5_9.5.17-0ubuntu0.16.04.1.dsc' postgresql-9.5_9.5.17-0ubuntu0.16.04.1.dsc 3675 SHA256:1f53e7ad96233833f3c562bd4ab6b64dc8ff02b55f32e36054e69d2104dd5659
-'http://security.ubuntu.com/ubuntu/pool/main/p/postgresql-9.5/postgresql-9.5_9.5.17.orig.tar.gz' postgresql-9.5_9.5.17.orig.tar.gz 22736126 SHA256:d1b303c0ca8d291b209f64a776fb7dbd420a4bc76929146ea7f4dc23438de3e8
-'http://security.ubuntu.com/ubuntu/pool/main/p/postgresql-9.5/postgresql-9.5_9.5.17-0ubuntu0.16.04.1.debian.tar.xz' postgresql-9.5_9.5.17-0ubuntu0.16.04.1.debian.tar.xz 27240 SHA256:a1e3b1ff9bcbdc82c323de5bbc3babfc79796f8a4486d0936cb794ea13f49431
+$ apt-get source -qq --print-uris postgresql-9.5=9.5.18-0ubuntu0.16.04.1
+'http://archive.ubuntu.com/ubuntu/pool/main/p/postgresql-9.5/postgresql-9.5_9.5.18-0ubuntu0.16.04.1.dsc' postgresql-9.5_9.5.18-0ubuntu0.16.04.1.dsc 3774 SHA256:b46fe4c20e5fdb68f341490202d3f35353d05b96ab1bd43feefdc8888bd2cb8b
+'http://archive.ubuntu.com/ubuntu/pool/main/p/postgresql-9.5/postgresql-9.5_9.5.18.orig.tar.gz' postgresql-9.5_9.5.18.orig.tar.gz 22745556 SHA256:5f9257f6c9a00fd7ec9249be3e4fb0cb4a7bc31f2577cd8f58f9e21006e998f1
+'http://archive.ubuntu.com/ubuntu/pool/main/p/postgresql-9.5/postgresql-9.5_9.5.18-0ubuntu0.16.04.1.debian.tar.xz' postgresql-9.5_9.5.18-0ubuntu0.16.04.1.debian.tar.xz 27124 SHA256:ea857af0273e607ef2f924124bb96533dcb4b3e2fbdb731ca178e9ec525df58b
 ```
 
 ### `dpkg` source package: `procps=2:3.3.10-4ubuntu2.4`
@@ -5981,11 +5991,11 @@ $ apt-get source -qq --print-uris xz-utils=5.1.1alpha+20120614-2ubuntu2
 'http://archive.ubuntu.com/ubuntu/pool/main/x/xz-utils/xz-utils_5.1.1alpha+20120614-2ubuntu2.debian.tar.gz' xz-utils_5.1.1alpha+20120614-2ubuntu2.debian.tar.gz 156001 SHA256:e7743d4a96276ccffc4e171812e402a1f503f87df3b668ef0e58db6629146a18
 ```
 
-### `dpkg` source package: `zeromq3=4.1.4-7`
+### `dpkg` source package: `zeromq3=4.1.4-7ubuntu0.1`
 
 Binary Packages:
 
-- `libzmq5:amd64=4.1.4-7`
+- `libzmq5:amd64=4.1.4-7ubuntu0.1`
 
 Licenses: (parsed from: `/usr/share/doc/libzmq5/copyright`)
 
@@ -5998,10 +6008,10 @@ Licenses: (parsed from: `/usr/share/doc/libzmq5/copyright`)
 Source:
 
 ```console
-$ apt-get source -qq --print-uris zeromq3=4.1.4-7
-'http://archive.ubuntu.com/ubuntu/pool/universe/z/zeromq3/zeromq3_4.1.4-7.dsc' zeromq3_4.1.4-7.dsc 1998 SHA256:294e5163a5122ebf6c679f7a3d6fe5e0ee41a189915df6b35cf9556eab2036c3
+$ apt-get source -qq --print-uris zeromq3=4.1.4-7ubuntu0.1
+'http://archive.ubuntu.com/ubuntu/pool/universe/z/zeromq3/zeromq3_4.1.4-7ubuntu0.1.dsc' zeromq3_4.1.4-7ubuntu0.1.dsc 2127 SHA256:d0ce166f7976b7b29bc84182c38caf82d0fdf1004b9c6cfca029dc2875111fc6
 'http://archive.ubuntu.com/ubuntu/pool/universe/z/zeromq3/zeromq3_4.1.4.orig.tar.gz' zeromq3_4.1.4.orig.tar.gz 1400012 SHA256:e99f44fde25c2e4cb84ce440f87ca7d3fe3271c2b8cfbc67d55e4de25e6fe378
-'http://archive.ubuntu.com/ubuntu/pool/universe/z/zeromq3/zeromq3_4.1.4-7.debian.tar.xz' zeromq3_4.1.4-7.debian.tar.xz 13996 SHA256:dcf0d653deac664b0fbea4f08c7024da72172eee8f026ede22e15653ca3e016f
+'http://archive.ubuntu.com/ubuntu/pool/universe/z/zeromq3/zeromq3_4.1.4-7ubuntu0.1.debian.tar.xz' zeromq3_4.1.4-7ubuntu0.1.debian.tar.xz 15184 SHA256:b4bbb4553c441a20051feb0f4da08efaaa9043f37f303104d11b4ea1e6b07105
 ```
 
 ### `dpkg` source package: `zlib=1:1.2.8.dfsg-2ubuntu4.1`

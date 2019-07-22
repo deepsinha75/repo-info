@@ -2,9 +2,9 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:83236d7bdc14cfc41769cae3919026cfc4b7cda7a7385fb7465e8960d8977bb9`
-- Created: `2019-07-10T02:48:22.974975021Z`
-- Virtual Size: ~ 805.66 Mb  
+- Image ID: `sha256:fb7265c355a9127f640cc15e69eff3140817ee59f95d6134759bd06af050c397`
+- Created: `2019-07-18T17:17:38.274412749Z`
+- Virtual Size: ~ 806.61 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["/gzserver_entrypoint.sh"]`
@@ -1639,14 +1639,14 @@ Other potentially useful URLs:
 - https://sources.debian.net/src/game-music-emu/0.6.0-4/debian/copyright/ (for direct copyright/license information)
 - http://snapshot.debian.org/package/game-music-emu/0.6.0-4/ (for access to the source package after it no longer exists in the archive)
 
-### `dpkg` source package: `gazebo9=9.8.0-1~stretch`
+### `dpkg` source package: `gazebo9=9.10.0-1~stretch`
 
 Binary Packages:
 
-- `gazebo9=9.8.0-1~stretch`
-- `gazebo9-common=9.8.0-1~stretch`
-- `gazebo9-plugin-base=9.8.0-1~stretch`
-- `libgazebo9:amd64=9.8.0-1~stretch`
+- `gazebo9=9.10.0-1~stretch`
+- `gazebo9-common=9.10.0-1~stretch`
+- `gazebo9-plugin-base=9.10.0-1~stretch`
+- `libgazebo9:amd64=9.10.0-1~stretch`
 
 Licenses: (parsed from: `/usr/share/doc/gazebo9/copyright`, `/usr/share/doc/gazebo9-common/copyright`, `/usr/share/doc/gazebo9-plugin-base/copyright`, `/usr/share/doc/libgazebo9/copyright`)
 
