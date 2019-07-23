@@ -2002,14 +2002,9 @@ Licenses: (parsed from: `/usr/share/doc/gtk-update-icon-cache/copyright`, `/usr/
 - `SWL`
 - `other`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris gtk+3.0=3.22.30-1ubuntu3
-'http://archive.ubuntu.com/ubuntu/pool/main/g/gtk+3.0/gtk+3.0_3.22.30-1ubuntu3.dsc' gtk+3.0_3.22.30-1ubuntu3.dsc 3364 SHA256:7ed99fc9a565beeb388bb381efcd50007e145067dbd45d2dda38cc10f8e95ea7
-'http://archive.ubuntu.com/ubuntu/pool/main/g/gtk+3.0/gtk+3.0_3.22.30.orig.tar.xz' gtk+3.0_3.22.30.orig.tar.xz 18946084 SHA256:a1a4a5c12703d4e1ccda28333b87ff462741dc365131fbc94c218ae81d9a6567
-'http://archive.ubuntu.com/ubuntu/pool/main/g/gtk+3.0/gtk+3.0_3.22.30-1ubuntu3.debian.tar.xz' gtk+3.0_3.22.30-1ubuntu3.debian.tar.xz 161284 SHA256:65c80cdd99e3f73f3942fd423855dd8127aa43b3f2ee94b44f236f55b2558722
-```
 
 ### `dpkg` source package: `gts=0.7.6+darcs121130-4`
 
