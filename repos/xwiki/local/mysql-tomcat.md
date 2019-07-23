@@ -2,8 +2,8 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:e174ef982d4b24cd1ae580b15d747c533073ba78ff2a5a58c44b16a11556f393`
-- Created: `2019-07-12T10:08:37.719804817Z`
+- Image ID: `sha256:eb070e9b6e07aba3d333c9408721bf823d9efaf3fd028c722df0f7b03b395db6`
+- Created: `2019-07-19T23:22:34.278490269Z`
 - Virtual Size: ~ 1.14 Gb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
@@ -23,9 +23,9 @@
   - `TOMCAT_MAJOR=8`
   - `TOMCAT_VERSION=8.5.43`
   - `TOMCAT_SHA512=422eda76c5291a3d5ca5fbd679336997371eef913a6bcf95d17bb5b3ba41a3e033c022789cb61a56914be11251492f6c4fced72dbfefb33b31a3b5b0243335c5`
-  - `XWIKI_VERSION=10.11.8`
-  - `XWIKI_URL_PREFIX=https://maven.xwiki.org/releases/org/xwiki/platform/xwiki-platform-distribution-war/10.11.8`
-  - `XWIKI_DOWNLOAD_SHA256=d3ac801e156966b1e5729a5251aa13662262460edcbf903ec8b5e5d98563bf7e`
+  - `XWIKI_VERSION=10.11.9`
+  - `XWIKI_URL_PREFIX=https://maven.xwiki.org/releases/org/xwiki/platform/xwiki-platform-distribution-war/10.11.9`
+  - `XWIKI_DOWNLOAD_SHA256=299fe60d5b32ee1a363ba48ff2346e78eea5f713a0174c20fe9d7531be426a58`
 
 ## `dpkg` (`.deb`-based packages)
 
@@ -1247,14 +1247,9 @@ Licenses: (parsed from: `/usr/share/doc/gtk-update-icon-cache/copyright`, `/usr/
 - `SWL`
 - `other`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris gtk+3.0=3.22.30-1ubuntu3
-'http://archive.ubuntu.com/ubuntu/pool/main/g/gtk+3.0/gtk+3.0_3.22.30-1ubuntu3.dsc' gtk+3.0_3.22.30-1ubuntu3.dsc 3364 SHA256:7ed99fc9a565beeb388bb381efcd50007e145067dbd45d2dda38cc10f8e95ea7
-'http://archive.ubuntu.com/ubuntu/pool/main/g/gtk+3.0/gtk+3.0_3.22.30.orig.tar.xz' gtk+3.0_3.22.30.orig.tar.xz 18946084 SHA256:a1a4a5c12703d4e1ccda28333b87ff462741dc365131fbc94c218ae81d9a6567
-'http://archive.ubuntu.com/ubuntu/pool/main/g/gtk+3.0/gtk+3.0_3.22.30-1ubuntu3.debian.tar.xz' gtk+3.0_3.22.30-1ubuntu3.debian.tar.xz 161284 SHA256:65c80cdd99e3f73f3942fd423855dd8127aa43b3f2ee94b44f236f55b2558722
-```
 
 ### `dpkg` source package: `gzip=1.6-5ubuntu1`
 
