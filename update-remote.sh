@@ -37,14 +37,13 @@ done
 export generator="$0" tab=$'\t' quot="'"
 xargs <<<"${repos[*]}" -n 1 -P "${PARALLELISM:-8}" bash -Eeuo pipefail -c '
 	for repo; do
-		tags=( $(bashbrew list "$repo" 2>/dev/null | sort -u) )
-		if [ "${#tags[@]}" -eq 0 ]; then
-			echo "skip:   $repo"
-			continue
-		fi
 		rm -rf "repos/$repo/remote"
 		mkdir -p "repos/$repo/remote"
 		./generate-readme.sh "$repo" > "repos/$repo/README.md"
+
+		tags=( $(bashbrew list "$repo" 2>/dev/null | sort -u) )
+
+		rm -f "repos/$repo/tag-details.md"
 		{
 			echo "<!-- THIS FILE IS GENERATED VIA $quot$generator$quot -->"
 			echo
@@ -57,14 +56,17 @@ xargs <<<"${repos[*]}" -n 1 -P "${PARALLELISM:-8}" bash -Eeuo pipefail -c '
 				href="${href//:/}"
 				href="#${href,,}"
 				echo "-$tab[\`$tag\`]($href)"
-		done
-		# fetch each markdown
-		for tag in "${tags[@]}"; do
-			echo >&2 "processing: $tag"
-			echo
-			$curl "$repoInfoDaemon/markdown/$tag" \
-				| tee "repos/$repo/remote/${tag#*:}.md"
-		done
+			done
+			if [ "${#tags[@]}" -eq 0 ]; then
+				echo "-$tab**No supported tags**"
+			fi
+			# fetch each markdown
+			for tag in "${tags[@]}"; do
+				echo >&2 "processing: $tag"
+				echo
+				$curl "$repoInfoDaemon/markdown/$tag" \
+					| tee "repos/$repo/remote/${tag#*:}.md"
+			done
 		} > "repos/$repo/tag-details.md"
 	done
 ' --
