@@ -234,14 +234,13 @@ Licenses: (parsed from: `/usr/share/doc/dash/copyright`)
 
 - `GPL`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris dash=0.5.10.2-5
-'http://archive.ubuntu.com/ubuntu/pool/main/d/dash/dash_0.5.10.2-5.dsc' dash_0.5.10.2-5.dsc 1756 SHA256:6255cf35f61df5122637856ad0912986de1c20875177932de1c971b7bbbbd848
-'http://archive.ubuntu.com/ubuntu/pool/main/d/dash/dash_0.5.10.2.orig.tar.gz' dash_0.5.10.2.orig.tar.gz 225196 SHA256:3c663919dc5c66ec991da14c7cf7e0be8ad00f3db73986a987c118862b5f6071
-'http://archive.ubuntu.com/ubuntu/pool/main/d/dash/dash_0.5.10.2-5.debian.tar.xz' dash_0.5.10.2-5.debian.tar.xz 41804 SHA256:fabf27bd78778b151143ed598a6b65019cfce5dd087d9693b848346459951d24
-```
+The source package *may* still be available for download from:
+
+- http://snapshot.debian.org/package/dash/0.5.10.2-5/
+
 
 ### `dpkg` source package: `db5.3=5.3.28+dfsg1-0.6ubuntu1`
 
@@ -332,13 +331,9 @@ Licenses: (parsed from: `/usr/share/doc/dpkg/copyright`)
 - `public-domain-md5`
 - `public-domain-s-s-d`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris dpkg=1.19.6ubuntu1
-'http://archive.ubuntu.com/ubuntu/pool/main/d/dpkg/dpkg_1.19.6ubuntu1.dsc' dpkg_1.19.6ubuntu1.dsc 2229 SHA256:fc122a42adefebab8afb4d4dc3e7a52f2102f6f36acf63119b623625ee57a6c0
-'http://archive.ubuntu.com/ubuntu/pool/main/d/dpkg/dpkg_1.19.6ubuntu1.tar.xz' dpkg_1.19.6ubuntu1.tar.xz 4816728 SHA256:f11a53a11c44b6bdc1b042b6a65a821318dfd7b190c75b22491b74a210f13029
-```
 
 ### `dpkg` source package: `e2fsprogs=1.45.1-1ubuntu1`
 
@@ -668,14 +663,13 @@ Licenses: (parsed from: `/usr/share/doc/libidn2-0/copyright`)
 - `LGPL-3+`
 - `Unicode`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris libidn2=2.0.5-1
-'http://archive.ubuntu.com/ubuntu/pool/main/libi/libidn2/libidn2_2.0.5-1.dsc' libidn2_2.0.5-1.dsc 2444 SHA256:e35fbdf3b14d0a46e62ebde16345d6e70700972791cfc59df5d9d9b7088f7284
-'http://archive.ubuntu.com/ubuntu/pool/main/libi/libidn2/libidn2_2.0.5.orig.tar.gz' libidn2_2.0.5.orig.tar.gz 2091929 SHA256:53f69170886f1fa6fa5b332439c7a77a7d22626a82ef17e2c1224858bb4ca2b8
-'http://archive.ubuntu.com/ubuntu/pool/main/libi/libidn2/libidn2_2.0.5-1.debian.tar.xz' libidn2_2.0.5-1.debian.tar.xz 10285396 SHA256:e86f9ef6dfa45a35008851a688e020cbe0a2772437cdaa6381ed2704bf1e774d
-```
+The source package *may* still be available for download from:
+
+- http://snapshot.debian.org/package/libidn2/2.0.5-1/
+
 
 ### `dpkg` source package: `libseccomp=2.4.1-0ubuntu0.19.10.3`
 
