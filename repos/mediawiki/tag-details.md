@@ -19,7 +19,7 @@
 ## `mediawiki:1.27`
 
 ```console
-$ docker pull mediawiki@sha256:8dd1b0695199fc76806a845b650d0e7540b0960ad38aa893ecaad40ed0e551e3
+$ docker pull mediawiki@sha256:4c8f6bf1bd267bbeb65aa68e72ad24e2721832852c9bdb6df921b62f1e22506a
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -547,14 +547,14 @@ RUN set -eux; 	curl -fSL "https://releases.wikimedia.org/mediawiki/${MEDIAWIKI_M
 ### `mediawiki:1.27` - linux; arm64 variant v8
 
 ```console
-$ docker pull mediawiki@sha256:eb571cf51d8d3f7888cc0fa5753e35d1b875be9981c2b95e29447424377e63a7
+$ docker pull mediawiki@sha256:fabea53074fcd7970e5e963bf28677493751dfc47601403526dc4623b80cc5ff
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **238.2 MB (238201544 bytes)**  
+-	Total Size: **238.2 MB (238201715 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:35f101df23a22ab7f36f82c745ca11e5b861939eb11613baf04f85d481c5adeb`
+-	Image ID: `sha256:ba844b4e214df5627412763980ab5b127bc44f9d66b58772952a2c16a220acf3`
 -	Entrypoint: `["docker-php-entrypoint"]`
 -	Default Command: `["apache2-foreground"]`
 
@@ -609,33 +609,35 @@ COPY file:ce57c04b70896f77cc11eb2766417d8a1240fcffe5bba92179ec78c458844110 in /u
 RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		libcurl4-openssl-dev 		libedit-dev 		libsqlite3-dev 		libssl-dev 		libxml2-dev 		zlib1g-dev 		${PHP_EXTRA_BUILD_DEPS:-} 	; 	rm -rf /var/lib/apt/lists/*; 		export 		CFLAGS="$PHP_CFLAGS" 		CPPFLAGS="$PHP_CPPFLAGS" 		LDFLAGS="$PHP_LDFLAGS" 	; 	docker-php-source extract; 	cd /usr/src/php; 	gnuArch="$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)"; 	debMultiarch="$(dpkg-architecture --query DEB_BUILD_MULTIARCH)"; 	if [ ! -d /usr/include/curl ]; then 		ln -sT "/usr/include/$debMultiarch/curl" /usr/local/include/curl; 	fi; 	./configure 		--build="$gnuArch" 		--with-config-file-path="$PHP_INI_DIR" 		--with-config-file-scan-dir="$PHP_INI_DIR/conf.d" 				--enable-option-checking=fatal 				--with-mhash 				--enable-ftp 		--enable-mbstring 		--enable-mysqlnd 				--with-curl 		--with-libedit 		--with-openssl 		--with-zlib 				$(test "$gnuArch" = 's390x-linux-gnu' && echo '--without-pcre-jit') 		--with-libdir="lib/$debMultiarch" 				${PHP_EXTRA_CONFIGURE_ARGS:-} 	; 	make -j "$(nproc)"; 	find -type f -name '*.a' -delete; 	make install; 	find /usr/local/bin /usr/local/sbin -type f -executable -exec strip --strip-all '{}' + || true; 	make clean; 		cp -v php.ini-* "$PHP_INI_DIR/"; 		cd /; 	docker-php-source delete; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark; 	find /usr/local -type f -executable -exec ldd '{}' ';' 		| awk '/=>/ { print $(NF-1) }' 		| sort -u 		| xargs -r dpkg-query --search 		| cut -d: -f1 		| sort -u 		| xargs -r apt-mark manual 	; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 		pecl update-channels; 	rm -rf /tmp/pear ~/.pearrc; 	php --version
 # Fri, 12 Jul 2019 21:48:19 GMT
 COPY multi:99e4ad617c6193834e78d12470f6dde09f70f4d40463009c5724954902e60676 in /usr/local/bin/ 
-# Fri, 12 Jul 2019 21:48:20 GMT
+# Tue, 23 Jul 2019 00:47:41 GMT
+RUN { echo '#!/bin/sh'; echo 'exec pkg-config "$@" freetype2'; } > /usr/local/bin/freetype-config && chmod +x /usr/local/bin/freetype-config
+# Tue, 23 Jul 2019 00:47:41 GMT
 ENTRYPOINT ["docker-php-entrypoint"]
-# Fri, 12 Jul 2019 21:48:21 GMT
+# Tue, 23 Jul 2019 00:47:42 GMT
 COPY file:e3123fcb6566efa979f945bfac1c94c854a559d7b82723e42118882a8ac4de66 in /usr/local/bin/ 
-# Fri, 12 Jul 2019 21:48:21 GMT
+# Tue, 23 Jul 2019 00:47:42 GMT
 WORKDIR /var/www/html
-# Fri, 12 Jul 2019 21:48:22 GMT
+# Tue, 23 Jul 2019 00:47:43 GMT
 EXPOSE 80
-# Fri, 12 Jul 2019 21:48:22 GMT
+# Tue, 23 Jul 2019 00:47:43 GMT
 CMD ["apache2-foreground"]
-# Fri, 12 Jul 2019 22:27:49 GMT
+# Tue, 23 Jul 2019 01:59:38 GMT
 RUN set -eux; 		apt-get update; 	apt-get install -y --no-install-recommends 		git 		librsvg2-bin 		imagemagick 		python 	; 	rm -rf /var/lib/apt/lists/*
-# Fri, 12 Jul 2019 22:29:18 GMT
+# Tue, 23 Jul 2019 02:01:03 GMT
 RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 		apt-get update; 	apt-get install -y --no-install-recommends 		libicu-dev 	; 		docker-php-ext-install -j "$(nproc)" 		intl 		mbstring 		mysqli 		opcache 	; 		pecl install apcu-5.1.17; 	docker-php-ext-enable 		apcu 	; 		apt-mark auto '.*' > /dev/null; 	apt-mark manual $savedAptMark; 	ldd "$(php -r 'echo ini_get("extension_dir");')"/*.so 		| awk '/=>/ { print $3 }' 		| sort -u 		| xargs -r dpkg-query -S 		| cut -d: -f1 		| sort -u 		| xargs -rt apt-mark manual; 		apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 	rm -rf /var/lib/apt/lists/*
-# Fri, 12 Jul 2019 22:29:20 GMT
+# Tue, 23 Jul 2019 02:01:04 GMT
 RUN { 		echo 'opcache.memory_consumption=128'; 		echo 'opcache.interned_strings_buffer=8'; 		echo 'opcache.max_accelerated_files=4000'; 		echo 'opcache.revalidate_freq=60'; 		echo 'opcache.fast_shutdown=1'; 	} > /usr/local/etc/php/conf.d/opcache-recommended.ini
-# Fri, 12 Jul 2019 22:29:21 GMT
+# Tue, 23 Jul 2019 02:01:06 GMT
 RUN set -eux; 	mkdir -p /var/www/data; 	chown -R www-data:www-data /var/www/data
-# Fri, 12 Jul 2019 22:29:22 GMT
+# Tue, 23 Jul 2019 02:01:06 GMT
 ENV MEDIAWIKI_MAJOR_VERSION=1.27
-# Fri, 12 Jul 2019 22:29:22 GMT
+# Tue, 23 Jul 2019 02:01:07 GMT
 ENV MEDIAWIKI_BRANCH=REL1_27
-# Fri, 12 Jul 2019 22:29:23 GMT
+# Tue, 23 Jul 2019 02:01:07 GMT
 ENV MEDIAWIKI_VERSION=1.27.7
-# Fri, 12 Jul 2019 22:29:23 GMT
+# Tue, 23 Jul 2019 02:01:07 GMT
 ENV MEDIAWIKI_SHA512=3dcee01d483be27eed1a901ef24a9080a2cccf3d9ee4eebc544d0c0fdb5a1a7272a68daa024d89754542e56a4d19eebec407775b38a00f067f2179f712deda76
-# Fri, 12 Jul 2019 22:29:34 GMT
+# Tue, 23 Jul 2019 02:01:18 GMT
 RUN set -eux; 	curl -fSL "https://releases.wikimedia.org/mediawiki/${MEDIAWIKI_MAJOR_VERSION}/mediawiki-${MEDIAWIKI_VERSION}.tar.gz" -o mediawiki.tar.gz; 	echo "${MEDIAWIKI_SHA512} *mediawiki.tar.gz" | sha512sum -c -; 	tar -x --strip-components=1 -f mediawiki.tar.gz; 	rm mediawiki.tar.gz; 	chown -R www-data:www-data extensions skins cache images
 ```
 
@@ -684,29 +686,33 @@ RUN set -eux; 	curl -fSL "https://releases.wikimedia.org/mediawiki/${MEDIAWIKI_M
 		Last Modified: Fri, 12 Jul 2019 22:06:33 GMT  
 		Size: 2.2 KB (2218 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:66f5d010b463dad153c5cb079022782b34b2a5719e700901be97a89dfc21f45a`  
-		Last Modified: Fri, 12 Jul 2019 22:06:32 GMT  
+	-	`sha256:1152c7d7c5212ce870f091c594ac6abef551a1ffa321ff924d4166d9de06c4c3`  
+		Last Modified: Tue, 23 Jul 2019 00:53:28 GMT  
+		Size: 215.0 B  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:ea661189e56f9a1c7a3d319d2630933325378663453a87c6e5c886209ea5f8c9`  
+		Last Modified: Tue, 23 Jul 2019 00:53:28 GMT  
 		Size: 898.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:38244a33a5b88d9f28cabf3161d42548fe9cba5e93b466354c4548501defee76`  
-		Last Modified: Fri, 12 Jul 2019 22:31:47 GMT  
-		Size: 61.9 MB (61856139 bytes)  
+	-	`sha256:28c150d3338d77d363cc68c6dd119a1b1fa858988ee5d52c4d8e6892aee9843e`  
+		Last Modified: Tue, 23 Jul 2019 02:03:30 GMT  
+		Size: 61.9 MB (61855995 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:60b48cfdaec54cc98017c550a7e2a90f994a68495afad81feafc705031cffa17`  
-		Last Modified: Fri, 12 Jul 2019 22:31:30 GMT  
-		Size: 2.7 MB (2658194 bytes)  
+	-	`sha256:923c50ea1c73994722c475ab5348f6e1127c6ce897ba5d55eb10766e33b1a94b`  
+		Last Modified: Tue, 23 Jul 2019 02:03:12 GMT  
+		Size: 2.7 MB (2658260 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:18673afb1c198546b72ddfb809d5b48b6b8ecc455a6e10c320819aa03a7d8160`  
-		Last Modified: Fri, 12 Jul 2019 22:31:29 GMT  
-		Size: 324.0 B  
+	-	`sha256:04372a7dafb5783b829c4c5d9139c471a8e292f775be495571b0a11a82efeee4`  
+		Last Modified: Tue, 23 Jul 2019 02:03:11 GMT  
+		Size: 326.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:d22081a339fc46f3b4dee946b9d6159059c4ae30045e7eca2fc9849e15dac962`  
-		Last Modified: Fri, 12 Jul 2019 22:31:29 GMT  
-		Size: 170.0 B  
+	-	`sha256:bd2974c57686111a04e72cd1ed5285baf1d79382abb5618be9938c1bc894f2b6`  
+		Last Modified: Tue, 23 Jul 2019 02:03:11 GMT  
+		Size: 171.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:4fd390af063ce3a833929551d3c9d3668e9f558ffe9cdf8f97e67be2439ee91a`  
-		Last Modified: Fri, 12 Jul 2019 22:31:47 GMT  
-		Size: 31.9 MB (31924553 bytes)  
+	-	`sha256:d7a2e245a69c22b42066c273c66696ee1cf5b1c1820090b0f9aa6e77d577f8f6`  
+		Last Modified: Tue, 23 Jul 2019 02:03:30 GMT  
+		Size: 31.9 MB (31924584 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `mediawiki:1.27` - linux; 386
@@ -1054,7 +1060,7 @@ RUN set -eux; 	curl -fSL "https://releases.wikimedia.org/mediawiki/${MEDIAWIKI_M
 ## `mediawiki:1.27.7`
 
 ```console
-$ docker pull mediawiki@sha256:8dd1b0695199fc76806a845b650d0e7540b0960ad38aa893ecaad40ed0e551e3
+$ docker pull mediawiki@sha256:4c8f6bf1bd267bbeb65aa68e72ad24e2721832852c9bdb6df921b62f1e22506a
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -1582,14 +1588,14 @@ RUN set -eux; 	curl -fSL "https://releases.wikimedia.org/mediawiki/${MEDIAWIKI_M
 ### `mediawiki:1.27.7` - linux; arm64 variant v8
 
 ```console
-$ docker pull mediawiki@sha256:eb571cf51d8d3f7888cc0fa5753e35d1b875be9981c2b95e29447424377e63a7
+$ docker pull mediawiki@sha256:fabea53074fcd7970e5e963bf28677493751dfc47601403526dc4623b80cc5ff
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **238.2 MB (238201544 bytes)**  
+-	Total Size: **238.2 MB (238201715 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:35f101df23a22ab7f36f82c745ca11e5b861939eb11613baf04f85d481c5adeb`
+-	Image ID: `sha256:ba844b4e214df5627412763980ab5b127bc44f9d66b58772952a2c16a220acf3`
 -	Entrypoint: `["docker-php-entrypoint"]`
 -	Default Command: `["apache2-foreground"]`
 
@@ -1644,33 +1650,35 @@ COPY file:ce57c04b70896f77cc11eb2766417d8a1240fcffe5bba92179ec78c458844110 in /u
 RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		libcurl4-openssl-dev 		libedit-dev 		libsqlite3-dev 		libssl-dev 		libxml2-dev 		zlib1g-dev 		${PHP_EXTRA_BUILD_DEPS:-} 	; 	rm -rf /var/lib/apt/lists/*; 		export 		CFLAGS="$PHP_CFLAGS" 		CPPFLAGS="$PHP_CPPFLAGS" 		LDFLAGS="$PHP_LDFLAGS" 	; 	docker-php-source extract; 	cd /usr/src/php; 	gnuArch="$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)"; 	debMultiarch="$(dpkg-architecture --query DEB_BUILD_MULTIARCH)"; 	if [ ! -d /usr/include/curl ]; then 		ln -sT "/usr/include/$debMultiarch/curl" /usr/local/include/curl; 	fi; 	./configure 		--build="$gnuArch" 		--with-config-file-path="$PHP_INI_DIR" 		--with-config-file-scan-dir="$PHP_INI_DIR/conf.d" 				--enable-option-checking=fatal 				--with-mhash 				--enable-ftp 		--enable-mbstring 		--enable-mysqlnd 				--with-curl 		--with-libedit 		--with-openssl 		--with-zlib 				$(test "$gnuArch" = 's390x-linux-gnu' && echo '--without-pcre-jit') 		--with-libdir="lib/$debMultiarch" 				${PHP_EXTRA_CONFIGURE_ARGS:-} 	; 	make -j "$(nproc)"; 	find -type f -name '*.a' -delete; 	make install; 	find /usr/local/bin /usr/local/sbin -type f -executable -exec strip --strip-all '{}' + || true; 	make clean; 		cp -v php.ini-* "$PHP_INI_DIR/"; 		cd /; 	docker-php-source delete; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark; 	find /usr/local -type f -executable -exec ldd '{}' ';' 		| awk '/=>/ { print $(NF-1) }' 		| sort -u 		| xargs -r dpkg-query --search 		| cut -d: -f1 		| sort -u 		| xargs -r apt-mark manual 	; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 		pecl update-channels; 	rm -rf /tmp/pear ~/.pearrc; 	php --version
 # Fri, 12 Jul 2019 21:48:19 GMT
 COPY multi:99e4ad617c6193834e78d12470f6dde09f70f4d40463009c5724954902e60676 in /usr/local/bin/ 
-# Fri, 12 Jul 2019 21:48:20 GMT
+# Tue, 23 Jul 2019 00:47:41 GMT
+RUN { echo '#!/bin/sh'; echo 'exec pkg-config "$@" freetype2'; } > /usr/local/bin/freetype-config && chmod +x /usr/local/bin/freetype-config
+# Tue, 23 Jul 2019 00:47:41 GMT
 ENTRYPOINT ["docker-php-entrypoint"]
-# Fri, 12 Jul 2019 21:48:21 GMT
+# Tue, 23 Jul 2019 00:47:42 GMT
 COPY file:e3123fcb6566efa979f945bfac1c94c854a559d7b82723e42118882a8ac4de66 in /usr/local/bin/ 
-# Fri, 12 Jul 2019 21:48:21 GMT
+# Tue, 23 Jul 2019 00:47:42 GMT
 WORKDIR /var/www/html
-# Fri, 12 Jul 2019 21:48:22 GMT
+# Tue, 23 Jul 2019 00:47:43 GMT
 EXPOSE 80
-# Fri, 12 Jul 2019 21:48:22 GMT
+# Tue, 23 Jul 2019 00:47:43 GMT
 CMD ["apache2-foreground"]
-# Fri, 12 Jul 2019 22:27:49 GMT
+# Tue, 23 Jul 2019 01:59:38 GMT
 RUN set -eux; 		apt-get update; 	apt-get install -y --no-install-recommends 		git 		librsvg2-bin 		imagemagick 		python 	; 	rm -rf /var/lib/apt/lists/*
-# Fri, 12 Jul 2019 22:29:18 GMT
+# Tue, 23 Jul 2019 02:01:03 GMT
 RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 		apt-get update; 	apt-get install -y --no-install-recommends 		libicu-dev 	; 		docker-php-ext-install -j "$(nproc)" 		intl 		mbstring 		mysqli 		opcache 	; 		pecl install apcu-5.1.17; 	docker-php-ext-enable 		apcu 	; 		apt-mark auto '.*' > /dev/null; 	apt-mark manual $savedAptMark; 	ldd "$(php -r 'echo ini_get("extension_dir");')"/*.so 		| awk '/=>/ { print $3 }' 		| sort -u 		| xargs -r dpkg-query -S 		| cut -d: -f1 		| sort -u 		| xargs -rt apt-mark manual; 		apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 	rm -rf /var/lib/apt/lists/*
-# Fri, 12 Jul 2019 22:29:20 GMT
+# Tue, 23 Jul 2019 02:01:04 GMT
 RUN { 		echo 'opcache.memory_consumption=128'; 		echo 'opcache.interned_strings_buffer=8'; 		echo 'opcache.max_accelerated_files=4000'; 		echo 'opcache.revalidate_freq=60'; 		echo 'opcache.fast_shutdown=1'; 	} > /usr/local/etc/php/conf.d/opcache-recommended.ini
-# Fri, 12 Jul 2019 22:29:21 GMT
+# Tue, 23 Jul 2019 02:01:06 GMT
 RUN set -eux; 	mkdir -p /var/www/data; 	chown -R www-data:www-data /var/www/data
-# Fri, 12 Jul 2019 22:29:22 GMT
+# Tue, 23 Jul 2019 02:01:06 GMT
 ENV MEDIAWIKI_MAJOR_VERSION=1.27
-# Fri, 12 Jul 2019 22:29:22 GMT
+# Tue, 23 Jul 2019 02:01:07 GMT
 ENV MEDIAWIKI_BRANCH=REL1_27
-# Fri, 12 Jul 2019 22:29:23 GMT
+# Tue, 23 Jul 2019 02:01:07 GMT
 ENV MEDIAWIKI_VERSION=1.27.7
-# Fri, 12 Jul 2019 22:29:23 GMT
+# Tue, 23 Jul 2019 02:01:07 GMT
 ENV MEDIAWIKI_SHA512=3dcee01d483be27eed1a901ef24a9080a2cccf3d9ee4eebc544d0c0fdb5a1a7272a68daa024d89754542e56a4d19eebec407775b38a00f067f2179f712deda76
-# Fri, 12 Jul 2019 22:29:34 GMT
+# Tue, 23 Jul 2019 02:01:18 GMT
 RUN set -eux; 	curl -fSL "https://releases.wikimedia.org/mediawiki/${MEDIAWIKI_MAJOR_VERSION}/mediawiki-${MEDIAWIKI_VERSION}.tar.gz" -o mediawiki.tar.gz; 	echo "${MEDIAWIKI_SHA512} *mediawiki.tar.gz" | sha512sum -c -; 	tar -x --strip-components=1 -f mediawiki.tar.gz; 	rm mediawiki.tar.gz; 	chown -R www-data:www-data extensions skins cache images
 ```
 
@@ -1719,29 +1727,33 @@ RUN set -eux; 	curl -fSL "https://releases.wikimedia.org/mediawiki/${MEDIAWIKI_M
 		Last Modified: Fri, 12 Jul 2019 22:06:33 GMT  
 		Size: 2.2 KB (2218 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:66f5d010b463dad153c5cb079022782b34b2a5719e700901be97a89dfc21f45a`  
-		Last Modified: Fri, 12 Jul 2019 22:06:32 GMT  
+	-	`sha256:1152c7d7c5212ce870f091c594ac6abef551a1ffa321ff924d4166d9de06c4c3`  
+		Last Modified: Tue, 23 Jul 2019 00:53:28 GMT  
+		Size: 215.0 B  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:ea661189e56f9a1c7a3d319d2630933325378663453a87c6e5c886209ea5f8c9`  
+		Last Modified: Tue, 23 Jul 2019 00:53:28 GMT  
 		Size: 898.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:38244a33a5b88d9f28cabf3161d42548fe9cba5e93b466354c4548501defee76`  
-		Last Modified: Fri, 12 Jul 2019 22:31:47 GMT  
-		Size: 61.9 MB (61856139 bytes)  
+	-	`sha256:28c150d3338d77d363cc68c6dd119a1b1fa858988ee5d52c4d8e6892aee9843e`  
+		Last Modified: Tue, 23 Jul 2019 02:03:30 GMT  
+		Size: 61.9 MB (61855995 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:60b48cfdaec54cc98017c550a7e2a90f994a68495afad81feafc705031cffa17`  
-		Last Modified: Fri, 12 Jul 2019 22:31:30 GMT  
-		Size: 2.7 MB (2658194 bytes)  
+	-	`sha256:923c50ea1c73994722c475ab5348f6e1127c6ce897ba5d55eb10766e33b1a94b`  
+		Last Modified: Tue, 23 Jul 2019 02:03:12 GMT  
+		Size: 2.7 MB (2658260 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:18673afb1c198546b72ddfb809d5b48b6b8ecc455a6e10c320819aa03a7d8160`  
-		Last Modified: Fri, 12 Jul 2019 22:31:29 GMT  
-		Size: 324.0 B  
+	-	`sha256:04372a7dafb5783b829c4c5d9139c471a8e292f775be495571b0a11a82efeee4`  
+		Last Modified: Tue, 23 Jul 2019 02:03:11 GMT  
+		Size: 326.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:d22081a339fc46f3b4dee946b9d6159059c4ae30045e7eca2fc9849e15dac962`  
-		Last Modified: Fri, 12 Jul 2019 22:31:29 GMT  
-		Size: 170.0 B  
+	-	`sha256:bd2974c57686111a04e72cd1ed5285baf1d79382abb5618be9938c1bc894f2b6`  
+		Last Modified: Tue, 23 Jul 2019 02:03:11 GMT  
+		Size: 171.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:4fd390af063ce3a833929551d3c9d3668e9f558ffe9cdf8f97e67be2439ee91a`  
-		Last Modified: Fri, 12 Jul 2019 22:31:47 GMT  
-		Size: 31.9 MB (31924553 bytes)  
+	-	`sha256:d7a2e245a69c22b42066c273c66696ee1cf5b1c1820090b0f9aa6e77d577f8f6`  
+		Last Modified: Tue, 23 Jul 2019 02:03:30 GMT  
+		Size: 31.9 MB (31924584 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `mediawiki:1.27.7` - linux; 386
@@ -2089,7 +2101,7 @@ RUN set -eux; 	curl -fSL "https://releases.wikimedia.org/mediawiki/${MEDIAWIKI_M
 ## `mediawiki:1.31`
 
 ```console
-$ docker pull mediawiki@sha256:f87d3d235de0324ed4d8cf8aa8586142b86ebbba482dd5f39473f6b9233de02b
+$ docker pull mediawiki@sha256:43dcf055bd3de8515d8a1b96649a48a18a1d3cc253f253487598af7d8ad03809
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -2635,14 +2647,14 @@ RUN set -eux; 	curl -fSL "https://releases.wikimedia.org/mediawiki/${MEDIAWIKI_M
 ### `mediawiki:1.31` - linux; arm64 variant v8
 
 ```console
-$ docker pull mediawiki@sha256:619e3bede0de522d246e1945a04123d152b84eecc08232b59974213384cfe1d3
+$ docker pull mediawiki@sha256:d5ed3cecdf4f6a7cde50c94bdd3674975e014f7f7e0785df45bb9b18f9878a00
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **243.3 MB (243275557 bytes)**  
+-	Total Size: **243.3 MB (243275618 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:ee5c1f47679ec5f28dbf475350758a781eb4810886a43f5057736dfe05eccf3e`
+-	Image ID: `sha256:939801a2815cb2951ab7d0f3b2ad256bfe2d83cdecf62a30471de73242186c61`
 -	Entrypoint: `["docker-php-entrypoint"]`
 -	Default Command: `["apache2-foreground"]`
 
@@ -2699,33 +2711,35 @@ RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get
 COPY multi:99e4ad617c6193834e78d12470f6dde09f70f4d40463009c5724954902e60676 in /usr/local/bin/ 
 # Fri, 12 Jul 2019 21:32:00 GMT
 RUN docker-php-ext-enable sodium
-# Fri, 12 Jul 2019 21:32:00 GMT
+# Tue, 23 Jul 2019 00:46:39 GMT
+RUN { echo '#!/bin/sh'; echo 'exec pkg-config "$@" freetype2'; } > /usr/local/bin/freetype-config && chmod +x /usr/local/bin/freetype-config
+# Tue, 23 Jul 2019 00:46:40 GMT
 ENTRYPOINT ["docker-php-entrypoint"]
-# Fri, 12 Jul 2019 21:32:01 GMT
+# Tue, 23 Jul 2019 00:46:40 GMT
 COPY file:e3123fcb6566efa979f945bfac1c94c854a559d7b82723e42118882a8ac4de66 in /usr/local/bin/ 
-# Fri, 12 Jul 2019 21:32:01 GMT
+# Tue, 23 Jul 2019 00:46:40 GMT
 WORKDIR /var/www/html
-# Fri, 12 Jul 2019 21:32:02 GMT
+# Tue, 23 Jul 2019 00:46:41 GMT
 EXPOSE 80
-# Fri, 12 Jul 2019 21:32:03 GMT
+# Tue, 23 Jul 2019 00:46:41 GMT
 CMD ["apache2-foreground"]
-# Fri, 12 Jul 2019 22:24:05 GMT
+# Tue, 23 Jul 2019 01:56:15 GMT
 RUN set -eux; 		apt-get update; 	apt-get install -y --no-install-recommends 		git 		librsvg2-bin 		imagemagick 		python3 	; 	rm -rf /var/lib/apt/lists/*
-# Fri, 12 Jul 2019 22:25:34 GMT
+# Tue, 23 Jul 2019 01:57:39 GMT
 RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 		apt-get update; 	apt-get install -y --no-install-recommends 		libicu-dev 	; 		docker-php-ext-install -j "$(nproc)" 		intl 		mbstring 		mysqli 		opcache 	; 		pecl install apcu-5.1.17; 	docker-php-ext-enable 		apcu 	; 		apt-mark auto '.*' > /dev/null; 	apt-mark manual $savedAptMark; 	ldd "$(php -r 'echo ini_get("extension_dir");')"/*.so 		| awk '/=>/ { print $3 }' 		| sort -u 		| xargs -r dpkg-query -S 		| cut -d: -f1 		| sort -u 		| xargs -rt apt-mark manual; 		apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 	rm -rf /var/lib/apt/lists/*
-# Fri, 12 Jul 2019 22:26:29 GMT
+# Tue, 23 Jul 2019 01:58:28 GMT
 RUN { 		echo 'opcache.memory_consumption=128'; 		echo 'opcache.interned_strings_buffer=8'; 		echo 'opcache.max_accelerated_files=4000'; 		echo 'opcache.revalidate_freq=60'; 		echo 'opcache.fast_shutdown=1'; 	} > /usr/local/etc/php/conf.d/opcache-recommended.ini
-# Fri, 12 Jul 2019 22:26:31 GMT
+# Tue, 23 Jul 2019 01:58:30 GMT
 RUN set -eux; 	mkdir -p /var/www/data; 	chown -R www-data:www-data /var/www/data
-# Fri, 12 Jul 2019 22:26:32 GMT
+# Tue, 23 Jul 2019 01:58:30 GMT
 ENV MEDIAWIKI_MAJOR_VERSION=1.31
-# Fri, 12 Jul 2019 22:26:32 GMT
+# Tue, 23 Jul 2019 01:58:31 GMT
 ENV MEDIAWIKI_BRANCH=REL1_31
-# Fri, 12 Jul 2019 22:26:33 GMT
+# Tue, 23 Jul 2019 01:58:31 GMT
 ENV MEDIAWIKI_VERSION=1.31.3
-# Fri, 12 Jul 2019 22:26:34 GMT
+# Tue, 23 Jul 2019 01:58:32 GMT
 ENV MEDIAWIKI_SHA512=3900dbd3f1b7b9ea429c2feca6fb24f949f8d5d961ea1bd181fb1d80cebc7f8b531c02b2aa3caa12aa5bea48217ba7b5b01c3dbdbfbfdd1bb8c8a358879c505a
-# Fri, 12 Jul 2019 22:26:45 GMT
+# Tue, 23 Jul 2019 01:58:43 GMT
 RUN set -eux; 	curl -fSL "https://releases.wikimedia.org/mediawiki/${MEDIAWIKI_MAJOR_VERSION}/mediawiki-${MEDIAWIKI_VERSION}.tar.gz" -o mediawiki.tar.gz; 	echo "${MEDIAWIKI_SHA512} *mediawiki.tar.gz" | sha512sum -c -; 	tar -x --strip-components=1 -f mediawiki.tar.gz; 	rm mediawiki.tar.gz; 	chown -R www-data:www-data extensions skins cache images
 ```
 
@@ -2778,29 +2792,33 @@ RUN set -eux; 	curl -fSL "https://releases.wikimedia.org/mediawiki/${MEDIAWIKI_M
 		Last Modified: Fri, 12 Jul 2019 22:05:09 GMT  
 		Size: 247.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:587e458f21f982e50b5e14d7f4728b656e915cf6eff6b92711760caa0badd8de`  
-		Last Modified: Fri, 12 Jul 2019 22:05:09 GMT  
-		Size: 896.0 B  
+	-	`sha256:db8978c40502e1312f6c00ac36aa4242cc82bf325082c5f618079da939ecb4a4`  
+		Last Modified: Tue, 23 Jul 2019 00:52:38 GMT  
+		Size: 214.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:27e766195d7a3279d5bd8b3c74bd237bce1d927b95c564ed6706afc80d69e365`  
-		Last Modified: Fri, 12 Jul 2019 22:30:22 GMT  
-		Size: 62.2 MB (62170302 bytes)  
+	-	`sha256:5c942636b446046dc978e3a6872c7162e76e65f17fc65bcbdbb9dc9704b9b639`  
+		Last Modified: Tue, 23 Jul 2019 00:52:38 GMT  
+		Size: 898.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:83a02f1cfd0f8105624fe1093e4017485f820092e571a268d3ee2465f567176e`  
-		Last Modified: Fri, 12 Jul 2019 22:30:04 GMT  
-		Size: 2.8 MB (2758875 bytes)  
+	-	`sha256:d51f6c69af2d5030edd7108717ca778a1207e268c08cc56c17887d99596a8a0a`  
+		Last Modified: Tue, 23 Jul 2019 02:02:02 GMT  
+		Size: 62.2 MB (62170209 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:a2e8b492a288aa2357c0f27cb1c52b623802a14a8053d9b7032a9c79e1ab1dad`  
-		Last Modified: Fri, 12 Jul 2019 22:31:04 GMT  
+	-	`sha256:38a447b3b30842f9adc026314bb3dffa1bfb9d6bc243ffc388192488f4ccfb8b`  
+		Last Modified: Tue, 23 Jul 2019 02:01:44 GMT  
+		Size: 2.8 MB (2758870 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:b1a0427a8ab00072742b53437bbadfed63dcb35e68cb3a0e61851ab283f89e8d`  
+		Last Modified: Tue, 23 Jul 2019 02:02:42 GMT  
 		Size: 328.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:58fa6d3d61c094cea2468e975151d003ccc4530e7ea9531972e57b0fc07f08ab`  
-		Last Modified: Fri, 12 Jul 2019 22:31:04 GMT  
+	-	`sha256:b15ff6837ee5c4c2d886dc4a43d4d86b93d6584456af9e14da15a629545372e1`  
+		Last Modified: Tue, 23 Jul 2019 02:02:43 GMT  
 		Size: 171.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:b2cae999f8c41d8ca5b36384f7f7ca19f71cd56a6ea94d2547352829eedc7ecd`  
-		Last Modified: Fri, 12 Jul 2019 22:31:21 GMT  
-		Size: 35.8 MB (35756383 bytes)  
+	-	`sha256:c602c560b83165ea84abc85a344b8ee33ea6a3201c652f7157f1198fa013764b`  
+		Last Modified: Tue, 23 Jul 2019 02:02:58 GMT  
+		Size: 35.8 MB (35756326 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `mediawiki:1.31` - linux; 386
@@ -3160,7 +3178,7 @@ RUN set -eux; 	curl -fSL "https://releases.wikimedia.org/mediawiki/${MEDIAWIKI_M
 ## `mediawiki:1.31.3`
 
 ```console
-$ docker pull mediawiki@sha256:f87d3d235de0324ed4d8cf8aa8586142b86ebbba482dd5f39473f6b9233de02b
+$ docker pull mediawiki@sha256:43dcf055bd3de8515d8a1b96649a48a18a1d3cc253f253487598af7d8ad03809
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -3706,14 +3724,14 @@ RUN set -eux; 	curl -fSL "https://releases.wikimedia.org/mediawiki/${MEDIAWIKI_M
 ### `mediawiki:1.31.3` - linux; arm64 variant v8
 
 ```console
-$ docker pull mediawiki@sha256:619e3bede0de522d246e1945a04123d152b84eecc08232b59974213384cfe1d3
+$ docker pull mediawiki@sha256:d5ed3cecdf4f6a7cde50c94bdd3674975e014f7f7e0785df45bb9b18f9878a00
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **243.3 MB (243275557 bytes)**  
+-	Total Size: **243.3 MB (243275618 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:ee5c1f47679ec5f28dbf475350758a781eb4810886a43f5057736dfe05eccf3e`
+-	Image ID: `sha256:939801a2815cb2951ab7d0f3b2ad256bfe2d83cdecf62a30471de73242186c61`
 -	Entrypoint: `["docker-php-entrypoint"]`
 -	Default Command: `["apache2-foreground"]`
 
@@ -3770,33 +3788,35 @@ RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get
 COPY multi:99e4ad617c6193834e78d12470f6dde09f70f4d40463009c5724954902e60676 in /usr/local/bin/ 
 # Fri, 12 Jul 2019 21:32:00 GMT
 RUN docker-php-ext-enable sodium
-# Fri, 12 Jul 2019 21:32:00 GMT
+# Tue, 23 Jul 2019 00:46:39 GMT
+RUN { echo '#!/bin/sh'; echo 'exec pkg-config "$@" freetype2'; } > /usr/local/bin/freetype-config && chmod +x /usr/local/bin/freetype-config
+# Tue, 23 Jul 2019 00:46:40 GMT
 ENTRYPOINT ["docker-php-entrypoint"]
-# Fri, 12 Jul 2019 21:32:01 GMT
+# Tue, 23 Jul 2019 00:46:40 GMT
 COPY file:e3123fcb6566efa979f945bfac1c94c854a559d7b82723e42118882a8ac4de66 in /usr/local/bin/ 
-# Fri, 12 Jul 2019 21:32:01 GMT
+# Tue, 23 Jul 2019 00:46:40 GMT
 WORKDIR /var/www/html
-# Fri, 12 Jul 2019 21:32:02 GMT
+# Tue, 23 Jul 2019 00:46:41 GMT
 EXPOSE 80
-# Fri, 12 Jul 2019 21:32:03 GMT
+# Tue, 23 Jul 2019 00:46:41 GMT
 CMD ["apache2-foreground"]
-# Fri, 12 Jul 2019 22:24:05 GMT
+# Tue, 23 Jul 2019 01:56:15 GMT
 RUN set -eux; 		apt-get update; 	apt-get install -y --no-install-recommends 		git 		librsvg2-bin 		imagemagick 		python3 	; 	rm -rf /var/lib/apt/lists/*
-# Fri, 12 Jul 2019 22:25:34 GMT
+# Tue, 23 Jul 2019 01:57:39 GMT
 RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 		apt-get update; 	apt-get install -y --no-install-recommends 		libicu-dev 	; 		docker-php-ext-install -j "$(nproc)" 		intl 		mbstring 		mysqli 		opcache 	; 		pecl install apcu-5.1.17; 	docker-php-ext-enable 		apcu 	; 		apt-mark auto '.*' > /dev/null; 	apt-mark manual $savedAptMark; 	ldd "$(php -r 'echo ini_get("extension_dir");')"/*.so 		| awk '/=>/ { print $3 }' 		| sort -u 		| xargs -r dpkg-query -S 		| cut -d: -f1 		| sort -u 		| xargs -rt apt-mark manual; 		apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 	rm -rf /var/lib/apt/lists/*
-# Fri, 12 Jul 2019 22:26:29 GMT
+# Tue, 23 Jul 2019 01:58:28 GMT
 RUN { 		echo 'opcache.memory_consumption=128'; 		echo 'opcache.interned_strings_buffer=8'; 		echo 'opcache.max_accelerated_files=4000'; 		echo 'opcache.revalidate_freq=60'; 		echo 'opcache.fast_shutdown=1'; 	} > /usr/local/etc/php/conf.d/opcache-recommended.ini
-# Fri, 12 Jul 2019 22:26:31 GMT
+# Tue, 23 Jul 2019 01:58:30 GMT
 RUN set -eux; 	mkdir -p /var/www/data; 	chown -R www-data:www-data /var/www/data
-# Fri, 12 Jul 2019 22:26:32 GMT
+# Tue, 23 Jul 2019 01:58:30 GMT
 ENV MEDIAWIKI_MAJOR_VERSION=1.31
-# Fri, 12 Jul 2019 22:26:32 GMT
+# Tue, 23 Jul 2019 01:58:31 GMT
 ENV MEDIAWIKI_BRANCH=REL1_31
-# Fri, 12 Jul 2019 22:26:33 GMT
+# Tue, 23 Jul 2019 01:58:31 GMT
 ENV MEDIAWIKI_VERSION=1.31.3
-# Fri, 12 Jul 2019 22:26:34 GMT
+# Tue, 23 Jul 2019 01:58:32 GMT
 ENV MEDIAWIKI_SHA512=3900dbd3f1b7b9ea429c2feca6fb24f949f8d5d961ea1bd181fb1d80cebc7f8b531c02b2aa3caa12aa5bea48217ba7b5b01c3dbdbfbfdd1bb8c8a358879c505a
-# Fri, 12 Jul 2019 22:26:45 GMT
+# Tue, 23 Jul 2019 01:58:43 GMT
 RUN set -eux; 	curl -fSL "https://releases.wikimedia.org/mediawiki/${MEDIAWIKI_MAJOR_VERSION}/mediawiki-${MEDIAWIKI_VERSION}.tar.gz" -o mediawiki.tar.gz; 	echo "${MEDIAWIKI_SHA512} *mediawiki.tar.gz" | sha512sum -c -; 	tar -x --strip-components=1 -f mediawiki.tar.gz; 	rm mediawiki.tar.gz; 	chown -R www-data:www-data extensions skins cache images
 ```
 
@@ -3849,29 +3869,33 @@ RUN set -eux; 	curl -fSL "https://releases.wikimedia.org/mediawiki/${MEDIAWIKI_M
 		Last Modified: Fri, 12 Jul 2019 22:05:09 GMT  
 		Size: 247.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:587e458f21f982e50b5e14d7f4728b656e915cf6eff6b92711760caa0badd8de`  
-		Last Modified: Fri, 12 Jul 2019 22:05:09 GMT  
-		Size: 896.0 B  
+	-	`sha256:db8978c40502e1312f6c00ac36aa4242cc82bf325082c5f618079da939ecb4a4`  
+		Last Modified: Tue, 23 Jul 2019 00:52:38 GMT  
+		Size: 214.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:27e766195d7a3279d5bd8b3c74bd237bce1d927b95c564ed6706afc80d69e365`  
-		Last Modified: Fri, 12 Jul 2019 22:30:22 GMT  
-		Size: 62.2 MB (62170302 bytes)  
+	-	`sha256:5c942636b446046dc978e3a6872c7162e76e65f17fc65bcbdbb9dc9704b9b639`  
+		Last Modified: Tue, 23 Jul 2019 00:52:38 GMT  
+		Size: 898.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:83a02f1cfd0f8105624fe1093e4017485f820092e571a268d3ee2465f567176e`  
-		Last Modified: Fri, 12 Jul 2019 22:30:04 GMT  
-		Size: 2.8 MB (2758875 bytes)  
+	-	`sha256:d51f6c69af2d5030edd7108717ca778a1207e268c08cc56c17887d99596a8a0a`  
+		Last Modified: Tue, 23 Jul 2019 02:02:02 GMT  
+		Size: 62.2 MB (62170209 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:a2e8b492a288aa2357c0f27cb1c52b623802a14a8053d9b7032a9c79e1ab1dad`  
-		Last Modified: Fri, 12 Jul 2019 22:31:04 GMT  
+	-	`sha256:38a447b3b30842f9adc026314bb3dffa1bfb9d6bc243ffc388192488f4ccfb8b`  
+		Last Modified: Tue, 23 Jul 2019 02:01:44 GMT  
+		Size: 2.8 MB (2758870 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:b1a0427a8ab00072742b53437bbadfed63dcb35e68cb3a0e61851ab283f89e8d`  
+		Last Modified: Tue, 23 Jul 2019 02:02:42 GMT  
 		Size: 328.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:58fa6d3d61c094cea2468e975151d003ccc4530e7ea9531972e57b0fc07f08ab`  
-		Last Modified: Fri, 12 Jul 2019 22:31:04 GMT  
+	-	`sha256:b15ff6837ee5c4c2d886dc4a43d4d86b93d6584456af9e14da15a629545372e1`  
+		Last Modified: Tue, 23 Jul 2019 02:02:43 GMT  
 		Size: 171.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:b2cae999f8c41d8ca5b36384f7f7ca19f71cd56a6ea94d2547352829eedc7ecd`  
-		Last Modified: Fri, 12 Jul 2019 22:31:21 GMT  
-		Size: 35.8 MB (35756383 bytes)  
+	-	`sha256:c602c560b83165ea84abc85a344b8ee33ea6a3201c652f7157f1198fa013764b`  
+		Last Modified: Tue, 23 Jul 2019 02:02:58 GMT  
+		Size: 35.8 MB (35756326 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `mediawiki:1.31.3` - linux; 386
@@ -4231,7 +4255,7 @@ RUN set -eux; 	curl -fSL "https://releases.wikimedia.org/mediawiki/${MEDIAWIKI_M
 ## `mediawiki:1.32`
 
 ```console
-$ docker pull mediawiki@sha256:ce9312d144416fedb71e3091de3477fa440ee1e395ba16830ba02c532f2f3c1a
+$ docker pull mediawiki@sha256:6f29d205bc6f53b7c3e5b1442740ce1349a3020a7f2ccb8223929e28770dddcc
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -4795,14 +4819,14 @@ RUN set -eux; 	curl -fSL "https://releases.wikimedia.org/mediawiki/${MEDIAWIKI_M
 ### `mediawiki:1.32` - linux; arm64 variant v8
 
 ```console
-$ docker pull mediawiki@sha256:84fa65aa6f7487d9eeaea61c1c428150076ba9d5a31cf99565e9a4539f50159e
+$ docker pull mediawiki@sha256:9df712dcba98d49a3daf2f1051b524bca79e4d7e6763d65d7d8e42c58d17a84d
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **244.2 MB (244211481 bytes)**  
+-	Total Size: **244.2 MB (244212015 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:8d90f1884b9e163570043bc45d67e82c785f28f78cc30f91091b90ae4e2635f7`
+-	Image ID: `sha256:fa3956822e1b83432727c5ed93ce3c9ac156c3f3a2e15e04ab73c69a191dcc3d`
 -	Entrypoint: `["docker-php-entrypoint"]`
 -	Default Command: `["apache2-foreground"]`
 
@@ -4859,35 +4883,37 @@ RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get
 COPY multi:99e4ad617c6193834e78d12470f6dde09f70f4d40463009c5724954902e60676 in /usr/local/bin/ 
 # Fri, 12 Jul 2019 21:32:00 GMT
 RUN docker-php-ext-enable sodium
-# Fri, 12 Jul 2019 21:32:00 GMT
+# Tue, 23 Jul 2019 00:46:39 GMT
+RUN { echo '#!/bin/sh'; echo 'exec pkg-config "$@" freetype2'; } > /usr/local/bin/freetype-config && chmod +x /usr/local/bin/freetype-config
+# Tue, 23 Jul 2019 00:46:40 GMT
 ENTRYPOINT ["docker-php-entrypoint"]
-# Fri, 12 Jul 2019 21:32:01 GMT
+# Tue, 23 Jul 2019 00:46:40 GMT
 COPY file:e3123fcb6566efa979f945bfac1c94c854a559d7b82723e42118882a8ac4de66 in /usr/local/bin/ 
-# Fri, 12 Jul 2019 21:32:01 GMT
+# Tue, 23 Jul 2019 00:46:40 GMT
 WORKDIR /var/www/html
-# Fri, 12 Jul 2019 21:32:02 GMT
+# Tue, 23 Jul 2019 00:46:41 GMT
 EXPOSE 80
-# Fri, 12 Jul 2019 21:32:03 GMT
+# Tue, 23 Jul 2019 00:46:41 GMT
 CMD ["apache2-foreground"]
-# Fri, 12 Jul 2019 22:24:05 GMT
+# Tue, 23 Jul 2019 01:56:15 GMT
 RUN set -eux; 		apt-get update; 	apt-get install -y --no-install-recommends 		git 		librsvg2-bin 		imagemagick 		python3 	; 	rm -rf /var/lib/apt/lists/*
-# Fri, 12 Jul 2019 22:25:34 GMT
+# Tue, 23 Jul 2019 01:57:39 GMT
 RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 		apt-get update; 	apt-get install -y --no-install-recommends 		libicu-dev 	; 		docker-php-ext-install -j "$(nproc)" 		intl 		mbstring 		mysqli 		opcache 	; 		pecl install apcu-5.1.17; 	docker-php-ext-enable 		apcu 	; 		apt-mark auto '.*' > /dev/null; 	apt-mark manual $savedAptMark; 	ldd "$(php -r 'echo ini_get("extension_dir");')"/*.so 		| awk '/=>/ { print $3 }' 		| sort -u 		| xargs -r dpkg-query -S 		| cut -d: -f1 		| sort -u 		| xargs -rt apt-mark manual; 		apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 	rm -rf /var/lib/apt/lists/*
-# Fri, 12 Jul 2019 22:25:35 GMT
+# Tue, 23 Jul 2019 01:57:40 GMT
 RUN set -eux; 	a2enmod rewrite; 	{ 		echo '<Directory /var/www/html>'; 		echo '  RewriteEngine On'; 		echo '  RewriteCond %{REQUEST_FILENAME} !-f'; 		echo '  RewriteCond %{REQUEST_FILENAME} !-d'; 		echo '  RewriteRule ^ %{DOCUMENT_ROOT}/index.php [L]'; 		echo '</Directory>'; 	} > "$APACHE_CONFDIR/conf-available/short-url.conf"; 	a2enconf short-url
-# Fri, 12 Jul 2019 22:25:37 GMT
+# Tue, 23 Jul 2019 01:57:42 GMT
 RUN { 		echo 'opcache.memory_consumption=128'; 		echo 'opcache.interned_strings_buffer=8'; 		echo 'opcache.max_accelerated_files=4000'; 		echo 'opcache.revalidate_freq=60'; 		echo 'opcache.fast_shutdown=1'; 	} > /usr/local/etc/php/conf.d/opcache-recommended.ini
-# Fri, 12 Jul 2019 22:25:39 GMT
+# Tue, 23 Jul 2019 01:57:44 GMT
 RUN set -eux; 	mkdir -p /var/www/data; 	chown -R www-data:www-data /var/www/data
-# Fri, 12 Jul 2019 22:26:04 GMT
+# Tue, 23 Jul 2019 01:58:07 GMT
 ENV MEDIAWIKI_MAJOR_VERSION=1.32
-# Fri, 12 Jul 2019 22:26:05 GMT
+# Tue, 23 Jul 2019 01:58:07 GMT
 ENV MEDIAWIKI_BRANCH=REL1_32
-# Fri, 12 Jul 2019 22:26:06 GMT
+# Tue, 23 Jul 2019 01:58:08 GMT
 ENV MEDIAWIKI_VERSION=1.32.3
-# Fri, 12 Jul 2019 22:26:06 GMT
+# Tue, 23 Jul 2019 01:58:09 GMT
 ENV MEDIAWIKI_SHA512=032309222c15e7ccb855b21f79315da8b5134c9bdd189ce17c0b12937f1a406bb4576a7dc399d17f115deaf21622ea7caa376748aedef0e752281f7d74117b15
-# Fri, 12 Jul 2019 22:26:20 GMT
+# Tue, 23 Jul 2019 01:58:20 GMT
 RUN set -eux; 	curl -fSL "https://releases.wikimedia.org/mediawiki/${MEDIAWIKI_MAJOR_VERSION}/mediawiki-${MEDIAWIKI_VERSION}.tar.gz" -o mediawiki.tar.gz; 	echo "${MEDIAWIKI_SHA512} *mediawiki.tar.gz" | sha512sum -c -; 	tar -x --strip-components=1 -f mediawiki.tar.gz; 	rm mediawiki.tar.gz; 	chown -R www-data:www-data extensions skins cache images
 ```
 
@@ -4940,33 +4966,37 @@ RUN set -eux; 	curl -fSL "https://releases.wikimedia.org/mediawiki/${MEDIAWIKI_M
 		Last Modified: Fri, 12 Jul 2019 22:05:09 GMT  
 		Size: 247.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:587e458f21f982e50b5e14d7f4728b656e915cf6eff6b92711760caa0badd8de`  
-		Last Modified: Fri, 12 Jul 2019 22:05:09 GMT  
-		Size: 896.0 B  
+	-	`sha256:db8978c40502e1312f6c00ac36aa4242cc82bf325082c5f618079da939ecb4a4`  
+		Last Modified: Tue, 23 Jul 2019 00:52:38 GMT  
+		Size: 214.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:27e766195d7a3279d5bd8b3c74bd237bce1d927b95c564ed6706afc80d69e365`  
-		Last Modified: Fri, 12 Jul 2019 22:30:22 GMT  
-		Size: 62.2 MB (62170302 bytes)  
+	-	`sha256:5c942636b446046dc978e3a6872c7162e76e65f17fc65bcbdbb9dc9704b9b639`  
+		Last Modified: Tue, 23 Jul 2019 00:52:38 GMT  
+		Size: 898.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:83a02f1cfd0f8105624fe1093e4017485f820092e571a268d3ee2465f567176e`  
-		Last Modified: Fri, 12 Jul 2019 22:30:04 GMT  
-		Size: 2.8 MB (2758875 bytes)  
+	-	`sha256:d51f6c69af2d5030edd7108717ca778a1207e268c08cc56c17887d99596a8a0a`  
+		Last Modified: Tue, 23 Jul 2019 02:02:02 GMT  
+		Size: 62.2 MB (62170209 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:9302c9e94d3d51fc22d56f6f0a0852205e38e71f2a9303ee134c6d5f1fbbf8f1`  
-		Last Modified: Fri, 12 Jul 2019 22:30:03 GMT  
-		Size: 581.0 B  
+	-	`sha256:38a447b3b30842f9adc026314bb3dffa1bfb9d6bc243ffc388192488f4ccfb8b`  
+		Last Modified: Tue, 23 Jul 2019 02:01:44 GMT  
+		Size: 2.8 MB (2758870 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:972f1478c87d99ce4d4d435986ac32859e28c90e2a2429c3d17ad75945200ca9`  
-		Last Modified: Fri, 12 Jul 2019 22:30:03 GMT  
+	-	`sha256:c0b9e09dab8041ea7fe3524c12065adefeba03f27624546db1ce2fa8fc58d5c1`  
+		Last Modified: Tue, 23 Jul 2019 02:01:43 GMT  
+		Size: 588.0 B  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:dad95cec2ee2831f92786762787e7e84d11da5e5e7a54ca9e6e37a916d9594f3`  
+		Last Modified: Tue, 23 Jul 2019 02:01:43 GMT  
 		Size: 328.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:29b8424745c4be6e22921eb637a78a0e5c5e304bb4fbbd7a4ceaccb2fc5f633a`  
-		Last Modified: Fri, 12 Jul 2019 22:30:03 GMT  
+	-	`sha256:64dcbc76ec4d92a8b606e6323e3cb308bfc1942fc3c3ef7a7ca056cd11326d3e`  
+		Last Modified: Tue, 23 Jul 2019 02:01:43 GMT  
 		Size: 170.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:b513533cdaaab37a7fb188addaa8b05e5add3833ebd82eba430756bf68fc29d7`  
-		Last Modified: Fri, 12 Jul 2019 22:30:55 GMT  
-		Size: 36.7 MB (36691727 bytes)  
+	-	`sha256:69304ad8105d972027cc7e24f7b398534f0a7de01cbe631997943a18c14ceb1f`  
+		Last Modified: Tue, 23 Jul 2019 02:02:33 GMT  
+		Size: 36.7 MB (36692136 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `mediawiki:1.32` - linux; 386
@@ -5338,7 +5368,7 @@ RUN set -eux; 	curl -fSL "https://releases.wikimedia.org/mediawiki/${MEDIAWIKI_M
 ## `mediawiki:1.32.3`
 
 ```console
-$ docker pull mediawiki@sha256:ce9312d144416fedb71e3091de3477fa440ee1e395ba16830ba02c532f2f3c1a
+$ docker pull mediawiki@sha256:6f29d205bc6f53b7c3e5b1442740ce1349a3020a7f2ccb8223929e28770dddcc
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -5902,14 +5932,14 @@ RUN set -eux; 	curl -fSL "https://releases.wikimedia.org/mediawiki/${MEDIAWIKI_M
 ### `mediawiki:1.32.3` - linux; arm64 variant v8
 
 ```console
-$ docker pull mediawiki@sha256:84fa65aa6f7487d9eeaea61c1c428150076ba9d5a31cf99565e9a4539f50159e
+$ docker pull mediawiki@sha256:9df712dcba98d49a3daf2f1051b524bca79e4d7e6763d65d7d8e42c58d17a84d
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **244.2 MB (244211481 bytes)**  
+-	Total Size: **244.2 MB (244212015 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:8d90f1884b9e163570043bc45d67e82c785f28f78cc30f91091b90ae4e2635f7`
+-	Image ID: `sha256:fa3956822e1b83432727c5ed93ce3c9ac156c3f3a2e15e04ab73c69a191dcc3d`
 -	Entrypoint: `["docker-php-entrypoint"]`
 -	Default Command: `["apache2-foreground"]`
 
@@ -5966,35 +5996,37 @@ RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get
 COPY multi:99e4ad617c6193834e78d12470f6dde09f70f4d40463009c5724954902e60676 in /usr/local/bin/ 
 # Fri, 12 Jul 2019 21:32:00 GMT
 RUN docker-php-ext-enable sodium
-# Fri, 12 Jul 2019 21:32:00 GMT
+# Tue, 23 Jul 2019 00:46:39 GMT
+RUN { echo '#!/bin/sh'; echo 'exec pkg-config "$@" freetype2'; } > /usr/local/bin/freetype-config && chmod +x /usr/local/bin/freetype-config
+# Tue, 23 Jul 2019 00:46:40 GMT
 ENTRYPOINT ["docker-php-entrypoint"]
-# Fri, 12 Jul 2019 21:32:01 GMT
+# Tue, 23 Jul 2019 00:46:40 GMT
 COPY file:e3123fcb6566efa979f945bfac1c94c854a559d7b82723e42118882a8ac4de66 in /usr/local/bin/ 
-# Fri, 12 Jul 2019 21:32:01 GMT
+# Tue, 23 Jul 2019 00:46:40 GMT
 WORKDIR /var/www/html
-# Fri, 12 Jul 2019 21:32:02 GMT
+# Tue, 23 Jul 2019 00:46:41 GMT
 EXPOSE 80
-# Fri, 12 Jul 2019 21:32:03 GMT
+# Tue, 23 Jul 2019 00:46:41 GMT
 CMD ["apache2-foreground"]
-# Fri, 12 Jul 2019 22:24:05 GMT
+# Tue, 23 Jul 2019 01:56:15 GMT
 RUN set -eux; 		apt-get update; 	apt-get install -y --no-install-recommends 		git 		librsvg2-bin 		imagemagick 		python3 	; 	rm -rf /var/lib/apt/lists/*
-# Fri, 12 Jul 2019 22:25:34 GMT
+# Tue, 23 Jul 2019 01:57:39 GMT
 RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 		apt-get update; 	apt-get install -y --no-install-recommends 		libicu-dev 	; 		docker-php-ext-install -j "$(nproc)" 		intl 		mbstring 		mysqli 		opcache 	; 		pecl install apcu-5.1.17; 	docker-php-ext-enable 		apcu 	; 		apt-mark auto '.*' > /dev/null; 	apt-mark manual $savedAptMark; 	ldd "$(php -r 'echo ini_get("extension_dir");')"/*.so 		| awk '/=>/ { print $3 }' 		| sort -u 		| xargs -r dpkg-query -S 		| cut -d: -f1 		| sort -u 		| xargs -rt apt-mark manual; 		apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 	rm -rf /var/lib/apt/lists/*
-# Fri, 12 Jul 2019 22:25:35 GMT
+# Tue, 23 Jul 2019 01:57:40 GMT
 RUN set -eux; 	a2enmod rewrite; 	{ 		echo '<Directory /var/www/html>'; 		echo '  RewriteEngine On'; 		echo '  RewriteCond %{REQUEST_FILENAME} !-f'; 		echo '  RewriteCond %{REQUEST_FILENAME} !-d'; 		echo '  RewriteRule ^ %{DOCUMENT_ROOT}/index.php [L]'; 		echo '</Directory>'; 	} > "$APACHE_CONFDIR/conf-available/short-url.conf"; 	a2enconf short-url
-# Fri, 12 Jul 2019 22:25:37 GMT
+# Tue, 23 Jul 2019 01:57:42 GMT
 RUN { 		echo 'opcache.memory_consumption=128'; 		echo 'opcache.interned_strings_buffer=8'; 		echo 'opcache.max_accelerated_files=4000'; 		echo 'opcache.revalidate_freq=60'; 		echo 'opcache.fast_shutdown=1'; 	} > /usr/local/etc/php/conf.d/opcache-recommended.ini
-# Fri, 12 Jul 2019 22:25:39 GMT
+# Tue, 23 Jul 2019 01:57:44 GMT
 RUN set -eux; 	mkdir -p /var/www/data; 	chown -R www-data:www-data /var/www/data
-# Fri, 12 Jul 2019 22:26:04 GMT
+# Tue, 23 Jul 2019 01:58:07 GMT
 ENV MEDIAWIKI_MAJOR_VERSION=1.32
-# Fri, 12 Jul 2019 22:26:05 GMT
+# Tue, 23 Jul 2019 01:58:07 GMT
 ENV MEDIAWIKI_BRANCH=REL1_32
-# Fri, 12 Jul 2019 22:26:06 GMT
+# Tue, 23 Jul 2019 01:58:08 GMT
 ENV MEDIAWIKI_VERSION=1.32.3
-# Fri, 12 Jul 2019 22:26:06 GMT
+# Tue, 23 Jul 2019 01:58:09 GMT
 ENV MEDIAWIKI_SHA512=032309222c15e7ccb855b21f79315da8b5134c9bdd189ce17c0b12937f1a406bb4576a7dc399d17f115deaf21622ea7caa376748aedef0e752281f7d74117b15
-# Fri, 12 Jul 2019 22:26:20 GMT
+# Tue, 23 Jul 2019 01:58:20 GMT
 RUN set -eux; 	curl -fSL "https://releases.wikimedia.org/mediawiki/${MEDIAWIKI_MAJOR_VERSION}/mediawiki-${MEDIAWIKI_VERSION}.tar.gz" -o mediawiki.tar.gz; 	echo "${MEDIAWIKI_SHA512} *mediawiki.tar.gz" | sha512sum -c -; 	tar -x --strip-components=1 -f mediawiki.tar.gz; 	rm mediawiki.tar.gz; 	chown -R www-data:www-data extensions skins cache images
 ```
 
@@ -6047,33 +6079,37 @@ RUN set -eux; 	curl -fSL "https://releases.wikimedia.org/mediawiki/${MEDIAWIKI_M
 		Last Modified: Fri, 12 Jul 2019 22:05:09 GMT  
 		Size: 247.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:587e458f21f982e50b5e14d7f4728b656e915cf6eff6b92711760caa0badd8de`  
-		Last Modified: Fri, 12 Jul 2019 22:05:09 GMT  
-		Size: 896.0 B  
+	-	`sha256:db8978c40502e1312f6c00ac36aa4242cc82bf325082c5f618079da939ecb4a4`  
+		Last Modified: Tue, 23 Jul 2019 00:52:38 GMT  
+		Size: 214.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:27e766195d7a3279d5bd8b3c74bd237bce1d927b95c564ed6706afc80d69e365`  
-		Last Modified: Fri, 12 Jul 2019 22:30:22 GMT  
-		Size: 62.2 MB (62170302 bytes)  
+	-	`sha256:5c942636b446046dc978e3a6872c7162e76e65f17fc65bcbdbb9dc9704b9b639`  
+		Last Modified: Tue, 23 Jul 2019 00:52:38 GMT  
+		Size: 898.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:83a02f1cfd0f8105624fe1093e4017485f820092e571a268d3ee2465f567176e`  
-		Last Modified: Fri, 12 Jul 2019 22:30:04 GMT  
-		Size: 2.8 MB (2758875 bytes)  
+	-	`sha256:d51f6c69af2d5030edd7108717ca778a1207e268c08cc56c17887d99596a8a0a`  
+		Last Modified: Tue, 23 Jul 2019 02:02:02 GMT  
+		Size: 62.2 MB (62170209 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:9302c9e94d3d51fc22d56f6f0a0852205e38e71f2a9303ee134c6d5f1fbbf8f1`  
-		Last Modified: Fri, 12 Jul 2019 22:30:03 GMT  
-		Size: 581.0 B  
+	-	`sha256:38a447b3b30842f9adc026314bb3dffa1bfb9d6bc243ffc388192488f4ccfb8b`  
+		Last Modified: Tue, 23 Jul 2019 02:01:44 GMT  
+		Size: 2.8 MB (2758870 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:972f1478c87d99ce4d4d435986ac32859e28c90e2a2429c3d17ad75945200ca9`  
-		Last Modified: Fri, 12 Jul 2019 22:30:03 GMT  
+	-	`sha256:c0b9e09dab8041ea7fe3524c12065adefeba03f27624546db1ce2fa8fc58d5c1`  
+		Last Modified: Tue, 23 Jul 2019 02:01:43 GMT  
+		Size: 588.0 B  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:dad95cec2ee2831f92786762787e7e84d11da5e5e7a54ca9e6e37a916d9594f3`  
+		Last Modified: Tue, 23 Jul 2019 02:01:43 GMT  
 		Size: 328.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:29b8424745c4be6e22921eb637a78a0e5c5e304bb4fbbd7a4ceaccb2fc5f633a`  
-		Last Modified: Fri, 12 Jul 2019 22:30:03 GMT  
+	-	`sha256:64dcbc76ec4d92a8b606e6323e3cb308bfc1942fc3c3ef7a7ca056cd11326d3e`  
+		Last Modified: Tue, 23 Jul 2019 02:01:43 GMT  
 		Size: 170.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:b513533cdaaab37a7fb188addaa8b05e5add3833ebd82eba430756bf68fc29d7`  
-		Last Modified: Fri, 12 Jul 2019 22:30:55 GMT  
-		Size: 36.7 MB (36691727 bytes)  
+	-	`sha256:69304ad8105d972027cc7e24f7b398534f0a7de01cbe631997943a18c14ceb1f`  
+		Last Modified: Tue, 23 Jul 2019 02:02:33 GMT  
+		Size: 36.7 MB (36692136 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `mediawiki:1.32.3` - linux; 386
@@ -6445,7 +6481,7 @@ RUN set -eux; 	curl -fSL "https://releases.wikimedia.org/mediawiki/${MEDIAWIKI_M
 ## `mediawiki:1.33`
 
 ```console
-$ docker pull mediawiki@sha256:7fbef407b73f0f7a1ff8a65d3e94f9d98b759c5217aba0f95296bddf5229eb91
+$ docker pull mediawiki@sha256:2105ccf1f7ddbed2fa3c7fe2fab825b2d88897091310873a86da4d310a78e6b9
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -7009,14 +7045,14 @@ RUN set -eux; 	curl -fSL "https://releases.wikimedia.org/mediawiki/${MEDIAWIKI_M
 ### `mediawiki:1.33` - linux; arm64 variant v8
 
 ```console
-$ docker pull mediawiki@sha256:be3fde0e01be3125afe8ae45f81277ea79a1daf61b7413fc867d42603068dd81
+$ docker pull mediawiki@sha256:97058ba323040a1dc5e6224a8b1b266956c6f6abe57f97d911a37a4e046af9a2
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **245.9 MB (245921302 bytes)**  
+-	Total Size: **245.9 MB (245921580 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:e50a9086919fb42eaef8e9466060c866726438334acb01e47fe6e51f231e6cb6`
+-	Image ID: `sha256:6e8996f0c9cb71cd453c045f4109ec0914576b03cc3172a624478615e6dfb297`
 -	Entrypoint: `["docker-php-entrypoint"]`
 -	Default Command: `["apache2-foreground"]`
 
@@ -7073,35 +7109,37 @@ RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get
 COPY multi:99e4ad617c6193834e78d12470f6dde09f70f4d40463009c5724954902e60676 in /usr/local/bin/ 
 # Fri, 12 Jul 2019 21:32:00 GMT
 RUN docker-php-ext-enable sodium
-# Fri, 12 Jul 2019 21:32:00 GMT
+# Tue, 23 Jul 2019 00:46:39 GMT
+RUN { echo '#!/bin/sh'; echo 'exec pkg-config "$@" freetype2'; } > /usr/local/bin/freetype-config && chmod +x /usr/local/bin/freetype-config
+# Tue, 23 Jul 2019 00:46:40 GMT
 ENTRYPOINT ["docker-php-entrypoint"]
-# Fri, 12 Jul 2019 21:32:01 GMT
+# Tue, 23 Jul 2019 00:46:40 GMT
 COPY file:e3123fcb6566efa979f945bfac1c94c854a559d7b82723e42118882a8ac4de66 in /usr/local/bin/ 
-# Fri, 12 Jul 2019 21:32:01 GMT
+# Tue, 23 Jul 2019 00:46:40 GMT
 WORKDIR /var/www/html
-# Fri, 12 Jul 2019 21:32:02 GMT
+# Tue, 23 Jul 2019 00:46:41 GMT
 EXPOSE 80
-# Fri, 12 Jul 2019 21:32:03 GMT
+# Tue, 23 Jul 2019 00:46:41 GMT
 CMD ["apache2-foreground"]
-# Fri, 12 Jul 2019 22:24:05 GMT
+# Tue, 23 Jul 2019 01:56:15 GMT
 RUN set -eux; 		apt-get update; 	apt-get install -y --no-install-recommends 		git 		librsvg2-bin 		imagemagick 		python3 	; 	rm -rf /var/lib/apt/lists/*
-# Fri, 12 Jul 2019 22:25:34 GMT
+# Tue, 23 Jul 2019 01:57:39 GMT
 RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 		apt-get update; 	apt-get install -y --no-install-recommends 		libicu-dev 	; 		docker-php-ext-install -j "$(nproc)" 		intl 		mbstring 		mysqli 		opcache 	; 		pecl install apcu-5.1.17; 	docker-php-ext-enable 		apcu 	; 		apt-mark auto '.*' > /dev/null; 	apt-mark manual $savedAptMark; 	ldd "$(php -r 'echo ini_get("extension_dir");')"/*.so 		| awk '/=>/ { print $3 }' 		| sort -u 		| xargs -r dpkg-query -S 		| cut -d: -f1 		| sort -u 		| xargs -rt apt-mark manual; 		apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 	rm -rf /var/lib/apt/lists/*
-# Fri, 12 Jul 2019 22:25:35 GMT
+# Tue, 23 Jul 2019 01:57:40 GMT
 RUN set -eux; 	a2enmod rewrite; 	{ 		echo '<Directory /var/www/html>'; 		echo '  RewriteEngine On'; 		echo '  RewriteCond %{REQUEST_FILENAME} !-f'; 		echo '  RewriteCond %{REQUEST_FILENAME} !-d'; 		echo '  RewriteRule ^ %{DOCUMENT_ROOT}/index.php [L]'; 		echo '</Directory>'; 	} > "$APACHE_CONFDIR/conf-available/short-url.conf"; 	a2enconf short-url
-# Fri, 12 Jul 2019 22:25:37 GMT
+# Tue, 23 Jul 2019 01:57:42 GMT
 RUN { 		echo 'opcache.memory_consumption=128'; 		echo 'opcache.interned_strings_buffer=8'; 		echo 'opcache.max_accelerated_files=4000'; 		echo 'opcache.revalidate_freq=60'; 		echo 'opcache.fast_shutdown=1'; 	} > /usr/local/etc/php/conf.d/opcache-recommended.ini
-# Fri, 12 Jul 2019 22:25:39 GMT
+# Tue, 23 Jul 2019 01:57:44 GMT
 RUN set -eux; 	mkdir -p /var/www/data; 	chown -R www-data:www-data /var/www/data
-# Fri, 12 Jul 2019 22:25:39 GMT
+# Tue, 23 Jul 2019 01:57:44 GMT
 ENV MEDIAWIKI_MAJOR_VERSION=1.33
-# Fri, 12 Jul 2019 22:25:40 GMT
+# Tue, 23 Jul 2019 01:57:45 GMT
 ENV MEDIAWIKI_BRANCH=REL1_33
-# Fri, 12 Jul 2019 22:25:40 GMT
+# Tue, 23 Jul 2019 01:57:45 GMT
 ENV MEDIAWIKI_VERSION=1.33.0
-# Fri, 12 Jul 2019 22:25:41 GMT
+# Tue, 23 Jul 2019 01:57:46 GMT
 ENV MEDIAWIKI_SHA512=e31f5d8bd0bef39b9e2db71f129da128d20174f86e6a4799de5e24195bdcbbc06778b978a48073934b6e59d837629d6b83c182c8271b5fb944ef4ce5df856c68
-# Fri, 12 Jul 2019 22:25:57 GMT
+# Tue, 23 Jul 2019 01:57:58 GMT
 RUN set -eux; 	curl -fSL "https://releases.wikimedia.org/mediawiki/${MEDIAWIKI_MAJOR_VERSION}/mediawiki-${MEDIAWIKI_VERSION}.tar.gz" -o mediawiki.tar.gz; 	echo "${MEDIAWIKI_SHA512} *mediawiki.tar.gz" | sha512sum -c -; 	tar -x --strip-components=1 -f mediawiki.tar.gz; 	rm mediawiki.tar.gz; 	chown -R www-data:www-data extensions skins cache images
 ```
 
@@ -7154,33 +7192,37 @@ RUN set -eux; 	curl -fSL "https://releases.wikimedia.org/mediawiki/${MEDIAWIKI_M
 		Last Modified: Fri, 12 Jul 2019 22:05:09 GMT  
 		Size: 247.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:587e458f21f982e50b5e14d7f4728b656e915cf6eff6b92711760caa0badd8de`  
-		Last Modified: Fri, 12 Jul 2019 22:05:09 GMT  
-		Size: 896.0 B  
+	-	`sha256:db8978c40502e1312f6c00ac36aa4242cc82bf325082c5f618079da939ecb4a4`  
+		Last Modified: Tue, 23 Jul 2019 00:52:38 GMT  
+		Size: 214.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:27e766195d7a3279d5bd8b3c74bd237bce1d927b95c564ed6706afc80d69e365`  
-		Last Modified: Fri, 12 Jul 2019 22:30:22 GMT  
-		Size: 62.2 MB (62170302 bytes)  
+	-	`sha256:5c942636b446046dc978e3a6872c7162e76e65f17fc65bcbdbb9dc9704b9b639`  
+		Last Modified: Tue, 23 Jul 2019 00:52:38 GMT  
+		Size: 898.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:83a02f1cfd0f8105624fe1093e4017485f820092e571a268d3ee2465f567176e`  
-		Last Modified: Fri, 12 Jul 2019 22:30:04 GMT  
-		Size: 2.8 MB (2758875 bytes)  
+	-	`sha256:d51f6c69af2d5030edd7108717ca778a1207e268c08cc56c17887d99596a8a0a`  
+		Last Modified: Tue, 23 Jul 2019 02:02:02 GMT  
+		Size: 62.2 MB (62170209 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:9302c9e94d3d51fc22d56f6f0a0852205e38e71f2a9303ee134c6d5f1fbbf8f1`  
-		Last Modified: Fri, 12 Jul 2019 22:30:03 GMT  
-		Size: 581.0 B  
+	-	`sha256:38a447b3b30842f9adc026314bb3dffa1bfb9d6bc243ffc388192488f4ccfb8b`  
+		Last Modified: Tue, 23 Jul 2019 02:01:44 GMT  
+		Size: 2.8 MB (2758870 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:972f1478c87d99ce4d4d435986ac32859e28c90e2a2429c3d17ad75945200ca9`  
-		Last Modified: Fri, 12 Jul 2019 22:30:03 GMT  
+	-	`sha256:c0b9e09dab8041ea7fe3524c12065adefeba03f27624546db1ce2fa8fc58d5c1`  
+		Last Modified: Tue, 23 Jul 2019 02:01:43 GMT  
+		Size: 588.0 B  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:dad95cec2ee2831f92786762787e7e84d11da5e5e7a54ca9e6e37a916d9594f3`  
+		Last Modified: Tue, 23 Jul 2019 02:01:43 GMT  
 		Size: 328.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:29b8424745c4be6e22921eb637a78a0e5c5e304bb4fbbd7a4ceaccb2fc5f633a`  
-		Last Modified: Fri, 12 Jul 2019 22:30:03 GMT  
+	-	`sha256:64dcbc76ec4d92a8b606e6323e3cb308bfc1942fc3c3ef7a7ca056cd11326d3e`  
+		Last Modified: Tue, 23 Jul 2019 02:01:43 GMT  
 		Size: 170.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:33d858e5f6b1433ad91a31f42b91800d32460b121ec2efef89e9eb9188d86aad`  
-		Last Modified: Fri, 12 Jul 2019 22:30:22 GMT  
-		Size: 38.4 MB (38401548 bytes)  
+	-	`sha256:eb14b2ce71b438428eed21471cd4a39108770bec624198064701a7ed51d97d7f`  
+		Last Modified: Tue, 23 Jul 2019 02:02:02 GMT  
+		Size: 38.4 MB (38401701 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `mediawiki:1.33` - linux; 386
@@ -7552,7 +7594,7 @@ RUN set -eux; 	curl -fSL "https://releases.wikimedia.org/mediawiki/${MEDIAWIKI_M
 ## `mediawiki:1.33.0`
 
 ```console
-$ docker pull mediawiki@sha256:7fbef407b73f0f7a1ff8a65d3e94f9d98b759c5217aba0f95296bddf5229eb91
+$ docker pull mediawiki@sha256:2105ccf1f7ddbed2fa3c7fe2fab825b2d88897091310873a86da4d310a78e6b9
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -8116,14 +8158,14 @@ RUN set -eux; 	curl -fSL "https://releases.wikimedia.org/mediawiki/${MEDIAWIKI_M
 ### `mediawiki:1.33.0` - linux; arm64 variant v8
 
 ```console
-$ docker pull mediawiki@sha256:be3fde0e01be3125afe8ae45f81277ea79a1daf61b7413fc867d42603068dd81
+$ docker pull mediawiki@sha256:97058ba323040a1dc5e6224a8b1b266956c6f6abe57f97d911a37a4e046af9a2
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **245.9 MB (245921302 bytes)**  
+-	Total Size: **245.9 MB (245921580 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:e50a9086919fb42eaef8e9466060c866726438334acb01e47fe6e51f231e6cb6`
+-	Image ID: `sha256:6e8996f0c9cb71cd453c045f4109ec0914576b03cc3172a624478615e6dfb297`
 -	Entrypoint: `["docker-php-entrypoint"]`
 -	Default Command: `["apache2-foreground"]`
 
@@ -8180,35 +8222,37 @@ RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get
 COPY multi:99e4ad617c6193834e78d12470f6dde09f70f4d40463009c5724954902e60676 in /usr/local/bin/ 
 # Fri, 12 Jul 2019 21:32:00 GMT
 RUN docker-php-ext-enable sodium
-# Fri, 12 Jul 2019 21:32:00 GMT
+# Tue, 23 Jul 2019 00:46:39 GMT
+RUN { echo '#!/bin/sh'; echo 'exec pkg-config "$@" freetype2'; } > /usr/local/bin/freetype-config && chmod +x /usr/local/bin/freetype-config
+# Tue, 23 Jul 2019 00:46:40 GMT
 ENTRYPOINT ["docker-php-entrypoint"]
-# Fri, 12 Jul 2019 21:32:01 GMT
+# Tue, 23 Jul 2019 00:46:40 GMT
 COPY file:e3123fcb6566efa979f945bfac1c94c854a559d7b82723e42118882a8ac4de66 in /usr/local/bin/ 
-# Fri, 12 Jul 2019 21:32:01 GMT
+# Tue, 23 Jul 2019 00:46:40 GMT
 WORKDIR /var/www/html
-# Fri, 12 Jul 2019 21:32:02 GMT
+# Tue, 23 Jul 2019 00:46:41 GMT
 EXPOSE 80
-# Fri, 12 Jul 2019 21:32:03 GMT
+# Tue, 23 Jul 2019 00:46:41 GMT
 CMD ["apache2-foreground"]
-# Fri, 12 Jul 2019 22:24:05 GMT
+# Tue, 23 Jul 2019 01:56:15 GMT
 RUN set -eux; 		apt-get update; 	apt-get install -y --no-install-recommends 		git 		librsvg2-bin 		imagemagick 		python3 	; 	rm -rf /var/lib/apt/lists/*
-# Fri, 12 Jul 2019 22:25:34 GMT
+# Tue, 23 Jul 2019 01:57:39 GMT
 RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 		apt-get update; 	apt-get install -y --no-install-recommends 		libicu-dev 	; 		docker-php-ext-install -j "$(nproc)" 		intl 		mbstring 		mysqli 		opcache 	; 		pecl install apcu-5.1.17; 	docker-php-ext-enable 		apcu 	; 		apt-mark auto '.*' > /dev/null; 	apt-mark manual $savedAptMark; 	ldd "$(php -r 'echo ini_get("extension_dir");')"/*.so 		| awk '/=>/ { print $3 }' 		| sort -u 		| xargs -r dpkg-query -S 		| cut -d: -f1 		| sort -u 		| xargs -rt apt-mark manual; 		apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 	rm -rf /var/lib/apt/lists/*
-# Fri, 12 Jul 2019 22:25:35 GMT
+# Tue, 23 Jul 2019 01:57:40 GMT
 RUN set -eux; 	a2enmod rewrite; 	{ 		echo '<Directory /var/www/html>'; 		echo '  RewriteEngine On'; 		echo '  RewriteCond %{REQUEST_FILENAME} !-f'; 		echo '  RewriteCond %{REQUEST_FILENAME} !-d'; 		echo '  RewriteRule ^ %{DOCUMENT_ROOT}/index.php [L]'; 		echo '</Directory>'; 	} > "$APACHE_CONFDIR/conf-available/short-url.conf"; 	a2enconf short-url
-# Fri, 12 Jul 2019 22:25:37 GMT
+# Tue, 23 Jul 2019 01:57:42 GMT
 RUN { 		echo 'opcache.memory_consumption=128'; 		echo 'opcache.interned_strings_buffer=8'; 		echo 'opcache.max_accelerated_files=4000'; 		echo 'opcache.revalidate_freq=60'; 		echo 'opcache.fast_shutdown=1'; 	} > /usr/local/etc/php/conf.d/opcache-recommended.ini
-# Fri, 12 Jul 2019 22:25:39 GMT
+# Tue, 23 Jul 2019 01:57:44 GMT
 RUN set -eux; 	mkdir -p /var/www/data; 	chown -R www-data:www-data /var/www/data
-# Fri, 12 Jul 2019 22:25:39 GMT
+# Tue, 23 Jul 2019 01:57:44 GMT
 ENV MEDIAWIKI_MAJOR_VERSION=1.33
-# Fri, 12 Jul 2019 22:25:40 GMT
+# Tue, 23 Jul 2019 01:57:45 GMT
 ENV MEDIAWIKI_BRANCH=REL1_33
-# Fri, 12 Jul 2019 22:25:40 GMT
+# Tue, 23 Jul 2019 01:57:45 GMT
 ENV MEDIAWIKI_VERSION=1.33.0
-# Fri, 12 Jul 2019 22:25:41 GMT
+# Tue, 23 Jul 2019 01:57:46 GMT
 ENV MEDIAWIKI_SHA512=e31f5d8bd0bef39b9e2db71f129da128d20174f86e6a4799de5e24195bdcbbc06778b978a48073934b6e59d837629d6b83c182c8271b5fb944ef4ce5df856c68
-# Fri, 12 Jul 2019 22:25:57 GMT
+# Tue, 23 Jul 2019 01:57:58 GMT
 RUN set -eux; 	curl -fSL "https://releases.wikimedia.org/mediawiki/${MEDIAWIKI_MAJOR_VERSION}/mediawiki-${MEDIAWIKI_VERSION}.tar.gz" -o mediawiki.tar.gz; 	echo "${MEDIAWIKI_SHA512} *mediawiki.tar.gz" | sha512sum -c -; 	tar -x --strip-components=1 -f mediawiki.tar.gz; 	rm mediawiki.tar.gz; 	chown -R www-data:www-data extensions skins cache images
 ```
 
@@ -8261,33 +8305,37 @@ RUN set -eux; 	curl -fSL "https://releases.wikimedia.org/mediawiki/${MEDIAWIKI_M
 		Last Modified: Fri, 12 Jul 2019 22:05:09 GMT  
 		Size: 247.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:587e458f21f982e50b5e14d7f4728b656e915cf6eff6b92711760caa0badd8de`  
-		Last Modified: Fri, 12 Jul 2019 22:05:09 GMT  
-		Size: 896.0 B  
+	-	`sha256:db8978c40502e1312f6c00ac36aa4242cc82bf325082c5f618079da939ecb4a4`  
+		Last Modified: Tue, 23 Jul 2019 00:52:38 GMT  
+		Size: 214.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:27e766195d7a3279d5bd8b3c74bd237bce1d927b95c564ed6706afc80d69e365`  
-		Last Modified: Fri, 12 Jul 2019 22:30:22 GMT  
-		Size: 62.2 MB (62170302 bytes)  
+	-	`sha256:5c942636b446046dc978e3a6872c7162e76e65f17fc65bcbdbb9dc9704b9b639`  
+		Last Modified: Tue, 23 Jul 2019 00:52:38 GMT  
+		Size: 898.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:83a02f1cfd0f8105624fe1093e4017485f820092e571a268d3ee2465f567176e`  
-		Last Modified: Fri, 12 Jul 2019 22:30:04 GMT  
-		Size: 2.8 MB (2758875 bytes)  
+	-	`sha256:d51f6c69af2d5030edd7108717ca778a1207e268c08cc56c17887d99596a8a0a`  
+		Last Modified: Tue, 23 Jul 2019 02:02:02 GMT  
+		Size: 62.2 MB (62170209 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:9302c9e94d3d51fc22d56f6f0a0852205e38e71f2a9303ee134c6d5f1fbbf8f1`  
-		Last Modified: Fri, 12 Jul 2019 22:30:03 GMT  
-		Size: 581.0 B  
+	-	`sha256:38a447b3b30842f9adc026314bb3dffa1bfb9d6bc243ffc388192488f4ccfb8b`  
+		Last Modified: Tue, 23 Jul 2019 02:01:44 GMT  
+		Size: 2.8 MB (2758870 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:972f1478c87d99ce4d4d435986ac32859e28c90e2a2429c3d17ad75945200ca9`  
-		Last Modified: Fri, 12 Jul 2019 22:30:03 GMT  
+	-	`sha256:c0b9e09dab8041ea7fe3524c12065adefeba03f27624546db1ce2fa8fc58d5c1`  
+		Last Modified: Tue, 23 Jul 2019 02:01:43 GMT  
+		Size: 588.0 B  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:dad95cec2ee2831f92786762787e7e84d11da5e5e7a54ca9e6e37a916d9594f3`  
+		Last Modified: Tue, 23 Jul 2019 02:01:43 GMT  
 		Size: 328.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:29b8424745c4be6e22921eb637a78a0e5c5e304bb4fbbd7a4ceaccb2fc5f633a`  
-		Last Modified: Fri, 12 Jul 2019 22:30:03 GMT  
+	-	`sha256:64dcbc76ec4d92a8b606e6323e3cb308bfc1942fc3c3ef7a7ca056cd11326d3e`  
+		Last Modified: Tue, 23 Jul 2019 02:01:43 GMT  
 		Size: 170.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:33d858e5f6b1433ad91a31f42b91800d32460b121ec2efef89e9eb9188d86aad`  
-		Last Modified: Fri, 12 Jul 2019 22:30:22 GMT  
-		Size: 38.4 MB (38401548 bytes)  
+	-	`sha256:eb14b2ce71b438428eed21471cd4a39108770bec624198064701a7ed51d97d7f`  
+		Last Modified: Tue, 23 Jul 2019 02:02:02 GMT  
+		Size: 38.4 MB (38401701 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `mediawiki:1.33.0` - linux; 386
@@ -8659,7 +8707,7 @@ RUN set -eux; 	curl -fSL "https://releases.wikimedia.org/mediawiki/${MEDIAWIKI_M
 ## `mediawiki:latest`
 
 ```console
-$ docker pull mediawiki@sha256:7fbef407b73f0f7a1ff8a65d3e94f9d98b759c5217aba0f95296bddf5229eb91
+$ docker pull mediawiki@sha256:2105ccf1f7ddbed2fa3c7fe2fab825b2d88897091310873a86da4d310a78e6b9
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -9223,14 +9271,14 @@ RUN set -eux; 	curl -fSL "https://releases.wikimedia.org/mediawiki/${MEDIAWIKI_M
 ### `mediawiki:latest` - linux; arm64 variant v8
 
 ```console
-$ docker pull mediawiki@sha256:be3fde0e01be3125afe8ae45f81277ea79a1daf61b7413fc867d42603068dd81
+$ docker pull mediawiki@sha256:97058ba323040a1dc5e6224a8b1b266956c6f6abe57f97d911a37a4e046af9a2
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **245.9 MB (245921302 bytes)**  
+-	Total Size: **245.9 MB (245921580 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:e50a9086919fb42eaef8e9466060c866726438334acb01e47fe6e51f231e6cb6`
+-	Image ID: `sha256:6e8996f0c9cb71cd453c045f4109ec0914576b03cc3172a624478615e6dfb297`
 -	Entrypoint: `["docker-php-entrypoint"]`
 -	Default Command: `["apache2-foreground"]`
 
@@ -9287,35 +9335,37 @@ RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get
 COPY multi:99e4ad617c6193834e78d12470f6dde09f70f4d40463009c5724954902e60676 in /usr/local/bin/ 
 # Fri, 12 Jul 2019 21:32:00 GMT
 RUN docker-php-ext-enable sodium
-# Fri, 12 Jul 2019 21:32:00 GMT
+# Tue, 23 Jul 2019 00:46:39 GMT
+RUN { echo '#!/bin/sh'; echo 'exec pkg-config "$@" freetype2'; } > /usr/local/bin/freetype-config && chmod +x /usr/local/bin/freetype-config
+# Tue, 23 Jul 2019 00:46:40 GMT
 ENTRYPOINT ["docker-php-entrypoint"]
-# Fri, 12 Jul 2019 21:32:01 GMT
+# Tue, 23 Jul 2019 00:46:40 GMT
 COPY file:e3123fcb6566efa979f945bfac1c94c854a559d7b82723e42118882a8ac4de66 in /usr/local/bin/ 
-# Fri, 12 Jul 2019 21:32:01 GMT
+# Tue, 23 Jul 2019 00:46:40 GMT
 WORKDIR /var/www/html
-# Fri, 12 Jul 2019 21:32:02 GMT
+# Tue, 23 Jul 2019 00:46:41 GMT
 EXPOSE 80
-# Fri, 12 Jul 2019 21:32:03 GMT
+# Tue, 23 Jul 2019 00:46:41 GMT
 CMD ["apache2-foreground"]
-# Fri, 12 Jul 2019 22:24:05 GMT
+# Tue, 23 Jul 2019 01:56:15 GMT
 RUN set -eux; 		apt-get update; 	apt-get install -y --no-install-recommends 		git 		librsvg2-bin 		imagemagick 		python3 	; 	rm -rf /var/lib/apt/lists/*
-# Fri, 12 Jul 2019 22:25:34 GMT
+# Tue, 23 Jul 2019 01:57:39 GMT
 RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 		apt-get update; 	apt-get install -y --no-install-recommends 		libicu-dev 	; 		docker-php-ext-install -j "$(nproc)" 		intl 		mbstring 		mysqli 		opcache 	; 		pecl install apcu-5.1.17; 	docker-php-ext-enable 		apcu 	; 		apt-mark auto '.*' > /dev/null; 	apt-mark manual $savedAptMark; 	ldd "$(php -r 'echo ini_get("extension_dir");')"/*.so 		| awk '/=>/ { print $3 }' 		| sort -u 		| xargs -r dpkg-query -S 		| cut -d: -f1 		| sort -u 		| xargs -rt apt-mark manual; 		apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 	rm -rf /var/lib/apt/lists/*
-# Fri, 12 Jul 2019 22:25:35 GMT
+# Tue, 23 Jul 2019 01:57:40 GMT
 RUN set -eux; 	a2enmod rewrite; 	{ 		echo '<Directory /var/www/html>'; 		echo '  RewriteEngine On'; 		echo '  RewriteCond %{REQUEST_FILENAME} !-f'; 		echo '  RewriteCond %{REQUEST_FILENAME} !-d'; 		echo '  RewriteRule ^ %{DOCUMENT_ROOT}/index.php [L]'; 		echo '</Directory>'; 	} > "$APACHE_CONFDIR/conf-available/short-url.conf"; 	a2enconf short-url
-# Fri, 12 Jul 2019 22:25:37 GMT
+# Tue, 23 Jul 2019 01:57:42 GMT
 RUN { 		echo 'opcache.memory_consumption=128'; 		echo 'opcache.interned_strings_buffer=8'; 		echo 'opcache.max_accelerated_files=4000'; 		echo 'opcache.revalidate_freq=60'; 		echo 'opcache.fast_shutdown=1'; 	} > /usr/local/etc/php/conf.d/opcache-recommended.ini
-# Fri, 12 Jul 2019 22:25:39 GMT
+# Tue, 23 Jul 2019 01:57:44 GMT
 RUN set -eux; 	mkdir -p /var/www/data; 	chown -R www-data:www-data /var/www/data
-# Fri, 12 Jul 2019 22:25:39 GMT
+# Tue, 23 Jul 2019 01:57:44 GMT
 ENV MEDIAWIKI_MAJOR_VERSION=1.33
-# Fri, 12 Jul 2019 22:25:40 GMT
+# Tue, 23 Jul 2019 01:57:45 GMT
 ENV MEDIAWIKI_BRANCH=REL1_33
-# Fri, 12 Jul 2019 22:25:40 GMT
+# Tue, 23 Jul 2019 01:57:45 GMT
 ENV MEDIAWIKI_VERSION=1.33.0
-# Fri, 12 Jul 2019 22:25:41 GMT
+# Tue, 23 Jul 2019 01:57:46 GMT
 ENV MEDIAWIKI_SHA512=e31f5d8bd0bef39b9e2db71f129da128d20174f86e6a4799de5e24195bdcbbc06778b978a48073934b6e59d837629d6b83c182c8271b5fb944ef4ce5df856c68
-# Fri, 12 Jul 2019 22:25:57 GMT
+# Tue, 23 Jul 2019 01:57:58 GMT
 RUN set -eux; 	curl -fSL "https://releases.wikimedia.org/mediawiki/${MEDIAWIKI_MAJOR_VERSION}/mediawiki-${MEDIAWIKI_VERSION}.tar.gz" -o mediawiki.tar.gz; 	echo "${MEDIAWIKI_SHA512} *mediawiki.tar.gz" | sha512sum -c -; 	tar -x --strip-components=1 -f mediawiki.tar.gz; 	rm mediawiki.tar.gz; 	chown -R www-data:www-data extensions skins cache images
 ```
 
@@ -9368,33 +9418,37 @@ RUN set -eux; 	curl -fSL "https://releases.wikimedia.org/mediawiki/${MEDIAWIKI_M
 		Last Modified: Fri, 12 Jul 2019 22:05:09 GMT  
 		Size: 247.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:587e458f21f982e50b5e14d7f4728b656e915cf6eff6b92711760caa0badd8de`  
-		Last Modified: Fri, 12 Jul 2019 22:05:09 GMT  
-		Size: 896.0 B  
+	-	`sha256:db8978c40502e1312f6c00ac36aa4242cc82bf325082c5f618079da939ecb4a4`  
+		Last Modified: Tue, 23 Jul 2019 00:52:38 GMT  
+		Size: 214.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:27e766195d7a3279d5bd8b3c74bd237bce1d927b95c564ed6706afc80d69e365`  
-		Last Modified: Fri, 12 Jul 2019 22:30:22 GMT  
-		Size: 62.2 MB (62170302 bytes)  
+	-	`sha256:5c942636b446046dc978e3a6872c7162e76e65f17fc65bcbdbb9dc9704b9b639`  
+		Last Modified: Tue, 23 Jul 2019 00:52:38 GMT  
+		Size: 898.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:83a02f1cfd0f8105624fe1093e4017485f820092e571a268d3ee2465f567176e`  
-		Last Modified: Fri, 12 Jul 2019 22:30:04 GMT  
-		Size: 2.8 MB (2758875 bytes)  
+	-	`sha256:d51f6c69af2d5030edd7108717ca778a1207e268c08cc56c17887d99596a8a0a`  
+		Last Modified: Tue, 23 Jul 2019 02:02:02 GMT  
+		Size: 62.2 MB (62170209 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:9302c9e94d3d51fc22d56f6f0a0852205e38e71f2a9303ee134c6d5f1fbbf8f1`  
-		Last Modified: Fri, 12 Jul 2019 22:30:03 GMT  
-		Size: 581.0 B  
+	-	`sha256:38a447b3b30842f9adc026314bb3dffa1bfb9d6bc243ffc388192488f4ccfb8b`  
+		Last Modified: Tue, 23 Jul 2019 02:01:44 GMT  
+		Size: 2.8 MB (2758870 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:972f1478c87d99ce4d4d435986ac32859e28c90e2a2429c3d17ad75945200ca9`  
-		Last Modified: Fri, 12 Jul 2019 22:30:03 GMT  
+	-	`sha256:c0b9e09dab8041ea7fe3524c12065adefeba03f27624546db1ce2fa8fc58d5c1`  
+		Last Modified: Tue, 23 Jul 2019 02:01:43 GMT  
+		Size: 588.0 B  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:dad95cec2ee2831f92786762787e7e84d11da5e5e7a54ca9e6e37a916d9594f3`  
+		Last Modified: Tue, 23 Jul 2019 02:01:43 GMT  
 		Size: 328.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:29b8424745c4be6e22921eb637a78a0e5c5e304bb4fbbd7a4ceaccb2fc5f633a`  
-		Last Modified: Fri, 12 Jul 2019 22:30:03 GMT  
+	-	`sha256:64dcbc76ec4d92a8b606e6323e3cb308bfc1942fc3c3ef7a7ca056cd11326d3e`  
+		Last Modified: Tue, 23 Jul 2019 02:01:43 GMT  
 		Size: 170.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:33d858e5f6b1433ad91a31f42b91800d32460b121ec2efef89e9eb9188d86aad`  
-		Last Modified: Fri, 12 Jul 2019 22:30:22 GMT  
-		Size: 38.4 MB (38401548 bytes)  
+	-	`sha256:eb14b2ce71b438428eed21471cd4a39108770bec624198064701a7ed51d97d7f`  
+		Last Modified: Tue, 23 Jul 2019 02:02:02 GMT  
+		Size: 38.4 MB (38401701 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `mediawiki:latest` - linux; 386
@@ -9766,7 +9820,7 @@ RUN set -eux; 	curl -fSL "https://releases.wikimedia.org/mediawiki/${MEDIAWIKI_M
 ## `mediawiki:legacy`
 
 ```console
-$ docker pull mediawiki@sha256:ce9312d144416fedb71e3091de3477fa440ee1e395ba16830ba02c532f2f3c1a
+$ docker pull mediawiki@sha256:6f29d205bc6f53b7c3e5b1442740ce1349a3020a7f2ccb8223929e28770dddcc
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -10330,14 +10384,14 @@ RUN set -eux; 	curl -fSL "https://releases.wikimedia.org/mediawiki/${MEDIAWIKI_M
 ### `mediawiki:legacy` - linux; arm64 variant v8
 
 ```console
-$ docker pull mediawiki@sha256:84fa65aa6f7487d9eeaea61c1c428150076ba9d5a31cf99565e9a4539f50159e
+$ docker pull mediawiki@sha256:9df712dcba98d49a3daf2f1051b524bca79e4d7e6763d65d7d8e42c58d17a84d
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **244.2 MB (244211481 bytes)**  
+-	Total Size: **244.2 MB (244212015 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:8d90f1884b9e163570043bc45d67e82c785f28f78cc30f91091b90ae4e2635f7`
+-	Image ID: `sha256:fa3956822e1b83432727c5ed93ce3c9ac156c3f3a2e15e04ab73c69a191dcc3d`
 -	Entrypoint: `["docker-php-entrypoint"]`
 -	Default Command: `["apache2-foreground"]`
 
@@ -10394,35 +10448,37 @@ RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get
 COPY multi:99e4ad617c6193834e78d12470f6dde09f70f4d40463009c5724954902e60676 in /usr/local/bin/ 
 # Fri, 12 Jul 2019 21:32:00 GMT
 RUN docker-php-ext-enable sodium
-# Fri, 12 Jul 2019 21:32:00 GMT
+# Tue, 23 Jul 2019 00:46:39 GMT
+RUN { echo '#!/bin/sh'; echo 'exec pkg-config "$@" freetype2'; } > /usr/local/bin/freetype-config && chmod +x /usr/local/bin/freetype-config
+# Tue, 23 Jul 2019 00:46:40 GMT
 ENTRYPOINT ["docker-php-entrypoint"]
-# Fri, 12 Jul 2019 21:32:01 GMT
+# Tue, 23 Jul 2019 00:46:40 GMT
 COPY file:e3123fcb6566efa979f945bfac1c94c854a559d7b82723e42118882a8ac4de66 in /usr/local/bin/ 
-# Fri, 12 Jul 2019 21:32:01 GMT
+# Tue, 23 Jul 2019 00:46:40 GMT
 WORKDIR /var/www/html
-# Fri, 12 Jul 2019 21:32:02 GMT
+# Tue, 23 Jul 2019 00:46:41 GMT
 EXPOSE 80
-# Fri, 12 Jul 2019 21:32:03 GMT
+# Tue, 23 Jul 2019 00:46:41 GMT
 CMD ["apache2-foreground"]
-# Fri, 12 Jul 2019 22:24:05 GMT
+# Tue, 23 Jul 2019 01:56:15 GMT
 RUN set -eux; 		apt-get update; 	apt-get install -y --no-install-recommends 		git 		librsvg2-bin 		imagemagick 		python3 	; 	rm -rf /var/lib/apt/lists/*
-# Fri, 12 Jul 2019 22:25:34 GMT
+# Tue, 23 Jul 2019 01:57:39 GMT
 RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 		apt-get update; 	apt-get install -y --no-install-recommends 		libicu-dev 	; 		docker-php-ext-install -j "$(nproc)" 		intl 		mbstring 		mysqli 		opcache 	; 		pecl install apcu-5.1.17; 	docker-php-ext-enable 		apcu 	; 		apt-mark auto '.*' > /dev/null; 	apt-mark manual $savedAptMark; 	ldd "$(php -r 'echo ini_get("extension_dir");')"/*.so 		| awk '/=>/ { print $3 }' 		| sort -u 		| xargs -r dpkg-query -S 		| cut -d: -f1 		| sort -u 		| xargs -rt apt-mark manual; 		apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 	rm -rf /var/lib/apt/lists/*
-# Fri, 12 Jul 2019 22:25:35 GMT
+# Tue, 23 Jul 2019 01:57:40 GMT
 RUN set -eux; 	a2enmod rewrite; 	{ 		echo '<Directory /var/www/html>'; 		echo '  RewriteEngine On'; 		echo '  RewriteCond %{REQUEST_FILENAME} !-f'; 		echo '  RewriteCond %{REQUEST_FILENAME} !-d'; 		echo '  RewriteRule ^ %{DOCUMENT_ROOT}/index.php [L]'; 		echo '</Directory>'; 	} > "$APACHE_CONFDIR/conf-available/short-url.conf"; 	a2enconf short-url
-# Fri, 12 Jul 2019 22:25:37 GMT
+# Tue, 23 Jul 2019 01:57:42 GMT
 RUN { 		echo 'opcache.memory_consumption=128'; 		echo 'opcache.interned_strings_buffer=8'; 		echo 'opcache.max_accelerated_files=4000'; 		echo 'opcache.revalidate_freq=60'; 		echo 'opcache.fast_shutdown=1'; 	} > /usr/local/etc/php/conf.d/opcache-recommended.ini
-# Fri, 12 Jul 2019 22:25:39 GMT
+# Tue, 23 Jul 2019 01:57:44 GMT
 RUN set -eux; 	mkdir -p /var/www/data; 	chown -R www-data:www-data /var/www/data
-# Fri, 12 Jul 2019 22:26:04 GMT
+# Tue, 23 Jul 2019 01:58:07 GMT
 ENV MEDIAWIKI_MAJOR_VERSION=1.32
-# Fri, 12 Jul 2019 22:26:05 GMT
+# Tue, 23 Jul 2019 01:58:07 GMT
 ENV MEDIAWIKI_BRANCH=REL1_32
-# Fri, 12 Jul 2019 22:26:06 GMT
+# Tue, 23 Jul 2019 01:58:08 GMT
 ENV MEDIAWIKI_VERSION=1.32.3
-# Fri, 12 Jul 2019 22:26:06 GMT
+# Tue, 23 Jul 2019 01:58:09 GMT
 ENV MEDIAWIKI_SHA512=032309222c15e7ccb855b21f79315da8b5134c9bdd189ce17c0b12937f1a406bb4576a7dc399d17f115deaf21622ea7caa376748aedef0e752281f7d74117b15
-# Fri, 12 Jul 2019 22:26:20 GMT
+# Tue, 23 Jul 2019 01:58:20 GMT
 RUN set -eux; 	curl -fSL "https://releases.wikimedia.org/mediawiki/${MEDIAWIKI_MAJOR_VERSION}/mediawiki-${MEDIAWIKI_VERSION}.tar.gz" -o mediawiki.tar.gz; 	echo "${MEDIAWIKI_SHA512} *mediawiki.tar.gz" | sha512sum -c -; 	tar -x --strip-components=1 -f mediawiki.tar.gz; 	rm mediawiki.tar.gz; 	chown -R www-data:www-data extensions skins cache images
 ```
 
@@ -10475,33 +10531,37 @@ RUN set -eux; 	curl -fSL "https://releases.wikimedia.org/mediawiki/${MEDIAWIKI_M
 		Last Modified: Fri, 12 Jul 2019 22:05:09 GMT  
 		Size: 247.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:587e458f21f982e50b5e14d7f4728b656e915cf6eff6b92711760caa0badd8de`  
-		Last Modified: Fri, 12 Jul 2019 22:05:09 GMT  
-		Size: 896.0 B  
+	-	`sha256:db8978c40502e1312f6c00ac36aa4242cc82bf325082c5f618079da939ecb4a4`  
+		Last Modified: Tue, 23 Jul 2019 00:52:38 GMT  
+		Size: 214.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:27e766195d7a3279d5bd8b3c74bd237bce1d927b95c564ed6706afc80d69e365`  
-		Last Modified: Fri, 12 Jul 2019 22:30:22 GMT  
-		Size: 62.2 MB (62170302 bytes)  
+	-	`sha256:5c942636b446046dc978e3a6872c7162e76e65f17fc65bcbdbb9dc9704b9b639`  
+		Last Modified: Tue, 23 Jul 2019 00:52:38 GMT  
+		Size: 898.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:83a02f1cfd0f8105624fe1093e4017485f820092e571a268d3ee2465f567176e`  
-		Last Modified: Fri, 12 Jul 2019 22:30:04 GMT  
-		Size: 2.8 MB (2758875 bytes)  
+	-	`sha256:d51f6c69af2d5030edd7108717ca778a1207e268c08cc56c17887d99596a8a0a`  
+		Last Modified: Tue, 23 Jul 2019 02:02:02 GMT  
+		Size: 62.2 MB (62170209 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:9302c9e94d3d51fc22d56f6f0a0852205e38e71f2a9303ee134c6d5f1fbbf8f1`  
-		Last Modified: Fri, 12 Jul 2019 22:30:03 GMT  
-		Size: 581.0 B  
+	-	`sha256:38a447b3b30842f9adc026314bb3dffa1bfb9d6bc243ffc388192488f4ccfb8b`  
+		Last Modified: Tue, 23 Jul 2019 02:01:44 GMT  
+		Size: 2.8 MB (2758870 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:972f1478c87d99ce4d4d435986ac32859e28c90e2a2429c3d17ad75945200ca9`  
-		Last Modified: Fri, 12 Jul 2019 22:30:03 GMT  
+	-	`sha256:c0b9e09dab8041ea7fe3524c12065adefeba03f27624546db1ce2fa8fc58d5c1`  
+		Last Modified: Tue, 23 Jul 2019 02:01:43 GMT  
+		Size: 588.0 B  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:dad95cec2ee2831f92786762787e7e84d11da5e5e7a54ca9e6e37a916d9594f3`  
+		Last Modified: Tue, 23 Jul 2019 02:01:43 GMT  
 		Size: 328.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:29b8424745c4be6e22921eb637a78a0e5c5e304bb4fbbd7a4ceaccb2fc5f633a`  
-		Last Modified: Fri, 12 Jul 2019 22:30:03 GMT  
+	-	`sha256:64dcbc76ec4d92a8b606e6323e3cb308bfc1942fc3c3ef7a7ca056cd11326d3e`  
+		Last Modified: Tue, 23 Jul 2019 02:01:43 GMT  
 		Size: 170.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:b513533cdaaab37a7fb188addaa8b05e5add3833ebd82eba430756bf68fc29d7`  
-		Last Modified: Fri, 12 Jul 2019 22:30:55 GMT  
-		Size: 36.7 MB (36691727 bytes)  
+	-	`sha256:69304ad8105d972027cc7e24f7b398534f0a7de01cbe631997943a18c14ceb1f`  
+		Last Modified: Tue, 23 Jul 2019 02:02:33 GMT  
+		Size: 36.7 MB (36692136 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `mediawiki:legacy` - linux; 386
@@ -10873,7 +10933,7 @@ RUN set -eux; 	curl -fSL "https://releases.wikimedia.org/mediawiki/${MEDIAWIKI_M
 ## `mediawiki:legacylts`
 
 ```console
-$ docker pull mediawiki@sha256:8dd1b0695199fc76806a845b650d0e7540b0960ad38aa893ecaad40ed0e551e3
+$ docker pull mediawiki@sha256:4c8f6bf1bd267bbeb65aa68e72ad24e2721832852c9bdb6df921b62f1e22506a
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -11401,14 +11461,14 @@ RUN set -eux; 	curl -fSL "https://releases.wikimedia.org/mediawiki/${MEDIAWIKI_M
 ### `mediawiki:legacylts` - linux; arm64 variant v8
 
 ```console
-$ docker pull mediawiki@sha256:eb571cf51d8d3f7888cc0fa5753e35d1b875be9981c2b95e29447424377e63a7
+$ docker pull mediawiki@sha256:fabea53074fcd7970e5e963bf28677493751dfc47601403526dc4623b80cc5ff
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **238.2 MB (238201544 bytes)**  
+-	Total Size: **238.2 MB (238201715 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:35f101df23a22ab7f36f82c745ca11e5b861939eb11613baf04f85d481c5adeb`
+-	Image ID: `sha256:ba844b4e214df5627412763980ab5b127bc44f9d66b58772952a2c16a220acf3`
 -	Entrypoint: `["docker-php-entrypoint"]`
 -	Default Command: `["apache2-foreground"]`
 
@@ -11463,33 +11523,35 @@ COPY file:ce57c04b70896f77cc11eb2766417d8a1240fcffe5bba92179ec78c458844110 in /u
 RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		libcurl4-openssl-dev 		libedit-dev 		libsqlite3-dev 		libssl-dev 		libxml2-dev 		zlib1g-dev 		${PHP_EXTRA_BUILD_DEPS:-} 	; 	rm -rf /var/lib/apt/lists/*; 		export 		CFLAGS="$PHP_CFLAGS" 		CPPFLAGS="$PHP_CPPFLAGS" 		LDFLAGS="$PHP_LDFLAGS" 	; 	docker-php-source extract; 	cd /usr/src/php; 	gnuArch="$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)"; 	debMultiarch="$(dpkg-architecture --query DEB_BUILD_MULTIARCH)"; 	if [ ! -d /usr/include/curl ]; then 		ln -sT "/usr/include/$debMultiarch/curl" /usr/local/include/curl; 	fi; 	./configure 		--build="$gnuArch" 		--with-config-file-path="$PHP_INI_DIR" 		--with-config-file-scan-dir="$PHP_INI_DIR/conf.d" 				--enable-option-checking=fatal 				--with-mhash 				--enable-ftp 		--enable-mbstring 		--enable-mysqlnd 				--with-curl 		--with-libedit 		--with-openssl 		--with-zlib 				$(test "$gnuArch" = 's390x-linux-gnu' && echo '--without-pcre-jit') 		--with-libdir="lib/$debMultiarch" 				${PHP_EXTRA_CONFIGURE_ARGS:-} 	; 	make -j "$(nproc)"; 	find -type f -name '*.a' -delete; 	make install; 	find /usr/local/bin /usr/local/sbin -type f -executable -exec strip --strip-all '{}' + || true; 	make clean; 		cp -v php.ini-* "$PHP_INI_DIR/"; 		cd /; 	docker-php-source delete; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark; 	find /usr/local -type f -executable -exec ldd '{}' ';' 		| awk '/=>/ { print $(NF-1) }' 		| sort -u 		| xargs -r dpkg-query --search 		| cut -d: -f1 		| sort -u 		| xargs -r apt-mark manual 	; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 		pecl update-channels; 	rm -rf /tmp/pear ~/.pearrc; 	php --version
 # Fri, 12 Jul 2019 21:48:19 GMT
 COPY multi:99e4ad617c6193834e78d12470f6dde09f70f4d40463009c5724954902e60676 in /usr/local/bin/ 
-# Fri, 12 Jul 2019 21:48:20 GMT
+# Tue, 23 Jul 2019 00:47:41 GMT
+RUN { echo '#!/bin/sh'; echo 'exec pkg-config "$@" freetype2'; } > /usr/local/bin/freetype-config && chmod +x /usr/local/bin/freetype-config
+# Tue, 23 Jul 2019 00:47:41 GMT
 ENTRYPOINT ["docker-php-entrypoint"]
-# Fri, 12 Jul 2019 21:48:21 GMT
+# Tue, 23 Jul 2019 00:47:42 GMT
 COPY file:e3123fcb6566efa979f945bfac1c94c854a559d7b82723e42118882a8ac4de66 in /usr/local/bin/ 
-# Fri, 12 Jul 2019 21:48:21 GMT
+# Tue, 23 Jul 2019 00:47:42 GMT
 WORKDIR /var/www/html
-# Fri, 12 Jul 2019 21:48:22 GMT
+# Tue, 23 Jul 2019 00:47:43 GMT
 EXPOSE 80
-# Fri, 12 Jul 2019 21:48:22 GMT
+# Tue, 23 Jul 2019 00:47:43 GMT
 CMD ["apache2-foreground"]
-# Fri, 12 Jul 2019 22:27:49 GMT
+# Tue, 23 Jul 2019 01:59:38 GMT
 RUN set -eux; 		apt-get update; 	apt-get install -y --no-install-recommends 		git 		librsvg2-bin 		imagemagick 		python 	; 	rm -rf /var/lib/apt/lists/*
-# Fri, 12 Jul 2019 22:29:18 GMT
+# Tue, 23 Jul 2019 02:01:03 GMT
 RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 		apt-get update; 	apt-get install -y --no-install-recommends 		libicu-dev 	; 		docker-php-ext-install -j "$(nproc)" 		intl 		mbstring 		mysqli 		opcache 	; 		pecl install apcu-5.1.17; 	docker-php-ext-enable 		apcu 	; 		apt-mark auto '.*' > /dev/null; 	apt-mark manual $savedAptMark; 	ldd "$(php -r 'echo ini_get("extension_dir");')"/*.so 		| awk '/=>/ { print $3 }' 		| sort -u 		| xargs -r dpkg-query -S 		| cut -d: -f1 		| sort -u 		| xargs -rt apt-mark manual; 		apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 	rm -rf /var/lib/apt/lists/*
-# Fri, 12 Jul 2019 22:29:20 GMT
+# Tue, 23 Jul 2019 02:01:04 GMT
 RUN { 		echo 'opcache.memory_consumption=128'; 		echo 'opcache.interned_strings_buffer=8'; 		echo 'opcache.max_accelerated_files=4000'; 		echo 'opcache.revalidate_freq=60'; 		echo 'opcache.fast_shutdown=1'; 	} > /usr/local/etc/php/conf.d/opcache-recommended.ini
-# Fri, 12 Jul 2019 22:29:21 GMT
+# Tue, 23 Jul 2019 02:01:06 GMT
 RUN set -eux; 	mkdir -p /var/www/data; 	chown -R www-data:www-data /var/www/data
-# Fri, 12 Jul 2019 22:29:22 GMT
+# Tue, 23 Jul 2019 02:01:06 GMT
 ENV MEDIAWIKI_MAJOR_VERSION=1.27
-# Fri, 12 Jul 2019 22:29:22 GMT
+# Tue, 23 Jul 2019 02:01:07 GMT
 ENV MEDIAWIKI_BRANCH=REL1_27
-# Fri, 12 Jul 2019 22:29:23 GMT
+# Tue, 23 Jul 2019 02:01:07 GMT
 ENV MEDIAWIKI_VERSION=1.27.7
-# Fri, 12 Jul 2019 22:29:23 GMT
+# Tue, 23 Jul 2019 02:01:07 GMT
 ENV MEDIAWIKI_SHA512=3dcee01d483be27eed1a901ef24a9080a2cccf3d9ee4eebc544d0c0fdb5a1a7272a68daa024d89754542e56a4d19eebec407775b38a00f067f2179f712deda76
-# Fri, 12 Jul 2019 22:29:34 GMT
+# Tue, 23 Jul 2019 02:01:18 GMT
 RUN set -eux; 	curl -fSL "https://releases.wikimedia.org/mediawiki/${MEDIAWIKI_MAJOR_VERSION}/mediawiki-${MEDIAWIKI_VERSION}.tar.gz" -o mediawiki.tar.gz; 	echo "${MEDIAWIKI_SHA512} *mediawiki.tar.gz" | sha512sum -c -; 	tar -x --strip-components=1 -f mediawiki.tar.gz; 	rm mediawiki.tar.gz; 	chown -R www-data:www-data extensions skins cache images
 ```
 
@@ -11538,29 +11600,33 @@ RUN set -eux; 	curl -fSL "https://releases.wikimedia.org/mediawiki/${MEDIAWIKI_M
 		Last Modified: Fri, 12 Jul 2019 22:06:33 GMT  
 		Size: 2.2 KB (2218 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:66f5d010b463dad153c5cb079022782b34b2a5719e700901be97a89dfc21f45a`  
-		Last Modified: Fri, 12 Jul 2019 22:06:32 GMT  
+	-	`sha256:1152c7d7c5212ce870f091c594ac6abef551a1ffa321ff924d4166d9de06c4c3`  
+		Last Modified: Tue, 23 Jul 2019 00:53:28 GMT  
+		Size: 215.0 B  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:ea661189e56f9a1c7a3d319d2630933325378663453a87c6e5c886209ea5f8c9`  
+		Last Modified: Tue, 23 Jul 2019 00:53:28 GMT  
 		Size: 898.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:38244a33a5b88d9f28cabf3161d42548fe9cba5e93b466354c4548501defee76`  
-		Last Modified: Fri, 12 Jul 2019 22:31:47 GMT  
-		Size: 61.9 MB (61856139 bytes)  
+	-	`sha256:28c150d3338d77d363cc68c6dd119a1b1fa858988ee5d52c4d8e6892aee9843e`  
+		Last Modified: Tue, 23 Jul 2019 02:03:30 GMT  
+		Size: 61.9 MB (61855995 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:60b48cfdaec54cc98017c550a7e2a90f994a68495afad81feafc705031cffa17`  
-		Last Modified: Fri, 12 Jul 2019 22:31:30 GMT  
-		Size: 2.7 MB (2658194 bytes)  
+	-	`sha256:923c50ea1c73994722c475ab5348f6e1127c6ce897ba5d55eb10766e33b1a94b`  
+		Last Modified: Tue, 23 Jul 2019 02:03:12 GMT  
+		Size: 2.7 MB (2658260 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:18673afb1c198546b72ddfb809d5b48b6b8ecc455a6e10c320819aa03a7d8160`  
-		Last Modified: Fri, 12 Jul 2019 22:31:29 GMT  
-		Size: 324.0 B  
+	-	`sha256:04372a7dafb5783b829c4c5d9139c471a8e292f775be495571b0a11a82efeee4`  
+		Last Modified: Tue, 23 Jul 2019 02:03:11 GMT  
+		Size: 326.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:d22081a339fc46f3b4dee946b9d6159059c4ae30045e7eca2fc9849e15dac962`  
-		Last Modified: Fri, 12 Jul 2019 22:31:29 GMT  
-		Size: 170.0 B  
+	-	`sha256:bd2974c57686111a04e72cd1ed5285baf1d79382abb5618be9938c1bc894f2b6`  
+		Last Modified: Tue, 23 Jul 2019 02:03:11 GMT  
+		Size: 171.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:4fd390af063ce3a833929551d3c9d3668e9f558ffe9cdf8f97e67be2439ee91a`  
-		Last Modified: Fri, 12 Jul 2019 22:31:47 GMT  
-		Size: 31.9 MB (31924553 bytes)  
+	-	`sha256:d7a2e245a69c22b42066c273c66696ee1cf5b1c1820090b0f9aa6e77d577f8f6`  
+		Last Modified: Tue, 23 Jul 2019 02:03:30 GMT  
+		Size: 31.9 MB (31924584 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `mediawiki:legacylts` - linux; 386
@@ -11908,7 +11974,7 @@ RUN set -eux; 	curl -fSL "https://releases.wikimedia.org/mediawiki/${MEDIAWIKI_M
 ## `mediawiki:lts`
 
 ```console
-$ docker pull mediawiki@sha256:f87d3d235de0324ed4d8cf8aa8586142b86ebbba482dd5f39473f6b9233de02b
+$ docker pull mediawiki@sha256:43dcf055bd3de8515d8a1b96649a48a18a1d3cc253f253487598af7d8ad03809
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -12454,14 +12520,14 @@ RUN set -eux; 	curl -fSL "https://releases.wikimedia.org/mediawiki/${MEDIAWIKI_M
 ### `mediawiki:lts` - linux; arm64 variant v8
 
 ```console
-$ docker pull mediawiki@sha256:619e3bede0de522d246e1945a04123d152b84eecc08232b59974213384cfe1d3
+$ docker pull mediawiki@sha256:d5ed3cecdf4f6a7cde50c94bdd3674975e014f7f7e0785df45bb9b18f9878a00
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **243.3 MB (243275557 bytes)**  
+-	Total Size: **243.3 MB (243275618 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:ee5c1f47679ec5f28dbf475350758a781eb4810886a43f5057736dfe05eccf3e`
+-	Image ID: `sha256:939801a2815cb2951ab7d0f3b2ad256bfe2d83cdecf62a30471de73242186c61`
 -	Entrypoint: `["docker-php-entrypoint"]`
 -	Default Command: `["apache2-foreground"]`
 
@@ -12518,33 +12584,35 @@ RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get
 COPY multi:99e4ad617c6193834e78d12470f6dde09f70f4d40463009c5724954902e60676 in /usr/local/bin/ 
 # Fri, 12 Jul 2019 21:32:00 GMT
 RUN docker-php-ext-enable sodium
-# Fri, 12 Jul 2019 21:32:00 GMT
+# Tue, 23 Jul 2019 00:46:39 GMT
+RUN { echo '#!/bin/sh'; echo 'exec pkg-config "$@" freetype2'; } > /usr/local/bin/freetype-config && chmod +x /usr/local/bin/freetype-config
+# Tue, 23 Jul 2019 00:46:40 GMT
 ENTRYPOINT ["docker-php-entrypoint"]
-# Fri, 12 Jul 2019 21:32:01 GMT
+# Tue, 23 Jul 2019 00:46:40 GMT
 COPY file:e3123fcb6566efa979f945bfac1c94c854a559d7b82723e42118882a8ac4de66 in /usr/local/bin/ 
-# Fri, 12 Jul 2019 21:32:01 GMT
+# Tue, 23 Jul 2019 00:46:40 GMT
 WORKDIR /var/www/html
-# Fri, 12 Jul 2019 21:32:02 GMT
+# Tue, 23 Jul 2019 00:46:41 GMT
 EXPOSE 80
-# Fri, 12 Jul 2019 21:32:03 GMT
+# Tue, 23 Jul 2019 00:46:41 GMT
 CMD ["apache2-foreground"]
-# Fri, 12 Jul 2019 22:24:05 GMT
+# Tue, 23 Jul 2019 01:56:15 GMT
 RUN set -eux; 		apt-get update; 	apt-get install -y --no-install-recommends 		git 		librsvg2-bin 		imagemagick 		python3 	; 	rm -rf /var/lib/apt/lists/*
-# Fri, 12 Jul 2019 22:25:34 GMT
+# Tue, 23 Jul 2019 01:57:39 GMT
 RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 		apt-get update; 	apt-get install -y --no-install-recommends 		libicu-dev 	; 		docker-php-ext-install -j "$(nproc)" 		intl 		mbstring 		mysqli 		opcache 	; 		pecl install apcu-5.1.17; 	docker-php-ext-enable 		apcu 	; 		apt-mark auto '.*' > /dev/null; 	apt-mark manual $savedAptMark; 	ldd "$(php -r 'echo ini_get("extension_dir");')"/*.so 		| awk '/=>/ { print $3 }' 		| sort -u 		| xargs -r dpkg-query -S 		| cut -d: -f1 		| sort -u 		| xargs -rt apt-mark manual; 		apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 	rm -rf /var/lib/apt/lists/*
-# Fri, 12 Jul 2019 22:26:29 GMT
+# Tue, 23 Jul 2019 01:58:28 GMT
 RUN { 		echo 'opcache.memory_consumption=128'; 		echo 'opcache.interned_strings_buffer=8'; 		echo 'opcache.max_accelerated_files=4000'; 		echo 'opcache.revalidate_freq=60'; 		echo 'opcache.fast_shutdown=1'; 	} > /usr/local/etc/php/conf.d/opcache-recommended.ini
-# Fri, 12 Jul 2019 22:26:31 GMT
+# Tue, 23 Jul 2019 01:58:30 GMT
 RUN set -eux; 	mkdir -p /var/www/data; 	chown -R www-data:www-data /var/www/data
-# Fri, 12 Jul 2019 22:26:32 GMT
+# Tue, 23 Jul 2019 01:58:30 GMT
 ENV MEDIAWIKI_MAJOR_VERSION=1.31
-# Fri, 12 Jul 2019 22:26:32 GMT
+# Tue, 23 Jul 2019 01:58:31 GMT
 ENV MEDIAWIKI_BRANCH=REL1_31
-# Fri, 12 Jul 2019 22:26:33 GMT
+# Tue, 23 Jul 2019 01:58:31 GMT
 ENV MEDIAWIKI_VERSION=1.31.3
-# Fri, 12 Jul 2019 22:26:34 GMT
+# Tue, 23 Jul 2019 01:58:32 GMT
 ENV MEDIAWIKI_SHA512=3900dbd3f1b7b9ea429c2feca6fb24f949f8d5d961ea1bd181fb1d80cebc7f8b531c02b2aa3caa12aa5bea48217ba7b5b01c3dbdbfbfdd1bb8c8a358879c505a
-# Fri, 12 Jul 2019 22:26:45 GMT
+# Tue, 23 Jul 2019 01:58:43 GMT
 RUN set -eux; 	curl -fSL "https://releases.wikimedia.org/mediawiki/${MEDIAWIKI_MAJOR_VERSION}/mediawiki-${MEDIAWIKI_VERSION}.tar.gz" -o mediawiki.tar.gz; 	echo "${MEDIAWIKI_SHA512} *mediawiki.tar.gz" | sha512sum -c -; 	tar -x --strip-components=1 -f mediawiki.tar.gz; 	rm mediawiki.tar.gz; 	chown -R www-data:www-data extensions skins cache images
 ```
 
@@ -12597,29 +12665,33 @@ RUN set -eux; 	curl -fSL "https://releases.wikimedia.org/mediawiki/${MEDIAWIKI_M
 		Last Modified: Fri, 12 Jul 2019 22:05:09 GMT  
 		Size: 247.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:587e458f21f982e50b5e14d7f4728b656e915cf6eff6b92711760caa0badd8de`  
-		Last Modified: Fri, 12 Jul 2019 22:05:09 GMT  
-		Size: 896.0 B  
+	-	`sha256:db8978c40502e1312f6c00ac36aa4242cc82bf325082c5f618079da939ecb4a4`  
+		Last Modified: Tue, 23 Jul 2019 00:52:38 GMT  
+		Size: 214.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:27e766195d7a3279d5bd8b3c74bd237bce1d927b95c564ed6706afc80d69e365`  
-		Last Modified: Fri, 12 Jul 2019 22:30:22 GMT  
-		Size: 62.2 MB (62170302 bytes)  
+	-	`sha256:5c942636b446046dc978e3a6872c7162e76e65f17fc65bcbdbb9dc9704b9b639`  
+		Last Modified: Tue, 23 Jul 2019 00:52:38 GMT  
+		Size: 898.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:83a02f1cfd0f8105624fe1093e4017485f820092e571a268d3ee2465f567176e`  
-		Last Modified: Fri, 12 Jul 2019 22:30:04 GMT  
-		Size: 2.8 MB (2758875 bytes)  
+	-	`sha256:d51f6c69af2d5030edd7108717ca778a1207e268c08cc56c17887d99596a8a0a`  
+		Last Modified: Tue, 23 Jul 2019 02:02:02 GMT  
+		Size: 62.2 MB (62170209 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:a2e8b492a288aa2357c0f27cb1c52b623802a14a8053d9b7032a9c79e1ab1dad`  
-		Last Modified: Fri, 12 Jul 2019 22:31:04 GMT  
+	-	`sha256:38a447b3b30842f9adc026314bb3dffa1bfb9d6bc243ffc388192488f4ccfb8b`  
+		Last Modified: Tue, 23 Jul 2019 02:01:44 GMT  
+		Size: 2.8 MB (2758870 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:b1a0427a8ab00072742b53437bbadfed63dcb35e68cb3a0e61851ab283f89e8d`  
+		Last Modified: Tue, 23 Jul 2019 02:02:42 GMT  
 		Size: 328.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:58fa6d3d61c094cea2468e975151d003ccc4530e7ea9531972e57b0fc07f08ab`  
-		Last Modified: Fri, 12 Jul 2019 22:31:04 GMT  
+	-	`sha256:b15ff6837ee5c4c2d886dc4a43d4d86b93d6584456af9e14da15a629545372e1`  
+		Last Modified: Tue, 23 Jul 2019 02:02:43 GMT  
 		Size: 171.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:b2cae999f8c41d8ca5b36384f7f7ca19f71cd56a6ea94d2547352829eedc7ecd`  
-		Last Modified: Fri, 12 Jul 2019 22:31:21 GMT  
-		Size: 35.8 MB (35756383 bytes)  
+	-	`sha256:c602c560b83165ea84abc85a344b8ee33ea6a3201c652f7157f1198fa013764b`  
+		Last Modified: Tue, 23 Jul 2019 02:02:58 GMT  
+		Size: 35.8 MB (35756326 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `mediawiki:lts` - linux; 386
@@ -12979,7 +13051,7 @@ RUN set -eux; 	curl -fSL "https://releases.wikimedia.org/mediawiki/${MEDIAWIKI_M
 ## `mediawiki:stable`
 
 ```console
-$ docker pull mediawiki@sha256:7fbef407b73f0f7a1ff8a65d3e94f9d98b759c5217aba0f95296bddf5229eb91
+$ docker pull mediawiki@sha256:2105ccf1f7ddbed2fa3c7fe2fab825b2d88897091310873a86da4d310a78e6b9
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -13543,14 +13615,14 @@ RUN set -eux; 	curl -fSL "https://releases.wikimedia.org/mediawiki/${MEDIAWIKI_M
 ### `mediawiki:stable` - linux; arm64 variant v8
 
 ```console
-$ docker pull mediawiki@sha256:be3fde0e01be3125afe8ae45f81277ea79a1daf61b7413fc867d42603068dd81
+$ docker pull mediawiki@sha256:97058ba323040a1dc5e6224a8b1b266956c6f6abe57f97d911a37a4e046af9a2
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **245.9 MB (245921302 bytes)**  
+-	Total Size: **245.9 MB (245921580 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:e50a9086919fb42eaef8e9466060c866726438334acb01e47fe6e51f231e6cb6`
+-	Image ID: `sha256:6e8996f0c9cb71cd453c045f4109ec0914576b03cc3172a624478615e6dfb297`
 -	Entrypoint: `["docker-php-entrypoint"]`
 -	Default Command: `["apache2-foreground"]`
 
@@ -13607,35 +13679,37 @@ RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get
 COPY multi:99e4ad617c6193834e78d12470f6dde09f70f4d40463009c5724954902e60676 in /usr/local/bin/ 
 # Fri, 12 Jul 2019 21:32:00 GMT
 RUN docker-php-ext-enable sodium
-# Fri, 12 Jul 2019 21:32:00 GMT
+# Tue, 23 Jul 2019 00:46:39 GMT
+RUN { echo '#!/bin/sh'; echo 'exec pkg-config "$@" freetype2'; } > /usr/local/bin/freetype-config && chmod +x /usr/local/bin/freetype-config
+# Tue, 23 Jul 2019 00:46:40 GMT
 ENTRYPOINT ["docker-php-entrypoint"]
-# Fri, 12 Jul 2019 21:32:01 GMT
+# Tue, 23 Jul 2019 00:46:40 GMT
 COPY file:e3123fcb6566efa979f945bfac1c94c854a559d7b82723e42118882a8ac4de66 in /usr/local/bin/ 
-# Fri, 12 Jul 2019 21:32:01 GMT
+# Tue, 23 Jul 2019 00:46:40 GMT
 WORKDIR /var/www/html
-# Fri, 12 Jul 2019 21:32:02 GMT
+# Tue, 23 Jul 2019 00:46:41 GMT
 EXPOSE 80
-# Fri, 12 Jul 2019 21:32:03 GMT
+# Tue, 23 Jul 2019 00:46:41 GMT
 CMD ["apache2-foreground"]
-# Fri, 12 Jul 2019 22:24:05 GMT
+# Tue, 23 Jul 2019 01:56:15 GMT
 RUN set -eux; 		apt-get update; 	apt-get install -y --no-install-recommends 		git 		librsvg2-bin 		imagemagick 		python3 	; 	rm -rf /var/lib/apt/lists/*
-# Fri, 12 Jul 2019 22:25:34 GMT
+# Tue, 23 Jul 2019 01:57:39 GMT
 RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 		apt-get update; 	apt-get install -y --no-install-recommends 		libicu-dev 	; 		docker-php-ext-install -j "$(nproc)" 		intl 		mbstring 		mysqli 		opcache 	; 		pecl install apcu-5.1.17; 	docker-php-ext-enable 		apcu 	; 		apt-mark auto '.*' > /dev/null; 	apt-mark manual $savedAptMark; 	ldd "$(php -r 'echo ini_get("extension_dir");')"/*.so 		| awk '/=>/ { print $3 }' 		| sort -u 		| xargs -r dpkg-query -S 		| cut -d: -f1 		| sort -u 		| xargs -rt apt-mark manual; 		apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 	rm -rf /var/lib/apt/lists/*
-# Fri, 12 Jul 2019 22:25:35 GMT
+# Tue, 23 Jul 2019 01:57:40 GMT
 RUN set -eux; 	a2enmod rewrite; 	{ 		echo '<Directory /var/www/html>'; 		echo '  RewriteEngine On'; 		echo '  RewriteCond %{REQUEST_FILENAME} !-f'; 		echo '  RewriteCond %{REQUEST_FILENAME} !-d'; 		echo '  RewriteRule ^ %{DOCUMENT_ROOT}/index.php [L]'; 		echo '</Directory>'; 	} > "$APACHE_CONFDIR/conf-available/short-url.conf"; 	a2enconf short-url
-# Fri, 12 Jul 2019 22:25:37 GMT
+# Tue, 23 Jul 2019 01:57:42 GMT
 RUN { 		echo 'opcache.memory_consumption=128'; 		echo 'opcache.interned_strings_buffer=8'; 		echo 'opcache.max_accelerated_files=4000'; 		echo 'opcache.revalidate_freq=60'; 		echo 'opcache.fast_shutdown=1'; 	} > /usr/local/etc/php/conf.d/opcache-recommended.ini
-# Fri, 12 Jul 2019 22:25:39 GMT
+# Tue, 23 Jul 2019 01:57:44 GMT
 RUN set -eux; 	mkdir -p /var/www/data; 	chown -R www-data:www-data /var/www/data
-# Fri, 12 Jul 2019 22:25:39 GMT
+# Tue, 23 Jul 2019 01:57:44 GMT
 ENV MEDIAWIKI_MAJOR_VERSION=1.33
-# Fri, 12 Jul 2019 22:25:40 GMT
+# Tue, 23 Jul 2019 01:57:45 GMT
 ENV MEDIAWIKI_BRANCH=REL1_33
-# Fri, 12 Jul 2019 22:25:40 GMT
+# Tue, 23 Jul 2019 01:57:45 GMT
 ENV MEDIAWIKI_VERSION=1.33.0
-# Fri, 12 Jul 2019 22:25:41 GMT
+# Tue, 23 Jul 2019 01:57:46 GMT
 ENV MEDIAWIKI_SHA512=e31f5d8bd0bef39b9e2db71f129da128d20174f86e6a4799de5e24195bdcbbc06778b978a48073934b6e59d837629d6b83c182c8271b5fb944ef4ce5df856c68
-# Fri, 12 Jul 2019 22:25:57 GMT
+# Tue, 23 Jul 2019 01:57:58 GMT
 RUN set -eux; 	curl -fSL "https://releases.wikimedia.org/mediawiki/${MEDIAWIKI_MAJOR_VERSION}/mediawiki-${MEDIAWIKI_VERSION}.tar.gz" -o mediawiki.tar.gz; 	echo "${MEDIAWIKI_SHA512} *mediawiki.tar.gz" | sha512sum -c -; 	tar -x --strip-components=1 -f mediawiki.tar.gz; 	rm mediawiki.tar.gz; 	chown -R www-data:www-data extensions skins cache images
 ```
 
@@ -13688,33 +13762,37 @@ RUN set -eux; 	curl -fSL "https://releases.wikimedia.org/mediawiki/${MEDIAWIKI_M
 		Last Modified: Fri, 12 Jul 2019 22:05:09 GMT  
 		Size: 247.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:587e458f21f982e50b5e14d7f4728b656e915cf6eff6b92711760caa0badd8de`  
-		Last Modified: Fri, 12 Jul 2019 22:05:09 GMT  
-		Size: 896.0 B  
+	-	`sha256:db8978c40502e1312f6c00ac36aa4242cc82bf325082c5f618079da939ecb4a4`  
+		Last Modified: Tue, 23 Jul 2019 00:52:38 GMT  
+		Size: 214.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:27e766195d7a3279d5bd8b3c74bd237bce1d927b95c564ed6706afc80d69e365`  
-		Last Modified: Fri, 12 Jul 2019 22:30:22 GMT  
-		Size: 62.2 MB (62170302 bytes)  
+	-	`sha256:5c942636b446046dc978e3a6872c7162e76e65f17fc65bcbdbb9dc9704b9b639`  
+		Last Modified: Tue, 23 Jul 2019 00:52:38 GMT  
+		Size: 898.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:83a02f1cfd0f8105624fe1093e4017485f820092e571a268d3ee2465f567176e`  
-		Last Modified: Fri, 12 Jul 2019 22:30:04 GMT  
-		Size: 2.8 MB (2758875 bytes)  
+	-	`sha256:d51f6c69af2d5030edd7108717ca778a1207e268c08cc56c17887d99596a8a0a`  
+		Last Modified: Tue, 23 Jul 2019 02:02:02 GMT  
+		Size: 62.2 MB (62170209 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:9302c9e94d3d51fc22d56f6f0a0852205e38e71f2a9303ee134c6d5f1fbbf8f1`  
-		Last Modified: Fri, 12 Jul 2019 22:30:03 GMT  
-		Size: 581.0 B  
+	-	`sha256:38a447b3b30842f9adc026314bb3dffa1bfb9d6bc243ffc388192488f4ccfb8b`  
+		Last Modified: Tue, 23 Jul 2019 02:01:44 GMT  
+		Size: 2.8 MB (2758870 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:972f1478c87d99ce4d4d435986ac32859e28c90e2a2429c3d17ad75945200ca9`  
-		Last Modified: Fri, 12 Jul 2019 22:30:03 GMT  
+	-	`sha256:c0b9e09dab8041ea7fe3524c12065adefeba03f27624546db1ce2fa8fc58d5c1`  
+		Last Modified: Tue, 23 Jul 2019 02:01:43 GMT  
+		Size: 588.0 B  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:dad95cec2ee2831f92786762787e7e84d11da5e5e7a54ca9e6e37a916d9594f3`  
+		Last Modified: Tue, 23 Jul 2019 02:01:43 GMT  
 		Size: 328.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:29b8424745c4be6e22921eb637a78a0e5c5e304bb4fbbd7a4ceaccb2fc5f633a`  
-		Last Modified: Fri, 12 Jul 2019 22:30:03 GMT  
+	-	`sha256:64dcbc76ec4d92a8b606e6323e3cb308bfc1942fc3c3ef7a7ca056cd11326d3e`  
+		Last Modified: Tue, 23 Jul 2019 02:01:43 GMT  
 		Size: 170.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:33d858e5f6b1433ad91a31f42b91800d32460b121ec2efef89e9eb9188d86aad`  
-		Last Modified: Fri, 12 Jul 2019 22:30:22 GMT  
-		Size: 38.4 MB (38401548 bytes)  
+	-	`sha256:eb14b2ce71b438428eed21471cd4a39108770bec624198064701a7ed51d97d7f`  
+		Last Modified: Tue, 23 Jul 2019 02:02:02 GMT  
+		Size: 38.4 MB (38401701 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `mediawiki:stable` - linux; 386
