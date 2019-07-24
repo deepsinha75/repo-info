@@ -1,7 +1,7 @@
 ## `groovy:jre12`
 
 ```console
-$ docker pull groovy@sha256:e3174e98123d7195a478f251c1caabcf8596c672595f21539698c577ae49fd93
+$ docker pull groovy@sha256:52b2be2a2e68747ba2b1d4c5465c8383e3df6c69f1165a51842b56178ed5e99a
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -13,14 +13,14 @@ $ docker pull groovy@sha256:e3174e98123d7195a478f251c1caabcf8596c672595f21539698
 ### `groovy:jre12` - linux; amd64
 
 ```console
-$ docker pull groovy@sha256:98f092cb1c8fae12d27b7ab34be13e4c3a3efd03705ee0bf97958c73e4dda62b
+$ docker pull groovy@sha256:96e5916ff4fe32b4750ee02e234f448e338b71f282e9d1ff86451fa81aed9058
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **121.5 MB (121514748 bytes)**  
+-	Total Size: **121.8 MB (121829067 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:a6c5176728f5eb89e7bd0aa9bbfac5997f55cee1f3c6ffe251f15f2dac445de6`
+-	Image ID: `sha256:95f4e8d8014007647a2a1db72d40e81e7f48bf45cb2cb709ea98633fd46a2657`
 -	Default Command: `["groovysh"]`
 
 ```dockerfile
@@ -36,33 +36,33 @@ RUN mkdir -p /run/systemd && echo 'docker' > /run/systemd/container
 CMD ["/bin/bash"]
 # Tue, 23 Jul 2019 15:45:45 GMT
 ENV LANG=en_US.UTF-8 LANGUAGE=en_US:en LC_ALL=en_US.UTF-8
-# Tue, 23 Jul 2019 15:45:56 GMT
-RUN apt-get update     && apt-get install -y --no-install-recommends curl ca-certificates locales     && locale-gen en_US.UTF-8     && rm -rf /var/lib/apt/lists/*
-# Tue, 23 Jul 2019 15:46:37 GMT
-ENV JAVA_VERSION=jdk-12.0.1+12
-# Tue, 23 Jul 2019 15:46:58 GMT
-RUN set -eux;     ARCH="$(dpkg --print-architecture)";     case "${ARCH}" in        ppc64el|ppc64le)          ESUM='0007442c929de09104749fa4c945dfde476cbeab27122b5705d1a2c56d0efac4';          BINARY_URL='https://github.com/AdoptOpenJDK/openjdk12-binaries/releases/download/jdk-12.0.1%2B12/OpenJDK12U-jre_ppc64le_linux_hotspot_12.0.1_12.tar.gz';          ;;        s390x)          ESUM='161464b6d2fd68afdf41c54aa326049ff2ad777d6a13c0694cee2cf9b0aafa52';          BINARY_URL='https://github.com/AdoptOpenJDK/openjdk12-binaries/releases/download/jdk-12.0.1%2B12/OpenJDK12U-jre_s390x_linux_hotspot_12.0.1_12.tar.gz';          ;;        amd64|x86_64)          ESUM='85b3c4065b1540f1d0dbe533955a199e54a0cbe7bd6e1111e59d54e68b2f5b43';          BINARY_URL='https://github.com/AdoptOpenJDK/openjdk12-binaries/releases/download/jdk-12.0.1%2B12/OpenJDK12U-jre_x64_linux_hotspot_12.0.1_12.tar.gz';          ;;        aarch64|arm64)          ESUM='c6fa30f2351a8c981be018c16941dac16c21bfdf86474dc586baaf166b3bc00c';          BINARY_URL='https://github.com/AdoptOpenJDK/openjdk12-binaries/releases/download/jdk-12.0.1%2B12/OpenJDK12U-jre_aarch64_linux_hotspot_12.0.1_12.tar.gz';          ;;        *)          echo "Unsupported arch: ${ARCH}";          exit 1;          ;;     esac;     curl -LfsSo /tmp/openjdk.tar.gz ${BINARY_URL};     echo "${ESUM} */tmp/openjdk.tar.gz" | sha256sum -c -;     mkdir -p /opt/java/openjdk;     cd /opt/java/openjdk;     tar -xf /tmp/openjdk.tar.gz --strip-components=1;     rm -rf /tmp/openjdk.tar.gz;
-# Tue, 23 Jul 2019 15:46:58 GMT
+# Wed, 24 Jul 2019 21:19:44 GMT
+RUN apt-get update     && apt-get install -y --no-install-recommends curl ca-certificates locales     && echo "en_US.UTF-8 UTF-8" >> /etc/locale.gen     && locale-gen en_US.UTF-8     && rm -rf /var/lib/apt/lists/*
+# Wed, 24 Jul 2019 21:20:25 GMT
+ENV JAVA_VERSION=jdk-12.0.2+10
+# Wed, 24 Jul 2019 21:20:50 GMT
+RUN set -eux;     ARCH="$(dpkg --print-architecture)";     case "${ARCH}" in        aarch64|arm64)          ESUM='df8f75fda5430bb99d12316811e2fdb084cd88084a0cbabaa0ae0574cbcd007c';          BINARY_URL='https://github.com/AdoptOpenJDK/openjdk12-binaries/releases/download/jdk-12.0.2%2B10/OpenJDK12U-jre_aarch64_linux_hotspot_12.0.2_10.tar.gz';          ;;        ppc64el|ppc64le)          ESUM='3a8554c1cc340b31c55698a4946d2d9039121f509e2e4be33fae39e5fb452698';          BINARY_URL='https://github.com/AdoptOpenJDK/openjdk12-binaries/releases/download/jdk-12.0.2%2B10/OpenJDK12U-jre_ppc64le_linux_hotspot_12.0.2_10.tar.gz';          ;;        s390x)          ESUM='d17d686927bc67edda26516198e57e67246036b1e5452d70ca6038a9d228039e';          BINARY_URL='https://github.com/AdoptOpenJDK/openjdk12-binaries/releases/download/jdk-12.0.2%2B10/OpenJDK12U-jre_s390x_linux_hotspot_12.0.2_10.tar.gz';          ;;        amd64|x86_64)          ESUM='1e43c4129272d49f7d3c25b6054d5f1140a7168864d9a9b965f9295adc62e44b';          BINARY_URL='https://github.com/AdoptOpenJDK/openjdk12-binaries/releases/download/jdk-12.0.2%2B10/OpenJDK12U-jre_x64_linux_hotspot_12.0.2_10.tar.gz';          ;;        *)          echo "Unsupported arch: ${ARCH}";          exit 1;          ;;     esac;     curl -LfsSo /tmp/openjdk.tar.gz ${BINARY_URL};     echo "${ESUM} */tmp/openjdk.tar.gz" | sha256sum -c -;     mkdir -p /opt/java/openjdk;     cd /opt/java/openjdk;     tar -xf /tmp/openjdk.tar.gz --strip-components=1;     rm -rf /tmp/openjdk.tar.gz;
+# Wed, 24 Jul 2019 21:20:50 GMT
 ENV JAVA_HOME=/opt/java/openjdk PATH=/opt/java/openjdk/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Tue, 23 Jul 2019 19:12:08 GMT
+# Wed, 24 Jul 2019 21:57:14 GMT
 CMD ["groovysh"]
-# Tue, 23 Jul 2019 19:12:08 GMT
+# Wed, 24 Jul 2019 21:57:14 GMT
 ENV GROOVY_HOME=/opt/groovy
-# Tue, 23 Jul 2019 19:12:09 GMT
+# Wed, 24 Jul 2019 21:57:15 GMT
 RUN set -o errexit -o nounset     && echo "Adding groovy user and group"     && groupadd --system --gid 1000 groovy     && useradd --system --gid groovy --uid 1000 --shell /bin/bash --create-home groovy     && mkdir --parents /home/groovy/.groovy/grapes     && chown --recursive groovy:groovy /home/groovy         && echo "Symlinking root .groovy to groovy .groovy"     && ln --symbolic /home/groovy/.groovy /root/.groovy
-# Tue, 23 Jul 2019 19:12:09 GMT
+# Wed, 24 Jul 2019 21:57:15 GMT
 VOLUME [/home/groovy/.groovy/grapes]
-# Tue, 23 Jul 2019 19:12:09 GMT
+# Wed, 24 Jul 2019 21:57:15 GMT
 WORKDIR /home/groovy
-# Tue, 23 Jul 2019 19:12:18 GMT
+# Wed, 24 Jul 2019 21:57:24 GMT
 RUN apt-get update     && echo "Installing build dependencies"     && apt-get install --yes --no-install-recommends         dirmngr         fontconfig         gnupg         unzip         wget     && rm --recursive --force /var/lib/apt/lists/*
-# Tue, 23 Jul 2019 19:12:18 GMT
+# Wed, 24 Jul 2019 21:57:24 GMT
 ENV GROOVY_VERSION=2.5.7
-# Tue, 23 Jul 2019 19:13:24 GMT
+# Wed, 24 Jul 2019 21:57:30 GMT
 RUN set -o errexit -o nounset     && echo "Downloading Groovy"     && wget --no-verbose --output-document=groovy.zip "https://dist.apache.org/repos/dist/release/groovy/${GROOVY_VERSION}/distribution/apache-groovy-binary-${GROOVY_VERSION}.zip"         && echo "Importing keys listed in http://www.apache.org/dist/groovy/KEYS from key server"     && export GNUPGHOME="$(mktemp -d)";     for key in         "7FAA0F2206DE228F0DB01AD741321490758AAD6F"         "331224E1D7BE883D16E8A685825C06C827AF6B66"         "34441E504A937F43EB0DAEF96A65176A0FB1CD0B"         "9A810E3B766E089FFB27C70F11B595CEDC4AEBB5"         "81CABC23EECA0790E8989B361FF96E10F0E13706"     ; do         for server in             "ha.pool.sks-keyservers.net"             "hkp://p80.pool.sks-keyservers.net:80"             "pgp.mit.edu"         ; do             echo "  Trying ${server}";             if gpg --batch --no-tty --keyserver "${server}" --recv-keys "${key}"; then                 break;             fi;         done;     done;     if [ $(gpg --batch --no-tty --list-keys | grep --count "pub ") -ne 5 ]; then         echo "ERROR: Failed to fetch GPG keys" >&2;         exit 1;     fi         && echo "Checking download signature"     && wget --no-verbose --output-document=groovy.zip.asc "https://dist.apache.org/repos/dist/release/groovy/${GROOVY_VERSION}/distribution/apache-groovy-binary-${GROOVY_VERSION}.zip.asc"     && gpg --batch --no-tty --verify groovy.zip.asc groovy.zip     && rm --recursive --force "${GNUPGHOME}"     && rm groovy.zip.asc         && echo "Installing Groovy"     && unzip groovy.zip     && rm groovy.zip     && mv "groovy-${GROOVY_VERSION}" "${GROOVY_HOME}/"     && ln --symbolic "${GROOVY_HOME}/bin/grape" /usr/bin/grape     && ln --symbolic "${GROOVY_HOME}/bin/groovy" /usr/bin/groovy     && ln --symbolic "${GROOVY_HOME}/bin/groovyc" /usr/bin/groovyc     && ln --symbolic "${GROOVY_HOME}/bin/groovyConsole" /usr/bin/groovyConsole     && ln --symbolic "${GROOVY_HOME}/bin/groovydoc" /usr/bin/groovydoc     && ln --symbolic "${GROOVY_HOME}/bin/groovysh" /usr/bin/groovysh     && ln --symbolic "${GROOVY_HOME}/bin/java2groovy" /usr/bin/java2groovy         && echo "Editing startGroovy to include java.xml.bind module"     && sed --in-place 's|startGroovy ( ) {|startGroovy ( ) {\n    JAVA_OPTS="$JAVA_OPTS --add-modules=ALL-SYSTEM"|' "${GROOVY_HOME}/bin/startGroovy"
-# Tue, 23 Jul 2019 19:13:24 GMT
+# Wed, 24 Jul 2019 21:57:31 GMT
 USER groovy
-# Tue, 23 Jul 2019 19:13:26 GMT
+# Wed, 24 Jul 2019 21:57:33 GMT
 RUN set -o errexit -o nounset     && echo "Testing Groovy installation"     && groovy --version
 ```
 
@@ -83,29 +83,29 @@ RUN set -o errexit -o nounset     && echo "Testing Groovy installation"     && g
 		Last Modified: Tue, 23 Jul 2019 15:22:47 GMT  
 		Size: 162.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:e494012c721ac530a07371ebb045e0c3ba792985a33082405c96f05932c40f74`  
-		Last Modified: Tue, 23 Jul 2019 15:48:32 GMT  
-		Size: 10.8 MB (10842713 bytes)  
+	-	`sha256:75411b23efddf7d112f858d749599ff8dc87ca7d68a01ac29dc08ed95871f3b2`  
+		Last Modified: Wed, 24 Jul 2019 21:22:22 GMT  
+		Size: 10.8 MB (10842701 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:0ea15be61f0fd32b95e2b634bd5fcf511cb934b86de0c6d30954662882514676`  
-		Last Modified: Tue, 23 Jul 2019 15:50:12 GMT  
-		Size: 47.9 MB (47883612 bytes)  
+	-	`sha256:b474ddaade39561aeccea63ee24a7b4e3ab2ed5070a4e22b95fe23a88c756238`  
+		Last Modified: Wed, 24 Jul 2019 21:24:25 GMT  
+		Size: 48.2 MB (48197951 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:3201dd16179f7938b779b5775a4cdeb9cbaab18573bb9364bff8cafd4bf7b7f1`  
-		Last Modified: Tue, 23 Jul 2019 19:20:56 GMT  
-		Size: 4.5 KB (4512 bytes)  
+	-	`sha256:ccb8d7f37c259ee98266f9dc244ec0b4e110a1535679b557703167f192c6a033`  
+		Last Modified: Wed, 24 Jul 2019 21:59:38 GMT  
+		Size: 4.5 KB (4508 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:e04fb6b5a64917d0bd1a6903f8c94f5e4581c34936fe9c7fda59dee4033ea8fc`  
-		Last Modified: Tue, 23 Jul 2019 19:20:57 GMT  
-		Size: 6.1 MB (6066163 bytes)  
+	-	`sha256:5304144fbc4ee7cfaa40dd88636cc5a2efb2393c04d779117e5d4d92912c450a`  
+		Last Modified: Wed, 24 Jul 2019 21:59:40 GMT  
+		Size: 6.1 MB (6066130 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:4589914fbb1d5b5fe1d913f8ccb74b9c2a899981d9c5844b6210e20a35807580`  
-		Last Modified: Tue, 23 Jul 2019 19:20:58 GMT  
-		Size: 30.0 MB (29994547 bytes)  
+	-	`sha256:b0a432cedf2d5d7eb17657cf6a1776403975e2d20d28de309ecfa395dd6d2d1b`  
+		Last Modified: Wed, 24 Jul 2019 21:59:41 GMT  
+		Size: 30.0 MB (29994575 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:fdebf6da3cebff81ddf237b3da1d912f2c0ea2b43a328966d5949262feaeb6d9`  
-		Last Modified: Tue, 23 Jul 2019 19:20:56 GMT  
-		Size: 140.0 B  
+	-	`sha256:f056d88bd02afc73b8bbd1493f3ac4060a7bc3a2cac23bcff854a435909a261d`  
+		Last Modified: Wed, 24 Jul 2019 21:59:38 GMT  
+		Size: 141.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `groovy:jre12` - linux; ppc64le
