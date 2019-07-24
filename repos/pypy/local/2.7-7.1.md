@@ -2,9 +2,9 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:f16f0e9ba8eaec35d0d0d252040d2aca6cfccccc3a842c67827d84e38773af5b`
-- Created: `2019-07-10T02:42:00.758394752Z`
-- Virtual Size: ~ 744.42 Mb  
+- Image ID: `sha256:372ecdb4fa85296e8d4904462527bdeb311f2eb91ac04d8490ebc05309523b57`
+- Created: `2019-07-23T23:20:15.30648979Z`
+- Virtual Size: ~ 744.73 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Command: `["pypy"]`
@@ -12,7 +12,7 @@
   - `PATH=/usr/local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
   - `LANG=C.UTF-8`
   - `PYPY_VERSION=7.1.1`
-  - `PYTHON_PIP_VERSION=19.1.1`
+  - `PYTHON_PIP_VERSION=19.2.1`
 
 ## `dpkg` (`.deb`-based packages)
 
@@ -3465,20 +3465,13 @@ Binary Packages:
 If source is available (seen below), check the contents of `debian/copyright` within it.
 
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris libxslt=1.1.28-2+deb8u4
-'http://security.debian.org/debian-security/pool/updates/main/libx/libxslt/libxslt_1.1.28-2+deb8u4.dsc' libxslt_1.1.28-2+deb8u4.dsc 2403 SHA256:40350976d950555c803753069fa2415a1d768331c087c1959a47f83157731229
-'http://security.debian.org/debian-security/pool/updates/main/libx/libxslt/libxslt_1.1.28.orig.tar.gz' libxslt_1.1.28.orig.tar.gz 3435907 SHA256:5fc7151a57b89c03d7b825df5a0fae0a8d5f05674c0e7cf2937ecec4d54a028c
-'http://security.debian.org/debian-security/pool/updates/main/libx/libxslt/libxslt_1.1.28-2+deb8u4.debian.tar.xz' libxslt_1.1.28-2+deb8u4.debian.tar.xz 38864 SHA256:c7cad1c1c6fe0e2e96d05f258869b4e6a62c82c1c8631f71bad56ac7f4ca6dbc
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/libxslt/1.1.28-2+deb8u4/
 
-- https://sources.debian.net/src/libxslt/1.1.28-2+deb8u4/ (for browsing the source)
-- https://sources.debian.net/src/libxslt/1.1.28-2+deb8u4/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/libxslt/1.1.28-2+deb8u4/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `libxss=1:1.2.2-1`
 
