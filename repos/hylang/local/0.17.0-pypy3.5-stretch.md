@@ -2,9 +2,9 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:983b24a418fb1afc4f659d52dff33f2107b8cc816d510a4f48ce3aaf08edef8c`
-- Created: `2019-07-18T01:09:05.146403351Z`
-- Virtual Size: ~ 202.84 Mb  
+- Image ID: `sha256:bfee26c8de0ea721877221457d52e3ccb4f9b84522d6efbdddea39944f059910`
+- Created: `2019-07-23T23:45:26.774942014Z`
+- Virtual Size: ~ 203.26 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Command: `["hy"]`
@@ -12,7 +12,7 @@
   - `PATH=/usr/local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
   - `LANG=C.UTF-8`
   - `PYPY_VERSION=7.0.0`
-  - `PYTHON_PIP_VERSION=19.1.1`
+  - `PYTHON_PIP_VERSION=19.2.1`
   - `HY_VERSION=0.17.0`
 
 ## `dpkg` (`.deb`-based packages)
@@ -982,11 +982,11 @@ Other potentially useful URLs:
 - https://sources.debian.net/src/libsepol/2.6-2/debian/copyright/ (for direct copyright/license information)
 - http://snapshot.debian.org/package/libsepol/2.6-2/ (for access to the source package after it no longer exists in the archive)
 
-### `dpkg` source package: `linux=4.9.168-1+deb9u3`
+### `dpkg` source package: `linux=4.9.168-1+deb9u4`
 
 Binary Packages:
 
-- `linux-libc-dev:amd64=4.9.168-1+deb9u3`
+- `linux-libc-dev:amd64=4.9.168-1+deb9u4`
 
 Licenses: (parsed from: `/usr/share/doc/linux-libc-dev/copyright`)
 
@@ -996,13 +996,20 @@ Licenses: (parsed from: `/usr/share/doc/linux-libc-dev/copyright`)
 - `Unicode-data`
 - `Xen-interface`
 
-**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
-This is *usually* due to a new package version being released and the old version being removed.
+Source:
 
-The source package *may* still be available for download from:
+```console
+$ apt-get source -qq --print-uris linux=4.9.168-1+deb9u4
+'http://security.debian.org/debian-security/pool/updates/main/l/linux/linux_4.9.168-1+deb9u4.dsc' linux_4.9.168-1+deb9u4.dsc 123383 SHA256:a63810174d59218cf46dd0afe40698752206c9102dd8b25f34e6166817b190aa
+'http://security.debian.org/debian-security/pool/updates/main/l/linux/linux_4.9.168.orig.tar.xz' linux_4.9.168.orig.tar.xz 94774584 SHA256:8a2c04045b47472584fc8e72d8663b5c720b8ba5efba878f48ddba93bac29a7f
+'http://security.debian.org/debian-security/pool/updates/main/l/linux/linux_4.9.168-1+deb9u4.debian.tar.xz' linux_4.9.168-1+deb9u4.debian.tar.xz 2748776 SHA256:4bed26b58e6e498bce117aef16506e5a29cde6bb86b53bc6109d943a7d5cffe2
+```
 
-- http://snapshot.debian.org/package/linux/4.9.168-1+deb9u3/
+Other potentially useful URLs:
 
+- https://sources.debian.net/src/linux/4.9.168-1+deb9u4/ (for browsing the source)
+- https://sources.debian.net/src/linux/4.9.168-1+deb9u4/debian/copyright/ (for direct copyright/license information)
+- http://snapshot.debian.org/package/linux/4.9.168-1+deb9u4/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `lsb=9.20161125`
 

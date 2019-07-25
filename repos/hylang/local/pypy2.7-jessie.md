@@ -2,9 +2,9 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:e90ccf1c8d8cc647b205b8bedb6dd6bc1cc0d2957afcfdc1095ff84533ab4b3d`
-- Created: `2019-07-10T07:45:06.98024825Z`
-- Virtual Size: ~ 209.76 Mb  
+- Image ID: `sha256:2a113ab1b9ae4550e584f10206c9fa9d19824c56991390ec7fda433c15a05b6b`
+- Created: `2019-07-23T23:45:37.538396045Z`
+- Virtual Size: ~ 210.14 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Command: `["hy"]`
@@ -12,7 +12,7 @@
   - `PATH=/usr/local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
   - `LANG=C.UTF-8`
   - `PYPY_VERSION=7.1.1`
-  - `PYTHON_PIP_VERSION=19.1.1`
+  - `PYTHON_PIP_VERSION=19.2.1`
   - `HY_VERSION=0.17.0`
 
 ## `dpkg` (`.deb`-based packages)
@@ -221,23 +221,30 @@ Other potentially useful URLs:
 - https://sources.debian.net/src/bash/4.3-11+deb8u2/debian/copyright/ (for direct copyright/license information)
 - http://snapshot.debian.org/package/bash/4.3-11+deb8u2/ (for access to the source package after it no longer exists in the archive)
 
-### `dpkg` source package: `bzip2=1.0.6-7+deb8u1`
+### `dpkg` source package: `bzip2=1.0.6-7+deb8u2`
 
 Binary Packages:
 
-- `libbz2-1.0:amd64=1.0.6-7+deb8u1`
+- `libbz2-1.0:amd64=1.0.6-7+deb8u2`
 
 Licenses: (parsed from: `/usr/share/doc/libbz2-1.0/copyright`)
 
 - `GPL-2`
 
-**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
-This is *usually* due to a new package version being released and the old version being removed.
+Source:
 
-The source package *may* still be available for download from:
+```console
+$ apt-get source -qq --print-uris bzip2=1.0.6-7+deb8u2
+'http://security.debian.org/debian-security/pool/updates/main/b/bzip2/bzip2_1.0.6-7+deb8u2.dsc' bzip2_1.0.6-7+deb8u2.dsc 2462 SHA256:7f1f29e1c032ca64068eb0aa7b9e025b0c9e41218974d8fff3d255397fc691f5
+'http://security.debian.org/debian-security/pool/updates/main/b/bzip2/bzip2_1.0.6.orig.tar.bz2' bzip2_1.0.6.orig.tar.bz2 708737 SHA256:d70a9ccd8bdf47e302d96c69fecd54925f45d9c7b966bb4ef5f56b770960afa7
+'http://security.debian.org/debian-security/pool/updates/main/b/bzip2/bzip2_1.0.6-7+deb8u2.debian.tar.bz2' bzip2_1.0.6-7+deb8u2.debian.tar.bz2 61298 SHA256:49b18ae614a6a92beaf846ae2d5df29687c6d09a158f57db548ff52b882f51b8
+```
 
-- http://snapshot.debian.org/package/bzip2/1.0.6-7+deb8u1/
+Other potentially useful URLs:
 
+- https://sources.debian.net/src/bzip2/1.0.6-7+deb8u2/ (for browsing the source)
+- https://sources.debian.net/src/bzip2/1.0.6-7+deb8u2/debian/copyright/ (for direct copyright/license information)
+- http://snapshot.debian.org/package/bzip2/1.0.6-7+deb8u2/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `ca-certificates=20141019+deb8u4`
 
