@@ -11,6 +11,8 @@
 -	[`neo4j:3.5.6-enterprise`](#neo4j356-enterprise)
 -	[`neo4j:3.5.7`](#neo4j357)
 -	[`neo4j:3.5.7-enterprise`](#neo4j357-enterprise)
+-	[`neo4j:3.5.8`](#neo4j358)
+-	[`neo4j:3.5.8-enterprise`](#neo4j358-enterprise)
 -	[`neo4j:3.5-enterprise`](#neo4j35-enterprise)
 -	[`neo4j:enterprise`](#neo4jenterprise)
 -	[`neo4j:latest`](#neo4jlatest)
@@ -995,6 +997,24 @@ CMD ["neo4j"]
 		Last Modified: Thu, 18 Jul 2019 02:34:14 GMT  
 		Size: 4.4 KB (4386 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+
+## `neo4j:3.5.8`
+
+```console
+$ docker pull neo4j@sha256:a8409dff6597f2ef5f7ecd3c672671bb2af9a390073efd74f95c54aa41cba22a
+```
+
+-	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
+-	Platforms:
+
+## `neo4j:3.5.8-enterprise`
+
+```console
+$ docker pull neo4j@sha256:a8409dff6597f2ef5f7ecd3c672671bb2af9a390073efd74f95c54aa41cba22a
+```
+
+-	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
+-	Platforms:
 
 ## `neo4j:3.5-enterprise`
 
