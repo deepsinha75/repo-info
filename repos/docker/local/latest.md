@@ -1,10 +1,10 @@
-# `docker:18.09.8`
+# `docker:19.03.0`
 
 ## Docker Metadata
 
-- Image ID: `sha256:e1ee9bd2e980436170f8da5809acf586f684224bebfe76759c867db93c515d15`
-- Created: `2019-07-18T21:22:01.654473713Z`
-- Virtual Size: ~ 171.07 Mb  
+- Image ID: `sha256:c4154a2b47a18fe9437956ab981bd5924b19e7ae3eb3ed60c42cf8dfa394d550`
+- Created: `2019-07-22T23:21:21.110976287Z`
+- Virtual Size: ~ 215.60 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["docker-entrypoint.sh"]`
@@ -12,8 +12,8 @@
 - Environment:
   - `PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
   - `DOCKER_CHANNEL=stable`
-  - `DOCKER_VERSION=18.09.8`
-  - `DOCKER_TLS_CERTDIR=`
+  - `DOCKER_VERSION=19.03.0`
+  - `DOCKER_TLS_CERTDIR=/certs`
 
 ## `apk` (`.apk`-based packages)
 
