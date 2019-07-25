@@ -1,10 +1,10 @@
-# `sentry:9.1.1`
+# `sentry:9.1.2`
 
 ## Docker Metadata
 
-- Image ID: `sha256:8f865ee46ca0aeff6e4105a6382c7ebd1d535fa22107b3aad5a77d71ea4a3efc`
-- Created: `2019-07-18T03:54:07.390616499Z`
-- Virtual Size: ~ 849.49 Mb  
+- Image ID: `sha256:f37cdded01155f646ff6018693068efe1fb155310f88d1eaee9272d19f16190d`
+- Created: `2019-07-23T20:03:35.922201501Z`
+- Virtual Size: ~ 849.63 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["/entrypoint.sh"]`
@@ -18,7 +18,7 @@
   - `PYTHON_PIP_VERSION=19.1.1`
   - `PIP_NO_CACHE_DIR=off`
   - `PIP_DISABLE_PIP_VERSION_CHECK=on`
-  - `SENTRY_VERSION=9.1.1`
+  - `SENTRY_VERSION=9.1.2`
   - `SENTRY_CONF=/etc/sentry`
   - `SENTRY_FILESTORE_DIR=/var/lib/sentry/files`
 
@@ -1409,6 +1409,38 @@ Other potentially useful URLs:
 - https://sources.debian.net/src/libjpeg-turbo/1:1.5.1-2/debian/copyright/ (for direct copyright/license information)
 - http://snapshot.debian.org/package/libjpeg-turbo/1:1.5.1-2/ (for access to the source package after it no longer exists in the archive)
 
+### `dpkg` source package: `libmaxminddb=1.2.0-1`
+
+Binary Packages:
+
+- `libmaxminddb-dev:amd64=1.2.0-1+b1`
+- `libmaxminddb0:amd64=1.2.0-1+b1`
+
+Licenses: (parsed from: `/usr/share/doc/libmaxminddb-dev/copyright`, `/usr/share/doc/libmaxminddb0/copyright`)
+
+- `Apache-2.0`
+- `BSD-2-clause`
+- `BSD-3-clause`
+- `BSD-4-clause`
+- `CC-BY-SA`
+- `GPL`
+- `GPL-2+`
+
+Source:
+
+```console
+$ apt-get source -qq --print-uris libmaxminddb=1.2.0-1
+'http://deb.debian.org/debian/pool/main/libm/libmaxminddb/libmaxminddb_1.2.0-1.dsc' libmaxminddb_1.2.0-1.dsc 2115 SHA256:0c191c97687ec3bf9280d6564823c34ff203b91accf8915684b4358e84c2ab7e
+'http://deb.debian.org/debian/pool/main/libm/libmaxminddb/libmaxminddb_1.2.0.orig.tar.gz' libmaxminddb_1.2.0.orig.tar.gz 310051 SHA256:27726894d30644be604058fb3c9c90d1afe42beb071890dbc29c7e27fbf55fa9
+'http://deb.debian.org/debian/pool/main/libm/libmaxminddb/libmaxminddb_1.2.0-1.debian.tar.xz' libmaxminddb_1.2.0-1.debian.tar.xz 4228 SHA256:21f9cb39d1ae5d9e4da58b2a4d567b4db48f885b8f031e83e0a5c1ec6806ae48
+```
+
+Other potentially useful URLs:
+
+- https://sources.debian.net/src/libmaxminddb/1.2.0-1/ (for browsing the source)
+- https://sources.debian.net/src/libmaxminddb/1.2.0-1/debian/copyright/ (for direct copyright/license information)
+- http://snapshot.debian.org/package/libmaxminddb/1.2.0-1/ (for access to the source package after it no longer exists in the archive)
+
 ### `dpkg` source package: `libpsl=0.17.0-3`
 
 Binary Packages:
@@ -1681,11 +1713,11 @@ Other potentially useful URLs:
 - https://sources.debian.net/src/libyaml/0.1.7-2/debian/copyright/ (for direct copyright/license information)
 - http://snapshot.debian.org/package/libyaml/0.1.7-2/ (for access to the source package after it no longer exists in the archive)
 
-### `dpkg` source package: `linux=4.9.168-1+deb9u3`
+### `dpkg` source package: `linux=4.9.168-1+deb9u4`
 
 Binary Packages:
 
-- `linux-libc-dev:amd64=4.9.168-1+deb9u3`
+- `linux-libc-dev:amd64=4.9.168-1+deb9u4`
 
 Licenses: (parsed from: `/usr/share/doc/linux-libc-dev/copyright`)
 
@@ -1698,17 +1730,17 @@ Licenses: (parsed from: `/usr/share/doc/linux-libc-dev/copyright`)
 Source:
 
 ```console
-$ apt-get source -qq --print-uris linux=4.9.168-1+deb9u3
-'http://security.debian.org/debian-security/pool/updates/main/l/linux/linux_4.9.168-1+deb9u3.dsc' linux_4.9.168-1+deb9u3.dsc 123228 SHA256:387ac7cf647ff9b6e28cb92cf80f0ad3d390bc4ca24b24586c62ca86aeb5e39a
+$ apt-get source -qq --print-uris linux=4.9.168-1+deb9u4
+'http://security.debian.org/debian-security/pool/updates/main/l/linux/linux_4.9.168-1+deb9u4.dsc' linux_4.9.168-1+deb9u4.dsc 123383 SHA256:a63810174d59218cf46dd0afe40698752206c9102dd8b25f34e6166817b190aa
 'http://security.debian.org/debian-security/pool/updates/main/l/linux/linux_4.9.168.orig.tar.xz' linux_4.9.168.orig.tar.xz 94774584 SHA256:8a2c04045b47472584fc8e72d8663b5c720b8ba5efba878f48ddba93bac29a7f
-'http://security.debian.org/debian-security/pool/updates/main/l/linux/linux_4.9.168-1+deb9u3.debian.tar.xz' linux_4.9.168-1+deb9u3.debian.tar.xz 2749392 SHA256:1157d6ff3934675897a590ad5a87f463d8e96604cd31aed7c4bbb601c029103c
+'http://security.debian.org/debian-security/pool/updates/main/l/linux/linux_4.9.168-1+deb9u4.debian.tar.xz' linux_4.9.168-1+deb9u4.debian.tar.xz 2748776 SHA256:4bed26b58e6e498bce117aef16506e5a29cde6bb86b53bc6109d943a7d5cffe2
 ```
 
 Other potentially useful URLs:
 
-- https://sources.debian.net/src/linux/4.9.168-1+deb9u3/ (for browsing the source)
-- https://sources.debian.net/src/linux/4.9.168-1+deb9u3/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/linux/4.9.168-1+deb9u3/ (for access to the source package after it no longer exists in the archive)
+- https://sources.debian.net/src/linux/4.9.168-1+deb9u4/ (for browsing the source)
+- https://sources.debian.net/src/linux/4.9.168-1+deb9u4/debian/copyright/ (for direct copyright/license information)
+- http://snapshot.debian.org/package/linux/4.9.168-1+deb9u4/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `lsb=9.20161125`
 
