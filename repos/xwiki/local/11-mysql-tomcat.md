@@ -2,9 +2,9 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:6332370cd66a10ec695b77527ad9ed476a1076123018432085228991dca2908f`
-- Created: `2019-07-12T10:13:11.014652185Z`
-- Virtual Size: ~ 1.29 Gb  
+- Image ID: `sha256:88b13e60f6c4470948828153b9be6c5ea8041299992e2bfdd33e87bb068857e0`
+- Created: `2019-07-24T22:59:22.212306623Z`
+- Virtual Size: ~ 1.28 Gb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["docker-entrypoint.sh"]`
@@ -14,7 +14,7 @@
   - `LANG=en_US.UTF-8`
   - `LANGUAGE=en_US:en`
   - `LC_ALL=en_US.UTF-8`
-  - `JAVA_VERSION=jdk-11.0.3+7`
+  - `JAVA_VERSION=jdk-11.0.4+11`
   - `JAVA_HOME=/opt/java/openjdk`
   - `CATALINA_HOME=/usr/local/tomcat`
   - `TOMCAT_NATIVE_LIBDIR=/usr/local/tomcat/native-jni-lib`
@@ -270,19 +270,23 @@ $ apt-get source -qq --print-uris avahi=0.7-3.1ubuntu1.2
 'http://archive.ubuntu.com/ubuntu/pool/main/a/avahi/avahi_0.7-3.1ubuntu1.2.debian.tar.xz' avahi_0.7-3.1ubuntu1.2.debian.tar.xz 35124 SHA256:a72a1652e00b4385f99407e4f26eb1656e8eb0026d127e246533438d1ae05407
 ```
 
-### `dpkg` source package: `base-files=10.1ubuntu2.4`
+### `dpkg` source package: `base-files=10.1ubuntu2.5`
 
 Binary Packages:
 
-- `base-files=10.1ubuntu2.4`
+- `base-files=10.1ubuntu2.5`
 
 Licenses: (parsed from: `/usr/share/doc/base-files/copyright`)
 
 - `GPL`
 
-**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
-This is *usually* due to a new package version being released and the old version being removed.
+Source:
 
+```console
+$ apt-get source -qq --print-uris base-files=10.1ubuntu2.5
+'http://archive.ubuntu.com/ubuntu/pool/main/b/base-files/base-files_10.1ubuntu2.5.dsc' base-files_10.1ubuntu2.5.dsc 1620 SHA256:641b024666edd687c8873d22346340612aaa351bedb246a13212b9a2063c57e8
+'http://archive.ubuntu.com/ubuntu/pool/main/b/base-files/base-files_10.1ubuntu2.5.tar.xz' base-files_10.1ubuntu2.5.tar.xz 78188 SHA256:f2e6870b9b1145b33e8b2dcd6ab2aadaefb8563a1c23ffa6e5c3b29f1eca5f2c
+```
 
 ### `dpkg` source package: `base-passwd=3.5.44`
 
@@ -303,19 +307,24 @@ $ apt-get source -qq --print-uris base-passwd=3.5.44
 'http://archive.ubuntu.com/ubuntu/pool/main/b/base-passwd/base-passwd_3.5.44.tar.xz' base-passwd_3.5.44.tar.xz 52644 SHA256:f17a0746024572e86e60e4614cf226a81ffe682ceaf1a1fce9dc1a8002683e90
 ```
 
-### `dpkg` source package: `bash=4.4.18-2ubuntu1.1`
+### `dpkg` source package: `bash=4.4.18-2ubuntu1.2`
 
 Binary Packages:
 
-- `bash=4.4.18-2ubuntu1.1`
+- `bash=4.4.18-2ubuntu1.2`
 
 Licenses: (parsed from: `/usr/share/doc/bash/copyright`)
 
 - `GPL-3`
 
-**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
-This is *usually* due to a new package version being released and the old version being removed.
+Source:
 
+```console
+$ apt-get source -qq --print-uris bash=4.4.18-2ubuntu1.2
+'http://archive.ubuntu.com/ubuntu/pool/main/b/bash/bash_4.4.18-2ubuntu1.2.dsc' bash_4.4.18-2ubuntu1.2.dsc 2434 SHA256:febc739ab69e09853f8f1d4b1db7038937911bee7d715926f1e7ff461b63c82f
+'http://archive.ubuntu.com/ubuntu/pool/main/b/bash/bash_4.4.18.orig.tar.xz' bash_4.4.18.orig.tar.xz 5036272 SHA256:704143a7170041ac9f1025455d6d23ff0f353711a3dc557b47d6e6322f24cd02
+'http://archive.ubuntu.com/ubuntu/pool/main/b/bash/bash_4.4.18-2ubuntu1.2.debian.tar.xz' bash_4.4.18-2ubuntu1.2.debian.tar.xz 65236 SHA256:b0191aab30dd0531d7acbeab7c64014a1c9e484f417678a18ad1655a77b7b6f9
+```
 
 ### `dpkg` source package: `boost1.65.1=1.65.1+dfsg-0ubuntu5`
 
@@ -343,12 +352,12 @@ $ apt-get source -qq --print-uris boost1.65.1=1.65.1+dfsg-0ubuntu5
 'http://archive.ubuntu.com/ubuntu/pool/main/b/boost1.65.1/boost1.65.1_1.65.1+dfsg-0ubuntu5.debian.tar.xz' boost1.65.1_1.65.1+dfsg-0ubuntu5.debian.tar.xz 105524 SHA256:c238e8a63c232911402cef6f8ea7763bddf572f7062b5353147ee9ed9a79afdb
 ```
 
-### `dpkg` source package: `bzip2=1.0.6-8.1`
+### `dpkg` source package: `bzip2=1.0.6-8.1ubuntu0.2`
 
 Binary Packages:
 
-- `bzip2=1.0.6-8.1`
-- `libbz2-1.0:amd64=1.0.6-8.1`
+- `bzip2=1.0.6-8.1ubuntu0.2`
+- `libbz2-1.0:amd64=1.0.6-8.1ubuntu0.2`
 
 Licenses: (parsed from: `/usr/share/doc/bzip2/copyright`, `/usr/share/doc/libbz2-1.0/copyright`)
 
@@ -357,10 +366,10 @@ Licenses: (parsed from: `/usr/share/doc/bzip2/copyright`, `/usr/share/doc/libbz2
 Source:
 
 ```console
-$ apt-get source -qq --print-uris bzip2=1.0.6-8.1
-'http://archive.ubuntu.com/ubuntu/pool/main/b/bzip2/bzip2_1.0.6-8.1.dsc' bzip2_1.0.6-8.1.dsc 2082 SHA256:d80deed11a1419ad090cb486dd2335850fd8719b809c32002dea04b485f55dbd
+$ apt-get source -qq --print-uris bzip2=1.0.6-8.1ubuntu0.2
+'http://archive.ubuntu.com/ubuntu/pool/main/b/bzip2/bzip2_1.0.6-8.1ubuntu0.2.dsc' bzip2_1.0.6-8.1ubuntu0.2.dsc 2181 SHA256:62f49d3ded30713bbae8a0aaab69bebdc5533afe6e488ceb0aa03bce7c2c5ff3
 'http://archive.ubuntu.com/ubuntu/pool/main/b/bzip2/bzip2_1.0.6.orig.tar.bz2' bzip2_1.0.6.orig.tar.bz2 708737 SHA256:d70a9ccd8bdf47e302d96c69fecd54925f45d9c7b966bb4ef5f56b770960afa7
-'http://archive.ubuntu.com/ubuntu/pool/main/b/bzip2/bzip2_1.0.6-8.1.debian.tar.bz2' bzip2_1.0.6-8.1.debian.tar.bz2 59875 SHA256:bdbe7bf29e014e44d79bb7c733fe63cae990ab50882a4a07867cf69c61ad72b7
+'http://archive.ubuntu.com/ubuntu/pool/main/b/bzip2/bzip2_1.0.6-8.1ubuntu0.2.debian.tar.bz2' bzip2_1.0.6-8.1ubuntu0.2.debian.tar.bz2 61477 SHA256:b4fede4240afa43e0e666e5a539da8d9744b2b2917388cfe93574f967e328e6a
 ```
 
 ### `dpkg` source package: `ca-certificates=20180409`
@@ -1228,13 +1237,13 @@ $ apt-get source -qq --print-uris gstreamer1.0=1.14.4-1~ubuntu18.04.1
 'http://archive.ubuntu.com/ubuntu/pool/main/g/gstreamer1.0/gstreamer1.0_1.14.4-1~ubuntu18.04.1.debian.tar.xz' gstreamer1.0_1.14.4-1~ubuntu18.04.1.debian.tar.xz 44556 SHA256:7a11e33af98de3f3390f177a964be409e5a1e457ef3185718c04b4e5c0453568
 ```
 
-### `dpkg` source package: `gtk+3.0=3.22.30-1ubuntu3`
+### `dpkg` source package: `gtk+3.0=3.22.30-1ubuntu4`
 
 Binary Packages:
 
-- `gtk-update-icon-cache=3.22.30-1ubuntu3`
-- `libgtk-3-0:amd64=3.22.30-1ubuntu3`
-- `libgtk-3-common=3.22.30-1ubuntu3`
+- `gtk-update-icon-cache=3.22.30-1ubuntu4`
+- `libgtk-3-0:amd64=3.22.30-1ubuntu4`
+- `libgtk-3-common=3.22.30-1ubuntu4`
 
 Licenses: (parsed from: `/usr/share/doc/gtk-update-icon-cache/copyright`, `/usr/share/doc/libgtk-3-0/copyright`, `/usr/share/doc/libgtk-3-common/copyright`)
 
@@ -1247,9 +1256,14 @@ Licenses: (parsed from: `/usr/share/doc/gtk-update-icon-cache/copyright`, `/usr/
 - `SWL`
 - `other`
 
-**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
-This is *usually* due to a new package version being released and the old version being removed.
+Source:
 
+```console
+$ apt-get source -qq --print-uris gtk+3.0=3.22.30-1ubuntu4
+'http://archive.ubuntu.com/ubuntu/pool/main/g/gtk+3.0/gtk+3.0_3.22.30-1ubuntu4.dsc' gtk+3.0_3.22.30-1ubuntu4.dsc 3364 SHA256:f4b7cbc787b8e65d02186f43ba78935040bbb5381693da8aa8455a9fc1436e9e
+'http://archive.ubuntu.com/ubuntu/pool/main/g/gtk+3.0/gtk+3.0_3.22.30.orig.tar.xz' gtk+3.0_3.22.30.orig.tar.xz 18946084 SHA256:a1a4a5c12703d4e1ccda28333b87ff462741dc365131fbc94c218ae81d9a6567
+'http://archive.ubuntu.com/ubuntu/pool/main/g/gtk+3.0/gtk+3.0_3.22.30-1ubuntu4.debian.tar.xz' gtk+3.0_3.22.30-1ubuntu4.debian.tar.xz 162544 SHA256:24bc3d5c670bb77840ee5cc83d39970aee76a3364ff6422b9ebaeac4bc7a6292
+```
 
 ### `dpkg` source package: `gzip=1.6-5ubuntu1`
 
@@ -2297,29 +2311,29 @@ $ apt-get source -qq --print-uris libpsl=0.19.1-5build1
 'http://archive.ubuntu.com/ubuntu/pool/main/libp/libpsl/libpsl_0.19.1-5build1.debian.tar.xz' libpsl_0.19.1-5build1.debian.tar.xz 9860 SHA256:53285bee66ac22a25dd41f7778cc4e94ae3d61929eb6701a8064a38a964e40e2
 ```
 
-### `dpkg` source package: `libreoffice=1:6.0.7-0ubuntu0.18.04.7`
+### `dpkg` source package: `libreoffice=1:6.0.7-0ubuntu0.18.04.8`
 
 Binary Packages:
 
-- `fonts-opensymbol=2:102.10+LibO6.0.7-0ubuntu0.18.04.7`
-- `libreoffice=1:6.0.7-0ubuntu0.18.04.7`
-- `libreoffice-avmedia-backend-gstreamer=1:6.0.7-0ubuntu0.18.04.7`
-- `libreoffice-base=1:6.0.7-0ubuntu0.18.04.7`
-- `libreoffice-base-core=1:6.0.7-0ubuntu0.18.04.7`
-- `libreoffice-base-drivers=1:6.0.7-0ubuntu0.18.04.7`
-- `libreoffice-calc=1:6.0.7-0ubuntu0.18.04.7`
-- `libreoffice-common=1:6.0.7-0ubuntu0.18.04.7`
-- `libreoffice-core=1:6.0.7-0ubuntu0.18.04.7`
-- `libreoffice-draw=1:6.0.7-0ubuntu0.18.04.7`
-- `libreoffice-impress=1:6.0.7-0ubuntu0.18.04.7`
-- `libreoffice-math=1:6.0.7-0ubuntu0.18.04.7`
-- `libreoffice-report-builder-bin=1:6.0.7-0ubuntu0.18.04.7`
-- `libreoffice-style-galaxy=1:6.0.7-0ubuntu0.18.04.7`
-- `libreoffice-style-tango=1:6.0.7-0ubuntu0.18.04.7`
-- `libreoffice-writer=1:6.0.7-0ubuntu0.18.04.7`
-- `python3-uno=1:6.0.7-0ubuntu0.18.04.7`
-- `uno-libs3=6.0.7-0ubuntu0.18.04.7`
-- `ure=6.0.7-0ubuntu0.18.04.7`
+- `fonts-opensymbol=2:102.10+LibO6.0.7-0ubuntu0.18.04.8`
+- `libreoffice=1:6.0.7-0ubuntu0.18.04.8`
+- `libreoffice-avmedia-backend-gstreamer=1:6.0.7-0ubuntu0.18.04.8`
+- `libreoffice-base=1:6.0.7-0ubuntu0.18.04.8`
+- `libreoffice-base-core=1:6.0.7-0ubuntu0.18.04.8`
+- `libreoffice-base-drivers=1:6.0.7-0ubuntu0.18.04.8`
+- `libreoffice-calc=1:6.0.7-0ubuntu0.18.04.8`
+- `libreoffice-common=1:6.0.7-0ubuntu0.18.04.8`
+- `libreoffice-core=1:6.0.7-0ubuntu0.18.04.8`
+- `libreoffice-draw=1:6.0.7-0ubuntu0.18.04.8`
+- `libreoffice-impress=1:6.0.7-0ubuntu0.18.04.8`
+- `libreoffice-math=1:6.0.7-0ubuntu0.18.04.8`
+- `libreoffice-report-builder-bin=1:6.0.7-0ubuntu0.18.04.8`
+- `libreoffice-style-galaxy=1:6.0.7-0ubuntu0.18.04.8`
+- `libreoffice-style-tango=1:6.0.7-0ubuntu0.18.04.8`
+- `libreoffice-writer=1:6.0.7-0ubuntu0.18.04.8`
+- `python3-uno=1:6.0.7-0ubuntu0.18.04.8`
+- `uno-libs3=6.0.7-0ubuntu0.18.04.8`
+- `ure=6.0.7-0ubuntu0.18.04.8`
 
 Licenses: (parsed from: `/usr/share/doc/fonts-opensymbol/copyright`, `/usr/share/doc/libreoffice/copyright`, `/usr/share/doc/libreoffice-avmedia-backend-gstreamer/copyright`, `/usr/share/doc/libreoffice-base/copyright`, `/usr/share/doc/libreoffice-base-core/copyright`, `/usr/share/doc/libreoffice-base-drivers/copyright`, `/usr/share/doc/libreoffice-calc/copyright`, `/usr/share/doc/libreoffice-common/copyright`, `/usr/share/doc/libreoffice-core/copyright`, `/usr/share/doc/libreoffice-draw/copyright`, `/usr/share/doc/libreoffice-impress/copyright`, `/usr/share/doc/libreoffice-math/copyright`, `/usr/share/doc/libreoffice-report-builder-bin/copyright`, `/usr/share/doc/libreoffice-style-galaxy/copyright`, `/usr/share/doc/libreoffice-style-tango/copyright`, `/usr/share/doc/libreoffice-writer/copyright`, `/usr/share/doc/python3-uno/copyright`, `/usr/share/doc/uno-libs3/copyright`, `/usr/share/doc/ure/copyright`)
 
@@ -2335,9 +2349,17 @@ Licenses: (parsed from: `/usr/share/doc/fonts-opensymbol/copyright`, `/usr/share
 - `MPL-2.0`
 - `other`
 
-**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
-This is *usually* due to a new package version being released and the old version being removed.
+Source:
 
+```console
+$ apt-get source -qq --print-uris libreoffice=1:6.0.7-0ubuntu0.18.04.8
+'http://archive.ubuntu.com/ubuntu/pool/main/libr/libreoffice/libreoffice_6.0.7-0ubuntu0.18.04.8.dsc' libreoffice_6.0.7-0ubuntu0.18.04.8.dsc 18074 SHA256:c21b8b098f4bbf64b4d01dfa75e0f48a209a41a2d51fbbcc8d56b733907144e0
+'http://archive.ubuntu.com/ubuntu/pool/main/libr/libreoffice/libreoffice_6.0.7.orig-helpcontent2.tar.xz' libreoffice_6.0.7.orig-helpcontent2.tar.xz 2423012 SHA256:41c1ef4b0437acd7e8ba36789b45906e99e0487b12198bce0d30ed74c9e0ccaf
+'http://archive.ubuntu.com/ubuntu/pool/main/libr/libreoffice/libreoffice_6.0.7.orig-tarballs.tar.xz' libreoffice_6.0.7.orig-tarballs.tar.xz 215486780 SHA256:96116dcc195ab1f47fa677bf88f8d233561422dbfe5a0539f7408b56e254c194
+'http://archive.ubuntu.com/ubuntu/pool/main/libr/libreoffice/libreoffice_6.0.7.orig-translations.tar.xz' libreoffice_6.0.7.orig-translations.tar.xz 139598364 SHA256:24a3ef909cfb0722dec3d6e40924681b41641f175e5df90b3e5507fdceb43186
+'http://archive.ubuntu.com/ubuntu/pool/main/libr/libreoffice/libreoffice_6.0.7.orig.tar.xz' libreoffice_6.0.7.orig.tar.xz 183202236 SHA256:fc67036b0c00c1685d39acec6c485a4a250b6bb92fc08a88377d39d2f7fd7923
+'http://archive.ubuntu.com/ubuntu/pool/main/libr/libreoffice/libreoffice_6.0.7-0ubuntu0.18.04.8.debian.tar.xz' libreoffice_6.0.7-0ubuntu0.18.04.8.debian.tar.xz 2176260 SHA256:fe7c124c17902e8cedb578c225699fc6d874620834047ff6dad263b72977a51a
+```
 
 ### `dpkg` source package: `librest=0.8.0-2`
 
@@ -3348,19 +3370,24 @@ $ apt-get source -qq --print-uris nspr=2:4.18-1ubuntu1
 'http://archive.ubuntu.com/ubuntu/pool/main/n/nspr/nspr_4.18-1ubuntu1.debian.tar.xz' nspr_4.18-1ubuntu1.debian.tar.xz 19520 SHA256:712cd17e174defbae082724ba3278164218cd77f4fa322d5f376c0bec111b70c
 ```
 
-### `dpkg` source package: `nss=2:3.35-2ubuntu2.2`
+### `dpkg` source package: `nss=2:3.35-2ubuntu2.3`
 
 Binary Packages:
 
-- `libnss3:amd64=2:3.35-2ubuntu2.2`
+- `libnss3:amd64=2:3.35-2ubuntu2.3`
 
 **WARNING:** unable to detect licenses! (package likely not compliant with DEP-5)  
 If source is available (seen below), check the contents of `debian/copyright` within it.
 
 
-**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
-This is *usually* due to a new package version being released and the old version being removed.
+Source:
 
+```console
+$ apt-get source -qq --print-uris nss=2:3.35-2ubuntu2.3
+'http://archive.ubuntu.com/ubuntu/pool/main/n/nss/nss_3.35-2ubuntu2.3.dsc' nss_3.35-2ubuntu2.3.dsc 2347 SHA256:e2df435da3243286feb02c6d9449db9a5cf0e97fc7c5f562577f241bb558f4b3
+'http://archive.ubuntu.com/ubuntu/pool/main/n/nss/nss_3.35.orig.tar.gz' nss_3.35.orig.tar.gz 9620041 SHA256:f4127de09bede39f5fd0f789d33c3504c5d261e69ea03022d46b319b3e32f6fa
+'http://archive.ubuntu.com/ubuntu/pool/main/n/nss/nss_3.35-2ubuntu2.3.debian.tar.xz' nss_3.35-2ubuntu2.3.debian.tar.xz 42356 SHA256:a820d8a823193a05aef7ee3534695f41e37173ee98967ab128f6ba67eb2958c5
+```
 
 ### `dpkg` source package: `openldap=2.4.45+dfsg-1ubuntu1.2`
 
@@ -3382,33 +3409,26 @@ $ apt-get source -qq --print-uris openldap=2.4.45+dfsg-1ubuntu1.2
 'http://archive.ubuntu.com/ubuntu/pool/main/o/openldap/openldap_2.4.45+dfsg-1ubuntu1.2.debian.tar.xz' openldap_2.4.45+dfsg-1ubuntu1.2.debian.tar.xz 175468 SHA256:4e404726ebaecede8e8963086f851f747cea13a5dbb6d9ef8b561e3a50906ff1
 ```
 
-### `dpkg` source package: `openssl=1.1.1-1ubuntu2.1~18.04.2`
+### `dpkg` source package: `openssl=1.1.1-1ubuntu2.1~18.04.4`
 
 Binary Packages:
 
-- `openssl=1.1.1-1ubuntu2.1~18.04.2`
+- `libssl1.1:amd64=1.1.1-1ubuntu2.1~18.04.4`
+- `openssl=1.1.1-1ubuntu2.1~18.04.4`
 
 **WARNING:** unable to detect licenses! (package likely not compliant with DEP-5)  
 If source is available (seen below), check the contents of `debian/copyright` within it.
 
 
-**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
-This is *usually* due to a new package version being released and the old version being removed.
+Source:
 
-
-### `dpkg` source package: `openssl=1.1.1-1ubuntu2.1~18.04.3`
-
-Binary Packages:
-
-- `libssl1.1:amd64=1.1.1-1ubuntu2.1~18.04.3`
-
-**WARNING:** unable to detect licenses! (package likely not compliant with DEP-5)  
-If source is available (seen below), check the contents of `debian/copyright` within it.
-
-
-**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
-This is *usually* due to a new package version being released and the old version being removed.
-
+```console
+$ apt-get source -qq --print-uris openssl=1.1.1-1ubuntu2.1~18.04.4
+'http://archive.ubuntu.com/ubuntu/pool/main/o/openssl/openssl_1.1.1-1ubuntu2.1~18.04.4.dsc' openssl_1.1.1-1ubuntu2.1~18.04.4.dsc 2776 SHA256:88218150efac41c72aaf0025cd4d481800e0871e5ea045d25c5b10b09f7b0a88
+'http://archive.ubuntu.com/ubuntu/pool/main/o/openssl/openssl_1.1.1.orig.tar.gz' openssl_1.1.1.orig.tar.gz 8337920 SHA256:2836875a0f89c03d0fdf483941512613a50cfb421d6fd94b9f41d7279d586a3d
+'http://archive.ubuntu.com/ubuntu/pool/main/o/openssl/openssl_1.1.1.orig.tar.gz.asc' openssl_1.1.1.orig.tar.gz.asc 488 SHA256:f3296150114069ea73a72eafbfdcbb295b770e7cbf3266f9590f3d0932498b3e
+'http://archive.ubuntu.com/ubuntu/pool/main/o/openssl/openssl_1.1.1-1ubuntu2.1~18.04.4.debian.tar.xz' openssl_1.1.1-1ubuntu2.1~18.04.4.debian.tar.xz 95260 SHA256:a373c2612817f3ae929d01ddb9175a6f9ab0ac28a08afe93c88df27fadcc7500
+```
 
 ### `dpkg` source package: `orc=1:0.4.28-1`
 
@@ -3895,11 +3915,11 @@ $ apt-get source -qq --print-uris shared-mime-info=1.9-2
 'http://archive.ubuntu.com/ubuntu/pool/main/s/shared-mime-info/shared-mime-info_1.9-2.debian.tar.xz' shared-mime-info_1.9-2.debian.tar.xz 9992 SHA256:18cb7e2c0f2a3daa2d55abc87c4619d68f537f268a3bad8510e1fcf0d6b0cd76
 ```
 
-### `dpkg` source package: `sqlite3=3.22.0-1`
+### `dpkg` source package: `sqlite3=3.22.0-1ubuntu0.1`
 
 Binary Packages:
 
-- `libsqlite3-0:amd64=3.22.0-1`
+- `libsqlite3-0:amd64=3.22.0-1ubuntu0.1`
 
 Licenses: (parsed from: `/usr/share/doc/libsqlite3-0/copyright`)
 
@@ -3910,11 +3930,11 @@ Licenses: (parsed from: `/usr/share/doc/libsqlite3-0/copyright`)
 Source:
 
 ```console
-$ apt-get source -qq --print-uris sqlite3=3.22.0-1
-'http://archive.ubuntu.com/ubuntu/pool/main/s/sqlite3/sqlite3_3.22.0-1.dsc' sqlite3_3.22.0-1.dsc 2397 SHA256:6a5c95a5062c19abcfb0492b32b4e4f20634a59fb077da2415ab16e1afdc4ff6
+$ apt-get source -qq --print-uris sqlite3=3.22.0-1ubuntu0.1
+'http://archive.ubuntu.com/ubuntu/pool/main/s/sqlite3/sqlite3_3.22.0-1ubuntu0.1.dsc' sqlite3_3.22.0-1ubuntu0.1.dsc 2496 SHA256:218cd6907a35368906b18150d8bd5053d691ac4172c75bcd3255486622e5c4fd
 'http://archive.ubuntu.com/ubuntu/pool/main/s/sqlite3/sqlite3_3.22.0.orig-www.tar.xz' sqlite3_3.22.0.orig-www.tar.xz 3564688 SHA256:a61a14d6f457bb31ca32f4844398140050597fe4403dc0ee19576111f407e231
 'http://archive.ubuntu.com/ubuntu/pool/main/s/sqlite3/sqlite3_3.22.0.orig.tar.xz' sqlite3_3.22.0.orig.tar.xz 6019648 SHA256:f973ba63b5a1ea1d72e80c585bfb945e71d3f8b74fbecccdf345a84f8c91e5d1
-'http://archive.ubuntu.com/ubuntu/pool/main/s/sqlite3/sqlite3_3.22.0-1.debian.tar.xz' sqlite3_3.22.0-1.debian.tar.xz 17312 SHA256:7fcce88ce9c8fe517fb9fc5b9d67daf14e48da678496fede4b27cbd3ddcbd453
+'http://archive.ubuntu.com/ubuntu/pool/main/s/sqlite3/sqlite3_3.22.0-1ubuntu0.1.debian.tar.xz' sqlite3_3.22.0-1ubuntu0.1.debian.tar.xz 33780 SHA256:1eb9ca29e3cbfd48112b4618daa0fdba75b269a92a286ea22d3d4f1dd0f573ea
 ```
 
 ### `dpkg` source package: `suitesparse=1:5.1.2-2`
@@ -3947,12 +3967,12 @@ $ apt-get source -qq --print-uris suitesparse=1:5.1.2-2
 'http://archive.ubuntu.com/ubuntu/pool/main/s/suitesparse/suitesparse_5.1.2-2.debian.tar.xz' suitesparse_5.1.2-2.debian.tar.xz 29056 SHA256:5e64720f4b9854dec9f7f871686b09b3ccafc24e5c698bf6a3c95089c52bc3b0
 ```
 
-### `dpkg` source package: `systemd=237-3ubuntu10.22`
+### `dpkg` source package: `systemd=237-3ubuntu10.24`
 
 Binary Packages:
 
-- `libsystemd0:amd64=237-3ubuntu10.22`
-- `libudev1:amd64=237-3ubuntu10.22`
+- `libsystemd0:amd64=237-3ubuntu10.24`
+- `libudev1:amd64=237-3ubuntu10.24`
 
 Licenses: (parsed from: `/usr/share/doc/libsystemd0/copyright`, `/usr/share/doc/libudev1/copyright`)
 
@@ -3964,9 +3984,14 @@ Licenses: (parsed from: `/usr/share/doc/libsystemd0/copyright`, `/usr/share/doc/
 - `LGPL-2.1+`
 - `public-domain`
 
-**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
-This is *usually* due to a new package version being released and the old version being removed.
+Source:
 
+```console
+$ apt-get source -qq --print-uris systemd=237-3ubuntu10.24
+'http://archive.ubuntu.com/ubuntu/pool/main/s/systemd/systemd_237-3ubuntu10.24.dsc' systemd_237-3ubuntu10.24.dsc 5149 SHA256:629c3ad41f9e3d44c4b31f1bb808859adfdbdb84560299a03d37acb7ddf3a04d
+'http://archive.ubuntu.com/ubuntu/pool/main/s/systemd/systemd_237.orig.tar.gz' systemd_237.orig.tar.gz 6871350 SHA256:c83dabbe1c9de6b9db1dafdb7e04140c7d0535705c68842f6c0768653ba4913c
+'http://archive.ubuntu.com/ubuntu/pool/main/s/systemd/systemd_237-3ubuntu10.24.debian.tar.xz' systemd_237-3ubuntu10.24.debian.tar.xz 217072 SHA256:39160cee4ee37972ff725e8e2b60ca9f499fad9f012c0abe54c24aa2db101262
+```
 
 ### `dpkg` source package: `sysvinit=2.88dsf-59.10ubuntu1`
 
