@@ -2,9 +2,9 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:bb5bd973d48eb673efbe32a0cf9238428b8cfd49764b5f203514845b50ebdbcc`
-- Created: `2019-06-19T02:34:33.761605516Z`
-- Virtual Size: ~ 236.18 Mb  
+- Image ID: `sha256:3365cee94448f70d600488e08dae2c59c2bb7835f0e8c979eef4091be8e48cf7`
+- Created: `2019-07-23T16:35:06.966121804Z`
+- Virtual Size: ~ 236.19 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Command: `["/bin/bash"]`
@@ -159,11 +159,11 @@ $ apt-get source -qq --print-uris audit=1:2.8.3-1ubuntu3
 'http://archive.ubuntu.com/ubuntu/pool/main/a/audit/audit_2.8.3-1ubuntu3.debian.tar.xz' audit_2.8.3-1ubuntu3.debian.tar.xz 17700 SHA256:14f0df21c3eae3b94611d98b9bc1f5c0d9d7ea857ba3f0f00714a5916f18f47e
 ```
 
-### `dpkg` source package: `base-files=10.1ubuntu9`
+### `dpkg` source package: `base-files=10.1ubuntu9.1`
 
 Binary Packages:
 
-- `base-files=10.1ubuntu9`
+- `base-files=10.1ubuntu9.1`
 
 Licenses: (parsed from: `/usr/share/doc/base-files/copyright`)
 
@@ -172,9 +172,9 @@ Licenses: (parsed from: `/usr/share/doc/base-files/copyright`)
 Source:
 
 ```console
-$ apt-get source -qq --print-uris base-files=10.1ubuntu9
-'http://archive.ubuntu.com/ubuntu/pool/main/b/base-files/base-files_10.1ubuntu9.dsc' base-files_10.1ubuntu9.dsc 1612 SHA256:a2ec529b7b2b6444df50e4c21ae2851e0570d346b18e003a90a5f3e041849c33
-'http://archive.ubuntu.com/ubuntu/pool/main/b/base-files/base-files_10.1ubuntu9.tar.xz' base-files_10.1ubuntu9.tar.xz 78184 SHA256:5511062d5ec610911b90cd7d33c3c16a7fd0c8f979bd54229e201a241906c9ed
+$ apt-get source -qq --print-uris base-files=10.1ubuntu9.1
+'http://archive.ubuntu.com/ubuntu/pool/main/b/base-files/base-files_10.1ubuntu9.1.dsc' base-files_10.1ubuntu9.1.dsc 1620 SHA256:918f1a1ed108c041b75be6cf3421c103aa97a63a8bab2ff038dfcb4462dd244c
+'http://archive.ubuntu.com/ubuntu/pool/main/b/base-files/base-files_10.1ubuntu9.1.tar.xz' base-files_10.1ubuntu9.1.tar.xz 78240 SHA256:6dc17e7e15bf05a6737dc98069ca70849a36d6e4a40f876899e4d3215fe452bd
 ```
 
 ### `dpkg` source package: `base-passwd=3.5.46`
@@ -215,12 +215,12 @@ $ apt-get source -qq --print-uris bash=5.0-3ubuntu1.1
 'http://archive.ubuntu.com/ubuntu/pool/main/b/bash/bash_5.0-3ubuntu1.1.debian.tar.xz' bash_5.0-3ubuntu1.1.debian.tar.xz 67128 SHA256:759a70aef6040ad13a0cb7c2a7422828d5890192ee317c331cca11a785d0e27c
 ```
 
-### `dpkg` source package: `bzip2=1.0.6-9`
+### `dpkg` source package: `bzip2=1.0.6-9ubuntu0.19.04.1`
 
 Binary Packages:
 
-- `bzip2=1.0.6-9`
-- `libbz2-1.0:amd64=1.0.6-9`
+- `bzip2=1.0.6-9ubuntu0.19.04.1`
+- `libbz2-1.0:amd64=1.0.6-9ubuntu0.19.04.1`
 
 Licenses: (parsed from: `/usr/share/doc/bzip2/copyright`, `/usr/share/doc/libbz2-1.0/copyright`)
 
@@ -230,10 +230,10 @@ Licenses: (parsed from: `/usr/share/doc/bzip2/copyright`, `/usr/share/doc/libbz2
 Source:
 
 ```console
-$ apt-get source -qq --print-uris bzip2=1.0.6-9
-'http://archive.ubuntu.com/ubuntu/pool/main/b/bzip2/bzip2_1.0.6-9.dsc' bzip2_1.0.6-9.dsc 2185 SHA256:f27d7febca8dbc1519bdacac3ee0b5a2d9cf9845e50dbb7b13c0e6daa17ab28e
+$ apt-get source -qq --print-uris bzip2=1.0.6-9ubuntu0.19.04.1
+'http://archive.ubuntu.com/ubuntu/pool/main/b/bzip2/bzip2_1.0.6-9ubuntu0.19.04.1.dsc' bzip2_1.0.6-9ubuntu0.19.04.1.dsc 2308 SHA256:4b6913d6347dc4c8e051e79c432b2f95c859c8a8754c7d522196a2397dc41f09
 'http://archive.ubuntu.com/ubuntu/pool/main/b/bzip2/bzip2_1.0.6.orig.tar.bz2' bzip2_1.0.6.orig.tar.bz2 708737 SHA256:d70a9ccd8bdf47e302d96c69fecd54925f45d9c7b966bb4ef5f56b770960afa7
-'http://archive.ubuntu.com/ubuntu/pool/main/b/bzip2/bzip2_1.0.6-9.debian.tar.bz2' bzip2_1.0.6-9.debian.tar.bz2 25873 SHA256:d1a91bf31bc60384f56fa2dd55cfdc07e27dbbbf295db2248b65afed0ca141a2
+'http://archive.ubuntu.com/ubuntu/pool/main/b/bzip2/bzip2_1.0.6-9ubuntu0.19.04.1.debian.tar.bz2' bzip2_1.0.6-9ubuntu0.19.04.1.debian.tar.bz2 27566 SHA256:3fb1b90b0a0aba0c89b073fc79f5d958e26eaf6a5be3a7fd78d5381dbc5ca110
 ```
 
 ### `dpkg` source package: `bzr=2.7.0+bzr6622-15`
@@ -521,11 +521,11 @@ $ apt-get source -qq --print-uris e2fsprogs=1.44.6-1
 'http://archive.ubuntu.com/ubuntu/pool/main/e/e2fsprogs/e2fsprogs_1.44.6-1.debian.tar.xz' e2fsprogs_1.44.6-1.debian.tar.xz 78276 SHA256:f69abc62472fba729d682e0fa3ceeaacb63aae912929fe4973eeb478edb1a212
 ```
 
-### `dpkg` source package: `expat=2.2.6-1`
+### `dpkg` source package: `expat=2.2.6-1ubuntu0.19.04`
 
 Binary Packages:
 
-- `libexpat1:amd64=2.2.6-1`
+- `libexpat1:amd64=2.2.6-1ubuntu0.19.04`
 
 Licenses: (parsed from: `/usr/share/doc/libexpat1/copyright`)
 
@@ -534,10 +534,10 @@ Licenses: (parsed from: `/usr/share/doc/libexpat1/copyright`)
 Source:
 
 ```console
-$ apt-get source -qq --print-uris expat=2.2.6-1
-'http://archive.ubuntu.com/ubuntu/pool/main/e/expat/expat_2.2.6-1.dsc' expat_2.2.6-1.dsc 1949 SHA256:e14d5e6658592b65821e52371f5036f6a2bdac525ea95014ac99183106917395
+$ apt-get source -qq --print-uris expat=2.2.6-1ubuntu0.19.04
+'http://archive.ubuntu.com/ubuntu/pool/main/e/expat/expat_2.2.6-1ubuntu0.19.04.dsc' expat_2.2.6-1ubuntu0.19.04.dsc 2064 SHA256:1e0a8705093c4a4273685ae26d4f869ca8f375451deab1f07fc12e5ed46b79ed
 'http://archive.ubuntu.com/ubuntu/pool/main/e/expat/expat_2.2.6.orig.tar.gz' expat_2.2.6.orig.tar.gz 8275473 SHA256:574499cba22a599393e28d99ecfa1e7fc85be7d6651d543045244d5b561cb7ff
-'http://archive.ubuntu.com/ubuntu/pool/main/e/expat/expat_2.2.6-1.debian.tar.xz' expat_2.2.6-1.debian.tar.xz 10688 SHA256:f0bc55f93042b6f517c39b2757021e8f505e19583b1a9d5f11b224825be62037
+'http://archive.ubuntu.com/ubuntu/pool/main/e/expat/expat_2.2.6-1ubuntu0.19.04.debian.tar.xz' expat_2.2.6-1ubuntu0.19.04.debian.tar.xz 11200 SHA256:167eef0af47e152b1311aa3cbf0b16b9342091aec5f712db0c4937babb6db1bd
 ```
 
 ### `dpkg` source package: `findutils=4.6.0+git+20190209-2`
@@ -2024,11 +2024,11 @@ $ apt-get source -qq --print-uris six=1.12.0-1
 'http://archive.ubuntu.com/ubuntu/pool/main/s/six/six_1.12.0-1.debian.tar.xz' six_1.12.0-1.debian.tar.xz 4092 SHA256:f749f1a5531970b517aa39eca2599623fab09703512df82ed1a58f4f92b73568
 ```
 
-### `dpkg` source package: `sqlite3=3.27.2-2`
+### `dpkg` source package: `sqlite3=3.27.2-2ubuntu0.1`
 
 Binary Packages:
 
-- `libsqlite3-0:amd64=3.27.2-2`
+- `libsqlite3-0:amd64=3.27.2-2ubuntu0.1`
 
 Licenses: (parsed from: `/usr/share/doc/libsqlite3-0/copyright`)
 
@@ -2039,11 +2039,11 @@ Licenses: (parsed from: `/usr/share/doc/libsqlite3-0/copyright`)
 Source:
 
 ```console
-$ apt-get source -qq --print-uris sqlite3=3.27.2-2
-'http://archive.ubuntu.com/ubuntu/pool/main/s/sqlite3/sqlite3_3.27.2-2.dsc' sqlite3_3.27.2-2.dsc 2398 SHA256:ee9a1932a6fda86403d7a67ed825036a37a79e16200eb7435e664c2325ae2435
+$ apt-get source -qq --print-uris sqlite3=3.27.2-2ubuntu0.1
+'http://archive.ubuntu.com/ubuntu/pool/main/s/sqlite3/sqlite3_3.27.2-2ubuntu0.1.dsc' sqlite3_3.27.2-2ubuntu0.1.dsc 2497 SHA256:a2e5488245d38809e8f650a8ef6b377401d0e610394c4fd62b26eff6bffa9cd9
 'http://archive.ubuntu.com/ubuntu/pool/main/s/sqlite3/sqlite3_3.27.2.orig-www.tar.xz' sqlite3_3.27.2.orig-www.tar.xz 5602752 SHA256:b50bea0e1974b33bcb2cec4c29fcdeecd8f960020ce0310b15fb123938844bee
 'http://archive.ubuntu.com/ubuntu/pool/main/s/sqlite3/sqlite3_3.27.2.orig.tar.xz' sqlite3_3.27.2.orig.tar.xz 6844832 SHA256:6cb1606bbc38270739d256b5ab1cf94dccf5b2a3b4cbceb0545aac76f6ef40f2
-'http://archive.ubuntu.com/ubuntu/pool/main/s/sqlite3/sqlite3_3.27.2-2.debian.tar.xz' sqlite3_3.27.2-2.debian.tar.xz 23192 SHA256:547a96eaf1609460f25a163fdb1724320586a2a1ce5df2abae846ba59dea8b0f
+'http://archive.ubuntu.com/ubuntu/pool/main/s/sqlite3/sqlite3_3.27.2-2ubuntu0.1.debian.tar.xz' sqlite3_3.27.2-2ubuntu0.1.debian.tar.xz 24288 SHA256:a668fc9180944762055607eb042d4b3b4ed2ec162079d58a88929e775d5c4405
 ```
 
 ### `dpkg` source package: `subversion=1.10.0-2ubuntu3`
@@ -2069,12 +2069,12 @@ $ apt-get source -qq --print-uris subversion=1.10.0-2ubuntu3
 'http://archive.ubuntu.com/ubuntu/pool/universe/s/subversion/subversion_1.10.0-2ubuntu3.debian.tar.xz' subversion_1.10.0-2ubuntu3.debian.tar.xz 2407216 SHA256:6ea12d08a1903039e7c58fea862a25352f25da29a6980046f1effbde8ec2c775
 ```
 
-### `dpkg` source package: `systemd=240-6ubuntu5.1`
+### `dpkg` source package: `systemd=240-6ubuntu5.2`
 
 Binary Packages:
 
-- `libsystemd0:amd64=240-6ubuntu5.1`
-- `libudev1:amd64=240-6ubuntu5.1`
+- `libsystemd0:amd64=240-6ubuntu5.2`
+- `libudev1:amd64=240-6ubuntu5.2`
 
 Licenses: (parsed from: `/usr/share/doc/libsystemd0/copyright`, `/usr/share/doc/libudev1/copyright`)
 
@@ -2086,9 +2086,14 @@ Licenses: (parsed from: `/usr/share/doc/libsystemd0/copyright`, `/usr/share/doc/
 - `LGPL-2.1+`
 - `public-domain`
 
-**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
-This is *usually* due to a new package version being released and the old version being removed.
+Source:
 
+```console
+$ apt-get source -qq --print-uris systemd=240-6ubuntu5.2
+'http://archive.ubuntu.com/ubuntu/pool/main/s/systemd/systemd_240-6ubuntu5.2.dsc' systemd_240-6ubuntu5.2.dsc 5079 SHA256:692b66ecf54a65b784970e9c30d68f38b47d1b07333b86c9c766e84f2b1f4213
+'http://archive.ubuntu.com/ubuntu/pool/main/s/systemd/systemd_240.orig.tar.gz' systemd_240.orig.tar.gz 7582001 SHA256:8f15aec1ac926e13a21a04d0ca3fe371f7004951448142a6f8952075c5b5f0b5
+'http://archive.ubuntu.com/ubuntu/pool/main/s/systemd/systemd_240-6ubuntu5.2.debian.tar.xz' systemd_240-6ubuntu5.2.debian.tar.xz 225588 SHA256:0178cd2ed2fae2b50db35978644feebb10ced698e51503657b35cb8e90dbb011
+```
 
 ### `dpkg` source package: `sysvinit=2.88dsf-59.10ubuntu2`
 
