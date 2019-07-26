@@ -2,8 +2,8 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:6f73120de66c958c6bcd1ee745d25f5a509d1ad09edf62fecd94f91777756726`
-- Created: `2019-06-18T22:52:11.918095495Z`
+- Image ID: `sha256:9dc19675e3276d9c028f64ba9a3fbb41e72c779faf8a35603f597310077ffd08`
+- Created: `2019-07-23T15:21:33.295626375Z`
 - Virtual Size: ~ 67.30 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
@@ -113,11 +113,11 @@ $ apt-get source -qq --print-uris audit=1:2.8.3-1ubuntu2
 'http://archive.ubuntu.com/ubuntu/pool/main/a/audit/audit_2.8.3-1ubuntu2.debian.tar.xz' audit_2.8.3-1ubuntu2.debian.tar.xz 17648 SHA256:398df184816575746deac8b4edf352766b7e97c890c8fa276a3da2f2a9536243
 ```
 
-### `dpkg` source package: `base-files=10.1ubuntu7`
+### `dpkg` source package: `base-files=10.1ubuntu7.1`
 
 Binary Packages:
 
-- `base-files=10.1ubuntu7`
+- `base-files=10.1ubuntu7.1`
 
 Licenses: (parsed from: `/usr/share/doc/base-files/copyright`)
 
@@ -126,9 +126,9 @@ Licenses: (parsed from: `/usr/share/doc/base-files/copyright`)
 Source:
 
 ```console
-$ apt-get source -qq --print-uris base-files=10.1ubuntu7
-'http://archive.ubuntu.com/ubuntu/pool/main/b/base-files/base-files_10.1ubuntu7.dsc' base-files_10.1ubuntu7.dsc 1612 SHA256:b2573b615233de718257d5915828fa1255a84012746a12d65d638b2c214505ca
-'http://archive.ubuntu.com/ubuntu/pool/main/b/base-files/base-files_10.1ubuntu7.tar.xz' base-files_10.1ubuntu7.tar.xz 78180 SHA256:54a66be7dbe641c27d9c1815601dfa3c650db2c7550d8045ebbd30f264515dcf
+$ apt-get source -qq --print-uris base-files=10.1ubuntu7.1
+'http://archive.ubuntu.com/ubuntu/pool/main/b/base-files/base-files_10.1ubuntu7.1.dsc' base-files_10.1ubuntu7.1.dsc 1620 SHA256:4741070e7acef86934393623722810114d1e4b8c4e214409fbd68137bc53dbfd
+'http://archive.ubuntu.com/ubuntu/pool/main/b/base-files/base-files_10.1ubuntu7.1.tar.xz' base-files_10.1ubuntu7.1.tar.xz 78224 SHA256:310bafa193ccadaf72886c489753b913dd74e5c1723bc089470da96b26288c18
 ```
 
 ### `dpkg` source package: `base-passwd=3.5.45`
@@ -169,12 +169,12 @@ $ apt-get source -qq --print-uris bash=4.4.18-2ubuntu3
 'http://archive.ubuntu.com/ubuntu/pool/main/b/bash/bash_4.4.18-2ubuntu3.debian.tar.xz' bash_4.4.18-2ubuntu3.debian.tar.xz 64284 SHA256:a0fbb339eb2cb2ca80c0db60c4ccfd4edc7a4687cb62038e890846d798e02b0b
 ```
 
-### `dpkg` source package: `bzip2=1.0.6-9`
+### `dpkg` source package: `bzip2=1.0.6-9ubuntu0.18.10.1`
 
 Binary Packages:
 
-- `bzip2=1.0.6-9`
-- `libbz2-1.0:amd64=1.0.6-9`
+- `bzip2=1.0.6-9ubuntu0.18.10.1`
+- `libbz2-1.0:amd64=1.0.6-9ubuntu0.18.10.1`
 
 Licenses: (parsed from: `/usr/share/doc/bzip2/copyright`, `/usr/share/doc/libbz2-1.0/copyright`)
 
@@ -184,10 +184,10 @@ Licenses: (parsed from: `/usr/share/doc/bzip2/copyright`, `/usr/share/doc/libbz2
 Source:
 
 ```console
-$ apt-get source -qq --print-uris bzip2=1.0.6-9
-'http://archive.ubuntu.com/ubuntu/pool/main/b/bzip2/bzip2_1.0.6-9.dsc' bzip2_1.0.6-9.dsc 2185 SHA256:f27d7febca8dbc1519bdacac3ee0b5a2d9cf9845e50dbb7b13c0e6daa17ab28e
+$ apt-get source -qq --print-uris bzip2=1.0.6-9ubuntu0.18.10.1
+'http://archive.ubuntu.com/ubuntu/pool/main/b/bzip2/bzip2_1.0.6-9ubuntu0.18.10.1.dsc' bzip2_1.0.6-9ubuntu0.18.10.1.dsc 2308 SHA256:cbecc60be10ed3eea885c1d2f0bbb15cef887f4ab843280b7238c98de772fb25
 'http://archive.ubuntu.com/ubuntu/pool/main/b/bzip2/bzip2_1.0.6.orig.tar.bz2' bzip2_1.0.6.orig.tar.bz2 708737 SHA256:d70a9ccd8bdf47e302d96c69fecd54925f45d9c7b966bb4ef5f56b770960afa7
-'http://archive.ubuntu.com/ubuntu/pool/main/b/bzip2/bzip2_1.0.6-9.debian.tar.bz2' bzip2_1.0.6-9.debian.tar.bz2 25873 SHA256:d1a91bf31bc60384f56fa2dd55cfdc07e27dbbbf295db2248b65afed0ca141a2
+'http://archive.ubuntu.com/ubuntu/pool/main/b/bzip2/bzip2_1.0.6-9ubuntu0.18.10.1.debian.tar.bz2' bzip2_1.0.6-9ubuntu0.18.10.1.debian.tar.bz2 27568 SHA256:30ae4a7a275441b632aac47177794ad737c3a28722df77f4390e91008bb1b10d
 ```
 
 ### `dpkg` source package: `cdebconf=0.244ubuntu1`
