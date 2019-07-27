@@ -1399,20 +1399,13 @@ Licenses: (parsed from: `/usr/share/doc/libssh2-1/copyright`)
 
 - `BSD`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris libssh2=1.4.3-4.1+deb8u3
-'http://security.debian.org/debian-security/pool/updates/main/libs/libssh2/libssh2_1.4.3-4.1+deb8u3.dsc' libssh2_1.4.3-4.1+deb8u3.dsc 1928 SHA256:31de099ac637f875c752833d449f2df7f555025e5535dea8bf622a15c22831ef
-'http://security.debian.org/debian-security/pool/updates/main/libs/libssh2/libssh2_1.4.3.orig.tar.gz' libssh2_1.4.3.orig.tar.gz 685712 SHA256:eac6f85f9df9db2e6386906a6227eb2cd7b3245739561cad7d6dc1d5d021b96d
-'http://security.debian.org/debian-security/pool/updates/main/libs/libssh2/libssh2_1.4.3-4.1+deb8u3.debian.tar.xz' libssh2_1.4.3-4.1+deb8u3.debian.tar.xz 15632 SHA256:b25cc7bc596134042c4df08e2b9cc188d83ffb112e501f45571eca698766c730
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/libssh2/1.4.3-4.1+deb8u3/
 
-- https://sources.debian.net/src/libssh2/1.4.3-4.1+deb8u3/ (for browsing the source)
-- https://sources.debian.net/src/libssh2/1.4.3-4.1+deb8u3/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/libssh2/1.4.3-4.1+deb8u3/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `libtasn1-6=4.2-3+deb8u3`
 
