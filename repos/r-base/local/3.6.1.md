@@ -142,20 +142,13 @@ Licenses: (parsed from: `/usr/share/doc/libaudit-common/copyright`, `/usr/share/
 - `GPL-2`
 - `LGPL-2.1`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris audit=1:2.8.4-3
-'http://deb.debian.org/debian/pool/main/a/audit/audit_2.8.4-3.dsc' audit_2.8.4-3.dsc 2483 SHA256:101fd82f4c7af2f8753060b494ac46204b0eee1ffe5d1e113a493b99571af186
-'http://deb.debian.org/debian/pool/main/a/audit/audit_2.8.4.orig.tar.gz' audit_2.8.4.orig.tar.gz 1123889 SHA256:a410694d09fc5708d980a61a5abcb9633a591364f1ecc7e97ad5daef9c898c38
-'http://deb.debian.org/debian/pool/main/a/audit/audit_2.8.4-3.debian.tar.xz' audit_2.8.4-3.debian.tar.xz 16712 SHA256:2b4b16cf58c3a6180d380bd4ad1d30a38fa22826ca3c1233c5298138427e29d0
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/audit/1:2.8.4-3/
 
-- https://sources.debian.net/src/audit/1:2.8.4-3/ (for browsing the source)
-- https://sources.debian.net/src/audit/1:2.8.4-3/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/audit/1:2.8.4-3/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `base-files=10.3`
 
@@ -244,10 +237,16 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris binutils=2.32.51.20190707-1
-'http://http.debian.net/debian/pool/main/b/binutils/binutils_2.32.51.20190707-1.dsc' binutils_2.32.51.20190707-1.dsc 11233 SHA256:e3e32244bd8f0d773a9da2abf221a699265fe8ccd4aa4ee098b00d0499d0633f
-'http://http.debian.net/debian/pool/main/b/binutils/binutils_2.32.51.20190707.orig.tar.xz' binutils_2.32.51.20190707.orig.tar.xz 20875364 SHA256:5ada5a40178d6afeba1904e6cabaf4da2b67fb2b70dca1ef0d7fd8b3caa512cd
-'http://http.debian.net/debian/pool/main/b/binutils/binutils_2.32.51.20190707-1.debian.tar.xz' binutils_2.32.51.20190707-1.debian.tar.xz 87276 SHA256:cd15bd45c8f2857213762d811093add32c743d6185839cf2c1fc14a9391d7d1c
+'http://deb.debian.org/debian/pool/main/b/binutils/binutils_2.32.51.20190707-1.dsc' binutils_2.32.51.20190707-1.dsc 11233 SHA256:e3e32244bd8f0d773a9da2abf221a699265fe8ccd4aa4ee098b00d0499d0633f
+'http://deb.debian.org/debian/pool/main/b/binutils/binutils_2.32.51.20190707.orig.tar.xz' binutils_2.32.51.20190707.orig.tar.xz 20875364 SHA256:5ada5a40178d6afeba1904e6cabaf4da2b67fb2b70dca1ef0d7fd8b3caa512cd
+'http://deb.debian.org/debian/pool/main/b/binutils/binutils_2.32.51.20190707-1.debian.tar.xz' binutils_2.32.51.20190707-1.debian.tar.xz 87276 SHA256:cd15bd45c8f2857213762d811093add32c743d6185839cf2c1fc14a9391d7d1c
 ```
+
+Other potentially useful URLs:
+
+- https://sources.debian.net/src/binutils/2.32.51.20190707-1/ (for browsing the source)
+- https://sources.debian.net/src/binutils/2.32.51.20190707-1/debian/copyright/ (for direct copyright/license information)
+- http://snapshot.debian.org/package/binutils/2.32.51.20190707-1/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `boot=1.3-22-1`
 
@@ -520,6 +519,10 @@ Licenses: (parsed from: `/usr/share/doc/dash/copyright`)
 
 **WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
 This is *usually* due to a new package version being released and the old version being removed.
+
+The source package *may* still be available for download from:
+
+- http://snapshot.debian.org/package/dash/0.5.10.2-5/
 
 
 ### `dpkg` source package: `db5.3=5.3.28+dfsg1-0.5`
@@ -968,10 +971,16 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris gcc-8=8.3.0-18
-'http://http.debian.net/debian/pool/main/g/gcc-8/gcc-8_8.3.0-18.dsc' gcc-8_8.3.0-18.dsc 21596 SHA256:3f647f73d81dd01104ad91e52f92a400570acf9702f4365f03702fea60ad2d29
-'http://http.debian.net/debian/pool/main/g/gcc-8/gcc-8_8.3.0.orig.tar.gz' gcc-8_8.3.0.orig.tar.gz 87764363 SHA256:ee3fd608f66e5737f20cf71b176cfbf58f7c1d190ad6def33d57610cdae8eac2
-'http://http.debian.net/debian/pool/main/g/gcc-8/gcc-8_8.3.0-18.diff.gz' gcc-8_8.3.0-18.diff.gz 845909 SHA256:ff0b93d84443928972452a645b582c6c62dfabe964cc4b7bdbba9256d6646d49
+'http://deb.debian.org/debian/pool/main/g/gcc-8/gcc-8_8.3.0-18.dsc' gcc-8_8.3.0-18.dsc 21596 SHA256:3f647f73d81dd01104ad91e52f92a400570acf9702f4365f03702fea60ad2d29
+'http://deb.debian.org/debian/pool/main/g/gcc-8/gcc-8_8.3.0.orig.tar.gz' gcc-8_8.3.0.orig.tar.gz 87764363 SHA256:ee3fd608f66e5737f20cf71b176cfbf58f7c1d190ad6def33d57610cdae8eac2
+'http://deb.debian.org/debian/pool/main/g/gcc-8/gcc-8_8.3.0-18.diff.gz' gcc-8_8.3.0-18.diff.gz 845909 SHA256:ff0b93d84443928972452a645b582c6c62dfabe964cc4b7bdbba9256d6646d49
 ```
+
+Other potentially useful URLs:
+
+- https://sources.debian.net/src/gcc-8/8.3.0-18/ (for browsing the source)
+- https://sources.debian.net/src/gcc-8/8.3.0-18/debian/copyright/ (for direct copyright/license information)
+- http://snapshot.debian.org/package/gcc-8/8.3.0-18/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `gcc-9=9.1.0-8`
 
@@ -1004,10 +1013,16 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris gcc-9=9.1.0-8
-'http://http.debian.net/debian/pool/main/g/gcc-9/gcc-9_9.1.0-8.dsc' gcc-9_9.1.0-8.dsc 32552 SHA256:513a2be88f19a994391cd1b15374e6af0c02faae38a33d7d09c0786c2f2c4f43
-'http://http.debian.net/debian/pool/main/g/gcc-9/gcc-9_9.1.0.orig.tar.gz' gcc-9_9.1.0.orig.tar.gz 90921700 SHA256:da8f587ad8b22957779fcfee8d8ad7322ddb4ba3677f53954146910a5e4a8a35
-'http://http.debian.net/debian/pool/main/g/gcc-9/gcc-9_9.1.0-8.diff.gz' gcc-9_9.1.0-8.diff.gz 5037880 SHA256:a04be88d774065a80af13e99a5b7e8ef5ec9dfced39cb787648ff8c46f248f70
+'http://deb.debian.org/debian/pool/main/g/gcc-9/gcc-9_9.1.0-8.dsc' gcc-9_9.1.0-8.dsc 32552 SHA256:513a2be88f19a994391cd1b15374e6af0c02faae38a33d7d09c0786c2f2c4f43
+'http://deb.debian.org/debian/pool/main/g/gcc-9/gcc-9_9.1.0.orig.tar.gz' gcc-9_9.1.0.orig.tar.gz 90921700 SHA256:da8f587ad8b22957779fcfee8d8ad7322ddb4ba3677f53954146910a5e4a8a35
+'http://deb.debian.org/debian/pool/main/g/gcc-9/gcc-9_9.1.0-8.diff.gz' gcc-9_9.1.0-8.diff.gz 5037880 SHA256:a04be88d774065a80af13e99a5b7e8ef5ec9dfced39cb787648ff8c46f248f70
 ```
+
+Other potentially useful URLs:
+
+- https://sources.debian.net/src/gcc-9/9.1.0-8/ (for browsing the source)
+- https://sources.debian.net/src/gcc-9/9.1.0-8/debian/copyright/ (for direct copyright/license information)
+- http://snapshot.debian.org/package/gcc-9/9.1.0-8/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `gcc-defaults=1.181`
 
@@ -1921,20 +1936,13 @@ Licenses: (parsed from: `/usr/share/doc/libidn2-0/copyright`)
 - `LGPL-3+`
 - `Unicode`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris libidn2=2.0.5-1
-'http://deb.debian.org/debian/pool/main/libi/libidn2/libidn2_2.0.5-1.dsc' libidn2_2.0.5-1.dsc 2444 SHA256:e35fbdf3b14d0a46e62ebde16345d6e70700972791cfc59df5d9d9b7088f7284
-'http://deb.debian.org/debian/pool/main/libi/libidn2/libidn2_2.0.5.orig.tar.gz' libidn2_2.0.5.orig.tar.gz 2091929 SHA256:53f69170886f1fa6fa5b332439c7a77a7d22626a82ef17e2c1224858bb4ca2b8
-'http://deb.debian.org/debian/pool/main/libi/libidn2/libidn2_2.0.5-1.debian.tar.xz' libidn2_2.0.5-1.debian.tar.xz 10285396 SHA256:e86f9ef6dfa45a35008851a688e020cbe0a2772437cdaa6381ed2704bf1e774d
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/libidn2/2.0.5-1/
 
-- https://sources.debian.net/src/libidn2/2.0.5-1/ (for browsing the source)
-- https://sources.debian.net/src/libidn2/2.0.5-1/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/libidn2/2.0.5-1/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `libjpeg-turbo=1:1.5.2-2`
 
@@ -3272,14 +3280,13 @@ Licenses: (parsed from: `/usr/share/doc/r-base/copyright`, `/usr/share/doc/r-bas
 - `LGPL-2.1`
 - `LGPL-3`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris r-base=3.6.1-2
-'http://http.debian.net/debian/pool/main/r/r-base/r-base_3.6.1-2.dsc' r-base_3.6.1-2.dsc 3022 SHA256:78b4ad4cda31f51efd984f5519ed9834a32a7988e25c553dc991fa09619cebde
-'http://http.debian.net/debian/pool/main/r/r-base/r-base_3.6.1.orig.tar.gz' r-base_3.6.1.orig.tar.gz 30463021 SHA256:5baa9ebd3e71acecdcc3da31d9042fb174d55a42829f8315f2457080978b1389
-'http://http.debian.net/debian/pool/main/r/r-base/r-base_3.6.1-2.debian.tar.xz' r-base_3.6.1-2.debian.tar.xz 95596 SHA256:0554c8cf10ff76e046b9e13a31d08f5a2defd2ce8c96f208b08494425a64abde
-```
+The source package *may* still be available for download from:
+
+- http://snapshot.debian.org/package/r-base/3.6.1-2/
+
 
 ### `dpkg` source package: `r-cran-class=7.3-15-1`
 
