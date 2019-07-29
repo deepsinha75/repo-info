@@ -5,15 +5,22 @@
 -	[`redmine:3`](#redmine3)
 -	[`redmine:3.4`](#redmine34)
 -	[`redmine:3.4.11`](#redmine3411)
+-	[`redmine:3.4.11-alpine`](#redmine3411-alpine)
 -	[`redmine:3.4.11-passenger`](#redmine3411-passenger)
+-	[`redmine:3.4-alpine`](#redmine34-alpine)
 -	[`redmine:3.4-passenger`](#redmine34-passenger)
+-	[`redmine:3-alpine`](#redmine3-alpine)
 -	[`redmine:3-passenger`](#redmine3-passenger)
 -	[`redmine:4`](#redmine4)
 -	[`redmine:4.0`](#redmine40)
 -	[`redmine:4.0.4`](#redmine404)
+-	[`redmine:4.0.4-alpine`](#redmine404-alpine)
 -	[`redmine:4.0.4-passenger`](#redmine404-passenger)
+-	[`redmine:4.0-alpine`](#redmine40-alpine)
 -	[`redmine:4.0-passenger`](#redmine40-passenger)
+-	[`redmine:4-alpine`](#redmine4-alpine)
 -	[`redmine:4-passenger`](#redmine4-passenger)
+-	[`redmine:alpine`](#redminealpine)
 -	[`redmine:latest`](#redminelatest)
 -	[`redmine:passenger`](#redminepassenger)
 
@@ -2816,6 +2823,10 @@ CMD ["rails" "server" "-b" "0.0.0.0"]
 		Size: 2.0 KB (1953 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
+## `redmine:3.4.11-alpine`
+
+**does not exist** (yet?)
+
 ## `redmine:3.4.11-passenger`
 
 ```console
@@ -2975,6 +2986,10 @@ CMD ["passenger" "start"]
 		Size: 4.9 MB (4895963 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
+## `redmine:3.4-alpine`
+
+**does not exist** (yet?)
+
 ## `redmine:3.4-passenger`
 
 ```console
@@ -3133,6 +3148,10 @@ CMD ["passenger" "start"]
 		Last Modified: Mon, 15 Jul 2019 23:41:36 GMT  
 		Size: 4.9 MB (4895963 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+
+## `redmine:3-alpine`
+
+**does not exist** (yet?)
 
 ## `redmine:3-passenger`
 
@@ -6050,6 +6069,10 @@ CMD ["rails" "server" "-b" "0.0.0.0"]
 		Size: 2.0 KB (1953 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
+## `redmine:4.0.4-alpine`
+
+**does not exist** (yet?)
+
 ## `redmine:4.0.4-passenger`
 
 ```console
@@ -6206,6 +6229,10 @@ CMD ["passenger" "start"]
 		Last Modified: Mon, 15 Jul 2019 23:41:06 GMT  
 		Size: 4.9 MB (4895945 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+
+## `redmine:4.0-alpine`
+
+**does not exist** (yet?)
 
 ## `redmine:4.0-passenger`
 
@@ -6364,6 +6391,10 @@ CMD ["passenger" "start"]
 		Size: 4.9 MB (4895945 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
+## `redmine:4-alpine`
+
+**does not exist** (yet?)
+
 ## `redmine:4-passenger`
 
 ```console
@@ -6520,6 +6551,10 @@ CMD ["passenger" "start"]
 		Last Modified: Mon, 15 Jul 2019 23:41:06 GMT  
 		Size: 4.9 MB (4895945 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+
+## `redmine:alpine`
+
+**does not exist** (yet?)
 
 ## `redmine:latest`
 
