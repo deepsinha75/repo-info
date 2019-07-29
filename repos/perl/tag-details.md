@@ -5,35 +5,97 @@
 -	[`perl:5`](#perl5)
 -	[`perl:5.26`](#perl526)
 -	[`perl:5.26.3`](#perl5263)
+-	[`perl:5.26.3-buster`](#perl5263-buster)
 -	[`perl:5.26.3-slim`](#perl5263-slim)
+-	[`perl:5.26.3-slim-buster`](#perl5263-slim-buster)
+-	[`perl:5.26.3-slim-stretch`](#perl5263-slim-stretch)
 -	[`perl:5.26.3-slim-threaded`](#perl5263-slim-threaded)
+-	[`perl:5.26.3-slim-threaded-buster`](#perl5263-slim-threaded-buster)
+-	[`perl:5.26.3-slim-threaded-stretch`](#perl5263-slim-threaded-stretch)
+-	[`perl:5.26.3-stretch`](#perl5263-stretch)
 -	[`perl:5.26.3-threaded`](#perl5263-threaded)
+-	[`perl:5.26.3-threaded-buster`](#perl5263-threaded-buster)
+-	[`perl:5.26.3-threaded-stretch`](#perl5263-threaded-stretch)
+-	[`perl:5.26-buster`](#perl526-buster)
 -	[`perl:5.26-slim`](#perl526-slim)
+-	[`perl:5.26-slim-buster`](#perl526-slim-buster)
+-	[`perl:5.26-slim-stretch`](#perl526-slim-stretch)
 -	[`perl:5.26-slim-threaded`](#perl526-slim-threaded)
+-	[`perl:5.26-slim-threaded-buster`](#perl526-slim-threaded-buster)
+-	[`perl:5.26-slim-threaded-stretch`](#perl526-slim-threaded-stretch)
+-	[`perl:5.26-stretch`](#perl526-stretch)
 -	[`perl:5.26-threaded`](#perl526-threaded)
+-	[`perl:5.26-threaded-buster`](#perl526-threaded-buster)
+-	[`perl:5.26-threaded-stretch`](#perl526-threaded-stretch)
 -	[`perl:5.28`](#perl528)
 -	[`perl:5.28.2`](#perl5282)
+-	[`perl:5.28.2-buster`](#perl5282-buster)
 -	[`perl:5.28.2-slim`](#perl5282-slim)
+-	[`perl:5.28.2-slim-buster`](#perl5282-slim-buster)
+-	[`perl:5.28.2-slim-stretch`](#perl5282-slim-stretch)
 -	[`perl:5.28.2-slim-threaded`](#perl5282-slim-threaded)
+-	[`perl:5.28.2-slim-threaded-buster`](#perl5282-slim-threaded-buster)
+-	[`perl:5.28.2-slim-threaded-stretch`](#perl5282-slim-threaded-stretch)
+-	[`perl:5.28.2-stretch`](#perl5282-stretch)
 -	[`perl:5.28.2-threaded`](#perl5282-threaded)
+-	[`perl:5.28.2-threaded-buster`](#perl5282-threaded-buster)
+-	[`perl:5.28.2-threaded-stretch`](#perl5282-threaded-stretch)
+-	[`perl:5.28-buster`](#perl528-buster)
 -	[`perl:5.28-slim`](#perl528-slim)
+-	[`perl:5.28-slim-buster`](#perl528-slim-buster)
+-	[`perl:5.28-slim-stretch`](#perl528-slim-stretch)
 -	[`perl:5.28-slim-threaded`](#perl528-slim-threaded)
+-	[`perl:5.28-slim-threaded-buster`](#perl528-slim-threaded-buster)
+-	[`perl:5.28-slim-threaded-stretch`](#perl528-slim-threaded-stretch)
+-	[`perl:5.28-stretch`](#perl528-stretch)
 -	[`perl:5.28-threaded`](#perl528-threaded)
+-	[`perl:5.28-threaded-buster`](#perl528-threaded-buster)
+-	[`perl:5.28-threaded-stretch`](#perl528-threaded-stretch)
 -	[`perl:5.30`](#perl530)
 -	[`perl:5.30.0`](#perl5300)
+-	[`perl:5.30.0-buster`](#perl5300-buster)
 -	[`perl:5.30.0-slim`](#perl5300-slim)
+-	[`perl:5.30.0-slim-buster`](#perl5300-slim-buster)
+-	[`perl:5.30.0-slim-stretch`](#perl5300-slim-stretch)
 -	[`perl:5.30.0-slim-threaded`](#perl5300-slim-threaded)
+-	[`perl:5.30.0-slim-threaded-buster`](#perl5300-slim-threaded-buster)
+-	[`perl:5.30.0-slim-threaded-stretch`](#perl5300-slim-threaded-stretch)
+-	[`perl:5.30.0-stretch`](#perl5300-stretch)
 -	[`perl:5.30.0-threaded`](#perl5300-threaded)
+-	[`perl:5.30.0-threaded-buster`](#perl5300-threaded-buster)
+-	[`perl:5.30.0-threaded-stretch`](#perl5300-threaded-stretch)
+-	[`perl:5.30-buster`](#perl530-buster)
 -	[`perl:5.30-slim`](#perl530-slim)
+-	[`perl:5.30-slim-buster`](#perl530-slim-buster)
+-	[`perl:5.30-slim-stretch`](#perl530-slim-stretch)
 -	[`perl:5.30-slim-threaded`](#perl530-slim-threaded)
+-	[`perl:5.30-slim-threaded-buster`](#perl530-slim-threaded-buster)
+-	[`perl:5.30-slim-threaded-stretch`](#perl530-slim-threaded-stretch)
+-	[`perl:5.30-stretch`](#perl530-stretch)
 -	[`perl:5.30-threaded`](#perl530-threaded)
+-	[`perl:5.30-threaded-buster`](#perl530-threaded-buster)
+-	[`perl:5.30-threaded-stretch`](#perl530-threaded-stretch)
+-	[`perl:5-buster`](#perl5-buster)
 -	[`perl:5-slim`](#perl5-slim)
+-	[`perl:5-slim-buster`](#perl5-slim-buster)
+-	[`perl:5-slim-stretch`](#perl5-slim-stretch)
 -	[`perl:5-slim-threaded`](#perl5-slim-threaded)
+-	[`perl:5-slim-threaded-buster`](#perl5-slim-threaded-buster)
+-	[`perl:5-slim-threaded-stretch`](#perl5-slim-threaded-stretch)
+-	[`perl:5-stretch`](#perl5-stretch)
 -	[`perl:5-threaded`](#perl5-threaded)
+-	[`perl:5-threaded-buster`](#perl5-threaded-buster)
+-	[`perl:5-threaded-stretch`](#perl5-threaded-stretch)
 -	[`perl:latest`](#perllatest)
 -	[`perl:slim`](#perlslim)
+-	[`perl:slim-buster`](#perlslim-buster)
+-	[`perl:slim-stretch`](#perlslim-stretch)
 -	[`perl:slim-threaded`](#perlslim-threaded)
+-	[`perl:slim-threaded-buster`](#perlslim-threaded-buster)
+-	[`perl:slim-threaded-stretch`](#perlslim-threaded-stretch)
 -	[`perl:threaded`](#perlthreaded)
+-	[`perl:threaded-buster`](#perlthreaded-buster)
+-	[`perl:threaded-stretch`](#perlthreaded-stretch)
 
 ## `perl:5`
 
@@ -1340,6 +1402,10 @@ CMD ["perl5.26.3" "-de0"]
 		Size: 13.6 MB (13556968 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
+## `perl:5.26.3-buster`
+
+**does not exist** (yet?)
+
 ## `perl:5.26.3-slim`
 
 ```console
@@ -1631,6 +1697,14 @@ CMD ["perl5.26.3" "-de0"]
 		Size: 14.1 MB (14071310 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
+## `perl:5.26.3-slim-buster`
+
+**does not exist** (yet?)
+
+## `perl:5.26.3-slim-stretch`
+
+**does not exist** (yet?)
+
 ## `perl:5.26.3-slim-threaded`
 
 ```console
@@ -1921,6 +1995,18 @@ CMD ["perl5.26.3" "-de0"]
 		Last Modified: Wed, 10 Jul 2019 00:25:35 GMT  
 		Size: 14.1 MB (14086250 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+
+## `perl:5.26.3-slim-threaded-buster`
+
+**does not exist** (yet?)
+
+## `perl:5.26.3-slim-threaded-stretch`
+
+**does not exist** (yet?)
+
+## `perl:5.26.3-stretch`
+
+**does not exist** (yet?)
 
 ## `perl:5.26.3-threaded`
 
@@ -2357,6 +2443,18 @@ CMD ["perl5.26.3" "-de0"]
 		Size: 13.6 MB (13565317 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
+## `perl:5.26.3-threaded-buster`
+
+**does not exist** (yet?)
+
+## `perl:5.26.3-threaded-stretch`
+
+**does not exist** (yet?)
+
+## `perl:5.26-buster`
+
+**does not exist** (yet?)
+
 ## `perl:5.26-slim`
 
 ```console
@@ -2648,6 +2746,14 @@ CMD ["perl5.26.3" "-de0"]
 		Size: 14.1 MB (14071310 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
+## `perl:5.26-slim-buster`
+
+**does not exist** (yet?)
+
+## `perl:5.26-slim-stretch`
+
+**does not exist** (yet?)
+
 ## `perl:5.26-slim-threaded`
 
 ```console
@@ -2938,6 +3044,18 @@ CMD ["perl5.26.3" "-de0"]
 		Last Modified: Wed, 10 Jul 2019 00:25:35 GMT  
 		Size: 14.1 MB (14086250 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+
+## `perl:5.26-slim-threaded-buster`
+
+**does not exist** (yet?)
+
+## `perl:5.26-slim-threaded-stretch`
+
+**does not exist** (yet?)
+
+## `perl:5.26-stretch`
+
+**does not exist** (yet?)
 
 ## `perl:5.26-threaded`
 
@@ -3373,6 +3491,14 @@ CMD ["perl5.26.3" "-de0"]
 		Last Modified: Wed, 10 Jul 2019 00:25:20 GMT  
 		Size: 13.6 MB (13565317 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+
+## `perl:5.26-threaded-buster`
+
+**does not exist** (yet?)
+
+## `perl:5.26-threaded-stretch`
+
+**does not exist** (yet?)
 
 ## `perl:5.28`
 
@@ -4244,6 +4370,10 @@ CMD ["perl5.28.2" "-de0"]
 		Size: 14.4 MB (14383927 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
+## `perl:5.28.2-buster`
+
+**does not exist** (yet?)
+
 ## `perl:5.28.2-slim`
 
 ```console
@@ -4535,6 +4665,14 @@ CMD ["perl5.28.2" "-de0"]
 		Size: 14.9 MB (14897848 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
+## `perl:5.28.2-slim-buster`
+
+**does not exist** (yet?)
+
+## `perl:5.28.2-slim-stretch`
+
+**does not exist** (yet?)
+
 ## `perl:5.28.2-slim-threaded`
 
 ```console
@@ -4825,6 +4963,18 @@ CMD ["perl5.28.2" "-de0"]
 		Last Modified: Wed, 10 Jul 2019 00:24:50 GMT  
 		Size: 14.9 MB (14916397 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+
+## `perl:5.28.2-slim-threaded-buster`
+
+**does not exist** (yet?)
+
+## `perl:5.28.2-slim-threaded-stretch`
+
+**does not exist** (yet?)
+
+## `perl:5.28.2-stretch`
+
+**does not exist** (yet?)
 
 ## `perl:5.28.2-threaded`
 
@@ -5261,6 +5411,18 @@ CMD ["perl5.28.2" "-de0"]
 		Size: 14.4 MB (14390245 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
+## `perl:5.28.2-threaded-buster`
+
+**does not exist** (yet?)
+
+## `perl:5.28.2-threaded-stretch`
+
+**does not exist** (yet?)
+
+## `perl:5.28-buster`
+
+**does not exist** (yet?)
+
 ## `perl:5.28-slim`
 
 ```console
@@ -5552,6 +5714,14 @@ CMD ["perl5.28.2" "-de0"]
 		Size: 14.9 MB (14897848 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
+## `perl:5.28-slim-buster`
+
+**does not exist** (yet?)
+
+## `perl:5.28-slim-stretch`
+
+**does not exist** (yet?)
+
 ## `perl:5.28-slim-threaded`
 
 ```console
@@ -5842,6 +6012,18 @@ CMD ["perl5.28.2" "-de0"]
 		Last Modified: Wed, 10 Jul 2019 00:24:50 GMT  
 		Size: 14.9 MB (14916397 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+
+## `perl:5.28-slim-threaded-buster`
+
+**does not exist** (yet?)
+
+## `perl:5.28-slim-threaded-stretch`
+
+**does not exist** (yet?)
+
+## `perl:5.28-stretch`
+
+**does not exist** (yet?)
 
 ## `perl:5.28-threaded`
 
@@ -6277,6 +6459,14 @@ CMD ["perl5.28.2" "-de0"]
 		Last Modified: Wed, 10 Jul 2019 00:24:39 GMT  
 		Size: 14.4 MB (14390245 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+
+## `perl:5.28-threaded-buster`
+
+**does not exist** (yet?)
+
+## `perl:5.28-threaded-stretch`
+
+**does not exist** (yet?)
 
 ## `perl:5.30`
 
@@ -7148,6 +7338,10 @@ CMD ["perl5.30.0" "-de0"]
 		Size: 14.3 MB (14290013 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
+## `perl:5.30.0-buster`
+
+**does not exist** (yet?)
+
 ## `perl:5.30.0-slim`
 
 ```console
@@ -7439,6 +7633,14 @@ CMD ["perl5.30.0" "-de0"]
 		Size: 14.8 MB (14793467 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
+## `perl:5.30.0-slim-buster`
+
+**does not exist** (yet?)
+
+## `perl:5.30.0-slim-stretch`
+
+**does not exist** (yet?)
+
 ## `perl:5.30.0-slim-threaded`
 
 ```console
@@ -7729,6 +7931,18 @@ CMD ["perl5.30.0" "-de0"]
 		Last Modified: Wed, 10 Jul 2019 00:24:01 GMT  
 		Size: 14.8 MB (14822508 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+
+## `perl:5.30.0-slim-threaded-buster`
+
+**does not exist** (yet?)
+
+## `perl:5.30.0-slim-threaded-stretch`
+
+**does not exist** (yet?)
+
+## `perl:5.30.0-stretch`
+
+**does not exist** (yet?)
 
 ## `perl:5.30.0-threaded`
 
@@ -8165,6 +8379,18 @@ CMD ["perl5.30.0" "-de0"]
 		Size: 14.3 MB (14295255 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
+## `perl:5.30.0-threaded-buster`
+
+**does not exist** (yet?)
+
+## `perl:5.30.0-threaded-stretch`
+
+**does not exist** (yet?)
+
+## `perl:5.30-buster`
+
+**does not exist** (yet?)
+
 ## `perl:5.30-slim`
 
 ```console
@@ -8456,6 +8682,14 @@ CMD ["perl5.30.0" "-de0"]
 		Size: 14.8 MB (14793467 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
+## `perl:5.30-slim-buster`
+
+**does not exist** (yet?)
+
+## `perl:5.30-slim-stretch`
+
+**does not exist** (yet?)
+
 ## `perl:5.30-slim-threaded`
 
 ```console
@@ -8746,6 +8980,18 @@ CMD ["perl5.30.0" "-de0"]
 		Last Modified: Wed, 10 Jul 2019 00:24:01 GMT  
 		Size: 14.8 MB (14822508 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+
+## `perl:5.30-slim-threaded-buster`
+
+**does not exist** (yet?)
+
+## `perl:5.30-slim-threaded-stretch`
+
+**does not exist** (yet?)
+
+## `perl:5.30-stretch`
+
+**does not exist** (yet?)
 
 ## `perl:5.30-threaded`
 
@@ -9182,6 +9428,18 @@ CMD ["perl5.30.0" "-de0"]
 		Size: 14.3 MB (14295255 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
+## `perl:5.30-threaded-buster`
+
+**does not exist** (yet?)
+
+## `perl:5.30-threaded-stretch`
+
+**does not exist** (yet?)
+
+## `perl:5-buster`
+
+**does not exist** (yet?)
+
 ## `perl:5-slim`
 
 ```console
@@ -9473,6 +9731,14 @@ CMD ["perl5.30.0" "-de0"]
 		Size: 14.8 MB (14793467 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
+## `perl:5-slim-buster`
+
+**does not exist** (yet?)
+
+## `perl:5-slim-stretch`
+
+**does not exist** (yet?)
+
 ## `perl:5-slim-threaded`
 
 ```console
@@ -9763,6 +10029,18 @@ CMD ["perl5.30.0" "-de0"]
 		Last Modified: Wed, 10 Jul 2019 00:24:01 GMT  
 		Size: 14.8 MB (14822508 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+
+## `perl:5-slim-threaded-buster`
+
+**does not exist** (yet?)
+
+## `perl:5-slim-threaded-stretch`
+
+**does not exist** (yet?)
+
+## `perl:5-stretch`
+
+**does not exist** (yet?)
 
 ## `perl:5-threaded`
 
@@ -10198,6 +10476,14 @@ CMD ["perl5.30.0" "-de0"]
 		Last Modified: Wed, 10 Jul 2019 00:23:49 GMT  
 		Size: 14.3 MB (14295255 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+
+## `perl:5-threaded-buster`
+
+**does not exist** (yet?)
+
+## `perl:5-threaded-stretch`
+
+**does not exist** (yet?)
 
 ## `perl:latest`
 
@@ -10925,6 +11211,14 @@ CMD ["perl5.30.0" "-de0"]
 		Size: 14.8 MB (14793467 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
+## `perl:slim-buster`
+
+**does not exist** (yet?)
+
+## `perl:slim-stretch`
+
+**does not exist** (yet?)
+
 ## `perl:slim-threaded`
 
 ```console
@@ -11215,6 +11509,14 @@ CMD ["perl5.30.0" "-de0"]
 		Last Modified: Wed, 10 Jul 2019 00:24:01 GMT  
 		Size: 14.8 MB (14822508 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+
+## `perl:slim-threaded-buster`
+
+**does not exist** (yet?)
+
+## `perl:slim-threaded-stretch`
+
+**does not exist** (yet?)
 
 ## `perl:threaded`
 
@@ -11650,3 +11952,11 @@ CMD ["perl5.30.0" "-de0"]
 		Last Modified: Wed, 10 Jul 2019 00:23:49 GMT  
 		Size: 14.3 MB (14295255 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+
+## `perl:threaded-buster`
+
+**does not exist** (yet?)
+
+## `perl:threaded-stretch`
+
+**does not exist** (yet?)
