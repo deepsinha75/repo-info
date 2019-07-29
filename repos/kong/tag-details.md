@@ -17,6 +17,11 @@
 -	[`kong:1.2.1-alpine`](#kong121-alpine)
 -	[`kong:1.2.1-centos`](#kong121-centos)
 -	[`kong:1.2-centos`](#kong12-centos)
+-	[`kong:1.3.0rc1`](#kong130rc1)
+-	[`kong:1.3.0rc1-alpine`](#kong130rc1-alpine)
+-	[`kong:1.3.0rc1-centos`](#kong130rc1-centos)
+-	[`kong:1.3rc1`](#kong13rc1)
+-	[`kong:1.3rc1-centos`](#kong13rc1-centos)
 -	[`kong:latest`](#konglatest)
 
 ## `kong:1.0`
@@ -1035,6 +1040,51 @@ CMD ["kong" "docker-start"]
 		Last Modified: Fri, 28 Jun 2019 21:22:15 GMT  
 		Size: 595.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+
+## `kong:1.3.0rc1`
+
+```console
+$ docker pull kong@sha256:a8409dff6597f2ef5f7ecd3c672671bb2af9a390073efd74f95c54aa41cba22a
+```
+
+-	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
+-	Platforms:
+
+## `kong:1.3.0rc1-alpine`
+
+```console
+$ docker pull kong@sha256:a8409dff6597f2ef5f7ecd3c672671bb2af9a390073efd74f95c54aa41cba22a
+```
+
+-	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
+-	Platforms:
+
+## `kong:1.3.0rc1-centos`
+
+```console
+$ docker pull kong@sha256:a8409dff6597f2ef5f7ecd3c672671bb2af9a390073efd74f95c54aa41cba22a
+```
+
+-	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
+-	Platforms:
+
+## `kong:1.3rc1`
+
+```console
+$ docker pull kong@sha256:a8409dff6597f2ef5f7ecd3c672671bb2af9a390073efd74f95c54aa41cba22a
+```
+
+-	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
+-	Platforms:
+
+## `kong:1.3rc1-centos`
+
+```console
+$ docker pull kong@sha256:a8409dff6597f2ef5f7ecd3c672671bb2af9a390073efd74f95c54aa41cba22a
+```
+
+-	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
+-	Platforms:
 
 ## `kong:latest`
 
