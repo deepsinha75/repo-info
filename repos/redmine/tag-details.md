@@ -2825,7 +2825,12 @@ CMD ["rails" "server" "-b" "0.0.0.0"]
 
 ## `redmine:3.4.11-alpine`
 
-**does not exist** (yet?)
+```console
+$ docker pull redmine@sha256:a8409dff6597f2ef5f7ecd3c672671bb2af9a390073efd74f95c54aa41cba22a
+```
+
+-	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
+-	Platforms:
 
 ## `redmine:3.4.11-passenger`
 
@@ -2988,7 +2993,12 @@ CMD ["passenger" "start"]
 
 ## `redmine:3.4-alpine`
 
-**does not exist** (yet?)
+```console
+$ docker pull redmine@sha256:a8409dff6597f2ef5f7ecd3c672671bb2af9a390073efd74f95c54aa41cba22a
+```
+
+-	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
+-	Platforms:
 
 ## `redmine:3.4-passenger`
 
@@ -3151,7 +3161,12 @@ CMD ["passenger" "start"]
 
 ## `redmine:3-alpine`
 
-**does not exist** (yet?)
+```console
+$ docker pull redmine@sha256:a8409dff6597f2ef5f7ecd3c672671bb2af9a390073efd74f95c54aa41cba22a
+```
+
+-	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
+-	Platforms:
 
 ## `redmine:3-passenger`
 
@@ -6071,7 +6086,12 @@ CMD ["rails" "server" "-b" "0.0.0.0"]
 
 ## `redmine:4.0.4-alpine`
 
-**does not exist** (yet?)
+```console
+$ docker pull redmine@sha256:a8409dff6597f2ef5f7ecd3c672671bb2af9a390073efd74f95c54aa41cba22a
+```
+
+-	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
+-	Platforms:
 
 ## `redmine:4.0.4-passenger`
 
@@ -6232,7 +6252,12 @@ CMD ["passenger" "start"]
 
 ## `redmine:4.0-alpine`
 
-**does not exist** (yet?)
+```console
+$ docker pull redmine@sha256:a8409dff6597f2ef5f7ecd3c672671bb2af9a390073efd74f95c54aa41cba22a
+```
+
+-	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
+-	Platforms:
 
 ## `redmine:4.0-passenger`
 
@@ -6393,7 +6418,12 @@ CMD ["passenger" "start"]
 
 ## `redmine:4-alpine`
 
-**does not exist** (yet?)
+```console
+$ docker pull redmine@sha256:a8409dff6597f2ef5f7ecd3c672671bb2af9a390073efd74f95c54aa41cba22a
+```
+
+-	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
+-	Platforms:
 
 ## `redmine:4-passenger`
 
@@ -6554,7 +6584,12 @@ CMD ["passenger" "start"]
 
 ## `redmine:alpine`
 
-**does not exist** (yet?)
+```console
+$ docker pull redmine@sha256:a8409dff6597f2ef5f7ecd3c672671bb2af9a390073efd74f95c54aa41cba22a
+```
+
+-	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
+-	Platforms:
 
 ## `redmine:latest`
 
