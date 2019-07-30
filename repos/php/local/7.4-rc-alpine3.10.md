@@ -1,10 +1,10 @@
-# `php:7.4.0alpha3-cli-alpine3.10`
+# `php:7.4.0beta1-cli-alpine3.10`
 
 ## Docker Metadata
 
-- Image ID: `sha256:d23b943be986765c612260fac524515ecb03a200f94cb8b63d32e47ff4845f2f`
-- Created: `2019-07-12T21:58:28.059830716Z`
-- Virtual Size: ~ 83.36 Mb  
+- Image ID: `sha256:0fb59c8dc061f485302b9ec77c789a72a4189a1774be3401ebf4796cf3d60145`
+- Created: `2019-07-27T01:50:30.808879833Z`
+- Virtual Size: ~ 83.35 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["docker-php-entrypoint"]`
@@ -17,10 +17,10 @@
   - `PHP_CPPFLAGS=-fstack-protector-strong -fpic -fpie -O2`
   - `PHP_LDFLAGS=-Wl,-O1 -Wl,--hash-style=both -pie`
   - `GPG_KEYS=42670A7FE4D0441C8E4632349E4FDC074A4EF02D 5A52880781F755608BF815FC910DEB46F53EA312`
-  - `PHP_VERSION=7.4.0alpha3`
-  - `PHP_URL=https://downloads.php.net/~derick/php-7.4.0alpha3.tar.xz`
-  - `PHP_ASC_URL=https://downloads.php.net/~derick/php-7.4.0alpha3.tar.xz.asc`
-  - `PHP_SHA256=03babbfc1ae5069e25fae8d91cd664d97108632fcdf877dfe142e606874247b8`
+  - `PHP_VERSION=7.4.0beta1`
+  - `PHP_URL=https://downloads.php.net/~derick/php-7.4.0beta1.tar.xz`
+  - `PHP_ASC_URL=https://downloads.php.net/~derick/php-7.4.0beta1.tar.xz.asc`
+  - `PHP_SHA256=399727399ac3c98c981e623ce2f4e55940ee1f99829cfcbca914d878a6910d30`
   - `PHP_MD5=`
 
 ## `apk` (`.apk`-based packages)
