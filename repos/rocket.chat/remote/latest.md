@@ -1,7 +1,7 @@
 ## `rocket.chat:latest`
 
 ```console
-$ docker pull rocket.chat@sha256:2294f7fe1dfb16d53f6daf3c5732335c6de4f49d3384893754db4fff646ddee9
+$ docker pull rocket.chat@sha256:8d769117d66182dd3d944884e1fd2d18a94d7d9f889b6a1c2414d869c5a8323c
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -11,14 +11,14 @@ $ docker pull rocket.chat@sha256:2294f7fe1dfb16d53f6daf3c5732335c6de4f49d3384893
 ### `rocket.chat:latest` - linux; amd64
 
 ```console
-$ docker pull rocket.chat@sha256:ac7c432d750678fc4155a2f3d02157b2d9406a3151b921e046a85dcbad90d760
+$ docker pull rocket.chat@sha256:4e45dcc60c4a387597837850e11573ea37cb9bbdb65e9c1625720d5f9f7bf187
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **196.4 MB (196382337 bytes)**  
+-	Total Size: **196.3 MB (196343843 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:81a472b2462a409cf998e80feac72232d97ef829f787ec54539099314b2b360f`
+-	Image ID: `sha256:9ec4274ca4540911717038c4afd06388e01c660e29f49eb91c30ee7d8f913961`
 -	Default Command: `["node","main.js"]`
 
 ```dockerfile
@@ -42,21 +42,21 @@ RUN groupadd -r rocketchat &&  useradd -r -g rocketchat rocketchat &&  mkdir -p 
 VOLUME [/app/uploads]
 # Tue, 09 Jul 2019 22:03:31 GMT
 RUN gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys 0E163286C20D07B9787EBE9FD7F9D0414FD08104
-# Tue, 09 Jul 2019 22:03:31 GMT
-ENV RC_VERSION=1.2.1
-# Tue, 09 Jul 2019 22:03:31 GMT
+# Tue, 30 Jul 2019 00:56:56 GMT
+ENV RC_VERSION=1.2.3
+# Tue, 30 Jul 2019 00:56:56 GMT
 WORKDIR /app
-# Tue, 09 Jul 2019 22:05:09 GMT
+# Tue, 30 Jul 2019 00:57:41 GMT
 RUN curl -fSL "https://releases.rocket.chat/${RC_VERSION}/download" -o rocket.chat.tgz &&  curl -fSL "https://releases.rocket.chat/${RC_VERSION}/asc" -o rocket.chat.tgz.asc &&  gpg --batch --verify rocket.chat.tgz.asc rocket.chat.tgz &&  tar zxvf rocket.chat.tgz &&  rm rocket.chat.tgz rocket.chat.tgz.asc &&  cd bundle/programs/server &&  npm install &&  npm cache clear --force &&  chown -R rocketchat:rocketchat /app
-# Tue, 09 Jul 2019 22:05:13 GMT
+# Tue, 30 Jul 2019 00:57:45 GMT
 USER rocketchat
-# Tue, 09 Jul 2019 22:05:13 GMT
+# Tue, 30 Jul 2019 00:57:45 GMT
 WORKDIR /app/bundle
-# Tue, 09 Jul 2019 22:05:13 GMT
+# Tue, 30 Jul 2019 00:57:45 GMT
 ENV DEPLOY_METHOD=docker-official MONGO_URL=mongodb://db:27017/meteor HOME=/tmp PORT=3000 ROOT_URL=http://localhost:3000 Accounts_AvatarStorePath=/app/uploads
-# Tue, 09 Jul 2019 22:05:14 GMT
+# Tue, 30 Jul 2019 00:57:45 GMT
 EXPOSE 3000
-# Tue, 09 Jul 2019 22:05:14 GMT
+# Tue, 30 Jul 2019 00:57:45 GMT
 CMD ["node" "main.js"]
 ```
 
@@ -81,7 +81,7 @@ CMD ["node" "main.js"]
 		Last Modified: Tue, 09 Jul 2019 22:05:36 GMT  
 		Size: 8.1 KB (8121 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:5755cf39807b717968d3de11ce225b0539a64f89976c0fa6b02d43f717d9dda2`  
-		Last Modified: Tue, 09 Jul 2019 22:06:39 GMT  
-		Size: 143.0 MB (142959435 bytes)  
+	-	`sha256:18cb5a341d74c08ca9a44a246bb0c12b61016160b17811eb4341759f6235d593`  
+		Last Modified: Tue, 30 Jul 2019 00:58:36 GMT  
+		Size: 142.9 MB (142920941 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
