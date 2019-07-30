@@ -1,18 +1,18 @@
-# `bonita:7.9.0`
+# `bonita:7.9.1`
 
 ## Docker Metadata
 
-- Image ID: `sha256:e3241b24da9b571bee2c41d75c047167b2b968e60d1ea6254c7529998cfb5177`
-- Created: `2019-07-23T15:42:06.962865847Z`
-- Virtual Size: ~ 452.77 Mb  
+- Image ID: `sha256:46a4c3af0355d182b772dd0414a951379440ba1b0a50e906bb30649e936894c5`
+- Created: `2019-07-27T00:19:44.930870763Z`
+- Virtual Size: ~ 454.82 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Command: `["/opt/files/startup.sh"]`
 - Environment:
   - `PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
-  - `BONITA_VERSION=7.9.0`
-  - `BONITA_SHA256=1e2ca16722af086715841b747c738df383018dd29ceaeb5e230e1ee2b33446ee`
-  - `BONITA_URL=https://release.ow2.org/bonita/BonitaCommunity-7.9.0-tomcat.zip`
+  - `BONITA_VERSION=7.9.1`
+  - `BONITA_SHA256=4f580c050b1d18b9e2f172de0b6ad68d521417cff9853bf0ec7a7bcf849a7411`
+  - `BONITA_URL=https://release.ow2.org/bonita/BonitaCommunity-7.9.1-tomcat.zip`
 
 ## `dpkg` (`.deb`-based packages)
 
