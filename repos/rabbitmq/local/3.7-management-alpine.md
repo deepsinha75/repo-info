@@ -1,10 +1,10 @@
-# `rabbitmq:3.7.16-management-alpine`
+# `rabbitmq:3.7.17-management-alpine`
 
 ## Docker Metadata
 
-- Image ID: `sha256:5c8864b19ba26456bcf3b2250f016f958198733e239676bbae07a4a742b190a2`
-- Created: `2019-07-18T01:31:37.182879797Z`
-- Virtual Size: ~ 125.78 Mb  
+- Image ID: `sha256:ebe144a14ba9d904134fc24c561d65adce912e44eb82f3aa854f81638b6c690f`
+- Created: `2019-07-30T00:32:00.98777694Z`
+- Virtual Size: ~ 126.00 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["docker-entrypoint.sh"]`
@@ -17,7 +17,7 @@
   - `OTP_VERSION=22.0.7`
   - `OTP_SOURCE_SHA256=04c090b55ec4a01778e7e1a5b7fdf54012548ca72737965b7aa8c4d7878c92bc`
   - `RABBITMQ_DATA_DIR=/var/lib/rabbitmq`
-  - `RABBITMQ_VERSION=3.7.16`
+  - `RABBITMQ_VERSION=3.7.17`
   - `RABBITMQ_PGP_KEY_ID=0x0A9AF2115F4687BD29803A206B73A36E6026DFCA`
   - `RABBITMQ_HOME=/opt/rabbitmq`
   - `RABBITMQ_LOGS=-`
@@ -389,16 +389,16 @@ GPL-2.0 LGPL-2.1+
 ### `apk` package: `python2`
 
 ```console
-python2-2.7.15-r1 description:
+python2-2.7.15-r2 description:
 A high-level scripting language
 
-python2-2.7.15-r1 webpage:
+python2-2.7.15-r2 webpage:
 http://www.python.org
 
-python2-2.7.15-r1 installed size:
+python2-2.7.15-r2 installed size:
 39677952
 
-python2-2.7.15-r1 license:
+python2-2.7.15-r2 license:
 custom
 
 ```
@@ -440,16 +440,16 @@ GPL-2.0
 ### `apk` package: `sqlite-libs`
 
 ```console
-sqlite-libs-3.25.3-r0 description:
+sqlite-libs-3.25.3-r1 description:
 Sqlite3 library
 
-sqlite-libs-3.25.3-r0 webpage:
+sqlite-libs-3.25.3-r1 webpage:
 http://www.sqlite.org
 
-sqlite-libs-3.25.3-r0 installed size:
+sqlite-libs-3.25.3-r1 installed size:
 913408
 
-sqlite-libs-3.25.3-r0 license:
+sqlite-libs-3.25.3-r1 license:
 Public-Domain
 
 ```
