@@ -2,9 +2,9 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:e1f4ea42d8409f519a84ced9137079891d0c32f156df6ff97d0f1d337e04ba14`
-- Created: `2019-07-24T22:53:06.178508796Z`
-- Virtual Size: ~ 510.24 Mb  
+- Image ID: `sha256:867f8eb0c396b1330c5db1c3d5cad3bb51170e2ea048abd700079bec14dd8039`
+- Created: `2019-07-30T01:49:44.589900142Z`
+- Virtual Size: ~ 510.25 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["tini","--","/docker-entrypoint.sh"]`
@@ -22,8 +22,8 @@
   - `LD_LIBRARY_PATH=/usr/local/tomcat/native-jni-lib`
   - `GPG_KEYS=05AB33110949707C93A279E3D3EFE6B686867BA6 07E48665A34DCAFAE522E5E6266191C37C037D42 47309207D818FFD8DCD3F83F1931D684307A10A5 541FBE7D8F78B25E055DDEE13C370389288584E7 61B832AC2F1C5A90F0F9B00A1C506407564C17A3 713DA88BE50911535FE716F5208B0AB1D63011C7 79F7026C690BAA50B92CD8B66A3AD3F4F22C4FED 9BA44C2621385CB966EBA586F72C284D731FABEE A27677289986DB50844682F8ACB77FC2E86E29AC A9C5DF4D22E99998D9875A5110C01C5A2F6059E7 DCFD35E0BF8CA7344752DE8B6FB21E8933C60243 F3A04C595DB5B6A5F1ECA43E3B7BBB100D811BBE F7DA48BB64BCB84ECBA7EE6935CD23C10D498E23`
   - `TOMCAT_MAJOR=7`
-  - `TOMCAT_VERSION=7.0.94`
-  - `TOMCAT_SHA512=b16f4b08591199e15f953c34965389a80d5597c28626a51c71ce42695ddd3359dc4df7f333ef0e1a1e8f9b2b6245041d57607c46764f33e560246c119cdc0f7a`
+  - `TOMCAT_VERSION=7.0.96`
+  - `TOMCAT_SHA512=a7ab7627ebafab8c5e5b1b09cff3a6e760f45dbc9b9ab235e14532357e47cf3bb6bbcfbdd92cd94561fe471296fd734d221ba8d59e1216a8369d2c39b1a80c98`
   - `SWT_GTK3=0`
   - `GOSU_VERSION=1.11`
   - `GOSU_GPG_KEYS=B42F6819007F00F88E364FD4036A9C25BF357DD4`
@@ -1291,14 +1291,9 @@ Binary Packages:
 If source is available (seen below), check the contents of `debian/copyright` within it.
 
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris openldap=2.4.45+dfsg-1ubuntu1.2
-'http://archive.ubuntu.com/ubuntu/pool/main/o/openldap/openldap_2.4.45+dfsg-1ubuntu1.2.dsc' openldap_2.4.45+dfsg-1ubuntu1.2.dsc 2805 SHA256:b72d45c12000d90eb234e3654dccfd8931d94b36994c92f73175307c7a663259
-'http://archive.ubuntu.com/ubuntu/pool/main/o/openldap/openldap_2.4.45+dfsg.orig.tar.gz' openldap_2.4.45+dfsg.orig.tar.gz 4846458 SHA256:d51c70423aa0554d454fd3d43e7f2e940523b4ef07979305b48c233ae44b2b32
-'http://archive.ubuntu.com/ubuntu/pool/main/o/openldap/openldap_2.4.45+dfsg-1ubuntu1.2.debian.tar.xz' openldap_2.4.45+dfsg-1ubuntu1.2.debian.tar.xz 175468 SHA256:4e404726ebaecede8e8963086f851f747cea13a5dbb6d9ef8b561e3a50906ff1
-```
 
 ### `dpkg` source package: `openssl=1.1.1-1ubuntu2.1~18.04.4`
 
