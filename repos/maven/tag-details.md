@@ -15,6 +15,7 @@
 -	[`maven:3.6.1-jdk-11-slim`](#maven361-jdk-11-slim)
 -	[`maven:3.6.1-jdk-12`](#maven361-jdk-12)
 -	[`maven:3.6.1-jdk-13`](#maven361-jdk-13)
+-	[`maven:3.6.1-jdk-14`](#maven361-jdk-14)
 -	[`maven:3.6.1-jdk-8`](#maven361-jdk-8)
 -	[`maven:3.6.1-jdk-8-slim`](#maven361-jdk-8-slim)
 -	[`maven:3.6.1-slim`](#maven361-slim)
@@ -28,6 +29,7 @@
 -	[`maven:3.6-jdk-11-slim`](#maven36-jdk-11-slim)
 -	[`maven:3.6-jdk-12`](#maven36-jdk-12)
 -	[`maven:3.6-jdk-13`](#maven36-jdk-13)
+-	[`maven:3.6-jdk-14`](#maven36-jdk-14)
 -	[`maven:3.6-jdk-8`](#maven36-jdk-8)
 -	[`maven:3.6-jdk-8-slim`](#maven36-jdk-8-slim)
 -	[`maven:3.6-slim`](#maven36-slim)
@@ -40,6 +42,7 @@
 -	[`maven:3-jdk-11-slim`](#maven3-jdk-11-slim)
 -	[`maven:3-jdk-12`](#maven3-jdk-12)
 -	[`maven:3-jdk-13`](#maven3-jdk-13)
+-	[`maven:3-jdk-14`](#maven3-jdk-14)
 -	[`maven:3-jdk-8`](#maven3-jdk-8)
 -	[`maven:3-jdk-8-slim`](#maven3-jdk-8-slim)
 -	[`maven:amazoncorretto`](#mavenamazoncorretto)
@@ -2616,6 +2619,10 @@ CMD ["mvn"]
 		Size: 360.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
+## `maven:3.6.1-jdk-14`
+
+**does not exist** (yet?)
+
 ## `maven:3.6.1-jdk-8`
 
 ```console
@@ -4922,6 +4929,10 @@ CMD ["mvn"]
 		Size: 360.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
+## `maven:3.6-jdk-14`
+
+**does not exist** (yet?)
+
 ## `maven:3.6-jdk-8`
 
 ```console
@@ -6820,6 +6831,10 @@ CMD ["mvn"]
 		Last Modified: Tue, 30 Jul 2019 01:12:47 GMT  
 		Size: 360.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+
+## `maven:3-jdk-14`
+
+**does not exist** (yet?)
 
 ## `maven:3-jdk-8`
 
