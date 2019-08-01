@@ -2,9 +2,9 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:f37cdded01155f646ff6018693068efe1fb155310f88d1eaee9272d19f16190d`
-- Created: `2019-07-23T20:03:35.922201501Z`
-- Virtual Size: ~ 849.63 Mb  
+- Image ID: `sha256:82d285d783b688bc81ebb2e93b9783ecba3cf7731a58591390b2c11e594777ab`
+- Created: `2019-07-30T01:21:44.702620025Z`
+- Virtual Size: ~ 850.16 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["/entrypoint.sh"]`
@@ -15,7 +15,9 @@
   - `PYTHONIOENCODING=UTF-8`
   - `GPG_KEY=C01E1CAD5EA2C4F0B8E3571504C367C218ADD4FF`
   - `PYTHON_VERSION=2.7.16`
-  - `PYTHON_PIP_VERSION=19.1.1`
+  - `PYTHON_PIP_VERSION=19.2.1`
+  - `PYTHON_GET_PIP_URL=https://github.com/pypa/get-pip/raw/404c9418e33c5031b1a9ab623168b3e8a2ed8c88/get-pip.py`
+  - `PYTHON_GET_PIP_SHA256=56bb63d3cf54e7444351256f72a60f575f6d8c7f1faacffae33167afc8e7609d`
   - `PIP_NO_CACHE_DIR=off`
   - `PIP_DISABLE_PIP_VERSION_CHECK=on`
   - `SENTRY_VERSION=9.1.2`
