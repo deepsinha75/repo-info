@@ -15,19 +15,25 @@
 -	[`docker:19.03`](#docker1903)
 -	[`docker:19.03.1`](#docker19031)
 -	[`docker:19.03.1-dind`](#docker19031-dind)
+-	[`docker:19.03.1-dind-rootless`](#docker19031-dind-rootless)
 -	[`docker:19.03.1-git`](#docker19031-git)
 -	[`docker:19.03-dind`](#docker1903-dind)
+-	[`docker:19.03-dind-rootless`](#docker1903-dind-rootless)
 -	[`docker:19.03-git`](#docker1903-git)
 -	[`docker:19-dind`](#docker19-dind)
+-	[`docker:19-dind-rootless`](#docker19-dind-rootless)
 -	[`docker:19-git`](#docker19-git)
 -	[`docker:dind`](#dockerdind)
+-	[`docker:dind-rootless`](#dockerdind-rootless)
 -	[`docker:git`](#dockergit)
 -	[`docker:latest`](#dockerlatest)
 -	[`docker:stable`](#dockerstable)
 -	[`docker:stable-dind`](#dockerstable-dind)
+-	[`docker:stable-dind-rootless`](#dockerstable-dind-rootless)
 -	[`docker:stable-git`](#dockerstable-git)
 -	[`docker:test`](#dockertest)
 -	[`docker:test-dind`](#dockertest-dind)
+-	[`docker:test-dind-rootless`](#dockertest-dind-rootless)
 -	[`docker:test-git`](#dockertest-git)
 
 ## `docker:18`
@@ -4299,6 +4305,10 @@ CMD []
 		Size: 1.7 KB (1659 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
+## `docker:19.03.1-dind-rootless`
+
+**does not exist** (yet?)
+
 ## `docker:19.03.1-git`
 
 ```console
@@ -5020,6 +5030,10 @@ CMD []
 		Last Modified: Mon, 29 Jul 2019 23:54:33 GMT  
 		Size: 1.7 KB (1659 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+
+## `docker:19.03-dind-rootless`
+
+**does not exist** (yet?)
 
 ## `docker:19.03-git`
 
@@ -5743,6 +5757,10 @@ CMD []
 		Size: 1.7 KB (1659 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
+## `docker:19-dind-rootless`
+
+**does not exist** (yet?)
+
 ## `docker:19-git`
 
 ```console
@@ -6464,6 +6482,10 @@ CMD []
 		Last Modified: Mon, 29 Jul 2019 23:54:33 GMT  
 		Size: 1.7 KB (1659 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+
+## `docker:dind-rootless`
+
+**does not exist** (yet?)
 
 ## `docker:git`
 
@@ -7749,6 +7771,10 @@ CMD []
 		Size: 1.7 KB (1659 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
+## `docker:stable-dind-rootless`
+
+**does not exist** (yet?)
+
 ## `docker:stable-git`
 
 ```console
@@ -8751,6 +8777,10 @@ CMD []
 		Last Modified: Mon, 29 Jul 2019 23:54:33 GMT  
 		Size: 1.7 KB (1659 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+
+## `docker:test-dind-rootless`
+
+**does not exist** (yet?)
 
 ## `docker:test-git`
 
