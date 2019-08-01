@@ -2078,14 +2078,9 @@ Binary Packages:
 If source is available (seen below), check the contents of `debian/copyright` within it.
 
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris openldap=2.4.42+dfsg-2ubuntu3.5
-'http://archive.ubuntu.com/ubuntu/pool/main/o/openldap/openldap_2.4.42+dfsg-2ubuntu3.5.dsc' openldap_2.4.42+dfsg-2ubuntu3.5.dsc 3054 SHA256:b81c8c0b6bc0587d8cbc8e6358f18d157e9c573ec255c90373a873b679d3ccde
-'http://archive.ubuntu.com/ubuntu/pool/main/o/openldap/openldap_2.4.42+dfsg.orig.tar.gz' openldap_2.4.42+dfsg.orig.tar.gz 4813173 SHA256:5f56e4e3584f7a4b4c8437a2c985b2f519836946be77ef1aa43a5d20c02ea97b
-'http://archive.ubuntu.com/ubuntu/pool/main/o/openldap/openldap_2.4.42+dfsg-2ubuntu3.5.debian.tar.xz' openldap_2.4.42+dfsg-2ubuntu3.5.debian.tar.xz 178024 SHA256:ab46b7537f188b408e0aa8ebc1446221f369df075f082f8f779059dd7181b2b7
-```
 
 ### `dpkg` source package: `openssh=1:7.2p2-4ubuntu2.8`
 
