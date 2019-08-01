@@ -2,9 +2,9 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:cf5ff1aafadaef95dc243a69228ab4cd2d060ef3345be3951bf8320e311e2377`
-- Created: `2019-07-24T21:48:15.646739951Z`
-- Virtual Size: ~ 492.16 Mb  
+- Image ID: `sha256:e82d6a4fc4712bb2692843fd06abe85ed91533dfd868d38a8d19f4363164a23b`
+- Created: `2019-07-30T01:39:57.822017945Z`
+- Virtual Size: ~ 492.38 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["/docker-entrypoint.sh"]`
@@ -14,7 +14,9 @@
   - `LANG=C.UTF-8`
   - `GPG_KEY=0D96DF4D4110E5C43FBFB17F2D347EA6AA65421D`
   - `PYTHON_VERSION=3.7.4`
-  - `PYTHON_PIP_VERSION=19.1.1`
+  - `PYTHON_PIP_VERSION=19.2.1`
+  - `PYTHON_GET_PIP_URL=https://github.com/pypa/get-pip/raw/404c9418e33c5031b1a9ab623168b3e8a2ed8c88/get-pip.py`
+  - `PYTHON_GET_PIP_SHA256=56bb63d3cf54e7444351256f72a60f575f6d8c7f1faacffae33167afc8e7609d`
   - `PIP=19.0.3`
   - `ZC_BUILDOUT=2.13.1`
   - `SETUPTOOLS=41.0.0`
@@ -359,16 +361,16 @@ MIT
 ### `apk` package: `libgcrypt`
 
 ```console
-libgcrypt-1.8.4-r0 description:
+libgcrypt-1.8.4-r1 description:
 general purpose crypto library based on the code used in GnuPG
 
-libgcrypt-1.8.4-r0 webpage:
+libgcrypt-1.8.4-r1 webpage:
 http://www.gnupg.org
 
-libgcrypt-1.8.4-r0 installed size:
-1146880
+libgcrypt-1.8.4-r1 installed size:
+1142784
 
-libgcrypt-1.8.4-r0 license:
+libgcrypt-1.8.4-r1 license:
 LGPL
 
 ```
