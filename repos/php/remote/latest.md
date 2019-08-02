@@ -1,7 +1,7 @@
 ## `php:latest`
 
 ```console
-$ docker pull php@sha256:303a43089fca516119431422f32afebf9b6e825f545d49df32f0bca4c9a0305d
+$ docker pull php@sha256:c9718660087eac55dc087dd8f0f16c9025156c17d4130f57eda0d41e3259ddda
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -16,14 +16,14 @@ $ docker pull php@sha256:303a43089fca516119431422f32afebf9b6e825f545d49df32f0bca
 ### `php:latest` - linux; amd64
 
 ```console
-$ docker pull php@sha256:2391f5c95a8ee15234adcca1a5f21a49d149d9b4f17bf7ecea599720a858d620
+$ docker pull php@sha256:e00e262c4936ded854031628b29834bf87c37fa4f1afc044665e73b6a0b019ce
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **145.9 MB (145873991 bytes)**  
+-	Total Size: **146.1 MB (146057677 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:56de6f63495657bcef6996794089b681c4564423d59b36af5ecd7194bb3be5be`
+-	Image ID: `sha256:c7ff0bf4f6fb139f7511980fe5ef18850700a35563e40fd3ff5ac9062353a65f`
 -	Entrypoint: `["docker-php-entrypoint"]`
 -	Default Command: `["php","-a"]`
 
@@ -50,27 +50,27 @@ ENV PHP_CPPFLAGS=-fstack-protector-strong -fpic -fpie -O2
 ENV PHP_LDFLAGS=-Wl,-O1 -Wl,--hash-style=both -pie
 # Fri, 12 Jul 2019 22:16:04 GMT
 ENV GPG_KEYS=CBAF69F173A0FEA4B537F470D66C9593118BCCB6 F38252826ACD957EF380D39F2F7956BC5DA04B5D
-# Fri, 12 Jul 2019 22:16:04 GMT
-ENV PHP_VERSION=7.3.7
-# Fri, 12 Jul 2019 22:16:04 GMT
-ENV PHP_URL=https://www.php.net/get/php-7.3.7.tar.xz/from/this/mirror PHP_ASC_URL=https://www.php.net/get/php-7.3.7.tar.xz.asc/from/this/mirror
-# Fri, 12 Jul 2019 22:16:04 GMT
-ENV PHP_SHA256=ba067200ba649956b3a92ec8b71a6ed8ce8a099921212443c1bcf3260a29274c PHP_MD5=
-# Fri, 12 Jul 2019 22:16:12 GMT
+# Fri, 02 Aug 2019 05:11:04 GMT
+ENV PHP_VERSION=7.3.8
+# Fri, 02 Aug 2019 05:11:04 GMT
+ENV PHP_URL=https://www.php.net/get/php-7.3.8.tar.xz/from/this/mirror PHP_ASC_URL=https://www.php.net/get/php-7.3.8.tar.xz.asc/from/this/mirror
+# Fri, 02 Aug 2019 05:11:05 GMT
+ENV PHP_SHA256=f6046b2ae625d8c04310bda0737ac660dc5563a8e04e8a46c1ee24ea414ad5a5 PHP_MD5=
+# Fri, 02 Aug 2019 05:11:13 GMT
 RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends gnupg dirmngr; 	rm -rf /var/lib/apt/lists/*; 		mkdir -p /usr/src; 	cd /usr/src; 		curl -fsSL -o php.tar.xz "$PHP_URL"; 		if [ -n "$PHP_SHA256" ]; then 		echo "$PHP_SHA256 *php.tar.xz" | sha256sum -c -; 	fi; 	if [ -n "$PHP_MD5" ]; then 		echo "$PHP_MD5 *php.tar.xz" | md5sum -c -; 	fi; 		if [ -n "$PHP_ASC_URL" ]; then 		curl -fsSL -o php.tar.xz.asc "$PHP_ASC_URL"; 		export GNUPGHOME="$(mktemp -d)"; 		for key in $GPG_KEYS; do 			gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys "$key"; 		done; 		gpg --batch --verify php.tar.xz.asc php.tar.xz; 		gpgconf --kill all; 		rm -rf "$GNUPGHOME"; 	fi; 		apt-mark auto '.*' > /dev/null; 	apt-mark manual $savedAptMark > /dev/null; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false
-# Fri, 12 Jul 2019 22:16:13 GMT
+# Fri, 02 Aug 2019 05:11:13 GMT
 COPY file:ce57c04b70896f77cc11eb2766417d8a1240fcffe5bba92179ec78c458844110 in /usr/local/bin/ 
-# Fri, 12 Jul 2019 22:28:17 GMT
+# Fri, 02 Aug 2019 05:17:47 GMT
 RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		libargon2-dev 		libcurl4-openssl-dev 		libedit-dev 		libsodium-dev 		libsqlite3-dev 		libssl-dev 		libxml2-dev 		zlib1g-dev 		${PHP_EXTRA_BUILD_DEPS:-} 	; 	rm -rf /var/lib/apt/lists/*; 		export 		CFLAGS="$PHP_CFLAGS" 		CPPFLAGS="$PHP_CPPFLAGS" 		LDFLAGS="$PHP_LDFLAGS" 	; 	docker-php-source extract; 	cd /usr/src/php; 	gnuArch="$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)"; 	debMultiarch="$(dpkg-architecture --query DEB_BUILD_MULTIARCH)"; 	if [ ! -d /usr/include/curl ]; then 		ln -sT "/usr/include/$debMultiarch/curl" /usr/local/include/curl; 	fi; 	./configure 		--build="$gnuArch" 		--with-config-file-path="$PHP_INI_DIR" 		--with-config-file-scan-dir="$PHP_INI_DIR/conf.d" 				--enable-option-checking=fatal 				--with-mhash 				--enable-ftp 		--enable-mbstring 		--enable-mysqlnd 		--with-password-argon2 		--with-sodium=shared 				--with-curl 		--with-libedit 		--with-openssl 		--with-zlib 				$(test "$gnuArch" = 's390x-linux-gnu' && echo '--without-pcre-jit') 		--with-libdir="lib/$debMultiarch" 				${PHP_EXTRA_CONFIGURE_ARGS:-} 	; 	make -j "$(nproc)"; 	find -type f -name '*.a' -delete; 	make install; 	find /usr/local/bin /usr/local/sbin -type f -executable -exec strip --strip-all '{}' + || true; 	make clean; 		cp -v php.ini-* "$PHP_INI_DIR/"; 		cd /; 	docker-php-source delete; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark; 	find /usr/local -type f -executable -exec ldd '{}' ';' 		| awk '/=>/ { print $(NF-1) }' 		| sort -u 		| xargs -r dpkg-query --search 		| cut -d: -f1 		| sort -u 		| xargs -r apt-mark manual 	; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 		pecl update-channels; 	rm -rf /tmp/pear ~/.pearrc; 	php --version
-# Fri, 12 Jul 2019 22:28:18 GMT
+# Fri, 02 Aug 2019 05:17:48 GMT
 COPY multi:287fef6856464a54cd9ef266c5fea3bd820d4cf2e2666723e9d9ddd1afc6db67 in /usr/local/bin/ 
-# Fri, 12 Jul 2019 22:28:19 GMT
+# Fri, 02 Aug 2019 05:17:49 GMT
 RUN docker-php-ext-enable sodium
-# Tue, 23 Jul 2019 00:20:38 GMT
+# Fri, 02 Aug 2019 05:17:50 GMT
 RUN { echo '#!/bin/sh'; echo 'exec pkg-config "$@" freetype2'; } > /usr/local/bin/freetype-config && chmod +x /usr/local/bin/freetype-config
-# Tue, 23 Jul 2019 00:20:38 GMT
+# Fri, 02 Aug 2019 05:17:50 GMT
 ENTRYPOINT ["docker-php-entrypoint"]
-# Tue, 23 Jul 2019 00:20:39 GMT
+# Fri, 02 Aug 2019 05:17:50 GMT
 CMD ["php" "-a"]
 ```
 
@@ -91,28 +91,28 @@ CMD ["php" "-a"]
 		Last Modified: Wed, 10 Jul 2019 02:31:22 GMT  
 		Size: 224.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:5cb0b722e1a23c7a609d32573c7ec55f275f9e1351916d3ffb2832dccff6c071`  
-		Last Modified: Sat, 13 Jul 2019 00:53:20 GMT  
-		Size: 12.3 MB (12314870 bytes)  
+	-	`sha256:49d55bc12e9f6b4af60cd37c23ba07ca934dbf5763d2ef0820d7a53aabdb97db`  
+		Last Modified: Fri, 02 Aug 2019 08:26:23 GMT  
+		Size: 12.4 MB (12386496 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:ec9226d7108898e9e1112275e784efa6836c967c0da20573f095e9d097933815`  
-		Last Modified: Sat, 13 Jul 2019 00:53:19 GMT  
-		Size: 493.0 B  
+	-	`sha256:1581395c7181b9412985f7fed1a07a46f9c154007a002a6549c65c1c7157f916`  
+		Last Modified: Fri, 02 Aug 2019 08:26:16 GMT  
+		Size: 495.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:6c92486d2a3c6e5a1f667eecf259737398a7c640b204b424f45923ce5dc279c8`  
-		Last Modified: Sat, 13 Jul 2019 00:53:25 GMT  
-		Size: 29.8 MB (29810277 bytes)  
+	-	`sha256:44240db7ddcd7431c279e5ca75273a56bd7a3f1c492e23d62037c259a732951b`  
+		Last Modified: Fri, 02 Aug 2019 08:26:22 GMT  
+		Size: 29.9 MB (29922339 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:de77daf947387c5769fec5ff3db46dedc779adfbd9b7afbad8047e9575b5a3c4`  
-		Last Modified: Sat, 13 Jul 2019 00:53:19 GMT  
-		Size: 2.2 KB (2210 bytes)  
+	-	`sha256:ec0b4f11b59f236642961f0a2b18182d85c6c84a57e396de217dc87fdc121f9f`  
+		Last Modified: Fri, 02 Aug 2019 08:26:16 GMT  
+		Size: 2.2 KB (2207 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:e304a57cec7f5a7a517eda19b1728522674f50915db481da569306cf50acf8cb`  
-		Last Modified: Sat, 13 Jul 2019 00:53:19 GMT  
-		Size: 248.0 B  
+	-	`sha256:0f68419097cd5f6d8e0051262c8812dd6330e976285b2f53450495de522bfab6`  
+		Last Modified: Fri, 02 Aug 2019 08:26:16 GMT  
+		Size: 247.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:b60489230e65e69944dd97437905a24e749fceb145a68266628455d06cf706c5`  
-		Last Modified: Tue, 23 Jul 2019 00:24:18 GMT  
+	-	`sha256:4f8ad4a0b1df59cb12e9e7538094e30a9c5e1bbb2b8947aad9326316fddfe0be`  
+		Last Modified: Fri, 02 Aug 2019 08:26:16 GMT  
 		Size: 213.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
