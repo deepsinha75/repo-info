@@ -1,7 +1,7 @@
 ## `bash:devel`
 
 ```console
-$ docker pull bash@sha256:157d4bb808d3cd76362101cef39d7ad0b506ab51a4673e15b4eccef3324db9ab
+$ docker pull bash@sha256:8f2f9dc31048f204167392b0db2769521093a336f224e6612d580b19afa36f8b
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -64,14 +64,14 @@ CMD ["bash"]
 ### `bash:devel` - linux; arm variant v6
 
 ```console
-$ docker pull bash@sha256:b4f9293b29e580550ba7aa84d7d4909ef11297a3955b190bbf6f944fcf692078
+$ docker pull bash@sha256:60ab08c82a34eb930af4aefee8ef1a55502dbf1cd758106791effcfba52c9c42
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **5.7 MB (5692013 bytes)**  
+-	Total Size: **5.7 MB (5692417 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:61988a9f5a8fc6b392255cb0599e0ac2777c13b42af593ff3bbac5d184bfa956`
+-	Image ID: `sha256:f543ab0ebb0c5a5cd43bbc3e9ca46420bdcd9375ba60c9d0b34a86b0538cead8`
 -	Entrypoint: `["docker-entrypoint.sh"]`
 -	Default Command: `["bash"]`
 
@@ -80,17 +80,17 @@ $ docker pull bash@sha256:b4f9293b29e580550ba7aa84d7d4909ef11297a3955b190bbf6f94
 ADD file:63399bc7f7f60b603f895c8f5a89b3baa9afca359025d78047117e3d741d9209 in / 
 # Thu, 11 Jul 2019 21:49:55 GMT
 CMD ["/bin/sh"]
-# Mon, 29 Jul 2019 23:49:27 GMT
-ENV _BASH_COMMIT=9a53e2aa75322ac40fb4211eb5a7ad7baf1f7c93
-# Mon, 29 Jul 2019 23:49:28 GMT
-ENV _BASH_COMMIT_DESC=commit bash-20190725 snapshot
-# Mon, 29 Jul 2019 23:50:36 GMT
+# Thu, 01 Aug 2019 23:49:18 GMT
+ENV _BASH_COMMIT=1679cff94f916917472abe3d3a42c0c52d87238b
+# Thu, 01 Aug 2019 23:49:19 GMT
+ENV _BASH_COMMIT_DESC=commit bash-20190731 snapshot
+# Thu, 01 Aug 2019 23:50:21 GMT
 RUN set -eux; 		apk add --no-cache --virtual .build-deps 		bison 		coreutils 		dpkg-dev dpkg 		gcc 		libc-dev 		make 		ncurses-dev 		tar 	; 		wget -O bash.tar.gz "https://git.savannah.gnu.org/cgit/bash.git/snapshot/bash-$_BASH_COMMIT.tar.gz"; 		mkdir -p /usr/src/bash; 	tar 		--extract 		--file=bash.tar.gz 		--strip-components=1 		--directory=/usr/src/bash 	; 	rm bash.tar.gz; 		if [ -d bash-patches ]; then 		for p in bash-patches/*; do 			patch 				--directory=/usr/src/bash 				--input="$(readlink -f "$p")" 				--strip=0 			; 			rm "$p"; 		done; 		rmdir bash-patches; 	fi; 		cd /usr/src/bash; 	gnuArch="$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)"; 	./configure 		--build="$gnuArch" 		--enable-readline 		--with-curses 		--without-bash-malloc 	|| { 		cat >&2 config.log; 		false; 	}; 	make -j "$(nproc)"; 	make install; 	cd /; 	rm -r /usr/src/bash; 		rm -r 		/usr/local/share/doc/bash/*.html 		/usr/local/share/info 		/usr/local/share/man 	; 		runDeps="$( 		scanelf --needed --nobanner --format '%n#p' --recursive /usr/local 			| tr ',' '\n' 			| sort -u 			| awk 'system("[ -e /usr/local/lib/" $1 " ]") == 0 { next } { print "so:" $1 }' 	)"; 	apk add --no-cache --virtual .bash-rundeps $runDeps; 	apk del .build-deps; 		[ "$(which bash)" = '/usr/local/bin/bash' ]; 	bash --version
-# Mon, 29 Jul 2019 23:50:36 GMT
+# Thu, 01 Aug 2019 23:50:22 GMT
 COPY file:651b3bebeba8be9162c56b3eb561199905235f3e1c7811232b6c9f48ac333651 in /usr/local/bin/ 
-# Mon, 29 Jul 2019 23:50:37 GMT
+# Thu, 01 Aug 2019 23:50:22 GMT
 ENTRYPOINT ["docker-entrypoint.sh"]
-# Mon, 29 Jul 2019 23:50:37 GMT
+# Thu, 01 Aug 2019 23:50:23 GMT
 CMD ["bash"]
 ```
 
@@ -99,26 +99,26 @@ CMD ["bash"]
 		Last Modified: Thu, 11 Jul 2019 21:50:20 GMT  
 		Size: 2.6 MB (2568361 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:a6aae4829ed201c3008ef3becab4b8e10a15942e9fb0d68a1477685bf3b682e4`  
-		Last Modified: Mon, 29 Jul 2019 23:51:24 GMT  
-		Size: 3.1 MB (3123309 bytes)  
+	-	`sha256:1afb83881e9105943fa2b279a6318a5b6b68534e171bac353928bede38a72cac`  
+		Last Modified: Thu, 01 Aug 2019 23:51:16 GMT  
+		Size: 3.1 MB (3123718 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:b4651d809537973d46c745373fbb33460cf44c5eb49dd70c44aea7aded226be0`  
-		Last Modified: Mon, 29 Jul 2019 23:51:23 GMT  
-		Size: 343.0 B  
+	-	`sha256:8829801b87775d82e25ae61ce727e08da916611444344b59378c05032e658d77`  
+		Last Modified: Thu, 01 Aug 2019 23:51:15 GMT  
+		Size: 338.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `bash:devel` - linux; arm variant v7
 
 ```console
-$ docker pull bash@sha256:e75becf300a4b15fdac2707ed287d057648220e438b9de5973fb52e0d8d0ea42
+$ docker pull bash@sha256:e6752771314723cf6f43de4887d1bc14c3b77a790fac8108d442dcc83bc20632
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **5.4 MB (5448355 bytes)**  
+-	Total Size: **5.5 MB (5450348 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:748a6f732bc77ef2a5bba107bc3cab65f6cdef2073a35de9b12bfc481dac8003`
+-	Image ID: `sha256:49479af76369de6855b44cf9f793b21f0102c6a5e718691ff1ce834613e41ad3`
 -	Entrypoint: `["docker-entrypoint.sh"]`
 -	Default Command: `["bash"]`
 
@@ -127,17 +127,17 @@ $ docker pull bash@sha256:e75becf300a4b15fdac2707ed287d057648220e438b9de5973fb52
 ADD file:679b9d60ff413960c630af8cd74244faeae07446f35b19f4afec78449126c6b6 in / 
 # Thu, 11 Jul 2019 21:57:39 GMT
 CMD ["/bin/sh"]
-# Mon, 29 Jul 2019 23:57:35 GMT
-ENV _BASH_COMMIT=9a53e2aa75322ac40fb4211eb5a7ad7baf1f7c93
-# Mon, 29 Jul 2019 23:57:36 GMT
-ENV _BASH_COMMIT_DESC=commit bash-20190725 snapshot
-# Mon, 29 Jul 2019 23:58:27 GMT
+# Thu, 01 Aug 2019 23:57:19 GMT
+ENV _BASH_COMMIT=1679cff94f916917472abe3d3a42c0c52d87238b
+# Thu, 01 Aug 2019 23:57:20 GMT
+ENV _BASH_COMMIT_DESC=commit bash-20190731 snapshot
+# Thu, 01 Aug 2019 23:58:21 GMT
 RUN set -eux; 		apk add --no-cache --virtual .build-deps 		bison 		coreutils 		dpkg-dev dpkg 		gcc 		libc-dev 		make 		ncurses-dev 		tar 	; 		wget -O bash.tar.gz "https://git.savannah.gnu.org/cgit/bash.git/snapshot/bash-$_BASH_COMMIT.tar.gz"; 		mkdir -p /usr/src/bash; 	tar 		--extract 		--file=bash.tar.gz 		--strip-components=1 		--directory=/usr/src/bash 	; 	rm bash.tar.gz; 		if [ -d bash-patches ]; then 		for p in bash-patches/*; do 			patch 				--directory=/usr/src/bash 				--input="$(readlink -f "$p")" 				--strip=0 			; 			rm "$p"; 		done; 		rmdir bash-patches; 	fi; 		cd /usr/src/bash; 	gnuArch="$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)"; 	./configure 		--build="$gnuArch" 		--enable-readline 		--with-curses 		--without-bash-malloc 	|| { 		cat >&2 config.log; 		false; 	}; 	make -j "$(nproc)"; 	make install; 	cd /; 	rm -r /usr/src/bash; 		rm -r 		/usr/local/share/doc/bash/*.html 		/usr/local/share/info 		/usr/local/share/man 	; 		runDeps="$( 		scanelf --needed --nobanner --format '%n#p' --recursive /usr/local 			| tr ',' '\n' 			| sort -u 			| awk 'system("[ -e /usr/local/lib/" $1 " ]") == 0 { next } { print "so:" $1 }' 	)"; 	apk add --no-cache --virtual .bash-rundeps $runDeps; 	apk del .build-deps; 		[ "$(which bash)" = '/usr/local/bin/bash' ]; 	bash --version
-# Mon, 29 Jul 2019 23:58:27 GMT
+# Thu, 01 Aug 2019 23:58:22 GMT
 COPY file:651b3bebeba8be9162c56b3eb561199905235f3e1c7811232b6c9f48ac333651 in /usr/local/bin/ 
-# Mon, 29 Jul 2019 23:58:28 GMT
+# Thu, 01 Aug 2019 23:58:23 GMT
 ENTRYPOINT ["docker-entrypoint.sh"]
-# Mon, 29 Jul 2019 23:58:28 GMT
+# Thu, 01 Aug 2019 23:58:24 GMT
 CMD ["bash"]
 ```
 
@@ -146,13 +146,13 @@ CMD ["bash"]
 		Last Modified: Thu, 11 Jul 2019 21:57:58 GMT  
 		Size: 2.4 MB (2375401 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:eed681cad48065f12d6bdc585974ba0eeaf888442559c817e7372f89b7c0309e`  
-		Last Modified: Mon, 29 Jul 2019 23:59:25 GMT  
-		Size: 3.1 MB (3072613 bytes)  
+	-	`sha256:9c236af9e9a2af1da0d02f47a475bd6c8d5797a0d1e86c29914405433b564443`  
+		Last Modified: Thu, 01 Aug 2019 23:59:15 GMT  
+		Size: 3.1 MB (3074604 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:66e90831cb3f61bb95e21a509792e27a99dbf496ceb7ae4c055edcf6e5a59414`  
-		Last Modified: Mon, 29 Jul 2019 23:59:24 GMT  
-		Size: 341.0 B  
+	-	`sha256:de489221cb68e207b20948c1a8e6a2c36562bb7e16d36e8ad7abed0190928803`  
+		Last Modified: Thu, 01 Aug 2019 23:59:14 GMT  
+		Size: 343.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `bash:devel` - linux; arm64 variant v8
@@ -299,14 +299,14 @@ CMD ["bash"]
 ### `bash:devel` - linux; s390x
 
 ```console
-$ docker pull bash@sha256:a1d7b738a26d8c93616c0a51ddaba6ad84955414d073484cef8980d864afaa68
+$ docker pull bash@sha256:5ed1295d6938e44163220b06e89bc8fd3927144f611bc21d6358b33f8e23ada5
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **5.8 MB (5809811 bytes)**  
+-	Total Size: **5.8 MB (5813135 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:f9ba8846ac2cfff8f77a8791c925e816bbffcdd471709e44003a566e67b25a95`
+-	Image ID: `sha256:911a118042e917597f6eab68f19d9ac2102627863e7ec1bd8a16d1b117364939`
 -	Entrypoint: `["docker-entrypoint.sh"]`
 -	Default Command: `["bash"]`
 
@@ -315,17 +315,17 @@ $ docker pull bash@sha256:a1d7b738a26d8c93616c0a51ddaba6ad84955414d073484cef8980
 ADD file:0e61dfaf44f65996214c6cd92da44431e76d5a8165fda16b2ac98840a10a64b5 in / 
 # Thu, 11 Jul 2019 21:42:04 GMT
 CMD ["/bin/sh"]
-# Mon, 29 Jul 2019 23:53:11 GMT
-ENV _BASH_COMMIT=9a53e2aa75322ac40fb4211eb5a7ad7baf1f7c93
-# Mon, 29 Jul 2019 23:53:11 GMT
-ENV _BASH_COMMIT_DESC=commit bash-20190725 snapshot
-# Mon, 29 Jul 2019 23:54:03 GMT
+# Thu, 01 Aug 2019 23:44:05 GMT
+ENV _BASH_COMMIT=1679cff94f916917472abe3d3a42c0c52d87238b
+# Thu, 01 Aug 2019 23:44:06 GMT
+ENV _BASH_COMMIT_DESC=commit bash-20190731 snapshot
+# Thu, 01 Aug 2019 23:44:49 GMT
 RUN set -eux; 		apk add --no-cache --virtual .build-deps 		bison 		coreutils 		dpkg-dev dpkg 		gcc 		libc-dev 		make 		ncurses-dev 		tar 	; 		wget -O bash.tar.gz "https://git.savannah.gnu.org/cgit/bash.git/snapshot/bash-$_BASH_COMMIT.tar.gz"; 		mkdir -p /usr/src/bash; 	tar 		--extract 		--file=bash.tar.gz 		--strip-components=1 		--directory=/usr/src/bash 	; 	rm bash.tar.gz; 		if [ -d bash-patches ]; then 		for p in bash-patches/*; do 			patch 				--directory=/usr/src/bash 				--input="$(readlink -f "$p")" 				--strip=0 			; 			rm "$p"; 		done; 		rmdir bash-patches; 	fi; 		cd /usr/src/bash; 	gnuArch="$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)"; 	./configure 		--build="$gnuArch" 		--enable-readline 		--with-curses 		--without-bash-malloc 	|| { 		cat >&2 config.log; 		false; 	}; 	make -j "$(nproc)"; 	make install; 	cd /; 	rm -r /usr/src/bash; 		rm -r 		/usr/local/share/doc/bash/*.html 		/usr/local/share/info 		/usr/local/share/man 	; 		runDeps="$( 		scanelf --needed --nobanner --format '%n#p' --recursive /usr/local 			| tr ',' '\n' 			| sort -u 			| awk 'system("[ -e /usr/local/lib/" $1 " ]") == 0 { next } { print "so:" $1 }' 	)"; 	apk add --no-cache --virtual .bash-rundeps $runDeps; 	apk del .build-deps; 		[ "$(which bash)" = '/usr/local/bin/bash' ]; 	bash --version
-# Mon, 29 Jul 2019 23:54:03 GMT
+# Thu, 01 Aug 2019 23:44:49 GMT
 COPY file:651b3bebeba8be9162c56b3eb561199905235f3e1c7811232b6c9f48ac333651 in /usr/local/bin/ 
-# Mon, 29 Jul 2019 23:54:04 GMT
+# Thu, 01 Aug 2019 23:44:50 GMT
 ENTRYPOINT ["docker-entrypoint.sh"]
-# Mon, 29 Jul 2019 23:54:04 GMT
+# Thu, 01 Aug 2019 23:44:50 GMT
 CMD ["bash"]
 ```
 
@@ -334,11 +334,11 @@ CMD ["bash"]
 		Last Modified: Thu, 11 Jul 2019 21:42:33 GMT  
 		Size: 2.6 MB (2570387 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:a892c465e738e0436ed8906740d0a89b456988bc9bfc91b040e7ffbb2f7d9063`  
-		Last Modified: Mon, 29 Jul 2019 23:55:05 GMT  
-		Size: 3.2 MB (3239082 bytes)  
+	-	`sha256:886f649af618f1af70c20effd5ff9e3034c77d00525f410c15e7099c0ecb2cd4`  
+		Last Modified: Thu, 01 Aug 2019 23:45:41 GMT  
+		Size: 3.2 MB (3242410 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:4ec054cd1a99b12d1bda025422d3a76877f2702147766edc3543cf55e9f7d331`  
-		Last Modified: Mon, 29 Jul 2019 23:55:04 GMT  
-		Size: 342.0 B  
+	-	`sha256:80267ed99a214a19f37992602cadfb01cb84ee038ef84c2961184a9421d67958`  
+		Last Modified: Thu, 01 Aug 2019 23:45:40 GMT  
+		Size: 338.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
