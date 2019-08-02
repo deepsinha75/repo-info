@@ -2534,21 +2534,13 @@ Licenses: (parsed from: `/usr/share/doc/libsvn1/copyright`, `/usr/share/doc/subv
 - `Unicode`
 - `Utfwidth`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris subversion=1.10.4-1
-'http://deb.debian.org/debian/pool/main/s/subversion/subversion_1.10.4-1.dsc' subversion_1.10.4-1.dsc 3513 SHA256:d952f4cf863e2683973bcf84033c48cb0c07ff3fec05c8cad52aaa0c6b409b97
-'http://deb.debian.org/debian/pool/main/s/subversion/subversion_1.10.4.orig.tar.gz' subversion_1.10.4.orig.tar.gz 11347907 SHA256:354022a837596eb1b5676639ea8d73aa326fa8b2c610d8e1b39aeb7228921f4e
-'http://deb.debian.org/debian/pool/main/s/subversion/subversion_1.10.4.orig.tar.gz.asc' subversion_1.10.4.orig.tar.gz.asc 2107 SHA256:bc6173c43ac837f875d9f2921e118c194455796b419769e155496cf084376428
-'http://deb.debian.org/debian/pool/main/s/subversion/subversion_1.10.4-1.debian.tar.xz' subversion_1.10.4-1.debian.tar.xz 434972 SHA256:2f710b64e37d12bf64eaea9e217c14fc7dfff24a94501c9625fb8e6936042f0b
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/subversion/1.10.4-1/
 
-- https://sources.debian.net/src/subversion/1.10.4-1/ (for browsing the source)
-- https://sources.debian.net/src/subversion/1.10.4-1/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/subversion/1.10.4-1/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `systemd=241-5`
 

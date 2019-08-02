@@ -888,14 +888,13 @@ Licenses: (parsed from: `/usr/share/doc/libgssapi-krb5-2/copyright`, `/usr/share
 
 - `GPL-2`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris krb5=1.17-5
-'http://archive.ubuntu.com/ubuntu/pool/main/k/krb5/krb5_1.17-5.dsc' krb5_1.17-5.dsc 3196 SHA256:c4f38247797bf3f0f876c097c66bd365708e21ab598a6a07d78945bb3627438b
-'http://archive.ubuntu.com/ubuntu/pool/main/k/krb5/krb5_1.17.orig.tar.gz' krb5_1.17.orig.tar.gz 8761763 SHA256:5a6e2284a53de5702d3dc2be3b9339c963f9b5397d3fbbc53beb249380a781f5
-'http://archive.ubuntu.com/ubuntu/pool/main/k/krb5/krb5_1.17-5.debian.tar.xz' krb5_1.17-5.debian.tar.xz 143256 SHA256:06b6e4d89b5e6c5dd06c9192ad96bf460f17063c27d09313db4c4a9c011c0f05
-```
+The source package *may* still be available for download from:
+
+- http://snapshot.debian.org/package/krb5/1.17-5/
+
 
 ### `dpkg` source package: `libassuan=2.5.3-7ubuntu1`
 
@@ -1241,14 +1240,13 @@ Licenses: (parsed from: `/usr/share/doc/libssh-4/copyright`)
 - `LGPL-2.1+~OpenSSL`
 - `public-domain`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris libssh=0.8.7-1
-'http://archive.ubuntu.com/ubuntu/pool/main/libs/libssh/libssh_0.8.7-1.dsc' libssh_0.8.7-1.dsc 2436 SHA256:86eac33fbdb9aa5d1dbcae383198fba93067d7e85c72ff5e99a475b445452bf7
-'http://archive.ubuntu.com/ubuntu/pool/main/libs/libssh/libssh_0.8.7.orig.tar.xz' libssh_0.8.7.orig.tar.xz 430104 SHA256:43304ca22f0ba0b654e14b574a39816bc70212fdea5858a6637cc26cade3d592
-'http://archive.ubuntu.com/ubuntu/pool/main/libs/libssh/libssh_0.8.7-1.debian.tar.xz' libssh_0.8.7-1.debian.tar.xz 26212 SHA256:9a66708a602bdfb19a41aea677ea1d49f9a722b3d42772985e19238a19e85ea4
-```
+The source package *may* still be available for download from:
+
+- http://snapshot.debian.org/package/libssh/0.8.7-1/
+
 
 ### `dpkg` source package: `libtasn1-6=4.13-4`
 
@@ -1749,14 +1747,13 @@ Licenses: (parsed from: `/usr/share/doc/pinentry-curses/copyright`)
 - `LGPL-3+`
 - `X11`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris pinentry=1.1.0-2
-'http://archive.ubuntu.com/ubuntu/pool/main/p/pinentry/pinentry_1.1.0-2.dsc' pinentry_1.1.0-2.dsc 2055 SHA256:a3f157d367217eb91581d9fc53f23205794c7572894497a04d4d91eb6d5aff06
-'http://archive.ubuntu.com/ubuntu/pool/main/p/pinentry/pinentry_1.1.0.orig.tar.bz2' pinentry_1.1.0.orig.tar.bz2 467702 SHA256:68076686fa724a290ea49cdf0d1c0c1500907d1b759a3bcbfbec0293e8f56570
-'http://archive.ubuntu.com/ubuntu/pool/main/p/pinentry/pinentry_1.1.0-2.debian.tar.xz' pinentry_1.1.0-2.debian.tar.xz 16480 SHA256:b09437607c63c620bb581fe14080e897b5fb8210d08611b18b751efead7776da
-```
+The source package *may* still be available for download from:
+
+- http://snapshot.debian.org/package/pinentry/1.1.0-2/
+
 
 ### `dpkg` source package: `procps=2:3.3.15-2ubuntu2`
 
