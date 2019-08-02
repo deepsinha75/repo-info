@@ -99,8 +99,88 @@ CMD ["eswrapper"]
 ## `elasticsearch:7.3.0`
 
 ```console
-$ docker pull elasticsearch@sha256:a8409dff6597f2ef5f7ecd3c672671bb2af9a390073efd74f95c54aa41cba22a
+$ docker pull elasticsearch@sha256:ba2ef018238cc05e9e44d72228002b4fabe202801951caaa265ce080deb97133
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
 -	Platforms:
+	-	linux; amd64
+
+### `elasticsearch:7.3.0` - linux; amd64
+
+```console
+$ docker pull elasticsearch@sha256:4c36f5486f292aff534c28506e8cd0f86e4ae177ffce06005bbfa5b312738838
+```
+
+-	Docker Version: 18.09.6
+-	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
+-	Total Size: **405.1 MB (405096514 bytes)**  
+	(compressed transfer size, not on-disk size)
+-	Image ID: `sha256:bdaab402b2200af3743e1fde3260220350e4b886370a4deae0d7ec7c2dd451d6`
+-	Entrypoint: `["\/usr\/local\/bin\/docker-entrypoint.sh"]`
+-	Default Command: `["eswrapper"]`
+
+```dockerfile
+# Thu, 14 Mar 2019 21:19:52 GMT
+ADD file:074f2c974463ab38cf3532134e8ba2c91c9e346457713f2e8b8e2ac0ee9fd83d in / 
+# Thu, 14 Mar 2019 21:19:53 GMT
+LABEL org.label-schema.schema-version=1.0 org.label-schema.name=CentOS Base Image org.label-schema.vendor=CentOS org.label-schema.license=GPLv2 org.label-schema.build-date=20190305
+# Thu, 14 Mar 2019 21:19:53 GMT
+CMD ["/bin/bash"]
+# Wed, 24 Jul 2019 18:33:05 GMT
+ENV ELASTIC_CONTAINER=true
+# Wed, 24 Jul 2019 18:34:31 GMT
+RUN for iter in {1..10}; do yum update -y &&     yum install -y nc &&     yum clean all && exit_code=0 && break || exit_code=$? && echo "yum error: retry $iter in 10s" && sleep 10; done;     (exit $exit_code)
+# Wed, 24 Jul 2019 18:34:32 GMT
+RUN groupadd -g 1000 elasticsearch &&     adduser -u 1000 -g 1000 -G 0 -d /usr/share/elasticsearch elasticsearch &&     chmod 0775 /usr/share/elasticsearch &&     chgrp 0 /usr/share/elasticsearch
+# Wed, 24 Jul 2019 18:34:32 GMT
+WORKDIR /usr/share/elasticsearch
+# Wed, 24 Jul 2019 18:34:38 GMT
+COPY --chown=1000:0dir:dbaf1a4314edad7a89d2559f8cf3b9b593a38cc107674a49d8dfabd2dfbacf13 in /usr/share/elasticsearch 
+# Wed, 24 Jul 2019 18:34:38 GMT
+RUN ln -sf /etc/pki/ca-trust/extracted/java/cacerts /usr/share/elasticsearch/jdk/lib/security/cacerts
+# Wed, 24 Jul 2019 18:34:39 GMT
+ENV PATH=/usr/share/elasticsearch/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+# Wed, 24 Jul 2019 18:34:39 GMT
+COPY --chown=1000:0file:8aaf8c70cc610ac6e2caadd743341d4590a184092390227b9bfc69044c733e28 in /usr/local/bin/docker-entrypoint.sh 
+# Wed, 24 Jul 2019 18:34:39 GMT
+RUN chgrp 0 /usr/local/bin/docker-entrypoint.sh &&     chmod g=u /etc/passwd &&     chmod 0775 /usr/local/bin/docker-entrypoint.sh
+# Wed, 24 Jul 2019 18:34:40 GMT
+EXPOSE 9200 9300
+# Wed, 24 Jul 2019 18:34:40 GMT
+LABEL org.label-schema.schema-version=1.0 org.label-schema.vendor=Elastic org.label-schema.name=elasticsearch org.label-schema.version=7.3.0 org.label-schema.url=https://www.elastic.co/products/elasticsearch org.label-schema.vcs-url=https://github.com/elastic/elasticsearch license=Elastic License
+# Wed, 24 Jul 2019 18:34:40 GMT
+ENTRYPOINT ["/usr/local/bin/docker-entrypoint.sh"]
+# Wed, 24 Jul 2019 18:34:40 GMT
+CMD ["eswrapper"]
+```
+
+-	Layers:
+	-	`sha256:8ba884070f611d31cb2c42eddb691319dc9facf5e0ec67672fcfa135181ab3df`  
+		Last Modified: Thu, 14 Mar 2019 21:24:11 GMT  
+		Size: 75.4 MB (75403831 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:854c9f9b10648ff003056abe235f9487c097b68990890251ec77c917572d7e53`  
+		Last Modified: Wed, 31 Jul 2019 15:42:54 GMT  
+		Size: 43.7 MB (43674699 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:44d43a907bb5698f0dc812f9db6fc112ce1b9dc96a9924e6f082c9686705b9d5`  
+		Last Modified: Wed, 31 Jul 2019 15:41:01 GMT  
+		Size: 2.1 KB (2069 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:9311c5f24d751a630ab775c5537d3ed4f3213f17089af468594b45714511ef85`  
+		Last Modified: Wed, 31 Jul 2019 15:44:06 GMT  
+		Size: 286.0 MB (286011186 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:91363c70bdb707350f50bf6154b38643bf0ca8bcfe5bf6c5f4c1fd6b09803f61`  
+		Last Modified: Wed, 31 Jul 2019 15:40:47 GMT  
+		Size: 279.0 B  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:38b4cb8c47adb7edf8457bd1e863453035a9015595d5e599b1cd37f746737efc`  
+		Last Modified: Wed, 31 Jul 2019 15:40:45 GMT  
+		Size: 2.1 KB (2056 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:c22bd5067efd35cbf7a19b0d8d65ff5d746a22e203eee3017043a84b9a8ce9f1`  
+		Last Modified: Wed, 31 Jul 2019 15:40:46 GMT  
+		Size: 2.4 KB (2394 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
