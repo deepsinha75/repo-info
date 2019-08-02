@@ -1,10 +1,10 @@
-# `python:3.8.0b2-alpine3.10`
+# `python:3.8.0b3-alpine3.10`
 
 ## Docker Metadata
 
-- Image ID: `sha256:70da12d867116547b10c1576187658c2732bdd38dd3fa247ab424d2e16cf2079`
-- Created: `2019-07-30T00:33:36.850780692Z`
-- Virtual Size: ~ 108.77 Mb  
+- Image ID: `sha256:0d1459b707062a3dc2a580df4db4d68be2fb74313fd2522f8dc55905d10cfa19`
+- Created: `2019-08-02T08:40:05.89553936Z`
+- Virtual Size: ~ 108.96 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Command: `["python3"]`
@@ -12,7 +12,7 @@
   - `PATH=/usr/local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
   - `LANG=C.UTF-8`
   - `GPG_KEY=E3FF2839C048B25C084DEBE9B26995E310250568`
-  - `PYTHON_VERSION=3.8.0b2`
+  - `PYTHON_VERSION=3.8.0b3`
   - `PYTHON_PIP_VERSION=19.2.1`
   - `PYTHON_GET_PIP_URL=https://github.com/pypa/get-pip/raw/404c9418e33c5031b1a9ab623168b3e8a2ed8c88/get-pip.py`
   - `PYTHON_GET_PIP_SHA256=56bb63d3cf54e7444351256f72a60f575f6d8c7f1faacffae33167afc8e7609d`
@@ -158,16 +158,16 @@ GPL
 ### `apk` package: `keyutils-libs`
 
 ```console
-keyutils-libs-1.6-r0 description:
+keyutils-libs-1.6-r1 description:
 Key utilities library
 
-keyutils-libs-1.6-r0 webpage:
+keyutils-libs-1.6-r1 webpage:
 http://people.redhat.com/~dhowells/keyutils/
 
-keyutils-libs-1.6-r0 installed size:
+keyutils-libs-1.6-r1 installed size:
 36864
 
-keyutils-libs-1.6-r0 license:
+keyutils-libs-1.6-r1 license:
 GPL-2.0-or-later LGPL-2.0-or-later
 
 ```
