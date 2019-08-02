@@ -2681,14 +2681,9 @@ Binary Packages:
 If source is available (seen below), check the contents of `debian/copyright` within it.
 
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris openldap=2.4.42+dfsg-2ubuntu3.5
-'http://archive.ubuntu.com/ubuntu/pool/main/o/openldap/openldap_2.4.42+dfsg-2ubuntu3.5.dsc' openldap_2.4.42+dfsg-2ubuntu3.5.dsc 3054 SHA256:b81c8c0b6bc0587d8cbc8e6358f18d157e9c573ec255c90373a873b679d3ccde
-'http://archive.ubuntu.com/ubuntu/pool/main/o/openldap/openldap_2.4.42+dfsg.orig.tar.gz' openldap_2.4.42+dfsg.orig.tar.gz 4813173 SHA256:5f56e4e3584f7a4b4c8437a2c985b2f519836946be77ef1aa43a5d20c02ea97b
-'http://archive.ubuntu.com/ubuntu/pool/main/o/openldap/openldap_2.4.42+dfsg-2ubuntu3.5.debian.tar.xz' openldap_2.4.42+dfsg-2ubuntu3.5.debian.tar.xz 178024 SHA256:ab46b7537f188b408e0aa8ebc1446221f369df075f082f8f779059dd7181b2b7
-```
 
 ### `dpkg` source package: `openmpi=1.10.2-8ubuntu1`
 
@@ -2974,14 +2969,9 @@ Binary Packages:
 If source is available (seen below), check the contents of `debian/copyright` within it.
 
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris python-catkin-pkg-modules=0.4.12-1
-'http://packages.ros.org/ros/ubuntu/pool/main/p/python-catkin-pkg-modules/python-catkin-pkg-modules_0.4.12-1.debian.tar.xz' python-catkin-pkg-modules_0.4.12-1.debian.tar.xz 1936 SHA512:e48619daf76627b391d84199549cf35acf6659f856d832254f2432b0387ed9a42fadfc6d09448af02f6ea7ceb020b5d578851b6fb816c307ee80eb8acff4ab57
-'http://packages.ros.org/ros/ubuntu/pool/main/p/python-catkin-pkg-modules/python-catkin-pkg-modules_0.4.12-1.dsc' python-catkin-pkg-modules_0.4.12-1.dsc 1050 SHA512:dd7a0f4ede99fc26b5f941930a606f352b289bbe4a7acfd570febf5544437bd98d306d5f0eb50ec891a947843843ab3ec2e59388bbe0362a8da99ff31b002c84
-'http://packages.ros.org/ros/ubuntu/pool/main/p/python-catkin-pkg-modules/python-catkin-pkg-modules_0.4.12.orig.tar.gz' python-catkin-pkg-modules_0.4.12.orig.tar.gz 58937 SHA512:d5a5d2f2630c50f108a55b16398bcfce2009c37c4c51a3fd00baaefda2495b3bb1ea62d56e6de238c68c957f1d677b05a0e05825723786b3ad1de7c203d7f78e
-```
 
 ### `dpkg` source package: `python-catkin-pkg=0.4.12-100`
 
@@ -2993,14 +2983,9 @@ Binary Packages:
 If source is available (seen below), check the contents of `debian/copyright` within it.
 
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris python-catkin-pkg=0.4.12-100
-'http://packages.ros.org/ros/ubuntu/pool/main/p/python-catkin-pkg/python-catkin-pkg_0.4.12-100.debian.tar.xz' python-catkin-pkg_0.4.12-100.debian.tar.xz 1912 SHA512:3e749ad5e29950c8ba08860f714d1f7d42ef95762792ca735c7e8edb16a0eb140efaed6f81de4dd8914909c65ba16a507a4fc81691313fcf6ff188a298442160
-'http://packages.ros.org/ros/ubuntu/pool/main/p/python-catkin-pkg/python-catkin-pkg_0.4.12-100.dsc' python-catkin-pkg_0.4.12-100.dsc 986 SHA512:a4a75986782b71e34686301853b39ee23bd20a2170e89e70f82065ee0efbca7868ae8f6288d22f9e29ffacefe63e729d7acd7908edd43dca1e169ff34f8aa183
-'http://packages.ros.org/ros/ubuntu/pool/main/p/python-catkin-pkg/python-catkin-pkg_0.4.12.orig.tar.gz' python-catkin-pkg_0.4.12.orig.tar.gz 13302 SHA512:462b87c09963b67f1fdf19784ae28086e15353ba018d00865daa53f7907f15bbeb030bcf4614c673bbe9c1cf9ac8178726b1193c4fa7bd1d111ca489c9b6d0d7
-```
 
 ### `dpkg` source package: `python-crypto=2.6.1-6ubuntu0.16.04.3`
 
@@ -4595,14 +4580,9 @@ Licenses: (parsed from: `/usr/share/doc/libsvn1/copyright`, `/usr/share/doc/subv
 - `GPL-2`
 - `GPL-3`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris subversion=1.9.3-2ubuntu1.1
-'http://archive.ubuntu.com/ubuntu/pool/main/s/subversion/subversion_1.9.3-2ubuntu1.1.dsc' subversion_1.9.3-2ubuntu1.1.dsc 3273 SHA256:eb2f59f1a17be16de1094ac1bf9e961eb65dbc55d20f22bdf0c26bf9e181b8ab
-'http://archive.ubuntu.com/ubuntu/pool/main/s/subversion/subversion_1.9.3.orig.tar.gz' subversion_1.9.3.orig.tar.gz 10600934 SHA256:74cd21d2f8a2a54e4dbd2389fe1605a19dbda8ba88ffc4bb0edc9a66e143cc93
-'http://archive.ubuntu.com/ubuntu/pool/main/s/subversion/subversion_1.9.3-2ubuntu1.1.diff.gz' subversion_1.9.3-2ubuntu1.1.diff.gz 2432375 SHA256:43ea0c91f14ddee823b7e661e3dec6eaa4eab55d0c9f69c22df4584e8392bbd6
-```
 
 ### `dpkg` source package: `systemd=229-4ubuntu21.22`
 
