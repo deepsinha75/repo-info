@@ -1,10 +1,10 @@
-# `elixir:1.9.0-alpine`
+# `elixir:1.9.1-alpine`
 
 ## Docker Metadata
 
-- Image ID: `sha256:7a6d28e4b5113a907ae9bce3e936d7c31b361d350408075091871a53bce59c18`
-- Created: `2019-07-12T08:09:12.348520435Z`
-- Virtual Size: ~ 87.62 Mb  
+- Image ID: `sha256:33a0cf122cf76d51425476aac478d83061de9572dc26793a9a16e9ef95aae102`
+- Created: `2019-07-30T21:24:51.554883173Z`
+- Virtual Size: ~ 87.63 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Command: `["iex"]`
@@ -12,7 +12,7 @@
   - `PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
   - `OTP_VERSION=22.0.7`
   - `REBAR3_VERSION=3.11.1`
-  - `ELIXIR_VERSION=v1.9.0`
+  - `ELIXIR_VERSION=v1.9.1`
   - `LANG=C.UTF-8`
 
 ## `apk` (`.apk`-based packages)

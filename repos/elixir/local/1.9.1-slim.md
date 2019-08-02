@@ -1,17 +1,17 @@
-# `elixir:1.9.0-slim`
+# `elixir:1.9.1-slim`
 
 ## Docker Metadata
 
-- Image ID: `sha256:f21b64a60e75063437dd09146ac30ed15a08e21c393e9822cc3eb26cad2a8a75`
-- Created: `2019-07-12T08:06:24.530917603Z`
-- Virtual Size: ~ 269.19 Mb  
+- Image ID: `sha256:d19ad441e9f7c8e5e406aa798a6a15cb55465380f5e264891fd45f607ea6d887`
+- Created: `2019-07-30T21:23:21.35808512Z`
+- Virtual Size: ~ 269.20 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Command: `["iex"]`
 - Environment:
   - `PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
   - `OTP_VERSION=22.0.7`
-  - `ELIXIR_VERSION=v1.9.0`
+  - `ELIXIR_VERSION=v1.9.1`
   - `LANG=C.UTF-8`
 
 ## `dpkg` (`.deb`-based packages)
