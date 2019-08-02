@@ -1999,14 +1999,9 @@ Licenses: (parsed from: `/usr/share/doc/openjdk-11-jre-headless/copyright`)
 - `LGPL-2`
 - `LGPL-2-1`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris openjdk-lts=11.0.3+7-1ubuntu2~18.04.1
-'http://archive.ubuntu.com/ubuntu/pool/main/o/openjdk-lts/openjdk-lts_11.0.3+7-1ubuntu2~18.04.1.dsc' openjdk-lts_11.0.3+7-1ubuntu2~18.04.1.dsc 4832 SHA256:943a82801ec885cf0c9a832ee58a730ffe748431c705764e9fa38c84acbb5491
-'http://archive.ubuntu.com/ubuntu/pool/main/o/openjdk-lts/openjdk-lts_11.0.3+7.orig.tar.xz' openjdk-lts_11.0.3+7.orig.tar.xz 75355240 SHA256:eddaca1cfb6032123ca6a355d1a3c0f758389305bda918eb5de4ff013c90b109
-'http://archive.ubuntu.com/ubuntu/pool/main/o/openjdk-lts/openjdk-lts_11.0.3+7-1ubuntu2~18.04.1.debian.tar.xz' openjdk-lts_11.0.3+7-1ubuntu2~18.04.1.debian.tar.xz 177036 SHA256:6a4e19c29e7e6c84dcd43fa364228c752a8f95094a1d0f6de12e7168c2baf94f
-```
 
 ### `dpkg` source package: `openldap=2.4.45+dfsg-1ubuntu1.2`
 
@@ -2019,14 +2014,9 @@ Binary Packages:
 If source is available (seen below), check the contents of `debian/copyright` within it.
 
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris openldap=2.4.45+dfsg-1ubuntu1.2
-'http://archive.ubuntu.com/ubuntu/pool/main/o/openldap/openldap_2.4.45+dfsg-1ubuntu1.2.dsc' openldap_2.4.45+dfsg-1ubuntu1.2.dsc 2805 SHA256:b72d45c12000d90eb234e3654dccfd8931d94b36994c92f73175307c7a663259
-'http://archive.ubuntu.com/ubuntu/pool/main/o/openldap/openldap_2.4.45+dfsg.orig.tar.gz' openldap_2.4.45+dfsg.orig.tar.gz 4846458 SHA256:d51c70423aa0554d454fd3d43e7f2e940523b4ef07979305b48c233ae44b2b32
-'http://archive.ubuntu.com/ubuntu/pool/main/o/openldap/openldap_2.4.45+dfsg-1ubuntu1.2.debian.tar.xz' openldap_2.4.45+dfsg-1ubuntu1.2.debian.tar.xz 175468 SHA256:4e404726ebaecede8e8963086f851f747cea13a5dbb6d9ef8b561e3a50906ff1
-```
 
 ### `dpkg` source package: `openssl=1.1.1-1ubuntu2.1~18.04.4`
 
