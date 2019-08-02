@@ -8,7 +8,7 @@ image="$1"; shift
 docker build --pull -t repo-info:local -q -f Dockerfile.local . > /dev/null
 
 name="repo-info-local-$$-$RANDOM"
-trap "docker rm -f '$name-data' '$name' > /dev/null || :" EXIT
+trap "docker rm -vf '$name-data' '$name' > /dev/null || :" EXIT
 
 docker create \
 	--name "$name-data" \
