@@ -2,9 +2,9 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:f41524debd2cea723deb559e7bf92d1cb3049f296e6cc4004a036044a9cb7540`
-- Created: `2019-07-12T09:00:31.468192994Z`
-- Virtual Size: ~ 160.89 Mb  
+- Image ID: `sha256:7d301b1b046f39deee2724bfc932e2305b795ef2644be68a92a11b81eb50279b`
+- Created: `2019-08-02T09:46:36.678363017Z`
+- Virtual Size: ~ 161.18 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["/bin/sh","/docker-entrypoint.sh"]`
@@ -17,10 +17,10 @@
   - `PHP_CPPFLAGS=-fstack-protector-strong -fpic -fpie -O2`
   - `PHP_LDFLAGS=-Wl,-O1 -Wl,--hash-style=both -pie`
   - `GPG_KEYS=CBAF69F173A0FEA4B537F470D66C9593118BCCB6 F38252826ACD957EF380D39F2F7956BC5DA04B5D`
-  - `PHP_VERSION=7.3.7`
-  - `PHP_URL=https://www.php.net/get/php-7.3.7.tar.xz/from/this/mirror`
-  - `PHP_ASC_URL=https://www.php.net/get/php-7.3.7.tar.xz.asc/from/this/mirror`
-  - `PHP_SHA256=ba067200ba649956b3a92ec8b71a6ed8ce8a099921212443c1bcf3260a29274c`
+  - `PHP_VERSION=7.3.8`
+  - `PHP_URL=https://www.php.net/get/php-7.3.8.tar.xz/from/this/mirror`
+  - `PHP_ASC_URL=https://www.php.net/get/php-7.3.8.tar.xz.asc/from/this/mirror`
+  - `PHP_SHA256=f6046b2ae625d8c04310bda0737ac660dc5563a8e04e8a46c1ee24ea414ad5a5`
   - `PHP_MD5=`
   - `COMPOSER_ALLOW_SUPERUSER=1`
   - `COMPOSER_HOME=/tmp`
@@ -762,16 +762,16 @@ OpenSSL
 ### `apk` package: `patch`
 
 ```console
-patch-2.7.6-r4 description:
+patch-2.7.6-r5 description:
 Utility to apply diffs to files
 
-patch-2.7.6-r4 webpage:
+patch-2.7.6-r5 webpage:
 https://www.gnu.org/software/patch/patch.html
 
-patch-2.7.6-r4 installed size:
+patch-2.7.6-r5 installed size:
 176128
 
-patch-2.7.6-r4 license:
+patch-2.7.6-r5 license:
 GPL-3.0+
 
 ```
