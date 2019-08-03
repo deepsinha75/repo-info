@@ -2,9 +2,9 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:711fbc46692c6a4c08c188d49a7ee4e6f6a1861c114c4abc1380e0cffab71aeb`
-- Created: `2019-07-12T23:58:32.562538242Z`
-- Virtual Size: ~ 133.01 Mb  
+- Image ID: `sha256:84aa7d4d646ee135ddb05acce725559f2536e47e95450d0937f28774a8e0fe72`
+- Created: `2019-08-02T09:16:13.434662453Z`
+- Virtual Size: ~ 133.31 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["/entrypoint.sh"]`
@@ -18,10 +18,10 @@
   - `PHP_CPPFLAGS=-fstack-protector-strong -fpic -fpie -O2`
   - `PHP_LDFLAGS=-Wl,-O1 -Wl,--hash-style=both -pie`
   - `GPG_KEYS=CBAF69F173A0FEA4B537F470D66C9593118BCCB6 F38252826ACD957EF380D39F2F7956BC5DA04B5D`
-  - `PHP_VERSION=7.3.7`
-  - `PHP_URL=https://www.php.net/get/php-7.3.7.tar.xz/from/this/mirror`
-  - `PHP_ASC_URL=https://www.php.net/get/php-7.3.7.tar.xz.asc/from/this/mirror`
-  - `PHP_SHA256=ba067200ba649956b3a92ec8b71a6ed8ce8a099921212443c1bcf3260a29274c`
+  - `PHP_VERSION=7.3.8`
+  - `PHP_URL=https://www.php.net/get/php-7.3.8.tar.xz/from/this/mirror`
+  - `PHP_ASC_URL=https://www.php.net/get/php-7.3.8.tar.xz.asc/from/this/mirror`
+  - `PHP_SHA256=f6046b2ae625d8c04310bda0737ac660dc5563a8e04e8a46c1ee24ea414ad5a5`
   - `PHP_MD5=`
   - `JOOMLA_INSTALLATION_DISABLE_LOCALHOST_CHECK=1`
   - `JOOMLA_VERSION=3.9.10`
