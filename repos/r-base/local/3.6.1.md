@@ -1322,20 +1322,13 @@ Licenses: (parsed from: `/usr/share/doc/libharfbuzz0b/copyright`)
 
 - `MIT`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris harfbuzz=2.4.0-2
-'http://deb.debian.org/debian/pool/main/h/harfbuzz/harfbuzz_2.4.0-2.dsc' harfbuzz_2.4.0-2.dsc 2298 SHA256:9f9f7b11c25c6ac505a01556eb1503a3b0ed093983968d2547affe70daff706e
-'http://deb.debian.org/debian/pool/main/h/harfbuzz/harfbuzz_2.4.0.orig.tar.bz2' harfbuzz_2.4.0.orig.tar.bz2 17922003 SHA256:9035005903da74667d28bb181986e879e11da3d5986722759fa145cca781ead6
-'http://deb.debian.org/debian/pool/main/h/harfbuzz/harfbuzz_2.4.0-2.debian.tar.xz' harfbuzz_2.4.0-2.debian.tar.xz 9740 SHA256:6ff20cfd72c5aef592b12295473605b2a124bb1b37e4335056e68ace588627e1
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/harfbuzz/2.4.0-2/
 
-- https://sources.debian.net/src/harfbuzz/2.4.0-2/ (for browsing the source)
-- https://sources.debian.net/src/harfbuzz/2.4.0-2/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/harfbuzz/2.4.0-2/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `hostname=3.21`
 
@@ -2920,14 +2913,13 @@ Licenses: (parsed from: `/usr/share/doc/r-cran-nlme/copyright`)
 - `GPL`
 - `GPL `
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris nlme=3.1.140-1
-'http://http.debian.net/debian/pool/main/n/nlme/nlme_3.1.140-1.dsc' nlme_3.1.140-1.dsc 1837 SHA256:d2539e1f088662e2b03d88e1ae762f2fc14f0c7b7ee956fbf35c81c13bf19411
-'http://http.debian.net/debian/pool/main/n/nlme/nlme_3.1.140.orig.tar.gz' nlme_3.1.140.orig.tar.gz 793019 SHA256:1da12f04052549b7673da2ba7af9a20184b186b749b521801a097447862c3d4d
-'http://http.debian.net/debian/pool/main/n/nlme/nlme_3.1.140-1.debian.tar.xz' nlme_3.1.140-1.debian.tar.xz 7012 SHA256:5621ed5c7316e13ec8710e0de585f513babbbb12e9653dedf88f7bf223e006a1
-```
+The source package *may* still be available for download from:
+
+- http://snapshot.debian.org/package/nlme/3.1.140-1/
+
 
 ### `dpkg` source package: `openldap=2.4.47+dfsg-3`
 
