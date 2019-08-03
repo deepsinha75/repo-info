@@ -2,16 +2,16 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:83038e6d4a01463dc9c77daa54589023069b385677ff15a0e63d35cdf0efb29d`
-- Created: `2019-07-11T23:45:12.99642855Z`
-- Virtual Size: ~ 123.35 Mb  
+- Image ID: `sha256:d684cea94fe2ddb105a4dd2f5b15767d1809f567024232b6a965e241250db98a`
+- Created: `2019-08-02T04:37:57.50182963Z`
+- Virtual Size: ~ 107.75 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["docker-entrypoint.sh"]`
 - Command: `["redis-server"]`
 - Environment:
   - `PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
-  - `GOSU_VERSION=1.10`
+  - `GOSU_VERSION=1.11`
   - `REDIS_VERSION=5.0.5`
   - `REDIS_DOWNLOAD_URL=http://download.redis.io/releases/redis-5.0.5.tar.gz`
   - `REDIS_DOWNLOAD_SHA=2139009799d21d8ff94fc40b7f36ac46699b9e1254086299f8d3b223ca54a375`
