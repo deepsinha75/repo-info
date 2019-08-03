@@ -1,7 +1,7 @@
 ## `docker:stable-dind-rootless`
 
 ```console
-$ docker pull docker@sha256:246b482448adeac5f4effb711d8969134fdf3cfe238b36860c8768f73ba00ce5
+$ docker pull docker@sha256:6579f065374ae8bcefea68c12c5e393bf299357eb988886179b3a53b6f7b4662
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -11,14 +11,14 @@ $ docker pull docker@sha256:246b482448adeac5f4effb711d8969134fdf3cfe238b36860c87
 ### `docker:stable-dind-rootless` - linux; amd64
 
 ```console
-$ docker pull docker@sha256:177afdb3d86751a936d9a4e0032b28b3ade90d0e2ee3eda24e960bf733828e05
+$ docker pull docker@sha256:7a2a33d9b6296a24973ae9221c29baaa4c03b498fd23063476165dd6671b8633
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **94.6 MB (94637042 bytes)**  
+-	Total Size: **94.6 MB (94637895 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:2828a29d8f73ecc5efdbca7d6ac6357529b9cbafec2c19a18ee8c2929f9208e8`
+-	Image ID: `sha256:8677fbabd05900153afb74b139094e77a0ce5064f6d2d4a4c4f2b1568fa98229`
 -	Entrypoint: `["dockerd-entrypoint.sh"]`
 -	Default Command: `[]`
 
@@ -57,33 +57,33 @@ RUN set -x 	&& addgroup -S dockremap 	&& adduser -S -G dockremap dockremap 	&& e
 ENV DIND_COMMIT=37498f009d8bf25fbb6199e8ccd34bed84f2874b
 # Fri, 02 Aug 2019 04:31:05 GMT
 RUN set -eux; 	wget -O /usr/local/bin/dind "https://raw.githubusercontent.com/docker/docker/${DIND_COMMIT}/hack/dind"; 	chmod +x /usr/local/bin/dind
-# Fri, 02 Aug 2019 15:19:49 GMT
-COPY file:b8d46426f108f40388deb16da0c7f38a2de237a345e089aef091e1cd5a0c0214 in /usr/local/bin/ 
-# Fri, 02 Aug 2019 15:19:50 GMT
+# Sat, 03 Aug 2019 01:07:50 GMT
+COPY file:c4beb32f003f0fb36c16a561f8c27f153ec79f6ecc9df2e1538f4bba18cd605a in /usr/local/bin/ 
+# Sat, 03 Aug 2019 01:07:50 GMT
 VOLUME [/var/lib/docker]
-# Fri, 02 Aug 2019 15:19:50 GMT
+# Sat, 03 Aug 2019 01:07:51 GMT
 EXPOSE 2375 2376
-# Fri, 02 Aug 2019 15:19:50 GMT
+# Sat, 03 Aug 2019 01:07:51 GMT
 ENTRYPOINT ["dockerd-entrypoint.sh"]
-# Fri, 02 Aug 2019 15:19:50 GMT
+# Sat, 03 Aug 2019 01:07:51 GMT
 CMD []
-# Fri, 02 Aug 2019 15:19:54 GMT
+# Sat, 03 Aug 2019 01:07:57 GMT
 RUN apk add --no-cache iproute2
-# Fri, 02 Aug 2019 15:19:54 GMT
+# Sat, 03 Aug 2019 01:07:59 GMT
 RUN mkdir /run/user && chmod 1777 /run/user
-# Fri, 02 Aug 2019 15:19:55 GMT
+# Sat, 03 Aug 2019 01:08:00 GMT
 RUN set -eux; 	adduser -h /home/rootless -g 'Rootless' -D -u 1000 rootless; 	echo 'rootless:100000:65536' >> /etc/subuid; 	echo 'rootless:100000:65536' >> /etc/subgid
-# Fri, 02 Aug 2019 15:19:57 GMT
+# Sat, 03 Aug 2019 01:08:03 GMT
 RUN set -eux; 		apkArch="$(apk --print-arch)"; 	case "$apkArch" in 		x86_64) dockerArch='x86_64' ;; 		armhf) dockerArch='armel' ;; 		armv7) dockerArch='armhf' ;; 		aarch64) dockerArch='aarch64' ;; 		*) echo >&2 "error: unsupported architecture ($apkArch)"; exit 1 ;;	esac; 		if ! wget -O rootless.tgz "https://download.docker.com/linux/static/${DOCKER_CHANNEL}/${dockerArch}/docker-rootless-extras-${DOCKER_VERSION}.tgz"; then 		echo >&2 "error: failed to download 'docker-rootless-extras-${DOCKER_VERSION}' from '${DOCKER_CHANNEL}' for '${dockerArch}'"; 		exit 1; 	fi; 		tar --extract 		--file rootless.tgz 		--strip-components 1 		--directory /usr/local/bin/ 		'docker-rootless-extras/vpnkit' 	; 	rm rootless.tgz; 		vpnkit --version
-# Fri, 02 Aug 2019 15:19:57 GMT
+# Sat, 03 Aug 2019 01:08:03 GMT
 ENV ROOTLESSKIT_VERSION=0.6.0
-# Fri, 02 Aug 2019 15:20:09 GMT
+# Sat, 03 Aug 2019 01:08:22 GMT
 RUN set -eux; 	apk add --no-cache --virtual .rootlesskit-build-deps 		go 		libc-dev 	; 	wget -O rootlesskit.tgz "https://github.com/rootless-containers/rootlesskit/archive/v${ROOTLESSKIT_VERSION}.tar.gz"; 	export GOPATH='/go'; mkdir "$GOPATH"; 	mkdir -p "$GOPATH/src/github.com/rootless-containers/rootlesskit"; 	tar --extract --file rootlesskit.tgz --directory "$GOPATH/src/github.com/rootless-containers/rootlesskit" --strip-components 1; 	rm rootlesskit.tgz; 	go build -o /usr/local/bin/rootlesskit github.com/rootless-containers/rootlesskit/cmd/rootlesskit; 	go build -o /usr/local/bin/rootlesskit-docker-proxy github.com/rootless-containers/rootlesskit/cmd/rootlesskit-docker-proxy; 	rm -rf "$GOPATH"; 	apk del --no-network .rootlesskit-build-deps; 	rootlesskit --version
-# Fri, 02 Aug 2019 15:20:09 GMT
+# Sat, 03 Aug 2019 01:08:24 GMT
 RUN set -eux; 	mkdir -p /home/rootless/.local/share/docker; 	chown -R rootless:rootless /home/rootless/.local/share/docker
-# Fri, 02 Aug 2019 15:20:10 GMT
+# Sat, 03 Aug 2019 01:08:24 GMT
 VOLUME [/home/rootless/.local/share/docker]
-# Fri, 02 Aug 2019 15:20:10 GMT
+# Sat, 03 Aug 2019 01:08:24 GMT
 USER rootless
 ```
 
@@ -128,31 +128,31 @@ USER rootless
 		Last Modified: Fri, 02 Aug 2019 04:32:11 GMT  
 		Size: 759.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:ba8dd7cb418326a00e2b07062ef6cdb06c1dbe68c0678b15b86b2df5059cbf99`  
-		Last Modified: Fri, 02 Aug 2019 15:20:35 GMT  
-		Size: 2.5 KB (2517 bytes)  
+	-	`sha256:42139b064a8892ed891c51a11b25365374fdf13b84974e40016fae9244815e70`  
+		Last Modified: Sat, 03 Aug 2019 01:09:16 GMT  
+		Size: 2.5 KB (2528 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:f96e3896cd308749c472ef722eed9f8a80be106cac0cde5cbfd314456e812950`  
-		Last Modified: Fri, 02 Aug 2019 15:20:43 GMT  
-		Size: 722.5 KB (722546 bytes)  
+	-	`sha256:e1c43eb471b2538a73c6e1f0072090fd14ed31c3bcc710b37c965015318c25f2`  
+		Last Modified: Sat, 03 Aug 2019 01:09:27 GMT  
+		Size: 722.5 KB (722549 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:67ef5e89f8e881aecdc439f4713e8cb00d91f10756edcf70324290b4a4228cdd`  
-		Last Modified: Fri, 02 Aug 2019 15:20:42 GMT  
-		Size: 114.0 B  
+	-	`sha256:99f427076985a0491b7d6e8ce1f7deaf3c903b0a9e88ce6f058b0c6dffbe3c76`  
+		Last Modified: Sat, 03 Aug 2019 01:09:26 GMT  
+		Size: 115.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:88d4b71e5151c56420dabd6ed26f6d5d05f5d3aa9926a8c094e4e51f698c9e4b`  
-		Last Modified: Fri, 02 Aug 2019 15:20:42 GMT  
+	-	`sha256:4499a3796b79c019b50909c38ec72591845418bbb23a6f55d167be021699100b`  
+		Last Modified: Sat, 03 Aug 2019 01:09:26 GMT  
 		Size: 1.3 KB (1340 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:bf851edadbff255aafb0892b4206848b4954887c310cecf98a672599ee7aafaf`  
-		Last Modified: Fri, 02 Aug 2019 15:20:44 GMT  
-		Size: 9.1 MB (9109452 bytes)  
+	-	`sha256:d64c47801b0bcb99826d0554c6a59386364b83f7358a06ffe3e3a4c05a869039`  
+		Last Modified: Sat, 03 Aug 2019 01:09:29 GMT  
+		Size: 9.1 MB (9109458 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:a6fdee7f44a2d4bc3321f282631ff603b8e3a00e29ff5444f2306699371451d6`  
-		Last Modified: Fri, 02 Aug 2019 15:20:44 GMT  
-		Size: 12.4 MB (12420840 bytes)  
+	-	`sha256:03439fe97218920699b56ee025cf5a33f3b1d7428cfb1f46e43776e8a9183d02`  
+		Last Modified: Sat, 03 Aug 2019 01:09:34 GMT  
+		Size: 12.4 MB (12421671 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:55bdbbbbef59da3b318a4f5c745fef2fd5a72649e396469099ff833b8c89c7d8`  
-		Last Modified: Fri, 02 Aug 2019 15:20:42 GMT  
-		Size: 190.0 B  
+	-	`sha256:a1ad78eade644e7f84bcb9fbc2919e456a9a6386d9617a4403dfe72531f364aa`  
+		Last Modified: Sat, 03 Aug 2019 01:09:26 GMT  
+		Size: 191.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
