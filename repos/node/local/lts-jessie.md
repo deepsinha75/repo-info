@@ -1,18 +1,18 @@
-# `node:10.16.0-jessie`
+# `node:10.16.1-jessie`
 
 ## Docker Metadata
 
-- Image ID: `sha256:5c9623bde52549ff1b4f3ec14acbfde42fe470cac45531e325899bb157ab4763`
-- Created: `2019-07-10T03:31:28.208895092Z`
-- Virtual Size: ~ 684.96 Mb  
+- Image ID: `sha256:7a38720fef3f3492cab06477ead75e5c46495f15b142fd6b5c562d48d9346eae`
+- Created: `2019-08-02T03:45:30.595218325Z`
+- Virtual Size: ~ 685.38 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["docker-entrypoint.sh"]`
 - Command: `["node"]`
 - Environment:
   - `PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
-  - `NODE_VERSION=10.16.0`
-  - `YARN_VERSION=1.16.0`
+  - `NODE_VERSION=10.16.1`
+  - `YARN_VERSION=1.17.3`
 
 ## `dpkg` (`.deb`-based packages)
 
@@ -1400,20 +1400,13 @@ Licenses: (parsed from: `/usr/share/doc/libglib2.0-0/copyright`, `/usr/share/doc
 
 - `LGPL`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris glib2.0=2.42.1-1+deb8u1
-'http://security.debian.org/debian-security/pool/updates/main/g/glib2.0/glib2.0_2.42.1-1+deb8u1.dsc' glib2.0_2.42.1-1+deb8u1.dsc 2816 SHA256:15bd402d05b88c53e8dc2cd88fa140e765e1da5213ae493ba6aeb1317dab612b
-'http://security.debian.org/debian-security/pool/updates/main/g/glib2.0/glib2.0_2.42.1.orig.tar.xz' glib2.0_2.42.1.orig.tar.xz 6985120 SHA256:8f3f0865280e45b8ce840e176ef83bcfd511148918cc8d39df2ee89b67dcf89a
-'http://security.debian.org/debian-security/pool/updates/main/g/glib2.0/glib2.0_2.42.1-1+deb8u1.debian.tar.xz' glib2.0_2.42.1-1+deb8u1.debian.tar.xz 69480 SHA256:274c2cb87d6b72d2c8e8bfcd340bea004c0c33b7cec06517e47172aea23a3598
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/glib2.0/2.42.1-1+deb8u1/
 
-- https://sources.debian.net/src/glib2.0/2.42.1-1+deb8u1/ (for browsing the source)
-- https://sources.debian.net/src/glib2.0/2.42.1-1+deb8u1/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/glib2.0/2.42.1-1+deb8u1/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `glibc=2.19-18+deb8u10`
 

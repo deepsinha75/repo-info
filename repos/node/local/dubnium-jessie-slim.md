@@ -1,18 +1,18 @@
-# `node:10.16.0-jessie-slim`
+# `node:10.16.1-jessie-slim`
 
 ## Docker Metadata
 
-- Image ID: `sha256:17c6e03878084edbdb40a49caf121f0413d3f137c87474f8d973dad325a9ddfa`
-- Created: `2019-07-10T03:34:15.462906969Z`
-- Virtual Size: ~ 192.00 Mb  
+- Image ID: `sha256:6d948ab0deadb6029c6bb155bfd15f9aa3d36c97edd67b47877e5ad813cac193`
+- Created: `2019-08-02T03:48:40.339338929Z`
+- Virtual Size: ~ 192.42 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["docker-entrypoint.sh"]`
 - Command: `["node"]`
 - Environment:
   - `PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
-  - `NODE_VERSION=10.16.0`
-  - `YARN_VERSION=1.16.0`
+  - `NODE_VERSION=10.16.1`
+  - `YARN_VERSION=1.17.3`
 
 ## `dpkg` (`.deb`-based packages)
 
@@ -1389,23 +1389,30 @@ Other potentially useful URLs:
 - https://sources.debian.net/src/libsepol/2.3-2/debian/copyright/ (for direct copyright/license information)
 - http://snapshot.debian.org/package/libsepol/2.3-2/ (for access to the source package after it no longer exists in the archive)
 
-### `dpkg` source package: `libssh2=1.4.3-4.1+deb8u3`
+### `dpkg` source package: `libssh2=1.4.3-4.1+deb8u5`
 
 Binary Packages:
 
-- `libssh2-1:amd64=1.4.3-4.1+deb8u3`
+- `libssh2-1:amd64=1.4.3-4.1+deb8u5`
 
 Licenses: (parsed from: `/usr/share/doc/libssh2-1/copyright`)
 
 - `BSD`
 
-**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
-This is *usually* due to a new package version being released and the old version being removed.
+Source:
 
-The source package *may* still be available for download from:
+```console
+$ apt-get source -qq --print-uris libssh2=1.4.3-4.1+deb8u5
+'http://security.debian.org/debian-security/pool/updates/main/libs/libssh2/libssh2_1.4.3-4.1+deb8u5.dsc' libssh2_1.4.3-4.1+deb8u5.dsc 1928 SHA256:868c726083fa684919aacf88a4384a0457ba6a931d2582db9f32c320b6c0a1ba
+'http://security.debian.org/debian-security/pool/updates/main/libs/libssh2/libssh2_1.4.3.orig.tar.gz' libssh2_1.4.3.orig.tar.gz 685712 SHA256:eac6f85f9df9db2e6386906a6227eb2cd7b3245739561cad7d6dc1d5d021b96d
+'http://security.debian.org/debian-security/pool/updates/main/libs/libssh2/libssh2_1.4.3-4.1+deb8u5.debian.tar.xz' libssh2_1.4.3-4.1+deb8u5.debian.tar.xz 21604 SHA256:8c0347bf417e8008792eaaf9eb2ce9e0c6bce88c97de0c47c04c8dea1176fa7a
+```
 
-- http://snapshot.debian.org/package/libssh2/1.4.3-4.1+deb8u3/
+Other potentially useful URLs:
 
+- https://sources.debian.net/src/libssh2/1.4.3-4.1+deb8u5/ (for browsing the source)
+- https://sources.debian.net/src/libssh2/1.4.3-4.1+deb8u5/debian/copyright/ (for direct copyright/license information)
+- http://snapshot.debian.org/package/libssh2/1.4.3-4.1+deb8u5/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `libtasn1-6=4.2-3+deb8u3`
 
