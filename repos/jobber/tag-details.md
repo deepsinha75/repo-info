@@ -10,35 +10,279 @@
 ## `jobber:1.4.0-alpine3.10`
 
 ```console
-$ docker pull jobber@sha256:a8409dff6597f2ef5f7ecd3c672671bb2af9a390073efd74f95c54aa41cba22a
+$ docker pull jobber@sha256:1eb611a4ea45d5fc819abbcfc53867cef98b340e7113578dbac64b97faee6994
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
 -	Platforms:
+	-	linux; amd64
+
+### `jobber:1.4.0-alpine3.10` - linux; amd64
+
+```console
+$ docker pull jobber@sha256:8e4503bcaae0c55c21df0df66d14e4573ad4bd0c2c5eebea9e2669b451af0898
+```
+
+-	Docker Version: 18.06.1-ce
+-	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
+-	Total Size: **10.4 MB (10411603 bytes)**  
+	(compressed transfer size, not on-disk size)
+-	Image ID: `sha256:f4cb4b4c3d37e0ed7df7a9d7568c3ac9520dc292fad654c4ceb1189149fcea13`
+-	Default Command: `["\/usr\/libexec\/jobberrunner","-u","\/var\/jobber\/1000\/cmd.sock","\/home\/jobberuser\/.jobber"]`
+
+```dockerfile
+# Thu, 11 Jul 2019 22:20:52 GMT
+ADD file:0eb5ea35741d23fe39cbac245b3a5d84856ed6384f4ff07d496369ee6d960bad in / 
+# Thu, 11 Jul 2019 22:20:52 GMT
+CMD ["/bin/sh"]
+# Sat, 03 Aug 2019 01:06:56 GMT
+ENV USERID=1000
+# Sat, 03 Aug 2019 01:06:58 GMT
+RUN addgroup jobberuser &&     adduser -S -u "${USERID}" -G jobberuser jobberuser &&     mkdir -p "/var/jobber/${USERID}" &&     chown -R jobberuser:jobberuser "/var/jobber/${USERID}"
+# Sat, 03 Aug 2019 01:06:58 GMT
+ENV JOBBER_VERSION=1.4.0
+# Sat, 03 Aug 2019 01:06:58 GMT
+ENV JOBBER_SHA256=37a96591e2c28494ef009d900a4c680c4fbd3c82bf4e6de3f70c6ad451e45867
+# Sat, 03 Aug 2019 01:07:01 GMT
+RUN wget -O /tmp/jobber.apk "https://github.com/dshearer/jobber/releases/download/v${JOBBER_VERSION}/jobber-${JOBBER_VERSION}-r0.apk" &&     echo "${JOBBER_SHA256} */tmp/jobber.apk" | sha256sum -c &&     apk add --no-network --no-scripts --allow-untrusted /tmp/jobber.apk &&     rm /tmp/jobber.apk
+# Sat, 03 Aug 2019 01:07:01 GMT
+COPY --chown=jobberuser:jobberuserfile:c7cc6d32091e7beeac78efd9fe855e36a106902c1177df0f9f6bd2bbe3b8d518 in /home/jobberuser/.jobber 
+# Sat, 03 Aug 2019 01:07:03 GMT
+RUN chmod 0600 /home/jobberuser/.jobber
+# Sat, 03 Aug 2019 01:07:03 GMT
+USER jobberuser
+# Sat, 03 Aug 2019 01:07:03 GMT
+CMD ["/usr/libexec/jobberrunner" "-u" "/var/jobber/1000/cmd.sock" "/home/jobberuser/.jobber"]
+```
+
+-	Layers:
+	-	`sha256:0503825856099e6adb39c8297af09547f69684b7016b7f3680ed801aa310baaa`  
+		Last Modified: Thu, 11 Jul 2019 22:21:30 GMT  
+		Size: 2.8 MB (2789742 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:ad9e4b58f6e9e32ed1e7d7da5a3d0773d051917b0caa105b261782d9f86ec7db`  
+		Last Modified: Sat, 03 Aug 2019 01:07:14 GMT  
+		Size: 1.3 KB (1308 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:06b9d17175b95d09a4b09484ac9fa75edc3e3c75e05b8816603f7b3bb8878cbf`  
+		Last Modified: Sat, 03 Aug 2019 01:07:16 GMT  
+		Size: 7.6 MB (7620086 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:a7a51d31c8458b1f84ecf503e5b29b0e57779659dc4e5c62eb8e996deaf4d3b3`  
+		Last Modified: Sat, 03 Aug 2019 01:07:14 GMT  
+		Size: 234.0 B  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:e5f65c9808647d20923ddd0370b6c70df026b509ff977bd6d023588589b9e698`  
+		Last Modified: Sat, 03 Aug 2019 01:07:14 GMT  
+		Size: 233.0 B  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `jobber:1.4-alpine3.10`
 
 ```console
-$ docker pull jobber@sha256:a8409dff6597f2ef5f7ecd3c672671bb2af9a390073efd74f95c54aa41cba22a
+$ docker pull jobber@sha256:1eb611a4ea45d5fc819abbcfc53867cef98b340e7113578dbac64b97faee6994
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
 -	Platforms:
+	-	linux; amd64
+
+### `jobber:1.4-alpine3.10` - linux; amd64
+
+```console
+$ docker pull jobber@sha256:8e4503bcaae0c55c21df0df66d14e4573ad4bd0c2c5eebea9e2669b451af0898
+```
+
+-	Docker Version: 18.06.1-ce
+-	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
+-	Total Size: **10.4 MB (10411603 bytes)**  
+	(compressed transfer size, not on-disk size)
+-	Image ID: `sha256:f4cb4b4c3d37e0ed7df7a9d7568c3ac9520dc292fad654c4ceb1189149fcea13`
+-	Default Command: `["\/usr\/libexec\/jobberrunner","-u","\/var\/jobber\/1000\/cmd.sock","\/home\/jobberuser\/.jobber"]`
+
+```dockerfile
+# Thu, 11 Jul 2019 22:20:52 GMT
+ADD file:0eb5ea35741d23fe39cbac245b3a5d84856ed6384f4ff07d496369ee6d960bad in / 
+# Thu, 11 Jul 2019 22:20:52 GMT
+CMD ["/bin/sh"]
+# Sat, 03 Aug 2019 01:06:56 GMT
+ENV USERID=1000
+# Sat, 03 Aug 2019 01:06:58 GMT
+RUN addgroup jobberuser &&     adduser -S -u "${USERID}" -G jobberuser jobberuser &&     mkdir -p "/var/jobber/${USERID}" &&     chown -R jobberuser:jobberuser "/var/jobber/${USERID}"
+# Sat, 03 Aug 2019 01:06:58 GMT
+ENV JOBBER_VERSION=1.4.0
+# Sat, 03 Aug 2019 01:06:58 GMT
+ENV JOBBER_SHA256=37a96591e2c28494ef009d900a4c680c4fbd3c82bf4e6de3f70c6ad451e45867
+# Sat, 03 Aug 2019 01:07:01 GMT
+RUN wget -O /tmp/jobber.apk "https://github.com/dshearer/jobber/releases/download/v${JOBBER_VERSION}/jobber-${JOBBER_VERSION}-r0.apk" &&     echo "${JOBBER_SHA256} */tmp/jobber.apk" | sha256sum -c &&     apk add --no-network --no-scripts --allow-untrusted /tmp/jobber.apk &&     rm /tmp/jobber.apk
+# Sat, 03 Aug 2019 01:07:01 GMT
+COPY --chown=jobberuser:jobberuserfile:c7cc6d32091e7beeac78efd9fe855e36a106902c1177df0f9f6bd2bbe3b8d518 in /home/jobberuser/.jobber 
+# Sat, 03 Aug 2019 01:07:03 GMT
+RUN chmod 0600 /home/jobberuser/.jobber
+# Sat, 03 Aug 2019 01:07:03 GMT
+USER jobberuser
+# Sat, 03 Aug 2019 01:07:03 GMT
+CMD ["/usr/libexec/jobberrunner" "-u" "/var/jobber/1000/cmd.sock" "/home/jobberuser/.jobber"]
+```
+
+-	Layers:
+	-	`sha256:0503825856099e6adb39c8297af09547f69684b7016b7f3680ed801aa310baaa`  
+		Last Modified: Thu, 11 Jul 2019 22:21:30 GMT  
+		Size: 2.8 MB (2789742 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:ad9e4b58f6e9e32ed1e7d7da5a3d0773d051917b0caa105b261782d9f86ec7db`  
+		Last Modified: Sat, 03 Aug 2019 01:07:14 GMT  
+		Size: 1.3 KB (1308 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:06b9d17175b95d09a4b09484ac9fa75edc3e3c75e05b8816603f7b3bb8878cbf`  
+		Last Modified: Sat, 03 Aug 2019 01:07:16 GMT  
+		Size: 7.6 MB (7620086 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:a7a51d31c8458b1f84ecf503e5b29b0e57779659dc4e5c62eb8e996deaf4d3b3`  
+		Last Modified: Sat, 03 Aug 2019 01:07:14 GMT  
+		Size: 234.0 B  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:e5f65c9808647d20923ddd0370b6c70df026b509ff977bd6d023588589b9e698`  
+		Last Modified: Sat, 03 Aug 2019 01:07:14 GMT  
+		Size: 233.0 B  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `jobber:1-alpine3.10`
 
 ```console
-$ docker pull jobber@sha256:a8409dff6597f2ef5f7ecd3c672671bb2af9a390073efd74f95c54aa41cba22a
+$ docker pull jobber@sha256:1eb611a4ea45d5fc819abbcfc53867cef98b340e7113578dbac64b97faee6994
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
 -	Platforms:
+	-	linux; amd64
+
+### `jobber:1-alpine3.10` - linux; amd64
+
+```console
+$ docker pull jobber@sha256:8e4503bcaae0c55c21df0df66d14e4573ad4bd0c2c5eebea9e2669b451af0898
+```
+
+-	Docker Version: 18.06.1-ce
+-	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
+-	Total Size: **10.4 MB (10411603 bytes)**  
+	(compressed transfer size, not on-disk size)
+-	Image ID: `sha256:f4cb4b4c3d37e0ed7df7a9d7568c3ac9520dc292fad654c4ceb1189149fcea13`
+-	Default Command: `["\/usr\/libexec\/jobberrunner","-u","\/var\/jobber\/1000\/cmd.sock","\/home\/jobberuser\/.jobber"]`
+
+```dockerfile
+# Thu, 11 Jul 2019 22:20:52 GMT
+ADD file:0eb5ea35741d23fe39cbac245b3a5d84856ed6384f4ff07d496369ee6d960bad in / 
+# Thu, 11 Jul 2019 22:20:52 GMT
+CMD ["/bin/sh"]
+# Sat, 03 Aug 2019 01:06:56 GMT
+ENV USERID=1000
+# Sat, 03 Aug 2019 01:06:58 GMT
+RUN addgroup jobberuser &&     adduser -S -u "${USERID}" -G jobberuser jobberuser &&     mkdir -p "/var/jobber/${USERID}" &&     chown -R jobberuser:jobberuser "/var/jobber/${USERID}"
+# Sat, 03 Aug 2019 01:06:58 GMT
+ENV JOBBER_VERSION=1.4.0
+# Sat, 03 Aug 2019 01:06:58 GMT
+ENV JOBBER_SHA256=37a96591e2c28494ef009d900a4c680c4fbd3c82bf4e6de3f70c6ad451e45867
+# Sat, 03 Aug 2019 01:07:01 GMT
+RUN wget -O /tmp/jobber.apk "https://github.com/dshearer/jobber/releases/download/v${JOBBER_VERSION}/jobber-${JOBBER_VERSION}-r0.apk" &&     echo "${JOBBER_SHA256} */tmp/jobber.apk" | sha256sum -c &&     apk add --no-network --no-scripts --allow-untrusted /tmp/jobber.apk &&     rm /tmp/jobber.apk
+# Sat, 03 Aug 2019 01:07:01 GMT
+COPY --chown=jobberuser:jobberuserfile:c7cc6d32091e7beeac78efd9fe855e36a106902c1177df0f9f6bd2bbe3b8d518 in /home/jobberuser/.jobber 
+# Sat, 03 Aug 2019 01:07:03 GMT
+RUN chmod 0600 /home/jobberuser/.jobber
+# Sat, 03 Aug 2019 01:07:03 GMT
+USER jobberuser
+# Sat, 03 Aug 2019 01:07:03 GMT
+CMD ["/usr/libexec/jobberrunner" "-u" "/var/jobber/1000/cmd.sock" "/home/jobberuser/.jobber"]
+```
+
+-	Layers:
+	-	`sha256:0503825856099e6adb39c8297af09547f69684b7016b7f3680ed801aa310baaa`  
+		Last Modified: Thu, 11 Jul 2019 22:21:30 GMT  
+		Size: 2.8 MB (2789742 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:ad9e4b58f6e9e32ed1e7d7da5a3d0773d051917b0caa105b261782d9f86ec7db`  
+		Last Modified: Sat, 03 Aug 2019 01:07:14 GMT  
+		Size: 1.3 KB (1308 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:06b9d17175b95d09a4b09484ac9fa75edc3e3c75e05b8816603f7b3bb8878cbf`  
+		Last Modified: Sat, 03 Aug 2019 01:07:16 GMT  
+		Size: 7.6 MB (7620086 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:a7a51d31c8458b1f84ecf503e5b29b0e57779659dc4e5c62eb8e996deaf4d3b3`  
+		Last Modified: Sat, 03 Aug 2019 01:07:14 GMT  
+		Size: 234.0 B  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:e5f65c9808647d20923ddd0370b6c70df026b509ff977bd6d023588589b9e698`  
+		Last Modified: Sat, 03 Aug 2019 01:07:14 GMT  
+		Size: 233.0 B  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `jobber:latest`
 
 ```console
-$ docker pull jobber@sha256:a8409dff6597f2ef5f7ecd3c672671bb2af9a390073efd74f95c54aa41cba22a
+$ docker pull jobber@sha256:1eb611a4ea45d5fc819abbcfc53867cef98b340e7113578dbac64b97faee6994
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
 -	Platforms:
+	-	linux; amd64
+
+### `jobber:latest` - linux; amd64
+
+```console
+$ docker pull jobber@sha256:8e4503bcaae0c55c21df0df66d14e4573ad4bd0c2c5eebea9e2669b451af0898
+```
+
+-	Docker Version: 18.06.1-ce
+-	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
+-	Total Size: **10.4 MB (10411603 bytes)**  
+	(compressed transfer size, not on-disk size)
+-	Image ID: `sha256:f4cb4b4c3d37e0ed7df7a9d7568c3ac9520dc292fad654c4ceb1189149fcea13`
+-	Default Command: `["\/usr\/libexec\/jobberrunner","-u","\/var\/jobber\/1000\/cmd.sock","\/home\/jobberuser\/.jobber"]`
+
+```dockerfile
+# Thu, 11 Jul 2019 22:20:52 GMT
+ADD file:0eb5ea35741d23fe39cbac245b3a5d84856ed6384f4ff07d496369ee6d960bad in / 
+# Thu, 11 Jul 2019 22:20:52 GMT
+CMD ["/bin/sh"]
+# Sat, 03 Aug 2019 01:06:56 GMT
+ENV USERID=1000
+# Sat, 03 Aug 2019 01:06:58 GMT
+RUN addgroup jobberuser &&     adduser -S -u "${USERID}" -G jobberuser jobberuser &&     mkdir -p "/var/jobber/${USERID}" &&     chown -R jobberuser:jobberuser "/var/jobber/${USERID}"
+# Sat, 03 Aug 2019 01:06:58 GMT
+ENV JOBBER_VERSION=1.4.0
+# Sat, 03 Aug 2019 01:06:58 GMT
+ENV JOBBER_SHA256=37a96591e2c28494ef009d900a4c680c4fbd3c82bf4e6de3f70c6ad451e45867
+# Sat, 03 Aug 2019 01:07:01 GMT
+RUN wget -O /tmp/jobber.apk "https://github.com/dshearer/jobber/releases/download/v${JOBBER_VERSION}/jobber-${JOBBER_VERSION}-r0.apk" &&     echo "${JOBBER_SHA256} */tmp/jobber.apk" | sha256sum -c &&     apk add --no-network --no-scripts --allow-untrusted /tmp/jobber.apk &&     rm /tmp/jobber.apk
+# Sat, 03 Aug 2019 01:07:01 GMT
+COPY --chown=jobberuser:jobberuserfile:c7cc6d32091e7beeac78efd9fe855e36a106902c1177df0f9f6bd2bbe3b8d518 in /home/jobberuser/.jobber 
+# Sat, 03 Aug 2019 01:07:03 GMT
+RUN chmod 0600 /home/jobberuser/.jobber
+# Sat, 03 Aug 2019 01:07:03 GMT
+USER jobberuser
+# Sat, 03 Aug 2019 01:07:03 GMT
+CMD ["/usr/libexec/jobberrunner" "-u" "/var/jobber/1000/cmd.sock" "/home/jobberuser/.jobber"]
+```
+
+-	Layers:
+	-	`sha256:0503825856099e6adb39c8297af09547f69684b7016b7f3680ed801aa310baaa`  
+		Last Modified: Thu, 11 Jul 2019 22:21:30 GMT  
+		Size: 2.8 MB (2789742 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:ad9e4b58f6e9e32ed1e7d7da5a3d0773d051917b0caa105b261782d9f86ec7db`  
+		Last Modified: Sat, 03 Aug 2019 01:07:14 GMT  
+		Size: 1.3 KB (1308 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:06b9d17175b95d09a4b09484ac9fa75edc3e3c75e05b8816603f7b3bb8878cbf`  
+		Last Modified: Sat, 03 Aug 2019 01:07:16 GMT  
+		Size: 7.6 MB (7620086 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:a7a51d31c8458b1f84ecf503e5b29b0e57779659dc4e5c62eb8e996deaf4d3b3`  
+		Last Modified: Sat, 03 Aug 2019 01:07:14 GMT  
+		Size: 234.0 B  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:e5f65c9808647d20923ddd0370b6c70df026b509ff977bd6d023588589b9e698`  
+		Last Modified: Sat, 03 Aug 2019 01:07:14 GMT  
+		Size: 233.0 B  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
