@@ -1,10 +1,10 @@
-# `docker:19.03.1-dind`
+# `docker:19.03.1-dind-rootless`
 
 ## Docker Metadata
 
-- Image ID: `sha256:5ba0af722913faa5db728c77943d230c45187432342db52cd720c3768726edd3`
-- Created: `2019-08-03T01:07:51.71497406Z`
-- Virtual Size: ~ 229.64 Mb  
+- Image ID: `sha256:8677fbabd05900153afb74b139094e77a0ce5064f6d2d4a4c4f2b1568fa98229`
+- Created: `2019-08-03T01:08:24.627456741Z`
+- Virtual Size: ~ 294.36 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["dockerd-entrypoint.sh"]`
@@ -14,6 +14,7 @@
   - `DOCKER_VERSION=19.03.1`
   - `DOCKER_TLS_CERTDIR=/certs`
   - `DIND_COMMIT=37498f009d8bf25fbb6199e8ccd34bed84f2874b`
+  - `ROOTLESSKIT_VERSION=0.6.0`
 
 ## `apk` (`.apk`-based packages)
 
@@ -184,6 +185,23 @@ e2fsprogs-libs-1.45.2-r0 installed size:
 
 e2fsprogs-libs-1.45.2-r0 license:
 GPL-2.0-or-later AND LGPL-2.0-or-later AND BSD-3-Clause AND MIT
+
+```
+
+### `apk` package: `iproute2`
+
+```console
+iproute2-4.20.0-r1 description:
+IP Routing Utilities
+
+iproute2-4.20.0-r1 webpage:
+https://www.linuxfoundation.org/collaborate/workgroups/networking/iproute2
+
+iproute2-4.20.0-r1 installed size:
+1708032
+
+iproute2-4.20.0-r1 license:
+GPL-2.0-or-later
 
 ```
 

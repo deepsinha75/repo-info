@@ -2,9 +2,9 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:8d710dc1a6ccc7d1ed8fe9e3887bcf72d7c8c9b250819c0e12b16937408236cf`
-- Created: `2019-07-23T21:08:16.834266523Z`
-- Virtual Size: ~ 185.04 Mb  
+- Image ID: `sha256:4779e55f6d0269c542e7bd3d487d7f59e6e55503b3e0a1cbc480b504ac61a4c5`
+- Created: `2019-08-03T01:08:38.530528066Z`
+- Virtual Size: ~ 185.11 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["dockerd-entrypoint.sh"]`
@@ -558,6 +558,23 @@ scanelf-1.2.3-r0 installed size:
 
 scanelf-1.2.3-r0 license:
 GPL-2.0
+
+```
+
+### `apk` package: `shadow-uidmap`
+
+```console
+shadow-uidmap-4.6-r2 description:
+Utilities for using subordinate UIDs and GIDs
+
+shadow-uidmap-4.6-r2 webpage:
+http://pkg-shadow.alioth.debian.org/
+
+shadow-uidmap-4.6-r2 installed size:
+90112
+
+shadow-uidmap-4.6-r2 license:
+GPL
 
 ```
 
