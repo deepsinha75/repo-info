@@ -1,10 +1,10 @@
-# `php:7.3.7-zts-alpine3.9`
+# `php:7.3.8-zts-alpine3.9`
 
 ## Docker Metadata
 
-- Image ID: `sha256:97258090bff341b861d0a05e54f230cab0ec99ea65f21807151f4dbca97d3eaa`
-- Created: `2019-07-10T00:38:35.519758753Z`
-- Virtual Size: ~ 65.20 Mb  
+- Image ID: `sha256:c51dd3c80d728824fe527b87982f9375717e2c59739d39ec9218598b2c064a24`
+- Created: `2019-08-02T06:37:03.178177074Z`
+- Virtual Size: ~ 65.43 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["docker-php-entrypoint"]`
@@ -18,10 +18,10 @@
   - `PHP_CPPFLAGS=-fstack-protector-strong -fpic -fpie -O2`
   - `PHP_LDFLAGS=-Wl,-O1 -Wl,--hash-style=both -pie`
   - `GPG_KEYS=CBAF69F173A0FEA4B537F470D66C9593118BCCB6 F38252826ACD957EF380D39F2F7956BC5DA04B5D`
-  - `PHP_VERSION=7.3.7`
-  - `PHP_URL=https://www.php.net/get/php-7.3.7.tar.xz/from/this/mirror`
-  - `PHP_ASC_URL=https://www.php.net/get/php-7.3.7.tar.xz.asc/from/this/mirror`
-  - `PHP_SHA256=ba067200ba649956b3a92ec8b71a6ed8ce8a099921212443c1bcf3260a29274c`
+  - `PHP_VERSION=7.3.8`
+  - `PHP_URL=https://www.php.net/get/php-7.3.8.tar.xz/from/this/mirror`
+  - `PHP_ASC_URL=https://www.php.net/get/php-7.3.8.tar.xz.asc/from/this/mirror`
+  - `PHP_SHA256=f6046b2ae625d8c04310bda0737ac660dc5563a8e04e8a46c1ee24ea414ad5a5`
   - `PHP_MD5=`
 
 ## `apk` (`.apk`-based packages)
