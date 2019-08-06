@@ -1,7 +1,7 @@
 ## `ros:melodic-ros-base`
 
 ```console
-$ docker pull ros@sha256:0173d3a37afec73608ee8063b9749468cedb77419ea550bd0724865908c21083
+$ docker pull ros@sha256:f9ae856e047fc89ada81e2c8d26024126aa1e4f7dac6bf48e16c2cdac64aa0a1
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -122,14 +122,14 @@ RUN apt-get update && apt-get install -y     ros-melodic-ros-base=1.4.1-0*     &
 ### `ros:melodic-ros-base` - linux; arm variant v7
 
 ```console
-$ docker pull ros@sha256:b09c6155006f59ab0282f5693e22a8ca85508d6c5b96ea4b2e47951b4ec2ebde
+$ docker pull ros@sha256:7477bf23c38971e12c828abeb7b0de95ab724d76965d7f16b31baedf7286ed61
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **372.9 MB (372859850 bytes)**  
+-	Total Size: **372.8 MB (372798546 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:d215ef59be5b37af87349cda0d4c79c8cf1e1ad7acf90aa140777daece2c8003`
+-	Image ID: `sha256:a29d513212336735b850da0de286a55a0d3ab9dae69b09d377ad7337714b6ed2`
 -	Entrypoint: `["\/ros_entrypoint.sh"]`
 -	Default Command: `["bash"]`
 
@@ -146,31 +146,31 @@ RUN mkdir -p /run/systemd && echo 'docker' > /run/systemd/container
 CMD ["/bin/bash"]
 # Tue, 23 Jul 2019 16:21:57 GMT
 RUN echo 'Etc/UTC' > /etc/timezone &&     ln -s /usr/share/zoneinfo/Etc/UTC /etc/localtime &&     apt-get update && apt-get install -q -y tzdata && rm -rf /var/lib/apt/lists/*
-# Tue, 23 Jul 2019 16:22:23 GMT
-RUN apt-get update && apt-get install -q -y     dirmngr     gnupg2     lsb-release     && rm -rf /var/lib/apt/lists/*
-# Tue, 23 Jul 2019 17:26:00 GMT
+# Tue, 06 Aug 2019 00:58:33 GMT
+RUN apt-get update && apt-get install -q -y     dirmngr     gnupg2     && rm -rf /var/lib/apt/lists/*
+# Tue, 06 Aug 2019 00:58:35 GMT
 RUN apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys C1CF6E31E6BADE8868B172B4F42ED6FBAB17C654
-# Tue, 23 Jul 2019 17:26:02 GMT
-RUN echo "deb http://packages.ros.org/ros/ubuntu `lsb_release -sc` main" > /etc/apt/sources.list.d/ros-latest.list
-# Tue, 23 Jul 2019 17:27:02 GMT
+# Tue, 06 Aug 2019 00:58:36 GMT
+RUN echo "deb http://packages.ros.org/ros/ubuntu bionic main" > /etc/apt/sources.list.d/ros1-latest.list
+# Tue, 06 Aug 2019 00:59:49 GMT
 RUN apt-get update && apt-get install --no-install-recommends -y     python-rosdep     python-rosinstall     python-vcstools     && rm -rf /var/lib/apt/lists/*
-# Tue, 23 Jul 2019 17:27:03 GMT
+# Tue, 06 Aug 2019 00:59:50 GMT
 ENV LANG=C.UTF-8
-# Tue, 23 Jul 2019 17:27:03 GMT
+# Tue, 06 Aug 2019 00:59:51 GMT
 ENV LC_ALL=C.UTF-8
-# Tue, 23 Jul 2019 17:27:18 GMT
+# Tue, 06 Aug 2019 01:00:06 GMT
 RUN rosdep init     && rosdep update
-# Tue, 23 Jul 2019 17:27:19 GMT
+# Tue, 06 Aug 2019 01:00:06 GMT
 ENV ROS_DISTRO=melodic
-# Tue, 23 Jul 2019 17:30:39 GMT
+# Tue, 06 Aug 2019 01:03:24 GMT
 RUN apt-get update && apt-get install -y     ros-melodic-ros-core=1.4.1-0*     && rm -rf /var/lib/apt/lists/*
-# Tue, 23 Jul 2019 17:30:44 GMT
+# Tue, 06 Aug 2019 01:03:31 GMT
 COPY file:cbbaa0f5d6a276512315f5b4d7347e94a120cefbda9058ebb0d678847ff4837f in / 
-# Tue, 23 Jul 2019 17:30:44 GMT
+# Tue, 06 Aug 2019 01:03:31 GMT
 ENTRYPOINT ["/ros_entrypoint.sh"]
-# Tue, 23 Jul 2019 17:30:45 GMT
+# Tue, 06 Aug 2019 01:03:31 GMT
 CMD ["bash"]
-# Tue, 23 Jul 2019 17:32:12 GMT
+# Tue, 06 Aug 2019 01:04:56 GMT
 RUN apt-get update && apt-get install -y     ros-melodic-ros-base=1.4.1-0*     && rm -rf /var/lib/apt/lists/*
 ```
 
@@ -195,50 +195,50 @@ RUN apt-get update && apt-get install -y     ros-melodic-ros-base=1.4.1-0*     &
 		Last Modified: Tue, 23 Jul 2019 17:45:45 GMT  
 		Size: 837.5 KB (837510 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:4f4761bbe75b197e4ef82d2bf07ada77f26a6cf990ddbd82f2a85eed5a99566f`  
-		Last Modified: Tue, 23 Jul 2019 17:45:49 GMT  
-		Size: 13.5 MB (13453103 bytes)  
+	-	`sha256:cfb9de27489262492cebf2e9764eb1b63bdd27872beab5f111d9f1066f465838`  
+		Last Modified: Tue, 06 Aug 2019 01:25:38 GMT  
+		Size: 5.6 MB (5626733 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:cc538f52cf38200a413b581bdae226d74abd8c29cdcf202ff3e35b444c7f7421`  
-		Last Modified: Tue, 23 Jul 2019 17:45:44 GMT  
-		Size: 1.4 KB (1420 bytes)  
+	-	`sha256:e64ac0d97b7958362f23a6b9bec0f3e6c02fe568aa4848d99a71ff0a4a867752`  
+		Last Modified: Tue, 06 Aug 2019 01:25:37 GMT  
+		Size: 1.4 KB (1419 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:94b7e0d04e919e415388d8a5a4644568b04131775deb846cbe998d020d77a9df`  
-		Last Modified: Tue, 23 Jul 2019 17:45:43 GMT  
-		Size: 5.5 KB (5452 bytes)  
+	-	`sha256:ae6c6d1c983a617404dbecac4a1f1a46d80a95157beae2c0af428b593b09edc2`  
+		Last Modified: Tue, 06 Aug 2019 01:25:36 GMT  
+		Size: 225.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:5f4e6850ed7e20561c22260a05a6a50b349295cd134910e6a16ed41f33619f45`  
-		Last Modified: Tue, 23 Jul 2019 17:45:58 GMT  
-		Size: 42.3 MB (42289382 bytes)  
+	-	`sha256:1eb70ca0fec457b0bf94df062acc22237e0c26e62ee86ba14d71e38ff64b8b63`  
+		Last Modified: Tue, 06 Aug 2019 01:25:53 GMT  
+		Size: 49.7 MB (49695175 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:7d2e5a2a44efc8a210ab4797e65bfb45982d1f3aa9181d1988448a355ef0efce`  
-		Last Modified: Tue, 23 Jul 2019 17:45:43 GMT  
-		Size: 399.8 KB (399788 bytes)  
+	-	`sha256:ed2569a6ffe89ff0e9128ea034b60d7f5f3c2d3495edd053bd4cdc6197d9a067`  
+		Last Modified: Tue, 06 Aug 2019 01:25:36 GMT  
+		Size: 404.1 KB (404085 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:f70f087d436f90975d738f6fdf5ab72d1b9a775a241af613a16c9be01f3e001e`  
-		Last Modified: Tue, 23 Jul 2019 17:46:52 GMT  
-		Size: 232.5 MB (232481039 bytes)  
+	-	`sha256:55032eecf16e206711fa101c8bf0a38e4601e241d62bb96a3154579a96c256cc`  
+		Last Modified: Tue, 06 Aug 2019 01:53:24 GMT  
+		Size: 232.8 MB (232841109 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:e90e247a0c58553c21268b3fad68ab6ee3118d5965e831b287e86a37f5c6aedf`  
-		Last Modified: Tue, 23 Jul 2019 17:45:43 GMT  
-		Size: 196.0 B  
+	-	`sha256:640d8f3b4b96a3956d76366ed7048ee6860d37aad88c815a03e0f5f77e6186c5`  
+		Last Modified: Tue, 06 Aug 2019 01:25:35 GMT  
+		Size: 195.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:fc63eb377e88f429344c7944d1359b9e37136d55c77c70b6027e16fe051d06bb`  
-		Last Modified: Tue, 23 Jul 2019 17:47:21 GMT  
-		Size: 61.1 MB (61081382 bytes)  
+	-	`sha256:d8b2103498b6c566c4b854045d13b981aa7d5f7afcb00956bc7eca0ee6f0ec4e`  
+		Last Modified: Tue, 06 Aug 2019 01:53:51 GMT  
+		Size: 61.1 MB (61081517 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `ros:melodic-ros-base` - linux; arm64 variant v8
 
 ```console
-$ docker pull ros@sha256:0ba006e6189f9278ce1494f7f4394b09e40b09c7487651ff3fd33d928eb4fe5a
+$ docker pull ros@sha256:4281de7791ba92d47005ac5fb8a40cdf01552aa61c3deb28abd4ca519fe70507
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **350.6 MB (350570766 bytes)**  
+-	Total Size: **350.5 MB (350529293 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:03e8ae54065410b3bcebb3c4a7ae91950c34b110e3a3bbb9a0449867761bc1f2`
+-	Image ID: `sha256:92ce5d911a74d2d7d7dd56e83ce3f4f681bfa14b5fda21facef7f8b5c8374b1c`
 -	Entrypoint: `["\/ros_entrypoint.sh"]`
 -	Default Command: `["bash"]`
 
@@ -255,31 +255,31 @@ RUN mkdir -p /run/systemd && echo 'docker' > /run/systemd/container
 CMD ["/bin/bash"]
 # Tue, 23 Jul 2019 16:27:31 GMT
 RUN echo 'Etc/UTC' > /etc/timezone &&     ln -s /usr/share/zoneinfo/Etc/UTC /etc/localtime &&     apt-get update && apt-get install -q -y tzdata && rm -rf /var/lib/apt/lists/*
-# Tue, 23 Jul 2019 16:27:59 GMT
-RUN apt-get update && apt-get install -q -y     dirmngr     gnupg2     lsb-release     && rm -rf /var/lib/apt/lists/*
-# Tue, 23 Jul 2019 17:12:14 GMT
+# Tue, 06 Aug 2019 01:16:57 GMT
+RUN apt-get update && apt-get install -q -y     dirmngr     gnupg2     && rm -rf /var/lib/apt/lists/*
+# Tue, 06 Aug 2019 01:16:59 GMT
 RUN apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys C1CF6E31E6BADE8868B172B4F42ED6FBAB17C654
-# Tue, 23 Jul 2019 17:12:16 GMT
-RUN echo "deb http://packages.ros.org/ros/ubuntu `lsb_release -sc` main" > /etc/apt/sources.list.d/ros-latest.list
-# Tue, 23 Jul 2019 17:13:13 GMT
+# Tue, 06 Aug 2019 01:17:01 GMT
+RUN echo "deb http://packages.ros.org/ros/ubuntu bionic main" > /etc/apt/sources.list.d/ros1-latest.list
+# Tue, 06 Aug 2019 01:18:05 GMT
 RUN apt-get update && apt-get install --no-install-recommends -y     python-rosdep     python-rosinstall     python-vcstools     && rm -rf /var/lib/apt/lists/*
-# Tue, 23 Jul 2019 17:13:14 GMT
+# Tue, 06 Aug 2019 01:18:06 GMT
 ENV LANG=C.UTF-8
-# Tue, 23 Jul 2019 17:13:15 GMT
+# Tue, 06 Aug 2019 01:18:06 GMT
 ENV LC_ALL=C.UTF-8
-# Tue, 23 Jul 2019 17:13:30 GMT
+# Tue, 06 Aug 2019 01:18:23 GMT
 RUN rosdep init     && rosdep update
-# Tue, 23 Jul 2019 17:13:30 GMT
+# Tue, 06 Aug 2019 01:18:23 GMT
 ENV ROS_DISTRO=melodic
-# Tue, 23 Jul 2019 17:16:23 GMT
+# Tue, 06 Aug 2019 01:21:05 GMT
 RUN apt-get update && apt-get install -y     ros-melodic-ros-core=1.4.1-0*     && rm -rf /var/lib/apt/lists/*
-# Tue, 23 Jul 2019 17:16:28 GMT
+# Tue, 06 Aug 2019 01:21:08 GMT
 COPY file:cbbaa0f5d6a276512315f5b4d7347e94a120cefbda9058ebb0d678847ff4837f in / 
-# Tue, 23 Jul 2019 17:16:29 GMT
+# Tue, 06 Aug 2019 01:21:08 GMT
 ENTRYPOINT ["/ros_entrypoint.sh"]
-# Tue, 23 Jul 2019 17:16:29 GMT
+# Tue, 06 Aug 2019 01:21:08 GMT
 CMD ["bash"]
-# Tue, 23 Jul 2019 17:17:53 GMT
+# Tue, 06 Aug 2019 01:22:29 GMT
 RUN apt-get update && apt-get install -y     ros-melodic-ros-base=1.4.1-0*     && rm -rf /var/lib/apt/lists/*
 ```
 
@@ -304,35 +304,35 @@ RUN apt-get update && apt-get install -y     ros-melodic-ros-base=1.4.1-0*     &
 		Last Modified: Tue, 23 Jul 2019 16:34:21 GMT  
 		Size: 837.4 KB (837365 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:4a386958252ee6d67fa248985e4f2bfe16eaee801e9cca87e7e56910810bf5f1`  
-		Last Modified: Tue, 23 Jul 2019 16:34:24 GMT  
-		Size: 14.0 MB (14047141 bytes)  
+	-	`sha256:6f5e33ec37f8737d49763b4a11393ed56a1b105094d00a967718ffc57d01218b`  
+		Last Modified: Tue, 06 Aug 2019 02:01:40 GMT  
+		Size: 6.1 MB (6093216 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:fd568abc75306fdfa92c928eb1f740ff40c09424ba3107ab73b7ba51582840a0`  
-		Last Modified: Tue, 23 Jul 2019 17:40:45 GMT  
+	-	`sha256:c8bf2e79acf084bcebd01b09e2cfe50bcc20fa78d00026e306cf2d21b876a865`  
+		Last Modified: Tue, 06 Aug 2019 02:01:36 GMT  
 		Size: 1.4 KB (1419 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:645a158032512a41ee3dbc00e440e4c1a1bc578e2ab2a82d082496e79867cf41`  
-		Last Modified: Tue, 23 Jul 2019 17:40:44 GMT  
-		Size: 5.4 KB (5449 bytes)  
+	-	`sha256:2c3bc29d6bef69f09d6ea5161d577f3decbd5cd7ae7878b3971f549bd256e08d`  
+		Last Modified: Tue, 06 Aug 2019 02:01:35 GMT  
+		Size: 222.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:03baa3a03f4e2a7ddf28708a3d5cfa17994566ed0a36f422ef2764921bc8c551`  
-		Last Modified: Tue, 23 Jul 2019 17:41:01 GMT  
-		Size: 44.9 MB (44899166 bytes)  
+	-	`sha256:3d3cc6da70e8c9e9fdb2708b44aa67b177d015e87538398d44e10d71ad99e714`  
+		Last Modified: Tue, 06 Aug 2019 02:01:54 GMT  
+		Size: 52.4 MB (52416863 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:e05e80998477cd93664537e8e0c7b69fa6ac066cd24f91674ab18a05c62b99d7`  
-		Last Modified: Tue, 23 Jul 2019 17:40:45 GMT  
-		Size: 399.8 KB (399789 bytes)  
+	-	`sha256:062e92a38e8577b9ad9657b404818ee1ea0b15123731f9324c3e91d4b7a07d08`  
+		Last Modified: Tue, 06 Aug 2019 02:01:35 GMT  
+		Size: 404.2 KB (404185 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:1ecd56c24c300fc3657acc3616d615bfe227420f9253dded9d217eebddc54c02`  
-		Last Modified: Tue, 23 Jul 2019 17:41:48 GMT  
-		Size: 203.1 MB (203092137 bytes)  
+	-	`sha256:91f0b6fab976ad6fdda0071bd644d8937270ed9cae34a5afe89ab61eb5ef2839`  
+		Last Modified: Tue, 06 Aug 2019 02:02:37 GMT  
+		Size: 203.5 MB (203487646 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:a719a883516cdd9d9ddf23b80e160c585cadd91a381411a79cba3625da4c5b5a`  
-		Last Modified: Tue, 23 Jul 2019 17:40:44 GMT  
+	-	`sha256:4f83fa2a5e45e41f5f4fa27ccd7c0957baa995b6df9a9cb8b29fc785468acac1`  
+		Last Modified: Tue, 06 Aug 2019 02:01:35 GMT  
 		Size: 195.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:d370ac9581e7e0b635d70df93165c9b5b83bbefb0b3a4643db484cfa78cda126`  
-		Last Modified: Tue, 23 Jul 2019 17:42:17 GMT  
-		Size: 63.5 MB (63538770 bytes)  
+	-	`sha256:ded97e6e444c6afebc90c12ebd577d13ea7f13e4640f408e1abc3bb3c7cfc28b`  
+		Last Modified: Tue, 06 Aug 2019 02:03:05 GMT  
+		Size: 63.5 MB (63538847 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
