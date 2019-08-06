@@ -280,13 +280,9 @@ Licenses: (parsed from: `/usr/share/doc/base-files/copyright`)
 
 - `GPL`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris base-files=10.1ubuntu2.5
-'http://archive.ubuntu.com/ubuntu/pool/main/b/base-files/base-files_10.1ubuntu2.5.dsc' base-files_10.1ubuntu2.5.dsc 1620 SHA256:641b024666edd687c8873d22346340612aaa351bedb246a13212b9a2063c57e8
-'http://archive.ubuntu.com/ubuntu/pool/main/b/base-files/base-files_10.1ubuntu2.5.tar.xz' base-files_10.1ubuntu2.5.tar.xz 78188 SHA256:f2e6870b9b1145b33e8b2dcd6ab2aadaefb8563a1c23ffa6e5c3b29f1eca5f2c
-```
 
 ### `dpkg` source package: `base-passwd=3.5.44`
 
@@ -1205,14 +1201,9 @@ Licenses: (parsed from: `/usr/share/doc/libgstreamer-plugins-base1.0-0/copyright
 - `LGPL-2+`
 - `MIT/X11 (BSD like) LGPL-2+`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris gst-plugins-base1.0=1.14.4-1ubuntu1.1~ubuntu18.04.1
-'http://archive.ubuntu.com/ubuntu/pool/main/g/gst-plugins-base1.0/gst-plugins-base1.0_1.14.4-1ubuntu1.1~ubuntu18.04.1.dsc' gst-plugins-base1.0_1.14.4-1ubuntu1.1~ubuntu18.04.1.dsc 4476 SHA256:b2a9b6eaa4462ece6ea20f41b2ac8fedb6b99c2784f7eaa4fe66cd065e494708
-'http://archive.ubuntu.com/ubuntu/pool/main/g/gst-plugins-base1.0/gst-plugins-base1.0_1.14.4.orig.tar.xz' gst-plugins-base1.0_1.14.4.orig.tar.xz 3703232 SHA256:ca6139490e48863e7706d870ff4e8ac9f417b56f3b9e4b3ce490c13b09a77461
-'http://archive.ubuntu.com/ubuntu/pool/main/g/gst-plugins-base1.0/gst-plugins-base1.0_1.14.4-1ubuntu1.1~ubuntu18.04.1.debian.tar.xz' gst-plugins-base1.0_1.14.4-1ubuntu1.1~ubuntu18.04.1.debian.tar.xz 46140 SHA256:e19ebefbbe88ffee65a900bfe9b60633ee413810934194a03e66bf95d22502e0
-```
 
 ### `dpkg` source package: `gstreamer1.0=1.14.4-1~ubuntu18.04.1`
 
@@ -1228,14 +1219,9 @@ Licenses: (parsed from: `/usr/share/doc/libgstreamer1.0-0/copyright`)
 - `LGPL-2+`
 - `LGPL-2.1+`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris gstreamer1.0=1.14.4-1~ubuntu18.04.1
-'http://archive.ubuntu.com/ubuntu/pool/main/g/gstreamer1.0/gstreamer1.0_1.14.4-1~ubuntu18.04.1.dsc' gstreamer1.0_1.14.4-1~ubuntu18.04.1.dsc 3048 SHA256:9e545121a1c5772a5854ca48a5c29d953393c7da35fe383a42b027356e981ad8
-'http://archive.ubuntu.com/ubuntu/pool/main/g/gstreamer1.0/gstreamer1.0_1.14.4.orig.tar.xz' gstreamer1.0_1.14.4.orig.tar.xz 3264324 SHA256:f94f6696c5f05a3b3a9183e39c5f5c0b779f75a04c0efa497e7920afa985ffc7
-'http://archive.ubuntu.com/ubuntu/pool/main/g/gstreamer1.0/gstreamer1.0_1.14.4-1~ubuntu18.04.1.debian.tar.xz' gstreamer1.0_1.14.4-1~ubuntu18.04.1.debian.tar.xz 44556 SHA256:7a11e33af98de3f3390f177a964be409e5a1e457ef3185718c04b4e5c0453568
-```
 
 ### `dpkg` source package: `gtk+3.0=3.22.30-1ubuntu4`
 
