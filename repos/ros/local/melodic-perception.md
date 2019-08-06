@@ -2,8 +2,8 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:1a5f3d1cbcc9d811d86fdb8cd6caaa5b4c93099e368f9f2dd6c092627497d0bd`
-- Created: `2019-07-23T17:25:44.561385317Z`
+- Image ID: `sha256:582ca9fae49807ebd141bd6c1c216ec5951d71b74af5ce7f0fcebfe100ab0fa4`
+- Created: `2019-08-03T03:08:16.936919397Z`
 - Virtual Size: ~ 2.45 Gb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
@@ -519,13 +519,9 @@ Licenses: (parsed from: `/usr/share/doc/base-files/copyright`)
 
 - `GPL`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris base-files=10.1ubuntu2.5
-'http://archive.ubuntu.com/ubuntu/pool/main/b/base-files/base-files_10.1ubuntu2.5.dsc' base-files_10.1ubuntu2.5.dsc 1620 SHA256:641b024666edd687c8873d22346340612aaa351bedb246a13212b9a2063c57e8
-'http://archive.ubuntu.com/ubuntu/pool/main/b/base-files/base-files_10.1ubuntu2.5.tar.xz' base-files_10.1ubuntu2.5.tar.xz 78188 SHA256:f2e6870b9b1145b33e8b2dcd6ab2aadaefb8563a1c23ffa6e5c3b29f1eca5f2c
-```
 
 ### `dpkg` source package: `base-passwd=3.5.44`
 
@@ -2838,14 +2834,9 @@ Licenses: (parsed from: `/usr/share/doc/gstreamer1.0-plugins-base/copyright`, `/
 - `LGPL-2+`
 - `MIT/X11 (BSD like) LGPL-2+`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris gst-plugins-base1.0=1.14.4-1ubuntu1.1~ubuntu18.04.1
-'http://archive.ubuntu.com/ubuntu/pool/main/g/gst-plugins-base1.0/gst-plugins-base1.0_1.14.4-1ubuntu1.1~ubuntu18.04.1.dsc' gst-plugins-base1.0_1.14.4-1ubuntu1.1~ubuntu18.04.1.dsc 4476 SHA256:b2a9b6eaa4462ece6ea20f41b2ac8fedb6b99c2784f7eaa4fe66cd065e494708
-'http://archive.ubuntu.com/ubuntu/pool/main/g/gst-plugins-base1.0/gst-plugins-base1.0_1.14.4.orig.tar.xz' gst-plugins-base1.0_1.14.4.orig.tar.xz 3703232 SHA256:ca6139490e48863e7706d870ff4e8ac9f417b56f3b9e4b3ce490c13b09a77461
-'http://archive.ubuntu.com/ubuntu/pool/main/g/gst-plugins-base1.0/gst-plugins-base1.0_1.14.4-1ubuntu1.1~ubuntu18.04.1.debian.tar.xz' gst-plugins-base1.0_1.14.4-1ubuntu1.1~ubuntu18.04.1.debian.tar.xz 46140 SHA256:e19ebefbbe88ffee65a900bfe9b60633ee413810934194a03e66bf95d22502e0
-```
 
 ### `dpkg` source package: `gstreamer1.0=1.14.4-1~ubuntu18.04.1`
 
@@ -2861,14 +2852,9 @@ Licenses: (parsed from: `/usr/share/doc/libgstreamer1.0-0/copyright`)
 - `LGPL-2+`
 - `LGPL-2.1+`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris gstreamer1.0=1.14.4-1~ubuntu18.04.1
-'http://archive.ubuntu.com/ubuntu/pool/main/g/gstreamer1.0/gstreamer1.0_1.14.4-1~ubuntu18.04.1.dsc' gstreamer1.0_1.14.4-1~ubuntu18.04.1.dsc 3048 SHA256:9e545121a1c5772a5854ca48a5c29d953393c7da35fe383a42b027356e981ad8
-'http://archive.ubuntu.com/ubuntu/pool/main/g/gstreamer1.0/gstreamer1.0_1.14.4.orig.tar.xz' gstreamer1.0_1.14.4.orig.tar.xz 3264324 SHA256:f94f6696c5f05a3b3a9183e39c5f5c0b779f75a04c0efa497e7920afa985ffc7
-'http://archive.ubuntu.com/ubuntu/pool/main/g/gstreamer1.0/gstreamer1.0_1.14.4-1~ubuntu18.04.1.debian.tar.xz' gstreamer1.0_1.14.4-1~ubuntu18.04.1.debian.tar.xz 44556 SHA256:7a11e33af98de3f3390f177a964be409e5a1e457ef3185718c04b4e5c0453568
-```
 
 ### `dpkg` source package: `gtk+2.0=2.24.32-1ubuntu1`
 
@@ -6960,12 +6946,12 @@ $ apt-get source -qq --print-uris mtdev=1.1.5-1ubuntu3
 'http://archive.ubuntu.com/ubuntu/pool/main/m/mtdev/mtdev_1.1.5-1ubuntu3.debian.tar.xz' mtdev_1.1.5-1ubuntu3.debian.tar.xz 6268 SHA256:60d8d42d71828abc8ef728c1a52f8c5e407be1d0c24871580a744e2b12a7a8a6
 ```
 
-### `dpkg` source package: `mysql-5.7=5.7.26-0ubuntu0.18.04.1`
+### `dpkg` source package: `mysql-5.7=5.7.27-0ubuntu0.18.04.1`
 
 Binary Packages:
 
-- `libmysqlclient-dev=5.7.26-0ubuntu0.18.04.1`
-- `libmysqlclient20:amd64=5.7.26-0ubuntu0.18.04.1`
+- `libmysqlclient-dev=5.7.27-0ubuntu0.18.04.1`
+- `libmysqlclient20:amd64=5.7.27-0ubuntu0.18.04.1`
 
 Licenses: (parsed from: `/usr/share/doc/libmysqlclient-dev/copyright`, `/usr/share/doc/libmysqlclient20/copyright`)
 
@@ -6983,9 +6969,14 @@ Licenses: (parsed from: `/usr/share/doc/libmysqlclient-dev/copyright`, `/usr/sha
 - `public-domain`
 - `zlib/libpng`
 
-**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
-This is *usually* due to a new package version being released and the old version being removed.
+Source:
 
+```console
+$ apt-get source -qq --print-uris mysql-5.7=5.7.27-0ubuntu0.18.04.1
+'http://archive.ubuntu.com/ubuntu/pool/main/m/mysql-5.7/mysql-5.7_5.7.27-0ubuntu0.18.04.1.dsc' mysql-5.7_5.7.27-0ubuntu0.18.04.1.dsc 3403 SHA256:f0474ddd34f24c1ea514191799746589a799b2d30f79789624ca0ba86287f368
+'http://archive.ubuntu.com/ubuntu/pool/main/m/mysql-5.7/mysql-5.7_5.7.27.orig.tar.gz' mysql-5.7_5.7.27.orig.tar.gz 51436383 SHA256:036ab46a8a1216cfc1e87374bd1cba12e2208c02cf328a31851be7e1c7f57a2b
+'http://archive.ubuntu.com/ubuntu/pool/main/m/mysql-5.7/mysql-5.7_5.7.27-0ubuntu0.18.04.1.debian.tar.xz' mysql-5.7_5.7.27-0ubuntu0.18.04.1.debian.tar.xz 156232 SHA256:dd136610bb8348de9432e34a4238460760f3f884d9f350ea88c4c5089b1d5472
+```
 
 ### `dpkg` source package: `mysql-defaults=1.0.4`
 
@@ -7499,21 +7490,26 @@ $ apt-get source -qq --print-uris openjpeg2=2.3.0-1
 'http://archive.ubuntu.com/ubuntu/pool/universe/o/openjpeg2/openjpeg2_2.3.0-1.debian.tar.xz' openjpeg2_2.3.0-1.debian.tar.xz 17744 SHA256:a7036deea45045b7bf46acbe50ba0dc648d56058534f673bc6d4add1f052184a
 ```
 
-### `dpkg` source package: `openldap=2.4.45+dfsg-1ubuntu1.2`
+### `dpkg` source package: `openldap=2.4.45+dfsg-1ubuntu1.3`
 
 Binary Packages:
 
-- `libldap-2.4-2:amd64=2.4.45+dfsg-1ubuntu1.2`
-- `libldap-common=2.4.45+dfsg-1ubuntu1.2`
-- `libldap2-dev:amd64=2.4.45+dfsg-1ubuntu1.2`
+- `libldap-2.4-2:amd64=2.4.45+dfsg-1ubuntu1.3`
+- `libldap-common=2.4.45+dfsg-1ubuntu1.3`
+- `libldap2-dev:amd64=2.4.45+dfsg-1ubuntu1.3`
 
 **WARNING:** unable to detect licenses! (package likely not compliant with DEP-5)  
 If source is available (seen below), check the contents of `debian/copyright` within it.
 
 
-**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
-This is *usually* due to a new package version being released and the old version being removed.
+Source:
 
+```console
+$ apt-get source -qq --print-uris openldap=2.4.45+dfsg-1ubuntu1.3
+'http://archive.ubuntu.com/ubuntu/pool/main/o/openldap/openldap_2.4.45+dfsg-1ubuntu1.3.dsc' openldap_2.4.45+dfsg-1ubuntu1.3.dsc 2884 SHA256:a5be775d0ac209eef2a5e5bb4b25f92318433c828160f540ca038ea7107471e5
+'http://archive.ubuntu.com/ubuntu/pool/main/o/openldap/openldap_2.4.45+dfsg.orig.tar.gz' openldap_2.4.45+dfsg.orig.tar.gz 4846458 SHA256:d51c70423aa0554d454fd3d43e7f2e940523b4ef07979305b48c233ae44b2b32
+'http://archive.ubuntu.com/ubuntu/pool/main/o/openldap/openldap_2.4.45+dfsg-1ubuntu1.3.debian.tar.xz' openldap_2.4.45+dfsg-1ubuntu1.3.debian.tar.xz 177388 SHA256:6ac2c1960fcff8e8ea126fe10958c484681e0619d5211a844954bf6f3111d049
+```
 
 ### `dpkg` source package: `openmpi=2.1.1-8`
 
@@ -7762,11 +7758,11 @@ $ apt-get source -qq --print-uris paramiko=2.0.0-1ubuntu1.2
 'http://archive.ubuntu.com/ubuntu/pool/main/p/paramiko/paramiko_2.0.0-1ubuntu1.2.debian.tar.xz' paramiko_2.0.0-1ubuntu1.2.debian.tar.xz 12624 SHA256:b9f85f391a3499a860e7e19bc666750327494a1c929514f8b7e15fbed415b543
 ```
 
-### `dpkg` source package: `patch=2.7.6-2ubuntu1`
+### `dpkg` source package: `patch=2.7.6-2ubuntu1.1`
 
 Binary Packages:
 
-- `patch=2.7.6-2ubuntu1`
+- `patch=2.7.6-2ubuntu1.1`
 
 Licenses: (parsed from: `/usr/share/doc/patch/copyright`)
 
@@ -7775,10 +7771,10 @@ Licenses: (parsed from: `/usr/share/doc/patch/copyright`)
 Source:
 
 ```console
-$ apt-get source -qq --print-uris patch=2.7.6-2ubuntu1
-'http://archive.ubuntu.com/ubuntu/pool/main/p/patch/patch_2.7.6-2ubuntu1.dsc' patch_2.7.6-2ubuntu1.dsc 1774 SHA256:8f0dc0c31ffeac22ec21ea69756e1aa56ac5b77a4c12e05023f2751ba868e785
+$ apt-get source -qq --print-uris patch=2.7.6-2ubuntu1.1
+'http://archive.ubuntu.com/ubuntu/pool/main/p/patch/patch_2.7.6-2ubuntu1.1.dsc' patch_2.7.6-2ubuntu1.1.dsc 1798 SHA256:4c7196107cc0c9a6ec1f8d1da109b8b459e97ad73afd4431eef5cd5f155820b5
 'http://archive.ubuntu.com/ubuntu/pool/main/p/patch/patch_2.7.6.orig.tar.xz' patch_2.7.6.orig.tar.xz 783756 SHA256:ac610bda97abe0d9f6b7c963255a11dcb196c25e337c61f94e4778d632f1d8fd
-'http://archive.ubuntu.com/ubuntu/pool/main/p/patch/patch_2.7.6-2ubuntu1.debian.tar.xz' patch_2.7.6-2ubuntu1.debian.tar.xz 10968 SHA256:9b62482c9506567398b3234a1f1f67e04ff6c813c524911b22df16adbe8ccc13
+'http://archive.ubuntu.com/ubuntu/pool/main/p/patch/patch_2.7.6-2ubuntu1.1.debian.tar.xz' patch_2.7.6-2ubuntu1.1.debian.tar.xz 12356 SHA256:23ce948efcf40acc3b25fd97e79a299044d66602db01e5f80c6fd5881cc77b54
 ```
 
 ### `dpkg` source package: `pcl=1.8.1+dfsg1-2ubuntu2.18.04.1`
@@ -8378,33 +8374,43 @@ $ apt-get source -qq --print-uris python-autobahn=17.10.1+dfsg1-2
 'http://archive.ubuntu.com/ubuntu/pool/universe/p/python-autobahn/python-autobahn_17.10.1+dfsg1-2.debian.tar.xz' python-autobahn_17.10.1+dfsg1-2.debian.tar.xz 3612 SHA256:5ed59b08042ad73a2b0f6298c03431cd23accbd4892888b8aabd77129860249b
 ```
 
-### `dpkg` source package: `python-catkin-pkg-modules=0.4.12-1`
+### `dpkg` source package: `python-catkin-pkg-modules=0.4.13-1`
 
 Binary Packages:
 
-- `python-catkin-pkg-modules=0.4.12-1`
+- `python-catkin-pkg-modules=0.4.13-1`
 
 **WARNING:** unable to detect licenses! (package likely not compliant with DEP-5)  
 If source is available (seen below), check the contents of `debian/copyright` within it.
 
 
-**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
-This is *usually* due to a new package version being released and the old version being removed.
+Source:
 
+```console
+$ apt-get source -qq --print-uris python-catkin-pkg-modules=0.4.13-1
+'http://packages.ros.org/ros/ubuntu/pool/main/p/python-catkin-pkg-modules/python-catkin-pkg-modules_0.4.13-1.debian.tar.xz' python-catkin-pkg-modules_0.4.13-1.debian.tar.xz 1940 SHA512:84760d0056fc4b00740ddf33b4a26af06802f9bd96927b3d662cd7b04b26e43675e6c1c7772621d12e598a7f4ae008bf6bd1d2925679689f561a9084627faba2
+'http://packages.ros.org/ros/ubuntu/pool/main/p/python-catkin-pkg-modules/python-catkin-pkg-modules_0.4.13-1.dsc' python-catkin-pkg-modules_0.4.13-1.dsc 1050 SHA512:46343d0c9fe6dffabeb095e1c125be7095f40f227b23f68d962391e131506402d5a0a2c74f43c24b1b829c3021bf2b93de0c32610a3ff7eab55aa08268071a36
+'http://packages.ros.org/ros/ubuntu/pool/main/p/python-catkin-pkg-modules/python-catkin-pkg-modules_0.4.13.orig.tar.gz' python-catkin-pkg-modules_0.4.13.orig.tar.gz 59232 SHA512:a63c087477e1043b3d8da66e06258347b30ffd3d0b876edae45d1ffca0035c114a2774d101aec2a7b0421c067a29df042b26f0ec7c6a40be42d2b0ae3c864cfc
+```
 
-### `dpkg` source package: `python-catkin-pkg=0.4.12-100`
+### `dpkg` source package: `python-catkin-pkg=0.4.13-100`
 
 Binary Packages:
 
-- `python-catkin-pkg=0.4.12-100`
+- `python-catkin-pkg=0.4.13-100`
 
 **WARNING:** unable to detect licenses! (package likely not compliant with DEP-5)  
 If source is available (seen below), check the contents of `debian/copyright` within it.
 
 
-**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
-This is *usually* due to a new package version being released and the old version being removed.
+Source:
 
+```console
+$ apt-get source -qq --print-uris python-catkin-pkg=0.4.13-100
+'http://packages.ros.org/ros/ubuntu/pool/main/p/python-catkin-pkg/python-catkin-pkg_0.4.13-100.debian.tar.xz' python-catkin-pkg_0.4.13-100.debian.tar.xz 1920 SHA512:b5ff71a7da43ee7e8191e8ca7d7692628a2d4af00850d07eb0620eab5cab844edea216597e882c9ba5e3c1c08bb74cf8b5b3d44fe9837060056325c75863b63e
+'http://packages.ros.org/ros/ubuntu/pool/main/p/python-catkin-pkg/python-catkin-pkg_0.4.13-100.dsc' python-catkin-pkg_0.4.13-100.dsc 986 SHA512:f120f1f310b41eefaa2a10576863b6ee0382be533ad2d8584e9b27dfba6c3c56d0ef42c3fc72e847b15d1f7f369882834991d9f6ebee96880bb4170e56383fa2
+'http://packages.ros.org/ros/ubuntu/pool/main/p/python-catkin-pkg/python-catkin-pkg_0.4.13.orig.tar.gz' python-catkin-pkg_0.4.13.orig.tar.gz 13439 SHA512:2ba9cf0b42a69947611647520897cf38a66b51eaa853b00178d2ebcc262f722625e40b18ff3acfc0d355c8a000082802ecd20761c9effb31a0a181f56831c6db
+```
 
 ### `dpkg` source package: `python-cbor=1.0.0-1`
 

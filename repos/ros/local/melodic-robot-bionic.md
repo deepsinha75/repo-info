@@ -2,8 +2,8 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:bc12c6d5891a9ddcd0267590322a298f0f1b7e8c4641acc114a7db74b7191c14`
-- Created: `2019-07-23T17:20:22.886420395Z`
+- Image ID: `sha256:23e6ce274da0e0df9c5b7c05aad2188f19ddcc5840464268b0afe6f0b6e80005`
+- Created: `2019-08-03T03:03:04.925282313Z`
 - Virtual Size: ~ 1.36 Gb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
@@ -373,13 +373,9 @@ Licenses: (parsed from: `/usr/share/doc/base-files/copyright`)
 
 - `GPL`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris base-files=10.1ubuntu2.5
-'http://archive.ubuntu.com/ubuntu/pool/main/b/base-files/base-files_10.1ubuntu2.5.dsc' base-files_10.1ubuntu2.5.dsc 1620 SHA256:641b024666edd687c8873d22346340612aaa351bedb246a13212b9a2063c57e8
-'http://archive.ubuntu.com/ubuntu/pool/main/b/base-files/base-files_10.1ubuntu2.5.tar.xz' base-files_10.1ubuntu2.5.tar.xz 78188 SHA256:f2e6870b9b1145b33e8b2dcd6ab2aadaefb8563a1c23ffa6e5c3b29f1eca5f2c
-```
 
 ### `dpkg` source package: `base-passwd=3.5.44`
 
@@ -4558,12 +4554,12 @@ $ apt-get source -qq --print-uris mtdev=1.1.5-1ubuntu3
 'http://archive.ubuntu.com/ubuntu/pool/main/m/mtdev/mtdev_1.1.5-1ubuntu3.debian.tar.xz' mtdev_1.1.5-1ubuntu3.debian.tar.xz 6268 SHA256:60d8d42d71828abc8ef728c1a52f8c5e407be1d0c24871580a744e2b12a7a8a6
 ```
 
-### `dpkg` source package: `mysql-5.7=5.7.26-0ubuntu0.18.04.1`
+### `dpkg` source package: `mysql-5.7=5.7.27-0ubuntu0.18.04.1`
 
 Binary Packages:
 
-- `libmysqlclient-dev=5.7.26-0ubuntu0.18.04.1`
-- `libmysqlclient20:amd64=5.7.26-0ubuntu0.18.04.1`
+- `libmysqlclient-dev=5.7.27-0ubuntu0.18.04.1`
+- `libmysqlclient20:amd64=5.7.27-0ubuntu0.18.04.1`
 
 Licenses: (parsed from: `/usr/share/doc/libmysqlclient-dev/copyright`, `/usr/share/doc/libmysqlclient20/copyright`)
 
@@ -4581,9 +4577,14 @@ Licenses: (parsed from: `/usr/share/doc/libmysqlclient-dev/copyright`, `/usr/sha
 - `public-domain`
 - `zlib/libpng`
 
-**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
-This is *usually* due to a new package version being released and the old version being removed.
+Source:
 
+```console
+$ apt-get source -qq --print-uris mysql-5.7=5.7.27-0ubuntu0.18.04.1
+'http://archive.ubuntu.com/ubuntu/pool/main/m/mysql-5.7/mysql-5.7_5.7.27-0ubuntu0.18.04.1.dsc' mysql-5.7_5.7.27-0ubuntu0.18.04.1.dsc 3403 SHA256:f0474ddd34f24c1ea514191799746589a799b2d30f79789624ca0ba86287f368
+'http://archive.ubuntu.com/ubuntu/pool/main/m/mysql-5.7/mysql-5.7_5.7.27.orig.tar.gz' mysql-5.7_5.7.27.orig.tar.gz 51436383 SHA256:036ab46a8a1216cfc1e87374bd1cba12e2208c02cf328a31851be7e1c7f57a2b
+'http://archive.ubuntu.com/ubuntu/pool/main/m/mysql-5.7/mysql-5.7_5.7.27-0ubuntu0.18.04.1.debian.tar.xz' mysql-5.7_5.7.27-0ubuntu0.18.04.1.debian.tar.xz 156232 SHA256:dd136610bb8348de9432e34a4238460760f3f884d9f350ea88c4c5089b1d5472
+```
 
 ### `dpkg` source package: `mysql-defaults=1.0.4`
 
@@ -4806,21 +4807,26 @@ $ apt-get source -qq --print-uris ocl-icd=2.2.11-1ubuntu1
 'http://archive.ubuntu.com/ubuntu/pool/main/o/ocl-icd/ocl-icd_2.2.11-1ubuntu1.debian.tar.xz' ocl-icd_2.2.11-1ubuntu1.debian.tar.xz 11204 SHA256:2baece01c46beada400992cfcbe5b0facb822bae07bda5d98f1a7ad4d474415c
 ```
 
-### `dpkg` source package: `openldap=2.4.45+dfsg-1ubuntu1.2`
+### `dpkg` source package: `openldap=2.4.45+dfsg-1ubuntu1.3`
 
 Binary Packages:
 
-- `libldap-2.4-2:amd64=2.4.45+dfsg-1ubuntu1.2`
-- `libldap-common=2.4.45+dfsg-1ubuntu1.2`
-- `libldap2-dev:amd64=2.4.45+dfsg-1ubuntu1.2`
+- `libldap-2.4-2:amd64=2.4.45+dfsg-1ubuntu1.3`
+- `libldap-common=2.4.45+dfsg-1ubuntu1.3`
+- `libldap2-dev:amd64=2.4.45+dfsg-1ubuntu1.3`
 
 **WARNING:** unable to detect licenses! (package likely not compliant with DEP-5)  
 If source is available (seen below), check the contents of `debian/copyright` within it.
 
 
-**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
-This is *usually* due to a new package version being released and the old version being removed.
+Source:
 
+```console
+$ apt-get source -qq --print-uris openldap=2.4.45+dfsg-1ubuntu1.3
+'http://archive.ubuntu.com/ubuntu/pool/main/o/openldap/openldap_2.4.45+dfsg-1ubuntu1.3.dsc' openldap_2.4.45+dfsg-1ubuntu1.3.dsc 2884 SHA256:a5be775d0ac209eef2a5e5bb4b25f92318433c828160f540ca038ea7107471e5
+'http://archive.ubuntu.com/ubuntu/pool/main/o/openldap/openldap_2.4.45+dfsg.orig.tar.gz' openldap_2.4.45+dfsg.orig.tar.gz 4846458 SHA256:d51c70423aa0554d454fd3d43e7f2e940523b4ef07979305b48c233ae44b2b32
+'http://archive.ubuntu.com/ubuntu/pool/main/o/openldap/openldap_2.4.45+dfsg-1ubuntu1.3.debian.tar.xz' openldap_2.4.45+dfsg-1ubuntu1.3.debian.tar.xz 177388 SHA256:6ac2c1960fcff8e8ea126fe10958c484681e0619d5211a844954bf6f3111d049
+```
 
 ### `dpkg` source package: `openmpi=2.1.1-8`
 
@@ -4952,11 +4958,11 @@ $ apt-get source -qq --print-uris paramiko=2.0.0-1ubuntu1.2
 'http://archive.ubuntu.com/ubuntu/pool/main/p/paramiko/paramiko_2.0.0-1ubuntu1.2.debian.tar.xz' paramiko_2.0.0-1ubuntu1.2.debian.tar.xz 12624 SHA256:b9f85f391a3499a860e7e19bc666750327494a1c929514f8b7e15fbed415b543
 ```
 
-### `dpkg` source package: `patch=2.7.6-2ubuntu1`
+### `dpkg` source package: `patch=2.7.6-2ubuntu1.1`
 
 Binary Packages:
 
-- `patch=2.7.6-2ubuntu1`
+- `patch=2.7.6-2ubuntu1.1`
 
 Licenses: (parsed from: `/usr/share/doc/patch/copyright`)
 
@@ -4965,10 +4971,10 @@ Licenses: (parsed from: `/usr/share/doc/patch/copyright`)
 Source:
 
 ```console
-$ apt-get source -qq --print-uris patch=2.7.6-2ubuntu1
-'http://archive.ubuntu.com/ubuntu/pool/main/p/patch/patch_2.7.6-2ubuntu1.dsc' patch_2.7.6-2ubuntu1.dsc 1774 SHA256:8f0dc0c31ffeac22ec21ea69756e1aa56ac5b77a4c12e05023f2751ba868e785
+$ apt-get source -qq --print-uris patch=2.7.6-2ubuntu1.1
+'http://archive.ubuntu.com/ubuntu/pool/main/p/patch/patch_2.7.6-2ubuntu1.1.dsc' patch_2.7.6-2ubuntu1.1.dsc 1798 SHA256:4c7196107cc0c9a6ec1f8d1da109b8b459e97ad73afd4431eef5cd5f155820b5
 'http://archive.ubuntu.com/ubuntu/pool/main/p/patch/patch_2.7.6.orig.tar.xz' patch_2.7.6.orig.tar.xz 783756 SHA256:ac610bda97abe0d9f6b7c963255a11dcb196c25e337c61f94e4778d632f1d8fd
-'http://archive.ubuntu.com/ubuntu/pool/main/p/patch/patch_2.7.6-2ubuntu1.debian.tar.xz' patch_2.7.6-2ubuntu1.debian.tar.xz 10968 SHA256:9b62482c9506567398b3234a1f1f67e04ff6c813c524911b22df16adbe8ccc13
+'http://archive.ubuntu.com/ubuntu/pool/main/p/patch/patch_2.7.6-2ubuntu1.1.debian.tar.xz' patch_2.7.6-2ubuntu1.1.debian.tar.xz 12356 SHA256:23ce948efcf40acc3b25fd97e79a299044d66602db01e5f80c6fd5881cc77b54
 ```
 
 ### `dpkg` source package: `pcre3=2:8.39-9`
@@ -5244,33 +5250,43 @@ $ apt-get source -qq --print-uris pyqt5=5.10.1+dfsg-1ubuntu2
 'http://archive.ubuntu.com/ubuntu/pool/universe/p/pyqt5/pyqt5_5.10.1+dfsg-1ubuntu2.debian.tar.xz' pyqt5_5.10.1+dfsg-1ubuntu2.debian.tar.xz 21060 SHA256:fd62a245b1d4b28e0d0c80cc076ad4b4f4b568659e2da68154bf6a842046a6e2
 ```
 
-### `dpkg` source package: `python-catkin-pkg-modules=0.4.12-1`
+### `dpkg` source package: `python-catkin-pkg-modules=0.4.13-1`
 
 Binary Packages:
 
-- `python-catkin-pkg-modules=0.4.12-1`
+- `python-catkin-pkg-modules=0.4.13-1`
 
 **WARNING:** unable to detect licenses! (package likely not compliant with DEP-5)  
 If source is available (seen below), check the contents of `debian/copyright` within it.
 
 
-**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
-This is *usually* due to a new package version being released and the old version being removed.
+Source:
 
+```console
+$ apt-get source -qq --print-uris python-catkin-pkg-modules=0.4.13-1
+'http://packages.ros.org/ros/ubuntu/pool/main/p/python-catkin-pkg-modules/python-catkin-pkg-modules_0.4.13-1.debian.tar.xz' python-catkin-pkg-modules_0.4.13-1.debian.tar.xz 1940 SHA512:84760d0056fc4b00740ddf33b4a26af06802f9bd96927b3d662cd7b04b26e43675e6c1c7772621d12e598a7f4ae008bf6bd1d2925679689f561a9084627faba2
+'http://packages.ros.org/ros/ubuntu/pool/main/p/python-catkin-pkg-modules/python-catkin-pkg-modules_0.4.13-1.dsc' python-catkin-pkg-modules_0.4.13-1.dsc 1050 SHA512:46343d0c9fe6dffabeb095e1c125be7095f40f227b23f68d962391e131506402d5a0a2c74f43c24b1b829c3021bf2b93de0c32610a3ff7eab55aa08268071a36
+'http://packages.ros.org/ros/ubuntu/pool/main/p/python-catkin-pkg-modules/python-catkin-pkg-modules_0.4.13.orig.tar.gz' python-catkin-pkg-modules_0.4.13.orig.tar.gz 59232 SHA512:a63c087477e1043b3d8da66e06258347b30ffd3d0b876edae45d1ffca0035c114a2774d101aec2a7b0421c067a29df042b26f0ec7c6a40be42d2b0ae3c864cfc
+```
 
-### `dpkg` source package: `python-catkin-pkg=0.4.12-100`
+### `dpkg` source package: `python-catkin-pkg=0.4.13-100`
 
 Binary Packages:
 
-- `python-catkin-pkg=0.4.12-100`
+- `python-catkin-pkg=0.4.13-100`
 
 **WARNING:** unable to detect licenses! (package likely not compliant with DEP-5)  
 If source is available (seen below), check the contents of `debian/copyright` within it.
 
 
-**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
-This is *usually* due to a new package version being released and the old version being removed.
+Source:
 
+```console
+$ apt-get source -qq --print-uris python-catkin-pkg=0.4.13-100
+'http://packages.ros.org/ros/ubuntu/pool/main/p/python-catkin-pkg/python-catkin-pkg_0.4.13-100.debian.tar.xz' python-catkin-pkg_0.4.13-100.debian.tar.xz 1920 SHA512:b5ff71a7da43ee7e8191e8ca7d7692628a2d4af00850d07eb0620eab5cab844edea216597e882c9ba5e3c1c08bb74cf8b5b3d44fe9837060056325c75863b63e
+'http://packages.ros.org/ros/ubuntu/pool/main/p/python-catkin-pkg/python-catkin-pkg_0.4.13-100.dsc' python-catkin-pkg_0.4.13-100.dsc 986 SHA512:f120f1f310b41eefaa2a10576863b6ee0382be533ad2d8584e9b27dfba6c3c56d0ef42c3fc72e847b15d1f7f369882834991d9f6ebee96880bb4170e56383fa2
+'http://packages.ros.org/ros/ubuntu/pool/main/p/python-catkin-pkg/python-catkin-pkg_0.4.13.orig.tar.gz' python-catkin-pkg_0.4.13.orig.tar.gz 13439 SHA512:2ba9cf0b42a69947611647520897cf38a66b51eaa853b00178d2ebcc262f722625e40b18ff3acfc0d355c8a000082802ecd20761c9effb31a0a181f56831c6db
+```
 
 ### `dpkg` source package: `python-cffi=1.11.5-1`
 

@@ -2,9 +2,9 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:850d392db6b575ad06d885cc1ae3bc15ae1883bb040afbaf7fc661b3702b9ea8`
-- Created: `2019-07-23T17:09:43.831136434Z`
-- Virtual Size: ~ 935.60 Mb  
+- Image ID: `sha256:5958932072026d7efb88feafb14946ea0662a5cb77547153912385f2d1188c9f`
+- Created: `2019-08-03T02:37:09.863126354Z`
+- Virtual Size: ~ 935.52 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["/ros_entrypoint.sh"]`
@@ -1168,14 +1168,9 @@ Licenses: (parsed from: `/usr/share/doc/libglib2.0-0/copyright`, `/usr/share/doc
 
 - `LGPL`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris glib2.0=2.48.2-0ubuntu4.3
-'http://archive.ubuntu.com/ubuntu/pool/main/g/glib2.0/glib2.0_2.48.2-0ubuntu4.3.dsc' glib2.0_2.48.2-0ubuntu4.3.dsc 3157 SHA256:3651fc1cb14faa739dca58710b09581465c683d31b1928a69ce52f692689ab30
-'http://archive.ubuntu.com/ubuntu/pool/main/g/glib2.0/glib2.0_2.48.2.orig.tar.xz' glib2.0_2.48.2.orig.tar.xz 6408644 SHA256:f25e751589cb1a58826eac24fbd4186cda4518af772806b666a3f91f66e6d3f4
-'http://archive.ubuntu.com/ubuntu/pool/main/g/glib2.0/glib2.0_2.48.2-0ubuntu4.3.debian.tar.xz' glib2.0_2.48.2-0ubuntu4.3.debian.tar.xz 73408 SHA256:969536b2462dc344ff772bd7aef3f5966104e98cbf5a0903c26f880b5acfad55
-```
 
 ### `dpkg` source package: `glibc=2.23-0ubuntu11`
 
@@ -2166,20 +2161,25 @@ $ apt-get source -qq --print-uris libyaml=0.1.6-3
 'http://archive.ubuntu.com/ubuntu/pool/main/liby/libyaml/libyaml_0.1.6-3.debian.tar.xz' libyaml_0.1.6-3.debian.tar.xz 4268 SHA256:fd567e6918903833e5c4f1f87254c550eca07c2bba1ccbe6031da33243cf4297
 ```
 
-### `dpkg` source package: `linux=4.4.0-154.181`
+### `dpkg` source package: `linux=4.4.0-157.185`
 
 Binary Packages:
 
-- `linux-libc-dev:amd64=4.4.0-154.181`
+- `linux-libc-dev:amd64=4.4.0-157.185`
 
 Licenses: (parsed from: `/usr/share/doc/linux-libc-dev/copyright`)
 
 - `GPL-2`
 - `redpine-signals`
 
-**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
-This is *usually* due to a new package version being released and the old version being removed.
+Source:
 
+```console
+$ apt-get source -qq --print-uris linux=4.4.0-157.185
+'http://archive.ubuntu.com/ubuntu/pool/main/l/linux/linux_4.4.0-157.185.dsc' linux_4.4.0-157.185.dsc 11909 SHA256:9eb06928e10d52e901007ceab748fedd8e32262f3111104e7b6761fe3ec456d0
+'http://archive.ubuntu.com/ubuntu/pool/main/l/linux/linux_4.4.0.orig.tar.gz' linux_4.4.0.orig.tar.gz 132860730 SHA256:730e75919b5d30a9bc934ccb300eaedfdf44994ca9ee1d07a46901c46c221357
+'http://archive.ubuntu.com/ubuntu/pool/main/l/linux/linux_4.4.0-157.185.diff.gz' linux_4.4.0-157.185.diff.gz 15620309 SHA256:d09c7e56690349dc0590a1382ddd5b66802dfb2366527babaa423d4ddd1a71b0
+```
 
 ### `dpkg` source package: `lksctp-tools=1.0.16+dfsg-3`
 
@@ -2670,20 +2670,25 @@ $ apt-get source -qq --print-uris ocl-icd=2.2.8-1
 'http://archive.ubuntu.com/ubuntu/pool/main/o/ocl-icd/ocl-icd_2.2.8-1.debian.tar.xz' ocl-icd_2.2.8-1.debian.tar.xz 10828 SHA256:4b5aea6e57e23c6cb8b0a12794d235a615d063cf816449dd0ecfa7a13261624c
 ```
 
-### `dpkg` source package: `openldap=2.4.42+dfsg-2ubuntu3.5`
+### `dpkg` source package: `openldap=2.4.42+dfsg-2ubuntu3.6`
 
 Binary Packages:
 
-- `libldap-2.4-2:amd64=2.4.42+dfsg-2ubuntu3.5`
-- `libldap2-dev:amd64=2.4.42+dfsg-2ubuntu3.5`
+- `libldap-2.4-2:amd64=2.4.42+dfsg-2ubuntu3.6`
+- `libldap2-dev:amd64=2.4.42+dfsg-2ubuntu3.6`
 
 **WARNING:** unable to detect licenses! (package likely not compliant with DEP-5)  
 If source is available (seen below), check the contents of `debian/copyright` within it.
 
 
-**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
-This is *usually* due to a new package version being released and the old version being removed.
+Source:
 
+```console
+$ apt-get source -qq --print-uris openldap=2.4.42+dfsg-2ubuntu3.6
+'http://archive.ubuntu.com/ubuntu/pool/main/o/openldap/openldap_2.4.42+dfsg-2ubuntu3.6.dsc' openldap_2.4.42+dfsg-2ubuntu3.6.dsc 3054 SHA256:ad6f9ad3a6f5134a753abbb1877a78b63990d39b1337b809c7b87e56e1e25a7b
+'http://archive.ubuntu.com/ubuntu/pool/main/o/openldap/openldap_2.4.42+dfsg.orig.tar.gz' openldap_2.4.42+dfsg.orig.tar.gz 4813173 SHA256:5f56e4e3584f7a4b4c8437a2c985b2f519836946be77ef1aa43a5d20c02ea97b
+'http://archive.ubuntu.com/ubuntu/pool/main/o/openldap/openldap_2.4.42+dfsg-2ubuntu3.6.debian.tar.xz' openldap_2.4.42+dfsg-2ubuntu3.6.debian.tar.xz 180632 SHA256:442ee321317fccfcfae8bdb9e90caa7818c2ceebf5d0b5a2e10cc266ecc3ec6a
+```
 
 ### `dpkg` source package: `openmpi=1.10.2-8ubuntu1`
 
@@ -2791,19 +2796,24 @@ $ apt-get source -qq --print-uris paramiko=1.16.0-1ubuntu0.2
 'http://archive.ubuntu.com/ubuntu/pool/main/p/paramiko/paramiko_1.16.0-1ubuntu0.2.debian.tar.xz' paramiko_1.16.0-1ubuntu0.2.debian.tar.xz 12380 SHA256:4c3308af98f75ab1e1347da4d12dfe68e8ea40b5cf1ea365a1a12db067458e88
 ```
 
-### `dpkg` source package: `patch=2.7.5-1ubuntu0.16.04.1`
+### `dpkg` source package: `patch=2.7.5-1ubuntu0.16.04.2`
 
 Binary Packages:
 
-- `patch=2.7.5-1ubuntu0.16.04.1`
+- `patch=2.7.5-1ubuntu0.16.04.2`
 
 Licenses: (parsed from: `/usr/share/doc/patch/copyright`)
 
 - `GPL`
 
-**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
-This is *usually* due to a new package version being released and the old version being removed.
+Source:
 
+```console
+$ apt-get source -qq --print-uris patch=2.7.5-1ubuntu0.16.04.2
+'http://archive.ubuntu.com/ubuntu/pool/main/p/patch/patch_2.7.5-1ubuntu0.16.04.2.dsc' patch_2.7.5-1ubuntu0.16.04.2.dsc 1950 SHA256:f80df1b7bff022afff6309230c6fc50c4eb5d32666ff3632f4b5bfa5b74f8805
+'http://archive.ubuntu.com/ubuntu/pool/main/p/patch/patch_2.7.5.orig.tar.xz' patch_2.7.5.orig.tar.xz 727704 SHA256:fd95153655d6b95567e623843a0e77b81612d502ecf78a489a4aed7867caa299
+'http://archive.ubuntu.com/ubuntu/pool/main/p/patch/patch_2.7.5-1ubuntu0.16.04.2.debian.tar.xz' patch_2.7.5-1ubuntu0.16.04.2.debian.tar.xz 12588 SHA256:4274779969c41d90db394717edde6e783e504c750e71ce61ec9077ad299e5bcf
+```
 
 ### `dpkg` source package: `pcre3=2:8.38-3.1`
 
@@ -2969,9 +2979,14 @@ Binary Packages:
 If source is available (seen below), check the contents of `debian/copyright` within it.
 
 
-**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
-This is *usually* due to a new package version being released and the old version being removed.
+Source:
 
+```console
+$ apt-get source -qq --print-uris python-catkin-pkg-modules=0.4.12-1
+'http://snapshots.ros.org/lunar/final/ubuntu/pool/main/p/python-catkin-pkg-modules/python-catkin-pkg-modules_0.4.12-1.debian.tar.xz' python-catkin-pkg-modules_0.4.12-1.debian.tar.xz 1936 SHA512:e48619daf76627b391d84199549cf35acf6659f856d832254f2432b0387ed9a42fadfc6d09448af02f6ea7ceb020b5d578851b6fb816c307ee80eb8acff4ab57
+'http://snapshots.ros.org/lunar/final/ubuntu/pool/main/p/python-catkin-pkg-modules/python-catkin-pkg-modules_0.4.12-1.dsc' python-catkin-pkg-modules_0.4.12-1.dsc 1050 SHA512:dd7a0f4ede99fc26b5f941930a606f352b289bbe4a7acfd570febf5544437bd98d306d5f0eb50ec891a947843843ab3ec2e59388bbe0362a8da99ff31b002c84
+'http://snapshots.ros.org/lunar/final/ubuntu/pool/main/p/python-catkin-pkg-modules/python-catkin-pkg-modules_0.4.12.orig.tar.gz' python-catkin-pkg-modules_0.4.12.orig.tar.gz 58937 SHA512:d5a5d2f2630c50f108a55b16398bcfce2009c37c4c51a3fd00baaefda2495b3bb1ea62d56e6de238c68c957f1d677b05a0e05825723786b3ad1de7c203d7f78e
+```
 
 ### `dpkg` source package: `python-catkin-pkg=0.4.12-100`
 
@@ -2983,9 +2998,14 @@ Binary Packages:
 If source is available (seen below), check the contents of `debian/copyright` within it.
 
 
-**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
-This is *usually* due to a new package version being released and the old version being removed.
+Source:
 
+```console
+$ apt-get source -qq --print-uris python-catkin-pkg=0.4.12-100
+'http://snapshots.ros.org/lunar/final/ubuntu/pool/main/p/python-catkin-pkg/python-catkin-pkg_0.4.12-100.debian.tar.xz' python-catkin-pkg_0.4.12-100.debian.tar.xz 1912 SHA512:3e749ad5e29950c8ba08860f714d1f7d42ef95762792ca735c7e8edb16a0eb140efaed6f81de4dd8914909c65ba16a507a4fc81691313fcf6ff188a298442160
+'http://snapshots.ros.org/lunar/final/ubuntu/pool/main/p/python-catkin-pkg/python-catkin-pkg_0.4.12-100.dsc' python-catkin-pkg_0.4.12-100.dsc 986 SHA512:a4a75986782b71e34686301853b39ee23bd20a2170e89e70f82065ee0efbca7868ae8f6288d22f9e29ffacefe63e729d7acd7908edd43dca1e169ff34f8aa183
+'http://snapshots.ros.org/lunar/final/ubuntu/pool/main/p/python-catkin-pkg/python-catkin-pkg_0.4.12.orig.tar.gz' python-catkin-pkg_0.4.12.orig.tar.gz 13302 SHA512:462b87c09963b67f1fdf19784ae28086e15353ba018d00865daa53f7907f15bbeb030bcf4614c673bbe9c1cf9ac8178726b1193c4fa7bd1d111ca489c9b6d0d7
+```
 
 ### `dpkg` source package: `python-crypto=2.6.1-6ubuntu0.16.04.3`
 
@@ -3147,9 +3167,9 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris python-rosdep=0.15.2-1
-'http://packages.ros.org/ros/ubuntu/pool/main/p/python-rosdep/python-rosdep_0.15.2-1.debian.tar.xz' python-rosdep_0.15.2-1.debian.tar.xz 1932 SHA512:0a57d366c06b64c29831f0d7765d7ac88431c73472d9ef7a7e7e8cfc27972d3a3faaa8b337fc639d8d348a202227968916d50e7dd17021de4b63cb0a7d9dee2f
-'http://packages.ros.org/ros/ubuntu/pool/main/p/python-rosdep/python-rosdep_0.15.2-1.dsc' python-rosdep_0.15.2-1.dsc 905 SHA512:f12fbb3e85204a40b302352f7911e78f2b38dc1635d368298550cc426538864bbe8664fb6892cf028a455c2a2fda5b0eef5074cd88668992cdcbe41839d1eaa0
-'http://packages.ros.org/ros/ubuntu/pool/main/p/python-rosdep/python-rosdep_0.15.2.orig.tar.gz' python-rosdep_0.15.2.orig.tar.gz 82303 SHA512:166e4d81774d88700ee317f4fe1c6432fba1c56ef16ad91762dac2b884e372f08f6fb065d19f114fb8a5093904494b99428831019170f4436b1632dfa8787936
+'http://snapshots.ros.org/lunar/final/ubuntu/pool/main/p/python-rosdep/python-rosdep_0.15.2-1.debian.tar.xz' python-rosdep_0.15.2-1.debian.tar.xz 1932 SHA512:0a57d366c06b64c29831f0d7765d7ac88431c73472d9ef7a7e7e8cfc27972d3a3faaa8b337fc639d8d348a202227968916d50e7dd17021de4b63cb0a7d9dee2f
+'http://snapshots.ros.org/lunar/final/ubuntu/pool/main/p/python-rosdep/python-rosdep_0.15.2-1.dsc' python-rosdep_0.15.2-1.dsc 905 SHA512:f12fbb3e85204a40b302352f7911e78f2b38dc1635d368298550cc426538864bbe8664fb6892cf028a455c2a2fda5b0eef5074cd88668992cdcbe41839d1eaa0
+'http://snapshots.ros.org/lunar/final/ubuntu/pool/main/p/python-rosdep/python-rosdep_0.15.2.orig.tar.gz' python-rosdep_0.15.2.orig.tar.gz 82303 SHA512:166e4d81774d88700ee317f4fe1c6432fba1c56ef16ad91762dac2b884e372f08f6fb065d19f114fb8a5093904494b99428831019170f4436b1632dfa8787936
 ```
 
 ### `dpkg` source package: `python-rosdistro-modules=0.7.4-1`
@@ -3166,9 +3186,9 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris python-rosdistro-modules=0.7.4-1
-'http://packages.ros.org/ros/ubuntu/pool/main/p/python-rosdistro-modules/python-rosdistro-modules_0.7.4-1.debian.tar.xz' python-rosdistro-modules_0.7.4-1.debian.tar.xz 1908 SHA512:45c0ea0a9395b172d87eac57e715d55130845fba490cf64e795efe93b640c0e642b8f7627b2d33b188b86e9e62c484105354511d8d1171a31b6fc5f8aad22847
-'http://packages.ros.org/ros/ubuntu/pool/main/p/python-rosdistro-modules/python-rosdistro-modules_0.7.4-1.dsc' python-rosdistro-modules_0.7.4-1.dsc 1033 SHA512:0e5c2a5605caaebdbeaae40c0f4c14280e6751f1ef6b29a19206a6d7eb980339b05611873446eeb600c6a80256b44f57f915e861da7771ae762d81db192ae627
-'http://packages.ros.org/ros/ubuntu/pool/main/p/python-rosdistro-modules/python-rosdistro-modules_0.7.4.orig.tar.gz' python-rosdistro-modules_0.7.4.orig.tar.gz 41874 SHA512:fe47ddf118982083205ad0808f8113839c107dd278d484d60dfe0712d142d33de83fe91f551d2f0e9f76d222fbdf779d2ec2f1757b79a9de9c3f8cdf92663177
+'http://snapshots.ros.org/lunar/final/ubuntu/pool/main/p/python-rosdistro-modules/python-rosdistro-modules_0.7.4-1.debian.tar.xz' python-rosdistro-modules_0.7.4-1.debian.tar.xz 1908 SHA512:45c0ea0a9395b172d87eac57e715d55130845fba490cf64e795efe93b640c0e642b8f7627b2d33b188b86e9e62c484105354511d8d1171a31b6fc5f8aad22847
+'http://snapshots.ros.org/lunar/final/ubuntu/pool/main/p/python-rosdistro-modules/python-rosdistro-modules_0.7.4-1.dsc' python-rosdistro-modules_0.7.4-1.dsc 1033 SHA512:0e5c2a5605caaebdbeaae40c0f4c14280e6751f1ef6b29a19206a6d7eb980339b05611873446eeb600c6a80256b44f57f915e861da7771ae762d81db192ae627
+'http://snapshots.ros.org/lunar/final/ubuntu/pool/main/p/python-rosdistro-modules/python-rosdistro-modules_0.7.4.orig.tar.gz' python-rosdistro-modules_0.7.4.orig.tar.gz 41874 SHA512:fe47ddf118982083205ad0808f8113839c107dd278d484d60dfe0712d142d33de83fe91f551d2f0e9f76d222fbdf779d2ec2f1757b79a9de9c3f8cdf92663177
 ```
 
 ### `dpkg` source package: `python-rosdistro=0.7.4-100`
@@ -3185,9 +3205,9 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris python-rosdistro=0.7.4-100
-'http://packages.ros.org/ros/ubuntu/pool/main/p/python-rosdistro/python-rosdistro_0.7.4-100.debian.tar.xz' python-rosdistro_0.7.4-100.debian.tar.xz 1896 SHA512:3134bdaf8c8317a4c4794ab482e0ea52ddc82e70bf23e0a7b6a38e202c947d7936cb4c66b1d2d8e79ef35ac6389d36e00ca594aa17dc83cbe1bdaa8b8127c452
-'http://packages.ros.org/ros/ubuntu/pool/main/p/python-rosdistro/python-rosdistro_0.7.4-100.dsc' python-rosdistro_0.7.4-100.dsc 969 SHA512:ce25e34e23527b6d906a14d38ee2207d0070c9f9ae35eac8a4b14915ced861df45bafa6d2936b95ca7a343a555e5c8b262007623a838a1e97d35fce3458f453d
-'http://packages.ros.org/ros/ubuntu/pool/main/p/python-rosdistro/python-rosdistro_0.7.4.orig.tar.gz' python-rosdistro_0.7.4.orig.tar.gz 10096 SHA512:ca6a3a7c86c6c071270061f9a55f76aadd03b3f863b3c8b7751eb996a1d55ae866cbf229cb19d629010562055d63a7e2804d100900384b4f6c86ded8372fb35a
+'http://snapshots.ros.org/lunar/final/ubuntu/pool/main/p/python-rosdistro/python-rosdistro_0.7.4-100.debian.tar.xz' python-rosdistro_0.7.4-100.debian.tar.xz 1896 SHA512:3134bdaf8c8317a4c4794ab482e0ea52ddc82e70bf23e0a7b6a38e202c947d7936cb4c66b1d2d8e79ef35ac6389d36e00ca594aa17dc83cbe1bdaa8b8127c452
+'http://snapshots.ros.org/lunar/final/ubuntu/pool/main/p/python-rosdistro/python-rosdistro_0.7.4-100.dsc' python-rosdistro_0.7.4-100.dsc 969 SHA512:ce25e34e23527b6d906a14d38ee2207d0070c9f9ae35eac8a4b14915ced861df45bafa6d2936b95ca7a343a555e5c8b262007623a838a1e97d35fce3458f453d
+'http://snapshots.ros.org/lunar/final/ubuntu/pool/main/p/python-rosdistro/python-rosdistro_0.7.4.orig.tar.gz' python-rosdistro_0.7.4.orig.tar.gz 10096 SHA512:ca6a3a7c86c6c071270061f9a55f76aadd03b3f863b3c8b7751eb996a1d55ae866cbf229cb19d629010562055d63a7e2804d100900384b4f6c86ded8372fb35a
 ```
 
 ### `dpkg` source package: `python-rosinstall=0.7.8-1`
@@ -3204,9 +3224,9 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris python-rosinstall=0.7.8-1
-'http://packages.ros.org/ros/ubuntu/pool/main/p/python-rosinstall/python-rosinstall_0.7.8-1.debian.tar.gz' python-rosinstall_0.7.8-1.debian.tar.gz 1008 SHA512:44bebf6ed0d14fa358e766096319cc304e70cd370c2f4ae13befdb5db0cbda1a4bda03d96b5ce57c0b0b4a7a82e96aa0ba280a9714c35460de6b59548a6a098d
-'http://packages.ros.org/ros/ubuntu/pool/main/p/python-rosinstall/python-rosinstall_0.7.8-1.dsc' python-rosinstall_0.7.8-1.dsc 917 SHA512:cadb27334167a8b5bbee35303642f09dbbb5d6cf827852400146d14f400d1a2dc5ce8e880889141cadfd072518541e9004af8458114a713eee63866b15288ebd
-'http://packages.ros.org/ros/ubuntu/pool/main/p/python-rosinstall/python-rosinstall_0.7.8.orig.tar.gz' python-rosinstall_0.7.8.orig.tar.gz 26425 SHA512:013b313b9e442e9b68f7aad0a372d2c1dfb9efeb66b9f20d01943bf58808e0e0bc69db848ba1c2460f0ecfaba89d385e987ccb574a7139b6500d5f958eda4d1b
+'http://snapshots.ros.org/lunar/final/ubuntu/pool/main/p/python-rosinstall/python-rosinstall_0.7.8-1.debian.tar.gz' python-rosinstall_0.7.8-1.debian.tar.gz 1008 SHA512:44bebf6ed0d14fa358e766096319cc304e70cd370c2f4ae13befdb5db0cbda1a4bda03d96b5ce57c0b0b4a7a82e96aa0ba280a9714c35460de6b59548a6a098d
+'http://snapshots.ros.org/lunar/final/ubuntu/pool/main/p/python-rosinstall/python-rosinstall_0.7.8-1.dsc' python-rosinstall_0.7.8-1.dsc 917 SHA512:cadb27334167a8b5bbee35303642f09dbbb5d6cf827852400146d14f400d1a2dc5ce8e880889141cadfd072518541e9004af8458114a713eee63866b15288ebd
+'http://snapshots.ros.org/lunar/final/ubuntu/pool/main/p/python-rosinstall/python-rosinstall_0.7.8.orig.tar.gz' python-rosinstall_0.7.8.orig.tar.gz 26425 SHA512:013b313b9e442e9b68f7aad0a372d2c1dfb9efeb66b9f20d01943bf58808e0e0bc69db848ba1c2460f0ecfaba89d385e987ccb574a7139b6500d5f958eda4d1b
 ```
 
 ### `dpkg` source package: `python-rospkg-modules=1.1.9-1`
@@ -3223,9 +3243,9 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris python-rospkg-modules=1.1.9-1
-'http://packages.ros.org/ros/ubuntu/pool/main/p/python-rospkg-modules/python-rospkg-modules_1.1.9-1.debian.tar.xz' python-rospkg-modules_1.1.9-1.debian.tar.xz 1084 SHA512:058ec9a4d0181be26d39cc9b9457f16d99204bd99bdedb732deffc9d8125af6835b8a3aea9e51c2aaa4f96e28a5fca5200173a9fbc1c87dac3c9c4d85f78f5d6
-'http://packages.ros.org/ros/ubuntu/pool/main/p/python-rospkg-modules/python-rospkg-modules_1.1.9-1.dsc' python-rospkg-modules_1.1.9-1.dsc 997 SHA512:bf02446f6b332d6d32b12132360125df460067eb8fc98115370140f2c6e0982e518780b628577c6a9967c9c3f4d4594ed10004bd9399c34a0fc1ace90f867e01
-'http://packages.ros.org/ros/ubuntu/pool/main/p/python-rospkg-modules/python-rospkg-modules_1.1.9.orig.tar.gz' python-rospkg-modules_1.1.9.orig.tar.gz 41051 SHA512:cc9acf41da98ed46739ce99873a5d6ed912a8b096896e63749a727e229205a2635bd9a10afd603025b67f0058675bef241cd9224fd52af2a6516210c6e90677e
+'http://snapshots.ros.org/lunar/final/ubuntu/pool/main/p/python-rospkg-modules/python-rospkg-modules_1.1.9-1.debian.tar.xz' python-rospkg-modules_1.1.9-1.debian.tar.xz 1084 SHA512:058ec9a4d0181be26d39cc9b9457f16d99204bd99bdedb732deffc9d8125af6835b8a3aea9e51c2aaa4f96e28a5fca5200173a9fbc1c87dac3c9c4d85f78f5d6
+'http://snapshots.ros.org/lunar/final/ubuntu/pool/main/p/python-rospkg-modules/python-rospkg-modules_1.1.9-1.dsc' python-rospkg-modules_1.1.9-1.dsc 997 SHA512:bf02446f6b332d6d32b12132360125df460067eb8fc98115370140f2c6e0982e518780b628577c6a9967c9c3f4d4594ed10004bd9399c34a0fc1ace90f867e01
+'http://snapshots.ros.org/lunar/final/ubuntu/pool/main/p/python-rospkg-modules/python-rospkg-modules_1.1.9.orig.tar.gz' python-rospkg-modules_1.1.9.orig.tar.gz 41051 SHA512:cc9acf41da98ed46739ce99873a5d6ed912a8b096896e63749a727e229205a2635bd9a10afd603025b67f0058675bef241cd9224fd52af2a6516210c6e90677e
 ```
 
 ### `dpkg` source package: `python-rospkg=1.1.9-100`
@@ -3242,9 +3262,9 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris python-rospkg=1.1.9-100
-'http://packages.ros.org/ros/ubuntu/pool/main/p/python-rospkg/python-rospkg_1.1.9-100.debian.tar.xz' python-rospkg_1.1.9-100.debian.tar.xz 1060 SHA512:7d72d2c6ae4d444d92284f127f312d681920b66c6e096413b2c3e4354bc4b90a0f92a3fb28ffc802a2521bc6b46aadc0a53692cfc786ce6b615823c49cdb9a86
-'http://packages.ros.org/ros/ubuntu/pool/main/p/python-rospkg/python-rospkg_1.1.9-100.dsc' python-rospkg_1.1.9-100.dsc 933 SHA512:8b7feee64bd8d2e0751a1deaa7f736fa7083d365f0aefbf61aa3a69e00a56e9a50c24950daa9b7b819ab774e8fe0fb3e35245f88adad99b7e2762ac83dd98ef7
-'http://packages.ros.org/ros/ubuntu/pool/main/p/python-rospkg/python-rospkg_1.1.9.orig.tar.gz' python-rospkg_1.1.9.orig.tar.gz 17928 SHA512:6cc5f86759f1358662dbbaf2b362df2f8ec0e922fdf6cb2a3503409f2c8cad6ab8242e8945ef2d638ba0bc44f3770f0218ddf6c147aa7d4b7666c734c60bbd3b
+'http://snapshots.ros.org/lunar/final/ubuntu/pool/main/p/python-rospkg/python-rospkg_1.1.9-100.debian.tar.xz' python-rospkg_1.1.9-100.debian.tar.xz 1060 SHA512:7d72d2c6ae4d444d92284f127f312d681920b66c6e096413b2c3e4354bc4b90a0f92a3fb28ffc802a2521bc6b46aadc0a53692cfc786ce6b615823c49cdb9a86
+'http://snapshots.ros.org/lunar/final/ubuntu/pool/main/p/python-rospkg/python-rospkg_1.1.9-100.dsc' python-rospkg_1.1.9-100.dsc 933 SHA512:8b7feee64bd8d2e0751a1deaa7f736fa7083d365f0aefbf61aa3a69e00a56e9a50c24950daa9b7b819ab774e8fe0fb3e35245f88adad99b7e2762ac83dd98ef7
+'http://snapshots.ros.org/lunar/final/ubuntu/pool/main/p/python-rospkg/python-rospkg_1.1.9.orig.tar.gz' python-rospkg_1.1.9.orig.tar.gz 17928 SHA512:6cc5f86759f1358662dbbaf2b362df2f8ec0e922fdf6cb2a3503409f2c8cad6ab8242e8945ef2d638ba0bc44f3770f0218ddf6c147aa7d4b7666c734c60bbd3b
 ```
 
 ### `dpkg` source package: `python-setuptools=20.7.0-1`
@@ -3281,9 +3301,9 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris python-vcstools=0.1.40-1
-'http://packages.ros.org/ros/ubuntu/pool/main/p/python-vcstools/python-vcstools_0.1.40-1.debian.tar.gz' python-vcstools_0.1.40-1.debian.tar.gz 1076 SHA512:1c0ece44e778d43eabaf8ba4ecb331c6f31d80f85657c95e0d96bd6c83a344fd1258d6c060fae3fe974bad5b8a61c6803cd02679d05bc71765aed16a8d184134
-'http://packages.ros.org/ros/ubuntu/pool/main/p/python-vcstools/python-vcstools_0.1.40-1.dsc' python-vcstools_0.1.40-1.dsc 930 SHA512:7fdfa9752e185abc5b76a6e1087fd27b3afe1a86cfd14df209b8fb826b675e7f225938ca7fd036d2a53cc8c08fa048b0d25962418b0a83b09e7471d3fcd4c4d3
-'http://packages.ros.org/ros/ubuntu/pool/main/p/python-vcstools/python-vcstools_0.1.40.orig.tar.gz' python-vcstools_0.1.40.orig.tar.gz 51298 SHA512:0a3ce9cc251473ccde43c36aa1fb91068388d3b52ffbd1cae749c415f849344e18bf39514a1e5eee73b20efcc6fec6fa70a2fd3abdbaa21bfb79393e1bc2e8cc
+'http://snapshots.ros.org/lunar/final/ubuntu/pool/main/p/python-vcstools/python-vcstools_0.1.40-1.debian.tar.gz' python-vcstools_0.1.40-1.debian.tar.gz 1076 SHA512:1c0ece44e778d43eabaf8ba4ecb331c6f31d80f85657c95e0d96bd6c83a344fd1258d6c060fae3fe974bad5b8a61c6803cd02679d05bc71765aed16a8d184134
+'http://snapshots.ros.org/lunar/final/ubuntu/pool/main/p/python-vcstools/python-vcstools_0.1.40-1.dsc' python-vcstools_0.1.40-1.dsc 930 SHA512:7fdfa9752e185abc5b76a6e1087fd27b3afe1a86cfd14df209b8fb826b675e7f225938ca7fd036d2a53cc8c08fa048b0d25962418b0a83b09e7471d3fcd4c4d3
+'http://snapshots.ros.org/lunar/final/ubuntu/pool/main/p/python-vcstools/python-vcstools_0.1.40.orig.tar.gz' python-vcstools_0.1.40.orig.tar.gz 51298 SHA512:0a3ce9cc251473ccde43c36aa1fb91068388d3b52ffbd1cae749c415f849344e18bf39514a1e5eee73b20efcc6fec6fa70a2fd3abdbaa21bfb79393e1bc2e8cc
 ```
 
 ### `dpkg` source package: `python-wstool=0.1.17-1`
@@ -3300,9 +3320,9 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris python-wstool=0.1.17-1
-'http://packages.ros.org/ros/ubuntu/pool/main/p/python-wstool/python-wstool_0.1.17-1.debian.tar.gz' python-wstool_0.1.17-1.debian.tar.gz 1045 SHA512:aba9c213555c16dbcc326422f14fcf76ab2ddf943d5fe38f4fe75f30cb885b14b4008a0e21029091be6030fa2eb1a0e6a35403aed84a6dfb0ef862025bdaacd8
-'http://packages.ros.org/ros/ubuntu/pool/main/p/python-wstool/python-wstool_0.1.17-1.dsc' python-wstool_0.1.17-1.dsc 888 SHA512:41d47d5a14b274454c2f8e01d3e429b8ae8e61da66c3bb6442ceba232645cec4a7efb13848de16c21ca5f8fee7a312ac0628a812800aaf9b41fa54b5b3b75547
-'http://packages.ros.org/ros/ubuntu/pool/main/p/python-wstool/python-wstool_0.1.17.orig.tar.gz' python-wstool_0.1.17.orig.tar.gz 53327 SHA512:e2512ac47376c409e49c3b2ad88f696335509f2b7d8b934d6e730208bf6a47f821f5ce65e153dea50b8fe3554af228e356df5ee54e90a708f8eda5f5b5fee9c1
+'http://snapshots.ros.org/lunar/final/ubuntu/pool/main/p/python-wstool/python-wstool_0.1.17-1.debian.tar.gz' python-wstool_0.1.17-1.debian.tar.gz 1045 SHA512:aba9c213555c16dbcc326422f14fcf76ab2ddf943d5fe38f4fe75f30cb885b14b4008a0e21029091be6030fa2eb1a0e6a35403aed84a6dfb0ef862025bdaacd8
+'http://snapshots.ros.org/lunar/final/ubuntu/pool/main/p/python-wstool/python-wstool_0.1.17-1.dsc' python-wstool_0.1.17-1.dsc 888 SHA512:41d47d5a14b274454c2f8e01d3e429b8ae8e61da66c3bb6442ceba232645cec4a7efb13848de16c21ca5f8fee7a312ac0628a812800aaf9b41fa54b5b3b75547
+'http://snapshots.ros.org/lunar/final/ubuntu/pool/main/p/python-wstool/python-wstool_0.1.17.orig.tar.gz' python-wstool_0.1.17.orig.tar.gz 53327 SHA512:e2512ac47376c409e49c3b2ad88f696335509f2b7d8b934d6e730208bf6a47f821f5ce65e153dea50b8fe3554af228e356df5ee54e90a708f8eda5f5b5fee9c1
 ```
 
 ### `dpkg` source package: `python2.7=2.7.12-1ubuntu0~16.04.4`
@@ -4567,12 +4587,12 @@ $ apt-get source -qq --print-uris sqlite3=3.11.0-1ubuntu1.2
 'http://archive.ubuntu.com/ubuntu/pool/main/s/sqlite3/sqlite3_3.11.0-1ubuntu1.2.debian.tar.xz' sqlite3_3.11.0-1ubuntu1.2.debian.tar.xz 34840 SHA256:8756e8b38a41cad6c3fca5aeb286f28a8ceab68e193a9a2ca7b2049d43ee3237
 ```
 
-### `dpkg` source package: `subversion=1.9.3-2ubuntu1.1`
+### `dpkg` source package: `subversion=1.9.3-2ubuntu1.3`
 
 Binary Packages:
 
-- `libsvn1:amd64=1.9.3-2ubuntu1.1`
-- `subversion=1.9.3-2ubuntu1.1`
+- `libsvn1:amd64=1.9.3-2ubuntu1.3`
+- `subversion=1.9.3-2ubuntu1.3`
 
 Licenses: (parsed from: `/usr/share/doc/libsvn1/copyright`, `/usr/share/doc/subversion/copyright`)
 
@@ -4580,9 +4600,14 @@ Licenses: (parsed from: `/usr/share/doc/libsvn1/copyright`, `/usr/share/doc/subv
 - `GPL-2`
 - `GPL-3`
 
-**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
-This is *usually* due to a new package version being released and the old version being removed.
+Source:
 
+```console
+$ apt-get source -qq --print-uris subversion=1.9.3-2ubuntu1.3
+'http://archive.ubuntu.com/ubuntu/pool/main/s/subversion/subversion_1.9.3-2ubuntu1.3.dsc' subversion_1.9.3-2ubuntu1.3.dsc 3287 SHA256:e6803d4fec28d482f552cdc00ceac22faca3364688cee0c903f293609915fad4
+'http://archive.ubuntu.com/ubuntu/pool/main/s/subversion/subversion_1.9.3.orig.tar.gz' subversion_1.9.3.orig.tar.gz 10600934 SHA256:74cd21d2f8a2a54e4dbd2389fe1605a19dbda8ba88ffc4bb0edc9a66e143cc93
+'http://archive.ubuntu.com/ubuntu/pool/main/s/subversion/subversion_1.9.3-2ubuntu1.3.diff.gz' subversion_1.9.3-2ubuntu1.3.diff.gz 2434888 SHA256:26c82d098c0f513d838bdbba3159a6ab20fca0f0e1797496f1428d73f1b0cdbb
+```
 
 ### `dpkg` source package: `systemd=229-4ubuntu21.22`
 

@@ -2,8 +2,8 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:14b8c0ca17b7dbf47de63da8bf8e8d7bb52efcbac92c3edb403c4052fc60a0b0`
-- Created: `2019-07-10T03:14:38.965501597Z`
+- Image ID: `sha256:282c00b99c6ad66cab641d8563af7d22fc54f5a8e20f98822ebce0f1c175f8cd`
+- Created: `2019-08-03T03:15:51.882204909Z`
 - Virtual Size: ~ 2.62 Gb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
@@ -7461,11 +7461,11 @@ Other potentially useful URLs:
 - https://sources.debian.net/src/libyaml/0.1.7-2/debian/copyright/ (for direct copyright/license information)
 - http://snapshot.debian.org/package/libyaml/0.1.7-2/ (for access to the source package after it no longer exists in the archive)
 
-### `dpkg` source package: `linux=4.9.168-1+deb9u3`
+### `dpkg` source package: `linux=4.9.168-1+deb9u4`
 
 Binary Packages:
 
-- `linux-libc-dev:amd64=4.9.168-1+deb9u3`
+- `linux-libc-dev:amd64=4.9.168-1+deb9u4`
 
 Licenses: (parsed from: `/usr/share/doc/linux-libc-dev/copyright`)
 
@@ -7475,13 +7475,20 @@ Licenses: (parsed from: `/usr/share/doc/linux-libc-dev/copyright`)
 - `Unicode-data`
 - `Xen-interface`
 
-**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
-This is *usually* due to a new package version being released and the old version being removed.
+Source:
 
-The source package *may* still be available for download from:
+```console
+$ apt-get source -qq --print-uris linux=4.9.168-1+deb9u4
+'http://security.debian.org/debian-security/pool/updates/main/l/linux/linux_4.9.168-1+deb9u4.dsc' linux_4.9.168-1+deb9u4.dsc 123383 SHA256:a63810174d59218cf46dd0afe40698752206c9102dd8b25f34e6166817b190aa
+'http://security.debian.org/debian-security/pool/updates/main/l/linux/linux_4.9.168.orig.tar.xz' linux_4.9.168.orig.tar.xz 94774584 SHA256:8a2c04045b47472584fc8e72d8663b5c720b8ba5efba878f48ddba93bac29a7f
+'http://security.debian.org/debian-security/pool/updates/main/l/linux/linux_4.9.168-1+deb9u4.debian.tar.xz' linux_4.9.168-1+deb9u4.debian.tar.xz 2748776 SHA256:4bed26b58e6e498bce117aef16506e5a29cde6bb86b53bc6109d943a7d5cffe2
+```
 
-- http://snapshot.debian.org/package/linux/4.9.168-1+deb9u3/
+Other potentially useful URLs:
 
+- https://sources.debian.net/src/linux/4.9.168-1+deb9u4/ (for browsing the source)
+- https://sources.debian.net/src/linux/4.9.168-1+deb9u4/debian/copyright/ (for direct copyright/license information)
+- http://snapshot.debian.org/package/linux/4.9.168-1+deb9u4/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `lksctp-tools=1.0.17+dfsg-1`
 
@@ -9140,11 +9147,11 @@ Other potentially useful URLs:
 - https://sources.debian.net/src/paramiko/2.0.0-1/debian/copyright/ (for direct copyright/license information)
 - http://snapshot.debian.org/package/paramiko/2.0.0-1/ (for access to the source package after it no longer exists in the archive)
 
-### `dpkg` source package: `patch=2.7.5-1+deb9u1`
+### `dpkg` source package: `patch=2.7.5-1+deb9u2`
 
 Binary Packages:
 
-- `patch=2.7.5-1+deb9u1`
+- `patch=2.7.5-1+deb9u2`
 
 Licenses: (parsed from: `/usr/share/doc/patch/copyright`)
 
@@ -9153,17 +9160,17 @@ Licenses: (parsed from: `/usr/share/doc/patch/copyright`)
 Source:
 
 ```console
-$ apt-get source -qq --print-uris patch=2.7.5-1+deb9u1
-'http://deb.debian.org/debian/pool/main/p/patch/patch_2.7.5-1+deb9u1.dsc' patch_2.7.5-1+deb9u1.dsc 1840 SHA256:90ff999a9bce963d2adf7afab34aca5227d861bdee85fc8bb324581c1cca0350
-'http://deb.debian.org/debian/pool/main/p/patch/patch_2.7.5.orig.tar.xz' patch_2.7.5.orig.tar.xz 727704 SHA256:fd95153655d6b95567e623843a0e77b81612d502ecf78a489a4aed7867caa299
-'http://deb.debian.org/debian/pool/main/p/patch/patch_2.7.5-1+deb9u1.debian.tar.xz' patch_2.7.5-1+deb9u1.debian.tar.xz 10584 SHA256:8f040aa1abb96579d114bac43d8e0d8f22ef63c689d1ebebd17941fa37d11577
+$ apt-get source -qq --print-uris patch=2.7.5-1+deb9u2
+'http://security.debian.org/debian-security/pool/updates/main/p/patch/patch_2.7.5-1+deb9u2.dsc' patch_2.7.5-1+deb9u2.dsc 1840 SHA256:3e6b3452b6a658b5762b198a94f1ac5af6bb687f90e5749a7f5af12364ffa269
+'http://security.debian.org/debian-security/pool/updates/main/p/patch/patch_2.7.5.orig.tar.xz' patch_2.7.5.orig.tar.xz 727704 SHA256:fd95153655d6b95567e623843a0e77b81612d502ecf78a489a4aed7867caa299
+'http://security.debian.org/debian-security/pool/updates/main/p/patch/patch_2.7.5-1+deb9u2.debian.tar.xz' patch_2.7.5-1+deb9u2.debian.tar.xz 13036 SHA256:c094ca6eabeb6c7fe3ea964bd242a2f018c5e2ce5b82cc4e977b37e214109c6e
 ```
 
 Other potentially useful URLs:
 
-- https://sources.debian.net/src/patch/2.7.5-1+deb9u1/ (for browsing the source)
-- https://sources.debian.net/src/patch/2.7.5-1+deb9u1/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/patch/2.7.5-1+deb9u1/ (for access to the source package after it no longer exists in the archive)
+- https://sources.debian.net/src/patch/2.7.5-1+deb9u2/ (for browsing the source)
+- https://sources.debian.net/src/patch/2.7.5-1+deb9u2/debian/copyright/ (for direct copyright/license information)
+- http://snapshot.debian.org/package/patch/2.7.5-1+deb9u2/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `pcl=1.8.0+dfsg1-3`
 
@@ -9895,33 +9902,43 @@ Other potentially useful URLs:
 - https://sources.debian.net/src/python-autobahn/0.14.1+dfsg1-2/debian/copyright/ (for direct copyright/license information)
 - http://snapshot.debian.org/package/python-autobahn/0.14.1+dfsg1-2/ (for access to the source package after it no longer exists in the archive)
 
-### `dpkg` source package: `python-catkin-pkg-modules=0.4.12-1`
+### `dpkg` source package: `python-catkin-pkg-modules=0.4.13-1`
 
 Binary Packages:
 
-- `python-catkin-pkg-modules=0.4.12-1`
+- `python-catkin-pkg-modules=0.4.13-1`
 
 **WARNING:** unable to detect licenses! (package likely not compliant with DEP-5)  
 If source is available (seen below), check the contents of `debian/copyright` within it.
 
 
-**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
-This is *usually* due to a new package version being released and the old version being removed.
+Source:
 
+```console
+$ apt-get source -qq --print-uris python-catkin-pkg-modules=0.4.13-1
+'http://packages.ros.org/ros/ubuntu/pool/main/p/python-catkin-pkg-modules/python-catkin-pkg-modules_0.4.13-1.debian.tar.xz' python-catkin-pkg-modules_0.4.13-1.debian.tar.xz 1940 SHA512:84760d0056fc4b00740ddf33b4a26af06802f9bd96927b3d662cd7b04b26e43675e6c1c7772621d12e598a7f4ae008bf6bd1d2925679689f561a9084627faba2
+'http://packages.ros.org/ros/ubuntu/pool/main/p/python-catkin-pkg-modules/python-catkin-pkg-modules_0.4.13-1.dsc' python-catkin-pkg-modules_0.4.13-1.dsc 1050 SHA512:46343d0c9fe6dffabeb095e1c125be7095f40f227b23f68d962391e131506402d5a0a2c74f43c24b1b829c3021bf2b93de0c32610a3ff7eab55aa08268071a36
+'http://packages.ros.org/ros/ubuntu/pool/main/p/python-catkin-pkg-modules/python-catkin-pkg-modules_0.4.13.orig.tar.gz' python-catkin-pkg-modules_0.4.13.orig.tar.gz 59232 SHA512:a63c087477e1043b3d8da66e06258347b30ffd3d0b876edae45d1ffca0035c114a2774d101aec2a7b0421c067a29df042b26f0ec7c6a40be42d2b0ae3c864cfc
+```
 
-### `dpkg` source package: `python-catkin-pkg=0.4.12-100`
+### `dpkg` source package: `python-catkin-pkg=0.4.13-100`
 
 Binary Packages:
 
-- `python-catkin-pkg=0.4.12-100`
+- `python-catkin-pkg=0.4.13-100`
 
 **WARNING:** unable to detect licenses! (package likely not compliant with DEP-5)  
 If source is available (seen below), check the contents of `debian/copyright` within it.
 
 
-**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
-This is *usually* due to a new package version being released and the old version being removed.
+Source:
 
+```console
+$ apt-get source -qq --print-uris python-catkin-pkg=0.4.13-100
+'http://packages.ros.org/ros/ubuntu/pool/main/p/python-catkin-pkg/python-catkin-pkg_0.4.13-100.debian.tar.xz' python-catkin-pkg_0.4.13-100.debian.tar.xz 1920 SHA512:b5ff71a7da43ee7e8191e8ca7d7692628a2d4af00850d07eb0620eab5cab844edea216597e882c9ba5e3c1c08bb74cf8b5b3d44fe9837060056325c75863b63e
+'http://packages.ros.org/ros/ubuntu/pool/main/p/python-catkin-pkg/python-catkin-pkg_0.4.13-100.dsc' python-catkin-pkg_0.4.13-100.dsc 986 SHA512:f120f1f310b41eefaa2a10576863b6ee0382be533ad2d8584e9b27dfba6c3c56d0ef42c3fc72e847b15d1f7f369882834991d9f6ebee96880bb4170e56383fa2
+'http://packages.ros.org/ros/ubuntu/pool/main/p/python-catkin-pkg/python-catkin-pkg_0.4.13.orig.tar.gz' python-catkin-pkg_0.4.13.orig.tar.gz 13439 SHA512:2ba9cf0b42a69947611647520897cf38a66b51eaa853b00178d2ebcc262f722625e40b18ff3acfc0d355c8a000082802ecd20761c9effb31a0a181f56831c6db
+```
 
 ### `dpkg` source package: `python-cbor=0.1.24-1`
 
@@ -13312,12 +13329,12 @@ Other potentially useful URLs:
 - https://sources.debian.net/src/strip-nondeterminism/0.034-1/debian/copyright/ (for direct copyright/license information)
 - http://snapshot.debian.org/package/strip-nondeterminism/0.034-1/ (for access to the source package after it no longer exists in the archive)
 
-### `dpkg` source package: `subversion=1.9.5-1+deb9u3`
+### `dpkg` source package: `subversion=1.9.5-1+deb9u4`
 
 Binary Packages:
 
-- `libsvn1:amd64=1.9.5-1+deb9u3`
-- `subversion=1.9.5-1+deb9u3`
+- `libsvn1:amd64=1.9.5-1+deb9u4`
+- `subversion=1.9.5-1+deb9u4`
 
 Licenses: (parsed from: `/usr/share/doc/libsvn1/copyright`, `/usr/share/doc/subversion/copyright`)
 
@@ -13328,17 +13345,17 @@ Licenses: (parsed from: `/usr/share/doc/libsvn1/copyright`, `/usr/share/doc/subv
 Source:
 
 ```console
-$ apt-get source -qq --print-uris subversion=1.9.5-1+deb9u3
-'http://deb.debian.org/debian/pool/main/s/subversion/subversion_1.9.5-1+deb9u3.dsc' subversion_1.9.5-1+deb9u3.dsc 3077 SHA256:43ecb40841996c230f63a2882914525a90ebcee1ba070f38d49533453c1dfa11
-'http://deb.debian.org/debian/pool/main/s/subversion/subversion_1.9.5.orig.tar.gz' subversion_1.9.5.orig.tar.gz 10615674 SHA256:280ba586c5d51d7b976b65d22d5e8e42f3908ed1c968d71120dcf534ce857a83
-'http://deb.debian.org/debian/pool/main/s/subversion/subversion_1.9.5-1+deb9u3.diff.gz' subversion_1.9.5-1+deb9u3.diff.gz 2545505 SHA256:f71d488ee779a2c681cc44930d55438b9cf015aaf497836d5164d3e18978fd29
+$ apt-get source -qq --print-uris subversion=1.9.5-1+deb9u4
+'http://security.debian.org/debian-security/pool/updates/main/s/subversion/subversion_1.9.5-1+deb9u4.dsc' subversion_1.9.5-1+deb9u4.dsc 3077 SHA256:3077b153f0f10f16db5433396a3170006e8cf41eadaf166c4fbac2874b74b71b
+'http://security.debian.org/debian-security/pool/updates/main/s/subversion/subversion_1.9.5.orig.tar.gz' subversion_1.9.5.orig.tar.gz 10615674 SHA256:280ba586c5d51d7b976b65d22d5e8e42f3908ed1c968d71120dcf534ce857a83
+'http://security.debian.org/debian-security/pool/updates/main/s/subversion/subversion_1.9.5-1+deb9u4.diff.gz' subversion_1.9.5-1+deb9u4.diff.gz 2547685 SHA256:c72e9a46bcd488a166957e0c5a3ae4225413fdeaddd95c529962de8b35414f74
 ```
 
 Other potentially useful URLs:
 
-- https://sources.debian.net/src/subversion/1.9.5-1+deb9u3/ (for browsing the source)
-- https://sources.debian.net/src/subversion/1.9.5-1+deb9u3/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/subversion/1.9.5-1+deb9u3/ (for access to the source package after it no longer exists in the archive)
+- https://sources.debian.net/src/subversion/1.9.5-1+deb9u4/ (for browsing the source)
+- https://sources.debian.net/src/subversion/1.9.5-1+deb9u4/debian/copyright/ (for direct copyright/license information)
+- http://snapshot.debian.org/package/subversion/1.9.5-1+deb9u4/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `superlu=5.2.1+dfsg1-2`
 

@@ -2,9 +2,9 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:8217ae766ba7ce7652e306839b2e34f73df5bfdd9aff62ffb73b19a7be9102dc`
-- Created: `2019-07-23T17:02:08.179645131Z`
-- Virtual Size: ~ 935.71 Mb  
+- Image ID: `sha256:829d760c22235bcf03a519d041df09a97cc50110365b3e667770d5e40e9fb941`
+- Created: `2019-08-03T02:08:10.905974052Z`
+- Virtual Size: ~ 935.63 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["/ros_entrypoint.sh"]`
@@ -1168,14 +1168,9 @@ Licenses: (parsed from: `/usr/share/doc/libglib2.0-0/copyright`, `/usr/share/doc
 
 - `LGPL`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris glib2.0=2.48.2-0ubuntu4.3
-'http://archive.ubuntu.com/ubuntu/pool/main/g/glib2.0/glib2.0_2.48.2-0ubuntu4.3.dsc' glib2.0_2.48.2-0ubuntu4.3.dsc 3157 SHA256:3651fc1cb14faa739dca58710b09581465c683d31b1928a69ce52f692689ab30
-'http://archive.ubuntu.com/ubuntu/pool/main/g/glib2.0/glib2.0_2.48.2.orig.tar.xz' glib2.0_2.48.2.orig.tar.xz 6408644 SHA256:f25e751589cb1a58826eac24fbd4186cda4518af772806b666a3f91f66e6d3f4
-'http://archive.ubuntu.com/ubuntu/pool/main/g/glib2.0/glib2.0_2.48.2-0ubuntu4.3.debian.tar.xz' glib2.0_2.48.2-0ubuntu4.3.debian.tar.xz 73408 SHA256:969536b2462dc344ff772bd7aef3f5966104e98cbf5a0903c26f880b5acfad55
-```
 
 ### `dpkg` source package: `glibc=2.23-0ubuntu11`
 
@@ -2166,20 +2161,25 @@ $ apt-get source -qq --print-uris libyaml=0.1.6-3
 'http://archive.ubuntu.com/ubuntu/pool/main/liby/libyaml/libyaml_0.1.6-3.debian.tar.xz' libyaml_0.1.6-3.debian.tar.xz 4268 SHA256:fd567e6918903833e5c4f1f87254c550eca07c2bba1ccbe6031da33243cf4297
 ```
 
-### `dpkg` source package: `linux=4.4.0-154.181`
+### `dpkg` source package: `linux=4.4.0-157.185`
 
 Binary Packages:
 
-- `linux-libc-dev:amd64=4.4.0-154.181`
+- `linux-libc-dev:amd64=4.4.0-157.185`
 
 Licenses: (parsed from: `/usr/share/doc/linux-libc-dev/copyright`)
 
 - `GPL-2`
 - `redpine-signals`
 
-**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
-This is *usually* due to a new package version being released and the old version being removed.
+Source:
 
+```console
+$ apt-get source -qq --print-uris linux=4.4.0-157.185
+'http://archive.ubuntu.com/ubuntu/pool/main/l/linux/linux_4.4.0-157.185.dsc' linux_4.4.0-157.185.dsc 11909 SHA256:9eb06928e10d52e901007ceab748fedd8e32262f3111104e7b6761fe3ec456d0
+'http://archive.ubuntu.com/ubuntu/pool/main/l/linux/linux_4.4.0.orig.tar.gz' linux_4.4.0.orig.tar.gz 132860730 SHA256:730e75919b5d30a9bc934ccb300eaedfdf44994ca9ee1d07a46901c46c221357
+'http://archive.ubuntu.com/ubuntu/pool/main/l/linux/linux_4.4.0-157.185.diff.gz' linux_4.4.0-157.185.diff.gz 15620309 SHA256:d09c7e56690349dc0590a1382ddd5b66802dfb2366527babaa423d4ddd1a71b0
+```
 
 ### `dpkg` source package: `lksctp-tools=1.0.16+dfsg-3`
 
@@ -2670,20 +2670,25 @@ $ apt-get source -qq --print-uris ocl-icd=2.2.8-1
 'http://archive.ubuntu.com/ubuntu/pool/main/o/ocl-icd/ocl-icd_2.2.8-1.debian.tar.xz' ocl-icd_2.2.8-1.debian.tar.xz 10828 SHA256:4b5aea6e57e23c6cb8b0a12794d235a615d063cf816449dd0ecfa7a13261624c
 ```
 
-### `dpkg` source package: `openldap=2.4.42+dfsg-2ubuntu3.5`
+### `dpkg` source package: `openldap=2.4.42+dfsg-2ubuntu3.6`
 
 Binary Packages:
 
-- `libldap-2.4-2:amd64=2.4.42+dfsg-2ubuntu3.5`
-- `libldap2-dev:amd64=2.4.42+dfsg-2ubuntu3.5`
+- `libldap-2.4-2:amd64=2.4.42+dfsg-2ubuntu3.6`
+- `libldap2-dev:amd64=2.4.42+dfsg-2ubuntu3.6`
 
 **WARNING:** unable to detect licenses! (package likely not compliant with DEP-5)  
 If source is available (seen below), check the contents of `debian/copyright` within it.
 
 
-**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
-This is *usually* due to a new package version being released and the old version being removed.
+Source:
 
+```console
+$ apt-get source -qq --print-uris openldap=2.4.42+dfsg-2ubuntu3.6
+'http://archive.ubuntu.com/ubuntu/pool/main/o/openldap/openldap_2.4.42+dfsg-2ubuntu3.6.dsc' openldap_2.4.42+dfsg-2ubuntu3.6.dsc 3054 SHA256:ad6f9ad3a6f5134a753abbb1877a78b63990d39b1337b809c7b87e56e1e25a7b
+'http://archive.ubuntu.com/ubuntu/pool/main/o/openldap/openldap_2.4.42+dfsg.orig.tar.gz' openldap_2.4.42+dfsg.orig.tar.gz 4813173 SHA256:5f56e4e3584f7a4b4c8437a2c985b2f519836946be77ef1aa43a5d20c02ea97b
+'http://archive.ubuntu.com/ubuntu/pool/main/o/openldap/openldap_2.4.42+dfsg-2ubuntu3.6.debian.tar.xz' openldap_2.4.42+dfsg-2ubuntu3.6.debian.tar.xz 180632 SHA256:442ee321317fccfcfae8bdb9e90caa7818c2ceebf5d0b5a2e10cc266ecc3ec6a
+```
 
 ### `dpkg` source package: `openmpi=1.10.2-8ubuntu1`
 
@@ -2791,19 +2796,24 @@ $ apt-get source -qq --print-uris paramiko=1.16.0-1ubuntu0.2
 'http://archive.ubuntu.com/ubuntu/pool/main/p/paramiko/paramiko_1.16.0-1ubuntu0.2.debian.tar.xz' paramiko_1.16.0-1ubuntu0.2.debian.tar.xz 12380 SHA256:4c3308af98f75ab1e1347da4d12dfe68e8ea40b5cf1ea365a1a12db067458e88
 ```
 
-### `dpkg` source package: `patch=2.7.5-1ubuntu0.16.04.1`
+### `dpkg` source package: `patch=2.7.5-1ubuntu0.16.04.2`
 
 Binary Packages:
 
-- `patch=2.7.5-1ubuntu0.16.04.1`
+- `patch=2.7.5-1ubuntu0.16.04.2`
 
 Licenses: (parsed from: `/usr/share/doc/patch/copyright`)
 
 - `GPL`
 
-**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
-This is *usually* due to a new package version being released and the old version being removed.
+Source:
 
+```console
+$ apt-get source -qq --print-uris patch=2.7.5-1ubuntu0.16.04.2
+'http://archive.ubuntu.com/ubuntu/pool/main/p/patch/patch_2.7.5-1ubuntu0.16.04.2.dsc' patch_2.7.5-1ubuntu0.16.04.2.dsc 1950 SHA256:f80df1b7bff022afff6309230c6fc50c4eb5d32666ff3632f4b5bfa5b74f8805
+'http://archive.ubuntu.com/ubuntu/pool/main/p/patch/patch_2.7.5.orig.tar.xz' patch_2.7.5.orig.tar.xz 727704 SHA256:fd95153655d6b95567e623843a0e77b81612d502ecf78a489a4aed7867caa299
+'http://archive.ubuntu.com/ubuntu/pool/main/p/patch/patch_2.7.5-1ubuntu0.16.04.2.debian.tar.xz' patch_2.7.5-1ubuntu0.16.04.2.debian.tar.xz 12588 SHA256:4274779969c41d90db394717edde6e783e504c750e71ce61ec9077ad299e5bcf
+```
 
 ### `dpkg` source package: `pcre3=2:8.38-3.1`
 
@@ -2959,33 +2969,43 @@ $ apt-get source -qq --print-uris pyparsing=2.0.3+dfsg1-1ubuntu0.1
 'http://archive.ubuntu.com/ubuntu/pool/main/p/pyparsing/pyparsing_2.0.3+dfsg1-1ubuntu0.1.debian.tar.xz' pyparsing_2.0.3+dfsg1-1ubuntu0.1.debian.tar.xz 6552 SHA256:0b20410dc1469f401193ec5e42ca8817b243f3651fe0cd19e1388068d6c60b9c
 ```
 
-### `dpkg` source package: `python-catkin-pkg-modules=0.4.12-1`
+### `dpkg` source package: `python-catkin-pkg-modules=0.4.13-1`
 
 Binary Packages:
 
-- `python-catkin-pkg-modules=0.4.12-1`
+- `python-catkin-pkg-modules=0.4.13-1`
 
 **WARNING:** unable to detect licenses! (package likely not compliant with DEP-5)  
 If source is available (seen below), check the contents of `debian/copyright` within it.
 
 
-**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
-This is *usually* due to a new package version being released and the old version being removed.
+Source:
 
+```console
+$ apt-get source -qq --print-uris python-catkin-pkg-modules=0.4.13-1
+'http://packages.ros.org/ros/ubuntu/pool/main/p/python-catkin-pkg-modules/python-catkin-pkg-modules_0.4.13-1.debian.tar.xz' python-catkin-pkg-modules_0.4.13-1.debian.tar.xz 1940 SHA512:84760d0056fc4b00740ddf33b4a26af06802f9bd96927b3d662cd7b04b26e43675e6c1c7772621d12e598a7f4ae008bf6bd1d2925679689f561a9084627faba2
+'http://packages.ros.org/ros/ubuntu/pool/main/p/python-catkin-pkg-modules/python-catkin-pkg-modules_0.4.13-1.dsc' python-catkin-pkg-modules_0.4.13-1.dsc 1050 SHA512:46343d0c9fe6dffabeb095e1c125be7095f40f227b23f68d962391e131506402d5a0a2c74f43c24b1b829c3021bf2b93de0c32610a3ff7eab55aa08268071a36
+'http://packages.ros.org/ros/ubuntu/pool/main/p/python-catkin-pkg-modules/python-catkin-pkg-modules_0.4.13.orig.tar.gz' python-catkin-pkg-modules_0.4.13.orig.tar.gz 59232 SHA512:a63c087477e1043b3d8da66e06258347b30ffd3d0b876edae45d1ffca0035c114a2774d101aec2a7b0421c067a29df042b26f0ec7c6a40be42d2b0ae3c864cfc
+```
 
-### `dpkg` source package: `python-catkin-pkg=0.4.12-100`
+### `dpkg` source package: `python-catkin-pkg=0.4.13-100`
 
 Binary Packages:
 
-- `python-catkin-pkg=0.4.12-100`
+- `python-catkin-pkg=0.4.13-100`
 
 **WARNING:** unable to detect licenses! (package likely not compliant with DEP-5)  
 If source is available (seen below), check the contents of `debian/copyright` within it.
 
 
-**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
-This is *usually* due to a new package version being released and the old version being removed.
+Source:
 
+```console
+$ apt-get source -qq --print-uris python-catkin-pkg=0.4.13-100
+'http://packages.ros.org/ros/ubuntu/pool/main/p/python-catkin-pkg/python-catkin-pkg_0.4.13-100.debian.tar.xz' python-catkin-pkg_0.4.13-100.debian.tar.xz 1920 SHA512:b5ff71a7da43ee7e8191e8ca7d7692628a2d4af00850d07eb0620eab5cab844edea216597e882c9ba5e3c1c08bb74cf8b5b3d44fe9837060056325c75863b63e
+'http://packages.ros.org/ros/ubuntu/pool/main/p/python-catkin-pkg/python-catkin-pkg_0.4.13-100.dsc' python-catkin-pkg_0.4.13-100.dsc 986 SHA512:f120f1f310b41eefaa2a10576863b6ee0382be533ad2d8584e9b27dfba6c3c56d0ef42c3fc72e847b15d1f7f369882834991d9f6ebee96880bb4170e56383fa2
+'http://packages.ros.org/ros/ubuntu/pool/main/p/python-catkin-pkg/python-catkin-pkg_0.4.13.orig.tar.gz' python-catkin-pkg_0.4.13.orig.tar.gz 13439 SHA512:2ba9cf0b42a69947611647520897cf38a66b51eaa853b00178d2ebcc262f722625e40b18ff3acfc0d355c8a000082802ecd20761c9effb31a0a181f56831c6db
+```
 
 ### `dpkg` source package: `python-crypto=2.6.1-6ubuntu0.16.04.3`
 
@@ -4567,12 +4587,12 @@ $ apt-get source -qq --print-uris sqlite3=3.11.0-1ubuntu1.2
 'http://archive.ubuntu.com/ubuntu/pool/main/s/sqlite3/sqlite3_3.11.0-1ubuntu1.2.debian.tar.xz' sqlite3_3.11.0-1ubuntu1.2.debian.tar.xz 34840 SHA256:8756e8b38a41cad6c3fca5aeb286f28a8ceab68e193a9a2ca7b2049d43ee3237
 ```
 
-### `dpkg` source package: `subversion=1.9.3-2ubuntu1.1`
+### `dpkg` source package: `subversion=1.9.3-2ubuntu1.3`
 
 Binary Packages:
 
-- `libsvn1:amd64=1.9.3-2ubuntu1.1`
-- `subversion=1.9.3-2ubuntu1.1`
+- `libsvn1:amd64=1.9.3-2ubuntu1.3`
+- `subversion=1.9.3-2ubuntu1.3`
 
 Licenses: (parsed from: `/usr/share/doc/libsvn1/copyright`, `/usr/share/doc/subversion/copyright`)
 
@@ -4580,9 +4600,14 @@ Licenses: (parsed from: `/usr/share/doc/libsvn1/copyright`, `/usr/share/doc/subv
 - `GPL-2`
 - `GPL-3`
 
-**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
-This is *usually* due to a new package version being released and the old version being removed.
+Source:
 
+```console
+$ apt-get source -qq --print-uris subversion=1.9.3-2ubuntu1.3
+'http://archive.ubuntu.com/ubuntu/pool/main/s/subversion/subversion_1.9.3-2ubuntu1.3.dsc' subversion_1.9.3-2ubuntu1.3.dsc 3287 SHA256:e6803d4fec28d482f552cdc00ceac22faca3364688cee0c903f293609915fad4
+'http://archive.ubuntu.com/ubuntu/pool/main/s/subversion/subversion_1.9.3.orig.tar.gz' subversion_1.9.3.orig.tar.gz 10600934 SHA256:74cd21d2f8a2a54e4dbd2389fe1605a19dbda8ba88ffc4bb0edc9a66e143cc93
+'http://archive.ubuntu.com/ubuntu/pool/main/s/subversion/subversion_1.9.3-2ubuntu1.3.diff.gz' subversion_1.9.3-2ubuntu1.3.diff.gz 2434888 SHA256:26c82d098c0f513d838bdbba3159a6ab20fca0f0e1797496f1428d73f1b0cdbb
+```
 
 ### `dpkg` source package: `systemd=229-4ubuntu21.22`
 
