@@ -644,19 +644,13 @@ Licenses: (parsed from: `/usr/share/doc/debconf/copyright`)
 
 - `BSD-2-clause`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris debconf=1.5.72
-'http://deb.debian.org/debian/pool/main/d/debconf/debconf_1.5.72.dsc' debconf_1.5.72.dsc 2159 SHA256:43c069f628fc18e4b8e92332035a8e7f660b24b8174fda1db6c102e15c591819
-'http://deb.debian.org/debian/pool/main/d/debconf/debconf_1.5.72.tar.xz' debconf_1.5.72.tar.xz 570944 SHA256:ac482721a5dbc5e0dbf601dc3bdf2e300ea42164b74673c3dd72fa8d0467d5a2
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/debconf/1.5.72/
 
-- https://sources.debian.net/src/debconf/1.5.72/ (for browsing the source)
-- https://sources.debian.net/src/debconf/1.5.72/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/debconf/1.5.72/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `debian-archive-keyring=2019.1`
 
@@ -1271,20 +1265,13 @@ Licenses: (parsed from: `/usr/share/doc/git/copyright`, `/usr/share/doc/git-man/
 - `dlmalloc`
 - `mingw-runtime`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris git=1:2.22.0-1
-'http://deb.debian.org/debian/pool/main/g/git/git_2.22.0-1.dsc' git_2.22.0-1.dsc 2891 SHA256:d978e0e0fbe973052c9987a88b512af03e5bd571630fdb4716a5fa010baf1f31
-'http://deb.debian.org/debian/pool/main/g/git/git_2.22.0.orig.tar.xz' git_2.22.0.orig.tar.xz 5609772 SHA256:159e4b599f8af4612e70b666600a3139541f8bacc18124daf2cbe8d1b934f29f
-'http://deb.debian.org/debian/pool/main/g/git/git_2.22.0-1.debian.tar.xz' git_2.22.0-1.debian.tar.xz 614844 SHA256:f075c4a33b9cea106ebeaaefa1ddaaab6afcce7a99ff3b1d704a8bb36ffba01a
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/git/1:2.22.0-1/
 
-- https://sources.debian.net/src/git/1:2.22.0-1/ (for browsing the source)
-- https://sources.debian.net/src/git/1:2.22.0-1/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/git/1:2.22.0-1/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `glib2.0=2.58.3-2`
 
@@ -1440,21 +1427,13 @@ Licenses: (parsed from: `/usr/share/doc/libgnutls-dane0/copyright`, `/usr/share/
 - `The MIT License (MIT)`
 - `The main library is licensed under GNU Lesser`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris gnutls28=3.6.8-2
-'http://deb.debian.org/debian/pool/main/g/gnutls28/gnutls28_3.6.8-2.dsc' gnutls28_3.6.8-2.dsc 3377 SHA256:a1a5b56374c93815a115ff99fd2a7da4352ead2860dc2cf7d0ace1f6c06f190f
-'http://deb.debian.org/debian/pool/main/g/gnutls28/gnutls28_3.6.8.orig.tar.xz' gnutls28_3.6.8.orig.tar.xz 5712580 SHA256:aa81944e5635de981171772857e72be231a7e0f559ae0292d2737de475383e83
-'http://deb.debian.org/debian/pool/main/g/gnutls28/gnutls28_3.6.8.orig.tar.xz.asc' gnutls28_3.6.8.orig.tar.xz.asc 488 SHA256:395a954d4a922238fc7d7fbecbc9c7a7d4696369c6c9fe9c1a9b550dc02067b7
-'http://deb.debian.org/debian/pool/main/g/gnutls28/gnutls28_3.6.8-2.debian.tar.xz' gnutls28_3.6.8-2.debian.tar.xz 67848 SHA256:bf11ca501ff50c1f5f6ee5ef44254546d4752e82de949eaf859c2cb34d81fc89
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/gnutls28/3.6.8-2/
 
-- https://sources.debian.net/src/gnutls28/3.6.8-2/ (for browsing the source)
-- https://sources.debian.net/src/gnutls28/3.6.8-2/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/gnutls28/3.6.8-2/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `gobject-introspection=1.58.3-2`
 
@@ -1834,20 +1813,13 @@ Licenses: (parsed from: `/usr/share/doc/iputils-ping/copyright`)
 
 - `GPL`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris iputils=3:20190515-2
-'http://deb.debian.org/debian/pool/main/i/iputils/iputils_20190515-2.dsc' iputils_20190515-2.dsc 2109 SHA256:7d96e40f096046aeccb782a2fd88bcda136193d0f5db116832cccef3b94f68e6
-'http://deb.debian.org/debian/pool/main/i/iputils/iputils_20190515.orig.tar.bz2' iputils_20190515.orig.tar.bz2 386699 SHA256:79d26fa301f1dc899d7876f4cc791bea04bb650d09e79b4efcf114d52de15f10
-'http://deb.debian.org/debian/pool/main/i/iputils/iputils_20190515-2.debian.tar.xz' iputils_20190515-2.debian.tar.xz 10368 SHA256:478f711097161e88d647f98a3ad044bbeef2f9271d8eb5f41d953dbe9a4832ef
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/iputils/3:20190515-2/
 
-- https://sources.debian.net/src/iputils/3:20190515-2/ (for browsing the source)
-- https://sources.debian.net/src/iputils/3:20190515-2/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/iputils/3:20190515-2/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `isl=0.20-2`
 
@@ -3272,21 +3244,13 @@ Binary Packages:
 If source is available (seen below), check the contents of `debian/copyright` within it.
 
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris libxslt=1.1.32-2
-'http://deb.debian.org/debian/pool/main/libx/libxslt/libxslt_1.1.32-2.dsc' libxslt_1.1.32-2.dsc 2586 SHA256:a35844605bc638c0912c711f4663775799b3a913a3ef6638da380df6e66ced35
-'http://deb.debian.org/debian/pool/main/libx/libxslt/libxslt_1.1.32.orig.tar.gz' libxslt_1.1.32.orig.tar.gz 3440715 SHA256:526ecd0abaf4a7789041622c3950c0e7f2c4c8835471515fd77eec684a355460
-'http://deb.debian.org/debian/pool/main/libx/libxslt/libxslt_1.1.32.orig.tar.gz.asc' libxslt_1.1.32.orig.tar.gz.asc 455 SHA256:68b374a73747c57a17d62f0ccc1e9714f68a292e700fe4c88e3c2d9dcba71871
-'http://deb.debian.org/debian/pool/main/libx/libxslt/libxslt_1.1.32-2.debian.tar.xz' libxslt_1.1.32-2.debian.tar.xz 31932 SHA256:225b0d740e26813428a2c782a41a83ec47fe9a22ac1afbcacff74ed6dd5539f6
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/libxslt/1.1.32-2/
 
-- https://sources.debian.net/src/libxslt/1.1.32-2/ (for browsing the source)
-- https://sources.debian.net/src/libxslt/1.1.32-2/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/libxslt/1.1.32-2/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `libxt=1:1.1.5-1`
 
@@ -3561,21 +3525,13 @@ Licenses: (parsed from: `/usr/share/doc/libmariadb-dev/copyright`, `/usr/share/d
 - `unlimited-free-doc`
 - `zlib/libpng`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris mariadb-10.3=1:10.3.16-1
-'http://deb.debian.org/debian/pool/main/m/mariadb-10.3/mariadb-10.3_10.3.16-1.dsc' mariadb-10.3_10.3.16-1.dsc 4780 SHA256:c3795b6335a264093fd1d0cd714c2b0a800d21cc195bb0529f9519bbe29f9775
-'http://deb.debian.org/debian/pool/main/m/mariadb-10.3/mariadb-10.3_10.3.16.orig.tar.gz' mariadb-10.3_10.3.16.orig.tar.gz 70862041 SHA256:39e9723eaf620afd99b0925b2c2a5a50a89110ba50040adf14cce7cf89e5e21b
-'http://deb.debian.org/debian/pool/main/m/mariadb-10.3/mariadb-10.3_10.3.16.orig.tar.gz.asc' mariadb-10.3_10.3.16.orig.tar.gz.asc 181 SHA256:f11b68a03cfae7233a5da12119e20fd5c1ff6a2c1ee1260ef6871f5682ef8a84
-'http://deb.debian.org/debian/pool/main/m/mariadb-10.3/mariadb-10.3_10.3.16-1.debian.tar.xz' mariadb-10.3_10.3.16-1.debian.tar.xz 216132 SHA256:e54bed06548b5fe0eb7ade9dd6f43af002e38656a173a5601c3afd268e364cc5
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/mariadb-10.3/1:10.3.16-1/
 
-- https://sources.debian.net/src/mariadb-10.3/1:10.3.16-1/ (for browsing the source)
-- https://sources.debian.net/src/mariadb-10.3/1:10.3.16-1/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/mariadb-10.3/1:10.3.16-1/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `mawk=1.3.3-17`
 
@@ -4035,21 +3991,13 @@ Licenses: (parsed from: `/usr/share/doc/openssh-client/copyright`)
 - `Powell-BSD-style`
 - `public-domain`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris openssh=1:8.0p1-3
-'http://deb.debian.org/debian/pool/main/o/openssh/openssh_8.0p1-3.dsc' openssh_8.0p1-3.dsc 3276 SHA256:77065cc948b4984a828a16173bfb8f085f6d7afaed936652a31257aa32bc4887
-'http://deb.debian.org/debian/pool/main/o/openssh/openssh_8.0p1.orig.tar.gz' openssh_8.0p1.orig.tar.gz 1597697 SHA256:bd943879e69498e8031eb6b7f44d08cdc37d59a7ab689aa0b437320c3481fd68
-'http://deb.debian.org/debian/pool/main/o/openssh/openssh_8.0p1.orig.tar.gz.asc' openssh_8.0p1.orig.tar.gz.asc 683 SHA256:1904abaa20c24f0c8fed8d7708ec13f4ddca0b8f0f3a191b183b93f142111538
-'http://deb.debian.org/debian/pool/main/o/openssh/openssh_8.0p1-3.debian.tar.xz' openssh_8.0p1-3.debian.tar.xz 171024 SHA256:7e1f34adbc3d75847edc5f9ce11a7a9f8257c8926f00545cc188bd6433214fe5
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/openssh/1:8.0p1-3/
 
-- https://sources.debian.net/src/openssh/1:8.0p1-3/ (for browsing the source)
-- https://sources.debian.net/src/openssh/1:8.0p1-3/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/openssh/1:8.0p1-3/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `openssl=1.1.1c-1`
 
