@@ -1,10 +1,10 @@
-# `mongo:4.2.0-rc5-bionic`
+# `mongo:4.2.0-rc7-bionic`
 
 ## Docker Metadata
 
-- Image ID: `sha256:17220e534689e4e018f307a615110a01cb1ba3243ffd60452e415a802d7b974d`
-- Created: `2019-08-02T04:33:49.523239688Z`
-- Virtual Size: ~ 361.44 Mb  
+- Image ID: `sha256:c42fe176967f0fbe63566b213bdb0d18eec0da3c663d495cd71cfa6b2a2c380b`
+- Created: `2019-08-07T15:23:50.575526032Z`
+- Virtual Size: ~ 361.46 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["docker-entrypoint.sh"]`
@@ -17,7 +17,7 @@
   - `MONGO_PACKAGE=mongodb-org`
   - `MONGO_REPO=repo.mongodb.org`
   - `MONGO_MAJOR=testing`
-  - `MONGO_VERSION=4.2.0~rc5`
+  - `MONGO_VERSION=4.2.0~rc7`
 
 ## `dpkg` (`.deb`-based packages)
 
@@ -131,13 +131,9 @@ Licenses: (parsed from: `/usr/share/doc/base-files/copyright`)
 
 - `GPL`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris base-files=10.1ubuntu2.5
-'http://archive.ubuntu.com/ubuntu/pool/main/b/base-files/base-files_10.1ubuntu2.5.dsc' base-files_10.1ubuntu2.5.dsc 1620 SHA256:641b024666edd687c8873d22346340612aaa351bedb246a13212b9a2063c57e8
-'http://archive.ubuntu.com/ubuntu/pool/main/b/base-files/base-files_10.1ubuntu2.5.tar.xz' base-files_10.1ubuntu2.5.tar.xz 78188 SHA256:f2e6870b9b1145b33e8b2dcd6ab2aadaefb8563a1c23ffa6e5c3b29f1eca5f2c
-```
 
 ### `dpkg` source package: `base-passwd=3.5.44`
 
@@ -1191,15 +1187,15 @@ $ apt-get source -qq --print-uris mawk=1.3.3-17ubuntu3
 'http://archive.ubuntu.com/ubuntu/pool/main/m/mawk/mawk_1.3.3-17ubuntu3.diff.gz' mawk_1.3.3-17ubuntu3.diff.gz 64052 SHA256:d1be148525885cb1869e35514f55005b5043f3310b08c444625005a3e14c81fc
 ```
 
-### `dpkg` source package: `mongodb-org=4.2.0~rc5`
+### `dpkg` source package: `mongodb-org=4.2.0~rc7`
 
 Binary Packages:
 
-- `mongodb-org=4.2.0~rc5`
-- `mongodb-org-mongos=4.2.0~rc5`
-- `mongodb-org-server=4.2.0~rc5`
-- `mongodb-org-shell=4.2.0~rc5`
-- `mongodb-org-tools=4.2.0~rc5`
+- `mongodb-org=4.2.0~rc7`
+- `mongodb-org-mongos=4.2.0~rc7`
+- `mongodb-org-server=4.2.0~rc7`
+- `mongodb-org-shell=4.2.0~rc7`
+- `mongodb-org-tools=4.2.0~rc7`
 
 **WARNING:** unable to detect licenses! (package likely not compliant with DEP-5)  
 If source is available (seen below), check the contents of `debian/copyright` within it.
@@ -1687,14 +1683,9 @@ Licenses: (parsed from: `/usr/share/doc/libsystemd0/copyright`, `/usr/share/doc/
 - `LGPL-2.1+`
 - `public-domain`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris systemd=237-3ubuntu10.24
-'http://archive.ubuntu.com/ubuntu/pool/main/s/systemd/systemd_237-3ubuntu10.24.dsc' systemd_237-3ubuntu10.24.dsc 5149 SHA256:629c3ad41f9e3d44c4b31f1bb808859adfdbdb84560299a03d37acb7ddf3a04d
-'http://archive.ubuntu.com/ubuntu/pool/main/s/systemd/systemd_237.orig.tar.gz' systemd_237.orig.tar.gz 6871350 SHA256:c83dabbe1c9de6b9db1dafdb7e04140c7d0535705c68842f6c0768653ba4913c
-'http://archive.ubuntu.com/ubuntu/pool/main/s/systemd/systemd_237-3ubuntu10.24.debian.tar.xz' systemd_237-3ubuntu10.24.debian.tar.xz 217072 SHA256:39160cee4ee37972ff725e8e2b60ca9f499fad9f012c0abe54c24aa2db101262
-```
 
 ### `dpkg` source package: `sysvinit=2.88dsf-59.10ubuntu1`
 
