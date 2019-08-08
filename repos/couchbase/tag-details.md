@@ -3,6 +3,7 @@
 # Tags of `couchbase`
 
 -	[`couchbase:6.0.2`](#couchbase602)
+-	[`couchbase:6.5.0-beta`](#couchbase650-beta)
 -	[`couchbase:community`](#couchbasecommunity)
 -	[`couchbase:community-6.0.0`](#couchbasecommunity-600)
 -	[`couchbase:enterprise`](#couchbaseenterprise)
@@ -142,6 +143,15 @@ VOLUME [/opt/couchbase/var]
 		Last Modified: Tue, 23 Jul 2019 16:26:01 GMT  
 		Size: 857.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+
+## `couchbase:6.5.0-beta`
+
+```console
+$ docker pull couchbase@sha256:a8409dff6597f2ef5f7ecd3c672671bb2af9a390073efd74f95c54aa41cba22a
+```
+
+-	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
+-	Platforms:
 
 ## `couchbase:community`
 
