@@ -73,7 +73,14 @@ http://ftp.scientificlinux.org/linux/scientific/7/SRPMS//vendor/bash-4.2.46-31.e
 
 Licenses (from `rpm --query`): ISC
 
-**WARNING:** unable to find source (`yumdownloader` failed or returned no results)!
+Source:
+
+```console
+$ yumdownloader --quiet --source --urls bind-license-9.9.4-74.el7_6.2.noarch
+Enabling sl-source repository
+Enabling repos-source repository
+http://ftp.scientificlinux.org/linux/scientific/7/SRPMS//vendor/bind-9.9.4-74.el7_6.2.src.rpm
+```
 
 ### `rpm` package: `binutils-2.27-34.base.el7.x86_64`
 
@@ -1677,13 +1684,27 @@ http://ftp.scientificlinux.org/linux/scientific/7/SRPMS//vendor/sqlite-3.7.17-8.
 
 Licenses (from `rpm --query`): LGPLv2+ and MIT and GPLv2+
 
-**WARNING:** unable to find source (`yumdownloader` failed or returned no results)!
+Source:
+
+```console
+$ yumdownloader --quiet --source --urls systemd-219-62.el7_6.9
+Enabling sl-source repository
+Enabling repos-source repository
+http://ftp.scientificlinux.org/linux/scientific/7/SRPMS//vendor/systemd-219-62.el7_6.9.src.rpm
+```
 
 ### `rpm` package: `systemd-libs-219-62.el7_6.9.x86_64`
 
 Licenses (from `rpm --query`): LGPLv2+ and MIT
 
-**WARNING:** unable to find source (`yumdownloader` failed or returned no results)!
+Source:
+
+```console
+$ yumdownloader --quiet --source --urls systemd-libs-219-62.el7_6.9
+Enabling sl-source repository
+Enabling repos-source repository
+http://ftp.scientificlinux.org/linux/scientific/7/SRPMS//vendor/systemd-219-62.el7_6.9.src.rpm
+```
 
 ### `rpm` package: `tar-1.26-35.el7.x86_64`
 
