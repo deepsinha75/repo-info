@@ -106,13 +106,13 @@ Licenses: (parsed from: `/usr/share/doc/apt/copyright`, `/usr/share/doc/libapt-p
 - `GPL-2`
 - `GPLv2+`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris apt=1.9.1
-'http://archive.ubuntu.com/ubuntu/pool/main/a/apt/apt_1.9.1.dsc' apt_1.9.1.dsc 2734 SHA256:785db6003278f049af03d2c0a693669efcfbd0332e3f9dfe3fe234ade0c0cce9
-'http://archive.ubuntu.com/ubuntu/pool/main/a/apt/apt_1.9.1.tar.xz' apt_1.9.1.tar.xz 2162624 SHA256:35245b4057354e256783a64608575de26a29af04853ad97b5c198098213a0dc2
-```
+The source package *may* still be available for download from:
+
+- http://snapshot.debian.org/package/apt/1.9.1/
+
 
 ### `dpkg` source package: `attr=1:2.4.48-4`
 
@@ -952,15 +952,13 @@ Licenses: (parsed from: `/usr/share/doc/libbsd0/copyright`)
 - `public-domain`
 - `public-domain-Colin-Plumb`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris libbsd=0.9.1-2
-'http://archive.ubuntu.com/ubuntu/pool/main/libb/libbsd/libbsd_0.9.1-2.dsc' libbsd_0.9.1-2.dsc 2181 SHA256:abbba409f21d592c0232eab2641fb3f3181702ce0dce00a5357805d5b2d07d18
-'http://archive.ubuntu.com/ubuntu/pool/main/libb/libbsd/libbsd_0.9.1.orig.tar.xz' libbsd_0.9.1.orig.tar.xz 387180 SHA256:56d835742327d69faccd16955a60b6dcf30684a8da518c4eca0ac713b9e0a7a4
-'http://archive.ubuntu.com/ubuntu/pool/main/libb/libbsd/libbsd_0.9.1.orig.tar.xz.asc' libbsd_0.9.1.orig.tar.xz.asc 833 SHA256:a34a81f40bfef37242943cb1c4c446e75d57f31be3317c887d8a5f2cbfb5577d
-'http://archive.ubuntu.com/ubuntu/pool/main/libb/libbsd/libbsd_0.9.1-2.debian.tar.xz' libbsd_0.9.1-2.debian.tar.xz 16456 SHA256:87c37138ffc1f3dc9fcc1a1a0486d87834c71b6ccce255cda7beb1d8ed5e9a65
-```
+The source package *may* still be available for download from:
+
+- http://snapshot.debian.org/package/libbsd/0.9.1-2/
+
 
 ### `dpkg` source package: `libcap-ng=0.7.9-2`
 
@@ -1568,15 +1566,13 @@ Licenses: (parsed from: `/usr/share/doc/openssh-client/copyright`)
 - `Powell-BSD-style`
 - `public-domain`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris openssh=1:8.0p1-3
-'http://archive.ubuntu.com/ubuntu/pool/main/o/openssh/openssh_8.0p1-3.dsc' openssh_8.0p1-3.dsc 3276 SHA256:77065cc948b4984a828a16173bfb8f085f6d7afaed936652a31257aa32bc4887
-'http://archive.ubuntu.com/ubuntu/pool/main/o/openssh/openssh_8.0p1.orig.tar.gz' openssh_8.0p1.orig.tar.gz 1597697 SHA256:bd943879e69498e8031eb6b7f44d08cdc37d59a7ab689aa0b437320c3481fd68
-'http://archive.ubuntu.com/ubuntu/pool/main/o/openssh/openssh_8.0p1.orig.tar.gz.asc' openssh_8.0p1.orig.tar.gz.asc 683 SHA256:1904abaa20c24f0c8fed8d7708ec13f4ddca0b8f0f3a191b183b93f142111538
-'http://archive.ubuntu.com/ubuntu/pool/main/o/openssh/openssh_8.0p1-3.debian.tar.xz' openssh_8.0p1-3.debian.tar.xz 171024 SHA256:7e1f34adbc3d75847edc5f9ce11a7a9f8257c8926f00545cc188bd6433214fe5
-```
+The source package *may* still be available for download from:
+
+- http://snapshot.debian.org/package/openssh/1:8.0p1-3/
+
 
 ### `dpkg` source package: `openssl=1.1.1c-1ubuntu3`
 
@@ -1771,14 +1767,9 @@ Licenses: (parsed from: `/usr/share/doc/libprocps7/copyright`, `/usr/share/doc/p
 - `LGPL-2.1`
 - `LGPL-2.1+`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris procps=2:3.3.15-2ubuntu2
-'http://archive.ubuntu.com/ubuntu/pool/main/p/procps/procps_3.3.15-2ubuntu2.dsc' procps_3.3.15-2ubuntu2.dsc 1557 SHA256:5a2220db80b7a26caafd5fc5e73dde85e5660cd4bf666905ced29270f724a77a
-'http://archive.ubuntu.com/ubuntu/pool/main/p/procps/procps_3.3.15.orig.tar.xz' procps_3.3.15.orig.tar.xz 903372 SHA256:82e8aa55b65eac116eee05f00d2a884a6374760d57100edd429d6e9b4953458d
-'http://archive.ubuntu.com/ubuntu/pool/main/p/procps/procps_3.3.15-2ubuntu2.debian.tar.xz' procps_3.3.15-2ubuntu2.debian.tar.xz 32224 SHA256:6811f3b7a1c25e7fbc5dea4786d43e55608cd0111c57d5d4782fcd9d4664f967
-```
 
 ### `dpkg` source package: `python-defaults=2.7.16-1`
 

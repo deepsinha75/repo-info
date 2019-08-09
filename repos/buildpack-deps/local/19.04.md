@@ -3454,14 +3454,9 @@ Licenses: (parsed from: `/usr/share/doc/libpq-dev/copyright`, `/usr/share/doc/li
 - `nagaysau-ishii`
 - `rijndael`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris postgresql-11=11.4-0ubuntu0.19.04.1
-'http://archive.ubuntu.com/ubuntu/pool/main/p/postgresql-11/postgresql-11_11.4-0ubuntu0.19.04.1.dsc' postgresql-11_11.4-0ubuntu0.19.04.1.dsc 3842 SHA256:bb462c5a1a4a0cfc1354ec3730708b92dc1fe18fc0fb5cd4ee90e3394f4b3a24
-'http://archive.ubuntu.com/ubuntu/pool/main/p/postgresql-11/postgresql-11_11.4.orig.tar.gz' postgresql-11_11.4.orig.tar.gz 25915738 SHA256:2043ab71f2a435a9e77b4419f804525a0b9ec1ef37d19c1c2e4013dc1cae01a7
-'http://archive.ubuntu.com/ubuntu/pool/main/p/postgresql-11/postgresql-11_11.4-0ubuntu0.19.04.1.debian.tar.xz' postgresql-11_11.4-0ubuntu0.19.04.1.debian.tar.xz 23616 SHA256:698e7552a4f8c12637da4569a207219fb19ec847adda9a63623403390a71347d
-```
 
 ### `dpkg` source package: `procps=2:3.3.15-2ubuntu2`
 
@@ -3850,14 +3845,9 @@ Licenses: (parsed from: `/usr/share/doc/libsystemd0/copyright`, `/usr/share/doc/
 - `LGPL-2.1+`
 - `public-domain`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris systemd=240-6ubuntu5.2
-'http://archive.ubuntu.com/ubuntu/pool/main/s/systemd/systemd_240-6ubuntu5.2.dsc' systemd_240-6ubuntu5.2.dsc 5079 SHA256:692b66ecf54a65b784970e9c30d68f38b47d1b07333b86c9c766e84f2b1f4213
-'http://archive.ubuntu.com/ubuntu/pool/main/s/systemd/systemd_240.orig.tar.gz' systemd_240.orig.tar.gz 7582001 SHA256:8f15aec1ac926e13a21a04d0ca3fe371f7004951448142a6f8952075c5b5f0b5
-'http://archive.ubuntu.com/ubuntu/pool/main/s/systemd/systemd_240-6ubuntu5.2.debian.tar.xz' systemd_240-6ubuntu5.2.debian.tar.xz 225588 SHA256:0178cd2ed2fae2b50db35978644feebb10ced698e51503657b35cb8e90dbb011
-```
 
 ### `dpkg` source package: `sysvinit=2.88dsf-59.10ubuntu2`
 

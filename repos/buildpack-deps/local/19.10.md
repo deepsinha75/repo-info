@@ -106,13 +106,13 @@ Licenses: (parsed from: `/usr/share/doc/apt/copyright`, `/usr/share/doc/libapt-p
 - `GPL-2`
 - `GPLv2+`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris apt=1.9.1
-'http://archive.ubuntu.com/ubuntu/pool/main/a/apt/apt_1.9.1.dsc' apt_1.9.1.dsc 2734 SHA256:785db6003278f049af03d2c0a693669efcfbd0332e3f9dfe3fe234ade0c0cce9
-'http://archive.ubuntu.com/ubuntu/pool/main/a/apt/apt_1.9.1.tar.xz' apt_1.9.1.tar.xz 2162624 SHA256:35245b4057354e256783a64608575de26a29af04853ad97b5c198098213a0dc2
-```
+The source package *may* still be available for download from:
+
+- http://snapshot.debian.org/package/apt/1.9.1/
+
 
 ### `dpkg` source package: `attr=1:2.4.48-4`
 
@@ -778,14 +778,13 @@ Licenses: (parsed from: `/usr/share/doc/file/copyright`, `/usr/share/doc/libmagi
 - `MIT-Old-Style-with-legal-disclaimer-2`
 - `public-domain`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris file=1:5.35-4
-'http://archive.ubuntu.com/ubuntu/pool/main/f/file/file_5.35-4.dsc' file_5.35-4.dsc 1952 SHA256:a58fed533e674de9b99eb6ff725e4f5f79a05ba10684b85c9b20d88776b92d0f
-'http://archive.ubuntu.com/ubuntu/pool/main/f/file/file_5.35.orig.tar.xz' file_5.35.orig.tar.xz 643268 SHA256:60b5b8bc762d35452c7995f3db7e8a5e2004d736b8763f086585a5b1af57a632
-'http://archive.ubuntu.com/ubuntu/pool/main/f/file/file_5.35-4.debian.tar.xz' file_5.35-4.debian.tar.xz 55868 SHA256:19c72cae807a28a4950c59773432bd6a4898a98efe25ed629d5fad61a551ee0b
-```
+The source package *may* still be available for download from:
+
+- http://snapshot.debian.org/package/file/1:5.35-4/
+
 
 ### `dpkg` source package: `findutils=4.6.0+git+20190209-2ubuntu1`
 
@@ -1685,15 +1684,13 @@ Licenses: (parsed from: `/usr/share/doc/libbsd0/copyright`)
 - `public-domain`
 - `public-domain-Colin-Plumb`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris libbsd=0.9.1-2
-'http://archive.ubuntu.com/ubuntu/pool/main/libb/libbsd/libbsd_0.9.1-2.dsc' libbsd_0.9.1-2.dsc 2181 SHA256:abbba409f21d592c0232eab2641fb3f3181702ce0dce00a5357805d5b2d07d18
-'http://archive.ubuntu.com/ubuntu/pool/main/libb/libbsd/libbsd_0.9.1.orig.tar.xz' libbsd_0.9.1.orig.tar.xz 387180 SHA256:56d835742327d69faccd16955a60b6dcf30684a8da518c4eca0ac713b9e0a7a4
-'http://archive.ubuntu.com/ubuntu/pool/main/libb/libbsd/libbsd_0.9.1.orig.tar.xz.asc' libbsd_0.9.1.orig.tar.xz.asc 833 SHA256:a34a81f40bfef37242943cb1c4c446e75d57f31be3317c887d8a5f2cbfb5577d
-'http://archive.ubuntu.com/ubuntu/pool/main/libb/libbsd/libbsd_0.9.1-2.debian.tar.xz' libbsd_0.9.1-2.debian.tar.xz 16456 SHA256:87c37138ffc1f3dc9fcc1a1a0486d87834c71b6ccce255cda7beb1d8ed5e9a65
-```
+The source package *may* still be available for download from:
+
+- http://snapshot.debian.org/package/libbsd/0.9.1-2/
+
 
 ### `dpkg` source package: `libcap-ng=0.7.9-2`
 
@@ -2599,15 +2596,9 @@ Binary Packages:
 If source is available (seen below), check the contents of `debian/copyright` within it.
 
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris libxslt=1.1.32-2ubuntu0.1
-'http://archive.ubuntu.com/ubuntu/pool/main/libx/libxslt/libxslt_1.1.32-2ubuntu0.1.dsc' libxslt_1.1.32-2ubuntu0.1.dsc 2685 SHA256:c80121b724bd7569c5b2793dedf7a96306a0450ad46a3b05b2b223796d8f1f36
-'http://archive.ubuntu.com/ubuntu/pool/main/libx/libxslt/libxslt_1.1.32.orig.tar.gz' libxslt_1.1.32.orig.tar.gz 3440715 SHA256:526ecd0abaf4a7789041622c3950c0e7f2c4c8835471515fd77eec684a355460
-'http://archive.ubuntu.com/ubuntu/pool/main/libx/libxslt/libxslt_1.1.32.orig.tar.gz.asc' libxslt_1.1.32.orig.tar.gz.asc 455 SHA256:68b374a73747c57a17d62f0ccc1e9714f68a292e700fe4c88e3c2d9dcba71871
-'http://archive.ubuntu.com/ubuntu/pool/main/libx/libxslt/libxslt_1.1.32-2ubuntu0.1.debian.tar.xz' libxslt_1.1.32-2ubuntu0.1.debian.tar.xz 32864 SHA256:4e9ef3a1dce3f462c3aa3220f44dbaced5d265ab49dd11ab632101d45fc56ec6
-```
 
 ### `dpkg` source package: `libxt=1:1.1.5-1`
 
@@ -2683,14 +2674,9 @@ Licenses: (parsed from: `/usr/share/doc/linux-libc-dev/copyright`)
 
 - `GPL-2`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris linux=5.2.0-8.9
-'http://archive.ubuntu.com/ubuntu/pool/main/l/linux/linux_5.2.0-8.9.dsc' linux_5.2.0-8.9.dsc 6882 SHA256:9a1054d3a20b4bd1ee12ff6ef4ea1f63ab5a109b415907ff6f28d301ac1d1bb6
-'http://archive.ubuntu.com/ubuntu/pool/main/l/linux/linux_5.2.0.orig.tar.gz' linux_5.2.0.orig.tar.gz 164414556 SHA256:e848cc5c3862c8e6468063f94cdda985b6bafd6ae5e8663c254d2a42df06a395
-'http://archive.ubuntu.com/ubuntu/pool/main/l/linux/linux_5.2.0-8.9.diff.gz' linux_5.2.0-8.9.diff.gz 2650001 SHA256:6b49bad6ca3e25c80c9d4188a47de1fba1683b01834fda2f98cec3260cff654e
-```
 
 ### `dpkg` source package: `lsb=10.2019051400ubuntu1`
 
@@ -3131,15 +3117,13 @@ Licenses: (parsed from: `/usr/share/doc/openssh-client/copyright`)
 - `Powell-BSD-style`
 - `public-domain`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris openssh=1:8.0p1-3
-'http://archive.ubuntu.com/ubuntu/pool/main/o/openssh/openssh_8.0p1-3.dsc' openssh_8.0p1-3.dsc 3276 SHA256:77065cc948b4984a828a16173bfb8f085f6d7afaed936652a31257aa32bc4887
-'http://archive.ubuntu.com/ubuntu/pool/main/o/openssh/openssh_8.0p1.orig.tar.gz' openssh_8.0p1.orig.tar.gz 1597697 SHA256:bd943879e69498e8031eb6b7f44d08cdc37d59a7ab689aa0b437320c3481fd68
-'http://archive.ubuntu.com/ubuntu/pool/main/o/openssh/openssh_8.0p1.orig.tar.gz.asc' openssh_8.0p1.orig.tar.gz.asc 683 SHA256:1904abaa20c24f0c8fed8d7708ec13f4ddca0b8f0f3a191b183b93f142111538
-'http://archive.ubuntu.com/ubuntu/pool/main/o/openssh/openssh_8.0p1-3.debian.tar.xz' openssh_8.0p1-3.debian.tar.xz 171024 SHA256:7e1f34adbc3d75847edc5f9ce11a7a9f8257c8926f00545cc188bd6433214fe5
-```
+The source package *may* still be available for download from:
+
+- http://snapshot.debian.org/package/openssh/1:8.0p1-3/
+
 
 ### `dpkg` source package: `openssl=1.1.1c-1ubuntu3`
 
@@ -3226,14 +3210,13 @@ Licenses: (parsed from: `/usr/share/doc/libpango-1.0-0/copyright`, `/usr/share/d
 - `TCL`
 - `Unicode`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris pango1.0=1.42.4-6
-'http://archive.ubuntu.com/ubuntu/pool/main/p/pango1.0/pango1.0_1.42.4-6.dsc' pango1.0_1.42.4-6.dsc 3269 SHA256:b89fd6a3afdf694b686decc0ed2711295894e4800df58e8a223d53f3b6ecf69b
-'http://archive.ubuntu.com/ubuntu/pool/main/p/pango1.0/pango1.0_1.42.4.orig.tar.xz' pango1.0_1.42.4.orig.tar.xz 833876 SHA256:1d2b74cd63e8bd41961f2f8d952355aa0f9be6002b52c8aa7699d9f5da597c9d
-'http://archive.ubuntu.com/ubuntu/pool/main/p/pango1.0/pango1.0_1.42.4-6.debian.tar.xz' pango1.0_1.42.4-6.debian.tar.xz 50032 SHA256:a80d227022fcb54e027b7a4ae2ed67aad1cf712ea959ae43be77db90ecae42c3
-```
+The source package *may* still be available for download from:
+
+- http://snapshot.debian.org/package/pango1.0/1.42.4-6/
+
 
 ### `dpkg` source package: `patch=2.7.6-4`
 
@@ -3455,14 +3438,9 @@ Licenses: (parsed from: `/usr/share/doc/libprocps7/copyright`, `/usr/share/doc/p
 - `LGPL-2.1`
 - `LGPL-2.1+`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris procps=2:3.3.15-2ubuntu2
-'http://archive.ubuntu.com/ubuntu/pool/main/p/procps/procps_3.3.15-2ubuntu2.dsc' procps_3.3.15-2ubuntu2.dsc 1557 SHA256:5a2220db80b7a26caafd5fc5e73dde85e5660cd4bf666905ced29270f724a77a
-'http://archive.ubuntu.com/ubuntu/pool/main/p/procps/procps_3.3.15.orig.tar.xz' procps_3.3.15.orig.tar.xz 903372 SHA256:82e8aa55b65eac116eee05f00d2a884a6374760d57100edd429d6e9b4953458d
-'http://archive.ubuntu.com/ubuntu/pool/main/p/procps/procps_3.3.15-2ubuntu2.debian.tar.xz' procps_3.3.15-2ubuntu2.debian.tar.xz 32224 SHA256:6811f3b7a1c25e7fbc5dea4786d43e55608cd0111c57d5d4782fcd9d4664f967
-```
 
 ### `dpkg` source package: `python-defaults=2.7.16-1`
 

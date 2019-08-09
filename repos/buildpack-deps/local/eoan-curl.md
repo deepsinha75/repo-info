@@ -66,13 +66,13 @@ Licenses: (parsed from: `/usr/share/doc/apt/copyright`, `/usr/share/doc/libapt-p
 - `GPL-2`
 - `GPLv2+`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris apt=1.9.1
-'http://archive.ubuntu.com/ubuntu/pool/main/a/apt/apt_1.9.1.dsc' apt_1.9.1.dsc 2734 SHA256:785db6003278f049af03d2c0a693669efcfbd0332e3f9dfe3fe234ade0c0cce9
-'http://archive.ubuntu.com/ubuntu/pool/main/a/apt/apt_1.9.1.tar.xz' apt_1.9.1.tar.xz 2162624 SHA256:35245b4057354e256783a64608575de26a29af04853ad97b5c198098213a0dc2
-```
+The source package *may* still be available for download from:
+
+- http://snapshot.debian.org/package/apt/1.9.1/
+
 
 ### `dpkg` source package: `attr=1:2.4.48-4`
 
@@ -1459,14 +1459,9 @@ Licenses: (parsed from: `/usr/share/doc/libprocps7/copyright`, `/usr/share/doc/p
 - `LGPL-2.1`
 - `LGPL-2.1+`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris procps=2:3.3.15-2ubuntu2
-'http://archive.ubuntu.com/ubuntu/pool/main/p/procps/procps_3.3.15-2ubuntu2.dsc' procps_3.3.15-2ubuntu2.dsc 1557 SHA256:5a2220db80b7a26caafd5fc5e73dde85e5660cd4bf666905ced29270f724a77a
-'http://archive.ubuntu.com/ubuntu/pool/main/p/procps/procps_3.3.15.orig.tar.xz' procps_3.3.15.orig.tar.xz 903372 SHA256:82e8aa55b65eac116eee05f00d2a884a6374760d57100edd429d6e9b4953458d
-'http://archive.ubuntu.com/ubuntu/pool/main/p/procps/procps_3.3.15-2ubuntu2.debian.tar.xz' procps_3.3.15-2ubuntu2.debian.tar.xz 32224 SHA256:6811f3b7a1c25e7fbc5dea4786d43e55608cd0111c57d5d4782fcd9d4664f967
-```
 
 ### `dpkg` source package: `readline=8.0-2`
 
