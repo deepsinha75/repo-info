@@ -5,23 +5,29 @@
 -	[`julia:1`](#julia1)
 -	[`julia:1.0`](#julia10)
 -	[`julia:1.0.4`](#julia104)
+-	[`julia:1.0.4-buster`](#julia104-buster)
 -	[`julia:1.0.4-stretch`](#julia104-stretch)
 -	[`julia:1.0.4-windowsservercore-1803`](#julia104-windowsservercore-1803)
 -	[`julia:1.0.4-windowsservercore-ltsc2016`](#julia104-windowsservercore-ltsc2016)
+-	[`julia:1.0-buster`](#julia10-buster)
 -	[`julia:1.0-stretch`](#julia10-stretch)
 -	[`julia:1.0-windowsservercore-1803`](#julia10-windowsservercore-1803)
 -	[`julia:1.0-windowsservercore-ltsc2016`](#julia10-windowsservercore-ltsc2016)
 -	[`julia:1.1`](#julia11)
 -	[`julia:1.1.1`](#julia111)
+-	[`julia:1.1.1-buster`](#julia111-buster)
 -	[`julia:1.1.1-stretch`](#julia111-stretch)
 -	[`julia:1.1.1-windowsservercore-1803`](#julia111-windowsservercore-1803)
 -	[`julia:1.1.1-windowsservercore-ltsc2016`](#julia111-windowsservercore-ltsc2016)
+-	[`julia:1.1-buster`](#julia11-buster)
 -	[`julia:1.1-stretch`](#julia11-stretch)
 -	[`julia:1.1-windowsservercore-1803`](#julia11-windowsservercore-1803)
 -	[`julia:1.1-windowsservercore-ltsc2016`](#julia11-windowsservercore-ltsc2016)
+-	[`julia:1-buster`](#julia1-buster)
 -	[`julia:1-stretch`](#julia1-stretch)
 -	[`julia:1-windowsservercore-1803`](#julia1-windowsservercore-1803)
 -	[`julia:1-windowsservercore-ltsc2016`](#julia1-windowsservercore-ltsc2016)
+-	[`julia:buster`](#juliabuster)
 -	[`julia:latest`](#julialatest)
 -	[`julia:stretch`](#juliastretch)
 -	[`julia:windowsservercore-1803`](#juliawindowsservercore-1803)
@@ -965,6 +971,10 @@ CMD ["julia"]
 		Size: 1.2 KB (1202 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
+## `julia:1.0.4-buster`
+
+**does not exist** (yet?)
+
 ## `julia:1.0.4-stretch`
 
 ```console
@@ -1311,6 +1321,10 @@ CMD ["julia"]
 		Last Modified: Wed, 10 Jul 2019 15:30:34 GMT  
 		Size: 1.2 KB (1171 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+
+## `julia:1.0-buster`
+
+**does not exist** (yet?)
 
 ## `julia:1.0-stretch`
 
@@ -2219,6 +2233,10 @@ CMD ["julia"]
 		Size: 1.2 KB (1185 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
+## `julia:1.1.1-buster`
+
+**does not exist** (yet?)
+
 ## `julia:1.1.1-stretch`
 
 ```console
@@ -2516,6 +2534,10 @@ CMD ["julia"]
 		Last Modified: Wed, 10 Jul 2019 15:27:03 GMT  
 		Size: 1.2 KB (1210 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+
+## `julia:1.1-buster`
+
+**does not exist** (yet?)
 
 ## `julia:1.1-stretch`
 
@@ -2815,6 +2837,10 @@ CMD ["julia"]
 		Size: 1.2 KB (1210 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
+## `julia:1-buster`
+
+**does not exist** (yet?)
+
 ## `julia:1-stretch`
 
 ```console
@@ -3112,6 +3138,10 @@ CMD ["julia"]
 		Last Modified: Wed, 10 Jul 2019 15:27:03 GMT  
 		Size: 1.2 KB (1210 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+
+## `julia:buster`
+
+**does not exist** (yet?)
 
 ## `julia:latest`
 
