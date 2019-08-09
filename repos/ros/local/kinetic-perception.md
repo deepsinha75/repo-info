@@ -6765,14 +6765,9 @@ Licenses: (parsed from: `/usr/share/doc/libpq-dev/copyright`, `/usr/share/doc/li
 - `Tcl`
 - `almost exclusively BSD`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris postgresql-9.5=9.5.18-0ubuntu0.16.04.1
-'http://archive.ubuntu.com/ubuntu/pool/main/p/postgresql-9.5/postgresql-9.5_9.5.18-0ubuntu0.16.04.1.dsc' postgresql-9.5_9.5.18-0ubuntu0.16.04.1.dsc 3774 SHA256:b46fe4c20e5fdb68f341490202d3f35353d05b96ab1bd43feefdc8888bd2cb8b
-'http://archive.ubuntu.com/ubuntu/pool/main/p/postgresql-9.5/postgresql-9.5_9.5.18.orig.tar.gz' postgresql-9.5_9.5.18.orig.tar.gz 22745556 SHA256:5f9257f6c9a00fd7ec9249be3e4fb0cb4a7bc31f2577cd8f58f9e21006e998f1
-'http://archive.ubuntu.com/ubuntu/pool/main/p/postgresql-9.5/postgresql-9.5_9.5.18-0ubuntu0.16.04.1.debian.tar.xz' postgresql-9.5_9.5.18-0ubuntu0.16.04.1.debian.tar.xz 27124 SHA256:ea857af0273e607ef2f924124bb96533dcb4b3e2fbdb731ca178e9ec525df58b
-```
 
 ### `dpkg` source package: `procps=2:3.3.10-4ubuntu2.4`
 
@@ -7529,14 +7524,9 @@ Binary Packages:
 If source is available (seen below), check the contents of `debian/copyright` within it.
 
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris python-vcstools=0.1.40-1
-'http://packages.ros.org/ros/ubuntu/pool/main/p/python-vcstools/python-vcstools_0.1.40-1.debian.tar.gz' python-vcstools_0.1.40-1.debian.tar.gz 1076 SHA512:1c0ece44e778d43eabaf8ba4ecb331c6f31d80f85657c95e0d96bd6c83a344fd1258d6c060fae3fe974bad5b8a61c6803cd02679d05bc71765aed16a8d184134
-'http://packages.ros.org/ros/ubuntu/pool/main/p/python-vcstools/python-vcstools_0.1.40-1.dsc' python-vcstools_0.1.40-1.dsc 930 SHA512:7fdfa9752e185abc5b76a6e1087fd27b3afe1a86cfd14df209b8fb826b675e7f225938ca7fd036d2a53cc8c08fa048b0d25962418b0a83b09e7471d3fcd4c4d3
-'http://packages.ros.org/ros/ubuntu/pool/main/p/python-vcstools/python-vcstools_0.1.40.orig.tar.gz' python-vcstools_0.1.40.orig.tar.gz 51298 SHA512:0a3ce9cc251473ccde43c36aa1fb91068388d3b52ffbd1cae749c415f849344e18bf39514a1e5eee73b20efcc6fec6fa70a2fd3abdbaa21bfb79393e1bc2e8cc
-```
 
 ### `dpkg` source package: `python-wstool=0.1.17-1`
 

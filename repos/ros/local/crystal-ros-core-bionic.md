@@ -3771,14 +3771,9 @@ Binary Packages:
 If source is available (seen below), check the contents of `debian/copyright` within it.
 
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris python3-colcon-package-information=0.2.2-1
-'http://packages.ros.org/ros2/ubuntu/pool/main/p/python3-colcon-package-information/python3-colcon-package-information_0.2.2-1.debian.tar.xz' python3-colcon-package-information_0.2.2-1.debian.tar.xz 980 SHA512:4e4509c1e954b5921335d8874f0234e9be6e780ce157618499d1cb4e8e91e8f31bec1b7964d3d8b39a29a31ee503a14bd55fea4f6133c197a459936a3ce8a155
-'http://packages.ros.org/ros2/ubuntu/pool/main/p/python3-colcon-package-information/python3-colcon-package-information_0.2.2-1.dsc' python3-colcon-package-information_0.2.2-1.dsc 1089 SHA512:ce0866c3d34a7e4369be27a6de5a8d8a4332fcc83d9913c4a84e5197025d36bcd83334d6eac9579d1e2f314518892ba8e56792017f820b0c7595ef626c8fd891
-'http://packages.ros.org/ros2/ubuntu/pool/main/p/python3-colcon-package-information/python3-colcon-package-information_0.2.2.orig.tar.gz' python3-colcon-package-information_0.2.2.orig.tar.gz 6477 SHA512:65eedb6d73b6cd5d29117699d364efb14916ca5fc66642c3e999202c4d0adbc63152cfd7682c1cc5ed6e09855e1accf322588ea33045c0e703d865b087b312df
-```
 
 ### `dpkg` source package: `python3-colcon-package-selection=0.2.4-1`
 
@@ -3866,14 +3861,9 @@ Binary Packages:
 If source is available (seen below), check the contents of `debian/copyright` within it.
 
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris python3-colcon-python-setup-py=0.2.1-1
-'http://packages.ros.org/ros2/ubuntu/pool/main/p/python3-colcon-python-setup-py/python3-colcon-python-setup-py_0.2.1-1.debian.tar.xz' python3-colcon-python-setup-py_0.2.1-1.debian.tar.xz 1148 SHA512:70521d8b23336ed303b3099a0761f84abb15bc05219a3e3ca2a57e0dbfbec0c4c87121c8efaa15f9280b4be73c80ba1571399566a8dac427ed9f6dc94437e724
-'http://packages.ros.org/ros2/ubuntu/pool/main/p/python3-colcon-python-setup-py/python3-colcon-python-setup-py_0.2.1-1.dsc' python3-colcon-python-setup-py_0.2.1-1.dsc 1005 SHA512:e4e7648d6e6ff445387d4fd9268c39c285f0668ef59a9b2659ea971ad2820fcf05ef113bb7d4ea51c3bec355ec7f9c4020d2ee1d63fdf9680df7ea798c610047
-'http://packages.ros.org/ros2/ubuntu/pool/main/p/python3-colcon-python-setup-py/python3-colcon-python-setup-py_0.2.1.orig.tar.gz' python3-colcon-python-setup-py_0.2.1.orig.tar.gz 5225 SHA512:da5e0c78b76c3c6fabd8bc719c1f07befb0f100728d4e8341f2f9cd21c4e195d817c2743891c253d79cd0034dee99845adb5ca11e115efca1f3ac86035167af0
-```
 
 ### `dpkg` source package: `python3-colcon-recursive-crawl=0.2.0-1`
 
@@ -3904,14 +3894,9 @@ Binary Packages:
 If source is available (seen below), check the contents of `debian/copyright` within it.
 
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris python3-colcon-ros=0.3.10-1
-'http://packages.ros.org/ros2/ubuntu/pool/main/p/python3-colcon-ros/python3-colcon-ros_0.3.10-1.debian.tar.xz' python3-colcon-ros_0.3.10-1.debian.tar.xz 1564 SHA512:499adfc5e8e699fdbd44e42bc1361960982dbf5e433985cf99cb13cd20f9eef5b0801a028245250afa07029073c3c08a2039745a3abc1af881ec790150b54740
-'http://packages.ros.org/ros2/ubuntu/pool/main/p/python3-colcon-ros/python3-colcon-ros_0.3.10-1.dsc' python3-colcon-ros_0.3.10-1.dsc 907 SHA512:8cb149dc92c26904fc0469b0a6e9786f1032dc5750c71269d2832e95095608d65c3719acd44113cf2394646990916eb8637d8540751124430f11a1dbd4d268e2
-'http://packages.ros.org/ros2/ubuntu/pool/main/p/python3-colcon-ros/python3-colcon-ros_0.3.10.orig.tar.gz' python3-colcon-ros_0.3.10.orig.tar.gz 11729 SHA512:92b50cd29f0a03ea0a2b80eef1fdecd2df6be566f2a28262371a48be4ba50e892e76a73cd48292f709d9a90588cdd5425d7d5778f31eaeb6e16b78320cd0b0bd
-```
 
 ### `dpkg` source package: `python3-colcon-test-result=0.3.4-1`
 
@@ -3923,14 +3908,9 @@ Binary Packages:
 If source is available (seen below), check the contents of `debian/copyright` within it.
 
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris python3-colcon-test-result=0.3.4-1
-'http://packages.ros.org/ros2/ubuntu/pool/main/p/python3-colcon-test-result/python3-colcon-test-result_0.3.4-1.debian.tar.xz' python3-colcon-test-result_0.3.4-1.debian.tar.xz 1072 SHA512:5c6459b47ff36e0fe3691a615b4a4570a05699236926cb005072475075f567349d874ee8c3b5da2dc183c773f5ce86f6e180d18d10dc3e62234a3887d99c21f4
-'http://packages.ros.org/ros2/ubuntu/pool/main/p/python3-colcon-test-result/python3-colcon-test-result_0.3.4-1.dsc' python3-colcon-test-result_0.3.4-1.dsc 969 SHA512:56d1b79a9c95fec31f663416735d57ca44b8953de95e469960f371bc17893d759bac31e75b758c9f6afc7d321a9aa7fdb7d723a757bb494bf7b0cc86c2e8003b
-'http://packages.ros.org/ros2/ubuntu/pool/main/p/python3-colcon-test-result/python3-colcon-test-result_0.3.4.orig.tar.gz' python3-colcon-test-result_0.3.4.orig.tar.gz 7076 SHA512:8dd40a3e23f8603290f4a6bca62d62fe9072f13b9332b8370d5a19cfd50d29f1d522d28e1696e448233afb60fbcba370e80f239f58bca5a4786d0707e9fb5138
-```
 
 ### `dpkg` source package: `python3-colcon-zsh=0.3.2-1`
 
@@ -6057,14 +6037,9 @@ Licenses: (parsed from: `/usr/share/doc/libsystemd0/copyright`, `/usr/share/doc/
 - `LGPL-2.1+`
 - `public-domain`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris systemd=237-3ubuntu10.24
-'http://archive.ubuntu.com/ubuntu/pool/main/s/systemd/systemd_237-3ubuntu10.24.dsc' systemd_237-3ubuntu10.24.dsc 5149 SHA256:629c3ad41f9e3d44c4b31f1bb808859adfdbdb84560299a03d37acb7ddf3a04d
-'http://archive.ubuntu.com/ubuntu/pool/main/s/systemd/systemd_237.orig.tar.gz' systemd_237.orig.tar.gz 6871350 SHA256:c83dabbe1c9de6b9db1dafdb7e04140c7d0535705c68842f6c0768653ba4913c
-'http://archive.ubuntu.com/ubuntu/pool/main/s/systemd/systemd_237-3ubuntu10.24.debian.tar.xz' systemd_237-3ubuntu10.24.debian.tar.xz 217072 SHA256:39160cee4ee37972ff725e8e2b60ca9f499fad9f012c0abe54c24aa2db101262
-```
 
 ### `dpkg` source package: `sysvinit=2.88dsf-59.10ubuntu1`
 

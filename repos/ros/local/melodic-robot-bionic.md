@@ -5679,14 +5679,9 @@ Binary Packages:
 If source is available (seen below), check the contents of `debian/copyright` within it.
 
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris python-vcstools=0.1.40-1
-'http://packages.ros.org/ros/ubuntu/pool/main/p/python-vcstools/python-vcstools_0.1.40-1.debian.tar.gz' python-vcstools_0.1.40-1.debian.tar.gz 1076 SHA512:1c0ece44e778d43eabaf8ba4ecb331c6f31d80f85657c95e0d96bd6c83a344fd1258d6c060fae3fe974bad5b8a61c6803cd02679d05bc71765aed16a8d184134
-'http://packages.ros.org/ros/ubuntu/pool/main/p/python-vcstools/python-vcstools_0.1.40-1.dsc' python-vcstools_0.1.40-1.dsc 930 SHA512:7fdfa9752e185abc5b76a6e1087fd27b3afe1a86cfd14df209b8fb826b675e7f225938ca7fd036d2a53cc8c08fa048b0d25962418b0a83b09e7471d3fcd4c4d3
-'http://packages.ros.org/ros/ubuntu/pool/main/p/python-vcstools/python-vcstools_0.1.40.orig.tar.gz' python-vcstools_0.1.40.orig.tar.gz 51298 SHA512:0a3ce9cc251473ccde43c36aa1fb91068388d3b52ffbd1cae749c415f849344e18bf39514a1e5eee73b20efcc6fec6fa70a2fd3abdbaa21bfb79393e1bc2e8cc
-```
 
 ### `dpkg` source package: `python-webencodings=0.5-2`
 
@@ -7931,14 +7926,9 @@ Licenses: (parsed from: `/usr/share/doc/libsystemd0/copyright`, `/usr/share/doc/
 - `LGPL-2.1+`
 - `public-domain`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris systemd=237-3ubuntu10.24
-'http://archive.ubuntu.com/ubuntu/pool/main/s/systemd/systemd_237-3ubuntu10.24.dsc' systemd_237-3ubuntu10.24.dsc 5149 SHA256:629c3ad41f9e3d44c4b31f1bb808859adfdbdb84560299a03d37acb7ddf3a04d
-'http://archive.ubuntu.com/ubuntu/pool/main/s/systemd/systemd_237.orig.tar.gz' systemd_237.orig.tar.gz 6871350 SHA256:c83dabbe1c9de6b9db1dafdb7e04140c7d0535705c68842f6c0768653ba4913c
-'http://archive.ubuntu.com/ubuntu/pool/main/s/systemd/systemd_237-3ubuntu10.24.debian.tar.xz' systemd_237-3ubuntu10.24.debian.tar.xz 217072 SHA256:39160cee4ee37972ff725e8e2b60ca9f499fad9f012c0abe54c24aa2db101262
-```
 
 ### `dpkg` source package: `sysvinit=2.88dsf-59.10ubuntu1`
 
