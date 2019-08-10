@@ -2,9 +2,9 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:43fdd9e25df5b8c46d3ae86eddd28ff9418c08376884a576ff233919018342d8`
-- Created: `2019-08-05T22:50:06.438821355Z`
-- Virtual Size: ~ 502.51 Mb  
+- Image ID: `sha256:b1440f45248cf3fd0d422824409f49e994e39d6abdcc4c52f2b8a8ee64ad602a`
+- Created: `2019-08-09T22:52:29.918914717Z`
+- Virtual Size: ~ 502.58 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Command: `["catalina.sh","run"]`
@@ -12,9 +12,9 @@
   - `PATH=/usr/local/tomcat/bin:/usr/java/openjdk-13/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
   - `LANG=en_US.UTF-8`
   - `JAVA_HOME=/usr/java/openjdk-13`
-  - `JAVA_VERSION=13-ea+32`
-  - `JAVA_URL=https://download.java.net/java/early_access/jdk13/32/GPL/openjdk-13-ea+32_linux-x64_bin.tar.gz`
-  - `JAVA_SHA256=ee43881bd7dff8c98a647df0dcb93cbc23f7471b1a8ab91ea2994c484be45e42`
+  - `JAVA_VERSION=13`
+  - `JAVA_URL=https://download.java.net/java/GA/jdk13/5b8a42f3905b406298b72d750b6919f6/33/GPL/openjdk-13_linux-x64_bin.tar.gz`
+  - `JAVA_SHA256=5f547b8f0ffa7da517223f6f929a5055d749776b1878ccedbd6cc1334f4d6f4d`
   - `CATALINA_HOME=/usr/local/tomcat`
   - `TOMCAT_NATIVE_LIBDIR=/usr/local/tomcat/native-jni-lib`
   - `LD_LIBRARY_PATH=/usr/local/tomcat/native-jni-lib`
@@ -124,15 +124,15 @@ $ yumdownloader --quiet --source --urls cpio-2.11-27.el7
 https://yum.oracle.com/repo/OracleLinux/OL7/latest/x86_64//getPackageSource/cpio-2.11-27.el7.src.rpm
 ```
 
-### `rpm` package: `curl-7.29.0-51.0.1.el7.x86_64`
+### `rpm` package: `curl-7.29.0-51.0.1.el7_6.3.x86_64`
 
 Licenses (from `rpm --query`): MIT
 
 Source:
 
 ```console
-$ yumdownloader --quiet --source --urls curl-7.29.0-51.0.1.el7
-https://yum.oracle.com/repo/OracleLinux/OL7/latest/x86_64//getPackageSource/curl-7.29.0-51.0.1.el7.src.rpm
+$ yumdownloader --quiet --source --urls curl-7.29.0-51.0.1.el7_6.3
+https://yum.oracle.com/repo/OracleLinux/OL7/latest/x86_64//getPackageSource/curl-7.29.0-51.0.1.el7_6.3.src.rpm
 ```
 
 ### `rpm` package: `cyrus-sasl-lib-2.1.26-23.el7.x86_64`
@@ -504,15 +504,15 @@ $ yumdownloader --quiet --source --urls libcom_err-1.42.9-13.el7
 https://yum.oracle.com/repo/OracleLinux/OL7/latest/x86_64//getPackageSource/e2fsprogs-1.42.9-13.el7.src.rpm
 ```
 
-### `rpm` package: `libcurl-7.29.0-51.0.1.el7.x86_64`
+### `rpm` package: `libcurl-7.29.0-51.0.1.el7_6.3.x86_64`
 
 Licenses (from `rpm --query`): MIT
 
 Source:
 
 ```console
-$ yumdownloader --quiet --source --urls libcurl-7.29.0-51.0.1.el7
-https://yum.oracle.com/repo/OracleLinux/OL7/latest/x86_64//getPackageSource/curl-7.29.0-51.0.1.el7.src.rpm
+$ yumdownloader --quiet --source --urls libcurl-7.29.0-51.0.1.el7_6.3
+https://yum.oracle.com/repo/OracleLinux/OL7/latest/x86_64//getPackageSource/curl-7.29.0-51.0.1.el7_6.3.src.rpm
 ```
 
 ### `rpm` package: `libdb-5.3.21-24.el7.x86_64`
@@ -647,15 +647,15 @@ $ yumdownloader --quiet --source --urls libsepol-2.5-10.el7
 https://yum.oracle.com/repo/OracleLinux/OL7/latest/x86_64//getPackageSource/libsepol-2.5-10.el7.src.rpm
 ```
 
-### `rpm` package: `libssh2-1.4.3-12.0.1.el7_6.2.x86_64`
+### `rpm` package: `libssh2-1.4.3-12.0.1.el7_6.3.x86_64`
 
 Licenses (from `rpm --query`): BSD
 
 Source:
 
 ```console
-$ yumdownloader --quiet --source --urls libssh2-1.4.3-12.0.1.el7_6.2
-https://yum.oracle.com/repo/OracleLinux/OL7/latest/x86_64//getPackageSource/libssh2-1.4.3-12.0.1.el7_6.2.src.rpm
+$ yumdownloader --quiet --source --urls libssh2-1.4.3-12.0.1.el7_6.3
+https://yum.oracle.com/repo/OracleLinux/OL7/latest/x86_64//getPackageSource/libssh2-1.4.3-12.0.1.el7_6.3.src.rpm
 ```
 
 ### `rpm` package: `libstdc++-4.8.5-36.0.1.el7_6.2.x86_64`
@@ -1219,15 +1219,15 @@ $ yumdownloader --quiet --source --urls tar-1.26-35.el7
 https://yum.oracle.com/repo/OracleLinux/OL7/latest/x86_64//getPackageSource/tar-1.26-35.el7.src.rpm
 ```
 
-### `rpm` package: `tzdata-2019a-1.el7.noarch`
+### `rpm` package: `tzdata-2019b-1.el7.noarch`
 
 Licenses (from `rpm --query`): Public Domain
 
 Source:
 
 ```console
-$ yumdownloader --quiet --source --urls tzdata-2019a-1.el7.noarch
-https://yum.oracle.com/repo/OracleLinux/OL7/latest/x86_64//getPackageSource/tzdata-2019a-1.el7.src.rpm
+$ yumdownloader --quiet --source --urls tzdata-2019b-1.el7.noarch
+https://yum.oracle.com/repo/OracleLinux/OL7/latest/x86_64//getPackageSource/tzdata-2019b-1.el7.src.rpm
 ```
 
 ### `rpm` package: `ustr-1.0.4-16.el7.x86_64`
