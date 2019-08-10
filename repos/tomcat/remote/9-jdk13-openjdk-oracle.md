@@ -1,7 +1,7 @@
 ## `tomcat:9-jdk13-openjdk-oracle`
 
 ```console
-$ docker pull tomcat@sha256:e4b2fd1a374c75290fefdde73378c2fce2c81d2452be4f47a6e4d49b030b6e49
+$ docker pull tomcat@sha256:640a12048d8390b4e3a01bf6fefdab08b88f0ce6c0e5564dd265a32a98c6a5fc
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -11,14 +11,14 @@ $ docker pull tomcat@sha256:e4b2fd1a374c75290fefdde73378c2fce2c81d2452be4f47a6e4
 ### `tomcat:9-jdk13-openjdk-oracle` - linux; amd64
 
 ```console
-$ docker pull tomcat@sha256:981747dec5715fbaba11a340eabe0581c024ff90b7a3bbe4ddbaae281c02bba1
+$ docker pull tomcat@sha256:dc952bf8611d950e59035581e114d3e0afb77b975ac437e10167fa0bd4aec5e5
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **262.1 MB (262111371 bytes)**  
+-	Total Size: **262.6 MB (262611511 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:53242860b3c708b26f1b0cd6294dedbc168f019ca2776a512add4d1c58cdc5d5`
+-	Image ID: `sha256:b1440f45248cf3fd0d422824409f49e994e39d6abdcc4c52f2b8a8ee64ad602a`
 -	Default Command: `["catalina.sh","run"]`
 
 ```dockerfile
@@ -36,43 +36,43 @@ ENV LANG=en_US.UTF-8
 ENV JAVA_HOME=/usr/java/openjdk-13
 # Thu, 08 Aug 2019 22:48:47 GMT
 ENV PATH=/usr/java/openjdk-13/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Thu, 08 Aug 2019 22:48:47 GMT
-ENV JAVA_VERSION=13-ea+32
-# Thu, 08 Aug 2019 22:48:47 GMT
-ENV JAVA_URL=https://download.java.net/java/early_access/jdk13/32/GPL/openjdk-13-ea+32_linux-x64_bin.tar.gz
-# Thu, 08 Aug 2019 22:48:48 GMT
-ENV JAVA_SHA256=ee43881bd7dff8c98a647df0dcb93cbc23f7471b1a8ab91ea2994c484be45e42
-# Thu, 08 Aug 2019 22:50:20 GMT
+# Fri, 09 Aug 2019 21:32:14 GMT
+ENV JAVA_VERSION=13
+# Fri, 09 Aug 2019 21:32:14 GMT
+ENV JAVA_URL=https://download.java.net/java/GA/jdk13/5b8a42f3905b406298b72d750b6919f6/33/GPL/openjdk-13_linux-x64_bin.tar.gz
+# Fri, 09 Aug 2019 21:32:15 GMT
+ENV JAVA_SHA256=5f547b8f0ffa7da517223f6f929a5055d749776b1878ccedbd6cc1334f4d6f4d
+# Fri, 09 Aug 2019 21:33:43 GMT
 RUN set -eux; 		curl -fL -o /openjdk.tgz "$JAVA_URL"; 	echo "$JAVA_SHA256 */openjdk.tgz" | sha256sum -c -; 	mkdir -p "$JAVA_HOME"; 	tar --extract --file /openjdk.tgz --directory "$JAVA_HOME" --strip-components 1; 	rm /openjdk.tgz; 		ln -sfT "$JAVA_HOME" /usr/java/default; 	ln -sfT "$JAVA_HOME" /usr/java/latest; 	for bin in "$JAVA_HOME/bin/"*; do 		base="$(basename "$bin")"; 		[ ! -e "/usr/bin/$base" ]; 		alternatives --install "/usr/bin/$base" "$base" "$bin" 20000; 	done; 		java -Xshare:dump; 		java --version; 	javac --version
-# Thu, 08 Aug 2019 22:50:21 GMT
+# Fri, 09 Aug 2019 21:33:43 GMT
 CMD ["jshell"]
-# Thu, 08 Aug 2019 23:29:53 GMT
+# Fri, 09 Aug 2019 22:51:24 GMT
 ENV CATALINA_HOME=/usr/local/tomcat
-# Thu, 08 Aug 2019 23:29:53 GMT
+# Fri, 09 Aug 2019 22:51:24 GMT
 ENV PATH=/usr/local/tomcat/bin:/usr/java/openjdk-13/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Thu, 08 Aug 2019 23:29:55 GMT
+# Fri, 09 Aug 2019 22:51:25 GMT
 RUN mkdir -p "$CATALINA_HOME"
-# Thu, 08 Aug 2019 23:29:55 GMT
+# Fri, 09 Aug 2019 22:51:25 GMT
 WORKDIR /usr/local/tomcat
-# Thu, 08 Aug 2019 23:29:55 GMT
+# Fri, 09 Aug 2019 22:51:25 GMT
 ENV TOMCAT_NATIVE_LIBDIR=/usr/local/tomcat/native-jni-lib
-# Thu, 08 Aug 2019 23:29:56 GMT
+# Fri, 09 Aug 2019 22:51:26 GMT
 ENV LD_LIBRARY_PATH=/usr/local/tomcat/native-jni-lib
-# Thu, 08 Aug 2019 23:29:56 GMT
+# Fri, 09 Aug 2019 22:51:26 GMT
 ENV GPG_KEYS=05AB33110949707C93A279E3D3EFE6B686867BA6 07E48665A34DCAFAE522E5E6266191C37C037D42 47309207D818FFD8DCD3F83F1931D684307A10A5 541FBE7D8F78B25E055DDEE13C370389288584E7 61B832AC2F1C5A90F0F9B00A1C506407564C17A3 79F7026C690BAA50B92CD8B66A3AD3F4F22C4FED 9BA44C2621385CB966EBA586F72C284D731FABEE A27677289986DB50844682F8ACB77FC2E86E29AC A9C5DF4D22E99998D9875A5110C01C5A2F6059E7 DCFD35E0BF8CA7344752DE8B6FB21E8933C60243 F3A04C595DB5B6A5F1ECA43E3B7BBB100D811BBE F7DA48BB64BCB84ECBA7EE6935CD23C10D498E23
-# Thu, 08 Aug 2019 23:29:56 GMT
+# Fri, 09 Aug 2019 22:51:26 GMT
 ENV TOMCAT_MAJOR=9
-# Thu, 08 Aug 2019 23:29:56 GMT
+# Fri, 09 Aug 2019 22:51:26 GMT
 ENV TOMCAT_VERSION=9.0.22
-# Thu, 08 Aug 2019 23:29:57 GMT
+# Fri, 09 Aug 2019 22:51:26 GMT
 ENV TOMCAT_SHA512=9d3d93f8e03b5dc74e8d2ebc3f9daeb481485a391fb10289e23848063c23f52e8cf8566ebc7ff4f62c9b9f71591fad368a2bab487d31377c85a2607be3e029ff
-# Thu, 08 Aug 2019 23:31:20 GMT
+# Fri, 09 Aug 2019 22:52:27 GMT
 RUN set -eux; 		if ! command -v yumdb > /dev/null; then 		yum install -y yum-utils; 		yumdb set reason dep yum-utils; 	fi; 	if [ -f /etc/oracle-release ]; then 		yumdb set reason user filesystem; 	fi; 	_yum_install_temporary() { ( set -eu +x; 		local pkg todo=''; 		for pkg; do 			if ! rpm --query "$pkg" > /dev/null 2>&1; then 				todo="$todo $pkg"; 			fi; 		done; 		if [ -n "$todo" ]; then 			set -x; 			yum install -y $todo; 			yumdb set reason dep $todo; 		fi; 	) }; 	_yum_install_temporary gzip tar; 		ddist() { 		local f="$1"; shift; 		local distFile="$1"; shift; 		local success=; 		local distUrl=; 		for distUrl in 			'https://www.apache.org/dyn/closer.cgi?action=download&filename=' 			https://www-us.apache.org/dist/ 			https://www.apache.org/dist/ 			https://archive.apache.org/dist/ 		; do 			if curl -fL -o "$f" "$distUrl$distFile" && [ -s "$f" ]; then 				success=1; 				break; 			fi; 		done; 		[ -n "$success" ]; 	}; 		ddist 'tomcat.tar.gz' "tomcat/tomcat-$TOMCAT_MAJOR/v$TOMCAT_VERSION/bin/apache-tomcat-$TOMCAT_VERSION.tar.gz"; 	echo "$TOMCAT_SHA512 *tomcat.tar.gz" | sha512sum --strict --check -; 	ddist 'tomcat.tar.gz.asc' "tomcat/tomcat-$TOMCAT_MAJOR/v$TOMCAT_VERSION/bin/apache-tomcat-$TOMCAT_VERSION.tar.gz.asc"; 	export GNUPGHOME="$(mktemp -d)"; 	for key in $GPG_KEYS; do 		gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys "$key"; 	done; 	gpg --batch --verify tomcat.tar.gz.asc tomcat.tar.gz; 	tar -xf tomcat.tar.gz --strip-components=1; 	rm bin/*.bat; 	rm tomcat.tar.gz*; 	command -v gpgconf && gpgconf --kill all || :; 	rm -rf "$GNUPGHOME"; 		nativeBuildDir="$(mktemp -d)"; 	tar -xf bin/tomcat-native.tar.gz -C "$nativeBuildDir" --strip-components=1; 	_yum_install_temporary 		apr-devel 		gcc 		make 		openssl-devel 	; 	( 		export CATALINA_HOME="$PWD"; 		cd "$nativeBuildDir/native"; 		aprConfig="$(command -v apr-1-config)"; 		./configure 			--libdir="$TOMCAT_NATIVE_LIBDIR" 			--prefix="$CATALINA_HOME" 			--with-apr="$aprConfig" 			--with-java-home="$JAVA_HOME" 			--with-ssl=yes; 		make -j "$(nproc)"; 		make install; 	); 	rm -rf "$nativeBuildDir"; 	rm bin/tomcat-native.tar.gz; 		deps="$( 		find "$TOMCAT_NATIVE_LIBDIR" -type f -executable -exec ldd '{}' ';' 			| awk '/=>/ && $(NF-1) != "=>" { print $(NF-1) }' 			| sort -u 			| xargs -r rpm --query --whatprovides 			| sort -u 	)"; 	[ -z "$deps" ] || yumdb set reason user $deps; 		yum autoremove -y; 	yum clean all; 	rm -rf /var/cache/yum; 		find ./bin/ -name '*.sh' -exec sed -ri 's|^#!/bin/sh$|#!/usr/bin/env bash|' '{}' +; 		chmod -R +rX .; 	chmod 777 logs work
-# Thu, 08 Aug 2019 23:31:25 GMT
+# Fri, 09 Aug 2019 22:52:29 GMT
 RUN set -e 	&& nativeLines="$(catalina.sh configtest 2>&1)" 	&& nativeLines="$(echo "$nativeLines" | grep 'Apache Tomcat Native')" 	&& nativeLines="$(echo "$nativeLines" | sort -u)" 	&& if ! echo "$nativeLines" | grep 'INFO: Loaded APR based Apache Tomcat Native library' >&2; then 		echo >&2 "$nativeLines"; 		exit 1; 	fi
-# Thu, 08 Aug 2019 23:31:25 GMT
+# Fri, 09 Aug 2019 22:52:29 GMT
 EXPOSE 8080
-# Thu, 08 Aug 2019 23:31:25 GMT
+# Fri, 09 Aug 2019 22:52:29 GMT
 CMD ["catalina.sh" "run"]
 ```
 
@@ -85,19 +85,19 @@ CMD ["catalina.sh" "run"]
 		Last Modified: Thu, 08 Aug 2019 22:56:00 GMT  
 		Size: 6.7 MB (6650375 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:94cf14d970f030dc7456e657181abd23e74c062458c8bcc732c50a243cb1f02b`  
-		Last Modified: Thu, 08 Aug 2019 22:57:52 GMT  
-		Size: 196.4 MB (196411985 bytes)  
+	-	`sha256:94e7d0dfec7cfbb15be6b1ad1b93ff6de802300d1956372b6a7a9903cd97cf05`  
+		Last Modified: Fri, 09 Aug 2019 21:35:47 GMT  
+		Size: 196.9 MB (196911992 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:93b60ae6f0e2e99be31742ee4e7dd4524ff1207b64a1dfed0f8df1770dfc4b9c`  
-		Last Modified: Thu, 08 Aug 2019 23:40:57 GMT  
-		Size: 137.0 B  
+	-	`sha256:8e18b3e3763c10d4a1ac7d151d7dc44ffb81c8a7cba3d92d71615a3dc87224db`  
+		Last Modified: Fri, 09 Aug 2019 22:55:44 GMT  
+		Size: 139.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:8f5bdce7ab5b8e2b886aa05af6a73cae4246f6e0423b6dba997edead6f1b0a22`  
-		Last Modified: Thu, 08 Aug 2019 23:41:00 GMT  
-		Size: 16.4 MB (16436014 bytes)  
+	-	`sha256:bf1cb4d7450f10b28768236d281ea4bb568e203c341e789fbcedb22769754cda`  
+		Last Modified: Fri, 09 Aug 2019 22:55:46 GMT  
+		Size: 16.4 MB (16436145 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:b4c21e6dbcf5967b526681ce78c81bad0ab0d635ddf9cad8cab89e9f7e9bbdd0`  
-		Last Modified: Thu, 08 Aug 2019 23:40:57 GMT  
+	-	`sha256:ea165ae708c6c93bdc681f11932ca3616925a097e394f552a98ba35ee9369f74`  
+		Last Modified: Fri, 09 Aug 2019 22:55:44 GMT  
 		Size: 130.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
