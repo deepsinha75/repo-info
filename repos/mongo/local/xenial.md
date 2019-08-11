@@ -1,10 +1,10 @@
-# `mongo:4.0.11-xenial`
+# `mongo:4.0.12-xenial`
 
 ## Docker Metadata
 
-- Image ID: `sha256:f7adfc4dbcf55493944234d9c9aea9c5b8605a1ccfe77c1ddbcbd016bfff531b`
-- Created: `2019-07-29T23:48:32.064355942Z`
-- Virtual Size: ~ 413.40 Mb  
+- Image ID: `sha256:1bc58f3232ec26ef038ee956859015bdc7af81b8bf7e97febfb0cdd5bcaaf3cd`
+- Created: `2019-08-09T21:29:29.637976984Z`
+- Virtual Size: ~ 413.44 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["docker-entrypoint.sh"]`
@@ -17,7 +17,7 @@
   - `MONGO_PACKAGE=mongodb-org`
   - `MONGO_REPO=repo.mongodb.org`
   - `MONGO_MAJOR=4.0`
-  - `MONGO_VERSION=4.0.11`
+  - `MONGO_VERSION=4.0.12`
 
 ## `dpkg` (`.deb`-based packages)
 
@@ -1212,15 +1212,15 @@ $ apt-get source -qq --print-uris mawk=1.3.3-17ubuntu2
 'http://archive.ubuntu.com/ubuntu/pool/main/m/mawk/mawk_1.3.3-17ubuntu2.diff.gz' mawk_1.3.3-17ubuntu2.diff.gz 63882 SHA256:670103046767474be29e80f2143dc67e3d0b958972f5942c3df94883f978eded
 ```
 
-### `dpkg` source package: `mongodb-org=4.0.11`
+### `dpkg` source package: `mongodb-org=4.0.12`
 
 Binary Packages:
 
-- `mongodb-org=4.0.11`
-- `mongodb-org-mongos=4.0.11`
-- `mongodb-org-server=4.0.11`
-- `mongodb-org-shell=4.0.11`
-- `mongodb-org-tools=4.0.11`
+- `mongodb-org=4.0.12`
+- `mongodb-org-mongos=4.0.12`
+- `mongodb-org-server=4.0.12`
+- `mongodb-org-shell=4.0.12`
+- `mongodb-org-tools=4.0.12`
 
 **WARNING:** unable to detect licenses! (package likely not compliant with DEP-5)  
 If source is available (seen below), check the contents of `debian/copyright` within it.
@@ -1304,19 +1304,24 @@ $ apt-get source -qq --print-uris numactl=2.0.11-1ubuntu1.1
 'http://archive.ubuntu.com/ubuntu/pool/main/n/numactl/numactl_2.0.11-1ubuntu1.1.diff.gz' numactl_2.0.11-1ubuntu1.1.diff.gz 7106 SHA256:555a31c7676e117867a8ab2a0218f4c5581d8059547425c9b54e28edc5401a23
 ```
 
-### `dpkg` source package: `openldap=2.4.42+dfsg-2ubuntu3.5`
+### `dpkg` source package: `openldap=2.4.42+dfsg-2ubuntu3.6`
 
 Binary Packages:
 
-- `libldap-2.4-2:amd64=2.4.42+dfsg-2ubuntu3.5`
+- `libldap-2.4-2:amd64=2.4.42+dfsg-2ubuntu3.6`
 
 **WARNING:** unable to detect licenses! (package likely not compliant with DEP-5)  
 If source is available (seen below), check the contents of `debian/copyright` within it.
 
 
-**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
-This is *usually* due to a new package version being released and the old version being removed.
+Source:
 
+```console
+$ apt-get source -qq --print-uris openldap=2.4.42+dfsg-2ubuntu3.6
+'http://archive.ubuntu.com/ubuntu/pool/main/o/openldap/openldap_2.4.42+dfsg-2ubuntu3.6.dsc' openldap_2.4.42+dfsg-2ubuntu3.6.dsc 3054 SHA256:ad6f9ad3a6f5134a753abbb1877a78b63990d39b1337b809c7b87e56e1e25a7b
+'http://archive.ubuntu.com/ubuntu/pool/main/o/openldap/openldap_2.4.42+dfsg.orig.tar.gz' openldap_2.4.42+dfsg.orig.tar.gz 4813173 SHA256:5f56e4e3584f7a4b4c8437a2c985b2f519836946be77ef1aa43a5d20c02ea97b
+'http://archive.ubuntu.com/ubuntu/pool/main/o/openldap/openldap_2.4.42+dfsg-2ubuntu3.6.debian.tar.xz' openldap_2.4.42+dfsg-2ubuntu3.6.debian.tar.xz 180632 SHA256:442ee321317fccfcfae8bdb9e90caa7818c2ceebf5d0b5a2e10cc266ecc3ec6a
+```
 
 ### `dpkg` source package: `openssl=1.0.2g-1ubuntu4.15`
 
