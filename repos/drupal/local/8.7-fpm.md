@@ -1,10 +1,10 @@
-# `drupal:8.7.5-fpm`
+# `drupal:8.7.6-fpm`
 
 ## Docker Metadata
 
-- Image ID: `sha256:66ab9aa0cec75651b3c106061ad303f554753852b2172a2a77c2b9bcce452e0c`
-- Created: `2019-08-02T09:49:26.47759114Z`
-- Virtual Size: ~ 440.95 Mb  
+- Image ID: `sha256:a594aaa66098d2665f341b1b8b791cab8c82010dad24d36fd85b917eb2dca606`
+- Created: `2019-08-08T23:44:26.704136818Z`
+- Virtual Size: ~ 441.01 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["docker-php-entrypoint"]`
@@ -23,8 +23,8 @@
   - `PHP_ASC_URL=https://www.php.net/get/php-7.3.8.tar.xz.asc/from/this/mirror`
   - `PHP_SHA256=f6046b2ae625d8c04310bda0737ac660dc5563a8e04e8a46c1ee24ea414ad5a5`
   - `PHP_MD5=`
-  - `DRUPAL_VERSION=8.7.5`
-  - `DRUPAL_MD5=39cc326d9db1b4acce9b8716193189fd`
+  - `DRUPAL_VERSION=8.7.6`
+  - `DRUPAL_MD5=484530915cbf6d96cb03379e3dda018e`
 
 ## `dpkg` (`.deb`-based packages)
 
@@ -2418,20 +2418,13 @@ Licenses: (parsed from: `/usr/share/doc/libpq5/copyright`)
 - `nagaysau-ishii`
 - `rijndael`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris postgresql-9.6=9.6.13-0+deb9u1
-'http://security.debian.org/debian-security/pool/updates/main/p/postgresql-9.6/postgresql-9.6_9.6.13-0+deb9u1.dsc' postgresql-9.6_9.6.13-0+deb9u1.dsc 3698 SHA256:f516ea1c82b220a523cf4bd753a60987a30e214a0f2486473e10f85953f25fe9
-'http://security.debian.org/debian-security/pool/updates/main/p/postgresql-9.6/postgresql-9.6_9.6.13.orig.tar.bz2' postgresql-9.6_9.6.13.orig.tar.bz2 18767279 SHA256:ecbed20056296a65b6a4f5526c477e3ae5cc284cb01a15507785ddb23831e9a4
-'http://security.debian.org/debian-security/pool/updates/main/p/postgresql-9.6/postgresql-9.6_9.6.13-0+deb9u1.debian.tar.xz' postgresql-9.6_9.6.13-0+deb9u1.debian.tar.xz 26952 SHA256:daa2a1cccd688a205734d0701a58deb2cfad940b3e57f858a44fde70805cd283
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/postgresql-9.6/9.6.13-0+deb9u1/
 
-- https://sources.debian.net/src/postgresql-9.6/9.6.13-0+deb9u1/ (for browsing the source)
-- https://sources.debian.net/src/postgresql-9.6/9.6.13-0+deb9u1/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/postgresql-9.6/9.6.13-0+deb9u1/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `re2c=0.16-2`
 
