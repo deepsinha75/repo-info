@@ -1,10 +1,10 @@
-# `postgres:12-beta2`
+# `postgres:12-beta3`
 
 ## Docker Metadata
 
-- Image ID: `sha256:983655613b9c3c0b38fea30d18bf9e9a0556587f65517865aba7ba915b8094e7`
-- Created: `2019-07-10T02:43:22.789795835Z`
-- Virtual Size: ~ 367.83 Mb  
+- Image ID: `sha256:5bf20eca327f2fa1da7b130dc9788b8394f4d729f727af53a88b2599c9f2a240`
+- Created: `2019-08-09T01:16:22.271216105Z`
+- Virtual Size: ~ 368.02 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["docker-entrypoint.sh"]`
@@ -14,7 +14,7 @@
   - `GOSU_VERSION=1.11`
   - `LANG=en_US.utf8`
   - `PG_MAJOR=12`
-  - `PG_VERSION=12~beta2-1.pgdg100+1`
+  - `PG_VERSION=12~beta3-1.pgdg100+1`
   - `PGDATA=/var/lib/postgresql/data`
 
 ## `dpkg` (`.deb`-based packages)
@@ -592,13 +592,13 @@ Other potentially useful URLs:
 - https://sources.debian.net/src/e2fsprogs/1.44.5-1/debian/copyright/ (for direct copyright/license information)
 - http://snapshot.debian.org/package/e2fsprogs/1.44.5-1/ (for access to the source package after it no longer exists in the archive)
 
-### `dpkg` source package: `exim4=4.92-8`
+### `dpkg` source package: `exim4=4.92-8+deb10u1`
 
 Binary Packages:
 
-- `exim4-base=4.92-8`
-- `exim4-config=4.92-8`
-- `exim4-daemon-light=4.92-8`
+- `exim4-base=4.92-8+deb10u1`
+- `exim4-config=4.92-8+deb10u1`
+- `exim4-daemon-light=4.92-8+deb10u1`
 
 Licenses: (parsed from: `/usr/share/doc/exim4-base/copyright`, `/usr/share/doc/exim4-config/copyright`, `/usr/share/doc/exim4-daemon-light/copyright`)
 
@@ -607,18 +607,18 @@ Licenses: (parsed from: `/usr/share/doc/exim4-base/copyright`, `/usr/share/doc/e
 Source:
 
 ```console
-$ apt-get source -qq --print-uris exim4=4.92-8
-'http://deb.debian.org/debian/pool/main/e/exim4/exim4_4.92-8.dsc' exim4_4.92-8.dsc 2823 SHA256:d165be98d359c52dfbad764dbc969c9cd463c7ad8903947a6e5760c0ddbd56e3
-'http://deb.debian.org/debian/pool/main/e/exim4/exim4_4.92.orig.tar.xz' exim4_4.92.orig.tar.xz 1767136 SHA256:6ac9e62b484e78951c7c0517d1229ad7619a7eea70ca3b38b8ef430b28ef1d62
-'http://deb.debian.org/debian/pool/main/e/exim4/exim4_4.92.orig.tar.xz.asc' exim4_4.92.orig.tar.xz.asc 488 SHA256:2d0cbdce4ca1d5f8850a5335e2f7dc25c229c260b533220f1e647c746f8ad1d9
-'http://deb.debian.org/debian/pool/main/e/exim4/exim4_4.92-8.debian.tar.xz' exim4_4.92-8.debian.tar.xz 469932 SHA256:7d652ce2eaefbd265685ae5fce754ed5834e3f1d03793db4c4722a8cad769744
+$ apt-get source -qq --print-uris exim4=4.92-8+deb10u1
+'http://security.debian.org/debian-security/pool/updates/main/e/exim4/exim4_4.92-8+deb10u1.dsc' exim4_4.92-8+deb10u1.dsc 2855 SHA256:f9de60e94d91a7785d9dbacb33af1de7b4ebd18d3357aeee3fae3ebfa39aaf14
+'http://security.debian.org/debian-security/pool/updates/main/e/exim4/exim4_4.92.orig.tar.xz' exim4_4.92.orig.tar.xz 1767136 SHA256:6ac9e62b484e78951c7c0517d1229ad7619a7eea70ca3b38b8ef430b28ef1d62
+'http://security.debian.org/debian-security/pool/updates/main/e/exim4/exim4_4.92.orig.tar.xz.asc' exim4_4.92.orig.tar.xz.asc 488 SHA256:2d0cbdce4ca1d5f8850a5335e2f7dc25c229c260b533220f1e647c746f8ad1d9
+'http://security.debian.org/debian-security/pool/updates/main/e/exim4/exim4_4.92-8+deb10u1.debian.tar.xz' exim4_4.92-8+deb10u1.debian.tar.xz 472736 SHA256:20f9a51c7ccb6fcdb86d1daf39368a27b8e14330da662aee7299c29c33fd44f8
 ```
 
 Other potentially useful URLs:
 
-- https://sources.debian.net/src/exim4/4.92-8/ (for browsing the source)
-- https://sources.debian.net/src/exim4/4.92-8/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/exim4/4.92-8/ (for access to the source package after it no longer exists in the archive)
+- https://sources.debian.net/src/exim4/4.92-8+deb10u1/ (for browsing the source)
+- https://sources.debian.net/src/exim4/4.92-8+deb10u1/debian/copyright/ (for direct copyright/license information)
+- http://snapshot.debian.org/package/exim4/4.92-8+deb10u1/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `expat=2.2.6-2`
 
@@ -2619,13 +2619,13 @@ Other potentially useful URLs:
 - https://sources.debian.net/src/popt/1.16-12/debian/copyright/ (for direct copyright/license information)
 - http://snapshot.debian.org/package/popt/1.16-12/ (for access to the source package after it no longer exists in the archive)
 
-### `dpkg` source package: `postgresql-12=12~beta2-1.pgdg100+1`
+### `dpkg` source package: `postgresql-12=12~beta3-1.pgdg100+1`
 
 Binary Packages:
 
-- `libpq5:amd64=12~beta2-1.pgdg100+1`
-- `postgresql-12=12~beta2-1.pgdg100+1`
-- `postgresql-client-12=12~beta2-1.pgdg100+1`
+- `libpq5:amd64=12~beta3-1.pgdg100+1`
+- `postgresql-12=12~beta3-1.pgdg100+1`
+- `postgresql-client-12=12~beta3-1.pgdg100+1`
 
 Licenses: (parsed from: `/usr/share/doc/libpq5/copyright`, `/usr/share/doc/postgresql-12/copyright`, `/usr/share/doc/postgresql-client-12/copyright`)
 
@@ -2648,18 +2648,18 @@ Licenses: (parsed from: `/usr/share/doc/libpq5/copyright`, `/usr/share/doc/postg
 Source:
 
 ```console
-$ apt-get source -qq --print-uris postgresql-12=12~beta2-1.pgdg100+1
-'http://apt.postgresql.org/pub/repos/apt/pool/12/p/postgresql-12/postgresql-12_12~beta2-1.pgdg100+1.dsc' postgresql-12_12~beta2-1.pgdg100+1.dsc 2891 SHA256:05ee8b5a51844861f2b1cc012b1705a186aaf89743fe782b30dc89929e64dacd
-'http://apt.postgresql.org/pub/repos/apt/pool/12/p/postgresql-12/postgresql-12_12~beta2.orig.tar.bz2' postgresql-12_12~beta2.orig.tar.bz2 20605047 SHA256:1738da8e1e59d4f2dc69c216e67100c6d4dad46714cf597cc2db66077204d31f
-'http://apt.postgresql.org/pub/repos/apt/pool/12/p/postgresql-12/postgresql-12_12~beta2-1.pgdg100+1.debian.tar.xz' postgresql-12_12~beta2-1.pgdg100+1.debian.tar.xz 21916 SHA256:34d47ff06758a9ccef3ef2162e0e5f7f1ae4ed8ae7f132e43735e0f54aaa8fe3
+$ apt-get source -qq --print-uris postgresql-12=12~beta3-1.pgdg100+1
+'http://apt.postgresql.org/pub/repos/apt/pool/12/p/postgresql-12/postgresql-12_12~beta3-1.pgdg100+1.dsc' postgresql-12_12~beta3-1.pgdg100+1.dsc 2891 SHA256:75242a4fad4a528edd4872e9c42cd62e61b4099aa13d3abd6db34eedfd233955
+'http://apt.postgresql.org/pub/repos/apt/pool/12/p/postgresql-12/postgresql-12_12~beta3.orig.tar.bz2' postgresql-12_12~beta3.orig.tar.bz2 20698785 SHA256:e4a4079c75bf049349c70a02f705beecbb8263684ff2d4e13a582a3ff50332aa
+'http://apt.postgresql.org/pub/repos/apt/pool/12/p/postgresql-12/postgresql-12_12~beta3-1.pgdg100+1.debian.tar.xz' postgresql-12_12~beta3-1.pgdg100+1.debian.tar.xz 22276 SHA256:bca72b25238c9bf8ed2ce756fff1389a4fad700a6401d9db4636a55b51372fab
 ```
 
-### `dpkg` source package: `postgresql-common=203.pgdg100+1`
+### `dpkg` source package: `postgresql-common=204.pgdg100+1`
 
 Binary Packages:
 
-- `postgresql-client-common=203.pgdg100+1`
-- `postgresql-common=203.pgdg100+1`
+- `postgresql-client-common=204.pgdg100+1`
+- `postgresql-common=204.pgdg100+1`
 
 Licenses: (parsed from: `/usr/share/doc/postgresql-client-common/copyright`, `/usr/share/doc/postgresql-common/copyright`)
 
@@ -2669,9 +2669,9 @@ Licenses: (parsed from: `/usr/share/doc/postgresql-client-common/copyright`, `/u
 Source:
 
 ```console
-$ apt-get source -qq --print-uris postgresql-common=203.pgdg100+1
-'http://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-common/postgresql-common_203.pgdg100+1.dsc' postgresql-common_203.pgdg100+1.dsc 1581 SHA256:267573f7ee956750bfbc10610b7462dc4be321aaef920e314db812b6fa76edf9
-'http://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-common/postgresql-common_203.pgdg100+1.tar.xz' postgresql-common_203.pgdg100+1.tar.xz 214520 SHA256:19a59024f03ea51605b1d9dba053972d4ab885a2965dbc8b6ef573dc6f84f2be
+$ apt-get source -qq --print-uris postgresql-common=204.pgdg100+1
+'http://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-common/postgresql-common_204.pgdg100+1.dsc' postgresql-common_204.pgdg100+1.dsc 1581 SHA256:6ce1e7ab47914ba0a76355c35fe05fd89c6b08fa57227faa58af2849b5eb3d28
+'http://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-common/postgresql-common_204.pgdg100+1.tar.xz' postgresql-common_204.pgdg100+1.tar.xz 215660 SHA256:d557268468726b3a2c7b504becadc64ce29e1d7b009b942d829276b5f71c717e
 ```
 
 ### `dpkg` source package: `procps=2:3.3.15-2`

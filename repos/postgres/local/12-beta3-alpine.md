@@ -1,10 +1,10 @@
-# `postgres:9.4.23-alpine`
+# `postgres:12-beta3-alpine`
 
 ## Docker Metadata
 
-- Image ID: `sha256:e6fa367140e9ef19234a16449ef096fd57c3d12fd03b88ca00f7ee4c85531e79`
-- Created: `2019-07-12T00:55:12.858484015Z`
-- Virtual Size: ~ 36.48 Mb  
+- Image ID: `sha256:78e666949c5005a87f3a8017ed5b718c81f041431a46acff6da395684de6147d`
+- Created: `2019-08-09T01:19:29.874793105Z`
+- Virtual Size: ~ 73.41 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["docker-entrypoint.sh"]`
@@ -12,9 +12,9 @@
 - Environment:
   - `PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
   - `LANG=en_US.utf8`
-  - `PG_MAJOR=9.4`
-  - `PG_VERSION=9.4.23`
-  - `PG_SHA256=0d009c08b0c82b12484950bba10ae8bfd6f0c7bafd8f086ab756c483dd231d9b`
+  - `PG_MAJOR=12`
+  - `PG_VERSION=12beta3`
+  - `PG_SHA256=e4a4079c75bf049349c70a02f705beecbb8263684ff2d4e13a582a3ff50332aa`
   - `PGDATA=/var/lib/postgresql/data`
 
 ## `apk` (`.apk`-based packages)
@@ -121,6 +121,23 @@ MPL-2.0 GPL-2.0-or-later
 
 ```
 
+### `apk` package: `icu-libs`
+
+```console
+icu-libs-64.2-r0 description:
+International Components for Unicode library (libraries)
+
+icu-libs-64.2-r0 webpage:
+http://www.icu-project.org/
+
+icu-libs-64.2-r0 installed size:
+32145408
+
+icu-libs-64.2-r0 license:
+MIT ICU Unicode-TOU
+
+```
+
 ### `apk` package: `libc-utils`
 
 ```console
@@ -172,19 +189,36 @@ BSD-3-Clause
 
 ```
 
+### `apk` package: `libgcc`
+
+```console
+libgcc-8.3.0-r0 description:
+GNU C compiler runtime libraries
+
+libgcc-8.3.0-r0 webpage:
+http://gcc.gnu.org
+
+libgcc-8.3.0-r0 installed size:
+90112
+
+libgcc-8.3.0-r0 license:
+GPL LGPL
+
+```
+
 ### `apk` package: `libgcrypt`
 
 ```console
-libgcrypt-1.8.4-r1 description:
+libgcrypt-1.8.4-r2 description:
 general purpose crypto library based on the code used in GnuPG
 
-libgcrypt-1.8.4-r1 webpage:
+libgcrypt-1.8.4-r2 webpage:
 http://www.gnupg.org
 
-libgcrypt-1.8.4-r1 installed size:
-1146880
+libgcrypt-1.8.4-r2 installed size:
+1142784
 
-libgcrypt-1.8.4-r1 license:
+libgcrypt-1.8.4-r2 license:
 LGPL-2.1-or-later
 
 ```
@@ -220,6 +254,23 @@ libssl1.1-1.1.1c-r0 installed size:
 
 libssl1.1-1.1.1c-r0 license:
 OpenSSL
+
+```
+
+### `apk` package: `libstdc++`
+
+```console
+libstdc++-8.3.0-r0 description:
+GNU C++ standard runtime library
+
+libstdc++-8.3.0-r0 webpage:
+http://gcc.gnu.org
+
+libstdc++-8.3.0-r0 installed size:
+1392640
+
+libstdc++-8.3.0-r0 license:
+GPL LGPL
 
 ```
 
@@ -294,16 +345,16 @@ custom
 ### `apk` package: `musl`
 
 ```console
-musl-1.1.22-r2 description:
+musl-1.1.22-r3 description:
 the musl c library (libc) implementation
 
-musl-1.1.22-r2 webpage:
+musl-1.1.22-r3 webpage:
 http://www.musl-libc.org/
 
-musl-1.1.22-r2 installed size:
+musl-1.1.22-r3 installed size:
 598016
 
-musl-1.1.22-r2 license:
+musl-1.1.22-r3 license:
 MIT
 
 ```

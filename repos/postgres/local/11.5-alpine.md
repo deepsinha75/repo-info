@@ -1,10 +1,10 @@
-# `postgres:11.4-alpine`
+# `postgres:11.5-alpine`
 
 ## Docker Metadata
 
-- Image ID: `sha256:5239fade3a90b73a10592a252289d6d916d050f39dafca0650ae14e878c23b0a`
-- Created: `2019-07-12T00:26:55.766145869Z`
-- Virtual Size: ~ 71.88 Mb  
+- Image ID: `sha256:bb6408c77dbf632fbd65b33c220438ea9534b9a4610eb058c0ccfc39128b0643`
+- Created: `2019-08-09T01:23:50.374527744Z`
+- Virtual Size: ~ 72.46 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["docker-entrypoint.sh"]`
@@ -13,8 +13,8 @@
   - `PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
   - `LANG=en_US.utf8`
   - `PG_MAJOR=11`
-  - `PG_VERSION=11.4`
-  - `PG_SHA256=02802ddffd1590805beddd1e464dd28a46a41a5f1e1df04bab4f46663195cc8b`
+  - `PG_VERSION=11.5`
+  - `PG_SHA256=7fdf23060bfc715144cbf2696cf05b0fa284ad3eb21f0c378591c6bca99ad180`
   - `PGDATA=/var/lib/postgresql/data`
 
 ## `apk` (`.apk`-based packages)
@@ -209,16 +209,16 @@ GPL LGPL
 ### `apk` package: `libgcrypt`
 
 ```console
-libgcrypt-1.8.4-r1 description:
+libgcrypt-1.8.4-r2 description:
 general purpose crypto library based on the code used in GnuPG
 
-libgcrypt-1.8.4-r1 webpage:
+libgcrypt-1.8.4-r2 webpage:
 http://www.gnupg.org
 
-libgcrypt-1.8.4-r1 installed size:
-1146880
+libgcrypt-1.8.4-r2 installed size:
+1142784
 
-libgcrypt-1.8.4-r1 license:
+libgcrypt-1.8.4-r2 license:
 LGPL-2.1-or-later
 
 ```
@@ -345,16 +345,16 @@ custom
 ### `apk` package: `musl`
 
 ```console
-musl-1.1.22-r2 description:
+musl-1.1.22-r3 description:
 the musl c library (libc) implementation
 
-musl-1.1.22-r2 webpage:
+musl-1.1.22-r3 webpage:
 http://www.musl-libc.org/
 
-musl-1.1.22-r2 installed size:
+musl-1.1.22-r3 installed size:
 598016
 
-musl-1.1.22-r2 license:
+musl-1.1.22-r3 license:
 MIT
 
 ```
