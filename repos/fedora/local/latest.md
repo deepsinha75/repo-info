@@ -26,12 +26,10 @@ Source:
 
 ```console
 $ yumdownloader --quiet --source --urls acl-2.2.53-3.fc30
+http://mirrors.kernel.org/fedora/updates/30/Everything/x86_64/repodata/repomd.xml: [Errno -1] repomd.xml does not match metalink for updates
+Trying other mirror.
 Enabling fedora-modular-source repository
 Enabling updates-source repository
-https://download-ib01.fedoraproject.org/pub/fedora/linux/updates/30/Everything/SRPMS/repodata/repomd.xml: [Errno -1] repomd.xml does not match metalink for updates-source
-Trying other mirror.
-https://fedora.mirror.constant.com/fedora/linux/updates/30/Everything/SRPMS/repodata/repomd.xml: [Errno -1] repomd.xml does not match metalink for updates-source
-Trying other mirror.
 Enabling updates-modular-source repository
 Enabling fedora-source repository
 https://d2lzkl7pfhq30w.cloudfront.net/pub/fedora/linux/releases/30/Everything/source/tree//Packages/a/acl-2.2.53-3.fc30.src.rpm
@@ -1622,16 +1620,7 @@ https://d2lzkl7pfhq30w.cloudfront.net/pub/fedora/linux/releases/30/Everything/so
 
 Licenses (from `rpm --query`): BSD and GPLv2
 
-Source:
-
-```console
-$ yumdownloader --quiet --source --urls libzstd-1.4.0-1.fc30
-Enabling fedora-modular-source repository
-Enabling updates-source repository
-Enabling updates-modular-source repository
-Enabling fedora-source repository
-https://d2lzkl7pfhq30w.cloudfront.net/pub/fedora/linux/updates/30/Everything/SRPMS//Packages/z/zstd-1.4.0-1.fc30.src.rpm
-```
+**WARNING:** unable to find source (`yumdownloader` failed or returned no results)!
 
 ### `rpm` package: `lua-libs-5.3.5-5.fc30.x86_64`
 
