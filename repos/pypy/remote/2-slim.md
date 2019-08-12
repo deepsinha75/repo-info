@@ -1,7 +1,7 @@
 ## `pypy:2-slim`
 
 ```console
-$ docker pull pypy@sha256:167352df88a18f0aabdfb2a94c8e1a9971753803ff64045382f874a8ace6585f
+$ docker pull pypy@sha256:ef8c55b042be9c85fbd0d38974f9fcd991ac1d0461eae5d9e5bbb21597dc90b7
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -12,14 +12,14 @@ $ docker pull pypy@sha256:167352df88a18f0aabdfb2a94c8e1a9971753803ff64045382f874
 ### `pypy:2-slim` - linux; amd64
 
 ```console
-$ docker pull pypy@sha256:6f93fe25df370e4deb1c30dd4d27ecdd8a31eb9e58afc63fddf7d8d706a17766
+$ docker pull pypy@sha256:4b15001da3224658b7fadbb569790075344438c53b0aef79d292c864e6ad6141
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **63.9 MB (63869651 bytes)**  
+-	Total Size: **63.9 MB (63869929 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:e793ec7472618fd14e78505e99d479b80ba093f9cccd6ed15a8f954d55ff145c`
+-	Image ID: `sha256:cc3649f22bd84c5831e46399aa1444fbf1f13df3ee3084bb04a169f58dbdb13a`
 -	Default Command: `["pypy"]`
 
 ```dockerfile
@@ -35,11 +35,11 @@ ENV LANG=C.UTF-8
 RUN apt-get update && apt-get install -y --no-install-recommends 		ca-certificates 		libexpat1 		libffi6 		libgdbm3 		libsqlite3-0 	&& rm -rf /var/lib/apt/lists/*
 # Wed, 10 Jul 2019 02:44:10 GMT
 ENV PYPY_VERSION=7.1.1
-# Tue, 23 Jul 2019 23:20:18 GMT
-ENV PYTHON_PIP_VERSION=19.2.1
-# Tue, 23 Jul 2019 23:23:41 GMT
+# Mon, 12 Aug 2019 22:31:04 GMT
+ENV PYTHON_PIP_VERSION=19.2.2
+# Mon, 12 Aug 2019 22:34:27 GMT
 RUN set -ex; 		dpkgArch="$(dpkg --print-architecture)"; 	case "${dpkgArch##*-}" in 		amd64) pypyArch='linux64'; sha256='73b09ef0860eb9ad7997af3030b22909806a273d90786d78420926df53279d66' ;; 		i386) pypyArch='linux32'; sha256='41ca390a76ca0d47b8353a0d6a20d5aab5fad8b0bb647b960d8c33e873d18ef5' ;; 		*) echo >&2 "error: current architecture ($dpkgArch) does not have a corresponding PyPy $PYPY_VERSION binary release"; exit 1 ;; 	esac; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		bzip2 		wget 		libncurses5 	; 		wget -O pypy.tar.bz2 "https://bitbucket.org/pypy/pypy/downloads/pypy2.7-v${PYPY_VERSION}-${pypyArch}.tar.bz2" --progress=dot:giga; 	echo "$sha256 *pypy.tar.bz2" | sha256sum -c; 	tar -xjC /usr/local --strip-components=1 -f pypy.tar.bz2; 	find /usr/local/lib-python -depth -type d -a \( -name test -o -name tests \) -exec rm -rf '{}' +; 	rm pypy.tar.bz2; 		pypy --version; 		if [ -f /usr/local/lib_pypy/_ssl_build.py ]; then 		apt-get install -y --no-install-recommends gcc libc6-dev libssl-dev; 		cd /usr/local/lib_pypy; 		pypy _ssl_build.py; 	fi; 		wget -O get-pip.py 'https://bootstrap.pypa.io/get-pip.py'; 		pypy get-pip.py 		--disable-pip-version-check 		--no-cache-dir 		"pip==$PYTHON_PIP_VERSION" 	; 	pip --version; 		rm -f get-pip.py; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark > /dev/null; 	find /usr/local -type f -executable -exec ldd '{}' ';' 		| awk '/=>/ { print $(NF-1) }' 		| sort -u 		| xargs -r dpkg-query --search 		| cut -d: -f1 		| sort -u 		| xargs -r apt-mark manual 	; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 	rm -rf /var/lib/apt/lists/*; 	pypy --version; 	pip --version
-# Tue, 23 Jul 2019 23:23:42 GMT
+# Mon, 12 Aug 2019 22:34:27 GMT
 CMD ["pypy"]
 ```
 
@@ -52,9 +52,9 @@ CMD ["pypy"]
 		Last Modified: Wed, 10 Jul 2019 02:50:29 GMT  
 		Size: 2.8 MB (2811632 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:602bd8257fabfcc9c13ccf60d8a1fbc1cdb5b1bbebaab0a7d79dd3c1d1701195`  
-		Last Modified: Tue, 23 Jul 2019 23:27:19 GMT  
-		Size: 30.9 MB (30903892 bytes)  
+	-	`sha256:f1747b29b638f9d37ca1b4dfed1e0b831df59f8d2cefa952f6149da24a9ae0c4`  
+		Last Modified: Mon, 12 Aug 2019 22:37:57 GMT  
+		Size: 30.9 MB (30904170 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `pypy:2-slim` - linux; 386
