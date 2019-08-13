@@ -2,8 +2,8 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:ddfafb444f1ae34b8e7a3a1f90dc861bb9a9db950c44109fddb8bdc56f5de068`
-- Created: `2019-08-03T01:47:26.298319621Z`
+- Image ID: `sha256:52ee9bbf378f59a394a6062246b9c00e36b91e8819c839ced915cd89b0791811`
+- Created: `2019-08-12T22:22:33.582495866Z`
 - Virtual Size: ~ 109.90 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
@@ -13,9 +13,9 @@
   - `LANG=C.UTF-8`
   - `GPG_KEY=E3FF2839C048B25C084DEBE9B26995E310250568`
   - `PYTHON_VERSION=3.8.0b3`
-  - `PYTHON_PIP_VERSION=19.2.1`
-  - `PYTHON_GET_PIP_URL=https://github.com/pypa/get-pip/raw/404c9418e33c5031b1a9ab623168b3e8a2ed8c88/get-pip.py`
-  - `PYTHON_GET_PIP_SHA256=56bb63d3cf54e7444351256f72a60f575f6d8c7f1faacffae33167afc8e7609d`
+  - `PYTHON_PIP_VERSION=19.2.2`
+  - `PYTHON_GET_PIP_URL=https://github.com/pypa/get-pip/raw/0c72a3b4ece313faccb446a96c84770ccedc5ec5/get-pip.py`
+  - `PYTHON_GET_PIP_SHA256=201edc6df416da971e64cc94992d2dd24bc328bada7444f0c4f2031ae31e8dad`
 
 ## `apk` (`.apk`-based packages)
 
