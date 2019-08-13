@@ -150,14 +150,9 @@ Licenses: (parsed from: `/usr/share/doc/libaudit-common/copyright`, `/usr/share/
 - `GPL-2`
 - `LGPL-2.1`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris audit=1:2.8.4-3ubuntu1
-'http://archive.ubuntu.com/ubuntu/pool/main/a/audit/audit_2.8.4-3ubuntu1.dsc' audit_2.8.4-3ubuntu1.dsc 2948 SHA256:0b4fe5a141cd1b3d509ff1fcfcab9cbbb04f15981fe6ac42ef3b52f825ca5bf3
-'http://archive.ubuntu.com/ubuntu/pool/main/a/audit/audit_2.8.4.orig.tar.gz' audit_2.8.4.orig.tar.gz 1123889 SHA256:a410694d09fc5708d980a61a5abcb9633a591364f1ecc7e97ad5daef9c898c38
-'http://archive.ubuntu.com/ubuntu/pool/main/a/audit/audit_2.8.4-3ubuntu1.debian.tar.xz' audit_2.8.4-3ubuntu1.debian.tar.xz 18932 SHA256:6b77abbe8b5c0a944e3efe586c30e0ef781bda9aa84113d4ab25c30d57453ac7
-```
 
 ### `dpkg` source package: `autoconf=2.69-11`
 
@@ -471,14 +466,9 @@ Licenses: (parsed from: `/usr/share/doc/curl/copyright`, `/usr/share/doc/libcurl
 - `other`
 - `public-domain`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris curl=7.65.1-1ubuntu1
-'http://archive.ubuntu.com/ubuntu/pool/main/c/curl/curl_7.65.1-1ubuntu1.dsc' curl_7.65.1-1ubuntu1.dsc 2687 SHA256:5631f444b826e9541b647d2d3bd6aaacd412e562901c4ec36c6545896926325b
-'http://archive.ubuntu.com/ubuntu/pool/main/c/curl/curl_7.65.1.orig.tar.gz' curl_7.65.1.orig.tar.gz 4019584 SHA256:821aeb78421375f70e55381c9ad2474bf279fc454b791b7e95fc83562951c690
-'http://archive.ubuntu.com/ubuntu/pool/main/c/curl/curl_7.65.1-1ubuntu1.debian.tar.xz' curl_7.65.1-1ubuntu1.debian.tar.xz 30440 SHA256:0328fdbeb7a7e74b5ddf20b0d408bdfd6205db0affa25c9f4cba0ee2229ac256
-```
 
 ### `dpkg` source package: `cyrus-sasl2=2.1.27+dfsg-1`
 
@@ -626,14 +616,13 @@ Licenses: (parsed from: `/usr/share/doc/libdjvulibre-dev/copyright`, `/usr/share
 
 - `GPL-2`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris djvulibre=3.5.27.1-11
-'http://archive.ubuntu.com/ubuntu/pool/main/d/djvulibre/djvulibre_3.5.27.1-11.dsc' djvulibre_3.5.27.1-11.dsc 2385 SHA256:4f7231d5182f465a85e1030052267f3cfe8b9f2d646b88db9ed4ece972e0759d
-'http://archive.ubuntu.com/ubuntu/pool/main/d/djvulibre/djvulibre_3.5.27.1.orig.tar.gz' djvulibre_3.5.27.1.orig.tar.gz 3231662 SHA256:77f07de3f1039aa19eba2eb3170d9ce9a0918ba7b704a59cfaf08f42fcc52144
-'http://archive.ubuntu.com/ubuntu/pool/main/d/djvulibre/djvulibre_3.5.27.1-11.debian.tar.xz' djvulibre_3.5.27.1-11.debian.tar.xz 75332 SHA256:4b0d5943117ba3d3d5267f48b35be1861896f0f1303ca767393bd9a23a482cd4
-```
+The source package *may* still be available for download from:
+
+- http://snapshot.debian.org/package/djvulibre/3.5.27.1-11/
+
 
 ### `dpkg` source package: `dpkg=1.19.6ubuntu1`
 
@@ -1298,14 +1287,9 @@ Licenses: (parsed from: `/usr/share/doc/gzip/copyright`)
 
 - `GPL`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris gzip=1.10-0ubuntu1
-'http://archive.ubuntu.com/ubuntu/pool/main/g/gzip/gzip_1.10-0ubuntu1.dsc' gzip_1.10-0ubuntu1.dsc 2099 SHA256:3b5958266ff08412db8fab1bd89870de61ac92222e790b1121053861b8c4e50a
-'http://archive.ubuntu.com/ubuntu/pool/main/g/gzip/gzip_1.10.orig.tar.gz' gzip_1.10.orig.tar.gz 1201421 SHA256:c91f74430bf7bc20402e1f657d0b252cb80aa66ba333a25704512af346633c68
-'http://archive.ubuntu.com/ubuntu/pool/main/g/gzip/gzip_1.10-0ubuntu1.debian.tar.xz' gzip_1.10-0ubuntu1.debian.tar.xz 23632 SHA256:56ae6ad9b70aa2813a339461c8226adb727558192896f3b605889fc5c940511e
-```
 
 ### `dpkg` source package: `harfbuzz=2.5.3-1`
 
