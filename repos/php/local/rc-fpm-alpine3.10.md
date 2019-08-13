@@ -1,10 +1,10 @@
-# `php:7.4.0beta1-fpm-alpine3.10`
+# `php:7.4.0beta2-fpm-alpine3.10`
 
 ## Docker Metadata
 
-- Image ID: `sha256:ee20575771b2ddefef1350624343f16ead48775f902528e715525eea69789b4a`
-- Created: `2019-08-02T05:03:50.223714954Z`
-- Virtual Size: ~ 83.43 Mb  
+- Image ID: `sha256:dbb5f79e137ee38d3422952ab4ace45629f10f41e5279e2c14c03ff6eca79f7d`
+- Created: `2019-08-09T22:07:18.786787067Z`
+- Virtual Size: ~ 84.01 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["docker-php-entrypoint"]`
@@ -18,10 +18,10 @@
   - `PHP_CPPFLAGS=-fstack-protector-strong -fpic -fpie -O2`
   - `PHP_LDFLAGS=-Wl,-O1 -Wl,--hash-style=both -pie`
   - `GPG_KEYS=42670A7FE4D0441C8E4632349E4FDC074A4EF02D 5A52880781F755608BF815FC910DEB46F53EA312`
-  - `PHP_VERSION=7.4.0beta1`
-  - `PHP_URL=https://downloads.php.net/~derick/php-7.4.0beta1.tar.xz`
-  - `PHP_ASC_URL=https://downloads.php.net/~derick/php-7.4.0beta1.tar.xz.asc`
-  - `PHP_SHA256=399727399ac3c98c981e623ce2f4e55940ee1f99829cfcbca914d878a6910d30`
+  - `PHP_VERSION=7.4.0beta2`
+  - `PHP_URL=https://downloads.php.net/~derick/php-7.4.0beta2.tar.xz`
+  - `PHP_ASC_URL=https://downloads.php.net/~derick/php-7.4.0beta2.tar.xz.asc`
+  - `PHP_SHA256=cb2c8734f0edfbc815bddfe5e56e959dbca493bcfe248d0213d27c5b95b4c4bc`
   - `PHP_MD5=`
 
 ## `apk` (`.apk`-based packages)
@@ -301,16 +301,16 @@ MIT
 ### `apk` package: `musl`
 
 ```console
-musl-1.1.22-r2 description:
+musl-1.1.22-r3 description:
 the musl c library (libc) implementation
 
-musl-1.1.22-r2 webpage:
+musl-1.1.22-r3 webpage:
 http://www.musl-libc.org/
 
-musl-1.1.22-r2 installed size:
+musl-1.1.22-r3 installed size:
 598016
 
-musl-1.1.22-r2 license:
+musl-1.1.22-r3 license:
 MIT
 
 ```
