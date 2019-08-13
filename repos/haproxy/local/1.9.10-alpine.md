@@ -1,19 +1,19 @@
-# `haproxy:1.9.9-alpine`
+# `haproxy:1.9.10-alpine`
 
 ## Docker Metadata
 
-- Image ID: `sha256:a6c259cf1dfa12b58dc86efd2bcd743c76e2dc5099045cb986faaf9e5cf3ccfb`
-- Created: `2019-07-23T19:57:32.350835471Z`
-- Virtual Size: ~ 21.49 Mb  
+- Image ID: `sha256:2921c623110501571197f2296549e5fd912eddb5f8199183f108181c15333f60`
+- Created: `2019-08-09T21:25:44.422798615Z`
+- Virtual Size: ~ 22.10 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["/docker-entrypoint.sh"]`
 - Command: `["haproxy","-f","/usr/local/etc/haproxy/haproxy.cfg"]`
 - Environment:
   - `PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
-  - `HAPROXY_VERSION=1.9.9`
-  - `HAPROXY_URL=https://www.haproxy.org/download/1.9/src/haproxy-1.9.9.tar.gz`
-  - `HAPROXY_SHA256=a51fd2b21119c35fc892c1d021009feda4b63ccbde2f8fea80ffe5f314b7e7b0`
+  - `HAPROXY_VERSION=1.9.10`
+  - `HAPROXY_URL=https://www.haproxy.org/download/1.9/src/haproxy-1.9.10.tar.gz`
+  - `HAPROXY_SHA256=8ec2d53fe279563a3ea08f472ed3495468c21a6477415601af9f682e7f9e563a`
 
 ## `apk` (`.apk`-based packages)
 
@@ -190,16 +190,16 @@ MIT
 ### `apk` package: `musl`
 
 ```console
-musl-1.1.22-r2 description:
+musl-1.1.22-r3 description:
 the musl c library (libc) implementation
 
-musl-1.1.22-r2 webpage:
+musl-1.1.22-r3 webpage:
 http://www.musl-libc.org/
 
-musl-1.1.22-r2 installed size:
+musl-1.1.22-r3 installed size:
 598016
 
-musl-1.1.22-r2 license:
+musl-1.1.22-r3 license:
 MIT
 
 ```
