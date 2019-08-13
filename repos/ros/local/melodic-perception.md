@@ -8116,14 +8116,9 @@ Licenses: (parsed from: `/usr/share/doc/libpoppler-dev/copyright`, `/usr/share/d
 
 - `GPL-2`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris poppler=0.62.0-2ubuntu2.9
-'http://archive.ubuntu.com/ubuntu/pool/main/p/poppler/poppler_0.62.0-2ubuntu2.9.dsc' poppler_0.62.0-2ubuntu2.9.dsc 3370 SHA256:95f692ce4683adf451404bfae9aa9ee55b34a87839a720210d92c47313f3943a
-'http://archive.ubuntu.com/ubuntu/pool/main/p/poppler/poppler_0.62.0.orig.tar.xz' poppler_0.62.0.orig.tar.xz 1423372 SHA256:5b9a73dfd4d6f61d165ada1e4f0abd2d420494bf9d0b1c15d0db3f7b83a729c6
-'http://archive.ubuntu.com/ubuntu/pool/main/p/poppler/poppler_0.62.0-2ubuntu2.9.debian.tar.xz' poppler_0.62.0-2ubuntu2.9.debian.tar.xz 43532 SHA256:c8a97148ffc16e42c79f88536d22f335439c9d5c2afdb6c1d15b9d56182ec844
-```
 
 ### `dpkg` source package: `postgresql-10=10.9-0ubuntu0.18.04.1`
 
@@ -8903,14 +8898,9 @@ Binary Packages:
 If source is available (seen below), check the contents of `debian/copyright` within it.
 
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris python-rospkg-modules=1.1.9-1
-'http://packages.ros.org/ros/ubuntu/pool/main/p/python-rospkg-modules/python-rospkg-modules_1.1.9-1.debian.tar.xz' python-rospkg-modules_1.1.9-1.debian.tar.xz 1084 SHA512:058ec9a4d0181be26d39cc9b9457f16d99204bd99bdedb732deffc9d8125af6835b8a3aea9e51c2aaa4f96e28a5fca5200173a9fbc1c87dac3c9c4d85f78f5d6
-'http://packages.ros.org/ros/ubuntu/pool/main/p/python-rospkg-modules/python-rospkg-modules_1.1.9-1.dsc' python-rospkg-modules_1.1.9-1.dsc 997 SHA512:bf02446f6b332d6d32b12132360125df460067eb8fc98115370140f2c6e0982e518780b628577c6a9967c9c3f4d4594ed10004bd9399c34a0fc1ace90f867e01
-'http://packages.ros.org/ros/ubuntu/pool/main/p/python-rospkg-modules/python-rospkg-modules_1.1.9.orig.tar.gz' python-rospkg-modules_1.1.9.orig.tar.gz 41051 SHA512:cc9acf41da98ed46739ce99873a5d6ed912a8b096896e63749a727e229205a2635bd9a10afd603025b67f0058675bef241cd9224fd52af2a6516210c6e90677e
-```
 
 ### `dpkg` source package: `python-rospkg=1.1.9-100`
 
@@ -8922,14 +8912,9 @@ Binary Packages:
 If source is available (seen below), check the contents of `debian/copyright` within it.
 
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris python-rospkg=1.1.9-100
-'http://packages.ros.org/ros/ubuntu/pool/main/p/python-rospkg/python-rospkg_1.1.9-100.debian.tar.xz' python-rospkg_1.1.9-100.debian.tar.xz 1060 SHA512:7d72d2c6ae4d444d92284f127f312d681920b66c6e096413b2c3e4354bc4b90a0f92a3fb28ffc802a2521bc6b46aadc0a53692cfc786ce6b615823c49cdb9a86
-'http://packages.ros.org/ros/ubuntu/pool/main/p/python-rospkg/python-rospkg_1.1.9-100.dsc' python-rospkg_1.1.9-100.dsc 933 SHA512:8b7feee64bd8d2e0751a1deaa7f736fa7083d365f0aefbf61aa3a69e00a56e9a50c24950daa9b7b819ab774e8fe0fb3e35245f88adad99b7e2762ac83dd98ef7
-'http://packages.ros.org/ros/ubuntu/pool/main/p/python-rospkg/python-rospkg_1.1.9.orig.tar.gz' python-rospkg_1.1.9.orig.tar.gz 17928 SHA512:6cc5f86759f1358662dbbaf2b362df2f8ec0e922fdf6cb2a3503409f2c8cad6ab8242e8945ef2d638ba0bc44f3770f0218ddf6c147aa7d4b7666c734c60bbd3b
-```
 
 ### `dpkg` source package: `python-service-identity=16.0.0-2`
 
