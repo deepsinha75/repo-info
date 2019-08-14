@@ -630,13 +630,9 @@ Licenses: (parsed from: `/usr/share/doc/dpkg/copyright`)
 - `public-domain-md5`
 - `public-domain-s-s-d`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris dpkg=1.18.4ubuntu1.5
-'http://archive.ubuntu.com/ubuntu/pool/main/d/dpkg/dpkg_1.18.4ubuntu1.5.dsc' dpkg_1.18.4ubuntu1.5.dsc 2211 SHA256:b76b4e1750ba75a8bc5fae43beb77b723a7b6dff933ff792e6d98a360dd6b55e
-'http://archive.ubuntu.com/ubuntu/pool/main/d/dpkg/dpkg_1.18.4ubuntu1.5.tar.xz' dpkg_1.18.4ubuntu1.5.tar.xz 4298288 SHA256:43e6c3934c08ec1c6e040f35d80f88a93d1ed41602932bdcbe059173fbd5fda9
-```
 
 ### `dpkg` source package: `e2fsprogs=1.42.13-1ubuntu1`
 
@@ -1046,14 +1042,9 @@ Licenses: (parsed from: `/usr/share/doc/ghostscript/copyright`, `/usr/share/doc/
 - `other`
 - `public-domain`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris ghostscript=9.26~dfsg+0-0ubuntu0.16.04.9
-'http://archive.ubuntu.com/ubuntu/pool/main/g/ghostscript/ghostscript_9.26~dfsg+0-0ubuntu0.16.04.9.dsc' ghostscript_9.26~dfsg+0-0ubuntu0.16.04.9.dsc 2926 SHA256:3d248ead8d67836c055878df4f068d6dee95792a4abdf110ea922018aa0e7a0f
-'http://archive.ubuntu.com/ubuntu/pool/main/g/ghostscript/ghostscript_9.26~dfsg+0.orig.tar.xz' ghostscript_9.26~dfsg+0.orig.tar.xz 27040868 SHA256:f13dd2be0499ae47f508d66be4f7a61056674c2ee6ff53d954e84bc634986bd7
-'http://archive.ubuntu.com/ubuntu/pool/main/g/ghostscript/ghostscript_9.26~dfsg+0-0ubuntu0.16.04.9.debian.tar.xz' ghostscript_9.26~dfsg+0-0ubuntu0.16.04.9.debian.tar.xz 146448 SHA256:2531289d5f088847fbc1538c8eba3983e9339d751bf2b27d95f212437ae8aa1d
-```
 
 ### `dpkg` source package: `giflib=5.1.4-0.3~16.04`
 
