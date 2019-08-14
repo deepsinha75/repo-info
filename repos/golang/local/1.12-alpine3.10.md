@@ -1,16 +1,16 @@
-# `golang:1.12.7-alpine3.10`
+# `golang:1.12.8-alpine3.10`
 
 ## Docker Metadata
 
-- Image ID: `sha256:6b21b4c6e7a3d4a9496fff4ca5cf2069baaf4787d8f4adb1e2cf10acd2b69e1a`
-- Created: `2019-07-11T23:29:27.482581015Z`
-- Virtual Size: ~ 350.33 Mb  
+- Image ID: `sha256:5b92ed72e21697c62cf5f2f4f9c09e2b1b78c05d053c778b8aa515b39bb4e10d`
+- Created: `2019-08-13T22:35:27.6250535Z`
+- Virtual Size: ~ 350.91 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Command: `["/bin/sh"]`
 - Environment:
   - `PATH=/go/bin:/usr/local/go/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
-  - `GOLANG_VERSION=1.12.7`
+  - `GOLANG_VERSION=1.12.8`
   - `GOPATH=/go`
 
 ## `apk` (`.apk`-based packages)
@@ -188,16 +188,16 @@ ISC
 ### `apk` package: `musl`
 
 ```console
-musl-1.1.22-r2 description:
+musl-1.1.22-r3 description:
 the musl c library (libc) implementation
 
-musl-1.1.22-r2 webpage:
+musl-1.1.22-r3 webpage:
 http://www.musl-libc.org/
 
-musl-1.1.22-r2 installed size:
+musl-1.1.22-r3 installed size:
 598016
 
-musl-1.1.22-r2 license:
+musl-1.1.22-r3 license:
 MIT
 
 ```
