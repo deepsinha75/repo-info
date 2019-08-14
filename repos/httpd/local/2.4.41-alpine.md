@@ -1,18 +1,18 @@
-# `httpd:2.4.39-alpine`
+# `httpd:2.4.41-alpine`
 
 ## Docker Metadata
 
-- Image ID: `sha256:47ce0adb5e52b23cc84415e0e8b9d28d3a95b64c60308446149acaa4ce24ed1c`
-- Created: `2019-07-13T01:47:23.890917472Z`
-- Virtual Size: ~ 126.89 Mb  
+- Image ID: `sha256:ea80b4264851f53d1fdf6f89e7c0f7b99b612eb4aa95fe29e61c5b4c4eff85c4`
+- Created: `2019-08-14T00:37:23.654037393Z`
+- Virtual Size: ~ 127.59 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Command: `["httpd-foreground"]`
 - Environment:
   - `PATH=/usr/local/apache2/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
   - `HTTPD_PREFIX=/usr/local/apache2`
-  - `HTTPD_VERSION=2.4.39`
-  - `HTTPD_SHA256=b4ca9d05773aa59b54d66cd8f4744b945289f084d3be17d7981d1783a5decfa2`
+  - `HTTPD_VERSION=2.4.41`
+  - `HTTPD_SHA256=133d48298fe5315ae9366a0ec66282fa4040efa5d566174481077ade7d18ea40`
   - `HTTPD_PATCHES=`
 
 ## `apk` (`.apk`-based packages)
@@ -513,16 +513,16 @@ GPL-2.0 GPL-2.0-or-later LGPL-2.0-or-later BSD Public-Domain
 ### `apk` package: `libpq`
 
 ```console
-libpq-11.4-r0 description:
+libpq-11.5-r0 description:
 PostgreSQL libraries
 
-libpq-11.4-r0 webpage:
+libpq-11.5-r0 webpage:
 https://www.postgresql.org/
 
-libpq-11.4-r0 installed size:
+libpq-11.5-r0 installed size:
 315392
 
-libpq-11.4-r0 license:
+libpq-11.5-r0 license:
 PostgreSQL
 
 ```
@@ -666,16 +666,16 @@ MIT
 ### `apk` package: `mariadb-common`
 
 ```console
-mariadb-common-10.3.16-r0 description:
+mariadb-common-10.3.17-r0 description:
 MariaDB common files for both server and client
 
-mariadb-common-10.3.16-r0 webpage:
+mariadb-common-10.3.17-r0 webpage:
 https://www.mariadb.org/
 
-mariadb-common-10.3.16-r0 installed size:
+mariadb-common-10.3.17-r0 installed size:
 2240512
 
-mariadb-common-10.3.16-r0 license:
+mariadb-common-10.3.17-r0 license:
 GPL-2.0-or-later
 
 ```
@@ -717,16 +717,16 @@ LGPL-2.1-or-later
 ### `apk` package: `mariadb-dev`
 
 ```console
-mariadb-dev-10.3.16-r0 description:
+mariadb-dev-10.3.17-r0 description:
 A fast SQL database server (development files)
 
-mariadb-dev-10.3.16-r0 webpage:
+mariadb-dev-10.3.17-r0 webpage:
 https://www.mariadb.org/
 
-mariadb-dev-10.3.16-r0 installed size:
-5799936
+mariadb-dev-10.3.17-r0 installed size:
+5808128
 
-mariadb-dev-10.3.16-r0 license:
+mariadb-dev-10.3.17-r0 license:
 GPL-2.0-or-later
 
 ```
@@ -734,16 +734,16 @@ GPL-2.0-or-later
 ### `apk` package: `mariadb-embedded`
 
 ```console
-mariadb-embedded-10.3.16-r0 description:
+mariadb-embedded-10.3.17-r0 description:
 MariaDB as an embeddable library
 
-mariadb-embedded-10.3.16-r0 webpage:
+mariadb-embedded-10.3.17-r0 webpage:
 https://www.mariadb.org/
 
-mariadb-embedded-10.3.16-r0 installed size:
-16904192
+mariadb-embedded-10.3.17-r0 installed size:
+16920576
 
-mariadb-embedded-10.3.16-r0 license:
+mariadb-embedded-10.3.17-r0 license:
 GPL-2.0-or-later
 
 ```
@@ -751,16 +751,16 @@ GPL-2.0-or-later
 ### `apk` package: `musl`
 
 ```console
-musl-1.1.22-r2 description:
+musl-1.1.22-r3 description:
 the musl c library (libc) implementation
 
-musl-1.1.22-r2 webpage:
+musl-1.1.22-r3 webpage:
 http://www.musl-libc.org/
 
-musl-1.1.22-r2 installed size:
+musl-1.1.22-r3 installed size:
 598016
 
-musl-1.1.22-r2 license:
+musl-1.1.22-r3 license:
 MIT
 
 ```
@@ -938,16 +938,16 @@ ISC
 ### `apk` package: `postgresql-dev`
 
 ```console
-postgresql-dev-11.4-r0 description:
+postgresql-dev-11.5-r0 description:
 A sophisticated object-relational DBMS (development files)
 
-postgresql-dev-11.4-r0 webpage:
+postgresql-dev-11.5-r0 webpage:
 https://www.postgresql.org/
 
-postgresql-dev-11.4-r0 installed size:
+postgresql-dev-11.5-r0 installed size:
 8568832
 
-postgresql-dev-11.4-r0 license:
+postgresql-dev-11.5-r0 license:
 PostgreSQL
 
 ```
@@ -955,16 +955,16 @@ PostgreSQL
 ### `apk` package: `postgresql-libs`
 
 ```console
-postgresql-libs-11.4-r0 description:
+postgresql-libs-11.5-r0 description:
 A sophisticated object-relational DBMS (libraries)
 
-postgresql-libs-11.4-r0 webpage:
+postgresql-libs-11.5-r0 webpage:
 https://www.postgresql.org/
 
-postgresql-libs-11.4-r0 installed size:
+postgresql-libs-11.5-r0 installed size:
 200704
 
-postgresql-libs-11.4-r0 license:
+postgresql-libs-11.5-r0 license:
 PostgreSQL
 
 ```
