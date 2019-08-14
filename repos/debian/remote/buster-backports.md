@@ -1,7 +1,7 @@
 ## `debian:buster-backports`
 
 ```console
-$ docker pull debian@sha256:c4b3545ea4ca93d3419b637b3eb831ec1b8c9985bb25cc310084d08b92736830
+$ docker pull debian@sha256:8e0993f6fb5b3e4c6a902dee514fef71f36cbd74e4000e4a2e505425c117b2ef
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -49,65 +49,65 @@ RUN echo 'deb http://deb.debian.org/debian buster-backports main' > /etc/apt/sou
 ### `debian:buster-backports` - linux; arm variant v5
 
 ```console
-$ docker pull debian@sha256:7dfc107f7109515b3ff9c7fcc23f4c3313f9ea21ed4db74b40ee2b6cf277b753
+$ docker pull debian@sha256:345a51629030281b6684291df40a2e77cb9fa48c6f64d8e68cdd5fd1b9b1ace0
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **48.1 MB (48083648 bytes)**  
+-	Total Size: **48.1 MB (48082700 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:60dbb693105adddfb083f2ee8e5e536bd0922570afb9efed553dcf3c78f59ebd`
+-	Image ID: `sha256:93c3d4bad6a06da9108add7013fe6c440c66fd61a06837cee5c31d933a1385ad`
 -	Default Command: `["bash"]`
 
 ```dockerfile
-# Tue, 09 Jul 2019 22:42:58 GMT
-ADD file:5fa397391e9a09b0a2a2ca111a8cc4d5c44107aec3a9edf1c81f13c89635f595 in / 
-# Tue, 09 Jul 2019 22:42:59 GMT
+# Wed, 14 Aug 2019 00:50:18 GMT
+ADD file:ada5d5c9e96c4a8e08ce4a0461813552448a89a93c0b65350b29a861ba544d9b in / 
+# Wed, 14 Aug 2019 00:50:19 GMT
 CMD ["bash"]
-# Tue, 09 Jul 2019 22:43:09 GMT
+# Wed, 14 Aug 2019 00:50:27 GMT
 RUN echo 'deb http://deb.debian.org/debian buster-backports main' > /etc/apt/sources.list.d/backports.list
 ```
 
 -	Layers:
-	-	`sha256:a8e16d1c92f80f8266e07d97e5d81a67f9b8d39ac86cd7a165e96fce4121abb9`  
-		Last Modified: Tue, 09 Jul 2019 22:52:12 GMT  
-		Size: 48.1 MB (48083424 bytes)  
+	-	`sha256:35ed8be3504377056f72b741d51d5aab096d98de9df8b392df4a07cb769e6d42`  
+		Last Modified: Wed, 14 Aug 2019 00:59:02 GMT  
+		Size: 48.1 MB (48082478 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:9b689ad6247c73fb2bcc7bf50e52d26772e0b539f14dffbb1dd04b49a60f4e84`  
-		Last Modified: Tue, 09 Jul 2019 22:52:22 GMT  
-		Size: 224.0 B  
+	-	`sha256:b45f7fb4620d690be0038a6ffb649cad6cf628bf5301e8f6d9ca859713c06eb2`  
+		Last Modified: Wed, 14 Aug 2019 00:59:12 GMT  
+		Size: 222.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `debian:buster-backports` - linux; arm variant v7
 
 ```console
-$ docker pull debian@sha256:ac8704c2ef9285c4f90ec8dab5283123bf29c1b6b34db2d2934066005c9cc8d3
+$ docker pull debian@sha256:cdf5809438b48c4452cbc2980cbece8f29e49e20e1bf2aaaa75a6578be1752af
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **45.9 MB (45853965 bytes)**  
+-	Total Size: **45.9 MB (45854360 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:b8779fe1a47b9a8d9efa60675c4a9ad5671be156e546cd375c276b5bdeed38d3`
+-	Image ID: `sha256:c1b518b3c408cb5b3c76e3bed733d054bd343eabaa771d335e51b3513060e875`
 -	Default Command: `["bash"]`
 
 ```dockerfile
-# Tue, 09 Jul 2019 21:07:09 GMT
-ADD file:fa9102440e38c2e5ab7e7ba08b43246e370dceb03cfb40debb00f4975b4d5eeb in / 
-# Tue, 09 Jul 2019 21:07:11 GMT
+# Wed, 14 Aug 2019 00:59:44 GMT
+ADD file:a9c8bae31876c4f1a65b716e728f9b7e1573ec698b6fe8daaeb5f3dc080bb131 in / 
+# Wed, 14 Aug 2019 00:59:45 GMT
 CMD ["bash"]
-# Tue, 09 Jul 2019 21:07:18 GMT
+# Wed, 14 Aug 2019 00:59:51 GMT
 RUN echo 'deb http://deb.debian.org/debian buster-backports main' > /etc/apt/sources.list.d/backports.list
 ```
 
 -	Layers:
-	-	`sha256:755d84a203b44de4e2bc7169d5db99523b34f4101cb1ab50f606fcb6cd8d216f`  
-		Last Modified: Tue, 09 Jul 2019 21:17:09 GMT  
-		Size: 45.9 MB (45853741 bytes)  
+	-	`sha256:4bcb33fb87fb53a079ac35f10587fb4512b5c98188fea2132d0a0f5e47dfc51b`  
+		Last Modified: Wed, 14 Aug 2019 01:09:01 GMT  
+		Size: 45.9 MB (45854139 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:8fd8a6c0217dafea613d5e307626b25685f190ae1eee26b4d060485d826af5ae`  
-		Last Modified: Tue, 09 Jul 2019 21:17:22 GMT  
-		Size: 224.0 B  
+	-	`sha256:99159a3334470f45aae2f9281ab876c41d843d0d811b01077572d82d48d66e34`  
+		Last Modified: Wed, 14 Aug 2019 01:09:10 GMT  
+		Size: 221.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `debian:buster-backports` - linux; arm64 variant v8

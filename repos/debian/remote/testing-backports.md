@@ -1,12 +1,13 @@
 ## `debian:testing-backports`
 
 ```console
-$ docker pull debian@sha256:90493e4f7c33bf7e9bcb96699dc53e57e2b19d2ba2b557355099ff988ac5a3db
+$ docker pull debian@sha256:57a1c2c399313e3db5f731fea3883ef49b40ef064b361bfd54bae044c9771950
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
 -	Platforms:
 	-	linux; amd64
+	-	linux; arm variant v5
 	-	linux; arm variant v7
 	-	linux; arm64 variant v8
 	-	linux; 386
@@ -45,36 +46,68 @@ RUN echo 'deb http://deb.debian.org/debian testing-backports main' > /etc/apt/so
 		Size: 222.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
-### `debian:testing-backports` - linux; arm variant v7
+### `debian:testing-backports` - linux; arm variant v5
 
 ```console
-$ docker pull debian@sha256:6e2250158a78b055df9e7f87623a1e5772b98a58a068631d3204c207316698fe
+$ docker pull debian@sha256:52ffc3d718e3c00a5324688670f76e90ab6e00e4c5ff911b0c1dc6a7c7d27908
 ```
 
--	Docker Version: 17.05.0-ce
+-	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **41.8 MB (41848091 bytes)**  
+-	Total Size: **48.7 MB (48722531 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:c2bbdb1a9d2b56aad47f8fb99bf84ba7f211448291c8abf9f7c1ae877e626552`
+-	Image ID: `sha256:f9d77ac4ab8d0e58afee932467acf393909b9a25f46d271fff69e7f87508c898`
 -	Default Command: `["bash"]`
 
 ```dockerfile
-# Wed, 07 Jun 2017 17:46:52 GMT
-ADD file:6c313ed53396bbe3246e087cd00bcfe9761812e3e8ff61f2bf5dbf044eda848c in / 
-# Wed, 07 Jun 2017 17:46:54 GMT
+# Wed, 14 Aug 2019 00:56:10 GMT
+ADD file:88d05cd9dd34b3e715d8174998d45129e4e0f82f8dd7c6ee8138989108dd05a4 in / 
+# Wed, 14 Aug 2019 00:56:11 GMT
 CMD ["bash"]
-# Wed, 07 Jun 2017 17:46:58 GMT
+# Wed, 14 Aug 2019 00:56:19 GMT
 RUN echo 'deb http://deb.debian.org/debian testing-backports main' > /etc/apt/sources.list.d/backports.list
 ```
 
 -	Layers:
-	-	`sha256:50242d2d54b6bfea8663aa4ab01d5258503c5dc9ae0802d20aa0e7822a825250`  
-		Last Modified: Wed, 07 Jun 2017 17:57:36 GMT  
-		Size: 41.8 MB (41847867 bytes)  
+	-	`sha256:fc4e56a31de88151e9fa8a2c7942272de9e0ec5f28bcfc79151b754c12b07d0e`  
+		Last Modified: Wed, 14 Aug 2019 01:03:23 GMT  
+		Size: 48.7 MB (48722307 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:f5ae9eb37fd6a08a6d2f11c1d0ffc51a4afae67abcfe45bc7bdd8a989004b37f`  
-		Last Modified: Wed, 07 Jun 2017 17:57:48 GMT  
+	-	`sha256:a93706938b9e640db90aff98c3aa4b81e6bb1438d8eeb14efa66b3409df4abca`  
+		Last Modified: Wed, 14 Aug 2019 01:03:36 GMT  
 		Size: 224.0 B  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+
+### `debian:testing-backports` - linux; arm variant v7
+
+```console
+$ docker pull debian@sha256:db6d756d49c29cf8fb6c48720a64848d231b4a24c1d29e914bd0a47c9b3da519
+```
+
+-	Docker Version: 18.06.1-ce
+-	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
+-	Total Size: **46.5 MB (46451692 bytes)**  
+	(compressed transfer size, not on-disk size)
+-	Image ID: `sha256:d6ba52b2cbf3d1c4fb4ccd94b4d48d2c2c354f72199e8df722ded0ea35c20673`
+-	Default Command: `["bash"]`
+
+```dockerfile
+# Wed, 14 Aug 2019 01:06:01 GMT
+ADD file:dc4b071279c444d01fa0f14142f25f9e1d12e57745f6dba000031dcbbcbbc1dc in / 
+# Wed, 14 Aug 2019 01:06:02 GMT
+CMD ["bash"]
+# Wed, 14 Aug 2019 01:06:11 GMT
+RUN echo 'deb http://deb.debian.org/debian testing-backports main' > /etc/apt/sources.list.d/backports.list
+```
+
+-	Layers:
+	-	`sha256:3b969d3e3d0d32f716c626e9160b11d0ffcde8d171b374ab579a525a0c230b91`  
+		Last Modified: Wed, 14 Aug 2019 01:13:01 GMT  
+		Size: 46.5 MB (46451470 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:5cea0cbe5b80fd31a909c90000727a99b031fdfcaf028b9f4c467eb473dc82fd`  
+		Last Modified: Wed, 14 Aug 2019 01:13:06 GMT  
+		Size: 222.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `debian:testing-backports` - linux; arm64 variant v8
