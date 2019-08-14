@@ -1,7 +1,7 @@
 ## `varnish:stable`
 
 ```console
-$ docker pull varnish@sha256:e0dacfa723ffecadf946435d1dcf25a7dd5c1b2bc7385f514532f48e39f9ae9b
+$ docker pull varnish@sha256:35e8fe80585e07a5709c002a0cdd8c86aac9e9df91bf6005528112ba81fb6ac8
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -11,48 +11,48 @@ $ docker pull varnish@sha256:e0dacfa723ffecadf946435d1dcf25a7dd5c1b2bc7385f51453
 ### `varnish:stable` - linux; amd64
 
 ```console
-$ docker pull varnish@sha256:bb067ab6d7cdc495dda3b9abb7bcd91a6730fe82d59594c461b2cfec00665fad
+$ docker pull varnish@sha256:b1fdfcf29a4bd34fd4c04c48de846b2db80474703810a32b32130709eab565a8
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **65.1 MB (65070687 bytes)**  
+-	Total Size: **65.1 MB (65098162 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:88c4a8d37048dee136f942214dafda47008ab339e0d6cab92d3858ea77275b1d`
+-	Image ID: `sha256:32dab9331a3ce8cf2c6b6180af13b220dcc81c8a4a0752b24951d45355196eb6`
 -	Entrypoint: `["docker-varnish-entrypoint"]`
 -	Default Command: `["varnishd","-F","-f","\/etc\/varnish\/default.vcl"]`
 
 ```dockerfile
-# Tue, 09 Jul 2019 21:32:29 GMT
-ADD file:966bd7368f1e5a3e40fe5fab63ebe3c04719f677cc49385462e4dfda4c4096fb in / 
-# Tue, 09 Jul 2019 21:32:29 GMT
+# Wed, 14 Aug 2019 00:25:01 GMT
+ADD file:52a7d996761b6acc4bb35207ca6a9902086514831ac81e10874584a741871d22 in / 
+# Wed, 14 Aug 2019 00:25:02 GMT
 CMD ["bash"]
-# Wed, 17 Jul 2019 22:11:15 GMT
+# Wed, 14 Aug 2019 04:00:45 GMT
 ENV VARNISH_VERSION=6.0.3-1~stretch
-# Wed, 17 Jul 2019 22:11:38 GMT
+# Wed, 14 Aug 2019 04:01:16 GMT
 RUN set -ex; 	fetchDeps=" 		ca-certificates 		dirmngr 		gnupg 	"; 	apt-get update; 	apt-get install -y --no-install-recommends apt-transport-https $fetchDeps; 	key=48D81A24CB0456F5D59431D94CFCFD6BA750EDCD; 	export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver http://ha.pool.sks-keyservers.net/ --recv-keys $key; 	gpg --batch --export export $key > /etc/apt/trusted.gpg.d/varnish.gpg; 	gpgconf --kill all; 	rm -rf $GNUPGHOME; 	echo deb https://packagecloud.io/varnishcache/varnish60lts/debian/ stretch main > /etc/apt/sources.list.d/varnish.list; 	apt-get update; 	apt-get install -y --no-install-recommends varnish=$VARNISH_VERSION; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false $fetchDeps; 	rm -rf /var/lib/apt/lists/*
-# Wed, 17 Jul 2019 22:11:38 GMT
+# Wed, 14 Aug 2019 04:01:16 GMT
 WORKDIR /etc/varnish
-# Wed, 17 Jul 2019 22:11:38 GMT
+# Wed, 14 Aug 2019 04:01:17 GMT
 COPY file:1a9ac5e85b0e6fec4c04c946ecf8bc35d71a0d5f2f14db639ec697522be2eece in /usr/local/bin/ 
-# Wed, 17 Jul 2019 22:11:38 GMT
+# Wed, 14 Aug 2019 04:01:17 GMT
 ENTRYPOINT ["docker-varnish-entrypoint"]
-# Wed, 17 Jul 2019 22:11:38 GMT
+# Wed, 14 Aug 2019 04:01:17 GMT
 EXPOSE 80
-# Wed, 17 Jul 2019 22:11:39 GMT
+# Wed, 14 Aug 2019 04:01:17 GMT
 CMD ["varnishd" "-F" "-f" "/etc/varnish/default.vcl"]
 ```
 
 -	Layers:
-	-	`sha256:0a4690c5d889e116874bf45dc757b515565a3bd9b0f6c04054d62280bb4f4ecf`  
-		Last Modified: Tue, 09 Jul 2019 21:42:30 GMT  
-		Size: 22.5 MB (22489470 bytes)  
+	-	`sha256:9fc222b64b0a005c742f1b50f03986a7f768d41434994430718917d88fefe567`  
+		Last Modified: Wed, 14 Aug 2019 00:29:52 GMT  
+		Size: 22.5 MB (22517431 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:1283585837be2bf9e35d696bd810d7d843e0e24123b3da2e4457dc8944e521fa`  
-		Last Modified: Wed, 17 Jul 2019 22:12:11 GMT  
-		Size: 42.6 MB (42580833 bytes)  
+	-	`sha256:a549f08c5f3cc23e05b7a8cc2275395f291d3eb03e265a0744b84398f90fa5f0`  
+		Last Modified: Wed, 14 Aug 2019 04:02:00 GMT  
+		Size: 42.6 MB (42580350 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:dcafd14833148667f89c393ba88d0790d867e9be26dfd4ea73dd18cbe495ee5f`  
-		Last Modified: Wed, 17 Jul 2019 22:12:04 GMT  
-		Size: 384.0 B  
+	-	`sha256:b2962a2cad2fd6a1f2361d01bf888114320ef619e654f475d31fce405650b8b1`  
+		Last Modified: Wed, 14 Aug 2019 04:01:49 GMT  
+		Size: 381.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
