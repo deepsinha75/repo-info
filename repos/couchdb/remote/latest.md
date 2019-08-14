@@ -1,7 +1,7 @@
 ## `couchdb:latest`
 
 ```console
-$ docker pull couchdb@sha256:c8b86e3db3abc01503319c4d8dbd047db0930ac66c49bb7d765b43eb917addb3
+$ docker pull couchdb@sha256:7537a9047fea8960ed9e88123a2cb9cbd96db51767f9a9b3ccfcb174b11408c1
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -11,110 +11,110 @@ $ docker pull couchdb@sha256:c8b86e3db3abc01503319c4d8dbd047db0930ac66c49bb7d765
 ### `couchdb:latest` - linux; amd64
 
 ```console
-$ docker pull couchdb@sha256:f19e0751c52e6c6948e851a01967d7a0eef37db290b7bf3444a88d2774a04c5f
+$ docker pull couchdb@sha256:a7a7967643418a11bf42b86ad652cb01f4dc68b7872374b5e3c5219750817771
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **82.4 MB (82404462 bytes)**  
+-	Total Size: **82.4 MB (82433189 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:906d2f4cbc439ff14eadcf95b8edfef6a450cd6f318407adf8abb551ef7003b0`
+-	Image ID: `sha256:7f64c92d91fb90fd74e2c3d30dda983a1ee432d8df517a952b68a5dc323a7ea0`
 -	Entrypoint: `["tini","--","\/docker-entrypoint.sh"]`
 -	Default Command: `["\/opt\/couchdb\/bin\/couchdb"]`
 
 ```dockerfile
-# Tue, 09 Jul 2019 21:32:29 GMT
-ADD file:966bd7368f1e5a3e40fe5fab63ebe3c04719f677cc49385462e4dfda4c4096fb in / 
-# Tue, 09 Jul 2019 21:32:29 GMT
+# Wed, 14 Aug 2019 00:25:01 GMT
+ADD file:52a7d996761b6acc4bb35207ca6a9902086514831ac81e10874584a741871d22 in / 
+# Wed, 14 Aug 2019 00:25:02 GMT
 CMD ["bash"]
-# Thu, 18 Jul 2019 00:14:48 GMT
+# Wed, 14 Aug 2019 03:56:00 GMT
 LABEL maintainer=CouchDB Developers dev@couchdb.apache.org
-# Thu, 18 Jul 2019 00:14:49 GMT
+# Wed, 14 Aug 2019 03:56:01 GMT
 RUN groupadd -g 5984 -r couchdb && useradd -u 5984 -d /opt/couchdb -g couchdb couchdb
-# Thu, 18 Jul 2019 00:14:59 GMT
+# Wed, 14 Aug 2019 03:56:13 GMT
 RUN set -ex;         apt-get update;         apt-get install -y --no-install-recommends                 apt-transport-https                 ca-certificates                 dirmngr                 gnupg         ;         rm -rf /var/lib/apt/lists/*
-# Thu, 18 Jul 2019 00:14:59 GMT
+# Wed, 14 Aug 2019 03:56:13 GMT
 ENV GOSU_VERSION=1.11
-# Thu, 18 Jul 2019 00:14:59 GMT
+# Wed, 14 Aug 2019 03:56:13 GMT
 ENV TINI_VERSION=0.18.0
-# Thu, 18 Jul 2019 00:15:08 GMT
+# Wed, 14 Aug 2019 03:57:27 GMT
 RUN set -ex; 		apt-get update; 	apt-get install -y --no-install-recommends wget; 	rm -rf /var/lib/apt/lists/*; 		dpkgArch="$(dpkg --print-architecture | awk -F- '{ print $NF }')"; 		wget -O /usr/local/bin/gosu "https://github.com/tianon/gosu/releases/download/${GOSU_VERSION}/gosu-$dpkgArch"; 	wget -O /usr/local/bin/gosu.asc "https://github.com/tianon/gosu/releases/download/$GOSU_VERSION/gosu-$dpkgArch.asc"; 	export GNUPGHOME="$(mktemp -d)";         echo "disable-ipv6" >> ${GNUPGHOME}/dirmngr.conf;         for server in $(shuf -e pgpkeys.mit.edu             ha.pool.sks-keyservers.net             hkp://p80.pool.sks-keyservers.net:80             pgp.mit.edu) ; do         gpg --batch --keyserver $server --recv-keys B42F6819007F00F88E364FD4036A9C25BF357DD4 && break || : ;         done; 	gpg --batch --verify /usr/local/bin/gosu.asc /usr/local/bin/gosu; 	rm -rf "$GNUPGHOME" /usr/local/bin/gosu.asc; 	chmod +x /usr/local/bin/gosu; 	gosu nobody true;     	wget -O /usr/local/bin/tini "https://github.com/krallin/tini/releases/download/v${TINI_VERSION}/tini-$dpkgArch"; 	wget -O /usr/local/bin/tini.asc "https://github.com/krallin/tini/releases/download/v${TINI_VERSION}/tini-$dpkgArch.asc"; 	export GNUPGHOME="$(mktemp -d)";         echo "disable-ipv6" >> ${GNUPGHOME}/dirmngr.conf;         for server in $(shuf -e pgpkeys.mit.edu             ha.pool.sks-keyservers.net             hkp://p80.pool.sks-keyservers.net:80             pgp.mit.edu) ; do         gpg --batch --keyserver $server --recv-keys 595E85A6B1B4779EA4DAAEC70B588DFF0527A9B7 && break || : ;         done; 	gpg --batch --verify /usr/local/bin/tini.asc /usr/local/bin/tini; 	rm -rf "$GNUPGHOME" /usr/local/bin/tini.asc; 	chmod +x /usr/local/bin/tini;         apt-get purge -y --auto-remove wget; 	tini --version
-# Thu, 18 Jul 2019 00:15:08 GMT
+# Wed, 14 Aug 2019 03:57:27 GMT
 ENV GPG_COUCH_KEY=8756C4F765C9AC3CB6B85D62379CE192D401AB61
-# Thu, 18 Jul 2019 00:15:12 GMT
+# Wed, 14 Aug 2019 03:57:30 GMT
 RUN set -xe;         export GNUPGHOME="$(mktemp -d)";         echo "disable-ipv6" >> ${GNUPGHOME}/dirmngr.conf;         for server in $(shuf -e pgpkeys.mit.edu             ha.pool.sks-keyservers.net             hkp://p80.pool.sks-keyservers.net:80             pgp.mit.edu) ; do                 gpg --batch --keyserver $server --recv-keys $GPG_COUCH_KEY && break || : ;         done;         gpg --batch --export $GPG_COUCH_KEY > /etc/apt/trusted.gpg.d/couchdb.gpg;         command -v gpgconf && gpgconf --kill all || :;         rm -rf "$GNUPGHOME";         apt-key list
-# Thu, 18 Jul 2019 00:15:12 GMT
+# Wed, 14 Aug 2019 03:57:31 GMT
 ENV COUCHDB_VERSION=2.3.1
-# Thu, 18 Jul 2019 00:15:13 GMT
+# Wed, 14 Aug 2019 03:57:32 GMT
 RUN echo "deb https://apache.bintray.com/couchdb-deb stretch main" > /etc/apt/sources.list.d/couchdb.list
-# Thu, 18 Jul 2019 00:15:33 GMT
+# Wed, 14 Aug 2019 03:58:02 GMT
 RUN set -xe;         apt-get update;                 echo "couchdb couchdb/mode select none" | debconf-set-selections;         DEBIAN_FRONTEND=noninteractive apt-get install -y --allow-downgrades --allow-remove-essential --allow-change-held-packages                 couchdb="$COUCHDB_VERSION"~stretch         ;         rmdir /var/lib/couchdb /var/log/couchdb;         rm /opt/couchdb/data /opt/couchdb/var/log;         mkdir -p /opt/couchdb/data /opt/couchdb/var/log;         chown couchdb:couchdb /opt/couchdb/data /opt/couchdb/var/log;         chmod 777 /opt/couchdb/data /opt/couchdb/var/log;         rm /opt/couchdb/etc/default.d/10-filelog.ini;         rm -rf /var/lib/apt/lists/*
-# Thu, 18 Jul 2019 00:15:33 GMT
+# Wed, 14 Aug 2019 03:58:02 GMT
 COPY file:74a26e2e31f9b408e93e4a065004a86e00211d06a4ce6ab1fbc23640bd92a929 in /opt/couchdb/etc/default.d/ 
-# Thu, 18 Jul 2019 00:15:34 GMT
+# Wed, 14 Aug 2019 03:58:03 GMT
 COPY file:f98e48e4254cb3ec4a766f3b9bd3260f16676a310eb0356ee9775c62edb3e8f3 in /opt/couchdb/etc/ 
-# Thu, 18 Jul 2019 00:15:34 GMT
+# Wed, 14 Aug 2019 03:58:03 GMT
 COPY file:fc62f0c3f2a39a070ec3c03ac9e1f9ae02b94364cb5492a733584c34458af969 in /usr/local/bin 
-# Thu, 18 Jul 2019 00:15:34 GMT
+# Wed, 14 Aug 2019 03:58:04 GMT
 RUN ln -s usr/local/bin/docker-entrypoint.sh /docker-entrypoint.sh # backwards compat
-# Thu, 18 Jul 2019 00:15:35 GMT
+# Wed, 14 Aug 2019 03:58:05 GMT
 ENTRYPOINT ["tini" "--" "/docker-entrypoint.sh"]
-# Thu, 18 Jul 2019 00:15:35 GMT
+# Wed, 14 Aug 2019 03:58:06 GMT
 RUN chown -R couchdb:couchdb /opt/couchdb/etc/default.d/ /opt/couchdb/etc/vm.args
-# Thu, 18 Jul 2019 00:15:35 GMT
+# Wed, 14 Aug 2019 03:58:06 GMT
 VOLUME [/opt/couchdb/data]
-# Thu, 18 Jul 2019 00:15:36 GMT
+# Wed, 14 Aug 2019 03:58:06 GMT
 EXPOSE 4369 5984 9100
-# Thu, 18 Jul 2019 00:15:36 GMT
+# Wed, 14 Aug 2019 03:58:07 GMT
 CMD ["/opt/couchdb/bin/couchdb"]
 ```
 
 -	Layers:
-	-	`sha256:0a4690c5d889e116874bf45dc757b515565a3bd9b0f6c04054d62280bb4f4ecf`  
-		Last Modified: Tue, 09 Jul 2019 21:42:30 GMT  
-		Size: 22.5 MB (22489470 bytes)  
+	-	`sha256:9fc222b64b0a005c742f1b50f03986a7f768d41434994430718917d88fefe567`  
+		Last Modified: Wed, 14 Aug 2019 00:29:52 GMT  
+		Size: 22.5 MB (22517431 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:095ff19fe259b71dc404b6f803aeb591b27865d1124e0af5fd0e984a416d9220`  
-		Last Modified: Thu, 18 Jul 2019 00:16:32 GMT  
-		Size: 3.4 KB (3416 bytes)  
+	-	`sha256:44729c6747cd5389763060e631def65acc065e03727c1d18bcdd0ed47839521a`  
+		Last Modified: Wed, 14 Aug 2019 03:59:14 GMT  
+		Size: 3.4 KB (3414 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:766589c7aefbd68a51b7fc99a0af297531207a6ddba231280ace4c1b2ba17ae4`  
-		Last Modified: Thu, 18 Jul 2019 00:16:33 GMT  
-		Size: 8.5 MB (8512524 bytes)  
+	-	`sha256:22cd36b1c7e06f5cabae2c95f50bedbedcd77aa4adce06c2bc0ed962761e5778`  
+		Last Modified: Wed, 14 Aug 2019 03:59:16 GMT  
+		Size: 8.5 MB (8512633 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:7c1a00a6155ab0feee1cf210169d4f2eafae60c8aa245a906c622fd369ec9986`  
-		Last Modified: Thu, 18 Jul 2019 00:16:31 GMT  
-		Size: 1.2 MB (1190559 bytes)  
+	-	`sha256:10eb0fb2107069f976484c353331be6c5e5d03d9c71da954cd8be7e3562df266`  
+		Last Modified: Wed, 14 Aug 2019 03:59:13 GMT  
+		Size: 1.2 MB (1190674 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:f6d6438565a9da85dee5aba20e6bf601367249080cad558b91ae54d4fa5ff104`  
-		Last Modified: Thu, 18 Jul 2019 00:16:31 GMT  
+	-	`sha256:933ccaacb82959618b2cb79657683c44dcea73784ed5d995f2ece8e009a2bad7`  
+		Last Modified: Wed, 14 Aug 2019 03:59:13 GMT  
 		Size: 2.5 KB (2492 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:7cadb198ed0c534b342243ba7d00f18d78a0e7269d23afc9294237e265ba2587`  
-		Last Modified: Thu, 18 Jul 2019 00:16:31 GMT  
+	-	`sha256:a57a2e69f1861609d3db7954af3baab80004144c341c8d67cd97b967a4c644dc`  
+		Last Modified: Wed, 14 Aug 2019 03:59:12 GMT  
 		Size: 223.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:e5c88fbd27c25ab4889376adee72360e7cc7c45c404b8ac10722e2a33d7695d7`  
-		Last Modified: Thu, 18 Jul 2019 00:16:38 GMT  
-		Size: 50.2 MB (50201455 bytes)  
+	-	`sha256:e2d3a4d9c05a8e35c7a8578446d51e4fbd7b972b9dce8953bba1bdc88d2a8c38`  
+		Last Modified: Wed, 14 Aug 2019 03:59:24 GMT  
+		Size: 50.2 MB (50202002 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:4192da792a3bd32cf1e63ddea85af4180fe8503bb5805c6bc2fec52ef21955e3`  
-		Last Modified: Thu, 18 Jul 2019 00:16:31 GMT  
-		Size: 389.0 B  
+	-	`sha256:0df203c5c8faf870187fa4a11b4886491b1ce6f98c2e70ab62e9fc986cb13794`  
+		Last Modified: Wed, 14 Aug 2019 03:59:11 GMT  
+		Size: 387.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:33f8a826f2be534a81d466f74b043f7e31ba3f7f23998886c6ed45042bc8bc44`  
-		Last Modified: Thu, 18 Jul 2019 00:16:30 GMT  
-		Size: 767.0 B  
+	-	`sha256:1e2f5a07c8b5305486d2e0055c87e9b0e57fb014df52fd27ed5279d879b0d5f4`  
+		Last Modified: Wed, 14 Aug 2019 03:59:11 GMT  
+		Size: 768.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:6eb0278c698100af61a72dcdb4ed3842cb2dfa0e8d3a5dda78a6fd2009119de6`  
-		Last Modified: Thu, 18 Jul 2019 00:16:30 GMT  
-		Size: 1.9 KB (1880 bytes)  
+	-	`sha256:1a462839789b21c836734b45d9e3071500ea6a6f831b7c37416b0b262a79e5b9`  
+		Last Modified: Wed, 14 Aug 2019 03:59:12 GMT  
+		Size: 1.9 KB (1874 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:f3247ca4c81444924691856fcacb65272504aeac1d3c1d696d0628bd9559c7df`  
-		Last Modified: Thu, 18 Jul 2019 00:16:30 GMT  
+	-	`sha256:d4f24ec05ad61bd66447b40e358b86c28e1552adb695b45cbb89d5efa3f04640`  
+		Last Modified: Wed, 14 Aug 2019 03:59:12 GMT  
 		Size: 121.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:bc51bbbc4a36b72856063f73b02d71dcda0f9994750a648027b1b3581a699423`  
-		Last Modified: Thu, 18 Jul 2019 00:16:30 GMT  
-		Size: 1.2 KB (1166 bytes)  
+	-	`sha256:53f618dd0a45564c940112ef7aea766a8e550f7809f0f80084d40835648d025a`  
+		Last Modified: Wed, 14 Aug 2019 03:59:12 GMT  
+		Size: 1.2 KB (1170 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
