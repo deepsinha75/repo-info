@@ -1,7 +1,7 @@
 ## `traefik:maroilles`
 
 ```console
-$ docker pull traefik@sha256:b025113ba0025a772eb3b0c5bf4d9ba7786c3d03d9c6720d2e78cbe6f6d39700
+$ docker pull traefik@sha256:cc6ad08785fa21191c160394fd4eb2635c83f05d4d6dddda420e3bd74d4cb4f3
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -51,29 +51,29 @@ LABEL org.opencontainers.image.vendor=Containous org.opencontainers.image.url=ht
 ### `traefik:maroilles` - linux; arm variant v6
 
 ```console
-$ docker pull traefik@sha256:c5d4ce1001888a4866cf2898b0b352c1c21a68ead40cbae2024dff57742fe39c
+$ docker pull traefik@sha256:ea0e0f255684d969204366525b71bfdf817973d9f6e4122048c33f53bcd23c8b
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **20.5 MB (20518638 bytes)**  
+-	Total Size: **22.1 MB (22116649 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:2efc7e7666502ad0bbcbe78ade3891ae01c1b9cd182c84f4a59caa64fe63255e`
+-	Image ID: `sha256:fe3090deae7097c098e24910295b69140d6d1d41c1e5ccfbf7f0c3f219c80821`
 -	Entrypoint: `["\/traefik"]`
 
 ```dockerfile
 # Wed, 20 Mar 2019 08:11:08 GMT
 COPY file:16631ba5b73b1c0ef18d038c89d29ce03d2772a9a3d775abef35c4085f29a3bf in /etc/ssl/certs/ 
-# Thu, 08 Aug 2019 23:20:23 GMT
-COPY file:d376d7d3643b76df130197eadfafa7ebe1766147028c39b5932e11a469c8653c in / 
-# Thu, 08 Aug 2019 23:20:24 GMT
+# Wed, 14 Aug 2019 20:50:36 GMT
+COPY file:c1492ddccc0791c008f7aee02bd9fbcfcdbddc04d8ac95b5583e36080bd93775 in / 
+# Wed, 14 Aug 2019 20:50:38 GMT
 EXPOSE 80
-# Thu, 08 Aug 2019 23:20:24 GMT
+# Wed, 14 Aug 2019 20:50:39 GMT
 VOLUME [/tmp]
-# Thu, 08 Aug 2019 23:20:25 GMT
+# Wed, 14 Aug 2019 20:50:39 GMT
 ENTRYPOINT ["/traefik"]
-# Thu, 08 Aug 2019 23:20:25 GMT
-LABEL org.opencontainers.image.vendor=Containous org.opencontainers.image.url=https://traefik.io org.opencontainers.image.title=Traefik org.opencontainers.image.description=A modern reverse-proxy org.opencontainers.image.version=v1.7.13 org.opencontainers.image.documentation=https://docs.traefik.io
+# Wed, 14 Aug 2019 20:50:40 GMT
+LABEL org.opencontainers.image.vendor=Containous org.opencontainers.image.url=https://traefik.io org.opencontainers.image.title=Traefik org.opencontainers.image.description=A modern reverse-proxy org.opencontainers.image.version=v1.7.14 org.opencontainers.image.documentation=https://docs.traefik.io
 ```
 
 -	Layers:
@@ -81,9 +81,9 @@ LABEL org.opencontainers.image.vendor=Containous org.opencontainers.image.url=ht
 		Last Modified: Wed, 20 Mar 2019 08:11:50 GMT  
 		Size: 132.0 KB (132022 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:557fddd4db6a39c7461c2979e43a4e252e90e6ce65fa9953af29c3631cc1e0bd`  
-		Last Modified: Thu, 08 Aug 2019 23:21:04 GMT  
-		Size: 20.4 MB (20386616 bytes)  
+	-	`sha256:48da10947f5f76b7b6a4a1db265287f98a22e48c2419e4399491d5d3ab464e27`  
+		Last Modified: Wed, 14 Aug 2019 20:51:20 GMT  
+		Size: 22.0 MB (21984627 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `traefik:maroilles` - linux; arm64 variant v8
