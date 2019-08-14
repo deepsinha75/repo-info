@@ -1,7 +1,7 @@
 ## `buildpack-deps:jessie-curl`
 
 ```console
-$ docker pull buildpack-deps@sha256:8aa0416d4932dc20101e3809e5f5bef6d9a63286c87fbdc3283ec640b702d6fa
+$ docker pull buildpack-deps@sha256:2c46482cca8d61941510174837f09ffbf6e33702e7091c9923da678298b8e86d
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -14,35 +14,35 @@ $ docker pull buildpack-deps@sha256:8aa0416d4932dc20101e3809e5f5bef6d9a63286c87f
 ### `buildpack-deps:jessie-curl` - linux; amd64
 
 ```console
-$ docker pull buildpack-deps@sha256:999da26e7ab71bb59aa01e97895e31f61ed5349448412eb588b447708f435ca7
+$ docker pull buildpack-deps@sha256:6c2c14e0d4f0b45f6fc00e79a1ba79b6f955e3e9bbba92be65f3ceb5d9664234
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **72.0 MB (71958165 bytes)**  
+-	Total Size: **72.0 MB (71959416 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:d582584bb28bb3040a38e72ff02ff16836bf77aeac6996ce53a8301593b86e9d`
+-	Image ID: `sha256:4abbe313d43594b6e5c09fd2f731393086d6cb0de69a552dd129601462174862`
 -	Default Command: `["bash"]`
 
 ```dockerfile
-# Tue, 09 Jul 2019 21:23:11 GMT
-ADD file:a52f3eda09520fde44c53600780c334b6fdf236ba4e1dceda6e071ee071b51ae in / 
-# Tue, 09 Jul 2019 21:23:12 GMT
+# Wed, 14 Aug 2019 00:22:26 GMT
+ADD file:a074ac8983e9c67dd902916c78eebb3265833366eaf2eea0dc5d2b2491a1793c in / 
+# Wed, 14 Aug 2019 00:22:26 GMT
 CMD ["bash"]
-# Wed, 10 Jul 2019 02:20:41 GMT
+# Wed, 14 Aug 2019 06:16:17 GMT
 RUN apt-get update && apt-get install -y --no-install-recommends 		ca-certificates 		curl 		netbase 		wget 	&& rm -rf /var/lib/apt/lists/*
-# Wed, 10 Jul 2019 02:20:42 GMT
+# Wed, 14 Aug 2019 06:16:19 GMT
 RUN set -ex; 	if ! command -v gpg > /dev/null; then 		apt-get update; 		apt-get install -y --no-install-recommends 			gnupg 			dirmngr 		; 		rm -rf /var/lib/apt/lists/*; 	fi
 ```
 
 -	Layers:
-	-	`sha256:e7a7e6031030b465d2943d42d4a924c4ba3e3ef12c82a7991371604b656cbea8`  
-		Last Modified: Tue, 09 Jul 2019 21:38:51 GMT  
-		Size: 54.4 MB (54385832 bytes)  
+	-	`sha256:b0b8081c21b9322a5f82f44583a12eb4924be089b258b4c06dd34e97dd1c1911`  
+		Last Modified: Wed, 14 Aug 2019 00:27:30 GMT  
+		Size: 54.4 MB (54385602 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:e8063d4a3a1421df6a62f8416c2fb74b1fee783098e79591169cc5901bdb9deb`  
-		Last Modified: Wed, 10 Jul 2019 02:36:56 GMT  
-		Size: 17.6 MB (17572333 bytes)  
+	-	`sha256:c9939fad9f0511f8615f01cadd0bf27a7156d6d29da2bdca0f1ec9141e6892ac`  
+		Last Modified: Wed, 14 Aug 2019 06:27:51 GMT  
+		Size: 17.6 MB (17573814 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `buildpack-deps:jessie-curl` - linux; arm variant v5
@@ -116,33 +116,33 @@ RUN set -ex; 	if ! command -v gpg > /dev/null; then 		apt-get update; 		apt-get 
 ### `buildpack-deps:jessie-curl` - linux; 386
 
 ```console
-$ docker pull buildpack-deps@sha256:e444375f1e4adc9c8cb0c6d6c64677219d5db2fbf6874c57671a5b97da3d1971
+$ docker pull buildpack-deps@sha256:a54322dfcbd3437c28a09d4a413dc812030024621f9dc65bb08d462f9e5dbba2
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **74.5 MB (74455508 bytes)**  
+-	Total Size: **74.5 MB (74455871 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:71ba3c55c3dbd05656e4134dbd50cf6e64c1f0a80eac98478218814b24d3edc3`
+-	Image ID: `sha256:ea72d697ae3335d57bf06a6a99f40015cddceaa5075fcf1b1df451080dd3d11e`
 -	Default Command: `["bash"]`
 
 ```dockerfile
-# Tue, 09 Jul 2019 23:49:23 GMT
-ADD file:da9de1d265144cf3832523b802327ae0935f3aa33405ec6ef5b0c3cceac51eff in / 
-# Tue, 09 Jul 2019 23:49:23 GMT
+# Wed, 14 Aug 2019 00:41:25 GMT
+ADD file:c8cc5662a14c13349a680a2708ca9de6c6d1fb04937a0ba5aed233b89bd01979 in / 
+# Wed, 14 Aug 2019 00:41:25 GMT
 CMD ["bash"]
-# Wed, 10 Jul 2019 08:57:34 GMT
+# Wed, 14 Aug 2019 06:14:16 GMT
 RUN apt-get update && apt-get install -y --no-install-recommends 		ca-certificates 		curl 		netbase 		wget 	&& rm -rf /var/lib/apt/lists/*
-# Wed, 10 Jul 2019 08:57:35 GMT
+# Wed, 14 Aug 2019 06:14:19 GMT
 RUN set -ex; 	if ! command -v gpg > /dev/null; then 		apt-get update; 		apt-get install -y --no-install-recommends 			gnupg 			dirmngr 		; 		rm -rf /var/lib/apt/lists/*; 	fi
 ```
 
 -	Layers:
-	-	`sha256:1d4fd967abd81c6645603de796986dca09a8cd2300dddb4cd7249ff8c3450ad8`  
-		Last Modified: Wed, 10 Jul 2019 00:01:46 GMT  
-		Size: 54.6 MB (54605457 bytes)  
+	-	`sha256:2bce10a17820623c637335f359de649c15474a9396d318833b90859a290278ce`  
+		Last Modified: Wed, 14 Aug 2019 00:47:16 GMT  
+		Size: 54.6 MB (54605006 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:b968547105be70482cf59dd5a4a81ba0f8d60375fc83471145b21fe78f1aa9e9`  
-		Last Modified: Wed, 10 Jul 2019 09:11:48 GMT  
-		Size: 19.9 MB (19850051 bytes)  
+	-	`sha256:6bc0a7505bae931345f54596a717ab321b9d3f83c206f157fac2c1673c2e833b`  
+		Last Modified: Wed, 14 Aug 2019 06:29:26 GMT  
+		Size: 19.9 MB (19850865 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
