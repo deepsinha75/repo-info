@@ -1,20 +1,18 @@
-## `debian:oldstable`
+## `debian:oldstable-20190812`
 
 ```console
-$ docker pull debian@sha256:d168be8127564400681d34c06fa3f76159ebe0a0c12050591f9d52c555e5e9cd
+$ docker pull debian@sha256:dfb3b4e7f038c8925a98c96acd932b4589422ec13f43dce515e78c237cb7200a
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
 -	Platforms:
 	-	linux; amd64
-	-	linux; arm variant v5
-	-	linux; arm variant v7
 	-	linux; arm64 variant v8
 	-	linux; 386
 	-	linux; ppc64le
 	-	linux; s390x
 
-### `debian:oldstable` - linux; amd64
+### `debian:oldstable-20190812` - linux; amd64
 
 ```console
 $ docker pull debian@sha256:bc7035b446208eb84078322b80c9c045782351a7f3bf5d439e8fabbdc1659fe2
@@ -40,59 +38,7 @@ CMD ["bash"]
 		Size: 45.4 MB (45372116 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
-### `debian:oldstable` - linux; arm variant v5
-
-```console
-$ docker pull debian@sha256:d148911b9a856a629b0ad46a11ce4d9a0f37efa8fe4cd0eb863c492dc0b6273e
-```
-
--	Docker Version: 18.06.1-ce
--	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **44.0 MB (44048604 bytes)**  
-	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:7709831fc8af5bfb4faea2c86f4e0de9da38cb6ece8ac19dda92e1a57108e0a0`
--	Default Command: `["bash"]`
-
-```dockerfile
-# Tue, 09 Jul 2019 22:45:38 GMT
-ADD file:50fcedcec9aa029b8de6509e4d33c6539120d91b34abb65ae94b99e68abc68d4 in / 
-# Tue, 09 Jul 2019 22:45:40 GMT
-CMD ["bash"]
-```
-
--	Layers:
-	-	`sha256:f31124fbd4ee92ee6ee69e7e3bf03f6ea7a2b584eae1c2d92fa0dd4887b6eb60`  
-		Last Modified: Tue, 09 Jul 2019 22:54:19 GMT  
-		Size: 44.0 MB (44048604 bytes)  
-		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-
-### `debian:oldstable` - linux; arm variant v7
-
-```console
-$ docker pull debian@sha256:5ee5facb27073f1e8a62253630ff399109b53668e428c67fda3778e606307b3c
-```
-
--	Docker Version: 18.06.1-ce
--	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **42.1 MB (42082999 bytes)**  
-	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:18ce12435abb41090cc9288431426831dde149f7005e4c9de9b2829ad6d77c82`
--	Default Command: `["bash"]`
-
-```dockerfile
-# Tue, 09 Jul 2019 21:10:10 GMT
-ADD file:2fba2c7c29ffbd0ab2e467291048efaed00f3a507ceeb17fcae870c792771495 in / 
-# Tue, 09 Jul 2019 21:10:12 GMT
-CMD ["bash"]
-```
-
--	Layers:
-	-	`sha256:1f316b1467cfb4e3a8dca5475fdef339ca6e3b3841d61b46a59465766848b3f6`  
-		Last Modified: Tue, 09 Jul 2019 21:19:15 GMT  
-		Size: 42.1 MB (42082999 bytes)  
-		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-
-### `debian:oldstable` - linux; arm64 variant v8
+### `debian:oldstable-20190812` - linux; arm64 variant v8
 
 ```console
 $ docker pull debian@sha256:8106182e5e00394aeed0a7d93de7e1477c363ed017e7d7a2bc684e6b38904f19
@@ -118,7 +64,7 @@ CMD ["bash"]
 		Size: 43.1 MB (43140001 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
-### `debian:oldstable` - linux; 386
+### `debian:oldstable-20190812` - linux; 386
 
 ```console
 $ docker pull debian@sha256:ed979fbed20d3a72832f262bb6efda452f071408334e9da10f3be931f5b7bd4e
@@ -144,7 +90,7 @@ CMD ["bash"]
 		Size: 46.1 MB (46089492 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
-### `debian:oldstable` - linux; ppc64le
+### `debian:oldstable-20190812` - linux; ppc64le
 
 ```console
 $ docker pull debian@sha256:d5c153ad6a08a59ac79b4e6f620c8c3ea667e1a572e60c0b86955bfa8365f518
@@ -170,7 +116,7 @@ CMD ["bash"]
 		Size: 45.7 MB (45652344 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
-### `debian:oldstable` - linux; s390x
+### `debian:oldstable-20190812` - linux; s390x
 
 ```console
 $ docker pull debian@sha256:0c11f700df2d80540ede0f83e2c4a6963fb5ee89ac21806b45972fce2852684f
