@@ -1,18 +1,18 @@
-# `bash:devel-20190802`
+# `bash:devel-20190809`
 
 ## Docker Metadata
 
-- Image ID: `sha256:6e7894786cdf369cf5d045457a1cc8d97f0eea63f0833c519f23e0d37bc5ddb4`
-- Created: `2019-08-05T22:20:08.830412523Z`
-- Virtual Size: ~ 15.45 Mb  
+- Image ID: `sha256:f2e2cb44ebe23c71f77dfa805f4c534204f8b648ee94ea06590c7c538f52a2c3`
+- Created: `2019-08-12T23:20:07.522512591Z`
+- Virtual Size: ~ 16.03 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["docker-entrypoint.sh"]`
 - Command: `["bash"]`
 - Environment:
   - `PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
-  - `_BASH_COMMIT=4c39fa08abaa7e9b23c1760a5a3be893cbd33aef`
-  - `_BASH_COMMIT_DESC=commit bash-20190802 snapshot`
+  - `_BASH_COMMIT=c3bca1d0a5261959c501553da7aa964e428dca6c`
+  - `_BASH_COMMIT_DESC=commit bash-20190809 snapshot`
 
 ## `apk` (`.apk`-based packages)
 
@@ -172,16 +172,16 @@ ISC
 ### `apk` package: `musl`
 
 ```console
-musl-1.1.22-r2 description:
+musl-1.1.22-r3 description:
 the musl c library (libc) implementation
 
-musl-1.1.22-r2 webpage:
+musl-1.1.22-r3 webpage:
 http://www.musl-libc.org/
 
-musl-1.1.22-r2 installed size:
+musl-1.1.22-r3 installed size:
 598016
 
-musl-1.1.22-r2 license:
+musl-1.1.22-r3 license:
 MIT
 
 ```
