@@ -2,9 +2,9 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:82d285d783b688bc81ebb2e93b9783ecba3cf7731a58591390b2c11e594777ab`
-- Created: `2019-07-30T01:21:44.702620025Z`
-- Virtual Size: ~ 850.16 Mb  
+- Image ID: `sha256:681e8fcec6bd93d839a4552e69243a931c94071864217cb46e7a3ca2e8f62e07`
+- Created: `2019-08-15T06:51:27.711543203Z`
+- Virtual Size: ~ 855.02 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["/entrypoint.sh"]`
@@ -15,9 +15,9 @@
   - `PYTHONIOENCODING=UTF-8`
   - `GPG_KEY=C01E1CAD5EA2C4F0B8E3571504C367C218ADD4FF`
   - `PYTHON_VERSION=2.7.16`
-  - `PYTHON_PIP_VERSION=19.2.1`
-  - `PYTHON_GET_PIP_URL=https://github.com/pypa/get-pip/raw/404c9418e33c5031b1a9ab623168b3e8a2ed8c88/get-pip.py`
-  - `PYTHON_GET_PIP_SHA256=56bb63d3cf54e7444351256f72a60f575f6d8c7f1faacffae33167afc8e7609d`
+  - `PYTHON_PIP_VERSION=19.2.2`
+  - `PYTHON_GET_PIP_URL=https://github.com/pypa/get-pip/raw/0c72a3b4ece313faccb446a96c84770ccedc5ec5/get-pip.py`
+  - `PYTHON_GET_PIP_SHA256=201edc6df416da971e64cc94992d2dd24bc328bada7444f0c4f2031ae31e8dad`
   - `PIP_NO_CACHE_DIR=off`
   - `PIP_DISABLE_PIP_VERSION_CHECK=on`
   - `SENTRY_VERSION=9.1.2`
@@ -489,11 +489,11 @@ Other potentially useful URLs:
 - https://sources.debian.net/src/debconf/1.5.61/debian/copyright/ (for direct copyright/license information)
 - http://snapshot.debian.org/package/debconf/1.5.61/ (for access to the source package after it no longer exists in the archive)
 
-### `dpkg` source package: `debian-archive-keyring=2017.5`
+### `dpkg` source package: `debian-archive-keyring=2017.5+deb9u1`
 
 Binary Packages:
 
-- `debian-archive-keyring=2017.5`
+- `debian-archive-keyring=2017.5+deb9u1`
 
 Licenses: (parsed from: `/usr/share/doc/debian-archive-keyring/copyright`)
 
@@ -502,16 +502,16 @@ Licenses: (parsed from: `/usr/share/doc/debian-archive-keyring/copyright`)
 Source:
 
 ```console
-$ apt-get source -qq --print-uris debian-archive-keyring=2017.5
-'http://deb.debian.org/debian/pool/main/d/debian-archive-keyring/debian-archive-keyring_2017.5.dsc' debian-archive-keyring_2017.5.dsc 1597 SHA256:202c8424b79747e7a3d74b1e3d6f8748b211eb6ee1f2cb9c56f3c28ad9bc4f02
-'http://deb.debian.org/debian/pool/main/d/debian-archive-keyring/debian-archive-keyring_2017.5.tar.xz' debian-archive-keyring_2017.5.tar.xz 79324 SHA256:6e06a47c79948d7a2f6b5bcfbf1f615293da329226bc9d7ad692cb67d2f4b731
+$ apt-get source -qq --print-uris debian-archive-keyring=2017.5+deb9u1
+'http://deb.debian.org/debian/pool/main/d/debian-archive-keyring/debian-archive-keyring_2017.5+deb9u1.dsc' debian-archive-keyring_2017.5+deb9u1.dsc 1827 SHA256:bc03dac3958c0d9de0a161fbd1ea3d69cd8e9146df4ce6fa4b69f80189c6b21b
+'http://deb.debian.org/debian/pool/main/d/debian-archive-keyring/debian-archive-keyring_2017.5+deb9u1.tar.xz' debian-archive-keyring_2017.5+deb9u1.tar.xz 116344 SHA256:dcfffc87cc382bda49de654d205abb586519c0859d6c570f1eabdfa997350806
 ```
 
 Other potentially useful URLs:
 
-- https://sources.debian.net/src/debian-archive-keyring/2017.5/ (for browsing the source)
-- https://sources.debian.net/src/debian-archive-keyring/2017.5/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/debian-archive-keyring/2017.5/ (for access to the source package after it no longer exists in the archive)
+- https://sources.debian.net/src/debian-archive-keyring/2017.5+deb9u1/ (for browsing the source)
+- https://sources.debian.net/src/debian-archive-keyring/2017.5+deb9u1/debian/copyright/ (for direct copyright/license information)
+- http://snapshot.debian.org/package/debian-archive-keyring/2017.5+deb9u1/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `debianutils=4.8.1.1`
 
@@ -1715,11 +1715,11 @@ Other potentially useful URLs:
 - https://sources.debian.net/src/libyaml/0.1.7-2/debian/copyright/ (for direct copyright/license information)
 - http://snapshot.debian.org/package/libyaml/0.1.7-2/ (for access to the source package after it no longer exists in the archive)
 
-### `dpkg` source package: `linux=4.9.168-1+deb9u4`
+### `dpkg` source package: `linux=4.9.168-1+deb9u5`
 
 Binary Packages:
 
-- `linux-libc-dev:amd64=4.9.168-1+deb9u4`
+- `linux-libc-dev:amd64=4.9.168-1+deb9u5`
 
 Licenses: (parsed from: `/usr/share/doc/linux-libc-dev/copyright`)
 
@@ -1732,17 +1732,17 @@ Licenses: (parsed from: `/usr/share/doc/linux-libc-dev/copyright`)
 Source:
 
 ```console
-$ apt-get source -qq --print-uris linux=4.9.168-1+deb9u4
-'http://security.debian.org/debian-security/pool/updates/main/l/linux/linux_4.9.168-1+deb9u4.dsc' linux_4.9.168-1+deb9u4.dsc 123383 SHA256:a63810174d59218cf46dd0afe40698752206c9102dd8b25f34e6166817b190aa
+$ apt-get source -qq --print-uris linux=4.9.168-1+deb9u5
+'http://security.debian.org/debian-security/pool/updates/main/l/linux/linux_4.9.168-1+deb9u5.dsc' linux_4.9.168-1+deb9u5.dsc 123228 SHA256:12cbabcdc842d826a334c3cece306929ddc4990f0147f49fd93ba45a605992ed
 'http://security.debian.org/debian-security/pool/updates/main/l/linux/linux_4.9.168.orig.tar.xz' linux_4.9.168.orig.tar.xz 94774584 SHA256:8a2c04045b47472584fc8e72d8663b5c720b8ba5efba878f48ddba93bac29a7f
-'http://security.debian.org/debian-security/pool/updates/main/l/linux/linux_4.9.168-1+deb9u4.debian.tar.xz' linux_4.9.168-1+deb9u4.debian.tar.xz 2748776 SHA256:4bed26b58e6e498bce117aef16506e5a29cde6bb86b53bc6109d943a7d5cffe2
+'http://security.debian.org/debian-security/pool/updates/main/l/linux/linux_4.9.168-1+deb9u5.debian.tar.xz' linux_4.9.168-1+deb9u5.debian.tar.xz 2777140 SHA256:f4947a6d24e2d3983ec63bb0fef6235c07bd7fc503dc4ea4fc6663e71a6c7293
 ```
 
 Other potentially useful URLs:
 
-- https://sources.debian.net/src/linux/4.9.168-1+deb9u4/ (for browsing the source)
-- https://sources.debian.net/src/linux/4.9.168-1+deb9u4/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/linux/4.9.168-1+deb9u4/ (for access to the source package after it no longer exists in the archive)
+- https://sources.debian.net/src/linux/4.9.168-1+deb9u5/ (for browsing the source)
+- https://sources.debian.net/src/linux/4.9.168-1+deb9u5/debian/copyright/ (for direct copyright/license information)
+- http://snapshot.debian.org/package/linux/4.9.168-1+deb9u5/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `lsb=9.20161125`
 
@@ -2261,12 +2261,12 @@ Other potentially useful URLs:
 - https://sources.debian.net/src/pkg-config/0.29-4/debian/copyright/ (for direct copyright/license information)
 - http://snapshot.debian.org/package/pkg-config/0.29-4/ (for access to the source package after it no longer exists in the archive)
 
-### `dpkg` source package: `postgresql-9.6=9.6.13-0+deb9u1`
+### `dpkg` source package: `postgresql-9.6=9.6.15-0+deb9u1`
 
 Binary Packages:
 
-- `libpq-dev=9.6.13-0+deb9u1`
-- `libpq5:amd64=9.6.13-0+deb9u1`
+- `libpq-dev=9.6.15-0+deb9u1`
+- `libpq5:amd64=9.6.15-0+deb9u1`
 
 Licenses: (parsed from: `/usr/share/doc/libpq-dev/copyright`, `/usr/share/doc/libpq5/copyright`)
 
@@ -2285,13 +2285,20 @@ Licenses: (parsed from: `/usr/share/doc/libpq-dev/copyright`, `/usr/share/doc/li
 - `nagaysau-ishii`
 - `rijndael`
 
-**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
-This is *usually* due to a new package version being released and the old version being removed.
+Source:
 
-The source package *may* still be available for download from:
+```console
+$ apt-get source -qq --print-uris postgresql-9.6=9.6.15-0+deb9u1
+'http://security.debian.org/debian-security/pool/updates/main/p/postgresql-9.6/postgresql-9.6_9.6.15-0+deb9u1.dsc' postgresql-9.6_9.6.15-0+deb9u1.dsc 3698 SHA256:01496f5c6784e3e1f3887df7fbbd2b76048752ded483e3595cb830ab4f208b41
+'http://security.debian.org/debian-security/pool/updates/main/p/postgresql-9.6/postgresql-9.6_9.6.15.orig.tar.bz2' postgresql-9.6_9.6.15.orig.tar.bz2 18799121 SHA256:3cd9fe9af247167f863030842c1a57f58bdf3e5d50a94997d34a802b6032170a
+'http://security.debian.org/debian-security/pool/updates/main/p/postgresql-9.6/postgresql-9.6_9.6.15-0+deb9u1.debian.tar.xz' postgresql-9.6_9.6.15-0+deb9u1.debian.tar.xz 29760 SHA256:06906589c9b2978ac9e423023d5adac937eb2185728d638be879108d2808d9ee
+```
 
-- http://snapshot.debian.org/package/postgresql-9.6/9.6.13-0+deb9u1/
+Other potentially useful URLs:
 
+- https://sources.debian.net/src/postgresql-9.6/9.6.15-0+deb9u1/ (for browsing the source)
+- https://sources.debian.net/src/postgresql-9.6/9.6.15-0+deb9u1/debian/copyright/ (for direct copyright/license information)
+- http://snapshot.debian.org/package/postgresql-9.6/9.6.15-0+deb9u1/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `readline=7.0-3`
 
