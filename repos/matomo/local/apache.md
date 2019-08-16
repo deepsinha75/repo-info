@@ -2,9 +2,9 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:f128e470ccb4ec4fc812613f6f534415d51506ff8135c7257162ab9e5e6bf2fd`
-- Created: `2019-08-02T09:00:12.770222248Z`
-- Virtual Size: ~ 540.35 Mb  
+- Image ID: `sha256:44668f1ab5799f5ddbabf321aa77bb8c21f1fffc2b8967eb71b4146f8324ab7c`
+- Created: `2019-08-15T04:45:21.413767126Z`
+- Virtual Size: ~ 542.82 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["/entrypoint.sh"]`
@@ -2080,11 +2080,11 @@ Other potentially useful URLs:
 - https://sources.debian.net/src/libzstd/1.3.8+dfsg-3/debian/copyright/ (for direct copyright/license information)
 - http://snapshot.debian.org/package/libzstd/1.3.8+dfsg-3/ (for access to the source package after it no longer exists in the archive)
 
-### `dpkg` source package: `linux=4.19.37-5`
+### `dpkg` source package: `linux=4.19.37-5+deb10u2`
 
 Binary Packages:
 
-- `linux-libc-dev:amd64=4.19.37-5`
+- `linux-libc-dev:amd64=4.19.37-5+deb10u2`
 
 Licenses: (parsed from: `/usr/share/doc/linux-libc-dev/copyright`)
 
@@ -2099,17 +2099,17 @@ Licenses: (parsed from: `/usr/share/doc/linux-libc-dev/copyright`)
 Source:
 
 ```console
-$ apt-get source -qq --print-uris linux=4.19.37-5
-'http://deb.debian.org/debian/pool/main/l/linux/linux_4.19.37-5.dsc' linux_4.19.37-5.dsc 189124 SHA256:c09624619d9808aae877a7fc638f259181d9f9dc53aee789ecbe82a0ed3498eb
-'http://deb.debian.org/debian/pool/main/l/linux/linux_4.19.37.orig.tar.xz' linux_4.19.37.orig.tar.xz 107198588 SHA256:04be08391496ff96f52459f9992e36eeb8c5edc2980e43a08c20b68d945a3af1
-'http://deb.debian.org/debian/pool/main/l/linux/linux_4.19.37-5.debian.tar.xz' linux_4.19.37-5.debian.tar.xz 4255088 SHA256:5a292f47187414902c906088312b35d320ceeafb9a901ad779e1d6fea5d31b0d
+$ apt-get source -qq --print-uris linux=4.19.37-5+deb10u2
+'http://security.debian.org/debian-security/pool/updates/main/l/linux/linux_4.19.37-5+deb10u2.dsc' linux_4.19.37-5+deb10u2.dsc 189156 SHA256:6404682ba9e10f97a5f65769cc7ae545a1bed6ed36e4a69029f6da701b5a9e05
+'http://security.debian.org/debian-security/pool/updates/main/l/linux/linux_4.19.37.orig.tar.xz' linux_4.19.37.orig.tar.xz 107198588 SHA256:04be08391496ff96f52459f9992e36eeb8c5edc2980e43a08c20b68d945a3af1
+'http://security.debian.org/debian-security/pool/updates/main/l/linux/linux_4.19.37-5+deb10u2.debian.tar.xz' linux_4.19.37-5+deb10u2.debian.tar.xz 4282720 SHA256:184d823c07916f897b2359aa5592e4e524eb2f517bf261400b875b2882b8ac3c
 ```
 
 Other potentially useful URLs:
 
-- https://sources.debian.net/src/linux/4.19.37-5/ (for browsing the source)
-- https://sources.debian.net/src/linux/4.19.37-5/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/linux/4.19.37-5/ (for access to the source package after it no longer exists in the archive)
+- https://sources.debian.net/src/linux/4.19.37-5+deb10u2/ (for browsing the source)
+- https://sources.debian.net/src/linux/4.19.37-5+deb10u2/debian/copyright/ (for direct copyright/license information)
+- http://snapshot.debian.org/package/linux/4.19.37-5+deb10u2/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `lsb=10.2019051400`
 
@@ -2550,11 +2550,11 @@ Other potentially useful URLs:
 - https://sources.debian.net/src/pam/1.3.1-5/debian/copyright/ (for direct copyright/license information)
 - http://snapshot.debian.org/package/pam/1.3.1-5/ (for access to the source package after it no longer exists in the archive)
 
-### `dpkg` source package: `patch=2.7.6-3`
+### `dpkg` source package: `patch=2.7.6-3+deb10u1`
 
 Binary Packages:
 
-- `patch=2.7.6-3`
+- `patch=2.7.6-3+deb10u1`
 
 Licenses: (parsed from: `/usr/share/doc/patch/copyright`)
 
@@ -2563,17 +2563,17 @@ Licenses: (parsed from: `/usr/share/doc/patch/copyright`)
 Source:
 
 ```console
-$ apt-get source -qq --print-uris patch=2.7.6-3
-'http://deb.debian.org/debian/pool/main/p/patch/patch_2.7.6-3.dsc' patch_2.7.6-3.dsc 1699 SHA256:c84154893834d07a13a760f9be4e7c8fbced41bdb1157db1140c880a90a7c72a
-'http://deb.debian.org/debian/pool/main/p/patch/patch_2.7.6.orig.tar.xz' patch_2.7.6.orig.tar.xz 783756 SHA256:ac610bda97abe0d9f6b7c963255a11dcb196c25e337c61f94e4778d632f1d8fd
-'http://deb.debian.org/debian/pool/main/p/patch/patch_2.7.6-3.debian.tar.xz' patch_2.7.6-3.debian.tar.xz 10608 SHA256:f48c3001906a954b3ea0ff1a6ad347172f1e3453620377d7f1427b62474b047b
+$ apt-get source -qq --print-uris patch=2.7.6-3+deb10u1
+'http://security.debian.org/debian-security/pool/updates/main/p/patch/patch_2.7.6-3+deb10u1.dsc' patch_2.7.6-3+deb10u1.dsc 1731 SHA256:dae4e0d25106b2d14d981309395371397091892359b44a919eb08dd841bee13f
+'http://security.debian.org/debian-security/pool/updates/main/p/patch/patch_2.7.6.orig.tar.xz' patch_2.7.6.orig.tar.xz 783756 SHA256:ac610bda97abe0d9f6b7c963255a11dcb196c25e337c61f94e4778d632f1d8fd
+'http://security.debian.org/debian-security/pool/updates/main/p/patch/patch_2.7.6-3+deb10u1.debian.tar.xz' patch_2.7.6-3+deb10u1.debian.tar.xz 13164 SHA256:58d4e84bd4ce850152e1d1911546ac0aad9764992570c360cff8f9cf03eb37bc
 ```
 
 Other potentially useful URLs:
 
-- https://sources.debian.net/src/patch/2.7.6-3/ (for browsing the source)
-- https://sources.debian.net/src/patch/2.7.6-3/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/patch/2.7.6-3/ (for access to the source package after it no longer exists in the archive)
+- https://sources.debian.net/src/patch/2.7.6-3+deb10u1/ (for browsing the source)
+- https://sources.debian.net/src/patch/2.7.6-3+deb10u1/debian/copyright/ (for direct copyright/license information)
+- http://snapshot.debian.org/package/patch/2.7.6-3+deb10u1/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `pcre3=2:8.39-12`
 
