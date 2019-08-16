@@ -13,7 +13,7 @@
 ## `odoo:10`
 
 ```console
-$ docker pull odoo@sha256:9b54af9825a95fdd2279b7fd76c979146a3caf49da6a9f7e52e154d77f924c23
+$ docker pull odoo@sha256:9377d9960aca967d1953311ca3e6ae9e220e3cae8b3148065ff01f6e4610fdbe
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -23,14 +23,14 @@ $ docker pull odoo@sha256:9b54af9825a95fdd2279b7fd76c979146a3caf49da6a9f7e52e154
 ### `odoo:10` - linux; amd64
 
 ```console
-$ docker pull odoo@sha256:1c6f7a5173991145cd68642cb6e544f4d2ddb029dc5fca77f10dafd8d027e605
+$ docker pull odoo@sha256:ee39621eee8ef76ba7d71af1591eac3ac6527053c05c9b7d5b5fb62a36b928bb
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **284.4 MB (284382014 bytes)**  
+-	Total Size: **284.8 MB (284781674 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:d02f036aefb197ed8277adf24bbf2cf2019ed563064f76d7f95960867b7e71cf`
+-	Image ID: `sha256:40b267878192fe8979bc23d99efd518bd422caab0afbf9e21a8180b11fc0c727`
 -	Entrypoint: `["\/entrypoint.sh"]`
 -	Default Command: `["odoo"]`
 
@@ -47,34 +47,34 @@ RUN set -x;         apt-get update         && apt-get install -y --no-install-re
 RUN set -x;         echo 'deb http://apt.postgresql.org/pub/repos/apt/ jessie-pgdg main' > etc/apt/sources.list.d/pgdg.list         && export GNUPGHOME="$(mktemp -d)"         && repokey='B97B0AFCAA1A47F044F244A07FCC7D46ACCC4CF8'         && gpg --batch --keyserver keyserver.ubuntu.com --recv-keys "${repokey}"         && gpg --armor --export "${repokey}" | apt-key add -         && rm -rf "$GNUPGHOME"         && apt-get update          && apt-get install -y postgresql-client         && rm -rf /var/lib/apt/lists/*
 # Wed, 14 Aug 2019 11:16:57 GMT
 ENV ODOO_VERSION=10.0
-# Wed, 14 Aug 2019 11:16:58 GMT
-ARG ODOO_RELEASE=20190424
-# Wed, 14 Aug 2019 11:16:58 GMT
-ARG ODOO_SHA=1f4668c0e3b1597ffa931994952cf6fce87df37e
-# Wed, 14 Aug 2019 11:20:15 GMT
-# ARGS: ODOO_RELEASE=20190424 ODOO_SHA=1f4668c0e3b1597ffa931994952cf6fce87df37e
+# Fri, 16 Aug 2019 21:28:41 GMT
+ARG ODOO_RELEASE=20190816
+# Fri, 16 Aug 2019 21:28:41 GMT
+ARG ODOO_SHA=397cb4d458cb292edb0432dc8d39a466dce56b65
+# Fri, 16 Aug 2019 21:31:34 GMT
+# ARGS: ODOO_RELEASE=20190816 ODOO_SHA=397cb4d458cb292edb0432dc8d39a466dce56b65
 RUN set -x;         curl -o odoo.deb -sSL http://nightly.odoo.com/${ODOO_VERSION}/nightly/deb/odoo_${ODOO_VERSION}.${ODOO_RELEASE}_all.deb         && echo "${ODOO_SHA} odoo.deb" | sha1sum -c -         && dpkg --force-depends -i odoo.deb         && apt-get update         && apt-get -y install -f --no-install-recommends         && rm -rf /var/lib/apt/lists/* odoo.deb
-# Wed, 14 Aug 2019 11:20:17 GMT
+# Fri, 16 Aug 2019 21:31:35 GMT
 COPY file:4176eb0ea8f4dc2006706c8beb089877469b2c51fd91c795a2c6b91c1587dff1 in / 
-# Wed, 14 Aug 2019 11:20:17 GMT
+# Fri, 16 Aug 2019 21:31:35 GMT
 COPY file:cebd452fc0fa563b14ae533cd7f1e7ac30be22df2fe36f3535b708d58bd3601d in /etc/odoo/ 
-# Wed, 14 Aug 2019 11:20:18 GMT
-# ARGS: ODOO_RELEASE=20190424 ODOO_SHA=1f4668c0e3b1597ffa931994952cf6fce87df37e
+# Fri, 16 Aug 2019 21:31:36 GMT
+# ARGS: ODOO_RELEASE=20190816 ODOO_SHA=397cb4d458cb292edb0432dc8d39a466dce56b65
 RUN chown odoo /etc/odoo/odoo.conf
-# Wed, 14 Aug 2019 11:20:19 GMT
-# ARGS: ODOO_RELEASE=20190424 ODOO_SHA=1f4668c0e3b1597ffa931994952cf6fce87df37e
+# Fri, 16 Aug 2019 21:31:36 GMT
+# ARGS: ODOO_RELEASE=20190816 ODOO_SHA=397cb4d458cb292edb0432dc8d39a466dce56b65
 RUN mkdir -p /mnt/extra-addons         && chown -R odoo /mnt/extra-addons
-# Wed, 14 Aug 2019 11:20:19 GMT
+# Fri, 16 Aug 2019 21:31:36 GMT
 VOLUME [/var/lib/odoo /mnt/extra-addons]
-# Wed, 14 Aug 2019 11:20:20 GMT
+# Fri, 16 Aug 2019 21:31:37 GMT
 EXPOSE 8069 8071
-# Wed, 14 Aug 2019 11:20:20 GMT
+# Fri, 16 Aug 2019 21:31:37 GMT
 ENV ODOO_RC=/etc/odoo/odoo.conf
-# Wed, 14 Aug 2019 11:20:20 GMT
+# Fri, 16 Aug 2019 21:31:37 GMT
 USER odoo
-# Wed, 14 Aug 2019 11:20:21 GMT
+# Fri, 16 Aug 2019 21:31:37 GMT
 ENTRYPOINT ["/entrypoint.sh"]
-# Wed, 14 Aug 2019 11:20:21 GMT
+# Fri, 16 Aug 2019 21:31:37 GMT
 CMD ["odoo"]
 ```
 
@@ -91,31 +91,31 @@ CMD ["odoo"]
 		Last Modified: Wed, 14 Aug 2019 11:22:37 GMT  
 		Size: 4.9 MB (4905473 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:100b36cc3ff707be3632e1b86659687b1dd1dfe89a30d88651ed60fdaf5a67b9`  
-		Last Modified: Wed, 14 Aug 2019 11:23:06 GMT  
-		Size: 136.1 MB (136076924 bytes)  
+	-	`sha256:e983f44560d02261a09ab3efa5d0e0728d56b1477cec67306fe1021f35d091c5`  
+		Last Modified: Fri, 16 Aug 2019 21:33:30 GMT  
+		Size: 136.5 MB (136476587 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:60b2f23abf9667eee49d3ca1b0a83df2e8eaae66fef1adbcbbd46fb86b827c65`  
-		Last Modified: Wed, 14 Aug 2019 11:22:35 GMT  
-		Size: 601.0 B  
+	-	`sha256:64271058f069d5806d80cece5bb243dbf6f75b76d28bac46c5560d00063cc8fa`  
+		Last Modified: Fri, 16 Aug 2019 21:33:07 GMT  
+		Size: 600.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:1562dd9b781924ee34d97151d32d4064c7166dae1c8d41e566b88815ac6c9bcb`  
-		Last Modified: Wed, 14 Aug 2019 11:22:35 GMT  
-		Size: 583.0 B  
-		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c2ca9384c8d1dfe15b8efaf938f4447c9f4c1f55f613ecf0184dfd2aba8e7bc0`  
-		Last Modified: Wed, 14 Aug 2019 11:22:35 GMT  
+	-	`sha256:4b30dfa51e69a1d64b26a0dc520460ef5cd3bdfa7f6dc576514c46960552a694`  
+		Last Modified: Fri, 16 Aug 2019 21:33:07 GMT  
 		Size: 582.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:2f568797f0725a0ee5fda2e0f0e91bbbd866fa4f3c23a55bf8c02efd361d030d`  
-		Last Modified: Wed, 14 Aug 2019 11:22:35 GMT  
+	-	`sha256:d4b2e1f27c5f855b154068b88cbc1814592bdf383f85eec1bcb3e225df1319a1`  
+		Last Modified: Fri, 16 Aug 2019 21:33:07 GMT  
+		Size: 581.0 B  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:1699d6a3af5c07273aa3c21b569ff195e782bd6333f129a49eed914f2bc54821`  
+		Last Modified: Fri, 16 Aug 2019 21:33:07 GMT  
 		Size: 124.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `odoo:10.0`
 
 ```console
-$ docker pull odoo@sha256:9b54af9825a95fdd2279b7fd76c979146a3caf49da6a9f7e52e154d77f924c23
+$ docker pull odoo@sha256:9377d9960aca967d1953311ca3e6ae9e220e3cae8b3148065ff01f6e4610fdbe
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -125,14 +125,14 @@ $ docker pull odoo@sha256:9b54af9825a95fdd2279b7fd76c979146a3caf49da6a9f7e52e154
 ### `odoo:10.0` - linux; amd64
 
 ```console
-$ docker pull odoo@sha256:1c6f7a5173991145cd68642cb6e544f4d2ddb029dc5fca77f10dafd8d027e605
+$ docker pull odoo@sha256:ee39621eee8ef76ba7d71af1591eac3ac6527053c05c9b7d5b5fb62a36b928bb
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **284.4 MB (284382014 bytes)**  
+-	Total Size: **284.8 MB (284781674 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:d02f036aefb197ed8277adf24bbf2cf2019ed563064f76d7f95960867b7e71cf`
+-	Image ID: `sha256:40b267878192fe8979bc23d99efd518bd422caab0afbf9e21a8180b11fc0c727`
 -	Entrypoint: `["\/entrypoint.sh"]`
 -	Default Command: `["odoo"]`
 
@@ -149,34 +149,34 @@ RUN set -x;         apt-get update         && apt-get install -y --no-install-re
 RUN set -x;         echo 'deb http://apt.postgresql.org/pub/repos/apt/ jessie-pgdg main' > etc/apt/sources.list.d/pgdg.list         && export GNUPGHOME="$(mktemp -d)"         && repokey='B97B0AFCAA1A47F044F244A07FCC7D46ACCC4CF8'         && gpg --batch --keyserver keyserver.ubuntu.com --recv-keys "${repokey}"         && gpg --armor --export "${repokey}" | apt-key add -         && rm -rf "$GNUPGHOME"         && apt-get update          && apt-get install -y postgresql-client         && rm -rf /var/lib/apt/lists/*
 # Wed, 14 Aug 2019 11:16:57 GMT
 ENV ODOO_VERSION=10.0
-# Wed, 14 Aug 2019 11:16:58 GMT
-ARG ODOO_RELEASE=20190424
-# Wed, 14 Aug 2019 11:16:58 GMT
-ARG ODOO_SHA=1f4668c0e3b1597ffa931994952cf6fce87df37e
-# Wed, 14 Aug 2019 11:20:15 GMT
-# ARGS: ODOO_RELEASE=20190424 ODOO_SHA=1f4668c0e3b1597ffa931994952cf6fce87df37e
+# Fri, 16 Aug 2019 21:28:41 GMT
+ARG ODOO_RELEASE=20190816
+# Fri, 16 Aug 2019 21:28:41 GMT
+ARG ODOO_SHA=397cb4d458cb292edb0432dc8d39a466dce56b65
+# Fri, 16 Aug 2019 21:31:34 GMT
+# ARGS: ODOO_RELEASE=20190816 ODOO_SHA=397cb4d458cb292edb0432dc8d39a466dce56b65
 RUN set -x;         curl -o odoo.deb -sSL http://nightly.odoo.com/${ODOO_VERSION}/nightly/deb/odoo_${ODOO_VERSION}.${ODOO_RELEASE}_all.deb         && echo "${ODOO_SHA} odoo.deb" | sha1sum -c -         && dpkg --force-depends -i odoo.deb         && apt-get update         && apt-get -y install -f --no-install-recommends         && rm -rf /var/lib/apt/lists/* odoo.deb
-# Wed, 14 Aug 2019 11:20:17 GMT
+# Fri, 16 Aug 2019 21:31:35 GMT
 COPY file:4176eb0ea8f4dc2006706c8beb089877469b2c51fd91c795a2c6b91c1587dff1 in / 
-# Wed, 14 Aug 2019 11:20:17 GMT
+# Fri, 16 Aug 2019 21:31:35 GMT
 COPY file:cebd452fc0fa563b14ae533cd7f1e7ac30be22df2fe36f3535b708d58bd3601d in /etc/odoo/ 
-# Wed, 14 Aug 2019 11:20:18 GMT
-# ARGS: ODOO_RELEASE=20190424 ODOO_SHA=1f4668c0e3b1597ffa931994952cf6fce87df37e
+# Fri, 16 Aug 2019 21:31:36 GMT
+# ARGS: ODOO_RELEASE=20190816 ODOO_SHA=397cb4d458cb292edb0432dc8d39a466dce56b65
 RUN chown odoo /etc/odoo/odoo.conf
-# Wed, 14 Aug 2019 11:20:19 GMT
-# ARGS: ODOO_RELEASE=20190424 ODOO_SHA=1f4668c0e3b1597ffa931994952cf6fce87df37e
+# Fri, 16 Aug 2019 21:31:36 GMT
+# ARGS: ODOO_RELEASE=20190816 ODOO_SHA=397cb4d458cb292edb0432dc8d39a466dce56b65
 RUN mkdir -p /mnt/extra-addons         && chown -R odoo /mnt/extra-addons
-# Wed, 14 Aug 2019 11:20:19 GMT
+# Fri, 16 Aug 2019 21:31:36 GMT
 VOLUME [/var/lib/odoo /mnt/extra-addons]
-# Wed, 14 Aug 2019 11:20:20 GMT
+# Fri, 16 Aug 2019 21:31:37 GMT
 EXPOSE 8069 8071
-# Wed, 14 Aug 2019 11:20:20 GMT
+# Fri, 16 Aug 2019 21:31:37 GMT
 ENV ODOO_RC=/etc/odoo/odoo.conf
-# Wed, 14 Aug 2019 11:20:20 GMT
+# Fri, 16 Aug 2019 21:31:37 GMT
 USER odoo
-# Wed, 14 Aug 2019 11:20:21 GMT
+# Fri, 16 Aug 2019 21:31:37 GMT
 ENTRYPOINT ["/entrypoint.sh"]
-# Wed, 14 Aug 2019 11:20:21 GMT
+# Fri, 16 Aug 2019 21:31:37 GMT
 CMD ["odoo"]
 ```
 
@@ -193,31 +193,31 @@ CMD ["odoo"]
 		Last Modified: Wed, 14 Aug 2019 11:22:37 GMT  
 		Size: 4.9 MB (4905473 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:100b36cc3ff707be3632e1b86659687b1dd1dfe89a30d88651ed60fdaf5a67b9`  
-		Last Modified: Wed, 14 Aug 2019 11:23:06 GMT  
-		Size: 136.1 MB (136076924 bytes)  
+	-	`sha256:e983f44560d02261a09ab3efa5d0e0728d56b1477cec67306fe1021f35d091c5`  
+		Last Modified: Fri, 16 Aug 2019 21:33:30 GMT  
+		Size: 136.5 MB (136476587 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:60b2f23abf9667eee49d3ca1b0a83df2e8eaae66fef1adbcbbd46fb86b827c65`  
-		Last Modified: Wed, 14 Aug 2019 11:22:35 GMT  
-		Size: 601.0 B  
+	-	`sha256:64271058f069d5806d80cece5bb243dbf6f75b76d28bac46c5560d00063cc8fa`  
+		Last Modified: Fri, 16 Aug 2019 21:33:07 GMT  
+		Size: 600.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:1562dd9b781924ee34d97151d32d4064c7166dae1c8d41e566b88815ac6c9bcb`  
-		Last Modified: Wed, 14 Aug 2019 11:22:35 GMT  
-		Size: 583.0 B  
-		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c2ca9384c8d1dfe15b8efaf938f4447c9f4c1f55f613ecf0184dfd2aba8e7bc0`  
-		Last Modified: Wed, 14 Aug 2019 11:22:35 GMT  
+	-	`sha256:4b30dfa51e69a1d64b26a0dc520460ef5cd3bdfa7f6dc576514c46960552a694`  
+		Last Modified: Fri, 16 Aug 2019 21:33:07 GMT  
 		Size: 582.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:2f568797f0725a0ee5fda2e0f0e91bbbd866fa4f3c23a55bf8c02efd361d030d`  
-		Last Modified: Wed, 14 Aug 2019 11:22:35 GMT  
+	-	`sha256:d4b2e1f27c5f855b154068b88cbc1814592bdf383f85eec1bcb3e225df1319a1`  
+		Last Modified: Fri, 16 Aug 2019 21:33:07 GMT  
+		Size: 581.0 B  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:1699d6a3af5c07273aa3c21b569ff195e782bd6333f129a49eed914f2bc54821`  
+		Last Modified: Fri, 16 Aug 2019 21:33:07 GMT  
 		Size: 124.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `odoo:11`
 
 ```console
-$ docker pull odoo@sha256:d4bec070c2120311c4a5b0a64a1cc4adbca6ba26011193e252ce2de6d8a1a624
+$ docker pull odoo@sha256:b2f8ccb7f7f23a7d97678974bca7686cd0d0ed5caea45395869377cc1efc52c8
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -228,14 +228,14 @@ $ docker pull odoo@sha256:d4bec070c2120311c4a5b0a64a1cc4adbca6ba26011193e252ce2d
 ### `odoo:11` - linux; amd64
 
 ```console
-$ docker pull odoo@sha256:24abcb10c0f6c36a954d4d3d81d2b0de0864841bcf6d53a7dc516b17386d48b6
+$ docker pull odoo@sha256:c02077ef5d89d2569c93c9827ff32bdc87128bbc9d7275b460c2d244cd97798b
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **417.1 MB (417141362 bytes)**  
+-	Total Size: **417.5 MB (417534445 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:c58cf2d55f5a64a78d96f8bd81d28016e921653b00a97d80f5bb08ce231adadf`
+-	Image ID: `sha256:7b225df96f4bc8300be3211ab4343aeafddddb5bb1c249ec1d4e3e7da36f4cbb`
 -	Entrypoint: `["\/entrypoint.sh"]`
 -	Default Command: `["odoo"]`
 
@@ -254,37 +254,37 @@ RUN set -x;         apt-get update         && apt-get install -y --no-install-re
 RUN set -x;         echo 'deb http://apt.postgresql.org/pub/repos/apt/ stretch-pgdg main' > etc/apt/sources.list.d/pgdg.list         && export GNUPGHOME="$(mktemp -d)"         && repokey='B97B0AFCAA1A47F044F244A07FCC7D46ACCC4CF8'         && gpg --batch --keyserver keyserver.ubuntu.com --recv-keys "${repokey}"         && gpg --armor --export "${repokey}" | apt-key add -         && gpgconf --kill all         && rm -rf "$GNUPGHOME"         && apt-get update          && apt-get install -y postgresql-client         && rm -rf /var/lib/apt/lists/*
 # Wed, 14 Aug 2019 11:08:20 GMT
 ENV ODOO_VERSION=11.0
-# Wed, 14 Aug 2019 11:08:20 GMT
-ARG ODOO_RELEASE=20190424
-# Wed, 14 Aug 2019 11:08:20 GMT
-ARG ODOO_SHA=374ccf1d4cde0e73d79f970ef75188c78ee0e222
-# Wed, 14 Aug 2019 11:09:09 GMT
-# ARGS: ODOO_RELEASE=20190424 ODOO_SHA=374ccf1d4cde0e73d79f970ef75188c78ee0e222
+# Fri, 16 Aug 2019 21:27:38 GMT
+ARG ODOO_RELEASE=20190816
+# Fri, 16 Aug 2019 21:27:38 GMT
+ARG ODOO_SHA=948e097925bfbba8ffd9682c2d0555dc9b539c0a
+# Fri, 16 Aug 2019 21:28:24 GMT
+# ARGS: ODOO_RELEASE=20190816 ODOO_SHA=948e097925bfbba8ffd9682c2d0555dc9b539c0a
 RUN set -x;         curl -o odoo.deb -sSL http://nightly.odoo.com/${ODOO_VERSION}/nightly/deb/odoo_${ODOO_VERSION}.${ODOO_RELEASE}_all.deb         && echo "${ODOO_SHA} odoo.deb" | sha1sum -c -         && dpkg --force-depends -i odoo.deb         && apt-get update         && apt-get -y install -f --no-install-recommends         && rm -rf /var/lib/apt/lists/* odoo.deb
-# Wed, 14 Aug 2019 11:09:14 GMT
-# ARGS: ODOO_RELEASE=20190424 ODOO_SHA=374ccf1d4cde0e73d79f970ef75188c78ee0e222
+# Fri, 16 Aug 2019 21:28:28 GMT
+# ARGS: ODOO_RELEASE=20190816 ODOO_SHA=948e097925bfbba8ffd9682c2d0555dc9b539c0a
 RUN pip3 install num2words xlwt
-# Wed, 14 Aug 2019 11:09:14 GMT
+# Fri, 16 Aug 2019 21:28:28 GMT
 COPY file:4176eb0ea8f4dc2006706c8beb089877469b2c51fd91c795a2c6b91c1587dff1 in / 
-# Wed, 14 Aug 2019 11:09:14 GMT
+# Fri, 16 Aug 2019 21:28:28 GMT
 COPY file:1e7209cce5525d270c422815db614f496d4d0da4820de1ab0000e9e592223235 in /etc/odoo/ 
-# Wed, 14 Aug 2019 11:09:15 GMT
-# ARGS: ODOO_RELEASE=20190424 ODOO_SHA=374ccf1d4cde0e73d79f970ef75188c78ee0e222
+# Fri, 16 Aug 2019 21:28:29 GMT
+# ARGS: ODOO_RELEASE=20190816 ODOO_SHA=948e097925bfbba8ffd9682c2d0555dc9b539c0a
 RUN chown odoo /etc/odoo/odoo.conf
-# Wed, 14 Aug 2019 11:09:16 GMT
-# ARGS: ODOO_RELEASE=20190424 ODOO_SHA=374ccf1d4cde0e73d79f970ef75188c78ee0e222
+# Fri, 16 Aug 2019 21:28:30 GMT
+# ARGS: ODOO_RELEASE=20190816 ODOO_SHA=948e097925bfbba8ffd9682c2d0555dc9b539c0a
 RUN mkdir -p /mnt/extra-addons         && chown -R odoo /mnt/extra-addons
-# Wed, 14 Aug 2019 11:09:16 GMT
+# Fri, 16 Aug 2019 21:28:30 GMT
 VOLUME [/var/lib/odoo /mnt/extra-addons]
-# Wed, 14 Aug 2019 11:09:16 GMT
+# Fri, 16 Aug 2019 21:28:30 GMT
 EXPOSE 8069 8071
-# Wed, 14 Aug 2019 11:09:16 GMT
+# Fri, 16 Aug 2019 21:28:30 GMT
 ENV ODOO_RC=/etc/odoo/odoo.conf
-# Wed, 14 Aug 2019 11:09:16 GMT
+# Fri, 16 Aug 2019 21:28:30 GMT
 USER odoo
-# Wed, 14 Aug 2019 11:09:17 GMT
+# Fri, 16 Aug 2019 21:28:31 GMT
 ENTRYPOINT ["/entrypoint.sh"]
-# Wed, 14 Aug 2019 11:09:17 GMT
+# Fri, 16 Aug 2019 21:28:31 GMT
 CMD ["odoo"]
 ```
 
@@ -301,29 +301,29 @@ CMD ["odoo"]
 		Last Modified: Wed, 14 Aug 2019 11:20:41 GMT  
 		Size: 3.6 MB (3569038 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:760b9905683c86c586a86c689f7083d5b001ccc437c7eec63b2720c2a214f642`  
-		Last Modified: Wed, 14 Aug 2019 11:22:31 GMT  
-		Size: 146.2 MB (146218625 bytes)  
+	-	`sha256:64f1656598730b02d2d769286b44e53da816106e388aadbb524b429f68d204dd`  
+		Last Modified: Fri, 16 Aug 2019 21:32:59 GMT  
+		Size: 146.6 MB (146611717 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:7adbd14a2599e38f85d4b02621cca7b8c9864810a197267a11bd959d550d3fd4`  
-		Last Modified: Wed, 14 Aug 2019 11:21:50 GMT  
-		Size: 624.0 KB (623978 bytes)  
+	-	`sha256:b0d74d5c9c5d9dc8e392676b0b0e34082c8b2b7a6292efdc028c85a3bc13b468`  
+		Last Modified: Fri, 16 Aug 2019 21:32:16 GMT  
+		Size: 624.0 KB (623968 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:6e615d53b1653fc95be1e204981fd121ea8914fcecb2b4137a3907e0cb5e53e1`  
-		Last Modified: Wed, 14 Aug 2019 11:21:50 GMT  
+	-	`sha256:99ca09fbb2a54fba546c2434e2b10030b061495e80a245f8a9de543f7b6ec82b`  
+		Last Modified: Fri, 16 Aug 2019 21:32:15 GMT  
 		Size: 600.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:2335eca18d72591ed1a557b61d8c544ffcfff84281811354a28726eb3d97bc0c`  
-		Last Modified: Wed, 14 Aug 2019 11:21:50 GMT  
+	-	`sha256:078cc00ddce65c0a7204e88e2799cc3e280c9a9ae6d5fadfdff3bbbbd78c0e23`  
+		Last Modified: Fri, 16 Aug 2019 21:32:15 GMT  
 		Size: 555.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:9b99c2eb24f8cb14bbf692a702bbceb25892a11ab99e158aa40c33c2dc16d04b`  
-		Last Modified: Wed, 14 Aug 2019 11:21:50 GMT  
+	-	`sha256:6bc1545611448f7e6af3e84c673699b043d57bf219b40c5bde9046554935dab6`  
+		Last Modified: Fri, 16 Aug 2019 21:32:16 GMT  
 		Size: 554.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:2a1b8cce835109e5008b3d0798e351eebb792dfd2f1abd72adb78529f78bf161`  
-		Last Modified: Wed, 14 Aug 2019 11:21:50 GMT  
-		Size: 127.0 B  
+	-	`sha256:ed1aef6bf5f78691ca9a0d066338494d060c3c4e00a436082add0988330c5c8a`  
+		Last Modified: Fri, 16 Aug 2019 21:32:16 GMT  
+		Size: 128.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `odoo:11` - linux; arm64 variant v8
@@ -418,7 +418,7 @@ CMD ["odoo"]
 ## `odoo:11.0`
 
 ```console
-$ docker pull odoo@sha256:d4bec070c2120311c4a5b0a64a1cc4adbca6ba26011193e252ce2de6d8a1a624
+$ docker pull odoo@sha256:b2f8ccb7f7f23a7d97678974bca7686cd0d0ed5caea45395869377cc1efc52c8
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -429,14 +429,14 @@ $ docker pull odoo@sha256:d4bec070c2120311c4a5b0a64a1cc4adbca6ba26011193e252ce2d
 ### `odoo:11.0` - linux; amd64
 
 ```console
-$ docker pull odoo@sha256:24abcb10c0f6c36a954d4d3d81d2b0de0864841bcf6d53a7dc516b17386d48b6
+$ docker pull odoo@sha256:c02077ef5d89d2569c93c9827ff32bdc87128bbc9d7275b460c2d244cd97798b
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **417.1 MB (417141362 bytes)**  
+-	Total Size: **417.5 MB (417534445 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:c58cf2d55f5a64a78d96f8bd81d28016e921653b00a97d80f5bb08ce231adadf`
+-	Image ID: `sha256:7b225df96f4bc8300be3211ab4343aeafddddb5bb1c249ec1d4e3e7da36f4cbb`
 -	Entrypoint: `["\/entrypoint.sh"]`
 -	Default Command: `["odoo"]`
 
@@ -455,37 +455,37 @@ RUN set -x;         apt-get update         && apt-get install -y --no-install-re
 RUN set -x;         echo 'deb http://apt.postgresql.org/pub/repos/apt/ stretch-pgdg main' > etc/apt/sources.list.d/pgdg.list         && export GNUPGHOME="$(mktemp -d)"         && repokey='B97B0AFCAA1A47F044F244A07FCC7D46ACCC4CF8'         && gpg --batch --keyserver keyserver.ubuntu.com --recv-keys "${repokey}"         && gpg --armor --export "${repokey}" | apt-key add -         && gpgconf --kill all         && rm -rf "$GNUPGHOME"         && apt-get update          && apt-get install -y postgresql-client         && rm -rf /var/lib/apt/lists/*
 # Wed, 14 Aug 2019 11:08:20 GMT
 ENV ODOO_VERSION=11.0
-# Wed, 14 Aug 2019 11:08:20 GMT
-ARG ODOO_RELEASE=20190424
-# Wed, 14 Aug 2019 11:08:20 GMT
-ARG ODOO_SHA=374ccf1d4cde0e73d79f970ef75188c78ee0e222
-# Wed, 14 Aug 2019 11:09:09 GMT
-# ARGS: ODOO_RELEASE=20190424 ODOO_SHA=374ccf1d4cde0e73d79f970ef75188c78ee0e222
+# Fri, 16 Aug 2019 21:27:38 GMT
+ARG ODOO_RELEASE=20190816
+# Fri, 16 Aug 2019 21:27:38 GMT
+ARG ODOO_SHA=948e097925bfbba8ffd9682c2d0555dc9b539c0a
+# Fri, 16 Aug 2019 21:28:24 GMT
+# ARGS: ODOO_RELEASE=20190816 ODOO_SHA=948e097925bfbba8ffd9682c2d0555dc9b539c0a
 RUN set -x;         curl -o odoo.deb -sSL http://nightly.odoo.com/${ODOO_VERSION}/nightly/deb/odoo_${ODOO_VERSION}.${ODOO_RELEASE}_all.deb         && echo "${ODOO_SHA} odoo.deb" | sha1sum -c -         && dpkg --force-depends -i odoo.deb         && apt-get update         && apt-get -y install -f --no-install-recommends         && rm -rf /var/lib/apt/lists/* odoo.deb
-# Wed, 14 Aug 2019 11:09:14 GMT
-# ARGS: ODOO_RELEASE=20190424 ODOO_SHA=374ccf1d4cde0e73d79f970ef75188c78ee0e222
+# Fri, 16 Aug 2019 21:28:28 GMT
+# ARGS: ODOO_RELEASE=20190816 ODOO_SHA=948e097925bfbba8ffd9682c2d0555dc9b539c0a
 RUN pip3 install num2words xlwt
-# Wed, 14 Aug 2019 11:09:14 GMT
+# Fri, 16 Aug 2019 21:28:28 GMT
 COPY file:4176eb0ea8f4dc2006706c8beb089877469b2c51fd91c795a2c6b91c1587dff1 in / 
-# Wed, 14 Aug 2019 11:09:14 GMT
+# Fri, 16 Aug 2019 21:28:28 GMT
 COPY file:1e7209cce5525d270c422815db614f496d4d0da4820de1ab0000e9e592223235 in /etc/odoo/ 
-# Wed, 14 Aug 2019 11:09:15 GMT
-# ARGS: ODOO_RELEASE=20190424 ODOO_SHA=374ccf1d4cde0e73d79f970ef75188c78ee0e222
+# Fri, 16 Aug 2019 21:28:29 GMT
+# ARGS: ODOO_RELEASE=20190816 ODOO_SHA=948e097925bfbba8ffd9682c2d0555dc9b539c0a
 RUN chown odoo /etc/odoo/odoo.conf
-# Wed, 14 Aug 2019 11:09:16 GMT
-# ARGS: ODOO_RELEASE=20190424 ODOO_SHA=374ccf1d4cde0e73d79f970ef75188c78ee0e222
+# Fri, 16 Aug 2019 21:28:30 GMT
+# ARGS: ODOO_RELEASE=20190816 ODOO_SHA=948e097925bfbba8ffd9682c2d0555dc9b539c0a
 RUN mkdir -p /mnt/extra-addons         && chown -R odoo /mnt/extra-addons
-# Wed, 14 Aug 2019 11:09:16 GMT
+# Fri, 16 Aug 2019 21:28:30 GMT
 VOLUME [/var/lib/odoo /mnt/extra-addons]
-# Wed, 14 Aug 2019 11:09:16 GMT
+# Fri, 16 Aug 2019 21:28:30 GMT
 EXPOSE 8069 8071
-# Wed, 14 Aug 2019 11:09:16 GMT
+# Fri, 16 Aug 2019 21:28:30 GMT
 ENV ODOO_RC=/etc/odoo/odoo.conf
-# Wed, 14 Aug 2019 11:09:16 GMT
+# Fri, 16 Aug 2019 21:28:30 GMT
 USER odoo
-# Wed, 14 Aug 2019 11:09:17 GMT
+# Fri, 16 Aug 2019 21:28:31 GMT
 ENTRYPOINT ["/entrypoint.sh"]
-# Wed, 14 Aug 2019 11:09:17 GMT
+# Fri, 16 Aug 2019 21:28:31 GMT
 CMD ["odoo"]
 ```
 
@@ -502,29 +502,29 @@ CMD ["odoo"]
 		Last Modified: Wed, 14 Aug 2019 11:20:41 GMT  
 		Size: 3.6 MB (3569038 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:760b9905683c86c586a86c689f7083d5b001ccc437c7eec63b2720c2a214f642`  
-		Last Modified: Wed, 14 Aug 2019 11:22:31 GMT  
-		Size: 146.2 MB (146218625 bytes)  
+	-	`sha256:64f1656598730b02d2d769286b44e53da816106e388aadbb524b429f68d204dd`  
+		Last Modified: Fri, 16 Aug 2019 21:32:59 GMT  
+		Size: 146.6 MB (146611717 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:7adbd14a2599e38f85d4b02621cca7b8c9864810a197267a11bd959d550d3fd4`  
-		Last Modified: Wed, 14 Aug 2019 11:21:50 GMT  
-		Size: 624.0 KB (623978 bytes)  
+	-	`sha256:b0d74d5c9c5d9dc8e392676b0b0e34082c8b2b7a6292efdc028c85a3bc13b468`  
+		Last Modified: Fri, 16 Aug 2019 21:32:16 GMT  
+		Size: 624.0 KB (623968 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:6e615d53b1653fc95be1e204981fd121ea8914fcecb2b4137a3907e0cb5e53e1`  
-		Last Modified: Wed, 14 Aug 2019 11:21:50 GMT  
+	-	`sha256:99ca09fbb2a54fba546c2434e2b10030b061495e80a245f8a9de543f7b6ec82b`  
+		Last Modified: Fri, 16 Aug 2019 21:32:15 GMT  
 		Size: 600.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:2335eca18d72591ed1a557b61d8c544ffcfff84281811354a28726eb3d97bc0c`  
-		Last Modified: Wed, 14 Aug 2019 11:21:50 GMT  
+	-	`sha256:078cc00ddce65c0a7204e88e2799cc3e280c9a9ae6d5fadfdff3bbbbd78c0e23`  
+		Last Modified: Fri, 16 Aug 2019 21:32:15 GMT  
 		Size: 555.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:9b99c2eb24f8cb14bbf692a702bbceb25892a11ab99e158aa40c33c2dc16d04b`  
-		Last Modified: Wed, 14 Aug 2019 11:21:50 GMT  
+	-	`sha256:6bc1545611448f7e6af3e84c673699b043d57bf219b40c5bde9046554935dab6`  
+		Last Modified: Fri, 16 Aug 2019 21:32:16 GMT  
 		Size: 554.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:2a1b8cce835109e5008b3d0798e351eebb792dfd2f1abd72adb78529f78bf161`  
-		Last Modified: Wed, 14 Aug 2019 11:21:50 GMT  
-		Size: 127.0 B  
+	-	`sha256:ed1aef6bf5f78691ca9a0d066338494d060c3c4e00a436082add0988330c5c8a`  
+		Last Modified: Fri, 16 Aug 2019 21:32:16 GMT  
+		Size: 128.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `odoo:11.0` - linux; arm64 variant v8
@@ -619,7 +619,7 @@ CMD ["odoo"]
 ## `odoo:12`
 
 ```console
-$ docker pull odoo@sha256:1382ba4655224573d98cda020a30027e3de3ad5b53103b91ebadcd492c185dc4
+$ docker pull odoo@sha256:fe21f97a2a0d10a43d06061f55f1a0c9cf59f3773941a5c4209e3a3ba62b27eb
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -630,14 +630,14 @@ $ docker pull odoo@sha256:1382ba4655224573d98cda020a30027e3de3ad5b53103b91ebadcd
 ### `odoo:12` - linux; amd64
 
 ```console
-$ docker pull odoo@sha256:5a45175f37973d3fcfa1e93623fb6bb1c8781e3f69b413033b04646227fe8cd5
+$ docker pull odoo@sha256:b5fc0cda98d2b2b0106f264d46fd07f096924dbdc915d173cad28f35c6abcc7b
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **431.0 MB (430951377 bytes)**  
+-	Total Size: **432.5 MB (432479846 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:f0344a8a0d80e367b9dca3631db7c7c3cd58ad3ab32d2cb103b8a102a59f6802`
+-	Image ID: `sha256:0201c2f3d66e02c79f549ff1a88c140ab1216c3a9702985a6adfcfdd42261c8a`
 -	Entrypoint: `["\/entrypoint.sh"]`
 -	Default Command: `["odoo"]`
 
@@ -658,37 +658,37 @@ RUN set -x;         echo 'deb http://apt.postgresql.org/pub/repos/apt/ stretch-p
 RUN set -x;    echo "deb http://deb.nodesource.com/node_8.x stretch main" > /etc/apt/sources.list.d/nodesource.list     && export GNUPGHOME="$(mktemp -d)"     && repokey='9FD3B784BC1C6FC31A8A0A1C1655A0AB68576280'     && gpg --batch --keyserver keyserver.ubuntu.com --recv-keys "${repokey}"     && gpg --armor --export "${repokey}" | apt-key add -     && gpgconf --kill all     && rm -rf "$GNUPGHOME"     && apt-get update     && apt-get install -y nodejs     && npm install -g rtlcss     && rm -rf /var/lib/apt/lists/*
 # Wed, 14 Aug 2019 11:06:56 GMT
 ENV ODOO_VERSION=12.0
-# Wed, 14 Aug 2019 11:06:56 GMT
-ARG ODOO_RELEASE=20190424
-# Wed, 14 Aug 2019 11:06:57 GMT
-ARG ODOO_SHA=3885be6791b9b8c2a74115299e57213c71db4363
-# Wed, 14 Aug 2019 11:08:03 GMT
-# ARGS: ODOO_RELEASE=20190424 ODOO_SHA=3885be6791b9b8c2a74115299e57213c71db4363
+# Fri, 16 Aug 2019 21:26:35 GMT
+ARG ODOO_RELEASE=20190816
+# Fri, 16 Aug 2019 21:26:35 GMT
+ARG ODOO_SHA=e95cdfe23d16a8572b63bc8d8e8616be5bc18a0a
+# Fri, 16 Aug 2019 21:27:23 GMT
+# ARGS: ODOO_RELEASE=20190816 ODOO_SHA=e95cdfe23d16a8572b63bc8d8e8616be5bc18a0a
 RUN set -x;         curl -o odoo.deb -sSL http://nightly.odoo.com/${ODOO_VERSION}/nightly/deb/odoo_${ODOO_VERSION}.${ODOO_RELEASE}_all.deb         && echo "${ODOO_SHA} odoo.deb" | sha1sum -c -         && dpkg --force-depends -i odoo.deb         && apt-get update         && apt-get -y install -f --no-install-recommends         && rm -rf /var/lib/apt/lists/* odoo.deb
-# Wed, 14 Aug 2019 11:08:07 GMT
-# ARGS: ODOO_RELEASE=20190424 ODOO_SHA=3885be6791b9b8c2a74115299e57213c71db4363
+# Fri, 16 Aug 2019 21:27:27 GMT
+# ARGS: ODOO_RELEASE=20190816 ODOO_SHA=e95cdfe23d16a8572b63bc8d8e8616be5bc18a0a
 RUN pip3 install num2words xlwt
-# Wed, 14 Aug 2019 11:08:08 GMT
+# Fri, 16 Aug 2019 21:27:28 GMT
 COPY file:4176eb0ea8f4dc2006706c8beb089877469b2c51fd91c795a2c6b91c1587dff1 in / 
-# Wed, 14 Aug 2019 11:08:08 GMT
+# Fri, 16 Aug 2019 21:27:28 GMT
 COPY file:1e7209cce5525d270c422815db614f496d4d0da4820de1ab0000e9e592223235 in /etc/odoo/ 
-# Wed, 14 Aug 2019 11:08:09 GMT
-# ARGS: ODOO_RELEASE=20190424 ODOO_SHA=3885be6791b9b8c2a74115299e57213c71db4363
+# Fri, 16 Aug 2019 21:27:28 GMT
+# ARGS: ODOO_RELEASE=20190816 ODOO_SHA=e95cdfe23d16a8572b63bc8d8e8616be5bc18a0a
 RUN chown odoo /etc/odoo/odoo.conf
-# Wed, 14 Aug 2019 11:08:09 GMT
-# ARGS: ODOO_RELEASE=20190424 ODOO_SHA=3885be6791b9b8c2a74115299e57213c71db4363
+# Fri, 16 Aug 2019 21:27:29 GMT
+# ARGS: ODOO_RELEASE=20190816 ODOO_SHA=e95cdfe23d16a8572b63bc8d8e8616be5bc18a0a
 RUN mkdir -p /mnt/extra-addons         && chown -R odoo /mnt/extra-addons
-# Wed, 14 Aug 2019 11:08:09 GMT
+# Fri, 16 Aug 2019 21:27:29 GMT
 VOLUME [/var/lib/odoo /mnt/extra-addons]
-# Wed, 14 Aug 2019 11:08:10 GMT
+# Fri, 16 Aug 2019 21:27:30 GMT
 EXPOSE 8069 8071
-# Wed, 14 Aug 2019 11:08:10 GMT
+# Fri, 16 Aug 2019 21:27:30 GMT
 ENV ODOO_RC=/etc/odoo/odoo.conf
-# Wed, 14 Aug 2019 11:08:10 GMT
+# Fri, 16 Aug 2019 21:27:30 GMT
 USER odoo
-# Wed, 14 Aug 2019 11:08:10 GMT
+# Fri, 16 Aug 2019 21:27:30 GMT
 ENTRYPOINT ["/entrypoint.sh"]
-# Wed, 14 Aug 2019 11:08:10 GMT
+# Fri, 16 Aug 2019 21:27:30 GMT
 CMD ["odoo"]
 ```
 
@@ -709,28 +709,28 @@ CMD ["odoo"]
 		Last Modified: Wed, 14 Aug 2019 11:21:02 GMT  
 		Size: 29.2 MB (29212357 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c63bc42e40a1f209bbd4b2a6970eeb18bcf0e78b071ef75132f6fd80f038c79d`  
-		Last Modified: Wed, 14 Aug 2019 11:21:39 GMT  
-		Size: 130.8 MB (130816333 bytes)  
+	-	`sha256:0500ad1363ae9e995a6bb4662fecaa25166319006df19dc933b1408b5e6294ae`  
+		Last Modified: Fri, 16 Aug 2019 21:32:11 GMT  
+		Size: 132.3 MB (132344777 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:2a078b59fef0cce14219dd19fe3609db10483b1759d7010d8ce09cf4d0539058`  
-		Last Modified: Wed, 14 Aug 2019 11:20:37 GMT  
-		Size: 623.9 KB (623928 bytes)  
+	-	`sha256:496fc32eace6f04adb9af37131ab6e194fd544d589450a9e9a9501ac0b2f7130`  
+		Last Modified: Fri, 16 Aug 2019 21:31:45 GMT  
+		Size: 624.0 KB (623955 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:21777eded18385a9423c749f55815a192c08e72fc79f5654cdede66e13d5cb26`  
-		Last Modified: Wed, 14 Aug 2019 11:20:36 GMT  
+	-	`sha256:1e66d70bed09a0b23e6fa3a45037ca85585fca08c553c1d3ed426bb72356f2e4`  
+		Last Modified: Fri, 16 Aug 2019 21:31:45 GMT  
 		Size: 600.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:1ac8457b01b17734cb438913e6cec71ab30085de372e1d4ee30c5ad82aea2b45`  
-		Last Modified: Wed, 14 Aug 2019 11:20:36 GMT  
-		Size: 554.0 B  
+	-	`sha256:5542f26464809a0b6011b2a92812132cef139f0c7e948e8dccc67e1575b3b532`  
+		Last Modified: Fri, 16 Aug 2019 21:31:45 GMT  
+		Size: 553.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:9ccdec90eadeba098b65488812308bcb01072e9c5e4bf0b7d6a5f3350d815002`  
-		Last Modified: Wed, 14 Aug 2019 11:20:36 GMT  
-		Size: 554.0 B  
+	-	`sha256:1b9f85dad11eab49214f34b1a377b9bb991f8390848f3004742c3b6d15293eb0`  
+		Last Modified: Fri, 16 Aug 2019 21:31:45 GMT  
+		Size: 553.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:9e185da7ca85868418b125702183497a956c38c84affbb705f1a0d9dc5597b7c`  
-		Last Modified: Wed, 14 Aug 2019 11:20:36 GMT  
+	-	`sha256:fdfd4c9dcb8c3b196b3817016e193595f6e3bcfe4453a7911a0c019c6dac494f`  
+		Last Modified: Fri, 16 Aug 2019 21:31:45 GMT  
 		Size: 128.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
@@ -826,7 +826,7 @@ CMD ["odoo"]
 ## `odoo:12.0`
 
 ```console
-$ docker pull odoo@sha256:1382ba4655224573d98cda020a30027e3de3ad5b53103b91ebadcd492c185dc4
+$ docker pull odoo@sha256:fe21f97a2a0d10a43d06061f55f1a0c9cf59f3773941a5c4209e3a3ba62b27eb
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -837,14 +837,14 @@ $ docker pull odoo@sha256:1382ba4655224573d98cda020a30027e3de3ad5b53103b91ebadcd
 ### `odoo:12.0` - linux; amd64
 
 ```console
-$ docker pull odoo@sha256:5a45175f37973d3fcfa1e93623fb6bb1c8781e3f69b413033b04646227fe8cd5
+$ docker pull odoo@sha256:b5fc0cda98d2b2b0106f264d46fd07f096924dbdc915d173cad28f35c6abcc7b
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **431.0 MB (430951377 bytes)**  
+-	Total Size: **432.5 MB (432479846 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:f0344a8a0d80e367b9dca3631db7c7c3cd58ad3ab32d2cb103b8a102a59f6802`
+-	Image ID: `sha256:0201c2f3d66e02c79f549ff1a88c140ab1216c3a9702985a6adfcfdd42261c8a`
 -	Entrypoint: `["\/entrypoint.sh"]`
 -	Default Command: `["odoo"]`
 
@@ -865,37 +865,37 @@ RUN set -x;         echo 'deb http://apt.postgresql.org/pub/repos/apt/ stretch-p
 RUN set -x;    echo "deb http://deb.nodesource.com/node_8.x stretch main" > /etc/apt/sources.list.d/nodesource.list     && export GNUPGHOME="$(mktemp -d)"     && repokey='9FD3B784BC1C6FC31A8A0A1C1655A0AB68576280'     && gpg --batch --keyserver keyserver.ubuntu.com --recv-keys "${repokey}"     && gpg --armor --export "${repokey}" | apt-key add -     && gpgconf --kill all     && rm -rf "$GNUPGHOME"     && apt-get update     && apt-get install -y nodejs     && npm install -g rtlcss     && rm -rf /var/lib/apt/lists/*
 # Wed, 14 Aug 2019 11:06:56 GMT
 ENV ODOO_VERSION=12.0
-# Wed, 14 Aug 2019 11:06:56 GMT
-ARG ODOO_RELEASE=20190424
-# Wed, 14 Aug 2019 11:06:57 GMT
-ARG ODOO_SHA=3885be6791b9b8c2a74115299e57213c71db4363
-# Wed, 14 Aug 2019 11:08:03 GMT
-# ARGS: ODOO_RELEASE=20190424 ODOO_SHA=3885be6791b9b8c2a74115299e57213c71db4363
+# Fri, 16 Aug 2019 21:26:35 GMT
+ARG ODOO_RELEASE=20190816
+# Fri, 16 Aug 2019 21:26:35 GMT
+ARG ODOO_SHA=e95cdfe23d16a8572b63bc8d8e8616be5bc18a0a
+# Fri, 16 Aug 2019 21:27:23 GMT
+# ARGS: ODOO_RELEASE=20190816 ODOO_SHA=e95cdfe23d16a8572b63bc8d8e8616be5bc18a0a
 RUN set -x;         curl -o odoo.deb -sSL http://nightly.odoo.com/${ODOO_VERSION}/nightly/deb/odoo_${ODOO_VERSION}.${ODOO_RELEASE}_all.deb         && echo "${ODOO_SHA} odoo.deb" | sha1sum -c -         && dpkg --force-depends -i odoo.deb         && apt-get update         && apt-get -y install -f --no-install-recommends         && rm -rf /var/lib/apt/lists/* odoo.deb
-# Wed, 14 Aug 2019 11:08:07 GMT
-# ARGS: ODOO_RELEASE=20190424 ODOO_SHA=3885be6791b9b8c2a74115299e57213c71db4363
+# Fri, 16 Aug 2019 21:27:27 GMT
+# ARGS: ODOO_RELEASE=20190816 ODOO_SHA=e95cdfe23d16a8572b63bc8d8e8616be5bc18a0a
 RUN pip3 install num2words xlwt
-# Wed, 14 Aug 2019 11:08:08 GMT
+# Fri, 16 Aug 2019 21:27:28 GMT
 COPY file:4176eb0ea8f4dc2006706c8beb089877469b2c51fd91c795a2c6b91c1587dff1 in / 
-# Wed, 14 Aug 2019 11:08:08 GMT
+# Fri, 16 Aug 2019 21:27:28 GMT
 COPY file:1e7209cce5525d270c422815db614f496d4d0da4820de1ab0000e9e592223235 in /etc/odoo/ 
-# Wed, 14 Aug 2019 11:08:09 GMT
-# ARGS: ODOO_RELEASE=20190424 ODOO_SHA=3885be6791b9b8c2a74115299e57213c71db4363
+# Fri, 16 Aug 2019 21:27:28 GMT
+# ARGS: ODOO_RELEASE=20190816 ODOO_SHA=e95cdfe23d16a8572b63bc8d8e8616be5bc18a0a
 RUN chown odoo /etc/odoo/odoo.conf
-# Wed, 14 Aug 2019 11:08:09 GMT
-# ARGS: ODOO_RELEASE=20190424 ODOO_SHA=3885be6791b9b8c2a74115299e57213c71db4363
+# Fri, 16 Aug 2019 21:27:29 GMT
+# ARGS: ODOO_RELEASE=20190816 ODOO_SHA=e95cdfe23d16a8572b63bc8d8e8616be5bc18a0a
 RUN mkdir -p /mnt/extra-addons         && chown -R odoo /mnt/extra-addons
-# Wed, 14 Aug 2019 11:08:09 GMT
+# Fri, 16 Aug 2019 21:27:29 GMT
 VOLUME [/var/lib/odoo /mnt/extra-addons]
-# Wed, 14 Aug 2019 11:08:10 GMT
+# Fri, 16 Aug 2019 21:27:30 GMT
 EXPOSE 8069 8071
-# Wed, 14 Aug 2019 11:08:10 GMT
+# Fri, 16 Aug 2019 21:27:30 GMT
 ENV ODOO_RC=/etc/odoo/odoo.conf
-# Wed, 14 Aug 2019 11:08:10 GMT
+# Fri, 16 Aug 2019 21:27:30 GMT
 USER odoo
-# Wed, 14 Aug 2019 11:08:10 GMT
+# Fri, 16 Aug 2019 21:27:30 GMT
 ENTRYPOINT ["/entrypoint.sh"]
-# Wed, 14 Aug 2019 11:08:10 GMT
+# Fri, 16 Aug 2019 21:27:30 GMT
 CMD ["odoo"]
 ```
 
@@ -916,28 +916,28 @@ CMD ["odoo"]
 		Last Modified: Wed, 14 Aug 2019 11:21:02 GMT  
 		Size: 29.2 MB (29212357 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c63bc42e40a1f209bbd4b2a6970eeb18bcf0e78b071ef75132f6fd80f038c79d`  
-		Last Modified: Wed, 14 Aug 2019 11:21:39 GMT  
-		Size: 130.8 MB (130816333 bytes)  
+	-	`sha256:0500ad1363ae9e995a6bb4662fecaa25166319006df19dc933b1408b5e6294ae`  
+		Last Modified: Fri, 16 Aug 2019 21:32:11 GMT  
+		Size: 132.3 MB (132344777 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:2a078b59fef0cce14219dd19fe3609db10483b1759d7010d8ce09cf4d0539058`  
-		Last Modified: Wed, 14 Aug 2019 11:20:37 GMT  
-		Size: 623.9 KB (623928 bytes)  
+	-	`sha256:496fc32eace6f04adb9af37131ab6e194fd544d589450a9e9a9501ac0b2f7130`  
+		Last Modified: Fri, 16 Aug 2019 21:31:45 GMT  
+		Size: 624.0 KB (623955 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:21777eded18385a9423c749f55815a192c08e72fc79f5654cdede66e13d5cb26`  
-		Last Modified: Wed, 14 Aug 2019 11:20:36 GMT  
+	-	`sha256:1e66d70bed09a0b23e6fa3a45037ca85585fca08c553c1d3ed426bb72356f2e4`  
+		Last Modified: Fri, 16 Aug 2019 21:31:45 GMT  
 		Size: 600.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:1ac8457b01b17734cb438913e6cec71ab30085de372e1d4ee30c5ad82aea2b45`  
-		Last Modified: Wed, 14 Aug 2019 11:20:36 GMT  
-		Size: 554.0 B  
+	-	`sha256:5542f26464809a0b6011b2a92812132cef139f0c7e948e8dccc67e1575b3b532`  
+		Last Modified: Fri, 16 Aug 2019 21:31:45 GMT  
+		Size: 553.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:9ccdec90eadeba098b65488812308bcb01072e9c5e4bf0b7d6a5f3350d815002`  
-		Last Modified: Wed, 14 Aug 2019 11:20:36 GMT  
-		Size: 554.0 B  
+	-	`sha256:1b9f85dad11eab49214f34b1a377b9bb991f8390848f3004742c3b6d15293eb0`  
+		Last Modified: Fri, 16 Aug 2019 21:31:45 GMT  
+		Size: 553.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:9e185da7ca85868418b125702183497a956c38c84affbb705f1a0d9dc5597b7c`  
-		Last Modified: Wed, 14 Aug 2019 11:20:36 GMT  
+	-	`sha256:fdfd4c9dcb8c3b196b3817016e193595f6e3bcfe4453a7911a0c019c6dac494f`  
+		Last Modified: Fri, 16 Aug 2019 21:31:45 GMT  
 		Size: 128.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
@@ -1033,7 +1033,7 @@ CMD ["odoo"]
 ## `odoo:latest`
 
 ```console
-$ docker pull odoo@sha256:1382ba4655224573d98cda020a30027e3de3ad5b53103b91ebadcd492c185dc4
+$ docker pull odoo@sha256:fe21f97a2a0d10a43d06061f55f1a0c9cf59f3773941a5c4209e3a3ba62b27eb
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -1044,14 +1044,14 @@ $ docker pull odoo@sha256:1382ba4655224573d98cda020a30027e3de3ad5b53103b91ebadcd
 ### `odoo:latest` - linux; amd64
 
 ```console
-$ docker pull odoo@sha256:5a45175f37973d3fcfa1e93623fb6bb1c8781e3f69b413033b04646227fe8cd5
+$ docker pull odoo@sha256:b5fc0cda98d2b2b0106f264d46fd07f096924dbdc915d173cad28f35c6abcc7b
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **431.0 MB (430951377 bytes)**  
+-	Total Size: **432.5 MB (432479846 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:f0344a8a0d80e367b9dca3631db7c7c3cd58ad3ab32d2cb103b8a102a59f6802`
+-	Image ID: `sha256:0201c2f3d66e02c79f549ff1a88c140ab1216c3a9702985a6adfcfdd42261c8a`
 -	Entrypoint: `["\/entrypoint.sh"]`
 -	Default Command: `["odoo"]`
 
@@ -1072,37 +1072,37 @@ RUN set -x;         echo 'deb http://apt.postgresql.org/pub/repos/apt/ stretch-p
 RUN set -x;    echo "deb http://deb.nodesource.com/node_8.x stretch main" > /etc/apt/sources.list.d/nodesource.list     && export GNUPGHOME="$(mktemp -d)"     && repokey='9FD3B784BC1C6FC31A8A0A1C1655A0AB68576280'     && gpg --batch --keyserver keyserver.ubuntu.com --recv-keys "${repokey}"     && gpg --armor --export "${repokey}" | apt-key add -     && gpgconf --kill all     && rm -rf "$GNUPGHOME"     && apt-get update     && apt-get install -y nodejs     && npm install -g rtlcss     && rm -rf /var/lib/apt/lists/*
 # Wed, 14 Aug 2019 11:06:56 GMT
 ENV ODOO_VERSION=12.0
-# Wed, 14 Aug 2019 11:06:56 GMT
-ARG ODOO_RELEASE=20190424
-# Wed, 14 Aug 2019 11:06:57 GMT
-ARG ODOO_SHA=3885be6791b9b8c2a74115299e57213c71db4363
-# Wed, 14 Aug 2019 11:08:03 GMT
-# ARGS: ODOO_RELEASE=20190424 ODOO_SHA=3885be6791b9b8c2a74115299e57213c71db4363
+# Fri, 16 Aug 2019 21:26:35 GMT
+ARG ODOO_RELEASE=20190816
+# Fri, 16 Aug 2019 21:26:35 GMT
+ARG ODOO_SHA=e95cdfe23d16a8572b63bc8d8e8616be5bc18a0a
+# Fri, 16 Aug 2019 21:27:23 GMT
+# ARGS: ODOO_RELEASE=20190816 ODOO_SHA=e95cdfe23d16a8572b63bc8d8e8616be5bc18a0a
 RUN set -x;         curl -o odoo.deb -sSL http://nightly.odoo.com/${ODOO_VERSION}/nightly/deb/odoo_${ODOO_VERSION}.${ODOO_RELEASE}_all.deb         && echo "${ODOO_SHA} odoo.deb" | sha1sum -c -         && dpkg --force-depends -i odoo.deb         && apt-get update         && apt-get -y install -f --no-install-recommends         && rm -rf /var/lib/apt/lists/* odoo.deb
-# Wed, 14 Aug 2019 11:08:07 GMT
-# ARGS: ODOO_RELEASE=20190424 ODOO_SHA=3885be6791b9b8c2a74115299e57213c71db4363
+# Fri, 16 Aug 2019 21:27:27 GMT
+# ARGS: ODOO_RELEASE=20190816 ODOO_SHA=e95cdfe23d16a8572b63bc8d8e8616be5bc18a0a
 RUN pip3 install num2words xlwt
-# Wed, 14 Aug 2019 11:08:08 GMT
+# Fri, 16 Aug 2019 21:27:28 GMT
 COPY file:4176eb0ea8f4dc2006706c8beb089877469b2c51fd91c795a2c6b91c1587dff1 in / 
-# Wed, 14 Aug 2019 11:08:08 GMT
+# Fri, 16 Aug 2019 21:27:28 GMT
 COPY file:1e7209cce5525d270c422815db614f496d4d0da4820de1ab0000e9e592223235 in /etc/odoo/ 
-# Wed, 14 Aug 2019 11:08:09 GMT
-# ARGS: ODOO_RELEASE=20190424 ODOO_SHA=3885be6791b9b8c2a74115299e57213c71db4363
+# Fri, 16 Aug 2019 21:27:28 GMT
+# ARGS: ODOO_RELEASE=20190816 ODOO_SHA=e95cdfe23d16a8572b63bc8d8e8616be5bc18a0a
 RUN chown odoo /etc/odoo/odoo.conf
-# Wed, 14 Aug 2019 11:08:09 GMT
-# ARGS: ODOO_RELEASE=20190424 ODOO_SHA=3885be6791b9b8c2a74115299e57213c71db4363
+# Fri, 16 Aug 2019 21:27:29 GMT
+# ARGS: ODOO_RELEASE=20190816 ODOO_SHA=e95cdfe23d16a8572b63bc8d8e8616be5bc18a0a
 RUN mkdir -p /mnt/extra-addons         && chown -R odoo /mnt/extra-addons
-# Wed, 14 Aug 2019 11:08:09 GMT
+# Fri, 16 Aug 2019 21:27:29 GMT
 VOLUME [/var/lib/odoo /mnt/extra-addons]
-# Wed, 14 Aug 2019 11:08:10 GMT
+# Fri, 16 Aug 2019 21:27:30 GMT
 EXPOSE 8069 8071
-# Wed, 14 Aug 2019 11:08:10 GMT
+# Fri, 16 Aug 2019 21:27:30 GMT
 ENV ODOO_RC=/etc/odoo/odoo.conf
-# Wed, 14 Aug 2019 11:08:10 GMT
+# Fri, 16 Aug 2019 21:27:30 GMT
 USER odoo
-# Wed, 14 Aug 2019 11:08:10 GMT
+# Fri, 16 Aug 2019 21:27:30 GMT
 ENTRYPOINT ["/entrypoint.sh"]
-# Wed, 14 Aug 2019 11:08:10 GMT
+# Fri, 16 Aug 2019 21:27:30 GMT
 CMD ["odoo"]
 ```
 
@@ -1123,28 +1123,28 @@ CMD ["odoo"]
 		Last Modified: Wed, 14 Aug 2019 11:21:02 GMT  
 		Size: 29.2 MB (29212357 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c63bc42e40a1f209bbd4b2a6970eeb18bcf0e78b071ef75132f6fd80f038c79d`  
-		Last Modified: Wed, 14 Aug 2019 11:21:39 GMT  
-		Size: 130.8 MB (130816333 bytes)  
+	-	`sha256:0500ad1363ae9e995a6bb4662fecaa25166319006df19dc933b1408b5e6294ae`  
+		Last Modified: Fri, 16 Aug 2019 21:32:11 GMT  
+		Size: 132.3 MB (132344777 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:2a078b59fef0cce14219dd19fe3609db10483b1759d7010d8ce09cf4d0539058`  
-		Last Modified: Wed, 14 Aug 2019 11:20:37 GMT  
-		Size: 623.9 KB (623928 bytes)  
+	-	`sha256:496fc32eace6f04adb9af37131ab6e194fd544d589450a9e9a9501ac0b2f7130`  
+		Last Modified: Fri, 16 Aug 2019 21:31:45 GMT  
+		Size: 624.0 KB (623955 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:21777eded18385a9423c749f55815a192c08e72fc79f5654cdede66e13d5cb26`  
-		Last Modified: Wed, 14 Aug 2019 11:20:36 GMT  
+	-	`sha256:1e66d70bed09a0b23e6fa3a45037ca85585fca08c553c1d3ed426bb72356f2e4`  
+		Last Modified: Fri, 16 Aug 2019 21:31:45 GMT  
 		Size: 600.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:1ac8457b01b17734cb438913e6cec71ab30085de372e1d4ee30c5ad82aea2b45`  
-		Last Modified: Wed, 14 Aug 2019 11:20:36 GMT  
-		Size: 554.0 B  
+	-	`sha256:5542f26464809a0b6011b2a92812132cef139f0c7e948e8dccc67e1575b3b532`  
+		Last Modified: Fri, 16 Aug 2019 21:31:45 GMT  
+		Size: 553.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:9ccdec90eadeba098b65488812308bcb01072e9c5e4bf0b7d6a5f3350d815002`  
-		Last Modified: Wed, 14 Aug 2019 11:20:36 GMT  
-		Size: 554.0 B  
+	-	`sha256:1b9f85dad11eab49214f34b1a377b9bb991f8390848f3004742c3b6d15293eb0`  
+		Last Modified: Fri, 16 Aug 2019 21:31:45 GMT  
+		Size: 553.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:9e185da7ca85868418b125702183497a956c38c84affbb705f1a0d9dc5597b7c`  
-		Last Modified: Wed, 14 Aug 2019 11:20:36 GMT  
+	-	`sha256:fdfd4c9dcb8c3b196b3817016e193595f6e3bcfe4453a7911a0c019c6dac494f`  
+		Last Modified: Fri, 16 Aug 2019 21:31:45 GMT  
 		Size: 128.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
