@@ -2,9 +2,9 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:46a4c3af0355d182b772dd0414a951379440ba1b0a50e906bb30649e936894c5`
-- Created: `2019-07-27T00:19:44.930870763Z`
-- Virtual Size: ~ 454.82 Mb  
+- Image ID: `sha256:817d99dabd8ed4ea4fbb85524c6d290bd605b05440135252b0d301aa1d64c08c`
+- Created: `2019-08-15T07:59:13.178619285Z`
+- Virtual Size: ~ 455.63 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Command: `["/opt/files/startup.sh"]`
@@ -183,19 +183,23 @@ $ apt-get source -qq --print-uris avahi=0.7-3.1ubuntu1.2
 'http://archive.ubuntu.com/ubuntu/pool/main/a/avahi/avahi_0.7-3.1ubuntu1.2.debian.tar.xz' avahi_0.7-3.1ubuntu1.2.debian.tar.xz 35124 SHA256:a72a1652e00b4385f99407e4f26eb1656e8eb0026d127e246533438d1ae05407
 ```
 
-### `dpkg` source package: `base-files=10.1ubuntu2.5`
+### `dpkg` source package: `base-files=10.1ubuntu2.6`
 
 Binary Packages:
 
-- `base-files=10.1ubuntu2.5`
+- `base-files=10.1ubuntu2.6`
 
 Licenses: (parsed from: `/usr/share/doc/base-files/copyright`)
 
 - `GPL`
 
-**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
-This is *usually* due to a new package version being released and the old version being removed.
+Source:
 
+```console
+$ apt-get source -qq --print-uris base-files=10.1ubuntu2.6
+'http://archive.ubuntu.com/ubuntu/pool/main/b/base-files/base-files_10.1ubuntu2.6.dsc' base-files_10.1ubuntu2.6.dsc 1620 SHA256:3b2bb107b6e818e9e75b4aaffadfd5934055feb08313e40129bea43cbcc1a2ad
+'http://archive.ubuntu.com/ubuntu/pool/main/b/base-files/base-files_10.1ubuntu2.6.tar.xz' base-files_10.1ubuntu2.6.tar.xz 78212 SHA256:9c5b1f13a900f3610b7015317d25484101f13ecad1360ff3fa20a033ddff6171
+```
 
 ### `dpkg` source package: `base-passwd=3.5.44`
 
@@ -1780,11 +1784,11 @@ $ apt-get source -qq --print-uris mpdecimal=2.4.2-1ubuntu1
 'http://archive.ubuntu.com/ubuntu/pool/main/m/mpdecimal/mpdecimal_2.4.2-1ubuntu1.debian.tar.xz' mpdecimal_2.4.2-1ubuntu1.debian.tar.xz 5328 SHA256:091414d364411f1d05b496f877e04d8ad22d52441cb698d739929907e94e0fc7
 ```
 
-### `dpkg` source package: `mysql-5.7=5.7.26-0ubuntu0.18.04.1`
+### `dpkg` source package: `mysql-5.7=5.7.27-0ubuntu0.18.04.1`
 
 Binary Packages:
 
-- `mysql-client-core-5.7=5.7.26-0ubuntu0.18.04.1`
+- `mysql-client-core-5.7=5.7.27-0ubuntu0.18.04.1`
 
 Licenses: (parsed from: `/usr/share/doc/mysql-client-core-5.7/copyright`)
 
@@ -1802,9 +1806,14 @@ Licenses: (parsed from: `/usr/share/doc/mysql-client-core-5.7/copyright`)
 - `public-domain`
 - `zlib/libpng`
 
-**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
-This is *usually* due to a new package version being released and the old version being removed.
+Source:
 
+```console
+$ apt-get source -qq --print-uris mysql-5.7=5.7.27-0ubuntu0.18.04.1
+'http://archive.ubuntu.com/ubuntu/pool/main/m/mysql-5.7/mysql-5.7_5.7.27-0ubuntu0.18.04.1.dsc' mysql-5.7_5.7.27-0ubuntu0.18.04.1.dsc 3403 SHA256:f0474ddd34f24c1ea514191799746589a799b2d30f79789624ca0ba86287f368
+'http://archive.ubuntu.com/ubuntu/pool/main/m/mysql-5.7/mysql-5.7_5.7.27.orig.tar.gz' mysql-5.7_5.7.27.orig.tar.gz 51436383 SHA256:036ab46a8a1216cfc1e87374bd1cba12e2208c02cf328a31851be7e1c7f57a2b
+'http://archive.ubuntu.com/ubuntu/pool/main/m/mysql-5.7/mysql-5.7_5.7.27-0ubuntu0.18.04.1.debian.tar.xz' mysql-5.7_5.7.27-0ubuntu0.18.04.1.debian.tar.xz 156232 SHA256:dd136610bb8348de9432e34a4238460760f3f884d9f350ea88c4c5089b1d5472
+```
 
 ### `dpkg` source package: `ncurses=6.1-1ubuntu1.18.04`
 
@@ -1982,11 +1991,11 @@ $ apt-get source -qq --print-uris numactl=2.0.11-2.1ubuntu0.1
 'http://archive.ubuntu.com/ubuntu/pool/main/n/numactl/numactl_2.0.11-2.1ubuntu0.1.debian.tar.xz' numactl_2.0.11-2.1ubuntu0.1.debian.tar.xz 9504 SHA256:f212b9699986291b474d1ae99eaa96f48e9845d0dde5aa2430a1b8e50e201b11
 ```
 
-### `dpkg` source package: `openjdk-lts=11.0.3+7-1ubuntu2~18.04.1`
+### `dpkg` source package: `openjdk-lts=11.0.4+11-1ubuntu2~18.04.3`
 
 Binary Packages:
 
-- `openjdk-11-jre-headless:amd64=11.0.3+7-1ubuntu2~18.04.1`
+- `openjdk-11-jre-headless:amd64=11.0.4+11-1ubuntu2~18.04.3`
 
 Licenses: (parsed from: `/usr/share/doc/openjdk-11-jre-headless/copyright`)
 
@@ -1995,24 +2004,34 @@ Licenses: (parsed from: `/usr/share/doc/openjdk-11-jre-headless/copyright`)
 - `LGPL-2`
 - `LGPL-2-1`
 
-**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
-This is *usually* due to a new package version being released and the old version being removed.
+Source:
 
+```console
+$ apt-get source -qq --print-uris openjdk-lts=11.0.4+11-1ubuntu2~18.04.3
+'http://archive.ubuntu.com/ubuntu/pool/main/o/openjdk-lts/openjdk-lts_11.0.4+11-1ubuntu2~18.04.3.dsc' openjdk-lts_11.0.4+11-1ubuntu2~18.04.3.dsc 4910 SHA256:8a597c6068b46350f297e6abf1bc5afabaa464826f87a2ad029e6cd7ccbc00e5
+'http://archive.ubuntu.com/ubuntu/pool/main/o/openjdk-lts/openjdk-lts_11.0.4+11.orig.tar.xz' openjdk-lts_11.0.4+11.orig.tar.xz 75482204 SHA256:10e053d0a9bba338d4f5dc6353bb15c5ad2e0d9349489fbfca5f1b58c0986c02
+'http://archive.ubuntu.com/ubuntu/pool/main/o/openjdk-lts/openjdk-lts_11.0.4+11-1ubuntu2~18.04.3.debian.tar.xz' openjdk-lts_11.0.4+11-1ubuntu2~18.04.3.debian.tar.xz 171188 SHA256:5a2c05f4bdd1491a8b31e48629a5ae5115eef5768af9c2359d4399a0fbed54ca
+```
 
-### `dpkg` source package: `openldap=2.4.45+dfsg-1ubuntu1.2`
+### `dpkg` source package: `openldap=2.4.45+dfsg-1ubuntu1.3`
 
 Binary Packages:
 
-- `libldap-2.4-2:amd64=2.4.45+dfsg-1ubuntu1.2`
-- `libldap-common=2.4.45+dfsg-1ubuntu1.2`
+- `libldap-2.4-2:amd64=2.4.45+dfsg-1ubuntu1.3`
+- `libldap-common=2.4.45+dfsg-1ubuntu1.3`
 
 **WARNING:** unable to detect licenses! (package likely not compliant with DEP-5)  
 If source is available (seen below), check the contents of `debian/copyright` within it.
 
 
-**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
-This is *usually* due to a new package version being released and the old version being removed.
+Source:
 
+```console
+$ apt-get source -qq --print-uris openldap=2.4.45+dfsg-1ubuntu1.3
+'http://archive.ubuntu.com/ubuntu/pool/main/o/openldap/openldap_2.4.45+dfsg-1ubuntu1.3.dsc' openldap_2.4.45+dfsg-1ubuntu1.3.dsc 2884 SHA256:a5be775d0ac209eef2a5e5bb4b25f92318433c828160f540ca038ea7107471e5
+'http://archive.ubuntu.com/ubuntu/pool/main/o/openldap/openldap_2.4.45+dfsg.orig.tar.gz' openldap_2.4.45+dfsg.orig.tar.gz 4846458 SHA256:d51c70423aa0554d454fd3d43e7f2e940523b4ef07979305b48c233ae44b2b32
+'http://archive.ubuntu.com/ubuntu/pool/main/o/openldap/openldap_2.4.45+dfsg-1ubuntu1.3.debian.tar.xz' openldap_2.4.45+dfsg-1ubuntu1.3.debian.tar.xz 177388 SHA256:6ac2c1960fcff8e8ea126fe10958c484681e0619d5211a844954bf6f3111d049
+```
 
 ### `dpkg` source package: `openssl=1.1.1-1ubuntu2.1~18.04.4`
 
@@ -2193,12 +2212,12 @@ $ apt-get source -qq --print-uris pinentry=1.1.0-1
 'http://archive.ubuntu.com/ubuntu/pool/main/p/pinentry/pinentry_1.1.0-1.debian.tar.xz' pinentry_1.1.0-1.debian.tar.xz 15408 SHA256:ddee92638e762f125ac09b86b4f3b31e2d240e8d2dcce940302293bb2ea0873e
 ```
 
-### `dpkg` source package: `postgresql-10=10.9-0ubuntu0.18.04.1`
+### `dpkg` source package: `postgresql-10=10.10-0ubuntu0.18.04.1`
 
 Binary Packages:
 
-- `libpq5:amd64=10.9-0ubuntu0.18.04.1`
-- `postgresql-client-10=10.9-0ubuntu0.18.04.1`
+- `libpq5:amd64=10.10-0ubuntu0.18.04.1`
+- `postgresql-client-10=10.10-0ubuntu0.18.04.1`
 
 Licenses: (parsed from: `/usr/share/doc/libpq5/copyright`, `/usr/share/doc/postgresql-client-10/copyright`)
 
@@ -2217,9 +2236,14 @@ Licenses: (parsed from: `/usr/share/doc/libpq5/copyright`, `/usr/share/doc/postg
 - `nagaysau-ishii`
 - `rijndael`
 
-**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
-This is *usually* due to a new package version being released and the old version being removed.
+Source:
 
+```console
+$ apt-get source -qq --print-uris postgresql-10=10.10-0ubuntu0.18.04.1
+'http://archive.ubuntu.com/ubuntu/pool/main/p/postgresql-10/postgresql-10_10.10-0ubuntu0.18.04.1.dsc' postgresql-10_10.10-0ubuntu0.18.04.1.dsc 3620 SHA256:ff12c7299778f997f1d373c77cb568c89dc7c3c6d9e07a07d2351d5f9babbeaa
+'http://archive.ubuntu.com/ubuntu/pool/main/p/postgresql-10/postgresql-10_10.10.orig.tar.bz2' postgresql-10_10.10.orig.tar.bz2 19012049 SHA256:ad4f9b8575f98ed6091bf9bb2cb16f0e52795a5f66546c1f499ca5c69b21f253
+'http://archive.ubuntu.com/ubuntu/pool/main/p/postgresql-10/postgresql-10_10.10-0ubuntu0.18.04.1.debian.tar.xz' postgresql-10_10.10-0ubuntu0.18.04.1.debian.tar.xz 33604 SHA256:19edbc1dbdeddde805b865f8779595d21b69898bb62f6eddf2f14013b18ea131
+```
 
 ### `dpkg` source package: `postgresql-common=190`
 
@@ -2468,12 +2492,12 @@ $ apt-get source -qq --print-uris sqlite3=3.22.0-1ubuntu0.1
 'http://archive.ubuntu.com/ubuntu/pool/main/s/sqlite3/sqlite3_3.22.0-1ubuntu0.1.debian.tar.xz' sqlite3_3.22.0-1ubuntu0.1.debian.tar.xz 33780 SHA256:1eb9ca29e3cbfd48112b4618daa0fdba75b269a92a286ea22d3d4f1dd0f573ea
 ```
 
-### `dpkg` source package: `systemd=237-3ubuntu10.24`
+### `dpkg` source package: `systemd=237-3ubuntu10.25`
 
 Binary Packages:
 
-- `libsystemd0:amd64=237-3ubuntu10.24`
-- `libudev1:amd64=237-3ubuntu10.24`
+- `libsystemd0:amd64=237-3ubuntu10.25`
+- `libudev1:amd64=237-3ubuntu10.25`
 
 Licenses: (parsed from: `/usr/share/doc/libsystemd0/copyright`, `/usr/share/doc/libudev1/copyright`)
 
@@ -2485,9 +2509,14 @@ Licenses: (parsed from: `/usr/share/doc/libsystemd0/copyright`, `/usr/share/doc/
 - `LGPL-2.1+`
 - `public-domain`
 
-**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
-This is *usually* due to a new package version being released and the old version being removed.
+Source:
 
+```console
+$ apt-get source -qq --print-uris systemd=237-3ubuntu10.25
+'http://archive.ubuntu.com/ubuntu/pool/main/s/systemd/systemd_237-3ubuntu10.25.dsc' systemd_237-3ubuntu10.25.dsc 5182 SHA256:ff24dafe1b2a06406aa8be2cfa3ffe153d23e4cd39db101b33c5e25281a18c1c
+'http://archive.ubuntu.com/ubuntu/pool/main/s/systemd/systemd_237.orig.tar.gz' systemd_237.orig.tar.gz 6871350 SHA256:c83dabbe1c9de6b9db1dafdb7e04140c7d0535705c68842f6c0768653ba4913c
+'http://archive.ubuntu.com/ubuntu/pool/main/s/systemd/systemd_237-3ubuntu10.25.debian.tar.xz' systemd_237-3ubuntu10.25.debian.tar.xz 220332 SHA256:3d98c05b8d71379d9b622df07eba6f6ee63c533fecbba127c371e8ecb533eda9
+```
 
 ### `dpkg` source package: `sysvinit=2.88dsf-59.10ubuntu1`
 
