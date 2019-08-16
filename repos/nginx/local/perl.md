@@ -1,17 +1,17 @@
-# `nginx:1.17.2-perl`
+# `nginx:1.17.3-perl`
 
 ## Docker Metadata
 
-- Image ID: `sha256:4100ec9f7b852b258db2a09fe848628c63b8071ee7cce140b6af95a78debadbf`
-- Created: `2019-07-23T19:59:37.966993481Z`
-- Virtual Size: ~ 171.51 Mb  
+- Image ID: `sha256:42b5cdcaf88c286c207d77f967c0ea4d078198a9bf0512bf63075ce5d902480d`
+- Created: `2019-08-15T21:23:08.474409777Z`
+- Virtual Size: ~ 171.62 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Command: `["nginx","-g","daemon off;"]`
 - Environment:
   - `PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
-  - `NGINX_VERSION=1.17.2`
-  - `NJS_VERSION=0.3.3`
+  - `NGINX_VERSION=1.17.3`
+  - `NJS_VERSION=0.3.5`
   - `PKG_RELEASE=1~buster`
 - Labels:
   - `maintainer=NGINX Docker Maintainers <docker-maint@nginx.com>`
@@ -1875,11 +1875,11 @@ Other potentially useful URLs:
 - https://sources.debian.net/src/nettle/3.4.1-1/debian/copyright/ (for direct copyright/license information)
 - http://snapshot.debian.org/package/nettle/3.4.1-1/ (for access to the source package after it no longer exists in the archive)
 
-### `dpkg` source package: `nginx-module-geoip=1.17.2-1~buster`
+### `dpkg` source package: `nginx-module-geoip=1.17.3-1~buster`
 
 Binary Packages:
 
-- `nginx-module-geoip=1.17.2-1~buster`
+- `nginx-module-geoip=1.17.3-1~buster`
 
 **WARNING:** unable to detect licenses! (package likely not compliant with DEP-5)  
 If source is available (seen below), check the contents of `debian/copyright` within it.
@@ -1889,11 +1889,11 @@ If source is available (seen below), check the contents of `debian/copyright` wi
 This is *usually* due to a new package version being released and the old version being removed.
 
 
-### `dpkg` source package: `nginx-module-image-filter=1.17.2-1~buster`
+### `dpkg` source package: `nginx-module-image-filter=1.17.3-1~buster`
 
 Binary Packages:
 
-- `nginx-module-image-filter=1.17.2-1~buster`
+- `nginx-module-image-filter=1.17.3-1~buster`
 
 **WARNING:** unable to detect licenses! (package likely not compliant with DEP-5)  
 If source is available (seen below), check the contents of `debian/copyright` within it.
@@ -1903,11 +1903,11 @@ If source is available (seen below), check the contents of `debian/copyright` wi
 This is *usually* due to a new package version being released and the old version being removed.
 
 
-### `dpkg` source package: `nginx-module-njs=1.17.2.0.3.3-1~buster`
+### `dpkg` source package: `nginx-module-njs=1.17.3.0.3.5-1~buster`
 
 Binary Packages:
 
-- `nginx-module-njs=1.17.2.0.3.3-1~buster`
+- `nginx-module-njs=1.17.3.0.3.5-1~buster`
 
 **WARNING:** unable to detect licenses! (package likely not compliant with DEP-5)  
 If source is available (seen below), check the contents of `debian/copyright` within it.
@@ -1917,11 +1917,11 @@ If source is available (seen below), check the contents of `debian/copyright` wi
 This is *usually* due to a new package version being released and the old version being removed.
 
 
-### `dpkg` source package: `nginx-module-perl=1.17.2-1~buster`
+### `dpkg` source package: `nginx-module-perl=1.17.3-1~buster`
 
 Binary Packages:
 
-- `nginx-module-perl=1.17.2-1~buster`
+- `nginx-module-perl=1.17.3-1~buster`
 
 **WARNING:** unable to detect licenses! (package likely not compliant with DEP-5)  
 If source is available (seen below), check the contents of `debian/copyright` within it.
@@ -1931,11 +1931,11 @@ If source is available (seen below), check the contents of `debian/copyright` wi
 This is *usually* due to a new package version being released and the old version being removed.
 
 
-### `dpkg` source package: `nginx-module-xslt=1.17.2-1~buster`
+### `dpkg` source package: `nginx-module-xslt=1.17.3-1~buster`
 
 Binary Packages:
 
-- `nginx-module-xslt=1.17.2-1~buster`
+- `nginx-module-xslt=1.17.3-1~buster`
 
 **WARNING:** unable to detect licenses! (package likely not compliant with DEP-5)  
 If source is available (seen below), check the contents of `debian/copyright` within it.
@@ -1945,11 +1945,11 @@ If source is available (seen below), check the contents of `debian/copyright` wi
 This is *usually* due to a new package version being released and the old version being removed.
 
 
-### `dpkg` source package: `nginx=1.17.2-1~buster`
+### `dpkg` source package: `nginx=1.17.3-1~buster`
 
 Binary Packages:
 
-- `nginx=1.17.2-1~buster`
+- `nginx=1.17.3-1~buster`
 
 **WARNING:** unable to detect licenses! (package likely not compliant with DEP-5)  
 If source is available (seen below), check the contents of `debian/copyright` within it.

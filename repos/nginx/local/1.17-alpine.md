@@ -1,17 +1,17 @@
-# `nginx:1.17.2-alpine`
+# `nginx:1.17.3-alpine`
 
 ## Docker Metadata
 
-- Image ID: `sha256:55ceb2abad47854d182034514057b038a6e50e9d029ba152bd713d535ed39603`
-- Created: `2019-07-23T19:59:49.642024979Z`
-- Virtual Size: ~ 21.14 Mb  
+- Image ID: `sha256:0e6799f78a482a62c44db488ffa22e60a9568e512e5895fa0fd9b8b5ec086d97`
+- Created: `2019-08-15T21:23:21.318630663Z`
+- Virtual Size: ~ 21.24 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Command: `["nginx","-g","daemon off;"]`
 - Environment:
   - `PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
-  - `NGINX_VERSION=1.17.2`
-  - `NJS_VERSION=0.3.3`
+  - `NGINX_VERSION=1.17.3`
+  - `NJS_VERSION=0.3.5`
   - `PKG_RELEASE=1`
 - Labels:
   - `maintainer=NGINX Docker Maintainers <docker-maint@nginx.com>`
@@ -208,16 +208,16 @@ BSD-3-Clause
 ### `apk` package: `libgcrypt`
 
 ```console
-libgcrypt-1.8.4-r1 description:
+libgcrypt-1.8.4-r2 description:
 general purpose crypto library based on the code used in GnuPG
 
-libgcrypt-1.8.4-r1 webpage:
+libgcrypt-1.8.4-r2 webpage:
 http://www.gnupg.org
 
-libgcrypt-1.8.4-r1 installed size:
-1146880
+libgcrypt-1.8.4-r2 installed size:
+1142784
 
-libgcrypt-1.8.4-r1 license:
+libgcrypt-1.8.4-r2 license:
 LGPL-2.1-or-later
 
 ```
@@ -480,16 +480,16 @@ MIT
 ### `apk` package: `nginx`
 
 ```console
-nginx-1.17.2-r1 description:
+nginx-1.17.3-r1 description:
 High performance web server
 
-nginx-1.17.2-r1 webpage:
+nginx-1.17.3-r1 webpage:
 http://nginx.org/
 
-nginx-1.17.2-r1 installed size:
-2543616
+nginx-1.17.3-r1 installed size:
+2547712
 
-nginx-1.17.2-r1 license:
+nginx-1.17.3-r1 license:
 2-clause BSD-like license
 
 ```
@@ -497,16 +497,16 @@ nginx-1.17.2-r1 license:
 ### `apk` package: `nginx-module-geoip`
 
 ```console
-nginx-module-geoip-1.17.2-r1 description:
+nginx-module-geoip-1.17.3-r1 description:
 nginx GeoIP dynamic modules
 
-nginx-module-geoip-1.17.2-r1 webpage:
+nginx-module-geoip-1.17.3-r1 webpage:
 http://nginx.org/
 
-nginx-module-geoip-1.17.2-r1 installed size:
+nginx-module-geoip-1.17.3-r1 installed size:
 118784
 
-nginx-module-geoip-1.17.2-r1 license:
+nginx-module-geoip-1.17.3-r1 license:
 2-clause BSD-like license
 
 ```
@@ -514,16 +514,16 @@ nginx-module-geoip-1.17.2-r1 license:
 ### `apk` package: `nginx-module-image-filter`
 
 ```console
-nginx-module-image-filter-1.17.2-r1 description:
+nginx-module-image-filter-1.17.3-r1 description:
 nginx image filter dynamic module
 
-nginx-module-image-filter-1.17.2-r1 webpage:
+nginx-module-image-filter-1.17.3-r1 webpage:
 http://nginx.org/
 
-nginx-module-image-filter-1.17.2-r1 installed size:
+nginx-module-image-filter-1.17.3-r1 installed size:
 90112
 
-nginx-module-image-filter-1.17.2-r1 license:
+nginx-module-image-filter-1.17.3-r1 license:
 2-clause BSD-like license
 
 ```
@@ -531,16 +531,16 @@ nginx-module-image-filter-1.17.2-r1 license:
 ### `apk` package: `nginx-module-njs`
 
 ```console
-nginx-module-njs-1.17.2.0.3.3-r1 description:
+nginx-module-njs-1.17.3.0.3.5-r1 description:
 nginx njs dynamic modules
 
-nginx-module-njs-1.17.2.0.3.3-r1 webpage:
+nginx-module-njs-1.17.3.0.3.5-r1 webpage:
 http://nginx.org/
 
-nginx-module-njs-1.17.2.0.3.3-r1 installed size:
-1998848
+nginx-module-njs-1.17.3.0.3.5-r1 installed size:
+2093056
 
-nginx-module-njs-1.17.2.0.3.3-r1 license:
+nginx-module-njs-1.17.3.0.3.5-r1 license:
 2-clause BSD-like license
 
 ```
@@ -548,16 +548,16 @@ nginx-module-njs-1.17.2.0.3.3-r1 license:
 ### `apk` package: `nginx-module-xslt`
 
 ```console
-nginx-module-xslt-1.17.2-r1 description:
+nginx-module-xslt-1.17.3-r1 description:
 nginx xslt dynamic module
 
-nginx-module-xslt-1.17.2-r1 webpage:
+nginx-module-xslt-1.17.3-r1 webpage:
 http://nginx.org/
 
-nginx-module-xslt-1.17.2-r1 installed size:
+nginx-module-xslt-1.17.3-r1 installed size:
 86016
 
-nginx-module-xslt-1.17.2-r1 license:
+nginx-module-xslt-1.17.3-r1 license:
 2-clause BSD-like license
 
 ```
