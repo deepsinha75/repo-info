@@ -2,8 +2,8 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:787d79083c43bcde7d8f1fb23c8a5fbcbe3fb4265fcc69293c674c92ad757405`
-- Created: `2019-07-15T23:31:42.257300403Z`
+- Image ID: `sha256:4ba587adfaa5d86de98b46d08291c11dab88e0cd9a34dcefc0ce1cc88b1fa866`
+- Created: `2019-08-14T15:44:33.566625644Z`
 - Virtual Size: ~ 1.10 Gb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
@@ -1257,11 +1257,11 @@ Other potentially useful URLs:
 - https://sources.debian.net/src/libzstd/1.3.8+dfsg-3/debian/copyright/ (for direct copyright/license information)
 - http://snapshot.debian.org/package/libzstd/1.3.8+dfsg-3/ (for access to the source package after it no longer exists in the archive)
 
-### `dpkg` source package: `linux=4.19.37-5`
+### `dpkg` source package: `linux=4.19.37-5+deb10u2`
 
 Binary Packages:
 
-- `linux-libc-dev:amd64=4.19.37-5`
+- `linux-libc-dev:amd64=4.19.37-5+deb10u2`
 
 Licenses: (parsed from: `/usr/share/doc/linux-libc-dev/copyright`)
 
@@ -1276,17 +1276,17 @@ Licenses: (parsed from: `/usr/share/doc/linux-libc-dev/copyright`)
 Source:
 
 ```console
-$ apt-get source -qq --print-uris linux=4.19.37-5
-'http://deb.debian.org/debian/pool/main/l/linux/linux_4.19.37-5.dsc' linux_4.19.37-5.dsc 189124 SHA256:c09624619d9808aae877a7fc638f259181d9f9dc53aee789ecbe82a0ed3498eb
-'http://deb.debian.org/debian/pool/main/l/linux/linux_4.19.37.orig.tar.xz' linux_4.19.37.orig.tar.xz 107198588 SHA256:04be08391496ff96f52459f9992e36eeb8c5edc2980e43a08c20b68d945a3af1
-'http://deb.debian.org/debian/pool/main/l/linux/linux_4.19.37-5.debian.tar.xz' linux_4.19.37-5.debian.tar.xz 4255088 SHA256:5a292f47187414902c906088312b35d320ceeafb9a901ad779e1d6fea5d31b0d
+$ apt-get source -qq --print-uris linux=4.19.37-5+deb10u2
+'http://security.debian.org/debian-security/pool/updates/main/l/linux/linux_4.19.37-5+deb10u2.dsc' linux_4.19.37-5+deb10u2.dsc 189156 SHA256:6404682ba9e10f97a5f65769cc7ae545a1bed6ed36e4a69029f6da701b5a9e05
+'http://security.debian.org/debian-security/pool/updates/main/l/linux/linux_4.19.37.orig.tar.xz' linux_4.19.37.orig.tar.xz 107198588 SHA256:04be08391496ff96f52459f9992e36eeb8c5edc2980e43a08c20b68d945a3af1
+'http://security.debian.org/debian-security/pool/updates/main/l/linux/linux_4.19.37-5+deb10u2.debian.tar.xz' linux_4.19.37-5+deb10u2.debian.tar.xz 4282720 SHA256:184d823c07916f897b2359aa5592e4e524eb2f517bf261400b875b2882b8ac3c
 ```
 
 Other potentially useful URLs:
 
-- https://sources.debian.net/src/linux/4.19.37-5/ (for browsing the source)
-- https://sources.debian.net/src/linux/4.19.37-5/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/linux/4.19.37-5/ (for access to the source package after it no longer exists in the archive)
+- https://sources.debian.net/src/linux/4.19.37-5+deb10u2/ (for browsing the source)
+- https://sources.debian.net/src/linux/4.19.37-5+deb10u2/debian/copyright/ (for direct copyright/license information)
+- http://snapshot.debian.org/package/linux/4.19.37-5+deb10u2/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `lz4=1.8.3-1`
 
