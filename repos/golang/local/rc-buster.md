@@ -2,8 +2,8 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:c17d508dac8a9c5cc61b59df531492e9f94bd90a8f874b6fb935260038933a1b`
-- Created: `2019-07-10T05:18:33.814891246Z`
+- Image ID: `sha256:25281b231e847c80680d7f885a69ab398e8fee80580d596fe541bf26bf41d3ef`
+- Created: `2019-08-14T16:24:25.566726766Z`
 - Virtual Size: ~ 802.57 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
@@ -1934,11 +1934,11 @@ Other potentially useful URLs:
 - https://sources.debian.net/src/libzstd/1.3.8+dfsg-3/debian/copyright/ (for direct copyright/license information)
 - http://snapshot.debian.org/package/libzstd/1.3.8+dfsg-3/ (for access to the source package after it no longer exists in the archive)
 
-### `dpkg` source package: `linux=4.19.37-5`
+### `dpkg` source package: `linux=4.19.37-5+deb10u2`
 
 Binary Packages:
 
-- `linux-libc-dev:amd64=4.19.37-5`
+- `linux-libc-dev:amd64=4.19.37-5+deb10u2`
 
 Licenses: (parsed from: `/usr/share/doc/linux-libc-dev/copyright`)
 
@@ -1953,17 +1953,17 @@ Licenses: (parsed from: `/usr/share/doc/linux-libc-dev/copyright`)
 Source:
 
 ```console
-$ apt-get source -qq --print-uris linux=4.19.37-5
-'http://deb.debian.org/debian/pool/main/l/linux/linux_4.19.37-5.dsc' linux_4.19.37-5.dsc 189124 SHA256:c09624619d9808aae877a7fc638f259181d9f9dc53aee789ecbe82a0ed3498eb
-'http://deb.debian.org/debian/pool/main/l/linux/linux_4.19.37.orig.tar.xz' linux_4.19.37.orig.tar.xz 107198588 SHA256:04be08391496ff96f52459f9992e36eeb8c5edc2980e43a08c20b68d945a3af1
-'http://deb.debian.org/debian/pool/main/l/linux/linux_4.19.37-5.debian.tar.xz' linux_4.19.37-5.debian.tar.xz 4255088 SHA256:5a292f47187414902c906088312b35d320ceeafb9a901ad779e1d6fea5d31b0d
+$ apt-get source -qq --print-uris linux=4.19.37-5+deb10u2
+'http://security.debian.org/debian-security/pool/updates/main/l/linux/linux_4.19.37-5+deb10u2.dsc' linux_4.19.37-5+deb10u2.dsc 189156 SHA256:6404682ba9e10f97a5f65769cc7ae545a1bed6ed36e4a69029f6da701b5a9e05
+'http://security.debian.org/debian-security/pool/updates/main/l/linux/linux_4.19.37.orig.tar.xz' linux_4.19.37.orig.tar.xz 107198588 SHA256:04be08391496ff96f52459f9992e36eeb8c5edc2980e43a08c20b68d945a3af1
+'http://security.debian.org/debian-security/pool/updates/main/l/linux/linux_4.19.37-5+deb10u2.debian.tar.xz' linux_4.19.37-5+deb10u2.debian.tar.xz 4282720 SHA256:184d823c07916f897b2359aa5592e4e524eb2f517bf261400b875b2882b8ac3c
 ```
 
 Other potentially useful URLs:
 
-- https://sources.debian.net/src/linux/4.19.37-5/ (for browsing the source)
-- https://sources.debian.net/src/linux/4.19.37-5/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/linux/4.19.37-5/ (for access to the source package after it no longer exists in the archive)
+- https://sources.debian.net/src/linux/4.19.37-5+deb10u2/ (for browsing the source)
+- https://sources.debian.net/src/linux/4.19.37-5+deb10u2/debian/copyright/ (for direct copyright/license information)
+- http://snapshot.debian.org/package/linux/4.19.37-5+deb10u2/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `lsb=10.2019051400`
 
@@ -2909,12 +2909,12 @@ Other potentially useful URLs:
 - https://sources.debian.net/src/sqlite3/3.27.2-3/debian/copyright/ (for direct copyright/license information)
 - http://snapshot.debian.org/package/sqlite3/3.27.2-3/ (for access to the source package after it no longer exists in the archive)
 
-### `dpkg` source package: `subversion=1.10.4-1`
+### `dpkg` source package: `subversion=1.10.4-1+deb10u1`
 
 Binary Packages:
 
-- `libsvn1:amd64=1.10.4-1`
-- `subversion=1.10.4-1`
+- `libsvn1:amd64=1.10.4-1+deb10u1`
+- `subversion=1.10.4-1+deb10u1`
 
 Licenses: (parsed from: `/usr/share/doc/libsvn1/copyright`, `/usr/share/doc/subversion/copyright`)
 
@@ -2934,18 +2934,18 @@ Licenses: (parsed from: `/usr/share/doc/libsvn1/copyright`, `/usr/share/doc/subv
 Source:
 
 ```console
-$ apt-get source -qq --print-uris subversion=1.10.4-1
-'http://deb.debian.org/debian/pool/main/s/subversion/subversion_1.10.4-1.dsc' subversion_1.10.4-1.dsc 3513 SHA256:d952f4cf863e2683973bcf84033c48cb0c07ff3fec05c8cad52aaa0c6b409b97
-'http://deb.debian.org/debian/pool/main/s/subversion/subversion_1.10.4.orig.tar.gz' subversion_1.10.4.orig.tar.gz 11347907 SHA256:354022a837596eb1b5676639ea8d73aa326fa8b2c610d8e1b39aeb7228921f4e
-'http://deb.debian.org/debian/pool/main/s/subversion/subversion_1.10.4.orig.tar.gz.asc' subversion_1.10.4.orig.tar.gz.asc 2107 SHA256:bc6173c43ac837f875d9f2921e118c194455796b419769e155496cf084376428
-'http://deb.debian.org/debian/pool/main/s/subversion/subversion_1.10.4-1.debian.tar.xz' subversion_1.10.4-1.debian.tar.xz 434972 SHA256:2f710b64e37d12bf64eaea9e217c14fc7dfff24a94501c9625fb8e6936042f0b
+$ apt-get source -qq --print-uris subversion=1.10.4-1+deb10u1
+'http://security.debian.org/debian-security/pool/updates/main/s/subversion/subversion_1.10.4-1+deb10u1.dsc' subversion_1.10.4-1+deb10u1.dsc 3428 SHA256:c9956fd5b850924dd123048b39195b3d591f55b9cbdf18d4d2a0f496f7decc72
+'http://security.debian.org/debian-security/pool/updates/main/s/subversion/subversion_1.10.4.orig.tar.gz' subversion_1.10.4.orig.tar.gz 11347907 SHA256:354022a837596eb1b5676639ea8d73aa326fa8b2c610d8e1b39aeb7228921f4e
+'http://security.debian.org/debian-security/pool/updates/main/s/subversion/subversion_1.10.4.orig.tar.gz.asc' subversion_1.10.4.orig.tar.gz.asc 2107 SHA256:bc6173c43ac837f875d9f2921e118c194455796b419769e155496cf084376428
+'http://security.debian.org/debian-security/pool/updates/main/s/subversion/subversion_1.10.4-1+deb10u1.debian.tar.xz' subversion_1.10.4-1+deb10u1.debian.tar.xz 438024 SHA256:1bc8900ef1b9d2af84827dab0fd0164e2058381be3bba0db6fd13cbc858c9b1e
 ```
 
 Other potentially useful URLs:
 
-- https://sources.debian.net/src/subversion/1.10.4-1/ (for browsing the source)
-- https://sources.debian.net/src/subversion/1.10.4-1/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/subversion/1.10.4-1/ (for access to the source package after it no longer exists in the archive)
+- https://sources.debian.net/src/subversion/1.10.4-1+deb10u1/ (for browsing the source)
+- https://sources.debian.net/src/subversion/1.10.4-1+deb10u1/debian/copyright/ (for direct copyright/license information)
+- http://snapshot.debian.org/package/subversion/1.10.4-1+deb10u1/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `systemd=241-5`
 
