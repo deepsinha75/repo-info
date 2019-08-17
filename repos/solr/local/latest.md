@@ -1,10 +1,10 @@
-# `solr:8.1.1`
+# `solr:8.2.0`
 
 ## Docker Metadata
 
-- Image ID: `sha256:398302bb71a856a48d11a1864ca16e94919407f71476264698c1ad3ea74fb6fb`
-- Created: `2019-07-18T03:11:34.302134624Z`
-- Virtual Size: ~ 810.91 Mb  
+- Image ID: `sha256:e4209eaaf4502c8d60f5a6af91a74afb7ce10407ca7078d1da6836f4169ee91a`
+- Created: `2019-08-15T23:46:29.826857827Z`
+- Virtual Size: ~ 817.67 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["docker-entrypoint.sh"]`
@@ -20,10 +20,10 @@
   - `SOLR_UID=8983`
   - `SOLR_GROUP=solr`
   - `SOLR_GID=8983`
-  - `SOLR_VERSION=8.1.1`
-  - `SOLR_URL=https://archive.apache.org/dist/lucene/solr/8.1.1/solr-8.1.1.tgz`
-  - `SOLR_SHA256=b515598c11f53fe28d682e3d71238642e9f34509194e3c4746e39bb7d7bb46a1`
-  - `SOLR_KEYS=F23F054D9EC50F2397FF2B814E67A2711D053DDB`
+  - `SOLR_VERSION=8.2.0`
+  - `SOLR_URL=https://archive.apache.org/dist/lucene/solr/8.2.0/solr-8.2.0.tgz`
+  - `SOLR_SHA256=bfa4b39b236e5d714f4233138b8b5cb7e1996ddc0aad60052ce83c4b7bf33449`
+  - `SOLR_KEYS=E58A6F4D5B2B48AC66D5E53BD4F181881A42F9E6`
   - `SOLR_INCLUDE=/etc/default/solr.in.sh`
   - `SOLR_HOME=/var/solr/data`
   - `SOLR_PID_DIR=/var/solr`
@@ -31,6 +31,8 @@
   - `LOG4J_PROPS=/var/solr/log4j2.xml`
   - `GOSU_VERSION=1.11`
   - `GOSU_KEY=B42F6819007F00F88E364FD4036A9C25BF357DD4`
+  - `TINI_VERSION=v0.18.0`
+  - `TINI_KEY=595E85A6B1B4779EA4DAAEC70B588DFF0527A9B7`
 - Labels:
   - `maintainer=Martijn Koster "mak-docker@greenhills.co.uk"`
   - `repository=https://github.com/docker-solr/docker-solr`
@@ -579,11 +581,11 @@ Other potentially useful URLs:
 - https://sources.debian.net/src/debconf/1.5.61/debian/copyright/ (for direct copyright/license information)
 - http://snapshot.debian.org/package/debconf/1.5.61/ (for access to the source package after it no longer exists in the archive)
 
-### `dpkg` source package: `debian-archive-keyring=2017.5`
+### `dpkg` source package: `debian-archive-keyring=2017.5+deb9u1`
 
 Binary Packages:
 
-- `debian-archive-keyring=2017.5`
+- `debian-archive-keyring=2017.5+deb9u1`
 
 Licenses: (parsed from: `/usr/share/doc/debian-archive-keyring/copyright`)
 
@@ -592,16 +594,16 @@ Licenses: (parsed from: `/usr/share/doc/debian-archive-keyring/copyright`)
 Source:
 
 ```console
-$ apt-get source -qq --print-uris debian-archive-keyring=2017.5
-'http://deb.debian.org/debian/pool/main/d/debian-archive-keyring/debian-archive-keyring_2017.5.dsc' debian-archive-keyring_2017.5.dsc 1597 SHA256:202c8424b79747e7a3d74b1e3d6f8748b211eb6ee1f2cb9c56f3c28ad9bc4f02
-'http://deb.debian.org/debian/pool/main/d/debian-archive-keyring/debian-archive-keyring_2017.5.tar.xz' debian-archive-keyring_2017.5.tar.xz 79324 SHA256:6e06a47c79948d7a2f6b5bcfbf1f615293da329226bc9d7ad692cb67d2f4b731
+$ apt-get source -qq --print-uris debian-archive-keyring=2017.5+deb9u1
+'http://deb.debian.org/debian/pool/main/d/debian-archive-keyring/debian-archive-keyring_2017.5+deb9u1.dsc' debian-archive-keyring_2017.5+deb9u1.dsc 1827 SHA256:bc03dac3958c0d9de0a161fbd1ea3d69cd8e9146df4ce6fa4b69f80189c6b21b
+'http://deb.debian.org/debian/pool/main/d/debian-archive-keyring/debian-archive-keyring_2017.5+deb9u1.tar.xz' debian-archive-keyring_2017.5+deb9u1.tar.xz 116344 SHA256:dcfffc87cc382bda49de654d205abb586519c0859d6c570f1eabdfa997350806
 ```
 
 Other potentially useful URLs:
 
-- https://sources.debian.net/src/debian-archive-keyring/2017.5/ (for browsing the source)
-- https://sources.debian.net/src/debian-archive-keyring/2017.5/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/debian-archive-keyring/2017.5/ (for access to the source package after it no longer exists in the archive)
+- https://sources.debian.net/src/debian-archive-keyring/2017.5+deb9u1/ (for browsing the source)
+- https://sources.debian.net/src/debian-archive-keyring/2017.5+deb9u1/debian/copyright/ (for direct copyright/license information)
+- http://snapshot.debian.org/package/debian-archive-keyring/2017.5+deb9u1/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `debianutils=4.8.1.1`
 
@@ -2822,12 +2824,12 @@ Other potentially useful URLs:
 - https://sources.debian.net/src/sqlite3/3.16.2-5+deb9u1/debian/copyright/ (for direct copyright/license information)
 - http://snapshot.debian.org/package/sqlite3/3.16.2-5+deb9u1/ (for access to the source package after it no longer exists in the archive)
 
-### `dpkg` source package: `subversion=1.9.5-1+deb9u3`
+### `dpkg` source package: `subversion=1.9.5-1+deb9u4`
 
 Binary Packages:
 
-- `libsvn1:amd64=1.9.5-1+deb9u3`
-- `subversion=1.9.5-1+deb9u3`
+- `libsvn1:amd64=1.9.5-1+deb9u4`
+- `subversion=1.9.5-1+deb9u4`
 
 Licenses: (parsed from: `/usr/share/doc/libsvn1/copyright`, `/usr/share/doc/subversion/copyright`)
 
@@ -2838,17 +2840,17 @@ Licenses: (parsed from: `/usr/share/doc/libsvn1/copyright`, `/usr/share/doc/subv
 Source:
 
 ```console
-$ apt-get source -qq --print-uris subversion=1.9.5-1+deb9u3
-'http://deb.debian.org/debian/pool/main/s/subversion/subversion_1.9.5-1+deb9u3.dsc' subversion_1.9.5-1+deb9u3.dsc 3077 SHA256:43ecb40841996c230f63a2882914525a90ebcee1ba070f38d49533453c1dfa11
-'http://deb.debian.org/debian/pool/main/s/subversion/subversion_1.9.5.orig.tar.gz' subversion_1.9.5.orig.tar.gz 10615674 SHA256:280ba586c5d51d7b976b65d22d5e8e42f3908ed1c968d71120dcf534ce857a83
-'http://deb.debian.org/debian/pool/main/s/subversion/subversion_1.9.5-1+deb9u3.diff.gz' subversion_1.9.5-1+deb9u3.diff.gz 2545505 SHA256:f71d488ee779a2c681cc44930d55438b9cf015aaf497836d5164d3e18978fd29
+$ apt-get source -qq --print-uris subversion=1.9.5-1+deb9u4
+'http://security.debian.org/debian-security/pool/updates/main/s/subversion/subversion_1.9.5-1+deb9u4.dsc' subversion_1.9.5-1+deb9u4.dsc 3077 SHA256:3077b153f0f10f16db5433396a3170006e8cf41eadaf166c4fbac2874b74b71b
+'http://security.debian.org/debian-security/pool/updates/main/s/subversion/subversion_1.9.5.orig.tar.gz' subversion_1.9.5.orig.tar.gz 10615674 SHA256:280ba586c5d51d7b976b65d22d5e8e42f3908ed1c968d71120dcf534ce857a83
+'http://security.debian.org/debian-security/pool/updates/main/s/subversion/subversion_1.9.5-1+deb9u4.diff.gz' subversion_1.9.5-1+deb9u4.diff.gz 2547685 SHA256:c72e9a46bcd488a166957e0c5a3ae4225413fdeaddd95c529962de8b35414f74
 ```
 
 Other potentially useful URLs:
 
-- https://sources.debian.net/src/subversion/1.9.5-1+deb9u3/ (for browsing the source)
-- https://sources.debian.net/src/subversion/1.9.5-1+deb9u3/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/subversion/1.9.5-1+deb9u3/ (for access to the source package after it no longer exists in the archive)
+- https://sources.debian.net/src/subversion/1.9.5-1+deb9u4/ (for browsing the source)
+- https://sources.debian.net/src/subversion/1.9.5-1+deb9u4/debian/copyright/ (for direct copyright/license information)
+- http://snapshot.debian.org/package/subversion/1.9.5-1+deb9u4/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `systemd=232-25+deb9u11`
 

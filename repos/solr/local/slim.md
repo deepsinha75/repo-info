@@ -1,10 +1,10 @@
-# `solr:8.1.1-slim`
+# `solr:8.2.0-slim`
 
 ## Docker Metadata
 
-- Image ID: `sha256:f281eb992bff32ebc52a8921694951602eda707fa06036c19989c13163872534`
-- Created: `2019-07-18T03:12:06.674887654Z`
-- Virtual Size: ~ 617.34 Mb  
+- Image ID: `sha256:da9e6ed1f16d0828d31cfceb067c31593f10cdd6a211f9f65cfd7bf63b923a2d`
+- Created: `2019-08-15T23:46:51.250713233Z`
+- Virtual Size: ~ 624.07 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["docker-entrypoint.sh"]`
@@ -20,10 +20,10 @@
   - `SOLR_UID=8983`
   - `SOLR_GROUP=solr`
   - `SOLR_GID=8983`
-  - `SOLR_VERSION=8.1.1`
-  - `SOLR_URL=https://archive.apache.org/dist/lucene/solr/8.1.1/solr-8.1.1.tgz`
-  - `SOLR_SHA256=b515598c11f53fe28d682e3d71238642e9f34509194e3c4746e39bb7d7bb46a1`
-  - `SOLR_KEYS=F23F054D9EC50F2397FF2B814E67A2711D053DDB`
+  - `SOLR_VERSION=8.2.0`
+  - `SOLR_URL=https://archive.apache.org/dist/lucene/solr/8.2.0/solr-8.2.0.tgz`
+  - `SOLR_SHA256=bfa4b39b236e5d714f4233138b8b5cb7e1996ddc0aad60052ce83c4b7bf33449`
+  - `SOLR_KEYS=E58A6F4D5B2B48AC66D5E53BD4F181881A42F9E6`
   - `SOLR_INCLUDE=/etc/default/solr.in.sh`
   - `SOLR_HOME=/var/solr/data`
   - `SOLR_PID_DIR=/var/solr`
@@ -31,6 +31,8 @@
   - `LOG4J_PROPS=/var/solr/log4j2.xml`
   - `GOSU_VERSION=1.11`
   - `GOSU_KEY=B42F6819007F00F88E364FD4036A9C25BF357DD4`
+  - `TINI_VERSION=v0.18.0`
+  - `TINI_KEY=595E85A6B1B4779EA4DAAEC70B588DFF0527A9B7`
 - Labels:
   - `maintainer=Martijn Koster "mak-docker@greenhills.co.uk"`
   - `repository=https://github.com/docker-solr/docker-solr`

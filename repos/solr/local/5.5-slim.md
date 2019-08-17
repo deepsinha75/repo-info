@@ -2,9 +2,9 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:831dc961f001e79e54a1d7a9e7d11b89757187c53d978e533ed7ced7367aba8d`
-- Created: `2019-07-18T03:16:35.111122803Z`
-- Virtual Size: ~ 354.01 Mb  
+- Image ID: `sha256:6c6fe2875ee2f3292366a219a5dac1b85e43e1f56410bb2ec0dca60b9dd28c51`
+- Created: `2019-08-15T23:52:13.60692175Z`
+- Virtual Size: ~ 354.12 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["docker-entrypoint.sh"]`
@@ -26,6 +26,8 @@
   - `SOLR_KEYS=5F55943E13D49059D3F342777186B06E1ED139E7`
   - `GOSU_VERSION=1.11`
   - `GOSU_KEY=B42F6819007F00F88E364FD4036A9C25BF357DD4`
+  - `TINI_VERSION=v0.18.0`
+  - `TINI_KEY=595E85A6B1B4779EA4DAAEC70B588DFF0527A9B7`
 - Labels:
   - `maintainer=Martijn Koster "mak-docker@greenhills.co.uk"`
   - `repository=https://github.com/docker-solr/docker-solr`
