@@ -1,17 +1,17 @@
-# `node:8.16.0-stretch-slim`
+# `node:8.16.1-stretch-slim`
 
 ## Docker Metadata
 
-- Image ID: `sha256:67857c9b26e19d7346d6194ad81fa477d30c47ef5bb49f3cd24d012e5881b9ab`
-- Created: `2019-08-14T00:49:43.58379725Z`
-- Virtual Size: ~ 138.97 Mb  
+- Image ID: `sha256:80502021eebb542bf86fd701e78aabe3a1ccf2542a5f4c7019a0a1e0d9010ef6`
+- Created: `2019-08-16T00:44:58.487034103Z`
+- Virtual Size: ~ 138.98 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["docker-entrypoint.sh"]`
 - Command: `["node"]`
 - Environment:
   - `PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
-  - `NODE_VERSION=8.16.0`
+  - `NODE_VERSION=8.16.1`
   - `YARN_VERSION=1.15.2`
 
 ## `dpkg` (`.deb`-based packages)

@@ -1,17 +1,17 @@
-# `node:8.16.0-alpine`
+# `node:8.16.1-alpine`
 
 ## Docker Metadata
 
-- Image ID: `sha256:e08ba08cf75ae04889493ee887bd65178b38238a2a48c27143ae900d6cd9aaa6`
-- Created: `2019-06-04T22:25:56.304072444Z`
-- Virtual Size: ~ 66.68 Mb  
+- Image ID: `sha256:b9e61ad789af5331d65e2bdb7493f5240ec9a298b78511d4da6697500c931c34`
+- Created: `2019-08-16T00:43:46.117605735Z`
+- Virtual Size: ~ 67.39 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["docker-entrypoint.sh"]`
 - Command: `["node"]`
 - Environment:
   - `PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
-  - `NODE_VERSION=8.16.0`
+  - `NODE_VERSION=8.16.1`
   - `YARN_VERSION=1.15.2`
 
 ## `apk` (`.apk`-based packages)
@@ -206,16 +206,16 @@ ISC
 ### `apk` package: `musl`
 
 ```console
-musl-1.1.20-r4 description:
+musl-1.1.20-r5 description:
 the musl c library (libc) implementation
 
-musl-1.1.20-r4 webpage:
+musl-1.1.20-r5 webpage:
 http://www.musl-libc.org/
 
-musl-1.1.20-r4 installed size:
+musl-1.1.20-r5 installed size:
 602112
 
-musl-1.1.20-r4 license:
+musl-1.1.20-r5 license:
 MIT
 
 ```
@@ -223,16 +223,16 @@ MIT
 ### `apk` package: `musl-utils`
 
 ```console
-musl-utils-1.1.20-r4 description:
+musl-utils-1.1.20-r5 description:
 the musl c library (libc) implementation
 
-musl-utils-1.1.20-r4 webpage:
+musl-utils-1.1.20-r5 webpage:
 http://www.musl-libc.org/
 
-musl-utils-1.1.20-r4 installed size:
+musl-utils-1.1.20-r5 installed size:
 139264
 
-musl-utils-1.1.20-r4 license:
+musl-utils-1.1.20-r5 license:
 MIT BSD GPL2+
 
 ```

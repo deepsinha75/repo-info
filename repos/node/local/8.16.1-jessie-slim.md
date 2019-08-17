@@ -1,17 +1,17 @@
-# `node:8.16.0-jessie-slim`
+# `node:8.16.1-jessie-slim`
 
 ## Docker Metadata
 
-- Image ID: `sha256:975a7ca6de1d2fab866b841ba23534687cd49ffbade80b93508ccdc392e467d1`
-- Created: `2019-08-14T00:48:52.519231375Z`
-- Virtual Size: ~ 183.34 Mb  
+- Image ID: `sha256:f62e962358779a40f4a9a465953784365b301bcc097f0c052412d8e006b81bc4`
+- Created: `2019-08-16T00:22:49.946268394Z`
+- Virtual Size: ~ 183.35 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["docker-entrypoint.sh"]`
 - Command: `["node"]`
 - Environment:
   - `PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
-  - `NODE_VERSION=8.16.0`
+  - `NODE_VERSION=8.16.1`
   - `YARN_VERSION=1.15.2`
 
 ## `dpkg` (`.deb`-based packages)
