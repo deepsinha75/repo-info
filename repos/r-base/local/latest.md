@@ -265,14 +265,13 @@ Licenses: (parsed from: `/usr/share/doc/r-cran-boot/copyright`)
 
 - `'unlimited distribution'`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris boot=1.3-23-1
-'http://http.debian.net/debian/pool/main/b/boot/boot_1.3-23-1.dsc' boot_1.3-23-1.dsc 1796 SHA256:d3bbaf4ffba876d99bf637dfc17add3524a837c676535e6f6e04cbd2ca422808
-'http://http.debian.net/debian/pool/main/b/boot/boot_1.3-23.orig.tar.gz' boot_1.3-23.orig.tar.gz 232655 SHA256:30c89e19dd6490b943233e87dfe422bfef92cfbb7a7dfb5c17dfd9b2d63fa02f
-'http://http.debian.net/debian/pool/main/b/boot/boot_1.3-23-1.debian.tar.xz' boot_1.3-23-1.debian.tar.xz 5124 SHA256:4278f66348bb73f314991b619cd51afda39a75937a68dc784b55638895d1f010
-```
+The source package *may* still be available for download from:
+
+- http://snapshot.debian.org/package/boot/1.3-23-1/
+
 
 ### `dpkg` source package: `build-essential=12.6`
 
@@ -412,14 +411,13 @@ Licenses: (parsed from: `/usr/share/doc/r-cran-cluster/copyright`)
 - `GPL-2`
 - `GPL-2+`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris cluster=2.1.0-1
-'http://http.debian.net/debian/pool/main/c/cluster/cluster_2.1.0-1.dsc' cluster_2.1.0-1.dsc 1828 SHA256:72d498349596687ee876180e5c8c9497c4a70090bd08bd2602a6da108c916caf
-'http://http.debian.net/debian/pool/main/c/cluster/cluster_2.1.0.orig.tar.gz' cluster_2.1.0.orig.tar.gz 380366 SHA256:eaf955bef8f616ea563351ec7f597c445aec43e65991ca975e382ef1fd70aa14
-'http://http.debian.net/debian/pool/main/c/cluster/cluster_2.1.0-1.debian.tar.xz' cluster_2.1.0-1.debian.tar.xz 4196 SHA256:08c3bd1ecc698e818d52a3be66c6ca3596044b49b78c74c9d60efd549bfab0cb
-```
+The source package *may* still be available for download from:
+
+- http://snapshot.debian.org/package/cluster/2.1.0-1/
+
 
 ### `dpkg` source package: `codetools=0.2-16-1`
 
@@ -490,10 +488,16 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris curl=7.65.3-1
-'http://http.debian.net/debian/pool/main/c/curl/curl_7.65.3-1.dsc' curl_7.65.3-1.dsc 2630 SHA256:6c15c2d9ae1b811202698287a772740a6965732e52627e6ac70a97b0d183c0e8
-'http://http.debian.net/debian/pool/main/c/curl/curl_7.65.3.orig.tar.gz' curl_7.65.3.orig.tar.gz 4022334 SHA256:4376ac72b95572fb6c4fbffefb97c7ea0dd083e1974c0e44cd7e49396f454839
-'http://http.debian.net/debian/pool/main/c/curl/curl_7.65.3-1.debian.tar.xz' curl_7.65.3-1.debian.tar.xz 29056 SHA256:555a3af0436845783fb3877720098b23a5874641c8d2f616747c7f63e55234be
+'http://deb.debian.org/debian/pool/main/c/curl/curl_7.65.3-1.dsc' curl_7.65.3-1.dsc 2630 SHA256:6c15c2d9ae1b811202698287a772740a6965732e52627e6ac70a97b0d183c0e8
+'http://deb.debian.org/debian/pool/main/c/curl/curl_7.65.3.orig.tar.gz' curl_7.65.3.orig.tar.gz 4022334 SHA256:4376ac72b95572fb6c4fbffefb97c7ea0dd083e1974c0e44cd7e49396f454839
+'http://deb.debian.org/debian/pool/main/c/curl/curl_7.65.3-1.debian.tar.xz' curl_7.65.3-1.debian.tar.xz 29056 SHA256:555a3af0436845783fb3877720098b23a5874641c8d2f616747c7f63e55234be
 ```
+
+Other potentially useful URLs:
+
+- https://sources.debian.net/src/curl/7.65.3-1/ (for browsing the source)
+- https://sources.debian.net/src/curl/7.65.3-1/debian/copyright/ (for direct copyright/license information)
+- http://snapshot.debian.org/package/curl/7.65.3-1/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `cyrus-sasl2=2.1.27+dfsg-1`
 
@@ -1049,16 +1053,10 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris gcc-9=9.1.0-10
-'http://deb.debian.org/debian/pool/main/g/gcc-9/gcc-9_9.1.0-10.dsc' gcc-9_9.1.0-10.dsc 32556 SHA256:f56a9eef42bceed2e5a6add271e2e5464262de30d0781a0f2193140f675d812a
-'http://deb.debian.org/debian/pool/main/g/gcc-9/gcc-9_9.1.0.orig.tar.gz' gcc-9_9.1.0.orig.tar.gz 90921700 SHA256:da8f587ad8b22957779fcfee8d8ad7322ddb4ba3677f53954146910a5e4a8a35
-'http://deb.debian.org/debian/pool/main/g/gcc-9/gcc-9_9.1.0-10.diff.gz' gcc-9_9.1.0-10.diff.gz 5048744 SHA256:dbedaad0676031af6f0cb840c2571753be96a0009978b946c869e01b80c914ea
+'http://http.debian.net/debian/pool/main/g/gcc-9/gcc-9_9.1.0-10.dsc' gcc-9_9.1.0-10.dsc 32556 SHA256:f56a9eef42bceed2e5a6add271e2e5464262de30d0781a0f2193140f675d812a
+'http://http.debian.net/debian/pool/main/g/gcc-9/gcc-9_9.1.0.orig.tar.gz' gcc-9_9.1.0.orig.tar.gz 90921700 SHA256:da8f587ad8b22957779fcfee8d8ad7322ddb4ba3677f53954146910a5e4a8a35
+'http://http.debian.net/debian/pool/main/g/gcc-9/gcc-9_9.1.0-10.diff.gz' gcc-9_9.1.0-10.diff.gz 5048744 SHA256:dbedaad0676031af6f0cb840c2571753be96a0009978b946c869e01b80c914ea
 ```
-
-Other potentially useful URLs:
-
-- https://sources.debian.net/src/gcc-9/9.1.0-10/ (for browsing the source)
-- https://sources.debian.net/src/gcc-9/9.1.0-10/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/gcc-9/9.1.0-10/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `gcc-defaults=1.181`
 
@@ -1134,10 +1132,16 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris glib2.0=2.60.6-2
-'http://http.debian.net/debian/pool/main/g/glib2.0/glib2.0_2.60.6-2.dsc' glib2.0_2.60.6-2.dsc 3323 SHA256:05cce50af8f7a9a6a5095c5a50e531ee573da27246462187c1f70edeca6f6ef9
-'http://http.debian.net/debian/pool/main/g/glib2.0/glib2.0_2.60.6.orig.tar.xz' glib2.0_2.60.6.orig.tar.xz 4589516 SHA256:ff8fab8d8deaa4fd0536c90f90d9769a09071779c7e6183907f6855645bffb6c
-'http://http.debian.net/debian/pool/main/g/glib2.0/glib2.0_2.60.6-2.debian.tar.xz' glib2.0_2.60.6-2.debian.tar.xz 86804 SHA256:fb56ed44d4ff9bc18685489c50305e58e182629f3a3d986e8f814f10155dab7c
+'http://deb.debian.org/debian/pool/main/g/glib2.0/glib2.0_2.60.6-2.dsc' glib2.0_2.60.6-2.dsc 3323 SHA256:05cce50af8f7a9a6a5095c5a50e531ee573da27246462187c1f70edeca6f6ef9
+'http://deb.debian.org/debian/pool/main/g/glib2.0/glib2.0_2.60.6.orig.tar.xz' glib2.0_2.60.6.orig.tar.xz 4589516 SHA256:ff8fab8d8deaa4fd0536c90f90d9769a09071779c7e6183907f6855645bffb6c
+'http://deb.debian.org/debian/pool/main/g/glib2.0/glib2.0_2.60.6-2.debian.tar.xz' glib2.0_2.60.6-2.debian.tar.xz 86804 SHA256:fb56ed44d4ff9bc18685489c50305e58e182629f3a3d986e8f814f10155dab7c
 ```
+
+Other potentially useful URLs:
+
+- https://sources.debian.net/src/glib2.0/2.60.6-2/ (for browsing the source)
+- https://sources.debian.net/src/glib2.0/2.60.6-2/debian/copyright/ (for direct copyright/license information)
+- http://snapshot.debian.org/package/glib2.0/2.60.6-2/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `glibc=2.28-10`
 
@@ -2736,13 +2740,13 @@ Licenses: (parsed from: `/usr/share/doc/lsb-base/copyright`)
 - `BSD-3-clause`
 - `GPL-2`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris lsb=11.0.0
-'http://http.debian.net/debian/pool/main/l/lsb/lsb_11.0.0.dsc' lsb_11.0.0.dsc 1800 SHA256:ffb66ee8303be1b92c094ce95c2d878cbcd10e2784006aa2e23440e2b0e3bd39
-'http://http.debian.net/debian/pool/main/l/lsb/lsb_11.0.0.tar.xz' lsb_11.0.0.tar.xz 42576 SHA256:14c899dcc9021e25149a439c1d5ceb34d2e115f626419ed958ba8857d0ea4210
-```
+The source package *may* still be available for download from:
+
+- http://snapshot.debian.org/package/lsb/11.0.0/
+
 
 ### `dpkg` source package: `lz4=1.8.3-1`
 
