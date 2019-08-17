@@ -2,8 +2,8 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:596dfaf7c46e2acc4a59b23ded939bd563e1c70d8d74c4b9d862b848de765549`
-- Created: `2019-07-18T02:27:47.402132512Z`
+- Image ID: `sha256:383c8c450e40fa0c2ee49a3920f91ab5886ab18d121e5ee6d514f61e8368617a`
+- Created: `2019-08-15T06:17:03.059380621Z`
 - Virtual Size: ~ 1.67 Gb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
@@ -1272,11 +1272,11 @@ Other potentially useful URLs:
 - https://sources.debian.net/src/debconf/1.5.61/debian/copyright/ (for direct copyright/license information)
 - http://snapshot.debian.org/package/debconf/1.5.61/ (for access to the source package after it no longer exists in the archive)
 
-### `dpkg` source package: `debian-archive-keyring=2017.5`
+### `dpkg` source package: `debian-archive-keyring=2017.5+deb9u1`
 
 Binary Packages:
 
-- `debian-archive-keyring=2017.5`
+- `debian-archive-keyring=2017.5+deb9u1`
 
 Licenses: (parsed from: `/usr/share/doc/debian-archive-keyring/copyright`)
 
@@ -1285,16 +1285,16 @@ Licenses: (parsed from: `/usr/share/doc/debian-archive-keyring/copyright`)
 Source:
 
 ```console
-$ apt-get source -qq --print-uris debian-archive-keyring=2017.5
-'http://deb.debian.org/debian/pool/main/d/debian-archive-keyring/debian-archive-keyring_2017.5.dsc' debian-archive-keyring_2017.5.dsc 1597 SHA256:202c8424b79747e7a3d74b1e3d6f8748b211eb6ee1f2cb9c56f3c28ad9bc4f02
-'http://deb.debian.org/debian/pool/main/d/debian-archive-keyring/debian-archive-keyring_2017.5.tar.xz' debian-archive-keyring_2017.5.tar.xz 79324 SHA256:6e06a47c79948d7a2f6b5bcfbf1f615293da329226bc9d7ad692cb67d2f4b731
+$ apt-get source -qq --print-uris debian-archive-keyring=2017.5+deb9u1
+'http://deb.debian.org/debian/pool/main/d/debian-archive-keyring/debian-archive-keyring_2017.5+deb9u1.dsc' debian-archive-keyring_2017.5+deb9u1.dsc 1827 SHA256:bc03dac3958c0d9de0a161fbd1ea3d69cd8e9146df4ce6fa4b69f80189c6b21b
+'http://deb.debian.org/debian/pool/main/d/debian-archive-keyring/debian-archive-keyring_2017.5+deb9u1.tar.xz' debian-archive-keyring_2017.5+deb9u1.tar.xz 116344 SHA256:dcfffc87cc382bda49de654d205abb586519c0859d6c570f1eabdfa997350806
 ```
 
 Other potentially useful URLs:
 
-- https://sources.debian.net/src/debian-archive-keyring/2017.5/ (for browsing the source)
-- https://sources.debian.net/src/debian-archive-keyring/2017.5/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/debian-archive-keyring/2017.5/ (for access to the source package after it no longer exists in the archive)
+- https://sources.debian.net/src/debian-archive-keyring/2017.5+deb9u1/ (for browsing the source)
+- https://sources.debian.net/src/debian-archive-keyring/2017.5+deb9u1/debian/copyright/ (for direct copyright/license information)
+- http://snapshot.debian.org/package/debian-archive-keyring/2017.5+deb9u1/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `debianutils=4.8.1.1`
 
@@ -2041,13 +2041,13 @@ Other potentially useful URLs:
 - https://sources.debian.net/src/gdk-pixbuf/2.36.5-2+deb9u2/debian/copyright/ (for direct copyright/license information)
 - http://snapshot.debian.org/package/gdk-pixbuf/2.36.5-2+deb9u2/ (for access to the source package after it no longer exists in the archive)
 
-### `dpkg` source package: `ghostscript=9.26a~dfsg-0+deb9u3`
+### `dpkg` source package: `ghostscript=9.26a~dfsg-0+deb9u4`
 
 Binary Packages:
 
-- `ghostscript=9.26a~dfsg-0+deb9u3`
-- `libgs9:amd64=9.26a~dfsg-0+deb9u3`
-- `libgs9-common=9.26a~dfsg-0+deb9u3`
+- `ghostscript=9.26a~dfsg-0+deb9u4`
+- `libgs9:amd64=9.26a~dfsg-0+deb9u4`
+- `libgs9-common=9.26a~dfsg-0+deb9u4`
 
 Licenses: (parsed from: `/usr/share/doc/ghostscript/copyright`, `/usr/share/doc/libgs9/copyright`, `/usr/share/doc/libgs9-common/copyright`)
 
@@ -2077,13 +2077,20 @@ Licenses: (parsed from: `/usr/share/doc/ghostscript/copyright`, `/usr/share/doc/
 - `other`
 - `public-domain`
 
-**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
-This is *usually* due to a new package version being released and the old version being removed.
+Source:
 
-The source package *may* still be available for download from:
+```console
+$ apt-get source -qq --print-uris ghostscript=9.26a~dfsg-0+deb9u4
+'http://security.debian.org/debian-security/pool/updates/main/g/ghostscript/ghostscript_9.26a~dfsg-0+deb9u4.dsc' ghostscript_9.26a~dfsg-0+deb9u4.dsc 3052 SHA256:03c544e854983d77911d96d75f6fbf5c1b5be21d360bdbaf6d9203373a9887c2
+'http://security.debian.org/debian-security/pool/updates/main/g/ghostscript/ghostscript_9.26a~dfsg.orig.tar.xz' ghostscript_9.26a~dfsg.orig.tar.xz 17614652 SHA256:1c3647c42a3f894df22a7a12473f60ff4be38c38ed97232ecfab9b7f3a4fc8f4
+'http://security.debian.org/debian-security/pool/updates/main/g/ghostscript/ghostscript_9.26a~dfsg-0+deb9u4.debian.tar.xz' ghostscript_9.26a~dfsg-0+deb9u4.debian.tar.xz 118784 SHA256:40f6f31384c28914e42b6689af6d14b2486d2d333347dbab85f6704bec73d05c
+```
 
-- http://snapshot.debian.org/package/ghostscript/9.26a~dfsg-0+deb9u3/
+Other potentially useful URLs:
 
+- https://sources.debian.net/src/ghostscript/9.26a~dfsg-0+deb9u4/ (for browsing the source)
+- https://sources.debian.net/src/ghostscript/9.26a~dfsg-0+deb9u4/debian/copyright/ (for direct copyright/license information)
+- http://snapshot.debian.org/package/ghostscript/9.26a~dfsg-0+deb9u4/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `git=1:2.11.0-3+deb9u4`
 
@@ -4951,23 +4958,13 @@ Licenses: (parsed from: `/usr/share/doc/fonts-opensymbol/copyright`, `/usr/share
 - `MPL-2.0`
 - `other`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris libreoffice=1:5.2.7-1+deb9u9
-'http://security.debian.org/debian-security/pool/updates/main/libr/libreoffice/libreoffice_5.2.7-1+deb9u9.dsc' libreoffice_5.2.7-1+deb9u9.dsc 28369 SHA256:d8a7f51426172c6768f5e792ef279adf861f26844a1a620e75a99be2244cb7e4
-'http://security.debian.org/debian-security/pool/updates/main/libr/libreoffice/libreoffice_5.2.7.orig-helpcontent2.tar.xz' libreoffice_5.2.7.orig-helpcontent2.tar.xz 1446232 SHA256:a25de3b0fc788d1246ecb160718097e8f882b559d4a6536e1521fb0548d1b33a
-'http://security.debian.org/debian-security/pool/updates/main/libr/libreoffice/libreoffice_5.2.7.orig-translations.tar.xz' libreoffice_5.2.7.orig-translations.tar.xz 141705808 SHA256:df52c5491e438ac2f33e3c5ee8bb78cb0e0b530bf1a925a360ceba3c1775b867
-'http://security.debian.org/debian-security/pool/updates/main/libr/libreoffice/libreoffice_5.2.7.orig.tar.xz' libreoffice_5.2.7.orig.tar.xz 184589464 SHA256:106154a72a329605166a49bfa31c6d1cc03133d600ad0ef340b45e4e2a92891d
-'http://security.debian.org/debian-security/pool/updates/main/libr/libreoffice/libreoffice_5.2.7.orig.tar.xz.asc' libreoffice_5.2.7.orig.tar.xz.asc 836 SHA256:317b474e90b32fee6e3b189fe29b2cb6eba3634fada977b05b837ba6318baa52
-'http://security.debian.org/debian-security/pool/updates/main/libr/libreoffice/libreoffice_5.2.7-1+deb9u9.debian.tar.xz' libreoffice_5.2.7-1+deb9u9.debian.tar.xz 5400956 SHA256:6026aaaf083cdaf7eb538230cdfc3582b0292fa1367221ae007389960d39f781
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/libreoffice/1:5.2.7-1+deb9u9/
 
-- https://sources.debian.net/src/libreoffice/1:5.2.7-1+deb9u9/ (for browsing the source)
-- https://sources.debian.net/src/libreoffice/1:5.2.7-1+deb9u9/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/libreoffice/1:5.2.7-1+deb9u9/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `librest=0.8.0-2`
 
@@ -8189,12 +8186,12 @@ Other potentially useful URLs:
 - https://sources.debian.net/src/sqlite3/3.16.2-5+deb9u1/debian/copyright/ (for direct copyright/license information)
 - http://snapshot.debian.org/package/sqlite3/3.16.2-5+deb9u1/ (for access to the source package after it no longer exists in the archive)
 
-### `dpkg` source package: `subversion=1.9.5-1+deb9u3`
+### `dpkg` source package: `subversion=1.9.5-1+deb9u4`
 
 Binary Packages:
 
-- `libsvn1:amd64=1.9.5-1+deb9u3`
-- `subversion=1.9.5-1+deb9u3`
+- `libsvn1:amd64=1.9.5-1+deb9u4`
+- `subversion=1.9.5-1+deb9u4`
 
 Licenses: (parsed from: `/usr/share/doc/libsvn1/copyright`, `/usr/share/doc/subversion/copyright`)
 
@@ -8205,17 +8202,17 @@ Licenses: (parsed from: `/usr/share/doc/libsvn1/copyright`, `/usr/share/doc/subv
 Source:
 
 ```console
-$ apt-get source -qq --print-uris subversion=1.9.5-1+deb9u3
-'http://deb.debian.org/debian/pool/main/s/subversion/subversion_1.9.5-1+deb9u3.dsc' subversion_1.9.5-1+deb9u3.dsc 3077 SHA256:43ecb40841996c230f63a2882914525a90ebcee1ba070f38d49533453c1dfa11
-'http://deb.debian.org/debian/pool/main/s/subversion/subversion_1.9.5.orig.tar.gz' subversion_1.9.5.orig.tar.gz 10615674 SHA256:280ba586c5d51d7b976b65d22d5e8e42f3908ed1c968d71120dcf534ce857a83
-'http://deb.debian.org/debian/pool/main/s/subversion/subversion_1.9.5-1+deb9u3.diff.gz' subversion_1.9.5-1+deb9u3.diff.gz 2545505 SHA256:f71d488ee779a2c681cc44930d55438b9cf015aaf497836d5164d3e18978fd29
+$ apt-get source -qq --print-uris subversion=1.9.5-1+deb9u4
+'http://security.debian.org/debian-security/pool/updates/main/s/subversion/subversion_1.9.5-1+deb9u4.dsc' subversion_1.9.5-1+deb9u4.dsc 3077 SHA256:3077b153f0f10f16db5433396a3170006e8cf41eadaf166c4fbac2874b74b71b
+'http://security.debian.org/debian-security/pool/updates/main/s/subversion/subversion_1.9.5.orig.tar.gz' subversion_1.9.5.orig.tar.gz 10615674 SHA256:280ba586c5d51d7b976b65d22d5e8e42f3908ed1c968d71120dcf534ce857a83
+'http://security.debian.org/debian-security/pool/updates/main/s/subversion/subversion_1.9.5-1+deb9u4.diff.gz' subversion_1.9.5-1+deb9u4.diff.gz 2547685 SHA256:c72e9a46bcd488a166957e0c5a3ae4225413fdeaddd95c529962de8b35414f74
 ```
 
 Other potentially useful URLs:
 
-- https://sources.debian.net/src/subversion/1.9.5-1+deb9u3/ (for browsing the source)
-- https://sources.debian.net/src/subversion/1.9.5-1+deb9u3/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/subversion/1.9.5-1+deb9u3/ (for access to the source package after it no longer exists in the archive)
+- https://sources.debian.net/src/subversion/1.9.5-1+deb9u4/ (for browsing the source)
+- https://sources.debian.net/src/subversion/1.9.5-1+deb9u4/debian/copyright/ (for direct copyright/license information)
+- http://snapshot.debian.org/package/subversion/1.9.5-1+deb9u4/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `suitesparse=1:4.5.4-1`
 
