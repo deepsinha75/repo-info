@@ -1,10 +1,10 @@
-# `nats:2.0.2-linux`
+# `nats:2.0.4-linux`
 
 ## Docker Metadata
 
-- Image ID: `sha256:53e0f4ef04305bc8362a1e22bf1289624aaebcfb2ea4c2f17cc5e3901f2fe1cd`
-- Created: `2019-07-15T23:27:28.898423436Z`
-- Virtual Size: ~ 9.14 Mb  
+- Image ID: `sha256:83e93a2c1f59e3ce7dddc80a7250e98923afe8cc6e9bdbe1f1517629a54a7d95`
+- Created: `2019-08-15T22:20:16.558691457Z`
+- Virtual Size: ~ 9.88 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["/nats-server"]`
