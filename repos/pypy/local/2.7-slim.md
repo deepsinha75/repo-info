@@ -2,9 +2,9 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:e793ec7472618fd14e78505e99d479b80ba093f9cccd6ed15a8f954d55ff145c`
-- Created: `2019-07-23T23:23:42.175199058Z`
-- Virtual Size: ~ 208.97 Mb  
+- Image ID: `sha256:4a9a689434646d13944e7808f9b9e1dcccc23c8257fde1b3b2afd75288a25349`
+- Created: `2019-08-15T23:39:07.950278395Z`
+- Virtual Size: ~ 203.23 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Command: `["pypy"]`
@@ -12,7 +12,9 @@
   - `PATH=/usr/local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
   - `LANG=C.UTF-8`
   - `PYPY_VERSION=7.1.1`
-  - `PYTHON_PIP_VERSION=19.2.1`
+  - `PYTHON_PIP_VERSION=19.2.2`
+  - `PYTHON_GET_PIP_URL=https://github.com/pypa/get-pip/raw/0c72a3b4ece313faccb446a96c84770ccedc5ec5/get-pip.py`
+  - `PYTHON_GET_PIP_SHA256=201edc6df416da971e64cc94992d2dd24bc328bada7444f0c4f2031ae31e8dad`
 
 ## `dpkg` (`.deb`-based packages)
 
