@@ -2,8 +2,8 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:b44191321564d246871ba83a540cc329c7029112f789cddf6dea2db1430279f5`
-- Created: `2019-07-30T01:06:31.52743208Z`
+- Image ID: `sha256:874302ee8abb280a79e28625d5f70ace4539055759d89000c873a30acaeb5bd7`
+- Created: `2019-08-15T10:56:46.51665213Z`
 - Virtual Size: ~ 339.21 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
@@ -146,19 +146,23 @@ $ apt-get source -qq --print-uris audit=1:2.8.2-1ubuntu1
 'http://archive.ubuntu.com/ubuntu/pool/main/a/audit/audit_2.8.2-1ubuntu1.debian.tar.xz' audit_2.8.2-1ubuntu1.debian.tar.xz 21344 SHA256:2bc93230e3bf01eef5e9a5acff8f904af074e6e39003f1db8941118fbd041ec2
 ```
 
-### `dpkg` source package: `base-files=10.1ubuntu2.5`
+### `dpkg` source package: `base-files=10.1ubuntu2.6`
 
 Binary Packages:
 
-- `base-files=10.1ubuntu2.5`
+- `base-files=10.1ubuntu2.6`
 
 Licenses: (parsed from: `/usr/share/doc/base-files/copyright`)
 
 - `GPL`
 
-**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
-This is *usually* due to a new package version being released and the old version being removed.
+Source:
 
+```console
+$ apt-get source -qq --print-uris base-files=10.1ubuntu2.6
+'http://archive.ubuntu.com/ubuntu/pool/main/b/base-files/base-files_10.1ubuntu2.6.dsc' base-files_10.1ubuntu2.6.dsc 1620 SHA256:3b2bb107b6e818e9e75b4aaffadfd5934055feb08313e40129bea43cbcc1a2ad
+'http://archive.ubuntu.com/ubuntu/pool/main/b/base-files/base-files_10.1ubuntu2.6.tar.xz' base-files_10.1ubuntu2.6.tar.xz 78212 SHA256:9c5b1f13a900f3610b7015317d25484101f13ecad1360ff3fa20a033ddff6171
+```
 
 ### `dpkg` source package: `base-passwd=3.5.44`
 
@@ -1188,20 +1192,25 @@ $ apt-get source -qq --print-uris nghttp2=1.30.0-1ubuntu1
 'http://archive.ubuntu.com/ubuntu/pool/main/n/nghttp2/nghttp2_1.30.0-1ubuntu1.debian.tar.xz' nghttp2_1.30.0-1ubuntu1.debian.tar.xz 13244 SHA256:eb99f2c10cd872ce750964fc59734aa70b89ad04179291a23bfbee0e1a2903d3
 ```
 
-### `dpkg` source package: `openldap=2.4.45+dfsg-1ubuntu1.2`
+### `dpkg` source package: `openldap=2.4.45+dfsg-1ubuntu1.3`
 
 Binary Packages:
 
-- `libldap-2.4-2:amd64=2.4.45+dfsg-1ubuntu1.2`
-- `libldap-common=2.4.45+dfsg-1ubuntu1.2`
+- `libldap-2.4-2:amd64=2.4.45+dfsg-1ubuntu1.3`
+- `libldap-common=2.4.45+dfsg-1ubuntu1.3`
 
 **WARNING:** unable to detect licenses! (package likely not compliant with DEP-5)  
 If source is available (seen below), check the contents of `debian/copyright` within it.
 
 
-**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
-This is *usually* due to a new package version being released and the old version being removed.
+Source:
 
+```console
+$ apt-get source -qq --print-uris openldap=2.4.45+dfsg-1ubuntu1.3
+'http://archive.ubuntu.com/ubuntu/pool/main/o/openldap/openldap_2.4.45+dfsg-1ubuntu1.3.dsc' openldap_2.4.45+dfsg-1ubuntu1.3.dsc 2884 SHA256:a5be775d0ac209eef2a5e5bb4b25f92318433c828160f540ca038ea7107471e5
+'http://archive.ubuntu.com/ubuntu/pool/main/o/openldap/openldap_2.4.45+dfsg.orig.tar.gz' openldap_2.4.45+dfsg.orig.tar.gz 4846458 SHA256:d51c70423aa0554d454fd3d43e7f2e940523b4ef07979305b48c233ae44b2b32
+'http://archive.ubuntu.com/ubuntu/pool/main/o/openldap/openldap_2.4.45+dfsg-1ubuntu1.3.debian.tar.xz' openldap_2.4.45+dfsg-1ubuntu1.3.debian.tar.xz 177388 SHA256:6ac2c1960fcff8e8ea126fe10958c484681e0619d5211a844954bf6f3111d049
+```
 
 ### `dpkg` source package: `openssl=1.1.1-1ubuntu2.1~18.04.4`
 
@@ -1463,12 +1472,12 @@ $ apt-get source -qq --print-uris sqlite3=3.22.0-1ubuntu0.1
 'http://archive.ubuntu.com/ubuntu/pool/main/s/sqlite3/sqlite3_3.22.0-1ubuntu0.1.debian.tar.xz' sqlite3_3.22.0-1ubuntu0.1.debian.tar.xz 33780 SHA256:1eb9ca29e3cbfd48112b4618daa0fdba75b269a92a286ea22d3d4f1dd0f573ea
 ```
 
-### `dpkg` source package: `systemd=237-3ubuntu10.24`
+### `dpkg` source package: `systemd=237-3ubuntu10.25`
 
 Binary Packages:
 
-- `libsystemd0:amd64=237-3ubuntu10.24`
-- `libudev1:amd64=237-3ubuntu10.24`
+- `libsystemd0:amd64=237-3ubuntu10.25`
+- `libudev1:amd64=237-3ubuntu10.25`
 
 Licenses: (parsed from: `/usr/share/doc/libsystemd0/copyright`, `/usr/share/doc/libudev1/copyright`)
 
@@ -1480,9 +1489,14 @@ Licenses: (parsed from: `/usr/share/doc/libsystemd0/copyright`, `/usr/share/doc/
 - `LGPL-2.1+`
 - `public-domain`
 
-**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
-This is *usually* due to a new package version being released and the old version being removed.
+Source:
 
+```console
+$ apt-get source -qq --print-uris systemd=237-3ubuntu10.25
+'http://archive.ubuntu.com/ubuntu/pool/main/s/systemd/systemd_237-3ubuntu10.25.dsc' systemd_237-3ubuntu10.25.dsc 5182 SHA256:ff24dafe1b2a06406aa8be2cfa3ffe153d23e4cd39db101b33c5e25281a18c1c
+'http://archive.ubuntu.com/ubuntu/pool/main/s/systemd/systemd_237.orig.tar.gz' systemd_237.orig.tar.gz 6871350 SHA256:c83dabbe1c9de6b9db1dafdb7e04140c7d0535705c68842f6c0768653ba4913c
+'http://archive.ubuntu.com/ubuntu/pool/main/s/systemd/systemd_237-3ubuntu10.25.debian.tar.xz' systemd_237-3ubuntu10.25.debian.tar.xz 220332 SHA256:3d98c05b8d71379d9b622df07eba6f6ee63c533fecbba127c371e8ecb533eda9
+```
 
 ### `dpkg` source package: `sysvinit=2.88dsf-59.10ubuntu1`
 
