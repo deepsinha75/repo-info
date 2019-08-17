@@ -1,10 +1,10 @@
-# `nextcloud:16.0.3-apache`
+# `nextcloud:16.0.4-apache`
 
 ## Docker Metadata
 
-- Image ID: `sha256:57f7216e3a89ff74a370a8eb04adf50767f2fdd8793f65032c26d2f6536a1dc1`
-- Created: `2019-08-02T09:40:46.838865606Z`
-- Virtual Size: ~ 675.56 Mb  
+- Image ID: `sha256:cbc3c78426532403bbdf296f1871f36ae17140af1f92dfbd209745a687c58d32`
+- Created: `2019-08-16T22:23:01.646911179Z`
+- Virtual Size: ~ 676.26 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["/entrypoint.sh"]`
@@ -26,7 +26,7 @@
   - `PHP_ASC_URL=https://www.php.net/get/php-7.3.8.tar.xz.asc/from/this/mirror`
   - `PHP_SHA256=f6046b2ae625d8c04310bda0737ac660dc5563a8e04e8a46c1ee24ea414ad5a5`
   - `PHP_MD5=`
-  - `NEXTCLOUD_VERSION=16.0.3`
+  - `NEXTCLOUD_VERSION=16.0.4`
 
 ## `dpkg` (`.deb`-based packages)
 
@@ -2586,11 +2586,11 @@ Other potentially useful URLs:
 - https://sources.debian.net/src/libzstd/1.3.8+dfsg-3/debian/copyright/ (for direct copyright/license information)
 - http://snapshot.debian.org/package/libzstd/1.3.8+dfsg-3/ (for access to the source package after it no longer exists in the archive)
 
-### `dpkg` source package: `linux=4.19.37-5`
+### `dpkg` source package: `linux=4.19.37-5+deb10u2`
 
 Binary Packages:
 
-- `linux-libc-dev:amd64=4.19.37-5`
+- `linux-libc-dev:amd64=4.19.37-5+deb10u2`
 
 Licenses: (parsed from: `/usr/share/doc/linux-libc-dev/copyright`)
 
@@ -2605,17 +2605,17 @@ Licenses: (parsed from: `/usr/share/doc/linux-libc-dev/copyright`)
 Source:
 
 ```console
-$ apt-get source -qq --print-uris linux=4.19.37-5
-'http://deb.debian.org/debian/pool/main/l/linux/linux_4.19.37-5.dsc' linux_4.19.37-5.dsc 189124 SHA256:c09624619d9808aae877a7fc638f259181d9f9dc53aee789ecbe82a0ed3498eb
-'http://deb.debian.org/debian/pool/main/l/linux/linux_4.19.37.orig.tar.xz' linux_4.19.37.orig.tar.xz 107198588 SHA256:04be08391496ff96f52459f9992e36eeb8c5edc2980e43a08c20b68d945a3af1
-'http://deb.debian.org/debian/pool/main/l/linux/linux_4.19.37-5.debian.tar.xz' linux_4.19.37-5.debian.tar.xz 4255088 SHA256:5a292f47187414902c906088312b35d320ceeafb9a901ad779e1d6fea5d31b0d
+$ apt-get source -qq --print-uris linux=4.19.37-5+deb10u2
+'http://security.debian.org/debian-security/pool/updates/main/l/linux/linux_4.19.37-5+deb10u2.dsc' linux_4.19.37-5+deb10u2.dsc 189156 SHA256:6404682ba9e10f97a5f65769cc7ae545a1bed6ed36e4a69029f6da701b5a9e05
+'http://security.debian.org/debian-security/pool/updates/main/l/linux/linux_4.19.37.orig.tar.xz' linux_4.19.37.orig.tar.xz 107198588 SHA256:04be08391496ff96f52459f9992e36eeb8c5edc2980e43a08c20b68d945a3af1
+'http://security.debian.org/debian-security/pool/updates/main/l/linux/linux_4.19.37-5+deb10u2.debian.tar.xz' linux_4.19.37-5+deb10u2.debian.tar.xz 4282720 SHA256:184d823c07916f897b2359aa5592e4e524eb2f517bf261400b875b2882b8ac3c
 ```
 
 Other potentially useful URLs:
 
-- https://sources.debian.net/src/linux/4.19.37-5/ (for browsing the source)
-- https://sources.debian.net/src/linux/4.19.37-5/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/linux/4.19.37-5/ (for access to the source package after it no longer exists in the archive)
+- https://sources.debian.net/src/linux/4.19.37-5+deb10u2/ (for browsing the source)
+- https://sources.debian.net/src/linux/4.19.37-5+deb10u2/debian/copyright/ (for direct copyright/license information)
+- http://snapshot.debian.org/package/linux/4.19.37-5+deb10u2/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `lsb=10.2019051400`
 
@@ -3115,11 +3115,11 @@ Other potentially useful URLs:
 - https://sources.debian.net/src/pam/1.3.1-5/debian/copyright/ (for direct copyright/license information)
 - http://snapshot.debian.org/package/pam/1.3.1-5/ (for access to the source package after it no longer exists in the archive)
 
-### `dpkg` source package: `patch=2.7.6-3`
+### `dpkg` source package: `patch=2.7.6-3+deb10u1`
 
 Binary Packages:
 
-- `patch=2.7.6-3`
+- `patch=2.7.6-3+deb10u1`
 
 Licenses: (parsed from: `/usr/share/doc/patch/copyright`)
 
@@ -3128,17 +3128,17 @@ Licenses: (parsed from: `/usr/share/doc/patch/copyright`)
 Source:
 
 ```console
-$ apt-get source -qq --print-uris patch=2.7.6-3
-'http://deb.debian.org/debian/pool/main/p/patch/patch_2.7.6-3.dsc' patch_2.7.6-3.dsc 1699 SHA256:c84154893834d07a13a760f9be4e7c8fbced41bdb1157db1140c880a90a7c72a
-'http://deb.debian.org/debian/pool/main/p/patch/patch_2.7.6.orig.tar.xz' patch_2.7.6.orig.tar.xz 783756 SHA256:ac610bda97abe0d9f6b7c963255a11dcb196c25e337c61f94e4778d632f1d8fd
-'http://deb.debian.org/debian/pool/main/p/patch/patch_2.7.6-3.debian.tar.xz' patch_2.7.6-3.debian.tar.xz 10608 SHA256:f48c3001906a954b3ea0ff1a6ad347172f1e3453620377d7f1427b62474b047b
+$ apt-get source -qq --print-uris patch=2.7.6-3+deb10u1
+'http://security.debian.org/debian-security/pool/updates/main/p/patch/patch_2.7.6-3+deb10u1.dsc' patch_2.7.6-3+deb10u1.dsc 1731 SHA256:dae4e0d25106b2d14d981309395371397091892359b44a919eb08dd841bee13f
+'http://security.debian.org/debian-security/pool/updates/main/p/patch/patch_2.7.6.orig.tar.xz' patch_2.7.6.orig.tar.xz 783756 SHA256:ac610bda97abe0d9f6b7c963255a11dcb196c25e337c61f94e4778d632f1d8fd
+'http://security.debian.org/debian-security/pool/updates/main/p/patch/patch_2.7.6-3+deb10u1.debian.tar.xz' patch_2.7.6-3+deb10u1.debian.tar.xz 13164 SHA256:58d4e84bd4ce850152e1d1911546ac0aad9764992570c360cff8f9cf03eb37bc
 ```
 
 Other potentially useful URLs:
 
-- https://sources.debian.net/src/patch/2.7.6-3/ (for browsing the source)
-- https://sources.debian.net/src/patch/2.7.6-3/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/patch/2.7.6-3/ (for access to the source package after it no longer exists in the archive)
+- https://sources.debian.net/src/patch/2.7.6-3+deb10u1/ (for browsing the source)
+- https://sources.debian.net/src/patch/2.7.6-3+deb10u1/debian/copyright/ (for direct copyright/license information)
+- http://snapshot.debian.org/package/patch/2.7.6-3+deb10u1/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `pcre3=2:8.39-12`
 
@@ -3273,11 +3273,11 @@ Other potentially useful URLs:
 - https://sources.debian.net/src/popt/1.16-12/debian/copyright/ (for direct copyright/license information)
 - http://snapshot.debian.org/package/popt/1.16-12/ (for access to the source package after it no longer exists in the archive)
 
-### `dpkg` source package: `postgresql-11=11.4-1`
+### `dpkg` source package: `postgresql-11=11.5-1+deb10u1`
 
 Binary Packages:
 
-- `libpq5:amd64=11.4-1`
+- `libpq5:amd64=11.5-1+deb10u1`
 
 Licenses: (parsed from: `/usr/share/doc/libpq5/copyright`)
 
@@ -3300,17 +3300,17 @@ Licenses: (parsed from: `/usr/share/doc/libpq5/copyright`)
 Source:
 
 ```console
-$ apt-get source -qq --print-uris postgresql-11=11.4-1
-'http://deb.debian.org/debian/pool/main/p/postgresql-11/postgresql-11_11.4-1.dsc' postgresql-11_11.4-1.dsc 3706 SHA256:1dedf265cfbac175b34a2f06f8fb67b07be0cee00c5ba340dcf5d3b70c7a5a7e
-'http://deb.debian.org/debian/pool/main/p/postgresql-11/postgresql-11_11.4.orig.tar.bz2' postgresql-11_11.4.orig.tar.bz2 19759635 SHA256:02802ddffd1590805beddd1e464dd28a46a41a5f1e1df04bab4f46663195cc8b
-'http://deb.debian.org/debian/pool/main/p/postgresql-11/postgresql-11_11.4-1.debian.tar.xz' postgresql-11_11.4-1.debian.tar.xz 24208 SHA256:346f7dca312b741a67a7429b84e48c7f69d41b9a6c5a66dbb46c607d76777d43
+$ apt-get source -qq --print-uris postgresql-11=11.5-1+deb10u1
+'http://security.debian.org/debian-security/pool/updates/main/p/postgresql-11/postgresql-11_11.5-1+deb10u1.dsc' postgresql-11_11.5-1+deb10u1.dsc 3738 SHA256:863ba2eef964710fc55df55f69cc2503ae7b08d991f8144281c90db2281051ab
+'http://security.debian.org/debian-security/pool/updates/main/p/postgresql-11/postgresql-11_11.5.orig.tar.bz2' postgresql-11_11.5.orig.tar.bz2 19773087 SHA256:7fdf23060bfc715144cbf2696cf05b0fa284ad3eb21f0c378591c6bca99ad180
+'http://security.debian.org/debian-security/pool/updates/main/p/postgresql-11/postgresql-11_11.5-1+deb10u1.debian.tar.xz' postgresql-11_11.5-1+deb10u1.debian.tar.xz 24772 SHA256:24d435fe5ef3ae9b7816724a034177a79c92136c01cb704f258e829c7a2aabae
 ```
 
 Other potentially useful URLs:
 
-- https://sources.debian.net/src/postgresql-11/11.4-1/ (for browsing the source)
-- https://sources.debian.net/src/postgresql-11/11.4-1/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/postgresql-11/11.4-1/ (for access to the source package after it no longer exists in the archive)
+- https://sources.debian.net/src/postgresql-11/11.5-1+deb10u1/ (for browsing the source)
+- https://sources.debian.net/src/postgresql-11/11.5-1+deb10u1/debian/copyright/ (for direct copyright/license information)
+- http://snapshot.debian.org/package/postgresql-11/11.5-1+deb10u1/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `procps=2:3.3.15-2`
 
