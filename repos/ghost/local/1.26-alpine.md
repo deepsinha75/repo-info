@@ -2,16 +2,16 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:0a776b9b8e0c07231d41af45e8455ba4499b4f7a6b4479b6952c695e2df75df6`
-- Created: `2019-06-27T22:26:36.111995448Z`
-- Virtual Size: ~ 212.99 Mb  
+- Image ID: `sha256:00558cb6edeb255cba6a00d758afa1bf26adc2679334da45eaf3e6c2cfd932dc`
+- Created: `2019-08-16T03:20:55.122201671Z`
+- Virtual Size: ~ 214.34 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["docker-entrypoint.sh"]`
 - Command: `["node","current/index.js"]`
 - Environment:
   - `PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/var/lib/ghost/current/node_modules/knex-migrator/bin`
-  - `NODE_VERSION=8.16.0`
+  - `NODE_VERSION=8.16.1`
   - `YARN_VERSION=1.15.2`
   - `NODE_ENV=production`
   - `GHOST_CLI_VERSION=1.11.0`
@@ -228,16 +228,16 @@ ISC
 ### `apk` package: `musl`
 
 ```console
-musl-1.1.20-r4 description:
+musl-1.1.20-r5 description:
 the musl c library (libc) implementation
 
-musl-1.1.20-r4 webpage:
+musl-1.1.20-r5 webpage:
 http://www.musl-libc.org/
 
-musl-1.1.20-r4 installed size:
+musl-1.1.20-r5 installed size:
 602112
 
-musl-1.1.20-r4 license:
+musl-1.1.20-r5 license:
 MIT
 
 ```
@@ -245,16 +245,16 @@ MIT
 ### `apk` package: `musl-utils`
 
 ```console
-musl-utils-1.1.20-r4 description:
+musl-utils-1.1.20-r5 description:
 the musl c library (libc) implementation
 
-musl-utils-1.1.20-r4 webpage:
+musl-utils-1.1.20-r5 webpage:
 http://www.musl-libc.org/
 
-musl-utils-1.1.20-r4 installed size:
+musl-utils-1.1.20-r5 installed size:
 139264
 
-musl-utils-1.1.20-r4 license:
+musl-utils-1.1.20-r5 license:
 MIT BSD GPL2+
 
 ```
