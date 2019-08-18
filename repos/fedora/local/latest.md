@@ -26,12 +26,10 @@ Source:
 
 ```console
 $ yumdownloader --quiet --source --urls acl-2.2.53-3.fc30
+http://mirror.stavlor.net/pub/fedora/linux/releases/30/Modular/x86_64/os/repodata/repomd.xml: [Errno 12] Timeout on http://mirror.stavlor.net/pub/fedora/linux/releases/30/Modular/x86_64/os/repodata/repomd.xml: (28, 'Connection timed out after 30000 milliseconds')
+Trying other mirror.
 Enabling fedora-modular-source repository
 Enabling updates-source repository
-http://mirror.stavlor.net/pub/fedora/linux/updates/30/Everything/SRPMS/repodata/repomd.xml: [Errno 12] Timeout on http://mirror.stavlor.net/pub/fedora/linux/updates/30/Everything/SRPMS/repodata/repomd.xml: (28, 'Connection timed out after 30000 milliseconds')
-Trying other mirror.
-https://mirror.chpc.utah.edu/pub/fedora/linux/updates/30/Everything/SRPMS/repodata/repomd.xml: [Errno -1] repomd.xml does not match metalink for updates-source
-Trying other mirror.
 Enabling updates-modular-source repository
 Enabling fedora-source repository
 https://d2lzkl7pfhq30w.cloudfront.net/pub/fedora/linux/releases/30/Everything/source/tree//Packages/a/acl-2.2.53-3.fc30.src.rpm
