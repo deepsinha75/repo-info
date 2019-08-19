@@ -26,8 +26,6 @@ Source:
 
 ```console
 $ yumdownloader --quiet --source --urls acl-2.2.53-3.fc30
-http://mirror.stavlor.net/pub/fedora/linux/releases/30/Modular/x86_64/os/repodata/repomd.xml: [Errno 12] Timeout on http://mirror.stavlor.net/pub/fedora/linux/releases/30/Modular/x86_64/os/repodata/repomd.xml: (28, 'Connection timed out after 30000 milliseconds')
-Trying other mirror.
 Enabling fedora-modular-source repository
 Enabling updates-source repository
 Enabling updates-modular-source repository
