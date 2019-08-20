@@ -1,18 +1,18 @@
-# `aerospike:4.5.3.4`
+# `aerospike:4.6.0.2`
 
 ## Docker Metadata
 
-- Image ID: `sha256:3e7053f87ab7b34af8c583e073da1dd82403d68427591082c607481a0993d0f2`
-- Created: `2019-08-14T03:29:17.66332447Z`
-- Virtual Size: ~ 131.35 Mb  
+- Image ID: `sha256:3c5469117b37ad2291b2012f9fe1a2d1d1451dd94608ea4a0330140126ca14dc`
+- Created: `2019-08-19T20:19:47.6860615Z`
+- Virtual Size: ~ 132.06 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["/entrypoint.sh"]`
 - Command: `["asd"]`
 - Environment:
   - `PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
-  - `AEROSPIKE_VERSION=4.5.3.4`
-  - `AEROSPIKE_SHA256=cd00f8a22d7b286d1b40c38bc5f25d3933dddf56ae91c6c9fd0127d343cc68cb`
+  - `AEROSPIKE_VERSION=4.6.0.2`
+  - `AEROSPIKE_SHA256=a7e52cea32c4681f76fa50f660a7622120c3115f6010e17ab69581ece9d602e1`
 
 ## `dpkg` (`.deb`-based packages)
 
@@ -66,11 +66,11 @@ Other potentially useful URLs:
 - https://sources.debian.net/src/adduser/3.115/debian/copyright/ (for direct copyright/license information)
 - http://snapshot.debian.org/package/adduser/3.115/ (for access to the source package after it no longer exists in the archive)
 
-### `dpkg` source package: `aerospike-server-community=4.5.3.4-1`
+### `dpkg` source package: `aerospike-server-community=4.6.0.2-1`
 
 Binary Packages:
 
-- `aerospike-server-community=4.5.3.4-1`
+- `aerospike-server-community=4.6.0.2-1`
 
 **WARNING:** unable to detect licenses! (package likely not compliant with DEP-5)  
 If source is available (seen below), check the contents of `debian/copyright` within it.
@@ -80,11 +80,11 @@ If source is available (seen below), check the contents of `debian/copyright` wi
 This is *usually* due to a new package version being released and the old version being removed.
 
 
-### `dpkg` source package: `aerospike-tools=3.19.0`
+### `dpkg` source package: `aerospike-tools=3.21.0`
 
 Binary Packages:
 
-- `aerospike-tools=3.19.0`
+- `aerospike-tools=3.21.0`
 
 **WARNING:** unable to detect licenses! (package likely not compliant with DEP-5)  
 If source is available (seen below), check the contents of `debian/copyright` within it.
