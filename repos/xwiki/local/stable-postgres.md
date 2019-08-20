@@ -510,15 +510,9 @@ Licenses: (parsed from: `/usr/share/doc/libcups2/copyright`)
 - `LGPL-2.0 with AOSDL exception`
 - `Zlib`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris cups=2.2.7-1ubuntu2.6
-'http://archive.ubuntu.com/ubuntu/pool/main/c/cups/cups_2.2.7-1ubuntu2.6.dsc' cups_2.2.7-1ubuntu2.6.dsc 3007 SHA256:eca30cfa64254993b0a360abf88b07c854f891fd7ed5904c8910645c9f514a11
-'http://archive.ubuntu.com/ubuntu/pool/main/c/cups/cups_2.2.7.orig.tar.gz' cups_2.2.7.orig.tar.gz 10330296 SHA256:3c4b637b737077565ccdfbd5f61785d03f49461ae736fcc2c0ffaf41d2c6ea6a
-'http://archive.ubuntu.com/ubuntu/pool/main/c/cups/cups_2.2.7.orig.tar.gz.asc' cups_2.2.7.orig.tar.gz.asc 872 SHA256:2b17bef166e1f8a0dece544c0e4f0d847f6d2c8e784298898966352f4e47581a
-'http://archive.ubuntu.com/ubuntu/pool/main/c/cups/cups_2.2.7-1ubuntu2.6.debian.tar.xz' cups_2.2.7-1ubuntu2.6.debian.tar.xz 360756 SHA256:cf60d6104e8664dc30a6461c4c669215fadc161b6478193b5f579343ce52ff98
-```
 
 ### `dpkg` source package: `curl=7.58.0-2ubuntu3.7`
 
@@ -2368,17 +2362,9 @@ Licenses: (parsed from: `/usr/share/doc/fonts-opensymbol/copyright`, `/usr/share
 - `MPL-2.0`
 - `other`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris libreoffice=1:6.0.7-0ubuntu0.18.04.8
-'http://archive.ubuntu.com/ubuntu/pool/main/libr/libreoffice/libreoffice_6.0.7-0ubuntu0.18.04.8.dsc' libreoffice_6.0.7-0ubuntu0.18.04.8.dsc 18074 SHA256:c21b8b098f4bbf64b4d01dfa75e0f48a209a41a2d51fbbcc8d56b733907144e0
-'http://archive.ubuntu.com/ubuntu/pool/main/libr/libreoffice/libreoffice_6.0.7.orig-helpcontent2.tar.xz' libreoffice_6.0.7.orig-helpcontent2.tar.xz 2423012 SHA256:41c1ef4b0437acd7e8ba36789b45906e99e0487b12198bce0d30ed74c9e0ccaf
-'http://archive.ubuntu.com/ubuntu/pool/main/libr/libreoffice/libreoffice_6.0.7.orig-tarballs.tar.xz' libreoffice_6.0.7.orig-tarballs.tar.xz 215486780 SHA256:96116dcc195ab1f47fa677bf88f8d233561422dbfe5a0539f7408b56e254c194
-'http://archive.ubuntu.com/ubuntu/pool/main/libr/libreoffice/libreoffice_6.0.7.orig-translations.tar.xz' libreoffice_6.0.7.orig-translations.tar.xz 139598364 SHA256:24a3ef909cfb0722dec3d6e40924681b41641f175e5df90b3e5507fdceb43186
-'http://archive.ubuntu.com/ubuntu/pool/main/libr/libreoffice/libreoffice_6.0.7.orig.tar.xz' libreoffice_6.0.7.orig.tar.xz 183202236 SHA256:fc67036b0c00c1685d39acec6c485a4a250b6bb92fc08a88377d39d2f7fd7923
-'http://archive.ubuntu.com/ubuntu/pool/main/libr/libreoffice/libreoffice_6.0.7-0ubuntu0.18.04.8.debian.tar.xz' libreoffice_6.0.7-0ubuntu0.18.04.8.debian.tar.xz 2176260 SHA256:fe7c124c17902e8cedb578c225699fc6d874620834047ff6dad263b72977a51a
-```
 
 ### `dpkg` source package: `librest=0.8.0-2`
 
