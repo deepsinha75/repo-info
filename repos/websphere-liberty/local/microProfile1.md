@@ -2,9 +2,9 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:108397197633cbba45fa830d5834e86bf40df18c51ca9eb15f959735a7cb1bc8`
-- Created: `2019-07-23T20:09:46.533886824Z`
-- Virtual Size: ~ 448.89 Mb  
+- Image ID: `sha256:e7c74798f2b0ee5918404cd88ae8c3fe507f4dfdce7308a0a0e12bb0f8c2540b`
+- Created: `2019-08-16T22:36:13.236581841Z`
+- Virtual Size: ~ 449.05 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["/opt/ibm/helpers/runtime/docker-server.sh"]`
@@ -14,21 +14,21 @@
   - `JAVA_VERSION=1.8.0_sr5fp37`
   - `JAVA_HOME=/opt/ibm/java/jre`
   - `IBM_JAVA_OPTIONS=-Xshareclasses:name=liberty,nonfatal,cacheDir=/output/.classCache/ -XX:+UseContainerSupport`
-  - `LIBERTY_VERSION=19.0.0_07`
+  - `LIBERTY_VERSION=19.0.0_08`
   - `LOG_DIR=/logs`
   - `WLP_OUTPUT_DIR=/opt/ibm/wlp/output`
   - `RANDFILE=/tmp/.rnd`
 - Labels:
-  - `BuildLabel=cl190720190711-1115`
+  - `BuildLabel=cl190820190813-1136`
   - `ProductID=fbf6a96d49214c0abc6a3bc5da6e48cd`
   - `ProductName=WebSphere Application Server Liberty`
-  - `ProductVersion=19.0.0.7`
-  - `org.opencontainers.image.authors=Arthur De Magalhaes, Andy Naumann`
+  - `ProductVersion=19.0.0.8`
+  - `org.opencontainers.image.authors=Arthur De Magalhaes, Chris Potter`
   - `org.opencontainers.image.documentation=https://www.ibm.com/support/knowledgecenter/SSAW57_liberty/com.ibm.websphere.wlp.nd.multiplatform.doc/ae/cwlp_about.html`
-  - `org.opencontainers.image.revision=cl190720190711-1115`
+  - `org.opencontainers.image.revision=cl190820190813-1136`
   - `org.opencontainers.image.url=http://wasdev.net`
   - `org.opencontainers.image.vendor=IBM`
-  - `org.opencontainers.image.version=19.0.0.7`
+  - `org.opencontainers.image.version=19.0.0.8`
 
 ## `dpkg` (`.deb`-based packages)
 
