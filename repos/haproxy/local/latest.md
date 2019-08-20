@@ -1,9 +1,9 @@
-# `haproxy:2.0.4`
+# `haproxy:2.0.5`
 
 ## Docker Metadata
 
-- Image ID: `sha256:9009db9c8961d3033299428a62d83f3482f46341b3c940fdbd01351f30123266`
-- Created: `2019-08-14T06:02:15.599376391Z`
+- Image ID: `sha256:a14eeb9c0f5020dcdf878369997ce5197438ca70be0cb7b7cb996f17e4bbab0a`
+- Created: `2019-08-19T21:28:32.558172733Z`
 - Virtual Size: ~ 91.09 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
@@ -11,9 +11,9 @@
 - Command: `["haproxy","-f","/usr/local/etc/haproxy/haproxy.cfg"]`
 - Environment:
   - `PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
-  - `HAPROXY_VERSION=2.0.4`
-  - `HAPROXY_URL=https://www.haproxy.org/download/2.0/src/haproxy-2.0.4.tar.gz`
-  - `HAPROXY_SHA256=e2680696032c8b957cd26fd948fff239d2cfc17b00964e6d2dc5adf8155fcef1`
+  - `HAPROXY_VERSION=2.0.5`
+  - `HAPROXY_URL=https://www.haproxy.org/download/2.0/src/haproxy-2.0.5.tar.gz`
+  - `HAPROXY_SHA256=3f2e0d40af66dd6df1dc2f6055d3de106ba62836d77b4c2e497a82a4bdbc5422`
 
 ## `dpkg` (`.deb`-based packages)
 
