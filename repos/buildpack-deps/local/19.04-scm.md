@@ -2,8 +2,8 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:3365cee94448f70d600488e08dae2c59c2bb7835f0e8c979eef4091be8e48cf7`
-- Created: `2019-07-23T16:35:06.966121804Z`
+- Image ID: `sha256:e0f1b2f9f5734b496bc79689cedf6e4ad6462c3a5e12eb9ed23ca9668ea25945`
+- Created: `2019-08-15T08:55:08.659052985Z`
 - Virtual Size: ~ 236.19 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
@@ -475,11 +475,11 @@ $ apt-get source -qq --print-uris diffutils=1:3.7-2
 'http://archive.ubuntu.com/ubuntu/pool/main/d/diffutils/diffutils_3.7-2.debian.tar.xz' diffutils_3.7-2.debian.tar.xz 10956 SHA256:61cd7a77d4b1cdaf6549cb4db63e0f78bccd7a602a0b869bab67cf6b124dd140
 ```
 
-### `dpkg` source package: `dpkg=1.19.6ubuntu1`
+### `dpkg` source package: `dpkg=1.19.6ubuntu1.1`
 
 Binary Packages:
 
-- `dpkg=1.19.6ubuntu1`
+- `dpkg=1.19.6ubuntu1.1`
 
 Licenses: (parsed from: `/usr/share/doc/dpkg/copyright`)
 
@@ -492,9 +492,9 @@ Licenses: (parsed from: `/usr/share/doc/dpkg/copyright`)
 Source:
 
 ```console
-$ apt-get source -qq --print-uris dpkg=1.19.6ubuntu1
-'http://archive.ubuntu.com/ubuntu/pool/main/d/dpkg/dpkg_1.19.6ubuntu1.dsc' dpkg_1.19.6ubuntu1.dsc 2229 SHA256:fc122a42adefebab8afb4d4dc3e7a52f2102f6f36acf63119b623625ee57a6c0
-'http://archive.ubuntu.com/ubuntu/pool/main/d/dpkg/dpkg_1.19.6ubuntu1.tar.xz' dpkg_1.19.6ubuntu1.tar.xz 4816728 SHA256:f11a53a11c44b6bdc1b042b6a65a821318dfd7b190c75b22491b74a210f13029
+$ apt-get source -qq --print-uris dpkg=1.19.6ubuntu1.1
+'http://archive.ubuntu.com/ubuntu/pool/main/d/dpkg/dpkg_1.19.6ubuntu1.1.dsc' dpkg_1.19.6ubuntu1.1.dsc 2266 SHA256:310c300d023a6630552389946583787f1af5822d1ffd11221ae299244be63008
+'http://archive.ubuntu.com/ubuntu/pool/main/d/dpkg/dpkg_1.19.6ubuntu1.1.tar.xz' dpkg_1.19.6ubuntu1.1.tar.xz 4815760 SHA256:6cc8461f0b626d10ab25d94276a04535532df61f8d24a63dd599192b079333d9
 ```
 
 ### `dpkg` source package: `e2fsprogs=1.44.6-1`
@@ -1411,12 +1411,12 @@ $ apt-get source -qq --print-uris mawk=1.3.3-17ubuntu3
 'http://archive.ubuntu.com/ubuntu/pool/main/m/mawk/mawk_1.3.3-17ubuntu3.diff.gz' mawk_1.3.3-17ubuntu3.diff.gz 64052 SHA256:d1be148525885cb1869e35514f55005b5043f3310b08c444625005a3e14c81fc
 ```
 
-### `dpkg` source package: `mercurial=4.8.2-1ubuntu3`
+### `dpkg` source package: `mercurial=4.8.2-1ubuntu3.19.04.1`
 
 Binary Packages:
 
-- `mercurial=4.8.2-1ubuntu3`
-- `mercurial-common=4.8.2-1ubuntu3`
+- `mercurial=4.8.2-1ubuntu3.19.04.1`
+- `mercurial-common=4.8.2-1ubuntu3.19.04.1`
 
 Licenses: (parsed from: `/usr/share/doc/mercurial/copyright`, `/usr/share/doc/mercurial-common/copyright`)
 
@@ -1428,11 +1428,11 @@ Licenses: (parsed from: `/usr/share/doc/mercurial/copyright`, `/usr/share/doc/me
 Source:
 
 ```console
-$ apt-get source -qq --print-uris mercurial=4.8.2-1ubuntu3
-'http://archive.ubuntu.com/ubuntu/pool/universe/m/mercurial/mercurial_4.8.2-1ubuntu3.dsc' mercurial_4.8.2-1ubuntu3.dsc 2745 SHA256:8a8a3a6d8cfba58c01e3825c5f4594a6a3b188827c486f80798be846c25518d3
+$ apt-get source -qq --print-uris mercurial=4.8.2-1ubuntu3.19.04.1
+'http://archive.ubuntu.com/ubuntu/pool/universe/m/mercurial/mercurial_4.8.2-1ubuntu3.19.04.1.dsc' mercurial_4.8.2-1ubuntu3.19.04.1.dsc 2777 SHA256:bf1ea01a14b6a727683e2fcdee22b20cd11aec9f10bba7b1e9562f61774e0c5f
 'http://archive.ubuntu.com/ubuntu/pool/universe/m/mercurial/mercurial_4.8.2.orig.tar.gz' mercurial_4.8.2.orig.tar.gz 6870985 SHA256:6c202cb9cf05e63b86477ebf84d6475eb10b4022ac2cd3a7481fb36d9c45fdb2
 'http://archive.ubuntu.com/ubuntu/pool/universe/m/mercurial/mercurial_4.8.2.orig.tar.gz.asc' mercurial_4.8.2.orig.tar.gz.asc 833 SHA256:ceaf75242740acfd06a96aae53d8a40f3b3f3c4a7119bb53224d0bf6efa65254
-'http://archive.ubuntu.com/ubuntu/pool/universe/m/mercurial/mercurial_4.8.2-1ubuntu3.debian.tar.xz' mercurial_4.8.2-1ubuntu3.debian.tar.xz 62276 SHA256:968c7a47b052456804dbf1f4f3a22fcbdc66011fedfa1a81c9c7189054738898
+'http://archive.ubuntu.com/ubuntu/pool/universe/m/mercurial/mercurial_4.8.2-1ubuntu3.19.04.1.debian.tar.xz' mercurial_4.8.2-1ubuntu3.19.04.1.debian.tar.xz 66284 SHA256:0def6e25cb60fe7a18bd6c21cbd0925e5da5758cc7226426607ac4e21e34f043
 ```
 
 ### `dpkg` source package: `mime-support=3.60ubuntu1`
@@ -1572,12 +1572,12 @@ $ apt-get source -qq --print-uris npth=1.6-1
 'http://archive.ubuntu.com/ubuntu/pool/main/n/npth/npth_1.6-1.debian.tar.xz' npth_1.6-1.debian.tar.xz 10532 SHA256:d312d4a3cf1d082e2f2cf3ea752c41d34f7e120f77a941c6c1680e6093834353
 ```
 
-### `dpkg` source package: `openldap=2.4.47+dfsg-3ubuntu2`
+### `dpkg` source package: `openldap=2.4.47+dfsg-3ubuntu2.1`
 
 Binary Packages:
 
-- `libldap-2.4-2:amd64=2.4.47+dfsg-3ubuntu2`
-- `libldap-common=2.4.47+dfsg-3ubuntu2`
+- `libldap-2.4-2:amd64=2.4.47+dfsg-3ubuntu2.1`
+- `libldap-common=2.4.47+dfsg-3ubuntu2.1`
 
 **WARNING:** unable to detect licenses! (package likely not compliant with DEP-5)  
 If source is available (seen below), check the contents of `debian/copyright` within it.
@@ -1586,10 +1586,10 @@ If source is available (seen below), check the contents of `debian/copyright` wi
 Source:
 
 ```console
-$ apt-get source -qq --print-uris openldap=2.4.47+dfsg-3ubuntu2
-'http://archive.ubuntu.com/ubuntu/pool/main/o/openldap/openldap_2.4.47+dfsg-3ubuntu2.dsc' openldap_2.4.47+dfsg-3ubuntu2.dsc 2618 SHA256:d49c290fc86712169f9a8b239a1e14bf4a293c97de94dbce444dbebb21550561
+$ apt-get source -qq --print-uris openldap=2.4.47+dfsg-3ubuntu2.1
+'http://archive.ubuntu.com/ubuntu/pool/main/o/openldap/openldap_2.4.47+dfsg-3ubuntu2.1.dsc' openldap_2.4.47+dfsg-3ubuntu2.1.dsc 2971 SHA256:159958d2d6fba7ce74d6eb30870a0a5b6f146be3eef565540e19837f966a2882
 'http://archive.ubuntu.com/ubuntu/pool/main/o/openldap/openldap_2.4.47+dfsg.orig.tar.gz' openldap_2.4.47+dfsg.orig.tar.gz 4872293 SHA256:8f1ac7a4be7dd8ef158361efbfe16509756d3d9b396f5f378c3cf5c727807651
-'http://archive.ubuntu.com/ubuntu/pool/main/o/openldap/openldap_2.4.47+dfsg-3ubuntu2.debian.tar.xz' openldap_2.4.47+dfsg-3ubuntu2.debian.tar.xz 178320 SHA256:a27545fb63c420c2635ba66299a30b6d5d70bc64f7c7b0a5e245afd285743128
+'http://archive.ubuntu.com/ubuntu/pool/main/o/openldap/openldap_2.4.47+dfsg-3ubuntu2.1.debian.tar.xz' openldap_2.4.47+dfsg-3ubuntu2.1.debian.tar.xz 180296 SHA256:9b0d39d18d4ae2ce5768f6aed4c5f109ab7bb3983245ac7c99153199959d0bd0
 ```
 
 ### `dpkg` source package: `openssh=1:7.9p1-10`
@@ -2069,12 +2069,12 @@ $ apt-get source -qq --print-uris subversion=1.10.0-2ubuntu3
 'http://archive.ubuntu.com/ubuntu/pool/universe/s/subversion/subversion_1.10.0-2ubuntu3.debian.tar.xz' subversion_1.10.0-2ubuntu3.debian.tar.xz 2407216 SHA256:6ea12d08a1903039e7c58fea862a25352f25da29a6980046f1effbde8ec2c775
 ```
 
-### `dpkg` source package: `systemd=240-6ubuntu5.2`
+### `dpkg` source package: `systemd=240-6ubuntu5.3`
 
 Binary Packages:
 
-- `libsystemd0:amd64=240-6ubuntu5.2`
-- `libudev1:amd64=240-6ubuntu5.2`
+- `libsystemd0:amd64=240-6ubuntu5.3`
+- `libudev1:amd64=240-6ubuntu5.3`
 
 Licenses: (parsed from: `/usr/share/doc/libsystemd0/copyright`, `/usr/share/doc/libudev1/copyright`)
 
@@ -2086,9 +2086,14 @@ Licenses: (parsed from: `/usr/share/doc/libsystemd0/copyright`, `/usr/share/doc/
 - `LGPL-2.1+`
 - `public-domain`
 
-**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
-This is *usually* due to a new package version being released and the old version being removed.
+Source:
 
+```console
+$ apt-get source -qq --print-uris systemd=240-6ubuntu5.3
+'http://archive.ubuntu.com/ubuntu/pool/main/s/systemd/systemd_240-6ubuntu5.3.dsc' systemd_240-6ubuntu5.3.dsc 5112 SHA256:5af55e3039c6b98b6140ab67e4ad02673a2f1809b826cf41d410e9f799c432e7
+'http://archive.ubuntu.com/ubuntu/pool/main/s/systemd/systemd_240.orig.tar.gz' systemd_240.orig.tar.gz 7582001 SHA256:8f15aec1ac926e13a21a04d0ca3fe371f7004951448142a6f8952075c5b5f0b5
+'http://archive.ubuntu.com/ubuntu/pool/main/s/systemd/systemd_240-6ubuntu5.3.debian.tar.xz' systemd_240-6ubuntu5.3.debian.tar.xz 228112 SHA256:5edc6b35c9af95a1483428c7fb7d1626965ea7e98354d8b95d1cb8f9ae5bbcf9
+```
 
 ### `dpkg` source package: `sysvinit=2.88dsf-59.10ubuntu2`
 

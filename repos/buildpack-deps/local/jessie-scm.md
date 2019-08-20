@@ -2,9 +2,9 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:6c29d64403ca80e45ff7dc82a4f358b6cabe47c5ceb2a55146308ea034d36d91`
-- Created: `2019-07-10T02:23:39.748123776Z`
-- Virtual Size: ~ 293.82 Mb  
+- Image ID: `sha256:fcc26da7bee42eaa30993115d228e232925fa42156ae752c50cf9a94f3c011aa`
+- Created: `2019-08-14T06:18:30.831008658Z`
+- Virtual Size: ~ 293.83 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Command: `["bash"]`
@@ -267,23 +267,30 @@ Other potentially useful URLs:
 - https://sources.debian.net/src/bash/4.3-11+deb8u2/debian/copyright/ (for direct copyright/license information)
 - http://snapshot.debian.org/package/bash/4.3-11+deb8u2/ (for access to the source package after it no longer exists in the archive)
 
-### `dpkg` source package: `bzip2=1.0.6-7+deb8u1`
+### `dpkg` source package: `bzip2=1.0.6-7+deb8u2`
 
 Binary Packages:
 
-- `libbz2-1.0:amd64=1.0.6-7+deb8u1`
+- `libbz2-1.0:amd64=1.0.6-7+deb8u2`
 
 Licenses: (parsed from: `/usr/share/doc/libbz2-1.0/copyright`)
 
 - `GPL-2`
 
-**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
-This is *usually* due to a new package version being released and the old version being removed.
+Source:
 
-The source package *may* still be available for download from:
+```console
+$ apt-get source -qq --print-uris bzip2=1.0.6-7+deb8u2
+'http://security.debian.org/debian-security/pool/updates/main/b/bzip2/bzip2_1.0.6-7+deb8u2.dsc' bzip2_1.0.6-7+deb8u2.dsc 2462 SHA256:7f1f29e1c032ca64068eb0aa7b9e025b0c9e41218974d8fff3d255397fc691f5
+'http://security.debian.org/debian-security/pool/updates/main/b/bzip2/bzip2_1.0.6.orig.tar.bz2' bzip2_1.0.6.orig.tar.bz2 708737 SHA256:d70a9ccd8bdf47e302d96c69fecd54925f45d9c7b966bb4ef5f56b770960afa7
+'http://security.debian.org/debian-security/pool/updates/main/b/bzip2/bzip2_1.0.6-7+deb8u2.debian.tar.bz2' bzip2_1.0.6-7+deb8u2.debian.tar.bz2 61298 SHA256:49b18ae614a6a92beaf846ae2d5df29687c6d09a158f57db548ff52b882f51b8
+```
 
-- http://snapshot.debian.org/package/bzip2/1.0.6-7+deb8u1/
+Other potentially useful URLs:
 
+- https://sources.debian.net/src/bzip2/1.0.6-7+deb8u2/ (for browsing the source)
+- https://sources.debian.net/src/bzip2/1.0.6-7+deb8u2/debian/copyright/ (for direct copyright/license information)
+- http://snapshot.debian.org/package/bzip2/1.0.6-7+deb8u2/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `bzr=2.6.0+bzr6595-6+deb8u1`
 
@@ -1657,23 +1664,30 @@ Other potentially useful URLs:
 - https://sources.debian.net/src/libsepol/2.3-2/debian/copyright/ (for direct copyright/license information)
 - http://snapshot.debian.org/package/libsepol/2.3-2/ (for access to the source package after it no longer exists in the archive)
 
-### `dpkg` source package: `libssh2=1.4.3-4.1+deb8u3`
+### `dpkg` source package: `libssh2=1.4.3-4.1+deb8u5`
 
 Binary Packages:
 
-- `libssh2-1:amd64=1.4.3-4.1+deb8u3`
+- `libssh2-1:amd64=1.4.3-4.1+deb8u5`
 
 Licenses: (parsed from: `/usr/share/doc/libssh2-1/copyright`)
 
 - `BSD`
 
-**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
-This is *usually* due to a new package version being released and the old version being removed.
+Source:
 
-The source package *may* still be available for download from:
+```console
+$ apt-get source -qq --print-uris libssh2=1.4.3-4.1+deb8u5
+'http://security.debian.org/debian-security/pool/updates/main/libs/libssh2/libssh2_1.4.3-4.1+deb8u5.dsc' libssh2_1.4.3-4.1+deb8u5.dsc 1928 SHA256:868c726083fa684919aacf88a4384a0457ba6a931d2582db9f32c320b6c0a1ba
+'http://security.debian.org/debian-security/pool/updates/main/libs/libssh2/libssh2_1.4.3.orig.tar.gz' libssh2_1.4.3.orig.tar.gz 685712 SHA256:eac6f85f9df9db2e6386906a6227eb2cd7b3245739561cad7d6dc1d5d021b96d
+'http://security.debian.org/debian-security/pool/updates/main/libs/libssh2/libssh2_1.4.3-4.1+deb8u5.debian.tar.xz' libssh2_1.4.3-4.1+deb8u5.debian.tar.xz 21604 SHA256:8c0347bf417e8008792eaaf9eb2ce9e0c6bce88c97de0c47c04c8dea1176fa7a
+```
 
-- http://snapshot.debian.org/package/libssh2/1.4.3-4.1+deb8u3/
+Other potentially useful URLs:
 
+- https://sources.debian.net/src/libssh2/1.4.3-4.1+deb8u5/ (for browsing the source)
+- https://sources.debian.net/src/libssh2/1.4.3-4.1+deb8u5/debian/copyright/ (for direct copyright/license information)
+- http://snapshot.debian.org/package/libssh2/1.4.3-4.1+deb8u5/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `libtasn1-6=4.2-3+deb8u3`
 

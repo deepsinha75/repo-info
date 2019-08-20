@@ -2,8 +2,8 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:cbeaf434aeb710a901e1994bc6dba4f5f441762289649c91f6b2430de501e483`
-- Created: `2019-07-23T16:34:31.88220771Z`
+- Image ID: `sha256:1f03a4117e9b23b694166c1b92ad0cc5d88f564ec052caaae4a5d8e174a041ee`
+- Created: `2019-08-15T08:52:32.337585997Z`
 - Virtual Size: ~ 93.50 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
@@ -394,11 +394,11 @@ $ apt-get source -qq --print-uris diffutils=1:3.7-2
 'http://archive.ubuntu.com/ubuntu/pool/main/d/diffutils/diffutils_3.7-2.debian.tar.xz' diffutils_3.7-2.debian.tar.xz 10956 SHA256:61cd7a77d4b1cdaf6549cb4db63e0f78bccd7a602a0b869bab67cf6b124dd140
 ```
 
-### `dpkg` source package: `dpkg=1.19.6ubuntu1`
+### `dpkg` source package: `dpkg=1.19.6ubuntu1.1`
 
 Binary Packages:
 
-- `dpkg=1.19.6ubuntu1`
+- `dpkg=1.19.6ubuntu1.1`
 
 Licenses: (parsed from: `/usr/share/doc/dpkg/copyright`)
 
@@ -411,9 +411,9 @@ Licenses: (parsed from: `/usr/share/doc/dpkg/copyright`)
 Source:
 
 ```console
-$ apt-get source -qq --print-uris dpkg=1.19.6ubuntu1
-'http://archive.ubuntu.com/ubuntu/pool/main/d/dpkg/dpkg_1.19.6ubuntu1.dsc' dpkg_1.19.6ubuntu1.dsc 2229 SHA256:fc122a42adefebab8afb4d4dc3e7a52f2102f6f36acf63119b623625ee57a6c0
-'http://archive.ubuntu.com/ubuntu/pool/main/d/dpkg/dpkg_1.19.6ubuntu1.tar.xz' dpkg_1.19.6ubuntu1.tar.xz 4816728 SHA256:f11a53a11c44b6bdc1b042b6a65a821318dfd7b190c75b22491b74a210f13029
+$ apt-get source -qq --print-uris dpkg=1.19.6ubuntu1.1
+'http://archive.ubuntu.com/ubuntu/pool/main/d/dpkg/dpkg_1.19.6ubuntu1.1.dsc' dpkg_1.19.6ubuntu1.1.dsc 2266 SHA256:310c300d023a6630552389946583787f1af5822d1ffd11221ae299244be63008
+'http://archive.ubuntu.com/ubuntu/pool/main/d/dpkg/dpkg_1.19.6ubuntu1.1.tar.xz' dpkg_1.19.6ubuntu1.1.tar.xz 4815760 SHA256:6cc8461f0b626d10ab25d94276a04535532df61f8d24a63dd599192b079333d9
 ```
 
 ### `dpkg` source package: `e2fsprogs=1.44.6-1`
@@ -1290,12 +1290,12 @@ $ apt-get source -qq --print-uris npth=1.6-1
 'http://archive.ubuntu.com/ubuntu/pool/main/n/npth/npth_1.6-1.debian.tar.xz' npth_1.6-1.debian.tar.xz 10532 SHA256:d312d4a3cf1d082e2f2cf3ea752c41d34f7e120f77a941c6c1680e6093834353
 ```
 
-### `dpkg` source package: `openldap=2.4.47+dfsg-3ubuntu2`
+### `dpkg` source package: `openldap=2.4.47+dfsg-3ubuntu2.1`
 
 Binary Packages:
 
-- `libldap-2.4-2:amd64=2.4.47+dfsg-3ubuntu2`
-- `libldap-common=2.4.47+dfsg-3ubuntu2`
+- `libldap-2.4-2:amd64=2.4.47+dfsg-3ubuntu2.1`
+- `libldap-common=2.4.47+dfsg-3ubuntu2.1`
 
 **WARNING:** unable to detect licenses! (package likely not compliant with DEP-5)  
 If source is available (seen below), check the contents of `debian/copyright` within it.
@@ -1304,10 +1304,10 @@ If source is available (seen below), check the contents of `debian/copyright` wi
 Source:
 
 ```console
-$ apt-get source -qq --print-uris openldap=2.4.47+dfsg-3ubuntu2
-'http://archive.ubuntu.com/ubuntu/pool/main/o/openldap/openldap_2.4.47+dfsg-3ubuntu2.dsc' openldap_2.4.47+dfsg-3ubuntu2.dsc 2618 SHA256:d49c290fc86712169f9a8b239a1e14bf4a293c97de94dbce444dbebb21550561
+$ apt-get source -qq --print-uris openldap=2.4.47+dfsg-3ubuntu2.1
+'http://archive.ubuntu.com/ubuntu/pool/main/o/openldap/openldap_2.4.47+dfsg-3ubuntu2.1.dsc' openldap_2.4.47+dfsg-3ubuntu2.1.dsc 2971 SHA256:159958d2d6fba7ce74d6eb30870a0a5b6f146be3eef565540e19837f966a2882
 'http://archive.ubuntu.com/ubuntu/pool/main/o/openldap/openldap_2.4.47+dfsg.orig.tar.gz' openldap_2.4.47+dfsg.orig.tar.gz 4872293 SHA256:8f1ac7a4be7dd8ef158361efbfe16509756d3d9b396f5f378c3cf5c727807651
-'http://archive.ubuntu.com/ubuntu/pool/main/o/openldap/openldap_2.4.47+dfsg-3ubuntu2.debian.tar.xz' openldap_2.4.47+dfsg-3ubuntu2.debian.tar.xz 178320 SHA256:a27545fb63c420c2635ba66299a30b6d5d70bc64f7c7b0a5e245afd285743128
+'http://archive.ubuntu.com/ubuntu/pool/main/o/openldap/openldap_2.4.47+dfsg-3ubuntu2.1.debian.tar.xz' openldap_2.4.47+dfsg-3ubuntu2.1.debian.tar.xz 180296 SHA256:9b0d39d18d4ae2ce5768f6aed4c5f109ab7bb3983245ac7c99153199959d0bd0
 ```
 
 ### `dpkg` source package: `openssl=1.1.1b-1ubuntu2.1`
@@ -1635,12 +1635,12 @@ $ apt-get source -qq --print-uris sqlite3=3.27.2-2ubuntu0.1
 'http://archive.ubuntu.com/ubuntu/pool/main/s/sqlite3/sqlite3_3.27.2-2ubuntu0.1.debian.tar.xz' sqlite3_3.27.2-2ubuntu0.1.debian.tar.xz 24288 SHA256:a668fc9180944762055607eb042d4b3b4ed2ec162079d58a88929e775d5c4405
 ```
 
-### `dpkg` source package: `systemd=240-6ubuntu5.2`
+### `dpkg` source package: `systemd=240-6ubuntu5.3`
 
 Binary Packages:
 
-- `libsystemd0:amd64=240-6ubuntu5.2`
-- `libudev1:amd64=240-6ubuntu5.2`
+- `libsystemd0:amd64=240-6ubuntu5.3`
+- `libudev1:amd64=240-6ubuntu5.3`
 
 Licenses: (parsed from: `/usr/share/doc/libsystemd0/copyright`, `/usr/share/doc/libudev1/copyright`)
 
@@ -1652,9 +1652,14 @@ Licenses: (parsed from: `/usr/share/doc/libsystemd0/copyright`, `/usr/share/doc/
 - `LGPL-2.1+`
 - `public-domain`
 
-**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
-This is *usually* due to a new package version being released and the old version being removed.
+Source:
 
+```console
+$ apt-get source -qq --print-uris systemd=240-6ubuntu5.3
+'http://archive.ubuntu.com/ubuntu/pool/main/s/systemd/systemd_240-6ubuntu5.3.dsc' systemd_240-6ubuntu5.3.dsc 5112 SHA256:5af55e3039c6b98b6140ab67e4ad02673a2f1809b826cf41d410e9f799c432e7
+'http://archive.ubuntu.com/ubuntu/pool/main/s/systemd/systemd_240.orig.tar.gz' systemd_240.orig.tar.gz 7582001 SHA256:8f15aec1ac926e13a21a04d0ca3fe371f7004951448142a6f8952075c5b5f0b5
+'http://archive.ubuntu.com/ubuntu/pool/main/s/systemd/systemd_240-6ubuntu5.3.debian.tar.xz' systemd_240-6ubuntu5.3.debian.tar.xz 228112 SHA256:5edc6b35c9af95a1483428c7fb7d1626965ea7e98354d8b95d1cb8f9ae5bbcf9
+```
 
 ### `dpkg` source package: `sysvinit=2.88dsf-59.10ubuntu2`
 
