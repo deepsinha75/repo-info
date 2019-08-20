@@ -1,10 +1,10 @@
-# `rust:1.36.0-slim-buster`
+# `rust:1.37.0-slim-buster`
 
 ## Docker Metadata
 
-- Image ID: `sha256:4ba587adfaa5d86de98b46d08291c11dab88e0cd9a34dcefc0ce1cc88b1fa866`
-- Created: `2019-08-14T15:44:33.566625644Z`
-- Virtual Size: ~ 1.10 Gb  
+- Image ID: `sha256:17110364e319da646cf04debe85f225f2f52822c850fb7b44b8a81583361fd38`
+- Created: `2019-08-16T21:38:57.899899591Z`
+- Virtual Size: ~ 1.04 Gb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Command: `["bash"]`
@@ -12,7 +12,7 @@
   - `PATH=/usr/local/cargo/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
   - `RUSTUP_HOME=/usr/local/rustup`
   - `CARGO_HOME=/usr/local/cargo`
-  - `RUST_VERSION=1.36.0`
+  - `RUST_VERSION=1.37.0`
 
 ## `dpkg` (`.deb`-based packages)
 

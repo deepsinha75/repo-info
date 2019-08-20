@@ -1,10 +1,10 @@
-# `rust:1.36.0-buster`
+# `rust:1.37.0-buster`
 
 ## Docker Metadata
 
-- Image ID: `sha256:1806fc671674c3887eeb47557f4162033c701f7920effbfc75b94825f4e3d8e7`
-- Created: `2019-08-14T15:43:30.840548878Z`
-- Virtual Size: ~ 1.71 Gb  
+- Image ID: `sha256:011207ea035083e5e75422ab1fd3f7596ca866393207b7be8dde3314d90f64c5`
+- Created: `2019-08-16T21:37:50.066924426Z`
+- Virtual Size: ~ 1.66 Gb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Command: `["bash"]`
@@ -12,7 +12,7 @@
   - `PATH=/usr/local/cargo/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
   - `RUSTUP_HOME=/usr/local/rustup`
   - `CARGO_HOME=/usr/local/cargo`
-  - `RUST_VERSION=1.36.0`
+  - `RUST_VERSION=1.37.0`
 
 ## `dpkg` (`.deb`-based packages)
 
