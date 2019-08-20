@@ -1672,21 +1672,13 @@ Licenses: (parsed from: `/usr/share/doc/sysvinit-utils/copyright`)
 - `GPL-2`
 - `GPL-2+`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris sysvinit=2.95-4
-'http://deb.debian.org/debian/pool/main/s/sysvinit/sysvinit_2.95-4.dsc' sysvinit_2.95-4.dsc 2651 SHA256:97c9b8a9297c0446d649be16314fa633e5c39eeee395073a72cded5a261d7f3c
-'http://deb.debian.org/debian/pool/main/s/sysvinit/sysvinit_2.95.orig.tar.xz' sysvinit_2.95.orig.tar.xz 124576 SHA256:c9029cb93f36bbbad8e1ce109f75e6f4d26056d271106e8812cda7159b6f86c8
-'http://deb.debian.org/debian/pool/main/s/sysvinit/sysvinit_2.95.orig.tar.xz.asc' sysvinit_2.95.orig.tar.xz.asc 313 SHA256:a6b780455ed83b25924fa79d3c8a8669f8ce3cbad44d716d48cc937f25611b83
-'http://deb.debian.org/debian/pool/main/s/sysvinit/sysvinit_2.95-4.debian.tar.xz' sysvinit_2.95-4.debian.tar.xz 128516 SHA256:14390d1f39c6578f8e2cef58cbed18a083609f42031da703cebc4c0ee982ce8c
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/sysvinit/2.95-4/
 
-- https://sources.debian.net/src/sysvinit/2.95-4/ (for browsing the source)
-- https://sources.debian.net/src/sysvinit/2.95-4/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/sysvinit/2.95-4/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `tar=1.30+dfsg-6`
 
@@ -1724,20 +1716,13 @@ Binary Packages:
 If source is available (seen below), check the contents of `debian/copyright` within it.
 
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris tzdata=2019b-1
-'http://deb.debian.org/debian/pool/main/t/tzdata/tzdata_2019b-1.dsc' tzdata_2019b-1.dsc 1991 SHA256:bb630c84886a8af335ab1314970546c991cf4f6af97de6e475a4e1655c15d14a
-'http://deb.debian.org/debian/pool/main/t/tzdata/tzdata_2019b.orig.tar.gz' tzdata_2019b.orig.tar.gz 384667 SHA256:05d9092c90dcf9ec4f3ccfdea80c7dcea5e882b3b105c3422da172aaa9a50c64
-'http://deb.debian.org/debian/pool/main/t/tzdata/tzdata_2019b-1.debian.tar.xz' tzdata_2019b-1.debian.tar.xz 104788 SHA256:1fd680bfd9a12b1c983aba24204ae52b3b59bdbc8bdc94a202ff13212ca3ba42
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/tzdata/2019b-1/
 
-- https://sources.debian.net/src/tzdata/2019b-1/ (for browsing the source)
-- https://sources.debian.net/src/tzdata/2019b-1/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/tzdata/2019b-1/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `util-linux=2.34-0.1`
 
