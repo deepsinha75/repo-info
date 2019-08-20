@@ -110,14 +110,9 @@ Licenses: (parsed from: `/usr/share/doc/libaudit-common/copyright`, `/usr/share/
 - `GPL-2`
 - `LGPL-2.1`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris audit=1:2.8.5-1ubuntu1
-'http://archive.ubuntu.com/ubuntu/pool/main/a/audit/audit_2.8.5-1ubuntu1.dsc' audit_2.8.5-1ubuntu1.dsc 2948 SHA256:b19ddb0afab672aa2dba71ec9ccbb8dc18793eb0b824263585ff592c51cc6a27
-'http://archive.ubuntu.com/ubuntu/pool/main/a/audit/audit_2.8.5.orig.tar.gz' audit_2.8.5.orig.tar.gz 1140694 SHA256:0e5d4103646e00f8d1981e1cd2faea7a2ae28e854c31a803e907a383c5e2ecb7
-'http://archive.ubuntu.com/ubuntu/pool/main/a/audit/audit_2.8.5-1ubuntu1.debian.tar.xz' audit_2.8.5-1ubuntu1.debian.tar.xz 18636 SHA256:3360b3d1833bc70cda5bcf929292fbd7c27419bf7c0308a497105b8430160336
-```
 
 ### `dpkg` source package: `base-files=10.2ubuntu4`
 
@@ -509,15 +504,9 @@ Licenses: (parsed from: `/usr/share/doc/libgnutls30/copyright`)
 - `The MIT License (MIT)`
 - `The main library is licensed under GNU Lesser`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris gnutls28=3.6.9-3ubuntu1
-'http://archive.ubuntu.com/ubuntu/pool/main/g/gnutls28/gnutls28_3.6.9-3ubuntu1.dsc' gnutls28_3.6.9-3ubuntu1.dsc 3521 SHA256:6b5adc66be69d2bdd2f8006fcb01469c80e7aa5d458fd830b96ea3be5d11de49
-'http://archive.ubuntu.com/ubuntu/pool/main/g/gnutls28/gnutls28_3.6.9.orig.tar.xz' gnutls28_3.6.9.orig.tar.xz 5773928 SHA256:4331fca55817ecdd74450b908a6c29b4f05bb24dd13144c6284aa34d872e1fcb
-'http://archive.ubuntu.com/ubuntu/pool/main/g/gnutls28/gnutls28_3.6.9.orig.tar.xz.asc' gnutls28_3.6.9.orig.tar.xz.asc 488 SHA256:7956ffdddad8495f6933233b6ad04bb6b4e8ff9a2977fc0fd7ae95aa33ae245d
-'http://archive.ubuntu.com/ubuntu/pool/main/g/gnutls28/gnutls28_3.6.9-3ubuntu1.debian.tar.xz' gnutls28_3.6.9-3ubuntu1.debian.tar.xz 68972 SHA256:4253b9872dc0e2bb952a71ab0b72de6b7a44eba9bf0d6ba136c4571a782c9c99
-```
 
 ### `dpkg` source package: `grep=3.3-1`
 
@@ -1230,15 +1219,9 @@ Licenses: (parsed from: `/usr/share/doc/sysvinit-utils/copyright`)
 - `GPL-2`
 - `GPL-2+`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris sysvinit=2.95-2ubuntu1
-'http://archive.ubuntu.com/ubuntu/pool/main/s/sysvinit/sysvinit_2.95-2ubuntu1.dsc' sysvinit_2.95-2ubuntu1.dsc 2770 SHA256:8683058db2cae8286785ef94496592af7101ff04b3fb7fb2a538b5e1cf07e926
-'http://archive.ubuntu.com/ubuntu/pool/main/s/sysvinit/sysvinit_2.95.orig.tar.xz' sysvinit_2.95.orig.tar.xz 124576 SHA256:c9029cb93f36bbbad8e1ce109f75e6f4d26056d271106e8812cda7159b6f86c8
-'http://archive.ubuntu.com/ubuntu/pool/main/s/sysvinit/sysvinit_2.95.orig.tar.xz.asc' sysvinit_2.95.orig.tar.xz.asc 313 SHA256:a6b780455ed83b25924fa79d3c8a8669f8ce3cbad44d716d48cc937f25611b83
-'http://archive.ubuntu.com/ubuntu/pool/main/s/sysvinit/sysvinit_2.95-2ubuntu1.debian.tar.xz' sysvinit_2.95-2ubuntu1.debian.tar.xz 128332 SHA256:340a9a116f3ddd423b7f985c045854b7f01673cfb2cf932441d14fb3cb895f9c
-```
 
 ### `dpkg` source package: `tar=1.30+dfsg-6`
 
@@ -1311,14 +1294,9 @@ Licenses: (parsed from: `/usr/share/doc/bsdutils/copyright`, `/usr/share/doc/fdi
 - `MIT`
 - `public-domain`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris util-linux=2.33.1-0.1ubuntu2
-'http://archive.ubuntu.com/ubuntu/pool/main/u/util-linux/util-linux_2.33.1-0.1ubuntu2.dsc' util-linux_2.33.1-0.1ubuntu2.dsc 4085 SHA256:92d30cb63fb1b3f507657031ebe65741775bed9730a776d3de688dfc0fc10642
-'http://archive.ubuntu.com/ubuntu/pool/main/u/util-linux/util-linux_2.33.1.orig.tar.xz' util-linux_2.33.1.orig.tar.xz 4650936 SHA256:c14bd9f3b6e1792b90db87696e87ec643f9d63efa0a424f092a5a6b2f2dbef21
-'http://archive.ubuntu.com/ubuntu/pool/main/u/util-linux/util-linux_2.33.1-0.1ubuntu2.debian.tar.xz' util-linux_2.33.1-0.1ubuntu2.debian.tar.xz 84604 SHA256:8bf59facaea74d269e6a216e624ad72e4788b5e60efba2d63d09e802d4314347
-```
 
 ### `dpkg` source package: `xz-utils=5.2.4-1`
 
