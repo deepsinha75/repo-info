@@ -985,7 +985,7 @@ CMD ["crate"]
 ## `crate:3.2`
 
 ```console
-$ docker pull crate@sha256:7c475eae2bc5aa3035456ce8529e046ebb866a782e51d3e5b197ede0c50569be
+$ docker pull crate@sha256:976f393403cd82581a2d3d4ced50021764a3f254e1d7438caa66312ca56ad0f4
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -995,120 +995,120 @@ $ docker pull crate@sha256:7c475eae2bc5aa3035456ce8529e046ebb866a782e51d3e5b197e
 ### `crate:3.2` - linux; amd64
 
 ```console
-$ docker pull crate@sha256:e856ccefb2d9dff0bf2b9e6b3ade12623edabe5d8326459b33e58c414d5d2887
+$ docker pull crate@sha256:76ea7adcfb068080350f3e86b86fd852160859ad6d7a6dd42d9db1238ef5fbc8
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **343.9 MB (343901004 bytes)**  
+-	Total Size: **342.5 MB (342528259 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:a5211e47c5a45885e40cad6e41ed12b14abd2fb1d69778a2c031b263e442e7fc`
+-	Image ID: `sha256:500117c6e4fdb29b39e97cb87834b9fd19347837f29fac9de1a1665634dc19eb`
 -	Entrypoint: `["\/docker-entrypoint.sh"]`
 -	Default Command: `["crate"]`
 
 ```dockerfile
-# Thu, 14 Mar 2019 21:19:52 GMT
-ADD file:074f2c974463ab38cf3532134e8ba2c91c9e346457713f2e8b8e2ac0ee9fd83d in / 
-# Thu, 14 Mar 2019 21:19:53 GMT
-LABEL org.label-schema.schema-version=1.0 org.label-schema.name=CentOS Base Image org.label-schema.vendor=CentOS org.label-schema.license=GPLv2 org.label-schema.build-date=20190305
-# Thu, 14 Mar 2019 21:19:53 GMT
+# Tue, 20 Aug 2019 20:21:00 GMT
+ADD file:4e7247c06de9ad117293b6bf39c77f96c623a1bca4da35068d7e64c7cb826c08 in / 
+# Tue, 20 Aug 2019 20:21:01 GMT
+LABEL org.label-schema.schema-version=1.0 org.label-schema.name=CentOS Base Image org.label-schema.vendor=CentOS org.label-schema.license=GPLv2 org.label-schema.build-date=20190801
+# Tue, 20 Aug 2019 20:21:01 GMT
 CMD ["/bin/bash"]
-# Thu, 14 Mar 2019 22:11:34 GMT
+# Tue, 20 Aug 2019 20:52:10 GMT
 RUN groupadd crate && useradd -u 1000 -g crate -d /crate crate
-# Thu, 14 Mar 2019 22:12:17 GMT
+# Tue, 20 Aug 2019 20:54:42 GMT
 RUN curl --retry 8 -o /openjdk.tar.gz https://download.java.net/java/GA/jdk11/13/GPL/openjdk-11.0.1_linux-x64_bin.tar.gz     && echo "7a6bb980b9c91c478421f865087ad2d69086a0583aeeb9e69204785e8e97dcfd */openjdk.tar.gz" | sha256sum -c -     && tar -C /opt -zxf /openjdk.tar.gz     && rm /openjdk.tar.gz
-# Thu, 14 Mar 2019 22:12:18 GMT
+# Tue, 20 Aug 2019 20:54:42 GMT
 ENV JAVA_HOME=/opt/jdk-11.0.1
-# Thu, 14 Mar 2019 22:12:18 GMT
+# Tue, 20 Aug 2019 20:54:43 GMT
 RUN ln -sf /etc/pki/ca-trust/extracted/java/cacerts /opt/jdk-11.0.1/lib/security/cacerts
-# Tue, 14 May 2019 23:20:06 GMT
+# Tue, 20 Aug 2019 20:57:19 GMT
 RUN yum install -y yum-utils https://centos7.iuscommunity.org/ius-release.rpm     && yum makecache     && yum install -y python36u openssl     && yum clean all     && rm -rf /var/cache/yum     && curl -fSL -O https://cdn.crate.io/downloads/releases/crate-3.2.8.tar.gz     && curl -fSL -O https://cdn.crate.io/downloads/releases/crate-3.2.8.tar.gz.asc     && export GNUPGHOME="$(mktemp -d)"     && gpg --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 90C23FC6585BC0717F8FBFC37FAAE51A06F6EAEB     && gpg --batch --verify crate-3.2.8.tar.gz.asc crate-3.2.8.tar.gz     && rm -rf "$GNUPGHOME" crate-3.2.8.tar.gz.asc     && tar -xf crate-3.2.8.tar.gz -C /crate --strip-components=1     && rm crate-3.2.8.tar.gz     && ln -sf /usr/bin/python3.6 /usr/bin/python3     && ln -sf /usr/bin/python3.6 /usr/bin/python
-# Tue, 14 May 2019 23:20:06 GMT
+# Tue, 20 Aug 2019 20:57:19 GMT
 COPY --chown=1000:0file:bff8d2f33b7a44d36fcd66fc7e7d92b0ee463d0eb0df2a56e42511d4f1b3e9b2 in /crate/config/crate.yml 
-# Tue, 14 May 2019 23:20:06 GMT
+# Tue, 20 Aug 2019 20:57:19 GMT
 COPY --chown=1000:0file:0d0763ba6bbc9b78b4a05b228e1f3ca6b2b3b56aefaf888ab848f021062291d1 in /crate/config/log4j2.properties 
-# Tue, 14 May 2019 23:20:09 GMT
+# Tue, 20 Aug 2019 20:57:22 GMT
 RUN curl -fSL -O https://cdn.crate.io/downloads/releases/crash_standalone_0.24.2    && curl -fSL -O https://cdn.crate.io/downloads/releases/crash_standalone_0.24.2.asc     && export GNUPGHOME="$(mktemp -d)"     && gpg --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 90C23FC6585BC0717F8FBFC37FAAE51A06F6EAEB     && gpg --batch --verify crash_standalone_0.24.2.asc crash_standalone_0.24.2     && rm -rf "$GNUPGHOME" crash_standalone_0.24.2.asc     && mv crash_standalone_0.24.2 /usr/local/bin/crash     && chmod +x /usr/local/bin/crash
-# Tue, 14 May 2019 23:20:09 GMT
+# Tue, 20 Aug 2019 20:57:23 GMT
 ENV PATH=/crate/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Tue, 14 May 2019 23:20:09 GMT
+# Tue, 20 Aug 2019 20:57:23 GMT
 ENV CRATE_HEAP_SIZE=512M
-# Tue, 14 May 2019 23:20:10 GMT
+# Tue, 20 Aug 2019 20:57:24 GMT
 RUN mkdir -p /data/data /data/log
-# Tue, 14 May 2019 23:20:10 GMT
+# Tue, 20 Aug 2019 20:57:24 GMT
 VOLUME [/data]
-# Tue, 14 May 2019 23:20:10 GMT
+# Tue, 20 Aug 2019 20:57:24 GMT
 WORKDIR /data
-# Tue, 14 May 2019 23:20:10 GMT
+# Tue, 20 Aug 2019 20:57:24 GMT
 EXPOSE 4200 4300 5432
-# Tue, 14 May 2019 23:20:11 GMT
+# Tue, 20 Aug 2019 20:57:24 GMT
 COPY --chown=1000:0file:bff8d2f33b7a44d36fcd66fc7e7d92b0ee463d0eb0df2a56e42511d4f1b3e9b2 in /crate/config/crate.yml 
-# Tue, 14 May 2019 23:20:11 GMT
+# Tue, 20 Aug 2019 20:57:24 GMT
 COPY --chown=1000:0file:0d0763ba6bbc9b78b4a05b228e1f3ca6b2b3b56aefaf888ab848f021062291d1 in /crate/config/log4j2.properties 
-# Tue, 14 May 2019 23:20:11 GMT
+# Tue, 20 Aug 2019 20:57:25 GMT
 LABEL maintainer=Crate.io <office@crate.io> org.label-schema.schema-version=1.0 org.label-schema.build-date=2019-04-16T16:01:11.365468982+00:00 org.label-schema.name=crate org.label-schema.description=CrateDB is a distributed SQL database handles massive amounts of machine data in real-time. org.label-schema.url=https://crate.io/products/cratedb/ org.label-schema.vcs-url=https://github.com/crate/docker-crate org.label-schema.vendor=Crate.io org.label-schema.version=3.2.8
-# Tue, 14 May 2019 23:20:11 GMT
+# Tue, 20 Aug 2019 20:57:25 GMT
 COPY file:9830363b41b8063591887d9dc9ce2767bf0e91dc4cb05efcb6ea622a60ec15e3 in / 
-# Tue, 14 May 2019 23:20:11 GMT
+# Tue, 20 Aug 2019 20:57:25 GMT
 ENTRYPOINT ["/docker-entrypoint.sh"]
-# Tue, 14 May 2019 23:20:11 GMT
+# Tue, 20 Aug 2019 20:57:25 GMT
 CMD ["crate"]
 ```
 
 -	Layers:
-	-	`sha256:8ba884070f611d31cb2c42eddb691319dc9facf5e0ec67672fcfa135181ab3df`  
-		Last Modified: Thu, 14 Mar 2019 21:24:11 GMT  
-		Size: 75.4 MB (75403831 bytes)  
+	-	`sha256:d8d02d45731499028db01b6fa35475f91d230628b4e25fab8e3c015594dc3261`  
+		Last Modified: Tue, 20 Aug 2019 20:23:41 GMT  
+		Size: 75.4 MB (75412258 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c3a6ddc97e717216c4d09cb226d7c28378812cda87215ea56c16e1af8b56e38e`  
-		Last Modified: Thu, 14 Mar 2019 22:13:39 GMT  
-		Size: 2.0 KB (2015 bytes)  
+	-	`sha256:d585f0c94581495265d491049079ca722fc23fee68a8a350da0a6d05182d6066`  
+		Last Modified: Tue, 20 Aug 2019 20:58:09 GMT  
+		Size: 2.0 KB (2013 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:1359655471fc316d2654fe88e0ffbd8ad33d956afbd82d89eb5e8bf6cb32a54d`  
-		Last Modified: Thu, 14 Mar 2019 22:13:59 GMT  
-		Size: 188.1 MB (188101289 bytes)  
+	-	`sha256:3c131de7cf9bbd23ebe1dfa23627593d5ce6026e73d8408752d15402bc06093a`  
+		Last Modified: Tue, 20 Aug 2019 20:58:55 GMT  
+		Size: 188.1 MB (188101311 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:5766c8b329a683dcdadf719e0994c62a435da699445e5f734ad0df71bdc399e1`  
-		Last Modified: Thu, 14 Mar 2019 22:13:39 GMT  
-		Size: 218.0 B  
+	-	`sha256:29bf7f7dddc3b8fc68b48a1efdefbd4d40e9f049ee94c64b7939429b82aff3b2`  
+		Last Modified: Tue, 20 Aug 2019 20:58:33 GMT  
+		Size: 213.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:a6435ef45a85ee3fcb141f23ff616508bfb62faacc4877152ea9e81d4568312e`  
-		Last Modified: Tue, 14 May 2019 23:20:43 GMT  
-		Size: 79.1 MB (79096529 bytes)  
+	-	`sha256:15c9343cf4cdd6f4b1de5d4d7df6cc0e3d6ae600855bff202ee9e448a098b80d`  
+		Last Modified: Tue, 20 Aug 2019 20:59:12 GMT  
+		Size: 77.7 MB (77715349 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:153cc691ab1ad13b6800d12530c5030cc3117da849cc37735b0f568dc89d0e3e`  
-		Last Modified: Tue, 14 May 2019 23:20:34 GMT  
-		Size: 262.0 B  
-		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:1fcff5844d00e98d5fb5fd2fe3c00160add7beadf0db21faa36e1208def49527`  
-		Last Modified: Tue, 14 May 2019 23:20:34 GMT  
-		Size: 943.0 B  
-		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c220834b61dce03e4ebba945f70afd713a4df81b5254a755e5a2d4cb5de54eb2`  
-		Last Modified: Tue, 14 May 2019 23:20:33 GMT  
-		Size: 1.3 MB (1294054 bytes)  
-		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:ef82a7c52ea74539599c9bd7ec6e8817f9893ebe6d382e282a9a24ada5cb8fc1`  
-		Last Modified: Tue, 14 May 2019 23:20:33 GMT  
-		Size: 127.0 B  
-		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:f8c2872c9beedb658589a9afc480e17276c0e8df025e0b7a09022b99782f0a62`  
-		Last Modified: Tue, 14 May 2019 23:20:33 GMT  
+	-	`sha256:61652c44b8e2cd793af090b0b557552390da799be58d6179a97e8c78a1b983a5`  
+		Last Modified: Tue, 20 Aug 2019 20:59:01 GMT  
 		Size: 263.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:5f1565439d65ea87b5f138e1be7186497dcdfc7f75390e811df207b025d03986`  
-		Last Modified: Tue, 14 May 2019 23:20:33 GMT  
+	-	`sha256:3bb443ef3680b9e8074bd5bde310e3ca5373715350971396c21b4486789cb47c`  
+		Last Modified: Tue, 20 Aug 2019 20:59:01 GMT  
 		Size: 944.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:a2dc097b3b21e7a673c51b897eb88f2a02fed72f962991cf91ad247c04a777a0`  
-		Last Modified: Tue, 14 May 2019 23:20:33 GMT  
-		Size: 529.0 B  
+	-	`sha256:823d1293def4172e9aca7be1424b821919e2a2a649845276e72dbe98397320e8`  
+		Last Modified: Tue, 20 Aug 2019 20:59:00 GMT  
+		Size: 1.3 MB (1294047 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:e64e77c89461c9a8759dd0f8ec442404c9b38ea9911f5338be4f1629aa371ce7`  
+		Last Modified: Tue, 20 Aug 2019 20:59:00 GMT  
+		Size: 126.0 B  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:fa4cd2ed1766699e0b0c9071a3f45248d3c10d8821bb5d684a1b12ba65f19f51`  
+		Last Modified: Tue, 20 Aug 2019 20:59:00 GMT  
+		Size: 264.0 B  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:177a12b9983b9617559538c7f06b8e082350305ad443058413d19d8ccfde1edc`  
+		Last Modified: Tue, 20 Aug 2019 20:59:00 GMT  
+		Size: 945.0 B  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:09010a7686194475ec6a3129300c005df462b3110e618d3790fb6288eef8128c`  
+		Last Modified: Tue, 20 Aug 2019 20:59:00 GMT  
+		Size: 526.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `crate:3.2.8`
 
 ```console
-$ docker pull crate@sha256:7c475eae2bc5aa3035456ce8529e046ebb866a782e51d3e5b197ede0c50569be
+$ docker pull crate@sha256:976f393403cd82581a2d3d4ced50021764a3f254e1d7438caa66312ca56ad0f4
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -1118,120 +1118,120 @@ $ docker pull crate@sha256:7c475eae2bc5aa3035456ce8529e046ebb866a782e51d3e5b197e
 ### `crate:3.2.8` - linux; amd64
 
 ```console
-$ docker pull crate@sha256:e856ccefb2d9dff0bf2b9e6b3ade12623edabe5d8326459b33e58c414d5d2887
+$ docker pull crate@sha256:76ea7adcfb068080350f3e86b86fd852160859ad6d7a6dd42d9db1238ef5fbc8
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **343.9 MB (343901004 bytes)**  
+-	Total Size: **342.5 MB (342528259 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:a5211e47c5a45885e40cad6e41ed12b14abd2fb1d69778a2c031b263e442e7fc`
+-	Image ID: `sha256:500117c6e4fdb29b39e97cb87834b9fd19347837f29fac9de1a1665634dc19eb`
 -	Entrypoint: `["\/docker-entrypoint.sh"]`
 -	Default Command: `["crate"]`
 
 ```dockerfile
-# Thu, 14 Mar 2019 21:19:52 GMT
-ADD file:074f2c974463ab38cf3532134e8ba2c91c9e346457713f2e8b8e2ac0ee9fd83d in / 
-# Thu, 14 Mar 2019 21:19:53 GMT
-LABEL org.label-schema.schema-version=1.0 org.label-schema.name=CentOS Base Image org.label-schema.vendor=CentOS org.label-schema.license=GPLv2 org.label-schema.build-date=20190305
-# Thu, 14 Mar 2019 21:19:53 GMT
+# Tue, 20 Aug 2019 20:21:00 GMT
+ADD file:4e7247c06de9ad117293b6bf39c77f96c623a1bca4da35068d7e64c7cb826c08 in / 
+# Tue, 20 Aug 2019 20:21:01 GMT
+LABEL org.label-schema.schema-version=1.0 org.label-schema.name=CentOS Base Image org.label-schema.vendor=CentOS org.label-schema.license=GPLv2 org.label-schema.build-date=20190801
+# Tue, 20 Aug 2019 20:21:01 GMT
 CMD ["/bin/bash"]
-# Thu, 14 Mar 2019 22:11:34 GMT
+# Tue, 20 Aug 2019 20:52:10 GMT
 RUN groupadd crate && useradd -u 1000 -g crate -d /crate crate
-# Thu, 14 Mar 2019 22:12:17 GMT
+# Tue, 20 Aug 2019 20:54:42 GMT
 RUN curl --retry 8 -o /openjdk.tar.gz https://download.java.net/java/GA/jdk11/13/GPL/openjdk-11.0.1_linux-x64_bin.tar.gz     && echo "7a6bb980b9c91c478421f865087ad2d69086a0583aeeb9e69204785e8e97dcfd */openjdk.tar.gz" | sha256sum -c -     && tar -C /opt -zxf /openjdk.tar.gz     && rm /openjdk.tar.gz
-# Thu, 14 Mar 2019 22:12:18 GMT
+# Tue, 20 Aug 2019 20:54:42 GMT
 ENV JAVA_HOME=/opt/jdk-11.0.1
-# Thu, 14 Mar 2019 22:12:18 GMT
+# Tue, 20 Aug 2019 20:54:43 GMT
 RUN ln -sf /etc/pki/ca-trust/extracted/java/cacerts /opt/jdk-11.0.1/lib/security/cacerts
-# Tue, 14 May 2019 23:20:06 GMT
+# Tue, 20 Aug 2019 20:57:19 GMT
 RUN yum install -y yum-utils https://centos7.iuscommunity.org/ius-release.rpm     && yum makecache     && yum install -y python36u openssl     && yum clean all     && rm -rf /var/cache/yum     && curl -fSL -O https://cdn.crate.io/downloads/releases/crate-3.2.8.tar.gz     && curl -fSL -O https://cdn.crate.io/downloads/releases/crate-3.2.8.tar.gz.asc     && export GNUPGHOME="$(mktemp -d)"     && gpg --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 90C23FC6585BC0717F8FBFC37FAAE51A06F6EAEB     && gpg --batch --verify crate-3.2.8.tar.gz.asc crate-3.2.8.tar.gz     && rm -rf "$GNUPGHOME" crate-3.2.8.tar.gz.asc     && tar -xf crate-3.2.8.tar.gz -C /crate --strip-components=1     && rm crate-3.2.8.tar.gz     && ln -sf /usr/bin/python3.6 /usr/bin/python3     && ln -sf /usr/bin/python3.6 /usr/bin/python
-# Tue, 14 May 2019 23:20:06 GMT
+# Tue, 20 Aug 2019 20:57:19 GMT
 COPY --chown=1000:0file:bff8d2f33b7a44d36fcd66fc7e7d92b0ee463d0eb0df2a56e42511d4f1b3e9b2 in /crate/config/crate.yml 
-# Tue, 14 May 2019 23:20:06 GMT
+# Tue, 20 Aug 2019 20:57:19 GMT
 COPY --chown=1000:0file:0d0763ba6bbc9b78b4a05b228e1f3ca6b2b3b56aefaf888ab848f021062291d1 in /crate/config/log4j2.properties 
-# Tue, 14 May 2019 23:20:09 GMT
+# Tue, 20 Aug 2019 20:57:22 GMT
 RUN curl -fSL -O https://cdn.crate.io/downloads/releases/crash_standalone_0.24.2    && curl -fSL -O https://cdn.crate.io/downloads/releases/crash_standalone_0.24.2.asc     && export GNUPGHOME="$(mktemp -d)"     && gpg --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 90C23FC6585BC0717F8FBFC37FAAE51A06F6EAEB     && gpg --batch --verify crash_standalone_0.24.2.asc crash_standalone_0.24.2     && rm -rf "$GNUPGHOME" crash_standalone_0.24.2.asc     && mv crash_standalone_0.24.2 /usr/local/bin/crash     && chmod +x /usr/local/bin/crash
-# Tue, 14 May 2019 23:20:09 GMT
+# Tue, 20 Aug 2019 20:57:23 GMT
 ENV PATH=/crate/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Tue, 14 May 2019 23:20:09 GMT
+# Tue, 20 Aug 2019 20:57:23 GMT
 ENV CRATE_HEAP_SIZE=512M
-# Tue, 14 May 2019 23:20:10 GMT
+# Tue, 20 Aug 2019 20:57:24 GMT
 RUN mkdir -p /data/data /data/log
-# Tue, 14 May 2019 23:20:10 GMT
+# Tue, 20 Aug 2019 20:57:24 GMT
 VOLUME [/data]
-# Tue, 14 May 2019 23:20:10 GMT
+# Tue, 20 Aug 2019 20:57:24 GMT
 WORKDIR /data
-# Tue, 14 May 2019 23:20:10 GMT
+# Tue, 20 Aug 2019 20:57:24 GMT
 EXPOSE 4200 4300 5432
-# Tue, 14 May 2019 23:20:11 GMT
+# Tue, 20 Aug 2019 20:57:24 GMT
 COPY --chown=1000:0file:bff8d2f33b7a44d36fcd66fc7e7d92b0ee463d0eb0df2a56e42511d4f1b3e9b2 in /crate/config/crate.yml 
-# Tue, 14 May 2019 23:20:11 GMT
+# Tue, 20 Aug 2019 20:57:24 GMT
 COPY --chown=1000:0file:0d0763ba6bbc9b78b4a05b228e1f3ca6b2b3b56aefaf888ab848f021062291d1 in /crate/config/log4j2.properties 
-# Tue, 14 May 2019 23:20:11 GMT
+# Tue, 20 Aug 2019 20:57:25 GMT
 LABEL maintainer=Crate.io <office@crate.io> org.label-schema.schema-version=1.0 org.label-schema.build-date=2019-04-16T16:01:11.365468982+00:00 org.label-schema.name=crate org.label-schema.description=CrateDB is a distributed SQL database handles massive amounts of machine data in real-time. org.label-schema.url=https://crate.io/products/cratedb/ org.label-schema.vcs-url=https://github.com/crate/docker-crate org.label-schema.vendor=Crate.io org.label-schema.version=3.2.8
-# Tue, 14 May 2019 23:20:11 GMT
+# Tue, 20 Aug 2019 20:57:25 GMT
 COPY file:9830363b41b8063591887d9dc9ce2767bf0e91dc4cb05efcb6ea622a60ec15e3 in / 
-# Tue, 14 May 2019 23:20:11 GMT
+# Tue, 20 Aug 2019 20:57:25 GMT
 ENTRYPOINT ["/docker-entrypoint.sh"]
-# Tue, 14 May 2019 23:20:11 GMT
+# Tue, 20 Aug 2019 20:57:25 GMT
 CMD ["crate"]
 ```
 
 -	Layers:
-	-	`sha256:8ba884070f611d31cb2c42eddb691319dc9facf5e0ec67672fcfa135181ab3df`  
-		Last Modified: Thu, 14 Mar 2019 21:24:11 GMT  
-		Size: 75.4 MB (75403831 bytes)  
+	-	`sha256:d8d02d45731499028db01b6fa35475f91d230628b4e25fab8e3c015594dc3261`  
+		Last Modified: Tue, 20 Aug 2019 20:23:41 GMT  
+		Size: 75.4 MB (75412258 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c3a6ddc97e717216c4d09cb226d7c28378812cda87215ea56c16e1af8b56e38e`  
-		Last Modified: Thu, 14 Mar 2019 22:13:39 GMT  
-		Size: 2.0 KB (2015 bytes)  
+	-	`sha256:d585f0c94581495265d491049079ca722fc23fee68a8a350da0a6d05182d6066`  
+		Last Modified: Tue, 20 Aug 2019 20:58:09 GMT  
+		Size: 2.0 KB (2013 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:1359655471fc316d2654fe88e0ffbd8ad33d956afbd82d89eb5e8bf6cb32a54d`  
-		Last Modified: Thu, 14 Mar 2019 22:13:59 GMT  
-		Size: 188.1 MB (188101289 bytes)  
+	-	`sha256:3c131de7cf9bbd23ebe1dfa23627593d5ce6026e73d8408752d15402bc06093a`  
+		Last Modified: Tue, 20 Aug 2019 20:58:55 GMT  
+		Size: 188.1 MB (188101311 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:5766c8b329a683dcdadf719e0994c62a435da699445e5f734ad0df71bdc399e1`  
-		Last Modified: Thu, 14 Mar 2019 22:13:39 GMT  
-		Size: 218.0 B  
+	-	`sha256:29bf7f7dddc3b8fc68b48a1efdefbd4d40e9f049ee94c64b7939429b82aff3b2`  
+		Last Modified: Tue, 20 Aug 2019 20:58:33 GMT  
+		Size: 213.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:a6435ef45a85ee3fcb141f23ff616508bfb62faacc4877152ea9e81d4568312e`  
-		Last Modified: Tue, 14 May 2019 23:20:43 GMT  
-		Size: 79.1 MB (79096529 bytes)  
+	-	`sha256:15c9343cf4cdd6f4b1de5d4d7df6cc0e3d6ae600855bff202ee9e448a098b80d`  
+		Last Modified: Tue, 20 Aug 2019 20:59:12 GMT  
+		Size: 77.7 MB (77715349 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:153cc691ab1ad13b6800d12530c5030cc3117da849cc37735b0f568dc89d0e3e`  
-		Last Modified: Tue, 14 May 2019 23:20:34 GMT  
-		Size: 262.0 B  
-		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:1fcff5844d00e98d5fb5fd2fe3c00160add7beadf0db21faa36e1208def49527`  
-		Last Modified: Tue, 14 May 2019 23:20:34 GMT  
-		Size: 943.0 B  
-		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c220834b61dce03e4ebba945f70afd713a4df81b5254a755e5a2d4cb5de54eb2`  
-		Last Modified: Tue, 14 May 2019 23:20:33 GMT  
-		Size: 1.3 MB (1294054 bytes)  
-		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:ef82a7c52ea74539599c9bd7ec6e8817f9893ebe6d382e282a9a24ada5cb8fc1`  
-		Last Modified: Tue, 14 May 2019 23:20:33 GMT  
-		Size: 127.0 B  
-		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:f8c2872c9beedb658589a9afc480e17276c0e8df025e0b7a09022b99782f0a62`  
-		Last Modified: Tue, 14 May 2019 23:20:33 GMT  
+	-	`sha256:61652c44b8e2cd793af090b0b557552390da799be58d6179a97e8c78a1b983a5`  
+		Last Modified: Tue, 20 Aug 2019 20:59:01 GMT  
 		Size: 263.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:5f1565439d65ea87b5f138e1be7186497dcdfc7f75390e811df207b025d03986`  
-		Last Modified: Tue, 14 May 2019 23:20:33 GMT  
+	-	`sha256:3bb443ef3680b9e8074bd5bde310e3ca5373715350971396c21b4486789cb47c`  
+		Last Modified: Tue, 20 Aug 2019 20:59:01 GMT  
 		Size: 944.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:a2dc097b3b21e7a673c51b897eb88f2a02fed72f962991cf91ad247c04a777a0`  
-		Last Modified: Tue, 14 May 2019 23:20:33 GMT  
-		Size: 529.0 B  
+	-	`sha256:823d1293def4172e9aca7be1424b821919e2a2a649845276e72dbe98397320e8`  
+		Last Modified: Tue, 20 Aug 2019 20:59:00 GMT  
+		Size: 1.3 MB (1294047 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:e64e77c89461c9a8759dd0f8ec442404c9b38ea9911f5338be4f1629aa371ce7`  
+		Last Modified: Tue, 20 Aug 2019 20:59:00 GMT  
+		Size: 126.0 B  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:fa4cd2ed1766699e0b0c9071a3f45248d3c10d8821bb5d684a1b12ba65f19f51`  
+		Last Modified: Tue, 20 Aug 2019 20:59:00 GMT  
+		Size: 264.0 B  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:177a12b9983b9617559538c7f06b8e082350305ad443058413d19d8ccfde1edc`  
+		Last Modified: Tue, 20 Aug 2019 20:59:00 GMT  
+		Size: 945.0 B  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:09010a7686194475ec6a3129300c005df462b3110e618d3790fb6288eef8128c`  
+		Last Modified: Tue, 20 Aug 2019 20:59:00 GMT  
+		Size: 526.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `crate:3.3`
 
 ```console
-$ docker pull crate@sha256:90cb00b515b223cb25f4fd1cfeb09c9632569ae1f40f264dfcfebd0b099529bc
+$ docker pull crate@sha256:9df609f63cc47c5e06cdef511ba6c01bffb2edf49183f862ef9ed9e08380ba29
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -1241,120 +1241,120 @@ $ docker pull crate@sha256:90cb00b515b223cb25f4fd1cfeb09c9632569ae1f40f264dfcfeb
 ### `crate:3.3` - linux; amd64
 
 ```console
-$ docker pull crate@sha256:b99055af6898300eb979a6d6796718c638fd9e942456fd5a0d87bea225f479e9
+$ docker pull crate@sha256:0affc8ab23c0acf26180aa2978995cdfc58e7aa8ae9c825919cc9f61ac647763
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **343.8 MB (343781583 bytes)**  
+-	Total Size: **342.4 MB (342390267 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:607b4ed96d0d93a0ef7210772a4f029a243568b6f80421a1b82846447535e89b`
+-	Image ID: `sha256:8ee33e03cc69a639bb66e36ebf2b5410cccaf4d9b66541133a15fb73953ceaec`
 -	Entrypoint: `["\/docker-entrypoint.sh"]`
 -	Default Command: `["crate"]`
 
 ```dockerfile
-# Thu, 14 Mar 2019 21:19:52 GMT
-ADD file:074f2c974463ab38cf3532134e8ba2c91c9e346457713f2e8b8e2ac0ee9fd83d in / 
-# Thu, 14 Mar 2019 21:19:53 GMT
-LABEL org.label-schema.schema-version=1.0 org.label-schema.name=CentOS Base Image org.label-schema.vendor=CentOS org.label-schema.license=GPLv2 org.label-schema.build-date=20190305
-# Thu, 14 Mar 2019 21:19:53 GMT
+# Tue, 20 Aug 2019 20:21:00 GMT
+ADD file:4e7247c06de9ad117293b6bf39c77f96c623a1bca4da35068d7e64c7cb826c08 in / 
+# Tue, 20 Aug 2019 20:21:01 GMT
+LABEL org.label-schema.schema-version=1.0 org.label-schema.name=CentOS Base Image org.label-schema.vendor=CentOS org.label-schema.license=GPLv2 org.label-schema.build-date=20190801
+# Tue, 20 Aug 2019 20:21:01 GMT
 CMD ["/bin/bash"]
-# Thu, 14 Mar 2019 22:11:34 GMT
+# Tue, 20 Aug 2019 20:52:10 GMT
 RUN groupadd crate && useradd -u 1000 -g crate -d /crate crate
-# Thu, 14 Mar 2019 22:12:17 GMT
+# Tue, 20 Aug 2019 20:54:42 GMT
 RUN curl --retry 8 -o /openjdk.tar.gz https://download.java.net/java/GA/jdk11/13/GPL/openjdk-11.0.1_linux-x64_bin.tar.gz     && echo "7a6bb980b9c91c478421f865087ad2d69086a0583aeeb9e69204785e8e97dcfd */openjdk.tar.gz" | sha256sum -c -     && tar -C /opt -zxf /openjdk.tar.gz     && rm /openjdk.tar.gz
-# Thu, 14 Mar 2019 22:12:18 GMT
+# Tue, 20 Aug 2019 20:54:42 GMT
 ENV JAVA_HOME=/opt/jdk-11.0.1
-# Thu, 14 Mar 2019 22:12:18 GMT
+# Tue, 20 Aug 2019 20:54:43 GMT
 RUN ln -sf /etc/pki/ca-trust/extracted/java/cacerts /opt/jdk-11.0.1/lib/security/cacerts
-# Wed, 10 Jul 2019 15:21:10 GMT
+# Tue, 20 Aug 2019 20:55:47 GMT
 RUN yum install -y yum-utils https://centos7.iuscommunity.org/ius-release.rpm     && yum makecache     && yum install -y python36u openssl     && yum clean all     && rm -rf /var/cache/yum     && curl -fSL -O https://cdn.crate.io/downloads/releases/crate-3.3.5.tar.gz     && curl -fSL -O https://cdn.crate.io/downloads/releases/crate-3.3.5.tar.gz.asc     && export GNUPGHOME="$(mktemp -d)"     && gpg --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 90C23FC6585BC0717F8FBFC37FAAE51A06F6EAEB     && gpg --batch --verify crate-3.3.5.tar.gz.asc crate-3.3.5.tar.gz     && rm -rf "$GNUPGHOME" crate-3.3.5.tar.gz.asc     && tar -xf crate-3.3.5.tar.gz -C /crate --strip-components=1     && rm crate-3.3.5.tar.gz     && ln -sf /usr/bin/python3.6 /usr/bin/python3     && ln -sf /usr/bin/python3.6 /usr/bin/python
-# Wed, 10 Jul 2019 15:21:10 GMT
+# Tue, 20 Aug 2019 20:55:47 GMT
 COPY --chown=1000:0file:bff8d2f33b7a44d36fcd66fc7e7d92b0ee463d0eb0df2a56e42511d4f1b3e9b2 in /crate/config/crate.yml 
-# Wed, 10 Jul 2019 15:21:11 GMT
+# Tue, 20 Aug 2019 20:55:48 GMT
 COPY --chown=1000:0file:5f0d1b776d3a6517508a00a88f8053bd0933a642599374c9dff00dc3b632fd09 in /crate/config/log4j2.properties 
-# Wed, 10 Jul 2019 15:21:12 GMT
+# Tue, 20 Aug 2019 20:55:49 GMT
 RUN curl -fSL -O https://cdn.crate.io/downloads/releases/crash_standalone_0.24.2     && curl -fSL -O https://cdn.crate.io/downloads/releases/crash_standalone_0.24.2.asc     && export GNUPGHOME="$(mktemp -d)"     && gpg --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 90C23FC6585BC0717F8FBFC37FAAE51A06F6EAEB     && gpg --batch --verify crash_standalone_0.24.2.asc crash_standalone_0.24.2     && rm -rf "$GNUPGHOME" crash_standalone_0.24.2.asc     && mv crash_standalone_0.24.2 /usr/local/bin/crash     && chmod +x /usr/local/bin/crash
-# Wed, 10 Jul 2019 15:21:12 GMT
+# Tue, 20 Aug 2019 20:55:49 GMT
 ENV PATH=/crate/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Wed, 10 Jul 2019 15:21:12 GMT
+# Tue, 20 Aug 2019 20:55:49 GMT
 ENV CRATE_HEAP_SIZE=512M
-# Wed, 10 Jul 2019 15:21:14 GMT
+# Tue, 20 Aug 2019 20:55:50 GMT
 RUN mkdir -p /data/data /data/log
-# Wed, 10 Jul 2019 15:21:14 GMT
+# Tue, 20 Aug 2019 20:55:50 GMT
 VOLUME [/data]
-# Wed, 10 Jul 2019 15:21:14 GMT
+# Tue, 20 Aug 2019 20:55:50 GMT
 WORKDIR /data
-# Wed, 10 Jul 2019 15:21:14 GMT
+# Tue, 20 Aug 2019 20:55:50 GMT
 EXPOSE 4200 4300 5432
-# Wed, 10 Jul 2019 15:21:15 GMT
+# Tue, 20 Aug 2019 20:55:51 GMT
 COPY --chown=1000:0file:bff8d2f33b7a44d36fcd66fc7e7d92b0ee463d0eb0df2a56e42511d4f1b3e9b2 in /crate/config/crate.yml 
-# Wed, 10 Jul 2019 15:21:15 GMT
+# Tue, 20 Aug 2019 20:55:51 GMT
 COPY --chown=1000:0file:5f0d1b776d3a6517508a00a88f8053bd0933a642599374c9dff00dc3b632fd09 in /crate/config/log4j2.properties 
-# Wed, 10 Jul 2019 15:21:15 GMT
+# Tue, 20 Aug 2019 20:55:51 GMT
 LABEL maintainer=Crate.io <office@crate.io> org.label-schema.schema-version=1.0 org.label-schema.build-date=2019-07-08T14:08:18.187344 org.label-schema.name=crate org.label-schema.description=CrateDB is a distributed SQL database handles massive amounts of machine data in real-time. org.label-schema.url=https://crate.io/products/cratedb/ org.label-schema.vcs-url=https://github.com/crate/docker-crate org.label-schema.vendor=Crate.io org.label-schema.version=3.3.5
-# Wed, 10 Jul 2019 15:21:15 GMT
+# Tue, 20 Aug 2019 20:55:51 GMT
 COPY file:9830363b41b8063591887d9dc9ce2767bf0e91dc4cb05efcb6ea622a60ec15e3 in / 
-# Wed, 10 Jul 2019 15:21:16 GMT
+# Tue, 20 Aug 2019 20:55:51 GMT
 ENTRYPOINT ["/docker-entrypoint.sh"]
-# Wed, 10 Jul 2019 15:21:16 GMT
+# Tue, 20 Aug 2019 20:55:51 GMT
 CMD ["crate"]
 ```
 
 -	Layers:
-	-	`sha256:8ba884070f611d31cb2c42eddb691319dc9facf5e0ec67672fcfa135181ab3df`  
-		Last Modified: Thu, 14 Mar 2019 21:24:11 GMT  
-		Size: 75.4 MB (75403831 bytes)  
+	-	`sha256:d8d02d45731499028db01b6fa35475f91d230628b4e25fab8e3c015594dc3261`  
+		Last Modified: Tue, 20 Aug 2019 20:23:41 GMT  
+		Size: 75.4 MB (75412258 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c3a6ddc97e717216c4d09cb226d7c28378812cda87215ea56c16e1af8b56e38e`  
-		Last Modified: Thu, 14 Mar 2019 22:13:39 GMT  
-		Size: 2.0 KB (2015 bytes)  
+	-	`sha256:d585f0c94581495265d491049079ca722fc23fee68a8a350da0a6d05182d6066`  
+		Last Modified: Tue, 20 Aug 2019 20:58:09 GMT  
+		Size: 2.0 KB (2013 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:1359655471fc316d2654fe88e0ffbd8ad33d956afbd82d89eb5e8bf6cb32a54d`  
-		Last Modified: Thu, 14 Mar 2019 22:13:59 GMT  
-		Size: 188.1 MB (188101289 bytes)  
+	-	`sha256:3c131de7cf9bbd23ebe1dfa23627593d5ce6026e73d8408752d15402bc06093a`  
+		Last Modified: Tue, 20 Aug 2019 20:58:55 GMT  
+		Size: 188.1 MB (188101311 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:5766c8b329a683dcdadf719e0994c62a435da699445e5f734ad0df71bdc399e1`  
-		Last Modified: Thu, 14 Mar 2019 22:13:39 GMT  
-		Size: 218.0 B  
+	-	`sha256:29bf7f7dddc3b8fc68b48a1efdefbd4d40e9f049ee94c64b7939429b82aff3b2`  
+		Last Modified: Tue, 20 Aug 2019 20:58:33 GMT  
+		Size: 213.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:85f3c8d9a32345078e1bf271317fd4d845bf2c96edecb1f95822707662e248da`  
-		Last Modified: Wed, 10 Jul 2019 15:22:09 GMT  
-		Size: 79.0 MB (78977085 bytes)  
+	-	`sha256:56c950a51813714e04603f24559f0bfcab29856b589a5acb61604fae23f60508`  
+		Last Modified: Tue, 20 Aug 2019 20:58:43 GMT  
+		Size: 77.6 MB (77577340 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:d56093c3eb26cb645042337456bdcfc200b473efb8c79c2cdf21094e94ef770b`  
-		Last Modified: Wed, 10 Jul 2019 15:21:58 GMT  
-		Size: 263.0 B  
+	-	`sha256:9f32963a393c110cd32366ae3847999fe93ac7ca776fe0fbb86807648aeb38a1`  
+		Last Modified: Tue, 20 Aug 2019 20:58:33 GMT  
+		Size: 266.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:b26ea6401d4ce8cf0033d49ae2b3e96cd4279ed79c9786504e3b2850a59b48a0`  
-		Last Modified: Wed, 10 Jul 2019 15:21:58 GMT  
-		Size: 955.0 B  
-		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:3f3991b2869e21c861c10d6dd8404736b33ddf9b1e2069623cc82f872fae58e2`  
-		Last Modified: Wed, 10 Jul 2019 15:21:58 GMT  
-		Size: 1.3 MB (1294055 bytes)  
-		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:03d3361122dcecb69400ebf9ba3170579992e48436ddc5199a86a5b38c2916a4`  
-		Last Modified: Wed, 10 Jul 2019 15:21:57 GMT  
-		Size: 125.0 B  
-		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:119419f50963972046de0fd3e81e3e4bee3863a63b8bf3e87bf2a626603ab804`  
-		Last Modified: Wed, 10 Jul 2019 15:21:57 GMT  
-		Size: 264.0 B  
-		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:01486e53d9745ded96f61cb544dd7a8840d0e0e9d0d11d9793264c759467e73d`  
-		Last Modified: Wed, 10 Jul 2019 15:21:58 GMT  
+	-	`sha256:af3b176bfdc18afe1c218697f65bf286017a9107a73d0d1d4bcea1bada6ae007`  
+		Last Modified: Tue, 20 Aug 2019 20:58:33 GMT  
 		Size: 956.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:046c0809ecf9d36a30a3e181883190c8a1d9f80605f4cc532fa99e64ae184f12`  
-		Last Modified: Wed, 10 Jul 2019 15:21:57 GMT  
-		Size: 527.0 B  
+	-	`sha256:18725663f331eb0683cf617be773b7ef1113a690674b949842cf07c71fab450a`  
+		Last Modified: Tue, 20 Aug 2019 20:58:33 GMT  
+		Size: 1.3 MB (1294033 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:429d3802acaaeab46bc3cd5ab3e45712a69e535e3ab4f475344f16d270872f7c`  
+		Last Modified: Tue, 20 Aug 2019 20:58:32 GMT  
+		Size: 126.0 B  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:225290eec87f01053e7257830da89462e3b9d1b182f96a5b91a7015054b38712`  
+		Last Modified: Tue, 20 Aug 2019 20:58:32 GMT  
+		Size: 266.0 B  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:b536e4bcc72805f0585082a73f49424c43a2f77f6115e4e0193af91fb27dd8d8`  
+		Last Modified: Tue, 20 Aug 2019 20:58:32 GMT  
+		Size: 957.0 B  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:f4a28c637c9f784fcb92be6e48a3e7a29035427e7f534521567bab2fec846e25`  
+		Last Modified: Tue, 20 Aug 2019 20:58:32 GMT  
+		Size: 528.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `crate:3.3.5`
 
 ```console
-$ docker pull crate@sha256:90cb00b515b223cb25f4fd1cfeb09c9632569ae1f40f264dfcfebd0b099529bc
+$ docker pull crate@sha256:9df609f63cc47c5e06cdef511ba6c01bffb2edf49183f862ef9ed9e08380ba29
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -1364,120 +1364,120 @@ $ docker pull crate@sha256:90cb00b515b223cb25f4fd1cfeb09c9632569ae1f40f264dfcfeb
 ### `crate:3.3.5` - linux; amd64
 
 ```console
-$ docker pull crate@sha256:b99055af6898300eb979a6d6796718c638fd9e942456fd5a0d87bea225f479e9
+$ docker pull crate@sha256:0affc8ab23c0acf26180aa2978995cdfc58e7aa8ae9c825919cc9f61ac647763
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **343.8 MB (343781583 bytes)**  
+-	Total Size: **342.4 MB (342390267 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:607b4ed96d0d93a0ef7210772a4f029a243568b6f80421a1b82846447535e89b`
+-	Image ID: `sha256:8ee33e03cc69a639bb66e36ebf2b5410cccaf4d9b66541133a15fb73953ceaec`
 -	Entrypoint: `["\/docker-entrypoint.sh"]`
 -	Default Command: `["crate"]`
 
 ```dockerfile
-# Thu, 14 Mar 2019 21:19:52 GMT
-ADD file:074f2c974463ab38cf3532134e8ba2c91c9e346457713f2e8b8e2ac0ee9fd83d in / 
-# Thu, 14 Mar 2019 21:19:53 GMT
-LABEL org.label-schema.schema-version=1.0 org.label-schema.name=CentOS Base Image org.label-schema.vendor=CentOS org.label-schema.license=GPLv2 org.label-schema.build-date=20190305
-# Thu, 14 Mar 2019 21:19:53 GMT
+# Tue, 20 Aug 2019 20:21:00 GMT
+ADD file:4e7247c06de9ad117293b6bf39c77f96c623a1bca4da35068d7e64c7cb826c08 in / 
+# Tue, 20 Aug 2019 20:21:01 GMT
+LABEL org.label-schema.schema-version=1.0 org.label-schema.name=CentOS Base Image org.label-schema.vendor=CentOS org.label-schema.license=GPLv2 org.label-schema.build-date=20190801
+# Tue, 20 Aug 2019 20:21:01 GMT
 CMD ["/bin/bash"]
-# Thu, 14 Mar 2019 22:11:34 GMT
+# Tue, 20 Aug 2019 20:52:10 GMT
 RUN groupadd crate && useradd -u 1000 -g crate -d /crate crate
-# Thu, 14 Mar 2019 22:12:17 GMT
+# Tue, 20 Aug 2019 20:54:42 GMT
 RUN curl --retry 8 -o /openjdk.tar.gz https://download.java.net/java/GA/jdk11/13/GPL/openjdk-11.0.1_linux-x64_bin.tar.gz     && echo "7a6bb980b9c91c478421f865087ad2d69086a0583aeeb9e69204785e8e97dcfd */openjdk.tar.gz" | sha256sum -c -     && tar -C /opt -zxf /openjdk.tar.gz     && rm /openjdk.tar.gz
-# Thu, 14 Mar 2019 22:12:18 GMT
+# Tue, 20 Aug 2019 20:54:42 GMT
 ENV JAVA_HOME=/opt/jdk-11.0.1
-# Thu, 14 Mar 2019 22:12:18 GMT
+# Tue, 20 Aug 2019 20:54:43 GMT
 RUN ln -sf /etc/pki/ca-trust/extracted/java/cacerts /opt/jdk-11.0.1/lib/security/cacerts
-# Wed, 10 Jul 2019 15:21:10 GMT
+# Tue, 20 Aug 2019 20:55:47 GMT
 RUN yum install -y yum-utils https://centos7.iuscommunity.org/ius-release.rpm     && yum makecache     && yum install -y python36u openssl     && yum clean all     && rm -rf /var/cache/yum     && curl -fSL -O https://cdn.crate.io/downloads/releases/crate-3.3.5.tar.gz     && curl -fSL -O https://cdn.crate.io/downloads/releases/crate-3.3.5.tar.gz.asc     && export GNUPGHOME="$(mktemp -d)"     && gpg --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 90C23FC6585BC0717F8FBFC37FAAE51A06F6EAEB     && gpg --batch --verify crate-3.3.5.tar.gz.asc crate-3.3.5.tar.gz     && rm -rf "$GNUPGHOME" crate-3.3.5.tar.gz.asc     && tar -xf crate-3.3.5.tar.gz -C /crate --strip-components=1     && rm crate-3.3.5.tar.gz     && ln -sf /usr/bin/python3.6 /usr/bin/python3     && ln -sf /usr/bin/python3.6 /usr/bin/python
-# Wed, 10 Jul 2019 15:21:10 GMT
+# Tue, 20 Aug 2019 20:55:47 GMT
 COPY --chown=1000:0file:bff8d2f33b7a44d36fcd66fc7e7d92b0ee463d0eb0df2a56e42511d4f1b3e9b2 in /crate/config/crate.yml 
-# Wed, 10 Jul 2019 15:21:11 GMT
+# Tue, 20 Aug 2019 20:55:48 GMT
 COPY --chown=1000:0file:5f0d1b776d3a6517508a00a88f8053bd0933a642599374c9dff00dc3b632fd09 in /crate/config/log4j2.properties 
-# Wed, 10 Jul 2019 15:21:12 GMT
+# Tue, 20 Aug 2019 20:55:49 GMT
 RUN curl -fSL -O https://cdn.crate.io/downloads/releases/crash_standalone_0.24.2     && curl -fSL -O https://cdn.crate.io/downloads/releases/crash_standalone_0.24.2.asc     && export GNUPGHOME="$(mktemp -d)"     && gpg --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 90C23FC6585BC0717F8FBFC37FAAE51A06F6EAEB     && gpg --batch --verify crash_standalone_0.24.2.asc crash_standalone_0.24.2     && rm -rf "$GNUPGHOME" crash_standalone_0.24.2.asc     && mv crash_standalone_0.24.2 /usr/local/bin/crash     && chmod +x /usr/local/bin/crash
-# Wed, 10 Jul 2019 15:21:12 GMT
+# Tue, 20 Aug 2019 20:55:49 GMT
 ENV PATH=/crate/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Wed, 10 Jul 2019 15:21:12 GMT
+# Tue, 20 Aug 2019 20:55:49 GMT
 ENV CRATE_HEAP_SIZE=512M
-# Wed, 10 Jul 2019 15:21:14 GMT
+# Tue, 20 Aug 2019 20:55:50 GMT
 RUN mkdir -p /data/data /data/log
-# Wed, 10 Jul 2019 15:21:14 GMT
+# Tue, 20 Aug 2019 20:55:50 GMT
 VOLUME [/data]
-# Wed, 10 Jul 2019 15:21:14 GMT
+# Tue, 20 Aug 2019 20:55:50 GMT
 WORKDIR /data
-# Wed, 10 Jul 2019 15:21:14 GMT
+# Tue, 20 Aug 2019 20:55:50 GMT
 EXPOSE 4200 4300 5432
-# Wed, 10 Jul 2019 15:21:15 GMT
+# Tue, 20 Aug 2019 20:55:51 GMT
 COPY --chown=1000:0file:bff8d2f33b7a44d36fcd66fc7e7d92b0ee463d0eb0df2a56e42511d4f1b3e9b2 in /crate/config/crate.yml 
-# Wed, 10 Jul 2019 15:21:15 GMT
+# Tue, 20 Aug 2019 20:55:51 GMT
 COPY --chown=1000:0file:5f0d1b776d3a6517508a00a88f8053bd0933a642599374c9dff00dc3b632fd09 in /crate/config/log4j2.properties 
-# Wed, 10 Jul 2019 15:21:15 GMT
+# Tue, 20 Aug 2019 20:55:51 GMT
 LABEL maintainer=Crate.io <office@crate.io> org.label-schema.schema-version=1.0 org.label-schema.build-date=2019-07-08T14:08:18.187344 org.label-schema.name=crate org.label-schema.description=CrateDB is a distributed SQL database handles massive amounts of machine data in real-time. org.label-schema.url=https://crate.io/products/cratedb/ org.label-schema.vcs-url=https://github.com/crate/docker-crate org.label-schema.vendor=Crate.io org.label-schema.version=3.3.5
-# Wed, 10 Jul 2019 15:21:15 GMT
+# Tue, 20 Aug 2019 20:55:51 GMT
 COPY file:9830363b41b8063591887d9dc9ce2767bf0e91dc4cb05efcb6ea622a60ec15e3 in / 
-# Wed, 10 Jul 2019 15:21:16 GMT
+# Tue, 20 Aug 2019 20:55:51 GMT
 ENTRYPOINT ["/docker-entrypoint.sh"]
-# Wed, 10 Jul 2019 15:21:16 GMT
+# Tue, 20 Aug 2019 20:55:51 GMT
 CMD ["crate"]
 ```
 
 -	Layers:
-	-	`sha256:8ba884070f611d31cb2c42eddb691319dc9facf5e0ec67672fcfa135181ab3df`  
-		Last Modified: Thu, 14 Mar 2019 21:24:11 GMT  
-		Size: 75.4 MB (75403831 bytes)  
+	-	`sha256:d8d02d45731499028db01b6fa35475f91d230628b4e25fab8e3c015594dc3261`  
+		Last Modified: Tue, 20 Aug 2019 20:23:41 GMT  
+		Size: 75.4 MB (75412258 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c3a6ddc97e717216c4d09cb226d7c28378812cda87215ea56c16e1af8b56e38e`  
-		Last Modified: Thu, 14 Mar 2019 22:13:39 GMT  
-		Size: 2.0 KB (2015 bytes)  
+	-	`sha256:d585f0c94581495265d491049079ca722fc23fee68a8a350da0a6d05182d6066`  
+		Last Modified: Tue, 20 Aug 2019 20:58:09 GMT  
+		Size: 2.0 KB (2013 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:1359655471fc316d2654fe88e0ffbd8ad33d956afbd82d89eb5e8bf6cb32a54d`  
-		Last Modified: Thu, 14 Mar 2019 22:13:59 GMT  
-		Size: 188.1 MB (188101289 bytes)  
+	-	`sha256:3c131de7cf9bbd23ebe1dfa23627593d5ce6026e73d8408752d15402bc06093a`  
+		Last Modified: Tue, 20 Aug 2019 20:58:55 GMT  
+		Size: 188.1 MB (188101311 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:5766c8b329a683dcdadf719e0994c62a435da699445e5f734ad0df71bdc399e1`  
-		Last Modified: Thu, 14 Mar 2019 22:13:39 GMT  
-		Size: 218.0 B  
+	-	`sha256:29bf7f7dddc3b8fc68b48a1efdefbd4d40e9f049ee94c64b7939429b82aff3b2`  
+		Last Modified: Tue, 20 Aug 2019 20:58:33 GMT  
+		Size: 213.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:85f3c8d9a32345078e1bf271317fd4d845bf2c96edecb1f95822707662e248da`  
-		Last Modified: Wed, 10 Jul 2019 15:22:09 GMT  
-		Size: 79.0 MB (78977085 bytes)  
+	-	`sha256:56c950a51813714e04603f24559f0bfcab29856b589a5acb61604fae23f60508`  
+		Last Modified: Tue, 20 Aug 2019 20:58:43 GMT  
+		Size: 77.6 MB (77577340 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:d56093c3eb26cb645042337456bdcfc200b473efb8c79c2cdf21094e94ef770b`  
-		Last Modified: Wed, 10 Jul 2019 15:21:58 GMT  
-		Size: 263.0 B  
+	-	`sha256:9f32963a393c110cd32366ae3847999fe93ac7ca776fe0fbb86807648aeb38a1`  
+		Last Modified: Tue, 20 Aug 2019 20:58:33 GMT  
+		Size: 266.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:b26ea6401d4ce8cf0033d49ae2b3e96cd4279ed79c9786504e3b2850a59b48a0`  
-		Last Modified: Wed, 10 Jul 2019 15:21:58 GMT  
-		Size: 955.0 B  
-		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:3f3991b2869e21c861c10d6dd8404736b33ddf9b1e2069623cc82f872fae58e2`  
-		Last Modified: Wed, 10 Jul 2019 15:21:58 GMT  
-		Size: 1.3 MB (1294055 bytes)  
-		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:03d3361122dcecb69400ebf9ba3170579992e48436ddc5199a86a5b38c2916a4`  
-		Last Modified: Wed, 10 Jul 2019 15:21:57 GMT  
-		Size: 125.0 B  
-		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:119419f50963972046de0fd3e81e3e4bee3863a63b8bf3e87bf2a626603ab804`  
-		Last Modified: Wed, 10 Jul 2019 15:21:57 GMT  
-		Size: 264.0 B  
-		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:01486e53d9745ded96f61cb544dd7a8840d0e0e9d0d11d9793264c759467e73d`  
-		Last Modified: Wed, 10 Jul 2019 15:21:58 GMT  
+	-	`sha256:af3b176bfdc18afe1c218697f65bf286017a9107a73d0d1d4bcea1bada6ae007`  
+		Last Modified: Tue, 20 Aug 2019 20:58:33 GMT  
 		Size: 956.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:046c0809ecf9d36a30a3e181883190c8a1d9f80605f4cc532fa99e64ae184f12`  
-		Last Modified: Wed, 10 Jul 2019 15:21:57 GMT  
-		Size: 527.0 B  
+	-	`sha256:18725663f331eb0683cf617be773b7ef1113a690674b949842cf07c71fab450a`  
+		Last Modified: Tue, 20 Aug 2019 20:58:33 GMT  
+		Size: 1.3 MB (1294033 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:429d3802acaaeab46bc3cd5ab3e45712a69e535e3ab4f475344f16d270872f7c`  
+		Last Modified: Tue, 20 Aug 2019 20:58:32 GMT  
+		Size: 126.0 B  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:225290eec87f01053e7257830da89462e3b9d1b182f96a5b91a7015054b38712`  
+		Last Modified: Tue, 20 Aug 2019 20:58:32 GMT  
+		Size: 266.0 B  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:b536e4bcc72805f0585082a73f49424c43a2f77f6115e4e0193af91fb27dd8d8`  
+		Last Modified: Tue, 20 Aug 2019 20:58:32 GMT  
+		Size: 957.0 B  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:f4a28c637c9f784fcb92be6e48a3e7a29035427e7f534521567bab2fec846e25`  
+		Last Modified: Tue, 20 Aug 2019 20:58:32 GMT  
+		Size: 528.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `crate:4.0`
 
 ```console
-$ docker pull crate@sha256:b9fd8b608c8739f785ad352f3e698b462d32f57f4855b908628eec2c6115a679
+$ docker pull crate@sha256:f9b9903d157ed985778e5f9ac0ec5ce9924d5a8df438c6509bb5af2604092a68
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -1487,120 +1487,120 @@ $ docker pull crate@sha256:b9fd8b608c8739f785ad352f3e698b462d32f57f4855b908628ee
 ### `crate:4.0` - linux; amd64
 
 ```console
-$ docker pull crate@sha256:207f22a7c7db0d0670109f6e5aa81aa4b0295f67357f386e1088bec8c11d6613
+$ docker pull crate@sha256:e445b4bc836256cfe79a8c68094636d534fb35fb9d2adb9ebb981bbe71c724c4
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **351.3 MB (351316919 bytes)**  
+-	Total Size: **349.9 MB (349916215 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:16f2bb6f3e633b235db1c5b62027cff23a1f070a2b0e8510c8ae51bea20a1961`
+-	Image ID: `sha256:45c4f6784ae3e01da94becd742db765e1298b710967a4f6e5a5fad6765b52f55`
 -	Entrypoint: `["\/docker-entrypoint.sh"]`
 -	Default Command: `["crate"]`
 
 ```dockerfile
-# Thu, 14 Mar 2019 21:19:52 GMT
-ADD file:074f2c974463ab38cf3532134e8ba2c91c9e346457713f2e8b8e2ac0ee9fd83d in / 
-# Thu, 14 Mar 2019 21:19:53 GMT
-LABEL org.label-schema.schema-version=1.0 org.label-schema.name=CentOS Base Image org.label-schema.vendor=CentOS org.label-schema.license=GPLv2 org.label-schema.build-date=20190305
-# Thu, 14 Mar 2019 21:19:53 GMT
+# Tue, 20 Aug 2019 20:21:00 GMT
+ADD file:4e7247c06de9ad117293b6bf39c77f96c623a1bca4da35068d7e64c7cb826c08 in / 
+# Tue, 20 Aug 2019 20:21:01 GMT
+LABEL org.label-schema.schema-version=1.0 org.label-schema.name=CentOS Base Image org.label-schema.vendor=CentOS org.label-schema.license=GPLv2 org.label-schema.build-date=20190801
+# Tue, 20 Aug 2019 20:21:01 GMT
 CMD ["/bin/bash"]
-# Thu, 14 Mar 2019 22:11:34 GMT
+# Tue, 20 Aug 2019 20:52:10 GMT
 RUN groupadd crate && useradd -u 1000 -g crate -d /crate crate
-# Tue, 16 Jul 2019 23:20:23 GMT
+# Tue, 20 Aug 2019 20:52:47 GMT
 RUN curl --retry 8 -o /openjdk.tar.gz https://download.java.net/java/GA/jdk12.0.1/69cfe15208a647278a19ef0990eea691/12/GPL/openjdk-12.0.1_linux-x64_bin.tar.gz     && echo "151eb4ec00f82e5e951126f572dc9116104c884d97f91be14ec11e85fc2dd626 */openjdk.tar.gz" | sha256sum -c -     && tar -C /opt -zxf /openjdk.tar.gz     && rm /openjdk.tar.gz
-# Tue, 16 Jul 2019 23:20:23 GMT
+# Tue, 20 Aug 2019 20:52:47 GMT
 ENV JAVA_HOME=/opt/jdk-12.0.1
-# Tue, 16 Jul 2019 23:20:24 GMT
+# Tue, 20 Aug 2019 20:52:48 GMT
 RUN ln -sf /etc/pki/ca-trust/extracted/java/cacerts /opt/jdk-12.0.1/lib/security/cacerts
-# Fri, 09 Aug 2019 21:22:43 GMT
+# Tue, 20 Aug 2019 20:53:51 GMT
 RUN yum install -y yum-utils https://centos7.iuscommunity.org/ius-release.rpm     && yum makecache     && yum install -y python36u openssl     && yum clean all     && rm -rf /var/cache/yum     && curl -fSL -O https://cdn.crate.io/downloads/releases/crate-4.0.3.tar.gz     && curl -fSL -O https://cdn.crate.io/downloads/releases/crate-4.0.3.tar.gz.asc     && export GNUPGHOME="$(mktemp -d)"     && gpg --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 90C23FC6585BC0717F8FBFC37FAAE51A06F6EAEB     && gpg --batch --verify crate-4.0.3.tar.gz.asc crate-4.0.3.tar.gz     && rm -rf "$GNUPGHOME" crate-4.0.3.tar.gz.asc     && tar -xf crate-4.0.3.tar.gz -C /crate --strip-components=1     && rm crate-4.0.3.tar.gz     && ln -sf /usr/bin/python3.6 /usr/bin/python3     && ln -sf /usr/bin/python3.6 /usr/bin/python
-# Fri, 09 Aug 2019 21:22:43 GMT
+# Tue, 20 Aug 2019 20:53:52 GMT
 COPY --chown=1000:0file:bff8d2f33b7a44d36fcd66fc7e7d92b0ee463d0eb0df2a56e42511d4f1b3e9b2 in /crate/config/crate.yml 
-# Fri, 09 Aug 2019 21:22:43 GMT
+# Tue, 20 Aug 2019 20:53:52 GMT
 COPY --chown=1000:0file:5f0d1b776d3a6517508a00a88f8053bd0933a642599374c9dff00dc3b632fd09 in /crate/config/log4j2.properties 
-# Fri, 09 Aug 2019 21:22:46 GMT
+# Tue, 20 Aug 2019 20:53:54 GMT
 RUN curl -fSL -O https://cdn.crate.io/downloads/releases/crash_standalone_0.24.2     && curl -fSL -O https://cdn.crate.io/downloads/releases/crash_standalone_0.24.2.asc     && export GNUPGHOME="$(mktemp -d)"     && gpg --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 90C23FC6585BC0717F8FBFC37FAAE51A06F6EAEB     && gpg --batch --verify crash_standalone_0.24.2.asc crash_standalone_0.24.2     && rm -rf "$GNUPGHOME" crash_standalone_0.24.2.asc     && mv crash_standalone_0.24.2 /usr/local/bin/crash     && chmod +x /usr/local/bin/crash
-# Fri, 09 Aug 2019 21:22:46 GMT
+# Tue, 20 Aug 2019 20:53:55 GMT
 ENV PATH=/crate/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Fri, 09 Aug 2019 21:22:46 GMT
+# Tue, 20 Aug 2019 20:53:55 GMT
 ENV CRATE_HEAP_SIZE=512M
-# Fri, 09 Aug 2019 21:22:47 GMT
+# Tue, 20 Aug 2019 20:53:55 GMT
 RUN mkdir -p /data/data /data/log
-# Fri, 09 Aug 2019 21:22:47 GMT
+# Tue, 20 Aug 2019 20:53:56 GMT
 VOLUME [/data]
-# Fri, 09 Aug 2019 21:22:47 GMT
+# Tue, 20 Aug 2019 20:53:56 GMT
 WORKDIR /data
-# Fri, 09 Aug 2019 21:22:47 GMT
+# Tue, 20 Aug 2019 20:53:56 GMT
 EXPOSE 4200 4300 5432
-# Fri, 09 Aug 2019 21:22:47 GMT
+# Tue, 20 Aug 2019 20:53:56 GMT
 COPY --chown=1000:0file:bff8d2f33b7a44d36fcd66fc7e7d92b0ee463d0eb0df2a56e42511d4f1b3e9b2 in /crate/config/crate.yml 
-# Fri, 09 Aug 2019 21:22:47 GMT
+# Tue, 20 Aug 2019 20:53:56 GMT
 COPY --chown=1000:0file:5f0d1b776d3a6517508a00a88f8053bd0933a642599374c9dff00dc3b632fd09 in /crate/config/log4j2.properties 
-# Fri, 09 Aug 2019 21:22:48 GMT
+# Tue, 20 Aug 2019 20:53:56 GMT
 LABEL maintainer=Crate.io <office@crate.io> org.label-schema.schema-version=1.0 org.label-schema.build-date=2019-08-07T06:50:59.230679 org.label-schema.name=crate org.label-schema.description=CrateDB is a distributed SQL database handles massive amounts of machine data in real-time. org.label-schema.url=https://crate.io/products/cratedb/ org.label-schema.vcs-url=https://github.com/crate/docker-crate org.label-schema.vendor=Crate.io org.label-schema.version=4.0.3
-# Fri, 09 Aug 2019 21:22:48 GMT
+# Tue, 20 Aug 2019 20:53:57 GMT
 COPY file:9830363b41b8063591887d9dc9ce2767bf0e91dc4cb05efcb6ea622a60ec15e3 in / 
-# Fri, 09 Aug 2019 21:22:48 GMT
+# Tue, 20 Aug 2019 20:53:57 GMT
 ENTRYPOINT ["/docker-entrypoint.sh"]
-# Fri, 09 Aug 2019 21:22:48 GMT
+# Tue, 20 Aug 2019 20:53:57 GMT
 CMD ["crate"]
 ```
 
 -	Layers:
-	-	`sha256:8ba884070f611d31cb2c42eddb691319dc9facf5e0ec67672fcfa135181ab3df`  
-		Last Modified: Thu, 14 Mar 2019 21:24:11 GMT  
-		Size: 75.4 MB (75403831 bytes)  
+	-	`sha256:d8d02d45731499028db01b6fa35475f91d230628b4e25fab8e3c015594dc3261`  
+		Last Modified: Tue, 20 Aug 2019 20:23:41 GMT  
+		Size: 75.4 MB (75412258 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c3a6ddc97e717216c4d09cb226d7c28378812cda87215ea56c16e1af8b56e38e`  
-		Last Modified: Thu, 14 Mar 2019 22:13:39 GMT  
-		Size: 2.0 KB (2015 bytes)  
+	-	`sha256:d585f0c94581495265d491049079ca722fc23fee68a8a350da0a6d05182d6066`  
+		Last Modified: Tue, 20 Aug 2019 20:58:09 GMT  
+		Size: 2.0 KB (2013 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:3be745b1a18ab95762b064059dda9854d45588a512d2b71818d3b2770d6cecf5`  
-		Last Modified: Tue, 16 Jul 2019 23:22:22 GMT  
-		Size: 198.1 MB (198127805 bytes)  
+	-	`sha256:7f49a57a3d1b8f92010204e8d826bcaecd13e8a65a3e036b43b3dd1fb5ff9ca9`  
+		Last Modified: Tue, 20 Aug 2019 20:58:27 GMT  
+		Size: 198.1 MB (198127889 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:dad04299536bb1685dc155711e0fd37200c1b86613f9ea6a1a5c8c831f47b744`  
-		Last Modified: Tue, 16 Jul 2019 23:22:04 GMT  
+	-	`sha256:c6f2e98f514718a5642123cc4b2b365dc518f7e65945600e574cfb6b2200b6ff`  
+		Last Modified: Tue, 20 Aug 2019 20:58:08 GMT  
 		Size: 215.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:d1c64e9b630e91002f2092b7dffa18f236c51e6c81ac657fcffb0a1c56918ede`  
-		Last Modified: Fri, 09 Aug 2019 21:23:24 GMT  
-		Size: 76.5 MB (76485903 bytes)  
+	-	`sha256:a78fe2be38e5997a1c188313d05566397b8c264b35b6f0898df0082cdaa7e4e3`  
+		Last Modified: Tue, 20 Aug 2019 20:58:17 GMT  
+		Size: 75.1 MB (75076713 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:02019746fd7b16f952aee180dea340e11ef3dffb1aeaba901c7c70cf4853f2de`  
-		Last Modified: Fri, 09 Aug 2019 21:23:16 GMT  
-		Size: 266.0 B  
+	-	`sha256:f0483d59d017a7db424e78bcc2e8d1ec067e3bb0e8714518f9d0011fb9e7cc3d`  
+		Last Modified: Tue, 20 Aug 2019 20:58:08 GMT  
+		Size: 264.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:01bd9a14e5b147c80dac2f4dae5ae72d58a4e768733650086cf8e947317dce95`  
-		Last Modified: Fri, 09 Aug 2019 21:23:16 GMT  
+	-	`sha256:a3161243011ff49af94dd6f2a2a35c8b93c859a26eee881b8f83a698c7c48669`  
+		Last Modified: Tue, 20 Aug 2019 20:58:08 GMT  
+		Size: 957.0 B  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:14e15dc716e31e0c63e643d412707fc37aef598ae487194a97e8e34e7d8e08f6`  
+		Last Modified: Tue, 20 Aug 2019 20:58:07 GMT  
+		Size: 1.3 MB (1294031 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:70024422bab19b4a73900131dc4978ec4ce45aeec4780640b38cdccd79e4293c`  
+		Last Modified: Tue, 20 Aug 2019 20:58:07 GMT  
+		Size: 126.0 B  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:464256e7bd0cf579a1a3e599eaaeff2fa7da8c8cfa7f888f31c7a0faca310849`  
+		Last Modified: Tue, 20 Aug 2019 20:58:07 GMT  
+		Size: 265.0 B  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:81c2c33c028210d716773acd350ab86f354067d73ca48ac5a1234b278d78dd40`  
+		Last Modified: Tue, 20 Aug 2019 20:58:07 GMT  
 		Size: 958.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:ed80262a63acbe804bbfbbf316915f69fb7651ccd43677ac97d22a36e9583eb7`  
-		Last Modified: Fri, 09 Aug 2019 21:23:15 GMT  
-		Size: 1.3 MB (1294048 bytes)  
-		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:9315aee42f8e4aa825162f157f6b44a1c44b6c216df348338e89c10b43dd5ee8`  
-		Last Modified: Fri, 09 Aug 2019 21:23:15 GMT  
-		Size: 127.0 B  
-		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:433d03853f711629ea83a75e39607ca3cc271b54fb192c3f02d61d0eda6cf881`  
-		Last Modified: Fri, 09 Aug 2019 21:23:15 GMT  
-		Size: 266.0 B  
-		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:b19fb18c6ffea65088b1bd0aadf04a995e914d7191d4d3249d11f73dee4a509b`  
-		Last Modified: Fri, 09 Aug 2019 21:23:15 GMT  
-		Size: 958.0 B  
-		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:39da3f1cb8c10fbd49b8f7e98b83f77f90715d69c59cd6382bbe0c1fddc29836`  
-		Last Modified: Fri, 09 Aug 2019 21:23:15 GMT  
-		Size: 527.0 B  
+	-	`sha256:efbe5bcec5fd7bdcf360952ef891d496027a10f7c09c8add6fc14328a3a733b6`  
+		Last Modified: Tue, 20 Aug 2019 20:58:07 GMT  
+		Size: 526.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `crate:4.0.3`
 
 ```console
-$ docker pull crate@sha256:b9fd8b608c8739f785ad352f3e698b462d32f57f4855b908628eec2c6115a679
+$ docker pull crate@sha256:f9b9903d157ed985778e5f9ac0ec5ce9924d5a8df438c6509bb5af2604092a68
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -1610,120 +1610,120 @@ $ docker pull crate@sha256:b9fd8b608c8739f785ad352f3e698b462d32f57f4855b908628ee
 ### `crate:4.0.3` - linux; amd64
 
 ```console
-$ docker pull crate@sha256:207f22a7c7db0d0670109f6e5aa81aa4b0295f67357f386e1088bec8c11d6613
+$ docker pull crate@sha256:e445b4bc836256cfe79a8c68094636d534fb35fb9d2adb9ebb981bbe71c724c4
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **351.3 MB (351316919 bytes)**  
+-	Total Size: **349.9 MB (349916215 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:16f2bb6f3e633b235db1c5b62027cff23a1f070a2b0e8510c8ae51bea20a1961`
+-	Image ID: `sha256:45c4f6784ae3e01da94becd742db765e1298b710967a4f6e5a5fad6765b52f55`
 -	Entrypoint: `["\/docker-entrypoint.sh"]`
 -	Default Command: `["crate"]`
 
 ```dockerfile
-# Thu, 14 Mar 2019 21:19:52 GMT
-ADD file:074f2c974463ab38cf3532134e8ba2c91c9e346457713f2e8b8e2ac0ee9fd83d in / 
-# Thu, 14 Mar 2019 21:19:53 GMT
-LABEL org.label-schema.schema-version=1.0 org.label-schema.name=CentOS Base Image org.label-schema.vendor=CentOS org.label-schema.license=GPLv2 org.label-schema.build-date=20190305
-# Thu, 14 Mar 2019 21:19:53 GMT
+# Tue, 20 Aug 2019 20:21:00 GMT
+ADD file:4e7247c06de9ad117293b6bf39c77f96c623a1bca4da35068d7e64c7cb826c08 in / 
+# Tue, 20 Aug 2019 20:21:01 GMT
+LABEL org.label-schema.schema-version=1.0 org.label-schema.name=CentOS Base Image org.label-schema.vendor=CentOS org.label-schema.license=GPLv2 org.label-schema.build-date=20190801
+# Tue, 20 Aug 2019 20:21:01 GMT
 CMD ["/bin/bash"]
-# Thu, 14 Mar 2019 22:11:34 GMT
+# Tue, 20 Aug 2019 20:52:10 GMT
 RUN groupadd crate && useradd -u 1000 -g crate -d /crate crate
-# Tue, 16 Jul 2019 23:20:23 GMT
+# Tue, 20 Aug 2019 20:52:47 GMT
 RUN curl --retry 8 -o /openjdk.tar.gz https://download.java.net/java/GA/jdk12.0.1/69cfe15208a647278a19ef0990eea691/12/GPL/openjdk-12.0.1_linux-x64_bin.tar.gz     && echo "151eb4ec00f82e5e951126f572dc9116104c884d97f91be14ec11e85fc2dd626 */openjdk.tar.gz" | sha256sum -c -     && tar -C /opt -zxf /openjdk.tar.gz     && rm /openjdk.tar.gz
-# Tue, 16 Jul 2019 23:20:23 GMT
+# Tue, 20 Aug 2019 20:52:47 GMT
 ENV JAVA_HOME=/opt/jdk-12.0.1
-# Tue, 16 Jul 2019 23:20:24 GMT
+# Tue, 20 Aug 2019 20:52:48 GMT
 RUN ln -sf /etc/pki/ca-trust/extracted/java/cacerts /opt/jdk-12.0.1/lib/security/cacerts
-# Fri, 09 Aug 2019 21:22:43 GMT
+# Tue, 20 Aug 2019 20:53:51 GMT
 RUN yum install -y yum-utils https://centos7.iuscommunity.org/ius-release.rpm     && yum makecache     && yum install -y python36u openssl     && yum clean all     && rm -rf /var/cache/yum     && curl -fSL -O https://cdn.crate.io/downloads/releases/crate-4.0.3.tar.gz     && curl -fSL -O https://cdn.crate.io/downloads/releases/crate-4.0.3.tar.gz.asc     && export GNUPGHOME="$(mktemp -d)"     && gpg --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 90C23FC6585BC0717F8FBFC37FAAE51A06F6EAEB     && gpg --batch --verify crate-4.0.3.tar.gz.asc crate-4.0.3.tar.gz     && rm -rf "$GNUPGHOME" crate-4.0.3.tar.gz.asc     && tar -xf crate-4.0.3.tar.gz -C /crate --strip-components=1     && rm crate-4.0.3.tar.gz     && ln -sf /usr/bin/python3.6 /usr/bin/python3     && ln -sf /usr/bin/python3.6 /usr/bin/python
-# Fri, 09 Aug 2019 21:22:43 GMT
+# Tue, 20 Aug 2019 20:53:52 GMT
 COPY --chown=1000:0file:bff8d2f33b7a44d36fcd66fc7e7d92b0ee463d0eb0df2a56e42511d4f1b3e9b2 in /crate/config/crate.yml 
-# Fri, 09 Aug 2019 21:22:43 GMT
+# Tue, 20 Aug 2019 20:53:52 GMT
 COPY --chown=1000:0file:5f0d1b776d3a6517508a00a88f8053bd0933a642599374c9dff00dc3b632fd09 in /crate/config/log4j2.properties 
-# Fri, 09 Aug 2019 21:22:46 GMT
+# Tue, 20 Aug 2019 20:53:54 GMT
 RUN curl -fSL -O https://cdn.crate.io/downloads/releases/crash_standalone_0.24.2     && curl -fSL -O https://cdn.crate.io/downloads/releases/crash_standalone_0.24.2.asc     && export GNUPGHOME="$(mktemp -d)"     && gpg --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 90C23FC6585BC0717F8FBFC37FAAE51A06F6EAEB     && gpg --batch --verify crash_standalone_0.24.2.asc crash_standalone_0.24.2     && rm -rf "$GNUPGHOME" crash_standalone_0.24.2.asc     && mv crash_standalone_0.24.2 /usr/local/bin/crash     && chmod +x /usr/local/bin/crash
-# Fri, 09 Aug 2019 21:22:46 GMT
+# Tue, 20 Aug 2019 20:53:55 GMT
 ENV PATH=/crate/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Fri, 09 Aug 2019 21:22:46 GMT
+# Tue, 20 Aug 2019 20:53:55 GMT
 ENV CRATE_HEAP_SIZE=512M
-# Fri, 09 Aug 2019 21:22:47 GMT
+# Tue, 20 Aug 2019 20:53:55 GMT
 RUN mkdir -p /data/data /data/log
-# Fri, 09 Aug 2019 21:22:47 GMT
+# Tue, 20 Aug 2019 20:53:56 GMT
 VOLUME [/data]
-# Fri, 09 Aug 2019 21:22:47 GMT
+# Tue, 20 Aug 2019 20:53:56 GMT
 WORKDIR /data
-# Fri, 09 Aug 2019 21:22:47 GMT
+# Tue, 20 Aug 2019 20:53:56 GMT
 EXPOSE 4200 4300 5432
-# Fri, 09 Aug 2019 21:22:47 GMT
+# Tue, 20 Aug 2019 20:53:56 GMT
 COPY --chown=1000:0file:bff8d2f33b7a44d36fcd66fc7e7d92b0ee463d0eb0df2a56e42511d4f1b3e9b2 in /crate/config/crate.yml 
-# Fri, 09 Aug 2019 21:22:47 GMT
+# Tue, 20 Aug 2019 20:53:56 GMT
 COPY --chown=1000:0file:5f0d1b776d3a6517508a00a88f8053bd0933a642599374c9dff00dc3b632fd09 in /crate/config/log4j2.properties 
-# Fri, 09 Aug 2019 21:22:48 GMT
+# Tue, 20 Aug 2019 20:53:56 GMT
 LABEL maintainer=Crate.io <office@crate.io> org.label-schema.schema-version=1.0 org.label-schema.build-date=2019-08-07T06:50:59.230679 org.label-schema.name=crate org.label-schema.description=CrateDB is a distributed SQL database handles massive amounts of machine data in real-time. org.label-schema.url=https://crate.io/products/cratedb/ org.label-schema.vcs-url=https://github.com/crate/docker-crate org.label-schema.vendor=Crate.io org.label-schema.version=4.0.3
-# Fri, 09 Aug 2019 21:22:48 GMT
+# Tue, 20 Aug 2019 20:53:57 GMT
 COPY file:9830363b41b8063591887d9dc9ce2767bf0e91dc4cb05efcb6ea622a60ec15e3 in / 
-# Fri, 09 Aug 2019 21:22:48 GMT
+# Tue, 20 Aug 2019 20:53:57 GMT
 ENTRYPOINT ["/docker-entrypoint.sh"]
-# Fri, 09 Aug 2019 21:22:48 GMT
+# Tue, 20 Aug 2019 20:53:57 GMT
 CMD ["crate"]
 ```
 
 -	Layers:
-	-	`sha256:8ba884070f611d31cb2c42eddb691319dc9facf5e0ec67672fcfa135181ab3df`  
-		Last Modified: Thu, 14 Mar 2019 21:24:11 GMT  
-		Size: 75.4 MB (75403831 bytes)  
+	-	`sha256:d8d02d45731499028db01b6fa35475f91d230628b4e25fab8e3c015594dc3261`  
+		Last Modified: Tue, 20 Aug 2019 20:23:41 GMT  
+		Size: 75.4 MB (75412258 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c3a6ddc97e717216c4d09cb226d7c28378812cda87215ea56c16e1af8b56e38e`  
-		Last Modified: Thu, 14 Mar 2019 22:13:39 GMT  
-		Size: 2.0 KB (2015 bytes)  
+	-	`sha256:d585f0c94581495265d491049079ca722fc23fee68a8a350da0a6d05182d6066`  
+		Last Modified: Tue, 20 Aug 2019 20:58:09 GMT  
+		Size: 2.0 KB (2013 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:3be745b1a18ab95762b064059dda9854d45588a512d2b71818d3b2770d6cecf5`  
-		Last Modified: Tue, 16 Jul 2019 23:22:22 GMT  
-		Size: 198.1 MB (198127805 bytes)  
+	-	`sha256:7f49a57a3d1b8f92010204e8d826bcaecd13e8a65a3e036b43b3dd1fb5ff9ca9`  
+		Last Modified: Tue, 20 Aug 2019 20:58:27 GMT  
+		Size: 198.1 MB (198127889 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:dad04299536bb1685dc155711e0fd37200c1b86613f9ea6a1a5c8c831f47b744`  
-		Last Modified: Tue, 16 Jul 2019 23:22:04 GMT  
+	-	`sha256:c6f2e98f514718a5642123cc4b2b365dc518f7e65945600e574cfb6b2200b6ff`  
+		Last Modified: Tue, 20 Aug 2019 20:58:08 GMT  
 		Size: 215.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:d1c64e9b630e91002f2092b7dffa18f236c51e6c81ac657fcffb0a1c56918ede`  
-		Last Modified: Fri, 09 Aug 2019 21:23:24 GMT  
-		Size: 76.5 MB (76485903 bytes)  
+	-	`sha256:a78fe2be38e5997a1c188313d05566397b8c264b35b6f0898df0082cdaa7e4e3`  
+		Last Modified: Tue, 20 Aug 2019 20:58:17 GMT  
+		Size: 75.1 MB (75076713 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:02019746fd7b16f952aee180dea340e11ef3dffb1aeaba901c7c70cf4853f2de`  
-		Last Modified: Fri, 09 Aug 2019 21:23:16 GMT  
-		Size: 266.0 B  
+	-	`sha256:f0483d59d017a7db424e78bcc2e8d1ec067e3bb0e8714518f9d0011fb9e7cc3d`  
+		Last Modified: Tue, 20 Aug 2019 20:58:08 GMT  
+		Size: 264.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:01bd9a14e5b147c80dac2f4dae5ae72d58a4e768733650086cf8e947317dce95`  
-		Last Modified: Fri, 09 Aug 2019 21:23:16 GMT  
+	-	`sha256:a3161243011ff49af94dd6f2a2a35c8b93c859a26eee881b8f83a698c7c48669`  
+		Last Modified: Tue, 20 Aug 2019 20:58:08 GMT  
+		Size: 957.0 B  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:14e15dc716e31e0c63e643d412707fc37aef598ae487194a97e8e34e7d8e08f6`  
+		Last Modified: Tue, 20 Aug 2019 20:58:07 GMT  
+		Size: 1.3 MB (1294031 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:70024422bab19b4a73900131dc4978ec4ce45aeec4780640b38cdccd79e4293c`  
+		Last Modified: Tue, 20 Aug 2019 20:58:07 GMT  
+		Size: 126.0 B  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:464256e7bd0cf579a1a3e599eaaeff2fa7da8c8cfa7f888f31c7a0faca310849`  
+		Last Modified: Tue, 20 Aug 2019 20:58:07 GMT  
+		Size: 265.0 B  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:81c2c33c028210d716773acd350ab86f354067d73ca48ac5a1234b278d78dd40`  
+		Last Modified: Tue, 20 Aug 2019 20:58:07 GMT  
 		Size: 958.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:ed80262a63acbe804bbfbbf316915f69fb7651ccd43677ac97d22a36e9583eb7`  
-		Last Modified: Fri, 09 Aug 2019 21:23:15 GMT  
-		Size: 1.3 MB (1294048 bytes)  
-		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:9315aee42f8e4aa825162f157f6b44a1c44b6c216df348338e89c10b43dd5ee8`  
-		Last Modified: Fri, 09 Aug 2019 21:23:15 GMT  
-		Size: 127.0 B  
-		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:433d03853f711629ea83a75e39607ca3cc271b54fb192c3f02d61d0eda6cf881`  
-		Last Modified: Fri, 09 Aug 2019 21:23:15 GMT  
-		Size: 266.0 B  
-		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:b19fb18c6ffea65088b1bd0aadf04a995e914d7191d4d3249d11f73dee4a509b`  
-		Last Modified: Fri, 09 Aug 2019 21:23:15 GMT  
-		Size: 958.0 B  
-		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:39da3f1cb8c10fbd49b8f7e98b83f77f90715d69c59cd6382bbe0c1fddc29836`  
-		Last Modified: Fri, 09 Aug 2019 21:23:15 GMT  
-		Size: 527.0 B  
+	-	`sha256:efbe5bcec5fd7bdcf360952ef891d496027a10f7c09c8add6fc14328a3a733b6`  
+		Last Modified: Tue, 20 Aug 2019 20:58:07 GMT  
+		Size: 526.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `crate:latest`
 
 ```console
-$ docker pull crate@sha256:5258edc19dad87d8ffefd3d0c168c320fcedd912e1c63e0a97ffdbf681c963a6
+$ docker pull crate@sha256:bf5d1bce26f393ec32e18e756bef8d6057d2aad45cdcc6f7e7568e6b0b199d37
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -1734,114 +1734,114 @@ $ docker pull crate@sha256:5258edc19dad87d8ffefd3d0c168c320fcedd912e1c63e0a97ffd
 ### `crate:latest` - linux; amd64
 
 ```console
-$ docker pull crate@sha256:207f22a7c7db0d0670109f6e5aa81aa4b0295f67357f386e1088bec8c11d6613
+$ docker pull crate@sha256:e445b4bc836256cfe79a8c68094636d534fb35fb9d2adb9ebb981bbe71c724c4
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **351.3 MB (351316919 bytes)**  
+-	Total Size: **349.9 MB (349916215 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:16f2bb6f3e633b235db1c5b62027cff23a1f070a2b0e8510c8ae51bea20a1961`
+-	Image ID: `sha256:45c4f6784ae3e01da94becd742db765e1298b710967a4f6e5a5fad6765b52f55`
 -	Entrypoint: `["\/docker-entrypoint.sh"]`
 -	Default Command: `["crate"]`
 
 ```dockerfile
-# Thu, 14 Mar 2019 21:19:52 GMT
-ADD file:074f2c974463ab38cf3532134e8ba2c91c9e346457713f2e8b8e2ac0ee9fd83d in / 
-# Thu, 14 Mar 2019 21:19:53 GMT
-LABEL org.label-schema.schema-version=1.0 org.label-schema.name=CentOS Base Image org.label-schema.vendor=CentOS org.label-schema.license=GPLv2 org.label-schema.build-date=20190305
-# Thu, 14 Mar 2019 21:19:53 GMT
+# Tue, 20 Aug 2019 20:21:00 GMT
+ADD file:4e7247c06de9ad117293b6bf39c77f96c623a1bca4da35068d7e64c7cb826c08 in / 
+# Tue, 20 Aug 2019 20:21:01 GMT
+LABEL org.label-schema.schema-version=1.0 org.label-schema.name=CentOS Base Image org.label-schema.vendor=CentOS org.label-schema.license=GPLv2 org.label-schema.build-date=20190801
+# Tue, 20 Aug 2019 20:21:01 GMT
 CMD ["/bin/bash"]
-# Thu, 14 Mar 2019 22:11:34 GMT
+# Tue, 20 Aug 2019 20:52:10 GMT
 RUN groupadd crate && useradd -u 1000 -g crate -d /crate crate
-# Tue, 16 Jul 2019 23:20:23 GMT
+# Tue, 20 Aug 2019 20:52:47 GMT
 RUN curl --retry 8 -o /openjdk.tar.gz https://download.java.net/java/GA/jdk12.0.1/69cfe15208a647278a19ef0990eea691/12/GPL/openjdk-12.0.1_linux-x64_bin.tar.gz     && echo "151eb4ec00f82e5e951126f572dc9116104c884d97f91be14ec11e85fc2dd626 */openjdk.tar.gz" | sha256sum -c -     && tar -C /opt -zxf /openjdk.tar.gz     && rm /openjdk.tar.gz
-# Tue, 16 Jul 2019 23:20:23 GMT
+# Tue, 20 Aug 2019 20:52:47 GMT
 ENV JAVA_HOME=/opt/jdk-12.0.1
-# Tue, 16 Jul 2019 23:20:24 GMT
+# Tue, 20 Aug 2019 20:52:48 GMT
 RUN ln -sf /etc/pki/ca-trust/extracted/java/cacerts /opt/jdk-12.0.1/lib/security/cacerts
-# Fri, 09 Aug 2019 21:22:43 GMT
+# Tue, 20 Aug 2019 20:53:51 GMT
 RUN yum install -y yum-utils https://centos7.iuscommunity.org/ius-release.rpm     && yum makecache     && yum install -y python36u openssl     && yum clean all     && rm -rf /var/cache/yum     && curl -fSL -O https://cdn.crate.io/downloads/releases/crate-4.0.3.tar.gz     && curl -fSL -O https://cdn.crate.io/downloads/releases/crate-4.0.3.tar.gz.asc     && export GNUPGHOME="$(mktemp -d)"     && gpg --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 90C23FC6585BC0717F8FBFC37FAAE51A06F6EAEB     && gpg --batch --verify crate-4.0.3.tar.gz.asc crate-4.0.3.tar.gz     && rm -rf "$GNUPGHOME" crate-4.0.3.tar.gz.asc     && tar -xf crate-4.0.3.tar.gz -C /crate --strip-components=1     && rm crate-4.0.3.tar.gz     && ln -sf /usr/bin/python3.6 /usr/bin/python3     && ln -sf /usr/bin/python3.6 /usr/bin/python
-# Fri, 09 Aug 2019 21:22:43 GMT
+# Tue, 20 Aug 2019 20:53:52 GMT
 COPY --chown=1000:0file:bff8d2f33b7a44d36fcd66fc7e7d92b0ee463d0eb0df2a56e42511d4f1b3e9b2 in /crate/config/crate.yml 
-# Fri, 09 Aug 2019 21:22:43 GMT
+# Tue, 20 Aug 2019 20:53:52 GMT
 COPY --chown=1000:0file:5f0d1b776d3a6517508a00a88f8053bd0933a642599374c9dff00dc3b632fd09 in /crate/config/log4j2.properties 
-# Fri, 09 Aug 2019 21:22:46 GMT
+# Tue, 20 Aug 2019 20:53:54 GMT
 RUN curl -fSL -O https://cdn.crate.io/downloads/releases/crash_standalone_0.24.2     && curl -fSL -O https://cdn.crate.io/downloads/releases/crash_standalone_0.24.2.asc     && export GNUPGHOME="$(mktemp -d)"     && gpg --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 90C23FC6585BC0717F8FBFC37FAAE51A06F6EAEB     && gpg --batch --verify crash_standalone_0.24.2.asc crash_standalone_0.24.2     && rm -rf "$GNUPGHOME" crash_standalone_0.24.2.asc     && mv crash_standalone_0.24.2 /usr/local/bin/crash     && chmod +x /usr/local/bin/crash
-# Fri, 09 Aug 2019 21:22:46 GMT
+# Tue, 20 Aug 2019 20:53:55 GMT
 ENV PATH=/crate/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Fri, 09 Aug 2019 21:22:46 GMT
+# Tue, 20 Aug 2019 20:53:55 GMT
 ENV CRATE_HEAP_SIZE=512M
-# Fri, 09 Aug 2019 21:22:47 GMT
+# Tue, 20 Aug 2019 20:53:55 GMT
 RUN mkdir -p /data/data /data/log
-# Fri, 09 Aug 2019 21:22:47 GMT
+# Tue, 20 Aug 2019 20:53:56 GMT
 VOLUME [/data]
-# Fri, 09 Aug 2019 21:22:47 GMT
+# Tue, 20 Aug 2019 20:53:56 GMT
 WORKDIR /data
-# Fri, 09 Aug 2019 21:22:47 GMT
+# Tue, 20 Aug 2019 20:53:56 GMT
 EXPOSE 4200 4300 5432
-# Fri, 09 Aug 2019 21:22:47 GMT
+# Tue, 20 Aug 2019 20:53:56 GMT
 COPY --chown=1000:0file:bff8d2f33b7a44d36fcd66fc7e7d92b0ee463d0eb0df2a56e42511d4f1b3e9b2 in /crate/config/crate.yml 
-# Fri, 09 Aug 2019 21:22:47 GMT
+# Tue, 20 Aug 2019 20:53:56 GMT
 COPY --chown=1000:0file:5f0d1b776d3a6517508a00a88f8053bd0933a642599374c9dff00dc3b632fd09 in /crate/config/log4j2.properties 
-# Fri, 09 Aug 2019 21:22:48 GMT
+# Tue, 20 Aug 2019 20:53:56 GMT
 LABEL maintainer=Crate.io <office@crate.io> org.label-schema.schema-version=1.0 org.label-schema.build-date=2019-08-07T06:50:59.230679 org.label-schema.name=crate org.label-schema.description=CrateDB is a distributed SQL database handles massive amounts of machine data in real-time. org.label-schema.url=https://crate.io/products/cratedb/ org.label-schema.vcs-url=https://github.com/crate/docker-crate org.label-schema.vendor=Crate.io org.label-schema.version=4.0.3
-# Fri, 09 Aug 2019 21:22:48 GMT
+# Tue, 20 Aug 2019 20:53:57 GMT
 COPY file:9830363b41b8063591887d9dc9ce2767bf0e91dc4cb05efcb6ea622a60ec15e3 in / 
-# Fri, 09 Aug 2019 21:22:48 GMT
+# Tue, 20 Aug 2019 20:53:57 GMT
 ENTRYPOINT ["/docker-entrypoint.sh"]
-# Fri, 09 Aug 2019 21:22:48 GMT
+# Tue, 20 Aug 2019 20:53:57 GMT
 CMD ["crate"]
 ```
 
 -	Layers:
-	-	`sha256:8ba884070f611d31cb2c42eddb691319dc9facf5e0ec67672fcfa135181ab3df`  
-		Last Modified: Thu, 14 Mar 2019 21:24:11 GMT  
-		Size: 75.4 MB (75403831 bytes)  
+	-	`sha256:d8d02d45731499028db01b6fa35475f91d230628b4e25fab8e3c015594dc3261`  
+		Last Modified: Tue, 20 Aug 2019 20:23:41 GMT  
+		Size: 75.4 MB (75412258 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c3a6ddc97e717216c4d09cb226d7c28378812cda87215ea56c16e1af8b56e38e`  
-		Last Modified: Thu, 14 Mar 2019 22:13:39 GMT  
-		Size: 2.0 KB (2015 bytes)  
+	-	`sha256:d585f0c94581495265d491049079ca722fc23fee68a8a350da0a6d05182d6066`  
+		Last Modified: Tue, 20 Aug 2019 20:58:09 GMT  
+		Size: 2.0 KB (2013 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:3be745b1a18ab95762b064059dda9854d45588a512d2b71818d3b2770d6cecf5`  
-		Last Modified: Tue, 16 Jul 2019 23:22:22 GMT  
-		Size: 198.1 MB (198127805 bytes)  
+	-	`sha256:7f49a57a3d1b8f92010204e8d826bcaecd13e8a65a3e036b43b3dd1fb5ff9ca9`  
+		Last Modified: Tue, 20 Aug 2019 20:58:27 GMT  
+		Size: 198.1 MB (198127889 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:dad04299536bb1685dc155711e0fd37200c1b86613f9ea6a1a5c8c831f47b744`  
-		Last Modified: Tue, 16 Jul 2019 23:22:04 GMT  
+	-	`sha256:c6f2e98f514718a5642123cc4b2b365dc518f7e65945600e574cfb6b2200b6ff`  
+		Last Modified: Tue, 20 Aug 2019 20:58:08 GMT  
 		Size: 215.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:d1c64e9b630e91002f2092b7dffa18f236c51e6c81ac657fcffb0a1c56918ede`  
-		Last Modified: Fri, 09 Aug 2019 21:23:24 GMT  
-		Size: 76.5 MB (76485903 bytes)  
+	-	`sha256:a78fe2be38e5997a1c188313d05566397b8c264b35b6f0898df0082cdaa7e4e3`  
+		Last Modified: Tue, 20 Aug 2019 20:58:17 GMT  
+		Size: 75.1 MB (75076713 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:02019746fd7b16f952aee180dea340e11ef3dffb1aeaba901c7c70cf4853f2de`  
-		Last Modified: Fri, 09 Aug 2019 21:23:16 GMT  
-		Size: 266.0 B  
+	-	`sha256:f0483d59d017a7db424e78bcc2e8d1ec067e3bb0e8714518f9d0011fb9e7cc3d`  
+		Last Modified: Tue, 20 Aug 2019 20:58:08 GMT  
+		Size: 264.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:01bd9a14e5b147c80dac2f4dae5ae72d58a4e768733650086cf8e947317dce95`  
-		Last Modified: Fri, 09 Aug 2019 21:23:16 GMT  
+	-	`sha256:a3161243011ff49af94dd6f2a2a35c8b93c859a26eee881b8f83a698c7c48669`  
+		Last Modified: Tue, 20 Aug 2019 20:58:08 GMT  
+		Size: 957.0 B  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:14e15dc716e31e0c63e643d412707fc37aef598ae487194a97e8e34e7d8e08f6`  
+		Last Modified: Tue, 20 Aug 2019 20:58:07 GMT  
+		Size: 1.3 MB (1294031 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:70024422bab19b4a73900131dc4978ec4ce45aeec4780640b38cdccd79e4293c`  
+		Last Modified: Tue, 20 Aug 2019 20:58:07 GMT  
+		Size: 126.0 B  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:464256e7bd0cf579a1a3e599eaaeff2fa7da8c8cfa7f888f31c7a0faca310849`  
+		Last Modified: Tue, 20 Aug 2019 20:58:07 GMT  
+		Size: 265.0 B  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:81c2c33c028210d716773acd350ab86f354067d73ca48ac5a1234b278d78dd40`  
+		Last Modified: Tue, 20 Aug 2019 20:58:07 GMT  
 		Size: 958.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:ed80262a63acbe804bbfbbf316915f69fb7651ccd43677ac97d22a36e9583eb7`  
-		Last Modified: Fri, 09 Aug 2019 21:23:15 GMT  
-		Size: 1.3 MB (1294048 bytes)  
-		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:9315aee42f8e4aa825162f157f6b44a1c44b6c216df348338e89c10b43dd5ee8`  
-		Last Modified: Fri, 09 Aug 2019 21:23:15 GMT  
-		Size: 127.0 B  
-		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:433d03853f711629ea83a75e39607ca3cc271b54fb192c3f02d61d0eda6cf881`  
-		Last Modified: Fri, 09 Aug 2019 21:23:15 GMT  
-		Size: 266.0 B  
-		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:b19fb18c6ffea65088b1bd0aadf04a995e914d7191d4d3249d11f73dee4a509b`  
-		Last Modified: Fri, 09 Aug 2019 21:23:15 GMT  
-		Size: 958.0 B  
-		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:39da3f1cb8c10fbd49b8f7e98b83f77f90715d69c59cd6382bbe0c1fddc29836`  
-		Last Modified: Fri, 09 Aug 2019 21:23:15 GMT  
-		Size: 527.0 B  
+	-	`sha256:efbe5bcec5fd7bdcf360952ef891d496027a10f7c09c8add6fc14328a3a733b6`  
+		Last Modified: Tue, 20 Aug 2019 20:58:07 GMT  
+		Size: 526.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `crate:latest` - linux; arm64 variant v8
