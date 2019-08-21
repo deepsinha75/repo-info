@@ -1287,20 +1287,13 @@ Licenses: (parsed from: `/usr/share/doc/libgraphite2-3/copyright`)
 - `custom-sil-open-font-license`
 - `public-domain`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris graphite2=1.3.13-7
-'http://deb.debian.org/debian/pool/main/g/graphite2/graphite2_1.3.13-7.dsc' graphite2_1.3.13-7.dsc 2552 SHA256:0c646f75bfaee6b2447fc065dd3db3008c51896bfd3c1ff51919c14a34c6d831
-'http://deb.debian.org/debian/pool/main/g/graphite2/graphite2_1.3.13.orig.tar.gz' graphite2_1.3.13.orig.tar.gz 6664941 SHA256:2f9f609deeddfe2b193502adc8df3b0396694b799a433c36e85fd1242e654cd9
-'http://deb.debian.org/debian/pool/main/g/graphite2/graphite2_1.3.13-7.debian.tar.xz' graphite2_1.3.13-7.debian.tar.xz 11972 SHA256:6577d43c7b40f8bcf4b18cb86284eec973029a341c1155754649557526304534
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/graphite2/1.3.13-7/
 
-- https://sources.debian.net/src/graphite2/1.3.13-7/ (for browsing the source)
-- https://sources.debian.net/src/graphite2/1.3.13-7/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/graphite2/1.3.13-7/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `grep=3.3-1`
 
@@ -1363,20 +1356,13 @@ Licenses: (parsed from: `/usr/share/doc/libharfbuzz0b/copyright`)
 
 - `MIT`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris harfbuzz=2.5.3-1
-'http://deb.debian.org/debian/pool/main/h/harfbuzz/harfbuzz_2.5.3-1.dsc' harfbuzz_2.5.3-1.dsc 2292 SHA256:e12e32766f539aa707cc56eb40dc53d1728a92e850f175317711150c19d97db8
-'http://deb.debian.org/debian/pool/main/h/harfbuzz/harfbuzz_2.5.3.orig.tar.xz' harfbuzz_2.5.3.orig.tar.xz 5685712 SHA256:fed00dc797b7ba3ca943225f0a854baaed4c1640fff8a31d455cd3b5caec855c
-'http://deb.debian.org/debian/pool/main/h/harfbuzz/harfbuzz_2.5.3-1.debian.tar.xz' harfbuzz_2.5.3-1.debian.tar.xz 9708 SHA256:3cee703d5f5e6205b2b19e2b2c89e80ddae848f81fe023b422983f7befc18476
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/harfbuzz/2.5.3-1/
 
-- https://sources.debian.net/src/harfbuzz/2.5.3-1/ (for browsing the source)
-- https://sources.debian.net/src/harfbuzz/2.5.3-1/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/harfbuzz/2.5.3-1/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `hostname=3.21`
 
@@ -2720,14 +2706,13 @@ Licenses: (parsed from: `/usr/share/doc/littler/copyright`, `/usr/share/doc/r-cr
 
 - `GPL`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris littler=0.3.8-1
-'http://http.debian.net/debian/pool/main/l/littler/littler_0.3.8-1.dsc' littler_0.3.8-1.dsc 1889 SHA256:576bf4bf9ad2a18528bc48e061ef63f74e774a06604c771c0def6c4c7a683807
-'http://http.debian.net/debian/pool/main/l/littler/littler_0.3.8.orig.tar.gz' littler_0.3.8.orig.tar.gz 649584 SHA256:6a18a7e18e183f05a2ec715df0ef4b4b4b201b02e305a84e4c666b1706e08a3c
-'http://http.debian.net/debian/pool/main/l/littler/littler_0.3.8-1.debian.tar.xz' littler_0.3.8-1.debian.tar.xz 6800 SHA256:b56a25f65c628e933471efa9c6eeabaa138260f8df5273e19a0fce335298e231
-```
+The source package *may* still be available for download from:
+
+- http://snapshot.debian.org/package/littler/0.3.8-1/
+
 
 ### `dpkg` source package: `lsb=11.0.0`
 
@@ -2836,14 +2821,13 @@ Licenses: (parsed from: `/usr/share/doc/r-cran-mgcv/copyright`)
 
 - `GPL`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris mgcv=1.8-28-1
-'http://http.debian.net/debian/pool/main/m/mgcv/mgcv_1.8-28-1.dsc' mgcv_1.8-28-1.dsc 1827 SHA256:5f623cce27b94e1df8d29ff091c2d6c0e1c5fc3b6405fb84411c97a2c7c4bd3d
-'http://http.debian.net/debian/pool/main/m/mgcv/mgcv_1.8-28.orig.tar.gz' mgcv_1.8-28.orig.tar.gz 915991 SHA256:b55ea8227cd5c263c266c3885fa3299aa6bd23b54186517f9299bf38a7bdd3ea
-'http://http.debian.net/debian/pool/main/m/mgcv/mgcv_1.8-28-1.debian.tar.xz' mgcv_1.8-28-1.debian.tar.xz 5176 SHA256:388d2f9d45ddee229afe9c9afbe4d2f9dd2b81c42f7cdfd522bd8be6a262402e
-```
+The source package *may* still be available for download from:
+
+- http://snapshot.debian.org/package/mgcv/1.8-28-1/
+
 
 ### `dpkg` source package: `mpclib3=1.1.0-1`
 
@@ -2998,20 +2982,13 @@ Licenses: (parsed from: `/usr/share/doc/libnghttp2-14/copyright`)
 - `SIL-OFL-1.1`
 - `all-permissive`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris nghttp2=1.37.0-1
-'http://deb.debian.org/debian/pool/main/n/nghttp2/nghttp2_1.37.0-1.dsc' nghttp2_1.37.0-1.dsc 2569 SHA256:666a1e661f5657748b555231f255e65a9d695007de0c15f01d66cc00573114ef
-'http://deb.debian.org/debian/pool/main/n/nghttp2/nghttp2_1.37.0.orig.tar.bz2' nghttp2_1.37.0.orig.tar.bz2 1917463 SHA256:8276e3d1d8dac34567ff75644f505df2994f2f8d66efaf960aa54d93005723ae
-'http://deb.debian.org/debian/pool/main/n/nghttp2/nghttp2_1.37.0-1.debian.tar.xz' nghttp2_1.37.0-1.debian.tar.xz 12584 SHA256:a7858396abe7201d65a097d4868a98569798441eabc08dbdd88ebee3e7e3b67b
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/nghttp2/1.37.0-1/
 
-- https://sources.debian.net/src/nghttp2/1.37.0-1/ (for browsing the source)
-- https://sources.debian.net/src/nghttp2/1.37.0-1/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/nghttp2/1.37.0-1/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `nlme=3.1.141-1`
 
@@ -3429,14 +3406,13 @@ Licenses: (parsed from: `/usr/share/doc/r-cran-mass/copyright`)
 - `GPL-2`
 - `GPL-2 | GPL-3`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris r-cran-mass=7.3-51.4-1
-'http://http.debian.net/debian/pool/main/r/r-cran-mass/r-cran-mass_7.3-51.4-1.dsc' r-cran-mass_7.3-51.4-1.dsc 1858 SHA256:d6dc4b3ad155100982ba2cc71587f986d2bbaf94ac56b80bdc28bb4c83beec48
-'http://http.debian.net/debian/pool/main/r/r-cran-mass/r-cran-mass_7.3-51.4.orig.tar.gz' r-cran-mass_7.3-51.4.orig.tar.gz 487233 SHA256:9911d546a8d29dc906b46cb53ef8aad76d23566f4fc3b52778a1201f8a9b2c74
-'http://http.debian.net/debian/pool/main/r/r-cran-mass/r-cran-mass_7.3-51.4-1.debian.tar.xz' r-cran-mass_7.3-51.4-1.debian.tar.xz 6172 SHA256:a3236a9bc11744329bc740de6cd3795944b171b877a523a2da7aa174760a757a
-```
+The source package *may* still be available for download from:
+
+- http://snapshot.debian.org/package/r-cran-mass/7.3-51.4-1/
+
 
 ### `dpkg` source package: `r-cran-nnet=7.3-12-2`
 
@@ -3530,14 +3506,13 @@ Licenses: (parsed from: `/usr/share/doc/r-cran-matrix/copyright`)
 - `GPL-2+`
 - `LGPL-2.1`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris rmatrix=1.2-17-1
-'http://http.debian.net/debian/pool/main/r/rmatrix/rmatrix_1.2-17-1.dsc' rmatrix_1.2-17-1.dsc 1864 SHA256:773c1597ce2c5b9de680b4963b1811fbff720198ff5be170107bf4932767c17e
-'http://http.debian.net/debian/pool/main/r/rmatrix/rmatrix_1.2-17.orig.tar.gz' rmatrix_1.2-17.orig.tar.gz 1860456 SHA256:db43e6f0196fd5dfd05a7e88cac193877352c60d771d4ec8772763e645723fcc
-'http://http.debian.net/debian/pool/main/r/rmatrix/rmatrix_1.2-17-1.debian.tar.xz' rmatrix_1.2-17-1.debian.tar.xz 5496 SHA256:5979921e4943451a757fbb23212750a286990b4c8e6cbd230dbd5ed0e4da7355
-```
+The source package *may* still be available for download from:
+
+- http://snapshot.debian.org/package/rmatrix/1.2-17-1/
+
 
 ### `dpkg` source package: `rpart=4.1-15-1`
 
@@ -3550,14 +3525,13 @@ Licenses: (parsed from: `/usr/share/doc/r-cran-rpart/copyright`)
 - `GPL-2`
 - `GPL-2 | license included below`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris rpart=4.1-15-1
-'http://http.debian.net/debian/pool/main/r/rpart/rpart_4.1-15-1.dsc' rpart_4.1-15-1.dsc 1840 SHA256:07e4ebe07d10756e7bd62f3f55c2ab2ddc183f12a86d0701c4710c236637087b
-'http://http.debian.net/debian/pool/main/r/rpart/rpart_4.1-15.orig.tar.gz' rpart_4.1-15.orig.tar.gz 639286 SHA256:2b8ebe0e9e11592debff893f93f5a44a6765abd0bd956b0eb1f70e9394cfae5c
-'http://http.debian.net/debian/pool/main/r/rpart/rpart_4.1-15-1.debian.tar.xz' rpart_4.1-15-1.debian.tar.xz 4308 SHA256:7ad1ddb68d0b9d441ee49c0df229fc6f5c7615ca03b294aa9b09c53bbcf9af5b
-```
+The source package *may* still be available for download from:
+
+- http://snapshot.debian.org/package/rpart/4.1-15-1/
+
 
 ### `dpkg` source package: `rtmpdump=2.4+20151223.gitfa8646d.1-2`
 
@@ -3675,14 +3649,13 @@ Licenses: (parsed from: `/usr/share/doc/r-cran-survival/copyright`)
 
 - `GPL-2`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris survival=2.44-1.1-1
-'http://http.debian.net/debian/pool/main/s/survival/survival_2.44-1.1-1.dsc' survival_2.44-1.1-1.dsc 1876 SHA256:fc07997861fc5b591f5a56e4af7d7722337d28aa3cd85d300aafde4024cc906a
-'http://http.debian.net/debian/pool/main/s/survival/survival_2.44-1.1.orig.tar.gz' survival_2.44-1.1.orig.tar.gz 4597096 SHA256:55b151e15fcd24ccb3acf60331c9a7ad82bc10f3841ab3be9bc2a37e9ee751b9
-'http://http.debian.net/debian/pool/main/s/survival/survival_2.44-1.1-1.debian.tar.xz' survival_2.44-1.1-1.debian.tar.xz 5900 SHA256:ad8b64b01ffef874bb79e0cf039502944f7edc25c2d1cf902e119bbfc3dd30fc
-```
+The source package *may* still be available for download from:
+
+- http://snapshot.debian.org/package/survival/2.44-1.1-1/
+
 
 ### `dpkg` source package: `systemd=241-7`
 
@@ -3727,21 +3700,13 @@ Licenses: (parsed from: `/usr/share/doc/sysvinit-utils/copyright`)
 - `GPL-2`
 - `GPL-2+`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris sysvinit=2.95-4
-'http://deb.debian.org/debian/pool/main/s/sysvinit/sysvinit_2.95-4.dsc' sysvinit_2.95-4.dsc 2651 SHA256:97c9b8a9297c0446d649be16314fa633e5c39eeee395073a72cded5a261d7f3c
-'http://deb.debian.org/debian/pool/main/s/sysvinit/sysvinit_2.95.orig.tar.xz' sysvinit_2.95.orig.tar.xz 124576 SHA256:c9029cb93f36bbbad8e1ce109f75e6f4d26056d271106e8812cda7159b6f86c8
-'http://deb.debian.org/debian/pool/main/s/sysvinit/sysvinit_2.95.orig.tar.xz.asc' sysvinit_2.95.orig.tar.xz.asc 313 SHA256:a6b780455ed83b25924fa79d3c8a8669f8ce3cbad44d716d48cc937f25611b83
-'http://deb.debian.org/debian/pool/main/s/sysvinit/sysvinit_2.95-4.debian.tar.xz' sysvinit_2.95-4.debian.tar.xz 128516 SHA256:14390d1f39c6578f8e2cef58cbed18a083609f42031da703cebc4c0ee982ce8c
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/sysvinit/2.95-4/
 
-- https://sources.debian.net/src/sysvinit/2.95-4/ (for browsing the source)
-- https://sources.debian.net/src/sysvinit/2.95-4/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/sysvinit/2.95-4/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `tar=1.30+dfsg-6`
 
@@ -3829,20 +3794,13 @@ Licenses: (parsed from: `/usr/share/doc/libtiff5/copyright`)
 
 - `Hylafax`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris tiff=4.0.10-4
-'http://deb.debian.org/debian/pool/main/t/tiff/tiff_4.0.10-4.dsc' tiff_4.0.10-4.dsc 2173 SHA256:3c5d339cd5dbb59c1e97bf8687c36e0ed75aefe79fc248f749931897060a641e
-'http://deb.debian.org/debian/pool/main/t/tiff/tiff_4.0.10.orig.tar.gz' tiff_4.0.10.orig.tar.gz 2402867 SHA256:2c52d11ccaf767457db0c46795d9c7d1a8d8f76f68b0b800a3dfe45786b996e4
-'http://deb.debian.org/debian/pool/main/t/tiff/tiff_4.0.10-4.debian.tar.xz' tiff_4.0.10-4.debian.tar.xz 21580 SHA256:eed80359456ae1437426be3894ed594ac6d6051306afee6093abdc65a07887b0
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/tiff/4.0.10-4/
 
-- https://sources.debian.net/src/tiff/4.0.10-4/ (for browsing the source)
-- https://sources.debian.net/src/tiff/4.0.10-4/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/tiff/4.0.10-4/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `tk8.6=8.6.9-2`
 
@@ -3879,20 +3837,13 @@ Binary Packages:
 If source is available (seen below), check the contents of `debian/copyright` within it.
 
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris tzdata=2019b-1
-'http://deb.debian.org/debian/pool/main/t/tzdata/tzdata_2019b-1.dsc' tzdata_2019b-1.dsc 1991 SHA256:bb630c84886a8af335ab1314970546c991cf4f6af97de6e475a4e1655c15d14a
-'http://deb.debian.org/debian/pool/main/t/tzdata/tzdata_2019b.orig.tar.gz' tzdata_2019b.orig.tar.gz 384667 SHA256:05d9092c90dcf9ec4f3ccfdea80c7dcea5e882b3b105c3422da172aaa9a50c64
-'http://deb.debian.org/debian/pool/main/t/tzdata/tzdata_2019b-1.debian.tar.xz' tzdata_2019b-1.debian.tar.xz 104788 SHA256:1fd680bfd9a12b1c983aba24204ae52b3b59bdbc8bdc94a202ff13212ca3ba42
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/tzdata/2019b-1/
 
-- https://sources.debian.net/src/tzdata/2019b-1/ (for browsing the source)
-- https://sources.debian.net/src/tzdata/2019b-1/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/tzdata/2019b-1/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `ucf=3.0038+nmu1`
 
