@@ -1,7 +1,7 @@
 ## `httpd:2-alpine`
 
 ```console
-$ docker pull httpd@sha256:af13aceeac1feeb32887d05ab8fca64fd53aef261e9526e375e04ef761da7829
+$ docker pull httpd@sha256:a32ab4c3af9c8633f3c022deaee0afcd22188716bfcb10b3fe9423f04958481e
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -17,14 +17,14 @@ $ docker pull httpd@sha256:af13aceeac1feeb32887d05ab8fca64fd53aef261e9526e375e04
 ### `httpd:2-alpine` - linux; amd64
 
 ```console
-$ docker pull httpd@sha256:fc50ec4693454f84052ffe2e3554f60c98bb5ee7ced5aa2388bb79fa02fd260e
+$ docker pull httpd@sha256:1317c30ec3bd81073914a5ef29ad30e208813ae31589acee68a619f2509fa2c2
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **41.9 MB (41939840 bytes)**  
+-	Total Size: **41.9 MB (41939844 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:53244e0543627db85a44391f5c3972131e3cb3b6f37ab0f49a0439f80b3d5cd7`
+-	Image ID: `sha256:141bb8d01fbdb85ebce154d431ba4c3fc25e2eaa21895f70345a21d0448fdcec`
 -	Default Command: `["httpd-foreground"]`
 
 ```dockerfile
@@ -50,11 +50,13 @@ ENV HTTPD_SHA256=133d48298fe5315ae9366a0ec66282fa4040efa5d566174481077ade7d18ea4
 ENV HTTPD_PATCHES=
 # Tue, 20 Aug 2019 21:44:11 GMT
 RUN set -eux; 		runDeps=' 		apr-dev 		apr-util-dev 		apr-util-ldap 		perl 	'; 	apk add --no-cache --virtual .build-deps 		$runDeps 		ca-certificates 		coreutils 		dpkg-dev dpkg 		gcc 		gnupg 		libc-dev 		curl-dev 		jansson-dev 		libxml2-dev 		lua-dev 		make 		nghttp2-dev 		openssl 		openssl-dev 		pcre-dev 		tar 		zlib-dev 	; 		ddist() { 		local f="$1"; shift; 		local distFile="$1"; shift; 		local success=; 		local distUrl=; 		for distUrl in 			'https://www.apache.org/dyn/closer.cgi?action=download&filename=' 			https://www-us.apache.org/dist/ 			https://www.apache.org/dist/ 			https://archive.apache.org/dist/ 		; do 			if wget -O "$f" "$distUrl$distFile" && [ -s "$f" ]; then 				success=1; 				break; 			fi; 		done; 		[ -n "$success" ]; 	}; 		ddist 'httpd.tar.bz2' "httpd/httpd-$HTTPD_VERSION.tar.bz2"; 	echo "$HTTPD_SHA256 *httpd.tar.bz2" | sha256sum -c -; 		ddist 'httpd.tar.bz2.asc' "httpd/httpd-$HTTPD_VERSION.tar.bz2.asc"; 	export GNUPGHOME="$(mktemp -d)"; 	for key in 		A93D62ECC3C8EA12DB220EC934EA76E6791485A8 		B9E8213AEFB861AF35A41F2C995E35221AD84DFF 	; do 		gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys "$key"; 	done; 	gpg --batch --verify httpd.tar.bz2.asc httpd.tar.bz2; 	command -v gpgconf && gpgconf --kill all || :; 	rm -rf "$GNUPGHOME" httpd.tar.bz2.asc; 		mkdir -p src; 	tar -xf httpd.tar.bz2 -C src --strip-components=1; 	rm httpd.tar.bz2; 	cd src; 		patches() { 		while [ "$#" -gt 0 ]; do 			local patchFile="$1"; shift; 			local patchSha256="$1"; shift; 			ddist "$patchFile" "httpd/patches/apply_to_$HTTPD_VERSION/$patchFile"; 			echo "$patchSha256 *$patchFile" | sha256sum -c -; 			patch -p0 < "$patchFile"; 			rm -f "$patchFile"; 		done; 	}; 	patches $HTTPD_PATCHES; 		gnuArch="$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)"; 	./configure 		--build="$gnuArch" 		--prefix="$HTTPD_PREFIX" 		--enable-mods-shared=reallyall 		--enable-mpms-shared=all 	; 	make -j "$(nproc)"; 	make install; 		cd ..; 	rm -r src man manual; 		sed -ri 		-e 's!^(\s*CustomLog)\s+\S+!\1 /proc/self/fd/1!g' 		-e 's!^(\s*ErrorLog)\s+\S+!\1 /proc/self/fd/2!g' 		-e 's!^(\s*TransferLog)\s+\S+!\1 /proc/self/fd/1!g' 		"$HTTPD_PREFIX/conf/httpd.conf" 		"$HTTPD_PREFIX/conf/extra/httpd-ssl.conf" 	; 		runDeps="$runDeps $( 		scanelf --needed --nobanner --format '%n#p' --recursive /usr/local 			| tr ',' '\n' 			| sort -u 			| awk 'system("[ -e /usr/local/lib/" $1 " ]") == 0 { next } { print "so:" $1 }' 	)"; 	apk add --virtual .httpd-rundeps $runDeps; 	apk del .build-deps; 		httpd -v
-# Tue, 20 Aug 2019 21:44:11 GMT
+# Wed, 21 Aug 2019 21:27:26 GMT
+STOPSIGNAL WINCH
+# Wed, 21 Aug 2019 21:27:27 GMT
 COPY file:c432ff61c4993ecdef4786f48d91a96f8f0707f6179816ccb98db661bfb96b90 in /usr/local/bin/ 
-# Tue, 20 Aug 2019 21:44:11 GMT
+# Wed, 21 Aug 2019 21:27:27 GMT
 EXPOSE 80
-# Tue, 20 Aug 2019 21:44:11 GMT
+# Wed, 21 Aug 2019 21:27:27 GMT
 CMD ["httpd-foreground"]
 ```
 
@@ -75,9 +77,9 @@ CMD ["httpd-foreground"]
 		Last Modified: Tue, 20 Aug 2019 21:44:41 GMT  
 		Size: 39.1 MB (39148474 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:e5d8a6852cf3016d191ff9737cafb337957d0cede540be5a6240d01350617fa1`  
-		Last Modified: Tue, 20 Aug 2019 21:44:32 GMT  
-		Size: 293.0 B  
+	-	`sha256:4e10ed3cf6fc5c925fe541111c5f6e5f98502f98b4a4fa65381abfccf650fec0`  
+		Last Modified: Wed, 21 Aug 2019 21:27:40 GMT  
+		Size: 297.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `httpd:2-alpine` - linux; arm variant v6
@@ -281,14 +283,14 @@ CMD ["httpd-foreground"]
 ### `httpd:2-alpine` - linux; 386
 
 ```console
-$ docker pull httpd@sha256:a152da3673e9a5df12e8e069bb0a3bc3f797a82e6c75c55c35fb0c1c4c70550d
+$ docker pull httpd@sha256:4a8d62221ee71696ab63efeb8c61056bf04c38d17a17e2dce9c69fb7126ae3ba
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **41.1 MB (41140295 bytes)**  
+-	Total Size: **41.1 MB (41140298 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:768b041c94ed0ac8a24664475172922f55f3a21e7615802656a965987d9bf4c5`
+-	Image ID: `sha256:6e75c5642d1c3447718bc092c369a48081c422816d9e2fbaf4522ecb30404123`
 -	Default Command: `["httpd-foreground"]`
 
 ```dockerfile
@@ -314,11 +316,13 @@ ENV HTTPD_SHA256=133d48298fe5315ae9366a0ec66282fa4040efa5d566174481077ade7d18ea4
 ENV HTTPD_PATCHES=
 # Tue, 20 Aug 2019 21:53:32 GMT
 RUN set -eux; 		runDeps=' 		apr-dev 		apr-util-dev 		apr-util-ldap 		perl 	'; 	apk add --no-cache --virtual .build-deps 		$runDeps 		ca-certificates 		coreutils 		dpkg-dev dpkg 		gcc 		gnupg 		libc-dev 		curl-dev 		jansson-dev 		libxml2-dev 		lua-dev 		make 		nghttp2-dev 		openssl 		openssl-dev 		pcre-dev 		tar 		zlib-dev 	; 		ddist() { 		local f="$1"; shift; 		local distFile="$1"; shift; 		local success=; 		local distUrl=; 		for distUrl in 			'https://www.apache.org/dyn/closer.cgi?action=download&filename=' 			https://www-us.apache.org/dist/ 			https://www.apache.org/dist/ 			https://archive.apache.org/dist/ 		; do 			if wget -O "$f" "$distUrl$distFile" && [ -s "$f" ]; then 				success=1; 				break; 			fi; 		done; 		[ -n "$success" ]; 	}; 		ddist 'httpd.tar.bz2' "httpd/httpd-$HTTPD_VERSION.tar.bz2"; 	echo "$HTTPD_SHA256 *httpd.tar.bz2" | sha256sum -c -; 		ddist 'httpd.tar.bz2.asc' "httpd/httpd-$HTTPD_VERSION.tar.bz2.asc"; 	export GNUPGHOME="$(mktemp -d)"; 	for key in 		A93D62ECC3C8EA12DB220EC934EA76E6791485A8 		B9E8213AEFB861AF35A41F2C995E35221AD84DFF 	; do 		gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys "$key"; 	done; 	gpg --batch --verify httpd.tar.bz2.asc httpd.tar.bz2; 	command -v gpgconf && gpgconf --kill all || :; 	rm -rf "$GNUPGHOME" httpd.tar.bz2.asc; 		mkdir -p src; 	tar -xf httpd.tar.bz2 -C src --strip-components=1; 	rm httpd.tar.bz2; 	cd src; 		patches() { 		while [ "$#" -gt 0 ]; do 			local patchFile="$1"; shift; 			local patchSha256="$1"; shift; 			ddist "$patchFile" "httpd/patches/apply_to_$HTTPD_VERSION/$patchFile"; 			echo "$patchSha256 *$patchFile" | sha256sum -c -; 			patch -p0 < "$patchFile"; 			rm -f "$patchFile"; 		done; 	}; 	patches $HTTPD_PATCHES; 		gnuArch="$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)"; 	./configure 		--build="$gnuArch" 		--prefix="$HTTPD_PREFIX" 		--enable-mods-shared=reallyall 		--enable-mpms-shared=all 	; 	make -j "$(nproc)"; 	make install; 		cd ..; 	rm -r src man manual; 		sed -ri 		-e 's!^(\s*CustomLog)\s+\S+!\1 /proc/self/fd/1!g' 		-e 's!^(\s*ErrorLog)\s+\S+!\1 /proc/self/fd/2!g' 		-e 's!^(\s*TransferLog)\s+\S+!\1 /proc/self/fd/1!g' 		"$HTTPD_PREFIX/conf/httpd.conf" 		"$HTTPD_PREFIX/conf/extra/httpd-ssl.conf" 	; 		runDeps="$runDeps $( 		scanelf --needed --nobanner --format '%n#p' --recursive /usr/local 			| tr ',' '\n' 			| sort -u 			| awk 'system("[ -e /usr/local/lib/" $1 " ]") == 0 { next } { print "so:" $1 }' 	)"; 	apk add --virtual .httpd-rundeps $runDeps; 	apk del .build-deps; 		httpd -v
-# Tue, 20 Aug 2019 21:53:33 GMT
+# Wed, 21 Aug 2019 21:44:36 GMT
+STOPSIGNAL WINCH
+# Wed, 21 Aug 2019 21:44:36 GMT
 COPY file:c432ff61c4993ecdef4786f48d91a96f8f0707f6179816ccb98db661bfb96b90 in /usr/local/bin/ 
-# Tue, 20 Aug 2019 21:53:33 GMT
+# Wed, 21 Aug 2019 21:44:36 GMT
 EXPOSE 80
-# Tue, 20 Aug 2019 21:53:33 GMT
+# Wed, 21 Aug 2019 21:44:36 GMT
 CMD ["httpd-foreground"]
 ```
 
@@ -339,22 +343,22 @@ CMD ["httpd-foreground"]
 		Last Modified: Tue, 20 Aug 2019 21:54:05 GMT  
 		Size: 38.4 MB (38361204 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:e1eb39e38dc7ef05cef1ed91cd9c2fbad9d3e38bc083d991beb477f88d8d4811`  
-		Last Modified: Tue, 20 Aug 2019 21:53:54 GMT  
-		Size: 292.0 B  
+	-	`sha256:85f132051a489f6847902eaad99887d54d149cdf799f932391d182c4b2209584`  
+		Last Modified: Wed, 21 Aug 2019 21:44:48 GMT  
+		Size: 295.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `httpd:2-alpine` - linux; ppc64le
 
 ```console
-$ docker pull httpd@sha256:eb5b4cc110c1dce122d47816d0d59e4cf6434a177d6aa6eabe2cd72ef8db940b
+$ docker pull httpd@sha256:149499a41155e59d78b32f9cce0a6db6ee62b8f60f9b3870a6725e674cf9ba89
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **42.7 MB (42650212 bytes)**  
+-	Total Size: **42.7 MB (42650214 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:91d8ef4a3fd87846205c3a3e4eeff6cff33e3a32950c7c9196e94059a91e9117`
+-	Image ID: `sha256:fcbfacc979629e27ac51adbdfc2d5b0a9b37b7b85ebb8e801d252445b33ff872`
 -	Default Command: `["httpd-foreground"]`
 
 ```dockerfile
@@ -380,11 +384,13 @@ ENV HTTPD_SHA256=133d48298fe5315ae9366a0ec66282fa4040efa5d566174481077ade7d18ea4
 ENV HTTPD_PATCHES=
 # Tue, 20 Aug 2019 23:10:43 GMT
 RUN set -eux; 		runDeps=' 		apr-dev 		apr-util-dev 		apr-util-ldap 		perl 	'; 	apk add --no-cache --virtual .build-deps 		$runDeps 		ca-certificates 		coreutils 		dpkg-dev dpkg 		gcc 		gnupg 		libc-dev 		curl-dev 		jansson-dev 		libxml2-dev 		lua-dev 		make 		nghttp2-dev 		openssl 		openssl-dev 		pcre-dev 		tar 		zlib-dev 	; 		ddist() { 		local f="$1"; shift; 		local distFile="$1"; shift; 		local success=; 		local distUrl=; 		for distUrl in 			'https://www.apache.org/dyn/closer.cgi?action=download&filename=' 			https://www-us.apache.org/dist/ 			https://www.apache.org/dist/ 			https://archive.apache.org/dist/ 		; do 			if wget -O "$f" "$distUrl$distFile" && [ -s "$f" ]; then 				success=1; 				break; 			fi; 		done; 		[ -n "$success" ]; 	}; 		ddist 'httpd.tar.bz2' "httpd/httpd-$HTTPD_VERSION.tar.bz2"; 	echo "$HTTPD_SHA256 *httpd.tar.bz2" | sha256sum -c -; 		ddist 'httpd.tar.bz2.asc' "httpd/httpd-$HTTPD_VERSION.tar.bz2.asc"; 	export GNUPGHOME="$(mktemp -d)"; 	for key in 		A93D62ECC3C8EA12DB220EC934EA76E6791485A8 		B9E8213AEFB861AF35A41F2C995E35221AD84DFF 	; do 		gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys "$key"; 	done; 	gpg --batch --verify httpd.tar.bz2.asc httpd.tar.bz2; 	command -v gpgconf && gpgconf --kill all || :; 	rm -rf "$GNUPGHOME" httpd.tar.bz2.asc; 		mkdir -p src; 	tar -xf httpd.tar.bz2 -C src --strip-components=1; 	rm httpd.tar.bz2; 	cd src; 		patches() { 		while [ "$#" -gt 0 ]; do 			local patchFile="$1"; shift; 			local patchSha256="$1"; shift; 			ddist "$patchFile" "httpd/patches/apply_to_$HTTPD_VERSION/$patchFile"; 			echo "$patchSha256 *$patchFile" | sha256sum -c -; 			patch -p0 < "$patchFile"; 			rm -f "$patchFile"; 		done; 	}; 	patches $HTTPD_PATCHES; 		gnuArch="$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)"; 	./configure 		--build="$gnuArch" 		--prefix="$HTTPD_PREFIX" 		--enable-mods-shared=reallyall 		--enable-mpms-shared=all 	; 	make -j "$(nproc)"; 	make install; 		cd ..; 	rm -r src man manual; 		sed -ri 		-e 's!^(\s*CustomLog)\s+\S+!\1 /proc/self/fd/1!g' 		-e 's!^(\s*ErrorLog)\s+\S+!\1 /proc/self/fd/2!g' 		-e 's!^(\s*TransferLog)\s+\S+!\1 /proc/self/fd/1!g' 		"$HTTPD_PREFIX/conf/httpd.conf" 		"$HTTPD_PREFIX/conf/extra/httpd-ssl.conf" 	; 		runDeps="$runDeps $( 		scanelf --needed --nobanner --format '%n#p' --recursive /usr/local 			| tr ',' '\n' 			| sort -u 			| awk 'system("[ -e /usr/local/lib/" $1 " ]") == 0 { next } { print "so:" $1 }' 	)"; 	apk add --virtual .httpd-rundeps $runDeps; 	apk del .build-deps; 		httpd -v
-# Tue, 20 Aug 2019 23:10:45 GMT
+# Wed, 21 Aug 2019 21:30:18 GMT
+STOPSIGNAL WINCH
+# Wed, 21 Aug 2019 21:30:19 GMT
 COPY file:c432ff61c4993ecdef4786f48d91a96f8f0707f6179816ccb98db661bfb96b90 in /usr/local/bin/ 
-# Tue, 20 Aug 2019 23:10:47 GMT
+# Wed, 21 Aug 2019 21:30:21 GMT
 EXPOSE 80
-# Tue, 20 Aug 2019 23:10:49 GMT
+# Wed, 21 Aug 2019 21:30:24 GMT
 CMD ["httpd-foreground"]
 ```
 
@@ -405,9 +411,9 @@ CMD ["httpd-foreground"]
 		Last Modified: Tue, 20 Aug 2019 23:11:23 GMT  
 		Size: 39.8 MB (39842205 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:6c54e355a119f8539f879e8a1f286769395e6332d2549282a4d584e8279f8483`  
-		Last Modified: Tue, 20 Aug 2019 23:11:13 GMT  
-		Size: 294.0 B  
+	-	`sha256:0624de3de9d81d2645d4cff9a6f23b26e42d1d2bf90cae00ef3e50ed8534d963`  
+		Last Modified: Wed, 21 Aug 2019 21:30:52 GMT  
+		Size: 296.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `httpd:2-alpine` - linux; s390x
