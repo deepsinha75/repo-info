@@ -1,10 +1,10 @@
-# `tomcat:9.0.22-jdk12-openjdk-oracle`
+# `tomcat:9.0.24-jdk12-openjdk-oracle`
 
 ## Docker Metadata
 
-- Image ID: `sha256:2249c1de14f166fccd9ced8dbb7dcfbffd782f3f30c75455e9f1fd1d82e149ac`
-- Created: `2019-08-08T23:33:10.915391567Z`
-- Virtual Size: ~ 507.12 Mb  
+- Image ID: `sha256:f76b16190e6d784ab022d1f8ab9bf4a84c07cbc10aa7d305afd84798b8f59798`
+- Created: `2019-08-19T21:35:24.776448629Z`
+- Virtual Size: ~ 645.95 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Command: `["catalina.sh","run"]`
@@ -20,20 +20,20 @@
   - `LD_LIBRARY_PATH=/usr/local/tomcat/native-jni-lib`
   - `GPG_KEYS=05AB33110949707C93A279E3D3EFE6B686867BA6 07E48665A34DCAFAE522E5E6266191C37C037D42 47309207D818FFD8DCD3F83F1931D684307A10A5 541FBE7D8F78B25E055DDEE13C370389288584E7 61B832AC2F1C5A90F0F9B00A1C506407564C17A3 79F7026C690BAA50B92CD8B66A3AD3F4F22C4FED 9BA44C2621385CB966EBA586F72C284D731FABEE A27677289986DB50844682F8ACB77FC2E86E29AC A9C5DF4D22E99998D9875A5110C01C5A2F6059E7 DCFD35E0BF8CA7344752DE8B6FB21E8933C60243 F3A04C595DB5B6A5F1ECA43E3B7BBB100D811BBE F7DA48BB64BCB84ECBA7EE6935CD23C10D498E23`
   - `TOMCAT_MAJOR=9`
-  - `TOMCAT_VERSION=9.0.22`
-  - `TOMCAT_SHA512=9d3d93f8e03b5dc74e8d2ebc3f9daeb481485a391fb10289e23848063c23f52e8cf8566ebc7ff4f62c9b9f71591fad368a2bab487d31377c85a2607be3e029ff`
+  - `TOMCAT_VERSION=9.0.24`
+  - `TOMCAT_SHA512=e01bd107e8fbe5ba629571d552a46339ccfd843b8bf770f617dfc1ec5cbf5fe5d945c2c3bba2f80188775a46f93c66d8594c13f8d12f7967d6d56c62d2bf7835`
 
 ## `rpm` (`.rpm`-based packages)
 
-### `rpm` package: `apr-1.4.8-3.el7_4.1.x86_64`
+### `rpm` package: `apr-1.4.8-5.el7.x86_64`
 
 Licenses (from `rpm --query`): ASL 2.0 and BSD with advertising and ISC and BSD
 
 Source:
 
 ```console
-$ yumdownloader --quiet --source --urls apr-1.4.8-3.el7_4.1
-https://yum.oracle.com/repo/OracleLinux/OL7/latest/x86_64//getPackageSource/apr-1.4.8-3.el7_4.1.src.rpm
+$ yumdownloader --quiet --source --urls apr-1.4.8-5.el7
+https://yum.oracle.com/repo/OracleLinux/OL7/latest/x86_64//getPackageSource/apr-1.4.8-5.el7.src.rpm
 ```
 
 ### `rpm` package: `audit-libs-2.8.4-4.el7.x86_64`
@@ -300,26 +300,26 @@ $ yumdownloader --quiet --source --urls glib2-2.56.1-4.el7_6
 https://yum.oracle.com/repo/OracleLinux/OL7/latest/x86_64//getPackageSource/glib2-2.56.1-4.el7_6.src.rpm
 ```
 
-### `rpm` package: `glibc-2.17-260.0.17.el7_6.6.x86_64`
+### `rpm` package: `glibc-2.17-292.0.1.el7.x86_64`
 
 Licenses (from `rpm --query`): LGPLv2+ and LGPLv2+ with exceptions and GPLv2+
 
 Source:
 
 ```console
-$ yumdownloader --quiet --source --urls glibc-2.17-260.0.17.el7_6.6
-https://yum.oracle.com/repo/OracleLinux/OL7/latest/x86_64//getPackageSource/glibc-2.17-260.0.17.el7_6.6.src.rpm
+$ yumdownloader --quiet --source --urls glibc-2.17-292.0.1.el7
+https://yum.oracle.com/repo/OracleLinux/OL7/latest/x86_64//getPackageSource/glibc-2.17-292.0.1.el7.src.rpm
 ```
 
-### `rpm` package: `glibc-common-2.17-260.0.17.el7_6.6.x86_64`
+### `rpm` package: `glibc-common-2.17-292.0.1.el7.x86_64`
 
 Licenses (from `rpm --query`): LGPLv2+ and LGPLv2+ with exceptions and GPLv2+
 
 Source:
 
 ```console
-$ yumdownloader --quiet --source --urls glibc-common-2.17-260.0.17.el7_6.6
-https://yum.oracle.com/repo/OracleLinux/OL7/latest/x86_64//getPackageSource/glibc-2.17-260.0.17.el7_6.6.src.rpm
+$ yumdownloader --quiet --source --urls glibc-common-2.17-292.0.1.el7
+https://yum.oracle.com/repo/OracleLinux/OL7/latest/x86_64//getPackageSource/glibc-2.17-292.0.1.el7.src.rpm
 ```
 
 ### `rpm` package: `gmp-6.0.0-15.el7.x86_64`
@@ -493,15 +493,15 @@ $ yumdownloader --quiet --source --urls libcap-ng-0.7.5-4.el7
 https://yum.oracle.com/repo/OracleLinux/OL7/latest/x86_64//getPackageSource/libcap-ng-0.7.5-4.el7.src.rpm
 ```
 
-### `rpm` package: `libcom_err-1.42.9-13.el7.x86_64`
+### `rpm` package: `libcom_err-1.42.9-16.el7.x86_64`
 
 Licenses (from `rpm --query`): MIT
 
 Source:
 
 ```console
-$ yumdownloader --quiet --source --urls libcom_err-1.42.9-13.el7
-https://yum.oracle.com/repo/OracleLinux/OL7/latest/x86_64//getPackageSource/e2fsprogs-1.42.9-13.el7.src.rpm
+$ yumdownloader --quiet --source --urls libcom_err-1.42.9-16.el7
+https://yum.oracle.com/repo/OracleLinux/OL7/latest/x86_64//getPackageSource/e2fsprogs-1.42.9-16.el7.src.rpm
 ```
 
 ### `rpm` package: `libcurl-7.29.0-51.0.1.el7_6.3.x86_64`
@@ -548,15 +548,15 @@ $ yumdownloader --quiet --source --urls libffi-3.0.13-18.el7
 https://yum.oracle.com/repo/OracleLinux/OL7/latest/x86_64//getPackageSource/libffi-3.0.13-18.el7.src.rpm
 ```
 
-### `rpm` package: `libgcc-4.8.5-36.0.1.el7_6.2.x86_64`
+### `rpm` package: `libgcc-4.8.5-39.0.1.el7.x86_64`
 
 Licenses (from `rpm --query`): GPLv3+ and GPLv3+ with exceptions and GPLv2+ with exceptions and LGPLv2+ and BSD
 
 Source:
 
 ```console
-$ yumdownloader --quiet --source --urls libgcc-4.8.5-36.0.1.el7_6.2
-https://yum.oracle.com/repo/OracleLinux/OL7/latest/x86_64//getPackageSource/gcc-4.8.5-36.0.1.el7_6.2.src.rpm
+$ yumdownloader --quiet --source --urls libgcc-4.8.5-39.0.1.el7
+https://yum.oracle.com/repo/OracleLinux/OL7/latest/x86_64//getPackageSource/gcc-4.8.5-39.0.1.el7.src.rpm
 ```
 
 ### `rpm` package: `libgcrypt-1.5.3-14.el7.x86_64`
@@ -867,15 +867,15 @@ $ yumdownloader --quiet --source --urls openldap-2.4.44-21.el7_6
 https://yum.oracle.com/repo/OracleLinux/OL7/latest/x86_64//getPackageSource/openldap-2.4.44-21.el7_6.src.rpm
 ```
 
-### `rpm` package: `openssl-libs-1.0.2k-16.0.1.el7_6.1.x86_64`
+### `rpm` package: `openssl-libs-1.0.2k-19.0.1.el7.x86_64`
 
 Licenses (from `rpm --query`): OpenSSL
 
 Source:
 
 ```console
-$ yumdownloader --quiet --source --urls openssl-libs-1.0.2k-16.0.1.el7_6.1
-https://yum.oracle.com/repo/OracleLinux/OL7/latest/x86_64//getPackageSource/openssl-1.0.2k-16.0.1.el7_6.1.src.rpm
+$ yumdownloader --quiet --source --urls openssl-libs-1.0.2k-19.0.1.el7
+https://yum.oracle.com/repo/OracleLinux/OL7/latest/x86_64//getPackageSource/openssl-1.0.2k-19.0.1.el7.src.rpm
 ```
 
 ### `rpm` package: `oracle-epel-release-el7-1.0-2.el7.x86_64`
