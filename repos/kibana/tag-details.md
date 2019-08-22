@@ -3,7 +3,7 @@
 # Tags of `kibana`
 
 -	[`kibana:6.8.2`](#kibana682)
--	[`kibana:7.3.0`](#kibana730)
+-	[`kibana:7.3.1`](#kibana731)
 
 ## `kibana:6.8.2`
 
@@ -99,96 +99,6 @@ CMD ["/usr/local/bin/kibana-docker"]
 		Size: 1.6 KB (1607 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
-## `kibana:7.3.0`
+## `kibana:7.3.1`
 
-```console
-$ docker pull kibana@sha256:36500cbac265ae36b67c2c4272aa5aeb4e634c1bbfcd6e932603bee1747e7cb5
-```
-
--	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
-	-	linux; amd64
-
-### `kibana:7.3.0` - linux; amd64
-
-```console
-$ docker pull kibana@sha256:67cb368cbebc552880ac31dd8e662a7888dfed3e71b5e6c9be4c8c39450b5531
-```
-
--	Docker Version: 18.09.6
--	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **358.7 MB (358713288 bytes)**  
-	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:8bcee4a4f79d303aea3d7528f858dd02939858d3cad41a6a4ca11d3c04d26337`
--	Default Command: `["\/usr\/local\/bin\/kibana-docker"]`
-
-```dockerfile
-# Thu, 14 Mar 2019 21:19:52 GMT
-ADD file:074f2c974463ab38cf3532134e8ba2c91c9e346457713f2e8b8e2ac0ee9fd83d in / 
-# Thu, 14 Mar 2019 21:19:53 GMT
-LABEL org.label-schema.schema-version=1.0 org.label-schema.name=CentOS Base Image org.label-schema.vendor=CentOS org.label-schema.license=GPLv2 org.label-schema.build-date=20190305
-# Thu, 14 Mar 2019 21:19:53 GMT
-CMD ["/bin/bash"]
-# Wed, 24 Jul 2019 19:11:12 GMT
-EXPOSE 5601
-# Wed, 24 Jul 2019 19:12:02 GMT
-RUN yum update -y && yum install -y fontconfig freetype && yum clean all
-# Wed, 24 Jul 2019 19:12:41 GMT
-COPY --chown=1000:0dir:4ed355acc2a7ade3762de8f136a05a56728f759a44e9f6afc5f0755d2595c576 in /usr/share/kibana 
-# Wed, 24 Jul 2019 19:12:42 GMT
-WORKDIR /usr/share/kibana
-# Wed, 24 Jul 2019 19:12:43 GMT
-RUN ln -s /usr/share/kibana /opt/kibana
-# Wed, 24 Jul 2019 19:12:43 GMT
-ENV ELASTIC_CONTAINER=true
-# Wed, 24 Jul 2019 19:12:43 GMT
-ENV PATH=/usr/share/kibana/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Wed, 24 Jul 2019 19:12:44 GMT
-COPY --chown=1000:0file:60b6181f28c99b362092ea6139b6d4112ddd0bef32d52563c33b26bdc2b51318 in /usr/share/kibana/config/kibana.yml 
-# Wed, 24 Jul 2019 19:12:44 GMT
-COPY --chown=1000:0file:bb34c585f84752db729baa6868a7b0f0bb50e20d7935c5355db4968596d2f552 in /usr/local/bin/ 
-# Wed, 24 Jul 2019 19:12:45 GMT
-RUN chmod g+ws /usr/share/kibana && find /usr/share/kibana -gid 0 -and -not -perm /g+w -exec chmod g+w {} \;
-# Wed, 24 Jul 2019 19:12:46 GMT
-RUN groupadd --gid 1000 kibana && useradd --uid 1000 --gid 1000 --home-dir /usr/share/kibana --no-create-home kibana
-# Wed, 24 Jul 2019 19:12:46 GMT
-USER kibana
-# Wed, 24 Jul 2019 19:12:47 GMT
-LABEL org.label-schema.schema-version=1.0 org.label-schema.vendor=Elastic org.label-schema.name=kibana org.label-schema.version=7.3.0 org.label-schema.url=https://www.elastic.co/products/kibana org.label-schema.vcs-url=https://github.com/elastic/kibana license=Elastic License
-# Wed, 24 Jul 2019 19:12:47 GMT
-CMD ["/usr/local/bin/kibana-docker"]
-```
-
--	Layers:
-	-	`sha256:8ba884070f611d31cb2c42eddb691319dc9facf5e0ec67672fcfa135181ab3df`  
-		Last Modified: Thu, 14 Mar 2019 21:24:11 GMT  
-		Size: 75.4 MB (75403831 bytes)  
-		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:a478b925ba7f70ceac6e95cc9b95518951bb98720372ddf6d1e53f5efdec4b06`  
-		Last Modified: Wed, 31 Jul 2019 15:33:44 GMT  
-		Size: 46.8 MB (46837288 bytes)  
-		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:6176acd3401413b04a50b56fcef3a5bca65aa46d3a00440cedf4020f058c1993`  
-		Last Modified: Wed, 31 Jul 2019 15:36:24 GMT  
-		Size: 236.5 MB (236467777 bytes)  
-		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:688de6cf5534b864ad8dbc92ca16f3248b5ae9d288b699a33670c5bdb577965a`  
-		Last Modified: Wed, 31 Jul 2019 15:32:58 GMT  
-		Size: 133.0 B  
-		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c6f2a48cdd9db5d407768f9102ba739aef3f526316efd528bab03b3cec30bb10`  
-		Last Modified: Wed, 31 Jul 2019 15:32:52 GMT  
-		Size: 393.0 B  
-		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:3352d5f682df853dc31b10b87a1cf753d03fdb30696e2c3a30d756179ed20435`  
-		Last Modified: Wed, 31 Jul 2019 15:32:52 GMT  
-		Size: 2.1 KB (2109 bytes)  
-		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:cc3d34436dcbfcc0bcac87b3e4933deaad8f3d778dfd7c3be98c2bc1a6c93e35`  
-		Last Modified: Wed, 31 Jul 2019 15:32:52 GMT  
-		Size: 149.0 B  
-		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:80e42f69189c1c1ac38730457babab47d23fdd54cc8b7d8e1283ae707635d819`  
-		Last Modified: Wed, 31 Jul 2019 15:32:52 GMT  
-		Size: 1.6 KB (1608 bytes)  
-		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+**does not exist** (yet?)
