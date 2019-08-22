@@ -2,8 +2,8 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:05eadb4820d272e8dec65588a3913494e3fbd7d399f9da0ad8334c8612d691b2`
-- Created: `2019-07-30T00:54:18.683256043Z`
+- Image ID: `sha256:c9dc5bdc427f4d3be19abe660692068278baa3c4c488b865c56491cc1ac7cca4`
+- Created: `2019-08-21T01:44:32.255425918Z`
 - Virtual Size: ~ 371.61 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
@@ -250,16 +250,16 @@ LGPL-2.0-or-later MPL-1.1
 ### `apk` package: `cups-libs`
 
 ```console
-cups-libs-2.2.11-r0 description:
+cups-libs-2.2.12-r0 description:
 CUPS libraries
 
-cups-libs-2.2.11-r0 webpage:
+cups-libs-2.2.12-r0 webpage:
 https://www.cups.org/
 
-cups-libs-2.2.11-r0 installed size:
+cups-libs-2.2.12-r0 installed size:
 565248
 
-cups-libs-2.2.11-r0 license:
+cups-libs-2.2.12-r0 license:
 GPL-2.0-only
 
 ```
@@ -420,16 +420,16 @@ LGPL-2.0-or-later
 ### `apk` package: `ghostscript`
 
 ```console
-ghostscript-9.27-r1 description:
+ghostscript-9.27-r2 description:
 An interpreter for the PostScript language and for PDF
 
-ghostscript-9.27-r1 webpage:
+ghostscript-9.27-r2 webpage:
 https://ghostscript.com/
 
-ghostscript-9.27-r1 installed size:
+ghostscript-9.27-r2 installed size:
 50061312
 
-ghostscript-9.27-r1 license:
+ghostscript-9.27-r2 license:
 AGPL-3.0-or-later
 
 ```
@@ -573,16 +573,16 @@ MIT
 ### `apk` package: `imagemagick6`
 
 ```console
-imagemagick6-6.9.10.55-r0 description:
+imagemagick6-6.9.10.60-r0 description:
 A collection of tools and libraries for many image formats (legacy version 6)
 
-imagemagick6-6.9.10.55-r0 webpage:
+imagemagick6-6.9.10.60-r0 webpage:
 https://www.imagemagick.org/
 
-imagemagick6-6.9.10.55-r0 installed size:
+imagemagick6-6.9.10.60-r0 installed size:
 196608
 
-imagemagick6-6.9.10.55-r0 license:
+imagemagick6-6.9.10.60-r0 license:
 Apache-2.0
 
 ```
@@ -590,16 +590,16 @@ Apache-2.0
 ### `apk` package: `imagemagick6-libs`
 
 ```console
-imagemagick6-libs-6.9.10.55-r0 description:
+imagemagick6-libs-6.9.10.60-r0 description:
 A collection of tools and libraries for many image formats (legacy version 6) (libraries)
 
-imagemagick6-libs-6.9.10.55-r0 webpage:
+imagemagick6-libs-6.9.10.60-r0 webpage:
 https://www.imagemagick.org/
 
-imagemagick6-libs-6.9.10.55-r0 installed size:
+imagemagick6-libs-6.9.10.60-r0 installed size:
 6934528
 
-imagemagick6-libs-6.9.10.55-r0 license:
+imagemagick6-libs-6.9.10.60-r0 license:
 Apache-2.0
 
 ```
@@ -964,16 +964,16 @@ Libpng
 ### `apk` package: `libpq`
 
 ```console
-libpq-11.4-r0 description:
+libpq-11.5-r0 description:
 PostgreSQL libraries
 
-libpq-11.4-r0 webpage:
+libpq-11.5-r0 webpage:
 https://www.postgresql.org/
 
-libpq-11.4-r0 installed size:
+libpq-11.5-r0 installed size:
 315392
 
-libpq-11.4-r0 license:
+libpq-11.5-r0 license:
 PostgreSQL
 
 ```
@@ -1338,16 +1338,16 @@ GPL-2.0-or-later
 ### `apk` package: `musl`
 
 ```console
-musl-1.1.22-r2 description:
+musl-1.1.22-r3 description:
 the musl c library (libc) implementation
 
-musl-1.1.22-r2 webpage:
+musl-1.1.22-r3 webpage:
 http://www.musl-libc.org/
 
-musl-1.1.22-r2 installed size:
+musl-1.1.22-r3 installed size:
 598016
 
-musl-1.1.22-r2 license:
+musl-1.1.22-r3 license:
 MIT
 
 ```
@@ -1355,16 +1355,16 @@ MIT
 ### `apk` package: `musl-utils`
 
 ```console
-musl-utils-1.1.22-r2 description:
+musl-utils-1.1.22-r3 description:
 the musl c library (libc) implementation
 
-musl-utils-1.1.22-r2 webpage:
+musl-utils-1.1.22-r3 webpage:
 http://www.musl-libc.org/
 
-musl-utils-1.1.22-r2 installed size:
+musl-utils-1.1.22-r3 installed size:
 147456
 
-musl-utils-1.1.22-r2 license:
+musl-utils-1.1.22-r3 license:
 MIT BSD GPL2+
 
 ```
@@ -1508,16 +1508,16 @@ BSD
 ### `apk` package: `pango`
 
 ```console
-pango-1.42.4-r1 description:
+pango-1.42.4-r2 description:
 A library for layout and rendering of text
 
-pango-1.42.4-r1 webpage:
+pango-1.42.4-r2 webpage:
 https://www.pango.org/
 
-pango-1.42.4-r1 installed size:
+pango-1.42.4-r2 installed size:
 552960
 
-pango-1.42.4-r1 license:
+pango-1.42.4-r2 license:
 LGPL-2.1-or-later
 
 ```
@@ -1746,16 +1746,16 @@ MIT
 ### `apk` package: `subversion`
 
 ```console
-subversion-1.12.0-r0 description:
+subversion-1.12.2-r0 description:
 Replacement for CVS, another versioning system (svn)
 
-subversion-1.12.0-r0 webpage:
+subversion-1.12.2-r0 webpage:
 https://subversion.apache.org/
 
-subversion-1.12.0-r0 installed size:
+subversion-1.12.2-r0 installed size:
 1101824
 
-subversion-1.12.0-r0 license:
+subversion-1.12.2-r0 license:
 Apache-2.0 BSD
 
 ```
@@ -1763,16 +1763,16 @@ Apache-2.0 BSD
 ### `apk` package: `subversion-libs`
 
 ```console
-subversion-libs-1.12.0-r0 description:
+subversion-libs-1.12.2-r0 description:
 Replacement for CVS, another versioning system (svn) (libraries)
 
-subversion-libs-1.12.0-r0 webpage:
+subversion-libs-1.12.2-r0 webpage:
 https://subversion.apache.org/
 
-subversion-libs-1.12.0-r0 installed size:
+subversion-libs-1.12.2-r0 installed size:
 3837952
 
-subversion-libs-1.12.0-r0 license:
+subversion-libs-1.12.2-r0 license:
 Apache-2.0 BSD
 
 ```
