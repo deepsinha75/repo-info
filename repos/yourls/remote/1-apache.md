@@ -1,7 +1,7 @@
 ## `yourls:1-apache`
 
 ```console
-$ docker pull yourls@sha256:5efa51da957684ec12047e94a73043ca991de79902546da71b0905d8b9eebd50
+$ docker pull yourls@sha256:b1cc298b08afbfe61080d8f9865f2a894557e2a8224d649c1f8e972fe33df536
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -400,14 +400,14 @@ CMD ["apache2-foreground"]
 ### `yourls:1-apache` - linux; arm variant v7
 
 ```console
-$ docker pull yourls@sha256:759ce5a41f9e540cab532c1f65f5b6eb38fe62c1abba8c747ab0f0e3fcf2296a
+$ docker pull yourls@sha256:6bef35e4c619cfbedadf91ac1245774e00b132d57aaaf690ba28205dc5a936e5
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **128.8 MB (128804662 bytes)**  
+-	Total Size: **128.8 MB (128804659 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:82fa11a57acb5cb50a53ef9316b872b32cea1648ee832aae91eeba7849b73083`
+-	Image ID: `sha256:68ba8114bb88d30c30594ccd73f447c26c04249d119de0b4d47dd5e3cc45b815`
 -	Entrypoint: `["docker-entrypoint.sh"]`
 -	Default Command: `["apache2-foreground"]`
 
@@ -468,37 +468,39 @@ RUN docker-php-ext-enable sodium
 RUN { echo '#!/bin/sh'; echo 'exec pkg-config "$@" freetype2'; } > /usr/local/bin/freetype-config && chmod +x /usr/local/bin/freetype-config
 # Wed, 14 Aug 2019 14:21:08 GMT
 ENTRYPOINT ["docker-php-entrypoint"]
-# Wed, 14 Aug 2019 14:21:08 GMT
+# Wed, 21 Aug 2019 22:35:11 GMT
+STOPSIGNAL WINCH
+# Wed, 21 Aug 2019 22:35:12 GMT
 COPY file:e3123fcb6566efa979f945bfac1c94c854a559d7b82723e42118882a8ac4de66 in /usr/local/bin/ 
-# Wed, 14 Aug 2019 14:21:09 GMT
+# Wed, 21 Aug 2019 22:35:12 GMT
 WORKDIR /var/www/html
-# Wed, 14 Aug 2019 14:21:09 GMT
+# Wed, 21 Aug 2019 22:35:12 GMT
 EXPOSE 80
-# Wed, 14 Aug 2019 14:21:09 GMT
+# Wed, 21 Aug 2019 22:35:13 GMT
 CMD ["apache2-foreground"]
-# Wed, 14 Aug 2019 23:15:15 GMT
+# Thu, 22 Aug 2019 00:13:19 GMT
 RUN set -eux;     docker-php-ext-install -j "$(nproc)" opcache pdo_mysql mysqli
-# Wed, 14 Aug 2019 23:15:16 GMT
+# Thu, 22 Aug 2019 00:13:21 GMT
 RUN {         echo 'opcache.memory_consumption=128';         echo 'opcache.interned_strings_buffer=8';         echo 'opcache.max_accelerated_files=4000';         echo 'opcache.revalidate_freq=60';         echo 'opcache.fast_shutdown=1';     } > /usr/local/etc/php/conf.d/opcache-recommended.ini
-# Wed, 14 Aug 2019 23:15:18 GMT
+# Thu, 22 Aug 2019 00:13:23 GMT
 RUN a2enmod rewrite expires
-# Wed, 14 Aug 2019 23:15:18 GMT
+# Thu, 22 Aug 2019 00:13:23 GMT
 VOLUME [/var/www/html]
-# Wed, 14 Aug 2019 23:15:19 GMT
+# Thu, 22 Aug 2019 00:13:24 GMT
 ENV YOURLS_VERSION=1.7.3
-# Wed, 14 Aug 2019 23:15:19 GMT
+# Thu, 22 Aug 2019 00:13:24 GMT
 ENV YOURLS_SHA256=301ed5b0bfd63cfaeeafe40de056661302e786542002f479886fcf601bfb9dc4
-# Wed, 14 Aug 2019 23:15:22 GMT
+# Thu, 22 Aug 2019 00:13:27 GMT
 RUN set -eux;     curl -o yourls.tar.gz -fsSL "https://github.com/YOURLS/YOURLS/archive/${YOURLS_VERSION}.tar.gz";     echo "$YOURLS_SHA256 *yourls.tar.gz" | sha256sum -c -;     tar -xf yourls.tar.gz -C /usr/src/;     mv "/usr/src/YOURLS-${YOURLS_VERSION}" /usr/src/yourls;     rm yourls.tar.gz;     chown -R www-data:www-data /usr/src/yourls
-# Wed, 14 Aug 2019 23:15:22 GMT
+# Thu, 22 Aug 2019 00:13:27 GMT
 COPY file:dae29f9c1e1fe04a79abdb2b0965f1a821bebbe26ab1e1e13cae7fe5fbaf788d in /usr/local/bin/ 
-# Wed, 14 Aug 2019 23:15:23 GMT
+# Thu, 22 Aug 2019 00:13:28 GMT
 COPY file:3694b933d9d31fc65ed3f78f65289b778a21bf67c518d2cb89c6294ef1d41b60 in /usr/src/yourls/user/ 
-# Wed, 14 Aug 2019 23:15:24 GMT
+# Thu, 22 Aug 2019 00:13:28 GMT
 COPY file:5b7ff05d0c98ad759c4bec0ef8a7ce74cae42e95b42564b55f43b341c2c3e3f5 in /usr/src/yourls/ 
-# Wed, 14 Aug 2019 23:15:24 GMT
+# Thu, 22 Aug 2019 00:13:29 GMT
 ENTRYPOINT ["docker-entrypoint.sh"]
-# Wed, 14 Aug 2019 23:15:25 GMT
+# Thu, 22 Aug 2019 00:13:29 GMT
 CMD ["apache2-foreground"]
 ```
 
@@ -555,37 +557,37 @@ CMD ["apache2-foreground"]
 		Last Modified: Wed, 14 Aug 2019 15:24:18 GMT  
 		Size: 213.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:d23ac5a5c3f02e5fa37bc364c7df41dfa46cadc9e88e0567f8df6e34cd467cf3`  
-		Last Modified: Wed, 14 Aug 2019 15:24:18 GMT  
+	-	`sha256:e4ae54aa6e05504020f39f2e53b64aea8cd7a6f45a1d09a9f609e17cf9d73598`  
+		Last Modified: Wed, 21 Aug 2019 22:40:39 GMT  
 		Size: 894.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:5741d1486dafef73ac7255544b40cdf84a939a6cc6fc5eb33385aacd1e5fde8a`  
-		Last Modified: Wed, 14 Aug 2019 23:16:33 GMT  
-		Size: 247.2 KB (247189 bytes)  
+	-	`sha256:fb92fb40f6e1f83a7ceeb2641a7f64cd37481156f16d8e01beb16c1f67ca8a3a`  
+		Last Modified: Thu, 22 Aug 2019 00:14:01 GMT  
+		Size: 247.2 KB (247187 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:f59b33f63ac768593bd8d9c4fe5501a5439f815f77a0359c652e538fe27da957`  
-		Last Modified: Wed, 14 Aug 2019 23:16:33 GMT  
-		Size: 328.0 B  
+	-	`sha256:ae80fdaf988c77d8008face8d4cd0b1920ca78b5146358bf98042311e507f8e8`  
+		Last Modified: Thu, 22 Aug 2019 00:14:01 GMT  
+		Size: 329.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:93e34136cc868212913384c1ba49d654109b3c199920e9c1b6e4082a0349973b`  
-		Last Modified: Wed, 14 Aug 2019 23:16:32 GMT  
-		Size: 349.0 B  
+	-	`sha256:f99ec767276278789407382fe9104dfe126f70cf751b00b72897802fc0abacea`  
+		Last Modified: Thu, 22 Aug 2019 00:14:00 GMT  
+		Size: 348.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:b524efc358f7e67261e6cd758d08a2e13c5cf23febd205881bd4708fa55f12c8`  
-		Last Modified: Wed, 14 Aug 2019 23:16:33 GMT  
-		Size: 2.5 MB (2485534 bytes)  
+	-	`sha256:fa812987ddc00bbdf4839d7173c643c6392e914b28a5abd26f866c9b69a8f9c4`  
+		Last Modified: Thu, 22 Aug 2019 00:14:01 GMT  
+		Size: 2.5 MB (2485532 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:642bfe7a10dbfa5312a8b3b198dcb4952c3840e369819d12c7ac0a64dd269df9`  
-		Last Modified: Wed, 14 Aug 2019 23:16:31 GMT  
-		Size: 1.1 KB (1058 bytes)  
+	-	`sha256:b0ab5bd39b9a810188424f940a2cf087f4bee0a3112a3f092d7484982cbbc833`  
+		Last Modified: Thu, 22 Aug 2019 00:13:59 GMT  
+		Size: 1.1 KB (1060 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:9a853d134a36e11221d2d4988a6d699d2e5ff8fb894d799802ce33bdb0c51228`  
-		Last Modified: Wed, 14 Aug 2019 23:16:31 GMT  
+	-	`sha256:018ed74a64c0ec8d3bfeb66016132c5e7abe5d5e0b35e51b2d03c4724b3cdf6b`  
+		Last Modified: Thu, 22 Aug 2019 00:14:00 GMT  
 		Size: 1.9 KB (1862 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:12c29ea97335eeab7d01ff11893d6747b6b1252891e5c97a405d514c3c260e11`  
-		Last Modified: Wed, 14 Aug 2019 23:16:32 GMT  
-		Size: 334.0 B  
+	-	`sha256:2d18bc5b2dd918399ce80d1142da2010bc0d846641d0e6e7849d13b510683e25`  
+		Last Modified: Thu, 22 Aug 2019 00:14:00 GMT  
+		Size: 333.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `yourls:1-apache` - linux; arm64 variant v8
