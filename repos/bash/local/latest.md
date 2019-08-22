@@ -2,9 +2,9 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:21dce3f297f09df01dcdb3d5b192d67bd9c7125ccc73aa59f90dd66e34ae7ae6`
-- Created: `2019-08-15T23:20:09.291295901Z`
-- Virtual Size: ~ 15.82 Mb  
+- Image ID: `sha256:a08d6a178a7fc474a0ffa3691d8cd99d4165783935287c39295d93929c0af163`
+- Created: `2019-08-20T20:39:56.470018138Z`
+- Virtual Size: ~ 15.24 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["docker-entrypoint.sh"]`
@@ -191,16 +191,16 @@ MIT
 ### `apk` package: `musl-utils`
 
 ```console
-musl-utils-1.1.22-r2 description:
+musl-utils-1.1.22-r3 description:
 the musl c library (libc) implementation
 
-musl-utils-1.1.22-r2 webpage:
+musl-utils-1.1.22-r3 webpage:
 http://www.musl-libc.org/
 
-musl-utils-1.1.22-r2 installed size:
+musl-utils-1.1.22-r3 installed size:
 147456
 
-musl-utils-1.1.22-r2 license:
+musl-utils-1.1.22-r3 license:
 MIT BSD GPL2+
 
 ```
