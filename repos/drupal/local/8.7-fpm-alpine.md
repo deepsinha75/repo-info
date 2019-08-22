@@ -2,8 +2,8 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:f6d12610fe44b8606ce6f2511ca0e67bfd77c27385f193fdf2aefdc258b98f55`
-- Created: `2019-08-08T23:44:48.296719204Z`
+- Image ID: `sha256:9f5aeea3953411f394a4a715408933cec64c3a0ef0852e4cb1e3794906a76381`
+- Created: `2019-08-21T01:46:41.226799155Z`
 - Virtual Size: ~ 156.84 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
@@ -337,16 +337,16 @@ Libpng
 ### `apk` package: `libpq`
 
 ```console
-libpq-11.4-r0 description:
+libpq-11.5-r0 description:
 PostgreSQL libraries
 
-libpq-11.4-r0 webpage:
+libpq-11.5-r0 webpage:
 https://www.postgresql.org/
 
-libpq-11.4-r0 installed size:
+libpq-11.5-r0 installed size:
 315392
 
-libpq-11.4-r0 license:
+libpq-11.5-r0 license:
 PostgreSQL
 
 ```
@@ -456,16 +456,16 @@ BSD-3-Clause
 ### `apk` package: `musl`
 
 ```console
-musl-1.1.22-r2 description:
+musl-1.1.22-r3 description:
 the musl c library (libc) implementation
 
-musl-1.1.22-r2 webpage:
+musl-1.1.22-r3 webpage:
 http://www.musl-libc.org/
 
-musl-1.1.22-r2 installed size:
+musl-1.1.22-r3 installed size:
 598016
 
-musl-1.1.22-r2 license:
+musl-1.1.22-r3 license:
 MIT
 
 ```
@@ -473,16 +473,16 @@ MIT
 ### `apk` package: `musl-utils`
 
 ```console
-musl-utils-1.1.22-r2 description:
+musl-utils-1.1.22-r3 description:
 the musl c library (libc) implementation
 
-musl-utils-1.1.22-r2 webpage:
+musl-utils-1.1.22-r3 webpage:
 http://www.musl-libc.org/
 
-musl-utils-1.1.22-r2 installed size:
+musl-utils-1.1.22-r3 installed size:
 147456
 
-musl-utils-1.1.22-r2 license:
+musl-utils-1.1.22-r3 license:
 MIT BSD GPL2+
 
 ```
