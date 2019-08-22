@@ -1,7 +1,7 @@
 ## `php:7-apache`
 
 ```console
-$ docker pull php@sha256:a42673f54c261ed1810fa102a79a39563830a6fbbbd5a2bf719d562e77e49ba3
+$ docker pull php@sha256:205073d982746d818c3a1a546b918a4d24368a2a8cb53477ac3224efee3390d0
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -16,14 +16,14 @@ $ docker pull php@sha256:a42673f54c261ed1810fa102a79a39563830a6fbbbd5a2bf719d562
 ### `php:7-apache` - linux; amd64
 
 ```console
-$ docker pull php@sha256:c82b87cffc05975df340a2808062bbfc2a743e2066d57c496392d71404925cb1
+$ docker pull php@sha256:419246ea332e20434bd2d2f721bb584ee18348d17010967c2ee50e6393320e7c
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **150.8 MB (150790470 bytes)**  
+-	Total Size: **150.8 MB (150790473 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:dfe3bb4436a9e342da17ca60cf2fe928b9ad3c1510b108810d8e4d63e559dd0b`
+-	Image ID: `sha256:9de70a9b4f5588a0396fcfc1393b3778dd23ecbc4cbb7f6c192c169a32274f96`
 -	Entrypoint: `["docker-php-entrypoint"]`
 -	Default Command: `["apache2-foreground"]`
 
@@ -84,13 +84,15 @@ RUN docker-php-ext-enable sodium
 RUN { echo '#!/bin/sh'; echo 'exec pkg-config "$@" freetype2'; } > /usr/local/bin/freetype-config && chmod +x /usr/local/bin/freetype-config
 # Wed, 14 Aug 2019 08:06:45 GMT
 ENTRYPOINT ["docker-php-entrypoint"]
-# Wed, 14 Aug 2019 08:06:45 GMT
+# Thu, 22 Aug 2019 00:05:00 GMT
+STOPSIGNAL WINCH
+# Thu, 22 Aug 2019 00:05:01 GMT
 COPY file:e3123fcb6566efa979f945bfac1c94c854a559d7b82723e42118882a8ac4de66 in /usr/local/bin/ 
-# Wed, 14 Aug 2019 08:06:46 GMT
+# Thu, 22 Aug 2019 00:05:01 GMT
 WORKDIR /var/www/html
-# Wed, 14 Aug 2019 08:06:46 GMT
+# Thu, 22 Aug 2019 00:05:01 GMT
 EXPOSE 80
-# Wed, 14 Aug 2019 08:06:46 GMT
+# Thu, 22 Aug 2019 00:05:01 GMT
 CMD ["apache2-foreground"]
 ```
 
@@ -147,9 +149,9 @@ CMD ["apache2-foreground"]
 		Last Modified: Wed, 14 Aug 2019 10:57:13 GMT  
 		Size: 210.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:6096f23889f4b45b56a87eb07c14482d4ee8dfd1b00c9ce199620ecc9da49e23`  
-		Last Modified: Wed, 14 Aug 2019 10:57:13 GMT  
-		Size: 893.0 B  
+	-	`sha256:f683ca4a731d71dd5385d9926c526f7c843b282e43ca24fb6caa19b9014fab4d`  
+		Last Modified: Thu, 22 Aug 2019 00:10:19 GMT  
+		Size: 896.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `php:7-apache` - linux; arm variant v5
@@ -578,14 +580,14 @@ CMD ["apache2-foreground"]
 ### `php:7-apache` - linux; 386
 
 ```console
-$ docker pull php@sha256:e529405500e8030234560b645b1775490dff6d2d4842b137866023955f0cc0a9
+$ docker pull php@sha256:e5abbba74009b832195bd97564b153cf9ff2917b395b26239f71ed2e34aaf6b8
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **156.8 MB (156840283 bytes)**  
+-	Total Size: **156.8 MB (156840286 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:0e6b9c5d8b669f76d8dabf008efec050f430ea3fbfdb07ea68e25f72b17f34b1`
+-	Image ID: `sha256:032decc8d84e5e0767a596fb1916d70349e2fe7aa600de9977a5313760a43c02`
 -	Entrypoint: `["docker-php-entrypoint"]`
 -	Default Command: `["apache2-foreground"]`
 
@@ -646,13 +648,15 @@ RUN docker-php-ext-enable sodium
 RUN { echo '#!/bin/sh'; echo 'exec pkg-config "$@" freetype2'; } > /usr/local/bin/freetype-config && chmod +x /usr/local/bin/freetype-config
 # Wed, 14 Aug 2019 09:18:48 GMT
 ENTRYPOINT ["docker-php-entrypoint"]
-# Wed, 14 Aug 2019 09:18:48 GMT
+# Thu, 22 Aug 2019 00:21:27 GMT
+STOPSIGNAL WINCH
+# Thu, 22 Aug 2019 00:21:27 GMT
 COPY file:e3123fcb6566efa979f945bfac1c94c854a559d7b82723e42118882a8ac4de66 in /usr/local/bin/ 
-# Wed, 14 Aug 2019 09:18:48 GMT
+# Thu, 22 Aug 2019 00:21:27 GMT
 WORKDIR /var/www/html
-# Wed, 14 Aug 2019 09:18:49 GMT
+# Thu, 22 Aug 2019 00:21:27 GMT
 EXPOSE 80
-# Wed, 14 Aug 2019 09:18:49 GMT
+# Thu, 22 Aug 2019 00:21:28 GMT
 CMD ["apache2-foreground"]
 ```
 
@@ -709,22 +713,22 @@ CMD ["apache2-foreground"]
 		Last Modified: Wed, 14 Aug 2019 12:10:38 GMT  
 		Size: 208.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:0d74ad5ecc73a73d9e940180354cf44ca7b80aa0b57aaa79d57f72e83f9004ed`  
-		Last Modified: Wed, 14 Aug 2019 12:10:38 GMT  
-		Size: 890.0 B  
+	-	`sha256:3cbc2c4eef3651ca41b2e87ea32a1e1e51c22804f7f1171cd225c8f470917549`  
+		Last Modified: Thu, 22 Aug 2019 00:26:47 GMT  
+		Size: 893.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `php:7-apache` - linux; ppc64le
 
 ```console
-$ docker pull php@sha256:eb86e8e79bede15bf5a6672dc9c30e9b96cf7ea8147c917e3b7b245d63d17b5a
+$ docker pull php@sha256:d652e454458045401e7d752072f06b6f3d8da14d4cc35cb1635e65693342658c
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **162.3 MB (162339822 bytes)**  
+-	Total Size: **162.3 MB (162339823 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:a92e5c70b59633906a5f3c52a50c695bdc3bbd249de2f7c31ff4d2ed14cba04d`
+-	Image ID: `sha256:87d1afb09a5943cb166e2736259a150c1f43b5f08f428a24dc7e94eedf891b2d`
 -	Entrypoint: `["docker-php-entrypoint"]`
 -	Default Command: `["apache2-foreground"]`
 
@@ -785,13 +789,15 @@ RUN docker-php-ext-enable sodium
 RUN { echo '#!/bin/sh'; echo 'exec pkg-config "$@" freetype2'; } > /usr/local/bin/freetype-config && chmod +x /usr/local/bin/freetype-config
 # Wed, 14 Aug 2019 07:33:58 GMT
 ENTRYPOINT ["docker-php-entrypoint"]
-# Wed, 14 Aug 2019 07:34:00 GMT
+# Thu, 22 Aug 2019 00:03:30 GMT
+STOPSIGNAL WINCH
+# Thu, 22 Aug 2019 00:03:32 GMT
 COPY file:e3123fcb6566efa979f945bfac1c94c854a559d7b82723e42118882a8ac4de66 in /usr/local/bin/ 
-# Wed, 14 Aug 2019 07:34:03 GMT
+# Thu, 22 Aug 2019 00:03:34 GMT
 WORKDIR /var/www/html
-# Wed, 14 Aug 2019 07:34:06 GMT
+# Thu, 22 Aug 2019 00:03:35 GMT
 EXPOSE 80
-# Wed, 14 Aug 2019 07:34:09 GMT
+# Thu, 22 Aug 2019 00:03:36 GMT
 CMD ["apache2-foreground"]
 ```
 
@@ -848,7 +854,7 @@ CMD ["apache2-foreground"]
 		Last Modified: Wed, 14 Aug 2019 10:42:06 GMT  
 		Size: 210.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c4cb02fdadc3d2a70c8ababe1efe09642785c9d589a2b98407a49677982059ab`  
-		Last Modified: Wed, 14 Aug 2019 10:42:05 GMT  
-		Size: 893.0 B  
+	-	`sha256:ceb4978838aa3f1fac8524fdceccc3d204668d24dbe3c3b95b728ea4327a14e2`  
+		Last Modified: Thu, 22 Aug 2019 00:12:00 GMT  
+		Size: 894.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
