@@ -1,7 +1,7 @@
 ## `php:7-apache-buster`
 
 ```console
-$ docker pull php@sha256:decb4138f3b7208672456f5ac6aeb1279b9a3b4333448a13a7ac8dd63c46bc40
+$ docker pull php@sha256:a42673f54c261ed1810fa102a79a39563830a6fbbbd5a2bf719d562e77e49ba3
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -437,14 +437,14 @@ CMD ["apache2-foreground"]
 ### `php:7-apache-buster` - linux; arm64 variant v8
 
 ```console
-$ docker pull php@sha256:415f19a40c5f21d22065c7bb074d5dece2c7f6961c6434046ec4c9ba01bd4a14
+$ docker pull php@sha256:a41165d18d7f2ee23e2345f41a8d1bcd5fd051224fcc002adf5afb642c70c3a3
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **142.9 MB (142851898 bytes)**  
+-	Total Size: **142.9 MB (142851901 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:f476f76b8aa4c31329287feb8e25a48dc422a8cbe7811da4acdd24a3ce014e73`
+-	Image ID: `sha256:62462588c8a2f9b8694eae35ee7258876d4eeb4330c00c92a58eb8810813ea09`
 -	Entrypoint: `["docker-php-entrypoint"]`
 -	Default Command: `["apache2-foreground"]`
 
@@ -505,13 +505,15 @@ RUN docker-php-ext-enable sodium
 RUN { echo '#!/bin/sh'; echo 'exec pkg-config "$@" freetype2'; } > /usr/local/bin/freetype-config && chmod +x /usr/local/bin/freetype-config
 # Wed, 14 Aug 2019 09:55:02 GMT
 ENTRYPOINT ["docker-php-entrypoint"]
-# Wed, 14 Aug 2019 09:55:02 GMT
+# Wed, 21 Aug 2019 23:45:18 GMT
+STOPSIGNAL WINCH
+# Wed, 21 Aug 2019 23:45:19 GMT
 COPY file:e3123fcb6566efa979f945bfac1c94c854a559d7b82723e42118882a8ac4de66 in /usr/local/bin/ 
-# Wed, 14 Aug 2019 09:55:03 GMT
+# Wed, 21 Aug 2019 23:45:19 GMT
 WORKDIR /var/www/html
-# Wed, 14 Aug 2019 09:55:03 GMT
+# Wed, 21 Aug 2019 23:45:20 GMT
 EXPOSE 80
-# Wed, 14 Aug 2019 09:55:03 GMT
+# Wed, 21 Aug 2019 23:45:20 GMT
 CMD ["apache2-foreground"]
 ```
 
@@ -568,9 +570,9 @@ CMD ["apache2-foreground"]
 		Last Modified: Wed, 14 Aug 2019 11:29:44 GMT  
 		Size: 210.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:69e6d5f3e0a4b90ac7e52ad14efd6bd41889c2ccaa7e037df4b460b2826309e9`  
-		Last Modified: Wed, 14 Aug 2019 11:29:44 GMT  
-		Size: 893.0 B  
+	-	`sha256:17181aea96638bd925921733534c4e06b8b637a485df5c63eedde3875f20ac7e`  
+		Last Modified: Wed, 21 Aug 2019 23:50:57 GMT  
+		Size: 896.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `php:7-apache-buster` - linux; 386
