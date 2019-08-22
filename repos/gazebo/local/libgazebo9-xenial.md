@@ -684,14 +684,9 @@ Licenses: (parsed from: `/usr/share/doc/libcups2/copyright`)
 - `LGPL-2.0 with AOSDL exception`
 - `Zlib`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris cups=2.1.3-4ubuntu0.9
-'http://archive.ubuntu.com/ubuntu/pool/main/c/cups/cups_2.1.3-4ubuntu0.9.dsc' cups_2.1.3-4ubuntu0.9.dsc 3111 SHA256:dcb8c740fb7f9a6f1529a4873dbcd5581757039991ad270defcf8007ea3935fd
-'http://archive.ubuntu.com/ubuntu/pool/main/c/cups/cups_2.1.3.orig.tar.bz2' cups_2.1.3.orig.tar.bz2 8832400 SHA256:36a70d43584aea2617da914b9331e23341c3501a8254c4d2eae9c11ec01fd4d3
-'http://archive.ubuntu.com/ubuntu/pool/main/c/cups/cups_2.1.3-4ubuntu0.9.debian.tar.xz' cups_2.1.3-4ubuntu0.9.debian.tar.xz 352164 SHA256:51926b59f1c6c60219652520f1638ada396c03210ca6eb3572b6243d8f62e515
-```
 
 ### `dpkg` source package: `curl=7.47.0-1ubuntu2.13`
 
@@ -1553,14 +1548,9 @@ Licenses: (parsed from: `/usr/share/doc/libgif-dev/copyright`, `/usr/share/doc/l
 
 - `MIT`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris giflib=5.1.4-0.3~16.04
-'http://archive.ubuntu.com/ubuntu/pool/main/g/giflib/giflib_5.1.4-0.3~16.04.dsc' giflib_5.1.4-0.3~16.04.dsc 2078 SHA256:dbab7c46f37c2c50a3ec54540581b54f0a001c57c6b2588a42a53c926ad3916d
-'http://archive.ubuntu.com/ubuntu/pool/main/g/giflib/giflib_5.1.4.orig.tar.bz2' giflib_5.1.4.orig.tar.bz2 639703 SHA256:df27ec3ff24671f80b29e6ab1c4971059c14ac3db95406884fc26574631ba8d5
-'http://archive.ubuntu.com/ubuntu/pool/main/g/giflib/giflib_5.1.4-0.3~16.04.debian.tar.xz' giflib_5.1.4-0.3~16.04.debian.tar.xz 13052 SHA256:04627903c97eaf176bd3d8214b971867bfa21ee4da7336e36a1aae5e738e6bb7
-```
 
 ### `dpkg` source package: `glib2.0=2.48.2-0ubuntu4.3`
 
