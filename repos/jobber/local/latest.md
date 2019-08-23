@@ -2,8 +2,8 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:f4cb4b4c3d37e0ed7df7a9d7568c3ac9520dc292fad654c4ceb1189149fcea13`
-- Created: `2019-08-03T01:07:03.69085132Z`
+- Image ID: `sha256:dab2e6c2a38c7f753d235f3a55fa5b2bbdab98500142e51138d38d10c5659b3b`
+- Created: `2019-08-20T21:51:35.594857263Z`
 - Virtual Size: ~ 24.68 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
@@ -189,16 +189,16 @@ ISC
 ### `apk` package: `musl`
 
 ```console
-musl-1.1.22-r2 description:
+musl-1.1.22-r3 description:
 the musl c library (libc) implementation
 
-musl-1.1.22-r2 webpage:
+musl-1.1.22-r3 webpage:
 http://www.musl-libc.org/
 
-musl-1.1.22-r2 installed size:
+musl-1.1.22-r3 installed size:
 598016
 
-musl-1.1.22-r2 license:
+musl-1.1.22-r3 license:
 MIT
 
 ```
@@ -206,16 +206,16 @@ MIT
 ### `apk` package: `musl-utils`
 
 ```console
-musl-utils-1.1.22-r2 description:
+musl-utils-1.1.22-r3 description:
 the musl c library (libc) implementation
 
-musl-utils-1.1.22-r2 webpage:
+musl-utils-1.1.22-r3 webpage:
 http://www.musl-libc.org/
 
-musl-utils-1.1.22-r2 installed size:
+musl-utils-1.1.22-r3 installed size:
 147456
 
-musl-utils-1.1.22-r2 license:
+musl-utils-1.1.22-r3 license:
 MIT BSD GPL2+
 
 ```
