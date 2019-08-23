@@ -2,26 +2,25 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:d839fe4b51af9f03c688550159f1caad1fe616cb7858f2f7acfdf9a3b1cfa0e2`
-- Created: `2019-07-19T01:20:29.269681Z`
-- Virtual Size: ~ 258.45 Mb  
+- Image ID: `sha256:72cd7d9060bd13a18e6e3501b4c427fc4e1b1b40ebe28eeaf3d133693401a552`
+- Created: `2019-08-21T23:39:08.711042592Z`
+- Virtual Size: ~ 275.42 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["/opt/ol/helpers/runtime/docker-server.sh"]`
 - Command: `["/opt/ol/wlp/bin/server","run","defaultServer"]`
 - Environment:
   - `PATH=/opt/ol/wlp/bin:/opt/ol/docker/:/opt/ol/helpers/build:/opt/ibm/java/jre/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
-  - `JAVA_VERSION=1.8.0_sr5fp37`
+  - `JAVA_VERSION=1.8.0_sr5fp40`
   - `JAVA_HOME=/opt/ibm/java/jre`
   - `IBM_JAVA_OPTIONS=-Xshareclasses:name=liberty,nonfatal,cacheDir=/output/.classCache/ -XX:+UseContainerSupport`
   - `LOG_DIR=/logs`
   - `WLP_OUTPUT_DIR=/opt/ol/wlp/output`
   - `WLP_SKIP_MAXPERMSIZE=true`
   - `RANDFILE=/tmp/.rnd`
-  - `KEYSTORE_REQUIRED=true`
 - Labels:
-  - `org.opencontainers.image.authors=Arthur De Magalhaes, Andy Naumann`
-  - `org.opencontainers.image.revision=cl190720190711-1115`
+  - `org.opencontainers.image.authors=Arthur De Magalhaes, Chris Potter`
+  - `org.opencontainers.image.revision=cl190820190813-1136`
   - `org.opencontainers.image.source=https://github.com/OpenLiberty/ci.docker`
   - `org.opencontainers.image.url=https://openliberty.io/`
   - `org.opencontainers.image.vendor=Open Liberty`
