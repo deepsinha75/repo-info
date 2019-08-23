@@ -1,18 +1,18 @@
-# `bonita:7.9.1`
+# `bonita:7.9.2`
 
 ## Docker Metadata
 
-- Image ID: `sha256:817d99dabd8ed4ea4fbb85524c6d290bd605b05440135252b0d301aa1d64c08c`
-- Created: `2019-08-15T07:59:13.178619285Z`
-- Virtual Size: ~ 455.63 Mb  
+- Image ID: `sha256:a5e9114b58e724e78035ca5feb0c403ff8ebe6ccc8fb8085aabf60428ee10fad`
+- Created: `2019-08-22T19:22:47.307127946Z`
+- Virtual Size: ~ 455.64 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Command: `["/opt/files/startup.sh"]`
 - Environment:
   - `PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
-  - `BONITA_VERSION=7.9.1`
-  - `BONITA_SHA256=4f580c050b1d18b9e2f172de0b6ad68d521417cff9853bf0ec7a7bcf849a7411`
-  - `BONITA_URL=https://release.ow2.org/bonita/BonitaCommunity-7.9.1-tomcat.zip`
+  - `BONITA_VERSION=7.9.2`
+  - `BONITA_SHA256=98bc66a259d82f46732bfdd96c6eb75b34f96def9ad519b4f991e6fccfc2b121`
+  - `BONITA_URL=https://release.ow2.org/bonita/BonitaCommunity-7.9.2-tomcat.zip`
 
 ## `dpkg` (`.deb`-based packages)
 
@@ -556,13 +556,9 @@ Licenses: (parsed from: `/usr/share/doc/dpkg/copyright`)
 - `public-domain-md5`
 - `public-domain-s-s-d`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris dpkg=1.19.0.5ubuntu2.1
-'http://archive.ubuntu.com/ubuntu/pool/main/d/dpkg/dpkg_1.19.0.5ubuntu2.1.dsc' dpkg_1.19.0.5ubuntu2.1.dsc 2140 SHA256:98044f3fb11b12c8e08930adc3a3057f8e4f542d11aee929a6e2a7dea0d4cd9b
-'http://archive.ubuntu.com/ubuntu/pool/main/d/dpkg/dpkg_1.19.0.5ubuntu2.1.tar.xz' dpkg_1.19.0.5ubuntu2.1.tar.xz 4570912 SHA256:3e8bd743f1b953095bba765bfb75eaaa68a6aba3bc8de97e3f9d1dff754addaa
-```
 
 ### `dpkg` source package: `e2fsprogs=1.44.1-1ubuntu1.1`
 
@@ -2279,9 +2275,9 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris procps=2:3.3.12-3ubuntu1.1
-'http://archive.ubuntu.com/ubuntu/pool/main/p/procps/procps_3.3.12-3ubuntu1.1.dsc' procps_3.3.12-3ubuntu1.1.dsc 2265 SHA256:7a6d2a3970943c7fd5019ced8e36f36983bc159c4807b13900b575fa8a1ba5af
-'http://archive.ubuntu.com/ubuntu/pool/main/p/procps/procps_3.3.12.orig.tar.xz' procps_3.3.12.orig.tar.xz 840540 SHA256:042fcc93e1850aee4c193c51c03f369293fb64fe47e37b38852be6693d12a3af
-'http://archive.ubuntu.com/ubuntu/pool/main/p/procps/procps_3.3.12-3ubuntu1.1.debian.tar.xz' procps_3.3.12-3ubuntu1.1.debian.tar.xz 37388 SHA256:58f388522d4def486730a00107a64b7f0948ee9a6fa6b058c555718d5f339151
+'http://security.ubuntu.com/ubuntu/pool/main/p/procps/procps_3.3.12-3ubuntu1.1.dsc' procps_3.3.12-3ubuntu1.1.dsc 2265 SHA256:7a6d2a3970943c7fd5019ced8e36f36983bc159c4807b13900b575fa8a1ba5af
+'http://security.ubuntu.com/ubuntu/pool/main/p/procps/procps_3.3.12.orig.tar.xz' procps_3.3.12.orig.tar.xz 840540 SHA256:042fcc93e1850aee4c193c51c03f369293fb64fe47e37b38852be6693d12a3af
+'http://security.ubuntu.com/ubuntu/pool/main/p/procps/procps_3.3.12-3ubuntu1.1.debian.tar.xz' procps_3.3.12-3ubuntu1.1.debian.tar.xz 37388 SHA256:58f388522d4def486730a00107a64b7f0948ee9a6fa6b058c555718d5f339151
 ```
 
 ### `dpkg` source package: `publicsuffix=20180223.1310-1`
