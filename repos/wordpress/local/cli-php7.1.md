@@ -2,9 +2,9 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:71d1d4fdc86a4bd55ee2047b5c1b6a1e93544368847b07216267a417cb9acb5f`
-- Created: `2019-08-15T23:57:32.502492128Z`
-- Virtual Size: ~ 125.99 Mb  
+- Image ID: `sha256:dc0520b6c153874e2a2267dbc6c481b89b954f8bcab205269f5edd47596f0527`
+- Created: `2019-08-21T02:06:44.615067937Z`
+- Virtual Size: ~ 126.05 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["docker-entrypoint.sh"]`
@@ -218,16 +218,16 @@ FTL GPL-2.0-or-later
 ### `apk` package: `imagemagick-libs`
 
 ```console
-imagemagick-libs-7.0.8.49-r2 description:
+imagemagick-libs-7.0.8.58-r0 description:
 Collection of tools and libraries for many image formats (libraries)
 
-imagemagick-libs-7.0.8.49-r2 webpage:
+imagemagick-libs-7.0.8.58-r0 webpage:
 https://www.imagemagick.org/
 
-imagemagick-libs-7.0.8.49-r2 installed size:
-3244032
+imagemagick-libs-7.0.8.58-r0 installed size:
+3260416
 
-imagemagick-libs-7.0.8.49-r2 license:
+imagemagick-libs-7.0.8.58-r0 license:
 ImageMagick
 
 ```
@@ -609,16 +609,16 @@ MIT
 ### `apk` package: `mariadb-client`
 
 ```console
-mariadb-client-10.3.16-r0 description:
+mariadb-client-10.3.17-r0 description:
 Client for the MariaDB database
 
-mariadb-client-10.3.16-r0 webpage:
+mariadb-client-10.3.17-r0 webpage:
 https://www.mariadb.org/
 
-mariadb-client-10.3.16-r0 installed size:
-29335552
+mariadb-client-10.3.17-r0 installed size:
+29376512
 
-mariadb-client-10.3.16-r0 license:
+mariadb-client-10.3.17-r0 license:
 GPL-2.0-or-later
 
 ```
@@ -626,16 +626,16 @@ GPL-2.0-or-later
 ### `apk` package: `mariadb-common`
 
 ```console
-mariadb-common-10.3.16-r0 description:
+mariadb-common-10.3.17-r0 description:
 MariaDB common files for both server and client
 
-mariadb-common-10.3.16-r0 webpage:
+mariadb-common-10.3.17-r0 webpage:
 https://www.mariadb.org/
 
-mariadb-common-10.3.16-r0 installed size:
+mariadb-common-10.3.17-r0 installed size:
 2240512
 
-mariadb-common-10.3.16-r0 license:
+mariadb-common-10.3.17-r0 license:
 GPL-2.0-or-later
 
 ```
@@ -643,16 +643,16 @@ GPL-2.0-or-later
 ### `apk` package: `musl`
 
 ```console
-musl-1.1.22-r2 description:
+musl-1.1.22-r3 description:
 the musl c library (libc) implementation
 
-musl-1.1.22-r2 webpage:
+musl-1.1.22-r3 webpage:
 http://www.musl-libc.org/
 
-musl-1.1.22-r2 installed size:
+musl-1.1.22-r3 installed size:
 598016
 
-musl-1.1.22-r2 license:
+musl-1.1.22-r3 license:
 MIT
 
 ```
@@ -660,16 +660,16 @@ MIT
 ### `apk` package: `musl-utils`
 
 ```console
-musl-utils-1.1.22-r2 description:
+musl-utils-1.1.22-r3 description:
 the musl c library (libc) implementation
 
-musl-utils-1.1.22-r2 webpage:
+musl-utils-1.1.22-r3 webpage:
 http://www.musl-libc.org/
 
-musl-utils-1.1.22-r2 installed size:
+musl-utils-1.1.22-r3 installed size:
 147456
 
-musl-utils-1.1.22-r2 license:
+musl-utils-1.1.22-r3 license:
 MIT BSD GPL2+
 
 ```
@@ -677,16 +677,16 @@ MIT BSD GPL2+
 ### `apk` package: `mysql-client`
 
 ```console
-mysql-client-10.3.16-r0 description:
+mysql-client-10.3.17-r0 description:
 Dummy package for mysql-client migration
 
-mysql-client-10.3.16-r0 webpage:
+mysql-client-10.3.17-r0 webpage:
 https://www.mariadb.org/
 
-mysql-client-10.3.16-r0 installed size:
+mysql-client-10.3.17-r0 installed size:
 4096
 
-mysql-client-10.3.16-r0 license:
+mysql-client-10.3.17-r0 license:
 GPL-2.0-or-later
 
 ```

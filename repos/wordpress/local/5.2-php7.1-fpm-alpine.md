@@ -2,9 +2,9 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:91310d3e4c65b292162a4c77e3bd0a65bfe2a20b7f6a003fba672faf77c37f0e`
-- Created: `2019-08-05T22:36:26.410457426Z`
-- Virtual Size: ~ 130.68 Mb  
+- Image ID: `sha256:29baa9449433cea3b634da594eb754ba4a5a590c2d5c1fb9efc510d3e405169c`
+- Created: `2019-08-21T02:02:51.270555196Z`
+- Virtual Size: ~ 130.70 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["docker-entrypoint.sh"]`
@@ -218,16 +218,16 @@ FTL GPL-2.0-or-later
 ### `apk` package: `imagemagick-libs`
 
 ```console
-imagemagick-libs-7.0.8.49-r2 description:
+imagemagick-libs-7.0.8.58-r0 description:
 Collection of tools and libraries for many image formats (libraries)
 
-imagemagick-libs-7.0.8.49-r2 webpage:
+imagemagick-libs-7.0.8.58-r0 webpage:
 https://www.imagemagick.org/
 
-imagemagick-libs-7.0.8.49-r2 installed size:
-3244032
+imagemagick-libs-7.0.8.58-r0 installed size:
+3260416
 
-imagemagick-libs-7.0.8.49-r2 license:
+imagemagick-libs-7.0.8.58-r0 license:
 ImageMagick
 
 ```
@@ -558,16 +558,16 @@ MIT
 ### `apk` package: `musl`
 
 ```console
-musl-1.1.22-r2 description:
+musl-1.1.22-r3 description:
 the musl c library (libc) implementation
 
-musl-1.1.22-r2 webpage:
+musl-1.1.22-r3 webpage:
 http://www.musl-libc.org/
 
-musl-1.1.22-r2 installed size:
+musl-1.1.22-r3 installed size:
 598016
 
-musl-1.1.22-r2 license:
+musl-1.1.22-r3 license:
 MIT
 
 ```
@@ -575,16 +575,16 @@ MIT
 ### `apk` package: `musl-utils`
 
 ```console
-musl-utils-1.1.22-r2 description:
+musl-utils-1.1.22-r3 description:
 the musl c library (libc) implementation
 
-musl-utils-1.1.22-r2 webpage:
+musl-utils-1.1.22-r3 webpage:
 http://www.musl-libc.org/
 
-musl-utils-1.1.22-r2 installed size:
+musl-utils-1.1.22-r3 installed size:
 147456
 
-musl-utils-1.1.22-r2 license:
+musl-utils-1.1.22-r3 license:
 MIT BSD GPL2+
 
 ```
