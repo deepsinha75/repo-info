@@ -733,13 +733,9 @@ Licenses: (parsed from: `/usr/share/doc/dpkg/copyright`, `/usr/share/doc/dpkg-de
 - `public-domain-md5`
 - `public-domain-s-s-d`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris dpkg=1.19.0.5ubuntu2.1
-'http://archive.ubuntu.com/ubuntu/pool/main/d/dpkg/dpkg_1.19.0.5ubuntu2.1.dsc' dpkg_1.19.0.5ubuntu2.1.dsc 2140 SHA256:98044f3fb11b12c8e08930adc3a3057f8e4f542d11aee929a6e2a7dea0d4cd9b
-'http://archive.ubuntu.com/ubuntu/pool/main/d/dpkg/dpkg_1.19.0.5ubuntu2.1.tar.xz' dpkg_1.19.0.5ubuntu2.1.tar.xz 4570912 SHA256:3e8bd743f1b953095bba765bfb75eaaa68a6aba3bc8de97e3f9d1dff754addaa
-```
 
 ### `dpkg` source package: `e2fsprogs=1.44.1-1ubuntu1.1`
 
@@ -2927,9 +2923,9 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris procps=2:3.3.12-3ubuntu1.1
-'http://archive.ubuntu.com/ubuntu/pool/main/p/procps/procps_3.3.12-3ubuntu1.1.dsc' procps_3.3.12-3ubuntu1.1.dsc 2265 SHA256:7a6d2a3970943c7fd5019ced8e36f36983bc159c4807b13900b575fa8a1ba5af
-'http://archive.ubuntu.com/ubuntu/pool/main/p/procps/procps_3.3.12.orig.tar.xz' procps_3.3.12.orig.tar.xz 840540 SHA256:042fcc93e1850aee4c193c51c03f369293fb64fe47e37b38852be6693d12a3af
-'http://archive.ubuntu.com/ubuntu/pool/main/p/procps/procps_3.3.12-3ubuntu1.1.debian.tar.xz' procps_3.3.12-3ubuntu1.1.debian.tar.xz 37388 SHA256:58f388522d4def486730a00107a64b7f0948ee9a6fa6b058c555718d5f339151
+'http://security.ubuntu.com/ubuntu/pool/main/p/procps/procps_3.3.12-3ubuntu1.1.dsc' procps_3.3.12-3ubuntu1.1.dsc 2265 SHA256:7a6d2a3970943c7fd5019ced8e36f36983bc159c4807b13900b575fa8a1ba5af
+'http://security.ubuntu.com/ubuntu/pool/main/p/procps/procps_3.3.12.orig.tar.xz' procps_3.3.12.orig.tar.xz 840540 SHA256:042fcc93e1850aee4c193c51c03f369293fb64fe47e37b38852be6693d12a3af
+'http://security.ubuntu.com/ubuntu/pool/main/p/procps/procps_3.3.12-3ubuntu1.1.debian.tar.xz' procps_3.3.12-3ubuntu1.1.debian.tar.xz 37388 SHA256:58f388522d4def486730a00107a64b7f0948ee9a6fa6b058c555718d5f339151
 ```
 
 ### `dpkg` source package: `pycodestyle=2.3.1-2`
@@ -4141,14 +4137,9 @@ Binary Packages:
 If source is available (seen below), check the contents of `debian/copyright` within it.
 
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris python3-rospkg-modules=1.1.9-1
-'http://packages.ros.org/ros2/ubuntu/pool/main/p/python3-rospkg-modules/python3-rospkg-modules_1.1.9-1.debian.tar.xz' python3-rospkg-modules_1.1.9-1.debian.tar.xz 1072 SHA512:b27cb54d4492fbe510432a0e7d42f3c3ccd1d6c0d6ccf7232f6cac9424f8d943613acac546a2343185935c50fe286539dca1ef1665d8921b1e3a2275b78fbbd7
-'http://packages.ros.org/ros2/ubuntu/pool/main/p/python3-rospkg-modules/python3-rospkg-modules_1.1.9-1.dsc' python3-rospkg-modules_1.1.9-1.dsc 984 SHA512:50873d616edb1b1e5382d7489b79221ade46ddc4461ed1b31457adf6ee040ccc07cf629200809c8ec9a17e005f507eeb3486639bd071068b7bcbbaaf96118760
-'http://packages.ros.org/ros2/ubuntu/pool/main/p/python3-rospkg-modules/python3-rospkg-modules_1.1.9.orig.tar.gz' python3-rospkg-modules_1.1.9.orig.tar.gz 41053 SHA512:c92b62f7484ecb16d322e25f8dfa69eed6d73c933df28ee83e8c7100fd49daed6556218512add21083411693ebee0fc1007ebd4d19d0f8253eab1c14b5ce9402
-```
 
 ### `dpkg` source package: `python3-rospkg=1.1.9-100`
 
@@ -4160,14 +4151,9 @@ Binary Packages:
 If source is available (seen below), check the contents of `debian/copyright` within it.
 
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris python3-rospkg=1.1.9-100
-'http://packages.ros.org/ros2/ubuntu/pool/main/p/python3-rospkg/python3-rospkg_1.1.9-100.debian.tar.xz' python3-rospkg_1.1.9-100.debian.tar.xz 1036 SHA512:7a55f3d59376f1c99b92b15a30f049f4a1980980691bf8c1144b1549135ef0fd81c085568052e0ab00dcfb4923fa002b41bd16eded0a5812e58e1e83e4f4c881
-'http://packages.ros.org/ros2/ubuntu/pool/main/p/python3-rospkg/python3-rospkg_1.1.9-100.dsc' python3-rospkg_1.1.9-100.dsc 920 SHA512:a302f68256caa6539a44ceafbcdc617c25416c827b5db329020c6a50b187d2848286bb6ef2bbdf081da194f2467800548ad2978fb21f907cf5db91cc3a4f01e0
-'http://packages.ros.org/ros2/ubuntu/pool/main/p/python3-rospkg/python3-rospkg_1.1.9.orig.tar.gz' python3-rospkg_1.1.9.orig.tar.gz 17928 SHA512:0649d27b83d8fb5cd2c2b3e48e3c6248d181a8e01fcdb4f327c87d13933781e90aee54d76e2efaa04fd0e451e95f4596024edc1e0a35410fa5d7f29cad69f9c8
-```
 
 ### `dpkg` source package: `python3-stdlib-extensions=3.6.8-1~18.04`
 
@@ -4199,14 +4185,9 @@ Binary Packages:
 If source is available (seen below), check the contents of `debian/copyright` within it.
 
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris python3-vcstool=0.2.2-1
-'http://packages.ros.org/ros2/ubuntu/pool/main/p/python3-vcstool/python3-vcstool_0.2.2-1.debian.tar.xz' python3-vcstool_0.2.2-1.debian.tar.xz 1036 SHA512:a70d81478258f5dc705ab52d2250e9bd74f5086bafa4d4fe9572561d80f2736f873a528f7a351db913c4b70f79bde0b1629cde3b80020c74be6448b11d2b0ef7
-'http://packages.ros.org/ros2/ubuntu/pool/main/p/python3-vcstool/python3-vcstool_0.2.2-1.dsc' python3-vcstool_0.2.2-1.dsc 939 SHA512:22c895812c17387cc031085f3af70e1de54265b86eff7e9c6bef2c1ffd9c98383fd178b8d21fed07eeb8599b4656c8896aa7fcf6355b68ef5cd3fd177abae1a8
-'http://packages.ros.org/ros2/ubuntu/pool/main/p/python3-vcstool/python3-vcstool_0.2.2.orig.tar.gz' python3-vcstool_0.2.2.orig.tar.gz 26572 SHA512:6bba68b758355895db88b09d825ec4cb0379d9a388fa73c7558f11edfe6b67c6f0d7c2e1bb81becc62cb0f88e46ef25be9cb7e081b657350ce3ffad27f1ef312
-```
 
 ### `dpkg` source package: `python3.6=3.6.8-1~18.04.1`
 
