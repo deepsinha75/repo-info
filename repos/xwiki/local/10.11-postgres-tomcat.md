@@ -2,8 +2,8 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:e805fd21ab65961ebc1a610f8baacd8e9dd7cea08156b0d81b18308872bd1f05`
-- Created: `2019-08-15T11:42:20.84259207Z`
+- Image ID: `sha256:3a281bc55556a96b12a818c0bd50bcd97ed4cc924df6efc54756a679b40522de`
+- Created: `2019-08-22T01:45:36.966983716Z`
 - Virtual Size: ~ 1.13 Gb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
@@ -21,8 +21,8 @@
   - `LD_LIBRARY_PATH=/usr/local/tomcat/native-jni-lib`
   - `GPG_KEYS=05AB33110949707C93A279E3D3EFE6B686867BA6 07E48665A34DCAFAE522E5E6266191C37C037D42 47309207D818FFD8DCD3F83F1931D684307A10A5 541FBE7D8F78B25E055DDEE13C370389288584E7 61B832AC2F1C5A90F0F9B00A1C506407564C17A3 713DA88BE50911535FE716F5208B0AB1D63011C7 79F7026C690BAA50B92CD8B66A3AD3F4F22C4FED 9BA44C2621385CB966EBA586F72C284D731FABEE A27677289986DB50844682F8ACB77FC2E86E29AC A9C5DF4D22E99998D9875A5110C01C5A2F6059E7 DCFD35E0BF8CA7344752DE8B6FB21E8933C60243 F3A04C595DB5B6A5F1ECA43E3B7BBB100D811BBE F7DA48BB64BCB84ECBA7EE6935CD23C10D498E23`
   - `TOMCAT_MAJOR=8`
-  - `TOMCAT_VERSION=8.5.43`
-  - `TOMCAT_SHA512=422eda76c5291a3d5ca5fbd679336997371eef913a6bcf95d17bb5b3ba41a3e033c022789cb61a56914be11251492f6c4fced72dbfefb33b31a3b5b0243335c5`
+  - `TOMCAT_VERSION=8.5.45`
+  - `TOMCAT_SHA512=4276a97b91aad204b393578b11266adff9fc5595ec5b0e0818b9343c9b741969bc162ae6933099799ab6c49f3ccb02ccb9bbf7df71e83832ef623a3ee6bee25a`
   - `XWIKI_VERSION=10.11.9`
   - `XWIKI_URL_PREFIX=https://maven.xwiki.org/releases/org/xwiki/platform/xwiki-platform-distribution-war/10.11.9`
   - `XWIKI_DOWNLOAD_SHA256=299fe60d5b32ee1a363ba48ff2346e78eea5f713a0174c20fe9d7531be426a58`
@@ -495,11 +495,11 @@ $ apt-get source -qq --print-uris coreutils=8.28-1ubuntu1
 'http://archive.ubuntu.com/ubuntu/pool/main/c/coreutils/coreutils_8.28-1ubuntu1.debian.tar.xz' coreutils_8.28-1ubuntu1.debian.tar.xz 37940 SHA256:71ba2e83edc675a79e1e0556aff326ab2ae812332692e3db29615e8ed1b427f4
 ```
 
-### `dpkg` source package: `cups=2.2.7-1ubuntu2.6`
+### `dpkg` source package: `cups=2.2.7-1ubuntu2.7`
 
 Binary Packages:
 
-- `libcups2:amd64=2.2.7-1ubuntu2.6`
+- `libcups2:amd64=2.2.7-1ubuntu2.7`
 
 Licenses: (parsed from: `/usr/share/doc/libcups2/copyright`)
 
@@ -510,9 +510,15 @@ Licenses: (parsed from: `/usr/share/doc/libcups2/copyright`)
 - `LGPL-2.0 with AOSDL exception`
 - `Zlib`
 
-**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
-This is *usually* due to a new package version being released and the old version being removed.
+Source:
 
+```console
+$ apt-get source -qq --print-uris cups=2.2.7-1ubuntu2.7
+'http://archive.ubuntu.com/ubuntu/pool/main/c/cups/cups_2.2.7-1ubuntu2.7.dsc' cups_2.2.7-1ubuntu2.7.dsc 3339 SHA256:48a48cc93a931a3a22b04f68cdaa736421759888e72e54dee2acfd3dae9fe1ea
+'http://archive.ubuntu.com/ubuntu/pool/main/c/cups/cups_2.2.7.orig.tar.gz' cups_2.2.7.orig.tar.gz 10330296 SHA256:3c4b637b737077565ccdfbd5f61785d03f49461ae736fcc2c0ffaf41d2c6ea6a
+'http://archive.ubuntu.com/ubuntu/pool/main/c/cups/cups_2.2.7.orig.tar.gz.asc' cups_2.2.7.orig.tar.gz.asc 872 SHA256:2b17bef166e1f8a0dece544c0e4f0d847f6d2c8e784298898966352f4e47581a
+'http://archive.ubuntu.com/ubuntu/pool/main/c/cups/cups_2.2.7-1ubuntu2.7.debian.tar.xz' cups_2.2.7-1ubuntu2.7.debian.tar.xz 362500 SHA256:9d603bfc13ffa9ba8ad8f94ab3ca0e5779eeaa546809381e1580fc3da132cfe9
+```
 
 ### `dpkg` source package: `curl=7.58.0-2ubuntu3.7`
 
@@ -742,13 +748,9 @@ Licenses: (parsed from: `/usr/share/doc/dpkg/copyright`)
 - `public-domain-md5`
 - `public-domain-s-s-d`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris dpkg=1.19.0.5ubuntu2.1
-'http://archive.ubuntu.com/ubuntu/pool/main/d/dpkg/dpkg_1.19.0.5ubuntu2.1.dsc' dpkg_1.19.0.5ubuntu2.1.dsc 2140 SHA256:98044f3fb11b12c8e08930adc3a3057f8e4f542d11aee929a6e2a7dea0d4cd9b
-'http://archive.ubuntu.com/ubuntu/pool/main/d/dpkg/dpkg_1.19.0.5ubuntu2.1.tar.xz' dpkg_1.19.0.5ubuntu2.1.tar.xz 4570912 SHA256:3e8bd743f1b953095bba765bfb75eaaa68a6aba3bc8de97e3f9d1dff754addaa
-```
 
 ### `dpkg` source package: `e2fsprogs=1.44.1-1ubuntu1.1`
 
@@ -2324,29 +2326,29 @@ $ apt-get source -qq --print-uris libpsl=0.19.1-5build1
 'http://archive.ubuntu.com/ubuntu/pool/main/libp/libpsl/libpsl_0.19.1-5build1.debian.tar.xz' libpsl_0.19.1-5build1.debian.tar.xz 9860 SHA256:53285bee66ac22a25dd41f7778cc4e94ae3d61929eb6701a8064a38a964e40e2
 ```
 
-### `dpkg` source package: `libreoffice=1:6.0.7-0ubuntu0.18.04.8`
+### `dpkg` source package: `libreoffice=1:6.0.7-0ubuntu0.18.04.9`
 
 Binary Packages:
 
-- `fonts-opensymbol=2:102.10+LibO6.0.7-0ubuntu0.18.04.8`
-- `libreoffice=1:6.0.7-0ubuntu0.18.04.8`
-- `libreoffice-avmedia-backend-gstreamer=1:6.0.7-0ubuntu0.18.04.8`
-- `libreoffice-base=1:6.0.7-0ubuntu0.18.04.8`
-- `libreoffice-base-core=1:6.0.7-0ubuntu0.18.04.8`
-- `libreoffice-base-drivers=1:6.0.7-0ubuntu0.18.04.8`
-- `libreoffice-calc=1:6.0.7-0ubuntu0.18.04.8`
-- `libreoffice-common=1:6.0.7-0ubuntu0.18.04.8`
-- `libreoffice-core=1:6.0.7-0ubuntu0.18.04.8`
-- `libreoffice-draw=1:6.0.7-0ubuntu0.18.04.8`
-- `libreoffice-impress=1:6.0.7-0ubuntu0.18.04.8`
-- `libreoffice-math=1:6.0.7-0ubuntu0.18.04.8`
-- `libreoffice-report-builder-bin=1:6.0.7-0ubuntu0.18.04.8`
-- `libreoffice-style-galaxy=1:6.0.7-0ubuntu0.18.04.8`
-- `libreoffice-style-tango=1:6.0.7-0ubuntu0.18.04.8`
-- `libreoffice-writer=1:6.0.7-0ubuntu0.18.04.8`
-- `python3-uno=1:6.0.7-0ubuntu0.18.04.8`
-- `uno-libs3=6.0.7-0ubuntu0.18.04.8`
-- `ure=6.0.7-0ubuntu0.18.04.8`
+- `fonts-opensymbol=2:102.10+LibO6.0.7-0ubuntu0.18.04.9`
+- `libreoffice=1:6.0.7-0ubuntu0.18.04.9`
+- `libreoffice-avmedia-backend-gstreamer=1:6.0.7-0ubuntu0.18.04.9`
+- `libreoffice-base=1:6.0.7-0ubuntu0.18.04.9`
+- `libreoffice-base-core=1:6.0.7-0ubuntu0.18.04.9`
+- `libreoffice-base-drivers=1:6.0.7-0ubuntu0.18.04.9`
+- `libreoffice-calc=1:6.0.7-0ubuntu0.18.04.9`
+- `libreoffice-common=1:6.0.7-0ubuntu0.18.04.9`
+- `libreoffice-core=1:6.0.7-0ubuntu0.18.04.9`
+- `libreoffice-draw=1:6.0.7-0ubuntu0.18.04.9`
+- `libreoffice-impress=1:6.0.7-0ubuntu0.18.04.9`
+- `libreoffice-math=1:6.0.7-0ubuntu0.18.04.9`
+- `libreoffice-report-builder-bin=1:6.0.7-0ubuntu0.18.04.9`
+- `libreoffice-style-galaxy=1:6.0.7-0ubuntu0.18.04.9`
+- `libreoffice-style-tango=1:6.0.7-0ubuntu0.18.04.9`
+- `libreoffice-writer=1:6.0.7-0ubuntu0.18.04.9`
+- `python3-uno=1:6.0.7-0ubuntu0.18.04.9`
+- `uno-libs3=6.0.7-0ubuntu0.18.04.9`
+- `ure=6.0.7-0ubuntu0.18.04.9`
 
 Licenses: (parsed from: `/usr/share/doc/fonts-opensymbol/copyright`, `/usr/share/doc/libreoffice/copyright`, `/usr/share/doc/libreoffice-avmedia-backend-gstreamer/copyright`, `/usr/share/doc/libreoffice-base/copyright`, `/usr/share/doc/libreoffice-base-core/copyright`, `/usr/share/doc/libreoffice-base-drivers/copyright`, `/usr/share/doc/libreoffice-calc/copyright`, `/usr/share/doc/libreoffice-common/copyright`, `/usr/share/doc/libreoffice-core/copyright`, `/usr/share/doc/libreoffice-draw/copyright`, `/usr/share/doc/libreoffice-impress/copyright`, `/usr/share/doc/libreoffice-math/copyright`, `/usr/share/doc/libreoffice-report-builder-bin/copyright`, `/usr/share/doc/libreoffice-style-galaxy/copyright`, `/usr/share/doc/libreoffice-style-tango/copyright`, `/usr/share/doc/libreoffice-writer/copyright`, `/usr/share/doc/python3-uno/copyright`, `/usr/share/doc/uno-libs3/copyright`, `/usr/share/doc/ure/copyright`)
 
@@ -2362,9 +2364,17 @@ Licenses: (parsed from: `/usr/share/doc/fonts-opensymbol/copyright`, `/usr/share
 - `MPL-2.0`
 - `other`
 
-**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
-This is *usually* due to a new package version being released and the old version being removed.
+Source:
 
+```console
+$ apt-get source -qq --print-uris libreoffice=1:6.0.7-0ubuntu0.18.04.9
+'http://archive.ubuntu.com/ubuntu/pool/main/libr/libreoffice/libreoffice_6.0.7-0ubuntu0.18.04.9.dsc' libreoffice_6.0.7-0ubuntu0.18.04.9.dsc 18074 SHA256:a695f24a87b70e96aa4582fa4d0f69f7e6f056285e717121e7059c3ce2231f11
+'http://archive.ubuntu.com/ubuntu/pool/main/libr/libreoffice/libreoffice_6.0.7.orig-helpcontent2.tar.xz' libreoffice_6.0.7.orig-helpcontent2.tar.xz 2423012 SHA256:41c1ef4b0437acd7e8ba36789b45906e99e0487b12198bce0d30ed74c9e0ccaf
+'http://archive.ubuntu.com/ubuntu/pool/main/libr/libreoffice/libreoffice_6.0.7.orig-tarballs.tar.xz' libreoffice_6.0.7.orig-tarballs.tar.xz 215486780 SHA256:96116dcc195ab1f47fa677bf88f8d233561422dbfe5a0539f7408b56e254c194
+'http://archive.ubuntu.com/ubuntu/pool/main/libr/libreoffice/libreoffice_6.0.7.orig-translations.tar.xz' libreoffice_6.0.7.orig-translations.tar.xz 139598364 SHA256:24a3ef909cfb0722dec3d6e40924681b41641f175e5df90b3e5507fdceb43186
+'http://archive.ubuntu.com/ubuntu/pool/main/libr/libreoffice/libreoffice_6.0.7.orig.tar.xz' libreoffice_6.0.7.orig.tar.xz 183202236 SHA256:fc67036b0c00c1685d39acec6c485a4a250b6bb92fc08a88377d39d2f7fd7923
+'http://archive.ubuntu.com/ubuntu/pool/main/libr/libreoffice/libreoffice_6.0.7-0ubuntu0.18.04.9.debian.tar.xz' libreoffice_6.0.7-0ubuntu0.18.04.9.debian.tar.xz 2178156 SHA256:06f86b944ed1dc59474ddd257c000c8f3d74cb747f4d11ee35515ddcd05114f6
+```
 
 ### `dpkg` source package: `librest=0.8.0-2`
 
@@ -3635,9 +3645,8 @@ $ apt-get source -qq --print-uris poppler=0.62.0-2ubuntu2.10
 Binary Packages:
 
 - `libprocps6:amd64=2:3.3.12-3ubuntu1.1`
-- `procps=2:3.3.12-3ubuntu1.1`
 
-Licenses: (parsed from: `/usr/share/doc/libprocps6/copyright`, `/usr/share/doc/procps/copyright`)
+Licenses: (parsed from: `/usr/share/doc/libprocps6/copyright`)
 
 - `GPL-2`
 - `GPL-2.0+`
@@ -3650,9 +3659,33 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris procps=2:3.3.12-3ubuntu1.1
-'http://archive.ubuntu.com/ubuntu/pool/main/p/procps/procps_3.3.12-3ubuntu1.1.dsc' procps_3.3.12-3ubuntu1.1.dsc 2265 SHA256:7a6d2a3970943c7fd5019ced8e36f36983bc159c4807b13900b575fa8a1ba5af
+'http://security.ubuntu.com/ubuntu/pool/main/p/procps/procps_3.3.12-3ubuntu1.1.dsc' procps_3.3.12-3ubuntu1.1.dsc 2265 SHA256:7a6d2a3970943c7fd5019ced8e36f36983bc159c4807b13900b575fa8a1ba5af
+'http://security.ubuntu.com/ubuntu/pool/main/p/procps/procps_3.3.12.orig.tar.xz' procps_3.3.12.orig.tar.xz 840540 SHA256:042fcc93e1850aee4c193c51c03f369293fb64fe47e37b38852be6693d12a3af
+'http://security.ubuntu.com/ubuntu/pool/main/p/procps/procps_3.3.12-3ubuntu1.1.debian.tar.xz' procps_3.3.12-3ubuntu1.1.debian.tar.xz 37388 SHA256:58f388522d4def486730a00107a64b7f0948ee9a6fa6b058c555718d5f339151
+```
+
+### `dpkg` source package: `procps=2:3.3.12-3ubuntu1.2`
+
+Binary Packages:
+
+- `procps=2:3.3.12-3ubuntu1.2`
+
+Licenses: (parsed from: `/usr/share/doc/procps/copyright`)
+
+- `GPL-2`
+- `GPL-2.0+`
+- `LGPL-2`
+- `LGPL-2.0+`
+- `LGPL-2.1`
+- `LGPL-2.1+`
+
+Source:
+
+```console
+$ apt-get source -qq --print-uris procps=2:3.3.12-3ubuntu1.2
+'http://archive.ubuntu.com/ubuntu/pool/main/p/procps/procps_3.3.12-3ubuntu1.2.dsc' procps_3.3.12-3ubuntu1.2.dsc 1920 SHA256:90aeb0430ae305b135a648772fe57255c64cbd6bd8dc900f86d92fd7448ac84c
 'http://archive.ubuntu.com/ubuntu/pool/main/p/procps/procps_3.3.12.orig.tar.xz' procps_3.3.12.orig.tar.xz 840540 SHA256:042fcc93e1850aee4c193c51c03f369293fb64fe47e37b38852be6693d12a3af
-'http://archive.ubuntu.com/ubuntu/pool/main/p/procps/procps_3.3.12-3ubuntu1.1.debian.tar.xz' procps_3.3.12-3ubuntu1.1.debian.tar.xz 37388 SHA256:58f388522d4def486730a00107a64b7f0948ee9a6fa6b058c555718d5f339151
+'http://archive.ubuntu.com/ubuntu/pool/main/p/procps/procps_3.3.12-3ubuntu1.2.debian.tar.xz' procps_3.3.12-3ubuntu1.2.debian.tar.xz 37736 SHA256:8773c939de7b2cb2b26709452ede19a6e315a83f5fb318e9968f4f4fca16ada4
 ```
 
 ### `dpkg` source package: `python3-defaults=3.6.7-1~18.04`
