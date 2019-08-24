@@ -910,10 +910,16 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris foreign=0.8.72-1
-'http://http.debian.net/debian/pool/main/f/foreign/foreign_0.8.72-1.dsc' foreign_0.8.72-1.dsc 1832 SHA256:dad1e55ba6ba393412d720ecc5718511137c98ff1017e0bc9ec4833ea6bd8f13
-'http://http.debian.net/debian/pool/main/f/foreign/foreign_0.8.72.orig.tar.gz' foreign_0.8.72.orig.tar.gz 346659 SHA256:439c17c9cd387e180b1bb640efff3ed1696b1016d0f7b3b3b884e89884488c88
-'http://http.debian.net/debian/pool/main/f/foreign/foreign_0.8.72-1.debian.tar.xz' foreign_0.8.72-1.debian.tar.xz 4120 SHA256:a8357cb50bd0e8cef03c2c83b07a1c40eef9a6decb78e3473e7dc8dda2d58c93
+'http://deb.debian.org/debian/pool/main/f/foreign/foreign_0.8.72-1.dsc' foreign_0.8.72-1.dsc 1832 SHA256:dad1e55ba6ba393412d720ecc5718511137c98ff1017e0bc9ec4833ea6bd8f13
+'http://deb.debian.org/debian/pool/main/f/foreign/foreign_0.8.72.orig.tar.gz' foreign_0.8.72.orig.tar.gz 346659 SHA256:439c17c9cd387e180b1bb640efff3ed1696b1016d0f7b3b3b884e89884488c88
+'http://deb.debian.org/debian/pool/main/f/foreign/foreign_0.8.72-1.debian.tar.xz' foreign_0.8.72-1.debian.tar.xz 4120 SHA256:a8357cb50bd0e8cef03c2c83b07a1c40eef9a6decb78e3473e7dc8dda2d58c93
 ```
+
+Other potentially useful URLs:
+
+- https://sources.debian.net/src/foreign/0.8.72-1/ (for browsing the source)
+- https://sources.debian.net/src/foreign/0.8.72-1/debian/copyright/ (for direct copyright/license information)
+- http://snapshot.debian.org/package/foreign/0.8.72-1/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `freetype=2.9.1-4`
 
@@ -1100,21 +1106,13 @@ Licenses: (parsed from: `/usr/share/doc/libgdbm-compat4/copyright`, `/usr/share/
 - `GPL-3`
 - `GPL-3+`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris gdbm=1.18.1-4
-'http://deb.debian.org/debian/pool/main/g/gdbm/gdbm_1.18.1-4.dsc' gdbm_1.18.1-4.dsc 2635 SHA256:14f2a1741041f3ee8ebe1db9985ec12855c856a4c545ace6140b1222030ae64a
-'http://deb.debian.org/debian/pool/main/g/gdbm/gdbm_1.18.1.orig.tar.gz' gdbm_1.18.1.orig.tar.gz 941863 SHA256:86e613527e5dba544e73208f42b78b7c022d4fa5a6d5498bf18c8d6f745b91dc
-'http://deb.debian.org/debian/pool/main/g/gdbm/gdbm_1.18.1.orig.tar.gz.asc' gdbm_1.18.1.orig.tar.gz.asc 412 SHA256:3254738e7689e44ac65e78a766806828b8282e6bb1c0e5bb6156a99e567889a5
-'http://deb.debian.org/debian/pool/main/g/gdbm/gdbm_1.18.1-4.debian.tar.xz' gdbm_1.18.1-4.debian.tar.xz 16460 SHA256:1a7771cf18cacf86b8415cbdeafa4e54dd2dadee59f0c29833aba476726594c5
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/gdbm/1.18.1-4/
 
-- https://sources.debian.net/src/gdbm/1.18.1-4/ (for browsing the source)
-- https://sources.debian.net/src/gdbm/1.18.1-4/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/gdbm/1.18.1-4/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `glib2.0=2.60.6-2`
 
@@ -2655,20 +2653,13 @@ Licenses: (parsed from: `/usr/share/doc/libzstd1/copyright`)
 - `GPL-2+`
 - `zlib`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris libzstd=1.3.8+dfsg-3
-'http://deb.debian.org/debian/pool/main/libz/libzstd/libzstd_1.3.8+dfsg-3.dsc' libzstd_1.3.8+dfsg-3.dsc 2285 SHA256:d5a46f4c8ecaffac70eb8799a7a221cf8c877d830bb2803364aeb6c825afa6e3
-'http://deb.debian.org/debian/pool/main/libz/libzstd/libzstd_1.3.8+dfsg.orig.tar.xz' libzstd_1.3.8+dfsg.orig.tar.xz 1299276 SHA256:03851f2c26ffbf1d43633df3f98966f3c62e698e91ef4dc90523915bc934e5f7
-'http://deb.debian.org/debian/pool/main/libz/libzstd/libzstd_1.3.8+dfsg-3.debian.tar.xz' libzstd_1.3.8+dfsg-3.debian.tar.xz 10396 SHA256:392a971d6bba30b6cb3e5ff04efb10c45b052e458dfc6631ede9e024341321f9
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/libzstd/1.3.8+dfsg-3/
 
-- https://sources.debian.net/src/libzstd/1.3.8+dfsg-3/ (for browsing the source)
-- https://sources.debian.net/src/libzstd/1.3.8+dfsg-3/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/libzstd/1.3.8+dfsg-3/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `linux=5.2.7-1`
 
@@ -3005,10 +2996,16 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris nlme=3.1.141-1
-'http://http.debian.net/debian/pool/main/n/nlme/nlme_3.1.141-1.dsc' nlme_3.1.141-1.dsc 1837 SHA256:939e52aac3fb8f9b4a8a7560be24b8984a0edf9a7a55c94b85ac924bb46d7ff4
-'http://http.debian.net/debian/pool/main/n/nlme/nlme_3.1.141.orig.tar.gz' nlme_3.1.141.orig.tar.gz 775617 SHA256:910046260a03d8f776ac7b0766b5adee91556829d0d8a70165b2c695ce038056
-'http://http.debian.net/debian/pool/main/n/nlme/nlme_3.1.141-1.debian.tar.xz' nlme_3.1.141-1.debian.tar.xz 7032 SHA256:eac42ef3ac6401890467eaf560ff2c5373759488cf5b47f8bc5b3a3b4dbc4c2a
+'http://deb.debian.org/debian/pool/main/n/nlme/nlme_3.1.141-1.dsc' nlme_3.1.141-1.dsc 1837 SHA256:939e52aac3fb8f9b4a8a7560be24b8984a0edf9a7a55c94b85ac924bb46d7ff4
+'http://deb.debian.org/debian/pool/main/n/nlme/nlme_3.1.141.orig.tar.gz' nlme_3.1.141.orig.tar.gz 775617 SHA256:910046260a03d8f776ac7b0766b5adee91556829d0d8a70165b2c695ce038056
+'http://deb.debian.org/debian/pool/main/n/nlme/nlme_3.1.141-1.debian.tar.xz' nlme_3.1.141-1.debian.tar.xz 7032 SHA256:eac42ef3ac6401890467eaf560ff2c5373759488cf5b47f8bc5b3a3b4dbc4c2a
 ```
+
+Other potentially useful URLs:
+
+- https://sources.debian.net/src/nlme/3.1.141-1/ (for browsing the source)
+- https://sources.debian.net/src/nlme/3.1.141-1/debian/copyright/ (for direct copyright/license information)
+- http://snapshot.debian.org/package/nlme/3.1.141-1/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `openldap=2.4.48+dfsg-1`
 
@@ -3077,21 +3074,13 @@ Licenses: (parsed from: `/usr/share/doc/libp11-kit0/copyright`)
 - `permissive-like-automake-output`
 - `same-as-rest-of-p11kit`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris p11-kit=0.23.15-2
-'http://deb.debian.org/debian/pool/main/p/p11-kit/p11-kit_0.23.15-2.dsc' p11-kit_0.23.15-2.dsc 2420 SHA256:c4a856c207f95510c5ba978394cf3c2e3867c1e857e965f89c321515844fe52c
-'http://deb.debian.org/debian/pool/main/p/p11-kit/p11-kit_0.23.15.orig.tar.gz' p11-kit_0.23.15.orig.tar.gz 1276733 SHA256:f7c139a0c77a1f0012619003e542060ba8f94799a0ef463026db390680e4d798
-'http://deb.debian.org/debian/pool/main/p/p11-kit/p11-kit_0.23.15.orig.tar.gz.asc' p11-kit_0.23.15.orig.tar.gz.asc 879 SHA256:e28bd948178e2f91e18fbb4387d7b6532aa44eb92ac4c67a6485bc9cd9c79db8
-'http://deb.debian.org/debian/pool/main/p/p11-kit/p11-kit_0.23.15-2.debian.tar.xz' p11-kit_0.23.15-2.debian.tar.xz 22820 SHA256:878675cf4c1e73c2d53960ca9e6e558470acb64aad9ad5b55dc556e90e80bf8e
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/p11-kit/0.23.15-2/
 
-- https://sources.debian.net/src/p11-kit/0.23.15-2/ (for browsing the source)
-- https://sources.debian.net/src/p11-kit/0.23.15-2/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/p11-kit/0.23.15-2/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `pam=1.3.1-5`
 
@@ -3364,10 +3353,16 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris r-base=3.6.1-4
-'http://http.debian.net/debian/pool/main/r/r-base/r-base_3.6.1-4.dsc' r-base_3.6.1-4.dsc 3016 SHA256:bf239fbb989633d73c045e2ee5829edad1fda7318eddc8d2c1ccf7584412cf2a
-'http://http.debian.net/debian/pool/main/r/r-base/r-base_3.6.1.orig.tar.gz' r-base_3.6.1.orig.tar.gz 30463021 SHA256:5baa9ebd3e71acecdcc3da31d9042fb174d55a42829f8315f2457080978b1389
-'http://http.debian.net/debian/pool/main/r/r-base/r-base_3.6.1-4.debian.tar.xz' r-base_3.6.1-4.debian.tar.xz 96008 SHA256:a66f8b6b12d24661edd09698ffcab60bd9e6e19a3d8cfa24dfa19997804d7608
+'http://deb.debian.org/debian/pool/main/r/r-base/r-base_3.6.1-4.dsc' r-base_3.6.1-4.dsc 3016 SHA256:bf239fbb989633d73c045e2ee5829edad1fda7318eddc8d2c1ccf7584412cf2a
+'http://deb.debian.org/debian/pool/main/r/r-base/r-base_3.6.1.orig.tar.gz' r-base_3.6.1.orig.tar.gz 30463021 SHA256:5baa9ebd3e71acecdcc3da31d9042fb174d55a42829f8315f2457080978b1389
+'http://deb.debian.org/debian/pool/main/r/r-base/r-base_3.6.1-4.debian.tar.xz' r-base_3.6.1-4.debian.tar.xz 96008 SHA256:a66f8b6b12d24661edd09698ffcab60bd9e6e19a3d8cfa24dfa19997804d7608
 ```
+
+Other potentially useful URLs:
+
+- https://sources.debian.net/src/r-base/3.6.1-4/ (for browsing the source)
+- https://sources.debian.net/src/r-base/3.6.1-4/debian/copyright/ (for direct copyright/license information)
+- http://snapshot.debian.org/package/r-base/3.6.1-4/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `r-cran-class=7.3-15-1`
 
@@ -3674,20 +3669,13 @@ Licenses: (parsed from: `/usr/share/doc/libsystemd0/copyright`, `/usr/share/doc/
 - `LGPL-2.1+`
 - `public-domain`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris systemd=241-7
-'http://deb.debian.org/debian/pool/main/s/systemd/systemd_241-7.dsc' systemd_241-7.dsc 4914 SHA256:b82df11c2ed4fce101b3b56515ce507a733ed0f41c2560f31b917022d7292182
-'http://deb.debian.org/debian/pool/main/s/systemd/systemd_241.orig.tar.gz' systemd_241.orig.tar.gz 7640538 SHA256:b2561a8e1d10a2c248253f0dda31a85dd6d69f2b54177de55e02cd1d2778316e
-'http://deb.debian.org/debian/pool/main/s/systemd/systemd_241-7.debian.tar.xz' systemd_241-7.debian.tar.xz 164076 SHA256:7815fd139ef8b9ec1cb8e7674bb12023d816df67afa332b231c9f4c98813fdbe
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/systemd/241-7/
 
-- https://sources.debian.net/src/systemd/241-7/ (for browsing the source)
-- https://sources.debian.net/src/systemd/241-7/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/systemd/241-7/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `sysvinit=2.95-4`
 
