@@ -1,10 +1,10 @@
-# `nextcloud:17.0.0beta1-fpm-alpine`
+# `nextcloud:17.0.0beta2-fpm-alpine`
 
 ## Docker Metadata
 
-- Image ID: `sha256:522d223151244917dce262c2c7f0ac3b8d11d6ca1d3fd816c907b34f0c61d6c7`
-- Created: `2019-08-16T22:24:54.829863771Z`
-- Virtual Size: ~ 348.98 Mb  
+- Image ID: `sha256:e21f0859ffb49f51a674dc57396e0f969b25ee883d4127cf2e1109caa9950e7e`
+- Created: `2019-08-22T20:24:37.05415568Z`
+- Virtual Size: ~ 349.06 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["/entrypoint.sh"]`
@@ -23,7 +23,7 @@
   - `PHP_ASC_URL=https://www.php.net/get/php-7.3.8.tar.xz.asc/from/this/mirror`
   - `PHP_SHA256=f6046b2ae625d8c04310bda0737ac660dc5563a8e04e8a46c1ee24ea414ad5a5`
   - `PHP_MD5=`
-  - `NEXTCLOUD_VERSION=17.0.0beta1`
+  - `NEXTCLOUD_VERSION=17.0.0beta2`
 
 ## `apk` (`.apk`-based packages)
 
@@ -251,16 +251,16 @@ MIT ICU Unicode-TOU
 ### `apk` package: `imagemagick-libs`
 
 ```console
-imagemagick-libs-7.0.8.49-r2 description:
+imagemagick-libs-7.0.8.58-r0 description:
 Collection of tools and libraries for many image formats (libraries)
 
-imagemagick-libs-7.0.8.49-r2 webpage:
+imagemagick-libs-7.0.8.58-r0 webpage:
 https://www.imagemagick.org/
 
-imagemagick-libs-7.0.8.49-r2 installed size:
-3244032
+imagemagick-libs-7.0.8.58-r0 installed size:
+3260416
 
-imagemagick-libs-7.0.8.49-r2 license:
+imagemagick-libs-7.0.8.58-r0 license:
 ImageMagick
 
 ```
@@ -523,16 +523,16 @@ Libpng
 ### `apk` package: `libpq`
 
 ```console
-libpq-11.4-r0 description:
+libpq-11.5-r0 description:
 PostgreSQL libraries
 
-libpq-11.4-r0 webpage:
+libpq-11.5-r0 webpage:
 https://www.postgresql.org/
 
-libpq-11.4-r0 installed size:
+libpq-11.5-r0 installed size:
 315392
 
-libpq-11.4-r0 license:
+libpq-11.5-r0 license:
 PostgreSQL
 
 ```
@@ -778,16 +778,16 @@ BSD-3-Clause
 ### `apk` package: `musl`
 
 ```console
-musl-1.1.22-r2 description:
+musl-1.1.22-r3 description:
 the musl c library (libc) implementation
 
-musl-1.1.22-r2 webpage:
+musl-1.1.22-r3 webpage:
 http://www.musl-libc.org/
 
-musl-1.1.22-r2 installed size:
+musl-1.1.22-r3 installed size:
 598016
 
-musl-1.1.22-r2 license:
+musl-1.1.22-r3 license:
 MIT
 
 ```
@@ -795,16 +795,16 @@ MIT
 ### `apk` package: `musl-utils`
 
 ```console
-musl-utils-1.1.22-r2 description:
+musl-utils-1.1.22-r3 description:
 the musl c library (libc) implementation
 
-musl-utils-1.1.22-r2 webpage:
+musl-utils-1.1.22-r3 webpage:
 http://www.musl-libc.org/
 
-musl-utils-1.1.22-r2 installed size:
+musl-utils-1.1.22-r3 installed size:
 147456
 
-musl-utils-1.1.22-r2 license:
+musl-utils-1.1.22-r3 license:
 MIT BSD GPL2+
 
 ```

@@ -2,9 +2,9 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:d6083e43c4878834d111c3d19fa2543e61ab94d228f9c58f359c63daf2429bda`
-- Created: `2019-08-16T22:23:24.475120281Z`
-- Virtual Size: ~ 344.28 Mb  
+- Image ID: `sha256:d15187598b9f7c933557b136ebba374c1531e6700f60230ed93bc1a6a359194d`
+- Created: `2019-08-21T02:16:30.943226932Z`
+- Virtual Size: ~ 344.30 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["/entrypoint.sh"]`
@@ -251,16 +251,16 @@ MIT ICU Unicode-TOU
 ### `apk` package: `imagemagick-libs`
 
 ```console
-imagemagick-libs-7.0.8.49-r2 description:
+imagemagick-libs-7.0.8.58-r0 description:
 Collection of tools and libraries for many image formats (libraries)
 
-imagemagick-libs-7.0.8.49-r2 webpage:
+imagemagick-libs-7.0.8.58-r0 webpage:
 https://www.imagemagick.org/
 
-imagemagick-libs-7.0.8.49-r2 installed size:
-3244032
+imagemagick-libs-7.0.8.58-r0 installed size:
+3260416
 
-imagemagick-libs-7.0.8.49-r2 license:
+imagemagick-libs-7.0.8.58-r0 license:
 ImageMagick
 
 ```
@@ -523,16 +523,16 @@ Libpng
 ### `apk` package: `libpq`
 
 ```console
-libpq-11.4-r0 description:
+libpq-11.5-r0 description:
 PostgreSQL libraries
 
-libpq-11.4-r0 webpage:
+libpq-11.5-r0 webpage:
 https://www.postgresql.org/
 
-libpq-11.4-r0 installed size:
+libpq-11.5-r0 installed size:
 315392
 
-libpq-11.4-r0 license:
+libpq-11.5-r0 license:
 PostgreSQL
 
 ```
@@ -778,16 +778,16 @@ BSD-3-Clause
 ### `apk` package: `musl`
 
 ```console
-musl-1.1.22-r2 description:
+musl-1.1.22-r3 description:
 the musl c library (libc) implementation
 
-musl-1.1.22-r2 webpage:
+musl-1.1.22-r3 webpage:
 http://www.musl-libc.org/
 
-musl-1.1.22-r2 installed size:
+musl-1.1.22-r3 installed size:
 598016
 
-musl-1.1.22-r2 license:
+musl-1.1.22-r3 license:
 MIT
 
 ```
@@ -795,16 +795,16 @@ MIT
 ### `apk` package: `musl-utils`
 
 ```console
-musl-utils-1.1.22-r2 description:
+musl-utils-1.1.22-r3 description:
 the musl c library (libc) implementation
 
-musl-utils-1.1.22-r2 webpage:
+musl-utils-1.1.22-r3 webpage:
 http://www.musl-libc.org/
 
-musl-utils-1.1.22-r2 installed size:
+musl-utils-1.1.22-r3 installed size:
 147456
 
-musl-utils-1.1.22-r2 license:
+musl-utils-1.1.22-r3 license:
 MIT BSD GPL2+
 
 ```
