@@ -2,16 +2,16 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:88760685a975782181dead915280a9e960304f634ca355997ec16649b96b77ca`
-- Created: `2019-07-05T21:20:41.735385861Z`
-- Virtual Size: ~ 34.10 Mb  
+- Image ID: `sha256:5ccb5186b75cd13ff0d028f5b5b2bdf7ef7ca2b3d56eb2c6eb6c136077a6991a`
+- Created: `2019-08-23T22:26:32.857588774Z`
+- Virtual Size: ~ 34.15 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Command: `["/bin/bash"]`
 - Environment:
   - `PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
 - Labels:
-  - `build-date=20190705`
+  - `build-date=20190823`
   - `name=Photon OS x86_64/3.0 Base Image`
   - `vendor=VMware`
 
@@ -65,7 +65,7 @@ Licenses (from `rpm --query`): GPLv2+ or LGPLv3+
 
 **WARNING:** unable to find source (`yumdownloader` failed or returned no results)!
 
-### `rpm` package: `expat-libs-2.2.6-1.ph3.x86_64`
+### `rpm` package: `expat-libs-2.2.6-2.ph3.x86_64`
 
 Licenses (from `rpm --query`): MIT
 
@@ -119,7 +119,7 @@ Licenses (from `rpm --query`): BSD
 
 **WARNING:** unable to find source (`yumdownloader` failed or returned no results)!
 
-### `rpm` package: `libssh2-1.8.2-1.ph3.x86_64`
+### `rpm` package: `libssh2-1.9.0-1.ph3.x86_64`
 
 Licenses (from `rpm --query`): BSD
 
@@ -137,7 +137,7 @@ Licenses (from `rpm --query`): MPLv2.0
 
 **WARNING:** unable to find source (`yumdownloader` failed or returned no results)!
 
-### `rpm` package: `nss-libs-3.44-1.ph3.x86_64`
+### `rpm` package: `nss-libs-3.44-2.ph3.x86_64`
 
 Licenses (from `rpm --query`): MPLv2.0
 
