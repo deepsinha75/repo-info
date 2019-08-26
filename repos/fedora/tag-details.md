@@ -8,6 +8,7 @@
 -	[`fedora:29`](#fedora29)
 -	[`fedora:30`](#fedora30)
 -	[`fedora:31`](#fedora31)
+-	[`fedora:32`](#fedora32)
 -	[`fedora:latest`](#fedoralatest)
 -	[`fedora:rawhide`](#fedorarawhide)
 
@@ -846,6 +847,15 @@ CMD ["/bin/bash"]
 		Last Modified: Thu, 01 Aug 2019 21:44:17 GMT  
 		Size: 64.5 MB (64538661 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+
+## `fedora:32`
+
+```console
+$ docker pull fedora@sha256:a8409dff6597f2ef5f7ecd3c672671bb2af9a390073efd74f95c54aa41cba22a
+```
+
+-	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
+-	Platforms:
 
 ## `fedora:latest`
 
