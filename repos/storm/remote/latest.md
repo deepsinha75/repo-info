@@ -1,7 +1,7 @@
 ## `storm:latest`
 
 ```console
-$ docker pull storm@sha256:629cc3a7bc5f62d032b762b3fac06a4e7b93196a56b484b6a893756cac19c3b4
+$ docker pull storm@sha256:deac3c8c1cb2e9298ade15a16abc235f7b02bf734f75b17cc665b8e3041a3b94
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -11,14 +11,14 @@ $ docker pull storm@sha256:629cc3a7bc5f62d032b762b3fac06a4e7b93196a56b484b6a8937
 ### `storm:latest` - linux; amd64
 
 ```console
-$ docker pull storm@sha256:4cc212233105e25f5990d23ee06d1169014b6601216a3f64fea1910c52cfc54c
+$ docker pull storm@sha256:06f50cbd631fc1a982e65d46ce38a3a183699afa8e7f1b0b3fd6f2a8823ffe67
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **396.1 MB (396106925 bytes)**  
+-	Total Size: **396.5 MB (396488711 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:c99a826f7bde69ec77bcb9ee2a9cc20dcc831147410d0d154e699234914a44a1`
+-	Image ID: `sha256:5353f91a45492576d68753fda2b103cd6881f4aeee9ea39e0528b0940d1464b3`
 -	Entrypoint: `["\/docker-entrypoint.sh"]`
 
 ```dockerfile
@@ -48,22 +48,22 @@ RUN set -eux; 		dpkgArch="$(dpkg --print-architecture)"; 	case "$dpkgArch" in 		
 ENV STORM_CONF_DIR=/conf STORM_DATA_DIR=/data STORM_LOG_DIR=/logs
 # Thu, 15 Aug 2019 05:29:04 GMT
 RUN set -eux;     groupadd -r storm --gid=1000;     useradd -r -g storm --uid=1000 storm;     mkdir -p "$STORM_CONF_DIR" "$STORM_DATA_DIR" "$STORM_LOG_DIR";     chown -R storm:storm "$STORM_CONF_DIR" "$STORM_DATA_DIR" "$STORM_LOG_DIR"``
-# Thu, 15 Aug 2019 05:29:13 GMT
-RUN set -eux;     apt-get update;     DEBIAN_FRONTEND=noninteractive     apt-get install -y --no-install-recommends         bash         ca-certificates         dirmngr         gosu         gnupg         python         wget;     rm -rf /var/lib/apt/lists/*;     gosu nobody true
-# Thu, 15 Aug 2019 05:29:13 GMT
+# Mon, 26 Aug 2019 23:52:20 GMT
+RUN set -eux;     apt-get update;     DEBIAN_FRONTEND=noninteractive     apt-get install -y --no-install-recommends         bash         ca-certificates         dirmngr         gosu         gnupg         python         procps         wget;     rm -rf /var/lib/apt/lists/*;     gosu nobody true
+# Mon, 26 Aug 2019 23:52:21 GMT
 ARG GPG_KEY=ACEFE18DD2322E1E84587A148DE03962E80B8FFD
-# Thu, 15 Aug 2019 05:29:31 GMT
+# Mon, 26 Aug 2019 23:52:48 GMT
 ARG DISTRO_NAME=apache-storm-2.0.0
-# Thu, 15 Aug 2019 05:29:52 GMT
+# Mon, 26 Aug 2019 23:53:00 GMT
 # ARGS: DISTRO_NAME=apache-storm-2.0.0 GPG_KEY=ACEFE18DD2322E1E84587A148DE03962E80B8FFD
 RUN set -eux;     wget -q "http://www.apache.org/dist/storm/$DISTRO_NAME/$DISTRO_NAME.tar.gz";     wget -q "http://www.apache.org/dist/storm/$DISTRO_NAME/$DISTRO_NAME.tar.gz.asc";     export GNUPGHOME="$(mktemp -d)";     gpg --keyserver ha.pool.sks-keyservers.net --recv-key "$GPG_KEY" ||     gpg --keyserver pgp.mit.edu --recv-keys "$GPG_KEY" ||     gpg --keyserver keyserver.pgp.com --recv-keys "$GPG_KEY";     gpg --batch --verify "$DISTRO_NAME.tar.gz.asc" "$DISTRO_NAME.tar.gz";     tar -xzf "$DISTRO_NAME.tar.gz";     rm -rf "$GNUPGHOME" "$DISTRO_NAME.tar.gz" "$DISTRO_NAME.tar.gz.asc";     chown -R storm:storm "$DISTRO_NAME"
-# Thu, 15 Aug 2019 05:29:52 GMT
+# Mon, 26 Aug 2019 23:53:01 GMT
 WORKDIR /apache-storm-2.0.0
-# Thu, 15 Aug 2019 05:29:53 GMT
+# Mon, 26 Aug 2019 23:53:01 GMT
 ENV PATH=/usr/local/openjdk-8/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/apache-storm-2.0.0/bin
-# Thu, 15 Aug 2019 05:29:53 GMT
+# Mon, 26 Aug 2019 23:53:02 GMT
 COPY file:c74c732450146abc9cc672380c7829a8d892099ec5aa1f81e3fe02c4e8f97f32 in / 
-# Thu, 15 Aug 2019 05:29:53 GMT
+# Mon, 26 Aug 2019 23:53:02 GMT
 ENTRYPOINT ["/docker-entrypoint.sh"]
 ```
 
@@ -88,15 +88,15 @@ ENTRYPOINT ["/docker-entrypoint.sh"]
 		Last Modified: Thu, 15 Aug 2019 05:30:02 GMT  
 		Size: 1.8 KB (1785 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:44c28240e6305e0eb4985fda2a610a46bf2b45d7768fded9101b45eff7843c50`  
-		Last Modified: Thu, 15 Aug 2019 05:30:07 GMT  
-		Size: 12.7 MB (12724584 bytes)  
+	-	`sha256:5efeaa43ab0d18b813055bdea0cf9f374d5aa9c89c4beec4a82f4063b3fd84f2`  
+		Last Modified: Mon, 26 Aug 2019 23:53:15 GMT  
+		Size: 13.1 MB (13106280 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:a2b8a624a44f8f6a3269acaea1ec853e271378ddc5a551174a8036ff8c9d94c4`  
-		Last Modified: Thu, 15 Aug 2019 05:30:32 GMT  
-		Size: 312.6 MB (312592808 bytes)  
+	-	`sha256:06e6cefb6ae63836bfa550c1acc41b691bf3858861455811ca73dbda6476e140`  
+		Last Modified: Mon, 26 Aug 2019 23:53:58 GMT  
+		Size: 312.6 MB (312592899 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:9de80236d6940aec453b066058e87eae90787d7d6b29ebe5a58df3f260aa2b3d`  
-		Last Modified: Thu, 15 Aug 2019 05:30:02 GMT  
-		Size: 413.0 B  
+	-	`sha256:a9b0fdec1a7107f650152b6dd9dbcb4b058f91c45e4682630cf5911aebe47577`  
+		Last Modified: Mon, 26 Aug 2019 23:53:39 GMT  
+		Size: 412.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
