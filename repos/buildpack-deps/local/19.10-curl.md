@@ -1099,13 +1099,9 @@ Licenses: (parsed from: `/usr/share/doc/lsb-base/copyright`)
 - `BSD-3-clause`
 - `GPL-2`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris lsb=10.2019051400ubuntu1
-'http://archive.ubuntu.com/ubuntu/pool/main/l/lsb/lsb_10.2019051400ubuntu1.dsc' lsb_10.2019051400ubuntu1.dsc 2142 SHA256:259081275d86ae802a3d6d7abba80e560a3e377e410f770ce2caa7df1d5c837e
-'http://archive.ubuntu.com/ubuntu/pool/main/l/lsb/lsb_10.2019051400ubuntu1.tar.xz' lsb_10.2019051400ubuntu1.tar.xz 45720 SHA256:24dc245bbf51c6abaf5181ac44679d33987139c72873b7fcc926745695b53736
-```
 
 ### `dpkg` source package: `lz4=1.9.1-1`
 
@@ -1617,14 +1613,9 @@ Licenses: (parsed from: `/usr/share/doc/libsystemd0/copyright`, `/usr/share/doc/
 - `LGPL-2.1+`
 - `public-domain`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris systemd=240-6ubuntu9
-'http://archive.ubuntu.com/ubuntu/pool/main/s/systemd/systemd_240-6ubuntu9.dsc' systemd_240-6ubuntu9.dsc 5096 SHA256:cc9e7e63c6712ad65d0b5c194ff21d3bf5edd77e1bb7096653023d2aa3942f49
-'http://archive.ubuntu.com/ubuntu/pool/main/s/systemd/systemd_240.orig.tar.gz' systemd_240.orig.tar.gz 7582001 SHA256:8f15aec1ac926e13a21a04d0ca3fe371f7004951448142a6f8952075c5b5f0b5
-'http://archive.ubuntu.com/ubuntu/pool/main/s/systemd/systemd_240-6ubuntu9.debian.tar.xz' systemd_240-6ubuntu9.debian.tar.xz 225844 SHA256:f118de8b6b1c4f93a3ef3dad3c191d8e6437d1724da5c14906710566cea452b5
-```
 
 ### `dpkg` source package: `sysvinit=2.95-2ubuntu1`
 

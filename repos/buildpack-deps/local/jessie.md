@@ -4809,20 +4809,13 @@ Binary Packages:
 If source is available (seen below), check the contents of `debian/copyright` within it.
 
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris tiff=4.0.3-12.3+deb8u8
-'http://security.debian.org/debian-security/pool/updates/main/t/tiff/tiff_4.0.3-12.3+deb8u8.dsc' tiff_4.0.3-12.3+deb8u8.dsc 2240 SHA256:cd630d9a863ee209d2159e12ed285aedaf236c44ae5134702a97b7b73504bf35
-'http://security.debian.org/debian-security/pool/updates/main/t/tiff/tiff_4.0.3.orig.tar.gz' tiff_4.0.3.orig.tar.gz 2051630 SHA256:ea1aebe282319537fb2d4d7805f478dd4e0e05c33d0928baba76a7c963684872
-'http://security.debian.org/debian-security/pool/updates/main/t/tiff/tiff_4.0.3-12.3+deb8u8.debian.tar.xz' tiff_4.0.3-12.3+deb8u8.debian.tar.xz 69036 SHA256:9e5ae07b7e7e1554c43026d92905ae1ecc6296874521dbbf51b6bb4fa139271b
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/tiff/4.0.3-12.3+deb8u8/
 
-- https://sources.debian.net/src/tiff/4.0.3-12.3+deb8u8/ (for browsing the source)
-- https://sources.debian.net/src/tiff/4.0.3-12.3+deb8u8/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/tiff/4.0.3-12.3+deb8u8/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `tzdata=2019a-0+deb8u1`
 

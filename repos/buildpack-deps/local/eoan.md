@@ -978,14 +978,13 @@ Licenses: (parsed from: `/usr/share/doc/gir1.2-gdkpixbuf-2.0/copyright`, `/usr/s
 - `LGPL-2+`
 - `MPL-1.1-or-LGPL-2+`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris gdk-pixbuf=2.38.1+dfsg-1
-'http://archive.ubuntu.com/ubuntu/pool/main/g/gdk-pixbuf/gdk-pixbuf_2.38.1+dfsg-1.dsc' gdk-pixbuf_2.38.1+dfsg-1.dsc 2903 SHA256:6f201d9dcb9b867678fa619bf054ff871105daca0fbc6a2e0639997d2bff91bc
-'http://archive.ubuntu.com/ubuntu/pool/main/g/gdk-pixbuf/gdk-pixbuf_2.38.1+dfsg.orig.tar.xz' gdk-pixbuf_2.38.1+dfsg.orig.tar.xz 5428160 SHA256:9d8666f01bfb31df1168e50d08d5646d18884ed674058b8b216397a85eac922b
-'http://archive.ubuntu.com/ubuntu/pool/main/g/gdk-pixbuf/gdk-pixbuf_2.38.1+dfsg-1.debian.tar.xz' gdk-pixbuf_2.38.1+dfsg-1.debian.tar.xz 16792 SHA256:6340efafbdb7b270fe3dd94a0e5c929669f4f0324b9f13a4ef0f2c402253a36f
-```
+The source package *may* still be available for download from:
+
+- http://snapshot.debian.org/package/gdk-pixbuf/2.38.1+dfsg-1/
+
 
 ### `dpkg` source package: `geoip=1.6.12-3`
 
@@ -1064,14 +1063,13 @@ Licenses: (parsed from: `/usr/share/doc/libglib2.0-0/copyright`, `/usr/share/doc
 - `GPL-2+`
 - `LGPL`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris glib2.0=2.61.1-2
-'http://archive.ubuntu.com/ubuntu/pool/main/g/glib2.0/glib2.0_2.61.1-2.dsc' glib2.0_2.61.1-2.dsc 3240 SHA256:dabb110a5a46d4c2e4a4e23a4e7fadbd8417e3ad7e6e6e2d7278488f0f8569b9
-'http://archive.ubuntu.com/ubuntu/pool/main/g/glib2.0/glib2.0_2.61.1.orig.tar.xz' glib2.0_2.61.1.orig.tar.xz 4638016 SHA256:f8d827955f0d8e197ff5c2105dd6ac4f6b63d15cd021eb1de66534c92a762161
-'http://archive.ubuntu.com/ubuntu/pool/main/g/glib2.0/glib2.0_2.61.1-2.debian.tar.xz' glib2.0_2.61.1-2.debian.tar.xz 83756 SHA256:99351a60a74f10d17319ceceaae761711f8f389b1c7838357b7752781648bf9d
-```
+The source package *may* still be available for download from:
+
+- http://snapshot.debian.org/package/glib2.0/2.61.1-2/
+
 
 ### `dpkg` source package: `glibc=2.29-0ubuntu3`
 
@@ -1285,14 +1283,13 @@ Licenses: (parsed from: `/usr/share/doc/libharfbuzz0b/copyright`)
 
 - `MIT`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris harfbuzz=2.5.3-1
-'http://archive.ubuntu.com/ubuntu/pool/main/h/harfbuzz/harfbuzz_2.5.3-1.dsc' harfbuzz_2.5.3-1.dsc 2292 SHA256:e12e32766f539aa707cc56eb40dc53d1728a92e850f175317711150c19d97db8
-'http://archive.ubuntu.com/ubuntu/pool/main/h/harfbuzz/harfbuzz_2.5.3.orig.tar.xz' harfbuzz_2.5.3.orig.tar.xz 5685712 SHA256:fed00dc797b7ba3ca943225f0a854baaed4c1640fff8a31d455cd3b5caec855c
-'http://archive.ubuntu.com/ubuntu/pool/main/h/harfbuzz/harfbuzz_2.5.3-1.debian.tar.xz' harfbuzz_2.5.3-1.debian.tar.xz 9708 SHA256:3cee703d5f5e6205b2b19e2b2c89e80ddae848f81fe023b422983f7befc18476
-```
+The source package *may* still be available for download from:
+
+- http://snapshot.debian.org/package/harfbuzz/2.5.3-1/
+
 
 ### `dpkg` source package: `heimdal=7.5.0+dfsg-3`
 
@@ -1891,14 +1888,13 @@ Binary Packages:
 If source is available (seen below), check the contents of `debian/copyright` within it.
 
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris libice=2:1.0.9-2
-'http://archive.ubuntu.com/ubuntu/pool/main/libi/libice/libice_1.0.9-2.dsc' libice_1.0.9-2.dsc 2130 SHA256:116595cd54be23edad0b55e1cd4bc1929f277fa5c2d00d8f187b0bc5dd39ad6c
-'http://archive.ubuntu.com/ubuntu/pool/main/libi/libice/libice_1.0.9.orig.tar.gz' libice_1.0.9.orig.tar.gz 455871 SHA256:7812a824a66dd654c830d21982749b3b563d9c2dfe0b88b203cefc14a891edc0
-'http://archive.ubuntu.com/ubuntu/pool/main/libi/libice/libice_1.0.9-2.diff.gz' libice_1.0.9-2.diff.gz 6384 SHA256:777f13e08aada3103c32a0b93a26782ca959027bcd98c2c1ddaade8f944fa40a
-```
+The source package *may* still be available for download from:
+
+- http://snapshot.debian.org/package/libice/2:1.0.9-2/
+
 
 ### `dpkg` source package: `libidn2=2.2.0-1`
 
@@ -2449,14 +2445,13 @@ Binary Packages:
 If source is available (seen below), check the contents of `debian/copyright` within it.
 
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris libxau=1:1.0.8-1
-'http://archive.ubuntu.com/ubuntu/pool/main/libx/libxau/libxau_1.0.8-1.dsc' libxau_1.0.8-1.dsc 2040 SHA256:3ddb5f2c7a49ef7507b8d1e63e891238db877b4d1bb1c5486a3e3242c8523602
-'http://archive.ubuntu.com/ubuntu/pool/main/libx/libxau/libxau_1.0.8.orig.tar.gz' libxau_1.0.8.orig.tar.gz 362044 SHA256:c343b4ef66d66a6b3e0e27aa46b37ad5cab0f11a5c565eafb4a1c7590bc71d7b
-'http://archive.ubuntu.com/ubuntu/pool/main/libx/libxau/libxau_1.0.8-1.diff.gz' libxau_1.0.8-1.diff.gz 15287 SHA256:b493479d6a52a0e753dd357ad8a4bc5c4296015f3f7b96cf546f7c5c5843cbb0
-```
+The source package *may* still be available for download from:
+
+- http://snapshot.debian.org/package/libxau/1:1.0.8-1/
+
 
 ### `dpkg` source package: `libxcb=1.13.1-2`
 
@@ -2493,14 +2488,13 @@ Binary Packages:
 If source is available (seen below), check the contents of `debian/copyright` within it.
 
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris libxdmcp=1:1.1.2-3
-'http://archive.ubuntu.com/ubuntu/pool/main/libx/libxdmcp/libxdmcp_1.1.2-3.dsc' libxdmcp_1.1.2-3.dsc 2145 SHA256:f9697dca6a275aeee9a3eee9fb2d55e0f77485481e8b84efc6950fc9b1988460
-'http://archive.ubuntu.com/ubuntu/pool/main/libx/libxdmcp/libxdmcp_1.1.2.orig.tar.gz' libxdmcp_1.1.2.orig.tar.gz 404115 SHA256:6f7c7e491a23035a26284d247779174dedc67e34e93cc3548b648ffdb6fc57c0
-'http://archive.ubuntu.com/ubuntu/pool/main/libx/libxdmcp/libxdmcp_1.1.2-3.diff.gz' libxdmcp_1.1.2-3.diff.gz 18017 SHA256:5844df115c17e5ba40ac116f80373304d821c607e763ef6f40562421f5cc0cf3
-```
+The source package *may* still be available for download from:
+
+- http://snapshot.debian.org/package/libxdmcp/1:1.1.2-3/
+
 
 ### `dpkg` source package: `libxext=2:1.3.3-1`
 
@@ -2656,14 +2650,9 @@ Licenses: (parsed from: `/usr/share/doc/linux-libc-dev/copyright`)
 
 - `GPL-2`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris linux=5.2.0-10.11
-'http://archive.ubuntu.com/ubuntu/pool/main/l/linux/linux_5.2.0-10.11.dsc' linux_5.2.0-10.11.dsc 6944 SHA256:cd6e9bd06ea657187dd8ee0fae3baa1379868b43905682b6c114e5e7d646dddb
-'http://archive.ubuntu.com/ubuntu/pool/main/l/linux/linux_5.2.0.orig.tar.gz' linux_5.2.0.orig.tar.gz 164414556 SHA256:e848cc5c3862c8e6468063f94cdda985b6bafd6ae5e8663c254d2a42df06a395
-'http://archive.ubuntu.com/ubuntu/pool/main/l/linux/linux_5.2.0-10.11.diff.gz' linux_5.2.0-10.11.diff.gz 2892233 SHA256:2f73c49f90985ee4206e55cb95f401ab9ea2d8b15128a8b7df30556c401fbcef
-```
 
 ### `dpkg` source package: `lsb=10.2019051400ubuntu1`
 
@@ -2676,13 +2665,9 @@ Licenses: (parsed from: `/usr/share/doc/lsb-base/copyright`)
 - `BSD-3-clause`
 - `GPL-2`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris lsb=10.2019051400ubuntu1
-'http://archive.ubuntu.com/ubuntu/pool/main/l/lsb/lsb_10.2019051400ubuntu1.dsc' lsb_10.2019051400ubuntu1.dsc 2142 SHA256:259081275d86ae802a3d6d7abba80e560a3e377e410f770ce2caa7df1d5c837e
-'http://archive.ubuntu.com/ubuntu/pool/main/l/lsb/lsb_10.2019051400ubuntu1.tar.xz' lsb_10.2019051400ubuntu1.tar.xz 45720 SHA256:24dc245bbf51c6abaf5181ac44679d33987139c72873b7fcc926745695b53736
-```
 
 ### `dpkg` source package: `lz4=1.9.1-1`
 
@@ -3204,14 +3189,9 @@ Licenses: (parsed from: `/usr/share/doc/libpango-1.0-0/copyright`, `/usr/share/d
 - `TCL`
 - `Unicode`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris pango1.0=1.42.4-6ubuntu1
-'http://archive.ubuntu.com/ubuntu/pool/main/p/pango1.0/pango1.0_1.42.4-6ubuntu1.dsc' pango1.0_1.42.4-6ubuntu1.dsc 3376 SHA256:5aec9c50d1f52b0dbedbfb8c24d375d64138a72d180884325bd3b67880de073e
-'http://archive.ubuntu.com/ubuntu/pool/main/p/pango1.0/pango1.0_1.42.4.orig.tar.xz' pango1.0_1.42.4.orig.tar.xz 833876 SHA256:1d2b74cd63e8bd41961f2f8d952355aa0f9be6002b52c8aa7699d9f5da597c9d
-'http://archive.ubuntu.com/ubuntu/pool/main/p/pango1.0/pango1.0_1.42.4-6ubuntu1.debian.tar.xz' pango1.0_1.42.4-6ubuntu1.debian.tar.xz 50520 SHA256:d04966749f31d08ed16d5f827ef26159ba5f1023f836f4b08ba913dd262cf521
-```
 
 ### `dpkg` source package: `patch=2.7.6-6`
 
@@ -3805,14 +3785,9 @@ Licenses: (parsed from: `/usr/share/doc/libsystemd0/copyright`, `/usr/share/doc/
 - `LGPL-2.1+`
 - `public-domain`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris systemd=240-6ubuntu9
-'http://archive.ubuntu.com/ubuntu/pool/main/s/systemd/systemd_240-6ubuntu9.dsc' systemd_240-6ubuntu9.dsc 5096 SHA256:cc9e7e63c6712ad65d0b5c194ff21d3bf5edd77e1bb7096653023d2aa3942f49
-'http://archive.ubuntu.com/ubuntu/pool/main/s/systemd/systemd_240.orig.tar.gz' systemd_240.orig.tar.gz 7582001 SHA256:8f15aec1ac926e13a21a04d0ca3fe371f7004951448142a6f8952075c5b5f0b5
-'http://archive.ubuntu.com/ubuntu/pool/main/s/systemd/systemd_240-6ubuntu9.debian.tar.xz' systemd_240-6ubuntu9.debian.tar.xz 225844 SHA256:f118de8b6b1c4f93a3ef3dad3c191d8e6437d1724da5c14906710566cea452b5
-```
 
 ### `dpkg` source package: `sysvinit=2.95-2ubuntu1`
 
