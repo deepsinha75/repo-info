@@ -1,7 +1,7 @@
 ## `pypy:2-7-jessie`
 
 ```console
-$ docker pull pypy@sha256:5ddfb7dbb6a3499aad1279d114e2baaaef4185d26d5de708fd4a132b62e73639
+$ docker pull pypy@sha256:452fbfd8a012cdd3e660087153413ebe12104cdcfbcb425a6cf568f8e983b0fc
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -11,14 +11,14 @@ $ docker pull pypy@sha256:5ddfb7dbb6a3499aad1279d114e2baaaef4185d26d5de708fd4a13
 ### `pypy:2-7-jessie` - linux; amd64
 
 ```console
-$ docker pull pypy@sha256:9060aabdb7fff14620f80cdc8eddc78d6e582deb332499f88901cbab9baf9600
+$ docker pull pypy@sha256:ad506d06795a29b22739f7d5196369966d44d07922e12c04f3fb48f206fbb6b7
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **279.0 MB (278991008 bytes)**  
+-	Total Size: **279.0 MB (278991079 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:1ee089276617d5a99550a6ec58ecb6417fdeca0b0c5d96bc99ca5f9799852518`
+-	Image ID: `sha256:da7090b34dc2f44730123bea61b4470ce7e2095cd29fc5ad3132d18830497793`
 -	Default Command: `["pypy"]`
 
 ```dockerfile
@@ -44,15 +44,15 @@ RUN apt-get update && apt-get install -y --no-install-recommends 		tcl 		tk 	&& 
 ENV PYPY_VERSION=7.1.1
 # Thu, 15 Aug 2019 23:33:25 GMT
 RUN set -ex; 		dpkgArch="$(dpkg --print-architecture)"; 	case "${dpkgArch##*-}" in 		amd64) pypyArch='linux64'; sha256='73b09ef0860eb9ad7997af3030b22909806a273d90786d78420926df53279d66' ;; 		i386) pypyArch='linux32'; sha256='41ca390a76ca0d47b8353a0d6a20d5aab5fad8b0bb647b960d8c33e873d18ef5' ;; 		*) echo >&2 "error: current architecture ($dpkgArch) does not have a corresponding PyPy $PYPY_VERSION binary release"; exit 1 ;; 	esac; 		wget -O pypy.tar.bz2 "https://bitbucket.org/pypy/pypy/downloads/pypy2.7-v${PYPY_VERSION}-${pypyArch}.tar.bz2" --progress=dot:giga; 	echo "$sha256 *pypy.tar.bz2" | sha256sum -c; 	tar -xjC /usr/local --strip-components=1 -f pypy.tar.bz2; 	find /usr/local/lib-python -depth -type d -a \( -name test -o -name tests \) -exec rm -rf '{}' +; 	rm pypy.tar.bz2; 		pypy --version; 		if [ -f /usr/local/lib_pypy/_ssl_build.py ]; then 		cd /usr/local/lib_pypy; 		pypy _ssl_build.py; 	fi; 	find /usr/local -depth 		\( 			\( -type d -a \( -name test -o -name tests \) \) 			-o 			\( -type f -a \( -name '*.pyc' -o -name '*.pyo' \) \) 		\) -exec rm -rf '{}' +
-# Thu, 15 Aug 2019 23:33:25 GMT
-ENV PYTHON_PIP_VERSION=19.2.2
-# Thu, 15 Aug 2019 23:33:25 GMT
-ENV PYTHON_GET_PIP_URL=https://github.com/pypa/get-pip/raw/0c72a3b4ece313faccb446a96c84770ccedc5ec5/get-pip.py
-# Thu, 15 Aug 2019 23:33:25 GMT
-ENV PYTHON_GET_PIP_SHA256=201edc6df416da971e64cc94992d2dd24bc328bada7444f0c4f2031ae31e8dad
-# Thu, 15 Aug 2019 23:33:35 GMT
+# Mon, 26 Aug 2019 23:35:36 GMT
+ENV PYTHON_PIP_VERSION=19.2.3
+# Mon, 26 Aug 2019 23:35:37 GMT
+ENV PYTHON_GET_PIP_URL=https://github.com/pypa/get-pip/raw/309a56c5fd94bd1134053a541cb4657a4e47e09d/get-pip.py
+# Mon, 26 Aug 2019 23:35:37 GMT
+ENV PYTHON_GET_PIP_SHA256=57e3643ff19f018f8a00dfaa6b7e4620e3c1a7a2171fd218425366ec006b3bfe
+# Mon, 26 Aug 2019 23:35:47 GMT
 RUN set -ex; 		wget -O get-pip.py "$PYTHON_GET_PIP_URL"; 	echo "$PYTHON_GET_PIP_SHA256 *get-pip.py" | sha256sum --check --strict -; 		pypy get-pip.py 		--disable-pip-version-check 		--no-cache-dir 		"pip==$PYTHON_PIP_VERSION" 	; 	pip --version; 		find /usr/local -depth 		\( 			\( -type d -a \( -name test -o -name tests \) \) 			-o 			\( -type f -a \( -name '*.pyc' -o -name '*.pyo' \) \) 		\) -exec rm -rf '{}' +; 	rm -f get-pip.py
-# Thu, 15 Aug 2019 23:33:35 GMT
+# Mon, 26 Aug 2019 23:35:47 GMT
 CMD ["pypy"]
 ```
 
@@ -81,7 +81,7 @@ CMD ["pypy"]
 		Last Modified: Thu, 15 Aug 2019 23:42:32 GMT  
 		Size: 26.4 MB (26418503 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:2773913998cd7e21d2f174ca88085666150b22034f8b8a3b2184fd2feba036cd`  
-		Last Modified: Thu, 15 Aug 2019 23:42:27 GMT  
-		Size: 1.9 MB (1859982 bytes)  
+	-	`sha256:7386b87ea6db563bd1b608da7494742031ba37c40da84063b20b0c46a128119d`  
+		Last Modified: Mon, 26 Aug 2019 23:40:20 GMT  
+		Size: 1.9 MB (1860053 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
