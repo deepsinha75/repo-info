@@ -124,13 +124,9 @@ Licenses: (parsed from: `/usr/share/doc/base-files/copyright`)
 
 - `GPL`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris base-files=10.2ubuntu4
-'http://archive.ubuntu.com/ubuntu/pool/main/b/base-files/base-files_10.2ubuntu4.dsc' base-files_10.2ubuntu4.dsc 1612 SHA256:9d68dedc89aff42d4593bb0c2ac8fe354a92f2a4aada1a9c052b19a52e6987bd
-'http://archive.ubuntu.com/ubuntu/pool/main/b/base-files/base-files_10.2ubuntu4.tar.xz' base-files_10.2ubuntu4.tar.xz 78540 SHA256:bb40b7ea95daff7c617f359ddd6c7aa8630934afc2128b616e8f8537b826c7cc
-```
 
 ### `dpkg` source package: `base-passwd=3.5.46`
 
@@ -538,14 +534,9 @@ Licenses: (parsed from: `/usr/share/doc/gzip/copyright`)
 
 - `GPL`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris gzip=1.10-0ubuntu2
-'http://archive.ubuntu.com/ubuntu/pool/main/g/gzip/gzip_1.10-0ubuntu2.dsc' gzip_1.10-0ubuntu2.dsc 2074 SHA256:1693037e3f97e4727177afc66a0f4e77d0baf95f7ef8011a96bd8a3ae0e1ad9a
-'http://archive.ubuntu.com/ubuntu/pool/main/g/gzip/gzip_1.10.orig.tar.gz' gzip_1.10.orig.tar.gz 1201421 SHA256:c91f74430bf7bc20402e1f657d0b252cb80aa66ba333a25704512af346633c68
-'http://archive.ubuntu.com/ubuntu/pool/main/g/gzip/gzip_1.10-0ubuntu2.debian.tar.xz' gzip_1.10-0ubuntu2.debian.tar.xz 26432 SHA256:4129b643386bba25b74d7529bbed13e27f182b7f8eaac47d9d42ad3151007779
-```
 
 ### `dpkg` source package: `hostname=3.21`
 
@@ -863,13 +854,9 @@ Licenses: (parsed from: `/usr/share/doc/lsb-base/copyright`)
 - `BSD-3-clause`
 - `GPL-2`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris lsb=10.2019051400ubuntu1
-'http://archive.ubuntu.com/ubuntu/pool/main/l/lsb/lsb_10.2019051400ubuntu1.dsc' lsb_10.2019051400ubuntu1.dsc 2142 SHA256:259081275d86ae802a3d6d7abba80e560a3e377e410f770ce2caa7df1d5c837e
-'http://archive.ubuntu.com/ubuntu/pool/main/l/lsb/lsb_10.2019051400ubuntu1.tar.xz' lsb_10.2019051400ubuntu1.tar.xz 45720 SHA256:24dc245bbf51c6abaf5181ac44679d33987139c72873b7fcc926745695b53736
-```
 
 ### `dpkg` source package: `lz4=1.9.1-1`
 
