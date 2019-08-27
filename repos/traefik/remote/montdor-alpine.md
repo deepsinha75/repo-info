@@ -1,8 +1,116 @@
 ## `traefik:montdor-alpine`
 
 ```console
-$ docker pull traefik@sha256:a8409dff6597f2ef5f7ecd3c672671bb2af9a390073efd74f95c54aa41cba22a
+$ docker pull traefik@sha256:505110deefe118061c447c77813997ae4ca496f7cb95d2b0593f7be72be57083
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
 -	Platforms:
+	-	linux; arm variant v6
+	-	linux; arm64 variant v8
+
+### `traefik:montdor-alpine` - linux; arm variant v6
+
+```console
+$ docker pull traefik@sha256:e2136ef6b6e2923bca1516936797223b3ce0f22820196891c865d9d0e973f32f
+```
+
+-	Docker Version: 18.06.1-ce
+-	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
+-	Total Size: **21.0 MB (21011485 bytes)**  
+	(compressed transfer size, not on-disk size)
+-	Image ID: `sha256:974ca9497089bc3ab216cc7df493758a07b1e80637c166f7b086b936c7d975a6`
+-	Entrypoint: `["\/entrypoint.sh"]`
+-	Default Command: `["traefik"]`
+
+```dockerfile
+# Tue, 20 Aug 2019 19:49:33 GMT
+ADD file:1c1fb81fb6766a3c124779a191b8187d0b4835d3d221e937952778bae0b0562b in / 
+# Tue, 20 Aug 2019 19:49:33 GMT
+CMD ["/bin/sh"]
+# Mon, 26 Aug 2019 23:53:59 GMT
+RUN apk --no-cache add ca-certificates tzdata
+# Mon, 26 Aug 2019 23:54:03 GMT
+RUN set -ex; 	apkArch="$(apk --print-arch)"; 	case "$apkArch" in 		armhf) arch='armv6' ;; 		aarch64) arch='arm64' ;; 		x86_64) arch='amd64' ;; 		*) echo >&2 "error: unsupported architecture: $apkArch"; exit 1 ;; 	esac; 	wget --quiet -O /tmp/traefik.tar.gz "https://github.com/containous/traefik/releases/download/v2.0.0-rc1/traefik_v2.0.0-rc1_linux_$arch.tar.gz"; 	tar xzvf /tmp/traefik.tar.gz -C /usr/local/bin traefik; 	rm -f /tmp/traefik.tar.gz; 	chmod +x /usr/local/bin/traefik
+# Mon, 26 Aug 2019 23:54:04 GMT
+COPY file:59a219a1fb7a9dc894a7a9a4718fa97fd24adb0a4a6455240ec2ab0183da796e in / 
+# Mon, 26 Aug 2019 23:54:04 GMT
+EXPOSE 80
+# Mon, 26 Aug 2019 23:54:05 GMT
+ENTRYPOINT ["/entrypoint.sh"]
+# Mon, 26 Aug 2019 23:54:05 GMT
+CMD ["traefik"]
+# Mon, 26 Aug 2019 23:54:05 GMT
+LABEL org.opencontainers.image.vendor=Containous org.opencontainers.image.url=https://traefik.io org.opencontainers.image.title=Traefik org.opencontainers.image.description=A modern reverse-proxy org.opencontainers.image.version=v2.0.0-rc1 org.opencontainers.image.documentation=https://docs.traefik.io
+```
+
+-	Layers:
+	-	`sha256:1df32bae7504a32024616c66017cd5df04dd98eaf150f8df45fffef2547a3c54`  
+		Last Modified: Tue, 20 Aug 2019 19:50:09 GMT  
+		Size: 2.6 MB (2568440 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:e4fb8a7126772c61d0d697d823697d9bc66a70c8ebee8f9130d250291e009a53`  
+		Last Modified: Mon, 26 Aug 2019 23:54:50 GMT  
+		Size: 697.0 KB (697027 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:069b60cec70e58a876950b9debe1fa40f94638df2fdc53b80e7bee8cd906c2db`  
+		Last Modified: Mon, 26 Aug 2019 23:54:56 GMT  
+		Size: 17.7 MB (17745650 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:e09df7acad657497875b6e368c29878cb1bd805f7911f90d4db069247f184a35`  
+		Last Modified: Mon, 26 Aug 2019 23:54:50 GMT  
+		Size: 368.0 B  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+
+### `traefik:montdor-alpine` - linux; arm64 variant v8
+
+```console
+$ docker pull traefik@sha256:cc086ebb000f7bf55d5a4454a384950f1ae846e03295243d849e99bbffa6f281
+```
+
+-	Docker Version: 18.06.1-ce
+-	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
+-	Total Size: **20.9 MB (20858434 bytes)**  
+	(compressed transfer size, not on-disk size)
+-	Image ID: `sha256:9623b292102cbb826e9993bc45243fa02a0c5d2f701e9f872a2f046834109cc3`
+-	Entrypoint: `["\/entrypoint.sh"]`
+-	Default Command: `["traefik"]`
+
+```dockerfile
+# Tue, 20 Aug 2019 20:39:38 GMT
+ADD file:34737804ba78554795d5bcc75621595f8cc3d5b5887887d34e0e021b78e330b7 in / 
+# Tue, 20 Aug 2019 20:39:38 GMT
+CMD ["/bin/sh"]
+# Tue, 27 Aug 2019 00:16:11 GMT
+RUN apk --no-cache add ca-certificates tzdata
+# Tue, 27 Aug 2019 00:16:15 GMT
+RUN set -ex; 	apkArch="$(apk --print-arch)"; 	case "$apkArch" in 		armhf) arch='armv6' ;; 		aarch64) arch='arm64' ;; 		x86_64) arch='amd64' ;; 		*) echo >&2 "error: unsupported architecture: $apkArch"; exit 1 ;; 	esac; 	wget --quiet -O /tmp/traefik.tar.gz "https://github.com/containous/traefik/releases/download/v2.0.0-rc1/traefik_v2.0.0-rc1_linux_$arch.tar.gz"; 	tar xzvf /tmp/traefik.tar.gz -C /usr/local/bin traefik; 	rm -f /tmp/traefik.tar.gz; 	chmod +x /usr/local/bin/traefik
+# Tue, 27 Aug 2019 00:16:16 GMT
+COPY file:59a219a1fb7a9dc894a7a9a4718fa97fd24adb0a4a6455240ec2ab0183da796e in / 
+# Tue, 27 Aug 2019 00:16:16 GMT
+EXPOSE 80
+# Tue, 27 Aug 2019 00:16:17 GMT
+ENTRYPOINT ["/entrypoint.sh"]
+# Tue, 27 Aug 2019 00:16:17 GMT
+CMD ["traefik"]
+# Tue, 27 Aug 2019 00:16:18 GMT
+LABEL org.opencontainers.image.vendor=Containous org.opencontainers.image.url=https://traefik.io org.opencontainers.image.title=Traefik org.opencontainers.image.description=A modern reverse-proxy org.opencontainers.image.version=v2.0.0-rc1 org.opencontainers.image.documentation=https://docs.traefik.io
+```
+
+-	Layers:
+	-	`sha256:29bddadc8f3fd6ed92c289e0dcd22e094833933a73609e78b7fa767d45731f9f`  
+		Last Modified: Tue, 20 Aug 2019 20:40:16 GMT  
+		Size: 2.7 MB (2714631 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:3f27eb98bca82b90aa26eb062dbec8263aabd59dfc52fea4e05ed282c72f55af`  
+		Last Modified: Tue, 27 Aug 2019 00:17:06 GMT  
+		Size: 697.2 KB (697244 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:4d66f85cc3a3166642fee82b00d1796a2f19c0e051d55fbde5564c34a5c2513f`  
+		Last Modified: Tue, 27 Aug 2019 00:17:12 GMT  
+		Size: 17.4 MB (17446192 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:40affef0806e92251c536d4d9b3b15b20a45706e786b6e5b392ddc23fa38bd94`  
+		Last Modified: Tue, 27 Aug 2019 00:17:06 GMT  
+		Size: 367.0 B  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
