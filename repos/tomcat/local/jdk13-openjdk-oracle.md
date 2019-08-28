@@ -2,9 +2,9 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:bc6453fbf3f2aa7f8bb6e755bf1edfb3ef17bc273f66444050bdef58838a52bf`
-- Created: `2019-08-22T00:17:08.298904827Z`
-- Virtual Size: ~ 639.90 Mb  
+- Image ID: `sha256:26c8443bfc65c025d866e4aedc41eb9806213cd373e650ee23ec954dc09cd3af`
+- Created: `2019-08-27T00:07:25.498547814Z`
+- Virtual Size: ~ 664.47 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Command: `["catalina.sh","run"]`
@@ -67,6 +67,17 @@ Source:
 ```console
 $ yumdownloader --quiet --source --urls bash-4.2.46-31.el7
 https://yum.oracle.com/repo/OracleLinux/OL7/latest/x86_64//getPackageSource/bash-4.2.46-31.el7.src.rpm
+```
+
+### `rpm` package: `binutils-2.27-41.base.0.1.el7.x86_64`
+
+Licenses (from `rpm --query`): GPLv3+
+
+Source:
+
+```console
+$ yumdownloader --quiet --source --urls binutils-2.27-41.base.0.1.el7
+https://yum.oracle.com/repo/OracleLinux/OL7/latest/x86_64//getPackageSource/binutils-2.27-41.base.0.1.el7.src.rpm
 ```
 
 ### `rpm` package: `bzip2-libs-1.0.6-13.el7.x86_64`
@@ -256,15 +267,15 @@ $ yumdownloader --quiet --source --urls fontpackages-filesystem-1.44-8.el7.noarc
 https://yum.oracle.com/repo/OracleLinux/OL7/latest/x86_64//getPackageSource/fontpackages-1.44-8.el7.src.rpm
 ```
 
-### `rpm` package: `freetype-2.8-12.el7_6.1.x86_64`
+### `rpm` package: `freetype-2.8-14.el7.x86_64`
 
 Licenses (from `rpm --query`): (FTL or GPLv2+) and BSD and MIT and Public Domain and zlib with acknowledgement
 
 Source:
 
 ```console
-$ yumdownloader --quiet --source --urls freetype-2.8-12.el7_6.1
-https://yum.oracle.com/repo/OracleLinux/OL7/latest/x86_64//getPackageSource/freetype-2.8-12.el7_6.1.src.rpm
+$ yumdownloader --quiet --source --urls freetype-2.8-14.el7
+https://yum.oracle.com/repo/OracleLinux/OL7/latest/x86_64//getPackageSource/freetype-2.8-14.el7.src.rpm
 ```
 
 ### `rpm` package: `gawk-4.0.2-4.el7_3.1.x86_64`
