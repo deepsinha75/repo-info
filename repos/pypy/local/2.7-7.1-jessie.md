@@ -2,8 +2,8 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:1ee089276617d5a99550a6ec58ecb6417fdeca0b0c5d96bc99ca5f9799852518`
-- Created: `2019-08-15T23:33:35.575190022Z`
+- Image ID: `sha256:da7090b34dc2f44730123bea61b4470ce7e2095cd29fc5ad3132d18830497793`
+- Created: `2019-08-26T23:35:47.578085535Z`
 - Virtual Size: ~ 737.99 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
@@ -12,9 +12,9 @@
   - `PATH=/usr/local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
   - `LANG=C.UTF-8`
   - `PYPY_VERSION=7.1.1`
-  - `PYTHON_PIP_VERSION=19.2.2`
-  - `PYTHON_GET_PIP_URL=https://github.com/pypa/get-pip/raw/0c72a3b4ece313faccb446a96c84770ccedc5ec5/get-pip.py`
-  - `PYTHON_GET_PIP_SHA256=201edc6df416da971e64cc94992d2dd24bc328bada7444f0c4f2031ae31e8dad`
+  - `PYTHON_PIP_VERSION=19.2.3`
+  - `PYTHON_GET_PIP_URL=https://github.com/pypa/get-pip/raw/309a56c5fd94bd1134053a541cb4657a4e47e09d/get-pip.py`
+  - `PYTHON_GET_PIP_SHA256=57e3643ff19f018f8a00dfaa6b7e4620e3c1a7a2171fd218425366ec006b3bfe`
 
 ## `dpkg` (`.deb`-based packages)
 
@@ -4890,20 +4890,13 @@ Binary Packages:
 If source is available (seen below), check the contents of `debian/copyright` within it.
 
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris tiff=4.0.3-12.3+deb8u8
-'http://security.debian.org/debian-security/pool/updates/main/t/tiff/tiff_4.0.3-12.3+deb8u8.dsc' tiff_4.0.3-12.3+deb8u8.dsc 2240 SHA256:cd630d9a863ee209d2159e12ed285aedaf236c44ae5134702a97b7b73504bf35
-'http://security.debian.org/debian-security/pool/updates/main/t/tiff/tiff_4.0.3.orig.tar.gz' tiff_4.0.3.orig.tar.gz 2051630 SHA256:ea1aebe282319537fb2d4d7805f478dd4e0e05c33d0928baba76a7c963684872
-'http://security.debian.org/debian-security/pool/updates/main/t/tiff/tiff_4.0.3-12.3+deb8u8.debian.tar.xz' tiff_4.0.3-12.3+deb8u8.debian.tar.xz 69036 SHA256:9e5ae07b7e7e1554c43026d92905ae1ecc6296874521dbbf51b6bb4fa139271b
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/tiff/4.0.3-12.3+deb8u8/
 
-- https://sources.debian.net/src/tiff/4.0.3-12.3+deb8u8/ (for browsing the source)
-- https://sources.debian.net/src/tiff/4.0.3-12.3+deb8u8/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/tiff/4.0.3-12.3+deb8u8/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `tk8.6=8.6.2-1`
 
