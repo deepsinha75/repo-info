@@ -244,16 +244,10 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris binutils=2.32.51.20190727-1
-'http://deb.debian.org/debian/pool/main/b/binutils/binutils_2.32.51.20190727-1.dsc' binutils_2.32.51.20190727-1.dsc 11301 SHA256:9ffca7adda82dd1d4811f8718f341863d4b8ee274b6f342e6fb901a1541e0935
-'http://deb.debian.org/debian/pool/main/b/binutils/binutils_2.32.51.20190727.orig.tar.xz' binutils_2.32.51.20190727.orig.tar.xz 20884360 SHA256:365c44c979f856746e6c0190e3e79bcb67689907b0962f38934c40322bfbb53f
-'http://deb.debian.org/debian/pool/main/b/binutils/binutils_2.32.51.20190727-1.debian.tar.xz' binutils_2.32.51.20190727-1.debian.tar.xz 87348 SHA256:05709c6ad1efd10f0cf4913d26ad4aa8ed2363ccbc26423d2d5ae4070f9c314f
+'http://http.debian.net/debian/pool/main/b/binutils/binutils_2.32.51.20190727-1.dsc' binutils_2.32.51.20190727-1.dsc 11301 SHA256:9ffca7adda82dd1d4811f8718f341863d4b8ee274b6f342e6fb901a1541e0935
+'http://http.debian.net/debian/pool/main/b/binutils/binutils_2.32.51.20190727.orig.tar.xz' binutils_2.32.51.20190727.orig.tar.xz 20884360 SHA256:365c44c979f856746e6c0190e3e79bcb67689907b0962f38934c40322bfbb53f
+'http://http.debian.net/debian/pool/main/b/binutils/binutils_2.32.51.20190727-1.debian.tar.xz' binutils_2.32.51.20190727-1.debian.tar.xz 87348 SHA256:05709c6ad1efd10f0cf4913d26ad4aa8ed2363ccbc26423d2d5ae4070f9c314f
 ```
-
-Other potentially useful URLs:
-
-- https://sources.debian.net/src/binutils/2.32.51.20190727-1/ (for browsing the source)
-- https://sources.debian.net/src/binutils/2.32.51.20190727-1/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/binutils/2.32.51.20190727-1/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `boot=1.3-23-1`
 
@@ -287,15 +281,9 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris build-essential=12.6
-'http://deb.debian.org/debian/pool/main/b/build-essential/build-essential_12.6.dsc' build-essential_12.6.dsc 2476 SHA256:0c453158bb01eff3ef6baaacd12eb09ca504f616ca98a3381ed9566b460c49ac
-'http://deb.debian.org/debian/pool/main/b/build-essential/build-essential_12.6.tar.xz' build-essential_12.6.tar.xz 51352 SHA256:97677f90407a34987f260be09fda3d923990155d67508b4ec9311e0530d22beb
+'http://http.debian.net/debian/pool/main/b/build-essential/build-essential_12.6.dsc' build-essential_12.6.dsc 2476 SHA256:0c453158bb01eff3ef6baaacd12eb09ca504f616ca98a3381ed9566b460c49ac
+'http://http.debian.net/debian/pool/main/b/build-essential/build-essential_12.6.tar.xz' build-essential_12.6.tar.xz 51352 SHA256:97677f90407a34987f260be09fda3d923990155d67508b4ec9311e0530d22beb
 ```
-
-Other potentially useful URLs:
-
-- https://sources.debian.net/src/build-essential/12.6/ (for browsing the source)
-- https://sources.debian.net/src/build-essential/12.6/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/build-essential/12.6/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `bzip2=1.0.6-9.2`
 
@@ -1077,19 +1065,13 @@ Licenses: (parsed from: `/usr/share/doc/cpp/copyright`, `/usr/share/doc/g++/copy
 
 - `GPL`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris gcc-defaults=1.181
-'http://deb.debian.org/debian/pool/main/g/gcc-defaults/gcc-defaults_1.181.dsc' gcc-defaults_1.181.dsc 15508 SHA256:d89d80502009816bac8e77c423c3f7d4e6fb4b684f036fae785dacf4454ddc75
-'http://deb.debian.org/debian/pool/main/g/gcc-defaults/gcc-defaults_1.181.tar.gz' gcc-defaults_1.181.tar.gz 72227 SHA256:39c34b070fc29223ba42ae6d53653a8f02fdbc0e9d6ca3245de9b19d2c6e9d07
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/gcc-defaults/1.181/
 
-- https://sources.debian.net/src/gcc-defaults/1.181/ (for browsing the source)
-- https://sources.debian.net/src/gcc-defaults/1.181/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/gcc-defaults/1.181/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `gdbm=1.18.1-4`
 
@@ -2681,10 +2663,16 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris linux=5.2.7-1
-'http://http.debian.net/debian/pool/main/l/linux/linux_5.2.7-1.dsc' linux_5.2.7-1.dsc 186363 SHA256:eae14b99ea302674d3c13b3b8f556cd41215c93da03aa53c35252463d4fa2ff0
-'http://http.debian.net/debian/pool/main/l/linux/linux_5.2.7.orig.tar.xz' linux_5.2.7.orig.tar.xz 111105420 SHA256:917bfea4c7f71c4d1d5878f0489cc024f475df4d51dd7c23697426fd52ab07ca
-'http://http.debian.net/debian/pool/main/l/linux/linux_5.2.7-1.debian.tar.xz' linux_5.2.7-1.debian.tar.xz 1130724 SHA256:19833102a4637ed14fc9cf1960295786fb78fba35c56bcf662963e1446e47c17
+'http://deb.debian.org/debian/pool/main/l/linux/linux_5.2.7-1.dsc' linux_5.2.7-1.dsc 186363 SHA256:eae14b99ea302674d3c13b3b8f556cd41215c93da03aa53c35252463d4fa2ff0
+'http://deb.debian.org/debian/pool/main/l/linux/linux_5.2.7.orig.tar.xz' linux_5.2.7.orig.tar.xz 111105420 SHA256:917bfea4c7f71c4d1d5878f0489cc024f475df4d51dd7c23697426fd52ab07ca
+'http://deb.debian.org/debian/pool/main/l/linux/linux_5.2.7-1.debian.tar.xz' linux_5.2.7-1.debian.tar.xz 1130724 SHA256:19833102a4637ed14fc9cf1960295786fb78fba35c56bcf662963e1446e47c17
 ```
+
+Other potentially useful URLs:
+
+- https://sources.debian.net/src/linux/5.2.7-1/ (for browsing the source)
+- https://sources.debian.net/src/linux/5.2.7-1/debian/copyright/ (for direct copyright/license information)
+- http://snapshot.debian.org/package/linux/5.2.7-1/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `littler=0.3.8-1`
 
@@ -3474,20 +3462,13 @@ Licenses: (parsed from: `/usr/share/doc/libreadline-dev/copyright`, `/usr/share/
 - `GFDL`
 - `GPL-3`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris readline=8.0-2
-'http://deb.debian.org/debian/pool/main/r/readline/readline_8.0-2.dsc' readline_8.0-2.dsc 2419 SHA256:2a55c819e4b7b3c3a6a66637e336ac5743ee08e07471423b93844b2691fd028a
-'http://deb.debian.org/debian/pool/main/r/readline/readline_8.0.orig.tar.gz' readline_8.0.orig.tar.gz 2975937 SHA256:e339f51971478d369f8a053a330a190781acb9864cf4c541060f12078948e461
-'http://deb.debian.org/debian/pool/main/r/readline/readline_8.0-2.debian.tar.xz' readline_8.0-2.debian.tar.xz 28712 SHA256:3ecd2292ee4bf8701f7b7dddb39e80ee62e2ab46c6d0715c2a8847272f8cbb51
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/readline/8.0-2/
 
-- https://sources.debian.net/src/readline/8.0-2/ (for browsing the source)
-- https://sources.debian.net/src/readline/8.0-2/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/readline/8.0-2/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `rmatrix=1.2-17-1`
 
