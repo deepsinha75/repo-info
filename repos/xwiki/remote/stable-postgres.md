@@ -1,7 +1,7 @@
 ## `xwiki:stable-postgres`
 
 ```console
-$ docker pull xwiki@sha256:8c512f7008c6b48dd03f94b473a5711e64e9294f2d8548ae58f74e14dd682bfa
+$ docker pull xwiki@sha256:199cfb7d273ed6ae462c849ba87db6098f1583d86a9e37e3728ed4016867dad8
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -173,14 +173,14 @@ CMD ["xwiki"]
 ### `xwiki:stable-postgres` - linux; arm64 variant v8
 
 ```console
-$ docker pull xwiki@sha256:16823dcabb60ef4f79559cb0cd642f530986e374e0bfb8a94b635cfcc0db3930
+$ docker pull xwiki@sha256:7b73e7077774b734a4a63f21ce2a8d73bc75687d3b5cea38b27b21731fabf57b
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **702.0 MB (701968452 bytes)**  
+-	Total Size: **702.1 MB (702138902 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:373f01ec74f82655feb139073a1a999eb18ee7217146b51ca6e6eb1ee1be5f44`
+-	Image ID: `sha256:8296a2e2d34862af1dc48a1dc1a86d2a2aa0254bb0dfac5f21d907a4c1d6123c`
 -	Entrypoint: `["docker-entrypoint.sh"]`
 -	Default Command: `["xwiki"]`
 
@@ -239,29 +239,29 @@ CMD ["catalina.sh" "run"]
 MAINTAINER Vincent Massol <vincent@massol.net>
 # Thu, 22 Aug 2019 01:59:26 GMT
 RUN apt-get update &&   apt-get --no-install-recommends -y install     curl     libreoffice     unzip     procps     libpostgresql-jdbc-java &&   rm -rf /var/lib/apt/lists/*
-# Thu, 22 Aug 2019 01:59:29 GMT
-ENV XWIKI_VERSION=11.6.1
-# Thu, 22 Aug 2019 01:59:29 GMT
-ENV XWIKI_URL_PREFIX=https://maven.xwiki.org/releases/org/xwiki/platform/xwiki-platform-distribution-war/11.6.1
-# Thu, 22 Aug 2019 01:59:30 GMT
-ENV XWIKI_DOWNLOAD_SHA256=5de796a8c3a87bb0ba9fe99f95919bec2bff481b610dc76f29413193cdb1f4b7
-# Thu, 22 Aug 2019 02:02:16 GMT
+# Tue, 27 Aug 2019 22:19:29 GMT
+ENV XWIKI_VERSION=11.7
+# Tue, 27 Aug 2019 22:19:29 GMT
+ENV XWIKI_URL_PREFIX=https://maven.xwiki.org/releases/org/xwiki/platform/xwiki-platform-distribution-war/11.7
+# Tue, 27 Aug 2019 22:19:30 GMT
+ENV XWIKI_DOWNLOAD_SHA256=b3ab6ed460a963ff5412294f103b6142808812950011235a223ddafaf8ec4e59
+# Tue, 27 Aug 2019 22:22:08 GMT
 RUN rm -rf /usr/local/tomcat/webapps/* &&   mkdir -p /usr/local/tomcat/temp &&   mkdir -p /usr/local/xwiki/data &&   curl -fSL "${XWIKI_URL_PREFIX}/xwiki-platform-distribution-war-${XWIKI_VERSION}.war" -o xwiki.war &&   echo "$XWIKI_DOWNLOAD_SHA256 xwiki.war" | sha256sum -c - &&   unzip -d /usr/local/tomcat/webapps/ROOT xwiki.war &&   rm -f xwiki.war
-# Thu, 22 Aug 2019 02:02:19 GMT
+# Tue, 27 Aug 2019 22:22:10 GMT
 RUN cp /usr/share/java/postgresql-jdbc4.jar /usr/local/tomcat/webapps/ROOT/WEB-INF/lib/
-# Thu, 22 Aug 2019 02:02:19 GMT
+# Tue, 27 Aug 2019 22:22:11 GMT
 COPY file:0a1be11e2eb610a1dbcd415404e3a592641110b93090030cb831e3a19a163017 in /usr/local/tomcat/bin/ 
-# Thu, 22 Aug 2019 02:02:20 GMT
+# Tue, 27 Aug 2019 22:22:11 GMT
 COPY file:bb513b07693b0f03295b679c3da15a7fa3d7769583b3db4897a41cfec3529978 in /usr/local/tomcat/webapps/ROOT/WEB-INF/hibernate.cfg.xml 
-# Thu, 22 Aug 2019 02:02:21 GMT
+# Tue, 27 Aug 2019 22:22:12 GMT
 RUN sed -i 's/<id>org.xwiki.platform:xwiki-platform-distribution-war/<id>org.xwiki.platform:xwiki-platform-distribution-docker/'   /usr/local/tomcat/webapps/ROOT/META-INF/extension.xed
-# Thu, 22 Aug 2019 02:02:22 GMT
+# Tue, 27 Aug 2019 22:22:13 GMT
 COPY file:f901b2d7ac3d76cd8346f9aee81b40529183e81d8aa027bb390856ac01fa6cc0 in /usr/local/bin/docker-entrypoint.sh 
-# Thu, 22 Aug 2019 02:02:22 GMT
+# Tue, 27 Aug 2019 22:22:13 GMT
 VOLUME [/usr/local/xwiki]
-# Thu, 22 Aug 2019 02:02:22 GMT
+# Tue, 27 Aug 2019 22:22:13 GMT
 ENTRYPOINT ["docker-entrypoint.sh"]
-# Thu, 22 Aug 2019 02:02:23 GMT
+# Tue, 27 Aug 2019 22:22:14 GMT
 CMD ["xwiki"]
 ```
 
@@ -306,27 +306,27 @@ CMD ["xwiki"]
 		Last Modified: Thu, 22 Aug 2019 02:03:58 GMT  
 		Size: 178.5 MB (178522430 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:6e0c584b9cd536cf8f7b502ccf2cdc888a73808b6477afa875b0dcd5d623220d`  
-		Last Modified: Thu, 22 Aug 2019 02:03:18 GMT  
-		Size: 282.3 MB (282272540 bytes)  
+	-	`sha256:a46f1bc022ffda1a6b2cf8d2dc15226fb579a0656383cf2f56cd16335317df2b`  
+		Last Modified: Tue, 27 Aug 2019 22:23:10 GMT  
+		Size: 282.4 MB (282442974 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:ecb69af4bc7292a15195a827992359a84f0b7ea3e90258833c8ba1f5b5f94474`  
-		Last Modified: Thu, 22 Aug 2019 02:02:40 GMT  
-		Size: 618.9 KB (618853 bytes)  
+	-	`sha256:50db9ca21c07c9be6e457dada931f417321258b60dfb93fc0724ef6e27df6e66`  
+		Last Modified: Tue, 27 Aug 2019 22:22:34 GMT  
+		Size: 618.9 KB (618863 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:4b897a41efe116913964fb478ffb537c6d9b7767b450eaa518d46d73e7d44a1b`  
-		Last Modified: Thu, 22 Aug 2019 02:02:40 GMT  
-		Size: 1.3 KB (1342 bytes)  
+	-	`sha256:dd89ac0af58debabb924d58df20904a0aec742e0c9f590aff250e4200675cdf5`  
+		Last Modified: Tue, 27 Aug 2019 22:22:34 GMT  
+		Size: 1.3 KB (1345 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:fa59834869d15fee79921631313a0aced8751b5b104a514dd443f3767b46ede4`  
-		Last Modified: Thu, 22 Aug 2019 02:02:41 GMT  
-		Size: 2.5 KB (2474 bytes)  
+	-	`sha256:d53c8150a439d4e97b8c94cf91461b52e8061d66f4a60ca2560c680c1e6fc36a`  
+		Last Modified: Tue, 27 Aug 2019 22:22:34 GMT  
+		Size: 2.5 KB (2477 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:23b37175c58f088ea4df098ba16cbd63295e5d2e4eacd758ef49d4d2f0c1d7c8`  
-		Last Modified: Thu, 22 Aug 2019 02:02:40 GMT  
+	-	`sha256:871352eba9f251932e5cb8310c115c4220ac248e77867b25acc451ef197bf34b`  
+		Last Modified: Tue, 27 Aug 2019 22:22:34 GMT  
 		Size: 4.1 KB (4122 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:69a1a00b47d5bec2ce761dcd24b66d2112f6cdd665f778cb7acef5ed4c8105ac`  
-		Last Modified: Thu, 22 Aug 2019 02:02:40 GMT  
+	-	`sha256:a64041007ec09b8cc8e990316fc2971dc51fafce6521ba590e5b7e381c4f0ad7`  
+		Last Modified: Tue, 27 Aug 2019 22:22:34 GMT  
 		Size: 2.4 KB (2403 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
