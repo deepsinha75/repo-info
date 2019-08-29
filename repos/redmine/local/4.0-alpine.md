@@ -2,9 +2,9 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:719dcf0ee2545a7b2658c7e83d55ac2ee6cb2991545aa9e1dbb7d55d89aba91d`
-- Created: `2019-08-21T01:42:14.695032331Z`
-- Virtual Size: ~ 366.16 Mb  
+- Image ID: `sha256:7d55a3733b26d32c9f78afa5fa21b68aecd7d00e1db61d23d499736b92e81498`
+- Created: `2019-08-29T01:13:27.69071647Z`
+- Virtual Size: ~ 366.28 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["/docker-entrypoint.sh"]`
@@ -12,8 +12,8 @@
 - Environment:
   - `PATH=/usr/local/bundle/bin:/usr/local/bundle/gems/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
   - `RUBY_MAJOR=2.6`
-  - `RUBY_VERSION=2.6.3`
-  - `RUBY_DOWNLOAD_SHA256=11a83f85c03d3f0fc9b8a9b6cad1b2674f26c5aaa43ba858d4b0fcc2b54171e1`
+  - `RUBY_VERSION=2.6.4`
+  - `RUBY_DOWNLOAD_SHA256=df593cd4c017de19adf5d0154b8391bb057cef1b72ecdd4a8ee30d3235c65f09`
   - `GEM_HOME=/usr/local/bundle`
   - `BUNDLE_PATH=/usr/local/bundle`
   - `BUNDLE_SILENCE_ROOT_WARNING=1`
@@ -895,16 +895,16 @@ BSD-3-Clause IJG Zlib
 ### `apk` package: `libldap`
 
 ```console
-libldap-2.4.47-r2 description:
+libldap-2.4.48-r0 description:
 OpenLDAP libraries
 
-libldap-2.4.47-r2 webpage:
+libldap-2.4.48-r0 webpage:
 http://www.openldap.org/
 
-libldap-2.4.47-r2 installed size:
+libldap-2.4.48-r0 installed size:
 626688
 
-libldap-2.4.47-r2 license:
+libldap-2.4.48-r0 license:
 custom
 
 ```
@@ -1133,16 +1133,16 @@ GPL-2.0 GPL-2.0-or-later LGPL-2.0-or-later BSD Public-Domain
 ### `apk` package: `libx11`
 
 ```console
-libx11-1.6.8-r0 description:
+libx11-1.6.8-r1 description:
 X11 client-side library
 
-libx11-1.6.8-r0 webpage:
+libx11-1.6.8-r1 webpage:
 http://xorg.freedesktop.org/
 
-libx11-1.6.8-r0 installed size:
+libx11-1.6.8-r1 installed size:
 3391488
 
-libx11-1.6.8-r0 license:
+libx11-1.6.8-r1 license:
 custom:XFREE86
 
 ```
@@ -1439,16 +1439,16 @@ LGPL-2.0-or-later
 ### `apk` package: `nghttp2-libs`
 
 ```console
-nghttp2-libs-1.38.0-r0 description:
+nghttp2-libs-1.39.2-r0 description:
 Experimental HTTP/2 client, server and proxy (libraries)
 
-nghttp2-libs-1.38.0-r0 webpage:
+nghttp2-libs-1.39.2-r0 webpage:
 https://nghttp2.org
 
-nghttp2-libs-1.38.0-r0 installed size:
+nghttp2-libs-1.39.2-r0 installed size:
 155648
 
-nghttp2-libs-1.38.0-r0 license:
+nghttp2-libs-1.39.2-r0 license:
 MIT
 
 ```
@@ -1779,16 +1779,16 @@ Apache-2.0 BSD
 ### `apk` package: `tiff`
 
 ```console
-tiff-4.0.10-r0 description:
+tiff-4.0.10-r1 description:
 Provides support for the Tag Image File Format or TIFF
 
-tiff-4.0.10-r0 webpage:
+tiff-4.0.10-r1 webpage:
 http://www.libtiff.org
 
-tiff-4.0.10-r0 installed size:
+tiff-4.0.10-r1 installed size:
 442368
 
-tiff-4.0.10-r0 license:
+tiff-4.0.10-r1 license:
 libtiff
 
 ```
@@ -1813,16 +1813,16 @@ MIT
 ### `apk` package: `tzdata`
 
 ```console
-tzdata-2019a-r0 description:
+tzdata-2019b-r0 description:
 Timezone data
 
-tzdata-2019a-r0 webpage:
+tzdata-2019b-r0 webpage:
 https://www.iana.org/time-zones
 
-tzdata-2019a-r0 installed size:
+tzdata-2019b-r0 installed size:
 3538944
 
-tzdata-2019a-r0 license:
+tzdata-2019b-r0 license:
 Public-Domain
 
 ```
