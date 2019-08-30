@@ -1305,9 +1305,9 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris openldap=2.4.47+dfsg-3ubuntu2.1
-'http://archive.ubuntu.com/ubuntu/pool/main/o/openldap/openldap_2.4.47+dfsg-3ubuntu2.1.dsc' openldap_2.4.47+dfsg-3ubuntu2.1.dsc 2971 SHA256:159958d2d6fba7ce74d6eb30870a0a5b6f146be3eef565540e19837f966a2882
-'http://archive.ubuntu.com/ubuntu/pool/main/o/openldap/openldap_2.4.47+dfsg.orig.tar.gz' openldap_2.4.47+dfsg.orig.tar.gz 4872293 SHA256:8f1ac7a4be7dd8ef158361efbfe16509756d3d9b396f5f378c3cf5c727807651
-'http://archive.ubuntu.com/ubuntu/pool/main/o/openldap/openldap_2.4.47+dfsg-3ubuntu2.1.debian.tar.xz' openldap_2.4.47+dfsg-3ubuntu2.1.debian.tar.xz 180296 SHA256:9b0d39d18d4ae2ce5768f6aed4c5f109ab7bb3983245ac7c99153199959d0bd0
+'http://security.ubuntu.com/ubuntu/pool/main/o/openldap/openldap_2.4.47+dfsg-3ubuntu2.1.dsc' openldap_2.4.47+dfsg-3ubuntu2.1.dsc 2971 SHA256:159958d2d6fba7ce74d6eb30870a0a5b6f146be3eef565540e19837f966a2882
+'http://security.ubuntu.com/ubuntu/pool/main/o/openldap/openldap_2.4.47+dfsg.orig.tar.gz' openldap_2.4.47+dfsg.orig.tar.gz 4872293 SHA256:8f1ac7a4be7dd8ef158361efbfe16509756d3d9b396f5f378c3cf5c727807651
+'http://security.ubuntu.com/ubuntu/pool/main/o/openldap/openldap_2.4.47+dfsg-3ubuntu2.1.debian.tar.xz' openldap_2.4.47+dfsg-3ubuntu2.1.debian.tar.xz 180296 SHA256:9b0d39d18d4ae2ce5768f6aed4c5f109ab7bb3983245ac7c99153199959d0bd0
 ```
 
 ### `dpkg` source package: `openssl=1.1.1b-1ubuntu2.1`

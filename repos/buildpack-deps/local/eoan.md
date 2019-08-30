@@ -928,13 +928,9 @@ Licenses: (parsed from: `/usr/share/doc/cpp/copyright`, `/usr/share/doc/g++/copy
 
 - `GPL`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris gcc-defaults=1.182ubuntu4
-'http://archive.ubuntu.com/ubuntu/pool/main/g/gcc-defaults/gcc-defaults_1.182ubuntu4.dsc' gcc-defaults_1.182ubuntu4.dsc 15766 SHA256:fdbbf82afdf1f449b3fe35f19187f3ae5c562ffab5ecf8e52022373a50624784
-'http://archive.ubuntu.com/ubuntu/pool/main/g/gcc-defaults/gcc-defaults_1.182ubuntu4.tar.gz' gcc-defaults_1.182ubuntu4.tar.gz 57591 SHA256:4a2614a86bf76ca396a0872ba1bc55f2117218f45302c8aff02066e44a80ce77
-```
 
 ### `dpkg` source package: `gdbm=1.18.1-4`
 
@@ -1352,13 +1348,13 @@ Licenses: (parsed from: `/usr/share/doc/hostname/copyright`)
 
 - `GPL-2`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris hostname=3.21
-'http://archive.ubuntu.com/ubuntu/pool/main/h/hostname/hostname_3.21.dsc' hostname_3.21.dsc 1398 SHA256:8e61f35d7b3e57833d6110ee22a95af6b12e159bf41a5b659e63b21d01e83121
-'http://archive.ubuntu.com/ubuntu/pool/main/h/hostname/hostname_3.21.tar.gz' hostname_3.21.tar.gz 13467 SHA256:566193a99f97a58f80b1537efe207c798bb88436c31c7dfc6dd4471d888a4a4f
-```
+The source package *may* still be available for download from:
+
+- http://snapshot.debian.org/package/hostname/3.21/
+
 
 ### `dpkg` source package: `icu=63.2-2`
 
@@ -2308,14 +2304,13 @@ Licenses: (parsed from: `/usr/share/doc/libthai-data/copyright`, `/usr/share/doc
 - `LGPL-2.1`
 - `LGPL-2.1+`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris libthai=0.1.28-2
-'http://archive.ubuntu.com/ubuntu/pool/main/libt/libthai/libthai_0.1.28-2.dsc' libthai_0.1.28-2.dsc 2348 SHA256:93e36d78cb14add1ff913f27957719bf08c8a87b4611ad1eef5961ce2cc45a43
-'http://archive.ubuntu.com/ubuntu/pool/main/libt/libthai/libthai_0.1.28.orig.tar.xz' libthai_0.1.28.orig.tar.xz 413592 SHA256:ffe0a17b4b5aa11b153c15986800eca19f6c93a4025ffa5cf2cab2dcdf1ae911
-'http://archive.ubuntu.com/ubuntu/pool/main/libt/libthai/libthai_0.1.28-2.debian.tar.xz' libthai_0.1.28-2.debian.tar.xz 11952 SHA256:6cf7601099f2401bf206f988db523f1c06901432ae0ace720541209a93735ccd
-```
+The source package *may* still be available for download from:
+
+- http://snapshot.debian.org/package/libthai/0.1.28-2/
+
 
 ### `dpkg` source package: `libtool=2.4.6-10`
 
@@ -2507,14 +2502,13 @@ Binary Packages:
 If source is available (seen below), check the contents of `debian/copyright` within it.
 
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris libxext=2:1.3.3-1
-'http://archive.ubuntu.com/ubuntu/pool/main/libx/libxext/libxext_1.3.3-1.dsc' libxext_1.3.3-1.dsc 2221 SHA256:47106df75b8f3db1e43803e8e94a2e966cd23f7daa8cfc393af739a9e33ef955
-'http://archive.ubuntu.com/ubuntu/pool/main/libx/libxext/libxext_1.3.3.orig.tar.gz' libxext_1.3.3.orig.tar.gz 468441 SHA256:eb0b88050491fef4716da4b06a4d92b4fc9e76f880d6310b2157df604342cfe5
-'http://archive.ubuntu.com/ubuntu/pool/main/libx/libxext/libxext_1.3.3-1.diff.gz' libxext_1.3.3-1.diff.gz 20763 SHA256:e294a4884eb68acbd151312cb0c973aad63268b637b15ccf1911864b7197557e
-```
+The source package *may* still be available for download from:
+
+- http://snapshot.debian.org/package/libxext/2:1.3.3-1/
+
 
 ### `dpkg` source package: `libxml2=2.9.4+dfsg1-7ubuntu3`
 
@@ -2568,14 +2562,13 @@ Binary Packages:
 If source is available (seen below), check the contents of `debian/copyright` within it.
 
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris libxslt=1.1.32-2.1
-'http://archive.ubuntu.com/ubuntu/pool/main/libx/libxslt/libxslt_1.1.32-2.1.dsc' libxslt_1.1.32-2.1.dsc 2502 SHA256:bc9454624f5127960244d433676a654c96790ed3c3e5c01b416188953a0f3421
-'http://archive.ubuntu.com/ubuntu/pool/main/libx/libxslt/libxslt_1.1.32.orig.tar.gz' libxslt_1.1.32.orig.tar.gz 3440715 SHA256:526ecd0abaf4a7789041622c3950c0e7f2c4c8835471515fd77eec684a355460
-'http://archive.ubuntu.com/ubuntu/pool/main/libx/libxslt/libxslt_1.1.32-2.1.debian.tar.xz' libxslt_1.1.32-2.1.debian.tar.xz 33792 SHA256:68a20c62f69574822af5f01e807228fbaf5ab23868df3a2b57d4915d0f799dd7
-```
+The source package *may* still be available for download from:
+
+- http://snapshot.debian.org/package/libxslt/1.1.32-2.1/
+
 
 ### `dpkg` source package: `libxt=1:1.1.5-1`
 
@@ -2894,9 +2887,9 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris mysql-5.7=5.7.27-0ubuntu2
-'http://archive.ubuntu.com/ubuntu/pool/main/m/mysql-5.7/mysql-5.7_5.7.27-0ubuntu2.dsc' mysql-5.7_5.7.27-0ubuntu2.dsc 3362 SHA256:d77cc4b880998416a10f8bfd020b98bbeaf436cef434f4d7281c5724f25c3412
-'http://archive.ubuntu.com/ubuntu/pool/main/m/mysql-5.7/mysql-5.7_5.7.27.orig.tar.gz' mysql-5.7_5.7.27.orig.tar.gz 51436383 SHA256:036ab46a8a1216cfc1e87374bd1cba12e2208c02cf328a31851be7e1c7f57a2b
-'http://archive.ubuntu.com/ubuntu/pool/main/m/mysql-5.7/mysql-5.7_5.7.27-0ubuntu2.debian.tar.xz' mysql-5.7_5.7.27-0ubuntu2.debian.tar.xz 156628 SHA256:3d87f30659b4e8d6f5e2f36501f9f84adb3609d31e3a8a28dd23a05bea040fdd
+'http://archive.ubuntu.com/ubuntu/pool/universe/m/mysql-5.7/mysql-5.7_5.7.27-0ubuntu2.dsc' mysql-5.7_5.7.27-0ubuntu2.dsc 3362 SHA256:d77cc4b880998416a10f8bfd020b98bbeaf436cef434f4d7281c5724f25c3412
+'http://archive.ubuntu.com/ubuntu/pool/universe/m/mysql-5.7/mysql-5.7_5.7.27.orig.tar.gz' mysql-5.7_5.7.27.orig.tar.gz 51436383 SHA256:036ab46a8a1216cfc1e87374bd1cba12e2208c02cf328a31851be7e1c7f57a2b
+'http://archive.ubuntu.com/ubuntu/pool/universe/m/mysql-5.7/mysql-5.7_5.7.27-0ubuntu2.debian.tar.xz' mysql-5.7_5.7.27-0ubuntu2.debian.tar.xz 156628 SHA256:3d87f30659b4e8d6f5e2f36501f9f84adb3609d31e3a8a28dd23a05bea040fdd
 ```
 
 ### `dpkg` source package: `mysql-defaults=1.0.5`
@@ -2911,13 +2904,13 @@ Licenses: (parsed from: `/usr/share/doc/default-libmysqlclient-dev/copyright`, `
 - `GPL-2`
 - `GPL-2+`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris mysql-defaults=1.0.5
-'http://archive.ubuntu.com/ubuntu/pool/main/m/mysql-defaults/mysql-defaults_1.0.5.dsc' mysql-defaults_1.0.5.dsc 2235 SHA256:b6aaf2e08ed89079594f909ce2ec52e2c1232748c6f8e0691796bbb0764e4ef9
-'http://archive.ubuntu.com/ubuntu/pool/main/m/mysql-defaults/mysql-defaults_1.0.5.tar.xz' mysql-defaults_1.0.5.tar.xz 7100 SHA256:71dd3115beba9facd1a9d75ae3178f6f9fa72c01d6be81c08472300e6c29fa2e
-```
+The source package *may* still be available for download from:
+
+- http://snapshot.debian.org/package/mysql-defaults/1.0.5/
+
 
 ### `dpkg` source package: `ncurses=6.1+20190803-1ubuntu1`
 
@@ -3118,15 +3111,9 @@ Binary Packages:
 If source is available (seen below), check the contents of `debian/copyright` within it.
 
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris openssl=1.1.1c-1ubuntu3
-'http://archive.ubuntu.com/ubuntu/pool/main/o/openssl/openssl_1.1.1c-1ubuntu3.dsc' openssl_1.1.1c-1ubuntu3.dsc 2746 SHA256:ae074442583c864160f357441e3dbc8081b16313d68c1d80be8101abe67b81c3
-'http://archive.ubuntu.com/ubuntu/pool/main/o/openssl/openssl_1.1.1c.orig.tar.gz' openssl_1.1.1c.orig.tar.gz 8864262 SHA256:f6fb3079ad15076154eda9413fed42877d668e7069d9b87396d0804fdb3f4c90
-'http://archive.ubuntu.com/ubuntu/pool/main/o/openssl/openssl_1.1.1c.orig.tar.gz.asc' openssl_1.1.1c.orig.tar.gz.asc 833 SHA256:12663f13a236f0ccb4e74fe2d61b7b2dc1dbdeb83767b21505e61af67d2da6b8
-'http://archive.ubuntu.com/ubuntu/pool/main/o/openssl/openssl_1.1.1c-1ubuntu3.debian.tar.xz' openssl_1.1.1c-1ubuntu3.debian.tar.xz 89992 SHA256:bdb43e8c8debe54f9f4795e8b5b774c7df47f35e703ff1d634cb43ed11b55329
-```
 
 ### `dpkg` source package: `p11-kit=0.23.15-2`
 
@@ -3342,14 +3329,13 @@ Binary Packages:
 If source is available (seen below), check the contents of `debian/copyright` within it.
 
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris pixman=0.36.0-1
-'http://archive.ubuntu.com/ubuntu/pool/main/p/pixman/pixman_0.36.0-1.dsc' pixman_0.36.0-1.dsc 2040 SHA256:cd14652763bce32b699778c9a2d73d1bd01384754b1c259ab86cebba083c4aaf
-'http://archive.ubuntu.com/ubuntu/pool/main/p/pixman/pixman_0.36.0.orig.tar.gz' pixman_0.36.0.orig.tar.gz 881544 SHA256:1ca19c8d4d37682adfbc42741d24977903fec1169b4153ec05bb690d4acf9fae
-'http://archive.ubuntu.com/ubuntu/pool/main/p/pixman/pixman_0.36.0-1.diff.gz' pixman_0.36.0-1.diff.gz 322741 SHA256:59b44243d485e97bd47ffa845da9e300a18bce37e4cb49793eb0cd2ac5c6de43
-```
+The source package *may* still be available for download from:
+
+- http://snapshot.debian.org/package/pixman/0.36.0-1/
+
 
 ### `dpkg` source package: `pkg-config=0.29.1-0ubuntu3`
 
