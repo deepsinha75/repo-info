@@ -4356,9 +4356,9 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris openldap=2.4.42+dfsg-2ubuntu3.6
-'http://archive.ubuntu.com/ubuntu/pool/main/o/openldap/openldap_2.4.42+dfsg-2ubuntu3.6.dsc' openldap_2.4.42+dfsg-2ubuntu3.6.dsc 3054 SHA256:ad6f9ad3a6f5134a753abbb1877a78b63990d39b1337b809c7b87e56e1e25a7b
-'http://archive.ubuntu.com/ubuntu/pool/main/o/openldap/openldap_2.4.42+dfsg.orig.tar.gz' openldap_2.4.42+dfsg.orig.tar.gz 4813173 SHA256:5f56e4e3584f7a4b4c8437a2c985b2f519836946be77ef1aa43a5d20c02ea97b
-'http://archive.ubuntu.com/ubuntu/pool/main/o/openldap/openldap_2.4.42+dfsg-2ubuntu3.6.debian.tar.xz' openldap_2.4.42+dfsg-2ubuntu3.6.debian.tar.xz 180632 SHA256:442ee321317fccfcfae8bdb9e90caa7818c2ceebf5d0b5a2e10cc266ecc3ec6a
+'http://security.ubuntu.com/ubuntu/pool/main/o/openldap/openldap_2.4.42+dfsg-2ubuntu3.6.dsc' openldap_2.4.42+dfsg-2ubuntu3.6.dsc 3054 SHA256:ad6f9ad3a6f5134a753abbb1877a78b63990d39b1337b809c7b87e56e1e25a7b
+'http://security.ubuntu.com/ubuntu/pool/main/o/openldap/openldap_2.4.42+dfsg.orig.tar.gz' openldap_2.4.42+dfsg.orig.tar.gz 4813173 SHA256:5f56e4e3584f7a4b4c8437a2c985b2f519836946be77ef1aa43a5d20c02ea97b
+'http://security.ubuntu.com/ubuntu/pool/main/o/openldap/openldap_2.4.42+dfsg-2ubuntu3.6.debian.tar.xz' openldap_2.4.42+dfsg-2ubuntu3.6.debian.tar.xz 180632 SHA256:442ee321317fccfcfae8bdb9e90caa7818c2ceebf5d0b5a2e10cc266ecc3ec6a
 ```
 
 ### `dpkg` source package: `openmpi=1.10.2-8ubuntu1`

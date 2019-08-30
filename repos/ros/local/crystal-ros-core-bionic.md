@@ -2536,9 +2536,9 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris openldap=2.4.45+dfsg-1ubuntu1.3
-'http://archive.ubuntu.com/ubuntu/pool/main/o/openldap/openldap_2.4.45+dfsg-1ubuntu1.3.dsc' openldap_2.4.45+dfsg-1ubuntu1.3.dsc 2884 SHA256:a5be775d0ac209eef2a5e5bb4b25f92318433c828160f540ca038ea7107471e5
-'http://archive.ubuntu.com/ubuntu/pool/main/o/openldap/openldap_2.4.45+dfsg.orig.tar.gz' openldap_2.4.45+dfsg.orig.tar.gz 4846458 SHA256:d51c70423aa0554d454fd3d43e7f2e940523b4ef07979305b48c233ae44b2b32
-'http://archive.ubuntu.com/ubuntu/pool/main/o/openldap/openldap_2.4.45+dfsg-1ubuntu1.3.debian.tar.xz' openldap_2.4.45+dfsg-1ubuntu1.3.debian.tar.xz 177388 SHA256:6ac2c1960fcff8e8ea126fe10958c484681e0619d5211a844954bf6f3111d049
+'http://security.ubuntu.com/ubuntu/pool/main/o/openldap/openldap_2.4.45+dfsg-1ubuntu1.3.dsc' openldap_2.4.45+dfsg-1ubuntu1.3.dsc 2884 SHA256:a5be775d0ac209eef2a5e5bb4b25f92318433c828160f540ca038ea7107471e5
+'http://security.ubuntu.com/ubuntu/pool/main/o/openldap/openldap_2.4.45+dfsg.orig.tar.gz' openldap_2.4.45+dfsg.orig.tar.gz 4846458 SHA256:d51c70423aa0554d454fd3d43e7f2e940523b4ef07979305b48c233ae44b2b32
+'http://security.ubuntu.com/ubuntu/pool/main/o/openldap/openldap_2.4.45+dfsg-1ubuntu1.3.debian.tar.xz' openldap_2.4.45+dfsg-1ubuntu1.3.debian.tar.xz 177388 SHA256:6ac2c1960fcff8e8ea126fe10958c484681e0619d5211a844954bf6f3111d049
 ```
 
 ### `dpkg` source package: `openssl=1.1.1-1ubuntu2.1~18.04.4`
@@ -3752,14 +3752,9 @@ Binary Packages:
 If source is available (seen below), check the contents of `debian/copyright` within it.
 
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris python3-colcon-output=0.2.4-1
-'http://packages.ros.org/ros2/ubuntu/pool/main/p/python3-colcon-output/python3-colcon-output_0.2.4-1.debian.tar.xz' python3-colcon-output_0.2.4-1.debian.tar.xz 1072 SHA512:50cbb418e76afc9879a8c7855962ba877daf3506f8a2a4024f1a39344604af85ff71ced07ea2ab845946428c9c1c66aec2a89efa824accbc2bdad13bc02e3284
-'http://packages.ros.org/ros2/ubuntu/pool/main/p/python3-colcon-output/python3-colcon-output_0.2.4-1.dsc' python3-colcon-output_0.2.4-1.dsc 924 SHA512:82622419f40c50b97a552d84e168954d6554d3f201949cd56ce9333a62bb23ef08f62d7664f442933a0d9107e4b18ad3af3124f148a7b49d72e7f7e44d4057a4
-'http://packages.ros.org/ros2/ubuntu/pool/main/p/python3-colcon-output/python3-colcon-output_0.2.4.orig.tar.gz' python3-colcon-output_0.2.4.orig.tar.gz 6530 SHA512:4d682247ef5dc9eaf3035d57df26b6e30f9931a71867d0826573bcd1b4000673bd04db8c80440ba7f4e916f1b75b7a4547341b26716c5ca952ceb65cce4acd85
-```
 
 ### `dpkg` source package: `python3-colcon-package-information=0.2.3-1`
 
