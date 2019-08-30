@@ -1,18 +1,18 @@
-# `ruby:2.6.3-alpine3.9`
+# `ruby:2.6.4-alpine3.9`
 
 ## Docker Metadata
 
-- Image ID: `sha256:64673bccbddc1f5ce087dd392007e7605572c386148b4bb37c11fe7454224956`
-- Created: `2019-06-27T23:20:27.315501448Z`
-- Virtual Size: ~ 50.91 Mb  
+- Image ID: `sha256:1fbb4d7710eba43e3232af6733a73224867e6d6196292058a399a8e20800ba2e`
+- Created: `2019-08-28T23:48:37.104385592Z`
+- Virtual Size: ~ 51.52 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Command: `["irb"]`
 - Environment:
   - `PATH=/usr/local/bundle/bin:/usr/local/bundle/gems/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
   - `RUBY_MAJOR=2.6`
-  - `RUBY_VERSION=2.6.3`
-  - `RUBY_DOWNLOAD_SHA256=11a83f85c03d3f0fc9b8a9b6cad1b2674f26c5aaa43ba858d4b0fcc2b54171e1`
+  - `RUBY_VERSION=2.6.4`
+  - `RUBY_DOWNLOAD_SHA256=df593cd4c017de19adf5d0154b8391bb057cef1b72ecdd4a8ee30d3235c65f09`
   - `GEM_HOME=/usr/local/bundle`
   - `BUNDLE_PATH=/usr/local/bundle`
   - `BUNDLE_SILENCE_ROOT_WARNING=1`
@@ -91,16 +91,16 @@ GPL-2.0
 ### `apk` package: `bzip2`
 
 ```console
-bzip2-1.0.6-r6 description:
+bzip2-1.0.6-r7 description:
 A high-quality data compression program
 
-bzip2-1.0.6-r6 webpage:
+bzip2-1.0.6-r7 webpage:
 http://sources.redhat.com/bzip2
 
-bzip2-1.0.6-r6 installed size:
+bzip2-1.0.6-r7 installed size:
 278528
 
-bzip2-1.0.6-r6 license:
+bzip2-1.0.6-r7 license:
 BSD
 
 ```
@@ -397,16 +397,16 @@ GPL-2.0-only
 ### `apk` package: `musl`
 
 ```console
-musl-1.1.20-r4 description:
+musl-1.1.20-r5 description:
 the musl c library (libc) implementation
 
-musl-1.1.20-r4 webpage:
+musl-1.1.20-r5 webpage:
 http://www.musl-libc.org/
 
-musl-1.1.20-r4 installed size:
+musl-1.1.20-r5 installed size:
 602112
 
-musl-1.1.20-r4 license:
+musl-1.1.20-r5 license:
 MIT
 
 ```
@@ -414,16 +414,16 @@ MIT
 ### `apk` package: `musl-utils`
 
 ```console
-musl-utils-1.1.20-r4 description:
+musl-utils-1.1.20-r5 description:
 the musl c library (libc) implementation
 
-musl-utils-1.1.20-r4 webpage:
+musl-utils-1.1.20-r5 webpage:
 http://www.musl-libc.org/
 
-musl-utils-1.1.20-r4 installed size:
+musl-utils-1.1.20-r5 installed size:
 139264
 
-musl-utils-1.1.20-r4 license:
+musl-utils-1.1.20-r5 license:
 MIT BSD GPL2+
 
 ```
