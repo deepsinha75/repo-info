@@ -2407,13 +2407,9 @@ Licenses: (parsed from: `/usr/share/doc/ubuntu-advantage-tools/copyright`)
 - `GPL-3`
 - `GPL-3.0`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris ubuntu-advantage-tools=10ubuntu0.14.04.3
-'http://archive.ubuntu.com/ubuntu/pool/main/u/ubuntu-advantage-tools/ubuntu-advantage-tools_10ubuntu0.14.04.3.dsc' ubuntu-advantage-tools_10ubuntu0.14.04.3.dsc 1120 SHA256:b85b51272c907ca9259b75f4eb7da1ddbafa8789358f7af9224b7cf134cc18b6
-'http://archive.ubuntu.com/ubuntu/pool/main/u/ubuntu-advantage-tools/ubuntu-advantage-tools_10ubuntu0.14.04.3.tar.gz' ubuntu-advantage-tools_10ubuntu0.14.04.3.tar.gz 32725 SHA256:47a5de935aa7b6013c4a4d34f47e533bb5e177901debd21cad54ac9b8e0a718d
-```
 
 ### `dpkg` source package: `ubuntu-keyring=2012.05.19`
 
