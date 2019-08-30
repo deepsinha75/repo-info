@@ -1,10 +1,10 @@
-# `gradle:5.6.0-jre8`
+# `gradle:5.6.1-jre8`
 
 ## Docker Metadata
 
-- Image ID: `sha256:acf2e8e4ccd2610e3ec6f15a904039b18cb6cc274f02c631785e7e517c794495`
-- Created: `2019-08-15T21:19:52.888859794Z`
-- Virtual Size: ~ 445.50 Mb  
+- Image ID: `sha256:797a454bd1de9d103d7105956f82ec15fe7f4e7730faf5088ba3f944b612e58e`
+- Created: `2019-08-29T21:36:35.473225219Z`
+- Virtual Size: ~ 445.51 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Command: `["gradle"]`
@@ -16,7 +16,7 @@
   - `JAVA_VERSION=jdk8u222-b10`
   - `JAVA_HOME=/opt/java/openjdk`
   - `GRADLE_HOME=/opt/gradle`
-  - `GRADLE_VERSION=5.6`
+  - `GRADLE_VERSION=5.6.1`
 
 ## `dpkg` (`.deb`-based packages)
 
@@ -1548,9 +1548,9 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris openldap=2.4.45+dfsg-1ubuntu1.3
-'http://archive.ubuntu.com/ubuntu/pool/main/o/openldap/openldap_2.4.45+dfsg-1ubuntu1.3.dsc' openldap_2.4.45+dfsg-1ubuntu1.3.dsc 2884 SHA256:a5be775d0ac209eef2a5e5bb4b25f92318433c828160f540ca038ea7107471e5
-'http://archive.ubuntu.com/ubuntu/pool/main/o/openldap/openldap_2.4.45+dfsg.orig.tar.gz' openldap_2.4.45+dfsg.orig.tar.gz 4846458 SHA256:d51c70423aa0554d454fd3d43e7f2e940523b4ef07979305b48c233ae44b2b32
-'http://archive.ubuntu.com/ubuntu/pool/main/o/openldap/openldap_2.4.45+dfsg-1ubuntu1.3.debian.tar.xz' openldap_2.4.45+dfsg-1ubuntu1.3.debian.tar.xz 177388 SHA256:6ac2c1960fcff8e8ea126fe10958c484681e0619d5211a844954bf6f3111d049
+'http://security.ubuntu.com/ubuntu/pool/main/o/openldap/openldap_2.4.45+dfsg-1ubuntu1.3.dsc' openldap_2.4.45+dfsg-1ubuntu1.3.dsc 2884 SHA256:a5be775d0ac209eef2a5e5bb4b25f92318433c828160f540ca038ea7107471e5
+'http://security.ubuntu.com/ubuntu/pool/main/o/openldap/openldap_2.4.45+dfsg.orig.tar.gz' openldap_2.4.45+dfsg.orig.tar.gz 4846458 SHA256:d51c70423aa0554d454fd3d43e7f2e940523b4ef07979305b48c233ae44b2b32
+'http://security.ubuntu.com/ubuntu/pool/main/o/openldap/openldap_2.4.45+dfsg-1ubuntu1.3.debian.tar.xz' openldap_2.4.45+dfsg-1ubuntu1.3.debian.tar.xz 177388 SHA256:6ac2c1960fcff8e8ea126fe10958c484681e0619d5211a844954bf6f3111d049
 ```
 
 ### `dpkg` source package: `openssh=1:7.6p1-4ubuntu0.3`
