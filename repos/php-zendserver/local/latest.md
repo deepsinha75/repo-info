@@ -80,14 +80,9 @@ Licenses: (parsed from: `/usr/share/doc/apache2/copyright`, `/usr/share/doc/apac
 - `PCRE`
 - `Zeus`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris apache2=2.4.18-2ubuntu3.10
-'http://archive.ubuntu.com/ubuntu/pool/main/a/apache2/apache2_2.4.18-2ubuntu3.10.dsc' apache2_2.4.18-2ubuntu3.10.dsc 2791 SHA256:b2a9344a1de56b97404c3e497db5bb5ad26eef6f5b4aae9e185509d1b872078a
-'http://archive.ubuntu.com/ubuntu/pool/main/a/apache2/apache2_2.4.18.orig.tar.bz2' apache2_2.4.18.orig.tar.bz2 5181291 SHA256:0644b050de41f5c9f67c825285049b144690421acb709b06fe53eddfa8a9fd4c
-'http://archive.ubuntu.com/ubuntu/pool/main/a/apache2/apache2_2.4.18-2ubuntu3.10.debian.tar.xz' apache2_2.4.18-2ubuntu3.10.debian.tar.xz 404172 SHA256:651bfa1f66b19d1bfd16a750622fa5989d409f7674f7bcaab2cfdf25e3a8100b
-```
 
 ### `dpkg` source package: `apparmor=2.10.95-0ubuntu2.11`
 
