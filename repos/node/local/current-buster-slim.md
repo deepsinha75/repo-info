@@ -1,9 +1,9 @@
-# `node:12.9.0-buster-slim`
+# `node:12.9.1-buster-slim`
 
 ## Docker Metadata
 
-- Image ID: `sha256:3b17aa213191aad76a2906779b3b316238642cda869c46810e45e95a37e6a6e6`
-- Created: `2019-08-21T22:34:40.490369104Z`
+- Image ID: `sha256:a41af3cb328e6a8de3463c562986fe72454d9c0ac1488d68f398a9bb1a0bca2c`
+- Created: `2019-08-28T23:12:49.127521019Z`
 - Virtual Size: ~ 161.41 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
@@ -11,7 +11,7 @@
 - Command: `["node"]`
 - Environment:
   - `PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
-  - `NODE_VERSION=12.9.0`
+  - `NODE_VERSION=12.9.1`
   - `YARN_VERSION=1.17.3`
 
 ## `dpkg` (`.deb`-based packages)
