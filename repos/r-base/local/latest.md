@@ -277,13 +277,13 @@ Licenses: (parsed from: `/usr/share/doc/build-essential/copyright`)
 
 - `GPL`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris build-essential=12.6
-'http://http.debian.net/debian/pool/main/b/build-essential/build-essential_12.6.dsc' build-essential_12.6.dsc 2476 SHA256:0c453158bb01eff3ef6baaacd12eb09ca504f616ca98a3381ed9566b460c49ac
-'http://http.debian.net/debian/pool/main/b/build-essential/build-essential_12.6.tar.xz' build-essential_12.6.tar.xz 51352 SHA256:97677f90407a34987f260be09fda3d923990155d67508b4ec9311e0530d22beb
-```
+The source package *may* still be available for download from:
+
+- http://snapshot.debian.org/package/build-essential/12.6/
+
 
 ### `dpkg` source package: `bzip2=1.0.6-9.2`
 
@@ -1354,19 +1354,13 @@ Licenses: (parsed from: `/usr/share/doc/hostname/copyright`)
 
 - `GPL-2`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris hostname=3.21
-'http://deb.debian.org/debian/pool/main/h/hostname/hostname_3.21.dsc' hostname_3.21.dsc 1398 SHA256:8e61f35d7b3e57833d6110ee22a95af6b12e159bf41a5b659e63b21d01e83121
-'http://deb.debian.org/debian/pool/main/h/hostname/hostname_3.21.tar.gz' hostname_3.21.tar.gz 13467 SHA256:566193a99f97a58f80b1537efe207c798bb88436c31c7dfc6dd4471d888a4a4f
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/hostname/3.21/
 
-- https://sources.debian.net/src/hostname/3.21/ (for browsing the source)
-- https://sources.debian.net/src/hostname/3.21/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/hostname/3.21/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `icu=63.2-2`
 
