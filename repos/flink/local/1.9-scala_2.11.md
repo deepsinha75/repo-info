@@ -2,8 +2,8 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:ff713e09a70f0c724559c0ed42a7b1dcce82effa893fb05110513b8fa74188e9`
-- Created: `2019-08-26T23:25:51.886090757Z`
+- Image ID: `sha256:293e3fb5212fb4f1e3b0bd45b7844339722c8a5844e702c48d12a73669d2312a`
+- Created: `2019-08-30T15:38:35.958232167Z`
 - Virtual Size: ~ 543.61 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
@@ -18,7 +18,7 @@
   - `JAVA_URL_VERSION=8u222b10`
   - `GOSU_VERSION=1.11`
   - `FLINK_VERSION=1.9.0`
-  - `HADOOP_SCALA_VARIANT=scala_2.11`
+  - `SCALA_VERSION=2.11`
   - `GPG_KEY=1C1E2394D3194E1944613488F320986D35C33D6A`
   - `FLINK_HOME=/opt/flink`
   - `FLINK_URL_FILE_PATH=flink/flink-1.9.0/flink-1.9.0-bin-scala_2.11.tgz`
