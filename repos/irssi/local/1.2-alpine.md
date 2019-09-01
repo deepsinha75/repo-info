@@ -1,10 +1,10 @@
-# `irssi:1.2.1-alpine`
+# `irssi:1.2.2-alpine`
 
 ## Docker Metadata
 
-- Image ID: `sha256:b989e963d0a39cfa5d6a881f13123bd765f8fe56bb2170f398641fdb2f42efca`
-- Created: `2019-07-01T20:21:36.047629641Z`
-- Virtual Size: ~ 60.61 Mb  
+- Image ID: `sha256:46305d6929fddce645268c86ed7265bc4da3aeb3e4599415b41cf627dc2cd58c`
+- Created: `2019-08-29T21:46:49.510239975Z`
+- Virtual Size: ~ 61.27 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Command: `["irssi"]`
@@ -12,7 +12,7 @@
   - `PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
   - `HOME=/home/user`
   - `LANG=C.UTF-8`
-  - `IRSSI_VERSION=1.2.1`
+  - `IRSSI_VERSION=1.2.2`
 
 ## `apk` (`.apk`-based packages)
 
@@ -138,16 +138,16 @@ GPL2 GPL2+ LGPL2+ BSD Public Domain
 ### `apk` package: `libbz2`
 
 ```console
-libbz2-1.0.6-r6 description:
+libbz2-1.0.6-r7 description:
 Shared library for bz2
 
-libbz2-1.0.6-r6 webpage:
+libbz2-1.0.6-r7 webpage:
 http://sources.redhat.com/bzip2
 
-libbz2-1.0.6-r6 installed size:
+libbz2-1.0.6-r7 installed size:
 69632
 
-libbz2-1.0.6-r6 license:
+libbz2-1.0.6-r7 license:
 BSD
 
 ```
@@ -325,16 +325,16 @@ GPL2 GPL2+ LGPL2+ BSD Public Domain
 ### `apk` package: `musl`
 
 ```console
-musl-1.1.18-r3 description:
+musl-1.1.18-r4 description:
 the musl c library (libc) implementation
 
-musl-1.1.18-r3 webpage:
+musl-1.1.18-r4 webpage:
 http://www.musl-libc.org/
 
-musl-1.1.18-r3 installed size:
+musl-1.1.18-r4 installed size:
 581632
 
-musl-1.1.18-r3 license:
+musl-1.1.18-r4 license:
 MIT
 
 ```
@@ -342,16 +342,16 @@ MIT
 ### `apk` package: `musl-utils`
 
 ```console
-musl-utils-1.1.18-r3 description:
+musl-utils-1.1.18-r4 description:
 the musl c library (libc) implementation
 
-musl-utils-1.1.18-r3 webpage:
+musl-utils-1.1.18-r4 webpage:
 http://www.musl-libc.org/
 
-musl-utils-1.1.18-r3 installed size:
+musl-utils-1.1.18-r4 installed size:
 122880
 
-musl-utils-1.1.18-r3 license:
+musl-utils-1.1.18-r4 license:
 MIT BSD GPL2+
 
 ```
