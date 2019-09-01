@@ -4384,20 +4384,13 @@ Licenses: (parsed from: `/usr/share/doc/libpython2.7-minimal/copyright`, `/usr/s
 - `This software is provided as-is, without express`
 - `implied`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris python2.7=2.7.9-2+deb8u3
-'http://security.debian.org/debian-security/pool/updates/main/p/python2.7/python2.7_2.7.9-2+deb8u3.dsc' python2.7_2.7.9-2+deb8u3.dsc 3285 SHA256:c302cc708d1d35ed5187fad31d8304b61a56ee3901dd1b52386d50049ad5b6e4
-'http://security.debian.org/debian-security/pool/updates/main/p/python2.7/python2.7_2.7.9.orig.tar.gz' python2.7_2.7.9.orig.tar.gz 15148821 SHA256:46454dc4cb20e1f9b85aef63985890fa7e247f5941991761afd97d68e69b1901
-'http://security.debian.org/debian-security/pool/updates/main/p/python2.7/python2.7_2.7.9-2+deb8u3.diff.gz' python2.7_2.7.9-2+deb8u3.diff.gz 280902 SHA256:be7b80902fc64840a6822833d9450baab6ac5508f5dbcdb7849254fd824f70a2
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/python2.7/2.7.9-2+deb8u3/
 
-- https://sources.debian.net/src/python2.7/2.7.9-2+deb8u3/ (for browsing the source)
-- https://sources.debian.net/src/python2.7/2.7.9-2+deb8u3/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/python2.7/2.7.9-2+deb8u3/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `readline6=6.3-8`
 
