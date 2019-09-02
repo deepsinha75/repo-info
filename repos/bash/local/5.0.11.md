@@ -1,9 +1,9 @@
-# `bash:5.0.9`
+# `bash:5.0.11`
 
 ## Docker Metadata
 
-- Image ID: `sha256:a08d6a178a7fc474a0ffa3691d8cd99d4165783935287c39295d93929c0af163`
-- Created: `2019-08-20T20:39:56.470018138Z`
+- Image ID: `sha256:df2a23a6fcbf9f6d39a72dd6d574da9790b39c95c727ae00109515d4cb40cb63`
+- Created: `2019-08-29T21:35:08.851875968Z`
 - Virtual Size: ~ 15.24 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
@@ -14,7 +14,7 @@
   - `_BASH_GPG_KEY=7C0135FB088AAF6C66C650B9BB5869F064EA74AB`
   - `_BASH_VERSION=5.0`
   - `_BASH_PATCH_LEVEL=0`
-  - `_BASH_LATEST_PATCH=9`
+  - `_BASH_LATEST_PATCH=11`
 
 ## `apk` (`.apk`-based packages)
 
