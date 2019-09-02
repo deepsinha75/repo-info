@@ -25,8 +25,6 @@ Source:
 
 ```console
 $ yumdownloader --quiet --source --urls acl-2.2.51-14.el7
-http://ftp1.scientificlinux.org/linux/scientific/7x/repos/x86_64/repodata/repomd.xml: [Errno 14] curl#6 - "Could not resolve host: ftp1.scientificlinux.org"
-Trying other mirror.
 Enabling sl-source repository
 Enabling repos-source repository
 http://ftp.scientificlinux.org/linux/scientific/7/SRPMS//vendor/acl-2.2.51-14.el7.src.rpm
