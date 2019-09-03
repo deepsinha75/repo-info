@@ -1,7 +1,7 @@
 ## `zookeeper:latest`
 
 ```console
-$ docker pull zookeeper@sha256:175d6bb1471e1e37a48bfa41a9da047c80fade60fd585eae3a0e08a4ce1d39ed
+$ docker pull zookeeper@sha256:828d8d450d26d732089cc9b6883890523180c966b24b4153220e785af32183f7
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -11,14 +11,14 @@ $ docker pull zookeeper@sha256:175d6bb1471e1e37a48bfa41a9da047c80fade60fd585eae3
 ### `zookeeper:latest` - linux; amd64
 
 ```console
-$ docker pull zookeeper@sha256:64899dc7e727e152d3684c14129afd21ed913dcde986ba88ceebed6f2bf30115
+$ docker pull zookeeper@sha256:f1a0f461140861a0be96ba85b0b1c7ee2d7ab731bdc36a65b37a740ccd6e5cf6
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **86.8 MB (86756511 bytes)**  
+-	Total Size: **86.8 MB (86756565 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:3487af26dee9ef9eacee9a97521bc4f0243bef0b285247258c32f4a03cab92c5`
+-	Image ID: `sha256:e7c648f28c782d4b819fc96b648918242b967b0d3e36c03442fb90b2e118e648`
 -	Entrypoint: `["\/docker-entrypoint.sh"]`
 -	Default Command: `["zkServer.sh","start-foreground"]`
 
@@ -68,11 +68,11 @@ VOLUME [/data /datalog /logs]
 EXPOSE 2181 2888 3888 8080
 # Thu, 15 Aug 2019 06:10:49 GMT
 ENV PATH=/usr/local/openjdk-8/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/apache-zookeeper-3.5.5-bin/bin ZOOCFGDIR=/conf
-# Thu, 15 Aug 2019 06:10:49 GMT
-COPY file:6d346c7763336158f1152fe4ff8d497f880a84b115011d7af11aa24b6c7a8950 in / 
-# Thu, 15 Aug 2019 06:10:50 GMT
+# Mon, 02 Sep 2019 15:21:09 GMT
+COPY file:5b1c80c9153f745576365153bfff6220ee6e01a20293b15f8cb10a5dafe1fd83 in / 
+# Mon, 02 Sep 2019 15:21:09 GMT
 ENTRYPOINT ["/docker-entrypoint.sh"]
-# Thu, 15 Aug 2019 06:10:50 GMT
+# Mon, 02 Sep 2019 15:21:09 GMT
 CMD ["zkServer.sh" "start-foreground"]
 ```
 
@@ -105,7 +105,7 @@ CMD ["zkServer.sh" "start-foreground"]
 		Last Modified: Thu, 15 Aug 2019 06:11:10 GMT  
 		Size: 10.6 MB (10595880 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:4d5281c6b0d43f80e2c35c1cb1419a5fffd24384280ff12ebf6d7c5a12671148`  
-		Last Modified: Thu, 15 Aug 2019 06:11:06 GMT  
-		Size: 694.0 B  
+	-	`sha256:e737f40e01c7ea38468b82078ca1d9c0eab06a47d6976b2b4671dc688fdafcbd`  
+		Last Modified: Mon, 02 Sep 2019 15:21:17 GMT  
+		Size: 748.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
