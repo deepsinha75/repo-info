@@ -1648,20 +1648,13 @@ Licenses: (parsed from: `/usr/share/doc/libharfbuzz0b/copyright`)
 
 - `MIT`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris harfbuzz=2.6.0-1
-'http://deb.debian.org/debian/pool/main/h/harfbuzz/harfbuzz_2.6.0-1.dsc' harfbuzz_2.6.0-1.dsc 2418 SHA256:8378ea26362ab76a6490b901c07feab986a644e35b0a1a65795d5434f1733d7d
-'http://deb.debian.org/debian/pool/main/h/harfbuzz/harfbuzz_2.6.0.orig.tar.xz' harfbuzz_2.6.0.orig.tar.xz 5736808 SHA256:9cf7d117548265f95ca884e2f4c9fafaf4e17d45a67b11107147b79eed76c966
-'http://deb.debian.org/debian/pool/main/h/harfbuzz/harfbuzz_2.6.0-1.debian.tar.xz' harfbuzz_2.6.0-1.debian.tar.xz 9800 SHA256:813233d40454a43da76bd84f90173230806a907b5ae4e1400126f68a7964fe38
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/harfbuzz/2.6.0-1/
 
-- https://sources.debian.net/src/harfbuzz/2.6.0-1/ (for browsing the source)
-- https://sources.debian.net/src/harfbuzz/2.6.0-1/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/harfbuzz/2.6.0-1/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `hicolor-icon-theme=0.17-2`
 

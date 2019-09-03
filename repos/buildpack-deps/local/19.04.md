@@ -2696,14 +2696,9 @@ Licenses: (parsed from: `/usr/share/doc/linux-libc-dev/copyright`)
 
 - `GPL-2`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris linux=5.0.0-25.26
-'http://archive.ubuntu.com/ubuntu/pool/main/l/linux/linux_5.0.0-25.26.dsc' linux_5.0.0-25.26.dsc 6945 SHA256:b0d0894604fad3241ed36639fdfb29d528cc2cd7eeef6b6569bcced428235730
-'http://archive.ubuntu.com/ubuntu/pool/main/l/linux/linux_5.0.0.orig.tar.gz' linux_5.0.0.orig.tar.gz 162593848 SHA256:d9dcf8bafdd5778274c3f9d2634500d4cc186f3ba80fc71ea1a1a100aa65ad6f
-'http://archive.ubuntu.com/ubuntu/pool/main/l/linux/linux_5.0.0-25.26.diff.gz' linux_5.0.0-25.26.diff.gz 4839195 SHA256:56bfe918219d7cb8f5d567657cf3de68f4adbf7040a4b185e11afab7158dbf5a
-```
 
 ### `dpkg` source package: `lsb=10.2019031300ubuntu1`
 
@@ -3855,14 +3850,9 @@ Licenses: (parsed from: `/usr/share/doc/libsystemd0/copyright`, `/usr/share/doc/
 - `LGPL-2.1+`
 - `public-domain`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris systemd=240-6ubuntu5.3
-'http://archive.ubuntu.com/ubuntu/pool/main/s/systemd/systemd_240-6ubuntu5.3.dsc' systemd_240-6ubuntu5.3.dsc 5112 SHA256:5af55e3039c6b98b6140ab67e4ad02673a2f1809b826cf41d410e9f799c432e7
-'http://archive.ubuntu.com/ubuntu/pool/main/s/systemd/systemd_240.orig.tar.gz' systemd_240.orig.tar.gz 7582001 SHA256:8f15aec1ac926e13a21a04d0ca3fe371f7004951448142a6f8952075c5b5f0b5
-'http://archive.ubuntu.com/ubuntu/pool/main/s/systemd/systemd_240-6ubuntu5.3.debian.tar.xz' systemd_240-6ubuntu5.3.debian.tar.xz 228112 SHA256:5edc6b35c9af95a1483428c7fb7d1626965ea7e98354d8b95d1cb8f9ae5bbcf9
-```
 
 ### `dpkg` source package: `sysvinit=2.88dsf-59.10ubuntu2`
 
