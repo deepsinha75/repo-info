@@ -2,9 +2,9 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:19abde674669f06dc06182f561de5667ad6dbb334f1c61d0a90cef8711b6cb26`
-- Created: `2019-08-21T01:51:40.490504781Z`
-- Virtual Size: ~ 124.24 Mb  
+- Image ID: `sha256:4d4d00cbe11b28afe0d148c4adf11562c5dc5cc901661f407062676025ebac2a`
+- Created: `2019-09-03T12:51:32.220013444Z`
+- Virtual Size: ~ 124.39 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["/entrypoint.sh"]`
@@ -18,10 +18,10 @@
   - `PHP_CPPFLAGS=-fstack-protector-strong -fpic -fpie -O2`
   - `PHP_LDFLAGS=-Wl,-O1 -Wl,--hash-style=both -pie`
   - `GPG_KEYS=A917B1ECDA84AEC2B568FED6F50ABC807BD5DCD0 528995BFEDFBA7191D46839EF9BA0ADA31CBD89E 1729F83938DA44E27BA0F4D3DBDB397470D12172`
-  - `PHP_VERSION=7.1.31`
-  - `PHP_URL=https://www.php.net/get/php-7.1.31.tar.xz/from/this/mirror`
-  - `PHP_ASC_URL=https://www.php.net/get/php-7.1.31.tar.xz.asc/from/this/mirror`
-  - `PHP_SHA256=5cb53b63592ec4361f0ab12c684b10430344821a024881a387ead4299df78fa5`
+  - `PHP_VERSION=7.1.32`
+  - `PHP_URL=https://www.php.net/get/php-7.1.32.tar.xz/from/this/mirror`
+  - `PHP_ASC_URL=https://www.php.net/get/php-7.1.32.tar.xz.asc/from/this/mirror`
+  - `PHP_SHA256=7f38b5bdaae3184d325a8c70e86c010afcc33651d15faafe277a0db6d2ea2741`
   - `PHP_MD5=`
   - `JOOMLA_INSTALLATION_DISABLE_LOCALHOST_CHECK=1`
   - `JOOMLA_VERSION=3.9.11`
@@ -306,16 +306,16 @@ BSD-3-Clause IJG Zlib
 ### `apk` package: `libldap`
 
 ```console
-libldap-2.4.47-r2 description:
+libldap-2.4.48-r0 description:
 OpenLDAP libraries
 
-libldap-2.4.47-r2 webpage:
+libldap-2.4.48-r0 webpage:
 http://www.openldap.org/
 
-libldap-2.4.47-r2 installed size:
+libldap-2.4.48-r0 installed size:
 626688
 
-libldap-2.4.47-r2 license:
+libldap-2.4.48-r0 license:
 custom
 
 ```
@@ -561,16 +561,16 @@ MIT
 ### `apk` package: `nghttp2-libs`
 
 ```console
-nghttp2-libs-1.38.0-r0 description:
+nghttp2-libs-1.39.2-r0 description:
 Experimental HTTP/2 client, server and proxy (libraries)
 
-nghttp2-libs-1.38.0-r0 webpage:
+nghttp2-libs-1.39.2-r0 webpage:
 https://nghttp2.org
 
-nghttp2-libs-1.38.0-r0 installed size:
+nghttp2-libs-1.39.2-r0 installed size:
 155648
 
-nghttp2-libs-1.38.0-r0 license:
+nghttp2-libs-1.39.2-r0 license:
 MIT
 
 ```
