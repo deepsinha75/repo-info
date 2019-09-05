@@ -1,18 +1,18 @@
-# `swift:5.0.2-slim`
+# `swift:5.0.3-slim`
 
 ## Docker Metadata
 
-- Image ID: `sha256:cb2e052e56417cf1602a702148e2d26b8fc5b665ede7db7a8d6bc71b14ae02e7`
-- Created: `2019-08-15T10:30:21.820399144Z`
-- Virtual Size: ~ 193.69 Mb  
+- Image ID: `sha256:6ceb824963aaede74a438ce037439a163bd4a542845e2d3ec33708d5ed52f707`
+- Created: `2019-09-04T19:31:36.267896502Z`
+- Virtual Size: ~ 193.70 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Command: `["/bin/bash"]`
 - Environment:
   - `PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
   - `SWIFT_PLATFORM=ubuntu18.04`
-  - `SWIFT_BRANCH=swift-5.0.2-release`
-  - `SWIFT_VERSION=swift-5.0.2-RELEASE`
+  - `SWIFT_BRANCH=swift-5.0.3-release`
+  - `SWIFT_VERSION=swift-5.0.3-RELEASE`
 - Labels:
   - `Description=Docker Container for the Swift programming language`
   - `maintainer=Swift Infrastructure <swift-infrastructure@swift.org>`
@@ -1667,14 +1667,9 @@ Licenses: (parsed from: `/usr/share/doc/bsdutils/copyright`, `/usr/share/doc/fdi
 - `MIT`
 - `public-domain`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris util-linux=2.31.1-0.4ubuntu3.3
-'http://archive.ubuntu.com/ubuntu/pool/main/u/util-linux/util-linux_2.31.1-0.4ubuntu3.3.dsc' util-linux_2.31.1-0.4ubuntu3.3.dsc 4148 SHA256:04812d13b3420078a683d8a068efe31b104eb70de991bf79207ca0ae1de88dd0
-'http://archive.ubuntu.com/ubuntu/pool/main/u/util-linux/util-linux_2.31.1.orig.tar.xz' util-linux_2.31.1.orig.tar.xz 4514032 SHA256:cfd5789570e9ff75e079471faeca1511ade1607f650523a6ad25d1e26516ae4e
-'http://archive.ubuntu.com/ubuntu/pool/main/u/util-linux/util-linux_2.31.1-0.4ubuntu3.3.debian.tar.xz' util-linux_2.31.1-0.4ubuntu3.3.debian.tar.xz 99496 SHA256:9a57b1680f325060f147db00ecfbe6ced03ee563fe20f0d9dcbd22b34f70020e
-```
 
 ### `dpkg` source package: `xz-utils=5.2.2-1.3`
 

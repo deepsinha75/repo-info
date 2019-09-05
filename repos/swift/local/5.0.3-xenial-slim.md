@@ -1,9 +1,9 @@
-# `swift:5.0.2-xenial-slim`
+# `swift:5.0.3-xenial-slim`
 
 ## Docker Metadata
 
-- Image ID: `sha256:57142121e6bd01d8855d0d26b93e2a23f5f553389728befa3bc9b75178853fd6`
-- Created: `2019-07-23T18:19:45.619579321Z`
+- Image ID: `sha256:1084408feea9ad6566ea840f3f13589103fe93ca51a8408553153d83bcf18670`
+- Created: `2019-09-04T19:32:44.01594983Z`
 - Virtual Size: ~ 250.11 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
@@ -11,8 +11,8 @@
 - Environment:
   - `PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
   - `SWIFT_PLATFORM=ubuntu16.04`
-  - `SWIFT_BRANCH=swift-5.0.2-release`
-  - `SWIFT_VERSION=swift-5.0.2-RELEASE`
+  - `SWIFT_BRANCH=swift-5.0.3-release`
+  - `SWIFT_VERSION=swift-5.0.3-RELEASE`
 - Labels:
   - `Description=Docker Container for the Swift programming language`
   - `maintainer=Swift Infrastructure <swift-infrastructure@swift.org>`
@@ -1752,14 +1752,9 @@ Licenses: (parsed from: `/usr/share/doc/bsdutils/copyright`, `/usr/share/doc/lib
 - `MIT`
 - `public-domain`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris util-linux=2.27.1-6ubuntu3.7
-'http://archive.ubuntu.com/ubuntu/pool/main/u/util-linux/util-linux_2.27.1-6ubuntu3.7.dsc' util-linux_2.27.1-6ubuntu3.7.dsc 3956 SHA256:36e1049312f83310cd76d7bd0007a196e51b61876df2945bd4026f881e5c6d0c
-'http://archive.ubuntu.com/ubuntu/pool/main/u/util-linux/util-linux_2.27.1.orig.tar.xz' util-linux_2.27.1.orig.tar.xz 3964512 SHA256:0a818fcdede99aec43ffe6ca5b5388bff80d162f2f7bd4541dca94fecb87a290
-'http://archive.ubuntu.com/ubuntu/pool/main/u/util-linux/util-linux_2.27.1-6ubuntu3.7.debian.tar.xz' util-linux_2.27.1-6ubuntu3.7.debian.tar.xz 86812 SHA256:113075f3d3a78bad69adbbf6e54409bfc457ef5b6a04e7a4b7bc9d1c94930b30
-```
 
 ### `dpkg` source package: `xml-core=0.13+nmu2`
 

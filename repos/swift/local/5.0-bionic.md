@@ -1,9 +1,9 @@
-# `swift:5.0.2`
+# `swift:5.0.3`
 
 ## Docker Metadata
 
-- Image ID: `sha256:aafc611238950e8bdcc02559fb5646fabebe625a46445ba97420ec2a229ebbfe`
-- Created: `2019-08-15T10:28:53.51047413Z`
+- Image ID: `sha256:1e9a2a744b4897c940a99275beda7ceb1e64c5b41cfc7ba8df61d3a93ba64382`
+- Created: `2019-09-04T19:28:56.219435597Z`
 - Virtual Size: ~ 1.35 Gb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
@@ -11,8 +11,8 @@
 - Environment:
   - `PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
   - `SWIFT_PLATFORM=ubuntu18.04`
-  - `SWIFT_BRANCH=swift-5.0.2-release`
-  - `SWIFT_VERSION=swift-5.0.2-RELEASE`
+  - `SWIFT_BRANCH=swift-5.0.3-release`
+  - `SWIFT_VERSION=swift-5.0.3-RELEASE`
 - Labels:
   - `Description=Docker Container for the Swift programming language`
   - `maintainer=Swift Infrastructure <swift-infrastructure@swift.org>`
@@ -1747,14 +1747,9 @@ Licenses: (parsed from: `/usr/share/doc/linux-libc-dev/copyright`)
 
 - `GPL-2`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris linux=4.15.0-58.64
-'http://archive.ubuntu.com/ubuntu/pool/main/l/linux/linux_4.15.0-58.64.dsc' linux_4.15.0-58.64.dsc 7304 SHA256:cd2d3d34cf547fc1521d35a9b4582fc8e29469a7d3f0d7c510bec32fb313b133
-'http://archive.ubuntu.com/ubuntu/pool/main/l/linux/linux_4.15.0.orig.tar.gz' linux_4.15.0.orig.tar.gz 157656459 SHA256:c33b8ba5c45a40b689979caa2421c4d933864cd70eb93c00eb69adf43e9a24fc
-'http://archive.ubuntu.com/ubuntu/pool/main/l/linux/linux_4.15.0-58.64.diff.gz' linux_4.15.0-58.64.diff.gz 7188379 SHA256:e49b8f50ac8b7b49a206aa0cb5242b28707e4990eaa6bc16546b8056f26b7356
-```
 
 ### `dpkg` source package: `lsb=9.20170808ubuntu1`
 
@@ -2658,14 +2653,9 @@ Licenses: (parsed from: `/usr/share/doc/bsdutils/copyright`, `/usr/share/doc/fdi
 - `MIT`
 - `public-domain`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris util-linux=2.31.1-0.4ubuntu3.3
-'http://archive.ubuntu.com/ubuntu/pool/main/u/util-linux/util-linux_2.31.1-0.4ubuntu3.3.dsc' util-linux_2.31.1-0.4ubuntu3.3.dsc 4148 SHA256:04812d13b3420078a683d8a068efe31b104eb70de991bf79207ca0ae1de88dd0
-'http://archive.ubuntu.com/ubuntu/pool/main/u/util-linux/util-linux_2.31.1.orig.tar.xz' util-linux_2.31.1.orig.tar.xz 4514032 SHA256:cfd5789570e9ff75e079471faeca1511ade1607f650523a6ad25d1e26516ae4e
-'http://archive.ubuntu.com/ubuntu/pool/main/u/util-linux/util-linux_2.31.1-0.4ubuntu3.3.debian.tar.xz' util-linux_2.31.1-0.4ubuntu3.3.debian.tar.xz 99496 SHA256:9a57b1680f325060f147db00ecfbe6ced03ee563fe20f0d9dcbd22b34f70020e
-```
 
 ### `dpkg` source package: `xauth=1:1.0.10-1`
 
