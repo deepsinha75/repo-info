@@ -1,17 +1,17 @@
-# `docker:18.09.8-dind`
+# `docker:18.09.9-dind`
 
 ## Docker Metadata
 
-- Image ID: `sha256:484d54015479bb51d5e81c6964b0fa127dac7f41f15693e2bd7f095932947e6e`
-- Created: `2019-08-20T21:02:45.521294164Z`
-- Virtual Size: ~ 185.11 Mb  
+- Image ID: `sha256:27105793dc2bbf270ec87d6a9ba041bba52cfef66384251980a4d55d03ed736c`
+- Created: `2019-09-05T05:20:23.178461852Z`
+- Virtual Size: ~ 206.06 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["dockerd-entrypoint.sh"]`
 - Environment:
   - `PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
   - `DOCKER_CHANNEL=stable`
-  - `DOCKER_VERSION=18.09.8`
+  - `DOCKER_VERSION=18.09.9`
   - `DOCKER_TLS_CERTDIR=`
   - `DIND_COMMIT=37498f009d8bf25fbb6199e8ccd34bed84f2874b`
 
