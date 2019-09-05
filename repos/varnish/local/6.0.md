@@ -2,16 +2,16 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:625ae4c7e6d9fffd1cd4a7035aa9c9f4e2a65779fcf9d79ba6ca8e74cf143c73`
-- Created: `2019-08-22T19:24:24.876893323Z`
-- Virtual Size: ~ 180.38 Mb  
+- Image ID: `sha256:1c0e52beb08b436a439d6b3dd26885574e903da4dd4ef5b89e14f493c60a6076`
+- Created: `2019-09-03T15:21:13.658182734Z`
+- Virtual Size: ~ 180.42 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["docker-varnish-entrypoint"]`
 - Command: `["varnishd","-F","-f","/etc/varnish/default.vcl"]`
 - Environment:
   - `PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
-  - `VARNISH_VERSION=6.0.3-1~stretch`
+  - `VARNISH_VERSION=6.0.4-1~stretch`
 
 ## `dpkg` (`.deb`-based packages)
 
@@ -1692,11 +1692,11 @@ Other potentially useful URLs:
 - https://sources.debian.net/src/nettle/3.3-1/debian/copyright/ (for direct copyright/license information)
 - http://snapshot.debian.org/package/nettle/3.3-1/ (for access to the source package after it no longer exists in the archive)
 
-### `dpkg` source package: `nghttp2=1.18.1-1`
+### `dpkg` source package: `nghttp2=1.18.1-1+deb9u1`
 
 Binary Packages:
 
-- `libnghttp2-14:amd64=1.18.1-1`
+- `libnghttp2-14:amd64=1.18.1-1+deb9u1`
 
 Licenses: (parsed from: `/usr/share/doc/libnghttp2-14/copyright`)
 
@@ -1711,17 +1711,17 @@ Licenses: (parsed from: `/usr/share/doc/libnghttp2-14/copyright`)
 Source:
 
 ```console
-$ apt-get source -qq --print-uris nghttp2=1.18.1-1
-'http://deb.debian.org/debian/pool/main/n/nghttp2/nghttp2_1.18.1-1.dsc' nghttp2_1.18.1-1.dsc 2283 SHA256:a473983d2630c5f9df6b1ef439e4eee9fbb4fbe9b61bc1b80289b1ba0a84336d
-'http://deb.debian.org/debian/pool/main/n/nghttp2/nghttp2_1.18.1.orig.tar.bz2' nghttp2_1.18.1.orig.tar.bz2 1780766 SHA256:5d8bb930eb90c552ec836c7b1862406b69cafcda5520bf266c8f5d914d9b447c
-'http://deb.debian.org/debian/pool/main/n/nghttp2/nghttp2_1.18.1-1.debian.tar.xz' nghttp2_1.18.1-1.debian.tar.xz 11716 SHA256:ffcd8e21b6824b6907466f4d3c481f4a68601f8b0b09545e19c033d14a0d16d5
+$ apt-get source -qq --print-uris nghttp2=1.18.1-1+deb9u1
+'http://security.debian.org/debian-security/pool/updates/main/n/nghttp2/nghttp2_1.18.1-1+deb9u1.dsc' nghttp2_1.18.1-1+deb9u1.dsc 2657 SHA256:fc99fa8d124d322f7cd872c3088a268ea86f42e71229fc98d8a90869950d0a14
+'http://security.debian.org/debian-security/pool/updates/main/n/nghttp2/nghttp2_1.18.1.orig.tar.bz2' nghttp2_1.18.1.orig.tar.bz2 1780766 SHA256:5d8bb930eb90c552ec836c7b1862406b69cafcda5520bf266c8f5d914d9b447c
+'http://security.debian.org/debian-security/pool/updates/main/n/nghttp2/nghttp2_1.18.1-1+deb9u1.debian.tar.xz' nghttp2_1.18.1-1+deb9u1.debian.tar.xz 12300 SHA256:94cf473ee6a78181ebdddc18676df356fb788540cf426b7eca944573f2808733
 ```
 
 Other potentially useful URLs:
 
-- https://sources.debian.net/src/nghttp2/1.18.1-1/ (for browsing the source)
-- https://sources.debian.net/src/nghttp2/1.18.1-1/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/nghttp2/1.18.1-1/ (for access to the source package after it no longer exists in the archive)
+- https://sources.debian.net/src/nghttp2/1.18.1-1+deb9u1/ (for browsing the source)
+- https://sources.debian.net/src/nghttp2/1.18.1-1+deb9u1/debian/copyright/ (for direct copyright/license information)
+- http://snapshot.debian.org/package/nghttp2/1.18.1-1+deb9u1/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `openldap=2.4.44+dfsg-5+deb9u2`
 
@@ -2196,11 +2196,11 @@ Other potentially useful URLs:
 - https://sources.debian.net/src/util-linux/2.29.2-1+deb9u1/debian/copyright/ (for direct copyright/license information)
 - http://snapshot.debian.org/package/util-linux/2.29.2-1+deb9u1/ (for access to the source package after it no longer exists in the archive)
 
-### `dpkg` source package: `varnish=6.0.3-1`
+### `dpkg` source package: `varnish=6.0.4-1`
 
 Binary Packages:
 
-- `varnish=6.0.3-1~stretch`
+- `varnish=6.0.4-1~stretch`
 
 **WARNING:** unable to detect licenses! (package likely not compliant with DEP-5)  
 If source is available (seen below), check the contents of `debian/copyright` within it.
@@ -2209,9 +2209,9 @@ If source is available (seen below), check the contents of `debian/copyright` wi
 Source:
 
 ```console
-$ apt-get source -qq --print-uris varnish=6.0.3-1
-'https://packagecloud.io/varnishcache/varnish60lts/debian/pool/stretch/main/v/varnish/varnish_6.0.3-1.tar.gz' varnish_6.0.3-1.tar.gz 3160274 SHA256:f2ae5fded524255224a13a966ca8412d32b18b242b135c7f1b80c49c420afac9
-'https://packagecloud.io/varnishcache/varnish60lts/debian/pool/stretch/main/v/varnish/varnish_6.0.3-1.dsc' varnish_6.0.3-1.dsc 799 SHA256:fa8d7a6620b5a6e6493bb97e5b888b83cc426dde300a35f7e90d40930eb24fbe
+$ apt-get source -qq --print-uris varnish=6.0.4-1
+'https://packagecloud.io/varnishcache/varnish60lts/debian/pool/stretch/main/v/varnish/varnish_6.0.4-1.tar.gz' varnish_6.0.4-1.tar.gz 3147862 SHA256:30516b91cc863459b9fa2e34524461fa3d17f4e1db9d8d5031792895d115b664
+'https://packagecloud.io/varnishcache/varnish60lts/debian/pool/stretch/main/v/varnish/varnish_6.0.4-1.dsc' varnish_6.0.4-1.dsc 801 SHA256:d2be00fd494dbdc2a611468652fd5a1ab4f59229d4270392e1d32cd8f2772c3c
 ```
 
 ### `dpkg` source package: `xz-utils=5.2.2-1.2`
