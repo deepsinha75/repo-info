@@ -1,10 +1,10 @@
-# `php:7.4.0beta4-apache-buster`
+# `php:7.4.0RC1-apache-buster`
 
 ## Docker Metadata
 
-- Image ID: `sha256:bb69c26421fa7269ada5b8eff32fb4b3e4d5eab11e78dd0d1b2e2b07aa60f2d8`
-- Created: `2019-08-24T00:29:35.482594548Z`
-- Virtual Size: ~ 413.94 Mb  
+- Image ID: `sha256:061a3e0c28830dc43a379f367ee5f83fc6ee62cb22e6cb770213935a07fdc0f2`
+- Created: `2019-09-05T22:57:24.126528097Z`
+- Virtual Size: ~ 413.95 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["docker-php-entrypoint"]`
@@ -21,10 +21,10 @@
   - `PHP_CPPFLAGS=-fstack-protector-strong -fpic -fpie -O2`
   - `PHP_LDFLAGS=-Wl,-O1 -Wl,--hash-style=both -pie`
   - `GPG_KEYS=42670A7FE4D0441C8E4632349E4FDC074A4EF02D 5A52880781F755608BF815FC910DEB46F53EA312`
-  - `PHP_VERSION=7.4.0beta4`
-  - `PHP_URL=https://downloads.php.net/~derick/php-7.4.0beta4.tar.xz`
-  - `PHP_ASC_URL=https://downloads.php.net/~derick/php-7.4.0beta4.tar.xz.asc`
-  - `PHP_SHA256=e715c5e64f3e64e3d8f65a9c425c6affdd2ddd5228b3b67a4faad167ca9dfe57`
+  - `PHP_VERSION=7.4.0RC1`
+  - `PHP_URL=https://downloads.php.net/~derick/php-7.4.0RC1.tar.xz`
+  - `PHP_ASC_URL=https://downloads.php.net/~derick/php-7.4.0RC1.tar.xz.asc`
+  - `PHP_SHA256=9e3d158ad070968ad9d9e796a7acf88c3cfe0e0382e991e6dee05a18049d4a62`
   - `PHP_MD5=`
 
 ## `dpkg` (`.deb`-based packages)

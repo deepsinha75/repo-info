@@ -1,10 +1,10 @@
-# `php:7.3.8-zts-alpine3.9`
+# `php:7.3.9-zts-alpine3.9`
 
 ## Docker Metadata
 
-- Image ID: `sha256:c51dd3c80d728824fe527b87982f9375717e2c59739d39ec9218598b2c064a24`
-- Created: `2019-08-02T06:37:03.178177074Z`
-- Virtual Size: ~ 65.43 Mb  
+- Image ID: `sha256:be723624f650b39dff5616feba408859391981fc4d120a574b57ffb0f6afc543`
+- Created: `2019-09-03T07:30:51.946312367Z`
+- Virtual Size: ~ 66.25 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["docker-php-entrypoint"]`
@@ -18,10 +18,10 @@
   - `PHP_CPPFLAGS=-fstack-protector-strong -fpic -fpie -O2`
   - `PHP_LDFLAGS=-Wl,-O1 -Wl,--hash-style=both -pie`
   - `GPG_KEYS=CBAF69F173A0FEA4B537F470D66C9593118BCCB6 F38252826ACD957EF380D39F2F7956BC5DA04B5D`
-  - `PHP_VERSION=7.3.8`
-  - `PHP_URL=https://www.php.net/get/php-7.3.8.tar.xz/from/this/mirror`
-  - `PHP_ASC_URL=https://www.php.net/get/php-7.3.8.tar.xz.asc/from/this/mirror`
-  - `PHP_SHA256=f6046b2ae625d8c04310bda0737ac660dc5563a8e04e8a46c1ee24ea414ad5a5`
+  - `PHP_VERSION=7.3.9`
+  - `PHP_URL=https://www.php.net/get/php-7.3.9.tar.xz/from/this/mirror`
+  - `PHP_ASC_URL=https://www.php.net/get/php-7.3.9.tar.xz.asc/from/this/mirror`
+  - `PHP_SHA256=4007f24a39822bef2805b75c625551d30be9eeed329d52eb0838fa5c1b91c1fd`
   - `PHP_MD5=`
 
 ## `apk` (`.apk`-based packages)
@@ -318,16 +318,16 @@ MIT
 ### `apk` package: `musl`
 
 ```console
-musl-1.1.20-r4 description:
+musl-1.1.20-r5 description:
 the musl c library (libc) implementation
 
-musl-1.1.20-r4 webpage:
+musl-1.1.20-r5 webpage:
 http://www.musl-libc.org/
 
-musl-1.1.20-r4 installed size:
+musl-1.1.20-r5 installed size:
 602112
 
-musl-1.1.20-r4 license:
+musl-1.1.20-r5 license:
 MIT
 
 ```
@@ -335,16 +335,16 @@ MIT
 ### `apk` package: `musl-utils`
 
 ```console
-musl-utils-1.1.20-r4 description:
+musl-utils-1.1.20-r5 description:
 the musl c library (libc) implementation
 
-musl-utils-1.1.20-r4 webpage:
+musl-utils-1.1.20-r5 webpage:
 http://www.musl-libc.org/
 
-musl-utils-1.1.20-r4 installed size:
+musl-utils-1.1.20-r5 installed size:
 139264
 
-musl-utils-1.1.20-r4 license:
+musl-utils-1.1.20-r5 license:
 MIT BSD GPL2+
 
 ```
@@ -403,16 +403,16 @@ MIT
 ### `apk` package: `nghttp2-libs`
 
 ```console
-nghttp2-libs-1.35.1-r0 description:
+nghttp2-libs-1.35.1-r1 description:
 Experimental HTTP/2 client, server and proxy (libraries)
 
-nghttp2-libs-1.35.1-r0 webpage:
+nghttp2-libs-1.35.1-r1 webpage:
 https://nghttp2.org
 
-nghttp2-libs-1.35.1-r0 installed size:
+nghttp2-libs-1.35.1-r1 installed size:
 155648
 
-nghttp2-libs-1.35.1-r0 license:
+nghttp2-libs-1.35.1-r1 license:
 MIT
 
 ```
