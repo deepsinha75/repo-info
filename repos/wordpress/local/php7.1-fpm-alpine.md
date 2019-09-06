@@ -1,10 +1,10 @@
-# `wordpress:5.2.2-php7.1-fpm-alpine`
+# `wordpress:5.2.3-php7.1-fpm-alpine`
 
 ## Docker Metadata
 
-- Image ID: `sha256:29baa9449433cea3b634da594eb754ba4a5a590c2d5c1fb9efc510d3e405169c`
-- Created: `2019-08-21T02:02:51.270555196Z`
-- Virtual Size: ~ 130.70 Mb  
+- Image ID: `sha256:de07be4d982795560159e8135aec6fc11b239cb21abbf955558d9be4065ae30d`
+- Created: `2019-09-05T23:32:30.590541355Z`
+- Virtual Size: ~ 130.80 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["docker-entrypoint.sh"]`
@@ -18,13 +18,13 @@
   - `PHP_CPPFLAGS=-fstack-protector-strong -fpic -fpie -O2`
   - `PHP_LDFLAGS=-Wl,-O1 -Wl,--hash-style=both -pie`
   - `GPG_KEYS=A917B1ECDA84AEC2B568FED6F50ABC807BD5DCD0 528995BFEDFBA7191D46839EF9BA0ADA31CBD89E 1729F83938DA44E27BA0F4D3DBDB397470D12172`
-  - `PHP_VERSION=7.1.31`
-  - `PHP_URL=https://www.php.net/get/php-7.1.31.tar.xz/from/this/mirror`
-  - `PHP_ASC_URL=https://www.php.net/get/php-7.1.31.tar.xz.asc/from/this/mirror`
-  - `PHP_SHA256=5cb53b63592ec4361f0ab12c684b10430344821a024881a387ead4299df78fa5`
+  - `PHP_VERSION=7.1.32`
+  - `PHP_URL=https://www.php.net/get/php-7.1.32.tar.xz/from/this/mirror`
+  - `PHP_ASC_URL=https://www.php.net/get/php-7.1.32.tar.xz.asc/from/this/mirror`
+  - `PHP_SHA256=7f38b5bdaae3184d325a8c70e86c010afcc33651d15faafe277a0db6d2ea2741`
   - `PHP_MD5=`
-  - `WORDPRESS_VERSION=5.2.2`
-  - `WORDPRESS_SHA1=3605bcbe9ea48d714efa59b0eb2d251657e7d5b0`
+  - `WORDPRESS_VERSION=5.2.3`
+  - `WORDPRESS_SHA1=5efd37148788f3b14b295b2a9bf48a1a467aa303`
 
 ## `apk` (`.apk`-based packages)
 
@@ -456,16 +456,16 @@ GPL-2.0 GPL-2.0-or-later LGPL-2.0-or-later BSD Public-Domain
 ### `apk` package: `libx11`
 
 ```console
-libx11-1.6.8-r0 description:
+libx11-1.6.8-r1 description:
 X11 client-side library
 
-libx11-1.6.8-r0 webpage:
+libx11-1.6.8-r1 webpage:
 http://xorg.freedesktop.org/
 
-libx11-1.6.8-r0 installed size:
+libx11-1.6.8-r1 installed size:
 3391488
 
-libx11-1.6.8-r0 license:
+libx11-1.6.8-r1 license:
 custom:XFREE86
 
 ```
@@ -643,16 +643,16 @@ MIT
 ### `apk` package: `nghttp2-libs`
 
 ```console
-nghttp2-libs-1.38.0-r0 description:
+nghttp2-libs-1.39.2-r0 description:
 Experimental HTTP/2 client, server and proxy (libraries)
 
-nghttp2-libs-1.38.0-r0 webpage:
+nghttp2-libs-1.39.2-r0 webpage:
 https://nghttp2.org
 
-nghttp2-libs-1.38.0-r0 installed size:
+nghttp2-libs-1.39.2-r0 installed size:
 155648
 
-nghttp2-libs-1.38.0-r0 license:
+nghttp2-libs-1.39.2-r0 license:
 MIT
 
 ```
