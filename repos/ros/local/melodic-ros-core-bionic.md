@@ -1837,9 +1837,9 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris libarchive=3.2.2-3.1ubuntu0.3
-'http://archive.ubuntu.com/ubuntu/pool/main/liba/libarchive/libarchive_3.2.2-3.1ubuntu0.3.dsc' libarchive_3.2.2-3.1ubuntu0.3.dsc 2457 SHA256:56749d6000b824b83f0fc9e28c2956bca48bcaf5f6444d7030d9cd3641c1fec9
-'http://archive.ubuntu.com/ubuntu/pool/main/liba/libarchive/libarchive_3.2.2.orig.tar.gz' libarchive_3.2.2.orig.tar.gz 5458241 SHA256:691c194ee132d1f0f7a42541f091db811bc2e56f7107e9121be2bc8c04f1060f
-'http://archive.ubuntu.com/ubuntu/pool/main/liba/libarchive/libarchive_3.2.2-3.1ubuntu0.3.debian.tar.xz' libarchive_3.2.2-3.1ubuntu0.3.debian.tar.xz 21684 SHA256:4b9d1d8843b5ba4d89e5f6e2ab02fe4828ef78d529fb5ffbede36ecd5f269f15
+'http://security.ubuntu.com/ubuntu/pool/main/liba/libarchive/libarchive_3.2.2-3.1ubuntu0.3.dsc' libarchive_3.2.2-3.1ubuntu0.3.dsc 2457 SHA256:56749d6000b824b83f0fc9e28c2956bca48bcaf5f6444d7030d9cd3641c1fec9
+'http://security.ubuntu.com/ubuntu/pool/main/liba/libarchive/libarchive_3.2.2.orig.tar.gz' libarchive_3.2.2.orig.tar.gz 5458241 SHA256:691c194ee132d1f0f7a42541f091db811bc2e56f7107e9121be2bc8c04f1060f
+'http://security.ubuntu.com/ubuntu/pool/main/liba/libarchive/libarchive_3.2.2-3.1ubuntu0.3.debian.tar.xz' libarchive_3.2.2-3.1ubuntu0.3.debian.tar.xz 21684 SHA256:4b9d1d8843b5ba4d89e5f6e2ab02fe4828ef78d529fb5ffbede36ecd5f269f15
 ```
 
 ### `dpkg` source package: `libassuan=2.5.1-2`
@@ -2470,14 +2470,9 @@ Licenses: (parsed from: `/usr/share/doc/linux-libc-dev/copyright`)
 
 - `GPL-2`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris linux=4.15.0-58.64
-'http://security.ubuntu.com/ubuntu/pool/main/l/linux/linux_4.15.0-58.64.dsc' linux_4.15.0-58.64.dsc 7304 SHA256:cd2d3d34cf547fc1521d35a9b4582fc8e29469a7d3f0d7c510bec32fb313b133
-'http://security.ubuntu.com/ubuntu/pool/main/l/linux/linux_4.15.0.orig.tar.gz' linux_4.15.0.orig.tar.gz 157656459 SHA256:c33b8ba5c45a40b689979caa2421c4d933864cd70eb93c00eb69adf43e9a24fc
-'http://security.ubuntu.com/ubuntu/pool/main/l/linux/linux_4.15.0-58.64.diff.gz' linux_4.15.0-58.64.diff.gz 7188379 SHA256:e49b8f50ac8b7b49a206aa0cb5242b28707e4990eaa6bc16546b8056f26b7356
-```
 
 ### `dpkg` source package: `lksctp-tools=1.0.17+dfsg-2`
 
