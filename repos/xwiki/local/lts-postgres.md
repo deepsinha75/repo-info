@@ -2557,9 +2557,9 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris libsoup2.4=2.62.1-1ubuntu0.1
-'http://archive.ubuntu.com/ubuntu/pool/main/libs/libsoup2.4/libsoup2.4_2.62.1-1ubuntu0.1.dsc' libsoup2.4_2.62.1-1ubuntu0.1.dsc 2809 SHA256:272e437a23acdb280a444103612a50004dd797542a0f0479ff8c1041333429d7
-'http://archive.ubuntu.com/ubuntu/pool/main/libs/libsoup2.4/libsoup2.4_2.62.1.orig.tar.xz' libsoup2.4_2.62.1.orig.tar.xz 1848776 SHA256:f037ddac2e0f9b1c842a0060fa6119bea1d3b349a2c901283c961247e45883d7
-'http://archive.ubuntu.com/ubuntu/pool/main/libs/libsoup2.4/libsoup2.4_2.62.1-1ubuntu0.1.debian.tar.xz' libsoup2.4_2.62.1-1ubuntu0.1.debian.tar.xz 17320 SHA256:685e1c492b0f3184f92d3b92fd740d98a7a7655ba87c74f58d8786118449bdb6
+'http://security.ubuntu.com/ubuntu/pool/main/libs/libsoup2.4/libsoup2.4_2.62.1-1ubuntu0.1.dsc' libsoup2.4_2.62.1-1ubuntu0.1.dsc 2809 SHA256:272e437a23acdb280a444103612a50004dd797542a0f0479ff8c1041333429d7
+'http://security.ubuntu.com/ubuntu/pool/main/libs/libsoup2.4/libsoup2.4_2.62.1.orig.tar.xz' libsoup2.4_2.62.1.orig.tar.xz 1848776 SHA256:f037ddac2e0f9b1c842a0060fa6119bea1d3b349a2c901283c961247e45883d7
+'http://security.ubuntu.com/ubuntu/pool/main/libs/libsoup2.4/libsoup2.4_2.62.1-1ubuntu0.1.debian.tar.xz' libsoup2.4_2.62.1-1ubuntu0.1.debian.tar.xz 17320 SHA256:685e1c492b0f3184f92d3b92fd740d98a7a7655ba87c74f58d8786118449bdb6
 ```
 
 ### `dpkg` source package: `libtasn1-6=4.13-2`
