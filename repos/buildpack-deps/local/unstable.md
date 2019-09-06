@@ -894,20 +894,13 @@ Licenses: (parsed from: `/usr/share/doc/libexpat1/copyright`, `/usr/share/doc/li
 
 - `MIT`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris expat=2.2.7-1
-'http://deb.debian.org/debian/pool/main/e/expat/expat_2.2.7-1.dsc' expat_2.2.7-1.dsc 1949 SHA256:d647407dde63246edd3b982fcbabb9a4d63056c80494e3c8912239990d5d2b92
-'http://deb.debian.org/debian/pool/main/e/expat/expat_2.2.7.orig.tar.gz' expat_2.2.7.orig.tar.gz 8278607 SHA256:4efe89dfd8c2f9b971bf9089efa4cc163ac997a75da92c08be14d80a091474e6
-'http://deb.debian.org/debian/pool/main/e/expat/expat_2.2.7-1.debian.tar.xz' expat_2.2.7-1.debian.tar.xz 10676 SHA256:da6b783fd929544e5f5382153a78cff3519e3e426d5884a428cfac01e6e219ea
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/expat/2.2.7-1/
 
-- https://sources.debian.net/src/expat/2.2.7-1/ (for browsing the source)
-- https://sources.debian.net/src/expat/2.2.7-1/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/expat/2.2.7-1/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `fftw3=3.3.8-2`
 
@@ -3693,21 +3686,13 @@ Licenses: (parsed from: `/usr/share/doc/mercurial/copyright`, `/usr/share/doc/me
 - `LGPL-2.1`
 - `LGPL-2.1+`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris mercurial=4.9-2
-'http://deb.debian.org/debian/pool/main/m/mercurial/mercurial_4.9-2.dsc' mercurial_4.9-2.dsc 2628 SHA256:0e91f2f1f8cff314e3639f9ac8a7452567a03414e4ae75e20b7d9d7618dafc86
-'http://deb.debian.org/debian/pool/main/m/mercurial/mercurial_4.9.orig.tar.gz' mercurial_4.9.orig.tar.gz 7075692 SHA256:0f600c5c7e44d4318bedc1754a70b920f7ecd278e4089b0f6ac96f460c012f06
-'http://deb.debian.org/debian/pool/main/m/mercurial/mercurial_4.9.orig.tar.gz.asc' mercurial_4.9.orig.tar.gz.asc 833 SHA256:a78d5528b933d9e0242b057ad08b365815c7dc3035ff8fef9a22574d9c1e56c0
-'http://deb.debian.org/debian/pool/main/m/mercurial/mercurial_4.9-2.debian.tar.xz' mercurial_4.9-2.debian.tar.xz 62048 SHA256:107e2eaf7f9dc2e19e735a94181d26649b37d3e85a3b8d127247be7f134d886e
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/mercurial/4.9-2/
 
-- https://sources.debian.net/src/mercurial/4.9-2/ (for browsing the source)
-- https://sources.debian.net/src/mercurial/4.9-2/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/mercurial/4.9-2/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `mime-support=3.63`
 
@@ -4467,20 +4452,13 @@ Licenses: (parsed from: `/usr/share/doc/libpq-dev/copyright`, `/usr/share/doc/li
 - `nagaysau-ishii`
 - `rijndael`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris postgresql-11=11.5-1
-'http://deb.debian.org/debian/pool/main/p/postgresql-11/postgresql-11_11.5-1.dsc' postgresql-11_11.5-1.dsc 3716 SHA256:343b95f2950f93a02505eac1a89b0ca7c043b151980b85e088b01e0e7528e476
-'http://deb.debian.org/debian/pool/main/p/postgresql-11/postgresql-11_11.5.orig.tar.bz2' postgresql-11_11.5.orig.tar.bz2 19773087 SHA256:7fdf23060bfc715144cbf2696cf05b0fa284ad3eb21f0c378591c6bca99ad180
-'http://deb.debian.org/debian/pool/main/p/postgresql-11/postgresql-11_11.5-1.debian.tar.xz' postgresql-11_11.5-1.debian.tar.xz 25384 SHA256:72efa53767d9cc353c75bfad6b63ad1e1af7bda9b960aa6cc4ab5c5708cb51c2
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/postgresql-11/11.5-1/
 
-- https://sources.debian.net/src/postgresql-11/11.5-1/ (for browsing the source)
-- https://sources.debian.net/src/postgresql-11/11.5-1/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/postgresql-11/11.5-1/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `procps=2:3.3.15-2`
 
@@ -4570,20 +4548,13 @@ Licenses: (parsed from: `/usr/share/doc/libpython2.7-minimal/copyright`, `/usr/s
 - `implied`
 - `see above, some license as Python`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris python2.7=2.7.16-3
-'http://deb.debian.org/debian/pool/main/p/python2.7/python2.7_2.7.16-3.dsc' python2.7_2.7.16-3.dsc 3355 SHA256:b2f2742f31d0a26f69c41bde488f6976d2733d2a51b941d5f9e217c20c55984b
-'http://deb.debian.org/debian/pool/main/p/python2.7/python2.7_2.7.16.orig.tar.gz' python2.7_2.7.16.orig.tar.gz 17431748 SHA256:01da813a3600876f03f46db11cc5c408175e99f03af2ba942ef324389a83bad5
-'http://deb.debian.org/debian/pool/main/p/python2.7/python2.7_2.7.16-3.diff.gz' python2.7_2.7.16-3.diff.gz 337058 SHA256:e57a7898f04ae23de66dedbf9d43f842fa55cf1adc162e276b2f5e30594892a0
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/python2.7/2.7.16-3/
 
-- https://sources.debian.net/src/python2.7/2.7.16-3/ (for browsing the source)
-- https://sources.debian.net/src/python2.7/2.7.16-3/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/python2.7/2.7.16-3/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `python3-defaults=3.7.3-1`
 

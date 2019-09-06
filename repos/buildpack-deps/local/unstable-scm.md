@@ -681,20 +681,13 @@ Licenses: (parsed from: `/usr/share/doc/libexpat1/copyright`)
 
 - `MIT`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris expat=2.2.7-1
-'http://deb.debian.org/debian/pool/main/e/expat/expat_2.2.7-1.dsc' expat_2.2.7-1.dsc 1949 SHA256:d647407dde63246edd3b982fcbabb9a4d63056c80494e3c8912239990d5d2b92
-'http://deb.debian.org/debian/pool/main/e/expat/expat_2.2.7.orig.tar.gz' expat_2.2.7.orig.tar.gz 8278607 SHA256:4efe89dfd8c2f9b971bf9089efa4cc163ac997a75da92c08be14d80a091474e6
-'http://deb.debian.org/debian/pool/main/e/expat/expat_2.2.7-1.debian.tar.xz' expat_2.2.7-1.debian.tar.xz 10676 SHA256:da6b783fd929544e5f5382153a78cff3519e3e426d5884a428cfac01e6e219ea
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/expat/2.2.7-1/
 
-- https://sources.debian.net/src/expat/2.2.7-1/ (for browsing the source)
-- https://sources.debian.net/src/expat/2.2.7-1/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/expat/2.2.7-1/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `findutils=4.6.0+git+20190510-2`
 
@@ -1855,21 +1848,13 @@ Licenses: (parsed from: `/usr/share/doc/mercurial/copyright`, `/usr/share/doc/me
 - `LGPL-2.1`
 - `LGPL-2.1+`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris mercurial=4.9-2
-'http://deb.debian.org/debian/pool/main/m/mercurial/mercurial_4.9-2.dsc' mercurial_4.9-2.dsc 2628 SHA256:0e91f2f1f8cff314e3639f9ac8a7452567a03414e4ae75e20b7d9d7618dafc86
-'http://deb.debian.org/debian/pool/main/m/mercurial/mercurial_4.9.orig.tar.gz' mercurial_4.9.orig.tar.gz 7075692 SHA256:0f600c5c7e44d4318bedc1754a70b920f7ecd278e4089b0f6ac96f460c012f06
-'http://deb.debian.org/debian/pool/main/m/mercurial/mercurial_4.9.orig.tar.gz.asc' mercurial_4.9.orig.tar.gz.asc 833 SHA256:a78d5528b933d9e0242b057ad08b365815c7dc3035ff8fef9a22574d9c1e56c0
-'http://deb.debian.org/debian/pool/main/m/mercurial/mercurial_4.9-2.debian.tar.xz' mercurial_4.9-2.debian.tar.xz 62048 SHA256:107e2eaf7f9dc2e19e735a94181d26649b37d3e85a3b8d127247be7f134d886e
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/mercurial/4.9-2/
 
-- https://sources.debian.net/src/mercurial/4.9-2/ (for browsing the source)
-- https://sources.debian.net/src/mercurial/4.9-2/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/mercurial/4.9-2/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `mime-support=3.63`
 
@@ -2380,20 +2365,13 @@ Licenses: (parsed from: `/usr/share/doc/libpython2.7-minimal/copyright`, `/usr/s
 - `implied`
 - `see above, some license as Python`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris python2.7=2.7.16-3
-'http://deb.debian.org/debian/pool/main/p/python2.7/python2.7_2.7.16-3.dsc' python2.7_2.7.16-3.dsc 3355 SHA256:b2f2742f31d0a26f69c41bde488f6976d2733d2a51b941d5f9e217c20c55984b
-'http://deb.debian.org/debian/pool/main/p/python2.7/python2.7_2.7.16.orig.tar.gz' python2.7_2.7.16.orig.tar.gz 17431748 SHA256:01da813a3600876f03f46db11cc5c408175e99f03af2ba942ef324389a83bad5
-'http://deb.debian.org/debian/pool/main/p/python2.7/python2.7_2.7.16-3.diff.gz' python2.7_2.7.16-3.diff.gz 337058 SHA256:e57a7898f04ae23de66dedbf9d43f842fa55cf1adc162e276b2f5e30594892a0
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/python2.7/2.7.16-3/
 
-- https://sources.debian.net/src/python2.7/2.7.16-3/ (for browsing the source)
-- https://sources.debian.net/src/python2.7/2.7.16-3/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/python2.7/2.7.16-3/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `readline=8.0-2`
 

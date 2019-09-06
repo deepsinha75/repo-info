@@ -432,14 +432,9 @@ Licenses: (parsed from: `/usr/share/doc/coreutils/copyright`)
 
 - `GPL-3`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris coreutils=8.30-3ubuntu1
-'http://archive.ubuntu.com/ubuntu/pool/main/c/coreutils/coreutils_8.30-3ubuntu1.dsc' coreutils_8.30-3ubuntu1.dsc 2060 SHA256:6cf677555a20bcc36b5319877875b83002be51e010005fb91086973781d1b15d
-'http://archive.ubuntu.com/ubuntu/pool/main/c/coreutils/coreutils_8.30.orig.tar.xz' coreutils_8.30.orig.tar.xz 5359532 SHA256:e831b3a86091496cdba720411f9748de81507798f6130adeaef872d206e1b057
-'http://archive.ubuntu.com/ubuntu/pool/main/c/coreutils/coreutils_8.30-3ubuntu1.debian.tar.xz' coreutils_8.30-3ubuntu1.debian.tar.xz 39592 SHA256:aea3b759fd5014416629849a46e43a446b0598e40ee0d248f6b0f8d0fae532d5
-```
 
 ### `dpkg` source package: `curl=7.65.3-1ubuntu1`
 
@@ -1081,14 +1076,9 @@ Licenses: (parsed from: `/usr/share/doc/libc-bin/copyright`, `/usr/share/doc/lib
 - `GPL-2`
 - `LGPL-2.1`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris glibc=2.29-0ubuntu3
-'http://archive.ubuntu.com/ubuntu/pool/main/g/glibc/glibc_2.29-0ubuntu3.dsc' glibc_2.29-0ubuntu3.dsc 9392 SHA256:fa5d9db1022f5760f4e6b150c36d8199b264b4798c2bb7d726ed4b7da2a1b77b
-'http://archive.ubuntu.com/ubuntu/pool/main/g/glibc/glibc_2.29.orig.tar.xz' glibc_2.29.orig.tar.xz 17040280 SHA256:9e383319f5cdb1a9d58a45ea44836c23859b8d580d5748cd93bca35a01ad0669
-'http://archive.ubuntu.com/ubuntu/pool/main/g/glibc/glibc_2.29-0ubuntu3.debian.tar.xz' glibc_2.29-0ubuntu3.debian.tar.xz 858644 SHA256:4b137867868e6b7d156c5cc97f44e556e84db9f0b959362496e2d8339ae930e7
-```
 
 ### `dpkg` source package: `gmp=2:6.1.2+dfsg-4`
 
@@ -1308,14 +1298,13 @@ Licenses: (parsed from: `/usr/share/doc/libasn1-8-heimdal/copyright`, `/usr/shar
 - `custom`
 - `none`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris heimdal=7.5.0+dfsg-3
-'http://archive.ubuntu.com/ubuntu/pool/main/h/heimdal/heimdal_7.5.0+dfsg-3.dsc' heimdal_7.5.0+dfsg-3.dsc 3579 SHA256:f1ecfa0cbd70cb43c5ab59eb6661d4364212df69d76824a9f27861bbfa6e750c
-'http://archive.ubuntu.com/ubuntu/pool/main/h/heimdal/heimdal_7.5.0+dfsg.orig.tar.gz' heimdal_7.5.0+dfsg.orig.tar.gz 8955005 SHA256:489119b7a1a900b88163765654dc59cba9a321b078fafc76629e2b85ef140867
-'http://archive.ubuntu.com/ubuntu/pool/main/h/heimdal/heimdal_7.5.0+dfsg-3.debian.tar.xz' heimdal_7.5.0+dfsg-3.debian.tar.xz 461448 SHA256:35f14816be232a043326eea977ebb1edff5a8f9223919ee18a88148565ab3e5c
-```
+The source package *may* still be available for download from:
+
+- http://snapshot.debian.org/package/heimdal/7.5.0+dfsg-3/
+
 
 ### `dpkg` source package: `hicolor-icon-theme=0.17-2`
 
@@ -2324,15 +2313,13 @@ Licenses: (parsed from: `/usr/share/doc/libltdl-dev/copyright`, `/usr/share/doc/
 - `GFDL`
 - `GPL`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris libtool=2.4.6-10
-'http://archive.ubuntu.com/ubuntu/pool/main/libt/libtool/libtool_2.4.6-10.dsc' libtool_2.4.6-10.dsc 2483 SHA256:c0947799cdd4ede984bb67375944dc62696836968e3f37c4a6acb8fc38c765aa
-'http://archive.ubuntu.com/ubuntu/pool/main/libt/libtool/libtool_2.4.6.orig.tar.xz' libtool_2.4.6.orig.tar.xz 973080 SHA256:7c87a8c2c8c0fc9cd5019e402bed4292462d00a718a7cd5f11218153bf28b26f
-'http://archive.ubuntu.com/ubuntu/pool/main/libt/libtool/libtool_2.4.6.orig.tar.xz.asc' libtool_2.4.6.orig.tar.xz.asc 380 SHA256:ab68ebc45d60128a71fc36167cd29dcf3c3d6d639fd28663905ebaf3e2f43d6a
-'http://archive.ubuntu.com/ubuntu/pool/main/libt/libtool/libtool_2.4.6-10.debian.tar.xz' libtool_2.4.6-10.debian.tar.xz 48944 SHA256:77abb6069e2bdbeef31e116acfe37300ebc653d021a8f5e22eaad96d76fbbff7
-```
+The source package *may* still be available for download from:
+
+- http://snapshot.debian.org/package/libtool/2.4.6-10/
+
 
 ### `dpkg` source package: `libunistring=0.9.10-2`
 
@@ -3460,14 +3447,13 @@ Licenses: (parsed from: `/usr/share/doc/libpython2.7-minimal/copyright`, `/usr/s
 - `implied`
 - `see above, some license as Python`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris python2.7=2.7.16-3
-'http://archive.ubuntu.com/ubuntu/pool/universe/p/python2.7/python2.7_2.7.16-3.dsc' python2.7_2.7.16-3.dsc 3355 SHA256:b2f2742f31d0a26f69c41bde488f6976d2733d2a51b941d5f9e217c20c55984b
-'http://archive.ubuntu.com/ubuntu/pool/universe/p/python2.7/python2.7_2.7.16.orig.tar.gz' python2.7_2.7.16.orig.tar.gz 17431748 SHA256:01da813a3600876f03f46db11cc5c408175e99f03af2ba942ef324389a83bad5
-'http://archive.ubuntu.com/ubuntu/pool/universe/p/python2.7/python2.7_2.7.16-3.diff.gz' python2.7_2.7.16-3.diff.gz 337058 SHA256:e57a7898f04ae23de66dedbf9d43f842fa55cf1adc162e276b2f5e30594892a0
-```
+The source package *may* still be available for download from:
+
+- http://snapshot.debian.org/package/python2.7/2.7.16-3/
+
 
 ### `dpkg` source package: `python3-defaults=3.7.3-1`
 
@@ -3500,14 +3486,9 @@ Binary Packages:
 If source is available (seen below), check the contents of `debian/copyright` within it.
 
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris python3-stdlib-extensions=3.7.3-1ubuntu1
-'http://archive.ubuntu.com/ubuntu/pool/main/p/python3-stdlib-extensions/python3-stdlib-extensions_3.7.3-1ubuntu1.dsc' python3-stdlib-extensions_3.7.3-1ubuntu1.dsc 2554 SHA256:e310d47b366ccb834ad315d94707059e06b6e2a2dea21af39e011ddf7a52ddf8
-'http://archive.ubuntu.com/ubuntu/pool/main/p/python3-stdlib-extensions/python3-stdlib-extensions_3.7.3.orig.tar.xz' python3-stdlib-extensions_3.7.3.orig.tar.xz 1038076 SHA256:638eadd847eb942a0513fe4ac8b23d4e5bf8ae34dc55c161a1de82aa277237e8
-'http://archive.ubuntu.com/ubuntu/pool/main/p/python3-stdlib-extensions/python3-stdlib-extensions_3.7.3-1ubuntu1.debian.tar.xz' python3-stdlib-extensions_3.7.3-1ubuntu1.debian.tar.xz 426508 SHA256:dd3d05fa2ef162a5e87aeb26f227452b4e974a3bd728b1c7471a4d57ad195657
-```
 
 ### `dpkg` source package: `python3.7=3.7.4-2ubuntu1`
 
@@ -3538,14 +3519,9 @@ Licenses: (parsed from: `/usr/share/doc/libpython3.7-minimal/copyright`, `/usr/s
 - `use in source`
 - `without`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris python3.7=3.7.4-2ubuntu1
-'http://archive.ubuntu.com/ubuntu/pool/main/p/python3.7/python3.7_3.7.4-2ubuntu1.dsc' python3.7_3.7.4-2ubuntu1.dsc 3484 SHA256:8b6a4d42b3085344e8a9f874af42de851a210a4897c2c73726ce46e1a0cd3e79
-'http://archive.ubuntu.com/ubuntu/pool/main/p/python3.7/python3.7_3.7.4.orig.tar.xz' python3.7_3.7.4.orig.tar.xz 17131432 SHA256:fb799134b868199930b75f26678f18932214042639cd52b16da7fd134cd9b13f
-'http://archive.ubuntu.com/ubuntu/pool/main/p/python3.7/python3.7_3.7.4-2ubuntu1.debian.tar.xz' python3.7_3.7.4-2ubuntu1.debian.tar.xz 210244 SHA256:b1e84de0c39a65cda367ef12c1ec43adfe1fecc0fc872341014ff7170f82cf09
-```
 
 ### `dpkg` source package: `readline=8.0-2`
 
@@ -3693,14 +3669,9 @@ Licenses: (parsed from: `/usr/share/doc/python-six/copyright`)
 
 - `Expat`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris six=1.12.0-1build1
-'http://archive.ubuntu.com/ubuntu/pool/main/s/six/six_1.12.0-1build1.dsc' six_1.12.0-1build1.dsc 2344 SHA256:8672542af0f5c57465f7e71ff1ca2a8c3284cacf223306528cf793ad1dd00ecb
-'http://archive.ubuntu.com/ubuntu/pool/main/s/six/six_1.12.0.orig.tar.gz' six_1.12.0.orig.tar.gz 32725 SHA256:d16a0141ec1a18405cd4ce8b4613101da75da0e9a7aec5bdd4fa804d0e0eba73
-'http://archive.ubuntu.com/ubuntu/pool/main/s/six/six_1.12.0-1build1.debian.tar.xz' six_1.12.0-1build1.debian.tar.xz 4152 SHA256:5ed24a4b596f0ec5718aa6d9037c7062d767920031968afc03a20638ba6412d0
-```
 
 ### `dpkg` source package: `sqlite3=3.29.0-1`
 
@@ -3715,15 +3686,13 @@ Licenses: (parsed from: `/usr/share/doc/libsqlite3-0/copyright`, `/usr/share/doc
 - `GPL-2+`
 - `public-domain`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris sqlite3=3.29.0-1
-'http://archive.ubuntu.com/ubuntu/pool/main/s/sqlite3/sqlite3_3.29.0-1.dsc' sqlite3_3.29.0-1.dsc 2398 SHA256:9bb548936ce1a4f0a498997e36e27bae04c61700ba8c12821d7a03b50d4d299c
-'http://archive.ubuntu.com/ubuntu/pool/main/s/sqlite3/sqlite3_3.29.0.orig-www.tar.xz' sqlite3_3.29.0.orig-www.tar.xz 5653816 SHA256:879d852db191f0a9ce0c65cc701e0a1eb6ed232eb112deb64c4288f17ded3a29
-'http://archive.ubuntu.com/ubuntu/pool/main/s/sqlite3/sqlite3_3.29.0.orig.tar.xz' sqlite3_3.29.0.orig.tar.xz 7004564 SHA256:b0c904b6b04cd377f949e07561df6068614d1eb66a6abb99157750638f9e69c2
-'http://archive.ubuntu.com/ubuntu/pool/main/s/sqlite3/sqlite3_3.29.0-1.debian.tar.xz' sqlite3_3.29.0-1.debian.tar.xz 18772 SHA256:5466cab5aa67b7ecea1828c25ed0ebe3c10956ff1e1fc2087c190db3031cef87
-```
+The source package *may* still be available for download from:
+
+- http://snapshot.debian.org/package/sqlite3/3.29.0-1/
+
 
 ### `dpkg` source package: `subversion=1.10.0-2ubuntu3`
 
@@ -4018,14 +3987,13 @@ Binary Packages:
 If source is available (seen below), check the contents of `debian/copyright` within it.
 
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris xtrans=1.3.5-1
-'http://archive.ubuntu.com/ubuntu/pool/main/x/xtrans/xtrans_1.3.5-1.dsc' xtrans_1.3.5-1.dsc 1901 SHA256:64750bc2dd993ac93b9e0a8d6109ce72963ab22296479145eb3f392d238c2280
-'http://archive.ubuntu.com/ubuntu/pool/main/x/xtrans/xtrans_1.3.5.orig.tar.gz' xtrans_1.3.5.orig.tar.gz 227536 SHA256:b7a577c1b6c75030145e53b4793db9c88f9359ac49e7d771d4385d21b3e5945d
-'http://archive.ubuntu.com/ubuntu/pool/main/x/xtrans/xtrans_1.3.5-1.diff.gz' xtrans_1.3.5-1.diff.gz 16122 SHA256:2acb2c4f5958ef1bbae74ca64007d0465261a4f62bfad6ed22f1f144c0e445e1
-```
+The source package *may* still be available for download from:
+
+- http://snapshot.debian.org/package/xtrans/1.3.5-1/
+
 
 ### `dpkg` source package: `xz-utils=5.2.4-1`
 

@@ -4517,20 +4517,13 @@ Licenses: (parsed from: `/usr/share/doc/libpq-dev/copyright`, `/usr/share/doc/li
 - `nagaysau-ishii`
 - `rijndael`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris postgresql-11=11.5-1
-'http://deb.debian.org/debian/pool/main/p/postgresql-11/postgresql-11_11.5-1.dsc' postgresql-11_11.5-1.dsc 3716 SHA256:343b95f2950f93a02505eac1a89b0ca7c043b151980b85e088b01e0e7528e476
-'http://deb.debian.org/debian/pool/main/p/postgresql-11/postgresql-11_11.5.orig.tar.bz2' postgresql-11_11.5.orig.tar.bz2 19773087 SHA256:7fdf23060bfc715144cbf2696cf05b0fa284ad3eb21f0c378591c6bca99ad180
-'http://deb.debian.org/debian/pool/main/p/postgresql-11/postgresql-11_11.5-1.debian.tar.xz' postgresql-11_11.5-1.debian.tar.xz 25384 SHA256:72efa53767d9cc353c75bfad6b63ad1e1af7bda9b960aa6cc4ab5c5708cb51c2
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/postgresql-11/11.5-1/
 
-- https://sources.debian.net/src/postgresql-11/11.5-1/ (for browsing the source)
-- https://sources.debian.net/src/postgresql-11/11.5-1/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/postgresql-11/11.5-1/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `procps=2:3.3.15-2`
 
@@ -5126,20 +5119,13 @@ Licenses: (parsed from: `/usr/share/doc/libunbound8/copyright`)
 - `ISC`
 - `public-domain`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris unbound=1.9.0-2
-'http://deb.debian.org/debian/pool/main/u/unbound/unbound_1.9.0-2.dsc' unbound_1.9.0-2.dsc 3026 SHA256:fc8d94824d59df192ce403999a25fca9402b39cf1951325c4f81b850825d7e86
-'http://deb.debian.org/debian/pool/main/u/unbound/unbound_1.9.0.orig.tar.gz' unbound_1.9.0.orig.tar.gz 5662176 SHA256:415af94b8392bc6b2c52e44ac8f17935cc6ddf2cc81edfb47c5be4ad205ab917
-'http://deb.debian.org/debian/pool/main/u/unbound/unbound_1.9.0-2.debian.tar.xz' unbound_1.9.0-2.debian.tar.xz 18504 SHA256:b4a97ebdfbb5d8e8af32bd6f8f6befc370cf2ad98c33914c00a00727e0cb2e0c
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/unbound/1.9.0-2/
 
-- https://sources.debian.net/src/unbound/1.9.0-2/ (for browsing the source)
-- https://sources.debian.net/src/unbound/1.9.0-2/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/unbound/1.9.0-2/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `unzip=6.0-25`
 
