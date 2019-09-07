@@ -1,10 +1,10 @@
-# `nextcloud:17.0.0beta3-fpm-alpine`
+# `nextcloud:17.0.0beta4-fpm-alpine`
 
 ## Docker Metadata
 
-- Image ID: `sha256:f2ac7dd0a81b33bca4c04dc881fd3c191511ffb0db0658f2ed50c6fbd031d98e`
-- Created: `2019-09-02T16:32:59.302533456Z`
-- Virtual Size: ~ 349.87 Mb  
+- Image ID: `sha256:071df213b7a3cd8721692e68d0f7ac973ba1691e5360cf0ad115fd6b557027dd`
+- Created: `2019-09-05T21:47:06.146826928Z`
+- Virtual Size: ~ 349.36 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["/entrypoint.sh"]`
@@ -18,12 +18,12 @@
   - `PHP_CPPFLAGS=-fstack-protector-strong -fpic -fpie -O2`
   - `PHP_LDFLAGS=-Wl,-O1 -Wl,--hash-style=both -pie`
   - `GPG_KEYS=CBAF69F173A0FEA4B537F470D66C9593118BCCB6 F38252826ACD957EF380D39F2F7956BC5DA04B5D`
-  - `PHP_VERSION=7.3.8`
-  - `PHP_URL=https://www.php.net/get/php-7.3.8.tar.xz/from/this/mirror`
-  - `PHP_ASC_URL=https://www.php.net/get/php-7.3.8.tar.xz.asc/from/this/mirror`
-  - `PHP_SHA256=f6046b2ae625d8c04310bda0737ac660dc5563a8e04e8a46c1ee24ea414ad5a5`
+  - `PHP_VERSION=7.3.9`
+  - `PHP_URL=https://www.php.net/get/php-7.3.9.tar.xz/from/this/mirror`
+  - `PHP_ASC_URL=https://www.php.net/get/php-7.3.9.tar.xz.asc/from/this/mirror`
+  - `PHP_SHA256=4007f24a39822bef2805b75c625551d30be9eeed329d52eb0838fa5c1b91c1fd`
   - `PHP_MD5=`
-  - `NEXTCLOUD_VERSION=17.0.0beta3`
+  - `NEXTCLOUD_VERSION=17.0.0beta4`
 
 ## `apk` (`.apk`-based packages)
 
@@ -455,16 +455,16 @@ BSD-3-Clause IJG Zlib
 ### `apk` package: `libldap`
 
 ```console
-libldap-2.4.47-r2 description:
+libldap-2.4.48-r0 description:
 OpenLDAP libraries
 
-libldap-2.4.47-r2 webpage:
+libldap-2.4.48-r0 webpage:
 http://www.openldap.org/
 
-libldap-2.4.47-r2 installed size:
+libldap-2.4.48-r0 installed size:
 626688
 
-libldap-2.4.47-r2 license:
+libldap-2.4.48-r0 license:
 custom
 
 ```
@@ -659,16 +659,16 @@ BSD-3-Clause
 ### `apk` package: `libx11`
 
 ```console
-libx11-1.6.8-r0 description:
+libx11-1.6.8-r1 description:
 X11 client-side library
 
-libx11-1.6.8-r0 webpage:
+libx11-1.6.8-r1 webpage:
 http://xorg.freedesktop.org/
 
-libx11-1.6.8-r0 installed size:
+libx11-1.6.8-r1 installed size:
 3391488
 
-libx11-1.6.8-r0 license:
+libx11-1.6.8-r1 license:
 custom:XFREE86
 
 ```
@@ -863,16 +863,16 @@ MIT
 ### `apk` package: `nghttp2-libs`
 
 ```console
-nghttp2-libs-1.38.0-r0 description:
+nghttp2-libs-1.39.2-r0 description:
 Experimental HTTP/2 client, server and proxy (libraries)
 
-nghttp2-libs-1.38.0-r0 webpage:
+nghttp2-libs-1.39.2-r0 webpage:
 https://nghttp2.org
 
-nghttp2-libs-1.38.0-r0 installed size:
+nghttp2-libs-1.39.2-r0 installed size:
 155648
 
-nghttp2-libs-1.38.0-r0 license:
+nghttp2-libs-1.39.2-r0 license:
 MIT
 
 ```

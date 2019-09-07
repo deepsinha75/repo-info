@@ -2,9 +2,9 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:3aeb39a9e9937f61ac83afe6d9b71e8f3ce8f52fa8484493bde79e2b1eb9a4d7`
-- Created: `2019-08-21T02:13:11.113631845Z`
-- Virtual Size: ~ 316.29 Mb  
+- Image ID: `sha256:fee8e1d7c94986d83306fcf47c0f393593788a7d593aa30c90bcfce0212660ff`
+- Created: `2019-09-03T12:11:04.659870944Z`
+- Virtual Size: ~ 316.41 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["/entrypoint.sh"]`
@@ -18,10 +18,10 @@
   - `PHP_CPPFLAGS=-fstack-protector-strong -fpic -fpie -O2`
   - `PHP_LDFLAGS=-Wl,-O1 -Wl,--hash-style=both -pie`
   - `GPG_KEYS=1729F83938DA44E27BA0F4D3DBDB397470D12172 B1B44D8F021E4E2D6021E995DC9FF8D3EE5AF27F`
-  - `PHP_VERSION=7.2.21`
-  - `PHP_URL=https://www.php.net/get/php-7.2.21.tar.xz/from/this/mirror`
-  - `PHP_ASC_URL=https://www.php.net/get/php-7.2.21.tar.xz.asc/from/this/mirror`
-  - `PHP_SHA256=de06aff019d8f5079115795bd7d8eedd4cd03daecb62d58abb18f492dd995c95`
+  - `PHP_VERSION=7.2.22`
+  - `PHP_URL=https://www.php.net/get/php-7.2.22.tar.xz/from/this/mirror`
+  - `PHP_ASC_URL=https://www.php.net/get/php-7.2.22.tar.xz.asc/from/this/mirror`
+  - `PHP_SHA256=eb597fcf8dc0a6211a42a6346de4f63ee166829a6df6d8ed767fe14be8d1c3a3`
   - `PHP_MD5=`
   - `NEXTCLOUD_VERSION=14.0.14`
 
@@ -455,16 +455,16 @@ BSD-3-Clause IJG Zlib
 ### `apk` package: `libldap`
 
 ```console
-libldap-2.4.47-r2 description:
+libldap-2.4.48-r0 description:
 OpenLDAP libraries
 
-libldap-2.4.47-r2 webpage:
+libldap-2.4.48-r0 webpage:
 http://www.openldap.org/
 
-libldap-2.4.47-r2 installed size:
+libldap-2.4.48-r0 installed size:
 626688
 
-libldap-2.4.47-r2 license:
+libldap-2.4.48-r0 license:
 custom
 
 ```
@@ -659,16 +659,16 @@ BSD-3-Clause
 ### `apk` package: `libx11`
 
 ```console
-libx11-1.6.8-r0 description:
+libx11-1.6.8-r1 description:
 X11 client-side library
 
-libx11-1.6.8-r0 webpage:
+libx11-1.6.8-r1 webpage:
 http://xorg.freedesktop.org/
 
-libx11-1.6.8-r0 installed size:
+libx11-1.6.8-r1 installed size:
 3391488
 
-libx11-1.6.8-r0 license:
+libx11-1.6.8-r1 license:
 custom:XFREE86
 
 ```
@@ -846,16 +846,16 @@ MIT
 ### `apk` package: `nghttp2-libs`
 
 ```console
-nghttp2-libs-1.38.0-r0 description:
+nghttp2-libs-1.39.2-r0 description:
 Experimental HTTP/2 client, server and proxy (libraries)
 
-nghttp2-libs-1.38.0-r0 webpage:
+nghttp2-libs-1.39.2-r0 webpage:
 https://nghttp2.org
 
-nghttp2-libs-1.38.0-r0 installed size:
+nghttp2-libs-1.39.2-r0 installed size:
 155648
 
-nghttp2-libs-1.38.0-r0 license:
+nghttp2-libs-1.39.2-r0 license:
 MIT
 
 ```
