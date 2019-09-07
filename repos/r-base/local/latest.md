@@ -788,20 +788,13 @@ Licenses: (parsed from: `/usr/share/doc/libexpat1/copyright`)
 
 - `MIT`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris expat=2.2.7-1
-'http://deb.debian.org/debian/pool/main/e/expat/expat_2.2.7-1.dsc' expat_2.2.7-1.dsc 1949 SHA256:d647407dde63246edd3b982fcbabb9a4d63056c80494e3c8912239990d5d2b92
-'http://deb.debian.org/debian/pool/main/e/expat/expat_2.2.7.orig.tar.gz' expat_2.2.7.orig.tar.gz 8278607 SHA256:4efe89dfd8c2f9b971bf9089efa4cc163ac997a75da92c08be14d80a091474e6
-'http://deb.debian.org/debian/pool/main/e/expat/expat_2.2.7-1.debian.tar.xz' expat_2.2.7-1.debian.tar.xz 10676 SHA256:da6b783fd929544e5f5382153a78cff3519e3e426d5884a428cfac01e6e219ea
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/expat/2.2.7-1/
 
-- https://sources.debian.net/src/expat/2.2.7-1/ (for browsing the source)
-- https://sources.debian.net/src/expat/2.2.7-1/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/expat/2.2.7-1/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `findutils=4.6.0+git+20190510-2`
 
