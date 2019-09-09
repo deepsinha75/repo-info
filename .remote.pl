@@ -231,6 +231,7 @@ sub platform_string ($platform) {
 		. (defined $platform->{variant} ? ' variant ' . $platform->{variant} : '')
 		. (defined $platform->{features} ? ' ft. ' . join(', ', @{ $platform->{features} }) : '')
 	);
+	# TODO use https://github.com/microsoft/hcsshim/blob/559a1cf5a26cfd2b1c467c446ad83b91745c4a06/osversion/windowsbuilds.go to provide more color to os.version (RS1, etc)
 }
 
 sub cmd_to_dockerfile ($cmd, $shell) {

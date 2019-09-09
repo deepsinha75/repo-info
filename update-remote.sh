@@ -64,8 +64,10 @@ xargs <<<"${repos[*]}" -n 1 -P "${PARALLELISM:-8}" bash -Eeuo pipefail -c '
 			for tag in "${tags[@]}"; do
 				echo >&2 "processing: $tag"
 				echo
-				$curl "$repoInfoDaemon/markdown/$tag" \
-					| tee "repos/$repo/remote/${tag#*:}.md"
+				{
+					$curl "$repoInfoDaemon/markdown/$tag" | tee "repos/$repo/remote/${tag#*:}.md"; \
+				} || exit 255
+				# > If any invocation of the command exits with a status of 255, xargs will stop immediately without reading any further input.
 			done
 		} > "repos/$repo/tag-details.md"
 	done
