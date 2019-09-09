@@ -165,19 +165,13 @@ Licenses: (parsed from: `/usr/share/doc/base-files/copyright`)
 
 - `GPL`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris base-files=10.3
-'http://deb.debian.org/debian/pool/main/b/base-files/base-files_10.3.dsc' base-files_10.3.dsc 1071 SHA256:3a417a628dcdefbcfd287234582b6b01efee1f5815b2a822393fe35cb181d0ea
-'http://deb.debian.org/debian/pool/main/b/base-files/base-files_10.3.tar.xz' base-files_10.3.tar.xz 65252 SHA256:732b93d5d44ada6418a623fa2ace5a184decfacdbe214c05a10ab70938517542
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/base-files/10.3/
 
-- https://sources.debian.net/src/base-files/10.3/ (for browsing the source)
-- https://sources.debian.net/src/base-files/10.3/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/base-files/10.3/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `base-passwd=3.5.46`
 
@@ -241,20 +235,13 @@ Licenses: (parsed from: `/usr/share/doc/bzip2/copyright`, `/usr/share/doc/libbz2
 - `BSD-variant`
 - `GPL-2`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris bzip2=1.0.6-9.1
-'http://deb.debian.org/debian/pool/main/b/bzip2/bzip2_1.0.6-9.1.dsc' bzip2_1.0.6-9.1.dsc 2348 SHA256:21cab309681e335132b61a2f17910dcb0538697ce1ac4868ec45630fb5e0ca43
-'http://deb.debian.org/debian/pool/main/b/bzip2/bzip2_1.0.6.orig.tar.bz2' bzip2_1.0.6.orig.tar.bz2 708737 SHA256:d70a9ccd8bdf47e302d96c69fecd54925f45d9c7b966bb4ef5f56b770960afa7
-'http://deb.debian.org/debian/pool/main/b/bzip2/bzip2_1.0.6-9.1.debian.tar.bz2' bzip2_1.0.6-9.1.debian.tar.bz2 26512 SHA256:0642536bb5fb5e6b224d3852f72d5401f31e75cb1ac76a2e5daeb6b8780c13b5
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/bzip2/1.0.6-9.1/
 
-- https://sources.debian.net/src/bzip2/1.0.6-9.1/ (for browsing the source)
-- https://sources.debian.net/src/bzip2/1.0.6-9.1/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/bzip2/1.0.6-9.1/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `cdebconf=0.249`
 
@@ -608,10 +595,10 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris exim4=4.92-8+deb10u1
-'http://security.debian.org/debian-security/pool/updates/main/e/exim4/exim4_4.92-8+deb10u1.dsc' exim4_4.92-8+deb10u1.dsc 2855 SHA256:f9de60e94d91a7785d9dbacb33af1de7b4ebd18d3357aeee3fae3ebfa39aaf14
-'http://security.debian.org/debian-security/pool/updates/main/e/exim4/exim4_4.92.orig.tar.xz' exim4_4.92.orig.tar.xz 1767136 SHA256:6ac9e62b484e78951c7c0517d1229ad7619a7eea70ca3b38b8ef430b28ef1d62
-'http://security.debian.org/debian-security/pool/updates/main/e/exim4/exim4_4.92.orig.tar.xz.asc' exim4_4.92.orig.tar.xz.asc 488 SHA256:2d0cbdce4ca1d5f8850a5335e2f7dc25c229c260b533220f1e647c746f8ad1d9
-'http://security.debian.org/debian-security/pool/updates/main/e/exim4/exim4_4.92-8+deb10u1.debian.tar.xz' exim4_4.92-8+deb10u1.debian.tar.xz 472736 SHA256:20f9a51c7ccb6fcdb86d1daf39368a27b8e14330da662aee7299c29c33fd44f8
+'http://deb.debian.org/debian/pool/main/e/exim4/exim4_4.92-8+deb10u1.dsc' exim4_4.92-8+deb10u1.dsc 2855 SHA256:f9de60e94d91a7785d9dbacb33af1de7b4ebd18d3357aeee3fae3ebfa39aaf14
+'http://deb.debian.org/debian/pool/main/e/exim4/exim4_4.92.orig.tar.xz' exim4_4.92.orig.tar.xz 1767136 SHA256:6ac9e62b484e78951c7c0517d1229ad7619a7eea70ca3b38b8ef430b28ef1d62
+'http://deb.debian.org/debian/pool/main/e/exim4/exim4_4.92.orig.tar.xz.asc' exim4_4.92.orig.tar.xz.asc 488 SHA256:2d0cbdce4ca1d5f8850a5335e2f7dc25c229c260b533220f1e647c746f8ad1d9
+'http://deb.debian.org/debian/pool/main/e/exim4/exim4_4.92-8+deb10u1.debian.tar.xz' exim4_4.92-8+deb10u1.debian.tar.xz 472736 SHA256:20f9a51c7ccb6fcdb86d1daf39368a27b8e14330da662aee7299c29c33fd44f8
 ```
 
 Other potentially useful URLs:
@@ -852,10 +839,10 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris gnupg2=2.2.12-1
-'http://deb.debian.org/debian/pool/main/g/gnupg2/gnupg2_2.2.12-1.dsc' gnupg2_2.2.12-1.dsc 3139 SHA256:480cba4feb4466b29e5d69f15ad49361722a11bb59ce311c091f6d86004a7b22
+'http://deb.debian.org/debian/pool/main/g/gnupg2/gnupg2_2.2.12-1+deb10u1.dsc' gnupg2_2.2.12-1+deb10u1.dsc 3261 SHA256:2e1ca8d194593c151228f6b54da51ccd0b17036a532c7724bfcab17594c886ed
 'http://deb.debian.org/debian/pool/main/g/gnupg2/gnupg2_2.2.12.orig.tar.bz2' gnupg2_2.2.12.orig.tar.bz2 6682303 SHA256:db030f8b4c98640e91300d36d516f1f4f8fe09514a94ea9fc7411ee1a34082cb
 'http://deb.debian.org/debian/pool/main/g/gnupg2/gnupg2_2.2.12.orig.tar.bz2.asc' gnupg2_2.2.12.orig.tar.bz2.asc 3204 SHA256:97c8dc25c4c2fe9a39b2ffd81b65b6f3dc4ad359c9a81ca4bb9b4bdeb6167c60
-'http://deb.debian.org/debian/pool/main/g/gnupg2/gnupg2_2.2.12-1.debian.tar.xz' gnupg2_2.2.12-1.debian.tar.xz 63368 SHA256:a48bbabcb393459fecd2128304c147d093143784913b302cff1181718e4a82dc
+'http://deb.debian.org/debian/pool/main/g/gnupg2/gnupg2_2.2.12-1+deb10u1.debian.tar.xz' gnupg2_2.2.12-1+deb10u1.debian.tar.xz 123224 SHA256:f8cd4f8a2b63208fd05ae433dc9cb11d2483a72ef057cfe5fcfe2385b7c63f38
 ```
 
 Other potentially useful URLs:
@@ -1812,21 +1799,13 @@ Binary Packages:
 If source is available (seen below), check the contents of `debian/copyright` within it.
 
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris libxslt=1.1.32-2
-'http://deb.debian.org/debian/pool/main/libx/libxslt/libxslt_1.1.32-2.dsc' libxslt_1.1.32-2.dsc 2586 SHA256:a35844605bc638c0912c711f4663775799b3a913a3ef6638da380df6e66ced35
-'http://deb.debian.org/debian/pool/main/libx/libxslt/libxslt_1.1.32.orig.tar.gz' libxslt_1.1.32.orig.tar.gz 3440715 SHA256:526ecd0abaf4a7789041622c3950c0e7f2c4c8835471515fd77eec684a355460
-'http://deb.debian.org/debian/pool/main/libx/libxslt/libxslt_1.1.32.orig.tar.gz.asc' libxslt_1.1.32.orig.tar.gz.asc 455 SHA256:68b374a73747c57a17d62f0ccc1e9714f68a292e700fe4c88e3c2d9dcba71871
-'http://deb.debian.org/debian/pool/main/libx/libxslt/libxslt_1.1.32-2.debian.tar.xz' libxslt_1.1.32-2.debian.tar.xz 31932 SHA256:225b0d740e26813428a2c782a41a83ec47fe9a22ac1afbcacff74ed6dd5539f6
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/libxslt/1.1.32-2/
 
-- https://sources.debian.net/src/libxslt/1.1.32-2/ (for browsing the source)
-- https://sources.debian.net/src/libxslt/1.1.32-2/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/libxslt/1.1.32-2/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `libzstd=1.3.8+dfsg-3`
 
@@ -2096,21 +2075,13 @@ Licenses: (parsed from: `/usr/share/doc/libmariadb3/copyright`, `/usr/share/doc/
 - `unlimited-free-doc`
 - `zlib/libpng`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris mariadb-10.3=1:10.3.15-1
-'http://deb.debian.org/debian/pool/main/m/mariadb-10.3/mariadb-10.3_10.3.15-1.dsc' mariadb-10.3_10.3.15-1.dsc 4739 SHA256:6c090a441ff1f8cbf156826303478e47c4c584823fb9b25006ed5aad97279979
-'http://deb.debian.org/debian/pool/main/m/mariadb-10.3/mariadb-10.3_10.3.15.orig.tar.gz' mariadb-10.3_10.3.15.orig.tar.gz 70824529 SHA256:27f391a54d544f93850d4edfb3ef1b4cf24f8e27e61e51727b0e7d31bb4d6968
-'http://deb.debian.org/debian/pool/main/m/mariadb-10.3/mariadb-10.3_10.3.15.orig.tar.gz.asc' mariadb-10.3_10.3.15.orig.tar.gz.asc 181 SHA256:e1c988f3692971d2f978ecfa749ca1c8a3fe26caf7c8bd0ce7355fe92639897e
-'http://deb.debian.org/debian/pool/main/m/mariadb-10.3/mariadb-10.3_10.3.15-1.debian.tar.xz' mariadb-10.3_10.3.15-1.debian.tar.xz 223992 SHA256:e3e395e5e9b270cceb1dd8d2da0e5dc641acde3b9f287d107073b79eb7415922
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/mariadb-10.3/1:10.3.15-1/
 
-- https://sources.debian.net/src/mariadb-10.3/1:10.3.15-1/ (for browsing the source)
-- https://sources.debian.net/src/mariadb-10.3/1:10.3.15-1/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/mariadb-10.3/1:10.3.15-1/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `mawk=1.3.3-17`
 
@@ -2228,21 +2199,13 @@ Binary Packages:
 If source is available (seen below), check the contents of `debian/copyright` within it.
 
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris ncurses=6.1+20181013-2
-'http://deb.debian.org/debian/pool/main/n/ncurses/ncurses_6.1+20181013-2.dsc' ncurses_6.1+20181013-2.dsc 4147 SHA256:6064bfdaf4ea1d88312456b27040880d3049364aab1b1893207779350944bf06
-'http://deb.debian.org/debian/pool/main/n/ncurses/ncurses_6.1+20181013.orig.tar.gz' ncurses_6.1+20181013.orig.tar.gz 3411288 SHA256:aeb1d098ee90b39a763b57b00da19ff5bbb573dea077f98fbd85d59444bb3b59
-'http://deb.debian.org/debian/pool/main/n/ncurses/ncurses_6.1+20181013.orig.tar.gz.asc' ncurses_6.1+20181013.orig.tar.gz.asc 251 SHA256:865931406e519909a4d0ab87b14d0c6d3ebccb7b3e0dac5c6095f0dfce5e14cf
-'http://deb.debian.org/debian/pool/main/n/ncurses/ncurses_6.1+20181013-2.debian.tar.xz' ncurses_6.1+20181013-2.debian.tar.xz 60344 SHA256:f09890449cb8152bad5fd0b784a8818648adc09318d51ef3ecc64c9a6526fd7c
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/ncurses/6.1+20181013-2/
 
-- https://sources.debian.net/src/ncurses/6.1+20181013-2/ (for browsing the source)
-- https://sources.debian.net/src/ncurses/6.1+20181013-2/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/ncurses/6.1+20181013-2/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `netbase=5.6`
 
@@ -2367,20 +2330,13 @@ Binary Packages:
 If source is available (seen below), check the contents of `debian/copyright` within it.
 
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris openldap=2.4.47+dfsg-3
-'http://deb.debian.org/debian/pool/main/o/openldap/openldap_2.4.47+dfsg-3.dsc' openldap_2.4.47+dfsg-3.dsc 2856 SHA256:600e5dd8b689ebc2fc7344ddecf167f6ae91641c9f28aed6728b37f6473cdd40
-'http://deb.debian.org/debian/pool/main/o/openldap/openldap_2.4.47+dfsg.orig.tar.gz' openldap_2.4.47+dfsg.orig.tar.gz 4872293 SHA256:8f1ac7a4be7dd8ef158361efbfe16509756d3d9b396f5f378c3cf5c727807651
-'http://deb.debian.org/debian/pool/main/o/openldap/openldap_2.4.47+dfsg-3.debian.tar.xz' openldap_2.4.47+dfsg-3.debian.tar.xz 165576 SHA256:46de6b021bddbfd8e6ba2b06173b72b6180ec5d8561d4fba1739fa31f7ee2f8d
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/openldap/2.4.47+dfsg-3/
 
-- https://sources.debian.net/src/openldap/2.4.47+dfsg-3/ (for browsing the source)
-- https://sources.debian.net/src/openldap/2.4.47+dfsg-3/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/openldap/2.4.47+dfsg-3/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `openssl=1.1.1c-1`
 
@@ -3044,20 +3000,13 @@ Licenses: (parsed from: `/usr/share/doc/libsystemd0/copyright`, `/usr/share/doc/
 - `LGPL-2.1+`
 - `public-domain`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris systemd=241-5
-'http://deb.debian.org/debian/pool/main/s/systemd/systemd_241-5.dsc' systemd_241-5.dsc 4914 SHA256:68824a8e006a1aee628139ea4b34552e841be7f387efb3de6fbf52c408f5a42e
-'http://deb.debian.org/debian/pool/main/s/systemd/systemd_241.orig.tar.gz' systemd_241.orig.tar.gz 7640538 SHA256:b2561a8e1d10a2c248253f0dda31a85dd6d69f2b54177de55e02cd1d2778316e
-'http://deb.debian.org/debian/pool/main/s/systemd/systemd_241-5.debian.tar.xz' systemd_241-5.debian.tar.xz 155360 SHA256:36774d3bd53ab41c5b24ce6c42036d11df6513948e8953d3e88e68301f6bd342
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/systemd/241-5/
 
-- https://sources.debian.net/src/systemd/241-5/ (for browsing the source)
-- https://sources.debian.net/src/systemd/241-5/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/systemd/241-5/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `sysvinit=2.93-8`
 
@@ -3147,21 +3096,13 @@ Binary Packages:
 If source is available (seen below), check the contents of `debian/copyright` within it.
 
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris tzdata=2019a-1
-'http://deb.debian.org/debian/pool/main/t/tzdata/tzdata_2019a-1.dsc' tzdata_2019a-1.dsc 2232 SHA256:f30cc9acf2b10799080de376677213397bc0d051dc24635e630d449efc3fd4a5
-'http://deb.debian.org/debian/pool/main/t/tzdata/tzdata_2019a.orig.tar.gz' tzdata_2019a.orig.tar.gz 378961 SHA256:90366ddf4aa03e37a16cd49255af77f801822310b213f195e2206ead48c59772
-'http://deb.debian.org/debian/pool/main/t/tzdata/tzdata_2019a.orig.tar.gz.asc' tzdata_2019a.orig.tar.gz.asc 833 SHA256:e0fd1f9ddea31b8976d77c67680e9b016e98b970ae227dca52e58633c2e04303
-'http://deb.debian.org/debian/pool/main/t/tzdata/tzdata_2019a-1.debian.tar.xz' tzdata_2019a-1.debian.tar.xz 104736 SHA256:7e7a5781f47609e7aced03588f205d7cf4e7d674d8d2d3925c5cce6b8ae12a7b
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/tzdata/2019a-1/
 
-- https://sources.debian.net/src/tzdata/2019a-1/ (for browsing the source)
-- https://sources.debian.net/src/tzdata/2019a-1/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/tzdata/2019a-1/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `ucf=3.0038+nmu1`
 
