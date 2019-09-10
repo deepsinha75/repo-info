@@ -2,9 +2,9 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:7601e834fa145c6f8e3411e161373102453d4fcc4e66eb228e6d2ecc1eb10bc6`
-- Created: `2019-08-15T09:40:37.723008125Z`
-- Virtual Size: ~ 177.24 Mb  
+- Image ID: `sha256:2fb79bc1163c8003dc25438c32d472ac3034900b86bd5a17b421abdd32fb4496`
+- Created: `2019-09-10T01:01:09.254300432Z`
+- Virtual Size: ~ 177.23 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["docker-entrypoint.sh"]`
@@ -1241,14 +1241,14 @@ $ apt-get source -qq --print-uris python-defaults=2.7.15~rc1-1
 'http://archive.ubuntu.com/ubuntu/pool/main/p/python-defaults/python-defaults_2.7.15~rc1-1.tar.gz' python-defaults_2.7.15~rc1-1.tar.gz 1958015 SHA256:f3bed2b81091821d2e514c2e17c6846f7e744487fd15f7d3c48fa1c91b9cd49b
 ```
 
-### `dpkg` source package: `python2.7=2.7.15-4ubuntu4~18.04`
+### `dpkg` source package: `python2.7=2.7.15-4ubuntu4~18.04.1`
 
 Binary Packages:
 
-- `libpython2.7-minimal:amd64=2.7.15-4ubuntu4~18.04`
-- `libpython2.7-stdlib:amd64=2.7.15-4ubuntu4~18.04`
-- `python2.7=2.7.15-4ubuntu4~18.04`
-- `python2.7-minimal=2.7.15-4ubuntu4~18.04`
+- `libpython2.7-minimal:amd64=2.7.15-4ubuntu4~18.04.1`
+- `libpython2.7-stdlib:amd64=2.7.15-4ubuntu4~18.04.1`
+- `python2.7=2.7.15-4ubuntu4~18.04.1`
+- `python2.7-minimal=2.7.15-4ubuntu4~18.04.1`
 
 Licenses: (parsed from: `/usr/share/doc/libpython2.7-minimal/copyright`, `/usr/share/doc/libpython2.7-stdlib/copyright`, `/usr/share/doc/python2.7/copyright`, `/usr/share/doc/python2.7-minimal/copyright`)
 
@@ -1272,10 +1272,10 @@ Licenses: (parsed from: `/usr/share/doc/libpython2.7-minimal/copyright`, `/usr/s
 Source:
 
 ```console
-$ apt-get source -qq --print-uris python2.7=2.7.15-4ubuntu4~18.04
-'http://archive.ubuntu.com/ubuntu/pool/main/p/python2.7/python2.7_2.7.15-4ubuntu4~18.04.dsc' python2.7_2.7.15-4ubuntu4~18.04.dsc 3143 SHA256:9de61aa6573d57aac4e7fbc0c23730cd56400eb6f82341cea10960e4c0f15d3f
+$ apt-get source -qq --print-uris python2.7=2.7.15-4ubuntu4~18.04.1
+'http://archive.ubuntu.com/ubuntu/pool/main/p/python2.7/python2.7_2.7.15-4ubuntu4~18.04.1.dsc' python2.7_2.7.15-4ubuntu4~18.04.1.dsc 3476 SHA256:680399ad4fa59c5ab097f1546c159440d602df7bac2837208f4978a3a63ca979
 'http://archive.ubuntu.com/ubuntu/pool/main/p/python2.7/python2.7_2.7.15.orig.tar.gz' python2.7_2.7.15.orig.tar.gz 17496336 SHA256:18617d1f15a380a919d517630a9cd85ce17ea602f9bbdc58ddc672df4b0239db
-'http://archive.ubuntu.com/ubuntu/pool/main/p/python2.7/python2.7_2.7.15-4ubuntu4~18.04.diff.gz' python2.7_2.7.15-4ubuntu4~18.04.diff.gz 543312 SHA256:88a11982a4a7b46aa93d62e27ecb327dea46930039238b7451b22273d240cf29
+'http://archive.ubuntu.com/ubuntu/pool/main/p/python2.7/python2.7_2.7.15-4ubuntu4~18.04.1.diff.gz' python2.7_2.7.15-4ubuntu4~18.04.1.diff.gz 555429 SHA256:57262f5d8281a7e41f7a9f3e0f3f000c4fe2b6de4c832dd0ee877794b05ade6b
 ```
 
 ### `dpkg` source package: `readline=7.0-3`
