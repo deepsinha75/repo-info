@@ -327,13 +327,9 @@ Licenses: (parsed from: `/usr/share/doc/dpkg/copyright`)
 - `public-domain-md5`
 - `public-domain-s-s-d`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris dpkg=1.19.7ubuntu1
-'http://archive.ubuntu.com/ubuntu/pool/main/d/dpkg/dpkg_1.19.7ubuntu1.dsc' dpkg_1.19.7ubuntu1.dsc 2229 SHA256:9b6d9665584bc5940697accf49d16fd2823f4d292e30523c0d74cb10f45839fe
-'http://archive.ubuntu.com/ubuntu/pool/main/d/dpkg/dpkg_1.19.7ubuntu1.tar.xz' dpkg_1.19.7ubuntu1.tar.xz 4731216 SHA256:f9f8947d0e3aa3311ce460717878a39f613c94b26d5595a87b32c1e8301220ad
-```
 
 ### `dpkg` source package: `e2fsprogs=1.45.2-1ubuntu1`
 
@@ -349,15 +345,9 @@ Licenses: (parsed from: `/usr/share/doc/e2fsprogs/copyright`, `/usr/share/doc/li
 - `GPL-2`
 - `LGPL-2`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris e2fsprogs=1.45.2-1ubuntu1
-'http://archive.ubuntu.com/ubuntu/pool/main/e/e2fsprogs/e2fsprogs_1.45.2-1ubuntu1.dsc' e2fsprogs_1.45.2-1ubuntu1.dsc 3246 SHA256:8660e9eda1dc84b47ba15f668ad696090bd4b4e9b54e20717bc2ebd9ffd7632d
-'http://archive.ubuntu.com/ubuntu/pool/main/e/e2fsprogs/e2fsprogs_1.45.2.orig.tar.gz' e2fsprogs_1.45.2.orig.tar.gz 7920585 SHA256:a8521e3297adc604995aa7754463d632b48258b7f9c0ae620bda3fcb9ea418ae
-'http://archive.ubuntu.com/ubuntu/pool/main/e/e2fsprogs/e2fsprogs_1.45.2.orig.tar.gz.asc' e2fsprogs_1.45.2.orig.tar.gz.asc 488 SHA256:dc070da7d6a9fc74bac2bca30e22f3dd22806a47b69923a5475ed103f042eabb
-'http://archive.ubuntu.com/ubuntu/pool/main/e/e2fsprogs/e2fsprogs_1.45.2-1ubuntu1.debian.tar.xz' e2fsprogs_1.45.2-1ubuntu1.debian.tar.xz 80204 SHA256:bde09905678c5c70d62d1b0fb604dab1a05f2240aa091824f2370e7578c7d69b
-```
 
 ### `dpkg` source package: `findutils=4.6.0+git+20190209-2ubuntu1`
 
@@ -412,14 +402,9 @@ Licenses: (parsed from: `/usr/share/doc/libc-bin/copyright`, `/usr/share/doc/lib
 - `GPL-2`
 - `LGPL-2.1`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris glibc=2.29-0ubuntu3
-'http://archive.ubuntu.com/ubuntu/pool/main/g/glibc/glibc_2.29-0ubuntu3.dsc' glibc_2.29-0ubuntu3.dsc 9392 SHA256:fa5d9db1022f5760f4e6b150c36d8199b264b4798c2bb7d726ed4b7da2a1b77b
-'http://archive.ubuntu.com/ubuntu/pool/main/g/glibc/glibc_2.29.orig.tar.xz' glibc_2.29.orig.tar.xz 17040280 SHA256:9e383319f5cdb1a9d58a45ea44836c23859b8d580d5748cd93bca35a01ad0669
-'http://archive.ubuntu.com/ubuntu/pool/main/g/glibc/glibc_2.29-0ubuntu3.debian.tar.xz' glibc_2.29-0ubuntu3.debian.tar.xz 858644 SHA256:4b137867868e6b7d156c5cc97f44e556e84db9f0b959362496e2d8339ae930e7
-```
 
 ### `dpkg` source package: `gmp=2:6.1.2+dfsg-4`
 
