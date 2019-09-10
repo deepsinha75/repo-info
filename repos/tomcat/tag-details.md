@@ -1490,7 +1490,7 @@ CMD ["catalina.sh" "run"]
 ## `tomcat:7.0.96-jdk8-corretto`
 
 ```console
-$ docker pull tomcat@sha256:14e4e96c1e4c67ef8de1c2a065a068a0367d29841df81ddd7d85d37c8f7b8944
+$ docker pull tomcat@sha256:e4a139fa1724383e8f63c059d472fd3b4e76869440615732baf0ba51546b56ac
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -1501,175 +1501,175 @@ $ docker pull tomcat@sha256:14e4e96c1e4c67ef8de1c2a065a068a0367d29841df81ddd7d85
 ### `tomcat:7.0.96-jdk8-corretto` - linux; amd64
 
 ```console
-$ docker pull tomcat@sha256:ab1b06a2d4accc599ad4011e31fb7645b5629750fa6a1047c6e0be6906ac4940
+$ docker pull tomcat@sha256:e0e673635b65dc9626966e5537e51b65712e5f13ded2a2bcccbf7974545c74c6
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **195.6 MB (195641738 bytes)**  
+-	Total Size: **196.1 MB (196074926 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:79ac99279f7983c60d8fc086b8b203911552a468ed293f9abb743e52a46c15dc`
+-	Image ID: `sha256:56a3dd9519583b5ee8673d9616cf985dceafb2707f4dbe079cbb6cd235f89614`
 -	Default Command: `["catalina.sh","run"]`
 
 ```dockerfile
-# Thu, 23 May 2019 22:19:59 GMT
-ADD file:3cf811fe5073384ff1d5f405992ef7e5e452ad6d4a4cb873eee65007382f3a4a in / 
-# Thu, 23 May 2019 22:20:00 GMT
+# Thu, 05 Sep 2019 23:36:52 GMT
+ADD file:ee5d76cace83097841fd6a9fe1406be3e2176b9ec4de511cb5594bf959f9e657 in / 
+# Thu, 05 Sep 2019 23:36:53 GMT
 CMD ["/bin/bash"]
-# Tue, 30 Jul 2019 23:19:26 GMT
+# Fri, 06 Sep 2019 00:02:29 GMT
 ARG rpm_x64=java-1.8.0-amazon-corretto-devel-1.8.0_222.b10-1.x86_64.rpm
-# Tue, 30 Jul 2019 23:19:26 GMT
+# Fri, 06 Sep 2019 00:02:30 GMT
 ARG path_x64=https://d3pxv6yz143wms.cloudfront.net/8.222.10.1
-# Tue, 30 Jul 2019 23:19:26 GMT
+# Fri, 06 Sep 2019 00:02:30 GMT
 ARG key_x64=C554E802F4545B60919A0A87BD93DF06B540D62A
-# Tue, 30 Jul 2019 23:19:27 GMT
+# Fri, 06 Sep 2019 00:02:30 GMT
 ARG rpm_aarch64=java-1.8.0-amazon-corretto-devel-1.8.0_222.b10-4.aarch64.rpm
-# Tue, 30 Jul 2019 23:19:27 GMT
+# Fri, 06 Sep 2019 00:02:30 GMT
 ARG path_aarch64=https://d3pxv6yz143wms.cloudfront.net/8.222.10.4
-# Tue, 30 Jul 2019 23:19:27 GMT
+# Fri, 06 Sep 2019 00:02:30 GMT
 ARG key_aarch64=826272FACCCCC8E76897C26CE9B1F93E1A158134
-# Tue, 30 Jul 2019 23:19:47 GMT
+# Fri, 06 Sep 2019 00:02:52 GMT
 # ARGS: key_aarch64=826272FACCCCC8E76897C26CE9B1F93E1A158134 key_x64=C554E802F4545B60919A0A87BD93DF06B540D62A path_aarch64=https://d3pxv6yz143wms.cloudfront.net/8.222.10.4 path_x64=https://d3pxv6yz143wms.cloudfront.net/8.222.10.1 rpm_aarch64=java-1.8.0-amazon-corretto-devel-1.8.0_222.b10-4.aarch64.rpm rpm_x64=java-1.8.0-amazon-corretto-devel-1.8.0_222.b10-1.x86_64.rpm
 RUN set -eux;     case "$(uname -p)" in         x86_64) rpm=$rpm_x64; path=$path_x64; key=$key_x64 ;;         aarch64) rpm=$rpm_aarch64; path=$path_aarch64; key=$key_aarch64 ;;         *) echo >&2 "Unsupported architecture $(uname -p)."; exit 1 ;;     esac;         curl -O $path/$rpm     && export GNUPGHOME="$(mktemp -d)"     && gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys $key     && gpg --armor --export $key > corretto.asc     && rpm --import corretto.asc     && rpm -K $rpm     && rpm -i $rpm     && rm -r $GNUPGHOME corretto.asc $rpm     && yum install -y fontconfig     && yum clean all
-# Tue, 30 Jul 2019 23:19:47 GMT
+# Fri, 06 Sep 2019 00:02:52 GMT
 ENV JAVA_HOME=/usr/lib/jvm/java-1.8.0-amazon-corretto
-# Tue, 30 Jul 2019 23:39:00 GMT
+# Fri, 06 Sep 2019 00:22:16 GMT
 ENV CATALINA_HOME=/usr/local/tomcat
-# Tue, 30 Jul 2019 23:39:00 GMT
+# Fri, 06 Sep 2019 00:22:16 GMT
 ENV PATH=/usr/local/tomcat/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Tue, 30 Jul 2019 23:39:01 GMT
+# Fri, 06 Sep 2019 00:22:17 GMT
 RUN mkdir -p "$CATALINA_HOME"
-# Tue, 30 Jul 2019 23:39:01 GMT
+# Fri, 06 Sep 2019 00:22:17 GMT
 WORKDIR /usr/local/tomcat
-# Tue, 30 Jul 2019 23:39:01 GMT
+# Fri, 06 Sep 2019 00:22:17 GMT
 ENV TOMCAT_NATIVE_LIBDIR=/usr/local/tomcat/native-jni-lib
-# Tue, 30 Jul 2019 23:39:01 GMT
+# Fri, 06 Sep 2019 00:22:17 GMT
 ENV LD_LIBRARY_PATH=/usr/local/tomcat/native-jni-lib
-# Tue, 30 Jul 2019 23:42:57 GMT
+# Fri, 06 Sep 2019 00:26:36 GMT
 ENV GPG_KEYS=05AB33110949707C93A279E3D3EFE6B686867BA6 07E48665A34DCAFAE522E5E6266191C37C037D42 47309207D818FFD8DCD3F83F1931D684307A10A5 541FBE7D8F78B25E055DDEE13C370389288584E7 61B832AC2F1C5A90F0F9B00A1C506407564C17A3 713DA88BE50911535FE716F5208B0AB1D63011C7 79F7026C690BAA50B92CD8B66A3AD3F4F22C4FED 9BA44C2621385CB966EBA586F72C284D731FABEE A27677289986DB50844682F8ACB77FC2E86E29AC A9C5DF4D22E99998D9875A5110C01C5A2F6059E7 DCFD35E0BF8CA7344752DE8B6FB21E8933C60243 F3A04C595DB5B6A5F1ECA43E3B7BBB100D811BBE F7DA48BB64BCB84ECBA7EE6935CD23C10D498E23
-# Tue, 30 Jul 2019 23:44:49 GMT
+# Fri, 06 Sep 2019 00:28:35 GMT
 ENV TOMCAT_MAJOR=7
-# Tue, 30 Jul 2019 23:44:49 GMT
+# Fri, 06 Sep 2019 00:28:35 GMT
 ENV TOMCAT_VERSION=7.0.96
-# Tue, 30 Jul 2019 23:44:49 GMT
+# Fri, 06 Sep 2019 00:28:35 GMT
 ENV TOMCAT_SHA512=a7ab7627ebafab8c5e5b1b09cff3a6e760f45dbc9b9ab235e14532357e47cf3bb6bbcfbdd92cd94561fe471296fd734d221ba8d59e1216a8369d2c39b1a80c98
-# Tue, 30 Jul 2019 23:46:22 GMT
+# Fri, 06 Sep 2019 00:30:07 GMT
 RUN set -eux; 		if ! command -v yumdb > /dev/null; then 		yum install -y yum-utils; 		yumdb set reason dep yum-utils; 	fi; 	if [ -f /etc/oracle-release ]; then 		yumdb set reason user filesystem; 	fi; 	_yum_install_temporary() { ( set -eu +x; 		local pkg todo=''; 		for pkg; do 			if ! rpm --query "$pkg" > /dev/null 2>&1; then 				todo="$todo $pkg"; 			fi; 		done; 		if [ -n "$todo" ]; then 			set -x; 			yum install -y $todo; 			yumdb set reason dep $todo; 		fi; 	) }; 	_yum_install_temporary gzip tar; 		ddist() { 		local f="$1"; shift; 		local distFile="$1"; shift; 		local success=; 		local distUrl=; 		for distUrl in 			'https://www.apache.org/dyn/closer.cgi?action=download&filename=' 			https://www-us.apache.org/dist/ 			https://www.apache.org/dist/ 			https://archive.apache.org/dist/ 		; do 			if curl -fL -o "$f" "$distUrl$distFile" && [ -s "$f" ]; then 				success=1; 				break; 			fi; 		done; 		[ -n "$success" ]; 	}; 		ddist 'tomcat.tar.gz' "tomcat/tomcat-$TOMCAT_MAJOR/v$TOMCAT_VERSION/bin/apache-tomcat-$TOMCAT_VERSION.tar.gz"; 	echo "$TOMCAT_SHA512 *tomcat.tar.gz" | sha512sum --strict --check -; 	ddist 'tomcat.tar.gz.asc' "tomcat/tomcat-$TOMCAT_MAJOR/v$TOMCAT_VERSION/bin/apache-tomcat-$TOMCAT_VERSION.tar.gz.asc"; 	export GNUPGHOME="$(mktemp -d)"; 	for key in $GPG_KEYS; do 		gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys "$key"; 	done; 	gpg --batch --verify tomcat.tar.gz.asc tomcat.tar.gz; 	tar -xf tomcat.tar.gz --strip-components=1; 	rm bin/*.bat; 	rm tomcat.tar.gz*; 	command -v gpgconf && gpgconf --kill all || :; 	rm -rf "$GNUPGHOME"; 		nativeBuildDir="$(mktemp -d)"; 	tar -xf bin/tomcat-native.tar.gz -C "$nativeBuildDir" --strip-components=1; 	_yum_install_temporary 		apr-devel 		gcc 		make 		openssl-devel 	; 	( 		export CATALINA_HOME="$PWD"; 		cd "$nativeBuildDir/native"; 		aprConfig="$(command -v apr-1-config)"; 		./configure 			--libdir="$TOMCAT_NATIVE_LIBDIR" 			--prefix="$CATALINA_HOME" 			--with-apr="$aprConfig" 			--with-java-home="$JAVA_HOME" 			--with-ssl=yes; 		make -j "$(nproc)"; 		make install; 	); 	rm -rf "$nativeBuildDir"; 	rm bin/tomcat-native.tar.gz; 		deps="$( 		find "$TOMCAT_NATIVE_LIBDIR" -type f -executable -exec ldd '{}' ';' 			| awk '/=>/ && $(NF-1) != "=>" { print $(NF-1) }' 			| sort -u 			| xargs -r rpm --query --whatprovides 			| sort -u 	)"; 	[ -z "$deps" ] || yumdb set reason user $deps; 		yum autoremove -y; 	yum clean all; 	rm -rf /var/cache/yum; 		find ./bin/ -name '*.sh' -exec sed -ri 's|^#!/bin/sh$|#!/usr/bin/env bash|' '{}' +; 		chmod -R +rX .; 	chmod 777 logs work
-# Tue, 30 Jul 2019 23:46:23 GMT
+# Fri, 06 Sep 2019 00:30:09 GMT
 RUN set -e 	&& nativeLines="$(catalina.sh configtest 2>&1)" 	&& nativeLines="$(echo "$nativeLines" | grep 'Apache Tomcat Native')" 	&& nativeLines="$(echo "$nativeLines" | sort -u)" 	&& if ! echo "$nativeLines" | grep 'INFO: Loaded APR based Apache Tomcat Native library' >&2; then 		echo >&2 "$nativeLines"; 		exit 1; 	fi
-# Tue, 30 Jul 2019 23:46:23 GMT
+# Fri, 06 Sep 2019 00:30:09 GMT
 EXPOSE 8080
-# Tue, 30 Jul 2019 23:46:24 GMT
+# Fri, 06 Sep 2019 00:30:09 GMT
 CMD ["catalina.sh" "run"]
 ```
 
 -	Layers:
-	-	`sha256:72d97abdfae3b3c933ff41e39779cc72853d7bd9dc1e4800c5294d6715257799`  
-		Last Modified: Thu, 23 May 2019 22:22:16 GMT  
-		Size: 61.3 MB (61285177 bytes)  
+	-	`sha256:4910da0c66710ed2414cd0223e48cbeed94209b9c77053dc30d48532a651dd22`  
+		Last Modified: Thu, 05 Sep 2019 23:38:39 GMT  
+		Size: 61.7 MB (61665831 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c13d17f3a543055e7f616629ad6825d21746252d0b8db4f1812c86b11e3fdc96`  
-		Last Modified: Tue, 30 Jul 2019 23:20:57 GMT  
-		Size: 121.5 MB (121482783 bytes)  
+	-	`sha256:c511e36daa9ce76f573699dfe6fabfac82254067f5ff99f2049f99d176ec919d`  
+		Last Modified: Fri, 06 Sep 2019 00:03:50 GMT  
+		Size: 121.5 MB (121533245 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:34afcacfc487c55714cfc7e34c35abe51c1a26be56d268883ecc929fa305f714`  
-		Last Modified: Tue, 30 Jul 2019 23:47:26 GMT  
-		Size: 139.0 B  
+	-	`sha256:fb8769d09d3f4236a9a84b65d19abf678fdd45df105a6e62a3924404dafa15af`  
+		Last Modified: Fri, 06 Sep 2019 00:31:09 GMT  
+		Size: 138.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:19f8a89f7e230b068f6eb3f15b879a2bbecd175077985c3d659c5a78ede40a9c`  
-		Last Modified: Tue, 30 Jul 2019 23:47:58 GMT  
-		Size: 12.9 MB (12873510 bytes)  
+	-	`sha256:faece2fe87b9878321242ff2504a86c2a7e9318fa729bbd05260dfd305d0c04b`  
+		Last Modified: Fri, 06 Sep 2019 00:31:37 GMT  
+		Size: 12.9 MB (12875582 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:eaad7a5394dadfab285a16fdfb51294e6215713e57202bb9122740a54bc31187`  
-		Last Modified: Tue, 30 Jul 2019 23:47:55 GMT  
-		Size: 129.0 B  
+	-	`sha256:c0803514d5958764f4e59c5d309a3c2b387f9cd0786cec8b0ac4d6cc2ee134d3`  
+		Last Modified: Fri, 06 Sep 2019 00:31:35 GMT  
+		Size: 130.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `tomcat:7.0.96-jdk8-corretto` - linux; arm64 variant v8
 
 ```console
-$ docker pull tomcat@sha256:b4dc5465f3380f2a2e7243a16700f24cd16e5b2eb38729aee01113d3403483be
+$ docker pull tomcat@sha256:07ba0b124795c1efe8b7d65a251c1a78119a18a6a877c8007f22cd18388ec3c7
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **180.2 MB (180202173 bytes)**  
+-	Total Size: **180.6 MB (180589144 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:5fe93165eeb2bcda0c1974a0f8642b7c81ad5eb36860a6c58e5196a782d9b1f4`
+-	Image ID: `sha256:530971f4f34a1d32a3e08cbf6e926a6b8f0a2bd0b2d167a89375a595e58a2ef0`
 -	Default Command: `["catalina.sh","run"]`
 
 ```dockerfile
-# Thu, 23 May 2019 22:39:34 GMT
-ADD file:358a4a50e1cb5e7181b9cc49d23e60d7b0ba5ca2ce18ced74be5843836d54004 in / 
-# Thu, 23 May 2019 22:39:35 GMT
+# Thu, 05 Sep 2019 20:39:50 GMT
+ADD file:a72ff266718add2a5d4d63264fd3ce1f5191448aa441ffdb064ed570a651b36a in / 
+# Thu, 05 Sep 2019 20:39:51 GMT
 CMD ["/bin/bash"]
-# Tue, 30 Jul 2019 23:39:26 GMT
+# Thu, 05 Sep 2019 23:11:35 GMT
 ARG rpm_x64=java-1.8.0-amazon-corretto-devel-1.8.0_222.b10-1.x86_64.rpm
-# Tue, 30 Jul 2019 23:39:27 GMT
+# Thu, 05 Sep 2019 23:11:35 GMT
 ARG path_x64=https://d3pxv6yz143wms.cloudfront.net/8.222.10.1
-# Tue, 30 Jul 2019 23:39:27 GMT
+# Thu, 05 Sep 2019 23:11:35 GMT
 ARG key_x64=C554E802F4545B60919A0A87BD93DF06B540D62A
-# Tue, 30 Jul 2019 23:39:27 GMT
+# Thu, 05 Sep 2019 23:11:36 GMT
 ARG rpm_aarch64=java-1.8.0-amazon-corretto-devel-1.8.0_222.b10-4.aarch64.rpm
-# Tue, 30 Jul 2019 23:39:28 GMT
+# Thu, 05 Sep 2019 23:11:36 GMT
 ARG path_aarch64=https://d3pxv6yz143wms.cloudfront.net/8.222.10.4
-# Tue, 30 Jul 2019 23:39:28 GMT
+# Thu, 05 Sep 2019 23:11:36 GMT
 ARG key_aarch64=826272FACCCCC8E76897C26CE9B1F93E1A158134
-# Tue, 30 Jul 2019 23:40:33 GMT
+# Thu, 05 Sep 2019 23:12:00 GMT
 # ARGS: key_aarch64=826272FACCCCC8E76897C26CE9B1F93E1A158134 key_x64=C554E802F4545B60919A0A87BD93DF06B540D62A path_aarch64=https://d3pxv6yz143wms.cloudfront.net/8.222.10.4 path_x64=https://d3pxv6yz143wms.cloudfront.net/8.222.10.1 rpm_aarch64=java-1.8.0-amazon-corretto-devel-1.8.0_222.b10-4.aarch64.rpm rpm_x64=java-1.8.0-amazon-corretto-devel-1.8.0_222.b10-1.x86_64.rpm
 RUN set -eux;     case "$(uname -p)" in         x86_64) rpm=$rpm_x64; path=$path_x64; key=$key_x64 ;;         aarch64) rpm=$rpm_aarch64; path=$path_aarch64; key=$key_aarch64 ;;         *) echo >&2 "Unsupported architecture $(uname -p)."; exit 1 ;;     esac;         curl -O $path/$rpm     && export GNUPGHOME="$(mktemp -d)"     && gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys $key     && gpg --armor --export $key > corretto.asc     && rpm --import corretto.asc     && rpm -K $rpm     && rpm -i $rpm     && rm -r $GNUPGHOME corretto.asc $rpm     && yum install -y fontconfig     && yum clean all
-# Tue, 30 Jul 2019 23:40:34 GMT
+# Thu, 05 Sep 2019 23:12:01 GMT
 ENV JAVA_HOME=/usr/lib/jvm/java-1.8.0-amazon-corretto
-# Wed, 31 Jul 2019 22:08:23 GMT
+# Fri, 06 Sep 2019 00:24:08 GMT
 ENV CATALINA_HOME=/usr/local/tomcat
-# Wed, 31 Jul 2019 22:08:23 GMT
+# Fri, 06 Sep 2019 00:24:09 GMT
 ENV PATH=/usr/local/tomcat/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Wed, 31 Jul 2019 22:08:24 GMT
+# Fri, 06 Sep 2019 00:24:12 GMT
 RUN mkdir -p "$CATALINA_HOME"
-# Wed, 31 Jul 2019 22:08:25 GMT
+# Fri, 06 Sep 2019 00:24:16 GMT
 WORKDIR /usr/local/tomcat
-# Wed, 31 Jul 2019 22:08:25 GMT
+# Fri, 06 Sep 2019 00:24:17 GMT
 ENV TOMCAT_NATIVE_LIBDIR=/usr/local/tomcat/native-jni-lib
-# Wed, 31 Jul 2019 22:08:25 GMT
+# Fri, 06 Sep 2019 00:24:18 GMT
 ENV LD_LIBRARY_PATH=/usr/local/tomcat/native-jni-lib
-# Wed, 31 Jul 2019 22:11:54 GMT
+# Fri, 06 Sep 2019 00:29:13 GMT
 ENV GPG_KEYS=05AB33110949707C93A279E3D3EFE6B686867BA6 07E48665A34DCAFAE522E5E6266191C37C037D42 47309207D818FFD8DCD3F83F1931D684307A10A5 541FBE7D8F78B25E055DDEE13C370389288584E7 61B832AC2F1C5A90F0F9B00A1C506407564C17A3 713DA88BE50911535FE716F5208B0AB1D63011C7 79F7026C690BAA50B92CD8B66A3AD3F4F22C4FED 9BA44C2621385CB966EBA586F72C284D731FABEE A27677289986DB50844682F8ACB77FC2E86E29AC A9C5DF4D22E99998D9875A5110C01C5A2F6059E7 DCFD35E0BF8CA7344752DE8B6FB21E8933C60243 F3A04C595DB5B6A5F1ECA43E3B7BBB100D811BBE F7DA48BB64BCB84ECBA7EE6935CD23C10D498E23
-# Wed, 31 Jul 2019 22:13:12 GMT
+# Fri, 06 Sep 2019 00:31:35 GMT
 ENV TOMCAT_MAJOR=7
-# Wed, 31 Jul 2019 22:13:12 GMT
+# Fri, 06 Sep 2019 00:31:37 GMT
 ENV TOMCAT_VERSION=7.0.96
-# Wed, 31 Jul 2019 22:13:13 GMT
+# Fri, 06 Sep 2019 00:31:38 GMT
 ENV TOMCAT_SHA512=a7ab7627ebafab8c5e5b1b09cff3a6e760f45dbc9b9ab235e14532357e47cf3bb6bbcfbdd92cd94561fe471296fd734d221ba8d59e1216a8369d2c39b1a80c98
-# Wed, 31 Jul 2019 22:14:22 GMT
+# Fri, 06 Sep 2019 00:33:18 GMT
 RUN set -eux; 		if ! command -v yumdb > /dev/null; then 		yum install -y yum-utils; 		yumdb set reason dep yum-utils; 	fi; 	if [ -f /etc/oracle-release ]; then 		yumdb set reason user filesystem; 	fi; 	_yum_install_temporary() { ( set -eu +x; 		local pkg todo=''; 		for pkg; do 			if ! rpm --query "$pkg" > /dev/null 2>&1; then 				todo="$todo $pkg"; 			fi; 		done; 		if [ -n "$todo" ]; then 			set -x; 			yum install -y $todo; 			yumdb set reason dep $todo; 		fi; 	) }; 	_yum_install_temporary gzip tar; 		ddist() { 		local f="$1"; shift; 		local distFile="$1"; shift; 		local success=; 		local distUrl=; 		for distUrl in 			'https://www.apache.org/dyn/closer.cgi?action=download&filename=' 			https://www-us.apache.org/dist/ 			https://www.apache.org/dist/ 			https://archive.apache.org/dist/ 		; do 			if curl -fL -o "$f" "$distUrl$distFile" && [ -s "$f" ]; then 				success=1; 				break; 			fi; 		done; 		[ -n "$success" ]; 	}; 		ddist 'tomcat.tar.gz' "tomcat/tomcat-$TOMCAT_MAJOR/v$TOMCAT_VERSION/bin/apache-tomcat-$TOMCAT_VERSION.tar.gz"; 	echo "$TOMCAT_SHA512 *tomcat.tar.gz" | sha512sum --strict --check -; 	ddist 'tomcat.tar.gz.asc' "tomcat/tomcat-$TOMCAT_MAJOR/v$TOMCAT_VERSION/bin/apache-tomcat-$TOMCAT_VERSION.tar.gz.asc"; 	export GNUPGHOME="$(mktemp -d)"; 	for key in $GPG_KEYS; do 		gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys "$key"; 	done; 	gpg --batch --verify tomcat.tar.gz.asc tomcat.tar.gz; 	tar -xf tomcat.tar.gz --strip-components=1; 	rm bin/*.bat; 	rm tomcat.tar.gz*; 	command -v gpgconf && gpgconf --kill all || :; 	rm -rf "$GNUPGHOME"; 		nativeBuildDir="$(mktemp -d)"; 	tar -xf bin/tomcat-native.tar.gz -C "$nativeBuildDir" --strip-components=1; 	_yum_install_temporary 		apr-devel 		gcc 		make 		openssl-devel 	; 	( 		export CATALINA_HOME="$PWD"; 		cd "$nativeBuildDir/native"; 		aprConfig="$(command -v apr-1-config)"; 		./configure 			--libdir="$TOMCAT_NATIVE_LIBDIR" 			--prefix="$CATALINA_HOME" 			--with-apr="$aprConfig" 			--with-java-home="$JAVA_HOME" 			--with-ssl=yes; 		make -j "$(nproc)"; 		make install; 	); 	rm -rf "$nativeBuildDir"; 	rm bin/tomcat-native.tar.gz; 		deps="$( 		find "$TOMCAT_NATIVE_LIBDIR" -type f -executable -exec ldd '{}' ';' 			| awk '/=>/ && $(NF-1) != "=>" { print $(NF-1) }' 			| sort -u 			| xargs -r rpm --query --whatprovides 			| sort -u 	)"; 	[ -z "$deps" ] || yumdb set reason user $deps; 		yum autoremove -y; 	yum clean all; 	rm -rf /var/cache/yum; 		find ./bin/ -name '*.sh' -exec sed -ri 's|^#!/bin/sh$|#!/usr/bin/env bash|' '{}' +; 		chmod -R +rX .; 	chmod 777 logs work
-# Wed, 31 Jul 2019 22:14:25 GMT
+# Fri, 06 Sep 2019 00:33:29 GMT
 RUN set -e 	&& nativeLines="$(catalina.sh configtest 2>&1)" 	&& nativeLines="$(echo "$nativeLines" | grep 'Apache Tomcat Native')" 	&& nativeLines="$(echo "$nativeLines" | sort -u)" 	&& if ! echo "$nativeLines" | grep 'INFO: Loaded APR based Apache Tomcat Native library' >&2; then 		echo >&2 "$nativeLines"; 		exit 1; 	fi
-# Wed, 31 Jul 2019 22:14:25 GMT
+# Fri, 06 Sep 2019 00:33:32 GMT
 EXPOSE 8080
-# Wed, 31 Jul 2019 22:14:25 GMT
+# Fri, 06 Sep 2019 00:33:35 GMT
 CMD ["catalina.sh" "run"]
 ```
 
 -	Layers:
-	-	`sha256:0c8ee56cea53bee75dce23897c1c0f77aa13a698e7b49d9f20c788cef45fadea`  
-		Last Modified: Thu, 23 May 2019 22:40:27 GMT  
-		Size: 62.5 MB (62453151 bytes)  
+	-	`sha256:e75eebfae1ce8742ae53a518590bca4735e2a5dbfa46418fa709591a7b42e522`  
+		Last Modified: Thu, 05 Sep 2019 20:43:10 GMT  
+		Size: 62.8 MB (62797593 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:269e06f3b7489c1b941db3fc6cf17c76a7bf613b18a6aeff9d25c7144b85ae6a`  
-		Last Modified: Tue, 30 Jul 2019 23:42:10 GMT  
-		Size: 104.9 MB (104888017 bytes)  
+	-	`sha256:825292fe21ae21fe00976ccad2471578d1a289980b1ea830f4e0ad1990422166`  
+		Last Modified: Thu, 05 Sep 2019 23:13:17 GMT  
+		Size: 104.9 MB (104911609 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c1a0e5239e6a06f59af8cf4b3646b582c250ec4bcd6c3ebc520395b4e288e047`  
-		Last Modified: Wed, 31 Jul 2019 22:15:34 GMT  
-		Size: 172.0 B  
+	-	`sha256:babaad70d6b41a7c0adfcbf58979816fb28f3415b9bc800fb9f306bed8742129`  
+		Last Modified: Fri, 06 Sep 2019 00:35:19 GMT  
+		Size: 171.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:cb239abef4ecd0fa4f61e835e5404504105af934c78966ba8786ed100be3f436`  
-		Last Modified: Wed, 31 Jul 2019 22:16:20 GMT  
-		Size: 12.9 MB (12860669 bytes)  
+	-	`sha256:fb113ccfb76f935854ec9d12c2cb33e4a3aa573377efb2abe4014d92155a400d`  
+		Last Modified: Fri, 06 Sep 2019 00:36:08 GMT  
+		Size: 12.9 MB (12879609 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:6207a8a39774de4254c8defe1cbcf7ea3912025b5db569afc195840fe7c4b2f9`  
-		Last Modified: Wed, 31 Jul 2019 22:16:17 GMT  
-		Size: 164.0 B  
+	-	`sha256:4ad9f835b689321c96e5f945dd764ab08b3920e1c5882319e2872fa57e74ee62`  
+		Last Modified: Fri, 06 Sep 2019 00:36:04 GMT  
+		Size: 162.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `tomcat:7.0.96-jdk8-openjdk`
@@ -2877,7 +2877,7 @@ CMD ["catalina.sh" "run"]
 ## `tomcat:7.0-jdk8-corretto`
 
 ```console
-$ docker pull tomcat@sha256:14e4e96c1e4c67ef8de1c2a065a068a0367d29841df81ddd7d85d37c8f7b8944
+$ docker pull tomcat@sha256:e4a139fa1724383e8f63c059d472fd3b4e76869440615732baf0ba51546b56ac
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -2888,175 +2888,175 @@ $ docker pull tomcat@sha256:14e4e96c1e4c67ef8de1c2a065a068a0367d29841df81ddd7d85
 ### `tomcat:7.0-jdk8-corretto` - linux; amd64
 
 ```console
-$ docker pull tomcat@sha256:ab1b06a2d4accc599ad4011e31fb7645b5629750fa6a1047c6e0be6906ac4940
+$ docker pull tomcat@sha256:e0e673635b65dc9626966e5537e51b65712e5f13ded2a2bcccbf7974545c74c6
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **195.6 MB (195641738 bytes)**  
+-	Total Size: **196.1 MB (196074926 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:79ac99279f7983c60d8fc086b8b203911552a468ed293f9abb743e52a46c15dc`
+-	Image ID: `sha256:56a3dd9519583b5ee8673d9616cf985dceafb2707f4dbe079cbb6cd235f89614`
 -	Default Command: `["catalina.sh","run"]`
 
 ```dockerfile
-# Thu, 23 May 2019 22:19:59 GMT
-ADD file:3cf811fe5073384ff1d5f405992ef7e5e452ad6d4a4cb873eee65007382f3a4a in / 
-# Thu, 23 May 2019 22:20:00 GMT
+# Thu, 05 Sep 2019 23:36:52 GMT
+ADD file:ee5d76cace83097841fd6a9fe1406be3e2176b9ec4de511cb5594bf959f9e657 in / 
+# Thu, 05 Sep 2019 23:36:53 GMT
 CMD ["/bin/bash"]
-# Tue, 30 Jul 2019 23:19:26 GMT
+# Fri, 06 Sep 2019 00:02:29 GMT
 ARG rpm_x64=java-1.8.0-amazon-corretto-devel-1.8.0_222.b10-1.x86_64.rpm
-# Tue, 30 Jul 2019 23:19:26 GMT
+# Fri, 06 Sep 2019 00:02:30 GMT
 ARG path_x64=https://d3pxv6yz143wms.cloudfront.net/8.222.10.1
-# Tue, 30 Jul 2019 23:19:26 GMT
+# Fri, 06 Sep 2019 00:02:30 GMT
 ARG key_x64=C554E802F4545B60919A0A87BD93DF06B540D62A
-# Tue, 30 Jul 2019 23:19:27 GMT
+# Fri, 06 Sep 2019 00:02:30 GMT
 ARG rpm_aarch64=java-1.8.0-amazon-corretto-devel-1.8.0_222.b10-4.aarch64.rpm
-# Tue, 30 Jul 2019 23:19:27 GMT
+# Fri, 06 Sep 2019 00:02:30 GMT
 ARG path_aarch64=https://d3pxv6yz143wms.cloudfront.net/8.222.10.4
-# Tue, 30 Jul 2019 23:19:27 GMT
+# Fri, 06 Sep 2019 00:02:30 GMT
 ARG key_aarch64=826272FACCCCC8E76897C26CE9B1F93E1A158134
-# Tue, 30 Jul 2019 23:19:47 GMT
+# Fri, 06 Sep 2019 00:02:52 GMT
 # ARGS: key_aarch64=826272FACCCCC8E76897C26CE9B1F93E1A158134 key_x64=C554E802F4545B60919A0A87BD93DF06B540D62A path_aarch64=https://d3pxv6yz143wms.cloudfront.net/8.222.10.4 path_x64=https://d3pxv6yz143wms.cloudfront.net/8.222.10.1 rpm_aarch64=java-1.8.0-amazon-corretto-devel-1.8.0_222.b10-4.aarch64.rpm rpm_x64=java-1.8.0-amazon-corretto-devel-1.8.0_222.b10-1.x86_64.rpm
 RUN set -eux;     case "$(uname -p)" in         x86_64) rpm=$rpm_x64; path=$path_x64; key=$key_x64 ;;         aarch64) rpm=$rpm_aarch64; path=$path_aarch64; key=$key_aarch64 ;;         *) echo >&2 "Unsupported architecture $(uname -p)."; exit 1 ;;     esac;         curl -O $path/$rpm     && export GNUPGHOME="$(mktemp -d)"     && gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys $key     && gpg --armor --export $key > corretto.asc     && rpm --import corretto.asc     && rpm -K $rpm     && rpm -i $rpm     && rm -r $GNUPGHOME corretto.asc $rpm     && yum install -y fontconfig     && yum clean all
-# Tue, 30 Jul 2019 23:19:47 GMT
+# Fri, 06 Sep 2019 00:02:52 GMT
 ENV JAVA_HOME=/usr/lib/jvm/java-1.8.0-amazon-corretto
-# Tue, 30 Jul 2019 23:39:00 GMT
+# Fri, 06 Sep 2019 00:22:16 GMT
 ENV CATALINA_HOME=/usr/local/tomcat
-# Tue, 30 Jul 2019 23:39:00 GMT
+# Fri, 06 Sep 2019 00:22:16 GMT
 ENV PATH=/usr/local/tomcat/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Tue, 30 Jul 2019 23:39:01 GMT
+# Fri, 06 Sep 2019 00:22:17 GMT
 RUN mkdir -p "$CATALINA_HOME"
-# Tue, 30 Jul 2019 23:39:01 GMT
+# Fri, 06 Sep 2019 00:22:17 GMT
 WORKDIR /usr/local/tomcat
-# Tue, 30 Jul 2019 23:39:01 GMT
+# Fri, 06 Sep 2019 00:22:17 GMT
 ENV TOMCAT_NATIVE_LIBDIR=/usr/local/tomcat/native-jni-lib
-# Tue, 30 Jul 2019 23:39:01 GMT
+# Fri, 06 Sep 2019 00:22:17 GMT
 ENV LD_LIBRARY_PATH=/usr/local/tomcat/native-jni-lib
-# Tue, 30 Jul 2019 23:42:57 GMT
+# Fri, 06 Sep 2019 00:26:36 GMT
 ENV GPG_KEYS=05AB33110949707C93A279E3D3EFE6B686867BA6 07E48665A34DCAFAE522E5E6266191C37C037D42 47309207D818FFD8DCD3F83F1931D684307A10A5 541FBE7D8F78B25E055DDEE13C370389288584E7 61B832AC2F1C5A90F0F9B00A1C506407564C17A3 713DA88BE50911535FE716F5208B0AB1D63011C7 79F7026C690BAA50B92CD8B66A3AD3F4F22C4FED 9BA44C2621385CB966EBA586F72C284D731FABEE A27677289986DB50844682F8ACB77FC2E86E29AC A9C5DF4D22E99998D9875A5110C01C5A2F6059E7 DCFD35E0BF8CA7344752DE8B6FB21E8933C60243 F3A04C595DB5B6A5F1ECA43E3B7BBB100D811BBE F7DA48BB64BCB84ECBA7EE6935CD23C10D498E23
-# Tue, 30 Jul 2019 23:44:49 GMT
+# Fri, 06 Sep 2019 00:28:35 GMT
 ENV TOMCAT_MAJOR=7
-# Tue, 30 Jul 2019 23:44:49 GMT
+# Fri, 06 Sep 2019 00:28:35 GMT
 ENV TOMCAT_VERSION=7.0.96
-# Tue, 30 Jul 2019 23:44:49 GMT
+# Fri, 06 Sep 2019 00:28:35 GMT
 ENV TOMCAT_SHA512=a7ab7627ebafab8c5e5b1b09cff3a6e760f45dbc9b9ab235e14532357e47cf3bb6bbcfbdd92cd94561fe471296fd734d221ba8d59e1216a8369d2c39b1a80c98
-# Tue, 30 Jul 2019 23:46:22 GMT
+# Fri, 06 Sep 2019 00:30:07 GMT
 RUN set -eux; 		if ! command -v yumdb > /dev/null; then 		yum install -y yum-utils; 		yumdb set reason dep yum-utils; 	fi; 	if [ -f /etc/oracle-release ]; then 		yumdb set reason user filesystem; 	fi; 	_yum_install_temporary() { ( set -eu +x; 		local pkg todo=''; 		for pkg; do 			if ! rpm --query "$pkg" > /dev/null 2>&1; then 				todo="$todo $pkg"; 			fi; 		done; 		if [ -n "$todo" ]; then 			set -x; 			yum install -y $todo; 			yumdb set reason dep $todo; 		fi; 	) }; 	_yum_install_temporary gzip tar; 		ddist() { 		local f="$1"; shift; 		local distFile="$1"; shift; 		local success=; 		local distUrl=; 		for distUrl in 			'https://www.apache.org/dyn/closer.cgi?action=download&filename=' 			https://www-us.apache.org/dist/ 			https://www.apache.org/dist/ 			https://archive.apache.org/dist/ 		; do 			if curl -fL -o "$f" "$distUrl$distFile" && [ -s "$f" ]; then 				success=1; 				break; 			fi; 		done; 		[ -n "$success" ]; 	}; 		ddist 'tomcat.tar.gz' "tomcat/tomcat-$TOMCAT_MAJOR/v$TOMCAT_VERSION/bin/apache-tomcat-$TOMCAT_VERSION.tar.gz"; 	echo "$TOMCAT_SHA512 *tomcat.tar.gz" | sha512sum --strict --check -; 	ddist 'tomcat.tar.gz.asc' "tomcat/tomcat-$TOMCAT_MAJOR/v$TOMCAT_VERSION/bin/apache-tomcat-$TOMCAT_VERSION.tar.gz.asc"; 	export GNUPGHOME="$(mktemp -d)"; 	for key in $GPG_KEYS; do 		gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys "$key"; 	done; 	gpg --batch --verify tomcat.tar.gz.asc tomcat.tar.gz; 	tar -xf tomcat.tar.gz --strip-components=1; 	rm bin/*.bat; 	rm tomcat.tar.gz*; 	command -v gpgconf && gpgconf --kill all || :; 	rm -rf "$GNUPGHOME"; 		nativeBuildDir="$(mktemp -d)"; 	tar -xf bin/tomcat-native.tar.gz -C "$nativeBuildDir" --strip-components=1; 	_yum_install_temporary 		apr-devel 		gcc 		make 		openssl-devel 	; 	( 		export CATALINA_HOME="$PWD"; 		cd "$nativeBuildDir/native"; 		aprConfig="$(command -v apr-1-config)"; 		./configure 			--libdir="$TOMCAT_NATIVE_LIBDIR" 			--prefix="$CATALINA_HOME" 			--with-apr="$aprConfig" 			--with-java-home="$JAVA_HOME" 			--with-ssl=yes; 		make -j "$(nproc)"; 		make install; 	); 	rm -rf "$nativeBuildDir"; 	rm bin/tomcat-native.tar.gz; 		deps="$( 		find "$TOMCAT_NATIVE_LIBDIR" -type f -executable -exec ldd '{}' ';' 			| awk '/=>/ && $(NF-1) != "=>" { print $(NF-1) }' 			| sort -u 			| xargs -r rpm --query --whatprovides 			| sort -u 	)"; 	[ -z "$deps" ] || yumdb set reason user $deps; 		yum autoremove -y; 	yum clean all; 	rm -rf /var/cache/yum; 		find ./bin/ -name '*.sh' -exec sed -ri 's|^#!/bin/sh$|#!/usr/bin/env bash|' '{}' +; 		chmod -R +rX .; 	chmod 777 logs work
-# Tue, 30 Jul 2019 23:46:23 GMT
+# Fri, 06 Sep 2019 00:30:09 GMT
 RUN set -e 	&& nativeLines="$(catalina.sh configtest 2>&1)" 	&& nativeLines="$(echo "$nativeLines" | grep 'Apache Tomcat Native')" 	&& nativeLines="$(echo "$nativeLines" | sort -u)" 	&& if ! echo "$nativeLines" | grep 'INFO: Loaded APR based Apache Tomcat Native library' >&2; then 		echo >&2 "$nativeLines"; 		exit 1; 	fi
-# Tue, 30 Jul 2019 23:46:23 GMT
+# Fri, 06 Sep 2019 00:30:09 GMT
 EXPOSE 8080
-# Tue, 30 Jul 2019 23:46:24 GMT
+# Fri, 06 Sep 2019 00:30:09 GMT
 CMD ["catalina.sh" "run"]
 ```
 
 -	Layers:
-	-	`sha256:72d97abdfae3b3c933ff41e39779cc72853d7bd9dc1e4800c5294d6715257799`  
-		Last Modified: Thu, 23 May 2019 22:22:16 GMT  
-		Size: 61.3 MB (61285177 bytes)  
+	-	`sha256:4910da0c66710ed2414cd0223e48cbeed94209b9c77053dc30d48532a651dd22`  
+		Last Modified: Thu, 05 Sep 2019 23:38:39 GMT  
+		Size: 61.7 MB (61665831 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c13d17f3a543055e7f616629ad6825d21746252d0b8db4f1812c86b11e3fdc96`  
-		Last Modified: Tue, 30 Jul 2019 23:20:57 GMT  
-		Size: 121.5 MB (121482783 bytes)  
+	-	`sha256:c511e36daa9ce76f573699dfe6fabfac82254067f5ff99f2049f99d176ec919d`  
+		Last Modified: Fri, 06 Sep 2019 00:03:50 GMT  
+		Size: 121.5 MB (121533245 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:34afcacfc487c55714cfc7e34c35abe51c1a26be56d268883ecc929fa305f714`  
-		Last Modified: Tue, 30 Jul 2019 23:47:26 GMT  
-		Size: 139.0 B  
+	-	`sha256:fb8769d09d3f4236a9a84b65d19abf678fdd45df105a6e62a3924404dafa15af`  
+		Last Modified: Fri, 06 Sep 2019 00:31:09 GMT  
+		Size: 138.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:19f8a89f7e230b068f6eb3f15b879a2bbecd175077985c3d659c5a78ede40a9c`  
-		Last Modified: Tue, 30 Jul 2019 23:47:58 GMT  
-		Size: 12.9 MB (12873510 bytes)  
+	-	`sha256:faece2fe87b9878321242ff2504a86c2a7e9318fa729bbd05260dfd305d0c04b`  
+		Last Modified: Fri, 06 Sep 2019 00:31:37 GMT  
+		Size: 12.9 MB (12875582 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:eaad7a5394dadfab285a16fdfb51294e6215713e57202bb9122740a54bc31187`  
-		Last Modified: Tue, 30 Jul 2019 23:47:55 GMT  
-		Size: 129.0 B  
+	-	`sha256:c0803514d5958764f4e59c5d309a3c2b387f9cd0786cec8b0ac4d6cc2ee134d3`  
+		Last Modified: Fri, 06 Sep 2019 00:31:35 GMT  
+		Size: 130.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `tomcat:7.0-jdk8-corretto` - linux; arm64 variant v8
 
 ```console
-$ docker pull tomcat@sha256:b4dc5465f3380f2a2e7243a16700f24cd16e5b2eb38729aee01113d3403483be
+$ docker pull tomcat@sha256:07ba0b124795c1efe8b7d65a251c1a78119a18a6a877c8007f22cd18388ec3c7
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **180.2 MB (180202173 bytes)**  
+-	Total Size: **180.6 MB (180589144 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:5fe93165eeb2bcda0c1974a0f8642b7c81ad5eb36860a6c58e5196a782d9b1f4`
+-	Image ID: `sha256:530971f4f34a1d32a3e08cbf6e926a6b8f0a2bd0b2d167a89375a595e58a2ef0`
 -	Default Command: `["catalina.sh","run"]`
 
 ```dockerfile
-# Thu, 23 May 2019 22:39:34 GMT
-ADD file:358a4a50e1cb5e7181b9cc49d23e60d7b0ba5ca2ce18ced74be5843836d54004 in / 
-# Thu, 23 May 2019 22:39:35 GMT
+# Thu, 05 Sep 2019 20:39:50 GMT
+ADD file:a72ff266718add2a5d4d63264fd3ce1f5191448aa441ffdb064ed570a651b36a in / 
+# Thu, 05 Sep 2019 20:39:51 GMT
 CMD ["/bin/bash"]
-# Tue, 30 Jul 2019 23:39:26 GMT
+# Thu, 05 Sep 2019 23:11:35 GMT
 ARG rpm_x64=java-1.8.0-amazon-corretto-devel-1.8.0_222.b10-1.x86_64.rpm
-# Tue, 30 Jul 2019 23:39:27 GMT
+# Thu, 05 Sep 2019 23:11:35 GMT
 ARG path_x64=https://d3pxv6yz143wms.cloudfront.net/8.222.10.1
-# Tue, 30 Jul 2019 23:39:27 GMT
+# Thu, 05 Sep 2019 23:11:35 GMT
 ARG key_x64=C554E802F4545B60919A0A87BD93DF06B540D62A
-# Tue, 30 Jul 2019 23:39:27 GMT
+# Thu, 05 Sep 2019 23:11:36 GMT
 ARG rpm_aarch64=java-1.8.0-amazon-corretto-devel-1.8.0_222.b10-4.aarch64.rpm
-# Tue, 30 Jul 2019 23:39:28 GMT
+# Thu, 05 Sep 2019 23:11:36 GMT
 ARG path_aarch64=https://d3pxv6yz143wms.cloudfront.net/8.222.10.4
-# Tue, 30 Jul 2019 23:39:28 GMT
+# Thu, 05 Sep 2019 23:11:36 GMT
 ARG key_aarch64=826272FACCCCC8E76897C26CE9B1F93E1A158134
-# Tue, 30 Jul 2019 23:40:33 GMT
+# Thu, 05 Sep 2019 23:12:00 GMT
 # ARGS: key_aarch64=826272FACCCCC8E76897C26CE9B1F93E1A158134 key_x64=C554E802F4545B60919A0A87BD93DF06B540D62A path_aarch64=https://d3pxv6yz143wms.cloudfront.net/8.222.10.4 path_x64=https://d3pxv6yz143wms.cloudfront.net/8.222.10.1 rpm_aarch64=java-1.8.0-amazon-corretto-devel-1.8.0_222.b10-4.aarch64.rpm rpm_x64=java-1.8.0-amazon-corretto-devel-1.8.0_222.b10-1.x86_64.rpm
 RUN set -eux;     case "$(uname -p)" in         x86_64) rpm=$rpm_x64; path=$path_x64; key=$key_x64 ;;         aarch64) rpm=$rpm_aarch64; path=$path_aarch64; key=$key_aarch64 ;;         *) echo >&2 "Unsupported architecture $(uname -p)."; exit 1 ;;     esac;         curl -O $path/$rpm     && export GNUPGHOME="$(mktemp -d)"     && gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys $key     && gpg --armor --export $key > corretto.asc     && rpm --import corretto.asc     && rpm -K $rpm     && rpm -i $rpm     && rm -r $GNUPGHOME corretto.asc $rpm     && yum install -y fontconfig     && yum clean all
-# Tue, 30 Jul 2019 23:40:34 GMT
+# Thu, 05 Sep 2019 23:12:01 GMT
 ENV JAVA_HOME=/usr/lib/jvm/java-1.8.0-amazon-corretto
-# Wed, 31 Jul 2019 22:08:23 GMT
+# Fri, 06 Sep 2019 00:24:08 GMT
 ENV CATALINA_HOME=/usr/local/tomcat
-# Wed, 31 Jul 2019 22:08:23 GMT
+# Fri, 06 Sep 2019 00:24:09 GMT
 ENV PATH=/usr/local/tomcat/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Wed, 31 Jul 2019 22:08:24 GMT
+# Fri, 06 Sep 2019 00:24:12 GMT
 RUN mkdir -p "$CATALINA_HOME"
-# Wed, 31 Jul 2019 22:08:25 GMT
+# Fri, 06 Sep 2019 00:24:16 GMT
 WORKDIR /usr/local/tomcat
-# Wed, 31 Jul 2019 22:08:25 GMT
+# Fri, 06 Sep 2019 00:24:17 GMT
 ENV TOMCAT_NATIVE_LIBDIR=/usr/local/tomcat/native-jni-lib
-# Wed, 31 Jul 2019 22:08:25 GMT
+# Fri, 06 Sep 2019 00:24:18 GMT
 ENV LD_LIBRARY_PATH=/usr/local/tomcat/native-jni-lib
-# Wed, 31 Jul 2019 22:11:54 GMT
+# Fri, 06 Sep 2019 00:29:13 GMT
 ENV GPG_KEYS=05AB33110949707C93A279E3D3EFE6B686867BA6 07E48665A34DCAFAE522E5E6266191C37C037D42 47309207D818FFD8DCD3F83F1931D684307A10A5 541FBE7D8F78B25E055DDEE13C370389288584E7 61B832AC2F1C5A90F0F9B00A1C506407564C17A3 713DA88BE50911535FE716F5208B0AB1D63011C7 79F7026C690BAA50B92CD8B66A3AD3F4F22C4FED 9BA44C2621385CB966EBA586F72C284D731FABEE A27677289986DB50844682F8ACB77FC2E86E29AC A9C5DF4D22E99998D9875A5110C01C5A2F6059E7 DCFD35E0BF8CA7344752DE8B6FB21E8933C60243 F3A04C595DB5B6A5F1ECA43E3B7BBB100D811BBE F7DA48BB64BCB84ECBA7EE6935CD23C10D498E23
-# Wed, 31 Jul 2019 22:13:12 GMT
+# Fri, 06 Sep 2019 00:31:35 GMT
 ENV TOMCAT_MAJOR=7
-# Wed, 31 Jul 2019 22:13:12 GMT
+# Fri, 06 Sep 2019 00:31:37 GMT
 ENV TOMCAT_VERSION=7.0.96
-# Wed, 31 Jul 2019 22:13:13 GMT
+# Fri, 06 Sep 2019 00:31:38 GMT
 ENV TOMCAT_SHA512=a7ab7627ebafab8c5e5b1b09cff3a6e760f45dbc9b9ab235e14532357e47cf3bb6bbcfbdd92cd94561fe471296fd734d221ba8d59e1216a8369d2c39b1a80c98
-# Wed, 31 Jul 2019 22:14:22 GMT
+# Fri, 06 Sep 2019 00:33:18 GMT
 RUN set -eux; 		if ! command -v yumdb > /dev/null; then 		yum install -y yum-utils; 		yumdb set reason dep yum-utils; 	fi; 	if [ -f /etc/oracle-release ]; then 		yumdb set reason user filesystem; 	fi; 	_yum_install_temporary() { ( set -eu +x; 		local pkg todo=''; 		for pkg; do 			if ! rpm --query "$pkg" > /dev/null 2>&1; then 				todo="$todo $pkg"; 			fi; 		done; 		if [ -n "$todo" ]; then 			set -x; 			yum install -y $todo; 			yumdb set reason dep $todo; 		fi; 	) }; 	_yum_install_temporary gzip tar; 		ddist() { 		local f="$1"; shift; 		local distFile="$1"; shift; 		local success=; 		local distUrl=; 		for distUrl in 			'https://www.apache.org/dyn/closer.cgi?action=download&filename=' 			https://www-us.apache.org/dist/ 			https://www.apache.org/dist/ 			https://archive.apache.org/dist/ 		; do 			if curl -fL -o "$f" "$distUrl$distFile" && [ -s "$f" ]; then 				success=1; 				break; 			fi; 		done; 		[ -n "$success" ]; 	}; 		ddist 'tomcat.tar.gz' "tomcat/tomcat-$TOMCAT_MAJOR/v$TOMCAT_VERSION/bin/apache-tomcat-$TOMCAT_VERSION.tar.gz"; 	echo "$TOMCAT_SHA512 *tomcat.tar.gz" | sha512sum --strict --check -; 	ddist 'tomcat.tar.gz.asc' "tomcat/tomcat-$TOMCAT_MAJOR/v$TOMCAT_VERSION/bin/apache-tomcat-$TOMCAT_VERSION.tar.gz.asc"; 	export GNUPGHOME="$(mktemp -d)"; 	for key in $GPG_KEYS; do 		gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys "$key"; 	done; 	gpg --batch --verify tomcat.tar.gz.asc tomcat.tar.gz; 	tar -xf tomcat.tar.gz --strip-components=1; 	rm bin/*.bat; 	rm tomcat.tar.gz*; 	command -v gpgconf && gpgconf --kill all || :; 	rm -rf "$GNUPGHOME"; 		nativeBuildDir="$(mktemp -d)"; 	tar -xf bin/tomcat-native.tar.gz -C "$nativeBuildDir" --strip-components=1; 	_yum_install_temporary 		apr-devel 		gcc 		make 		openssl-devel 	; 	( 		export CATALINA_HOME="$PWD"; 		cd "$nativeBuildDir/native"; 		aprConfig="$(command -v apr-1-config)"; 		./configure 			--libdir="$TOMCAT_NATIVE_LIBDIR" 			--prefix="$CATALINA_HOME" 			--with-apr="$aprConfig" 			--with-java-home="$JAVA_HOME" 			--with-ssl=yes; 		make -j "$(nproc)"; 		make install; 	); 	rm -rf "$nativeBuildDir"; 	rm bin/tomcat-native.tar.gz; 		deps="$( 		find "$TOMCAT_NATIVE_LIBDIR" -type f -executable -exec ldd '{}' ';' 			| awk '/=>/ && $(NF-1) != "=>" { print $(NF-1) }' 			| sort -u 			| xargs -r rpm --query --whatprovides 			| sort -u 	)"; 	[ -z "$deps" ] || yumdb set reason user $deps; 		yum autoremove -y; 	yum clean all; 	rm -rf /var/cache/yum; 		find ./bin/ -name '*.sh' -exec sed -ri 's|^#!/bin/sh$|#!/usr/bin/env bash|' '{}' +; 		chmod -R +rX .; 	chmod 777 logs work
-# Wed, 31 Jul 2019 22:14:25 GMT
+# Fri, 06 Sep 2019 00:33:29 GMT
 RUN set -e 	&& nativeLines="$(catalina.sh configtest 2>&1)" 	&& nativeLines="$(echo "$nativeLines" | grep 'Apache Tomcat Native')" 	&& nativeLines="$(echo "$nativeLines" | sort -u)" 	&& if ! echo "$nativeLines" | grep 'INFO: Loaded APR based Apache Tomcat Native library' >&2; then 		echo >&2 "$nativeLines"; 		exit 1; 	fi
-# Wed, 31 Jul 2019 22:14:25 GMT
+# Fri, 06 Sep 2019 00:33:32 GMT
 EXPOSE 8080
-# Wed, 31 Jul 2019 22:14:25 GMT
+# Fri, 06 Sep 2019 00:33:35 GMT
 CMD ["catalina.sh" "run"]
 ```
 
 -	Layers:
-	-	`sha256:0c8ee56cea53bee75dce23897c1c0f77aa13a698e7b49d9f20c788cef45fadea`  
-		Last Modified: Thu, 23 May 2019 22:40:27 GMT  
-		Size: 62.5 MB (62453151 bytes)  
+	-	`sha256:e75eebfae1ce8742ae53a518590bca4735e2a5dbfa46418fa709591a7b42e522`  
+		Last Modified: Thu, 05 Sep 2019 20:43:10 GMT  
+		Size: 62.8 MB (62797593 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:269e06f3b7489c1b941db3fc6cf17c76a7bf613b18a6aeff9d25c7144b85ae6a`  
-		Last Modified: Tue, 30 Jul 2019 23:42:10 GMT  
-		Size: 104.9 MB (104888017 bytes)  
+	-	`sha256:825292fe21ae21fe00976ccad2471578d1a289980b1ea830f4e0ad1990422166`  
+		Last Modified: Thu, 05 Sep 2019 23:13:17 GMT  
+		Size: 104.9 MB (104911609 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c1a0e5239e6a06f59af8cf4b3646b582c250ec4bcd6c3ebc520395b4e288e047`  
-		Last Modified: Wed, 31 Jul 2019 22:15:34 GMT  
-		Size: 172.0 B  
+	-	`sha256:babaad70d6b41a7c0adfcbf58979816fb28f3415b9bc800fb9f306bed8742129`  
+		Last Modified: Fri, 06 Sep 2019 00:35:19 GMT  
+		Size: 171.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:cb239abef4ecd0fa4f61e835e5404504105af934c78966ba8786ed100be3f436`  
-		Last Modified: Wed, 31 Jul 2019 22:16:20 GMT  
-		Size: 12.9 MB (12860669 bytes)  
+	-	`sha256:fb113ccfb76f935854ec9d12c2cb33e4a3aa573377efb2abe4014d92155a400d`  
+		Last Modified: Fri, 06 Sep 2019 00:36:08 GMT  
+		Size: 12.9 MB (12879609 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:6207a8a39774de4254c8defe1cbcf7ea3912025b5db569afc195840fe7c4b2f9`  
-		Last Modified: Wed, 31 Jul 2019 22:16:17 GMT  
-		Size: 164.0 B  
+	-	`sha256:4ad9f835b689321c96e5f945dd764ab08b3920e1c5882319e2872fa57e74ee62`  
+		Last Modified: Fri, 06 Sep 2019 00:36:04 GMT  
+		Size: 162.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `tomcat:7.0-jdk8-openjdk`
@@ -4264,7 +4264,7 @@ CMD ["catalina.sh" "run"]
 ## `tomcat:7-jdk8-corretto`
 
 ```console
-$ docker pull tomcat@sha256:14e4e96c1e4c67ef8de1c2a065a068a0367d29841df81ddd7d85d37c8f7b8944
+$ docker pull tomcat@sha256:e4a139fa1724383e8f63c059d472fd3b4e76869440615732baf0ba51546b56ac
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -4275,175 +4275,175 @@ $ docker pull tomcat@sha256:14e4e96c1e4c67ef8de1c2a065a068a0367d29841df81ddd7d85
 ### `tomcat:7-jdk8-corretto` - linux; amd64
 
 ```console
-$ docker pull tomcat@sha256:ab1b06a2d4accc599ad4011e31fb7645b5629750fa6a1047c6e0be6906ac4940
+$ docker pull tomcat@sha256:e0e673635b65dc9626966e5537e51b65712e5f13ded2a2bcccbf7974545c74c6
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **195.6 MB (195641738 bytes)**  
+-	Total Size: **196.1 MB (196074926 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:79ac99279f7983c60d8fc086b8b203911552a468ed293f9abb743e52a46c15dc`
+-	Image ID: `sha256:56a3dd9519583b5ee8673d9616cf985dceafb2707f4dbe079cbb6cd235f89614`
 -	Default Command: `["catalina.sh","run"]`
 
 ```dockerfile
-# Thu, 23 May 2019 22:19:59 GMT
-ADD file:3cf811fe5073384ff1d5f405992ef7e5e452ad6d4a4cb873eee65007382f3a4a in / 
-# Thu, 23 May 2019 22:20:00 GMT
+# Thu, 05 Sep 2019 23:36:52 GMT
+ADD file:ee5d76cace83097841fd6a9fe1406be3e2176b9ec4de511cb5594bf959f9e657 in / 
+# Thu, 05 Sep 2019 23:36:53 GMT
 CMD ["/bin/bash"]
-# Tue, 30 Jul 2019 23:19:26 GMT
+# Fri, 06 Sep 2019 00:02:29 GMT
 ARG rpm_x64=java-1.8.0-amazon-corretto-devel-1.8.0_222.b10-1.x86_64.rpm
-# Tue, 30 Jul 2019 23:19:26 GMT
+# Fri, 06 Sep 2019 00:02:30 GMT
 ARG path_x64=https://d3pxv6yz143wms.cloudfront.net/8.222.10.1
-# Tue, 30 Jul 2019 23:19:26 GMT
+# Fri, 06 Sep 2019 00:02:30 GMT
 ARG key_x64=C554E802F4545B60919A0A87BD93DF06B540D62A
-# Tue, 30 Jul 2019 23:19:27 GMT
+# Fri, 06 Sep 2019 00:02:30 GMT
 ARG rpm_aarch64=java-1.8.0-amazon-corretto-devel-1.8.0_222.b10-4.aarch64.rpm
-# Tue, 30 Jul 2019 23:19:27 GMT
+# Fri, 06 Sep 2019 00:02:30 GMT
 ARG path_aarch64=https://d3pxv6yz143wms.cloudfront.net/8.222.10.4
-# Tue, 30 Jul 2019 23:19:27 GMT
+# Fri, 06 Sep 2019 00:02:30 GMT
 ARG key_aarch64=826272FACCCCC8E76897C26CE9B1F93E1A158134
-# Tue, 30 Jul 2019 23:19:47 GMT
+# Fri, 06 Sep 2019 00:02:52 GMT
 # ARGS: key_aarch64=826272FACCCCC8E76897C26CE9B1F93E1A158134 key_x64=C554E802F4545B60919A0A87BD93DF06B540D62A path_aarch64=https://d3pxv6yz143wms.cloudfront.net/8.222.10.4 path_x64=https://d3pxv6yz143wms.cloudfront.net/8.222.10.1 rpm_aarch64=java-1.8.0-amazon-corretto-devel-1.8.0_222.b10-4.aarch64.rpm rpm_x64=java-1.8.0-amazon-corretto-devel-1.8.0_222.b10-1.x86_64.rpm
 RUN set -eux;     case "$(uname -p)" in         x86_64) rpm=$rpm_x64; path=$path_x64; key=$key_x64 ;;         aarch64) rpm=$rpm_aarch64; path=$path_aarch64; key=$key_aarch64 ;;         *) echo >&2 "Unsupported architecture $(uname -p)."; exit 1 ;;     esac;         curl -O $path/$rpm     && export GNUPGHOME="$(mktemp -d)"     && gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys $key     && gpg --armor --export $key > corretto.asc     && rpm --import corretto.asc     && rpm -K $rpm     && rpm -i $rpm     && rm -r $GNUPGHOME corretto.asc $rpm     && yum install -y fontconfig     && yum clean all
-# Tue, 30 Jul 2019 23:19:47 GMT
+# Fri, 06 Sep 2019 00:02:52 GMT
 ENV JAVA_HOME=/usr/lib/jvm/java-1.8.0-amazon-corretto
-# Tue, 30 Jul 2019 23:39:00 GMT
+# Fri, 06 Sep 2019 00:22:16 GMT
 ENV CATALINA_HOME=/usr/local/tomcat
-# Tue, 30 Jul 2019 23:39:00 GMT
+# Fri, 06 Sep 2019 00:22:16 GMT
 ENV PATH=/usr/local/tomcat/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Tue, 30 Jul 2019 23:39:01 GMT
+# Fri, 06 Sep 2019 00:22:17 GMT
 RUN mkdir -p "$CATALINA_HOME"
-# Tue, 30 Jul 2019 23:39:01 GMT
+# Fri, 06 Sep 2019 00:22:17 GMT
 WORKDIR /usr/local/tomcat
-# Tue, 30 Jul 2019 23:39:01 GMT
+# Fri, 06 Sep 2019 00:22:17 GMT
 ENV TOMCAT_NATIVE_LIBDIR=/usr/local/tomcat/native-jni-lib
-# Tue, 30 Jul 2019 23:39:01 GMT
+# Fri, 06 Sep 2019 00:22:17 GMT
 ENV LD_LIBRARY_PATH=/usr/local/tomcat/native-jni-lib
-# Tue, 30 Jul 2019 23:42:57 GMT
+# Fri, 06 Sep 2019 00:26:36 GMT
 ENV GPG_KEYS=05AB33110949707C93A279E3D3EFE6B686867BA6 07E48665A34DCAFAE522E5E6266191C37C037D42 47309207D818FFD8DCD3F83F1931D684307A10A5 541FBE7D8F78B25E055DDEE13C370389288584E7 61B832AC2F1C5A90F0F9B00A1C506407564C17A3 713DA88BE50911535FE716F5208B0AB1D63011C7 79F7026C690BAA50B92CD8B66A3AD3F4F22C4FED 9BA44C2621385CB966EBA586F72C284D731FABEE A27677289986DB50844682F8ACB77FC2E86E29AC A9C5DF4D22E99998D9875A5110C01C5A2F6059E7 DCFD35E0BF8CA7344752DE8B6FB21E8933C60243 F3A04C595DB5B6A5F1ECA43E3B7BBB100D811BBE F7DA48BB64BCB84ECBA7EE6935CD23C10D498E23
-# Tue, 30 Jul 2019 23:44:49 GMT
+# Fri, 06 Sep 2019 00:28:35 GMT
 ENV TOMCAT_MAJOR=7
-# Tue, 30 Jul 2019 23:44:49 GMT
+# Fri, 06 Sep 2019 00:28:35 GMT
 ENV TOMCAT_VERSION=7.0.96
-# Tue, 30 Jul 2019 23:44:49 GMT
+# Fri, 06 Sep 2019 00:28:35 GMT
 ENV TOMCAT_SHA512=a7ab7627ebafab8c5e5b1b09cff3a6e760f45dbc9b9ab235e14532357e47cf3bb6bbcfbdd92cd94561fe471296fd734d221ba8d59e1216a8369d2c39b1a80c98
-# Tue, 30 Jul 2019 23:46:22 GMT
+# Fri, 06 Sep 2019 00:30:07 GMT
 RUN set -eux; 		if ! command -v yumdb > /dev/null; then 		yum install -y yum-utils; 		yumdb set reason dep yum-utils; 	fi; 	if [ -f /etc/oracle-release ]; then 		yumdb set reason user filesystem; 	fi; 	_yum_install_temporary() { ( set -eu +x; 		local pkg todo=''; 		for pkg; do 			if ! rpm --query "$pkg" > /dev/null 2>&1; then 				todo="$todo $pkg"; 			fi; 		done; 		if [ -n "$todo" ]; then 			set -x; 			yum install -y $todo; 			yumdb set reason dep $todo; 		fi; 	) }; 	_yum_install_temporary gzip tar; 		ddist() { 		local f="$1"; shift; 		local distFile="$1"; shift; 		local success=; 		local distUrl=; 		for distUrl in 			'https://www.apache.org/dyn/closer.cgi?action=download&filename=' 			https://www-us.apache.org/dist/ 			https://www.apache.org/dist/ 			https://archive.apache.org/dist/ 		; do 			if curl -fL -o "$f" "$distUrl$distFile" && [ -s "$f" ]; then 				success=1; 				break; 			fi; 		done; 		[ -n "$success" ]; 	}; 		ddist 'tomcat.tar.gz' "tomcat/tomcat-$TOMCAT_MAJOR/v$TOMCAT_VERSION/bin/apache-tomcat-$TOMCAT_VERSION.tar.gz"; 	echo "$TOMCAT_SHA512 *tomcat.tar.gz" | sha512sum --strict --check -; 	ddist 'tomcat.tar.gz.asc' "tomcat/tomcat-$TOMCAT_MAJOR/v$TOMCAT_VERSION/bin/apache-tomcat-$TOMCAT_VERSION.tar.gz.asc"; 	export GNUPGHOME="$(mktemp -d)"; 	for key in $GPG_KEYS; do 		gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys "$key"; 	done; 	gpg --batch --verify tomcat.tar.gz.asc tomcat.tar.gz; 	tar -xf tomcat.tar.gz --strip-components=1; 	rm bin/*.bat; 	rm tomcat.tar.gz*; 	command -v gpgconf && gpgconf --kill all || :; 	rm -rf "$GNUPGHOME"; 		nativeBuildDir="$(mktemp -d)"; 	tar -xf bin/tomcat-native.tar.gz -C "$nativeBuildDir" --strip-components=1; 	_yum_install_temporary 		apr-devel 		gcc 		make 		openssl-devel 	; 	( 		export CATALINA_HOME="$PWD"; 		cd "$nativeBuildDir/native"; 		aprConfig="$(command -v apr-1-config)"; 		./configure 			--libdir="$TOMCAT_NATIVE_LIBDIR" 			--prefix="$CATALINA_HOME" 			--with-apr="$aprConfig" 			--with-java-home="$JAVA_HOME" 			--with-ssl=yes; 		make -j "$(nproc)"; 		make install; 	); 	rm -rf "$nativeBuildDir"; 	rm bin/tomcat-native.tar.gz; 		deps="$( 		find "$TOMCAT_NATIVE_LIBDIR" -type f -executable -exec ldd '{}' ';' 			| awk '/=>/ && $(NF-1) != "=>" { print $(NF-1) }' 			| sort -u 			| xargs -r rpm --query --whatprovides 			| sort -u 	)"; 	[ -z "$deps" ] || yumdb set reason user $deps; 		yum autoremove -y; 	yum clean all; 	rm -rf /var/cache/yum; 		find ./bin/ -name '*.sh' -exec sed -ri 's|^#!/bin/sh$|#!/usr/bin/env bash|' '{}' +; 		chmod -R +rX .; 	chmod 777 logs work
-# Tue, 30 Jul 2019 23:46:23 GMT
+# Fri, 06 Sep 2019 00:30:09 GMT
 RUN set -e 	&& nativeLines="$(catalina.sh configtest 2>&1)" 	&& nativeLines="$(echo "$nativeLines" | grep 'Apache Tomcat Native')" 	&& nativeLines="$(echo "$nativeLines" | sort -u)" 	&& if ! echo "$nativeLines" | grep 'INFO: Loaded APR based Apache Tomcat Native library' >&2; then 		echo >&2 "$nativeLines"; 		exit 1; 	fi
-# Tue, 30 Jul 2019 23:46:23 GMT
+# Fri, 06 Sep 2019 00:30:09 GMT
 EXPOSE 8080
-# Tue, 30 Jul 2019 23:46:24 GMT
+# Fri, 06 Sep 2019 00:30:09 GMT
 CMD ["catalina.sh" "run"]
 ```
 
 -	Layers:
-	-	`sha256:72d97abdfae3b3c933ff41e39779cc72853d7bd9dc1e4800c5294d6715257799`  
-		Last Modified: Thu, 23 May 2019 22:22:16 GMT  
-		Size: 61.3 MB (61285177 bytes)  
+	-	`sha256:4910da0c66710ed2414cd0223e48cbeed94209b9c77053dc30d48532a651dd22`  
+		Last Modified: Thu, 05 Sep 2019 23:38:39 GMT  
+		Size: 61.7 MB (61665831 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c13d17f3a543055e7f616629ad6825d21746252d0b8db4f1812c86b11e3fdc96`  
-		Last Modified: Tue, 30 Jul 2019 23:20:57 GMT  
-		Size: 121.5 MB (121482783 bytes)  
+	-	`sha256:c511e36daa9ce76f573699dfe6fabfac82254067f5ff99f2049f99d176ec919d`  
+		Last Modified: Fri, 06 Sep 2019 00:03:50 GMT  
+		Size: 121.5 MB (121533245 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:34afcacfc487c55714cfc7e34c35abe51c1a26be56d268883ecc929fa305f714`  
-		Last Modified: Tue, 30 Jul 2019 23:47:26 GMT  
-		Size: 139.0 B  
+	-	`sha256:fb8769d09d3f4236a9a84b65d19abf678fdd45df105a6e62a3924404dafa15af`  
+		Last Modified: Fri, 06 Sep 2019 00:31:09 GMT  
+		Size: 138.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:19f8a89f7e230b068f6eb3f15b879a2bbecd175077985c3d659c5a78ede40a9c`  
-		Last Modified: Tue, 30 Jul 2019 23:47:58 GMT  
-		Size: 12.9 MB (12873510 bytes)  
+	-	`sha256:faece2fe87b9878321242ff2504a86c2a7e9318fa729bbd05260dfd305d0c04b`  
+		Last Modified: Fri, 06 Sep 2019 00:31:37 GMT  
+		Size: 12.9 MB (12875582 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:eaad7a5394dadfab285a16fdfb51294e6215713e57202bb9122740a54bc31187`  
-		Last Modified: Tue, 30 Jul 2019 23:47:55 GMT  
-		Size: 129.0 B  
+	-	`sha256:c0803514d5958764f4e59c5d309a3c2b387f9cd0786cec8b0ac4d6cc2ee134d3`  
+		Last Modified: Fri, 06 Sep 2019 00:31:35 GMT  
+		Size: 130.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `tomcat:7-jdk8-corretto` - linux; arm64 variant v8
 
 ```console
-$ docker pull tomcat@sha256:b4dc5465f3380f2a2e7243a16700f24cd16e5b2eb38729aee01113d3403483be
+$ docker pull tomcat@sha256:07ba0b124795c1efe8b7d65a251c1a78119a18a6a877c8007f22cd18388ec3c7
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **180.2 MB (180202173 bytes)**  
+-	Total Size: **180.6 MB (180589144 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:5fe93165eeb2bcda0c1974a0f8642b7c81ad5eb36860a6c58e5196a782d9b1f4`
+-	Image ID: `sha256:530971f4f34a1d32a3e08cbf6e926a6b8f0a2bd0b2d167a89375a595e58a2ef0`
 -	Default Command: `["catalina.sh","run"]`
 
 ```dockerfile
-# Thu, 23 May 2019 22:39:34 GMT
-ADD file:358a4a50e1cb5e7181b9cc49d23e60d7b0ba5ca2ce18ced74be5843836d54004 in / 
-# Thu, 23 May 2019 22:39:35 GMT
+# Thu, 05 Sep 2019 20:39:50 GMT
+ADD file:a72ff266718add2a5d4d63264fd3ce1f5191448aa441ffdb064ed570a651b36a in / 
+# Thu, 05 Sep 2019 20:39:51 GMT
 CMD ["/bin/bash"]
-# Tue, 30 Jul 2019 23:39:26 GMT
+# Thu, 05 Sep 2019 23:11:35 GMT
 ARG rpm_x64=java-1.8.0-amazon-corretto-devel-1.8.0_222.b10-1.x86_64.rpm
-# Tue, 30 Jul 2019 23:39:27 GMT
+# Thu, 05 Sep 2019 23:11:35 GMT
 ARG path_x64=https://d3pxv6yz143wms.cloudfront.net/8.222.10.1
-# Tue, 30 Jul 2019 23:39:27 GMT
+# Thu, 05 Sep 2019 23:11:35 GMT
 ARG key_x64=C554E802F4545B60919A0A87BD93DF06B540D62A
-# Tue, 30 Jul 2019 23:39:27 GMT
+# Thu, 05 Sep 2019 23:11:36 GMT
 ARG rpm_aarch64=java-1.8.0-amazon-corretto-devel-1.8.0_222.b10-4.aarch64.rpm
-# Tue, 30 Jul 2019 23:39:28 GMT
+# Thu, 05 Sep 2019 23:11:36 GMT
 ARG path_aarch64=https://d3pxv6yz143wms.cloudfront.net/8.222.10.4
-# Tue, 30 Jul 2019 23:39:28 GMT
+# Thu, 05 Sep 2019 23:11:36 GMT
 ARG key_aarch64=826272FACCCCC8E76897C26CE9B1F93E1A158134
-# Tue, 30 Jul 2019 23:40:33 GMT
+# Thu, 05 Sep 2019 23:12:00 GMT
 # ARGS: key_aarch64=826272FACCCCC8E76897C26CE9B1F93E1A158134 key_x64=C554E802F4545B60919A0A87BD93DF06B540D62A path_aarch64=https://d3pxv6yz143wms.cloudfront.net/8.222.10.4 path_x64=https://d3pxv6yz143wms.cloudfront.net/8.222.10.1 rpm_aarch64=java-1.8.0-amazon-corretto-devel-1.8.0_222.b10-4.aarch64.rpm rpm_x64=java-1.8.0-amazon-corretto-devel-1.8.0_222.b10-1.x86_64.rpm
 RUN set -eux;     case "$(uname -p)" in         x86_64) rpm=$rpm_x64; path=$path_x64; key=$key_x64 ;;         aarch64) rpm=$rpm_aarch64; path=$path_aarch64; key=$key_aarch64 ;;         *) echo >&2 "Unsupported architecture $(uname -p)."; exit 1 ;;     esac;         curl -O $path/$rpm     && export GNUPGHOME="$(mktemp -d)"     && gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys $key     && gpg --armor --export $key > corretto.asc     && rpm --import corretto.asc     && rpm -K $rpm     && rpm -i $rpm     && rm -r $GNUPGHOME corretto.asc $rpm     && yum install -y fontconfig     && yum clean all
-# Tue, 30 Jul 2019 23:40:34 GMT
+# Thu, 05 Sep 2019 23:12:01 GMT
 ENV JAVA_HOME=/usr/lib/jvm/java-1.8.0-amazon-corretto
-# Wed, 31 Jul 2019 22:08:23 GMT
+# Fri, 06 Sep 2019 00:24:08 GMT
 ENV CATALINA_HOME=/usr/local/tomcat
-# Wed, 31 Jul 2019 22:08:23 GMT
+# Fri, 06 Sep 2019 00:24:09 GMT
 ENV PATH=/usr/local/tomcat/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Wed, 31 Jul 2019 22:08:24 GMT
+# Fri, 06 Sep 2019 00:24:12 GMT
 RUN mkdir -p "$CATALINA_HOME"
-# Wed, 31 Jul 2019 22:08:25 GMT
+# Fri, 06 Sep 2019 00:24:16 GMT
 WORKDIR /usr/local/tomcat
-# Wed, 31 Jul 2019 22:08:25 GMT
+# Fri, 06 Sep 2019 00:24:17 GMT
 ENV TOMCAT_NATIVE_LIBDIR=/usr/local/tomcat/native-jni-lib
-# Wed, 31 Jul 2019 22:08:25 GMT
+# Fri, 06 Sep 2019 00:24:18 GMT
 ENV LD_LIBRARY_PATH=/usr/local/tomcat/native-jni-lib
-# Wed, 31 Jul 2019 22:11:54 GMT
+# Fri, 06 Sep 2019 00:29:13 GMT
 ENV GPG_KEYS=05AB33110949707C93A279E3D3EFE6B686867BA6 07E48665A34DCAFAE522E5E6266191C37C037D42 47309207D818FFD8DCD3F83F1931D684307A10A5 541FBE7D8F78B25E055DDEE13C370389288584E7 61B832AC2F1C5A90F0F9B00A1C506407564C17A3 713DA88BE50911535FE716F5208B0AB1D63011C7 79F7026C690BAA50B92CD8B66A3AD3F4F22C4FED 9BA44C2621385CB966EBA586F72C284D731FABEE A27677289986DB50844682F8ACB77FC2E86E29AC A9C5DF4D22E99998D9875A5110C01C5A2F6059E7 DCFD35E0BF8CA7344752DE8B6FB21E8933C60243 F3A04C595DB5B6A5F1ECA43E3B7BBB100D811BBE F7DA48BB64BCB84ECBA7EE6935CD23C10D498E23
-# Wed, 31 Jul 2019 22:13:12 GMT
+# Fri, 06 Sep 2019 00:31:35 GMT
 ENV TOMCAT_MAJOR=7
-# Wed, 31 Jul 2019 22:13:12 GMT
+# Fri, 06 Sep 2019 00:31:37 GMT
 ENV TOMCAT_VERSION=7.0.96
-# Wed, 31 Jul 2019 22:13:13 GMT
+# Fri, 06 Sep 2019 00:31:38 GMT
 ENV TOMCAT_SHA512=a7ab7627ebafab8c5e5b1b09cff3a6e760f45dbc9b9ab235e14532357e47cf3bb6bbcfbdd92cd94561fe471296fd734d221ba8d59e1216a8369d2c39b1a80c98
-# Wed, 31 Jul 2019 22:14:22 GMT
+# Fri, 06 Sep 2019 00:33:18 GMT
 RUN set -eux; 		if ! command -v yumdb > /dev/null; then 		yum install -y yum-utils; 		yumdb set reason dep yum-utils; 	fi; 	if [ -f /etc/oracle-release ]; then 		yumdb set reason user filesystem; 	fi; 	_yum_install_temporary() { ( set -eu +x; 		local pkg todo=''; 		for pkg; do 			if ! rpm --query "$pkg" > /dev/null 2>&1; then 				todo="$todo $pkg"; 			fi; 		done; 		if [ -n "$todo" ]; then 			set -x; 			yum install -y $todo; 			yumdb set reason dep $todo; 		fi; 	) }; 	_yum_install_temporary gzip tar; 		ddist() { 		local f="$1"; shift; 		local distFile="$1"; shift; 		local success=; 		local distUrl=; 		for distUrl in 			'https://www.apache.org/dyn/closer.cgi?action=download&filename=' 			https://www-us.apache.org/dist/ 			https://www.apache.org/dist/ 			https://archive.apache.org/dist/ 		; do 			if curl -fL -o "$f" "$distUrl$distFile" && [ -s "$f" ]; then 				success=1; 				break; 			fi; 		done; 		[ -n "$success" ]; 	}; 		ddist 'tomcat.tar.gz' "tomcat/tomcat-$TOMCAT_MAJOR/v$TOMCAT_VERSION/bin/apache-tomcat-$TOMCAT_VERSION.tar.gz"; 	echo "$TOMCAT_SHA512 *tomcat.tar.gz" | sha512sum --strict --check -; 	ddist 'tomcat.tar.gz.asc' "tomcat/tomcat-$TOMCAT_MAJOR/v$TOMCAT_VERSION/bin/apache-tomcat-$TOMCAT_VERSION.tar.gz.asc"; 	export GNUPGHOME="$(mktemp -d)"; 	for key in $GPG_KEYS; do 		gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys "$key"; 	done; 	gpg --batch --verify tomcat.tar.gz.asc tomcat.tar.gz; 	tar -xf tomcat.tar.gz --strip-components=1; 	rm bin/*.bat; 	rm tomcat.tar.gz*; 	command -v gpgconf && gpgconf --kill all || :; 	rm -rf "$GNUPGHOME"; 		nativeBuildDir="$(mktemp -d)"; 	tar -xf bin/tomcat-native.tar.gz -C "$nativeBuildDir" --strip-components=1; 	_yum_install_temporary 		apr-devel 		gcc 		make 		openssl-devel 	; 	( 		export CATALINA_HOME="$PWD"; 		cd "$nativeBuildDir/native"; 		aprConfig="$(command -v apr-1-config)"; 		./configure 			--libdir="$TOMCAT_NATIVE_LIBDIR" 			--prefix="$CATALINA_HOME" 			--with-apr="$aprConfig" 			--with-java-home="$JAVA_HOME" 			--with-ssl=yes; 		make -j "$(nproc)"; 		make install; 	); 	rm -rf "$nativeBuildDir"; 	rm bin/tomcat-native.tar.gz; 		deps="$( 		find "$TOMCAT_NATIVE_LIBDIR" -type f -executable -exec ldd '{}' ';' 			| awk '/=>/ && $(NF-1) != "=>" { print $(NF-1) }' 			| sort -u 			| xargs -r rpm --query --whatprovides 			| sort -u 	)"; 	[ -z "$deps" ] || yumdb set reason user $deps; 		yum autoremove -y; 	yum clean all; 	rm -rf /var/cache/yum; 		find ./bin/ -name '*.sh' -exec sed -ri 's|^#!/bin/sh$|#!/usr/bin/env bash|' '{}' +; 		chmod -R +rX .; 	chmod 777 logs work
-# Wed, 31 Jul 2019 22:14:25 GMT
+# Fri, 06 Sep 2019 00:33:29 GMT
 RUN set -e 	&& nativeLines="$(catalina.sh configtest 2>&1)" 	&& nativeLines="$(echo "$nativeLines" | grep 'Apache Tomcat Native')" 	&& nativeLines="$(echo "$nativeLines" | sort -u)" 	&& if ! echo "$nativeLines" | grep 'INFO: Loaded APR based Apache Tomcat Native library' >&2; then 		echo >&2 "$nativeLines"; 		exit 1; 	fi
-# Wed, 31 Jul 2019 22:14:25 GMT
+# Fri, 06 Sep 2019 00:33:32 GMT
 EXPOSE 8080
-# Wed, 31 Jul 2019 22:14:25 GMT
+# Fri, 06 Sep 2019 00:33:35 GMT
 CMD ["catalina.sh" "run"]
 ```
 
 -	Layers:
-	-	`sha256:0c8ee56cea53bee75dce23897c1c0f77aa13a698e7b49d9f20c788cef45fadea`  
-		Last Modified: Thu, 23 May 2019 22:40:27 GMT  
-		Size: 62.5 MB (62453151 bytes)  
+	-	`sha256:e75eebfae1ce8742ae53a518590bca4735e2a5dbfa46418fa709591a7b42e522`  
+		Last Modified: Thu, 05 Sep 2019 20:43:10 GMT  
+		Size: 62.8 MB (62797593 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:269e06f3b7489c1b941db3fc6cf17c76a7bf613b18a6aeff9d25c7144b85ae6a`  
-		Last Modified: Tue, 30 Jul 2019 23:42:10 GMT  
-		Size: 104.9 MB (104888017 bytes)  
+	-	`sha256:825292fe21ae21fe00976ccad2471578d1a289980b1ea830f4e0ad1990422166`  
+		Last Modified: Thu, 05 Sep 2019 23:13:17 GMT  
+		Size: 104.9 MB (104911609 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c1a0e5239e6a06f59af8cf4b3646b582c250ec4bcd6c3ebc520395b4e288e047`  
-		Last Modified: Wed, 31 Jul 2019 22:15:34 GMT  
-		Size: 172.0 B  
+	-	`sha256:babaad70d6b41a7c0adfcbf58979816fb28f3415b9bc800fb9f306bed8742129`  
+		Last Modified: Fri, 06 Sep 2019 00:35:19 GMT  
+		Size: 171.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:cb239abef4ecd0fa4f61e835e5404504105af934c78966ba8786ed100be3f436`  
-		Last Modified: Wed, 31 Jul 2019 22:16:20 GMT  
-		Size: 12.9 MB (12860669 bytes)  
+	-	`sha256:fb113ccfb76f935854ec9d12c2cb33e4a3aa573377efb2abe4014d92155a400d`  
+		Last Modified: Fri, 06 Sep 2019 00:36:08 GMT  
+		Size: 12.9 MB (12879609 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:6207a8a39774de4254c8defe1cbcf7ea3912025b5db569afc195840fe7c4b2f9`  
-		Last Modified: Wed, 31 Jul 2019 22:16:17 GMT  
-		Size: 164.0 B  
+	-	`sha256:4ad9f835b689321c96e5f945dd764ab08b3920e1c5882319e2872fa57e74ee62`  
+		Last Modified: Fri, 06 Sep 2019 00:36:04 GMT  
+		Size: 162.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `tomcat:7-jdk8-openjdk`
@@ -6158,7 +6158,7 @@ CMD ["catalina.sh" "run"]
 ## `tomcat:8.5.45-jdk11-corretto`
 
 ```console
-$ docker pull tomcat@sha256:ff823bf0954a53e6a64cb38e069525ce0c9fb57724ae400af3dada39ab6cbcfa
+$ docker pull tomcat@sha256:37d2705ddd76c8df76a38dd43092895258c4b11ad4aa0838ed84f53830a17cea
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -6169,175 +6169,175 @@ $ docker pull tomcat@sha256:ff823bf0954a53e6a64cb38e069525ce0c9fb57724ae400af3da
 ### `tomcat:8.5.45-jdk11-corretto` - linux; amd64
 
 ```console
-$ docker pull tomcat@sha256:de0387ad59034af7b97e6962f0dd518e0e36f751bb104d3896fcd49319cdebc9
+$ docker pull tomcat@sha256:ac290e29b2ac130c06dfb446b17039a84c934f6deaf3b3db97a11e14b3ef102d
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **271.7 MB (271694682 bytes)**  
+-	Total Size: **272.1 MB (272139725 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:16dcb5719526715fdf7a9dc6c61bbe31ef822d087b3b99cb6e2c207280c6de13`
+-	Image ID: `sha256:568dc9e9bb09e77e29137ec7b065e474d78c75e956832b471878b3f0d4eef706`
 -	Default Command: `["catalina.sh","run"]`
 
 ```dockerfile
-# Thu, 23 May 2019 22:19:59 GMT
-ADD file:3cf811fe5073384ff1d5f405992ef7e5e452ad6d4a4cb873eee65007382f3a4a in / 
-# Thu, 23 May 2019 22:20:00 GMT
+# Thu, 05 Sep 2019 23:36:52 GMT
+ADD file:ee5d76cace83097841fd6a9fe1406be3e2176b9ec4de511cb5594bf959f9e657 in / 
+# Thu, 05 Sep 2019 23:36:53 GMT
 CMD ["/bin/bash"]
-# Tue, 30 Jul 2019 23:19:53 GMT
+# Fri, 06 Sep 2019 00:02:57 GMT
 ARG rpm_x64=java-11-amazon-corretto-devel-11.0.4.11-1.x86_64.rpm
-# Tue, 30 Jul 2019 23:19:53 GMT
+# Fri, 06 Sep 2019 00:02:58 GMT
 ARG path_x64=https://d3pxv6yz143wms.cloudfront.net/11.0.4.11.1
-# Tue, 30 Jul 2019 23:19:53 GMT
+# Fri, 06 Sep 2019 00:02:58 GMT
 ARG key_x64=4FF3DA639731F095833505A25A812B5B67F4FCB4
-# Tue, 30 Jul 2019 23:19:54 GMT
+# Fri, 06 Sep 2019 00:02:58 GMT
 ARG rpm_aarch64=java-11-amazon-corretto-devel-11.0.4.11-1.aarch64.rpm
-# Tue, 30 Jul 2019 23:19:54 GMT
+# Fri, 06 Sep 2019 00:02:58 GMT
 ARG path_aarch64=https://d3pxv6yz143wms.cloudfront.net/11.0.4.11.1
-# Tue, 30 Jul 2019 23:19:54 GMT
+# Fri, 06 Sep 2019 00:02:58 GMT
 ARG key_aarch64=4FF3DA639731F095833505A25A812B5B67F4FCB4
-# Tue, 30 Jul 2019 23:20:17 GMT
+# Fri, 06 Sep 2019 00:03:23 GMT
 # ARGS: key_aarch64=4FF3DA639731F095833505A25A812B5B67F4FCB4 key_x64=4FF3DA639731F095833505A25A812B5B67F4FCB4 path_aarch64=https://d3pxv6yz143wms.cloudfront.net/11.0.4.11.1 path_x64=https://d3pxv6yz143wms.cloudfront.net/11.0.4.11.1 rpm_aarch64=java-11-amazon-corretto-devel-11.0.4.11-1.aarch64.rpm rpm_x64=java-11-amazon-corretto-devel-11.0.4.11-1.x86_64.rpm
 RUN set -eux;     case "$(uname -p)" in         x86_64) rpm=$rpm_x64; path=$path_x64; key=$key_x64 ;;         aarch64) rpm=$rpm_aarch64; path=$path_aarch64; key=$key_aarch64 ;;         *) echo >&2 "Unsupported architecture $(uname -p)."; exit 1 ;;     esac;         curl -O $path/$rpm     && export GNUPGHOME="$(mktemp -d)"     && gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys $key     && gpg --armor --export $key > corretto.asc     && rpm --import corretto.asc     && rpm -K $rpm     && rpm -i $rpm     && rm -r $GNUPGHOME corretto.asc $rpm     && yum install -y fontconfig     && yum clean all
-# Tue, 30 Jul 2019 23:20:17 GMT
+# Fri, 06 Sep 2019 00:03:23 GMT
 ENV JAVA_HOME=/usr/lib/jvm/java-11-amazon-corretto
-# Tue, 30 Jul 2019 23:37:08 GMT
+# Fri, 06 Sep 2019 00:20:17 GMT
 ENV CATALINA_HOME=/usr/local/tomcat
-# Tue, 30 Jul 2019 23:37:08 GMT
+# Fri, 06 Sep 2019 00:20:17 GMT
 ENV PATH=/usr/local/tomcat/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Tue, 30 Jul 2019 23:37:09 GMT
+# Fri, 06 Sep 2019 00:20:18 GMT
 RUN mkdir -p "$CATALINA_HOME"
-# Tue, 30 Jul 2019 23:37:09 GMT
+# Fri, 06 Sep 2019 00:20:18 GMT
 WORKDIR /usr/local/tomcat
-# Tue, 30 Jul 2019 23:37:09 GMT
+# Fri, 06 Sep 2019 00:20:18 GMT
 ENV TOMCAT_NATIVE_LIBDIR=/usr/local/tomcat/native-jni-lib
-# Tue, 30 Jul 2019 23:37:09 GMT
+# Fri, 06 Sep 2019 00:20:18 GMT
 ENV LD_LIBRARY_PATH=/usr/local/tomcat/native-jni-lib
-# Tue, 30 Jul 2019 23:41:03 GMT
+# Fri, 06 Sep 2019 00:24:31 GMT
 ENV GPG_KEYS=05AB33110949707C93A279E3D3EFE6B686867BA6 07E48665A34DCAFAE522E5E6266191C37C037D42 47309207D818FFD8DCD3F83F1931D684307A10A5 541FBE7D8F78B25E055DDEE13C370389288584E7 61B832AC2F1C5A90F0F9B00A1C506407564C17A3 713DA88BE50911535FE716F5208B0AB1D63011C7 79F7026C690BAA50B92CD8B66A3AD3F4F22C4FED 9BA44C2621385CB966EBA586F72C284D731FABEE A27677289986DB50844682F8ACB77FC2E86E29AC A9C5DF4D22E99998D9875A5110C01C5A2F6059E7 DCFD35E0BF8CA7344752DE8B6FB21E8933C60243 F3A04C595DB5B6A5F1ECA43E3B7BBB100D811BBE F7DA48BB64BCB84ECBA7EE6935CD23C10D498E23
-# Tue, 30 Jul 2019 23:41:03 GMT
+# Fri, 06 Sep 2019 00:24:32 GMT
 ENV TOMCAT_MAJOR=8
-# Thu, 22 Aug 2019 00:24:10 GMT
+# Fri, 06 Sep 2019 00:24:32 GMT
 ENV TOMCAT_VERSION=8.5.45
-# Thu, 22 Aug 2019 00:24:10 GMT
+# Fri, 06 Sep 2019 00:24:32 GMT
 ENV TOMCAT_SHA512=4276a97b91aad204b393578b11266adff9fc5595ec5b0e0818b9343c9b741969bc162ae6933099799ab6c49f3ccb02ccb9bbf7df71e83832ef623a3ee6bee25a
-# Thu, 22 Aug 2019 00:25:48 GMT
+# Fri, 06 Sep 2019 00:26:07 GMT
 RUN set -eux; 		if ! command -v yumdb > /dev/null; then 		yum install -y yum-utils; 		yumdb set reason dep yum-utils; 	fi; 	if [ -f /etc/oracle-release ]; then 		yumdb set reason user filesystem; 	fi; 	_yum_install_temporary() { ( set -eu +x; 		local pkg todo=''; 		for pkg; do 			if ! rpm --query "$pkg" > /dev/null 2>&1; then 				todo="$todo $pkg"; 			fi; 		done; 		if [ -n "$todo" ]; then 			set -x; 			yum install -y $todo; 			yumdb set reason dep $todo; 		fi; 	) }; 	_yum_install_temporary gzip tar; 		ddist() { 		local f="$1"; shift; 		local distFile="$1"; shift; 		local success=; 		local distUrl=; 		for distUrl in 			'https://www.apache.org/dyn/closer.cgi?action=download&filename=' 			https://www-us.apache.org/dist/ 			https://www.apache.org/dist/ 			https://archive.apache.org/dist/ 		; do 			if curl -fL -o "$f" "$distUrl$distFile" && [ -s "$f" ]; then 				success=1; 				break; 			fi; 		done; 		[ -n "$success" ]; 	}; 		ddist 'tomcat.tar.gz' "tomcat/tomcat-$TOMCAT_MAJOR/v$TOMCAT_VERSION/bin/apache-tomcat-$TOMCAT_VERSION.tar.gz"; 	echo "$TOMCAT_SHA512 *tomcat.tar.gz" | sha512sum --strict --check -; 	ddist 'tomcat.tar.gz.asc' "tomcat/tomcat-$TOMCAT_MAJOR/v$TOMCAT_VERSION/bin/apache-tomcat-$TOMCAT_VERSION.tar.gz.asc"; 	export GNUPGHOME="$(mktemp -d)"; 	for key in $GPG_KEYS; do 		gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys "$key"; 	done; 	gpg --batch --verify tomcat.tar.gz.asc tomcat.tar.gz; 	tar -xf tomcat.tar.gz --strip-components=1; 	rm bin/*.bat; 	rm tomcat.tar.gz*; 	command -v gpgconf && gpgconf --kill all || :; 	rm -rf "$GNUPGHOME"; 		nativeBuildDir="$(mktemp -d)"; 	tar -xf bin/tomcat-native.tar.gz -C "$nativeBuildDir" --strip-components=1; 	_yum_install_temporary 		apr-devel 		gcc 		make 		openssl-devel 	; 	( 		export CATALINA_HOME="$PWD"; 		cd "$nativeBuildDir/native"; 		aprConfig="$(command -v apr-1-config)"; 		./configure 			--libdir="$TOMCAT_NATIVE_LIBDIR" 			--prefix="$CATALINA_HOME" 			--with-apr="$aprConfig" 			--with-java-home="$JAVA_HOME" 			--with-ssl=yes; 		make -j "$(nproc)"; 		make install; 	); 	rm -rf "$nativeBuildDir"; 	rm bin/tomcat-native.tar.gz; 		deps="$( 		find "$TOMCAT_NATIVE_LIBDIR" -type f -executable -exec ldd '{}' ';' 			| awk '/=>/ && $(NF-1) != "=>" { print $(NF-1) }' 			| sort -u 			| xargs -r rpm --query --whatprovides 			| sort -u 	)"; 	[ -z "$deps" ] || yumdb set reason user $deps; 		yum autoremove -y; 	yum clean all; 	rm -rf /var/cache/yum; 		find ./bin/ -name '*.sh' -exec sed -ri 's|^#!/bin/sh$|#!/usr/bin/env bash|' '{}' +; 		chmod -R +rX .; 	chmod 777 logs work
-# Thu, 22 Aug 2019 00:25:51 GMT
+# Fri, 06 Sep 2019 00:26:10 GMT
 RUN set -e 	&& nativeLines="$(catalina.sh configtest 2>&1)" 	&& nativeLines="$(echo "$nativeLines" | grep 'Apache Tomcat Native')" 	&& nativeLines="$(echo "$nativeLines" | sort -u)" 	&& if ! echo "$nativeLines" | grep 'INFO: Loaded APR based Apache Tomcat Native library' >&2; then 		echo >&2 "$nativeLines"; 		exit 1; 	fi
-# Thu, 22 Aug 2019 00:25:51 GMT
+# Fri, 06 Sep 2019 00:26:10 GMT
 EXPOSE 8080
-# Thu, 22 Aug 2019 00:25:51 GMT
+# Fri, 06 Sep 2019 00:26:10 GMT
 CMD ["catalina.sh" "run"]
 ```
 
 -	Layers:
-	-	`sha256:72d97abdfae3b3c933ff41e39779cc72853d7bd9dc1e4800c5294d6715257799`  
-		Last Modified: Thu, 23 May 2019 22:22:16 GMT  
-		Size: 61.3 MB (61285177 bytes)  
+	-	`sha256:4910da0c66710ed2414cd0223e48cbeed94209b9c77053dc30d48532a651dd22`  
+		Last Modified: Thu, 05 Sep 2019 23:38:39 GMT  
+		Size: 61.7 MB (61665831 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:4f58afb139384717c6be8d8ba2803caf676e6d7fe750302d138bf13983df50b9`  
-		Last Modified: Tue, 30 Jul 2019 23:21:22 GMT  
-		Size: 197.0 MB (196988921 bytes)  
+	-	`sha256:b9d1840374efc595eade77260f8573765a51ccb6ebfecf02452d9ca356e18b69`  
+		Last Modified: Fri, 06 Sep 2019 00:04:16 GMT  
+		Size: 197.0 MB (197036830 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:6a4258a56fde8d6d1679c88a09371eaabd100e001b69054571de6290bdfdd21e`  
-		Last Modified: Tue, 30 Jul 2019 23:47:15 GMT  
-		Size: 139.0 B  
+	-	`sha256:e781e7241055b324d43f1f0f0f06d5131ed2aafb69892d9aa53b626ea2cb3865`  
+		Last Modified: Fri, 06 Sep 2019 00:31:01 GMT  
+		Size: 138.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:3fae71872779ce9e5041922ae6a6adb632a75837bd37cc9f6cfa58249796d450`  
-		Last Modified: Thu, 22 Aug 2019 00:33:30 GMT  
-		Size: 13.4 MB (13420313 bytes)  
+	-	`sha256:81c7babf3561161cfacb3eb1ae1616dcf0747d2ea0bad194e8f2cc5890769475`  
+		Last Modified: Fri, 06 Sep 2019 00:31:20 GMT  
+		Size: 13.4 MB (13436794 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:2342fc3450285c1f1ed4f31e2edc04aa7a0105e299286f93459f6ca8d8e95c13`  
-		Last Modified: Thu, 22 Aug 2019 00:33:28 GMT  
+	-	`sha256:c49cac6405f1d8d5d118d085c35fe3ac6080381a7bc814573dcf65cca2b8742b`  
+		Last Modified: Fri, 06 Sep 2019 00:31:18 GMT  
 		Size: 132.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `tomcat:8.5.45-jdk11-corretto` - linux; arm64 variant v8
 
 ```console
-$ docker pull tomcat@sha256:762fa46e0f72ff546a00a1da5fd8d9d537723365d211330ad17f531dbc56ecfe
+$ docker pull tomcat@sha256:49ae97c9f4997782ef4066cb99b15fa8b7ee65b7ee25630665c8323b25045dd3
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **271.2 MB (271176375 bytes)**  
+-	Total Size: **271.5 MB (271548364 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:7551d63571145d52c3079431d0b6d1135c6ddc438279d3544c4ba7d0dc8429a2`
+-	Image ID: `sha256:15a3dccfc0a0bc71fd760c777e73c2c3ddcc82e48d39d1147697ebda3c671ce6`
 -	Default Command: `["catalina.sh","run"]`
 
 ```dockerfile
-# Thu, 23 May 2019 22:39:34 GMT
-ADD file:358a4a50e1cb5e7181b9cc49d23e60d7b0ba5ca2ce18ced74be5843836d54004 in / 
-# Thu, 23 May 2019 22:39:35 GMT
+# Thu, 05 Sep 2019 20:39:50 GMT
+ADD file:a72ff266718add2a5d4d63264fd3ce1f5191448aa441ffdb064ed570a651b36a in / 
+# Thu, 05 Sep 2019 20:39:51 GMT
 CMD ["/bin/bash"]
-# Tue, 30 Jul 2019 23:40:41 GMT
+# Thu, 05 Sep 2019 23:12:09 GMT
 ARG rpm_x64=java-11-amazon-corretto-devel-11.0.4.11-1.x86_64.rpm
-# Tue, 30 Jul 2019 23:40:42 GMT
+# Thu, 05 Sep 2019 23:12:09 GMT
 ARG path_x64=https://d3pxv6yz143wms.cloudfront.net/11.0.4.11.1
-# Tue, 30 Jul 2019 23:40:42 GMT
+# Thu, 05 Sep 2019 23:12:09 GMT
 ARG key_x64=4FF3DA639731F095833505A25A812B5B67F4FCB4
-# Tue, 30 Jul 2019 23:40:43 GMT
+# Thu, 05 Sep 2019 23:12:10 GMT
 ARG rpm_aarch64=java-11-amazon-corretto-devel-11.0.4.11-1.aarch64.rpm
-# Tue, 30 Jul 2019 23:40:43 GMT
+# Thu, 05 Sep 2019 23:12:10 GMT
 ARG path_aarch64=https://d3pxv6yz143wms.cloudfront.net/11.0.4.11.1
-# Tue, 30 Jul 2019 23:40:43 GMT
+# Thu, 05 Sep 2019 23:12:10 GMT
 ARG key_aarch64=4FF3DA639731F095833505A25A812B5B67F4FCB4
-# Tue, 30 Jul 2019 23:41:28 GMT
+# Thu, 05 Sep 2019 23:12:37 GMT
 # ARGS: key_aarch64=4FF3DA639731F095833505A25A812B5B67F4FCB4 key_x64=4FF3DA639731F095833505A25A812B5B67F4FCB4 path_aarch64=https://d3pxv6yz143wms.cloudfront.net/11.0.4.11.1 path_x64=https://d3pxv6yz143wms.cloudfront.net/11.0.4.11.1 rpm_aarch64=java-11-amazon-corretto-devel-11.0.4.11-1.aarch64.rpm rpm_x64=java-11-amazon-corretto-devel-11.0.4.11-1.x86_64.rpm
 RUN set -eux;     case "$(uname -p)" in         x86_64) rpm=$rpm_x64; path=$path_x64; key=$key_x64 ;;         aarch64) rpm=$rpm_aarch64; path=$path_aarch64; key=$key_aarch64 ;;         *) echo >&2 "Unsupported architecture $(uname -p)."; exit 1 ;;     esac;         curl -O $path/$rpm     && export GNUPGHOME="$(mktemp -d)"     && gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys $key     && gpg --armor --export $key > corretto.asc     && rpm --import corretto.asc     && rpm -K $rpm     && rpm -i $rpm     && rm -r $GNUPGHOME corretto.asc $rpm     && yum install -y fontconfig     && yum clean all
-# Tue, 30 Jul 2019 23:41:29 GMT
+# Thu, 05 Sep 2019 23:12:39 GMT
 ENV JAVA_HOME=/usr/lib/jvm/java-11-amazon-corretto
-# Wed, 31 Jul 2019 22:07:04 GMT
+# Fri, 06 Sep 2019 00:21:46 GMT
 ENV CATALINA_HOME=/usr/local/tomcat
-# Wed, 31 Jul 2019 22:07:05 GMT
+# Fri, 06 Sep 2019 00:21:46 GMT
 ENV PATH=/usr/local/tomcat/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Wed, 31 Jul 2019 22:07:06 GMT
+# Fri, 06 Sep 2019 00:21:48 GMT
 RUN mkdir -p "$CATALINA_HOME"
-# Wed, 31 Jul 2019 22:07:06 GMT
+# Fri, 06 Sep 2019 00:21:48 GMT
 WORKDIR /usr/local/tomcat
-# Wed, 31 Jul 2019 22:07:07 GMT
+# Fri, 06 Sep 2019 00:21:49 GMT
 ENV TOMCAT_NATIVE_LIBDIR=/usr/local/tomcat/native-jni-lib
-# Wed, 31 Jul 2019 22:07:07 GMT
+# Fri, 06 Sep 2019 00:21:49 GMT
 ENV LD_LIBRARY_PATH=/usr/local/tomcat/native-jni-lib
-# Wed, 31 Jul 2019 22:10:05 GMT
+# Fri, 06 Sep 2019 00:26:51 GMT
 ENV GPG_KEYS=05AB33110949707C93A279E3D3EFE6B686867BA6 07E48665A34DCAFAE522E5E6266191C37C037D42 47309207D818FFD8DCD3F83F1931D684307A10A5 541FBE7D8F78B25E055DDEE13C370389288584E7 61B832AC2F1C5A90F0F9B00A1C506407564C17A3 713DA88BE50911535FE716F5208B0AB1D63011C7 79F7026C690BAA50B92CD8B66A3AD3F4F22C4FED 9BA44C2621385CB966EBA586F72C284D731FABEE A27677289986DB50844682F8ACB77FC2E86E29AC A9C5DF4D22E99998D9875A5110C01C5A2F6059E7 DCFD35E0BF8CA7344752DE8B6FB21E8933C60243 F3A04C595DB5B6A5F1ECA43E3B7BBB100D811BBE F7DA48BB64BCB84ECBA7EE6935CD23C10D498E23
-# Wed, 31 Jul 2019 22:10:06 GMT
+# Fri, 06 Sep 2019 00:26:52 GMT
 ENV TOMCAT_MAJOR=8
-# Thu, 22 Aug 2019 00:01:45 GMT
+# Fri, 06 Sep 2019 00:26:53 GMT
 ENV TOMCAT_VERSION=8.5.45
-# Thu, 22 Aug 2019 00:01:45 GMT
+# Fri, 06 Sep 2019 00:26:57 GMT
 ENV TOMCAT_SHA512=4276a97b91aad204b393578b11266adff9fc5595ec5b0e0818b9343c9b741969bc162ae6933099799ab6c49f3ccb02ccb9bbf7df71e83832ef623a3ee6bee25a
-# Thu, 22 Aug 2019 00:03:33 GMT
+# Fri, 06 Sep 2019 00:28:39 GMT
 RUN set -eux; 		if ! command -v yumdb > /dev/null; then 		yum install -y yum-utils; 		yumdb set reason dep yum-utils; 	fi; 	if [ -f /etc/oracle-release ]; then 		yumdb set reason user filesystem; 	fi; 	_yum_install_temporary() { ( set -eu +x; 		local pkg todo=''; 		for pkg; do 			if ! rpm --query "$pkg" > /dev/null 2>&1; then 				todo="$todo $pkg"; 			fi; 		done; 		if [ -n "$todo" ]; then 			set -x; 			yum install -y $todo; 			yumdb set reason dep $todo; 		fi; 	) }; 	_yum_install_temporary gzip tar; 		ddist() { 		local f="$1"; shift; 		local distFile="$1"; shift; 		local success=; 		local distUrl=; 		for distUrl in 			'https://www.apache.org/dyn/closer.cgi?action=download&filename=' 			https://www-us.apache.org/dist/ 			https://www.apache.org/dist/ 			https://archive.apache.org/dist/ 		; do 			if curl -fL -o "$f" "$distUrl$distFile" && [ -s "$f" ]; then 				success=1; 				break; 			fi; 		done; 		[ -n "$success" ]; 	}; 		ddist 'tomcat.tar.gz' "tomcat/tomcat-$TOMCAT_MAJOR/v$TOMCAT_VERSION/bin/apache-tomcat-$TOMCAT_VERSION.tar.gz"; 	echo "$TOMCAT_SHA512 *tomcat.tar.gz" | sha512sum --strict --check -; 	ddist 'tomcat.tar.gz.asc' "tomcat/tomcat-$TOMCAT_MAJOR/v$TOMCAT_VERSION/bin/apache-tomcat-$TOMCAT_VERSION.tar.gz.asc"; 	export GNUPGHOME="$(mktemp -d)"; 	for key in $GPG_KEYS; do 		gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys "$key"; 	done; 	gpg --batch --verify tomcat.tar.gz.asc tomcat.tar.gz; 	tar -xf tomcat.tar.gz --strip-components=1; 	rm bin/*.bat; 	rm tomcat.tar.gz*; 	command -v gpgconf && gpgconf --kill all || :; 	rm -rf "$GNUPGHOME"; 		nativeBuildDir="$(mktemp -d)"; 	tar -xf bin/tomcat-native.tar.gz -C "$nativeBuildDir" --strip-components=1; 	_yum_install_temporary 		apr-devel 		gcc 		make 		openssl-devel 	; 	( 		export CATALINA_HOME="$PWD"; 		cd "$nativeBuildDir/native"; 		aprConfig="$(command -v apr-1-config)"; 		./configure 			--libdir="$TOMCAT_NATIVE_LIBDIR" 			--prefix="$CATALINA_HOME" 			--with-apr="$aprConfig" 			--with-java-home="$JAVA_HOME" 			--with-ssl=yes; 		make -j "$(nproc)"; 		make install; 	); 	rm -rf "$nativeBuildDir"; 	rm bin/tomcat-native.tar.gz; 		deps="$( 		find "$TOMCAT_NATIVE_LIBDIR" -type f -executable -exec ldd '{}' ';' 			| awk '/=>/ && $(NF-1) != "=>" { print $(NF-1) }' 			| sort -u 			| xargs -r rpm --query --whatprovides 			| sort -u 	)"; 	[ -z "$deps" ] || yumdb set reason user $deps; 		yum autoremove -y; 	yum clean all; 	rm -rf /var/cache/yum; 		find ./bin/ -name '*.sh' -exec sed -ri 's|^#!/bin/sh$|#!/usr/bin/env bash|' '{}' +; 		chmod -R +rX .; 	chmod 777 logs work
-# Thu, 22 Aug 2019 00:03:37 GMT
+# Fri, 06 Sep 2019 00:28:48 GMT
 RUN set -e 	&& nativeLines="$(catalina.sh configtest 2>&1)" 	&& nativeLines="$(echo "$nativeLines" | grep 'Apache Tomcat Native')" 	&& nativeLines="$(echo "$nativeLines" | sort -u)" 	&& if ! echo "$nativeLines" | grep 'INFO: Loaded APR based Apache Tomcat Native library' >&2; then 		echo >&2 "$nativeLines"; 		exit 1; 	fi
-# Thu, 22 Aug 2019 00:03:37 GMT
+# Fri, 06 Sep 2019 00:28:49 GMT
 EXPOSE 8080
-# Thu, 22 Aug 2019 00:03:38 GMT
+# Fri, 06 Sep 2019 00:28:50 GMT
 CMD ["catalina.sh" "run"]
 ```
 
 -	Layers:
-	-	`sha256:0c8ee56cea53bee75dce23897c1c0f77aa13a698e7b49d9f20c788cef45fadea`  
-		Last Modified: Thu, 23 May 2019 22:40:27 GMT  
-		Size: 62.5 MB (62453151 bytes)  
+	-	`sha256:e75eebfae1ce8742ae53a518590bca4735e2a5dbfa46418fa709591a7b42e522`  
+		Last Modified: Thu, 05 Sep 2019 20:43:10 GMT  
+		Size: 62.8 MB (62797593 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:26fa6a4fcbd205b5477eeeca21b716e71451d1a99c1210dede865590e1fe09f3`  
-		Last Modified: Tue, 30 Jul 2019 23:42:49 GMT  
-		Size: 195.3 MB (195286724 bytes)  
+	-	`sha256:149ea18e536a86a1d3013f8d890ae31d30843ddc6e56e6dca9caee694d195c1b`  
+		Last Modified: Thu, 05 Sep 2019 23:13:56 GMT  
+		Size: 195.3 MB (195295858 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:6192f742a23c42bda649424bedf838a1bb458c80f0d7ac9ac2c6692f86d1a4d3`  
-		Last Modified: Wed, 31 Jul 2019 22:15:18 GMT  
+	-	`sha256:ef6d54efaf622c109d088da3f6bc5297ef6cfe74a5ce3f9bbb95ee72e3885d52`  
+		Last Modified: Fri, 06 Sep 2019 00:35:05 GMT  
 		Size: 172.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:545f36c03121db6f18850e88189403bc8631afb584c17a8e5b1c10394c2b3a92`  
-		Last Modified: Thu, 22 Aug 2019 00:08:20 GMT  
-		Size: 13.4 MB (13436163 bytes)  
+	-	`sha256:006531924eb1421463a9da90090f567acd2f6d862eef8eea2b3844756bf642af`  
+		Last Modified: Fri, 06 Sep 2019 00:35:41 GMT  
+		Size: 13.5 MB (13454577 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:b7b35056c7828b517a7b9b4b557bfd9d7519b27be3d66334de5640841edda71d`  
-		Last Modified: Thu, 22 Aug 2019 00:08:17 GMT  
-		Size: 165.0 B  
+	-	`sha256:2d60875f8438c960be87d57d4d4ca3f80fd53965437ad8a8bcd184d8b2bd088e`  
+		Last Modified: Fri, 06 Sep 2019 00:35:38 GMT  
+		Size: 164.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `tomcat:8.5.45-jdk11-openjdk`
@@ -8837,7 +8837,7 @@ CMD ["catalina.sh" "run"]
 ## `tomcat:8.5.45-jdk8-corretto`
 
 ```console
-$ docker pull tomcat@sha256:f33f90c9e9962bb48eaa318108dbe1a87a39edc67bb4c44bf1d150d64361a4b2
+$ docker pull tomcat@sha256:1fffe8d34b7b9a6501dc362dfdf0d55c5dd0ea3d0a97545a0c4d834963abbd44
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -8848,175 +8848,175 @@ $ docker pull tomcat@sha256:f33f90c9e9962bb48eaa318108dbe1a87a39edc67bb4c44bf1d1
 ### `tomcat:8.5.45-jdk8-corretto` - linux; amd64
 
 ```console
-$ docker pull tomcat@sha256:0a78797f7fec56a15677d64488639447d86576145dfa30e48d75b42488f906c9
+$ docker pull tomcat@sha256:92733ee9aeb531b6b1a60db5fc562f489900f2c49bf3ce9a7fb8439692198788
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **196.2 MB (196189722 bytes)**  
+-	Total Size: **196.6 MB (196631183 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:f77da5bf7e65bd1ed776a174b55514beeb925c4806d43d3c49e63f60aed48a4f`
+-	Image ID: `sha256:4a23c22592312cf25d9950eecd48f3d46dbb7c514edf58aafa62601cc520a9cd`
 -	Default Command: `["catalina.sh","run"]`
 
 ```dockerfile
-# Thu, 23 May 2019 22:19:59 GMT
-ADD file:3cf811fe5073384ff1d5f405992ef7e5e452ad6d4a4cb873eee65007382f3a4a in / 
-# Thu, 23 May 2019 22:20:00 GMT
+# Thu, 05 Sep 2019 23:36:52 GMT
+ADD file:ee5d76cace83097841fd6a9fe1406be3e2176b9ec4de511cb5594bf959f9e657 in / 
+# Thu, 05 Sep 2019 23:36:53 GMT
 CMD ["/bin/bash"]
-# Tue, 30 Jul 2019 23:19:26 GMT
+# Fri, 06 Sep 2019 00:02:29 GMT
 ARG rpm_x64=java-1.8.0-amazon-corretto-devel-1.8.0_222.b10-1.x86_64.rpm
-# Tue, 30 Jul 2019 23:19:26 GMT
+# Fri, 06 Sep 2019 00:02:30 GMT
 ARG path_x64=https://d3pxv6yz143wms.cloudfront.net/8.222.10.1
-# Tue, 30 Jul 2019 23:19:26 GMT
+# Fri, 06 Sep 2019 00:02:30 GMT
 ARG key_x64=C554E802F4545B60919A0A87BD93DF06B540D62A
-# Tue, 30 Jul 2019 23:19:27 GMT
+# Fri, 06 Sep 2019 00:02:30 GMT
 ARG rpm_aarch64=java-1.8.0-amazon-corretto-devel-1.8.0_222.b10-4.aarch64.rpm
-# Tue, 30 Jul 2019 23:19:27 GMT
+# Fri, 06 Sep 2019 00:02:30 GMT
 ARG path_aarch64=https://d3pxv6yz143wms.cloudfront.net/8.222.10.4
-# Tue, 30 Jul 2019 23:19:27 GMT
+# Fri, 06 Sep 2019 00:02:30 GMT
 ARG key_aarch64=826272FACCCCC8E76897C26CE9B1F93E1A158134
-# Tue, 30 Jul 2019 23:19:47 GMT
+# Fri, 06 Sep 2019 00:02:52 GMT
 # ARGS: key_aarch64=826272FACCCCC8E76897C26CE9B1F93E1A158134 key_x64=C554E802F4545B60919A0A87BD93DF06B540D62A path_aarch64=https://d3pxv6yz143wms.cloudfront.net/8.222.10.4 path_x64=https://d3pxv6yz143wms.cloudfront.net/8.222.10.1 rpm_aarch64=java-1.8.0-amazon-corretto-devel-1.8.0_222.b10-4.aarch64.rpm rpm_x64=java-1.8.0-amazon-corretto-devel-1.8.0_222.b10-1.x86_64.rpm
 RUN set -eux;     case "$(uname -p)" in         x86_64) rpm=$rpm_x64; path=$path_x64; key=$key_x64 ;;         aarch64) rpm=$rpm_aarch64; path=$path_aarch64; key=$key_aarch64 ;;         *) echo >&2 "Unsupported architecture $(uname -p)."; exit 1 ;;     esac;         curl -O $path/$rpm     && export GNUPGHOME="$(mktemp -d)"     && gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys $key     && gpg --armor --export $key > corretto.asc     && rpm --import corretto.asc     && rpm -K $rpm     && rpm -i $rpm     && rm -r $GNUPGHOME corretto.asc $rpm     && yum install -y fontconfig     && yum clean all
-# Tue, 30 Jul 2019 23:19:47 GMT
+# Fri, 06 Sep 2019 00:02:52 GMT
 ENV JAVA_HOME=/usr/lib/jvm/java-1.8.0-amazon-corretto
-# Tue, 30 Jul 2019 23:39:00 GMT
+# Fri, 06 Sep 2019 00:22:16 GMT
 ENV CATALINA_HOME=/usr/local/tomcat
-# Tue, 30 Jul 2019 23:39:00 GMT
+# Fri, 06 Sep 2019 00:22:16 GMT
 ENV PATH=/usr/local/tomcat/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Tue, 30 Jul 2019 23:39:01 GMT
+# Fri, 06 Sep 2019 00:22:17 GMT
 RUN mkdir -p "$CATALINA_HOME"
-# Tue, 30 Jul 2019 23:39:01 GMT
+# Fri, 06 Sep 2019 00:22:17 GMT
 WORKDIR /usr/local/tomcat
-# Tue, 30 Jul 2019 23:39:01 GMT
+# Fri, 06 Sep 2019 00:22:17 GMT
 ENV TOMCAT_NATIVE_LIBDIR=/usr/local/tomcat/native-jni-lib
-# Tue, 30 Jul 2019 23:39:01 GMT
+# Fri, 06 Sep 2019 00:22:17 GMT
 ENV LD_LIBRARY_PATH=/usr/local/tomcat/native-jni-lib
-# Tue, 30 Jul 2019 23:42:57 GMT
+# Fri, 06 Sep 2019 00:26:36 GMT
 ENV GPG_KEYS=05AB33110949707C93A279E3D3EFE6B686867BA6 07E48665A34DCAFAE522E5E6266191C37C037D42 47309207D818FFD8DCD3F83F1931D684307A10A5 541FBE7D8F78B25E055DDEE13C370389288584E7 61B832AC2F1C5A90F0F9B00A1C506407564C17A3 713DA88BE50911535FE716F5208B0AB1D63011C7 79F7026C690BAA50B92CD8B66A3AD3F4F22C4FED 9BA44C2621385CB966EBA586F72C284D731FABEE A27677289986DB50844682F8ACB77FC2E86E29AC A9C5DF4D22E99998D9875A5110C01C5A2F6059E7 DCFD35E0BF8CA7344752DE8B6FB21E8933C60243 F3A04C595DB5B6A5F1ECA43E3B7BBB100D811BBE F7DA48BB64BCB84ECBA7EE6935CD23C10D498E23
-# Tue, 30 Jul 2019 23:42:57 GMT
+# Fri, 06 Sep 2019 00:26:36 GMT
 ENV TOMCAT_MAJOR=8
-# Thu, 22 Aug 2019 00:29:12 GMT
+# Fri, 06 Sep 2019 00:26:36 GMT
 ENV TOMCAT_VERSION=8.5.45
-# Thu, 22 Aug 2019 00:29:12 GMT
+# Fri, 06 Sep 2019 00:26:36 GMT
 ENV TOMCAT_SHA512=4276a97b91aad204b393578b11266adff9fc5595ec5b0e0818b9343c9b741969bc162ae6933099799ab6c49f3ccb02ccb9bbf7df71e83832ef623a3ee6bee25a
-# Thu, 22 Aug 2019 00:30:48 GMT
+# Fri, 06 Sep 2019 00:28:07 GMT
 RUN set -eux; 		if ! command -v yumdb > /dev/null; then 		yum install -y yum-utils; 		yumdb set reason dep yum-utils; 	fi; 	if [ -f /etc/oracle-release ]; then 		yumdb set reason user filesystem; 	fi; 	_yum_install_temporary() { ( set -eu +x; 		local pkg todo=''; 		for pkg; do 			if ! rpm --query "$pkg" > /dev/null 2>&1; then 				todo="$todo $pkg"; 			fi; 		done; 		if [ -n "$todo" ]; then 			set -x; 			yum install -y $todo; 			yumdb set reason dep $todo; 		fi; 	) }; 	_yum_install_temporary gzip tar; 		ddist() { 		local f="$1"; shift; 		local distFile="$1"; shift; 		local success=; 		local distUrl=; 		for distUrl in 			'https://www.apache.org/dyn/closer.cgi?action=download&filename=' 			https://www-us.apache.org/dist/ 			https://www.apache.org/dist/ 			https://archive.apache.org/dist/ 		; do 			if curl -fL -o "$f" "$distUrl$distFile" && [ -s "$f" ]; then 				success=1; 				break; 			fi; 		done; 		[ -n "$success" ]; 	}; 		ddist 'tomcat.tar.gz' "tomcat/tomcat-$TOMCAT_MAJOR/v$TOMCAT_VERSION/bin/apache-tomcat-$TOMCAT_VERSION.tar.gz"; 	echo "$TOMCAT_SHA512 *tomcat.tar.gz" | sha512sum --strict --check -; 	ddist 'tomcat.tar.gz.asc' "tomcat/tomcat-$TOMCAT_MAJOR/v$TOMCAT_VERSION/bin/apache-tomcat-$TOMCAT_VERSION.tar.gz.asc"; 	export GNUPGHOME="$(mktemp -d)"; 	for key in $GPG_KEYS; do 		gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys "$key"; 	done; 	gpg --batch --verify tomcat.tar.gz.asc tomcat.tar.gz; 	tar -xf tomcat.tar.gz --strip-components=1; 	rm bin/*.bat; 	rm tomcat.tar.gz*; 	command -v gpgconf && gpgconf --kill all || :; 	rm -rf "$GNUPGHOME"; 		nativeBuildDir="$(mktemp -d)"; 	tar -xf bin/tomcat-native.tar.gz -C "$nativeBuildDir" --strip-components=1; 	_yum_install_temporary 		apr-devel 		gcc 		make 		openssl-devel 	; 	( 		export CATALINA_HOME="$PWD"; 		cd "$nativeBuildDir/native"; 		aprConfig="$(command -v apr-1-config)"; 		./configure 			--libdir="$TOMCAT_NATIVE_LIBDIR" 			--prefix="$CATALINA_HOME" 			--with-apr="$aprConfig" 			--with-java-home="$JAVA_HOME" 			--with-ssl=yes; 		make -j "$(nproc)"; 		make install; 	); 	rm -rf "$nativeBuildDir"; 	rm bin/tomcat-native.tar.gz; 		deps="$( 		find "$TOMCAT_NATIVE_LIBDIR" -type f -executable -exec ldd '{}' ';' 			| awk '/=>/ && $(NF-1) != "=>" { print $(NF-1) }' 			| sort -u 			| xargs -r rpm --query --whatprovides 			| sort -u 	)"; 	[ -z "$deps" ] || yumdb set reason user $deps; 		yum autoremove -y; 	yum clean all; 	rm -rf /var/cache/yum; 		find ./bin/ -name '*.sh' -exec sed -ri 's|^#!/bin/sh$|#!/usr/bin/env bash|' '{}' +; 		chmod -R +rX .; 	chmod 777 logs work
-# Thu, 22 Aug 2019 00:30:50 GMT
+# Fri, 06 Sep 2019 00:28:09 GMT
 RUN set -e 	&& nativeLines="$(catalina.sh configtest 2>&1)" 	&& nativeLines="$(echo "$nativeLines" | grep 'Apache Tomcat Native')" 	&& nativeLines="$(echo "$nativeLines" | sort -u)" 	&& if ! echo "$nativeLines" | grep 'INFO: Loaded APR based Apache Tomcat Native library' >&2; then 		echo >&2 "$nativeLines"; 		exit 1; 	fi
-# Thu, 22 Aug 2019 00:30:50 GMT
+# Fri, 06 Sep 2019 00:28:09 GMT
 EXPOSE 8080
-# Thu, 22 Aug 2019 00:30:51 GMT
+# Fri, 06 Sep 2019 00:28:09 GMT
 CMD ["catalina.sh" "run"]
 ```
 
 -	Layers:
-	-	`sha256:72d97abdfae3b3c933ff41e39779cc72853d7bd9dc1e4800c5294d6715257799`  
-		Last Modified: Thu, 23 May 2019 22:22:16 GMT  
-		Size: 61.3 MB (61285177 bytes)  
+	-	`sha256:4910da0c66710ed2414cd0223e48cbeed94209b9c77053dc30d48532a651dd22`  
+		Last Modified: Thu, 05 Sep 2019 23:38:39 GMT  
+		Size: 61.7 MB (61665831 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c13d17f3a543055e7f616629ad6825d21746252d0b8db4f1812c86b11e3fdc96`  
-		Last Modified: Tue, 30 Jul 2019 23:20:57 GMT  
-		Size: 121.5 MB (121482783 bytes)  
+	-	`sha256:c511e36daa9ce76f573699dfe6fabfac82254067f5ff99f2049f99d176ec919d`  
+		Last Modified: Fri, 06 Sep 2019 00:03:50 GMT  
+		Size: 121.5 MB (121533245 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:34afcacfc487c55714cfc7e34c35abe51c1a26be56d268883ecc929fa305f714`  
-		Last Modified: Tue, 30 Jul 2019 23:47:26 GMT  
-		Size: 139.0 B  
+	-	`sha256:fb8769d09d3f4236a9a84b65d19abf678fdd45df105a6e62a3924404dafa15af`  
+		Last Modified: Fri, 06 Sep 2019 00:31:09 GMT  
+		Size: 138.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c5e58502e3f96611ece65522abfcbb22461dfe4a38aafbc2467a47a3ce305b53`  
-		Last Modified: Thu, 22 Aug 2019 00:34:53 GMT  
-		Size: 13.4 MB (13421491 bytes)  
+	-	`sha256:dd81acf4b9d269719e64cf7902238ffe2875d7ad2e185fed687694c33704912b`  
+		Last Modified: Fri, 06 Sep 2019 00:31:29 GMT  
+		Size: 13.4 MB (13431837 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:7f557b6a41d0d81b65a4ff1eeae1239fff55ed8ff6e556db884f89da3fc26a6e`  
-		Last Modified: Thu, 22 Aug 2019 00:34:51 GMT  
+	-	`sha256:4c03db6767cf9449e15645bd45c825e93fbd2999981226fc57ed32e56a060b8f`  
+		Last Modified: Fri, 06 Sep 2019 00:31:27 GMT  
 		Size: 132.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `tomcat:8.5.45-jdk8-corretto` - linux; arm64 variant v8
 
 ```console
-$ docker pull tomcat@sha256:c62c60fe2da097e93c80e277be5bcae77b1125d5566a87d7e60087478bd84474
+$ docker pull tomcat@sha256:eeca3d7e2ca0295775b0165cae5d0439cc54e67a80ea469739be5c2684300ee3
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **180.8 MB (180763474 bytes)**  
+-	Total Size: **181.1 MB (181138486 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:1ccfe61327ef171af33a285e58e3868eb7e375d662a42c668a3837483f434df0`
+-	Image ID: `sha256:dc2aa448f1ee3a9c15092e795fae6b14e8cd261f1ebd249511d190787b501c7e`
 -	Default Command: `["catalina.sh","run"]`
 
 ```dockerfile
-# Thu, 23 May 2019 22:39:34 GMT
-ADD file:358a4a50e1cb5e7181b9cc49d23e60d7b0ba5ca2ce18ced74be5843836d54004 in / 
-# Thu, 23 May 2019 22:39:35 GMT
+# Thu, 05 Sep 2019 20:39:50 GMT
+ADD file:a72ff266718add2a5d4d63264fd3ce1f5191448aa441ffdb064ed570a651b36a in / 
+# Thu, 05 Sep 2019 20:39:51 GMT
 CMD ["/bin/bash"]
-# Tue, 30 Jul 2019 23:39:26 GMT
+# Thu, 05 Sep 2019 23:11:35 GMT
 ARG rpm_x64=java-1.8.0-amazon-corretto-devel-1.8.0_222.b10-1.x86_64.rpm
-# Tue, 30 Jul 2019 23:39:27 GMT
+# Thu, 05 Sep 2019 23:11:35 GMT
 ARG path_x64=https://d3pxv6yz143wms.cloudfront.net/8.222.10.1
-# Tue, 30 Jul 2019 23:39:27 GMT
+# Thu, 05 Sep 2019 23:11:35 GMT
 ARG key_x64=C554E802F4545B60919A0A87BD93DF06B540D62A
-# Tue, 30 Jul 2019 23:39:27 GMT
+# Thu, 05 Sep 2019 23:11:36 GMT
 ARG rpm_aarch64=java-1.8.0-amazon-corretto-devel-1.8.0_222.b10-4.aarch64.rpm
-# Tue, 30 Jul 2019 23:39:28 GMT
+# Thu, 05 Sep 2019 23:11:36 GMT
 ARG path_aarch64=https://d3pxv6yz143wms.cloudfront.net/8.222.10.4
-# Tue, 30 Jul 2019 23:39:28 GMT
+# Thu, 05 Sep 2019 23:11:36 GMT
 ARG key_aarch64=826272FACCCCC8E76897C26CE9B1F93E1A158134
-# Tue, 30 Jul 2019 23:40:33 GMT
+# Thu, 05 Sep 2019 23:12:00 GMT
 # ARGS: key_aarch64=826272FACCCCC8E76897C26CE9B1F93E1A158134 key_x64=C554E802F4545B60919A0A87BD93DF06B540D62A path_aarch64=https://d3pxv6yz143wms.cloudfront.net/8.222.10.4 path_x64=https://d3pxv6yz143wms.cloudfront.net/8.222.10.1 rpm_aarch64=java-1.8.0-amazon-corretto-devel-1.8.0_222.b10-4.aarch64.rpm rpm_x64=java-1.8.0-amazon-corretto-devel-1.8.0_222.b10-1.x86_64.rpm
 RUN set -eux;     case "$(uname -p)" in         x86_64) rpm=$rpm_x64; path=$path_x64; key=$key_x64 ;;         aarch64) rpm=$rpm_aarch64; path=$path_aarch64; key=$key_aarch64 ;;         *) echo >&2 "Unsupported architecture $(uname -p)."; exit 1 ;;     esac;         curl -O $path/$rpm     && export GNUPGHOME="$(mktemp -d)"     && gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys $key     && gpg --armor --export $key > corretto.asc     && rpm --import corretto.asc     && rpm -K $rpm     && rpm -i $rpm     && rm -r $GNUPGHOME corretto.asc $rpm     && yum install -y fontconfig     && yum clean all
-# Tue, 30 Jul 2019 23:40:34 GMT
+# Thu, 05 Sep 2019 23:12:01 GMT
 ENV JAVA_HOME=/usr/lib/jvm/java-1.8.0-amazon-corretto
-# Wed, 31 Jul 2019 22:08:23 GMT
+# Fri, 06 Sep 2019 00:24:08 GMT
 ENV CATALINA_HOME=/usr/local/tomcat
-# Wed, 31 Jul 2019 22:08:23 GMT
+# Fri, 06 Sep 2019 00:24:09 GMT
 ENV PATH=/usr/local/tomcat/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Wed, 31 Jul 2019 22:08:24 GMT
+# Fri, 06 Sep 2019 00:24:12 GMT
 RUN mkdir -p "$CATALINA_HOME"
-# Wed, 31 Jul 2019 22:08:25 GMT
+# Fri, 06 Sep 2019 00:24:16 GMT
 WORKDIR /usr/local/tomcat
-# Wed, 31 Jul 2019 22:08:25 GMT
+# Fri, 06 Sep 2019 00:24:17 GMT
 ENV TOMCAT_NATIVE_LIBDIR=/usr/local/tomcat/native-jni-lib
-# Wed, 31 Jul 2019 22:08:25 GMT
+# Fri, 06 Sep 2019 00:24:18 GMT
 ENV LD_LIBRARY_PATH=/usr/local/tomcat/native-jni-lib
-# Wed, 31 Jul 2019 22:11:54 GMT
+# Fri, 06 Sep 2019 00:29:13 GMT
 ENV GPG_KEYS=05AB33110949707C93A279E3D3EFE6B686867BA6 07E48665A34DCAFAE522E5E6266191C37C037D42 47309207D818FFD8DCD3F83F1931D684307A10A5 541FBE7D8F78B25E055DDEE13C370389288584E7 61B832AC2F1C5A90F0F9B00A1C506407564C17A3 713DA88BE50911535FE716F5208B0AB1D63011C7 79F7026C690BAA50B92CD8B66A3AD3F4F22C4FED 9BA44C2621385CB966EBA586F72C284D731FABEE A27677289986DB50844682F8ACB77FC2E86E29AC A9C5DF4D22E99998D9875A5110C01C5A2F6059E7 DCFD35E0BF8CA7344752DE8B6FB21E8933C60243 F3A04C595DB5B6A5F1ECA43E3B7BBB100D811BBE F7DA48BB64BCB84ECBA7EE6935CD23C10D498E23
-# Wed, 31 Jul 2019 22:11:54 GMT
+# Fri, 06 Sep 2019 00:29:16 GMT
 ENV TOMCAT_MAJOR=8
-# Thu, 22 Aug 2019 00:05:04 GMT
+# Fri, 06 Sep 2019 00:29:20 GMT
 ENV TOMCAT_VERSION=8.5.45
-# Thu, 22 Aug 2019 00:05:05 GMT
+# Fri, 06 Sep 2019 00:29:22 GMT
 ENV TOMCAT_SHA512=4276a97b91aad204b393578b11266adff9fc5595ec5b0e0818b9343c9b741969bc162ae6933099799ab6c49f3ccb02ccb9bbf7df71e83832ef623a3ee6bee25a
-# Thu, 22 Aug 2019 00:06:13 GMT
+# Fri, 06 Sep 2019 00:31:08 GMT
 RUN set -eux; 		if ! command -v yumdb > /dev/null; then 		yum install -y yum-utils; 		yumdb set reason dep yum-utils; 	fi; 	if [ -f /etc/oracle-release ]; then 		yumdb set reason user filesystem; 	fi; 	_yum_install_temporary() { ( set -eu +x; 		local pkg todo=''; 		for pkg; do 			if ! rpm --query "$pkg" > /dev/null 2>&1; then 				todo="$todo $pkg"; 			fi; 		done; 		if [ -n "$todo" ]; then 			set -x; 			yum install -y $todo; 			yumdb set reason dep $todo; 		fi; 	) }; 	_yum_install_temporary gzip tar; 		ddist() { 		local f="$1"; shift; 		local distFile="$1"; shift; 		local success=; 		local distUrl=; 		for distUrl in 			'https://www.apache.org/dyn/closer.cgi?action=download&filename=' 			https://www-us.apache.org/dist/ 			https://www.apache.org/dist/ 			https://archive.apache.org/dist/ 		; do 			if curl -fL -o "$f" "$distUrl$distFile" && [ -s "$f" ]; then 				success=1; 				break; 			fi; 		done; 		[ -n "$success" ]; 	}; 		ddist 'tomcat.tar.gz' "tomcat/tomcat-$TOMCAT_MAJOR/v$TOMCAT_VERSION/bin/apache-tomcat-$TOMCAT_VERSION.tar.gz"; 	echo "$TOMCAT_SHA512 *tomcat.tar.gz" | sha512sum --strict --check -; 	ddist 'tomcat.tar.gz.asc' "tomcat/tomcat-$TOMCAT_MAJOR/v$TOMCAT_VERSION/bin/apache-tomcat-$TOMCAT_VERSION.tar.gz.asc"; 	export GNUPGHOME="$(mktemp -d)"; 	for key in $GPG_KEYS; do 		gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys "$key"; 	done; 	gpg --batch --verify tomcat.tar.gz.asc tomcat.tar.gz; 	tar -xf tomcat.tar.gz --strip-components=1; 	rm bin/*.bat; 	rm tomcat.tar.gz*; 	command -v gpgconf && gpgconf --kill all || :; 	rm -rf "$GNUPGHOME"; 		nativeBuildDir="$(mktemp -d)"; 	tar -xf bin/tomcat-native.tar.gz -C "$nativeBuildDir" --strip-components=1; 	_yum_install_temporary 		apr-devel 		gcc 		make 		openssl-devel 	; 	( 		export CATALINA_HOME="$PWD"; 		cd "$nativeBuildDir/native"; 		aprConfig="$(command -v apr-1-config)"; 		./configure 			--libdir="$TOMCAT_NATIVE_LIBDIR" 			--prefix="$CATALINA_HOME" 			--with-apr="$aprConfig" 			--with-java-home="$JAVA_HOME" 			--with-ssl=yes; 		make -j "$(nproc)"; 		make install; 	); 	rm -rf "$nativeBuildDir"; 	rm bin/tomcat-native.tar.gz; 		deps="$( 		find "$TOMCAT_NATIVE_LIBDIR" -type f -executable -exec ldd '{}' ';' 			| awk '/=>/ && $(NF-1) != "=>" { print $(NF-1) }' 			| sort -u 			| xargs -r rpm --query --whatprovides 			| sort -u 	)"; 	[ -z "$deps" ] || yumdb set reason user $deps; 		yum autoremove -y; 	yum clean all; 	rm -rf /var/cache/yum; 		find ./bin/ -name '*.sh' -exec sed -ri 's|^#!/bin/sh$|#!/usr/bin/env bash|' '{}' +; 		chmod -R +rX .; 	chmod 777 logs work
-# Thu, 22 Aug 2019 00:06:17 GMT
+# Fri, 06 Sep 2019 00:31:16 GMT
 RUN set -e 	&& nativeLines="$(catalina.sh configtest 2>&1)" 	&& nativeLines="$(echo "$nativeLines" | grep 'Apache Tomcat Native')" 	&& nativeLines="$(echo "$nativeLines" | sort -u)" 	&& if ! echo "$nativeLines" | grep 'INFO: Loaded APR based Apache Tomcat Native library' >&2; then 		echo >&2 "$nativeLines"; 		exit 1; 	fi
-# Thu, 22 Aug 2019 00:06:17 GMT
+# Fri, 06 Sep 2019 00:31:17 GMT
 EXPOSE 8080
-# Thu, 22 Aug 2019 00:06:18 GMT
+# Fri, 06 Sep 2019 00:31:17 GMT
 CMD ["catalina.sh" "run"]
 ```
 
 -	Layers:
-	-	`sha256:0c8ee56cea53bee75dce23897c1c0f77aa13a698e7b49d9f20c788cef45fadea`  
-		Last Modified: Thu, 23 May 2019 22:40:27 GMT  
-		Size: 62.5 MB (62453151 bytes)  
+	-	`sha256:e75eebfae1ce8742ae53a518590bca4735e2a5dbfa46418fa709591a7b42e522`  
+		Last Modified: Thu, 05 Sep 2019 20:43:10 GMT  
+		Size: 62.8 MB (62797593 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:269e06f3b7489c1b941db3fc6cf17c76a7bf613b18a6aeff9d25c7144b85ae6a`  
-		Last Modified: Tue, 30 Jul 2019 23:42:10 GMT  
-		Size: 104.9 MB (104888017 bytes)  
+	-	`sha256:825292fe21ae21fe00976ccad2471578d1a289980b1ea830f4e0ad1990422166`  
+		Last Modified: Thu, 05 Sep 2019 23:13:17 GMT  
+		Size: 104.9 MB (104911609 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c1a0e5239e6a06f59af8cf4b3646b582c250ec4bcd6c3ebc520395b4e288e047`  
-		Last Modified: Wed, 31 Jul 2019 22:15:34 GMT  
-		Size: 172.0 B  
+	-	`sha256:babaad70d6b41a7c0adfcbf58979816fb28f3415b9bc800fb9f306bed8742129`  
+		Last Modified: Fri, 06 Sep 2019 00:35:19 GMT  
+		Size: 171.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c7ec0ab5cea7606382441e62dae04fecd703aef01dc149c2cd597e923194db50`  
-		Last Modified: Thu, 22 Aug 2019 00:09:01 GMT  
-		Size: 13.4 MB (13421969 bytes)  
+	-	`sha256:ec7b19822248b0ae26cb17e3b2529fc4bc2f3227ec5f7d845d81599c3eed6457`  
+		Last Modified: Fri, 06 Sep 2019 00:35:54 GMT  
+		Size: 13.4 MB (13428949 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:8a1903d8bf96ab016dfb175296b536ba87f2e5e5b5d8ab4eb6b91baa54b4b651`  
-		Last Modified: Thu, 22 Aug 2019 00:08:40 GMT  
-		Size: 165.0 B  
+	-	`sha256:4bc44f97a34fdab5a5ef0d049d7697cbeca334757ff92ac3e080f49e6b06cbb3`  
+		Last Modified: Fri, 06 Sep 2019 00:35:50 GMT  
+		Size: 164.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `tomcat:8.5.45-jdk8-openjdk`
@@ -10359,7 +10359,7 @@ CMD ["catalina.sh" "run"]
 ## `tomcat:8.5-jdk11-corretto`
 
 ```console
-$ docker pull tomcat@sha256:ff823bf0954a53e6a64cb38e069525ce0c9fb57724ae400af3dada39ab6cbcfa
+$ docker pull tomcat@sha256:37d2705ddd76c8df76a38dd43092895258c4b11ad4aa0838ed84f53830a17cea
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -10370,175 +10370,175 @@ $ docker pull tomcat@sha256:ff823bf0954a53e6a64cb38e069525ce0c9fb57724ae400af3da
 ### `tomcat:8.5-jdk11-corretto` - linux; amd64
 
 ```console
-$ docker pull tomcat@sha256:de0387ad59034af7b97e6962f0dd518e0e36f751bb104d3896fcd49319cdebc9
+$ docker pull tomcat@sha256:ac290e29b2ac130c06dfb446b17039a84c934f6deaf3b3db97a11e14b3ef102d
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **271.7 MB (271694682 bytes)**  
+-	Total Size: **272.1 MB (272139725 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:16dcb5719526715fdf7a9dc6c61bbe31ef822d087b3b99cb6e2c207280c6de13`
+-	Image ID: `sha256:568dc9e9bb09e77e29137ec7b065e474d78c75e956832b471878b3f0d4eef706`
 -	Default Command: `["catalina.sh","run"]`
 
 ```dockerfile
-# Thu, 23 May 2019 22:19:59 GMT
-ADD file:3cf811fe5073384ff1d5f405992ef7e5e452ad6d4a4cb873eee65007382f3a4a in / 
-# Thu, 23 May 2019 22:20:00 GMT
+# Thu, 05 Sep 2019 23:36:52 GMT
+ADD file:ee5d76cace83097841fd6a9fe1406be3e2176b9ec4de511cb5594bf959f9e657 in / 
+# Thu, 05 Sep 2019 23:36:53 GMT
 CMD ["/bin/bash"]
-# Tue, 30 Jul 2019 23:19:53 GMT
+# Fri, 06 Sep 2019 00:02:57 GMT
 ARG rpm_x64=java-11-amazon-corretto-devel-11.0.4.11-1.x86_64.rpm
-# Tue, 30 Jul 2019 23:19:53 GMT
+# Fri, 06 Sep 2019 00:02:58 GMT
 ARG path_x64=https://d3pxv6yz143wms.cloudfront.net/11.0.4.11.1
-# Tue, 30 Jul 2019 23:19:53 GMT
+# Fri, 06 Sep 2019 00:02:58 GMT
 ARG key_x64=4FF3DA639731F095833505A25A812B5B67F4FCB4
-# Tue, 30 Jul 2019 23:19:54 GMT
+# Fri, 06 Sep 2019 00:02:58 GMT
 ARG rpm_aarch64=java-11-amazon-corretto-devel-11.0.4.11-1.aarch64.rpm
-# Tue, 30 Jul 2019 23:19:54 GMT
+# Fri, 06 Sep 2019 00:02:58 GMT
 ARG path_aarch64=https://d3pxv6yz143wms.cloudfront.net/11.0.4.11.1
-# Tue, 30 Jul 2019 23:19:54 GMT
+# Fri, 06 Sep 2019 00:02:58 GMT
 ARG key_aarch64=4FF3DA639731F095833505A25A812B5B67F4FCB4
-# Tue, 30 Jul 2019 23:20:17 GMT
+# Fri, 06 Sep 2019 00:03:23 GMT
 # ARGS: key_aarch64=4FF3DA639731F095833505A25A812B5B67F4FCB4 key_x64=4FF3DA639731F095833505A25A812B5B67F4FCB4 path_aarch64=https://d3pxv6yz143wms.cloudfront.net/11.0.4.11.1 path_x64=https://d3pxv6yz143wms.cloudfront.net/11.0.4.11.1 rpm_aarch64=java-11-amazon-corretto-devel-11.0.4.11-1.aarch64.rpm rpm_x64=java-11-amazon-corretto-devel-11.0.4.11-1.x86_64.rpm
 RUN set -eux;     case "$(uname -p)" in         x86_64) rpm=$rpm_x64; path=$path_x64; key=$key_x64 ;;         aarch64) rpm=$rpm_aarch64; path=$path_aarch64; key=$key_aarch64 ;;         *) echo >&2 "Unsupported architecture $(uname -p)."; exit 1 ;;     esac;         curl -O $path/$rpm     && export GNUPGHOME="$(mktemp -d)"     && gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys $key     && gpg --armor --export $key > corretto.asc     && rpm --import corretto.asc     && rpm -K $rpm     && rpm -i $rpm     && rm -r $GNUPGHOME corretto.asc $rpm     && yum install -y fontconfig     && yum clean all
-# Tue, 30 Jul 2019 23:20:17 GMT
+# Fri, 06 Sep 2019 00:03:23 GMT
 ENV JAVA_HOME=/usr/lib/jvm/java-11-amazon-corretto
-# Tue, 30 Jul 2019 23:37:08 GMT
+# Fri, 06 Sep 2019 00:20:17 GMT
 ENV CATALINA_HOME=/usr/local/tomcat
-# Tue, 30 Jul 2019 23:37:08 GMT
+# Fri, 06 Sep 2019 00:20:17 GMT
 ENV PATH=/usr/local/tomcat/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Tue, 30 Jul 2019 23:37:09 GMT
+# Fri, 06 Sep 2019 00:20:18 GMT
 RUN mkdir -p "$CATALINA_HOME"
-# Tue, 30 Jul 2019 23:37:09 GMT
+# Fri, 06 Sep 2019 00:20:18 GMT
 WORKDIR /usr/local/tomcat
-# Tue, 30 Jul 2019 23:37:09 GMT
+# Fri, 06 Sep 2019 00:20:18 GMT
 ENV TOMCAT_NATIVE_LIBDIR=/usr/local/tomcat/native-jni-lib
-# Tue, 30 Jul 2019 23:37:09 GMT
+# Fri, 06 Sep 2019 00:20:18 GMT
 ENV LD_LIBRARY_PATH=/usr/local/tomcat/native-jni-lib
-# Tue, 30 Jul 2019 23:41:03 GMT
+# Fri, 06 Sep 2019 00:24:31 GMT
 ENV GPG_KEYS=05AB33110949707C93A279E3D3EFE6B686867BA6 07E48665A34DCAFAE522E5E6266191C37C037D42 47309207D818FFD8DCD3F83F1931D684307A10A5 541FBE7D8F78B25E055DDEE13C370389288584E7 61B832AC2F1C5A90F0F9B00A1C506407564C17A3 713DA88BE50911535FE716F5208B0AB1D63011C7 79F7026C690BAA50B92CD8B66A3AD3F4F22C4FED 9BA44C2621385CB966EBA586F72C284D731FABEE A27677289986DB50844682F8ACB77FC2E86E29AC A9C5DF4D22E99998D9875A5110C01C5A2F6059E7 DCFD35E0BF8CA7344752DE8B6FB21E8933C60243 F3A04C595DB5B6A5F1ECA43E3B7BBB100D811BBE F7DA48BB64BCB84ECBA7EE6935CD23C10D498E23
-# Tue, 30 Jul 2019 23:41:03 GMT
+# Fri, 06 Sep 2019 00:24:32 GMT
 ENV TOMCAT_MAJOR=8
-# Thu, 22 Aug 2019 00:24:10 GMT
+# Fri, 06 Sep 2019 00:24:32 GMT
 ENV TOMCAT_VERSION=8.5.45
-# Thu, 22 Aug 2019 00:24:10 GMT
+# Fri, 06 Sep 2019 00:24:32 GMT
 ENV TOMCAT_SHA512=4276a97b91aad204b393578b11266adff9fc5595ec5b0e0818b9343c9b741969bc162ae6933099799ab6c49f3ccb02ccb9bbf7df71e83832ef623a3ee6bee25a
-# Thu, 22 Aug 2019 00:25:48 GMT
+# Fri, 06 Sep 2019 00:26:07 GMT
 RUN set -eux; 		if ! command -v yumdb > /dev/null; then 		yum install -y yum-utils; 		yumdb set reason dep yum-utils; 	fi; 	if [ -f /etc/oracle-release ]; then 		yumdb set reason user filesystem; 	fi; 	_yum_install_temporary() { ( set -eu +x; 		local pkg todo=''; 		for pkg; do 			if ! rpm --query "$pkg" > /dev/null 2>&1; then 				todo="$todo $pkg"; 			fi; 		done; 		if [ -n "$todo" ]; then 			set -x; 			yum install -y $todo; 			yumdb set reason dep $todo; 		fi; 	) }; 	_yum_install_temporary gzip tar; 		ddist() { 		local f="$1"; shift; 		local distFile="$1"; shift; 		local success=; 		local distUrl=; 		for distUrl in 			'https://www.apache.org/dyn/closer.cgi?action=download&filename=' 			https://www-us.apache.org/dist/ 			https://www.apache.org/dist/ 			https://archive.apache.org/dist/ 		; do 			if curl -fL -o "$f" "$distUrl$distFile" && [ -s "$f" ]; then 				success=1; 				break; 			fi; 		done; 		[ -n "$success" ]; 	}; 		ddist 'tomcat.tar.gz' "tomcat/tomcat-$TOMCAT_MAJOR/v$TOMCAT_VERSION/bin/apache-tomcat-$TOMCAT_VERSION.tar.gz"; 	echo "$TOMCAT_SHA512 *tomcat.tar.gz" | sha512sum --strict --check -; 	ddist 'tomcat.tar.gz.asc' "tomcat/tomcat-$TOMCAT_MAJOR/v$TOMCAT_VERSION/bin/apache-tomcat-$TOMCAT_VERSION.tar.gz.asc"; 	export GNUPGHOME="$(mktemp -d)"; 	for key in $GPG_KEYS; do 		gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys "$key"; 	done; 	gpg --batch --verify tomcat.tar.gz.asc tomcat.tar.gz; 	tar -xf tomcat.tar.gz --strip-components=1; 	rm bin/*.bat; 	rm tomcat.tar.gz*; 	command -v gpgconf && gpgconf --kill all || :; 	rm -rf "$GNUPGHOME"; 		nativeBuildDir="$(mktemp -d)"; 	tar -xf bin/tomcat-native.tar.gz -C "$nativeBuildDir" --strip-components=1; 	_yum_install_temporary 		apr-devel 		gcc 		make 		openssl-devel 	; 	( 		export CATALINA_HOME="$PWD"; 		cd "$nativeBuildDir/native"; 		aprConfig="$(command -v apr-1-config)"; 		./configure 			--libdir="$TOMCAT_NATIVE_LIBDIR" 			--prefix="$CATALINA_HOME" 			--with-apr="$aprConfig" 			--with-java-home="$JAVA_HOME" 			--with-ssl=yes; 		make -j "$(nproc)"; 		make install; 	); 	rm -rf "$nativeBuildDir"; 	rm bin/tomcat-native.tar.gz; 		deps="$( 		find "$TOMCAT_NATIVE_LIBDIR" -type f -executable -exec ldd '{}' ';' 			| awk '/=>/ && $(NF-1) != "=>" { print $(NF-1) }' 			| sort -u 			| xargs -r rpm --query --whatprovides 			| sort -u 	)"; 	[ -z "$deps" ] || yumdb set reason user $deps; 		yum autoremove -y; 	yum clean all; 	rm -rf /var/cache/yum; 		find ./bin/ -name '*.sh' -exec sed -ri 's|^#!/bin/sh$|#!/usr/bin/env bash|' '{}' +; 		chmod -R +rX .; 	chmod 777 logs work
-# Thu, 22 Aug 2019 00:25:51 GMT
+# Fri, 06 Sep 2019 00:26:10 GMT
 RUN set -e 	&& nativeLines="$(catalina.sh configtest 2>&1)" 	&& nativeLines="$(echo "$nativeLines" | grep 'Apache Tomcat Native')" 	&& nativeLines="$(echo "$nativeLines" | sort -u)" 	&& if ! echo "$nativeLines" | grep 'INFO: Loaded APR based Apache Tomcat Native library' >&2; then 		echo >&2 "$nativeLines"; 		exit 1; 	fi
-# Thu, 22 Aug 2019 00:25:51 GMT
+# Fri, 06 Sep 2019 00:26:10 GMT
 EXPOSE 8080
-# Thu, 22 Aug 2019 00:25:51 GMT
+# Fri, 06 Sep 2019 00:26:10 GMT
 CMD ["catalina.sh" "run"]
 ```
 
 -	Layers:
-	-	`sha256:72d97abdfae3b3c933ff41e39779cc72853d7bd9dc1e4800c5294d6715257799`  
-		Last Modified: Thu, 23 May 2019 22:22:16 GMT  
-		Size: 61.3 MB (61285177 bytes)  
+	-	`sha256:4910da0c66710ed2414cd0223e48cbeed94209b9c77053dc30d48532a651dd22`  
+		Last Modified: Thu, 05 Sep 2019 23:38:39 GMT  
+		Size: 61.7 MB (61665831 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:4f58afb139384717c6be8d8ba2803caf676e6d7fe750302d138bf13983df50b9`  
-		Last Modified: Tue, 30 Jul 2019 23:21:22 GMT  
-		Size: 197.0 MB (196988921 bytes)  
+	-	`sha256:b9d1840374efc595eade77260f8573765a51ccb6ebfecf02452d9ca356e18b69`  
+		Last Modified: Fri, 06 Sep 2019 00:04:16 GMT  
+		Size: 197.0 MB (197036830 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:6a4258a56fde8d6d1679c88a09371eaabd100e001b69054571de6290bdfdd21e`  
-		Last Modified: Tue, 30 Jul 2019 23:47:15 GMT  
-		Size: 139.0 B  
+	-	`sha256:e781e7241055b324d43f1f0f0f06d5131ed2aafb69892d9aa53b626ea2cb3865`  
+		Last Modified: Fri, 06 Sep 2019 00:31:01 GMT  
+		Size: 138.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:3fae71872779ce9e5041922ae6a6adb632a75837bd37cc9f6cfa58249796d450`  
-		Last Modified: Thu, 22 Aug 2019 00:33:30 GMT  
-		Size: 13.4 MB (13420313 bytes)  
+	-	`sha256:81c7babf3561161cfacb3eb1ae1616dcf0747d2ea0bad194e8f2cc5890769475`  
+		Last Modified: Fri, 06 Sep 2019 00:31:20 GMT  
+		Size: 13.4 MB (13436794 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:2342fc3450285c1f1ed4f31e2edc04aa7a0105e299286f93459f6ca8d8e95c13`  
-		Last Modified: Thu, 22 Aug 2019 00:33:28 GMT  
+	-	`sha256:c49cac6405f1d8d5d118d085c35fe3ac6080381a7bc814573dcf65cca2b8742b`  
+		Last Modified: Fri, 06 Sep 2019 00:31:18 GMT  
 		Size: 132.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `tomcat:8.5-jdk11-corretto` - linux; arm64 variant v8
 
 ```console
-$ docker pull tomcat@sha256:762fa46e0f72ff546a00a1da5fd8d9d537723365d211330ad17f531dbc56ecfe
+$ docker pull tomcat@sha256:49ae97c9f4997782ef4066cb99b15fa8b7ee65b7ee25630665c8323b25045dd3
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **271.2 MB (271176375 bytes)**  
+-	Total Size: **271.5 MB (271548364 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:7551d63571145d52c3079431d0b6d1135c6ddc438279d3544c4ba7d0dc8429a2`
+-	Image ID: `sha256:15a3dccfc0a0bc71fd760c777e73c2c3ddcc82e48d39d1147697ebda3c671ce6`
 -	Default Command: `["catalina.sh","run"]`
 
 ```dockerfile
-# Thu, 23 May 2019 22:39:34 GMT
-ADD file:358a4a50e1cb5e7181b9cc49d23e60d7b0ba5ca2ce18ced74be5843836d54004 in / 
-# Thu, 23 May 2019 22:39:35 GMT
+# Thu, 05 Sep 2019 20:39:50 GMT
+ADD file:a72ff266718add2a5d4d63264fd3ce1f5191448aa441ffdb064ed570a651b36a in / 
+# Thu, 05 Sep 2019 20:39:51 GMT
 CMD ["/bin/bash"]
-# Tue, 30 Jul 2019 23:40:41 GMT
+# Thu, 05 Sep 2019 23:12:09 GMT
 ARG rpm_x64=java-11-amazon-corretto-devel-11.0.4.11-1.x86_64.rpm
-# Tue, 30 Jul 2019 23:40:42 GMT
+# Thu, 05 Sep 2019 23:12:09 GMT
 ARG path_x64=https://d3pxv6yz143wms.cloudfront.net/11.0.4.11.1
-# Tue, 30 Jul 2019 23:40:42 GMT
+# Thu, 05 Sep 2019 23:12:09 GMT
 ARG key_x64=4FF3DA639731F095833505A25A812B5B67F4FCB4
-# Tue, 30 Jul 2019 23:40:43 GMT
+# Thu, 05 Sep 2019 23:12:10 GMT
 ARG rpm_aarch64=java-11-amazon-corretto-devel-11.0.4.11-1.aarch64.rpm
-# Tue, 30 Jul 2019 23:40:43 GMT
+# Thu, 05 Sep 2019 23:12:10 GMT
 ARG path_aarch64=https://d3pxv6yz143wms.cloudfront.net/11.0.4.11.1
-# Tue, 30 Jul 2019 23:40:43 GMT
+# Thu, 05 Sep 2019 23:12:10 GMT
 ARG key_aarch64=4FF3DA639731F095833505A25A812B5B67F4FCB4
-# Tue, 30 Jul 2019 23:41:28 GMT
+# Thu, 05 Sep 2019 23:12:37 GMT
 # ARGS: key_aarch64=4FF3DA639731F095833505A25A812B5B67F4FCB4 key_x64=4FF3DA639731F095833505A25A812B5B67F4FCB4 path_aarch64=https://d3pxv6yz143wms.cloudfront.net/11.0.4.11.1 path_x64=https://d3pxv6yz143wms.cloudfront.net/11.0.4.11.1 rpm_aarch64=java-11-amazon-corretto-devel-11.0.4.11-1.aarch64.rpm rpm_x64=java-11-amazon-corretto-devel-11.0.4.11-1.x86_64.rpm
 RUN set -eux;     case "$(uname -p)" in         x86_64) rpm=$rpm_x64; path=$path_x64; key=$key_x64 ;;         aarch64) rpm=$rpm_aarch64; path=$path_aarch64; key=$key_aarch64 ;;         *) echo >&2 "Unsupported architecture $(uname -p)."; exit 1 ;;     esac;         curl -O $path/$rpm     && export GNUPGHOME="$(mktemp -d)"     && gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys $key     && gpg --armor --export $key > corretto.asc     && rpm --import corretto.asc     && rpm -K $rpm     && rpm -i $rpm     && rm -r $GNUPGHOME corretto.asc $rpm     && yum install -y fontconfig     && yum clean all
-# Tue, 30 Jul 2019 23:41:29 GMT
+# Thu, 05 Sep 2019 23:12:39 GMT
 ENV JAVA_HOME=/usr/lib/jvm/java-11-amazon-corretto
-# Wed, 31 Jul 2019 22:07:04 GMT
+# Fri, 06 Sep 2019 00:21:46 GMT
 ENV CATALINA_HOME=/usr/local/tomcat
-# Wed, 31 Jul 2019 22:07:05 GMT
+# Fri, 06 Sep 2019 00:21:46 GMT
 ENV PATH=/usr/local/tomcat/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Wed, 31 Jul 2019 22:07:06 GMT
+# Fri, 06 Sep 2019 00:21:48 GMT
 RUN mkdir -p "$CATALINA_HOME"
-# Wed, 31 Jul 2019 22:07:06 GMT
+# Fri, 06 Sep 2019 00:21:48 GMT
 WORKDIR /usr/local/tomcat
-# Wed, 31 Jul 2019 22:07:07 GMT
+# Fri, 06 Sep 2019 00:21:49 GMT
 ENV TOMCAT_NATIVE_LIBDIR=/usr/local/tomcat/native-jni-lib
-# Wed, 31 Jul 2019 22:07:07 GMT
+# Fri, 06 Sep 2019 00:21:49 GMT
 ENV LD_LIBRARY_PATH=/usr/local/tomcat/native-jni-lib
-# Wed, 31 Jul 2019 22:10:05 GMT
+# Fri, 06 Sep 2019 00:26:51 GMT
 ENV GPG_KEYS=05AB33110949707C93A279E3D3EFE6B686867BA6 07E48665A34DCAFAE522E5E6266191C37C037D42 47309207D818FFD8DCD3F83F1931D684307A10A5 541FBE7D8F78B25E055DDEE13C370389288584E7 61B832AC2F1C5A90F0F9B00A1C506407564C17A3 713DA88BE50911535FE716F5208B0AB1D63011C7 79F7026C690BAA50B92CD8B66A3AD3F4F22C4FED 9BA44C2621385CB966EBA586F72C284D731FABEE A27677289986DB50844682F8ACB77FC2E86E29AC A9C5DF4D22E99998D9875A5110C01C5A2F6059E7 DCFD35E0BF8CA7344752DE8B6FB21E8933C60243 F3A04C595DB5B6A5F1ECA43E3B7BBB100D811BBE F7DA48BB64BCB84ECBA7EE6935CD23C10D498E23
-# Wed, 31 Jul 2019 22:10:06 GMT
+# Fri, 06 Sep 2019 00:26:52 GMT
 ENV TOMCAT_MAJOR=8
-# Thu, 22 Aug 2019 00:01:45 GMT
+# Fri, 06 Sep 2019 00:26:53 GMT
 ENV TOMCAT_VERSION=8.5.45
-# Thu, 22 Aug 2019 00:01:45 GMT
+# Fri, 06 Sep 2019 00:26:57 GMT
 ENV TOMCAT_SHA512=4276a97b91aad204b393578b11266adff9fc5595ec5b0e0818b9343c9b741969bc162ae6933099799ab6c49f3ccb02ccb9bbf7df71e83832ef623a3ee6bee25a
-# Thu, 22 Aug 2019 00:03:33 GMT
+# Fri, 06 Sep 2019 00:28:39 GMT
 RUN set -eux; 		if ! command -v yumdb > /dev/null; then 		yum install -y yum-utils; 		yumdb set reason dep yum-utils; 	fi; 	if [ -f /etc/oracle-release ]; then 		yumdb set reason user filesystem; 	fi; 	_yum_install_temporary() { ( set -eu +x; 		local pkg todo=''; 		for pkg; do 			if ! rpm --query "$pkg" > /dev/null 2>&1; then 				todo="$todo $pkg"; 			fi; 		done; 		if [ -n "$todo" ]; then 			set -x; 			yum install -y $todo; 			yumdb set reason dep $todo; 		fi; 	) }; 	_yum_install_temporary gzip tar; 		ddist() { 		local f="$1"; shift; 		local distFile="$1"; shift; 		local success=; 		local distUrl=; 		for distUrl in 			'https://www.apache.org/dyn/closer.cgi?action=download&filename=' 			https://www-us.apache.org/dist/ 			https://www.apache.org/dist/ 			https://archive.apache.org/dist/ 		; do 			if curl -fL -o "$f" "$distUrl$distFile" && [ -s "$f" ]; then 				success=1; 				break; 			fi; 		done; 		[ -n "$success" ]; 	}; 		ddist 'tomcat.tar.gz' "tomcat/tomcat-$TOMCAT_MAJOR/v$TOMCAT_VERSION/bin/apache-tomcat-$TOMCAT_VERSION.tar.gz"; 	echo "$TOMCAT_SHA512 *tomcat.tar.gz" | sha512sum --strict --check -; 	ddist 'tomcat.tar.gz.asc' "tomcat/tomcat-$TOMCAT_MAJOR/v$TOMCAT_VERSION/bin/apache-tomcat-$TOMCAT_VERSION.tar.gz.asc"; 	export GNUPGHOME="$(mktemp -d)"; 	for key in $GPG_KEYS; do 		gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys "$key"; 	done; 	gpg --batch --verify tomcat.tar.gz.asc tomcat.tar.gz; 	tar -xf tomcat.tar.gz --strip-components=1; 	rm bin/*.bat; 	rm tomcat.tar.gz*; 	command -v gpgconf && gpgconf --kill all || :; 	rm -rf "$GNUPGHOME"; 		nativeBuildDir="$(mktemp -d)"; 	tar -xf bin/tomcat-native.tar.gz -C "$nativeBuildDir" --strip-components=1; 	_yum_install_temporary 		apr-devel 		gcc 		make 		openssl-devel 	; 	( 		export CATALINA_HOME="$PWD"; 		cd "$nativeBuildDir/native"; 		aprConfig="$(command -v apr-1-config)"; 		./configure 			--libdir="$TOMCAT_NATIVE_LIBDIR" 			--prefix="$CATALINA_HOME" 			--with-apr="$aprConfig" 			--with-java-home="$JAVA_HOME" 			--with-ssl=yes; 		make -j "$(nproc)"; 		make install; 	); 	rm -rf "$nativeBuildDir"; 	rm bin/tomcat-native.tar.gz; 		deps="$( 		find "$TOMCAT_NATIVE_LIBDIR" -type f -executable -exec ldd '{}' ';' 			| awk '/=>/ && $(NF-1) != "=>" { print $(NF-1) }' 			| sort -u 			| xargs -r rpm --query --whatprovides 			| sort -u 	)"; 	[ -z "$deps" ] || yumdb set reason user $deps; 		yum autoremove -y; 	yum clean all; 	rm -rf /var/cache/yum; 		find ./bin/ -name '*.sh' -exec sed -ri 's|^#!/bin/sh$|#!/usr/bin/env bash|' '{}' +; 		chmod -R +rX .; 	chmod 777 logs work
-# Thu, 22 Aug 2019 00:03:37 GMT
+# Fri, 06 Sep 2019 00:28:48 GMT
 RUN set -e 	&& nativeLines="$(catalina.sh configtest 2>&1)" 	&& nativeLines="$(echo "$nativeLines" | grep 'Apache Tomcat Native')" 	&& nativeLines="$(echo "$nativeLines" | sort -u)" 	&& if ! echo "$nativeLines" | grep 'INFO: Loaded APR based Apache Tomcat Native library' >&2; then 		echo >&2 "$nativeLines"; 		exit 1; 	fi
-# Thu, 22 Aug 2019 00:03:37 GMT
+# Fri, 06 Sep 2019 00:28:49 GMT
 EXPOSE 8080
-# Thu, 22 Aug 2019 00:03:38 GMT
+# Fri, 06 Sep 2019 00:28:50 GMT
 CMD ["catalina.sh" "run"]
 ```
 
 -	Layers:
-	-	`sha256:0c8ee56cea53bee75dce23897c1c0f77aa13a698e7b49d9f20c788cef45fadea`  
-		Last Modified: Thu, 23 May 2019 22:40:27 GMT  
-		Size: 62.5 MB (62453151 bytes)  
+	-	`sha256:e75eebfae1ce8742ae53a518590bca4735e2a5dbfa46418fa709591a7b42e522`  
+		Last Modified: Thu, 05 Sep 2019 20:43:10 GMT  
+		Size: 62.8 MB (62797593 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:26fa6a4fcbd205b5477eeeca21b716e71451d1a99c1210dede865590e1fe09f3`  
-		Last Modified: Tue, 30 Jul 2019 23:42:49 GMT  
-		Size: 195.3 MB (195286724 bytes)  
+	-	`sha256:149ea18e536a86a1d3013f8d890ae31d30843ddc6e56e6dca9caee694d195c1b`  
+		Last Modified: Thu, 05 Sep 2019 23:13:56 GMT  
+		Size: 195.3 MB (195295858 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:6192f742a23c42bda649424bedf838a1bb458c80f0d7ac9ac2c6692f86d1a4d3`  
-		Last Modified: Wed, 31 Jul 2019 22:15:18 GMT  
+	-	`sha256:ef6d54efaf622c109d088da3f6bc5297ef6cfe74a5ce3f9bbb95ee72e3885d52`  
+		Last Modified: Fri, 06 Sep 2019 00:35:05 GMT  
 		Size: 172.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:545f36c03121db6f18850e88189403bc8631afb584c17a8e5b1c10394c2b3a92`  
-		Last Modified: Thu, 22 Aug 2019 00:08:20 GMT  
-		Size: 13.4 MB (13436163 bytes)  
+	-	`sha256:006531924eb1421463a9da90090f567acd2f6d862eef8eea2b3844756bf642af`  
+		Last Modified: Fri, 06 Sep 2019 00:35:41 GMT  
+		Size: 13.5 MB (13454577 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:b7b35056c7828b517a7b9b4b557bfd9d7519b27be3d66334de5640841edda71d`  
-		Last Modified: Thu, 22 Aug 2019 00:08:17 GMT  
-		Size: 165.0 B  
+	-	`sha256:2d60875f8438c960be87d57d4d4ca3f80fd53965437ad8a8bcd184d8b2bd088e`  
+		Last Modified: Fri, 06 Sep 2019 00:35:38 GMT  
+		Size: 164.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `tomcat:8.5-jdk11-openjdk`
@@ -13038,7 +13038,7 @@ CMD ["catalina.sh" "run"]
 ## `tomcat:8.5-jdk8-corretto`
 
 ```console
-$ docker pull tomcat@sha256:f33f90c9e9962bb48eaa318108dbe1a87a39edc67bb4c44bf1d150d64361a4b2
+$ docker pull tomcat@sha256:1fffe8d34b7b9a6501dc362dfdf0d55c5dd0ea3d0a97545a0c4d834963abbd44
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -13049,175 +13049,175 @@ $ docker pull tomcat@sha256:f33f90c9e9962bb48eaa318108dbe1a87a39edc67bb4c44bf1d1
 ### `tomcat:8.5-jdk8-corretto` - linux; amd64
 
 ```console
-$ docker pull tomcat@sha256:0a78797f7fec56a15677d64488639447d86576145dfa30e48d75b42488f906c9
+$ docker pull tomcat@sha256:92733ee9aeb531b6b1a60db5fc562f489900f2c49bf3ce9a7fb8439692198788
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **196.2 MB (196189722 bytes)**  
+-	Total Size: **196.6 MB (196631183 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:f77da5bf7e65bd1ed776a174b55514beeb925c4806d43d3c49e63f60aed48a4f`
+-	Image ID: `sha256:4a23c22592312cf25d9950eecd48f3d46dbb7c514edf58aafa62601cc520a9cd`
 -	Default Command: `["catalina.sh","run"]`
 
 ```dockerfile
-# Thu, 23 May 2019 22:19:59 GMT
-ADD file:3cf811fe5073384ff1d5f405992ef7e5e452ad6d4a4cb873eee65007382f3a4a in / 
-# Thu, 23 May 2019 22:20:00 GMT
+# Thu, 05 Sep 2019 23:36:52 GMT
+ADD file:ee5d76cace83097841fd6a9fe1406be3e2176b9ec4de511cb5594bf959f9e657 in / 
+# Thu, 05 Sep 2019 23:36:53 GMT
 CMD ["/bin/bash"]
-# Tue, 30 Jul 2019 23:19:26 GMT
+# Fri, 06 Sep 2019 00:02:29 GMT
 ARG rpm_x64=java-1.8.0-amazon-corretto-devel-1.8.0_222.b10-1.x86_64.rpm
-# Tue, 30 Jul 2019 23:19:26 GMT
+# Fri, 06 Sep 2019 00:02:30 GMT
 ARG path_x64=https://d3pxv6yz143wms.cloudfront.net/8.222.10.1
-# Tue, 30 Jul 2019 23:19:26 GMT
+# Fri, 06 Sep 2019 00:02:30 GMT
 ARG key_x64=C554E802F4545B60919A0A87BD93DF06B540D62A
-# Tue, 30 Jul 2019 23:19:27 GMT
+# Fri, 06 Sep 2019 00:02:30 GMT
 ARG rpm_aarch64=java-1.8.0-amazon-corretto-devel-1.8.0_222.b10-4.aarch64.rpm
-# Tue, 30 Jul 2019 23:19:27 GMT
+# Fri, 06 Sep 2019 00:02:30 GMT
 ARG path_aarch64=https://d3pxv6yz143wms.cloudfront.net/8.222.10.4
-# Tue, 30 Jul 2019 23:19:27 GMT
+# Fri, 06 Sep 2019 00:02:30 GMT
 ARG key_aarch64=826272FACCCCC8E76897C26CE9B1F93E1A158134
-# Tue, 30 Jul 2019 23:19:47 GMT
+# Fri, 06 Sep 2019 00:02:52 GMT
 # ARGS: key_aarch64=826272FACCCCC8E76897C26CE9B1F93E1A158134 key_x64=C554E802F4545B60919A0A87BD93DF06B540D62A path_aarch64=https://d3pxv6yz143wms.cloudfront.net/8.222.10.4 path_x64=https://d3pxv6yz143wms.cloudfront.net/8.222.10.1 rpm_aarch64=java-1.8.0-amazon-corretto-devel-1.8.0_222.b10-4.aarch64.rpm rpm_x64=java-1.8.0-amazon-corretto-devel-1.8.0_222.b10-1.x86_64.rpm
 RUN set -eux;     case "$(uname -p)" in         x86_64) rpm=$rpm_x64; path=$path_x64; key=$key_x64 ;;         aarch64) rpm=$rpm_aarch64; path=$path_aarch64; key=$key_aarch64 ;;         *) echo >&2 "Unsupported architecture $(uname -p)."; exit 1 ;;     esac;         curl -O $path/$rpm     && export GNUPGHOME="$(mktemp -d)"     && gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys $key     && gpg --armor --export $key > corretto.asc     && rpm --import corretto.asc     && rpm -K $rpm     && rpm -i $rpm     && rm -r $GNUPGHOME corretto.asc $rpm     && yum install -y fontconfig     && yum clean all
-# Tue, 30 Jul 2019 23:19:47 GMT
+# Fri, 06 Sep 2019 00:02:52 GMT
 ENV JAVA_HOME=/usr/lib/jvm/java-1.8.0-amazon-corretto
-# Tue, 30 Jul 2019 23:39:00 GMT
+# Fri, 06 Sep 2019 00:22:16 GMT
 ENV CATALINA_HOME=/usr/local/tomcat
-# Tue, 30 Jul 2019 23:39:00 GMT
+# Fri, 06 Sep 2019 00:22:16 GMT
 ENV PATH=/usr/local/tomcat/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Tue, 30 Jul 2019 23:39:01 GMT
+# Fri, 06 Sep 2019 00:22:17 GMT
 RUN mkdir -p "$CATALINA_HOME"
-# Tue, 30 Jul 2019 23:39:01 GMT
+# Fri, 06 Sep 2019 00:22:17 GMT
 WORKDIR /usr/local/tomcat
-# Tue, 30 Jul 2019 23:39:01 GMT
+# Fri, 06 Sep 2019 00:22:17 GMT
 ENV TOMCAT_NATIVE_LIBDIR=/usr/local/tomcat/native-jni-lib
-# Tue, 30 Jul 2019 23:39:01 GMT
+# Fri, 06 Sep 2019 00:22:17 GMT
 ENV LD_LIBRARY_PATH=/usr/local/tomcat/native-jni-lib
-# Tue, 30 Jul 2019 23:42:57 GMT
+# Fri, 06 Sep 2019 00:26:36 GMT
 ENV GPG_KEYS=05AB33110949707C93A279E3D3EFE6B686867BA6 07E48665A34DCAFAE522E5E6266191C37C037D42 47309207D818FFD8DCD3F83F1931D684307A10A5 541FBE7D8F78B25E055DDEE13C370389288584E7 61B832AC2F1C5A90F0F9B00A1C506407564C17A3 713DA88BE50911535FE716F5208B0AB1D63011C7 79F7026C690BAA50B92CD8B66A3AD3F4F22C4FED 9BA44C2621385CB966EBA586F72C284D731FABEE A27677289986DB50844682F8ACB77FC2E86E29AC A9C5DF4D22E99998D9875A5110C01C5A2F6059E7 DCFD35E0BF8CA7344752DE8B6FB21E8933C60243 F3A04C595DB5B6A5F1ECA43E3B7BBB100D811BBE F7DA48BB64BCB84ECBA7EE6935CD23C10D498E23
-# Tue, 30 Jul 2019 23:42:57 GMT
+# Fri, 06 Sep 2019 00:26:36 GMT
 ENV TOMCAT_MAJOR=8
-# Thu, 22 Aug 2019 00:29:12 GMT
+# Fri, 06 Sep 2019 00:26:36 GMT
 ENV TOMCAT_VERSION=8.5.45
-# Thu, 22 Aug 2019 00:29:12 GMT
+# Fri, 06 Sep 2019 00:26:36 GMT
 ENV TOMCAT_SHA512=4276a97b91aad204b393578b11266adff9fc5595ec5b0e0818b9343c9b741969bc162ae6933099799ab6c49f3ccb02ccb9bbf7df71e83832ef623a3ee6bee25a
-# Thu, 22 Aug 2019 00:30:48 GMT
+# Fri, 06 Sep 2019 00:28:07 GMT
 RUN set -eux; 		if ! command -v yumdb > /dev/null; then 		yum install -y yum-utils; 		yumdb set reason dep yum-utils; 	fi; 	if [ -f /etc/oracle-release ]; then 		yumdb set reason user filesystem; 	fi; 	_yum_install_temporary() { ( set -eu +x; 		local pkg todo=''; 		for pkg; do 			if ! rpm --query "$pkg" > /dev/null 2>&1; then 				todo="$todo $pkg"; 			fi; 		done; 		if [ -n "$todo" ]; then 			set -x; 			yum install -y $todo; 			yumdb set reason dep $todo; 		fi; 	) }; 	_yum_install_temporary gzip tar; 		ddist() { 		local f="$1"; shift; 		local distFile="$1"; shift; 		local success=; 		local distUrl=; 		for distUrl in 			'https://www.apache.org/dyn/closer.cgi?action=download&filename=' 			https://www-us.apache.org/dist/ 			https://www.apache.org/dist/ 			https://archive.apache.org/dist/ 		; do 			if curl -fL -o "$f" "$distUrl$distFile" && [ -s "$f" ]; then 				success=1; 				break; 			fi; 		done; 		[ -n "$success" ]; 	}; 		ddist 'tomcat.tar.gz' "tomcat/tomcat-$TOMCAT_MAJOR/v$TOMCAT_VERSION/bin/apache-tomcat-$TOMCAT_VERSION.tar.gz"; 	echo "$TOMCAT_SHA512 *tomcat.tar.gz" | sha512sum --strict --check -; 	ddist 'tomcat.tar.gz.asc' "tomcat/tomcat-$TOMCAT_MAJOR/v$TOMCAT_VERSION/bin/apache-tomcat-$TOMCAT_VERSION.tar.gz.asc"; 	export GNUPGHOME="$(mktemp -d)"; 	for key in $GPG_KEYS; do 		gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys "$key"; 	done; 	gpg --batch --verify tomcat.tar.gz.asc tomcat.tar.gz; 	tar -xf tomcat.tar.gz --strip-components=1; 	rm bin/*.bat; 	rm tomcat.tar.gz*; 	command -v gpgconf && gpgconf --kill all || :; 	rm -rf "$GNUPGHOME"; 		nativeBuildDir="$(mktemp -d)"; 	tar -xf bin/tomcat-native.tar.gz -C "$nativeBuildDir" --strip-components=1; 	_yum_install_temporary 		apr-devel 		gcc 		make 		openssl-devel 	; 	( 		export CATALINA_HOME="$PWD"; 		cd "$nativeBuildDir/native"; 		aprConfig="$(command -v apr-1-config)"; 		./configure 			--libdir="$TOMCAT_NATIVE_LIBDIR" 			--prefix="$CATALINA_HOME" 			--with-apr="$aprConfig" 			--with-java-home="$JAVA_HOME" 			--with-ssl=yes; 		make -j "$(nproc)"; 		make install; 	); 	rm -rf "$nativeBuildDir"; 	rm bin/tomcat-native.tar.gz; 		deps="$( 		find "$TOMCAT_NATIVE_LIBDIR" -type f -executable -exec ldd '{}' ';' 			| awk '/=>/ && $(NF-1) != "=>" { print $(NF-1) }' 			| sort -u 			| xargs -r rpm --query --whatprovides 			| sort -u 	)"; 	[ -z "$deps" ] || yumdb set reason user $deps; 		yum autoremove -y; 	yum clean all; 	rm -rf /var/cache/yum; 		find ./bin/ -name '*.sh' -exec sed -ri 's|^#!/bin/sh$|#!/usr/bin/env bash|' '{}' +; 		chmod -R +rX .; 	chmod 777 logs work
-# Thu, 22 Aug 2019 00:30:50 GMT
+# Fri, 06 Sep 2019 00:28:09 GMT
 RUN set -e 	&& nativeLines="$(catalina.sh configtest 2>&1)" 	&& nativeLines="$(echo "$nativeLines" | grep 'Apache Tomcat Native')" 	&& nativeLines="$(echo "$nativeLines" | sort -u)" 	&& if ! echo "$nativeLines" | grep 'INFO: Loaded APR based Apache Tomcat Native library' >&2; then 		echo >&2 "$nativeLines"; 		exit 1; 	fi
-# Thu, 22 Aug 2019 00:30:50 GMT
+# Fri, 06 Sep 2019 00:28:09 GMT
 EXPOSE 8080
-# Thu, 22 Aug 2019 00:30:51 GMT
+# Fri, 06 Sep 2019 00:28:09 GMT
 CMD ["catalina.sh" "run"]
 ```
 
 -	Layers:
-	-	`sha256:72d97abdfae3b3c933ff41e39779cc72853d7bd9dc1e4800c5294d6715257799`  
-		Last Modified: Thu, 23 May 2019 22:22:16 GMT  
-		Size: 61.3 MB (61285177 bytes)  
+	-	`sha256:4910da0c66710ed2414cd0223e48cbeed94209b9c77053dc30d48532a651dd22`  
+		Last Modified: Thu, 05 Sep 2019 23:38:39 GMT  
+		Size: 61.7 MB (61665831 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c13d17f3a543055e7f616629ad6825d21746252d0b8db4f1812c86b11e3fdc96`  
-		Last Modified: Tue, 30 Jul 2019 23:20:57 GMT  
-		Size: 121.5 MB (121482783 bytes)  
+	-	`sha256:c511e36daa9ce76f573699dfe6fabfac82254067f5ff99f2049f99d176ec919d`  
+		Last Modified: Fri, 06 Sep 2019 00:03:50 GMT  
+		Size: 121.5 MB (121533245 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:34afcacfc487c55714cfc7e34c35abe51c1a26be56d268883ecc929fa305f714`  
-		Last Modified: Tue, 30 Jul 2019 23:47:26 GMT  
-		Size: 139.0 B  
+	-	`sha256:fb8769d09d3f4236a9a84b65d19abf678fdd45df105a6e62a3924404dafa15af`  
+		Last Modified: Fri, 06 Sep 2019 00:31:09 GMT  
+		Size: 138.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c5e58502e3f96611ece65522abfcbb22461dfe4a38aafbc2467a47a3ce305b53`  
-		Last Modified: Thu, 22 Aug 2019 00:34:53 GMT  
-		Size: 13.4 MB (13421491 bytes)  
+	-	`sha256:dd81acf4b9d269719e64cf7902238ffe2875d7ad2e185fed687694c33704912b`  
+		Last Modified: Fri, 06 Sep 2019 00:31:29 GMT  
+		Size: 13.4 MB (13431837 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:7f557b6a41d0d81b65a4ff1eeae1239fff55ed8ff6e556db884f89da3fc26a6e`  
-		Last Modified: Thu, 22 Aug 2019 00:34:51 GMT  
+	-	`sha256:4c03db6767cf9449e15645bd45c825e93fbd2999981226fc57ed32e56a060b8f`  
+		Last Modified: Fri, 06 Sep 2019 00:31:27 GMT  
 		Size: 132.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `tomcat:8.5-jdk8-corretto` - linux; arm64 variant v8
 
 ```console
-$ docker pull tomcat@sha256:c62c60fe2da097e93c80e277be5bcae77b1125d5566a87d7e60087478bd84474
+$ docker pull tomcat@sha256:eeca3d7e2ca0295775b0165cae5d0439cc54e67a80ea469739be5c2684300ee3
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **180.8 MB (180763474 bytes)**  
+-	Total Size: **181.1 MB (181138486 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:1ccfe61327ef171af33a285e58e3868eb7e375d662a42c668a3837483f434df0`
+-	Image ID: `sha256:dc2aa448f1ee3a9c15092e795fae6b14e8cd261f1ebd249511d190787b501c7e`
 -	Default Command: `["catalina.sh","run"]`
 
 ```dockerfile
-# Thu, 23 May 2019 22:39:34 GMT
-ADD file:358a4a50e1cb5e7181b9cc49d23e60d7b0ba5ca2ce18ced74be5843836d54004 in / 
-# Thu, 23 May 2019 22:39:35 GMT
+# Thu, 05 Sep 2019 20:39:50 GMT
+ADD file:a72ff266718add2a5d4d63264fd3ce1f5191448aa441ffdb064ed570a651b36a in / 
+# Thu, 05 Sep 2019 20:39:51 GMT
 CMD ["/bin/bash"]
-# Tue, 30 Jul 2019 23:39:26 GMT
+# Thu, 05 Sep 2019 23:11:35 GMT
 ARG rpm_x64=java-1.8.0-amazon-corretto-devel-1.8.0_222.b10-1.x86_64.rpm
-# Tue, 30 Jul 2019 23:39:27 GMT
+# Thu, 05 Sep 2019 23:11:35 GMT
 ARG path_x64=https://d3pxv6yz143wms.cloudfront.net/8.222.10.1
-# Tue, 30 Jul 2019 23:39:27 GMT
+# Thu, 05 Sep 2019 23:11:35 GMT
 ARG key_x64=C554E802F4545B60919A0A87BD93DF06B540D62A
-# Tue, 30 Jul 2019 23:39:27 GMT
+# Thu, 05 Sep 2019 23:11:36 GMT
 ARG rpm_aarch64=java-1.8.0-amazon-corretto-devel-1.8.0_222.b10-4.aarch64.rpm
-# Tue, 30 Jul 2019 23:39:28 GMT
+# Thu, 05 Sep 2019 23:11:36 GMT
 ARG path_aarch64=https://d3pxv6yz143wms.cloudfront.net/8.222.10.4
-# Tue, 30 Jul 2019 23:39:28 GMT
+# Thu, 05 Sep 2019 23:11:36 GMT
 ARG key_aarch64=826272FACCCCC8E76897C26CE9B1F93E1A158134
-# Tue, 30 Jul 2019 23:40:33 GMT
+# Thu, 05 Sep 2019 23:12:00 GMT
 # ARGS: key_aarch64=826272FACCCCC8E76897C26CE9B1F93E1A158134 key_x64=C554E802F4545B60919A0A87BD93DF06B540D62A path_aarch64=https://d3pxv6yz143wms.cloudfront.net/8.222.10.4 path_x64=https://d3pxv6yz143wms.cloudfront.net/8.222.10.1 rpm_aarch64=java-1.8.0-amazon-corretto-devel-1.8.0_222.b10-4.aarch64.rpm rpm_x64=java-1.8.0-amazon-corretto-devel-1.8.0_222.b10-1.x86_64.rpm
 RUN set -eux;     case "$(uname -p)" in         x86_64) rpm=$rpm_x64; path=$path_x64; key=$key_x64 ;;         aarch64) rpm=$rpm_aarch64; path=$path_aarch64; key=$key_aarch64 ;;         *) echo >&2 "Unsupported architecture $(uname -p)."; exit 1 ;;     esac;         curl -O $path/$rpm     && export GNUPGHOME="$(mktemp -d)"     && gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys $key     && gpg --armor --export $key > corretto.asc     && rpm --import corretto.asc     && rpm -K $rpm     && rpm -i $rpm     && rm -r $GNUPGHOME corretto.asc $rpm     && yum install -y fontconfig     && yum clean all
-# Tue, 30 Jul 2019 23:40:34 GMT
+# Thu, 05 Sep 2019 23:12:01 GMT
 ENV JAVA_HOME=/usr/lib/jvm/java-1.8.0-amazon-corretto
-# Wed, 31 Jul 2019 22:08:23 GMT
+# Fri, 06 Sep 2019 00:24:08 GMT
 ENV CATALINA_HOME=/usr/local/tomcat
-# Wed, 31 Jul 2019 22:08:23 GMT
+# Fri, 06 Sep 2019 00:24:09 GMT
 ENV PATH=/usr/local/tomcat/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Wed, 31 Jul 2019 22:08:24 GMT
+# Fri, 06 Sep 2019 00:24:12 GMT
 RUN mkdir -p "$CATALINA_HOME"
-# Wed, 31 Jul 2019 22:08:25 GMT
+# Fri, 06 Sep 2019 00:24:16 GMT
 WORKDIR /usr/local/tomcat
-# Wed, 31 Jul 2019 22:08:25 GMT
+# Fri, 06 Sep 2019 00:24:17 GMT
 ENV TOMCAT_NATIVE_LIBDIR=/usr/local/tomcat/native-jni-lib
-# Wed, 31 Jul 2019 22:08:25 GMT
+# Fri, 06 Sep 2019 00:24:18 GMT
 ENV LD_LIBRARY_PATH=/usr/local/tomcat/native-jni-lib
-# Wed, 31 Jul 2019 22:11:54 GMT
+# Fri, 06 Sep 2019 00:29:13 GMT
 ENV GPG_KEYS=05AB33110949707C93A279E3D3EFE6B686867BA6 07E48665A34DCAFAE522E5E6266191C37C037D42 47309207D818FFD8DCD3F83F1931D684307A10A5 541FBE7D8F78B25E055DDEE13C370389288584E7 61B832AC2F1C5A90F0F9B00A1C506407564C17A3 713DA88BE50911535FE716F5208B0AB1D63011C7 79F7026C690BAA50B92CD8B66A3AD3F4F22C4FED 9BA44C2621385CB966EBA586F72C284D731FABEE A27677289986DB50844682F8ACB77FC2E86E29AC A9C5DF4D22E99998D9875A5110C01C5A2F6059E7 DCFD35E0BF8CA7344752DE8B6FB21E8933C60243 F3A04C595DB5B6A5F1ECA43E3B7BBB100D811BBE F7DA48BB64BCB84ECBA7EE6935CD23C10D498E23
-# Wed, 31 Jul 2019 22:11:54 GMT
+# Fri, 06 Sep 2019 00:29:16 GMT
 ENV TOMCAT_MAJOR=8
-# Thu, 22 Aug 2019 00:05:04 GMT
+# Fri, 06 Sep 2019 00:29:20 GMT
 ENV TOMCAT_VERSION=8.5.45
-# Thu, 22 Aug 2019 00:05:05 GMT
+# Fri, 06 Sep 2019 00:29:22 GMT
 ENV TOMCAT_SHA512=4276a97b91aad204b393578b11266adff9fc5595ec5b0e0818b9343c9b741969bc162ae6933099799ab6c49f3ccb02ccb9bbf7df71e83832ef623a3ee6bee25a
-# Thu, 22 Aug 2019 00:06:13 GMT
+# Fri, 06 Sep 2019 00:31:08 GMT
 RUN set -eux; 		if ! command -v yumdb > /dev/null; then 		yum install -y yum-utils; 		yumdb set reason dep yum-utils; 	fi; 	if [ -f /etc/oracle-release ]; then 		yumdb set reason user filesystem; 	fi; 	_yum_install_temporary() { ( set -eu +x; 		local pkg todo=''; 		for pkg; do 			if ! rpm --query "$pkg" > /dev/null 2>&1; then 				todo="$todo $pkg"; 			fi; 		done; 		if [ -n "$todo" ]; then 			set -x; 			yum install -y $todo; 			yumdb set reason dep $todo; 		fi; 	) }; 	_yum_install_temporary gzip tar; 		ddist() { 		local f="$1"; shift; 		local distFile="$1"; shift; 		local success=; 		local distUrl=; 		for distUrl in 			'https://www.apache.org/dyn/closer.cgi?action=download&filename=' 			https://www-us.apache.org/dist/ 			https://www.apache.org/dist/ 			https://archive.apache.org/dist/ 		; do 			if curl -fL -o "$f" "$distUrl$distFile" && [ -s "$f" ]; then 				success=1; 				break; 			fi; 		done; 		[ -n "$success" ]; 	}; 		ddist 'tomcat.tar.gz' "tomcat/tomcat-$TOMCAT_MAJOR/v$TOMCAT_VERSION/bin/apache-tomcat-$TOMCAT_VERSION.tar.gz"; 	echo "$TOMCAT_SHA512 *tomcat.tar.gz" | sha512sum --strict --check -; 	ddist 'tomcat.tar.gz.asc' "tomcat/tomcat-$TOMCAT_MAJOR/v$TOMCAT_VERSION/bin/apache-tomcat-$TOMCAT_VERSION.tar.gz.asc"; 	export GNUPGHOME="$(mktemp -d)"; 	for key in $GPG_KEYS; do 		gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys "$key"; 	done; 	gpg --batch --verify tomcat.tar.gz.asc tomcat.tar.gz; 	tar -xf tomcat.tar.gz --strip-components=1; 	rm bin/*.bat; 	rm tomcat.tar.gz*; 	command -v gpgconf && gpgconf --kill all || :; 	rm -rf "$GNUPGHOME"; 		nativeBuildDir="$(mktemp -d)"; 	tar -xf bin/tomcat-native.tar.gz -C "$nativeBuildDir" --strip-components=1; 	_yum_install_temporary 		apr-devel 		gcc 		make 		openssl-devel 	; 	( 		export CATALINA_HOME="$PWD"; 		cd "$nativeBuildDir/native"; 		aprConfig="$(command -v apr-1-config)"; 		./configure 			--libdir="$TOMCAT_NATIVE_LIBDIR" 			--prefix="$CATALINA_HOME" 			--with-apr="$aprConfig" 			--with-java-home="$JAVA_HOME" 			--with-ssl=yes; 		make -j "$(nproc)"; 		make install; 	); 	rm -rf "$nativeBuildDir"; 	rm bin/tomcat-native.tar.gz; 		deps="$( 		find "$TOMCAT_NATIVE_LIBDIR" -type f -executable -exec ldd '{}' ';' 			| awk '/=>/ && $(NF-1) != "=>" { print $(NF-1) }' 			| sort -u 			| xargs -r rpm --query --whatprovides 			| sort -u 	)"; 	[ -z "$deps" ] || yumdb set reason user $deps; 		yum autoremove -y; 	yum clean all; 	rm -rf /var/cache/yum; 		find ./bin/ -name '*.sh' -exec sed -ri 's|^#!/bin/sh$|#!/usr/bin/env bash|' '{}' +; 		chmod -R +rX .; 	chmod 777 logs work
-# Thu, 22 Aug 2019 00:06:17 GMT
+# Fri, 06 Sep 2019 00:31:16 GMT
 RUN set -e 	&& nativeLines="$(catalina.sh configtest 2>&1)" 	&& nativeLines="$(echo "$nativeLines" | grep 'Apache Tomcat Native')" 	&& nativeLines="$(echo "$nativeLines" | sort -u)" 	&& if ! echo "$nativeLines" | grep 'INFO: Loaded APR based Apache Tomcat Native library' >&2; then 		echo >&2 "$nativeLines"; 		exit 1; 	fi
-# Thu, 22 Aug 2019 00:06:17 GMT
+# Fri, 06 Sep 2019 00:31:17 GMT
 EXPOSE 8080
-# Thu, 22 Aug 2019 00:06:18 GMT
+# Fri, 06 Sep 2019 00:31:17 GMT
 CMD ["catalina.sh" "run"]
 ```
 
 -	Layers:
-	-	`sha256:0c8ee56cea53bee75dce23897c1c0f77aa13a698e7b49d9f20c788cef45fadea`  
-		Last Modified: Thu, 23 May 2019 22:40:27 GMT  
-		Size: 62.5 MB (62453151 bytes)  
+	-	`sha256:e75eebfae1ce8742ae53a518590bca4735e2a5dbfa46418fa709591a7b42e522`  
+		Last Modified: Thu, 05 Sep 2019 20:43:10 GMT  
+		Size: 62.8 MB (62797593 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:269e06f3b7489c1b941db3fc6cf17c76a7bf613b18a6aeff9d25c7144b85ae6a`  
-		Last Modified: Tue, 30 Jul 2019 23:42:10 GMT  
-		Size: 104.9 MB (104888017 bytes)  
+	-	`sha256:825292fe21ae21fe00976ccad2471578d1a289980b1ea830f4e0ad1990422166`  
+		Last Modified: Thu, 05 Sep 2019 23:13:17 GMT  
+		Size: 104.9 MB (104911609 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c1a0e5239e6a06f59af8cf4b3646b582c250ec4bcd6c3ebc520395b4e288e047`  
-		Last Modified: Wed, 31 Jul 2019 22:15:34 GMT  
-		Size: 172.0 B  
+	-	`sha256:babaad70d6b41a7c0adfcbf58979816fb28f3415b9bc800fb9f306bed8742129`  
+		Last Modified: Fri, 06 Sep 2019 00:35:19 GMT  
+		Size: 171.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c7ec0ab5cea7606382441e62dae04fecd703aef01dc149c2cd597e923194db50`  
-		Last Modified: Thu, 22 Aug 2019 00:09:01 GMT  
-		Size: 13.4 MB (13421969 bytes)  
+	-	`sha256:ec7b19822248b0ae26cb17e3b2529fc4bc2f3227ec5f7d845d81599c3eed6457`  
+		Last Modified: Fri, 06 Sep 2019 00:35:54 GMT  
+		Size: 13.4 MB (13428949 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:8a1903d8bf96ab016dfb175296b536ba87f2e5e5b5d8ab4eb6b91baa54b4b651`  
-		Last Modified: Thu, 22 Aug 2019 00:08:40 GMT  
-		Size: 165.0 B  
+	-	`sha256:4bc44f97a34fdab5a5ef0d049d7697cbeca334757ff92ac3e080f49e6b06cbb3`  
+		Last Modified: Fri, 06 Sep 2019 00:35:50 GMT  
+		Size: 164.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `tomcat:8.5-jdk8-openjdk`
@@ -14560,7 +14560,7 @@ CMD ["catalina.sh" "run"]
 ## `tomcat:8-jdk11-corretto`
 
 ```console
-$ docker pull tomcat@sha256:ff823bf0954a53e6a64cb38e069525ce0c9fb57724ae400af3dada39ab6cbcfa
+$ docker pull tomcat@sha256:37d2705ddd76c8df76a38dd43092895258c4b11ad4aa0838ed84f53830a17cea
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -14571,175 +14571,175 @@ $ docker pull tomcat@sha256:ff823bf0954a53e6a64cb38e069525ce0c9fb57724ae400af3da
 ### `tomcat:8-jdk11-corretto` - linux; amd64
 
 ```console
-$ docker pull tomcat@sha256:de0387ad59034af7b97e6962f0dd518e0e36f751bb104d3896fcd49319cdebc9
+$ docker pull tomcat@sha256:ac290e29b2ac130c06dfb446b17039a84c934f6deaf3b3db97a11e14b3ef102d
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **271.7 MB (271694682 bytes)**  
+-	Total Size: **272.1 MB (272139725 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:16dcb5719526715fdf7a9dc6c61bbe31ef822d087b3b99cb6e2c207280c6de13`
+-	Image ID: `sha256:568dc9e9bb09e77e29137ec7b065e474d78c75e956832b471878b3f0d4eef706`
 -	Default Command: `["catalina.sh","run"]`
 
 ```dockerfile
-# Thu, 23 May 2019 22:19:59 GMT
-ADD file:3cf811fe5073384ff1d5f405992ef7e5e452ad6d4a4cb873eee65007382f3a4a in / 
-# Thu, 23 May 2019 22:20:00 GMT
+# Thu, 05 Sep 2019 23:36:52 GMT
+ADD file:ee5d76cace83097841fd6a9fe1406be3e2176b9ec4de511cb5594bf959f9e657 in / 
+# Thu, 05 Sep 2019 23:36:53 GMT
 CMD ["/bin/bash"]
-# Tue, 30 Jul 2019 23:19:53 GMT
+# Fri, 06 Sep 2019 00:02:57 GMT
 ARG rpm_x64=java-11-amazon-corretto-devel-11.0.4.11-1.x86_64.rpm
-# Tue, 30 Jul 2019 23:19:53 GMT
+# Fri, 06 Sep 2019 00:02:58 GMT
 ARG path_x64=https://d3pxv6yz143wms.cloudfront.net/11.0.4.11.1
-# Tue, 30 Jul 2019 23:19:53 GMT
+# Fri, 06 Sep 2019 00:02:58 GMT
 ARG key_x64=4FF3DA639731F095833505A25A812B5B67F4FCB4
-# Tue, 30 Jul 2019 23:19:54 GMT
+# Fri, 06 Sep 2019 00:02:58 GMT
 ARG rpm_aarch64=java-11-amazon-corretto-devel-11.0.4.11-1.aarch64.rpm
-# Tue, 30 Jul 2019 23:19:54 GMT
+# Fri, 06 Sep 2019 00:02:58 GMT
 ARG path_aarch64=https://d3pxv6yz143wms.cloudfront.net/11.0.4.11.1
-# Tue, 30 Jul 2019 23:19:54 GMT
+# Fri, 06 Sep 2019 00:02:58 GMT
 ARG key_aarch64=4FF3DA639731F095833505A25A812B5B67F4FCB4
-# Tue, 30 Jul 2019 23:20:17 GMT
+# Fri, 06 Sep 2019 00:03:23 GMT
 # ARGS: key_aarch64=4FF3DA639731F095833505A25A812B5B67F4FCB4 key_x64=4FF3DA639731F095833505A25A812B5B67F4FCB4 path_aarch64=https://d3pxv6yz143wms.cloudfront.net/11.0.4.11.1 path_x64=https://d3pxv6yz143wms.cloudfront.net/11.0.4.11.1 rpm_aarch64=java-11-amazon-corretto-devel-11.0.4.11-1.aarch64.rpm rpm_x64=java-11-amazon-corretto-devel-11.0.4.11-1.x86_64.rpm
 RUN set -eux;     case "$(uname -p)" in         x86_64) rpm=$rpm_x64; path=$path_x64; key=$key_x64 ;;         aarch64) rpm=$rpm_aarch64; path=$path_aarch64; key=$key_aarch64 ;;         *) echo >&2 "Unsupported architecture $(uname -p)."; exit 1 ;;     esac;         curl -O $path/$rpm     && export GNUPGHOME="$(mktemp -d)"     && gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys $key     && gpg --armor --export $key > corretto.asc     && rpm --import corretto.asc     && rpm -K $rpm     && rpm -i $rpm     && rm -r $GNUPGHOME corretto.asc $rpm     && yum install -y fontconfig     && yum clean all
-# Tue, 30 Jul 2019 23:20:17 GMT
+# Fri, 06 Sep 2019 00:03:23 GMT
 ENV JAVA_HOME=/usr/lib/jvm/java-11-amazon-corretto
-# Tue, 30 Jul 2019 23:37:08 GMT
+# Fri, 06 Sep 2019 00:20:17 GMT
 ENV CATALINA_HOME=/usr/local/tomcat
-# Tue, 30 Jul 2019 23:37:08 GMT
+# Fri, 06 Sep 2019 00:20:17 GMT
 ENV PATH=/usr/local/tomcat/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Tue, 30 Jul 2019 23:37:09 GMT
+# Fri, 06 Sep 2019 00:20:18 GMT
 RUN mkdir -p "$CATALINA_HOME"
-# Tue, 30 Jul 2019 23:37:09 GMT
+# Fri, 06 Sep 2019 00:20:18 GMT
 WORKDIR /usr/local/tomcat
-# Tue, 30 Jul 2019 23:37:09 GMT
+# Fri, 06 Sep 2019 00:20:18 GMT
 ENV TOMCAT_NATIVE_LIBDIR=/usr/local/tomcat/native-jni-lib
-# Tue, 30 Jul 2019 23:37:09 GMT
+# Fri, 06 Sep 2019 00:20:18 GMT
 ENV LD_LIBRARY_PATH=/usr/local/tomcat/native-jni-lib
-# Tue, 30 Jul 2019 23:41:03 GMT
+# Fri, 06 Sep 2019 00:24:31 GMT
 ENV GPG_KEYS=05AB33110949707C93A279E3D3EFE6B686867BA6 07E48665A34DCAFAE522E5E6266191C37C037D42 47309207D818FFD8DCD3F83F1931D684307A10A5 541FBE7D8F78B25E055DDEE13C370389288584E7 61B832AC2F1C5A90F0F9B00A1C506407564C17A3 713DA88BE50911535FE716F5208B0AB1D63011C7 79F7026C690BAA50B92CD8B66A3AD3F4F22C4FED 9BA44C2621385CB966EBA586F72C284D731FABEE A27677289986DB50844682F8ACB77FC2E86E29AC A9C5DF4D22E99998D9875A5110C01C5A2F6059E7 DCFD35E0BF8CA7344752DE8B6FB21E8933C60243 F3A04C595DB5B6A5F1ECA43E3B7BBB100D811BBE F7DA48BB64BCB84ECBA7EE6935CD23C10D498E23
-# Tue, 30 Jul 2019 23:41:03 GMT
+# Fri, 06 Sep 2019 00:24:32 GMT
 ENV TOMCAT_MAJOR=8
-# Thu, 22 Aug 2019 00:24:10 GMT
+# Fri, 06 Sep 2019 00:24:32 GMT
 ENV TOMCAT_VERSION=8.5.45
-# Thu, 22 Aug 2019 00:24:10 GMT
+# Fri, 06 Sep 2019 00:24:32 GMT
 ENV TOMCAT_SHA512=4276a97b91aad204b393578b11266adff9fc5595ec5b0e0818b9343c9b741969bc162ae6933099799ab6c49f3ccb02ccb9bbf7df71e83832ef623a3ee6bee25a
-# Thu, 22 Aug 2019 00:25:48 GMT
+# Fri, 06 Sep 2019 00:26:07 GMT
 RUN set -eux; 		if ! command -v yumdb > /dev/null; then 		yum install -y yum-utils; 		yumdb set reason dep yum-utils; 	fi; 	if [ -f /etc/oracle-release ]; then 		yumdb set reason user filesystem; 	fi; 	_yum_install_temporary() { ( set -eu +x; 		local pkg todo=''; 		for pkg; do 			if ! rpm --query "$pkg" > /dev/null 2>&1; then 				todo="$todo $pkg"; 			fi; 		done; 		if [ -n "$todo" ]; then 			set -x; 			yum install -y $todo; 			yumdb set reason dep $todo; 		fi; 	) }; 	_yum_install_temporary gzip tar; 		ddist() { 		local f="$1"; shift; 		local distFile="$1"; shift; 		local success=; 		local distUrl=; 		for distUrl in 			'https://www.apache.org/dyn/closer.cgi?action=download&filename=' 			https://www-us.apache.org/dist/ 			https://www.apache.org/dist/ 			https://archive.apache.org/dist/ 		; do 			if curl -fL -o "$f" "$distUrl$distFile" && [ -s "$f" ]; then 				success=1; 				break; 			fi; 		done; 		[ -n "$success" ]; 	}; 		ddist 'tomcat.tar.gz' "tomcat/tomcat-$TOMCAT_MAJOR/v$TOMCAT_VERSION/bin/apache-tomcat-$TOMCAT_VERSION.tar.gz"; 	echo "$TOMCAT_SHA512 *tomcat.tar.gz" | sha512sum --strict --check -; 	ddist 'tomcat.tar.gz.asc' "tomcat/tomcat-$TOMCAT_MAJOR/v$TOMCAT_VERSION/bin/apache-tomcat-$TOMCAT_VERSION.tar.gz.asc"; 	export GNUPGHOME="$(mktemp -d)"; 	for key in $GPG_KEYS; do 		gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys "$key"; 	done; 	gpg --batch --verify tomcat.tar.gz.asc tomcat.tar.gz; 	tar -xf tomcat.tar.gz --strip-components=1; 	rm bin/*.bat; 	rm tomcat.tar.gz*; 	command -v gpgconf && gpgconf --kill all || :; 	rm -rf "$GNUPGHOME"; 		nativeBuildDir="$(mktemp -d)"; 	tar -xf bin/tomcat-native.tar.gz -C "$nativeBuildDir" --strip-components=1; 	_yum_install_temporary 		apr-devel 		gcc 		make 		openssl-devel 	; 	( 		export CATALINA_HOME="$PWD"; 		cd "$nativeBuildDir/native"; 		aprConfig="$(command -v apr-1-config)"; 		./configure 			--libdir="$TOMCAT_NATIVE_LIBDIR" 			--prefix="$CATALINA_HOME" 			--with-apr="$aprConfig" 			--with-java-home="$JAVA_HOME" 			--with-ssl=yes; 		make -j "$(nproc)"; 		make install; 	); 	rm -rf "$nativeBuildDir"; 	rm bin/tomcat-native.tar.gz; 		deps="$( 		find "$TOMCAT_NATIVE_LIBDIR" -type f -executable -exec ldd '{}' ';' 			| awk '/=>/ && $(NF-1) != "=>" { print $(NF-1) }' 			| sort -u 			| xargs -r rpm --query --whatprovides 			| sort -u 	)"; 	[ -z "$deps" ] || yumdb set reason user $deps; 		yum autoremove -y; 	yum clean all; 	rm -rf /var/cache/yum; 		find ./bin/ -name '*.sh' -exec sed -ri 's|^#!/bin/sh$|#!/usr/bin/env bash|' '{}' +; 		chmod -R +rX .; 	chmod 777 logs work
-# Thu, 22 Aug 2019 00:25:51 GMT
+# Fri, 06 Sep 2019 00:26:10 GMT
 RUN set -e 	&& nativeLines="$(catalina.sh configtest 2>&1)" 	&& nativeLines="$(echo "$nativeLines" | grep 'Apache Tomcat Native')" 	&& nativeLines="$(echo "$nativeLines" | sort -u)" 	&& if ! echo "$nativeLines" | grep 'INFO: Loaded APR based Apache Tomcat Native library' >&2; then 		echo >&2 "$nativeLines"; 		exit 1; 	fi
-# Thu, 22 Aug 2019 00:25:51 GMT
+# Fri, 06 Sep 2019 00:26:10 GMT
 EXPOSE 8080
-# Thu, 22 Aug 2019 00:25:51 GMT
+# Fri, 06 Sep 2019 00:26:10 GMT
 CMD ["catalina.sh" "run"]
 ```
 
 -	Layers:
-	-	`sha256:72d97abdfae3b3c933ff41e39779cc72853d7bd9dc1e4800c5294d6715257799`  
-		Last Modified: Thu, 23 May 2019 22:22:16 GMT  
-		Size: 61.3 MB (61285177 bytes)  
+	-	`sha256:4910da0c66710ed2414cd0223e48cbeed94209b9c77053dc30d48532a651dd22`  
+		Last Modified: Thu, 05 Sep 2019 23:38:39 GMT  
+		Size: 61.7 MB (61665831 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:4f58afb139384717c6be8d8ba2803caf676e6d7fe750302d138bf13983df50b9`  
-		Last Modified: Tue, 30 Jul 2019 23:21:22 GMT  
-		Size: 197.0 MB (196988921 bytes)  
+	-	`sha256:b9d1840374efc595eade77260f8573765a51ccb6ebfecf02452d9ca356e18b69`  
+		Last Modified: Fri, 06 Sep 2019 00:04:16 GMT  
+		Size: 197.0 MB (197036830 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:6a4258a56fde8d6d1679c88a09371eaabd100e001b69054571de6290bdfdd21e`  
-		Last Modified: Tue, 30 Jul 2019 23:47:15 GMT  
-		Size: 139.0 B  
+	-	`sha256:e781e7241055b324d43f1f0f0f06d5131ed2aafb69892d9aa53b626ea2cb3865`  
+		Last Modified: Fri, 06 Sep 2019 00:31:01 GMT  
+		Size: 138.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:3fae71872779ce9e5041922ae6a6adb632a75837bd37cc9f6cfa58249796d450`  
-		Last Modified: Thu, 22 Aug 2019 00:33:30 GMT  
-		Size: 13.4 MB (13420313 bytes)  
+	-	`sha256:81c7babf3561161cfacb3eb1ae1616dcf0747d2ea0bad194e8f2cc5890769475`  
+		Last Modified: Fri, 06 Sep 2019 00:31:20 GMT  
+		Size: 13.4 MB (13436794 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:2342fc3450285c1f1ed4f31e2edc04aa7a0105e299286f93459f6ca8d8e95c13`  
-		Last Modified: Thu, 22 Aug 2019 00:33:28 GMT  
+	-	`sha256:c49cac6405f1d8d5d118d085c35fe3ac6080381a7bc814573dcf65cca2b8742b`  
+		Last Modified: Fri, 06 Sep 2019 00:31:18 GMT  
 		Size: 132.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `tomcat:8-jdk11-corretto` - linux; arm64 variant v8
 
 ```console
-$ docker pull tomcat@sha256:762fa46e0f72ff546a00a1da5fd8d9d537723365d211330ad17f531dbc56ecfe
+$ docker pull tomcat@sha256:49ae97c9f4997782ef4066cb99b15fa8b7ee65b7ee25630665c8323b25045dd3
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **271.2 MB (271176375 bytes)**  
+-	Total Size: **271.5 MB (271548364 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:7551d63571145d52c3079431d0b6d1135c6ddc438279d3544c4ba7d0dc8429a2`
+-	Image ID: `sha256:15a3dccfc0a0bc71fd760c777e73c2c3ddcc82e48d39d1147697ebda3c671ce6`
 -	Default Command: `["catalina.sh","run"]`
 
 ```dockerfile
-# Thu, 23 May 2019 22:39:34 GMT
-ADD file:358a4a50e1cb5e7181b9cc49d23e60d7b0ba5ca2ce18ced74be5843836d54004 in / 
-# Thu, 23 May 2019 22:39:35 GMT
+# Thu, 05 Sep 2019 20:39:50 GMT
+ADD file:a72ff266718add2a5d4d63264fd3ce1f5191448aa441ffdb064ed570a651b36a in / 
+# Thu, 05 Sep 2019 20:39:51 GMT
 CMD ["/bin/bash"]
-# Tue, 30 Jul 2019 23:40:41 GMT
+# Thu, 05 Sep 2019 23:12:09 GMT
 ARG rpm_x64=java-11-amazon-corretto-devel-11.0.4.11-1.x86_64.rpm
-# Tue, 30 Jul 2019 23:40:42 GMT
+# Thu, 05 Sep 2019 23:12:09 GMT
 ARG path_x64=https://d3pxv6yz143wms.cloudfront.net/11.0.4.11.1
-# Tue, 30 Jul 2019 23:40:42 GMT
+# Thu, 05 Sep 2019 23:12:09 GMT
 ARG key_x64=4FF3DA639731F095833505A25A812B5B67F4FCB4
-# Tue, 30 Jul 2019 23:40:43 GMT
+# Thu, 05 Sep 2019 23:12:10 GMT
 ARG rpm_aarch64=java-11-amazon-corretto-devel-11.0.4.11-1.aarch64.rpm
-# Tue, 30 Jul 2019 23:40:43 GMT
+# Thu, 05 Sep 2019 23:12:10 GMT
 ARG path_aarch64=https://d3pxv6yz143wms.cloudfront.net/11.0.4.11.1
-# Tue, 30 Jul 2019 23:40:43 GMT
+# Thu, 05 Sep 2019 23:12:10 GMT
 ARG key_aarch64=4FF3DA639731F095833505A25A812B5B67F4FCB4
-# Tue, 30 Jul 2019 23:41:28 GMT
+# Thu, 05 Sep 2019 23:12:37 GMT
 # ARGS: key_aarch64=4FF3DA639731F095833505A25A812B5B67F4FCB4 key_x64=4FF3DA639731F095833505A25A812B5B67F4FCB4 path_aarch64=https://d3pxv6yz143wms.cloudfront.net/11.0.4.11.1 path_x64=https://d3pxv6yz143wms.cloudfront.net/11.0.4.11.1 rpm_aarch64=java-11-amazon-corretto-devel-11.0.4.11-1.aarch64.rpm rpm_x64=java-11-amazon-corretto-devel-11.0.4.11-1.x86_64.rpm
 RUN set -eux;     case "$(uname -p)" in         x86_64) rpm=$rpm_x64; path=$path_x64; key=$key_x64 ;;         aarch64) rpm=$rpm_aarch64; path=$path_aarch64; key=$key_aarch64 ;;         *) echo >&2 "Unsupported architecture $(uname -p)."; exit 1 ;;     esac;         curl -O $path/$rpm     && export GNUPGHOME="$(mktemp -d)"     && gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys $key     && gpg --armor --export $key > corretto.asc     && rpm --import corretto.asc     && rpm -K $rpm     && rpm -i $rpm     && rm -r $GNUPGHOME corretto.asc $rpm     && yum install -y fontconfig     && yum clean all
-# Tue, 30 Jul 2019 23:41:29 GMT
+# Thu, 05 Sep 2019 23:12:39 GMT
 ENV JAVA_HOME=/usr/lib/jvm/java-11-amazon-corretto
-# Wed, 31 Jul 2019 22:07:04 GMT
+# Fri, 06 Sep 2019 00:21:46 GMT
 ENV CATALINA_HOME=/usr/local/tomcat
-# Wed, 31 Jul 2019 22:07:05 GMT
+# Fri, 06 Sep 2019 00:21:46 GMT
 ENV PATH=/usr/local/tomcat/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Wed, 31 Jul 2019 22:07:06 GMT
+# Fri, 06 Sep 2019 00:21:48 GMT
 RUN mkdir -p "$CATALINA_HOME"
-# Wed, 31 Jul 2019 22:07:06 GMT
+# Fri, 06 Sep 2019 00:21:48 GMT
 WORKDIR /usr/local/tomcat
-# Wed, 31 Jul 2019 22:07:07 GMT
+# Fri, 06 Sep 2019 00:21:49 GMT
 ENV TOMCAT_NATIVE_LIBDIR=/usr/local/tomcat/native-jni-lib
-# Wed, 31 Jul 2019 22:07:07 GMT
+# Fri, 06 Sep 2019 00:21:49 GMT
 ENV LD_LIBRARY_PATH=/usr/local/tomcat/native-jni-lib
-# Wed, 31 Jul 2019 22:10:05 GMT
+# Fri, 06 Sep 2019 00:26:51 GMT
 ENV GPG_KEYS=05AB33110949707C93A279E3D3EFE6B686867BA6 07E48665A34DCAFAE522E5E6266191C37C037D42 47309207D818FFD8DCD3F83F1931D684307A10A5 541FBE7D8F78B25E055DDEE13C370389288584E7 61B832AC2F1C5A90F0F9B00A1C506407564C17A3 713DA88BE50911535FE716F5208B0AB1D63011C7 79F7026C690BAA50B92CD8B66A3AD3F4F22C4FED 9BA44C2621385CB966EBA586F72C284D731FABEE A27677289986DB50844682F8ACB77FC2E86E29AC A9C5DF4D22E99998D9875A5110C01C5A2F6059E7 DCFD35E0BF8CA7344752DE8B6FB21E8933C60243 F3A04C595DB5B6A5F1ECA43E3B7BBB100D811BBE F7DA48BB64BCB84ECBA7EE6935CD23C10D498E23
-# Wed, 31 Jul 2019 22:10:06 GMT
+# Fri, 06 Sep 2019 00:26:52 GMT
 ENV TOMCAT_MAJOR=8
-# Thu, 22 Aug 2019 00:01:45 GMT
+# Fri, 06 Sep 2019 00:26:53 GMT
 ENV TOMCAT_VERSION=8.5.45
-# Thu, 22 Aug 2019 00:01:45 GMT
+# Fri, 06 Sep 2019 00:26:57 GMT
 ENV TOMCAT_SHA512=4276a97b91aad204b393578b11266adff9fc5595ec5b0e0818b9343c9b741969bc162ae6933099799ab6c49f3ccb02ccb9bbf7df71e83832ef623a3ee6bee25a
-# Thu, 22 Aug 2019 00:03:33 GMT
+# Fri, 06 Sep 2019 00:28:39 GMT
 RUN set -eux; 		if ! command -v yumdb > /dev/null; then 		yum install -y yum-utils; 		yumdb set reason dep yum-utils; 	fi; 	if [ -f /etc/oracle-release ]; then 		yumdb set reason user filesystem; 	fi; 	_yum_install_temporary() { ( set -eu +x; 		local pkg todo=''; 		for pkg; do 			if ! rpm --query "$pkg" > /dev/null 2>&1; then 				todo="$todo $pkg"; 			fi; 		done; 		if [ -n "$todo" ]; then 			set -x; 			yum install -y $todo; 			yumdb set reason dep $todo; 		fi; 	) }; 	_yum_install_temporary gzip tar; 		ddist() { 		local f="$1"; shift; 		local distFile="$1"; shift; 		local success=; 		local distUrl=; 		for distUrl in 			'https://www.apache.org/dyn/closer.cgi?action=download&filename=' 			https://www-us.apache.org/dist/ 			https://www.apache.org/dist/ 			https://archive.apache.org/dist/ 		; do 			if curl -fL -o "$f" "$distUrl$distFile" && [ -s "$f" ]; then 				success=1; 				break; 			fi; 		done; 		[ -n "$success" ]; 	}; 		ddist 'tomcat.tar.gz' "tomcat/tomcat-$TOMCAT_MAJOR/v$TOMCAT_VERSION/bin/apache-tomcat-$TOMCAT_VERSION.tar.gz"; 	echo "$TOMCAT_SHA512 *tomcat.tar.gz" | sha512sum --strict --check -; 	ddist 'tomcat.tar.gz.asc' "tomcat/tomcat-$TOMCAT_MAJOR/v$TOMCAT_VERSION/bin/apache-tomcat-$TOMCAT_VERSION.tar.gz.asc"; 	export GNUPGHOME="$(mktemp -d)"; 	for key in $GPG_KEYS; do 		gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys "$key"; 	done; 	gpg --batch --verify tomcat.tar.gz.asc tomcat.tar.gz; 	tar -xf tomcat.tar.gz --strip-components=1; 	rm bin/*.bat; 	rm tomcat.tar.gz*; 	command -v gpgconf && gpgconf --kill all || :; 	rm -rf "$GNUPGHOME"; 		nativeBuildDir="$(mktemp -d)"; 	tar -xf bin/tomcat-native.tar.gz -C "$nativeBuildDir" --strip-components=1; 	_yum_install_temporary 		apr-devel 		gcc 		make 		openssl-devel 	; 	( 		export CATALINA_HOME="$PWD"; 		cd "$nativeBuildDir/native"; 		aprConfig="$(command -v apr-1-config)"; 		./configure 			--libdir="$TOMCAT_NATIVE_LIBDIR" 			--prefix="$CATALINA_HOME" 			--with-apr="$aprConfig" 			--with-java-home="$JAVA_HOME" 			--with-ssl=yes; 		make -j "$(nproc)"; 		make install; 	); 	rm -rf "$nativeBuildDir"; 	rm bin/tomcat-native.tar.gz; 		deps="$( 		find "$TOMCAT_NATIVE_LIBDIR" -type f -executable -exec ldd '{}' ';' 			| awk '/=>/ && $(NF-1) != "=>" { print $(NF-1) }' 			| sort -u 			| xargs -r rpm --query --whatprovides 			| sort -u 	)"; 	[ -z "$deps" ] || yumdb set reason user $deps; 		yum autoremove -y; 	yum clean all; 	rm -rf /var/cache/yum; 		find ./bin/ -name '*.sh' -exec sed -ri 's|^#!/bin/sh$|#!/usr/bin/env bash|' '{}' +; 		chmod -R +rX .; 	chmod 777 logs work
-# Thu, 22 Aug 2019 00:03:37 GMT
+# Fri, 06 Sep 2019 00:28:48 GMT
 RUN set -e 	&& nativeLines="$(catalina.sh configtest 2>&1)" 	&& nativeLines="$(echo "$nativeLines" | grep 'Apache Tomcat Native')" 	&& nativeLines="$(echo "$nativeLines" | sort -u)" 	&& if ! echo "$nativeLines" | grep 'INFO: Loaded APR based Apache Tomcat Native library' >&2; then 		echo >&2 "$nativeLines"; 		exit 1; 	fi
-# Thu, 22 Aug 2019 00:03:37 GMT
+# Fri, 06 Sep 2019 00:28:49 GMT
 EXPOSE 8080
-# Thu, 22 Aug 2019 00:03:38 GMT
+# Fri, 06 Sep 2019 00:28:50 GMT
 CMD ["catalina.sh" "run"]
 ```
 
 -	Layers:
-	-	`sha256:0c8ee56cea53bee75dce23897c1c0f77aa13a698e7b49d9f20c788cef45fadea`  
-		Last Modified: Thu, 23 May 2019 22:40:27 GMT  
-		Size: 62.5 MB (62453151 bytes)  
+	-	`sha256:e75eebfae1ce8742ae53a518590bca4735e2a5dbfa46418fa709591a7b42e522`  
+		Last Modified: Thu, 05 Sep 2019 20:43:10 GMT  
+		Size: 62.8 MB (62797593 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:26fa6a4fcbd205b5477eeeca21b716e71451d1a99c1210dede865590e1fe09f3`  
-		Last Modified: Tue, 30 Jul 2019 23:42:49 GMT  
-		Size: 195.3 MB (195286724 bytes)  
+	-	`sha256:149ea18e536a86a1d3013f8d890ae31d30843ddc6e56e6dca9caee694d195c1b`  
+		Last Modified: Thu, 05 Sep 2019 23:13:56 GMT  
+		Size: 195.3 MB (195295858 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:6192f742a23c42bda649424bedf838a1bb458c80f0d7ac9ac2c6692f86d1a4d3`  
-		Last Modified: Wed, 31 Jul 2019 22:15:18 GMT  
+	-	`sha256:ef6d54efaf622c109d088da3f6bc5297ef6cfe74a5ce3f9bbb95ee72e3885d52`  
+		Last Modified: Fri, 06 Sep 2019 00:35:05 GMT  
 		Size: 172.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:545f36c03121db6f18850e88189403bc8631afb584c17a8e5b1c10394c2b3a92`  
-		Last Modified: Thu, 22 Aug 2019 00:08:20 GMT  
-		Size: 13.4 MB (13436163 bytes)  
+	-	`sha256:006531924eb1421463a9da90090f567acd2f6d862eef8eea2b3844756bf642af`  
+		Last Modified: Fri, 06 Sep 2019 00:35:41 GMT  
+		Size: 13.5 MB (13454577 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:b7b35056c7828b517a7b9b4b557bfd9d7519b27be3d66334de5640841edda71d`  
-		Last Modified: Thu, 22 Aug 2019 00:08:17 GMT  
-		Size: 165.0 B  
+	-	`sha256:2d60875f8438c960be87d57d4d4ca3f80fd53965437ad8a8bcd184d8b2bd088e`  
+		Last Modified: Fri, 06 Sep 2019 00:35:38 GMT  
+		Size: 164.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `tomcat:8-jdk11-openjdk`
@@ -17239,7 +17239,7 @@ CMD ["catalina.sh" "run"]
 ## `tomcat:8-jdk8-corretto`
 
 ```console
-$ docker pull tomcat@sha256:f33f90c9e9962bb48eaa318108dbe1a87a39edc67bb4c44bf1d150d64361a4b2
+$ docker pull tomcat@sha256:1fffe8d34b7b9a6501dc362dfdf0d55c5dd0ea3d0a97545a0c4d834963abbd44
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -17250,175 +17250,175 @@ $ docker pull tomcat@sha256:f33f90c9e9962bb48eaa318108dbe1a87a39edc67bb4c44bf1d1
 ### `tomcat:8-jdk8-corretto` - linux; amd64
 
 ```console
-$ docker pull tomcat@sha256:0a78797f7fec56a15677d64488639447d86576145dfa30e48d75b42488f906c9
+$ docker pull tomcat@sha256:92733ee9aeb531b6b1a60db5fc562f489900f2c49bf3ce9a7fb8439692198788
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **196.2 MB (196189722 bytes)**  
+-	Total Size: **196.6 MB (196631183 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:f77da5bf7e65bd1ed776a174b55514beeb925c4806d43d3c49e63f60aed48a4f`
+-	Image ID: `sha256:4a23c22592312cf25d9950eecd48f3d46dbb7c514edf58aafa62601cc520a9cd`
 -	Default Command: `["catalina.sh","run"]`
 
 ```dockerfile
-# Thu, 23 May 2019 22:19:59 GMT
-ADD file:3cf811fe5073384ff1d5f405992ef7e5e452ad6d4a4cb873eee65007382f3a4a in / 
-# Thu, 23 May 2019 22:20:00 GMT
+# Thu, 05 Sep 2019 23:36:52 GMT
+ADD file:ee5d76cace83097841fd6a9fe1406be3e2176b9ec4de511cb5594bf959f9e657 in / 
+# Thu, 05 Sep 2019 23:36:53 GMT
 CMD ["/bin/bash"]
-# Tue, 30 Jul 2019 23:19:26 GMT
+# Fri, 06 Sep 2019 00:02:29 GMT
 ARG rpm_x64=java-1.8.0-amazon-corretto-devel-1.8.0_222.b10-1.x86_64.rpm
-# Tue, 30 Jul 2019 23:19:26 GMT
+# Fri, 06 Sep 2019 00:02:30 GMT
 ARG path_x64=https://d3pxv6yz143wms.cloudfront.net/8.222.10.1
-# Tue, 30 Jul 2019 23:19:26 GMT
+# Fri, 06 Sep 2019 00:02:30 GMT
 ARG key_x64=C554E802F4545B60919A0A87BD93DF06B540D62A
-# Tue, 30 Jul 2019 23:19:27 GMT
+# Fri, 06 Sep 2019 00:02:30 GMT
 ARG rpm_aarch64=java-1.8.0-amazon-corretto-devel-1.8.0_222.b10-4.aarch64.rpm
-# Tue, 30 Jul 2019 23:19:27 GMT
+# Fri, 06 Sep 2019 00:02:30 GMT
 ARG path_aarch64=https://d3pxv6yz143wms.cloudfront.net/8.222.10.4
-# Tue, 30 Jul 2019 23:19:27 GMT
+# Fri, 06 Sep 2019 00:02:30 GMT
 ARG key_aarch64=826272FACCCCC8E76897C26CE9B1F93E1A158134
-# Tue, 30 Jul 2019 23:19:47 GMT
+# Fri, 06 Sep 2019 00:02:52 GMT
 # ARGS: key_aarch64=826272FACCCCC8E76897C26CE9B1F93E1A158134 key_x64=C554E802F4545B60919A0A87BD93DF06B540D62A path_aarch64=https://d3pxv6yz143wms.cloudfront.net/8.222.10.4 path_x64=https://d3pxv6yz143wms.cloudfront.net/8.222.10.1 rpm_aarch64=java-1.8.0-amazon-corretto-devel-1.8.0_222.b10-4.aarch64.rpm rpm_x64=java-1.8.0-amazon-corretto-devel-1.8.0_222.b10-1.x86_64.rpm
 RUN set -eux;     case "$(uname -p)" in         x86_64) rpm=$rpm_x64; path=$path_x64; key=$key_x64 ;;         aarch64) rpm=$rpm_aarch64; path=$path_aarch64; key=$key_aarch64 ;;         *) echo >&2 "Unsupported architecture $(uname -p)."; exit 1 ;;     esac;         curl -O $path/$rpm     && export GNUPGHOME="$(mktemp -d)"     && gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys $key     && gpg --armor --export $key > corretto.asc     && rpm --import corretto.asc     && rpm -K $rpm     && rpm -i $rpm     && rm -r $GNUPGHOME corretto.asc $rpm     && yum install -y fontconfig     && yum clean all
-# Tue, 30 Jul 2019 23:19:47 GMT
+# Fri, 06 Sep 2019 00:02:52 GMT
 ENV JAVA_HOME=/usr/lib/jvm/java-1.8.0-amazon-corretto
-# Tue, 30 Jul 2019 23:39:00 GMT
+# Fri, 06 Sep 2019 00:22:16 GMT
 ENV CATALINA_HOME=/usr/local/tomcat
-# Tue, 30 Jul 2019 23:39:00 GMT
+# Fri, 06 Sep 2019 00:22:16 GMT
 ENV PATH=/usr/local/tomcat/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Tue, 30 Jul 2019 23:39:01 GMT
+# Fri, 06 Sep 2019 00:22:17 GMT
 RUN mkdir -p "$CATALINA_HOME"
-# Tue, 30 Jul 2019 23:39:01 GMT
+# Fri, 06 Sep 2019 00:22:17 GMT
 WORKDIR /usr/local/tomcat
-# Tue, 30 Jul 2019 23:39:01 GMT
+# Fri, 06 Sep 2019 00:22:17 GMT
 ENV TOMCAT_NATIVE_LIBDIR=/usr/local/tomcat/native-jni-lib
-# Tue, 30 Jul 2019 23:39:01 GMT
+# Fri, 06 Sep 2019 00:22:17 GMT
 ENV LD_LIBRARY_PATH=/usr/local/tomcat/native-jni-lib
-# Tue, 30 Jul 2019 23:42:57 GMT
+# Fri, 06 Sep 2019 00:26:36 GMT
 ENV GPG_KEYS=05AB33110949707C93A279E3D3EFE6B686867BA6 07E48665A34DCAFAE522E5E6266191C37C037D42 47309207D818FFD8DCD3F83F1931D684307A10A5 541FBE7D8F78B25E055DDEE13C370389288584E7 61B832AC2F1C5A90F0F9B00A1C506407564C17A3 713DA88BE50911535FE716F5208B0AB1D63011C7 79F7026C690BAA50B92CD8B66A3AD3F4F22C4FED 9BA44C2621385CB966EBA586F72C284D731FABEE A27677289986DB50844682F8ACB77FC2E86E29AC A9C5DF4D22E99998D9875A5110C01C5A2F6059E7 DCFD35E0BF8CA7344752DE8B6FB21E8933C60243 F3A04C595DB5B6A5F1ECA43E3B7BBB100D811BBE F7DA48BB64BCB84ECBA7EE6935CD23C10D498E23
-# Tue, 30 Jul 2019 23:42:57 GMT
+# Fri, 06 Sep 2019 00:26:36 GMT
 ENV TOMCAT_MAJOR=8
-# Thu, 22 Aug 2019 00:29:12 GMT
+# Fri, 06 Sep 2019 00:26:36 GMT
 ENV TOMCAT_VERSION=8.5.45
-# Thu, 22 Aug 2019 00:29:12 GMT
+# Fri, 06 Sep 2019 00:26:36 GMT
 ENV TOMCAT_SHA512=4276a97b91aad204b393578b11266adff9fc5595ec5b0e0818b9343c9b741969bc162ae6933099799ab6c49f3ccb02ccb9bbf7df71e83832ef623a3ee6bee25a
-# Thu, 22 Aug 2019 00:30:48 GMT
+# Fri, 06 Sep 2019 00:28:07 GMT
 RUN set -eux; 		if ! command -v yumdb > /dev/null; then 		yum install -y yum-utils; 		yumdb set reason dep yum-utils; 	fi; 	if [ -f /etc/oracle-release ]; then 		yumdb set reason user filesystem; 	fi; 	_yum_install_temporary() { ( set -eu +x; 		local pkg todo=''; 		for pkg; do 			if ! rpm --query "$pkg" > /dev/null 2>&1; then 				todo="$todo $pkg"; 			fi; 		done; 		if [ -n "$todo" ]; then 			set -x; 			yum install -y $todo; 			yumdb set reason dep $todo; 		fi; 	) }; 	_yum_install_temporary gzip tar; 		ddist() { 		local f="$1"; shift; 		local distFile="$1"; shift; 		local success=; 		local distUrl=; 		for distUrl in 			'https://www.apache.org/dyn/closer.cgi?action=download&filename=' 			https://www-us.apache.org/dist/ 			https://www.apache.org/dist/ 			https://archive.apache.org/dist/ 		; do 			if curl -fL -o "$f" "$distUrl$distFile" && [ -s "$f" ]; then 				success=1; 				break; 			fi; 		done; 		[ -n "$success" ]; 	}; 		ddist 'tomcat.tar.gz' "tomcat/tomcat-$TOMCAT_MAJOR/v$TOMCAT_VERSION/bin/apache-tomcat-$TOMCAT_VERSION.tar.gz"; 	echo "$TOMCAT_SHA512 *tomcat.tar.gz" | sha512sum --strict --check -; 	ddist 'tomcat.tar.gz.asc' "tomcat/tomcat-$TOMCAT_MAJOR/v$TOMCAT_VERSION/bin/apache-tomcat-$TOMCAT_VERSION.tar.gz.asc"; 	export GNUPGHOME="$(mktemp -d)"; 	for key in $GPG_KEYS; do 		gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys "$key"; 	done; 	gpg --batch --verify tomcat.tar.gz.asc tomcat.tar.gz; 	tar -xf tomcat.tar.gz --strip-components=1; 	rm bin/*.bat; 	rm tomcat.tar.gz*; 	command -v gpgconf && gpgconf --kill all || :; 	rm -rf "$GNUPGHOME"; 		nativeBuildDir="$(mktemp -d)"; 	tar -xf bin/tomcat-native.tar.gz -C "$nativeBuildDir" --strip-components=1; 	_yum_install_temporary 		apr-devel 		gcc 		make 		openssl-devel 	; 	( 		export CATALINA_HOME="$PWD"; 		cd "$nativeBuildDir/native"; 		aprConfig="$(command -v apr-1-config)"; 		./configure 			--libdir="$TOMCAT_NATIVE_LIBDIR" 			--prefix="$CATALINA_HOME" 			--with-apr="$aprConfig" 			--with-java-home="$JAVA_HOME" 			--with-ssl=yes; 		make -j "$(nproc)"; 		make install; 	); 	rm -rf "$nativeBuildDir"; 	rm bin/tomcat-native.tar.gz; 		deps="$( 		find "$TOMCAT_NATIVE_LIBDIR" -type f -executable -exec ldd '{}' ';' 			| awk '/=>/ && $(NF-1) != "=>" { print $(NF-1) }' 			| sort -u 			| xargs -r rpm --query --whatprovides 			| sort -u 	)"; 	[ -z "$deps" ] || yumdb set reason user $deps; 		yum autoremove -y; 	yum clean all; 	rm -rf /var/cache/yum; 		find ./bin/ -name '*.sh' -exec sed -ri 's|^#!/bin/sh$|#!/usr/bin/env bash|' '{}' +; 		chmod -R +rX .; 	chmod 777 logs work
-# Thu, 22 Aug 2019 00:30:50 GMT
+# Fri, 06 Sep 2019 00:28:09 GMT
 RUN set -e 	&& nativeLines="$(catalina.sh configtest 2>&1)" 	&& nativeLines="$(echo "$nativeLines" | grep 'Apache Tomcat Native')" 	&& nativeLines="$(echo "$nativeLines" | sort -u)" 	&& if ! echo "$nativeLines" | grep 'INFO: Loaded APR based Apache Tomcat Native library' >&2; then 		echo >&2 "$nativeLines"; 		exit 1; 	fi
-# Thu, 22 Aug 2019 00:30:50 GMT
+# Fri, 06 Sep 2019 00:28:09 GMT
 EXPOSE 8080
-# Thu, 22 Aug 2019 00:30:51 GMT
+# Fri, 06 Sep 2019 00:28:09 GMT
 CMD ["catalina.sh" "run"]
 ```
 
 -	Layers:
-	-	`sha256:72d97abdfae3b3c933ff41e39779cc72853d7bd9dc1e4800c5294d6715257799`  
-		Last Modified: Thu, 23 May 2019 22:22:16 GMT  
-		Size: 61.3 MB (61285177 bytes)  
+	-	`sha256:4910da0c66710ed2414cd0223e48cbeed94209b9c77053dc30d48532a651dd22`  
+		Last Modified: Thu, 05 Sep 2019 23:38:39 GMT  
+		Size: 61.7 MB (61665831 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c13d17f3a543055e7f616629ad6825d21746252d0b8db4f1812c86b11e3fdc96`  
-		Last Modified: Tue, 30 Jul 2019 23:20:57 GMT  
-		Size: 121.5 MB (121482783 bytes)  
+	-	`sha256:c511e36daa9ce76f573699dfe6fabfac82254067f5ff99f2049f99d176ec919d`  
+		Last Modified: Fri, 06 Sep 2019 00:03:50 GMT  
+		Size: 121.5 MB (121533245 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:34afcacfc487c55714cfc7e34c35abe51c1a26be56d268883ecc929fa305f714`  
-		Last Modified: Tue, 30 Jul 2019 23:47:26 GMT  
-		Size: 139.0 B  
+	-	`sha256:fb8769d09d3f4236a9a84b65d19abf678fdd45df105a6e62a3924404dafa15af`  
+		Last Modified: Fri, 06 Sep 2019 00:31:09 GMT  
+		Size: 138.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c5e58502e3f96611ece65522abfcbb22461dfe4a38aafbc2467a47a3ce305b53`  
-		Last Modified: Thu, 22 Aug 2019 00:34:53 GMT  
-		Size: 13.4 MB (13421491 bytes)  
+	-	`sha256:dd81acf4b9d269719e64cf7902238ffe2875d7ad2e185fed687694c33704912b`  
+		Last Modified: Fri, 06 Sep 2019 00:31:29 GMT  
+		Size: 13.4 MB (13431837 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:7f557b6a41d0d81b65a4ff1eeae1239fff55ed8ff6e556db884f89da3fc26a6e`  
-		Last Modified: Thu, 22 Aug 2019 00:34:51 GMT  
+	-	`sha256:4c03db6767cf9449e15645bd45c825e93fbd2999981226fc57ed32e56a060b8f`  
+		Last Modified: Fri, 06 Sep 2019 00:31:27 GMT  
 		Size: 132.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `tomcat:8-jdk8-corretto` - linux; arm64 variant v8
 
 ```console
-$ docker pull tomcat@sha256:c62c60fe2da097e93c80e277be5bcae77b1125d5566a87d7e60087478bd84474
+$ docker pull tomcat@sha256:eeca3d7e2ca0295775b0165cae5d0439cc54e67a80ea469739be5c2684300ee3
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **180.8 MB (180763474 bytes)**  
+-	Total Size: **181.1 MB (181138486 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:1ccfe61327ef171af33a285e58e3868eb7e375d662a42c668a3837483f434df0`
+-	Image ID: `sha256:dc2aa448f1ee3a9c15092e795fae6b14e8cd261f1ebd249511d190787b501c7e`
 -	Default Command: `["catalina.sh","run"]`
 
 ```dockerfile
-# Thu, 23 May 2019 22:39:34 GMT
-ADD file:358a4a50e1cb5e7181b9cc49d23e60d7b0ba5ca2ce18ced74be5843836d54004 in / 
-# Thu, 23 May 2019 22:39:35 GMT
+# Thu, 05 Sep 2019 20:39:50 GMT
+ADD file:a72ff266718add2a5d4d63264fd3ce1f5191448aa441ffdb064ed570a651b36a in / 
+# Thu, 05 Sep 2019 20:39:51 GMT
 CMD ["/bin/bash"]
-# Tue, 30 Jul 2019 23:39:26 GMT
+# Thu, 05 Sep 2019 23:11:35 GMT
 ARG rpm_x64=java-1.8.0-amazon-corretto-devel-1.8.0_222.b10-1.x86_64.rpm
-# Tue, 30 Jul 2019 23:39:27 GMT
+# Thu, 05 Sep 2019 23:11:35 GMT
 ARG path_x64=https://d3pxv6yz143wms.cloudfront.net/8.222.10.1
-# Tue, 30 Jul 2019 23:39:27 GMT
+# Thu, 05 Sep 2019 23:11:35 GMT
 ARG key_x64=C554E802F4545B60919A0A87BD93DF06B540D62A
-# Tue, 30 Jul 2019 23:39:27 GMT
+# Thu, 05 Sep 2019 23:11:36 GMT
 ARG rpm_aarch64=java-1.8.0-amazon-corretto-devel-1.8.0_222.b10-4.aarch64.rpm
-# Tue, 30 Jul 2019 23:39:28 GMT
+# Thu, 05 Sep 2019 23:11:36 GMT
 ARG path_aarch64=https://d3pxv6yz143wms.cloudfront.net/8.222.10.4
-# Tue, 30 Jul 2019 23:39:28 GMT
+# Thu, 05 Sep 2019 23:11:36 GMT
 ARG key_aarch64=826272FACCCCC8E76897C26CE9B1F93E1A158134
-# Tue, 30 Jul 2019 23:40:33 GMT
+# Thu, 05 Sep 2019 23:12:00 GMT
 # ARGS: key_aarch64=826272FACCCCC8E76897C26CE9B1F93E1A158134 key_x64=C554E802F4545B60919A0A87BD93DF06B540D62A path_aarch64=https://d3pxv6yz143wms.cloudfront.net/8.222.10.4 path_x64=https://d3pxv6yz143wms.cloudfront.net/8.222.10.1 rpm_aarch64=java-1.8.0-amazon-corretto-devel-1.8.0_222.b10-4.aarch64.rpm rpm_x64=java-1.8.0-amazon-corretto-devel-1.8.0_222.b10-1.x86_64.rpm
 RUN set -eux;     case "$(uname -p)" in         x86_64) rpm=$rpm_x64; path=$path_x64; key=$key_x64 ;;         aarch64) rpm=$rpm_aarch64; path=$path_aarch64; key=$key_aarch64 ;;         *) echo >&2 "Unsupported architecture $(uname -p)."; exit 1 ;;     esac;         curl -O $path/$rpm     && export GNUPGHOME="$(mktemp -d)"     && gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys $key     && gpg --armor --export $key > corretto.asc     && rpm --import corretto.asc     && rpm -K $rpm     && rpm -i $rpm     && rm -r $GNUPGHOME corretto.asc $rpm     && yum install -y fontconfig     && yum clean all
-# Tue, 30 Jul 2019 23:40:34 GMT
+# Thu, 05 Sep 2019 23:12:01 GMT
 ENV JAVA_HOME=/usr/lib/jvm/java-1.8.0-amazon-corretto
-# Wed, 31 Jul 2019 22:08:23 GMT
+# Fri, 06 Sep 2019 00:24:08 GMT
 ENV CATALINA_HOME=/usr/local/tomcat
-# Wed, 31 Jul 2019 22:08:23 GMT
+# Fri, 06 Sep 2019 00:24:09 GMT
 ENV PATH=/usr/local/tomcat/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Wed, 31 Jul 2019 22:08:24 GMT
+# Fri, 06 Sep 2019 00:24:12 GMT
 RUN mkdir -p "$CATALINA_HOME"
-# Wed, 31 Jul 2019 22:08:25 GMT
+# Fri, 06 Sep 2019 00:24:16 GMT
 WORKDIR /usr/local/tomcat
-# Wed, 31 Jul 2019 22:08:25 GMT
+# Fri, 06 Sep 2019 00:24:17 GMT
 ENV TOMCAT_NATIVE_LIBDIR=/usr/local/tomcat/native-jni-lib
-# Wed, 31 Jul 2019 22:08:25 GMT
+# Fri, 06 Sep 2019 00:24:18 GMT
 ENV LD_LIBRARY_PATH=/usr/local/tomcat/native-jni-lib
-# Wed, 31 Jul 2019 22:11:54 GMT
+# Fri, 06 Sep 2019 00:29:13 GMT
 ENV GPG_KEYS=05AB33110949707C93A279E3D3EFE6B686867BA6 07E48665A34DCAFAE522E5E6266191C37C037D42 47309207D818FFD8DCD3F83F1931D684307A10A5 541FBE7D8F78B25E055DDEE13C370389288584E7 61B832AC2F1C5A90F0F9B00A1C506407564C17A3 713DA88BE50911535FE716F5208B0AB1D63011C7 79F7026C690BAA50B92CD8B66A3AD3F4F22C4FED 9BA44C2621385CB966EBA586F72C284D731FABEE A27677289986DB50844682F8ACB77FC2E86E29AC A9C5DF4D22E99998D9875A5110C01C5A2F6059E7 DCFD35E0BF8CA7344752DE8B6FB21E8933C60243 F3A04C595DB5B6A5F1ECA43E3B7BBB100D811BBE F7DA48BB64BCB84ECBA7EE6935CD23C10D498E23
-# Wed, 31 Jul 2019 22:11:54 GMT
+# Fri, 06 Sep 2019 00:29:16 GMT
 ENV TOMCAT_MAJOR=8
-# Thu, 22 Aug 2019 00:05:04 GMT
+# Fri, 06 Sep 2019 00:29:20 GMT
 ENV TOMCAT_VERSION=8.5.45
-# Thu, 22 Aug 2019 00:05:05 GMT
+# Fri, 06 Sep 2019 00:29:22 GMT
 ENV TOMCAT_SHA512=4276a97b91aad204b393578b11266adff9fc5595ec5b0e0818b9343c9b741969bc162ae6933099799ab6c49f3ccb02ccb9bbf7df71e83832ef623a3ee6bee25a
-# Thu, 22 Aug 2019 00:06:13 GMT
+# Fri, 06 Sep 2019 00:31:08 GMT
 RUN set -eux; 		if ! command -v yumdb > /dev/null; then 		yum install -y yum-utils; 		yumdb set reason dep yum-utils; 	fi; 	if [ -f /etc/oracle-release ]; then 		yumdb set reason user filesystem; 	fi; 	_yum_install_temporary() { ( set -eu +x; 		local pkg todo=''; 		for pkg; do 			if ! rpm --query "$pkg" > /dev/null 2>&1; then 				todo="$todo $pkg"; 			fi; 		done; 		if [ -n "$todo" ]; then 			set -x; 			yum install -y $todo; 			yumdb set reason dep $todo; 		fi; 	) }; 	_yum_install_temporary gzip tar; 		ddist() { 		local f="$1"; shift; 		local distFile="$1"; shift; 		local success=; 		local distUrl=; 		for distUrl in 			'https://www.apache.org/dyn/closer.cgi?action=download&filename=' 			https://www-us.apache.org/dist/ 			https://www.apache.org/dist/ 			https://archive.apache.org/dist/ 		; do 			if curl -fL -o "$f" "$distUrl$distFile" && [ -s "$f" ]; then 				success=1; 				break; 			fi; 		done; 		[ -n "$success" ]; 	}; 		ddist 'tomcat.tar.gz' "tomcat/tomcat-$TOMCAT_MAJOR/v$TOMCAT_VERSION/bin/apache-tomcat-$TOMCAT_VERSION.tar.gz"; 	echo "$TOMCAT_SHA512 *tomcat.tar.gz" | sha512sum --strict --check -; 	ddist 'tomcat.tar.gz.asc' "tomcat/tomcat-$TOMCAT_MAJOR/v$TOMCAT_VERSION/bin/apache-tomcat-$TOMCAT_VERSION.tar.gz.asc"; 	export GNUPGHOME="$(mktemp -d)"; 	for key in $GPG_KEYS; do 		gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys "$key"; 	done; 	gpg --batch --verify tomcat.tar.gz.asc tomcat.tar.gz; 	tar -xf tomcat.tar.gz --strip-components=1; 	rm bin/*.bat; 	rm tomcat.tar.gz*; 	command -v gpgconf && gpgconf --kill all || :; 	rm -rf "$GNUPGHOME"; 		nativeBuildDir="$(mktemp -d)"; 	tar -xf bin/tomcat-native.tar.gz -C "$nativeBuildDir" --strip-components=1; 	_yum_install_temporary 		apr-devel 		gcc 		make 		openssl-devel 	; 	( 		export CATALINA_HOME="$PWD"; 		cd "$nativeBuildDir/native"; 		aprConfig="$(command -v apr-1-config)"; 		./configure 			--libdir="$TOMCAT_NATIVE_LIBDIR" 			--prefix="$CATALINA_HOME" 			--with-apr="$aprConfig" 			--with-java-home="$JAVA_HOME" 			--with-ssl=yes; 		make -j "$(nproc)"; 		make install; 	); 	rm -rf "$nativeBuildDir"; 	rm bin/tomcat-native.tar.gz; 		deps="$( 		find "$TOMCAT_NATIVE_LIBDIR" -type f -executable -exec ldd '{}' ';' 			| awk '/=>/ && $(NF-1) != "=>" { print $(NF-1) }' 			| sort -u 			| xargs -r rpm --query --whatprovides 			| sort -u 	)"; 	[ -z "$deps" ] || yumdb set reason user $deps; 		yum autoremove -y; 	yum clean all; 	rm -rf /var/cache/yum; 		find ./bin/ -name '*.sh' -exec sed -ri 's|^#!/bin/sh$|#!/usr/bin/env bash|' '{}' +; 		chmod -R +rX .; 	chmod 777 logs work
-# Thu, 22 Aug 2019 00:06:17 GMT
+# Fri, 06 Sep 2019 00:31:16 GMT
 RUN set -e 	&& nativeLines="$(catalina.sh configtest 2>&1)" 	&& nativeLines="$(echo "$nativeLines" | grep 'Apache Tomcat Native')" 	&& nativeLines="$(echo "$nativeLines" | sort -u)" 	&& if ! echo "$nativeLines" | grep 'INFO: Loaded APR based Apache Tomcat Native library' >&2; then 		echo >&2 "$nativeLines"; 		exit 1; 	fi
-# Thu, 22 Aug 2019 00:06:17 GMT
+# Fri, 06 Sep 2019 00:31:17 GMT
 EXPOSE 8080
-# Thu, 22 Aug 2019 00:06:18 GMT
+# Fri, 06 Sep 2019 00:31:17 GMT
 CMD ["catalina.sh" "run"]
 ```
 
 -	Layers:
-	-	`sha256:0c8ee56cea53bee75dce23897c1c0f77aa13a698e7b49d9f20c788cef45fadea`  
-		Last Modified: Thu, 23 May 2019 22:40:27 GMT  
-		Size: 62.5 MB (62453151 bytes)  
+	-	`sha256:e75eebfae1ce8742ae53a518590bca4735e2a5dbfa46418fa709591a7b42e522`  
+		Last Modified: Thu, 05 Sep 2019 20:43:10 GMT  
+		Size: 62.8 MB (62797593 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:269e06f3b7489c1b941db3fc6cf17c76a7bf613b18a6aeff9d25c7144b85ae6a`  
-		Last Modified: Tue, 30 Jul 2019 23:42:10 GMT  
-		Size: 104.9 MB (104888017 bytes)  
+	-	`sha256:825292fe21ae21fe00976ccad2471578d1a289980b1ea830f4e0ad1990422166`  
+		Last Modified: Thu, 05 Sep 2019 23:13:17 GMT  
+		Size: 104.9 MB (104911609 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c1a0e5239e6a06f59af8cf4b3646b582c250ec4bcd6c3ebc520395b4e288e047`  
-		Last Modified: Wed, 31 Jul 2019 22:15:34 GMT  
-		Size: 172.0 B  
+	-	`sha256:babaad70d6b41a7c0adfcbf58979816fb28f3415b9bc800fb9f306bed8742129`  
+		Last Modified: Fri, 06 Sep 2019 00:35:19 GMT  
+		Size: 171.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c7ec0ab5cea7606382441e62dae04fecd703aef01dc149c2cd597e923194db50`  
-		Last Modified: Thu, 22 Aug 2019 00:09:01 GMT  
-		Size: 13.4 MB (13421969 bytes)  
+	-	`sha256:ec7b19822248b0ae26cb17e3b2529fc4bc2f3227ec5f7d845d81599c3eed6457`  
+		Last Modified: Fri, 06 Sep 2019 00:35:54 GMT  
+		Size: 13.4 MB (13428949 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:8a1903d8bf96ab016dfb175296b536ba87f2e5e5b5d8ab4eb6b91baa54b4b651`  
-		Last Modified: Thu, 22 Aug 2019 00:08:40 GMT  
-		Size: 165.0 B  
+	-	`sha256:4bc44f97a34fdab5a5ef0d049d7697cbeca334757ff92ac3e080f49e6b06cbb3`  
+		Last Modified: Fri, 06 Sep 2019 00:35:50 GMT  
+		Size: 164.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `tomcat:8-jdk8-openjdk`
@@ -19490,7 +19490,7 @@ CMD ["catalina.sh" "run"]
 ## `tomcat:9.0.24-jdk11-corretto`
 
 ```console
-$ docker pull tomcat@sha256:c4ac5666b1f8280dba406ebf4e4f6a00d9c674d7bb42b83cd3d2133777a68054
+$ docker pull tomcat@sha256:29061e834496e110eae93047b6335fceebdc9e86178e0950c94e45e8ab2fdb82
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -19501,175 +19501,175 @@ $ docker pull tomcat@sha256:c4ac5666b1f8280dba406ebf4e4f6a00d9c674d7bb42b83cd3d2
 ### `tomcat:9.0.24-jdk11-corretto` - linux; amd64
 
 ```console
-$ docker pull tomcat@sha256:1e96ac2f999a969099287974b0d2f603fcb4cdd01b90356729154feb43e34762
+$ docker pull tomcat@sha256:c3b38113e71767237ef22a7598c791405fbf922485267835f5e36c6f3f05aa53
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **272.9 MB (272896064 bytes)**  
+-	Total Size: **273.3 MB (273340191 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:4043ad2ba406f0842443babe79c1e92b8fadbdca0fcd06dca377c20ac7ac9528`
+-	Image ID: `sha256:e88f0129482d7c3bb3294629e8bc48d71a8786aff07b2aec01c3a7db1ee58ceb`
 -	Default Command: `["catalina.sh","run"]`
 
 ```dockerfile
-# Thu, 23 May 2019 22:19:59 GMT
-ADD file:3cf811fe5073384ff1d5f405992ef7e5e452ad6d4a4cb873eee65007382f3a4a in / 
-# Thu, 23 May 2019 22:20:00 GMT
+# Thu, 05 Sep 2019 23:36:52 GMT
+ADD file:ee5d76cace83097841fd6a9fe1406be3e2176b9ec4de511cb5594bf959f9e657 in / 
+# Thu, 05 Sep 2019 23:36:53 GMT
 CMD ["/bin/bash"]
-# Tue, 30 Jul 2019 23:19:53 GMT
+# Fri, 06 Sep 2019 00:02:57 GMT
 ARG rpm_x64=java-11-amazon-corretto-devel-11.0.4.11-1.x86_64.rpm
-# Tue, 30 Jul 2019 23:19:53 GMT
+# Fri, 06 Sep 2019 00:02:58 GMT
 ARG path_x64=https://d3pxv6yz143wms.cloudfront.net/11.0.4.11.1
-# Tue, 30 Jul 2019 23:19:53 GMT
+# Fri, 06 Sep 2019 00:02:58 GMT
 ARG key_x64=4FF3DA639731F095833505A25A812B5B67F4FCB4
-# Tue, 30 Jul 2019 23:19:54 GMT
+# Fri, 06 Sep 2019 00:02:58 GMT
 ARG rpm_aarch64=java-11-amazon-corretto-devel-11.0.4.11-1.aarch64.rpm
-# Tue, 30 Jul 2019 23:19:54 GMT
+# Fri, 06 Sep 2019 00:02:58 GMT
 ARG path_aarch64=https://d3pxv6yz143wms.cloudfront.net/11.0.4.11.1
-# Tue, 30 Jul 2019 23:19:54 GMT
+# Fri, 06 Sep 2019 00:02:58 GMT
 ARG key_aarch64=4FF3DA639731F095833505A25A812B5B67F4FCB4
-# Tue, 30 Jul 2019 23:20:17 GMT
+# Fri, 06 Sep 2019 00:03:23 GMT
 # ARGS: key_aarch64=4FF3DA639731F095833505A25A812B5B67F4FCB4 key_x64=4FF3DA639731F095833505A25A812B5B67F4FCB4 path_aarch64=https://d3pxv6yz143wms.cloudfront.net/11.0.4.11.1 path_x64=https://d3pxv6yz143wms.cloudfront.net/11.0.4.11.1 rpm_aarch64=java-11-amazon-corretto-devel-11.0.4.11-1.aarch64.rpm rpm_x64=java-11-amazon-corretto-devel-11.0.4.11-1.x86_64.rpm
 RUN set -eux;     case "$(uname -p)" in         x86_64) rpm=$rpm_x64; path=$path_x64; key=$key_x64 ;;         aarch64) rpm=$rpm_aarch64; path=$path_aarch64; key=$key_aarch64 ;;         *) echo >&2 "Unsupported architecture $(uname -p)."; exit 1 ;;     esac;         curl -O $path/$rpm     && export GNUPGHOME="$(mktemp -d)"     && gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys $key     && gpg --armor --export $key > corretto.asc     && rpm --import corretto.asc     && rpm -K $rpm     && rpm -i $rpm     && rm -r $GNUPGHOME corretto.asc $rpm     && yum install -y fontconfig     && yum clean all
-# Tue, 30 Jul 2019 23:20:17 GMT
+# Fri, 06 Sep 2019 00:03:23 GMT
 ENV JAVA_HOME=/usr/lib/jvm/java-11-amazon-corretto
-# Tue, 30 Jul 2019 23:37:08 GMT
+# Fri, 06 Sep 2019 00:20:17 GMT
 ENV CATALINA_HOME=/usr/local/tomcat
-# Tue, 30 Jul 2019 23:37:08 GMT
+# Fri, 06 Sep 2019 00:20:17 GMT
 ENV PATH=/usr/local/tomcat/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Tue, 30 Jul 2019 23:37:09 GMT
+# Fri, 06 Sep 2019 00:20:18 GMT
 RUN mkdir -p "$CATALINA_HOME"
-# Tue, 30 Jul 2019 23:37:09 GMT
+# Fri, 06 Sep 2019 00:20:18 GMT
 WORKDIR /usr/local/tomcat
-# Tue, 30 Jul 2019 23:37:09 GMT
+# Fri, 06 Sep 2019 00:20:18 GMT
 ENV TOMCAT_NATIVE_LIBDIR=/usr/local/tomcat/native-jni-lib
-# Tue, 30 Jul 2019 23:37:09 GMT
+# Fri, 06 Sep 2019 00:20:18 GMT
 ENV LD_LIBRARY_PATH=/usr/local/tomcat/native-jni-lib
-# Tue, 30 Jul 2019 23:37:09 GMT
+# Fri, 06 Sep 2019 00:20:18 GMT
 ENV GPG_KEYS=05AB33110949707C93A279E3D3EFE6B686867BA6 07E48665A34DCAFAE522E5E6266191C37C037D42 47309207D818FFD8DCD3F83F1931D684307A10A5 541FBE7D8F78B25E055DDEE13C370389288584E7 61B832AC2F1C5A90F0F9B00A1C506407564C17A3 79F7026C690BAA50B92CD8B66A3AD3F4F22C4FED 9BA44C2621385CB966EBA586F72C284D731FABEE A27677289986DB50844682F8ACB77FC2E86E29AC A9C5DF4D22E99998D9875A5110C01C5A2F6059E7 DCFD35E0BF8CA7344752DE8B6FB21E8933C60243 F3A04C595DB5B6A5F1ECA43E3B7BBB100D811BBE F7DA48BB64BCB84ECBA7EE6935CD23C10D498E23
-# Tue, 30 Jul 2019 23:37:10 GMT
+# Fri, 06 Sep 2019 00:20:18 GMT
 ENV TOMCAT_MAJOR=9
-# Mon, 19 Aug 2019 21:40:47 GMT
+# Fri, 06 Sep 2019 00:20:19 GMT
 ENV TOMCAT_VERSION=9.0.24
-# Mon, 19 Aug 2019 21:40:47 GMT
+# Fri, 06 Sep 2019 00:20:19 GMT
 ENV TOMCAT_SHA512=e01bd107e8fbe5ba629571d552a46339ccfd843b8bf770f617dfc1ec5cbf5fe5d945c2c3bba2f80188775a46f93c66d8594c13f8d12f7967d6d56c62d2bf7835
-# Mon, 19 Aug 2019 21:42:28 GMT
+# Fri, 06 Sep 2019 00:21:50 GMT
 RUN set -eux; 		if ! command -v yumdb > /dev/null; then 		yum install -y yum-utils; 		yumdb set reason dep yum-utils; 	fi; 	if [ -f /etc/oracle-release ]; then 		yumdb set reason user filesystem; 	fi; 	_yum_install_temporary() { ( set -eu +x; 		local pkg todo=''; 		for pkg; do 			if ! rpm --query "$pkg" > /dev/null 2>&1; then 				todo="$todo $pkg"; 			fi; 		done; 		if [ -n "$todo" ]; then 			set -x; 			yum install -y $todo; 			yumdb set reason dep $todo; 		fi; 	) }; 	_yum_install_temporary gzip tar; 		ddist() { 		local f="$1"; shift; 		local distFile="$1"; shift; 		local success=; 		local distUrl=; 		for distUrl in 			'https://www.apache.org/dyn/closer.cgi?action=download&filename=' 			https://www-us.apache.org/dist/ 			https://www.apache.org/dist/ 			https://archive.apache.org/dist/ 		; do 			if curl -fL -o "$f" "$distUrl$distFile" && [ -s "$f" ]; then 				success=1; 				break; 			fi; 		done; 		[ -n "$success" ]; 	}; 		ddist 'tomcat.tar.gz' "tomcat/tomcat-$TOMCAT_MAJOR/v$TOMCAT_VERSION/bin/apache-tomcat-$TOMCAT_VERSION.tar.gz"; 	echo "$TOMCAT_SHA512 *tomcat.tar.gz" | sha512sum --strict --check -; 	ddist 'tomcat.tar.gz.asc' "tomcat/tomcat-$TOMCAT_MAJOR/v$TOMCAT_VERSION/bin/apache-tomcat-$TOMCAT_VERSION.tar.gz.asc"; 	export GNUPGHOME="$(mktemp -d)"; 	for key in $GPG_KEYS; do 		gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys "$key"; 	done; 	gpg --batch --verify tomcat.tar.gz.asc tomcat.tar.gz; 	tar -xf tomcat.tar.gz --strip-components=1; 	rm bin/*.bat; 	rm tomcat.tar.gz*; 	command -v gpgconf && gpgconf --kill all || :; 	rm -rf "$GNUPGHOME"; 		nativeBuildDir="$(mktemp -d)"; 	tar -xf bin/tomcat-native.tar.gz -C "$nativeBuildDir" --strip-components=1; 	_yum_install_temporary 		apr-devel 		gcc 		make 		openssl-devel 	; 	( 		export CATALINA_HOME="$PWD"; 		cd "$nativeBuildDir/native"; 		aprConfig="$(command -v apr-1-config)"; 		./configure 			--libdir="$TOMCAT_NATIVE_LIBDIR" 			--prefix="$CATALINA_HOME" 			--with-apr="$aprConfig" 			--with-java-home="$JAVA_HOME" 			--with-ssl=yes; 		make -j "$(nproc)"; 		make install; 	); 	rm -rf "$nativeBuildDir"; 	rm bin/tomcat-native.tar.gz; 		deps="$( 		find "$TOMCAT_NATIVE_LIBDIR" -type f -executable -exec ldd '{}' ';' 			| awk '/=>/ && $(NF-1) != "=>" { print $(NF-1) }' 			| sort -u 			| xargs -r rpm --query --whatprovides 			| sort -u 	)"; 	[ -z "$deps" ] || yumdb set reason user $deps; 		yum autoremove -y; 	yum clean all; 	rm -rf /var/cache/yum; 		find ./bin/ -name '*.sh' -exec sed -ri 's|^#!/bin/sh$|#!/usr/bin/env bash|' '{}' +; 		chmod -R +rX .; 	chmod 777 logs work
-# Mon, 19 Aug 2019 21:42:31 GMT
+# Fri, 06 Sep 2019 00:21:52 GMT
 RUN set -e 	&& nativeLines="$(catalina.sh configtest 2>&1)" 	&& nativeLines="$(echo "$nativeLines" | grep 'Apache Tomcat Native')" 	&& nativeLines="$(echo "$nativeLines" | sort -u)" 	&& if ! echo "$nativeLines" | grep 'INFO: Loaded APR based Apache Tomcat Native library' >&2; then 		echo >&2 "$nativeLines"; 		exit 1; 	fi
-# Mon, 19 Aug 2019 21:42:31 GMT
+# Fri, 06 Sep 2019 00:21:52 GMT
 EXPOSE 8080
-# Mon, 19 Aug 2019 21:42:31 GMT
+# Fri, 06 Sep 2019 00:21:52 GMT
 CMD ["catalina.sh" "run"]
 ```
 
 -	Layers:
-	-	`sha256:72d97abdfae3b3c933ff41e39779cc72853d7bd9dc1e4800c5294d6715257799`  
-		Last Modified: Thu, 23 May 2019 22:22:16 GMT  
-		Size: 61.3 MB (61285177 bytes)  
+	-	`sha256:4910da0c66710ed2414cd0223e48cbeed94209b9c77053dc30d48532a651dd22`  
+		Last Modified: Thu, 05 Sep 2019 23:38:39 GMT  
+		Size: 61.7 MB (61665831 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:4f58afb139384717c6be8d8ba2803caf676e6d7fe750302d138bf13983df50b9`  
-		Last Modified: Tue, 30 Jul 2019 23:21:22 GMT  
-		Size: 197.0 MB (196988921 bytes)  
+	-	`sha256:b9d1840374efc595eade77260f8573765a51ccb6ebfecf02452d9ca356e18b69`  
+		Last Modified: Fri, 06 Sep 2019 00:04:16 GMT  
+		Size: 197.0 MB (197036830 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:6a4258a56fde8d6d1679c88a09371eaabd100e001b69054571de6290bdfdd21e`  
-		Last Modified: Tue, 30 Jul 2019 23:47:15 GMT  
-		Size: 139.0 B  
+	-	`sha256:e781e7241055b324d43f1f0f0f06d5131ed2aafb69892d9aa53b626ea2cb3865`  
+		Last Modified: Fri, 06 Sep 2019 00:31:01 GMT  
+		Size: 138.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:de2424ee20565c5cca0d51eb65d8666cb5a7acc8841a9ce2a30eb3efafe9c8c6`  
-		Last Modified: Mon, 19 Aug 2019 21:51:44 GMT  
-		Size: 14.6 MB (14621695 bytes)  
+	-	`sha256:e804b9ec6ee6dae993ade925c70ed066d7e2569dce2fede484e7c9bcee36585c`  
+		Last Modified: Fri, 06 Sep 2019 00:31:02 GMT  
+		Size: 14.6 MB (14637259 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:8016959eb03ae03fb120656c147c1ed3f6869495c8031d1dc5fee71d71c5f79d`  
-		Last Modified: Mon, 19 Aug 2019 21:51:42 GMT  
-		Size: 132.0 B  
+	-	`sha256:b0fee77eeb763c466f42783fb7d32d65908d10757568d9086ff8ec59f6eec842`  
+		Last Modified: Fri, 06 Sep 2019 00:31:01 GMT  
+		Size: 133.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `tomcat:9.0.24-jdk11-corretto` - linux; arm64 variant v8
 
 ```console
-$ docker pull tomcat@sha256:59e946abe0c7e2ceb58728755d7aec061936c7d9a1825b894b316f81854a87ba
+$ docker pull tomcat@sha256:c5f7b906e54c801933da3aefb7a66fd204b5f698d24395bd7db28dffdc0c3968
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **272.4 MB (272372233 bytes)**  
+-	Total Size: **272.7 MB (272743976 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:0f00442c11e663b626ee101a137761838eb7db6ab618199d8b7197e6c8904a3d`
+-	Image ID: `sha256:0a6375670a2e659f07001cc46e461ddafc24c8c2c88fbad38f09c1d6228e37dc`
 -	Default Command: `["catalina.sh","run"]`
 
 ```dockerfile
-# Thu, 23 May 2019 22:39:34 GMT
-ADD file:358a4a50e1cb5e7181b9cc49d23e60d7b0ba5ca2ce18ced74be5843836d54004 in / 
-# Thu, 23 May 2019 22:39:35 GMT
+# Thu, 05 Sep 2019 20:39:50 GMT
+ADD file:a72ff266718add2a5d4d63264fd3ce1f5191448aa441ffdb064ed570a651b36a in / 
+# Thu, 05 Sep 2019 20:39:51 GMT
 CMD ["/bin/bash"]
-# Tue, 30 Jul 2019 23:40:41 GMT
+# Thu, 05 Sep 2019 23:12:09 GMT
 ARG rpm_x64=java-11-amazon-corretto-devel-11.0.4.11-1.x86_64.rpm
-# Tue, 30 Jul 2019 23:40:42 GMT
+# Thu, 05 Sep 2019 23:12:09 GMT
 ARG path_x64=https://d3pxv6yz143wms.cloudfront.net/11.0.4.11.1
-# Tue, 30 Jul 2019 23:40:42 GMT
+# Thu, 05 Sep 2019 23:12:09 GMT
 ARG key_x64=4FF3DA639731F095833505A25A812B5B67F4FCB4
-# Tue, 30 Jul 2019 23:40:43 GMT
+# Thu, 05 Sep 2019 23:12:10 GMT
 ARG rpm_aarch64=java-11-amazon-corretto-devel-11.0.4.11-1.aarch64.rpm
-# Tue, 30 Jul 2019 23:40:43 GMT
+# Thu, 05 Sep 2019 23:12:10 GMT
 ARG path_aarch64=https://d3pxv6yz143wms.cloudfront.net/11.0.4.11.1
-# Tue, 30 Jul 2019 23:40:43 GMT
+# Thu, 05 Sep 2019 23:12:10 GMT
 ARG key_aarch64=4FF3DA639731F095833505A25A812B5B67F4FCB4
-# Tue, 30 Jul 2019 23:41:28 GMT
+# Thu, 05 Sep 2019 23:12:37 GMT
 # ARGS: key_aarch64=4FF3DA639731F095833505A25A812B5B67F4FCB4 key_x64=4FF3DA639731F095833505A25A812B5B67F4FCB4 path_aarch64=https://d3pxv6yz143wms.cloudfront.net/11.0.4.11.1 path_x64=https://d3pxv6yz143wms.cloudfront.net/11.0.4.11.1 rpm_aarch64=java-11-amazon-corretto-devel-11.0.4.11-1.aarch64.rpm rpm_x64=java-11-amazon-corretto-devel-11.0.4.11-1.x86_64.rpm
 RUN set -eux;     case "$(uname -p)" in         x86_64) rpm=$rpm_x64; path=$path_x64; key=$key_x64 ;;         aarch64) rpm=$rpm_aarch64; path=$path_aarch64; key=$key_aarch64 ;;         *) echo >&2 "Unsupported architecture $(uname -p)."; exit 1 ;;     esac;         curl -O $path/$rpm     && export GNUPGHOME="$(mktemp -d)"     && gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys $key     && gpg --armor --export $key > corretto.asc     && rpm --import corretto.asc     && rpm -K $rpm     && rpm -i $rpm     && rm -r $GNUPGHOME corretto.asc $rpm     && yum install -y fontconfig     && yum clean all
-# Tue, 30 Jul 2019 23:41:29 GMT
+# Thu, 05 Sep 2019 23:12:39 GMT
 ENV JAVA_HOME=/usr/lib/jvm/java-11-amazon-corretto
-# Wed, 31 Jul 2019 22:07:04 GMT
+# Fri, 06 Sep 2019 00:21:46 GMT
 ENV CATALINA_HOME=/usr/local/tomcat
-# Wed, 31 Jul 2019 22:07:05 GMT
+# Fri, 06 Sep 2019 00:21:46 GMT
 ENV PATH=/usr/local/tomcat/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Wed, 31 Jul 2019 22:07:06 GMT
+# Fri, 06 Sep 2019 00:21:48 GMT
 RUN mkdir -p "$CATALINA_HOME"
-# Wed, 31 Jul 2019 22:07:06 GMT
+# Fri, 06 Sep 2019 00:21:48 GMT
 WORKDIR /usr/local/tomcat
-# Wed, 31 Jul 2019 22:07:07 GMT
+# Fri, 06 Sep 2019 00:21:49 GMT
 ENV TOMCAT_NATIVE_LIBDIR=/usr/local/tomcat/native-jni-lib
-# Wed, 31 Jul 2019 22:07:07 GMT
+# Fri, 06 Sep 2019 00:21:49 GMT
 ENV LD_LIBRARY_PATH=/usr/local/tomcat/native-jni-lib
-# Wed, 31 Jul 2019 22:07:07 GMT
+# Fri, 06 Sep 2019 00:21:49 GMT
 ENV GPG_KEYS=05AB33110949707C93A279E3D3EFE6B686867BA6 07E48665A34DCAFAE522E5E6266191C37C037D42 47309207D818FFD8DCD3F83F1931D684307A10A5 541FBE7D8F78B25E055DDEE13C370389288584E7 61B832AC2F1C5A90F0F9B00A1C506407564C17A3 79F7026C690BAA50B92CD8B66A3AD3F4F22C4FED 9BA44C2621385CB966EBA586F72C284D731FABEE A27677289986DB50844682F8ACB77FC2E86E29AC A9C5DF4D22E99998D9875A5110C01C5A2F6059E7 DCFD35E0BF8CA7344752DE8B6FB21E8933C60243 F3A04C595DB5B6A5F1ECA43E3B7BBB100D811BBE F7DA48BB64BCB84ECBA7EE6935CD23C10D498E23
-# Wed, 31 Jul 2019 22:07:08 GMT
+# Fri, 06 Sep 2019 00:21:50 GMT
 ENV TOMCAT_MAJOR=9
-# Mon, 19 Aug 2019 22:06:10 GMT
+# Fri, 06 Sep 2019 00:21:50 GMT
 ENV TOMCAT_VERSION=9.0.24
-# Mon, 19 Aug 2019 22:06:10 GMT
+# Fri, 06 Sep 2019 00:21:51 GMT
 ENV TOMCAT_SHA512=e01bd107e8fbe5ba629571d552a46339ccfd843b8bf770f617dfc1ec5cbf5fe5d945c2c3bba2f80188775a46f93c66d8594c13f8d12f7967d6d56c62d2bf7835
-# Mon, 19 Aug 2019 22:07:22 GMT
+# Fri, 06 Sep 2019 00:23:44 GMT
 RUN set -eux; 		if ! command -v yumdb > /dev/null; then 		yum install -y yum-utils; 		yumdb set reason dep yum-utils; 	fi; 	if [ -f /etc/oracle-release ]; then 		yumdb set reason user filesystem; 	fi; 	_yum_install_temporary() { ( set -eu +x; 		local pkg todo=''; 		for pkg; do 			if ! rpm --query "$pkg" > /dev/null 2>&1; then 				todo="$todo $pkg"; 			fi; 		done; 		if [ -n "$todo" ]; then 			set -x; 			yum install -y $todo; 			yumdb set reason dep $todo; 		fi; 	) }; 	_yum_install_temporary gzip tar; 		ddist() { 		local f="$1"; shift; 		local distFile="$1"; shift; 		local success=; 		local distUrl=; 		for distUrl in 			'https://www.apache.org/dyn/closer.cgi?action=download&filename=' 			https://www-us.apache.org/dist/ 			https://www.apache.org/dist/ 			https://archive.apache.org/dist/ 		; do 			if curl -fL -o "$f" "$distUrl$distFile" && [ -s "$f" ]; then 				success=1; 				break; 			fi; 		done; 		[ -n "$success" ]; 	}; 		ddist 'tomcat.tar.gz' "tomcat/tomcat-$TOMCAT_MAJOR/v$TOMCAT_VERSION/bin/apache-tomcat-$TOMCAT_VERSION.tar.gz"; 	echo "$TOMCAT_SHA512 *tomcat.tar.gz" | sha512sum --strict --check -; 	ddist 'tomcat.tar.gz.asc' "tomcat/tomcat-$TOMCAT_MAJOR/v$TOMCAT_VERSION/bin/apache-tomcat-$TOMCAT_VERSION.tar.gz.asc"; 	export GNUPGHOME="$(mktemp -d)"; 	for key in $GPG_KEYS; do 		gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys "$key"; 	done; 	gpg --batch --verify tomcat.tar.gz.asc tomcat.tar.gz; 	tar -xf tomcat.tar.gz --strip-components=1; 	rm bin/*.bat; 	rm tomcat.tar.gz*; 	command -v gpgconf && gpgconf --kill all || :; 	rm -rf "$GNUPGHOME"; 		nativeBuildDir="$(mktemp -d)"; 	tar -xf bin/tomcat-native.tar.gz -C "$nativeBuildDir" --strip-components=1; 	_yum_install_temporary 		apr-devel 		gcc 		make 		openssl-devel 	; 	( 		export CATALINA_HOME="$PWD"; 		cd "$nativeBuildDir/native"; 		aprConfig="$(command -v apr-1-config)"; 		./configure 			--libdir="$TOMCAT_NATIVE_LIBDIR" 			--prefix="$CATALINA_HOME" 			--with-apr="$aprConfig" 			--with-java-home="$JAVA_HOME" 			--with-ssl=yes; 		make -j "$(nproc)"; 		make install; 	); 	rm -rf "$nativeBuildDir"; 	rm bin/tomcat-native.tar.gz; 		deps="$( 		find "$TOMCAT_NATIVE_LIBDIR" -type f -executable -exec ldd '{}' ';' 			| awk '/=>/ && $(NF-1) != "=>" { print $(NF-1) }' 			| sort -u 			| xargs -r rpm --query --whatprovides 			| sort -u 	)"; 	[ -z "$deps" ] || yumdb set reason user $deps; 		yum autoremove -y; 	yum clean all; 	rm -rf /var/cache/yum; 		find ./bin/ -name '*.sh' -exec sed -ri 's|^#!/bin/sh$|#!/usr/bin/env bash|' '{}' +; 		chmod -R +rX .; 	chmod 777 logs work
-# Mon, 19 Aug 2019 22:07:26 GMT
+# Fri, 06 Sep 2019 00:23:51 GMT
 RUN set -e 	&& nativeLines="$(catalina.sh configtest 2>&1)" 	&& nativeLines="$(echo "$nativeLines" | grep 'Apache Tomcat Native')" 	&& nativeLines="$(echo "$nativeLines" | sort -u)" 	&& if ! echo "$nativeLines" | grep 'INFO: Loaded APR based Apache Tomcat Native library' >&2; then 		echo >&2 "$nativeLines"; 		exit 1; 	fi
-# Mon, 19 Aug 2019 22:07:27 GMT
+# Fri, 06 Sep 2019 00:23:52 GMT
 EXPOSE 8080
-# Mon, 19 Aug 2019 22:07:27 GMT
+# Fri, 06 Sep 2019 00:23:53 GMT
 CMD ["catalina.sh" "run"]
 ```
 
 -	Layers:
-	-	`sha256:0c8ee56cea53bee75dce23897c1c0f77aa13a698e7b49d9f20c788cef45fadea`  
-		Last Modified: Thu, 23 May 2019 22:40:27 GMT  
-		Size: 62.5 MB (62453151 bytes)  
+	-	`sha256:e75eebfae1ce8742ae53a518590bca4735e2a5dbfa46418fa709591a7b42e522`  
+		Last Modified: Thu, 05 Sep 2019 20:43:10 GMT  
+		Size: 62.8 MB (62797593 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:26fa6a4fcbd205b5477eeeca21b716e71451d1a99c1210dede865590e1fe09f3`  
-		Last Modified: Tue, 30 Jul 2019 23:42:49 GMT  
-		Size: 195.3 MB (195286724 bytes)  
+	-	`sha256:149ea18e536a86a1d3013f8d890ae31d30843ddc6e56e6dca9caee694d195c1b`  
+		Last Modified: Thu, 05 Sep 2019 23:13:56 GMT  
+		Size: 195.3 MB (195295858 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:6192f742a23c42bda649424bedf838a1bb458c80f0d7ac9ac2c6692f86d1a4d3`  
-		Last Modified: Wed, 31 Jul 2019 22:15:18 GMT  
+	-	`sha256:ef6d54efaf622c109d088da3f6bc5297ef6cfe74a5ce3f9bbb95ee72e3885d52`  
+		Last Modified: Fri, 06 Sep 2019 00:35:05 GMT  
 		Size: 172.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:1ce4913920048862cc46f88b270fb1fc63370dd0a8552786ec1c4d466f6d7dec`  
-		Last Modified: Mon, 19 Aug 2019 22:17:53 GMT  
-		Size: 14.6 MB (14632021 bytes)  
+	-	`sha256:f84780a140557fb0f5283b2f858eec46d825a5fe14b1e21d2e1d6a6d347940d8`  
+		Last Modified: Fri, 06 Sep 2019 00:35:10 GMT  
+		Size: 14.7 MB (14650189 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:b35d95d6d936d001ade6a24321b4165dead2a38145f4a19f9bfa9d90444f7e13`  
-		Last Modified: Mon, 19 Aug 2019 22:17:51 GMT  
-		Size: 165.0 B  
+	-	`sha256:912ac149afe81fef07217a8cea761d99389c83d938068ef00af98c0f4a0d448b`  
+		Last Modified: Fri, 06 Sep 2019 00:35:04 GMT  
+		Size: 164.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `tomcat:9.0.24-jdk11-openjdk`
@@ -22169,7 +22169,7 @@ CMD ["catalina.sh" "run"]
 ## `tomcat:9.0.24-jdk8-corretto`
 
 ```console
-$ docker pull tomcat@sha256:196af6d3d20f75d914b8013d68ab6cc10a4699f4971bef029f5c035a602ce756
+$ docker pull tomcat@sha256:c983e1762e034aafe3fdfc02d6331f8231ba6178d957c806d1315939e2c59fd6
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -22180,175 +22180,175 @@ $ docker pull tomcat@sha256:196af6d3d20f75d914b8013d68ab6cc10a4699f4971bef029f5c
 ### `tomcat:9.0.24-jdk8-corretto` - linux; amd64
 
 ```console
-$ docker pull tomcat@sha256:992c680b646debf9b8fcbb8b1951163d88d515bbde09e4d1a1651a2d9841f0a1
+$ docker pull tomcat@sha256:7b669fad6699927e7444761caf45185b68762b93224195ef34312344d01201e5
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **197.4 MB (197389176 bytes)**  
+-	Total Size: **197.8 MB (197827081 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:3620ce55f6d3bf80f654f411a4b8c0e23f089862914a62583f970952247f36e5`
+-	Image ID: `sha256:49b7273ec35cbcb45bd546374fadb09c72dc52d428a5619cb6192e1a22f3f59d`
 -	Default Command: `["catalina.sh","run"]`
 
 ```dockerfile
-# Thu, 23 May 2019 22:19:59 GMT
-ADD file:3cf811fe5073384ff1d5f405992ef7e5e452ad6d4a4cb873eee65007382f3a4a in / 
-# Thu, 23 May 2019 22:20:00 GMT
+# Thu, 05 Sep 2019 23:36:52 GMT
+ADD file:ee5d76cace83097841fd6a9fe1406be3e2176b9ec4de511cb5594bf959f9e657 in / 
+# Thu, 05 Sep 2019 23:36:53 GMT
 CMD ["/bin/bash"]
-# Tue, 30 Jul 2019 23:19:26 GMT
+# Fri, 06 Sep 2019 00:02:29 GMT
 ARG rpm_x64=java-1.8.0-amazon-corretto-devel-1.8.0_222.b10-1.x86_64.rpm
-# Tue, 30 Jul 2019 23:19:26 GMT
+# Fri, 06 Sep 2019 00:02:30 GMT
 ARG path_x64=https://d3pxv6yz143wms.cloudfront.net/8.222.10.1
-# Tue, 30 Jul 2019 23:19:26 GMT
+# Fri, 06 Sep 2019 00:02:30 GMT
 ARG key_x64=C554E802F4545B60919A0A87BD93DF06B540D62A
-# Tue, 30 Jul 2019 23:19:27 GMT
+# Fri, 06 Sep 2019 00:02:30 GMT
 ARG rpm_aarch64=java-1.8.0-amazon-corretto-devel-1.8.0_222.b10-4.aarch64.rpm
-# Tue, 30 Jul 2019 23:19:27 GMT
+# Fri, 06 Sep 2019 00:02:30 GMT
 ARG path_aarch64=https://d3pxv6yz143wms.cloudfront.net/8.222.10.4
-# Tue, 30 Jul 2019 23:19:27 GMT
+# Fri, 06 Sep 2019 00:02:30 GMT
 ARG key_aarch64=826272FACCCCC8E76897C26CE9B1F93E1A158134
-# Tue, 30 Jul 2019 23:19:47 GMT
+# Fri, 06 Sep 2019 00:02:52 GMT
 # ARGS: key_aarch64=826272FACCCCC8E76897C26CE9B1F93E1A158134 key_x64=C554E802F4545B60919A0A87BD93DF06B540D62A path_aarch64=https://d3pxv6yz143wms.cloudfront.net/8.222.10.4 path_x64=https://d3pxv6yz143wms.cloudfront.net/8.222.10.1 rpm_aarch64=java-1.8.0-amazon-corretto-devel-1.8.0_222.b10-4.aarch64.rpm rpm_x64=java-1.8.0-amazon-corretto-devel-1.8.0_222.b10-1.x86_64.rpm
 RUN set -eux;     case "$(uname -p)" in         x86_64) rpm=$rpm_x64; path=$path_x64; key=$key_x64 ;;         aarch64) rpm=$rpm_aarch64; path=$path_aarch64; key=$key_aarch64 ;;         *) echo >&2 "Unsupported architecture $(uname -p)."; exit 1 ;;     esac;         curl -O $path/$rpm     && export GNUPGHOME="$(mktemp -d)"     && gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys $key     && gpg --armor --export $key > corretto.asc     && rpm --import corretto.asc     && rpm -K $rpm     && rpm -i $rpm     && rm -r $GNUPGHOME corretto.asc $rpm     && yum install -y fontconfig     && yum clean all
-# Tue, 30 Jul 2019 23:19:47 GMT
+# Fri, 06 Sep 2019 00:02:52 GMT
 ENV JAVA_HOME=/usr/lib/jvm/java-1.8.0-amazon-corretto
-# Tue, 30 Jul 2019 23:39:00 GMT
+# Fri, 06 Sep 2019 00:22:16 GMT
 ENV CATALINA_HOME=/usr/local/tomcat
-# Tue, 30 Jul 2019 23:39:00 GMT
+# Fri, 06 Sep 2019 00:22:16 GMT
 ENV PATH=/usr/local/tomcat/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Tue, 30 Jul 2019 23:39:01 GMT
+# Fri, 06 Sep 2019 00:22:17 GMT
 RUN mkdir -p "$CATALINA_HOME"
-# Tue, 30 Jul 2019 23:39:01 GMT
+# Fri, 06 Sep 2019 00:22:17 GMT
 WORKDIR /usr/local/tomcat
-# Tue, 30 Jul 2019 23:39:01 GMT
+# Fri, 06 Sep 2019 00:22:17 GMT
 ENV TOMCAT_NATIVE_LIBDIR=/usr/local/tomcat/native-jni-lib
-# Tue, 30 Jul 2019 23:39:01 GMT
+# Fri, 06 Sep 2019 00:22:17 GMT
 ENV LD_LIBRARY_PATH=/usr/local/tomcat/native-jni-lib
-# Tue, 30 Jul 2019 23:39:01 GMT
+# Fri, 06 Sep 2019 00:22:18 GMT
 ENV GPG_KEYS=05AB33110949707C93A279E3D3EFE6B686867BA6 07E48665A34DCAFAE522E5E6266191C37C037D42 47309207D818FFD8DCD3F83F1931D684307A10A5 541FBE7D8F78B25E055DDEE13C370389288584E7 61B832AC2F1C5A90F0F9B00A1C506407564C17A3 79F7026C690BAA50B92CD8B66A3AD3F4F22C4FED 9BA44C2621385CB966EBA586F72C284D731FABEE A27677289986DB50844682F8ACB77FC2E86E29AC A9C5DF4D22E99998D9875A5110C01C5A2F6059E7 DCFD35E0BF8CA7344752DE8B6FB21E8933C60243 F3A04C595DB5B6A5F1ECA43E3B7BBB100D811BBE F7DA48BB64BCB84ECBA7EE6935CD23C10D498E23
-# Tue, 30 Jul 2019 23:39:01 GMT
+# Fri, 06 Sep 2019 00:22:18 GMT
 ENV TOMCAT_MAJOR=9
-# Mon, 19 Aug 2019 21:46:41 GMT
+# Fri, 06 Sep 2019 00:22:18 GMT
 ENV TOMCAT_VERSION=9.0.24
-# Mon, 19 Aug 2019 21:46:41 GMT
+# Fri, 06 Sep 2019 00:22:18 GMT
 ENV TOMCAT_SHA512=e01bd107e8fbe5ba629571d552a46339ccfd843b8bf770f617dfc1ec5cbf5fe5d945c2c3bba2f80188775a46f93c66d8594c13f8d12f7967d6d56c62d2bf7835
-# Mon, 19 Aug 2019 21:48:25 GMT
+# Fri, 06 Sep 2019 00:23:48 GMT
 RUN set -eux; 		if ! command -v yumdb > /dev/null; then 		yum install -y yum-utils; 		yumdb set reason dep yum-utils; 	fi; 	if [ -f /etc/oracle-release ]; then 		yumdb set reason user filesystem; 	fi; 	_yum_install_temporary() { ( set -eu +x; 		local pkg todo=''; 		for pkg; do 			if ! rpm --query "$pkg" > /dev/null 2>&1; then 				todo="$todo $pkg"; 			fi; 		done; 		if [ -n "$todo" ]; then 			set -x; 			yum install -y $todo; 			yumdb set reason dep $todo; 		fi; 	) }; 	_yum_install_temporary gzip tar; 		ddist() { 		local f="$1"; shift; 		local distFile="$1"; shift; 		local success=; 		local distUrl=; 		for distUrl in 			'https://www.apache.org/dyn/closer.cgi?action=download&filename=' 			https://www-us.apache.org/dist/ 			https://www.apache.org/dist/ 			https://archive.apache.org/dist/ 		; do 			if curl -fL -o "$f" "$distUrl$distFile" && [ -s "$f" ]; then 				success=1; 				break; 			fi; 		done; 		[ -n "$success" ]; 	}; 		ddist 'tomcat.tar.gz' "tomcat/tomcat-$TOMCAT_MAJOR/v$TOMCAT_VERSION/bin/apache-tomcat-$TOMCAT_VERSION.tar.gz"; 	echo "$TOMCAT_SHA512 *tomcat.tar.gz" | sha512sum --strict --check -; 	ddist 'tomcat.tar.gz.asc' "tomcat/tomcat-$TOMCAT_MAJOR/v$TOMCAT_VERSION/bin/apache-tomcat-$TOMCAT_VERSION.tar.gz.asc"; 	export GNUPGHOME="$(mktemp -d)"; 	for key in $GPG_KEYS; do 		gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys "$key"; 	done; 	gpg --batch --verify tomcat.tar.gz.asc tomcat.tar.gz; 	tar -xf tomcat.tar.gz --strip-components=1; 	rm bin/*.bat; 	rm tomcat.tar.gz*; 	command -v gpgconf && gpgconf --kill all || :; 	rm -rf "$GNUPGHOME"; 		nativeBuildDir="$(mktemp -d)"; 	tar -xf bin/tomcat-native.tar.gz -C "$nativeBuildDir" --strip-components=1; 	_yum_install_temporary 		apr-devel 		gcc 		make 		openssl-devel 	; 	( 		export CATALINA_HOME="$PWD"; 		cd "$nativeBuildDir/native"; 		aprConfig="$(command -v apr-1-config)"; 		./configure 			--libdir="$TOMCAT_NATIVE_LIBDIR" 			--prefix="$CATALINA_HOME" 			--with-apr="$aprConfig" 			--with-java-home="$JAVA_HOME" 			--with-ssl=yes; 		make -j "$(nproc)"; 		make install; 	); 	rm -rf "$nativeBuildDir"; 	rm bin/tomcat-native.tar.gz; 		deps="$( 		find "$TOMCAT_NATIVE_LIBDIR" -type f -executable -exec ldd '{}' ';' 			| awk '/=>/ && $(NF-1) != "=>" { print $(NF-1) }' 			| sort -u 			| xargs -r rpm --query --whatprovides 			| sort -u 	)"; 	[ -z "$deps" ] || yumdb set reason user $deps; 		yum autoremove -y; 	yum clean all; 	rm -rf /var/cache/yum; 		find ./bin/ -name '*.sh' -exec sed -ri 's|^#!/bin/sh$|#!/usr/bin/env bash|' '{}' +; 		chmod -R +rX .; 	chmod 777 logs work
-# Mon, 19 Aug 2019 21:48:28 GMT
+# Fri, 06 Sep 2019 00:23:50 GMT
 RUN set -e 	&& nativeLines="$(catalina.sh configtest 2>&1)" 	&& nativeLines="$(echo "$nativeLines" | grep 'Apache Tomcat Native')" 	&& nativeLines="$(echo "$nativeLines" | sort -u)" 	&& if ! echo "$nativeLines" | grep 'INFO: Loaded APR based Apache Tomcat Native library' >&2; then 		echo >&2 "$nativeLines"; 		exit 1; 	fi
-# Mon, 19 Aug 2019 21:48:28 GMT
+# Fri, 06 Sep 2019 00:23:50 GMT
 EXPOSE 8080
-# Mon, 19 Aug 2019 21:48:28 GMT
+# Fri, 06 Sep 2019 00:23:51 GMT
 CMD ["catalina.sh" "run"]
 ```
 
 -	Layers:
-	-	`sha256:72d97abdfae3b3c933ff41e39779cc72853d7bd9dc1e4800c5294d6715257799`  
-		Last Modified: Thu, 23 May 2019 22:22:16 GMT  
-		Size: 61.3 MB (61285177 bytes)  
+	-	`sha256:4910da0c66710ed2414cd0223e48cbeed94209b9c77053dc30d48532a651dd22`  
+		Last Modified: Thu, 05 Sep 2019 23:38:39 GMT  
+		Size: 61.7 MB (61665831 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c13d17f3a543055e7f616629ad6825d21746252d0b8db4f1812c86b11e3fdc96`  
-		Last Modified: Tue, 30 Jul 2019 23:20:57 GMT  
-		Size: 121.5 MB (121482783 bytes)  
+	-	`sha256:c511e36daa9ce76f573699dfe6fabfac82254067f5ff99f2049f99d176ec919d`  
+		Last Modified: Fri, 06 Sep 2019 00:03:50 GMT  
+		Size: 121.5 MB (121533245 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:34afcacfc487c55714cfc7e34c35abe51c1a26be56d268883ecc929fa305f714`  
-		Last Modified: Tue, 30 Jul 2019 23:47:26 GMT  
-		Size: 139.0 B  
+	-	`sha256:fb8769d09d3f4236a9a84b65d19abf678fdd45df105a6e62a3924404dafa15af`  
+		Last Modified: Fri, 06 Sep 2019 00:31:09 GMT  
+		Size: 138.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:ed8e4d1135549f7dceb074c31fb331da7597cf95703c7208d867b362925f21d8`  
-		Last Modified: Mon, 19 Aug 2019 21:52:16 GMT  
-		Size: 14.6 MB (14620945 bytes)  
+	-	`sha256:f25f502d29f76c487fd97b942132d8ddaf9218a24ecfb984658638710515057b`  
+		Last Modified: Fri, 06 Sep 2019 00:31:11 GMT  
+		Size: 14.6 MB (14627735 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:b6fc361a1d8af71b8d0c613cad1f9dc6d50340cc15040eee66b8de2ab227e35e`  
-		Last Modified: Mon, 19 Aug 2019 21:52:14 GMT  
+	-	`sha256:b223aa88d20770ffa395ab2b985b9a788ab592f0c81403f882a416fb5fcd723c`  
+		Last Modified: Fri, 06 Sep 2019 00:31:09 GMT  
 		Size: 132.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `tomcat:9.0.24-jdk8-corretto` - linux; arm64 variant v8
 
 ```console
-$ docker pull tomcat@sha256:75b1c8ef5859ff8cf04feaaee43b8d66673d31cc17218e28eecf41971141a3c9
+$ docker pull tomcat@sha256:cb288f74841045ac830e322d29e298f8212982457580d02dff8311f1919129a3
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **182.0 MB (181958229 bytes)**  
+-	Total Size: **182.3 MB (182336772 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:47c3a70a1e9aa18c104f810a8aacb90e407c53acf4f269c15e734bba74e6d5ca`
+-	Image ID: `sha256:1fd9bc06870dfce6510ffd2b35a66cc96eec659ebcca0aac6c9027b3abed58bf`
 -	Default Command: `["catalina.sh","run"]`
 
 ```dockerfile
-# Thu, 23 May 2019 22:39:34 GMT
-ADD file:358a4a50e1cb5e7181b9cc49d23e60d7b0ba5ca2ce18ced74be5843836d54004 in / 
-# Thu, 23 May 2019 22:39:35 GMT
+# Thu, 05 Sep 2019 20:39:50 GMT
+ADD file:a72ff266718add2a5d4d63264fd3ce1f5191448aa441ffdb064ed570a651b36a in / 
+# Thu, 05 Sep 2019 20:39:51 GMT
 CMD ["/bin/bash"]
-# Tue, 30 Jul 2019 23:39:26 GMT
+# Thu, 05 Sep 2019 23:11:35 GMT
 ARG rpm_x64=java-1.8.0-amazon-corretto-devel-1.8.0_222.b10-1.x86_64.rpm
-# Tue, 30 Jul 2019 23:39:27 GMT
+# Thu, 05 Sep 2019 23:11:35 GMT
 ARG path_x64=https://d3pxv6yz143wms.cloudfront.net/8.222.10.1
-# Tue, 30 Jul 2019 23:39:27 GMT
+# Thu, 05 Sep 2019 23:11:35 GMT
 ARG key_x64=C554E802F4545B60919A0A87BD93DF06B540D62A
-# Tue, 30 Jul 2019 23:39:27 GMT
+# Thu, 05 Sep 2019 23:11:36 GMT
 ARG rpm_aarch64=java-1.8.0-amazon-corretto-devel-1.8.0_222.b10-4.aarch64.rpm
-# Tue, 30 Jul 2019 23:39:28 GMT
+# Thu, 05 Sep 2019 23:11:36 GMT
 ARG path_aarch64=https://d3pxv6yz143wms.cloudfront.net/8.222.10.4
-# Tue, 30 Jul 2019 23:39:28 GMT
+# Thu, 05 Sep 2019 23:11:36 GMT
 ARG key_aarch64=826272FACCCCC8E76897C26CE9B1F93E1A158134
-# Tue, 30 Jul 2019 23:40:33 GMT
+# Thu, 05 Sep 2019 23:12:00 GMT
 # ARGS: key_aarch64=826272FACCCCC8E76897C26CE9B1F93E1A158134 key_x64=C554E802F4545B60919A0A87BD93DF06B540D62A path_aarch64=https://d3pxv6yz143wms.cloudfront.net/8.222.10.4 path_x64=https://d3pxv6yz143wms.cloudfront.net/8.222.10.1 rpm_aarch64=java-1.8.0-amazon-corretto-devel-1.8.0_222.b10-4.aarch64.rpm rpm_x64=java-1.8.0-amazon-corretto-devel-1.8.0_222.b10-1.x86_64.rpm
 RUN set -eux;     case "$(uname -p)" in         x86_64) rpm=$rpm_x64; path=$path_x64; key=$key_x64 ;;         aarch64) rpm=$rpm_aarch64; path=$path_aarch64; key=$key_aarch64 ;;         *) echo >&2 "Unsupported architecture $(uname -p)."; exit 1 ;;     esac;         curl -O $path/$rpm     && export GNUPGHOME="$(mktemp -d)"     && gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys $key     && gpg --armor --export $key > corretto.asc     && rpm --import corretto.asc     && rpm -K $rpm     && rpm -i $rpm     && rm -r $GNUPGHOME corretto.asc $rpm     && yum install -y fontconfig     && yum clean all
-# Tue, 30 Jul 2019 23:40:34 GMT
+# Thu, 05 Sep 2019 23:12:01 GMT
 ENV JAVA_HOME=/usr/lib/jvm/java-1.8.0-amazon-corretto
-# Wed, 31 Jul 2019 22:08:23 GMT
+# Fri, 06 Sep 2019 00:24:08 GMT
 ENV CATALINA_HOME=/usr/local/tomcat
-# Wed, 31 Jul 2019 22:08:23 GMT
+# Fri, 06 Sep 2019 00:24:09 GMT
 ENV PATH=/usr/local/tomcat/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Wed, 31 Jul 2019 22:08:24 GMT
+# Fri, 06 Sep 2019 00:24:12 GMT
 RUN mkdir -p "$CATALINA_HOME"
-# Wed, 31 Jul 2019 22:08:25 GMT
+# Fri, 06 Sep 2019 00:24:16 GMT
 WORKDIR /usr/local/tomcat
-# Wed, 31 Jul 2019 22:08:25 GMT
+# Fri, 06 Sep 2019 00:24:17 GMT
 ENV TOMCAT_NATIVE_LIBDIR=/usr/local/tomcat/native-jni-lib
-# Wed, 31 Jul 2019 22:08:25 GMT
+# Fri, 06 Sep 2019 00:24:18 GMT
 ENV LD_LIBRARY_PATH=/usr/local/tomcat/native-jni-lib
-# Wed, 31 Jul 2019 22:08:26 GMT
+# Fri, 06 Sep 2019 00:24:19 GMT
 ENV GPG_KEYS=05AB33110949707C93A279E3D3EFE6B686867BA6 07E48665A34DCAFAE522E5E6266191C37C037D42 47309207D818FFD8DCD3F83F1931D684307A10A5 541FBE7D8F78B25E055DDEE13C370389288584E7 61B832AC2F1C5A90F0F9B00A1C506407564C17A3 79F7026C690BAA50B92CD8B66A3AD3F4F22C4FED 9BA44C2621385CB966EBA586F72C284D731FABEE A27677289986DB50844682F8ACB77FC2E86E29AC A9C5DF4D22E99998D9875A5110C01C5A2F6059E7 DCFD35E0BF8CA7344752DE8B6FB21E8933C60243 F3A04C595DB5B6A5F1ECA43E3B7BBB100D811BBE F7DA48BB64BCB84ECBA7EE6935CD23C10D498E23
-# Wed, 31 Jul 2019 22:08:26 GMT
+# Fri, 06 Sep 2019 00:24:20 GMT
 ENV TOMCAT_MAJOR=9
-# Mon, 19 Aug 2019 22:09:10 GMT
+# Fri, 06 Sep 2019 00:24:22 GMT
 ENV TOMCAT_VERSION=9.0.24
-# Mon, 19 Aug 2019 22:09:10 GMT
+# Fri, 06 Sep 2019 00:24:24 GMT
 ENV TOMCAT_SHA512=e01bd107e8fbe5ba629571d552a46339ccfd843b8bf770f617dfc1ec5cbf5fe5d945c2c3bba2f80188775a46f93c66d8594c13f8d12f7967d6d56c62d2bf7835
-# Mon, 19 Aug 2019 22:10:24 GMT
+# Fri, 06 Sep 2019 00:25:59 GMT
 RUN set -eux; 		if ! command -v yumdb > /dev/null; then 		yum install -y yum-utils; 		yumdb set reason dep yum-utils; 	fi; 	if [ -f /etc/oracle-release ]; then 		yumdb set reason user filesystem; 	fi; 	_yum_install_temporary() { ( set -eu +x; 		local pkg todo=''; 		for pkg; do 			if ! rpm --query "$pkg" > /dev/null 2>&1; then 				todo="$todo $pkg"; 			fi; 		done; 		if [ -n "$todo" ]; then 			set -x; 			yum install -y $todo; 			yumdb set reason dep $todo; 		fi; 	) }; 	_yum_install_temporary gzip tar; 		ddist() { 		local f="$1"; shift; 		local distFile="$1"; shift; 		local success=; 		local distUrl=; 		for distUrl in 			'https://www.apache.org/dyn/closer.cgi?action=download&filename=' 			https://www-us.apache.org/dist/ 			https://www.apache.org/dist/ 			https://archive.apache.org/dist/ 		; do 			if curl -fL -o "$f" "$distUrl$distFile" && [ -s "$f" ]; then 				success=1; 				break; 			fi; 		done; 		[ -n "$success" ]; 	}; 		ddist 'tomcat.tar.gz' "tomcat/tomcat-$TOMCAT_MAJOR/v$TOMCAT_VERSION/bin/apache-tomcat-$TOMCAT_VERSION.tar.gz"; 	echo "$TOMCAT_SHA512 *tomcat.tar.gz" | sha512sum --strict --check -; 	ddist 'tomcat.tar.gz.asc' "tomcat/tomcat-$TOMCAT_MAJOR/v$TOMCAT_VERSION/bin/apache-tomcat-$TOMCAT_VERSION.tar.gz.asc"; 	export GNUPGHOME="$(mktemp -d)"; 	for key in $GPG_KEYS; do 		gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys "$key"; 	done; 	gpg --batch --verify tomcat.tar.gz.asc tomcat.tar.gz; 	tar -xf tomcat.tar.gz --strip-components=1; 	rm bin/*.bat; 	rm tomcat.tar.gz*; 	command -v gpgconf && gpgconf --kill all || :; 	rm -rf "$GNUPGHOME"; 		nativeBuildDir="$(mktemp -d)"; 	tar -xf bin/tomcat-native.tar.gz -C "$nativeBuildDir" --strip-components=1; 	_yum_install_temporary 		apr-devel 		gcc 		make 		openssl-devel 	; 	( 		export CATALINA_HOME="$PWD"; 		cd "$nativeBuildDir/native"; 		aprConfig="$(command -v apr-1-config)"; 		./configure 			--libdir="$TOMCAT_NATIVE_LIBDIR" 			--prefix="$CATALINA_HOME" 			--with-apr="$aprConfig" 			--with-java-home="$JAVA_HOME" 			--with-ssl=yes; 		make -j "$(nproc)"; 		make install; 	); 	rm -rf "$nativeBuildDir"; 	rm bin/tomcat-native.tar.gz; 		deps="$( 		find "$TOMCAT_NATIVE_LIBDIR" -type f -executable -exec ldd '{}' ';' 			| awk '/=>/ && $(NF-1) != "=>" { print $(NF-1) }' 			| sort -u 			| xargs -r rpm --query --whatprovides 			| sort -u 	)"; 	[ -z "$deps" ] || yumdb set reason user $deps; 		yum autoremove -y; 	yum clean all; 	rm -rf /var/cache/yum; 		find ./bin/ -name '*.sh' -exec sed -ri 's|^#!/bin/sh$|#!/usr/bin/env bash|' '{}' +; 		chmod -R +rX .; 	chmod 777 logs work
-# Mon, 19 Aug 2019 22:10:28 GMT
+# Fri, 06 Sep 2019 00:26:09 GMT
 RUN set -e 	&& nativeLines="$(catalina.sh configtest 2>&1)" 	&& nativeLines="$(echo "$nativeLines" | grep 'Apache Tomcat Native')" 	&& nativeLines="$(echo "$nativeLines" | sort -u)" 	&& if ! echo "$nativeLines" | grep 'INFO: Loaded APR based Apache Tomcat Native library' >&2; then 		echo >&2 "$nativeLines"; 		exit 1; 	fi
-# Mon, 19 Aug 2019 22:10:28 GMT
+# Fri, 06 Sep 2019 00:26:11 GMT
 EXPOSE 8080
-# Mon, 19 Aug 2019 22:10:29 GMT
+# Fri, 06 Sep 2019 00:26:15 GMT
 CMD ["catalina.sh" "run"]
 ```
 
 -	Layers:
-	-	`sha256:0c8ee56cea53bee75dce23897c1c0f77aa13a698e7b49d9f20c788cef45fadea`  
-		Last Modified: Thu, 23 May 2019 22:40:27 GMT  
-		Size: 62.5 MB (62453151 bytes)  
+	-	`sha256:e75eebfae1ce8742ae53a518590bca4735e2a5dbfa46418fa709591a7b42e522`  
+		Last Modified: Thu, 05 Sep 2019 20:43:10 GMT  
+		Size: 62.8 MB (62797593 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:269e06f3b7489c1b941db3fc6cf17c76a7bf613b18a6aeff9d25c7144b85ae6a`  
-		Last Modified: Tue, 30 Jul 2019 23:42:10 GMT  
-		Size: 104.9 MB (104888017 bytes)  
+	-	`sha256:825292fe21ae21fe00976ccad2471578d1a289980b1ea830f4e0ad1990422166`  
+		Last Modified: Thu, 05 Sep 2019 23:13:17 GMT  
+		Size: 104.9 MB (104911609 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c1a0e5239e6a06f59af8cf4b3646b582c250ec4bcd6c3ebc520395b4e288e047`  
-		Last Modified: Wed, 31 Jul 2019 22:15:34 GMT  
-		Size: 172.0 B  
+	-	`sha256:babaad70d6b41a7c0adfcbf58979816fb28f3415b9bc800fb9f306bed8742129`  
+		Last Modified: Fri, 06 Sep 2019 00:35:19 GMT  
+		Size: 171.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:b1acdf1afe0337d28d597b9470c7af7b0f0583eac2c9009dac7f873773faa53a`  
-		Last Modified: Mon, 19 Aug 2019 22:18:12 GMT  
-		Size: 14.6 MB (14616725 bytes)  
+	-	`sha256:b53e8969d1ce1c78b57ba50d8bda38f4428318fafa3b346476689b56968699b8`  
+		Last Modified: Fri, 06 Sep 2019 00:35:24 GMT  
+		Size: 14.6 MB (14627236 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:b927da40086ba6ccdc2d92ce3de5cc764795415cad19212faedec6bf132a0f40`  
-		Last Modified: Mon, 19 Aug 2019 22:18:09 GMT  
-		Size: 164.0 B  
+	-	`sha256:76cea8bd63219d2384e3ae13c427618887e60fdb45826d73924f0143bab296a3`  
+		Last Modified: Fri, 06 Sep 2019 00:35:19 GMT  
+		Size: 163.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `tomcat:9.0.24-jdk8-openjdk`
@@ -23691,7 +23691,7 @@ CMD ["catalina.sh" "run"]
 ## `tomcat:9.0-jdk11-corretto`
 
 ```console
-$ docker pull tomcat@sha256:c4ac5666b1f8280dba406ebf4e4f6a00d9c674d7bb42b83cd3d2133777a68054
+$ docker pull tomcat@sha256:29061e834496e110eae93047b6335fceebdc9e86178e0950c94e45e8ab2fdb82
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -23702,175 +23702,175 @@ $ docker pull tomcat@sha256:c4ac5666b1f8280dba406ebf4e4f6a00d9c674d7bb42b83cd3d2
 ### `tomcat:9.0-jdk11-corretto` - linux; amd64
 
 ```console
-$ docker pull tomcat@sha256:1e96ac2f999a969099287974b0d2f603fcb4cdd01b90356729154feb43e34762
+$ docker pull tomcat@sha256:c3b38113e71767237ef22a7598c791405fbf922485267835f5e36c6f3f05aa53
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **272.9 MB (272896064 bytes)**  
+-	Total Size: **273.3 MB (273340191 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:4043ad2ba406f0842443babe79c1e92b8fadbdca0fcd06dca377c20ac7ac9528`
+-	Image ID: `sha256:e88f0129482d7c3bb3294629e8bc48d71a8786aff07b2aec01c3a7db1ee58ceb`
 -	Default Command: `["catalina.sh","run"]`
 
 ```dockerfile
-# Thu, 23 May 2019 22:19:59 GMT
-ADD file:3cf811fe5073384ff1d5f405992ef7e5e452ad6d4a4cb873eee65007382f3a4a in / 
-# Thu, 23 May 2019 22:20:00 GMT
+# Thu, 05 Sep 2019 23:36:52 GMT
+ADD file:ee5d76cace83097841fd6a9fe1406be3e2176b9ec4de511cb5594bf959f9e657 in / 
+# Thu, 05 Sep 2019 23:36:53 GMT
 CMD ["/bin/bash"]
-# Tue, 30 Jul 2019 23:19:53 GMT
+# Fri, 06 Sep 2019 00:02:57 GMT
 ARG rpm_x64=java-11-amazon-corretto-devel-11.0.4.11-1.x86_64.rpm
-# Tue, 30 Jul 2019 23:19:53 GMT
+# Fri, 06 Sep 2019 00:02:58 GMT
 ARG path_x64=https://d3pxv6yz143wms.cloudfront.net/11.0.4.11.1
-# Tue, 30 Jul 2019 23:19:53 GMT
+# Fri, 06 Sep 2019 00:02:58 GMT
 ARG key_x64=4FF3DA639731F095833505A25A812B5B67F4FCB4
-# Tue, 30 Jul 2019 23:19:54 GMT
+# Fri, 06 Sep 2019 00:02:58 GMT
 ARG rpm_aarch64=java-11-amazon-corretto-devel-11.0.4.11-1.aarch64.rpm
-# Tue, 30 Jul 2019 23:19:54 GMT
+# Fri, 06 Sep 2019 00:02:58 GMT
 ARG path_aarch64=https://d3pxv6yz143wms.cloudfront.net/11.0.4.11.1
-# Tue, 30 Jul 2019 23:19:54 GMT
+# Fri, 06 Sep 2019 00:02:58 GMT
 ARG key_aarch64=4FF3DA639731F095833505A25A812B5B67F4FCB4
-# Tue, 30 Jul 2019 23:20:17 GMT
+# Fri, 06 Sep 2019 00:03:23 GMT
 # ARGS: key_aarch64=4FF3DA639731F095833505A25A812B5B67F4FCB4 key_x64=4FF3DA639731F095833505A25A812B5B67F4FCB4 path_aarch64=https://d3pxv6yz143wms.cloudfront.net/11.0.4.11.1 path_x64=https://d3pxv6yz143wms.cloudfront.net/11.0.4.11.1 rpm_aarch64=java-11-amazon-corretto-devel-11.0.4.11-1.aarch64.rpm rpm_x64=java-11-amazon-corretto-devel-11.0.4.11-1.x86_64.rpm
 RUN set -eux;     case "$(uname -p)" in         x86_64) rpm=$rpm_x64; path=$path_x64; key=$key_x64 ;;         aarch64) rpm=$rpm_aarch64; path=$path_aarch64; key=$key_aarch64 ;;         *) echo >&2 "Unsupported architecture $(uname -p)."; exit 1 ;;     esac;         curl -O $path/$rpm     && export GNUPGHOME="$(mktemp -d)"     && gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys $key     && gpg --armor --export $key > corretto.asc     && rpm --import corretto.asc     && rpm -K $rpm     && rpm -i $rpm     && rm -r $GNUPGHOME corretto.asc $rpm     && yum install -y fontconfig     && yum clean all
-# Tue, 30 Jul 2019 23:20:17 GMT
+# Fri, 06 Sep 2019 00:03:23 GMT
 ENV JAVA_HOME=/usr/lib/jvm/java-11-amazon-corretto
-# Tue, 30 Jul 2019 23:37:08 GMT
+# Fri, 06 Sep 2019 00:20:17 GMT
 ENV CATALINA_HOME=/usr/local/tomcat
-# Tue, 30 Jul 2019 23:37:08 GMT
+# Fri, 06 Sep 2019 00:20:17 GMT
 ENV PATH=/usr/local/tomcat/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Tue, 30 Jul 2019 23:37:09 GMT
+# Fri, 06 Sep 2019 00:20:18 GMT
 RUN mkdir -p "$CATALINA_HOME"
-# Tue, 30 Jul 2019 23:37:09 GMT
+# Fri, 06 Sep 2019 00:20:18 GMT
 WORKDIR /usr/local/tomcat
-# Tue, 30 Jul 2019 23:37:09 GMT
+# Fri, 06 Sep 2019 00:20:18 GMT
 ENV TOMCAT_NATIVE_LIBDIR=/usr/local/tomcat/native-jni-lib
-# Tue, 30 Jul 2019 23:37:09 GMT
+# Fri, 06 Sep 2019 00:20:18 GMT
 ENV LD_LIBRARY_PATH=/usr/local/tomcat/native-jni-lib
-# Tue, 30 Jul 2019 23:37:09 GMT
+# Fri, 06 Sep 2019 00:20:18 GMT
 ENV GPG_KEYS=05AB33110949707C93A279E3D3EFE6B686867BA6 07E48665A34DCAFAE522E5E6266191C37C037D42 47309207D818FFD8DCD3F83F1931D684307A10A5 541FBE7D8F78B25E055DDEE13C370389288584E7 61B832AC2F1C5A90F0F9B00A1C506407564C17A3 79F7026C690BAA50B92CD8B66A3AD3F4F22C4FED 9BA44C2621385CB966EBA586F72C284D731FABEE A27677289986DB50844682F8ACB77FC2E86E29AC A9C5DF4D22E99998D9875A5110C01C5A2F6059E7 DCFD35E0BF8CA7344752DE8B6FB21E8933C60243 F3A04C595DB5B6A5F1ECA43E3B7BBB100D811BBE F7DA48BB64BCB84ECBA7EE6935CD23C10D498E23
-# Tue, 30 Jul 2019 23:37:10 GMT
+# Fri, 06 Sep 2019 00:20:18 GMT
 ENV TOMCAT_MAJOR=9
-# Mon, 19 Aug 2019 21:40:47 GMT
+# Fri, 06 Sep 2019 00:20:19 GMT
 ENV TOMCAT_VERSION=9.0.24
-# Mon, 19 Aug 2019 21:40:47 GMT
+# Fri, 06 Sep 2019 00:20:19 GMT
 ENV TOMCAT_SHA512=e01bd107e8fbe5ba629571d552a46339ccfd843b8bf770f617dfc1ec5cbf5fe5d945c2c3bba2f80188775a46f93c66d8594c13f8d12f7967d6d56c62d2bf7835
-# Mon, 19 Aug 2019 21:42:28 GMT
+# Fri, 06 Sep 2019 00:21:50 GMT
 RUN set -eux; 		if ! command -v yumdb > /dev/null; then 		yum install -y yum-utils; 		yumdb set reason dep yum-utils; 	fi; 	if [ -f /etc/oracle-release ]; then 		yumdb set reason user filesystem; 	fi; 	_yum_install_temporary() { ( set -eu +x; 		local pkg todo=''; 		for pkg; do 			if ! rpm --query "$pkg" > /dev/null 2>&1; then 				todo="$todo $pkg"; 			fi; 		done; 		if [ -n "$todo" ]; then 			set -x; 			yum install -y $todo; 			yumdb set reason dep $todo; 		fi; 	) }; 	_yum_install_temporary gzip tar; 		ddist() { 		local f="$1"; shift; 		local distFile="$1"; shift; 		local success=; 		local distUrl=; 		for distUrl in 			'https://www.apache.org/dyn/closer.cgi?action=download&filename=' 			https://www-us.apache.org/dist/ 			https://www.apache.org/dist/ 			https://archive.apache.org/dist/ 		; do 			if curl -fL -o "$f" "$distUrl$distFile" && [ -s "$f" ]; then 				success=1; 				break; 			fi; 		done; 		[ -n "$success" ]; 	}; 		ddist 'tomcat.tar.gz' "tomcat/tomcat-$TOMCAT_MAJOR/v$TOMCAT_VERSION/bin/apache-tomcat-$TOMCAT_VERSION.tar.gz"; 	echo "$TOMCAT_SHA512 *tomcat.tar.gz" | sha512sum --strict --check -; 	ddist 'tomcat.tar.gz.asc' "tomcat/tomcat-$TOMCAT_MAJOR/v$TOMCAT_VERSION/bin/apache-tomcat-$TOMCAT_VERSION.tar.gz.asc"; 	export GNUPGHOME="$(mktemp -d)"; 	for key in $GPG_KEYS; do 		gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys "$key"; 	done; 	gpg --batch --verify tomcat.tar.gz.asc tomcat.tar.gz; 	tar -xf tomcat.tar.gz --strip-components=1; 	rm bin/*.bat; 	rm tomcat.tar.gz*; 	command -v gpgconf && gpgconf --kill all || :; 	rm -rf "$GNUPGHOME"; 		nativeBuildDir="$(mktemp -d)"; 	tar -xf bin/tomcat-native.tar.gz -C "$nativeBuildDir" --strip-components=1; 	_yum_install_temporary 		apr-devel 		gcc 		make 		openssl-devel 	; 	( 		export CATALINA_HOME="$PWD"; 		cd "$nativeBuildDir/native"; 		aprConfig="$(command -v apr-1-config)"; 		./configure 			--libdir="$TOMCAT_NATIVE_LIBDIR" 			--prefix="$CATALINA_HOME" 			--with-apr="$aprConfig" 			--with-java-home="$JAVA_HOME" 			--with-ssl=yes; 		make -j "$(nproc)"; 		make install; 	); 	rm -rf "$nativeBuildDir"; 	rm bin/tomcat-native.tar.gz; 		deps="$( 		find "$TOMCAT_NATIVE_LIBDIR" -type f -executable -exec ldd '{}' ';' 			| awk '/=>/ && $(NF-1) != "=>" { print $(NF-1) }' 			| sort -u 			| xargs -r rpm --query --whatprovides 			| sort -u 	)"; 	[ -z "$deps" ] || yumdb set reason user $deps; 		yum autoremove -y; 	yum clean all; 	rm -rf /var/cache/yum; 		find ./bin/ -name '*.sh' -exec sed -ri 's|^#!/bin/sh$|#!/usr/bin/env bash|' '{}' +; 		chmod -R +rX .; 	chmod 777 logs work
-# Mon, 19 Aug 2019 21:42:31 GMT
+# Fri, 06 Sep 2019 00:21:52 GMT
 RUN set -e 	&& nativeLines="$(catalina.sh configtest 2>&1)" 	&& nativeLines="$(echo "$nativeLines" | grep 'Apache Tomcat Native')" 	&& nativeLines="$(echo "$nativeLines" | sort -u)" 	&& if ! echo "$nativeLines" | grep 'INFO: Loaded APR based Apache Tomcat Native library' >&2; then 		echo >&2 "$nativeLines"; 		exit 1; 	fi
-# Mon, 19 Aug 2019 21:42:31 GMT
+# Fri, 06 Sep 2019 00:21:52 GMT
 EXPOSE 8080
-# Mon, 19 Aug 2019 21:42:31 GMT
+# Fri, 06 Sep 2019 00:21:52 GMT
 CMD ["catalina.sh" "run"]
 ```
 
 -	Layers:
-	-	`sha256:72d97abdfae3b3c933ff41e39779cc72853d7bd9dc1e4800c5294d6715257799`  
-		Last Modified: Thu, 23 May 2019 22:22:16 GMT  
-		Size: 61.3 MB (61285177 bytes)  
+	-	`sha256:4910da0c66710ed2414cd0223e48cbeed94209b9c77053dc30d48532a651dd22`  
+		Last Modified: Thu, 05 Sep 2019 23:38:39 GMT  
+		Size: 61.7 MB (61665831 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:4f58afb139384717c6be8d8ba2803caf676e6d7fe750302d138bf13983df50b9`  
-		Last Modified: Tue, 30 Jul 2019 23:21:22 GMT  
-		Size: 197.0 MB (196988921 bytes)  
+	-	`sha256:b9d1840374efc595eade77260f8573765a51ccb6ebfecf02452d9ca356e18b69`  
+		Last Modified: Fri, 06 Sep 2019 00:04:16 GMT  
+		Size: 197.0 MB (197036830 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:6a4258a56fde8d6d1679c88a09371eaabd100e001b69054571de6290bdfdd21e`  
-		Last Modified: Tue, 30 Jul 2019 23:47:15 GMT  
-		Size: 139.0 B  
+	-	`sha256:e781e7241055b324d43f1f0f0f06d5131ed2aafb69892d9aa53b626ea2cb3865`  
+		Last Modified: Fri, 06 Sep 2019 00:31:01 GMT  
+		Size: 138.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:de2424ee20565c5cca0d51eb65d8666cb5a7acc8841a9ce2a30eb3efafe9c8c6`  
-		Last Modified: Mon, 19 Aug 2019 21:51:44 GMT  
-		Size: 14.6 MB (14621695 bytes)  
+	-	`sha256:e804b9ec6ee6dae993ade925c70ed066d7e2569dce2fede484e7c9bcee36585c`  
+		Last Modified: Fri, 06 Sep 2019 00:31:02 GMT  
+		Size: 14.6 MB (14637259 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:8016959eb03ae03fb120656c147c1ed3f6869495c8031d1dc5fee71d71c5f79d`  
-		Last Modified: Mon, 19 Aug 2019 21:51:42 GMT  
-		Size: 132.0 B  
+	-	`sha256:b0fee77eeb763c466f42783fb7d32d65908d10757568d9086ff8ec59f6eec842`  
+		Last Modified: Fri, 06 Sep 2019 00:31:01 GMT  
+		Size: 133.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `tomcat:9.0-jdk11-corretto` - linux; arm64 variant v8
 
 ```console
-$ docker pull tomcat@sha256:59e946abe0c7e2ceb58728755d7aec061936c7d9a1825b894b316f81854a87ba
+$ docker pull tomcat@sha256:c5f7b906e54c801933da3aefb7a66fd204b5f698d24395bd7db28dffdc0c3968
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **272.4 MB (272372233 bytes)**  
+-	Total Size: **272.7 MB (272743976 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:0f00442c11e663b626ee101a137761838eb7db6ab618199d8b7197e6c8904a3d`
+-	Image ID: `sha256:0a6375670a2e659f07001cc46e461ddafc24c8c2c88fbad38f09c1d6228e37dc`
 -	Default Command: `["catalina.sh","run"]`
 
 ```dockerfile
-# Thu, 23 May 2019 22:39:34 GMT
-ADD file:358a4a50e1cb5e7181b9cc49d23e60d7b0ba5ca2ce18ced74be5843836d54004 in / 
-# Thu, 23 May 2019 22:39:35 GMT
+# Thu, 05 Sep 2019 20:39:50 GMT
+ADD file:a72ff266718add2a5d4d63264fd3ce1f5191448aa441ffdb064ed570a651b36a in / 
+# Thu, 05 Sep 2019 20:39:51 GMT
 CMD ["/bin/bash"]
-# Tue, 30 Jul 2019 23:40:41 GMT
+# Thu, 05 Sep 2019 23:12:09 GMT
 ARG rpm_x64=java-11-amazon-corretto-devel-11.0.4.11-1.x86_64.rpm
-# Tue, 30 Jul 2019 23:40:42 GMT
+# Thu, 05 Sep 2019 23:12:09 GMT
 ARG path_x64=https://d3pxv6yz143wms.cloudfront.net/11.0.4.11.1
-# Tue, 30 Jul 2019 23:40:42 GMT
+# Thu, 05 Sep 2019 23:12:09 GMT
 ARG key_x64=4FF3DA639731F095833505A25A812B5B67F4FCB4
-# Tue, 30 Jul 2019 23:40:43 GMT
+# Thu, 05 Sep 2019 23:12:10 GMT
 ARG rpm_aarch64=java-11-amazon-corretto-devel-11.0.4.11-1.aarch64.rpm
-# Tue, 30 Jul 2019 23:40:43 GMT
+# Thu, 05 Sep 2019 23:12:10 GMT
 ARG path_aarch64=https://d3pxv6yz143wms.cloudfront.net/11.0.4.11.1
-# Tue, 30 Jul 2019 23:40:43 GMT
+# Thu, 05 Sep 2019 23:12:10 GMT
 ARG key_aarch64=4FF3DA639731F095833505A25A812B5B67F4FCB4
-# Tue, 30 Jul 2019 23:41:28 GMT
+# Thu, 05 Sep 2019 23:12:37 GMT
 # ARGS: key_aarch64=4FF3DA639731F095833505A25A812B5B67F4FCB4 key_x64=4FF3DA639731F095833505A25A812B5B67F4FCB4 path_aarch64=https://d3pxv6yz143wms.cloudfront.net/11.0.4.11.1 path_x64=https://d3pxv6yz143wms.cloudfront.net/11.0.4.11.1 rpm_aarch64=java-11-amazon-corretto-devel-11.0.4.11-1.aarch64.rpm rpm_x64=java-11-amazon-corretto-devel-11.0.4.11-1.x86_64.rpm
 RUN set -eux;     case "$(uname -p)" in         x86_64) rpm=$rpm_x64; path=$path_x64; key=$key_x64 ;;         aarch64) rpm=$rpm_aarch64; path=$path_aarch64; key=$key_aarch64 ;;         *) echo >&2 "Unsupported architecture $(uname -p)."; exit 1 ;;     esac;         curl -O $path/$rpm     && export GNUPGHOME="$(mktemp -d)"     && gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys $key     && gpg --armor --export $key > corretto.asc     && rpm --import corretto.asc     && rpm -K $rpm     && rpm -i $rpm     && rm -r $GNUPGHOME corretto.asc $rpm     && yum install -y fontconfig     && yum clean all
-# Tue, 30 Jul 2019 23:41:29 GMT
+# Thu, 05 Sep 2019 23:12:39 GMT
 ENV JAVA_HOME=/usr/lib/jvm/java-11-amazon-corretto
-# Wed, 31 Jul 2019 22:07:04 GMT
+# Fri, 06 Sep 2019 00:21:46 GMT
 ENV CATALINA_HOME=/usr/local/tomcat
-# Wed, 31 Jul 2019 22:07:05 GMT
+# Fri, 06 Sep 2019 00:21:46 GMT
 ENV PATH=/usr/local/tomcat/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Wed, 31 Jul 2019 22:07:06 GMT
+# Fri, 06 Sep 2019 00:21:48 GMT
 RUN mkdir -p "$CATALINA_HOME"
-# Wed, 31 Jul 2019 22:07:06 GMT
+# Fri, 06 Sep 2019 00:21:48 GMT
 WORKDIR /usr/local/tomcat
-# Wed, 31 Jul 2019 22:07:07 GMT
+# Fri, 06 Sep 2019 00:21:49 GMT
 ENV TOMCAT_NATIVE_LIBDIR=/usr/local/tomcat/native-jni-lib
-# Wed, 31 Jul 2019 22:07:07 GMT
+# Fri, 06 Sep 2019 00:21:49 GMT
 ENV LD_LIBRARY_PATH=/usr/local/tomcat/native-jni-lib
-# Wed, 31 Jul 2019 22:07:07 GMT
+# Fri, 06 Sep 2019 00:21:49 GMT
 ENV GPG_KEYS=05AB33110949707C93A279E3D3EFE6B686867BA6 07E48665A34DCAFAE522E5E6266191C37C037D42 47309207D818FFD8DCD3F83F1931D684307A10A5 541FBE7D8F78B25E055DDEE13C370389288584E7 61B832AC2F1C5A90F0F9B00A1C506407564C17A3 79F7026C690BAA50B92CD8B66A3AD3F4F22C4FED 9BA44C2621385CB966EBA586F72C284D731FABEE A27677289986DB50844682F8ACB77FC2E86E29AC A9C5DF4D22E99998D9875A5110C01C5A2F6059E7 DCFD35E0BF8CA7344752DE8B6FB21E8933C60243 F3A04C595DB5B6A5F1ECA43E3B7BBB100D811BBE F7DA48BB64BCB84ECBA7EE6935CD23C10D498E23
-# Wed, 31 Jul 2019 22:07:08 GMT
+# Fri, 06 Sep 2019 00:21:50 GMT
 ENV TOMCAT_MAJOR=9
-# Mon, 19 Aug 2019 22:06:10 GMT
+# Fri, 06 Sep 2019 00:21:50 GMT
 ENV TOMCAT_VERSION=9.0.24
-# Mon, 19 Aug 2019 22:06:10 GMT
+# Fri, 06 Sep 2019 00:21:51 GMT
 ENV TOMCAT_SHA512=e01bd107e8fbe5ba629571d552a46339ccfd843b8bf770f617dfc1ec5cbf5fe5d945c2c3bba2f80188775a46f93c66d8594c13f8d12f7967d6d56c62d2bf7835
-# Mon, 19 Aug 2019 22:07:22 GMT
+# Fri, 06 Sep 2019 00:23:44 GMT
 RUN set -eux; 		if ! command -v yumdb > /dev/null; then 		yum install -y yum-utils; 		yumdb set reason dep yum-utils; 	fi; 	if [ -f /etc/oracle-release ]; then 		yumdb set reason user filesystem; 	fi; 	_yum_install_temporary() { ( set -eu +x; 		local pkg todo=''; 		for pkg; do 			if ! rpm --query "$pkg" > /dev/null 2>&1; then 				todo="$todo $pkg"; 			fi; 		done; 		if [ -n "$todo" ]; then 			set -x; 			yum install -y $todo; 			yumdb set reason dep $todo; 		fi; 	) }; 	_yum_install_temporary gzip tar; 		ddist() { 		local f="$1"; shift; 		local distFile="$1"; shift; 		local success=; 		local distUrl=; 		for distUrl in 			'https://www.apache.org/dyn/closer.cgi?action=download&filename=' 			https://www-us.apache.org/dist/ 			https://www.apache.org/dist/ 			https://archive.apache.org/dist/ 		; do 			if curl -fL -o "$f" "$distUrl$distFile" && [ -s "$f" ]; then 				success=1; 				break; 			fi; 		done; 		[ -n "$success" ]; 	}; 		ddist 'tomcat.tar.gz' "tomcat/tomcat-$TOMCAT_MAJOR/v$TOMCAT_VERSION/bin/apache-tomcat-$TOMCAT_VERSION.tar.gz"; 	echo "$TOMCAT_SHA512 *tomcat.tar.gz" | sha512sum --strict --check -; 	ddist 'tomcat.tar.gz.asc' "tomcat/tomcat-$TOMCAT_MAJOR/v$TOMCAT_VERSION/bin/apache-tomcat-$TOMCAT_VERSION.tar.gz.asc"; 	export GNUPGHOME="$(mktemp -d)"; 	for key in $GPG_KEYS; do 		gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys "$key"; 	done; 	gpg --batch --verify tomcat.tar.gz.asc tomcat.tar.gz; 	tar -xf tomcat.tar.gz --strip-components=1; 	rm bin/*.bat; 	rm tomcat.tar.gz*; 	command -v gpgconf && gpgconf --kill all || :; 	rm -rf "$GNUPGHOME"; 		nativeBuildDir="$(mktemp -d)"; 	tar -xf bin/tomcat-native.tar.gz -C "$nativeBuildDir" --strip-components=1; 	_yum_install_temporary 		apr-devel 		gcc 		make 		openssl-devel 	; 	( 		export CATALINA_HOME="$PWD"; 		cd "$nativeBuildDir/native"; 		aprConfig="$(command -v apr-1-config)"; 		./configure 			--libdir="$TOMCAT_NATIVE_LIBDIR" 			--prefix="$CATALINA_HOME" 			--with-apr="$aprConfig" 			--with-java-home="$JAVA_HOME" 			--with-ssl=yes; 		make -j "$(nproc)"; 		make install; 	); 	rm -rf "$nativeBuildDir"; 	rm bin/tomcat-native.tar.gz; 		deps="$( 		find "$TOMCAT_NATIVE_LIBDIR" -type f -executable -exec ldd '{}' ';' 			| awk '/=>/ && $(NF-1) != "=>" { print $(NF-1) }' 			| sort -u 			| xargs -r rpm --query --whatprovides 			| sort -u 	)"; 	[ -z "$deps" ] || yumdb set reason user $deps; 		yum autoremove -y; 	yum clean all; 	rm -rf /var/cache/yum; 		find ./bin/ -name '*.sh' -exec sed -ri 's|^#!/bin/sh$|#!/usr/bin/env bash|' '{}' +; 		chmod -R +rX .; 	chmod 777 logs work
-# Mon, 19 Aug 2019 22:07:26 GMT
+# Fri, 06 Sep 2019 00:23:51 GMT
 RUN set -e 	&& nativeLines="$(catalina.sh configtest 2>&1)" 	&& nativeLines="$(echo "$nativeLines" | grep 'Apache Tomcat Native')" 	&& nativeLines="$(echo "$nativeLines" | sort -u)" 	&& if ! echo "$nativeLines" | grep 'INFO: Loaded APR based Apache Tomcat Native library' >&2; then 		echo >&2 "$nativeLines"; 		exit 1; 	fi
-# Mon, 19 Aug 2019 22:07:27 GMT
+# Fri, 06 Sep 2019 00:23:52 GMT
 EXPOSE 8080
-# Mon, 19 Aug 2019 22:07:27 GMT
+# Fri, 06 Sep 2019 00:23:53 GMT
 CMD ["catalina.sh" "run"]
 ```
 
 -	Layers:
-	-	`sha256:0c8ee56cea53bee75dce23897c1c0f77aa13a698e7b49d9f20c788cef45fadea`  
-		Last Modified: Thu, 23 May 2019 22:40:27 GMT  
-		Size: 62.5 MB (62453151 bytes)  
+	-	`sha256:e75eebfae1ce8742ae53a518590bca4735e2a5dbfa46418fa709591a7b42e522`  
+		Last Modified: Thu, 05 Sep 2019 20:43:10 GMT  
+		Size: 62.8 MB (62797593 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:26fa6a4fcbd205b5477eeeca21b716e71451d1a99c1210dede865590e1fe09f3`  
-		Last Modified: Tue, 30 Jul 2019 23:42:49 GMT  
-		Size: 195.3 MB (195286724 bytes)  
+	-	`sha256:149ea18e536a86a1d3013f8d890ae31d30843ddc6e56e6dca9caee694d195c1b`  
+		Last Modified: Thu, 05 Sep 2019 23:13:56 GMT  
+		Size: 195.3 MB (195295858 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:6192f742a23c42bda649424bedf838a1bb458c80f0d7ac9ac2c6692f86d1a4d3`  
-		Last Modified: Wed, 31 Jul 2019 22:15:18 GMT  
+	-	`sha256:ef6d54efaf622c109d088da3f6bc5297ef6cfe74a5ce3f9bbb95ee72e3885d52`  
+		Last Modified: Fri, 06 Sep 2019 00:35:05 GMT  
 		Size: 172.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:1ce4913920048862cc46f88b270fb1fc63370dd0a8552786ec1c4d466f6d7dec`  
-		Last Modified: Mon, 19 Aug 2019 22:17:53 GMT  
-		Size: 14.6 MB (14632021 bytes)  
+	-	`sha256:f84780a140557fb0f5283b2f858eec46d825a5fe14b1e21d2e1d6a6d347940d8`  
+		Last Modified: Fri, 06 Sep 2019 00:35:10 GMT  
+		Size: 14.7 MB (14650189 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:b35d95d6d936d001ade6a24321b4165dead2a38145f4a19f9bfa9d90444f7e13`  
-		Last Modified: Mon, 19 Aug 2019 22:17:51 GMT  
-		Size: 165.0 B  
+	-	`sha256:912ac149afe81fef07217a8cea761d99389c83d938068ef00af98c0f4a0d448b`  
+		Last Modified: Fri, 06 Sep 2019 00:35:04 GMT  
+		Size: 164.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `tomcat:9.0-jdk11-openjdk`
@@ -26370,7 +26370,7 @@ CMD ["catalina.sh" "run"]
 ## `tomcat:9.0-jdk8-corretto`
 
 ```console
-$ docker pull tomcat@sha256:196af6d3d20f75d914b8013d68ab6cc10a4699f4971bef029f5c035a602ce756
+$ docker pull tomcat@sha256:c983e1762e034aafe3fdfc02d6331f8231ba6178d957c806d1315939e2c59fd6
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -26381,175 +26381,175 @@ $ docker pull tomcat@sha256:196af6d3d20f75d914b8013d68ab6cc10a4699f4971bef029f5c
 ### `tomcat:9.0-jdk8-corretto` - linux; amd64
 
 ```console
-$ docker pull tomcat@sha256:992c680b646debf9b8fcbb8b1951163d88d515bbde09e4d1a1651a2d9841f0a1
+$ docker pull tomcat@sha256:7b669fad6699927e7444761caf45185b68762b93224195ef34312344d01201e5
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **197.4 MB (197389176 bytes)**  
+-	Total Size: **197.8 MB (197827081 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:3620ce55f6d3bf80f654f411a4b8c0e23f089862914a62583f970952247f36e5`
+-	Image ID: `sha256:49b7273ec35cbcb45bd546374fadb09c72dc52d428a5619cb6192e1a22f3f59d`
 -	Default Command: `["catalina.sh","run"]`
 
 ```dockerfile
-# Thu, 23 May 2019 22:19:59 GMT
-ADD file:3cf811fe5073384ff1d5f405992ef7e5e452ad6d4a4cb873eee65007382f3a4a in / 
-# Thu, 23 May 2019 22:20:00 GMT
+# Thu, 05 Sep 2019 23:36:52 GMT
+ADD file:ee5d76cace83097841fd6a9fe1406be3e2176b9ec4de511cb5594bf959f9e657 in / 
+# Thu, 05 Sep 2019 23:36:53 GMT
 CMD ["/bin/bash"]
-# Tue, 30 Jul 2019 23:19:26 GMT
+# Fri, 06 Sep 2019 00:02:29 GMT
 ARG rpm_x64=java-1.8.0-amazon-corretto-devel-1.8.0_222.b10-1.x86_64.rpm
-# Tue, 30 Jul 2019 23:19:26 GMT
+# Fri, 06 Sep 2019 00:02:30 GMT
 ARG path_x64=https://d3pxv6yz143wms.cloudfront.net/8.222.10.1
-# Tue, 30 Jul 2019 23:19:26 GMT
+# Fri, 06 Sep 2019 00:02:30 GMT
 ARG key_x64=C554E802F4545B60919A0A87BD93DF06B540D62A
-# Tue, 30 Jul 2019 23:19:27 GMT
+# Fri, 06 Sep 2019 00:02:30 GMT
 ARG rpm_aarch64=java-1.8.0-amazon-corretto-devel-1.8.0_222.b10-4.aarch64.rpm
-# Tue, 30 Jul 2019 23:19:27 GMT
+# Fri, 06 Sep 2019 00:02:30 GMT
 ARG path_aarch64=https://d3pxv6yz143wms.cloudfront.net/8.222.10.4
-# Tue, 30 Jul 2019 23:19:27 GMT
+# Fri, 06 Sep 2019 00:02:30 GMT
 ARG key_aarch64=826272FACCCCC8E76897C26CE9B1F93E1A158134
-# Tue, 30 Jul 2019 23:19:47 GMT
+# Fri, 06 Sep 2019 00:02:52 GMT
 # ARGS: key_aarch64=826272FACCCCC8E76897C26CE9B1F93E1A158134 key_x64=C554E802F4545B60919A0A87BD93DF06B540D62A path_aarch64=https://d3pxv6yz143wms.cloudfront.net/8.222.10.4 path_x64=https://d3pxv6yz143wms.cloudfront.net/8.222.10.1 rpm_aarch64=java-1.8.0-amazon-corretto-devel-1.8.0_222.b10-4.aarch64.rpm rpm_x64=java-1.8.0-amazon-corretto-devel-1.8.0_222.b10-1.x86_64.rpm
 RUN set -eux;     case "$(uname -p)" in         x86_64) rpm=$rpm_x64; path=$path_x64; key=$key_x64 ;;         aarch64) rpm=$rpm_aarch64; path=$path_aarch64; key=$key_aarch64 ;;         *) echo >&2 "Unsupported architecture $(uname -p)."; exit 1 ;;     esac;         curl -O $path/$rpm     && export GNUPGHOME="$(mktemp -d)"     && gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys $key     && gpg --armor --export $key > corretto.asc     && rpm --import corretto.asc     && rpm -K $rpm     && rpm -i $rpm     && rm -r $GNUPGHOME corretto.asc $rpm     && yum install -y fontconfig     && yum clean all
-# Tue, 30 Jul 2019 23:19:47 GMT
+# Fri, 06 Sep 2019 00:02:52 GMT
 ENV JAVA_HOME=/usr/lib/jvm/java-1.8.0-amazon-corretto
-# Tue, 30 Jul 2019 23:39:00 GMT
+# Fri, 06 Sep 2019 00:22:16 GMT
 ENV CATALINA_HOME=/usr/local/tomcat
-# Tue, 30 Jul 2019 23:39:00 GMT
+# Fri, 06 Sep 2019 00:22:16 GMT
 ENV PATH=/usr/local/tomcat/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Tue, 30 Jul 2019 23:39:01 GMT
+# Fri, 06 Sep 2019 00:22:17 GMT
 RUN mkdir -p "$CATALINA_HOME"
-# Tue, 30 Jul 2019 23:39:01 GMT
+# Fri, 06 Sep 2019 00:22:17 GMT
 WORKDIR /usr/local/tomcat
-# Tue, 30 Jul 2019 23:39:01 GMT
+# Fri, 06 Sep 2019 00:22:17 GMT
 ENV TOMCAT_NATIVE_LIBDIR=/usr/local/tomcat/native-jni-lib
-# Tue, 30 Jul 2019 23:39:01 GMT
+# Fri, 06 Sep 2019 00:22:17 GMT
 ENV LD_LIBRARY_PATH=/usr/local/tomcat/native-jni-lib
-# Tue, 30 Jul 2019 23:39:01 GMT
+# Fri, 06 Sep 2019 00:22:18 GMT
 ENV GPG_KEYS=05AB33110949707C93A279E3D3EFE6B686867BA6 07E48665A34DCAFAE522E5E6266191C37C037D42 47309207D818FFD8DCD3F83F1931D684307A10A5 541FBE7D8F78B25E055DDEE13C370389288584E7 61B832AC2F1C5A90F0F9B00A1C506407564C17A3 79F7026C690BAA50B92CD8B66A3AD3F4F22C4FED 9BA44C2621385CB966EBA586F72C284D731FABEE A27677289986DB50844682F8ACB77FC2E86E29AC A9C5DF4D22E99998D9875A5110C01C5A2F6059E7 DCFD35E0BF8CA7344752DE8B6FB21E8933C60243 F3A04C595DB5B6A5F1ECA43E3B7BBB100D811BBE F7DA48BB64BCB84ECBA7EE6935CD23C10D498E23
-# Tue, 30 Jul 2019 23:39:01 GMT
+# Fri, 06 Sep 2019 00:22:18 GMT
 ENV TOMCAT_MAJOR=9
-# Mon, 19 Aug 2019 21:46:41 GMT
+# Fri, 06 Sep 2019 00:22:18 GMT
 ENV TOMCAT_VERSION=9.0.24
-# Mon, 19 Aug 2019 21:46:41 GMT
+# Fri, 06 Sep 2019 00:22:18 GMT
 ENV TOMCAT_SHA512=e01bd107e8fbe5ba629571d552a46339ccfd843b8bf770f617dfc1ec5cbf5fe5d945c2c3bba2f80188775a46f93c66d8594c13f8d12f7967d6d56c62d2bf7835
-# Mon, 19 Aug 2019 21:48:25 GMT
+# Fri, 06 Sep 2019 00:23:48 GMT
 RUN set -eux; 		if ! command -v yumdb > /dev/null; then 		yum install -y yum-utils; 		yumdb set reason dep yum-utils; 	fi; 	if [ -f /etc/oracle-release ]; then 		yumdb set reason user filesystem; 	fi; 	_yum_install_temporary() { ( set -eu +x; 		local pkg todo=''; 		for pkg; do 			if ! rpm --query "$pkg" > /dev/null 2>&1; then 				todo="$todo $pkg"; 			fi; 		done; 		if [ -n "$todo" ]; then 			set -x; 			yum install -y $todo; 			yumdb set reason dep $todo; 		fi; 	) }; 	_yum_install_temporary gzip tar; 		ddist() { 		local f="$1"; shift; 		local distFile="$1"; shift; 		local success=; 		local distUrl=; 		for distUrl in 			'https://www.apache.org/dyn/closer.cgi?action=download&filename=' 			https://www-us.apache.org/dist/ 			https://www.apache.org/dist/ 			https://archive.apache.org/dist/ 		; do 			if curl -fL -o "$f" "$distUrl$distFile" && [ -s "$f" ]; then 				success=1; 				break; 			fi; 		done; 		[ -n "$success" ]; 	}; 		ddist 'tomcat.tar.gz' "tomcat/tomcat-$TOMCAT_MAJOR/v$TOMCAT_VERSION/bin/apache-tomcat-$TOMCAT_VERSION.tar.gz"; 	echo "$TOMCAT_SHA512 *tomcat.tar.gz" | sha512sum --strict --check -; 	ddist 'tomcat.tar.gz.asc' "tomcat/tomcat-$TOMCAT_MAJOR/v$TOMCAT_VERSION/bin/apache-tomcat-$TOMCAT_VERSION.tar.gz.asc"; 	export GNUPGHOME="$(mktemp -d)"; 	for key in $GPG_KEYS; do 		gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys "$key"; 	done; 	gpg --batch --verify tomcat.tar.gz.asc tomcat.tar.gz; 	tar -xf tomcat.tar.gz --strip-components=1; 	rm bin/*.bat; 	rm tomcat.tar.gz*; 	command -v gpgconf && gpgconf --kill all || :; 	rm -rf "$GNUPGHOME"; 		nativeBuildDir="$(mktemp -d)"; 	tar -xf bin/tomcat-native.tar.gz -C "$nativeBuildDir" --strip-components=1; 	_yum_install_temporary 		apr-devel 		gcc 		make 		openssl-devel 	; 	( 		export CATALINA_HOME="$PWD"; 		cd "$nativeBuildDir/native"; 		aprConfig="$(command -v apr-1-config)"; 		./configure 			--libdir="$TOMCAT_NATIVE_LIBDIR" 			--prefix="$CATALINA_HOME" 			--with-apr="$aprConfig" 			--with-java-home="$JAVA_HOME" 			--with-ssl=yes; 		make -j "$(nproc)"; 		make install; 	); 	rm -rf "$nativeBuildDir"; 	rm bin/tomcat-native.tar.gz; 		deps="$( 		find "$TOMCAT_NATIVE_LIBDIR" -type f -executable -exec ldd '{}' ';' 			| awk '/=>/ && $(NF-1) != "=>" { print $(NF-1) }' 			| sort -u 			| xargs -r rpm --query --whatprovides 			| sort -u 	)"; 	[ -z "$deps" ] || yumdb set reason user $deps; 		yum autoremove -y; 	yum clean all; 	rm -rf /var/cache/yum; 		find ./bin/ -name '*.sh' -exec sed -ri 's|^#!/bin/sh$|#!/usr/bin/env bash|' '{}' +; 		chmod -R +rX .; 	chmod 777 logs work
-# Mon, 19 Aug 2019 21:48:28 GMT
+# Fri, 06 Sep 2019 00:23:50 GMT
 RUN set -e 	&& nativeLines="$(catalina.sh configtest 2>&1)" 	&& nativeLines="$(echo "$nativeLines" | grep 'Apache Tomcat Native')" 	&& nativeLines="$(echo "$nativeLines" | sort -u)" 	&& if ! echo "$nativeLines" | grep 'INFO: Loaded APR based Apache Tomcat Native library' >&2; then 		echo >&2 "$nativeLines"; 		exit 1; 	fi
-# Mon, 19 Aug 2019 21:48:28 GMT
+# Fri, 06 Sep 2019 00:23:50 GMT
 EXPOSE 8080
-# Mon, 19 Aug 2019 21:48:28 GMT
+# Fri, 06 Sep 2019 00:23:51 GMT
 CMD ["catalina.sh" "run"]
 ```
 
 -	Layers:
-	-	`sha256:72d97abdfae3b3c933ff41e39779cc72853d7bd9dc1e4800c5294d6715257799`  
-		Last Modified: Thu, 23 May 2019 22:22:16 GMT  
-		Size: 61.3 MB (61285177 bytes)  
+	-	`sha256:4910da0c66710ed2414cd0223e48cbeed94209b9c77053dc30d48532a651dd22`  
+		Last Modified: Thu, 05 Sep 2019 23:38:39 GMT  
+		Size: 61.7 MB (61665831 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c13d17f3a543055e7f616629ad6825d21746252d0b8db4f1812c86b11e3fdc96`  
-		Last Modified: Tue, 30 Jul 2019 23:20:57 GMT  
-		Size: 121.5 MB (121482783 bytes)  
+	-	`sha256:c511e36daa9ce76f573699dfe6fabfac82254067f5ff99f2049f99d176ec919d`  
+		Last Modified: Fri, 06 Sep 2019 00:03:50 GMT  
+		Size: 121.5 MB (121533245 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:34afcacfc487c55714cfc7e34c35abe51c1a26be56d268883ecc929fa305f714`  
-		Last Modified: Tue, 30 Jul 2019 23:47:26 GMT  
-		Size: 139.0 B  
+	-	`sha256:fb8769d09d3f4236a9a84b65d19abf678fdd45df105a6e62a3924404dafa15af`  
+		Last Modified: Fri, 06 Sep 2019 00:31:09 GMT  
+		Size: 138.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:ed8e4d1135549f7dceb074c31fb331da7597cf95703c7208d867b362925f21d8`  
-		Last Modified: Mon, 19 Aug 2019 21:52:16 GMT  
-		Size: 14.6 MB (14620945 bytes)  
+	-	`sha256:f25f502d29f76c487fd97b942132d8ddaf9218a24ecfb984658638710515057b`  
+		Last Modified: Fri, 06 Sep 2019 00:31:11 GMT  
+		Size: 14.6 MB (14627735 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:b6fc361a1d8af71b8d0c613cad1f9dc6d50340cc15040eee66b8de2ab227e35e`  
-		Last Modified: Mon, 19 Aug 2019 21:52:14 GMT  
+	-	`sha256:b223aa88d20770ffa395ab2b985b9a788ab592f0c81403f882a416fb5fcd723c`  
+		Last Modified: Fri, 06 Sep 2019 00:31:09 GMT  
 		Size: 132.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `tomcat:9.0-jdk8-corretto` - linux; arm64 variant v8
 
 ```console
-$ docker pull tomcat@sha256:75b1c8ef5859ff8cf04feaaee43b8d66673d31cc17218e28eecf41971141a3c9
+$ docker pull tomcat@sha256:cb288f74841045ac830e322d29e298f8212982457580d02dff8311f1919129a3
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **182.0 MB (181958229 bytes)**  
+-	Total Size: **182.3 MB (182336772 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:47c3a70a1e9aa18c104f810a8aacb90e407c53acf4f269c15e734bba74e6d5ca`
+-	Image ID: `sha256:1fd9bc06870dfce6510ffd2b35a66cc96eec659ebcca0aac6c9027b3abed58bf`
 -	Default Command: `["catalina.sh","run"]`
 
 ```dockerfile
-# Thu, 23 May 2019 22:39:34 GMT
-ADD file:358a4a50e1cb5e7181b9cc49d23e60d7b0ba5ca2ce18ced74be5843836d54004 in / 
-# Thu, 23 May 2019 22:39:35 GMT
+# Thu, 05 Sep 2019 20:39:50 GMT
+ADD file:a72ff266718add2a5d4d63264fd3ce1f5191448aa441ffdb064ed570a651b36a in / 
+# Thu, 05 Sep 2019 20:39:51 GMT
 CMD ["/bin/bash"]
-# Tue, 30 Jul 2019 23:39:26 GMT
+# Thu, 05 Sep 2019 23:11:35 GMT
 ARG rpm_x64=java-1.8.0-amazon-corretto-devel-1.8.0_222.b10-1.x86_64.rpm
-# Tue, 30 Jul 2019 23:39:27 GMT
+# Thu, 05 Sep 2019 23:11:35 GMT
 ARG path_x64=https://d3pxv6yz143wms.cloudfront.net/8.222.10.1
-# Tue, 30 Jul 2019 23:39:27 GMT
+# Thu, 05 Sep 2019 23:11:35 GMT
 ARG key_x64=C554E802F4545B60919A0A87BD93DF06B540D62A
-# Tue, 30 Jul 2019 23:39:27 GMT
+# Thu, 05 Sep 2019 23:11:36 GMT
 ARG rpm_aarch64=java-1.8.0-amazon-corretto-devel-1.8.0_222.b10-4.aarch64.rpm
-# Tue, 30 Jul 2019 23:39:28 GMT
+# Thu, 05 Sep 2019 23:11:36 GMT
 ARG path_aarch64=https://d3pxv6yz143wms.cloudfront.net/8.222.10.4
-# Tue, 30 Jul 2019 23:39:28 GMT
+# Thu, 05 Sep 2019 23:11:36 GMT
 ARG key_aarch64=826272FACCCCC8E76897C26CE9B1F93E1A158134
-# Tue, 30 Jul 2019 23:40:33 GMT
+# Thu, 05 Sep 2019 23:12:00 GMT
 # ARGS: key_aarch64=826272FACCCCC8E76897C26CE9B1F93E1A158134 key_x64=C554E802F4545B60919A0A87BD93DF06B540D62A path_aarch64=https://d3pxv6yz143wms.cloudfront.net/8.222.10.4 path_x64=https://d3pxv6yz143wms.cloudfront.net/8.222.10.1 rpm_aarch64=java-1.8.0-amazon-corretto-devel-1.8.0_222.b10-4.aarch64.rpm rpm_x64=java-1.8.0-amazon-corretto-devel-1.8.0_222.b10-1.x86_64.rpm
 RUN set -eux;     case "$(uname -p)" in         x86_64) rpm=$rpm_x64; path=$path_x64; key=$key_x64 ;;         aarch64) rpm=$rpm_aarch64; path=$path_aarch64; key=$key_aarch64 ;;         *) echo >&2 "Unsupported architecture $(uname -p)."; exit 1 ;;     esac;         curl -O $path/$rpm     && export GNUPGHOME="$(mktemp -d)"     && gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys $key     && gpg --armor --export $key > corretto.asc     && rpm --import corretto.asc     && rpm -K $rpm     && rpm -i $rpm     && rm -r $GNUPGHOME corretto.asc $rpm     && yum install -y fontconfig     && yum clean all
-# Tue, 30 Jul 2019 23:40:34 GMT
+# Thu, 05 Sep 2019 23:12:01 GMT
 ENV JAVA_HOME=/usr/lib/jvm/java-1.8.0-amazon-corretto
-# Wed, 31 Jul 2019 22:08:23 GMT
+# Fri, 06 Sep 2019 00:24:08 GMT
 ENV CATALINA_HOME=/usr/local/tomcat
-# Wed, 31 Jul 2019 22:08:23 GMT
+# Fri, 06 Sep 2019 00:24:09 GMT
 ENV PATH=/usr/local/tomcat/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Wed, 31 Jul 2019 22:08:24 GMT
+# Fri, 06 Sep 2019 00:24:12 GMT
 RUN mkdir -p "$CATALINA_HOME"
-# Wed, 31 Jul 2019 22:08:25 GMT
+# Fri, 06 Sep 2019 00:24:16 GMT
 WORKDIR /usr/local/tomcat
-# Wed, 31 Jul 2019 22:08:25 GMT
+# Fri, 06 Sep 2019 00:24:17 GMT
 ENV TOMCAT_NATIVE_LIBDIR=/usr/local/tomcat/native-jni-lib
-# Wed, 31 Jul 2019 22:08:25 GMT
+# Fri, 06 Sep 2019 00:24:18 GMT
 ENV LD_LIBRARY_PATH=/usr/local/tomcat/native-jni-lib
-# Wed, 31 Jul 2019 22:08:26 GMT
+# Fri, 06 Sep 2019 00:24:19 GMT
 ENV GPG_KEYS=05AB33110949707C93A279E3D3EFE6B686867BA6 07E48665A34DCAFAE522E5E6266191C37C037D42 47309207D818FFD8DCD3F83F1931D684307A10A5 541FBE7D8F78B25E055DDEE13C370389288584E7 61B832AC2F1C5A90F0F9B00A1C506407564C17A3 79F7026C690BAA50B92CD8B66A3AD3F4F22C4FED 9BA44C2621385CB966EBA586F72C284D731FABEE A27677289986DB50844682F8ACB77FC2E86E29AC A9C5DF4D22E99998D9875A5110C01C5A2F6059E7 DCFD35E0BF8CA7344752DE8B6FB21E8933C60243 F3A04C595DB5B6A5F1ECA43E3B7BBB100D811BBE F7DA48BB64BCB84ECBA7EE6935CD23C10D498E23
-# Wed, 31 Jul 2019 22:08:26 GMT
+# Fri, 06 Sep 2019 00:24:20 GMT
 ENV TOMCAT_MAJOR=9
-# Mon, 19 Aug 2019 22:09:10 GMT
+# Fri, 06 Sep 2019 00:24:22 GMT
 ENV TOMCAT_VERSION=9.0.24
-# Mon, 19 Aug 2019 22:09:10 GMT
+# Fri, 06 Sep 2019 00:24:24 GMT
 ENV TOMCAT_SHA512=e01bd107e8fbe5ba629571d552a46339ccfd843b8bf770f617dfc1ec5cbf5fe5d945c2c3bba2f80188775a46f93c66d8594c13f8d12f7967d6d56c62d2bf7835
-# Mon, 19 Aug 2019 22:10:24 GMT
+# Fri, 06 Sep 2019 00:25:59 GMT
 RUN set -eux; 		if ! command -v yumdb > /dev/null; then 		yum install -y yum-utils; 		yumdb set reason dep yum-utils; 	fi; 	if [ -f /etc/oracle-release ]; then 		yumdb set reason user filesystem; 	fi; 	_yum_install_temporary() { ( set -eu +x; 		local pkg todo=''; 		for pkg; do 			if ! rpm --query "$pkg" > /dev/null 2>&1; then 				todo="$todo $pkg"; 			fi; 		done; 		if [ -n "$todo" ]; then 			set -x; 			yum install -y $todo; 			yumdb set reason dep $todo; 		fi; 	) }; 	_yum_install_temporary gzip tar; 		ddist() { 		local f="$1"; shift; 		local distFile="$1"; shift; 		local success=; 		local distUrl=; 		for distUrl in 			'https://www.apache.org/dyn/closer.cgi?action=download&filename=' 			https://www-us.apache.org/dist/ 			https://www.apache.org/dist/ 			https://archive.apache.org/dist/ 		; do 			if curl -fL -o "$f" "$distUrl$distFile" && [ -s "$f" ]; then 				success=1; 				break; 			fi; 		done; 		[ -n "$success" ]; 	}; 		ddist 'tomcat.tar.gz' "tomcat/tomcat-$TOMCAT_MAJOR/v$TOMCAT_VERSION/bin/apache-tomcat-$TOMCAT_VERSION.tar.gz"; 	echo "$TOMCAT_SHA512 *tomcat.tar.gz" | sha512sum --strict --check -; 	ddist 'tomcat.tar.gz.asc' "tomcat/tomcat-$TOMCAT_MAJOR/v$TOMCAT_VERSION/bin/apache-tomcat-$TOMCAT_VERSION.tar.gz.asc"; 	export GNUPGHOME="$(mktemp -d)"; 	for key in $GPG_KEYS; do 		gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys "$key"; 	done; 	gpg --batch --verify tomcat.tar.gz.asc tomcat.tar.gz; 	tar -xf tomcat.tar.gz --strip-components=1; 	rm bin/*.bat; 	rm tomcat.tar.gz*; 	command -v gpgconf && gpgconf --kill all || :; 	rm -rf "$GNUPGHOME"; 		nativeBuildDir="$(mktemp -d)"; 	tar -xf bin/tomcat-native.tar.gz -C "$nativeBuildDir" --strip-components=1; 	_yum_install_temporary 		apr-devel 		gcc 		make 		openssl-devel 	; 	( 		export CATALINA_HOME="$PWD"; 		cd "$nativeBuildDir/native"; 		aprConfig="$(command -v apr-1-config)"; 		./configure 			--libdir="$TOMCAT_NATIVE_LIBDIR" 			--prefix="$CATALINA_HOME" 			--with-apr="$aprConfig" 			--with-java-home="$JAVA_HOME" 			--with-ssl=yes; 		make -j "$(nproc)"; 		make install; 	); 	rm -rf "$nativeBuildDir"; 	rm bin/tomcat-native.tar.gz; 		deps="$( 		find "$TOMCAT_NATIVE_LIBDIR" -type f -executable -exec ldd '{}' ';' 			| awk '/=>/ && $(NF-1) != "=>" { print $(NF-1) }' 			| sort -u 			| xargs -r rpm --query --whatprovides 			| sort -u 	)"; 	[ -z "$deps" ] || yumdb set reason user $deps; 		yum autoremove -y; 	yum clean all; 	rm -rf /var/cache/yum; 		find ./bin/ -name '*.sh' -exec sed -ri 's|^#!/bin/sh$|#!/usr/bin/env bash|' '{}' +; 		chmod -R +rX .; 	chmod 777 logs work
-# Mon, 19 Aug 2019 22:10:28 GMT
+# Fri, 06 Sep 2019 00:26:09 GMT
 RUN set -e 	&& nativeLines="$(catalina.sh configtest 2>&1)" 	&& nativeLines="$(echo "$nativeLines" | grep 'Apache Tomcat Native')" 	&& nativeLines="$(echo "$nativeLines" | sort -u)" 	&& if ! echo "$nativeLines" | grep 'INFO: Loaded APR based Apache Tomcat Native library' >&2; then 		echo >&2 "$nativeLines"; 		exit 1; 	fi
-# Mon, 19 Aug 2019 22:10:28 GMT
+# Fri, 06 Sep 2019 00:26:11 GMT
 EXPOSE 8080
-# Mon, 19 Aug 2019 22:10:29 GMT
+# Fri, 06 Sep 2019 00:26:15 GMT
 CMD ["catalina.sh" "run"]
 ```
 
 -	Layers:
-	-	`sha256:0c8ee56cea53bee75dce23897c1c0f77aa13a698e7b49d9f20c788cef45fadea`  
-		Last Modified: Thu, 23 May 2019 22:40:27 GMT  
-		Size: 62.5 MB (62453151 bytes)  
+	-	`sha256:e75eebfae1ce8742ae53a518590bca4735e2a5dbfa46418fa709591a7b42e522`  
+		Last Modified: Thu, 05 Sep 2019 20:43:10 GMT  
+		Size: 62.8 MB (62797593 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:269e06f3b7489c1b941db3fc6cf17c76a7bf613b18a6aeff9d25c7144b85ae6a`  
-		Last Modified: Tue, 30 Jul 2019 23:42:10 GMT  
-		Size: 104.9 MB (104888017 bytes)  
+	-	`sha256:825292fe21ae21fe00976ccad2471578d1a289980b1ea830f4e0ad1990422166`  
+		Last Modified: Thu, 05 Sep 2019 23:13:17 GMT  
+		Size: 104.9 MB (104911609 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c1a0e5239e6a06f59af8cf4b3646b582c250ec4bcd6c3ebc520395b4e288e047`  
-		Last Modified: Wed, 31 Jul 2019 22:15:34 GMT  
-		Size: 172.0 B  
+	-	`sha256:babaad70d6b41a7c0adfcbf58979816fb28f3415b9bc800fb9f306bed8742129`  
+		Last Modified: Fri, 06 Sep 2019 00:35:19 GMT  
+		Size: 171.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:b1acdf1afe0337d28d597b9470c7af7b0f0583eac2c9009dac7f873773faa53a`  
-		Last Modified: Mon, 19 Aug 2019 22:18:12 GMT  
-		Size: 14.6 MB (14616725 bytes)  
+	-	`sha256:b53e8969d1ce1c78b57ba50d8bda38f4428318fafa3b346476689b56968699b8`  
+		Last Modified: Fri, 06 Sep 2019 00:35:24 GMT  
+		Size: 14.6 MB (14627236 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:b927da40086ba6ccdc2d92ce3de5cc764795415cad19212faedec6bf132a0f40`  
-		Last Modified: Mon, 19 Aug 2019 22:18:09 GMT  
-		Size: 164.0 B  
+	-	`sha256:76cea8bd63219d2384e3ae13c427618887e60fdb45826d73924f0143bab296a3`  
+		Last Modified: Fri, 06 Sep 2019 00:35:19 GMT  
+		Size: 163.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `tomcat:9.0-jdk8-openjdk`
@@ -27892,7 +27892,7 @@ CMD ["catalina.sh" "run"]
 ## `tomcat:9-jdk11-corretto`
 
 ```console
-$ docker pull tomcat@sha256:c4ac5666b1f8280dba406ebf4e4f6a00d9c674d7bb42b83cd3d2133777a68054
+$ docker pull tomcat@sha256:29061e834496e110eae93047b6335fceebdc9e86178e0950c94e45e8ab2fdb82
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -27903,175 +27903,175 @@ $ docker pull tomcat@sha256:c4ac5666b1f8280dba406ebf4e4f6a00d9c674d7bb42b83cd3d2
 ### `tomcat:9-jdk11-corretto` - linux; amd64
 
 ```console
-$ docker pull tomcat@sha256:1e96ac2f999a969099287974b0d2f603fcb4cdd01b90356729154feb43e34762
+$ docker pull tomcat@sha256:c3b38113e71767237ef22a7598c791405fbf922485267835f5e36c6f3f05aa53
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **272.9 MB (272896064 bytes)**  
+-	Total Size: **273.3 MB (273340191 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:4043ad2ba406f0842443babe79c1e92b8fadbdca0fcd06dca377c20ac7ac9528`
+-	Image ID: `sha256:e88f0129482d7c3bb3294629e8bc48d71a8786aff07b2aec01c3a7db1ee58ceb`
 -	Default Command: `["catalina.sh","run"]`
 
 ```dockerfile
-# Thu, 23 May 2019 22:19:59 GMT
-ADD file:3cf811fe5073384ff1d5f405992ef7e5e452ad6d4a4cb873eee65007382f3a4a in / 
-# Thu, 23 May 2019 22:20:00 GMT
+# Thu, 05 Sep 2019 23:36:52 GMT
+ADD file:ee5d76cace83097841fd6a9fe1406be3e2176b9ec4de511cb5594bf959f9e657 in / 
+# Thu, 05 Sep 2019 23:36:53 GMT
 CMD ["/bin/bash"]
-# Tue, 30 Jul 2019 23:19:53 GMT
+# Fri, 06 Sep 2019 00:02:57 GMT
 ARG rpm_x64=java-11-amazon-corretto-devel-11.0.4.11-1.x86_64.rpm
-# Tue, 30 Jul 2019 23:19:53 GMT
+# Fri, 06 Sep 2019 00:02:58 GMT
 ARG path_x64=https://d3pxv6yz143wms.cloudfront.net/11.0.4.11.1
-# Tue, 30 Jul 2019 23:19:53 GMT
+# Fri, 06 Sep 2019 00:02:58 GMT
 ARG key_x64=4FF3DA639731F095833505A25A812B5B67F4FCB4
-# Tue, 30 Jul 2019 23:19:54 GMT
+# Fri, 06 Sep 2019 00:02:58 GMT
 ARG rpm_aarch64=java-11-amazon-corretto-devel-11.0.4.11-1.aarch64.rpm
-# Tue, 30 Jul 2019 23:19:54 GMT
+# Fri, 06 Sep 2019 00:02:58 GMT
 ARG path_aarch64=https://d3pxv6yz143wms.cloudfront.net/11.0.4.11.1
-# Tue, 30 Jul 2019 23:19:54 GMT
+# Fri, 06 Sep 2019 00:02:58 GMT
 ARG key_aarch64=4FF3DA639731F095833505A25A812B5B67F4FCB4
-# Tue, 30 Jul 2019 23:20:17 GMT
+# Fri, 06 Sep 2019 00:03:23 GMT
 # ARGS: key_aarch64=4FF3DA639731F095833505A25A812B5B67F4FCB4 key_x64=4FF3DA639731F095833505A25A812B5B67F4FCB4 path_aarch64=https://d3pxv6yz143wms.cloudfront.net/11.0.4.11.1 path_x64=https://d3pxv6yz143wms.cloudfront.net/11.0.4.11.1 rpm_aarch64=java-11-amazon-corretto-devel-11.0.4.11-1.aarch64.rpm rpm_x64=java-11-amazon-corretto-devel-11.0.4.11-1.x86_64.rpm
 RUN set -eux;     case "$(uname -p)" in         x86_64) rpm=$rpm_x64; path=$path_x64; key=$key_x64 ;;         aarch64) rpm=$rpm_aarch64; path=$path_aarch64; key=$key_aarch64 ;;         *) echo >&2 "Unsupported architecture $(uname -p)."; exit 1 ;;     esac;         curl -O $path/$rpm     && export GNUPGHOME="$(mktemp -d)"     && gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys $key     && gpg --armor --export $key > corretto.asc     && rpm --import corretto.asc     && rpm -K $rpm     && rpm -i $rpm     && rm -r $GNUPGHOME corretto.asc $rpm     && yum install -y fontconfig     && yum clean all
-# Tue, 30 Jul 2019 23:20:17 GMT
+# Fri, 06 Sep 2019 00:03:23 GMT
 ENV JAVA_HOME=/usr/lib/jvm/java-11-amazon-corretto
-# Tue, 30 Jul 2019 23:37:08 GMT
+# Fri, 06 Sep 2019 00:20:17 GMT
 ENV CATALINA_HOME=/usr/local/tomcat
-# Tue, 30 Jul 2019 23:37:08 GMT
+# Fri, 06 Sep 2019 00:20:17 GMT
 ENV PATH=/usr/local/tomcat/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Tue, 30 Jul 2019 23:37:09 GMT
+# Fri, 06 Sep 2019 00:20:18 GMT
 RUN mkdir -p "$CATALINA_HOME"
-# Tue, 30 Jul 2019 23:37:09 GMT
+# Fri, 06 Sep 2019 00:20:18 GMT
 WORKDIR /usr/local/tomcat
-# Tue, 30 Jul 2019 23:37:09 GMT
+# Fri, 06 Sep 2019 00:20:18 GMT
 ENV TOMCAT_NATIVE_LIBDIR=/usr/local/tomcat/native-jni-lib
-# Tue, 30 Jul 2019 23:37:09 GMT
+# Fri, 06 Sep 2019 00:20:18 GMT
 ENV LD_LIBRARY_PATH=/usr/local/tomcat/native-jni-lib
-# Tue, 30 Jul 2019 23:37:09 GMT
+# Fri, 06 Sep 2019 00:20:18 GMT
 ENV GPG_KEYS=05AB33110949707C93A279E3D3EFE6B686867BA6 07E48665A34DCAFAE522E5E6266191C37C037D42 47309207D818FFD8DCD3F83F1931D684307A10A5 541FBE7D8F78B25E055DDEE13C370389288584E7 61B832AC2F1C5A90F0F9B00A1C506407564C17A3 79F7026C690BAA50B92CD8B66A3AD3F4F22C4FED 9BA44C2621385CB966EBA586F72C284D731FABEE A27677289986DB50844682F8ACB77FC2E86E29AC A9C5DF4D22E99998D9875A5110C01C5A2F6059E7 DCFD35E0BF8CA7344752DE8B6FB21E8933C60243 F3A04C595DB5B6A5F1ECA43E3B7BBB100D811BBE F7DA48BB64BCB84ECBA7EE6935CD23C10D498E23
-# Tue, 30 Jul 2019 23:37:10 GMT
+# Fri, 06 Sep 2019 00:20:18 GMT
 ENV TOMCAT_MAJOR=9
-# Mon, 19 Aug 2019 21:40:47 GMT
+# Fri, 06 Sep 2019 00:20:19 GMT
 ENV TOMCAT_VERSION=9.0.24
-# Mon, 19 Aug 2019 21:40:47 GMT
+# Fri, 06 Sep 2019 00:20:19 GMT
 ENV TOMCAT_SHA512=e01bd107e8fbe5ba629571d552a46339ccfd843b8bf770f617dfc1ec5cbf5fe5d945c2c3bba2f80188775a46f93c66d8594c13f8d12f7967d6d56c62d2bf7835
-# Mon, 19 Aug 2019 21:42:28 GMT
+# Fri, 06 Sep 2019 00:21:50 GMT
 RUN set -eux; 		if ! command -v yumdb > /dev/null; then 		yum install -y yum-utils; 		yumdb set reason dep yum-utils; 	fi; 	if [ -f /etc/oracle-release ]; then 		yumdb set reason user filesystem; 	fi; 	_yum_install_temporary() { ( set -eu +x; 		local pkg todo=''; 		for pkg; do 			if ! rpm --query "$pkg" > /dev/null 2>&1; then 				todo="$todo $pkg"; 			fi; 		done; 		if [ -n "$todo" ]; then 			set -x; 			yum install -y $todo; 			yumdb set reason dep $todo; 		fi; 	) }; 	_yum_install_temporary gzip tar; 		ddist() { 		local f="$1"; shift; 		local distFile="$1"; shift; 		local success=; 		local distUrl=; 		for distUrl in 			'https://www.apache.org/dyn/closer.cgi?action=download&filename=' 			https://www-us.apache.org/dist/ 			https://www.apache.org/dist/ 			https://archive.apache.org/dist/ 		; do 			if curl -fL -o "$f" "$distUrl$distFile" && [ -s "$f" ]; then 				success=1; 				break; 			fi; 		done; 		[ -n "$success" ]; 	}; 		ddist 'tomcat.tar.gz' "tomcat/tomcat-$TOMCAT_MAJOR/v$TOMCAT_VERSION/bin/apache-tomcat-$TOMCAT_VERSION.tar.gz"; 	echo "$TOMCAT_SHA512 *tomcat.tar.gz" | sha512sum --strict --check -; 	ddist 'tomcat.tar.gz.asc' "tomcat/tomcat-$TOMCAT_MAJOR/v$TOMCAT_VERSION/bin/apache-tomcat-$TOMCAT_VERSION.tar.gz.asc"; 	export GNUPGHOME="$(mktemp -d)"; 	for key in $GPG_KEYS; do 		gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys "$key"; 	done; 	gpg --batch --verify tomcat.tar.gz.asc tomcat.tar.gz; 	tar -xf tomcat.tar.gz --strip-components=1; 	rm bin/*.bat; 	rm tomcat.tar.gz*; 	command -v gpgconf && gpgconf --kill all || :; 	rm -rf "$GNUPGHOME"; 		nativeBuildDir="$(mktemp -d)"; 	tar -xf bin/tomcat-native.tar.gz -C "$nativeBuildDir" --strip-components=1; 	_yum_install_temporary 		apr-devel 		gcc 		make 		openssl-devel 	; 	( 		export CATALINA_HOME="$PWD"; 		cd "$nativeBuildDir/native"; 		aprConfig="$(command -v apr-1-config)"; 		./configure 			--libdir="$TOMCAT_NATIVE_LIBDIR" 			--prefix="$CATALINA_HOME" 			--with-apr="$aprConfig" 			--with-java-home="$JAVA_HOME" 			--with-ssl=yes; 		make -j "$(nproc)"; 		make install; 	); 	rm -rf "$nativeBuildDir"; 	rm bin/tomcat-native.tar.gz; 		deps="$( 		find "$TOMCAT_NATIVE_LIBDIR" -type f -executable -exec ldd '{}' ';' 			| awk '/=>/ && $(NF-1) != "=>" { print $(NF-1) }' 			| sort -u 			| xargs -r rpm --query --whatprovides 			| sort -u 	)"; 	[ -z "$deps" ] || yumdb set reason user $deps; 		yum autoremove -y; 	yum clean all; 	rm -rf /var/cache/yum; 		find ./bin/ -name '*.sh' -exec sed -ri 's|^#!/bin/sh$|#!/usr/bin/env bash|' '{}' +; 		chmod -R +rX .; 	chmod 777 logs work
-# Mon, 19 Aug 2019 21:42:31 GMT
+# Fri, 06 Sep 2019 00:21:52 GMT
 RUN set -e 	&& nativeLines="$(catalina.sh configtest 2>&1)" 	&& nativeLines="$(echo "$nativeLines" | grep 'Apache Tomcat Native')" 	&& nativeLines="$(echo "$nativeLines" | sort -u)" 	&& if ! echo "$nativeLines" | grep 'INFO: Loaded APR based Apache Tomcat Native library' >&2; then 		echo >&2 "$nativeLines"; 		exit 1; 	fi
-# Mon, 19 Aug 2019 21:42:31 GMT
+# Fri, 06 Sep 2019 00:21:52 GMT
 EXPOSE 8080
-# Mon, 19 Aug 2019 21:42:31 GMT
+# Fri, 06 Sep 2019 00:21:52 GMT
 CMD ["catalina.sh" "run"]
 ```
 
 -	Layers:
-	-	`sha256:72d97abdfae3b3c933ff41e39779cc72853d7bd9dc1e4800c5294d6715257799`  
-		Last Modified: Thu, 23 May 2019 22:22:16 GMT  
-		Size: 61.3 MB (61285177 bytes)  
+	-	`sha256:4910da0c66710ed2414cd0223e48cbeed94209b9c77053dc30d48532a651dd22`  
+		Last Modified: Thu, 05 Sep 2019 23:38:39 GMT  
+		Size: 61.7 MB (61665831 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:4f58afb139384717c6be8d8ba2803caf676e6d7fe750302d138bf13983df50b9`  
-		Last Modified: Tue, 30 Jul 2019 23:21:22 GMT  
-		Size: 197.0 MB (196988921 bytes)  
+	-	`sha256:b9d1840374efc595eade77260f8573765a51ccb6ebfecf02452d9ca356e18b69`  
+		Last Modified: Fri, 06 Sep 2019 00:04:16 GMT  
+		Size: 197.0 MB (197036830 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:6a4258a56fde8d6d1679c88a09371eaabd100e001b69054571de6290bdfdd21e`  
-		Last Modified: Tue, 30 Jul 2019 23:47:15 GMT  
-		Size: 139.0 B  
+	-	`sha256:e781e7241055b324d43f1f0f0f06d5131ed2aafb69892d9aa53b626ea2cb3865`  
+		Last Modified: Fri, 06 Sep 2019 00:31:01 GMT  
+		Size: 138.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:de2424ee20565c5cca0d51eb65d8666cb5a7acc8841a9ce2a30eb3efafe9c8c6`  
-		Last Modified: Mon, 19 Aug 2019 21:51:44 GMT  
-		Size: 14.6 MB (14621695 bytes)  
+	-	`sha256:e804b9ec6ee6dae993ade925c70ed066d7e2569dce2fede484e7c9bcee36585c`  
+		Last Modified: Fri, 06 Sep 2019 00:31:02 GMT  
+		Size: 14.6 MB (14637259 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:8016959eb03ae03fb120656c147c1ed3f6869495c8031d1dc5fee71d71c5f79d`  
-		Last Modified: Mon, 19 Aug 2019 21:51:42 GMT  
-		Size: 132.0 B  
+	-	`sha256:b0fee77eeb763c466f42783fb7d32d65908d10757568d9086ff8ec59f6eec842`  
+		Last Modified: Fri, 06 Sep 2019 00:31:01 GMT  
+		Size: 133.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `tomcat:9-jdk11-corretto` - linux; arm64 variant v8
 
 ```console
-$ docker pull tomcat@sha256:59e946abe0c7e2ceb58728755d7aec061936c7d9a1825b894b316f81854a87ba
+$ docker pull tomcat@sha256:c5f7b906e54c801933da3aefb7a66fd204b5f698d24395bd7db28dffdc0c3968
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **272.4 MB (272372233 bytes)**  
+-	Total Size: **272.7 MB (272743976 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:0f00442c11e663b626ee101a137761838eb7db6ab618199d8b7197e6c8904a3d`
+-	Image ID: `sha256:0a6375670a2e659f07001cc46e461ddafc24c8c2c88fbad38f09c1d6228e37dc`
 -	Default Command: `["catalina.sh","run"]`
 
 ```dockerfile
-# Thu, 23 May 2019 22:39:34 GMT
-ADD file:358a4a50e1cb5e7181b9cc49d23e60d7b0ba5ca2ce18ced74be5843836d54004 in / 
-# Thu, 23 May 2019 22:39:35 GMT
+# Thu, 05 Sep 2019 20:39:50 GMT
+ADD file:a72ff266718add2a5d4d63264fd3ce1f5191448aa441ffdb064ed570a651b36a in / 
+# Thu, 05 Sep 2019 20:39:51 GMT
 CMD ["/bin/bash"]
-# Tue, 30 Jul 2019 23:40:41 GMT
+# Thu, 05 Sep 2019 23:12:09 GMT
 ARG rpm_x64=java-11-amazon-corretto-devel-11.0.4.11-1.x86_64.rpm
-# Tue, 30 Jul 2019 23:40:42 GMT
+# Thu, 05 Sep 2019 23:12:09 GMT
 ARG path_x64=https://d3pxv6yz143wms.cloudfront.net/11.0.4.11.1
-# Tue, 30 Jul 2019 23:40:42 GMT
+# Thu, 05 Sep 2019 23:12:09 GMT
 ARG key_x64=4FF3DA639731F095833505A25A812B5B67F4FCB4
-# Tue, 30 Jul 2019 23:40:43 GMT
+# Thu, 05 Sep 2019 23:12:10 GMT
 ARG rpm_aarch64=java-11-amazon-corretto-devel-11.0.4.11-1.aarch64.rpm
-# Tue, 30 Jul 2019 23:40:43 GMT
+# Thu, 05 Sep 2019 23:12:10 GMT
 ARG path_aarch64=https://d3pxv6yz143wms.cloudfront.net/11.0.4.11.1
-# Tue, 30 Jul 2019 23:40:43 GMT
+# Thu, 05 Sep 2019 23:12:10 GMT
 ARG key_aarch64=4FF3DA639731F095833505A25A812B5B67F4FCB4
-# Tue, 30 Jul 2019 23:41:28 GMT
+# Thu, 05 Sep 2019 23:12:37 GMT
 # ARGS: key_aarch64=4FF3DA639731F095833505A25A812B5B67F4FCB4 key_x64=4FF3DA639731F095833505A25A812B5B67F4FCB4 path_aarch64=https://d3pxv6yz143wms.cloudfront.net/11.0.4.11.1 path_x64=https://d3pxv6yz143wms.cloudfront.net/11.0.4.11.1 rpm_aarch64=java-11-amazon-corretto-devel-11.0.4.11-1.aarch64.rpm rpm_x64=java-11-amazon-corretto-devel-11.0.4.11-1.x86_64.rpm
 RUN set -eux;     case "$(uname -p)" in         x86_64) rpm=$rpm_x64; path=$path_x64; key=$key_x64 ;;         aarch64) rpm=$rpm_aarch64; path=$path_aarch64; key=$key_aarch64 ;;         *) echo >&2 "Unsupported architecture $(uname -p)."; exit 1 ;;     esac;         curl -O $path/$rpm     && export GNUPGHOME="$(mktemp -d)"     && gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys $key     && gpg --armor --export $key > corretto.asc     && rpm --import corretto.asc     && rpm -K $rpm     && rpm -i $rpm     && rm -r $GNUPGHOME corretto.asc $rpm     && yum install -y fontconfig     && yum clean all
-# Tue, 30 Jul 2019 23:41:29 GMT
+# Thu, 05 Sep 2019 23:12:39 GMT
 ENV JAVA_HOME=/usr/lib/jvm/java-11-amazon-corretto
-# Wed, 31 Jul 2019 22:07:04 GMT
+# Fri, 06 Sep 2019 00:21:46 GMT
 ENV CATALINA_HOME=/usr/local/tomcat
-# Wed, 31 Jul 2019 22:07:05 GMT
+# Fri, 06 Sep 2019 00:21:46 GMT
 ENV PATH=/usr/local/tomcat/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Wed, 31 Jul 2019 22:07:06 GMT
+# Fri, 06 Sep 2019 00:21:48 GMT
 RUN mkdir -p "$CATALINA_HOME"
-# Wed, 31 Jul 2019 22:07:06 GMT
+# Fri, 06 Sep 2019 00:21:48 GMT
 WORKDIR /usr/local/tomcat
-# Wed, 31 Jul 2019 22:07:07 GMT
+# Fri, 06 Sep 2019 00:21:49 GMT
 ENV TOMCAT_NATIVE_LIBDIR=/usr/local/tomcat/native-jni-lib
-# Wed, 31 Jul 2019 22:07:07 GMT
+# Fri, 06 Sep 2019 00:21:49 GMT
 ENV LD_LIBRARY_PATH=/usr/local/tomcat/native-jni-lib
-# Wed, 31 Jul 2019 22:07:07 GMT
+# Fri, 06 Sep 2019 00:21:49 GMT
 ENV GPG_KEYS=05AB33110949707C93A279E3D3EFE6B686867BA6 07E48665A34DCAFAE522E5E6266191C37C037D42 47309207D818FFD8DCD3F83F1931D684307A10A5 541FBE7D8F78B25E055DDEE13C370389288584E7 61B832AC2F1C5A90F0F9B00A1C506407564C17A3 79F7026C690BAA50B92CD8B66A3AD3F4F22C4FED 9BA44C2621385CB966EBA586F72C284D731FABEE A27677289986DB50844682F8ACB77FC2E86E29AC A9C5DF4D22E99998D9875A5110C01C5A2F6059E7 DCFD35E0BF8CA7344752DE8B6FB21E8933C60243 F3A04C595DB5B6A5F1ECA43E3B7BBB100D811BBE F7DA48BB64BCB84ECBA7EE6935CD23C10D498E23
-# Wed, 31 Jul 2019 22:07:08 GMT
+# Fri, 06 Sep 2019 00:21:50 GMT
 ENV TOMCAT_MAJOR=9
-# Mon, 19 Aug 2019 22:06:10 GMT
+# Fri, 06 Sep 2019 00:21:50 GMT
 ENV TOMCAT_VERSION=9.0.24
-# Mon, 19 Aug 2019 22:06:10 GMT
+# Fri, 06 Sep 2019 00:21:51 GMT
 ENV TOMCAT_SHA512=e01bd107e8fbe5ba629571d552a46339ccfd843b8bf770f617dfc1ec5cbf5fe5d945c2c3bba2f80188775a46f93c66d8594c13f8d12f7967d6d56c62d2bf7835
-# Mon, 19 Aug 2019 22:07:22 GMT
+# Fri, 06 Sep 2019 00:23:44 GMT
 RUN set -eux; 		if ! command -v yumdb > /dev/null; then 		yum install -y yum-utils; 		yumdb set reason dep yum-utils; 	fi; 	if [ -f /etc/oracle-release ]; then 		yumdb set reason user filesystem; 	fi; 	_yum_install_temporary() { ( set -eu +x; 		local pkg todo=''; 		for pkg; do 			if ! rpm --query "$pkg" > /dev/null 2>&1; then 				todo="$todo $pkg"; 			fi; 		done; 		if [ -n "$todo" ]; then 			set -x; 			yum install -y $todo; 			yumdb set reason dep $todo; 		fi; 	) }; 	_yum_install_temporary gzip tar; 		ddist() { 		local f="$1"; shift; 		local distFile="$1"; shift; 		local success=; 		local distUrl=; 		for distUrl in 			'https://www.apache.org/dyn/closer.cgi?action=download&filename=' 			https://www-us.apache.org/dist/ 			https://www.apache.org/dist/ 			https://archive.apache.org/dist/ 		; do 			if curl -fL -o "$f" "$distUrl$distFile" && [ -s "$f" ]; then 				success=1; 				break; 			fi; 		done; 		[ -n "$success" ]; 	}; 		ddist 'tomcat.tar.gz' "tomcat/tomcat-$TOMCAT_MAJOR/v$TOMCAT_VERSION/bin/apache-tomcat-$TOMCAT_VERSION.tar.gz"; 	echo "$TOMCAT_SHA512 *tomcat.tar.gz" | sha512sum --strict --check -; 	ddist 'tomcat.tar.gz.asc' "tomcat/tomcat-$TOMCAT_MAJOR/v$TOMCAT_VERSION/bin/apache-tomcat-$TOMCAT_VERSION.tar.gz.asc"; 	export GNUPGHOME="$(mktemp -d)"; 	for key in $GPG_KEYS; do 		gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys "$key"; 	done; 	gpg --batch --verify tomcat.tar.gz.asc tomcat.tar.gz; 	tar -xf tomcat.tar.gz --strip-components=1; 	rm bin/*.bat; 	rm tomcat.tar.gz*; 	command -v gpgconf && gpgconf --kill all || :; 	rm -rf "$GNUPGHOME"; 		nativeBuildDir="$(mktemp -d)"; 	tar -xf bin/tomcat-native.tar.gz -C "$nativeBuildDir" --strip-components=1; 	_yum_install_temporary 		apr-devel 		gcc 		make 		openssl-devel 	; 	( 		export CATALINA_HOME="$PWD"; 		cd "$nativeBuildDir/native"; 		aprConfig="$(command -v apr-1-config)"; 		./configure 			--libdir="$TOMCAT_NATIVE_LIBDIR" 			--prefix="$CATALINA_HOME" 			--with-apr="$aprConfig" 			--with-java-home="$JAVA_HOME" 			--with-ssl=yes; 		make -j "$(nproc)"; 		make install; 	); 	rm -rf "$nativeBuildDir"; 	rm bin/tomcat-native.tar.gz; 		deps="$( 		find "$TOMCAT_NATIVE_LIBDIR" -type f -executable -exec ldd '{}' ';' 			| awk '/=>/ && $(NF-1) != "=>" { print $(NF-1) }' 			| sort -u 			| xargs -r rpm --query --whatprovides 			| sort -u 	)"; 	[ -z "$deps" ] || yumdb set reason user $deps; 		yum autoremove -y; 	yum clean all; 	rm -rf /var/cache/yum; 		find ./bin/ -name '*.sh' -exec sed -ri 's|^#!/bin/sh$|#!/usr/bin/env bash|' '{}' +; 		chmod -R +rX .; 	chmod 777 logs work
-# Mon, 19 Aug 2019 22:07:26 GMT
+# Fri, 06 Sep 2019 00:23:51 GMT
 RUN set -e 	&& nativeLines="$(catalina.sh configtest 2>&1)" 	&& nativeLines="$(echo "$nativeLines" | grep 'Apache Tomcat Native')" 	&& nativeLines="$(echo "$nativeLines" | sort -u)" 	&& if ! echo "$nativeLines" | grep 'INFO: Loaded APR based Apache Tomcat Native library' >&2; then 		echo >&2 "$nativeLines"; 		exit 1; 	fi
-# Mon, 19 Aug 2019 22:07:27 GMT
+# Fri, 06 Sep 2019 00:23:52 GMT
 EXPOSE 8080
-# Mon, 19 Aug 2019 22:07:27 GMT
+# Fri, 06 Sep 2019 00:23:53 GMT
 CMD ["catalina.sh" "run"]
 ```
 
 -	Layers:
-	-	`sha256:0c8ee56cea53bee75dce23897c1c0f77aa13a698e7b49d9f20c788cef45fadea`  
-		Last Modified: Thu, 23 May 2019 22:40:27 GMT  
-		Size: 62.5 MB (62453151 bytes)  
+	-	`sha256:e75eebfae1ce8742ae53a518590bca4735e2a5dbfa46418fa709591a7b42e522`  
+		Last Modified: Thu, 05 Sep 2019 20:43:10 GMT  
+		Size: 62.8 MB (62797593 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:26fa6a4fcbd205b5477eeeca21b716e71451d1a99c1210dede865590e1fe09f3`  
-		Last Modified: Tue, 30 Jul 2019 23:42:49 GMT  
-		Size: 195.3 MB (195286724 bytes)  
+	-	`sha256:149ea18e536a86a1d3013f8d890ae31d30843ddc6e56e6dca9caee694d195c1b`  
+		Last Modified: Thu, 05 Sep 2019 23:13:56 GMT  
+		Size: 195.3 MB (195295858 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:6192f742a23c42bda649424bedf838a1bb458c80f0d7ac9ac2c6692f86d1a4d3`  
-		Last Modified: Wed, 31 Jul 2019 22:15:18 GMT  
+	-	`sha256:ef6d54efaf622c109d088da3f6bc5297ef6cfe74a5ce3f9bbb95ee72e3885d52`  
+		Last Modified: Fri, 06 Sep 2019 00:35:05 GMT  
 		Size: 172.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:1ce4913920048862cc46f88b270fb1fc63370dd0a8552786ec1c4d466f6d7dec`  
-		Last Modified: Mon, 19 Aug 2019 22:17:53 GMT  
-		Size: 14.6 MB (14632021 bytes)  
+	-	`sha256:f84780a140557fb0f5283b2f858eec46d825a5fe14b1e21d2e1d6a6d347940d8`  
+		Last Modified: Fri, 06 Sep 2019 00:35:10 GMT  
+		Size: 14.7 MB (14650189 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:b35d95d6d936d001ade6a24321b4165dead2a38145f4a19f9bfa9d90444f7e13`  
-		Last Modified: Mon, 19 Aug 2019 22:17:51 GMT  
-		Size: 165.0 B  
+	-	`sha256:912ac149afe81fef07217a8cea761d99389c83d938068ef00af98c0f4a0d448b`  
+		Last Modified: Fri, 06 Sep 2019 00:35:04 GMT  
+		Size: 164.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `tomcat:9-jdk11-openjdk`
@@ -30571,7 +30571,7 @@ CMD ["catalina.sh" "run"]
 ## `tomcat:9-jdk8-corretto`
 
 ```console
-$ docker pull tomcat@sha256:196af6d3d20f75d914b8013d68ab6cc10a4699f4971bef029f5c035a602ce756
+$ docker pull tomcat@sha256:c983e1762e034aafe3fdfc02d6331f8231ba6178d957c806d1315939e2c59fd6
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -30582,175 +30582,175 @@ $ docker pull tomcat@sha256:196af6d3d20f75d914b8013d68ab6cc10a4699f4971bef029f5c
 ### `tomcat:9-jdk8-corretto` - linux; amd64
 
 ```console
-$ docker pull tomcat@sha256:992c680b646debf9b8fcbb8b1951163d88d515bbde09e4d1a1651a2d9841f0a1
+$ docker pull tomcat@sha256:7b669fad6699927e7444761caf45185b68762b93224195ef34312344d01201e5
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **197.4 MB (197389176 bytes)**  
+-	Total Size: **197.8 MB (197827081 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:3620ce55f6d3bf80f654f411a4b8c0e23f089862914a62583f970952247f36e5`
+-	Image ID: `sha256:49b7273ec35cbcb45bd546374fadb09c72dc52d428a5619cb6192e1a22f3f59d`
 -	Default Command: `["catalina.sh","run"]`
 
 ```dockerfile
-# Thu, 23 May 2019 22:19:59 GMT
-ADD file:3cf811fe5073384ff1d5f405992ef7e5e452ad6d4a4cb873eee65007382f3a4a in / 
-# Thu, 23 May 2019 22:20:00 GMT
+# Thu, 05 Sep 2019 23:36:52 GMT
+ADD file:ee5d76cace83097841fd6a9fe1406be3e2176b9ec4de511cb5594bf959f9e657 in / 
+# Thu, 05 Sep 2019 23:36:53 GMT
 CMD ["/bin/bash"]
-# Tue, 30 Jul 2019 23:19:26 GMT
+# Fri, 06 Sep 2019 00:02:29 GMT
 ARG rpm_x64=java-1.8.0-amazon-corretto-devel-1.8.0_222.b10-1.x86_64.rpm
-# Tue, 30 Jul 2019 23:19:26 GMT
+# Fri, 06 Sep 2019 00:02:30 GMT
 ARG path_x64=https://d3pxv6yz143wms.cloudfront.net/8.222.10.1
-# Tue, 30 Jul 2019 23:19:26 GMT
+# Fri, 06 Sep 2019 00:02:30 GMT
 ARG key_x64=C554E802F4545B60919A0A87BD93DF06B540D62A
-# Tue, 30 Jul 2019 23:19:27 GMT
+# Fri, 06 Sep 2019 00:02:30 GMT
 ARG rpm_aarch64=java-1.8.0-amazon-corretto-devel-1.8.0_222.b10-4.aarch64.rpm
-# Tue, 30 Jul 2019 23:19:27 GMT
+# Fri, 06 Sep 2019 00:02:30 GMT
 ARG path_aarch64=https://d3pxv6yz143wms.cloudfront.net/8.222.10.4
-# Tue, 30 Jul 2019 23:19:27 GMT
+# Fri, 06 Sep 2019 00:02:30 GMT
 ARG key_aarch64=826272FACCCCC8E76897C26CE9B1F93E1A158134
-# Tue, 30 Jul 2019 23:19:47 GMT
+# Fri, 06 Sep 2019 00:02:52 GMT
 # ARGS: key_aarch64=826272FACCCCC8E76897C26CE9B1F93E1A158134 key_x64=C554E802F4545B60919A0A87BD93DF06B540D62A path_aarch64=https://d3pxv6yz143wms.cloudfront.net/8.222.10.4 path_x64=https://d3pxv6yz143wms.cloudfront.net/8.222.10.1 rpm_aarch64=java-1.8.0-amazon-corretto-devel-1.8.0_222.b10-4.aarch64.rpm rpm_x64=java-1.8.0-amazon-corretto-devel-1.8.0_222.b10-1.x86_64.rpm
 RUN set -eux;     case "$(uname -p)" in         x86_64) rpm=$rpm_x64; path=$path_x64; key=$key_x64 ;;         aarch64) rpm=$rpm_aarch64; path=$path_aarch64; key=$key_aarch64 ;;         *) echo >&2 "Unsupported architecture $(uname -p)."; exit 1 ;;     esac;         curl -O $path/$rpm     && export GNUPGHOME="$(mktemp -d)"     && gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys $key     && gpg --armor --export $key > corretto.asc     && rpm --import corretto.asc     && rpm -K $rpm     && rpm -i $rpm     && rm -r $GNUPGHOME corretto.asc $rpm     && yum install -y fontconfig     && yum clean all
-# Tue, 30 Jul 2019 23:19:47 GMT
+# Fri, 06 Sep 2019 00:02:52 GMT
 ENV JAVA_HOME=/usr/lib/jvm/java-1.8.0-amazon-corretto
-# Tue, 30 Jul 2019 23:39:00 GMT
+# Fri, 06 Sep 2019 00:22:16 GMT
 ENV CATALINA_HOME=/usr/local/tomcat
-# Tue, 30 Jul 2019 23:39:00 GMT
+# Fri, 06 Sep 2019 00:22:16 GMT
 ENV PATH=/usr/local/tomcat/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Tue, 30 Jul 2019 23:39:01 GMT
+# Fri, 06 Sep 2019 00:22:17 GMT
 RUN mkdir -p "$CATALINA_HOME"
-# Tue, 30 Jul 2019 23:39:01 GMT
+# Fri, 06 Sep 2019 00:22:17 GMT
 WORKDIR /usr/local/tomcat
-# Tue, 30 Jul 2019 23:39:01 GMT
+# Fri, 06 Sep 2019 00:22:17 GMT
 ENV TOMCAT_NATIVE_LIBDIR=/usr/local/tomcat/native-jni-lib
-# Tue, 30 Jul 2019 23:39:01 GMT
+# Fri, 06 Sep 2019 00:22:17 GMT
 ENV LD_LIBRARY_PATH=/usr/local/tomcat/native-jni-lib
-# Tue, 30 Jul 2019 23:39:01 GMT
+# Fri, 06 Sep 2019 00:22:18 GMT
 ENV GPG_KEYS=05AB33110949707C93A279E3D3EFE6B686867BA6 07E48665A34DCAFAE522E5E6266191C37C037D42 47309207D818FFD8DCD3F83F1931D684307A10A5 541FBE7D8F78B25E055DDEE13C370389288584E7 61B832AC2F1C5A90F0F9B00A1C506407564C17A3 79F7026C690BAA50B92CD8B66A3AD3F4F22C4FED 9BA44C2621385CB966EBA586F72C284D731FABEE A27677289986DB50844682F8ACB77FC2E86E29AC A9C5DF4D22E99998D9875A5110C01C5A2F6059E7 DCFD35E0BF8CA7344752DE8B6FB21E8933C60243 F3A04C595DB5B6A5F1ECA43E3B7BBB100D811BBE F7DA48BB64BCB84ECBA7EE6935CD23C10D498E23
-# Tue, 30 Jul 2019 23:39:01 GMT
+# Fri, 06 Sep 2019 00:22:18 GMT
 ENV TOMCAT_MAJOR=9
-# Mon, 19 Aug 2019 21:46:41 GMT
+# Fri, 06 Sep 2019 00:22:18 GMT
 ENV TOMCAT_VERSION=9.0.24
-# Mon, 19 Aug 2019 21:46:41 GMT
+# Fri, 06 Sep 2019 00:22:18 GMT
 ENV TOMCAT_SHA512=e01bd107e8fbe5ba629571d552a46339ccfd843b8bf770f617dfc1ec5cbf5fe5d945c2c3bba2f80188775a46f93c66d8594c13f8d12f7967d6d56c62d2bf7835
-# Mon, 19 Aug 2019 21:48:25 GMT
+# Fri, 06 Sep 2019 00:23:48 GMT
 RUN set -eux; 		if ! command -v yumdb > /dev/null; then 		yum install -y yum-utils; 		yumdb set reason dep yum-utils; 	fi; 	if [ -f /etc/oracle-release ]; then 		yumdb set reason user filesystem; 	fi; 	_yum_install_temporary() { ( set -eu +x; 		local pkg todo=''; 		for pkg; do 			if ! rpm --query "$pkg" > /dev/null 2>&1; then 				todo="$todo $pkg"; 			fi; 		done; 		if [ -n "$todo" ]; then 			set -x; 			yum install -y $todo; 			yumdb set reason dep $todo; 		fi; 	) }; 	_yum_install_temporary gzip tar; 		ddist() { 		local f="$1"; shift; 		local distFile="$1"; shift; 		local success=; 		local distUrl=; 		for distUrl in 			'https://www.apache.org/dyn/closer.cgi?action=download&filename=' 			https://www-us.apache.org/dist/ 			https://www.apache.org/dist/ 			https://archive.apache.org/dist/ 		; do 			if curl -fL -o "$f" "$distUrl$distFile" && [ -s "$f" ]; then 				success=1; 				break; 			fi; 		done; 		[ -n "$success" ]; 	}; 		ddist 'tomcat.tar.gz' "tomcat/tomcat-$TOMCAT_MAJOR/v$TOMCAT_VERSION/bin/apache-tomcat-$TOMCAT_VERSION.tar.gz"; 	echo "$TOMCAT_SHA512 *tomcat.tar.gz" | sha512sum --strict --check -; 	ddist 'tomcat.tar.gz.asc' "tomcat/tomcat-$TOMCAT_MAJOR/v$TOMCAT_VERSION/bin/apache-tomcat-$TOMCAT_VERSION.tar.gz.asc"; 	export GNUPGHOME="$(mktemp -d)"; 	for key in $GPG_KEYS; do 		gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys "$key"; 	done; 	gpg --batch --verify tomcat.tar.gz.asc tomcat.tar.gz; 	tar -xf tomcat.tar.gz --strip-components=1; 	rm bin/*.bat; 	rm tomcat.tar.gz*; 	command -v gpgconf && gpgconf --kill all || :; 	rm -rf "$GNUPGHOME"; 		nativeBuildDir="$(mktemp -d)"; 	tar -xf bin/tomcat-native.tar.gz -C "$nativeBuildDir" --strip-components=1; 	_yum_install_temporary 		apr-devel 		gcc 		make 		openssl-devel 	; 	( 		export CATALINA_HOME="$PWD"; 		cd "$nativeBuildDir/native"; 		aprConfig="$(command -v apr-1-config)"; 		./configure 			--libdir="$TOMCAT_NATIVE_LIBDIR" 			--prefix="$CATALINA_HOME" 			--with-apr="$aprConfig" 			--with-java-home="$JAVA_HOME" 			--with-ssl=yes; 		make -j "$(nproc)"; 		make install; 	); 	rm -rf "$nativeBuildDir"; 	rm bin/tomcat-native.tar.gz; 		deps="$( 		find "$TOMCAT_NATIVE_LIBDIR" -type f -executable -exec ldd '{}' ';' 			| awk '/=>/ && $(NF-1) != "=>" { print $(NF-1) }' 			| sort -u 			| xargs -r rpm --query --whatprovides 			| sort -u 	)"; 	[ -z "$deps" ] || yumdb set reason user $deps; 		yum autoremove -y; 	yum clean all; 	rm -rf /var/cache/yum; 		find ./bin/ -name '*.sh' -exec sed -ri 's|^#!/bin/sh$|#!/usr/bin/env bash|' '{}' +; 		chmod -R +rX .; 	chmod 777 logs work
-# Mon, 19 Aug 2019 21:48:28 GMT
+# Fri, 06 Sep 2019 00:23:50 GMT
 RUN set -e 	&& nativeLines="$(catalina.sh configtest 2>&1)" 	&& nativeLines="$(echo "$nativeLines" | grep 'Apache Tomcat Native')" 	&& nativeLines="$(echo "$nativeLines" | sort -u)" 	&& if ! echo "$nativeLines" | grep 'INFO: Loaded APR based Apache Tomcat Native library' >&2; then 		echo >&2 "$nativeLines"; 		exit 1; 	fi
-# Mon, 19 Aug 2019 21:48:28 GMT
+# Fri, 06 Sep 2019 00:23:50 GMT
 EXPOSE 8080
-# Mon, 19 Aug 2019 21:48:28 GMT
+# Fri, 06 Sep 2019 00:23:51 GMT
 CMD ["catalina.sh" "run"]
 ```
 
 -	Layers:
-	-	`sha256:72d97abdfae3b3c933ff41e39779cc72853d7bd9dc1e4800c5294d6715257799`  
-		Last Modified: Thu, 23 May 2019 22:22:16 GMT  
-		Size: 61.3 MB (61285177 bytes)  
+	-	`sha256:4910da0c66710ed2414cd0223e48cbeed94209b9c77053dc30d48532a651dd22`  
+		Last Modified: Thu, 05 Sep 2019 23:38:39 GMT  
+		Size: 61.7 MB (61665831 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c13d17f3a543055e7f616629ad6825d21746252d0b8db4f1812c86b11e3fdc96`  
-		Last Modified: Tue, 30 Jul 2019 23:20:57 GMT  
-		Size: 121.5 MB (121482783 bytes)  
+	-	`sha256:c511e36daa9ce76f573699dfe6fabfac82254067f5ff99f2049f99d176ec919d`  
+		Last Modified: Fri, 06 Sep 2019 00:03:50 GMT  
+		Size: 121.5 MB (121533245 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:34afcacfc487c55714cfc7e34c35abe51c1a26be56d268883ecc929fa305f714`  
-		Last Modified: Tue, 30 Jul 2019 23:47:26 GMT  
-		Size: 139.0 B  
+	-	`sha256:fb8769d09d3f4236a9a84b65d19abf678fdd45df105a6e62a3924404dafa15af`  
+		Last Modified: Fri, 06 Sep 2019 00:31:09 GMT  
+		Size: 138.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:ed8e4d1135549f7dceb074c31fb331da7597cf95703c7208d867b362925f21d8`  
-		Last Modified: Mon, 19 Aug 2019 21:52:16 GMT  
-		Size: 14.6 MB (14620945 bytes)  
+	-	`sha256:f25f502d29f76c487fd97b942132d8ddaf9218a24ecfb984658638710515057b`  
+		Last Modified: Fri, 06 Sep 2019 00:31:11 GMT  
+		Size: 14.6 MB (14627735 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:b6fc361a1d8af71b8d0c613cad1f9dc6d50340cc15040eee66b8de2ab227e35e`  
-		Last Modified: Mon, 19 Aug 2019 21:52:14 GMT  
+	-	`sha256:b223aa88d20770ffa395ab2b985b9a788ab592f0c81403f882a416fb5fcd723c`  
+		Last Modified: Fri, 06 Sep 2019 00:31:09 GMT  
 		Size: 132.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `tomcat:9-jdk8-corretto` - linux; arm64 variant v8
 
 ```console
-$ docker pull tomcat@sha256:75b1c8ef5859ff8cf04feaaee43b8d66673d31cc17218e28eecf41971141a3c9
+$ docker pull tomcat@sha256:cb288f74841045ac830e322d29e298f8212982457580d02dff8311f1919129a3
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **182.0 MB (181958229 bytes)**  
+-	Total Size: **182.3 MB (182336772 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:47c3a70a1e9aa18c104f810a8aacb90e407c53acf4f269c15e734bba74e6d5ca`
+-	Image ID: `sha256:1fd9bc06870dfce6510ffd2b35a66cc96eec659ebcca0aac6c9027b3abed58bf`
 -	Default Command: `["catalina.sh","run"]`
 
 ```dockerfile
-# Thu, 23 May 2019 22:39:34 GMT
-ADD file:358a4a50e1cb5e7181b9cc49d23e60d7b0ba5ca2ce18ced74be5843836d54004 in / 
-# Thu, 23 May 2019 22:39:35 GMT
+# Thu, 05 Sep 2019 20:39:50 GMT
+ADD file:a72ff266718add2a5d4d63264fd3ce1f5191448aa441ffdb064ed570a651b36a in / 
+# Thu, 05 Sep 2019 20:39:51 GMT
 CMD ["/bin/bash"]
-# Tue, 30 Jul 2019 23:39:26 GMT
+# Thu, 05 Sep 2019 23:11:35 GMT
 ARG rpm_x64=java-1.8.0-amazon-corretto-devel-1.8.0_222.b10-1.x86_64.rpm
-# Tue, 30 Jul 2019 23:39:27 GMT
+# Thu, 05 Sep 2019 23:11:35 GMT
 ARG path_x64=https://d3pxv6yz143wms.cloudfront.net/8.222.10.1
-# Tue, 30 Jul 2019 23:39:27 GMT
+# Thu, 05 Sep 2019 23:11:35 GMT
 ARG key_x64=C554E802F4545B60919A0A87BD93DF06B540D62A
-# Tue, 30 Jul 2019 23:39:27 GMT
+# Thu, 05 Sep 2019 23:11:36 GMT
 ARG rpm_aarch64=java-1.8.0-amazon-corretto-devel-1.8.0_222.b10-4.aarch64.rpm
-# Tue, 30 Jul 2019 23:39:28 GMT
+# Thu, 05 Sep 2019 23:11:36 GMT
 ARG path_aarch64=https://d3pxv6yz143wms.cloudfront.net/8.222.10.4
-# Tue, 30 Jul 2019 23:39:28 GMT
+# Thu, 05 Sep 2019 23:11:36 GMT
 ARG key_aarch64=826272FACCCCC8E76897C26CE9B1F93E1A158134
-# Tue, 30 Jul 2019 23:40:33 GMT
+# Thu, 05 Sep 2019 23:12:00 GMT
 # ARGS: key_aarch64=826272FACCCCC8E76897C26CE9B1F93E1A158134 key_x64=C554E802F4545B60919A0A87BD93DF06B540D62A path_aarch64=https://d3pxv6yz143wms.cloudfront.net/8.222.10.4 path_x64=https://d3pxv6yz143wms.cloudfront.net/8.222.10.1 rpm_aarch64=java-1.8.0-amazon-corretto-devel-1.8.0_222.b10-4.aarch64.rpm rpm_x64=java-1.8.0-amazon-corretto-devel-1.8.0_222.b10-1.x86_64.rpm
 RUN set -eux;     case "$(uname -p)" in         x86_64) rpm=$rpm_x64; path=$path_x64; key=$key_x64 ;;         aarch64) rpm=$rpm_aarch64; path=$path_aarch64; key=$key_aarch64 ;;         *) echo >&2 "Unsupported architecture $(uname -p)."; exit 1 ;;     esac;         curl -O $path/$rpm     && export GNUPGHOME="$(mktemp -d)"     && gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys $key     && gpg --armor --export $key > corretto.asc     && rpm --import corretto.asc     && rpm -K $rpm     && rpm -i $rpm     && rm -r $GNUPGHOME corretto.asc $rpm     && yum install -y fontconfig     && yum clean all
-# Tue, 30 Jul 2019 23:40:34 GMT
+# Thu, 05 Sep 2019 23:12:01 GMT
 ENV JAVA_HOME=/usr/lib/jvm/java-1.8.0-amazon-corretto
-# Wed, 31 Jul 2019 22:08:23 GMT
+# Fri, 06 Sep 2019 00:24:08 GMT
 ENV CATALINA_HOME=/usr/local/tomcat
-# Wed, 31 Jul 2019 22:08:23 GMT
+# Fri, 06 Sep 2019 00:24:09 GMT
 ENV PATH=/usr/local/tomcat/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Wed, 31 Jul 2019 22:08:24 GMT
+# Fri, 06 Sep 2019 00:24:12 GMT
 RUN mkdir -p "$CATALINA_HOME"
-# Wed, 31 Jul 2019 22:08:25 GMT
+# Fri, 06 Sep 2019 00:24:16 GMT
 WORKDIR /usr/local/tomcat
-# Wed, 31 Jul 2019 22:08:25 GMT
+# Fri, 06 Sep 2019 00:24:17 GMT
 ENV TOMCAT_NATIVE_LIBDIR=/usr/local/tomcat/native-jni-lib
-# Wed, 31 Jul 2019 22:08:25 GMT
+# Fri, 06 Sep 2019 00:24:18 GMT
 ENV LD_LIBRARY_PATH=/usr/local/tomcat/native-jni-lib
-# Wed, 31 Jul 2019 22:08:26 GMT
+# Fri, 06 Sep 2019 00:24:19 GMT
 ENV GPG_KEYS=05AB33110949707C93A279E3D3EFE6B686867BA6 07E48665A34DCAFAE522E5E6266191C37C037D42 47309207D818FFD8DCD3F83F1931D684307A10A5 541FBE7D8F78B25E055DDEE13C370389288584E7 61B832AC2F1C5A90F0F9B00A1C506407564C17A3 79F7026C690BAA50B92CD8B66A3AD3F4F22C4FED 9BA44C2621385CB966EBA586F72C284D731FABEE A27677289986DB50844682F8ACB77FC2E86E29AC A9C5DF4D22E99998D9875A5110C01C5A2F6059E7 DCFD35E0BF8CA7344752DE8B6FB21E8933C60243 F3A04C595DB5B6A5F1ECA43E3B7BBB100D811BBE F7DA48BB64BCB84ECBA7EE6935CD23C10D498E23
-# Wed, 31 Jul 2019 22:08:26 GMT
+# Fri, 06 Sep 2019 00:24:20 GMT
 ENV TOMCAT_MAJOR=9
-# Mon, 19 Aug 2019 22:09:10 GMT
+# Fri, 06 Sep 2019 00:24:22 GMT
 ENV TOMCAT_VERSION=9.0.24
-# Mon, 19 Aug 2019 22:09:10 GMT
+# Fri, 06 Sep 2019 00:24:24 GMT
 ENV TOMCAT_SHA512=e01bd107e8fbe5ba629571d552a46339ccfd843b8bf770f617dfc1ec5cbf5fe5d945c2c3bba2f80188775a46f93c66d8594c13f8d12f7967d6d56c62d2bf7835
-# Mon, 19 Aug 2019 22:10:24 GMT
+# Fri, 06 Sep 2019 00:25:59 GMT
 RUN set -eux; 		if ! command -v yumdb > /dev/null; then 		yum install -y yum-utils; 		yumdb set reason dep yum-utils; 	fi; 	if [ -f /etc/oracle-release ]; then 		yumdb set reason user filesystem; 	fi; 	_yum_install_temporary() { ( set -eu +x; 		local pkg todo=''; 		for pkg; do 			if ! rpm --query "$pkg" > /dev/null 2>&1; then 				todo="$todo $pkg"; 			fi; 		done; 		if [ -n "$todo" ]; then 			set -x; 			yum install -y $todo; 			yumdb set reason dep $todo; 		fi; 	) }; 	_yum_install_temporary gzip tar; 		ddist() { 		local f="$1"; shift; 		local distFile="$1"; shift; 		local success=; 		local distUrl=; 		for distUrl in 			'https://www.apache.org/dyn/closer.cgi?action=download&filename=' 			https://www-us.apache.org/dist/ 			https://www.apache.org/dist/ 			https://archive.apache.org/dist/ 		; do 			if curl -fL -o "$f" "$distUrl$distFile" && [ -s "$f" ]; then 				success=1; 				break; 			fi; 		done; 		[ -n "$success" ]; 	}; 		ddist 'tomcat.tar.gz' "tomcat/tomcat-$TOMCAT_MAJOR/v$TOMCAT_VERSION/bin/apache-tomcat-$TOMCAT_VERSION.tar.gz"; 	echo "$TOMCAT_SHA512 *tomcat.tar.gz" | sha512sum --strict --check -; 	ddist 'tomcat.tar.gz.asc' "tomcat/tomcat-$TOMCAT_MAJOR/v$TOMCAT_VERSION/bin/apache-tomcat-$TOMCAT_VERSION.tar.gz.asc"; 	export GNUPGHOME="$(mktemp -d)"; 	for key in $GPG_KEYS; do 		gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys "$key"; 	done; 	gpg --batch --verify tomcat.tar.gz.asc tomcat.tar.gz; 	tar -xf tomcat.tar.gz --strip-components=1; 	rm bin/*.bat; 	rm tomcat.tar.gz*; 	command -v gpgconf && gpgconf --kill all || :; 	rm -rf "$GNUPGHOME"; 		nativeBuildDir="$(mktemp -d)"; 	tar -xf bin/tomcat-native.tar.gz -C "$nativeBuildDir" --strip-components=1; 	_yum_install_temporary 		apr-devel 		gcc 		make 		openssl-devel 	; 	( 		export CATALINA_HOME="$PWD"; 		cd "$nativeBuildDir/native"; 		aprConfig="$(command -v apr-1-config)"; 		./configure 			--libdir="$TOMCAT_NATIVE_LIBDIR" 			--prefix="$CATALINA_HOME" 			--with-apr="$aprConfig" 			--with-java-home="$JAVA_HOME" 			--with-ssl=yes; 		make -j "$(nproc)"; 		make install; 	); 	rm -rf "$nativeBuildDir"; 	rm bin/tomcat-native.tar.gz; 		deps="$( 		find "$TOMCAT_NATIVE_LIBDIR" -type f -executable -exec ldd '{}' ';' 			| awk '/=>/ && $(NF-1) != "=>" { print $(NF-1) }' 			| sort -u 			| xargs -r rpm --query --whatprovides 			| sort -u 	)"; 	[ -z "$deps" ] || yumdb set reason user $deps; 		yum autoremove -y; 	yum clean all; 	rm -rf /var/cache/yum; 		find ./bin/ -name '*.sh' -exec sed -ri 's|^#!/bin/sh$|#!/usr/bin/env bash|' '{}' +; 		chmod -R +rX .; 	chmod 777 logs work
-# Mon, 19 Aug 2019 22:10:28 GMT
+# Fri, 06 Sep 2019 00:26:09 GMT
 RUN set -e 	&& nativeLines="$(catalina.sh configtest 2>&1)" 	&& nativeLines="$(echo "$nativeLines" | grep 'Apache Tomcat Native')" 	&& nativeLines="$(echo "$nativeLines" | sort -u)" 	&& if ! echo "$nativeLines" | grep 'INFO: Loaded APR based Apache Tomcat Native library' >&2; then 		echo >&2 "$nativeLines"; 		exit 1; 	fi
-# Mon, 19 Aug 2019 22:10:28 GMT
+# Fri, 06 Sep 2019 00:26:11 GMT
 EXPOSE 8080
-# Mon, 19 Aug 2019 22:10:29 GMT
+# Fri, 06 Sep 2019 00:26:15 GMT
 CMD ["catalina.sh" "run"]
 ```
 
 -	Layers:
-	-	`sha256:0c8ee56cea53bee75dce23897c1c0f77aa13a698e7b49d9f20c788cef45fadea`  
-		Last Modified: Thu, 23 May 2019 22:40:27 GMT  
-		Size: 62.5 MB (62453151 bytes)  
+	-	`sha256:e75eebfae1ce8742ae53a518590bca4735e2a5dbfa46418fa709591a7b42e522`  
+		Last Modified: Thu, 05 Sep 2019 20:43:10 GMT  
+		Size: 62.8 MB (62797593 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:269e06f3b7489c1b941db3fc6cf17c76a7bf613b18a6aeff9d25c7144b85ae6a`  
-		Last Modified: Tue, 30 Jul 2019 23:42:10 GMT  
-		Size: 104.9 MB (104888017 bytes)  
+	-	`sha256:825292fe21ae21fe00976ccad2471578d1a289980b1ea830f4e0ad1990422166`  
+		Last Modified: Thu, 05 Sep 2019 23:13:17 GMT  
+		Size: 104.9 MB (104911609 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c1a0e5239e6a06f59af8cf4b3646b582c250ec4bcd6c3ebc520395b4e288e047`  
-		Last Modified: Wed, 31 Jul 2019 22:15:34 GMT  
-		Size: 172.0 B  
+	-	`sha256:babaad70d6b41a7c0adfcbf58979816fb28f3415b9bc800fb9f306bed8742129`  
+		Last Modified: Fri, 06 Sep 2019 00:35:19 GMT  
+		Size: 171.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:b1acdf1afe0337d28d597b9470c7af7b0f0583eac2c9009dac7f873773faa53a`  
-		Last Modified: Mon, 19 Aug 2019 22:18:12 GMT  
-		Size: 14.6 MB (14616725 bytes)  
+	-	`sha256:b53e8969d1ce1c78b57ba50d8bda38f4428318fafa3b346476689b56968699b8`  
+		Last Modified: Fri, 06 Sep 2019 00:35:24 GMT  
+		Size: 14.6 MB (14627236 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:b927da40086ba6ccdc2d92ce3de5cc764795415cad19212faedec6bf132a0f40`  
-		Last Modified: Mon, 19 Aug 2019 22:18:09 GMT  
-		Size: 164.0 B  
+	-	`sha256:76cea8bd63219d2384e3ae13c427618887e60fdb45826d73924f0143bab296a3`  
+		Last Modified: Fri, 06 Sep 2019 00:35:19 GMT  
+		Size: 163.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `tomcat:9-jdk8-openjdk`
@@ -32093,7 +32093,7 @@ CMD ["catalina.sh" "run"]
 ## `tomcat:jdk11-corretto`
 
 ```console
-$ docker pull tomcat@sha256:ff823bf0954a53e6a64cb38e069525ce0c9fb57724ae400af3dada39ab6cbcfa
+$ docker pull tomcat@sha256:37d2705ddd76c8df76a38dd43092895258c4b11ad4aa0838ed84f53830a17cea
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -32104,175 +32104,175 @@ $ docker pull tomcat@sha256:ff823bf0954a53e6a64cb38e069525ce0c9fb57724ae400af3da
 ### `tomcat:jdk11-corretto` - linux; amd64
 
 ```console
-$ docker pull tomcat@sha256:de0387ad59034af7b97e6962f0dd518e0e36f751bb104d3896fcd49319cdebc9
+$ docker pull tomcat@sha256:ac290e29b2ac130c06dfb446b17039a84c934f6deaf3b3db97a11e14b3ef102d
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **271.7 MB (271694682 bytes)**  
+-	Total Size: **272.1 MB (272139725 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:16dcb5719526715fdf7a9dc6c61bbe31ef822d087b3b99cb6e2c207280c6de13`
+-	Image ID: `sha256:568dc9e9bb09e77e29137ec7b065e474d78c75e956832b471878b3f0d4eef706`
 -	Default Command: `["catalina.sh","run"]`
 
 ```dockerfile
-# Thu, 23 May 2019 22:19:59 GMT
-ADD file:3cf811fe5073384ff1d5f405992ef7e5e452ad6d4a4cb873eee65007382f3a4a in / 
-# Thu, 23 May 2019 22:20:00 GMT
+# Thu, 05 Sep 2019 23:36:52 GMT
+ADD file:ee5d76cace83097841fd6a9fe1406be3e2176b9ec4de511cb5594bf959f9e657 in / 
+# Thu, 05 Sep 2019 23:36:53 GMT
 CMD ["/bin/bash"]
-# Tue, 30 Jul 2019 23:19:53 GMT
+# Fri, 06 Sep 2019 00:02:57 GMT
 ARG rpm_x64=java-11-amazon-corretto-devel-11.0.4.11-1.x86_64.rpm
-# Tue, 30 Jul 2019 23:19:53 GMT
+# Fri, 06 Sep 2019 00:02:58 GMT
 ARG path_x64=https://d3pxv6yz143wms.cloudfront.net/11.0.4.11.1
-# Tue, 30 Jul 2019 23:19:53 GMT
+# Fri, 06 Sep 2019 00:02:58 GMT
 ARG key_x64=4FF3DA639731F095833505A25A812B5B67F4FCB4
-# Tue, 30 Jul 2019 23:19:54 GMT
+# Fri, 06 Sep 2019 00:02:58 GMT
 ARG rpm_aarch64=java-11-amazon-corretto-devel-11.0.4.11-1.aarch64.rpm
-# Tue, 30 Jul 2019 23:19:54 GMT
+# Fri, 06 Sep 2019 00:02:58 GMT
 ARG path_aarch64=https://d3pxv6yz143wms.cloudfront.net/11.0.4.11.1
-# Tue, 30 Jul 2019 23:19:54 GMT
+# Fri, 06 Sep 2019 00:02:58 GMT
 ARG key_aarch64=4FF3DA639731F095833505A25A812B5B67F4FCB4
-# Tue, 30 Jul 2019 23:20:17 GMT
+# Fri, 06 Sep 2019 00:03:23 GMT
 # ARGS: key_aarch64=4FF3DA639731F095833505A25A812B5B67F4FCB4 key_x64=4FF3DA639731F095833505A25A812B5B67F4FCB4 path_aarch64=https://d3pxv6yz143wms.cloudfront.net/11.0.4.11.1 path_x64=https://d3pxv6yz143wms.cloudfront.net/11.0.4.11.1 rpm_aarch64=java-11-amazon-corretto-devel-11.0.4.11-1.aarch64.rpm rpm_x64=java-11-amazon-corretto-devel-11.0.4.11-1.x86_64.rpm
 RUN set -eux;     case "$(uname -p)" in         x86_64) rpm=$rpm_x64; path=$path_x64; key=$key_x64 ;;         aarch64) rpm=$rpm_aarch64; path=$path_aarch64; key=$key_aarch64 ;;         *) echo >&2 "Unsupported architecture $(uname -p)."; exit 1 ;;     esac;         curl -O $path/$rpm     && export GNUPGHOME="$(mktemp -d)"     && gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys $key     && gpg --armor --export $key > corretto.asc     && rpm --import corretto.asc     && rpm -K $rpm     && rpm -i $rpm     && rm -r $GNUPGHOME corretto.asc $rpm     && yum install -y fontconfig     && yum clean all
-# Tue, 30 Jul 2019 23:20:17 GMT
+# Fri, 06 Sep 2019 00:03:23 GMT
 ENV JAVA_HOME=/usr/lib/jvm/java-11-amazon-corretto
-# Tue, 30 Jul 2019 23:37:08 GMT
+# Fri, 06 Sep 2019 00:20:17 GMT
 ENV CATALINA_HOME=/usr/local/tomcat
-# Tue, 30 Jul 2019 23:37:08 GMT
+# Fri, 06 Sep 2019 00:20:17 GMT
 ENV PATH=/usr/local/tomcat/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Tue, 30 Jul 2019 23:37:09 GMT
+# Fri, 06 Sep 2019 00:20:18 GMT
 RUN mkdir -p "$CATALINA_HOME"
-# Tue, 30 Jul 2019 23:37:09 GMT
+# Fri, 06 Sep 2019 00:20:18 GMT
 WORKDIR /usr/local/tomcat
-# Tue, 30 Jul 2019 23:37:09 GMT
+# Fri, 06 Sep 2019 00:20:18 GMT
 ENV TOMCAT_NATIVE_LIBDIR=/usr/local/tomcat/native-jni-lib
-# Tue, 30 Jul 2019 23:37:09 GMT
+# Fri, 06 Sep 2019 00:20:18 GMT
 ENV LD_LIBRARY_PATH=/usr/local/tomcat/native-jni-lib
-# Tue, 30 Jul 2019 23:41:03 GMT
+# Fri, 06 Sep 2019 00:24:31 GMT
 ENV GPG_KEYS=05AB33110949707C93A279E3D3EFE6B686867BA6 07E48665A34DCAFAE522E5E6266191C37C037D42 47309207D818FFD8DCD3F83F1931D684307A10A5 541FBE7D8F78B25E055DDEE13C370389288584E7 61B832AC2F1C5A90F0F9B00A1C506407564C17A3 713DA88BE50911535FE716F5208B0AB1D63011C7 79F7026C690BAA50B92CD8B66A3AD3F4F22C4FED 9BA44C2621385CB966EBA586F72C284D731FABEE A27677289986DB50844682F8ACB77FC2E86E29AC A9C5DF4D22E99998D9875A5110C01C5A2F6059E7 DCFD35E0BF8CA7344752DE8B6FB21E8933C60243 F3A04C595DB5B6A5F1ECA43E3B7BBB100D811BBE F7DA48BB64BCB84ECBA7EE6935CD23C10D498E23
-# Tue, 30 Jul 2019 23:41:03 GMT
+# Fri, 06 Sep 2019 00:24:32 GMT
 ENV TOMCAT_MAJOR=8
-# Thu, 22 Aug 2019 00:24:10 GMT
+# Fri, 06 Sep 2019 00:24:32 GMT
 ENV TOMCAT_VERSION=8.5.45
-# Thu, 22 Aug 2019 00:24:10 GMT
+# Fri, 06 Sep 2019 00:24:32 GMT
 ENV TOMCAT_SHA512=4276a97b91aad204b393578b11266adff9fc5595ec5b0e0818b9343c9b741969bc162ae6933099799ab6c49f3ccb02ccb9bbf7df71e83832ef623a3ee6bee25a
-# Thu, 22 Aug 2019 00:25:48 GMT
+# Fri, 06 Sep 2019 00:26:07 GMT
 RUN set -eux; 		if ! command -v yumdb > /dev/null; then 		yum install -y yum-utils; 		yumdb set reason dep yum-utils; 	fi; 	if [ -f /etc/oracle-release ]; then 		yumdb set reason user filesystem; 	fi; 	_yum_install_temporary() { ( set -eu +x; 		local pkg todo=''; 		for pkg; do 			if ! rpm --query "$pkg" > /dev/null 2>&1; then 				todo="$todo $pkg"; 			fi; 		done; 		if [ -n "$todo" ]; then 			set -x; 			yum install -y $todo; 			yumdb set reason dep $todo; 		fi; 	) }; 	_yum_install_temporary gzip tar; 		ddist() { 		local f="$1"; shift; 		local distFile="$1"; shift; 		local success=; 		local distUrl=; 		for distUrl in 			'https://www.apache.org/dyn/closer.cgi?action=download&filename=' 			https://www-us.apache.org/dist/ 			https://www.apache.org/dist/ 			https://archive.apache.org/dist/ 		; do 			if curl -fL -o "$f" "$distUrl$distFile" && [ -s "$f" ]; then 				success=1; 				break; 			fi; 		done; 		[ -n "$success" ]; 	}; 		ddist 'tomcat.tar.gz' "tomcat/tomcat-$TOMCAT_MAJOR/v$TOMCAT_VERSION/bin/apache-tomcat-$TOMCAT_VERSION.tar.gz"; 	echo "$TOMCAT_SHA512 *tomcat.tar.gz" | sha512sum --strict --check -; 	ddist 'tomcat.tar.gz.asc' "tomcat/tomcat-$TOMCAT_MAJOR/v$TOMCAT_VERSION/bin/apache-tomcat-$TOMCAT_VERSION.tar.gz.asc"; 	export GNUPGHOME="$(mktemp -d)"; 	for key in $GPG_KEYS; do 		gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys "$key"; 	done; 	gpg --batch --verify tomcat.tar.gz.asc tomcat.tar.gz; 	tar -xf tomcat.tar.gz --strip-components=1; 	rm bin/*.bat; 	rm tomcat.tar.gz*; 	command -v gpgconf && gpgconf --kill all || :; 	rm -rf "$GNUPGHOME"; 		nativeBuildDir="$(mktemp -d)"; 	tar -xf bin/tomcat-native.tar.gz -C "$nativeBuildDir" --strip-components=1; 	_yum_install_temporary 		apr-devel 		gcc 		make 		openssl-devel 	; 	( 		export CATALINA_HOME="$PWD"; 		cd "$nativeBuildDir/native"; 		aprConfig="$(command -v apr-1-config)"; 		./configure 			--libdir="$TOMCAT_NATIVE_LIBDIR" 			--prefix="$CATALINA_HOME" 			--with-apr="$aprConfig" 			--with-java-home="$JAVA_HOME" 			--with-ssl=yes; 		make -j "$(nproc)"; 		make install; 	); 	rm -rf "$nativeBuildDir"; 	rm bin/tomcat-native.tar.gz; 		deps="$( 		find "$TOMCAT_NATIVE_LIBDIR" -type f -executable -exec ldd '{}' ';' 			| awk '/=>/ && $(NF-1) != "=>" { print $(NF-1) }' 			| sort -u 			| xargs -r rpm --query --whatprovides 			| sort -u 	)"; 	[ -z "$deps" ] || yumdb set reason user $deps; 		yum autoremove -y; 	yum clean all; 	rm -rf /var/cache/yum; 		find ./bin/ -name '*.sh' -exec sed -ri 's|^#!/bin/sh$|#!/usr/bin/env bash|' '{}' +; 		chmod -R +rX .; 	chmod 777 logs work
-# Thu, 22 Aug 2019 00:25:51 GMT
+# Fri, 06 Sep 2019 00:26:10 GMT
 RUN set -e 	&& nativeLines="$(catalina.sh configtest 2>&1)" 	&& nativeLines="$(echo "$nativeLines" | grep 'Apache Tomcat Native')" 	&& nativeLines="$(echo "$nativeLines" | sort -u)" 	&& if ! echo "$nativeLines" | grep 'INFO: Loaded APR based Apache Tomcat Native library' >&2; then 		echo >&2 "$nativeLines"; 		exit 1; 	fi
-# Thu, 22 Aug 2019 00:25:51 GMT
+# Fri, 06 Sep 2019 00:26:10 GMT
 EXPOSE 8080
-# Thu, 22 Aug 2019 00:25:51 GMT
+# Fri, 06 Sep 2019 00:26:10 GMT
 CMD ["catalina.sh" "run"]
 ```
 
 -	Layers:
-	-	`sha256:72d97abdfae3b3c933ff41e39779cc72853d7bd9dc1e4800c5294d6715257799`  
-		Last Modified: Thu, 23 May 2019 22:22:16 GMT  
-		Size: 61.3 MB (61285177 bytes)  
+	-	`sha256:4910da0c66710ed2414cd0223e48cbeed94209b9c77053dc30d48532a651dd22`  
+		Last Modified: Thu, 05 Sep 2019 23:38:39 GMT  
+		Size: 61.7 MB (61665831 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:4f58afb139384717c6be8d8ba2803caf676e6d7fe750302d138bf13983df50b9`  
-		Last Modified: Tue, 30 Jul 2019 23:21:22 GMT  
-		Size: 197.0 MB (196988921 bytes)  
+	-	`sha256:b9d1840374efc595eade77260f8573765a51ccb6ebfecf02452d9ca356e18b69`  
+		Last Modified: Fri, 06 Sep 2019 00:04:16 GMT  
+		Size: 197.0 MB (197036830 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:6a4258a56fde8d6d1679c88a09371eaabd100e001b69054571de6290bdfdd21e`  
-		Last Modified: Tue, 30 Jul 2019 23:47:15 GMT  
-		Size: 139.0 B  
+	-	`sha256:e781e7241055b324d43f1f0f0f06d5131ed2aafb69892d9aa53b626ea2cb3865`  
+		Last Modified: Fri, 06 Sep 2019 00:31:01 GMT  
+		Size: 138.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:3fae71872779ce9e5041922ae6a6adb632a75837bd37cc9f6cfa58249796d450`  
-		Last Modified: Thu, 22 Aug 2019 00:33:30 GMT  
-		Size: 13.4 MB (13420313 bytes)  
+	-	`sha256:81c7babf3561161cfacb3eb1ae1616dcf0747d2ea0bad194e8f2cc5890769475`  
+		Last Modified: Fri, 06 Sep 2019 00:31:20 GMT  
+		Size: 13.4 MB (13436794 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:2342fc3450285c1f1ed4f31e2edc04aa7a0105e299286f93459f6ca8d8e95c13`  
-		Last Modified: Thu, 22 Aug 2019 00:33:28 GMT  
+	-	`sha256:c49cac6405f1d8d5d118d085c35fe3ac6080381a7bc814573dcf65cca2b8742b`  
+		Last Modified: Fri, 06 Sep 2019 00:31:18 GMT  
 		Size: 132.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `tomcat:jdk11-corretto` - linux; arm64 variant v8
 
 ```console
-$ docker pull tomcat@sha256:762fa46e0f72ff546a00a1da5fd8d9d537723365d211330ad17f531dbc56ecfe
+$ docker pull tomcat@sha256:49ae97c9f4997782ef4066cb99b15fa8b7ee65b7ee25630665c8323b25045dd3
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **271.2 MB (271176375 bytes)**  
+-	Total Size: **271.5 MB (271548364 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:7551d63571145d52c3079431d0b6d1135c6ddc438279d3544c4ba7d0dc8429a2`
+-	Image ID: `sha256:15a3dccfc0a0bc71fd760c777e73c2c3ddcc82e48d39d1147697ebda3c671ce6`
 -	Default Command: `["catalina.sh","run"]`
 
 ```dockerfile
-# Thu, 23 May 2019 22:39:34 GMT
-ADD file:358a4a50e1cb5e7181b9cc49d23e60d7b0ba5ca2ce18ced74be5843836d54004 in / 
-# Thu, 23 May 2019 22:39:35 GMT
+# Thu, 05 Sep 2019 20:39:50 GMT
+ADD file:a72ff266718add2a5d4d63264fd3ce1f5191448aa441ffdb064ed570a651b36a in / 
+# Thu, 05 Sep 2019 20:39:51 GMT
 CMD ["/bin/bash"]
-# Tue, 30 Jul 2019 23:40:41 GMT
+# Thu, 05 Sep 2019 23:12:09 GMT
 ARG rpm_x64=java-11-amazon-corretto-devel-11.0.4.11-1.x86_64.rpm
-# Tue, 30 Jul 2019 23:40:42 GMT
+# Thu, 05 Sep 2019 23:12:09 GMT
 ARG path_x64=https://d3pxv6yz143wms.cloudfront.net/11.0.4.11.1
-# Tue, 30 Jul 2019 23:40:42 GMT
+# Thu, 05 Sep 2019 23:12:09 GMT
 ARG key_x64=4FF3DA639731F095833505A25A812B5B67F4FCB4
-# Tue, 30 Jul 2019 23:40:43 GMT
+# Thu, 05 Sep 2019 23:12:10 GMT
 ARG rpm_aarch64=java-11-amazon-corretto-devel-11.0.4.11-1.aarch64.rpm
-# Tue, 30 Jul 2019 23:40:43 GMT
+# Thu, 05 Sep 2019 23:12:10 GMT
 ARG path_aarch64=https://d3pxv6yz143wms.cloudfront.net/11.0.4.11.1
-# Tue, 30 Jul 2019 23:40:43 GMT
+# Thu, 05 Sep 2019 23:12:10 GMT
 ARG key_aarch64=4FF3DA639731F095833505A25A812B5B67F4FCB4
-# Tue, 30 Jul 2019 23:41:28 GMT
+# Thu, 05 Sep 2019 23:12:37 GMT
 # ARGS: key_aarch64=4FF3DA639731F095833505A25A812B5B67F4FCB4 key_x64=4FF3DA639731F095833505A25A812B5B67F4FCB4 path_aarch64=https://d3pxv6yz143wms.cloudfront.net/11.0.4.11.1 path_x64=https://d3pxv6yz143wms.cloudfront.net/11.0.4.11.1 rpm_aarch64=java-11-amazon-corretto-devel-11.0.4.11-1.aarch64.rpm rpm_x64=java-11-amazon-corretto-devel-11.0.4.11-1.x86_64.rpm
 RUN set -eux;     case "$(uname -p)" in         x86_64) rpm=$rpm_x64; path=$path_x64; key=$key_x64 ;;         aarch64) rpm=$rpm_aarch64; path=$path_aarch64; key=$key_aarch64 ;;         *) echo >&2 "Unsupported architecture $(uname -p)."; exit 1 ;;     esac;         curl -O $path/$rpm     && export GNUPGHOME="$(mktemp -d)"     && gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys $key     && gpg --armor --export $key > corretto.asc     && rpm --import corretto.asc     && rpm -K $rpm     && rpm -i $rpm     && rm -r $GNUPGHOME corretto.asc $rpm     && yum install -y fontconfig     && yum clean all
-# Tue, 30 Jul 2019 23:41:29 GMT
+# Thu, 05 Sep 2019 23:12:39 GMT
 ENV JAVA_HOME=/usr/lib/jvm/java-11-amazon-corretto
-# Wed, 31 Jul 2019 22:07:04 GMT
+# Fri, 06 Sep 2019 00:21:46 GMT
 ENV CATALINA_HOME=/usr/local/tomcat
-# Wed, 31 Jul 2019 22:07:05 GMT
+# Fri, 06 Sep 2019 00:21:46 GMT
 ENV PATH=/usr/local/tomcat/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Wed, 31 Jul 2019 22:07:06 GMT
+# Fri, 06 Sep 2019 00:21:48 GMT
 RUN mkdir -p "$CATALINA_HOME"
-# Wed, 31 Jul 2019 22:07:06 GMT
+# Fri, 06 Sep 2019 00:21:48 GMT
 WORKDIR /usr/local/tomcat
-# Wed, 31 Jul 2019 22:07:07 GMT
+# Fri, 06 Sep 2019 00:21:49 GMT
 ENV TOMCAT_NATIVE_LIBDIR=/usr/local/tomcat/native-jni-lib
-# Wed, 31 Jul 2019 22:07:07 GMT
+# Fri, 06 Sep 2019 00:21:49 GMT
 ENV LD_LIBRARY_PATH=/usr/local/tomcat/native-jni-lib
-# Wed, 31 Jul 2019 22:10:05 GMT
+# Fri, 06 Sep 2019 00:26:51 GMT
 ENV GPG_KEYS=05AB33110949707C93A279E3D3EFE6B686867BA6 07E48665A34DCAFAE522E5E6266191C37C037D42 47309207D818FFD8DCD3F83F1931D684307A10A5 541FBE7D8F78B25E055DDEE13C370389288584E7 61B832AC2F1C5A90F0F9B00A1C506407564C17A3 713DA88BE50911535FE716F5208B0AB1D63011C7 79F7026C690BAA50B92CD8B66A3AD3F4F22C4FED 9BA44C2621385CB966EBA586F72C284D731FABEE A27677289986DB50844682F8ACB77FC2E86E29AC A9C5DF4D22E99998D9875A5110C01C5A2F6059E7 DCFD35E0BF8CA7344752DE8B6FB21E8933C60243 F3A04C595DB5B6A5F1ECA43E3B7BBB100D811BBE F7DA48BB64BCB84ECBA7EE6935CD23C10D498E23
-# Wed, 31 Jul 2019 22:10:06 GMT
+# Fri, 06 Sep 2019 00:26:52 GMT
 ENV TOMCAT_MAJOR=8
-# Thu, 22 Aug 2019 00:01:45 GMT
+# Fri, 06 Sep 2019 00:26:53 GMT
 ENV TOMCAT_VERSION=8.5.45
-# Thu, 22 Aug 2019 00:01:45 GMT
+# Fri, 06 Sep 2019 00:26:57 GMT
 ENV TOMCAT_SHA512=4276a97b91aad204b393578b11266adff9fc5595ec5b0e0818b9343c9b741969bc162ae6933099799ab6c49f3ccb02ccb9bbf7df71e83832ef623a3ee6bee25a
-# Thu, 22 Aug 2019 00:03:33 GMT
+# Fri, 06 Sep 2019 00:28:39 GMT
 RUN set -eux; 		if ! command -v yumdb > /dev/null; then 		yum install -y yum-utils; 		yumdb set reason dep yum-utils; 	fi; 	if [ -f /etc/oracle-release ]; then 		yumdb set reason user filesystem; 	fi; 	_yum_install_temporary() { ( set -eu +x; 		local pkg todo=''; 		for pkg; do 			if ! rpm --query "$pkg" > /dev/null 2>&1; then 				todo="$todo $pkg"; 			fi; 		done; 		if [ -n "$todo" ]; then 			set -x; 			yum install -y $todo; 			yumdb set reason dep $todo; 		fi; 	) }; 	_yum_install_temporary gzip tar; 		ddist() { 		local f="$1"; shift; 		local distFile="$1"; shift; 		local success=; 		local distUrl=; 		for distUrl in 			'https://www.apache.org/dyn/closer.cgi?action=download&filename=' 			https://www-us.apache.org/dist/ 			https://www.apache.org/dist/ 			https://archive.apache.org/dist/ 		; do 			if curl -fL -o "$f" "$distUrl$distFile" && [ -s "$f" ]; then 				success=1; 				break; 			fi; 		done; 		[ -n "$success" ]; 	}; 		ddist 'tomcat.tar.gz' "tomcat/tomcat-$TOMCAT_MAJOR/v$TOMCAT_VERSION/bin/apache-tomcat-$TOMCAT_VERSION.tar.gz"; 	echo "$TOMCAT_SHA512 *tomcat.tar.gz" | sha512sum --strict --check -; 	ddist 'tomcat.tar.gz.asc' "tomcat/tomcat-$TOMCAT_MAJOR/v$TOMCAT_VERSION/bin/apache-tomcat-$TOMCAT_VERSION.tar.gz.asc"; 	export GNUPGHOME="$(mktemp -d)"; 	for key in $GPG_KEYS; do 		gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys "$key"; 	done; 	gpg --batch --verify tomcat.tar.gz.asc tomcat.tar.gz; 	tar -xf tomcat.tar.gz --strip-components=1; 	rm bin/*.bat; 	rm tomcat.tar.gz*; 	command -v gpgconf && gpgconf --kill all || :; 	rm -rf "$GNUPGHOME"; 		nativeBuildDir="$(mktemp -d)"; 	tar -xf bin/tomcat-native.tar.gz -C "$nativeBuildDir" --strip-components=1; 	_yum_install_temporary 		apr-devel 		gcc 		make 		openssl-devel 	; 	( 		export CATALINA_HOME="$PWD"; 		cd "$nativeBuildDir/native"; 		aprConfig="$(command -v apr-1-config)"; 		./configure 			--libdir="$TOMCAT_NATIVE_LIBDIR" 			--prefix="$CATALINA_HOME" 			--with-apr="$aprConfig" 			--with-java-home="$JAVA_HOME" 			--with-ssl=yes; 		make -j "$(nproc)"; 		make install; 	); 	rm -rf "$nativeBuildDir"; 	rm bin/tomcat-native.tar.gz; 		deps="$( 		find "$TOMCAT_NATIVE_LIBDIR" -type f -executable -exec ldd '{}' ';' 			| awk '/=>/ && $(NF-1) != "=>" { print $(NF-1) }' 			| sort -u 			| xargs -r rpm --query --whatprovides 			| sort -u 	)"; 	[ -z "$deps" ] || yumdb set reason user $deps; 		yum autoremove -y; 	yum clean all; 	rm -rf /var/cache/yum; 		find ./bin/ -name '*.sh' -exec sed -ri 's|^#!/bin/sh$|#!/usr/bin/env bash|' '{}' +; 		chmod -R +rX .; 	chmod 777 logs work
-# Thu, 22 Aug 2019 00:03:37 GMT
+# Fri, 06 Sep 2019 00:28:48 GMT
 RUN set -e 	&& nativeLines="$(catalina.sh configtest 2>&1)" 	&& nativeLines="$(echo "$nativeLines" | grep 'Apache Tomcat Native')" 	&& nativeLines="$(echo "$nativeLines" | sort -u)" 	&& if ! echo "$nativeLines" | grep 'INFO: Loaded APR based Apache Tomcat Native library' >&2; then 		echo >&2 "$nativeLines"; 		exit 1; 	fi
-# Thu, 22 Aug 2019 00:03:37 GMT
+# Fri, 06 Sep 2019 00:28:49 GMT
 EXPOSE 8080
-# Thu, 22 Aug 2019 00:03:38 GMT
+# Fri, 06 Sep 2019 00:28:50 GMT
 CMD ["catalina.sh" "run"]
 ```
 
 -	Layers:
-	-	`sha256:0c8ee56cea53bee75dce23897c1c0f77aa13a698e7b49d9f20c788cef45fadea`  
-		Last Modified: Thu, 23 May 2019 22:40:27 GMT  
-		Size: 62.5 MB (62453151 bytes)  
+	-	`sha256:e75eebfae1ce8742ae53a518590bca4735e2a5dbfa46418fa709591a7b42e522`  
+		Last Modified: Thu, 05 Sep 2019 20:43:10 GMT  
+		Size: 62.8 MB (62797593 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:26fa6a4fcbd205b5477eeeca21b716e71451d1a99c1210dede865590e1fe09f3`  
-		Last Modified: Tue, 30 Jul 2019 23:42:49 GMT  
-		Size: 195.3 MB (195286724 bytes)  
+	-	`sha256:149ea18e536a86a1d3013f8d890ae31d30843ddc6e56e6dca9caee694d195c1b`  
+		Last Modified: Thu, 05 Sep 2019 23:13:56 GMT  
+		Size: 195.3 MB (195295858 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:6192f742a23c42bda649424bedf838a1bb458c80f0d7ac9ac2c6692f86d1a4d3`  
-		Last Modified: Wed, 31 Jul 2019 22:15:18 GMT  
+	-	`sha256:ef6d54efaf622c109d088da3f6bc5297ef6cfe74a5ce3f9bbb95ee72e3885d52`  
+		Last Modified: Fri, 06 Sep 2019 00:35:05 GMT  
 		Size: 172.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:545f36c03121db6f18850e88189403bc8631afb584c17a8e5b1c10394c2b3a92`  
-		Last Modified: Thu, 22 Aug 2019 00:08:20 GMT  
-		Size: 13.4 MB (13436163 bytes)  
+	-	`sha256:006531924eb1421463a9da90090f567acd2f6d862eef8eea2b3844756bf642af`  
+		Last Modified: Fri, 06 Sep 2019 00:35:41 GMT  
+		Size: 13.5 MB (13454577 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:b7b35056c7828b517a7b9b4b557bfd9d7519b27be3d66334de5640841edda71d`  
-		Last Modified: Thu, 22 Aug 2019 00:08:17 GMT  
-		Size: 165.0 B  
+	-	`sha256:2d60875f8438c960be87d57d4d4ca3f80fd53965437ad8a8bcd184d8b2bd088e`  
+		Last Modified: Fri, 06 Sep 2019 00:35:38 GMT  
+		Size: 164.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `tomcat:jdk11-openjdk`
@@ -34772,7 +34772,7 @@ CMD ["catalina.sh" "run"]
 ## `tomcat:jdk8-corretto`
 
 ```console
-$ docker pull tomcat@sha256:f33f90c9e9962bb48eaa318108dbe1a87a39edc67bb4c44bf1d150d64361a4b2
+$ docker pull tomcat@sha256:1fffe8d34b7b9a6501dc362dfdf0d55c5dd0ea3d0a97545a0c4d834963abbd44
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -34783,175 +34783,175 @@ $ docker pull tomcat@sha256:f33f90c9e9962bb48eaa318108dbe1a87a39edc67bb4c44bf1d1
 ### `tomcat:jdk8-corretto` - linux; amd64
 
 ```console
-$ docker pull tomcat@sha256:0a78797f7fec56a15677d64488639447d86576145dfa30e48d75b42488f906c9
+$ docker pull tomcat@sha256:92733ee9aeb531b6b1a60db5fc562f489900f2c49bf3ce9a7fb8439692198788
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **196.2 MB (196189722 bytes)**  
+-	Total Size: **196.6 MB (196631183 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:f77da5bf7e65bd1ed776a174b55514beeb925c4806d43d3c49e63f60aed48a4f`
+-	Image ID: `sha256:4a23c22592312cf25d9950eecd48f3d46dbb7c514edf58aafa62601cc520a9cd`
 -	Default Command: `["catalina.sh","run"]`
 
 ```dockerfile
-# Thu, 23 May 2019 22:19:59 GMT
-ADD file:3cf811fe5073384ff1d5f405992ef7e5e452ad6d4a4cb873eee65007382f3a4a in / 
-# Thu, 23 May 2019 22:20:00 GMT
+# Thu, 05 Sep 2019 23:36:52 GMT
+ADD file:ee5d76cace83097841fd6a9fe1406be3e2176b9ec4de511cb5594bf959f9e657 in / 
+# Thu, 05 Sep 2019 23:36:53 GMT
 CMD ["/bin/bash"]
-# Tue, 30 Jul 2019 23:19:26 GMT
+# Fri, 06 Sep 2019 00:02:29 GMT
 ARG rpm_x64=java-1.8.0-amazon-corretto-devel-1.8.0_222.b10-1.x86_64.rpm
-# Tue, 30 Jul 2019 23:19:26 GMT
+# Fri, 06 Sep 2019 00:02:30 GMT
 ARG path_x64=https://d3pxv6yz143wms.cloudfront.net/8.222.10.1
-# Tue, 30 Jul 2019 23:19:26 GMT
+# Fri, 06 Sep 2019 00:02:30 GMT
 ARG key_x64=C554E802F4545B60919A0A87BD93DF06B540D62A
-# Tue, 30 Jul 2019 23:19:27 GMT
+# Fri, 06 Sep 2019 00:02:30 GMT
 ARG rpm_aarch64=java-1.8.0-amazon-corretto-devel-1.8.0_222.b10-4.aarch64.rpm
-# Tue, 30 Jul 2019 23:19:27 GMT
+# Fri, 06 Sep 2019 00:02:30 GMT
 ARG path_aarch64=https://d3pxv6yz143wms.cloudfront.net/8.222.10.4
-# Tue, 30 Jul 2019 23:19:27 GMT
+# Fri, 06 Sep 2019 00:02:30 GMT
 ARG key_aarch64=826272FACCCCC8E76897C26CE9B1F93E1A158134
-# Tue, 30 Jul 2019 23:19:47 GMT
+# Fri, 06 Sep 2019 00:02:52 GMT
 # ARGS: key_aarch64=826272FACCCCC8E76897C26CE9B1F93E1A158134 key_x64=C554E802F4545B60919A0A87BD93DF06B540D62A path_aarch64=https://d3pxv6yz143wms.cloudfront.net/8.222.10.4 path_x64=https://d3pxv6yz143wms.cloudfront.net/8.222.10.1 rpm_aarch64=java-1.8.0-amazon-corretto-devel-1.8.0_222.b10-4.aarch64.rpm rpm_x64=java-1.8.0-amazon-corretto-devel-1.8.0_222.b10-1.x86_64.rpm
 RUN set -eux;     case "$(uname -p)" in         x86_64) rpm=$rpm_x64; path=$path_x64; key=$key_x64 ;;         aarch64) rpm=$rpm_aarch64; path=$path_aarch64; key=$key_aarch64 ;;         *) echo >&2 "Unsupported architecture $(uname -p)."; exit 1 ;;     esac;         curl -O $path/$rpm     && export GNUPGHOME="$(mktemp -d)"     && gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys $key     && gpg --armor --export $key > corretto.asc     && rpm --import corretto.asc     && rpm -K $rpm     && rpm -i $rpm     && rm -r $GNUPGHOME corretto.asc $rpm     && yum install -y fontconfig     && yum clean all
-# Tue, 30 Jul 2019 23:19:47 GMT
+# Fri, 06 Sep 2019 00:02:52 GMT
 ENV JAVA_HOME=/usr/lib/jvm/java-1.8.0-amazon-corretto
-# Tue, 30 Jul 2019 23:39:00 GMT
+# Fri, 06 Sep 2019 00:22:16 GMT
 ENV CATALINA_HOME=/usr/local/tomcat
-# Tue, 30 Jul 2019 23:39:00 GMT
+# Fri, 06 Sep 2019 00:22:16 GMT
 ENV PATH=/usr/local/tomcat/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Tue, 30 Jul 2019 23:39:01 GMT
+# Fri, 06 Sep 2019 00:22:17 GMT
 RUN mkdir -p "$CATALINA_HOME"
-# Tue, 30 Jul 2019 23:39:01 GMT
+# Fri, 06 Sep 2019 00:22:17 GMT
 WORKDIR /usr/local/tomcat
-# Tue, 30 Jul 2019 23:39:01 GMT
+# Fri, 06 Sep 2019 00:22:17 GMT
 ENV TOMCAT_NATIVE_LIBDIR=/usr/local/tomcat/native-jni-lib
-# Tue, 30 Jul 2019 23:39:01 GMT
+# Fri, 06 Sep 2019 00:22:17 GMT
 ENV LD_LIBRARY_PATH=/usr/local/tomcat/native-jni-lib
-# Tue, 30 Jul 2019 23:42:57 GMT
+# Fri, 06 Sep 2019 00:26:36 GMT
 ENV GPG_KEYS=05AB33110949707C93A279E3D3EFE6B686867BA6 07E48665A34DCAFAE522E5E6266191C37C037D42 47309207D818FFD8DCD3F83F1931D684307A10A5 541FBE7D8F78B25E055DDEE13C370389288584E7 61B832AC2F1C5A90F0F9B00A1C506407564C17A3 713DA88BE50911535FE716F5208B0AB1D63011C7 79F7026C690BAA50B92CD8B66A3AD3F4F22C4FED 9BA44C2621385CB966EBA586F72C284D731FABEE A27677289986DB50844682F8ACB77FC2E86E29AC A9C5DF4D22E99998D9875A5110C01C5A2F6059E7 DCFD35E0BF8CA7344752DE8B6FB21E8933C60243 F3A04C595DB5B6A5F1ECA43E3B7BBB100D811BBE F7DA48BB64BCB84ECBA7EE6935CD23C10D498E23
-# Tue, 30 Jul 2019 23:42:57 GMT
+# Fri, 06 Sep 2019 00:26:36 GMT
 ENV TOMCAT_MAJOR=8
-# Thu, 22 Aug 2019 00:29:12 GMT
+# Fri, 06 Sep 2019 00:26:36 GMT
 ENV TOMCAT_VERSION=8.5.45
-# Thu, 22 Aug 2019 00:29:12 GMT
+# Fri, 06 Sep 2019 00:26:36 GMT
 ENV TOMCAT_SHA512=4276a97b91aad204b393578b11266adff9fc5595ec5b0e0818b9343c9b741969bc162ae6933099799ab6c49f3ccb02ccb9bbf7df71e83832ef623a3ee6bee25a
-# Thu, 22 Aug 2019 00:30:48 GMT
+# Fri, 06 Sep 2019 00:28:07 GMT
 RUN set -eux; 		if ! command -v yumdb > /dev/null; then 		yum install -y yum-utils; 		yumdb set reason dep yum-utils; 	fi; 	if [ -f /etc/oracle-release ]; then 		yumdb set reason user filesystem; 	fi; 	_yum_install_temporary() { ( set -eu +x; 		local pkg todo=''; 		for pkg; do 			if ! rpm --query "$pkg" > /dev/null 2>&1; then 				todo="$todo $pkg"; 			fi; 		done; 		if [ -n "$todo" ]; then 			set -x; 			yum install -y $todo; 			yumdb set reason dep $todo; 		fi; 	) }; 	_yum_install_temporary gzip tar; 		ddist() { 		local f="$1"; shift; 		local distFile="$1"; shift; 		local success=; 		local distUrl=; 		for distUrl in 			'https://www.apache.org/dyn/closer.cgi?action=download&filename=' 			https://www-us.apache.org/dist/ 			https://www.apache.org/dist/ 			https://archive.apache.org/dist/ 		; do 			if curl -fL -o "$f" "$distUrl$distFile" && [ -s "$f" ]; then 				success=1; 				break; 			fi; 		done; 		[ -n "$success" ]; 	}; 		ddist 'tomcat.tar.gz' "tomcat/tomcat-$TOMCAT_MAJOR/v$TOMCAT_VERSION/bin/apache-tomcat-$TOMCAT_VERSION.tar.gz"; 	echo "$TOMCAT_SHA512 *tomcat.tar.gz" | sha512sum --strict --check -; 	ddist 'tomcat.tar.gz.asc' "tomcat/tomcat-$TOMCAT_MAJOR/v$TOMCAT_VERSION/bin/apache-tomcat-$TOMCAT_VERSION.tar.gz.asc"; 	export GNUPGHOME="$(mktemp -d)"; 	for key in $GPG_KEYS; do 		gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys "$key"; 	done; 	gpg --batch --verify tomcat.tar.gz.asc tomcat.tar.gz; 	tar -xf tomcat.tar.gz --strip-components=1; 	rm bin/*.bat; 	rm tomcat.tar.gz*; 	command -v gpgconf && gpgconf --kill all || :; 	rm -rf "$GNUPGHOME"; 		nativeBuildDir="$(mktemp -d)"; 	tar -xf bin/tomcat-native.tar.gz -C "$nativeBuildDir" --strip-components=1; 	_yum_install_temporary 		apr-devel 		gcc 		make 		openssl-devel 	; 	( 		export CATALINA_HOME="$PWD"; 		cd "$nativeBuildDir/native"; 		aprConfig="$(command -v apr-1-config)"; 		./configure 			--libdir="$TOMCAT_NATIVE_LIBDIR" 			--prefix="$CATALINA_HOME" 			--with-apr="$aprConfig" 			--with-java-home="$JAVA_HOME" 			--with-ssl=yes; 		make -j "$(nproc)"; 		make install; 	); 	rm -rf "$nativeBuildDir"; 	rm bin/tomcat-native.tar.gz; 		deps="$( 		find "$TOMCAT_NATIVE_LIBDIR" -type f -executable -exec ldd '{}' ';' 			| awk '/=>/ && $(NF-1) != "=>" { print $(NF-1) }' 			| sort -u 			| xargs -r rpm --query --whatprovides 			| sort -u 	)"; 	[ -z "$deps" ] || yumdb set reason user $deps; 		yum autoremove -y; 	yum clean all; 	rm -rf /var/cache/yum; 		find ./bin/ -name '*.sh' -exec sed -ri 's|^#!/bin/sh$|#!/usr/bin/env bash|' '{}' +; 		chmod -R +rX .; 	chmod 777 logs work
-# Thu, 22 Aug 2019 00:30:50 GMT
+# Fri, 06 Sep 2019 00:28:09 GMT
 RUN set -e 	&& nativeLines="$(catalina.sh configtest 2>&1)" 	&& nativeLines="$(echo "$nativeLines" | grep 'Apache Tomcat Native')" 	&& nativeLines="$(echo "$nativeLines" | sort -u)" 	&& if ! echo "$nativeLines" | grep 'INFO: Loaded APR based Apache Tomcat Native library' >&2; then 		echo >&2 "$nativeLines"; 		exit 1; 	fi
-# Thu, 22 Aug 2019 00:30:50 GMT
+# Fri, 06 Sep 2019 00:28:09 GMT
 EXPOSE 8080
-# Thu, 22 Aug 2019 00:30:51 GMT
+# Fri, 06 Sep 2019 00:28:09 GMT
 CMD ["catalina.sh" "run"]
 ```
 
 -	Layers:
-	-	`sha256:72d97abdfae3b3c933ff41e39779cc72853d7bd9dc1e4800c5294d6715257799`  
-		Last Modified: Thu, 23 May 2019 22:22:16 GMT  
-		Size: 61.3 MB (61285177 bytes)  
+	-	`sha256:4910da0c66710ed2414cd0223e48cbeed94209b9c77053dc30d48532a651dd22`  
+		Last Modified: Thu, 05 Sep 2019 23:38:39 GMT  
+		Size: 61.7 MB (61665831 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c13d17f3a543055e7f616629ad6825d21746252d0b8db4f1812c86b11e3fdc96`  
-		Last Modified: Tue, 30 Jul 2019 23:20:57 GMT  
-		Size: 121.5 MB (121482783 bytes)  
+	-	`sha256:c511e36daa9ce76f573699dfe6fabfac82254067f5ff99f2049f99d176ec919d`  
+		Last Modified: Fri, 06 Sep 2019 00:03:50 GMT  
+		Size: 121.5 MB (121533245 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:34afcacfc487c55714cfc7e34c35abe51c1a26be56d268883ecc929fa305f714`  
-		Last Modified: Tue, 30 Jul 2019 23:47:26 GMT  
-		Size: 139.0 B  
+	-	`sha256:fb8769d09d3f4236a9a84b65d19abf678fdd45df105a6e62a3924404dafa15af`  
+		Last Modified: Fri, 06 Sep 2019 00:31:09 GMT  
+		Size: 138.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c5e58502e3f96611ece65522abfcbb22461dfe4a38aafbc2467a47a3ce305b53`  
-		Last Modified: Thu, 22 Aug 2019 00:34:53 GMT  
-		Size: 13.4 MB (13421491 bytes)  
+	-	`sha256:dd81acf4b9d269719e64cf7902238ffe2875d7ad2e185fed687694c33704912b`  
+		Last Modified: Fri, 06 Sep 2019 00:31:29 GMT  
+		Size: 13.4 MB (13431837 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:7f557b6a41d0d81b65a4ff1eeae1239fff55ed8ff6e556db884f89da3fc26a6e`  
-		Last Modified: Thu, 22 Aug 2019 00:34:51 GMT  
+	-	`sha256:4c03db6767cf9449e15645bd45c825e93fbd2999981226fc57ed32e56a060b8f`  
+		Last Modified: Fri, 06 Sep 2019 00:31:27 GMT  
 		Size: 132.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `tomcat:jdk8-corretto` - linux; arm64 variant v8
 
 ```console
-$ docker pull tomcat@sha256:c62c60fe2da097e93c80e277be5bcae77b1125d5566a87d7e60087478bd84474
+$ docker pull tomcat@sha256:eeca3d7e2ca0295775b0165cae5d0439cc54e67a80ea469739be5c2684300ee3
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **180.8 MB (180763474 bytes)**  
+-	Total Size: **181.1 MB (181138486 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:1ccfe61327ef171af33a285e58e3868eb7e375d662a42c668a3837483f434df0`
+-	Image ID: `sha256:dc2aa448f1ee3a9c15092e795fae6b14e8cd261f1ebd249511d190787b501c7e`
 -	Default Command: `["catalina.sh","run"]`
 
 ```dockerfile
-# Thu, 23 May 2019 22:39:34 GMT
-ADD file:358a4a50e1cb5e7181b9cc49d23e60d7b0ba5ca2ce18ced74be5843836d54004 in / 
-# Thu, 23 May 2019 22:39:35 GMT
+# Thu, 05 Sep 2019 20:39:50 GMT
+ADD file:a72ff266718add2a5d4d63264fd3ce1f5191448aa441ffdb064ed570a651b36a in / 
+# Thu, 05 Sep 2019 20:39:51 GMT
 CMD ["/bin/bash"]
-# Tue, 30 Jul 2019 23:39:26 GMT
+# Thu, 05 Sep 2019 23:11:35 GMT
 ARG rpm_x64=java-1.8.0-amazon-corretto-devel-1.8.0_222.b10-1.x86_64.rpm
-# Tue, 30 Jul 2019 23:39:27 GMT
+# Thu, 05 Sep 2019 23:11:35 GMT
 ARG path_x64=https://d3pxv6yz143wms.cloudfront.net/8.222.10.1
-# Tue, 30 Jul 2019 23:39:27 GMT
+# Thu, 05 Sep 2019 23:11:35 GMT
 ARG key_x64=C554E802F4545B60919A0A87BD93DF06B540D62A
-# Tue, 30 Jul 2019 23:39:27 GMT
+# Thu, 05 Sep 2019 23:11:36 GMT
 ARG rpm_aarch64=java-1.8.0-amazon-corretto-devel-1.8.0_222.b10-4.aarch64.rpm
-# Tue, 30 Jul 2019 23:39:28 GMT
+# Thu, 05 Sep 2019 23:11:36 GMT
 ARG path_aarch64=https://d3pxv6yz143wms.cloudfront.net/8.222.10.4
-# Tue, 30 Jul 2019 23:39:28 GMT
+# Thu, 05 Sep 2019 23:11:36 GMT
 ARG key_aarch64=826272FACCCCC8E76897C26CE9B1F93E1A158134
-# Tue, 30 Jul 2019 23:40:33 GMT
+# Thu, 05 Sep 2019 23:12:00 GMT
 # ARGS: key_aarch64=826272FACCCCC8E76897C26CE9B1F93E1A158134 key_x64=C554E802F4545B60919A0A87BD93DF06B540D62A path_aarch64=https://d3pxv6yz143wms.cloudfront.net/8.222.10.4 path_x64=https://d3pxv6yz143wms.cloudfront.net/8.222.10.1 rpm_aarch64=java-1.8.0-amazon-corretto-devel-1.8.0_222.b10-4.aarch64.rpm rpm_x64=java-1.8.0-amazon-corretto-devel-1.8.0_222.b10-1.x86_64.rpm
 RUN set -eux;     case "$(uname -p)" in         x86_64) rpm=$rpm_x64; path=$path_x64; key=$key_x64 ;;         aarch64) rpm=$rpm_aarch64; path=$path_aarch64; key=$key_aarch64 ;;         *) echo >&2 "Unsupported architecture $(uname -p)."; exit 1 ;;     esac;         curl -O $path/$rpm     && export GNUPGHOME="$(mktemp -d)"     && gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys $key     && gpg --armor --export $key > corretto.asc     && rpm --import corretto.asc     && rpm -K $rpm     && rpm -i $rpm     && rm -r $GNUPGHOME corretto.asc $rpm     && yum install -y fontconfig     && yum clean all
-# Tue, 30 Jul 2019 23:40:34 GMT
+# Thu, 05 Sep 2019 23:12:01 GMT
 ENV JAVA_HOME=/usr/lib/jvm/java-1.8.0-amazon-corretto
-# Wed, 31 Jul 2019 22:08:23 GMT
+# Fri, 06 Sep 2019 00:24:08 GMT
 ENV CATALINA_HOME=/usr/local/tomcat
-# Wed, 31 Jul 2019 22:08:23 GMT
+# Fri, 06 Sep 2019 00:24:09 GMT
 ENV PATH=/usr/local/tomcat/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Wed, 31 Jul 2019 22:08:24 GMT
+# Fri, 06 Sep 2019 00:24:12 GMT
 RUN mkdir -p "$CATALINA_HOME"
-# Wed, 31 Jul 2019 22:08:25 GMT
+# Fri, 06 Sep 2019 00:24:16 GMT
 WORKDIR /usr/local/tomcat
-# Wed, 31 Jul 2019 22:08:25 GMT
+# Fri, 06 Sep 2019 00:24:17 GMT
 ENV TOMCAT_NATIVE_LIBDIR=/usr/local/tomcat/native-jni-lib
-# Wed, 31 Jul 2019 22:08:25 GMT
+# Fri, 06 Sep 2019 00:24:18 GMT
 ENV LD_LIBRARY_PATH=/usr/local/tomcat/native-jni-lib
-# Wed, 31 Jul 2019 22:11:54 GMT
+# Fri, 06 Sep 2019 00:29:13 GMT
 ENV GPG_KEYS=05AB33110949707C93A279E3D3EFE6B686867BA6 07E48665A34DCAFAE522E5E6266191C37C037D42 47309207D818FFD8DCD3F83F1931D684307A10A5 541FBE7D8F78B25E055DDEE13C370389288584E7 61B832AC2F1C5A90F0F9B00A1C506407564C17A3 713DA88BE50911535FE716F5208B0AB1D63011C7 79F7026C690BAA50B92CD8B66A3AD3F4F22C4FED 9BA44C2621385CB966EBA586F72C284D731FABEE A27677289986DB50844682F8ACB77FC2E86E29AC A9C5DF4D22E99998D9875A5110C01C5A2F6059E7 DCFD35E0BF8CA7344752DE8B6FB21E8933C60243 F3A04C595DB5B6A5F1ECA43E3B7BBB100D811BBE F7DA48BB64BCB84ECBA7EE6935CD23C10D498E23
-# Wed, 31 Jul 2019 22:11:54 GMT
+# Fri, 06 Sep 2019 00:29:16 GMT
 ENV TOMCAT_MAJOR=8
-# Thu, 22 Aug 2019 00:05:04 GMT
+# Fri, 06 Sep 2019 00:29:20 GMT
 ENV TOMCAT_VERSION=8.5.45
-# Thu, 22 Aug 2019 00:05:05 GMT
+# Fri, 06 Sep 2019 00:29:22 GMT
 ENV TOMCAT_SHA512=4276a97b91aad204b393578b11266adff9fc5595ec5b0e0818b9343c9b741969bc162ae6933099799ab6c49f3ccb02ccb9bbf7df71e83832ef623a3ee6bee25a
-# Thu, 22 Aug 2019 00:06:13 GMT
+# Fri, 06 Sep 2019 00:31:08 GMT
 RUN set -eux; 		if ! command -v yumdb > /dev/null; then 		yum install -y yum-utils; 		yumdb set reason dep yum-utils; 	fi; 	if [ -f /etc/oracle-release ]; then 		yumdb set reason user filesystem; 	fi; 	_yum_install_temporary() { ( set -eu +x; 		local pkg todo=''; 		for pkg; do 			if ! rpm --query "$pkg" > /dev/null 2>&1; then 				todo="$todo $pkg"; 			fi; 		done; 		if [ -n "$todo" ]; then 			set -x; 			yum install -y $todo; 			yumdb set reason dep $todo; 		fi; 	) }; 	_yum_install_temporary gzip tar; 		ddist() { 		local f="$1"; shift; 		local distFile="$1"; shift; 		local success=; 		local distUrl=; 		for distUrl in 			'https://www.apache.org/dyn/closer.cgi?action=download&filename=' 			https://www-us.apache.org/dist/ 			https://www.apache.org/dist/ 			https://archive.apache.org/dist/ 		; do 			if curl -fL -o "$f" "$distUrl$distFile" && [ -s "$f" ]; then 				success=1; 				break; 			fi; 		done; 		[ -n "$success" ]; 	}; 		ddist 'tomcat.tar.gz' "tomcat/tomcat-$TOMCAT_MAJOR/v$TOMCAT_VERSION/bin/apache-tomcat-$TOMCAT_VERSION.tar.gz"; 	echo "$TOMCAT_SHA512 *tomcat.tar.gz" | sha512sum --strict --check -; 	ddist 'tomcat.tar.gz.asc' "tomcat/tomcat-$TOMCAT_MAJOR/v$TOMCAT_VERSION/bin/apache-tomcat-$TOMCAT_VERSION.tar.gz.asc"; 	export GNUPGHOME="$(mktemp -d)"; 	for key in $GPG_KEYS; do 		gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys "$key"; 	done; 	gpg --batch --verify tomcat.tar.gz.asc tomcat.tar.gz; 	tar -xf tomcat.tar.gz --strip-components=1; 	rm bin/*.bat; 	rm tomcat.tar.gz*; 	command -v gpgconf && gpgconf --kill all || :; 	rm -rf "$GNUPGHOME"; 		nativeBuildDir="$(mktemp -d)"; 	tar -xf bin/tomcat-native.tar.gz -C "$nativeBuildDir" --strip-components=1; 	_yum_install_temporary 		apr-devel 		gcc 		make 		openssl-devel 	; 	( 		export CATALINA_HOME="$PWD"; 		cd "$nativeBuildDir/native"; 		aprConfig="$(command -v apr-1-config)"; 		./configure 			--libdir="$TOMCAT_NATIVE_LIBDIR" 			--prefix="$CATALINA_HOME" 			--with-apr="$aprConfig" 			--with-java-home="$JAVA_HOME" 			--with-ssl=yes; 		make -j "$(nproc)"; 		make install; 	); 	rm -rf "$nativeBuildDir"; 	rm bin/tomcat-native.tar.gz; 		deps="$( 		find "$TOMCAT_NATIVE_LIBDIR" -type f -executable -exec ldd '{}' ';' 			| awk '/=>/ && $(NF-1) != "=>" { print $(NF-1) }' 			| sort -u 			| xargs -r rpm --query --whatprovides 			| sort -u 	)"; 	[ -z "$deps" ] || yumdb set reason user $deps; 		yum autoremove -y; 	yum clean all; 	rm -rf /var/cache/yum; 		find ./bin/ -name '*.sh' -exec sed -ri 's|^#!/bin/sh$|#!/usr/bin/env bash|' '{}' +; 		chmod -R +rX .; 	chmod 777 logs work
-# Thu, 22 Aug 2019 00:06:17 GMT
+# Fri, 06 Sep 2019 00:31:16 GMT
 RUN set -e 	&& nativeLines="$(catalina.sh configtest 2>&1)" 	&& nativeLines="$(echo "$nativeLines" | grep 'Apache Tomcat Native')" 	&& nativeLines="$(echo "$nativeLines" | sort -u)" 	&& if ! echo "$nativeLines" | grep 'INFO: Loaded APR based Apache Tomcat Native library' >&2; then 		echo >&2 "$nativeLines"; 		exit 1; 	fi
-# Thu, 22 Aug 2019 00:06:17 GMT
+# Fri, 06 Sep 2019 00:31:17 GMT
 EXPOSE 8080
-# Thu, 22 Aug 2019 00:06:18 GMT
+# Fri, 06 Sep 2019 00:31:17 GMT
 CMD ["catalina.sh" "run"]
 ```
 
 -	Layers:
-	-	`sha256:0c8ee56cea53bee75dce23897c1c0f77aa13a698e7b49d9f20c788cef45fadea`  
-		Last Modified: Thu, 23 May 2019 22:40:27 GMT  
-		Size: 62.5 MB (62453151 bytes)  
+	-	`sha256:e75eebfae1ce8742ae53a518590bca4735e2a5dbfa46418fa709591a7b42e522`  
+		Last Modified: Thu, 05 Sep 2019 20:43:10 GMT  
+		Size: 62.8 MB (62797593 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:269e06f3b7489c1b941db3fc6cf17c76a7bf613b18a6aeff9d25c7144b85ae6a`  
-		Last Modified: Tue, 30 Jul 2019 23:42:10 GMT  
-		Size: 104.9 MB (104888017 bytes)  
+	-	`sha256:825292fe21ae21fe00976ccad2471578d1a289980b1ea830f4e0ad1990422166`  
+		Last Modified: Thu, 05 Sep 2019 23:13:17 GMT  
+		Size: 104.9 MB (104911609 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c1a0e5239e6a06f59af8cf4b3646b582c250ec4bcd6c3ebc520395b4e288e047`  
-		Last Modified: Wed, 31 Jul 2019 22:15:34 GMT  
-		Size: 172.0 B  
+	-	`sha256:babaad70d6b41a7c0adfcbf58979816fb28f3415b9bc800fb9f306bed8742129`  
+		Last Modified: Fri, 06 Sep 2019 00:35:19 GMT  
+		Size: 171.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c7ec0ab5cea7606382441e62dae04fecd703aef01dc149c2cd597e923194db50`  
-		Last Modified: Thu, 22 Aug 2019 00:09:01 GMT  
-		Size: 13.4 MB (13421969 bytes)  
+	-	`sha256:ec7b19822248b0ae26cb17e3b2529fc4bc2f3227ec5f7d845d81599c3eed6457`  
+		Last Modified: Fri, 06 Sep 2019 00:35:54 GMT  
+		Size: 13.4 MB (13428949 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:8a1903d8bf96ab016dfb175296b536ba87f2e5e5b5d8ab4eb6b91baa54b4b651`  
-		Last Modified: Thu, 22 Aug 2019 00:08:40 GMT  
-		Size: 165.0 B  
+	-	`sha256:4bc44f97a34fdab5a5ef0d049d7697cbeca334757ff92ac3e080f49e6b06cbb3`  
+		Last Modified: Fri, 06 Sep 2019 00:35:50 GMT  
+		Size: 164.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `tomcat:jdk8-openjdk`
