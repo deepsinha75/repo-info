@@ -1,9 +1,9 @@
-# `gradle:5.6.1-jre12`
+# `gradle:5.6.2-jre12`
 
 ## Docker Metadata
 
-- Image ID: `sha256:53e5e4198d2ccd72a2c913f3d9169a01a467c05f74a37886b31c5df1f0c8e17a`
-- Created: `2019-08-29T21:37:10.456930395Z`
+- Image ID: `sha256:af0e2af51c4d0bc2dc2eb3bfd272156592755ba2a9184b9a408cc30ac6f0d24c`
+- Created: `2019-09-06T17:27:37.496740195Z`
 - Virtual Size: ~ 482.31 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
@@ -16,7 +16,7 @@
   - `JAVA_VERSION=jdk-12.0.2+10`
   - `JAVA_HOME=/opt/java/openjdk`
   - `GRADLE_HOME=/opt/gradle`
-  - `GRADLE_VERSION=5.6.1`
+  - `GRADLE_VERSION=5.6.2`
 
 ## `dpkg` (`.deb`-based packages)
 
@@ -1808,14 +1808,9 @@ Licenses: (parsed from: `/usr/share/doc/libpython2.7-minimal/copyright`, `/usr/s
 - `implied`
 - `see above, some license as Python`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris python2.7=2.7.15-4ubuntu4~18.04
-'http://archive.ubuntu.com/ubuntu/pool/main/p/python2.7/python2.7_2.7.15-4ubuntu4~18.04.dsc' python2.7_2.7.15-4ubuntu4~18.04.dsc 3143 SHA256:9de61aa6573d57aac4e7fbc0c23730cd56400eb6f82341cea10960e4c0f15d3f
-'http://archive.ubuntu.com/ubuntu/pool/main/p/python2.7/python2.7_2.7.15.orig.tar.gz' python2.7_2.7.15.orig.tar.gz 17496336 SHA256:18617d1f15a380a919d517630a9cd85ce17ea602f9bbdc58ddc672df4b0239db
-'http://archive.ubuntu.com/ubuntu/pool/main/p/python2.7/python2.7_2.7.15-4ubuntu4~18.04.diff.gz' python2.7_2.7.15-4ubuntu4~18.04.diff.gz 543312 SHA256:88a11982a4a7b46aa93d62e27ecb327dea46930039238b7451b22273d240cf29
-```
 
 ### `dpkg` source package: `readline=7.0-3`
 
