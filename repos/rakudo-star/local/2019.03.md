@@ -204,19 +204,13 @@ Licenses: (parsed from: `/usr/share/doc/base-files/copyright`)
 
 - `GPL`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris base-files=9.9+deb9u9
-'http://deb.debian.org/debian/pool/main/b/base-files/base-files_9.9+deb9u9.dsc' base-files_9.9+deb9u9.dsc 1095 SHA256:3e239985d47ee0d4c581b588669955c92c8fab976e915212ac77b383e21b217f
-'http://deb.debian.org/debian/pool/main/b/base-files/base-files_9.9+deb9u9.tar.xz' base-files_9.9+deb9u9.tar.xz 63068 SHA256:be4c432570e32ad1598c1105cd4fb87b4bf6df3d7fef1646b1f2ed30b298fd7f
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/base-files/9.9+deb9u9/
 
-- https://sources.debian.net/src/base-files/9.9+deb9u9/ (for browsing the source)
-- https://sources.debian.net/src/base-files/9.9+deb9u9/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/base-files/9.9+deb9u9/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `base-passwd=3.5.43`
 
@@ -727,9 +721,9 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris expat=2.2.0-2+deb9u2
-'http://security.debian.org/debian-security/pool/updates/main/e/expat/expat_2.2.0-2+deb9u2.dsc' expat_2.2.0-2+deb9u2.dsc 2295 SHA256:20e066f87a64bc5b1aa6c66fdbf042e651691aa758dc8eb9dfbb454cf78c4bb9
-'http://security.debian.org/debian-security/pool/updates/main/e/expat/expat_2.2.0.orig.tar.bz2' expat_2.2.0.orig.tar.bz2 414352 SHA256:d9e50ff2d19b3538bd2127902a89987474e1a4db8e43a66a4d1a712ab9a504ff
-'http://security.debian.org/debian-security/pool/updates/main/e/expat/expat_2.2.0-2+deb9u2.debian.tar.xz' expat_2.2.0-2+deb9u2.debian.tar.xz 11740 SHA256:d15e1b691054dc44388d9fa3d9e93fa88244245037eb19e9b2201ac803226284
+'http://deb.debian.org/debian/pool/main/e/expat/expat_2.2.0-2+deb9u2.dsc' expat_2.2.0-2+deb9u2.dsc 2295 SHA256:20e066f87a64bc5b1aa6c66fdbf042e651691aa758dc8eb9dfbb454cf78c4bb9
+'http://deb.debian.org/debian/pool/main/e/expat/expat_2.2.0.orig.tar.bz2' expat_2.2.0.orig.tar.bz2 414352 SHA256:d9e50ff2d19b3538bd2127902a89987474e1a4db8e43a66a4d1a712ab9a504ff
+'http://deb.debian.org/debian/pool/main/e/expat/expat_2.2.0-2+deb9u2.debian.tar.xz' expat_2.2.0-2+deb9u2.debian.tar.xz 11740 SHA256:d15e1b691054dc44388d9fa3d9e93fa88244245037eb19e9b2201ac803226284
 ```
 
 Other potentially useful URLs:
@@ -2081,20 +2075,13 @@ Binary Packages:
 If source is available (seen below), check the contents of `debian/copyright` within it.
 
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris openldap=2.4.44+dfsg-5+deb9u2
-'http://deb.debian.org/debian/pool/main/o/openldap/openldap_2.4.44+dfsg-5+deb9u2.dsc' openldap_2.4.44+dfsg-5+deb9u2.dsc 3009 SHA256:ae0c40405c3392a3fef5a97b05fc859a8c76695a9c9bbdf6714e94c4a2280cd7
-'http://deb.debian.org/debian/pool/main/o/openldap/openldap_2.4.44+dfsg.orig.tar.gz' openldap_2.4.44+dfsg.orig.tar.gz 4826590 SHA256:d5187c229bec163c5d97845846e1b87917755f85b04f444c08836384f4bd7ffe
-'http://deb.debian.org/debian/pool/main/o/openldap/openldap_2.4.44+dfsg-5+deb9u2.debian.tar.xz' openldap_2.4.44+dfsg-5+deb9u2.debian.tar.xz 166372 SHA256:667558ef0a98ee9a6ea92061ed24a1b193ebd7185203a919bf21be922623b801
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/openldap/2.4.44+dfsg-5+deb9u2/
 
-- https://sources.debian.net/src/openldap/2.4.44+dfsg-5+deb9u2/ (for browsing the source)
-- https://sources.debian.net/src/openldap/2.4.44+dfsg-5+deb9u2/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/openldap/2.4.44+dfsg-5+deb9u2/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `openssh=1:7.4p1-10+deb9u6`
 
@@ -2118,9 +2105,9 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris openssh=1:7.4p1-10+deb9u6
-'http://deb.debian.org/debian/pool/main/o/openssh/openssh_7.4p1-10+deb9u6.dsc' openssh_7.4p1-10+deb9u6.dsc 3079 SHA256:fa095ccdb143684092f0ca9671d46cd9587872324846e20ad6b022704557c403
-'http://deb.debian.org/debian/pool/main/o/openssh/openssh_7.4p1.orig.tar.gz' openssh_7.4p1.orig.tar.gz 1511780 SHA256:1b1fc4a14e2024293181924ed24872e6f2e06293f3e8926a376b8aec481f19d1
-'http://deb.debian.org/debian/pool/main/o/openssh/openssh_7.4p1-10+deb9u6.debian.tar.xz' openssh_7.4p1-10+deb9u6.debian.tar.xz 170724 SHA256:e5b5fb4bbcb11134d9c666e6763d8a2b0a097efe389013447bddcb39a261bc94
+'http://security.debian.org/debian-security/pool/updates/main/o/openssh/openssh_7.4p1-10+deb9u6.dsc' openssh_7.4p1-10+deb9u6.dsc 3079 SHA256:fa095ccdb143684092f0ca9671d46cd9587872324846e20ad6b022704557c403
+'http://security.debian.org/debian-security/pool/updates/main/o/openssh/openssh_7.4p1.orig.tar.gz' openssh_7.4p1.orig.tar.gz 1511780 SHA256:1b1fc4a14e2024293181924ed24872e6f2e06293f3e8926a376b8aec481f19d1
+'http://security.debian.org/debian-security/pool/updates/main/o/openssh/openssh_7.4p1-10+deb9u6.debian.tar.xz' openssh_7.4p1-10+deb9u6.debian.tar.xz 170724 SHA256:e5b5fb4bbcb11134d9c666e6763d8a2b0a097efe389013447bddcb39a261bc94
 ```
 
 Other potentially useful URLs:
@@ -2143,10 +2130,10 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris openssl1.0=1.0.2s-1~deb9u1
-'http://security.debian.org/debian-security/pool/updates/main/o/openssl1.0/openssl1.0_1.0.2s-1~deb9u1.dsc' openssl1.0_1.0.2s-1~deb9u1.dsc 2383 SHA256:0561eaa55e724d61fbbf30c4207a09e66b7e64c40959c8eb184df9bb53e7db64
-'http://security.debian.org/debian-security/pool/updates/main/o/openssl1.0/openssl1.0_1.0.2s.orig.tar.gz' openssl1.0_1.0.2s.orig.tar.gz 5349149 SHA256:cabd5c9492825ce5bd23f3c3aeed6a97f8142f606d893df216411f07d1abab96
-'http://security.debian.org/debian-security/pool/updates/main/o/openssl1.0/openssl1.0_1.0.2s.orig.tar.gz.asc' openssl1.0_1.0.2s.orig.tar.gz.asc 833 SHA256:9e3c99f4eafbb37d15eaf567057ed670e25d4d39f6b049c4bb097980449eb3c0
-'http://security.debian.org/debian-security/pool/updates/main/o/openssl1.0/openssl1.0_1.0.2s-1~deb9u1.debian.tar.xz' openssl1.0_1.0.2s-1~deb9u1.debian.tar.xz 94636 SHA256:70cb805b84c4e0cd53b2db292de8d078c1d0eed53c9aacf588be72e6e5c5415d
+'http://deb.debian.org/debian/pool/main/o/openssl1.0/openssl1.0_1.0.2s-1~deb9u1.dsc' openssl1.0_1.0.2s-1~deb9u1.dsc 2383 SHA256:0561eaa55e724d61fbbf30c4207a09e66b7e64c40959c8eb184df9bb53e7db64
+'http://deb.debian.org/debian/pool/main/o/openssl1.0/openssl1.0_1.0.2s.orig.tar.gz' openssl1.0_1.0.2s.orig.tar.gz 5349149 SHA256:cabd5c9492825ce5bd23f3c3aeed6a97f8142f606d893df216411f07d1abab96
+'http://deb.debian.org/debian/pool/main/o/openssl1.0/openssl1.0_1.0.2s.orig.tar.gz.asc' openssl1.0_1.0.2s.orig.tar.gz.asc 833 SHA256:9e3c99f4eafbb37d15eaf567057ed670e25d4d39f6b049c4bb097980449eb3c0
+'http://deb.debian.org/debian/pool/main/o/openssl1.0/openssl1.0_1.0.2s-1~deb9u1.debian.tar.xz' openssl1.0_1.0.2s-1~deb9u1.debian.tar.xz 94636 SHA256:70cb805b84c4e0cd53b2db292de8d078c1d0eed53c9aacf588be72e6e5c5415d
 ```
 
 Other potentially useful URLs:
@@ -2170,10 +2157,10 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris openssl=1.1.0k-1~deb9u1
-'http://security.debian.org/debian-security/pool/updates/main/o/openssl/openssl_1.1.0k-1~deb9u1.dsc' openssl_1.1.0k-1~deb9u1.dsc 2437 SHA256:81d1127296775e23080740d8bd0f8b8696f0edd6a8cd5c87d95f2dea23d128d9
-'http://security.debian.org/debian-security/pool/updates/main/o/openssl/openssl_1.1.0k.orig.tar.gz' openssl_1.1.0k.orig.tar.gz 5287321 SHA256:efa4965f4f773574d6cbda1cf874dbbe455ab1c0d4f906115f867d30444470b1
-'http://security.debian.org/debian-security/pool/updates/main/o/openssl/openssl_1.1.0k.orig.tar.gz.asc' openssl_1.1.0k.orig.tar.gz.asc 833 SHA256:82b4338a150147d3c67a0bc0aa1ae4b209b8dc985af2bf523d72097bdf12a743
-'http://security.debian.org/debian-security/pool/updates/main/o/openssl/openssl_1.1.0k-1~deb9u1.debian.tar.xz' openssl_1.1.0k-1~deb9u1.debian.tar.xz 71996 SHA256:782054f0183e65469f97402cecff23c0d9fc00a026f263afbca3ba77415ffa27
+'http://deb.debian.org/debian/pool/main/o/openssl/openssl_1.1.0k-1~deb9u1.dsc' openssl_1.1.0k-1~deb9u1.dsc 2437 SHA256:81d1127296775e23080740d8bd0f8b8696f0edd6a8cd5c87d95f2dea23d128d9
+'http://deb.debian.org/debian/pool/main/o/openssl/openssl_1.1.0k.orig.tar.gz' openssl_1.1.0k.orig.tar.gz 5287321 SHA256:efa4965f4f773574d6cbda1cf874dbbe455ab1c0d4f906115f867d30444470b1
+'http://deb.debian.org/debian/pool/main/o/openssl/openssl_1.1.0k.orig.tar.gz.asc' openssl_1.1.0k.orig.tar.gz.asc 833 SHA256:82b4338a150147d3c67a0bc0aa1ae4b209b8dc985af2bf523d72097bdf12a743
+'http://deb.debian.org/debian/pool/main/o/openssl/openssl_1.1.0k-1~deb9u1.debian.tar.xz' openssl_1.1.0k-1~deb9u1.debian.tar.xz 71996 SHA256:782054f0183e65469f97402cecff23c0d9fc00a026f263afbca3ba77415ffa27
 ```
 
 Other potentially useful URLs:
@@ -2666,9 +2653,9 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris subversion=1.9.5-1+deb9u4
-'http://security.debian.org/debian-security/pool/updates/main/s/subversion/subversion_1.9.5-1+deb9u4.dsc' subversion_1.9.5-1+deb9u4.dsc 3077 SHA256:3077b153f0f10f16db5433396a3170006e8cf41eadaf166c4fbac2874b74b71b
-'http://security.debian.org/debian-security/pool/updates/main/s/subversion/subversion_1.9.5.orig.tar.gz' subversion_1.9.5.orig.tar.gz 10615674 SHA256:280ba586c5d51d7b976b65d22d5e8e42f3908ed1c968d71120dcf534ce857a83
-'http://security.debian.org/debian-security/pool/updates/main/s/subversion/subversion_1.9.5-1+deb9u4.diff.gz' subversion_1.9.5-1+deb9u4.diff.gz 2547685 SHA256:c72e9a46bcd488a166957e0c5a3ae4225413fdeaddd95c529962de8b35414f74
+'http://deb.debian.org/debian/pool/main/s/subversion/subversion_1.9.5-1+deb9u4.dsc' subversion_1.9.5-1+deb9u4.dsc 3077 SHA256:3077b153f0f10f16db5433396a3170006e8cf41eadaf166c4fbac2874b74b71b
+'http://deb.debian.org/debian/pool/main/s/subversion/subversion_1.9.5.orig.tar.gz' subversion_1.9.5.orig.tar.gz 10615674 SHA256:280ba586c5d51d7b976b65d22d5e8e42f3908ed1c968d71120dcf534ce857a83
+'http://deb.debian.org/debian/pool/main/s/subversion/subversion_1.9.5-1+deb9u4.diff.gz' subversion_1.9.5-1+deb9u4.diff.gz 2547685 SHA256:c72e9a46bcd488a166957e0c5a3ae4225413fdeaddd95c529962de8b35414f74
 ```
 
 Other potentially useful URLs:
@@ -2698,9 +2685,9 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris systemd=232-25+deb9u11
-'http://deb.debian.org/debian/pool/main/s/systemd/systemd_232-25+deb9u11.dsc' systemd_232-25+deb9u11.dsc 4801 SHA256:afc41f50bc973f3d483aee66c9e6d9c66a0974bd77ed5daf164e3c8d57e03222
-'http://deb.debian.org/debian/pool/main/s/systemd/systemd_232.orig.tar.gz' systemd_232.orig.tar.gz 4529048 SHA256:1172c7c7d5d72fbded53186e7599d5272231f04cc8b72f9a0fb2c5c20dfc4880
-'http://deb.debian.org/debian/pool/main/s/systemd/systemd_232-25+deb9u11.debian.tar.xz' systemd_232-25+deb9u11.debian.tar.xz 221496 SHA256:0e3f326944a8f4c348a648c783d145fd616c9e42186c4efb7a20f737040a97bb
+'http://security.debian.org/debian-security/pool/updates/main/s/systemd/systemd_232-25+deb9u11.dsc' systemd_232-25+deb9u11.dsc 4801 SHA256:afc41f50bc973f3d483aee66c9e6d9c66a0974bd77ed5daf164e3c8d57e03222
+'http://security.debian.org/debian-security/pool/updates/main/s/systemd/systemd_232.orig.tar.gz' systemd_232.orig.tar.gz 4529048 SHA256:1172c7c7d5d72fbded53186e7599d5272231f04cc8b72f9a0fb2c5c20dfc4880
+'http://security.debian.org/debian-security/pool/updates/main/s/systemd/systemd_232-25+deb9u11.debian.tar.xz' systemd_232-25+deb9u11.debian.tar.xz 221496 SHA256:0e3f326944a8f4c348a648c783d145fd616c9e42186c4efb7a20f737040a97bb
 ```
 
 Other potentially useful URLs:
@@ -2770,20 +2757,13 @@ Binary Packages:
 If source is available (seen below), check the contents of `debian/copyright` within it.
 
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris tzdata=2019a-0+deb9u1
-'http://deb.debian.org/debian/pool/main/t/tzdata/tzdata_2019a-0+deb9u1.dsc' tzdata_2019a-0+deb9u1.dsc 2029 SHA256:a4a40761510436e037bead94747441ef871987607737d47d703f73bbfbced796
-'http://deb.debian.org/debian/pool/main/t/tzdata/tzdata_2019a.orig.tar.gz' tzdata_2019a.orig.tar.gz 378961 SHA256:90366ddf4aa03e37a16cd49255af77f801822310b213f195e2206ead48c59772
-'http://deb.debian.org/debian/pool/main/t/tzdata/tzdata_2019a-0+deb9u1.debian.tar.xz' tzdata_2019a-0+deb9u1.debian.tar.xz 101712 SHA256:b0e0a67122cb464901afa4a910d21da0bca86ef799875e54ba4cf3d5c54a5c92
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/tzdata/2019a-0+deb9u1/
 
-- https://sources.debian.net/src/tzdata/2019a-0+deb9u1/ (for browsing the source)
-- https://sources.debian.net/src/tzdata/2019a-0+deb9u1/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/tzdata/2019a-0+deb9u1/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `ucf=3.0036`
 
