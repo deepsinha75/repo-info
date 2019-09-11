@@ -1,7 +1,7 @@
 ## `nextcloud:15-apache`
 
 ```console
-$ docker pull nextcloud@sha256:4461c45aa062a007427247f4bda3562173993571e832db3f920e82d48a33287d
+$ docker pull nextcloud@sha256:4e6bf7125069b2a6790d61bdb55f0bb0474a7c4f2f166173d54955bcd177b8e9
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -207,14 +207,14 @@ CMD ["apache2-foreground"]
 ### `nextcloud:15-apache` - linux; arm variant v5
 
 ```console
-$ docker pull nextcloud@sha256:213bac82631db4c71bc5734b8cf2a70c765a5b54cbc3b278b04b212699ed0914
+$ docker pull nextcloud@sha256:c81e17132b216f275803b8c66545d01e96526d31e46cdb92881ae554ac758495
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **207.3 MB (207268508 bytes)**  
+-	Total Size: **207.3 MB (207268563 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:7d1988876f80bd82a97a7ce187103505b06ff7fac9050bf52824abaac14ccf4c`
+-	Image ID: `sha256:8a6a9c2f7432051c2a8921526c4863644c8bce049fbcf827ee723a4db54d6700`
 -	Entrypoint: `["\/entrypoint.sh"]`
 -	Default Command: `["apache2-foreground"]`
 
@@ -299,13 +299,13 @@ RUN a2enmod rewrite remoteip ;    {     echo RemoteIPHeader X-Real-IP ;     echo
 ENV NEXTCLOUD_VERSION=15.0.11
 # Tue, 03 Sep 2019 07:40:57 GMT
 RUN set -ex;     fetchDeps="         gnupg         dirmngr     ";     apt-get update;     apt-get install -y --no-install-recommends $fetchDeps;         curl -fsSL -o nextcloud.tar.bz2         "https://download.nextcloud.com/server/releases/nextcloud-${NEXTCLOUD_VERSION}.tar.bz2";     curl -fsSL -o nextcloud.tar.bz2.asc         "https://download.nextcloud.com/server/releases/nextcloud-${NEXTCLOUD_VERSION}.tar.bz2.asc";     export GNUPGHOME="$(mktemp -d)";     gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys 28806A878AE423A28372792ED75899B9A724937A;     gpg --batch --verify nextcloud.tar.bz2.asc nextcloud.tar.bz2;     tar -xjf nextcloud.tar.bz2 -C /usr/src/;     gpgconf --kill all;     rm -r "$GNUPGHOME" nextcloud.tar.bz2.asc nextcloud.tar.bz2;     rm -rf /usr/src/nextcloud/updater;     mkdir -p /usr/src/nextcloud/data;     mkdir -p /usr/src/nextcloud/custom_apps;     chmod +x /usr/src/nextcloud/occ;         apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false $fetchDeps;     rm -rf /var/lib/apt/lists/*
-# Tue, 03 Sep 2019 07:40:59 GMT
-COPY multi:0f224cb1e8731945e0f1457d5e62f85ad398ae4076d083149aaa81906a290cc8 in / 
-# Tue, 03 Sep 2019 07:41:00 GMT
-COPY multi:9a4680222e357af2c12045984ed1c1d152d75ad4795a090782d1318452db2987 in /usr/src/nextcloud/config/ 
-# Tue, 03 Sep 2019 07:41:00 GMT
+# Wed, 11 Sep 2019 03:11:40 GMT
+COPY multi:c7a3d262688197634c30c3eb0f5c04491be903f7b01bd82d9bb7a16915934dec in / 
+# Wed, 11 Sep 2019 03:11:42 GMT
+COPY multi:7eb7fef5c035fb14c3e35cf457ad436ecc70d6774faa6fef8a85e74984284c7d in /usr/src/nextcloud/config/ 
+# Wed, 11 Sep 2019 03:11:45 GMT
 ENTRYPOINT ["/entrypoint.sh"]
-# Tue, 03 Sep 2019 07:41:00 GMT
+# Wed, 11 Sep 2019 03:11:47 GMT
 CMD ["apache2-foreground"]
 ```
 
@@ -386,13 +386,13 @@ CMD ["apache2-foreground"]
 		Last Modified: Tue, 03 Sep 2019 07:55:49 GMT  
 		Size: 62.0 MB (62004160 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:769534ba781005682d65f833eb1e06e4ed6f9f3d0300e3cc0c1cc9041bb920fb`  
-		Last Modified: Tue, 03 Sep 2019 07:55:27 GMT  
-		Size: 2.0 KB (2047 bytes)  
+	-	`sha256:9d4bfef4495861ad4dc5bed611c1966c68422cd72d847f6cdac46a0cc50c271c`  
+		Last Modified: Wed, 11 Sep 2019 03:13:39 GMT  
+		Size: 2.1 KB (2098 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:50a3019ff545d9c5fedb49ef017a940e0409948b64fafd6c5a4739c7bcbe22bc`  
-		Last Modified: Tue, 03 Sep 2019 07:55:26 GMT  
-		Size: 1.1 KB (1133 bytes)  
+	-	`sha256:17bff60f4ea68dc90b1a3e9fa15abe767daec18a69f08fee3f3decdb94cdf28b`  
+		Last Modified: Wed, 11 Sep 2019 03:13:39 GMT  
+		Size: 1.1 KB (1137 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `nextcloud:15-apache` - linux; arm variant v7
