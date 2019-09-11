@@ -240,14 +240,13 @@ Licenses: (parsed from: `/usr/share/doc/binutils/copyright`, `/usr/share/doc/bin
 - `GPL`
 - `LGPL`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris binutils=2.32.51.20190727-1
-'http://http.debian.net/debian/pool/main/b/binutils/binutils_2.32.51.20190727-1.dsc' binutils_2.32.51.20190727-1.dsc 11301 SHA256:9ffca7adda82dd1d4811f8718f341863d4b8ee274b6f342e6fb901a1541e0935
-'http://http.debian.net/debian/pool/main/b/binutils/binutils_2.32.51.20190727.orig.tar.xz' binutils_2.32.51.20190727.orig.tar.xz 20884360 SHA256:365c44c979f856746e6c0190e3e79bcb67689907b0962f38934c40322bfbb53f
-'http://http.debian.net/debian/pool/main/b/binutils/binutils_2.32.51.20190727-1.debian.tar.xz' binutils_2.32.51.20190727-1.debian.tar.xz 87348 SHA256:05709c6ad1efd10f0cf4913d26ad4aa8ed2363ccbc26423d2d5ae4070f9c314f
-```
+The source package *may* still be available for download from:
+
+- http://snapshot.debian.org/package/binutils/2.32.51.20190727-1/
+
 
 ### `dpkg` source package: `boot=1.3-23-1`
 
@@ -807,20 +806,13 @@ Licenses: (parsed from: `/usr/share/doc/findutils/copyright`)
 - `GFDL-1.3`
 - `GPL-3`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris findutils=4.6.0+git+20190510-2
-'http://deb.debian.org/debian/pool/main/f/findutils/findutils_4.6.0+git+20190510-2.dsc' findutils_4.6.0+git+20190510-2.dsc 2143 SHA256:7bd545466c25fb7783697a6a120ecbab1eb5e328950a70c7597701b5d0140f0c
-'http://deb.debian.org/debian/pool/main/f/findutils/findutils_4.6.0+git+20190510.orig.tar.xz' findutils_4.6.0+git+20190510.orig.tar.xz 1898540 SHA256:4700c99d45e605d6ec24cae02e31b0ec53b0c93a8fd1ef04fca14a02926faf5d
-'http://deb.debian.org/debian/pool/main/f/findutils/findutils_4.6.0+git+20190510-2.debian.tar.xz' findutils_4.6.0+git+20190510-2.debian.tar.xz 26724 SHA256:c675897c05f7dd754994199ec49c2ef28688248830a84f72de194335c4fba54f
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/findutils/4.6.0+git+20190510-2/
 
-- https://sources.debian.net/src/findutils/4.6.0+git+20190510-2/ (for browsing the source)
-- https://sources.debian.net/src/findutils/4.6.0+git+20190510-2/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/findutils/4.6.0+git+20190510-2/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `fontconfig=2.13.1-2`
 
