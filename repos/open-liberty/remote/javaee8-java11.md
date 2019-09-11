@@ -1,7 +1,7 @@
 ## `open-liberty:javaee8-java11`
 
 ```console
-$ docker pull open-liberty@sha256:504d65fd547c387c7766236bbcb5d21aa261296d4eba7b35a5fd581de34cbd7c
+$ docker pull open-liberty@sha256:2f41a77498f2209eedf13a0995345a259174bfd55888e90b75bb677ded13ebf5
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -253,14 +253,14 @@ CMD ["/opt/ol/wlp/bin/server" "run" "defaultServer"]
 ### `open-liberty:javaee8-java11` - linux; s390x
 
 ```console
-$ docker pull open-liberty@sha256:6735d64ff05eb71a2a975bdc6738dcb29178c7a576b2da751029e96fe4e68f60
+$ docker pull open-liberty@sha256:564f8ffb551d2d914a7c11488568cd149f32fce6b780ecadbb8a17faaa12e92f
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **192.8 MB (192815482 bytes)**  
+-	Total Size: **192.8 MB (192815576 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:a5de3434d3671e8f4708c3e3be0e93f36c0f2f4fadd950619514d9a7eba4734e`
+-	Image ID: `sha256:fb60cd52d56b8aa938dcb8a77d844261a314211642b95135de27ecd849ed8d0d`
 -	Entrypoint: `["\/opt\/ol\/helpers\/runtime\/docker-server.sh"]`
 -	Default Command: `["\/opt\/ol\/wlp\/bin\/server","run","defaultServer"]`
 
@@ -297,30 +297,30 @@ ARG LIBERTY_BUILD_LABEL=cl190820190813-1136
 ARG LIBERTY_DOWNLOAD_URL=https://repo1.maven.org/maven2/io/openliberty/openliberty-javaee8/19.0.0.8/openliberty-javaee8-19.0.0.8.zip
 # Wed, 21 Aug 2019 05:59:58 GMT
 LABEL org.opencontainers.image.authors=Arthur De Magalhaes, Chris Potter org.opencontainers.image.vendor=Open Liberty org.opencontainers.image.url=https://openliberty.io/ org.opencontainers.image.source=https://github.com/OpenLiberty/ci.docker org.opencontainers.image.revision=cl190820190813-1136
-# Wed, 21 Aug 2019 05:59:58 GMT
-COPY dir:2689bef71d42e3013f31a424990cce08c48182f9bee0938604c66aa9c05251b4 in /opt/ol/helpers 
-# Wed, 21 Aug 2019 06:00:11 GMT
+# Wed, 11 Sep 2019 04:25:45 GMT
+COPY dir:74e367fd4ac222fd58ce8a1d4ef5592c7d49ee63ef65af6c9a71189af2181133 in /opt/ol/helpers 
+# Wed, 11 Sep 2019 04:25:57 GMT
 # ARGS: LIBERTY_BUILD_LABEL=cl190820190813-1136 LIBERTY_DOWNLOAD_URL=https://repo1.maven.org/maven2/io/openliberty/openliberty-javaee8/19.0.0.8/openliberty-javaee8-19.0.0.8.zip LIBERTY_SHA=9a51f233406a24f0c89c7063cd6387bcefb88e7c LIBERTY_VERSION=19.0.0.8
 RUN apt-get update     && apt-get install -y --no-install-recommends unzip openssl wget     && rm -rf /var/lib/apt/lists/*     && wget -q $LIBERTY_DOWNLOAD_URL -U UA-Open-Liberty-Docker -O /tmp/wlp.zip     && echo "$LIBERTY_SHA  /tmp/wlp.zip" > /tmp/wlp.zip.sha1     && sha1sum -c /tmp/wlp.zip.sha1     && unzip -q /tmp/wlp.zip -d /opt/ol     && rm /tmp/wlp.zip     && rm /tmp/wlp.zip.sha1     && apt-get remove -y unzip     && apt-get remove -y wget     && rm -rf /var/lib/apt/lists/*     && useradd -u 1001 -r -g 0 -s /usr/sbin/nologin default     && chown -R 1001:0 /opt/ol/wlp     && chmod -R g+rw /opt/ol/wlp
-# Wed, 21 Aug 2019 06:00:12 GMT
+# Wed, 11 Sep 2019 04:25:57 GMT
 ENV PATH=/opt/ol/wlp/bin:/opt/ol/docker/:/opt/ol/helpers/build:/opt/java/openjdk/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin LOG_DIR=/logs WLP_OUTPUT_DIR=/opt/ol/wlp/output WLP_SKIP_MAXPERMSIZE=true
-# Wed, 21 Aug 2019 06:00:13 GMT
+# Wed, 11 Sep 2019 04:25:58 GMT
 # ARGS: LIBERTY_BUILD_LABEL=cl190820190813-1136 LIBERTY_DOWNLOAD_URL=https://repo1.maven.org/maven2/io/openliberty/openliberty-javaee8/19.0.0.8/openliberty-javaee8-19.0.0.8.zip LIBERTY_SHA=9a51f233406a24f0c89c7063cd6387bcefb88e7c LIBERTY_VERSION=19.0.0.8
 RUN /opt/ol/wlp/bin/server create     && rm -rf $WLP_OUTPUT_DIR/.classCache /output/workarea
-# Wed, 21 Aug 2019 06:00:13 GMT
+# Wed, 11 Sep 2019 04:25:58 GMT
 ENV RANDFILE=/tmp/.rnd IBM_JAVA_OPTIONS=-Xshareclasses:name=liberty,nonfatal,cacheDir=/output/.classCache/ 
-# Wed, 21 Aug 2019 06:00:13 GMT
+# Wed, 11 Sep 2019 04:25:58 GMT
 COPY file:61ab4f403dec644521b1c9f99e2836a3aba7072444aca35a4748fe9eae6b6c30 in /opt/ol/wlp/lib/platform/java/ 
-# Wed, 21 Aug 2019 06:00:15 GMT
+# Wed, 11 Sep 2019 04:25:59 GMT
 # ARGS: LIBERTY_BUILD_LABEL=cl190820190813-1136 LIBERTY_DOWNLOAD_URL=https://repo1.maven.org/maven2/io/openliberty/openliberty-javaee8/19.0.0.8/openliberty-javaee8-19.0.0.8.zip LIBERTY_SHA=9a51f233406a24f0c89c7063cd6387bcefb88e7c LIBERTY_VERSION=19.0.0.8
 RUN mkdir /logs     && mkdir -p $WLP_OUTPUT_DIR/defaultServer     && ln -s $WLP_OUTPUT_DIR/defaultServer /output     && ln -s /opt/ol/wlp/usr/servers/defaultServer /config     && mkdir -p /config/configDropins/defaults     && mkdir -p /config/configDropins/overrides     && ln -s /opt/ol/wlp /liberty     && chown -R 1001:0 /opt/ol/wlp/lib/platform/java/java9.options     && chmod -R g+rw /opt/ol/wlp/lib/platform/java/java9.options     && mkdir -p /home/default     && chown -R 1001:0 /home/default     && chmod -R g+rw /home/default     && chown -R 1001:0 /config     && chmod -R g+rw /config     && chown -R 1001:0 /logs     && chmod -R g+rw /logs     && chown -R 1001:0 /opt/ol/wlp/usr     && chmod -R g+rw /opt/ol/wlp/usr     && chown -R 1001:0 /opt/ol/wlp/output     && chmod -R g+rw /opt/ol/wlp/output     && chown -R 1001:0 /opt/ol/helpers     && chmod -R g+rw /opt/ol/helpers     && mkdir /etc/wlp     && chown -R 1001:0 /etc/wlp     && chmod -R g+rw /etc/wlp     && echo "<server description=\"Default Server\"><httpEndpoint id=\"defaultHttpEndpoint\" host=\"*\" /></server>" > /config/configDropins/defaults/open-default-port.xml
-# Wed, 21 Aug 2019 06:00:15 GMT
+# Wed, 11 Sep 2019 04:25:59 GMT
 USER 1001
-# Wed, 21 Aug 2019 06:00:15 GMT
+# Wed, 11 Sep 2019 04:26:00 GMT
 EXPOSE 9080 9443
-# Wed, 21 Aug 2019 06:00:16 GMT
+# Wed, 11 Sep 2019 04:26:00 GMT
 ENTRYPOINT ["/opt/ol/helpers/runtime/docker-server.sh"]
-# Wed, 21 Aug 2019 06:00:16 GMT
+# Wed, 11 Sep 2019 04:26:00 GMT
 CMD ["/opt/ol/wlp/bin/server" "run" "defaultServer"]
 ```
 
@@ -349,23 +349,23 @@ CMD ["/opt/ol/wlp/bin/server" "run" "defaultServer"]
 		Last Modified: Thu, 15 Aug 2019 00:50:34 GMT  
 		Size: 42.7 MB (42741683 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:cc9a8983ae7f1c4dfcdec21a42d0b309e3753610dd7d8e72074f28013f7e6d04`  
-		Last Modified: Wed, 21 Aug 2019 06:20:04 GMT  
-		Size: 2.4 KB (2364 bytes)  
+	-	`sha256:bcb3d54ac398a512432ad38995e41cc5621c04ae9037fdcc14b311dd312e403d`  
+		Last Modified: Wed, 11 Sep 2019 04:35:38 GMT  
+		Size: 2.4 KB (2416 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:bb2352c8794d83faf704eb81be6a81ee182fca4e48f5e5c0c94dbea9602db27a`  
-		Last Modified: Wed, 21 Aug 2019 06:20:16 GMT  
-		Size: 114.1 MB (114109728 bytes)  
+	-	`sha256:21c40eada89aa73ccac9f159b166970be370d2f073c926d43870d6f497445062`  
+		Last Modified: Wed, 11 Sep 2019 04:35:45 GMT  
+		Size: 114.1 MB (114109719 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:20e18548fdd843f106c8e695db808f8049426c123dcd91bce716d2cc649037c9`  
-		Last Modified: Wed, 21 Aug 2019 06:20:04 GMT  
-		Size: 1.2 KB (1229 bytes)  
+	-	`sha256:0179e1ee3ce35bc5590315a7a23f34baf1ed1cb2f51643b1d67ef48e7f9fe053`  
+		Last Modified: Wed, 11 Sep 2019 04:35:38 GMT  
+		Size: 1.2 KB (1225 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:2b0230b9f14cc7b07590970b7defcb8736ba81e06588383f56648f41d90b2cc7`  
-		Last Modified: Wed, 21 Aug 2019 06:20:04 GMT  
+	-	`sha256:91d15e41548b3198ee06ebc72e0bad18f5521989da97fe70a08a9f7e9d21b9cf`  
+		Last Modified: Wed, 11 Sep 2019 04:35:38 GMT  
 		Size: 720.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:ae981b3229024834320febb6a1188e7126e0a208d92664ecd8632071d3ea4801`  
-		Last Modified: Wed, 21 Aug 2019 06:20:03 GMT  
-		Size: 4.0 KB (4044 bytes)  
+	-	`sha256:ef253aae483f278082f8bd249238bf8eedaadd7f0c38890fd8f1f9104a45ae48`  
+		Last Modified: Wed, 11 Sep 2019 04:35:38 GMT  
+		Size: 4.1 KB (4099 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
