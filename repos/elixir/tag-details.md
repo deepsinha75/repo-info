@@ -51,7 +51,7 @@
 ## `elixir:1.4`
 
 ```console
-$ docker pull elixir@sha256:e79385e5fffa4b3003b999112b1e399e94c7fbe29b464396eba3945835b2458e
+$ docker pull elixir@sha256:fc43185c7bdd857aee740c529d1ce3b6a86c3467daf2bf82296a0c38b3ef269e
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -409,93 +409,93 @@ CMD ["iex"]
 ### `elixir:1.4` - linux; s390x
 
 ```console
-$ docker pull elixir@sha256:90b866c0b0a8aaf0b4870f5494eebfb4bbbac78242635bf0345ece35bf3f9642
+$ docker pull elixir@sha256:3c2d9d429a83fc7fff381a5d7ab3e2adf2f3c972610e843399b828dd3cab6fa0
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **467.0 MB (467006174 bytes)**  
+-	Total Size: **467.0 MB (466999328 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:cd757e633f9a178862a2bad02cb270cf0d475b5c029a26e4dfce1dad674937f4`
+-	Image ID: `sha256:e6782e631844ef59607c2232191bcd43609d6a1936be08629fecc344c834a971`
 -	Default Command: `["iex"]`
 
 ```dockerfile
-# Wed, 14 Aug 2019 00:45:55 GMT
-ADD file:628950cdb60edf56519623bb5bceb8f913d0e4a57fb94d64bbeb5f99491a79c8 in / 
-# Wed, 14 Aug 2019 00:45:56 GMT
+# Wed, 11 Sep 2019 22:43:56 GMT
+ADD file:5c261012373b1f613abf90c8163f72247906770a6209fc775af35a131ba818f9 in / 
+# Wed, 11 Sep 2019 22:43:57 GMT
 CMD ["bash"]
-# Wed, 14 Aug 2019 03:02:33 GMT
+# Thu, 12 Sep 2019 00:38:06 GMT
 RUN apt-get update && apt-get install -y --no-install-recommends 		ca-certificates 		curl 		netbase 		wget 	&& rm -rf /var/lib/apt/lists/*
-# Wed, 14 Aug 2019 03:02:43 GMT
+# Thu, 12 Sep 2019 00:38:13 GMT
 RUN set -ex; 	if ! command -v gpg > /dev/null; then 		apt-get update; 		apt-get install -y --no-install-recommends 			gnupg 			dirmngr 		; 		rm -rf /var/lib/apt/lists/*; 	fi
-# Wed, 14 Aug 2019 03:03:35 GMT
+# Thu, 12 Sep 2019 00:38:39 GMT
 RUN apt-get update && apt-get install -y --no-install-recommends 		bzr 		git 		mercurial 		openssh-client 		subversion 				procps 	&& rm -rf /var/lib/apt/lists/*
-# Tue, 10 Sep 2019 21:40:06 GMT
+# Thu, 12 Sep 2019 00:40:19 GMT
 RUN set -ex; 	apt-get update; 	apt-get install -y --no-install-recommends 		autoconf 		automake 		bzip2 		dpkg-dev 		file 		g++ 		gcc 		imagemagick 		libbz2-dev 		libc6-dev 		libcurl4-openssl-dev 		libdb-dev 		libevent-dev 		libffi-dev 		libgdbm-dev 		libglib2.0-dev 		libgmp-dev 		libjpeg-dev 		libkrb5-dev 		liblzma-dev 		libmagickcore-dev 		libmagickwand-dev 		libmaxminddb-dev 		libncurses5-dev 		libncursesw5-dev 		libpng-dev 		libpq-dev 		libreadline-dev 		libsqlite3-dev 		libssl-dev 		libtool 		libwebp-dev 		libxml2-dev 		libxslt-dev 		libyaml-dev 		make 		patch 		unzip 		xz-utils 		zlib1g-dev 				$( 			if apt-cache show 'default-libmysqlclient-dev' 2>/dev/null | grep -q '^Version:'; then 				echo 'default-libmysqlclient-dev'; 			else 				echo 'libmysqlclient-dev'; 			fi 		) 	; 	rm -rf /var/lib/apt/lists/*
-# Wed, 11 Sep 2019 04:00:41 GMT
+# Thu, 12 Sep 2019 02:09:42 GMT
 ENV OTP_VERSION=19.3.6.13
-# Wed, 11 Sep 2019 04:08:10 GMT
+# Thu, 12 Sep 2019 02:16:46 GMT
 RUN set -xe 	&& OTP_DOWNLOAD_URL="https://github.com/erlang/otp/archive/OTP-${OTP_VERSION}.tar.gz" 	&& OTP_DOWNLOAD_SHA256="11a914176a33068226644f4e999ecc6e965ab1c60a324d90020f164641631fae" 	&& runtimeDeps='libodbc1 			libsctp1 			libssl1.0-dev 			libwxgtk3.0' 	&& buildDeps='unixodbc-dev 			libsctp-dev 			libwxgtk3.0-dev' 	&& apt-get update 	&& apt-get install -y --no-install-recommends $runtimeDeps 	&& apt-get install -y --no-install-recommends $buildDeps 	&& curl -fSL -o otp-src.tar.gz "$OTP_DOWNLOAD_URL" 	&& echo "$OTP_DOWNLOAD_SHA256 otp-src.tar.gz" | sha256sum -c - 	&& mkdir -p /usr/src/otp-src 	&& tar -xzf otp-src.tar.gz -C /usr/src/otp-src --strip-components=1 	&& rm otp-src.tar.gz 	&& cd /usr/src/otp-src 	&& ./otp_build autoconf 	&& gnuArch="$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)" 	&& ./configure --build="$gnuArch" 		--enable-dirty-schedulers 	&& make -j$(nproc) 	&& make install 	&& find /usr/local -name examples | xargs rm -rf 	&& apt-get purge -y --auto-remove $buildDeps 	&& rm -rf /usr/src/otp-src /var/lib/apt/lists/*
-# Wed, 11 Sep 2019 04:08:10 GMT
+# Thu, 12 Sep 2019 02:16:47 GMT
 CMD ["erl"]
-# Wed, 11 Sep 2019 04:08:10 GMT
+# Thu, 12 Sep 2019 02:16:48 GMT
 ENV REBAR_VERSION=2.6.4
-# Wed, 11 Sep 2019 04:08:13 GMT
+# Thu, 12 Sep 2019 02:16:50 GMT
 RUN set -xe 	&& REBAR_DOWNLOAD_URL="https://github.com/rebar/rebar/archive/${REBAR_VERSION}.tar.gz" 	&& REBAR_DOWNLOAD_SHA256="577246bafa2eb2b2c3f1d0c157408650446884555bf87901508ce71d5cc0bd07" 	&& mkdir -p /usr/src/rebar-src 	&& curl -fSL -o rebar-src.tar.gz "$REBAR_DOWNLOAD_URL" 	&& echo "$REBAR_DOWNLOAD_SHA256 rebar-src.tar.gz" | sha256sum -c - 	&& tar -xzf rebar-src.tar.gz -C /usr/src/rebar-src --strip-components=1 	&& rm rebar-src.tar.gz 	&& cd /usr/src/rebar-src 	&& ./bootstrap 	&& install -v ./rebar /usr/local/bin/ 	&& rm -rf /usr/src/rebar-src
-# Wed, 11 Sep 2019 04:08:13 GMT
+# Thu, 12 Sep 2019 02:16:50 GMT
 ENV REBAR3_VERSION=3.8.0
-# Wed, 11 Sep 2019 04:08:33 GMT
+# Thu, 12 Sep 2019 02:17:11 GMT
 RUN set -xe 	&& REBAR3_DOWNLOAD_URL="https://github.com/erlang/rebar3/archive/${REBAR3_VERSION}.tar.gz" 	&& REBAR3_DOWNLOAD_SHA256="fc4d08037d39bcc651a4a749f8a5b1a10b2205527df834c2aee8f60725c3f431" 	&& mkdir -p /usr/src/rebar3-src 	&& curl -fSL -o rebar3-src.tar.gz "$REBAR3_DOWNLOAD_URL" 	&& echo "$REBAR3_DOWNLOAD_SHA256 rebar3-src.tar.gz" | sha256sum -c - 	&& tar -xzf rebar3-src.tar.gz -C /usr/src/rebar3-src --strip-components=1 	&& rm rebar3-src.tar.gz 	&& cd /usr/src/rebar3-src 	&& HOME=$PWD ./bootstrap 	&& install -v ./rebar3 /usr/local/bin/ 	&& rm -rf /usr/src/rebar3-src
-# Wed, 11 Sep 2019 05:24:23 GMT
+# Thu, 12 Sep 2019 12:39:24 GMT
 ENV ELIXIR_VERSION=v1.4.5 LANG=C.UTF-8
-# Wed, 11 Sep 2019 05:24:28 GMT
+# Thu, 12 Sep 2019 12:39:30 GMT
 RUN set -xe 	&& ELIXIR_DOWNLOAD_URL="https://github.com/elixir-lang/elixir/releases/download/${ELIXIR_VERSION}/Precompiled.zip" 	&& ELIXIR_DOWNLOAD_SHA256="a740e634e3c68b1477e16d75a0fd400237a46c62ceb5d04551dbc46093a03f98"	&& buildDeps=' 		unzip 	' 	&& apt-get update 	&& apt-get install -y --no-install-recommends $buildDeps 	&& curl -fSL -o elixir-precompiled.zip $ELIXIR_DOWNLOAD_URL 	&& echo "$ELIXIR_DOWNLOAD_SHA256 elixir-precompiled.zip" | sha256sum -c - 	&& unzip -d /usr/local elixir-precompiled.zip 	&& rm elixir-precompiled.zip 	&& apt-get purge -y --auto-remove $buildDeps 	&& rm -rf /var/lib/apt/lists/*
-# Wed, 11 Sep 2019 05:24:28 GMT
+# Thu, 12 Sep 2019 12:39:30 GMT
 CMD ["iex"]
 ```
 
 -	Layers:
-	-	`sha256:05b3194a550b956249959e2f64475745fcf943ed7951306c6e3e6a5cd1815dd6`  
-		Last Modified: Wed, 14 Aug 2019 00:51:50 GMT  
-		Size: 45.2 MB (45245026 bytes)  
+	-	`sha256:5d4da55d9cf0eafd201c3838c03984cc0ef153b12bbfd5964ffee9e9d6b38bbb`  
+		Last Modified: Wed, 11 Sep 2019 22:48:17 GMT  
+		Size: 45.2 MB (45240190 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:5cc01dcd9b0a29ac6daec9b7b4af78f948ee1945fb22e5e8f97993705d589311`  
-		Last Modified: Wed, 14 Aug 2019 03:10:13 GMT  
-		Size: 10.3 MB (10317828 bytes)  
+	-	`sha256:dad3041fe12244954218a4bd2bfdcb5ae29fd416b247bd17e41c73cbdf9b6de5`  
+		Last Modified: Thu, 12 Sep 2019 00:44:07 GMT  
+		Size: 10.3 MB (10317726 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:5154470af4c84ea4b0ebc80e0cda7c479ef829d3ec3ece20e7b183bc8ded7563`  
-		Last Modified: Wed, 14 Aug 2019 03:10:11 GMT  
-		Size: 4.4 MB (4372320 bytes)  
+	-	`sha256:f6542c8f56fbd52f8d9d01d92625e0a728578d6e417adeba2baa0678cc5009d6`  
+		Last Modified: Thu, 12 Sep 2019 00:44:05 GMT  
+		Size: 4.4 MB (4372276 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:cd3b67ff4ea99e03083897f42be8f62c9ef0cd1e1a0603a4c3e627eae76a020d`  
-		Last Modified: Wed, 14 Aug 2019 03:10:30 GMT  
-		Size: 50.5 MB (50489789 bytes)  
+	-	`sha256:25fa3a7ad4fa33ba9843e1e836bf619c36b0cc5a1ce2d9b3e1e1b932c6220148`  
+		Last Modified: Thu, 12 Sep 2019 00:44:24 GMT  
+		Size: 50.5 MB (50488527 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:287679351b06307bcc1a8ced873496e08f721d41a6e4cea1ba6874f49aa24353`  
-		Last Modified: Tue, 10 Sep 2019 21:47:12 GMT  
-		Size: 206.9 MB (206858733 bytes)  
+	-	`sha256:271ed6d81ea099ed00ae3e2d3c436fe81ecbf2fd85a94445c7592c99cde20e64`  
+		Last Modified: Thu, 12 Sep 2019 00:45:02 GMT  
+		Size: 206.9 MB (206858680 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:27437b23ba072fe2ca68293ca854092d633bc32e6b5b41ecc1323f86132774b3`  
-		Last Modified: Wed, 11 Sep 2019 04:18:19 GMT  
-		Size: 144.5 MB (144504649 bytes)  
+	-	`sha256:7b1bf338c808b86066d6fcbb15b37199f0e0a66a2493de3fc3cf8b6c28e9cb19`  
+		Last Modified: Thu, 12 Sep 2019 02:40:29 GMT  
+		Size: 144.5 MB (144504290 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:aa4ea30758136e6ddd5e54735911b7a6938f54d45812c049e0c52721e7be76c3`  
-		Last Modified: Wed, 11 Sep 2019 04:18:04 GMT  
-		Size: 199.2 KB (199217 bytes)  
+	-	`sha256:3c29e052cb68ccc78fc5d2b1ea5ef630af968b38e60c5cbc7cb987ba7efaafdc`  
+		Last Modified: Thu, 12 Sep 2019 02:40:15 GMT  
+		Size: 199.2 KB (199238 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:3d4f6e2ce10cb2e3f665ef55ae306ea16dce4e2383711539b1cfa6d9ce917f38`  
-		Last Modified: Wed, 11 Sep 2019 04:18:04 GMT  
-		Size: 959.4 KB (959436 bytes)  
+	-	`sha256:2d2608f1f917470a3c0099092f8a26b598eab98c6ebfa283d08ed056fe83f6a9`  
+		Last Modified: Thu, 12 Sep 2019 02:40:15 GMT  
+		Size: 959.4 KB (959429 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:ad83290850f4721c0c58629b59d4f9fa1c23b9152e22798842173b48a49fccac`  
-		Last Modified: Wed, 11 Sep 2019 05:25:59 GMT  
-		Size: 4.1 MB (4059176 bytes)  
+	-	`sha256:683db86e6d91f705348154b16a2fe4a05276fb0d5ac15b8fdc450b85b60314f4`  
+		Last Modified: Thu, 12 Sep 2019 12:41:30 GMT  
+		Size: 4.1 MB (4058972 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `elixir:1.4.5`
 
 ```console
-$ docker pull elixir@sha256:e79385e5fffa4b3003b999112b1e399e94c7fbe29b464396eba3945835b2458e
+$ docker pull elixir@sha256:fc43185c7bdd857aee740c529d1ce3b6a86c3467daf2bf82296a0c38b3ef269e
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -853,93 +853,93 @@ CMD ["iex"]
 ### `elixir:1.4.5` - linux; s390x
 
 ```console
-$ docker pull elixir@sha256:90b866c0b0a8aaf0b4870f5494eebfb4bbbac78242635bf0345ece35bf3f9642
+$ docker pull elixir@sha256:3c2d9d429a83fc7fff381a5d7ab3e2adf2f3c972610e843399b828dd3cab6fa0
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **467.0 MB (467006174 bytes)**  
+-	Total Size: **467.0 MB (466999328 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:cd757e633f9a178862a2bad02cb270cf0d475b5c029a26e4dfce1dad674937f4`
+-	Image ID: `sha256:e6782e631844ef59607c2232191bcd43609d6a1936be08629fecc344c834a971`
 -	Default Command: `["iex"]`
 
 ```dockerfile
-# Wed, 14 Aug 2019 00:45:55 GMT
-ADD file:628950cdb60edf56519623bb5bceb8f913d0e4a57fb94d64bbeb5f99491a79c8 in / 
-# Wed, 14 Aug 2019 00:45:56 GMT
+# Wed, 11 Sep 2019 22:43:56 GMT
+ADD file:5c261012373b1f613abf90c8163f72247906770a6209fc775af35a131ba818f9 in / 
+# Wed, 11 Sep 2019 22:43:57 GMT
 CMD ["bash"]
-# Wed, 14 Aug 2019 03:02:33 GMT
+# Thu, 12 Sep 2019 00:38:06 GMT
 RUN apt-get update && apt-get install -y --no-install-recommends 		ca-certificates 		curl 		netbase 		wget 	&& rm -rf /var/lib/apt/lists/*
-# Wed, 14 Aug 2019 03:02:43 GMT
+# Thu, 12 Sep 2019 00:38:13 GMT
 RUN set -ex; 	if ! command -v gpg > /dev/null; then 		apt-get update; 		apt-get install -y --no-install-recommends 			gnupg 			dirmngr 		; 		rm -rf /var/lib/apt/lists/*; 	fi
-# Wed, 14 Aug 2019 03:03:35 GMT
+# Thu, 12 Sep 2019 00:38:39 GMT
 RUN apt-get update && apt-get install -y --no-install-recommends 		bzr 		git 		mercurial 		openssh-client 		subversion 				procps 	&& rm -rf /var/lib/apt/lists/*
-# Tue, 10 Sep 2019 21:40:06 GMT
+# Thu, 12 Sep 2019 00:40:19 GMT
 RUN set -ex; 	apt-get update; 	apt-get install -y --no-install-recommends 		autoconf 		automake 		bzip2 		dpkg-dev 		file 		g++ 		gcc 		imagemagick 		libbz2-dev 		libc6-dev 		libcurl4-openssl-dev 		libdb-dev 		libevent-dev 		libffi-dev 		libgdbm-dev 		libglib2.0-dev 		libgmp-dev 		libjpeg-dev 		libkrb5-dev 		liblzma-dev 		libmagickcore-dev 		libmagickwand-dev 		libmaxminddb-dev 		libncurses5-dev 		libncursesw5-dev 		libpng-dev 		libpq-dev 		libreadline-dev 		libsqlite3-dev 		libssl-dev 		libtool 		libwebp-dev 		libxml2-dev 		libxslt-dev 		libyaml-dev 		make 		patch 		unzip 		xz-utils 		zlib1g-dev 				$( 			if apt-cache show 'default-libmysqlclient-dev' 2>/dev/null | grep -q '^Version:'; then 				echo 'default-libmysqlclient-dev'; 			else 				echo 'libmysqlclient-dev'; 			fi 		) 	; 	rm -rf /var/lib/apt/lists/*
-# Wed, 11 Sep 2019 04:00:41 GMT
+# Thu, 12 Sep 2019 02:09:42 GMT
 ENV OTP_VERSION=19.3.6.13
-# Wed, 11 Sep 2019 04:08:10 GMT
+# Thu, 12 Sep 2019 02:16:46 GMT
 RUN set -xe 	&& OTP_DOWNLOAD_URL="https://github.com/erlang/otp/archive/OTP-${OTP_VERSION}.tar.gz" 	&& OTP_DOWNLOAD_SHA256="11a914176a33068226644f4e999ecc6e965ab1c60a324d90020f164641631fae" 	&& runtimeDeps='libodbc1 			libsctp1 			libssl1.0-dev 			libwxgtk3.0' 	&& buildDeps='unixodbc-dev 			libsctp-dev 			libwxgtk3.0-dev' 	&& apt-get update 	&& apt-get install -y --no-install-recommends $runtimeDeps 	&& apt-get install -y --no-install-recommends $buildDeps 	&& curl -fSL -o otp-src.tar.gz "$OTP_DOWNLOAD_URL" 	&& echo "$OTP_DOWNLOAD_SHA256 otp-src.tar.gz" | sha256sum -c - 	&& mkdir -p /usr/src/otp-src 	&& tar -xzf otp-src.tar.gz -C /usr/src/otp-src --strip-components=1 	&& rm otp-src.tar.gz 	&& cd /usr/src/otp-src 	&& ./otp_build autoconf 	&& gnuArch="$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)" 	&& ./configure --build="$gnuArch" 		--enable-dirty-schedulers 	&& make -j$(nproc) 	&& make install 	&& find /usr/local -name examples | xargs rm -rf 	&& apt-get purge -y --auto-remove $buildDeps 	&& rm -rf /usr/src/otp-src /var/lib/apt/lists/*
-# Wed, 11 Sep 2019 04:08:10 GMT
+# Thu, 12 Sep 2019 02:16:47 GMT
 CMD ["erl"]
-# Wed, 11 Sep 2019 04:08:10 GMT
+# Thu, 12 Sep 2019 02:16:48 GMT
 ENV REBAR_VERSION=2.6.4
-# Wed, 11 Sep 2019 04:08:13 GMT
+# Thu, 12 Sep 2019 02:16:50 GMT
 RUN set -xe 	&& REBAR_DOWNLOAD_URL="https://github.com/rebar/rebar/archive/${REBAR_VERSION}.tar.gz" 	&& REBAR_DOWNLOAD_SHA256="577246bafa2eb2b2c3f1d0c157408650446884555bf87901508ce71d5cc0bd07" 	&& mkdir -p /usr/src/rebar-src 	&& curl -fSL -o rebar-src.tar.gz "$REBAR_DOWNLOAD_URL" 	&& echo "$REBAR_DOWNLOAD_SHA256 rebar-src.tar.gz" | sha256sum -c - 	&& tar -xzf rebar-src.tar.gz -C /usr/src/rebar-src --strip-components=1 	&& rm rebar-src.tar.gz 	&& cd /usr/src/rebar-src 	&& ./bootstrap 	&& install -v ./rebar /usr/local/bin/ 	&& rm -rf /usr/src/rebar-src
-# Wed, 11 Sep 2019 04:08:13 GMT
+# Thu, 12 Sep 2019 02:16:50 GMT
 ENV REBAR3_VERSION=3.8.0
-# Wed, 11 Sep 2019 04:08:33 GMT
+# Thu, 12 Sep 2019 02:17:11 GMT
 RUN set -xe 	&& REBAR3_DOWNLOAD_URL="https://github.com/erlang/rebar3/archive/${REBAR3_VERSION}.tar.gz" 	&& REBAR3_DOWNLOAD_SHA256="fc4d08037d39bcc651a4a749f8a5b1a10b2205527df834c2aee8f60725c3f431" 	&& mkdir -p /usr/src/rebar3-src 	&& curl -fSL -o rebar3-src.tar.gz "$REBAR3_DOWNLOAD_URL" 	&& echo "$REBAR3_DOWNLOAD_SHA256 rebar3-src.tar.gz" | sha256sum -c - 	&& tar -xzf rebar3-src.tar.gz -C /usr/src/rebar3-src --strip-components=1 	&& rm rebar3-src.tar.gz 	&& cd /usr/src/rebar3-src 	&& HOME=$PWD ./bootstrap 	&& install -v ./rebar3 /usr/local/bin/ 	&& rm -rf /usr/src/rebar3-src
-# Wed, 11 Sep 2019 05:24:23 GMT
+# Thu, 12 Sep 2019 12:39:24 GMT
 ENV ELIXIR_VERSION=v1.4.5 LANG=C.UTF-8
-# Wed, 11 Sep 2019 05:24:28 GMT
+# Thu, 12 Sep 2019 12:39:30 GMT
 RUN set -xe 	&& ELIXIR_DOWNLOAD_URL="https://github.com/elixir-lang/elixir/releases/download/${ELIXIR_VERSION}/Precompiled.zip" 	&& ELIXIR_DOWNLOAD_SHA256="a740e634e3c68b1477e16d75a0fd400237a46c62ceb5d04551dbc46093a03f98"	&& buildDeps=' 		unzip 	' 	&& apt-get update 	&& apt-get install -y --no-install-recommends $buildDeps 	&& curl -fSL -o elixir-precompiled.zip $ELIXIR_DOWNLOAD_URL 	&& echo "$ELIXIR_DOWNLOAD_SHA256 elixir-precompiled.zip" | sha256sum -c - 	&& unzip -d /usr/local elixir-precompiled.zip 	&& rm elixir-precompiled.zip 	&& apt-get purge -y --auto-remove $buildDeps 	&& rm -rf /var/lib/apt/lists/*
-# Wed, 11 Sep 2019 05:24:28 GMT
+# Thu, 12 Sep 2019 12:39:30 GMT
 CMD ["iex"]
 ```
 
 -	Layers:
-	-	`sha256:05b3194a550b956249959e2f64475745fcf943ed7951306c6e3e6a5cd1815dd6`  
-		Last Modified: Wed, 14 Aug 2019 00:51:50 GMT  
-		Size: 45.2 MB (45245026 bytes)  
+	-	`sha256:5d4da55d9cf0eafd201c3838c03984cc0ef153b12bbfd5964ffee9e9d6b38bbb`  
+		Last Modified: Wed, 11 Sep 2019 22:48:17 GMT  
+		Size: 45.2 MB (45240190 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:5cc01dcd9b0a29ac6daec9b7b4af78f948ee1945fb22e5e8f97993705d589311`  
-		Last Modified: Wed, 14 Aug 2019 03:10:13 GMT  
-		Size: 10.3 MB (10317828 bytes)  
+	-	`sha256:dad3041fe12244954218a4bd2bfdcb5ae29fd416b247bd17e41c73cbdf9b6de5`  
+		Last Modified: Thu, 12 Sep 2019 00:44:07 GMT  
+		Size: 10.3 MB (10317726 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:5154470af4c84ea4b0ebc80e0cda7c479ef829d3ec3ece20e7b183bc8ded7563`  
-		Last Modified: Wed, 14 Aug 2019 03:10:11 GMT  
-		Size: 4.4 MB (4372320 bytes)  
+	-	`sha256:f6542c8f56fbd52f8d9d01d92625e0a728578d6e417adeba2baa0678cc5009d6`  
+		Last Modified: Thu, 12 Sep 2019 00:44:05 GMT  
+		Size: 4.4 MB (4372276 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:cd3b67ff4ea99e03083897f42be8f62c9ef0cd1e1a0603a4c3e627eae76a020d`  
-		Last Modified: Wed, 14 Aug 2019 03:10:30 GMT  
-		Size: 50.5 MB (50489789 bytes)  
+	-	`sha256:25fa3a7ad4fa33ba9843e1e836bf619c36b0cc5a1ce2d9b3e1e1b932c6220148`  
+		Last Modified: Thu, 12 Sep 2019 00:44:24 GMT  
+		Size: 50.5 MB (50488527 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:287679351b06307bcc1a8ced873496e08f721d41a6e4cea1ba6874f49aa24353`  
-		Last Modified: Tue, 10 Sep 2019 21:47:12 GMT  
-		Size: 206.9 MB (206858733 bytes)  
+	-	`sha256:271ed6d81ea099ed00ae3e2d3c436fe81ecbf2fd85a94445c7592c99cde20e64`  
+		Last Modified: Thu, 12 Sep 2019 00:45:02 GMT  
+		Size: 206.9 MB (206858680 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:27437b23ba072fe2ca68293ca854092d633bc32e6b5b41ecc1323f86132774b3`  
-		Last Modified: Wed, 11 Sep 2019 04:18:19 GMT  
-		Size: 144.5 MB (144504649 bytes)  
+	-	`sha256:7b1bf338c808b86066d6fcbb15b37199f0e0a66a2493de3fc3cf8b6c28e9cb19`  
+		Last Modified: Thu, 12 Sep 2019 02:40:29 GMT  
+		Size: 144.5 MB (144504290 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:aa4ea30758136e6ddd5e54735911b7a6938f54d45812c049e0c52721e7be76c3`  
-		Last Modified: Wed, 11 Sep 2019 04:18:04 GMT  
-		Size: 199.2 KB (199217 bytes)  
+	-	`sha256:3c29e052cb68ccc78fc5d2b1ea5ef630af968b38e60c5cbc7cb987ba7efaafdc`  
+		Last Modified: Thu, 12 Sep 2019 02:40:15 GMT  
+		Size: 199.2 KB (199238 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:3d4f6e2ce10cb2e3f665ef55ae306ea16dce4e2383711539b1cfa6d9ce917f38`  
-		Last Modified: Wed, 11 Sep 2019 04:18:04 GMT  
-		Size: 959.4 KB (959436 bytes)  
+	-	`sha256:2d2608f1f917470a3c0099092f8a26b598eab98c6ebfa283d08ed056fe83f6a9`  
+		Last Modified: Thu, 12 Sep 2019 02:40:15 GMT  
+		Size: 959.4 KB (959429 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:ad83290850f4721c0c58629b59d4f9fa1c23b9152e22798842173b48a49fccac`  
-		Last Modified: Wed, 11 Sep 2019 05:25:59 GMT  
-		Size: 4.1 MB (4059176 bytes)  
+	-	`sha256:683db86e6d91f705348154b16a2fe4a05276fb0d5ac15b8fdc450b85b60314f4`  
+		Last Modified: Thu, 12 Sep 2019 12:41:30 GMT  
+		Size: 4.1 MB (4058972 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `elixir:1.4.5-slim`
 
 ```console
-$ docker pull elixir@sha256:0ac908cf72c2e74e8bc878cb08920e362cce44a5b4c49df817e8496b2d4603fd
+$ docker pull elixir@sha256:05cbc4fbf7f4ab6ece2522ad81fef6adbdb11a76d670c0736334d216353ec1e6
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -1137,53 +1137,53 @@ CMD ["iex"]
 ### `elixir:1.4.5-slim` - linux; s390x
 
 ```console
-$ docker pull elixir@sha256:f3740caad49b9f83d1b4264f3757db6615635d34a2b77ab0f445d69a5506ff9a
+$ docker pull elixir@sha256:58e7b7baf517a352c612813472fe4b51551c1416b387b740ff12707855c3a488
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **263.4 MB (263423549 bytes)**  
+-	Total Size: **263.4 MB (263429051 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:b7a1b16254a9b392099389a113e3b494cdd5a8cefc9830acd837c157b72b9bbf`
+-	Image ID: `sha256:1996c785e27f474b16cb1a24a94a32d7238b818a4a69d862a325aeb9d6a2f01f`
 -	Default Command: `["iex"]`
 
 ```dockerfile
-# Wed, 14 Aug 2019 00:45:55 GMT
-ADD file:628950cdb60edf56519623bb5bceb8f913d0e4a57fb94d64bbeb5f99491a79c8 in / 
-# Wed, 14 Aug 2019 00:45:56 GMT
+# Wed, 11 Sep 2019 22:43:56 GMT
+ADD file:5c261012373b1f613abf90c8163f72247906770a6209fc775af35a131ba818f9 in / 
+# Wed, 11 Sep 2019 22:43:57 GMT
 CMD ["bash"]
-# Wed, 14 Aug 2019 02:12:21 GMT
+# Thu, 12 Sep 2019 02:17:20 GMT
 ENV OTP_VERSION=19.3.6.13
-# Wed, 14 Aug 2019 02:28:44 GMT
+# Thu, 12 Sep 2019 02:25:17 GMT
 RUN set -xe 	&& OTP_DOWNLOAD_URL="https://github.com/erlang/otp/archive/OTP-${OTP_VERSION}.tar.gz" 	&& OTP_DOWNLOAD_SHA256="11a914176a33068226644f4e999ecc6e965ab1c60a324d90020f164641631fae" 	&& runtimeDeps=' 		libodbc1 		libssl1.0.2 		libsctp1 		libwxgtk3.0 	' 	&& buildDeps=' 		curl 		ca-certificates 		autoconf 		dpkg-dev 		gcc 		g++ 		make 		libncurses-dev 		unixodbc-dev 		libssl1.0-dev 		libsctp-dev 	' 	&& apt-get update 	&& apt-get install -y --no-install-recommends $runtimeDeps 	&& apt-get install -y --no-install-recommends $buildDeps 	&& curl -fSL -o otp-src.tar.gz "$OTP_DOWNLOAD_URL" 	&& echo "$OTP_DOWNLOAD_SHA256 otp-src.tar.gz" | sha256sum -c - 	&& mkdir -p /usr/src/otp-src 	&& tar -xzf otp-src.tar.gz -C /usr/src/otp-src --strip-components=1 	&& rm otp-src.tar.gz 	&& cd /usr/src/otp-src 	&& ./otp_build autoconf 	&& gnuArch="$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)" 	&& ./configure --build="$gnuArch" 		--enable-dirty-schedulers 	&& make -j$(nproc) 	&& make install 	&& find /usr/local -name examples | xargs rm -rf 	&& apt-get purge -y --auto-remove $buildDeps 	&& rm -rf /usr/src/otp-src /var/lib/apt/lists/*
-# Wed, 14 Aug 2019 02:28:45 GMT
+# Thu, 12 Sep 2019 02:25:18 GMT
 CMD ["erl"]
-# Wed, 14 Aug 2019 15:13:17 GMT
+# Thu, 12 Sep 2019 12:39:35 GMT
 ENV ELIXIR_VERSION=v1.4.5 LANG=C.UTF-8
-# Wed, 14 Aug 2019 15:13:46 GMT
+# Thu, 12 Sep 2019 12:39:46 GMT
 RUN set -xe 	&& ELIXIR_DOWNLOAD_URL="https://github.com/elixir-lang/elixir/releases/download/${ELIXIR_VERSION}/Precompiled.zip" 	&& ELIXIR_DOWNLOAD_SHA256="a740e634e3c68b1477e16d75a0fd400237a46c62ceb5d04551dbc46093a03f98"	&& buildDeps=' 		ca-certificates 		curl 		unzip 	' 	&& apt-get update 	&& apt-get install -y --no-install-recommends $buildDeps 	&& curl -fSL -o elixir-precompiled.zip $ELIXIR_DOWNLOAD_URL 	&& echo "$ELIXIR_DOWNLOAD_SHA256 elixir-precompiled.zip" | sha256sum -c - 	&& unzip -d /usr/local elixir-precompiled.zip 	&& rm elixir-precompiled.zip 	&& apt-get purge -y --auto-remove $buildDeps 	&& rm -rf /var/lib/apt/lists/*
-# Wed, 14 Aug 2019 15:13:47 GMT
+# Thu, 12 Sep 2019 12:39:46 GMT
 CMD ["iex"]
 ```
 
 -	Layers:
-	-	`sha256:05b3194a550b956249959e2f64475745fcf943ed7951306c6e3e6a5cd1815dd6`  
-		Last Modified: Wed, 14 Aug 2019 00:51:50 GMT  
-		Size: 45.2 MB (45245026 bytes)  
+	-	`sha256:5d4da55d9cf0eafd201c3838c03984cc0ef153b12bbfd5964ffee9e9d6b38bbb`  
+		Last Modified: Wed, 11 Sep 2019 22:48:17 GMT  
+		Size: 45.2 MB (45240190 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:1598cbb7507c4f1203b9ad119e162505e2f2f76efd425b9d768397b1a04c8870`  
-		Last Modified: Wed, 14 Aug 2019 02:40:58 GMT  
-		Size: 214.0 MB (214029657 bytes)  
+	-	`sha256:77fe28c74ddcaad55da5f84dd467287c1ee79bb8d2b5dd6f42e26a38efd36cf9`  
+		Last Modified: Thu, 12 Sep 2019 02:41:00 GMT  
+		Size: 214.0 MB (214040262 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:20c6111af426c8d97eb2291410c4d0e7f0e8187faafcdeaac0e166ecca43d1b9`  
-		Last Modified: Wed, 14 Aug 2019 15:15:05 GMT  
-		Size: 4.1 MB (4148866 bytes)  
+	-	`sha256:58be84dedaa6b734d04fac7201e3a94ddcf5705307dee36b970df5905a487c41`  
+		Last Modified: Thu, 12 Sep 2019 12:41:36 GMT  
+		Size: 4.1 MB (4148599 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `elixir:1.4-slim`
 
 ```console
-$ docker pull elixir@sha256:0ac908cf72c2e74e8bc878cb08920e362cce44a5b4c49df817e8496b2d4603fd
+$ docker pull elixir@sha256:05cbc4fbf7f4ab6ece2522ad81fef6adbdb11a76d670c0736334d216353ec1e6
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -1381,53 +1381,53 @@ CMD ["iex"]
 ### `elixir:1.4-slim` - linux; s390x
 
 ```console
-$ docker pull elixir@sha256:f3740caad49b9f83d1b4264f3757db6615635d34a2b77ab0f445d69a5506ff9a
+$ docker pull elixir@sha256:58e7b7baf517a352c612813472fe4b51551c1416b387b740ff12707855c3a488
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **263.4 MB (263423549 bytes)**  
+-	Total Size: **263.4 MB (263429051 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:b7a1b16254a9b392099389a113e3b494cdd5a8cefc9830acd837c157b72b9bbf`
+-	Image ID: `sha256:1996c785e27f474b16cb1a24a94a32d7238b818a4a69d862a325aeb9d6a2f01f`
 -	Default Command: `["iex"]`
 
 ```dockerfile
-# Wed, 14 Aug 2019 00:45:55 GMT
-ADD file:628950cdb60edf56519623bb5bceb8f913d0e4a57fb94d64bbeb5f99491a79c8 in / 
-# Wed, 14 Aug 2019 00:45:56 GMT
+# Wed, 11 Sep 2019 22:43:56 GMT
+ADD file:5c261012373b1f613abf90c8163f72247906770a6209fc775af35a131ba818f9 in / 
+# Wed, 11 Sep 2019 22:43:57 GMT
 CMD ["bash"]
-# Wed, 14 Aug 2019 02:12:21 GMT
+# Thu, 12 Sep 2019 02:17:20 GMT
 ENV OTP_VERSION=19.3.6.13
-# Wed, 14 Aug 2019 02:28:44 GMT
+# Thu, 12 Sep 2019 02:25:17 GMT
 RUN set -xe 	&& OTP_DOWNLOAD_URL="https://github.com/erlang/otp/archive/OTP-${OTP_VERSION}.tar.gz" 	&& OTP_DOWNLOAD_SHA256="11a914176a33068226644f4e999ecc6e965ab1c60a324d90020f164641631fae" 	&& runtimeDeps=' 		libodbc1 		libssl1.0.2 		libsctp1 		libwxgtk3.0 	' 	&& buildDeps=' 		curl 		ca-certificates 		autoconf 		dpkg-dev 		gcc 		g++ 		make 		libncurses-dev 		unixodbc-dev 		libssl1.0-dev 		libsctp-dev 	' 	&& apt-get update 	&& apt-get install -y --no-install-recommends $runtimeDeps 	&& apt-get install -y --no-install-recommends $buildDeps 	&& curl -fSL -o otp-src.tar.gz "$OTP_DOWNLOAD_URL" 	&& echo "$OTP_DOWNLOAD_SHA256 otp-src.tar.gz" | sha256sum -c - 	&& mkdir -p /usr/src/otp-src 	&& tar -xzf otp-src.tar.gz -C /usr/src/otp-src --strip-components=1 	&& rm otp-src.tar.gz 	&& cd /usr/src/otp-src 	&& ./otp_build autoconf 	&& gnuArch="$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)" 	&& ./configure --build="$gnuArch" 		--enable-dirty-schedulers 	&& make -j$(nproc) 	&& make install 	&& find /usr/local -name examples | xargs rm -rf 	&& apt-get purge -y --auto-remove $buildDeps 	&& rm -rf /usr/src/otp-src /var/lib/apt/lists/*
-# Wed, 14 Aug 2019 02:28:45 GMT
+# Thu, 12 Sep 2019 02:25:18 GMT
 CMD ["erl"]
-# Wed, 14 Aug 2019 15:13:17 GMT
+# Thu, 12 Sep 2019 12:39:35 GMT
 ENV ELIXIR_VERSION=v1.4.5 LANG=C.UTF-8
-# Wed, 14 Aug 2019 15:13:46 GMT
+# Thu, 12 Sep 2019 12:39:46 GMT
 RUN set -xe 	&& ELIXIR_DOWNLOAD_URL="https://github.com/elixir-lang/elixir/releases/download/${ELIXIR_VERSION}/Precompiled.zip" 	&& ELIXIR_DOWNLOAD_SHA256="a740e634e3c68b1477e16d75a0fd400237a46c62ceb5d04551dbc46093a03f98"	&& buildDeps=' 		ca-certificates 		curl 		unzip 	' 	&& apt-get update 	&& apt-get install -y --no-install-recommends $buildDeps 	&& curl -fSL -o elixir-precompiled.zip $ELIXIR_DOWNLOAD_URL 	&& echo "$ELIXIR_DOWNLOAD_SHA256 elixir-precompiled.zip" | sha256sum -c - 	&& unzip -d /usr/local elixir-precompiled.zip 	&& rm elixir-precompiled.zip 	&& apt-get purge -y --auto-remove $buildDeps 	&& rm -rf /var/lib/apt/lists/*
-# Wed, 14 Aug 2019 15:13:47 GMT
+# Thu, 12 Sep 2019 12:39:46 GMT
 CMD ["iex"]
 ```
 
 -	Layers:
-	-	`sha256:05b3194a550b956249959e2f64475745fcf943ed7951306c6e3e6a5cd1815dd6`  
-		Last Modified: Wed, 14 Aug 2019 00:51:50 GMT  
-		Size: 45.2 MB (45245026 bytes)  
+	-	`sha256:5d4da55d9cf0eafd201c3838c03984cc0ef153b12bbfd5964ffee9e9d6b38bbb`  
+		Last Modified: Wed, 11 Sep 2019 22:48:17 GMT  
+		Size: 45.2 MB (45240190 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:1598cbb7507c4f1203b9ad119e162505e2f2f76efd425b9d768397b1a04c8870`  
-		Last Modified: Wed, 14 Aug 2019 02:40:58 GMT  
-		Size: 214.0 MB (214029657 bytes)  
+	-	`sha256:77fe28c74ddcaad55da5f84dd467287c1ee79bb8d2b5dd6f42e26a38efd36cf9`  
+		Last Modified: Thu, 12 Sep 2019 02:41:00 GMT  
+		Size: 214.0 MB (214040262 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:20c6111af426c8d97eb2291410c4d0e7f0e8187faafcdeaac0e166ecca43d1b9`  
-		Last Modified: Wed, 14 Aug 2019 15:15:05 GMT  
-		Size: 4.1 MB (4148866 bytes)  
+	-	`sha256:58be84dedaa6b734d04fac7201e3a94ddcf5705307dee36b970df5905a487c41`  
+		Last Modified: Thu, 12 Sep 2019 12:41:36 GMT  
+		Size: 4.1 MB (4148599 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `elixir:1.5`
 
 ```console
-$ docker pull elixir@sha256:685124f3db3ea4cc8570dc2f53926302f6e6b18331397fedbacc2973cdbb9569
+$ docker pull elixir@sha256:35e30f22b1020e9d91c2dabf9db535f3ab8b090ac004c4960f56c1d5ff27fd36
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -1872,93 +1872,93 @@ CMD ["iex"]
 ### `elixir:1.5` - linux; s390x
 
 ```console
-$ docker pull elixir@sha256:eb9e89ec79f75f401e73bab7d73dbc0f7993ff2edc80d4d97a4cd3049b668ca4
+$ docker pull elixir@sha256:5bf5de7df563433ba0550069bad7894532490a05bc40b3f87c67b9ff857fab84
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **462.0 MB (462032419 bytes)**  
+-	Total Size: **462.0 MB (462026107 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:f42ef06f2d517d0b81aae4519f9f643518bc3d3a2b436895d9fef8ce479893e7`
+-	Image ID: `sha256:4ac4904b3ebe81ad82466d63543f3cbfd24bef62067d8cc3c728e7c19c9d0da4`
 -	Default Command: `["iex"]`
 
 ```dockerfile
-# Wed, 14 Aug 2019 00:45:55 GMT
-ADD file:628950cdb60edf56519623bb5bceb8f913d0e4a57fb94d64bbeb5f99491a79c8 in / 
-# Wed, 14 Aug 2019 00:45:56 GMT
+# Wed, 11 Sep 2019 22:43:56 GMT
+ADD file:5c261012373b1f613abf90c8163f72247906770a6209fc775af35a131ba818f9 in / 
+# Wed, 11 Sep 2019 22:43:57 GMT
 CMD ["bash"]
-# Wed, 14 Aug 2019 03:02:33 GMT
+# Thu, 12 Sep 2019 00:38:06 GMT
 RUN apt-get update && apt-get install -y --no-install-recommends 		ca-certificates 		curl 		netbase 		wget 	&& rm -rf /var/lib/apt/lists/*
-# Wed, 14 Aug 2019 03:02:43 GMT
+# Thu, 12 Sep 2019 00:38:13 GMT
 RUN set -ex; 	if ! command -v gpg > /dev/null; then 		apt-get update; 		apt-get install -y --no-install-recommends 			gnupg 			dirmngr 		; 		rm -rf /var/lib/apt/lists/*; 	fi
-# Wed, 14 Aug 2019 03:03:35 GMT
+# Thu, 12 Sep 2019 00:38:39 GMT
 RUN apt-get update && apt-get install -y --no-install-recommends 		bzr 		git 		mercurial 		openssh-client 		subversion 				procps 	&& rm -rf /var/lib/apt/lists/*
-# Tue, 10 Sep 2019 21:40:06 GMT
+# Thu, 12 Sep 2019 00:40:19 GMT
 RUN set -ex; 	apt-get update; 	apt-get install -y --no-install-recommends 		autoconf 		automake 		bzip2 		dpkg-dev 		file 		g++ 		gcc 		imagemagick 		libbz2-dev 		libc6-dev 		libcurl4-openssl-dev 		libdb-dev 		libevent-dev 		libffi-dev 		libgdbm-dev 		libglib2.0-dev 		libgmp-dev 		libjpeg-dev 		libkrb5-dev 		liblzma-dev 		libmagickcore-dev 		libmagickwand-dev 		libmaxminddb-dev 		libncurses5-dev 		libncursesw5-dev 		libpng-dev 		libpq-dev 		libreadline-dev 		libsqlite3-dev 		libssl-dev 		libtool 		libwebp-dev 		libxml2-dev 		libxslt-dev 		libyaml-dev 		make 		patch 		unzip 		xz-utils 		zlib1g-dev 				$( 			if apt-cache show 'default-libmysqlclient-dev' 2>/dev/null | grep -q '^Version:'; then 				echo 'default-libmysqlclient-dev'; 			else 				echo 'libmysqlclient-dev'; 			fi 		) 	; 	rm -rf /var/lib/apt/lists/*
-# Wed, 11 Sep 2019 03:53:10 GMT
+# Thu, 12 Sep 2019 01:57:26 GMT
 ENV OTP_VERSION=20.3.8.22
-# Wed, 11 Sep 2019 03:59:59 GMT
+# Thu, 12 Sep 2019 02:04:11 GMT
 RUN set -xe 	&& OTP_DOWNLOAD_URL="https://github.com/erlang/otp/archive/OTP-${OTP_VERSION}.tar.gz" 	&& OTP_DOWNLOAD_SHA256="d2c36130938659a63d8de094c3d4f8a1d3ea33d4d993d0723ba9c745df2a2753" 	&& runtimeDeps='libodbc1 			libsctp1 			libwxgtk3.0' 	&& buildDeps='unixodbc-dev 			libsctp-dev 			libwxgtk3.0-dev' 	&& apt-get update 	&& apt-get install -y --no-install-recommends $runtimeDeps 	&& apt-get install -y --no-install-recommends $buildDeps 	&& curl -fSL -o otp-src.tar.gz "$OTP_DOWNLOAD_URL" 	&& echo "$OTP_DOWNLOAD_SHA256  otp-src.tar.gz" | sha256sum -c - 	&& export ERL_TOP="/usr/src/otp_src_${OTP_VERSION%%@*}" 	&& mkdir -vp $ERL_TOP 	&& tar -xzf otp-src.tar.gz -C $ERL_TOP --strip-components=1 	&& rm otp-src.tar.gz 	&& ( cd $ERL_TOP 	  && ./otp_build autoconf 	  && gnuArch="$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)" 	  && ./configure --build="$gnuArch" 	  && make -j$(nproc) 	  && make install ) 	&& find /usr/local -name examples | xargs rm -rf 	&& apt-get purge -y --auto-remove $buildDeps 	&& rm -rf $ERL_TOP /var/lib/apt/lists/*
-# Wed, 11 Sep 2019 03:59:59 GMT
+# Thu, 12 Sep 2019 02:04:11 GMT
 CMD ["erl"]
-# Wed, 11 Sep 2019 04:00:00 GMT
+# Thu, 12 Sep 2019 02:04:11 GMT
 ENV REBAR_VERSION=2.6.4
-# Wed, 11 Sep 2019 04:00:03 GMT
+# Thu, 12 Sep 2019 02:04:14 GMT
 RUN set -xe 	&& REBAR_DOWNLOAD_URL="https://github.com/rebar/rebar/archive/${REBAR_VERSION}.tar.gz" 	&& REBAR_DOWNLOAD_SHA256="577246bafa2eb2b2c3f1d0c157408650446884555bf87901508ce71d5cc0bd07" 	&& mkdir -p /usr/src/rebar-src 	&& curl -fSL -o rebar-src.tar.gz "$REBAR_DOWNLOAD_URL" 	&& echo "$REBAR_DOWNLOAD_SHA256 rebar-src.tar.gz" | sha256sum -c - 	&& tar -xzf rebar-src.tar.gz -C /usr/src/rebar-src --strip-components=1 	&& rm rebar-src.tar.gz 	&& cd /usr/src/rebar-src 	&& ./bootstrap 	&& install -v ./rebar /usr/local/bin/ 	&& rm -rf /usr/src/rebar-src
-# Wed, 11 Sep 2019 04:00:03 GMT
+# Thu, 12 Sep 2019 02:04:14 GMT
 ENV REBAR3_VERSION=3.10.0
-# Wed, 11 Sep 2019 04:00:22 GMT
+# Thu, 12 Sep 2019 02:04:30 GMT
 RUN set -xe 	&& REBAR3_DOWNLOAD_URL="https://github.com/erlang/rebar3/archive/${REBAR3_VERSION}.tar.gz" 	&& REBAR3_DOWNLOAD_SHA256="656b4a0bd75f340173e67a33c92e4d422b5ccf054f93ba35a9d780b545ee827e" 	&& mkdir -p /usr/src/rebar3-src 	&& curl -fSL -o rebar3-src.tar.gz "$REBAR3_DOWNLOAD_URL" 	&& echo "$REBAR3_DOWNLOAD_SHA256 rebar3-src.tar.gz" | sha256sum -c - 	&& tar -xzf rebar3-src.tar.gz -C /usr/src/rebar3-src --strip-components=1 	&& rm rebar3-src.tar.gz 	&& cd /usr/src/rebar3-src 	&& HOME=$PWD ./bootstrap 	&& install -v ./rebar3 /usr/local/bin/ 	&& rm -rf /usr/src/rebar3-src
-# Wed, 11 Sep 2019 05:23:33 GMT
+# Thu, 12 Sep 2019 12:38:14 GMT
 ENV ELIXIR_VERSION=v1.5.3 LANG=C.UTF-8
-# Wed, 11 Sep 2019 05:24:10 GMT
+# Thu, 12 Sep 2019 12:38:51 GMT
 RUN set -xe 	&& ELIXIR_DOWNLOAD_URL="https://github.com/elixir-lang/elixir/archive/${ELIXIR_VERSION}.tar.gz" 	&& ELIXIR_DOWNLOAD_SHA256="0fc6024b6027d87af9609b416448fd65d8927e0d05fc02410b35f4b9b9eb9629" 	&& curl -fSL -o elixir-src.tar.gz $ELIXIR_DOWNLOAD_URL 	&& echo "$ELIXIR_DOWNLOAD_SHA256  elixir-src.tar.gz" | sha256sum -c - 	&& mkdir -p /usr/local/src/elixir 	&& tar -xzC /usr/local/src/elixir --strip-components=1 -f elixir-src.tar.gz 	&& rm elixir-src.tar.gz 	&& cd /usr/local/src/elixir 	&& make install clean
-# Wed, 11 Sep 2019 05:24:10 GMT
+# Thu, 12 Sep 2019 12:38:51 GMT
 CMD ["iex"]
 ```
 
 -	Layers:
-	-	`sha256:05b3194a550b956249959e2f64475745fcf943ed7951306c6e3e6a5cd1815dd6`  
-		Last Modified: Wed, 14 Aug 2019 00:51:50 GMT  
-		Size: 45.2 MB (45245026 bytes)  
+	-	`sha256:5d4da55d9cf0eafd201c3838c03984cc0ef153b12bbfd5964ffee9e9d6b38bbb`  
+		Last Modified: Wed, 11 Sep 2019 22:48:17 GMT  
+		Size: 45.2 MB (45240190 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:5cc01dcd9b0a29ac6daec9b7b4af78f948ee1945fb22e5e8f97993705d589311`  
-		Last Modified: Wed, 14 Aug 2019 03:10:13 GMT  
-		Size: 10.3 MB (10317828 bytes)  
+	-	`sha256:dad3041fe12244954218a4bd2bfdcb5ae29fd416b247bd17e41c73cbdf9b6de5`  
+		Last Modified: Thu, 12 Sep 2019 00:44:07 GMT  
+		Size: 10.3 MB (10317726 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:5154470af4c84ea4b0ebc80e0cda7c479ef829d3ec3ece20e7b183bc8ded7563`  
-		Last Modified: Wed, 14 Aug 2019 03:10:11 GMT  
-		Size: 4.4 MB (4372320 bytes)  
+	-	`sha256:f6542c8f56fbd52f8d9d01d92625e0a728578d6e417adeba2baa0678cc5009d6`  
+		Last Modified: Thu, 12 Sep 2019 00:44:05 GMT  
+		Size: 4.4 MB (4372276 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:cd3b67ff4ea99e03083897f42be8f62c9ef0cd1e1a0603a4c3e627eae76a020d`  
-		Last Modified: Wed, 14 Aug 2019 03:10:30 GMT  
-		Size: 50.5 MB (50489789 bytes)  
+	-	`sha256:25fa3a7ad4fa33ba9843e1e836bf619c36b0cc5a1ce2d9b3e1e1b932c6220148`  
+		Last Modified: Thu, 12 Sep 2019 00:44:24 GMT  
+		Size: 50.5 MB (50488527 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:287679351b06307bcc1a8ced873496e08f721d41a6e4cea1ba6874f49aa24353`  
-		Last Modified: Tue, 10 Sep 2019 21:47:12 GMT  
-		Size: 206.9 MB (206858733 bytes)  
+	-	`sha256:271ed6d81ea099ed00ae3e2d3c436fe81ecbf2fd85a94445c7592c99cde20e64`  
+		Last Modified: Thu, 12 Sep 2019 00:45:02 GMT  
+		Size: 206.9 MB (206858680 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:33d7abcbcb656538000d026688c2caf66414c51f9ff7165935cec0c0777a0fe6`  
-		Last Modified: Wed, 11 Sep 2019 04:17:56 GMT  
-		Size: 138.1 MB (138112813 bytes)  
+	-	`sha256:a862b1a33fa0c9d7c5ec89a7f6b817ec3d3636255342adf11670361a16b7775e`  
+		Last Modified: Thu, 12 Sep 2019 02:39:42 GMT  
+		Size: 138.1 MB (138112480 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:4642d8652a06220ed8db36461691cd7f90fd0da69c88853be39806658a953c9e`  
-		Last Modified: Wed, 11 Sep 2019 04:17:39 GMT  
-		Size: 201.9 KB (201902 bytes)  
+	-	`sha256:ba43fd9ff1eaea9fbb0ce8612f3dd936d53c4a550fa261fc689224411a328be0`  
+		Last Modified: Thu, 12 Sep 2019 02:39:28 GMT  
+		Size: 202.0 KB (201952 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:647b2f68abce7babd65fbb48b62d8fac79006c00c76f9d4588c296ebef3b1246`  
-		Last Modified: Wed, 11 Sep 2019 04:17:39 GMT  
-		Size: 831.8 KB (831809 bytes)  
+	-	`sha256:acb135504bc69592460fcebc7111f302adb4b0078d88308849f40f9377075fa2`  
+		Last Modified: Thu, 12 Sep 2019 02:39:28 GMT  
+		Size: 831.8 KB (831811 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:e26e4cc783be0fae99b98b9520c56ba5f9a2bb0ca05614227789925111c725c2`  
-		Last Modified: Wed, 11 Sep 2019 05:25:54 GMT  
-		Size: 5.6 MB (5602199 bytes)  
+	-	`sha256:6f75c19b8dba7f8f4dd733e539a72c22a59956068115862fcc60807a1ad70c1b`  
+		Last Modified: Thu, 12 Sep 2019 12:41:20 GMT  
+		Size: 5.6 MB (5602465 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `elixir:1.5.3`
 
 ```console
-$ docker pull elixir@sha256:685124f3db3ea4cc8570dc2f53926302f6e6b18331397fedbacc2973cdbb9569
+$ docker pull elixir@sha256:35e30f22b1020e9d91c2dabf9db535f3ab8b090ac004c4960f56c1d5ff27fd36
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -2403,87 +2403,87 @@ CMD ["iex"]
 ### `elixir:1.5.3` - linux; s390x
 
 ```console
-$ docker pull elixir@sha256:eb9e89ec79f75f401e73bab7d73dbc0f7993ff2edc80d4d97a4cd3049b668ca4
+$ docker pull elixir@sha256:5bf5de7df563433ba0550069bad7894532490a05bc40b3f87c67b9ff857fab84
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **462.0 MB (462032419 bytes)**  
+-	Total Size: **462.0 MB (462026107 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:f42ef06f2d517d0b81aae4519f9f643518bc3d3a2b436895d9fef8ce479893e7`
+-	Image ID: `sha256:4ac4904b3ebe81ad82466d63543f3cbfd24bef62067d8cc3c728e7c19c9d0da4`
 -	Default Command: `["iex"]`
 
 ```dockerfile
-# Wed, 14 Aug 2019 00:45:55 GMT
-ADD file:628950cdb60edf56519623bb5bceb8f913d0e4a57fb94d64bbeb5f99491a79c8 in / 
-# Wed, 14 Aug 2019 00:45:56 GMT
+# Wed, 11 Sep 2019 22:43:56 GMT
+ADD file:5c261012373b1f613abf90c8163f72247906770a6209fc775af35a131ba818f9 in / 
+# Wed, 11 Sep 2019 22:43:57 GMT
 CMD ["bash"]
-# Wed, 14 Aug 2019 03:02:33 GMT
+# Thu, 12 Sep 2019 00:38:06 GMT
 RUN apt-get update && apt-get install -y --no-install-recommends 		ca-certificates 		curl 		netbase 		wget 	&& rm -rf /var/lib/apt/lists/*
-# Wed, 14 Aug 2019 03:02:43 GMT
+# Thu, 12 Sep 2019 00:38:13 GMT
 RUN set -ex; 	if ! command -v gpg > /dev/null; then 		apt-get update; 		apt-get install -y --no-install-recommends 			gnupg 			dirmngr 		; 		rm -rf /var/lib/apt/lists/*; 	fi
-# Wed, 14 Aug 2019 03:03:35 GMT
+# Thu, 12 Sep 2019 00:38:39 GMT
 RUN apt-get update && apt-get install -y --no-install-recommends 		bzr 		git 		mercurial 		openssh-client 		subversion 				procps 	&& rm -rf /var/lib/apt/lists/*
-# Tue, 10 Sep 2019 21:40:06 GMT
+# Thu, 12 Sep 2019 00:40:19 GMT
 RUN set -ex; 	apt-get update; 	apt-get install -y --no-install-recommends 		autoconf 		automake 		bzip2 		dpkg-dev 		file 		g++ 		gcc 		imagemagick 		libbz2-dev 		libc6-dev 		libcurl4-openssl-dev 		libdb-dev 		libevent-dev 		libffi-dev 		libgdbm-dev 		libglib2.0-dev 		libgmp-dev 		libjpeg-dev 		libkrb5-dev 		liblzma-dev 		libmagickcore-dev 		libmagickwand-dev 		libmaxminddb-dev 		libncurses5-dev 		libncursesw5-dev 		libpng-dev 		libpq-dev 		libreadline-dev 		libsqlite3-dev 		libssl-dev 		libtool 		libwebp-dev 		libxml2-dev 		libxslt-dev 		libyaml-dev 		make 		patch 		unzip 		xz-utils 		zlib1g-dev 				$( 			if apt-cache show 'default-libmysqlclient-dev' 2>/dev/null | grep -q '^Version:'; then 				echo 'default-libmysqlclient-dev'; 			else 				echo 'libmysqlclient-dev'; 			fi 		) 	; 	rm -rf /var/lib/apt/lists/*
-# Wed, 11 Sep 2019 03:53:10 GMT
+# Thu, 12 Sep 2019 01:57:26 GMT
 ENV OTP_VERSION=20.3.8.22
-# Wed, 11 Sep 2019 03:59:59 GMT
+# Thu, 12 Sep 2019 02:04:11 GMT
 RUN set -xe 	&& OTP_DOWNLOAD_URL="https://github.com/erlang/otp/archive/OTP-${OTP_VERSION}.tar.gz" 	&& OTP_DOWNLOAD_SHA256="d2c36130938659a63d8de094c3d4f8a1d3ea33d4d993d0723ba9c745df2a2753" 	&& runtimeDeps='libodbc1 			libsctp1 			libwxgtk3.0' 	&& buildDeps='unixodbc-dev 			libsctp-dev 			libwxgtk3.0-dev' 	&& apt-get update 	&& apt-get install -y --no-install-recommends $runtimeDeps 	&& apt-get install -y --no-install-recommends $buildDeps 	&& curl -fSL -o otp-src.tar.gz "$OTP_DOWNLOAD_URL" 	&& echo "$OTP_DOWNLOAD_SHA256  otp-src.tar.gz" | sha256sum -c - 	&& export ERL_TOP="/usr/src/otp_src_${OTP_VERSION%%@*}" 	&& mkdir -vp $ERL_TOP 	&& tar -xzf otp-src.tar.gz -C $ERL_TOP --strip-components=1 	&& rm otp-src.tar.gz 	&& ( cd $ERL_TOP 	  && ./otp_build autoconf 	  && gnuArch="$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)" 	  && ./configure --build="$gnuArch" 	  && make -j$(nproc) 	  && make install ) 	&& find /usr/local -name examples | xargs rm -rf 	&& apt-get purge -y --auto-remove $buildDeps 	&& rm -rf $ERL_TOP /var/lib/apt/lists/*
-# Wed, 11 Sep 2019 03:59:59 GMT
+# Thu, 12 Sep 2019 02:04:11 GMT
 CMD ["erl"]
-# Wed, 11 Sep 2019 04:00:00 GMT
+# Thu, 12 Sep 2019 02:04:11 GMT
 ENV REBAR_VERSION=2.6.4
-# Wed, 11 Sep 2019 04:00:03 GMT
+# Thu, 12 Sep 2019 02:04:14 GMT
 RUN set -xe 	&& REBAR_DOWNLOAD_URL="https://github.com/rebar/rebar/archive/${REBAR_VERSION}.tar.gz" 	&& REBAR_DOWNLOAD_SHA256="577246bafa2eb2b2c3f1d0c157408650446884555bf87901508ce71d5cc0bd07" 	&& mkdir -p /usr/src/rebar-src 	&& curl -fSL -o rebar-src.tar.gz "$REBAR_DOWNLOAD_URL" 	&& echo "$REBAR_DOWNLOAD_SHA256 rebar-src.tar.gz" | sha256sum -c - 	&& tar -xzf rebar-src.tar.gz -C /usr/src/rebar-src --strip-components=1 	&& rm rebar-src.tar.gz 	&& cd /usr/src/rebar-src 	&& ./bootstrap 	&& install -v ./rebar /usr/local/bin/ 	&& rm -rf /usr/src/rebar-src
-# Wed, 11 Sep 2019 04:00:03 GMT
+# Thu, 12 Sep 2019 02:04:14 GMT
 ENV REBAR3_VERSION=3.10.0
-# Wed, 11 Sep 2019 04:00:22 GMT
+# Thu, 12 Sep 2019 02:04:30 GMT
 RUN set -xe 	&& REBAR3_DOWNLOAD_URL="https://github.com/erlang/rebar3/archive/${REBAR3_VERSION}.tar.gz" 	&& REBAR3_DOWNLOAD_SHA256="656b4a0bd75f340173e67a33c92e4d422b5ccf054f93ba35a9d780b545ee827e" 	&& mkdir -p /usr/src/rebar3-src 	&& curl -fSL -o rebar3-src.tar.gz "$REBAR3_DOWNLOAD_URL" 	&& echo "$REBAR3_DOWNLOAD_SHA256 rebar3-src.tar.gz" | sha256sum -c - 	&& tar -xzf rebar3-src.tar.gz -C /usr/src/rebar3-src --strip-components=1 	&& rm rebar3-src.tar.gz 	&& cd /usr/src/rebar3-src 	&& HOME=$PWD ./bootstrap 	&& install -v ./rebar3 /usr/local/bin/ 	&& rm -rf /usr/src/rebar3-src
-# Wed, 11 Sep 2019 05:23:33 GMT
+# Thu, 12 Sep 2019 12:38:14 GMT
 ENV ELIXIR_VERSION=v1.5.3 LANG=C.UTF-8
-# Wed, 11 Sep 2019 05:24:10 GMT
+# Thu, 12 Sep 2019 12:38:51 GMT
 RUN set -xe 	&& ELIXIR_DOWNLOAD_URL="https://github.com/elixir-lang/elixir/archive/${ELIXIR_VERSION}.tar.gz" 	&& ELIXIR_DOWNLOAD_SHA256="0fc6024b6027d87af9609b416448fd65d8927e0d05fc02410b35f4b9b9eb9629" 	&& curl -fSL -o elixir-src.tar.gz $ELIXIR_DOWNLOAD_URL 	&& echo "$ELIXIR_DOWNLOAD_SHA256  elixir-src.tar.gz" | sha256sum -c - 	&& mkdir -p /usr/local/src/elixir 	&& tar -xzC /usr/local/src/elixir --strip-components=1 -f elixir-src.tar.gz 	&& rm elixir-src.tar.gz 	&& cd /usr/local/src/elixir 	&& make install clean
-# Wed, 11 Sep 2019 05:24:10 GMT
+# Thu, 12 Sep 2019 12:38:51 GMT
 CMD ["iex"]
 ```
 
 -	Layers:
-	-	`sha256:05b3194a550b956249959e2f64475745fcf943ed7951306c6e3e6a5cd1815dd6`  
-		Last Modified: Wed, 14 Aug 2019 00:51:50 GMT  
-		Size: 45.2 MB (45245026 bytes)  
+	-	`sha256:5d4da55d9cf0eafd201c3838c03984cc0ef153b12bbfd5964ffee9e9d6b38bbb`  
+		Last Modified: Wed, 11 Sep 2019 22:48:17 GMT  
+		Size: 45.2 MB (45240190 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:5cc01dcd9b0a29ac6daec9b7b4af78f948ee1945fb22e5e8f97993705d589311`  
-		Last Modified: Wed, 14 Aug 2019 03:10:13 GMT  
-		Size: 10.3 MB (10317828 bytes)  
+	-	`sha256:dad3041fe12244954218a4bd2bfdcb5ae29fd416b247bd17e41c73cbdf9b6de5`  
+		Last Modified: Thu, 12 Sep 2019 00:44:07 GMT  
+		Size: 10.3 MB (10317726 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:5154470af4c84ea4b0ebc80e0cda7c479ef829d3ec3ece20e7b183bc8ded7563`  
-		Last Modified: Wed, 14 Aug 2019 03:10:11 GMT  
-		Size: 4.4 MB (4372320 bytes)  
+	-	`sha256:f6542c8f56fbd52f8d9d01d92625e0a728578d6e417adeba2baa0678cc5009d6`  
+		Last Modified: Thu, 12 Sep 2019 00:44:05 GMT  
+		Size: 4.4 MB (4372276 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:cd3b67ff4ea99e03083897f42be8f62c9ef0cd1e1a0603a4c3e627eae76a020d`  
-		Last Modified: Wed, 14 Aug 2019 03:10:30 GMT  
-		Size: 50.5 MB (50489789 bytes)  
+	-	`sha256:25fa3a7ad4fa33ba9843e1e836bf619c36b0cc5a1ce2d9b3e1e1b932c6220148`  
+		Last Modified: Thu, 12 Sep 2019 00:44:24 GMT  
+		Size: 50.5 MB (50488527 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:287679351b06307bcc1a8ced873496e08f721d41a6e4cea1ba6874f49aa24353`  
-		Last Modified: Tue, 10 Sep 2019 21:47:12 GMT  
-		Size: 206.9 MB (206858733 bytes)  
+	-	`sha256:271ed6d81ea099ed00ae3e2d3c436fe81ecbf2fd85a94445c7592c99cde20e64`  
+		Last Modified: Thu, 12 Sep 2019 00:45:02 GMT  
+		Size: 206.9 MB (206858680 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:33d7abcbcb656538000d026688c2caf66414c51f9ff7165935cec0c0777a0fe6`  
-		Last Modified: Wed, 11 Sep 2019 04:17:56 GMT  
-		Size: 138.1 MB (138112813 bytes)  
+	-	`sha256:a862b1a33fa0c9d7c5ec89a7f6b817ec3d3636255342adf11670361a16b7775e`  
+		Last Modified: Thu, 12 Sep 2019 02:39:42 GMT  
+		Size: 138.1 MB (138112480 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:4642d8652a06220ed8db36461691cd7f90fd0da69c88853be39806658a953c9e`  
-		Last Modified: Wed, 11 Sep 2019 04:17:39 GMT  
-		Size: 201.9 KB (201902 bytes)  
+	-	`sha256:ba43fd9ff1eaea9fbb0ce8612f3dd936d53c4a550fa261fc689224411a328be0`  
+		Last Modified: Thu, 12 Sep 2019 02:39:28 GMT  
+		Size: 202.0 KB (201952 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:647b2f68abce7babd65fbb48b62d8fac79006c00c76f9d4588c296ebef3b1246`  
-		Last Modified: Wed, 11 Sep 2019 04:17:39 GMT  
-		Size: 831.8 KB (831809 bytes)  
+	-	`sha256:acb135504bc69592460fcebc7111f302adb4b0078d88308849f40f9377075fa2`  
+		Last Modified: Thu, 12 Sep 2019 02:39:28 GMT  
+		Size: 831.8 KB (831811 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:e26e4cc783be0fae99b98b9520c56ba5f9a2bb0ca05614227789925111c725c2`  
-		Last Modified: Wed, 11 Sep 2019 05:25:54 GMT  
-		Size: 5.6 MB (5602199 bytes)  
+	-	`sha256:6f75c19b8dba7f8f4dd733e539a72c22a59956068115862fcc60807a1ad70c1b`  
+		Last Modified: Thu, 12 Sep 2019 12:41:20 GMT  
+		Size: 5.6 MB (5602465 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `elixir:1.5.3-alpine`
@@ -2780,7 +2780,7 @@ CMD ["iex"]
 ## `elixir:1.5.3-slim`
 
 ```console
-$ docker pull elixir@sha256:096cf3c37cd7a0a50509f1d1984cc68373807fbdff0f82bc9a6fb12de0e5d612
+$ docker pull elixir@sha256:58d01953b44ac125eb2d2ea6eef7b356ab391742c8dc952c009fc8a1d01a231b
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -3025,47 +3025,47 @@ CMD ["iex"]
 ### `elixir:1.5.3-slim` - linux; s390x
 
 ```console
-$ docker pull elixir@sha256:6e038354411b8f941b7457e2377e8abc7a5bdcf23fa6366aaa6079d2b53268a9
+$ docker pull elixir@sha256:d8b6429fcf32b73b70255ee8e2241032e9d051c460940e9635249a9a8dd9bd8e
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **113.4 MB (113444714 bytes)**  
+-	Total Size: **113.5 MB (113460837 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:287189efe24267d743d9b268dd5d5e04bc7293f1b178d7b2398ecafae5a60bc8`
+-	Image ID: `sha256:0d13f9bb053906de301ce69cf7bdc329790b3cdb84a6e7c28e379dcdc780e108`
 -	Default Command: `["iex"]`
 
 ```dockerfile
-# Wed, 14 Aug 2019 00:45:55 GMT
-ADD file:628950cdb60edf56519623bb5bceb8f913d0e4a57fb94d64bbeb5f99491a79c8 in / 
-# Wed, 14 Aug 2019 00:45:56 GMT
+# Wed, 11 Sep 2019 22:43:56 GMT
+ADD file:5c261012373b1f613abf90c8163f72247906770a6209fc775af35a131ba818f9 in / 
+# Wed, 11 Sep 2019 22:43:57 GMT
 CMD ["bash"]
-# Wed, 14 Aug 2019 02:01:10 GMT
+# Thu, 12 Sep 2019 02:04:48 GMT
 ENV OTP_VERSION=20.3.8.22
-# Wed, 14 Aug 2019 02:12:03 GMT
+# Thu, 12 Sep 2019 02:09:32 GMT
 RUN set -xe 	&& OTP_DOWNLOAD_URL="https://github.com/erlang/otp/archive/OTP-${OTP_VERSION}.tar.gz" 	&& OTP_DOWNLOAD_SHA256="d2c36130938659a63d8de094c3d4f8a1d3ea33d4d993d0723ba9c745df2a2753" 	&& fetchDeps=' 		curl 		ca-certificates' 	&& apt-get update 	&& apt-get install -y --no-install-recommends $fetchDeps 	&& curl -fSL -o otp-src.tar.gz "$OTP_DOWNLOAD_URL" 	&& echo "$OTP_DOWNLOAD_SHA256  otp-src.tar.gz" | sha256sum -c - 	&& runtimeDeps=' 		libodbc1 		libssl1.1 		libsctp1 	' 	&& buildDeps=' 		autoconf 		dpkg-dev 		gcc 		g++ 		make 		libncurses-dev 		unixodbc-dev 		libssl-dev 		libsctp-dev 	' 	&& apt-get install -y --no-install-recommends $runtimeDeps 	&& apt-get install -y --no-install-recommends $buildDeps 	&& export ERL_TOP="/usr/src/otp_src_${OTP_VERSION%%@*}" 	&& mkdir -vp $ERL_TOP 	&& tar -xzf otp-src.tar.gz -C $ERL_TOP --strip-components=1 	&& rm otp-src.tar.gz 	&& ( cd $ERL_TOP 	  && ./otp_build autoconf 	  && gnuArch="$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)" 	  && ./configure --build="$gnuArch" 	  && make -j$(nproc) 	  && make install ) 	&& find /usr/local -name examples | xargs rm -rf 	&& apt-get purge -y --auto-remove $buildDeps $fetchDeps 	&& rm -rf $ERL_TOP /var/lib/apt/lists/*
-# Wed, 14 Aug 2019 02:12:04 GMT
+# Thu, 12 Sep 2019 02:09:32 GMT
 CMD ["erl"]
-# Wed, 14 Aug 2019 15:12:25 GMT
+# Thu, 12 Sep 2019 12:39:01 GMT
 ENV ELIXIR_VERSION=v1.5.3 LANG=C.UTF-8
-# Wed, 14 Aug 2019 15:12:58 GMT
+# Thu, 12 Sep 2019 12:39:15 GMT
 RUN set -xe 	&& ELIXIR_DOWNLOAD_URL="https://github.com/elixir-lang/elixir/releases/download/${ELIXIR_VERSION}/Precompiled.zip" 	&& ELIXIR_DOWNLOAD_SHA256="70972b844c12bc1a3960136d628ab4f21ca87dd5539c544ebabe41d6c9239ba9" 	&& buildDeps=' 		ca-certificates 		curl 		unzip 	' 	&& apt-get update 	&& apt-get install -y --no-install-recommends $buildDeps 	&& curl -fSL -o elixir-precompiled.zip $ELIXIR_DOWNLOAD_URL 	&& echo "$ELIXIR_DOWNLOAD_SHA256  elixir-precompiled.zip" | sha256sum -c - 	&& unzip -d /usr/local elixir-precompiled.zip 	&& rm elixir-precompiled.zip 	&& apt-get purge -y --auto-remove $buildDeps 	&& rm -rf /var/lib/apt/lists/*
-# Wed, 14 Aug 2019 15:12:59 GMT
+# Thu, 12 Sep 2019 12:39:15 GMT
 CMD ["iex"]
 ```
 
 -	Layers:
-	-	`sha256:05b3194a550b956249959e2f64475745fcf943ed7951306c6e3e6a5cd1815dd6`  
-		Last Modified: Wed, 14 Aug 2019 00:51:50 GMT  
-		Size: 45.2 MB (45245026 bytes)  
+	-	`sha256:5d4da55d9cf0eafd201c3838c03984cc0ef153b12bbfd5964ffee9e9d6b38bbb`  
+		Last Modified: Wed, 11 Sep 2019 22:48:17 GMT  
+		Size: 45.2 MB (45240190 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:4980420880b4ffaa2ed7bcec41db7892f118136261ebe8ec034972c6d25f47c2`  
-		Last Modified: Wed, 14 Aug 2019 02:40:20 GMT  
-		Size: 63.9 MB (63863621 bytes)  
+	-	`sha256:05f8f3272bb17f240515b05f10e8f35fad8dfabaa6dd60cd5c26d32da05fc05a`  
+		Last Modified: Thu, 12 Sep 2019 02:39:59 GMT  
+		Size: 63.9 MB (63884833 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:f67068dc1c57cfd6931a9f20b432e3e97924704480e132a5cd534d7e78441161`  
-		Last Modified: Wed, 14 Aug 2019 15:14:58 GMT  
-		Size: 4.3 MB (4336067 bytes)  
+	-	`sha256:5de24395ebebde96ccb87466bd821e7c8201ee0ce7c5168eb0165083f07d3804`  
+		Last Modified: Thu, 12 Sep 2019 12:41:25 GMT  
+		Size: 4.3 MB (4335814 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `elixir:1.5-alpine`
@@ -3362,7 +3362,7 @@ CMD ["iex"]
 ## `elixir:1.5-slim`
 
 ```console
-$ docker pull elixir@sha256:096cf3c37cd7a0a50509f1d1984cc68373807fbdff0f82bc9a6fb12de0e5d612
+$ docker pull elixir@sha256:58d01953b44ac125eb2d2ea6eef7b356ab391742c8dc952c009fc8a1d01a231b
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -3607,53 +3607,53 @@ CMD ["iex"]
 ### `elixir:1.5-slim` - linux; s390x
 
 ```console
-$ docker pull elixir@sha256:6e038354411b8f941b7457e2377e8abc7a5bdcf23fa6366aaa6079d2b53268a9
+$ docker pull elixir@sha256:d8b6429fcf32b73b70255ee8e2241032e9d051c460940e9635249a9a8dd9bd8e
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **113.4 MB (113444714 bytes)**  
+-	Total Size: **113.5 MB (113460837 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:287189efe24267d743d9b268dd5d5e04bc7293f1b178d7b2398ecafae5a60bc8`
+-	Image ID: `sha256:0d13f9bb053906de301ce69cf7bdc329790b3cdb84a6e7c28e379dcdc780e108`
 -	Default Command: `["iex"]`
 
 ```dockerfile
-# Wed, 14 Aug 2019 00:45:55 GMT
-ADD file:628950cdb60edf56519623bb5bceb8f913d0e4a57fb94d64bbeb5f99491a79c8 in / 
-# Wed, 14 Aug 2019 00:45:56 GMT
+# Wed, 11 Sep 2019 22:43:56 GMT
+ADD file:5c261012373b1f613abf90c8163f72247906770a6209fc775af35a131ba818f9 in / 
+# Wed, 11 Sep 2019 22:43:57 GMT
 CMD ["bash"]
-# Wed, 14 Aug 2019 02:01:10 GMT
+# Thu, 12 Sep 2019 02:04:48 GMT
 ENV OTP_VERSION=20.3.8.22
-# Wed, 14 Aug 2019 02:12:03 GMT
+# Thu, 12 Sep 2019 02:09:32 GMT
 RUN set -xe 	&& OTP_DOWNLOAD_URL="https://github.com/erlang/otp/archive/OTP-${OTP_VERSION}.tar.gz" 	&& OTP_DOWNLOAD_SHA256="d2c36130938659a63d8de094c3d4f8a1d3ea33d4d993d0723ba9c745df2a2753" 	&& fetchDeps=' 		curl 		ca-certificates' 	&& apt-get update 	&& apt-get install -y --no-install-recommends $fetchDeps 	&& curl -fSL -o otp-src.tar.gz "$OTP_DOWNLOAD_URL" 	&& echo "$OTP_DOWNLOAD_SHA256  otp-src.tar.gz" | sha256sum -c - 	&& runtimeDeps=' 		libodbc1 		libssl1.1 		libsctp1 	' 	&& buildDeps=' 		autoconf 		dpkg-dev 		gcc 		g++ 		make 		libncurses-dev 		unixodbc-dev 		libssl-dev 		libsctp-dev 	' 	&& apt-get install -y --no-install-recommends $runtimeDeps 	&& apt-get install -y --no-install-recommends $buildDeps 	&& export ERL_TOP="/usr/src/otp_src_${OTP_VERSION%%@*}" 	&& mkdir -vp $ERL_TOP 	&& tar -xzf otp-src.tar.gz -C $ERL_TOP --strip-components=1 	&& rm otp-src.tar.gz 	&& ( cd $ERL_TOP 	  && ./otp_build autoconf 	  && gnuArch="$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)" 	  && ./configure --build="$gnuArch" 	  && make -j$(nproc) 	  && make install ) 	&& find /usr/local -name examples | xargs rm -rf 	&& apt-get purge -y --auto-remove $buildDeps $fetchDeps 	&& rm -rf $ERL_TOP /var/lib/apt/lists/*
-# Wed, 14 Aug 2019 02:12:04 GMT
+# Thu, 12 Sep 2019 02:09:32 GMT
 CMD ["erl"]
-# Wed, 14 Aug 2019 15:12:25 GMT
+# Thu, 12 Sep 2019 12:39:01 GMT
 ENV ELIXIR_VERSION=v1.5.3 LANG=C.UTF-8
-# Wed, 14 Aug 2019 15:12:58 GMT
+# Thu, 12 Sep 2019 12:39:15 GMT
 RUN set -xe 	&& ELIXIR_DOWNLOAD_URL="https://github.com/elixir-lang/elixir/releases/download/${ELIXIR_VERSION}/Precompiled.zip" 	&& ELIXIR_DOWNLOAD_SHA256="70972b844c12bc1a3960136d628ab4f21ca87dd5539c544ebabe41d6c9239ba9" 	&& buildDeps=' 		ca-certificates 		curl 		unzip 	' 	&& apt-get update 	&& apt-get install -y --no-install-recommends $buildDeps 	&& curl -fSL -o elixir-precompiled.zip $ELIXIR_DOWNLOAD_URL 	&& echo "$ELIXIR_DOWNLOAD_SHA256  elixir-precompiled.zip" | sha256sum -c - 	&& unzip -d /usr/local elixir-precompiled.zip 	&& rm elixir-precompiled.zip 	&& apt-get purge -y --auto-remove $buildDeps 	&& rm -rf /var/lib/apt/lists/*
-# Wed, 14 Aug 2019 15:12:59 GMT
+# Thu, 12 Sep 2019 12:39:15 GMT
 CMD ["iex"]
 ```
 
 -	Layers:
-	-	`sha256:05b3194a550b956249959e2f64475745fcf943ed7951306c6e3e6a5cd1815dd6`  
-		Last Modified: Wed, 14 Aug 2019 00:51:50 GMT  
-		Size: 45.2 MB (45245026 bytes)  
+	-	`sha256:5d4da55d9cf0eafd201c3838c03984cc0ef153b12bbfd5964ffee9e9d6b38bbb`  
+		Last Modified: Wed, 11 Sep 2019 22:48:17 GMT  
+		Size: 45.2 MB (45240190 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:4980420880b4ffaa2ed7bcec41db7892f118136261ebe8ec034972c6d25f47c2`  
-		Last Modified: Wed, 14 Aug 2019 02:40:20 GMT  
-		Size: 63.9 MB (63863621 bytes)  
+	-	`sha256:05f8f3272bb17f240515b05f10e8f35fad8dfabaa6dd60cd5c26d32da05fc05a`  
+		Last Modified: Thu, 12 Sep 2019 02:39:59 GMT  
+		Size: 63.9 MB (63884833 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:f67068dc1c57cfd6931a9f20b432e3e97924704480e132a5cd534d7e78441161`  
-		Last Modified: Wed, 14 Aug 2019 15:14:58 GMT  
-		Size: 4.3 MB (4336067 bytes)  
+	-	`sha256:5de24395ebebde96ccb87466bd821e7c8201ee0ce7c5168eb0165083f07d3804`  
+		Last Modified: Thu, 12 Sep 2019 12:41:25 GMT  
+		Size: 4.3 MB (4335814 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `elixir:1.6`
 
 ```console
-$ docker pull elixir@sha256:5db3f67abd725eea31bca03c50ad3a273677de8502b77b70b66708aebefeaecf
+$ docker pull elixir@sha256:fe274de23b5bbd33386bc82435f5b23a8fa4a51f506d454252ac74befd917cdc
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -4098,93 +4098,93 @@ CMD ["iex"]
 ### `elixir:1.6` - linux; s390x
 
 ```console
-$ docker pull elixir@sha256:d740e2b202382545025a8e41270b43c988735ee6d241fb317ac981c2003475b6
+$ docker pull elixir@sha256:02713d45f65da590ac7bb4823f09ed7bf5d28911cfc89b28d588d598988627d9
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **462.5 MB (462450099 bytes)**  
+-	Total Size: **462.4 MB (462443417 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:af532916c4161d53aa9f8432c50809d9cad79bbc8e9ba871178fd1ae08f5f9ef`
+-	Image ID: `sha256:37deb9d4e2c3dffe9b64de9de59aa8492f51b1c4ee791a919f548459760ab4ff`
 -	Default Command: `["iex"]`
 
 ```dockerfile
-# Wed, 14 Aug 2019 00:45:55 GMT
-ADD file:628950cdb60edf56519623bb5bceb8f913d0e4a57fb94d64bbeb5f99491a79c8 in / 
-# Wed, 14 Aug 2019 00:45:56 GMT
+# Wed, 11 Sep 2019 22:43:56 GMT
+ADD file:5c261012373b1f613abf90c8163f72247906770a6209fc775af35a131ba818f9 in / 
+# Wed, 11 Sep 2019 22:43:57 GMT
 CMD ["bash"]
-# Wed, 14 Aug 2019 03:02:33 GMT
+# Thu, 12 Sep 2019 00:38:06 GMT
 RUN apt-get update && apt-get install -y --no-install-recommends 		ca-certificates 		curl 		netbase 		wget 	&& rm -rf /var/lib/apt/lists/*
-# Wed, 14 Aug 2019 03:02:43 GMT
+# Thu, 12 Sep 2019 00:38:13 GMT
 RUN set -ex; 	if ! command -v gpg > /dev/null; then 		apt-get update; 		apt-get install -y --no-install-recommends 			gnupg 			dirmngr 		; 		rm -rf /var/lib/apt/lists/*; 	fi
-# Wed, 14 Aug 2019 03:03:35 GMT
+# Thu, 12 Sep 2019 00:38:39 GMT
 RUN apt-get update && apt-get install -y --no-install-recommends 		bzr 		git 		mercurial 		openssh-client 		subversion 				procps 	&& rm -rf /var/lib/apt/lists/*
-# Tue, 10 Sep 2019 21:40:06 GMT
+# Thu, 12 Sep 2019 00:40:19 GMT
 RUN set -ex; 	apt-get update; 	apt-get install -y --no-install-recommends 		autoconf 		automake 		bzip2 		dpkg-dev 		file 		g++ 		gcc 		imagemagick 		libbz2-dev 		libc6-dev 		libcurl4-openssl-dev 		libdb-dev 		libevent-dev 		libffi-dev 		libgdbm-dev 		libglib2.0-dev 		libgmp-dev 		libjpeg-dev 		libkrb5-dev 		liblzma-dev 		libmagickcore-dev 		libmagickwand-dev 		libmaxminddb-dev 		libncurses5-dev 		libncursesw5-dev 		libpng-dev 		libpq-dev 		libreadline-dev 		libsqlite3-dev 		libssl-dev 		libtool 		libwebp-dev 		libxml2-dev 		libxslt-dev 		libyaml-dev 		make 		patch 		unzip 		xz-utils 		zlib1g-dev 				$( 			if apt-cache show 'default-libmysqlclient-dev' 2>/dev/null | grep -q '^Version:'; then 				echo 'default-libmysqlclient-dev'; 			else 				echo 'libmysqlclient-dev'; 			fi 		) 	; 	rm -rf /var/lib/apt/lists/*
-# Wed, 11 Sep 2019 03:53:10 GMT
+# Thu, 12 Sep 2019 01:57:26 GMT
 ENV OTP_VERSION=20.3.8.22
-# Wed, 11 Sep 2019 03:59:59 GMT
+# Thu, 12 Sep 2019 02:04:11 GMT
 RUN set -xe 	&& OTP_DOWNLOAD_URL="https://github.com/erlang/otp/archive/OTP-${OTP_VERSION}.tar.gz" 	&& OTP_DOWNLOAD_SHA256="d2c36130938659a63d8de094c3d4f8a1d3ea33d4d993d0723ba9c745df2a2753" 	&& runtimeDeps='libodbc1 			libsctp1 			libwxgtk3.0' 	&& buildDeps='unixodbc-dev 			libsctp-dev 			libwxgtk3.0-dev' 	&& apt-get update 	&& apt-get install -y --no-install-recommends $runtimeDeps 	&& apt-get install -y --no-install-recommends $buildDeps 	&& curl -fSL -o otp-src.tar.gz "$OTP_DOWNLOAD_URL" 	&& echo "$OTP_DOWNLOAD_SHA256  otp-src.tar.gz" | sha256sum -c - 	&& export ERL_TOP="/usr/src/otp_src_${OTP_VERSION%%@*}" 	&& mkdir -vp $ERL_TOP 	&& tar -xzf otp-src.tar.gz -C $ERL_TOP --strip-components=1 	&& rm otp-src.tar.gz 	&& ( cd $ERL_TOP 	  && ./otp_build autoconf 	  && gnuArch="$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)" 	  && ./configure --build="$gnuArch" 	  && make -j$(nproc) 	  && make install ) 	&& find /usr/local -name examples | xargs rm -rf 	&& apt-get purge -y --auto-remove $buildDeps 	&& rm -rf $ERL_TOP /var/lib/apt/lists/*
-# Wed, 11 Sep 2019 03:59:59 GMT
+# Thu, 12 Sep 2019 02:04:11 GMT
 CMD ["erl"]
-# Wed, 11 Sep 2019 04:00:00 GMT
+# Thu, 12 Sep 2019 02:04:11 GMT
 ENV REBAR_VERSION=2.6.4
-# Wed, 11 Sep 2019 04:00:03 GMT
+# Thu, 12 Sep 2019 02:04:14 GMT
 RUN set -xe 	&& REBAR_DOWNLOAD_URL="https://github.com/rebar/rebar/archive/${REBAR_VERSION}.tar.gz" 	&& REBAR_DOWNLOAD_SHA256="577246bafa2eb2b2c3f1d0c157408650446884555bf87901508ce71d5cc0bd07" 	&& mkdir -p /usr/src/rebar-src 	&& curl -fSL -o rebar-src.tar.gz "$REBAR_DOWNLOAD_URL" 	&& echo "$REBAR_DOWNLOAD_SHA256 rebar-src.tar.gz" | sha256sum -c - 	&& tar -xzf rebar-src.tar.gz -C /usr/src/rebar-src --strip-components=1 	&& rm rebar-src.tar.gz 	&& cd /usr/src/rebar-src 	&& ./bootstrap 	&& install -v ./rebar /usr/local/bin/ 	&& rm -rf /usr/src/rebar-src
-# Wed, 11 Sep 2019 04:00:03 GMT
+# Thu, 12 Sep 2019 02:04:14 GMT
 ENV REBAR3_VERSION=3.10.0
-# Wed, 11 Sep 2019 04:00:22 GMT
+# Thu, 12 Sep 2019 02:04:30 GMT
 RUN set -xe 	&& REBAR3_DOWNLOAD_URL="https://github.com/erlang/rebar3/archive/${REBAR3_VERSION}.tar.gz" 	&& REBAR3_DOWNLOAD_SHA256="656b4a0bd75f340173e67a33c92e4d422b5ccf054f93ba35a9d780b545ee827e" 	&& mkdir -p /usr/src/rebar3-src 	&& curl -fSL -o rebar3-src.tar.gz "$REBAR3_DOWNLOAD_URL" 	&& echo "$REBAR3_DOWNLOAD_SHA256 rebar3-src.tar.gz" | sha256sum -c - 	&& tar -xzf rebar3-src.tar.gz -C /usr/src/rebar3-src --strip-components=1 	&& rm rebar3-src.tar.gz 	&& cd /usr/src/rebar3-src 	&& HOME=$PWD ./bootstrap 	&& install -v ./rebar3 /usr/local/bin/ 	&& rm -rf /usr/src/rebar3-src
-# Wed, 11 Sep 2019 05:21:44 GMT
+# Thu, 12 Sep 2019 12:36:01 GMT
 ENV ELIXIR_VERSION=v1.6.6 LANG=C.UTF-8
-# Wed, 11 Sep 2019 05:22:22 GMT
+# Thu, 12 Sep 2019 12:36:41 GMT
 RUN set -xe 	&& ELIXIR_DOWNLOAD_URL="https://github.com/elixir-lang/elixir/archive/${ELIXIR_VERSION}.tar.gz" 	&& ELIXIR_DOWNLOAD_SHA256="74507b0646bf485ee3af0e7727e3fdab7123f1c5ecf2187a52a928ad60f93831" 	&& curl -fSL -o elixir-src.tar.gz $ELIXIR_DOWNLOAD_URL 	&& echo "$ELIXIR_DOWNLOAD_SHA256  elixir-src.tar.gz" | sha256sum -c - 	&& mkdir -p /usr/local/src/elixir 	&& tar -xzC /usr/local/src/elixir --strip-components=1 -f elixir-src.tar.gz 	&& rm elixir-src.tar.gz 	&& cd /usr/local/src/elixir 	&& make install clean
-# Wed, 11 Sep 2019 05:22:22 GMT
+# Thu, 12 Sep 2019 12:36:41 GMT
 CMD ["iex"]
 ```
 
 -	Layers:
-	-	`sha256:05b3194a550b956249959e2f64475745fcf943ed7951306c6e3e6a5cd1815dd6`  
-		Last Modified: Wed, 14 Aug 2019 00:51:50 GMT  
-		Size: 45.2 MB (45245026 bytes)  
+	-	`sha256:5d4da55d9cf0eafd201c3838c03984cc0ef153b12bbfd5964ffee9e9d6b38bbb`  
+		Last Modified: Wed, 11 Sep 2019 22:48:17 GMT  
+		Size: 45.2 MB (45240190 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:5cc01dcd9b0a29ac6daec9b7b4af78f948ee1945fb22e5e8f97993705d589311`  
-		Last Modified: Wed, 14 Aug 2019 03:10:13 GMT  
-		Size: 10.3 MB (10317828 bytes)  
+	-	`sha256:dad3041fe12244954218a4bd2bfdcb5ae29fd416b247bd17e41c73cbdf9b6de5`  
+		Last Modified: Thu, 12 Sep 2019 00:44:07 GMT  
+		Size: 10.3 MB (10317726 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:5154470af4c84ea4b0ebc80e0cda7c479ef829d3ec3ece20e7b183bc8ded7563`  
-		Last Modified: Wed, 14 Aug 2019 03:10:11 GMT  
-		Size: 4.4 MB (4372320 bytes)  
+	-	`sha256:f6542c8f56fbd52f8d9d01d92625e0a728578d6e417adeba2baa0678cc5009d6`  
+		Last Modified: Thu, 12 Sep 2019 00:44:05 GMT  
+		Size: 4.4 MB (4372276 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:cd3b67ff4ea99e03083897f42be8f62c9ef0cd1e1a0603a4c3e627eae76a020d`  
-		Last Modified: Wed, 14 Aug 2019 03:10:30 GMT  
-		Size: 50.5 MB (50489789 bytes)  
+	-	`sha256:25fa3a7ad4fa33ba9843e1e836bf619c36b0cc5a1ce2d9b3e1e1b932c6220148`  
+		Last Modified: Thu, 12 Sep 2019 00:44:24 GMT  
+		Size: 50.5 MB (50488527 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:287679351b06307bcc1a8ced873496e08f721d41a6e4cea1ba6874f49aa24353`  
-		Last Modified: Tue, 10 Sep 2019 21:47:12 GMT  
-		Size: 206.9 MB (206858733 bytes)  
+	-	`sha256:271ed6d81ea099ed00ae3e2d3c436fe81ecbf2fd85a94445c7592c99cde20e64`  
+		Last Modified: Thu, 12 Sep 2019 00:45:02 GMT  
+		Size: 206.9 MB (206858680 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:33d7abcbcb656538000d026688c2caf66414c51f9ff7165935cec0c0777a0fe6`  
-		Last Modified: Wed, 11 Sep 2019 04:17:56 GMT  
-		Size: 138.1 MB (138112813 bytes)  
+	-	`sha256:a862b1a33fa0c9d7c5ec89a7f6b817ec3d3636255342adf11670361a16b7775e`  
+		Last Modified: Thu, 12 Sep 2019 02:39:42 GMT  
+		Size: 138.1 MB (138112480 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:4642d8652a06220ed8db36461691cd7f90fd0da69c88853be39806658a953c9e`  
-		Last Modified: Wed, 11 Sep 2019 04:17:39 GMT  
-		Size: 201.9 KB (201902 bytes)  
+	-	`sha256:ba43fd9ff1eaea9fbb0ce8612f3dd936d53c4a550fa261fc689224411a328be0`  
+		Last Modified: Thu, 12 Sep 2019 02:39:28 GMT  
+		Size: 202.0 KB (201952 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:647b2f68abce7babd65fbb48b62d8fac79006c00c76f9d4588c296ebef3b1246`  
-		Last Modified: Wed, 11 Sep 2019 04:17:39 GMT  
-		Size: 831.8 KB (831809 bytes)  
+	-	`sha256:acb135504bc69592460fcebc7111f302adb4b0078d88308849f40f9377075fa2`  
+		Last Modified: Thu, 12 Sep 2019 02:39:28 GMT  
+		Size: 831.8 KB (831811 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:f969f55c928324678220e7d19ae53662ca15db2c5b08a0f386bc5fbddf3e3446`  
-		Last Modified: Wed, 11 Sep 2019 05:25:42 GMT  
-		Size: 6.0 MB (6019879 bytes)  
+	-	`sha256:6e160e1dfd697e7390514c7da39efd11112c2a87624bd87e58ddcbe03bc0146b`  
+		Last Modified: Thu, 12 Sep 2019 12:41:03 GMT  
+		Size: 6.0 MB (6019775 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `elixir:1.6.6`
 
 ```console
-$ docker pull elixir@sha256:5db3f67abd725eea31bca03c50ad3a273677de8502b77b70b66708aebefeaecf
+$ docker pull elixir@sha256:fe274de23b5bbd33386bc82435f5b23a8fa4a51f506d454252ac74befd917cdc
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -4629,87 +4629,87 @@ CMD ["iex"]
 ### `elixir:1.6.6` - linux; s390x
 
 ```console
-$ docker pull elixir@sha256:d740e2b202382545025a8e41270b43c988735ee6d241fb317ac981c2003475b6
+$ docker pull elixir@sha256:02713d45f65da590ac7bb4823f09ed7bf5d28911cfc89b28d588d598988627d9
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **462.5 MB (462450099 bytes)**  
+-	Total Size: **462.4 MB (462443417 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:af532916c4161d53aa9f8432c50809d9cad79bbc8e9ba871178fd1ae08f5f9ef`
+-	Image ID: `sha256:37deb9d4e2c3dffe9b64de9de59aa8492f51b1c4ee791a919f548459760ab4ff`
 -	Default Command: `["iex"]`
 
 ```dockerfile
-# Wed, 14 Aug 2019 00:45:55 GMT
-ADD file:628950cdb60edf56519623bb5bceb8f913d0e4a57fb94d64bbeb5f99491a79c8 in / 
-# Wed, 14 Aug 2019 00:45:56 GMT
+# Wed, 11 Sep 2019 22:43:56 GMT
+ADD file:5c261012373b1f613abf90c8163f72247906770a6209fc775af35a131ba818f9 in / 
+# Wed, 11 Sep 2019 22:43:57 GMT
 CMD ["bash"]
-# Wed, 14 Aug 2019 03:02:33 GMT
+# Thu, 12 Sep 2019 00:38:06 GMT
 RUN apt-get update && apt-get install -y --no-install-recommends 		ca-certificates 		curl 		netbase 		wget 	&& rm -rf /var/lib/apt/lists/*
-# Wed, 14 Aug 2019 03:02:43 GMT
+# Thu, 12 Sep 2019 00:38:13 GMT
 RUN set -ex; 	if ! command -v gpg > /dev/null; then 		apt-get update; 		apt-get install -y --no-install-recommends 			gnupg 			dirmngr 		; 		rm -rf /var/lib/apt/lists/*; 	fi
-# Wed, 14 Aug 2019 03:03:35 GMT
+# Thu, 12 Sep 2019 00:38:39 GMT
 RUN apt-get update && apt-get install -y --no-install-recommends 		bzr 		git 		mercurial 		openssh-client 		subversion 				procps 	&& rm -rf /var/lib/apt/lists/*
-# Tue, 10 Sep 2019 21:40:06 GMT
+# Thu, 12 Sep 2019 00:40:19 GMT
 RUN set -ex; 	apt-get update; 	apt-get install -y --no-install-recommends 		autoconf 		automake 		bzip2 		dpkg-dev 		file 		g++ 		gcc 		imagemagick 		libbz2-dev 		libc6-dev 		libcurl4-openssl-dev 		libdb-dev 		libevent-dev 		libffi-dev 		libgdbm-dev 		libglib2.0-dev 		libgmp-dev 		libjpeg-dev 		libkrb5-dev 		liblzma-dev 		libmagickcore-dev 		libmagickwand-dev 		libmaxminddb-dev 		libncurses5-dev 		libncursesw5-dev 		libpng-dev 		libpq-dev 		libreadline-dev 		libsqlite3-dev 		libssl-dev 		libtool 		libwebp-dev 		libxml2-dev 		libxslt-dev 		libyaml-dev 		make 		patch 		unzip 		xz-utils 		zlib1g-dev 				$( 			if apt-cache show 'default-libmysqlclient-dev' 2>/dev/null | grep -q '^Version:'; then 				echo 'default-libmysqlclient-dev'; 			else 				echo 'libmysqlclient-dev'; 			fi 		) 	; 	rm -rf /var/lib/apt/lists/*
-# Wed, 11 Sep 2019 03:53:10 GMT
+# Thu, 12 Sep 2019 01:57:26 GMT
 ENV OTP_VERSION=20.3.8.22
-# Wed, 11 Sep 2019 03:59:59 GMT
+# Thu, 12 Sep 2019 02:04:11 GMT
 RUN set -xe 	&& OTP_DOWNLOAD_URL="https://github.com/erlang/otp/archive/OTP-${OTP_VERSION}.tar.gz" 	&& OTP_DOWNLOAD_SHA256="d2c36130938659a63d8de094c3d4f8a1d3ea33d4d993d0723ba9c745df2a2753" 	&& runtimeDeps='libodbc1 			libsctp1 			libwxgtk3.0' 	&& buildDeps='unixodbc-dev 			libsctp-dev 			libwxgtk3.0-dev' 	&& apt-get update 	&& apt-get install -y --no-install-recommends $runtimeDeps 	&& apt-get install -y --no-install-recommends $buildDeps 	&& curl -fSL -o otp-src.tar.gz "$OTP_DOWNLOAD_URL" 	&& echo "$OTP_DOWNLOAD_SHA256  otp-src.tar.gz" | sha256sum -c - 	&& export ERL_TOP="/usr/src/otp_src_${OTP_VERSION%%@*}" 	&& mkdir -vp $ERL_TOP 	&& tar -xzf otp-src.tar.gz -C $ERL_TOP --strip-components=1 	&& rm otp-src.tar.gz 	&& ( cd $ERL_TOP 	  && ./otp_build autoconf 	  && gnuArch="$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)" 	  && ./configure --build="$gnuArch" 	  && make -j$(nproc) 	  && make install ) 	&& find /usr/local -name examples | xargs rm -rf 	&& apt-get purge -y --auto-remove $buildDeps 	&& rm -rf $ERL_TOP /var/lib/apt/lists/*
-# Wed, 11 Sep 2019 03:59:59 GMT
+# Thu, 12 Sep 2019 02:04:11 GMT
 CMD ["erl"]
-# Wed, 11 Sep 2019 04:00:00 GMT
+# Thu, 12 Sep 2019 02:04:11 GMT
 ENV REBAR_VERSION=2.6.4
-# Wed, 11 Sep 2019 04:00:03 GMT
+# Thu, 12 Sep 2019 02:04:14 GMT
 RUN set -xe 	&& REBAR_DOWNLOAD_URL="https://github.com/rebar/rebar/archive/${REBAR_VERSION}.tar.gz" 	&& REBAR_DOWNLOAD_SHA256="577246bafa2eb2b2c3f1d0c157408650446884555bf87901508ce71d5cc0bd07" 	&& mkdir -p /usr/src/rebar-src 	&& curl -fSL -o rebar-src.tar.gz "$REBAR_DOWNLOAD_URL" 	&& echo "$REBAR_DOWNLOAD_SHA256 rebar-src.tar.gz" | sha256sum -c - 	&& tar -xzf rebar-src.tar.gz -C /usr/src/rebar-src --strip-components=1 	&& rm rebar-src.tar.gz 	&& cd /usr/src/rebar-src 	&& ./bootstrap 	&& install -v ./rebar /usr/local/bin/ 	&& rm -rf /usr/src/rebar-src
-# Wed, 11 Sep 2019 04:00:03 GMT
+# Thu, 12 Sep 2019 02:04:14 GMT
 ENV REBAR3_VERSION=3.10.0
-# Wed, 11 Sep 2019 04:00:22 GMT
+# Thu, 12 Sep 2019 02:04:30 GMT
 RUN set -xe 	&& REBAR3_DOWNLOAD_URL="https://github.com/erlang/rebar3/archive/${REBAR3_VERSION}.tar.gz" 	&& REBAR3_DOWNLOAD_SHA256="656b4a0bd75f340173e67a33c92e4d422b5ccf054f93ba35a9d780b545ee827e" 	&& mkdir -p /usr/src/rebar3-src 	&& curl -fSL -o rebar3-src.tar.gz "$REBAR3_DOWNLOAD_URL" 	&& echo "$REBAR3_DOWNLOAD_SHA256 rebar3-src.tar.gz" | sha256sum -c - 	&& tar -xzf rebar3-src.tar.gz -C /usr/src/rebar3-src --strip-components=1 	&& rm rebar3-src.tar.gz 	&& cd /usr/src/rebar3-src 	&& HOME=$PWD ./bootstrap 	&& install -v ./rebar3 /usr/local/bin/ 	&& rm -rf /usr/src/rebar3-src
-# Wed, 11 Sep 2019 05:21:44 GMT
+# Thu, 12 Sep 2019 12:36:01 GMT
 ENV ELIXIR_VERSION=v1.6.6 LANG=C.UTF-8
-# Wed, 11 Sep 2019 05:22:22 GMT
+# Thu, 12 Sep 2019 12:36:41 GMT
 RUN set -xe 	&& ELIXIR_DOWNLOAD_URL="https://github.com/elixir-lang/elixir/archive/${ELIXIR_VERSION}.tar.gz" 	&& ELIXIR_DOWNLOAD_SHA256="74507b0646bf485ee3af0e7727e3fdab7123f1c5ecf2187a52a928ad60f93831" 	&& curl -fSL -o elixir-src.tar.gz $ELIXIR_DOWNLOAD_URL 	&& echo "$ELIXIR_DOWNLOAD_SHA256  elixir-src.tar.gz" | sha256sum -c - 	&& mkdir -p /usr/local/src/elixir 	&& tar -xzC /usr/local/src/elixir --strip-components=1 -f elixir-src.tar.gz 	&& rm elixir-src.tar.gz 	&& cd /usr/local/src/elixir 	&& make install clean
-# Wed, 11 Sep 2019 05:22:22 GMT
+# Thu, 12 Sep 2019 12:36:41 GMT
 CMD ["iex"]
 ```
 
 -	Layers:
-	-	`sha256:05b3194a550b956249959e2f64475745fcf943ed7951306c6e3e6a5cd1815dd6`  
-		Last Modified: Wed, 14 Aug 2019 00:51:50 GMT  
-		Size: 45.2 MB (45245026 bytes)  
+	-	`sha256:5d4da55d9cf0eafd201c3838c03984cc0ef153b12bbfd5964ffee9e9d6b38bbb`  
+		Last Modified: Wed, 11 Sep 2019 22:48:17 GMT  
+		Size: 45.2 MB (45240190 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:5cc01dcd9b0a29ac6daec9b7b4af78f948ee1945fb22e5e8f97993705d589311`  
-		Last Modified: Wed, 14 Aug 2019 03:10:13 GMT  
-		Size: 10.3 MB (10317828 bytes)  
+	-	`sha256:dad3041fe12244954218a4bd2bfdcb5ae29fd416b247bd17e41c73cbdf9b6de5`  
+		Last Modified: Thu, 12 Sep 2019 00:44:07 GMT  
+		Size: 10.3 MB (10317726 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:5154470af4c84ea4b0ebc80e0cda7c479ef829d3ec3ece20e7b183bc8ded7563`  
-		Last Modified: Wed, 14 Aug 2019 03:10:11 GMT  
-		Size: 4.4 MB (4372320 bytes)  
+	-	`sha256:f6542c8f56fbd52f8d9d01d92625e0a728578d6e417adeba2baa0678cc5009d6`  
+		Last Modified: Thu, 12 Sep 2019 00:44:05 GMT  
+		Size: 4.4 MB (4372276 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:cd3b67ff4ea99e03083897f42be8f62c9ef0cd1e1a0603a4c3e627eae76a020d`  
-		Last Modified: Wed, 14 Aug 2019 03:10:30 GMT  
-		Size: 50.5 MB (50489789 bytes)  
+	-	`sha256:25fa3a7ad4fa33ba9843e1e836bf619c36b0cc5a1ce2d9b3e1e1b932c6220148`  
+		Last Modified: Thu, 12 Sep 2019 00:44:24 GMT  
+		Size: 50.5 MB (50488527 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:287679351b06307bcc1a8ced873496e08f721d41a6e4cea1ba6874f49aa24353`  
-		Last Modified: Tue, 10 Sep 2019 21:47:12 GMT  
-		Size: 206.9 MB (206858733 bytes)  
+	-	`sha256:271ed6d81ea099ed00ae3e2d3c436fe81ecbf2fd85a94445c7592c99cde20e64`  
+		Last Modified: Thu, 12 Sep 2019 00:45:02 GMT  
+		Size: 206.9 MB (206858680 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:33d7abcbcb656538000d026688c2caf66414c51f9ff7165935cec0c0777a0fe6`  
-		Last Modified: Wed, 11 Sep 2019 04:17:56 GMT  
-		Size: 138.1 MB (138112813 bytes)  
+	-	`sha256:a862b1a33fa0c9d7c5ec89a7f6b817ec3d3636255342adf11670361a16b7775e`  
+		Last Modified: Thu, 12 Sep 2019 02:39:42 GMT  
+		Size: 138.1 MB (138112480 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:4642d8652a06220ed8db36461691cd7f90fd0da69c88853be39806658a953c9e`  
-		Last Modified: Wed, 11 Sep 2019 04:17:39 GMT  
-		Size: 201.9 KB (201902 bytes)  
+	-	`sha256:ba43fd9ff1eaea9fbb0ce8612f3dd936d53c4a550fa261fc689224411a328be0`  
+		Last Modified: Thu, 12 Sep 2019 02:39:28 GMT  
+		Size: 202.0 KB (201952 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:647b2f68abce7babd65fbb48b62d8fac79006c00c76f9d4588c296ebef3b1246`  
-		Last Modified: Wed, 11 Sep 2019 04:17:39 GMT  
-		Size: 831.8 KB (831809 bytes)  
+	-	`sha256:acb135504bc69592460fcebc7111f302adb4b0078d88308849f40f9377075fa2`  
+		Last Modified: Thu, 12 Sep 2019 02:39:28 GMT  
+		Size: 831.8 KB (831811 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:f969f55c928324678220e7d19ae53662ca15db2c5b08a0f386bc5fbddf3e3446`  
-		Last Modified: Wed, 11 Sep 2019 05:25:42 GMT  
-		Size: 6.0 MB (6019879 bytes)  
+	-	`sha256:6e160e1dfd697e7390514c7da39efd11112c2a87624bd87e58ddcbe03bc0146b`  
+		Last Modified: Thu, 12 Sep 2019 12:41:03 GMT  
+		Size: 6.0 MB (6019775 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `elixir:1.6.6-alpine`
@@ -5006,7 +5006,7 @@ CMD ["iex"]
 ## `elixir:1.6.6-otp-21`
 
 ```console
-$ docker pull elixir@sha256:c6f11e14b258366ad05507b81d4c80890faa9e4d628e8930107cdff8fbb800c9
+$ docker pull elixir@sha256:eb91915e4c1b7f394b6759d21216840bdc3dbb5c8b4aac077cefddd6ce58a69f
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -5451,87 +5451,87 @@ CMD ["iex"]
 ### `elixir:1.6.6-otp-21` - linux; s390x
 
 ```console
-$ docker pull elixir@sha256:0240972f906315f7ec962bee38c6a4e2e26563d3719cdc3d46a46f968ed28799
+$ docker pull elixir@sha256:3285a0c483ac403abdb051403fc3be553ac922b2cab3173f3bb9f31f02a2548c
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **459.3 MB (459280697 bytes)**  
+-	Total Size: **459.3 MB (459274966 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:6ab0569e28e46d7805ade9aab8f1c5edc34d5b28c9a050b22896259aa271919d`
+-	Image ID: `sha256:458160cdb9ac52f8a418e46cfb8361c34df785a8fac9c40314fc6eae5e4bf57c`
 -	Default Command: `["iex"]`
 
 ```dockerfile
-# Wed, 14 Aug 2019 00:45:55 GMT
-ADD file:628950cdb60edf56519623bb5bceb8f913d0e4a57fb94d64bbeb5f99491a79c8 in / 
-# Wed, 14 Aug 2019 00:45:56 GMT
+# Wed, 11 Sep 2019 22:43:56 GMT
+ADD file:5c261012373b1f613abf90c8163f72247906770a6209fc775af35a131ba818f9 in / 
+# Wed, 11 Sep 2019 22:43:57 GMT
 CMD ["bash"]
-# Wed, 14 Aug 2019 03:02:33 GMT
+# Thu, 12 Sep 2019 00:38:06 GMT
 RUN apt-get update && apt-get install -y --no-install-recommends 		ca-certificates 		curl 		netbase 		wget 	&& rm -rf /var/lib/apt/lists/*
-# Wed, 14 Aug 2019 03:02:43 GMT
+# Thu, 12 Sep 2019 00:38:13 GMT
 RUN set -ex; 	if ! command -v gpg > /dev/null; then 		apt-get update; 		apt-get install -y --no-install-recommends 			gnupg 			dirmngr 		; 		rm -rf /var/lib/apt/lists/*; 	fi
-# Wed, 14 Aug 2019 03:03:35 GMT
+# Thu, 12 Sep 2019 00:38:39 GMT
 RUN apt-get update && apt-get install -y --no-install-recommends 		bzr 		git 		mercurial 		openssh-client 		subversion 				procps 	&& rm -rf /var/lib/apt/lists/*
-# Tue, 10 Sep 2019 21:40:06 GMT
+# Thu, 12 Sep 2019 00:40:19 GMT
 RUN set -ex; 	apt-get update; 	apt-get install -y --no-install-recommends 		autoconf 		automake 		bzip2 		dpkg-dev 		file 		g++ 		gcc 		imagemagick 		libbz2-dev 		libc6-dev 		libcurl4-openssl-dev 		libdb-dev 		libevent-dev 		libffi-dev 		libgdbm-dev 		libglib2.0-dev 		libgmp-dev 		libjpeg-dev 		libkrb5-dev 		liblzma-dev 		libmagickcore-dev 		libmagickwand-dev 		libmaxminddb-dev 		libncurses5-dev 		libncursesw5-dev 		libpng-dev 		libpq-dev 		libreadline-dev 		libsqlite3-dev 		libssl-dev 		libtool 		libwebp-dev 		libxml2-dev 		libxslt-dev 		libyaml-dev 		make 		patch 		unzip 		xz-utils 		zlib1g-dev 				$( 			if apt-cache show 'default-libmysqlclient-dev' 2>/dev/null | grep -q '^Version:'; then 				echo 'default-libmysqlclient-dev'; 			else 				echo 'libmysqlclient-dev'; 			fi 		) 	; 	rm -rf /var/lib/apt/lists/*
-# Wed, 11 Sep 2019 03:45:38 GMT
+# Thu, 12 Sep 2019 01:45:26 GMT
 ENV OTP_VERSION=21.3.8.6
-# Wed, 11 Sep 2019 03:52:24 GMT
+# Thu, 12 Sep 2019 01:52:00 GMT
 RUN set -xe 	&& OTP_DOWNLOAD_URL="https://github.com/erlang/otp/archive/OTP-${OTP_VERSION}.tar.gz" 	&& OTP_DOWNLOAD_SHA256="7d96d11143b8ad71448acc0427c2c34756712aa2972d9aaa6d100f87f29918c6" 	&& runtimeDeps='libodbc1 			libsctp1 			libwxgtk3.0' 	&& buildDeps='unixodbc-dev 			libsctp-dev 			libwxgtk3.0-dev' 	&& apt-get update 	&& apt-get install -y --no-install-recommends $runtimeDeps 	&& apt-get install -y --no-install-recommends $buildDeps 	&& curl -fSL -o otp-src.tar.gz "$OTP_DOWNLOAD_URL" 	&& echo "$OTP_DOWNLOAD_SHA256  otp-src.tar.gz" | sha256sum -c - 	&& export ERL_TOP="/usr/src/otp_src_${OTP_VERSION%%@*}" 	&& mkdir -vp $ERL_TOP 	&& tar -xzf otp-src.tar.gz -C $ERL_TOP --strip-components=1 	&& rm otp-src.tar.gz 	&& ( cd $ERL_TOP 	  && ./otp_build autoconf 	  && gnuArch="$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)" 	  && ./configure --build="$gnuArch" 	  && make -j$(nproc) 	  && make install ) 	&& find /usr/local -name examples | xargs rm -rf 	&& apt-get purge -y --auto-remove $buildDeps 	&& rm -rf $ERL_TOP /var/lib/apt/lists/*
-# Wed, 11 Sep 2019 03:52:24 GMT
+# Thu, 12 Sep 2019 01:52:00 GMT
 CMD ["erl"]
-# Wed, 11 Sep 2019 03:52:25 GMT
+# Thu, 12 Sep 2019 01:52:01 GMT
 ENV REBAR_VERSION=2.6.4
-# Wed, 11 Sep 2019 03:52:27 GMT
+# Thu, 12 Sep 2019 01:52:03 GMT
 RUN set -xe 	&& REBAR_DOWNLOAD_URL="https://github.com/rebar/rebar/archive/${REBAR_VERSION}.tar.gz" 	&& REBAR_DOWNLOAD_SHA256="577246bafa2eb2b2c3f1d0c157408650446884555bf87901508ce71d5cc0bd07" 	&& mkdir -p /usr/src/rebar-src 	&& curl -fSL -o rebar-src.tar.gz "$REBAR_DOWNLOAD_URL" 	&& echo "$REBAR_DOWNLOAD_SHA256 rebar-src.tar.gz" | sha256sum -c - 	&& tar -xzf rebar-src.tar.gz -C /usr/src/rebar-src --strip-components=1 	&& rm rebar-src.tar.gz 	&& cd /usr/src/rebar-src 	&& ./bootstrap 	&& install -v ./rebar /usr/local/bin/ 	&& rm -rf /usr/src/rebar-src
-# Wed, 11 Sep 2019 03:52:27 GMT
+# Thu, 12 Sep 2019 01:52:03 GMT
 ENV REBAR3_VERSION=3.11.1
-# Wed, 11 Sep 2019 03:52:43 GMT
+# Thu, 12 Sep 2019 01:52:17 GMT
 RUN set -xe 	&& REBAR3_DOWNLOAD_URL="https://github.com/erlang/rebar3/archive/${REBAR3_VERSION}.tar.gz" 	&& REBAR3_DOWNLOAD_SHA256="a1822db5210b96b5f8ef10e433b22df19c5fc54dfd847bcaab86c65151ce4171" 	&& mkdir -p /usr/src/rebar3-src 	&& curl -fSL -o rebar3-src.tar.gz "$REBAR3_DOWNLOAD_URL" 	&& echo "$REBAR3_DOWNLOAD_SHA256 rebar3-src.tar.gz" | sha256sum -c - 	&& tar -xzf rebar3-src.tar.gz -C /usr/src/rebar3-src --strip-components=1 	&& rm rebar3-src.tar.gz 	&& cd /usr/src/rebar3-src 	&& HOME=$PWD ./bootstrap 	&& install -v ./rebar3 /usr/local/bin/ 	&& rm -rf /usr/src/rebar3-src
-# Wed, 11 Sep 2019 05:22:39 GMT
+# Thu, 12 Sep 2019 12:37:12 GMT
 ENV ELIXIR_VERSION=v1.6.6 LANG=C.UTF-8
-# Wed, 11 Sep 2019 05:23:14 GMT
+# Thu, 12 Sep 2019 12:37:48 GMT
 RUN set -xe 	&& ELIXIR_DOWNLOAD_URL="https://github.com/elixir-lang/elixir/archive/${ELIXIR_VERSION}.tar.gz" 	&& ELIXIR_DOWNLOAD_SHA256="74507b0646bf485ee3af0e7727e3fdab7123f1c5ecf2187a52a928ad60f93831" 	&& curl -fSL -o elixir-src.tar.gz $ELIXIR_DOWNLOAD_URL 	&& echo "$ELIXIR_DOWNLOAD_SHA256  elixir-src.tar.gz" | sha256sum -c - 	&& mkdir -p /usr/local/src/elixir 	&& tar -xzC /usr/local/src/elixir --strip-components=1 -f elixir-src.tar.gz 	&& rm elixir-src.tar.gz 	&& cd /usr/local/src/elixir 	&& make install clean
-# Wed, 11 Sep 2019 05:23:15 GMT
+# Thu, 12 Sep 2019 12:37:49 GMT
 CMD ["iex"]
 ```
 
 -	Layers:
-	-	`sha256:05b3194a550b956249959e2f64475745fcf943ed7951306c6e3e6a5cd1815dd6`  
-		Last Modified: Wed, 14 Aug 2019 00:51:50 GMT  
-		Size: 45.2 MB (45245026 bytes)  
+	-	`sha256:5d4da55d9cf0eafd201c3838c03984cc0ef153b12bbfd5964ffee9e9d6b38bbb`  
+		Last Modified: Wed, 11 Sep 2019 22:48:17 GMT  
+		Size: 45.2 MB (45240190 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:5cc01dcd9b0a29ac6daec9b7b4af78f948ee1945fb22e5e8f97993705d589311`  
-		Last Modified: Wed, 14 Aug 2019 03:10:13 GMT  
-		Size: 10.3 MB (10317828 bytes)  
+	-	`sha256:dad3041fe12244954218a4bd2bfdcb5ae29fd416b247bd17e41c73cbdf9b6de5`  
+		Last Modified: Thu, 12 Sep 2019 00:44:07 GMT  
+		Size: 10.3 MB (10317726 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:5154470af4c84ea4b0ebc80e0cda7c479ef829d3ec3ece20e7b183bc8ded7563`  
-		Last Modified: Wed, 14 Aug 2019 03:10:11 GMT  
-		Size: 4.4 MB (4372320 bytes)  
+	-	`sha256:f6542c8f56fbd52f8d9d01d92625e0a728578d6e417adeba2baa0678cc5009d6`  
+		Last Modified: Thu, 12 Sep 2019 00:44:05 GMT  
+		Size: 4.4 MB (4372276 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:cd3b67ff4ea99e03083897f42be8f62c9ef0cd1e1a0603a4c3e627eae76a020d`  
-		Last Modified: Wed, 14 Aug 2019 03:10:30 GMT  
-		Size: 50.5 MB (50489789 bytes)  
+	-	`sha256:25fa3a7ad4fa33ba9843e1e836bf619c36b0cc5a1ce2d9b3e1e1b932c6220148`  
+		Last Modified: Thu, 12 Sep 2019 00:44:24 GMT  
+		Size: 50.5 MB (50488527 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:287679351b06307bcc1a8ced873496e08f721d41a6e4cea1ba6874f49aa24353`  
-		Last Modified: Tue, 10 Sep 2019 21:47:12 GMT  
-		Size: 206.9 MB (206858733 bytes)  
+	-	`sha256:271ed6d81ea099ed00ae3e2d3c436fe81ecbf2fd85a94445c7592c99cde20e64`  
+		Last Modified: Thu, 12 Sep 2019 00:45:02 GMT  
+		Size: 206.9 MB (206858680 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:1b8592c735d51ebf1dfa48e1eb0e7eafc5d2c1305f012c1b3ec8c558ce6a2cc0`  
-		Last Modified: Wed, 11 Sep 2019 04:17:27 GMT  
-		Size: 134.9 MB (134948470 bytes)  
+	-	`sha256:910cd9fba3989750310c0568ebda0d6a9a314c1d881c80d0fe08a7f1bf54f6eb`  
+		Last Modified: Thu, 12 Sep 2019 02:39:03 GMT  
+		Size: 134.9 MB (134948947 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:18c2a6b670fe82d983ac4cdcd1b7e2e9ebefab255ec5bc438012d71e8694b158`  
-		Last Modified: Wed, 11 Sep 2019 04:17:14 GMT  
-		Size: 201.5 KB (201455 bytes)  
+	-	`sha256:161f68228ae40bb7fa0ee6d05a9426f02da35cc5f36242ecb06200149da06ec2`  
+		Last Modified: Thu, 12 Sep 2019 02:38:30 GMT  
+		Size: 201.4 KB (201445 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:4ebe6d8e276cebf4b10b2cf059a6a6a3cc24596322505e4cf4492ce799a0b878`  
-		Last Modified: Wed, 11 Sep 2019 04:17:14 GMT  
-		Size: 828.2 KB (828191 bytes)  
+	-	`sha256:6e1321d2a618afb619b05ca4e49d19c245f9d61d8d955057387d5eba621cee49`  
+		Last Modified: Thu, 12 Sep 2019 02:38:30 GMT  
+		Size: 828.2 KB (828186 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:15927e66420e1a4bc257b086e61a8507e12a7e60790ebed6943fea3c655a134e`  
-		Last Modified: Wed, 11 Sep 2019 05:25:48 GMT  
-		Size: 6.0 MB (6018885 bytes)  
+	-	`sha256:2a8659ebd59d36f339a005d4f9a65fa064e5cc0e1fd76bb3be93c9fd34dd7c10`  
+		Last Modified: Thu, 12 Sep 2019 12:41:14 GMT  
+		Size: 6.0 MB (6018989 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `elixir:1.6.6-otp-21-alpine`
@@ -5834,7 +5834,7 @@ CMD ["iex"]
 ## `elixir:1.6.6-slim`
 
 ```console
-$ docker pull elixir@sha256:be776f1a392dc58061412cdec9a3b63f5f9251fa75d44e74af53fdf65c2f4e3c
+$ docker pull elixir@sha256:beb49d4807c71b943904f4760cfa841fe43e11f130ccef2b3c86e36ad941a969
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -6079,47 +6079,47 @@ CMD ["iex"]
 ### `elixir:1.6.6-slim` - linux; s390x
 
 ```console
-$ docker pull elixir@sha256:f885883d881c3a10f1981ea9ba6158aa80f5ab53ba7d2ff33db3570e7e221900
+$ docker pull elixir@sha256:07b8ade561872506b5e6af7e4a601203369d2e6643a3bced3c1a85f12ff04b66
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **114.4 MB (114436102 bytes)**  
+-	Total Size: **114.5 MB (114452276 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:43d5d33133bed82191831f4706199a3d222ee4e0fe3a620fc8b04519ea10ebeb`
+-	Image ID: `sha256:528bbf8db06eddb6d8def3c710b4754261692565ae82e6a5c30626c8c374c38b`
 -	Default Command: `["iex"]`
 
 ```dockerfile
-# Wed, 14 Aug 2019 00:45:55 GMT
-ADD file:628950cdb60edf56519623bb5bceb8f913d0e4a57fb94d64bbeb5f99491a79c8 in / 
-# Wed, 14 Aug 2019 00:45:56 GMT
+# Wed, 11 Sep 2019 22:43:56 GMT
+ADD file:5c261012373b1f613abf90c8163f72247906770a6209fc775af35a131ba818f9 in / 
+# Wed, 11 Sep 2019 22:43:57 GMT
 CMD ["bash"]
-# Wed, 14 Aug 2019 02:01:10 GMT
+# Thu, 12 Sep 2019 02:04:48 GMT
 ENV OTP_VERSION=20.3.8.22
-# Wed, 14 Aug 2019 02:12:03 GMT
+# Thu, 12 Sep 2019 02:09:32 GMT
 RUN set -xe 	&& OTP_DOWNLOAD_URL="https://github.com/erlang/otp/archive/OTP-${OTP_VERSION}.tar.gz" 	&& OTP_DOWNLOAD_SHA256="d2c36130938659a63d8de094c3d4f8a1d3ea33d4d993d0723ba9c745df2a2753" 	&& fetchDeps=' 		curl 		ca-certificates' 	&& apt-get update 	&& apt-get install -y --no-install-recommends $fetchDeps 	&& curl -fSL -o otp-src.tar.gz "$OTP_DOWNLOAD_URL" 	&& echo "$OTP_DOWNLOAD_SHA256  otp-src.tar.gz" | sha256sum -c - 	&& runtimeDeps=' 		libodbc1 		libssl1.1 		libsctp1 	' 	&& buildDeps=' 		autoconf 		dpkg-dev 		gcc 		g++ 		make 		libncurses-dev 		unixodbc-dev 		libssl-dev 		libsctp-dev 	' 	&& apt-get install -y --no-install-recommends $runtimeDeps 	&& apt-get install -y --no-install-recommends $buildDeps 	&& export ERL_TOP="/usr/src/otp_src_${OTP_VERSION%%@*}" 	&& mkdir -vp $ERL_TOP 	&& tar -xzf otp-src.tar.gz -C $ERL_TOP --strip-components=1 	&& rm otp-src.tar.gz 	&& ( cd $ERL_TOP 	  && ./otp_build autoconf 	  && gnuArch="$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)" 	  && ./configure --build="$gnuArch" 	  && make -j$(nproc) 	  && make install ) 	&& find /usr/local -name examples | xargs rm -rf 	&& apt-get purge -y --auto-remove $buildDeps $fetchDeps 	&& rm -rf $ERL_TOP /var/lib/apt/lists/*
-# Wed, 14 Aug 2019 02:12:04 GMT
+# Thu, 12 Sep 2019 02:09:32 GMT
 CMD ["erl"]
-# Wed, 14 Aug 2019 15:11:02 GMT
+# Thu, 12 Sep 2019 12:36:48 GMT
 ENV ELIXIR_VERSION=v1.6.6 LANG=C.UTF-8
-# Wed, 14 Aug 2019 15:11:36 GMT
+# Thu, 12 Sep 2019 12:37:02 GMT
 RUN set -xe 	&& ELIXIR_DOWNLOAD_URL="https://github.com/elixir-lang/elixir/releases/download/${ELIXIR_VERSION}/Precompiled.zip" 	&& ELIXIR_DOWNLOAD_SHA256="d6a84726a042407110d3b13b1ce8d9524b4a50df68174e79d89a9e42e30b410b" 	&& buildDeps=' 		ca-certificates 		curl 		unzip 	' 	&& apt-get update 	&& apt-get install -y --no-install-recommends $buildDeps 	&& curl -fSL -o elixir-precompiled.zip $ELIXIR_DOWNLOAD_URL 	&& echo "$ELIXIR_DOWNLOAD_SHA256  elixir-precompiled.zip" | sha256sum -c - 	&& unzip -d /usr/local elixir-precompiled.zip 	&& rm elixir-precompiled.zip 	&& apt-get purge -y --auto-remove $buildDeps 	&& rm -rf /var/lib/apt/lists/*
-# Wed, 14 Aug 2019 15:11:36 GMT
+# Thu, 12 Sep 2019 12:37:03 GMT
 CMD ["iex"]
 ```
 
 -	Layers:
-	-	`sha256:05b3194a550b956249959e2f64475745fcf943ed7951306c6e3e6a5cd1815dd6`  
-		Last Modified: Wed, 14 Aug 2019 00:51:50 GMT  
-		Size: 45.2 MB (45245026 bytes)  
+	-	`sha256:5d4da55d9cf0eafd201c3838c03984cc0ef153b12bbfd5964ffee9e9d6b38bbb`  
+		Last Modified: Wed, 11 Sep 2019 22:48:17 GMT  
+		Size: 45.2 MB (45240190 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:4980420880b4ffaa2ed7bcec41db7892f118136261ebe8ec034972c6d25f47c2`  
-		Last Modified: Wed, 14 Aug 2019 02:40:20 GMT  
-		Size: 63.9 MB (63863621 bytes)  
+	-	`sha256:05f8f3272bb17f240515b05f10e8f35fad8dfabaa6dd60cd5c26d32da05fc05a`  
+		Last Modified: Thu, 12 Sep 2019 02:39:59 GMT  
+		Size: 63.9 MB (63884833 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:b3b1e90df7a7873dd939b9eedabe9ba79a5f9af7356d3c1875a6bc2c3dae56d7`  
-		Last Modified: Wed, 14 Aug 2019 15:14:51 GMT  
-		Size: 5.3 MB (5327455 bytes)  
+	-	`sha256:8c2083a2c1f98e55cf0dd7b48fe343a23c082b87b9fd4aa82b57adcab477e596`  
+		Last Modified: Thu, 12 Sep 2019 12:41:08 GMT  
+		Size: 5.3 MB (5327253 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `elixir:1.6-alpine`
@@ -6416,7 +6416,7 @@ CMD ["iex"]
 ## `elixir:1.6-otp-21`
 
 ```console
-$ docker pull elixir@sha256:c6f11e14b258366ad05507b81d4c80890faa9e4d628e8930107cdff8fbb800c9
+$ docker pull elixir@sha256:eb91915e4c1b7f394b6759d21216840bdc3dbb5c8b4aac077cefddd6ce58a69f
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -6861,87 +6861,87 @@ CMD ["iex"]
 ### `elixir:1.6-otp-21` - linux; s390x
 
 ```console
-$ docker pull elixir@sha256:0240972f906315f7ec962bee38c6a4e2e26563d3719cdc3d46a46f968ed28799
+$ docker pull elixir@sha256:3285a0c483ac403abdb051403fc3be553ac922b2cab3173f3bb9f31f02a2548c
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **459.3 MB (459280697 bytes)**  
+-	Total Size: **459.3 MB (459274966 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:6ab0569e28e46d7805ade9aab8f1c5edc34d5b28c9a050b22896259aa271919d`
+-	Image ID: `sha256:458160cdb9ac52f8a418e46cfb8361c34df785a8fac9c40314fc6eae5e4bf57c`
 -	Default Command: `["iex"]`
 
 ```dockerfile
-# Wed, 14 Aug 2019 00:45:55 GMT
-ADD file:628950cdb60edf56519623bb5bceb8f913d0e4a57fb94d64bbeb5f99491a79c8 in / 
-# Wed, 14 Aug 2019 00:45:56 GMT
+# Wed, 11 Sep 2019 22:43:56 GMT
+ADD file:5c261012373b1f613abf90c8163f72247906770a6209fc775af35a131ba818f9 in / 
+# Wed, 11 Sep 2019 22:43:57 GMT
 CMD ["bash"]
-# Wed, 14 Aug 2019 03:02:33 GMT
+# Thu, 12 Sep 2019 00:38:06 GMT
 RUN apt-get update && apt-get install -y --no-install-recommends 		ca-certificates 		curl 		netbase 		wget 	&& rm -rf /var/lib/apt/lists/*
-# Wed, 14 Aug 2019 03:02:43 GMT
+# Thu, 12 Sep 2019 00:38:13 GMT
 RUN set -ex; 	if ! command -v gpg > /dev/null; then 		apt-get update; 		apt-get install -y --no-install-recommends 			gnupg 			dirmngr 		; 		rm -rf /var/lib/apt/lists/*; 	fi
-# Wed, 14 Aug 2019 03:03:35 GMT
+# Thu, 12 Sep 2019 00:38:39 GMT
 RUN apt-get update && apt-get install -y --no-install-recommends 		bzr 		git 		mercurial 		openssh-client 		subversion 				procps 	&& rm -rf /var/lib/apt/lists/*
-# Tue, 10 Sep 2019 21:40:06 GMT
+# Thu, 12 Sep 2019 00:40:19 GMT
 RUN set -ex; 	apt-get update; 	apt-get install -y --no-install-recommends 		autoconf 		automake 		bzip2 		dpkg-dev 		file 		g++ 		gcc 		imagemagick 		libbz2-dev 		libc6-dev 		libcurl4-openssl-dev 		libdb-dev 		libevent-dev 		libffi-dev 		libgdbm-dev 		libglib2.0-dev 		libgmp-dev 		libjpeg-dev 		libkrb5-dev 		liblzma-dev 		libmagickcore-dev 		libmagickwand-dev 		libmaxminddb-dev 		libncurses5-dev 		libncursesw5-dev 		libpng-dev 		libpq-dev 		libreadline-dev 		libsqlite3-dev 		libssl-dev 		libtool 		libwebp-dev 		libxml2-dev 		libxslt-dev 		libyaml-dev 		make 		patch 		unzip 		xz-utils 		zlib1g-dev 				$( 			if apt-cache show 'default-libmysqlclient-dev' 2>/dev/null | grep -q '^Version:'; then 				echo 'default-libmysqlclient-dev'; 			else 				echo 'libmysqlclient-dev'; 			fi 		) 	; 	rm -rf /var/lib/apt/lists/*
-# Wed, 11 Sep 2019 03:45:38 GMT
+# Thu, 12 Sep 2019 01:45:26 GMT
 ENV OTP_VERSION=21.3.8.6
-# Wed, 11 Sep 2019 03:52:24 GMT
+# Thu, 12 Sep 2019 01:52:00 GMT
 RUN set -xe 	&& OTP_DOWNLOAD_URL="https://github.com/erlang/otp/archive/OTP-${OTP_VERSION}.tar.gz" 	&& OTP_DOWNLOAD_SHA256="7d96d11143b8ad71448acc0427c2c34756712aa2972d9aaa6d100f87f29918c6" 	&& runtimeDeps='libodbc1 			libsctp1 			libwxgtk3.0' 	&& buildDeps='unixodbc-dev 			libsctp-dev 			libwxgtk3.0-dev' 	&& apt-get update 	&& apt-get install -y --no-install-recommends $runtimeDeps 	&& apt-get install -y --no-install-recommends $buildDeps 	&& curl -fSL -o otp-src.tar.gz "$OTP_DOWNLOAD_URL" 	&& echo "$OTP_DOWNLOAD_SHA256  otp-src.tar.gz" | sha256sum -c - 	&& export ERL_TOP="/usr/src/otp_src_${OTP_VERSION%%@*}" 	&& mkdir -vp $ERL_TOP 	&& tar -xzf otp-src.tar.gz -C $ERL_TOP --strip-components=1 	&& rm otp-src.tar.gz 	&& ( cd $ERL_TOP 	  && ./otp_build autoconf 	  && gnuArch="$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)" 	  && ./configure --build="$gnuArch" 	  && make -j$(nproc) 	  && make install ) 	&& find /usr/local -name examples | xargs rm -rf 	&& apt-get purge -y --auto-remove $buildDeps 	&& rm -rf $ERL_TOP /var/lib/apt/lists/*
-# Wed, 11 Sep 2019 03:52:24 GMT
+# Thu, 12 Sep 2019 01:52:00 GMT
 CMD ["erl"]
-# Wed, 11 Sep 2019 03:52:25 GMT
+# Thu, 12 Sep 2019 01:52:01 GMT
 ENV REBAR_VERSION=2.6.4
-# Wed, 11 Sep 2019 03:52:27 GMT
+# Thu, 12 Sep 2019 01:52:03 GMT
 RUN set -xe 	&& REBAR_DOWNLOAD_URL="https://github.com/rebar/rebar/archive/${REBAR_VERSION}.tar.gz" 	&& REBAR_DOWNLOAD_SHA256="577246bafa2eb2b2c3f1d0c157408650446884555bf87901508ce71d5cc0bd07" 	&& mkdir -p /usr/src/rebar-src 	&& curl -fSL -o rebar-src.tar.gz "$REBAR_DOWNLOAD_URL" 	&& echo "$REBAR_DOWNLOAD_SHA256 rebar-src.tar.gz" | sha256sum -c - 	&& tar -xzf rebar-src.tar.gz -C /usr/src/rebar-src --strip-components=1 	&& rm rebar-src.tar.gz 	&& cd /usr/src/rebar-src 	&& ./bootstrap 	&& install -v ./rebar /usr/local/bin/ 	&& rm -rf /usr/src/rebar-src
-# Wed, 11 Sep 2019 03:52:27 GMT
+# Thu, 12 Sep 2019 01:52:03 GMT
 ENV REBAR3_VERSION=3.11.1
-# Wed, 11 Sep 2019 03:52:43 GMT
+# Thu, 12 Sep 2019 01:52:17 GMT
 RUN set -xe 	&& REBAR3_DOWNLOAD_URL="https://github.com/erlang/rebar3/archive/${REBAR3_VERSION}.tar.gz" 	&& REBAR3_DOWNLOAD_SHA256="a1822db5210b96b5f8ef10e433b22df19c5fc54dfd847bcaab86c65151ce4171" 	&& mkdir -p /usr/src/rebar3-src 	&& curl -fSL -o rebar3-src.tar.gz "$REBAR3_DOWNLOAD_URL" 	&& echo "$REBAR3_DOWNLOAD_SHA256 rebar3-src.tar.gz" | sha256sum -c - 	&& tar -xzf rebar3-src.tar.gz -C /usr/src/rebar3-src --strip-components=1 	&& rm rebar3-src.tar.gz 	&& cd /usr/src/rebar3-src 	&& HOME=$PWD ./bootstrap 	&& install -v ./rebar3 /usr/local/bin/ 	&& rm -rf /usr/src/rebar3-src
-# Wed, 11 Sep 2019 05:22:39 GMT
+# Thu, 12 Sep 2019 12:37:12 GMT
 ENV ELIXIR_VERSION=v1.6.6 LANG=C.UTF-8
-# Wed, 11 Sep 2019 05:23:14 GMT
+# Thu, 12 Sep 2019 12:37:48 GMT
 RUN set -xe 	&& ELIXIR_DOWNLOAD_URL="https://github.com/elixir-lang/elixir/archive/${ELIXIR_VERSION}.tar.gz" 	&& ELIXIR_DOWNLOAD_SHA256="74507b0646bf485ee3af0e7727e3fdab7123f1c5ecf2187a52a928ad60f93831" 	&& curl -fSL -o elixir-src.tar.gz $ELIXIR_DOWNLOAD_URL 	&& echo "$ELIXIR_DOWNLOAD_SHA256  elixir-src.tar.gz" | sha256sum -c - 	&& mkdir -p /usr/local/src/elixir 	&& tar -xzC /usr/local/src/elixir --strip-components=1 -f elixir-src.tar.gz 	&& rm elixir-src.tar.gz 	&& cd /usr/local/src/elixir 	&& make install clean
-# Wed, 11 Sep 2019 05:23:15 GMT
+# Thu, 12 Sep 2019 12:37:49 GMT
 CMD ["iex"]
 ```
 
 -	Layers:
-	-	`sha256:05b3194a550b956249959e2f64475745fcf943ed7951306c6e3e6a5cd1815dd6`  
-		Last Modified: Wed, 14 Aug 2019 00:51:50 GMT  
-		Size: 45.2 MB (45245026 bytes)  
+	-	`sha256:5d4da55d9cf0eafd201c3838c03984cc0ef153b12bbfd5964ffee9e9d6b38bbb`  
+		Last Modified: Wed, 11 Sep 2019 22:48:17 GMT  
+		Size: 45.2 MB (45240190 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:5cc01dcd9b0a29ac6daec9b7b4af78f948ee1945fb22e5e8f97993705d589311`  
-		Last Modified: Wed, 14 Aug 2019 03:10:13 GMT  
-		Size: 10.3 MB (10317828 bytes)  
+	-	`sha256:dad3041fe12244954218a4bd2bfdcb5ae29fd416b247bd17e41c73cbdf9b6de5`  
+		Last Modified: Thu, 12 Sep 2019 00:44:07 GMT  
+		Size: 10.3 MB (10317726 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:5154470af4c84ea4b0ebc80e0cda7c479ef829d3ec3ece20e7b183bc8ded7563`  
-		Last Modified: Wed, 14 Aug 2019 03:10:11 GMT  
-		Size: 4.4 MB (4372320 bytes)  
+	-	`sha256:f6542c8f56fbd52f8d9d01d92625e0a728578d6e417adeba2baa0678cc5009d6`  
+		Last Modified: Thu, 12 Sep 2019 00:44:05 GMT  
+		Size: 4.4 MB (4372276 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:cd3b67ff4ea99e03083897f42be8f62c9ef0cd1e1a0603a4c3e627eae76a020d`  
-		Last Modified: Wed, 14 Aug 2019 03:10:30 GMT  
-		Size: 50.5 MB (50489789 bytes)  
+	-	`sha256:25fa3a7ad4fa33ba9843e1e836bf619c36b0cc5a1ce2d9b3e1e1b932c6220148`  
+		Last Modified: Thu, 12 Sep 2019 00:44:24 GMT  
+		Size: 50.5 MB (50488527 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:287679351b06307bcc1a8ced873496e08f721d41a6e4cea1ba6874f49aa24353`  
-		Last Modified: Tue, 10 Sep 2019 21:47:12 GMT  
-		Size: 206.9 MB (206858733 bytes)  
+	-	`sha256:271ed6d81ea099ed00ae3e2d3c436fe81ecbf2fd85a94445c7592c99cde20e64`  
+		Last Modified: Thu, 12 Sep 2019 00:45:02 GMT  
+		Size: 206.9 MB (206858680 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:1b8592c735d51ebf1dfa48e1eb0e7eafc5d2c1305f012c1b3ec8c558ce6a2cc0`  
-		Last Modified: Wed, 11 Sep 2019 04:17:27 GMT  
-		Size: 134.9 MB (134948470 bytes)  
+	-	`sha256:910cd9fba3989750310c0568ebda0d6a9a314c1d881c80d0fe08a7f1bf54f6eb`  
+		Last Modified: Thu, 12 Sep 2019 02:39:03 GMT  
+		Size: 134.9 MB (134948947 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:18c2a6b670fe82d983ac4cdcd1b7e2e9ebefab255ec5bc438012d71e8694b158`  
-		Last Modified: Wed, 11 Sep 2019 04:17:14 GMT  
-		Size: 201.5 KB (201455 bytes)  
+	-	`sha256:161f68228ae40bb7fa0ee6d05a9426f02da35cc5f36242ecb06200149da06ec2`  
+		Last Modified: Thu, 12 Sep 2019 02:38:30 GMT  
+		Size: 201.4 KB (201445 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:4ebe6d8e276cebf4b10b2cf059a6a6a3cc24596322505e4cf4492ce799a0b878`  
-		Last Modified: Wed, 11 Sep 2019 04:17:14 GMT  
-		Size: 828.2 KB (828191 bytes)  
+	-	`sha256:6e1321d2a618afb619b05ca4e49d19c245f9d61d8d955057387d5eba621cee49`  
+		Last Modified: Thu, 12 Sep 2019 02:38:30 GMT  
+		Size: 828.2 KB (828186 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:15927e66420e1a4bc257b086e61a8507e12a7e60790ebed6943fea3c655a134e`  
-		Last Modified: Wed, 11 Sep 2019 05:25:48 GMT  
-		Size: 6.0 MB (6018885 bytes)  
+	-	`sha256:2a8659ebd59d36f339a005d4f9a65fa064e5cc0e1fd76bb3be93c9fd34dd7c10`  
+		Last Modified: Thu, 12 Sep 2019 12:41:14 GMT  
+		Size: 6.0 MB (6018989 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `elixir:1.6-otp-21-alpine`
@@ -7244,7 +7244,7 @@ CMD ["iex"]
 ## `elixir:1.6-slim`
 
 ```console
-$ docker pull elixir@sha256:be776f1a392dc58061412cdec9a3b63f5f9251fa75d44e74af53fdf65c2f4e3c
+$ docker pull elixir@sha256:beb49d4807c71b943904f4760cfa841fe43e11f130ccef2b3c86e36ad941a969
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -7489,53 +7489,53 @@ CMD ["iex"]
 ### `elixir:1.6-slim` - linux; s390x
 
 ```console
-$ docker pull elixir@sha256:f885883d881c3a10f1981ea9ba6158aa80f5ab53ba7d2ff33db3570e7e221900
+$ docker pull elixir@sha256:07b8ade561872506b5e6af7e4a601203369d2e6643a3bced3c1a85f12ff04b66
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **114.4 MB (114436102 bytes)**  
+-	Total Size: **114.5 MB (114452276 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:43d5d33133bed82191831f4706199a3d222ee4e0fe3a620fc8b04519ea10ebeb`
+-	Image ID: `sha256:528bbf8db06eddb6d8def3c710b4754261692565ae82e6a5c30626c8c374c38b`
 -	Default Command: `["iex"]`
 
 ```dockerfile
-# Wed, 14 Aug 2019 00:45:55 GMT
-ADD file:628950cdb60edf56519623bb5bceb8f913d0e4a57fb94d64bbeb5f99491a79c8 in / 
-# Wed, 14 Aug 2019 00:45:56 GMT
+# Wed, 11 Sep 2019 22:43:56 GMT
+ADD file:5c261012373b1f613abf90c8163f72247906770a6209fc775af35a131ba818f9 in / 
+# Wed, 11 Sep 2019 22:43:57 GMT
 CMD ["bash"]
-# Wed, 14 Aug 2019 02:01:10 GMT
+# Thu, 12 Sep 2019 02:04:48 GMT
 ENV OTP_VERSION=20.3.8.22
-# Wed, 14 Aug 2019 02:12:03 GMT
+# Thu, 12 Sep 2019 02:09:32 GMT
 RUN set -xe 	&& OTP_DOWNLOAD_URL="https://github.com/erlang/otp/archive/OTP-${OTP_VERSION}.tar.gz" 	&& OTP_DOWNLOAD_SHA256="d2c36130938659a63d8de094c3d4f8a1d3ea33d4d993d0723ba9c745df2a2753" 	&& fetchDeps=' 		curl 		ca-certificates' 	&& apt-get update 	&& apt-get install -y --no-install-recommends $fetchDeps 	&& curl -fSL -o otp-src.tar.gz "$OTP_DOWNLOAD_URL" 	&& echo "$OTP_DOWNLOAD_SHA256  otp-src.tar.gz" | sha256sum -c - 	&& runtimeDeps=' 		libodbc1 		libssl1.1 		libsctp1 	' 	&& buildDeps=' 		autoconf 		dpkg-dev 		gcc 		g++ 		make 		libncurses-dev 		unixodbc-dev 		libssl-dev 		libsctp-dev 	' 	&& apt-get install -y --no-install-recommends $runtimeDeps 	&& apt-get install -y --no-install-recommends $buildDeps 	&& export ERL_TOP="/usr/src/otp_src_${OTP_VERSION%%@*}" 	&& mkdir -vp $ERL_TOP 	&& tar -xzf otp-src.tar.gz -C $ERL_TOP --strip-components=1 	&& rm otp-src.tar.gz 	&& ( cd $ERL_TOP 	  && ./otp_build autoconf 	  && gnuArch="$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)" 	  && ./configure --build="$gnuArch" 	  && make -j$(nproc) 	  && make install ) 	&& find /usr/local -name examples | xargs rm -rf 	&& apt-get purge -y --auto-remove $buildDeps $fetchDeps 	&& rm -rf $ERL_TOP /var/lib/apt/lists/*
-# Wed, 14 Aug 2019 02:12:04 GMT
+# Thu, 12 Sep 2019 02:09:32 GMT
 CMD ["erl"]
-# Wed, 14 Aug 2019 15:11:02 GMT
+# Thu, 12 Sep 2019 12:36:48 GMT
 ENV ELIXIR_VERSION=v1.6.6 LANG=C.UTF-8
-# Wed, 14 Aug 2019 15:11:36 GMT
+# Thu, 12 Sep 2019 12:37:02 GMT
 RUN set -xe 	&& ELIXIR_DOWNLOAD_URL="https://github.com/elixir-lang/elixir/releases/download/${ELIXIR_VERSION}/Precompiled.zip" 	&& ELIXIR_DOWNLOAD_SHA256="d6a84726a042407110d3b13b1ce8d9524b4a50df68174e79d89a9e42e30b410b" 	&& buildDeps=' 		ca-certificates 		curl 		unzip 	' 	&& apt-get update 	&& apt-get install -y --no-install-recommends $buildDeps 	&& curl -fSL -o elixir-precompiled.zip $ELIXIR_DOWNLOAD_URL 	&& echo "$ELIXIR_DOWNLOAD_SHA256  elixir-precompiled.zip" | sha256sum -c - 	&& unzip -d /usr/local elixir-precompiled.zip 	&& rm elixir-precompiled.zip 	&& apt-get purge -y --auto-remove $buildDeps 	&& rm -rf /var/lib/apt/lists/*
-# Wed, 14 Aug 2019 15:11:36 GMT
+# Thu, 12 Sep 2019 12:37:03 GMT
 CMD ["iex"]
 ```
 
 -	Layers:
-	-	`sha256:05b3194a550b956249959e2f64475745fcf943ed7951306c6e3e6a5cd1815dd6`  
-		Last Modified: Wed, 14 Aug 2019 00:51:50 GMT  
-		Size: 45.2 MB (45245026 bytes)  
+	-	`sha256:5d4da55d9cf0eafd201c3838c03984cc0ef153b12bbfd5964ffee9e9d6b38bbb`  
+		Last Modified: Wed, 11 Sep 2019 22:48:17 GMT  
+		Size: 45.2 MB (45240190 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:4980420880b4ffaa2ed7bcec41db7892f118136261ebe8ec034972c6d25f47c2`  
-		Last Modified: Wed, 14 Aug 2019 02:40:20 GMT  
-		Size: 63.9 MB (63863621 bytes)  
+	-	`sha256:05f8f3272bb17f240515b05f10e8f35fad8dfabaa6dd60cd5c26d32da05fc05a`  
+		Last Modified: Thu, 12 Sep 2019 02:39:59 GMT  
+		Size: 63.9 MB (63884833 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:b3b1e90df7a7873dd939b9eedabe9ba79a5f9af7356d3c1875a6bc2c3dae56d7`  
-		Last Modified: Wed, 14 Aug 2019 15:14:51 GMT  
-		Size: 5.3 MB (5327455 bytes)  
+	-	`sha256:8c2083a2c1f98e55cf0dd7b48fe343a23c082b87b9fd4aa82b57adcab477e596`  
+		Last Modified: Thu, 12 Sep 2019 12:41:08 GMT  
+		Size: 5.3 MB (5327253 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `elixir:1.7`
 
 ```console
-$ docker pull elixir@sha256:eb79cb9e44d077f1b0a1f4c7dc543ddacf391dae9498f24bf238e811ed81286e
+$ docker pull elixir@sha256:756c697c3fc3c27ee5b1c158be308e63844b8aa6a637aff86e6164cf176125ac
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -7980,93 +7980,93 @@ CMD ["iex"]
 ### `elixir:1.7` - linux; s390x
 
 ```console
-$ docker pull elixir@sha256:1ce46a9bf9476ab4df82e6408c3c710a85b33d5125f6327858f7f3315dfa1aa0
+$ docker pull elixir@sha256:4aa3ed524c60af359ad10c282c2f12cea6267bd9519f2e4a1963baaff706ddd4
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **459.5 MB (459464755 bytes)**  
+-	Total Size: **459.5 MB (459458722 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:51aabcf7ef3e9e75a93a8f25d3809b41dc5f99267f1b2dbf9aaa47bf9f91e28e`
+-	Image ID: `sha256:cb48e70d19893831f2371e8452874a0905436d28528828ecb806997953efb8c1`
 -	Default Command: `["iex"]`
 
 ```dockerfile
-# Wed, 14 Aug 2019 00:45:55 GMT
-ADD file:628950cdb60edf56519623bb5bceb8f913d0e4a57fb94d64bbeb5f99491a79c8 in / 
-# Wed, 14 Aug 2019 00:45:56 GMT
+# Wed, 11 Sep 2019 22:43:56 GMT
+ADD file:5c261012373b1f613abf90c8163f72247906770a6209fc775af35a131ba818f9 in / 
+# Wed, 11 Sep 2019 22:43:57 GMT
 CMD ["bash"]
-# Wed, 14 Aug 2019 03:02:33 GMT
+# Thu, 12 Sep 2019 00:38:06 GMT
 RUN apt-get update && apt-get install -y --no-install-recommends 		ca-certificates 		curl 		netbase 		wget 	&& rm -rf /var/lib/apt/lists/*
-# Wed, 14 Aug 2019 03:02:43 GMT
+# Thu, 12 Sep 2019 00:38:13 GMT
 RUN set -ex; 	if ! command -v gpg > /dev/null; then 		apt-get update; 		apt-get install -y --no-install-recommends 			gnupg 			dirmngr 		; 		rm -rf /var/lib/apt/lists/*; 	fi
-# Wed, 14 Aug 2019 03:03:35 GMT
+# Thu, 12 Sep 2019 00:38:39 GMT
 RUN apt-get update && apt-get install -y --no-install-recommends 		bzr 		git 		mercurial 		openssh-client 		subversion 				procps 	&& rm -rf /var/lib/apt/lists/*
-# Tue, 10 Sep 2019 21:40:06 GMT
+# Thu, 12 Sep 2019 00:40:19 GMT
 RUN set -ex; 	apt-get update; 	apt-get install -y --no-install-recommends 		autoconf 		automake 		bzip2 		dpkg-dev 		file 		g++ 		gcc 		imagemagick 		libbz2-dev 		libc6-dev 		libcurl4-openssl-dev 		libdb-dev 		libevent-dev 		libffi-dev 		libgdbm-dev 		libglib2.0-dev 		libgmp-dev 		libjpeg-dev 		libkrb5-dev 		liblzma-dev 		libmagickcore-dev 		libmagickwand-dev 		libmaxminddb-dev 		libncurses5-dev 		libncursesw5-dev 		libpng-dev 		libpq-dev 		libreadline-dev 		libsqlite3-dev 		libssl-dev 		libtool 		libwebp-dev 		libxml2-dev 		libxslt-dev 		libyaml-dev 		make 		patch 		unzip 		xz-utils 		zlib1g-dev 				$( 			if apt-cache show 'default-libmysqlclient-dev' 2>/dev/null | grep -q '^Version:'; then 				echo 'default-libmysqlclient-dev'; 			else 				echo 'libmysqlclient-dev'; 			fi 		) 	; 	rm -rf /var/lib/apt/lists/*
-# Wed, 11 Sep 2019 03:45:38 GMT
+# Thu, 12 Sep 2019 01:45:26 GMT
 ENV OTP_VERSION=21.3.8.6
-# Wed, 11 Sep 2019 03:52:24 GMT
+# Thu, 12 Sep 2019 01:52:00 GMT
 RUN set -xe 	&& OTP_DOWNLOAD_URL="https://github.com/erlang/otp/archive/OTP-${OTP_VERSION}.tar.gz" 	&& OTP_DOWNLOAD_SHA256="7d96d11143b8ad71448acc0427c2c34756712aa2972d9aaa6d100f87f29918c6" 	&& runtimeDeps='libodbc1 			libsctp1 			libwxgtk3.0' 	&& buildDeps='unixodbc-dev 			libsctp-dev 			libwxgtk3.0-dev' 	&& apt-get update 	&& apt-get install -y --no-install-recommends $runtimeDeps 	&& apt-get install -y --no-install-recommends $buildDeps 	&& curl -fSL -o otp-src.tar.gz "$OTP_DOWNLOAD_URL" 	&& echo "$OTP_DOWNLOAD_SHA256  otp-src.tar.gz" | sha256sum -c - 	&& export ERL_TOP="/usr/src/otp_src_${OTP_VERSION%%@*}" 	&& mkdir -vp $ERL_TOP 	&& tar -xzf otp-src.tar.gz -C $ERL_TOP --strip-components=1 	&& rm otp-src.tar.gz 	&& ( cd $ERL_TOP 	  && ./otp_build autoconf 	  && gnuArch="$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)" 	  && ./configure --build="$gnuArch" 	  && make -j$(nproc) 	  && make install ) 	&& find /usr/local -name examples | xargs rm -rf 	&& apt-get purge -y --auto-remove $buildDeps 	&& rm -rf $ERL_TOP /var/lib/apt/lists/*
-# Wed, 11 Sep 2019 03:52:24 GMT
+# Thu, 12 Sep 2019 01:52:00 GMT
 CMD ["erl"]
-# Wed, 11 Sep 2019 03:52:25 GMT
+# Thu, 12 Sep 2019 01:52:01 GMT
 ENV REBAR_VERSION=2.6.4
-# Wed, 11 Sep 2019 03:52:27 GMT
+# Thu, 12 Sep 2019 01:52:03 GMT
 RUN set -xe 	&& REBAR_DOWNLOAD_URL="https://github.com/rebar/rebar/archive/${REBAR_VERSION}.tar.gz" 	&& REBAR_DOWNLOAD_SHA256="577246bafa2eb2b2c3f1d0c157408650446884555bf87901508ce71d5cc0bd07" 	&& mkdir -p /usr/src/rebar-src 	&& curl -fSL -o rebar-src.tar.gz "$REBAR_DOWNLOAD_URL" 	&& echo "$REBAR_DOWNLOAD_SHA256 rebar-src.tar.gz" | sha256sum -c - 	&& tar -xzf rebar-src.tar.gz -C /usr/src/rebar-src --strip-components=1 	&& rm rebar-src.tar.gz 	&& cd /usr/src/rebar-src 	&& ./bootstrap 	&& install -v ./rebar /usr/local/bin/ 	&& rm -rf /usr/src/rebar-src
-# Wed, 11 Sep 2019 03:52:27 GMT
+# Thu, 12 Sep 2019 01:52:03 GMT
 ENV REBAR3_VERSION=3.11.1
-# Wed, 11 Sep 2019 03:52:43 GMT
+# Thu, 12 Sep 2019 01:52:17 GMT
 RUN set -xe 	&& REBAR3_DOWNLOAD_URL="https://github.com/erlang/rebar3/archive/${REBAR3_VERSION}.tar.gz" 	&& REBAR3_DOWNLOAD_SHA256="a1822db5210b96b5f8ef10e433b22df19c5fc54dfd847bcaab86c65151ce4171" 	&& mkdir -p /usr/src/rebar3-src 	&& curl -fSL -o rebar3-src.tar.gz "$REBAR3_DOWNLOAD_URL" 	&& echo "$REBAR3_DOWNLOAD_SHA256 rebar3-src.tar.gz" | sha256sum -c - 	&& tar -xzf rebar3-src.tar.gz -C /usr/src/rebar3-src --strip-components=1 	&& rm rebar3-src.tar.gz 	&& cd /usr/src/rebar3-src 	&& HOME=$PWD ./bootstrap 	&& install -v ./rebar3 /usr/local/bin/ 	&& rm -rf /usr/src/rebar3-src
-# Wed, 11 Sep 2019 05:20:49 GMT
+# Thu, 12 Sep 2019 12:34:14 GMT
 ENV ELIXIR_VERSION=v1.7.4 LANG=C.UTF-8
-# Wed, 11 Sep 2019 05:21:25 GMT
+# Thu, 12 Sep 2019 12:34:52 GMT
 RUN set -xe 	&& ELIXIR_DOWNLOAD_URL="https://github.com/elixir-lang/elixir/archive/${ELIXIR_VERSION}.tar.gz" 	&& ELIXIR_DOWNLOAD_SHA256="c7c87983e03a1dcf20078141a22355e88dadb26b53d3f3f98b9a9268687f9e20" 	&& curl -fSL -o elixir-src.tar.gz $ELIXIR_DOWNLOAD_URL 	&& echo "$ELIXIR_DOWNLOAD_SHA256  elixir-src.tar.gz" | sha256sum -c - 	&& mkdir -p /usr/local/src/elixir 	&& tar -xzC /usr/local/src/elixir --strip-components=1 -f elixir-src.tar.gz 	&& rm elixir-src.tar.gz 	&& cd /usr/local/src/elixir 	&& make install clean
-# Wed, 11 Sep 2019 05:21:26 GMT
+# Thu, 12 Sep 2019 12:34:52 GMT
 CMD ["iex"]
 ```
 
 -	Layers:
-	-	`sha256:05b3194a550b956249959e2f64475745fcf943ed7951306c6e3e6a5cd1815dd6`  
-		Last Modified: Wed, 14 Aug 2019 00:51:50 GMT  
-		Size: 45.2 MB (45245026 bytes)  
+	-	`sha256:5d4da55d9cf0eafd201c3838c03984cc0ef153b12bbfd5964ffee9e9d6b38bbb`  
+		Last Modified: Wed, 11 Sep 2019 22:48:17 GMT  
+		Size: 45.2 MB (45240190 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:5cc01dcd9b0a29ac6daec9b7b4af78f948ee1945fb22e5e8f97993705d589311`  
-		Last Modified: Wed, 14 Aug 2019 03:10:13 GMT  
-		Size: 10.3 MB (10317828 bytes)  
+	-	`sha256:dad3041fe12244954218a4bd2bfdcb5ae29fd416b247bd17e41c73cbdf9b6de5`  
+		Last Modified: Thu, 12 Sep 2019 00:44:07 GMT  
+		Size: 10.3 MB (10317726 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:5154470af4c84ea4b0ebc80e0cda7c479ef829d3ec3ece20e7b183bc8ded7563`  
-		Last Modified: Wed, 14 Aug 2019 03:10:11 GMT  
-		Size: 4.4 MB (4372320 bytes)  
+	-	`sha256:f6542c8f56fbd52f8d9d01d92625e0a728578d6e417adeba2baa0678cc5009d6`  
+		Last Modified: Thu, 12 Sep 2019 00:44:05 GMT  
+		Size: 4.4 MB (4372276 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:cd3b67ff4ea99e03083897f42be8f62c9ef0cd1e1a0603a4c3e627eae76a020d`  
-		Last Modified: Wed, 14 Aug 2019 03:10:30 GMT  
-		Size: 50.5 MB (50489789 bytes)  
+	-	`sha256:25fa3a7ad4fa33ba9843e1e836bf619c36b0cc5a1ce2d9b3e1e1b932c6220148`  
+		Last Modified: Thu, 12 Sep 2019 00:44:24 GMT  
+		Size: 50.5 MB (50488527 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:287679351b06307bcc1a8ced873496e08f721d41a6e4cea1ba6874f49aa24353`  
-		Last Modified: Tue, 10 Sep 2019 21:47:12 GMT  
-		Size: 206.9 MB (206858733 bytes)  
+	-	`sha256:271ed6d81ea099ed00ae3e2d3c436fe81ecbf2fd85a94445c7592c99cde20e64`  
+		Last Modified: Thu, 12 Sep 2019 00:45:02 GMT  
+		Size: 206.9 MB (206858680 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:1b8592c735d51ebf1dfa48e1eb0e7eafc5d2c1305f012c1b3ec8c558ce6a2cc0`  
-		Last Modified: Wed, 11 Sep 2019 04:17:27 GMT  
-		Size: 134.9 MB (134948470 bytes)  
+	-	`sha256:910cd9fba3989750310c0568ebda0d6a9a314c1d881c80d0fe08a7f1bf54f6eb`  
+		Last Modified: Thu, 12 Sep 2019 02:39:03 GMT  
+		Size: 134.9 MB (134948947 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:18c2a6b670fe82d983ac4cdcd1b7e2e9ebefab255ec5bc438012d71e8694b158`  
-		Last Modified: Wed, 11 Sep 2019 04:17:14 GMT  
-		Size: 201.5 KB (201455 bytes)  
+	-	`sha256:161f68228ae40bb7fa0ee6d05a9426f02da35cc5f36242ecb06200149da06ec2`  
+		Last Modified: Thu, 12 Sep 2019 02:38:30 GMT  
+		Size: 201.4 KB (201445 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:4ebe6d8e276cebf4b10b2cf059a6a6a3cc24596322505e4cf4492ce799a0b878`  
-		Last Modified: Wed, 11 Sep 2019 04:17:14 GMT  
-		Size: 828.2 KB (828191 bytes)  
+	-	`sha256:6e1321d2a618afb619b05ca4e49d19c245f9d61d8d955057387d5eba621cee49`  
+		Last Modified: Thu, 12 Sep 2019 02:38:30 GMT  
+		Size: 828.2 KB (828186 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:6263654d3a7a4362dea7e2bf1bbd05e44503ed040f20bc3ca83109b475890be6`  
-		Last Modified: Wed, 11 Sep 2019 05:25:36 GMT  
-		Size: 6.2 MB (6202943 bytes)  
+	-	`sha256:9359ff491eea65a6e13d5090db1de73d85b6c4da1c663794efb9c64bc6fa5ff2`  
+		Last Modified: Thu, 12 Sep 2019 12:40:50 GMT  
+		Size: 6.2 MB (6202745 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `elixir:1.7.4`
 
 ```console
-$ docker pull elixir@sha256:eb79cb9e44d077f1b0a1f4c7dc543ddacf391dae9498f24bf238e811ed81286e
+$ docker pull elixir@sha256:756c697c3fc3c27ee5b1c158be308e63844b8aa6a637aff86e6164cf176125ac
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -8511,87 +8511,87 @@ CMD ["iex"]
 ### `elixir:1.7.4` - linux; s390x
 
 ```console
-$ docker pull elixir@sha256:1ce46a9bf9476ab4df82e6408c3c710a85b33d5125f6327858f7f3315dfa1aa0
+$ docker pull elixir@sha256:4aa3ed524c60af359ad10c282c2f12cea6267bd9519f2e4a1963baaff706ddd4
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **459.5 MB (459464755 bytes)**  
+-	Total Size: **459.5 MB (459458722 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:51aabcf7ef3e9e75a93a8f25d3809b41dc5f99267f1b2dbf9aaa47bf9f91e28e`
+-	Image ID: `sha256:cb48e70d19893831f2371e8452874a0905436d28528828ecb806997953efb8c1`
 -	Default Command: `["iex"]`
 
 ```dockerfile
-# Wed, 14 Aug 2019 00:45:55 GMT
-ADD file:628950cdb60edf56519623bb5bceb8f913d0e4a57fb94d64bbeb5f99491a79c8 in / 
-# Wed, 14 Aug 2019 00:45:56 GMT
+# Wed, 11 Sep 2019 22:43:56 GMT
+ADD file:5c261012373b1f613abf90c8163f72247906770a6209fc775af35a131ba818f9 in / 
+# Wed, 11 Sep 2019 22:43:57 GMT
 CMD ["bash"]
-# Wed, 14 Aug 2019 03:02:33 GMT
+# Thu, 12 Sep 2019 00:38:06 GMT
 RUN apt-get update && apt-get install -y --no-install-recommends 		ca-certificates 		curl 		netbase 		wget 	&& rm -rf /var/lib/apt/lists/*
-# Wed, 14 Aug 2019 03:02:43 GMT
+# Thu, 12 Sep 2019 00:38:13 GMT
 RUN set -ex; 	if ! command -v gpg > /dev/null; then 		apt-get update; 		apt-get install -y --no-install-recommends 			gnupg 			dirmngr 		; 		rm -rf /var/lib/apt/lists/*; 	fi
-# Wed, 14 Aug 2019 03:03:35 GMT
+# Thu, 12 Sep 2019 00:38:39 GMT
 RUN apt-get update && apt-get install -y --no-install-recommends 		bzr 		git 		mercurial 		openssh-client 		subversion 				procps 	&& rm -rf /var/lib/apt/lists/*
-# Tue, 10 Sep 2019 21:40:06 GMT
+# Thu, 12 Sep 2019 00:40:19 GMT
 RUN set -ex; 	apt-get update; 	apt-get install -y --no-install-recommends 		autoconf 		automake 		bzip2 		dpkg-dev 		file 		g++ 		gcc 		imagemagick 		libbz2-dev 		libc6-dev 		libcurl4-openssl-dev 		libdb-dev 		libevent-dev 		libffi-dev 		libgdbm-dev 		libglib2.0-dev 		libgmp-dev 		libjpeg-dev 		libkrb5-dev 		liblzma-dev 		libmagickcore-dev 		libmagickwand-dev 		libmaxminddb-dev 		libncurses5-dev 		libncursesw5-dev 		libpng-dev 		libpq-dev 		libreadline-dev 		libsqlite3-dev 		libssl-dev 		libtool 		libwebp-dev 		libxml2-dev 		libxslt-dev 		libyaml-dev 		make 		patch 		unzip 		xz-utils 		zlib1g-dev 				$( 			if apt-cache show 'default-libmysqlclient-dev' 2>/dev/null | grep -q '^Version:'; then 				echo 'default-libmysqlclient-dev'; 			else 				echo 'libmysqlclient-dev'; 			fi 		) 	; 	rm -rf /var/lib/apt/lists/*
-# Wed, 11 Sep 2019 03:45:38 GMT
+# Thu, 12 Sep 2019 01:45:26 GMT
 ENV OTP_VERSION=21.3.8.6
-# Wed, 11 Sep 2019 03:52:24 GMT
+# Thu, 12 Sep 2019 01:52:00 GMT
 RUN set -xe 	&& OTP_DOWNLOAD_URL="https://github.com/erlang/otp/archive/OTP-${OTP_VERSION}.tar.gz" 	&& OTP_DOWNLOAD_SHA256="7d96d11143b8ad71448acc0427c2c34756712aa2972d9aaa6d100f87f29918c6" 	&& runtimeDeps='libodbc1 			libsctp1 			libwxgtk3.0' 	&& buildDeps='unixodbc-dev 			libsctp-dev 			libwxgtk3.0-dev' 	&& apt-get update 	&& apt-get install -y --no-install-recommends $runtimeDeps 	&& apt-get install -y --no-install-recommends $buildDeps 	&& curl -fSL -o otp-src.tar.gz "$OTP_DOWNLOAD_URL" 	&& echo "$OTP_DOWNLOAD_SHA256  otp-src.tar.gz" | sha256sum -c - 	&& export ERL_TOP="/usr/src/otp_src_${OTP_VERSION%%@*}" 	&& mkdir -vp $ERL_TOP 	&& tar -xzf otp-src.tar.gz -C $ERL_TOP --strip-components=1 	&& rm otp-src.tar.gz 	&& ( cd $ERL_TOP 	  && ./otp_build autoconf 	  && gnuArch="$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)" 	  && ./configure --build="$gnuArch" 	  && make -j$(nproc) 	  && make install ) 	&& find /usr/local -name examples | xargs rm -rf 	&& apt-get purge -y --auto-remove $buildDeps 	&& rm -rf $ERL_TOP /var/lib/apt/lists/*
-# Wed, 11 Sep 2019 03:52:24 GMT
+# Thu, 12 Sep 2019 01:52:00 GMT
 CMD ["erl"]
-# Wed, 11 Sep 2019 03:52:25 GMT
+# Thu, 12 Sep 2019 01:52:01 GMT
 ENV REBAR_VERSION=2.6.4
-# Wed, 11 Sep 2019 03:52:27 GMT
+# Thu, 12 Sep 2019 01:52:03 GMT
 RUN set -xe 	&& REBAR_DOWNLOAD_URL="https://github.com/rebar/rebar/archive/${REBAR_VERSION}.tar.gz" 	&& REBAR_DOWNLOAD_SHA256="577246bafa2eb2b2c3f1d0c157408650446884555bf87901508ce71d5cc0bd07" 	&& mkdir -p /usr/src/rebar-src 	&& curl -fSL -o rebar-src.tar.gz "$REBAR_DOWNLOAD_URL" 	&& echo "$REBAR_DOWNLOAD_SHA256 rebar-src.tar.gz" | sha256sum -c - 	&& tar -xzf rebar-src.tar.gz -C /usr/src/rebar-src --strip-components=1 	&& rm rebar-src.tar.gz 	&& cd /usr/src/rebar-src 	&& ./bootstrap 	&& install -v ./rebar /usr/local/bin/ 	&& rm -rf /usr/src/rebar-src
-# Wed, 11 Sep 2019 03:52:27 GMT
+# Thu, 12 Sep 2019 01:52:03 GMT
 ENV REBAR3_VERSION=3.11.1
-# Wed, 11 Sep 2019 03:52:43 GMT
+# Thu, 12 Sep 2019 01:52:17 GMT
 RUN set -xe 	&& REBAR3_DOWNLOAD_URL="https://github.com/erlang/rebar3/archive/${REBAR3_VERSION}.tar.gz" 	&& REBAR3_DOWNLOAD_SHA256="a1822db5210b96b5f8ef10e433b22df19c5fc54dfd847bcaab86c65151ce4171" 	&& mkdir -p /usr/src/rebar3-src 	&& curl -fSL -o rebar3-src.tar.gz "$REBAR3_DOWNLOAD_URL" 	&& echo "$REBAR3_DOWNLOAD_SHA256 rebar3-src.tar.gz" | sha256sum -c - 	&& tar -xzf rebar3-src.tar.gz -C /usr/src/rebar3-src --strip-components=1 	&& rm rebar3-src.tar.gz 	&& cd /usr/src/rebar3-src 	&& HOME=$PWD ./bootstrap 	&& install -v ./rebar3 /usr/local/bin/ 	&& rm -rf /usr/src/rebar3-src
-# Wed, 11 Sep 2019 05:20:49 GMT
+# Thu, 12 Sep 2019 12:34:14 GMT
 ENV ELIXIR_VERSION=v1.7.4 LANG=C.UTF-8
-# Wed, 11 Sep 2019 05:21:25 GMT
+# Thu, 12 Sep 2019 12:34:52 GMT
 RUN set -xe 	&& ELIXIR_DOWNLOAD_URL="https://github.com/elixir-lang/elixir/archive/${ELIXIR_VERSION}.tar.gz" 	&& ELIXIR_DOWNLOAD_SHA256="c7c87983e03a1dcf20078141a22355e88dadb26b53d3f3f98b9a9268687f9e20" 	&& curl -fSL -o elixir-src.tar.gz $ELIXIR_DOWNLOAD_URL 	&& echo "$ELIXIR_DOWNLOAD_SHA256  elixir-src.tar.gz" | sha256sum -c - 	&& mkdir -p /usr/local/src/elixir 	&& tar -xzC /usr/local/src/elixir --strip-components=1 -f elixir-src.tar.gz 	&& rm elixir-src.tar.gz 	&& cd /usr/local/src/elixir 	&& make install clean
-# Wed, 11 Sep 2019 05:21:26 GMT
+# Thu, 12 Sep 2019 12:34:52 GMT
 CMD ["iex"]
 ```
 
 -	Layers:
-	-	`sha256:05b3194a550b956249959e2f64475745fcf943ed7951306c6e3e6a5cd1815dd6`  
-		Last Modified: Wed, 14 Aug 2019 00:51:50 GMT  
-		Size: 45.2 MB (45245026 bytes)  
+	-	`sha256:5d4da55d9cf0eafd201c3838c03984cc0ef153b12bbfd5964ffee9e9d6b38bbb`  
+		Last Modified: Wed, 11 Sep 2019 22:48:17 GMT  
+		Size: 45.2 MB (45240190 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:5cc01dcd9b0a29ac6daec9b7b4af78f948ee1945fb22e5e8f97993705d589311`  
-		Last Modified: Wed, 14 Aug 2019 03:10:13 GMT  
-		Size: 10.3 MB (10317828 bytes)  
+	-	`sha256:dad3041fe12244954218a4bd2bfdcb5ae29fd416b247bd17e41c73cbdf9b6de5`  
+		Last Modified: Thu, 12 Sep 2019 00:44:07 GMT  
+		Size: 10.3 MB (10317726 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:5154470af4c84ea4b0ebc80e0cda7c479ef829d3ec3ece20e7b183bc8ded7563`  
-		Last Modified: Wed, 14 Aug 2019 03:10:11 GMT  
-		Size: 4.4 MB (4372320 bytes)  
+	-	`sha256:f6542c8f56fbd52f8d9d01d92625e0a728578d6e417adeba2baa0678cc5009d6`  
+		Last Modified: Thu, 12 Sep 2019 00:44:05 GMT  
+		Size: 4.4 MB (4372276 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:cd3b67ff4ea99e03083897f42be8f62c9ef0cd1e1a0603a4c3e627eae76a020d`  
-		Last Modified: Wed, 14 Aug 2019 03:10:30 GMT  
-		Size: 50.5 MB (50489789 bytes)  
+	-	`sha256:25fa3a7ad4fa33ba9843e1e836bf619c36b0cc5a1ce2d9b3e1e1b932c6220148`  
+		Last Modified: Thu, 12 Sep 2019 00:44:24 GMT  
+		Size: 50.5 MB (50488527 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:287679351b06307bcc1a8ced873496e08f721d41a6e4cea1ba6874f49aa24353`  
-		Last Modified: Tue, 10 Sep 2019 21:47:12 GMT  
-		Size: 206.9 MB (206858733 bytes)  
+	-	`sha256:271ed6d81ea099ed00ae3e2d3c436fe81ecbf2fd85a94445c7592c99cde20e64`  
+		Last Modified: Thu, 12 Sep 2019 00:45:02 GMT  
+		Size: 206.9 MB (206858680 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:1b8592c735d51ebf1dfa48e1eb0e7eafc5d2c1305f012c1b3ec8c558ce6a2cc0`  
-		Last Modified: Wed, 11 Sep 2019 04:17:27 GMT  
-		Size: 134.9 MB (134948470 bytes)  
+	-	`sha256:910cd9fba3989750310c0568ebda0d6a9a314c1d881c80d0fe08a7f1bf54f6eb`  
+		Last Modified: Thu, 12 Sep 2019 02:39:03 GMT  
+		Size: 134.9 MB (134948947 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:18c2a6b670fe82d983ac4cdcd1b7e2e9ebefab255ec5bc438012d71e8694b158`  
-		Last Modified: Wed, 11 Sep 2019 04:17:14 GMT  
-		Size: 201.5 KB (201455 bytes)  
+	-	`sha256:161f68228ae40bb7fa0ee6d05a9426f02da35cc5f36242ecb06200149da06ec2`  
+		Last Modified: Thu, 12 Sep 2019 02:38:30 GMT  
+		Size: 201.4 KB (201445 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:4ebe6d8e276cebf4b10b2cf059a6a6a3cc24596322505e4cf4492ce799a0b878`  
-		Last Modified: Wed, 11 Sep 2019 04:17:14 GMT  
-		Size: 828.2 KB (828191 bytes)  
+	-	`sha256:6e1321d2a618afb619b05ca4e49d19c245f9d61d8d955057387d5eba621cee49`  
+		Last Modified: Thu, 12 Sep 2019 02:38:30 GMT  
+		Size: 828.2 KB (828186 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:6263654d3a7a4362dea7e2bf1bbd05e44503ed040f20bc3ca83109b475890be6`  
-		Last Modified: Wed, 11 Sep 2019 05:25:36 GMT  
-		Size: 6.2 MB (6202943 bytes)  
+	-	`sha256:9359ff491eea65a6e13d5090db1de73d85b6c4da1c663794efb9c64bc6fa5ff2`  
+		Last Modified: Thu, 12 Sep 2019 12:40:50 GMT  
+		Size: 6.2 MB (6202745 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `elixir:1.7.4-alpine`
@@ -8888,7 +8888,7 @@ CMD ["iex"]
 ## `elixir:1.7.4-slim`
 
 ```console
-$ docker pull elixir@sha256:126a9f08a97f60a40f4d4775793b8255b9ef947f88773f846d0fea42ed268e42
+$ docker pull elixir@sha256:50aad1e6cc7a9abc25a38a0a04b85817087279e29d56a7a9ce1dd614b98092b8
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -9133,47 +9133,47 @@ CMD ["iex"]
 ### `elixir:1.7.4-slim` - linux; s390x
 
 ```console
-$ docker pull elixir@sha256:8d49e1714a9bb7eedd126f84e68270a3756df878e0d5037872902c5cf9927d6a
+$ docker pull elixir@sha256:ef5c6165a65ef99b2f010fc1b9fc6449c6b8a3f3e4303d4bcd845df0c464c253
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **112.6 MB (112607599 bytes)**  
+-	Total Size: **112.6 MB (112626139 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:f6ef65aac385477e0db9a90c7bad7991747fdec2d091f956937648092faf5966`
+-	Image ID: `sha256:9fb049e9816d2a34c33dca2d9ad240911c2b7b46bf85da6e8de70112169a6dc4`
 -	Default Command: `["iex"]`
 
 ```dockerfile
-# Wed, 14 Aug 2019 00:45:55 GMT
-ADD file:628950cdb60edf56519623bb5bceb8f913d0e4a57fb94d64bbeb5f99491a79c8 in / 
-# Wed, 14 Aug 2019 00:45:56 GMT
+# Wed, 11 Sep 2019 22:43:56 GMT
+ADD file:5c261012373b1f613abf90c8163f72247906770a6209fc775af35a131ba818f9 in / 
+# Wed, 11 Sep 2019 22:43:57 GMT
 CMD ["bash"]
-# Wed, 14 Aug 2019 01:50:14 GMT
+# Thu, 12 Sep 2019 01:52:32 GMT
 ENV OTP_VERSION=21.3.8.6
-# Wed, 14 Aug 2019 02:00:50 GMT
+# Thu, 12 Sep 2019 01:57:08 GMT
 RUN set -xe 	&& OTP_DOWNLOAD_URL="https://github.com/erlang/otp/archive/OTP-${OTP_VERSION}.tar.gz" 	&& OTP_DOWNLOAD_SHA256="7d96d11143b8ad71448acc0427c2c34756712aa2972d9aaa6d100f87f29918c6" 	&& fetchDeps=' 		curl 		ca-certificates' 	&& apt-get update 	&& apt-get install -y --no-install-recommends $fetchDeps 	&& curl -fSL -o otp-src.tar.gz "$OTP_DOWNLOAD_URL" 	&& echo "$OTP_DOWNLOAD_SHA256  otp-src.tar.gz" | sha256sum -c - 	&& runtimeDeps=' 		libodbc1 		libssl1.1 		libsctp1 	' 	&& buildDeps=' 		autoconf 		dpkg-dev 		gcc 		g++ 		make 		libncurses-dev 		unixodbc-dev 		libssl-dev 		libsctp-dev 	' 	&& apt-get install -y --no-install-recommends $runtimeDeps 	&& apt-get install -y --no-install-recommends $buildDeps 	&& export ERL_TOP="/usr/src/otp_src_${OTP_VERSION%%@*}" 	&& mkdir -vp $ERL_TOP 	&& tar -xzf otp-src.tar.gz -C $ERL_TOP --strip-components=1 	&& rm otp-src.tar.gz 	&& ( cd $ERL_TOP 	  && ./otp_build autoconf 	  && gnuArch="$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)" 	  && ./configure --build="$gnuArch" 	  && make -j$(nproc) 	  && make install ) 	&& find /usr/local -name examples | xargs rm -rf 	&& apt-get purge -y --auto-remove $buildDeps $fetchDeps 	&& rm -rf $ERL_TOP /var/lib/apt/lists/*
-# Wed, 14 Aug 2019 02:00:51 GMT
+# Thu, 12 Sep 2019 01:57:08 GMT
 CMD ["erl"]
-# Wed, 14 Aug 2019 15:08:19 GMT
+# Thu, 12 Sep 2019 12:35:01 GMT
 ENV ELIXIR_VERSION=v1.7.4 LANG=C.UTF-8
-# Wed, 14 Aug 2019 15:10:33 GMT
+# Thu, 12 Sep 2019 12:35:51 GMT
 RUN set -xe 	&& ELIXIR_DOWNLOAD_URL="https://github.com/elixir-lang/elixir/archive/${ELIXIR_VERSION}.tar.gz" 	&& ELIXIR_DOWNLOAD_SHA256="c7c87983e03a1dcf20078141a22355e88dadb26b53d3f3f98b9a9268687f9e20" 	&& buildDeps=' 		ca-certificates 		curl 		make 	' 	&& apt-get update 	&& apt-get install -y --no-install-recommends $buildDeps 	&& curl -fSL -o elixir-src.tar.gz $ELIXIR_DOWNLOAD_URL 	&& echo "$ELIXIR_DOWNLOAD_SHA256  elixir-src.tar.gz" | sha256sum -c - 	&& mkdir -p /usr/local/src/elixir 	&& tar -xzC /usr/local/src/elixir --strip-components=1 -f elixir-src.tar.gz 	&& rm elixir-src.tar.gz 	&& cd /usr/local/src/elixir 	&& make install clean 	&& apt-get purge -y --auto-remove $buildDeps 	&& rm -rf /var/lib/apt/lists/*
-# Wed, 14 Aug 2019 15:10:33 GMT
+# Thu, 12 Sep 2019 12:35:51 GMT
 CMD ["iex"]
 ```
 
 -	Layers:
-	-	`sha256:05b3194a550b956249959e2f64475745fcf943ed7951306c6e3e6a5cd1815dd6`  
-		Last Modified: Wed, 14 Aug 2019 00:51:50 GMT  
-		Size: 45.2 MB (45245026 bytes)  
+	-	`sha256:5d4da55d9cf0eafd201c3838c03984cc0ef153b12bbfd5964ffee9e9d6b38bbb`  
+		Last Modified: Wed, 11 Sep 2019 22:48:17 GMT  
+		Size: 45.2 MB (45240190 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:9f933e30f015f843d9cc71dd043f42e5c4f9eafb65f56e7f905c2e6c8845a9ba`  
-		Last Modified: Wed, 14 Aug 2019 02:39:58 GMT  
-		Size: 60.7 MB (60677087 bytes)  
+	-	`sha256:62962860db343b9b4512823dfb8d679f6ff4d9cd878c13c091b9a42ce65682be`  
+		Last Modified: Thu, 12 Sep 2019 02:39:21 GMT  
+		Size: 60.7 MB (60700786 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:1f748d58ee4418db077caeac2385a8575bc20d618e4af8a709b5505d14685206`  
-		Last Modified: Wed, 14 Aug 2019 15:14:44 GMT  
-		Size: 6.7 MB (6685486 bytes)  
+	-	`sha256:1de31ce5ab266b7371376347078bb770818c3972ee9c584993babd82d74e66af`  
+		Last Modified: Thu, 12 Sep 2019 12:40:56 GMT  
+		Size: 6.7 MB (6685163 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `elixir:1.7-alpine`
@@ -9470,7 +9470,7 @@ CMD ["iex"]
 ## `elixir:1.7-slim`
 
 ```console
-$ docker pull elixir@sha256:126a9f08a97f60a40f4d4775793b8255b9ef947f88773f846d0fea42ed268e42
+$ docker pull elixir@sha256:50aad1e6cc7a9abc25a38a0a04b85817087279e29d56a7a9ce1dd614b98092b8
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -9715,53 +9715,53 @@ CMD ["iex"]
 ### `elixir:1.7-slim` - linux; s390x
 
 ```console
-$ docker pull elixir@sha256:8d49e1714a9bb7eedd126f84e68270a3756df878e0d5037872902c5cf9927d6a
+$ docker pull elixir@sha256:ef5c6165a65ef99b2f010fc1b9fc6449c6b8a3f3e4303d4bcd845df0c464c253
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **112.6 MB (112607599 bytes)**  
+-	Total Size: **112.6 MB (112626139 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:f6ef65aac385477e0db9a90c7bad7991747fdec2d091f956937648092faf5966`
+-	Image ID: `sha256:9fb049e9816d2a34c33dca2d9ad240911c2b7b46bf85da6e8de70112169a6dc4`
 -	Default Command: `["iex"]`
 
 ```dockerfile
-# Wed, 14 Aug 2019 00:45:55 GMT
-ADD file:628950cdb60edf56519623bb5bceb8f913d0e4a57fb94d64bbeb5f99491a79c8 in / 
-# Wed, 14 Aug 2019 00:45:56 GMT
+# Wed, 11 Sep 2019 22:43:56 GMT
+ADD file:5c261012373b1f613abf90c8163f72247906770a6209fc775af35a131ba818f9 in / 
+# Wed, 11 Sep 2019 22:43:57 GMT
 CMD ["bash"]
-# Wed, 14 Aug 2019 01:50:14 GMT
+# Thu, 12 Sep 2019 01:52:32 GMT
 ENV OTP_VERSION=21.3.8.6
-# Wed, 14 Aug 2019 02:00:50 GMT
+# Thu, 12 Sep 2019 01:57:08 GMT
 RUN set -xe 	&& OTP_DOWNLOAD_URL="https://github.com/erlang/otp/archive/OTP-${OTP_VERSION}.tar.gz" 	&& OTP_DOWNLOAD_SHA256="7d96d11143b8ad71448acc0427c2c34756712aa2972d9aaa6d100f87f29918c6" 	&& fetchDeps=' 		curl 		ca-certificates' 	&& apt-get update 	&& apt-get install -y --no-install-recommends $fetchDeps 	&& curl -fSL -o otp-src.tar.gz "$OTP_DOWNLOAD_URL" 	&& echo "$OTP_DOWNLOAD_SHA256  otp-src.tar.gz" | sha256sum -c - 	&& runtimeDeps=' 		libodbc1 		libssl1.1 		libsctp1 	' 	&& buildDeps=' 		autoconf 		dpkg-dev 		gcc 		g++ 		make 		libncurses-dev 		unixodbc-dev 		libssl-dev 		libsctp-dev 	' 	&& apt-get install -y --no-install-recommends $runtimeDeps 	&& apt-get install -y --no-install-recommends $buildDeps 	&& export ERL_TOP="/usr/src/otp_src_${OTP_VERSION%%@*}" 	&& mkdir -vp $ERL_TOP 	&& tar -xzf otp-src.tar.gz -C $ERL_TOP --strip-components=1 	&& rm otp-src.tar.gz 	&& ( cd $ERL_TOP 	  && ./otp_build autoconf 	  && gnuArch="$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)" 	  && ./configure --build="$gnuArch" 	  && make -j$(nproc) 	  && make install ) 	&& find /usr/local -name examples | xargs rm -rf 	&& apt-get purge -y --auto-remove $buildDeps $fetchDeps 	&& rm -rf $ERL_TOP /var/lib/apt/lists/*
-# Wed, 14 Aug 2019 02:00:51 GMT
+# Thu, 12 Sep 2019 01:57:08 GMT
 CMD ["erl"]
-# Wed, 14 Aug 2019 15:08:19 GMT
+# Thu, 12 Sep 2019 12:35:01 GMT
 ENV ELIXIR_VERSION=v1.7.4 LANG=C.UTF-8
-# Wed, 14 Aug 2019 15:10:33 GMT
+# Thu, 12 Sep 2019 12:35:51 GMT
 RUN set -xe 	&& ELIXIR_DOWNLOAD_URL="https://github.com/elixir-lang/elixir/archive/${ELIXIR_VERSION}.tar.gz" 	&& ELIXIR_DOWNLOAD_SHA256="c7c87983e03a1dcf20078141a22355e88dadb26b53d3f3f98b9a9268687f9e20" 	&& buildDeps=' 		ca-certificates 		curl 		make 	' 	&& apt-get update 	&& apt-get install -y --no-install-recommends $buildDeps 	&& curl -fSL -o elixir-src.tar.gz $ELIXIR_DOWNLOAD_URL 	&& echo "$ELIXIR_DOWNLOAD_SHA256  elixir-src.tar.gz" | sha256sum -c - 	&& mkdir -p /usr/local/src/elixir 	&& tar -xzC /usr/local/src/elixir --strip-components=1 -f elixir-src.tar.gz 	&& rm elixir-src.tar.gz 	&& cd /usr/local/src/elixir 	&& make install clean 	&& apt-get purge -y --auto-remove $buildDeps 	&& rm -rf /var/lib/apt/lists/*
-# Wed, 14 Aug 2019 15:10:33 GMT
+# Thu, 12 Sep 2019 12:35:51 GMT
 CMD ["iex"]
 ```
 
 -	Layers:
-	-	`sha256:05b3194a550b956249959e2f64475745fcf943ed7951306c6e3e6a5cd1815dd6`  
-		Last Modified: Wed, 14 Aug 2019 00:51:50 GMT  
-		Size: 45.2 MB (45245026 bytes)  
+	-	`sha256:5d4da55d9cf0eafd201c3838c03984cc0ef153b12bbfd5964ffee9e9d6b38bbb`  
+		Last Modified: Wed, 11 Sep 2019 22:48:17 GMT  
+		Size: 45.2 MB (45240190 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:9f933e30f015f843d9cc71dd043f42e5c4f9eafb65f56e7f905c2e6c8845a9ba`  
-		Last Modified: Wed, 14 Aug 2019 02:39:58 GMT  
-		Size: 60.7 MB (60677087 bytes)  
+	-	`sha256:62962860db343b9b4512823dfb8d679f6ff4d9cd878c13c091b9a42ce65682be`  
+		Last Modified: Thu, 12 Sep 2019 02:39:21 GMT  
+		Size: 60.7 MB (60700786 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:1f748d58ee4418db077caeac2385a8575bc20d618e4af8a709b5505d14685206`  
-		Last Modified: Wed, 14 Aug 2019 15:14:44 GMT  
-		Size: 6.7 MB (6685486 bytes)  
+	-	`sha256:1de31ce5ab266b7371376347078bb770818c3972ee9c584993babd82d74e66af`  
+		Last Modified: Thu, 12 Sep 2019 12:40:56 GMT  
+		Size: 6.7 MB (6685163 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `elixir:1.8`
 
 ```console
-$ docker pull elixir@sha256:df32d79a21c9cb29aea17e5eca9d5a3582051891454a1c2182d49bbc4e05c98e
+$ docker pull elixir@sha256:89dbc1045ba0bbd8acb1e64b4a749f3c06af1f86abfd979708b3f43a1e8f71d5
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -10206,93 +10206,93 @@ CMD ["iex"]
 ### `elixir:1.8` - linux; s390x
 
 ```console
-$ docker pull elixir@sha256:c4e719d094cb13220a8e76c5d39381eed705ba7649bcefc4a3d9f56da41ea436
+$ docker pull elixir@sha256:3543095d804c3ba2bf87190dea4c7ab68c77a7d27909854cbfc845a693f9d8aa
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **459.5 MB (459497318 bytes)**  
+-	Total Size: **459.5 MB (459491481 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:fbb18b276dec4e17c57baa2994c00a8639c06ec53b23ec95e37ff5a4f876cbbf`
+-	Image ID: `sha256:539b3fc33442a082bab6c3ec0ad208c4fcdd733c55ab81caa1fc3da0714c3d26`
 -	Default Command: `["iex"]`
 
 ```dockerfile
-# Wed, 14 Aug 2019 00:45:55 GMT
-ADD file:628950cdb60edf56519623bb5bceb8f913d0e4a57fb94d64bbeb5f99491a79c8 in / 
-# Wed, 14 Aug 2019 00:45:56 GMT
+# Wed, 11 Sep 2019 22:43:56 GMT
+ADD file:5c261012373b1f613abf90c8163f72247906770a6209fc775af35a131ba818f9 in / 
+# Wed, 11 Sep 2019 22:43:57 GMT
 CMD ["bash"]
-# Wed, 14 Aug 2019 03:02:33 GMT
+# Thu, 12 Sep 2019 00:38:06 GMT
 RUN apt-get update && apt-get install -y --no-install-recommends 		ca-certificates 		curl 		netbase 		wget 	&& rm -rf /var/lib/apt/lists/*
-# Wed, 14 Aug 2019 03:02:43 GMT
+# Thu, 12 Sep 2019 00:38:13 GMT
 RUN set -ex; 	if ! command -v gpg > /dev/null; then 		apt-get update; 		apt-get install -y --no-install-recommends 			gnupg 			dirmngr 		; 		rm -rf /var/lib/apt/lists/*; 	fi
-# Wed, 14 Aug 2019 03:03:35 GMT
+# Thu, 12 Sep 2019 00:38:39 GMT
 RUN apt-get update && apt-get install -y --no-install-recommends 		bzr 		git 		mercurial 		openssh-client 		subversion 				procps 	&& rm -rf /var/lib/apt/lists/*
-# Tue, 10 Sep 2019 21:40:06 GMT
+# Thu, 12 Sep 2019 00:40:19 GMT
 RUN set -ex; 	apt-get update; 	apt-get install -y --no-install-recommends 		autoconf 		automake 		bzip2 		dpkg-dev 		file 		g++ 		gcc 		imagemagick 		libbz2-dev 		libc6-dev 		libcurl4-openssl-dev 		libdb-dev 		libevent-dev 		libffi-dev 		libgdbm-dev 		libglib2.0-dev 		libgmp-dev 		libjpeg-dev 		libkrb5-dev 		liblzma-dev 		libmagickcore-dev 		libmagickwand-dev 		libmaxminddb-dev 		libncurses5-dev 		libncursesw5-dev 		libpng-dev 		libpq-dev 		libreadline-dev 		libsqlite3-dev 		libssl-dev 		libtool 		libwebp-dev 		libxml2-dev 		libxslt-dev 		libyaml-dev 		make 		patch 		unzip 		xz-utils 		zlib1g-dev 				$( 			if apt-cache show 'default-libmysqlclient-dev' 2>/dev/null | grep -q '^Version:'; then 				echo 'default-libmysqlclient-dev'; 			else 				echo 'libmysqlclient-dev'; 			fi 		) 	; 	rm -rf /var/lib/apt/lists/*
-# Wed, 11 Sep 2019 03:45:38 GMT
+# Thu, 12 Sep 2019 01:45:26 GMT
 ENV OTP_VERSION=21.3.8.6
-# Wed, 11 Sep 2019 03:52:24 GMT
+# Thu, 12 Sep 2019 01:52:00 GMT
 RUN set -xe 	&& OTP_DOWNLOAD_URL="https://github.com/erlang/otp/archive/OTP-${OTP_VERSION}.tar.gz" 	&& OTP_DOWNLOAD_SHA256="7d96d11143b8ad71448acc0427c2c34756712aa2972d9aaa6d100f87f29918c6" 	&& runtimeDeps='libodbc1 			libsctp1 			libwxgtk3.0' 	&& buildDeps='unixodbc-dev 			libsctp-dev 			libwxgtk3.0-dev' 	&& apt-get update 	&& apt-get install -y --no-install-recommends $runtimeDeps 	&& apt-get install -y --no-install-recommends $buildDeps 	&& curl -fSL -o otp-src.tar.gz "$OTP_DOWNLOAD_URL" 	&& echo "$OTP_DOWNLOAD_SHA256  otp-src.tar.gz" | sha256sum -c - 	&& export ERL_TOP="/usr/src/otp_src_${OTP_VERSION%%@*}" 	&& mkdir -vp $ERL_TOP 	&& tar -xzf otp-src.tar.gz -C $ERL_TOP --strip-components=1 	&& rm otp-src.tar.gz 	&& ( cd $ERL_TOP 	  && ./otp_build autoconf 	  && gnuArch="$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)" 	  && ./configure --build="$gnuArch" 	  && make -j$(nproc) 	  && make install ) 	&& find /usr/local -name examples | xargs rm -rf 	&& apt-get purge -y --auto-remove $buildDeps 	&& rm -rf $ERL_TOP /var/lib/apt/lists/*
-# Wed, 11 Sep 2019 03:52:24 GMT
+# Thu, 12 Sep 2019 01:52:00 GMT
 CMD ["erl"]
-# Wed, 11 Sep 2019 03:52:25 GMT
+# Thu, 12 Sep 2019 01:52:01 GMT
 ENV REBAR_VERSION=2.6.4
-# Wed, 11 Sep 2019 03:52:27 GMT
+# Thu, 12 Sep 2019 01:52:03 GMT
 RUN set -xe 	&& REBAR_DOWNLOAD_URL="https://github.com/rebar/rebar/archive/${REBAR_VERSION}.tar.gz" 	&& REBAR_DOWNLOAD_SHA256="577246bafa2eb2b2c3f1d0c157408650446884555bf87901508ce71d5cc0bd07" 	&& mkdir -p /usr/src/rebar-src 	&& curl -fSL -o rebar-src.tar.gz "$REBAR_DOWNLOAD_URL" 	&& echo "$REBAR_DOWNLOAD_SHA256 rebar-src.tar.gz" | sha256sum -c - 	&& tar -xzf rebar-src.tar.gz -C /usr/src/rebar-src --strip-components=1 	&& rm rebar-src.tar.gz 	&& cd /usr/src/rebar-src 	&& ./bootstrap 	&& install -v ./rebar /usr/local/bin/ 	&& rm -rf /usr/src/rebar-src
-# Wed, 11 Sep 2019 03:52:27 GMT
+# Thu, 12 Sep 2019 01:52:03 GMT
 ENV REBAR3_VERSION=3.11.1
-# Wed, 11 Sep 2019 03:52:43 GMT
+# Thu, 12 Sep 2019 01:52:17 GMT
 RUN set -xe 	&& REBAR3_DOWNLOAD_URL="https://github.com/erlang/rebar3/archive/${REBAR3_VERSION}.tar.gz" 	&& REBAR3_DOWNLOAD_SHA256="a1822db5210b96b5f8ef10e433b22df19c5fc54dfd847bcaab86c65151ce4171" 	&& mkdir -p /usr/src/rebar3-src 	&& curl -fSL -o rebar3-src.tar.gz "$REBAR3_DOWNLOAD_URL" 	&& echo "$REBAR3_DOWNLOAD_SHA256 rebar3-src.tar.gz" | sha256sum -c - 	&& tar -xzf rebar3-src.tar.gz -C /usr/src/rebar3-src --strip-components=1 	&& rm rebar3-src.tar.gz 	&& cd /usr/src/rebar3-src 	&& HOME=$PWD ./bootstrap 	&& install -v ./rebar3 /usr/local/bin/ 	&& rm -rf /usr/src/rebar3-src
-# Wed, 11 Sep 2019 05:19:00 GMT
+# Thu, 12 Sep 2019 12:31:34 GMT
 ENV ELIXIR_VERSION=v1.8.2 LANG=C.UTF-8
-# Wed, 11 Sep 2019 05:19:36 GMT
+# Thu, 12 Sep 2019 12:32:10 GMT
 RUN set -xe 	&& ELIXIR_DOWNLOAD_URL="https://github.com/elixir-lang/elixir/archive/${ELIXIR_VERSION}.tar.gz" 	&& ELIXIR_DOWNLOAD_SHA256="cf9bf0b2d92bc4671431e3fe1d1b0a0e5125f1a942cc4fdf7914b74f04efb835" 	&& curl -fSL -o elixir-src.tar.gz $ELIXIR_DOWNLOAD_URL 	&& echo "$ELIXIR_DOWNLOAD_SHA256  elixir-src.tar.gz" | sha256sum -c - 	&& mkdir -p /usr/local/src/elixir 	&& tar -xzC /usr/local/src/elixir --strip-components=1 -f elixir-src.tar.gz 	&& rm elixir-src.tar.gz 	&& cd /usr/local/src/elixir 	&& make install clean
-# Wed, 11 Sep 2019 05:19:36 GMT
+# Thu, 12 Sep 2019 12:32:10 GMT
 CMD ["iex"]
 ```
 
 -	Layers:
-	-	`sha256:05b3194a550b956249959e2f64475745fcf943ed7951306c6e3e6a5cd1815dd6`  
-		Last Modified: Wed, 14 Aug 2019 00:51:50 GMT  
-		Size: 45.2 MB (45245026 bytes)  
+	-	`sha256:5d4da55d9cf0eafd201c3838c03984cc0ef153b12bbfd5964ffee9e9d6b38bbb`  
+		Last Modified: Wed, 11 Sep 2019 22:48:17 GMT  
+		Size: 45.2 MB (45240190 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:5cc01dcd9b0a29ac6daec9b7b4af78f948ee1945fb22e5e8f97993705d589311`  
-		Last Modified: Wed, 14 Aug 2019 03:10:13 GMT  
-		Size: 10.3 MB (10317828 bytes)  
+	-	`sha256:dad3041fe12244954218a4bd2bfdcb5ae29fd416b247bd17e41c73cbdf9b6de5`  
+		Last Modified: Thu, 12 Sep 2019 00:44:07 GMT  
+		Size: 10.3 MB (10317726 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:5154470af4c84ea4b0ebc80e0cda7c479ef829d3ec3ece20e7b183bc8ded7563`  
-		Last Modified: Wed, 14 Aug 2019 03:10:11 GMT  
-		Size: 4.4 MB (4372320 bytes)  
+	-	`sha256:f6542c8f56fbd52f8d9d01d92625e0a728578d6e417adeba2baa0678cc5009d6`  
+		Last Modified: Thu, 12 Sep 2019 00:44:05 GMT  
+		Size: 4.4 MB (4372276 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:cd3b67ff4ea99e03083897f42be8f62c9ef0cd1e1a0603a4c3e627eae76a020d`  
-		Last Modified: Wed, 14 Aug 2019 03:10:30 GMT  
-		Size: 50.5 MB (50489789 bytes)  
+	-	`sha256:25fa3a7ad4fa33ba9843e1e836bf619c36b0cc5a1ce2d9b3e1e1b932c6220148`  
+		Last Modified: Thu, 12 Sep 2019 00:44:24 GMT  
+		Size: 50.5 MB (50488527 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:287679351b06307bcc1a8ced873496e08f721d41a6e4cea1ba6874f49aa24353`  
-		Last Modified: Tue, 10 Sep 2019 21:47:12 GMT  
-		Size: 206.9 MB (206858733 bytes)  
+	-	`sha256:271ed6d81ea099ed00ae3e2d3c436fe81ecbf2fd85a94445c7592c99cde20e64`  
+		Last Modified: Thu, 12 Sep 2019 00:45:02 GMT  
+		Size: 206.9 MB (206858680 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:1b8592c735d51ebf1dfa48e1eb0e7eafc5d2c1305f012c1b3ec8c558ce6a2cc0`  
-		Last Modified: Wed, 11 Sep 2019 04:17:27 GMT  
-		Size: 134.9 MB (134948470 bytes)  
+	-	`sha256:910cd9fba3989750310c0568ebda0d6a9a314c1d881c80d0fe08a7f1bf54f6eb`  
+		Last Modified: Thu, 12 Sep 2019 02:39:03 GMT  
+		Size: 134.9 MB (134948947 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:18c2a6b670fe82d983ac4cdcd1b7e2e9ebefab255ec5bc438012d71e8694b158`  
-		Last Modified: Wed, 11 Sep 2019 04:17:14 GMT  
-		Size: 201.5 KB (201455 bytes)  
+	-	`sha256:161f68228ae40bb7fa0ee6d05a9426f02da35cc5f36242ecb06200149da06ec2`  
+		Last Modified: Thu, 12 Sep 2019 02:38:30 GMT  
+		Size: 201.4 KB (201445 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:4ebe6d8e276cebf4b10b2cf059a6a6a3cc24596322505e4cf4492ce799a0b878`  
-		Last Modified: Wed, 11 Sep 2019 04:17:14 GMT  
-		Size: 828.2 KB (828191 bytes)  
+	-	`sha256:6e1321d2a618afb619b05ca4e49d19c245f9d61d8d955057387d5eba621cee49`  
+		Last Modified: Thu, 12 Sep 2019 02:38:30 GMT  
+		Size: 828.2 KB (828186 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:1e5291ee1098c44028c0414658709f804dfb9de78cf57f7991a445268e009484`  
-		Last Modified: Wed, 11 Sep 2019 05:25:25 GMT  
-		Size: 6.2 MB (6235506 bytes)  
+	-	`sha256:8c29345c2bf39828a087baeb5a44fae9a28dc850e79a48cf8db9e38078f2716d`  
+		Last Modified: Thu, 12 Sep 2019 12:40:33 GMT  
+		Size: 6.2 MB (6235504 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `elixir:1.8.2`
 
 ```console
-$ docker pull elixir@sha256:df32d79a21c9cb29aea17e5eca9d5a3582051891454a1c2182d49bbc4e05c98e
+$ docker pull elixir@sha256:89dbc1045ba0bbd8acb1e64b4a749f3c06af1f86abfd979708b3f43a1e8f71d5
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -10737,87 +10737,87 @@ CMD ["iex"]
 ### `elixir:1.8.2` - linux; s390x
 
 ```console
-$ docker pull elixir@sha256:c4e719d094cb13220a8e76c5d39381eed705ba7649bcefc4a3d9f56da41ea436
+$ docker pull elixir@sha256:3543095d804c3ba2bf87190dea4c7ab68c77a7d27909854cbfc845a693f9d8aa
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **459.5 MB (459497318 bytes)**  
+-	Total Size: **459.5 MB (459491481 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:fbb18b276dec4e17c57baa2994c00a8639c06ec53b23ec95e37ff5a4f876cbbf`
+-	Image ID: `sha256:539b3fc33442a082bab6c3ec0ad208c4fcdd733c55ab81caa1fc3da0714c3d26`
 -	Default Command: `["iex"]`
 
 ```dockerfile
-# Wed, 14 Aug 2019 00:45:55 GMT
-ADD file:628950cdb60edf56519623bb5bceb8f913d0e4a57fb94d64bbeb5f99491a79c8 in / 
-# Wed, 14 Aug 2019 00:45:56 GMT
+# Wed, 11 Sep 2019 22:43:56 GMT
+ADD file:5c261012373b1f613abf90c8163f72247906770a6209fc775af35a131ba818f9 in / 
+# Wed, 11 Sep 2019 22:43:57 GMT
 CMD ["bash"]
-# Wed, 14 Aug 2019 03:02:33 GMT
+# Thu, 12 Sep 2019 00:38:06 GMT
 RUN apt-get update && apt-get install -y --no-install-recommends 		ca-certificates 		curl 		netbase 		wget 	&& rm -rf /var/lib/apt/lists/*
-# Wed, 14 Aug 2019 03:02:43 GMT
+# Thu, 12 Sep 2019 00:38:13 GMT
 RUN set -ex; 	if ! command -v gpg > /dev/null; then 		apt-get update; 		apt-get install -y --no-install-recommends 			gnupg 			dirmngr 		; 		rm -rf /var/lib/apt/lists/*; 	fi
-# Wed, 14 Aug 2019 03:03:35 GMT
+# Thu, 12 Sep 2019 00:38:39 GMT
 RUN apt-get update && apt-get install -y --no-install-recommends 		bzr 		git 		mercurial 		openssh-client 		subversion 				procps 	&& rm -rf /var/lib/apt/lists/*
-# Tue, 10 Sep 2019 21:40:06 GMT
+# Thu, 12 Sep 2019 00:40:19 GMT
 RUN set -ex; 	apt-get update; 	apt-get install -y --no-install-recommends 		autoconf 		automake 		bzip2 		dpkg-dev 		file 		g++ 		gcc 		imagemagick 		libbz2-dev 		libc6-dev 		libcurl4-openssl-dev 		libdb-dev 		libevent-dev 		libffi-dev 		libgdbm-dev 		libglib2.0-dev 		libgmp-dev 		libjpeg-dev 		libkrb5-dev 		liblzma-dev 		libmagickcore-dev 		libmagickwand-dev 		libmaxminddb-dev 		libncurses5-dev 		libncursesw5-dev 		libpng-dev 		libpq-dev 		libreadline-dev 		libsqlite3-dev 		libssl-dev 		libtool 		libwebp-dev 		libxml2-dev 		libxslt-dev 		libyaml-dev 		make 		patch 		unzip 		xz-utils 		zlib1g-dev 				$( 			if apt-cache show 'default-libmysqlclient-dev' 2>/dev/null | grep -q '^Version:'; then 				echo 'default-libmysqlclient-dev'; 			else 				echo 'libmysqlclient-dev'; 			fi 		) 	; 	rm -rf /var/lib/apt/lists/*
-# Wed, 11 Sep 2019 03:45:38 GMT
+# Thu, 12 Sep 2019 01:45:26 GMT
 ENV OTP_VERSION=21.3.8.6
-# Wed, 11 Sep 2019 03:52:24 GMT
+# Thu, 12 Sep 2019 01:52:00 GMT
 RUN set -xe 	&& OTP_DOWNLOAD_URL="https://github.com/erlang/otp/archive/OTP-${OTP_VERSION}.tar.gz" 	&& OTP_DOWNLOAD_SHA256="7d96d11143b8ad71448acc0427c2c34756712aa2972d9aaa6d100f87f29918c6" 	&& runtimeDeps='libodbc1 			libsctp1 			libwxgtk3.0' 	&& buildDeps='unixodbc-dev 			libsctp-dev 			libwxgtk3.0-dev' 	&& apt-get update 	&& apt-get install -y --no-install-recommends $runtimeDeps 	&& apt-get install -y --no-install-recommends $buildDeps 	&& curl -fSL -o otp-src.tar.gz "$OTP_DOWNLOAD_URL" 	&& echo "$OTP_DOWNLOAD_SHA256  otp-src.tar.gz" | sha256sum -c - 	&& export ERL_TOP="/usr/src/otp_src_${OTP_VERSION%%@*}" 	&& mkdir -vp $ERL_TOP 	&& tar -xzf otp-src.tar.gz -C $ERL_TOP --strip-components=1 	&& rm otp-src.tar.gz 	&& ( cd $ERL_TOP 	  && ./otp_build autoconf 	  && gnuArch="$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)" 	  && ./configure --build="$gnuArch" 	  && make -j$(nproc) 	  && make install ) 	&& find /usr/local -name examples | xargs rm -rf 	&& apt-get purge -y --auto-remove $buildDeps 	&& rm -rf $ERL_TOP /var/lib/apt/lists/*
-# Wed, 11 Sep 2019 03:52:24 GMT
+# Thu, 12 Sep 2019 01:52:00 GMT
 CMD ["erl"]
-# Wed, 11 Sep 2019 03:52:25 GMT
+# Thu, 12 Sep 2019 01:52:01 GMT
 ENV REBAR_VERSION=2.6.4
-# Wed, 11 Sep 2019 03:52:27 GMT
+# Thu, 12 Sep 2019 01:52:03 GMT
 RUN set -xe 	&& REBAR_DOWNLOAD_URL="https://github.com/rebar/rebar/archive/${REBAR_VERSION}.tar.gz" 	&& REBAR_DOWNLOAD_SHA256="577246bafa2eb2b2c3f1d0c157408650446884555bf87901508ce71d5cc0bd07" 	&& mkdir -p /usr/src/rebar-src 	&& curl -fSL -o rebar-src.tar.gz "$REBAR_DOWNLOAD_URL" 	&& echo "$REBAR_DOWNLOAD_SHA256 rebar-src.tar.gz" | sha256sum -c - 	&& tar -xzf rebar-src.tar.gz -C /usr/src/rebar-src --strip-components=1 	&& rm rebar-src.tar.gz 	&& cd /usr/src/rebar-src 	&& ./bootstrap 	&& install -v ./rebar /usr/local/bin/ 	&& rm -rf /usr/src/rebar-src
-# Wed, 11 Sep 2019 03:52:27 GMT
+# Thu, 12 Sep 2019 01:52:03 GMT
 ENV REBAR3_VERSION=3.11.1
-# Wed, 11 Sep 2019 03:52:43 GMT
+# Thu, 12 Sep 2019 01:52:17 GMT
 RUN set -xe 	&& REBAR3_DOWNLOAD_URL="https://github.com/erlang/rebar3/archive/${REBAR3_VERSION}.tar.gz" 	&& REBAR3_DOWNLOAD_SHA256="a1822db5210b96b5f8ef10e433b22df19c5fc54dfd847bcaab86c65151ce4171" 	&& mkdir -p /usr/src/rebar3-src 	&& curl -fSL -o rebar3-src.tar.gz "$REBAR3_DOWNLOAD_URL" 	&& echo "$REBAR3_DOWNLOAD_SHA256 rebar3-src.tar.gz" | sha256sum -c - 	&& tar -xzf rebar3-src.tar.gz -C /usr/src/rebar3-src --strip-components=1 	&& rm rebar3-src.tar.gz 	&& cd /usr/src/rebar3-src 	&& HOME=$PWD ./bootstrap 	&& install -v ./rebar3 /usr/local/bin/ 	&& rm -rf /usr/src/rebar3-src
-# Wed, 11 Sep 2019 05:19:00 GMT
+# Thu, 12 Sep 2019 12:31:34 GMT
 ENV ELIXIR_VERSION=v1.8.2 LANG=C.UTF-8
-# Wed, 11 Sep 2019 05:19:36 GMT
+# Thu, 12 Sep 2019 12:32:10 GMT
 RUN set -xe 	&& ELIXIR_DOWNLOAD_URL="https://github.com/elixir-lang/elixir/archive/${ELIXIR_VERSION}.tar.gz" 	&& ELIXIR_DOWNLOAD_SHA256="cf9bf0b2d92bc4671431e3fe1d1b0a0e5125f1a942cc4fdf7914b74f04efb835" 	&& curl -fSL -o elixir-src.tar.gz $ELIXIR_DOWNLOAD_URL 	&& echo "$ELIXIR_DOWNLOAD_SHA256  elixir-src.tar.gz" | sha256sum -c - 	&& mkdir -p /usr/local/src/elixir 	&& tar -xzC /usr/local/src/elixir --strip-components=1 -f elixir-src.tar.gz 	&& rm elixir-src.tar.gz 	&& cd /usr/local/src/elixir 	&& make install clean
-# Wed, 11 Sep 2019 05:19:36 GMT
+# Thu, 12 Sep 2019 12:32:10 GMT
 CMD ["iex"]
 ```
 
 -	Layers:
-	-	`sha256:05b3194a550b956249959e2f64475745fcf943ed7951306c6e3e6a5cd1815dd6`  
-		Last Modified: Wed, 14 Aug 2019 00:51:50 GMT  
-		Size: 45.2 MB (45245026 bytes)  
+	-	`sha256:5d4da55d9cf0eafd201c3838c03984cc0ef153b12bbfd5964ffee9e9d6b38bbb`  
+		Last Modified: Wed, 11 Sep 2019 22:48:17 GMT  
+		Size: 45.2 MB (45240190 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:5cc01dcd9b0a29ac6daec9b7b4af78f948ee1945fb22e5e8f97993705d589311`  
-		Last Modified: Wed, 14 Aug 2019 03:10:13 GMT  
-		Size: 10.3 MB (10317828 bytes)  
+	-	`sha256:dad3041fe12244954218a4bd2bfdcb5ae29fd416b247bd17e41c73cbdf9b6de5`  
+		Last Modified: Thu, 12 Sep 2019 00:44:07 GMT  
+		Size: 10.3 MB (10317726 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:5154470af4c84ea4b0ebc80e0cda7c479ef829d3ec3ece20e7b183bc8ded7563`  
-		Last Modified: Wed, 14 Aug 2019 03:10:11 GMT  
-		Size: 4.4 MB (4372320 bytes)  
+	-	`sha256:f6542c8f56fbd52f8d9d01d92625e0a728578d6e417adeba2baa0678cc5009d6`  
+		Last Modified: Thu, 12 Sep 2019 00:44:05 GMT  
+		Size: 4.4 MB (4372276 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:cd3b67ff4ea99e03083897f42be8f62c9ef0cd1e1a0603a4c3e627eae76a020d`  
-		Last Modified: Wed, 14 Aug 2019 03:10:30 GMT  
-		Size: 50.5 MB (50489789 bytes)  
+	-	`sha256:25fa3a7ad4fa33ba9843e1e836bf619c36b0cc5a1ce2d9b3e1e1b932c6220148`  
+		Last Modified: Thu, 12 Sep 2019 00:44:24 GMT  
+		Size: 50.5 MB (50488527 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:287679351b06307bcc1a8ced873496e08f721d41a6e4cea1ba6874f49aa24353`  
-		Last Modified: Tue, 10 Sep 2019 21:47:12 GMT  
-		Size: 206.9 MB (206858733 bytes)  
+	-	`sha256:271ed6d81ea099ed00ae3e2d3c436fe81ecbf2fd85a94445c7592c99cde20e64`  
+		Last Modified: Thu, 12 Sep 2019 00:45:02 GMT  
+		Size: 206.9 MB (206858680 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:1b8592c735d51ebf1dfa48e1eb0e7eafc5d2c1305f012c1b3ec8c558ce6a2cc0`  
-		Last Modified: Wed, 11 Sep 2019 04:17:27 GMT  
-		Size: 134.9 MB (134948470 bytes)  
+	-	`sha256:910cd9fba3989750310c0568ebda0d6a9a314c1d881c80d0fe08a7f1bf54f6eb`  
+		Last Modified: Thu, 12 Sep 2019 02:39:03 GMT  
+		Size: 134.9 MB (134948947 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:18c2a6b670fe82d983ac4cdcd1b7e2e9ebefab255ec5bc438012d71e8694b158`  
-		Last Modified: Wed, 11 Sep 2019 04:17:14 GMT  
-		Size: 201.5 KB (201455 bytes)  
+	-	`sha256:161f68228ae40bb7fa0ee6d05a9426f02da35cc5f36242ecb06200149da06ec2`  
+		Last Modified: Thu, 12 Sep 2019 02:38:30 GMT  
+		Size: 201.4 KB (201445 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:4ebe6d8e276cebf4b10b2cf059a6a6a3cc24596322505e4cf4492ce799a0b878`  
-		Last Modified: Wed, 11 Sep 2019 04:17:14 GMT  
-		Size: 828.2 KB (828191 bytes)  
+	-	`sha256:6e1321d2a618afb619b05ca4e49d19c245f9d61d8d955057387d5eba621cee49`  
+		Last Modified: Thu, 12 Sep 2019 02:38:30 GMT  
+		Size: 828.2 KB (828186 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:1e5291ee1098c44028c0414658709f804dfb9de78cf57f7991a445268e009484`  
-		Last Modified: Wed, 11 Sep 2019 05:25:25 GMT  
-		Size: 6.2 MB (6235506 bytes)  
+	-	`sha256:8c29345c2bf39828a087baeb5a44fae9a28dc850e79a48cf8db9e38078f2716d`  
+		Last Modified: Thu, 12 Sep 2019 12:40:33 GMT  
+		Size: 6.2 MB (6235504 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `elixir:1.8.2-alpine`
@@ -11114,7 +11114,7 @@ CMD ["iex"]
 ## `elixir:1.8.2-otp-22`
 
 ```console
-$ docker pull elixir@sha256:0a84a7e42e6afc53be66f9d19d99e74ff6f86e0f3bbdb51f726144909ff7957f
+$ docker pull elixir@sha256:050d3fba93990b2be765e7624cce463e19bd834e0f162751f004955b22fe4db0
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -11559,87 +11559,87 @@ CMD ["iex"]
 ### `elixir:1.8.2-otp-22` - linux; s390x
 
 ```console
-$ docker pull elixir@sha256:a9d770b393531076baad08b065d106c5c5b416529b8d22c7a5b64ab49f7c623b
+$ docker pull elixir@sha256:8c2941f5d6a06432d7b68b93fd2e62be8cee852bdf9831336531dd4920c76b9e
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **460.3 MB (460291662 bytes)**  
+-	Total Size: **460.3 MB (460285340 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:da74311af2d67228c1ee62ca77a38640022eb9a4c3d0a47c6a3492206263fb9a`
+-	Image ID: `sha256:fbbd4827f4ebc5941ce3f3e7df02bf88a63be8ba5872e84b4aa04e509239f15c`
 -	Default Command: `["iex"]`
 
 ```dockerfile
-# Wed, 14 Aug 2019 00:45:55 GMT
-ADD file:628950cdb60edf56519623bb5bceb8f913d0e4a57fb94d64bbeb5f99491a79c8 in / 
-# Wed, 14 Aug 2019 00:45:56 GMT
+# Wed, 11 Sep 2019 22:43:56 GMT
+ADD file:5c261012373b1f613abf90c8163f72247906770a6209fc775af35a131ba818f9 in / 
+# Wed, 11 Sep 2019 22:43:57 GMT
 CMD ["bash"]
-# Wed, 14 Aug 2019 03:02:33 GMT
+# Thu, 12 Sep 2019 00:38:06 GMT
 RUN apt-get update && apt-get install -y --no-install-recommends 		ca-certificates 		curl 		netbase 		wget 	&& rm -rf /var/lib/apt/lists/*
-# Wed, 14 Aug 2019 03:02:43 GMT
+# Thu, 12 Sep 2019 00:38:13 GMT
 RUN set -ex; 	if ! command -v gpg > /dev/null; then 		apt-get update; 		apt-get install -y --no-install-recommends 			gnupg 			dirmngr 		; 		rm -rf /var/lib/apt/lists/*; 	fi
-# Wed, 14 Aug 2019 03:03:35 GMT
+# Thu, 12 Sep 2019 00:38:39 GMT
 RUN apt-get update && apt-get install -y --no-install-recommends 		bzr 		git 		mercurial 		openssh-client 		subversion 				procps 	&& rm -rf /var/lib/apt/lists/*
-# Tue, 10 Sep 2019 21:40:06 GMT
+# Thu, 12 Sep 2019 00:40:19 GMT
 RUN set -ex; 	apt-get update; 	apt-get install -y --no-install-recommends 		autoconf 		automake 		bzip2 		dpkg-dev 		file 		g++ 		gcc 		imagemagick 		libbz2-dev 		libc6-dev 		libcurl4-openssl-dev 		libdb-dev 		libevent-dev 		libffi-dev 		libgdbm-dev 		libglib2.0-dev 		libgmp-dev 		libjpeg-dev 		libkrb5-dev 		liblzma-dev 		libmagickcore-dev 		libmagickwand-dev 		libmaxminddb-dev 		libncurses5-dev 		libncursesw5-dev 		libpng-dev 		libpq-dev 		libreadline-dev 		libsqlite3-dev 		libssl-dev 		libtool 		libwebp-dev 		libxml2-dev 		libxslt-dev 		libyaml-dev 		make 		patch 		unzip 		xz-utils 		zlib1g-dev 				$( 			if apt-cache show 'default-libmysqlclient-dev' 2>/dev/null | grep -q '^Version:'; then 				echo 'default-libmysqlclient-dev'; 			else 				echo 'libmysqlclient-dev'; 			fi 		) 	; 	rm -rf /var/lib/apt/lists/*
-# Wed, 11 Sep 2019 03:37:34 GMT
+# Thu, 12 Sep 2019 01:31:38 GMT
 ENV OTP_VERSION=22.0.7
-# Wed, 11 Sep 2019 03:44:47 GMT
+# Thu, 12 Sep 2019 01:39:21 GMT
 RUN set -xe 	&& OTP_DOWNLOAD_URL="https://github.com/erlang/otp/archive/OTP-${OTP_VERSION}.tar.gz" 	&& OTP_DOWNLOAD_SHA256="04c090b55ec4a01778e7e1a5b7fdf54012548ca72737965b7aa8c4d7878c92bc" 	&& runtimeDeps='libodbc1 			libsctp1 			libwxgtk3.0' 	&& buildDeps='unixodbc-dev 			libsctp-dev 			libwxgtk3.0-dev' 	&& apt-get update 	&& apt-get install -y --no-install-recommends $runtimeDeps 	&& apt-get install -y --no-install-recommends $buildDeps 	&& curl -fSL -o otp-src.tar.gz "$OTP_DOWNLOAD_URL" 	&& echo "$OTP_DOWNLOAD_SHA256  otp-src.tar.gz" | sha256sum -c - 	&& export ERL_TOP="/usr/src/otp_src_${OTP_VERSION%%@*}" 	&& mkdir -vp $ERL_TOP 	&& tar -xzf otp-src.tar.gz -C $ERL_TOP --strip-components=1 	&& rm otp-src.tar.gz 	&& ( cd $ERL_TOP 	  && ./otp_build autoconf 	  && gnuArch="$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)" 	  && ./configure --build="$gnuArch" 	  && make -j$(nproc) 	  && make install ) 	&& find /usr/local -name examples | xargs rm -rf 	&& apt-get purge -y --auto-remove $buildDeps 	&& rm -rf $ERL_TOP /var/lib/apt/lists/*
-# Wed, 11 Sep 2019 03:44:47 GMT
+# Thu, 12 Sep 2019 01:39:22 GMT
 CMD ["erl"]
-# Wed, 11 Sep 2019 03:44:47 GMT
+# Thu, 12 Sep 2019 01:39:22 GMT
 ENV REBAR_VERSION=2.6.4
-# Wed, 11 Sep 2019 03:44:50 GMT
+# Thu, 12 Sep 2019 01:39:25 GMT
 RUN set -xe 	&& REBAR_DOWNLOAD_URL="https://github.com/rebar/rebar/archive/${REBAR_VERSION}.tar.gz" 	&& REBAR_DOWNLOAD_SHA256="577246bafa2eb2b2c3f1d0c157408650446884555bf87901508ce71d5cc0bd07" 	&& mkdir -p /usr/src/rebar-src 	&& curl -fSL -o rebar-src.tar.gz "$REBAR_DOWNLOAD_URL" 	&& echo "$REBAR_DOWNLOAD_SHA256 rebar-src.tar.gz" | sha256sum -c - 	&& tar -xzf rebar-src.tar.gz -C /usr/src/rebar-src --strip-components=1 	&& rm rebar-src.tar.gz 	&& cd /usr/src/rebar-src 	&& ./bootstrap 	&& install -v ./rebar /usr/local/bin/ 	&& rm -rf /usr/src/rebar-src
-# Wed, 11 Sep 2019 03:44:50 GMT
+# Thu, 12 Sep 2019 01:39:25 GMT
 ENV REBAR3_VERSION=3.11.1
-# Wed, 11 Sep 2019 03:45:10 GMT
+# Thu, 12 Sep 2019 01:39:44 GMT
 RUN set -xe 	&& REBAR3_DOWNLOAD_URL="https://github.com/erlang/rebar3/archive/${REBAR3_VERSION}.tar.gz" 	&& REBAR3_DOWNLOAD_SHA256="a1822db5210b96b5f8ef10e433b22df19c5fc54dfd847bcaab86c65151ce4171" 	&& mkdir -p /usr/src/rebar3-src 	&& curl -fSL -o rebar3-src.tar.gz "$REBAR3_DOWNLOAD_URL" 	&& echo "$REBAR3_DOWNLOAD_SHA256 rebar3-src.tar.gz" | sha256sum -c - 	&& tar -xzf rebar3-src.tar.gz -C /usr/src/rebar3-src --strip-components=1 	&& rm rebar3-src.tar.gz 	&& cd /usr/src/rebar3-src 	&& HOME=$PWD ./bootstrap 	&& install -v ./rebar3 /usr/local/bin/ 	&& rm -rf /usr/src/rebar3-src
-# Wed, 11 Sep 2019 05:19:49 GMT
+# Thu, 12 Sep 2019 12:33:14 GMT
 ENV ELIXIR_VERSION=v1.8.2 LANG=C.UTF-8
-# Wed, 11 Sep 2019 05:20:34 GMT
+# Thu, 12 Sep 2019 12:34:00 GMT
 RUN set -xe 	&& ELIXIR_DOWNLOAD_URL="https://github.com/elixir-lang/elixir/archive/${ELIXIR_VERSION}.tar.gz" 	&& ELIXIR_DOWNLOAD_SHA256="cf9bf0b2d92bc4671431e3fe1d1b0a0e5125f1a942cc4fdf7914b74f04efb835" 	&& curl -fSL -o elixir-src.tar.gz $ELIXIR_DOWNLOAD_URL 	&& echo "$ELIXIR_DOWNLOAD_SHA256  elixir-src.tar.gz" | sha256sum -c - 	&& mkdir -p /usr/local/src/elixir 	&& tar -xzC /usr/local/src/elixir --strip-components=1 -f elixir-src.tar.gz 	&& rm elixir-src.tar.gz 	&& cd /usr/local/src/elixir 	&& make install clean
-# Wed, 11 Sep 2019 05:20:34 GMT
+# Thu, 12 Sep 2019 12:34:00 GMT
 CMD ["iex"]
 ```
 
 -	Layers:
-	-	`sha256:05b3194a550b956249959e2f64475745fcf943ed7951306c6e3e6a5cd1815dd6`  
-		Last Modified: Wed, 14 Aug 2019 00:51:50 GMT  
-		Size: 45.2 MB (45245026 bytes)  
+	-	`sha256:5d4da55d9cf0eafd201c3838c03984cc0ef153b12bbfd5964ffee9e9d6b38bbb`  
+		Last Modified: Wed, 11 Sep 2019 22:48:17 GMT  
+		Size: 45.2 MB (45240190 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:5cc01dcd9b0a29ac6daec9b7b4af78f948ee1945fb22e5e8f97993705d589311`  
-		Last Modified: Wed, 14 Aug 2019 03:10:13 GMT  
-		Size: 10.3 MB (10317828 bytes)  
+	-	`sha256:dad3041fe12244954218a4bd2bfdcb5ae29fd416b247bd17e41c73cbdf9b6de5`  
+		Last Modified: Thu, 12 Sep 2019 00:44:07 GMT  
+		Size: 10.3 MB (10317726 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:5154470af4c84ea4b0ebc80e0cda7c479ef829d3ec3ece20e7b183bc8ded7563`  
-		Last Modified: Wed, 14 Aug 2019 03:10:11 GMT  
-		Size: 4.4 MB (4372320 bytes)  
+	-	`sha256:f6542c8f56fbd52f8d9d01d92625e0a728578d6e417adeba2baa0678cc5009d6`  
+		Last Modified: Thu, 12 Sep 2019 00:44:05 GMT  
+		Size: 4.4 MB (4372276 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:cd3b67ff4ea99e03083897f42be8f62c9ef0cd1e1a0603a4c3e627eae76a020d`  
-		Last Modified: Wed, 14 Aug 2019 03:10:30 GMT  
-		Size: 50.5 MB (50489789 bytes)  
+	-	`sha256:25fa3a7ad4fa33ba9843e1e836bf619c36b0cc5a1ce2d9b3e1e1b932c6220148`  
+		Last Modified: Thu, 12 Sep 2019 00:44:24 GMT  
+		Size: 50.5 MB (50488527 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:287679351b06307bcc1a8ced873496e08f721d41a6e4cea1ba6874f49aa24353`  
-		Last Modified: Tue, 10 Sep 2019 21:47:12 GMT  
-		Size: 206.9 MB (206858733 bytes)  
+	-	`sha256:271ed6d81ea099ed00ae3e2d3c436fe81ecbf2fd85a94445c7592c99cde20e64`  
+		Last Modified: Thu, 12 Sep 2019 00:45:02 GMT  
+		Size: 206.9 MB (206858680 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:f7d01527d0184071117779212876c13cb41c30a0268f5b3a034bff907d829688`  
-		Last Modified: Wed, 11 Sep 2019 04:17:06 GMT  
-		Size: 135.8 MB (135823709 bytes)  
+	-	`sha256:6f43e7af3e0759d8e428594c421cd5d627c825eec24ee5ae7fb39863770756c1`  
+		Last Modified: Thu, 12 Sep 2019 02:38:04 GMT  
+		Size: 135.8 MB (135823651 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:e22a180459991cd191466e855afbea84aa5aad3552d2f77f551252c886522aa0`  
-		Last Modified: Wed, 11 Sep 2019 04:16:53 GMT  
-		Size: 197.0 KB (197023 bytes)  
+	-	`sha256:1a22c033e06acc7ab9bfb912f134139c254ca61050d1ab65fb6b7c343cd98385`  
+		Last Modified: Thu, 12 Sep 2019 02:37:50 GMT  
+		Size: 197.0 KB (197032 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:68d9d6a8a06bc8af097d57fa6de2aa33d1b661e6b793525e008d05289f6cb9f7`  
-		Last Modified: Wed, 11 Sep 2019 04:16:52 GMT  
-		Size: 808.8 KB (808782 bytes)  
+	-	`sha256:6b15b622a05136fb9b9f68ae27b899970c89bbe8b9cdd47935b80d80093371fd`  
+		Last Modified: Thu, 12 Sep 2019 02:37:50 GMT  
+		Size: 808.8 KB (808780 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:f243d290be9a6868c0d6b47b4e1e348ffda4af80223a74893ecc8aa8947304f9`  
-		Last Modified: Wed, 11 Sep 2019 05:25:31 GMT  
-		Size: 6.2 MB (6178452 bytes)  
+	-	`sha256:d5d2e8edb827941c3f04cab82901778b52608e7889e2fde9dab644d77f93fd09`  
+		Last Modified: Thu, 12 Sep 2019 12:40:44 GMT  
+		Size: 6.2 MB (6178478 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `elixir:1.8.2-otp-22-alpine`
@@ -11936,7 +11936,7 @@ CMD ["iex"]
 ## `elixir:1.8.2-slim`
 
 ```console
-$ docker pull elixir@sha256:01caa0460164184597d71e7139ab6b60fcf99eaf57ee34941d089cf1b38bb9a7
+$ docker pull elixir@sha256:f186d1d97e044a5dca1f9fc06b97e0edd438e4c79cf5018e8671475e554db38f
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -12181,47 +12181,47 @@ CMD ["iex"]
 ### `elixir:1.8.2-slim` - linux; s390x
 
 ```console
-$ docker pull elixir@sha256:4302d4fff4e2473fecfaded573688cc89ae2e3ce7df4c729a5e12472063f600e
+$ docker pull elixir@sha256:61661f50435f374300b1054deec20ff944e00f7cea44ea23b459903a28ccd707
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **112.6 MB (112638253 bytes)**  
+-	Total Size: **112.7 MB (112656825 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:5a5d967b9a5f1ae1485abde4604220aeb2d4c0e007a0332278a0fb7ab8e0d48f`
+-	Image ID: `sha256:6de9275ad0f7927e97425edc40917713984017b1fe25af87a5b18b700586df4a`
 -	Default Command: `["iex"]`
 
 ```dockerfile
-# Wed, 14 Aug 2019 00:45:55 GMT
-ADD file:628950cdb60edf56519623bb5bceb8f913d0e4a57fb94d64bbeb5f99491a79c8 in / 
-# Wed, 14 Aug 2019 00:45:56 GMT
+# Wed, 11 Sep 2019 22:43:56 GMT
+ADD file:5c261012373b1f613abf90c8163f72247906770a6209fc775af35a131ba818f9 in / 
+# Wed, 11 Sep 2019 22:43:57 GMT
 CMD ["bash"]
-# Wed, 14 Aug 2019 01:50:14 GMT
+# Thu, 12 Sep 2019 01:52:32 GMT
 ENV OTP_VERSION=21.3.8.6
-# Wed, 14 Aug 2019 02:00:50 GMT
+# Thu, 12 Sep 2019 01:57:08 GMT
 RUN set -xe 	&& OTP_DOWNLOAD_URL="https://github.com/erlang/otp/archive/OTP-${OTP_VERSION}.tar.gz" 	&& OTP_DOWNLOAD_SHA256="7d96d11143b8ad71448acc0427c2c34756712aa2972d9aaa6d100f87f29918c6" 	&& fetchDeps=' 		curl 		ca-certificates' 	&& apt-get update 	&& apt-get install -y --no-install-recommends $fetchDeps 	&& curl -fSL -o otp-src.tar.gz "$OTP_DOWNLOAD_URL" 	&& echo "$OTP_DOWNLOAD_SHA256  otp-src.tar.gz" | sha256sum -c - 	&& runtimeDeps=' 		libodbc1 		libssl1.1 		libsctp1 	' 	&& buildDeps=' 		autoconf 		dpkg-dev 		gcc 		g++ 		make 		libncurses-dev 		unixodbc-dev 		libssl-dev 		libsctp-dev 	' 	&& apt-get install -y --no-install-recommends $runtimeDeps 	&& apt-get install -y --no-install-recommends $buildDeps 	&& export ERL_TOP="/usr/src/otp_src_${OTP_VERSION%%@*}" 	&& mkdir -vp $ERL_TOP 	&& tar -xzf otp-src.tar.gz -C $ERL_TOP --strip-components=1 	&& rm otp-src.tar.gz 	&& ( cd $ERL_TOP 	  && ./otp_build autoconf 	  && gnuArch="$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)" 	  && ./configure --build="$gnuArch" 	  && make -j$(nproc) 	  && make install ) 	&& find /usr/local -name examples | xargs rm -rf 	&& apt-get purge -y --auto-remove $buildDeps $fetchDeps 	&& rm -rf $ERL_TOP /var/lib/apt/lists/*
-# Wed, 14 Aug 2019 02:00:51 GMT
+# Thu, 12 Sep 2019 01:57:08 GMT
 CMD ["erl"]
-# Wed, 14 Aug 2019 15:05:26 GMT
+# Thu, 12 Sep 2019 12:32:14 GMT
 ENV ELIXIR_VERSION=v1.8.2 LANG=C.UTF-8
-# Wed, 14 Aug 2019 15:07:40 GMT
+# Thu, 12 Sep 2019 12:33:02 GMT
 RUN set -xe 	&& ELIXIR_DOWNLOAD_URL="https://github.com/elixir-lang/elixir/archive/${ELIXIR_VERSION}.tar.gz" 	&& ELIXIR_DOWNLOAD_SHA256="cf9bf0b2d92bc4671431e3fe1d1b0a0e5125f1a942cc4fdf7914b74f04efb835" 	&& buildDeps=' 		ca-certificates 		curl 		make 	' 	&& apt-get update 	&& apt-get install -y --no-install-recommends $buildDeps 	&& curl -fSL -o elixir-src.tar.gz $ELIXIR_DOWNLOAD_URL 	&& echo "$ELIXIR_DOWNLOAD_SHA256  elixir-src.tar.gz" | sha256sum -c - 	&& mkdir -p /usr/local/src/elixir 	&& tar -xzC /usr/local/src/elixir --strip-components=1 -f elixir-src.tar.gz 	&& rm elixir-src.tar.gz 	&& cd /usr/local/src/elixir 	&& make install clean 	&& apt-get purge -y --auto-remove $buildDeps 	&& rm -rf /var/lib/apt/lists/*
-# Wed, 14 Aug 2019 15:07:40 GMT
+# Thu, 12 Sep 2019 12:33:03 GMT
 CMD ["iex"]
 ```
 
 -	Layers:
-	-	`sha256:05b3194a550b956249959e2f64475745fcf943ed7951306c6e3e6a5cd1815dd6`  
-		Last Modified: Wed, 14 Aug 2019 00:51:50 GMT  
-		Size: 45.2 MB (45245026 bytes)  
+	-	`sha256:5d4da55d9cf0eafd201c3838c03984cc0ef153b12bbfd5964ffee9e9d6b38bbb`  
+		Last Modified: Wed, 11 Sep 2019 22:48:17 GMT  
+		Size: 45.2 MB (45240190 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:9f933e30f015f843d9cc71dd043f42e5c4f9eafb65f56e7f905c2e6c8845a9ba`  
-		Last Modified: Wed, 14 Aug 2019 02:39:58 GMT  
-		Size: 60.7 MB (60677087 bytes)  
+	-	`sha256:62962860db343b9b4512823dfb8d679f6ff4d9cd878c13c091b9a42ce65682be`  
+		Last Modified: Thu, 12 Sep 2019 02:39:21 GMT  
+		Size: 60.7 MB (60700786 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:b4c28983f4f64f18f816dc2d7a59d07442e850d882e50d57fef1b48b5d247663`  
-		Last Modified: Wed, 14 Aug 2019 15:14:36 GMT  
-		Size: 6.7 MB (6716140 bytes)  
+	-	`sha256:09644702813eb90458d8da54944bd33893e816a5fa9798fca34948a337386a3b`  
+		Last Modified: Thu, 12 Sep 2019 12:40:38 GMT  
+		Size: 6.7 MB (6715849 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `elixir:1.8-alpine`
@@ -12518,7 +12518,7 @@ CMD ["iex"]
 ## `elixir:1.8-otp-22`
 
 ```console
-$ docker pull elixir@sha256:0a84a7e42e6afc53be66f9d19d99e74ff6f86e0f3bbdb51f726144909ff7957f
+$ docker pull elixir@sha256:050d3fba93990b2be765e7624cce463e19bd834e0f162751f004955b22fe4db0
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -12963,87 +12963,87 @@ CMD ["iex"]
 ### `elixir:1.8-otp-22` - linux; s390x
 
 ```console
-$ docker pull elixir@sha256:a9d770b393531076baad08b065d106c5c5b416529b8d22c7a5b64ab49f7c623b
+$ docker pull elixir@sha256:8c2941f5d6a06432d7b68b93fd2e62be8cee852bdf9831336531dd4920c76b9e
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **460.3 MB (460291662 bytes)**  
+-	Total Size: **460.3 MB (460285340 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:da74311af2d67228c1ee62ca77a38640022eb9a4c3d0a47c6a3492206263fb9a`
+-	Image ID: `sha256:fbbd4827f4ebc5941ce3f3e7df02bf88a63be8ba5872e84b4aa04e509239f15c`
 -	Default Command: `["iex"]`
 
 ```dockerfile
-# Wed, 14 Aug 2019 00:45:55 GMT
-ADD file:628950cdb60edf56519623bb5bceb8f913d0e4a57fb94d64bbeb5f99491a79c8 in / 
-# Wed, 14 Aug 2019 00:45:56 GMT
+# Wed, 11 Sep 2019 22:43:56 GMT
+ADD file:5c261012373b1f613abf90c8163f72247906770a6209fc775af35a131ba818f9 in / 
+# Wed, 11 Sep 2019 22:43:57 GMT
 CMD ["bash"]
-# Wed, 14 Aug 2019 03:02:33 GMT
+# Thu, 12 Sep 2019 00:38:06 GMT
 RUN apt-get update && apt-get install -y --no-install-recommends 		ca-certificates 		curl 		netbase 		wget 	&& rm -rf /var/lib/apt/lists/*
-# Wed, 14 Aug 2019 03:02:43 GMT
+# Thu, 12 Sep 2019 00:38:13 GMT
 RUN set -ex; 	if ! command -v gpg > /dev/null; then 		apt-get update; 		apt-get install -y --no-install-recommends 			gnupg 			dirmngr 		; 		rm -rf /var/lib/apt/lists/*; 	fi
-# Wed, 14 Aug 2019 03:03:35 GMT
+# Thu, 12 Sep 2019 00:38:39 GMT
 RUN apt-get update && apt-get install -y --no-install-recommends 		bzr 		git 		mercurial 		openssh-client 		subversion 				procps 	&& rm -rf /var/lib/apt/lists/*
-# Tue, 10 Sep 2019 21:40:06 GMT
+# Thu, 12 Sep 2019 00:40:19 GMT
 RUN set -ex; 	apt-get update; 	apt-get install -y --no-install-recommends 		autoconf 		automake 		bzip2 		dpkg-dev 		file 		g++ 		gcc 		imagemagick 		libbz2-dev 		libc6-dev 		libcurl4-openssl-dev 		libdb-dev 		libevent-dev 		libffi-dev 		libgdbm-dev 		libglib2.0-dev 		libgmp-dev 		libjpeg-dev 		libkrb5-dev 		liblzma-dev 		libmagickcore-dev 		libmagickwand-dev 		libmaxminddb-dev 		libncurses5-dev 		libncursesw5-dev 		libpng-dev 		libpq-dev 		libreadline-dev 		libsqlite3-dev 		libssl-dev 		libtool 		libwebp-dev 		libxml2-dev 		libxslt-dev 		libyaml-dev 		make 		patch 		unzip 		xz-utils 		zlib1g-dev 				$( 			if apt-cache show 'default-libmysqlclient-dev' 2>/dev/null | grep -q '^Version:'; then 				echo 'default-libmysqlclient-dev'; 			else 				echo 'libmysqlclient-dev'; 			fi 		) 	; 	rm -rf /var/lib/apt/lists/*
-# Wed, 11 Sep 2019 03:37:34 GMT
+# Thu, 12 Sep 2019 01:31:38 GMT
 ENV OTP_VERSION=22.0.7
-# Wed, 11 Sep 2019 03:44:47 GMT
+# Thu, 12 Sep 2019 01:39:21 GMT
 RUN set -xe 	&& OTP_DOWNLOAD_URL="https://github.com/erlang/otp/archive/OTP-${OTP_VERSION}.tar.gz" 	&& OTP_DOWNLOAD_SHA256="04c090b55ec4a01778e7e1a5b7fdf54012548ca72737965b7aa8c4d7878c92bc" 	&& runtimeDeps='libodbc1 			libsctp1 			libwxgtk3.0' 	&& buildDeps='unixodbc-dev 			libsctp-dev 			libwxgtk3.0-dev' 	&& apt-get update 	&& apt-get install -y --no-install-recommends $runtimeDeps 	&& apt-get install -y --no-install-recommends $buildDeps 	&& curl -fSL -o otp-src.tar.gz "$OTP_DOWNLOAD_URL" 	&& echo "$OTP_DOWNLOAD_SHA256  otp-src.tar.gz" | sha256sum -c - 	&& export ERL_TOP="/usr/src/otp_src_${OTP_VERSION%%@*}" 	&& mkdir -vp $ERL_TOP 	&& tar -xzf otp-src.tar.gz -C $ERL_TOP --strip-components=1 	&& rm otp-src.tar.gz 	&& ( cd $ERL_TOP 	  && ./otp_build autoconf 	  && gnuArch="$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)" 	  && ./configure --build="$gnuArch" 	  && make -j$(nproc) 	  && make install ) 	&& find /usr/local -name examples | xargs rm -rf 	&& apt-get purge -y --auto-remove $buildDeps 	&& rm -rf $ERL_TOP /var/lib/apt/lists/*
-# Wed, 11 Sep 2019 03:44:47 GMT
+# Thu, 12 Sep 2019 01:39:22 GMT
 CMD ["erl"]
-# Wed, 11 Sep 2019 03:44:47 GMT
+# Thu, 12 Sep 2019 01:39:22 GMT
 ENV REBAR_VERSION=2.6.4
-# Wed, 11 Sep 2019 03:44:50 GMT
+# Thu, 12 Sep 2019 01:39:25 GMT
 RUN set -xe 	&& REBAR_DOWNLOAD_URL="https://github.com/rebar/rebar/archive/${REBAR_VERSION}.tar.gz" 	&& REBAR_DOWNLOAD_SHA256="577246bafa2eb2b2c3f1d0c157408650446884555bf87901508ce71d5cc0bd07" 	&& mkdir -p /usr/src/rebar-src 	&& curl -fSL -o rebar-src.tar.gz "$REBAR_DOWNLOAD_URL" 	&& echo "$REBAR_DOWNLOAD_SHA256 rebar-src.tar.gz" | sha256sum -c - 	&& tar -xzf rebar-src.tar.gz -C /usr/src/rebar-src --strip-components=1 	&& rm rebar-src.tar.gz 	&& cd /usr/src/rebar-src 	&& ./bootstrap 	&& install -v ./rebar /usr/local/bin/ 	&& rm -rf /usr/src/rebar-src
-# Wed, 11 Sep 2019 03:44:50 GMT
+# Thu, 12 Sep 2019 01:39:25 GMT
 ENV REBAR3_VERSION=3.11.1
-# Wed, 11 Sep 2019 03:45:10 GMT
+# Thu, 12 Sep 2019 01:39:44 GMT
 RUN set -xe 	&& REBAR3_DOWNLOAD_URL="https://github.com/erlang/rebar3/archive/${REBAR3_VERSION}.tar.gz" 	&& REBAR3_DOWNLOAD_SHA256="a1822db5210b96b5f8ef10e433b22df19c5fc54dfd847bcaab86c65151ce4171" 	&& mkdir -p /usr/src/rebar3-src 	&& curl -fSL -o rebar3-src.tar.gz "$REBAR3_DOWNLOAD_URL" 	&& echo "$REBAR3_DOWNLOAD_SHA256 rebar3-src.tar.gz" | sha256sum -c - 	&& tar -xzf rebar3-src.tar.gz -C /usr/src/rebar3-src --strip-components=1 	&& rm rebar3-src.tar.gz 	&& cd /usr/src/rebar3-src 	&& HOME=$PWD ./bootstrap 	&& install -v ./rebar3 /usr/local/bin/ 	&& rm -rf /usr/src/rebar3-src
-# Wed, 11 Sep 2019 05:19:49 GMT
+# Thu, 12 Sep 2019 12:33:14 GMT
 ENV ELIXIR_VERSION=v1.8.2 LANG=C.UTF-8
-# Wed, 11 Sep 2019 05:20:34 GMT
+# Thu, 12 Sep 2019 12:34:00 GMT
 RUN set -xe 	&& ELIXIR_DOWNLOAD_URL="https://github.com/elixir-lang/elixir/archive/${ELIXIR_VERSION}.tar.gz" 	&& ELIXIR_DOWNLOAD_SHA256="cf9bf0b2d92bc4671431e3fe1d1b0a0e5125f1a942cc4fdf7914b74f04efb835" 	&& curl -fSL -o elixir-src.tar.gz $ELIXIR_DOWNLOAD_URL 	&& echo "$ELIXIR_DOWNLOAD_SHA256  elixir-src.tar.gz" | sha256sum -c - 	&& mkdir -p /usr/local/src/elixir 	&& tar -xzC /usr/local/src/elixir --strip-components=1 -f elixir-src.tar.gz 	&& rm elixir-src.tar.gz 	&& cd /usr/local/src/elixir 	&& make install clean
-# Wed, 11 Sep 2019 05:20:34 GMT
+# Thu, 12 Sep 2019 12:34:00 GMT
 CMD ["iex"]
 ```
 
 -	Layers:
-	-	`sha256:05b3194a550b956249959e2f64475745fcf943ed7951306c6e3e6a5cd1815dd6`  
-		Last Modified: Wed, 14 Aug 2019 00:51:50 GMT  
-		Size: 45.2 MB (45245026 bytes)  
+	-	`sha256:5d4da55d9cf0eafd201c3838c03984cc0ef153b12bbfd5964ffee9e9d6b38bbb`  
+		Last Modified: Wed, 11 Sep 2019 22:48:17 GMT  
+		Size: 45.2 MB (45240190 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:5cc01dcd9b0a29ac6daec9b7b4af78f948ee1945fb22e5e8f97993705d589311`  
-		Last Modified: Wed, 14 Aug 2019 03:10:13 GMT  
-		Size: 10.3 MB (10317828 bytes)  
+	-	`sha256:dad3041fe12244954218a4bd2bfdcb5ae29fd416b247bd17e41c73cbdf9b6de5`  
+		Last Modified: Thu, 12 Sep 2019 00:44:07 GMT  
+		Size: 10.3 MB (10317726 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:5154470af4c84ea4b0ebc80e0cda7c479ef829d3ec3ece20e7b183bc8ded7563`  
-		Last Modified: Wed, 14 Aug 2019 03:10:11 GMT  
-		Size: 4.4 MB (4372320 bytes)  
+	-	`sha256:f6542c8f56fbd52f8d9d01d92625e0a728578d6e417adeba2baa0678cc5009d6`  
+		Last Modified: Thu, 12 Sep 2019 00:44:05 GMT  
+		Size: 4.4 MB (4372276 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:cd3b67ff4ea99e03083897f42be8f62c9ef0cd1e1a0603a4c3e627eae76a020d`  
-		Last Modified: Wed, 14 Aug 2019 03:10:30 GMT  
-		Size: 50.5 MB (50489789 bytes)  
+	-	`sha256:25fa3a7ad4fa33ba9843e1e836bf619c36b0cc5a1ce2d9b3e1e1b932c6220148`  
+		Last Modified: Thu, 12 Sep 2019 00:44:24 GMT  
+		Size: 50.5 MB (50488527 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:287679351b06307bcc1a8ced873496e08f721d41a6e4cea1ba6874f49aa24353`  
-		Last Modified: Tue, 10 Sep 2019 21:47:12 GMT  
-		Size: 206.9 MB (206858733 bytes)  
+	-	`sha256:271ed6d81ea099ed00ae3e2d3c436fe81ecbf2fd85a94445c7592c99cde20e64`  
+		Last Modified: Thu, 12 Sep 2019 00:45:02 GMT  
+		Size: 206.9 MB (206858680 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:f7d01527d0184071117779212876c13cb41c30a0268f5b3a034bff907d829688`  
-		Last Modified: Wed, 11 Sep 2019 04:17:06 GMT  
-		Size: 135.8 MB (135823709 bytes)  
+	-	`sha256:6f43e7af3e0759d8e428594c421cd5d627c825eec24ee5ae7fb39863770756c1`  
+		Last Modified: Thu, 12 Sep 2019 02:38:04 GMT  
+		Size: 135.8 MB (135823651 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:e22a180459991cd191466e855afbea84aa5aad3552d2f77f551252c886522aa0`  
-		Last Modified: Wed, 11 Sep 2019 04:16:53 GMT  
-		Size: 197.0 KB (197023 bytes)  
+	-	`sha256:1a22c033e06acc7ab9bfb912f134139c254ca61050d1ab65fb6b7c343cd98385`  
+		Last Modified: Thu, 12 Sep 2019 02:37:50 GMT  
+		Size: 197.0 KB (197032 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:68d9d6a8a06bc8af097d57fa6de2aa33d1b661e6b793525e008d05289f6cb9f7`  
-		Last Modified: Wed, 11 Sep 2019 04:16:52 GMT  
-		Size: 808.8 KB (808782 bytes)  
+	-	`sha256:6b15b622a05136fb9b9f68ae27b899970c89bbe8b9cdd47935b80d80093371fd`  
+		Last Modified: Thu, 12 Sep 2019 02:37:50 GMT  
+		Size: 808.8 KB (808780 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:f243d290be9a6868c0d6b47b4e1e348ffda4af80223a74893ecc8aa8947304f9`  
-		Last Modified: Wed, 11 Sep 2019 05:25:31 GMT  
-		Size: 6.2 MB (6178452 bytes)  
+	-	`sha256:d5d2e8edb827941c3f04cab82901778b52608e7889e2fde9dab644d77f93fd09`  
+		Last Modified: Thu, 12 Sep 2019 12:40:44 GMT  
+		Size: 6.2 MB (6178478 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `elixir:1.8-otp-22-alpine`
@@ -13340,7 +13340,7 @@ CMD ["iex"]
 ## `elixir:1.8-slim`
 
 ```console
-$ docker pull elixir@sha256:01caa0460164184597d71e7139ab6b60fcf99eaf57ee34941d089cf1b38bb9a7
+$ docker pull elixir@sha256:f186d1d97e044a5dca1f9fc06b97e0edd438e4c79cf5018e8671475e554db38f
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -13585,53 +13585,53 @@ CMD ["iex"]
 ### `elixir:1.8-slim` - linux; s390x
 
 ```console
-$ docker pull elixir@sha256:4302d4fff4e2473fecfaded573688cc89ae2e3ce7df4c729a5e12472063f600e
+$ docker pull elixir@sha256:61661f50435f374300b1054deec20ff944e00f7cea44ea23b459903a28ccd707
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **112.6 MB (112638253 bytes)**  
+-	Total Size: **112.7 MB (112656825 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:5a5d967b9a5f1ae1485abde4604220aeb2d4c0e007a0332278a0fb7ab8e0d48f`
+-	Image ID: `sha256:6de9275ad0f7927e97425edc40917713984017b1fe25af87a5b18b700586df4a`
 -	Default Command: `["iex"]`
 
 ```dockerfile
-# Wed, 14 Aug 2019 00:45:55 GMT
-ADD file:628950cdb60edf56519623bb5bceb8f913d0e4a57fb94d64bbeb5f99491a79c8 in / 
-# Wed, 14 Aug 2019 00:45:56 GMT
+# Wed, 11 Sep 2019 22:43:56 GMT
+ADD file:5c261012373b1f613abf90c8163f72247906770a6209fc775af35a131ba818f9 in / 
+# Wed, 11 Sep 2019 22:43:57 GMT
 CMD ["bash"]
-# Wed, 14 Aug 2019 01:50:14 GMT
+# Thu, 12 Sep 2019 01:52:32 GMT
 ENV OTP_VERSION=21.3.8.6
-# Wed, 14 Aug 2019 02:00:50 GMT
+# Thu, 12 Sep 2019 01:57:08 GMT
 RUN set -xe 	&& OTP_DOWNLOAD_URL="https://github.com/erlang/otp/archive/OTP-${OTP_VERSION}.tar.gz" 	&& OTP_DOWNLOAD_SHA256="7d96d11143b8ad71448acc0427c2c34756712aa2972d9aaa6d100f87f29918c6" 	&& fetchDeps=' 		curl 		ca-certificates' 	&& apt-get update 	&& apt-get install -y --no-install-recommends $fetchDeps 	&& curl -fSL -o otp-src.tar.gz "$OTP_DOWNLOAD_URL" 	&& echo "$OTP_DOWNLOAD_SHA256  otp-src.tar.gz" | sha256sum -c - 	&& runtimeDeps=' 		libodbc1 		libssl1.1 		libsctp1 	' 	&& buildDeps=' 		autoconf 		dpkg-dev 		gcc 		g++ 		make 		libncurses-dev 		unixodbc-dev 		libssl-dev 		libsctp-dev 	' 	&& apt-get install -y --no-install-recommends $runtimeDeps 	&& apt-get install -y --no-install-recommends $buildDeps 	&& export ERL_TOP="/usr/src/otp_src_${OTP_VERSION%%@*}" 	&& mkdir -vp $ERL_TOP 	&& tar -xzf otp-src.tar.gz -C $ERL_TOP --strip-components=1 	&& rm otp-src.tar.gz 	&& ( cd $ERL_TOP 	  && ./otp_build autoconf 	  && gnuArch="$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)" 	  && ./configure --build="$gnuArch" 	  && make -j$(nproc) 	  && make install ) 	&& find /usr/local -name examples | xargs rm -rf 	&& apt-get purge -y --auto-remove $buildDeps $fetchDeps 	&& rm -rf $ERL_TOP /var/lib/apt/lists/*
-# Wed, 14 Aug 2019 02:00:51 GMT
+# Thu, 12 Sep 2019 01:57:08 GMT
 CMD ["erl"]
-# Wed, 14 Aug 2019 15:05:26 GMT
+# Thu, 12 Sep 2019 12:32:14 GMT
 ENV ELIXIR_VERSION=v1.8.2 LANG=C.UTF-8
-# Wed, 14 Aug 2019 15:07:40 GMT
+# Thu, 12 Sep 2019 12:33:02 GMT
 RUN set -xe 	&& ELIXIR_DOWNLOAD_URL="https://github.com/elixir-lang/elixir/archive/${ELIXIR_VERSION}.tar.gz" 	&& ELIXIR_DOWNLOAD_SHA256="cf9bf0b2d92bc4671431e3fe1d1b0a0e5125f1a942cc4fdf7914b74f04efb835" 	&& buildDeps=' 		ca-certificates 		curl 		make 	' 	&& apt-get update 	&& apt-get install -y --no-install-recommends $buildDeps 	&& curl -fSL -o elixir-src.tar.gz $ELIXIR_DOWNLOAD_URL 	&& echo "$ELIXIR_DOWNLOAD_SHA256  elixir-src.tar.gz" | sha256sum -c - 	&& mkdir -p /usr/local/src/elixir 	&& tar -xzC /usr/local/src/elixir --strip-components=1 -f elixir-src.tar.gz 	&& rm elixir-src.tar.gz 	&& cd /usr/local/src/elixir 	&& make install clean 	&& apt-get purge -y --auto-remove $buildDeps 	&& rm -rf /var/lib/apt/lists/*
-# Wed, 14 Aug 2019 15:07:40 GMT
+# Thu, 12 Sep 2019 12:33:03 GMT
 CMD ["iex"]
 ```
 
 -	Layers:
-	-	`sha256:05b3194a550b956249959e2f64475745fcf943ed7951306c6e3e6a5cd1815dd6`  
-		Last Modified: Wed, 14 Aug 2019 00:51:50 GMT  
-		Size: 45.2 MB (45245026 bytes)  
+	-	`sha256:5d4da55d9cf0eafd201c3838c03984cc0ef153b12bbfd5964ffee9e9d6b38bbb`  
+		Last Modified: Wed, 11 Sep 2019 22:48:17 GMT  
+		Size: 45.2 MB (45240190 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:9f933e30f015f843d9cc71dd043f42e5c4f9eafb65f56e7f905c2e6c8845a9ba`  
-		Last Modified: Wed, 14 Aug 2019 02:39:58 GMT  
-		Size: 60.7 MB (60677087 bytes)  
+	-	`sha256:62962860db343b9b4512823dfb8d679f6ff4d9cd878c13c091b9a42ce65682be`  
+		Last Modified: Thu, 12 Sep 2019 02:39:21 GMT  
+		Size: 60.7 MB (60700786 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:b4c28983f4f64f18f816dc2d7a59d07442e850d882e50d57fef1b48b5d247663`  
-		Last Modified: Wed, 14 Aug 2019 15:14:36 GMT  
-		Size: 6.7 MB (6716140 bytes)  
+	-	`sha256:09644702813eb90458d8da54944bd33893e816a5fa9798fca34948a337386a3b`  
+		Last Modified: Thu, 12 Sep 2019 12:40:38 GMT  
+		Size: 6.7 MB (6715849 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `elixir:1.9`
 
 ```console
-$ docker pull elixir@sha256:a5517a3ad3c942f25a85da31e1bda2cafa5bfa9172ffd2944ab67609de97f2e7
+$ docker pull elixir@sha256:72492d9bdc69e6ab26880e225269186069dd95fe93d09e07e64f4070ae271d85
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -14076,93 +14076,93 @@ CMD ["iex"]
 ### `elixir:1.9` - linux; s390x
 
 ```console
-$ docker pull elixir@sha256:f2d278e0e1972d0807bdd8854d80209a21198bcee3cffe9b11659ea8480a3041
+$ docker pull elixir@sha256:4b4c7eb0cc0739d2134d367ad7871741708b78fbf98c12f7689e9765b78d59aa
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **460.5 MB (460485586 bytes)**  
+-	Total Size: **460.5 MB (460479290 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:fd9e84326faec081e7b881016492a3d77b23840a9a7ee9a0428a2369da3aac24`
+-	Image ID: `sha256:39a11d2ddd583502873fa0e4f18e99086362dd788ecd6ab7bbb89f854742b142`
 -	Default Command: `["iex"]`
 
 ```dockerfile
-# Wed, 14 Aug 2019 00:45:55 GMT
-ADD file:628950cdb60edf56519623bb5bceb8f913d0e4a57fb94d64bbeb5f99491a79c8 in / 
-# Wed, 14 Aug 2019 00:45:56 GMT
+# Wed, 11 Sep 2019 22:43:56 GMT
+ADD file:5c261012373b1f613abf90c8163f72247906770a6209fc775af35a131ba818f9 in / 
+# Wed, 11 Sep 2019 22:43:57 GMT
 CMD ["bash"]
-# Wed, 14 Aug 2019 03:02:33 GMT
+# Thu, 12 Sep 2019 00:38:06 GMT
 RUN apt-get update && apt-get install -y --no-install-recommends 		ca-certificates 		curl 		netbase 		wget 	&& rm -rf /var/lib/apt/lists/*
-# Wed, 14 Aug 2019 03:02:43 GMT
+# Thu, 12 Sep 2019 00:38:13 GMT
 RUN set -ex; 	if ! command -v gpg > /dev/null; then 		apt-get update; 		apt-get install -y --no-install-recommends 			gnupg 			dirmngr 		; 		rm -rf /var/lib/apt/lists/*; 	fi
-# Wed, 14 Aug 2019 03:03:35 GMT
+# Thu, 12 Sep 2019 00:38:39 GMT
 RUN apt-get update && apt-get install -y --no-install-recommends 		bzr 		git 		mercurial 		openssh-client 		subversion 				procps 	&& rm -rf /var/lib/apt/lists/*
-# Tue, 10 Sep 2019 21:40:06 GMT
+# Thu, 12 Sep 2019 00:40:19 GMT
 RUN set -ex; 	apt-get update; 	apt-get install -y --no-install-recommends 		autoconf 		automake 		bzip2 		dpkg-dev 		file 		g++ 		gcc 		imagemagick 		libbz2-dev 		libc6-dev 		libcurl4-openssl-dev 		libdb-dev 		libevent-dev 		libffi-dev 		libgdbm-dev 		libglib2.0-dev 		libgmp-dev 		libjpeg-dev 		libkrb5-dev 		liblzma-dev 		libmagickcore-dev 		libmagickwand-dev 		libmaxminddb-dev 		libncurses5-dev 		libncursesw5-dev 		libpng-dev 		libpq-dev 		libreadline-dev 		libsqlite3-dev 		libssl-dev 		libtool 		libwebp-dev 		libxml2-dev 		libxslt-dev 		libyaml-dev 		make 		patch 		unzip 		xz-utils 		zlib1g-dev 				$( 			if apt-cache show 'default-libmysqlclient-dev' 2>/dev/null | grep -q '^Version:'; then 				echo 'default-libmysqlclient-dev'; 			else 				echo 'libmysqlclient-dev'; 			fi 		) 	; 	rm -rf /var/lib/apt/lists/*
-# Wed, 11 Sep 2019 03:37:34 GMT
+# Thu, 12 Sep 2019 01:31:38 GMT
 ENV OTP_VERSION=22.0.7
-# Wed, 11 Sep 2019 03:44:47 GMT
+# Thu, 12 Sep 2019 01:39:21 GMT
 RUN set -xe 	&& OTP_DOWNLOAD_URL="https://github.com/erlang/otp/archive/OTP-${OTP_VERSION}.tar.gz" 	&& OTP_DOWNLOAD_SHA256="04c090b55ec4a01778e7e1a5b7fdf54012548ca72737965b7aa8c4d7878c92bc" 	&& runtimeDeps='libodbc1 			libsctp1 			libwxgtk3.0' 	&& buildDeps='unixodbc-dev 			libsctp-dev 			libwxgtk3.0-dev' 	&& apt-get update 	&& apt-get install -y --no-install-recommends $runtimeDeps 	&& apt-get install -y --no-install-recommends $buildDeps 	&& curl -fSL -o otp-src.tar.gz "$OTP_DOWNLOAD_URL" 	&& echo "$OTP_DOWNLOAD_SHA256  otp-src.tar.gz" | sha256sum -c - 	&& export ERL_TOP="/usr/src/otp_src_${OTP_VERSION%%@*}" 	&& mkdir -vp $ERL_TOP 	&& tar -xzf otp-src.tar.gz -C $ERL_TOP --strip-components=1 	&& rm otp-src.tar.gz 	&& ( cd $ERL_TOP 	  && ./otp_build autoconf 	  && gnuArch="$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)" 	  && ./configure --build="$gnuArch" 	  && make -j$(nproc) 	  && make install ) 	&& find /usr/local -name examples | xargs rm -rf 	&& apt-get purge -y --auto-remove $buildDeps 	&& rm -rf $ERL_TOP /var/lib/apt/lists/*
-# Wed, 11 Sep 2019 03:44:47 GMT
+# Thu, 12 Sep 2019 01:39:22 GMT
 CMD ["erl"]
-# Wed, 11 Sep 2019 03:44:47 GMT
+# Thu, 12 Sep 2019 01:39:22 GMT
 ENV REBAR_VERSION=2.6.4
-# Wed, 11 Sep 2019 03:44:50 GMT
+# Thu, 12 Sep 2019 01:39:25 GMT
 RUN set -xe 	&& REBAR_DOWNLOAD_URL="https://github.com/rebar/rebar/archive/${REBAR_VERSION}.tar.gz" 	&& REBAR_DOWNLOAD_SHA256="577246bafa2eb2b2c3f1d0c157408650446884555bf87901508ce71d5cc0bd07" 	&& mkdir -p /usr/src/rebar-src 	&& curl -fSL -o rebar-src.tar.gz "$REBAR_DOWNLOAD_URL" 	&& echo "$REBAR_DOWNLOAD_SHA256 rebar-src.tar.gz" | sha256sum -c - 	&& tar -xzf rebar-src.tar.gz -C /usr/src/rebar-src --strip-components=1 	&& rm rebar-src.tar.gz 	&& cd /usr/src/rebar-src 	&& ./bootstrap 	&& install -v ./rebar /usr/local/bin/ 	&& rm -rf /usr/src/rebar-src
-# Wed, 11 Sep 2019 03:44:50 GMT
+# Thu, 12 Sep 2019 01:39:25 GMT
 ENV REBAR3_VERSION=3.11.1
-# Wed, 11 Sep 2019 03:45:10 GMT
+# Thu, 12 Sep 2019 01:39:44 GMT
 RUN set -xe 	&& REBAR3_DOWNLOAD_URL="https://github.com/erlang/rebar3/archive/${REBAR3_VERSION}.tar.gz" 	&& REBAR3_DOWNLOAD_SHA256="a1822db5210b96b5f8ef10e433b22df19c5fc54dfd847bcaab86c65151ce4171" 	&& mkdir -p /usr/src/rebar3-src 	&& curl -fSL -o rebar3-src.tar.gz "$REBAR3_DOWNLOAD_URL" 	&& echo "$REBAR3_DOWNLOAD_SHA256 rebar3-src.tar.gz" | sha256sum -c - 	&& tar -xzf rebar3-src.tar.gz -C /usr/src/rebar3-src --strip-components=1 	&& rm rebar3-src.tar.gz 	&& cd /usr/src/rebar3-src 	&& HOME=$PWD ./bootstrap 	&& install -v ./rebar3 /usr/local/bin/ 	&& rm -rf /usr/src/rebar3-src
-# Wed, 11 Sep 2019 05:17:47 GMT
+# Thu, 12 Sep 2019 12:28:53 GMT
 ENV ELIXIR_VERSION=v1.9.1 LANG=C.UTF-8
-# Wed, 11 Sep 2019 05:18:42 GMT
+# Thu, 12 Sep 2019 12:29:51 GMT
 RUN set -xe 	&& ELIXIR_DOWNLOAD_URL="https://github.com/elixir-lang/elixir/archive/${ELIXIR_VERSION}.tar.gz" 	&& ELIXIR_DOWNLOAD_SHA256="94daa716abbd4493405fb2032514195077ac7bc73dc2999922f13c7d8ea58777" 	&& curl -fSL -o elixir-src.tar.gz $ELIXIR_DOWNLOAD_URL 	&& echo "$ELIXIR_DOWNLOAD_SHA256  elixir-src.tar.gz" | sha256sum -c - 	&& mkdir -p /usr/local/src/elixir 	&& tar -xzC /usr/local/src/elixir --strip-components=1 -f elixir-src.tar.gz 	&& rm elixir-src.tar.gz 	&& cd /usr/local/src/elixir 	&& make install clean
-# Wed, 11 Sep 2019 05:18:43 GMT
+# Thu, 12 Sep 2019 12:29:52 GMT
 CMD ["iex"]
 ```
 
 -	Layers:
-	-	`sha256:05b3194a550b956249959e2f64475745fcf943ed7951306c6e3e6a5cd1815dd6`  
-		Last Modified: Wed, 14 Aug 2019 00:51:50 GMT  
-		Size: 45.2 MB (45245026 bytes)  
+	-	`sha256:5d4da55d9cf0eafd201c3838c03984cc0ef153b12bbfd5964ffee9e9d6b38bbb`  
+		Last Modified: Wed, 11 Sep 2019 22:48:17 GMT  
+		Size: 45.2 MB (45240190 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:5cc01dcd9b0a29ac6daec9b7b4af78f948ee1945fb22e5e8f97993705d589311`  
-		Last Modified: Wed, 14 Aug 2019 03:10:13 GMT  
-		Size: 10.3 MB (10317828 bytes)  
+	-	`sha256:dad3041fe12244954218a4bd2bfdcb5ae29fd416b247bd17e41c73cbdf9b6de5`  
+		Last Modified: Thu, 12 Sep 2019 00:44:07 GMT  
+		Size: 10.3 MB (10317726 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:5154470af4c84ea4b0ebc80e0cda7c479ef829d3ec3ece20e7b183bc8ded7563`  
-		Last Modified: Wed, 14 Aug 2019 03:10:11 GMT  
-		Size: 4.4 MB (4372320 bytes)  
+	-	`sha256:f6542c8f56fbd52f8d9d01d92625e0a728578d6e417adeba2baa0678cc5009d6`  
+		Last Modified: Thu, 12 Sep 2019 00:44:05 GMT  
+		Size: 4.4 MB (4372276 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:cd3b67ff4ea99e03083897f42be8f62c9ef0cd1e1a0603a4c3e627eae76a020d`  
-		Last Modified: Wed, 14 Aug 2019 03:10:30 GMT  
-		Size: 50.5 MB (50489789 bytes)  
+	-	`sha256:25fa3a7ad4fa33ba9843e1e836bf619c36b0cc5a1ce2d9b3e1e1b932c6220148`  
+		Last Modified: Thu, 12 Sep 2019 00:44:24 GMT  
+		Size: 50.5 MB (50488527 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:287679351b06307bcc1a8ced873496e08f721d41a6e4cea1ba6874f49aa24353`  
-		Last Modified: Tue, 10 Sep 2019 21:47:12 GMT  
-		Size: 206.9 MB (206858733 bytes)  
+	-	`sha256:271ed6d81ea099ed00ae3e2d3c436fe81ecbf2fd85a94445c7592c99cde20e64`  
+		Last Modified: Thu, 12 Sep 2019 00:45:02 GMT  
+		Size: 206.9 MB (206858680 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:f7d01527d0184071117779212876c13cb41c30a0268f5b3a034bff907d829688`  
-		Last Modified: Wed, 11 Sep 2019 04:17:06 GMT  
-		Size: 135.8 MB (135823709 bytes)  
+	-	`sha256:6f43e7af3e0759d8e428594c421cd5d627c825eec24ee5ae7fb39863770756c1`  
+		Last Modified: Thu, 12 Sep 2019 02:38:04 GMT  
+		Size: 135.8 MB (135823651 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:e22a180459991cd191466e855afbea84aa5aad3552d2f77f551252c886522aa0`  
-		Last Modified: Wed, 11 Sep 2019 04:16:53 GMT  
-		Size: 197.0 KB (197023 bytes)  
+	-	`sha256:1a22c033e06acc7ab9bfb912f134139c254ca61050d1ab65fb6b7c343cd98385`  
+		Last Modified: Thu, 12 Sep 2019 02:37:50 GMT  
+		Size: 197.0 KB (197032 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:68d9d6a8a06bc8af097d57fa6de2aa33d1b661e6b793525e008d05289f6cb9f7`  
-		Last Modified: Wed, 11 Sep 2019 04:16:52 GMT  
-		Size: 808.8 KB (808782 bytes)  
+	-	`sha256:6b15b622a05136fb9b9f68ae27b899970c89bbe8b9cdd47935b80d80093371fd`  
+		Last Modified: Thu, 12 Sep 2019 02:37:50 GMT  
+		Size: 808.8 KB (808780 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:514e1d2ddb83fbd4df9c3b3d5914ad2553965ddf66075558a66afcca88370238`  
-		Last Modified: Wed, 11 Sep 2019 05:25:17 GMT  
-		Size: 6.4 MB (6372376 bytes)  
+	-	`sha256:ea9c0605113990e10f6441ad4b9d82e04cc8e4b65baa8b99e1e062149ce7c350`  
+		Last Modified: Thu, 12 Sep 2019 12:40:20 GMT  
+		Size: 6.4 MB (6372428 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `elixir:1.9.1`
 
 ```console
-$ docker pull elixir@sha256:a5517a3ad3c942f25a85da31e1bda2cafa5bfa9172ffd2944ab67609de97f2e7
+$ docker pull elixir@sha256:72492d9bdc69e6ab26880e225269186069dd95fe93d09e07e64f4070ae271d85
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -14607,87 +14607,87 @@ CMD ["iex"]
 ### `elixir:1.9.1` - linux; s390x
 
 ```console
-$ docker pull elixir@sha256:f2d278e0e1972d0807bdd8854d80209a21198bcee3cffe9b11659ea8480a3041
+$ docker pull elixir@sha256:4b4c7eb0cc0739d2134d367ad7871741708b78fbf98c12f7689e9765b78d59aa
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **460.5 MB (460485586 bytes)**  
+-	Total Size: **460.5 MB (460479290 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:fd9e84326faec081e7b881016492a3d77b23840a9a7ee9a0428a2369da3aac24`
+-	Image ID: `sha256:39a11d2ddd583502873fa0e4f18e99086362dd788ecd6ab7bbb89f854742b142`
 -	Default Command: `["iex"]`
 
 ```dockerfile
-# Wed, 14 Aug 2019 00:45:55 GMT
-ADD file:628950cdb60edf56519623bb5bceb8f913d0e4a57fb94d64bbeb5f99491a79c8 in / 
-# Wed, 14 Aug 2019 00:45:56 GMT
+# Wed, 11 Sep 2019 22:43:56 GMT
+ADD file:5c261012373b1f613abf90c8163f72247906770a6209fc775af35a131ba818f9 in / 
+# Wed, 11 Sep 2019 22:43:57 GMT
 CMD ["bash"]
-# Wed, 14 Aug 2019 03:02:33 GMT
+# Thu, 12 Sep 2019 00:38:06 GMT
 RUN apt-get update && apt-get install -y --no-install-recommends 		ca-certificates 		curl 		netbase 		wget 	&& rm -rf /var/lib/apt/lists/*
-# Wed, 14 Aug 2019 03:02:43 GMT
+# Thu, 12 Sep 2019 00:38:13 GMT
 RUN set -ex; 	if ! command -v gpg > /dev/null; then 		apt-get update; 		apt-get install -y --no-install-recommends 			gnupg 			dirmngr 		; 		rm -rf /var/lib/apt/lists/*; 	fi
-# Wed, 14 Aug 2019 03:03:35 GMT
+# Thu, 12 Sep 2019 00:38:39 GMT
 RUN apt-get update && apt-get install -y --no-install-recommends 		bzr 		git 		mercurial 		openssh-client 		subversion 				procps 	&& rm -rf /var/lib/apt/lists/*
-# Tue, 10 Sep 2019 21:40:06 GMT
+# Thu, 12 Sep 2019 00:40:19 GMT
 RUN set -ex; 	apt-get update; 	apt-get install -y --no-install-recommends 		autoconf 		automake 		bzip2 		dpkg-dev 		file 		g++ 		gcc 		imagemagick 		libbz2-dev 		libc6-dev 		libcurl4-openssl-dev 		libdb-dev 		libevent-dev 		libffi-dev 		libgdbm-dev 		libglib2.0-dev 		libgmp-dev 		libjpeg-dev 		libkrb5-dev 		liblzma-dev 		libmagickcore-dev 		libmagickwand-dev 		libmaxminddb-dev 		libncurses5-dev 		libncursesw5-dev 		libpng-dev 		libpq-dev 		libreadline-dev 		libsqlite3-dev 		libssl-dev 		libtool 		libwebp-dev 		libxml2-dev 		libxslt-dev 		libyaml-dev 		make 		patch 		unzip 		xz-utils 		zlib1g-dev 				$( 			if apt-cache show 'default-libmysqlclient-dev' 2>/dev/null | grep -q '^Version:'; then 				echo 'default-libmysqlclient-dev'; 			else 				echo 'libmysqlclient-dev'; 			fi 		) 	; 	rm -rf /var/lib/apt/lists/*
-# Wed, 11 Sep 2019 03:37:34 GMT
+# Thu, 12 Sep 2019 01:31:38 GMT
 ENV OTP_VERSION=22.0.7
-# Wed, 11 Sep 2019 03:44:47 GMT
+# Thu, 12 Sep 2019 01:39:21 GMT
 RUN set -xe 	&& OTP_DOWNLOAD_URL="https://github.com/erlang/otp/archive/OTP-${OTP_VERSION}.tar.gz" 	&& OTP_DOWNLOAD_SHA256="04c090b55ec4a01778e7e1a5b7fdf54012548ca72737965b7aa8c4d7878c92bc" 	&& runtimeDeps='libodbc1 			libsctp1 			libwxgtk3.0' 	&& buildDeps='unixodbc-dev 			libsctp-dev 			libwxgtk3.0-dev' 	&& apt-get update 	&& apt-get install -y --no-install-recommends $runtimeDeps 	&& apt-get install -y --no-install-recommends $buildDeps 	&& curl -fSL -o otp-src.tar.gz "$OTP_DOWNLOAD_URL" 	&& echo "$OTP_DOWNLOAD_SHA256  otp-src.tar.gz" | sha256sum -c - 	&& export ERL_TOP="/usr/src/otp_src_${OTP_VERSION%%@*}" 	&& mkdir -vp $ERL_TOP 	&& tar -xzf otp-src.tar.gz -C $ERL_TOP --strip-components=1 	&& rm otp-src.tar.gz 	&& ( cd $ERL_TOP 	  && ./otp_build autoconf 	  && gnuArch="$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)" 	  && ./configure --build="$gnuArch" 	  && make -j$(nproc) 	  && make install ) 	&& find /usr/local -name examples | xargs rm -rf 	&& apt-get purge -y --auto-remove $buildDeps 	&& rm -rf $ERL_TOP /var/lib/apt/lists/*
-# Wed, 11 Sep 2019 03:44:47 GMT
+# Thu, 12 Sep 2019 01:39:22 GMT
 CMD ["erl"]
-# Wed, 11 Sep 2019 03:44:47 GMT
+# Thu, 12 Sep 2019 01:39:22 GMT
 ENV REBAR_VERSION=2.6.4
-# Wed, 11 Sep 2019 03:44:50 GMT
+# Thu, 12 Sep 2019 01:39:25 GMT
 RUN set -xe 	&& REBAR_DOWNLOAD_URL="https://github.com/rebar/rebar/archive/${REBAR_VERSION}.tar.gz" 	&& REBAR_DOWNLOAD_SHA256="577246bafa2eb2b2c3f1d0c157408650446884555bf87901508ce71d5cc0bd07" 	&& mkdir -p /usr/src/rebar-src 	&& curl -fSL -o rebar-src.tar.gz "$REBAR_DOWNLOAD_URL" 	&& echo "$REBAR_DOWNLOAD_SHA256 rebar-src.tar.gz" | sha256sum -c - 	&& tar -xzf rebar-src.tar.gz -C /usr/src/rebar-src --strip-components=1 	&& rm rebar-src.tar.gz 	&& cd /usr/src/rebar-src 	&& ./bootstrap 	&& install -v ./rebar /usr/local/bin/ 	&& rm -rf /usr/src/rebar-src
-# Wed, 11 Sep 2019 03:44:50 GMT
+# Thu, 12 Sep 2019 01:39:25 GMT
 ENV REBAR3_VERSION=3.11.1
-# Wed, 11 Sep 2019 03:45:10 GMT
+# Thu, 12 Sep 2019 01:39:44 GMT
 RUN set -xe 	&& REBAR3_DOWNLOAD_URL="https://github.com/erlang/rebar3/archive/${REBAR3_VERSION}.tar.gz" 	&& REBAR3_DOWNLOAD_SHA256="a1822db5210b96b5f8ef10e433b22df19c5fc54dfd847bcaab86c65151ce4171" 	&& mkdir -p /usr/src/rebar3-src 	&& curl -fSL -o rebar3-src.tar.gz "$REBAR3_DOWNLOAD_URL" 	&& echo "$REBAR3_DOWNLOAD_SHA256 rebar3-src.tar.gz" | sha256sum -c - 	&& tar -xzf rebar3-src.tar.gz -C /usr/src/rebar3-src --strip-components=1 	&& rm rebar3-src.tar.gz 	&& cd /usr/src/rebar3-src 	&& HOME=$PWD ./bootstrap 	&& install -v ./rebar3 /usr/local/bin/ 	&& rm -rf /usr/src/rebar3-src
-# Wed, 11 Sep 2019 05:17:47 GMT
+# Thu, 12 Sep 2019 12:28:53 GMT
 ENV ELIXIR_VERSION=v1.9.1 LANG=C.UTF-8
-# Wed, 11 Sep 2019 05:18:42 GMT
+# Thu, 12 Sep 2019 12:29:51 GMT
 RUN set -xe 	&& ELIXIR_DOWNLOAD_URL="https://github.com/elixir-lang/elixir/archive/${ELIXIR_VERSION}.tar.gz" 	&& ELIXIR_DOWNLOAD_SHA256="94daa716abbd4493405fb2032514195077ac7bc73dc2999922f13c7d8ea58777" 	&& curl -fSL -o elixir-src.tar.gz $ELIXIR_DOWNLOAD_URL 	&& echo "$ELIXIR_DOWNLOAD_SHA256  elixir-src.tar.gz" | sha256sum -c - 	&& mkdir -p /usr/local/src/elixir 	&& tar -xzC /usr/local/src/elixir --strip-components=1 -f elixir-src.tar.gz 	&& rm elixir-src.tar.gz 	&& cd /usr/local/src/elixir 	&& make install clean
-# Wed, 11 Sep 2019 05:18:43 GMT
+# Thu, 12 Sep 2019 12:29:52 GMT
 CMD ["iex"]
 ```
 
 -	Layers:
-	-	`sha256:05b3194a550b956249959e2f64475745fcf943ed7951306c6e3e6a5cd1815dd6`  
-		Last Modified: Wed, 14 Aug 2019 00:51:50 GMT  
-		Size: 45.2 MB (45245026 bytes)  
+	-	`sha256:5d4da55d9cf0eafd201c3838c03984cc0ef153b12bbfd5964ffee9e9d6b38bbb`  
+		Last Modified: Wed, 11 Sep 2019 22:48:17 GMT  
+		Size: 45.2 MB (45240190 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:5cc01dcd9b0a29ac6daec9b7b4af78f948ee1945fb22e5e8f97993705d589311`  
-		Last Modified: Wed, 14 Aug 2019 03:10:13 GMT  
-		Size: 10.3 MB (10317828 bytes)  
+	-	`sha256:dad3041fe12244954218a4bd2bfdcb5ae29fd416b247bd17e41c73cbdf9b6de5`  
+		Last Modified: Thu, 12 Sep 2019 00:44:07 GMT  
+		Size: 10.3 MB (10317726 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:5154470af4c84ea4b0ebc80e0cda7c479ef829d3ec3ece20e7b183bc8ded7563`  
-		Last Modified: Wed, 14 Aug 2019 03:10:11 GMT  
-		Size: 4.4 MB (4372320 bytes)  
+	-	`sha256:f6542c8f56fbd52f8d9d01d92625e0a728578d6e417adeba2baa0678cc5009d6`  
+		Last Modified: Thu, 12 Sep 2019 00:44:05 GMT  
+		Size: 4.4 MB (4372276 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:cd3b67ff4ea99e03083897f42be8f62c9ef0cd1e1a0603a4c3e627eae76a020d`  
-		Last Modified: Wed, 14 Aug 2019 03:10:30 GMT  
-		Size: 50.5 MB (50489789 bytes)  
+	-	`sha256:25fa3a7ad4fa33ba9843e1e836bf619c36b0cc5a1ce2d9b3e1e1b932c6220148`  
+		Last Modified: Thu, 12 Sep 2019 00:44:24 GMT  
+		Size: 50.5 MB (50488527 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:287679351b06307bcc1a8ced873496e08f721d41a6e4cea1ba6874f49aa24353`  
-		Last Modified: Tue, 10 Sep 2019 21:47:12 GMT  
-		Size: 206.9 MB (206858733 bytes)  
+	-	`sha256:271ed6d81ea099ed00ae3e2d3c436fe81ecbf2fd85a94445c7592c99cde20e64`  
+		Last Modified: Thu, 12 Sep 2019 00:45:02 GMT  
+		Size: 206.9 MB (206858680 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:f7d01527d0184071117779212876c13cb41c30a0268f5b3a034bff907d829688`  
-		Last Modified: Wed, 11 Sep 2019 04:17:06 GMT  
-		Size: 135.8 MB (135823709 bytes)  
+	-	`sha256:6f43e7af3e0759d8e428594c421cd5d627c825eec24ee5ae7fb39863770756c1`  
+		Last Modified: Thu, 12 Sep 2019 02:38:04 GMT  
+		Size: 135.8 MB (135823651 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:e22a180459991cd191466e855afbea84aa5aad3552d2f77f551252c886522aa0`  
-		Last Modified: Wed, 11 Sep 2019 04:16:53 GMT  
-		Size: 197.0 KB (197023 bytes)  
+	-	`sha256:1a22c033e06acc7ab9bfb912f134139c254ca61050d1ab65fb6b7c343cd98385`  
+		Last Modified: Thu, 12 Sep 2019 02:37:50 GMT  
+		Size: 197.0 KB (197032 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:68d9d6a8a06bc8af097d57fa6de2aa33d1b661e6b793525e008d05289f6cb9f7`  
-		Last Modified: Wed, 11 Sep 2019 04:16:52 GMT  
-		Size: 808.8 KB (808782 bytes)  
+	-	`sha256:6b15b622a05136fb9b9f68ae27b899970c89bbe8b9cdd47935b80d80093371fd`  
+		Last Modified: Thu, 12 Sep 2019 02:37:50 GMT  
+		Size: 808.8 KB (808780 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:514e1d2ddb83fbd4df9c3b3d5914ad2553965ddf66075558a66afcca88370238`  
-		Last Modified: Wed, 11 Sep 2019 05:25:17 GMT  
-		Size: 6.4 MB (6372376 bytes)  
+	-	`sha256:ea9c0605113990e10f6441ad4b9d82e04cc8e4b65baa8b99e1e062149ce7c350`  
+		Last Modified: Thu, 12 Sep 2019 12:40:20 GMT  
+		Size: 6.4 MB (6372428 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `elixir:1.9.1-alpine`
@@ -14984,7 +14984,7 @@ CMD ["iex"]
 ## `elixir:1.9.1-slim`
 
 ```console
-$ docker pull elixir@sha256:f34b666b195e8623731386c188bc563992f6dcdfa3e346ff1aeda04e4d527295
+$ docker pull elixir@sha256:670dbd55d628fb01fa0dc421c80b4b50a0fbf0a2cb52ee9654654e3271218fc1
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -15229,47 +15229,47 @@ CMD ["iex"]
 ### `elixir:1.9.1-slim` - linux; s390x
 
 ```console
-$ docker pull elixir@sha256:5acd949c07dc4536d216f7fe0eba25e64ccf1d450e921041a36386d8f5b3ea3c
+$ docker pull elixir@sha256:d3d351b902b76315bb74d47bf0132164a2df45152a07acc8dfa6014f9f005a3c
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **113.7 MB (113674993 bytes)**  
+-	Total Size: **113.7 MB (113692869 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:924f55b02feed2c49994944b97989233a58da09339003634bf17db52812b643c`
+-	Image ID: `sha256:35ebd7dba05a9938b930e4db25ce5523fc1077d45ad37355082836432f9ac244`
 -	Default Command: `["iex"]`
 
 ```dockerfile
-# Wed, 14 Aug 2019 00:45:55 GMT
-ADD file:628950cdb60edf56519623bb5bceb8f913d0e4a57fb94d64bbeb5f99491a79c8 in / 
-# Wed, 14 Aug 2019 00:45:56 GMT
+# Wed, 11 Sep 2019 22:43:56 GMT
+ADD file:5c261012373b1f613abf90c8163f72247906770a6209fc775af35a131ba818f9 in / 
+# Wed, 11 Sep 2019 22:43:57 GMT
 CMD ["bash"]
-# Wed, 14 Aug 2019 01:38:31 GMT
+# Thu, 12 Sep 2019 01:40:01 GMT
 ENV OTP_VERSION=22.0.7
-# Wed, 14 Aug 2019 01:49:40 GMT
+# Thu, 12 Sep 2019 01:45:05 GMT
 RUN set -xe 	&& OTP_DOWNLOAD_URL="https://github.com/erlang/otp/archive/OTP-${OTP_VERSION}.tar.gz" 	&& OTP_DOWNLOAD_SHA256="04c090b55ec4a01778e7e1a5b7fdf54012548ca72737965b7aa8c4d7878c92bc" 	&& fetchDeps=' 		curl 		ca-certificates' 	&& apt-get update 	&& apt-get install -y --no-install-recommends $fetchDeps 	&& curl -fSL -o otp-src.tar.gz "$OTP_DOWNLOAD_URL" 	&& echo "$OTP_DOWNLOAD_SHA256  otp-src.tar.gz" | sha256sum -c - 	&& runtimeDeps=' 		libodbc1 		libssl1.1 		libsctp1 	' 	&& buildDeps=' 		autoconf 		dpkg-dev 		gcc 		g++ 		make 		libncurses-dev 		unixodbc-dev 		libssl-dev 		libsctp-dev 	' 	&& apt-get install -y --no-install-recommends $runtimeDeps 	&& apt-get install -y --no-install-recommends $buildDeps 	&& export ERL_TOP="/usr/src/otp_src_${OTP_VERSION%%@*}" 	&& mkdir -vp $ERL_TOP 	&& tar -xzf otp-src.tar.gz -C $ERL_TOP --strip-components=1 	&& rm otp-src.tar.gz 	&& ( cd $ERL_TOP 	  && ./otp_build autoconf 	  && gnuArch="$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)" 	  && ./configure --build="$gnuArch" 	  && make -j$(nproc) 	  && make install ) 	&& find /usr/local -name examples | xargs rm -rf 	&& apt-get purge -y --auto-remove $buildDeps $fetchDeps 	&& rm -rf $ERL_TOP /var/lib/apt/lists/*
-# Wed, 14 Aug 2019 01:49:41 GMT
+# Thu, 12 Sep 2019 01:45:05 GMT
 CMD ["erl"]
-# Wed, 14 Aug 2019 15:01:55 GMT
+# Thu, 12 Sep 2019 12:29:59 GMT
 ENV ELIXIR_VERSION=v1.9.1 LANG=C.UTF-8
-# Wed, 14 Aug 2019 15:04:54 GMT
+# Thu, 12 Sep 2019 12:31:13 GMT
 RUN set -xe 	&& ELIXIR_DOWNLOAD_URL="https://github.com/elixir-lang/elixir/archive/${ELIXIR_VERSION}.tar.gz" 	&& ELIXIR_DOWNLOAD_SHA256="94daa716abbd4493405fb2032514195077ac7bc73dc2999922f13c7d8ea58777" 	&& buildDeps=' 		ca-certificates 		curl 		make 	' 	&& apt-get update 	&& apt-get install -y --no-install-recommends $buildDeps 	&& curl -fSL -o elixir-src.tar.gz $ELIXIR_DOWNLOAD_URL 	&& echo "$ELIXIR_DOWNLOAD_SHA256  elixir-src.tar.gz" | sha256sum -c - 	&& mkdir -p /usr/local/src/elixir 	&& tar -xzC /usr/local/src/elixir --strip-components=1 -f elixir-src.tar.gz 	&& rm elixir-src.tar.gz 	&& cd /usr/local/src/elixir 	&& make install clean 	&& apt-get purge -y --auto-remove $buildDeps 	&& rm -rf /var/lib/apt/lists/*
-# Wed, 14 Aug 2019 15:04:55 GMT
+# Thu, 12 Sep 2019 12:31:14 GMT
 CMD ["iex"]
 ```
 
 -	Layers:
-	-	`sha256:05b3194a550b956249959e2f64475745fcf943ed7951306c6e3e6a5cd1815dd6`  
-		Last Modified: Wed, 14 Aug 2019 00:51:50 GMT  
-		Size: 45.2 MB (45245026 bytes)  
+	-	`sha256:5d4da55d9cf0eafd201c3838c03984cc0ef153b12bbfd5964ffee9e9d6b38bbb`  
+		Last Modified: Wed, 11 Sep 2019 22:48:17 GMT  
+		Size: 45.2 MB (45240190 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:1b6132f22c25f258f5ab016cd876875645dcb34ec57f376b064b4b8bedf221a0`  
-		Last Modified: Wed, 14 Aug 2019 02:39:37 GMT  
-		Size: 61.6 MB (61574101 bytes)  
+	-	`sha256:2e6d5032b77df0f15efad18029ea9e5aa40f932fb1c0b30287f4d9e0914f56ba`  
+		Last Modified: Thu, 12 Sep 2019 02:38:22 GMT  
+		Size: 61.6 MB (61597085 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:9277bb5a19427cf7b1cc4a5c2e592504d23d60a860da3a8a57b55eb2b5926fa0`  
-		Last Modified: Wed, 14 Aug 2019 15:14:27 GMT  
-		Size: 6.9 MB (6855866 bytes)  
+	-	`sha256:48dea47bdfd2948b7a479812ac2698f46a7cc93a8caaac14cbefae0d838a5b87`  
+		Last Modified: Thu, 12 Sep 2019 12:40:26 GMT  
+		Size: 6.9 MB (6855594 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `elixir:1.9-alpine`
@@ -15566,7 +15566,7 @@ CMD ["iex"]
 ## `elixir:1.9-slim`
 
 ```console
-$ docker pull elixir@sha256:f34b666b195e8623731386c188bc563992f6dcdfa3e346ff1aeda04e4d527295
+$ docker pull elixir@sha256:670dbd55d628fb01fa0dc421c80b4b50a0fbf0a2cb52ee9654654e3271218fc1
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -15811,47 +15811,47 @@ CMD ["iex"]
 ### `elixir:1.9-slim` - linux; s390x
 
 ```console
-$ docker pull elixir@sha256:5acd949c07dc4536d216f7fe0eba25e64ccf1d450e921041a36386d8f5b3ea3c
+$ docker pull elixir@sha256:d3d351b902b76315bb74d47bf0132164a2df45152a07acc8dfa6014f9f005a3c
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **113.7 MB (113674993 bytes)**  
+-	Total Size: **113.7 MB (113692869 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:924f55b02feed2c49994944b97989233a58da09339003634bf17db52812b643c`
+-	Image ID: `sha256:35ebd7dba05a9938b930e4db25ce5523fc1077d45ad37355082836432f9ac244`
 -	Default Command: `["iex"]`
 
 ```dockerfile
-# Wed, 14 Aug 2019 00:45:55 GMT
-ADD file:628950cdb60edf56519623bb5bceb8f913d0e4a57fb94d64bbeb5f99491a79c8 in / 
-# Wed, 14 Aug 2019 00:45:56 GMT
+# Wed, 11 Sep 2019 22:43:56 GMT
+ADD file:5c261012373b1f613abf90c8163f72247906770a6209fc775af35a131ba818f9 in / 
+# Wed, 11 Sep 2019 22:43:57 GMT
 CMD ["bash"]
-# Wed, 14 Aug 2019 01:38:31 GMT
+# Thu, 12 Sep 2019 01:40:01 GMT
 ENV OTP_VERSION=22.0.7
-# Wed, 14 Aug 2019 01:49:40 GMT
+# Thu, 12 Sep 2019 01:45:05 GMT
 RUN set -xe 	&& OTP_DOWNLOAD_URL="https://github.com/erlang/otp/archive/OTP-${OTP_VERSION}.tar.gz" 	&& OTP_DOWNLOAD_SHA256="04c090b55ec4a01778e7e1a5b7fdf54012548ca72737965b7aa8c4d7878c92bc" 	&& fetchDeps=' 		curl 		ca-certificates' 	&& apt-get update 	&& apt-get install -y --no-install-recommends $fetchDeps 	&& curl -fSL -o otp-src.tar.gz "$OTP_DOWNLOAD_URL" 	&& echo "$OTP_DOWNLOAD_SHA256  otp-src.tar.gz" | sha256sum -c - 	&& runtimeDeps=' 		libodbc1 		libssl1.1 		libsctp1 	' 	&& buildDeps=' 		autoconf 		dpkg-dev 		gcc 		g++ 		make 		libncurses-dev 		unixodbc-dev 		libssl-dev 		libsctp-dev 	' 	&& apt-get install -y --no-install-recommends $runtimeDeps 	&& apt-get install -y --no-install-recommends $buildDeps 	&& export ERL_TOP="/usr/src/otp_src_${OTP_VERSION%%@*}" 	&& mkdir -vp $ERL_TOP 	&& tar -xzf otp-src.tar.gz -C $ERL_TOP --strip-components=1 	&& rm otp-src.tar.gz 	&& ( cd $ERL_TOP 	  && ./otp_build autoconf 	  && gnuArch="$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)" 	  && ./configure --build="$gnuArch" 	  && make -j$(nproc) 	  && make install ) 	&& find /usr/local -name examples | xargs rm -rf 	&& apt-get purge -y --auto-remove $buildDeps $fetchDeps 	&& rm -rf $ERL_TOP /var/lib/apt/lists/*
-# Wed, 14 Aug 2019 01:49:41 GMT
+# Thu, 12 Sep 2019 01:45:05 GMT
 CMD ["erl"]
-# Wed, 14 Aug 2019 15:01:55 GMT
+# Thu, 12 Sep 2019 12:29:59 GMT
 ENV ELIXIR_VERSION=v1.9.1 LANG=C.UTF-8
-# Wed, 14 Aug 2019 15:04:54 GMT
+# Thu, 12 Sep 2019 12:31:13 GMT
 RUN set -xe 	&& ELIXIR_DOWNLOAD_URL="https://github.com/elixir-lang/elixir/archive/${ELIXIR_VERSION}.tar.gz" 	&& ELIXIR_DOWNLOAD_SHA256="94daa716abbd4493405fb2032514195077ac7bc73dc2999922f13c7d8ea58777" 	&& buildDeps=' 		ca-certificates 		curl 		make 	' 	&& apt-get update 	&& apt-get install -y --no-install-recommends $buildDeps 	&& curl -fSL -o elixir-src.tar.gz $ELIXIR_DOWNLOAD_URL 	&& echo "$ELIXIR_DOWNLOAD_SHA256  elixir-src.tar.gz" | sha256sum -c - 	&& mkdir -p /usr/local/src/elixir 	&& tar -xzC /usr/local/src/elixir --strip-components=1 -f elixir-src.tar.gz 	&& rm elixir-src.tar.gz 	&& cd /usr/local/src/elixir 	&& make install clean 	&& apt-get purge -y --auto-remove $buildDeps 	&& rm -rf /var/lib/apt/lists/*
-# Wed, 14 Aug 2019 15:04:55 GMT
+# Thu, 12 Sep 2019 12:31:14 GMT
 CMD ["iex"]
 ```
 
 -	Layers:
-	-	`sha256:05b3194a550b956249959e2f64475745fcf943ed7951306c6e3e6a5cd1815dd6`  
-		Last Modified: Wed, 14 Aug 2019 00:51:50 GMT  
-		Size: 45.2 MB (45245026 bytes)  
+	-	`sha256:5d4da55d9cf0eafd201c3838c03984cc0ef153b12bbfd5964ffee9e9d6b38bbb`  
+		Last Modified: Wed, 11 Sep 2019 22:48:17 GMT  
+		Size: 45.2 MB (45240190 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:1b6132f22c25f258f5ab016cd876875645dcb34ec57f376b064b4b8bedf221a0`  
-		Last Modified: Wed, 14 Aug 2019 02:39:37 GMT  
-		Size: 61.6 MB (61574101 bytes)  
+	-	`sha256:2e6d5032b77df0f15efad18029ea9e5aa40f932fb1c0b30287f4d9e0914f56ba`  
+		Last Modified: Thu, 12 Sep 2019 02:38:22 GMT  
+		Size: 61.6 MB (61597085 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:9277bb5a19427cf7b1cc4a5c2e592504d23d60a860da3a8a57b55eb2b5926fa0`  
-		Last Modified: Wed, 14 Aug 2019 15:14:27 GMT  
-		Size: 6.9 MB (6855866 bytes)  
+	-	`sha256:48dea47bdfd2948b7a479812ac2698f46a7cc93a8caaac14cbefae0d838a5b87`  
+		Last Modified: Thu, 12 Sep 2019 12:40:26 GMT  
+		Size: 6.9 MB (6855594 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `elixir:alpine`
@@ -16148,7 +16148,7 @@ CMD ["iex"]
 ## `elixir:latest`
 
 ```console
-$ docker pull elixir@sha256:a5517a3ad3c942f25a85da31e1bda2cafa5bfa9172ffd2944ab67609de97f2e7
+$ docker pull elixir@sha256:72492d9bdc69e6ab26880e225269186069dd95fe93d09e07e64f4070ae271d85
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -16593,93 +16593,93 @@ CMD ["iex"]
 ### `elixir:latest` - linux; s390x
 
 ```console
-$ docker pull elixir@sha256:f2d278e0e1972d0807bdd8854d80209a21198bcee3cffe9b11659ea8480a3041
+$ docker pull elixir@sha256:4b4c7eb0cc0739d2134d367ad7871741708b78fbf98c12f7689e9765b78d59aa
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **460.5 MB (460485586 bytes)**  
+-	Total Size: **460.5 MB (460479290 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:fd9e84326faec081e7b881016492a3d77b23840a9a7ee9a0428a2369da3aac24`
+-	Image ID: `sha256:39a11d2ddd583502873fa0e4f18e99086362dd788ecd6ab7bbb89f854742b142`
 -	Default Command: `["iex"]`
 
 ```dockerfile
-# Wed, 14 Aug 2019 00:45:55 GMT
-ADD file:628950cdb60edf56519623bb5bceb8f913d0e4a57fb94d64bbeb5f99491a79c8 in / 
-# Wed, 14 Aug 2019 00:45:56 GMT
+# Wed, 11 Sep 2019 22:43:56 GMT
+ADD file:5c261012373b1f613abf90c8163f72247906770a6209fc775af35a131ba818f9 in / 
+# Wed, 11 Sep 2019 22:43:57 GMT
 CMD ["bash"]
-# Wed, 14 Aug 2019 03:02:33 GMT
+# Thu, 12 Sep 2019 00:38:06 GMT
 RUN apt-get update && apt-get install -y --no-install-recommends 		ca-certificates 		curl 		netbase 		wget 	&& rm -rf /var/lib/apt/lists/*
-# Wed, 14 Aug 2019 03:02:43 GMT
+# Thu, 12 Sep 2019 00:38:13 GMT
 RUN set -ex; 	if ! command -v gpg > /dev/null; then 		apt-get update; 		apt-get install -y --no-install-recommends 			gnupg 			dirmngr 		; 		rm -rf /var/lib/apt/lists/*; 	fi
-# Wed, 14 Aug 2019 03:03:35 GMT
+# Thu, 12 Sep 2019 00:38:39 GMT
 RUN apt-get update && apt-get install -y --no-install-recommends 		bzr 		git 		mercurial 		openssh-client 		subversion 				procps 	&& rm -rf /var/lib/apt/lists/*
-# Tue, 10 Sep 2019 21:40:06 GMT
+# Thu, 12 Sep 2019 00:40:19 GMT
 RUN set -ex; 	apt-get update; 	apt-get install -y --no-install-recommends 		autoconf 		automake 		bzip2 		dpkg-dev 		file 		g++ 		gcc 		imagemagick 		libbz2-dev 		libc6-dev 		libcurl4-openssl-dev 		libdb-dev 		libevent-dev 		libffi-dev 		libgdbm-dev 		libglib2.0-dev 		libgmp-dev 		libjpeg-dev 		libkrb5-dev 		liblzma-dev 		libmagickcore-dev 		libmagickwand-dev 		libmaxminddb-dev 		libncurses5-dev 		libncursesw5-dev 		libpng-dev 		libpq-dev 		libreadline-dev 		libsqlite3-dev 		libssl-dev 		libtool 		libwebp-dev 		libxml2-dev 		libxslt-dev 		libyaml-dev 		make 		patch 		unzip 		xz-utils 		zlib1g-dev 				$( 			if apt-cache show 'default-libmysqlclient-dev' 2>/dev/null | grep -q '^Version:'; then 				echo 'default-libmysqlclient-dev'; 			else 				echo 'libmysqlclient-dev'; 			fi 		) 	; 	rm -rf /var/lib/apt/lists/*
-# Wed, 11 Sep 2019 03:37:34 GMT
+# Thu, 12 Sep 2019 01:31:38 GMT
 ENV OTP_VERSION=22.0.7
-# Wed, 11 Sep 2019 03:44:47 GMT
+# Thu, 12 Sep 2019 01:39:21 GMT
 RUN set -xe 	&& OTP_DOWNLOAD_URL="https://github.com/erlang/otp/archive/OTP-${OTP_VERSION}.tar.gz" 	&& OTP_DOWNLOAD_SHA256="04c090b55ec4a01778e7e1a5b7fdf54012548ca72737965b7aa8c4d7878c92bc" 	&& runtimeDeps='libodbc1 			libsctp1 			libwxgtk3.0' 	&& buildDeps='unixodbc-dev 			libsctp-dev 			libwxgtk3.0-dev' 	&& apt-get update 	&& apt-get install -y --no-install-recommends $runtimeDeps 	&& apt-get install -y --no-install-recommends $buildDeps 	&& curl -fSL -o otp-src.tar.gz "$OTP_DOWNLOAD_URL" 	&& echo "$OTP_DOWNLOAD_SHA256  otp-src.tar.gz" | sha256sum -c - 	&& export ERL_TOP="/usr/src/otp_src_${OTP_VERSION%%@*}" 	&& mkdir -vp $ERL_TOP 	&& tar -xzf otp-src.tar.gz -C $ERL_TOP --strip-components=1 	&& rm otp-src.tar.gz 	&& ( cd $ERL_TOP 	  && ./otp_build autoconf 	  && gnuArch="$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)" 	  && ./configure --build="$gnuArch" 	  && make -j$(nproc) 	  && make install ) 	&& find /usr/local -name examples | xargs rm -rf 	&& apt-get purge -y --auto-remove $buildDeps 	&& rm -rf $ERL_TOP /var/lib/apt/lists/*
-# Wed, 11 Sep 2019 03:44:47 GMT
+# Thu, 12 Sep 2019 01:39:22 GMT
 CMD ["erl"]
-# Wed, 11 Sep 2019 03:44:47 GMT
+# Thu, 12 Sep 2019 01:39:22 GMT
 ENV REBAR_VERSION=2.6.4
-# Wed, 11 Sep 2019 03:44:50 GMT
+# Thu, 12 Sep 2019 01:39:25 GMT
 RUN set -xe 	&& REBAR_DOWNLOAD_URL="https://github.com/rebar/rebar/archive/${REBAR_VERSION}.tar.gz" 	&& REBAR_DOWNLOAD_SHA256="577246bafa2eb2b2c3f1d0c157408650446884555bf87901508ce71d5cc0bd07" 	&& mkdir -p /usr/src/rebar-src 	&& curl -fSL -o rebar-src.tar.gz "$REBAR_DOWNLOAD_URL" 	&& echo "$REBAR_DOWNLOAD_SHA256 rebar-src.tar.gz" | sha256sum -c - 	&& tar -xzf rebar-src.tar.gz -C /usr/src/rebar-src --strip-components=1 	&& rm rebar-src.tar.gz 	&& cd /usr/src/rebar-src 	&& ./bootstrap 	&& install -v ./rebar /usr/local/bin/ 	&& rm -rf /usr/src/rebar-src
-# Wed, 11 Sep 2019 03:44:50 GMT
+# Thu, 12 Sep 2019 01:39:25 GMT
 ENV REBAR3_VERSION=3.11.1
-# Wed, 11 Sep 2019 03:45:10 GMT
+# Thu, 12 Sep 2019 01:39:44 GMT
 RUN set -xe 	&& REBAR3_DOWNLOAD_URL="https://github.com/erlang/rebar3/archive/${REBAR3_VERSION}.tar.gz" 	&& REBAR3_DOWNLOAD_SHA256="a1822db5210b96b5f8ef10e433b22df19c5fc54dfd847bcaab86c65151ce4171" 	&& mkdir -p /usr/src/rebar3-src 	&& curl -fSL -o rebar3-src.tar.gz "$REBAR3_DOWNLOAD_URL" 	&& echo "$REBAR3_DOWNLOAD_SHA256 rebar3-src.tar.gz" | sha256sum -c - 	&& tar -xzf rebar3-src.tar.gz -C /usr/src/rebar3-src --strip-components=1 	&& rm rebar3-src.tar.gz 	&& cd /usr/src/rebar3-src 	&& HOME=$PWD ./bootstrap 	&& install -v ./rebar3 /usr/local/bin/ 	&& rm -rf /usr/src/rebar3-src
-# Wed, 11 Sep 2019 05:17:47 GMT
+# Thu, 12 Sep 2019 12:28:53 GMT
 ENV ELIXIR_VERSION=v1.9.1 LANG=C.UTF-8
-# Wed, 11 Sep 2019 05:18:42 GMT
+# Thu, 12 Sep 2019 12:29:51 GMT
 RUN set -xe 	&& ELIXIR_DOWNLOAD_URL="https://github.com/elixir-lang/elixir/archive/${ELIXIR_VERSION}.tar.gz" 	&& ELIXIR_DOWNLOAD_SHA256="94daa716abbd4493405fb2032514195077ac7bc73dc2999922f13c7d8ea58777" 	&& curl -fSL -o elixir-src.tar.gz $ELIXIR_DOWNLOAD_URL 	&& echo "$ELIXIR_DOWNLOAD_SHA256  elixir-src.tar.gz" | sha256sum -c - 	&& mkdir -p /usr/local/src/elixir 	&& tar -xzC /usr/local/src/elixir --strip-components=1 -f elixir-src.tar.gz 	&& rm elixir-src.tar.gz 	&& cd /usr/local/src/elixir 	&& make install clean
-# Wed, 11 Sep 2019 05:18:43 GMT
+# Thu, 12 Sep 2019 12:29:52 GMT
 CMD ["iex"]
 ```
 
 -	Layers:
-	-	`sha256:05b3194a550b956249959e2f64475745fcf943ed7951306c6e3e6a5cd1815dd6`  
-		Last Modified: Wed, 14 Aug 2019 00:51:50 GMT  
-		Size: 45.2 MB (45245026 bytes)  
+	-	`sha256:5d4da55d9cf0eafd201c3838c03984cc0ef153b12bbfd5964ffee9e9d6b38bbb`  
+		Last Modified: Wed, 11 Sep 2019 22:48:17 GMT  
+		Size: 45.2 MB (45240190 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:5cc01dcd9b0a29ac6daec9b7b4af78f948ee1945fb22e5e8f97993705d589311`  
-		Last Modified: Wed, 14 Aug 2019 03:10:13 GMT  
-		Size: 10.3 MB (10317828 bytes)  
+	-	`sha256:dad3041fe12244954218a4bd2bfdcb5ae29fd416b247bd17e41c73cbdf9b6de5`  
+		Last Modified: Thu, 12 Sep 2019 00:44:07 GMT  
+		Size: 10.3 MB (10317726 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:5154470af4c84ea4b0ebc80e0cda7c479ef829d3ec3ece20e7b183bc8ded7563`  
-		Last Modified: Wed, 14 Aug 2019 03:10:11 GMT  
-		Size: 4.4 MB (4372320 bytes)  
+	-	`sha256:f6542c8f56fbd52f8d9d01d92625e0a728578d6e417adeba2baa0678cc5009d6`  
+		Last Modified: Thu, 12 Sep 2019 00:44:05 GMT  
+		Size: 4.4 MB (4372276 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:cd3b67ff4ea99e03083897f42be8f62c9ef0cd1e1a0603a4c3e627eae76a020d`  
-		Last Modified: Wed, 14 Aug 2019 03:10:30 GMT  
-		Size: 50.5 MB (50489789 bytes)  
+	-	`sha256:25fa3a7ad4fa33ba9843e1e836bf619c36b0cc5a1ce2d9b3e1e1b932c6220148`  
+		Last Modified: Thu, 12 Sep 2019 00:44:24 GMT  
+		Size: 50.5 MB (50488527 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:287679351b06307bcc1a8ced873496e08f721d41a6e4cea1ba6874f49aa24353`  
-		Last Modified: Tue, 10 Sep 2019 21:47:12 GMT  
-		Size: 206.9 MB (206858733 bytes)  
+	-	`sha256:271ed6d81ea099ed00ae3e2d3c436fe81ecbf2fd85a94445c7592c99cde20e64`  
+		Last Modified: Thu, 12 Sep 2019 00:45:02 GMT  
+		Size: 206.9 MB (206858680 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:f7d01527d0184071117779212876c13cb41c30a0268f5b3a034bff907d829688`  
-		Last Modified: Wed, 11 Sep 2019 04:17:06 GMT  
-		Size: 135.8 MB (135823709 bytes)  
+	-	`sha256:6f43e7af3e0759d8e428594c421cd5d627c825eec24ee5ae7fb39863770756c1`  
+		Last Modified: Thu, 12 Sep 2019 02:38:04 GMT  
+		Size: 135.8 MB (135823651 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:e22a180459991cd191466e855afbea84aa5aad3552d2f77f551252c886522aa0`  
-		Last Modified: Wed, 11 Sep 2019 04:16:53 GMT  
-		Size: 197.0 KB (197023 bytes)  
+	-	`sha256:1a22c033e06acc7ab9bfb912f134139c254ca61050d1ab65fb6b7c343cd98385`  
+		Last Modified: Thu, 12 Sep 2019 02:37:50 GMT  
+		Size: 197.0 KB (197032 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:68d9d6a8a06bc8af097d57fa6de2aa33d1b661e6b793525e008d05289f6cb9f7`  
-		Last Modified: Wed, 11 Sep 2019 04:16:52 GMT  
-		Size: 808.8 KB (808782 bytes)  
+	-	`sha256:6b15b622a05136fb9b9f68ae27b899970c89bbe8b9cdd47935b80d80093371fd`  
+		Last Modified: Thu, 12 Sep 2019 02:37:50 GMT  
+		Size: 808.8 KB (808780 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:514e1d2ddb83fbd4df9c3b3d5914ad2553965ddf66075558a66afcca88370238`  
-		Last Modified: Wed, 11 Sep 2019 05:25:17 GMT  
-		Size: 6.4 MB (6372376 bytes)  
+	-	`sha256:ea9c0605113990e10f6441ad4b9d82e04cc8e4b65baa8b99e1e062149ce7c350`  
+		Last Modified: Thu, 12 Sep 2019 12:40:20 GMT  
+		Size: 6.4 MB (6372428 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `elixir:slim`
 
 ```console
-$ docker pull elixir@sha256:f34b666b195e8623731386c188bc563992f6dcdfa3e346ff1aeda04e4d527295
+$ docker pull elixir@sha256:670dbd55d628fb01fa0dc421c80b4b50a0fbf0a2cb52ee9654654e3271218fc1
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -16924,45 +16924,45 @@ CMD ["iex"]
 ### `elixir:slim` - linux; s390x
 
 ```console
-$ docker pull elixir@sha256:5acd949c07dc4536d216f7fe0eba25e64ccf1d450e921041a36386d8f5b3ea3c
+$ docker pull elixir@sha256:d3d351b902b76315bb74d47bf0132164a2df45152a07acc8dfa6014f9f005a3c
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **113.7 MB (113674993 bytes)**  
+-	Total Size: **113.7 MB (113692869 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:924f55b02feed2c49994944b97989233a58da09339003634bf17db52812b643c`
+-	Image ID: `sha256:35ebd7dba05a9938b930e4db25ce5523fc1077d45ad37355082836432f9ac244`
 -	Default Command: `["iex"]`
 
 ```dockerfile
-# Wed, 14 Aug 2019 00:45:55 GMT
-ADD file:628950cdb60edf56519623bb5bceb8f913d0e4a57fb94d64bbeb5f99491a79c8 in / 
-# Wed, 14 Aug 2019 00:45:56 GMT
+# Wed, 11 Sep 2019 22:43:56 GMT
+ADD file:5c261012373b1f613abf90c8163f72247906770a6209fc775af35a131ba818f9 in / 
+# Wed, 11 Sep 2019 22:43:57 GMT
 CMD ["bash"]
-# Wed, 14 Aug 2019 01:38:31 GMT
+# Thu, 12 Sep 2019 01:40:01 GMT
 ENV OTP_VERSION=22.0.7
-# Wed, 14 Aug 2019 01:49:40 GMT
+# Thu, 12 Sep 2019 01:45:05 GMT
 RUN set -xe 	&& OTP_DOWNLOAD_URL="https://github.com/erlang/otp/archive/OTP-${OTP_VERSION}.tar.gz" 	&& OTP_DOWNLOAD_SHA256="04c090b55ec4a01778e7e1a5b7fdf54012548ca72737965b7aa8c4d7878c92bc" 	&& fetchDeps=' 		curl 		ca-certificates' 	&& apt-get update 	&& apt-get install -y --no-install-recommends $fetchDeps 	&& curl -fSL -o otp-src.tar.gz "$OTP_DOWNLOAD_URL" 	&& echo "$OTP_DOWNLOAD_SHA256  otp-src.tar.gz" | sha256sum -c - 	&& runtimeDeps=' 		libodbc1 		libssl1.1 		libsctp1 	' 	&& buildDeps=' 		autoconf 		dpkg-dev 		gcc 		g++ 		make 		libncurses-dev 		unixodbc-dev 		libssl-dev 		libsctp-dev 	' 	&& apt-get install -y --no-install-recommends $runtimeDeps 	&& apt-get install -y --no-install-recommends $buildDeps 	&& export ERL_TOP="/usr/src/otp_src_${OTP_VERSION%%@*}" 	&& mkdir -vp $ERL_TOP 	&& tar -xzf otp-src.tar.gz -C $ERL_TOP --strip-components=1 	&& rm otp-src.tar.gz 	&& ( cd $ERL_TOP 	  && ./otp_build autoconf 	  && gnuArch="$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)" 	  && ./configure --build="$gnuArch" 	  && make -j$(nproc) 	  && make install ) 	&& find /usr/local -name examples | xargs rm -rf 	&& apt-get purge -y --auto-remove $buildDeps $fetchDeps 	&& rm -rf $ERL_TOP /var/lib/apt/lists/*
-# Wed, 14 Aug 2019 01:49:41 GMT
+# Thu, 12 Sep 2019 01:45:05 GMT
 CMD ["erl"]
-# Wed, 14 Aug 2019 15:01:55 GMT
+# Thu, 12 Sep 2019 12:29:59 GMT
 ENV ELIXIR_VERSION=v1.9.1 LANG=C.UTF-8
-# Wed, 14 Aug 2019 15:04:54 GMT
+# Thu, 12 Sep 2019 12:31:13 GMT
 RUN set -xe 	&& ELIXIR_DOWNLOAD_URL="https://github.com/elixir-lang/elixir/archive/${ELIXIR_VERSION}.tar.gz" 	&& ELIXIR_DOWNLOAD_SHA256="94daa716abbd4493405fb2032514195077ac7bc73dc2999922f13c7d8ea58777" 	&& buildDeps=' 		ca-certificates 		curl 		make 	' 	&& apt-get update 	&& apt-get install -y --no-install-recommends $buildDeps 	&& curl -fSL -o elixir-src.tar.gz $ELIXIR_DOWNLOAD_URL 	&& echo "$ELIXIR_DOWNLOAD_SHA256  elixir-src.tar.gz" | sha256sum -c - 	&& mkdir -p /usr/local/src/elixir 	&& tar -xzC /usr/local/src/elixir --strip-components=1 -f elixir-src.tar.gz 	&& rm elixir-src.tar.gz 	&& cd /usr/local/src/elixir 	&& make install clean 	&& apt-get purge -y --auto-remove $buildDeps 	&& rm -rf /var/lib/apt/lists/*
-# Wed, 14 Aug 2019 15:04:55 GMT
+# Thu, 12 Sep 2019 12:31:14 GMT
 CMD ["iex"]
 ```
 
 -	Layers:
-	-	`sha256:05b3194a550b956249959e2f64475745fcf943ed7951306c6e3e6a5cd1815dd6`  
-		Last Modified: Wed, 14 Aug 2019 00:51:50 GMT  
-		Size: 45.2 MB (45245026 bytes)  
+	-	`sha256:5d4da55d9cf0eafd201c3838c03984cc0ef153b12bbfd5964ffee9e9d6b38bbb`  
+		Last Modified: Wed, 11 Sep 2019 22:48:17 GMT  
+		Size: 45.2 MB (45240190 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:1b6132f22c25f258f5ab016cd876875645dcb34ec57f376b064b4b8bedf221a0`  
-		Last Modified: Wed, 14 Aug 2019 02:39:37 GMT  
-		Size: 61.6 MB (61574101 bytes)  
+	-	`sha256:2e6d5032b77df0f15efad18029ea9e5aa40f932fb1c0b30287f4d9e0914f56ba`  
+		Last Modified: Thu, 12 Sep 2019 02:38:22 GMT  
+		Size: 61.6 MB (61597085 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:9277bb5a19427cf7b1cc4a5c2e592504d23d60a860da3a8a57b55eb2b5926fa0`  
-		Last Modified: Wed, 14 Aug 2019 15:14:27 GMT  
-		Size: 6.9 MB (6855866 bytes)  
+	-	`sha256:48dea47bdfd2948b7a479812ac2698f46a7cc93a8caaac14cbefae0d838a5b87`  
+		Last Modified: Thu, 12 Sep 2019 12:40:26 GMT  
+		Size: 6.9 MB (6855594 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
