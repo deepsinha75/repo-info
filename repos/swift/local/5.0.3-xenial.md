@@ -369,14 +369,9 @@ Licenses: (parsed from: `/usr/share/doc/libcurl3/copyright`, `/usr/share/doc/lib
 - `other`
 - `public-domain`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris curl=7.47.0-1ubuntu2.13
-'http://archive.ubuntu.com/ubuntu/pool/main/c/curl/curl_7.47.0-1ubuntu2.13.dsc' curl_7.47.0-1ubuntu2.13.dsc 2733 SHA256:7d7fbdf870d4a1d9d8e80bc8bf6a1b28fe900461039434f410717f9a39293ff0
-'http://archive.ubuntu.com/ubuntu/pool/main/c/curl/curl_7.47.0.orig.tar.gz' curl_7.47.0.orig.tar.gz 4563163 SHA256:df01bd42af361978d9de7de8529718bcafe01897a544a7650139a1954c55bdfe
-'http://archive.ubuntu.com/ubuntu/pool/main/c/curl/curl_7.47.0-1ubuntu2.13.debian.tar.xz' curl_7.47.0-1ubuntu2.13.debian.tar.xz 55044 SHA256:768b9334bb8505de0cc1a6aaf5147162c09385ff77faf8fd939536a14d8d341e
-```
 
 ### `dpkg` source package: `cyrus-sasl2=2.1.26.dfsg1-14ubuntu0.1`
 
@@ -2329,14 +2324,9 @@ Licenses: (parsed from: `/usr/share/doc/libpython2.7/copyright`, `/usr/share/doc
 - `implied`
 - `see above, some license as Python`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris python2.7=2.7.12-1ubuntu0~16.04.4
-'http://archive.ubuntu.com/ubuntu/pool/main/p/python2.7/python2.7_2.7.12-1ubuntu0~16.04.4.dsc' python2.7_2.7.12-1ubuntu0~16.04.4.dsc 3387 SHA256:ce26d3ab4475b49a7ec10e9dd7c3631961871697ae46a9bf00d9d1977522ef2a
-'http://archive.ubuntu.com/ubuntu/pool/main/p/python2.7/python2.7_2.7.12.orig.tar.gz' python2.7_2.7.12.orig.tar.gz 16935960 SHA256:3cb522d17463dfa69a155ab18cffa399b358c966c0363d6c8b5b3bf1384da4b6
-'http://archive.ubuntu.com/ubuntu/pool/main/p/python2.7/python2.7_2.7.12-1ubuntu0~16.04.4.diff.gz' python2.7_2.7.12-1ubuntu0~16.04.4.diff.gz 289266 SHA256:4c3769cb2e0da2f86349a21dc182f6e0a9bea7fdbec99d9bbd600b13c7cfd883
-```
 
 ### `dpkg` source package: `readline6=6.3-8ubuntu2`
 
