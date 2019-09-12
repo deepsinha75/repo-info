@@ -16,7 +16,7 @@
 ## `kapacitor:1.4`
 
 ```console
-$ docker pull kapacitor@sha256:15c9e74d5e92b1cd45ee4e6bdbcc59dbf67c1d1e8f26f86cdce243aa20bf701b
+$ docker pull kapacitor@sha256:1233be3f320321236ed5a4ba439311f41beb2e248fdcd12963043d0f769ba47d
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -186,86 +186,86 @@ CMD ["kapacitord"]
 ### `kapacitor:1.4` - linux; arm64 variant v8
 
 ```console
-$ docker pull kapacitor@sha256:816e913e103ae22c3d293a03545766039c1da1c8eb48998d545f373d47c5b3d1
+$ docker pull kapacitor@sha256:acb3638480f9d99d035d7ed0ae7d52e36adbe6994a4321e6ff9bce877fc399a7
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **91.1 MB (91051301 bytes)**  
+-	Total Size: **91.1 MB (91063625 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:73004ff101a6ad0409b1c82c94332066289b1cccac12250aeec36dece33cf782`
+-	Image ID: `sha256:fc6847f43af8ac0cc65efd780c9dd6bd6c7f8c2289a40534c0148b430b8ee7cc`
 -	Entrypoint: `["\/entrypoint.sh"]`
 -	Default Command: `["kapacitord"]`
 
 ```dockerfile
-# Wed, 14 Aug 2019 00:42:54 GMT
-ADD file:705744f1d46153f7b1e4e803e92a622e76091e0c7812e893ccadf4c3fa3f7582 in / 
-# Wed, 14 Aug 2019 00:42:55 GMT
+# Wed, 11 Sep 2019 22:43:01 GMT
+ADD file:caf4d612b52451d22260b0d5cffb0fbb4b73aa3841a8a622c9a87923dee2f910 in / 
+# Wed, 11 Sep 2019 22:43:03 GMT
 CMD ["bash"]
-# Wed, 14 Aug 2019 02:36:32 GMT
+# Thu, 12 Sep 2019 00:46:51 GMT
 RUN apt-get update && apt-get install -y --no-install-recommends 		ca-certificates 		curl 		netbase 		wget 	&& rm -rf /var/lib/apt/lists/*
-# Wed, 14 Aug 2019 02:36:41 GMT
+# Thu, 12 Sep 2019 00:47:02 GMT
 RUN set -ex; 	if ! command -v gpg > /dev/null; then 		apt-get update; 		apt-get install -y --no-install-recommends 			gnupg 			dirmngr 		; 		rm -rf /var/lib/apt/lists/*; 	fi
-# Wed, 14 Aug 2019 21:13:39 GMT
+# Thu, 12 Sep 2019 19:06:49 GMT
 RUN DEBIAN_FRONTEND=noninteractive apt-get update &&     DEBIAN_FRONTEND=noninteractive apt-get install -y bash-completion &&     awk 'f{if(sub(/^#/,"",$0)==0){f=0}};/^# enable bash completion/{f=1};{print;}' /etc/bash.bashrc > /etc/bash.bashrc.new &&     mv /etc/bash.bashrc.new /etc/bash.bashrc
-# Wed, 14 Aug 2019 21:13:43 GMT
+# Thu, 12 Sep 2019 19:06:57 GMT
 RUN set -ex &&     for key in         05CE15085FC09D18E99EFB22684A14CF2582E0C5 ;     do         gpg --keyserver ha.pool.sks-keyservers.net --recv-keys "$key" ||         gpg --keyserver pgp.mit.edu --recv-keys "$key" ||         gpg --keyserver keyserver.pgp.com --recv-keys "$key" ;     done
-# Wed, 14 Aug 2019 21:13:43 GMT
+# Thu, 12 Sep 2019 19:06:59 GMT
 ENV KAPACITOR_VERSION=1.4.1
-# Wed, 14 Aug 2019 21:13:47 GMT
+# Thu, 12 Sep 2019 19:07:08 GMT
 RUN ARCH= && dpkgArch="$(dpkg --print-architecture)" &&     case "${dpkgArch##*-}" in       amd64) ARCH='amd64';;       arm64) ARCH='arm64';;       armhf) ARCH='armhf';;       armel) ARCH='armel';;       *)     echo "Unsupported architecture: ${dpkgArch}"; exit 1;;     esac &&     wget --no-verbose https://dl.influxdata.com/kapacitor/releases/kapacitor_${KAPACITOR_VERSION}_${ARCH}.deb.asc &&     wget --no-verbose https://dl.influxdata.com/kapacitor/releases/kapacitor_${KAPACITOR_VERSION}_${ARCH}.deb &&     gpg --batch --verify kapacitor_${KAPACITOR_VERSION}_${ARCH}.deb.asc kapacitor_${KAPACITOR_VERSION}_${ARCH}.deb &&     dpkg -i kapacitor_${KAPACITOR_VERSION}_${ARCH}.deb &&     rm -f kapacitor_${KAPACITOR_VERSION}_${ARCH}.deb*
-# Wed, 14 Aug 2019 21:13:47 GMT
+# Thu, 12 Sep 2019 19:07:10 GMT
 COPY file:9450c5dcbc0a583243f987f682dc6c44d9e4a3f1c31d1bb9957f313457e444ec in /etc/kapacitor/kapacitor.conf 
-# Wed, 14 Aug 2019 21:13:48 GMT
+# Thu, 12 Sep 2019 19:07:11 GMT
 EXPOSE 9092
-# Wed, 14 Aug 2019 21:13:48 GMT
+# Thu, 12 Sep 2019 19:07:12 GMT
 VOLUME [/var/lib/kapacitor]
-# Wed, 14 Aug 2019 21:13:49 GMT
+# Thu, 12 Sep 2019 19:07:14 GMT
 COPY file:a229567085df49450fcc70ed6d49efcbdfc41ca92b6c5bdb3b541cb803165dbc in /entrypoint.sh 
-# Wed, 14 Aug 2019 21:13:49 GMT
+# Thu, 12 Sep 2019 19:07:15 GMT
 ENTRYPOINT ["/entrypoint.sh"]
-# Wed, 14 Aug 2019 21:13:49 GMT
+# Thu, 12 Sep 2019 19:07:16 GMT
 CMD ["kapacitord"]
 ```
 
 -	Layers:
-	-	`sha256:c9a9b339897414ebcb758c313024f2e0cdd97ccd184a2db5d2fd418c3c37bf86`  
-		Last Modified: Wed, 14 Aug 2019 00:48:21 GMT  
-		Size: 43.1 MB (43140037 bytes)  
+	-	`sha256:815c1832d6513be8edd397e11041a4aee3f96dce52f0ebcb981c3b9cdd510b36`  
+		Last Modified: Wed, 11 Sep 2019 22:48:27 GMT  
+		Size: 43.1 MB (43144819 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:204078f7e04c7ae0e3fc1e45e88ad2cf14f9d83b2adc30919cd8ca34a215e6db`  
-		Last Modified: Wed, 14 Aug 2019 02:43:12 GMT  
-		Size: 9.7 MB (9737250 bytes)  
+	-	`sha256:f04bed802a875187697c84fbe66916965d4793e879ff5bb0b618d3cfb4967eea`  
+		Last Modified: Thu, 12 Sep 2019 00:56:15 GMT  
+		Size: 9.7 MB (9737882 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:d5243bb8f5f5e1041d372d7b9e139b07e15e943dd53d392ee5460eaf2ff10807`  
-		Last Modified: Wed, 14 Aug 2019 02:43:10 GMT  
-		Size: 4.1 MB (4094297 bytes)  
+	-	`sha256:6d5c571b36bfd171c2d8ed92043e8246a279ad06d7a71f3d7db36aa14117f1d7`  
+		Last Modified: Thu, 12 Sep 2019 00:56:14 GMT  
+		Size: 4.1 MB (4094344 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:4dd02aea919051c99f61c6418ca36a8eb65c0f28799cc719c401134362f30776`  
-		Last Modified: Wed, 14 Aug 2019 21:14:14 GMT  
-		Size: 12.8 MB (12768667 bytes)  
+	-	`sha256:d6c29daa22b8ccd92d891ef3ed948ee4ad1029d73bd288343bd734f346003918`  
+		Last Modified: Thu, 12 Sep 2019 19:07:51 GMT  
+		Size: 12.8 MB (12775507 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:7fcedda38fc43f261352718d3e31c1eb9916ef8573f9d3582497a8f20b4c0acf`  
-		Last Modified: Wed, 14 Aug 2019 21:14:11 GMT  
-		Size: 2.8 KB (2801 bytes)  
+	-	`sha256:f4e689b1bdb75a28425d053926a28a3433c3e42ee3c4779af75164527f4cd935`  
+		Last Modified: Thu, 12 Sep 2019 19:07:49 GMT  
+		Size: 2.8 KB (2803 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:222d2d0bb8c9c0d1a5b56a8a2fd1210b425e3bface0ea3c4f7fd9c3613786cf9`  
-		Last Modified: Wed, 14 Aug 2019 21:14:20 GMT  
-		Size: 21.3 MB (21307794 bytes)  
+	-	`sha256:e451629ba2c10f629f14de69062b28c410fb9a761b53cb85cd669b89acc700db`  
+		Last Modified: Thu, 12 Sep 2019 19:07:57 GMT  
+		Size: 21.3 MB (21307814 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:dd05989816cee9d99f86346e1e40e19c4ec3e5cde58b80360a475eb8579c310d`  
-		Last Modified: Wed, 14 Aug 2019 21:14:12 GMT  
+	-	`sha256:329a2f69a0a05781ff8626209ca2d4c823945df6a588dfbd9d4e5535222ac6fe`  
+		Last Modified: Thu, 12 Sep 2019 19:07:49 GMT  
 		Size: 225.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:5e43854895248ff7e48ade26b198af3bb40eadf22e18c13df0956a9403b6807d`  
-		Last Modified: Wed, 14 Aug 2019 21:14:11 GMT  
-		Size: 230.0 B  
+	-	`sha256:f35c387b8c968a16135f7bfaa9a3fc9c0cd4a7767d44d3d28c91430bbbc4db71`  
+		Last Modified: Thu, 12 Sep 2019 19:07:49 GMT  
+		Size: 231.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `kapacitor:1.4.1`
 
 ```console
-$ docker pull kapacitor@sha256:15c9e74d5e92b1cd45ee4e6bdbcc59dbf67c1d1e8f26f86cdce243aa20bf701b
+$ docker pull kapacitor@sha256:1233be3f320321236ed5a4ba439311f41beb2e248fdcd12963043d0f769ba47d
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -435,80 +435,80 @@ CMD ["kapacitord"]
 ### `kapacitor:1.4.1` - linux; arm64 variant v8
 
 ```console
-$ docker pull kapacitor@sha256:816e913e103ae22c3d293a03545766039c1da1c8eb48998d545f373d47c5b3d1
+$ docker pull kapacitor@sha256:acb3638480f9d99d035d7ed0ae7d52e36adbe6994a4321e6ff9bce877fc399a7
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **91.1 MB (91051301 bytes)**  
+-	Total Size: **91.1 MB (91063625 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:73004ff101a6ad0409b1c82c94332066289b1cccac12250aeec36dece33cf782`
+-	Image ID: `sha256:fc6847f43af8ac0cc65efd780c9dd6bd6c7f8c2289a40534c0148b430b8ee7cc`
 -	Entrypoint: `["\/entrypoint.sh"]`
 -	Default Command: `["kapacitord"]`
 
 ```dockerfile
-# Wed, 14 Aug 2019 00:42:54 GMT
-ADD file:705744f1d46153f7b1e4e803e92a622e76091e0c7812e893ccadf4c3fa3f7582 in / 
-# Wed, 14 Aug 2019 00:42:55 GMT
+# Wed, 11 Sep 2019 22:43:01 GMT
+ADD file:caf4d612b52451d22260b0d5cffb0fbb4b73aa3841a8a622c9a87923dee2f910 in / 
+# Wed, 11 Sep 2019 22:43:03 GMT
 CMD ["bash"]
-# Wed, 14 Aug 2019 02:36:32 GMT
+# Thu, 12 Sep 2019 00:46:51 GMT
 RUN apt-get update && apt-get install -y --no-install-recommends 		ca-certificates 		curl 		netbase 		wget 	&& rm -rf /var/lib/apt/lists/*
-# Wed, 14 Aug 2019 02:36:41 GMT
+# Thu, 12 Sep 2019 00:47:02 GMT
 RUN set -ex; 	if ! command -v gpg > /dev/null; then 		apt-get update; 		apt-get install -y --no-install-recommends 			gnupg 			dirmngr 		; 		rm -rf /var/lib/apt/lists/*; 	fi
-# Wed, 14 Aug 2019 21:13:39 GMT
+# Thu, 12 Sep 2019 19:06:49 GMT
 RUN DEBIAN_FRONTEND=noninteractive apt-get update &&     DEBIAN_FRONTEND=noninteractive apt-get install -y bash-completion &&     awk 'f{if(sub(/^#/,"",$0)==0){f=0}};/^# enable bash completion/{f=1};{print;}' /etc/bash.bashrc > /etc/bash.bashrc.new &&     mv /etc/bash.bashrc.new /etc/bash.bashrc
-# Wed, 14 Aug 2019 21:13:43 GMT
+# Thu, 12 Sep 2019 19:06:57 GMT
 RUN set -ex &&     for key in         05CE15085FC09D18E99EFB22684A14CF2582E0C5 ;     do         gpg --keyserver ha.pool.sks-keyservers.net --recv-keys "$key" ||         gpg --keyserver pgp.mit.edu --recv-keys "$key" ||         gpg --keyserver keyserver.pgp.com --recv-keys "$key" ;     done
-# Wed, 14 Aug 2019 21:13:43 GMT
+# Thu, 12 Sep 2019 19:06:59 GMT
 ENV KAPACITOR_VERSION=1.4.1
-# Wed, 14 Aug 2019 21:13:47 GMT
+# Thu, 12 Sep 2019 19:07:08 GMT
 RUN ARCH= && dpkgArch="$(dpkg --print-architecture)" &&     case "${dpkgArch##*-}" in       amd64) ARCH='amd64';;       arm64) ARCH='arm64';;       armhf) ARCH='armhf';;       armel) ARCH='armel';;       *)     echo "Unsupported architecture: ${dpkgArch}"; exit 1;;     esac &&     wget --no-verbose https://dl.influxdata.com/kapacitor/releases/kapacitor_${KAPACITOR_VERSION}_${ARCH}.deb.asc &&     wget --no-verbose https://dl.influxdata.com/kapacitor/releases/kapacitor_${KAPACITOR_VERSION}_${ARCH}.deb &&     gpg --batch --verify kapacitor_${KAPACITOR_VERSION}_${ARCH}.deb.asc kapacitor_${KAPACITOR_VERSION}_${ARCH}.deb &&     dpkg -i kapacitor_${KAPACITOR_VERSION}_${ARCH}.deb &&     rm -f kapacitor_${KAPACITOR_VERSION}_${ARCH}.deb*
-# Wed, 14 Aug 2019 21:13:47 GMT
+# Thu, 12 Sep 2019 19:07:10 GMT
 COPY file:9450c5dcbc0a583243f987f682dc6c44d9e4a3f1c31d1bb9957f313457e444ec in /etc/kapacitor/kapacitor.conf 
-# Wed, 14 Aug 2019 21:13:48 GMT
+# Thu, 12 Sep 2019 19:07:11 GMT
 EXPOSE 9092
-# Wed, 14 Aug 2019 21:13:48 GMT
+# Thu, 12 Sep 2019 19:07:12 GMT
 VOLUME [/var/lib/kapacitor]
-# Wed, 14 Aug 2019 21:13:49 GMT
+# Thu, 12 Sep 2019 19:07:14 GMT
 COPY file:a229567085df49450fcc70ed6d49efcbdfc41ca92b6c5bdb3b541cb803165dbc in /entrypoint.sh 
-# Wed, 14 Aug 2019 21:13:49 GMT
+# Thu, 12 Sep 2019 19:07:15 GMT
 ENTRYPOINT ["/entrypoint.sh"]
-# Wed, 14 Aug 2019 21:13:49 GMT
+# Thu, 12 Sep 2019 19:07:16 GMT
 CMD ["kapacitord"]
 ```
 
 -	Layers:
-	-	`sha256:c9a9b339897414ebcb758c313024f2e0cdd97ccd184a2db5d2fd418c3c37bf86`  
-		Last Modified: Wed, 14 Aug 2019 00:48:21 GMT  
-		Size: 43.1 MB (43140037 bytes)  
+	-	`sha256:815c1832d6513be8edd397e11041a4aee3f96dce52f0ebcb981c3b9cdd510b36`  
+		Last Modified: Wed, 11 Sep 2019 22:48:27 GMT  
+		Size: 43.1 MB (43144819 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:204078f7e04c7ae0e3fc1e45e88ad2cf14f9d83b2adc30919cd8ca34a215e6db`  
-		Last Modified: Wed, 14 Aug 2019 02:43:12 GMT  
-		Size: 9.7 MB (9737250 bytes)  
+	-	`sha256:f04bed802a875187697c84fbe66916965d4793e879ff5bb0b618d3cfb4967eea`  
+		Last Modified: Thu, 12 Sep 2019 00:56:15 GMT  
+		Size: 9.7 MB (9737882 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:d5243bb8f5f5e1041d372d7b9e139b07e15e943dd53d392ee5460eaf2ff10807`  
-		Last Modified: Wed, 14 Aug 2019 02:43:10 GMT  
-		Size: 4.1 MB (4094297 bytes)  
+	-	`sha256:6d5c571b36bfd171c2d8ed92043e8246a279ad06d7a71f3d7db36aa14117f1d7`  
+		Last Modified: Thu, 12 Sep 2019 00:56:14 GMT  
+		Size: 4.1 MB (4094344 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:4dd02aea919051c99f61c6418ca36a8eb65c0f28799cc719c401134362f30776`  
-		Last Modified: Wed, 14 Aug 2019 21:14:14 GMT  
-		Size: 12.8 MB (12768667 bytes)  
+	-	`sha256:d6c29daa22b8ccd92d891ef3ed948ee4ad1029d73bd288343bd734f346003918`  
+		Last Modified: Thu, 12 Sep 2019 19:07:51 GMT  
+		Size: 12.8 MB (12775507 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:7fcedda38fc43f261352718d3e31c1eb9916ef8573f9d3582497a8f20b4c0acf`  
-		Last Modified: Wed, 14 Aug 2019 21:14:11 GMT  
-		Size: 2.8 KB (2801 bytes)  
+	-	`sha256:f4e689b1bdb75a28425d053926a28a3433c3e42ee3c4779af75164527f4cd935`  
+		Last Modified: Thu, 12 Sep 2019 19:07:49 GMT  
+		Size: 2.8 KB (2803 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:222d2d0bb8c9c0d1a5b56a8a2fd1210b425e3bface0ea3c4f7fd9c3613786cf9`  
-		Last Modified: Wed, 14 Aug 2019 21:14:20 GMT  
-		Size: 21.3 MB (21307794 bytes)  
+	-	`sha256:e451629ba2c10f629f14de69062b28c410fb9a761b53cb85cd669b89acc700db`  
+		Last Modified: Thu, 12 Sep 2019 19:07:57 GMT  
+		Size: 21.3 MB (21307814 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:dd05989816cee9d99f86346e1e40e19c4ec3e5cde58b80360a475eb8579c310d`  
-		Last Modified: Wed, 14 Aug 2019 21:14:12 GMT  
+	-	`sha256:329a2f69a0a05781ff8626209ca2d4c823945df6a588dfbd9d4e5535222ac6fe`  
+		Last Modified: Thu, 12 Sep 2019 19:07:49 GMT  
 		Size: 225.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:5e43854895248ff7e48ade26b198af3bb40eadf22e18c13df0956a9403b6807d`  
-		Last Modified: Wed, 14 Aug 2019 21:14:11 GMT  
-		Size: 230.0 B  
+	-	`sha256:f35c387b8c968a16135f7bfaa9a3fc9c0cd4a7767d44d3d28c91430bbbc4db71`  
+		Last Modified: Thu, 12 Sep 2019 19:07:49 GMT  
+		Size: 231.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `kapacitor:1.4.1-alpine`
@@ -668,7 +668,7 @@ CMD ["kapacitord"]
 ## `kapacitor:1.5`
 
 ```console
-$ docker pull kapacitor@sha256:4077b13c45f8bf0d653fe472f432701172a98d93b4125df43d88fa2b34368f3b
+$ docker pull kapacitor@sha256:ecea9b7d49ddf15c295bc23eb883bb20faea799472686a135ca99b2511a0eb8d
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -838,86 +838,86 @@ CMD ["kapacitord"]
 ### `kapacitor:1.5` - linux; arm64 variant v8
 
 ```console
-$ docker pull kapacitor@sha256:e71caf5fe1b08f89a860fbc4a541dfa6b11f03eed8da30dc5a58ce6afe15f7ca
+$ docker pull kapacitor@sha256:61f3fa1bacd4d9ad4e3459b433bdcfc756a0b4a35c0b8675b0da1ac8c1d71ddc
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **100.6 MB (100649234 bytes)**  
+-	Total Size: **100.7 MB (100661520 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:3be3cb65aba7cccb3e1da8a76d3b590acd75af910c7e2e04a2937acf8779d1f2`
+-	Image ID: `sha256:6fdc298c18f97832899e0117a97d5ad642819ad4f30caa19f625061d17389909`
 -	Entrypoint: `["\/entrypoint.sh"]`
 -	Default Command: `["kapacitord"]`
 
 ```dockerfile
-# Wed, 14 Aug 2019 00:42:54 GMT
-ADD file:705744f1d46153f7b1e4e803e92a622e76091e0c7812e893ccadf4c3fa3f7582 in / 
-# Wed, 14 Aug 2019 00:42:55 GMT
+# Wed, 11 Sep 2019 22:43:01 GMT
+ADD file:caf4d612b52451d22260b0d5cffb0fbb4b73aa3841a8a622c9a87923dee2f910 in / 
+# Wed, 11 Sep 2019 22:43:03 GMT
 CMD ["bash"]
-# Wed, 14 Aug 2019 02:36:32 GMT
+# Thu, 12 Sep 2019 00:46:51 GMT
 RUN apt-get update && apt-get install -y --no-install-recommends 		ca-certificates 		curl 		netbase 		wget 	&& rm -rf /var/lib/apt/lists/*
-# Wed, 14 Aug 2019 02:36:41 GMT
+# Thu, 12 Sep 2019 00:47:02 GMT
 RUN set -ex; 	if ! command -v gpg > /dev/null; then 		apt-get update; 		apt-get install -y --no-install-recommends 			gnupg 			dirmngr 		; 		rm -rf /var/lib/apt/lists/*; 	fi
-# Wed, 14 Aug 2019 21:13:39 GMT
+# Thu, 12 Sep 2019 19:06:49 GMT
 RUN DEBIAN_FRONTEND=noninteractive apt-get update &&     DEBIAN_FRONTEND=noninteractive apt-get install -y bash-completion &&     awk 'f{if(sub(/^#/,"",$0)==0){f=0}};/^# enable bash completion/{f=1};{print;}' /etc/bash.bashrc > /etc/bash.bashrc.new &&     mv /etc/bash.bashrc.new /etc/bash.bashrc
-# Wed, 14 Aug 2019 21:13:43 GMT
+# Thu, 12 Sep 2019 19:06:57 GMT
 RUN set -ex &&     for key in         05CE15085FC09D18E99EFB22684A14CF2582E0C5 ;     do         gpg --keyserver ha.pool.sks-keyservers.net --recv-keys "$key" ||         gpg --keyserver pgp.mit.edu --recv-keys "$key" ||         gpg --keyserver keyserver.pgp.com --recv-keys "$key" ;     done
-# Wed, 14 Aug 2019 21:13:56 GMT
+# Thu, 12 Sep 2019 19:07:31 GMT
 ENV KAPACITOR_VERSION=1.5.3
-# Wed, 14 Aug 2019 21:14:00 GMT
+# Thu, 12 Sep 2019 19:07:36 GMT
 RUN ARCH= && dpkgArch="$(dpkg --print-architecture)" &&     case "${dpkgArch##*-}" in       amd64) ARCH='amd64';;       arm64) ARCH='arm64';;       armhf) ARCH='armhf';;       armel) ARCH='armel';;       *)     echo "Unsupported architecture: ${dpkgArch}"; exit 1;;     esac &&     wget --no-verbose https://dl.influxdata.com/kapacitor/releases/kapacitor_${KAPACITOR_VERSION}_${ARCH}.deb.asc &&     wget --no-verbose https://dl.influxdata.com/kapacitor/releases/kapacitor_${KAPACITOR_VERSION}_${ARCH}.deb &&     gpg --batch --verify kapacitor_${KAPACITOR_VERSION}_${ARCH}.deb.asc kapacitor_${KAPACITOR_VERSION}_${ARCH}.deb &&     dpkg -i kapacitor_${KAPACITOR_VERSION}_${ARCH}.deb &&     rm -f kapacitor_${KAPACITOR_VERSION}_${ARCH}.deb*
-# Wed, 14 Aug 2019 21:14:01 GMT
+# Thu, 12 Sep 2019 19:07:36 GMT
 COPY file:9450c5dcbc0a583243f987f682dc6c44d9e4a3f1c31d1bb9957f313457e444ec in /etc/kapacitor/kapacitor.conf 
-# Wed, 14 Aug 2019 21:14:01 GMT
+# Thu, 12 Sep 2019 19:07:37 GMT
 EXPOSE 9092
-# Wed, 14 Aug 2019 21:14:01 GMT
+# Thu, 12 Sep 2019 19:07:38 GMT
 VOLUME [/var/lib/kapacitor]
-# Wed, 14 Aug 2019 21:14:02 GMT
+# Thu, 12 Sep 2019 19:07:38 GMT
 COPY file:a229567085df49450fcc70ed6d49efcbdfc41ca92b6c5bdb3b541cb803165dbc in /entrypoint.sh 
-# Wed, 14 Aug 2019 21:14:02 GMT
+# Thu, 12 Sep 2019 19:07:39 GMT
 ENTRYPOINT ["/entrypoint.sh"]
-# Wed, 14 Aug 2019 21:14:02 GMT
+# Thu, 12 Sep 2019 19:07:40 GMT
 CMD ["kapacitord"]
 ```
 
 -	Layers:
-	-	`sha256:c9a9b339897414ebcb758c313024f2e0cdd97ccd184a2db5d2fd418c3c37bf86`  
-		Last Modified: Wed, 14 Aug 2019 00:48:21 GMT  
-		Size: 43.1 MB (43140037 bytes)  
+	-	`sha256:815c1832d6513be8edd397e11041a4aee3f96dce52f0ebcb981c3b9cdd510b36`  
+		Last Modified: Wed, 11 Sep 2019 22:48:27 GMT  
+		Size: 43.1 MB (43144819 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:204078f7e04c7ae0e3fc1e45e88ad2cf14f9d83b2adc30919cd8ca34a215e6db`  
-		Last Modified: Wed, 14 Aug 2019 02:43:12 GMT  
-		Size: 9.7 MB (9737250 bytes)  
+	-	`sha256:f04bed802a875187697c84fbe66916965d4793e879ff5bb0b618d3cfb4967eea`  
+		Last Modified: Thu, 12 Sep 2019 00:56:15 GMT  
+		Size: 9.7 MB (9737882 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:d5243bb8f5f5e1041d372d7b9e139b07e15e943dd53d392ee5460eaf2ff10807`  
-		Last Modified: Wed, 14 Aug 2019 02:43:10 GMT  
-		Size: 4.1 MB (4094297 bytes)  
+	-	`sha256:6d5c571b36bfd171c2d8ed92043e8246a279ad06d7a71f3d7db36aa14117f1d7`  
+		Last Modified: Thu, 12 Sep 2019 00:56:14 GMT  
+		Size: 4.1 MB (4094344 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:4dd02aea919051c99f61c6418ca36a8eb65c0f28799cc719c401134362f30776`  
-		Last Modified: Wed, 14 Aug 2019 21:14:14 GMT  
-		Size: 12.8 MB (12768667 bytes)  
+	-	`sha256:d6c29daa22b8ccd92d891ef3ed948ee4ad1029d73bd288343bd734f346003918`  
+		Last Modified: Thu, 12 Sep 2019 19:07:51 GMT  
+		Size: 12.8 MB (12775507 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:7fcedda38fc43f261352718d3e31c1eb9916ef8573f9d3582497a8f20b4c0acf`  
-		Last Modified: Wed, 14 Aug 2019 21:14:11 GMT  
-		Size: 2.8 KB (2801 bytes)  
+	-	`sha256:f4e689b1bdb75a28425d053926a28a3433c3e42ee3c4779af75164527f4cd935`  
+		Last Modified: Thu, 12 Sep 2019 19:07:49 GMT  
+		Size: 2.8 KB (2803 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:a8e151cc62bd6e7dc4572f5f0fe72b51246b1297461514fd764407670c4fc977`  
-		Last Modified: Wed, 14 Aug 2019 21:14:35 GMT  
-		Size: 30.9 MB (30905725 bytes)  
+	-	`sha256:326dcff8272d0270f84126532ae4428aeec01bb6ffc2576142a335d407634c95`  
+		Last Modified: Thu, 12 Sep 2019 19:08:14 GMT  
+		Size: 30.9 MB (30905709 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:fb2d4b2617d2151dfab534ef587810e8988bb6520c3737f2c1401ceff94435cf`  
-		Last Modified: Wed, 14 Aug 2019 21:14:26 GMT  
-		Size: 226.0 B  
+	-	`sha256:d2bbeddc0d336bf4e7de37b45ca6c2dbad5181ddcfdc363b9dcbc3cc731c4307`  
+		Last Modified: Thu, 12 Sep 2019 19:08:05 GMT  
+		Size: 225.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:30382c0babe75375857339e4d434ef8fee69c27394cc35a8ca5727d2b0b31905`  
-		Last Modified: Wed, 14 Aug 2019 21:14:26 GMT  
+	-	`sha256:a672a4c778a59474e755d448e801d23d474f24902f248217e2c830a89da85906`  
+		Last Modified: Thu, 12 Sep 2019 19:08:05 GMT  
 		Size: 231.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `kapacitor:1.5.3`
 
 ```console
-$ docker pull kapacitor@sha256:4077b13c45f8bf0d653fe472f432701172a98d93b4125df43d88fa2b34368f3b
+$ docker pull kapacitor@sha256:ecea9b7d49ddf15c295bc23eb883bb20faea799472686a135ca99b2511a0eb8d
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -1087,79 +1087,79 @@ CMD ["kapacitord"]
 ### `kapacitor:1.5.3` - linux; arm64 variant v8
 
 ```console
-$ docker pull kapacitor@sha256:e71caf5fe1b08f89a860fbc4a541dfa6b11f03eed8da30dc5a58ce6afe15f7ca
+$ docker pull kapacitor@sha256:61f3fa1bacd4d9ad4e3459b433bdcfc756a0b4a35c0b8675b0da1ac8c1d71ddc
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **100.6 MB (100649234 bytes)**  
+-	Total Size: **100.7 MB (100661520 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:3be3cb65aba7cccb3e1da8a76d3b590acd75af910c7e2e04a2937acf8779d1f2`
+-	Image ID: `sha256:6fdc298c18f97832899e0117a97d5ad642819ad4f30caa19f625061d17389909`
 -	Entrypoint: `["\/entrypoint.sh"]`
 -	Default Command: `["kapacitord"]`
 
 ```dockerfile
-# Wed, 14 Aug 2019 00:42:54 GMT
-ADD file:705744f1d46153f7b1e4e803e92a622e76091e0c7812e893ccadf4c3fa3f7582 in / 
-# Wed, 14 Aug 2019 00:42:55 GMT
+# Wed, 11 Sep 2019 22:43:01 GMT
+ADD file:caf4d612b52451d22260b0d5cffb0fbb4b73aa3841a8a622c9a87923dee2f910 in / 
+# Wed, 11 Sep 2019 22:43:03 GMT
 CMD ["bash"]
-# Wed, 14 Aug 2019 02:36:32 GMT
+# Thu, 12 Sep 2019 00:46:51 GMT
 RUN apt-get update && apt-get install -y --no-install-recommends 		ca-certificates 		curl 		netbase 		wget 	&& rm -rf /var/lib/apt/lists/*
-# Wed, 14 Aug 2019 02:36:41 GMT
+# Thu, 12 Sep 2019 00:47:02 GMT
 RUN set -ex; 	if ! command -v gpg > /dev/null; then 		apt-get update; 		apt-get install -y --no-install-recommends 			gnupg 			dirmngr 		; 		rm -rf /var/lib/apt/lists/*; 	fi
-# Wed, 14 Aug 2019 21:13:39 GMT
+# Thu, 12 Sep 2019 19:06:49 GMT
 RUN DEBIAN_FRONTEND=noninteractive apt-get update &&     DEBIAN_FRONTEND=noninteractive apt-get install -y bash-completion &&     awk 'f{if(sub(/^#/,"",$0)==0){f=0}};/^# enable bash completion/{f=1};{print;}' /etc/bash.bashrc > /etc/bash.bashrc.new &&     mv /etc/bash.bashrc.new /etc/bash.bashrc
-# Wed, 14 Aug 2019 21:13:43 GMT
+# Thu, 12 Sep 2019 19:06:57 GMT
 RUN set -ex &&     for key in         05CE15085FC09D18E99EFB22684A14CF2582E0C5 ;     do         gpg --keyserver ha.pool.sks-keyservers.net --recv-keys "$key" ||         gpg --keyserver pgp.mit.edu --recv-keys "$key" ||         gpg --keyserver keyserver.pgp.com --recv-keys "$key" ;     done
-# Wed, 14 Aug 2019 21:13:56 GMT
+# Thu, 12 Sep 2019 19:07:31 GMT
 ENV KAPACITOR_VERSION=1.5.3
-# Wed, 14 Aug 2019 21:14:00 GMT
+# Thu, 12 Sep 2019 19:07:36 GMT
 RUN ARCH= && dpkgArch="$(dpkg --print-architecture)" &&     case "${dpkgArch##*-}" in       amd64) ARCH='amd64';;       arm64) ARCH='arm64';;       armhf) ARCH='armhf';;       armel) ARCH='armel';;       *)     echo "Unsupported architecture: ${dpkgArch}"; exit 1;;     esac &&     wget --no-verbose https://dl.influxdata.com/kapacitor/releases/kapacitor_${KAPACITOR_VERSION}_${ARCH}.deb.asc &&     wget --no-verbose https://dl.influxdata.com/kapacitor/releases/kapacitor_${KAPACITOR_VERSION}_${ARCH}.deb &&     gpg --batch --verify kapacitor_${KAPACITOR_VERSION}_${ARCH}.deb.asc kapacitor_${KAPACITOR_VERSION}_${ARCH}.deb &&     dpkg -i kapacitor_${KAPACITOR_VERSION}_${ARCH}.deb &&     rm -f kapacitor_${KAPACITOR_VERSION}_${ARCH}.deb*
-# Wed, 14 Aug 2019 21:14:01 GMT
+# Thu, 12 Sep 2019 19:07:36 GMT
 COPY file:9450c5dcbc0a583243f987f682dc6c44d9e4a3f1c31d1bb9957f313457e444ec in /etc/kapacitor/kapacitor.conf 
-# Wed, 14 Aug 2019 21:14:01 GMT
+# Thu, 12 Sep 2019 19:07:37 GMT
 EXPOSE 9092
-# Wed, 14 Aug 2019 21:14:01 GMT
+# Thu, 12 Sep 2019 19:07:38 GMT
 VOLUME [/var/lib/kapacitor]
-# Wed, 14 Aug 2019 21:14:02 GMT
+# Thu, 12 Sep 2019 19:07:38 GMT
 COPY file:a229567085df49450fcc70ed6d49efcbdfc41ca92b6c5bdb3b541cb803165dbc in /entrypoint.sh 
-# Wed, 14 Aug 2019 21:14:02 GMT
+# Thu, 12 Sep 2019 19:07:39 GMT
 ENTRYPOINT ["/entrypoint.sh"]
-# Wed, 14 Aug 2019 21:14:02 GMT
+# Thu, 12 Sep 2019 19:07:40 GMT
 CMD ["kapacitord"]
 ```
 
 -	Layers:
-	-	`sha256:c9a9b339897414ebcb758c313024f2e0cdd97ccd184a2db5d2fd418c3c37bf86`  
-		Last Modified: Wed, 14 Aug 2019 00:48:21 GMT  
-		Size: 43.1 MB (43140037 bytes)  
+	-	`sha256:815c1832d6513be8edd397e11041a4aee3f96dce52f0ebcb981c3b9cdd510b36`  
+		Last Modified: Wed, 11 Sep 2019 22:48:27 GMT  
+		Size: 43.1 MB (43144819 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:204078f7e04c7ae0e3fc1e45e88ad2cf14f9d83b2adc30919cd8ca34a215e6db`  
-		Last Modified: Wed, 14 Aug 2019 02:43:12 GMT  
-		Size: 9.7 MB (9737250 bytes)  
+	-	`sha256:f04bed802a875187697c84fbe66916965d4793e879ff5bb0b618d3cfb4967eea`  
+		Last Modified: Thu, 12 Sep 2019 00:56:15 GMT  
+		Size: 9.7 MB (9737882 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:d5243bb8f5f5e1041d372d7b9e139b07e15e943dd53d392ee5460eaf2ff10807`  
-		Last Modified: Wed, 14 Aug 2019 02:43:10 GMT  
-		Size: 4.1 MB (4094297 bytes)  
+	-	`sha256:6d5c571b36bfd171c2d8ed92043e8246a279ad06d7a71f3d7db36aa14117f1d7`  
+		Last Modified: Thu, 12 Sep 2019 00:56:14 GMT  
+		Size: 4.1 MB (4094344 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:4dd02aea919051c99f61c6418ca36a8eb65c0f28799cc719c401134362f30776`  
-		Last Modified: Wed, 14 Aug 2019 21:14:14 GMT  
-		Size: 12.8 MB (12768667 bytes)  
+	-	`sha256:d6c29daa22b8ccd92d891ef3ed948ee4ad1029d73bd288343bd734f346003918`  
+		Last Modified: Thu, 12 Sep 2019 19:07:51 GMT  
+		Size: 12.8 MB (12775507 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:7fcedda38fc43f261352718d3e31c1eb9916ef8573f9d3582497a8f20b4c0acf`  
-		Last Modified: Wed, 14 Aug 2019 21:14:11 GMT  
-		Size: 2.8 KB (2801 bytes)  
+	-	`sha256:f4e689b1bdb75a28425d053926a28a3433c3e42ee3c4779af75164527f4cd935`  
+		Last Modified: Thu, 12 Sep 2019 19:07:49 GMT  
+		Size: 2.8 KB (2803 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:a8e151cc62bd6e7dc4572f5f0fe72b51246b1297461514fd764407670c4fc977`  
-		Last Modified: Wed, 14 Aug 2019 21:14:35 GMT  
-		Size: 30.9 MB (30905725 bytes)  
+	-	`sha256:326dcff8272d0270f84126532ae4428aeec01bb6ffc2576142a335d407634c95`  
+		Last Modified: Thu, 12 Sep 2019 19:08:14 GMT  
+		Size: 30.9 MB (30905709 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:fb2d4b2617d2151dfab534ef587810e8988bb6520c3737f2c1401ceff94435cf`  
-		Last Modified: Wed, 14 Aug 2019 21:14:26 GMT  
-		Size: 226.0 B  
+	-	`sha256:d2bbeddc0d336bf4e7de37b45ca6c2dbad5181ddcfdc363b9dcbc3cc731c4307`  
+		Last Modified: Thu, 12 Sep 2019 19:08:05 GMT  
+		Size: 225.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:30382c0babe75375857339e4d434ef8fee69c27394cc35a8ca5727d2b0b31905`  
-		Last Modified: Wed, 14 Aug 2019 21:14:26 GMT  
+	-	`sha256:a672a4c778a59474e755d448e801d23d474f24902f248217e2c830a89da85906`  
+		Last Modified: Thu, 12 Sep 2019 19:08:05 GMT  
 		Size: 231.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
@@ -1397,7 +1397,7 @@ CMD ["kapacitord"]
 ## `kapacitor:latest`
 
 ```console
-$ docker pull kapacitor@sha256:4077b13c45f8bf0d653fe472f432701172a98d93b4125df43d88fa2b34368f3b
+$ docker pull kapacitor@sha256:ecea9b7d49ddf15c295bc23eb883bb20faea799472686a135ca99b2511a0eb8d
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -1567,78 +1567,78 @@ CMD ["kapacitord"]
 ### `kapacitor:latest` - linux; arm64 variant v8
 
 ```console
-$ docker pull kapacitor@sha256:e71caf5fe1b08f89a860fbc4a541dfa6b11f03eed8da30dc5a58ce6afe15f7ca
+$ docker pull kapacitor@sha256:61f3fa1bacd4d9ad4e3459b433bdcfc756a0b4a35c0b8675b0da1ac8c1d71ddc
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **100.6 MB (100649234 bytes)**  
+-	Total Size: **100.7 MB (100661520 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:3be3cb65aba7cccb3e1da8a76d3b590acd75af910c7e2e04a2937acf8779d1f2`
+-	Image ID: `sha256:6fdc298c18f97832899e0117a97d5ad642819ad4f30caa19f625061d17389909`
 -	Entrypoint: `["\/entrypoint.sh"]`
 -	Default Command: `["kapacitord"]`
 
 ```dockerfile
-# Wed, 14 Aug 2019 00:42:54 GMT
-ADD file:705744f1d46153f7b1e4e803e92a622e76091e0c7812e893ccadf4c3fa3f7582 in / 
-# Wed, 14 Aug 2019 00:42:55 GMT
+# Wed, 11 Sep 2019 22:43:01 GMT
+ADD file:caf4d612b52451d22260b0d5cffb0fbb4b73aa3841a8a622c9a87923dee2f910 in / 
+# Wed, 11 Sep 2019 22:43:03 GMT
 CMD ["bash"]
-# Wed, 14 Aug 2019 02:36:32 GMT
+# Thu, 12 Sep 2019 00:46:51 GMT
 RUN apt-get update && apt-get install -y --no-install-recommends 		ca-certificates 		curl 		netbase 		wget 	&& rm -rf /var/lib/apt/lists/*
-# Wed, 14 Aug 2019 02:36:41 GMT
+# Thu, 12 Sep 2019 00:47:02 GMT
 RUN set -ex; 	if ! command -v gpg > /dev/null; then 		apt-get update; 		apt-get install -y --no-install-recommends 			gnupg 			dirmngr 		; 		rm -rf /var/lib/apt/lists/*; 	fi
-# Wed, 14 Aug 2019 21:13:39 GMT
+# Thu, 12 Sep 2019 19:06:49 GMT
 RUN DEBIAN_FRONTEND=noninteractive apt-get update &&     DEBIAN_FRONTEND=noninteractive apt-get install -y bash-completion &&     awk 'f{if(sub(/^#/,"",$0)==0){f=0}};/^# enable bash completion/{f=1};{print;}' /etc/bash.bashrc > /etc/bash.bashrc.new &&     mv /etc/bash.bashrc.new /etc/bash.bashrc
-# Wed, 14 Aug 2019 21:13:43 GMT
+# Thu, 12 Sep 2019 19:06:57 GMT
 RUN set -ex &&     for key in         05CE15085FC09D18E99EFB22684A14CF2582E0C5 ;     do         gpg --keyserver ha.pool.sks-keyservers.net --recv-keys "$key" ||         gpg --keyserver pgp.mit.edu --recv-keys "$key" ||         gpg --keyserver keyserver.pgp.com --recv-keys "$key" ;     done
-# Wed, 14 Aug 2019 21:13:56 GMT
+# Thu, 12 Sep 2019 19:07:31 GMT
 ENV KAPACITOR_VERSION=1.5.3
-# Wed, 14 Aug 2019 21:14:00 GMT
+# Thu, 12 Sep 2019 19:07:36 GMT
 RUN ARCH= && dpkgArch="$(dpkg --print-architecture)" &&     case "${dpkgArch##*-}" in       amd64) ARCH='amd64';;       arm64) ARCH='arm64';;       armhf) ARCH='armhf';;       armel) ARCH='armel';;       *)     echo "Unsupported architecture: ${dpkgArch}"; exit 1;;     esac &&     wget --no-verbose https://dl.influxdata.com/kapacitor/releases/kapacitor_${KAPACITOR_VERSION}_${ARCH}.deb.asc &&     wget --no-verbose https://dl.influxdata.com/kapacitor/releases/kapacitor_${KAPACITOR_VERSION}_${ARCH}.deb &&     gpg --batch --verify kapacitor_${KAPACITOR_VERSION}_${ARCH}.deb.asc kapacitor_${KAPACITOR_VERSION}_${ARCH}.deb &&     dpkg -i kapacitor_${KAPACITOR_VERSION}_${ARCH}.deb &&     rm -f kapacitor_${KAPACITOR_VERSION}_${ARCH}.deb*
-# Wed, 14 Aug 2019 21:14:01 GMT
+# Thu, 12 Sep 2019 19:07:36 GMT
 COPY file:9450c5dcbc0a583243f987f682dc6c44d9e4a3f1c31d1bb9957f313457e444ec in /etc/kapacitor/kapacitor.conf 
-# Wed, 14 Aug 2019 21:14:01 GMT
+# Thu, 12 Sep 2019 19:07:37 GMT
 EXPOSE 9092
-# Wed, 14 Aug 2019 21:14:01 GMT
+# Thu, 12 Sep 2019 19:07:38 GMT
 VOLUME [/var/lib/kapacitor]
-# Wed, 14 Aug 2019 21:14:02 GMT
+# Thu, 12 Sep 2019 19:07:38 GMT
 COPY file:a229567085df49450fcc70ed6d49efcbdfc41ca92b6c5bdb3b541cb803165dbc in /entrypoint.sh 
-# Wed, 14 Aug 2019 21:14:02 GMT
+# Thu, 12 Sep 2019 19:07:39 GMT
 ENTRYPOINT ["/entrypoint.sh"]
-# Wed, 14 Aug 2019 21:14:02 GMT
+# Thu, 12 Sep 2019 19:07:40 GMT
 CMD ["kapacitord"]
 ```
 
 -	Layers:
-	-	`sha256:c9a9b339897414ebcb758c313024f2e0cdd97ccd184a2db5d2fd418c3c37bf86`  
-		Last Modified: Wed, 14 Aug 2019 00:48:21 GMT  
-		Size: 43.1 MB (43140037 bytes)  
+	-	`sha256:815c1832d6513be8edd397e11041a4aee3f96dce52f0ebcb981c3b9cdd510b36`  
+		Last Modified: Wed, 11 Sep 2019 22:48:27 GMT  
+		Size: 43.1 MB (43144819 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:204078f7e04c7ae0e3fc1e45e88ad2cf14f9d83b2adc30919cd8ca34a215e6db`  
-		Last Modified: Wed, 14 Aug 2019 02:43:12 GMT  
-		Size: 9.7 MB (9737250 bytes)  
+	-	`sha256:f04bed802a875187697c84fbe66916965d4793e879ff5bb0b618d3cfb4967eea`  
+		Last Modified: Thu, 12 Sep 2019 00:56:15 GMT  
+		Size: 9.7 MB (9737882 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:d5243bb8f5f5e1041d372d7b9e139b07e15e943dd53d392ee5460eaf2ff10807`  
-		Last Modified: Wed, 14 Aug 2019 02:43:10 GMT  
-		Size: 4.1 MB (4094297 bytes)  
+	-	`sha256:6d5c571b36bfd171c2d8ed92043e8246a279ad06d7a71f3d7db36aa14117f1d7`  
+		Last Modified: Thu, 12 Sep 2019 00:56:14 GMT  
+		Size: 4.1 MB (4094344 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:4dd02aea919051c99f61c6418ca36a8eb65c0f28799cc719c401134362f30776`  
-		Last Modified: Wed, 14 Aug 2019 21:14:14 GMT  
-		Size: 12.8 MB (12768667 bytes)  
+	-	`sha256:d6c29daa22b8ccd92d891ef3ed948ee4ad1029d73bd288343bd734f346003918`  
+		Last Modified: Thu, 12 Sep 2019 19:07:51 GMT  
+		Size: 12.8 MB (12775507 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:7fcedda38fc43f261352718d3e31c1eb9916ef8573f9d3582497a8f20b4c0acf`  
-		Last Modified: Wed, 14 Aug 2019 21:14:11 GMT  
-		Size: 2.8 KB (2801 bytes)  
+	-	`sha256:f4e689b1bdb75a28425d053926a28a3433c3e42ee3c4779af75164527f4cd935`  
+		Last Modified: Thu, 12 Sep 2019 19:07:49 GMT  
+		Size: 2.8 KB (2803 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:a8e151cc62bd6e7dc4572f5f0fe72b51246b1297461514fd764407670c4fc977`  
-		Last Modified: Wed, 14 Aug 2019 21:14:35 GMT  
-		Size: 30.9 MB (30905725 bytes)  
+	-	`sha256:326dcff8272d0270f84126532ae4428aeec01bb6ffc2576142a335d407634c95`  
+		Last Modified: Thu, 12 Sep 2019 19:08:14 GMT  
+		Size: 30.9 MB (30905709 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:fb2d4b2617d2151dfab534ef587810e8988bb6520c3737f2c1401ceff94435cf`  
-		Last Modified: Wed, 14 Aug 2019 21:14:26 GMT  
-		Size: 226.0 B  
+	-	`sha256:d2bbeddc0d336bf4e7de37b45ca6c2dbad5181ddcfdc363b9dcbc3cc731c4307`  
+		Last Modified: Thu, 12 Sep 2019 19:08:05 GMT  
+		Size: 225.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:30382c0babe75375857339e4d434ef8fee69c27394cc35a8ca5727d2b0b31905`  
-		Last Modified: Wed, 14 Aug 2019 21:14:26 GMT  
+	-	`sha256:a672a4c778a59474e755d448e801d23d474f24902f248217e2c830a89da85906`  
+		Last Modified: Thu, 12 Sep 2019 19:08:05 GMT  
 		Size: 231.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
