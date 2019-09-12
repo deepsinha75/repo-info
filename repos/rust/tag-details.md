@@ -772,11 +772,21 @@ RUN set -eux;     dpkgArch="$(dpkg --print-architecture)";     case "${dpkgArch#
 
 ## `rust:1.37.0-alpine`
 
-**does not exist** (yet?)
+```console
+$ docker pull rust@sha256:a8409dff6597f2ef5f7ecd3c672671bb2af9a390073efd74f95c54aa41cba22a
+```
+
+-	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
+-	Platforms:
 
 ## `rust:1.37.0-alpine3.10`
 
-**does not exist** (yet?)
+```console
+$ docker pull rust@sha256:a8409dff6597f2ef5f7ecd3c672671bb2af9a390073efd74f95c54aa41cba22a
+```
+
+-	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
+-	Platforms:
 
 ## `rust:1.37.0-buster`
 
@@ -1717,11 +1727,21 @@ RUN set -eux;     dpkgArch="$(dpkg --print-architecture)";     case "${dpkgArch#
 
 ## `rust:1.37-alpine`
 
-**does not exist** (yet?)
+```console
+$ docker pull rust@sha256:a8409dff6597f2ef5f7ecd3c672671bb2af9a390073efd74f95c54aa41cba22a
+```
+
+-	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
+-	Platforms:
 
 ## `rust:1.37-alpine3.10`
 
-**does not exist** (yet?)
+```console
+$ docker pull rust@sha256:a8409dff6597f2ef5f7ecd3c672671bb2af9a390073efd74f95c54aa41cba22a
+```
+
+-	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
+-	Platforms:
 
 ## `rust:1.37-buster`
 
@@ -2662,11 +2682,21 @@ RUN set -eux;     dpkgArch="$(dpkg --print-architecture)";     case "${dpkgArch#
 
 ## `rust:1-alpine`
 
-**does not exist** (yet?)
+```console
+$ docker pull rust@sha256:a8409dff6597f2ef5f7ecd3c672671bb2af9a390073efd74f95c54aa41cba22a
+```
+
+-	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
+-	Platforms:
 
 ## `rust:1-alpine3.10`
 
-**does not exist** (yet?)
+```console
+$ docker pull rust@sha256:a8409dff6597f2ef5f7ecd3c672671bb2af9a390073efd74f95c54aa41cba22a
+```
+
+-	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
+-	Platforms:
 
 ## `rust:1-buster`
 
@@ -3607,11 +3637,21 @@ RUN set -eux;     dpkgArch="$(dpkg --print-architecture)";     case "${dpkgArch#
 
 ## `rust:alpine`
 
-**does not exist** (yet?)
+```console
+$ docker pull rust@sha256:a8409dff6597f2ef5f7ecd3c672671bb2af9a390073efd74f95c54aa41cba22a
+```
+
+-	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
+-	Platforms:
 
 ## `rust:alpine3.10`
 
-**does not exist** (yet?)
+```console
+$ docker pull rust@sha256:a8409dff6597f2ef5f7ecd3c672671bb2af9a390073efd74f95c54aa41cba22a
+```
+
+-	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
+-	Platforms:
 
 ## `rust:buster`
 
