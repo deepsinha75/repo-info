@@ -5,21 +5,29 @@
 -	[`rust:1`](#rust1)
 -	[`rust:1.37`](#rust137)
 -	[`rust:1.37.0`](#rust1370)
+-	[`rust:1.37.0-alpine`](#rust1370-alpine)
+-	[`rust:1.37.0-alpine3.10`](#rust1370-alpine310)
 -	[`rust:1.37.0-buster`](#rust1370-buster)
 -	[`rust:1.37.0-slim`](#rust1370-slim)
 -	[`rust:1.37.0-slim-buster`](#rust1370-slim-buster)
 -	[`rust:1.37.0-slim-stretch`](#rust1370-slim-stretch)
 -	[`rust:1.37.0-stretch`](#rust1370-stretch)
+-	[`rust:1.37-alpine`](#rust137-alpine)
+-	[`rust:1.37-alpine3.10`](#rust137-alpine310)
 -	[`rust:1.37-buster`](#rust137-buster)
 -	[`rust:1.37-slim`](#rust137-slim)
 -	[`rust:1.37-slim-buster`](#rust137-slim-buster)
 -	[`rust:1.37-slim-stretch`](#rust137-slim-stretch)
 -	[`rust:1.37-stretch`](#rust137-stretch)
+-	[`rust:1-alpine`](#rust1-alpine)
+-	[`rust:1-alpine3.10`](#rust1-alpine310)
 -	[`rust:1-buster`](#rust1-buster)
 -	[`rust:1-slim`](#rust1-slim)
 -	[`rust:1-slim-buster`](#rust1-slim-buster)
 -	[`rust:1-slim-stretch`](#rust1-slim-stretch)
 -	[`rust:1-stretch`](#rust1-stretch)
+-	[`rust:alpine`](#rustalpine)
+-	[`rust:alpine3.10`](#rustalpine310)
 -	[`rust:buster`](#rustbuster)
 -	[`rust:latest`](#rustlatest)
 -	[`rust:slim`](#rustslim)
@@ -761,6 +769,14 @@ RUN set -eux;     dpkgArch="$(dpkg --print-architecture)";     case "${dpkgArch#
 		Last Modified: Thu, 12 Sep 2019 14:20:47 GMT  
 		Size: 271.4 MB (271352445 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+
+## `rust:1.37.0-alpine`
+
+**does not exist** (yet?)
+
+## `rust:1.37.0-alpine3.10`
+
+**does not exist** (yet?)
 
 ## `rust:1.37.0-buster`
 
@@ -1699,6 +1715,14 @@ RUN set -eux;     dpkgArch="$(dpkg --print-architecture)";     case "${dpkgArch#
 		Size: 271.4 MB (271353888 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
+## `rust:1.37-alpine`
+
+**does not exist** (yet?)
+
+## `rust:1.37-alpine3.10`
+
+**does not exist** (yet?)
+
 ## `rust:1.37-buster`
 
 ```console
@@ -2636,6 +2660,14 @@ RUN set -eux;     dpkgArch="$(dpkg --print-architecture)";     case "${dpkgArch#
 		Size: 271.4 MB (271353888 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
+## `rust:1-alpine`
+
+**does not exist** (yet?)
+
+## `rust:1-alpine3.10`
+
+**does not exist** (yet?)
+
 ## `rust:1-buster`
 
 ```console
@@ -3572,6 +3604,14 @@ RUN set -eux;     dpkgArch="$(dpkg --print-architecture)";     case "${dpkgArch#
 		Last Modified: Thu, 12 Sep 2019 14:19:33 GMT  
 		Size: 271.4 MB (271353888 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+
+## `rust:alpine`
+
+**does not exist** (yet?)
+
+## `rust:alpine3.10`
+
+**does not exist** (yet?)
 
 ## `rust:buster`
 
