@@ -2,8 +2,8 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:c34ee5c5cef591b9b8fd58aa500f35865c0481ccabde473105cd362f87e5619a`
-- Created: `2019-08-21T01:15:26.907139602Z`
+- Image ID: `sha256:e5754e4530b45b313a6cd852cff66b7a8fa8728e1b54991896fbf7279336da44`
+- Created: `2019-09-11T11:31:09.431063981Z`
 - Virtual Size: ~ 382.64 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
@@ -81,13 +81,9 @@ Licenses: (parsed from: `/usr/share/doc/apt/copyright`, `/usr/share/doc/libapt-p
 - `GPL-2`
 - `GPLv2+`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris apt=1.6.11
-'http://archive.ubuntu.com/ubuntu/pool/main/a/apt/apt_1.6.11.dsc' apt_1.6.11.dsc 2796 SHA256:eb864de476a694c7cc78272927bd8bc70e32c1c31efc18bd7bdc5012f7303e6a
-'http://archive.ubuntu.com/ubuntu/pool/main/a/apt/apt_1.6.11.tar.xz' apt_1.6.11.tar.xz 2156840 SHA256:a10b574b34114c17a4e04dda7e3c5c5bd4799fe26e9eaf609ee67f2471b1ea6e
-```
 
 ### `dpkg` source package: `attr=1:2.4.47-2build1`
 
@@ -281,14 +277,9 @@ Licenses: (parsed from: `/usr/share/doc/curl/copyright`, `/usr/share/doc/libcurl
 - `other`
 - `public-domain`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris curl=7.58.0-2ubuntu3.7
-'http://archive.ubuntu.com/ubuntu/pool/main/c/curl/curl_7.58.0-2ubuntu3.7.dsc' curl_7.58.0-2ubuntu3.7.dsc 2777 SHA256:67aef5e2460caaa322b71c80b63969e7f758f6a0e9732a640bd62d9ce84de0d3
-'http://archive.ubuntu.com/ubuntu/pool/main/c/curl/curl_7.58.0.orig.tar.gz' curl_7.58.0.orig.tar.gz 3879728 SHA256:cc245bf9a1a42a45df491501d97d5593392a03f7b4f07b952793518d97666115
-'http://archive.ubuntu.com/ubuntu/pool/main/c/curl/curl_7.58.0-2ubuntu3.7.debian.tar.xz' curl_7.58.0-2ubuntu3.7.debian.tar.xz 39320 SHA256:bb67dc7f8dc7e9ec52eb3cc9ece4d47f861006452ee01446d7bac27754724c86
-```
 
 ### `dpkg` source package: `cyrus-sasl2=2.1.27~101-g0780600+dfsg-3ubuntu2`
 
