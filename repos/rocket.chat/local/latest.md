@@ -2,9 +2,9 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:bef1a061a39da9db7a65c3f84d67d9ad64d34ae40e925b8f3f83244d9e1fa0ac`
-- Created: `2019-08-15T23:45:10.38953921Z`
-- Virtual Size: ~ 705.66 Mb  
+- Image ID: `sha256:8db3215d5c11300de680b83723c6a57e592c99cc7ef6bd30bb540e48d1a8c032`
+- Created: `2019-09-12T19:08:19.890808486Z`
+- Virtual Size: ~ 705.65 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Command: `["node","main.js"]`
@@ -1572,11 +1572,11 @@ Other potentially useful URLs:
 - https://sources.debian.net/src/nettle/2.7.1-5+deb8u2/debian/copyright/ (for direct copyright/license information)
 - http://snapshot.debian.org/package/nettle/2.7.1-5+deb8u2/ (for access to the source package after it no longer exists in the archive)
 
-### `dpkg` source package: `openldap=2.4.40+dfsg-1+deb8u4`
+### `dpkg` source package: `openldap=2.4.40+dfsg-1+deb8u5`
 
 Binary Packages:
 
-- `libldap-2.4-2:amd64=2.4.40+dfsg-1+deb8u4`
+- `libldap-2.4-2:amd64=2.4.40+dfsg-1+deb8u5`
 
 **WARNING:** unable to detect licenses! (package likely not compliant with DEP-5)  
 If source is available (seen below), check the contents of `debian/copyright` within it.
@@ -1585,17 +1585,17 @@ If source is available (seen below), check the contents of `debian/copyright` wi
 Source:
 
 ```console
-$ apt-get source -qq --print-uris openldap=2.4.40+dfsg-1+deb8u4
-'http://deb.debian.org/debian/pool/main/o/openldap/openldap_2.4.40+dfsg-1+deb8u4.dsc' openldap_2.4.40+dfsg-1+deb8u4.dsc 2856 SHA256:adb061ec11d3ec69644919ff7a35ae451c30a0891c269fe00b5043649083bcba
-'http://deb.debian.org/debian/pool/main/o/openldap/openldap_2.4.40+dfsg.orig.tar.gz' openldap_2.4.40+dfsg.orig.tar.gz 4797667 SHA256:86c0326dc3dc5f1a9b3c25f7106b96f3eafcdf5da090b1fc586dec57d56e0e7f
-'http://deb.debian.org/debian/pool/main/o/openldap/openldap_2.4.40+dfsg-1+deb8u4.diff.gz' openldap_2.4.40+dfsg-1+deb8u4.diff.gz 181350 SHA256:dffbdc8a502302724d3b2faf1c08a0383daf41cc690ffac47516813048b7d372
+$ apt-get source -qq --print-uris openldap=2.4.40+dfsg-1+deb8u5
+'http://security.debian.org/debian-security/pool/updates/main/o/openldap/openldap_2.4.40+dfsg-1+deb8u5.dsc' openldap_2.4.40+dfsg-1+deb8u5.dsc 2986 SHA256:9a20ba826557d4adacd51b31000ac006514ffa072aa8a75f9a6da5496606260f
+'http://security.debian.org/debian-security/pool/updates/main/o/openldap/openldap_2.4.40+dfsg.orig.tar.gz' openldap_2.4.40+dfsg.orig.tar.gz 4797667 SHA256:86c0326dc3dc5f1a9b3c25f7106b96f3eafcdf5da090b1fc586dec57d56e0e7f
+'http://security.debian.org/debian-security/pool/updates/main/o/openldap/openldap_2.4.40+dfsg-1+deb8u5.diff.gz' openldap_2.4.40+dfsg-1+deb8u5.diff.gz 184219 SHA256:a9836c1dbd548a6525964c3a128267834b004d1c467e27a2b63dd79dc4625072
 ```
 
 Other potentially useful URLs:
 
-- https://sources.debian.net/src/openldap/2.4.40+dfsg-1+deb8u4/ (for browsing the source)
-- https://sources.debian.net/src/openldap/2.4.40+dfsg-1+deb8u4/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/openldap/2.4.40+dfsg-1+deb8u4/ (for access to the source package after it no longer exists in the archive)
+- https://sources.debian.net/src/openldap/2.4.40+dfsg-1+deb8u5/ (for browsing the source)
+- https://sources.debian.net/src/openldap/2.4.40+dfsg-1+deb8u5/debian/copyright/ (for direct copyright/license information)
+- http://snapshot.debian.org/package/openldap/2.4.40+dfsg-1+deb8u5/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `openssl=1.0.1t-1+deb8u11`
 
