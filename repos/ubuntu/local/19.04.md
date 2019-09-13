@@ -66,13 +66,13 @@ Licenses: (parsed from: `/usr/share/doc/apt/copyright`, `/usr/share/doc/libapt-p
 - `GPL-2`
 - `GPLv2+`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris apt=1.8.1
-'http://archive.ubuntu.com/ubuntu/pool/main/a/apt/apt_1.8.1.dsc' apt_1.8.1.dsc 2766 SHA256:d284d6e879d696092d0975042dfb5a59b7c3adae352a67c01cee06a74549e66c
-'http://archive.ubuntu.com/ubuntu/pool/main/a/apt/apt_1.8.1.tar.xz' apt_1.8.1.tar.xz 2172316 SHA256:fc7ca9a3eb08716121209fb39f4a62c97bcb2c85a9648ef801106e330be69227
-```
+The source package *may* still be available for download from:
+
+- http://snapshot.debian.org/package/apt/1.8.1/
+
 
 ### `dpkg` source package: `attr=1:2.4.48-4`
 
