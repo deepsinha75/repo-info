@@ -106,13 +106,13 @@ Licenses: (parsed from: `/usr/share/doc/apt/copyright`, `/usr/share/doc/libapt-p
 - `GPL-2`
 - `GPLv2+`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris apt=1.8.1
-'http://archive.ubuntu.com/ubuntu/pool/main/a/apt/apt_1.8.1.dsc' apt_1.8.1.dsc 2766 SHA256:d284d6e879d696092d0975042dfb5a59b7c3adae352a67c01cee06a74549e66c
-'http://archive.ubuntu.com/ubuntu/pool/main/a/apt/apt_1.8.1.tar.xz' apt_1.8.1.tar.xz 2172316 SHA256:fc7ca9a3eb08716121209fb39f4a62c97bcb2c85a9648ef801106e330be69227
-```
+The source package *may* still be available for download from:
+
+- http://snapshot.debian.org/package/apt/1.8.1/
+
 
 ### `dpkg` source package: `attr=1:2.4.48-4`
 
@@ -350,14 +350,9 @@ Licenses: (parsed from: `/usr/share/doc/curl/copyright`, `/usr/share/doc/libcurl
 - `other`
 - `public-domain`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris curl=7.64.0-2ubuntu1.1
-'http://archive.ubuntu.com/ubuntu/pool/main/c/curl/curl_7.64.0-2ubuntu1.1.dsc' curl_7.64.0-2ubuntu1.1.dsc 2774 SHA256:1435135b07b5ee5948e5a2842c3756eee1563658bb13a9a04855f55e81ffc9a1
-'http://archive.ubuntu.com/ubuntu/pool/main/c/curl/curl_7.64.0.orig.tar.gz' curl_7.64.0.orig.tar.gz 4032645 SHA256:cb90d2eb74d4e358c1ed1489f8e3af96b50ea4374ad71f143fa4595e998d81b5
-'http://archive.ubuntu.com/ubuntu/pool/main/c/curl/curl_7.64.0-2ubuntu1.1.debian.tar.xz' curl_7.64.0-2ubuntu1.1.debian.tar.xz 32680 SHA256:f17d052d985489c13529ac2a0999dc94ce09becabbe6a5014cb2ce263562a429
-```
 
 ### `dpkg` source package: `cyrus-sasl2=2.1.27+dfsg-1`
 
@@ -531,14 +526,9 @@ Licenses: (parsed from: `/usr/share/doc/libexpat1/copyright`)
 
 - `MIT`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris expat=2.2.6-1ubuntu0.19.04
-'http://archive.ubuntu.com/ubuntu/pool/main/e/expat/expat_2.2.6-1ubuntu0.19.04.dsc' expat_2.2.6-1ubuntu0.19.04.dsc 2064 SHA256:1e0a8705093c4a4273685ae26d4f869ca8f375451deab1f07fc12e5ed46b79ed
-'http://archive.ubuntu.com/ubuntu/pool/main/e/expat/expat_2.2.6.orig.tar.gz' expat_2.2.6.orig.tar.gz 8275473 SHA256:574499cba22a599393e28d99ecfa1e7fc85be7d6651d543045244d5b561cb7ff
-'http://archive.ubuntu.com/ubuntu/pool/main/e/expat/expat_2.2.6-1ubuntu0.19.04.debian.tar.xz' expat_2.2.6-1ubuntu0.19.04.debian.tar.xz 11200 SHA256:167eef0af47e152b1311aa3cbf0b16b9342091aec5f712db0c4937babb6db1bd
-```
 
 ### `dpkg` source package: `findutils=4.6.0+git+20190209-2`
 
