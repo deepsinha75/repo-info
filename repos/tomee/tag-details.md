@@ -16,6 +16,9 @@
 -	[`tomee:8-jre-7.0.5-plume`](#tomee8-jre-705-plume)
 -	[`tomee:8-jre-7.0.5-plus`](#tomee8-jre-705-plus)
 -	[`tomee:8-jre-7.0.5-webprofile`](#tomee8-jre-705-webprofile)
+-	[`tomee:8-jre-7.0.6-plume`](#tomee8-jre-706-plume)
+-	[`tomee:8-jre-7.0.6-plus`](#tomee8-jre-706-plus)
+-	[`tomee:8-jre-7.0.6-webprofile`](#tomee8-jre-706-webprofile)
 -	[`tomee:8-jre-7.1.0-microprofile`](#tomee8-jre-710-microprofile)
 -	[`tomee:8-jre-7.1.0-plume`](#tomee8-jre-710-plume)
 -	[`tomee:8-jre-7.1.0-plus`](#tomee8-jre-710-plus)
@@ -1537,6 +1540,18 @@ CMD ["catalina.sh" "run"]
 		Last Modified: Fri, 13 Sep 2019 05:44:57 GMT  
 		Size: 40.5 MB (40486751 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+
+## `tomee:8-jre-7.0.6-plume`
+
+**does not exist** (yet?)
+
+## `tomee:8-jre-7.0.6-plus`
+
+**does not exist** (yet?)
+
+## `tomee:8-jre-7.0.6-webprofile`
+
+**does not exist** (yet?)
 
 ## `tomee:8-jre-7.1.0-microprofile`
 
