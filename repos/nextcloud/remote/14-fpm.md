@@ -1,7 +1,7 @@
 ## `nextcloud:14-fpm`
 
 ```console
-$ docker pull nextcloud@sha256:7af8d4dd979c3dd19d928100e5e20cc4552967ac95a086083124e517d3b813d6
+$ docker pull nextcloud@sha256:cd12902c5bcacbd1c4cfb5ebded0a06ff4745d3634c7c7d0bc151e9045bdb7c3
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -338,323 +338,323 @@ CMD ["php-fpm"]
 ### `nextcloud:14-fpm` - linux; arm variant v7
 
 ```console
-$ docker pull nextcloud@sha256:0b4d107156e1decb6abf11c6cbd5cebe5fce1f4744ac70784fcb18ee72c365a7
+$ docker pull nextcloud@sha256:217b0d7fe50744f2d68c30055ed98e6f1808809dead1e9d8a2a3eeaeca260960
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **197.0 MB (196976224 bytes)**  
+-	Total Size: **197.0 MB (196978354 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:1537eb1540a594b59faee17f7b0614e2f589e8e5740fb5c3363700515ab6631d`
+-	Image ID: `sha256:7cdf1bf207936b564b9142945868858a9b367d09edd815f4402aafeedf9ce79c`
 -	Entrypoint: `["\/entrypoint.sh"]`
 -	Default Command: `["php-fpm"]`
 
 ```dockerfile
-# Wed, 14 Aug 2019 01:00:08 GMT
-ADD file:4b827be442647e4265278c7c35a3b38d13b5eb2eccdd246dc4ba05bbd48e8079 in / 
-# Wed, 14 Aug 2019 01:00:09 GMT
+# Wed, 11 Sep 2019 22:59:13 GMT
+ADD file:3d41286b4121a968f4d314e01bd32eb1d9b8f91ad7336fee8516e888ca11a306 in / 
+# Wed, 11 Sep 2019 22:59:14 GMT
 CMD ["bash"]
-# Wed, 14 Aug 2019 13:28:20 GMT
+# Thu, 12 Sep 2019 08:44:16 GMT
 RUN set -eux; 	{ 		echo 'Package: php*'; 		echo 'Pin: release *'; 		echo 'Pin-Priority: -1'; 	} > /etc/apt/preferences.d/no-debian-php
-# Wed, 14 Aug 2019 13:28:21 GMT
+# Thu, 12 Sep 2019 08:44:17 GMT
 ENV PHPIZE_DEPS=autoconf 		dpkg-dev 		file 		g++ 		gcc 		libc-dev 		make 		pkg-config 		re2c
-# Wed, 14 Aug 2019 13:28:52 GMT
+# Thu, 12 Sep 2019 08:44:58 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		$PHPIZE_DEPS 		ca-certificates 		curl 		xz-utils 	; 	rm -rf /var/lib/apt/lists/*
-# Wed, 14 Aug 2019 13:28:53 GMT
+# Thu, 12 Sep 2019 08:45:01 GMT
 ENV PHP_INI_DIR=/usr/local/etc/php
-# Wed, 14 Aug 2019 13:28:54 GMT
+# Thu, 12 Sep 2019 08:45:03 GMT
 RUN set -eux; 	mkdir -p "$PHP_INI_DIR/conf.d"; 	[ ! -d /var/www/html ]; 	mkdir -p /var/www/html; 	chown www-data:www-data /var/www/html; 	chmod 777 /var/www/html
-# Wed, 14 Aug 2019 13:35:54 GMT
+# Thu, 12 Sep 2019 08:52:51 GMT
 ENV PHP_EXTRA_CONFIGURE_ARGS=--enable-fpm --with-fpm-user=www-data --with-fpm-group=www-data --disable-cgi
-# Wed, 14 Aug 2019 13:35:54 GMT
+# Thu, 12 Sep 2019 08:52:52 GMT
 ENV PHP_CFLAGS=-fstack-protector-strong -fpic -fpie -O2
-# Wed, 14 Aug 2019 13:35:54 GMT
+# Thu, 12 Sep 2019 08:52:52 GMT
 ENV PHP_CPPFLAGS=-fstack-protector-strong -fpic -fpie -O2
-# Wed, 14 Aug 2019 13:35:55 GMT
+# Thu, 12 Sep 2019 08:52:53 GMT
 ENV PHP_LDFLAGS=-Wl,-O1 -Wl,--hash-style=both -pie
-# Wed, 14 Aug 2019 14:21:23 GMT
+# Thu, 12 Sep 2019 09:48:21 GMT
 ENV GPG_KEYS=1729F83938DA44E27BA0F4D3DBDB397470D12172 B1B44D8F021E4E2D6021E995DC9FF8D3EE5AF27F
-# Tue, 03 Sep 2019 06:14:33 GMT
+# Thu, 12 Sep 2019 09:48:22 GMT
 ENV PHP_VERSION=7.2.22
-# Tue, 03 Sep 2019 06:14:34 GMT
+# Thu, 12 Sep 2019 09:48:22 GMT
 ENV PHP_URL=https://www.php.net/get/php-7.2.22.tar.xz/from/this/mirror PHP_ASC_URL=https://www.php.net/get/php-7.2.22.tar.xz.asc/from/this/mirror
-# Tue, 03 Sep 2019 06:14:34 GMT
+# Thu, 12 Sep 2019 09:48:23 GMT
 ENV PHP_SHA256=eb597fcf8dc0a6211a42a6346de4f63ee166829a6df6d8ed767fe14be8d1c3a3 PHP_MD5=
-# Tue, 03 Sep 2019 06:14:48 GMT
+# Thu, 12 Sep 2019 09:48:38 GMT
 RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends gnupg dirmngr; 	rm -rf /var/lib/apt/lists/*; 		mkdir -p /usr/src; 	cd /usr/src; 		curl -fsSL -o php.tar.xz "$PHP_URL"; 		if [ -n "$PHP_SHA256" ]; then 		echo "$PHP_SHA256 *php.tar.xz" | sha256sum -c -; 	fi; 	if [ -n "$PHP_MD5" ]; then 		echo "$PHP_MD5 *php.tar.xz" | md5sum -c -; 	fi; 		if [ -n "$PHP_ASC_URL" ]; then 		curl -fsSL -o php.tar.xz.asc "$PHP_ASC_URL"; 		export GNUPGHOME="$(mktemp -d)"; 		for key in $GPG_KEYS; do 			gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys "$key"; 		done; 		gpg --batch --verify php.tar.xz.asc php.tar.xz; 		gpgconf --kill all; 		rm -rf "$GNUPGHOME"; 	fi; 		apt-mark auto '.*' > /dev/null; 	apt-mark manual $savedAptMark > /dev/null; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false
-# Tue, 03 Sep 2019 06:14:48 GMT
+# Thu, 12 Sep 2019 09:48:39 GMT
 COPY file:ce57c04b70896f77cc11eb2766417d8a1240fcffe5bba92179ec78c458844110 in /usr/local/bin/ 
-# Tue, 03 Sep 2019 06:18:23 GMT
+# Thu, 12 Sep 2019 09:52:28 GMT
 RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		libargon2-dev 		libcurl4-openssl-dev 		libedit-dev 		libsodium-dev 		libsqlite3-dev 		libssl-dev 		libxml2-dev 		zlib1g-dev 		${PHP_EXTRA_BUILD_DEPS:-} 	; 	rm -rf /var/lib/apt/lists/*; 		export 		CFLAGS="$PHP_CFLAGS" 		CPPFLAGS="$PHP_CPPFLAGS" 		LDFLAGS="$PHP_LDFLAGS" 	; 	docker-php-source extract; 	cd /usr/src/php; 	gnuArch="$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)"; 	debMultiarch="$(dpkg-architecture --query DEB_BUILD_MULTIARCH)"; 	if [ ! -d /usr/include/curl ]; then 		ln -sT "/usr/include/$debMultiarch/curl" /usr/local/include/curl; 	fi; 	./configure 		--build="$gnuArch" 		--with-config-file-path="$PHP_INI_DIR" 		--with-config-file-scan-dir="$PHP_INI_DIR/conf.d" 				--enable-option-checking=fatal 				--with-mhash 				--enable-ftp 		--enable-mbstring 		--enable-mysqlnd 		--with-password-argon2 		--with-sodium=shared 				--with-curl 		--with-libedit 		--with-openssl 		--with-zlib 				$(test "$gnuArch" = 's390x-linux-gnu' && echo '--without-pcre-jit') 		--with-libdir="lib/$debMultiarch" 				${PHP_EXTRA_CONFIGURE_ARGS:-} 	; 	make -j "$(nproc)"; 	find -type f -name '*.a' -delete; 	make install; 	find /usr/local/bin /usr/local/sbin -type f -executable -exec strip --strip-all '{}' + || true; 	make clean; 		cp -v php.ini-* "$PHP_INI_DIR/"; 		cd /; 	docker-php-source delete; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark; 	find /usr/local -type f -executable -exec ldd '{}' ';' 		| awk '/=>/ { print $(NF-1) }' 		| sort -u 		| xargs -r dpkg-query --search 		| cut -d: -f1 		| sort -u 		| xargs -r apt-mark manual 	; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 		pecl update-channels; 	rm -rf /tmp/pear ~/.pearrc; 	php --version
-# Tue, 03 Sep 2019 06:18:24 GMT
+# Thu, 12 Sep 2019 09:52:30 GMT
 COPY multi:c1ff99c7805e8f41fdb0717f754884884ce2157d746a82343d7c737c86ded761 in /usr/local/bin/ 
-# Tue, 03 Sep 2019 06:18:26 GMT
+# Thu, 12 Sep 2019 09:52:33 GMT
 RUN docker-php-ext-enable sodium
-# Tue, 03 Sep 2019 06:18:28 GMT
+# Thu, 12 Sep 2019 09:52:37 GMT
 RUN { echo '#!/bin/sh'; echo 'exec pkg-config "$@" freetype2'; } > /usr/local/bin/freetype-config && chmod +x /usr/local/bin/freetype-config
-# Tue, 03 Sep 2019 06:18:28 GMT
+# Thu, 12 Sep 2019 09:52:38 GMT
 ENTRYPOINT ["docker-php-entrypoint"]
-# Tue, 03 Sep 2019 06:18:29 GMT
+# Thu, 12 Sep 2019 09:52:40 GMT
 WORKDIR /var/www/html
-# Tue, 03 Sep 2019 06:18:30 GMT
+# Thu, 12 Sep 2019 09:52:44 GMT
 RUN set -eux; 	cd /usr/local/etc; 	if [ -d php-fpm.d ]; then 		sed 's!=NONE/!=!g' php-fpm.conf.default | tee php-fpm.conf > /dev/null; 		cp php-fpm.d/www.conf.default php-fpm.d/www.conf; 	else 		mkdir php-fpm.d; 		cp php-fpm.conf.default php-fpm.d/www.conf; 		{ 			echo '[global]'; 			echo 'include=etc/php-fpm.d/*.conf'; 		} | tee php-fpm.conf; 	fi; 	{ 		echo '[global]'; 		echo 'error_log = /proc/self/fd/2'; 		echo; 		echo '[www]'; 		echo '; if we send this to /proc/self/fd/1, it never appears'; 		echo 'access.log = /proc/self/fd/2'; 		echo; 		echo 'clear_env = no'; 		echo; 		echo '; Ensure worker stdout and stderr are sent to the main error log.'; 		echo 'catch_workers_output = yes'; 	} | tee php-fpm.d/docker.conf; 	{ 		echo '[global]'; 		echo 'daemonize = no'; 		echo; 		echo '[www]'; 		echo 'listen = 9000'; 	} | tee php-fpm.d/zz-docker.conf
-# Tue, 03 Sep 2019 06:18:31 GMT
+# Thu, 12 Sep 2019 09:52:45 GMT
 STOPSIGNAL SIGQUIT
-# Tue, 03 Sep 2019 06:18:31 GMT
+# Thu, 12 Sep 2019 09:52:47 GMT
 EXPOSE 9000
-# Tue, 03 Sep 2019 06:18:32 GMT
+# Thu, 12 Sep 2019 09:52:49 GMT
 CMD ["php-fpm"]
-# Tue, 03 Sep 2019 08:50:20 GMT
+# Thu, 12 Sep 2019 21:56:29 GMT
 RUN set -ex;         apt-get update;     apt-get install -y --no-install-recommends         rsync         bzip2         busybox-static     ;     rm -rf /var/lib/apt/lists/*;         mkdir -p /var/spool/cron/crontabs;     echo '*/15 * * * * php -f /var/www/html/cron.php' > /var/spool/cron/crontabs/www-data
-# Tue, 03 Sep 2019 08:54:16 GMT
+# Thu, 12 Sep 2019 22:00:32 GMT
 RUN set -ex;         savedAptMark="$(apt-mark showmanual)";         apt-get update;     apt-get install -y --no-install-recommends         libcurl4-openssl-dev         libevent-dev         libfreetype6-dev         libicu-dev         libjpeg-dev         libldap2-dev         libmcrypt-dev         libmemcached-dev         libpng-dev         libpq-dev         libxml2-dev         libmagickwand-dev         libwebp-dev     ;         debMultiarch="$(dpkg-architecture --query DEB_BUILD_MULTIARCH)";     docker-php-ext-configure gd --with-freetype-dir=/usr --with-png-dir=/usr --with-jpeg-dir=/usr --with-webp-dir=/usr;     docker-php-ext-configure ldap --with-libdir="lib/$debMultiarch";     docker-php-ext-install -j "$(nproc)"         exif         gd         intl         ldap         opcache         pcntl         pdo_mysql         pdo_pgsql         zip     ;         pecl install APCu-5.1.17;     pecl install memcached-3.1.3;     pecl install redis-4.3.0;     pecl install imagick-3.4.4;         docker-php-ext-enable         apcu         memcached         redis         imagick     ;         apt-mark auto '.*' > /dev/null;     apt-mark manual $savedAptMark;     ldd "$(php -r 'echo ini_get("extension_dir");')"/*.so         | awk '/=>/ { print $3 }'         | sort -u         | xargs -r dpkg-query -S         | cut -d: -f1         | sort -u         | xargs -rt apt-mark manual;         apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false;     rm -rf /var/lib/apt/lists/*
-# Tue, 03 Sep 2019 08:54:18 GMT
+# Thu, 12 Sep 2019 22:00:34 GMT
 RUN {         echo 'opcache.enable=1';         echo 'opcache.interned_strings_buffer=8';         echo 'opcache.max_accelerated_files=10000';         echo 'opcache.memory_consumption=128';         echo 'opcache.save_comments=1';         echo 'opcache.revalidate_freq=1';     } > /usr/local/etc/php/conf.d/opcache-recommended.ini;         echo 'apc.enable_cli=1' >> /usr/local/etc/php/conf.d/docker-php-ext-apcu.ini;         echo 'memory_limit=512M' > /usr/local/etc/php/conf.d/memory-limit.ini;         mkdir /var/www/data;     chown -R www-data:root /var/www;     chmod -R g=u /var/www
-# Tue, 03 Sep 2019 08:54:18 GMT
+# Thu, 12 Sep 2019 22:00:35 GMT
 VOLUME [/var/www/html]
-# Tue, 03 Sep 2019 08:54:19 GMT
+# Thu, 12 Sep 2019 22:00:35 GMT
 ENV NEXTCLOUD_VERSION=14.0.14
-# Tue, 03 Sep 2019 08:55:33 GMT
+# Thu, 12 Sep 2019 22:01:22 GMT
 RUN set -ex;     fetchDeps="         gnupg         dirmngr     ";     apt-get update;     apt-get install -y --no-install-recommends $fetchDeps;         curl -fsSL -o nextcloud.tar.bz2         "https://download.nextcloud.com/server/releases/nextcloud-${NEXTCLOUD_VERSION}.tar.bz2";     curl -fsSL -o nextcloud.tar.bz2.asc         "https://download.nextcloud.com/server/releases/nextcloud-${NEXTCLOUD_VERSION}.tar.bz2.asc";     export GNUPGHOME="$(mktemp -d)";     gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys 28806A878AE423A28372792ED75899B9A724937A;     gpg --batch --verify nextcloud.tar.bz2.asc nextcloud.tar.bz2;     tar -xjf nextcloud.tar.bz2 -C /usr/src/;     gpgconf --kill all;     rm -r "$GNUPGHOME" nextcloud.tar.bz2.asc nextcloud.tar.bz2;     rm -rf /usr/src/nextcloud/updater;     mkdir -p /usr/src/nextcloud/data;     mkdir -p /usr/src/nextcloud/custom_apps;     chmod +x /usr/src/nextcloud/occ;         apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false $fetchDeps;     rm -rf /var/lib/apt/lists/*
-# Wed, 11 Sep 2019 06:22:22 GMT
+# Thu, 12 Sep 2019 22:01:25 GMT
 COPY multi:c7a3d262688197634c30c3eb0f5c04491be903f7b01bd82d9bb7a16915934dec in / 
-# Wed, 11 Sep 2019 06:22:23 GMT
+# Thu, 12 Sep 2019 22:01:27 GMT
 COPY multi:83f616e7bbc170dbad60f72f0240fb79ead1482bd85af39aa1e507abde032a72 in /usr/src/nextcloud/config/ 
-# Wed, 11 Sep 2019 06:22:26 GMT
+# Thu, 12 Sep 2019 22:01:27 GMT
 ENTRYPOINT ["/entrypoint.sh"]
-# Wed, 11 Sep 2019 06:22:27 GMT
+# Thu, 12 Sep 2019 22:01:28 GMT
 CMD ["php-fpm"]
 ```
 
 -	Layers:
-	-	`sha256:176fe0ab331c5fafc852d1a0fdd4395348ac3d862902a33d6c5ded8ac80a8c62`  
-		Last Modified: Wed, 14 Aug 2019 01:09:19 GMT  
-		Size: 22.7 MB (22697922 bytes)  
+	-	`sha256:882347dcba58523fb133e5e4f525ff95b93cfc8c0d5e8c2938e59d0d22dad2e6`  
+		Last Modified: Wed, 11 Sep 2019 23:07:21 GMT  
+		Size: 22.7 MB (22697384 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c67e3348ae0c98dd009ed15e21dced8ec036504ff5da0d57724a8c8a92964048`  
-		Last Modified: Wed, 14 Aug 2019 15:18:31 GMT  
+	-	`sha256:7b7ff745f0b71036e6f011ad397d1ba27b81686a2f6dc1d67a47e593448a8efb`  
+		Last Modified: Thu, 12 Sep 2019 10:54:22 GMT  
 		Size: 228.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:84d5f29aad3b810945de2bca6203df89613245a24d283877878cf983a468970e`  
-		Last Modified: Wed, 14 Aug 2019 15:19:08 GMT  
-		Size: 59.5 MB (59483006 bytes)  
+	-	`sha256:4d17eec8b2c65b937586e5d6a25398e63e95093955ff9a44ea2144714bf54dac`  
+		Last Modified: Thu, 12 Sep 2019 10:54:42 GMT  
+		Size: 59.5 MB (59484527 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:0982a6bfaf06556c680d41cdf35c7d90a0c5c54c6374a56192a8ece90fea4e04`  
-		Last Modified: Wed, 14 Aug 2019 15:18:31 GMT  
-		Size: 270.0 B  
+	-	`sha256:c9e60ceeef8f681a05af3528a67171b3c0ee3c33abd8c7fed7255c13ad981182`  
+		Last Modified: Thu, 12 Sep 2019 10:54:22 GMT  
+		Size: 271.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:48823ef0bf56d47bbd3d606b8f6142e22254c068ee2cb8faa672332b2e2aee1a`  
-		Last Modified: Tue, 03 Sep 2019 08:06:06 GMT  
-		Size: 12.6 MB (12591102 bytes)  
+	-	`sha256:3d7f3951043ed2b4681d74dc721ad02d7f1850f62611b5b4f8b5664222916cbf`  
+		Last Modified: Thu, 12 Sep 2019 11:00:40 GMT  
+		Size: 12.6 MB (12591185 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:0b92f79b38e313c35072fc00520f45e10a97bced984d5f809419c214d7894574`  
-		Last Modified: Tue, 03 Sep 2019 08:06:04 GMT  
-		Size: 490.0 B  
+	-	`sha256:c39cca1262e66ae9ac9e8e0787361b0d624deda9ee48e88b122ea87a6469dba6`  
+		Last Modified: Thu, 12 Sep 2019 11:00:38 GMT  
+		Size: 494.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c48e1525b2d00492ce3177207e8988f727502bdb0cef895141bb0faaa80271af`  
-		Last Modified: Tue, 03 Sep 2019 08:06:12 GMT  
-		Size: 27.2 MB (27156306 bytes)  
+	-	`sha256:66cd34f64d8f6a1dfd31e13f95a9cbebff7ec9ba5105bee89ab4fcf4d0087eb9`  
+		Last Modified: Thu, 12 Sep 2019 11:00:45 GMT  
+		Size: 27.2 MB (27156601 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c00978b91e9e29d859624923f8746a886a2ad70d8da5bf97653531fa53df6e33`  
-		Last Modified: Tue, 03 Sep 2019 08:06:03 GMT  
-		Size: 2.2 KB (2205 bytes)  
+	-	`sha256:08f531e67f9c0c704d32e32dd9ed93dff52c44d169e4ae39fbcc10aa163139a2`  
+		Last Modified: Thu, 12 Sep 2019 11:00:37 GMT  
+		Size: 2.2 KB (2207 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:2eb8092859b213bef036323c4fe58e68ccb08db0ef8695d9ac9dd6fa6e710164`  
-		Last Modified: Tue, 03 Sep 2019 08:06:03 GMT  
-		Size: 248.0 B  
+	-	`sha256:2c62f17813759a72fdadf9102bc2a316f283b7312d2f24c76f4b8b003efcdb10`  
+		Last Modified: Thu, 12 Sep 2019 11:00:37 GMT  
+		Size: 247.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:d2484d5ce29862810b54ef2aac12aad29f0cd6eb158d76f06946e0a32fc5bcc6`  
-		Last Modified: Tue, 03 Sep 2019 08:06:03 GMT  
-		Size: 211.0 B  
+	-	`sha256:0bd2bb4c50a8f551bdf2e816a4fa5bdb4dea9ac4748312aa6674f0c15f5533b5`  
+		Last Modified: Thu, 12 Sep 2019 11:00:37 GMT  
+		Size: 213.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c04ff45a1e8b5b5b9c34e578b51243b13e942b0920c8da31c858cc2321167306`  
-		Last Modified: Tue, 03 Sep 2019 08:06:03 GMT  
-		Size: 7.8 KB (7786 bytes)  
+	-	`sha256:b43de8853b80b7f9a417f804584e05ae5d2bdb2e940bb35ba91578dda82ffba6`  
+		Last Modified: Thu, 12 Sep 2019 11:00:37 GMT  
+		Size: 7.8 KB (7784 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:525d034c8d82ed8d37d6691ae1a0b3977b59d6597f2b14939b965561729013ef`  
-		Last Modified: Tue, 03 Sep 2019 09:21:28 GMT  
-		Size: 1.4 MB (1424563 bytes)  
+	-	`sha256:27802f187640f02557c2d78a45dc8bd7b7616989d890291a7fac20536958e365`  
+		Last Modified: Thu, 12 Sep 2019 22:18:57 GMT  
+		Size: 1.4 MB (1424674 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:5f098baeabef0ccb5859a6f39d00f22941d1aae8b653932b8b3db9f9f63ff255`  
-		Last Modified: Tue, 03 Sep 2019 09:21:30 GMT  
-		Size: 13.7 MB (13738031 bytes)  
+	-	`sha256:32862095efa2e20020f0ec3a0086e3588e368385143da0eb0a7d5f070d48ce3e`  
+		Last Modified: Thu, 12 Sep 2019 22:18:59 GMT  
+		Size: 13.7 MB (13738252 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:64d74783deea3c7bf44919174bb33f1ffb5a0f60e8ad7ce8d3fd4ac7a42b655d`  
-		Last Modified: Tue, 03 Sep 2019 09:21:26 GMT  
-		Size: 531.0 B  
+	-	`sha256:d2b201d8607f81e1502171255e4df51e0bd9c50bc7fb7da37ea762a55bb928c1`  
+		Last Modified: Thu, 12 Sep 2019 22:18:55 GMT  
+		Size: 530.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:e17db2f2b44e08199d8d0cb3d61a1a354e8329a02e58cfe7b6a4fc766e7c7233`  
-		Last Modified: Tue, 03 Sep 2019 09:21:46 GMT  
-		Size: 59.9 MB (59870154 bytes)  
+	-	`sha256:31eff7dab3fe3c4c6fa8fd14487299aae34509707da5b3fb3e0b0dfd2915f8b0`  
+		Last Modified: Thu, 12 Sep 2019 22:19:18 GMT  
+		Size: 59.9 MB (59870588 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:dad4d8773aa4e12f5c5a7bd215877f0c9e8c5a68e263b0cbee37f024edcaede6`  
-		Last Modified: Wed, 11 Sep 2019 06:25:02 GMT  
+	-	`sha256:d1753476718f85affdb7e8452423ed464b8bf65b377779f4c43b51fea81c1fca`  
+		Last Modified: Thu, 12 Sep 2019 22:18:55 GMT  
 		Size: 2.1 KB (2098 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:276b4742826aaad71cbdc2e40e1c4c2fe3de66b0847816a43d92e28f9cd77166`  
-		Last Modified: Wed, 11 Sep 2019 06:25:02 GMT  
-		Size: 1.1 KB (1073 bytes)  
+	-	`sha256:fb9be4649ff4854d59d7ebac28d0c832e955778ec2300ee4234b525e909a182d`  
+		Last Modified: Thu, 12 Sep 2019 22:18:55 GMT  
+		Size: 1.1 KB (1071 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `nextcloud:14-fpm` - linux; arm64 variant v8
 
 ```console
-$ docker pull nextcloud@sha256:4b0f723eb641dbb38d85850f4a1d82c53d48fb23cab2d9a88e10a61c67c3ea9c
+$ docker pull nextcloud@sha256:b3e03927e03273fa1a6798b9889b58257143e65b2c9cf80ef42b0f5ad7b15557
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **214.3 MB (214264150 bytes)**  
+-	Total Size: **214.3 MB (214265001 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:7e20ab96bc85ba985aa55bc965a3111838309435bd53029ba9754c2dd4cc5dbe`
+-	Image ID: `sha256:118971ac5c21916c0ed67f86eb1966a6f7148670704f3e221cbd465ab4cff119`
 -	Entrypoint: `["\/entrypoint.sh"]`
 -	Default Command: `["php-fpm"]`
 
 ```dockerfile
-# Wed, 14 Aug 2019 00:41:03 GMT
-ADD file:f2c1f59f0d538112f80a85591ffb8572962400e105c4478c8e03b1d3ad590ac7 in / 
-# Wed, 14 Aug 2019 00:41:04 GMT
+# Wed, 11 Sep 2019 22:40:52 GMT
+ADD file:aac1f360073d532980c4162cbb87309089c7fce24c08b645c70c6289f3a527dd in / 
+# Wed, 11 Sep 2019 22:40:54 GMT
 CMD ["bash"]
-# Wed, 14 Aug 2019 09:08:40 GMT
+# Thu, 12 Sep 2019 01:44:53 GMT
 RUN set -eux; 	{ 		echo 'Package: php*'; 		echo 'Pin: release *'; 		echo 'Pin-Priority: -1'; 	} > /etc/apt/preferences.d/no-debian-php
-# Wed, 14 Aug 2019 09:08:41 GMT
+# Thu, 12 Sep 2019 01:44:54 GMT
 ENV PHPIZE_DEPS=autoconf 		dpkg-dev 		file 		g++ 		gcc 		libc-dev 		make 		pkg-config 		re2c
-# Wed, 14 Aug 2019 09:09:10 GMT
+# Thu, 12 Sep 2019 01:45:36 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		$PHPIZE_DEPS 		ca-certificates 		curl 		xz-utils 	; 	rm -rf /var/lib/apt/lists/*
-# Wed, 14 Aug 2019 09:09:11 GMT
+# Thu, 12 Sep 2019 01:45:38 GMT
 ENV PHP_INI_DIR=/usr/local/etc/php
-# Wed, 14 Aug 2019 09:09:13 GMT
+# Thu, 12 Sep 2019 01:45:40 GMT
 RUN set -eux; 	mkdir -p "$PHP_INI_DIR/conf.d"; 	[ ! -d /var/www/html ]; 	mkdir -p /var/www/html; 	chown www-data:www-data /var/www/html; 	chmod 777 /var/www/html
-# Wed, 14 Aug 2019 09:16:29 GMT
+# Thu, 12 Sep 2019 01:53:57 GMT
 ENV PHP_EXTRA_CONFIGURE_ARGS=--enable-fpm --with-fpm-user=www-data --with-fpm-group=www-data --disable-cgi
-# Wed, 14 Aug 2019 09:16:30 GMT
+# Thu, 12 Sep 2019 01:53:58 GMT
 ENV PHP_CFLAGS=-fstack-protector-strong -fpic -fpie -O2
-# Wed, 14 Aug 2019 09:16:30 GMT
+# Thu, 12 Sep 2019 01:53:59 GMT
 ENV PHP_CPPFLAGS=-fstack-protector-strong -fpic -fpie -O2
-# Wed, 14 Aug 2019 09:16:30 GMT
+# Thu, 12 Sep 2019 01:54:00 GMT
 ENV PHP_LDFLAGS=-Wl,-O1 -Wl,--hash-style=both -pie
-# Wed, 14 Aug 2019 10:28:34 GMT
+# Thu, 12 Sep 2019 03:11:41 GMT
 ENV GPG_KEYS=1729F83938DA44E27BA0F4D3DBDB397470D12172 B1B44D8F021E4E2D6021E995DC9FF8D3EE5AF27F
-# Tue, 03 Sep 2019 06:22:59 GMT
+# Thu, 12 Sep 2019 03:11:42 GMT
 ENV PHP_VERSION=7.2.22
-# Tue, 03 Sep 2019 06:22:59 GMT
+# Thu, 12 Sep 2019 03:11:43 GMT
 ENV PHP_URL=https://www.php.net/get/php-7.2.22.tar.xz/from/this/mirror PHP_ASC_URL=https://www.php.net/get/php-7.2.22.tar.xz.asc/from/this/mirror
-# Tue, 03 Sep 2019 06:22:59 GMT
+# Thu, 12 Sep 2019 03:11:44 GMT
 ENV PHP_SHA256=eb597fcf8dc0a6211a42a6346de4f63ee166829a6df6d8ed767fe14be8d1c3a3 PHP_MD5=
-# Tue, 03 Sep 2019 06:23:12 GMT
+# Thu, 12 Sep 2019 03:12:02 GMT
 RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends gnupg dirmngr; 	rm -rf /var/lib/apt/lists/*; 		mkdir -p /usr/src; 	cd /usr/src; 		curl -fsSL -o php.tar.xz "$PHP_URL"; 		if [ -n "$PHP_SHA256" ]; then 		echo "$PHP_SHA256 *php.tar.xz" | sha256sum -c -; 	fi; 	if [ -n "$PHP_MD5" ]; then 		echo "$PHP_MD5 *php.tar.xz" | md5sum -c -; 	fi; 		if [ -n "$PHP_ASC_URL" ]; then 		curl -fsSL -o php.tar.xz.asc "$PHP_ASC_URL"; 		export GNUPGHOME="$(mktemp -d)"; 		for key in $GPG_KEYS; do 			gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys "$key"; 		done; 		gpg --batch --verify php.tar.xz.asc php.tar.xz; 		gpgconf --kill all; 		rm -rf "$GNUPGHOME"; 	fi; 		apt-mark auto '.*' > /dev/null; 	apt-mark manual $savedAptMark > /dev/null; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false
-# Tue, 03 Sep 2019 06:23:13 GMT
+# Thu, 12 Sep 2019 03:12:02 GMT
 COPY file:ce57c04b70896f77cc11eb2766417d8a1240fcffe5bba92179ec78c458844110 in /usr/local/bin/ 
-# Tue, 03 Sep 2019 06:27:02 GMT
+# Thu, 12 Sep 2019 03:15:55 GMT
 RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		libargon2-dev 		libcurl4-openssl-dev 		libedit-dev 		libsodium-dev 		libsqlite3-dev 		libssl-dev 		libxml2-dev 		zlib1g-dev 		${PHP_EXTRA_BUILD_DEPS:-} 	; 	rm -rf /var/lib/apt/lists/*; 		export 		CFLAGS="$PHP_CFLAGS" 		CPPFLAGS="$PHP_CPPFLAGS" 		LDFLAGS="$PHP_LDFLAGS" 	; 	docker-php-source extract; 	cd /usr/src/php; 	gnuArch="$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)"; 	debMultiarch="$(dpkg-architecture --query DEB_BUILD_MULTIARCH)"; 	if [ ! -d /usr/include/curl ]; then 		ln -sT "/usr/include/$debMultiarch/curl" /usr/local/include/curl; 	fi; 	./configure 		--build="$gnuArch" 		--with-config-file-path="$PHP_INI_DIR" 		--with-config-file-scan-dir="$PHP_INI_DIR/conf.d" 				--enable-option-checking=fatal 				--with-mhash 				--enable-ftp 		--enable-mbstring 		--enable-mysqlnd 		--with-password-argon2 		--with-sodium=shared 				--with-curl 		--with-libedit 		--with-openssl 		--with-zlib 				$(test "$gnuArch" = 's390x-linux-gnu' && echo '--without-pcre-jit') 		--with-libdir="lib/$debMultiarch" 				${PHP_EXTRA_CONFIGURE_ARGS:-} 	; 	make -j "$(nproc)"; 	find -type f -name '*.a' -delete; 	make install; 	find /usr/local/bin /usr/local/sbin -type f -executable -exec strip --strip-all '{}' + || true; 	make clean; 		cp -v php.ini-* "$PHP_INI_DIR/"; 		cd /; 	docker-php-source delete; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark; 	find /usr/local -type f -executable -exec ldd '{}' ';' 		| awk '/=>/ { print $(NF-1) }' 		| sort -u 		| xargs -r dpkg-query --search 		| cut -d: -f1 		| sort -u 		| xargs -r apt-mark manual 	; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 		pecl update-channels; 	rm -rf /tmp/pear ~/.pearrc; 	php --version
-# Tue, 03 Sep 2019 06:27:03 GMT
+# Thu, 12 Sep 2019 03:15:57 GMT
 COPY multi:c1ff99c7805e8f41fdb0717f754884884ce2157d746a82343d7c737c86ded761 in /usr/local/bin/ 
-# Tue, 03 Sep 2019 06:27:05 GMT
+# Thu, 12 Sep 2019 03:15:59 GMT
 RUN docker-php-ext-enable sodium
-# Tue, 03 Sep 2019 06:27:06 GMT
+# Thu, 12 Sep 2019 03:16:02 GMT
 RUN { echo '#!/bin/sh'; echo 'exec pkg-config "$@" freetype2'; } > /usr/local/bin/freetype-config && chmod +x /usr/local/bin/freetype-config
-# Tue, 03 Sep 2019 06:27:07 GMT
+# Thu, 12 Sep 2019 03:16:03 GMT
 ENTRYPOINT ["docker-php-entrypoint"]
-# Tue, 03 Sep 2019 06:27:07 GMT
+# Thu, 12 Sep 2019 03:16:04 GMT
 WORKDIR /var/www/html
-# Tue, 03 Sep 2019 06:27:08 GMT
+# Thu, 12 Sep 2019 03:16:07 GMT
 RUN set -eux; 	cd /usr/local/etc; 	if [ -d php-fpm.d ]; then 		sed 's!=NONE/!=!g' php-fpm.conf.default | tee php-fpm.conf > /dev/null; 		cp php-fpm.d/www.conf.default php-fpm.d/www.conf; 	else 		mkdir php-fpm.d; 		cp php-fpm.conf.default php-fpm.d/www.conf; 		{ 			echo '[global]'; 			echo 'include=etc/php-fpm.d/*.conf'; 		} | tee php-fpm.conf; 	fi; 	{ 		echo '[global]'; 		echo 'error_log = /proc/self/fd/2'; 		echo; 		echo '[www]'; 		echo '; if we send this to /proc/self/fd/1, it never appears'; 		echo 'access.log = /proc/self/fd/2'; 		echo; 		echo 'clear_env = no'; 		echo; 		echo '; Ensure worker stdout and stderr are sent to the main error log.'; 		echo 'catch_workers_output = yes'; 	} | tee php-fpm.d/docker.conf; 	{ 		echo '[global]'; 		echo 'daemonize = no'; 		echo; 		echo '[www]'; 		echo 'listen = 9000'; 	} | tee php-fpm.d/zz-docker.conf
-# Tue, 03 Sep 2019 06:27:09 GMT
+# Thu, 12 Sep 2019 03:16:08 GMT
 STOPSIGNAL SIGQUIT
-# Tue, 03 Sep 2019 06:27:09 GMT
+# Thu, 12 Sep 2019 03:16:09 GMT
 EXPOSE 9000
-# Tue, 03 Sep 2019 06:27:10 GMT
+# Thu, 12 Sep 2019 03:16:09 GMT
 CMD ["php-fpm"]
-# Tue, 03 Sep 2019 09:35:16 GMT
+# Thu, 12 Sep 2019 22:49:53 GMT
 RUN set -ex;         apt-get update;     apt-get install -y --no-install-recommends         rsync         bzip2         busybox-static     ;     rm -rf /var/lib/apt/lists/*;         mkdir -p /var/spool/cron/crontabs;     echo '*/15 * * * * php -f /var/www/html/cron.php' > /var/spool/cron/crontabs/www-data
-# Tue, 03 Sep 2019 09:39:07 GMT
+# Thu, 12 Sep 2019 22:54:31 GMT
 RUN set -ex;         savedAptMark="$(apt-mark showmanual)";         apt-get update;     apt-get install -y --no-install-recommends         libcurl4-openssl-dev         libevent-dev         libfreetype6-dev         libicu-dev         libjpeg-dev         libldap2-dev         libmcrypt-dev         libmemcached-dev         libpng-dev         libpq-dev         libxml2-dev         libmagickwand-dev         libwebp-dev     ;         debMultiarch="$(dpkg-architecture --query DEB_BUILD_MULTIARCH)";     docker-php-ext-configure gd --with-freetype-dir=/usr --with-png-dir=/usr --with-jpeg-dir=/usr --with-webp-dir=/usr;     docker-php-ext-configure ldap --with-libdir="lib/$debMultiarch";     docker-php-ext-install -j "$(nproc)"         exif         gd         intl         ldap         opcache         pcntl         pdo_mysql         pdo_pgsql         zip     ;         pecl install APCu-5.1.17;     pecl install memcached-3.1.3;     pecl install redis-4.3.0;     pecl install imagick-3.4.4;         docker-php-ext-enable         apcu         memcached         redis         imagick     ;         apt-mark auto '.*' > /dev/null;     apt-mark manual $savedAptMark;     ldd "$(php -r 'echo ini_get("extension_dir");')"/*.so         | awk '/=>/ { print $3 }'         | sort -u         | xargs -r dpkg-query -S         | cut -d: -f1         | sort -u         | xargs -rt apt-mark manual;         apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false;     rm -rf /var/lib/apt/lists/*
-# Tue, 03 Sep 2019 09:39:09 GMT
+# Thu, 12 Sep 2019 22:54:33 GMT
 RUN {         echo 'opcache.enable=1';         echo 'opcache.interned_strings_buffer=8';         echo 'opcache.max_accelerated_files=10000';         echo 'opcache.memory_consumption=128';         echo 'opcache.save_comments=1';         echo 'opcache.revalidate_freq=1';     } > /usr/local/etc/php/conf.d/opcache-recommended.ini;         echo 'apc.enable_cli=1' >> /usr/local/etc/php/conf.d/docker-php-ext-apcu.ini;         echo 'memory_limit=512M' > /usr/local/etc/php/conf.d/memory-limit.ini;         mkdir /var/www/data;     chown -R www-data:root /var/www;     chmod -R g=u /var/www
-# Tue, 03 Sep 2019 09:39:09 GMT
+# Thu, 12 Sep 2019 22:54:34 GMT
 VOLUME [/var/www/html]
-# Tue, 03 Sep 2019 09:39:09 GMT
+# Thu, 12 Sep 2019 22:54:35 GMT
 ENV NEXTCLOUD_VERSION=14.0.14
-# Tue, 03 Sep 2019 09:40:11 GMT
+# Thu, 12 Sep 2019 22:55:11 GMT
 RUN set -ex;     fetchDeps="         gnupg         dirmngr     ";     apt-get update;     apt-get install -y --no-install-recommends $fetchDeps;         curl -fsSL -o nextcloud.tar.bz2         "https://download.nextcloud.com/server/releases/nextcloud-${NEXTCLOUD_VERSION}.tar.bz2";     curl -fsSL -o nextcloud.tar.bz2.asc         "https://download.nextcloud.com/server/releases/nextcloud-${NEXTCLOUD_VERSION}.tar.bz2.asc";     export GNUPGHOME="$(mktemp -d)";     gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys 28806A878AE423A28372792ED75899B9A724937A;     gpg --batch --verify nextcloud.tar.bz2.asc nextcloud.tar.bz2;     tar -xjf nextcloud.tar.bz2 -C /usr/src/;     gpgconf --kill all;     rm -r "$GNUPGHOME" nextcloud.tar.bz2.asc nextcloud.tar.bz2;     rm -rf /usr/src/nextcloud/updater;     mkdir -p /usr/src/nextcloud/data;     mkdir -p /usr/src/nextcloud/custom_apps;     chmod +x /usr/src/nextcloud/occ;         apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false $fetchDeps;     rm -rf /var/lib/apt/lists/*
-# Wed, 11 Sep 2019 05:48:02 GMT
+# Thu, 12 Sep 2019 22:55:14 GMT
 COPY multi:c7a3d262688197634c30c3eb0f5c04491be903f7b01bd82d9bb7a16915934dec in / 
-# Wed, 11 Sep 2019 05:48:04 GMT
+# Thu, 12 Sep 2019 22:55:16 GMT
 COPY multi:83f616e7bbc170dbad60f72f0240fb79ead1482bd85af39aa1e507abde032a72 in /usr/src/nextcloud/config/ 
-# Wed, 11 Sep 2019 05:48:05 GMT
+# Thu, 12 Sep 2019 22:55:17 GMT
 ENTRYPOINT ["/entrypoint.sh"]
-# Wed, 11 Sep 2019 05:48:05 GMT
+# Thu, 12 Sep 2019 22:55:17 GMT
 CMD ["php-fpm"]
 ```
 
 -	Layers:
-	-	`sha256:695ddc5be713962e3920676a3e2877990b802c025b0b2765f57ff08ff0a7d861`  
-		Last Modified: Wed, 14 Aug 2019 00:46:16 GMT  
-		Size: 25.9 MB (25852392 bytes)  
+	-	`sha256:0c79eb62c57d840ffe711699e4e3cf8d7d41262c39e48f745247f07d8e256c8c`  
+		Last Modified: Wed, 11 Sep 2019 22:46:31 GMT  
+		Size: 25.9 MB (25851538 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:9313bf8242f0d796b957564589651f38438b58269f7ef412a86139acf810abef`  
-		Last Modified: Wed, 14 Aug 2019 11:27:26 GMT  
-		Size: 226.0 B  
+	-	`sha256:92b2b9f690542dfe7ea3593e43891855912287c690f0dcd268ba30dfb10dd31b`  
+		Last Modified: Thu, 12 Sep 2019 04:17:55 GMT  
+		Size: 227.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:10b01bb3801260bfd6fd366dc465fe979520b27e6d58d2d4cd3d100c923360b8`  
-		Last Modified: Wed, 14 Aug 2019 11:27:48 GMT  
-		Size: 70.3 MB (70326879 bytes)  
+	-	`sha256:44f9b0e2d5e0be2efc67615ff1c8a9ad930b5d45429f0e4e0a801ca7fc44a8ff`  
+		Last Modified: Thu, 12 Sep 2019 04:18:14 GMT  
+		Size: 70.3 MB (70327020 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:44b42e709fea2d1ab2da6999156b98ca54a826d31e189e0ccc3efed23c7713ac`  
-		Last Modified: Wed, 14 Aug 2019 11:27:25 GMT  
-		Size: 270.0 B  
+	-	`sha256:794af76998ad5919f99cbfe6f92e200b622bfc12dfe27a361b9e79511825dd2f`  
+		Last Modified: Thu, 12 Sep 2019 04:17:55 GMT  
+		Size: 272.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:a9369afdf49180511a86dbf505708473a24b16f7f13abf526ffe5a48d3253345`  
-		Last Modified: Tue, 03 Sep 2019 08:17:30 GMT  
-		Size: 12.6 MB (12591867 bytes)  
+	-	`sha256:9f6a3057155995e5700bde5d74072f6c11d753239962cf1f13fa2ecc9c7b2467`  
+		Last Modified: Thu, 12 Sep 2019 04:24:08 GMT  
+		Size: 12.6 MB (12592042 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:415e037b4e62b9180081d332239cb0106973b10ab9b2d4dc1cb10a6dc203c026`  
-		Last Modified: Tue, 03 Sep 2019 08:17:29 GMT  
-		Size: 492.0 B  
+	-	`sha256:52f6502730f4316030f2ed4863f2999b95f8aa62e7cc67793ffcb8b5b06f267d`  
+		Last Modified: Thu, 12 Sep 2019 04:24:05 GMT  
+		Size: 493.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:b5ce1eb6cfc15440086bde5aeb8f3f5917d71a7f7fba03fd3fdc7470ce0a3f17`  
-		Last Modified: Tue, 03 Sep 2019 08:17:36 GMT  
-		Size: 29.5 MB (29462195 bytes)  
+	-	`sha256:666e969fde1e78571f6ffa97f92d7e7f48d58acd21a93df42baa862dff85cd8f`  
+		Last Modified: Thu, 12 Sep 2019 04:24:11 GMT  
+		Size: 29.5 MB (29462409 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:843801e45e6e70c1a0fd1be3ea2428a4976b5202c70f6cd0a3c52ada0f71430c`  
-		Last Modified: Tue, 03 Sep 2019 08:17:28 GMT  
-		Size: 2.2 KB (2208 bytes)  
+	-	`sha256:a79fd79949e0b02a5cf45be7b704abe57db6698a582c94608ab00078cd2eed88`  
+		Last Modified: Thu, 12 Sep 2019 04:24:03 GMT  
+		Size: 2.2 KB (2204 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:a3a46217cd390917a303666686783b17596f68f86edd9d5e52a1b8ff24ccb08b`  
-		Last Modified: Tue, 03 Sep 2019 08:17:27 GMT  
-		Size: 249.0 B  
+	-	`sha256:ed54e1ca111bed51d8e2cc12852587c2f0d70e691eb44048f34e5023cdd8d164`  
+		Last Modified: Thu, 12 Sep 2019 04:24:03 GMT  
+		Size: 247.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:9688ae42670caff2c6b0c7d1818971aa622019adcb619ba470cab59058abec6f`  
-		Last Modified: Tue, 03 Sep 2019 08:17:28 GMT  
-		Size: 211.0 B  
+	-	`sha256:c5320f4a6da1b42dd15e91d97d233697db2f24f9830b58bcd2541181d6147718`  
+		Last Modified: Thu, 12 Sep 2019 04:24:03 GMT  
+		Size: 212.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:277a2a5d1f7788ae8532396b8e5e6ab5397988249a1cabd41e557012f77a5bb3`  
-		Last Modified: Tue, 03 Sep 2019 08:17:28 GMT  
-		Size: 7.8 KB (7787 bytes)  
+	-	`sha256:cc19b83d37d98678f72c33c3ceae9c578aff3e720e7a5d713ae733dcce969600`  
+		Last Modified: Thu, 12 Sep 2019 04:24:04 GMT  
+		Size: 7.8 KB (7784 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:19b1d32c4793a108ddb9e7aa4cf85761b58aa43f394d514d69b57253c66de608`  
-		Last Modified: Tue, 03 Sep 2019 10:04:37 GMT  
-		Size: 1.6 MB (1601187 bytes)  
+	-	`sha256:ffbf50ef25203335e7ad5a4f1f77ad2673bf90c6200383157ca1bdc6715c0cda`  
+		Last Modified: Thu, 12 Sep 2019 23:12:27 GMT  
+		Size: 1.6 MB (1601380 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:5e70fe71f1863f9b1f22e624d945a09988ac6311869b462e4bfe7ed8db2464a5`  
-		Last Modified: Tue, 03 Sep 2019 10:04:39 GMT  
-		Size: 14.5 MB (14542972 bytes)  
+	-	`sha256:d6f5c1ff1e78f69760fe157007af4efe24ddeeae52ff4891de5ea2e167fdc6ba`  
+		Last Modified: Thu, 12 Sep 2019 23:12:30 GMT  
+		Size: 14.5 MB (14543448 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:8494abc82b7e360539366bd841d3b679f055bbef5471422bac950a0a85b2d69d`  
-		Last Modified: Tue, 03 Sep 2019 10:04:35 GMT  
-		Size: 530.0 B  
+	-	`sha256:29835a87b6817f7f0072b8c626cd23bf97eea88cf61c1908b994bd4682c346e9`  
+		Last Modified: Thu, 12 Sep 2019 23:12:25 GMT  
+		Size: 534.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:0422d06d13cc198f7eb89dfef25fd15a808a636b47baf5e8eb6259a10a3264bd`  
-		Last Modified: Tue, 03 Sep 2019 10:04:57 GMT  
-		Size: 59.9 MB (59871512 bytes)  
+	-	`sha256:29f7fbf16d0841bd22990ca9d07eb69d790c1beb7239e0183fa974dacbfb0567`  
+		Last Modified: Thu, 12 Sep 2019 23:12:43 GMT  
+		Size: 59.9 MB (59872025 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:8a62153a3cd8513f3b62a6f4cef93b814bdada361ef76fa80724d048b730c48b`  
-		Last Modified: Wed, 11 Sep 2019 05:50:34 GMT  
-		Size: 2.1 KB (2098 bytes)  
+	-	`sha256:5297392f4772123768b96e5473d95e3084322de46e8cd09e90803796ad0df7e6`  
+		Last Modified: Thu, 12 Sep 2019 23:12:25 GMT  
+		Size: 2.1 KB (2097 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:8bedad14b9f02b428f343b6fd2ec729fe73c1744977979a19133fb34c6b2a422`  
-		Last Modified: Wed, 11 Sep 2019 05:50:34 GMT  
-		Size: 1.1 KB (1075 bytes)  
+	-	`sha256:fc5d011462335ac7a4f6ab51f54d6a638237705ae06698950d14e88af12aa343`  
+		Last Modified: Thu, 12 Sep 2019 23:12:25 GMT  
+		Size: 1.1 KB (1069 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `nextcloud:14-fpm` - linux; 386
