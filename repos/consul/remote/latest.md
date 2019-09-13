@@ -1,7 +1,7 @@
 ## `consul:latest`
 
 ```console
-$ docker pull consul@sha256:3f7d8317ba0d9fdb992b421e9cb63b44aff1d764b27e33a97e003d3441f426f4
+$ docker pull consul@sha256:bfa0aa77b8574b7f64481afdb1d48337dfd89a38807739c608b2be8ee7c03ac3
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -164,14 +164,14 @@ CMD ["agent" "-dev" "-client" "0.0.0.0"]
 ### `consul:latest` - linux; arm64 variant v8
 
 ```console
-$ docker pull consul@sha256:b4c4decb697eb2a094b120e69f4c76218eb995981150ac8398272fdeac2b0fee
+$ docker pull consul@sha256:8b8aef3067d1d196b579904ed9c28cdf3ab55d382031d0ca533f6a57ca011ea9
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **42.0 MB (41962076 bytes)**  
+-	Total Size: **42.0 MB (41994481 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:c2f0fbaf0d661f1a6859aa17f265b07d30d12c634d8d1ad219d0a64ed4bb949d`
+-	Image ID: `sha256:175c5a94078ce0dc74012f1030e51928e10debf8c3eda0ce27efd7faf4c837b4`
 -	Entrypoint: `["docker-entrypoint.sh"]`
 -	Default Command: `["agent","-dev","-client","0.0.0.0"]`
 
@@ -182,31 +182,31 @@ ADD file:66f49017dd7ba295602526dbf210046e47fd097298c17a3f268a47487b5b6379 in /
 CMD ["/bin/sh"]
 # Wed, 19 Jun 2019 20:56:05 GMT
 MAINTAINER Consul Team <consul@hashicorp.com>
-# Tue, 27 Aug 2019 00:08:45 GMT
-ENV CONSUL_VERSION=1.6.0
-# Tue, 27 Aug 2019 00:08:45 GMT
+# Fri, 13 Sep 2019 02:03:40 GMT
+ENV CONSUL_VERSION=1.6.1
+# Fri, 13 Sep 2019 02:03:41 GMT
 ENV HASHICORP_RELEASES=https://releases.hashicorp.com
-# Tue, 27 Aug 2019 00:08:47 GMT
+# Fri, 13 Sep 2019 02:03:43 GMT
 RUN addgroup consul &&     adduser -S -G consul consul
-# Tue, 27 Aug 2019 00:08:54 GMT
+# Fri, 13 Sep 2019 02:03:51 GMT
 RUN set -eux &&     apk add --no-cache ca-certificates curl dumb-init gnupg libcap openssl su-exec iputils jq &&     gpg --keyserver pgp.mit.edu --recv-keys 91A6E7F85D05C65630BEF18951852D87348FFC4C &&     mkdir -p /tmp/build &&     cd /tmp/build &&     apkArch="$(apk --print-arch)" &&     case "${apkArch}" in         aarch64) consulArch='arm64' ;;         armhf) consulArch='arm' ;;         x86) consulArch='386' ;;         x86_64) consulArch='amd64' ;;         *) echo >&2 "error: unsupported architecture: ${apkArch} (see ${HASHICORP_RELEASES}/consul/${CONSUL_VERSION}/)" && exit 1 ;;     esac &&     wget ${HASHICORP_RELEASES}/consul/${CONSUL_VERSION}/consul_${CONSUL_VERSION}_linux_${consulArch}.zip &&     wget ${HASHICORP_RELEASES}/consul/${CONSUL_VERSION}/consul_${CONSUL_VERSION}_SHA256SUMS &&     wget ${HASHICORP_RELEASES}/consul/${CONSUL_VERSION}/consul_${CONSUL_VERSION}_SHA256SUMS.sig &&     gpg --batch --verify consul_${CONSUL_VERSION}_SHA256SUMS.sig consul_${CONSUL_VERSION}_SHA256SUMS &&     grep consul_${CONSUL_VERSION}_linux_${consulArch}.zip consul_${CONSUL_VERSION}_SHA256SUMS | sha256sum -c &&     unzip -d /bin consul_${CONSUL_VERSION}_linux_${consulArch}.zip &&     cd /tmp &&     rm -rf /tmp/build &&     apk del gnupg openssl &&     rm -rf /root/.gnupg &&     consul version
-# Tue, 27 Aug 2019 00:08:55 GMT
+# Fri, 13 Sep 2019 02:03:53 GMT
 RUN mkdir -p /consul/data &&     mkdir -p /consul/config &&     chown -R consul:consul /consul
-# Tue, 27 Aug 2019 00:08:57 GMT
+# Fri, 13 Sep 2019 02:03:55 GMT
 RUN test -e /etc/nsswitch.conf || echo 'hosts: files dns' > /etc/nsswitch.conf
-# Tue, 27 Aug 2019 00:08:57 GMT
+# Fri, 13 Sep 2019 02:03:55 GMT
 VOLUME [/consul/data]
-# Tue, 27 Aug 2019 00:08:57 GMT
+# Fri, 13 Sep 2019 02:03:56 GMT
 EXPOSE 8300
-# Tue, 27 Aug 2019 00:08:58 GMT
+# Fri, 13 Sep 2019 02:03:57 GMT
 EXPOSE 8301 8301/udp 8302 8302/udp
-# Tue, 27 Aug 2019 00:08:58 GMT
+# Fri, 13 Sep 2019 02:03:57 GMT
 EXPOSE 8500 8600 8600/udp
-# Tue, 27 Aug 2019 00:08:59 GMT
-COPY file:1c5f16053db7ac80ca2606114b1597e5421edf31162ea24a1ae8b059f48426f0 in /usr/local/bin/docker-entrypoint.sh 
-# Tue, 27 Aug 2019 00:08:59 GMT
+# Fri, 13 Sep 2019 02:03:58 GMT
+COPY file:247b557dfc58d59b4f83bd2bd196c7a03ff835064b0d7fef7dfe91b84120ff30 in /usr/local/bin/docker-entrypoint.sh 
+# Fri, 13 Sep 2019 02:03:59 GMT
 ENTRYPOINT ["docker-entrypoint.sh"]
-# Tue, 27 Aug 2019 00:08:59 GMT
+# Fri, 13 Sep 2019 02:04:00 GMT
 CMD ["agent" "-dev" "-client" "0.0.0.0"]
 ```
 
@@ -215,25 +215,25 @@ CMD ["agent" "-dev" "-client" "0.0.0.0"]
 		Last Modified: Sat, 11 May 2019 08:44:25 GMT  
 		Size: 2.7 MB (2688779 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c3f2a4896a3476695c1d6bb359197a47c521135ea464ef4e4ac57e32a03032aa`  
-		Last Modified: Tue, 27 Aug 2019 00:09:50 GMT  
-		Size: 1.3 KB (1284 bytes)  
+	-	`sha256:d3583fd022d198a5cccda9b16e472befef07199f6eab1b386f14b13078e9d7e1`  
+		Last Modified: Fri, 13 Sep 2019 02:04:44 GMT  
+		Size: 1.3 KB (1286 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:182a88cbc680f4aa4dd086f16b4bcef71d1bda05e6ad164e67e4fe4f702688cb`  
-		Last Modified: Tue, 27 Aug 2019 00:10:02 GMT  
-		Size: 39.3 MB (39269979 bytes)  
+	-	`sha256:8e0682c216ffd1f9641dc1903d4701f42664bacd4e2f2d276381bf89446e80fc`  
+		Last Modified: Fri, 13 Sep 2019 02:04:55 GMT  
+		Size: 39.3 MB (39302377 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:555573521eea06ff3ab4cb58a73d428b0d74a6718e28931a64d30a40ddadc874`  
-		Last Modified: Tue, 27 Aug 2019 00:09:50 GMT  
-		Size: 174.0 B  
+	-	`sha256:6c9fcb99e744008fa2721f26270d6e91a76abc1ed056ae04db34903abf3bc07d`  
+		Last Modified: Fri, 13 Sep 2019 02:04:44 GMT  
+		Size: 176.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:cbd52d47804ed24d559316af618147406bcc56be57baf0898d84cae9d68f7db8`  
-		Last Modified: Tue, 27 Aug 2019 00:09:52 GMT  
+	-	`sha256:aab3b5d323eaa20948ff4c43e6e1144ce6985462f5309d2538c869b7697dbcde`  
+		Last Modified: Fri, 13 Sep 2019 02:04:44 GMT  
 		Size: 154.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:b64232d55a717d7ff3e489943b1cc8a382fcd281d65cfed3b6e27d8aadb7fdec`  
-		Last Modified: Tue, 27 Aug 2019 00:09:50 GMT  
-		Size: 1.7 KB (1706 bytes)  
+	-	`sha256:39226170f81d9577a1f7d072b1805bb409c1851098ca78a6040f70e2abc5f44f`  
+		Last Modified: Fri, 13 Sep 2019 02:04:44 GMT  
+		Size: 1.7 KB (1709 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `consul:latest` - linux; 386
