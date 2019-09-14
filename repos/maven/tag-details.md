@@ -53,7 +53,7 @@
 ## `maven:3`
 
 ```console
-$ docker pull maven@sha256:de81cbb362db7d2ab21e32b3069b318870a65805f4a41525d757b60aa1574b95
+$ docker pull maven@sha256:402b6480724f1174b73b083b00649dd3b05204830eb5bc0af00fb486fda1f2c4
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -64,14 +64,14 @@ $ docker pull maven@sha256:de81cbb362db7d2ab21e32b3069b318870a65805f4a41525d757b
 ### `maven:3` - linux; amd64
 
 ```console
-$ docker pull maven@sha256:040515327409588cebf0c83abf8267a28d55a0274c9c566efbee6853c1ea5203
+$ docker pull maven@sha256:8f3817ad781f88d84736aa831e40db2686196d70ee1a690d95c9935ddfc632a8
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **320.4 MB (320395309 bytes)**  
+-	Total Size: **320.4 MB (320395314 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:96945ef2abcf7f27096e330abff234b2994b2d84b6de90f45004fb68cd435a11`
+-	Image ID: `sha256:e941463218b96a496d62aa7f9766ca9fa10760d070d025c366e00664f7ae25af`
 -	Entrypoint: `["\/usr\/local\/bin\/mvn-entrypoint.sh"]`
 -	Default Command: `["mvn"]`
 
@@ -102,32 +102,32 @@ ENV JAVA_VERSION=11.0.4
 ENV JAVA_BASE_URL=https://github.com/AdoptOpenJDK/openjdk11-upstream-binaries/releases/download/jdk-11.0.4%2B11/OpenJDK11U-jdk_
 # Thu, 12 Sep 2019 14:29:49 GMT
 ENV JAVA_URL_VERSION=11.0.4_11
-# Thu, 12 Sep 2019 14:30:06 GMT
-RUN set -eux; 		dpkgArch="$(dpkg --print-architecture)"; 	case "$dpkgArch" in 		amd64) upstreamArch='x64' ;; 		arm64) upstreamArch='aarch64' ;; 		*) echo >&2 "error: unsupported architecture: $dpkgArch" ;; 	esac; 		wget -O openjdk.tgz.asc "${JAVA_BASE_URL}${upstreamArch}_linux_${JAVA_URL_VERSION}.tar.gz.sign"; 	wget -O openjdk.tgz "${JAVA_BASE_URL}${upstreamArch}_linux_${JAVA_URL_VERSION}.tar.gz" --progress=dot:giga; 		export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys CA5F11C6CE22644D42C6AC4492EF8D39DC13168F; 	gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys EAC843EBD3EFDB98CC772FADA5CD6035332FA671; 	gpg --batch --list-sigs --keyid-format 0xLONG CA5F11C6CE22644D42C6AC4492EF8D39DC13168F | grep '0xA5CD6035332FA671' | grep 'Andrew Haley'; 	gpg --batch --verify openjdk.tgz.asc openjdk.tgz; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME"; 		mkdir -p "$JAVA_HOME"; 	tar --extract 		--file openjdk.tgz 		--directory "$JAVA_HOME" 		--strip-components 1 		--no-same-owner 	; 	rm openjdk.tgz*; 			{ 		echo '#!/usr/bin/env bash'; 		echo 'set -Eeuo pipefail'; 		echo 'if ! [ -d "$JAVA_HOME" ]; then echo >&2 "error: missing JAVA_HOME environment variable"; exit 1; fi'; 		echo 'cacertsFile=; for f in "$JAVA_HOME/lib/security/cacerts" "$JAVA_HOME/jre/lib/security/cacerts"; do if [ -e "$f" ]; then cacertsFile="$f"; break; fi; done'; 		echo 'if [ -z "$cacertsFile" ] || ! [ -f "$cacertsFile" ]; then echo >&2 "error: failed to find cacerts file in $JAVA_HOME"; exit 1; fi'; 		echo 'trust extract --overwrite --format=java-cacerts --filter=ca-anchors --purpose=server-auth "$cacertsFile"'; 	} > /etc/ca-certificates/update.d/docker-openjdk; 	chmod +x /etc/ca-certificates/update.d/docker-openjdk; 	/etc/ca-certificates/update.d/docker-openjdk; 		find "$JAVA_HOME/lib" -name '*.so' -exec dirname '{}' ';' | sort -u > /etc/ld.so.conf.d/docker-openjdk.conf; 	ldconfig; 		javac --version; 	java --version
-# Thu, 12 Sep 2019 14:30:07 GMT
+# Sat, 14 Sep 2019 00:22:42 GMT
+RUN set -eux; 		dpkgArch="$(dpkg --print-architecture)"; 	case "$dpkgArch" in 		amd64) upstreamArch='x64' ;; 		arm64) upstreamArch='aarch64' ;; 		*) echo >&2 "error: unsupported architecture: $dpkgArch" ;; 	esac; 		wget -O openjdk.tgz.asc "${JAVA_BASE_URL}${upstreamArch}_linux_${JAVA_URL_VERSION}.tar.gz.sign"; 	wget -O openjdk.tgz "${JAVA_BASE_URL}${upstreamArch}_linux_${JAVA_URL_VERSION}.tar.gz" --progress=dot:giga; 		export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver ha.pool.sks-keyservers.net --keyserver-options no-self-sigs-only --recv-keys CA5F11C6CE22644D42C6AC4492EF8D39DC13168F; 	gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys EAC843EBD3EFDB98CC772FADA5CD6035332FA671; 	gpg --batch --list-sigs --keyid-format 0xLONG CA5F11C6CE22644D42C6AC4492EF8D39DC13168F 		| tee /dev/stderr 		| grep '0xA5CD6035332FA671' 		| grep 'Andrew Haley'; 	gpg --batch --verify openjdk.tgz.asc openjdk.tgz; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME"; 		mkdir -p "$JAVA_HOME"; 	tar --extract 		--file openjdk.tgz 		--directory "$JAVA_HOME" 		--strip-components 1 		--no-same-owner 	; 	rm openjdk.tgz*; 			{ 		echo '#!/usr/bin/env bash'; 		echo 'set -Eeuo pipefail'; 		echo 'if ! [ -d "$JAVA_HOME" ]; then echo >&2 "error: missing JAVA_HOME environment variable"; exit 1; fi'; 		echo 'cacertsFile=; for f in "$JAVA_HOME/lib/security/cacerts" "$JAVA_HOME/jre/lib/security/cacerts"; do if [ -e "$f" ]; then cacertsFile="$f"; break; fi; done'; 		echo 'if [ -z "$cacertsFile" ] || ! [ -f "$cacertsFile" ]; then echo >&2 "error: failed to find cacerts file in $JAVA_HOME"; exit 1; fi'; 		echo 'trust extract --overwrite --format=java-cacerts --filter=ca-anchors --purpose=server-auth "$cacertsFile"'; 	} > /etc/ca-certificates/update.d/docker-openjdk; 	chmod +x /etc/ca-certificates/update.d/docker-openjdk; 	/etc/ca-certificates/update.d/docker-openjdk; 		find "$JAVA_HOME/lib" -name '*.so' -exec dirname '{}' ';' | sort -u > /etc/ld.so.conf.d/docker-openjdk.conf; 	ldconfig; 		javac --version; 	java --version
+# Sat, 14 Sep 2019 00:22:42 GMT
 CMD ["jshell"]
-# Fri, 13 Sep 2019 05:14:22 GMT
+# Sat, 14 Sep 2019 02:32:41 GMT
 ARG MAVEN_VERSION=3.6.2
-# Fri, 13 Sep 2019 05:14:22 GMT
+# Sat, 14 Sep 2019 02:32:41 GMT
 ARG USER_HOME_DIR=/root
-# Fri, 13 Sep 2019 05:14:22 GMT
+# Sat, 14 Sep 2019 02:32:41 GMT
 ARG SHA=d941423d115cd021514bfd06c453658b1b3e39e6240969caf4315ab7119a77299713f14b620fb2571a264f8dff2473d8af3cb47b05acf0036fc2553199a5c1ee
-# Fri, 13 Sep 2019 05:14:22 GMT
+# Sat, 14 Sep 2019 02:32:41 GMT
 ARG BASE_URL=https://apache.osuosl.org/maven/maven-3/3.6.2/binaries
-# Fri, 13 Sep 2019 05:14:24 GMT
+# Sat, 14 Sep 2019 02:32:43 GMT
 # ARGS: BASE_URL=https://apache.osuosl.org/maven/maven-3/3.6.2/binaries MAVEN_VERSION=3.6.2 SHA=d941423d115cd021514bfd06c453658b1b3e39e6240969caf4315ab7119a77299713f14b620fb2571a264f8dff2473d8af3cb47b05acf0036fc2553199a5c1ee USER_HOME_DIR=/root
 RUN mkdir -p /usr/share/maven /usr/share/maven/ref   && curl -fsSL -o /tmp/apache-maven.tar.gz ${BASE_URL}/apache-maven-${MAVEN_VERSION}-bin.tar.gz   && echo "${SHA}  /tmp/apache-maven.tar.gz" | sha512sum -c -   && tar -xzf /tmp/apache-maven.tar.gz -C /usr/share/maven --strip-components=1   && rm -f /tmp/apache-maven.tar.gz   && ln -s /usr/share/maven/bin/mvn /usr/bin/mvn
-# Fri, 13 Sep 2019 05:14:24 GMT
+# Sat, 14 Sep 2019 02:32:43 GMT
 ENV MAVEN_HOME=/usr/share/maven
-# Fri, 13 Sep 2019 05:14:24 GMT
+# Sat, 14 Sep 2019 02:32:43 GMT
 ENV MAVEN_CONFIG=/root/.m2
-# Fri, 13 Sep 2019 05:14:24 GMT
+# Sat, 14 Sep 2019 02:32:43 GMT
 COPY file:1b3da5c58894f705e7387946301c0c52edb6271761ea3cd80b86a848847a64cd in /usr/local/bin/mvn-entrypoint.sh 
-# Fri, 13 Sep 2019 05:14:25 GMT
+# Sat, 14 Sep 2019 02:32:43 GMT
 COPY file:2bbb488dd73c55d658b91943cfdf9c26975a320ceafc45dda94c95b03e518ad3 in /usr/share/maven/ref/ 
-# Fri, 13 Sep 2019 05:14:25 GMT
+# Sat, 14 Sep 2019 02:32:43 GMT
 ENTRYPOINT ["/usr/local/bin/mvn-entrypoint.sh"]
-# Fri, 13 Sep 2019 05:14:25 GMT
+# Sat, 14 Sep 2019 02:32:44 GMT
 CMD ["mvn"]
 ```
 
@@ -156,21 +156,21 @@ CMD ["mvn"]
 		Last Modified: Thu, 12 Sep 2019 14:35:16 GMT  
 		Size: 222.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:96fd45ee9818086a74a3a5f4562639f0d2db421419d9d20e4553dd2d11e36917`  
-		Last Modified: Thu, 12 Sep 2019 14:35:41 GMT  
-		Size: 195.7 MB (195718802 bytes)  
+	-	`sha256:663538d2581ce8ee06691cdd2020b2a38f47bd9996c7592247a76280505e3a4e`  
+		Last Modified: Sat, 14 Sep 2019 00:26:21 GMT  
+		Size: 195.7 MB (195718807 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:e0bfbdc652c3b5b169baeedb120f354664027d72d9866f4ad02fa79294c644d8`  
-		Last Modified: Fri, 13 Sep 2019 05:15:17 GMT  
-		Size: 9.2 MB (9167581 bytes)  
+	-	`sha256:28d90ddff35dcae263144936dedbe6d1baa5cff7cde62906c6c854f89cbfb0ed`  
+		Last Modified: Sat, 14 Sep 2019 02:34:01 GMT  
+		Size: 9.2 MB (9167583 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:9c2a3372ee55b77da59d73774317f35047e7a38a4d06c454cf03de63dc4a00c3`  
-		Last Modified: Fri, 13 Sep 2019 05:15:16 GMT  
-		Size: 864.0 B  
+	-	`sha256:4026e60527338b245da2f67dd4002950303385b0bdf26d45c1519cb041bd120e`  
+		Last Modified: Sat, 14 Sep 2019 02:34:01 GMT  
+		Size: 861.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:8e70e332c8192e51f7cd3a74d4e02c0bb794da8852bd65f7de6f1e23fa2a63c7`  
-		Last Modified: Fri, 13 Sep 2019 05:15:17 GMT  
-		Size: 357.0 B  
+	-	`sha256:fedf7e9533c347c5f74d951ee6877b2f48c7996638ff7753f24cbf9d6750bf3b`  
+		Last Modified: Sat, 14 Sep 2019 02:34:01 GMT  
+		Size: 358.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `maven:3` - linux; arm64 variant v8
@@ -288,7 +288,7 @@ CMD ["mvn"]
 ## `maven:3.6`
 
 ```console
-$ docker pull maven@sha256:de81cbb362db7d2ab21e32b3069b318870a65805f4a41525d757b60aa1574b95
+$ docker pull maven@sha256:402b6480724f1174b73b083b00649dd3b05204830eb5bc0af00fb486fda1f2c4
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -299,14 +299,14 @@ $ docker pull maven@sha256:de81cbb362db7d2ab21e32b3069b318870a65805f4a41525d757b
 ### `maven:3.6` - linux; amd64
 
 ```console
-$ docker pull maven@sha256:040515327409588cebf0c83abf8267a28d55a0274c9c566efbee6853c1ea5203
+$ docker pull maven@sha256:8f3817ad781f88d84736aa831e40db2686196d70ee1a690d95c9935ddfc632a8
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **320.4 MB (320395309 bytes)**  
+-	Total Size: **320.4 MB (320395314 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:96945ef2abcf7f27096e330abff234b2994b2d84b6de90f45004fb68cd435a11`
+-	Image ID: `sha256:e941463218b96a496d62aa7f9766ca9fa10760d070d025c366e00664f7ae25af`
 -	Entrypoint: `["\/usr\/local\/bin\/mvn-entrypoint.sh"]`
 -	Default Command: `["mvn"]`
 
@@ -337,32 +337,32 @@ ENV JAVA_VERSION=11.0.4
 ENV JAVA_BASE_URL=https://github.com/AdoptOpenJDK/openjdk11-upstream-binaries/releases/download/jdk-11.0.4%2B11/OpenJDK11U-jdk_
 # Thu, 12 Sep 2019 14:29:49 GMT
 ENV JAVA_URL_VERSION=11.0.4_11
-# Thu, 12 Sep 2019 14:30:06 GMT
-RUN set -eux; 		dpkgArch="$(dpkg --print-architecture)"; 	case "$dpkgArch" in 		amd64) upstreamArch='x64' ;; 		arm64) upstreamArch='aarch64' ;; 		*) echo >&2 "error: unsupported architecture: $dpkgArch" ;; 	esac; 		wget -O openjdk.tgz.asc "${JAVA_BASE_URL}${upstreamArch}_linux_${JAVA_URL_VERSION}.tar.gz.sign"; 	wget -O openjdk.tgz "${JAVA_BASE_URL}${upstreamArch}_linux_${JAVA_URL_VERSION}.tar.gz" --progress=dot:giga; 		export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys CA5F11C6CE22644D42C6AC4492EF8D39DC13168F; 	gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys EAC843EBD3EFDB98CC772FADA5CD6035332FA671; 	gpg --batch --list-sigs --keyid-format 0xLONG CA5F11C6CE22644D42C6AC4492EF8D39DC13168F | grep '0xA5CD6035332FA671' | grep 'Andrew Haley'; 	gpg --batch --verify openjdk.tgz.asc openjdk.tgz; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME"; 		mkdir -p "$JAVA_HOME"; 	tar --extract 		--file openjdk.tgz 		--directory "$JAVA_HOME" 		--strip-components 1 		--no-same-owner 	; 	rm openjdk.tgz*; 			{ 		echo '#!/usr/bin/env bash'; 		echo 'set -Eeuo pipefail'; 		echo 'if ! [ -d "$JAVA_HOME" ]; then echo >&2 "error: missing JAVA_HOME environment variable"; exit 1; fi'; 		echo 'cacertsFile=; for f in "$JAVA_HOME/lib/security/cacerts" "$JAVA_HOME/jre/lib/security/cacerts"; do if [ -e "$f" ]; then cacertsFile="$f"; break; fi; done'; 		echo 'if [ -z "$cacertsFile" ] || ! [ -f "$cacertsFile" ]; then echo >&2 "error: failed to find cacerts file in $JAVA_HOME"; exit 1; fi'; 		echo 'trust extract --overwrite --format=java-cacerts --filter=ca-anchors --purpose=server-auth "$cacertsFile"'; 	} > /etc/ca-certificates/update.d/docker-openjdk; 	chmod +x /etc/ca-certificates/update.d/docker-openjdk; 	/etc/ca-certificates/update.d/docker-openjdk; 		find "$JAVA_HOME/lib" -name '*.so' -exec dirname '{}' ';' | sort -u > /etc/ld.so.conf.d/docker-openjdk.conf; 	ldconfig; 		javac --version; 	java --version
-# Thu, 12 Sep 2019 14:30:07 GMT
+# Sat, 14 Sep 2019 00:22:42 GMT
+RUN set -eux; 		dpkgArch="$(dpkg --print-architecture)"; 	case "$dpkgArch" in 		amd64) upstreamArch='x64' ;; 		arm64) upstreamArch='aarch64' ;; 		*) echo >&2 "error: unsupported architecture: $dpkgArch" ;; 	esac; 		wget -O openjdk.tgz.asc "${JAVA_BASE_URL}${upstreamArch}_linux_${JAVA_URL_VERSION}.tar.gz.sign"; 	wget -O openjdk.tgz "${JAVA_BASE_URL}${upstreamArch}_linux_${JAVA_URL_VERSION}.tar.gz" --progress=dot:giga; 		export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver ha.pool.sks-keyservers.net --keyserver-options no-self-sigs-only --recv-keys CA5F11C6CE22644D42C6AC4492EF8D39DC13168F; 	gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys EAC843EBD3EFDB98CC772FADA5CD6035332FA671; 	gpg --batch --list-sigs --keyid-format 0xLONG CA5F11C6CE22644D42C6AC4492EF8D39DC13168F 		| tee /dev/stderr 		| grep '0xA5CD6035332FA671' 		| grep 'Andrew Haley'; 	gpg --batch --verify openjdk.tgz.asc openjdk.tgz; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME"; 		mkdir -p "$JAVA_HOME"; 	tar --extract 		--file openjdk.tgz 		--directory "$JAVA_HOME" 		--strip-components 1 		--no-same-owner 	; 	rm openjdk.tgz*; 			{ 		echo '#!/usr/bin/env bash'; 		echo 'set -Eeuo pipefail'; 		echo 'if ! [ -d "$JAVA_HOME" ]; then echo >&2 "error: missing JAVA_HOME environment variable"; exit 1; fi'; 		echo 'cacertsFile=; for f in "$JAVA_HOME/lib/security/cacerts" "$JAVA_HOME/jre/lib/security/cacerts"; do if [ -e "$f" ]; then cacertsFile="$f"; break; fi; done'; 		echo 'if [ -z "$cacertsFile" ] || ! [ -f "$cacertsFile" ]; then echo >&2 "error: failed to find cacerts file in $JAVA_HOME"; exit 1; fi'; 		echo 'trust extract --overwrite --format=java-cacerts --filter=ca-anchors --purpose=server-auth "$cacertsFile"'; 	} > /etc/ca-certificates/update.d/docker-openjdk; 	chmod +x /etc/ca-certificates/update.d/docker-openjdk; 	/etc/ca-certificates/update.d/docker-openjdk; 		find "$JAVA_HOME/lib" -name '*.so' -exec dirname '{}' ';' | sort -u > /etc/ld.so.conf.d/docker-openjdk.conf; 	ldconfig; 		javac --version; 	java --version
+# Sat, 14 Sep 2019 00:22:42 GMT
 CMD ["jshell"]
-# Fri, 13 Sep 2019 05:14:22 GMT
+# Sat, 14 Sep 2019 02:32:41 GMT
 ARG MAVEN_VERSION=3.6.2
-# Fri, 13 Sep 2019 05:14:22 GMT
+# Sat, 14 Sep 2019 02:32:41 GMT
 ARG USER_HOME_DIR=/root
-# Fri, 13 Sep 2019 05:14:22 GMT
+# Sat, 14 Sep 2019 02:32:41 GMT
 ARG SHA=d941423d115cd021514bfd06c453658b1b3e39e6240969caf4315ab7119a77299713f14b620fb2571a264f8dff2473d8af3cb47b05acf0036fc2553199a5c1ee
-# Fri, 13 Sep 2019 05:14:22 GMT
+# Sat, 14 Sep 2019 02:32:41 GMT
 ARG BASE_URL=https://apache.osuosl.org/maven/maven-3/3.6.2/binaries
-# Fri, 13 Sep 2019 05:14:24 GMT
+# Sat, 14 Sep 2019 02:32:43 GMT
 # ARGS: BASE_URL=https://apache.osuosl.org/maven/maven-3/3.6.2/binaries MAVEN_VERSION=3.6.2 SHA=d941423d115cd021514bfd06c453658b1b3e39e6240969caf4315ab7119a77299713f14b620fb2571a264f8dff2473d8af3cb47b05acf0036fc2553199a5c1ee USER_HOME_DIR=/root
 RUN mkdir -p /usr/share/maven /usr/share/maven/ref   && curl -fsSL -o /tmp/apache-maven.tar.gz ${BASE_URL}/apache-maven-${MAVEN_VERSION}-bin.tar.gz   && echo "${SHA}  /tmp/apache-maven.tar.gz" | sha512sum -c -   && tar -xzf /tmp/apache-maven.tar.gz -C /usr/share/maven --strip-components=1   && rm -f /tmp/apache-maven.tar.gz   && ln -s /usr/share/maven/bin/mvn /usr/bin/mvn
-# Fri, 13 Sep 2019 05:14:24 GMT
+# Sat, 14 Sep 2019 02:32:43 GMT
 ENV MAVEN_HOME=/usr/share/maven
-# Fri, 13 Sep 2019 05:14:24 GMT
+# Sat, 14 Sep 2019 02:32:43 GMT
 ENV MAVEN_CONFIG=/root/.m2
-# Fri, 13 Sep 2019 05:14:24 GMT
+# Sat, 14 Sep 2019 02:32:43 GMT
 COPY file:1b3da5c58894f705e7387946301c0c52edb6271761ea3cd80b86a848847a64cd in /usr/local/bin/mvn-entrypoint.sh 
-# Fri, 13 Sep 2019 05:14:25 GMT
+# Sat, 14 Sep 2019 02:32:43 GMT
 COPY file:2bbb488dd73c55d658b91943cfdf9c26975a320ceafc45dda94c95b03e518ad3 in /usr/share/maven/ref/ 
-# Fri, 13 Sep 2019 05:14:25 GMT
+# Sat, 14 Sep 2019 02:32:43 GMT
 ENTRYPOINT ["/usr/local/bin/mvn-entrypoint.sh"]
-# Fri, 13 Sep 2019 05:14:25 GMT
+# Sat, 14 Sep 2019 02:32:44 GMT
 CMD ["mvn"]
 ```
 
@@ -391,21 +391,21 @@ CMD ["mvn"]
 		Last Modified: Thu, 12 Sep 2019 14:35:16 GMT  
 		Size: 222.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:96fd45ee9818086a74a3a5f4562639f0d2db421419d9d20e4553dd2d11e36917`  
-		Last Modified: Thu, 12 Sep 2019 14:35:41 GMT  
-		Size: 195.7 MB (195718802 bytes)  
+	-	`sha256:663538d2581ce8ee06691cdd2020b2a38f47bd9996c7592247a76280505e3a4e`  
+		Last Modified: Sat, 14 Sep 2019 00:26:21 GMT  
+		Size: 195.7 MB (195718807 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:e0bfbdc652c3b5b169baeedb120f354664027d72d9866f4ad02fa79294c644d8`  
-		Last Modified: Fri, 13 Sep 2019 05:15:17 GMT  
-		Size: 9.2 MB (9167581 bytes)  
+	-	`sha256:28d90ddff35dcae263144936dedbe6d1baa5cff7cde62906c6c854f89cbfb0ed`  
+		Last Modified: Sat, 14 Sep 2019 02:34:01 GMT  
+		Size: 9.2 MB (9167583 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:9c2a3372ee55b77da59d73774317f35047e7a38a4d06c454cf03de63dc4a00c3`  
-		Last Modified: Fri, 13 Sep 2019 05:15:16 GMT  
-		Size: 864.0 B  
+	-	`sha256:4026e60527338b245da2f67dd4002950303385b0bdf26d45c1519cb041bd120e`  
+		Last Modified: Sat, 14 Sep 2019 02:34:01 GMT  
+		Size: 861.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:8e70e332c8192e51f7cd3a74d4e02c0bb794da8852bd65f7de6f1e23fa2a63c7`  
-		Last Modified: Fri, 13 Sep 2019 05:15:17 GMT  
-		Size: 357.0 B  
+	-	`sha256:fedf7e9533c347c5f74d951ee6877b2f48c7996638ff7753f24cbf9d6750bf3b`  
+		Last Modified: Sat, 14 Sep 2019 02:34:01 GMT  
+		Size: 358.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `maven:3.6` - linux; arm64 variant v8
@@ -523,7 +523,7 @@ CMD ["mvn"]
 ## `maven:3.6.2`
 
 ```console
-$ docker pull maven@sha256:de81cbb362db7d2ab21e32b3069b318870a65805f4a41525d757b60aa1574b95
+$ docker pull maven@sha256:402b6480724f1174b73b083b00649dd3b05204830eb5bc0af00fb486fda1f2c4
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -534,14 +534,14 @@ $ docker pull maven@sha256:de81cbb362db7d2ab21e32b3069b318870a65805f4a41525d757b
 ### `maven:3.6.2` - linux; amd64
 
 ```console
-$ docker pull maven@sha256:040515327409588cebf0c83abf8267a28d55a0274c9c566efbee6853c1ea5203
+$ docker pull maven@sha256:8f3817ad781f88d84736aa831e40db2686196d70ee1a690d95c9935ddfc632a8
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **320.4 MB (320395309 bytes)**  
+-	Total Size: **320.4 MB (320395314 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:96945ef2abcf7f27096e330abff234b2994b2d84b6de90f45004fb68cd435a11`
+-	Image ID: `sha256:e941463218b96a496d62aa7f9766ca9fa10760d070d025c366e00664f7ae25af`
 -	Entrypoint: `["\/usr\/local\/bin\/mvn-entrypoint.sh"]`
 -	Default Command: `["mvn"]`
 
@@ -572,32 +572,32 @@ ENV JAVA_VERSION=11.0.4
 ENV JAVA_BASE_URL=https://github.com/AdoptOpenJDK/openjdk11-upstream-binaries/releases/download/jdk-11.0.4%2B11/OpenJDK11U-jdk_
 # Thu, 12 Sep 2019 14:29:49 GMT
 ENV JAVA_URL_VERSION=11.0.4_11
-# Thu, 12 Sep 2019 14:30:06 GMT
-RUN set -eux; 		dpkgArch="$(dpkg --print-architecture)"; 	case "$dpkgArch" in 		amd64) upstreamArch='x64' ;; 		arm64) upstreamArch='aarch64' ;; 		*) echo >&2 "error: unsupported architecture: $dpkgArch" ;; 	esac; 		wget -O openjdk.tgz.asc "${JAVA_BASE_URL}${upstreamArch}_linux_${JAVA_URL_VERSION}.tar.gz.sign"; 	wget -O openjdk.tgz "${JAVA_BASE_URL}${upstreamArch}_linux_${JAVA_URL_VERSION}.tar.gz" --progress=dot:giga; 		export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys CA5F11C6CE22644D42C6AC4492EF8D39DC13168F; 	gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys EAC843EBD3EFDB98CC772FADA5CD6035332FA671; 	gpg --batch --list-sigs --keyid-format 0xLONG CA5F11C6CE22644D42C6AC4492EF8D39DC13168F | grep '0xA5CD6035332FA671' | grep 'Andrew Haley'; 	gpg --batch --verify openjdk.tgz.asc openjdk.tgz; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME"; 		mkdir -p "$JAVA_HOME"; 	tar --extract 		--file openjdk.tgz 		--directory "$JAVA_HOME" 		--strip-components 1 		--no-same-owner 	; 	rm openjdk.tgz*; 			{ 		echo '#!/usr/bin/env bash'; 		echo 'set -Eeuo pipefail'; 		echo 'if ! [ -d "$JAVA_HOME" ]; then echo >&2 "error: missing JAVA_HOME environment variable"; exit 1; fi'; 		echo 'cacertsFile=; for f in "$JAVA_HOME/lib/security/cacerts" "$JAVA_HOME/jre/lib/security/cacerts"; do if [ -e "$f" ]; then cacertsFile="$f"; break; fi; done'; 		echo 'if [ -z "$cacertsFile" ] || ! [ -f "$cacertsFile" ]; then echo >&2 "error: failed to find cacerts file in $JAVA_HOME"; exit 1; fi'; 		echo 'trust extract --overwrite --format=java-cacerts --filter=ca-anchors --purpose=server-auth "$cacertsFile"'; 	} > /etc/ca-certificates/update.d/docker-openjdk; 	chmod +x /etc/ca-certificates/update.d/docker-openjdk; 	/etc/ca-certificates/update.d/docker-openjdk; 		find "$JAVA_HOME/lib" -name '*.so' -exec dirname '{}' ';' | sort -u > /etc/ld.so.conf.d/docker-openjdk.conf; 	ldconfig; 		javac --version; 	java --version
-# Thu, 12 Sep 2019 14:30:07 GMT
+# Sat, 14 Sep 2019 00:22:42 GMT
+RUN set -eux; 		dpkgArch="$(dpkg --print-architecture)"; 	case "$dpkgArch" in 		amd64) upstreamArch='x64' ;; 		arm64) upstreamArch='aarch64' ;; 		*) echo >&2 "error: unsupported architecture: $dpkgArch" ;; 	esac; 		wget -O openjdk.tgz.asc "${JAVA_BASE_URL}${upstreamArch}_linux_${JAVA_URL_VERSION}.tar.gz.sign"; 	wget -O openjdk.tgz "${JAVA_BASE_URL}${upstreamArch}_linux_${JAVA_URL_VERSION}.tar.gz" --progress=dot:giga; 		export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver ha.pool.sks-keyservers.net --keyserver-options no-self-sigs-only --recv-keys CA5F11C6CE22644D42C6AC4492EF8D39DC13168F; 	gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys EAC843EBD3EFDB98CC772FADA5CD6035332FA671; 	gpg --batch --list-sigs --keyid-format 0xLONG CA5F11C6CE22644D42C6AC4492EF8D39DC13168F 		| tee /dev/stderr 		| grep '0xA5CD6035332FA671' 		| grep 'Andrew Haley'; 	gpg --batch --verify openjdk.tgz.asc openjdk.tgz; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME"; 		mkdir -p "$JAVA_HOME"; 	tar --extract 		--file openjdk.tgz 		--directory "$JAVA_HOME" 		--strip-components 1 		--no-same-owner 	; 	rm openjdk.tgz*; 			{ 		echo '#!/usr/bin/env bash'; 		echo 'set -Eeuo pipefail'; 		echo 'if ! [ -d "$JAVA_HOME" ]; then echo >&2 "error: missing JAVA_HOME environment variable"; exit 1; fi'; 		echo 'cacertsFile=; for f in "$JAVA_HOME/lib/security/cacerts" "$JAVA_HOME/jre/lib/security/cacerts"; do if [ -e "$f" ]; then cacertsFile="$f"; break; fi; done'; 		echo 'if [ -z "$cacertsFile" ] || ! [ -f "$cacertsFile" ]; then echo >&2 "error: failed to find cacerts file in $JAVA_HOME"; exit 1; fi'; 		echo 'trust extract --overwrite --format=java-cacerts --filter=ca-anchors --purpose=server-auth "$cacertsFile"'; 	} > /etc/ca-certificates/update.d/docker-openjdk; 	chmod +x /etc/ca-certificates/update.d/docker-openjdk; 	/etc/ca-certificates/update.d/docker-openjdk; 		find "$JAVA_HOME/lib" -name '*.so' -exec dirname '{}' ';' | sort -u > /etc/ld.so.conf.d/docker-openjdk.conf; 	ldconfig; 		javac --version; 	java --version
+# Sat, 14 Sep 2019 00:22:42 GMT
 CMD ["jshell"]
-# Fri, 13 Sep 2019 05:14:22 GMT
+# Sat, 14 Sep 2019 02:32:41 GMT
 ARG MAVEN_VERSION=3.6.2
-# Fri, 13 Sep 2019 05:14:22 GMT
+# Sat, 14 Sep 2019 02:32:41 GMT
 ARG USER_HOME_DIR=/root
-# Fri, 13 Sep 2019 05:14:22 GMT
+# Sat, 14 Sep 2019 02:32:41 GMT
 ARG SHA=d941423d115cd021514bfd06c453658b1b3e39e6240969caf4315ab7119a77299713f14b620fb2571a264f8dff2473d8af3cb47b05acf0036fc2553199a5c1ee
-# Fri, 13 Sep 2019 05:14:22 GMT
+# Sat, 14 Sep 2019 02:32:41 GMT
 ARG BASE_URL=https://apache.osuosl.org/maven/maven-3/3.6.2/binaries
-# Fri, 13 Sep 2019 05:14:24 GMT
+# Sat, 14 Sep 2019 02:32:43 GMT
 # ARGS: BASE_URL=https://apache.osuosl.org/maven/maven-3/3.6.2/binaries MAVEN_VERSION=3.6.2 SHA=d941423d115cd021514bfd06c453658b1b3e39e6240969caf4315ab7119a77299713f14b620fb2571a264f8dff2473d8af3cb47b05acf0036fc2553199a5c1ee USER_HOME_DIR=/root
 RUN mkdir -p /usr/share/maven /usr/share/maven/ref   && curl -fsSL -o /tmp/apache-maven.tar.gz ${BASE_URL}/apache-maven-${MAVEN_VERSION}-bin.tar.gz   && echo "${SHA}  /tmp/apache-maven.tar.gz" | sha512sum -c -   && tar -xzf /tmp/apache-maven.tar.gz -C /usr/share/maven --strip-components=1   && rm -f /tmp/apache-maven.tar.gz   && ln -s /usr/share/maven/bin/mvn /usr/bin/mvn
-# Fri, 13 Sep 2019 05:14:24 GMT
+# Sat, 14 Sep 2019 02:32:43 GMT
 ENV MAVEN_HOME=/usr/share/maven
-# Fri, 13 Sep 2019 05:14:24 GMT
+# Sat, 14 Sep 2019 02:32:43 GMT
 ENV MAVEN_CONFIG=/root/.m2
-# Fri, 13 Sep 2019 05:14:24 GMT
+# Sat, 14 Sep 2019 02:32:43 GMT
 COPY file:1b3da5c58894f705e7387946301c0c52edb6271761ea3cd80b86a848847a64cd in /usr/local/bin/mvn-entrypoint.sh 
-# Fri, 13 Sep 2019 05:14:25 GMT
+# Sat, 14 Sep 2019 02:32:43 GMT
 COPY file:2bbb488dd73c55d658b91943cfdf9c26975a320ceafc45dda94c95b03e518ad3 in /usr/share/maven/ref/ 
-# Fri, 13 Sep 2019 05:14:25 GMT
+# Sat, 14 Sep 2019 02:32:43 GMT
 ENTRYPOINT ["/usr/local/bin/mvn-entrypoint.sh"]
-# Fri, 13 Sep 2019 05:14:25 GMT
+# Sat, 14 Sep 2019 02:32:44 GMT
 CMD ["mvn"]
 ```
 
@@ -626,21 +626,21 @@ CMD ["mvn"]
 		Last Modified: Thu, 12 Sep 2019 14:35:16 GMT  
 		Size: 222.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:96fd45ee9818086a74a3a5f4562639f0d2db421419d9d20e4553dd2d11e36917`  
-		Last Modified: Thu, 12 Sep 2019 14:35:41 GMT  
-		Size: 195.7 MB (195718802 bytes)  
+	-	`sha256:663538d2581ce8ee06691cdd2020b2a38f47bd9996c7592247a76280505e3a4e`  
+		Last Modified: Sat, 14 Sep 2019 00:26:21 GMT  
+		Size: 195.7 MB (195718807 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:e0bfbdc652c3b5b169baeedb120f354664027d72d9866f4ad02fa79294c644d8`  
-		Last Modified: Fri, 13 Sep 2019 05:15:17 GMT  
-		Size: 9.2 MB (9167581 bytes)  
+	-	`sha256:28d90ddff35dcae263144936dedbe6d1baa5cff7cde62906c6c854f89cbfb0ed`  
+		Last Modified: Sat, 14 Sep 2019 02:34:01 GMT  
+		Size: 9.2 MB (9167583 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:9c2a3372ee55b77da59d73774317f35047e7a38a4d06c454cf03de63dc4a00c3`  
-		Last Modified: Fri, 13 Sep 2019 05:15:16 GMT  
-		Size: 864.0 B  
+	-	`sha256:4026e60527338b245da2f67dd4002950303385b0bdf26d45c1519cb041bd120e`  
+		Last Modified: Sat, 14 Sep 2019 02:34:01 GMT  
+		Size: 861.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:8e70e332c8192e51f7cd3a74d4e02c0bb794da8852bd65f7de6f1e23fa2a63c7`  
-		Last Modified: Fri, 13 Sep 2019 05:15:17 GMT  
-		Size: 357.0 B  
+	-	`sha256:fedf7e9533c347c5f74d951ee6877b2f48c7996638ff7753f24cbf9d6750bf3b`  
+		Last Modified: Sat, 14 Sep 2019 02:34:01 GMT  
+		Size: 358.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `maven:3.6.2` - linux; arm64 variant v8
@@ -2158,7 +2158,7 @@ CMD ["mvn"]
 ## `maven:3.6.2-jdk-11`
 
 ```console
-$ docker pull maven@sha256:de81cbb362db7d2ab21e32b3069b318870a65805f4a41525d757b60aa1574b95
+$ docker pull maven@sha256:402b6480724f1174b73b083b00649dd3b05204830eb5bc0af00fb486fda1f2c4
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -2169,14 +2169,14 @@ $ docker pull maven@sha256:de81cbb362db7d2ab21e32b3069b318870a65805f4a41525d757b
 ### `maven:3.6.2-jdk-11` - linux; amd64
 
 ```console
-$ docker pull maven@sha256:040515327409588cebf0c83abf8267a28d55a0274c9c566efbee6853c1ea5203
+$ docker pull maven@sha256:8f3817ad781f88d84736aa831e40db2686196d70ee1a690d95c9935ddfc632a8
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **320.4 MB (320395309 bytes)**  
+-	Total Size: **320.4 MB (320395314 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:96945ef2abcf7f27096e330abff234b2994b2d84b6de90f45004fb68cd435a11`
+-	Image ID: `sha256:e941463218b96a496d62aa7f9766ca9fa10760d070d025c366e00664f7ae25af`
 -	Entrypoint: `["\/usr\/local\/bin\/mvn-entrypoint.sh"]`
 -	Default Command: `["mvn"]`
 
@@ -2207,32 +2207,32 @@ ENV JAVA_VERSION=11.0.4
 ENV JAVA_BASE_URL=https://github.com/AdoptOpenJDK/openjdk11-upstream-binaries/releases/download/jdk-11.0.4%2B11/OpenJDK11U-jdk_
 # Thu, 12 Sep 2019 14:29:49 GMT
 ENV JAVA_URL_VERSION=11.0.4_11
-# Thu, 12 Sep 2019 14:30:06 GMT
-RUN set -eux; 		dpkgArch="$(dpkg --print-architecture)"; 	case "$dpkgArch" in 		amd64) upstreamArch='x64' ;; 		arm64) upstreamArch='aarch64' ;; 		*) echo >&2 "error: unsupported architecture: $dpkgArch" ;; 	esac; 		wget -O openjdk.tgz.asc "${JAVA_BASE_URL}${upstreamArch}_linux_${JAVA_URL_VERSION}.tar.gz.sign"; 	wget -O openjdk.tgz "${JAVA_BASE_URL}${upstreamArch}_linux_${JAVA_URL_VERSION}.tar.gz" --progress=dot:giga; 		export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys CA5F11C6CE22644D42C6AC4492EF8D39DC13168F; 	gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys EAC843EBD3EFDB98CC772FADA5CD6035332FA671; 	gpg --batch --list-sigs --keyid-format 0xLONG CA5F11C6CE22644D42C6AC4492EF8D39DC13168F | grep '0xA5CD6035332FA671' | grep 'Andrew Haley'; 	gpg --batch --verify openjdk.tgz.asc openjdk.tgz; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME"; 		mkdir -p "$JAVA_HOME"; 	tar --extract 		--file openjdk.tgz 		--directory "$JAVA_HOME" 		--strip-components 1 		--no-same-owner 	; 	rm openjdk.tgz*; 			{ 		echo '#!/usr/bin/env bash'; 		echo 'set -Eeuo pipefail'; 		echo 'if ! [ -d "$JAVA_HOME" ]; then echo >&2 "error: missing JAVA_HOME environment variable"; exit 1; fi'; 		echo 'cacertsFile=; for f in "$JAVA_HOME/lib/security/cacerts" "$JAVA_HOME/jre/lib/security/cacerts"; do if [ -e "$f" ]; then cacertsFile="$f"; break; fi; done'; 		echo 'if [ -z "$cacertsFile" ] || ! [ -f "$cacertsFile" ]; then echo >&2 "error: failed to find cacerts file in $JAVA_HOME"; exit 1; fi'; 		echo 'trust extract --overwrite --format=java-cacerts --filter=ca-anchors --purpose=server-auth "$cacertsFile"'; 	} > /etc/ca-certificates/update.d/docker-openjdk; 	chmod +x /etc/ca-certificates/update.d/docker-openjdk; 	/etc/ca-certificates/update.d/docker-openjdk; 		find "$JAVA_HOME/lib" -name '*.so' -exec dirname '{}' ';' | sort -u > /etc/ld.so.conf.d/docker-openjdk.conf; 	ldconfig; 		javac --version; 	java --version
-# Thu, 12 Sep 2019 14:30:07 GMT
+# Sat, 14 Sep 2019 00:22:42 GMT
+RUN set -eux; 		dpkgArch="$(dpkg --print-architecture)"; 	case "$dpkgArch" in 		amd64) upstreamArch='x64' ;; 		arm64) upstreamArch='aarch64' ;; 		*) echo >&2 "error: unsupported architecture: $dpkgArch" ;; 	esac; 		wget -O openjdk.tgz.asc "${JAVA_BASE_URL}${upstreamArch}_linux_${JAVA_URL_VERSION}.tar.gz.sign"; 	wget -O openjdk.tgz "${JAVA_BASE_URL}${upstreamArch}_linux_${JAVA_URL_VERSION}.tar.gz" --progress=dot:giga; 		export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver ha.pool.sks-keyservers.net --keyserver-options no-self-sigs-only --recv-keys CA5F11C6CE22644D42C6AC4492EF8D39DC13168F; 	gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys EAC843EBD3EFDB98CC772FADA5CD6035332FA671; 	gpg --batch --list-sigs --keyid-format 0xLONG CA5F11C6CE22644D42C6AC4492EF8D39DC13168F 		| tee /dev/stderr 		| grep '0xA5CD6035332FA671' 		| grep 'Andrew Haley'; 	gpg --batch --verify openjdk.tgz.asc openjdk.tgz; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME"; 		mkdir -p "$JAVA_HOME"; 	tar --extract 		--file openjdk.tgz 		--directory "$JAVA_HOME" 		--strip-components 1 		--no-same-owner 	; 	rm openjdk.tgz*; 			{ 		echo '#!/usr/bin/env bash'; 		echo 'set -Eeuo pipefail'; 		echo 'if ! [ -d "$JAVA_HOME" ]; then echo >&2 "error: missing JAVA_HOME environment variable"; exit 1; fi'; 		echo 'cacertsFile=; for f in "$JAVA_HOME/lib/security/cacerts" "$JAVA_HOME/jre/lib/security/cacerts"; do if [ -e "$f" ]; then cacertsFile="$f"; break; fi; done'; 		echo 'if [ -z "$cacertsFile" ] || ! [ -f "$cacertsFile" ]; then echo >&2 "error: failed to find cacerts file in $JAVA_HOME"; exit 1; fi'; 		echo 'trust extract --overwrite --format=java-cacerts --filter=ca-anchors --purpose=server-auth "$cacertsFile"'; 	} > /etc/ca-certificates/update.d/docker-openjdk; 	chmod +x /etc/ca-certificates/update.d/docker-openjdk; 	/etc/ca-certificates/update.d/docker-openjdk; 		find "$JAVA_HOME/lib" -name '*.so' -exec dirname '{}' ';' | sort -u > /etc/ld.so.conf.d/docker-openjdk.conf; 	ldconfig; 		javac --version; 	java --version
+# Sat, 14 Sep 2019 00:22:42 GMT
 CMD ["jshell"]
-# Fri, 13 Sep 2019 05:14:22 GMT
+# Sat, 14 Sep 2019 02:32:41 GMT
 ARG MAVEN_VERSION=3.6.2
-# Fri, 13 Sep 2019 05:14:22 GMT
+# Sat, 14 Sep 2019 02:32:41 GMT
 ARG USER_HOME_DIR=/root
-# Fri, 13 Sep 2019 05:14:22 GMT
+# Sat, 14 Sep 2019 02:32:41 GMT
 ARG SHA=d941423d115cd021514bfd06c453658b1b3e39e6240969caf4315ab7119a77299713f14b620fb2571a264f8dff2473d8af3cb47b05acf0036fc2553199a5c1ee
-# Fri, 13 Sep 2019 05:14:22 GMT
+# Sat, 14 Sep 2019 02:32:41 GMT
 ARG BASE_URL=https://apache.osuosl.org/maven/maven-3/3.6.2/binaries
-# Fri, 13 Sep 2019 05:14:24 GMT
+# Sat, 14 Sep 2019 02:32:43 GMT
 # ARGS: BASE_URL=https://apache.osuosl.org/maven/maven-3/3.6.2/binaries MAVEN_VERSION=3.6.2 SHA=d941423d115cd021514bfd06c453658b1b3e39e6240969caf4315ab7119a77299713f14b620fb2571a264f8dff2473d8af3cb47b05acf0036fc2553199a5c1ee USER_HOME_DIR=/root
 RUN mkdir -p /usr/share/maven /usr/share/maven/ref   && curl -fsSL -o /tmp/apache-maven.tar.gz ${BASE_URL}/apache-maven-${MAVEN_VERSION}-bin.tar.gz   && echo "${SHA}  /tmp/apache-maven.tar.gz" | sha512sum -c -   && tar -xzf /tmp/apache-maven.tar.gz -C /usr/share/maven --strip-components=1   && rm -f /tmp/apache-maven.tar.gz   && ln -s /usr/share/maven/bin/mvn /usr/bin/mvn
-# Fri, 13 Sep 2019 05:14:24 GMT
+# Sat, 14 Sep 2019 02:32:43 GMT
 ENV MAVEN_HOME=/usr/share/maven
-# Fri, 13 Sep 2019 05:14:24 GMT
+# Sat, 14 Sep 2019 02:32:43 GMT
 ENV MAVEN_CONFIG=/root/.m2
-# Fri, 13 Sep 2019 05:14:24 GMT
+# Sat, 14 Sep 2019 02:32:43 GMT
 COPY file:1b3da5c58894f705e7387946301c0c52edb6271761ea3cd80b86a848847a64cd in /usr/local/bin/mvn-entrypoint.sh 
-# Fri, 13 Sep 2019 05:14:25 GMT
+# Sat, 14 Sep 2019 02:32:43 GMT
 COPY file:2bbb488dd73c55d658b91943cfdf9c26975a320ceafc45dda94c95b03e518ad3 in /usr/share/maven/ref/ 
-# Fri, 13 Sep 2019 05:14:25 GMT
+# Sat, 14 Sep 2019 02:32:43 GMT
 ENTRYPOINT ["/usr/local/bin/mvn-entrypoint.sh"]
-# Fri, 13 Sep 2019 05:14:25 GMT
+# Sat, 14 Sep 2019 02:32:44 GMT
 CMD ["mvn"]
 ```
 
@@ -2261,21 +2261,21 @@ CMD ["mvn"]
 		Last Modified: Thu, 12 Sep 2019 14:35:16 GMT  
 		Size: 222.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:96fd45ee9818086a74a3a5f4562639f0d2db421419d9d20e4553dd2d11e36917`  
-		Last Modified: Thu, 12 Sep 2019 14:35:41 GMT  
-		Size: 195.7 MB (195718802 bytes)  
+	-	`sha256:663538d2581ce8ee06691cdd2020b2a38f47bd9996c7592247a76280505e3a4e`  
+		Last Modified: Sat, 14 Sep 2019 00:26:21 GMT  
+		Size: 195.7 MB (195718807 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:e0bfbdc652c3b5b169baeedb120f354664027d72d9866f4ad02fa79294c644d8`  
-		Last Modified: Fri, 13 Sep 2019 05:15:17 GMT  
-		Size: 9.2 MB (9167581 bytes)  
+	-	`sha256:28d90ddff35dcae263144936dedbe6d1baa5cff7cde62906c6c854f89cbfb0ed`  
+		Last Modified: Sat, 14 Sep 2019 02:34:01 GMT  
+		Size: 9.2 MB (9167583 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:9c2a3372ee55b77da59d73774317f35047e7a38a4d06c454cf03de63dc4a00c3`  
-		Last Modified: Fri, 13 Sep 2019 05:15:16 GMT  
-		Size: 864.0 B  
+	-	`sha256:4026e60527338b245da2f67dd4002950303385b0bdf26d45c1519cb041bd120e`  
+		Last Modified: Sat, 14 Sep 2019 02:34:01 GMT  
+		Size: 861.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:8e70e332c8192e51f7cd3a74d4e02c0bb794da8852bd65f7de6f1e23fa2a63c7`  
-		Last Modified: Fri, 13 Sep 2019 05:15:17 GMT  
-		Size: 357.0 B  
+	-	`sha256:fedf7e9533c347c5f74d951ee6877b2f48c7996638ff7753f24cbf9d6750bf3b`  
+		Last Modified: Sat, 14 Sep 2019 02:34:01 GMT  
+		Size: 358.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `maven:3.6.2-jdk-11` - linux; arm64 variant v8
@@ -2393,7 +2393,7 @@ CMD ["mvn"]
 ## `maven:3.6.2-jdk-11-slim`
 
 ```console
-$ docker pull maven@sha256:8af5dc392a2af438d1471990a441abcf3e1739e2442bed3678c61e3726f62179
+$ docker pull maven@sha256:d6595a61c34de743018aaeae69374a455c2cb0db81d6452442c60e4f1344cc19
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -2404,101 +2404,101 @@ $ docker pull maven@sha256:8af5dc392a2af438d1471990a441abcf3e1739e2442bed3678c61
 ### `maven:3.6.2-jdk-11-slim` - linux; amd64
 
 ```console
-$ docker pull maven@sha256:caefa9cbff7ae95218a3990fcf246340b0a17a5efd7c8c2ecdbdbf1ada639b46
+$ docker pull maven@sha256:a8de8a8cf567309b91fa9217fd63e5c468814c473c23b782cdff58801607a0a3
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **238.4 MB (238370821 bytes)**  
+-	Total Size: **238.1 MB (238100121 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:95c83d29bfc3b7caf10fd6d09d404e3dae23278fe0ce2b665beac6aa33deca72`
+-	Image ID: `sha256:316ca1e7d3a7a7966dd8f9be3448bf32b63e0f4af86d3fdc51a556ab59014cbf`
 -	Entrypoint: `["\/usr\/local\/bin\/mvn-entrypoint.sh"]`
 -	Default Command: `["mvn"]`
 
 ```dockerfile
-# Wed, 14 Aug 2019 00:22:12 GMT
-ADD file:330bfb91168adb4a9b1296c70209ed487d4c2705042a916d575f82b61ab16e61 in / 
-# Wed, 14 Aug 2019 00:22:12 GMT
+# Wed, 11 Sep 2019 23:22:24 GMT
+ADD file:1901172d26545609083e48b9bfaf2cb46674f37af0902ad5a32e2420301225de in / 
+# Wed, 11 Sep 2019 23:22:24 GMT
 CMD ["bash"]
-# Wed, 14 Aug 2019 11:24:17 GMT
+# Sat, 14 Sep 2019 00:22:55 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		ca-certificates p11-kit 	; 	rm -rf /var/lib/apt/lists/*
-# Wed, 14 Aug 2019 11:24:17 GMT
+# Sat, 14 Sep 2019 00:22:55 GMT
 ENV LANG=C.UTF-8
-# Wed, 14 Aug 2019 11:24:18 GMT
+# Sat, 14 Sep 2019 00:22:55 GMT
 ENV JAVA_HOME=/usr/local/openjdk-11
-# Wed, 14 Aug 2019 11:24:18 GMT
+# Sat, 14 Sep 2019 00:22:55 GMT
 ENV PATH=/usr/local/openjdk-11/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Wed, 14 Aug 2019 11:24:19 GMT
+# Sat, 14 Sep 2019 00:22:56 GMT
 RUN { echo '#/bin/sh'; echo 'echo "$JAVA_HOME"'; } > /usr/local/bin/docker-java-home && chmod +x /usr/local/bin/docker-java-home && [ "$JAVA_HOME" = "$(docker-java-home)" ]
-# Wed, 14 Aug 2019 11:24:19 GMT
+# Sat, 14 Sep 2019 00:22:56 GMT
 ENV JAVA_VERSION=11.0.4
-# Wed, 14 Aug 2019 11:24:19 GMT
+# Sat, 14 Sep 2019 00:22:56 GMT
 ENV JAVA_BASE_URL=https://github.com/AdoptOpenJDK/openjdk11-upstream-binaries/releases/download/jdk-11.0.4%2B11/OpenJDK11U-jdk_
-# Wed, 14 Aug 2019 11:24:19 GMT
+# Sat, 14 Sep 2019 00:22:56 GMT
 ENV JAVA_URL_VERSION=11.0.4_11
-# Wed, 14 Aug 2019 11:24:45 GMT
-RUN set -eux; 		dpkgArch="$(dpkg --print-architecture)"; 	case "$dpkgArch" in 		amd64) upstreamArch='x64' ;; 		arm64) upstreamArch='aarch64' ;; 		*) echo >&2 "error: unsupported architecture: $dpkgArch" ;; 	esac; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		dirmngr 		gnupg 		wget 	; 	rm -rf /var/lib/apt/lists/*; 		wget -O openjdk.tgz.asc "${JAVA_BASE_URL}${upstreamArch}_linux_${JAVA_URL_VERSION}.tar.gz.sign"; 	wget -O openjdk.tgz "${JAVA_BASE_URL}${upstreamArch}_linux_${JAVA_URL_VERSION}.tar.gz" --progress=dot:giga; 		export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys CA5F11C6CE22644D42C6AC4492EF8D39DC13168F; 	gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys EAC843EBD3EFDB98CC772FADA5CD6035332FA671; 	gpg --batch --list-sigs --keyid-format 0xLONG CA5F11C6CE22644D42C6AC4492EF8D39DC13168F | grep '0xA5CD6035332FA671' | grep 'Andrew Haley'; 	gpg --batch --verify openjdk.tgz.asc openjdk.tgz; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME"; 		mkdir -p "$JAVA_HOME"; 	tar --extract 		--file openjdk.tgz 		--directory "$JAVA_HOME" 		--strip-components 1 		--no-same-owner 	; 	rm openjdk.tgz*; 			apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark > /dev/null; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 		{ 		echo '#!/usr/bin/env bash'; 		echo 'set -Eeuo pipefail'; 		echo 'if ! [ -d "$JAVA_HOME" ]; then echo >&2 "error: missing JAVA_HOME environment variable"; exit 1; fi'; 		echo 'cacertsFile=; for f in "$JAVA_HOME/lib/security/cacerts" "$JAVA_HOME/jre/lib/security/cacerts"; do if [ -e "$f" ]; then cacertsFile="$f"; break; fi; done'; 		echo 'if [ -z "$cacertsFile" ] || ! [ -f "$cacertsFile" ]; then echo >&2 "error: failed to find cacerts file in $JAVA_HOME"; exit 1; fi'; 		echo 'trust extract --overwrite --format=java-cacerts --filter=ca-anchors --purpose=server-auth "$cacertsFile"'; 	} > /etc/ca-certificates/update.d/docker-openjdk; 	chmod +x /etc/ca-certificates/update.d/docker-openjdk; 	/etc/ca-certificates/update.d/docker-openjdk; 		find "$JAVA_HOME/lib" -name '*.so' -exec dirname '{}' ';' | sort -u > /etc/ld.so.conf.d/docker-openjdk.conf; 	ldconfig; 		javac --version; 	java --version
-# Wed, 14 Aug 2019 11:24:45 GMT
+# Sat, 14 Sep 2019 00:23:18 GMT
+RUN set -eux; 		dpkgArch="$(dpkg --print-architecture)"; 	case "$dpkgArch" in 		amd64) upstreamArch='x64' ;; 		arm64) upstreamArch='aarch64' ;; 		*) echo >&2 "error: unsupported architecture: $dpkgArch" ;; 	esac; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		dirmngr 		gnupg 		wget 	; 	rm -rf /var/lib/apt/lists/*; 		wget -O openjdk.tgz.asc "${JAVA_BASE_URL}${upstreamArch}_linux_${JAVA_URL_VERSION}.tar.gz.sign"; 	wget -O openjdk.tgz "${JAVA_BASE_URL}${upstreamArch}_linux_${JAVA_URL_VERSION}.tar.gz" --progress=dot:giga; 		export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver ha.pool.sks-keyservers.net --keyserver-options no-self-sigs-only --recv-keys CA5F11C6CE22644D42C6AC4492EF8D39DC13168F; 	gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys EAC843EBD3EFDB98CC772FADA5CD6035332FA671; 	gpg --batch --list-sigs --keyid-format 0xLONG CA5F11C6CE22644D42C6AC4492EF8D39DC13168F 		| tee /dev/stderr 		| grep '0xA5CD6035332FA671' 		| grep 'Andrew Haley'; 	gpg --batch --verify openjdk.tgz.asc openjdk.tgz; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME"; 		mkdir -p "$JAVA_HOME"; 	tar --extract 		--file openjdk.tgz 		--directory "$JAVA_HOME" 		--strip-components 1 		--no-same-owner 	; 	rm openjdk.tgz*; 			apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark > /dev/null; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 		{ 		echo '#!/usr/bin/env bash'; 		echo 'set -Eeuo pipefail'; 		echo 'if ! [ -d "$JAVA_HOME" ]; then echo >&2 "error: missing JAVA_HOME environment variable"; exit 1; fi'; 		echo 'cacertsFile=; for f in "$JAVA_HOME/lib/security/cacerts" "$JAVA_HOME/jre/lib/security/cacerts"; do if [ -e "$f" ]; then cacertsFile="$f"; break; fi; done'; 		echo 'if [ -z "$cacertsFile" ] || ! [ -f "$cacertsFile" ]; then echo >&2 "error: failed to find cacerts file in $JAVA_HOME"; exit 1; fi'; 		echo 'trust extract --overwrite --format=java-cacerts --filter=ca-anchors --purpose=server-auth "$cacertsFile"'; 	} > /etc/ca-certificates/update.d/docker-openjdk; 	chmod +x /etc/ca-certificates/update.d/docker-openjdk; 	/etc/ca-certificates/update.d/docker-openjdk; 		find "$JAVA_HOME/lib" -name '*.so' -exec dirname '{}' ';' | sort -u > /etc/ld.so.conf.d/docker-openjdk.conf; 	ldconfig; 		javac --version; 	java --version
+# Sat, 14 Sep 2019 00:23:18 GMT
 CMD ["jshell"]
-# Wed, 11 Sep 2019 11:22:11 GMT
+# Sat, 14 Sep 2019 02:32:28 GMT
 ARG MAVEN_VERSION=3.6.2
-# Wed, 11 Sep 2019 11:22:11 GMT
+# Sat, 14 Sep 2019 02:32:28 GMT
 ARG USER_HOME_DIR=/root
-# Wed, 11 Sep 2019 11:22:11 GMT
+# Sat, 14 Sep 2019 02:32:28 GMT
 ARG SHA=d941423d115cd021514bfd06c453658b1b3e39e6240969caf4315ab7119a77299713f14b620fb2571a264f8dff2473d8af3cb47b05acf0036fc2553199a5c1ee
-# Wed, 11 Sep 2019 11:22:11 GMT
+# Sat, 14 Sep 2019 02:32:28 GMT
 ARG BASE_URL=https://apache.osuosl.org/maven/maven-3/3.6.2/binaries
-# Wed, 11 Sep 2019 11:22:21 GMT
+# Sat, 14 Sep 2019 02:32:34 GMT
 # ARGS: BASE_URL=https://apache.osuosl.org/maven/maven-3/3.6.2/binaries MAVEN_VERSION=3.6.2 SHA=d941423d115cd021514bfd06c453658b1b3e39e6240969caf4315ab7119a77299713f14b620fb2571a264f8dff2473d8af3cb47b05acf0036fc2553199a5c1ee USER_HOME_DIR=/root
 RUN apt-get update &&     apt-get install -y       curl procps   && rm -rf /var/lib/apt/lists/*
-# Wed, 11 Sep 2019 11:22:23 GMT
+# Sat, 14 Sep 2019 02:32:36 GMT
 # ARGS: BASE_URL=https://apache.osuosl.org/maven/maven-3/3.6.2/binaries MAVEN_VERSION=3.6.2 SHA=d941423d115cd021514bfd06c453658b1b3e39e6240969caf4315ab7119a77299713f14b620fb2571a264f8dff2473d8af3cb47b05acf0036fc2553199a5c1ee USER_HOME_DIR=/root
 RUN mkdir -p /usr/share/maven /usr/share/maven/ref   && curl -fsSL -o /tmp/apache-maven.tar.gz ${BASE_URL}/apache-maven-${MAVEN_VERSION}-bin.tar.gz   && echo "${SHA}  /tmp/apache-maven.tar.gz" | sha512sum -c -   && tar -xzf /tmp/apache-maven.tar.gz -C /usr/share/maven --strip-components=1   && rm -f /tmp/apache-maven.tar.gz   && ln -s /usr/share/maven/bin/mvn /usr/bin/mvn
-# Wed, 11 Sep 2019 11:22:23 GMT
+# Sat, 14 Sep 2019 02:32:36 GMT
 ENV MAVEN_HOME=/usr/share/maven
-# Wed, 11 Sep 2019 11:22:23 GMT
+# Sat, 14 Sep 2019 02:32:36 GMT
 ENV MAVEN_CONFIG=/root/.m2
-# Wed, 11 Sep 2019 11:22:23 GMT
+# Sat, 14 Sep 2019 02:32:36 GMT
 COPY file:1b3da5c58894f705e7387946301c0c52edb6271761ea3cd80b86a848847a64cd in /usr/local/bin/mvn-entrypoint.sh 
-# Wed, 11 Sep 2019 11:22:24 GMT
+# Sat, 14 Sep 2019 02:32:37 GMT
 COPY file:2bbb488dd73c55d658b91943cfdf9c26975a320ceafc45dda94c95b03e518ad3 in /usr/share/maven/ref/ 
-# Wed, 11 Sep 2019 11:22:24 GMT
+# Sat, 14 Sep 2019 02:32:37 GMT
 ENTRYPOINT ["/usr/local/bin/mvn-entrypoint.sh"]
-# Wed, 11 Sep 2019 11:22:24 GMT
+# Sat, 14 Sep 2019 02:32:37 GMT
 CMD ["mvn"]
 ```
 
 -	Layers:
-	-	`sha256:1ab2bdfe97783562315f98f94c0769b1897a05f7b0395ca1520ebee08666703b`  
-		Last Modified: Wed, 14 Aug 2019 00:27:15 GMT  
-		Size: 27.1 MB (27093851 bytes)  
+	-	`sha256:b8f262c62ec67f02536f49654de586c022043652bbb6bbf76a8dab1542627a8d`  
+		Last Modified: Wed, 11 Sep 2019 23:31:20 GMT  
+		Size: 27.1 MB (27093738 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:7aaf9a088d61d78b50cd2a58984cc89ed9c0c5c66124fd74b4baa0cba32524c1`  
-		Last Modified: Wed, 14 Aug 2019 11:28:15 GMT  
-		Size: 3.2 MB (3247273 bytes)  
+	-	`sha256:377e264464ddccb9550cff64ba470dfdb784acdb2ff265ae333b9215fc873b08`  
+		Last Modified: Sat, 14 Sep 2019 00:26:29 GMT  
+		Size: 3.2 MB (3247380 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:b9283b89acb2f6ac352a31afc80df1a24513d2e98b40d282309fd8957e0e2b77`  
-		Last Modified: Wed, 14 Aug 2019 11:28:15 GMT  
-		Size: 210.0 B  
+	-	`sha256:bde67c1ff89fda30053d5c20d0e07ba1de298df013c938e0966f5944fe7bdd08`  
+		Last Modified: Sat, 14 Sep 2019 00:26:28 GMT  
+		Size: 211.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:16677eca0612a87eb64aac89ef86004d3ff0826a576dc1cbad795a322f6a2aeb`  
-		Last Modified: Wed, 14 Aug 2019 11:28:36 GMT  
-		Size: 196.0 MB (195975392 bytes)  
+	-	`sha256:f430704e961738b7d7d861f18a7f3b49bbc44482f5266ee6a5f61bfed09742ee`  
+		Last Modified: Sat, 14 Sep 2019 00:27:14 GMT  
+		Size: 196.0 MB (195975702 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c31ca6fde6f25e3fb72220eb5c1a015f8d6de20eb0e8a26ed168db6371253bc1`  
-		Last Modified: Wed, 11 Sep 2019 11:24:51 GMT  
-		Size: 2.9 MB (2885297 bytes)  
+	-	`sha256:339a324ebfacb28408280b8e4d37cb5723bb56acb49ec13cd7853aa9528ecb19`  
+		Last Modified: Sat, 14 Sep 2019 02:33:54 GMT  
+		Size: 2.6 MB (2614284 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c28cc5998336ecae2c734aae1aa527f54e38d245d64691fccb28b0a16cfd9150`  
-		Last Modified: Wed, 11 Sep 2019 11:24:51 GMT  
-		Size: 9.2 MB (9167583 bytes)  
+	-	`sha256:24cbe0a91ab4ca314f00f346a84dc114ef8d4b7814ba3c7688d470f816ed9c1d`  
+		Last Modified: Sat, 14 Sep 2019 02:33:55 GMT  
+		Size: 9.2 MB (9167593 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:2e624fe923786ef0403fc9d470aed5c62e4cb642c8663e1738bd39a690776caf`  
-		Last Modified: Wed, 11 Sep 2019 11:24:50 GMT  
-		Size: 857.0 B  
+	-	`sha256:1fa638a3741f3086d09cf5c9e2438c5204a615e788b31afa90189d207820b159`  
+		Last Modified: Sat, 14 Sep 2019 02:33:54 GMT  
+		Size: 855.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:e04458ba94df0e446bcf5c8b451be2595ca3d898c61119e8ab696f3b752db0eb`  
-		Last Modified: Wed, 11 Sep 2019 11:24:50 GMT  
+	-	`sha256:e19e682e4393dc569cfe7754840587a4da215b84c8ce0bed5e94e6cb9e4e6357`  
+		Last Modified: Sat, 14 Sep 2019 02:33:54 GMT  
 		Size: 358.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
@@ -2806,7 +2806,7 @@ CMD ["mvn"]
 ## `maven:3.6.2-jdk-14`
 
 ```console
-$ docker pull maven@sha256:5fddd37a554f3b35a9e1c909e9097cf32843b9a4482e4f6eaa88575c08d03e85
+$ docker pull maven@sha256:57993c189c00c62774ce35280393f48f28812c2ec63849a78f5d2b660b06add3
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -2816,14 +2816,14 @@ $ docker pull maven@sha256:5fddd37a554f3b35a9e1c909e9097cf32843b9a4482e4f6eaa885
 ### `maven:3.6.2-jdk-14` - linux; amd64
 
 ```console
-$ docker pull maven@sha256:7be61b36b4ecd9e9f2a61a7b6998e2a63da85502c4cc7b5a69b78e298757450a
+$ docker pull maven@sha256:64ddd34283b52c407320e94c6eab7745c4c14c6c38549b7514dd40d61d9996cc
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **263.7 MB (263705915 bytes)**  
+-	Total Size: **264.3 MB (264349156 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:ae4caed357b4e093948cfcdea07e1397f5eb8cda8a8ba17d7d4281166f50d82d`
+-	Image ID: `sha256:b87409511a8747f8f75a53731a935dc1717dfb437f3bf77baf7efe6e9425a3d0`
 -	Entrypoint: `["\/usr\/local\/bin\/mvn-entrypoint.sh"]`
 -	Default Command: `["mvn"]`
 
@@ -2842,38 +2842,38 @@ ENV LANG=en_US.UTF-8
 ENV JAVA_HOME=/usr/java/openjdk-14
 # Mon, 26 Aug 2019 23:30:02 GMT
 ENV PATH=/usr/java/openjdk-14/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Fri, 06 Sep 2019 17:29:14 GMT
-ENV JAVA_VERSION=14-ea+13
-# Fri, 06 Sep 2019 17:29:14 GMT
-ENV JAVA_URL=https://download.java.net/java/early_access/jdk14/13/GPL/openjdk-14-ea+13_linux-x64_bin.tar.gz
-# Fri, 06 Sep 2019 17:29:14 GMT
-ENV JAVA_SHA256=39582f66190e5034ab5837e17db840a4e23c60efaa473767e10b62987dbe78ed
-# Fri, 06 Sep 2019 17:30:29 GMT
+# Sat, 14 Sep 2019 00:20:32 GMT
+ENV JAVA_VERSION=14-ea+14
+# Sat, 14 Sep 2019 00:20:32 GMT
+ENV JAVA_URL=https://download.java.net/java/early_access/jdk14/14/GPL/openjdk-14-ea+14_linux-x64_bin.tar.gz
+# Sat, 14 Sep 2019 00:20:32 GMT
+ENV JAVA_SHA256=fc1aed4e0de423dbb27db449b63b25c61b06b80e275f7ef665cce6c61e736726
+# Sat, 14 Sep 2019 00:22:07 GMT
 RUN set -eux; 		curl -fL -o /openjdk.tgz "$JAVA_URL"; 	echo "$JAVA_SHA256 */openjdk.tgz" | sha256sum -c -; 	mkdir -p "$JAVA_HOME"; 	tar --extract --file /openjdk.tgz --directory "$JAVA_HOME" --strip-components 1; 	rm /openjdk.tgz; 		ln -sfT "$JAVA_HOME" /usr/java/default; 	ln -sfT "$JAVA_HOME" /usr/java/latest; 	for bin in "$JAVA_HOME/bin/"*; do 		base="$(basename "$bin")"; 		[ ! -e "/usr/bin/$base" ]; 		alternatives --install "/usr/bin/$base" "$base" "$bin" 20000; 	done; 		java -Xshare:dump; 		java --version; 	javac --version
-# Fri, 06 Sep 2019 17:30:29 GMT
+# Sat, 14 Sep 2019 00:22:07 GMT
 CMD ["jshell"]
-# Wed, 11 Sep 2019 11:22:55 GMT
+# Sat, 14 Sep 2019 02:32:54 GMT
 ARG MAVEN_VERSION=3.6.2
-# Wed, 11 Sep 2019 11:22:55 GMT
+# Sat, 14 Sep 2019 02:32:55 GMT
 ARG USER_HOME_DIR=/root
-# Wed, 11 Sep 2019 11:22:55 GMT
+# Sat, 14 Sep 2019 02:32:55 GMT
 ARG SHA=d941423d115cd021514bfd06c453658b1b3e39e6240969caf4315ab7119a77299713f14b620fb2571a264f8dff2473d8af3cb47b05acf0036fc2553199a5c1ee
-# Wed, 11 Sep 2019 11:22:55 GMT
+# Sat, 14 Sep 2019 02:32:55 GMT
 ARG BASE_URL=https://apache.osuosl.org/maven/maven-3/3.6.2/binaries
-# Wed, 11 Sep 2019 11:22:57 GMT
+# Sat, 14 Sep 2019 02:32:57 GMT
 # ARGS: BASE_URL=https://apache.osuosl.org/maven/maven-3/3.6.2/binaries MAVEN_VERSION=3.6.2 SHA=d941423d115cd021514bfd06c453658b1b3e39e6240969caf4315ab7119a77299713f14b620fb2571a264f8dff2473d8af3cb47b05acf0036fc2553199a5c1ee USER_HOME_DIR=/root
 RUN mkdir -p /usr/share/maven /usr/share/maven/ref   && curl -fsSL -o /tmp/apache-maven.tar.gz ${BASE_URL}/apache-maven-${MAVEN_VERSION}-bin.tar.gz   && echo "${SHA}  /tmp/apache-maven.tar.gz" | sha512sum -c -   && tar -xzf /tmp/apache-maven.tar.gz -C /usr/share/maven --strip-components=1   && rm -f /tmp/apache-maven.tar.gz   && ln -s /usr/share/maven/bin/mvn /usr/bin/mvn
-# Wed, 11 Sep 2019 11:22:57 GMT
+# Sat, 14 Sep 2019 02:32:57 GMT
 ENV MAVEN_HOME=/usr/share/maven
-# Wed, 11 Sep 2019 11:22:57 GMT
+# Sat, 14 Sep 2019 02:32:57 GMT
 ENV MAVEN_CONFIG=/root/.m2
-# Wed, 11 Sep 2019 11:22:57 GMT
+# Sat, 14 Sep 2019 02:32:57 GMT
 COPY file:1b3da5c58894f705e7387946301c0c52edb6271761ea3cd80b86a848847a64cd in /usr/local/bin/mvn-entrypoint.sh 
-# Wed, 11 Sep 2019 11:22:58 GMT
+# Sat, 14 Sep 2019 02:32:57 GMT
 COPY file:2bbb488dd73c55d658b91943cfdf9c26975a320ceafc45dda94c95b03e518ad3 in /usr/share/maven/ref/ 
-# Wed, 11 Sep 2019 11:22:58 GMT
+# Sat, 14 Sep 2019 02:32:57 GMT
 ENTRYPOINT ["/usr/local/bin/mvn-entrypoint.sh"]
-# Wed, 11 Sep 2019 11:22:58 GMT
+# Sat, 14 Sep 2019 02:32:58 GMT
 CMD ["mvn"]
 ```
 
@@ -2886,27 +2886,27 @@ CMD ["mvn"]
 		Last Modified: Mon, 26 Aug 2019 23:34:31 GMT  
 		Size: 14.8 MB (14770876 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:ac1aa9d52dc9261ca56c991c0d6b09b5da76b01eba5e864ea7e7b4a410f9e593`  
-		Last Modified: Fri, 06 Sep 2019 17:32:16 GMT  
-		Size: 197.2 MB (197152135 bytes)  
+	-	`sha256:f5e2a39686b8dea4b6fedd63334a23122b0c95df55e8022b359b5c981ee5f7ba`  
+		Last Modified: Sat, 14 Sep 2019 00:25:45 GMT  
+		Size: 197.8 MB (197795368 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:b1008bd54dcd5a2c8f2f0fdbcadff27bb64a9d130e97129a397fa2570e170e0f`  
-		Last Modified: Wed, 11 Sep 2019 11:25:26 GMT  
-		Size: 9.2 MB (9168957 bytes)  
+	-	`sha256:211f0dac7b8d1a57d19cdf9be54791611a55e6e61d42860d9c4b1e5b9c0914f3`  
+		Last Modified: Sat, 14 Sep 2019 02:34:10 GMT  
+		Size: 9.2 MB (9168967 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:0e41a79479cac6823ebfce699c0061ec7d4a666ebd1bb1cc7f5c927702f76ddc`  
-		Last Modified: Wed, 11 Sep 2019 11:25:25 GMT  
-		Size: 859.0 B  
+	-	`sha256:4903638b4c757c686991d35f12b478840073e8e6045f03b91885d9550372521c`  
+		Last Modified: Sat, 14 Sep 2019 02:34:10 GMT  
+		Size: 858.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:d6834b0e357ce969ccfbc48921066ec689c3c7a19bf335cd064e7ef5d4bbd676`  
-		Last Modified: Wed, 11 Sep 2019 11:25:26 GMT  
-		Size: 358.0 B  
+	-	`sha256:62f85deec1bd41f4e241a8afc4d2e4f65b85e5d2ae08945b102b7be99c1cb0f2`  
+		Last Modified: Sat, 14 Sep 2019 02:34:10 GMT  
+		Size: 357.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `maven:3.6.2-jdk-8`
 
 ```console
-$ docker pull maven@sha256:891118398fa91827cfec85a909b84abe46cbc63da1df3866bda90fff016ccd06
+$ docker pull maven@sha256:6f65801ad4b56207b387d8c856ece1a30d4435ef32af9d9d842838ee76c3c6dd
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -2916,14 +2916,14 @@ $ docker pull maven@sha256:891118398fa91827cfec85a909b84abe46cbc63da1df3866bda90
 ### `maven:3.6.2-jdk-8` - linux; amd64
 
 ```console
-$ docker pull maven@sha256:d8c9b6244e525c8ea8f0bcc091e4ac20f00cd646156b86775946e3b0fd186404
+$ docker pull maven@sha256:6903c8d89fc7c275f6df95268c910ac9e03eabc1cb2e561e5996c17042e6dc23
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **228.9 MB (228871582 bytes)**  
+-	Total Size: **228.9 MB (228871567 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:68b51f9f1edf9acc359aa4e671027045d78ffdfc6ed1415e7bca064895cf5f12`
+-	Image ID: `sha256:a1f35667f5e35af8151cd030d5e18412e06761727a760a53b82a32c46994a118`
 -	Entrypoint: `["\/usr\/local\/bin\/mvn-entrypoint.sh"]`
 -	Default Command: `["mvn"]`
 
@@ -2954,30 +2954,30 @@ ENV JAVA_VERSION=8u222
 ENV JAVA_BASE_URL=https://github.com/AdoptOpenJDK/openjdk8-upstream-binaries/releases/download/jdk8u222-b10/OpenJDK8U-jdk_
 # Thu, 12 Sep 2019 14:32:36 GMT
 ENV JAVA_URL_VERSION=8u222b10
-# Thu, 12 Sep 2019 14:32:46 GMT
-RUN set -eux; 		dpkgArch="$(dpkg --print-architecture)"; 	case "$dpkgArch" in 		amd64) upstreamArch='x64' ;; 		arm64) upstreamArch='aarch64' ;; 		*) echo >&2 "error: unsupported architecture: $dpkgArch" ;; 	esac; 		wget -O openjdk.tgz.asc "${JAVA_BASE_URL}${upstreamArch}_linux_${JAVA_URL_VERSION}.tar.gz.sign"; 	wget -O openjdk.tgz "${JAVA_BASE_URL}${upstreamArch}_linux_${JAVA_URL_VERSION}.tar.gz" --progress=dot:giga; 		export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys CA5F11C6CE22644D42C6AC4492EF8D39DC13168F; 	gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys EAC843EBD3EFDB98CC772FADA5CD6035332FA671; 	gpg --batch --list-sigs --keyid-format 0xLONG CA5F11C6CE22644D42C6AC4492EF8D39DC13168F | grep '0xA5CD6035332FA671' | grep 'Andrew Haley'; 	gpg --batch --verify openjdk.tgz.asc openjdk.tgz; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME"; 		mkdir -p "$JAVA_HOME"; 	tar --extract 		--file openjdk.tgz 		--directory "$JAVA_HOME" 		--strip-components 1 		--no-same-owner 	; 	rm openjdk.tgz*; 			{ 		echo '#!/usr/bin/env bash'; 		echo 'set -Eeuo pipefail'; 		echo 'if ! [ -d "$JAVA_HOME" ]; then echo >&2 "error: missing JAVA_HOME environment variable"; exit 1; fi'; 		echo 'cacertsFile=; for f in "$JAVA_HOME/lib/security/cacerts" "$JAVA_HOME/jre/lib/security/cacerts"; do if [ -e "$f" ]; then cacertsFile="$f"; break; fi; done'; 		echo 'if [ -z "$cacertsFile" ] || ! [ -f "$cacertsFile" ]; then echo >&2 "error: failed to find cacerts file in $JAVA_HOME"; exit 1; fi'; 		echo 'trust extract --overwrite --format=java-cacerts --filter=ca-anchors --purpose=server-auth "$cacertsFile"'; 	} > /etc/ca-certificates/update.d/docker-openjdk; 	chmod +x /etc/ca-certificates/update.d/docker-openjdk; 	/etc/ca-certificates/update.d/docker-openjdk; 		find "$JAVA_HOME/lib" -name '*.so' -exec dirname '{}' ';' | sort -u > /etc/ld.so.conf.d/docker-openjdk.conf; 	ldconfig; 		javac -version; 	java -version
-# Fri, 13 Sep 2019 05:14:41 GMT
+# Sat, 14 Sep 2019 00:24:02 GMT
+RUN set -eux; 		dpkgArch="$(dpkg --print-architecture)"; 	case "$dpkgArch" in 		amd64) upstreamArch='x64' ;; 		arm64) upstreamArch='aarch64' ;; 		*) echo >&2 "error: unsupported architecture: $dpkgArch" ;; 	esac; 		wget -O openjdk.tgz.asc "${JAVA_BASE_URL}${upstreamArch}_linux_${JAVA_URL_VERSION}.tar.gz.sign"; 	wget -O openjdk.tgz "${JAVA_BASE_URL}${upstreamArch}_linux_${JAVA_URL_VERSION}.tar.gz" --progress=dot:giga; 		export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver ha.pool.sks-keyservers.net --keyserver-options no-self-sigs-only --recv-keys CA5F11C6CE22644D42C6AC4492EF8D39DC13168F; 	gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys EAC843EBD3EFDB98CC772FADA5CD6035332FA671; 	gpg --batch --list-sigs --keyid-format 0xLONG CA5F11C6CE22644D42C6AC4492EF8D39DC13168F 		| tee /dev/stderr 		| grep '0xA5CD6035332FA671' 		| grep 'Andrew Haley'; 	gpg --batch --verify openjdk.tgz.asc openjdk.tgz; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME"; 		mkdir -p "$JAVA_HOME"; 	tar --extract 		--file openjdk.tgz 		--directory "$JAVA_HOME" 		--strip-components 1 		--no-same-owner 	; 	rm openjdk.tgz*; 			{ 		echo '#!/usr/bin/env bash'; 		echo 'set -Eeuo pipefail'; 		echo 'if ! [ -d "$JAVA_HOME" ]; then echo >&2 "error: missing JAVA_HOME environment variable"; exit 1; fi'; 		echo 'cacertsFile=; for f in "$JAVA_HOME/lib/security/cacerts" "$JAVA_HOME/jre/lib/security/cacerts"; do if [ -e "$f" ]; then cacertsFile="$f"; break; fi; done'; 		echo 'if [ -z "$cacertsFile" ] || ! [ -f "$cacertsFile" ]; then echo >&2 "error: failed to find cacerts file in $JAVA_HOME"; exit 1; fi'; 		echo 'trust extract --overwrite --format=java-cacerts --filter=ca-anchors --purpose=server-auth "$cacertsFile"'; 	} > /etc/ca-certificates/update.d/docker-openjdk; 	chmod +x /etc/ca-certificates/update.d/docker-openjdk; 	/etc/ca-certificates/update.d/docker-openjdk; 		find "$JAVA_HOME/lib" -name '*.so' -exec dirname '{}' ';' | sort -u > /etc/ld.so.conf.d/docker-openjdk.conf; 	ldconfig; 		javac -version; 	java -version
+# Sat, 14 Sep 2019 02:33:14 GMT
 ARG MAVEN_VERSION=3.6.2
-# Fri, 13 Sep 2019 05:14:41 GMT
+# Sat, 14 Sep 2019 02:33:14 GMT
 ARG USER_HOME_DIR=/root
-# Fri, 13 Sep 2019 05:14:42 GMT
+# Sat, 14 Sep 2019 02:33:14 GMT
 ARG SHA=d941423d115cd021514bfd06c453658b1b3e39e6240969caf4315ab7119a77299713f14b620fb2571a264f8dff2473d8af3cb47b05acf0036fc2553199a5c1ee
-# Fri, 13 Sep 2019 05:14:42 GMT
+# Sat, 14 Sep 2019 02:33:14 GMT
 ARG BASE_URL=https://apache.osuosl.org/maven/maven-3/3.6.2/binaries
-# Fri, 13 Sep 2019 05:14:43 GMT
+# Sat, 14 Sep 2019 02:33:16 GMT
 # ARGS: BASE_URL=https://apache.osuosl.org/maven/maven-3/3.6.2/binaries MAVEN_VERSION=3.6.2 SHA=d941423d115cd021514bfd06c453658b1b3e39e6240969caf4315ab7119a77299713f14b620fb2571a264f8dff2473d8af3cb47b05acf0036fc2553199a5c1ee USER_HOME_DIR=/root
 RUN mkdir -p /usr/share/maven /usr/share/maven/ref   && curl -fsSL -o /tmp/apache-maven.tar.gz ${BASE_URL}/apache-maven-${MAVEN_VERSION}-bin.tar.gz   && echo "${SHA}  /tmp/apache-maven.tar.gz" | sha512sum -c -   && tar -xzf /tmp/apache-maven.tar.gz -C /usr/share/maven --strip-components=1   && rm -f /tmp/apache-maven.tar.gz   && ln -s /usr/share/maven/bin/mvn /usr/bin/mvn
-# Fri, 13 Sep 2019 05:14:43 GMT
+# Sat, 14 Sep 2019 02:33:16 GMT
 ENV MAVEN_HOME=/usr/share/maven
-# Fri, 13 Sep 2019 05:14:44 GMT
+# Sat, 14 Sep 2019 02:33:16 GMT
 ENV MAVEN_CONFIG=/root/.m2
-# Fri, 13 Sep 2019 05:14:44 GMT
+# Sat, 14 Sep 2019 02:33:17 GMT
 COPY file:1b3da5c58894f705e7387946301c0c52edb6271761ea3cd80b86a848847a64cd in /usr/local/bin/mvn-entrypoint.sh 
-# Fri, 13 Sep 2019 05:14:44 GMT
+# Sat, 14 Sep 2019 02:33:17 GMT
 COPY file:2bbb488dd73c55d658b91943cfdf9c26975a320ceafc45dda94c95b03e518ad3 in /usr/share/maven/ref/ 
-# Fri, 13 Sep 2019 05:14:44 GMT
+# Sat, 14 Sep 2019 02:33:17 GMT
 ENTRYPOINT ["/usr/local/bin/mvn-entrypoint.sh"]
-# Fri, 13 Sep 2019 05:14:44 GMT
+# Sat, 14 Sep 2019 02:33:17 GMT
 CMD ["mvn"]
 ```
 
@@ -3006,27 +3006,27 @@ CMD ["mvn"]
 		Last Modified: Thu, 12 Sep 2019 14:36:06 GMT  
 		Size: 222.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:2a62b26e59185a3325158ae267e3668eae491e808f73fa8b5f2caca81a914634`  
-		Last Modified: Thu, 12 Sep 2019 14:36:21 GMT  
-		Size: 104.2 MB (104195072 bytes)  
+	-	`sha256:f26b99e1adb1713c1c753f96d06c4ccb7f81df1b6daf266eab536ab38a315ba3`  
+		Last Modified: Sat, 14 Sep 2019 00:28:03 GMT  
+		Size: 104.2 MB (104195047 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:ad751a55bde0be137265846661fdb7a49ccd805ecc61a21cd5b9249d6ceb83d8`  
-		Last Modified: Fri, 13 Sep 2019 05:15:26 GMT  
-		Size: 9.2 MB (9167584 bytes)  
+	-	`sha256:7a1b276fce422e852962166cedede03d774fbe45352857d3540651125881aa76`  
+		Last Modified: Sat, 14 Sep 2019 02:34:25 GMT  
+		Size: 9.2 MB (9167597 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c96ffe0da1e422c3f516a1bed39d3023e2a0dda9b6ae6c8f91f461825a077d59`  
-		Last Modified: Fri, 13 Sep 2019 05:15:25 GMT  
+	-	`sha256:c944b4612eac0479e798e1fb39b510400fea2d78e946c2d505389191f90c74ed`  
+		Last Modified: Sat, 14 Sep 2019 02:34:24 GMT  
 		Size: 863.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:a88121a3f06d1be9ab4323bab23290c464194a5dc828850c27537d6059ac0964`  
-		Last Modified: Fri, 13 Sep 2019 05:15:26 GMT  
-		Size: 358.0 B  
+	-	`sha256:293fc5ed12f1e6e7e569d3a01546c0d447661a63cd78044c0a1945e4017c7e3a`  
+		Last Modified: Sat, 14 Sep 2019 02:34:25 GMT  
+		Size: 355.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `maven:3.6.2-jdk-8-slim`
 
 ```console
-$ docker pull maven@sha256:f6eda4e62036461e2488eda9990a3015cfdb522b246257433467aa2eaca1e904
+$ docker pull maven@sha256:2b54b5981f55838fc4fba956e0092bc97b932ef011c7f70ca85caec337711741
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -3036,106 +3036,106 @@ $ docker pull maven@sha256:f6eda4e62036461e2488eda9990a3015cfdb522b246257433467a
 ### `maven:3.6.2-jdk-8-slim` - linux; amd64
 
 ```console
-$ docker pull maven@sha256:8b01d4cf8f7094bbbb54ed7947e5112510b509b10886741013c8e27831dedee1
+$ docker pull maven@sha256:8b837657e806c13a8bc0cb49e0ec016388e378256f170c8500d90df9e3c7210c
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **146.8 MB (146842866 bytes)**  
+-	Total Size: **146.6 MB (146573040 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:3ad77bf247134edf18f80b7e68fa9f76ada809906ec7d10061846b81198eecdd`
+-	Image ID: `sha256:f376fc4cd184a647caebed2aa5b07535ced50dcce15dcf553babf220254c3fc2`
 -	Entrypoint: `["\/usr\/local\/bin\/mvn-entrypoint.sh"]`
 -	Default Command: `["mvn"]`
 
 ```dockerfile
-# Wed, 14 Aug 2019 00:22:12 GMT
-ADD file:330bfb91168adb4a9b1296c70209ed487d4c2705042a916d575f82b61ab16e61 in / 
-# Wed, 14 Aug 2019 00:22:12 GMT
+# Wed, 11 Sep 2019 23:22:24 GMT
+ADD file:1901172d26545609083e48b9bfaf2cb46674f37af0902ad5a32e2420301225de in / 
+# Wed, 11 Sep 2019 23:22:24 GMT
 CMD ["bash"]
-# Wed, 14 Aug 2019 11:24:17 GMT
+# Sat, 14 Sep 2019 00:22:55 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		ca-certificates p11-kit 	; 	rm -rf /var/lib/apt/lists/*
-# Wed, 14 Aug 2019 11:24:17 GMT
+# Sat, 14 Sep 2019 00:22:55 GMT
 ENV LANG=C.UTF-8
-# Wed, 14 Aug 2019 11:26:02 GMT
+# Sat, 14 Sep 2019 00:24:06 GMT
 ENV JAVA_HOME=/usr/local/openjdk-8
-# Wed, 14 Aug 2019 11:26:03 GMT
+# Sat, 14 Sep 2019 00:24:06 GMT
 ENV PATH=/usr/local/openjdk-8/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Wed, 14 Aug 2019 11:26:04 GMT
+# Sat, 14 Sep 2019 00:24:07 GMT
 RUN { echo '#/bin/sh'; echo 'echo "$JAVA_HOME"'; } > /usr/local/bin/docker-java-home && chmod +x /usr/local/bin/docker-java-home && [ "$JAVA_HOME" = "$(docker-java-home)" ]
-# Wed, 14 Aug 2019 11:26:04 GMT
+# Sat, 14 Sep 2019 00:24:07 GMT
 ENV JAVA_VERSION=8u222
-# Wed, 14 Aug 2019 11:26:04 GMT
+# Sat, 14 Sep 2019 00:24:07 GMT
 ENV JAVA_BASE_URL=https://github.com/AdoptOpenJDK/openjdk8-upstream-binaries/releases/download/jdk8u222-b10/OpenJDK8U-jdk_
-# Wed, 14 Aug 2019 11:26:05 GMT
+# Sat, 14 Sep 2019 00:24:08 GMT
 ENV JAVA_URL_VERSION=8u222b10
-# Wed, 14 Aug 2019 11:26:25 GMT
-RUN set -eux; 		dpkgArch="$(dpkg --print-architecture)"; 	case "$dpkgArch" in 		amd64) upstreamArch='x64' ;; 		arm64) upstreamArch='aarch64' ;; 		*) echo >&2 "error: unsupported architecture: $dpkgArch" ;; 	esac; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		dirmngr 		gnupg 		wget 	; 	rm -rf /var/lib/apt/lists/*; 		wget -O openjdk.tgz.asc "${JAVA_BASE_URL}${upstreamArch}_linux_${JAVA_URL_VERSION}.tar.gz.sign"; 	wget -O openjdk.tgz "${JAVA_BASE_URL}${upstreamArch}_linux_${JAVA_URL_VERSION}.tar.gz" --progress=dot:giga; 		export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys CA5F11C6CE22644D42C6AC4492EF8D39DC13168F; 	gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys EAC843EBD3EFDB98CC772FADA5CD6035332FA671; 	gpg --batch --list-sigs --keyid-format 0xLONG CA5F11C6CE22644D42C6AC4492EF8D39DC13168F | grep '0xA5CD6035332FA671' | grep 'Andrew Haley'; 	gpg --batch --verify openjdk.tgz.asc openjdk.tgz; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME"; 		mkdir -p "$JAVA_HOME"; 	tar --extract 		--file openjdk.tgz 		--directory "$JAVA_HOME" 		--strip-components 1 		--no-same-owner 	; 	rm openjdk.tgz*; 			apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark > /dev/null; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 		{ 		echo '#!/usr/bin/env bash'; 		echo 'set -Eeuo pipefail'; 		echo 'if ! [ -d "$JAVA_HOME" ]; then echo >&2 "error: missing JAVA_HOME environment variable"; exit 1; fi'; 		echo 'cacertsFile=; for f in "$JAVA_HOME/lib/security/cacerts" "$JAVA_HOME/jre/lib/security/cacerts"; do if [ -e "$f" ]; then cacertsFile="$f"; break; fi; done'; 		echo 'if [ -z "$cacertsFile" ] || ! [ -f "$cacertsFile" ]; then echo >&2 "error: failed to find cacerts file in $JAVA_HOME"; exit 1; fi'; 		echo 'trust extract --overwrite --format=java-cacerts --filter=ca-anchors --purpose=server-auth "$cacertsFile"'; 	} > /etc/ca-certificates/update.d/docker-openjdk; 	chmod +x /etc/ca-certificates/update.d/docker-openjdk; 	/etc/ca-certificates/update.d/docker-openjdk; 		find "$JAVA_HOME/lib" -name '*.so' -exec dirname '{}' ';' | sort -u > /etc/ld.so.conf.d/docker-openjdk.conf; 	ldconfig; 		javac -version; 	java -version
-# Wed, 11 Sep 2019 11:23:02 GMT
+# Sat, 14 Sep 2019 00:24:21 GMT
+RUN set -eux; 		dpkgArch="$(dpkg --print-architecture)"; 	case "$dpkgArch" in 		amd64) upstreamArch='x64' ;; 		arm64) upstreamArch='aarch64' ;; 		*) echo >&2 "error: unsupported architecture: $dpkgArch" ;; 	esac; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		dirmngr 		gnupg 		wget 	; 	rm -rf /var/lib/apt/lists/*; 		wget -O openjdk.tgz.asc "${JAVA_BASE_URL}${upstreamArch}_linux_${JAVA_URL_VERSION}.tar.gz.sign"; 	wget -O openjdk.tgz "${JAVA_BASE_URL}${upstreamArch}_linux_${JAVA_URL_VERSION}.tar.gz" --progress=dot:giga; 		export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver ha.pool.sks-keyservers.net --keyserver-options no-self-sigs-only --recv-keys CA5F11C6CE22644D42C6AC4492EF8D39DC13168F; 	gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys EAC843EBD3EFDB98CC772FADA5CD6035332FA671; 	gpg --batch --list-sigs --keyid-format 0xLONG CA5F11C6CE22644D42C6AC4492EF8D39DC13168F 		| tee /dev/stderr 		| grep '0xA5CD6035332FA671' 		| grep 'Andrew Haley'; 	gpg --batch --verify openjdk.tgz.asc openjdk.tgz; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME"; 		mkdir -p "$JAVA_HOME"; 	tar --extract 		--file openjdk.tgz 		--directory "$JAVA_HOME" 		--strip-components 1 		--no-same-owner 	; 	rm openjdk.tgz*; 			apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark > /dev/null; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 		{ 		echo '#!/usr/bin/env bash'; 		echo 'set -Eeuo pipefail'; 		echo 'if ! [ -d "$JAVA_HOME" ]; then echo >&2 "error: missing JAVA_HOME environment variable"; exit 1; fi'; 		echo 'cacertsFile=; for f in "$JAVA_HOME/lib/security/cacerts" "$JAVA_HOME/jre/lib/security/cacerts"; do if [ -e "$f" ]; then cacertsFile="$f"; break; fi; done'; 		echo 'if [ -z "$cacertsFile" ] || ! [ -f "$cacertsFile" ]; then echo >&2 "error: failed to find cacerts file in $JAVA_HOME"; exit 1; fi'; 		echo 'trust extract --overwrite --format=java-cacerts --filter=ca-anchors --purpose=server-auth "$cacertsFile"'; 	} > /etc/ca-certificates/update.d/docker-openjdk; 	chmod +x /etc/ca-certificates/update.d/docker-openjdk; 	/etc/ca-certificates/update.d/docker-openjdk; 		find "$JAVA_HOME/lib" -name '*.so' -exec dirname '{}' ';' | sort -u > /etc/ld.so.conf.d/docker-openjdk.conf; 	ldconfig; 		javac -version; 	java -version
+# Sat, 14 Sep 2019 02:33:01 GMT
 ARG MAVEN_VERSION=3.6.2
-# Wed, 11 Sep 2019 11:23:02 GMT
+# Sat, 14 Sep 2019 02:33:01 GMT
 ARG USER_HOME_DIR=/root
-# Wed, 11 Sep 2019 11:23:02 GMT
+# Sat, 14 Sep 2019 02:33:01 GMT
 ARG SHA=d941423d115cd021514bfd06c453658b1b3e39e6240969caf4315ab7119a77299713f14b620fb2571a264f8dff2473d8af3cb47b05acf0036fc2553199a5c1ee
-# Wed, 11 Sep 2019 11:23:02 GMT
+# Sat, 14 Sep 2019 02:33:02 GMT
 ARG BASE_URL=https://apache.osuosl.org/maven/maven-3/3.6.2/binaries
-# Wed, 11 Sep 2019 11:23:08 GMT
+# Sat, 14 Sep 2019 02:33:07 GMT
 # ARGS: BASE_URL=https://apache.osuosl.org/maven/maven-3/3.6.2/binaries MAVEN_VERSION=3.6.2 SHA=d941423d115cd021514bfd06c453658b1b3e39e6240969caf4315ab7119a77299713f14b620fb2571a264f8dff2473d8af3cb47b05acf0036fc2553199a5c1ee USER_HOME_DIR=/root
 RUN apt-get update &&     apt-get install -y       curl procps   && rm -rf /var/lib/apt/lists/*
-# Wed, 11 Sep 2019 11:23:11 GMT
+# Sat, 14 Sep 2019 02:33:09 GMT
 # ARGS: BASE_URL=https://apache.osuosl.org/maven/maven-3/3.6.2/binaries MAVEN_VERSION=3.6.2 SHA=d941423d115cd021514bfd06c453658b1b3e39e6240969caf4315ab7119a77299713f14b620fb2571a264f8dff2473d8af3cb47b05acf0036fc2553199a5c1ee USER_HOME_DIR=/root
 RUN mkdir -p /usr/share/maven /usr/share/maven/ref   && curl -fsSL -o /tmp/apache-maven.tar.gz ${BASE_URL}/apache-maven-${MAVEN_VERSION}-bin.tar.gz   && echo "${SHA}  /tmp/apache-maven.tar.gz" | sha512sum -c -   && tar -xzf /tmp/apache-maven.tar.gz -C /usr/share/maven --strip-components=1   && rm -f /tmp/apache-maven.tar.gz   && ln -s /usr/share/maven/bin/mvn /usr/bin/mvn
-# Wed, 11 Sep 2019 11:23:12 GMT
+# Sat, 14 Sep 2019 02:33:09 GMT
 ENV MAVEN_HOME=/usr/share/maven
-# Wed, 11 Sep 2019 11:23:12 GMT
+# Sat, 14 Sep 2019 02:33:09 GMT
 ENV MAVEN_CONFIG=/root/.m2
-# Wed, 11 Sep 2019 11:23:12 GMT
+# Sat, 14 Sep 2019 02:33:09 GMT
 COPY file:1b3da5c58894f705e7387946301c0c52edb6271761ea3cd80b86a848847a64cd in /usr/local/bin/mvn-entrypoint.sh 
-# Wed, 11 Sep 2019 11:23:12 GMT
+# Sat, 14 Sep 2019 02:33:09 GMT
 COPY file:2bbb488dd73c55d658b91943cfdf9c26975a320ceafc45dda94c95b03e518ad3 in /usr/share/maven/ref/ 
-# Wed, 11 Sep 2019 11:23:12 GMT
+# Sat, 14 Sep 2019 02:33:09 GMT
 ENTRYPOINT ["/usr/local/bin/mvn-entrypoint.sh"]
-# Wed, 11 Sep 2019 11:23:12 GMT
+# Sat, 14 Sep 2019 02:33:10 GMT
 CMD ["mvn"]
 ```
 
 -	Layers:
-	-	`sha256:1ab2bdfe97783562315f98f94c0769b1897a05f7b0395ca1520ebee08666703b`  
-		Last Modified: Wed, 14 Aug 2019 00:27:15 GMT  
-		Size: 27.1 MB (27093851 bytes)  
+	-	`sha256:b8f262c62ec67f02536f49654de586c022043652bbb6bbf76a8dab1542627a8d`  
+		Last Modified: Wed, 11 Sep 2019 23:31:20 GMT  
+		Size: 27.1 MB (27093738 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:7aaf9a088d61d78b50cd2a58984cc89ed9c0c5c66124fd74b4baa0cba32524c1`  
-		Last Modified: Wed, 14 Aug 2019 11:28:15 GMT  
-		Size: 3.2 MB (3247273 bytes)  
+	-	`sha256:377e264464ddccb9550cff64ba470dfdb784acdb2ff265ae333b9215fc873b08`  
+		Last Modified: Sat, 14 Sep 2019 00:26:29 GMT  
+		Size: 3.2 MB (3247380 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:80a55c9c9fe89b163322e46d017f346fab100604a4a0a63a1a790b89c1c2105f`  
-		Last Modified: Wed, 14 Aug 2019 11:30:03 GMT  
-		Size: 210.0 B  
+	-	`sha256:3198ebe941513b3be7ff20096fa6f22dc7a8d0f08b20993419825b25acbf050b`  
+		Last Modified: Sat, 14 Sep 2019 00:28:13 GMT  
+		Size: 212.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:9110ea0d47ee3b75e48971381c280070f0d76603288b1da30af905152b7d8250`  
-		Last Modified: Wed, 14 Aug 2019 11:30:18 GMT  
-		Size: 104.4 MB (104449436 bytes)  
+	-	`sha256:14378903d43db9959a5a046c178ca638c7de1be299cab8830d50651eb785f2ec`  
+		Last Modified: Sat, 14 Sep 2019 00:28:33 GMT  
+		Size: 104.4 MB (104449544 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:ced65ad5540c0e9e5e71bf1576f122c3a5ae43ed4df500c9853ae7762131d357`  
-		Last Modified: Wed, 11 Sep 2019 11:25:32 GMT  
-		Size: 2.9 MB (2883304 bytes)  
+	-	`sha256:5e9a3ce0932998bb6cb0663ff7649b8d3107fbfa559aeeafdf1d03cbfb3ecf7b`  
+		Last Modified: Sat, 14 Sep 2019 02:34:19 GMT  
+		Size: 2.6 MB (2613376 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:571cbe6a7507f775f26b4d46e0318c171b1707ecc29493fa3e5ca18518aa612f`  
-		Last Modified: Wed, 11 Sep 2019 11:25:32 GMT  
-		Size: 9.2 MB (9167576 bytes)  
+	-	`sha256:d43c372286e009ea04b86089c45703bb8ac49496375f629996c4c620081b1829`  
+		Last Modified: Sat, 14 Sep 2019 02:34:19 GMT  
+		Size: 9.2 MB (9167581 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:33ff100b4fadd231a5c009db0d07a38ace94570e558dd4c253ff019d492771bd`  
-		Last Modified: Wed, 11 Sep 2019 11:25:31 GMT  
-		Size: 856.0 B  
+	-	`sha256:540eac2ca143b66971989c132c50d89d03071d4a5c90d815988cfc21ba7812fc`  
+		Last Modified: Sat, 14 Sep 2019 02:34:18 GMT  
+		Size: 852.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:94caa8f55de964636cae3dd9d9f1e484f59371a92edd0ac420562a710950b3f2`  
-		Last Modified: Wed, 11 Sep 2019 11:25:31 GMT  
-		Size: 360.0 B  
+	-	`sha256:e0b00071dd186efe231e9ce76caedde78415e14969124b1395b9c55d9573bfbd`  
+		Last Modified: Sat, 14 Sep 2019 02:34:18 GMT  
+		Size: 357.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `maven:3.6.2-slim`
 
 ```console
-$ docker pull maven@sha256:8af5dc392a2af438d1471990a441abcf3e1739e2442bed3678c61e3726f62179
+$ docker pull maven@sha256:d6595a61c34de743018aaeae69374a455c2cb0db81d6452442c60e4f1344cc19
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -3146,101 +3146,101 @@ $ docker pull maven@sha256:8af5dc392a2af438d1471990a441abcf3e1739e2442bed3678c61
 ### `maven:3.6.2-slim` - linux; amd64
 
 ```console
-$ docker pull maven@sha256:caefa9cbff7ae95218a3990fcf246340b0a17a5efd7c8c2ecdbdbf1ada639b46
+$ docker pull maven@sha256:a8de8a8cf567309b91fa9217fd63e5c468814c473c23b782cdff58801607a0a3
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **238.4 MB (238370821 bytes)**  
+-	Total Size: **238.1 MB (238100121 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:95c83d29bfc3b7caf10fd6d09d404e3dae23278fe0ce2b665beac6aa33deca72`
+-	Image ID: `sha256:316ca1e7d3a7a7966dd8f9be3448bf32b63e0f4af86d3fdc51a556ab59014cbf`
 -	Entrypoint: `["\/usr\/local\/bin\/mvn-entrypoint.sh"]`
 -	Default Command: `["mvn"]`
 
 ```dockerfile
-# Wed, 14 Aug 2019 00:22:12 GMT
-ADD file:330bfb91168adb4a9b1296c70209ed487d4c2705042a916d575f82b61ab16e61 in / 
-# Wed, 14 Aug 2019 00:22:12 GMT
+# Wed, 11 Sep 2019 23:22:24 GMT
+ADD file:1901172d26545609083e48b9bfaf2cb46674f37af0902ad5a32e2420301225de in / 
+# Wed, 11 Sep 2019 23:22:24 GMT
 CMD ["bash"]
-# Wed, 14 Aug 2019 11:24:17 GMT
+# Sat, 14 Sep 2019 00:22:55 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		ca-certificates p11-kit 	; 	rm -rf /var/lib/apt/lists/*
-# Wed, 14 Aug 2019 11:24:17 GMT
+# Sat, 14 Sep 2019 00:22:55 GMT
 ENV LANG=C.UTF-8
-# Wed, 14 Aug 2019 11:24:18 GMT
+# Sat, 14 Sep 2019 00:22:55 GMT
 ENV JAVA_HOME=/usr/local/openjdk-11
-# Wed, 14 Aug 2019 11:24:18 GMT
+# Sat, 14 Sep 2019 00:22:55 GMT
 ENV PATH=/usr/local/openjdk-11/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Wed, 14 Aug 2019 11:24:19 GMT
+# Sat, 14 Sep 2019 00:22:56 GMT
 RUN { echo '#/bin/sh'; echo 'echo "$JAVA_HOME"'; } > /usr/local/bin/docker-java-home && chmod +x /usr/local/bin/docker-java-home && [ "$JAVA_HOME" = "$(docker-java-home)" ]
-# Wed, 14 Aug 2019 11:24:19 GMT
+# Sat, 14 Sep 2019 00:22:56 GMT
 ENV JAVA_VERSION=11.0.4
-# Wed, 14 Aug 2019 11:24:19 GMT
+# Sat, 14 Sep 2019 00:22:56 GMT
 ENV JAVA_BASE_URL=https://github.com/AdoptOpenJDK/openjdk11-upstream-binaries/releases/download/jdk-11.0.4%2B11/OpenJDK11U-jdk_
-# Wed, 14 Aug 2019 11:24:19 GMT
+# Sat, 14 Sep 2019 00:22:56 GMT
 ENV JAVA_URL_VERSION=11.0.4_11
-# Wed, 14 Aug 2019 11:24:45 GMT
-RUN set -eux; 		dpkgArch="$(dpkg --print-architecture)"; 	case "$dpkgArch" in 		amd64) upstreamArch='x64' ;; 		arm64) upstreamArch='aarch64' ;; 		*) echo >&2 "error: unsupported architecture: $dpkgArch" ;; 	esac; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		dirmngr 		gnupg 		wget 	; 	rm -rf /var/lib/apt/lists/*; 		wget -O openjdk.tgz.asc "${JAVA_BASE_URL}${upstreamArch}_linux_${JAVA_URL_VERSION}.tar.gz.sign"; 	wget -O openjdk.tgz "${JAVA_BASE_URL}${upstreamArch}_linux_${JAVA_URL_VERSION}.tar.gz" --progress=dot:giga; 		export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys CA5F11C6CE22644D42C6AC4492EF8D39DC13168F; 	gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys EAC843EBD3EFDB98CC772FADA5CD6035332FA671; 	gpg --batch --list-sigs --keyid-format 0xLONG CA5F11C6CE22644D42C6AC4492EF8D39DC13168F | grep '0xA5CD6035332FA671' | grep 'Andrew Haley'; 	gpg --batch --verify openjdk.tgz.asc openjdk.tgz; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME"; 		mkdir -p "$JAVA_HOME"; 	tar --extract 		--file openjdk.tgz 		--directory "$JAVA_HOME" 		--strip-components 1 		--no-same-owner 	; 	rm openjdk.tgz*; 			apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark > /dev/null; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 		{ 		echo '#!/usr/bin/env bash'; 		echo 'set -Eeuo pipefail'; 		echo 'if ! [ -d "$JAVA_HOME" ]; then echo >&2 "error: missing JAVA_HOME environment variable"; exit 1; fi'; 		echo 'cacertsFile=; for f in "$JAVA_HOME/lib/security/cacerts" "$JAVA_HOME/jre/lib/security/cacerts"; do if [ -e "$f" ]; then cacertsFile="$f"; break; fi; done'; 		echo 'if [ -z "$cacertsFile" ] || ! [ -f "$cacertsFile" ]; then echo >&2 "error: failed to find cacerts file in $JAVA_HOME"; exit 1; fi'; 		echo 'trust extract --overwrite --format=java-cacerts --filter=ca-anchors --purpose=server-auth "$cacertsFile"'; 	} > /etc/ca-certificates/update.d/docker-openjdk; 	chmod +x /etc/ca-certificates/update.d/docker-openjdk; 	/etc/ca-certificates/update.d/docker-openjdk; 		find "$JAVA_HOME/lib" -name '*.so' -exec dirname '{}' ';' | sort -u > /etc/ld.so.conf.d/docker-openjdk.conf; 	ldconfig; 		javac --version; 	java --version
-# Wed, 14 Aug 2019 11:24:45 GMT
+# Sat, 14 Sep 2019 00:23:18 GMT
+RUN set -eux; 		dpkgArch="$(dpkg --print-architecture)"; 	case "$dpkgArch" in 		amd64) upstreamArch='x64' ;; 		arm64) upstreamArch='aarch64' ;; 		*) echo >&2 "error: unsupported architecture: $dpkgArch" ;; 	esac; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		dirmngr 		gnupg 		wget 	; 	rm -rf /var/lib/apt/lists/*; 		wget -O openjdk.tgz.asc "${JAVA_BASE_URL}${upstreamArch}_linux_${JAVA_URL_VERSION}.tar.gz.sign"; 	wget -O openjdk.tgz "${JAVA_BASE_URL}${upstreamArch}_linux_${JAVA_URL_VERSION}.tar.gz" --progress=dot:giga; 		export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver ha.pool.sks-keyservers.net --keyserver-options no-self-sigs-only --recv-keys CA5F11C6CE22644D42C6AC4492EF8D39DC13168F; 	gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys EAC843EBD3EFDB98CC772FADA5CD6035332FA671; 	gpg --batch --list-sigs --keyid-format 0xLONG CA5F11C6CE22644D42C6AC4492EF8D39DC13168F 		| tee /dev/stderr 		| grep '0xA5CD6035332FA671' 		| grep 'Andrew Haley'; 	gpg --batch --verify openjdk.tgz.asc openjdk.tgz; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME"; 		mkdir -p "$JAVA_HOME"; 	tar --extract 		--file openjdk.tgz 		--directory "$JAVA_HOME" 		--strip-components 1 		--no-same-owner 	; 	rm openjdk.tgz*; 			apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark > /dev/null; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 		{ 		echo '#!/usr/bin/env bash'; 		echo 'set -Eeuo pipefail'; 		echo 'if ! [ -d "$JAVA_HOME" ]; then echo >&2 "error: missing JAVA_HOME environment variable"; exit 1; fi'; 		echo 'cacertsFile=; for f in "$JAVA_HOME/lib/security/cacerts" "$JAVA_HOME/jre/lib/security/cacerts"; do if [ -e "$f" ]; then cacertsFile="$f"; break; fi; done'; 		echo 'if [ -z "$cacertsFile" ] || ! [ -f "$cacertsFile" ]; then echo >&2 "error: failed to find cacerts file in $JAVA_HOME"; exit 1; fi'; 		echo 'trust extract --overwrite --format=java-cacerts --filter=ca-anchors --purpose=server-auth "$cacertsFile"'; 	} > /etc/ca-certificates/update.d/docker-openjdk; 	chmod +x /etc/ca-certificates/update.d/docker-openjdk; 	/etc/ca-certificates/update.d/docker-openjdk; 		find "$JAVA_HOME/lib" -name '*.so' -exec dirname '{}' ';' | sort -u > /etc/ld.so.conf.d/docker-openjdk.conf; 	ldconfig; 		javac --version; 	java --version
+# Sat, 14 Sep 2019 00:23:18 GMT
 CMD ["jshell"]
-# Wed, 11 Sep 2019 11:22:11 GMT
+# Sat, 14 Sep 2019 02:32:28 GMT
 ARG MAVEN_VERSION=3.6.2
-# Wed, 11 Sep 2019 11:22:11 GMT
+# Sat, 14 Sep 2019 02:32:28 GMT
 ARG USER_HOME_DIR=/root
-# Wed, 11 Sep 2019 11:22:11 GMT
+# Sat, 14 Sep 2019 02:32:28 GMT
 ARG SHA=d941423d115cd021514bfd06c453658b1b3e39e6240969caf4315ab7119a77299713f14b620fb2571a264f8dff2473d8af3cb47b05acf0036fc2553199a5c1ee
-# Wed, 11 Sep 2019 11:22:11 GMT
+# Sat, 14 Sep 2019 02:32:28 GMT
 ARG BASE_URL=https://apache.osuosl.org/maven/maven-3/3.6.2/binaries
-# Wed, 11 Sep 2019 11:22:21 GMT
+# Sat, 14 Sep 2019 02:32:34 GMT
 # ARGS: BASE_URL=https://apache.osuosl.org/maven/maven-3/3.6.2/binaries MAVEN_VERSION=3.6.2 SHA=d941423d115cd021514bfd06c453658b1b3e39e6240969caf4315ab7119a77299713f14b620fb2571a264f8dff2473d8af3cb47b05acf0036fc2553199a5c1ee USER_HOME_DIR=/root
 RUN apt-get update &&     apt-get install -y       curl procps   && rm -rf /var/lib/apt/lists/*
-# Wed, 11 Sep 2019 11:22:23 GMT
+# Sat, 14 Sep 2019 02:32:36 GMT
 # ARGS: BASE_URL=https://apache.osuosl.org/maven/maven-3/3.6.2/binaries MAVEN_VERSION=3.6.2 SHA=d941423d115cd021514bfd06c453658b1b3e39e6240969caf4315ab7119a77299713f14b620fb2571a264f8dff2473d8af3cb47b05acf0036fc2553199a5c1ee USER_HOME_DIR=/root
 RUN mkdir -p /usr/share/maven /usr/share/maven/ref   && curl -fsSL -o /tmp/apache-maven.tar.gz ${BASE_URL}/apache-maven-${MAVEN_VERSION}-bin.tar.gz   && echo "${SHA}  /tmp/apache-maven.tar.gz" | sha512sum -c -   && tar -xzf /tmp/apache-maven.tar.gz -C /usr/share/maven --strip-components=1   && rm -f /tmp/apache-maven.tar.gz   && ln -s /usr/share/maven/bin/mvn /usr/bin/mvn
-# Wed, 11 Sep 2019 11:22:23 GMT
+# Sat, 14 Sep 2019 02:32:36 GMT
 ENV MAVEN_HOME=/usr/share/maven
-# Wed, 11 Sep 2019 11:22:23 GMT
+# Sat, 14 Sep 2019 02:32:36 GMT
 ENV MAVEN_CONFIG=/root/.m2
-# Wed, 11 Sep 2019 11:22:23 GMT
+# Sat, 14 Sep 2019 02:32:36 GMT
 COPY file:1b3da5c58894f705e7387946301c0c52edb6271761ea3cd80b86a848847a64cd in /usr/local/bin/mvn-entrypoint.sh 
-# Wed, 11 Sep 2019 11:22:24 GMT
+# Sat, 14 Sep 2019 02:32:37 GMT
 COPY file:2bbb488dd73c55d658b91943cfdf9c26975a320ceafc45dda94c95b03e518ad3 in /usr/share/maven/ref/ 
-# Wed, 11 Sep 2019 11:22:24 GMT
+# Sat, 14 Sep 2019 02:32:37 GMT
 ENTRYPOINT ["/usr/local/bin/mvn-entrypoint.sh"]
-# Wed, 11 Sep 2019 11:22:24 GMT
+# Sat, 14 Sep 2019 02:32:37 GMT
 CMD ["mvn"]
 ```
 
 -	Layers:
-	-	`sha256:1ab2bdfe97783562315f98f94c0769b1897a05f7b0395ca1520ebee08666703b`  
-		Last Modified: Wed, 14 Aug 2019 00:27:15 GMT  
-		Size: 27.1 MB (27093851 bytes)  
+	-	`sha256:b8f262c62ec67f02536f49654de586c022043652bbb6bbf76a8dab1542627a8d`  
+		Last Modified: Wed, 11 Sep 2019 23:31:20 GMT  
+		Size: 27.1 MB (27093738 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:7aaf9a088d61d78b50cd2a58984cc89ed9c0c5c66124fd74b4baa0cba32524c1`  
-		Last Modified: Wed, 14 Aug 2019 11:28:15 GMT  
-		Size: 3.2 MB (3247273 bytes)  
+	-	`sha256:377e264464ddccb9550cff64ba470dfdb784acdb2ff265ae333b9215fc873b08`  
+		Last Modified: Sat, 14 Sep 2019 00:26:29 GMT  
+		Size: 3.2 MB (3247380 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:b9283b89acb2f6ac352a31afc80df1a24513d2e98b40d282309fd8957e0e2b77`  
-		Last Modified: Wed, 14 Aug 2019 11:28:15 GMT  
-		Size: 210.0 B  
+	-	`sha256:bde67c1ff89fda30053d5c20d0e07ba1de298df013c938e0966f5944fe7bdd08`  
+		Last Modified: Sat, 14 Sep 2019 00:26:28 GMT  
+		Size: 211.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:16677eca0612a87eb64aac89ef86004d3ff0826a576dc1cbad795a322f6a2aeb`  
-		Last Modified: Wed, 14 Aug 2019 11:28:36 GMT  
-		Size: 196.0 MB (195975392 bytes)  
+	-	`sha256:f430704e961738b7d7d861f18a7f3b49bbc44482f5266ee6a5f61bfed09742ee`  
+		Last Modified: Sat, 14 Sep 2019 00:27:14 GMT  
+		Size: 196.0 MB (195975702 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c31ca6fde6f25e3fb72220eb5c1a015f8d6de20eb0e8a26ed168db6371253bc1`  
-		Last Modified: Wed, 11 Sep 2019 11:24:51 GMT  
-		Size: 2.9 MB (2885297 bytes)  
+	-	`sha256:339a324ebfacb28408280b8e4d37cb5723bb56acb49ec13cd7853aa9528ecb19`  
+		Last Modified: Sat, 14 Sep 2019 02:33:54 GMT  
+		Size: 2.6 MB (2614284 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c28cc5998336ecae2c734aae1aa527f54e38d245d64691fccb28b0a16cfd9150`  
-		Last Modified: Wed, 11 Sep 2019 11:24:51 GMT  
-		Size: 9.2 MB (9167583 bytes)  
+	-	`sha256:24cbe0a91ab4ca314f00f346a84dc114ef8d4b7814ba3c7688d470f816ed9c1d`  
+		Last Modified: Sat, 14 Sep 2019 02:33:55 GMT  
+		Size: 9.2 MB (9167593 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:2e624fe923786ef0403fc9d470aed5c62e4cb642c8663e1738bd39a690776caf`  
-		Last Modified: Wed, 11 Sep 2019 11:24:50 GMT  
-		Size: 857.0 B  
+	-	`sha256:1fa638a3741f3086d09cf5c9e2438c5204a615e788b31afa90189d207820b159`  
+		Last Modified: Sat, 14 Sep 2019 02:33:54 GMT  
+		Size: 855.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:e04458ba94df0e446bcf5c8b451be2595ca3d898c61119e8ab696f3b752db0eb`  
-		Last Modified: Wed, 11 Sep 2019 11:24:50 GMT  
+	-	`sha256:e19e682e4393dc569cfe7754840587a4da215b84c8ce0bed5e94e6cb9e4e6357`  
+		Last Modified: Sat, 14 Sep 2019 02:33:54 GMT  
 		Size: 358.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
@@ -4748,7 +4748,7 @@ CMD ["mvn"]
 ## `maven:3.6-jdk-11`
 
 ```console
-$ docker pull maven@sha256:de81cbb362db7d2ab21e32b3069b318870a65805f4a41525d757b60aa1574b95
+$ docker pull maven@sha256:402b6480724f1174b73b083b00649dd3b05204830eb5bc0af00fb486fda1f2c4
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -4759,14 +4759,14 @@ $ docker pull maven@sha256:de81cbb362db7d2ab21e32b3069b318870a65805f4a41525d757b
 ### `maven:3.6-jdk-11` - linux; amd64
 
 ```console
-$ docker pull maven@sha256:040515327409588cebf0c83abf8267a28d55a0274c9c566efbee6853c1ea5203
+$ docker pull maven@sha256:8f3817ad781f88d84736aa831e40db2686196d70ee1a690d95c9935ddfc632a8
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **320.4 MB (320395309 bytes)**  
+-	Total Size: **320.4 MB (320395314 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:96945ef2abcf7f27096e330abff234b2994b2d84b6de90f45004fb68cd435a11`
+-	Image ID: `sha256:e941463218b96a496d62aa7f9766ca9fa10760d070d025c366e00664f7ae25af`
 -	Entrypoint: `["\/usr\/local\/bin\/mvn-entrypoint.sh"]`
 -	Default Command: `["mvn"]`
 
@@ -4797,32 +4797,32 @@ ENV JAVA_VERSION=11.0.4
 ENV JAVA_BASE_URL=https://github.com/AdoptOpenJDK/openjdk11-upstream-binaries/releases/download/jdk-11.0.4%2B11/OpenJDK11U-jdk_
 # Thu, 12 Sep 2019 14:29:49 GMT
 ENV JAVA_URL_VERSION=11.0.4_11
-# Thu, 12 Sep 2019 14:30:06 GMT
-RUN set -eux; 		dpkgArch="$(dpkg --print-architecture)"; 	case "$dpkgArch" in 		amd64) upstreamArch='x64' ;; 		arm64) upstreamArch='aarch64' ;; 		*) echo >&2 "error: unsupported architecture: $dpkgArch" ;; 	esac; 		wget -O openjdk.tgz.asc "${JAVA_BASE_URL}${upstreamArch}_linux_${JAVA_URL_VERSION}.tar.gz.sign"; 	wget -O openjdk.tgz "${JAVA_BASE_URL}${upstreamArch}_linux_${JAVA_URL_VERSION}.tar.gz" --progress=dot:giga; 		export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys CA5F11C6CE22644D42C6AC4492EF8D39DC13168F; 	gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys EAC843EBD3EFDB98CC772FADA5CD6035332FA671; 	gpg --batch --list-sigs --keyid-format 0xLONG CA5F11C6CE22644D42C6AC4492EF8D39DC13168F | grep '0xA5CD6035332FA671' | grep 'Andrew Haley'; 	gpg --batch --verify openjdk.tgz.asc openjdk.tgz; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME"; 		mkdir -p "$JAVA_HOME"; 	tar --extract 		--file openjdk.tgz 		--directory "$JAVA_HOME" 		--strip-components 1 		--no-same-owner 	; 	rm openjdk.tgz*; 			{ 		echo '#!/usr/bin/env bash'; 		echo 'set -Eeuo pipefail'; 		echo 'if ! [ -d "$JAVA_HOME" ]; then echo >&2 "error: missing JAVA_HOME environment variable"; exit 1; fi'; 		echo 'cacertsFile=; for f in "$JAVA_HOME/lib/security/cacerts" "$JAVA_HOME/jre/lib/security/cacerts"; do if [ -e "$f" ]; then cacertsFile="$f"; break; fi; done'; 		echo 'if [ -z "$cacertsFile" ] || ! [ -f "$cacertsFile" ]; then echo >&2 "error: failed to find cacerts file in $JAVA_HOME"; exit 1; fi'; 		echo 'trust extract --overwrite --format=java-cacerts --filter=ca-anchors --purpose=server-auth "$cacertsFile"'; 	} > /etc/ca-certificates/update.d/docker-openjdk; 	chmod +x /etc/ca-certificates/update.d/docker-openjdk; 	/etc/ca-certificates/update.d/docker-openjdk; 		find "$JAVA_HOME/lib" -name '*.so' -exec dirname '{}' ';' | sort -u > /etc/ld.so.conf.d/docker-openjdk.conf; 	ldconfig; 		javac --version; 	java --version
-# Thu, 12 Sep 2019 14:30:07 GMT
+# Sat, 14 Sep 2019 00:22:42 GMT
+RUN set -eux; 		dpkgArch="$(dpkg --print-architecture)"; 	case "$dpkgArch" in 		amd64) upstreamArch='x64' ;; 		arm64) upstreamArch='aarch64' ;; 		*) echo >&2 "error: unsupported architecture: $dpkgArch" ;; 	esac; 		wget -O openjdk.tgz.asc "${JAVA_BASE_URL}${upstreamArch}_linux_${JAVA_URL_VERSION}.tar.gz.sign"; 	wget -O openjdk.tgz "${JAVA_BASE_URL}${upstreamArch}_linux_${JAVA_URL_VERSION}.tar.gz" --progress=dot:giga; 		export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver ha.pool.sks-keyservers.net --keyserver-options no-self-sigs-only --recv-keys CA5F11C6CE22644D42C6AC4492EF8D39DC13168F; 	gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys EAC843EBD3EFDB98CC772FADA5CD6035332FA671; 	gpg --batch --list-sigs --keyid-format 0xLONG CA5F11C6CE22644D42C6AC4492EF8D39DC13168F 		| tee /dev/stderr 		| grep '0xA5CD6035332FA671' 		| grep 'Andrew Haley'; 	gpg --batch --verify openjdk.tgz.asc openjdk.tgz; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME"; 		mkdir -p "$JAVA_HOME"; 	tar --extract 		--file openjdk.tgz 		--directory "$JAVA_HOME" 		--strip-components 1 		--no-same-owner 	; 	rm openjdk.tgz*; 			{ 		echo '#!/usr/bin/env bash'; 		echo 'set -Eeuo pipefail'; 		echo 'if ! [ -d "$JAVA_HOME" ]; then echo >&2 "error: missing JAVA_HOME environment variable"; exit 1; fi'; 		echo 'cacertsFile=; for f in "$JAVA_HOME/lib/security/cacerts" "$JAVA_HOME/jre/lib/security/cacerts"; do if [ -e "$f" ]; then cacertsFile="$f"; break; fi; done'; 		echo 'if [ -z "$cacertsFile" ] || ! [ -f "$cacertsFile" ]; then echo >&2 "error: failed to find cacerts file in $JAVA_HOME"; exit 1; fi'; 		echo 'trust extract --overwrite --format=java-cacerts --filter=ca-anchors --purpose=server-auth "$cacertsFile"'; 	} > /etc/ca-certificates/update.d/docker-openjdk; 	chmod +x /etc/ca-certificates/update.d/docker-openjdk; 	/etc/ca-certificates/update.d/docker-openjdk; 		find "$JAVA_HOME/lib" -name '*.so' -exec dirname '{}' ';' | sort -u > /etc/ld.so.conf.d/docker-openjdk.conf; 	ldconfig; 		javac --version; 	java --version
+# Sat, 14 Sep 2019 00:22:42 GMT
 CMD ["jshell"]
-# Fri, 13 Sep 2019 05:14:22 GMT
+# Sat, 14 Sep 2019 02:32:41 GMT
 ARG MAVEN_VERSION=3.6.2
-# Fri, 13 Sep 2019 05:14:22 GMT
+# Sat, 14 Sep 2019 02:32:41 GMT
 ARG USER_HOME_DIR=/root
-# Fri, 13 Sep 2019 05:14:22 GMT
+# Sat, 14 Sep 2019 02:32:41 GMT
 ARG SHA=d941423d115cd021514bfd06c453658b1b3e39e6240969caf4315ab7119a77299713f14b620fb2571a264f8dff2473d8af3cb47b05acf0036fc2553199a5c1ee
-# Fri, 13 Sep 2019 05:14:22 GMT
+# Sat, 14 Sep 2019 02:32:41 GMT
 ARG BASE_URL=https://apache.osuosl.org/maven/maven-3/3.6.2/binaries
-# Fri, 13 Sep 2019 05:14:24 GMT
+# Sat, 14 Sep 2019 02:32:43 GMT
 # ARGS: BASE_URL=https://apache.osuosl.org/maven/maven-3/3.6.2/binaries MAVEN_VERSION=3.6.2 SHA=d941423d115cd021514bfd06c453658b1b3e39e6240969caf4315ab7119a77299713f14b620fb2571a264f8dff2473d8af3cb47b05acf0036fc2553199a5c1ee USER_HOME_DIR=/root
 RUN mkdir -p /usr/share/maven /usr/share/maven/ref   && curl -fsSL -o /tmp/apache-maven.tar.gz ${BASE_URL}/apache-maven-${MAVEN_VERSION}-bin.tar.gz   && echo "${SHA}  /tmp/apache-maven.tar.gz" | sha512sum -c -   && tar -xzf /tmp/apache-maven.tar.gz -C /usr/share/maven --strip-components=1   && rm -f /tmp/apache-maven.tar.gz   && ln -s /usr/share/maven/bin/mvn /usr/bin/mvn
-# Fri, 13 Sep 2019 05:14:24 GMT
+# Sat, 14 Sep 2019 02:32:43 GMT
 ENV MAVEN_HOME=/usr/share/maven
-# Fri, 13 Sep 2019 05:14:24 GMT
+# Sat, 14 Sep 2019 02:32:43 GMT
 ENV MAVEN_CONFIG=/root/.m2
-# Fri, 13 Sep 2019 05:14:24 GMT
+# Sat, 14 Sep 2019 02:32:43 GMT
 COPY file:1b3da5c58894f705e7387946301c0c52edb6271761ea3cd80b86a848847a64cd in /usr/local/bin/mvn-entrypoint.sh 
-# Fri, 13 Sep 2019 05:14:25 GMT
+# Sat, 14 Sep 2019 02:32:43 GMT
 COPY file:2bbb488dd73c55d658b91943cfdf9c26975a320ceafc45dda94c95b03e518ad3 in /usr/share/maven/ref/ 
-# Fri, 13 Sep 2019 05:14:25 GMT
+# Sat, 14 Sep 2019 02:32:43 GMT
 ENTRYPOINT ["/usr/local/bin/mvn-entrypoint.sh"]
-# Fri, 13 Sep 2019 05:14:25 GMT
+# Sat, 14 Sep 2019 02:32:44 GMT
 CMD ["mvn"]
 ```
 
@@ -4851,21 +4851,21 @@ CMD ["mvn"]
 		Last Modified: Thu, 12 Sep 2019 14:35:16 GMT  
 		Size: 222.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:96fd45ee9818086a74a3a5f4562639f0d2db421419d9d20e4553dd2d11e36917`  
-		Last Modified: Thu, 12 Sep 2019 14:35:41 GMT  
-		Size: 195.7 MB (195718802 bytes)  
+	-	`sha256:663538d2581ce8ee06691cdd2020b2a38f47bd9996c7592247a76280505e3a4e`  
+		Last Modified: Sat, 14 Sep 2019 00:26:21 GMT  
+		Size: 195.7 MB (195718807 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:e0bfbdc652c3b5b169baeedb120f354664027d72d9866f4ad02fa79294c644d8`  
-		Last Modified: Fri, 13 Sep 2019 05:15:17 GMT  
-		Size: 9.2 MB (9167581 bytes)  
+	-	`sha256:28d90ddff35dcae263144936dedbe6d1baa5cff7cde62906c6c854f89cbfb0ed`  
+		Last Modified: Sat, 14 Sep 2019 02:34:01 GMT  
+		Size: 9.2 MB (9167583 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:9c2a3372ee55b77da59d73774317f35047e7a38a4d06c454cf03de63dc4a00c3`  
-		Last Modified: Fri, 13 Sep 2019 05:15:16 GMT  
-		Size: 864.0 B  
+	-	`sha256:4026e60527338b245da2f67dd4002950303385b0bdf26d45c1519cb041bd120e`  
+		Last Modified: Sat, 14 Sep 2019 02:34:01 GMT  
+		Size: 861.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:8e70e332c8192e51f7cd3a74d4e02c0bb794da8852bd65f7de6f1e23fa2a63c7`  
-		Last Modified: Fri, 13 Sep 2019 05:15:17 GMT  
-		Size: 357.0 B  
+	-	`sha256:fedf7e9533c347c5f74d951ee6877b2f48c7996638ff7753f24cbf9d6750bf3b`  
+		Last Modified: Sat, 14 Sep 2019 02:34:01 GMT  
+		Size: 358.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `maven:3.6-jdk-11` - linux; arm64 variant v8
@@ -4983,7 +4983,7 @@ CMD ["mvn"]
 ## `maven:3.6-jdk-11-slim`
 
 ```console
-$ docker pull maven@sha256:8af5dc392a2af438d1471990a441abcf3e1739e2442bed3678c61e3726f62179
+$ docker pull maven@sha256:d6595a61c34de743018aaeae69374a455c2cb0db81d6452442c60e4f1344cc19
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -4994,101 +4994,101 @@ $ docker pull maven@sha256:8af5dc392a2af438d1471990a441abcf3e1739e2442bed3678c61
 ### `maven:3.6-jdk-11-slim` - linux; amd64
 
 ```console
-$ docker pull maven@sha256:caefa9cbff7ae95218a3990fcf246340b0a17a5efd7c8c2ecdbdbf1ada639b46
+$ docker pull maven@sha256:a8de8a8cf567309b91fa9217fd63e5c468814c473c23b782cdff58801607a0a3
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **238.4 MB (238370821 bytes)**  
+-	Total Size: **238.1 MB (238100121 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:95c83d29bfc3b7caf10fd6d09d404e3dae23278fe0ce2b665beac6aa33deca72`
+-	Image ID: `sha256:316ca1e7d3a7a7966dd8f9be3448bf32b63e0f4af86d3fdc51a556ab59014cbf`
 -	Entrypoint: `["\/usr\/local\/bin\/mvn-entrypoint.sh"]`
 -	Default Command: `["mvn"]`
 
 ```dockerfile
-# Wed, 14 Aug 2019 00:22:12 GMT
-ADD file:330bfb91168adb4a9b1296c70209ed487d4c2705042a916d575f82b61ab16e61 in / 
-# Wed, 14 Aug 2019 00:22:12 GMT
+# Wed, 11 Sep 2019 23:22:24 GMT
+ADD file:1901172d26545609083e48b9bfaf2cb46674f37af0902ad5a32e2420301225de in / 
+# Wed, 11 Sep 2019 23:22:24 GMT
 CMD ["bash"]
-# Wed, 14 Aug 2019 11:24:17 GMT
+# Sat, 14 Sep 2019 00:22:55 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		ca-certificates p11-kit 	; 	rm -rf /var/lib/apt/lists/*
-# Wed, 14 Aug 2019 11:24:17 GMT
+# Sat, 14 Sep 2019 00:22:55 GMT
 ENV LANG=C.UTF-8
-# Wed, 14 Aug 2019 11:24:18 GMT
+# Sat, 14 Sep 2019 00:22:55 GMT
 ENV JAVA_HOME=/usr/local/openjdk-11
-# Wed, 14 Aug 2019 11:24:18 GMT
+# Sat, 14 Sep 2019 00:22:55 GMT
 ENV PATH=/usr/local/openjdk-11/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Wed, 14 Aug 2019 11:24:19 GMT
+# Sat, 14 Sep 2019 00:22:56 GMT
 RUN { echo '#/bin/sh'; echo 'echo "$JAVA_HOME"'; } > /usr/local/bin/docker-java-home && chmod +x /usr/local/bin/docker-java-home && [ "$JAVA_HOME" = "$(docker-java-home)" ]
-# Wed, 14 Aug 2019 11:24:19 GMT
+# Sat, 14 Sep 2019 00:22:56 GMT
 ENV JAVA_VERSION=11.0.4
-# Wed, 14 Aug 2019 11:24:19 GMT
+# Sat, 14 Sep 2019 00:22:56 GMT
 ENV JAVA_BASE_URL=https://github.com/AdoptOpenJDK/openjdk11-upstream-binaries/releases/download/jdk-11.0.4%2B11/OpenJDK11U-jdk_
-# Wed, 14 Aug 2019 11:24:19 GMT
+# Sat, 14 Sep 2019 00:22:56 GMT
 ENV JAVA_URL_VERSION=11.0.4_11
-# Wed, 14 Aug 2019 11:24:45 GMT
-RUN set -eux; 		dpkgArch="$(dpkg --print-architecture)"; 	case "$dpkgArch" in 		amd64) upstreamArch='x64' ;; 		arm64) upstreamArch='aarch64' ;; 		*) echo >&2 "error: unsupported architecture: $dpkgArch" ;; 	esac; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		dirmngr 		gnupg 		wget 	; 	rm -rf /var/lib/apt/lists/*; 		wget -O openjdk.tgz.asc "${JAVA_BASE_URL}${upstreamArch}_linux_${JAVA_URL_VERSION}.tar.gz.sign"; 	wget -O openjdk.tgz "${JAVA_BASE_URL}${upstreamArch}_linux_${JAVA_URL_VERSION}.tar.gz" --progress=dot:giga; 		export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys CA5F11C6CE22644D42C6AC4492EF8D39DC13168F; 	gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys EAC843EBD3EFDB98CC772FADA5CD6035332FA671; 	gpg --batch --list-sigs --keyid-format 0xLONG CA5F11C6CE22644D42C6AC4492EF8D39DC13168F | grep '0xA5CD6035332FA671' | grep 'Andrew Haley'; 	gpg --batch --verify openjdk.tgz.asc openjdk.tgz; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME"; 		mkdir -p "$JAVA_HOME"; 	tar --extract 		--file openjdk.tgz 		--directory "$JAVA_HOME" 		--strip-components 1 		--no-same-owner 	; 	rm openjdk.tgz*; 			apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark > /dev/null; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 		{ 		echo '#!/usr/bin/env bash'; 		echo 'set -Eeuo pipefail'; 		echo 'if ! [ -d "$JAVA_HOME" ]; then echo >&2 "error: missing JAVA_HOME environment variable"; exit 1; fi'; 		echo 'cacertsFile=; for f in "$JAVA_HOME/lib/security/cacerts" "$JAVA_HOME/jre/lib/security/cacerts"; do if [ -e "$f" ]; then cacertsFile="$f"; break; fi; done'; 		echo 'if [ -z "$cacertsFile" ] || ! [ -f "$cacertsFile" ]; then echo >&2 "error: failed to find cacerts file in $JAVA_HOME"; exit 1; fi'; 		echo 'trust extract --overwrite --format=java-cacerts --filter=ca-anchors --purpose=server-auth "$cacertsFile"'; 	} > /etc/ca-certificates/update.d/docker-openjdk; 	chmod +x /etc/ca-certificates/update.d/docker-openjdk; 	/etc/ca-certificates/update.d/docker-openjdk; 		find "$JAVA_HOME/lib" -name '*.so' -exec dirname '{}' ';' | sort -u > /etc/ld.so.conf.d/docker-openjdk.conf; 	ldconfig; 		javac --version; 	java --version
-# Wed, 14 Aug 2019 11:24:45 GMT
+# Sat, 14 Sep 2019 00:23:18 GMT
+RUN set -eux; 		dpkgArch="$(dpkg --print-architecture)"; 	case "$dpkgArch" in 		amd64) upstreamArch='x64' ;; 		arm64) upstreamArch='aarch64' ;; 		*) echo >&2 "error: unsupported architecture: $dpkgArch" ;; 	esac; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		dirmngr 		gnupg 		wget 	; 	rm -rf /var/lib/apt/lists/*; 		wget -O openjdk.tgz.asc "${JAVA_BASE_URL}${upstreamArch}_linux_${JAVA_URL_VERSION}.tar.gz.sign"; 	wget -O openjdk.tgz "${JAVA_BASE_URL}${upstreamArch}_linux_${JAVA_URL_VERSION}.tar.gz" --progress=dot:giga; 		export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver ha.pool.sks-keyservers.net --keyserver-options no-self-sigs-only --recv-keys CA5F11C6CE22644D42C6AC4492EF8D39DC13168F; 	gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys EAC843EBD3EFDB98CC772FADA5CD6035332FA671; 	gpg --batch --list-sigs --keyid-format 0xLONG CA5F11C6CE22644D42C6AC4492EF8D39DC13168F 		| tee /dev/stderr 		| grep '0xA5CD6035332FA671' 		| grep 'Andrew Haley'; 	gpg --batch --verify openjdk.tgz.asc openjdk.tgz; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME"; 		mkdir -p "$JAVA_HOME"; 	tar --extract 		--file openjdk.tgz 		--directory "$JAVA_HOME" 		--strip-components 1 		--no-same-owner 	; 	rm openjdk.tgz*; 			apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark > /dev/null; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 		{ 		echo '#!/usr/bin/env bash'; 		echo 'set -Eeuo pipefail'; 		echo 'if ! [ -d "$JAVA_HOME" ]; then echo >&2 "error: missing JAVA_HOME environment variable"; exit 1; fi'; 		echo 'cacertsFile=; for f in "$JAVA_HOME/lib/security/cacerts" "$JAVA_HOME/jre/lib/security/cacerts"; do if [ -e "$f" ]; then cacertsFile="$f"; break; fi; done'; 		echo 'if [ -z "$cacertsFile" ] || ! [ -f "$cacertsFile" ]; then echo >&2 "error: failed to find cacerts file in $JAVA_HOME"; exit 1; fi'; 		echo 'trust extract --overwrite --format=java-cacerts --filter=ca-anchors --purpose=server-auth "$cacertsFile"'; 	} > /etc/ca-certificates/update.d/docker-openjdk; 	chmod +x /etc/ca-certificates/update.d/docker-openjdk; 	/etc/ca-certificates/update.d/docker-openjdk; 		find "$JAVA_HOME/lib" -name '*.so' -exec dirname '{}' ';' | sort -u > /etc/ld.so.conf.d/docker-openjdk.conf; 	ldconfig; 		javac --version; 	java --version
+# Sat, 14 Sep 2019 00:23:18 GMT
 CMD ["jshell"]
-# Wed, 11 Sep 2019 11:22:11 GMT
+# Sat, 14 Sep 2019 02:32:28 GMT
 ARG MAVEN_VERSION=3.6.2
-# Wed, 11 Sep 2019 11:22:11 GMT
+# Sat, 14 Sep 2019 02:32:28 GMT
 ARG USER_HOME_DIR=/root
-# Wed, 11 Sep 2019 11:22:11 GMT
+# Sat, 14 Sep 2019 02:32:28 GMT
 ARG SHA=d941423d115cd021514bfd06c453658b1b3e39e6240969caf4315ab7119a77299713f14b620fb2571a264f8dff2473d8af3cb47b05acf0036fc2553199a5c1ee
-# Wed, 11 Sep 2019 11:22:11 GMT
+# Sat, 14 Sep 2019 02:32:28 GMT
 ARG BASE_URL=https://apache.osuosl.org/maven/maven-3/3.6.2/binaries
-# Wed, 11 Sep 2019 11:22:21 GMT
+# Sat, 14 Sep 2019 02:32:34 GMT
 # ARGS: BASE_URL=https://apache.osuosl.org/maven/maven-3/3.6.2/binaries MAVEN_VERSION=3.6.2 SHA=d941423d115cd021514bfd06c453658b1b3e39e6240969caf4315ab7119a77299713f14b620fb2571a264f8dff2473d8af3cb47b05acf0036fc2553199a5c1ee USER_HOME_DIR=/root
 RUN apt-get update &&     apt-get install -y       curl procps   && rm -rf /var/lib/apt/lists/*
-# Wed, 11 Sep 2019 11:22:23 GMT
+# Sat, 14 Sep 2019 02:32:36 GMT
 # ARGS: BASE_URL=https://apache.osuosl.org/maven/maven-3/3.6.2/binaries MAVEN_VERSION=3.6.2 SHA=d941423d115cd021514bfd06c453658b1b3e39e6240969caf4315ab7119a77299713f14b620fb2571a264f8dff2473d8af3cb47b05acf0036fc2553199a5c1ee USER_HOME_DIR=/root
 RUN mkdir -p /usr/share/maven /usr/share/maven/ref   && curl -fsSL -o /tmp/apache-maven.tar.gz ${BASE_URL}/apache-maven-${MAVEN_VERSION}-bin.tar.gz   && echo "${SHA}  /tmp/apache-maven.tar.gz" | sha512sum -c -   && tar -xzf /tmp/apache-maven.tar.gz -C /usr/share/maven --strip-components=1   && rm -f /tmp/apache-maven.tar.gz   && ln -s /usr/share/maven/bin/mvn /usr/bin/mvn
-# Wed, 11 Sep 2019 11:22:23 GMT
+# Sat, 14 Sep 2019 02:32:36 GMT
 ENV MAVEN_HOME=/usr/share/maven
-# Wed, 11 Sep 2019 11:22:23 GMT
+# Sat, 14 Sep 2019 02:32:36 GMT
 ENV MAVEN_CONFIG=/root/.m2
-# Wed, 11 Sep 2019 11:22:23 GMT
+# Sat, 14 Sep 2019 02:32:36 GMT
 COPY file:1b3da5c58894f705e7387946301c0c52edb6271761ea3cd80b86a848847a64cd in /usr/local/bin/mvn-entrypoint.sh 
-# Wed, 11 Sep 2019 11:22:24 GMT
+# Sat, 14 Sep 2019 02:32:37 GMT
 COPY file:2bbb488dd73c55d658b91943cfdf9c26975a320ceafc45dda94c95b03e518ad3 in /usr/share/maven/ref/ 
-# Wed, 11 Sep 2019 11:22:24 GMT
+# Sat, 14 Sep 2019 02:32:37 GMT
 ENTRYPOINT ["/usr/local/bin/mvn-entrypoint.sh"]
-# Wed, 11 Sep 2019 11:22:24 GMT
+# Sat, 14 Sep 2019 02:32:37 GMT
 CMD ["mvn"]
 ```
 
 -	Layers:
-	-	`sha256:1ab2bdfe97783562315f98f94c0769b1897a05f7b0395ca1520ebee08666703b`  
-		Last Modified: Wed, 14 Aug 2019 00:27:15 GMT  
-		Size: 27.1 MB (27093851 bytes)  
+	-	`sha256:b8f262c62ec67f02536f49654de586c022043652bbb6bbf76a8dab1542627a8d`  
+		Last Modified: Wed, 11 Sep 2019 23:31:20 GMT  
+		Size: 27.1 MB (27093738 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:7aaf9a088d61d78b50cd2a58984cc89ed9c0c5c66124fd74b4baa0cba32524c1`  
-		Last Modified: Wed, 14 Aug 2019 11:28:15 GMT  
-		Size: 3.2 MB (3247273 bytes)  
+	-	`sha256:377e264464ddccb9550cff64ba470dfdb784acdb2ff265ae333b9215fc873b08`  
+		Last Modified: Sat, 14 Sep 2019 00:26:29 GMT  
+		Size: 3.2 MB (3247380 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:b9283b89acb2f6ac352a31afc80df1a24513d2e98b40d282309fd8957e0e2b77`  
-		Last Modified: Wed, 14 Aug 2019 11:28:15 GMT  
-		Size: 210.0 B  
+	-	`sha256:bde67c1ff89fda30053d5c20d0e07ba1de298df013c938e0966f5944fe7bdd08`  
+		Last Modified: Sat, 14 Sep 2019 00:26:28 GMT  
+		Size: 211.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:16677eca0612a87eb64aac89ef86004d3ff0826a576dc1cbad795a322f6a2aeb`  
-		Last Modified: Wed, 14 Aug 2019 11:28:36 GMT  
-		Size: 196.0 MB (195975392 bytes)  
+	-	`sha256:f430704e961738b7d7d861f18a7f3b49bbc44482f5266ee6a5f61bfed09742ee`  
+		Last Modified: Sat, 14 Sep 2019 00:27:14 GMT  
+		Size: 196.0 MB (195975702 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c31ca6fde6f25e3fb72220eb5c1a015f8d6de20eb0e8a26ed168db6371253bc1`  
-		Last Modified: Wed, 11 Sep 2019 11:24:51 GMT  
-		Size: 2.9 MB (2885297 bytes)  
+	-	`sha256:339a324ebfacb28408280b8e4d37cb5723bb56acb49ec13cd7853aa9528ecb19`  
+		Last Modified: Sat, 14 Sep 2019 02:33:54 GMT  
+		Size: 2.6 MB (2614284 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c28cc5998336ecae2c734aae1aa527f54e38d245d64691fccb28b0a16cfd9150`  
-		Last Modified: Wed, 11 Sep 2019 11:24:51 GMT  
-		Size: 9.2 MB (9167583 bytes)  
+	-	`sha256:24cbe0a91ab4ca314f00f346a84dc114ef8d4b7814ba3c7688d470f816ed9c1d`  
+		Last Modified: Sat, 14 Sep 2019 02:33:55 GMT  
+		Size: 9.2 MB (9167593 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:2e624fe923786ef0403fc9d470aed5c62e4cb642c8663e1738bd39a690776caf`  
-		Last Modified: Wed, 11 Sep 2019 11:24:50 GMT  
-		Size: 857.0 B  
+	-	`sha256:1fa638a3741f3086d09cf5c9e2438c5204a615e788b31afa90189d207820b159`  
+		Last Modified: Sat, 14 Sep 2019 02:33:54 GMT  
+		Size: 855.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:e04458ba94df0e446bcf5c8b451be2595ca3d898c61119e8ab696f3b752db0eb`  
-		Last Modified: Wed, 11 Sep 2019 11:24:50 GMT  
+	-	`sha256:e19e682e4393dc569cfe7754840587a4da215b84c8ce0bed5e94e6cb9e4e6357`  
+		Last Modified: Sat, 14 Sep 2019 02:33:54 GMT  
 		Size: 358.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
@@ -5396,7 +5396,7 @@ CMD ["mvn"]
 ## `maven:3.6-jdk-14`
 
 ```console
-$ docker pull maven@sha256:5fddd37a554f3b35a9e1c909e9097cf32843b9a4482e4f6eaa88575c08d03e85
+$ docker pull maven@sha256:57993c189c00c62774ce35280393f48f28812c2ec63849a78f5d2b660b06add3
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -5406,14 +5406,14 @@ $ docker pull maven@sha256:5fddd37a554f3b35a9e1c909e9097cf32843b9a4482e4f6eaa885
 ### `maven:3.6-jdk-14` - linux; amd64
 
 ```console
-$ docker pull maven@sha256:7be61b36b4ecd9e9f2a61a7b6998e2a63da85502c4cc7b5a69b78e298757450a
+$ docker pull maven@sha256:64ddd34283b52c407320e94c6eab7745c4c14c6c38549b7514dd40d61d9996cc
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **263.7 MB (263705915 bytes)**  
+-	Total Size: **264.3 MB (264349156 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:ae4caed357b4e093948cfcdea07e1397f5eb8cda8a8ba17d7d4281166f50d82d`
+-	Image ID: `sha256:b87409511a8747f8f75a53731a935dc1717dfb437f3bf77baf7efe6e9425a3d0`
 -	Entrypoint: `["\/usr\/local\/bin\/mvn-entrypoint.sh"]`
 -	Default Command: `["mvn"]`
 
@@ -5432,38 +5432,38 @@ ENV LANG=en_US.UTF-8
 ENV JAVA_HOME=/usr/java/openjdk-14
 # Mon, 26 Aug 2019 23:30:02 GMT
 ENV PATH=/usr/java/openjdk-14/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Fri, 06 Sep 2019 17:29:14 GMT
-ENV JAVA_VERSION=14-ea+13
-# Fri, 06 Sep 2019 17:29:14 GMT
-ENV JAVA_URL=https://download.java.net/java/early_access/jdk14/13/GPL/openjdk-14-ea+13_linux-x64_bin.tar.gz
-# Fri, 06 Sep 2019 17:29:14 GMT
-ENV JAVA_SHA256=39582f66190e5034ab5837e17db840a4e23c60efaa473767e10b62987dbe78ed
-# Fri, 06 Sep 2019 17:30:29 GMT
+# Sat, 14 Sep 2019 00:20:32 GMT
+ENV JAVA_VERSION=14-ea+14
+# Sat, 14 Sep 2019 00:20:32 GMT
+ENV JAVA_URL=https://download.java.net/java/early_access/jdk14/14/GPL/openjdk-14-ea+14_linux-x64_bin.tar.gz
+# Sat, 14 Sep 2019 00:20:32 GMT
+ENV JAVA_SHA256=fc1aed4e0de423dbb27db449b63b25c61b06b80e275f7ef665cce6c61e736726
+# Sat, 14 Sep 2019 00:22:07 GMT
 RUN set -eux; 		curl -fL -o /openjdk.tgz "$JAVA_URL"; 	echo "$JAVA_SHA256 */openjdk.tgz" | sha256sum -c -; 	mkdir -p "$JAVA_HOME"; 	tar --extract --file /openjdk.tgz --directory "$JAVA_HOME" --strip-components 1; 	rm /openjdk.tgz; 		ln -sfT "$JAVA_HOME" /usr/java/default; 	ln -sfT "$JAVA_HOME" /usr/java/latest; 	for bin in "$JAVA_HOME/bin/"*; do 		base="$(basename "$bin")"; 		[ ! -e "/usr/bin/$base" ]; 		alternatives --install "/usr/bin/$base" "$base" "$bin" 20000; 	done; 		java -Xshare:dump; 		java --version; 	javac --version
-# Fri, 06 Sep 2019 17:30:29 GMT
+# Sat, 14 Sep 2019 00:22:07 GMT
 CMD ["jshell"]
-# Wed, 11 Sep 2019 11:22:55 GMT
+# Sat, 14 Sep 2019 02:32:54 GMT
 ARG MAVEN_VERSION=3.6.2
-# Wed, 11 Sep 2019 11:22:55 GMT
+# Sat, 14 Sep 2019 02:32:55 GMT
 ARG USER_HOME_DIR=/root
-# Wed, 11 Sep 2019 11:22:55 GMT
+# Sat, 14 Sep 2019 02:32:55 GMT
 ARG SHA=d941423d115cd021514bfd06c453658b1b3e39e6240969caf4315ab7119a77299713f14b620fb2571a264f8dff2473d8af3cb47b05acf0036fc2553199a5c1ee
-# Wed, 11 Sep 2019 11:22:55 GMT
+# Sat, 14 Sep 2019 02:32:55 GMT
 ARG BASE_URL=https://apache.osuosl.org/maven/maven-3/3.6.2/binaries
-# Wed, 11 Sep 2019 11:22:57 GMT
+# Sat, 14 Sep 2019 02:32:57 GMT
 # ARGS: BASE_URL=https://apache.osuosl.org/maven/maven-3/3.6.2/binaries MAVEN_VERSION=3.6.2 SHA=d941423d115cd021514bfd06c453658b1b3e39e6240969caf4315ab7119a77299713f14b620fb2571a264f8dff2473d8af3cb47b05acf0036fc2553199a5c1ee USER_HOME_DIR=/root
 RUN mkdir -p /usr/share/maven /usr/share/maven/ref   && curl -fsSL -o /tmp/apache-maven.tar.gz ${BASE_URL}/apache-maven-${MAVEN_VERSION}-bin.tar.gz   && echo "${SHA}  /tmp/apache-maven.tar.gz" | sha512sum -c -   && tar -xzf /tmp/apache-maven.tar.gz -C /usr/share/maven --strip-components=1   && rm -f /tmp/apache-maven.tar.gz   && ln -s /usr/share/maven/bin/mvn /usr/bin/mvn
-# Wed, 11 Sep 2019 11:22:57 GMT
+# Sat, 14 Sep 2019 02:32:57 GMT
 ENV MAVEN_HOME=/usr/share/maven
-# Wed, 11 Sep 2019 11:22:57 GMT
+# Sat, 14 Sep 2019 02:32:57 GMT
 ENV MAVEN_CONFIG=/root/.m2
-# Wed, 11 Sep 2019 11:22:57 GMT
+# Sat, 14 Sep 2019 02:32:57 GMT
 COPY file:1b3da5c58894f705e7387946301c0c52edb6271761ea3cd80b86a848847a64cd in /usr/local/bin/mvn-entrypoint.sh 
-# Wed, 11 Sep 2019 11:22:58 GMT
+# Sat, 14 Sep 2019 02:32:57 GMT
 COPY file:2bbb488dd73c55d658b91943cfdf9c26975a320ceafc45dda94c95b03e518ad3 in /usr/share/maven/ref/ 
-# Wed, 11 Sep 2019 11:22:58 GMT
+# Sat, 14 Sep 2019 02:32:57 GMT
 ENTRYPOINT ["/usr/local/bin/mvn-entrypoint.sh"]
-# Wed, 11 Sep 2019 11:22:58 GMT
+# Sat, 14 Sep 2019 02:32:58 GMT
 CMD ["mvn"]
 ```
 
@@ -5476,27 +5476,27 @@ CMD ["mvn"]
 		Last Modified: Mon, 26 Aug 2019 23:34:31 GMT  
 		Size: 14.8 MB (14770876 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:ac1aa9d52dc9261ca56c991c0d6b09b5da76b01eba5e864ea7e7b4a410f9e593`  
-		Last Modified: Fri, 06 Sep 2019 17:32:16 GMT  
-		Size: 197.2 MB (197152135 bytes)  
+	-	`sha256:f5e2a39686b8dea4b6fedd63334a23122b0c95df55e8022b359b5c981ee5f7ba`  
+		Last Modified: Sat, 14 Sep 2019 00:25:45 GMT  
+		Size: 197.8 MB (197795368 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:b1008bd54dcd5a2c8f2f0fdbcadff27bb64a9d130e97129a397fa2570e170e0f`  
-		Last Modified: Wed, 11 Sep 2019 11:25:26 GMT  
-		Size: 9.2 MB (9168957 bytes)  
+	-	`sha256:211f0dac7b8d1a57d19cdf9be54791611a55e6e61d42860d9c4b1e5b9c0914f3`  
+		Last Modified: Sat, 14 Sep 2019 02:34:10 GMT  
+		Size: 9.2 MB (9168967 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:0e41a79479cac6823ebfce699c0061ec7d4a666ebd1bb1cc7f5c927702f76ddc`  
-		Last Modified: Wed, 11 Sep 2019 11:25:25 GMT  
-		Size: 859.0 B  
+	-	`sha256:4903638b4c757c686991d35f12b478840073e8e6045f03b91885d9550372521c`  
+		Last Modified: Sat, 14 Sep 2019 02:34:10 GMT  
+		Size: 858.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:d6834b0e357ce969ccfbc48921066ec689c3c7a19bf335cd064e7ef5d4bbd676`  
-		Last Modified: Wed, 11 Sep 2019 11:25:26 GMT  
-		Size: 358.0 B  
+	-	`sha256:62f85deec1bd41f4e241a8afc4d2e4f65b85e5d2ae08945b102b7be99c1cb0f2`  
+		Last Modified: Sat, 14 Sep 2019 02:34:10 GMT  
+		Size: 357.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `maven:3.6-jdk-8`
 
 ```console
-$ docker pull maven@sha256:891118398fa91827cfec85a909b84abe46cbc63da1df3866bda90fff016ccd06
+$ docker pull maven@sha256:6f65801ad4b56207b387d8c856ece1a30d4435ef32af9d9d842838ee76c3c6dd
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -5506,14 +5506,14 @@ $ docker pull maven@sha256:891118398fa91827cfec85a909b84abe46cbc63da1df3866bda90
 ### `maven:3.6-jdk-8` - linux; amd64
 
 ```console
-$ docker pull maven@sha256:d8c9b6244e525c8ea8f0bcc091e4ac20f00cd646156b86775946e3b0fd186404
+$ docker pull maven@sha256:6903c8d89fc7c275f6df95268c910ac9e03eabc1cb2e561e5996c17042e6dc23
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **228.9 MB (228871582 bytes)**  
+-	Total Size: **228.9 MB (228871567 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:68b51f9f1edf9acc359aa4e671027045d78ffdfc6ed1415e7bca064895cf5f12`
+-	Image ID: `sha256:a1f35667f5e35af8151cd030d5e18412e06761727a760a53b82a32c46994a118`
 -	Entrypoint: `["\/usr\/local\/bin\/mvn-entrypoint.sh"]`
 -	Default Command: `["mvn"]`
 
@@ -5544,30 +5544,30 @@ ENV JAVA_VERSION=8u222
 ENV JAVA_BASE_URL=https://github.com/AdoptOpenJDK/openjdk8-upstream-binaries/releases/download/jdk8u222-b10/OpenJDK8U-jdk_
 # Thu, 12 Sep 2019 14:32:36 GMT
 ENV JAVA_URL_VERSION=8u222b10
-# Thu, 12 Sep 2019 14:32:46 GMT
-RUN set -eux; 		dpkgArch="$(dpkg --print-architecture)"; 	case "$dpkgArch" in 		amd64) upstreamArch='x64' ;; 		arm64) upstreamArch='aarch64' ;; 		*) echo >&2 "error: unsupported architecture: $dpkgArch" ;; 	esac; 		wget -O openjdk.tgz.asc "${JAVA_BASE_URL}${upstreamArch}_linux_${JAVA_URL_VERSION}.tar.gz.sign"; 	wget -O openjdk.tgz "${JAVA_BASE_URL}${upstreamArch}_linux_${JAVA_URL_VERSION}.tar.gz" --progress=dot:giga; 		export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys CA5F11C6CE22644D42C6AC4492EF8D39DC13168F; 	gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys EAC843EBD3EFDB98CC772FADA5CD6035332FA671; 	gpg --batch --list-sigs --keyid-format 0xLONG CA5F11C6CE22644D42C6AC4492EF8D39DC13168F | grep '0xA5CD6035332FA671' | grep 'Andrew Haley'; 	gpg --batch --verify openjdk.tgz.asc openjdk.tgz; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME"; 		mkdir -p "$JAVA_HOME"; 	tar --extract 		--file openjdk.tgz 		--directory "$JAVA_HOME" 		--strip-components 1 		--no-same-owner 	; 	rm openjdk.tgz*; 			{ 		echo '#!/usr/bin/env bash'; 		echo 'set -Eeuo pipefail'; 		echo 'if ! [ -d "$JAVA_HOME" ]; then echo >&2 "error: missing JAVA_HOME environment variable"; exit 1; fi'; 		echo 'cacertsFile=; for f in "$JAVA_HOME/lib/security/cacerts" "$JAVA_HOME/jre/lib/security/cacerts"; do if [ -e "$f" ]; then cacertsFile="$f"; break; fi; done'; 		echo 'if [ -z "$cacertsFile" ] || ! [ -f "$cacertsFile" ]; then echo >&2 "error: failed to find cacerts file in $JAVA_HOME"; exit 1; fi'; 		echo 'trust extract --overwrite --format=java-cacerts --filter=ca-anchors --purpose=server-auth "$cacertsFile"'; 	} > /etc/ca-certificates/update.d/docker-openjdk; 	chmod +x /etc/ca-certificates/update.d/docker-openjdk; 	/etc/ca-certificates/update.d/docker-openjdk; 		find "$JAVA_HOME/lib" -name '*.so' -exec dirname '{}' ';' | sort -u > /etc/ld.so.conf.d/docker-openjdk.conf; 	ldconfig; 		javac -version; 	java -version
-# Fri, 13 Sep 2019 05:14:41 GMT
+# Sat, 14 Sep 2019 00:24:02 GMT
+RUN set -eux; 		dpkgArch="$(dpkg --print-architecture)"; 	case "$dpkgArch" in 		amd64) upstreamArch='x64' ;; 		arm64) upstreamArch='aarch64' ;; 		*) echo >&2 "error: unsupported architecture: $dpkgArch" ;; 	esac; 		wget -O openjdk.tgz.asc "${JAVA_BASE_URL}${upstreamArch}_linux_${JAVA_URL_VERSION}.tar.gz.sign"; 	wget -O openjdk.tgz "${JAVA_BASE_URL}${upstreamArch}_linux_${JAVA_URL_VERSION}.tar.gz" --progress=dot:giga; 		export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver ha.pool.sks-keyservers.net --keyserver-options no-self-sigs-only --recv-keys CA5F11C6CE22644D42C6AC4492EF8D39DC13168F; 	gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys EAC843EBD3EFDB98CC772FADA5CD6035332FA671; 	gpg --batch --list-sigs --keyid-format 0xLONG CA5F11C6CE22644D42C6AC4492EF8D39DC13168F 		| tee /dev/stderr 		| grep '0xA5CD6035332FA671' 		| grep 'Andrew Haley'; 	gpg --batch --verify openjdk.tgz.asc openjdk.tgz; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME"; 		mkdir -p "$JAVA_HOME"; 	tar --extract 		--file openjdk.tgz 		--directory "$JAVA_HOME" 		--strip-components 1 		--no-same-owner 	; 	rm openjdk.tgz*; 			{ 		echo '#!/usr/bin/env bash'; 		echo 'set -Eeuo pipefail'; 		echo 'if ! [ -d "$JAVA_HOME" ]; then echo >&2 "error: missing JAVA_HOME environment variable"; exit 1; fi'; 		echo 'cacertsFile=; for f in "$JAVA_HOME/lib/security/cacerts" "$JAVA_HOME/jre/lib/security/cacerts"; do if [ -e "$f" ]; then cacertsFile="$f"; break; fi; done'; 		echo 'if [ -z "$cacertsFile" ] || ! [ -f "$cacertsFile" ]; then echo >&2 "error: failed to find cacerts file in $JAVA_HOME"; exit 1; fi'; 		echo 'trust extract --overwrite --format=java-cacerts --filter=ca-anchors --purpose=server-auth "$cacertsFile"'; 	} > /etc/ca-certificates/update.d/docker-openjdk; 	chmod +x /etc/ca-certificates/update.d/docker-openjdk; 	/etc/ca-certificates/update.d/docker-openjdk; 		find "$JAVA_HOME/lib" -name '*.so' -exec dirname '{}' ';' | sort -u > /etc/ld.so.conf.d/docker-openjdk.conf; 	ldconfig; 		javac -version; 	java -version
+# Sat, 14 Sep 2019 02:33:14 GMT
 ARG MAVEN_VERSION=3.6.2
-# Fri, 13 Sep 2019 05:14:41 GMT
+# Sat, 14 Sep 2019 02:33:14 GMT
 ARG USER_HOME_DIR=/root
-# Fri, 13 Sep 2019 05:14:42 GMT
+# Sat, 14 Sep 2019 02:33:14 GMT
 ARG SHA=d941423d115cd021514bfd06c453658b1b3e39e6240969caf4315ab7119a77299713f14b620fb2571a264f8dff2473d8af3cb47b05acf0036fc2553199a5c1ee
-# Fri, 13 Sep 2019 05:14:42 GMT
+# Sat, 14 Sep 2019 02:33:14 GMT
 ARG BASE_URL=https://apache.osuosl.org/maven/maven-3/3.6.2/binaries
-# Fri, 13 Sep 2019 05:14:43 GMT
+# Sat, 14 Sep 2019 02:33:16 GMT
 # ARGS: BASE_URL=https://apache.osuosl.org/maven/maven-3/3.6.2/binaries MAVEN_VERSION=3.6.2 SHA=d941423d115cd021514bfd06c453658b1b3e39e6240969caf4315ab7119a77299713f14b620fb2571a264f8dff2473d8af3cb47b05acf0036fc2553199a5c1ee USER_HOME_DIR=/root
 RUN mkdir -p /usr/share/maven /usr/share/maven/ref   && curl -fsSL -o /tmp/apache-maven.tar.gz ${BASE_URL}/apache-maven-${MAVEN_VERSION}-bin.tar.gz   && echo "${SHA}  /tmp/apache-maven.tar.gz" | sha512sum -c -   && tar -xzf /tmp/apache-maven.tar.gz -C /usr/share/maven --strip-components=1   && rm -f /tmp/apache-maven.tar.gz   && ln -s /usr/share/maven/bin/mvn /usr/bin/mvn
-# Fri, 13 Sep 2019 05:14:43 GMT
+# Sat, 14 Sep 2019 02:33:16 GMT
 ENV MAVEN_HOME=/usr/share/maven
-# Fri, 13 Sep 2019 05:14:44 GMT
+# Sat, 14 Sep 2019 02:33:16 GMT
 ENV MAVEN_CONFIG=/root/.m2
-# Fri, 13 Sep 2019 05:14:44 GMT
+# Sat, 14 Sep 2019 02:33:17 GMT
 COPY file:1b3da5c58894f705e7387946301c0c52edb6271761ea3cd80b86a848847a64cd in /usr/local/bin/mvn-entrypoint.sh 
-# Fri, 13 Sep 2019 05:14:44 GMT
+# Sat, 14 Sep 2019 02:33:17 GMT
 COPY file:2bbb488dd73c55d658b91943cfdf9c26975a320ceafc45dda94c95b03e518ad3 in /usr/share/maven/ref/ 
-# Fri, 13 Sep 2019 05:14:44 GMT
+# Sat, 14 Sep 2019 02:33:17 GMT
 ENTRYPOINT ["/usr/local/bin/mvn-entrypoint.sh"]
-# Fri, 13 Sep 2019 05:14:44 GMT
+# Sat, 14 Sep 2019 02:33:17 GMT
 CMD ["mvn"]
 ```
 
@@ -5596,27 +5596,27 @@ CMD ["mvn"]
 		Last Modified: Thu, 12 Sep 2019 14:36:06 GMT  
 		Size: 222.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:2a62b26e59185a3325158ae267e3668eae491e808f73fa8b5f2caca81a914634`  
-		Last Modified: Thu, 12 Sep 2019 14:36:21 GMT  
-		Size: 104.2 MB (104195072 bytes)  
+	-	`sha256:f26b99e1adb1713c1c753f96d06c4ccb7f81df1b6daf266eab536ab38a315ba3`  
+		Last Modified: Sat, 14 Sep 2019 00:28:03 GMT  
+		Size: 104.2 MB (104195047 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:ad751a55bde0be137265846661fdb7a49ccd805ecc61a21cd5b9249d6ceb83d8`  
-		Last Modified: Fri, 13 Sep 2019 05:15:26 GMT  
-		Size: 9.2 MB (9167584 bytes)  
+	-	`sha256:7a1b276fce422e852962166cedede03d774fbe45352857d3540651125881aa76`  
+		Last Modified: Sat, 14 Sep 2019 02:34:25 GMT  
+		Size: 9.2 MB (9167597 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c96ffe0da1e422c3f516a1bed39d3023e2a0dda9b6ae6c8f91f461825a077d59`  
-		Last Modified: Fri, 13 Sep 2019 05:15:25 GMT  
+	-	`sha256:c944b4612eac0479e798e1fb39b510400fea2d78e946c2d505389191f90c74ed`  
+		Last Modified: Sat, 14 Sep 2019 02:34:24 GMT  
 		Size: 863.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:a88121a3f06d1be9ab4323bab23290c464194a5dc828850c27537d6059ac0964`  
-		Last Modified: Fri, 13 Sep 2019 05:15:26 GMT  
-		Size: 358.0 B  
+	-	`sha256:293fc5ed12f1e6e7e569d3a01546c0d447661a63cd78044c0a1945e4017c7e3a`  
+		Last Modified: Sat, 14 Sep 2019 02:34:25 GMT  
+		Size: 355.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `maven:3.6-jdk-8-slim`
 
 ```console
-$ docker pull maven@sha256:f6eda4e62036461e2488eda9990a3015cfdb522b246257433467aa2eaca1e904
+$ docker pull maven@sha256:2b54b5981f55838fc4fba956e0092bc97b932ef011c7f70ca85caec337711741
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -5626,106 +5626,106 @@ $ docker pull maven@sha256:f6eda4e62036461e2488eda9990a3015cfdb522b246257433467a
 ### `maven:3.6-jdk-8-slim` - linux; amd64
 
 ```console
-$ docker pull maven@sha256:8b01d4cf8f7094bbbb54ed7947e5112510b509b10886741013c8e27831dedee1
+$ docker pull maven@sha256:8b837657e806c13a8bc0cb49e0ec016388e378256f170c8500d90df9e3c7210c
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **146.8 MB (146842866 bytes)**  
+-	Total Size: **146.6 MB (146573040 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:3ad77bf247134edf18f80b7e68fa9f76ada809906ec7d10061846b81198eecdd`
+-	Image ID: `sha256:f376fc4cd184a647caebed2aa5b07535ced50dcce15dcf553babf220254c3fc2`
 -	Entrypoint: `["\/usr\/local\/bin\/mvn-entrypoint.sh"]`
 -	Default Command: `["mvn"]`
 
 ```dockerfile
-# Wed, 14 Aug 2019 00:22:12 GMT
-ADD file:330bfb91168adb4a9b1296c70209ed487d4c2705042a916d575f82b61ab16e61 in / 
-# Wed, 14 Aug 2019 00:22:12 GMT
+# Wed, 11 Sep 2019 23:22:24 GMT
+ADD file:1901172d26545609083e48b9bfaf2cb46674f37af0902ad5a32e2420301225de in / 
+# Wed, 11 Sep 2019 23:22:24 GMT
 CMD ["bash"]
-# Wed, 14 Aug 2019 11:24:17 GMT
+# Sat, 14 Sep 2019 00:22:55 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		ca-certificates p11-kit 	; 	rm -rf /var/lib/apt/lists/*
-# Wed, 14 Aug 2019 11:24:17 GMT
+# Sat, 14 Sep 2019 00:22:55 GMT
 ENV LANG=C.UTF-8
-# Wed, 14 Aug 2019 11:26:02 GMT
+# Sat, 14 Sep 2019 00:24:06 GMT
 ENV JAVA_HOME=/usr/local/openjdk-8
-# Wed, 14 Aug 2019 11:26:03 GMT
+# Sat, 14 Sep 2019 00:24:06 GMT
 ENV PATH=/usr/local/openjdk-8/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Wed, 14 Aug 2019 11:26:04 GMT
+# Sat, 14 Sep 2019 00:24:07 GMT
 RUN { echo '#/bin/sh'; echo 'echo "$JAVA_HOME"'; } > /usr/local/bin/docker-java-home && chmod +x /usr/local/bin/docker-java-home && [ "$JAVA_HOME" = "$(docker-java-home)" ]
-# Wed, 14 Aug 2019 11:26:04 GMT
+# Sat, 14 Sep 2019 00:24:07 GMT
 ENV JAVA_VERSION=8u222
-# Wed, 14 Aug 2019 11:26:04 GMT
+# Sat, 14 Sep 2019 00:24:07 GMT
 ENV JAVA_BASE_URL=https://github.com/AdoptOpenJDK/openjdk8-upstream-binaries/releases/download/jdk8u222-b10/OpenJDK8U-jdk_
-# Wed, 14 Aug 2019 11:26:05 GMT
+# Sat, 14 Sep 2019 00:24:08 GMT
 ENV JAVA_URL_VERSION=8u222b10
-# Wed, 14 Aug 2019 11:26:25 GMT
-RUN set -eux; 		dpkgArch="$(dpkg --print-architecture)"; 	case "$dpkgArch" in 		amd64) upstreamArch='x64' ;; 		arm64) upstreamArch='aarch64' ;; 		*) echo >&2 "error: unsupported architecture: $dpkgArch" ;; 	esac; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		dirmngr 		gnupg 		wget 	; 	rm -rf /var/lib/apt/lists/*; 		wget -O openjdk.tgz.asc "${JAVA_BASE_URL}${upstreamArch}_linux_${JAVA_URL_VERSION}.tar.gz.sign"; 	wget -O openjdk.tgz "${JAVA_BASE_URL}${upstreamArch}_linux_${JAVA_URL_VERSION}.tar.gz" --progress=dot:giga; 		export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys CA5F11C6CE22644D42C6AC4492EF8D39DC13168F; 	gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys EAC843EBD3EFDB98CC772FADA5CD6035332FA671; 	gpg --batch --list-sigs --keyid-format 0xLONG CA5F11C6CE22644D42C6AC4492EF8D39DC13168F | grep '0xA5CD6035332FA671' | grep 'Andrew Haley'; 	gpg --batch --verify openjdk.tgz.asc openjdk.tgz; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME"; 		mkdir -p "$JAVA_HOME"; 	tar --extract 		--file openjdk.tgz 		--directory "$JAVA_HOME" 		--strip-components 1 		--no-same-owner 	; 	rm openjdk.tgz*; 			apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark > /dev/null; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 		{ 		echo '#!/usr/bin/env bash'; 		echo 'set -Eeuo pipefail'; 		echo 'if ! [ -d "$JAVA_HOME" ]; then echo >&2 "error: missing JAVA_HOME environment variable"; exit 1; fi'; 		echo 'cacertsFile=; for f in "$JAVA_HOME/lib/security/cacerts" "$JAVA_HOME/jre/lib/security/cacerts"; do if [ -e "$f" ]; then cacertsFile="$f"; break; fi; done'; 		echo 'if [ -z "$cacertsFile" ] || ! [ -f "$cacertsFile" ]; then echo >&2 "error: failed to find cacerts file in $JAVA_HOME"; exit 1; fi'; 		echo 'trust extract --overwrite --format=java-cacerts --filter=ca-anchors --purpose=server-auth "$cacertsFile"'; 	} > /etc/ca-certificates/update.d/docker-openjdk; 	chmod +x /etc/ca-certificates/update.d/docker-openjdk; 	/etc/ca-certificates/update.d/docker-openjdk; 		find "$JAVA_HOME/lib" -name '*.so' -exec dirname '{}' ';' | sort -u > /etc/ld.so.conf.d/docker-openjdk.conf; 	ldconfig; 		javac -version; 	java -version
-# Wed, 11 Sep 2019 11:23:02 GMT
+# Sat, 14 Sep 2019 00:24:21 GMT
+RUN set -eux; 		dpkgArch="$(dpkg --print-architecture)"; 	case "$dpkgArch" in 		amd64) upstreamArch='x64' ;; 		arm64) upstreamArch='aarch64' ;; 		*) echo >&2 "error: unsupported architecture: $dpkgArch" ;; 	esac; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		dirmngr 		gnupg 		wget 	; 	rm -rf /var/lib/apt/lists/*; 		wget -O openjdk.tgz.asc "${JAVA_BASE_URL}${upstreamArch}_linux_${JAVA_URL_VERSION}.tar.gz.sign"; 	wget -O openjdk.tgz "${JAVA_BASE_URL}${upstreamArch}_linux_${JAVA_URL_VERSION}.tar.gz" --progress=dot:giga; 		export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver ha.pool.sks-keyservers.net --keyserver-options no-self-sigs-only --recv-keys CA5F11C6CE22644D42C6AC4492EF8D39DC13168F; 	gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys EAC843EBD3EFDB98CC772FADA5CD6035332FA671; 	gpg --batch --list-sigs --keyid-format 0xLONG CA5F11C6CE22644D42C6AC4492EF8D39DC13168F 		| tee /dev/stderr 		| grep '0xA5CD6035332FA671' 		| grep 'Andrew Haley'; 	gpg --batch --verify openjdk.tgz.asc openjdk.tgz; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME"; 		mkdir -p "$JAVA_HOME"; 	tar --extract 		--file openjdk.tgz 		--directory "$JAVA_HOME" 		--strip-components 1 		--no-same-owner 	; 	rm openjdk.tgz*; 			apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark > /dev/null; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 		{ 		echo '#!/usr/bin/env bash'; 		echo 'set -Eeuo pipefail'; 		echo 'if ! [ -d "$JAVA_HOME" ]; then echo >&2 "error: missing JAVA_HOME environment variable"; exit 1; fi'; 		echo 'cacertsFile=; for f in "$JAVA_HOME/lib/security/cacerts" "$JAVA_HOME/jre/lib/security/cacerts"; do if [ -e "$f" ]; then cacertsFile="$f"; break; fi; done'; 		echo 'if [ -z "$cacertsFile" ] || ! [ -f "$cacertsFile" ]; then echo >&2 "error: failed to find cacerts file in $JAVA_HOME"; exit 1; fi'; 		echo 'trust extract --overwrite --format=java-cacerts --filter=ca-anchors --purpose=server-auth "$cacertsFile"'; 	} > /etc/ca-certificates/update.d/docker-openjdk; 	chmod +x /etc/ca-certificates/update.d/docker-openjdk; 	/etc/ca-certificates/update.d/docker-openjdk; 		find "$JAVA_HOME/lib" -name '*.so' -exec dirname '{}' ';' | sort -u > /etc/ld.so.conf.d/docker-openjdk.conf; 	ldconfig; 		javac -version; 	java -version
+# Sat, 14 Sep 2019 02:33:01 GMT
 ARG MAVEN_VERSION=3.6.2
-# Wed, 11 Sep 2019 11:23:02 GMT
+# Sat, 14 Sep 2019 02:33:01 GMT
 ARG USER_HOME_DIR=/root
-# Wed, 11 Sep 2019 11:23:02 GMT
+# Sat, 14 Sep 2019 02:33:01 GMT
 ARG SHA=d941423d115cd021514bfd06c453658b1b3e39e6240969caf4315ab7119a77299713f14b620fb2571a264f8dff2473d8af3cb47b05acf0036fc2553199a5c1ee
-# Wed, 11 Sep 2019 11:23:02 GMT
+# Sat, 14 Sep 2019 02:33:02 GMT
 ARG BASE_URL=https://apache.osuosl.org/maven/maven-3/3.6.2/binaries
-# Wed, 11 Sep 2019 11:23:08 GMT
+# Sat, 14 Sep 2019 02:33:07 GMT
 # ARGS: BASE_URL=https://apache.osuosl.org/maven/maven-3/3.6.2/binaries MAVEN_VERSION=3.6.2 SHA=d941423d115cd021514bfd06c453658b1b3e39e6240969caf4315ab7119a77299713f14b620fb2571a264f8dff2473d8af3cb47b05acf0036fc2553199a5c1ee USER_HOME_DIR=/root
 RUN apt-get update &&     apt-get install -y       curl procps   && rm -rf /var/lib/apt/lists/*
-# Wed, 11 Sep 2019 11:23:11 GMT
+# Sat, 14 Sep 2019 02:33:09 GMT
 # ARGS: BASE_URL=https://apache.osuosl.org/maven/maven-3/3.6.2/binaries MAVEN_VERSION=3.6.2 SHA=d941423d115cd021514bfd06c453658b1b3e39e6240969caf4315ab7119a77299713f14b620fb2571a264f8dff2473d8af3cb47b05acf0036fc2553199a5c1ee USER_HOME_DIR=/root
 RUN mkdir -p /usr/share/maven /usr/share/maven/ref   && curl -fsSL -o /tmp/apache-maven.tar.gz ${BASE_URL}/apache-maven-${MAVEN_VERSION}-bin.tar.gz   && echo "${SHA}  /tmp/apache-maven.tar.gz" | sha512sum -c -   && tar -xzf /tmp/apache-maven.tar.gz -C /usr/share/maven --strip-components=1   && rm -f /tmp/apache-maven.tar.gz   && ln -s /usr/share/maven/bin/mvn /usr/bin/mvn
-# Wed, 11 Sep 2019 11:23:12 GMT
+# Sat, 14 Sep 2019 02:33:09 GMT
 ENV MAVEN_HOME=/usr/share/maven
-# Wed, 11 Sep 2019 11:23:12 GMT
+# Sat, 14 Sep 2019 02:33:09 GMT
 ENV MAVEN_CONFIG=/root/.m2
-# Wed, 11 Sep 2019 11:23:12 GMT
+# Sat, 14 Sep 2019 02:33:09 GMT
 COPY file:1b3da5c58894f705e7387946301c0c52edb6271761ea3cd80b86a848847a64cd in /usr/local/bin/mvn-entrypoint.sh 
-# Wed, 11 Sep 2019 11:23:12 GMT
+# Sat, 14 Sep 2019 02:33:09 GMT
 COPY file:2bbb488dd73c55d658b91943cfdf9c26975a320ceafc45dda94c95b03e518ad3 in /usr/share/maven/ref/ 
-# Wed, 11 Sep 2019 11:23:12 GMT
+# Sat, 14 Sep 2019 02:33:09 GMT
 ENTRYPOINT ["/usr/local/bin/mvn-entrypoint.sh"]
-# Wed, 11 Sep 2019 11:23:12 GMT
+# Sat, 14 Sep 2019 02:33:10 GMT
 CMD ["mvn"]
 ```
 
 -	Layers:
-	-	`sha256:1ab2bdfe97783562315f98f94c0769b1897a05f7b0395ca1520ebee08666703b`  
-		Last Modified: Wed, 14 Aug 2019 00:27:15 GMT  
-		Size: 27.1 MB (27093851 bytes)  
+	-	`sha256:b8f262c62ec67f02536f49654de586c022043652bbb6bbf76a8dab1542627a8d`  
+		Last Modified: Wed, 11 Sep 2019 23:31:20 GMT  
+		Size: 27.1 MB (27093738 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:7aaf9a088d61d78b50cd2a58984cc89ed9c0c5c66124fd74b4baa0cba32524c1`  
-		Last Modified: Wed, 14 Aug 2019 11:28:15 GMT  
-		Size: 3.2 MB (3247273 bytes)  
+	-	`sha256:377e264464ddccb9550cff64ba470dfdb784acdb2ff265ae333b9215fc873b08`  
+		Last Modified: Sat, 14 Sep 2019 00:26:29 GMT  
+		Size: 3.2 MB (3247380 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:80a55c9c9fe89b163322e46d017f346fab100604a4a0a63a1a790b89c1c2105f`  
-		Last Modified: Wed, 14 Aug 2019 11:30:03 GMT  
-		Size: 210.0 B  
+	-	`sha256:3198ebe941513b3be7ff20096fa6f22dc7a8d0f08b20993419825b25acbf050b`  
+		Last Modified: Sat, 14 Sep 2019 00:28:13 GMT  
+		Size: 212.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:9110ea0d47ee3b75e48971381c280070f0d76603288b1da30af905152b7d8250`  
-		Last Modified: Wed, 14 Aug 2019 11:30:18 GMT  
-		Size: 104.4 MB (104449436 bytes)  
+	-	`sha256:14378903d43db9959a5a046c178ca638c7de1be299cab8830d50651eb785f2ec`  
+		Last Modified: Sat, 14 Sep 2019 00:28:33 GMT  
+		Size: 104.4 MB (104449544 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:ced65ad5540c0e9e5e71bf1576f122c3a5ae43ed4df500c9853ae7762131d357`  
-		Last Modified: Wed, 11 Sep 2019 11:25:32 GMT  
-		Size: 2.9 MB (2883304 bytes)  
+	-	`sha256:5e9a3ce0932998bb6cb0663ff7649b8d3107fbfa559aeeafdf1d03cbfb3ecf7b`  
+		Last Modified: Sat, 14 Sep 2019 02:34:19 GMT  
+		Size: 2.6 MB (2613376 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:571cbe6a7507f775f26b4d46e0318c171b1707ecc29493fa3e5ca18518aa612f`  
-		Last Modified: Wed, 11 Sep 2019 11:25:32 GMT  
-		Size: 9.2 MB (9167576 bytes)  
+	-	`sha256:d43c372286e009ea04b86089c45703bb8ac49496375f629996c4c620081b1829`  
+		Last Modified: Sat, 14 Sep 2019 02:34:19 GMT  
+		Size: 9.2 MB (9167581 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:33ff100b4fadd231a5c009db0d07a38ace94570e558dd4c253ff019d492771bd`  
-		Last Modified: Wed, 11 Sep 2019 11:25:31 GMT  
-		Size: 856.0 B  
+	-	`sha256:540eac2ca143b66971989c132c50d89d03071d4a5c90d815988cfc21ba7812fc`  
+		Last Modified: Sat, 14 Sep 2019 02:34:18 GMT  
+		Size: 852.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:94caa8f55de964636cae3dd9d9f1e484f59371a92edd0ac420562a710950b3f2`  
-		Last Modified: Wed, 11 Sep 2019 11:25:31 GMT  
-		Size: 360.0 B  
+	-	`sha256:e0b00071dd186efe231e9ce76caedde78415e14969124b1395b9c55d9573bfbd`  
+		Last Modified: Sat, 14 Sep 2019 02:34:18 GMT  
+		Size: 357.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `maven:3.6-slim`
 
 ```console
-$ docker pull maven@sha256:8af5dc392a2af438d1471990a441abcf3e1739e2442bed3678c61e3726f62179
+$ docker pull maven@sha256:d6595a61c34de743018aaeae69374a455c2cb0db81d6452442c60e4f1344cc19
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -5736,101 +5736,101 @@ $ docker pull maven@sha256:8af5dc392a2af438d1471990a441abcf3e1739e2442bed3678c61
 ### `maven:3.6-slim` - linux; amd64
 
 ```console
-$ docker pull maven@sha256:caefa9cbff7ae95218a3990fcf246340b0a17a5efd7c8c2ecdbdbf1ada639b46
+$ docker pull maven@sha256:a8de8a8cf567309b91fa9217fd63e5c468814c473c23b782cdff58801607a0a3
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **238.4 MB (238370821 bytes)**  
+-	Total Size: **238.1 MB (238100121 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:95c83d29bfc3b7caf10fd6d09d404e3dae23278fe0ce2b665beac6aa33deca72`
+-	Image ID: `sha256:316ca1e7d3a7a7966dd8f9be3448bf32b63e0f4af86d3fdc51a556ab59014cbf`
 -	Entrypoint: `["\/usr\/local\/bin\/mvn-entrypoint.sh"]`
 -	Default Command: `["mvn"]`
 
 ```dockerfile
-# Wed, 14 Aug 2019 00:22:12 GMT
-ADD file:330bfb91168adb4a9b1296c70209ed487d4c2705042a916d575f82b61ab16e61 in / 
-# Wed, 14 Aug 2019 00:22:12 GMT
+# Wed, 11 Sep 2019 23:22:24 GMT
+ADD file:1901172d26545609083e48b9bfaf2cb46674f37af0902ad5a32e2420301225de in / 
+# Wed, 11 Sep 2019 23:22:24 GMT
 CMD ["bash"]
-# Wed, 14 Aug 2019 11:24:17 GMT
+# Sat, 14 Sep 2019 00:22:55 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		ca-certificates p11-kit 	; 	rm -rf /var/lib/apt/lists/*
-# Wed, 14 Aug 2019 11:24:17 GMT
+# Sat, 14 Sep 2019 00:22:55 GMT
 ENV LANG=C.UTF-8
-# Wed, 14 Aug 2019 11:24:18 GMT
+# Sat, 14 Sep 2019 00:22:55 GMT
 ENV JAVA_HOME=/usr/local/openjdk-11
-# Wed, 14 Aug 2019 11:24:18 GMT
+# Sat, 14 Sep 2019 00:22:55 GMT
 ENV PATH=/usr/local/openjdk-11/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Wed, 14 Aug 2019 11:24:19 GMT
+# Sat, 14 Sep 2019 00:22:56 GMT
 RUN { echo '#/bin/sh'; echo 'echo "$JAVA_HOME"'; } > /usr/local/bin/docker-java-home && chmod +x /usr/local/bin/docker-java-home && [ "$JAVA_HOME" = "$(docker-java-home)" ]
-# Wed, 14 Aug 2019 11:24:19 GMT
+# Sat, 14 Sep 2019 00:22:56 GMT
 ENV JAVA_VERSION=11.0.4
-# Wed, 14 Aug 2019 11:24:19 GMT
+# Sat, 14 Sep 2019 00:22:56 GMT
 ENV JAVA_BASE_URL=https://github.com/AdoptOpenJDK/openjdk11-upstream-binaries/releases/download/jdk-11.0.4%2B11/OpenJDK11U-jdk_
-# Wed, 14 Aug 2019 11:24:19 GMT
+# Sat, 14 Sep 2019 00:22:56 GMT
 ENV JAVA_URL_VERSION=11.0.4_11
-# Wed, 14 Aug 2019 11:24:45 GMT
-RUN set -eux; 		dpkgArch="$(dpkg --print-architecture)"; 	case "$dpkgArch" in 		amd64) upstreamArch='x64' ;; 		arm64) upstreamArch='aarch64' ;; 		*) echo >&2 "error: unsupported architecture: $dpkgArch" ;; 	esac; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		dirmngr 		gnupg 		wget 	; 	rm -rf /var/lib/apt/lists/*; 		wget -O openjdk.tgz.asc "${JAVA_BASE_URL}${upstreamArch}_linux_${JAVA_URL_VERSION}.tar.gz.sign"; 	wget -O openjdk.tgz "${JAVA_BASE_URL}${upstreamArch}_linux_${JAVA_URL_VERSION}.tar.gz" --progress=dot:giga; 		export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys CA5F11C6CE22644D42C6AC4492EF8D39DC13168F; 	gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys EAC843EBD3EFDB98CC772FADA5CD6035332FA671; 	gpg --batch --list-sigs --keyid-format 0xLONG CA5F11C6CE22644D42C6AC4492EF8D39DC13168F | grep '0xA5CD6035332FA671' | grep 'Andrew Haley'; 	gpg --batch --verify openjdk.tgz.asc openjdk.tgz; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME"; 		mkdir -p "$JAVA_HOME"; 	tar --extract 		--file openjdk.tgz 		--directory "$JAVA_HOME" 		--strip-components 1 		--no-same-owner 	; 	rm openjdk.tgz*; 			apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark > /dev/null; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 		{ 		echo '#!/usr/bin/env bash'; 		echo 'set -Eeuo pipefail'; 		echo 'if ! [ -d "$JAVA_HOME" ]; then echo >&2 "error: missing JAVA_HOME environment variable"; exit 1; fi'; 		echo 'cacertsFile=; for f in "$JAVA_HOME/lib/security/cacerts" "$JAVA_HOME/jre/lib/security/cacerts"; do if [ -e "$f" ]; then cacertsFile="$f"; break; fi; done'; 		echo 'if [ -z "$cacertsFile" ] || ! [ -f "$cacertsFile" ]; then echo >&2 "error: failed to find cacerts file in $JAVA_HOME"; exit 1; fi'; 		echo 'trust extract --overwrite --format=java-cacerts --filter=ca-anchors --purpose=server-auth "$cacertsFile"'; 	} > /etc/ca-certificates/update.d/docker-openjdk; 	chmod +x /etc/ca-certificates/update.d/docker-openjdk; 	/etc/ca-certificates/update.d/docker-openjdk; 		find "$JAVA_HOME/lib" -name '*.so' -exec dirname '{}' ';' | sort -u > /etc/ld.so.conf.d/docker-openjdk.conf; 	ldconfig; 		javac --version; 	java --version
-# Wed, 14 Aug 2019 11:24:45 GMT
+# Sat, 14 Sep 2019 00:23:18 GMT
+RUN set -eux; 		dpkgArch="$(dpkg --print-architecture)"; 	case "$dpkgArch" in 		amd64) upstreamArch='x64' ;; 		arm64) upstreamArch='aarch64' ;; 		*) echo >&2 "error: unsupported architecture: $dpkgArch" ;; 	esac; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		dirmngr 		gnupg 		wget 	; 	rm -rf /var/lib/apt/lists/*; 		wget -O openjdk.tgz.asc "${JAVA_BASE_URL}${upstreamArch}_linux_${JAVA_URL_VERSION}.tar.gz.sign"; 	wget -O openjdk.tgz "${JAVA_BASE_URL}${upstreamArch}_linux_${JAVA_URL_VERSION}.tar.gz" --progress=dot:giga; 		export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver ha.pool.sks-keyservers.net --keyserver-options no-self-sigs-only --recv-keys CA5F11C6CE22644D42C6AC4492EF8D39DC13168F; 	gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys EAC843EBD3EFDB98CC772FADA5CD6035332FA671; 	gpg --batch --list-sigs --keyid-format 0xLONG CA5F11C6CE22644D42C6AC4492EF8D39DC13168F 		| tee /dev/stderr 		| grep '0xA5CD6035332FA671' 		| grep 'Andrew Haley'; 	gpg --batch --verify openjdk.tgz.asc openjdk.tgz; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME"; 		mkdir -p "$JAVA_HOME"; 	tar --extract 		--file openjdk.tgz 		--directory "$JAVA_HOME" 		--strip-components 1 		--no-same-owner 	; 	rm openjdk.tgz*; 			apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark > /dev/null; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 		{ 		echo '#!/usr/bin/env bash'; 		echo 'set -Eeuo pipefail'; 		echo 'if ! [ -d "$JAVA_HOME" ]; then echo >&2 "error: missing JAVA_HOME environment variable"; exit 1; fi'; 		echo 'cacertsFile=; for f in "$JAVA_HOME/lib/security/cacerts" "$JAVA_HOME/jre/lib/security/cacerts"; do if [ -e "$f" ]; then cacertsFile="$f"; break; fi; done'; 		echo 'if [ -z "$cacertsFile" ] || ! [ -f "$cacertsFile" ]; then echo >&2 "error: failed to find cacerts file in $JAVA_HOME"; exit 1; fi'; 		echo 'trust extract --overwrite --format=java-cacerts --filter=ca-anchors --purpose=server-auth "$cacertsFile"'; 	} > /etc/ca-certificates/update.d/docker-openjdk; 	chmod +x /etc/ca-certificates/update.d/docker-openjdk; 	/etc/ca-certificates/update.d/docker-openjdk; 		find "$JAVA_HOME/lib" -name '*.so' -exec dirname '{}' ';' | sort -u > /etc/ld.so.conf.d/docker-openjdk.conf; 	ldconfig; 		javac --version; 	java --version
+# Sat, 14 Sep 2019 00:23:18 GMT
 CMD ["jshell"]
-# Wed, 11 Sep 2019 11:22:11 GMT
+# Sat, 14 Sep 2019 02:32:28 GMT
 ARG MAVEN_VERSION=3.6.2
-# Wed, 11 Sep 2019 11:22:11 GMT
+# Sat, 14 Sep 2019 02:32:28 GMT
 ARG USER_HOME_DIR=/root
-# Wed, 11 Sep 2019 11:22:11 GMT
+# Sat, 14 Sep 2019 02:32:28 GMT
 ARG SHA=d941423d115cd021514bfd06c453658b1b3e39e6240969caf4315ab7119a77299713f14b620fb2571a264f8dff2473d8af3cb47b05acf0036fc2553199a5c1ee
-# Wed, 11 Sep 2019 11:22:11 GMT
+# Sat, 14 Sep 2019 02:32:28 GMT
 ARG BASE_URL=https://apache.osuosl.org/maven/maven-3/3.6.2/binaries
-# Wed, 11 Sep 2019 11:22:21 GMT
+# Sat, 14 Sep 2019 02:32:34 GMT
 # ARGS: BASE_URL=https://apache.osuosl.org/maven/maven-3/3.6.2/binaries MAVEN_VERSION=3.6.2 SHA=d941423d115cd021514bfd06c453658b1b3e39e6240969caf4315ab7119a77299713f14b620fb2571a264f8dff2473d8af3cb47b05acf0036fc2553199a5c1ee USER_HOME_DIR=/root
 RUN apt-get update &&     apt-get install -y       curl procps   && rm -rf /var/lib/apt/lists/*
-# Wed, 11 Sep 2019 11:22:23 GMT
+# Sat, 14 Sep 2019 02:32:36 GMT
 # ARGS: BASE_URL=https://apache.osuosl.org/maven/maven-3/3.6.2/binaries MAVEN_VERSION=3.6.2 SHA=d941423d115cd021514bfd06c453658b1b3e39e6240969caf4315ab7119a77299713f14b620fb2571a264f8dff2473d8af3cb47b05acf0036fc2553199a5c1ee USER_HOME_DIR=/root
 RUN mkdir -p /usr/share/maven /usr/share/maven/ref   && curl -fsSL -o /tmp/apache-maven.tar.gz ${BASE_URL}/apache-maven-${MAVEN_VERSION}-bin.tar.gz   && echo "${SHA}  /tmp/apache-maven.tar.gz" | sha512sum -c -   && tar -xzf /tmp/apache-maven.tar.gz -C /usr/share/maven --strip-components=1   && rm -f /tmp/apache-maven.tar.gz   && ln -s /usr/share/maven/bin/mvn /usr/bin/mvn
-# Wed, 11 Sep 2019 11:22:23 GMT
+# Sat, 14 Sep 2019 02:32:36 GMT
 ENV MAVEN_HOME=/usr/share/maven
-# Wed, 11 Sep 2019 11:22:23 GMT
+# Sat, 14 Sep 2019 02:32:36 GMT
 ENV MAVEN_CONFIG=/root/.m2
-# Wed, 11 Sep 2019 11:22:23 GMT
+# Sat, 14 Sep 2019 02:32:36 GMT
 COPY file:1b3da5c58894f705e7387946301c0c52edb6271761ea3cd80b86a848847a64cd in /usr/local/bin/mvn-entrypoint.sh 
-# Wed, 11 Sep 2019 11:22:24 GMT
+# Sat, 14 Sep 2019 02:32:37 GMT
 COPY file:2bbb488dd73c55d658b91943cfdf9c26975a320ceafc45dda94c95b03e518ad3 in /usr/share/maven/ref/ 
-# Wed, 11 Sep 2019 11:22:24 GMT
+# Sat, 14 Sep 2019 02:32:37 GMT
 ENTRYPOINT ["/usr/local/bin/mvn-entrypoint.sh"]
-# Wed, 11 Sep 2019 11:22:24 GMT
+# Sat, 14 Sep 2019 02:32:37 GMT
 CMD ["mvn"]
 ```
 
 -	Layers:
-	-	`sha256:1ab2bdfe97783562315f98f94c0769b1897a05f7b0395ca1520ebee08666703b`  
-		Last Modified: Wed, 14 Aug 2019 00:27:15 GMT  
-		Size: 27.1 MB (27093851 bytes)  
+	-	`sha256:b8f262c62ec67f02536f49654de586c022043652bbb6bbf76a8dab1542627a8d`  
+		Last Modified: Wed, 11 Sep 2019 23:31:20 GMT  
+		Size: 27.1 MB (27093738 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:7aaf9a088d61d78b50cd2a58984cc89ed9c0c5c66124fd74b4baa0cba32524c1`  
-		Last Modified: Wed, 14 Aug 2019 11:28:15 GMT  
-		Size: 3.2 MB (3247273 bytes)  
+	-	`sha256:377e264464ddccb9550cff64ba470dfdb784acdb2ff265ae333b9215fc873b08`  
+		Last Modified: Sat, 14 Sep 2019 00:26:29 GMT  
+		Size: 3.2 MB (3247380 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:b9283b89acb2f6ac352a31afc80df1a24513d2e98b40d282309fd8957e0e2b77`  
-		Last Modified: Wed, 14 Aug 2019 11:28:15 GMT  
-		Size: 210.0 B  
+	-	`sha256:bde67c1ff89fda30053d5c20d0e07ba1de298df013c938e0966f5944fe7bdd08`  
+		Last Modified: Sat, 14 Sep 2019 00:26:28 GMT  
+		Size: 211.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:16677eca0612a87eb64aac89ef86004d3ff0826a576dc1cbad795a322f6a2aeb`  
-		Last Modified: Wed, 14 Aug 2019 11:28:36 GMT  
-		Size: 196.0 MB (195975392 bytes)  
+	-	`sha256:f430704e961738b7d7d861f18a7f3b49bbc44482f5266ee6a5f61bfed09742ee`  
+		Last Modified: Sat, 14 Sep 2019 00:27:14 GMT  
+		Size: 196.0 MB (195975702 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c31ca6fde6f25e3fb72220eb5c1a015f8d6de20eb0e8a26ed168db6371253bc1`  
-		Last Modified: Wed, 11 Sep 2019 11:24:51 GMT  
-		Size: 2.9 MB (2885297 bytes)  
+	-	`sha256:339a324ebfacb28408280b8e4d37cb5723bb56acb49ec13cd7853aa9528ecb19`  
+		Last Modified: Sat, 14 Sep 2019 02:33:54 GMT  
+		Size: 2.6 MB (2614284 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c28cc5998336ecae2c734aae1aa527f54e38d245d64691fccb28b0a16cfd9150`  
-		Last Modified: Wed, 11 Sep 2019 11:24:51 GMT  
-		Size: 9.2 MB (9167583 bytes)  
+	-	`sha256:24cbe0a91ab4ca314f00f346a84dc114ef8d4b7814ba3c7688d470f816ed9c1d`  
+		Last Modified: Sat, 14 Sep 2019 02:33:55 GMT  
+		Size: 9.2 MB (9167593 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:2e624fe923786ef0403fc9d470aed5c62e4cb642c8663e1738bd39a690776caf`  
-		Last Modified: Wed, 11 Sep 2019 11:24:50 GMT  
-		Size: 857.0 B  
+	-	`sha256:1fa638a3741f3086d09cf5c9e2438c5204a615e788b31afa90189d207820b159`  
+		Last Modified: Sat, 14 Sep 2019 02:33:54 GMT  
+		Size: 855.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:e04458ba94df0e446bcf5c8b451be2595ca3d898c61119e8ab696f3b752db0eb`  
-		Last Modified: Wed, 11 Sep 2019 11:24:50 GMT  
+	-	`sha256:e19e682e4393dc569cfe7754840587a4da215b84c8ce0bed5e94e6cb9e4e6357`  
+		Last Modified: Sat, 14 Sep 2019 02:33:54 GMT  
 		Size: 358.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
@@ -7022,7 +7022,7 @@ CMD ["mvn"]
 ## `maven:3-jdk-11`
 
 ```console
-$ docker pull maven@sha256:de81cbb362db7d2ab21e32b3069b318870a65805f4a41525d757b60aa1574b95
+$ docker pull maven@sha256:402b6480724f1174b73b083b00649dd3b05204830eb5bc0af00fb486fda1f2c4
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -7033,14 +7033,14 @@ $ docker pull maven@sha256:de81cbb362db7d2ab21e32b3069b318870a65805f4a41525d757b
 ### `maven:3-jdk-11` - linux; amd64
 
 ```console
-$ docker pull maven@sha256:040515327409588cebf0c83abf8267a28d55a0274c9c566efbee6853c1ea5203
+$ docker pull maven@sha256:8f3817ad781f88d84736aa831e40db2686196d70ee1a690d95c9935ddfc632a8
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **320.4 MB (320395309 bytes)**  
+-	Total Size: **320.4 MB (320395314 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:96945ef2abcf7f27096e330abff234b2994b2d84b6de90f45004fb68cd435a11`
+-	Image ID: `sha256:e941463218b96a496d62aa7f9766ca9fa10760d070d025c366e00664f7ae25af`
 -	Entrypoint: `["\/usr\/local\/bin\/mvn-entrypoint.sh"]`
 -	Default Command: `["mvn"]`
 
@@ -7071,32 +7071,32 @@ ENV JAVA_VERSION=11.0.4
 ENV JAVA_BASE_URL=https://github.com/AdoptOpenJDK/openjdk11-upstream-binaries/releases/download/jdk-11.0.4%2B11/OpenJDK11U-jdk_
 # Thu, 12 Sep 2019 14:29:49 GMT
 ENV JAVA_URL_VERSION=11.0.4_11
-# Thu, 12 Sep 2019 14:30:06 GMT
-RUN set -eux; 		dpkgArch="$(dpkg --print-architecture)"; 	case "$dpkgArch" in 		amd64) upstreamArch='x64' ;; 		arm64) upstreamArch='aarch64' ;; 		*) echo >&2 "error: unsupported architecture: $dpkgArch" ;; 	esac; 		wget -O openjdk.tgz.asc "${JAVA_BASE_URL}${upstreamArch}_linux_${JAVA_URL_VERSION}.tar.gz.sign"; 	wget -O openjdk.tgz "${JAVA_BASE_URL}${upstreamArch}_linux_${JAVA_URL_VERSION}.tar.gz" --progress=dot:giga; 		export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys CA5F11C6CE22644D42C6AC4492EF8D39DC13168F; 	gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys EAC843EBD3EFDB98CC772FADA5CD6035332FA671; 	gpg --batch --list-sigs --keyid-format 0xLONG CA5F11C6CE22644D42C6AC4492EF8D39DC13168F | grep '0xA5CD6035332FA671' | grep 'Andrew Haley'; 	gpg --batch --verify openjdk.tgz.asc openjdk.tgz; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME"; 		mkdir -p "$JAVA_HOME"; 	tar --extract 		--file openjdk.tgz 		--directory "$JAVA_HOME" 		--strip-components 1 		--no-same-owner 	; 	rm openjdk.tgz*; 			{ 		echo '#!/usr/bin/env bash'; 		echo 'set -Eeuo pipefail'; 		echo 'if ! [ -d "$JAVA_HOME" ]; then echo >&2 "error: missing JAVA_HOME environment variable"; exit 1; fi'; 		echo 'cacertsFile=; for f in "$JAVA_HOME/lib/security/cacerts" "$JAVA_HOME/jre/lib/security/cacerts"; do if [ -e "$f" ]; then cacertsFile="$f"; break; fi; done'; 		echo 'if [ -z "$cacertsFile" ] || ! [ -f "$cacertsFile" ]; then echo >&2 "error: failed to find cacerts file in $JAVA_HOME"; exit 1; fi'; 		echo 'trust extract --overwrite --format=java-cacerts --filter=ca-anchors --purpose=server-auth "$cacertsFile"'; 	} > /etc/ca-certificates/update.d/docker-openjdk; 	chmod +x /etc/ca-certificates/update.d/docker-openjdk; 	/etc/ca-certificates/update.d/docker-openjdk; 		find "$JAVA_HOME/lib" -name '*.so' -exec dirname '{}' ';' | sort -u > /etc/ld.so.conf.d/docker-openjdk.conf; 	ldconfig; 		javac --version; 	java --version
-# Thu, 12 Sep 2019 14:30:07 GMT
+# Sat, 14 Sep 2019 00:22:42 GMT
+RUN set -eux; 		dpkgArch="$(dpkg --print-architecture)"; 	case "$dpkgArch" in 		amd64) upstreamArch='x64' ;; 		arm64) upstreamArch='aarch64' ;; 		*) echo >&2 "error: unsupported architecture: $dpkgArch" ;; 	esac; 		wget -O openjdk.tgz.asc "${JAVA_BASE_URL}${upstreamArch}_linux_${JAVA_URL_VERSION}.tar.gz.sign"; 	wget -O openjdk.tgz "${JAVA_BASE_URL}${upstreamArch}_linux_${JAVA_URL_VERSION}.tar.gz" --progress=dot:giga; 		export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver ha.pool.sks-keyservers.net --keyserver-options no-self-sigs-only --recv-keys CA5F11C6CE22644D42C6AC4492EF8D39DC13168F; 	gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys EAC843EBD3EFDB98CC772FADA5CD6035332FA671; 	gpg --batch --list-sigs --keyid-format 0xLONG CA5F11C6CE22644D42C6AC4492EF8D39DC13168F 		| tee /dev/stderr 		| grep '0xA5CD6035332FA671' 		| grep 'Andrew Haley'; 	gpg --batch --verify openjdk.tgz.asc openjdk.tgz; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME"; 		mkdir -p "$JAVA_HOME"; 	tar --extract 		--file openjdk.tgz 		--directory "$JAVA_HOME" 		--strip-components 1 		--no-same-owner 	; 	rm openjdk.tgz*; 			{ 		echo '#!/usr/bin/env bash'; 		echo 'set -Eeuo pipefail'; 		echo 'if ! [ -d "$JAVA_HOME" ]; then echo >&2 "error: missing JAVA_HOME environment variable"; exit 1; fi'; 		echo 'cacertsFile=; for f in "$JAVA_HOME/lib/security/cacerts" "$JAVA_HOME/jre/lib/security/cacerts"; do if [ -e "$f" ]; then cacertsFile="$f"; break; fi; done'; 		echo 'if [ -z "$cacertsFile" ] || ! [ -f "$cacertsFile" ]; then echo >&2 "error: failed to find cacerts file in $JAVA_HOME"; exit 1; fi'; 		echo 'trust extract --overwrite --format=java-cacerts --filter=ca-anchors --purpose=server-auth "$cacertsFile"'; 	} > /etc/ca-certificates/update.d/docker-openjdk; 	chmod +x /etc/ca-certificates/update.d/docker-openjdk; 	/etc/ca-certificates/update.d/docker-openjdk; 		find "$JAVA_HOME/lib" -name '*.so' -exec dirname '{}' ';' | sort -u > /etc/ld.so.conf.d/docker-openjdk.conf; 	ldconfig; 		javac --version; 	java --version
+# Sat, 14 Sep 2019 00:22:42 GMT
 CMD ["jshell"]
-# Fri, 13 Sep 2019 05:14:22 GMT
+# Sat, 14 Sep 2019 02:32:41 GMT
 ARG MAVEN_VERSION=3.6.2
-# Fri, 13 Sep 2019 05:14:22 GMT
+# Sat, 14 Sep 2019 02:32:41 GMT
 ARG USER_HOME_DIR=/root
-# Fri, 13 Sep 2019 05:14:22 GMT
+# Sat, 14 Sep 2019 02:32:41 GMT
 ARG SHA=d941423d115cd021514bfd06c453658b1b3e39e6240969caf4315ab7119a77299713f14b620fb2571a264f8dff2473d8af3cb47b05acf0036fc2553199a5c1ee
-# Fri, 13 Sep 2019 05:14:22 GMT
+# Sat, 14 Sep 2019 02:32:41 GMT
 ARG BASE_URL=https://apache.osuosl.org/maven/maven-3/3.6.2/binaries
-# Fri, 13 Sep 2019 05:14:24 GMT
+# Sat, 14 Sep 2019 02:32:43 GMT
 # ARGS: BASE_URL=https://apache.osuosl.org/maven/maven-3/3.6.2/binaries MAVEN_VERSION=3.6.2 SHA=d941423d115cd021514bfd06c453658b1b3e39e6240969caf4315ab7119a77299713f14b620fb2571a264f8dff2473d8af3cb47b05acf0036fc2553199a5c1ee USER_HOME_DIR=/root
 RUN mkdir -p /usr/share/maven /usr/share/maven/ref   && curl -fsSL -o /tmp/apache-maven.tar.gz ${BASE_URL}/apache-maven-${MAVEN_VERSION}-bin.tar.gz   && echo "${SHA}  /tmp/apache-maven.tar.gz" | sha512sum -c -   && tar -xzf /tmp/apache-maven.tar.gz -C /usr/share/maven --strip-components=1   && rm -f /tmp/apache-maven.tar.gz   && ln -s /usr/share/maven/bin/mvn /usr/bin/mvn
-# Fri, 13 Sep 2019 05:14:24 GMT
+# Sat, 14 Sep 2019 02:32:43 GMT
 ENV MAVEN_HOME=/usr/share/maven
-# Fri, 13 Sep 2019 05:14:24 GMT
+# Sat, 14 Sep 2019 02:32:43 GMT
 ENV MAVEN_CONFIG=/root/.m2
-# Fri, 13 Sep 2019 05:14:24 GMT
+# Sat, 14 Sep 2019 02:32:43 GMT
 COPY file:1b3da5c58894f705e7387946301c0c52edb6271761ea3cd80b86a848847a64cd in /usr/local/bin/mvn-entrypoint.sh 
-# Fri, 13 Sep 2019 05:14:25 GMT
+# Sat, 14 Sep 2019 02:32:43 GMT
 COPY file:2bbb488dd73c55d658b91943cfdf9c26975a320ceafc45dda94c95b03e518ad3 in /usr/share/maven/ref/ 
-# Fri, 13 Sep 2019 05:14:25 GMT
+# Sat, 14 Sep 2019 02:32:43 GMT
 ENTRYPOINT ["/usr/local/bin/mvn-entrypoint.sh"]
-# Fri, 13 Sep 2019 05:14:25 GMT
+# Sat, 14 Sep 2019 02:32:44 GMT
 CMD ["mvn"]
 ```
 
@@ -7125,21 +7125,21 @@ CMD ["mvn"]
 		Last Modified: Thu, 12 Sep 2019 14:35:16 GMT  
 		Size: 222.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:96fd45ee9818086a74a3a5f4562639f0d2db421419d9d20e4553dd2d11e36917`  
-		Last Modified: Thu, 12 Sep 2019 14:35:41 GMT  
-		Size: 195.7 MB (195718802 bytes)  
+	-	`sha256:663538d2581ce8ee06691cdd2020b2a38f47bd9996c7592247a76280505e3a4e`  
+		Last Modified: Sat, 14 Sep 2019 00:26:21 GMT  
+		Size: 195.7 MB (195718807 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:e0bfbdc652c3b5b169baeedb120f354664027d72d9866f4ad02fa79294c644d8`  
-		Last Modified: Fri, 13 Sep 2019 05:15:17 GMT  
-		Size: 9.2 MB (9167581 bytes)  
+	-	`sha256:28d90ddff35dcae263144936dedbe6d1baa5cff7cde62906c6c854f89cbfb0ed`  
+		Last Modified: Sat, 14 Sep 2019 02:34:01 GMT  
+		Size: 9.2 MB (9167583 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:9c2a3372ee55b77da59d73774317f35047e7a38a4d06c454cf03de63dc4a00c3`  
-		Last Modified: Fri, 13 Sep 2019 05:15:16 GMT  
-		Size: 864.0 B  
+	-	`sha256:4026e60527338b245da2f67dd4002950303385b0bdf26d45c1519cb041bd120e`  
+		Last Modified: Sat, 14 Sep 2019 02:34:01 GMT  
+		Size: 861.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:8e70e332c8192e51f7cd3a74d4e02c0bb794da8852bd65f7de6f1e23fa2a63c7`  
-		Last Modified: Fri, 13 Sep 2019 05:15:17 GMT  
-		Size: 357.0 B  
+	-	`sha256:fedf7e9533c347c5f74d951ee6877b2f48c7996638ff7753f24cbf9d6750bf3b`  
+		Last Modified: Sat, 14 Sep 2019 02:34:01 GMT  
+		Size: 358.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `maven:3-jdk-11` - linux; arm64 variant v8
@@ -7257,7 +7257,7 @@ CMD ["mvn"]
 ## `maven:3-jdk-11-slim`
 
 ```console
-$ docker pull maven@sha256:8af5dc392a2af438d1471990a441abcf3e1739e2442bed3678c61e3726f62179
+$ docker pull maven@sha256:d6595a61c34de743018aaeae69374a455c2cb0db81d6452442c60e4f1344cc19
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -7268,101 +7268,101 @@ $ docker pull maven@sha256:8af5dc392a2af438d1471990a441abcf3e1739e2442bed3678c61
 ### `maven:3-jdk-11-slim` - linux; amd64
 
 ```console
-$ docker pull maven@sha256:caefa9cbff7ae95218a3990fcf246340b0a17a5efd7c8c2ecdbdbf1ada639b46
+$ docker pull maven@sha256:a8de8a8cf567309b91fa9217fd63e5c468814c473c23b782cdff58801607a0a3
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **238.4 MB (238370821 bytes)**  
+-	Total Size: **238.1 MB (238100121 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:95c83d29bfc3b7caf10fd6d09d404e3dae23278fe0ce2b665beac6aa33deca72`
+-	Image ID: `sha256:316ca1e7d3a7a7966dd8f9be3448bf32b63e0f4af86d3fdc51a556ab59014cbf`
 -	Entrypoint: `["\/usr\/local\/bin\/mvn-entrypoint.sh"]`
 -	Default Command: `["mvn"]`
 
 ```dockerfile
-# Wed, 14 Aug 2019 00:22:12 GMT
-ADD file:330bfb91168adb4a9b1296c70209ed487d4c2705042a916d575f82b61ab16e61 in / 
-# Wed, 14 Aug 2019 00:22:12 GMT
+# Wed, 11 Sep 2019 23:22:24 GMT
+ADD file:1901172d26545609083e48b9bfaf2cb46674f37af0902ad5a32e2420301225de in / 
+# Wed, 11 Sep 2019 23:22:24 GMT
 CMD ["bash"]
-# Wed, 14 Aug 2019 11:24:17 GMT
+# Sat, 14 Sep 2019 00:22:55 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		ca-certificates p11-kit 	; 	rm -rf /var/lib/apt/lists/*
-# Wed, 14 Aug 2019 11:24:17 GMT
+# Sat, 14 Sep 2019 00:22:55 GMT
 ENV LANG=C.UTF-8
-# Wed, 14 Aug 2019 11:24:18 GMT
+# Sat, 14 Sep 2019 00:22:55 GMT
 ENV JAVA_HOME=/usr/local/openjdk-11
-# Wed, 14 Aug 2019 11:24:18 GMT
+# Sat, 14 Sep 2019 00:22:55 GMT
 ENV PATH=/usr/local/openjdk-11/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Wed, 14 Aug 2019 11:24:19 GMT
+# Sat, 14 Sep 2019 00:22:56 GMT
 RUN { echo '#/bin/sh'; echo 'echo "$JAVA_HOME"'; } > /usr/local/bin/docker-java-home && chmod +x /usr/local/bin/docker-java-home && [ "$JAVA_HOME" = "$(docker-java-home)" ]
-# Wed, 14 Aug 2019 11:24:19 GMT
+# Sat, 14 Sep 2019 00:22:56 GMT
 ENV JAVA_VERSION=11.0.4
-# Wed, 14 Aug 2019 11:24:19 GMT
+# Sat, 14 Sep 2019 00:22:56 GMT
 ENV JAVA_BASE_URL=https://github.com/AdoptOpenJDK/openjdk11-upstream-binaries/releases/download/jdk-11.0.4%2B11/OpenJDK11U-jdk_
-# Wed, 14 Aug 2019 11:24:19 GMT
+# Sat, 14 Sep 2019 00:22:56 GMT
 ENV JAVA_URL_VERSION=11.0.4_11
-# Wed, 14 Aug 2019 11:24:45 GMT
-RUN set -eux; 		dpkgArch="$(dpkg --print-architecture)"; 	case "$dpkgArch" in 		amd64) upstreamArch='x64' ;; 		arm64) upstreamArch='aarch64' ;; 		*) echo >&2 "error: unsupported architecture: $dpkgArch" ;; 	esac; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		dirmngr 		gnupg 		wget 	; 	rm -rf /var/lib/apt/lists/*; 		wget -O openjdk.tgz.asc "${JAVA_BASE_URL}${upstreamArch}_linux_${JAVA_URL_VERSION}.tar.gz.sign"; 	wget -O openjdk.tgz "${JAVA_BASE_URL}${upstreamArch}_linux_${JAVA_URL_VERSION}.tar.gz" --progress=dot:giga; 		export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys CA5F11C6CE22644D42C6AC4492EF8D39DC13168F; 	gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys EAC843EBD3EFDB98CC772FADA5CD6035332FA671; 	gpg --batch --list-sigs --keyid-format 0xLONG CA5F11C6CE22644D42C6AC4492EF8D39DC13168F | grep '0xA5CD6035332FA671' | grep 'Andrew Haley'; 	gpg --batch --verify openjdk.tgz.asc openjdk.tgz; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME"; 		mkdir -p "$JAVA_HOME"; 	tar --extract 		--file openjdk.tgz 		--directory "$JAVA_HOME" 		--strip-components 1 		--no-same-owner 	; 	rm openjdk.tgz*; 			apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark > /dev/null; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 		{ 		echo '#!/usr/bin/env bash'; 		echo 'set -Eeuo pipefail'; 		echo 'if ! [ -d "$JAVA_HOME" ]; then echo >&2 "error: missing JAVA_HOME environment variable"; exit 1; fi'; 		echo 'cacertsFile=; for f in "$JAVA_HOME/lib/security/cacerts" "$JAVA_HOME/jre/lib/security/cacerts"; do if [ -e "$f" ]; then cacertsFile="$f"; break; fi; done'; 		echo 'if [ -z "$cacertsFile" ] || ! [ -f "$cacertsFile" ]; then echo >&2 "error: failed to find cacerts file in $JAVA_HOME"; exit 1; fi'; 		echo 'trust extract --overwrite --format=java-cacerts --filter=ca-anchors --purpose=server-auth "$cacertsFile"'; 	} > /etc/ca-certificates/update.d/docker-openjdk; 	chmod +x /etc/ca-certificates/update.d/docker-openjdk; 	/etc/ca-certificates/update.d/docker-openjdk; 		find "$JAVA_HOME/lib" -name '*.so' -exec dirname '{}' ';' | sort -u > /etc/ld.so.conf.d/docker-openjdk.conf; 	ldconfig; 		javac --version; 	java --version
-# Wed, 14 Aug 2019 11:24:45 GMT
+# Sat, 14 Sep 2019 00:23:18 GMT
+RUN set -eux; 		dpkgArch="$(dpkg --print-architecture)"; 	case "$dpkgArch" in 		amd64) upstreamArch='x64' ;; 		arm64) upstreamArch='aarch64' ;; 		*) echo >&2 "error: unsupported architecture: $dpkgArch" ;; 	esac; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		dirmngr 		gnupg 		wget 	; 	rm -rf /var/lib/apt/lists/*; 		wget -O openjdk.tgz.asc "${JAVA_BASE_URL}${upstreamArch}_linux_${JAVA_URL_VERSION}.tar.gz.sign"; 	wget -O openjdk.tgz "${JAVA_BASE_URL}${upstreamArch}_linux_${JAVA_URL_VERSION}.tar.gz" --progress=dot:giga; 		export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver ha.pool.sks-keyservers.net --keyserver-options no-self-sigs-only --recv-keys CA5F11C6CE22644D42C6AC4492EF8D39DC13168F; 	gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys EAC843EBD3EFDB98CC772FADA5CD6035332FA671; 	gpg --batch --list-sigs --keyid-format 0xLONG CA5F11C6CE22644D42C6AC4492EF8D39DC13168F 		| tee /dev/stderr 		| grep '0xA5CD6035332FA671' 		| grep 'Andrew Haley'; 	gpg --batch --verify openjdk.tgz.asc openjdk.tgz; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME"; 		mkdir -p "$JAVA_HOME"; 	tar --extract 		--file openjdk.tgz 		--directory "$JAVA_HOME" 		--strip-components 1 		--no-same-owner 	; 	rm openjdk.tgz*; 			apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark > /dev/null; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 		{ 		echo '#!/usr/bin/env bash'; 		echo 'set -Eeuo pipefail'; 		echo 'if ! [ -d "$JAVA_HOME" ]; then echo >&2 "error: missing JAVA_HOME environment variable"; exit 1; fi'; 		echo 'cacertsFile=; for f in "$JAVA_HOME/lib/security/cacerts" "$JAVA_HOME/jre/lib/security/cacerts"; do if [ -e "$f" ]; then cacertsFile="$f"; break; fi; done'; 		echo 'if [ -z "$cacertsFile" ] || ! [ -f "$cacertsFile" ]; then echo >&2 "error: failed to find cacerts file in $JAVA_HOME"; exit 1; fi'; 		echo 'trust extract --overwrite --format=java-cacerts --filter=ca-anchors --purpose=server-auth "$cacertsFile"'; 	} > /etc/ca-certificates/update.d/docker-openjdk; 	chmod +x /etc/ca-certificates/update.d/docker-openjdk; 	/etc/ca-certificates/update.d/docker-openjdk; 		find "$JAVA_HOME/lib" -name '*.so' -exec dirname '{}' ';' | sort -u > /etc/ld.so.conf.d/docker-openjdk.conf; 	ldconfig; 		javac --version; 	java --version
+# Sat, 14 Sep 2019 00:23:18 GMT
 CMD ["jshell"]
-# Wed, 11 Sep 2019 11:22:11 GMT
+# Sat, 14 Sep 2019 02:32:28 GMT
 ARG MAVEN_VERSION=3.6.2
-# Wed, 11 Sep 2019 11:22:11 GMT
+# Sat, 14 Sep 2019 02:32:28 GMT
 ARG USER_HOME_DIR=/root
-# Wed, 11 Sep 2019 11:22:11 GMT
+# Sat, 14 Sep 2019 02:32:28 GMT
 ARG SHA=d941423d115cd021514bfd06c453658b1b3e39e6240969caf4315ab7119a77299713f14b620fb2571a264f8dff2473d8af3cb47b05acf0036fc2553199a5c1ee
-# Wed, 11 Sep 2019 11:22:11 GMT
+# Sat, 14 Sep 2019 02:32:28 GMT
 ARG BASE_URL=https://apache.osuosl.org/maven/maven-3/3.6.2/binaries
-# Wed, 11 Sep 2019 11:22:21 GMT
+# Sat, 14 Sep 2019 02:32:34 GMT
 # ARGS: BASE_URL=https://apache.osuosl.org/maven/maven-3/3.6.2/binaries MAVEN_VERSION=3.6.2 SHA=d941423d115cd021514bfd06c453658b1b3e39e6240969caf4315ab7119a77299713f14b620fb2571a264f8dff2473d8af3cb47b05acf0036fc2553199a5c1ee USER_HOME_DIR=/root
 RUN apt-get update &&     apt-get install -y       curl procps   && rm -rf /var/lib/apt/lists/*
-# Wed, 11 Sep 2019 11:22:23 GMT
+# Sat, 14 Sep 2019 02:32:36 GMT
 # ARGS: BASE_URL=https://apache.osuosl.org/maven/maven-3/3.6.2/binaries MAVEN_VERSION=3.6.2 SHA=d941423d115cd021514bfd06c453658b1b3e39e6240969caf4315ab7119a77299713f14b620fb2571a264f8dff2473d8af3cb47b05acf0036fc2553199a5c1ee USER_HOME_DIR=/root
 RUN mkdir -p /usr/share/maven /usr/share/maven/ref   && curl -fsSL -o /tmp/apache-maven.tar.gz ${BASE_URL}/apache-maven-${MAVEN_VERSION}-bin.tar.gz   && echo "${SHA}  /tmp/apache-maven.tar.gz" | sha512sum -c -   && tar -xzf /tmp/apache-maven.tar.gz -C /usr/share/maven --strip-components=1   && rm -f /tmp/apache-maven.tar.gz   && ln -s /usr/share/maven/bin/mvn /usr/bin/mvn
-# Wed, 11 Sep 2019 11:22:23 GMT
+# Sat, 14 Sep 2019 02:32:36 GMT
 ENV MAVEN_HOME=/usr/share/maven
-# Wed, 11 Sep 2019 11:22:23 GMT
+# Sat, 14 Sep 2019 02:32:36 GMT
 ENV MAVEN_CONFIG=/root/.m2
-# Wed, 11 Sep 2019 11:22:23 GMT
+# Sat, 14 Sep 2019 02:32:36 GMT
 COPY file:1b3da5c58894f705e7387946301c0c52edb6271761ea3cd80b86a848847a64cd in /usr/local/bin/mvn-entrypoint.sh 
-# Wed, 11 Sep 2019 11:22:24 GMT
+# Sat, 14 Sep 2019 02:32:37 GMT
 COPY file:2bbb488dd73c55d658b91943cfdf9c26975a320ceafc45dda94c95b03e518ad3 in /usr/share/maven/ref/ 
-# Wed, 11 Sep 2019 11:22:24 GMT
+# Sat, 14 Sep 2019 02:32:37 GMT
 ENTRYPOINT ["/usr/local/bin/mvn-entrypoint.sh"]
-# Wed, 11 Sep 2019 11:22:24 GMT
+# Sat, 14 Sep 2019 02:32:37 GMT
 CMD ["mvn"]
 ```
 
 -	Layers:
-	-	`sha256:1ab2bdfe97783562315f98f94c0769b1897a05f7b0395ca1520ebee08666703b`  
-		Last Modified: Wed, 14 Aug 2019 00:27:15 GMT  
-		Size: 27.1 MB (27093851 bytes)  
+	-	`sha256:b8f262c62ec67f02536f49654de586c022043652bbb6bbf76a8dab1542627a8d`  
+		Last Modified: Wed, 11 Sep 2019 23:31:20 GMT  
+		Size: 27.1 MB (27093738 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:7aaf9a088d61d78b50cd2a58984cc89ed9c0c5c66124fd74b4baa0cba32524c1`  
-		Last Modified: Wed, 14 Aug 2019 11:28:15 GMT  
-		Size: 3.2 MB (3247273 bytes)  
+	-	`sha256:377e264464ddccb9550cff64ba470dfdb784acdb2ff265ae333b9215fc873b08`  
+		Last Modified: Sat, 14 Sep 2019 00:26:29 GMT  
+		Size: 3.2 MB (3247380 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:b9283b89acb2f6ac352a31afc80df1a24513d2e98b40d282309fd8957e0e2b77`  
-		Last Modified: Wed, 14 Aug 2019 11:28:15 GMT  
-		Size: 210.0 B  
+	-	`sha256:bde67c1ff89fda30053d5c20d0e07ba1de298df013c938e0966f5944fe7bdd08`  
+		Last Modified: Sat, 14 Sep 2019 00:26:28 GMT  
+		Size: 211.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:16677eca0612a87eb64aac89ef86004d3ff0826a576dc1cbad795a322f6a2aeb`  
-		Last Modified: Wed, 14 Aug 2019 11:28:36 GMT  
-		Size: 196.0 MB (195975392 bytes)  
+	-	`sha256:f430704e961738b7d7d861f18a7f3b49bbc44482f5266ee6a5f61bfed09742ee`  
+		Last Modified: Sat, 14 Sep 2019 00:27:14 GMT  
+		Size: 196.0 MB (195975702 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c31ca6fde6f25e3fb72220eb5c1a015f8d6de20eb0e8a26ed168db6371253bc1`  
-		Last Modified: Wed, 11 Sep 2019 11:24:51 GMT  
-		Size: 2.9 MB (2885297 bytes)  
+	-	`sha256:339a324ebfacb28408280b8e4d37cb5723bb56acb49ec13cd7853aa9528ecb19`  
+		Last Modified: Sat, 14 Sep 2019 02:33:54 GMT  
+		Size: 2.6 MB (2614284 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c28cc5998336ecae2c734aae1aa527f54e38d245d64691fccb28b0a16cfd9150`  
-		Last Modified: Wed, 11 Sep 2019 11:24:51 GMT  
-		Size: 9.2 MB (9167583 bytes)  
+	-	`sha256:24cbe0a91ab4ca314f00f346a84dc114ef8d4b7814ba3c7688d470f816ed9c1d`  
+		Last Modified: Sat, 14 Sep 2019 02:33:55 GMT  
+		Size: 9.2 MB (9167593 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:2e624fe923786ef0403fc9d470aed5c62e4cb642c8663e1738bd39a690776caf`  
-		Last Modified: Wed, 11 Sep 2019 11:24:50 GMT  
-		Size: 857.0 B  
+	-	`sha256:1fa638a3741f3086d09cf5c9e2438c5204a615e788b31afa90189d207820b159`  
+		Last Modified: Sat, 14 Sep 2019 02:33:54 GMT  
+		Size: 855.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:e04458ba94df0e446bcf5c8b451be2595ca3d898c61119e8ab696f3b752db0eb`  
-		Last Modified: Wed, 11 Sep 2019 11:24:50 GMT  
+	-	`sha256:e19e682e4393dc569cfe7754840587a4da215b84c8ce0bed5e94e6cb9e4e6357`  
+		Last Modified: Sat, 14 Sep 2019 02:33:54 GMT  
 		Size: 358.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
@@ -7670,7 +7670,7 @@ CMD ["mvn"]
 ## `maven:3-jdk-14`
 
 ```console
-$ docker pull maven@sha256:5fddd37a554f3b35a9e1c909e9097cf32843b9a4482e4f6eaa88575c08d03e85
+$ docker pull maven@sha256:57993c189c00c62774ce35280393f48f28812c2ec63849a78f5d2b660b06add3
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -7680,14 +7680,14 @@ $ docker pull maven@sha256:5fddd37a554f3b35a9e1c909e9097cf32843b9a4482e4f6eaa885
 ### `maven:3-jdk-14` - linux; amd64
 
 ```console
-$ docker pull maven@sha256:7be61b36b4ecd9e9f2a61a7b6998e2a63da85502c4cc7b5a69b78e298757450a
+$ docker pull maven@sha256:64ddd34283b52c407320e94c6eab7745c4c14c6c38549b7514dd40d61d9996cc
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **263.7 MB (263705915 bytes)**  
+-	Total Size: **264.3 MB (264349156 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:ae4caed357b4e093948cfcdea07e1397f5eb8cda8a8ba17d7d4281166f50d82d`
+-	Image ID: `sha256:b87409511a8747f8f75a53731a935dc1717dfb437f3bf77baf7efe6e9425a3d0`
 -	Entrypoint: `["\/usr\/local\/bin\/mvn-entrypoint.sh"]`
 -	Default Command: `["mvn"]`
 
@@ -7706,38 +7706,38 @@ ENV LANG=en_US.UTF-8
 ENV JAVA_HOME=/usr/java/openjdk-14
 # Mon, 26 Aug 2019 23:30:02 GMT
 ENV PATH=/usr/java/openjdk-14/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Fri, 06 Sep 2019 17:29:14 GMT
-ENV JAVA_VERSION=14-ea+13
-# Fri, 06 Sep 2019 17:29:14 GMT
-ENV JAVA_URL=https://download.java.net/java/early_access/jdk14/13/GPL/openjdk-14-ea+13_linux-x64_bin.tar.gz
-# Fri, 06 Sep 2019 17:29:14 GMT
-ENV JAVA_SHA256=39582f66190e5034ab5837e17db840a4e23c60efaa473767e10b62987dbe78ed
-# Fri, 06 Sep 2019 17:30:29 GMT
+# Sat, 14 Sep 2019 00:20:32 GMT
+ENV JAVA_VERSION=14-ea+14
+# Sat, 14 Sep 2019 00:20:32 GMT
+ENV JAVA_URL=https://download.java.net/java/early_access/jdk14/14/GPL/openjdk-14-ea+14_linux-x64_bin.tar.gz
+# Sat, 14 Sep 2019 00:20:32 GMT
+ENV JAVA_SHA256=fc1aed4e0de423dbb27db449b63b25c61b06b80e275f7ef665cce6c61e736726
+# Sat, 14 Sep 2019 00:22:07 GMT
 RUN set -eux; 		curl -fL -o /openjdk.tgz "$JAVA_URL"; 	echo "$JAVA_SHA256 */openjdk.tgz" | sha256sum -c -; 	mkdir -p "$JAVA_HOME"; 	tar --extract --file /openjdk.tgz --directory "$JAVA_HOME" --strip-components 1; 	rm /openjdk.tgz; 		ln -sfT "$JAVA_HOME" /usr/java/default; 	ln -sfT "$JAVA_HOME" /usr/java/latest; 	for bin in "$JAVA_HOME/bin/"*; do 		base="$(basename "$bin")"; 		[ ! -e "/usr/bin/$base" ]; 		alternatives --install "/usr/bin/$base" "$base" "$bin" 20000; 	done; 		java -Xshare:dump; 		java --version; 	javac --version
-# Fri, 06 Sep 2019 17:30:29 GMT
+# Sat, 14 Sep 2019 00:22:07 GMT
 CMD ["jshell"]
-# Wed, 11 Sep 2019 11:22:55 GMT
+# Sat, 14 Sep 2019 02:32:54 GMT
 ARG MAVEN_VERSION=3.6.2
-# Wed, 11 Sep 2019 11:22:55 GMT
+# Sat, 14 Sep 2019 02:32:55 GMT
 ARG USER_HOME_DIR=/root
-# Wed, 11 Sep 2019 11:22:55 GMT
+# Sat, 14 Sep 2019 02:32:55 GMT
 ARG SHA=d941423d115cd021514bfd06c453658b1b3e39e6240969caf4315ab7119a77299713f14b620fb2571a264f8dff2473d8af3cb47b05acf0036fc2553199a5c1ee
-# Wed, 11 Sep 2019 11:22:55 GMT
+# Sat, 14 Sep 2019 02:32:55 GMT
 ARG BASE_URL=https://apache.osuosl.org/maven/maven-3/3.6.2/binaries
-# Wed, 11 Sep 2019 11:22:57 GMT
+# Sat, 14 Sep 2019 02:32:57 GMT
 # ARGS: BASE_URL=https://apache.osuosl.org/maven/maven-3/3.6.2/binaries MAVEN_VERSION=3.6.2 SHA=d941423d115cd021514bfd06c453658b1b3e39e6240969caf4315ab7119a77299713f14b620fb2571a264f8dff2473d8af3cb47b05acf0036fc2553199a5c1ee USER_HOME_DIR=/root
 RUN mkdir -p /usr/share/maven /usr/share/maven/ref   && curl -fsSL -o /tmp/apache-maven.tar.gz ${BASE_URL}/apache-maven-${MAVEN_VERSION}-bin.tar.gz   && echo "${SHA}  /tmp/apache-maven.tar.gz" | sha512sum -c -   && tar -xzf /tmp/apache-maven.tar.gz -C /usr/share/maven --strip-components=1   && rm -f /tmp/apache-maven.tar.gz   && ln -s /usr/share/maven/bin/mvn /usr/bin/mvn
-# Wed, 11 Sep 2019 11:22:57 GMT
+# Sat, 14 Sep 2019 02:32:57 GMT
 ENV MAVEN_HOME=/usr/share/maven
-# Wed, 11 Sep 2019 11:22:57 GMT
+# Sat, 14 Sep 2019 02:32:57 GMT
 ENV MAVEN_CONFIG=/root/.m2
-# Wed, 11 Sep 2019 11:22:57 GMT
+# Sat, 14 Sep 2019 02:32:57 GMT
 COPY file:1b3da5c58894f705e7387946301c0c52edb6271761ea3cd80b86a848847a64cd in /usr/local/bin/mvn-entrypoint.sh 
-# Wed, 11 Sep 2019 11:22:58 GMT
+# Sat, 14 Sep 2019 02:32:57 GMT
 COPY file:2bbb488dd73c55d658b91943cfdf9c26975a320ceafc45dda94c95b03e518ad3 in /usr/share/maven/ref/ 
-# Wed, 11 Sep 2019 11:22:58 GMT
+# Sat, 14 Sep 2019 02:32:57 GMT
 ENTRYPOINT ["/usr/local/bin/mvn-entrypoint.sh"]
-# Wed, 11 Sep 2019 11:22:58 GMT
+# Sat, 14 Sep 2019 02:32:58 GMT
 CMD ["mvn"]
 ```
 
@@ -7750,27 +7750,27 @@ CMD ["mvn"]
 		Last Modified: Mon, 26 Aug 2019 23:34:31 GMT  
 		Size: 14.8 MB (14770876 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:ac1aa9d52dc9261ca56c991c0d6b09b5da76b01eba5e864ea7e7b4a410f9e593`  
-		Last Modified: Fri, 06 Sep 2019 17:32:16 GMT  
-		Size: 197.2 MB (197152135 bytes)  
+	-	`sha256:f5e2a39686b8dea4b6fedd63334a23122b0c95df55e8022b359b5c981ee5f7ba`  
+		Last Modified: Sat, 14 Sep 2019 00:25:45 GMT  
+		Size: 197.8 MB (197795368 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:b1008bd54dcd5a2c8f2f0fdbcadff27bb64a9d130e97129a397fa2570e170e0f`  
-		Last Modified: Wed, 11 Sep 2019 11:25:26 GMT  
-		Size: 9.2 MB (9168957 bytes)  
+	-	`sha256:211f0dac7b8d1a57d19cdf9be54791611a55e6e61d42860d9c4b1e5b9c0914f3`  
+		Last Modified: Sat, 14 Sep 2019 02:34:10 GMT  
+		Size: 9.2 MB (9168967 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:0e41a79479cac6823ebfce699c0061ec7d4a666ebd1bb1cc7f5c927702f76ddc`  
-		Last Modified: Wed, 11 Sep 2019 11:25:25 GMT  
-		Size: 859.0 B  
+	-	`sha256:4903638b4c757c686991d35f12b478840073e8e6045f03b91885d9550372521c`  
+		Last Modified: Sat, 14 Sep 2019 02:34:10 GMT  
+		Size: 858.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:d6834b0e357ce969ccfbc48921066ec689c3c7a19bf335cd064e7ef5d4bbd676`  
-		Last Modified: Wed, 11 Sep 2019 11:25:26 GMT  
-		Size: 358.0 B  
+	-	`sha256:62f85deec1bd41f4e241a8afc4d2e4f65b85e5d2ae08945b102b7be99c1cb0f2`  
+		Last Modified: Sat, 14 Sep 2019 02:34:10 GMT  
+		Size: 357.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `maven:3-jdk-8`
 
 ```console
-$ docker pull maven@sha256:891118398fa91827cfec85a909b84abe46cbc63da1df3866bda90fff016ccd06
+$ docker pull maven@sha256:6f65801ad4b56207b387d8c856ece1a30d4435ef32af9d9d842838ee76c3c6dd
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -7780,14 +7780,14 @@ $ docker pull maven@sha256:891118398fa91827cfec85a909b84abe46cbc63da1df3866bda90
 ### `maven:3-jdk-8` - linux; amd64
 
 ```console
-$ docker pull maven@sha256:d8c9b6244e525c8ea8f0bcc091e4ac20f00cd646156b86775946e3b0fd186404
+$ docker pull maven@sha256:6903c8d89fc7c275f6df95268c910ac9e03eabc1cb2e561e5996c17042e6dc23
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **228.9 MB (228871582 bytes)**  
+-	Total Size: **228.9 MB (228871567 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:68b51f9f1edf9acc359aa4e671027045d78ffdfc6ed1415e7bca064895cf5f12`
+-	Image ID: `sha256:a1f35667f5e35af8151cd030d5e18412e06761727a760a53b82a32c46994a118`
 -	Entrypoint: `["\/usr\/local\/bin\/mvn-entrypoint.sh"]`
 -	Default Command: `["mvn"]`
 
@@ -7818,30 +7818,30 @@ ENV JAVA_VERSION=8u222
 ENV JAVA_BASE_URL=https://github.com/AdoptOpenJDK/openjdk8-upstream-binaries/releases/download/jdk8u222-b10/OpenJDK8U-jdk_
 # Thu, 12 Sep 2019 14:32:36 GMT
 ENV JAVA_URL_VERSION=8u222b10
-# Thu, 12 Sep 2019 14:32:46 GMT
-RUN set -eux; 		dpkgArch="$(dpkg --print-architecture)"; 	case "$dpkgArch" in 		amd64) upstreamArch='x64' ;; 		arm64) upstreamArch='aarch64' ;; 		*) echo >&2 "error: unsupported architecture: $dpkgArch" ;; 	esac; 		wget -O openjdk.tgz.asc "${JAVA_BASE_URL}${upstreamArch}_linux_${JAVA_URL_VERSION}.tar.gz.sign"; 	wget -O openjdk.tgz "${JAVA_BASE_URL}${upstreamArch}_linux_${JAVA_URL_VERSION}.tar.gz" --progress=dot:giga; 		export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys CA5F11C6CE22644D42C6AC4492EF8D39DC13168F; 	gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys EAC843EBD3EFDB98CC772FADA5CD6035332FA671; 	gpg --batch --list-sigs --keyid-format 0xLONG CA5F11C6CE22644D42C6AC4492EF8D39DC13168F | grep '0xA5CD6035332FA671' | grep 'Andrew Haley'; 	gpg --batch --verify openjdk.tgz.asc openjdk.tgz; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME"; 		mkdir -p "$JAVA_HOME"; 	tar --extract 		--file openjdk.tgz 		--directory "$JAVA_HOME" 		--strip-components 1 		--no-same-owner 	; 	rm openjdk.tgz*; 			{ 		echo '#!/usr/bin/env bash'; 		echo 'set -Eeuo pipefail'; 		echo 'if ! [ -d "$JAVA_HOME" ]; then echo >&2 "error: missing JAVA_HOME environment variable"; exit 1; fi'; 		echo 'cacertsFile=; for f in "$JAVA_HOME/lib/security/cacerts" "$JAVA_HOME/jre/lib/security/cacerts"; do if [ -e "$f" ]; then cacertsFile="$f"; break; fi; done'; 		echo 'if [ -z "$cacertsFile" ] || ! [ -f "$cacertsFile" ]; then echo >&2 "error: failed to find cacerts file in $JAVA_HOME"; exit 1; fi'; 		echo 'trust extract --overwrite --format=java-cacerts --filter=ca-anchors --purpose=server-auth "$cacertsFile"'; 	} > /etc/ca-certificates/update.d/docker-openjdk; 	chmod +x /etc/ca-certificates/update.d/docker-openjdk; 	/etc/ca-certificates/update.d/docker-openjdk; 		find "$JAVA_HOME/lib" -name '*.so' -exec dirname '{}' ';' | sort -u > /etc/ld.so.conf.d/docker-openjdk.conf; 	ldconfig; 		javac -version; 	java -version
-# Fri, 13 Sep 2019 05:14:41 GMT
+# Sat, 14 Sep 2019 00:24:02 GMT
+RUN set -eux; 		dpkgArch="$(dpkg --print-architecture)"; 	case "$dpkgArch" in 		amd64) upstreamArch='x64' ;; 		arm64) upstreamArch='aarch64' ;; 		*) echo >&2 "error: unsupported architecture: $dpkgArch" ;; 	esac; 		wget -O openjdk.tgz.asc "${JAVA_BASE_URL}${upstreamArch}_linux_${JAVA_URL_VERSION}.tar.gz.sign"; 	wget -O openjdk.tgz "${JAVA_BASE_URL}${upstreamArch}_linux_${JAVA_URL_VERSION}.tar.gz" --progress=dot:giga; 		export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver ha.pool.sks-keyservers.net --keyserver-options no-self-sigs-only --recv-keys CA5F11C6CE22644D42C6AC4492EF8D39DC13168F; 	gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys EAC843EBD3EFDB98CC772FADA5CD6035332FA671; 	gpg --batch --list-sigs --keyid-format 0xLONG CA5F11C6CE22644D42C6AC4492EF8D39DC13168F 		| tee /dev/stderr 		| grep '0xA5CD6035332FA671' 		| grep 'Andrew Haley'; 	gpg --batch --verify openjdk.tgz.asc openjdk.tgz; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME"; 		mkdir -p "$JAVA_HOME"; 	tar --extract 		--file openjdk.tgz 		--directory "$JAVA_HOME" 		--strip-components 1 		--no-same-owner 	; 	rm openjdk.tgz*; 			{ 		echo '#!/usr/bin/env bash'; 		echo 'set -Eeuo pipefail'; 		echo 'if ! [ -d "$JAVA_HOME" ]; then echo >&2 "error: missing JAVA_HOME environment variable"; exit 1; fi'; 		echo 'cacertsFile=; for f in "$JAVA_HOME/lib/security/cacerts" "$JAVA_HOME/jre/lib/security/cacerts"; do if [ -e "$f" ]; then cacertsFile="$f"; break; fi; done'; 		echo 'if [ -z "$cacertsFile" ] || ! [ -f "$cacertsFile" ]; then echo >&2 "error: failed to find cacerts file in $JAVA_HOME"; exit 1; fi'; 		echo 'trust extract --overwrite --format=java-cacerts --filter=ca-anchors --purpose=server-auth "$cacertsFile"'; 	} > /etc/ca-certificates/update.d/docker-openjdk; 	chmod +x /etc/ca-certificates/update.d/docker-openjdk; 	/etc/ca-certificates/update.d/docker-openjdk; 		find "$JAVA_HOME/lib" -name '*.so' -exec dirname '{}' ';' | sort -u > /etc/ld.so.conf.d/docker-openjdk.conf; 	ldconfig; 		javac -version; 	java -version
+# Sat, 14 Sep 2019 02:33:14 GMT
 ARG MAVEN_VERSION=3.6.2
-# Fri, 13 Sep 2019 05:14:41 GMT
+# Sat, 14 Sep 2019 02:33:14 GMT
 ARG USER_HOME_DIR=/root
-# Fri, 13 Sep 2019 05:14:42 GMT
+# Sat, 14 Sep 2019 02:33:14 GMT
 ARG SHA=d941423d115cd021514bfd06c453658b1b3e39e6240969caf4315ab7119a77299713f14b620fb2571a264f8dff2473d8af3cb47b05acf0036fc2553199a5c1ee
-# Fri, 13 Sep 2019 05:14:42 GMT
+# Sat, 14 Sep 2019 02:33:14 GMT
 ARG BASE_URL=https://apache.osuosl.org/maven/maven-3/3.6.2/binaries
-# Fri, 13 Sep 2019 05:14:43 GMT
+# Sat, 14 Sep 2019 02:33:16 GMT
 # ARGS: BASE_URL=https://apache.osuosl.org/maven/maven-3/3.6.2/binaries MAVEN_VERSION=3.6.2 SHA=d941423d115cd021514bfd06c453658b1b3e39e6240969caf4315ab7119a77299713f14b620fb2571a264f8dff2473d8af3cb47b05acf0036fc2553199a5c1ee USER_HOME_DIR=/root
 RUN mkdir -p /usr/share/maven /usr/share/maven/ref   && curl -fsSL -o /tmp/apache-maven.tar.gz ${BASE_URL}/apache-maven-${MAVEN_VERSION}-bin.tar.gz   && echo "${SHA}  /tmp/apache-maven.tar.gz" | sha512sum -c -   && tar -xzf /tmp/apache-maven.tar.gz -C /usr/share/maven --strip-components=1   && rm -f /tmp/apache-maven.tar.gz   && ln -s /usr/share/maven/bin/mvn /usr/bin/mvn
-# Fri, 13 Sep 2019 05:14:43 GMT
+# Sat, 14 Sep 2019 02:33:16 GMT
 ENV MAVEN_HOME=/usr/share/maven
-# Fri, 13 Sep 2019 05:14:44 GMT
+# Sat, 14 Sep 2019 02:33:16 GMT
 ENV MAVEN_CONFIG=/root/.m2
-# Fri, 13 Sep 2019 05:14:44 GMT
+# Sat, 14 Sep 2019 02:33:17 GMT
 COPY file:1b3da5c58894f705e7387946301c0c52edb6271761ea3cd80b86a848847a64cd in /usr/local/bin/mvn-entrypoint.sh 
-# Fri, 13 Sep 2019 05:14:44 GMT
+# Sat, 14 Sep 2019 02:33:17 GMT
 COPY file:2bbb488dd73c55d658b91943cfdf9c26975a320ceafc45dda94c95b03e518ad3 in /usr/share/maven/ref/ 
-# Fri, 13 Sep 2019 05:14:44 GMT
+# Sat, 14 Sep 2019 02:33:17 GMT
 ENTRYPOINT ["/usr/local/bin/mvn-entrypoint.sh"]
-# Fri, 13 Sep 2019 05:14:44 GMT
+# Sat, 14 Sep 2019 02:33:17 GMT
 CMD ["mvn"]
 ```
 
@@ -7870,27 +7870,27 @@ CMD ["mvn"]
 		Last Modified: Thu, 12 Sep 2019 14:36:06 GMT  
 		Size: 222.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:2a62b26e59185a3325158ae267e3668eae491e808f73fa8b5f2caca81a914634`  
-		Last Modified: Thu, 12 Sep 2019 14:36:21 GMT  
-		Size: 104.2 MB (104195072 bytes)  
+	-	`sha256:f26b99e1adb1713c1c753f96d06c4ccb7f81df1b6daf266eab536ab38a315ba3`  
+		Last Modified: Sat, 14 Sep 2019 00:28:03 GMT  
+		Size: 104.2 MB (104195047 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:ad751a55bde0be137265846661fdb7a49ccd805ecc61a21cd5b9249d6ceb83d8`  
-		Last Modified: Fri, 13 Sep 2019 05:15:26 GMT  
-		Size: 9.2 MB (9167584 bytes)  
+	-	`sha256:7a1b276fce422e852962166cedede03d774fbe45352857d3540651125881aa76`  
+		Last Modified: Sat, 14 Sep 2019 02:34:25 GMT  
+		Size: 9.2 MB (9167597 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c96ffe0da1e422c3f516a1bed39d3023e2a0dda9b6ae6c8f91f461825a077d59`  
-		Last Modified: Fri, 13 Sep 2019 05:15:25 GMT  
+	-	`sha256:c944b4612eac0479e798e1fb39b510400fea2d78e946c2d505389191f90c74ed`  
+		Last Modified: Sat, 14 Sep 2019 02:34:24 GMT  
 		Size: 863.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:a88121a3f06d1be9ab4323bab23290c464194a5dc828850c27537d6059ac0964`  
-		Last Modified: Fri, 13 Sep 2019 05:15:26 GMT  
-		Size: 358.0 B  
+	-	`sha256:293fc5ed12f1e6e7e569d3a01546c0d447661a63cd78044c0a1945e4017c7e3a`  
+		Last Modified: Sat, 14 Sep 2019 02:34:25 GMT  
+		Size: 355.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `maven:3-jdk-8-slim`
 
 ```console
-$ docker pull maven@sha256:f6eda4e62036461e2488eda9990a3015cfdb522b246257433467aa2eaca1e904
+$ docker pull maven@sha256:2b54b5981f55838fc4fba956e0092bc97b932ef011c7f70ca85caec337711741
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -7900,100 +7900,100 @@ $ docker pull maven@sha256:f6eda4e62036461e2488eda9990a3015cfdb522b246257433467a
 ### `maven:3-jdk-8-slim` - linux; amd64
 
 ```console
-$ docker pull maven@sha256:8b01d4cf8f7094bbbb54ed7947e5112510b509b10886741013c8e27831dedee1
+$ docker pull maven@sha256:8b837657e806c13a8bc0cb49e0ec016388e378256f170c8500d90df9e3c7210c
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **146.8 MB (146842866 bytes)**  
+-	Total Size: **146.6 MB (146573040 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:3ad77bf247134edf18f80b7e68fa9f76ada809906ec7d10061846b81198eecdd`
+-	Image ID: `sha256:f376fc4cd184a647caebed2aa5b07535ced50dcce15dcf553babf220254c3fc2`
 -	Entrypoint: `["\/usr\/local\/bin\/mvn-entrypoint.sh"]`
 -	Default Command: `["mvn"]`
 
 ```dockerfile
-# Wed, 14 Aug 2019 00:22:12 GMT
-ADD file:330bfb91168adb4a9b1296c70209ed487d4c2705042a916d575f82b61ab16e61 in / 
-# Wed, 14 Aug 2019 00:22:12 GMT
+# Wed, 11 Sep 2019 23:22:24 GMT
+ADD file:1901172d26545609083e48b9bfaf2cb46674f37af0902ad5a32e2420301225de in / 
+# Wed, 11 Sep 2019 23:22:24 GMT
 CMD ["bash"]
-# Wed, 14 Aug 2019 11:24:17 GMT
+# Sat, 14 Sep 2019 00:22:55 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		ca-certificates p11-kit 	; 	rm -rf /var/lib/apt/lists/*
-# Wed, 14 Aug 2019 11:24:17 GMT
+# Sat, 14 Sep 2019 00:22:55 GMT
 ENV LANG=C.UTF-8
-# Wed, 14 Aug 2019 11:26:02 GMT
+# Sat, 14 Sep 2019 00:24:06 GMT
 ENV JAVA_HOME=/usr/local/openjdk-8
-# Wed, 14 Aug 2019 11:26:03 GMT
+# Sat, 14 Sep 2019 00:24:06 GMT
 ENV PATH=/usr/local/openjdk-8/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Wed, 14 Aug 2019 11:26:04 GMT
+# Sat, 14 Sep 2019 00:24:07 GMT
 RUN { echo '#/bin/sh'; echo 'echo "$JAVA_HOME"'; } > /usr/local/bin/docker-java-home && chmod +x /usr/local/bin/docker-java-home && [ "$JAVA_HOME" = "$(docker-java-home)" ]
-# Wed, 14 Aug 2019 11:26:04 GMT
+# Sat, 14 Sep 2019 00:24:07 GMT
 ENV JAVA_VERSION=8u222
-# Wed, 14 Aug 2019 11:26:04 GMT
+# Sat, 14 Sep 2019 00:24:07 GMT
 ENV JAVA_BASE_URL=https://github.com/AdoptOpenJDK/openjdk8-upstream-binaries/releases/download/jdk8u222-b10/OpenJDK8U-jdk_
-# Wed, 14 Aug 2019 11:26:05 GMT
+# Sat, 14 Sep 2019 00:24:08 GMT
 ENV JAVA_URL_VERSION=8u222b10
-# Wed, 14 Aug 2019 11:26:25 GMT
-RUN set -eux; 		dpkgArch="$(dpkg --print-architecture)"; 	case "$dpkgArch" in 		amd64) upstreamArch='x64' ;; 		arm64) upstreamArch='aarch64' ;; 		*) echo >&2 "error: unsupported architecture: $dpkgArch" ;; 	esac; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		dirmngr 		gnupg 		wget 	; 	rm -rf /var/lib/apt/lists/*; 		wget -O openjdk.tgz.asc "${JAVA_BASE_URL}${upstreamArch}_linux_${JAVA_URL_VERSION}.tar.gz.sign"; 	wget -O openjdk.tgz "${JAVA_BASE_URL}${upstreamArch}_linux_${JAVA_URL_VERSION}.tar.gz" --progress=dot:giga; 		export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys CA5F11C6CE22644D42C6AC4492EF8D39DC13168F; 	gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys EAC843EBD3EFDB98CC772FADA5CD6035332FA671; 	gpg --batch --list-sigs --keyid-format 0xLONG CA5F11C6CE22644D42C6AC4492EF8D39DC13168F | grep '0xA5CD6035332FA671' | grep 'Andrew Haley'; 	gpg --batch --verify openjdk.tgz.asc openjdk.tgz; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME"; 		mkdir -p "$JAVA_HOME"; 	tar --extract 		--file openjdk.tgz 		--directory "$JAVA_HOME" 		--strip-components 1 		--no-same-owner 	; 	rm openjdk.tgz*; 			apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark > /dev/null; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 		{ 		echo '#!/usr/bin/env bash'; 		echo 'set -Eeuo pipefail'; 		echo 'if ! [ -d "$JAVA_HOME" ]; then echo >&2 "error: missing JAVA_HOME environment variable"; exit 1; fi'; 		echo 'cacertsFile=; for f in "$JAVA_HOME/lib/security/cacerts" "$JAVA_HOME/jre/lib/security/cacerts"; do if [ -e "$f" ]; then cacertsFile="$f"; break; fi; done'; 		echo 'if [ -z "$cacertsFile" ] || ! [ -f "$cacertsFile" ]; then echo >&2 "error: failed to find cacerts file in $JAVA_HOME"; exit 1; fi'; 		echo 'trust extract --overwrite --format=java-cacerts --filter=ca-anchors --purpose=server-auth "$cacertsFile"'; 	} > /etc/ca-certificates/update.d/docker-openjdk; 	chmod +x /etc/ca-certificates/update.d/docker-openjdk; 	/etc/ca-certificates/update.d/docker-openjdk; 		find "$JAVA_HOME/lib" -name '*.so' -exec dirname '{}' ';' | sort -u > /etc/ld.so.conf.d/docker-openjdk.conf; 	ldconfig; 		javac -version; 	java -version
-# Wed, 11 Sep 2019 11:23:02 GMT
+# Sat, 14 Sep 2019 00:24:21 GMT
+RUN set -eux; 		dpkgArch="$(dpkg --print-architecture)"; 	case "$dpkgArch" in 		amd64) upstreamArch='x64' ;; 		arm64) upstreamArch='aarch64' ;; 		*) echo >&2 "error: unsupported architecture: $dpkgArch" ;; 	esac; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		dirmngr 		gnupg 		wget 	; 	rm -rf /var/lib/apt/lists/*; 		wget -O openjdk.tgz.asc "${JAVA_BASE_URL}${upstreamArch}_linux_${JAVA_URL_VERSION}.tar.gz.sign"; 	wget -O openjdk.tgz "${JAVA_BASE_URL}${upstreamArch}_linux_${JAVA_URL_VERSION}.tar.gz" --progress=dot:giga; 		export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver ha.pool.sks-keyservers.net --keyserver-options no-self-sigs-only --recv-keys CA5F11C6CE22644D42C6AC4492EF8D39DC13168F; 	gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys EAC843EBD3EFDB98CC772FADA5CD6035332FA671; 	gpg --batch --list-sigs --keyid-format 0xLONG CA5F11C6CE22644D42C6AC4492EF8D39DC13168F 		| tee /dev/stderr 		| grep '0xA5CD6035332FA671' 		| grep 'Andrew Haley'; 	gpg --batch --verify openjdk.tgz.asc openjdk.tgz; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME"; 		mkdir -p "$JAVA_HOME"; 	tar --extract 		--file openjdk.tgz 		--directory "$JAVA_HOME" 		--strip-components 1 		--no-same-owner 	; 	rm openjdk.tgz*; 			apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark > /dev/null; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 		{ 		echo '#!/usr/bin/env bash'; 		echo 'set -Eeuo pipefail'; 		echo 'if ! [ -d "$JAVA_HOME" ]; then echo >&2 "error: missing JAVA_HOME environment variable"; exit 1; fi'; 		echo 'cacertsFile=; for f in "$JAVA_HOME/lib/security/cacerts" "$JAVA_HOME/jre/lib/security/cacerts"; do if [ -e "$f" ]; then cacertsFile="$f"; break; fi; done'; 		echo 'if [ -z "$cacertsFile" ] || ! [ -f "$cacertsFile" ]; then echo >&2 "error: failed to find cacerts file in $JAVA_HOME"; exit 1; fi'; 		echo 'trust extract --overwrite --format=java-cacerts --filter=ca-anchors --purpose=server-auth "$cacertsFile"'; 	} > /etc/ca-certificates/update.d/docker-openjdk; 	chmod +x /etc/ca-certificates/update.d/docker-openjdk; 	/etc/ca-certificates/update.d/docker-openjdk; 		find "$JAVA_HOME/lib" -name '*.so' -exec dirname '{}' ';' | sort -u > /etc/ld.so.conf.d/docker-openjdk.conf; 	ldconfig; 		javac -version; 	java -version
+# Sat, 14 Sep 2019 02:33:01 GMT
 ARG MAVEN_VERSION=3.6.2
-# Wed, 11 Sep 2019 11:23:02 GMT
+# Sat, 14 Sep 2019 02:33:01 GMT
 ARG USER_HOME_DIR=/root
-# Wed, 11 Sep 2019 11:23:02 GMT
+# Sat, 14 Sep 2019 02:33:01 GMT
 ARG SHA=d941423d115cd021514bfd06c453658b1b3e39e6240969caf4315ab7119a77299713f14b620fb2571a264f8dff2473d8af3cb47b05acf0036fc2553199a5c1ee
-# Wed, 11 Sep 2019 11:23:02 GMT
+# Sat, 14 Sep 2019 02:33:02 GMT
 ARG BASE_URL=https://apache.osuosl.org/maven/maven-3/3.6.2/binaries
-# Wed, 11 Sep 2019 11:23:08 GMT
+# Sat, 14 Sep 2019 02:33:07 GMT
 # ARGS: BASE_URL=https://apache.osuosl.org/maven/maven-3/3.6.2/binaries MAVEN_VERSION=3.6.2 SHA=d941423d115cd021514bfd06c453658b1b3e39e6240969caf4315ab7119a77299713f14b620fb2571a264f8dff2473d8af3cb47b05acf0036fc2553199a5c1ee USER_HOME_DIR=/root
 RUN apt-get update &&     apt-get install -y       curl procps   && rm -rf /var/lib/apt/lists/*
-# Wed, 11 Sep 2019 11:23:11 GMT
+# Sat, 14 Sep 2019 02:33:09 GMT
 # ARGS: BASE_URL=https://apache.osuosl.org/maven/maven-3/3.6.2/binaries MAVEN_VERSION=3.6.2 SHA=d941423d115cd021514bfd06c453658b1b3e39e6240969caf4315ab7119a77299713f14b620fb2571a264f8dff2473d8af3cb47b05acf0036fc2553199a5c1ee USER_HOME_DIR=/root
 RUN mkdir -p /usr/share/maven /usr/share/maven/ref   && curl -fsSL -o /tmp/apache-maven.tar.gz ${BASE_URL}/apache-maven-${MAVEN_VERSION}-bin.tar.gz   && echo "${SHA}  /tmp/apache-maven.tar.gz" | sha512sum -c -   && tar -xzf /tmp/apache-maven.tar.gz -C /usr/share/maven --strip-components=1   && rm -f /tmp/apache-maven.tar.gz   && ln -s /usr/share/maven/bin/mvn /usr/bin/mvn
-# Wed, 11 Sep 2019 11:23:12 GMT
+# Sat, 14 Sep 2019 02:33:09 GMT
 ENV MAVEN_HOME=/usr/share/maven
-# Wed, 11 Sep 2019 11:23:12 GMT
+# Sat, 14 Sep 2019 02:33:09 GMT
 ENV MAVEN_CONFIG=/root/.m2
-# Wed, 11 Sep 2019 11:23:12 GMT
+# Sat, 14 Sep 2019 02:33:09 GMT
 COPY file:1b3da5c58894f705e7387946301c0c52edb6271761ea3cd80b86a848847a64cd in /usr/local/bin/mvn-entrypoint.sh 
-# Wed, 11 Sep 2019 11:23:12 GMT
+# Sat, 14 Sep 2019 02:33:09 GMT
 COPY file:2bbb488dd73c55d658b91943cfdf9c26975a320ceafc45dda94c95b03e518ad3 in /usr/share/maven/ref/ 
-# Wed, 11 Sep 2019 11:23:12 GMT
+# Sat, 14 Sep 2019 02:33:09 GMT
 ENTRYPOINT ["/usr/local/bin/mvn-entrypoint.sh"]
-# Wed, 11 Sep 2019 11:23:12 GMT
+# Sat, 14 Sep 2019 02:33:10 GMT
 CMD ["mvn"]
 ```
 
 -	Layers:
-	-	`sha256:1ab2bdfe97783562315f98f94c0769b1897a05f7b0395ca1520ebee08666703b`  
-		Last Modified: Wed, 14 Aug 2019 00:27:15 GMT  
-		Size: 27.1 MB (27093851 bytes)  
+	-	`sha256:b8f262c62ec67f02536f49654de586c022043652bbb6bbf76a8dab1542627a8d`  
+		Last Modified: Wed, 11 Sep 2019 23:31:20 GMT  
+		Size: 27.1 MB (27093738 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:7aaf9a088d61d78b50cd2a58984cc89ed9c0c5c66124fd74b4baa0cba32524c1`  
-		Last Modified: Wed, 14 Aug 2019 11:28:15 GMT  
-		Size: 3.2 MB (3247273 bytes)  
+	-	`sha256:377e264464ddccb9550cff64ba470dfdb784acdb2ff265ae333b9215fc873b08`  
+		Last Modified: Sat, 14 Sep 2019 00:26:29 GMT  
+		Size: 3.2 MB (3247380 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:80a55c9c9fe89b163322e46d017f346fab100604a4a0a63a1a790b89c1c2105f`  
-		Last Modified: Wed, 14 Aug 2019 11:30:03 GMT  
-		Size: 210.0 B  
+	-	`sha256:3198ebe941513b3be7ff20096fa6f22dc7a8d0f08b20993419825b25acbf050b`  
+		Last Modified: Sat, 14 Sep 2019 00:28:13 GMT  
+		Size: 212.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:9110ea0d47ee3b75e48971381c280070f0d76603288b1da30af905152b7d8250`  
-		Last Modified: Wed, 14 Aug 2019 11:30:18 GMT  
-		Size: 104.4 MB (104449436 bytes)  
+	-	`sha256:14378903d43db9959a5a046c178ca638c7de1be299cab8830d50651eb785f2ec`  
+		Last Modified: Sat, 14 Sep 2019 00:28:33 GMT  
+		Size: 104.4 MB (104449544 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:ced65ad5540c0e9e5e71bf1576f122c3a5ae43ed4df500c9853ae7762131d357`  
-		Last Modified: Wed, 11 Sep 2019 11:25:32 GMT  
-		Size: 2.9 MB (2883304 bytes)  
+	-	`sha256:5e9a3ce0932998bb6cb0663ff7649b8d3107fbfa559aeeafdf1d03cbfb3ecf7b`  
+		Last Modified: Sat, 14 Sep 2019 02:34:19 GMT  
+		Size: 2.6 MB (2613376 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:571cbe6a7507f775f26b4d46e0318c171b1707ecc29493fa3e5ca18518aa612f`  
-		Last Modified: Wed, 11 Sep 2019 11:25:32 GMT  
-		Size: 9.2 MB (9167576 bytes)  
+	-	`sha256:d43c372286e009ea04b86089c45703bb8ac49496375f629996c4c620081b1829`  
+		Last Modified: Sat, 14 Sep 2019 02:34:19 GMT  
+		Size: 9.2 MB (9167581 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:33ff100b4fadd231a5c009db0d07a38ace94570e558dd4c253ff019d492771bd`  
-		Last Modified: Wed, 11 Sep 2019 11:25:31 GMT  
-		Size: 856.0 B  
+	-	`sha256:540eac2ca143b66971989c132c50d89d03071d4a5c90d815988cfc21ba7812fc`  
+		Last Modified: Sat, 14 Sep 2019 02:34:18 GMT  
+		Size: 852.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:94caa8f55de964636cae3dd9d9f1e484f59371a92edd0ac420562a710950b3f2`  
-		Last Modified: Wed, 11 Sep 2019 11:25:31 GMT  
-		Size: 360.0 B  
+	-	`sha256:e0b00071dd186efe231e9ce76caedde78415e14969124b1395b9c55d9573bfbd`  
+		Last Modified: Sat, 14 Sep 2019 02:34:18 GMT  
+		Size: 357.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `maven:amazoncorretto`
@@ -8292,7 +8292,7 @@ CMD ["mvn"]
 ## `maven:latest`
 
 ```console
-$ docker pull maven@sha256:de81cbb362db7d2ab21e32b3069b318870a65805f4a41525d757b60aa1574b95
+$ docker pull maven@sha256:402b6480724f1174b73b083b00649dd3b05204830eb5bc0af00fb486fda1f2c4
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -8303,14 +8303,14 @@ $ docker pull maven@sha256:de81cbb362db7d2ab21e32b3069b318870a65805f4a41525d757b
 ### `maven:latest` - linux; amd64
 
 ```console
-$ docker pull maven@sha256:040515327409588cebf0c83abf8267a28d55a0274c9c566efbee6853c1ea5203
+$ docker pull maven@sha256:8f3817ad781f88d84736aa831e40db2686196d70ee1a690d95c9935ddfc632a8
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **320.4 MB (320395309 bytes)**  
+-	Total Size: **320.4 MB (320395314 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:96945ef2abcf7f27096e330abff234b2994b2d84b6de90f45004fb68cd435a11`
+-	Image ID: `sha256:e941463218b96a496d62aa7f9766ca9fa10760d070d025c366e00664f7ae25af`
 -	Entrypoint: `["\/usr\/local\/bin\/mvn-entrypoint.sh"]`
 -	Default Command: `["mvn"]`
 
@@ -8341,32 +8341,32 @@ ENV JAVA_VERSION=11.0.4
 ENV JAVA_BASE_URL=https://github.com/AdoptOpenJDK/openjdk11-upstream-binaries/releases/download/jdk-11.0.4%2B11/OpenJDK11U-jdk_
 # Thu, 12 Sep 2019 14:29:49 GMT
 ENV JAVA_URL_VERSION=11.0.4_11
-# Thu, 12 Sep 2019 14:30:06 GMT
-RUN set -eux; 		dpkgArch="$(dpkg --print-architecture)"; 	case "$dpkgArch" in 		amd64) upstreamArch='x64' ;; 		arm64) upstreamArch='aarch64' ;; 		*) echo >&2 "error: unsupported architecture: $dpkgArch" ;; 	esac; 		wget -O openjdk.tgz.asc "${JAVA_BASE_URL}${upstreamArch}_linux_${JAVA_URL_VERSION}.tar.gz.sign"; 	wget -O openjdk.tgz "${JAVA_BASE_URL}${upstreamArch}_linux_${JAVA_URL_VERSION}.tar.gz" --progress=dot:giga; 		export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys CA5F11C6CE22644D42C6AC4492EF8D39DC13168F; 	gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys EAC843EBD3EFDB98CC772FADA5CD6035332FA671; 	gpg --batch --list-sigs --keyid-format 0xLONG CA5F11C6CE22644D42C6AC4492EF8D39DC13168F | grep '0xA5CD6035332FA671' | grep 'Andrew Haley'; 	gpg --batch --verify openjdk.tgz.asc openjdk.tgz; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME"; 		mkdir -p "$JAVA_HOME"; 	tar --extract 		--file openjdk.tgz 		--directory "$JAVA_HOME" 		--strip-components 1 		--no-same-owner 	; 	rm openjdk.tgz*; 			{ 		echo '#!/usr/bin/env bash'; 		echo 'set -Eeuo pipefail'; 		echo 'if ! [ -d "$JAVA_HOME" ]; then echo >&2 "error: missing JAVA_HOME environment variable"; exit 1; fi'; 		echo 'cacertsFile=; for f in "$JAVA_HOME/lib/security/cacerts" "$JAVA_HOME/jre/lib/security/cacerts"; do if [ -e "$f" ]; then cacertsFile="$f"; break; fi; done'; 		echo 'if [ -z "$cacertsFile" ] || ! [ -f "$cacertsFile" ]; then echo >&2 "error: failed to find cacerts file in $JAVA_HOME"; exit 1; fi'; 		echo 'trust extract --overwrite --format=java-cacerts --filter=ca-anchors --purpose=server-auth "$cacertsFile"'; 	} > /etc/ca-certificates/update.d/docker-openjdk; 	chmod +x /etc/ca-certificates/update.d/docker-openjdk; 	/etc/ca-certificates/update.d/docker-openjdk; 		find "$JAVA_HOME/lib" -name '*.so' -exec dirname '{}' ';' | sort -u > /etc/ld.so.conf.d/docker-openjdk.conf; 	ldconfig; 		javac --version; 	java --version
-# Thu, 12 Sep 2019 14:30:07 GMT
+# Sat, 14 Sep 2019 00:22:42 GMT
+RUN set -eux; 		dpkgArch="$(dpkg --print-architecture)"; 	case "$dpkgArch" in 		amd64) upstreamArch='x64' ;; 		arm64) upstreamArch='aarch64' ;; 		*) echo >&2 "error: unsupported architecture: $dpkgArch" ;; 	esac; 		wget -O openjdk.tgz.asc "${JAVA_BASE_URL}${upstreamArch}_linux_${JAVA_URL_VERSION}.tar.gz.sign"; 	wget -O openjdk.tgz "${JAVA_BASE_URL}${upstreamArch}_linux_${JAVA_URL_VERSION}.tar.gz" --progress=dot:giga; 		export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver ha.pool.sks-keyservers.net --keyserver-options no-self-sigs-only --recv-keys CA5F11C6CE22644D42C6AC4492EF8D39DC13168F; 	gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys EAC843EBD3EFDB98CC772FADA5CD6035332FA671; 	gpg --batch --list-sigs --keyid-format 0xLONG CA5F11C6CE22644D42C6AC4492EF8D39DC13168F 		| tee /dev/stderr 		| grep '0xA5CD6035332FA671' 		| grep 'Andrew Haley'; 	gpg --batch --verify openjdk.tgz.asc openjdk.tgz; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME"; 		mkdir -p "$JAVA_HOME"; 	tar --extract 		--file openjdk.tgz 		--directory "$JAVA_HOME" 		--strip-components 1 		--no-same-owner 	; 	rm openjdk.tgz*; 			{ 		echo '#!/usr/bin/env bash'; 		echo 'set -Eeuo pipefail'; 		echo 'if ! [ -d "$JAVA_HOME" ]; then echo >&2 "error: missing JAVA_HOME environment variable"; exit 1; fi'; 		echo 'cacertsFile=; for f in "$JAVA_HOME/lib/security/cacerts" "$JAVA_HOME/jre/lib/security/cacerts"; do if [ -e "$f" ]; then cacertsFile="$f"; break; fi; done'; 		echo 'if [ -z "$cacertsFile" ] || ! [ -f "$cacertsFile" ]; then echo >&2 "error: failed to find cacerts file in $JAVA_HOME"; exit 1; fi'; 		echo 'trust extract --overwrite --format=java-cacerts --filter=ca-anchors --purpose=server-auth "$cacertsFile"'; 	} > /etc/ca-certificates/update.d/docker-openjdk; 	chmod +x /etc/ca-certificates/update.d/docker-openjdk; 	/etc/ca-certificates/update.d/docker-openjdk; 		find "$JAVA_HOME/lib" -name '*.so' -exec dirname '{}' ';' | sort -u > /etc/ld.so.conf.d/docker-openjdk.conf; 	ldconfig; 		javac --version; 	java --version
+# Sat, 14 Sep 2019 00:22:42 GMT
 CMD ["jshell"]
-# Fri, 13 Sep 2019 05:14:22 GMT
+# Sat, 14 Sep 2019 02:32:41 GMT
 ARG MAVEN_VERSION=3.6.2
-# Fri, 13 Sep 2019 05:14:22 GMT
+# Sat, 14 Sep 2019 02:32:41 GMT
 ARG USER_HOME_DIR=/root
-# Fri, 13 Sep 2019 05:14:22 GMT
+# Sat, 14 Sep 2019 02:32:41 GMT
 ARG SHA=d941423d115cd021514bfd06c453658b1b3e39e6240969caf4315ab7119a77299713f14b620fb2571a264f8dff2473d8af3cb47b05acf0036fc2553199a5c1ee
-# Fri, 13 Sep 2019 05:14:22 GMT
+# Sat, 14 Sep 2019 02:32:41 GMT
 ARG BASE_URL=https://apache.osuosl.org/maven/maven-3/3.6.2/binaries
-# Fri, 13 Sep 2019 05:14:24 GMT
+# Sat, 14 Sep 2019 02:32:43 GMT
 # ARGS: BASE_URL=https://apache.osuosl.org/maven/maven-3/3.6.2/binaries MAVEN_VERSION=3.6.2 SHA=d941423d115cd021514bfd06c453658b1b3e39e6240969caf4315ab7119a77299713f14b620fb2571a264f8dff2473d8af3cb47b05acf0036fc2553199a5c1ee USER_HOME_DIR=/root
 RUN mkdir -p /usr/share/maven /usr/share/maven/ref   && curl -fsSL -o /tmp/apache-maven.tar.gz ${BASE_URL}/apache-maven-${MAVEN_VERSION}-bin.tar.gz   && echo "${SHA}  /tmp/apache-maven.tar.gz" | sha512sum -c -   && tar -xzf /tmp/apache-maven.tar.gz -C /usr/share/maven --strip-components=1   && rm -f /tmp/apache-maven.tar.gz   && ln -s /usr/share/maven/bin/mvn /usr/bin/mvn
-# Fri, 13 Sep 2019 05:14:24 GMT
+# Sat, 14 Sep 2019 02:32:43 GMT
 ENV MAVEN_HOME=/usr/share/maven
-# Fri, 13 Sep 2019 05:14:24 GMT
+# Sat, 14 Sep 2019 02:32:43 GMT
 ENV MAVEN_CONFIG=/root/.m2
-# Fri, 13 Sep 2019 05:14:24 GMT
+# Sat, 14 Sep 2019 02:32:43 GMT
 COPY file:1b3da5c58894f705e7387946301c0c52edb6271761ea3cd80b86a848847a64cd in /usr/local/bin/mvn-entrypoint.sh 
-# Fri, 13 Sep 2019 05:14:25 GMT
+# Sat, 14 Sep 2019 02:32:43 GMT
 COPY file:2bbb488dd73c55d658b91943cfdf9c26975a320ceafc45dda94c95b03e518ad3 in /usr/share/maven/ref/ 
-# Fri, 13 Sep 2019 05:14:25 GMT
+# Sat, 14 Sep 2019 02:32:43 GMT
 ENTRYPOINT ["/usr/local/bin/mvn-entrypoint.sh"]
-# Fri, 13 Sep 2019 05:14:25 GMT
+# Sat, 14 Sep 2019 02:32:44 GMT
 CMD ["mvn"]
 ```
 
@@ -8395,21 +8395,21 @@ CMD ["mvn"]
 		Last Modified: Thu, 12 Sep 2019 14:35:16 GMT  
 		Size: 222.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:96fd45ee9818086a74a3a5f4562639f0d2db421419d9d20e4553dd2d11e36917`  
-		Last Modified: Thu, 12 Sep 2019 14:35:41 GMT  
-		Size: 195.7 MB (195718802 bytes)  
+	-	`sha256:663538d2581ce8ee06691cdd2020b2a38f47bd9996c7592247a76280505e3a4e`  
+		Last Modified: Sat, 14 Sep 2019 00:26:21 GMT  
+		Size: 195.7 MB (195718807 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:e0bfbdc652c3b5b169baeedb120f354664027d72d9866f4ad02fa79294c644d8`  
-		Last Modified: Fri, 13 Sep 2019 05:15:17 GMT  
-		Size: 9.2 MB (9167581 bytes)  
+	-	`sha256:28d90ddff35dcae263144936dedbe6d1baa5cff7cde62906c6c854f89cbfb0ed`  
+		Last Modified: Sat, 14 Sep 2019 02:34:01 GMT  
+		Size: 9.2 MB (9167583 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:9c2a3372ee55b77da59d73774317f35047e7a38a4d06c454cf03de63dc4a00c3`  
-		Last Modified: Fri, 13 Sep 2019 05:15:16 GMT  
-		Size: 864.0 B  
+	-	`sha256:4026e60527338b245da2f67dd4002950303385b0bdf26d45c1519cb041bd120e`  
+		Last Modified: Sat, 14 Sep 2019 02:34:01 GMT  
+		Size: 861.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:8e70e332c8192e51f7cd3a74d4e02c0bb794da8852bd65f7de6f1e23fa2a63c7`  
-		Last Modified: Fri, 13 Sep 2019 05:15:17 GMT  
-		Size: 357.0 B  
+	-	`sha256:fedf7e9533c347c5f74d951ee6877b2f48c7996638ff7753f24cbf9d6750bf3b`  
+		Last Modified: Sat, 14 Sep 2019 02:34:01 GMT  
+		Size: 358.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `maven:latest` - linux; arm64 variant v8
@@ -8527,7 +8527,7 @@ CMD ["mvn"]
 ## `maven:slim`
 
 ```console
-$ docker pull maven@sha256:8af5dc392a2af438d1471990a441abcf3e1739e2442bed3678c61e3726f62179
+$ docker pull maven@sha256:d6595a61c34de743018aaeae69374a455c2cb0db81d6452442c60e4f1344cc19
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -8538,101 +8538,101 @@ $ docker pull maven@sha256:8af5dc392a2af438d1471990a441abcf3e1739e2442bed3678c61
 ### `maven:slim` - linux; amd64
 
 ```console
-$ docker pull maven@sha256:caefa9cbff7ae95218a3990fcf246340b0a17a5efd7c8c2ecdbdbf1ada639b46
+$ docker pull maven@sha256:a8de8a8cf567309b91fa9217fd63e5c468814c473c23b782cdff58801607a0a3
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **238.4 MB (238370821 bytes)**  
+-	Total Size: **238.1 MB (238100121 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:95c83d29bfc3b7caf10fd6d09d404e3dae23278fe0ce2b665beac6aa33deca72`
+-	Image ID: `sha256:316ca1e7d3a7a7966dd8f9be3448bf32b63e0f4af86d3fdc51a556ab59014cbf`
 -	Entrypoint: `["\/usr\/local\/bin\/mvn-entrypoint.sh"]`
 -	Default Command: `["mvn"]`
 
 ```dockerfile
-# Wed, 14 Aug 2019 00:22:12 GMT
-ADD file:330bfb91168adb4a9b1296c70209ed487d4c2705042a916d575f82b61ab16e61 in / 
-# Wed, 14 Aug 2019 00:22:12 GMT
+# Wed, 11 Sep 2019 23:22:24 GMT
+ADD file:1901172d26545609083e48b9bfaf2cb46674f37af0902ad5a32e2420301225de in / 
+# Wed, 11 Sep 2019 23:22:24 GMT
 CMD ["bash"]
-# Wed, 14 Aug 2019 11:24:17 GMT
+# Sat, 14 Sep 2019 00:22:55 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		ca-certificates p11-kit 	; 	rm -rf /var/lib/apt/lists/*
-# Wed, 14 Aug 2019 11:24:17 GMT
+# Sat, 14 Sep 2019 00:22:55 GMT
 ENV LANG=C.UTF-8
-# Wed, 14 Aug 2019 11:24:18 GMT
+# Sat, 14 Sep 2019 00:22:55 GMT
 ENV JAVA_HOME=/usr/local/openjdk-11
-# Wed, 14 Aug 2019 11:24:18 GMT
+# Sat, 14 Sep 2019 00:22:55 GMT
 ENV PATH=/usr/local/openjdk-11/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Wed, 14 Aug 2019 11:24:19 GMT
+# Sat, 14 Sep 2019 00:22:56 GMT
 RUN { echo '#/bin/sh'; echo 'echo "$JAVA_HOME"'; } > /usr/local/bin/docker-java-home && chmod +x /usr/local/bin/docker-java-home && [ "$JAVA_HOME" = "$(docker-java-home)" ]
-# Wed, 14 Aug 2019 11:24:19 GMT
+# Sat, 14 Sep 2019 00:22:56 GMT
 ENV JAVA_VERSION=11.0.4
-# Wed, 14 Aug 2019 11:24:19 GMT
+# Sat, 14 Sep 2019 00:22:56 GMT
 ENV JAVA_BASE_URL=https://github.com/AdoptOpenJDK/openjdk11-upstream-binaries/releases/download/jdk-11.0.4%2B11/OpenJDK11U-jdk_
-# Wed, 14 Aug 2019 11:24:19 GMT
+# Sat, 14 Sep 2019 00:22:56 GMT
 ENV JAVA_URL_VERSION=11.0.4_11
-# Wed, 14 Aug 2019 11:24:45 GMT
-RUN set -eux; 		dpkgArch="$(dpkg --print-architecture)"; 	case "$dpkgArch" in 		amd64) upstreamArch='x64' ;; 		arm64) upstreamArch='aarch64' ;; 		*) echo >&2 "error: unsupported architecture: $dpkgArch" ;; 	esac; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		dirmngr 		gnupg 		wget 	; 	rm -rf /var/lib/apt/lists/*; 		wget -O openjdk.tgz.asc "${JAVA_BASE_URL}${upstreamArch}_linux_${JAVA_URL_VERSION}.tar.gz.sign"; 	wget -O openjdk.tgz "${JAVA_BASE_URL}${upstreamArch}_linux_${JAVA_URL_VERSION}.tar.gz" --progress=dot:giga; 		export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys CA5F11C6CE22644D42C6AC4492EF8D39DC13168F; 	gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys EAC843EBD3EFDB98CC772FADA5CD6035332FA671; 	gpg --batch --list-sigs --keyid-format 0xLONG CA5F11C6CE22644D42C6AC4492EF8D39DC13168F | grep '0xA5CD6035332FA671' | grep 'Andrew Haley'; 	gpg --batch --verify openjdk.tgz.asc openjdk.tgz; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME"; 		mkdir -p "$JAVA_HOME"; 	tar --extract 		--file openjdk.tgz 		--directory "$JAVA_HOME" 		--strip-components 1 		--no-same-owner 	; 	rm openjdk.tgz*; 			apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark > /dev/null; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 		{ 		echo '#!/usr/bin/env bash'; 		echo 'set -Eeuo pipefail'; 		echo 'if ! [ -d "$JAVA_HOME" ]; then echo >&2 "error: missing JAVA_HOME environment variable"; exit 1; fi'; 		echo 'cacertsFile=; for f in "$JAVA_HOME/lib/security/cacerts" "$JAVA_HOME/jre/lib/security/cacerts"; do if [ -e "$f" ]; then cacertsFile="$f"; break; fi; done'; 		echo 'if [ -z "$cacertsFile" ] || ! [ -f "$cacertsFile" ]; then echo >&2 "error: failed to find cacerts file in $JAVA_HOME"; exit 1; fi'; 		echo 'trust extract --overwrite --format=java-cacerts --filter=ca-anchors --purpose=server-auth "$cacertsFile"'; 	} > /etc/ca-certificates/update.d/docker-openjdk; 	chmod +x /etc/ca-certificates/update.d/docker-openjdk; 	/etc/ca-certificates/update.d/docker-openjdk; 		find "$JAVA_HOME/lib" -name '*.so' -exec dirname '{}' ';' | sort -u > /etc/ld.so.conf.d/docker-openjdk.conf; 	ldconfig; 		javac --version; 	java --version
-# Wed, 14 Aug 2019 11:24:45 GMT
+# Sat, 14 Sep 2019 00:23:18 GMT
+RUN set -eux; 		dpkgArch="$(dpkg --print-architecture)"; 	case "$dpkgArch" in 		amd64) upstreamArch='x64' ;; 		arm64) upstreamArch='aarch64' ;; 		*) echo >&2 "error: unsupported architecture: $dpkgArch" ;; 	esac; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		dirmngr 		gnupg 		wget 	; 	rm -rf /var/lib/apt/lists/*; 		wget -O openjdk.tgz.asc "${JAVA_BASE_URL}${upstreamArch}_linux_${JAVA_URL_VERSION}.tar.gz.sign"; 	wget -O openjdk.tgz "${JAVA_BASE_URL}${upstreamArch}_linux_${JAVA_URL_VERSION}.tar.gz" --progress=dot:giga; 		export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver ha.pool.sks-keyservers.net --keyserver-options no-self-sigs-only --recv-keys CA5F11C6CE22644D42C6AC4492EF8D39DC13168F; 	gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys EAC843EBD3EFDB98CC772FADA5CD6035332FA671; 	gpg --batch --list-sigs --keyid-format 0xLONG CA5F11C6CE22644D42C6AC4492EF8D39DC13168F 		| tee /dev/stderr 		| grep '0xA5CD6035332FA671' 		| grep 'Andrew Haley'; 	gpg --batch --verify openjdk.tgz.asc openjdk.tgz; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME"; 		mkdir -p "$JAVA_HOME"; 	tar --extract 		--file openjdk.tgz 		--directory "$JAVA_HOME" 		--strip-components 1 		--no-same-owner 	; 	rm openjdk.tgz*; 			apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark > /dev/null; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 		{ 		echo '#!/usr/bin/env bash'; 		echo 'set -Eeuo pipefail'; 		echo 'if ! [ -d "$JAVA_HOME" ]; then echo >&2 "error: missing JAVA_HOME environment variable"; exit 1; fi'; 		echo 'cacertsFile=; for f in "$JAVA_HOME/lib/security/cacerts" "$JAVA_HOME/jre/lib/security/cacerts"; do if [ -e "$f" ]; then cacertsFile="$f"; break; fi; done'; 		echo 'if [ -z "$cacertsFile" ] || ! [ -f "$cacertsFile" ]; then echo >&2 "error: failed to find cacerts file in $JAVA_HOME"; exit 1; fi'; 		echo 'trust extract --overwrite --format=java-cacerts --filter=ca-anchors --purpose=server-auth "$cacertsFile"'; 	} > /etc/ca-certificates/update.d/docker-openjdk; 	chmod +x /etc/ca-certificates/update.d/docker-openjdk; 	/etc/ca-certificates/update.d/docker-openjdk; 		find "$JAVA_HOME/lib" -name '*.so' -exec dirname '{}' ';' | sort -u > /etc/ld.so.conf.d/docker-openjdk.conf; 	ldconfig; 		javac --version; 	java --version
+# Sat, 14 Sep 2019 00:23:18 GMT
 CMD ["jshell"]
-# Wed, 11 Sep 2019 11:22:11 GMT
+# Sat, 14 Sep 2019 02:32:28 GMT
 ARG MAVEN_VERSION=3.6.2
-# Wed, 11 Sep 2019 11:22:11 GMT
+# Sat, 14 Sep 2019 02:32:28 GMT
 ARG USER_HOME_DIR=/root
-# Wed, 11 Sep 2019 11:22:11 GMT
+# Sat, 14 Sep 2019 02:32:28 GMT
 ARG SHA=d941423d115cd021514bfd06c453658b1b3e39e6240969caf4315ab7119a77299713f14b620fb2571a264f8dff2473d8af3cb47b05acf0036fc2553199a5c1ee
-# Wed, 11 Sep 2019 11:22:11 GMT
+# Sat, 14 Sep 2019 02:32:28 GMT
 ARG BASE_URL=https://apache.osuosl.org/maven/maven-3/3.6.2/binaries
-# Wed, 11 Sep 2019 11:22:21 GMT
+# Sat, 14 Sep 2019 02:32:34 GMT
 # ARGS: BASE_URL=https://apache.osuosl.org/maven/maven-3/3.6.2/binaries MAVEN_VERSION=3.6.2 SHA=d941423d115cd021514bfd06c453658b1b3e39e6240969caf4315ab7119a77299713f14b620fb2571a264f8dff2473d8af3cb47b05acf0036fc2553199a5c1ee USER_HOME_DIR=/root
 RUN apt-get update &&     apt-get install -y       curl procps   && rm -rf /var/lib/apt/lists/*
-# Wed, 11 Sep 2019 11:22:23 GMT
+# Sat, 14 Sep 2019 02:32:36 GMT
 # ARGS: BASE_URL=https://apache.osuosl.org/maven/maven-3/3.6.2/binaries MAVEN_VERSION=3.6.2 SHA=d941423d115cd021514bfd06c453658b1b3e39e6240969caf4315ab7119a77299713f14b620fb2571a264f8dff2473d8af3cb47b05acf0036fc2553199a5c1ee USER_HOME_DIR=/root
 RUN mkdir -p /usr/share/maven /usr/share/maven/ref   && curl -fsSL -o /tmp/apache-maven.tar.gz ${BASE_URL}/apache-maven-${MAVEN_VERSION}-bin.tar.gz   && echo "${SHA}  /tmp/apache-maven.tar.gz" | sha512sum -c -   && tar -xzf /tmp/apache-maven.tar.gz -C /usr/share/maven --strip-components=1   && rm -f /tmp/apache-maven.tar.gz   && ln -s /usr/share/maven/bin/mvn /usr/bin/mvn
-# Wed, 11 Sep 2019 11:22:23 GMT
+# Sat, 14 Sep 2019 02:32:36 GMT
 ENV MAVEN_HOME=/usr/share/maven
-# Wed, 11 Sep 2019 11:22:23 GMT
+# Sat, 14 Sep 2019 02:32:36 GMT
 ENV MAVEN_CONFIG=/root/.m2
-# Wed, 11 Sep 2019 11:22:23 GMT
+# Sat, 14 Sep 2019 02:32:36 GMT
 COPY file:1b3da5c58894f705e7387946301c0c52edb6271761ea3cd80b86a848847a64cd in /usr/local/bin/mvn-entrypoint.sh 
-# Wed, 11 Sep 2019 11:22:24 GMT
+# Sat, 14 Sep 2019 02:32:37 GMT
 COPY file:2bbb488dd73c55d658b91943cfdf9c26975a320ceafc45dda94c95b03e518ad3 in /usr/share/maven/ref/ 
-# Wed, 11 Sep 2019 11:22:24 GMT
+# Sat, 14 Sep 2019 02:32:37 GMT
 ENTRYPOINT ["/usr/local/bin/mvn-entrypoint.sh"]
-# Wed, 11 Sep 2019 11:22:24 GMT
+# Sat, 14 Sep 2019 02:32:37 GMT
 CMD ["mvn"]
 ```
 
 -	Layers:
-	-	`sha256:1ab2bdfe97783562315f98f94c0769b1897a05f7b0395ca1520ebee08666703b`  
-		Last Modified: Wed, 14 Aug 2019 00:27:15 GMT  
-		Size: 27.1 MB (27093851 bytes)  
+	-	`sha256:b8f262c62ec67f02536f49654de586c022043652bbb6bbf76a8dab1542627a8d`  
+		Last Modified: Wed, 11 Sep 2019 23:31:20 GMT  
+		Size: 27.1 MB (27093738 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:7aaf9a088d61d78b50cd2a58984cc89ed9c0c5c66124fd74b4baa0cba32524c1`  
-		Last Modified: Wed, 14 Aug 2019 11:28:15 GMT  
-		Size: 3.2 MB (3247273 bytes)  
+	-	`sha256:377e264464ddccb9550cff64ba470dfdb784acdb2ff265ae333b9215fc873b08`  
+		Last Modified: Sat, 14 Sep 2019 00:26:29 GMT  
+		Size: 3.2 MB (3247380 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:b9283b89acb2f6ac352a31afc80df1a24513d2e98b40d282309fd8957e0e2b77`  
-		Last Modified: Wed, 14 Aug 2019 11:28:15 GMT  
-		Size: 210.0 B  
+	-	`sha256:bde67c1ff89fda30053d5c20d0e07ba1de298df013c938e0966f5944fe7bdd08`  
+		Last Modified: Sat, 14 Sep 2019 00:26:28 GMT  
+		Size: 211.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:16677eca0612a87eb64aac89ef86004d3ff0826a576dc1cbad795a322f6a2aeb`  
-		Last Modified: Wed, 14 Aug 2019 11:28:36 GMT  
-		Size: 196.0 MB (195975392 bytes)  
+	-	`sha256:f430704e961738b7d7d861f18a7f3b49bbc44482f5266ee6a5f61bfed09742ee`  
+		Last Modified: Sat, 14 Sep 2019 00:27:14 GMT  
+		Size: 196.0 MB (195975702 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c31ca6fde6f25e3fb72220eb5c1a015f8d6de20eb0e8a26ed168db6371253bc1`  
-		Last Modified: Wed, 11 Sep 2019 11:24:51 GMT  
-		Size: 2.9 MB (2885297 bytes)  
+	-	`sha256:339a324ebfacb28408280b8e4d37cb5723bb56acb49ec13cd7853aa9528ecb19`  
+		Last Modified: Sat, 14 Sep 2019 02:33:54 GMT  
+		Size: 2.6 MB (2614284 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c28cc5998336ecae2c734aae1aa527f54e38d245d64691fccb28b0a16cfd9150`  
-		Last Modified: Wed, 11 Sep 2019 11:24:51 GMT  
-		Size: 9.2 MB (9167583 bytes)  
+	-	`sha256:24cbe0a91ab4ca314f00f346a84dc114ef8d4b7814ba3c7688d470f816ed9c1d`  
+		Last Modified: Sat, 14 Sep 2019 02:33:55 GMT  
+		Size: 9.2 MB (9167593 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:2e624fe923786ef0403fc9d470aed5c62e4cb642c8663e1738bd39a690776caf`  
-		Last Modified: Wed, 11 Sep 2019 11:24:50 GMT  
-		Size: 857.0 B  
+	-	`sha256:1fa638a3741f3086d09cf5c9e2438c5204a615e788b31afa90189d207820b159`  
+		Last Modified: Sat, 14 Sep 2019 02:33:54 GMT  
+		Size: 855.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:e04458ba94df0e446bcf5c8b451be2595ca3d898c61119e8ab696f3b752db0eb`  
-		Last Modified: Wed, 11 Sep 2019 11:24:50 GMT  
+	-	`sha256:e19e682e4393dc569cfe7754840587a4da215b84c8ce0bed5e94e6cb9e4e6357`  
+		Last Modified: Sat, 14 Sep 2019 02:33:54 GMT  
 		Size: 358.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
