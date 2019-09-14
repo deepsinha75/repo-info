@@ -2,9 +2,9 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:18a37849ef4cdab8015758f421773cd094dba3e06adef7f7032bc6ffd4b27f89`
-- Created: `2019-09-11T09:10:27.822474103Z`
-- Virtual Size: ~ 737.35 Mb  
+- Image ID: `sha256:3f335882b2733da2ce2dc6860ded1801a0dbd46de795c2b849ee889b63becac1`
+- Created: `2019-09-12T13:23:14.590471736Z`
+- Virtual Size: ~ 736.99 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Command: `["pypy"]`
@@ -647,20 +647,13 @@ Licenses: (parsed from: `/usr/share/doc/curl/copyright`, `/usr/share/doc/libcurl
 - `ISC`
 - `curl`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris curl=7.38.0-4+deb8u15
-'http://security.debian.org/debian-security/pool/updates/main/c/curl/curl_7.38.0-4+deb8u15.dsc' curl_7.38.0-4+deb8u15.dsc 2824 SHA256:974ceb515fefc87cb735252d84a406c0b330721ee1f895d935c69828cd1c958f
-'http://security.debian.org/debian-security/pool/updates/main/c/curl/curl_7.38.0.orig.tar.gz' curl_7.38.0.orig.tar.gz 4094034 SHA256:5661028aa6532882fa228cd23c99ddbb8b87643dbb1a7ea55c068d34a943dff1
-'http://security.debian.org/debian-security/pool/updates/main/c/curl/curl_7.38.0-4+deb8u15.debian.tar.xz' curl_7.38.0-4+deb8u15.debian.tar.xz 57928 SHA256:8fa2d674b499046c23d418c8d0c8e5531f5943a626cedd663c446270399bb8fe
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/curl/7.38.0-4+deb8u15/
 
-- https://sources.debian.net/src/curl/7.38.0-4+deb8u15/ (for browsing the source)
-- https://sources.debian.net/src/curl/7.38.0-4+deb8u15/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/curl/7.38.0-4+deb8u15/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `cyrus-sasl2=2.1.26.dfsg1-13+deb8u1`
 
@@ -3979,11 +3972,11 @@ Other potentially useful URLs:
 - https://sources.debian.net/src/openexr/1.6.1-8/debian/copyright/ (for direct copyright/license information)
 - http://snapshot.debian.org/package/openexr/1.6.1-8/ (for access to the source package after it no longer exists in the archive)
 
-### `dpkg` source package: `openldap=2.4.40+dfsg-1+deb8u4`
+### `dpkg` source package: `openldap=2.4.40+dfsg-1+deb8u5`
 
 Binary Packages:
 
-- `libldap-2.4-2:amd64=2.4.40+dfsg-1+deb8u4`
+- `libldap-2.4-2:amd64=2.4.40+dfsg-1+deb8u5`
 
 **WARNING:** unable to detect licenses! (package likely not compliant with DEP-5)  
 If source is available (seen below), check the contents of `debian/copyright` within it.
@@ -3992,17 +3985,17 @@ If source is available (seen below), check the contents of `debian/copyright` wi
 Source:
 
 ```console
-$ apt-get source -qq --print-uris openldap=2.4.40+dfsg-1+deb8u4
-'http://deb.debian.org/debian/pool/main/o/openldap/openldap_2.4.40+dfsg-1+deb8u4.dsc' openldap_2.4.40+dfsg-1+deb8u4.dsc 2856 SHA256:adb061ec11d3ec69644919ff7a35ae451c30a0891c269fe00b5043649083bcba
-'http://deb.debian.org/debian/pool/main/o/openldap/openldap_2.4.40+dfsg.orig.tar.gz' openldap_2.4.40+dfsg.orig.tar.gz 4797667 SHA256:86c0326dc3dc5f1a9b3c25f7106b96f3eafcdf5da090b1fc586dec57d56e0e7f
-'http://deb.debian.org/debian/pool/main/o/openldap/openldap_2.4.40+dfsg-1+deb8u4.diff.gz' openldap_2.4.40+dfsg-1+deb8u4.diff.gz 181350 SHA256:dffbdc8a502302724d3b2faf1c08a0383daf41cc690ffac47516813048b7d372
+$ apt-get source -qq --print-uris openldap=2.4.40+dfsg-1+deb8u5
+'http://security.debian.org/debian-security/pool/updates/main/o/openldap/openldap_2.4.40+dfsg-1+deb8u5.dsc' openldap_2.4.40+dfsg-1+deb8u5.dsc 2986 SHA256:9a20ba826557d4adacd51b31000ac006514ffa072aa8a75f9a6da5496606260f
+'http://security.debian.org/debian-security/pool/updates/main/o/openldap/openldap_2.4.40+dfsg.orig.tar.gz' openldap_2.4.40+dfsg.orig.tar.gz 4797667 SHA256:86c0326dc3dc5f1a9b3c25f7106b96f3eafcdf5da090b1fc586dec57d56e0e7f
+'http://security.debian.org/debian-security/pool/updates/main/o/openldap/openldap_2.4.40+dfsg-1+deb8u5.diff.gz' openldap_2.4.40+dfsg-1+deb8u5.diff.gz 184219 SHA256:a9836c1dbd548a6525964c3a128267834b004d1c467e27a2b63dd79dc4625072
 ```
 
 Other potentially useful URLs:
 
-- https://sources.debian.net/src/openldap/2.4.40+dfsg-1+deb8u4/ (for browsing the source)
-- https://sources.debian.net/src/openldap/2.4.40+dfsg-1+deb8u4/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/openldap/2.4.40+dfsg-1+deb8u4/ (for access to the source package after it no longer exists in the archive)
+- https://sources.debian.net/src/openldap/2.4.40+dfsg-1+deb8u5/ (for browsing the source)
+- https://sources.debian.net/src/openldap/2.4.40+dfsg-1+deb8u5/debian/copyright/ (for direct copyright/license information)
+- http://snapshot.debian.org/package/openldap/2.4.40+dfsg-1+deb8u5/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `openssh=1:6.7p1-5+deb8u8`
 
@@ -4372,14 +4365,14 @@ Other potentially useful URLs:
 - https://sources.debian.net/src/python-defaults/2.7.9-1/debian/copyright/ (for direct copyright/license information)
 - http://snapshot.debian.org/package/python-defaults/2.7.9-1/ (for access to the source package after it no longer exists in the archive)
 
-### `dpkg` source package: `python2.7=2.7.9-2+deb8u3`
+### `dpkg` source package: `python2.7=2.7.9-2+deb8u4`
 
 Binary Packages:
 
-- `libpython2.7-minimal:amd64=2.7.9-2+deb8u3`
-- `libpython2.7-stdlib:amd64=2.7.9-2+deb8u3`
-- `python2.7=2.7.9-2+deb8u3`
-- `python2.7-minimal=2.7.9-2+deb8u3`
+- `libpython2.7-minimal:amd64=2.7.9-2+deb8u4`
+- `libpython2.7-stdlib:amd64=2.7.9-2+deb8u4`
+- `python2.7=2.7.9-2+deb8u4`
+- `python2.7-minimal=2.7.9-2+deb8u4`
 
 Licenses: (parsed from: `/usr/share/doc/libpython2.7-minimal/copyright`, `/usr/share/doc/libpython2.7-stdlib/copyright`, `/usr/share/doc/python2.7/copyright`, `/usr/share/doc/python2.7-minimal/copyright`)
 
@@ -4392,13 +4385,20 @@ Licenses: (parsed from: `/usr/share/doc/libpython2.7-minimal/copyright`, `/usr/s
 - `This software is provided as-is, without express`
 - `implied`
 
-**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
-This is *usually* due to a new package version being released and the old version being removed.
+Source:
 
-The source package *may* still be available for download from:
+```console
+$ apt-get source -qq --print-uris python2.7=2.7.9-2+deb8u4
+'http://security.debian.org/debian-security/pool/updates/main/p/python2.7/python2.7_2.7.9-2+deb8u4.dsc' python2.7_2.7.9-2+deb8u4.dsc 3444 SHA256:da13c38d3d92c05c824953980c358f3b3c8733eefa1b20c592e33ed9ba373afd
+'http://security.debian.org/debian-security/pool/updates/main/p/python2.7/python2.7_2.7.9.orig.tar.gz' python2.7_2.7.9.orig.tar.gz 15148821 SHA256:46454dc4cb20e1f9b85aef63985890fa7e247f5941991761afd97d68e69b1901
+'http://security.debian.org/debian-security/pool/updates/main/p/python2.7/python2.7_2.7.9-2+deb8u4.diff.gz' python2.7_2.7.9-2+deb8u4.diff.gz 282256 SHA256:ad00dff397f0692ec44c57f0c8d15c080160b67f1c1938169b5362675841b47b
+```
 
-- http://snapshot.debian.org/package/python2.7/2.7.9-2+deb8u3/
+Other potentially useful URLs:
 
+- https://sources.debian.net/src/python2.7/2.7.9-2+deb8u4/ (for browsing the source)
+- https://sources.debian.net/src/python2.7/2.7.9-2+deb8u4/debian/copyright/ (for direct copyright/license information)
+- http://snapshot.debian.org/package/python2.7/2.7.9-2+deb8u4/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `readline6=6.3-8`
 
@@ -4685,12 +4685,12 @@ Other potentially useful URLs:
 - https://sources.debian.net/src/startpar/0.59-3/debian/copyright/ (for direct copyright/license information)
 - http://snapshot.debian.org/package/startpar/0.59-3/ (for access to the source package after it no longer exists in the archive)
 
-### `dpkg` source package: `subversion=1.8.10-6+deb8u6`
+### `dpkg` source package: `subversion=1.8.10-6+deb8u7`
 
 Binary Packages:
 
-- `libsvn1:amd64=1.8.10-6+deb8u6`
-- `subversion=1.8.10-6+deb8u6`
+- `libsvn1:amd64=1.8.10-6+deb8u7`
+- `subversion=1.8.10-6+deb8u7`
 
 Licenses: (parsed from: `/usr/share/doc/libsvn1/copyright`, `/usr/share/doc/subversion/copyright`)
 
@@ -4701,17 +4701,17 @@ Licenses: (parsed from: `/usr/share/doc/libsvn1/copyright`, `/usr/share/doc/subv
 Source:
 
 ```console
-$ apt-get source -qq --print-uris subversion=1.8.10-6+deb8u6
-'http://deb.debian.org/debian/pool/main/s/subversion/subversion_1.8.10-6+deb8u6.dsc' subversion_1.8.10-6+deb8u6.dsc 3165 SHA256:d23b6c7bd7cb842ecf58dcd5a7d653642c8a6187cb313978b2d550a48faceeea
-'http://deb.debian.org/debian/pool/main/s/subversion/subversion_1.8.10.orig.tar.gz' subversion_1.8.10.orig.tar.gz 9331079 SHA256:d0efa2533225c0bfba2ac27bcc004255997cbbde58f4f970dfb9dc3cc825005f
-'http://deb.debian.org/debian/pool/main/s/subversion/subversion_1.8.10-6+deb8u6.diff.gz' subversion_1.8.10-6+deb8u6.diff.gz 303324 SHA256:05988a1c04ff068b0eeec31f7a0a1f45e7c0d85233c6f5ebe494257bb4864005
+$ apt-get source -qq --print-uris subversion=1.8.10-6+deb8u7
+'http://security.debian.org/debian-security/pool/updates/main/s/subversion/subversion_1.8.10-6+deb8u7.dsc' subversion_1.8.10-6+deb8u7.dsc 3035 SHA256:da5e655efd0221b37e594dda3844c88b23260fd98a965016e31527077148aaf4
+'http://security.debian.org/debian-security/pool/updates/main/s/subversion/subversion_1.8.10.orig.tar.gz' subversion_1.8.10.orig.tar.gz 9331079 SHA256:d0efa2533225c0bfba2ac27bcc004255997cbbde58f4f970dfb9dc3cc825005f
+'http://security.debian.org/debian-security/pool/updates/main/s/subversion/subversion_1.8.10-6+deb8u7.diff.gz' subversion_1.8.10-6+deb8u7.diff.gz 306950 SHA256:4806824ffa7f70c7f8327f86dbfbefa0ba19b86fa967f1b0f9ce4dbb1e8d10b2
 ```
 
 Other potentially useful URLs:
 
-- https://sources.debian.net/src/subversion/1.8.10-6+deb8u6/ (for browsing the source)
-- https://sources.debian.net/src/subversion/1.8.10-6+deb8u6/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/subversion/1.8.10-6+deb8u6/ (for access to the source package after it no longer exists in the archive)
+- https://sources.debian.net/src/subversion/1.8.10-6+deb8u7/ (for browsing the source)
+- https://sources.debian.net/src/subversion/1.8.10-6+deb8u7/debian/copyright/ (for direct copyright/license information)
+- http://snapshot.debian.org/package/subversion/1.8.10-6+deb8u7/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `systemd=215-17+deb8u13`
 
