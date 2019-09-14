@@ -1,18 +1,18 @@
-# `eclipse-mosquitto:1.6.4`
+# `eclipse-mosquitto:1.6.5`
 
 ## Docker Metadata
 
-- Image ID: `sha256:74c32a5d743a15c20c84f5c8ea2d8ee170c78af2974b348b1bd2c0806c26f821`
-- Created: `2019-08-02T03:44:07.074625308Z`
-- Virtual Size: ~ 5.07 Mb  
+- Image ID: `sha256:c0df24a48364e45f4f42e1ca753afa202d1370f05b725d59108b04b50d9a213d`
+- Created: `2019-09-13T06:19:32.562308732Z`
+- Virtual Size: ~ 5.75 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["/docker-entrypoint.sh"]`
 - Command: `["/usr/sbin/mosquitto","-c","/mosquitto/config/mosquitto.conf"]`
 - Environment:
   - `PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
-  - `VERSION=1.6.4`
-  - `DOWNLOAD_SHA256=a3d5822c249f6a6e13311b1b09eff6807ea01608a5a77934e1769842e9d146ef`
+  - `VERSION=1.6.5`
+  - `DOWNLOAD_SHA256=bc71b38b5a26fc7cc772853e5607c657868db9f9a6d2b15e2b677649a0f85d20`
   - `GPG_KEYS=A0D6EEA1DCAE49A635A3B2F0779B22DFB3E717B7`
   - `LWS_VERSION=2.4.2`
 - Labels:
@@ -160,16 +160,16 @@ custom
 ### `apk` package: `musl`
 
 ```console
-musl-1.1.19-r10 description:
+musl-1.1.19-r11 description:
 the musl c library (libc) implementation
 
-musl-1.1.19-r10 webpage:
+musl-1.1.19-r11 webpage:
 http://www.musl-libc.org/
 
-musl-1.1.19-r10 installed size:
+musl-1.1.19-r11 installed size:
 602112
 
-musl-1.1.19-r10 license:
+musl-1.1.19-r11 license:
 MIT
 
 ```
@@ -177,16 +177,16 @@ MIT
 ### `apk` package: `musl-utils`
 
 ```console
-musl-utils-1.1.19-r10 description:
+musl-utils-1.1.19-r11 description:
 the musl c library (libc) implementation
 
-musl-utils-1.1.19-r10 webpage:
+musl-utils-1.1.19-r11 webpage:
 http://www.musl-libc.org/
 
-musl-utils-1.1.19-r10 installed size:
+musl-utils-1.1.19-r11 installed size:
 122880
 
-musl-utils-1.1.19-r10 license:
+musl-utils-1.1.19-r11 license:
 MIT BSD GPL2+
 
 ```
