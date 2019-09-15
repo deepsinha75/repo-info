@@ -493,11 +493,73 @@ LABEL org.opencontainers.image.vendor=Containous org.opencontainers.image.url=ht
 ## `traefik:1.7.16-windowsservercore-1809`
 
 ```console
-$ docker pull traefik@sha256:a8409dff6597f2ef5f7ecd3c672671bb2af9a390073efd74f95c54aa41cba22a
+$ docker pull traefik@sha256:5285370fec3d3cf6f5ebb30b51ef2f56b2c7055f71cf0b0f73c0da10264c4ec9
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
 -	Platforms:
+	-	windows version 10.0.17763.737; amd64
+
+### `traefik:1.7.16-windowsservercore-1809` - windows version 10.0.17763.737; amd64
+
+```console
+$ docker pull traefik@sha256:8ee8fb645eeea0b721682ed006dbc245ccb6c768f4781547febde1cfb510491f
+```
+
+-	Docker Version: 18.03.1-ee-4
+-	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
+-	Total Size: **2.2 GB (2186190592 bytes)**  
+	(compressed transfer size, not on-disk size)
+-	Image ID: `sha256:7da3bff2851ba5843333d9772b3ea44245bde99252ddcceaee67eecfcc3c0fd4`
+-	Entrypoint: `["\/traefik"]`
+-	`SHELL`: `["powershell","-Command","$ErrorActionPreference = 'Stop'; $ProgressPreference = 'SilentlyContinue';"]`
+
+```dockerfile
+# Sat, 15 Sep 2018 09:10:26 GMT
+RUN Apply image 1809-RTM-amd64
+# Mon, 09 Sep 2019 20:03:27 GMT
+RUN Install update 1809-amd64
+# Wed, 11 Sep 2019 13:01:11 GMT
+SHELL [powershell -Command $ErrorActionPreference = 'Stop'; $ProgressPreference = 'SilentlyContinue';]
+# Sat, 14 Sep 2019 23:20:27 GMT
+RUN Invoke-WebRequest     -Uri "https://github.com/containous/traefik/releases/download/v1.7.16/traefik_windows-amd64.exe"     -OutFile "/traefik.exe"
+# Sat, 14 Sep 2019 23:20:32 GMT
+EXPOSE 80
+# Sat, 14 Sep 2019 23:20:33 GMT
+ENTRYPOINT ["/traefik"]
+# Sat, 14 Sep 2019 23:20:35 GMT
+LABEL org.opencontainers.image.vendor=Containous org.opencontainers.image.url=https://traefik.io org.opencontainers.image.title=Traefik org.opencontainers.image.description=A modern reverse-proxy org.opencontainers.image.version=v1.7.16 org.opencontainers.image.documentation=https://docs.traefik.io
+```
+
+-	Layers:
+	-	`sha256:65014b3c312172f10bd6701a063f9b5aaf9a916c2d2cb843d406a6f77ded3f8d`  
+		Last Modified: Tue, 13 Nov 2018 18:50:17 GMT  
+		Size: 1.5 GB (1534685324 bytes)  
+		MIME: application/vnd.docker.image.rootfs.foreign.diff.tar.gzip
+	-	`sha256:2945147eda092f9cfd1a29432bf0eb9083becd4042b44ccc556762bcbc0c279b`  
+		Last Modified: Tue, 10 Sep 2019 20:36:11 GMT  
+		Size: 623.6 MB (623567057 bytes)  
+		MIME: application/vnd.docker.image.rootfs.foreign.diff.tar.gzip
+	-	`sha256:87b13d04a4a020d0b9ab99c55bf56bdecd94c0e659c2c54e589fdd9103487cf1`  
+		Last Modified: Wed, 11 Sep 2019 13:53:44 GMT  
+		Size: 1.2 KB (1190 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:6c27218a6cb69c0218d064f6cb8a53c157152e44a40bea26573b44ebde6238ee`  
+		Last Modified: Sat, 14 Sep 2019 23:21:55 GMT  
+		Size: 27.9 MB (27933413 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:36d7ba22e55121dd900ce6a04ee06a19864705f494207d79551174f6c0894991`  
+		Last Modified: Sat, 14 Sep 2019 23:21:48 GMT  
+		Size: 1.2 KB (1188 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:b2199c5784cc2571fb3c8d76b4c458189f3c50de4c213d1095472def2639043a`  
+		Last Modified: Sat, 14 Sep 2019 23:21:48 GMT  
+		Size: 1.2 KB (1216 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:543efa58f83b2e798f98e6ccfb95cefcd17ecb387c050db9098e89940cff86ef`  
+		Last Modified: Sat, 14 Sep 2019 23:21:48 GMT  
+		Size: 1.2 KB (1204 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `traefik:1.7-alpine`
 
@@ -673,11 +735,73 @@ LABEL org.opencontainers.image.vendor=Containous org.opencontainers.image.url=ht
 ## `traefik:1.7-windowsservercore-1809`
 
 ```console
-$ docker pull traefik@sha256:a8409dff6597f2ef5f7ecd3c672671bb2af9a390073efd74f95c54aa41cba22a
+$ docker pull traefik@sha256:5285370fec3d3cf6f5ebb30b51ef2f56b2c7055f71cf0b0f73c0da10264c4ec9
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
 -	Platforms:
+	-	windows version 10.0.17763.737; amd64
+
+### `traefik:1.7-windowsservercore-1809` - windows version 10.0.17763.737; amd64
+
+```console
+$ docker pull traefik@sha256:8ee8fb645eeea0b721682ed006dbc245ccb6c768f4781547febde1cfb510491f
+```
+
+-	Docker Version: 18.03.1-ee-4
+-	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
+-	Total Size: **2.2 GB (2186190592 bytes)**  
+	(compressed transfer size, not on-disk size)
+-	Image ID: `sha256:7da3bff2851ba5843333d9772b3ea44245bde99252ddcceaee67eecfcc3c0fd4`
+-	Entrypoint: `["\/traefik"]`
+-	`SHELL`: `["powershell","-Command","$ErrorActionPreference = 'Stop'; $ProgressPreference = 'SilentlyContinue';"]`
+
+```dockerfile
+# Sat, 15 Sep 2018 09:10:26 GMT
+RUN Apply image 1809-RTM-amd64
+# Mon, 09 Sep 2019 20:03:27 GMT
+RUN Install update 1809-amd64
+# Wed, 11 Sep 2019 13:01:11 GMT
+SHELL [powershell -Command $ErrorActionPreference = 'Stop'; $ProgressPreference = 'SilentlyContinue';]
+# Sat, 14 Sep 2019 23:20:27 GMT
+RUN Invoke-WebRequest     -Uri "https://github.com/containous/traefik/releases/download/v1.7.16/traefik_windows-amd64.exe"     -OutFile "/traefik.exe"
+# Sat, 14 Sep 2019 23:20:32 GMT
+EXPOSE 80
+# Sat, 14 Sep 2019 23:20:33 GMT
+ENTRYPOINT ["/traefik"]
+# Sat, 14 Sep 2019 23:20:35 GMT
+LABEL org.opencontainers.image.vendor=Containous org.opencontainers.image.url=https://traefik.io org.opencontainers.image.title=Traefik org.opencontainers.image.description=A modern reverse-proxy org.opencontainers.image.version=v1.7.16 org.opencontainers.image.documentation=https://docs.traefik.io
+```
+
+-	Layers:
+	-	`sha256:65014b3c312172f10bd6701a063f9b5aaf9a916c2d2cb843d406a6f77ded3f8d`  
+		Last Modified: Tue, 13 Nov 2018 18:50:17 GMT  
+		Size: 1.5 GB (1534685324 bytes)  
+		MIME: application/vnd.docker.image.rootfs.foreign.diff.tar.gzip
+	-	`sha256:2945147eda092f9cfd1a29432bf0eb9083becd4042b44ccc556762bcbc0c279b`  
+		Last Modified: Tue, 10 Sep 2019 20:36:11 GMT  
+		Size: 623.6 MB (623567057 bytes)  
+		MIME: application/vnd.docker.image.rootfs.foreign.diff.tar.gzip
+	-	`sha256:87b13d04a4a020d0b9ab99c55bf56bdecd94c0e659c2c54e589fdd9103487cf1`  
+		Last Modified: Wed, 11 Sep 2019 13:53:44 GMT  
+		Size: 1.2 KB (1190 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:6c27218a6cb69c0218d064f6cb8a53c157152e44a40bea26573b44ebde6238ee`  
+		Last Modified: Sat, 14 Sep 2019 23:21:55 GMT  
+		Size: 27.9 MB (27933413 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:36d7ba22e55121dd900ce6a04ee06a19864705f494207d79551174f6c0894991`  
+		Last Modified: Sat, 14 Sep 2019 23:21:48 GMT  
+		Size: 1.2 KB (1188 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:b2199c5784cc2571fb3c8d76b4c458189f3c50de4c213d1095472def2639043a`  
+		Last Modified: Sat, 14 Sep 2019 23:21:48 GMT  
+		Size: 1.2 KB (1216 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:543efa58f83b2e798f98e6ccfb95cefcd17ecb387c050db9098e89940cff86ef`  
+		Last Modified: Sat, 14 Sep 2019 23:21:48 GMT  
+		Size: 1.2 KB (1204 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `traefik:2.0`
 
@@ -1024,20 +1148,144 @@ LABEL org.opencontainers.image.vendor=Containous org.opencontainers.image.url=ht
 ## `traefik:2.0.0-rc4-windowsservercore-1809`
 
 ```console
-$ docker pull traefik@sha256:a8409dff6597f2ef5f7ecd3c672671bb2af9a390073efd74f95c54aa41cba22a
+$ docker pull traefik@sha256:a8466093a2ca272bb00c9edc588dda75d29e40f2aa0fdc0347856a3a8b30a5bc
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
 -	Platforms:
+	-	windows version 10.0.17763.737; amd64
+
+### `traefik:2.0.0-rc4-windowsservercore-1809` - windows version 10.0.17763.737; amd64
+
+```console
+$ docker pull traefik@sha256:266cce1c9b02808d4bd1d60e8bd6c6e75f518056623792765ed3644e78f11b23
+```
+
+-	Docker Version: 18.03.1-ee-4
+-	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
+-	Total Size: **2.2 GB (2181832143 bytes)**  
+	(compressed transfer size, not on-disk size)
+-	Image ID: `sha256:b5fd3d3f232b6166765d822cfd498fc91629654570ce6dbb7306d6948b7d948d`
+-	Entrypoint: `["\/traefik"]`
+-	`SHELL`: `["powershell","-Command","$ErrorActionPreference = 'Stop'; $ProgressPreference = 'SilentlyContinue';"]`
+
+```dockerfile
+# Sat, 15 Sep 2018 09:10:26 GMT
+RUN Apply image 1809-RTM-amd64
+# Mon, 09 Sep 2019 20:03:27 GMT
+RUN Install update 1809-amd64
+# Wed, 11 Sep 2019 13:01:11 GMT
+SHELL [powershell -Command $ErrorActionPreference = 'Stop'; $ProgressPreference = 'SilentlyContinue';]
+# Sat, 14 Sep 2019 23:19:20 GMT
+RUN Invoke-WebRequest         -Uri "https://github.com/containous/traefik/releases/download/v2.0.0-rc4/traefik_v2.0.0-rc4_windows_amd64.zip"         -OutFile "/traefik.zip";     Expand-Archive -Path "/traefik.zip" -DestinationPath "/" -Force;     Remove-Item "/traefik.zip" -Force
+# Sat, 14 Sep 2019 23:19:22 GMT
+EXPOSE 80
+# Sat, 14 Sep 2019 23:19:24 GMT
+ENTRYPOINT ["/traefik"]
+# Sat, 14 Sep 2019 23:19:26 GMT
+LABEL org.opencontainers.image.vendor=Containous org.opencontainers.image.url=https://traefik.io org.opencontainers.image.title=Traefik org.opencontainers.image.description=A modern reverse-proxy org.opencontainers.image.version=v2.0.0-rc4 org.opencontainers.image.documentation=https://docs.traefik.io
+```
+
+-	Layers:
+	-	`sha256:65014b3c312172f10bd6701a063f9b5aaf9a916c2d2cb843d406a6f77ded3f8d`  
+		Last Modified: Tue, 13 Nov 2018 18:50:17 GMT  
+		Size: 1.5 GB (1534685324 bytes)  
+		MIME: application/vnd.docker.image.rootfs.foreign.diff.tar.gzip
+	-	`sha256:2945147eda092f9cfd1a29432bf0eb9083becd4042b44ccc556762bcbc0c279b`  
+		Last Modified: Tue, 10 Sep 2019 20:36:11 GMT  
+		Size: 623.6 MB (623567057 bytes)  
+		MIME: application/vnd.docker.image.rootfs.foreign.diff.tar.gzip
+	-	`sha256:87b13d04a4a020d0b9ab99c55bf56bdecd94c0e659c2c54e589fdd9103487cf1`  
+		Last Modified: Wed, 11 Sep 2019 13:53:44 GMT  
+		Size: 1.2 KB (1190 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:519ff33f97b84baf2e1d583d70ed84c6e3bb8d692730e794c95ed8e30a7745ef`  
+		Last Modified: Sat, 14 Sep 2019 23:21:12 GMT  
+		Size: 23.6 MB (23574967 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:01fb566155cf84f9aae714c34c2240d6827f77fd8d6720e147f221254a1b5a95`  
+		Last Modified: Sat, 14 Sep 2019 23:21:06 GMT  
+		Size: 1.2 KB (1204 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:9c2117793f1d9fe3219bdd3521a923fbec59fc963f24672419f45df1591b3086`  
+		Last Modified: Sat, 14 Sep 2019 23:21:06 GMT  
+		Size: 1.2 KB (1190 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:c33234d5fe96c252c0a64d8b85dc31f68df2de51be9aad5723ffc227511cb4a9`  
+		Last Modified: Sat, 14 Sep 2019 23:21:06 GMT  
+		Size: 1.2 KB (1211 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `traefik:2.0-windowsservercore-1809`
 
 ```console
-$ docker pull traefik@sha256:a8409dff6597f2ef5f7ecd3c672671bb2af9a390073efd74f95c54aa41cba22a
+$ docker pull traefik@sha256:a8466093a2ca272bb00c9edc588dda75d29e40f2aa0fdc0347856a3a8b30a5bc
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
 -	Platforms:
+	-	windows version 10.0.17763.737; amd64
+
+### `traefik:2.0-windowsservercore-1809` - windows version 10.0.17763.737; amd64
+
+```console
+$ docker pull traefik@sha256:266cce1c9b02808d4bd1d60e8bd6c6e75f518056623792765ed3644e78f11b23
+```
+
+-	Docker Version: 18.03.1-ee-4
+-	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
+-	Total Size: **2.2 GB (2181832143 bytes)**  
+	(compressed transfer size, not on-disk size)
+-	Image ID: `sha256:b5fd3d3f232b6166765d822cfd498fc91629654570ce6dbb7306d6948b7d948d`
+-	Entrypoint: `["\/traefik"]`
+-	`SHELL`: `["powershell","-Command","$ErrorActionPreference = 'Stop'; $ProgressPreference = 'SilentlyContinue';"]`
+
+```dockerfile
+# Sat, 15 Sep 2018 09:10:26 GMT
+RUN Apply image 1809-RTM-amd64
+# Mon, 09 Sep 2019 20:03:27 GMT
+RUN Install update 1809-amd64
+# Wed, 11 Sep 2019 13:01:11 GMT
+SHELL [powershell -Command $ErrorActionPreference = 'Stop'; $ProgressPreference = 'SilentlyContinue';]
+# Sat, 14 Sep 2019 23:19:20 GMT
+RUN Invoke-WebRequest         -Uri "https://github.com/containous/traefik/releases/download/v2.0.0-rc4/traefik_v2.0.0-rc4_windows_amd64.zip"         -OutFile "/traefik.zip";     Expand-Archive -Path "/traefik.zip" -DestinationPath "/" -Force;     Remove-Item "/traefik.zip" -Force
+# Sat, 14 Sep 2019 23:19:22 GMT
+EXPOSE 80
+# Sat, 14 Sep 2019 23:19:24 GMT
+ENTRYPOINT ["/traefik"]
+# Sat, 14 Sep 2019 23:19:26 GMT
+LABEL org.opencontainers.image.vendor=Containous org.opencontainers.image.url=https://traefik.io org.opencontainers.image.title=Traefik org.opencontainers.image.description=A modern reverse-proxy org.opencontainers.image.version=v2.0.0-rc4 org.opencontainers.image.documentation=https://docs.traefik.io
+```
+
+-	Layers:
+	-	`sha256:65014b3c312172f10bd6701a063f9b5aaf9a916c2d2cb843d406a6f77ded3f8d`  
+		Last Modified: Tue, 13 Nov 2018 18:50:17 GMT  
+		Size: 1.5 GB (1534685324 bytes)  
+		MIME: application/vnd.docker.image.rootfs.foreign.diff.tar.gzip
+	-	`sha256:2945147eda092f9cfd1a29432bf0eb9083becd4042b44ccc556762bcbc0c279b`  
+		Last Modified: Tue, 10 Sep 2019 20:36:11 GMT  
+		Size: 623.6 MB (623567057 bytes)  
+		MIME: application/vnd.docker.image.rootfs.foreign.diff.tar.gzip
+	-	`sha256:87b13d04a4a020d0b9ab99c55bf56bdecd94c0e659c2c54e589fdd9103487cf1`  
+		Last Modified: Wed, 11 Sep 2019 13:53:44 GMT  
+		Size: 1.2 KB (1190 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:519ff33f97b84baf2e1d583d70ed84c6e3bb8d692730e794c95ed8e30a7745ef`  
+		Last Modified: Sat, 14 Sep 2019 23:21:12 GMT  
+		Size: 23.6 MB (23574967 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:01fb566155cf84f9aae714c34c2240d6827f77fd8d6720e147f221254a1b5a95`  
+		Last Modified: Sat, 14 Sep 2019 23:21:06 GMT  
+		Size: 1.2 KB (1204 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:9c2117793f1d9fe3219bdd3521a923fbec59fc963f24672419f45df1591b3086`  
+		Last Modified: Sat, 14 Sep 2019 23:21:06 GMT  
+		Size: 1.2 KB (1190 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:c33234d5fe96c252c0a64d8b85dc31f68df2de51be9aad5723ffc227511cb4a9`  
+		Last Modified: Sat, 14 Sep 2019 23:21:06 GMT  
+		Size: 1.2 KB (1211 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `traefik:alpine`
 
@@ -1672,11 +1920,73 @@ LABEL org.opencontainers.image.vendor=Containous org.opencontainers.image.url=ht
 ## `traefik:maroilles-windowsservercore-1809`
 
 ```console
-$ docker pull traefik@sha256:a8409dff6597f2ef5f7ecd3c672671bb2af9a390073efd74f95c54aa41cba22a
+$ docker pull traefik@sha256:5285370fec3d3cf6f5ebb30b51ef2f56b2c7055f71cf0b0f73c0da10264c4ec9
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
 -	Platforms:
+	-	windows version 10.0.17763.737; amd64
+
+### `traefik:maroilles-windowsservercore-1809` - windows version 10.0.17763.737; amd64
+
+```console
+$ docker pull traefik@sha256:8ee8fb645eeea0b721682ed006dbc245ccb6c768f4781547febde1cfb510491f
+```
+
+-	Docker Version: 18.03.1-ee-4
+-	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
+-	Total Size: **2.2 GB (2186190592 bytes)**  
+	(compressed transfer size, not on-disk size)
+-	Image ID: `sha256:7da3bff2851ba5843333d9772b3ea44245bde99252ddcceaee67eecfcc3c0fd4`
+-	Entrypoint: `["\/traefik"]`
+-	`SHELL`: `["powershell","-Command","$ErrorActionPreference = 'Stop'; $ProgressPreference = 'SilentlyContinue';"]`
+
+```dockerfile
+# Sat, 15 Sep 2018 09:10:26 GMT
+RUN Apply image 1809-RTM-amd64
+# Mon, 09 Sep 2019 20:03:27 GMT
+RUN Install update 1809-amd64
+# Wed, 11 Sep 2019 13:01:11 GMT
+SHELL [powershell -Command $ErrorActionPreference = 'Stop'; $ProgressPreference = 'SilentlyContinue';]
+# Sat, 14 Sep 2019 23:20:27 GMT
+RUN Invoke-WebRequest     -Uri "https://github.com/containous/traefik/releases/download/v1.7.16/traefik_windows-amd64.exe"     -OutFile "/traefik.exe"
+# Sat, 14 Sep 2019 23:20:32 GMT
+EXPOSE 80
+# Sat, 14 Sep 2019 23:20:33 GMT
+ENTRYPOINT ["/traefik"]
+# Sat, 14 Sep 2019 23:20:35 GMT
+LABEL org.opencontainers.image.vendor=Containous org.opencontainers.image.url=https://traefik.io org.opencontainers.image.title=Traefik org.opencontainers.image.description=A modern reverse-proxy org.opencontainers.image.version=v1.7.16 org.opencontainers.image.documentation=https://docs.traefik.io
+```
+
+-	Layers:
+	-	`sha256:65014b3c312172f10bd6701a063f9b5aaf9a916c2d2cb843d406a6f77ded3f8d`  
+		Last Modified: Tue, 13 Nov 2018 18:50:17 GMT  
+		Size: 1.5 GB (1534685324 bytes)  
+		MIME: application/vnd.docker.image.rootfs.foreign.diff.tar.gzip
+	-	`sha256:2945147eda092f9cfd1a29432bf0eb9083becd4042b44ccc556762bcbc0c279b`  
+		Last Modified: Tue, 10 Sep 2019 20:36:11 GMT  
+		Size: 623.6 MB (623567057 bytes)  
+		MIME: application/vnd.docker.image.rootfs.foreign.diff.tar.gzip
+	-	`sha256:87b13d04a4a020d0b9ab99c55bf56bdecd94c0e659c2c54e589fdd9103487cf1`  
+		Last Modified: Wed, 11 Sep 2019 13:53:44 GMT  
+		Size: 1.2 KB (1190 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:6c27218a6cb69c0218d064f6cb8a53c157152e44a40bea26573b44ebde6238ee`  
+		Last Modified: Sat, 14 Sep 2019 23:21:55 GMT  
+		Size: 27.9 MB (27933413 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:36d7ba22e55121dd900ce6a04ee06a19864705f494207d79551174f6c0894991`  
+		Last Modified: Sat, 14 Sep 2019 23:21:48 GMT  
+		Size: 1.2 KB (1188 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:b2199c5784cc2571fb3c8d76b4c458189f3c50de4c213d1095472def2639043a`  
+		Last Modified: Sat, 14 Sep 2019 23:21:48 GMT  
+		Size: 1.2 KB (1216 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:543efa58f83b2e798f98e6ccfb95cefcd17ecb387c050db9098e89940cff86ef`  
+		Last Modified: Sat, 14 Sep 2019 23:21:48 GMT  
+		Size: 1.2 KB (1204 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `traefik:montdor`
 
@@ -1852,11 +2162,73 @@ LABEL org.opencontainers.image.vendor=Containous org.opencontainers.image.url=ht
 ## `traefik:montdor-windowsservercore-1809`
 
 ```console
-$ docker pull traefik@sha256:a8409dff6597f2ef5f7ecd3c672671bb2af9a390073efd74f95c54aa41cba22a
+$ docker pull traefik@sha256:a8466093a2ca272bb00c9edc588dda75d29e40f2aa0fdc0347856a3a8b30a5bc
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
 -	Platforms:
+	-	windows version 10.0.17763.737; amd64
+
+### `traefik:montdor-windowsservercore-1809` - windows version 10.0.17763.737; amd64
+
+```console
+$ docker pull traefik@sha256:266cce1c9b02808d4bd1d60e8bd6c6e75f518056623792765ed3644e78f11b23
+```
+
+-	Docker Version: 18.03.1-ee-4
+-	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
+-	Total Size: **2.2 GB (2181832143 bytes)**  
+	(compressed transfer size, not on-disk size)
+-	Image ID: `sha256:b5fd3d3f232b6166765d822cfd498fc91629654570ce6dbb7306d6948b7d948d`
+-	Entrypoint: `["\/traefik"]`
+-	`SHELL`: `["powershell","-Command","$ErrorActionPreference = 'Stop'; $ProgressPreference = 'SilentlyContinue';"]`
+
+```dockerfile
+# Sat, 15 Sep 2018 09:10:26 GMT
+RUN Apply image 1809-RTM-amd64
+# Mon, 09 Sep 2019 20:03:27 GMT
+RUN Install update 1809-amd64
+# Wed, 11 Sep 2019 13:01:11 GMT
+SHELL [powershell -Command $ErrorActionPreference = 'Stop'; $ProgressPreference = 'SilentlyContinue';]
+# Sat, 14 Sep 2019 23:19:20 GMT
+RUN Invoke-WebRequest         -Uri "https://github.com/containous/traefik/releases/download/v2.0.0-rc4/traefik_v2.0.0-rc4_windows_amd64.zip"         -OutFile "/traefik.zip";     Expand-Archive -Path "/traefik.zip" -DestinationPath "/" -Force;     Remove-Item "/traefik.zip" -Force
+# Sat, 14 Sep 2019 23:19:22 GMT
+EXPOSE 80
+# Sat, 14 Sep 2019 23:19:24 GMT
+ENTRYPOINT ["/traefik"]
+# Sat, 14 Sep 2019 23:19:26 GMT
+LABEL org.opencontainers.image.vendor=Containous org.opencontainers.image.url=https://traefik.io org.opencontainers.image.title=Traefik org.opencontainers.image.description=A modern reverse-proxy org.opencontainers.image.version=v2.0.0-rc4 org.opencontainers.image.documentation=https://docs.traefik.io
+```
+
+-	Layers:
+	-	`sha256:65014b3c312172f10bd6701a063f9b5aaf9a916c2d2cb843d406a6f77ded3f8d`  
+		Last Modified: Tue, 13 Nov 2018 18:50:17 GMT  
+		Size: 1.5 GB (1534685324 bytes)  
+		MIME: application/vnd.docker.image.rootfs.foreign.diff.tar.gzip
+	-	`sha256:2945147eda092f9cfd1a29432bf0eb9083becd4042b44ccc556762bcbc0c279b`  
+		Last Modified: Tue, 10 Sep 2019 20:36:11 GMT  
+		Size: 623.6 MB (623567057 bytes)  
+		MIME: application/vnd.docker.image.rootfs.foreign.diff.tar.gzip
+	-	`sha256:87b13d04a4a020d0b9ab99c55bf56bdecd94c0e659c2c54e589fdd9103487cf1`  
+		Last Modified: Wed, 11 Sep 2019 13:53:44 GMT  
+		Size: 1.2 KB (1190 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:519ff33f97b84baf2e1d583d70ed84c6e3bb8d692730e794c95ed8e30a7745ef`  
+		Last Modified: Sat, 14 Sep 2019 23:21:12 GMT  
+		Size: 23.6 MB (23574967 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:01fb566155cf84f9aae714c34c2240d6827f77fd8d6720e147f221254a1b5a95`  
+		Last Modified: Sat, 14 Sep 2019 23:21:06 GMT  
+		Size: 1.2 KB (1204 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:9c2117793f1d9fe3219bdd3521a923fbec59fc963f24672419f45df1591b3086`  
+		Last Modified: Sat, 14 Sep 2019 23:21:06 GMT  
+		Size: 1.2 KB (1190 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:c33234d5fe96c252c0a64d8b85dc31f68df2de51be9aad5723ffc227511cb4a9`  
+		Last Modified: Sat, 14 Sep 2019 23:21:06 GMT  
+		Size: 1.2 KB (1211 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `traefik:v1.7`
 
@@ -2320,11 +2692,73 @@ LABEL org.opencontainers.image.vendor=Containous org.opencontainers.image.url=ht
 ## `traefik:v1.7.16-windowsservercore-1809`
 
 ```console
-$ docker pull traefik@sha256:a8409dff6597f2ef5f7ecd3c672671bb2af9a390073efd74f95c54aa41cba22a
+$ docker pull traefik@sha256:5285370fec3d3cf6f5ebb30b51ef2f56b2c7055f71cf0b0f73c0da10264c4ec9
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
 -	Platforms:
+	-	windows version 10.0.17763.737; amd64
+
+### `traefik:v1.7.16-windowsservercore-1809` - windows version 10.0.17763.737; amd64
+
+```console
+$ docker pull traefik@sha256:8ee8fb645eeea0b721682ed006dbc245ccb6c768f4781547febde1cfb510491f
+```
+
+-	Docker Version: 18.03.1-ee-4
+-	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
+-	Total Size: **2.2 GB (2186190592 bytes)**  
+	(compressed transfer size, not on-disk size)
+-	Image ID: `sha256:7da3bff2851ba5843333d9772b3ea44245bde99252ddcceaee67eecfcc3c0fd4`
+-	Entrypoint: `["\/traefik"]`
+-	`SHELL`: `["powershell","-Command","$ErrorActionPreference = 'Stop'; $ProgressPreference = 'SilentlyContinue';"]`
+
+```dockerfile
+# Sat, 15 Sep 2018 09:10:26 GMT
+RUN Apply image 1809-RTM-amd64
+# Mon, 09 Sep 2019 20:03:27 GMT
+RUN Install update 1809-amd64
+# Wed, 11 Sep 2019 13:01:11 GMT
+SHELL [powershell -Command $ErrorActionPreference = 'Stop'; $ProgressPreference = 'SilentlyContinue';]
+# Sat, 14 Sep 2019 23:20:27 GMT
+RUN Invoke-WebRequest     -Uri "https://github.com/containous/traefik/releases/download/v1.7.16/traefik_windows-amd64.exe"     -OutFile "/traefik.exe"
+# Sat, 14 Sep 2019 23:20:32 GMT
+EXPOSE 80
+# Sat, 14 Sep 2019 23:20:33 GMT
+ENTRYPOINT ["/traefik"]
+# Sat, 14 Sep 2019 23:20:35 GMT
+LABEL org.opencontainers.image.vendor=Containous org.opencontainers.image.url=https://traefik.io org.opencontainers.image.title=Traefik org.opencontainers.image.description=A modern reverse-proxy org.opencontainers.image.version=v1.7.16 org.opencontainers.image.documentation=https://docs.traefik.io
+```
+
+-	Layers:
+	-	`sha256:65014b3c312172f10bd6701a063f9b5aaf9a916c2d2cb843d406a6f77ded3f8d`  
+		Last Modified: Tue, 13 Nov 2018 18:50:17 GMT  
+		Size: 1.5 GB (1534685324 bytes)  
+		MIME: application/vnd.docker.image.rootfs.foreign.diff.tar.gzip
+	-	`sha256:2945147eda092f9cfd1a29432bf0eb9083becd4042b44ccc556762bcbc0c279b`  
+		Last Modified: Tue, 10 Sep 2019 20:36:11 GMT  
+		Size: 623.6 MB (623567057 bytes)  
+		MIME: application/vnd.docker.image.rootfs.foreign.diff.tar.gzip
+	-	`sha256:87b13d04a4a020d0b9ab99c55bf56bdecd94c0e659c2c54e589fdd9103487cf1`  
+		Last Modified: Wed, 11 Sep 2019 13:53:44 GMT  
+		Size: 1.2 KB (1190 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:6c27218a6cb69c0218d064f6cb8a53c157152e44a40bea26573b44ebde6238ee`  
+		Last Modified: Sat, 14 Sep 2019 23:21:55 GMT  
+		Size: 27.9 MB (27933413 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:36d7ba22e55121dd900ce6a04ee06a19864705f494207d79551174f6c0894991`  
+		Last Modified: Sat, 14 Sep 2019 23:21:48 GMT  
+		Size: 1.2 KB (1188 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:b2199c5784cc2571fb3c8d76b4c458189f3c50de4c213d1095472def2639043a`  
+		Last Modified: Sat, 14 Sep 2019 23:21:48 GMT  
+		Size: 1.2 KB (1216 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:543efa58f83b2e798f98e6ccfb95cefcd17ecb387c050db9098e89940cff86ef`  
+		Last Modified: Sat, 14 Sep 2019 23:21:48 GMT  
+		Size: 1.2 KB (1204 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `traefik:v1.7-alpine`
 
@@ -2500,11 +2934,73 @@ LABEL org.opencontainers.image.vendor=Containous org.opencontainers.image.url=ht
 ## `traefik:v1.7-windowsservercore-1809`
 
 ```console
-$ docker pull traefik@sha256:a8409dff6597f2ef5f7ecd3c672671bb2af9a390073efd74f95c54aa41cba22a
+$ docker pull traefik@sha256:5285370fec3d3cf6f5ebb30b51ef2f56b2c7055f71cf0b0f73c0da10264c4ec9
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
 -	Platforms:
+	-	windows version 10.0.17763.737; amd64
+
+### `traefik:v1.7-windowsservercore-1809` - windows version 10.0.17763.737; amd64
+
+```console
+$ docker pull traefik@sha256:8ee8fb645eeea0b721682ed006dbc245ccb6c768f4781547febde1cfb510491f
+```
+
+-	Docker Version: 18.03.1-ee-4
+-	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
+-	Total Size: **2.2 GB (2186190592 bytes)**  
+	(compressed transfer size, not on-disk size)
+-	Image ID: `sha256:7da3bff2851ba5843333d9772b3ea44245bde99252ddcceaee67eecfcc3c0fd4`
+-	Entrypoint: `["\/traefik"]`
+-	`SHELL`: `["powershell","-Command","$ErrorActionPreference = 'Stop'; $ProgressPreference = 'SilentlyContinue';"]`
+
+```dockerfile
+# Sat, 15 Sep 2018 09:10:26 GMT
+RUN Apply image 1809-RTM-amd64
+# Mon, 09 Sep 2019 20:03:27 GMT
+RUN Install update 1809-amd64
+# Wed, 11 Sep 2019 13:01:11 GMT
+SHELL [powershell -Command $ErrorActionPreference = 'Stop'; $ProgressPreference = 'SilentlyContinue';]
+# Sat, 14 Sep 2019 23:20:27 GMT
+RUN Invoke-WebRequest     -Uri "https://github.com/containous/traefik/releases/download/v1.7.16/traefik_windows-amd64.exe"     -OutFile "/traefik.exe"
+# Sat, 14 Sep 2019 23:20:32 GMT
+EXPOSE 80
+# Sat, 14 Sep 2019 23:20:33 GMT
+ENTRYPOINT ["/traefik"]
+# Sat, 14 Sep 2019 23:20:35 GMT
+LABEL org.opencontainers.image.vendor=Containous org.opencontainers.image.url=https://traefik.io org.opencontainers.image.title=Traefik org.opencontainers.image.description=A modern reverse-proxy org.opencontainers.image.version=v1.7.16 org.opencontainers.image.documentation=https://docs.traefik.io
+```
+
+-	Layers:
+	-	`sha256:65014b3c312172f10bd6701a063f9b5aaf9a916c2d2cb843d406a6f77ded3f8d`  
+		Last Modified: Tue, 13 Nov 2018 18:50:17 GMT  
+		Size: 1.5 GB (1534685324 bytes)  
+		MIME: application/vnd.docker.image.rootfs.foreign.diff.tar.gzip
+	-	`sha256:2945147eda092f9cfd1a29432bf0eb9083becd4042b44ccc556762bcbc0c279b`  
+		Last Modified: Tue, 10 Sep 2019 20:36:11 GMT  
+		Size: 623.6 MB (623567057 bytes)  
+		MIME: application/vnd.docker.image.rootfs.foreign.diff.tar.gzip
+	-	`sha256:87b13d04a4a020d0b9ab99c55bf56bdecd94c0e659c2c54e589fdd9103487cf1`  
+		Last Modified: Wed, 11 Sep 2019 13:53:44 GMT  
+		Size: 1.2 KB (1190 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:6c27218a6cb69c0218d064f6cb8a53c157152e44a40bea26573b44ebde6238ee`  
+		Last Modified: Sat, 14 Sep 2019 23:21:55 GMT  
+		Size: 27.9 MB (27933413 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:36d7ba22e55121dd900ce6a04ee06a19864705f494207d79551174f6c0894991`  
+		Last Modified: Sat, 14 Sep 2019 23:21:48 GMT  
+		Size: 1.2 KB (1188 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:b2199c5784cc2571fb3c8d76b4c458189f3c50de4c213d1095472def2639043a`  
+		Last Modified: Sat, 14 Sep 2019 23:21:48 GMT  
+		Size: 1.2 KB (1216 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:543efa58f83b2e798f98e6ccfb95cefcd17ecb387c050db9098e89940cff86ef`  
+		Last Modified: Sat, 14 Sep 2019 23:21:48 GMT  
+		Size: 1.2 KB (1204 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `traefik:v2.0`
 
@@ -2851,26 +3347,212 @@ LABEL org.opencontainers.image.vendor=Containous org.opencontainers.image.url=ht
 ## `traefik:v2.0.0-rc4-windowsservercore-1809`
 
 ```console
-$ docker pull traefik@sha256:a8409dff6597f2ef5f7ecd3c672671bb2af9a390073efd74f95c54aa41cba22a
+$ docker pull traefik@sha256:a8466093a2ca272bb00c9edc588dda75d29e40f2aa0fdc0347856a3a8b30a5bc
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
 -	Platforms:
+	-	windows version 10.0.17763.737; amd64
+
+### `traefik:v2.0.0-rc4-windowsservercore-1809` - windows version 10.0.17763.737; amd64
+
+```console
+$ docker pull traefik@sha256:266cce1c9b02808d4bd1d60e8bd6c6e75f518056623792765ed3644e78f11b23
+```
+
+-	Docker Version: 18.03.1-ee-4
+-	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
+-	Total Size: **2.2 GB (2181832143 bytes)**  
+	(compressed transfer size, not on-disk size)
+-	Image ID: `sha256:b5fd3d3f232b6166765d822cfd498fc91629654570ce6dbb7306d6948b7d948d`
+-	Entrypoint: `["\/traefik"]`
+-	`SHELL`: `["powershell","-Command","$ErrorActionPreference = 'Stop'; $ProgressPreference = 'SilentlyContinue';"]`
+
+```dockerfile
+# Sat, 15 Sep 2018 09:10:26 GMT
+RUN Apply image 1809-RTM-amd64
+# Mon, 09 Sep 2019 20:03:27 GMT
+RUN Install update 1809-amd64
+# Wed, 11 Sep 2019 13:01:11 GMT
+SHELL [powershell -Command $ErrorActionPreference = 'Stop'; $ProgressPreference = 'SilentlyContinue';]
+# Sat, 14 Sep 2019 23:19:20 GMT
+RUN Invoke-WebRequest         -Uri "https://github.com/containous/traefik/releases/download/v2.0.0-rc4/traefik_v2.0.0-rc4_windows_amd64.zip"         -OutFile "/traefik.zip";     Expand-Archive -Path "/traefik.zip" -DestinationPath "/" -Force;     Remove-Item "/traefik.zip" -Force
+# Sat, 14 Sep 2019 23:19:22 GMT
+EXPOSE 80
+# Sat, 14 Sep 2019 23:19:24 GMT
+ENTRYPOINT ["/traefik"]
+# Sat, 14 Sep 2019 23:19:26 GMT
+LABEL org.opencontainers.image.vendor=Containous org.opencontainers.image.url=https://traefik.io org.opencontainers.image.title=Traefik org.opencontainers.image.description=A modern reverse-proxy org.opencontainers.image.version=v2.0.0-rc4 org.opencontainers.image.documentation=https://docs.traefik.io
+```
+
+-	Layers:
+	-	`sha256:65014b3c312172f10bd6701a063f9b5aaf9a916c2d2cb843d406a6f77ded3f8d`  
+		Last Modified: Tue, 13 Nov 2018 18:50:17 GMT  
+		Size: 1.5 GB (1534685324 bytes)  
+		MIME: application/vnd.docker.image.rootfs.foreign.diff.tar.gzip
+	-	`sha256:2945147eda092f9cfd1a29432bf0eb9083becd4042b44ccc556762bcbc0c279b`  
+		Last Modified: Tue, 10 Sep 2019 20:36:11 GMT  
+		Size: 623.6 MB (623567057 bytes)  
+		MIME: application/vnd.docker.image.rootfs.foreign.diff.tar.gzip
+	-	`sha256:87b13d04a4a020d0b9ab99c55bf56bdecd94c0e659c2c54e589fdd9103487cf1`  
+		Last Modified: Wed, 11 Sep 2019 13:53:44 GMT  
+		Size: 1.2 KB (1190 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:519ff33f97b84baf2e1d583d70ed84c6e3bb8d692730e794c95ed8e30a7745ef`  
+		Last Modified: Sat, 14 Sep 2019 23:21:12 GMT  
+		Size: 23.6 MB (23574967 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:01fb566155cf84f9aae714c34c2240d6827f77fd8d6720e147f221254a1b5a95`  
+		Last Modified: Sat, 14 Sep 2019 23:21:06 GMT  
+		Size: 1.2 KB (1204 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:9c2117793f1d9fe3219bdd3521a923fbec59fc963f24672419f45df1591b3086`  
+		Last Modified: Sat, 14 Sep 2019 23:21:06 GMT  
+		Size: 1.2 KB (1190 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:c33234d5fe96c252c0a64d8b85dc31f68df2de51be9aad5723ffc227511cb4a9`  
+		Last Modified: Sat, 14 Sep 2019 23:21:06 GMT  
+		Size: 1.2 KB (1211 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `traefik:v2.0-windowsservercore-1809`
 
 ```console
-$ docker pull traefik@sha256:a8409dff6597f2ef5f7ecd3c672671bb2af9a390073efd74f95c54aa41cba22a
+$ docker pull traefik@sha256:a8466093a2ca272bb00c9edc588dda75d29e40f2aa0fdc0347856a3a8b30a5bc
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
 -	Platforms:
+	-	windows version 10.0.17763.737; amd64
+
+### `traefik:v2.0-windowsservercore-1809` - windows version 10.0.17763.737; amd64
+
+```console
+$ docker pull traefik@sha256:266cce1c9b02808d4bd1d60e8bd6c6e75f518056623792765ed3644e78f11b23
+```
+
+-	Docker Version: 18.03.1-ee-4
+-	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
+-	Total Size: **2.2 GB (2181832143 bytes)**  
+	(compressed transfer size, not on-disk size)
+-	Image ID: `sha256:b5fd3d3f232b6166765d822cfd498fc91629654570ce6dbb7306d6948b7d948d`
+-	Entrypoint: `["\/traefik"]`
+-	`SHELL`: `["powershell","-Command","$ErrorActionPreference = 'Stop'; $ProgressPreference = 'SilentlyContinue';"]`
+
+```dockerfile
+# Sat, 15 Sep 2018 09:10:26 GMT
+RUN Apply image 1809-RTM-amd64
+# Mon, 09 Sep 2019 20:03:27 GMT
+RUN Install update 1809-amd64
+# Wed, 11 Sep 2019 13:01:11 GMT
+SHELL [powershell -Command $ErrorActionPreference = 'Stop'; $ProgressPreference = 'SilentlyContinue';]
+# Sat, 14 Sep 2019 23:19:20 GMT
+RUN Invoke-WebRequest         -Uri "https://github.com/containous/traefik/releases/download/v2.0.0-rc4/traefik_v2.0.0-rc4_windows_amd64.zip"         -OutFile "/traefik.zip";     Expand-Archive -Path "/traefik.zip" -DestinationPath "/" -Force;     Remove-Item "/traefik.zip" -Force
+# Sat, 14 Sep 2019 23:19:22 GMT
+EXPOSE 80
+# Sat, 14 Sep 2019 23:19:24 GMT
+ENTRYPOINT ["/traefik"]
+# Sat, 14 Sep 2019 23:19:26 GMT
+LABEL org.opencontainers.image.vendor=Containous org.opencontainers.image.url=https://traefik.io org.opencontainers.image.title=Traefik org.opencontainers.image.description=A modern reverse-proxy org.opencontainers.image.version=v2.0.0-rc4 org.opencontainers.image.documentation=https://docs.traefik.io
+```
+
+-	Layers:
+	-	`sha256:65014b3c312172f10bd6701a063f9b5aaf9a916c2d2cb843d406a6f77ded3f8d`  
+		Last Modified: Tue, 13 Nov 2018 18:50:17 GMT  
+		Size: 1.5 GB (1534685324 bytes)  
+		MIME: application/vnd.docker.image.rootfs.foreign.diff.tar.gzip
+	-	`sha256:2945147eda092f9cfd1a29432bf0eb9083becd4042b44ccc556762bcbc0c279b`  
+		Last Modified: Tue, 10 Sep 2019 20:36:11 GMT  
+		Size: 623.6 MB (623567057 bytes)  
+		MIME: application/vnd.docker.image.rootfs.foreign.diff.tar.gzip
+	-	`sha256:87b13d04a4a020d0b9ab99c55bf56bdecd94c0e659c2c54e589fdd9103487cf1`  
+		Last Modified: Wed, 11 Sep 2019 13:53:44 GMT  
+		Size: 1.2 KB (1190 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:519ff33f97b84baf2e1d583d70ed84c6e3bb8d692730e794c95ed8e30a7745ef`  
+		Last Modified: Sat, 14 Sep 2019 23:21:12 GMT  
+		Size: 23.6 MB (23574967 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:01fb566155cf84f9aae714c34c2240d6827f77fd8d6720e147f221254a1b5a95`  
+		Last Modified: Sat, 14 Sep 2019 23:21:06 GMT  
+		Size: 1.2 KB (1204 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:9c2117793f1d9fe3219bdd3521a923fbec59fc963f24672419f45df1591b3086`  
+		Last Modified: Sat, 14 Sep 2019 23:21:06 GMT  
+		Size: 1.2 KB (1190 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:c33234d5fe96c252c0a64d8b85dc31f68df2de51be9aad5723ffc227511cb4a9`  
+		Last Modified: Sat, 14 Sep 2019 23:21:06 GMT  
+		Size: 1.2 KB (1211 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `traefik:windowsservercore-1809`
 
 ```console
-$ docker pull traefik@sha256:a8409dff6597f2ef5f7ecd3c672671bb2af9a390073efd74f95c54aa41cba22a
+$ docker pull traefik@sha256:5285370fec3d3cf6f5ebb30b51ef2f56b2c7055f71cf0b0f73c0da10264c4ec9
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
 -	Platforms:
+	-	windows version 10.0.17763.737; amd64
+
+### `traefik:windowsservercore-1809` - windows version 10.0.17763.737; amd64
+
+```console
+$ docker pull traefik@sha256:8ee8fb645eeea0b721682ed006dbc245ccb6c768f4781547febde1cfb510491f
+```
+
+-	Docker Version: 18.03.1-ee-4
+-	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
+-	Total Size: **2.2 GB (2186190592 bytes)**  
+	(compressed transfer size, not on-disk size)
+-	Image ID: `sha256:7da3bff2851ba5843333d9772b3ea44245bde99252ddcceaee67eecfcc3c0fd4`
+-	Entrypoint: `["\/traefik"]`
+-	`SHELL`: `["powershell","-Command","$ErrorActionPreference = 'Stop'; $ProgressPreference = 'SilentlyContinue';"]`
+
+```dockerfile
+# Sat, 15 Sep 2018 09:10:26 GMT
+RUN Apply image 1809-RTM-amd64
+# Mon, 09 Sep 2019 20:03:27 GMT
+RUN Install update 1809-amd64
+# Wed, 11 Sep 2019 13:01:11 GMT
+SHELL [powershell -Command $ErrorActionPreference = 'Stop'; $ProgressPreference = 'SilentlyContinue';]
+# Sat, 14 Sep 2019 23:20:27 GMT
+RUN Invoke-WebRequest     -Uri "https://github.com/containous/traefik/releases/download/v1.7.16/traefik_windows-amd64.exe"     -OutFile "/traefik.exe"
+# Sat, 14 Sep 2019 23:20:32 GMT
+EXPOSE 80
+# Sat, 14 Sep 2019 23:20:33 GMT
+ENTRYPOINT ["/traefik"]
+# Sat, 14 Sep 2019 23:20:35 GMT
+LABEL org.opencontainers.image.vendor=Containous org.opencontainers.image.url=https://traefik.io org.opencontainers.image.title=Traefik org.opencontainers.image.description=A modern reverse-proxy org.opencontainers.image.version=v1.7.16 org.opencontainers.image.documentation=https://docs.traefik.io
+```
+
+-	Layers:
+	-	`sha256:65014b3c312172f10bd6701a063f9b5aaf9a916c2d2cb843d406a6f77ded3f8d`  
+		Last Modified: Tue, 13 Nov 2018 18:50:17 GMT  
+		Size: 1.5 GB (1534685324 bytes)  
+		MIME: application/vnd.docker.image.rootfs.foreign.diff.tar.gzip
+	-	`sha256:2945147eda092f9cfd1a29432bf0eb9083becd4042b44ccc556762bcbc0c279b`  
+		Last Modified: Tue, 10 Sep 2019 20:36:11 GMT  
+		Size: 623.6 MB (623567057 bytes)  
+		MIME: application/vnd.docker.image.rootfs.foreign.diff.tar.gzip
+	-	`sha256:87b13d04a4a020d0b9ab99c55bf56bdecd94c0e659c2c54e589fdd9103487cf1`  
+		Last Modified: Wed, 11 Sep 2019 13:53:44 GMT  
+		Size: 1.2 KB (1190 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:6c27218a6cb69c0218d064f6cb8a53c157152e44a40bea26573b44ebde6238ee`  
+		Last Modified: Sat, 14 Sep 2019 23:21:55 GMT  
+		Size: 27.9 MB (27933413 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:36d7ba22e55121dd900ce6a04ee06a19864705f494207d79551174f6c0894991`  
+		Last Modified: Sat, 14 Sep 2019 23:21:48 GMT  
+		Size: 1.2 KB (1188 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:b2199c5784cc2571fb3c8d76b4c458189f3c50de4c213d1095472def2639043a`  
+		Last Modified: Sat, 14 Sep 2019 23:21:48 GMT  
+		Size: 1.2 KB (1216 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:543efa58f83b2e798f98e6ccfb95cefcd17ecb387c050db9098e89940cff86ef`  
+		Last Modified: Sat, 14 Sep 2019 23:21:48 GMT  
+		Size: 1.2 KB (1204 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
