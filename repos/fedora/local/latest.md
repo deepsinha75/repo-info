@@ -27,8 +27,6 @@ Source:
 ```console
 $ yumdownloader --quiet --source --urls acl-2.2.53-3.fc30
 Enabling fedora-modular-source repository
-https://mirrors.ucr.ac.cr/fedora/releases/30/Modular/source/tree/repodata/repomd.xml: [Errno 14] HTTPS Error 503 - Service Unavailable
-Trying other mirror.
 Enabling updates-source repository
 Enabling updates-modular-source repository
 Enabling fedora-source repository
