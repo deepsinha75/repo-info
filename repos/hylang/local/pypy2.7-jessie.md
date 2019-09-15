@@ -2,8 +2,8 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:2a4af384994d818ab8ef0945ccf68228c7cbf8eadc94d033ae0819eb2ff4a315`
-- Created: `2019-08-27T00:17:10.902711287Z`
+- Image ID: `sha256:b0626c83a6d003156a5fa9da2b88180332e03115b71f052e2ac185144a7569b2`
+- Created: `2019-09-13T04:44:05.554716301Z`
 - Virtual Size: ~ 210.22 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
@@ -554,23 +554,30 @@ Other potentially useful URLs:
 - https://sources.debian.net/src/e2fsprogs/1.42.12-2/debian/copyright/ (for direct copyright/license information)
 - http://snapshot.debian.org/package/e2fsprogs/1.42.12-2/ (for access to the source package after it no longer exists in the archive)
 
-### `dpkg` source package: `expat=2.1.0-6+deb8u5`
+### `dpkg` source package: `expat=2.1.0-6+deb8u6`
 
 Binary Packages:
 
-- `libexpat1:amd64=2.1.0-6+deb8u5`
+- `libexpat1:amd64=2.1.0-6+deb8u6`
 
 **WARNING:** unable to detect licenses! (package likely not compliant with DEP-5)  
 If source is available (seen below), check the contents of `debian/copyright` within it.
 
 
-**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
-This is *usually* due to a new package version being released and the old version being removed.
+Source:
 
-The source package *may* still be available for download from:
+```console
+$ apt-get source -qq --print-uris expat=2.1.0-6+deb8u6
+'http://security.debian.org/debian-security/pool/updates/main/e/expat/expat_2.1.0-6+deb8u6.dsc' expat_2.1.0-6+deb8u6.dsc 2292 SHA256:b54613edbbacde7b879be9d21b5d711c2cb2c90ed3d5e0968bdaf4c55bbcd8be
+'http://security.debian.org/debian-security/pool/updates/main/e/expat/expat_2.1.0.orig.tar.gz' expat_2.1.0.orig.tar.gz 562616 SHA256:823705472f816df21c8f6aa026dd162b280806838bb55b3432b0fb1fcca7eb86
+'http://security.debian.org/debian-security/pool/updates/main/e/expat/expat_2.1.0-6+deb8u6.debian.tar.xz' expat_2.1.0-6+deb8u6.debian.tar.xz 23672 SHA256:7d61123e76076598e3026fff5570ccdfbb90a540a1fdd310e13224b28e52c24a
+```
 
-- http://snapshot.debian.org/package/expat/2.1.0-6+deb8u5/
+Other potentially useful URLs:
 
+- https://sources.debian.net/src/expat/2.1.0-6+deb8u6/ (for browsing the source)
+- https://sources.debian.net/src/expat/2.1.0-6+deb8u6/debian/copyright/ (for direct copyright/license information)
+- http://snapshot.debian.org/package/expat/2.1.0-6+deb8u6/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `findutils=4.4.2-9`
 
