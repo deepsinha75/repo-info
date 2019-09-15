@@ -489,14 +489,9 @@ Binary Packages:
 If source is available (seen below), check the contents of `debian/copyright` within it.
 
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris expat=2.1.0-7ubuntu0.16.04.4
-'http://archive.ubuntu.com/ubuntu/pool/main/e/expat/expat_2.1.0-7ubuntu0.16.04.4.dsc' expat_2.1.0-7ubuntu0.16.04.4.dsc 2387 SHA256:17e5331ada990fed50e48f39545144f29910bbc178ab9677f3207760bd4d03ff
-'http://archive.ubuntu.com/ubuntu/pool/main/e/expat/expat_2.1.0.orig.tar.gz' expat_2.1.0.orig.tar.gz 562616 SHA256:823705472f816df21c8f6aa026dd162b280806838bb55b3432b0fb1fcca7eb86
-'http://archive.ubuntu.com/ubuntu/pool/main/e/expat/expat_2.1.0-7ubuntu0.16.04.4.debian.tar.xz' expat_2.1.0-7ubuntu0.16.04.4.debian.tar.xz 22376 SHA256:4c01b4cd139ea72605a6020bed02b735bf18517645bb5ea58b549aa4c9119654
-```
 
 ### `dpkg` source package: `fgetty=0.7-1`
 
