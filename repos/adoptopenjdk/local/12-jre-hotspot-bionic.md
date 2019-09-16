@@ -68,13 +68,9 @@ Licenses: (parsed from: `/usr/share/doc/apt/copyright`, `/usr/share/doc/libapt-p
 - `GPL-2`
 - `GPLv2+`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris apt=1.6.11
-'http://archive.ubuntu.com/ubuntu/pool/main/a/apt/apt_1.6.11.dsc' apt_1.6.11.dsc 2796 SHA256:eb864de476a694c7cc78272927bd8bc70e32c1c31efc18bd7bdc5012f7303e6a
-'http://archive.ubuntu.com/ubuntu/pool/main/a/apt/apt_1.6.11.tar.xz' apt_1.6.11.tar.xz 2156840 SHA256:a10b574b34114c17a4e04dda7e3c5c5bd4799fe26e9eaf609ee67f2471b1ea6e
-```
 
 ### `dpkg` source package: `attr=1:2.4.47-2build1`
 
