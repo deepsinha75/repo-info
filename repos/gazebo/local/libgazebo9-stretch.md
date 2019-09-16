@@ -2,8 +2,8 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:49861d3444595f5c16c2bd44d8e5ae70b4d9f0df224456df7181a620ea78fc5b`
-- Created: `2019-08-14T06:44:26.622532725Z`
+- Image ID: `sha256:e9011e42e68d94cf6cace7405887f8b599109153d73c38996a3d5f0e8ec92e5d`
+- Created: `2019-09-13T22:40:28.854519398Z`
 - Virtual Size: ~ 1.74 Gb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
@@ -423,23 +423,29 @@ Other potentially useful URLs:
 - https://sources.debian.net/src/avahi/0.6.32-2/debian/copyright/ (for direct copyright/license information)
 - http://snapshot.debian.org/package/avahi/0.6.32-2/ (for access to the source package after it no longer exists in the archive)
 
-### `dpkg` source package: `base-files=9.9+deb9u9`
+### `dpkg` source package: `base-files=9.9+deb9u11`
 
 Binary Packages:
 
-- `base-files=9.9+deb9u9`
+- `base-files=9.9+deb9u11`
 
 Licenses: (parsed from: `/usr/share/doc/base-files/copyright`)
 
 - `GPL`
 
-**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
-This is *usually* due to a new package version being released and the old version being removed.
+Source:
 
-The source package *may* still be available for download from:
+```console
+$ apt-get source -qq --print-uris base-files=9.9+deb9u11
+'http://deb.debian.org/debian/pool/main/b/base-files/base-files_9.9+deb9u11.dsc' base-files_9.9+deb9u11.dsc 1444 SHA256:3dea64df32bddd8e55c22a1a5cf5acbf42fcdf73446db0eb735e7536ad4dc57a
+'http://deb.debian.org/debian/pool/main/b/base-files/base-files_9.9+deb9u11.tar.xz' base-files_9.9+deb9u11.tar.xz 63196 SHA256:7892391146fb734d79090ef382c285b37bcf12e310c9c3c61ed903aa56a9aa52
+```
 
-- http://snapshot.debian.org/package/base-files/9.9+deb9u9/
+Other potentially useful URLs:
 
+- https://sources.debian.net/src/base-files/9.9+deb9u11/ (for browsing the source)
+- https://sources.debian.net/src/base-files/9.9+deb9u11/debian/copyright/ (for direct copyright/license information)
+- http://snapshot.debian.org/package/base-files/9.9+deb9u11/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `base-passwd=3.5.43`
 
@@ -942,11 +948,11 @@ Other potentially useful URLs:
 - https://sources.debian.net/src/crystalhd/1:0.0~git20110715.fdd2f19-12/debian/copyright/ (for direct copyright/license information)
 - http://snapshot.debian.org/package/crystalhd/1:0.0~git20110715.fdd2f19-12/ (for access to the source package after it no longer exists in the archive)
 
-### `dpkg` source package: `cups=2.2.1-8+deb9u3`
+### `dpkg` source package: `cups=2.2.1-8+deb9u4`
 
 Binary Packages:
 
-- `libcups2:amd64=2.2.1-8+deb9u3`
+- `libcups2:amd64=2.2.1-8+deb9u4`
 
 Licenses: (parsed from: `/usr/share/doc/libcups2/copyright`)
 
@@ -957,13 +963,21 @@ Licenses: (parsed from: `/usr/share/doc/libcups2/copyright`)
 - `LGPL-2.0 with AOSDL exception`
 - `Zlib`
 
-**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
-This is *usually* due to a new package version being released and the old version being removed.
+Source:
 
-The source package *may* still be available for download from:
+```console
+$ apt-get source -qq --print-uris cups=2.2.1-8+deb9u4
+'http://deb.debian.org/debian/pool/main/c/cups/cups_2.2.1-8+deb9u4.dsc' cups_2.2.1-8+deb9u4.dsc 3424 SHA256:9770e8589f9c5270f902e5449ffc4d66626bb5694c027b5c1f2a26be6b4a3962
+'http://deb.debian.org/debian/pool/main/c/cups/cups_2.2.1.orig.tar.gz' cups_2.2.1.orig.tar.gz 9486635 SHA256:83b8730aa977cc055e7410df6a3a682548994c113994ca630a16513017e419d5
+'http://deb.debian.org/debian/pool/main/c/cups/cups_2.2.1.orig.tar.gz.asc' cups_2.2.1.orig.tar.gz.asc 797 SHA256:37c2e6215b2794c33864e543bc0caf6aefa724844e41b4c9659c87f28d125c2a
+'http://deb.debian.org/debian/pool/main/c/cups/cups_2.2.1-8+deb9u4.debian.tar.xz' cups_2.2.1-8+deb9u4.debian.tar.xz 367156 SHA256:f559e1674deab2abd95c3d688c3812cdd93ad79d2277d55769e44d2cdbafc08e
+```
 
-- http://snapshot.debian.org/package/cups/2.2.1-8+deb9u3/
+Other potentially useful URLs:
 
+- https://sources.debian.net/src/cups/2.2.1-8+deb9u4/ (for browsing the source)
+- https://sources.debian.net/src/cups/2.2.1-8+deb9u4/debian/copyright/ (for direct copyright/license information)
+- http://snapshot.debian.org/package/cups/2.2.1-8+deb9u4/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `curl=7.52.1-5+deb9u9`
 
@@ -1808,24 +1822,31 @@ Other potentially useful URLs:
 - https://sources.debian.net/src/freexl/1.0.2-2+deb9u2/debian/copyright/ (for direct copyright/license information)
 - http://snapshot.debian.org/package/freexl/1.0.2-2+deb9u2/ (for access to the source package after it no longer exists in the archive)
 
-### `dpkg` source package: `fribidi=0.19.7-1`
+### `dpkg` source package: `fribidi=0.19.7-1+deb9u1`
 
 Binary Packages:
 
-- `libfribidi0:amd64=0.19.7-1+b1`
+- `libfribidi0:amd64=0.19.7-1+deb9u1`
 
 Licenses: (parsed from: `/usr/share/doc/libfribidi0/copyright`)
 
 - `LGPL-2.1`
 - `LGPL-2.1+`
 
-**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
-This is *usually* due to a new package version being released and the old version being removed.
+Source:
 
-The source package *may* still be available for download from:
+```console
+$ apt-get source -qq --print-uris fribidi=0.19.7-1+deb9u1
+'http://deb.debian.org/debian/pool/main/f/fribidi/fribidi_0.19.7-1+deb9u1.dsc' fribidi_0.19.7-1+deb9u1.dsc 2310 SHA256:06a62577db1262c09f0cce69f859606011d8f2c98330ceee311de2b5a9836a83
+'http://deb.debian.org/debian/pool/main/f/fribidi/fribidi_0.19.7.orig.tar.bz2' fribidi_0.19.7.orig.tar.bz2 648299 SHA256:08222a6212bbc2276a2d55c3bf370109ae4a35b689acbc66571ad2a670595a8e
+'http://deb.debian.org/debian/pool/main/f/fribidi/fribidi_0.19.7-1+deb9u1.debian.tar.xz' fribidi_0.19.7-1+deb9u1.debian.tar.xz 7472 SHA256:3cf606035747c8b4de0cad7e6096acce2daa6e5b7a70fdcbc2b0e84ecce64839
+```
 
-- http://snapshot.debian.org/package/fribidi/0.19.7-1/
+Other potentially useful URLs:
 
+- https://sources.debian.net/src/fribidi/0.19.7-1+deb9u1/ (for browsing the source)
+- https://sources.debian.net/src/fribidi/0.19.7-1+deb9u1/debian/copyright/ (for direct copyright/license information)
+- http://snapshot.debian.org/package/fribidi/0.19.7-1+deb9u1/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `game-music-emu=0.6.0-4`
 
@@ -1852,15 +1873,15 @@ Other potentially useful URLs:
 - https://sources.debian.net/src/game-music-emu/0.6.0-4/debian/copyright/ (for direct copyright/license information)
 - http://snapshot.debian.org/package/game-music-emu/0.6.0-4/ (for access to the source package after it no longer exists in the archive)
 
-### `dpkg` source package: `gazebo9=9.10.0-1~stretch`
+### `dpkg` source package: `gazebo9=9.11.0-1~stretch`
 
 Binary Packages:
 
-- `gazebo9=9.10.0-1~stretch`
-- `gazebo9-common=9.10.0-1~stretch`
-- `gazebo9-plugin-base=9.10.0-1~stretch`
-- `libgazebo9:amd64=9.10.0-1~stretch`
-- `libgazebo9-dev:amd64=9.10.0-1~stretch`
+- `gazebo9=9.11.0-1~stretch`
+- `gazebo9-common=9.11.0-1~stretch`
+- `gazebo9-plugin-base=9.11.0-1~stretch`
+- `libgazebo9:amd64=9.11.0-1~stretch`
+- `libgazebo9-dev:amd64=9.11.0-1~stretch`
 
 Licenses: (parsed from: `/usr/share/doc/gazebo9/copyright`, `/usr/share/doc/gazebo9-common/copyright`, `/usr/share/doc/gazebo9-plugin-base/copyright`, `/usr/share/doc/libgazebo9/copyright`, `/usr/share/doc/libgazebo9-dev/copyright`)
 
@@ -2179,14 +2200,14 @@ Other potentially useful URLs:
 - https://sources.debian.net/src/glib-networking/2.50.0-1/debian/copyright/ (for direct copyright/license information)
 - http://snapshot.debian.org/package/glib-networking/2.50.0-1/ (for access to the source package after it no longer exists in the archive)
 
-### `dpkg` source package: `glib2.0=2.50.3-2`
+### `dpkg` source package: `glib2.0=2.50.3-2+deb9u1`
 
 Binary Packages:
 
-- `libglib2.0-0:amd64=2.50.3-2`
-- `libglib2.0-bin=2.50.3-2`
-- `libglib2.0-data=2.50.3-2`
-- `libglib2.0-dev=2.50.3-2`
+- `libglib2.0-0:amd64=2.50.3-2+deb9u1`
+- `libglib2.0-bin=2.50.3-2+deb9u1`
+- `libglib2.0-data=2.50.3-2+deb9u1`
+- `libglib2.0-dev=2.50.3-2+deb9u1`
 
 Licenses: (parsed from: `/usr/share/doc/libglib2.0-0/copyright`, `/usr/share/doc/libglib2.0-bin/copyright`, `/usr/share/doc/libglib2.0-data/copyright`, `/usr/share/doc/libglib2.0-dev/copyright`)
 
@@ -2195,17 +2216,17 @@ Licenses: (parsed from: `/usr/share/doc/libglib2.0-0/copyright`, `/usr/share/doc
 Source:
 
 ```console
-$ apt-get source -qq --print-uris glib2.0=2.50.3-2
-'http://deb.debian.org/debian/pool/main/g/glib2.0/glib2.0_2.50.3-2.dsc' glib2.0_2.50.3-2.dsc 3302 SHA256:9c8e79d22e5a11ebbb69389018478c79aa39dc01f6d1fee4f164ad17752a33c9
+$ apt-get source -qq --print-uris glib2.0=2.50.3-2+deb9u1
+'http://deb.debian.org/debian/pool/main/g/glib2.0/glib2.0_2.50.3-2+deb9u1.dsc' glib2.0_2.50.3-2+deb9u1.dsc 3451 SHA256:1ec772f446253b189271f35106e39aa84a74a57796c9b1d09f3fe4b6f608c1bb
 'http://deb.debian.org/debian/pool/main/g/glib2.0/glib2.0_2.50.3.orig.tar.xz' glib2.0_2.50.3.orig.tar.xz 7589284 SHA256:82ee94bf4c01459b6b00cb9db0545c2237921e3060c0b74cff13fbc020cfd999
-'http://deb.debian.org/debian/pool/main/g/glib2.0/glib2.0_2.50.3-2.debian.tar.xz' glib2.0_2.50.3-2.debian.tar.xz 70936 SHA256:dab54226c828a99eb3accf59d471efceafcc16c25c7482cf99972553f98b6512
+'http://deb.debian.org/debian/pool/main/g/glib2.0/glib2.0_2.50.3-2+deb9u1.debian.tar.xz' glib2.0_2.50.3-2+deb9u1.debian.tar.xz 74472 SHA256:305398721ed8c790b677e44850228fd04efd1b9da7181bb0eedd9822ad7ff5d7
 ```
 
 Other potentially useful URLs:
 
-- https://sources.debian.net/src/glib2.0/2.50.3-2/ (for browsing the source)
-- https://sources.debian.net/src/glib2.0/2.50.3-2/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/glib2.0/2.50.3-2/ (for access to the source package after it no longer exists in the archive)
+- https://sources.debian.net/src/glib2.0/2.50.3-2+deb9u1/ (for browsing the source)
+- https://sources.debian.net/src/glib2.0/2.50.3-2+deb9u1/debian/copyright/ (for direct copyright/license information)
+- http://snapshot.debian.org/package/glib2.0/2.50.3-2+deb9u1/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `glibc=2.24-11+deb9u4`
 
@@ -2665,13 +2686,13 @@ Other potentially useful URLs:
 - https://sources.debian.net/src/hwloc/1.11.5-1/debian/copyright/ (for direct copyright/license information)
 - http://snapshot.debian.org/package/hwloc/1.11.5-1/ (for access to the source package after it no longer exists in the archive)
 
-### `dpkg` source package: `icu=57.1-6+deb9u2`
+### `dpkg` source package: `icu=57.1-6+deb9u3`
 
 Binary Packages:
 
-- `icu-devtools=57.1-6+deb9u2`
-- `libicu-dev=57.1-6+deb9u2`
-- `libicu57:amd64=57.1-6+deb9u2`
+- `icu-devtools=57.1-6+deb9u3`
+- `libicu-dev=57.1-6+deb9u3`
+- `libicu57:amd64=57.1-6+deb9u3`
 
 **WARNING:** unable to detect licenses! (package likely not compliant with DEP-5)  
 If source is available (seen below), check the contents of `debian/copyright` within it.
@@ -2680,17 +2701,17 @@ If source is available (seen below), check the contents of `debian/copyright` wi
 Source:
 
 ```console
-$ apt-get source -qq --print-uris icu=57.1-6+deb9u2
-'http://security.debian.org/debian-security/pool/updates/main/i/icu/icu_57.1-6+deb9u2.dsc' icu_57.1-6+deb9u2.dsc 2133 SHA256:a25881728746f3a882fce270b9a8c957d4a8e3999b8871a0781ec2099555ad32
-'http://security.debian.org/debian-security/pool/updates/main/i/icu/icu_57.1.orig.tar.gz' icu_57.1.orig.tar.gz 22360664 SHA256:ff8c67cb65949b1e7808f2359f2b80f722697048e90e7cfc382ec1fe229e9581
-'http://security.debian.org/debian-security/pool/updates/main/i/icu/icu_57.1-6+deb9u2.debian.tar.xz' icu_57.1-6+deb9u2.debian.tar.xz 34240 SHA256:7f7ca8e89cca1a21616c72b4f89c7beacb78c369323219ddd0021053a5e1aa38
+$ apt-get source -qq --print-uris icu=57.1-6+deb9u3
+'http://deb.debian.org/debian/pool/main/i/icu/icu_57.1-6+deb9u3.dsc' icu_57.1-6+deb9u3.dsc 2133 SHA256:4bde9bfbe39f0449010d5fb6863965674a2b7636cb5f55728d3f1ea790a4c1c0
+'http://deb.debian.org/debian/pool/main/i/icu/icu_57.1.orig.tar.gz' icu_57.1.orig.tar.gz 22360664 SHA256:ff8c67cb65949b1e7808f2359f2b80f722697048e90e7cfc382ec1fe229e9581
+'http://deb.debian.org/debian/pool/main/i/icu/icu_57.1-6+deb9u3.debian.tar.xz' icu_57.1-6+deb9u3.debian.tar.xz 34972 SHA256:8e24064ea1bc6ac1e96feede642723106bd7890718859ae0c36778ddca708ecc
 ```
 
 Other potentially useful URLs:
 
-- https://sources.debian.net/src/icu/57.1-6+deb9u2/ (for browsing the source)
-- https://sources.debian.net/src/icu/57.1-6+deb9u2/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/icu/57.1-6+deb9u2/ (for access to the source package after it no longer exists in the archive)
+- https://sources.debian.net/src/icu/57.1-6+deb9u3/ (for browsing the source)
+- https://sources.debian.net/src/icu/57.1-6+deb9u3/debian/copyright/ (for direct copyright/license information)
+- http://snapshot.debian.org/package/icu/57.1-6+deb9u3/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `ignition-cmake=0.4.1-2~stretch`
 
@@ -3603,23 +3624,30 @@ Other potentially useful URLs:
 - https://sources.debian.net/src/libbsd/0.8.3-1/debian/copyright/ (for direct copyright/license information)
 - http://snapshot.debian.org/package/libbsd/0.8.3-1/ (for access to the source package after it no longer exists in the archive)
 
-### `dpkg` source package: `libcaca=0.99.beta19-2`
+### `dpkg` source package: `libcaca=0.99.beta19-2.1~deb9u1`
 
 Binary Packages:
 
-- `libcaca0:amd64=0.99.beta19-2+b2`
+- `libcaca0:amd64=0.99.beta19-2.1~deb9u1`
 
 Licenses: (parsed from: `/usr/share/doc/libcaca0/copyright`)
 
 - `LGPL`
 
-**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
-This is *usually* due to a new package version being released and the old version being removed.
+Source:
 
-The source package *may* still be available for download from:
+```console
+$ apt-get source -qq --print-uris libcaca=0.99.beta19-2.1~deb9u1
+'http://deb.debian.org/debian/pool/main/libc/libcaca/libcaca_0.99.beta19-2.1~deb9u1.dsc' libcaca_0.99.beta19-2.1~deb9u1.dsc 2277 SHA256:e898d3cc99ab8845d415c5e6487eebafc37d8776ce863da9bf46862040b920ab
+'http://deb.debian.org/debian/pool/main/libc/libcaca/libcaca_0.99.beta19.orig.tar.gz' libcaca_0.99.beta19.orig.tar.gz 1203495 SHA256:128b467c4ed03264c187405172a4e83049342cc8cc2f655f53a2d0ee9d3772f4
+'http://deb.debian.org/debian/pool/main/libc/libcaca/libcaca_0.99.beta19-2.1~deb9u1.debian.tar.xz' libcaca_0.99.beta19-2.1~deb9u1.debian.tar.xz 12664 SHA256:0953344df9c0385a54d6e928f2f20bb8a3f4fb755afceb5f8747172456aa606f
+```
 
-- http://snapshot.debian.org/package/libcaca/0.99.beta19-2/
+Other potentially useful URLs:
 
+- https://sources.debian.net/src/libcaca/0.99.beta19-2.1~deb9u1/ (for browsing the source)
+- https://sources.debian.net/src/libcaca/0.99.beta19-2.1~deb9u1/debian/copyright/ (for direct copyright/license information)
+- http://snapshot.debian.org/package/libcaca/0.99.beta19-2.1~deb9u1/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `libcap-ng=0.7.7-3`
 
@@ -6465,11 +6493,11 @@ Other potentially useful URLs:
 - https://sources.debian.net/src/libzip/1.1.2-1.1/debian/copyright/ (for direct copyright/license information)
 - http://snapshot.debian.org/package/libzip/1.1.2-1.1/ (for access to the source package after it no longer exists in the archive)
 
-### `dpkg` source package: `linux=4.9.168-1+deb9u5`
+### `dpkg` source package: `linux=4.9.189-3`
 
 Binary Packages:
 
-- `linux-libc-dev:amd64=4.9.168-1+deb9u5`
+- `linux-libc-dev:amd64=4.9.189-3`
 
 Licenses: (parsed from: `/usr/share/doc/linux-libc-dev/copyright`)
 
@@ -6482,17 +6510,17 @@ Licenses: (parsed from: `/usr/share/doc/linux-libc-dev/copyright`)
 Source:
 
 ```console
-$ apt-get source -qq --print-uris linux=4.9.168-1+deb9u5
-'http://security.debian.org/debian-security/pool/updates/main/l/linux/linux_4.9.168-1+deb9u5.dsc' linux_4.9.168-1+deb9u5.dsc 123228 SHA256:12cbabcdc842d826a334c3cece306929ddc4990f0147f49fd93ba45a605992ed
-'http://security.debian.org/debian-security/pool/updates/main/l/linux/linux_4.9.168.orig.tar.xz' linux_4.9.168.orig.tar.xz 94774584 SHA256:8a2c04045b47472584fc8e72d8663b5c720b8ba5efba878f48ddba93bac29a7f
-'http://security.debian.org/debian-security/pool/updates/main/l/linux/linux_4.9.168-1+deb9u5.debian.tar.xz' linux_4.9.168-1+deb9u5.debian.tar.xz 2777140 SHA256:f4947a6d24e2d3983ec63bb0fef6235c07bd7fc503dc4ea4fc6663e71a6c7293
+$ apt-get source -qq --print-uris linux=4.9.189-3
+'http://deb.debian.org/debian/pool/main/l/linux/linux_4.9.189-3.dsc' linux_4.9.189-3.dsc 125180 SHA256:88e838eec935ab74671ee5c78777649cc14df290a4ee0e5bad918ce63ec349a3
+'http://deb.debian.org/debian/pool/main/l/linux/linux_4.9.189.orig.tar.xz' linux_4.9.189.orig.tar.xz 94807908 SHA256:f16329e227a1d4e359bd251fcaca21b0da83f1f00f03adc66e1062a479e1e5c4
+'http://deb.debian.org/debian/pool/main/l/linux/linux_4.9.189-3.debian.tar.xz' linux_4.9.189-3.debian.tar.xz 2639596 SHA256:94fa57253501335a6f79618fc809489d18a6dd521be1e0ea11c203d4ec8a8290
 ```
 
 Other potentially useful URLs:
 
-- https://sources.debian.net/src/linux/4.9.168-1+deb9u5/ (for browsing the source)
-- https://sources.debian.net/src/linux/4.9.168-1+deb9u5/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/linux/4.9.168-1+deb9u5/ (for access to the source package after it no longer exists in the archive)
+- https://sources.debian.net/src/linux/4.9.189-3/ (for browsing the source)
+- https://sources.debian.net/src/linux/4.9.189-3/debian/copyright/ (for direct copyright/license information)
+- http://snapshot.debian.org/package/linux/4.9.189-3/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `llvm-toolchain-3.9=1:3.9.1-9`
 
@@ -6701,13 +6729,13 @@ Other potentially useful URLs:
 - https://sources.debian.net/src/manpages/4.10-2/debian/copyright/ (for direct copyright/license information)
 - http://snapshot.debian.org/package/manpages/4.10-2/ (for access to the source package after it no longer exists in the archive)
 
-### `dpkg` source package: `mariadb-10.1=10.1.38-0+deb9u1`
+### `dpkg` source package: `mariadb-10.1=10.1.41-0+deb9u1`
 
 Binary Packages:
 
-- `libmariadbclient-dev=10.1.38-0+deb9u1`
-- `libmariadbclient-dev-compat:amd64=10.1.38-0+deb9u1`
-- `libmariadbclient18:amd64=10.1.38-0+deb9u1`
+- `libmariadbclient-dev=10.1.41-0+deb9u1`
+- `libmariadbclient-dev-compat:amd64=10.1.41-0+deb9u1`
+- `libmariadbclient18:amd64=10.1.41-0+deb9u1`
 
 Licenses: (parsed from: `/usr/share/doc/libmariadbclient-dev/copyright`, `/usr/share/doc/libmariadbclient-dev-compat/copyright`, `/usr/share/doc/libmariadbclient18/copyright`)
 
@@ -6731,13 +6759,21 @@ Licenses: (parsed from: `/usr/share/doc/libmariadbclient-dev/copyright`, `/usr/s
 - `unlimited-free-doc`
 - `zlib/libpng`
 
-**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
-This is *usually* due to a new package version being released and the old version being removed.
+Source:
 
-The source package *may* still be available for download from:
+```console
+$ apt-get source -qq --print-uris mariadb-10.1=10.1.41-0+deb9u1
+'http://deb.debian.org/debian/pool/main/m/mariadb-10.1/mariadb-10.1_10.1.41-0+deb9u1.dsc' mariadb-10.1_10.1.41-0+deb9u1.dsc 4530 SHA256:34bbcf9ace859cb643b1255e8be4d0741ba11e429e1d1b7210fb5d7e2daaa9c8
+'http://deb.debian.org/debian/pool/main/m/mariadb-10.1/mariadb-10.1_10.1.41.orig.tar.gz' mariadb-10.1_10.1.41.orig.tar.gz 63615288 SHA256:2b47c3afdae81eab2b9c29ba6a10328acb8d07166e8112744f6d704cc70100f2
+'http://deb.debian.org/debian/pool/main/m/mariadb-10.1/mariadb-10.1_10.1.41.orig.tar.gz.asc' mariadb-10.1_10.1.41.orig.tar.gz.asc 181 SHA256:71f6ef742254a40eefe0d580e71717f69e79472db84960467929fcdff73405bc
+'http://deb.debian.org/debian/pool/main/m/mariadb-10.1/mariadb-10.1_10.1.41-0+deb9u1.debian.tar.xz' mariadb-10.1_10.1.41-0+deb9u1.debian.tar.xz 230668 SHA256:50abd9acf083b4bf559e04db5251d932a3d40a0e87fbb93985413c3a616c6076
+```
 
-- http://snapshot.debian.org/package/mariadb-10.1/10.1.38-0+deb9u1/
+Other potentially useful URLs:
 
+- https://sources.debian.net/src/mariadb-10.1/10.1.41-0+deb9u1/ (for browsing the source)
+- https://sources.debian.net/src/mariadb-10.1/10.1.41-0+deb9u1/debian/copyright/ (for direct copyright/license information)
+- http://snapshot.debian.org/package/mariadb-10.1/10.1.41-0+deb9u1/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `mawk=1.3.3-17`
 
@@ -7182,11 +7218,11 @@ Other potentially useful URLs:
 - https://sources.debian.net/src/nettle/3.3-1/debian/copyright/ (for direct copyright/license information)
 - http://snapshot.debian.org/package/nettle/3.3-1/ (for access to the source package after it no longer exists in the archive)
 
-### `dpkg` source package: `nghttp2=1.18.1-1`
+### `dpkg` source package: `nghttp2=1.18.1-1+deb9u1`
 
 Binary Packages:
 
-- `libnghttp2-14:amd64=1.18.1-1`
+- `libnghttp2-14:amd64=1.18.1-1+deb9u1`
 
 Licenses: (parsed from: `/usr/share/doc/libnghttp2-14/copyright`)
 
@@ -7201,17 +7237,17 @@ Licenses: (parsed from: `/usr/share/doc/libnghttp2-14/copyright`)
 Source:
 
 ```console
-$ apt-get source -qq --print-uris nghttp2=1.18.1-1
-'http://deb.debian.org/debian/pool/main/n/nghttp2/nghttp2_1.18.1-1.dsc' nghttp2_1.18.1-1.dsc 2283 SHA256:a473983d2630c5f9df6b1ef439e4eee9fbb4fbe9b61bc1b80289b1ba0a84336d
-'http://deb.debian.org/debian/pool/main/n/nghttp2/nghttp2_1.18.1.orig.tar.bz2' nghttp2_1.18.1.orig.tar.bz2 1780766 SHA256:5d8bb930eb90c552ec836c7b1862406b69cafcda5520bf266c8f5d914d9b447c
-'http://deb.debian.org/debian/pool/main/n/nghttp2/nghttp2_1.18.1-1.debian.tar.xz' nghttp2_1.18.1-1.debian.tar.xz 11716 SHA256:ffcd8e21b6824b6907466f4d3c481f4a68601f8b0b09545e19c033d14a0d16d5
+$ apt-get source -qq --print-uris nghttp2=1.18.1-1+deb9u1
+'http://security.debian.org/debian-security/pool/updates/main/n/nghttp2/nghttp2_1.18.1-1+deb9u1.dsc' nghttp2_1.18.1-1+deb9u1.dsc 2657 SHA256:fc99fa8d124d322f7cd872c3088a268ea86f42e71229fc98d8a90869950d0a14
+'http://security.debian.org/debian-security/pool/updates/main/n/nghttp2/nghttp2_1.18.1.orig.tar.bz2' nghttp2_1.18.1.orig.tar.bz2 1780766 SHA256:5d8bb930eb90c552ec836c7b1862406b69cafcda5520bf266c8f5d914d9b447c
+'http://security.debian.org/debian-security/pool/updates/main/n/nghttp2/nghttp2_1.18.1-1+deb9u1.debian.tar.xz' nghttp2_1.18.1-1+deb9u1.debian.tar.xz 12300 SHA256:94cf473ee6a78181ebdddc18676df356fb788540cf426b7eca944573f2808733
 ```
 
 Other potentially useful URLs:
 
-- https://sources.debian.net/src/nghttp2/1.18.1-1/ (for browsing the source)
-- https://sources.debian.net/src/nghttp2/1.18.1-1/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/nghttp2/1.18.1-1/ (for access to the source package after it no longer exists in the archive)
+- https://sources.debian.net/src/nghttp2/1.18.1-1+deb9u1/ (for browsing the source)
+- https://sources.debian.net/src/nghttp2/1.18.1-1+deb9u1/debian/copyright/ (for direct copyright/license information)
+- http://snapshot.debian.org/package/nghttp2/1.18.1-1+deb9u1/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `npth=1.3-1`
 
@@ -7543,24 +7579,31 @@ Other potentially useful URLs:
 - https://sources.debian.net/src/openjpeg2/2.1.2-1.1+deb9u3/debian/copyright/ (for direct copyright/license information)
 - http://snapshot.debian.org/package/openjpeg2/2.1.2-1.1+deb9u3/ (for access to the source package after it no longer exists in the archive)
 
-### `dpkg` source package: `openldap=2.4.44+dfsg-5+deb9u2`
+### `dpkg` source package: `openldap=2.4.44+dfsg-5+deb9u3`
 
 Binary Packages:
 
-- `libldap-2.4-2:amd64=2.4.44+dfsg-5+deb9u2`
-- `libldap-common=2.4.44+dfsg-5+deb9u2`
+- `libldap-2.4-2:amd64=2.4.44+dfsg-5+deb9u3`
+- `libldap-common=2.4.44+dfsg-5+deb9u3`
 
 **WARNING:** unable to detect licenses! (package likely not compliant with DEP-5)  
 If source is available (seen below), check the contents of `debian/copyright` within it.
 
 
-**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
-This is *usually* due to a new package version being released and the old version being removed.
+Source:
 
-The source package *may* still be available for download from:
+```console
+$ apt-get source -qq --print-uris openldap=2.4.44+dfsg-5+deb9u3
+'http://deb.debian.org/debian/pool/main/o/openldap/openldap_2.4.44+dfsg-5+deb9u3.dsc' openldap_2.4.44+dfsg-5+deb9u3.dsc 3009 SHA256:feff6977d4674bbbbe3c34c9d292edcfe6d895d10aa165910dbc96819a327abb
+'http://deb.debian.org/debian/pool/main/o/openldap/openldap_2.4.44+dfsg.orig.tar.gz' openldap_2.4.44+dfsg.orig.tar.gz 4826590 SHA256:d5187c229bec163c5d97845846e1b87917755f85b04f444c08836384f4bd7ffe
+'http://deb.debian.org/debian/pool/main/o/openldap/openldap_2.4.44+dfsg-5+deb9u3.debian.tar.xz' openldap_2.4.44+dfsg-5+deb9u3.debian.tar.xz 168576 SHA256:926e2b00418901d9b52d314a6f6319f84c9dd04e12d085830ffc37bf3329c402
+```
 
-- http://snapshot.debian.org/package/openldap/2.4.44+dfsg-5+deb9u2/
+Other potentially useful URLs:
 
+- https://sources.debian.net/src/openldap/2.4.44+dfsg-5+deb9u3/ (for browsing the source)
+- https://sources.debian.net/src/openldap/2.4.44+dfsg-5+deb9u3/debian/copyright/ (for direct copyright/license information)
+- http://snapshot.debian.org/package/openldap/2.4.44+dfsg-5+deb9u3/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `openmpi=2.0.2-2`
 
@@ -9153,12 +9196,12 @@ Other potentially useful URLs:
 - https://sources.debian.net/src/superlu/5.2.1+dfsg1-2/debian/copyright/ (for direct copyright/license information)
 - http://snapshot.debian.org/package/superlu/5.2.1+dfsg1-2/ (for access to the source package after it no longer exists in the archive)
 
-### `dpkg` source package: `systemd=232-25+deb9u11`
+### `dpkg` source package: `systemd=232-25+deb9u12`
 
 Binary Packages:
 
-- `libsystemd0:amd64=232-25+deb9u11`
-- `libudev1:amd64=232-25+deb9u11`
+- `libsystemd0:amd64=232-25+deb9u12`
+- `libudev1:amd64=232-25+deb9u12`
 
 Licenses: (parsed from: `/usr/share/doc/libsystemd0/copyright`, `/usr/share/doc/libudev1/copyright`)
 
@@ -9173,17 +9216,17 @@ Licenses: (parsed from: `/usr/share/doc/libsystemd0/copyright`, `/usr/share/doc/
 Source:
 
 ```console
-$ apt-get source -qq --print-uris systemd=232-25+deb9u11
-'http://security.debian.org/debian-security/pool/updates/main/s/systemd/systemd_232-25+deb9u11.dsc' systemd_232-25+deb9u11.dsc 4801 SHA256:afc41f50bc973f3d483aee66c9e6d9c66a0974bd77ed5daf164e3c8d57e03222
-'http://security.debian.org/debian-security/pool/updates/main/s/systemd/systemd_232.orig.tar.gz' systemd_232.orig.tar.gz 4529048 SHA256:1172c7c7d5d72fbded53186e7599d5272231f04cc8b72f9a0fb2c5c20dfc4880
-'http://security.debian.org/debian-security/pool/updates/main/s/systemd/systemd_232-25+deb9u11.debian.tar.xz' systemd_232-25+deb9u11.debian.tar.xz 221496 SHA256:0e3f326944a8f4c348a648c783d145fd616c9e42186c4efb7a20f737040a97bb
+$ apt-get source -qq --print-uris systemd=232-25+deb9u12
+'http://deb.debian.org/debian/pool/main/s/systemd/systemd_232-25+deb9u12.dsc' systemd_232-25+deb9u12.dsc 4801 SHA256:c280f20392fd51135a9cd5b03e8666545be05cc1fa73e4ed195f2002036a3cd7
+'http://deb.debian.org/debian/pool/main/s/systemd/systemd_232.orig.tar.gz' systemd_232.orig.tar.gz 4529048 SHA256:1172c7c7d5d72fbded53186e7599d5272231f04cc8b72f9a0fb2c5c20dfc4880
+'http://deb.debian.org/debian/pool/main/s/systemd/systemd_232-25+deb9u12.debian.tar.xz' systemd_232-25+deb9u12.debian.tar.xz 221868 SHA256:0fed4bffee2e7c2cdfac03f2b6fe8252aad96366edb783512c0d9bb7a40b8a6a
 ```
 
 Other potentially useful URLs:
 
-- https://sources.debian.net/src/systemd/232-25+deb9u11/ (for browsing the source)
-- https://sources.debian.net/src/systemd/232-25+deb9u11/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/systemd/232-25+deb9u11/ (for access to the source package after it no longer exists in the archive)
+- https://sources.debian.net/src/systemd/232-25+deb9u12/ (for browsing the source)
+- https://sources.debian.net/src/systemd/232-25+deb9u12/debian/copyright/ (for direct copyright/license information)
+- http://snapshot.debian.org/package/systemd/232-25+deb9u12/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `sysvinit=2.88dsf-59.9`
 
@@ -9395,23 +9438,31 @@ Other potentially useful URLs:
 - https://sources.debian.net/src/twolame/0.3.13-2/debian/copyright/ (for direct copyright/license information)
 - http://snapshot.debian.org/package/twolame/0.3.13-2/ (for access to the source package after it no longer exists in the archive)
 
-### `dpkg` source package: `tzdata=2019a-0+deb9u1`
+### `dpkg` source package: `tzdata=2019b-0+deb9u1`
 
 Binary Packages:
 
-- `tzdata=2019a-0+deb9u1`
+- `tzdata=2019b-0+deb9u1`
 
 **WARNING:** unable to detect licenses! (package likely not compliant with DEP-5)  
 If source is available (seen below), check the contents of `debian/copyright` within it.
 
 
-**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
-This is *usually* due to a new package version being released and the old version being removed.
+Source:
 
-The source package *may* still be available for download from:
+```console
+$ apt-get source -qq --print-uris tzdata=2019b-0+deb9u1
+'http://deb.debian.org/debian/pool/main/t/tzdata/tzdata_2019b-0+deb9u1.dsc' tzdata_2019b-0+deb9u1.dsc 2270 SHA256:7ef304af8fa2989f5799ada6435dea6ab6aded5a9e1e405c57f6f9a4d20dffba
+'http://deb.debian.org/debian/pool/main/t/tzdata/tzdata_2019b.orig.tar.gz' tzdata_2019b.orig.tar.gz 384667 SHA256:05d9092c90dcf9ec4f3ccfdea80c7dcea5e882b3b105c3422da172aaa9a50c64
+'http://deb.debian.org/debian/pool/main/t/tzdata/tzdata_2019b.orig.tar.gz.asc' tzdata_2019b.orig.tar.gz.asc 833 SHA256:2e3bd0245d3e63cffe8580551074b07cbdc7dcb37ab92ec7dad5af84331ce3da
+'http://deb.debian.org/debian/pool/main/t/tzdata/tzdata_2019b-0+deb9u1.debian.tar.xz' tzdata_2019b-0+deb9u1.debian.tar.xz 101816 SHA256:d230717d6420ca9089c824ec8034e1846cd094639d54193d2f69970eaa10ce25
+```
 
-- http://snapshot.debian.org/package/tzdata/2019a-0+deb9u1/
+Other potentially useful URLs:
 
+- https://sources.debian.net/src/tzdata/2019b-0+deb9u1/ (for browsing the source)
+- https://sources.debian.net/src/tzdata/2019b-0+deb9u1/debian/copyright/ (for direct copyright/license information)
+- http://snapshot.debian.org/package/tzdata/2019b-0+deb9u1/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `ucf=3.0036`
 

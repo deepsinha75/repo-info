@@ -137,13 +137,9 @@ Licenses: (parsed from: `/usr/share/doc/apt/copyright`, `/usr/share/doc/libapt-p
 - `GPL-2`
 - `GPLv2+`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris apt=1.6.11
-'http://archive.ubuntu.com/ubuntu/pool/main/a/apt/apt_1.6.11.dsc' apt_1.6.11.dsc 2796 SHA256:eb864de476a694c7cc78272927bd8bc70e32c1c31efc18bd7bdc5012f7303e6a
-'http://archive.ubuntu.com/ubuntu/pool/main/a/apt/apt_1.6.11.tar.xz' apt_1.6.11.tar.xz 2156840 SHA256:a10b574b34114c17a4e04dda7e3c5c5bd4799fe26e9eaf609ee67f2471b1ea6e
-```
 
 ### `dpkg` source package: `armadillo=1:8.400.0+dfsg-2`
 
@@ -1132,14 +1128,9 @@ Licenses: (parsed from: `/usr/share/doc/libexpat1/copyright`, `/usr/share/doc/li
 
 - `MIT`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris expat=2.2.5-3ubuntu0.1
-'http://archive.ubuntu.com/ubuntu/pool/main/e/expat/expat_2.2.5-3ubuntu0.1.dsc' expat_2.2.5-3ubuntu0.1.dsc 2198 SHA256:3632826470a247360d88c662e6defc2ec3d7a20e966a64062f768447ff149754
-'http://archive.ubuntu.com/ubuntu/pool/main/e/expat/expat_2.2.5.orig.tar.gz' expat_2.2.5.orig.tar.gz 8273003 SHA256:b3781742738611eaa737543ee94264dd511c52a3ba7e53111f7d705f6bff65a8
-'http://archive.ubuntu.com/ubuntu/pool/main/e/expat/expat_2.2.5-3ubuntu0.1.debian.tar.xz' expat_2.2.5-3ubuntu0.1.debian.tar.xz 11176 SHA256:a8d7fb711c503bec9050caa87c67c6c69ad10dba2cba77a2a4d86cf431fc1b74
-```
 
 ### `dpkg` source package: `fakeroot=1.22-2ubuntu1`
 
