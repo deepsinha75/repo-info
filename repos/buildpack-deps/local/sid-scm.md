@@ -393,20 +393,13 @@ Licenses: (parsed from: `/usr/share/doc/curl/copyright`, `/usr/share/doc/libcurl
 - `other`
 - `public-domain`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris curl=7.65.3-1
-'http://deb.debian.org/debian/pool/main/c/curl/curl_7.65.3-1.dsc' curl_7.65.3-1.dsc 2630 SHA256:6c15c2d9ae1b811202698287a772740a6965732e52627e6ac70a97b0d183c0e8
-'http://deb.debian.org/debian/pool/main/c/curl/curl_7.65.3.orig.tar.gz' curl_7.65.3.orig.tar.gz 4022334 SHA256:4376ac72b95572fb6c4fbffefb97c7ea0dd083e1974c0e44cd7e49396f454839
-'http://deb.debian.org/debian/pool/main/c/curl/curl_7.65.3-1.debian.tar.xz' curl_7.65.3-1.debian.tar.xz 29056 SHA256:555a3af0436845783fb3877720098b23a5874641c8d2f616747c7f63e55234be
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/curl/7.65.3-1/
 
-- https://sources.debian.net/src/curl/7.65.3-1/ (for browsing the source)
-- https://sources.debian.net/src/curl/7.65.3-1/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/curl/7.65.3-1/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `cyrus-sasl2=2.1.27+dfsg-1`
 
@@ -1711,21 +1704,13 @@ Licenses: (parsed from: `/usr/share/doc/libtasn1-6/copyright`)
 - `LGPL`
 - `LGPL-2.1`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris libtasn1-6=4.14-2
-'http://deb.debian.org/debian/pool/main/libt/libtasn1-6/libtasn1-6_4.14-2.dsc' libtasn1-6_4.14-2.dsc 2566 SHA256:f9031be37f79dd54320de7671ad4747965dfdb91842341f4bbb7fcc4c43f00bc
-'http://deb.debian.org/debian/pool/main/libt/libtasn1-6/libtasn1-6_4.14.orig.tar.gz' libtasn1-6_4.14.orig.tar.gz 1771184 SHA256:9e604ba5c5c8ea403487695c2e407405820d98540d9de884d6e844f9a9c5ba08
-'http://deb.debian.org/debian/pool/main/libt/libtasn1-6/libtasn1-6_4.14.orig.tar.gz.asc' libtasn1-6_4.14.orig.tar.gz.asc 488 SHA256:9c11501a32c3a7da6fd148f2408619054975e38c31b0d2ca562e99477719dda0
-'http://deb.debian.org/debian/pool/main/libt/libtasn1-6/libtasn1-6_4.14-2.debian.tar.xz' libtasn1-6_4.14-2.debian.tar.xz 18020 SHA256:77a3fcc686d4b65cf76eb471bc9b4678122ce4a771405de8574e1f6fc8feaa08
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/libtasn1-6/4.14-2/
 
-- https://sources.debian.net/src/libtasn1-6/4.14-2/ (for browsing the source)
-- https://sources.debian.net/src/libtasn1-6/4.14-2/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/libtasn1-6/4.14-2/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `libunistring=0.9.10-2`
 
@@ -2171,21 +2156,13 @@ Licenses: (parsed from: `/usr/share/doc/libp11-kit0/copyright`)
 - `permissive-like-automake-output`
 - `same-as-rest-of-p11kit`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris p11-kit=0.23.16.1-2
-'http://deb.debian.org/debian/pool/main/p/p11-kit/p11-kit_0.23.16.1-2.dsc' p11-kit_0.23.16.1-2.dsc 2440 SHA256:4e837c3bd2b4905a3a9f2b9892741cded6ef27658f01e2d7cf913c24197bc3fa
-'http://deb.debian.org/debian/pool/main/p/p11-kit/p11-kit_0.23.16.1.orig.tar.gz' p11-kit_0.23.16.1.orig.tar.gz 1292783 SHA256:4b34e92ae36fa493e0d94366c767f06d5f9951e3d8581d10fd935d738db1574d
-'http://deb.debian.org/debian/pool/main/p/p11-kit/p11-kit_0.23.16.1.orig.tar.gz.asc' p11-kit_0.23.16.1.orig.tar.gz.asc 833 SHA256:d6466013c87038d69d3d838d87fd8ad0e052d927ba56bf5658366351f7bb0099
-'http://deb.debian.org/debian/pool/main/p/p11-kit/p11-kit_0.23.16.1-2.debian.tar.xz' p11-kit_0.23.16.1-2.debian.tar.xz 21560 SHA256:d894bdf23f68ba4312ee384e4cd662bd00b0c5baa4088993f1620d99afbfbfc0
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/p11-kit/0.23.16.1-2/
 
-- https://sources.debian.net/src/p11-kit/0.23.16.1-2/ (for browsing the source)
-- https://sources.debian.net/src/p11-kit/0.23.16.1-2/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/p11-kit/0.23.16.1-2/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `pam=1.3.1-5`
 

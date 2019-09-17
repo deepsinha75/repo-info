@@ -772,20 +772,13 @@ Licenses: (parsed from: `/usr/share/doc/libdjvulibre-dev/copyright`, `/usr/share
 
 - `GPL-2`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris djvulibre=3.5.27.1-12
-'http://deb.debian.org/debian/pool/main/d/djvulibre/djvulibre_3.5.27.1-12.dsc' djvulibre_3.5.27.1-12.dsc 2406 SHA256:84fdfaa3e64709e8c1e4253109f85b18a7adc84b48d851fb9bc8967609d6dc8f
-'http://deb.debian.org/debian/pool/main/d/djvulibre/djvulibre_3.5.27.1.orig.tar.gz' djvulibre_3.5.27.1.orig.tar.gz 3231662 SHA256:77f07de3f1039aa19eba2eb3170d9ce9a0918ba7b704a59cfaf08f42fcc52144
-'http://deb.debian.org/debian/pool/main/d/djvulibre/djvulibre_3.5.27.1-12.debian.tar.xz' djvulibre_3.5.27.1-12.debian.tar.xz 75492 SHA256:0a33a2c246e725fe75f498d377ad2530b8dc7d1d76f58b4f08242415c7c13ac3
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/djvulibre/3.5.27.1-12/
 
-- https://sources.debian.net/src/djvulibre/3.5.27.1-12/ (for browsing the source)
-- https://sources.debian.net/src/djvulibre/3.5.27.1-12/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/djvulibre/3.5.27.1-12/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `dpkg=1.19.7`
 
@@ -1163,19 +1156,13 @@ Licenses: (parsed from: `/usr/share/doc/cpp/copyright`, `/usr/share/doc/g++/copy
 
 - `GPL`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris gcc-defaults=1.185
-'http://deb.debian.org/debian/pool/main/g/gcc-defaults/gcc-defaults_1.185.dsc' gcc-defaults_1.185.dsc 15232 SHA256:3a1766b1366da20ea25792633a61df372a86418212b08287e04e4ae3dd56a7c6
-'http://deb.debian.org/debian/pool/main/g/gcc-defaults/gcc-defaults_1.185.tar.gz' gcc-defaults_1.185.tar.gz 55249 SHA256:e6fa9bf93858a65c6e836c006a7410d3a56e6c90cdcc27aa51c94c4f8be8bbb1
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/gcc-defaults/1.185/
 
-- https://sources.debian.net/src/gcc-defaults/1.185/ (for browsing the source)
-- https://sources.debian.net/src/gcc-defaults/1.185/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/gcc-defaults/1.185/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `gdbm=1.18.1-5`
 
@@ -1591,20 +1578,13 @@ Licenses: (parsed from: `/usr/share/doc/libharfbuzz0b/copyright`)
 
 - `MIT`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris harfbuzz=2.6.1-2
-'http://deb.debian.org/debian/pool/main/h/harfbuzz/harfbuzz_2.6.1-2.dsc' harfbuzz_2.6.1-2.dsc 2418 SHA256:2aa35be12e955bae31c039ca797a2ccbba84ee07e62d7db7ecd96866711c23c7
-'http://deb.debian.org/debian/pool/main/h/harfbuzz/harfbuzz_2.6.1.orig.tar.xz' harfbuzz_2.6.1.orig.tar.xz 5741372 SHA256:c651fb3faaa338aeb280726837c2384064cdc17ef40539228d88a1260960844f
-'http://deb.debian.org/debian/pool/main/h/harfbuzz/harfbuzz_2.6.1-2.debian.tar.xz' harfbuzz_2.6.1-2.debian.tar.xz 9880 SHA256:39e4d9d1d7cb87c0252bab287978d0521ec37d01cb3793374726a342514d2f0b
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/harfbuzz/2.6.1-2/
 
-- https://sources.debian.net/src/harfbuzz/2.6.1-2/ (for browsing the source)
-- https://sources.debian.net/src/harfbuzz/2.6.1-2/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/harfbuzz/2.6.1-2/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `hicolor-icon-theme=0.17-2`
 
@@ -1890,20 +1870,13 @@ Licenses: (parsed from: `/usr/share/doc/libisl19/copyright`)
 - `LGPL-2.1+`
 - `MIT`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris isl=0.20-2
-'http://deb.debian.org/debian/pool/main/i/isl/isl_0.20-2.dsc' isl_0.20-2.dsc 1842 SHA256:466b881ac0207f9430ae21069e644f17a6e4428544f9802284727381e5d26089
-'http://deb.debian.org/debian/pool/main/i/isl/isl_0.20.orig.tar.xz' isl_0.20.orig.tar.xz 1539064 SHA256:a5596a9fb8a5b365cb612e4b9628735d6e67e9178fae134a816ae195017e77aa
-'http://deb.debian.org/debian/pool/main/i/isl/isl_0.20-2.debian.tar.xz' isl_0.20-2.debian.tar.xz 23512 SHA256:ea2b467fea2395ca08f236f520fcc37e50a1c91cad471a9ee89443bfae8f50af
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/isl/0.20-2/
 
-- https://sources.debian.net/src/isl/0.20-2/ (for browsing the source)
-- https://sources.debian.net/src/isl/0.20-2/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/isl/0.20-2/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `jbigkit=2.1-3.1`
 
@@ -2512,21 +2485,13 @@ Licenses: (parsed from: `/usr/share/doc/libidn2-0/copyright`, `/usr/share/doc/li
 - `LGPL-3+`
 - `Unicode`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris libidn2=2.2.0-1
-'http://deb.debian.org/debian/pool/main/libi/libidn2/libidn2_2.2.0-1.dsc' libidn2_2.2.0-1.dsc 2208 SHA256:7d8532239f4ab0c0e246a20cb8997a3a8303843e32ae168e7f5f1e841bfc10fb
-'http://deb.debian.org/debian/pool/main/libi/libidn2/libidn2_2.2.0.orig.tar.gz' libidn2_2.2.0.orig.tar.gz 2110743 SHA256:fc734732b506d878753ec6606982bf7b936e868c25c30ddb0d83f7d7056381fe
-'http://deb.debian.org/debian/pool/main/libi/libidn2/libidn2_2.2.0.orig.tar.gz.asc' libidn2_2.2.0.orig.tar.gz.asc 566 SHA256:aa0a50999b8e6d9649476a61aa2041544c473f1eb059bf1bf197c502e98dfc2f
-'http://deb.debian.org/debian/pool/main/libi/libidn2/libidn2_2.2.0-1.debian.tar.xz' libidn2_2.2.0-1.debian.tar.xz 10428 SHA256:6369fb8e9b874124a7d0f6c07dc30d086ddb6f1f91a98c33a832497d6281299d
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/libidn2/2.2.0-1/
 
-- https://sources.debian.net/src/libidn2/2.2.0-1/ (for browsing the source)
-- https://sources.debian.net/src/libidn2/2.2.0-1/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/libidn2/2.2.0-1/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `libjpeg-turbo=1:1.5.2-2`
 
@@ -3644,21 +3609,13 @@ Licenses: (parsed from: `/usr/share/doc/libmariadb-dev/copyright`, `/usr/share/d
 - `unlimited-free-doc`
 - `zlib/libpng`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris mariadb-10.3=1:10.3.17-1
-'http://deb.debian.org/debian/pool/main/m/mariadb-10.3/mariadb-10.3_10.3.17-1.dsc' mariadb-10.3_10.3.17-1.dsc 4780 SHA256:6b6c1b62d9703832afebada4e0e01685a8c728c1d3e343f54f39f28e06b8ff2e
-'http://deb.debian.org/debian/pool/main/m/mariadb-10.3/mariadb-10.3_10.3.17.orig.tar.gz' mariadb-10.3_10.3.17.orig.tar.gz 71894997 SHA256:20a1ea4fc59aae89dcc82aff0d4907b036daf9bfbd252f08162399f055097097
-'http://deb.debian.org/debian/pool/main/m/mariadb-10.3/mariadb-10.3_10.3.17.orig.tar.gz.asc' mariadb-10.3_10.3.17.orig.tar.gz.asc 181 SHA256:989f24ffd89310a8c79bee4a3164f5495b1dba0e7d6b9966db3d88957c9ea698
-'http://deb.debian.org/debian/pool/main/m/mariadb-10.3/mariadb-10.3_10.3.17-1.debian.tar.xz' mariadb-10.3_10.3.17-1.debian.tar.xz 214312 SHA256:f7898d635e639ae4c48f96016d783b844f0b35e9867315f792f0c70edbf4a510
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/mariadb-10.3/1:10.3.17-1/
 
-- https://sources.debian.net/src/mariadb-10.3/1:10.3.17-1/ (for browsing the source)
-- https://sources.debian.net/src/mariadb-10.3/1:10.3.17-1/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/mariadb-10.3/1:10.3.17-1/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `mawk=1.3.3-17`
 
@@ -5082,21 +5039,13 @@ Binary Packages:
 If source is available (seen below), check the contents of `debian/copyright` within it.
 
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris tzdata=2019b-2
-'http://deb.debian.org/debian/pool/main/t/tzdata/tzdata_2019b-2.dsc' tzdata_2019b-2.dsc 2232 SHA256:7b5315c670f2a3a12220ec8e8a69e65eca82bb02736945d202e342c6aa0449a9
-'http://deb.debian.org/debian/pool/main/t/tzdata/tzdata_2019b.orig.tar.gz' tzdata_2019b.orig.tar.gz 384667 SHA256:05d9092c90dcf9ec4f3ccfdea80c7dcea5e882b3b105c3422da172aaa9a50c64
-'http://deb.debian.org/debian/pool/main/t/tzdata/tzdata_2019b.orig.tar.gz.asc' tzdata_2019b.orig.tar.gz.asc 833 SHA256:2e3bd0245d3e63cffe8580551074b07cbdc7dcb37ab92ec7dad5af84331ce3da
-'http://deb.debian.org/debian/pool/main/t/tzdata/tzdata_2019b-2.debian.tar.xz' tzdata_2019b-2.debian.tar.xz 104816 SHA256:28338da2af08aa4c264155f2298d949c1d7edc6fb9da6a50c20c55979563fbe8
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/tzdata/2019b-2/
 
-- https://sources.debian.net/src/tzdata/2019b-2/ (for browsing the source)
-- https://sources.debian.net/src/tzdata/2019b-2/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/tzdata/2019b-2/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `ucf=3.0038+nmu1`
 
