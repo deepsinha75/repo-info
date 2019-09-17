@@ -368,20 +368,13 @@ Licenses: (parsed from: `/usr/share/doc/curl/copyright`, `/usr/share/doc/libcurl
 - `ISC`
 - `curl`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris curl=7.38.0-4+deb8u15
-'http://security.debian.org/debian-security/pool/updates/main/c/curl/curl_7.38.0-4+deb8u15.dsc' curl_7.38.0-4+deb8u15.dsc 2824 SHA256:974ceb515fefc87cb735252d84a406c0b330721ee1f895d935c69828cd1c958f
-'http://security.debian.org/debian-security/pool/updates/main/c/curl/curl_7.38.0.orig.tar.gz' curl_7.38.0.orig.tar.gz 4094034 SHA256:5661028aa6532882fa228cd23c99ddbb8b87643dbb1a7ea55c068d34a943dff1
-'http://security.debian.org/debian-security/pool/updates/main/c/curl/curl_7.38.0-4+deb8u15.debian.tar.xz' curl_7.38.0-4+deb8u15.debian.tar.xz 57928 SHA256:8fa2d674b499046c23d418c8d0c8e5531f5943a626cedd663c446270399bb8fe
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/curl/7.38.0-4+deb8u15/
 
-- https://sources.debian.net/src/curl/7.38.0-4+deb8u15/ (for browsing the source)
-- https://sources.debian.net/src/curl/7.38.0-4+deb8u15/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/curl/7.38.0-4+deb8u15/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `cyrus-sasl2=2.1.26.dfsg1-13+deb8u1`
 
