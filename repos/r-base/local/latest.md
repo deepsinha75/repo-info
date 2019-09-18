@@ -300,15 +300,9 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris build-essential=12.7
-'http://deb.debian.org/debian/pool/main/b/build-essential/build-essential_12.7.dsc' build-essential_12.7.dsc 2394 SHA256:5918df7b401fb2fb7d664a0823348f832a4a0901d4d71f918b642cea892ac2c6
-'http://deb.debian.org/debian/pool/main/b/build-essential/build-essential_12.7.tar.xz' build-essential_12.7.tar.xz 51300 SHA256:0f08353b73dbc1d61c6f87ca7b0e4764c4bf4b107729e0f0e8a2a1ec0141f381
+'http://http.debian.net/debian/pool/main/b/build-essential/build-essential_12.7.dsc' build-essential_12.7.dsc 2394 SHA256:5918df7b401fb2fb7d664a0823348f832a4a0901d4d71f918b642cea892ac2c6
+'http://http.debian.net/debian/pool/main/b/build-essential/build-essential_12.7.tar.xz' build-essential_12.7.tar.xz 51300 SHA256:0f08353b73dbc1d61c6f87ca7b0e4764c4bf4b107729e0f0e8a2a1ec0141f381
 ```
-
-Other potentially useful URLs:
-
-- https://sources.debian.net/src/build-essential/12.7/ (for browsing the source)
-- https://sources.debian.net/src/build-essential/12.7/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/build-essential/12.7/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `bzip2=1.0.8-2`
 
@@ -1072,9 +1066,15 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris gcc-defaults=1.185.1
-'http://http.debian.net/debian/pool/main/g/gcc-defaults/gcc-defaults_1.185.1.dsc' gcc-defaults_1.185.1.dsc 11989 SHA256:471b39e0d91871f9b0054b8d3d2f7c27c190fc751f46a1c7c7ecdcba6de7aa4d
-'http://http.debian.net/debian/pool/main/g/gcc-defaults/gcc-defaults_1.185.1.tar.gz' gcc-defaults_1.185.1.tar.gz 54512 SHA256:6e1bbc04f51b63cb0a8ac26c635c9f0e9a3a45f5d01b013b1946bb0c42e6cc77
+'http://deb.debian.org/debian/pool/main/g/gcc-defaults/gcc-defaults_1.185.1.dsc' gcc-defaults_1.185.1.dsc 11989 SHA256:471b39e0d91871f9b0054b8d3d2f7c27c190fc751f46a1c7c7ecdcba6de7aa4d
+'http://deb.debian.org/debian/pool/main/g/gcc-defaults/gcc-defaults_1.185.1.tar.gz' gcc-defaults_1.185.1.tar.gz 54512 SHA256:6e1bbc04f51b63cb0a8ac26c635c9f0e9a3a45f5d01b013b1946bb0c42e6cc77
 ```
+
+Other potentially useful URLs:
+
+- https://sources.debian.net/src/gcc-defaults/1.185.1/ (for browsing the source)
+- https://sources.debian.net/src/gcc-defaults/1.185.1/debian/copyright/ (for direct copyright/license information)
+- http://snapshot.debian.org/package/gcc-defaults/1.185.1/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `gdbm=1.18.1-5`
 
@@ -1367,10 +1367,16 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris harfbuzz=2.6.1-3
-'http://http.debian.net/debian/pool/main/h/harfbuzz/harfbuzz_2.6.1-3.dsc' harfbuzz_2.6.1-3.dsc 2434 SHA256:7c33bb0db60f69fa88722e5ab72a7f49ed49e1701ec160816a64587cef5da9a2
-'http://http.debian.net/debian/pool/main/h/harfbuzz/harfbuzz_2.6.1.orig.tar.xz' harfbuzz_2.6.1.orig.tar.xz 5741372 SHA256:c651fb3faaa338aeb280726837c2384064cdc17ef40539228d88a1260960844f
-'http://http.debian.net/debian/pool/main/h/harfbuzz/harfbuzz_2.6.1-3.debian.tar.xz' harfbuzz_2.6.1-3.debian.tar.xz 10724 SHA256:4bf3ab1ab3cc096f4e3d76684ff9a7b14bec7b9c01143f8dfcb3f706e649605a
+'http://deb.debian.org/debian/pool/main/h/harfbuzz/harfbuzz_2.6.1-3.dsc' harfbuzz_2.6.1-3.dsc 2434 SHA256:7c33bb0db60f69fa88722e5ab72a7f49ed49e1701ec160816a64587cef5da9a2
+'http://deb.debian.org/debian/pool/main/h/harfbuzz/harfbuzz_2.6.1.orig.tar.xz' harfbuzz_2.6.1.orig.tar.xz 5741372 SHA256:c651fb3faaa338aeb280726837c2384064cdc17ef40539228d88a1260960844f
+'http://deb.debian.org/debian/pool/main/h/harfbuzz/harfbuzz_2.6.1-3.debian.tar.xz' harfbuzz_2.6.1-3.debian.tar.xz 10724 SHA256:4bf3ab1ab3cc096f4e3d76684ff9a7b14bec7b9c01143f8dfcb3f706e649605a
 ```
+
+Other potentially useful URLs:
+
+- https://sources.debian.net/src/harfbuzz/2.6.1-3/ (for browsing the source)
+- https://sources.debian.net/src/harfbuzz/2.6.1-3/debian/copyright/ (for direct copyright/license information)
+- http://snapshot.debian.org/package/harfbuzz/2.6.1-3/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `hostname=3.22`
 
@@ -1990,21 +1996,13 @@ Licenses: (parsed from: `/usr/share/doc/libidn2-0/copyright`)
 - `LGPL-3+`
 - `Unicode`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris libidn2=2.2.0-1
-'http://deb.debian.org/debian/pool/main/libi/libidn2/libidn2_2.2.0-1.dsc' libidn2_2.2.0-1.dsc 2208 SHA256:7d8532239f4ab0c0e246a20cb8997a3a8303843e32ae168e7f5f1e841bfc10fb
-'http://deb.debian.org/debian/pool/main/libi/libidn2/libidn2_2.2.0.orig.tar.gz' libidn2_2.2.0.orig.tar.gz 2110743 SHA256:fc734732b506d878753ec6606982bf7b936e868c25c30ddb0d83f7d7056381fe
-'http://deb.debian.org/debian/pool/main/libi/libidn2/libidn2_2.2.0.orig.tar.gz.asc' libidn2_2.2.0.orig.tar.gz.asc 566 SHA256:aa0a50999b8e6d9649476a61aa2041544c473f1eb059bf1bf197c502e98dfc2f
-'http://deb.debian.org/debian/pool/main/libi/libidn2/libidn2_2.2.0-1.debian.tar.xz' libidn2_2.2.0-1.debian.tar.xz 10428 SHA256:6369fb8e9b874124a7d0f6c07dc30d086ddb6f1f91a98c33a832497d6281299d
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/libidn2/2.2.0-1/
 
-- https://sources.debian.net/src/libidn2/2.2.0-1/ (for browsing the source)
-- https://sources.debian.net/src/libidn2/2.2.0-1/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/libidn2/2.2.0-1/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `libjpeg-turbo=1:1.5.2-2`
 
@@ -3908,21 +3906,13 @@ Binary Packages:
 If source is available (seen below), check the contents of `debian/copyright` within it.
 
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris tzdata=2019b-2
-'http://deb.debian.org/debian/pool/main/t/tzdata/tzdata_2019b-2.dsc' tzdata_2019b-2.dsc 2232 SHA256:7b5315c670f2a3a12220ec8e8a69e65eca82bb02736945d202e342c6aa0449a9
-'http://deb.debian.org/debian/pool/main/t/tzdata/tzdata_2019b.orig.tar.gz' tzdata_2019b.orig.tar.gz 384667 SHA256:05d9092c90dcf9ec4f3ccfdea80c7dcea5e882b3b105c3422da172aaa9a50c64
-'http://deb.debian.org/debian/pool/main/t/tzdata/tzdata_2019b.orig.tar.gz.asc' tzdata_2019b.orig.tar.gz.asc 833 SHA256:2e3bd0245d3e63cffe8580551074b07cbdc7dcb37ab92ec7dad5af84331ce3da
-'http://deb.debian.org/debian/pool/main/t/tzdata/tzdata_2019b-2.debian.tar.xz' tzdata_2019b-2.debian.tar.xz 104816 SHA256:28338da2af08aa4c264155f2298d949c1d7edc6fb9da6a50c20c55979563fbe8
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/tzdata/2019b-2/
 
-- https://sources.debian.net/src/tzdata/2019b-2/ (for browsing the source)
-- https://sources.debian.net/src/tzdata/2019b-2/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/tzdata/2019b-2/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `ucf=3.0038+nmu1`
 
