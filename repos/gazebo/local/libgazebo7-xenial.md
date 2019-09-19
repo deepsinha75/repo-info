@@ -2,8 +2,8 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:67c92f18b7bbc1162b262c6e9adb542d8d89743e9e7253fc8d05de4e713da3e1`
-- Created: `2019-09-13T22:25:41.040219559Z`
+- Image ID: `sha256:23a0587bdef475eccd2b1be3c5a2f81b2564f0eed71214c39b26080f1487377c`
+- Created: `2019-09-19T00:30:38.013567986Z`
 - Virtual Size: ~ 1.47 Gb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
@@ -819,19 +819,23 @@ $ apt-get source -qq --print-uris debianutils=4.7
 'http://archive.ubuntu.com/ubuntu/pool/main/d/debianutils/debianutils_4.7.tar.xz' debianutils_4.7.tar.xz 156276 SHA256:a269cacd40f52f2fa5d5636357714a49e8538459c16d77772efaa23711fe53d9
 ```
 
-### `dpkg` source package: `dh-python=2.20151103ubuntu1.1`
+### `dpkg` source package: `dh-python=2.20151103ubuntu1.2`
 
 Binary Packages:
 
-- `dh-python=2.20151103ubuntu1.1`
+- `dh-python=2.20151103ubuntu1.2`
 
 Licenses: (parsed from: `/usr/share/doc/dh-python/copyright`)
 
 - `Expat`
 
-**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
-This is *usually* due to a new package version being released and the old version being removed.
+Source:
 
+```console
+$ apt-get source -qq --print-uris dh-python=2.20151103ubuntu1.2
+'http://archive.ubuntu.com/ubuntu/pool/main/d/dh-python/dh-python_2.20151103ubuntu1.2.dsc' dh-python_2.20151103ubuntu1.2.dsc 1834 SHA256:a4359a32203d1047b284a9027d5341a2c29effad12db0ed582b8a4861215e7df
+'http://archive.ubuntu.com/ubuntu/pool/main/d/dh-python/dh-python_2.20151103ubuntu1.2.tar.xz' dh-python_2.20151103ubuntu1.2.tar.xz 79844 SHA256:c9c9a445b50bdfa47ec18bae4b6fac8a9899a04435796ba64574dabfca9ce9d8
+```
 
 ### `dpkg` source package: `diffutils=1:3.3-3`
 
@@ -871,32 +875,15 @@ $ apt-get source -qq --print-uris distro-info-data=0.28ubuntu0.12
 'http://archive.ubuntu.com/ubuntu/pool/main/d/distro-info-data/distro-info-data_0.28ubuntu0.12.tar.xz' distro-info-data_0.28ubuntu0.12.tar.xz 7116 SHA256:889d3b12ba26847db848654d762bdf44867e47f8f304f00dc2d1eee3c4fca8b1
 ```
 
-### `dpkg` source package: `dpkg=1.18.4ubuntu1.5`
-
-Binary Packages:
-
-- `dpkg=1.18.4ubuntu1.5`
-
-Licenses: (parsed from: `/usr/share/doc/dpkg/copyright`)
-
-- `BSD-2-clause`
-- `GPL-2`
-- `GPL-2+`
-- `public-domain-md5`
-- `public-domain-s-s-d`
-
-**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
-This is *usually* due to a new package version being released and the old version being removed.
-
-
 ### `dpkg` source package: `dpkg=1.18.4ubuntu1.6`
 
 Binary Packages:
 
+- `dpkg=1.18.4ubuntu1.6`
 - `dpkg-dev=1.18.4ubuntu1.6`
 - `libdpkg-perl=1.18.4ubuntu1.6`
 
-Licenses: (parsed from: `/usr/share/doc/dpkg-dev/copyright`, `/usr/share/doc/libdpkg-perl/copyright`)
+Licenses: (parsed from: `/usr/share/doc/dpkg/copyright`, `/usr/share/doc/dpkg-dev/copyright`, `/usr/share/doc/libdpkg-perl/copyright`)
 
 - `BSD-2-clause`
 - `GPL-2`
@@ -3883,11 +3870,11 @@ $ apt-get source -qq --print-uris linux-atm=1:2.5.1-1.5
 'http://archive.ubuntu.com/ubuntu/pool/main/l/linux-atm/linux-atm_2.5.1-1.5.debian.tar.gz' linux-atm_2.5.1-1.5.debian.tar.gz 10723 SHA256:9b2325859b3fd008b588a3897e713f52137abae08d1f5a44f5661f45a87f4d29
 ```
 
-### `dpkg` source package: `linux=4.4.0-161.189`
+### `dpkg` source package: `linux=4.4.0-164.192`
 
 Binary Packages:
 
-- `linux-libc-dev:amd64=4.4.0-161.189`
+- `linux-libc-dev:amd64=4.4.0-164.192`
 
 Licenses: (parsed from: `/usr/share/doc/linux-libc-dev/copyright`)
 
@@ -3897,10 +3884,10 @@ Licenses: (parsed from: `/usr/share/doc/linux-libc-dev/copyright`)
 Source:
 
 ```console
-$ apt-get source -qq --print-uris linux=4.4.0-161.189
-'http://archive.ubuntu.com/ubuntu/pool/main/l/linux/linux_4.4.0-161.189.dsc' linux_4.4.0-161.189.dsc 11909 SHA256:fbc5de19cb94741be827bfb03db19af2d721edd03f59f61f64461c6dff9b23e4
+$ apt-get source -qq --print-uris linux=4.4.0-164.192
+'http://archive.ubuntu.com/ubuntu/pool/main/l/linux/linux_4.4.0-164.192.dsc' linux_4.4.0-164.192.dsc 11938 SHA256:879d9a643e2da609bca6583f88bcff273ea4a96ad939fd809080e061044a0c03
 'http://archive.ubuntu.com/ubuntu/pool/main/l/linux/linux_4.4.0.orig.tar.gz' linux_4.4.0.orig.tar.gz 132860730 SHA256:730e75919b5d30a9bc934ccb300eaedfdf44994ca9ee1d07a46901c46c221357
-'http://archive.ubuntu.com/ubuntu/pool/main/l/linux/linux_4.4.0-161.189.diff.gz' linux_4.4.0-161.189.diff.gz 15719708 SHA256:41a488a3d4f0854c21a9cd5636bbbf6371b793f27d8d72810c5665cca63db283
+'http://archive.ubuntu.com/ubuntu/pool/main/l/linux/linux_4.4.0-164.192.diff.gz' linux_4.4.0-164.192.diff.gz 15719645 SHA256:ce937f0abfe950d9cd21ea548d523d63eca9c429543d18b0ef631b4c98ecd6bf
 ```
 
 ### `dpkg` source package: `llvm-toolchain-6.0=1:6.0-1ubuntu2~16.04.1`
@@ -4634,19 +4621,24 @@ $ apt-get source -qq --print-uris openjpeg=1:1.5.2-3.1
 'http://archive.ubuntu.com/ubuntu/pool/universe/o/openjpeg/openjpeg_1.5.2-3.1.debian.tar.xz' openjpeg_1.5.2-3.1.debian.tar.xz 18660 SHA256:c45f580c9dbdeffe9bc0e1f4f5c69b7a661568771339424690c81e138b973285
 ```
 
-### `dpkg` source package: `openldap=2.4.42+dfsg-2ubuntu3.5`
+### `dpkg` source package: `openldap=2.4.42+dfsg-2ubuntu3.7`
 
 Binary Packages:
 
-- `libldap-2.4-2:amd64=2.4.42+dfsg-2ubuntu3.5`
+- `libldap-2.4-2:amd64=2.4.42+dfsg-2ubuntu3.7`
 
 **WARNING:** unable to detect licenses! (package likely not compliant with DEP-5)  
 If source is available (seen below), check the contents of `debian/copyright` within it.
 
 
-**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
-This is *usually* due to a new package version being released and the old version being removed.
+Source:
 
+```console
+$ apt-get source -qq --print-uris openldap=2.4.42+dfsg-2ubuntu3.7
+'http://archive.ubuntu.com/ubuntu/pool/main/o/openldap/openldap_2.4.42+dfsg-2ubuntu3.7.dsc' openldap_2.4.42+dfsg-2ubuntu3.7.dsc 3054 SHA256:fdab0ffb93956e5d26ae6b090ea3ee66500c491a2504e1250f1d75287adcd987
+'http://archive.ubuntu.com/ubuntu/pool/main/o/openldap/openldap_2.4.42+dfsg.orig.tar.gz' openldap_2.4.42+dfsg.orig.tar.gz 4813173 SHA256:5f56e4e3584f7a4b4c8437a2c985b2f519836946be77ef1aa43a5d20c02ea97b
+'http://archive.ubuntu.com/ubuntu/pool/main/o/openldap/openldap_2.4.42+dfsg-2ubuntu3.7.debian.tar.xz' openldap_2.4.42+dfsg-2ubuntu3.7.debian.tar.xz 180424 SHA256:bb8a5b8ad3d2929646b93e743e9020eacbdcb3b6da44a0b20dc2b0fafecaafb6
+```
 
 ### `dpkg` source package: `openmpi=1.10.2-8ubuntu1`
 
@@ -5108,14 +5100,14 @@ $ apt-get source -qq --print-uris python3-defaults=3.5.1-3
 'http://archive.ubuntu.com/ubuntu/pool/main/p/python3-defaults/python3-defaults_3.5.1-3.tar.gz' python3-defaults_3.5.1-3.tar.gz 924115 SHA256:8d1284430b77775d4cea62a33b0685e0523b8dfa2ebcc092d382af5cb5b4f237
 ```
 
-### `dpkg` source package: `python3.5=3.5.2-2ubuntu0~16.04.5`
+### `dpkg` source package: `python3.5=3.5.2-2ubuntu0~16.04.8`
 
 Binary Packages:
 
-- `libpython3.5-minimal:amd64=3.5.2-2ubuntu0~16.04.5`
-- `libpython3.5-stdlib:amd64=3.5.2-2ubuntu0~16.04.5`
-- `python3.5=3.5.2-2ubuntu0~16.04.5`
-- `python3.5-minimal=3.5.2-2ubuntu0~16.04.5`
+- `libpython3.5-minimal:amd64=3.5.2-2ubuntu0~16.04.8`
+- `libpython3.5-stdlib:amd64=3.5.2-2ubuntu0~16.04.8`
+- `python3.5=3.5.2-2ubuntu0~16.04.8`
+- `python3.5-minimal=3.5.2-2ubuntu0~16.04.8`
 
 Licenses: (parsed from: `/usr/share/doc/libpython3.5-minimal/copyright`, `/usr/share/doc/libpython3.5-stdlib/copyright`, `/usr/share/doc/python3.5/copyright`, `/usr/share/doc/python3.5-minimal/copyright`)
 
@@ -5146,9 +5138,14 @@ Licenses: (parsed from: `/usr/share/doc/libpython3.5-minimal/copyright`, `/usr/s
 - `use in source`
 - `without`
 
-**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
-This is *usually* due to a new package version being released and the old version being removed.
+Source:
 
+```console
+$ apt-get source -qq --print-uris python3.5=3.5.2-2ubuntu0~16.04.8
+'http://archive.ubuntu.com/ubuntu/pool/main/p/python3.5/python3.5_3.5.2-2ubuntu0~16.04.8.dsc' python3.5_3.5.2-2ubuntu0~16.04.8.dsc 3387 SHA256:0b45216b73e91ae7e5d96b43488f32946d38f42cdc50e8e59922d1ec1059a5bb
+'http://archive.ubuntu.com/ubuntu/pool/main/p/python3.5/python3.5_3.5.2.orig.tar.xz' python3.5_3.5.2.orig.tar.xz 15222676 SHA256:0010f56100b9b74259ebcd5d4b295a32324b58b517403a10d1a2aa7cb22bca40
+'http://archive.ubuntu.com/ubuntu/pool/main/p/python3.5/python3.5_3.5.2-2ubuntu0~16.04.8.debian.tar.xz' python3.5_3.5.2-2ubuntu0~16.04.8.debian.tar.xz 230172 SHA256:2b50c076a9b0f9ecd0978fbe9ce1d7c6a758b1b896ccd74a71eadc735461ccc7
+```
 
 ### `dpkg` source package: `qt-at-spi=0.4.0-3`
 
@@ -5935,49 +5932,21 @@ $ apt-get source -qq --print-uris ustr=1.0.4-5
 'http://archive.ubuntu.com/ubuntu/pool/main/u/ustr/ustr_1.0.4-5.debian.tar.xz' ustr_1.0.4-5.debian.tar.xz 24948 SHA256:a21e78acf82dcccef2893932ef7b85852419bfd9b18382e63c34e7710c1d7762
 ```
 
-### `dpkg` source package: `util-linux=2.27.1-6ubuntu3.7`
-
-Binary Packages:
-
-- `bsdutils=1:2.27.1-6ubuntu3.7`
-- `libblkid1:amd64=2.27.1-6ubuntu3.7`
-- `libfdisk1:amd64=2.27.1-6ubuntu3.7`
-- `libmount1:amd64=2.27.1-6ubuntu3.7`
-- `libsmartcols1:amd64=2.27.1-6ubuntu3.7`
-- `mount=2.27.1-6ubuntu3.7`
-- `util-linux=2.27.1-6ubuntu3.7`
-
-Licenses: (parsed from: `/usr/share/doc/bsdutils/copyright`, `/usr/share/doc/libblkid1/copyright`, `/usr/share/doc/libfdisk1/copyright`, `/usr/share/doc/libmount1/copyright`, `/usr/share/doc/libsmartcols1/copyright`, `/usr/share/doc/mount/copyright`, `/usr/share/doc/util-linux/copyright`)
-
-- `BSD-2-clause`
-- `BSD-3-clause`
-- `BSD-4-clause`
-- `GPL-2`
-- `GPL-2+`
-- `GPL-3`
-- `GPL-3+`
-- `LGPL`
-- `LGPL-2`
-- `LGPL-2+`
-- `LGPL-2.1`
-- `LGPL-2.1+`
-- `LGPL-3`
-- `LGPL-3+`
-- `MIT`
-- `public-domain`
-
-**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
-This is *usually* due to a new package version being released and the old version being removed.
-
-
 ### `dpkg` source package: `util-linux=2.27.1-6ubuntu3.8`
 
 Binary Packages:
 
+- `bsdutils=1:2.27.1-6ubuntu3.8`
+- `libblkid1:amd64=2.27.1-6ubuntu3.8`
+- `libfdisk1:amd64=2.27.1-6ubuntu3.8`
+- `libmount1:amd64=2.27.1-6ubuntu3.8`
+- `libsmartcols1:amd64=2.27.1-6ubuntu3.8`
 - `libuuid1:amd64=2.27.1-6ubuntu3.8`
+- `mount=2.27.1-6ubuntu3.8`
+- `util-linux=2.27.1-6ubuntu3.8`
 - `uuid-dev:amd64=2.27.1-6ubuntu3.8`
 
-Licenses: (parsed from: `/usr/share/doc/libuuid1/copyright`, `/usr/share/doc/uuid-dev/copyright`)
+Licenses: (parsed from: `/usr/share/doc/bsdutils/copyright`, `/usr/share/doc/libblkid1/copyright`, `/usr/share/doc/libfdisk1/copyright`, `/usr/share/doc/libmount1/copyright`, `/usr/share/doc/libsmartcols1/copyright`, `/usr/share/doc/libuuid1/copyright`, `/usr/share/doc/mount/copyright`, `/usr/share/doc/util-linux/copyright`, `/usr/share/doc/uuid-dev/copyright`)
 
 - `BSD-2-clause`
 - `BSD-3-clause`
