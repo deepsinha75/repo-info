@@ -1,7 +1,7 @@
 ## `websphere-liberty:javaee7`
 
 ```console
-$ docker pull websphere-liberty@sha256:10444c83bb3b95ef77ce5043028ec86c6c1353c3eb6132e42aad5e6b1a047dbd
+$ docker pull websphere-liberty@sha256:4736c68f9a4ae1d641cc769cdd23229f150be80b861e8669d21144fda19b6fd2
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -155,14 +155,14 @@ COPY --chown=1001:0file:ac67b9ec5d944a8796eed2df8cba9b04b4e624a81a61acf9f6ecb53b
 ### `websphere-liberty:javaee7` - linux; 386
 
 ```console
-$ docker pull websphere-liberty@sha256:4a3c020d79ed41b932934ac61544095b6108144d9308cb5721276ebb20adf937
+$ docker pull websphere-liberty@sha256:8cfabcf3178060aa982dfbcbff8c8bd6f0bfa3002c2b15ba297e5aae380ddfb2
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **287.6 MB (287567387 bytes)**  
+-	Total Size: **287.8 MB (287811034 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:5493d425c416171f07b602d961b1790515e5a8a6e43041393af9913fbd6aee18`
+-	Image ID: `sha256:11293b844df42f3a2a1ed5b2c9c9f5338944f6048009bf8dbc04e1627fb053ef`
 -	Entrypoint: `["\/opt\/ibm\/helpers\/runtime\/docker-server.sh"]`
 -	Default Command: `["\/opt\/ibm\/wlp\/bin\/server","run","defaultServer"]`
 
@@ -187,51 +187,51 @@ ENV JAVA_VERSION=1.8.0_sr5fp40
 RUN set -eux;     ARCH="$(dpkg --print-architecture)";     case "${ARCH}" in        amd64|x86_64)          ESUM='cbe9d719973ec8e9ce98977aefa9992be1a3b0a6a6e8a4e3397d5fd891f744f4';          YML_FILE='jre/linux/x86_64/index.yml';          ;;        i386)          ESUM='243b87e5f744c0b6497243e347d4513293c103245245438ba229b24c6757104d';          YML_FILE='jre/linux/i386/index.yml';          ;;        ppc64el|ppc64le)          ESUM='8cfd888fac4706b93fa720b610290fec4fd3601f00d8ad9279659003e6d8de4b';          YML_FILE='jre/linux/ppc64le/index.yml';          ;;        s390)          ESUM='f12632e8d795de3ad3e7174b8700f305590bc86c5a358f38b7681fd1d2841c79';          YML_FILE='jre/linux/s390/index.yml';          ;;        s390x)          ESUM='9188fb5a9ec74fb502dc0ee402a629e601338eedd8c1818244c0c12a9cdf5693';          YML_FILE='jre/linux/s390x/index.yml';          ;;        *)          echo "Unsupported arch: ${ARCH}";          exit 1;          ;;     esac;     BASE_URL="https://public.dhe.ibm.com/ibmdl/export/pub/systems/cloud/runtimes/java/meta/";     wget -q -U UA_IBM_JAVA_Docker -O /tmp/index.yml ${BASE_URL}/${YML_FILE};     JAVA_URL=$(sed -n '/^'${JAVA_VERSION}:'/{n;s/\s*uri:\s//p}'< /tmp/index.yml);     wget -q -U UA_IBM_JAVA_Docker -O /tmp/ibm-java.bin ${JAVA_URL};     echo "${ESUM}  /tmp/ibm-java.bin" | sha256sum -c -;     echo "INSTALLER_UI=silent" > /tmp/response.properties;     echo "USER_INSTALL_DIR=/opt/ibm/java" >> /tmp/response.properties;     echo "LICENSE_ACCEPTED=TRUE" >> /tmp/response.properties;     mkdir -p /opt/ibm;     chmod +x /tmp/ibm-java.bin;     /tmp/ibm-java.bin -i silent -f /tmp/response.properties;     rm -f /tmp/response.properties;     rm -f /tmp/index.yml;     rm -f /tmp/ibm-java.bin;
 # Wed, 21 Aug 2019 21:45:46 GMT
 ENV JAVA_HOME=/opt/ibm/java/jre PATH=/opt/ibm/java/jre/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin IBM_JAVA_OPTIONS=-XX:+UseContainerSupport
-# Wed, 21 Aug 2019 23:27:46 GMT
-LABEL org.opencontainers.image.authors=Arthur De Magalhaes, Chris Potter org.opencontainers.image.vendor=IBM org.opencontainers.image.url=http://wasdev.net org.opencontainers.image.documentation=https://www.ibm.com/support/knowledgecenter/SSAW57_liberty/com.ibm.websphere.wlp.nd.multiplatform.doc/ae/cwlp_about.html org.opencontainers.image.version=19.0.0.8 org.opencontainers.image.revision=cl190820190813-1136
-# Wed, 21 Aug 2019 23:27:46 GMT
-ENV LIBERTY_VERSION=19.0.0_08
-# Wed, 21 Aug 2019 23:27:46 GMT
+# Wed, 18 Sep 2019 21:53:18 GMT
+LABEL org.opencontainers.image.authors=Arthur De Magalhaes, Chris Potter org.opencontainers.image.vendor=IBM org.opencontainers.image.url=http://wasdev.net org.opencontainers.image.documentation=https://www.ibm.com/support/knowledgecenter/SSAW57_liberty/com.ibm.websphere.wlp.nd.multiplatform.doc/ae/cwlp_about.html org.opencontainers.image.version=19.0.0.9 org.opencontainers.image.revision=cl190920190905-0148
+# Wed, 18 Sep 2019 21:53:18 GMT
+ENV LIBERTY_VERSION=19.0.0_09
+# Wed, 18 Sep 2019 21:53:18 GMT
 ARG LIBERTY_URL
-# Wed, 21 Aug 2019 23:27:46 GMT
+# Wed, 18 Sep 2019 21:53:18 GMT
 ARG DOWNLOAD_OPTIONS=
-# Wed, 21 Aug 2019 23:27:55 GMT
+# Wed, 18 Sep 2019 21:53:27 GMT
 # ARGS: DOWNLOAD_OPTIONS=
 RUN apt-get update     && apt-get install -y --no-install-recommends unzip wget openssl     && rm -rf /var/lib/apt/lists/*     && mkdir /licenses/     && useradd -u 1001 -r -g 0 -s /usr/sbin/nologin default     && LIBERTY_URL=${LIBERTY_URL:-$(wget -q -O - https://public.dhe.ibm.com/ibmdl/export/pub/software/websphere/wasdev/downloads/wlp/index.yml  | grep $LIBERTY_VERSION -A 6 | sed -n 's/\s*kernel:\s//p' | tr -d '\r' )}      && wget $DOWNLOAD_OPTIONS $LIBERTY_URL -U UA-IBM-WebSphere-Liberty-Docker -O /tmp/wlp.zip     && unzip -q /tmp/wlp.zip -d /opt/ibm     && rm /tmp/wlp.zip     && chown -R 1001:0 /opt/ibm/wlp     && chmod -R g+rw /opt/ibm/wlp     && apt-get purge --auto-remove -y unzip     && apt-get purge --auto-remove -y wget     && rm -rf /var/lib/apt/lists/*
-# Wed, 21 Aug 2019 23:27:56 GMT
+# Wed, 18 Sep 2019 21:53:27 GMT
 ENV PATH=/opt/ibm/wlp/bin:/opt/ibm/helpers/build:/opt/ibm/java/jre/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Wed, 21 Aug 2019 23:27:56 GMT
-LABEL ProductID=fbf6a96d49214c0abc6a3bc5da6e48cd ProductName=WebSphere Application Server Liberty ProductVersion=19.0.0.8 BuildLabel=cl190820190813-1136
-# Wed, 21 Aug 2019 23:27:56 GMT
+# Wed, 18 Sep 2019 21:53:27 GMT
+LABEL ProductID=fbf6a96d49214c0abc6a3bc5da6e48cd ProductName=WebSphere Application Server Liberty ProductVersion=19.0.0.9 BuildLabel=cl190920190905-0148
+# Wed, 18 Sep 2019 21:53:27 GMT
 ENV LOG_DIR=/logs WLP_OUTPUT_DIR=/opt/ibm/wlp/output
-# Wed, 21 Aug 2019 23:27:57 GMT
+# Wed, 18 Sep 2019 21:53:28 GMT
 # ARGS: DOWNLOAD_OPTIONS=
 RUN /opt/ibm/wlp/bin/server create     && rm -rf $WLP_OUTPUT_DIR/.classCache /output/workarea
-# Tue, 10 Sep 2019 01:18:57 GMT
-COPY dir:28bc6afe5eb10059deaa1c5cd8242be749c05f71c9b3e06270b6d7e25dd412b4 in /opt/ibm/helpers/ 
-# Tue, 10 Sep 2019 01:18:57 GMT
+# Wed, 18 Sep 2019 21:53:29 GMT
+COPY dir:c97b7694e9729fc59ae01fd4684cf2c3bafd7338332d54c126007bb0abb9e4a1 in /opt/ibm/helpers/ 
+# Wed, 18 Sep 2019 21:53:29 GMT
 COPY dir:1cf5cc2663c6235241a5228340a9c566587fe27b3e434a313debbf75dacd7a4b in /opt/ibm/fixes/ 
-# Tue, 10 Sep 2019 01:18:58 GMT
-COPY dir:7028d94be92f2ab000e1d5766ed974860c38d4bb5effc97da1c67caf7218b133 in /licenses/ 
-# Tue, 10 Sep 2019 01:18:59 GMT
+# Wed, 18 Sep 2019 21:53:29 GMT
+COPY dir:fe324444da42a1ef2b3e045199f932583c28cf9756491c89e63626da025f7fe8 in /licenses/ 
+# Wed, 18 Sep 2019 21:53:30 GMT
 # ARGS: DOWNLOAD_OPTIONS=
 RUN mkdir /logs     && mkdir /etc/wlp     && mkdir -p /opt/ibm/wlp/usr/shared/resources/lib.index.cache     && mkdir -p /home/default     && mkdir /output     && chmod -t /output     && rm -rf /output     && ln -s $WLP_OUTPUT_DIR/defaultServer /output     && ln -s /opt/ibm/wlp/usr/servers/defaultServer /config     && ln -s /opt/ibm /liberty     && ln -s /opt/ibm/wlp/usr/shared/resources/lib.index.cache /lib.index.cache     && mkdir -p /config/configDropins/defaults     && mkdir -p /config/configDropins/overrides     && chown -R 1001:0 /config     && chmod -R g+rw /config     && chown -R 1001:0 /opt/ibm/helpers     && chmod -R g+rwx /opt/ibm/helpers     && chown -R 1001:0 /opt/ibm/fixes     && chmod -R g+rwx /opt/ibm/fixes     && chown -R 1001:0 /opt/ibm/wlp/usr     && chmod -R g+rw /opt/ibm/wlp/usr     && chown -R 1001:0 /opt/ibm/wlp/output     && chmod -R g+rw /opt/ibm/wlp/output     && chown -R 1001:0 /logs     && chmod -R g+rw /logs     && chown -R 1001:0 /etc/wlp     && chmod -R g+rw /etc/wlp     && chown -R 1001:0 /home/default     && chmod -R g+rw /home/default
-# Tue, 10 Sep 2019 01:18:59 GMT
+# Wed, 18 Sep 2019 21:53:30 GMT
 ENV RANDFILE=/tmp/.rnd IBM_JAVA_OPTIONS=-Xshareclasses:name=liberty,nonfatal,cacheDir=/output/.classCache/ -XX:+UseContainerSupport
-# Tue, 10 Sep 2019 01:18:59 GMT
+# Wed, 18 Sep 2019 21:53:30 GMT
 USER 1001
-# Tue, 10 Sep 2019 01:18:59 GMT
+# Wed, 18 Sep 2019 21:53:30 GMT
 EXPOSE 9080 9443
-# Tue, 10 Sep 2019 01:18:59 GMT
+# Wed, 18 Sep 2019 21:53:31 GMT
 ENTRYPOINT ["/opt/ibm/helpers/runtime/docker-server.sh"]
-# Tue, 10 Sep 2019 01:19:00 GMT
+# Wed, 18 Sep 2019 21:53:31 GMT
 CMD ["/opt/ibm/wlp/bin/server" "run" "defaultServer"]
-# Tue, 10 Sep 2019 01:19:03 GMT
+# Wed, 18 Sep 2019 21:53:36 GMT
 ARG REPOSITORIES_PROPERTIES=
-# Tue, 10 Sep 2019 01:30:24 GMT
+# Wed, 18 Sep 2019 22:05:04 GMT
 # ARGS: REPOSITORIES_PROPERTIES=
 RUN if [ ! -z $REPOSITORIES_PROPERTIES ]; then mkdir /opt/ibm/wlp/etc/   && echo $REPOSITORIES_PROPERTIES > /opt/ibm/wlp/etc/repositories.properties; fi   && installUtility install --acceptLicense     appSecurity-2.0 bluemixUtility-1.0 collectiveMember-1.0 ldapRegistry-3.0     localConnector-1.0 microProfile-1.0 microProfile-1.2 microProfile-1.3 microProfile-1.4 monitor-1.0 restConnector-1.0     requestTiming-1.0 restConnector-2.0 sessionDatabase-1.0 sessionCache-1.0 ssl-1.0 transportSecurity-1.0     webCache-1.0 webProfile-7.0 appSecurityClient-1.0 javaee-7.0 javaeeClient-7.0   && if [ ! -z $REPOSITORIES_PROPERTIES ]; then rm /opt/ibm/wlp/etc/repositories.properties; fi   && rm -rf /output/workarea /output/logs   && chmod -R g+rwx /opt/ibm/wlp/output/*
-# Tue, 10 Sep 2019 01:30:24 GMT
+# Wed, 18 Sep 2019 22:05:05 GMT
 COPY --chown=1001:0file:ac67b9ec5d944a8796eed2df8cba9b04b4e624a81a61acf9f6ecb53bc20500c6 in /config/ 
 ```
 
@@ -260,37 +260,37 @@ COPY --chown=1001:0file:ac67b9ec5d944a8796eed2df8cba9b04b4e624a81a61acf9f6ecb53b
 		Last Modified: Wed, 21 Aug 2019 21:47:55 GMT  
 		Size: 118.4 MB (118438950 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:b54ef1a30971c105477fb30594b5f039b859dcf1f068dcd5d3e6e87037e3a54d`  
-		Last Modified: Thu, 22 Aug 2019 00:03:25 GMT  
-		Size: 13.3 MB (13325467 bytes)  
+	-	`sha256:0826a2b48a56b7bfef7a58caf140a1151927ad3a97041d6b4b483f9c2ed54ed0`  
+		Last Modified: Wed, 18 Sep 2019 22:06:38 GMT  
+		Size: 13.4 MB (13360620 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:818d9d31b1277512b19c30aa5049673ce40da741c703f2cac11de85b8f5d417f`  
-		Last Modified: Thu, 22 Aug 2019 00:03:22 GMT  
-		Size: 669.0 B  
+	-	`sha256:fde02d17f967b4d6a25dc2b2877512caee1ccce23cef7a4a6e92bb6d18879afe`  
+		Last Modified: Wed, 18 Sep 2019 22:06:34 GMT  
+		Size: 677.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:5fc38b48dd80ce06e3820ca6204d09a1813354dc212621794591b7df63914c77`  
-		Last Modified: Tue, 10 Sep 2019 01:32:02 GMT  
-		Size: 3.4 KB (3370 bytes)  
+	-	`sha256:74312dd4315c0819960a5aac702ede3f5764d091d1068589ddf7cb6b9e493560`  
+		Last Modified: Wed, 18 Sep 2019 22:06:35 GMT  
+		Size: 3.4 KB (3436 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:8d05a35a506e361e0a68ffdcc3943aa85e761757876b8e8204a583b89fb94918`  
-		Last Modified: Tue, 10 Sep 2019 01:32:03 GMT  
-		Size: 245.0 B  
+	-	`sha256:136f62b3c5c68d2655659cc756afe8ff31f47af7cb2ef4b4eccd82df35eb1564`  
+		Last Modified: Wed, 18 Sep 2019 22:06:35 GMT  
+		Size: 249.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:f4c105564db813529c64c4b8618a1897986afc3e6b5d9ed202cbe9ae10480ca3`  
-		Last Modified: Tue, 10 Sep 2019 01:32:02 GMT  
-		Size: 69.4 KB (69402 bytes)  
+	-	`sha256:338be3ada6cd839fdbde0d97e4f5deb44d645f86bb61de59e219dccea99b5982`  
+		Last Modified: Wed, 18 Sep 2019 22:06:34 GMT  
+		Size: 69.7 KB (69654 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:7cde095202503fb8b49648190300879359c49fba2becc7bc01b547bf1ae1c690`  
-		Last Modified: Tue, 10 Sep 2019 01:32:02 GMT  
-		Size: 4.2 KB (4213 bytes)  
+	-	`sha256:db9e2cb5f9fa03ab099970eb57947c6d47f3d28d96ee55aa8a0405c554968518`  
+		Last Modified: Wed, 18 Sep 2019 22:06:34 GMT  
+		Size: 4.3 KB (4279 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:69b441bd634071bd6d2149fbca2402e479e241291bafa0cfc3c00d1f37eb28d4`  
-		Last Modified: Tue, 10 Sep 2019 01:33:44 GMT  
-		Size: 108.8 MB (108806934 bytes)  
+	-	`sha256:2d403a4b4e88dde6c2b5517d3c8edc98c10f368ca4598ede6dcea3f2bdb419da`  
+		Last Modified: Wed, 18 Sep 2019 22:08:47 GMT  
+		Size: 109.0 MB (109015031 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:8de6ab04c7e1376659592167d956331ae261ad174150117cc425a71b683b69e6`  
-		Last Modified: Tue, 10 Sep 2019 01:33:35 GMT  
-		Size: 931.0 B  
+	-	`sha256:07b99f96498ac4c9f0fb887b1163f73b91cae9fc017d09cac40e8631675f9906`  
+		Last Modified: Wed, 18 Sep 2019 22:08:37 GMT  
+		Size: 932.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `websphere-liberty:javaee7` - linux; ppc64le
