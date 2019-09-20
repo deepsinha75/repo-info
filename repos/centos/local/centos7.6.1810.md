@@ -37,15 +37,7 @@ http://vault.centos.org/centos/7/os/Source//SPackages/acl-2.2.51-14.el7.src.rpm
 
 Licenses (from `rpm --query`): LGPLv2+
 
-Source:
-
-```console
-$ yumdownloader --quiet --source --urls audit-libs-2.8.4-4.el7
-Enabling updates-source repository
-Enabling base-source repository
-Enabling extras-source repository
-http://vault.centos.org/centos/7/os/Source//SPackages/audit-2.8.4-4.el7.src.rpm
-```
+**WARNING:** unable to find source (`yumdownloader` failed or returned no results)!
 
 ### `rpm` package: `basesystem-10.0-7.el7.centos.noarch`
 
@@ -79,15 +71,7 @@ http://vault.centos.org/centos/7/os/Source//SPackages/bash-4.2.46-31.el7.src.rpm
 
 Licenses (from `rpm --query`): ISC
 
-Source:
-
-```console
-$ yumdownloader --quiet --source --urls bind-license-9.9.4-72.el7.noarch
-Enabling updates-source repository
-Enabling base-source repository
-Enabling extras-source repository
-http://vault.centos.org/centos/7/os/Source//SPackages/bind-9.9.4-72.el7.src.rpm
-```
+**WARNING:** unable to find source (`yumdownloader` failed or returned no results)!
 
 ### `rpm` package: `binutils-2.27-34.base.el7.x86_64`
 
@@ -219,15 +203,7 @@ http://vault.centos.org/centos/7/os/Source//SPackages/cracklib-2.9.0-11.el7.src.
 
 Licenses (from `rpm --query`): GPLv2+ and LGPLv2+
 
-Source:
-
-```console
-$ yumdownloader --quiet --source --urls cryptsetup-libs-2.0.3-3.el7
-Enabling updates-source repository
-Enabling base-source repository
-Enabling extras-source repository
-http://vault.centos.org/centos/7/os/Source//SPackages/cryptsetup-2.0.3-3.el7.src.rpm
-```
+**WARNING:** unable to find source (`yumdownloader` failed or returned no results)!
 
 ### `rpm` package: `curl-7.29.0-51.el7.x86_64`
 
@@ -289,15 +265,7 @@ http://vault.centos.org/centos/7/os/Source//SPackages/dbus-glib-0.100-7.el7.src.
 
 Licenses (from `rpm --query`): (GPLv2+ or AFL) and GPLv2+
 
-Source:
-
-```console
-$ yumdownloader --quiet --source --urls dbus-libs-1.10.24-12.el7
-Enabling updates-source repository
-Enabling base-source repository
-Enabling extras-source repository
-http://vault.centos.org/centos/7/os/Source//SPackages/dbus-1.10.24-12.el7.src.rpm
-```
+**WARNING:** unable to find source (`yumdownloader` failed or returned no results)!
 
 ### `rpm` package: `dbus-python-1.1.1-9.el7.x86_64`
 
@@ -317,29 +285,13 @@ http://vault.centos.org/centos/7/os/Source//SPackages/dbus-python-1.1.1-9.el7.sr
 
 Licenses (from `rpm --query`): GPLv2
 
-Source:
-
-```console
-$ yumdownloader --quiet --source --urls device-mapper-1.02.149-8.el7
-Enabling updates-source repository
-Enabling base-source repository
-Enabling extras-source repository
-http://vault.centos.org/centos/7/os/Source//SPackages/lvm2-2.02.180-8.el7.src.rpm
-```
+**WARNING:** unable to find source (`yumdownloader` failed or returned no results)!
 
 ### `rpm` package: `device-mapper-libs-1.02.149-8.el7.x86_64`
 
 Licenses (from `rpm --query`): LGPLv2
 
-Source:
-
-```console
-$ yumdownloader --quiet --source --urls device-mapper-libs-1.02.149-8.el7
-Enabling updates-source repository
-Enabling base-source repository
-Enabling extras-source repository
-http://vault.centos.org/centos/7/os/Source//SPackages/lvm2-2.02.180-8.el7.src.rpm
-```
+**WARNING:** unable to find source (`yumdownloader` failed or returned no results)!
 
 ### `rpm` package: `diffutils-3.3-4.el7.x86_64`
 
@@ -373,43 +325,19 @@ http://vault.centos.org/centos/7/os/Source//SPackages/dracut-033-554.el7.src.rpm
 
 Licenses (from `rpm --query`): GPLv2+ or LGPLv3+
 
-Source:
-
-```console
-$ yumdownloader --quiet --source --urls elfutils-default-yama-scope-0.172-2.el7.noarch
-Enabling updates-source repository
-Enabling base-source repository
-Enabling extras-source repository
-http://vault.centos.org/centos/7/os/Source//SPackages/elfutils-0.172-2.el7.src.rpm
-```
+**WARNING:** unable to find source (`yumdownloader` failed or returned no results)!
 
 ### `rpm` package: `elfutils-libelf-0.172-2.el7.x86_64`
 
 Licenses (from `rpm --query`): GPLv2+ or LGPLv3+
 
-Source:
-
-```console
-$ yumdownloader --quiet --source --urls elfutils-libelf-0.172-2.el7
-Enabling updates-source repository
-Enabling base-source repository
-Enabling extras-source repository
-http://vault.centos.org/centos/7/os/Source//SPackages/elfutils-0.172-2.el7.src.rpm
-```
+**WARNING:** unable to find source (`yumdownloader` failed or returned no results)!
 
 ### `rpm` package: `elfutils-libs-0.172-2.el7.x86_64`
 
 Licenses (from `rpm --query`): GPLv2+ or LGPLv3+
 
-Source:
-
-```console
-$ yumdownloader --quiet --source --urls elfutils-libs-0.172-2.el7
-Enabling updates-source repository
-Enabling base-source repository
-Enabling extras-source repository
-http://vault.centos.org/centos/7/os/Source//SPackages/elfutils-0.172-2.el7.src.rpm
-```
+**WARNING:** unable to find source (`yumdownloader` failed or returned no results)!
 
 ### `rpm` package: `expat-2.1.0-10.el7_3.x86_64`
 
@@ -527,15 +455,7 @@ http://vault.centos.org/centos/7/os/Source//SPackages/glibc-2.17-260.el7.src.rpm
 
 Licenses (from `rpm --query`): LGPLv2+ and LGPLv2+ with exceptions and GPLv2+
 
-Source:
-
-```console
-$ yumdownloader --quiet --source --urls glibc-common-2.17-260.el7
-Enabling updates-source repository
-Enabling base-source repository
-Enabling extras-source repository
-http://vault.centos.org/centos/7/os/Source//SPackages/glibc-2.17-260.el7.src.rpm
-```
+**WARNING:** unable to find source (`yumdownloader` failed or returned no results)!
 
 ### `rpm` package: `gmp-6.0.0-15.el7.x86_64`
 
@@ -723,43 +643,19 @@ http://vault.centos.org/centos/7/os/Source//SPackages/kmod-20-23.el7.src.rpm
 
 Licenses (from `rpm --query`): LGPLv2+
 
-Source:
-
-```console
-$ yumdownloader --quiet --source --urls kmod-libs-20-23.el7
-Enabling updates-source repository
-Enabling base-source repository
-Enabling extras-source repository
-http://vault.centos.org/centos/7/os/Source//SPackages/kmod-20-23.el7.src.rpm
-```
+**WARNING:** unable to find source (`yumdownloader` failed or returned no results)!
 
 ### `rpm` package: `kpartx-0.4.9-123.el7.x86_64`
 
 Licenses (from `rpm --query`): GPL+
 
-Source:
-
-```console
-$ yumdownloader --quiet --source --urls kpartx-0.4.9-123.el7
-Enabling updates-source repository
-Enabling base-source repository
-Enabling extras-source repository
-http://vault.centos.org/centos/7/os/Source//SPackages/device-mapper-multipath-0.4.9-123.el7.src.rpm
-```
+**WARNING:** unable to find source (`yumdownloader` failed or returned no results)!
 
 ### `rpm` package: `krb5-libs-1.15.1-34.el7.x86_64`
 
 Licenses (from `rpm --query`): MIT
 
-Source:
-
-```console
-$ yumdownloader --quiet --source --urls krb5-libs-1.15.1-34.el7
-Enabling updates-source repository
-Enabling base-source repository
-Enabling extras-source repository
-http://vault.centos.org/centos/7/os/Source//SPackages/krb5-1.15.1-34.el7.src.rpm
-```
+**WARNING:** unable to find source (`yumdownloader` failed or returned no results)!
 
 ### `rpm` package: `libacl-2.2.51-14.el7.x86_64`
 
@@ -807,15 +703,7 @@ http://vault.centos.org/centos/7/os/Source//SPackages/attr-2.4.46-13.el7.src.rpm
 
 Licenses (from `rpm --query`): LGPLv2+
 
-Source:
-
-```console
-$ yumdownloader --quiet --source --urls libblkid-2.23.2-59.el7
-Enabling updates-source repository
-Enabling base-source repository
-Enabling extras-source repository
-http://vault.centos.org/centos/7/os/Source//SPackages/util-linux-2.23.2-59.el7.src.rpm
-```
+**WARNING:** unable to find source (`yumdownloader` failed or returned no results)!
 
 ### `rpm` package: `libcap-2.22-9.el7.x86_64`
 
@@ -849,29 +737,13 @@ http://vault.centos.org/centos/7/os/Source//SPackages/libcap-ng-0.7.5-4.el7.src.
 
 Licenses (from `rpm --query`): MIT
 
-Source:
-
-```console
-$ yumdownloader --quiet --source --urls libcom_err-1.42.9-13.el7
-Enabling updates-source repository
-Enabling base-source repository
-Enabling extras-source repository
-http://vault.centos.org/centos/7/os/Source//SPackages/e2fsprogs-1.42.9-13.el7.src.rpm
-```
+**WARNING:** unable to find source (`yumdownloader` failed or returned no results)!
 
 ### `rpm` package: `libcurl-7.29.0-51.el7.x86_64`
 
 Licenses (from `rpm --query`): MIT
 
-Source:
-
-```console
-$ yumdownloader --quiet --source --urls libcurl-7.29.0-51.el7
-Enabling updates-source repository
-Enabling base-source repository
-Enabling extras-source repository
-http://vault.centos.org/centos/7/os/Source//SPackages/curl-7.29.0-51.el7.src.rpm
-```
+**WARNING:** unable to find source (`yumdownloader` failed or returned no results)!
 
 ### `rpm` package: `libdb-5.3.21-24.el7.x86_64`
 
@@ -891,15 +763,7 @@ http://vault.centos.org/centos/7/os/Source//SPackages/libdb-5.3.21-24.el7.src.rp
 
 Licenses (from `rpm --query`): BSD and LGPLv2 and Sleepycat
 
-Source:
-
-```console
-$ yumdownloader --quiet --source --urls libdb-utils-5.3.21-24.el7
-Enabling updates-source repository
-Enabling base-source repository
-Enabling extras-source repository
-http://vault.centos.org/centos/7/os/Source//SPackages/libdb-5.3.21-24.el7.src.rpm
-```
+**WARNING:** unable to find source (`yumdownloader` failed or returned no results)!
 
 ### `rpm` package: `libffi-3.0.13-18.el7.x86_64`
 
@@ -919,15 +783,7 @@ http://vault.centos.org/centos/7/os/Source//SPackages/libffi-3.0.13-18.el7.src.r
 
 Licenses (from `rpm --query`): GPLv3+ and GPLv3+ with exceptions and GPLv2+ with exceptions and LGPLv2+ and BSD
 
-Source:
-
-```console
-$ yumdownloader --quiet --source --urls libgcc-4.8.5-36.el7
-Enabling updates-source repository
-Enabling base-source repository
-Enabling extras-source repository
-http://vault.centos.org/centos/7/os/Source//SPackages/gcc-4.8.5-36.el7.src.rpm
-```
+**WARNING:** unable to find source (`yumdownloader` failed or returned no results)!
 
 ### `rpm` package: `libgcrypt-1.5.3-14.el7.x86_64`
 
@@ -975,15 +831,7 @@ http://vault.centos.org/centos/7/os/Source//SPackages/libidn-1.28-4.el7.src.rpm
 
 Licenses (from `rpm --query`): LGPLv2+
 
-Source:
-
-```console
-$ yumdownloader --quiet --source --urls libmount-2.23.2-59.el7
-Enabling updates-source repository
-Enabling base-source repository
-Enabling extras-source repository
-http://vault.centos.org/centos/7/os/Source//SPackages/util-linux-2.23.2-59.el7.src.rpm
-```
+**WARNING:** unable to find source (`yumdownloader` failed or returned no results)!
 
 ### `rpm` package: `libpwquality-1.2.3-5.el7.x86_64`
 
@@ -1045,15 +893,7 @@ http://vault.centos.org/centos/7/os/Source//SPackages/libsepol-2.5-10.el7.src.rp
 
 Licenses (from `rpm --query`): LGPLv2+
 
-Source:
-
-```console
-$ yumdownloader --quiet --source --urls libsmartcols-2.23.2-59.el7
-Enabling updates-source repository
-Enabling base-source repository
-Enabling extras-source repository
-http://vault.centos.org/centos/7/os/Source//SPackages/util-linux-2.23.2-59.el7.src.rpm
-```
+**WARNING:** unable to find source (`yumdownloader` failed or returned no results)!
 
 ### `rpm` package: `libssh2-1.4.3-12.el7.x86_64`
 
@@ -1073,15 +913,7 @@ http://vault.centos.org/centos/7/os/Source//SPackages/libssh2-1.4.3-12.el7.src.r
 
 Licenses (from `rpm --query`): GPLv3+ and GPLv3+ with exceptions and GPLv2+ with exceptions and LGPLv2+ and BSD
 
-Source:
-
-```console
-$ yumdownloader --quiet --source --urls libstdc++-4.8.5-36.el7
-Enabling updates-source repository
-Enabling base-source repository
-Enabling extras-source repository
-http://vault.centos.org/centos/7/os/Source//SPackages/gcc-4.8.5-36.el7.src.rpm
-```
+**WARNING:** unable to find source (`yumdownloader` failed or returned no results)!
 
 ### `rpm` package: `libtasn1-4.10-1.el7.x86_64`
 
@@ -1129,15 +961,7 @@ http://vault.centos.org/centos/7/os/Source//SPackages/libutempter-1.1.6-4.el7.sr
 
 Licenses (from `rpm --query`): BSD
 
-Source:
-
-```console
-$ yumdownloader --quiet --source --urls libuuid-2.23.2-59.el7
-Enabling updates-source repository
-Enabling base-source repository
-Enabling extras-source repository
-http://vault.centos.org/centos/7/os/Source//SPackages/util-linux-2.23.2-59.el7.src.rpm
-```
+**WARNING:** unable to find source (`yumdownloader` failed or returned no results)!
 
 ### `rpm` package: `libverto-0.2.5-4.el7.x86_64`
 
@@ -1311,43 +1135,19 @@ http://vault.centos.org/centos/7/os/Source//SPackages/nss-softokn-3.36.0-5.el7_5
 
 Licenses (from `rpm --query`): MPLv2.0
 
-Source:
-
-```console
-$ yumdownloader --quiet --source --urls nss-softokn-freebl-3.36.0-5.el7_5
-Enabling updates-source repository
-Enabling base-source repository
-Enabling extras-source repository
-http://vault.centos.org/centos/7/os/Source//SPackages/nss-softokn-3.36.0-5.el7_5.src.rpm
-```
+**WARNING:** unable to find source (`yumdownloader` failed or returned no results)!
 
 ### `rpm` package: `nss-sysinit-3.36.0-7.el7_5.x86_64`
 
 Licenses (from `rpm --query`): MPLv2.0
 
-Source:
-
-```console
-$ yumdownloader --quiet --source --urls nss-sysinit-3.36.0-7.el7_5
-Enabling updates-source repository
-Enabling base-source repository
-Enabling extras-source repository
-http://vault.centos.org/centos/7/os/Source//SPackages/nss-3.36.0-7.el7_5.src.rpm
-```
+**WARNING:** unable to find source (`yumdownloader` failed or returned no results)!
 
 ### `rpm` package: `nss-tools-3.36.0-7.el7_5.x86_64`
 
 Licenses (from `rpm --query`): MPLv2.0
 
-Source:
-
-```console
-$ yumdownloader --quiet --source --urls nss-tools-3.36.0-7.el7_5
-Enabling updates-source repository
-Enabling base-source repository
-Enabling extras-source repository
-http://vault.centos.org/centos/7/os/Source//SPackages/nss-3.36.0-7.el7_5.src.rpm
-```
+**WARNING:** unable to find source (`yumdownloader` failed or returned no results)!
 
 ### `rpm` package: `nss-util-3.36.0-1.el7_5.x86_64`
 
@@ -1381,15 +1181,7 @@ http://vault.centos.org/centos/7/os/Source//SPackages/openldap-2.4.44-20.el7.src
 
 Licenses (from `rpm --query`): OpenSSL
 
-Source:
-
-```console
-$ yumdownloader --quiet --source --urls openssl-libs-1.0.2k-16.el7
-Enabling updates-source repository
-Enabling base-source repository
-Enabling extras-source repository
-http://vault.centos.org/centos/7/os/Source//SPackages/openssl-1.0.2k-16.el7.src.rpm
-```
+**WARNING:** unable to find source (`yumdownloader` failed or returned no results)!
 
 ### `rpm` package: `p11-kit-0.23.5-3.el7.x86_64`
 
@@ -1577,15 +1369,7 @@ http://vault.centos.org/centos/7/os/Source//SPackages/python-2.7.5-76.el7.src.rp
 
 Licenses (from `rpm --query`): LGPLv2
 
-Source:
-
-```console
-$ yumdownloader --quiet --source --urls python-chardet-2.2.1-1.el7_1.noarch
-Enabling updates-source repository
-Enabling base-source repository
-Enabling extras-source repository
-http://vault.centos.org/centos/7/os/Source//SPackages/python-chardet-2.2.1-1.el7_1.src.rpm
-```
+**WARNING:** unable to find source (`yumdownloader` failed or returned no results)!
 
 ### `rpm` package: `python-gobject-base-3.22.0-1.el7_4.1.x86_64`
 
@@ -1633,15 +1417,7 @@ http://vault.centos.org/centos/7/os/Source//SPackages/python-kitchen-1.1.1-5.el7
 
 Licenses (from `rpm --query`): Python
 
-Source:
-
-```console
-$ yumdownloader --quiet --source --urls python-libs-2.7.5-76.el7
-Enabling updates-source repository
-Enabling base-source repository
-Enabling extras-source repository
-http://vault.centos.org/centos/7/os/Source//SPackages/python-2.7.5-76.el7.src.rpm
-```
+**WARNING:** unable to find source (`yumdownloader` failed or returned no results)!
 
 ### `rpm` package: `python-pycurl-7.19.0-19.el7.x86_64`
 
@@ -1745,43 +1521,19 @@ http://vault.centos.org/centos/7/os/Source//SPackages/rpm-4.11.3-35.el7.src.rpm
 
 Licenses (from `rpm --query`): GPLv2+ and LGPLv2+ with exceptions
 
-Source:
-
-```console
-$ yumdownloader --quiet --source --urls rpm-build-libs-4.11.3-35.el7
-Enabling updates-source repository
-Enabling base-source repository
-Enabling extras-source repository
-http://vault.centos.org/centos/7/os/Source//SPackages/rpm-4.11.3-35.el7.src.rpm
-```
+**WARNING:** unable to find source (`yumdownloader` failed or returned no results)!
 
 ### `rpm` package: `rpm-libs-4.11.3-35.el7.x86_64`
 
 Licenses (from `rpm --query`): GPLv2+ and LGPLv2+ with exceptions
 
-Source:
-
-```console
-$ yumdownloader --quiet --source --urls rpm-libs-4.11.3-35.el7
-Enabling updates-source repository
-Enabling base-source repository
-Enabling extras-source repository
-http://vault.centos.org/centos/7/os/Source//SPackages/rpm-4.11.3-35.el7.src.rpm
-```
+**WARNING:** unable to find source (`yumdownloader` failed or returned no results)!
 
 ### `rpm` package: `rpm-python-4.11.3-35.el7.x86_64`
 
 Licenses (from `rpm --query`): GPLv2+
 
-Source:
-
-```console
-$ yumdownloader --quiet --source --urls rpm-python-4.11.3-35.el7
-Enabling updates-source repository
-Enabling base-source repository
-Enabling extras-source repository
-http://vault.centos.org/centos/7/os/Source//SPackages/rpm-4.11.3-35.el7.src.rpm
-```
+**WARNING:** unable to find source (`yumdownloader` failed or returned no results)!
 
 ### `rpm` package: `sed-4.2.2-5.el7.x86_64`
 
@@ -1871,15 +1623,7 @@ http://vault.centos.org/centos/7/os/Source//SPackages/systemd-219-62.el7.src.rpm
 
 Licenses (from `rpm --query`): LGPLv2+ and MIT
 
-Source:
-
-```console
-$ yumdownloader --quiet --source --urls systemd-libs-219-62.el7
-Enabling updates-source repository
-Enabling base-source repository
-Enabling extras-source repository
-http://vault.centos.org/centos/7/os/Source//SPackages/systemd-219-62.el7.src.rpm
-```
+**WARNING:** unable to find source (`yumdownloader` failed or returned no results)!
 
 ### `rpm` package: `tar-1.26-35.el7.x86_64`
 
@@ -1899,15 +1643,7 @@ http://vault.centos.org/centos/7/os/Source//SPackages/tar-1.26-35.el7.src.rpm
 
 Licenses (from `rpm --query`): Public Domain
 
-Source:
-
-```console
-$ yumdownloader --quiet --source --urls tzdata-2018e-3.el7.noarch
-Enabling updates-source repository
-Enabling base-source repository
-Enabling extras-source repository
-http://vault.centos.org/centos/7/os/Source//SPackages/tzdata-2018e-3.el7.src.rpm
-```
+**WARNING:** unable to find source (`yumdownloader` failed or returned no results)!
 
 ### `rpm` package: `ustr-1.0.4-16.el7.x86_64`
 
@@ -1941,15 +1677,7 @@ http://vault.centos.org/centos/7/os/Source//SPackages/util-linux-2.23.2-59.el7.s
 
 Licenses (from `rpm --query`): Vim
 
-Source:
-
-```console
-$ yumdownloader --quiet --source --urls vim-minimal-7.4.160-5.el7
-Enabling updates-source repository
-Enabling base-source repository
-Enabling extras-source repository
-http://vault.centos.org/centos/7/os/Source//SPackages/vim-7.4.160-5.el7.src.rpm
-```
+**WARNING:** unable to find source (`yumdownloader` failed or returned no results)!
 
 ### `rpm` package: `xz-5.2.2-1.el7.x86_64`
 
@@ -1983,15 +1711,7 @@ http://vault.centos.org/centos/7/os/Source//SPackages/xz-5.2.2-1.el7.src.rpm
 
 Licenses (from `rpm --query`): GPLv2+
 
-Source:
-
-```console
-$ yumdownloader --quiet --source --urls yum-3.4.3-161.el7.centos.noarch
-Enabling updates-source repository
-Enabling base-source repository
-Enabling extras-source repository
-http://vault.centos.org/centos/7/os/Source//SPackages/yum-3.4.3-161.el7.centos.src.rpm
-```
+**WARNING:** unable to find source (`yumdownloader` failed or returned no results)!
 
 ### `rpm` package: `yum-metadata-parser-1.1.4-10.el7.x86_64`
 
@@ -2011,43 +1731,19 @@ http://vault.centos.org/centos/7/os/Source//SPackages/yum-metadata-parser-1.1.4-
 
 Licenses (from `rpm --query`): GPLv2+
 
-Source:
-
-```console
-$ yumdownloader --quiet --source --urls yum-plugin-fastestmirror-1.1.31-50.el7.noarch
-Enabling updates-source repository
-Enabling base-source repository
-Enabling extras-source repository
-http://vault.centos.org/centos/7/os/Source//SPackages/yum-utils-1.1.31-50.el7.src.rpm
-```
+**WARNING:** unable to find source (`yumdownloader` failed or returned no results)!
 
 ### `rpm` package: `yum-plugin-ovl-1.1.31-50.el7.noarch`
 
 Licenses (from `rpm --query`): GPLv2+
 
-Source:
-
-```console
-$ yumdownloader --quiet --source --urls yum-plugin-ovl-1.1.31-50.el7.noarch
-Enabling updates-source repository
-Enabling base-source repository
-Enabling extras-source repository
-http://vault.centos.org/centos/7/os/Source//SPackages/yum-utils-1.1.31-50.el7.src.rpm
-```
+**WARNING:** unable to find source (`yumdownloader` failed or returned no results)!
 
 ### `rpm` package: `yum-utils-1.1.31-50.el7.noarch`
 
 Licenses (from `rpm --query`): GPLv2+
 
-Source:
-
-```console
-$ yumdownloader --quiet --source --urls yum-utils-1.1.31-50.el7.noarch
-Enabling updates-source repository
-Enabling base-source repository
-Enabling extras-source repository
-http://vault.centos.org/centos/7/os/Source//SPackages/yum-utils-1.1.31-50.el7.src.rpm
-```
+**WARNING:** unable to find source (`yumdownloader` failed or returned no results)!
 
 ### `rpm` package: `zlib-1.2.7-18.el7.x86_64`
 

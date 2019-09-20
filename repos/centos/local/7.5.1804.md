@@ -633,15 +633,7 @@ http://vault.centos.org/centos/7/os/Source//SPackages/libdb-5.3.21-24.el7.src.rp
 
 Licenses (from `rpm --query`): BSD and LGPLv2 and Sleepycat
 
-Source:
-
-```console
-$ yumdownloader --quiet --source --urls libdb-utils-5.3.21-24.el7
-Enabling updates-source repository
-Enabling base-source repository
-Enabling extras-source repository
-http://vault.centos.org/centos/7/os/Source//SPackages/libdb-5.3.21-24.el7.src.rpm
-```
+**WARNING:** unable to find source (`yumdownloader` failed or returned no results)!
 
 ### `rpm` package: `libffi-3.0.13-18.el7.x86_64`
 
@@ -959,15 +951,7 @@ http://vault.centos.org/centos/7/os/Source//SPackages/nss-softokn-3.36.0-5.el7_5
 
 Licenses (from `rpm --query`): MPLv2.0
 
-Source:
-
-```console
-$ yumdownloader --quiet --source --urls nss-softokn-freebl-3.36.0-5.el7_5
-Enabling updates-source repository
-Enabling base-source repository
-Enabling extras-source repository
-http://vault.centos.org/centos/7/os/Source//SPackages/nss-softokn-3.36.0-5.el7_5.src.rpm
-```
+**WARNING:** unable to find source (`yumdownloader` failed or returned no results)!
 
 ### `rpm` package: `nss-sysinit-3.36.0-5.el7_5.x86_64`
 
@@ -1177,15 +1161,7 @@ Licenses (from `rpm --query`): Python
 
 Licenses (from `rpm --query`): LGPLv2
 
-Source:
-
-```console
-$ yumdownloader --quiet --source --urls python-chardet-2.2.1-1.el7_1.noarch
-Enabling updates-source repository
-Enabling base-source repository
-Enabling extras-source repository
-http://vault.centos.org/centos/7/os/Source//SPackages/python-chardet-2.2.1-1.el7_1.src.rpm
-```
+**WARNING:** unable to find source (`yumdownloader` failed or returned no results)!
 
 ### `rpm` package: `python-gobject-base-3.22.0-1.el7_4.1.x86_64`
 
@@ -1411,15 +1387,7 @@ Licenses (from `rpm --query`): GPLv3+
 
 Licenses (from `rpm --query`): Public Domain
 
-Source:
-
-```console
-$ yumdownloader --quiet --source --urls tzdata-2018e-3.el7.noarch
-Enabling updates-source repository
-Enabling base-source repository
-Enabling extras-source repository
-http://vault.centos.org/centos/7/os/Source//SPackages/tzdata-2018e-3.el7.src.rpm
-```
+**WARNING:** unable to find source (`yumdownloader` failed or returned no results)!
 
 ### `rpm` package: `ustr-1.0.4-16.el7.x86_64`
 

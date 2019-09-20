@@ -910,15 +910,7 @@ Licenses (from `rpm --query`): Python
 
 Licenses (from `rpm --query`): LGPLv2
 
-Source:
-
-```console
-$ yumdownloader --quiet --source --urls python-chardet-2.2.1-1.el7_1.noarch
-Enabling updates-source repository
-Enabling base-source repository
-Enabling extras-source repository
-http://vault.centos.org/centos/7/os/Source//SPackages/python-chardet-2.2.1-1.el7_1.src.rpm
-```
+**WARNING:** unable to find source (`yumdownloader` failed or returned no results)!
 
 ### `rpm` package: `python-iniparse-0.4-9.el7.noarch`
 
