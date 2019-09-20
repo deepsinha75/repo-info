@@ -2,9 +2,9 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:9c6f25e44f2cbe7e903f8bf107e3c7da0b2c38f8dc16500c4f6107c403acad19`
-- Created: `2019-08-21T22:55:36.423821551Z`
-- Virtual Size: ~ 446.52 Mb  
+- Image ID: `sha256:a9545e563d0af1ba7637f52c3fd1bf19f32e1678a70b0da74722e8e4ca44a386`
+- Created: `2019-09-19T03:21:55.330622505Z`
+- Virtual Size: ~ 443.95 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Command: `["/opt/ibm/wlp/bin/server","run","defaultServer"]`
@@ -13,16 +13,16 @@
   - `JAVA_VERSION=1.8.0_sr5fp40`
   - `JAVA_HOME=/opt/ibm/java/jre`
   - `IBM_JAVA_OPTIONS=-XX:+UseContainerSupport`
-  - `LIBERTY_VERSION=2019.8.0_0`
+  - `LIBERTY_VERSION=2019.9.0_0`
   - `LOG_DIR=/logs`
   - `WLP_OUTPUT_DIR=/opt/ibm/wlp/output`
 - Labels:
   - `org.opencontainers.image.authors=Arthur De Magalhaes, Chris Potter`
   - `org.opencontainers.image.documentation=https://www.ibm.com/support/knowledgecenter/SSAW57_liberty/com.ibm.websphere.wlp.nd.multiplatform.doc/ae/cwlp_about.html`
-  - `org.opencontainers.image.revision=cl190820190813-1136`
+  - `org.opencontainers.image.revision=cl190920190905-0148`
   - `org.opencontainers.image.url=http://wasdev.net`
   - `org.opencontainers.image.vendor=IBM`
-  - `org.opencontainers.image.version=2019.8.0.0`
+  - `org.opencontainers.image.version=2019.9.0.0`
 
 ## `dpkg` (`.deb`-based packages)
 
@@ -394,11 +394,11 @@ $ apt-get source -qq --print-uris diffutils=1:3.3-3
 'http://archive.ubuntu.com/ubuntu/pool/main/d/diffutils/diffutils_3.3-3.debian.tar.xz' diffutils_3.3-3.debian.tar.xz 18356 SHA256:a0d1946979196f793a8ca55b21ab7891227de08f15bac2578ed84f4911e8b755
 ```
 
-### `dpkg` source package: `dpkg=1.18.4ubuntu1.5`
+### `dpkg` source package: `dpkg=1.18.4ubuntu1.6`
 
 Binary Packages:
 
-- `dpkg=1.18.4ubuntu1.5`
+- `dpkg=1.18.4ubuntu1.6`
 
 Licenses: (parsed from: `/usr/share/doc/dpkg/copyright`)
 
@@ -408,9 +408,13 @@ Licenses: (parsed from: `/usr/share/doc/dpkg/copyright`)
 - `public-domain-md5`
 - `public-domain-s-s-d`
 
-**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
-This is *usually* due to a new package version being released and the old version being removed.
+Source:
 
+```console
+$ apt-get source -qq --print-uris dpkg=1.18.4ubuntu1.6
+'http://archive.ubuntu.com/ubuntu/pool/main/d/dpkg/dpkg_1.18.4ubuntu1.6.dsc' dpkg_1.18.4ubuntu1.6.dsc 2211 SHA256:77e2c2cd8f204e8ed805e771a3002af4b8781bd7dc3c288cd63885f6a0983c04
+'http://archive.ubuntu.com/ubuntu/pool/main/d/dpkg/dpkg_1.18.4ubuntu1.6.tar.xz' dpkg_1.18.4ubuntu1.6.tar.xz 4297512 SHA256:9e1e85e9a4d015b1b446d9da5cbec225830a6a1807a93ab32e559c06761187a5
+```
 
 ### `dpkg` source package: `e2fsprogs=1.42.13-1ubuntu1`
 
@@ -1314,18 +1318,18 @@ $ apt-get source -qq --print-uris ustr=1.0.4-5
 'http://archive.ubuntu.com/ubuntu/pool/main/u/ustr/ustr_1.0.4-5.debian.tar.xz' ustr_1.0.4-5.debian.tar.xz 24948 SHA256:a21e78acf82dcccef2893932ef7b85852419bfd9b18382e63c34e7710c1d7762
 ```
 
-### `dpkg` source package: `util-linux=2.27.1-6ubuntu3.7`
+### `dpkg` source package: `util-linux=2.27.1-6ubuntu3.8`
 
 Binary Packages:
 
-- `bsdutils=1:2.27.1-6ubuntu3.7`
-- `libblkid1:amd64=2.27.1-6ubuntu3.7`
-- `libfdisk1:amd64=2.27.1-6ubuntu3.7`
-- `libmount1:amd64=2.27.1-6ubuntu3.7`
-- `libsmartcols1:amd64=2.27.1-6ubuntu3.7`
-- `libuuid1:amd64=2.27.1-6ubuntu3.7`
-- `mount=2.27.1-6ubuntu3.7`
-- `util-linux=2.27.1-6ubuntu3.7`
+- `bsdutils=1:2.27.1-6ubuntu3.8`
+- `libblkid1:amd64=2.27.1-6ubuntu3.8`
+- `libfdisk1:amd64=2.27.1-6ubuntu3.8`
+- `libmount1:amd64=2.27.1-6ubuntu3.8`
+- `libsmartcols1:amd64=2.27.1-6ubuntu3.8`
+- `libuuid1:amd64=2.27.1-6ubuntu3.8`
+- `mount=2.27.1-6ubuntu3.8`
+- `util-linux=2.27.1-6ubuntu3.8`
 
 Licenses: (parsed from: `/usr/share/doc/bsdutils/copyright`, `/usr/share/doc/libblkid1/copyright`, `/usr/share/doc/libfdisk1/copyright`, `/usr/share/doc/libmount1/copyright`, `/usr/share/doc/libsmartcols1/copyright`, `/usr/share/doc/libuuid1/copyright`, `/usr/share/doc/mount/copyright`, `/usr/share/doc/util-linux/copyright`)
 
@@ -1346,9 +1350,14 @@ Licenses: (parsed from: `/usr/share/doc/bsdutils/copyright`, `/usr/share/doc/lib
 - `MIT`
 - `public-domain`
 
-**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
-This is *usually* due to a new package version being released and the old version being removed.
+Source:
 
+```console
+$ apt-get source -qq --print-uris util-linux=2.27.1-6ubuntu3.8
+'http://archive.ubuntu.com/ubuntu/pool/main/u/util-linux/util-linux_2.27.1-6ubuntu3.8.dsc' util-linux_2.27.1-6ubuntu3.8.dsc 3531 SHA256:a64f117d16d02054a55d587859e51abe970b3fdabb4f7d3aa67c084ce7aba40e
+'http://archive.ubuntu.com/ubuntu/pool/main/u/util-linux/util-linux_2.27.1.orig.tar.xz' util-linux_2.27.1.orig.tar.xz 3964512 SHA256:0a818fcdede99aec43ffe6ca5b5388bff80d162f2f7bd4541dca94fecb87a290
+'http://archive.ubuntu.com/ubuntu/pool/main/u/util-linux/util-linux_2.27.1-6ubuntu3.8.debian.tar.xz' util-linux_2.27.1-6ubuntu3.8.debian.tar.xz 87708 SHA256:7fffa45263d9c41c81d54e4c765d0f4b7e0fb636a73e3e07f2e324526593ca66
+```
 
 ### `dpkg` source package: `wget=1.17.1-1ubuntu1.5`
 
