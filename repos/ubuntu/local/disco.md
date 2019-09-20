@@ -2,9 +2,9 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:9f3d7c446553b4941e450435548084924f430a4a019e7c4c9a6e32fb8c008f43`
-- Created: `2019-08-15T07:28:53.314076133Z`
-- Virtual Size: ~ 69.97 Mb  
+- Image ID: `sha256:a157bb38198796b0c06ca5ed5648f94686796e32586d7e65dd8275a5390e116b`
+- Created: `2019-09-18T23:20:48.530746972Z`
+- Virtual Size: ~ 69.98 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Command: `["/bin/bash"]`
@@ -54,25 +54,25 @@ $ apt-get source -qq --print-uris adduser=3.118ubuntu1
 'http://archive.ubuntu.com/ubuntu/pool/main/a/adduser/adduser_3.118ubuntu1.tar.xz' adduser_3.118ubuntu1.tar.xz 217300 SHA256:16e8d59231d814af0701a24195246f169a26df1b39d59e3cea04db882a31973a
 ```
 
-### `dpkg` source package: `apt=1.8.1`
+### `dpkg` source package: `apt=1.8.3`
 
 Binary Packages:
 
-- `apt=1.8.1`
-- `libapt-pkg5.0:amd64=1.8.1`
+- `apt=1.8.3`
+- `libapt-pkg5.0:amd64=1.8.3`
 
 Licenses: (parsed from: `/usr/share/doc/apt/copyright`, `/usr/share/doc/libapt-pkg5.0/copyright`)
 
 - `GPL-2`
 - `GPLv2+`
 
-**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
-This is *usually* due to a new package version being released and the old version being removed.
+Source:
 
-The source package *may* still be available for download from:
-
-- http://snapshot.debian.org/package/apt/1.8.1/
-
+```console
+$ apt-get source -qq --print-uris apt=1.8.3
+'http://archive.ubuntu.com/ubuntu/pool/main/a/apt/apt_1.8.3.dsc' apt_1.8.3.dsc 2766 SHA256:74fa78c32dc057909c392c1c0a6118b7b89c1f7fa27a1ff15934d58351f71d78
+'http://archive.ubuntu.com/ubuntu/pool/main/a/apt/apt_1.8.3.tar.xz' apt_1.8.3.tar.xz 2188584 SHA256:c3017e42307d1669f652f4b67a0c7e67acb4f7b09d2f609a89c455e4d3a74b49
+```
 
 ### `dpkg` source package: `attr=1:2.4.48-4`
 
@@ -1094,12 +1094,12 @@ $ apt-get source -qq --print-uris perl=5.28.1-6
 'http://archive.ubuntu.com/ubuntu/pool/main/p/perl/perl_5.28.1-6.debian.tar.xz' perl_5.28.1-6.debian.tar.xz 178708 SHA256:59a3fd93229c9ca1a1f8a4692eb768f16444494e6bf0d454ea27de5f5a1655cd
 ```
 
-### `dpkg` source package: `procps=2:3.3.15-2ubuntu2`
+### `dpkg` source package: `procps=2:3.3.15-2ubuntu2.1`
 
 Binary Packages:
 
-- `libprocps7:amd64=2:3.3.15-2ubuntu2`
-- `procps=2:3.3.15-2ubuntu2`
+- `libprocps7:amd64=2:3.3.15-2ubuntu2.1`
+- `procps=2:3.3.15-2ubuntu2.1`
 
 Licenses: (parsed from: `/usr/share/doc/libprocps7/copyright`, `/usr/share/doc/procps/copyright`)
 
@@ -1113,10 +1113,10 @@ Licenses: (parsed from: `/usr/share/doc/libprocps7/copyright`, `/usr/share/doc/p
 Source:
 
 ```console
-$ apt-get source -qq --print-uris procps=2:3.3.15-2ubuntu2
-'http://archive.ubuntu.com/ubuntu/pool/main/p/procps/procps_3.3.15-2ubuntu2.dsc' procps_3.3.15-2ubuntu2.dsc 1557 SHA256:5a2220db80b7a26caafd5fc5e73dde85e5660cd4bf666905ced29270f724a77a
+$ apt-get source -qq --print-uris procps=2:3.3.15-2ubuntu2.1
+'http://archive.ubuntu.com/ubuntu/pool/main/p/procps/procps_3.3.15-2ubuntu2.1.dsc' procps_3.3.15-2ubuntu2.1.dsc 1874 SHA256:08852301ca685645b46f5ebb40d31b586665b2950ec4f04a7a8d0177284118ee
 'http://archive.ubuntu.com/ubuntu/pool/main/p/procps/procps_3.3.15.orig.tar.xz' procps_3.3.15.orig.tar.xz 903372 SHA256:82e8aa55b65eac116eee05f00d2a884a6374760d57100edd429d6e9b4953458d
-'http://archive.ubuntu.com/ubuntu/pool/main/p/procps/procps_3.3.15-2ubuntu2.debian.tar.xz' procps_3.3.15-2ubuntu2.debian.tar.xz 32224 SHA256:6811f3b7a1c25e7fbc5dea4786d43e55608cd0111c57d5d4782fcd9d4664f967
+'http://archive.ubuntu.com/ubuntu/pool/main/p/procps/procps_3.3.15-2ubuntu2.1.debian.tar.xz' procps_3.3.15-2ubuntu2.1.debian.tar.xz 32556 SHA256:dffe50729a14ebef66e537082c51d20a525b023887186ab5cfad41c447d25bba
 ```
 
 ### `dpkg` source package: `sed=4.7-1`
@@ -1180,12 +1180,12 @@ $ apt-get source -qq --print-uris shadow=1:4.5-1.1ubuntu2
 'http://archive.ubuntu.com/ubuntu/pool/main/s/shadow/shadow_4.5-1.1ubuntu2.debian.tar.xz' shadow_4.5-1.1ubuntu2.debian.tar.xz 471092 SHA256:3c351f82b7d0763c2a14987bef5a8e7bf995911de854486f9d09d85d81bc32ad
 ```
 
-### `dpkg` source package: `systemd=240-6ubuntu5.3`
+### `dpkg` source package: `systemd=240-6ubuntu5.7`
 
 Binary Packages:
 
-- `libsystemd0:amd64=240-6ubuntu5.3`
-- `libudev1:amd64=240-6ubuntu5.3`
+- `libsystemd0:amd64=240-6ubuntu5.7`
+- `libudev1:amd64=240-6ubuntu5.7`
 
 Licenses: (parsed from: `/usr/share/doc/libsystemd0/copyright`, `/usr/share/doc/libudev1/copyright`)
 
@@ -1197,9 +1197,14 @@ Licenses: (parsed from: `/usr/share/doc/libsystemd0/copyright`, `/usr/share/doc/
 - `LGPL-2.1+`
 - `public-domain`
 
-**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
-This is *usually* due to a new package version being released and the old version being removed.
+Source:
 
+```console
+$ apt-get source -qq --print-uris systemd=240-6ubuntu5.7
+'http://archive.ubuntu.com/ubuntu/pool/main/s/systemd/systemd_240-6ubuntu5.7.dsc' systemd_240-6ubuntu5.7.dsc 4771 SHA256:db224a231b09cd23eaacdc535a974aa4acf39b5c88d56418595e94c8de6bedfe
+'http://archive.ubuntu.com/ubuntu/pool/main/s/systemd/systemd_240.orig.tar.gz' systemd_240.orig.tar.gz 7582001 SHA256:8f15aec1ac926e13a21a04d0ca3fe371f7004951448142a6f8952075c5b5f0b5
+'http://archive.ubuntu.com/ubuntu/pool/main/s/systemd/systemd_240-6ubuntu5.7.debian.tar.xz' systemd_240-6ubuntu5.7.debian.tar.xz 228844 SHA256:fbce6c246f30db52f4b8408fd31972c5be29345411008919ba987615332b433c
+```
 
 ### `dpkg` source package: `sysvinit=2.88dsf-59.10ubuntu2`
 
@@ -1258,19 +1263,19 @@ $ apt-get source -qq --print-uris ubuntu-keyring=2018.09.18.1
 'http://archive.ubuntu.com/ubuntu/pool/main/u/ubuntu-keyring/ubuntu-keyring_2018.09.18.1.tar.gz' ubuntu-keyring_2018.09.18.1.tar.gz 34263 SHA256:4e8534bd70274b26d835808095b95b7ee5448f5f10234fb6ec39c92c8c155d33
 ```
 
-### `dpkg` source package: `util-linux=2.33.1-0.1ubuntu2`
+### `dpkg` source package: `util-linux=2.33.1-0.1ubuntu3`
 
 Binary Packages:
 
-- `bsdutils=1:2.33.1-0.1ubuntu2`
-- `fdisk=2.33.1-0.1ubuntu2`
-- `libblkid1:amd64=2.33.1-0.1ubuntu2`
-- `libfdisk1:amd64=2.33.1-0.1ubuntu2`
-- `libmount1:amd64=2.33.1-0.1ubuntu2`
-- `libsmartcols1:amd64=2.33.1-0.1ubuntu2`
-- `libuuid1:amd64=2.33.1-0.1ubuntu2`
-- `mount=2.33.1-0.1ubuntu2`
-- `util-linux=2.33.1-0.1ubuntu2`
+- `bsdutils=1:2.33.1-0.1ubuntu3`
+- `fdisk=2.33.1-0.1ubuntu3`
+- `libblkid1:amd64=2.33.1-0.1ubuntu3`
+- `libfdisk1:amd64=2.33.1-0.1ubuntu3`
+- `libmount1:amd64=2.33.1-0.1ubuntu3`
+- `libsmartcols1:amd64=2.33.1-0.1ubuntu3`
+- `libuuid1:amd64=2.33.1-0.1ubuntu3`
+- `mount=2.33.1-0.1ubuntu3`
+- `util-linux=2.33.1-0.1ubuntu3`
 
 Licenses: (parsed from: `/usr/share/doc/bsdutils/copyright`, `/usr/share/doc/fdisk/copyright`, `/usr/share/doc/libblkid1/copyright`, `/usr/share/doc/libfdisk1/copyright`, `/usr/share/doc/libmount1/copyright`, `/usr/share/doc/libsmartcols1/copyright`, `/usr/share/doc/libuuid1/copyright`, `/usr/share/doc/mount/copyright`, `/usr/share/doc/util-linux/copyright`)
 
@@ -1294,10 +1299,10 @@ Licenses: (parsed from: `/usr/share/doc/bsdutils/copyright`, `/usr/share/doc/fdi
 Source:
 
 ```console
-$ apt-get source -qq --print-uris util-linux=2.33.1-0.1ubuntu2
-'http://archive.ubuntu.com/ubuntu/pool/main/u/util-linux/util-linux_2.33.1-0.1ubuntu2.dsc' util-linux_2.33.1-0.1ubuntu2.dsc 4085 SHA256:92d30cb63fb1b3f507657031ebe65741775bed9730a776d3de688dfc0fc10642
+$ apt-get source -qq --print-uris util-linux=2.33.1-0.1ubuntu3
+'http://archive.ubuntu.com/ubuntu/pool/main/u/util-linux/util-linux_2.33.1-0.1ubuntu3.dsc' util-linux_2.33.1-0.1ubuntu3.dsc 3703 SHA256:db44e7a2db1ad2309b6eebf690d7cbb67cb4c6745420b183495e8de288961d54
 'http://archive.ubuntu.com/ubuntu/pool/main/u/util-linux/util-linux_2.33.1.orig.tar.xz' util-linux_2.33.1.orig.tar.xz 4650936 SHA256:c14bd9f3b6e1792b90db87696e87ec643f9d63efa0a424f092a5a6b2f2dbef21
-'http://archive.ubuntu.com/ubuntu/pool/main/u/util-linux/util-linux_2.33.1-0.1ubuntu2.debian.tar.xz' util-linux_2.33.1-0.1ubuntu2.debian.tar.xz 84604 SHA256:8bf59facaea74d269e6a216e624ad72e4788b5e60efba2d63d09e802d4314347
+'http://archive.ubuntu.com/ubuntu/pool/main/u/util-linux/util-linux_2.33.1-0.1ubuntu3.debian.tar.xz' util-linux_2.33.1-0.1ubuntu3.debian.tar.xz 85128 SHA256:1805c1121ac6562d3a05a87a8564d7e713ff266a85062194f4959e7010b7ca8b
 ```
 
 ### `dpkg` source package: `xz-utils=5.2.4-1`
