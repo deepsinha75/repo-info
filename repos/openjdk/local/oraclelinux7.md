@@ -1,20 +1,20 @@
-# `openjdk:12.0.2-jdk-oraclelinux7`
+# `openjdk:13-jdk-oraclelinux7`
 
 ## Docker Metadata
 
-- Image ID: `sha256:e1e07dfba89cfb5eddc50d3adbe406d6e6b2333ef870e2c4112fa71401a03605`
-- Created: `2019-08-08T22:52:59.151882501Z`
-- Virtual Size: ~ 470.44 Mb  
+- Image ID: `sha256:b255bbd4a82d4c9d251aea4cf6488baf824ccdc2a9bb6cec0ac006482f79d80a`
+- Created: `2019-08-26T23:33:00.414279323Z`
+- Virtual Size: ~ 490.47 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Command: `["jshell"]`
 - Environment:
-  - `PATH=/usr/java/openjdk-12/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
+  - `PATH=/usr/java/openjdk-13/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
   - `LANG=en_US.UTF-8`
-  - `JAVA_HOME=/usr/java/openjdk-12`
-  - `JAVA_VERSION=12.0.2`
-  - `JAVA_URL=https://download.java.net/java/GA/jdk12.0.2/e482c34c86bd4bf8b56c0b35558996b9/10/GPL/openjdk-12.0.2_linux-x64_bin.tar.gz`
-  - `JAVA_SHA256=75998a6ebf477467aa5fb68227a67733f0e77e01f737d4dfbc01e617e59106ed`
+  - `JAVA_HOME=/usr/java/openjdk-13`
+  - `JAVA_VERSION=13`
+  - `JAVA_URL=https://download.java.net/java/GA/jdk13/5b8a42f3905b406298b72d750b6919f6/33/GPL/openjdk-13_linux-x64_bin.tar.gz`
+  - `JAVA_SHA256=5f547b8f0ffa7da517223f6f929a5055d749776b1878ccedbd6cc1334f4d6f4d`
 
 ## `rpm` (`.rpm`-based packages)
 
@@ -49,6 +49,17 @@ Source:
 ```console
 $ yumdownloader --quiet --source --urls bash-4.2.46-31.el7
 https://yum.oracle.com/repo/OracleLinux/OL7/latest/x86_64//getPackageSource/bash-4.2.46-31.el7.src.rpm
+```
+
+### `rpm` package: `binutils-2.27-41.base.0.1.el7.x86_64`
+
+Licenses (from `rpm --query`): GPLv3+
+
+Source:
+
+```console
+$ yumdownloader --quiet --source --urls binutils-2.27-41.base.0.1.el7
+https://yum.oracle.com/repo/OracleLinux/OL7/latest/x86_64//getPackageSource/binutils-2.27-41.base.0.1.el7.src.rpm
 ```
 
 ### `rpm` package: `bzip2-libs-1.0.6-13.el7.x86_64`
@@ -238,15 +249,15 @@ $ yumdownloader --quiet --source --urls fontpackages-filesystem-1.44-8.el7.noarc
 https://yum.oracle.com/repo/OracleLinux/OL7/latest/x86_64//getPackageSource/fontpackages-1.44-8.el7.src.rpm
 ```
 
-### `rpm` package: `freetype-2.8-12.el7_6.1.x86_64`
+### `rpm` package: `freetype-2.8-14.el7.x86_64`
 
 Licenses (from `rpm --query`): (FTL or GPLv2+) and BSD and MIT and Public Domain and zlib with acknowledgement
 
 Source:
 
 ```console
-$ yumdownloader --quiet --source --urls freetype-2.8-12.el7_6.1
-https://yum.oracle.com/repo/OracleLinux/OL7/latest/x86_64//getPackageSource/freetype-2.8-12.el7_6.1.src.rpm
+$ yumdownloader --quiet --source --urls freetype-2.8-14.el7
+https://yum.oracle.com/repo/OracleLinux/OL7/latest/x86_64//getPackageSource/freetype-2.8-14.el7.src.rpm
 ```
 
 ### `rpm` package: `gawk-4.0.2-4.el7_3.1.x86_64`
