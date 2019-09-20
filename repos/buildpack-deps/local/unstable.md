@@ -130,19 +130,13 @@ Licenses: (parsed from: `/usr/share/doc/apt/copyright`, `/usr/share/doc/libapt-p
 - `GPL-2`
 - `GPLv2+`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris apt=1.8.3
-'http://deb.debian.org/debian/pool/main/a/apt/apt_1.8.3.dsc' apt_1.8.3.dsc 2766 SHA256:74fa78c32dc057909c392c1c0a6118b7b89c1f7fa27a1ff15934d58351f71d78
-'http://deb.debian.org/debian/pool/main/a/apt/apt_1.8.3.tar.xz' apt_1.8.3.tar.xz 2188584 SHA256:c3017e42307d1669f652f4b67a0c7e67acb4f7b09d2f609a89c455e4d3a74b49
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/apt/1.8.3/
 
-- https://sources.debian.net/src/apt/1.8.3/ (for browsing the source)
-- https://sources.debian.net/src/apt/1.8.3/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/apt/1.8.3/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `attr=1:2.4.48-4`
 
@@ -5038,20 +5032,13 @@ Licenses: (parsed from: `/usr/share/doc/libtiff-dev/copyright`, `/usr/share/doc/
 
 - `Hylafax`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris tiff=4.0.10+git190818-1
-'http://deb.debian.org/debian/pool/main/t/tiff/tiff_4.0.10+git190818-1.dsc' tiff_4.0.10+git190818-1.dsc 2243 SHA256:d40d31e505b6e72942ac42050264766b967d94a0f798d741fde5970c6414dc4d
-'http://deb.debian.org/debian/pool/main/t/tiff/tiff_4.0.10+git190818.orig.tar.xz' tiff_4.0.10+git190818.orig.tar.xz 1476852 SHA256:2cd141146e05fd998fcf0e137a3a66d87fc8efbc4d5a44ed1e6a369acc242af8
-'http://deb.debian.org/debian/pool/main/t/tiff/tiff_4.0.10+git190818-1.debian.tar.xz' tiff_4.0.10+git190818-1.debian.tar.xz 18484 SHA256:4abcfb63a45bfb1a4d6013f9a0c195e108ccc575cb99393f0408d53ec84779d5
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/tiff/4.0.10+git190818-1/
 
-- https://sources.debian.net/src/tiff/4.0.10+git190818-1/ (for browsing the source)
-- https://sources.debian.net/src/tiff/4.0.10+git190818-1/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/tiff/4.0.10+git190818-1/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `tzdata=2019b-2`
 

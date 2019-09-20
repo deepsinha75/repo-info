@@ -2957,21 +2957,13 @@ Licenses: (parsed from: `/usr/share/doc/libtasn1-6/copyright`, `/usr/share/doc/l
 - `LGPL`
 - `LGPL-2.1`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris libtasn1-6=4.14-2
-'http://deb.debian.org/debian/pool/main/libt/libtasn1-6/libtasn1-6_4.14-2.dsc' libtasn1-6_4.14-2.dsc 2566 SHA256:f9031be37f79dd54320de7671ad4747965dfdb91842341f4bbb7fcc4c43f00bc
-'http://deb.debian.org/debian/pool/main/libt/libtasn1-6/libtasn1-6_4.14.orig.tar.gz' libtasn1-6_4.14.orig.tar.gz 1771184 SHA256:9e604ba5c5c8ea403487695c2e407405820d98540d9de884d6e844f9a9c5ba08
-'http://deb.debian.org/debian/pool/main/libt/libtasn1-6/libtasn1-6_4.14.orig.tar.gz.asc' libtasn1-6_4.14.orig.tar.gz.asc 488 SHA256:9c11501a32c3a7da6fd148f2408619054975e38c31b0d2ca562e99477719dda0
-'http://deb.debian.org/debian/pool/main/libt/libtasn1-6/libtasn1-6_4.14-2.debian.tar.xz' libtasn1-6_4.14-2.debian.tar.xz 18020 SHA256:77a3fcc686d4b65cf76eb471bc9b4678122ce4a771405de8574e1f6fc8feaa08
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/libtasn1-6/4.14-2/
 
-- https://sources.debian.net/src/libtasn1-6/4.14-2/ (for browsing the source)
-- https://sources.debian.net/src/libtasn1-6/4.14-2/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/libtasn1-6/4.14-2/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `libthai=0.1.28-3`
 
@@ -3374,20 +3366,13 @@ Licenses: (parsed from: `/usr/share/doc/libyaml-0-2/copyright`, `/usr/share/doc/
 - `Expat`
 - `permissive`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris libyaml=0.2.1-1
-'http://deb.debian.org/debian/pool/main/liby/libyaml/libyaml_0.2.1-1.dsc' libyaml_0.2.1-1.dsc 1811 SHA256:916c8c0b5cdb7fce89fba618fa6b9ff9050d2647806b892dc8154668f8222361
-'http://deb.debian.org/debian/pool/main/liby/libyaml/libyaml_0.2.1.orig.tar.gz' libyaml_0.2.1.orig.tar.gz 601443 SHA256:3ad5c55ec2cf72770e173d973d4120099ba0dec4d074097a488fa79de08304de
-'http://deb.debian.org/debian/pool/main/liby/libyaml/libyaml_0.2.1-1.debian.tar.xz' libyaml_0.2.1-1.debian.tar.xz 4108 SHA256:4d6bedd7703ad9f43b9173fbd822f31b20d4c41f374257d6839b004f9742f152
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/libyaml/0.2.1-1/
 
-- https://sources.debian.net/src/libyaml/0.2.1-1/ (for browsing the source)
-- https://sources.debian.net/src/libyaml/0.2.1-1/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/libyaml/0.2.1-1/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `libzstd=1.4.3+dfsg-1`
 
@@ -3656,21 +3641,13 @@ Licenses: (parsed from: `/usr/share/doc/mercurial/copyright`, `/usr/share/doc/me
 - `LGPL-2.1`
 - `LGPL-2.1+`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris mercurial=4.9-2
-'http://deb.debian.org/debian/pool/main/m/mercurial/mercurial_4.9-2.dsc' mercurial_4.9-2.dsc 2628 SHA256:0e91f2f1f8cff314e3639f9ac8a7452567a03414e4ae75e20b7d9d7618dafc86
-'http://deb.debian.org/debian/pool/main/m/mercurial/mercurial_4.9.orig.tar.gz' mercurial_4.9.orig.tar.gz 7075692 SHA256:0f600c5c7e44d4318bedc1754a70b920f7ecd278e4089b0f6ac96f460c012f06
-'http://deb.debian.org/debian/pool/main/m/mercurial/mercurial_4.9.orig.tar.gz.asc' mercurial_4.9.orig.tar.gz.asc 833 SHA256:a78d5528b933d9e0242b057ad08b365815c7dc3035ff8fef9a22574d9c1e56c0
-'http://deb.debian.org/debian/pool/main/m/mercurial/mercurial_4.9-2.debian.tar.xz' mercurial_4.9-2.debian.tar.xz 62048 SHA256:107e2eaf7f9dc2e19e735a94181d26649b37d3e85a3b8d127247be7f134d886e
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/mercurial/4.9-2/
 
-- https://sources.debian.net/src/mercurial/4.9-2/ (for browsing the source)
-- https://sources.debian.net/src/mercurial/4.9-2/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/mercurial/4.9-2/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `mime-support=3.63`
 
@@ -5014,20 +4991,13 @@ Licenses: (parsed from: `/usr/share/doc/libtiff-dev/copyright`, `/usr/share/doc/
 
 - `Hylafax`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris tiff=4.0.10+git190818-1
-'http://deb.debian.org/debian/pool/main/t/tiff/tiff_4.0.10+git190818-1.dsc' tiff_4.0.10+git190818-1.dsc 2243 SHA256:d40d31e505b6e72942ac42050264766b967d94a0f798d741fde5970c6414dc4d
-'http://deb.debian.org/debian/pool/main/t/tiff/tiff_4.0.10+git190818.orig.tar.xz' tiff_4.0.10+git190818.orig.tar.xz 1476852 SHA256:2cd141146e05fd998fcf0e137a3a66d87fc8efbc4d5a44ed1e6a369acc242af8
-'http://deb.debian.org/debian/pool/main/t/tiff/tiff_4.0.10+git190818-1.debian.tar.xz' tiff_4.0.10+git190818-1.debian.tar.xz 18484 SHA256:4abcfb63a45bfb1a4d6013f9a0c195e108ccc575cb99393f0408d53ec84779d5
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/tiff/4.0.10+git190818-1/
 
-- https://sources.debian.net/src/tiff/4.0.10+git190818-1/ (for browsing the source)
-- https://sources.debian.net/src/tiff/4.0.10+git190818-1/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/tiff/4.0.10+git190818-1/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `tzdata=2019b-2`
 

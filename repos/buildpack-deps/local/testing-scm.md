@@ -1704,21 +1704,13 @@ Licenses: (parsed from: `/usr/share/doc/libtasn1-6/copyright`)
 - `LGPL`
 - `LGPL-2.1`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris libtasn1-6=4.14-2
-'http://deb.debian.org/debian/pool/main/libt/libtasn1-6/libtasn1-6_4.14-2.dsc' libtasn1-6_4.14-2.dsc 2566 SHA256:f9031be37f79dd54320de7671ad4747965dfdb91842341f4bbb7fcc4c43f00bc
-'http://deb.debian.org/debian/pool/main/libt/libtasn1-6/libtasn1-6_4.14.orig.tar.gz' libtasn1-6_4.14.orig.tar.gz 1771184 SHA256:9e604ba5c5c8ea403487695c2e407405820d98540d9de884d6e844f9a9c5ba08
-'http://deb.debian.org/debian/pool/main/libt/libtasn1-6/libtasn1-6_4.14.orig.tar.gz.asc' libtasn1-6_4.14.orig.tar.gz.asc 488 SHA256:9c11501a32c3a7da6fd148f2408619054975e38c31b0d2ca562e99477719dda0
-'http://deb.debian.org/debian/pool/main/libt/libtasn1-6/libtasn1-6_4.14-2.debian.tar.xz' libtasn1-6_4.14-2.debian.tar.xz 18020 SHA256:77a3fcc686d4b65cf76eb471bc9b4678122ce4a771405de8574e1f6fc8feaa08
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/libtasn1-6/4.14-2/
 
-- https://sources.debian.net/src/libtasn1-6/4.14-2/ (for browsing the source)
-- https://sources.debian.net/src/libtasn1-6/4.14-2/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/libtasn1-6/4.14-2/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `libunistring=0.9.10-2`
 
@@ -1876,21 +1868,13 @@ Licenses: (parsed from: `/usr/share/doc/mercurial/copyright`, `/usr/share/doc/me
 - `LGPL-2.1`
 - `LGPL-2.1+`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris mercurial=4.9-2
-'http://deb.debian.org/debian/pool/main/m/mercurial/mercurial_4.9-2.dsc' mercurial_4.9-2.dsc 2628 SHA256:0e91f2f1f8cff314e3639f9ac8a7452567a03414e4ae75e20b7d9d7618dafc86
-'http://deb.debian.org/debian/pool/main/m/mercurial/mercurial_4.9.orig.tar.gz' mercurial_4.9.orig.tar.gz 7075692 SHA256:0f600c5c7e44d4318bedc1754a70b920f7ecd278e4089b0f6ac96f460c012f06
-'http://deb.debian.org/debian/pool/main/m/mercurial/mercurial_4.9.orig.tar.gz.asc' mercurial_4.9.orig.tar.gz.asc 833 SHA256:a78d5528b933d9e0242b057ad08b365815c7dc3035ff8fef9a22574d9c1e56c0
-'http://deb.debian.org/debian/pool/main/m/mercurial/mercurial_4.9-2.debian.tar.xz' mercurial_4.9-2.debian.tar.xz 62048 SHA256:107e2eaf7f9dc2e19e735a94181d26649b37d3e85a3b8d127247be7f134d886e
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/mercurial/4.9-2/
 
-- https://sources.debian.net/src/mercurial/4.9-2/ (for browsing the source)
-- https://sources.debian.net/src/mercurial/4.9-2/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/mercurial/4.9-2/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `mime-support=3.63`
 
