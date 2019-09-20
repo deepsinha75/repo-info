@@ -2,9 +2,9 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:de07be4d982795560159e8135aec6fc11b239cb21abbf955558d9be4065ae30d`
-- Created: `2019-09-05T23:32:30.590541355Z`
-- Virtual Size: ~ 130.80 Mb  
+- Image ID: `sha256:41efde481c2ffd4fd8fc8860c8c2fd3c9c7b4ad67e73b35b6126bbf2f3ab8469`
+- Created: `2019-09-19T23:51:27.355306388Z`
+- Virtual Size: ~ 187.08 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["docker-entrypoint.sh"]`
@@ -79,6 +79,23 @@ GPL2
 
 ```
 
+### `apk` package: `avahi-libs`
+
+```console
+avahi-libs-0.7-r2 description:
+Libraries for avahi run-time use
+
+avahi-libs-0.7-r2 webpage:
+https://www.avahi.org/
+
+avahi-libs-0.7-r2 installed size:
+131072
+
+avahi-libs-0.7-r2 license:
+LGPL-2.0-or-later
+
+```
+
 ### `apk` package: `bash`
 
 ```console
@@ -147,6 +164,23 @@ MPL-2.0 GPL-2.0-or-later
 
 ```
 
+### `apk` package: `cups-libs`
+
+```console
+cups-libs-2.2.12-r0 description:
+CUPS libraries
+
+cups-libs-2.2.12-r0 webpage:
+https://www.cups.org/
+
+cups-libs-2.2.12-r0 installed size:
+565248
+
+cups-libs-2.2.12-r0 license:
+GPL-2.0-only
+
+```
+
 ### `apk` package: `curl`
 
 ```console
@@ -164,19 +198,36 @@ MIT
 
 ```
 
+### `apk` package: `dbus-libs`
+
+```console
+dbus-libs-1.12.16-r0 description:
+D-BUS access libraries
+
+dbus-libs-1.12.16-r0 webpage:
+https://www.freedesktop.org/Software/dbus
+
+dbus-libs-1.12.16-r0 installed size:
+303104
+
+dbus-libs-1.12.16-r0 license:
+AFL-2.1 OR GPL-2.0-or-later
+
+```
+
 ### `apk` package: `expat`
 
 ```console
-expat-2.2.7-r0 description:
+expat-2.2.7-r1 description:
 An XML Parser library written in C
 
-expat-2.2.7-r0 webpage:
+expat-2.2.7-r1 webpage:
 http://www.libexpat.org/
 
-expat-2.2.7-r0 installed size:
+expat-2.2.7-r1 installed size:
 184320
 
-expat-2.2.7-r0 license:
+expat-2.2.7-r1 license:
 MIT
 
 ```
@@ -215,6 +266,57 @@ FTL GPL-2.0-or-later
 
 ```
 
+### `apk` package: `ghostscript`
+
+```console
+ghostscript-9.27-r4 description:
+An interpreter for the PostScript language and for PDF
+
+ghostscript-9.27-r4 webpage:
+https://ghostscript.com/
+
+ghostscript-9.27-r4 installed size:
+50577408
+
+ghostscript-9.27-r4 license:
+AGPL-3.0-or-later
+
+```
+
+### `apk` package: `gmp`
+
+```console
+gmp-6.1.2-r1 description:
+A free library for arbitrary precision arithmetic
+
+gmp-6.1.2-r1 webpage:
+https://gmplib.org/
+
+gmp-6.1.2-r1 installed size:
+421888
+
+gmp-6.1.2-r1 license:
+LGPL-3.0
+
+```
+
+### `apk` package: `gnutls`
+
+```console
+gnutls-3.6.8-r0 description:
+A TLS protocol implementation
+
+gnutls-3.6.8-r0 webpage:
+https://www.gnutls.org/
+
+gnutls-3.6.8-r0 installed size:
+1581056
+
+gnutls-3.6.8-r0 license:
+GPL-3.0-or-later
+
+```
+
 ### `apk` package: `imagemagick-libs`
 
 ```console
@@ -229,6 +331,23 @@ imagemagick-libs-7.0.8.58-r0 installed size:
 
 imagemagick-libs-7.0.8.58-r0 license:
 ImageMagick
+
+```
+
+### `apk` package: `jbig2dec`
+
+```console
+jbig2dec-0.16-r0 description:
+JBIG2 image compression format decoder
+
+jbig2dec-0.16-r0 webpage:
+https://www.ghostscript.com/jbig2dec.html
+
+jbig2dec-0.16-r0 installed size:
+143360
+
+jbig2dec-0.16-r0 license:
+GPL-2.0-or-later
 
 ```
 
@@ -351,6 +470,40 @@ BSD-3-Clause
 
 ```
 
+### `apk` package: `libffi`
+
+```console
+libffi-3.2.1-r6 description:
+A portable, high level programming interface to various calling conventions.
+
+libffi-3.2.1-r6 webpage:
+http://sourceware.org/libffi
+
+libffi-3.2.1-r6 installed size:
+49152
+
+libffi-3.2.1-r6 license:
+MIT
+
+```
+
+### `apk` package: `libintl`
+
+```console
+libintl-0.19.8.1-r4 description:
+GNU gettext runtime library
+
+libintl-0.19.8.1-r4 webpage:
+https://www.gnu.org/software/gettext/gettext.html
+
+libintl-0.19.8.1-r4 installed size:
+73728
+
+libintl-0.19.8.1-r4 license:
+LGPL-2.1+
+
+```
+
 ### `apk` package: `libjpeg-turbo`
 
 ```console
@@ -419,6 +572,23 @@ OpenSSL
 
 ```
 
+### `apk` package: `libtasn1`
+
+```console
+libtasn1-4.14-r0 description:
+The ASN.1 library used in GNUTLS
+
+libtasn1-4.14-r0 webpage:
+https://www.gnu.org/software/gnutls/
+
+libtasn1-4.14-r0 installed size:
+135168
+
+libtasn1-4.14-r0 license:
+GPL-3.0 LGPL
+
+```
+
 ### `apk` package: `libtls-standalone`
 
 ```console
@@ -433,6 +603,23 @@ libtls-standalone-2.9.1-r0 installed size:
 
 libtls-standalone-2.9.1-r0 license:
 ISC
+
+```
+
+### `apk` package: `libunistring`
+
+```console
+libunistring-0.9.10-r0 description:
+Library for manipulating Unicode strings and C strings
+
+libunistring-0.9.10-r0 webpage:
+https://www.gnu.org/software/libunistring/
+
+libunistring-0.9.10-r0 installed size:
+1536000
+
+libunistring-0.9.10-r0 license:
+GPL-2.0+ OR LGPL-3.0+
 
 ```
 
@@ -640,6 +827,23 @@ MIT
 
 ```
 
+### `apk` package: `nettle`
+
+```console
+nettle-3.4.1-r1 description:
+A low-level cryptographic library
+
+nettle-3.4.1-r1 webpage:
+http://www.lysator.liu.se/~nisse/nettle/
+
+nettle-3.4.1-r1 installed size:
+450560
+
+nettle-3.4.1-r1 license:
+LGPL-2.0-or-later
+
+```
+
 ### `apk` package: `nghttp2-libs`
 
 ```console
@@ -671,6 +875,23 @@ openssl-1.1.1c-r0 installed size:
 
 openssl-1.1.1c-r0 license:
 OpenSSL
+
+```
+
+### `apk` package: `p11-kit`
+
+```console
+p11-kit-0.23.16.1-r0 description:
+Library for loading and sharing PKCS#11 modules
+
+p11-kit-0.23.16.1-r0 webpage:
+https://p11-glue.freedesktop.org/
+
+p11-kit-0.23.16.1-r0 installed size:
+1232896
+
+p11-kit-0.23.16.1-r0 license:
+BSD
 
 ```
 
@@ -756,6 +977,23 @@ tar-1.32-r0 installed size:
 
 tar-1.32-r0 license:
 GPL
+
+```
+
+### `apk` package: `tiff`
+
+```console
+tiff-4.0.10-r1 description:
+Provides support for the Tag Image File Format or TIFF
+
+tiff-4.0.10-r1 webpage:
+http://www.libtiff.org
+
+tiff-4.0.10-r1 installed size:
+442368
+
+tiff-4.0.10-r1 license:
+libtiff
 
 ```
 
