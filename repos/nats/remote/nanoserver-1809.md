@@ -1,7 +1,7 @@
 ## `nats:nanoserver-1809`
 
 ```console
-$ docker pull nats@sha256:e125a1d24fa82c11acf15329dfe916a01b30f803c6d9592074eb1f859ec931a5
+$ docker pull nats@sha256:35070dc00c93a5af2a7b381ff8d3564a2b69e30544e0a42207e8631c0fe1db28
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -11,14 +11,14 @@ $ docker pull nats@sha256:e125a1d24fa82c11acf15329dfe916a01b30f803c6d9592074eb1f
 ### `nats:nanoserver-1809` - windows version 10.0.17763.737; amd64
 
 ```console
-$ docker pull nats@sha256:6fbd82c61b4eec5ad67d679624ae638746b9b5a1448b119473e9879507739114
+$ docker pull nats@sha256:fc114a67b15befb35e560d6c02d086df75923c7cf02932a4b91cefe2ad443f0d
 ```
 
 -	Docker Version: 18.03.1-ee-4
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **104.4 MB (104375814 bytes)**  
+-	Total Size: **104.4 MB (104411940 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:cba2f6e364e1dc081850ac875003954ebc2951ba685514c1aebe3778d94957e5`
+-	Image ID: `sha256:29387f555173391620d26632ab7c1c380ee3453ef59a39eb8cd479a0c7c7270e`
 -	Entrypoint: `["nats-server"]`
 -	Default Command: `["-c","nats-server.conf"]`
 
@@ -29,15 +29,15 @@ RUN Apply image 1809-amd64
 RUN cmd /S /C #(nop)  ENV NATS_DOCKERIZED=1
 # Wed, 11 Sep 2019 17:41:30 GMT
 RUN cmd /S /C #(nop) WORKDIR C:\nats-server
-# Wed, 11 Sep 2019 17:41:32 GMT
-RUN cmd /S /C #(nop) COPY file:741d1f863923aa48306ece4d34e87bc5e3aadf0465bbae0b6e3689714d643861 in nats-server.exe 
-# Wed, 11 Sep 2019 17:41:34 GMT
+# Fri, 20 Sep 2019 22:20:16 GMT
+RUN cmd /S /C #(nop) COPY file:17618c0e5593e046adf07bfbe0fbd9993c4e0231fc87eb511657fbd37d728049 in nats-server.exe 
+# Fri, 20 Sep 2019 22:20:19 GMT
 RUN cmd /S /C #(nop) COPY file:bbf7451965f536dac3b70d8c890ffa47de20f4293b62aa28cb0cd84498d5e7dc in nats-server.conf 
-# Wed, 11 Sep 2019 17:41:35 GMT
+# Fri, 20 Sep 2019 22:20:20 GMT
 RUN cmd /S /C #(nop)  EXPOSE 4222 6222 8222
-# Wed, 11 Sep 2019 17:41:36 GMT
+# Fri, 20 Sep 2019 22:20:23 GMT
 RUN cmd /S /C #(nop)  ENTRYPOINT ["nats-server"]
-# Wed, 11 Sep 2019 17:41:37 GMT
+# Fri, 20 Sep 2019 22:20:27 GMT
 RUN cmd /S /C #(nop)  CMD ["-c" "nats-server.conf"]
 ```
 
@@ -54,23 +54,23 @@ RUN cmd /S /C #(nop)  CMD ["-c" "nats-server.conf"]
 		Last Modified: Wed, 11 Sep 2019 17:42:52 GMT  
 		Size: 1.2 KB (1167 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:dddcfcb05c617df7f79c10e3c626f0d0f462e33dfa515667e23cdf53706014d3`  
-		Last Modified: Wed, 11 Sep 2019 17:42:51 GMT  
-		Size: 3.9 MB (3922543 bytes)  
+	-	`sha256:5bf733704f26501557c850d3de79cf4cf467124e116fb5d324ab3217e345f7bc`  
+		Last Modified: Fri, 20 Sep 2019 22:21:31 GMT  
+		Size: 4.0 MB (3958671 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:a9f5bb6a6cf13ecdba12a770bf9376cabce8bc12f0bce6ee768ba042dd532777`  
-		Last Modified: Wed, 11 Sep 2019 17:42:50 GMT  
-		Size: 1.7 KB (1702 bytes)  
+	-	`sha256:b7c16e4bd79749667eaf6772f042aa6964cc034abadf1d4e1d6ffed7147b3671`  
+		Last Modified: Fri, 20 Sep 2019 22:21:30 GMT  
+		Size: 1.7 KB (1682 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:35f3a9dd475af6389c23633110d8a86214b35d93639588794f2cba0bb00ef79f`  
-		Last Modified: Wed, 11 Sep 2019 17:42:50 GMT  
-		Size: 943.0 B  
+	-	`sha256:2c25c0e6dc08840fffe01908a4a8be24ede21914ae1b5266419aeee33eae01c6`  
+		Last Modified: Fri, 20 Sep 2019 22:21:30 GMT  
+		Size: 948.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:02d87dcd36ca4d9e670bdc974856be1bb753fd2fa94466e574e6ac9c48c55463`  
-		Last Modified: Wed, 11 Sep 2019 17:42:50 GMT  
-		Size: 928.0 B  
+	-	`sha256:744123023116da57096d6895e6a98d8b010d049d3737a17c3da90c058292f1b5`  
+		Last Modified: Fri, 20 Sep 2019 22:21:30 GMT  
+		Size: 942.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:0b28358043c5c4f4b3ba22b63797b16177c23527aa7b693d3830b1856c2ec38e`  
-		Last Modified: Wed, 11 Sep 2019 17:42:50 GMT  
-		Size: 922.0 B  
+	-	`sha256:9aab75f523dfa8563be532f5dfacb97f5a3f4ef47367321e7cfea6a847bf8238`  
+		Last Modified: Fri, 20 Sep 2019 22:21:30 GMT  
+		Size: 921.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
