@@ -202,16 +202,7 @@ https://d2lzkl7pfhq30w.cloudfront.net/pub/fedora/linux/updates/30/Everything/SRP
 
 Licenses (from `rpm --query`): GPLv2+ and LGPLv2+
 
-Source:
-
-```console
-$ yumdownloader --quiet --source --urls cryptsetup-libs-2.2.0-1.fc30
-Enabling fedora-modular-source repository
-Enabling updates-source repository
-Enabling updates-modular-source repository
-Enabling fedora-source repository
-https://d2lzkl7pfhq30w.cloudfront.net/pub/fedora/linux/updates/30/Everything/SRPMS//Packages/c/cryptsetup-2.2.0-1.fc30.src.rpm
-```
+**WARNING:** unable to find source (`yumdownloader` failed or returned no results)!
 
 ### `rpm` package: `curl-7.65.3-2.fc30.x86_64`
 
