@@ -1,17 +1,17 @@
-# `varnish:6.2`
+# `varnish:6.3`
 
 ## Docker Metadata
 
-- Image ID: `sha256:c548db967416128060be282d8483409897e24e183689d2b7550abddd1cff59e7`
-- Created: `2019-09-12T17:53:50.339122272Z`
-- Virtual Size: ~ 180.82 Mb  
+- Image ID: `sha256:44dac86fb7ada600ca5cd2b8bc5ec28cda4e5103c261679dd4f13ff636ce9fb2`
+- Created: `2019-09-19T23:45:53.403582713Z`
+- Virtual Size: ~ 181.04 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["docker-varnish-entrypoint"]`
 - Command: `["varnishd","-F","-f","/etc/varnish/default.vcl"]`
 - Environment:
   - `PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
-  - `VARNISH_VERSION=6.2.1-1~stretch`
+  - `VARNISH_VERSION=6.3.0-1~stretch`
 
 ## `dpkg` (`.deb`-based packages)
 
@@ -2197,11 +2197,11 @@ Other potentially useful URLs:
 - https://sources.debian.net/src/util-linux/2.29.2-1+deb9u1/debian/copyright/ (for direct copyright/license information)
 - http://snapshot.debian.org/package/util-linux/2.29.2-1+deb9u1/ (for access to the source package after it no longer exists in the archive)
 
-### `dpkg` source package: `varnish=6.2.1-1`
+### `dpkg` source package: `varnish=6.3.0-1`
 
 Binary Packages:
 
-- `varnish=6.2.1-1~stretch`
+- `varnish=6.3.0-1~stretch`
 
 **WARNING:** unable to detect licenses! (package likely not compliant with DEP-5)  
 If source is available (seen below), check the contents of `debian/copyright` within it.
@@ -2210,9 +2210,9 @@ If source is available (seen below), check the contents of `debian/copyright` wi
 Source:
 
 ```console
-$ apt-get source -qq --print-uris varnish=6.2.1-1
-'https://packagecloud.io/varnishcache/varnish62/debian/pool/stretch/main/v/varnish/varnish_6.2.1-1.tar.gz' varnish_6.2.1-1.tar.gz 3242565 SHA256:f0f2bf33bf915c91122be0744ee225846a86f376a5eee4421946eb578f00ec3e
-'https://packagecloud.io/varnishcache/varnish62/debian/pool/stretch/main/v/varnish/varnish_6.2.1-1.dsc' varnish_6.2.1-1.dsc 801 SHA256:15ec92febf0df463381c937452687c277278def21d1efea805696a9d0582a4e6
+$ apt-get source -qq --print-uris varnish=6.3.0-1
+'https://packagecloud.io/varnishcache/varnish63/debian/pool/stretch/main/v/varnish/varnish_6.3.0-1.tar.gz' varnish_6.3.0-1.tar.gz 3339051 SHA256:8e3082569ae2f559d2bd0182b60ae9b239c6191750800c8aad1f9c97b74f570d
+'https://packagecloud.io/varnishcache/varnish63/debian/pool/stretch/main/v/varnish/varnish_6.3.0-1.dsc' varnish_6.3.0-1.dsc 801 SHA256:c6d6741ea615c0c8d3b5bb54272d5da30375e618cb588d7930fb459b0a36847f
 ```
 
 ### `dpkg` source package: `xz-utils=5.2.2-1.2`
