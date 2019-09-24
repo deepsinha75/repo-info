@@ -1,17 +1,19 @@
-# `erlang:21.3.8.6-alpine`
+# `erlang:21.3.8.7-alpine`
 
 ## Docker Metadata
 
-- Image ID: `sha256:12517a16faeff26f1c0860e7f4f0df7007976334d2fae2b3223a4095d89b7dc9`
-- Created: `2019-07-12T23:52:52.272757959Z`
-- Virtual Size: ~ 73.34 Mb  
+- Image ID: `sha256:0a0e993b617af24282e08a245592581662d0264224423e8b39a9ac2f7675befd`
+- Created: `2019-09-21T01:07:52.582476354Z`
+- Virtual Size: ~ 74.05 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Command: `["erl"]`
 - Environment:
   - `PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
-  - `OTP_VERSION=21.3.8.6`
-  - `REBAR3_VERSION=3.11.1`
+  - `OTP_VERSION=21.3.8.7`
+  - `REBAR3_VERSION=3.12.0`
+- Labels:
+  - `org.opencontainers.image.version=21.3.8.7`
 
 ## `apk` (`.apk`-based packages)
 
@@ -205,16 +207,16 @@ GPL-2.0 and GPL-2.0-or-later and LGPL-2.0 and MIT
 ### `apk` package: `musl`
 
 ```console
-musl-1.1.20-r4 description:
+musl-1.1.20-r5 description:
 the musl c library (libc) implementation
 
-musl-1.1.20-r4 webpage:
+musl-1.1.20-r5 webpage:
 http://www.musl-libc.org/
 
-musl-1.1.20-r4 installed size:
+musl-1.1.20-r5 installed size:
 602112
 
-musl-1.1.20-r4 license:
+musl-1.1.20-r5 license:
 MIT
 
 ```
@@ -222,16 +224,16 @@ MIT
 ### `apk` package: `musl-utils`
 
 ```console
-musl-utils-1.1.20-r4 description:
+musl-utils-1.1.20-r5 description:
 the musl c library (libc) implementation
 
-musl-utils-1.1.20-r4 webpage:
+musl-utils-1.1.20-r5 webpage:
 http://www.musl-libc.org/
 
-musl-utils-1.1.20-r4 installed size:
+musl-utils-1.1.20-r5 installed size:
 139264
 
-musl-utils-1.1.20-r4 license:
+musl-utils-1.1.20-r5 license:
 MIT BSD GPL2+
 
 ```
