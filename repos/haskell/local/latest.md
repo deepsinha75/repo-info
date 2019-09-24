@@ -1,15 +1,15 @@
-# `haskell:8.6.5`
+# `haskell:8.8.1`
 
 ## Docker Metadata
 
-- Image ID: `sha256:84de90a5b08ef95ffad58d149a3ee2cc1abafad4f025c247503b38bfc63728eb`
-- Created: `2019-09-12T04:20:10.154530758Z`
-- Virtual Size: ~ 1.26 Gb  
+- Image ID: `sha256:d0f33c86f706c0482dc66e45bbf412a09c8215a432d0215a3459b6fd6a032a43`
+- Created: `2019-09-20T22:20:36.87028082Z`
+- Virtual Size: ~ 1.46 Gb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Command: `["ghci"]`
 - Environment:
-  - `PATH=/root/.cabal/bin:/root/.local/bin:/opt/cabal/2.4/bin:/opt/ghc/8.6.5/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
+  - `PATH=/root/.cabal/bin:/root/.local/bin:/opt/cabal/3.0/bin:/opt/ghc/8.8.1/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
   - `LANG=C.UTF-8`
 
 ## `dpkg` (`.deb`-based packages)
@@ -296,22 +296,22 @@ Other potentially useful URLs:
 - https://sources.debian.net/src/ca-certificates/20161130+nmu1+deb9u1/debian/copyright/ (for direct copyright/license information)
 - http://snapshot.debian.org/package/ca-certificates/20161130+nmu1+deb9u1/ (for access to the source package after it no longer exists in the archive)
 
-### `dpkg` source package: `cabal-install-2.4=2.4+git20181125.1.5e65672-6~deb9`
+### `dpkg` source package: `cabal-install-3.0=3.0+git20190827.1.f2b2ab7-6~deb9`
 
 Binary Packages:
 
-- `cabal-install-2.4=2.4+git20181125.1.5e65672-6~deb9`
+- `cabal-install-3.0=3.0+git20190827.1.f2b2ab7-6~deb9`
 
-Licenses: (parsed from: `/usr/share/doc/cabal-install-2.4/copyright`)
+Licenses: (parsed from: `/usr/share/doc/cabal-install-3.0/copyright`)
 
 - `BSD-3-Clause`
 
 Source:
 
 ```console
-$ apt-get source -qq --print-uris cabal-install-2.4=2.4+git20181125.1.5e65672-6~deb9
-'http://downloads.haskell.org/debian/pool/main/c/cabal-install-2.4/cabal-install-2.4_2.4+git20181125.1.5e65672-6~deb9.dsc' cabal-install-2.4_2.4+git20181125.1.5e65672-6~deb9.dsc 1635 SHA256:3b276a0254ed670188cfda5cc0f4201bfc8120531876f23a07715e0d237d006e
-'http://downloads.haskell.org/debian/pool/main/c/cabal-install-2.4/cabal-install-2.4_2.4+git20181125.1.5e65672-6~deb9.tar.xz' cabal-install-2.4_2.4+git20181125.1.5e65672-6~deb9.tar.xz 1745724 SHA256:d0326d36d25c292327f9a928ce5dd95370b52fd810cfd615e9c477c60572a4aa
+$ apt-get source -qq --print-uris cabal-install-3.0=3.0+git20190827.1.f2b2ab7-6~deb9
+'http://downloads.haskell.org/debian/pool/main/c/cabal-install-3.0/cabal-install-3.0_3.0+git20190827.1.f2b2ab7-6~deb9.dsc' cabal-install-3.0_3.0+git20190827.1.f2b2ab7-6~deb9.dsc 1651 SHA256:8c1fb2f0661723c61952696517bfff61969b4b9aab0e4a121040a584d457ce74
+'http://downloads.haskell.org/debian/pool/main/c/cabal-install-3.0/cabal-install-3.0_3.0+git20190827.1.f2b2ab7-6~deb9.tar.xz' cabal-install-3.0_3.0+git20190827.1.f2b2ab7-6~deb9.tar.xz 1776316 SHA256:e2c5fc7b4252b0faf58117f1b18e77d3cf97a88839cf15fd1adba1d71b67aba4
 ```
 
 ### `dpkg` source package: `cdebconf=0.227`
@@ -806,23 +806,23 @@ Other potentially useful URLs:
 - https://sources.debian.net/src/gdbm/1.8.3-14/debian/copyright/ (for direct copyright/license information)
 - http://snapshot.debian.org/package/gdbm/1.8.3-14/ (for access to the source package after it no longer exists in the archive)
 
-### `dpkg` source package: `ghc-8.6.5=8.6.5-9~deb9`
+### `dpkg` source package: `ghc-8.8.1=8.8.1-12~deb9`
 
 Binary Packages:
 
-- `ghc-8.6.5=8.6.5-9~deb9`
+- `ghc-8.8.1=8.8.1-12~deb9`
 
-Licenses: (parsed from: `/usr/share/doc/ghc-8.6.5/copyright`)
+Licenses: (parsed from: `/usr/share/doc/ghc-8.8.1/copyright`)
 
 - `BSD-3-Clause`
 
 Source:
 
 ```console
-$ apt-get source -qq --print-uris ghc-8.6.5=8.6.5-9~deb9
-'http://downloads.haskell.org/debian/pool/main/g/ghc-8.6.5/ghc-8.6.5_8.6.5-9~deb9.dsc' ghc-8.6.5_8.6.5-9~deb9.dsc 2100 SHA256:eda45f7b7e7f7cc35d3ce7e63baf6c086c27487b11837304d6bb7825f4c06634
-'http://downloads.haskell.org/debian/pool/main/g/ghc-8.6.5/ghc-8.6.5_8.6.5.orig.tar.xz' ghc-8.6.5_8.6.5.orig.tar.xz 18957948 SHA256:f8e51d0651717fe00567b808f0b03aaf86720699f3d975a220a51101acb13390
-'http://downloads.haskell.org/debian/pool/main/g/ghc-8.6.5/ghc-8.6.5_8.6.5-9~deb9.debian.tar.xz' ghc-8.6.5_8.6.5-9~deb9.debian.tar.xz 6504 SHA256:1e18330251f18cea44d273e8ab3a7a3f319f8f1c6116e10adfbb7667c8f7ea08
+$ apt-get source -qq --print-uris ghc-8.8.1=8.8.1-12~deb9
+'http://downloads.haskell.org/debian/pool/main/g/ghc-8.8.1/ghc-8.8.1_8.8.1-12~deb9.dsc' ghc-8.8.1_8.8.1-12~deb9.dsc 2104 SHA256:7febe2e7a01f175a41154c9f8035ae4698894acf6e4ff5a6b76395a19e3811fe
+'http://downloads.haskell.org/debian/pool/main/g/ghc-8.8.1/ghc-8.8.1_8.8.1.orig.tar.xz' ghc-8.8.1_8.8.1.orig.tar.xz 19233112 SHA256:0c264362ddc0703297b6dcc7d0a47eab0bea4c700cee023fcd11dc10365e43e8
+'http://downloads.haskell.org/debian/pool/main/g/ghc-8.8.1/ghc-8.8.1_8.8.1-12~deb9.debian.tar.xz' ghc-8.8.1_8.8.1-12~deb9.debian.tar.xz 6492 SHA256:c23847afa200e2075f5d89c7728db0f76b85ac258e103897dee526e17b2223ff
 ```
 
 ### `dpkg` source package: `git=1:2.11.0-3+deb9u4`
