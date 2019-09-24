@@ -826,21 +826,13 @@ Licenses: (parsed from: `/usr/share/doc/comerr-dev/copyright`, `/usr/share/doc/e
 - `GPL-2`
 - `LGPL-2`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris e2fsprogs=1.45.3-4
-'http://deb.debian.org/debian/pool/main/e/e2fsprogs/e2fsprogs_1.45.3-4.dsc' e2fsprogs_1.45.3-4.dsc 2923 SHA256:ee954b8eeb835800d70513555ce628660f220985a071cb3969c3bfd9aa1f52c9
-'http://deb.debian.org/debian/pool/main/e/e2fsprogs/e2fsprogs_1.45.3.orig.tar.gz' e2fsprogs_1.45.3.orig.tar.gz 7926121 SHA256:3a5556e0cb746c214e4c581951a3c21ba5c145eb53008277f88f1f98ae75983d
-'http://deb.debian.org/debian/pool/main/e/e2fsprogs/e2fsprogs_1.45.3.orig.tar.gz.asc' e2fsprogs_1.45.3.orig.tar.gz.asc 488 SHA256:013c21c98dc63a6a6328490a335a1bc6f3a2410f4f6347312bf6b53734faa759
-'http://deb.debian.org/debian/pool/main/e/e2fsprogs/e2fsprogs_1.45.3-4.debian.tar.xz' e2fsprogs_1.45.3-4.debian.tar.xz 185936 SHA256:52cdd173588787f2d1648fbecada58c55b5dd5ae5ab3a893866ee8b9d7532e72
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/e2fsprogs/1.45.3-4/
 
-- https://sources.debian.net/src/e2fsprogs/1.45.3-4/ (for browsing the source)
-- https://sources.debian.net/src/e2fsprogs/1.45.3-4/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/e2fsprogs/1.45.3-4/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `elfutils=0.176-1.1`
 
@@ -3133,20 +3125,13 @@ Licenses: (parsed from: `/usr/share/doc/libwmf-dev/copyright`, `/usr/share/doc/l
 
 - `LGPL-2`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris libwmf=0.2.8.4-14
-'http://deb.debian.org/debian/pool/main/libw/libwmf/libwmf_0.2.8.4-14.dsc' libwmf_0.2.8.4-14.dsc 2173 SHA256:ca3ec16c0fdad9faade836d48076411a61ea6b06f5ee0a7114dd179483462db2
-'http://deb.debian.org/debian/pool/main/libw/libwmf/libwmf_0.2.8.4.orig.tar.gz' libwmf_0.2.8.4.orig.tar.gz 2169375 SHA256:5b345c69220545d003ad52bfd035d5d6f4f075e65204114a9e875e84895a7cf8
-'http://deb.debian.org/debian/pool/main/libw/libwmf/libwmf_0.2.8.4-14.debian.tar.xz' libwmf_0.2.8.4-14.debian.tar.xz 12592 SHA256:af44c4d09a078a94ae07d7eeaeee802d8577313adcca9255c6f13dcbc0b454b5
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/libwmf/0.2.8.4-14/
 
-- https://sources.debian.net/src/libwmf/0.2.8.4-14/ (for browsing the source)
-- https://sources.debian.net/src/libwmf/0.2.8.4-14/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/libwmf/0.2.8.4-14/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `libx11=2:1.6.7-1`
 

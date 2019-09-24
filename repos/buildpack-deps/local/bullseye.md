@@ -130,19 +130,13 @@ Licenses: (parsed from: `/usr/share/doc/apt/copyright`, `/usr/share/doc/libapt-p
 - `GPL-2`
 - `GPLv2+`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris apt=1.8.3
-'http://deb.debian.org/debian/pool/main/a/apt/apt_1.8.3.dsc' apt_1.8.3.dsc 2766 SHA256:74fa78c32dc057909c392c1c0a6118b7b89c1f7fa27a1ff15934d58351f71d78
-'http://deb.debian.org/debian/pool/main/a/apt/apt_1.8.3.tar.xz' apt_1.8.3.tar.xz 2188584 SHA256:c3017e42307d1669f652f4b67a0c7e67acb4f7b09d2f609a89c455e4d3a74b49
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/apt/1.8.3/
 
-- https://sources.debian.net/src/apt/1.8.3/ (for browsing the source)
-- https://sources.debian.net/src/apt/1.8.3/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/apt/1.8.3/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `attr=1:2.4.48-4`
 
@@ -550,20 +544,13 @@ Licenses: (parsed from: `/usr/share/doc/curl/copyright`, `/usr/share/doc/libcurl
 - `other`
 - `public-domain`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris curl=7.65.3-1
-'http://deb.debian.org/debian/pool/main/c/curl/curl_7.65.3-1.dsc' curl_7.65.3-1.dsc 2630 SHA256:6c15c2d9ae1b811202698287a772740a6965732e52627e6ac70a97b0d183c0e8
-'http://deb.debian.org/debian/pool/main/c/curl/curl_7.65.3.orig.tar.gz' curl_7.65.3.orig.tar.gz 4022334 SHA256:4376ac72b95572fb6c4fbffefb97c7ea0dd083e1974c0e44cd7e49396f454839
-'http://deb.debian.org/debian/pool/main/c/curl/curl_7.65.3-1.debian.tar.xz' curl_7.65.3-1.debian.tar.xz 29056 SHA256:555a3af0436845783fb3877720098b23a5874641c8d2f616747c7f63e55234be
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/curl/7.65.3-1/
 
-- https://sources.debian.net/src/curl/7.65.3-1/ (for browsing the source)
-- https://sources.debian.net/src/curl/7.65.3-1/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/curl/7.65.3-1/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `cyrus-sasl2=2.1.27+dfsg-1`
 
@@ -3098,20 +3085,13 @@ Licenses: (parsed from: `/usr/share/doc/libwmf-dev/copyright`, `/usr/share/doc/l
 
 - `LGPL-2`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris libwmf=0.2.8.4-14
-'http://deb.debian.org/debian/pool/main/libw/libwmf/libwmf_0.2.8.4-14.dsc' libwmf_0.2.8.4-14.dsc 2173 SHA256:ca3ec16c0fdad9faade836d48076411a61ea6b06f5ee0a7114dd179483462db2
-'http://deb.debian.org/debian/pool/main/libw/libwmf/libwmf_0.2.8.4.orig.tar.gz' libwmf_0.2.8.4.orig.tar.gz 2169375 SHA256:5b345c69220545d003ad52bfd035d5d6f4f075e65204114a9e875e84895a7cf8
-'http://deb.debian.org/debian/pool/main/libw/libwmf/libwmf_0.2.8.4-14.debian.tar.xz' libwmf_0.2.8.4-14.debian.tar.xz 12592 SHA256:af44c4d09a078a94ae07d7eeaeee802d8577313adcca9255c6f13dcbc0b454b5
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/libwmf/0.2.8.4-14/
 
-- https://sources.debian.net/src/libwmf/0.2.8.4-14/ (for browsing the source)
-- https://sources.debian.net/src/libwmf/0.2.8.4-14/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/libwmf/0.2.8.4-14/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `libx11=2:1.6.7-1`
 

@@ -500,14 +500,9 @@ Licenses: (parsed from: `/usr/share/doc/libc-bin/copyright`, `/usr/share/doc/lib
 - `GPL-2`
 - `LGPL-2.1`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris glibc=2.30-0ubuntu1
-'http://archive.ubuntu.com/ubuntu/pool/main/g/glibc/glibc_2.30-0ubuntu1.dsc' glibc_2.30-0ubuntu1.dsc 9243 SHA256:6a96c7feeb5b96f0506ea81827ba0cc9f0b284817179e1257d8f0b0ee0b375d6
-'http://archive.ubuntu.com/ubuntu/pool/main/g/glibc/glibc_2.30.orig.tar.xz' glibc_2.30.orig.tar.xz 17080288 SHA256:88b5b39b80a4cb4d7b17bded91a2a9e99ff00190377321446f55d00a97611870
-'http://archive.ubuntu.com/ubuntu/pool/main/g/glibc/glibc_2.30-0ubuntu1.debian.tar.xz' glibc_2.30-0ubuntu1.debian.tar.xz 850672 SHA256:e3f42478a4143c111a5edad215dbad553e047e1dd161ac19c69d68c870a71251
-```
 
 ### `dpkg` source package: `gmp=2:6.1.2+dfsg-4`
 
@@ -1053,15 +1048,13 @@ Licenses: (parsed from: `/usr/share/doc/libtasn1-6/copyright`)
 - `LGPL`
 - `LGPL-2.1`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris libtasn1-6=4.14-2
-'http://archive.ubuntu.com/ubuntu/pool/main/libt/libtasn1-6/libtasn1-6_4.14-2.dsc' libtasn1-6_4.14-2.dsc 2566 SHA256:f9031be37f79dd54320de7671ad4747965dfdb91842341f4bbb7fcc4c43f00bc
-'http://archive.ubuntu.com/ubuntu/pool/main/libt/libtasn1-6/libtasn1-6_4.14.orig.tar.gz' libtasn1-6_4.14.orig.tar.gz 1771184 SHA256:9e604ba5c5c8ea403487695c2e407405820d98540d9de884d6e844f9a9c5ba08
-'http://archive.ubuntu.com/ubuntu/pool/main/libt/libtasn1-6/libtasn1-6_4.14.orig.tar.gz.asc' libtasn1-6_4.14.orig.tar.gz.asc 488 SHA256:9c11501a32c3a7da6fd148f2408619054975e38c31b0d2ca562e99477719dda0
-'http://archive.ubuntu.com/ubuntu/pool/main/libt/libtasn1-6/libtasn1-6_4.14-2.debian.tar.xz' libtasn1-6_4.14-2.debian.tar.xz 18020 SHA256:77a3fcc686d4b65cf76eb471bc9b4678122ce4a771405de8574e1f6fc8feaa08
-```
+The source package *may* still be available for download from:
+
+- http://snapshot.debian.org/package/libtasn1-6/4.14-2/
+
 
 ### `dpkg` source package: `libunistring=0.9.10-2`
 
