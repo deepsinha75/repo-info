@@ -12,26 +12,47 @@
 -	[`websphere-liberty:19.0.0.6-webProfile7`](#websphere-liberty19006-webprofile7)
 -	[`websphere-liberty:19.0.0.6-webProfile8`](#websphere-liberty19006-webprofile8)
 -	[`websphere-liberty:19.0.0.9-javaee7`](#websphere-liberty19009-javaee7)
+-	[`websphere-liberty:19.0.0.9-javaee7-java11`](#websphere-liberty19009-javaee7-java11)
 -	[`websphere-liberty:19.0.0.9-javaee8`](#websphere-liberty19009-javaee8)
+-	[`websphere-liberty:19.0.0.9-javaee8-java11`](#websphere-liberty19009-javaee8-java11)
 -	[`websphere-liberty:19.0.0.9-kernel`](#websphere-liberty19009-kernel)
+-	[`websphere-liberty:19.0.0.9-kernel-java11`](#websphere-liberty19009-kernel-java11)
 -	[`websphere-liberty:19.0.0.9-microProfile1`](#websphere-liberty19009-microprofile1)
+-	[`websphere-liberty:19.0.0.9-microProfile1-java11`](#websphere-liberty19009-microprofile1-java11)
 -	[`websphere-liberty:19.0.0.9-microProfile2`](#websphere-liberty19009-microprofile2)
+-	[`websphere-liberty:19.0.0.9-microProfile2-java11`](#websphere-liberty19009-microprofile2-java11)
 -	[`websphere-liberty:19.0.0.9-microProfile3`](#websphere-liberty19009-microprofile3)
+-	[`websphere-liberty:19.0.0.9-microProfile3-java11`](#websphere-liberty19009-microprofile3-java11)
 -	[`websphere-liberty:19.0.0.9-springBoot1`](#websphere-liberty19009-springboot1)
+-	[`websphere-liberty:19.0.0.9-springBoot1-java11`](#websphere-liberty19009-springboot1-java11)
 -	[`websphere-liberty:19.0.0.9-springBoot2`](#websphere-liberty19009-springboot2)
+-	[`websphere-liberty:19.0.0.9-springBoot2-java11`](#websphere-liberty19009-springboot2-java11)
+-	[`websphere-liberty:19.0.0.9-webProfile7`](#websphere-liberty19009-webprofile7)
+-	[`websphere-liberty:19.0.0.9-webProfile7-java11`](#websphere-liberty19009-webprofile7-java11)
 -	[`websphere-liberty:19.0.0.9-webProfile8`](#websphere-liberty19009-webprofile8)
+-	[`websphere-liberty:19.0.0.9-webProfile8-java11`](#websphere-liberty19009-webprofile8-java11)
 -	[`websphere-liberty:beta`](#websphere-libertybeta)
 -	[`websphere-liberty:javaee7`](#websphere-libertyjavaee7)
+-	[`websphere-liberty:javaee7-java11`](#websphere-libertyjavaee7-java11)
 -	[`websphere-liberty:javaee8`](#websphere-libertyjavaee8)
+-	[`websphere-liberty:javaee8-java11`](#websphere-libertyjavaee8-java11)
 -	[`websphere-liberty:kernel`](#websphere-libertykernel)
+-	[`websphere-liberty:kernel-java11`](#websphere-libertykernel-java11)
 -	[`websphere-liberty:latest`](#websphere-libertylatest)
 -	[`websphere-liberty:microProfile1`](#websphere-libertymicroprofile1)
+-	[`websphere-liberty:microProfile1-java11`](#websphere-libertymicroprofile1-java11)
 -	[`websphere-liberty:microProfile2`](#websphere-libertymicroprofile2)
+-	[`websphere-liberty:microProfile2-java11`](#websphere-libertymicroprofile2-java11)
 -	[`websphere-liberty:microProfile3`](#websphere-libertymicroprofile3)
+-	[`websphere-liberty:microProfile3-java11`](#websphere-libertymicroprofile3-java11)
 -	[`websphere-liberty:springBoot1`](#websphere-libertyspringboot1)
+-	[`websphere-liberty:springBoot1-java11`](#websphere-libertyspringboot1-java11)
 -	[`websphere-liberty:springBoot2`](#websphere-libertyspringboot2)
+-	[`websphere-liberty:springBoot2-java11`](#websphere-libertyspringboot2-java11)
 -	[`websphere-liberty:webProfile7`](#websphere-libertywebprofile7)
+-	[`websphere-liberty:webProfile7-java11`](#websphere-libertywebprofile7-java11)
 -	[`websphere-liberty:webProfile8`](#websphere-libertywebprofile8)
+-	[`websphere-liberty:webProfile8-java11`](#websphere-libertywebprofile8-java11)
 
 ## `websphere-liberty:19.0.0.6-javaee7`
 
@@ -5815,6 +5836,10 @@ COPY --chown=1001:0file:ac67b9ec5d944a8796eed2df8cba9b04b4e624a81a61acf9f6ecb53b
 		Size: 932.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
+## `websphere-liberty:19.0.0.9-javaee7-java11`
+
+**does not exist** (yet?)
+
 ## `websphere-liberty:19.0.0.9-javaee8`
 
 ```console
@@ -6392,6 +6417,10 @@ COPY --chown=1001:0file:cda508ce5a74649f45c3e2d383c40294ca79131a296e7d4dbdb2ffe1
 		Size: 930.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
+## `websphere-liberty:19.0.0.9-javaee8-java11`
+
+**does not exist** (yet?)
+
 ## `websphere-liberty:19.0.0.9-kernel`
 
 ```console
@@ -6908,6 +6937,10 @@ CMD ["/opt/ibm/wlp/bin/server" "run" "defaultServer"]
 		Last Modified: Thu, 19 Sep 2019 01:49:57 GMT  
 		Size: 4.3 KB (4289 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+
+## `websphere-liberty:19.0.0.9-kernel-java11`
+
+**does not exist** (yet?)
 
 ## `websphere-liberty:19.0.0.9-microProfile1`
 
@@ -7486,6 +7519,10 @@ COPY --chown=1001:0file:90ee4bcbbba4ab370fb1c79c7599798b483fd02124222aece922c678
 		Size: 570.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
+## `websphere-liberty:19.0.0.9-microProfile1-java11`
+
+**does not exist** (yet?)
+
 ## `websphere-liberty:19.0.0.9-microProfile2`
 
 ```console
@@ -8062,6 +8099,10 @@ COPY --chown=1001:0file:c77f9f566773f5ad37049c164b44d6eb1acdf61d248cb27e358facac
 		Last Modified: Thu, 19 Sep 2019 01:51:17 GMT  
 		Size: 570.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+
+## `websphere-liberty:19.0.0.9-microProfile2-java11`
+
+**does not exist** (yet?)
 
 ## `websphere-liberty:19.0.0.9-microProfile3`
 
@@ -8640,6 +8681,10 @@ COPY --chown=1001:0file:1901c25fd309e333abcabc7662b05ee891b708dada50d0e49818039f
 		Size: 569.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
+## `websphere-liberty:19.0.0.9-microProfile3-java11`
+
+**does not exist** (yet?)
+
 ## `websphere-liberty:19.0.0.9-springBoot1`
 
 ```console
@@ -9216,6 +9261,10 @@ COPY --chown=1001:0file:b161907c284b3a66fd563181fa915ceeb5f014deeaba437c29935f12
 		Last Modified: Thu, 19 Sep 2019 01:51:50 GMT  
 		Size: 555.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+
+## `websphere-liberty:19.0.0.9-springBoot1-java11`
+
+**does not exist** (yet?)
 
 ## `websphere-liberty:19.0.0.9-springBoot2`
 
@@ -9794,6 +9843,18 @@ COPY --chown=1001:0file:3dbc7012596d01298b61adec3a50686ea3c8a1d1ac8b3161e2ede589
 		Size: 555.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
+## `websphere-liberty:19.0.0.9-springBoot2-java11`
+
+**does not exist** (yet?)
+
+## `websphere-liberty:19.0.0.9-webProfile7`
+
+**does not exist** (yet?)
+
+## `websphere-liberty:19.0.0.9-webProfile7-java11`
+
+**does not exist** (yet?)
+
 ## `websphere-liberty:19.0.0.9-webProfile8`
 
 ```console
@@ -10370,6 +10431,10 @@ COPY --chown=1001:0file:f3ece052f153de31665fecbdba42bad6b0d4363c93b3a1f4abf8dbfb
 		Last Modified: Thu, 19 Sep 2019 01:50:47 GMT  
 		Size: 561.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+
+## `websphere-liberty:19.0.0.9-webProfile8-java11`
+
+**does not exist** (yet?)
 
 ## `websphere-liberty:beta`
 
@@ -11385,6 +11450,10 @@ COPY --chown=1001:0file:ac67b9ec5d944a8796eed2df8cba9b04b4e624a81a61acf9f6ecb53b
 		Size: 932.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
+## `websphere-liberty:javaee7-java11`
+
+**does not exist** (yet?)
+
 ## `websphere-liberty:javaee8`
 
 ```console
@@ -11962,6 +12031,10 @@ COPY --chown=1001:0file:cda508ce5a74649f45c3e2d383c40294ca79131a296e7d4dbdb2ffe1
 		Size: 930.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
+## `websphere-liberty:javaee8-java11`
+
+**does not exist** (yet?)
+
 ## `websphere-liberty:kernel`
 
 ```console
@@ -12478,6 +12551,10 @@ CMD ["/opt/ibm/wlp/bin/server" "run" "defaultServer"]
 		Last Modified: Thu, 19 Sep 2019 01:49:57 GMT  
 		Size: 4.3 KB (4289 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+
+## `websphere-liberty:kernel-java11`
+
+**does not exist** (yet?)
 
 ## `websphere-liberty:latest`
 
@@ -13633,6 +13710,10 @@ COPY --chown=1001:0file:90ee4bcbbba4ab370fb1c79c7599798b483fd02124222aece922c678
 		Size: 570.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
+## `websphere-liberty:microProfile1-java11`
+
+**does not exist** (yet?)
+
 ## `websphere-liberty:microProfile2`
 
 ```console
@@ -14209,6 +14290,10 @@ COPY --chown=1001:0file:c77f9f566773f5ad37049c164b44d6eb1acdf61d248cb27e358facac
 		Last Modified: Thu, 19 Sep 2019 01:51:17 GMT  
 		Size: 570.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+
+## `websphere-liberty:microProfile2-java11`
+
+**does not exist** (yet?)
 
 ## `websphere-liberty:microProfile3`
 
@@ -14787,6 +14872,10 @@ COPY --chown=1001:0file:1901c25fd309e333abcabc7662b05ee891b708dada50d0e49818039f
 		Size: 569.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
+## `websphere-liberty:microProfile3-java11`
+
+**does not exist** (yet?)
+
 ## `websphere-liberty:springBoot1`
 
 ```console
@@ -15363,6 +15452,10 @@ COPY --chown=1001:0file:b161907c284b3a66fd563181fa915ceeb5f014deeaba437c29935f12
 		Last Modified: Thu, 19 Sep 2019 01:51:50 GMT  
 		Size: 555.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+
+## `websphere-liberty:springBoot1-java11`
+
+**does not exist** (yet?)
 
 ## `websphere-liberty:springBoot2`
 
@@ -15941,6 +16034,10 @@ COPY --chown=1001:0file:3dbc7012596d01298b61adec3a50686ea3c8a1d1ac8b3161e2ede589
 		Size: 555.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
+## `websphere-liberty:springBoot2-java11`
+
+**does not exist** (yet?)
+
 ## `websphere-liberty:webProfile7`
 
 ```console
@@ -16518,6 +16615,10 @@ COPY --chown=1001:0file:e7d83cff8bb1282b78c028c941a3bedf72ce1368ea61c565b01cdce1
 		Size: 566.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
+## `websphere-liberty:webProfile7-java11`
+
+**does not exist** (yet?)
+
 ## `websphere-liberty:webProfile8`
 
 ```console
@@ -17094,3 +17195,7 @@ COPY --chown=1001:0file:f3ece052f153de31665fecbdba42bad6b0d4363c93b3a1f4abf8dbfb
 		Last Modified: Thu, 19 Sep 2019 01:50:47 GMT  
 		Size: 561.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+
+## `websphere-liberty:webProfile8-java11`
+
+**does not exist** (yet?)
