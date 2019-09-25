@@ -1,7 +1,7 @@
 ## `telegraf:latest`
 
 ```console
-$ docker pull telegraf@sha256:00081664e9c102afd51ad0869668a0685f25c5e8bd37ac90ac27b63c34ac8e96
+$ docker pull telegraf@sha256:f22b1a5df9fad2ce6924d91976bb8fcff77b3143afa8b4ce3011c00efd2aa0e0
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -84,14 +84,14 @@ CMD ["telegraf"]
 ### `telegraf:latest` - linux; arm variant v7
 
 ```console
-$ docker pull telegraf@sha256:44b93c6a08531d849c411f70f745ccbc94f93f8c40c606b71dfeb9117c53e4ce
+$ docker pull telegraf@sha256:5f04d859a19bf68f77446063ce957c8eaca69bae8b48ea724f60ea934aa938fb
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **90.8 MB (90758663 bytes)**  
+-	Total Size: **90.5 MB (90493700 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:1a91cd7e8c496cfc05e683b74a0ae8f3fccaa098eb1232ed3b773f7bd4ab2381`
+-	Image ID: `sha256:6b5990f166a2b9a82c5e04e029d64f0c76a1da822ef55adb621516f47b435649`
 -	Entrypoint: `["\/entrypoint.sh"]`
 -	Default Command: `["telegraf"]`
 
@@ -108,17 +108,17 @@ RUN set -ex; 	if ! command -v gpg > /dev/null; then 		apt-get update; 		apt-get 
 RUN DEBIAN_FRONTEND=noninteractive apt-get update &&     DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends iputils-ping snmp procps lm-sensors &&     rm -rf /var/lib/apt/lists/*
 # Thu, 12 Sep 2019 20:26:00 GMT
 RUN set -ex &&     for key in         05CE15085FC09D18E99EFB22684A14CF2582E0C5 ;     do         gpg --keyserver ha.pool.sks-keyservers.net --recv-keys "$key" ||         gpg --keyserver pgp.mit.edu --recv-keys "$key" ||         gpg --keyserver keyserver.pgp.com --recv-keys "$key" ;     done
-# Thu, 12 Sep 2019 20:26:25 GMT
-ENV TELEGRAF_VERSION=1.12.1
-# Thu, 12 Sep 2019 20:26:30 GMT
+# Tue, 24 Sep 2019 23:59:27 GMT
+ENV TELEGRAF_VERSION=1.12.2
+# Tue, 24 Sep 2019 23:59:33 GMT
 RUN ARCH= && dpkgArch="$(dpkg --print-architecture)" &&     case "${dpkgArch##*-}" in       amd64) ARCH='amd64';;       arm64) ARCH='arm64';;       armhf) ARCH='armhf';;       armel) ARCH='armel';;       *)     echo "Unsupported architecture: ${dpkgArch}"; exit 1;;     esac &&     wget --no-verbose https://dl.influxdata.com/telegraf/releases/telegraf_${TELEGRAF_VERSION}-1_${ARCH}.deb.asc &&     wget --no-verbose https://dl.influxdata.com/telegraf/releases/telegraf_${TELEGRAF_VERSION}-1_${ARCH}.deb &&     gpg --batch --verify telegraf_${TELEGRAF_VERSION}-1_${ARCH}.deb.asc telegraf_${TELEGRAF_VERSION}-1_${ARCH}.deb &&     dpkg -i telegraf_${TELEGRAF_VERSION}-1_${ARCH}.deb &&     rm -f telegraf_${TELEGRAF_VERSION}-1_${ARCH}.deb*
-# Thu, 12 Sep 2019 20:26:31 GMT
+# Tue, 24 Sep 2019 23:59:34 GMT
 EXPOSE 8092/udp 8094 8125/udp
-# Thu, 12 Sep 2019 20:26:32 GMT
+# Tue, 24 Sep 2019 23:59:34 GMT
 COPY file:7e725b38b34580a28d521266535fcafc651af09f8af8fc6e03ef74768e1b69a2 in /entrypoint.sh 
-# Thu, 12 Sep 2019 20:26:33 GMT
+# Tue, 24 Sep 2019 23:59:35 GMT
 ENTRYPOINT ["/entrypoint.sh"]
-# Thu, 12 Sep 2019 20:26:33 GMT
+# Tue, 24 Sep 2019 23:59:35 GMT
 CMD ["telegraf"]
 ```
 
@@ -143,13 +143,13 @@ CMD ["telegraf"]
 		Last Modified: Thu, 12 Sep 2019 20:26:47 GMT  
 		Size: 2.8 KB (2802 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:269f7a646d8d829400095e14e5647093404854063a6503965663fd1039274dad`  
-		Last Modified: Thu, 12 Sep 2019 20:27:19 GMT  
-		Size: 20.4 MB (20422654 bytes)  
+	-	`sha256:029b7a9a360bd86f5f5da505694d8f5a8e9443d8ee21fb3af23261c2a173d6a4`  
+		Last Modified: Tue, 24 Sep 2019 23:59:52 GMT  
+		Size: 20.2 MB (20157688 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:49f1d8a10a46d884e79c3f9c4ec1bb3674b2fee4e0ee11a7f67657b6eb4ae40b`  
-		Last Modified: Thu, 12 Sep 2019 20:27:11 GMT  
-		Size: 184.0 B  
+	-	`sha256:0893b2106ddf2cdf64962c89bca4b42bff4e990443aa6c37ca02b0886ad3afb8`  
+		Last Modified: Tue, 24 Sep 2019 23:59:46 GMT  
+		Size: 187.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `telegraf:latest` - linux; arm64 variant v8
