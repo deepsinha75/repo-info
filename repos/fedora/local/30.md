@@ -26,8 +26,12 @@ Source:
 
 ```console
 $ yumdownloader --quiet --source --urls acl-2.2.53-3.fc30
+http://mirror.liberty.edu/mirror/fedora/linux/updates/30/Modular/x86_64/repodata/repomd.xml: [Errno -1] repomd.xml does not match metalink for updates-modular
+Trying other mirror.
 Enabling fedora-modular-source repository
 Enabling updates-source repository
+http://csc.mcs.sdsmt.edu/fedora/linux/updates/30/Everything/SRPMS/repodata/repomd.xml: [Errno 12] Timeout on http://csc.mcs.sdsmt.edu/fedora/linux/updates/30/Everything/SRPMS/repodata/repomd.xml: (28, 'Operation too slow. Less than 1000 bytes/sec transferred the last 30 seconds')
+Trying other mirror.
 Enabling updates-modular-source repository
 Enabling fedora-source repository
 https://d2lzkl7pfhq30w.cloudfront.net/pub/fedora/linux/releases/30/Everything/source/tree//Packages/a/acl-2.2.53-3.fc30.src.rpm
@@ -385,16 +389,7 @@ Licenses (from `rpm --query`): GPLv2+ or LGPLv3+
 
 Licenses (from `rpm --query`): MIT
 
-Source:
-
-```console
-$ yumdownloader --quiet --source --urls expat-2.2.7-1.fc30
-Enabling fedora-modular-source repository
-Enabling updates-source repository
-Enabling updates-modular-source repository
-Enabling fedora-source repository
-https://d2lzkl7pfhq30w.cloudfront.net/pub/fedora/linux/updates/30/Everything/SRPMS//Packages/e/expat-2.2.7-1.fc30.src.rpm
-```
+**WARNING:** unable to find source (`yumdownloader` failed or returned no results)!
 
 ### `rpm` package: `fedora-gpg-keys-30-2.noarch`
 
@@ -1324,31 +1319,13 @@ https://d2lzkl7pfhq30w.cloudfront.net/pub/fedora/linux/updates/30/Everything/SRP
 
 Licenses (from `rpm --query`): LGPLv3+
 
-Source:
-
-```console
-$ yumdownloader --quiet --source --urls libsss_idmap-2.2.0-3.fc30
-Enabling fedora-modular-source repository
-Enabling updates-source repository
-Enabling updates-modular-source repository
-Enabling fedora-source repository
-https://d2lzkl7pfhq30w.cloudfront.net/pub/fedora/linux/updates/30/Everything/SRPMS//Packages/s/sssd-2.2.0-3.fc30.src.rpm
-```
+**WARNING:** unable to find source (`yumdownloader` failed or returned no results)!
 
 ### `rpm` package: `libsss_nss_idmap-2.2.0-3.fc30.x86_64`
 
 Licenses (from `rpm --query`): LGPLv3+
 
-Source:
-
-```console
-$ yumdownloader --quiet --source --urls libsss_nss_idmap-2.2.0-3.fc30
-Enabling fedora-modular-source repository
-Enabling updates-source repository
-Enabling updates-modular-source repository
-Enabling fedora-source repository
-https://d2lzkl7pfhq30w.cloudfront.net/pub/fedora/linux/updates/30/Everything/SRPMS//Packages/s/sssd-2.2.0-3.fc30.src.rpm
-```
+**WARNING:** unable to find source (`yumdownloader` failed or returned no results)!
 
 ### `rpm` package: `libstdc++-9.1.1-1.fc30.x86_64`
 
@@ -2134,16 +2111,7 @@ https://d2lzkl7pfhq30w.cloudfront.net/pub/fedora/linux/updates/30/Everything/SRP
 
 Licenses (from `rpm --query`): LGPLv3+
 
-Source:
-
-```console
-$ yumdownloader --quiet --source --urls sssd-client-2.2.0-3.fc30
-Enabling fedora-modular-source repository
-Enabling updates-source repository
-Enabling updates-modular-source repository
-Enabling fedora-source repository
-https://d2lzkl7pfhq30w.cloudfront.net/pub/fedora/linux/updates/30/Everything/SRPMS//Packages/s/sssd-2.2.0-3.fc30.src.rpm
-```
+**WARNING:** unable to find source (`yumdownloader` failed or returned no results)!
 
 ### `rpm` package: `sudo-1.8.27-1.fc30.x86_64`
 
