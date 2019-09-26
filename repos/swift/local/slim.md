@@ -1,18 +1,20 @@
-# `swift:5.0.3-slim`
+# `swift:5.1-slim`
 
 ## Docker Metadata
 
-- Image ID: `sha256:301bc9b1274b687fb197eae63240a6298565baabea9141cc4dbf5df83daf957d`
-- Created: `2019-09-18T23:52:58.968494454Z`
-- Virtual Size: ~ 193.70 Mb  
+- Image ID: `sha256:86d4bdab707515bf0259d0f80ef43da0097c1c469a5e678dca362dae72f291f7`
+- Created: `2019-09-23T23:27:27.744184163Z`
+- Virtual Size: ~ 205.03 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Command: `["/bin/bash"]`
 - Environment:
   - `PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
+  - `SWIFT_SIGNING_KEY=A62AE125BBBFBB96A6E042EC925CC1CCED3D1561`
   - `SWIFT_PLATFORM=ubuntu18.04`
-  - `SWIFT_BRANCH=swift-5.0.3-release`
-  - `SWIFT_VERSION=swift-5.0.3-RELEASE`
+  - `SWIFT_BRANCH=swift-5.1-release`
+  - `SWIFT_VERSION=swift-5.1-RELEASE`
+  - `SWIFT_WEBROOT=https://swift.org/builds/`
 - Labels:
   - `Description=Docker Container for the Swift programming language`
   - `maintainer=Swift Infrastructure <swift-infrastructure@swift.org>`
@@ -408,13 +410,9 @@ Licenses: (parsed from: `/usr/share/doc/dpkg/copyright`)
 - `public-domain-md5`
 - `public-domain-s-s-d`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris dpkg=1.19.0.5ubuntu2.2
-'http://archive.ubuntu.com/ubuntu/pool/main/d/dpkg/dpkg_1.19.0.5ubuntu2.2.dsc' dpkg_1.19.0.5ubuntu2.2.dsc 2140 SHA256:e4bfee89eedc43d3344bc4ab4635ae3342724cf6465e315dbd10b0970b419df0
-'http://archive.ubuntu.com/ubuntu/pool/main/d/dpkg/dpkg_1.19.0.5ubuntu2.2.tar.xz' dpkg_1.19.0.5ubuntu2.2.tar.xz 4570580 SHA256:239b8b629628c9bf60dba70f608f6ee6ab96c1c3d508b57db8adcd6c5543345a
-```
 
 ### `dpkg` source package: `e2fsprogs=1.44.1-1ubuntu1.1`
 
@@ -758,42 +756,6 @@ $ apt-get source -qq --print-uris krb5=1.16-2ubuntu0.1
 'http://archive.ubuntu.com/ubuntu/pool/main/k/krb5/krb5_1.16-2ubuntu0.1.dsc' krb5_1.16-2ubuntu0.1.dsc 3563 SHA256:2c955da3464e506961ee80a769bd5139b2df6770ed51947a510f48f451be70c0
 'http://archive.ubuntu.com/ubuntu/pool/main/k/krb5/krb5_1.16.orig.tar.gz' krb5_1.16.orig.tar.gz 9474479 SHA256:faeb125f83b0fb4cdb2f99f088140631bb47d975982de0956d18c85842969e08
 'http://archive.ubuntu.com/ubuntu/pool/main/k/krb5/krb5_1.16-2ubuntu0.1.debian.tar.xz' krb5_1.16-2ubuntu0.1.debian.tar.xz 99820 SHA256:9e3a973805af340fab23cd28737187567214adb98452d1564ada05652036fc0c
-```
-
-### `dpkg` source package: `libbsd=0.8.7-1`
-
-Binary Packages:
-
-- `libbsd0:amd64=0.8.7-1`
-
-Licenses: (parsed from: `/usr/share/doc/libbsd0/copyright`)
-
-- `BSD-2-clause`
-- `BSD-2-clause-NetBSD`
-- `BSD-2-clause-author`
-- `BSD-2-clause-verbatim`
-- `BSD-3-clause`
-- `BSD-3-clause-John-Birrell`
-- `BSD-3-clause-Peter-Wemm`
-- `BSD-3-clause-Regents`
-- `BSD-4-clause-Christopher-G-Demetriou`
-- `BSD-4-clause-Niels-Provos`
-- `BSD-5-clause-Peter-Wemm`
-- `Beerware`
-- `Expat`
-- `ISC`
-- `ISC-Original`
-- `public-domain`
-- `public-domain-Colin-Plumb`
-
-Source:
-
-```console
-$ apt-get source -qq --print-uris libbsd=0.8.7-1
-'http://archive.ubuntu.com/ubuntu/pool/main/libb/libbsd/libbsd_0.8.7-1.dsc' libbsd_0.8.7-1.dsc 2181 SHA256:4354dc5d963ba909589b3a26a5e135c5a552710cdaa96fc0e76d88e9f78fe72e
-'http://archive.ubuntu.com/ubuntu/pool/main/libb/libbsd/libbsd_0.8.7.orig.tar.xz' libbsd_0.8.7.orig.tar.xz 371772 SHA256:f548f10e5af5a08b1e22889ce84315b1ebe41505b015c9596bad03fd13a12b31
-'http://archive.ubuntu.com/ubuntu/pool/main/libb/libbsd/libbsd_0.8.7.orig.tar.xz.asc' libbsd_0.8.7.orig.tar.xz.asc 833 SHA256:93ae025cc6430971572ce3c52af30a9ea8d8ae760e8759afe41fa955528617b4
-'http://archive.ubuntu.com/ubuntu/pool/main/libb/libbsd/libbsd_0.8.7-1.debian.tar.xz' libbsd_0.8.7-1.debian.tar.xz 15800 SHA256:137b8bedc3dfed65a318e12642759b61bd1a469f0f02bc551fc352d889792d89
 ```
 
 ### `dpkg` source package: `libcap-ng=0.7.7-3.1`

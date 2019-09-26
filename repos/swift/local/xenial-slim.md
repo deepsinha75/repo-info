@@ -1,18 +1,20 @@
-# `swift:5.0.3-xenial-slim`
+# `swift:5.1-xenial-slim`
 
 ## Docker Metadata
 
-- Image ID: `sha256:02ec12419bb27e6ebdc5f7b2cfae5357d25e9736024eb38a643157a4eb3e9cc1`
-- Created: `2019-09-18T23:54:10.299478799Z`
-- Virtual Size: ~ 251.15 Mb  
+- Image ID: `sha256:b68b8dc980093c5314a7aa5602c2c49dfb53c9909c292ecbbe53f09220799380`
+- Created: `2019-09-23T23:28:42.199589519Z`
+- Virtual Size: ~ 262.53 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Command: `["/bin/bash"]`
 - Environment:
   - `PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
+  - `SWIFT_SIGNING_KEY=A62AE125BBBFBB96A6E042EC925CC1CCED3D1561`
   - `SWIFT_PLATFORM=ubuntu16.04`
-  - `SWIFT_BRANCH=swift-5.0.3-release`
-  - `SWIFT_VERSION=swift-5.0.3-RELEASE`
+  - `SWIFT_BRANCH=swift-5.1-release`
+  - `SWIFT_VERSION=swift-5.1-RELEASE`
+  - `SWIFT_WEBROOT=https://swift.org/builds/`
 - Labels:
   - `Description=Docker Container for the Swift programming language`
   - `maintainer=Swift Infrastructure <swift-infrastructure@swift.org>`
@@ -851,40 +853,6 @@ $ apt-get source -qq --print-uris krb5=1.13.2+dfsg-5ubuntu2.1
 'http://archive.ubuntu.com/ubuntu/pool/main/k/krb5/krb5_1.13.2+dfsg-5ubuntu2.1.dsc' krb5_1.13.2+dfsg-5ubuntu2.1.dsc 3520 SHA256:d32e3a18bd00e7446c67d28c4c70bb96ec80da9b0e9215d4d8531100e1f91952
 'http://archive.ubuntu.com/ubuntu/pool/main/k/krb5/krb5_1.13.2+dfsg.orig.tar.gz' krb5_1.13.2+dfsg.orig.tar.gz 11884064 SHA256:a7af3953e4ab52b17f80bdfc2fc7471b66b512b128520796e2b993554543873a
 'http://archive.ubuntu.com/ubuntu/pool/main/k/krb5/krb5_1.13.2+dfsg-5ubuntu2.1.debian.tar.xz' krb5_1.13.2+dfsg-5ubuntu2.1.debian.tar.xz 113600 SHA256:2536a14f7a186c9076d8fb8053be04842300ab000046b4d53c8fa8c9959f1efd
-```
-
-### `dpkg` source package: `libbsd=0.8.2-1`
-
-Binary Packages:
-
-- `libbsd0:amd64=0.8.2-1`
-
-Licenses: (parsed from: `/usr/share/doc/libbsd0/copyright`)
-
-- `BSD-2-clause`
-- `BSD-2-clause-NetBSD`
-- `BSD-2-clause-author`
-- `BSD-2-clause-verbatim`
-- `BSD-3-clause`
-- `BSD-3-clause-Peter-Wemm`
-- `BSD-3-clause-Regents`
-- `BSD-4-clause-Christopher-G-Demetriou`
-- `BSD-4-clause-Niels-Provos`
-- `BSD-5-clause-Peter-Wemm`
-- `Beerware`
-- `Expat`
-- `ISC`
-- `ISC-Original`
-- `public-domain`
-- `public-domain-Colin-Plumb`
-
-Source:
-
-```console
-$ apt-get source -qq --print-uris libbsd=0.8.2-1
-'http://archive.ubuntu.com/ubuntu/pool/main/libb/libbsd/libbsd_0.8.2-1.dsc' libbsd_0.8.2-1.dsc 1970 SHA256:c620fbc461ea4f78bb2283ed55e36d1d819354ee08980b28577795f512c2948f
-'http://archive.ubuntu.com/ubuntu/pool/main/libb/libbsd/libbsd_0.8.2.orig.tar.xz' libbsd_0.8.2.orig.tar.xz 344292 SHA256:b2f644cae94a6e2fe109449c20ad79a0f6ee4faec2205b07eefa0020565e250a
-'http://archive.ubuntu.com/ubuntu/pool/main/libb/libbsd/libbsd_0.8.2-1.debian.tar.xz' libbsd_0.8.2-1.debian.tar.xz 14788 SHA256:03e03c6230dc0243aff0535e89f8e1969f2977b247c1ec57a9783cb1094a0906
 ```
 
 ### `dpkg` source package: `libcap2=1:2.24-12`

@@ -1,18 +1,20 @@
-# `swift:5.0.3`
+# `swift:5.1`
 
 ## Docker Metadata
 
-- Image ID: `sha256:56ec624451a6f706d680dd2d9b99dee2cb47b7359b1883620fec1a6b1d4f4b1f`
-- Created: `2019-09-18T23:48:59.718987935Z`
-- Virtual Size: ~ 1.35 Gb  
+- Image ID: `sha256:2f0a2905ef7a76d8ca031897d2b1c670c52e943907dad383f2269a1fa1aa200b`
+- Created: `2019-09-23T23:22:50.714083005Z`
+- Virtual Size: ~ 1.46 Gb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Command: `["/bin/bash"]`
 - Environment:
   - `PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
+  - `SWIFT_SIGNING_KEY=A62AE125BBBFBB96A6E042EC925CC1CCED3D1561`
   - `SWIFT_PLATFORM=ubuntu18.04`
-  - `SWIFT_BRANCH=swift-5.0.3-release`
-  - `SWIFT_VERSION=swift-5.0.3-RELEASE`
+  - `SWIFT_BRANCH=swift-5.1-release`
+  - `SWIFT_VERSION=swift-5.1-RELEASE`
+  - `SWIFT_WEBROOT=https://swift.org/builds/`
 - Labels:
   - `Description=Docker Container for the Swift programming language`
   - `maintainer=Swift Infrastructure <swift-infrastructure@swift.org>`
@@ -453,13 +455,9 @@ Licenses: (parsed from: `/usr/share/doc/dpkg/copyright`, `/usr/share/doc/dpkg-de
 - `public-domain-md5`
 - `public-domain-s-s-d`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris dpkg=1.19.0.5ubuntu2.2
-'http://archive.ubuntu.com/ubuntu/pool/main/d/dpkg/dpkg_1.19.0.5ubuntu2.2.dsc' dpkg_1.19.0.5ubuntu2.2.dsc 2140 SHA256:e4bfee89eedc43d3344bc4ab4635ae3342724cf6465e315dbd10b0970b419df0
-'http://archive.ubuntu.com/ubuntu/pool/main/d/dpkg/dpkg_1.19.0.5ubuntu2.2.tar.xz' dpkg_1.19.0.5ubuntu2.2.tar.xz 4570580 SHA256:239b8b629628c9bf60dba70f608f6ee6ab96c1c3d508b57db8adcd6c5543345a
-```
 
 ### `dpkg` source package: `e2fsprogs=1.44.1-1ubuntu1.1`
 
