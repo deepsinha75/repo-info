@@ -1083,13 +1083,9 @@ Licenses: (parsed from: `/usr/share/doc/dpkg/copyright`, `/usr/share/doc/dpkg-de
 - `public-domain-md5`
 - `public-domain-s-s-d`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris dpkg=1.19.0.5ubuntu2.2
-'http://archive.ubuntu.com/ubuntu/pool/main/d/dpkg/dpkg_1.19.0.5ubuntu2.2.dsc' dpkg_1.19.0.5ubuntu2.2.dsc 2140 SHA256:e4bfee89eedc43d3344bc4ab4635ae3342724cf6465e315dbd10b0970b419df0
-'http://archive.ubuntu.com/ubuntu/pool/main/d/dpkg/dpkg_1.19.0.5ubuntu2.2.tar.xz' dpkg_1.19.0.5ubuntu2.2.tar.xz 4570580 SHA256:239b8b629628c9bf60dba70f608f6ee6ab96c1c3d508b57db8adcd6c5543345a
-```
 
 ### `dpkg` source package: `e2fsprogs=1.44.1-1ubuntu1.1`
 
@@ -5590,15 +5586,9 @@ Licenses: (parsed from: `/usr/share/doc/libegl-mesa0/copyright`, `/usr/share/doc
 - `MLAA`
 - `SGI`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris mesa=19.0.8-0ubuntu0~18.04.1
-'http://archive.ubuntu.com/ubuntu/pool/main/m/mesa/mesa_19.0.8-0ubuntu0~18.04.1.dsc' mesa_19.0.8-0ubuntu0~18.04.1.dsc 5502 SHA256:4305b46de749bb08156bfc27e5c3c75cdc9e62ac98680306e50691dcf7afc694
-'http://archive.ubuntu.com/ubuntu/pool/main/m/mesa/mesa_19.0.8.orig.tar.gz' mesa_19.0.8.orig.tar.gz 20086282 SHA256:1a3dc3f2af853c76aadb4a1e03c9ba420361c04a742d457a702b781671a96a57
-'http://archive.ubuntu.com/ubuntu/pool/main/m/mesa/mesa_19.0.8.orig.tar.gz.asc' mesa_19.0.8.orig.tar.gz.asc 274 SHA256:4b12c42521c106a29a542316ed9079c242824c24cd13255654e9caa3c72ac738
-'http://archive.ubuntu.com/ubuntu/pool/main/m/mesa/mesa_19.0.8-0ubuntu0~18.04.1.diff.gz' mesa_19.0.8-0ubuntu0~18.04.1.diff.gz 123398 SHA256:2998b799f9af532069a6ff389ebc9092818f2bafde5c3c66419291df7c8821f8
-```
 
 ### `dpkg` source package: `mime-support=3.60ubuntu1`
 
