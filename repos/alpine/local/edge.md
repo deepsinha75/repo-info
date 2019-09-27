@@ -1,9 +1,9 @@
-# `alpine:20190809`
+# `alpine:20190925`
 
 ## Docker Metadata
 
-- Image ID: `sha256:70997d35b3ed2ff5e880cccb9086f63f01ac67c78535fc6f8ceca4469c1ac7fb`
-- Created: `2019-08-09T21:19:44.635110146Z`
+- Image ID: `sha256:7eacb6761fa13753aa186e673635ad07f27d6fa26ca06de4ec04216b17b16dbc`
+- Created: `2019-09-25T21:20:01.648231122Z`
 - Virtual Size: ~ 5.59 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
@@ -50,16 +50,16 @@ MIT
 ### `apk` package: `apk-tools`
 
 ```console
-apk-tools-2.10.4-r2 description:
+apk-tools-2.10.4-r3 description:
 Alpine Package Keeper - package manager for alpine
 
-apk-tools-2.10.4-r2 webpage:
+apk-tools-2.10.4-r3 webpage:
 https://git.alpinelinux.org/cgit/apk-tools/
 
-apk-tools-2.10.4-r2 installed size:
+apk-tools-2.10.4-r3 installed size:
 262144
 
-apk-tools-2.10.4-r2 license:
+apk-tools-2.10.4-r3 license:
 GPL2
 
 ```
@@ -67,16 +67,16 @@ GPL2
 ### `apk` package: `busybox`
 
 ```console
-busybox-1.31.0-r0 description:
+busybox-1.31.0-r1 description:
 Size optimized toolbox of many common UNIX utilities
 
-busybox-1.31.0-r0 webpage:
+busybox-1.31.0-r1 webpage:
 https://busybox.net/
 
-busybox-1.31.0-r0 installed size:
-942080
+busybox-1.31.0-r1 installed size:
+950272
 
-busybox-1.31.0-r0 license:
+busybox-1.31.0-r1 license:
 GPL-2.0
 
 ```
@@ -118,16 +118,16 @@ BSD
 ### `apk` package: `libcrypto1.1`
 
 ```console
-libcrypto1.1-1.1.1c-r0 description:
+libcrypto1.1-1.1.1d-r2 description:
 Crypto library from openssl
 
-libcrypto1.1-1.1.1c-r0 webpage:
+libcrypto1.1-1.1.1d-r2 webpage:
 https://www.openssl.org
 
-libcrypto1.1-1.1.1c-r0 installed size:
-2760704
+libcrypto1.1-1.1.1d-r2 installed size:
+2748416
 
-libcrypto1.1-1.1.1c-r0 license:
+libcrypto1.1-1.1.1d-r2 license:
 OpenSSL
 
 ```
@@ -135,16 +135,16 @@ OpenSSL
 ### `apk` package: `libssl1.1`
 
 ```console
-libssl1.1-1.1.1c-r0 description:
+libssl1.1-1.1.1d-r2 description:
 SSL shared libraries
 
-libssl1.1-1.1.1c-r0 webpage:
+libssl1.1-1.1.1d-r2 webpage:
 https://www.openssl.org
 
-libssl1.1-1.1.1c-r0 installed size:
+libssl1.1-1.1.1d-r2 installed size:
 536576
 
-libssl1.1-1.1.1c-r0 license:
+libssl1.1-1.1.1d-r2 license:
 OpenSSL
 
 ```
@@ -220,16 +220,16 @@ GPL-2.0-only
 ### `apk` package: `ssl_client`
 
 ```console
-ssl_client-1.31.0-r0 description:
+ssl_client-1.31.0-r1 description:
 EXternal ssl_client for busybox wget
 
-ssl_client-1.31.0-r0 webpage:
+ssl_client-1.31.0-r1 webpage:
 https://busybox.net/
 
-ssl_client-1.31.0-r0 installed size:
+ssl_client-1.31.0-r1 installed size:
 28672
 
-ssl_client-1.31.0-r0 license:
+ssl_client-1.31.0-r1 license:
 GPL-2.0
 
 ```
@@ -237,16 +237,16 @@ GPL-2.0
 ### `apk` package: `zlib`
 
 ```console
-zlib-1.2.11-r1 description:
+zlib-1.2.11-r3 description:
 A compression/decompression Library
 
-zlib-1.2.11-r1 webpage:
-http://zlib.net
+zlib-1.2.11-r3 webpage:
+https://zlib.net/
 
-zlib-1.2.11-r1 installed size:
-102400
+zlib-1.2.11-r3 installed size:
+110592
 
-zlib-1.2.11-r1 license:
-zlib
+zlib-1.2.11-r3 license:
+Zlib
 
 ```
