@@ -26,21 +26,13 @@ Licenses: (parsed from: `/usr/share/doc/libacl1/copyright`)
 - `LGPL-2+`
 - `LGPL-2.1`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris acl=2.2.53-4
-'http://deb.debian.org/debian/pool/main/a/acl/acl_2.2.53-4.dsc' acl_2.2.53-4.dsc 2330 SHA256:532eb4029659db74e6625adc2bd277144f33c92cb0603272d61693b069896a85
-'http://deb.debian.org/debian/pool/main/a/acl/acl_2.2.53.orig.tar.gz' acl_2.2.53.orig.tar.gz 524300 SHA256:06be9865c6f418d851ff4494e12406568353b891ffe1f596b34693c387af26c7
-'http://deb.debian.org/debian/pool/main/a/acl/acl_2.2.53.orig.tar.gz.asc' acl_2.2.53.orig.tar.gz.asc 833 SHA256:06849bece0b56a6a7269173abe101cff223bb9346d74027a3cd5ff80914abf4b
-'http://deb.debian.org/debian/pool/main/a/acl/acl_2.2.53-4.debian.tar.xz' acl_2.2.53-4.debian.tar.xz 18572 SHA256:3e6571adea4886a9549bdc2323d5c55ee8f7dafb6a204513111d5943d2776dd8
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/acl/2.2.53-4/
 
-- https://sources.debian.net/src/acl/2.2.53-4/ (for browsing the source)
-- https://sources.debian.net/src/acl/2.2.53-4/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/acl/2.2.53-4/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `adduser=3.118`
 
@@ -1459,21 +1451,13 @@ Licenses: (parsed from: `/usr/share/doc/libp11-kit0/copyright`)
 - `permissive-like-automake-output`
 - `same-as-rest-of-p11kit`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris p11-kit=0.23.16.1-2
-'http://deb.debian.org/debian/pool/main/p/p11-kit/p11-kit_0.23.16.1-2.dsc' p11-kit_0.23.16.1-2.dsc 2440 SHA256:4e837c3bd2b4905a3a9f2b9892741cded6ef27658f01e2d7cf913c24197bc3fa
-'http://deb.debian.org/debian/pool/main/p/p11-kit/p11-kit_0.23.16.1.orig.tar.gz' p11-kit_0.23.16.1.orig.tar.gz 1292783 SHA256:4b34e92ae36fa493e0d94366c767f06d5f9951e3d8581d10fd935d738db1574d
-'http://deb.debian.org/debian/pool/main/p/p11-kit/p11-kit_0.23.16.1.orig.tar.gz.asc' p11-kit_0.23.16.1.orig.tar.gz.asc 833 SHA256:d6466013c87038d69d3d838d87fd8ad0e052d927ba56bf5658366351f7bb0099
-'http://deb.debian.org/debian/pool/main/p/p11-kit/p11-kit_0.23.16.1-2.debian.tar.xz' p11-kit_0.23.16.1-2.debian.tar.xz 21560 SHA256:d894bdf23f68ba4312ee384e4cd662bd00b0c5baa4088993f1620d99afbfbfc0
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/p11-kit/0.23.16.1-2/
 
-- https://sources.debian.net/src/p11-kit/0.23.16.1-2/ (for browsing the source)
-- https://sources.debian.net/src/p11-kit/0.23.16.1-2/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/p11-kit/0.23.16.1-2/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `pam=1.3.1-5`
 
