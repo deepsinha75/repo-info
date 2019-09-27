@@ -900,20 +900,13 @@ Licenses: (parsed from: `/usr/share/doc/iproute2/copyright`)
 
 - `GPL-2`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris iproute2=5.2.0-1
-'http://deb.debian.org/debian/pool/main/i/iproute2/iproute2_5.2.0-1.dsc' iproute2_5.2.0-1.dsc 1915 SHA256:d13bd5a1a9ce4366d1e6804c20431e4118bb1689dc42b59fc75cfd6fbbceb66b
-'http://deb.debian.org/debian/pool/main/i/iproute2/iproute2_5.2.0.orig.tar.xz' iproute2_5.2.0.orig.tar.xz 729540 SHA256:a5b95dec26353fc71dba9bb403e9343fad2a06bd69fb154a22a2aa2914f74da8
-'http://deb.debian.org/debian/pool/main/i/iproute2/iproute2_5.2.0-1.debian.tar.xz' iproute2_5.2.0-1.debian.tar.xz 144172 SHA256:ae740d8d5fc92b6bac389044423403a2f1b75340e22c617284dc324d88a06266
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/iproute2/5.2.0-1/
 
-- https://sources.debian.net/src/iproute2/5.2.0-1/ (for browsing the source)
-- https://sources.debian.net/src/iproute2/5.2.0-1/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/iproute2/5.2.0-1/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `iptables=1.8.3-2`
 
@@ -2192,20 +2185,13 @@ Licenses: (parsed from: `/usr/share/doc/sysvinit-utils/copyright`)
 - `GPL-2`
 - `GPL-2+`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris sysvinit=2.96~beta-1
-'http://deb.debian.org/debian/pool/main/s/sysvinit/sysvinit_2.96~beta-1.dsc' sysvinit_2.96~beta-1.dsc 2427 SHA256:720a1396ae9a4e63aeffa7d2c95377540f362ba3429988d3a90e7aa5ac1c5ae1
-'http://deb.debian.org/debian/pool/main/s/sysvinit/sysvinit_2.96~beta.orig.tar.xz' sysvinit_2.96~beta.orig.tar.xz 122212 SHA256:56493d8796808ce97f8a0409886b71359b8af6262412af01703c3721e27245c5
-'http://deb.debian.org/debian/pool/main/s/sysvinit/sysvinit_2.96~beta-1.debian.tar.xz' sysvinit_2.96~beta-1.debian.tar.xz 127880 SHA256:f285966a275557bc5107e39e42407d54b3289276884e1e47ea10831c8f8166f2
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/sysvinit/2.96~beta-1/
 
-- https://sources.debian.net/src/sysvinit/2.96~beta-1/ (for browsing the source)
-- https://sources.debian.net/src/sysvinit/2.96~beta-1/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/sysvinit/2.96~beta-1/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `tar=1.30+dfsg-6`
 

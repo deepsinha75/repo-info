@@ -750,15 +750,9 @@ Licenses: (parsed from: `/usr/share/doc/libgnutls30/copyright`)
 - `The MIT License (MIT)`
 - `The main library is licensed under GNU Lesser`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris gnutls28=3.6.9-4build1
-'http://archive.ubuntu.com/ubuntu/pool/main/g/gnutls28/gnutls28_3.6.9-4build1.dsc' gnutls28_3.6.9-4build1.dsc 3426 SHA256:664b3ea4ba2bc7f08b385734dc4961c21113e7d1f452575a42a94ba3677094e9
-'http://archive.ubuntu.com/ubuntu/pool/main/g/gnutls28/gnutls28_3.6.9.orig.tar.xz' gnutls28_3.6.9.orig.tar.xz 5773928 SHA256:4331fca55817ecdd74450b908a6c29b4f05bb24dd13144c6284aa34d872e1fcb
-'http://archive.ubuntu.com/ubuntu/pool/main/g/gnutls28/gnutls28_3.6.9.orig.tar.xz.asc' gnutls28_3.6.9.orig.tar.xz.asc 488 SHA256:7956ffdddad8495f6933233b6ad04bb6b4e8ff9a2977fc0fd7ae95aa33ae245d
-'http://archive.ubuntu.com/ubuntu/pool/main/g/gnutls28/gnutls28_3.6.9-4build1.debian.tar.xz' gnutls28_3.6.9-4build1.debian.tar.xz 69060 SHA256:6b8f54757c9d4364d3cc49d4b00fc5a0b4c40c249392e9770332fca1267fa228
-```
 
 ### `dpkg` source package: `grep=3.3-1`
 
@@ -1120,15 +1114,13 @@ Licenses: (parsed from: `/usr/share/doc/libidn2-0/copyright`)
 - `LGPL-3+`
 - `Unicode`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris libidn2=2.2.0-1
-'http://archive.ubuntu.com/ubuntu/pool/main/libi/libidn2/libidn2_2.2.0-1.dsc' libidn2_2.2.0-1.dsc 2208 SHA256:7d8532239f4ab0c0e246a20cb8997a3a8303843e32ae168e7f5f1e841bfc10fb
-'http://archive.ubuntu.com/ubuntu/pool/main/libi/libidn2/libidn2_2.2.0.orig.tar.gz' libidn2_2.2.0.orig.tar.gz 2110743 SHA256:fc734732b506d878753ec6606982bf7b936e868c25c30ddb0d83f7d7056381fe
-'http://archive.ubuntu.com/ubuntu/pool/main/libi/libidn2/libidn2_2.2.0.orig.tar.gz.asc' libidn2_2.2.0.orig.tar.gz.asc 566 SHA256:aa0a50999b8e6d9649476a61aa2041544c473f1eb059bf1bf197c502e98dfc2f
-'http://archive.ubuntu.com/ubuntu/pool/main/libi/libidn2/libidn2_2.2.0-1.debian.tar.xz' libidn2_2.2.0-1.debian.tar.xz 10428 SHA256:6369fb8e9b874124a7d0f6c07dc30d086ddb6f1f91a98c33a832497d6281299d
-```
+The source package *may* still be available for download from:
+
+- http://snapshot.debian.org/package/libidn2/2.2.0-1/
+
 
 ### `dpkg` source package: `libksba=1.3.5-2`
 
@@ -2088,14 +2080,9 @@ Licenses: (parsed from: `/usr/share/doc/libsystemd0/copyright`, `/usr/share/doc/
 - `LGPL-2.1+`
 - `public-domain`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris systemd=241-7ubuntu1
-'http://archive.ubuntu.com/ubuntu/pool/main/s/systemd/systemd_241-7ubuntu1.dsc' systemd_241-7ubuntu1.dsc 5080 SHA256:dc8c1f9ad064c2c2e39e424d7b38989ce81f2c92e8303d4b497bf95a2518511c
-'http://archive.ubuntu.com/ubuntu/pool/main/s/systemd/systemd_241.orig.tar.gz' systemd_241.orig.tar.gz 7640538 SHA256:b2561a8e1d10a2c248253f0dda31a85dd6d69f2b54177de55e02cd1d2778316e
-'http://archive.ubuntu.com/ubuntu/pool/main/s/systemd/systemd_241-7ubuntu1.debian.tar.xz' systemd_241-7ubuntu1.debian.tar.xz 199460 SHA256:a0800a27ded4a0d4a1036ed6a984776365f87dcadc66eb59b2c930cb3d65f93f
-```
 
 ### `dpkg` source package: `sysvinit=2.95-5ubuntu2`
 
