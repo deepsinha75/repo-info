@@ -2,9 +2,9 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:92f3d344ca45ac52c27ad9bd3ab979d00f892c2c7fa1af3b4f5f36e35a711f24`
-- Created: `2019-09-03T13:28:54.674884477Z`
-- Virtual Size: ~ 134.85 Mb  
+- Image ID: `sha256:baa36322bdc2266b7d827f1104df48297c5ddbbc318bc21a8db7972db28b3e91`
+- Created: `2019-09-27T03:30:27.78802557Z`
+- Virtual Size: ~ 138.71 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["docker-entrypoint.sh"]`
@@ -17,10 +17,10 @@
   - `PHP_CPPFLAGS=-fstack-protector-strong -fpic -fpie -O2`
   - `PHP_LDFLAGS=-Wl,-O1 -Wl,--hash-style=both -pie`
   - `GPG_KEYS=1729F83938DA44E27BA0F4D3DBDB397470D12172 B1B44D8F021E4E2D6021E995DC9FF8D3EE5AF27F`
-  - `PHP_VERSION=7.2.22`
-  - `PHP_URL=https://www.php.net/get/php-7.2.22.tar.xz/from/this/mirror`
-  - `PHP_ASC_URL=https://www.php.net/get/php-7.2.22.tar.xz.asc/from/this/mirror`
-  - `PHP_SHA256=eb597fcf8dc0a6211a42a6346de4f63ee166829a6df6d8ed767fe14be8d1c3a3`
+  - `PHP_VERSION=7.2.23`
+  - `PHP_URL=https://www.php.net/get/php-7.2.23.tar.xz/from/this/mirror`
+  - `PHP_ASC_URL=https://www.php.net/get/php-7.2.23.tar.xz.asc/from/this/mirror`
+  - `PHP_SHA256=74e045ec8ff26290db6a3688826dcdf43b87bc509e508e9cb76dab742804ca14`
   - `PHP_MD5=`
   - `WORDPRESS_CLI_GPG_KEY=63AF7AA15067C05616FDDD88A3A2E8F226F0BC06`
   - `WORDPRESS_CLI_VERSION=2.3.0`
@@ -184,16 +184,16 @@ MIT
 ### `apk` package: `expat`
 
 ```console
-expat-2.2.7-r0 description:
+expat-2.2.8-r0 description:
 An XML Parser library written in C
 
-expat-2.2.7-r0 webpage:
+expat-2.2.8-r0 webpage:
 http://www.libexpat.org/
 
-expat-2.2.7-r0 installed size:
+expat-2.2.8-r0 installed size:
 184320
 
-expat-2.2.7-r0 license:
+expat-2.2.8-r0 license:
 MIT
 
 ```
@@ -337,16 +337,16 @@ BSD
 ### `apk` package: `libcrypto1.1`
 
 ```console
-libcrypto1.1-1.1.1c-r0 description:
+libcrypto1.1-1.1.1d-r0 description:
 Crypto library from openssl
 
-libcrypto1.1-1.1.1c-r0 webpage:
+libcrypto1.1-1.1.1d-r0 webpage:
 https://www.openssl.org
 
-libcrypto1.1-1.1.1c-r0 installed size:
-2760704
+libcrypto1.1-1.1.1d-r0 installed size:
+2736128
 
-libcrypto1.1-1.1.1c-r0 license:
+libcrypto1.1-1.1.1d-r0 license:
 OpenSSL
 
 ```
@@ -354,16 +354,16 @@ OpenSSL
 ### `apk` package: `libcurl`
 
 ```console
-libcurl-7.65.1-r0 description:
+libcurl-7.66.0-r0 description:
 The multiprotocol file transfer library
 
-libcurl-7.65.1-r0 webpage:
+libcurl-7.66.0-r0 webpage:
 https://curl.haxx.se/
 
-libcurl-7.65.1-r0 installed size:
-450560
+libcurl-7.66.0-r0 installed size:
+454656
 
-libcurl-7.65.1-r0 license:
+libcurl-7.66.0-r0 license:
 MIT
 
 ```
@@ -473,16 +473,16 @@ ISC
 ### `apk` package: `libssl1.1`
 
 ```console
-libssl1.1-1.1.1c-r0 description:
+libssl1.1-1.1.1d-r0 description:
 SSL shared libraries
 
-libssl1.1-1.1.1c-r0 webpage:
+libssl1.1-1.1.1d-r0 webpage:
 https://www.openssl.org
 
-libssl1.1-1.1.1c-r0 installed size:
-536576
+libssl1.1-1.1.1d-r0 installed size:
+532480
 
-libssl1.1-1.1.1c-r0 license:
+libssl1.1-1.1.1d-r0 license:
 OpenSSL
 
 ```
