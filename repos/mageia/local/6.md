@@ -21,10 +21,6 @@ Source:
 
 ```console
 $ yumdownloader --quiet --source --urls basesystem-minimal-6-0.4.mga6
-http://mageia.jameswhitby.net/mageia/distrib/6/x86_64/media/core/release/repodata/repomd.xml: [Errno 14] HTTP Error 404 - Not Found
-Trying other mirror.
-ftp://mageia.jameswhitby.net/mageia/distrib/6/x86_64/media/core/release/repodata/repomd.xml: [Errno 12] Timeout on ftp://mageia.jameswhitby.net/mageia/distrib/6/x86_64/media/core/release/repodata/repomd.xml: (28, 'Connection time-out')
-Trying other mirror.
 Enabling updates-x86_64-source repository
 Enabling mageia-x86_64-source repository
 http://mirror.dacentec.com/mageia/distrib/6/SRPMS/core/release//basesystem-6-0.4.mga6.src.rpm
