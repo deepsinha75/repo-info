@@ -693,13 +693,9 @@ Licenses: (parsed from: `/usr/share/doc/dpkg/copyright`, `/usr/share/doc/dpkg-de
 - `public-domain-md5`
 - `public-domain-s-s-d`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris dpkg=1.19.0.5ubuntu2.2
-'http://archive.ubuntu.com/ubuntu/pool/main/d/dpkg/dpkg_1.19.0.5ubuntu2.2.dsc' dpkg_1.19.0.5ubuntu2.2.dsc 2140 SHA256:e4bfee89eedc43d3344bc4ab4635ae3342724cf6465e315dbd10b0970b419df0
-'http://archive.ubuntu.com/ubuntu/pool/main/d/dpkg/dpkg_1.19.0.5ubuntu2.2.tar.xz' dpkg_1.19.0.5ubuntu2.2.tar.xz 4570580 SHA256:239b8b629628c9bf60dba70f608f6ee6ab96c1c3d508b57db8adcd6c5543345a
-```
 
 ### `dpkg` source package: `e2fsprogs=1.44.1-1ubuntu1.1`
 
@@ -3949,14 +3945,9 @@ Binary Packages:
 If source is available (seen below), check the contents of `debian/copyright` within it.
 
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris python3-colcon-ros=0.3.12-1
-'http://packages.ros.org/ros2/ubuntu/pool/main/p/python3-colcon-ros/python3-colcon-ros_0.3.12-1.debian.tar.xz' python3-colcon-ros_0.3.12-1.debian.tar.xz 1556 SHA512:9912922557bd9d248b9476d40e0a93231f4c8607dc0694bb144cfa2a57b05b55fd784f80a7a2ee2a18efaad4ad234055d373f16ae8b411de6429f30b47e8c42d
-'http://packages.ros.org/ros2/ubuntu/pool/main/p/python3-colcon-ros/python3-colcon-ros_0.3.12-1.dsc' python3-colcon-ros_0.3.12-1.dsc 907 SHA512:4b672e54c883cbc75b30ed695d16c7344195832d62e264f3d69423c1e8f95321877a83c577ac5655401f62c8fdde803ae223907d00863ad8fa6bfcb17013a14a
-'http://packages.ros.org/ros2/ubuntu/pool/main/p/python3-colcon-ros/python3-colcon-ros_0.3.12.orig.tar.gz' python3-colcon-ros_0.3.12.orig.tar.gz 12106 SHA512:a9968919057cb2ef9e536df7b1b72631db9c69d1a8d6209ca30f31fd3620d785d238361af9aca242aae4a45e48aad16221944060cea34e209e56260b4ba04a45
-```
 
 ### `dpkg` source package: `python3-colcon-test-result=0.3.7-1`
 
