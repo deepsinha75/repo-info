@@ -1,10 +1,10 @@
-# `php:7.3.9-zts-alpine3.9`
+# `php:7.3.10-zts-alpine3.9`
 
 ## Docker Metadata
 
-- Image ID: `sha256:be723624f650b39dff5616feba408859391981fc4d120a574b57ffb0f6afc543`
-- Created: `2019-09-03T07:30:51.946312367Z`
-- Virtual Size: ~ 66.25 Mb  
+- Image ID: `sha256:4d1377a8eada0bc480580f9d308fed70d557784646c76b4e351013a40ba07a9d`
+- Created: `2019-09-26T23:15:04.259936954Z`
+- Virtual Size: ~ 66.33 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["docker-php-entrypoint"]`
@@ -18,10 +18,10 @@
   - `PHP_CPPFLAGS=-fstack-protector-strong -fpic -fpie -O2`
   - `PHP_LDFLAGS=-Wl,-O1 -Wl,--hash-style=both -pie`
   - `GPG_KEYS=CBAF69F173A0FEA4B537F470D66C9593118BCCB6 F38252826ACD957EF380D39F2F7956BC5DA04B5D`
-  - `PHP_VERSION=7.3.9`
-  - `PHP_URL=https://www.php.net/get/php-7.3.9.tar.xz/from/this/mirror`
-  - `PHP_ASC_URL=https://www.php.net/get/php-7.3.9.tar.xz.asc/from/this/mirror`
-  - `PHP_SHA256=4007f24a39822bef2805b75c625551d30be9eeed329d52eb0838fa5c1b91c1fd`
+  - `PHP_VERSION=7.3.10`
+  - `PHP_URL=https://www.php.net/get/php-7.3.10.tar.xz/from/this/mirror`
+  - `PHP_ASC_URL=https://www.php.net/get/php-7.3.10.tar.xz.asc/from/this/mirror`
+  - `PHP_SHA256=42f00a15419e05771734b7159c8d39d639b8a5a6770413adfa2615f6f923d906`
   - `PHP_MD5=`
 
 ## `apk` (`.apk`-based packages)
@@ -199,16 +199,16 @@ OpenSSL
 ### `apk` package: `libcurl`
 
 ```console
-libcurl-7.64.0-r2 description:
+libcurl-7.64.0-r3 description:
 The multiprotocol file transfer library
 
-libcurl-7.64.0-r2 webpage:
+libcurl-7.64.0-r3 webpage:
 https://curl.haxx.se
 
-libcurl-7.64.0-r2 installed size:
+libcurl-7.64.0-r3 installed size:
 487424
 
-libcurl-7.64.0-r2 license:
+libcurl-7.64.0-r3 license:
 MIT
 
 ```
