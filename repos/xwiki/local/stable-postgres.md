@@ -2364,17 +2364,9 @@ Licenses: (parsed from: `/usr/share/doc/fonts-opensymbol/copyright`, `/usr/share
 - `MPL-2.0`
 - `other`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris libreoffice=1:6.0.7-0ubuntu0.18.04.9
-'http://archive.ubuntu.com/ubuntu/pool/main/libr/libreoffice/libreoffice_6.0.7-0ubuntu0.18.04.9.dsc' libreoffice_6.0.7-0ubuntu0.18.04.9.dsc 18074 SHA256:a695f24a87b70e96aa4582fa4d0f69f7e6f056285e717121e7059c3ce2231f11
-'http://archive.ubuntu.com/ubuntu/pool/main/libr/libreoffice/libreoffice_6.0.7.orig-helpcontent2.tar.xz' libreoffice_6.0.7.orig-helpcontent2.tar.xz 2423012 SHA256:41c1ef4b0437acd7e8ba36789b45906e99e0487b12198bce0d30ed74c9e0ccaf
-'http://archive.ubuntu.com/ubuntu/pool/main/libr/libreoffice/libreoffice_6.0.7.orig-tarballs.tar.xz' libreoffice_6.0.7.orig-tarballs.tar.xz 215486780 SHA256:96116dcc195ab1f47fa677bf88f8d233561422dbfe5a0539f7408b56e254c194
-'http://archive.ubuntu.com/ubuntu/pool/main/libr/libreoffice/libreoffice_6.0.7.orig-translations.tar.xz' libreoffice_6.0.7.orig-translations.tar.xz 139598364 SHA256:24a3ef909cfb0722dec3d6e40924681b41641f175e5df90b3e5507fdceb43186
-'http://archive.ubuntu.com/ubuntu/pool/main/libr/libreoffice/libreoffice_6.0.7.orig.tar.xz' libreoffice_6.0.7.orig.tar.xz 183202236 SHA256:fc67036b0c00c1685d39acec6c485a4a250b6bb92fc08a88377d39d2f7fd7923
-'http://archive.ubuntu.com/ubuntu/pool/main/libr/libreoffice/libreoffice_6.0.7-0ubuntu0.18.04.9.debian.tar.xz' libreoffice_6.0.7-0ubuntu0.18.04.9.debian.tar.xz 2178156 SHA256:06f86b944ed1dc59474ddd257c000c8f3d74cb747f4d11ee35515ddcd05114f6
-```
 
 ### `dpkg` source package: `librest=0.8.0-2`
 
