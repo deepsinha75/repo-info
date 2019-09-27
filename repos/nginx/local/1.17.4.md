@@ -1,16 +1,16 @@
-# `nginx:1.17.3`
+# `nginx:1.17.4`
 
 ## Docker Metadata
 
-- Image ID: `sha256:ab56bba91343aafcdd94b7a44b42e12f32719b9a2b8579e93017c1280f48e8f3`
-- Created: `2019-09-12T14:37:49.527989907Z`
-- Virtual Size: ~ 125.98 Mb  
+- Image ID: `sha256:f949e7d76d63befffc8eec2cbf8a6f509780f96fb3bacbdc24068d594a77f043`
+- Created: `2019-09-24T23:33:17.034191345Z`
+- Virtual Size: ~ 125.97 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Command: `["nginx","-g","daemon off;"]`
 - Environment:
   - `PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
-  - `NGINX_VERSION=1.17.3`
+  - `NGINX_VERSION=1.17.4`
   - `NJS_VERSION=0.3.5`
   - `PKG_RELEASE=1~buster`
 - Labels:
@@ -509,11 +509,11 @@ Other potentially useful URLs:
 - https://sources.debian.net/src/e2fsprogs/1.44.5-1+deb10u1/debian/copyright/ (for direct copyright/license information)
 - http://snapshot.debian.org/package/e2fsprogs/1.44.5-1+deb10u1/ (for access to the source package after it no longer exists in the archive)
 
-### `dpkg` source package: `expat=2.2.6-2`
+### `dpkg` source package: `expat=2.2.6-2+deb10u1`
 
 Binary Packages:
 
-- `libexpat1:amd64=2.2.6-2`
+- `libexpat1:amd64=2.2.6-2+deb10u1`
 
 Licenses: (parsed from: `/usr/share/doc/libexpat1/copyright`)
 
@@ -522,17 +522,17 @@ Licenses: (parsed from: `/usr/share/doc/libexpat1/copyright`)
 Source:
 
 ```console
-$ apt-get source -qq --print-uris expat=2.2.6-2
-'http://deb.debian.org/debian/pool/main/e/expat/expat_2.2.6-2.dsc' expat_2.2.6-2.dsc 1949 SHA256:50fb4a3159f1aeb91e23caa1d329579df956514dc42866b4c3fef0e66cb0915e
-'http://deb.debian.org/debian/pool/main/e/expat/expat_2.2.6.orig.tar.gz' expat_2.2.6.orig.tar.gz 8275473 SHA256:574499cba22a599393e28d99ecfa1e7fc85be7d6651d543045244d5b561cb7ff
-'http://deb.debian.org/debian/pool/main/e/expat/expat_2.2.6-2.debian.tar.xz' expat_2.2.6-2.debian.tar.xz 11108 SHA256:678c073cecab66cc5ea0feaf02626db4300008d9c20df9ebe81958944af31673
+$ apt-get source -qq --print-uris expat=2.2.6-2+deb10u1
+'http://security.debian.org/debian-security/pool/updates/main/e/expat/expat_2.2.6-2+deb10u1.dsc' expat_2.2.6-2+deb10u1.dsc 2136 SHA256:a32a035c9883b70ddf739eaacaa5c790ec5bf3027ba61eefdbc0cdf634aa4d96
+'http://security.debian.org/debian-security/pool/updates/main/e/expat/expat_2.2.6.orig.tar.gz' expat_2.2.6.orig.tar.gz 8275473 SHA256:574499cba22a599393e28d99ecfa1e7fc85be7d6651d543045244d5b561cb7ff
+'http://security.debian.org/debian-security/pool/updates/main/e/expat/expat_2.2.6-2+deb10u1.debian.tar.xz' expat_2.2.6-2+deb10u1.debian.tar.xz 12032 SHA256:15e75199a33c4e902788410f37e784c1082906e703c8619c4cfc715a0191e02b
 ```
 
 Other potentially useful URLs:
 
-- https://sources.debian.net/src/expat/2.2.6-2/ (for browsing the source)
-- https://sources.debian.net/src/expat/2.2.6-2/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/expat/2.2.6-2/ (for access to the source package after it no longer exists in the archive)
+- https://sources.debian.net/src/expat/2.2.6-2+deb10u1/ (for browsing the source)
+- https://sources.debian.net/src/expat/2.2.6-2+deb10u1/debian/copyright/ (for direct copyright/license information)
+- http://snapshot.debian.org/package/expat/2.2.6-2+deb10u1/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `findutils=4.6.0+git+20190209-2`
 
@@ -1844,11 +1844,11 @@ Other potentially useful URLs:
 - https://sources.debian.net/src/nettle/3.4.1-1/debian/copyright/ (for direct copyright/license information)
 - http://snapshot.debian.org/package/nettle/3.4.1-1/ (for access to the source package after it no longer exists in the archive)
 
-### `dpkg` source package: `nginx-module-geoip=1.17.3-1~buster`
+### `dpkg` source package: `nginx-module-geoip=1.17.4-1~buster`
 
 Binary Packages:
 
-- `nginx-module-geoip=1.17.3-1~buster`
+- `nginx-module-geoip=1.17.4-1~buster`
 
 **WARNING:** unable to detect licenses! (package likely not compliant with DEP-5)  
 If source is available (seen below), check the contents of `debian/copyright` within it.
@@ -1858,11 +1858,11 @@ If source is available (seen below), check the contents of `debian/copyright` wi
 This is *usually* due to a new package version being released and the old version being removed.
 
 
-### `dpkg` source package: `nginx-module-image-filter=1.17.3-1~buster`
+### `dpkg` source package: `nginx-module-image-filter=1.17.4-1~buster`
 
 Binary Packages:
 
-- `nginx-module-image-filter=1.17.3-1~buster`
+- `nginx-module-image-filter=1.17.4-1~buster`
 
 **WARNING:** unable to detect licenses! (package likely not compliant with DEP-5)  
 If source is available (seen below), check the contents of `debian/copyright` within it.
@@ -1872,11 +1872,11 @@ If source is available (seen below), check the contents of `debian/copyright` wi
 This is *usually* due to a new package version being released and the old version being removed.
 
 
-### `dpkg` source package: `nginx-module-njs=1.17.3.0.3.5-1~buster`
+### `dpkg` source package: `nginx-module-njs=1.17.4.0.3.5-1~buster`
 
 Binary Packages:
 
-- `nginx-module-njs=1.17.3.0.3.5-1~buster`
+- `nginx-module-njs=1.17.4.0.3.5-1~buster`
 
 **WARNING:** unable to detect licenses! (package likely not compliant with DEP-5)  
 If source is available (seen below), check the contents of `debian/copyright` within it.
@@ -1886,11 +1886,11 @@ If source is available (seen below), check the contents of `debian/copyright` wi
 This is *usually* due to a new package version being released and the old version being removed.
 
 
-### `dpkg` source package: `nginx-module-xslt=1.17.3-1~buster`
+### `dpkg` source package: `nginx-module-xslt=1.17.4-1~buster`
 
 Binary Packages:
 
-- `nginx-module-xslt=1.17.3-1~buster`
+- `nginx-module-xslt=1.17.4-1~buster`
 
 **WARNING:** unable to detect licenses! (package likely not compliant with DEP-5)  
 If source is available (seen below), check the contents of `debian/copyright` within it.
@@ -1900,11 +1900,11 @@ If source is available (seen below), check the contents of `debian/copyright` wi
 This is *usually* due to a new package version being released and the old version being removed.
 
 
-### `dpkg` source package: `nginx=1.17.3-1~buster`
+### `dpkg` source package: `nginx=1.17.4-1~buster`
 
 Binary Packages:
 
-- `nginx=1.17.3-1~buster`
+- `nginx=1.17.4-1~buster`
 
 **WARNING:** unable to detect licenses! (package likely not compliant with DEP-5)  
 If source is available (seen below), check the contents of `debian/copyright` within it.

@@ -1,16 +1,16 @@
-# `nginx:1.17.3-alpine`
+# `nginx:1.17.4-alpine`
 
 ## Docker Metadata
 
-- Image ID: `sha256:d87c83ec7a667bef183c7c501dd724783222da1a636be9b6d749f878c284281a`
-- Created: `2019-08-27T22:20:07.123838102Z`
+- Image ID: `sha256:4d3c246dfef2edb11eccb051b47d896d0db8f1c4563c0cce9f6274b9abd9ac74`
+- Created: `2019-09-24T23:33:59.102487314Z`
 - Virtual Size: ~ 21.23 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Command: `["nginx","-g","daemon off;"]`
 - Environment:
   - `PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
-  - `NGINX_VERSION=1.17.3`
+  - `NGINX_VERSION=1.17.4`
   - `NJS_VERSION=0.3.5`
   - `PKG_RELEASE=1`
 - Labels:
@@ -480,16 +480,16 @@ MIT
 ### `apk` package: `nginx`
 
 ```console
-nginx-1.17.3-r1 description:
+nginx-1.17.4-r1 description:
 High performance web server
 
-nginx-1.17.3-r1 webpage:
+nginx-1.17.4-r1 webpage:
 http://nginx.org/
 
-nginx-1.17.3-r1 installed size:
+nginx-1.17.4-r1 installed size:
 2547712
 
-nginx-1.17.3-r1 license:
+nginx-1.17.4-r1 license:
 2-clause BSD-like license
 
 ```
@@ -497,16 +497,16 @@ nginx-1.17.3-r1 license:
 ### `apk` package: `nginx-module-geoip`
 
 ```console
-nginx-module-geoip-1.17.3-r1 description:
+nginx-module-geoip-1.17.4-r1 description:
 nginx GeoIP dynamic modules
 
-nginx-module-geoip-1.17.3-r1 webpage:
+nginx-module-geoip-1.17.4-r1 webpage:
 http://nginx.org/
 
-nginx-module-geoip-1.17.3-r1 installed size:
+nginx-module-geoip-1.17.4-r1 installed size:
 118784
 
-nginx-module-geoip-1.17.3-r1 license:
+nginx-module-geoip-1.17.4-r1 license:
 2-clause BSD-like license
 
 ```
@@ -514,16 +514,16 @@ nginx-module-geoip-1.17.3-r1 license:
 ### `apk` package: `nginx-module-image-filter`
 
 ```console
-nginx-module-image-filter-1.17.3-r1 description:
+nginx-module-image-filter-1.17.4-r1 description:
 nginx image filter dynamic module
 
-nginx-module-image-filter-1.17.3-r1 webpage:
+nginx-module-image-filter-1.17.4-r1 webpage:
 http://nginx.org/
 
-nginx-module-image-filter-1.17.3-r1 installed size:
+nginx-module-image-filter-1.17.4-r1 installed size:
 90112
 
-nginx-module-image-filter-1.17.3-r1 license:
+nginx-module-image-filter-1.17.4-r1 license:
 2-clause BSD-like license
 
 ```
@@ -531,16 +531,16 @@ nginx-module-image-filter-1.17.3-r1 license:
 ### `apk` package: `nginx-module-njs`
 
 ```console
-nginx-module-njs-1.17.3.0.3.5-r1 description:
+nginx-module-njs-1.17.4.0.3.5-r1 description:
 nginx njs dynamic modules
 
-nginx-module-njs-1.17.3.0.3.5-r1 webpage:
+nginx-module-njs-1.17.4.0.3.5-r1 webpage:
 http://nginx.org/
 
-nginx-module-njs-1.17.3.0.3.5-r1 installed size:
+nginx-module-njs-1.17.4.0.3.5-r1 installed size:
 2093056
 
-nginx-module-njs-1.17.3.0.3.5-r1 license:
+nginx-module-njs-1.17.4.0.3.5-r1 license:
 2-clause BSD-like license
 
 ```
@@ -548,16 +548,16 @@ nginx-module-njs-1.17.3.0.3.5-r1 license:
 ### `apk` package: `nginx-module-xslt`
 
 ```console
-nginx-module-xslt-1.17.3-r1 description:
+nginx-module-xslt-1.17.4-r1 description:
 nginx xslt dynamic module
 
-nginx-module-xslt-1.17.3-r1 webpage:
+nginx-module-xslt-1.17.4-r1 webpage:
 http://nginx.org/
 
-nginx-module-xslt-1.17.3-r1 installed size:
+nginx-module-xslt-1.17.4-r1 installed size:
 86016
 
-nginx-module-xslt-1.17.3-r1 license:
+nginx-module-xslt-1.17.4-r1 license:
 2-clause BSD-like license
 
 ```
