@@ -935,9 +935,9 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris e2fsprogs=1.42.12-2
-'http://deb.debian.org/debian/pool/main/e/e2fsprogs/e2fsprogs_1.42.12-2.dsc' e2fsprogs_1.42.12-2.dsc 2200 SHA256:c0edf462e2d55c64bc0e8278602066f458efd1b744627238a1d2b38e4ac2af94
-'http://deb.debian.org/debian/pool/main/e/e2fsprogs/e2fsprogs_1.42.12.orig.tar.gz' e2fsprogs_1.42.12.orig.tar.gz 6381695 SHA256:e17846d91a0edd89fa59b064bde8f8e5cec5851e35f587bcccb4014dbd63186c
-'http://deb.debian.org/debian/pool/main/e/e2fsprogs/e2fsprogs_1.42.12-2.debian.tar.xz' e2fsprogs_1.42.12-2.debian.tar.xz 68700 SHA256:23b927df5556f4854ea26bb8e7c55cdc9a31b920d1dd0be7a2965378dde30bd4
+'http://security.debian.org/debian-security/pool/updates/main/e/e2fsprogs/e2fsprogs_1.42.12-2+deb8u1.dsc' e2fsprogs_1.42.12-2+deb8u1.dsc 2747 SHA256:f3c40ff73088858d41c1d936c79836e066bdffe8f9b6351ad67d4fa73184c5b8
+'http://security.debian.org/debian-security/pool/updates/main/e/e2fsprogs/e2fsprogs_1.42.12.orig.tar.gz' e2fsprogs_1.42.12.orig.tar.gz 6381695 SHA256:e17846d91a0edd89fa59b064bde8f8e5cec5851e35f587bcccb4014dbd63186c
+'http://security.debian.org/debian-security/pool/updates/main/e/e2fsprogs/e2fsprogs_1.42.12-2+deb8u1.debian.tar.xz' e2fsprogs_1.42.12-2+deb8u1.debian.tar.xz 70292 SHA256:250ad73c0d8577b83bfb9004be0691667cb2ec913fecf9947903ba250cfc013c
 ```
 
 Other potentially useful URLs:
@@ -4020,20 +4020,13 @@ Binary Packages:
 If source is available (seen below), check the contents of `debian/copyright` within it.
 
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris openssl=1.0.1t-1+deb8u11
-'http://security.debian.org/debian-security/pool/updates/main/o/openssl/openssl_1.0.1t-1+deb8u11.dsc' openssl_1.0.1t-1+deb8u11.dsc 2427 SHA256:1b2ea8314ab20895989a9ca0c1f6a3244baf6e889f9e9563245083ab8525e710
-'http://security.debian.org/debian-security/pool/updates/main/o/openssl/openssl_1.0.1t.orig.tar.gz' openssl_1.0.1t.orig.tar.gz 4556447 SHA256:4a6ee491a2fdb22e519c76fdc2a628bb3cec12762cd456861d207996c8a07088
-'http://security.debian.org/debian-security/pool/updates/main/o/openssl/openssl_1.0.1t-1+deb8u11.debian.tar.xz' openssl_1.0.1t-1+deb8u11.debian.tar.xz 116008 SHA256:deaab80273c0a2928a3184576856cbaa37993130a1a938a22dca6d341ffc3deb
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/openssl/1.0.1t-1+deb8u11/
 
-- https://sources.debian.net/src/openssl/1.0.1t-1+deb8u11/ (for browsing the source)
-- https://sources.debian.net/src/openssl/1.0.1t-1+deb8u11/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/openssl/1.0.1t-1+deb8u11/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `p11-kit=0.20.7-1`
 
