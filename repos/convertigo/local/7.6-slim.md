@@ -1,10 +1,10 @@
-# `convertigo:7.6.3-slim`
+# `convertigo:7.6.4-slim`
 
 ## Docker Metadata
 
-- Image ID: `sha256:924ce04c9c278694aacedba23348ad298427fa37069442576c99289e9cc7d5c9`
-- Created: `2019-09-14T02:37:16.222193549Z`
-- Virtual Size: ~ 475.98 Mb  
+- Image ID: `sha256:f223995f30a243e98afbd34ef4658abf9679c6db8fb66f7d7196b9beabe8f880`
+- Created: `2019-09-25T21:21:37.601881839Z`
+- Virtual Size: ~ 476.00 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["tini","--","/docker-entrypoint.sh"]`
@@ -28,8 +28,8 @@
   - `GOSU_GPG_KEYS=B42F6819007F00F88E364FD4036A9C25BF357DD4`
   - `TINI_VERSION=0.18.0`
   - `TINI_GPG_KEYS=6380DC428747F6C393FEACA59A84159D7001A4E5`
-  - `CONVERTIGO_VERSION=7.6.3`
-  - `CONVERTIGO_WAR_URL=https://github.com/convertigo/convertigo/releases/download/7.6.3/convertigo-7.6.3.war`
+  - `CONVERTIGO_VERSION=7.6.4`
+  - `CONVERTIGO_WAR_URL=https://github.com/convertigo/convertigo/releases/download/7.6.4/convertigo-7.6.4.war`
   - `CONVERTIGO_GPG_KEYS=6A7779BB78FE368DF74B708FD4DA8FBEB64BF75F`
 
 ## `dpkg` (`.deb`-based packages)
