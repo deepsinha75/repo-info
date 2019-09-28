@@ -1,10 +1,10 @@
-# `joomla:3.9.11-php7.1-apache`
+# `joomla:3.9.12-php7.1-apache`
 
 ## Docker Metadata
 
-- Image ID: `sha256:f08959e883678c670942be4bfdde9b33329707606a07d034e2e81e26f2fe087c`
-- Created: `2019-09-13T04:00:36.91454528Z`
-- Virtual Size: ~ 452.59 Mb  
+- Image ID: `sha256:ebaf041f47a4da1ba4264b1d9dfe2d56937ac73d032c440efd4526771b98b344`
+- Created: `2019-09-25T22:43:45.334994023Z`
+- Virtual Size: ~ 452.61 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["/entrypoint.sh"]`
@@ -27,8 +27,8 @@
   - `PHP_SHA256=7f38b5bdaae3184d325a8c70e86c010afcc33651d15faafe277a0db6d2ea2741`
   - `PHP_MD5=`
   - `JOOMLA_INSTALLATION_DISABLE_LOCALHOST_CHECK=1`
-  - `JOOMLA_VERSION=3.9.11`
-  - `JOOMLA_SHA512=f3676dc54a609d4f064b6ed8945c4ffdb6a17664d17e2dc919c21783ae9db4a7dc619ae3a7728f62e25c9ac926a8eba4f076e500cd5744c82d25fdcdb41784df`
+  - `JOOMLA_VERSION=3.9.12`
+  - `JOOMLA_SHA512=2b9b5b44ee977f64ea9ff65e7f5ad505b70b3cccfefb03129b57cfa3bf7d43615707010acf89f9599f499b77a2f4aa0bbe725950efceae6bd32cecfed0b4f582`
 - Labels:
   - `maintainer=Michael Babker <michael.babker@joomla.org> (@mbabker)`
 
