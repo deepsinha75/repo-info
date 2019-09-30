@@ -1,10 +1,10 @@
-# `neo4j:3.5.9`
+# `neo4j:3.5.11`
 
 ## Docker Metadata
 
-- Image ID: `sha256:2b067a77a37e2809cc2fa7c4939a6b29d4dd891b3a5c3de59a12e9b0e9c3b973`
-- Created: `2019-09-14T01:53:15.214472605Z`
-- Virtual Size: ~ 307.17 Mb  
+- Image ID: `sha256:25cfc12c88b835682900598f3809b5174745ef46eb3e4b1342bd39e0e5974a55`
+- Created: `2019-09-27T01:32:58.167032119Z`
+- Virtual Size: ~ 363.23 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["/sbin/tini","-g","--","/docker-entrypoint.sh"]`
@@ -16,8 +16,8 @@
   - `JAVA_VERSION=8u222`
   - `JAVA_BASE_URL=https://github.com/AdoptOpenJDK/openjdk8-upstream-binaries/releases/download/jdk8u222-b10/OpenJDK8U-jre_`
   - `JAVA_URL_VERSION=8u222b10`
-  - `NEO4J_SHA256=cf0e6c6e9733cda11922a4a060e53269ac05b6e55cb7817c55621e005928f6cf`
-  - `NEO4J_TARBALL=neo4j-community-3.5.9-unix.tar.gz`
+  - `NEO4J_SHA256=4dd4f2b6c32e216b42ab8d2235f10c4d992d567d36927df93d2d9fb1763e6376`
+  - `NEO4J_TARBALL=neo4j-community-3.5.11-unix.tar.gz`
   - `NEO4J_EDITION=community`
   - `NEO4J_HOME=/var/lib/neo4j`
   - `TINI_VERSION=v0.18.0`
@@ -915,6 +915,37 @@ Other potentially useful URLs:
 - https://sources.debian.net/src/init-system-helpers/1.56+nmu1/debian/copyright/ (for direct copyright/license information)
 - http://snapshot.debian.org/package/init-system-helpers/1.56+nmu1/ (for access to the source package after it no longer exists in the archive)
 
+### `dpkg` source package: `jq=1.5+dfsg-2`
+
+Binary Packages:
+
+- `jq=1.5+dfsg-2+b1`
+- `libjq1:amd64=1.5+dfsg-2+b1`
+
+Licenses: (parsed from: `/usr/share/doc/jq/copyright`, `/usr/share/doc/libjq1/copyright`)
+
+- `Apache-2.0`
+- `CC-BY-3.0`
+- `Expat`
+- `GPL-2`
+- `GPL-2.0+`
+- `MIT`
+
+Source:
+
+```console
+$ apt-get source -qq --print-uris jq=1.5+dfsg-2
+'http://deb.debian.org/debian/pool/main/j/jq/jq_1.5+dfsg-2.dsc' jq_1.5+dfsg-2.dsc 2046 SHA256:6168fa3f520a0198a7aa53cd6b18c3eff7fe820d2789a973612690c3d45d659b
+'http://deb.debian.org/debian/pool/main/j/jq/jq_1.5+dfsg.orig.tar.gz' jq_1.5+dfsg.orig.tar.gz 726062 SHA256:b3854c00687ab93de06d90ca9c46bf200a0c7f5c6216e63029c3ff97a3b75713
+'http://deb.debian.org/debian/pool/main/j/jq/jq_1.5+dfsg-2.debian.tar.xz' jq_1.5+dfsg-2.debian.tar.xz 13880 SHA256:bc6e5b8066ae59aee2ef393006905cbb33db047c256d5a5d269ae120957a0c88
+```
+
+Other potentially useful URLs:
+
+- https://sources.debian.net/src/jq/1.5+dfsg-2/ (for browsing the source)
+- https://sources.debian.net/src/jq/1.5+dfsg-2/debian/copyright/ (for direct copyright/license information)
+- http://snapshot.debian.org/package/jq/1.5+dfsg-2/ (for access to the source package after it no longer exists in the archive)
+
 ### `dpkg` source package: `keyutils=1.6-6`
 
 Binary Packages:
@@ -1112,6 +1143,33 @@ Other potentially useful URLs:
 - https://sources.debian.net/src/libidn2/2.0.5-1/ (for browsing the source)
 - https://sources.debian.net/src/libidn2/2.0.5-1/debian/copyright/ (for direct copyright/license information)
 - http://snapshot.debian.org/package/libidn2/2.0.5-1/ (for access to the source package after it no longer exists in the archive)
+
+### `dpkg` source package: `libonig=6.9.1-1`
+
+Binary Packages:
+
+- `libonig5:amd64=6.9.1-1`
+
+Licenses: (parsed from: `/usr/share/doc/libonig5/copyright`)
+
+- `BSD-2-clause`
+- `GPL-2`
+- `GPL-2+`
+
+Source:
+
+```console
+$ apt-get source -qq --print-uris libonig=6.9.1-1
+'http://deb.debian.org/debian/pool/main/libo/libonig/libonig_6.9.1-1.dsc' libonig_6.9.1-1.dsc 1854 SHA256:597b84337f078a46e9212eeedf39ba22723bf7447cf3d117a15c5635a390f955
+'http://deb.debian.org/debian/pool/main/libo/libonig/libonig_6.9.1.orig.tar.gz' libonig_6.9.1.orig.tar.gz 535443 SHA256:733a91e257c20cb17b81596db48fd0fbd2e0074fe922ae4c2bc4fefcec110aae
+'http://deb.debian.org/debian/pool/main/libo/libonig/libonig_6.9.1-1.debian.tar.xz' libonig_6.9.1-1.debian.tar.xz 7800 SHA256:29e99f42ee8dcf7498b85de13c4e2b07548e52fed9f40bd85f90431db7f03ab6
+```
+
+Other potentially useful URLs:
+
+- https://sources.debian.net/src/libonig/6.9.1-1/ (for browsing the source)
+- https://sources.debian.net/src/libonig/6.9.1-1/debian/copyright/ (for direct copyright/license information)
+- http://snapshot.debian.org/package/libonig/6.9.1-1/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `libpsl=0.20.2-2`
 
