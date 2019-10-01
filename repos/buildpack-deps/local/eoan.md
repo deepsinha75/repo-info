@@ -308,14 +308,9 @@ Licenses: (parsed from: `/usr/share/doc/binutils/copyright`, `/usr/share/doc/bin
 - `GPL`
 - `LGPL`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris binutils=2.32.51.20190905-0ubuntu1
-'http://archive.ubuntu.com/ubuntu/pool/main/b/binutils/binutils_2.32.51.20190905-0ubuntu1.dsc' binutils_2.32.51.20190905-0ubuntu1.dsc 11012 SHA256:b81cb25298e523b77f7370a81ffb3e8d9414b2768d11f5b531d2759a444c23a6
-'http://archive.ubuntu.com/ubuntu/pool/main/b/binutils/binutils_2.32.51.20190905.orig.tar.xz' binutils_2.32.51.20190905.orig.tar.xz 20980960 SHA256:e15dbe0d9111a1505d7475ff74fb143aafddb14d46fe48508d2114e129f50925
-'http://archive.ubuntu.com/ubuntu/pool/main/b/binutils/binutils_2.32.51.20190905-0ubuntu1.debian.tar.xz' binutils_2.32.51.20190905-0ubuntu1.debian.tar.xz 96052 SHA256:54d42a3858d31e72ff6cae33be44ba45d4d6ca9015d2959f76ae86ac92256c6c
-```
 
 ### `dpkg` source package: `bzip2=1.0.6-9.2`
 
@@ -3878,14 +3873,13 @@ Licenses: (parsed from: `/usr/share/doc/libtiff-dev/copyright`, `/usr/share/doc/
 
 - `Hylafax`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris tiff=4.0.10+git190818-1
-'http://archive.ubuntu.com/ubuntu/pool/main/t/tiff/tiff_4.0.10+git190818-1.dsc' tiff_4.0.10+git190818-1.dsc 2243 SHA256:d40d31e505b6e72942ac42050264766b967d94a0f798d741fde5970c6414dc4d
-'http://archive.ubuntu.com/ubuntu/pool/main/t/tiff/tiff_4.0.10+git190818.orig.tar.xz' tiff_4.0.10+git190818.orig.tar.xz 1476852 SHA256:2cd141146e05fd998fcf0e137a3a66d87fc8efbc4d5a44ed1e6a369acc242af8
-'http://archive.ubuntu.com/ubuntu/pool/main/t/tiff/tiff_4.0.10+git190818-1.debian.tar.xz' tiff_4.0.10+git190818-1.debian.tar.xz 18484 SHA256:4abcfb63a45bfb1a4d6013f9a0c195e108ccc575cb99393f0408d53ec84779d5
-```
+The source package *may* still be available for download from:
+
+- http://snapshot.debian.org/package/tiff/4.0.10+git190818-1/
+
 
 ### `dpkg` source package: `ubuntu-keyring=2018.09.18.1`
 
