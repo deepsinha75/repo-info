@@ -1,17 +1,17 @@
-# `znc:1.7.4`
+# `znc:1.7.5`
 
 ## Docker Metadata
 
-- Image ID: `sha256:356d07a35922490f3bab372e6bfdfe8009e101edb0f885b2229645d73a0c8a22`
-- Created: `2019-06-25T01:24:38.584079821Z`
-- Virtual Size: ~ 364.67 Mb  
+- Image ID: `sha256:5495e325e20a5df2fd81a6558b503fcdcaab9c11e22247fa3d66c4e69773980b`
+- Created: `2019-09-27T22:28:02.334436116Z`
+- Virtual Size: ~ 365.58 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["/entrypoint.sh"]`
 - Environment:
   - `PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
   - `GPG_KEY=D5823CACB477191CAC0075555AE420CC0209989E`
-  - `ZNC_VERSION=1.7.4`
+  - `ZNC_VERSION=1.7.5`
 
 ## `apk` (`.apk`-based packages)
 
@@ -69,16 +69,16 @@ GPL2
 ### `apk` package: `binutils`
 
 ```console
-binutils-2.30-r5 description:
+binutils-2.30-r6 description:
 Tools necessary to build programs
 
-binutils-2.30-r5 webpage:
+binutils-2.30-r6 webpage:
 https://www.gnu.org/software/binutils/
 
-binutils-2.30-r5 installed size:
+binutils-2.30-r6 installed size:
 10932224
 
-binutils-2.30-r5 license:
+binutils-2.30-r6 license:
 GPL-2.0 GPL-3.0-or-later LGPL-2.0 BSD
 
 ```
@@ -273,16 +273,16 @@ custom
 ### `apk` package: `expat`
 
 ```console
-expat-2.2.5-r0 description:
+expat-2.2.8-r0 description:
 An XML Parser library written in C
 
-expat-2.2.5-r0 webpage:
+expat-2.2.8-r0 webpage:
 http://www.libexpat.org/
 
-expat-2.2.5-r0 installed size:
+expat-2.2.8-r0 installed size:
 176128
 
-expat-2.2.5-r0 license:
+expat-2.2.8-r0 license:
 MIT
 
 ```
@@ -290,16 +290,16 @@ MIT
 ### `apk` package: `file`
 
 ```console
-file-5.32-r0 description:
+file-5.32-r1 description:
 File type identification utility
 
-file-5.32-r0 webpage:
+file-5.32-r1 webpage:
 http://www.darwinsys.com/file/
 
-file-5.32-r0 installed size:
+file-5.32-r1 installed size:
 32768
 
-file-5.32-r0 license:
+file-5.32-r1 license:
 BSD
 
 ```
@@ -392,16 +392,16 @@ LGPL-3.0
 ### `apk` package: `heimdal-libs`
 
 ```console
-heimdal-libs-7.5.0-r2 description:
+heimdal-libs-7.5.0-r3 description:
 Heimdal libraries
 
-heimdal-libs-7.5.0-r2 webpage:
+heimdal-libs-7.5.0-r3 webpage:
 http://www.h5l.org/
 
-heimdal-libs-7.5.0-r2 installed size:
+heimdal-libs-7.5.0-r3 installed size:
 3117056
 
-heimdal-libs-7.5.0-r2 license:
+heimdal-libs-7.5.0-r3 license:
 BSD-3-Clause
 
 ```
@@ -511,16 +511,16 @@ LGPL-2.1-or-later AND GPL-2.0-or-later
 ### `apk` package: `libarchive`
 
 ```console
-libarchive-3.3.2-r3 description:
+libarchive-3.3.3-r0 description:
 library that can create and read several streaming archive formats
 
-libarchive-3.3.2-r3 webpage:
+libarchive-3.3.3-r0 webpage:
 http://libarchive.org/
 
-libarchive-3.3.2-r3 installed size:
-626688
+libarchive-3.3.3-r0 installed size:
+630784
 
-libarchive-3.3.2-r3 license:
+libarchive-3.3.3-r0 license:
 BSD
 
 ```
@@ -562,16 +562,16 @@ GPL-2.0-or-later LGPL-2.0-or-later
 ### `apk` package: `libbz2`
 
 ```console
-libbz2-1.0.6-r6 description:
+libbz2-1.0.6-r7 description:
 Shared library for bz2
 
-libbz2-1.0.6-r6 webpage:
+libbz2-1.0.6-r7 webpage:
 http://sources.redhat.com/bzip2
 
-libbz2-1.0.6-r6 installed size:
+libbz2-1.0.6-r7 installed size:
 69632
 
-libbz2-1.0.6-r6 license:
+libbz2-1.0.6-r7 license:
 BSD
 
 ```
@@ -630,16 +630,16 @@ GPL-2.0-or-later LGPL-2.0 BSD-3-Clause MIT
 ### `apk` package: `libcurl`
 
 ```console
-libcurl-7.61.1-r2 description:
+libcurl-7.61.1-r3 description:
 The multiprotocol file transfer library
 
-libcurl-7.61.1-r2 webpage:
+libcurl-7.61.1-r3 webpage:
 https://curl.haxx.se
 
-libcurl-7.61.1-r2 installed size:
+libcurl-7.61.1-r3 installed size:
 466944
 
-libcurl-7.61.1-r2 license:
+libcurl-7.61.1-r3 license:
 MIT
 
 ```
@@ -698,16 +698,16 @@ GPL LGPL
 ### `apk` package: `libmagic`
 
 ```console
-libmagic-5.32-r0 description:
+libmagic-5.32-r1 description:
 File type identification library
 
-libmagic-5.32-r0 webpage:
+libmagic-5.32-r1 webpage:
 http://www.darwinsys.com/file/
 
-libmagic-5.32-r0 installed size:
+libmagic-5.32-r1 installed size:
 5111808
 
-libmagic-5.32-r0 license:
+libmagic-5.32-r1 license:
 BSD
 
 ```
@@ -919,16 +919,16 @@ GPL LGPL
 ### `apk` package: `musl`
 
 ```console
-musl-1.1.19-r10 description:
+musl-1.1.19-r11 description:
 the musl c library (libc) implementation
 
-musl-1.1.19-r10 webpage:
+musl-1.1.19-r11 webpage:
 http://www.musl-libc.org/
 
-musl-1.1.19-r10 installed size:
+musl-1.1.19-r11 installed size:
 602112
 
-musl-1.1.19-r10 license:
+musl-1.1.19-r11 license:
 MIT
 
 ```
@@ -936,16 +936,16 @@ MIT
 ### `apk` package: `musl-dev`
 
 ```console
-musl-dev-1.1.19-r10 description:
+musl-dev-1.1.19-r11 description:
 the musl c library (libc) implementation (development files)
 
-musl-dev-1.1.19-r10 webpage:
+musl-dev-1.1.19-r11 webpage:
 http://www.musl-libc.org/
 
-musl-dev-1.1.19-r10 installed size:
+musl-dev-1.1.19-r11 installed size:
 10567680
 
-musl-dev-1.1.19-r10 license:
+musl-dev-1.1.19-r11 license:
 MIT
 
 ```
@@ -953,16 +953,16 @@ MIT
 ### `apk` package: `musl-utils`
 
 ```console
-musl-utils-1.1.19-r10 description:
+musl-utils-1.1.19-r11 description:
 the musl c library (libc) implementation
 
-musl-utils-1.1.19-r10 webpage:
+musl-utils-1.1.19-r11 webpage:
 http://www.musl-libc.org/
 
-musl-utils-1.1.19-r10 installed size:
+musl-utils-1.1.19-r11 installed size:
 122880
 
-musl-utils-1.1.19-r10 license:
+musl-utils-1.1.19-r11 license:
 MIT BSD GPL2+
 
 ```
@@ -1021,16 +1021,16 @@ MIT
 ### `apk` package: `nghttp2-libs`
 
 ```console
-nghttp2-libs-1.32.0-r0 description:
+nghttp2-libs-1.39.2-r0 description:
 Experimental HTTP/2 client, server and proxy (libraries)
 
-nghttp2-libs-1.32.0-r0 webpage:
+nghttp2-libs-1.39.2-r0 webpage:
 https://nghttp2.org
 
-nghttp2-libs-1.32.0-r0 installed size:
-151552
+nghttp2-libs-1.39.2-r0 installed size:
+155648
 
-nghttp2-libs-1.32.0-r0 license:
+nghttp2-libs-1.39.2-r0 license:
 MIT
 
 ```
@@ -1157,16 +1157,16 @@ GPL-2.0
 ### `apk` package: `sqlite-libs`
 
 ```console
-sqlite-libs-3.25.3-r0 description:
+sqlite-libs-3.25.3-r1 description:
 Sqlite3 library
 
-sqlite-libs-3.25.3-r0 webpage:
+sqlite-libs-3.25.3-r1 webpage:
 http://www.sqlite.org
 
-sqlite-libs-3.25.3-r0 installed size:
+sqlite-libs-3.25.3-r1 installed size:
 913408
 
-sqlite-libs-3.25.3-r0 license:
+sqlite-libs-3.25.3-r1 license:
 Public-Domain
 
 ```
@@ -1225,16 +1225,16 @@ MIT
 ### `apk` package: `tzdata`
 
 ```console
-tzdata-2019a-r0 description:
+tzdata-2019b-r0 description:
 Timezone data
 
-tzdata-2019a-r0 webpage:
+tzdata-2019b-r0 webpage:
 https://www.iana.org/time-zones
 
-tzdata-2019a-r0 installed size:
-3518464
+tzdata-2019b-r0 installed size:
+3522560
 
-tzdata-2019a-r0 license:
+tzdata-2019b-r0 license:
 Public-Domain
 
 ```

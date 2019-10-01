@@ -1,17 +1,17 @@
-# `znc:1.7.4-slim`
+# `znc:1.7.5-slim`
 
 ## Docker Metadata
 
-- Image ID: `sha256:9556d9fec1b5253e04c850356b55a330551b4701292cea970107045066ec433b`
-- Created: `2019-06-25T01:24:21.694157454Z`
-- Virtual Size: ~ 88.60 Mb  
+- Image ID: `sha256:870a0d55d273db14f658077b24013f4b9f54a195c880c725c3ae6b578313f7f4`
+- Created: `2019-09-27T22:27:40.050808876Z`
+- Virtual Size: ~ 89.50 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["/entrypoint.sh"]`
 - Environment:
   - `PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
   - `GPG_KEY=D5823CACB477191CAC0075555AE420CC0209989E`
-  - `ZNC_VERSION=1.7.4`
+  - `ZNC_VERSION=1.7.5`
 
 ## `apk` (`.apk`-based packages)
 
@@ -222,16 +222,16 @@ custom
 ### `apk` package: `heimdal-libs`
 
 ```console
-heimdal-libs-7.5.0-r2 description:
+heimdal-libs-7.5.0-r3 description:
 Heimdal libraries
 
-heimdal-libs-7.5.0-r2 webpage:
+heimdal-libs-7.5.0-r3 webpage:
 http://www.h5l.org/
 
-heimdal-libs-7.5.0-r2 installed size:
+heimdal-libs-7.5.0-r3 installed size:
 3117056
 
-heimdal-libs-7.5.0-r2 license:
+heimdal-libs-7.5.0-r3 license:
 BSD-3-Clause
 
 ```
@@ -426,16 +426,16 @@ GPL LGPL
 ### `apk` package: `musl`
 
 ```console
-musl-1.1.19-r10 description:
+musl-1.1.19-r11 description:
 the musl c library (libc) implementation
 
-musl-1.1.19-r10 webpage:
+musl-1.1.19-r11 webpage:
 http://www.musl-libc.org/
 
-musl-1.1.19-r10 installed size:
+musl-1.1.19-r11 installed size:
 602112
 
-musl-1.1.19-r10 license:
+musl-1.1.19-r11 license:
 MIT
 
 ```
@@ -443,16 +443,16 @@ MIT
 ### `apk` package: `musl-utils`
 
 ```console
-musl-utils-1.1.19-r10 description:
+musl-utils-1.1.19-r11 description:
 the musl c library (libc) implementation
 
-musl-utils-1.1.19-r10 webpage:
+musl-utils-1.1.19-r11 webpage:
 http://www.musl-libc.org/
 
-musl-utils-1.1.19-r10 installed size:
+musl-utils-1.1.19-r11 installed size:
 122880
 
-musl-utils-1.1.19-r10 license:
+musl-utils-1.1.19-r11 license:
 MIT BSD GPL2+
 
 ```
@@ -562,16 +562,16 @@ GPL-2.0
 ### `apk` package: `sqlite-libs`
 
 ```console
-sqlite-libs-3.25.3-r0 description:
+sqlite-libs-3.25.3-r1 description:
 Sqlite3 library
 
-sqlite-libs-3.25.3-r0 webpage:
+sqlite-libs-3.25.3-r1 webpage:
 http://www.sqlite.org
 
-sqlite-libs-3.25.3-r0 installed size:
+sqlite-libs-3.25.3-r1 installed size:
 913408
 
-sqlite-libs-3.25.3-r0 license:
+sqlite-libs-3.25.3-r1 license:
 Public-Domain
 
 ```
@@ -630,16 +630,16 @@ MIT
 ### `apk` package: `tzdata`
 
 ```console
-tzdata-2019a-r0 description:
+tzdata-2019b-r0 description:
 Timezone data
 
-tzdata-2019a-r0 webpage:
+tzdata-2019b-r0 webpage:
 https://www.iana.org/time-zones
 
-tzdata-2019a-r0 installed size:
-3518464
+tzdata-2019b-r0 installed size:
+3522560
 
-tzdata-2019a-r0 license:
+tzdata-2019b-r0 license:
 Public-Domain
 
 ```
