@@ -2,16 +2,16 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:afa4ca513bad1dd9e48a0106a3b724988355166ecf7ca784762e30b6f14a8b48`
-- Created: `2019-09-19T03:29:38.351018382Z`
-- Virtual Size: ~ 387.08 Mb  
+- Image ID: `sha256:687e88527ac8c8926efdcd265454b978c01e90ec374a246c883b7db3f0539fdf`
+- Created: `2019-09-27T22:54:43.417560002Z`
+- Virtual Size: ~ 387.62 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["/opt/ibm/helpers/runtime/docker-server.sh"]`
 - Command: `["/opt/ibm/wlp/bin/server","run","defaultServer"]`
 - Environment:
   - `PATH=/opt/ibm/wlp/bin:/opt/ibm/helpers/build:/opt/ibm/java/jre/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
-  - `JAVA_VERSION=1.8.0_sr5fp40`
+  - `JAVA_VERSION=1.8.0_sr5fp41`
   - `JAVA_HOME=/opt/ibm/java/jre`
   - `IBM_JAVA_OPTIONS=-Xshareclasses:name=liberty,nonfatal,cacheDir=/output/.classCache/ -XX:+UseContainerSupport`
   - `LIBERTY_VERSION=19.0.0_09`
