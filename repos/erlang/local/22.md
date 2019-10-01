@@ -1,20 +1,20 @@
-# `erlang:22.1`
+# `erlang:22.1.1`
 
 ## Docker Metadata
 
-- Image ID: `sha256:91d3aee31655c735d62d4ea66667cf1de98d3fe04cccaa64616b4165c9d8a6aa`
-- Created: `2019-09-20T23:32:06.263118458Z`
+- Image ID: `sha256:4b3a51c314cddbbd8393b22ce10bfb66daae62ee483f9162b4517b423304b084`
+- Created: `2019-09-27T21:35:21.836004389Z`
 - Virtual Size: ~ 1.07 Gb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Command: `["erl"]`
 - Environment:
   - `PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
-  - `OTP_VERSION=22.1`
+  - `OTP_VERSION=22.1.1`
   - `REBAR3_VERSION=3.12.0`
   - `REBAR_VERSION=2.6.4`
 - Labels:
-  - `org.opencontainers.image.version=22.1`
+  - `org.opencontainers.image.version=22.1.1`
 
 ## `dpkg` (`.deb`-based packages)
 
