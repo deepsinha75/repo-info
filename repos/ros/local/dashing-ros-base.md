@@ -751,15 +751,9 @@ Licenses: (parsed from: `/usr/share/doc/e2fsprogs/copyright`, `/usr/share/doc/li
 - `GPL-2`
 - `LGPL-2`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris e2fsprogs=1.44.1-1ubuntu1.1
-'http://archive.ubuntu.com/ubuntu/pool/main/e/e2fsprogs/e2fsprogs_1.44.1-1ubuntu1.1.dsc' e2fsprogs_1.44.1-1ubuntu1.1.dsc 3204 SHA256:b6949b19989d5e22257dca08416de38b5328f79fc2742e0dce297e1566c31992
-'http://archive.ubuntu.com/ubuntu/pool/main/e/e2fsprogs/e2fsprogs_1.44.1.orig.tar.gz' e2fsprogs_1.44.1.orig.tar.gz 7544908 SHA256:a5a8068dfe105050d8c63d67515a0ae5fff3f37232f725e0aa72b389eeb6c1e6
-'http://archive.ubuntu.com/ubuntu/pool/main/e/e2fsprogs/e2fsprogs_1.44.1.orig.tar.gz.asc' e2fsprogs_1.44.1.orig.tar.gz.asc 488 SHA256:6e8eb8df52f5cd577f5eae489108c6fbe2c5381e01f83c325873e034d5a84e46
-'http://archive.ubuntu.com/ubuntu/pool/main/e/e2fsprogs/e2fsprogs_1.44.1-1ubuntu1.1.debian.tar.xz' e2fsprogs_1.44.1-1ubuntu1.1.debian.tar.xz 78448 SHA256:4ccbbae034750cb5126618f66abb8e9af7a35d6943c81572168b07279447383f
-```
 
 ### `dpkg` source package: `eigen3=3.3.4-4`
 
@@ -2241,9 +2235,9 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris linux=4.15.0-64.73
-'http://archive.ubuntu.com/ubuntu/pool/main/l/linux/linux_4.15.0-64.73.dsc' linux_4.15.0-64.73.dsc 7304 SHA256:3c4820fadece10e8efd41b97c588445271a7d0886c96628e1555d88d3fe90b72
-'http://archive.ubuntu.com/ubuntu/pool/main/l/linux/linux_4.15.0.orig.tar.gz' linux_4.15.0.orig.tar.gz 157656459 SHA256:c33b8ba5c45a40b689979caa2421c4d933864cd70eb93c00eb69adf43e9a24fc
-'http://archive.ubuntu.com/ubuntu/pool/main/l/linux/linux_4.15.0-64.73.diff.gz' linux_4.15.0-64.73.diff.gz 8251892 SHA256:8a9c2490a913077479ec9bf31c7700eec9402dfa04d3f4769097f90f3306f546
+'http://security.ubuntu.com/ubuntu/pool/main/l/linux/linux_4.15.0-64.73.dsc' linux_4.15.0-64.73.dsc 7304 SHA256:3c4820fadece10e8efd41b97c588445271a7d0886c96628e1555d88d3fe90b72
+'http://security.ubuntu.com/ubuntu/pool/main/l/linux/linux_4.15.0.orig.tar.gz' linux_4.15.0.orig.tar.gz 157656459 SHA256:c33b8ba5c45a40b689979caa2421c4d933864cd70eb93c00eb69adf43e9a24fc
+'http://security.ubuntu.com/ubuntu/pool/main/l/linux/linux_4.15.0-64.73.diff.gz' linux_4.15.0-64.73.diff.gz 8251892 SHA256:8a9c2490a913077479ec9bf31c7700eec9402dfa04d3f4769097f90f3306f546
 ```
 
 ### `dpkg` source package: `lsb=9.20170808ubuntu1`
