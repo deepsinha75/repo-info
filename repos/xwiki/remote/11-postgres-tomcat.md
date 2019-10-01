@@ -1,7 +1,7 @@
 ## `xwiki:11-postgres-tomcat`
 
 ```console
-$ docker pull xwiki@sha256:e4e252b4ff85d94450684eb0d6bee3296ecd1deab411e35955b90b2c03f886f8
+$ docker pull xwiki@sha256:02bdf2b3a16c741e9c18e04615790362ddf4c98ee313d801dd1519d7622e436d
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -12,14 +12,14 @@ $ docker pull xwiki@sha256:e4e252b4ff85d94450684eb0d6bee3296ecd1deab411e35955b90
 ### `xwiki:11-postgres-tomcat` - linux; amd64
 
 ```console
-$ docker pull xwiki@sha256:abfa6581765653d418b66bfc710fa7c5ce7861080bff9b08896a315f3ab3499b
+$ docker pull xwiki@sha256:0487ce913ad908c08b59853ab0021f430a01c7b5dbfe05f78f3c473186b68696
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **713.1 MB (713063743 bytes)**  
+-	Total Size: **714.6 MB (714589867 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:8ffe6f158a6cd0e1c35aa743c1d848befad10267773546e09d43bd62ea9401ac`
+-	Image ID: `sha256:a895f5eb7ccec14755997f9eeaac4cde160f262d957b25dc0ddd2eff6cf20dd1`
 -	Entrypoint: `["docker-entrypoint.sh"]`
 -	Default Command: `["xwiki"]`
 
@@ -78,29 +78,29 @@ CMD ["catalina.sh" "run"]
 MAINTAINER Vincent Massol <vincent@massol.net>
 # Fri, 20 Sep 2019 02:15:13 GMT
 RUN apt-get update &&   apt-get --no-install-recommends -y install     curl     libreoffice     unzip     procps     libpostgresql-jdbc-java &&   rm -rf /var/lib/apt/lists/*
-# Fri, 20 Sep 2019 02:15:13 GMT
-ENV XWIKI_VERSION=11.7
-# Fri, 20 Sep 2019 02:15:13 GMT
-ENV XWIKI_URL_PREFIX=https://maven.xwiki.org/releases/org/xwiki/platform/xwiki-platform-distribution-war/11.7
-# Fri, 20 Sep 2019 02:15:14 GMT
-ENV XWIKI_DOWNLOAD_SHA256=b3ab6ed460a963ff5412294f103b6142808812950011235a223ddafaf8ec4e59
-# Fri, 20 Sep 2019 02:15:47 GMT
+# Mon, 30 Sep 2019 22:43:53 GMT
+ENV XWIKI_VERSION=11.8
+# Mon, 30 Sep 2019 22:43:53 GMT
+ENV XWIKI_URL_PREFIX=https://maven.xwiki.org/releases/org/xwiki/platform/xwiki-platform-distribution-war/11.8
+# Mon, 30 Sep 2019 22:43:53 GMT
+ENV XWIKI_DOWNLOAD_SHA256=0143c34ba155125bbeefe4e8fa2f0ae2f5c54af02454174d39cfdc7bd713e6ee
+# Mon, 30 Sep 2019 22:44:28 GMT
 RUN rm -rf /usr/local/tomcat/webapps/* &&   mkdir -p /usr/local/tomcat/temp &&   mkdir -p /usr/local/xwiki/data &&   curl -fSL "${XWIKI_URL_PREFIX}/xwiki-platform-distribution-war-${XWIKI_VERSION}.war" -o xwiki.war &&   echo "$XWIKI_DOWNLOAD_SHA256 xwiki.war" | sha256sum -c - &&   unzip -d /usr/local/tomcat/webapps/ROOT xwiki.war &&   rm -f xwiki.war
-# Fri, 20 Sep 2019 02:15:48 GMT
+# Mon, 30 Sep 2019 22:44:29 GMT
 RUN cp /usr/share/java/postgresql-jdbc4.jar /usr/local/tomcat/webapps/ROOT/WEB-INF/lib/
-# Fri, 20 Sep 2019 02:15:48 GMT
+# Mon, 30 Sep 2019 22:44:29 GMT
 COPY file:0a1be11e2eb610a1dbcd415404e3a592641110b93090030cb831e3a19a163017 in /usr/local/tomcat/bin/ 
-# Fri, 20 Sep 2019 02:15:49 GMT
+# Mon, 30 Sep 2019 22:44:30 GMT
 COPY file:bb513b07693b0f03295b679c3da15a7fa3d7769583b3db4897a41cfec3529978 in /usr/local/tomcat/webapps/ROOT/WEB-INF/hibernate.cfg.xml 
-# Fri, 20 Sep 2019 02:15:49 GMT
+# Mon, 30 Sep 2019 22:44:30 GMT
 RUN sed -i 's/<id>org.xwiki.platform:xwiki-platform-distribution-war/<id>org.xwiki.platform:xwiki-platform-distribution-docker/'   /usr/local/tomcat/webapps/ROOT/META-INF/extension.xed
-# Fri, 20 Sep 2019 02:15:49 GMT
+# Mon, 30 Sep 2019 22:44:30 GMT
 COPY file:f901b2d7ac3d76cd8346f9aee81b40529183e81d8aa027bb390856ac01fa6cc0 in /usr/local/bin/docker-entrypoint.sh 
-# Fri, 20 Sep 2019 02:15:50 GMT
+# Mon, 30 Sep 2019 22:44:31 GMT
 VOLUME [/usr/local/xwiki]
-# Fri, 20 Sep 2019 02:15:50 GMT
+# Mon, 30 Sep 2019 22:44:31 GMT
 ENTRYPOINT ["docker-entrypoint.sh"]
-# Fri, 20 Sep 2019 02:15:50 GMT
+# Mon, 30 Sep 2019 22:44:31 GMT
 CMD ["xwiki"]
 ```
 
@@ -145,42 +145,42 @@ CMD ["xwiki"]
 		Last Modified: Fri, 20 Sep 2019 02:19:47 GMT  
 		Size: 182.2 MB (182180112 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:74f3cd8e43a4f8c23fdc99495b213a0654c3d895324083e23691b2bc64c0a448`  
-		Last Modified: Fri, 20 Sep 2019 02:19:31 GMT  
-		Size: 282.4 MB (282442975 bytes)  
+	-	`sha256:3505b9197be35c16d29c49a096756067e2544245e6c8fb2ed23b7c341022c44b`  
+		Last Modified: Mon, 30 Sep 2019 22:45:34 GMT  
+		Size: 284.0 MB (283969103 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c7eb697494b50088af482c4595987fd6e75706be6d6ff671ab1710e24138fe7f`  
-		Last Modified: Fri, 20 Sep 2019 02:19:09 GMT  
-		Size: 618.9 KB (618863 bytes)  
+	-	`sha256:9e357f4f37e642013418fb5b6a9b97f8f0f0ea42a6c15a685fbd2522b35b4f9a`  
+		Last Modified: Mon, 30 Sep 2019 22:45:15 GMT  
+		Size: 618.9 KB (618853 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:3a60fc9aef6f3e5f63f3f8470caf97dad9c66511a14b408b5b064f96aa385784`  
-		Last Modified: Fri, 20 Sep 2019 02:19:09 GMT  
-		Size: 1.3 KB (1343 bytes)  
+	-	`sha256:c24dc10dff29aa759f722b88cd53b9f4b018c9192cc2c9d16824aec0ecd8974d`  
+		Last Modified: Mon, 30 Sep 2019 22:45:15 GMT  
+		Size: 1.3 KB (1344 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:b7047c1005a776769369044aa0dbcf9b4578160e1724a02e8e1a2c8a3217c884`  
-		Last Modified: Fri, 20 Sep 2019 02:19:09 GMT  
-		Size: 2.5 KB (2473 bytes)  
+	-	`sha256:59b3a460c3d35e4f650ce4b7b8093f3f7eea7783be38b1e801665c2c65d64fe7`  
+		Last Modified: Mon, 30 Sep 2019 22:45:15 GMT  
+		Size: 2.5 KB (2475 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:6259c80d78eb71cbdd96fd76666dd483167df1761f267383a5641a5c1cde09e1`  
-		Last Modified: Fri, 20 Sep 2019 02:19:09 GMT  
-		Size: 4.1 KB (4121 bytes)  
+	-	`sha256:2d48540746637f82c81e7bae081d944e88c170634826a5fb958e9ba9bcdf8f89`  
+		Last Modified: Mon, 30 Sep 2019 22:45:15 GMT  
+		Size: 4.1 KB (4120 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:a46722918f21c105162b80aa630ac0f7d2d8ac5776b6edf161a0f999cf5cb5e6`  
-		Last Modified: Fri, 20 Sep 2019 02:19:09 GMT  
-		Size: 2.4 KB (2401 bytes)  
+	-	`sha256:08c5c8d2cf35170f98285ad05796259e733eac161bd604b289fa87ff2c94940b`  
+		Last Modified: Mon, 30 Sep 2019 22:45:15 GMT  
+		Size: 2.4 KB (2405 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `xwiki:11-postgres-tomcat` - linux; arm64 variant v8
 
 ```console
-$ docker pull xwiki@sha256:d8f81ea49104b965cf77e1b868f2ffaedfe0905203c5d76e096d340794905e8b
+$ docker pull xwiki@sha256:e37513de20078f0f2f9592bac82b5a2ec02f98ad79d54ed3f18d713007bf1f94
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **703.8 MB (703845016 bytes)**  
+-	Total Size: **705.4 MB (705371138 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:b7fc2243720a18fefd0d8d63e1f0c9c3ef376c5ed9b9898ecf53d33bbd07a5d1`
+-	Image ID: `sha256:fbbfff6353d6ddb577cb3e1328b26a86b2f00ac67fa4cf9919fa843f77f235cc`
 -	Entrypoint: `["docker-entrypoint.sh"]`
 -	Default Command: `["xwiki"]`
 
@@ -239,29 +239,29 @@ CMD ["catalina.sh" "run"]
 MAINTAINER Vincent Massol <vincent@massol.net>
 # Fri, 20 Sep 2019 01:25:55 GMT
 RUN apt-get update &&   apt-get --no-install-recommends -y install     curl     libreoffice     unzip     procps     libpostgresql-jdbc-java &&   rm -rf /var/lib/apt/lists/*
-# Fri, 20 Sep 2019 01:26:10 GMT
-ENV XWIKI_VERSION=11.7
-# Fri, 20 Sep 2019 01:26:10 GMT
-ENV XWIKI_URL_PREFIX=https://maven.xwiki.org/releases/org/xwiki/platform/xwiki-platform-distribution-war/11.7
-# Fri, 20 Sep 2019 01:26:11 GMT
-ENV XWIKI_DOWNLOAD_SHA256=b3ab6ed460a963ff5412294f103b6142808812950011235a223ddafaf8ec4e59
-# Fri, 20 Sep 2019 01:26:47 GMT
+# Mon, 30 Sep 2019 21:47:48 GMT
+ENV XWIKI_VERSION=11.8
+# Mon, 30 Sep 2019 21:47:48 GMT
+ENV XWIKI_URL_PREFIX=https://maven.xwiki.org/releases/org/xwiki/platform/xwiki-platform-distribution-war/11.8
+# Mon, 30 Sep 2019 21:47:49 GMT
+ENV XWIKI_DOWNLOAD_SHA256=0143c34ba155125bbeefe4e8fa2f0ae2f5c54af02454174d39cfdc7bd713e6ee
+# Mon, 30 Sep 2019 21:48:29 GMT
 RUN rm -rf /usr/local/tomcat/webapps/* &&   mkdir -p /usr/local/tomcat/temp &&   mkdir -p /usr/local/xwiki/data &&   curl -fSL "${XWIKI_URL_PREFIX}/xwiki-platform-distribution-war-${XWIKI_VERSION}.war" -o xwiki.war &&   echo "$XWIKI_DOWNLOAD_SHA256 xwiki.war" | sha256sum -c - &&   unzip -d /usr/local/tomcat/webapps/ROOT xwiki.war &&   rm -f xwiki.war
-# Fri, 20 Sep 2019 01:26:51 GMT
+# Mon, 30 Sep 2019 21:48:32 GMT
 RUN cp /usr/share/java/postgresql-jdbc4.jar /usr/local/tomcat/webapps/ROOT/WEB-INF/lib/
-# Fri, 20 Sep 2019 01:26:51 GMT
+# Mon, 30 Sep 2019 21:48:32 GMT
 COPY file:0a1be11e2eb610a1dbcd415404e3a592641110b93090030cb831e3a19a163017 in /usr/local/tomcat/bin/ 
-# Fri, 20 Sep 2019 01:26:52 GMT
+# Mon, 30 Sep 2019 21:48:33 GMT
 COPY file:bb513b07693b0f03295b679c3da15a7fa3d7769583b3db4897a41cfec3529978 in /usr/local/tomcat/webapps/ROOT/WEB-INF/hibernate.cfg.xml 
-# Fri, 20 Sep 2019 01:26:53 GMT
+# Mon, 30 Sep 2019 21:48:34 GMT
 RUN sed -i 's/<id>org.xwiki.platform:xwiki-platform-distribution-war/<id>org.xwiki.platform:xwiki-platform-distribution-docker/'   /usr/local/tomcat/webapps/ROOT/META-INF/extension.xed
-# Fri, 20 Sep 2019 01:26:54 GMT
+# Mon, 30 Sep 2019 21:48:35 GMT
 COPY file:f901b2d7ac3d76cd8346f9aee81b40529183e81d8aa027bb390856ac01fa6cc0 in /usr/local/bin/docker-entrypoint.sh 
-# Fri, 20 Sep 2019 01:26:54 GMT
+# Mon, 30 Sep 2019 21:48:35 GMT
 VOLUME [/usr/local/xwiki]
-# Fri, 20 Sep 2019 01:26:55 GMT
+# Mon, 30 Sep 2019 21:48:36 GMT
 ENTRYPOINT ["docker-entrypoint.sh"]
-# Fri, 20 Sep 2019 01:26:56 GMT
+# Mon, 30 Sep 2019 21:48:37 GMT
 CMD ["xwiki"]
 ```
 
@@ -306,27 +306,27 @@ CMD ["xwiki"]
 		Last Modified: Fri, 20 Sep 2019 01:28:03 GMT  
 		Size: 178.3 MB (178329354 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:0aaff8f6a259ee598b8699e2ea0c5013f760a630b478c02a201d42b3b8e75d6f`  
-		Last Modified: Fri, 20 Sep 2019 01:27:50 GMT  
-		Size: 282.4 MB (282443154 bytes)  
+	-	`sha256:abcbb6da238af307310c0d2cc0be868660d166d01648013e9c8258986b0fb04e`  
+		Last Modified: Mon, 30 Sep 2019 21:49:24 GMT  
+		Size: 284.0 MB (283969287 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:340f71b689909ae0f2b9e5f6b366305cddbb7194f22657498783d6fdbfad68d8`  
-		Last Modified: Fri, 20 Sep 2019 01:27:14 GMT  
-		Size: 618.9 KB (618865 bytes)  
+	-	`sha256:6e8a39e564042c418e6acb4d37e0279a4639112a92e61304d733f09175bbc784`  
+		Last Modified: Mon, 30 Sep 2019 21:48:45 GMT  
+		Size: 618.9 KB (618854 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:97ccd928ca5a3f0bc72dd3c6760033b34328c6f6d1db5ad1fcdc68537a7d3af6`  
-		Last Modified: Fri, 20 Sep 2019 01:27:14 GMT  
-		Size: 1.3 KB (1345 bytes)  
+	-	`sha256:a5738828b43de849fa326404f990c17f6335bb212c2bc1e87938de9292a353f2`  
+		Last Modified: Mon, 30 Sep 2019 21:48:45 GMT  
+		Size: 1.3 KB (1347 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:6107c7725d0a4a33830a7f267453795349faf380e090d0eab39298f1f8f790f0`  
-		Last Modified: Fri, 20 Sep 2019 01:27:14 GMT  
+	-	`sha256:e830bab28eabeb87f7bdf78939df86584fb8f314da0fa200948c749349cdd4e5`  
+		Last Modified: Mon, 30 Sep 2019 21:48:45 GMT  
 		Size: 2.5 KB (2476 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:a66f4b1b34d9d87c4f79bb67b7c2f4d2fcb0ffd4143441d74a5b30c94588e3cb`  
-		Last Modified: Fri, 20 Sep 2019 01:27:14 GMT  
-		Size: 4.1 KB (4124 bytes)  
+	-	`sha256:64f76da51247945f7eafe6730b30f851cc2c28945c5efaf213a85806d9b1ab97`  
+		Last Modified: Mon, 30 Sep 2019 21:48:45 GMT  
+		Size: 4.1 KB (4123 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:6a144a1b601800bd866ea8b88d0c7b6128a42bf06640c3ecc716fce5fde70a4c`  
-		Last Modified: Fri, 20 Sep 2019 01:27:14 GMT  
-		Size: 2.4 KB (2403 bytes)  
+	-	`sha256:3bb648337321a12cddf98a6546935fbcb91a3bee3319c715a9fc6ac78c6bd511`  
+		Last Modified: Mon, 30 Sep 2019 21:48:45 GMT  
+		Size: 2.4 KB (2402 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
