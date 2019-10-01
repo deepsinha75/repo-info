@@ -2,8 +2,8 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:458efc9a2cf987149e25ac8399fb452ce870909bf36f58bdfbad7787856da4c6`
-- Created: `2019-09-20T02:14:23.062109424Z`
+- Image ID: `sha256:9a03069cca91a3c5c4da534f460a3800ae69749825ba40f7415fec6b368bf067`
+- Created: `2019-09-30T22:43:49.262643982Z`
 - Virtual Size: ~ 1.29 Gb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
@@ -23,9 +23,9 @@
   - `TOMCAT_MAJOR=8`
   - `TOMCAT_VERSION=8.5.46`
   - `TOMCAT_SHA512=9d6243ec47ec0f431c55a612fa6a8fac00262ed2731640ad98628b275221d3e8e241b2fee748196b64029997f4d9f8e63831b43986fedb88a62381a92b05ca68`
-  - `XWIKI_VERSION=11.7`
-  - `XWIKI_URL_PREFIX=https://maven.xwiki.org/releases/org/xwiki/platform/xwiki-platform-distribution-war/11.7`
-  - `XWIKI_DOWNLOAD_SHA256=b3ab6ed460a963ff5412294f103b6142808812950011235a223ddafaf8ec4e59`
+  - `XWIKI_VERSION=11.8`
+  - `XWIKI_URL_PREFIX=https://maven.xwiki.org/releases/org/xwiki/platform/xwiki-platform-distribution-war/11.8`
+  - `XWIKI_DOWNLOAD_SHA256=0143c34ba155125bbeefe4e8fa2f0ae2f5c54af02454174d39cfdc7bd713e6ee`
 
 ## `dpkg` (`.deb`-based packages)
 
@@ -766,15 +766,9 @@ Licenses: (parsed from: `/usr/share/doc/e2fsprogs/copyright`, `/usr/share/doc/li
 - `GPL-2`
 - `LGPL-2`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris e2fsprogs=1.44.1-1ubuntu1.1
-'http://archive.ubuntu.com/ubuntu/pool/main/e/e2fsprogs/e2fsprogs_1.44.1-1ubuntu1.1.dsc' e2fsprogs_1.44.1-1ubuntu1.1.dsc 3204 SHA256:b6949b19989d5e22257dca08416de38b5328f79fc2742e0dce297e1566c31992
-'http://archive.ubuntu.com/ubuntu/pool/main/e/e2fsprogs/e2fsprogs_1.44.1.orig.tar.gz' e2fsprogs_1.44.1.orig.tar.gz 7544908 SHA256:a5a8068dfe105050d8c63d67515a0ae5fff3f37232f725e0aa72b389eeb6c1e6
-'http://archive.ubuntu.com/ubuntu/pool/main/e/e2fsprogs/e2fsprogs_1.44.1.orig.tar.gz.asc' e2fsprogs_1.44.1.orig.tar.gz.asc 488 SHA256:6e8eb8df52f5cd577f5eae489108c6fbe2c5381e01f83c325873e034d5a84e46
-'http://archive.ubuntu.com/ubuntu/pool/main/e/e2fsprogs/e2fsprogs_1.44.1-1ubuntu1.1.debian.tar.xz' e2fsprogs_1.44.1-1ubuntu1.1.debian.tar.xz 78448 SHA256:4ccbbae034750cb5126618f66abb8e9af7a35d6943c81572168b07279447383f
-```
 
 ### `dpkg` source package: `expat=2.2.5-3ubuntu0.2`
 
