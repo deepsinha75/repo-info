@@ -1,10 +1,10 @@
-# `nextcloud:14.0.14-apache`
+# `nextcloud:16.0.5-apache`
 
 ## Docker Metadata
 
-- Image ID: `sha256:00d4a8677b68538909a0285d4c7531a385a8ab8587d469eb9e4e05dec619fb11`
-- Created: `2019-09-27T01:57:12.151413955Z`
-- Virtual Size: ~ 648.72 Mb  
+- Image ID: `sha256:f5ba9a9d3d2c8f46be3315d8f44bbb24450c8a8daded3374da4f73a8e0a7a0ae`
+- Created: `2019-09-27T02:14:08.459258484Z`
+- Virtual Size: ~ 677.07 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["/entrypoint.sh"]`
@@ -20,13 +20,13 @@
   - `PHP_CFLAGS=-fstack-protector-strong -fpic -fpie -O2`
   - `PHP_CPPFLAGS=-fstack-protector-strong -fpic -fpie -O2`
   - `PHP_LDFLAGS=-Wl,-O1 -Wl,--hash-style=both -pie`
-  - `GPG_KEYS=1729F83938DA44E27BA0F4D3DBDB397470D12172 B1B44D8F021E4E2D6021E995DC9FF8D3EE5AF27F`
-  - `PHP_VERSION=7.2.23`
-  - `PHP_URL=https://www.php.net/get/php-7.2.23.tar.xz/from/this/mirror`
-  - `PHP_ASC_URL=https://www.php.net/get/php-7.2.23.tar.xz.asc/from/this/mirror`
-  - `PHP_SHA256=74e045ec8ff26290db6a3688826dcdf43b87bc509e508e9cb76dab742804ca14`
+  - `GPG_KEYS=CBAF69F173A0FEA4B537F470D66C9593118BCCB6 F38252826ACD957EF380D39F2F7956BC5DA04B5D`
+  - `PHP_VERSION=7.3.10`
+  - `PHP_URL=https://www.php.net/get/php-7.3.10.tar.xz/from/this/mirror`
+  - `PHP_ASC_URL=https://www.php.net/get/php-7.3.10.tar.xz.asc/from/this/mirror`
+  - `PHP_SHA256=42f00a15419e05771734b7159c8d39d639b8a5a6770413adfa2615f6f923d906`
   - `PHP_MD5=`
-  - `NEXTCLOUD_VERSION=14.0.14`
+  - `NEXTCLOUD_VERSION=16.0.5`
 
 ## `dpkg` (`.deb`-based packages)
 
@@ -2530,6 +2530,31 @@ Other potentially useful URLs:
 - https://sources.debian.net/src/libxml2/2.9.4+dfsg1-7/ (for browsing the source)
 - https://sources.debian.net/src/libxml2/2.9.4+dfsg1-7/debian/copyright/ (for direct copyright/license information)
 - http://snapshot.debian.org/package/libxml2/2.9.4+dfsg1-7/ (for access to the source package after it no longer exists in the archive)
+
+### `dpkg` source package: `libzip=1.5.1-4`
+
+Binary Packages:
+
+- `libzip4:amd64=1.5.1-4`
+
+Licenses: (parsed from: `/usr/share/doc/libzip4/copyright`)
+
+- `GPL-3`
+
+Source:
+
+```console
+$ apt-get source -qq --print-uris libzip=1.5.1-4
+'http://deb.debian.org/debian/pool/main/libz/libzip/libzip_1.5.1-4.dsc' libzip_1.5.1-4.dsc 2216 SHA256:833e56bddbc7ef960af36bf0ded714af1a4f50a39aea2df6d8a65ba9ad67bc8f
+'http://deb.debian.org/debian/pool/main/libz/libzip/libzip_1.5.1.orig.tar.xz' libzip_1.5.1.orig.tar.xz 717908 SHA256:04ea35b6956c7b3453f1ed3f3fe40e3ddae1f43931089124579e8384e79ed372
+'http://deb.debian.org/debian/pool/main/libz/libzip/libzip_1.5.1-4.debian.tar.xz' libzip_1.5.1-4.debian.tar.xz 7980 SHA256:9ecaa728e3c5db11ba80c3047bd79557f3d318be9c6adc069c8aefecfee13cf3
+```
+
+Other potentially useful URLs:
+
+- https://sources.debian.net/src/libzip/1.5.1-4/ (for browsing the source)
+- https://sources.debian.net/src/libzip/1.5.1-4/debian/copyright/ (for direct copyright/license information)
+- http://snapshot.debian.org/package/libzip/1.5.1-4/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `libzstd=1.3.8+dfsg-3`
 
