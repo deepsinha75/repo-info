@@ -2,16 +2,16 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:d5794f3cebefc9eb81b4f2c67b72ff033983fc9887435a9b7a1a23a2235a9637`
-- Created: `2019-09-03T20:29:59.122526583Z`
-- Virtual Size: ~ 173.98 Mb  
+- Image ID: `sha256:f292eb87086ce32b53bb34b246ee5064c17ecdd4846a061cda0d3529bcda38ae`
+- Created: `2019-10-02T00:49:58.671317131Z`
+- Virtual Size: ~ 174.00 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Command: `["/bin/bash"]`
 - Environment:
   - `PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
 - Labels:
-  - `build-date=20190903`
+  - `build-date=20191001`
   - `name=SL7 Base Image`
   - `vendor=Scientific Linux`
 
@@ -705,17 +705,17 @@ Enabling repos-source repository
 http://ftp.scientificlinux.org/linux/scientific/7/SRPMS//vendor/device-mapper-multipath-0.4.9-127.el7.src.rpm
 ```
 
-### `rpm` package: `krb5-libs-1.15.1-37.el7_6.x86_64`
+### `rpm` package: `krb5-libs-1.15.1-37.el7_7.2.x86_64`
 
 Licenses (from `rpm --query`): MIT
 
 Source:
 
 ```console
-$ yumdownloader --quiet --source --urls krb5-libs-1.15.1-37.el7_6
+$ yumdownloader --quiet --source --urls krb5-libs-1.15.1-37.el7_7.2
 Enabling sl-source repository
 Enabling repos-source repository
-http://ftp.scientificlinux.org/linux/scientific/7/SRPMS//vendor/krb5-1.15.1-37.el7_6.src.rpm
+http://ftp.scientificlinux.org/linux/scientific/7/SRPMS//vendor/krb5-1.15.1-37.el7_7.2.src.rpm
 ```
 
 ### `rpm` package: `libacl-2.2.51-14.el7.x86_64`
@@ -1745,17 +1745,17 @@ Enabling repos-source repository
 http://ftp.scientificlinux.org/linux/scientific/7/SRPMS//vendor/tar-1.26-35.el7.src.rpm
 ```
 
-### `rpm` package: `tzdata-2019b-1.el7.noarch`
+### `rpm` package: `tzdata-2019c-1.el7.noarch`
 
 Licenses (from `rpm --query`): Public Domain
 
 Source:
 
 ```console
-$ yumdownloader --quiet --source --urls tzdata-2019b-1.el7.noarch
+$ yumdownloader --quiet --source --urls tzdata-2019c-1.el7.noarch
 Enabling sl-source repository
 Enabling repos-source repository
-http://ftp.scientificlinux.org/linux/scientific/7/SRPMS//vendor/tzdata-2019b-1.el7.src.rpm
+http://ftp.scientificlinux.org/linux/scientific/7/SRPMS//vendor/tzdata-2019c-1.el7.src.rpm
 ```
 
 ### `rpm` package: `ustr-1.0.4-16.el7.x86_64`
