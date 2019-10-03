@@ -2,8 +2,8 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:a99bf141ff5b1c46dccaf90e207179b1d334a6aff4160b6a20ef1ccf6345a35d`
-- Created: `2019-09-19T01:10:57.675177202Z`
+- Image ID: `sha256:c7276136b35d7a164bce99b67560ddabd1c75aeaf03b62817ffe9b08bc711a88`
+- Created: `2019-10-02T23:21:55.223665901Z`
 - Virtual Size: ~ 434.96 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
@@ -1317,14 +1317,9 @@ Binary Packages:
 If source is available (seen below), check the contents of `debian/copyright` within it.
 
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris tzdata=2019b-0ubuntu0.16.04
-'http://archive.ubuntu.com/ubuntu/pool/main/t/tzdata/tzdata_2019b-0ubuntu0.16.04.dsc' tzdata_2019b-0ubuntu0.16.04.dsc 2136 SHA256:87c8c88a4bbe5b0c2d463fb845f4649f452093b962fc751536c2bef2f9e15773
-'http://archive.ubuntu.com/ubuntu/pool/main/t/tzdata/tzdata_2019b.orig.tar.gz' tzdata_2019b.orig.tar.gz 384667 SHA256:05d9092c90dcf9ec4f3ccfdea80c7dcea5e882b3b105c3422da172aaa9a50c64
-'http://archive.ubuntu.com/ubuntu/pool/main/t/tzdata/tzdata_2019b-0ubuntu0.16.04.debian.tar.xz' tzdata_2019b-0ubuntu0.16.04.debian.tar.xz 100340 SHA256:41bff0da1b7b22d4b49949148163585acedabf14c8240987ec335348a05ec3fc
-```
 
 ### `dpkg` source package: `ubuntu-keyring=2012.05.19`
 
