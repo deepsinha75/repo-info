@@ -2,9 +2,9 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:940cb20d997b59a896f324e9af2b1e63aebb5c60893887e6ff1c1b2663895990`
-- Created: `2019-09-19T23:38:25.502893119Z`
-- Virtual Size: ~ 373.54 Mb  
+- Image ID: `sha256:68c44265c69d3152da1785fca1395932a6ba859a3fdbef5a626a776f8a3dc0b3`
+- Created: `2019-10-03T01:06:56.43469421Z`
+- Virtual Size: ~ 373.87 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["/docker-entrypoint.sh"]`
@@ -12,8 +12,8 @@
 - Environment:
   - `PATH=/usr/local/bundle/bin:/usr/local/bundle/gems/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
   - `RUBY_MAJOR=2.4`
-  - `RUBY_VERSION=2.4.7`
-  - `RUBY_DOWNLOAD_SHA256=a249193c7e79b891a4783f951cad8160fa5fe985c385b4628db8e9913bff1f98`
+  - `RUBY_VERSION=2.4.9`
+  - `RUBY_DOWNLOAD_SHA256=0c4e000253ef7187feeb940a01a1c7594f28d63aa16f978e892a0e2864f58614`
   - `RUBYGEMS_VERSION=3.0.3`
   - `GEM_HOME=/usr/local/bundle`
   - `BUNDLE_PATH=/usr/local/bundle`
@@ -301,16 +301,16 @@ AFL-2.1 OR GPL-2.0-or-later
 ### `apk` package: `expat`
 
 ```console
-expat-2.2.7-r0 description:
+expat-2.2.8-r0 description:
 An XML Parser library written in C
 
-expat-2.2.7-r0 webpage:
+expat-2.2.8-r0 webpage:
 http://www.libexpat.org/
 
-expat-2.2.7-r0 installed size:
+expat-2.2.8-r0 installed size:
 184320
 
-expat-2.2.7-r0 license:
+expat-2.2.8-r0 license:
 MIT
 
 ```
@@ -420,16 +420,16 @@ LGPL-2.0-or-later
 ### `apk` package: `ghostscript`
 
 ```console
-ghostscript-9.27-r2 description:
+ghostscript-9.27-r4 description:
 An interpreter for the PostScript language and for PDF
 
-ghostscript-9.27-r2 webpage:
+ghostscript-9.27-r4 webpage:
 https://ghostscript.com/
 
-ghostscript-9.27-r2 installed size:
-50061312
+ghostscript-9.27-r4 installed size:
+50577408
 
-ghostscript-9.27-r2 license:
+ghostscript-9.27-r4 license:
 AGPL-3.0-or-later
 
 ```
@@ -743,16 +743,16 @@ OpenSSL
 ### `apk` package: `libcurl`
 
 ```console
-libcurl-7.65.1-r0 description:
+libcurl-7.66.0-r0 description:
 The multiprotocol file transfer library
 
-libcurl-7.65.1-r0 webpage:
+libcurl-7.66.0-r0 webpage:
 https://curl.haxx.se/
 
-libcurl-7.65.1-r0 installed size:
-450560
+libcurl-7.66.0-r0 installed size:
+454656
 
-libcurl-7.65.1-r0 license:
+libcurl-7.66.0-r0 license:
 MIT
 
 ```

@@ -2,9 +2,9 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:c040c81179471ec5864ca168d3b943e9bc1f990cd7726f594ec873081a908cc4`
-- Created: `2019-09-19T23:33:34.726132012Z`
-- Virtual Size: ~ 368.29 Mb  
+- Image ID: `sha256:02cec89276920292b1487e18fd467f6abe0e23e9de33d6595e1ea57b4319b99b`
+- Created: `2019-10-01T21:07:01.906209781Z`
+- Virtual Size: ~ 368.62 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["/docker-entrypoint.sh"]`
@@ -12,8 +12,8 @@
 - Environment:
   - `PATH=/usr/local/bundle/bin:/usr/local/bundle/gems/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
   - `RUBY_MAJOR=2.6`
-  - `RUBY_VERSION=2.6.4`
-  - `RUBY_DOWNLOAD_SHA256=df593cd4c017de19adf5d0154b8391bb057cef1b72ecdd4a8ee30d3235c65f09`
+  - `RUBY_VERSION=2.6.5`
+  - `RUBY_DOWNLOAD_SHA256=d5d6da717fd48524596f9b78ac5a2eeb9691753da5c06923a6c31190abe01a62`
   - `GEM_HOME=/usr/local/bundle`
   - `BUNDLE_PATH=/usr/local/bundle`
   - `BUNDLE_SILENCE_ROOT_WARNING=1`
@@ -300,16 +300,16 @@ AFL-2.1 OR GPL-2.0-or-later
 ### `apk` package: `expat`
 
 ```console
-expat-2.2.7-r0 description:
+expat-2.2.8-r0 description:
 An XML Parser library written in C
 
-expat-2.2.7-r0 webpage:
+expat-2.2.8-r0 webpage:
 http://www.libexpat.org/
 
-expat-2.2.7-r0 installed size:
+expat-2.2.8-r0 installed size:
 184320
 
-expat-2.2.7-r0 license:
+expat-2.2.8-r0 license:
 MIT
 
 ```
@@ -419,16 +419,16 @@ LGPL-2.0-or-later
 ### `apk` package: `ghostscript`
 
 ```console
-ghostscript-9.27-r2 description:
+ghostscript-9.27-r4 description:
 An interpreter for the PostScript language and for PDF
 
-ghostscript-9.27-r2 webpage:
+ghostscript-9.27-r4 webpage:
 https://ghostscript.com/
 
-ghostscript-9.27-r2 installed size:
-50061312
+ghostscript-9.27-r4 installed size:
+50577408
 
-ghostscript-9.27-r2 license:
+ghostscript-9.27-r4 license:
 AGPL-3.0-or-later
 
 ```
@@ -742,16 +742,16 @@ OpenSSL
 ### `apk` package: `libcurl`
 
 ```console
-libcurl-7.65.1-r0 description:
+libcurl-7.66.0-r0 description:
 The multiprotocol file transfer library
 
-libcurl-7.65.1-r0 webpage:
+libcurl-7.66.0-r0 webpage:
 https://curl.haxx.se/
 
-libcurl-7.65.1-r0 installed size:
-450560
+libcurl-7.66.0-r0 installed size:
+454656
 
-libcurl-7.65.1-r0 license:
+libcurl-7.66.0-r0 license:
 MIT
 
 ```
