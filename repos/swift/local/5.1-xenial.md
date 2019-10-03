@@ -1790,14 +1790,9 @@ Licenses: (parsed from: `/usr/share/doc/linux-libc-dev/copyright`)
 - `GPL-2`
 - `redpine-signals`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris linux=4.4.0-164.192
-'http://archive.ubuntu.com/ubuntu/pool/main/l/linux/linux_4.4.0-164.192.dsc' linux_4.4.0-164.192.dsc 11938 SHA256:879d9a643e2da609bca6583f88bcff273ea4a96ad939fd809080e061044a0c03
-'http://archive.ubuntu.com/ubuntu/pool/main/l/linux/linux_4.4.0.orig.tar.gz' linux_4.4.0.orig.tar.gz 132860730 SHA256:730e75919b5d30a9bc934ccb300eaedfdf44994ca9ee1d07a46901c46c221357
-'http://archive.ubuntu.com/ubuntu/pool/main/l/linux/linux_4.4.0-164.192.diff.gz' linux_4.4.0-164.192.diff.gz 15719645 SHA256:ce937f0abfe950d9cd21ea548d523d63eca9c429543d18b0ef631b4c98ecd6bf
-```
 
 ### `dpkg` source package: `lsb=9.20160110ubuntu0.2`
 
@@ -2639,14 +2634,9 @@ Binary Packages:
 If source is available (seen below), check the contents of `debian/copyright` within it.
 
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris tzdata=2019b-0ubuntu0.16.04
-'http://archive.ubuntu.com/ubuntu/pool/main/t/tzdata/tzdata_2019b-0ubuntu0.16.04.dsc' tzdata_2019b-0ubuntu0.16.04.dsc 2136 SHA256:87c8c88a4bbe5b0c2d463fb845f4649f452093b962fc751536c2bef2f9e15773
-'http://archive.ubuntu.com/ubuntu/pool/main/t/tzdata/tzdata_2019b.orig.tar.gz' tzdata_2019b.orig.tar.gz 384667 SHA256:05d9092c90dcf9ec4f3ccfdea80c7dcea5e882b3b105c3422da172aaa9a50c64
-'http://archive.ubuntu.com/ubuntu/pool/main/t/tzdata/tzdata_2019b-0ubuntu0.16.04.debian.tar.xz' tzdata_2019b-0ubuntu0.16.04.debian.tar.xz 100340 SHA256:41bff0da1b7b22d4b49949148163585acedabf14c8240987ec335348a05ec3fc
-```
 
 ### `dpkg` source package: `ubuntu-keyring=2012.05.19`
 
