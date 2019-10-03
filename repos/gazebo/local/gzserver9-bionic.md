@@ -879,15 +879,9 @@ Licenses: (parsed from: `/usr/share/doc/e2fsprogs/copyright`, `/usr/share/doc/li
 - `GPL-2`
 - `LGPL-2`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris e2fsprogs=1.44.1-1ubuntu1.1
-'http://archive.ubuntu.com/ubuntu/pool/main/e/e2fsprogs/e2fsprogs_1.44.1-1ubuntu1.1.dsc' e2fsprogs_1.44.1-1ubuntu1.1.dsc 3204 SHA256:b6949b19989d5e22257dca08416de38b5328f79fc2742e0dce297e1566c31992
-'http://archive.ubuntu.com/ubuntu/pool/main/e/e2fsprogs/e2fsprogs_1.44.1.orig.tar.gz' e2fsprogs_1.44.1.orig.tar.gz 7544908 SHA256:a5a8068dfe105050d8c63d67515a0ae5fff3f37232f725e0aa72b389eeb6c1e6
-'http://archive.ubuntu.com/ubuntu/pool/main/e/e2fsprogs/e2fsprogs_1.44.1.orig.tar.gz.asc' e2fsprogs_1.44.1.orig.tar.gz.asc 488 SHA256:6e8eb8df52f5cd577f5eae489108c6fbe2c5381e01f83c325873e034d5a84e46
-'http://archive.ubuntu.com/ubuntu/pool/main/e/e2fsprogs/e2fsprogs_1.44.1-1ubuntu1.1.debian.tar.xz' e2fsprogs_1.44.1-1ubuntu1.1.debian.tar.xz 78448 SHA256:4ccbbae034750cb5126618f66abb8e9af7a35d6943c81572168b07279447383f
-```
 
 ### `dpkg` source package: `elfutils=0.170-0.4ubuntu0.1`
 
@@ -3514,14 +3508,9 @@ Licenses: (parsed from: `/usr/share/doc/libsdl2-2.0-0/copyright`)
 - `SunPro`
 - `zlib/libpng`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris libsdl2=2.0.8+dfsg1-1ubuntu1.18.04.3
-'http://archive.ubuntu.com/ubuntu/pool/universe/libs/libsdl2/libsdl2_2.0.8+dfsg1-1ubuntu1.18.04.3.dsc' libsdl2_2.0.8+dfsg1-1ubuntu1.18.04.3.dsc 2786 SHA256:95969d694afdb1e4aca471629750cb7531729468bac75a8a9646baf1acbf5135
-'http://archive.ubuntu.com/ubuntu/pool/universe/libs/libsdl2/libsdl2_2.0.8+dfsg1.orig.tar.gz' libsdl2_2.0.8+dfsg1.orig.tar.gz 3269839 SHA256:7a76f348fa67f5c3c74592034d7b5099d25d7f04dc8a6ee4c4cb1c1abb41b328
-'http://archive.ubuntu.com/ubuntu/pool/universe/libs/libsdl2/libsdl2_2.0.8+dfsg1-1ubuntu1.18.04.3.debian.tar.xz' libsdl2_2.0.8+dfsg1-1ubuntu1.18.04.3.debian.tar.xz 17252 SHA256:1c2f06235e6dc9587363cde93605af6a7d05360093f586834e3aaee9b34e2af6
-```
 
 ### `dpkg` source package: `libseccomp=2.4.1-0ubuntu0.18.04.2`
 
@@ -6415,14 +6404,9 @@ Binary Packages:
 If source is available (seen below), check the contents of `debian/copyright` within it.
 
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris tzdata=2019b-0ubuntu0.18.04
-'http://archive.ubuntu.com/ubuntu/pool/main/t/tzdata/tzdata_2019b-0ubuntu0.18.04.dsc' tzdata_2019b-0ubuntu0.18.04.dsc 2122 SHA256:e9d06f429b23ab993ba16453c24d0bad6c7990f49d1c11780100f7ba8c8e36d3
-'http://archive.ubuntu.com/ubuntu/pool/main/t/tzdata/tzdata_2019b.orig.tar.gz' tzdata_2019b.orig.tar.gz 384667 SHA256:05d9092c90dcf9ec4f3ccfdea80c7dcea5e882b3b105c3422da172aaa9a50c64
-'http://archive.ubuntu.com/ubuntu/pool/main/t/tzdata/tzdata_2019b-0ubuntu0.18.04.debian.tar.xz' tzdata_2019b-0ubuntu0.18.04.debian.tar.xz 104768 SHA256:73cd22305e314dc71f6fd2f9c0b6e3b9425a79d530c4b6dc1805442beb9c50f0
-```
 
 ### `dpkg` source package: `ubuntu-keyring=2018.09.18.1~18.04.0`
 
