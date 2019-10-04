@@ -2,9 +2,9 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:f6137ea817e0ca780901ceb1c8e17aa044ef50112645621b332b7a5d1cac61fb`
-- Created: `2019-09-19T23:48:27.166618956Z`
-- Virtual Size: ~ 531.84 Mb  
+- Image ID: `sha256:2b10298f817eb6bd262e7af78410d9e7d2838b9a83666604fc2ede3484a79e1a`
+- Created: `2019-10-04T00:38:08.203912067Z`
+- Virtual Size: ~ 532.36 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["docker-entrypoint.sh"]`
@@ -897,11 +897,11 @@ Other potentially useful URLs:
 - https://sources.debian.net/src/e2fsprogs/1.44.5-1+deb10u1/debian/copyright/ (for direct copyright/license information)
 - http://snapshot.debian.org/package/e2fsprogs/1.44.5-1+deb10u1/ (for access to the source package after it no longer exists in the archive)
 
-### `dpkg` source package: `expat=2.2.6-2`
+### `dpkg` source package: `expat=2.2.6-2+deb10u1`
 
 Binary Packages:
 
-- `libexpat1:amd64=2.2.6-2`
+- `libexpat1:amd64=2.2.6-2+deb10u1`
 
 Licenses: (parsed from: `/usr/share/doc/libexpat1/copyright`)
 
@@ -910,17 +910,17 @@ Licenses: (parsed from: `/usr/share/doc/libexpat1/copyright`)
 Source:
 
 ```console
-$ apt-get source -qq --print-uris expat=2.2.6-2
-'http://deb.debian.org/debian/pool/main/e/expat/expat_2.2.6-2.dsc' expat_2.2.6-2.dsc 1949 SHA256:50fb4a3159f1aeb91e23caa1d329579df956514dc42866b4c3fef0e66cb0915e
-'http://deb.debian.org/debian/pool/main/e/expat/expat_2.2.6.orig.tar.gz' expat_2.2.6.orig.tar.gz 8275473 SHA256:574499cba22a599393e28d99ecfa1e7fc85be7d6651d543045244d5b561cb7ff
-'http://deb.debian.org/debian/pool/main/e/expat/expat_2.2.6-2.debian.tar.xz' expat_2.2.6-2.debian.tar.xz 11108 SHA256:678c073cecab66cc5ea0feaf02626db4300008d9c20df9ebe81958944af31673
+$ apt-get source -qq --print-uris expat=2.2.6-2+deb10u1
+'http://security.debian.org/debian-security/pool/updates/main/e/expat/expat_2.2.6-2+deb10u1.dsc' expat_2.2.6-2+deb10u1.dsc 2136 SHA256:a32a035c9883b70ddf739eaacaa5c790ec5bf3027ba61eefdbc0cdf634aa4d96
+'http://security.debian.org/debian-security/pool/updates/main/e/expat/expat_2.2.6.orig.tar.gz' expat_2.2.6.orig.tar.gz 8275473 SHA256:574499cba22a599393e28d99ecfa1e7fc85be7d6651d543045244d5b561cb7ff
+'http://security.debian.org/debian-security/pool/updates/main/e/expat/expat_2.2.6-2+deb10u1.debian.tar.xz' expat_2.2.6-2+deb10u1.debian.tar.xz 12032 SHA256:15e75199a33c4e902788410f37e784c1082906e703c8619c4cfc715a0191e02b
 ```
 
 Other potentially useful URLs:
 
-- https://sources.debian.net/src/expat/2.2.6-2/ (for browsing the source)
-- https://sources.debian.net/src/expat/2.2.6-2/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/expat/2.2.6-2/ (for access to the source package after it no longer exists in the archive)
+- https://sources.debian.net/src/expat/2.2.6-2+deb10u1/ (for browsing the source)
+- https://sources.debian.net/src/expat/2.2.6-2+deb10u1/debian/copyright/ (for direct copyright/license information)
+- http://snapshot.debian.org/package/expat/2.2.6-2+deb10u1/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `fftw3=3.3.8-2`
 

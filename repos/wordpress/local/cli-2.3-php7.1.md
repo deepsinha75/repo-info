@@ -2,9 +2,9 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:d8b4d76b8af84c84c62174af71874ba208cce4584932fdd13868e2163bd304f7`
-- Created: `2019-09-03T13:27:41.24329063Z`
-- Virtual Size: ~ 126.19 Mb  
+- Image ID: `sha256:f3604258201ef80494d23f5e5e19a8b7e958aa34028ccbd1a60979ff683b9bfc`
+- Created: `2019-10-04T00:51:30.494164858Z`
+- Virtual Size: ~ 126.21 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["docker-entrypoint.sh"]`
@@ -167,16 +167,16 @@ MIT
 ### `apk` package: `expat`
 
 ```console
-expat-2.2.7-r0 description:
+expat-2.2.8-r0 description:
 An XML Parser library written in C
 
-expat-2.2.7-r0 webpage:
+expat-2.2.8-r0 webpage:
 http://www.libexpat.org/
 
-expat-2.2.7-r0 installed size:
+expat-2.2.8-r0 installed size:
 184320
 
-expat-2.2.7-r0 license:
+expat-2.2.8-r0 license:
 MIT
 
 ```
