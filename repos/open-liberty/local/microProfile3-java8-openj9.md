@@ -2,9 +2,9 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:c4d15d183beba899764273dbcfd1faee203cc0d422f78458a6d6f413f4e651a4`
-- Created: `2019-09-19T02:32:58.087208993Z`
-- Virtual Size: ~ 382.64 Mb  
+- Image ID: `sha256:c48220b0324c92123e00c9420309faf54fe3d664f68dbc85e081647a13ced7c8`
+- Created: `2019-10-02T23:59:22.050998163Z`
+- Virtual Size: ~ 383.33 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["/opt/ol/helpers/runtime/docker-server.sh"]`
@@ -24,7 +24,7 @@
   - `IBM_JAVA_OPTIONS=-Xshareclasses:name=liberty,nonfatal,cacheDir=/output/.classCache/ `
 - Labels:
   - `org.opencontainers.image.authors=Arthur De Magalhaes, Chris Potter`
-  - `org.opencontainers.image.revision=cl190820190813-1136`
+  - `org.opencontainers.image.revision=cl190920190905-0148`
   - `org.opencontainers.image.source=https://github.com/OpenLiberty/ci.docker`
   - `org.opencontainers.image.url=https://openliberty.io/`
   - `org.opencontainers.image.vendor=Open Liberty`
