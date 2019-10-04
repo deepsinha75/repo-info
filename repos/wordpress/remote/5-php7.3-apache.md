@@ -1,7 +1,7 @@
 ## `wordpress:5-php7.3-apache`
 
 ```console
-$ docker pull wordpress@sha256:e1d546ca382366b10dce2f1aac81087db87dcb15bf75bb5d610e4a82c73d16ad
+$ docker pull wordpress@sha256:fc31f796cfca4904133d7553c32af0beba138ab28233c392b32b89f790afff43
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -16,14 +16,14 @@ $ docker pull wordpress@sha256:e1d546ca382366b10dce2f1aac81087db87dcb15bf75bb5d6
 ### `wordpress:5-php7.3-apache` - linux; amd64
 
 ```console
-$ docker pull wordpress@sha256:0524b6843bd9a310c8e7201fd2d624b9db84baf57e65abf6c22426cd09b55426
+$ docker pull wordpress@sha256:ffb33dbc7beff3b32495c5ab9c39c61efb26602f5d568e1904a7be88f32f6fa2
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **188.3 MB (188270960 bytes)**  
+-	Total Size: **188.3 MB (188276964 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:936a00d295836686065b142f28d9f1b65dc758e6abbf8b4a68031b18433fc196`
+-	Image ID: `sha256:aa4bde9e337a3f45821362e9bf56bfe04006afc980ef6044ad4557f410f3dff3`
 -	Entrypoint: `["docker-entrypoint.sh"]`
 -	Default Command: `["apache2-foreground"]`
 
@@ -96,27 +96,27 @@ EXPOSE 80
 CMD ["apache2-foreground"]
 # Fri, 27 Sep 2019 03:23:46 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		ghostscript 	; 	rm -rf /var/lib/apt/lists/*
-# Fri, 27 Sep 2019 03:25:27 GMT
-RUN set -ex; 		savedAptMark="$(apt-mark showmanual)"; 		apt-get update; 	apt-get install -y --no-install-recommends 		libjpeg-dev 		libmagickwand-dev 		libpng-dev 		libzip-dev 	; 		docker-php-ext-configure gd --with-png-dir=/usr --with-jpeg-dir=/usr; 	docker-php-ext-install -j "$(nproc)" 		bcmath 		exif 		gd 		mysqli 		opcache 		zip 	; 	pecl install imagick-3.4.4; 	docker-php-ext-enable imagick; 		apt-mark auto '.*' > /dev/null; 	apt-mark manual $savedAptMark; 	ldd "$(php -r 'echo ini_get("extension_dir");')"/*.so 		| awk '/=>/ { print $3 }' 		| sort -u 		| xargs -r dpkg-query -S 		| cut -d: -f1 		| sort -u 		| xargs -rt apt-mark manual; 		apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 	rm -rf /var/lib/apt/lists/*
-# Fri, 27 Sep 2019 03:25:28 GMT
+# Fri, 04 Oct 2019 00:47:36 GMT
+RUN set -ex; 		savedAptMark="$(apt-mark showmanual)"; 		apt-get update; 	apt-get install -y --no-install-recommends 		libfreetype6-dev 		libjpeg-dev 		libmagickwand-dev 		libpng-dev 		libzip-dev 	; 		docker-php-ext-configure gd 		--with-freetype-dir=/usr 		--with-jpeg-dir=/usr 		--with-png-dir=/usr 	; 	docker-php-ext-install -j "$(nproc)" 		bcmath 		exif 		gd 		mysqli 		opcache 		zip 	; 	pecl install imagick-3.4.4; 	docker-php-ext-enable imagick; 		apt-mark auto '.*' > /dev/null; 	apt-mark manual $savedAptMark; 	ldd "$(php -r 'echo ini_get("extension_dir");')"/*.so 		| awk '/=>/ { print $3 }' 		| sort -u 		| xargs -r dpkg-query -S 		| cut -d: -f1 		| sort -u 		| xargs -rt apt-mark manual; 		apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 	rm -rf /var/lib/apt/lists/*
+# Fri, 04 Oct 2019 00:47:37 GMT
 RUN { 		echo 'opcache.memory_consumption=128'; 		echo 'opcache.interned_strings_buffer=8'; 		echo 'opcache.max_accelerated_files=4000'; 		echo 'opcache.revalidate_freq=2'; 		echo 'opcache.fast_shutdown=1'; 	} > /usr/local/etc/php/conf.d/opcache-recommended.ini
-# Fri, 27 Sep 2019 03:25:29 GMT
+# Fri, 04 Oct 2019 00:47:37 GMT
 RUN { 		echo 'error_reporting = E_ERROR | E_WARNING | E_PARSE | E_CORE_ERROR | E_CORE_WARNING | E_COMPILE_ERROR | E_COMPILE_WARNING | E_RECOVERABLE_ERROR'; 		echo 'display_errors = Off'; 		echo 'display_startup_errors = Off'; 		echo 'log_errors = On'; 		echo 'error_log = /dev/stderr'; 		echo 'log_errors_max_len = 1024'; 		echo 'ignore_repeated_errors = On'; 		echo 'ignore_repeated_source = Off'; 		echo 'html_errors = Off'; 	} > /usr/local/etc/php/conf.d/error-logging.ini
-# Fri, 27 Sep 2019 03:25:30 GMT
+# Fri, 04 Oct 2019 00:47:38 GMT
 RUN set -eux; 	a2enmod rewrite expires; 		a2enmod remoteip; 	{ 		echo 'RemoteIPHeader X-Forwarded-For'; 		echo 'RemoteIPTrustedProxy 10.0.0.0/8'; 		echo 'RemoteIPTrustedProxy 172.16.0.0/12'; 		echo 'RemoteIPTrustedProxy 192.168.0.0/16'; 		echo 'RemoteIPTrustedProxy 169.254.0.0/16'; 		echo 'RemoteIPTrustedProxy 127.0.0.0/8'; 	} > /etc/apache2/conf-available/remoteip.conf; 	a2enconf remoteip; 	find /etc/apache2 -type f -name '*.conf' -exec sed -ri 's/([[:space:]]*LogFormat[[:space:]]+"[^"]*)%h([^"]*")/\1%a\2/g' '{}' +
-# Fri, 27 Sep 2019 03:25:30 GMT
+# Fri, 04 Oct 2019 00:47:38 GMT
 VOLUME [/var/www/html]
-# Fri, 27 Sep 2019 03:25:30 GMT
+# Fri, 04 Oct 2019 00:47:39 GMT
 ENV WORDPRESS_VERSION=5.2.3
-# Fri, 27 Sep 2019 03:25:30 GMT
+# Fri, 04 Oct 2019 00:47:39 GMT
 ENV WORDPRESS_SHA1=5efd37148788f3b14b295b2a9bf48a1a467aa303
-# Fri, 27 Sep 2019 03:25:32 GMT
+# Fri, 04 Oct 2019 00:47:41 GMT
 RUN set -ex; 	curl -o wordpress.tar.gz -fSL "https://wordpress.org/wordpress-${WORDPRESS_VERSION}.tar.gz"; 	echo "$WORDPRESS_SHA1 *wordpress.tar.gz" | sha1sum -c -; 	tar -xzf wordpress.tar.gz -C /usr/src/; 	rm wordpress.tar.gz; 	chown -R www-data:www-data /usr/src/wordpress
-# Fri, 27 Sep 2019 03:25:33 GMT
+# Fri, 04 Oct 2019 00:47:41 GMT
 COPY file:2413d0c63f9d7b1d114697b18317719a02eadaaa61fc5d0c1edd96c027bc57a4 in /usr/local/bin/ 
-# Fri, 27 Sep 2019 03:25:33 GMT
+# Fri, 04 Oct 2019 00:47:41 GMT
 ENTRYPOINT ["docker-entrypoint.sh"]
-# Fri, 27 Sep 2019 03:25:33 GMT
+# Fri, 04 Oct 2019 00:47:41 GMT
 CMD ["apache2-foreground"]
 ```
 
@@ -181,29 +181,29 @@ CMD ["apache2-foreground"]
 		Last Modified: Fri, 27 Sep 2019 03:34:08 GMT  
 		Size: 16.7 MB (16694784 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:eb0709322dc2510cde571b2a223f1fd1fcf1ba0f71ea8b178faa1082ff627fe3`  
-		Last Modified: Fri, 27 Sep 2019 03:34:10 GMT  
-		Size: 9.5 MB (9512673 bytes)  
+	-	`sha256:255fed67b04c772fd476c931c490010caf95c6ea10e22dfa1e7500eedca3309e`  
+		Last Modified: Fri, 04 Oct 2019 00:56:03 GMT  
+		Size: 9.5 MB (9518662 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:8e62125e5159aa99d3d61c69af42ced9e8b12d2e4255ee0a4034d9173dc89bba`  
-		Last Modified: Fri, 27 Sep 2019 03:34:03 GMT  
+	-	`sha256:95f7b7458d12100347c5903450251015b55a32d7cbcac2ae18a497c0489bb61d`  
+		Last Modified: Fri, 04 Oct 2019 00:55:59 GMT  
 		Size: 327.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:64db4fb657ee234aa19cefd22bba5c421257063bf38dae8a0b20a5e81f8c0c2a`  
-		Last Modified: Fri, 27 Sep 2019 03:34:04 GMT  
-		Size: 390.0 B  
+	-	`sha256:8fcf2d1536ca26f89d1b5c44541f553df55efd3e4da4f42573aa9828cad78139`  
+		Last Modified: Fri, 04 Oct 2019 00:56:00 GMT  
+		Size: 391.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:67291c0a70a06657c054f1ef5dece68926a397030b78d08935ee85cde5de0683`  
-		Last Modified: Fri, 27 Sep 2019 03:34:04 GMT  
-		Size: 19.5 KB (19476 bytes)  
+	-	`sha256:8d8bd71243b2227a0c4aaccf90808cb3a58f3208374b4dda9045f046d6fb8a7e`  
+		Last Modified: Fri, 04 Oct 2019 00:56:00 GMT  
+		Size: 19.5 KB (19479 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:d3ce83314408b89c9508c7774f284dbb87d80a2552f64c257912257e92dcb442`  
-		Last Modified: Fri, 27 Sep 2019 03:34:07 GMT  
-		Size: 11.0 MB (11037746 bytes)  
+	-	`sha256:bef3b0476bc28150295ab67a6a865db4e3e2dd5a11cde160a3c3ea04a6e32685`  
+		Last Modified: Fri, 04 Oct 2019 00:56:03 GMT  
+		Size: 11.0 MB (11037755 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:92b5b02434fd5a9e10efa0de96a0c15040c9d12680e51d23551b269b622cd678`  
-		Last Modified: Fri, 27 Sep 2019 03:34:03 GMT  
-		Size: 3.9 KB (3897 bytes)  
+	-	`sha256:e1ae95f644074f8f4bcf09afaaaf327433afce8dd44fd364e5c8aa33cc22e5d6`  
+		Last Modified: Fri, 04 Oct 2019 00:55:59 GMT  
+		Size: 3.9 KB (3899 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `wordpress:5-php7.3-apache` - linux; arm variant v5
