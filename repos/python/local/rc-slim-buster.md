@@ -1,10 +1,10 @@
-# `python:3.8.0b4-slim-buster`
+# `python:3.8.0rc1-slim-buster`
 
 ## Docker Metadata
 
-- Image ID: `sha256:615bd0a864214f1467f54728bfe24715768456cfe1c8b7b5893e6b9f9dcafc93`
-- Created: `2019-09-12T15:30:50.404185066Z`
-- Virtual Size: ~ 193.21 Mb  
+- Image ID: `sha256:0fdd8009167773c8675c8cae5cf712de6ef948a6bfe451e1b8374676145a8fbd`
+- Created: `2019-10-02T23:40:04.838513027Z`
+- Virtual Size: ~ 197.21 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Command: `["python3"]`
@@ -12,7 +12,7 @@
   - `PATH=/usr/local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
   - `LANG=C.UTF-8`
   - `GPG_KEY=E3FF2839C048B25C084DEBE9B26995E310250568`
-  - `PYTHON_VERSION=3.8.0b4`
+  - `PYTHON_VERSION=3.8.0rc1`
   - `PYTHON_PIP_VERSION=19.2.3`
   - `PYTHON_GET_PIP_URL=https://github.com/pypa/get-pip/raw/309a56c5fd94bd1134053a541cb4657a4e47e09d/get-pip.py`
   - `PYTHON_GET_PIP_SHA256=57e3643ff19f018f8a00dfaa6b7e4620e3c1a7a2171fd218425366ec006b3bfe`
@@ -536,11 +536,11 @@ Other potentially useful URLs:
 - https://sources.debian.net/src/e2fsprogs/1.44.5-1+deb10u1/debian/copyright/ (for direct copyright/license information)
 - http://snapshot.debian.org/package/e2fsprogs/1.44.5-1+deb10u1/ (for access to the source package after it no longer exists in the archive)
 
-### `dpkg` source package: `expat=2.2.6-2`
+### `dpkg` source package: `expat=2.2.6-2+deb10u1`
 
 Binary Packages:
 
-- `libexpat1:amd64=2.2.6-2`
+- `libexpat1:amd64=2.2.6-2+deb10u1`
 
 Licenses: (parsed from: `/usr/share/doc/libexpat1/copyright`)
 
@@ -549,17 +549,17 @@ Licenses: (parsed from: `/usr/share/doc/libexpat1/copyright`)
 Source:
 
 ```console
-$ apt-get source -qq --print-uris expat=2.2.6-2
-'http://deb.debian.org/debian/pool/main/e/expat/expat_2.2.6-2.dsc' expat_2.2.6-2.dsc 1949 SHA256:50fb4a3159f1aeb91e23caa1d329579df956514dc42866b4c3fef0e66cb0915e
-'http://deb.debian.org/debian/pool/main/e/expat/expat_2.2.6.orig.tar.gz' expat_2.2.6.orig.tar.gz 8275473 SHA256:574499cba22a599393e28d99ecfa1e7fc85be7d6651d543045244d5b561cb7ff
-'http://deb.debian.org/debian/pool/main/e/expat/expat_2.2.6-2.debian.tar.xz' expat_2.2.6-2.debian.tar.xz 11108 SHA256:678c073cecab66cc5ea0feaf02626db4300008d9c20df9ebe81958944af31673
+$ apt-get source -qq --print-uris expat=2.2.6-2+deb10u1
+'http://security.debian.org/debian-security/pool/updates/main/e/expat/expat_2.2.6-2+deb10u1.dsc' expat_2.2.6-2+deb10u1.dsc 2136 SHA256:a32a035c9883b70ddf739eaacaa5c790ec5bf3027ba61eefdbc0cdf634aa4d96
+'http://security.debian.org/debian-security/pool/updates/main/e/expat/expat_2.2.6.orig.tar.gz' expat_2.2.6.orig.tar.gz 8275473 SHA256:574499cba22a599393e28d99ecfa1e7fc85be7d6651d543045244d5b561cb7ff
+'http://security.debian.org/debian-security/pool/updates/main/e/expat/expat_2.2.6-2+deb10u1.debian.tar.xz' expat_2.2.6-2+deb10u1.debian.tar.xz 12032 SHA256:15e75199a33c4e902788410f37e784c1082906e703c8619c4cfc715a0191e02b
 ```
 
 Other potentially useful URLs:
 
-- https://sources.debian.net/src/expat/2.2.6-2/ (for browsing the source)
-- https://sources.debian.net/src/expat/2.2.6-2/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/expat/2.2.6-2/ (for access to the source package after it no longer exists in the archive)
+- https://sources.debian.net/src/expat/2.2.6-2+deb10u1/ (for browsing the source)
+- https://sources.debian.net/src/expat/2.2.6-2+deb10u1/debian/copyright/ (for direct copyright/license information)
+- http://snapshot.debian.org/package/expat/2.2.6-2+deb10u1/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `findutils=4.6.0+git+20190209-2`
 
@@ -1363,7 +1363,6 @@ Other potentially useful URLs:
 
 Binary Packages:
 
-- `libssl1.1:amd64=1.1.1c-1`
 - `openssl=1.1.1c-1`
 
 **WARNING:** unable to detect licenses! (package likely not compliant with DEP-5)  
@@ -1385,6 +1384,32 @@ Other potentially useful URLs:
 - https://sources.debian.net/src/openssl/1.1.1c-1/ (for browsing the source)
 - https://sources.debian.net/src/openssl/1.1.1c-1/debian/copyright/ (for direct copyright/license information)
 - http://snapshot.debian.org/package/openssl/1.1.1c-1/ (for access to the source package after it no longer exists in the archive)
+
+### `dpkg` source package: `openssl=1.1.1d-0+deb10u1`
+
+Binary Packages:
+
+- `libssl1.1:amd64=1.1.1d-0+deb10u1`
+
+**WARNING:** unable to detect licenses! (package likely not compliant with DEP-5)  
+If source is available (seen below), check the contents of `debian/copyright` within it.
+
+
+Source:
+
+```console
+$ apt-get source -qq --print-uris openssl=1.1.1d-0+deb10u1
+'http://security.debian.org/debian-security/pool/updates/main/o/openssl/openssl_1.1.1d-0+deb10u1.dsc' openssl_1.1.1d-0+deb10u1.dsc 2472 SHA256:7329a436fffa21d398f10ef9108be3cf75495bbb83e38387d7679d12b4eda05e
+'http://security.debian.org/debian-security/pool/updates/main/o/openssl/openssl_1.1.1d.orig.tar.gz' openssl_1.1.1d.orig.tar.gz 8845861 SHA256:1e3a91bc1f9dfce01af26026f856e064eab4c8ee0a8f457b5ae30b40b8b711f2
+'http://security.debian.org/debian-security/pool/updates/main/o/openssl/openssl_1.1.1d.orig.tar.gz.asc' openssl_1.1.1d.orig.tar.gz.asc 488 SHA256:f3fd3299a79421fffd51d35f62636b8e987dab1d3033d93a19d7685868e15395
+'http://security.debian.org/debian-security/pool/updates/main/o/openssl/openssl_1.1.1d-0+deb10u1.debian.tar.xz' openssl_1.1.1d-0+deb10u1.debian.tar.xz 84040 SHA256:b0cbf0a6219ddcb3ae325f321affd9614c6cf04c9ecc475f7a070be22f3e9376
+```
+
+Other potentially useful URLs:
+
+- https://sources.debian.net/src/openssl/1.1.1d-0+deb10u1/ (for browsing the source)
+- https://sources.debian.net/src/openssl/1.1.1d-0+deb10u1/debian/copyright/ (for direct copyright/license information)
+- http://snapshot.debian.org/package/openssl/1.1.1d-0+deb10u1/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `p11-kit=0.23.15-2`
 

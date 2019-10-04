@@ -1,10 +1,10 @@
-# `python:3.8.0b4-alpine3.10`
+# `python:3.8.0rc1-alpine3.10`
 
 ## Docker Metadata
 
-- Image ID: `sha256:641fa78ba15c3a8c9741299e6d13e26e41819569948dd14ddbc58643ffd139bb`
-- Created: `2019-09-02T17:01:54.45500302Z`
-- Virtual Size: ~ 110.69 Mb  
+- Image ID: `sha256:e528b163d7d0a1541dfa21065b2552e27e9497c1747da6ec4eec88029c1b28a4`
+- Created: `2019-10-02T23:48:40.163036306Z`
+- Virtual Size: ~ 114.29 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Command: `["python3"]`
@@ -12,7 +12,7 @@
   - `PATH=/usr/local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
   - `LANG=C.UTF-8`
   - `GPG_KEY=E3FF2839C048B25C084DEBE9B26995E310250568`
-  - `PYTHON_VERSION=3.8.0b4`
+  - `PYTHON_VERSION=3.8.0rc1`
   - `PYTHON_PIP_VERSION=19.2.3`
   - `PYTHON_GET_PIP_URL=https://github.com/pypa/get-pip/raw/309a56c5fd94bd1134053a541cb4657a4e47e09d/get-pip.py`
   - `PYTHON_GET_PIP_SHA256=57e3643ff19f018f8a00dfaa6b7e4620e3c1a7a2171fd218425366ec006b3bfe`
@@ -124,16 +124,16 @@ MPL-2.0 GPL-2.0-or-later
 ### `apk` package: `expat`
 
 ```console
-expat-2.2.7-r0 description:
+expat-2.2.8-r0 description:
 An XML Parser library written in C
 
-expat-2.2.7-r0 webpage:
+expat-2.2.8-r0 webpage:
 http://www.libexpat.org/
 
-expat-2.2.7-r0 installed size:
+expat-2.2.8-r0 installed size:
 184320
 
-expat-2.2.7-r0 license:
+expat-2.2.8-r0 license:
 MIT
 
 ```
@@ -260,16 +260,16 @@ GPL-2.0-or-later AND LGPL-2.0-or-later AND BSD-3-Clause AND MIT
 ### `apk` package: `libcrypto1.1`
 
 ```console
-libcrypto1.1-1.1.1c-r0 description:
+libcrypto1.1-1.1.1d-r0 description:
 Crypto library from openssl
 
-libcrypto1.1-1.1.1c-r0 webpage:
+libcrypto1.1-1.1.1d-r0 webpage:
 https://www.openssl.org
 
-libcrypto1.1-1.1.1c-r0 installed size:
-2760704
+libcrypto1.1-1.1.1d-r0 installed size:
+2736128
 
-libcrypto1.1-1.1.1c-r0 license:
+libcrypto1.1-1.1.1d-r0 license:
 OpenSSL
 
 ```
@@ -328,16 +328,16 @@ LGPL-2.0-or-later
 ### `apk` package: `libssl1.1`
 
 ```console
-libssl1.1-1.1.1c-r0 description:
+libssl1.1-1.1.1d-r0 description:
 SSL shared libraries
 
-libssl1.1-1.1.1c-r0 webpage:
+libssl1.1-1.1.1d-r0 webpage:
 https://www.openssl.org
 
-libssl1.1-1.1.1c-r0 installed size:
-536576
+libssl1.1-1.1.1d-r0 installed size:
+532480
 
-libssl1.1-1.1.1c-r0 license:
+libssl1.1-1.1.1d-r0 license:
 OpenSSL
 
 ```
