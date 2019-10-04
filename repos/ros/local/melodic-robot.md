@@ -4111,14 +4111,9 @@ Licenses: (parsed from: `/usr/share/doc/linux-libc-dev/copyright`)
 
 - `GPL-2`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris linux=4.15.0-64.73
-'http://security.ubuntu.com/ubuntu/pool/main/l/linux/linux_4.15.0-64.73.dsc' linux_4.15.0-64.73.dsc 7304 SHA256:3c4820fadece10e8efd41b97c588445271a7d0886c96628e1555d88d3fe90b72
-'http://security.ubuntu.com/ubuntu/pool/main/l/linux/linux_4.15.0.orig.tar.gz' linux_4.15.0.orig.tar.gz 157656459 SHA256:c33b8ba5c45a40b689979caa2421c4d933864cd70eb93c00eb69adf43e9a24fc
-'http://security.ubuntu.com/ubuntu/pool/main/l/linux/linux_4.15.0-64.73.diff.gz' linux_4.15.0-64.73.diff.gz 8251892 SHA256:8a9c2490a913077479ec9bf31c7700eec9402dfa04d3f4769097f90f3306f546
-```
 
 ### `dpkg` source package: `lksctp-tools=1.0.17+dfsg-2`
 
@@ -8033,14 +8028,9 @@ Binary Packages:
 If source is available (seen below), check the contents of `debian/copyright` within it.
 
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris tzdata=2019b-0ubuntu0.18.04
-'http://archive.ubuntu.com/ubuntu/pool/main/t/tzdata/tzdata_2019b-0ubuntu0.18.04.dsc' tzdata_2019b-0ubuntu0.18.04.dsc 2122 SHA256:e9d06f429b23ab993ba16453c24d0bad6c7990f49d1c11780100f7ba8c8e36d3
-'http://archive.ubuntu.com/ubuntu/pool/main/t/tzdata/tzdata_2019b.orig.tar.gz' tzdata_2019b.orig.tar.gz 384667 SHA256:05d9092c90dcf9ec4f3ccfdea80c7dcea5e882b3b105c3422da172aaa9a50c64
-'http://archive.ubuntu.com/ubuntu/pool/main/t/tzdata/tzdata_2019b-0ubuntu0.18.04.debian.tar.xz' tzdata_2019b-0ubuntu0.18.04.debian.tar.xz 104768 SHA256:73cd22305e314dc71f6fd2f9c0b6e3b9425a79d530c4b6dc1805442beb9c50f0
-```
 
 ### `dpkg` source package: `ubuntu-keyring=2018.09.18.1~18.04.0`
 
