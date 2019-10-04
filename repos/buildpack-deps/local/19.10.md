@@ -185,14 +185,13 @@ Licenses: (parsed from: `/usr/share/doc/autoconf/copyright`)
 - `permissive-without-disclaimer`
 - `permissive-without-notices-or-disclaimer`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris autoconf=2.69-11
-'http://archive.ubuntu.com/ubuntu/pool/main/a/autoconf/autoconf_2.69-11.dsc' autoconf_2.69-11.dsc 1948 SHA256:249d25370d4f4d1d0cf7b37bfd178bb6fa87011566dd82230991f64814a39dde
-'http://archive.ubuntu.com/ubuntu/pool/main/a/autoconf/autoconf_2.69.orig.tar.xz' autoconf_2.69.orig.tar.xz 1214744 SHA256:64ebcec9f8ac5b2487125a86a7760d2591ac9e1d3dbd59489633f9de62a57684
-'http://archive.ubuntu.com/ubuntu/pool/main/a/autoconf/autoconf_2.69-11.debian.tar.xz' autoconf_2.69-11.debian.tar.xz 23540 SHA256:885b3947fdead5b737f6437b80a90a41c5d611791573c5d0cfef50a59c943c1b
-```
+The source package *may* still be available for download from:
+
+- http://snapshot.debian.org/package/autoconf/2.69-11/
+
 
 ### `dpkg` source package: `automake-1.16=1:1.16.1-4ubuntu3`
 
@@ -676,15 +675,9 @@ Licenses: (parsed from: `/usr/share/doc/comerr-dev/copyright`, `/usr/share/doc/e
 - `GPL-2`
 - `LGPL-2`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris e2fsprogs=1.45.3-4ubuntu1
-'http://archive.ubuntu.com/ubuntu/pool/main/e/e2fsprogs/e2fsprogs_1.45.3-4ubuntu1.dsc' e2fsprogs_1.45.3-4ubuntu1.dsc 3259 SHA256:2ff1e55821617e74f8f6c62942d37a09660e02e78be9e5deeec5e4289fd4b783
-'http://archive.ubuntu.com/ubuntu/pool/main/e/e2fsprogs/e2fsprogs_1.45.3.orig.tar.gz' e2fsprogs_1.45.3.orig.tar.gz 7926121 SHA256:3a5556e0cb746c214e4c581951a3c21ba5c145eb53008277f88f1f98ae75983d
-'http://archive.ubuntu.com/ubuntu/pool/main/e/e2fsprogs/e2fsprogs_1.45.3.orig.tar.gz.asc' e2fsprogs_1.45.3.orig.tar.gz.asc 488 SHA256:013c21c98dc63a6a6328490a335a1bc6f3a2410f4f6347312bf6b53734faa759
-'http://archive.ubuntu.com/ubuntu/pool/main/e/e2fsprogs/e2fsprogs_1.45.3-4ubuntu1.debian.tar.xz' e2fsprogs_1.45.3-4ubuntu1.debian.tar.xz 186360 SHA256:d2bee46b5871f53edc507d4d947b7788048d5c7a568ef68787daaef528eb6042
-```
 
 ### `dpkg` source package: `elfutils=0.176-1.1`
 
@@ -1195,14 +1188,13 @@ Licenses: (parsed from: `/usr/share/doc/gir1.2-freedesktop/copyright`, `/usr/sha
 - `LGPL-2+`
 - `MIT`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris gobject-introspection=1.60.1-1
-'http://archive.ubuntu.com/ubuntu/pool/main/g/gobject-introspection/gobject-introspection_1.60.1-1.dsc' gobject-introspection_1.60.1-1.dsc 2845 SHA256:eddf6a45c131a0353a4712fa37912bb79521d70b76af337b9a3bcda68bd6263f
-'http://archive.ubuntu.com/ubuntu/pool/main/g/gobject-introspection/gobject-introspection_1.60.1.orig.tar.xz' gobject-introspection_1.60.1.orig.tar.xz 1284460 SHA256:d844d1499ecd36f3ec8a3573616186d36626ec0c9a7981939e99aa02e9c824b3
-'http://archive.ubuntu.com/ubuntu/pool/main/g/gobject-introspection/gobject-introspection_1.60.1-1.debian.tar.xz' gobject-introspection_1.60.1-1.debian.tar.xz 21256 SHA256:4deafd9c0ae67fc85564fdc147e1637b7b3793c60a0f42498a82fb56fce11249
-```
+The source package *may* still be available for download from:
+
+- http://snapshot.debian.org/package/gobject-introspection/1.60.1-1/
+
 
 ### `dpkg` source package: `graphite2=1.3.13-8`
 
@@ -1841,15 +1833,9 @@ Licenses: (parsed from: `/usr/share/doc/libgcrypt20/copyright`)
 - `GPL-2`
 - `LGPL`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris libgcrypt20=1.8.4-5ubuntu1
-'http://archive.ubuntu.com/ubuntu/pool/main/libg/libgcrypt20/libgcrypt20_1.8.4-5ubuntu1.dsc' libgcrypt20_1.8.4-5ubuntu1.dsc 2942 SHA256:3782aa8046d0104d007307287cc4ffa5a74fecf36fe25d657e733acb052b3f13
-'http://archive.ubuntu.com/ubuntu/pool/main/libg/libgcrypt20/libgcrypt20_1.8.4.orig.tar.bz2' libgcrypt20_1.8.4.orig.tar.bz2 2990108 SHA256:f638143a0672628fde0cad745e9b14deb85dffb175709cacc1f4fe24b93f2227
-'http://archive.ubuntu.com/ubuntu/pool/main/libg/libgcrypt20/libgcrypt20_1.8.4.orig.tar.bz2.asc' libgcrypt20_1.8.4.orig.tar.bz2.asc 534 SHA256:97df94317ad273cffce4e78ad34ad0664819b44496f6528818a4298a691209a3
-'http://archive.ubuntu.com/ubuntu/pool/main/libg/libgcrypt20/libgcrypt20_1.8.4-5ubuntu1.debian.tar.xz' libgcrypt20_1.8.4-5ubuntu1.debian.tar.xz 29996 SHA256:b667775ea21b72e7b975045f4da077a80e84d4691e3c4608c3e82bd7dd2572fd
-```
 
 ### `dpkg` source package: `libgpg-error=1.36-7`
 
@@ -3065,9 +3051,9 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris openexr=2.2.1-4.1
-'http://archive.ubuntu.com/ubuntu/pool/main/o/openexr/openexr_2.2.1-4.1.dsc' openexr_2.2.1-4.1.dsc 2270 SHA256:52ad0ebb9b1ab827c9c35f3ae971a604e4852b77494c210eb036e2c8bf2c7aaa
+'http://archive.ubuntu.com/ubuntu/pool/main/o/openexr/openexr_2.2.1-4.1ubuntu1.dsc' openexr_2.2.1-4.1ubuntu1.dsc 2377 SHA256:b85994b01154c6af482ab06c7dba782395c29fc830c68810c39dd95992bb6466
 'http://archive.ubuntu.com/ubuntu/pool/main/o/openexr/openexr_2.2.1.orig.tar.gz' openexr_2.2.1.orig.tar.gz 18176639 SHA256:8f9a5af6131583404261931d9a5c83de0a425cb4b8b25ddab2b169fbf113aecd
-'http://archive.ubuntu.com/ubuntu/pool/main/o/openexr/openexr_2.2.1-4.1.debian.tar.xz' openexr_2.2.1-4.1.debian.tar.xz 17976 SHA256:a1bff86eef1f812acfcc5300aeeced664eeb214e536b7eb6797da227229a245f
+'http://archive.ubuntu.com/ubuntu/pool/main/o/openexr/openexr_2.2.1-4.1ubuntu1.debian.tar.xz' openexr_2.2.1-4.1ubuntu1.debian.tar.xz 22508 SHA256:ec4517647154f86430af15e101537d4d06eea71bc6918f0d6f7bf95fddfbce81
 ```
 
 ### `dpkg` source package: `openldap=2.4.48+dfsg-1ubuntu1`
@@ -3536,14 +3522,13 @@ Binary Packages:
 If source is available (seen below), check the contents of `debian/copyright` within it.
 
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris python3-stdlib-extensions=3.7.4-3
-'http://archive.ubuntu.com/ubuntu/pool/main/p/python3-stdlib-extensions/python3-stdlib-extensions_3.7.4-3.dsc' python3-stdlib-extensions_3.7.4-3.dsc 2539 SHA256:cb003ef1f0248acda6ee06d059f44352595f96e42e2e8ce8ab3f62a0162febdf
-'http://archive.ubuntu.com/ubuntu/pool/main/p/python3-stdlib-extensions/python3-stdlib-extensions_3.7.4.orig.tar.xz' python3-stdlib-extensions_3.7.4.orig.tar.xz 1056860 SHA256:0e826e8b5b50a2e77a83be1f1a09c46e47ed594f56e57c9729a1da7affa204a0
-'http://archive.ubuntu.com/ubuntu/pool/main/p/python3-stdlib-extensions/python3-stdlib-extensions_3.7.4-3.debian.tar.xz' python3-stdlib-extensions_3.7.4-3.debian.tar.xz 17172 SHA256:c3e669581b33a9d0599861107ac4c05eb7bd33db115fc717ac3e22eed36ffdfc
-```
+The source package *may* still be available for download from:
+
+- http://snapshot.debian.org/package/python3-stdlib-extensions/3.7.4-3/
+
 
 ### `dpkg` source package: `python3.7=3.7.4-4`
 
@@ -3574,14 +3559,13 @@ Licenses: (parsed from: `/usr/share/doc/libpython3.7-minimal/copyright`, `/usr/s
 - `use in source`
 - `without`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris python3.7=3.7.4-4
-'http://archive.ubuntu.com/ubuntu/pool/main/p/python3.7/python3.7_3.7.4-4.dsc' python3.7_3.7.4-4.dsc 3419 SHA256:f259c2f4d403a58cf85785b7113d67fe292721bcf641bf4d3de6b9915da32419
-'http://archive.ubuntu.com/ubuntu/pool/main/p/python3.7/python3.7_3.7.4.orig.tar.xz' python3.7_3.7.4.orig.tar.xz 17131432 SHA256:fb799134b868199930b75f26678f18932214042639cd52b16da7fd134cd9b13f
-'http://archive.ubuntu.com/ubuntu/pool/main/p/python3.7/python3.7_3.7.4-4.debian.tar.xz' python3.7_3.7.4-4.debian.tar.xz 312592 SHA256:7c8e396c4cf639efbc85db18a57343340c164e0b3ddb937bf3c0ddd40e770b5f
-```
+The source package *may* still be available for download from:
+
+- http://snapshot.debian.org/package/python3.7/3.7.4-4/
+
 
 ### `dpkg` source package: `readline=8.0-3`
 

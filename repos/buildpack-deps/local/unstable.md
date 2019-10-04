@@ -1562,20 +1562,13 @@ Licenses: (parsed from: `/usr/share/doc/libharfbuzz0b/copyright`)
 
 - `MIT`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris harfbuzz=2.6.1-3
-'http://deb.debian.org/debian/pool/main/h/harfbuzz/harfbuzz_2.6.1-3.dsc' harfbuzz_2.6.1-3.dsc 2434 SHA256:7c33bb0db60f69fa88722e5ab72a7f49ed49e1701ec160816a64587cef5da9a2
-'http://deb.debian.org/debian/pool/main/h/harfbuzz/harfbuzz_2.6.1.orig.tar.xz' harfbuzz_2.6.1.orig.tar.xz 5741372 SHA256:c651fb3faaa338aeb280726837c2384064cdc17ef40539228d88a1260960844f
-'http://deb.debian.org/debian/pool/main/h/harfbuzz/harfbuzz_2.6.1-3.debian.tar.xz' harfbuzz_2.6.1-3.debian.tar.xz 10724 SHA256:4bf3ab1ab3cc096f4e3d76684ff9a7b14bec7b9c01143f8dfcb3f706e649605a
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/harfbuzz/2.6.1-3/
 
-- https://sources.debian.net/src/harfbuzz/2.6.1-3/ (for browsing the source)
-- https://sources.debian.net/src/harfbuzz/2.6.1-3/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/harfbuzz/2.6.1-3/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `hicolor-icon-theme=0.17-2`
 
@@ -4555,19 +4548,13 @@ Binary Packages:
 If source is available (seen below), check the contents of `debian/copyright` within it.
 
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris python3-defaults=3.7.3-1
-'http://deb.debian.org/debian/pool/main/p/python3-defaults/python3-defaults_3.7.3-1.dsc' python3-defaults_3.7.3-1.dsc 2797 SHA256:00fc9d88fab413659b27886833b4f20c15400cb335de94a3f2dbb01f7adf9058
-'http://deb.debian.org/debian/pool/main/p/python3-defaults/python3-defaults_3.7.3-1.tar.gz' python3-defaults_3.7.3-1.tar.gz 137436 SHA256:ed0fe03fc72b766bc4449088ff82764ac7486431efca38de89841a139f3362ad
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/python3-defaults/3.7.3-1/
 
-- https://sources.debian.net/src/python3-defaults/3.7.3-1/ (for browsing the source)
-- https://sources.debian.net/src/python3-defaults/3.7.3-1/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/python3-defaults/3.7.3-1/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `python3-stdlib-extensions=3.7.4-3`
 
@@ -4580,20 +4567,13 @@ Binary Packages:
 If source is available (seen below), check the contents of `debian/copyright` within it.
 
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris python3-stdlib-extensions=3.7.4-3
-'http://deb.debian.org/debian/pool/main/p/python3-stdlib-extensions/python3-stdlib-extensions_3.7.4-3.dsc' python3-stdlib-extensions_3.7.4-3.dsc 2539 SHA256:cb003ef1f0248acda6ee06d059f44352595f96e42e2e8ce8ab3f62a0162febdf
-'http://deb.debian.org/debian/pool/main/p/python3-stdlib-extensions/python3-stdlib-extensions_3.7.4.orig.tar.xz' python3-stdlib-extensions_3.7.4.orig.tar.xz 1056860 SHA256:0e826e8b5b50a2e77a83be1f1a09c46e47ed594f56e57c9729a1da7affa204a0
-'http://deb.debian.org/debian/pool/main/p/python3-stdlib-extensions/python3-stdlib-extensions_3.7.4-3.debian.tar.xz' python3-stdlib-extensions_3.7.4-3.debian.tar.xz 17172 SHA256:c3e669581b33a9d0599861107ac4c05eb7bd33db115fc717ac3e22eed36ffdfc
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/python3-stdlib-extensions/3.7.4-3/
 
-- https://sources.debian.net/src/python3-stdlib-extensions/3.7.4-3/ (for browsing the source)
-- https://sources.debian.net/src/python3-stdlib-extensions/3.7.4-3/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/python3-stdlib-extensions/3.7.4-3/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `python3.7=3.7.4-4`
 
@@ -4624,20 +4604,13 @@ Licenses: (parsed from: `/usr/share/doc/libpython3.7-minimal/copyright`, `/usr/s
 - `use in source`
 - `without`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris python3.7=3.7.4-4
-'http://deb.debian.org/debian/pool/main/p/python3.7/python3.7_3.7.4-4.dsc' python3.7_3.7.4-4.dsc 3419 SHA256:f259c2f4d403a58cf85785b7113d67fe292721bcf641bf4d3de6b9915da32419
-'http://deb.debian.org/debian/pool/main/p/python3.7/python3.7_3.7.4.orig.tar.xz' python3.7_3.7.4.orig.tar.xz 17131432 SHA256:fb799134b868199930b75f26678f18932214042639cd52b16da7fd134cd9b13f
-'http://deb.debian.org/debian/pool/main/p/python3.7/python3.7_3.7.4-4.debian.tar.xz' python3.7_3.7.4-4.debian.tar.xz 312592 SHA256:7c8e396c4cf639efbc85db18a57343340c164e0b3ddb937bf3c0ddd40e770b5f
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/python3.7/3.7.4-4/
 
-- https://sources.debian.net/src/python3.7/3.7.4-4/ (for browsing the source)
-- https://sources.debian.net/src/python3.7/3.7.4-4/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/python3.7/3.7.4-4/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `readline=8.0-3`
 
@@ -5048,20 +5021,13 @@ Licenses: (parsed from: `/usr/share/doc/libunbound8/copyright`)
 - `ISC`
 - `public-domain`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris unbound=1.9.3-1
-'http://deb.debian.org/debian/pool/main/u/unbound/unbound_1.9.3-1.dsc' unbound_1.9.3-1.dsc 3026 SHA256:57578475dccbdee6e8da9fe4fe588ea270e56ca32518369aaa795dc774d93208
-'http://deb.debian.org/debian/pool/main/u/unbound/unbound_1.9.3.orig.tar.gz' unbound_1.9.3.orig.tar.gz 5686017 SHA256:1b55dd9170e4bfb327fb644de7bbf7f0541701149dff3adf1b63ffa785f16dfa
-'http://deb.debian.org/debian/pool/main/u/unbound/unbound_1.9.3-1.debian.tar.xz' unbound_1.9.3-1.debian.tar.xz 18564 SHA256:896884d3b67612ec32c95f5a5ac9d50dfb47b4d7db576ef85d36fee77078578e
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/unbound/1.9.3-1/
 
-- https://sources.debian.net/src/unbound/1.9.3-1/ (for browsing the source)
-- https://sources.debian.net/src/unbound/1.9.3-1/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/unbound/1.9.3-1/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `unzip=6.0-25`
 

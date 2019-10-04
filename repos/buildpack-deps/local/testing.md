@@ -1760,20 +1760,13 @@ Licenses: (parsed from: `/usr/share/doc/iproute2/copyright`)
 
 - `GPL-2`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris iproute2=5.2.0-1
-'http://deb.debian.org/debian/pool/main/i/iproute2/iproute2_5.2.0-1.dsc' iproute2_5.2.0-1.dsc 1915 SHA256:d13bd5a1a9ce4366d1e6804c20431e4118bb1689dc42b59fc75cfd6fbbceb66b
-'http://deb.debian.org/debian/pool/main/i/iproute2/iproute2_5.2.0.orig.tar.xz' iproute2_5.2.0.orig.tar.xz 729540 SHA256:a5b95dec26353fc71dba9bb403e9343fad2a06bd69fb154a22a2aa2914f74da8
-'http://deb.debian.org/debian/pool/main/i/iproute2/iproute2_5.2.0-1.debian.tar.xz' iproute2_5.2.0-1.debian.tar.xz 144172 SHA256:ae740d8d5fc92b6bac389044423403a2f1b75340e22c617284dc324d88a06266
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/iproute2/5.2.0-1/
 
-- https://sources.debian.net/src/iproute2/5.2.0-1/ (for browsing the source)
-- https://sources.debian.net/src/iproute2/5.2.0-1/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/iproute2/5.2.0-1/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `iptables=1.8.3-2`
 
@@ -4589,20 +4582,13 @@ Licenses: (parsed from: `/usr/share/doc/libpython3.7-minimal/copyright`, `/usr/s
 - `use in source`
 - `without`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris python3.7=3.7.4-4
-'http://deb.debian.org/debian/pool/main/p/python3.7/python3.7_3.7.4-4.dsc' python3.7_3.7.4-4.dsc 3419 SHA256:f259c2f4d403a58cf85785b7113d67fe292721bcf641bf4d3de6b9915da32419
-'http://deb.debian.org/debian/pool/main/p/python3.7/python3.7_3.7.4.orig.tar.xz' python3.7_3.7.4.orig.tar.xz 17131432 SHA256:fb799134b868199930b75f26678f18932214042639cd52b16da7fd134cd9b13f
-'http://deb.debian.org/debian/pool/main/p/python3.7/python3.7_3.7.4-4.debian.tar.xz' python3.7_3.7.4-4.debian.tar.xz 312592 SHA256:7c8e396c4cf639efbc85db18a57343340c164e0b3ddb937bf3c0ddd40e770b5f
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/python3.7/3.7.4-4/
 
-- https://sources.debian.net/src/python3.7/3.7.4-4/ (for browsing the source)
-- https://sources.debian.net/src/python3.7/3.7.4-4/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/python3.7/3.7.4-4/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `readline=8.0-3`
 
