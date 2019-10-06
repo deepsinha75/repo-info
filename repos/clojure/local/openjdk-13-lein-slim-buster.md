@@ -1,20 +1,20 @@
-# `clojure:openjdk-11-lein-slim-buster`
+# `clojure:openjdk-13`
 
 ## Docker Metadata
 
-- Image ID: `sha256:7e33b16e4188c4c7ac96c720c916c61c132642798548c1145de7a542494737d0`
-- Created: `2019-10-03T22:23:50.073847992Z`
-- Virtual Size: ~ 430.54 Mb  
+- Image ID: `sha256:e681f222d6dbc5a7264c97734b643ea06729a1aa4e6f44b7ca98ff286e34cdf4`
+- Created: `2019-10-03T22:28:13.993791978Z`
+- Virtual Size: ~ 439.22 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Command: `["lein","repl"]`
 - Environment:
-  - `PATH=/usr/local/openjdk-11/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/local/bin/`
+  - `PATH=/usr/java/openjdk-13/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/local/bin/`
   - `LANG=C.UTF-8`
-  - `JAVA_HOME=/usr/local/openjdk-11`
-  - `JAVA_VERSION=11.0.4`
-  - `JAVA_BASE_URL=https://github.com/AdoptOpenJDK/openjdk11-upstream-binaries/releases/download/jdk-11.0.4%2B11/OpenJDK11U-jdk_`
-  - `JAVA_URL_VERSION=11.0.4_11`
+  - `JAVA_HOME=/usr/java/openjdk-13`
+  - `JAVA_VERSION=13`
+  - `JAVA_URL=https://download.java.net/java/GA/jdk13/5b8a42f3905b406298b72d750b6919f6/33/GPL/openjdk-13_linux-x64_bin.tar.gz`
+  - `JAVA_SHA256=5f547b8f0ffa7da517223f6f929a5055d749776b1878ccedbd6cc1334f4d6f4d`
   - `LEIN_VERSION=2.9.1`
   - `LEIN_INSTALL=/usr/local/bin/`
   - `LEIN_ROOT=1`

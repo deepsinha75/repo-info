@@ -1,25 +1,23 @@
-# `clojure:openjdk-8-lein`
+# `clojure:openjdk-11`
 
 ## Docker Metadata
 
-- Image ID: `sha256:e93c5beddd434b74629dc670bdb966b7c4bf6fdf1f4ce5399d147b3bdba80556`
-- Created: `2019-09-14T00:44:40.421773966Z`
-- Virtual Size: ~ 507.35 Mb  
+- Image ID: `sha256:9852eb863dbca71dc10b2d5aeecb9187a3ccd463957e5eec9dd83eb929061130`
+- Created: `2019-10-04T00:58:32.710463202Z`
+- Virtual Size: ~ 624.13 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Command: `["lein","repl"]`
 - Environment:
-  - `PATH=/usr/local/openjdk-8/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/local/bin/`
+  - `PATH=/usr/local/openjdk-11/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/local/bin/`
   - `LANG=C.UTF-8`
-  - `JAVA_HOME=/usr/local/openjdk-8`
-  - `JAVA_VERSION=8u222`
-  - `JAVA_BASE_URL=https://github.com/AdoptOpenJDK/openjdk8-upstream-binaries/releases/download/jdk8u222-b10/OpenJDK8U-jdk_`
-  - `JAVA_URL_VERSION=8u222b10`
+  - `JAVA_HOME=/usr/local/openjdk-11`
+  - `JAVA_VERSION=11.0.4`
+  - `JAVA_BASE_URL=https://github.com/AdoptOpenJDK/openjdk11-upstream-binaries/releases/download/jdk-11.0.4%2B11/OpenJDK11U-jdk_`
+  - `JAVA_URL_VERSION=11.0.4_11`
   - `LEIN_VERSION=2.9.1`
   - `LEIN_INSTALL=/usr/local/bin/`
   - `LEIN_ROOT=1`
-- Labels:
-  - `maintainer=Paul Lam <paul@quantisan.com>`
 
 ## `dpkg` (`.deb`-based packages)
 

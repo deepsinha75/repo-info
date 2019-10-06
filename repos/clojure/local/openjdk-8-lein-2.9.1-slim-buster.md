@@ -1,20 +1,20 @@
-# `clojure:openjdk-11-lein-slim-buster`
+# `clojure:openjdk-8-slim-buster`
 
 ## Docker Metadata
 
-- Image ID: `sha256:7e33b16e4188c4c7ac96c720c916c61c132642798548c1145de7a542494737d0`
-- Created: `2019-10-03T22:23:50.073847992Z`
-- Virtual Size: ~ 430.54 Mb  
+- Image ID: `sha256:06524c395cbf09a72084f42ba8299edf8cb0357729efaa2332eb7babdb46bc99`
+- Created: `2019-10-03T22:20:14.783386187Z`
+- Virtual Size: ~ 313.76 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Command: `["lein","repl"]`
 - Environment:
-  - `PATH=/usr/local/openjdk-11/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/local/bin/`
+  - `PATH=/usr/local/openjdk-8/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/local/bin/`
   - `LANG=C.UTF-8`
-  - `JAVA_HOME=/usr/local/openjdk-11`
-  - `JAVA_VERSION=11.0.4`
-  - `JAVA_BASE_URL=https://github.com/AdoptOpenJDK/openjdk11-upstream-binaries/releases/download/jdk-11.0.4%2B11/OpenJDK11U-jdk_`
-  - `JAVA_URL_VERSION=11.0.4_11`
+  - `JAVA_HOME=/usr/local/openjdk-8`
+  - `JAVA_VERSION=8u222`
+  - `JAVA_BASE_URL=https://github.com/AdoptOpenJDK/openjdk8-upstream-binaries/releases/download/jdk8u222-b10/OpenJDK8U-jdk_`
+  - `JAVA_URL_VERSION=8u222b10`
   - `LEIN_VERSION=2.9.1`
   - `LEIN_INSTALL=/usr/local/bin/`
   - `LEIN_ROOT=1`

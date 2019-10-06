@@ -1,23 +1,21 @@
-# `clojure:openjdk-8-tools-deps`
+# `clojure:openjdk-11-tools-deps`
 
 ## Docker Metadata
 
-- Image ID: `sha256:49c5b685d1ba364d96c5ab6b9a8ef2f047f13027a496112079474e2b793f02e6`
-- Created: `2019-09-14T00:46:20.075404483Z`
-- Virtual Size: ~ 532.75 Mb  
+- Image ID: `sha256:105f1de99eaf28a40b558f8a8e137026844b353d1c3eeec8d4cf21ce456ca189`
+- Created: `2019-10-03T22:25:50.484026636Z`
+- Virtual Size: ~ 631.59 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Command: `["sh","-c","sleep 1 && exec clj"]`
 - Environment:
-  - `PATH=/usr/local/openjdk-8/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
+  - `PATH=/usr/local/openjdk-11/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
   - `LANG=C.UTF-8`
-  - `JAVA_HOME=/usr/local/openjdk-8`
-  - `JAVA_VERSION=8u222`
-  - `JAVA_BASE_URL=https://github.com/AdoptOpenJDK/openjdk8-upstream-binaries/releases/download/jdk8u222-b10/OpenJDK8U-jdk_`
-  - `JAVA_URL_VERSION=8u222b10`
-  - `CLOJURE_VERSION=1.10.0.442`
-- Labels:
-  - `maintainer=Kirill Chernyshov <delaguardo@gmail.com>`
+  - `JAVA_HOME=/usr/local/openjdk-11`
+  - `JAVA_VERSION=11.0.4`
+  - `JAVA_BASE_URL=https://github.com/AdoptOpenJDK/openjdk11-upstream-binaries/releases/download/jdk-11.0.4%2B11/OpenJDK11U-jdk_`
+  - `JAVA_URL_VERSION=11.0.4_11`
+  - `CLOJURE_VERSION=1.10.1.469`
 
 ## `dpkg` (`.deb`-based packages)
 
@@ -2599,34 +2597,6 @@ Other potentially useful URLs:
 - https://sources.debian.net/src/readline/7.0-3/ (for browsing the source)
 - https://sources.debian.net/src/readline/7.0-3/debian/copyright/ (for direct copyright/license information)
 - http://snapshot.debian.org/package/readline/7.0-3/ (for access to the source package after it no longer exists in the archive)
-
-### `dpkg` source package: `rlwrap=0.42-3`
-
-Binary Packages:
-
-- `rlwrap=0.42-3`
-
-Licenses: (parsed from: `/usr/share/doc/rlwrap/copyright`)
-
-- `GPL-2`
-- `GPL-2+`
-- `LGPL-2.1`
-- `LGPL-2.1+`
-
-Source:
-
-```console
-$ apt-get source -qq --print-uris rlwrap=0.42-3
-'http://deb.debian.org/debian/pool/main/r/rlwrap/rlwrap_0.42-3.dsc' rlwrap_0.42-3.dsc 1894 SHA256:ae15d26fa6fef9c1e4483079ed2c5e54f71bd27c8004ea59ffe573826bce6473
-'http://deb.debian.org/debian/pool/main/r/rlwrap/rlwrap_0.42.orig.tar.gz' rlwrap_0.42.orig.tar.gz 279608 SHA256:5a70d8469db9d0a6630628f2d5d2972ad16c092400b7fbbdf699693ec0f87e44
-'http://deb.debian.org/debian/pool/main/r/rlwrap/rlwrap_0.42-3.debian.tar.xz' rlwrap_0.42-3.debian.tar.xz 5928 SHA256:91c8c6177faa5a719dcce13eb5724e636a44a873f244bc481e41949a5221e620
-```
-
-Other potentially useful URLs:
-
-- https://sources.debian.net/src/rlwrap/0.42-3/ (for browsing the source)
-- https://sources.debian.net/src/rlwrap/0.42-3/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/rlwrap/0.42-3/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `rtmpdump=2.4+20151223.gitfa8646d.1-1`
 

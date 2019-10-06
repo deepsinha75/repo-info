@@ -1,10 +1,10 @@
-# `clojure:openjdk-8-lein`
+# `clojure:openjdk-8`
 
 ## Docker Metadata
 
-- Image ID: `sha256:e93c5beddd434b74629dc670bdb966b7c4bf6fdf1f4ce5399d147b3bdba80556`
-- Created: `2019-09-14T00:44:40.421773966Z`
-- Virtual Size: ~ 507.35 Mb  
+- Image ID: `sha256:9824d4eae1b417454aa2d60082508c1b15c923fb2d42ceb04114ff58ae993b8d`
+- Created: `2019-10-03T22:19:53.778718734Z`
+- Virtual Size: ~ 507.36 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Command: `["lein","repl"]`
@@ -18,8 +18,6 @@
   - `LEIN_VERSION=2.9.1`
   - `LEIN_INSTALL=/usr/local/bin/`
   - `LEIN_ROOT=1`
-- Labels:
-  - `maintainer=Paul Lam <paul@quantisan.com>`
 
 ## `dpkg` (`.deb`-based packages)
 
