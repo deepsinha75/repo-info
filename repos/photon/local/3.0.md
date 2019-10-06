@@ -2,8 +2,8 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:5ccb5186b75cd13ff0d028f5b5b2bdf7ef7ca2b3d56eb2c6eb6c136077a6991a`
-- Created: `2019-08-23T22:26:32.857588774Z`
+- Image ID: `sha256:110d43ff3c70a653283bd23576ab74755fbd00b094548d9b666f0abd69608b78`
+- Created: `2019-10-04T21:23:22.231209402Z`
 - Virtual Size: ~ 34.15 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
@@ -11,7 +11,7 @@
 - Environment:
   - `PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
 - Labels:
-  - `build-date=20190823`
+  - `build-date=20191004`
   - `name=Photon OS x86_64/3.0 Base Image`
   - `vendor=VMware`
 
@@ -143,7 +143,7 @@ Licenses (from `rpm --query`): MPLv2.0
 
 **WARNING:** unable to find source (`yumdownloader` failed or returned no results)!
 
-### `rpm` package: `openssl-1.0.2s-1.ph3.x86_64`
+### `rpm` package: `openssl-1.0.2s-2.ph3.x86_64`
 
 Licenses (from `rpm --query`): OpenSSL
 
@@ -179,19 +179,19 @@ Licenses (from `rpm --query`): GPLv2+
 
 **WARNING:** unable to find source (`yumdownloader` failed or returned no results)!
 
-### `rpm` package: `sqlite-libs-3.27.2-3.ph3.x86_64`
+### `rpm` package: `sqlite-libs-3.27.2-4.ph3.x86_64`
 
 Licenses (from `rpm --query`): Public Domain
 
 **WARNING:** unable to find source (`yumdownloader` failed or returned no results)!
 
-### `rpm` package: `tdnf-2.0.0-10.ph3.x86_64`
+### `rpm` package: `tdnf-2.0.0-11.ph3.x86_64`
 
 Licenses (from `rpm --query`): LGPLv2.1,GPLv2
 
 **WARNING:** unable to find source (`yumdownloader` failed or returned no results)!
 
-### `rpm` package: `tdnf-cli-libs-2.0.0-10.ph3.x86_64`
+### `rpm` package: `tdnf-cli-libs-2.0.0-11.ph3.x86_64`
 
 Licenses (from `rpm --query`): LGPLv2.1,GPLv2
 
