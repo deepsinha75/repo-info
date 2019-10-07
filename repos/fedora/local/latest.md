@@ -26,12 +26,10 @@ Source:
 
 ```console
 $ yumdownloader --quiet --source --urls acl-2.2.53-3.fc30
-http://mirror.siena.edu/fedora/linux/updates/30/Everything/x86_64/repodata/repomd.xml: [Errno 12] Timeout on http://mirror.siena.edu/fedora/linux/updates/30/Everything/x86_64/repodata/repomd.xml: (28, 'Connection timed out after 30001 milliseconds')
-Trying other mirror.
-http://mirror.cc.vt.edu/pub/fedora/linux/updates/30/Everything/x86_64/repodata/repomd.xml: [Errno -1] repomd.xml does not match metalink for updates
+http://mirror.stavlor.net/pub/fedora/linux/releases/30/Everything/x86_64/os/repodata/repomd.xml: [Errno 12] Timeout on http://mirror.stavlor.net/pub/fedora/linux/releases/30/Everything/x86_64/os/repodata/repomd.xml: (28, 'Connection timed out after 30000 milliseconds')
 Trying other mirror.
 Enabling fedora-modular-source repository
-http://csc.mcs.sdsmt.edu/fedora/linux/releases/30/Modular/source/tree/repodata/repomd.xml: [Errno 12] Timeout on http://csc.mcs.sdsmt.edu/fedora/linux/releases/30/Modular/source/tree/repodata/repomd.xml: (28, 'Operation too slow. Less than 1000 bytes/sec transferred the last 30 seconds')
+http://mirror.stavlor.net/pub/fedora/linux/releases/30/Modular/source/tree/repodata/repomd.xml: [Errno 12] Timeout on http://mirror.stavlor.net/pub/fedora/linux/releases/30/Modular/source/tree/repodata/repomd.xml: (28, 'Connection timed out after 30001 milliseconds')
 Trying other mirror.
 Enabling updates-source repository
 Enabling updates-modular-source repository
