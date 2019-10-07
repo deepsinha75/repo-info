@@ -390,16 +390,7 @@ Licenses (from `rpm --query`): GPLv2+ or LGPLv3+
 
 Licenses (from `rpm --query`): GPLv2
 
-Source:
-
-```console
-$ yumdownloader --quiet --source --urls epel-release-7-11.noarch
-Enabling epel-source repository
-Enabling updates-source repository
-Enabling base-source repository
-Enabling extras-source repository
-https://d2lzkl7pfhq30w.cloudfront.net/pub/epel/7/SRPMS//Packages/e/epel-release-7-11.src.rpm
-```
+**WARNING:** unable to find source (`yumdownloader` failed or returned no results)!
 
 ### `rpm` package: `expat-2.1.0-10.el7_3.x86_64`
 
