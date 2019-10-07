@@ -1,10 +1,10 @@
-# `postgres:11.5-alpine`
+# `postgres:12.0-alpine`
 
 ## Docker Metadata
 
-- Image ID: `sha256:78b21f6420c06f2e15d1009081506b74a27b2ad15cbb2149723e817f525e26b4`
-- Created: `2019-08-21T00:46:08.614078272Z`
-- Virtual Size: ~ 71.88 Mb  
+- Image ID: `sha256:cef3c8b4bfa5fd8b9f40508dee9ad538b38e33a47d743ce4a7d1c1c54e42139c`
+- Created: `2019-10-04T00:30:29.60146555Z`
+- Virtual Size: ~ 75.99 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["docker-entrypoint.sh"]`
@@ -12,9 +12,9 @@
 - Environment:
   - `PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
   - `LANG=en_US.utf8`
-  - `PG_MAJOR=11`
-  - `PG_VERSION=11.5`
-  - `PG_SHA256=7fdf23060bfc715144cbf2696cf05b0fa284ad3eb21f0c378591c6bca99ad180`
+  - `PG_MAJOR=12`
+  - `PG_VERSION=12.0`
+  - `PG_SHA256=cda2397215f758b793f741c86be05468257b0e6bcb1a6113882ab5d0df0855c6`
   - `PGDATA=/var/lib/postgresql/data`
 
 ## `apk` (`.apk`-based packages)
@@ -158,16 +158,16 @@ BSD
 ### `apk` package: `libcrypto1.1`
 
 ```console
-libcrypto1.1-1.1.1c-r0 description:
+libcrypto1.1-1.1.1d-r0 description:
 Crypto library from openssl
 
-libcrypto1.1-1.1.1c-r0 webpage:
+libcrypto1.1-1.1.1d-r0 webpage:
 https://www.openssl.org
 
-libcrypto1.1-1.1.1c-r0 installed size:
-2760704
+libcrypto1.1-1.1.1d-r0 installed size:
+2736128
 
-libcrypto1.1-1.1.1c-r0 license:
+libcrypto1.1-1.1.1d-r0 license:
 OpenSSL
 
 ```
@@ -243,16 +243,16 @@ GPL-2.0-or-later LGPL-2.1-or-later
 ### `apk` package: `libssl1.1`
 
 ```console
-libssl1.1-1.1.1c-r0 description:
+libssl1.1-1.1.1d-r0 description:
 SSL shared libraries
 
-libssl1.1-1.1.1c-r0 webpage:
+libssl1.1-1.1.1d-r0 webpage:
 https://www.openssl.org
 
-libssl1.1-1.1.1c-r0 installed size:
-536576
+libssl1.1-1.1.1d-r0 installed size:
+532480
 
-libssl1.1-1.1.1c-r0 license:
+libssl1.1-1.1.1d-r0 license:
 OpenSSL
 
 ```
@@ -498,16 +498,16 @@ MIT
 ### `apk` package: `tzdata`
 
 ```console
-tzdata-2019a-r0 description:
+tzdata-2019b-r0 description:
 Timezone data
 
-tzdata-2019a-r0 webpage:
+tzdata-2019b-r0 webpage:
 https://www.iana.org/time-zones
 
-tzdata-2019a-r0 installed size:
+tzdata-2019b-r0 installed size:
 3538944
 
-tzdata-2019a-r0 license:
+tzdata-2019b-r0 license:
 Public-Domain
 
 ```
