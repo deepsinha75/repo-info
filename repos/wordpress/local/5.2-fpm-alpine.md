@@ -2,9 +2,9 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:9e55a112206b55338e8f9dc071d1ea9f72b942a8e9b3c1fbcfe3aa40bf5c6bcc`
-- Created: `2019-10-04T00:50:36.289998671Z`
-- Virtual Size: ~ 200.17 Mb  
+- Image ID: `sha256:3700b818aed4781303556052201bf6e1317545892dfea8995d3ac554d49d3c8d`
+- Created: `2019-10-05T06:48:52.191048624Z`
+- Virtual Size: ~ 197.38 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["docker-entrypoint.sh"]`
@@ -994,6 +994,23 @@ sed-4.7-r0 installed size:
 
 sed-4.7-r0 license:
 GPL-3.0+
+
+```
+
+### `apk` package: `sqlite-libs`
+
+```console
+sqlite-libs-3.28.0-r0 description:
+Sqlite3 library
+
+sqlite-libs-3.28.0-r0 webpage:
+https://www.sqlite.org/
+
+sqlite-libs-3.28.0-r0 installed size:
+925696
+
+sqlite-libs-3.28.0-r0 license:
+Public-Domain
 
 ```
 
