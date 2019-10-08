@@ -1,10 +1,10 @@
-# `crate:4.0.4`
+# `crate:4.0.6`
 
 ## Docker Metadata
 
-- Image ID: `sha256:f51b4ea4d1829065d263cc9cddd2b0d91f0d1dada77c3c78c8d351895c24b153`
-- Created: `2019-08-27T21:21:06.743072677Z`
-- Virtual Size: ~ 668.20 Mb  
+- Image ID: `sha256:8ea083f8a4a66061550f3f524693b219958d3d23b72fd5ccbd5bc2b52bc0e0dc`
+- Created: `2019-10-07T22:22:32.650497397Z`
+- Virtual Size: ~ 679.72 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["/docker-entrypoint.sh"]`
@@ -15,7 +15,7 @@
   - `CRATE_HEAP_SIZE=512M`
 - Labels:
   - `maintainer=Crate.io <office@crate.io>`
-  - `org.label-schema.build-date=2019-08-21T15:00:34.658391`
+  - `org.label-schema.build-date=2019-10-03T11:40:28.456950`
   - `org.label-schema.description=CrateDB is a distributed SQL database handles massive amounts of machine data in real-time.`
   - `org.label-schema.license=GPLv2`
   - `org.label-schema.name=crate`
@@ -23,7 +23,7 @@
   - `org.label-schema.url=https://crate.io/products/cratedb/`
   - `org.label-schema.vcs-url=https://github.com/crate/docker-crate`
   - `org.label-schema.vendor=Crate.io`
-  - `org.label-schema.version=4.0.4`
+  - `org.label-schema.version=4.0.6`
 
 ## `rpm` (`.rpm`-based packages)
 
@@ -391,17 +391,7 @@ Licenses (from `rpm --query`): GPLv2+ or LGPLv3+
 
 Licenses (from `rpm --query`): GPLv2
 
-Source:
-
-```console
-$ yumdownloader --quiet --source --urls epel-release-7-11.noarch
-Enabling epel-source repository
-Enabling updates-source repository
-Enabling base-source repository
-Enabling ius-source repository
-Enabling extras-source repository
-https://d2lzkl7pfhq30w.cloudfront.net/pub/epel/7/SRPMS//Packages/e/epel-release-7-11.src.rpm
-```
+**WARNING:** unable to find source (`yumdownloader` failed or returned no results)!
 
 ### `rpm` package: `expat-2.1.0-10.el7_3.x86_64`
 
@@ -564,12 +554,6 @@ Enabling ius-source repository
 Enabling extras-source repository
 http://vault.centos.org/centos/7/os/Source//SPackages/gobject-introspection-1.56.1-1.el7.src.rpm
 ```
-
-### `rpm` package: `gpg-pubkey-4b274df2-5c17ce56`
-
-Licenses (from `rpm --query`): pubkey
-
-**WARNING:** unable to find source (`yumdownloader` failed or returned no results)!
 
 ### `rpm` package: `gpg-pubkey-f4a80eb5-53a7ff4b`
 
@@ -1075,6 +1059,22 @@ Enabling extras-source repository
 http://vault.centos.org/centos/7/os/Source//SPackages/libtasn1-4.10-1.el7.src.rpm
 ```
 
+### `rpm` package: `libtirpc-0.2.4-0.16.el7.x86_64`
+
+Licenses (from `rpm --query`): SISSL and BSD
+
+Source:
+
+```console
+$ yumdownloader --quiet --source --urls libtirpc-0.2.4-0.16.el7
+Enabling epel-source repository
+Enabling updates-source repository
+Enabling base-source repository
+Enabling ius-source repository
+Enabling extras-source repository
+http://vault.centos.org/centos/7/os/Source//SPackages/libtirpc-0.2.4-0.16.el7.src.rpm
+```
+
 ### `rpm` package: `libuser-0.60-9.el7.x86_64`
 
 Licenses (from `rpm --query`): LGPLv2+
@@ -1193,20 +1193,20 @@ Enabling extras-source repository
 http://vault.centos.org/centos/7/os/Source//SPackages/lz4-1.7.5-2.el7.src.rpm
 ```
 
-### `rpm` package: `make-3.82-23.el7.x86_64`
+### `rpm` package: `make-3.82-24.el7.x86_64`
 
 Licenses (from `rpm --query`): GPLv2+
 
 Source:
 
 ```console
-$ yumdownloader --quiet --source --urls make-3.82-23.el7
+$ yumdownloader --quiet --source --urls make-3.82-24.el7
 Enabling epel-source repository
 Enabling updates-source repository
 Enabling base-source repository
 Enabling ius-source repository
 Enabling extras-source repository
-http://vault.centos.org/centos/7/os/Source//SPackages/make-3.82-23.el7.src.rpm
+http://vault.centos.org/centos/7/os/Source//SPackages/make-3.82-24.el7.src.rpm
 ```
 
 ### `rpm` package: `ncurses-5.9-14.20130511.el7_4.x86_64`
@@ -1341,17 +1341,37 @@ Enabling extras-source repository
 http://vault.centos.org/centos/7/os/Source//SPackages/openldap-2.4.44-21.el7_6.src.rpm
 ```
 
-### `rpm` package: `openssl-1.0.2k-16.el7_6.1.x86_64`
+### `rpm` package: `openssl-1.0.2k-19.el7.x86_64`
 
 Licenses (from `rpm --query`): OpenSSL
 
-**WARNING:** unable to find source (`yumdownloader` failed or returned no results)!
+Source:
 
-### `rpm` package: `openssl-libs-1.0.2k-16.el7_6.1.x86_64`
+```console
+$ yumdownloader --quiet --source --urls openssl-1.0.2k-19.el7
+Enabling epel-source repository
+Enabling updates-source repository
+Enabling base-source repository
+Enabling ius-source repository
+Enabling extras-source repository
+http://vault.centos.org/centos/7/os/Source//SPackages/openssl-1.0.2k-19.el7.src.rpm
+```
+
+### `rpm` package: `openssl-libs-1.0.2k-19.el7.x86_64`
 
 Licenses (from `rpm --query`): OpenSSL
 
-**WARNING:** unable to find source (`yumdownloader` failed or returned no results)!
+Source:
+
+```console
+$ yumdownloader --quiet --source --urls openssl-libs-1.0.2k-19.el7
+Enabling epel-source repository
+Enabling updates-source repository
+Enabling base-source repository
+Enabling ius-source repository
+Enabling extras-source repository
+http://vault.centos.org/centos/7/os/Source//SPackages/openssl-1.0.2k-19.el7.src.rpm
+```
 
 ### `rpm` package: `p11-kit-0.23.5-3.el7.x86_64`
 
@@ -1643,36 +1663,68 @@ Enabling extras-source repository
 http://vault.centos.org/centos/7/os/Source//SPackages/python-urlgrabber-3.10-9.el7.src.rpm
 ```
 
-### `rpm` package: `python36u-3.6.8-1.el7.ius.x86_64`
+### `rpm` package: `python3-3.6.8-10.el7.x86_64`
 
 Licenses (from `rpm --query`): Python
 
 Source:
 
 ```console
-$ yumdownloader --quiet --source --urls python36u-3.6.8-1.el7.ius
+$ yumdownloader --quiet --source --urls python3-3.6.8-10.el7
 Enabling epel-source repository
 Enabling updates-source repository
 Enabling base-source repository
 Enabling ius-source repository
 Enabling extras-source repository
-https://repo.ius.io/7/src//packages/p/python36u-3.6.8-1.el7.ius.src.rpm
+http://vault.centos.org/centos/7/os/Source//SPackages/python3-3.6.8-10.el7.src.rpm
 ```
 
-### `rpm` package: `python36u-libs-3.6.8-1.el7.ius.x86_64`
+### `rpm` package: `python3-libs-3.6.8-10.el7.x86_64`
 
 Licenses (from `rpm --query`): Python
 
 Source:
 
 ```console
-$ yumdownloader --quiet --source --urls python36u-libs-3.6.8-1.el7.ius
+$ yumdownloader --quiet --source --urls python3-libs-3.6.8-10.el7
 Enabling epel-source repository
 Enabling updates-source repository
 Enabling base-source repository
 Enabling ius-source repository
 Enabling extras-source repository
-https://repo.ius.io/7/src//packages/p/python36u-3.6.8-1.el7.ius.src.rpm
+http://vault.centos.org/centos/7/os/Source//SPackages/python3-3.6.8-10.el7.src.rpm
+```
+
+### `rpm` package: `python3-pip-9.0.3-5.el7.noarch`
+
+Licenses (from `rpm --query`): MIT and Python and ASL 2.0 and BSD and ISC and LGPLv2 and MPLv2.0 and (ASL 2.0 or BSD)
+
+Source:
+
+```console
+$ yumdownloader --quiet --source --urls python3-pip-9.0.3-5.el7.noarch
+Enabling epel-source repository
+Enabling updates-source repository
+Enabling base-source repository
+Enabling ius-source repository
+Enabling extras-source repository
+http://vault.centos.org/centos/7/os/Source//SPackages/python-pip-9.0.3-5.el7.src.rpm
+```
+
+### `rpm` package: `python3-setuptools-39.2.0-10.el7.noarch`
+
+Licenses (from `rpm --query`): MIT and (BSD or ASL 2.0)
+
+Source:
+
+```console
+$ yumdownloader --quiet --source --urls python3-setuptools-39.2.0-10.el7.noarch
+Enabling epel-source repository
+Enabling updates-source repository
+Enabling base-source repository
+Enabling ius-source repository
+Enabling extras-source repository
+http://vault.centos.org/centos/7/os/Source//SPackages/python3-setuptools-39.2.0-10.el7.src.rpm
 ```
 
 ### `rpm` package: `pyxattr-0.5.1-5.el7.x86_64`
@@ -1981,11 +2033,21 @@ Licenses (from `rpm --query`): GPLv2+
 
 **WARNING:** unable to find source (`yumdownloader` failed or returned no results)!
 
-### `rpm` package: `yum-utils-1.1.31-50.el7.noarch`
+### `rpm` package: `yum-utils-1.1.31-52.el7.noarch`
 
 Licenses (from `rpm --query`): GPLv2+
 
-**WARNING:** unable to find source (`yumdownloader` failed or returned no results)!
+Source:
+
+```console
+$ yumdownloader --quiet --source --urls yum-utils-1.1.31-52.el7.noarch
+Enabling epel-source repository
+Enabling updates-source repository
+Enabling base-source repository
+Enabling ius-source repository
+Enabling extras-source repository
+http://vault.centos.org/centos/7/os/Source//SPackages/yum-utils-1.1.31-52.el7.src.rpm
+```
 
 ### `rpm` package: `zlib-1.2.7-18.el7.x86_64`
 
