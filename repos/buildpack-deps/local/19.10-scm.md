@@ -248,14 +248,13 @@ Licenses: (parsed from: `/usr/share/doc/bzr/copyright`, `/usr/share/doc/python-b
 - `GPL-2`
 - `GPL-2+`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris bzr=2.7.0+bzr6622-16
-'http://archive.ubuntu.com/ubuntu/pool/universe/b/bzr/bzr_2.7.0+bzr6622-16.dsc' bzr_2.7.0+bzr6622-16.dsc 2888 SHA256:60447462b617716a07030a1300337d279a6b740c061b6273a6aaf158efd00bd3
-'http://archive.ubuntu.com/ubuntu/pool/universe/b/bzr/bzr_2.7.0+bzr6622.orig.tar.gz' bzr_2.7.0+bzr6622.orig.tar.gz 10948360 SHA256:08bba3e76cba9beb6b686e71253045beeab9db94753ddbcafa0f8ed1cba377ff
-'http://archive.ubuntu.com/ubuntu/pool/universe/b/bzr/bzr_2.7.0+bzr6622-16.debian.tar.xz' bzr_2.7.0+bzr6622-16.debian.tar.xz 89372 SHA256:e9b155ff03d37c3ae1f8cd8fede884c74f8c4c88b4051db17fbf9e2060cb9dbf
-```
+The source package *may* still be available for download from:
+
+- http://snapshot.debian.org/package/bzr/2.7.0+bzr6622-16/
+
 
 ### `dpkg` source package: `ca-certificates=20190110`
 

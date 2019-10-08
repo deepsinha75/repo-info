@@ -938,20 +938,13 @@ Licenses: (parsed from: `/usr/share/doc/iputils-ping/copyright`)
 
 - `GPL`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris iputils=3:20190709-1
-'http://deb.debian.org/debian/pool/main/i/iputils/iputils_20190709-1.dsc' iputils_20190709-1.dsc 2103 SHA256:ec4e68f4bfb5b1b53a1a312361a0f8f5edb45be4aa663312763aa19d209a8207
-'http://deb.debian.org/debian/pool/main/i/iputils/iputils_20190709.orig.tar.xz' iputils_20190709.orig.tar.xz 361144 SHA256:bec0321ee1489c8f73e88f7d34b6fd40fbec7b3af5b3a1940306bd8d8835c3c0
-'http://deb.debian.org/debian/pool/main/i/iputils/iputils_20190709-1.debian.tar.xz' iputils_20190709-1.debian.tar.xz 9952 SHA256:5a2e802b06d3c4e559095498caf9971f96895f591b43fd4aac17e0d191973c8a
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/iputils/3:20190709-1/
 
-- https://sources.debian.net/src/iputils/3:20190709-1/ (for browsing the source)
-- https://sources.debian.net/src/iputils/3:20190709-1/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/iputils/3:20190709-1/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `keyutils=1.6-6`
 
@@ -1580,20 +1573,13 @@ Licenses: (parsed from: `/usr/share/doc/liblz4-1/copyright`)
 - `GPL-2`
 - `GPL-2+`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris lz4=1.8.3-1
-'http://deb.debian.org/debian/pool/main/l/lz4/lz4_1.8.3-1.dsc' lz4_1.8.3-1.dsc 1932 SHA256:fed178383bc99451256cedf0d39731d106f70103125c043e4ef7112a642190b5
-'http://deb.debian.org/debian/pool/main/l/lz4/lz4_1.8.3.orig.tar.gz' lz4_1.8.3.orig.tar.gz 327897 SHA256:33af5936ac06536805f9745e0b6d61da606a1f8b4cc5c04dd3cbaca3b9b4fc43
-'http://deb.debian.org/debian/pool/main/l/lz4/lz4_1.8.3-1.debian.tar.xz' lz4_1.8.3-1.debian.tar.xz 11336 SHA256:e98f02ec04236c616ea003d0a0e50818b2a959436fcd833ba1bcfc14664ab156
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/lz4/1.8.3-1/
 
-- https://sources.debian.net/src/lz4/1.8.3-1/ (for browsing the source)
-- https://sources.debian.net/src/lz4/1.8.3-1/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/lz4/1.8.3-1/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `mawk=1.3.3-17`
 
@@ -2118,21 +2104,13 @@ Licenses: (parsed from: `/usr/share/doc/libsqlite3-0/copyright`)
 - `GPL-2+`
 - `public-domain`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris sqlite3=3.29.0-2
-'http://deb.debian.org/debian/pool/main/s/sqlite3/sqlite3_3.29.0-2.dsc' sqlite3_3.29.0-2.dsc 2398 SHA256:14421d8e7e13ec47dc2f6a4682aa12803b19aecd98fa30d02d07ae80d602c7ec
-'http://deb.debian.org/debian/pool/main/s/sqlite3/sqlite3_3.29.0.orig-www.tar.xz' sqlite3_3.29.0.orig-www.tar.xz 5653816 SHA256:879d852db191f0a9ce0c65cc701e0a1eb6ed232eb112deb64c4288f17ded3a29
-'http://deb.debian.org/debian/pool/main/s/sqlite3/sqlite3_3.29.0.orig.tar.xz' sqlite3_3.29.0.orig.tar.xz 7004564 SHA256:b0c904b6b04cd377f949e07561df6068614d1eb66a6abb99157750638f9e69c2
-'http://deb.debian.org/debian/pool/main/s/sqlite3/sqlite3_3.29.0-2.debian.tar.xz' sqlite3_3.29.0-2.debian.tar.xz 19684 SHA256:351616255cbcc5e2515b65c05d5b53e9e3da2ac03a8ef215590bafcf61337fb6
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/sqlite3/3.29.0-2/
 
-- https://sources.debian.net/src/sqlite3/3.29.0-2/ (for browsing the source)
-- https://sources.debian.net/src/sqlite3/3.29.0-2/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/sqlite3/3.29.0-2/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `systemd=242-7`
 

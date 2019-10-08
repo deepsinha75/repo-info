@@ -143,21 +143,13 @@ Licenses: (parsed from: `/usr/share/doc/libattr1/copyright`)
 - `LGPL-2+`
 - `LGPL-2.1`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris attr=1:2.4.48-4
-'http://deb.debian.org/debian/pool/main/a/attr/attr_2.4.48-4.dsc' attr_2.4.48-4.dsc 2427 SHA256:e53c076f39f1be4186704c94bd32276fa4661a587c360d8da25a5c3abe40cb29
-'http://deb.debian.org/debian/pool/main/a/attr/attr_2.4.48.orig.tar.gz' attr_2.4.48.orig.tar.gz 467840 SHA256:5ead72b358ec709ed00bbf7a9eaef1654baad937c001c044fe8b74c57f5324e7
-'http://deb.debian.org/debian/pool/main/a/attr/attr_2.4.48.orig.tar.gz.asc' attr_2.4.48.orig.tar.gz.asc 833 SHA256:5d23c2c83cc13d170f1c209f48d0efa1fc46d16487b790e9996c5206dcfe0395
-'http://deb.debian.org/debian/pool/main/a/attr/attr_2.4.48-4.debian.tar.xz' attr_2.4.48-4.debian.tar.xz 22388 SHA256:a491d226fb3b47aa65997406009893a4cc0628e2ffffe0d411179652dfeb6935
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/attr/1:2.4.48-4/
 
-- https://sources.debian.net/src/attr/1:2.4.48-4/ (for browsing the source)
-- https://sources.debian.net/src/attr/1:2.4.48-4/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/attr/1:2.4.48-4/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `audit=1:2.8.5-2`
 
@@ -400,20 +392,13 @@ Licenses: (parsed from: `/usr/share/doc/bzip2/copyright`, `/usr/share/doc/libbz2
 - `BSD-variant`
 - `GPL-2`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris bzip2=1.0.6-9.2
-'http://deb.debian.org/debian/pool/main/b/bzip2/bzip2_1.0.6-9.2.dsc' bzip2_1.0.6-9.2.dsc 2348 SHA256:3b457bb9dabd0db4aec66727e69fe58aa12ec74c9c7980e8f08995a8428d1b5d
-'http://deb.debian.org/debian/pool/main/b/bzip2/bzip2_1.0.6.orig.tar.bz2' bzip2_1.0.6.orig.tar.bz2 708737 SHA256:d70a9ccd8bdf47e302d96c69fecd54925f45d9c7b966bb4ef5f56b770960afa7
-'http://deb.debian.org/debian/pool/main/b/bzip2/bzip2_1.0.6-9.2.debian.tar.bz2' bzip2_1.0.6-9.2.debian.tar.bz2 27527 SHA256:070d9e3e6bf1e70b55fb60d4a155c9be30656d8cd0a38460b82e298ade6e2919
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/bzip2/1.0.6-9.2/
 
-- https://sources.debian.net/src/bzip2/1.0.6-9.2/ (for browsing the source)
-- https://sources.debian.net/src/bzip2/1.0.6-9.2/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/bzip2/1.0.6-9.2/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `ca-certificates=20190110`
 
@@ -852,20 +837,13 @@ Licenses: (parsed from: `/usr/share/doc/libexpat1/copyright`, `/usr/share/doc/li
 
 - `MIT`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris expat=2.2.7-2
-'http://deb.debian.org/debian/pool/main/e/expat/expat_2.2.7-2.dsc' expat_2.2.7-2.dsc 1949 SHA256:823f03964b62c0fd3d380e4001bc3aea35051cbcaf52d09ca19d5889b7bba1f8
-'http://deb.debian.org/debian/pool/main/e/expat/expat_2.2.7.orig.tar.gz' expat_2.2.7.orig.tar.gz 8278607 SHA256:4efe89dfd8c2f9b971bf9089efa4cc163ac997a75da92c08be14d80a091474e6
-'http://deb.debian.org/debian/pool/main/e/expat/expat_2.2.7-2.debian.tar.xz' expat_2.2.7-2.debian.tar.xz 12852 SHA256:9f427b1f23a95ded54f347d67dd527cb130b686bc190428dc95ed67a0100bc0a
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/expat/2.2.7-2/
 
-- https://sources.debian.net/src/expat/2.2.7-2/ (for browsing the source)
-- https://sources.debian.net/src/expat/2.2.7-2/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/expat/2.2.7-2/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `fftw3=3.3.8-2`
 
@@ -1100,20 +1078,13 @@ Licenses: (parsed from: `/usr/share/doc/cpp-9/copyright`, `/usr/share/doc/g++-9/
 - `LGPL`
 - `LGPL-2.1+`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris gcc-9=9.2.1-4
-'http://deb.debian.org/debian/pool/main/g/gcc-9/gcc-9_9.2.1-4.dsc' gcc-9_9.2.1-4.dsc 33795 SHA256:3ce8f6fc706d2e87701c065581170a49d896d7e2aec3e41e341e6c0ea1b30f67
-'http://deb.debian.org/debian/pool/main/g/gcc-9/gcc-9_9.2.1.orig.tar.gz' gcc-9_9.2.1.orig.tar.gz 92887421 SHA256:f259d1c6344f5d89fee3a182d7a211925f507d477d3659d53ac64c76cea8bb11
-'http://deb.debian.org/debian/pool/main/g/gcc-9/gcc-9_9.2.1-4.debian.tar.xz' gcc-9_9.2.1-4.debian.tar.xz 457728 SHA256:791eebad022cdf7647f803813c474afdc722c6b660ad7e22c245a644b167fe2c
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/gcc-9/9.2.1-4/
 
-- https://sources.debian.net/src/gcc-9/9.2.1-4/ (for browsing the source)
-- https://sources.debian.net/src/gcc-9/9.2.1-4/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/gcc-9/9.2.1-4/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `gcc-defaults=1.185`
 
@@ -1405,21 +1376,13 @@ Licenses: (parsed from: `/usr/share/doc/libgnutls-dane0/copyright`, `/usr/share/
 - `The MIT License (MIT)`
 - `The main library is licensed under GNU Lesser`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris gnutls28=3.6.9-4
-'http://deb.debian.org/debian/pool/main/g/gnutls28/gnutls28_3.6.9-4.dsc' gnutls28_3.6.9-4.dsc 3377 SHA256:376e2f4ec363ee7cee2c8f22d7f286e7a3c63db7f3645f7e0108e3c8443335b9
-'http://deb.debian.org/debian/pool/main/g/gnutls28/gnutls28_3.6.9.orig.tar.xz' gnutls28_3.6.9.orig.tar.xz 5773928 SHA256:4331fca55817ecdd74450b908a6c29b4f05bb24dd13144c6284aa34d872e1fcb
-'http://deb.debian.org/debian/pool/main/g/gnutls28/gnutls28_3.6.9.orig.tar.xz.asc' gnutls28_3.6.9.orig.tar.xz.asc 488 SHA256:7956ffdddad8495f6933233b6ad04bb6b4e8ff9a2977fc0fd7ae95aa33ae245d
-'http://deb.debian.org/debian/pool/main/g/gnutls28/gnutls28_3.6.9-4.debian.tar.xz' gnutls28_3.6.9-4.debian.tar.xz 68988 SHA256:5956ef42814a6f56b63b2ff6a5dff6a45e2e0da29e4c4fb7a6d287b0ee618cb1
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/gnutls28/3.6.9-4/
 
-- https://sources.debian.net/src/gnutls28/3.6.9-4/ (for browsing the source)
-- https://sources.debian.net/src/gnutls28/3.6.9-4/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/gnutls28/3.6.9-4/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `gobject-introspection=1.58.3-2`
 
@@ -1438,20 +1401,13 @@ Licenses: (parsed from: `/usr/share/doc/gir1.2-freedesktop/copyright`, `/usr/sha
 - `LGPL-2+`
 - `MIT`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris gobject-introspection=1.58.3-2
-'http://deb.debian.org/debian/pool/main/g/gobject-introspection/gobject-introspection_1.58.3-2.dsc' gobject-introspection_1.58.3-2.dsc 2814 SHA256:595a618019f9d16709f9278e0ec86e6cd03ea8854f19eb0de3f41f616c54c152
-'http://deb.debian.org/debian/pool/main/g/gobject-introspection/gobject-introspection_1.58.3.orig.tar.xz' gobject-introspection_1.58.3.orig.tar.xz 1378068 SHA256:025b632bbd944dcf11fc50d19a0ca086b83baf92b3e34936d008180d28cdc3c8
-'http://deb.debian.org/debian/pool/main/g/gobject-introspection/gobject-introspection_1.58.3-2.debian.tar.xz' gobject-introspection_1.58.3-2.debian.tar.xz 21160 SHA256:1ce1df69f0ca71b61478e6569b2bf19ac3c915cfdcf617a5888deb851b4ea804
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/gobject-introspection/1.58.3-2/
 
-- https://sources.debian.net/src/gobject-introspection/1.58.3-2/ (for browsing the source)
-- https://sources.debian.net/src/gobject-introspection/1.58.3-2/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/gobject-introspection/1.58.3-2/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `graphite2=1.3.13-8`
 
@@ -3954,20 +3910,13 @@ Licenses: (parsed from: `/usr/share/doc/libopenjp2-7/copyright`, `/usr/share/doc
 - `ZLIB`
 - `public-domain`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris openjpeg2=2.3.0-2
-'http://deb.debian.org/debian/pool/main/o/openjpeg2/openjpeg2_2.3.0-2.dsc' openjpeg2_2.3.0-2.dsc 2757 SHA256:3b5e407cde75432d1a9bdd92ee229644d1e804302f6421b24fe91372bdcf4841
-'http://deb.debian.org/debian/pool/main/o/openjpeg2/openjpeg2_2.3.0.orig.tar.gz' openjpeg2_2.3.0.orig.tar.gz 2074456 SHA256:fd5ca8cf3f195b0a54c56193c5897bb423c00db577afda4033318006769a5833
-'http://deb.debian.org/debian/pool/main/o/openjpeg2/openjpeg2_2.3.0-2.debian.tar.xz' openjpeg2_2.3.0-2.debian.tar.xz 21040 SHA256:def9d0c3020e494fc9e69a674f03e11e736e7765292cf0fe01d481f4cb578b5a
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/openjpeg2/2.3.0-2/
 
-- https://sources.debian.net/src/openjpeg2/2.3.0-2/ (for browsing the source)
-- https://sources.debian.net/src/openjpeg2/2.3.0-2/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/openjpeg2/2.3.0-2/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `openldap=2.4.48+dfsg-1`
 
@@ -4012,21 +3961,13 @@ Licenses: (parsed from: `/usr/share/doc/openssh-client/copyright`)
 - `Powell-BSD-style`
 - `public-domain`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris openssh=1:8.0p1-6
-'http://deb.debian.org/debian/pool/main/o/openssh/openssh_8.0p1-6.dsc' openssh_8.0p1-6.dsc 3316 SHA256:0af7ff6ddccc39721cdd75d252b681406c485a20731960c279b8e74da0391020
-'http://deb.debian.org/debian/pool/main/o/openssh/openssh_8.0p1.orig.tar.gz' openssh_8.0p1.orig.tar.gz 1597697 SHA256:bd943879e69498e8031eb6b7f44d08cdc37d59a7ab689aa0b437320c3481fd68
-'http://deb.debian.org/debian/pool/main/o/openssh/openssh_8.0p1.orig.tar.gz.asc' openssh_8.0p1.orig.tar.gz.asc 683 SHA256:1904abaa20c24f0c8fed8d7708ec13f4ddca0b8f0f3a191b183b93f142111538
-'http://deb.debian.org/debian/pool/main/o/openssh/openssh_8.0p1-6.debian.tar.xz' openssh_8.0p1-6.debian.tar.xz 171524 SHA256:fe5bfec5b1e192df09a4588417a510524b7e40a1efdaf8754481555da80ec880
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/openssh/1:8.0p1-6/
 
-- https://sources.debian.net/src/openssh/1:8.0p1-6/ (for browsing the source)
-- https://sources.debian.net/src/openssh/1:8.0p1-6/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/openssh/1:8.0p1-6/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `openssl=1.1.1c-1`
 
@@ -4513,19 +4454,13 @@ Binary Packages:
 If source is available (seen below), check the contents of `debian/copyright` within it.
 
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris python3-defaults=3.7.3-1
-'http://deb.debian.org/debian/pool/main/p/python3-defaults/python3-defaults_3.7.3-1.dsc' python3-defaults_3.7.3-1.dsc 2797 SHA256:00fc9d88fab413659b27886833b4f20c15400cb335de94a3f2dbb01f7adf9058
-'http://deb.debian.org/debian/pool/main/p/python3-defaults/python3-defaults_3.7.3-1.tar.gz' python3-defaults_3.7.3-1.tar.gz 137436 SHA256:ed0fe03fc72b766bc4449088ff82764ac7486431efca38de89841a139f3362ad
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/python3-defaults/3.7.3-1/
 
-- https://sources.debian.net/src/python3-defaults/3.7.3-1/ (for browsing the source)
-- https://sources.debian.net/src/python3-defaults/3.7.3-1/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/python3-defaults/3.7.3-1/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `python3-stdlib-extensions=3.7.4-3`
 
@@ -4538,20 +4473,13 @@ Binary Packages:
 If source is available (seen below), check the contents of `debian/copyright` within it.
 
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris python3-stdlib-extensions=3.7.4-3
-'http://deb.debian.org/debian/pool/main/p/python3-stdlib-extensions/python3-stdlib-extensions_3.7.4-3.dsc' python3-stdlib-extensions_3.7.4-3.dsc 2539 SHA256:cb003ef1f0248acda6ee06d059f44352595f96e42e2e8ce8ab3f62a0162febdf
-'http://deb.debian.org/debian/pool/main/p/python3-stdlib-extensions/python3-stdlib-extensions_3.7.4.orig.tar.xz' python3-stdlib-extensions_3.7.4.orig.tar.xz 1056860 SHA256:0e826e8b5b50a2e77a83be1f1a09c46e47ed594f56e57c9729a1da7affa204a0
-'http://deb.debian.org/debian/pool/main/p/python3-stdlib-extensions/python3-stdlib-extensions_3.7.4-3.debian.tar.xz' python3-stdlib-extensions_3.7.4-3.debian.tar.xz 17172 SHA256:c3e669581b33a9d0599861107ac4c05eb7bd33db115fc717ac3e22eed36ffdfc
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/python3-stdlib-extensions/3.7.4-3/
 
-- https://sources.debian.net/src/python3-stdlib-extensions/3.7.4-3/ (for browsing the source)
-- https://sources.debian.net/src/python3-stdlib-extensions/3.7.4-3/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/python3-stdlib-extensions/3.7.4-3/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `python3.7=3.7.4-4`
 
@@ -4992,20 +4920,13 @@ Licenses: (parsed from: `/usr/share/doc/libunbound8/copyright`)
 - `ISC`
 - `public-domain`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris unbound=1.9.3-1
-'http://deb.debian.org/debian/pool/main/u/unbound/unbound_1.9.3-1.dsc' unbound_1.9.3-1.dsc 3026 SHA256:57578475dccbdee6e8da9fe4fe588ea270e56ca32518369aaa795dc774d93208
-'http://deb.debian.org/debian/pool/main/u/unbound/unbound_1.9.3.orig.tar.gz' unbound_1.9.3.orig.tar.gz 5686017 SHA256:1b55dd9170e4bfb327fb644de7bbf7f0541701149dff3adf1b63ffa785f16dfa
-'http://deb.debian.org/debian/pool/main/u/unbound/unbound_1.9.3-1.debian.tar.xz' unbound_1.9.3-1.debian.tar.xz 18564 SHA256:896884d3b67612ec32c95f5a5ac9d50dfb47b4d7db576ef85d36fee77078578e
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/unbound/1.9.3-1/
 
-- https://sources.debian.net/src/unbound/1.9.3-1/ (for browsing the source)
-- https://sources.debian.net/src/unbound/1.9.3-1/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/unbound/1.9.3-1/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `unzip=6.0-25`
 
