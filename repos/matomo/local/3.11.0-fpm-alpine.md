@@ -2,9 +2,9 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:28cd454e9c062e3e3dd31231f1b821f54cec48e9cb7aef3d3ad1f37fa08f1aac`
-- Created: `2019-09-27T03:12:41.754613366Z`
-- Virtual Size: ~ 213.47 Mb  
+- Image ID: `sha256:eb46b425b8f59fcd2388736037c42b13f49cb7a56dff128ff7ab6a1904c3c948`
+- Created: `2019-10-05T05:33:29.116591754Z`
+- Virtual Size: ~ 209.73 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["/entrypoint.sh"]`
@@ -570,6 +570,23 @@ scanelf-1.2.3-r0 installed size:
 
 scanelf-1.2.3-r0 license:
 GPL-2.0
+
+```
+
+### `apk` package: `sqlite-libs`
+
+```console
+sqlite-libs-3.28.0-r0 description:
+Sqlite3 library
+
+sqlite-libs-3.28.0-r0 webpage:
+https://www.sqlite.org/
+
+sqlite-libs-3.28.0-r0 installed size:
+925696
+
+sqlite-libs-3.28.0-r0 license:
+Public-Domain
 
 ```
 
