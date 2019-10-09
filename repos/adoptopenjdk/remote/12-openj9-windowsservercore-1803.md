@@ -1,41 +1,41 @@
 ## `adoptopenjdk:12-openj9-windowsservercore-1803`
 
 ```console
-$ docker pull adoptopenjdk@sha256:31eaf1e017e8daca843c23b36944e21132a59be716c40ef2cef8c5701ed71a49
+$ docker pull adoptopenjdk@sha256:2d4bc677d0297ccb05d22f3dc0d8c6852ea86217a800e4246b5a641127822476
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
 -	Platforms:
-	-	windows version 10.0.17134.1006; amd64
+	-	windows version 10.0.17134.1069; amd64
 
-### `adoptopenjdk:12-openj9-windowsservercore-1803` - windows version 10.0.17134.1006; amd64
+### `adoptopenjdk:12-openj9-windowsservercore-1803` - windows version 10.0.17134.1069; amd64
 
 ```console
-$ docker pull adoptopenjdk@sha256:da403a50808cf87c42382ee58a443ce13f5011244fbc7619970150e64cadf595
+$ docker pull adoptopenjdk@sha256:05d2af8f8042d7639ca245e747e2756a8f8f783021edd5b416fb622896c9059a
 ```
 
 -	Docker Version: 18.03.1-ee-4
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **2.7 GB (2726770934 bytes)**  
+-	Total Size: **2.7 GB (2734600458 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:e7255a4c1451bb7f287fad06085a86b7b4a7c8d316c537e97a61f783c89e6862`
+-	Image ID: `sha256:ce17679861e29a97e9cb93bfc67d035cea50b9697bea539c0fb10df9308c0303`
 -	Default Command: `["jshell"]`
 -	`SHELL`: `["powershell","-Command","$ErrorActionPreference = 'Stop'; $ProgressPreference = 'SilentlyContinue';"]`
 
 ```dockerfile
 # Thu, 12 Apr 2018 09:20:54 GMT
 RUN Apply image 1803-RTM-amd64
-# Thu, 05 Sep 2019 15:21:21 GMT
+# Sun, 06 Oct 2019 14:03:04 GMT
 RUN Install update 1803-amd64
-# Wed, 11 Sep 2019 12:53:35 GMT
+# Wed, 09 Oct 2019 12:59:45 GMT
 SHELL [powershell -Command $ErrorActionPreference = 'Stop'; $ProgressPreference = 'SilentlyContinue';]
-# Wed, 11 Sep 2019 22:38:34 GMT
+# Wed, 09 Oct 2019 21:45:35 GMT
 ENV JAVA_VERSION=jdk-12.0.2+10_openj9-0.15.1
-# Wed, 11 Sep 2019 22:41:25 GMT
+# Wed, 09 Oct 2019 21:48:27 GMT
 RUN Write-Host ('Downloading https://github.com/AdoptOpenJDK/openjdk12-binaries/releases/download/jdk-12.0.2%2B10_openj9-0.15.1/OpenJDK12U-jdk_x64_windows_openj9_12.0.2_10_openj9-0.15.1.msi ...');         [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12;         wget https://github.com/AdoptOpenJDK/openjdk12-binaries/releases/download/jdk-12.0.2%2B10_openj9-0.15.1/OpenJDK12U-jdk_x64_windows_openj9_12.0.2_10_openj9-0.15.1.msi -O 'openjdk.msi';         Write-Host ('Verifying sha256 (bed92b96dfe04679587b1cd5a41dbd14e6ff5a599977a3399bdd694b8a5bb223) ...');         if ((Get-FileHash openjdk.msi -Algorithm sha256).Hash -ne 'bed92b96dfe04679587b1cd5a41dbd14e6ff5a599977a3399bdd694b8a5bb223') {                 Write-Host 'FAILED!';                 exit 1;         };                 New-Item -ItemType Directory -Path C:\temp | Out-Null;                 Write-Host 'Installing using MSI ...';         Start-Process -FilePath "msiexec.exe" -ArgumentList '/i', 'openjdk.msi', '/L*V', 'C:\temp\OpenJDK.log',         '/quiet', 'ADDLOCAL=FeatureEnvironment,FeatureJarFileRunWith,FeatureJavaHome' -Wait -Passthru;         Write-Host 'Removing openjdk.msi ...';         Remove-Item openjdk.msi -Force;         Remove-Item -Path C:\temp -Recurse | Out-Null;
-# Wed, 11 Sep 2019 22:41:27 GMT
+# Wed, 09 Oct 2019 21:48:30 GMT
 ENV JAVA_TOOL_OPTIONS=-XX:+IgnoreUnrecognizedVMOptions -XX:+UseContainerSupport -XX:+IdleTuningCompactOnIdle -XX:+IdleTuningGcOnIdle
-# Wed, 11 Sep 2019 22:41:29 GMT
+# Wed, 09 Oct 2019 21:48:32 GMT
 CMD ["jshell"]
 ```
 
@@ -44,27 +44,27 @@ CMD ["jshell"]
 		Last Modified: Tue, 18 Sep 2018 22:43:55 GMT  
 		Size: 1.7 GB (1659688273 bytes)  
 		MIME: application/vnd.docker.image.rootfs.foreign.diff.tar.gzip
-	-	`sha256:e87cd51997cd540d9699c641331da2751d26140dbeb1160e919cce544a8172dc`  
-		Last Modified: Thu, 05 Sep 2019 15:42:27 GMT  
-		Size: 680.9 MB (680857728 bytes)  
+	-	`sha256:d8f170766a535406983bc5b2ee79c71e7926e6f5580d50e3cb2540aaf4aeb32a`  
+		Last Modified: Sun, 06 Oct 2019 14:26:48 GMT  
+		Size: 688.6 MB (688636945 bytes)  
 		MIME: application/vnd.docker.image.rootfs.foreign.diff.tar.gzip
-	-	`sha256:b3b045bea319dc7ea6ffe5c8cfbe12fca539f11c82369f4ecf8870d4ee4f9fde`  
-		Last Modified: Wed, 11 Sep 2019 13:51:34 GMT  
-		Size: 1.2 KB (1207 bytes)  
+	-	`sha256:ea7ccb23adfb015b938b092cea99550a661417af468d80b14b0560777f162e6a`  
+		Last Modified: Wed, 09 Oct 2019 14:00:11 GMT  
+		Size: 1.2 KB (1185 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:80cb68825d3e9a6764912c538c289760636c955fe13883114b14d5bb778a9c15`  
-		Last Modified: Wed, 11 Sep 2019 23:19:59 GMT  
+	-	`sha256:027871ac17dcd4b5d97ca6e89ac44b4e8175dd37eed9fca0be8929646ff606fd`  
+		Last Modified: Wed, 09 Oct 2019 22:28:31 GMT  
+		Size: 1.2 KB (1215 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:146169fda38b451a4667f9ee9c19ba8409c204b476c786c08466599f08e7bc3f`  
+		Last Modified: Wed, 09 Oct 2019 22:29:11 GMT  
+		Size: 386.3 MB (386270454 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:f76c2aac52eb6effea92bd25c1097bfa95602fa83ef1cbd117b1ebe796fd2b8d`  
+		Last Modified: Wed, 09 Oct 2019 22:28:31 GMT  
 		Size: 1.2 KB (1184 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:297aa2091d4ee01ea57d0d65ee97d61b6fd206e4846e395a301dd5023a54a665`  
-		Last Modified: Wed, 11 Sep 2019 23:20:50 GMT  
-		Size: 386.2 MB (386220154 bytes)  
-		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:a5e27d43653fcb5aa1ef234e561a23fa26974b2b1309c992fff81cf944c71389`  
-		Last Modified: Wed, 11 Sep 2019 23:19:59 GMT  
-		Size: 1.2 KB (1195 bytes)  
-		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:fa2edeae7100012ce2eb3f5cfbaca705053bbe3467a20770d59be03fe5cad973`  
-		Last Modified: Wed, 11 Sep 2019 23:19:59 GMT  
-		Size: 1.2 KB (1193 bytes)  
+	-	`sha256:72c2711dd9ca5bc842f11cef25b977671737a3c1ac1aa47ecac01c2c835cf891`  
+		Last Modified: Wed, 09 Oct 2019 22:28:31 GMT  
+		Size: 1.2 KB (1202 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
