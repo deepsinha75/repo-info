@@ -783,20 +783,13 @@ Licenses: (parsed from: `/usr/share/doc/libexpat1/copyright`)
 
 - `MIT`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris expat=2.2.7-2
-'http://deb.debian.org/debian/pool/main/e/expat/expat_2.2.7-2.dsc' expat_2.2.7-2.dsc 1949 SHA256:823f03964b62c0fd3d380e4001bc3aea35051cbcaf52d09ca19d5889b7bba1f8
-'http://deb.debian.org/debian/pool/main/e/expat/expat_2.2.7.orig.tar.gz' expat_2.2.7.orig.tar.gz 8278607 SHA256:4efe89dfd8c2f9b971bf9089efa4cc163ac997a75da92c08be14d80a091474e6
-'http://deb.debian.org/debian/pool/main/e/expat/expat_2.2.7-2.debian.tar.xz' expat_2.2.7-2.debian.tar.xz 12852 SHA256:9f427b1f23a95ded54f347d67dd527cb130b686bc190428dc95ed67a0100bc0a
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/expat/2.2.7-2/
 
-- https://sources.debian.net/src/expat/2.2.7-2/ (for browsing the source)
-- https://sources.debian.net/src/expat/2.2.7-2/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/expat/2.2.7-2/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `findutils=4.6.0+git+20190510-2`
 
@@ -1218,21 +1211,13 @@ Licenses: (parsed from: `/usr/share/doc/libgnutls30/copyright`)
 - `The MIT License (MIT)`
 - `The main library is licensed under GNU Lesser`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris gnutls28=3.6.9-4
-'http://deb.debian.org/debian/pool/main/g/gnutls28/gnutls28_3.6.9-4.dsc' gnutls28_3.6.9-4.dsc 3377 SHA256:376e2f4ec363ee7cee2c8f22d7f286e7a3c63db7f3645f7e0108e3c8443335b9
-'http://deb.debian.org/debian/pool/main/g/gnutls28/gnutls28_3.6.9.orig.tar.xz' gnutls28_3.6.9.orig.tar.xz 5773928 SHA256:4331fca55817ecdd74450b908a6c29b4f05bb24dd13144c6284aa34d872e1fcb
-'http://deb.debian.org/debian/pool/main/g/gnutls28/gnutls28_3.6.9.orig.tar.xz.asc' gnutls28_3.6.9.orig.tar.xz.asc 488 SHA256:7956ffdddad8495f6933233b6ad04bb6b4e8ff9a2977fc0fd7ae95aa33ae245d
-'http://deb.debian.org/debian/pool/main/g/gnutls28/gnutls28_3.6.9-4.debian.tar.xz' gnutls28_3.6.9-4.debian.tar.xz 68988 SHA256:5956ef42814a6f56b63b2ff6a5dff6a45e2e0da29e4c4fb7a6d287b0ee618cb1
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/gnutls28/3.6.9-4/
 
-- https://sources.debian.net/src/gnutls28/3.6.9-4/ (for browsing the source)
-- https://sources.debian.net/src/gnutls28/3.6.9-4/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/gnutls28/3.6.9-4/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `graphite2=1.3.13-8`
 
@@ -1330,20 +1315,13 @@ Licenses: (parsed from: `/usr/share/doc/libharfbuzz0b/copyright`)
 
 - `MIT`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris harfbuzz=2.6.1-3
-'http://deb.debian.org/debian/pool/main/h/harfbuzz/harfbuzz_2.6.1-3.dsc' harfbuzz_2.6.1-3.dsc 2434 SHA256:7c33bb0db60f69fa88722e5ab72a7f49ed49e1701ec160816a64587cef5da9a2
-'http://deb.debian.org/debian/pool/main/h/harfbuzz/harfbuzz_2.6.1.orig.tar.xz' harfbuzz_2.6.1.orig.tar.xz 5741372 SHA256:c651fb3faaa338aeb280726837c2384064cdc17ef40539228d88a1260960844f
-'http://deb.debian.org/debian/pool/main/h/harfbuzz/harfbuzz_2.6.1-3.debian.tar.xz' harfbuzz_2.6.1-3.debian.tar.xz 10724 SHA256:4bf3ab1ab3cc096f4e3d76684ff9a7b14bec7b9c01143f8dfcb3f706e649605a
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/harfbuzz/2.6.1-3/
 
-- https://sources.debian.net/src/harfbuzz/2.6.1-3/ (for browsing the source)
-- https://sources.debian.net/src/harfbuzz/2.6.1-3/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/harfbuzz/2.6.1-3/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `hostname=3.22`
 
@@ -1642,20 +1620,13 @@ Licenses: (parsed from: `/usr/share/doc/libblas-dev/copyright`, `/usr/share/doc/
 - `BSD-3-clause`
 - `BSD-3-clause-intel`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris lapack=3.8.0-2
-'http://deb.debian.org/debian/pool/main/l/lapack/lapack_3.8.0-2.dsc' lapack_3.8.0-2.dsc 2776 SHA256:8cf38ceb9d86e1c51cbf213da566d1415eb040fa94aceefa5df86b4a6488dc6c
-'http://deb.debian.org/debian/pool/main/l/lapack/lapack_3.8.0.orig.tar.gz' lapack_3.8.0.orig.tar.gz 7426094 SHA256:deb22cc4a6120bff72621155a9917f485f96ef8319ac074a7afbc68aab88bcf6
-'http://deb.debian.org/debian/pool/main/l/lapack/lapack_3.8.0-2.debian.tar.xz' lapack_3.8.0-2.debian.tar.xz 21076 SHA256:ac34773cb9f3f8b9659062fc5b6fd68790acc0b93e9bb0cac8a622cf409451c3
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/lapack/3.8.0-2/
 
-- https://sources.debian.net/src/lapack/3.8.0-2/ (for browsing the source)
-- https://sources.debian.net/src/lapack/3.8.0-2/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/lapack/3.8.0-2/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `lattice=0.20-38-1`
 
