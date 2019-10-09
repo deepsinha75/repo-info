@@ -2,9 +2,9 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:b2be62037d57df43972ed7433b2884f2265819ba2fae645bc7f4ec2a8c260d75`
-- Created: `2019-09-25T22:44:06.600757792Z`
-- Virtual Size: ~ 124.40 Mb  
+- Image ID: `sha256:9f5f748a12322b64c8a517ae7b39ce37447fbea9b040a0e58f4a4f4db5896c92`
+- Created: `2019-10-05T07:05:48.855629869Z`
+- Virtual Size: ~ 125.54 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["/entrypoint.sh"]`
@@ -221,16 +221,16 @@ BSD
 ### `apk` package: `libcrypto1.1`
 
 ```console
-libcrypto1.1-1.1.1c-r0 description:
+libcrypto1.1-1.1.1d-r0 description:
 Crypto library from openssl
 
-libcrypto1.1-1.1.1c-r0 webpage:
+libcrypto1.1-1.1.1d-r0 webpage:
 https://www.openssl.org
 
-libcrypto1.1-1.1.1c-r0 installed size:
-2760704
+libcrypto1.1-1.1.1d-r0 installed size:
+2736128
 
-libcrypto1.1-1.1.1c-r0 license:
+libcrypto1.1-1.1.1d-r0 license:
 OpenSSL
 
 ```
@@ -238,16 +238,16 @@ OpenSSL
 ### `apk` package: `libcurl`
 
 ```console
-libcurl-7.65.1-r0 description:
+libcurl-7.66.0-r0 description:
 The multiprotocol file transfer library
 
-libcurl-7.65.1-r0 webpage:
+libcurl-7.66.0-r0 webpage:
 https://curl.haxx.se/
 
-libcurl-7.65.1-r0 installed size:
-450560
+libcurl-7.66.0-r0 installed size:
+454656
 
-libcurl-7.65.1-r0 license:
+libcurl-7.66.0-r0 license:
 MIT
 
 ```
@@ -374,16 +374,16 @@ Libpng
 ### `apk` package: `libpq`
 
 ```console
-libpq-11.5-r0 description:
+libpq-11.5-r1 description:
 PostgreSQL libraries
 
-libpq-11.5-r0 webpage:
+libpq-11.5-r1 webpage:
 https://www.postgresql.org/
 
-libpq-11.5-r0 installed size:
+libpq-11.5-r1 installed size:
 315392
 
-libpq-11.5-r0 license:
+libpq-11.5-r1 license:
 PostgreSQL
 
 ```
@@ -408,16 +408,16 @@ custom
 ### `apk` package: `libssl1.1`
 
 ```console
-libssl1.1-1.1.1c-r0 description:
+libssl1.1-1.1.1d-r0 description:
 SSL shared libraries
 
-libssl1.1-1.1.1c-r0 webpage:
+libssl1.1-1.1.1d-r0 webpage:
 https://www.openssl.org
 
-libssl1.1-1.1.1c-r0 installed size:
-536576
+libssl1.1-1.1.1d-r0 installed size:
+532480
 
-libssl1.1-1.1.1c-r0 license:
+libssl1.1-1.1.1d-r0 license:
 OpenSSL
 
 ```
@@ -623,6 +623,23 @@ scanelf-1.2.3-r0 installed size:
 
 scanelf-1.2.3-r0 license:
 GPL-2.0
+
+```
+
+### `apk` package: `sqlite-libs`
+
+```console
+sqlite-libs-3.28.0-r0 description:
+Sqlite3 library
+
+sqlite-libs-3.28.0-r0 webpage:
+https://www.sqlite.org/
+
+sqlite-libs-3.28.0-r0 installed size:
+925696
+
+sqlite-libs-3.28.0-r0 license:
+Public-Domain
 
 ```
 
