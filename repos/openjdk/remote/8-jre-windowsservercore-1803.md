@@ -1,45 +1,45 @@
 ## `openjdk:8-jre-windowsservercore-1803`
 
 ```console
-$ docker pull openjdk@sha256:2c73c888b9853829f7781b2f4aaa51251282754f5907a835f8aa6735c01da3d5
+$ docker pull openjdk@sha256:28bca3edd4110dd482c73c4ed0aa7f1674d36ccec8b94be3367c4c46add3bdde
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
 -	Platforms:
-	-	windows version 10.0.17134.1006; amd64
+	-	windows version 10.0.17134.1069; amd64
 
-### `openjdk:8-jre-windowsservercore-1803` - windows version 10.0.17134.1006; amd64
+### `openjdk:8-jre-windowsservercore-1803` - windows version 10.0.17134.1069; amd64
 
 ```console
-$ docker pull openjdk@sha256:638082c6f68142f7aa74f8ae313963a670739ceda7cd26eb9a3e71678ec29527
+$ docker pull openjdk@sha256:d190c8436b200f77873c485f4c40da6bac6e88c1768adc44975895455d9f367b
 ```
 
 -	Docker Version: 18.03.1-ee-4
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **2.4 GB (2382906365 bytes)**  
+-	Total Size: **2.4 GB (2390736663 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:562f09c5cc734b10fb050ffbc25dbc9bd4e4af9bb5ac7621f1b20ec0403f6367`
+-	Image ID: `sha256:23aa6ac50cfbb3b32b7d270bace747a114141f09e736e4cf2b65291584665ae0`
 -	Default Command: `["c:\\windows\\system32\\cmd.exe"]`
 -	`SHELL`: `["powershell","-Command","$ErrorActionPreference = 'Stop'; $ProgressPreference = 'SilentlyContinue';"]`
 
 ```dockerfile
 # Thu, 12 Apr 2018 09:20:54 GMT
 RUN Apply image 1803-RTM-amd64
-# Thu, 05 Sep 2019 15:21:21 GMT
+# Sun, 06 Oct 2019 14:03:04 GMT
 RUN Install update 1803-amd64
-# Wed, 11 Sep 2019 12:53:35 GMT
+# Wed, 09 Oct 2019 12:59:45 GMT
 SHELL [powershell -Command $ErrorActionPreference = 'Stop'; $ProgressPreference = 'SilentlyContinue';]
-# Wed, 11 Sep 2019 20:24:00 GMT
+# Wed, 09 Oct 2019 19:52:57 GMT
 ENV JAVA_HOME=C:\openjdk-8
-# Wed, 11 Sep 2019 20:24:40 GMT
+# Wed, 09 Oct 2019 19:53:39 GMT
 RUN $newPath = ('{0}\bin;{1}' -f $env:JAVA_HOME, $env:PATH); 	Write-Host ('Updating PATH: {0}' -f $newPath); 	setx /M PATH $newPath
-# Wed, 11 Sep 2019 20:24:42 GMT
+# Wed, 09 Oct 2019 19:53:41 GMT
 ENV JAVA_VERSION=8u222
-# Wed, 11 Sep 2019 20:31:24 GMT
+# Wed, 09 Oct 2019 20:00:12 GMT
 ENV JAVA_BASE_URL=https://github.com/AdoptOpenJDK/openjdk8-upstream-binaries/releases/download/jdk8u222-b10/OpenJDK8U-jre_
-# Wed, 11 Sep 2019 20:31:25 GMT
+# Wed, 09 Oct 2019 20:00:13 GMT
 ENV JAVA_URL_VERSION=8u222b10
-# Wed, 11 Sep 2019 20:32:13 GMT
+# Wed, 09 Oct 2019 20:01:01 GMT
 RUN $url = ('{0}x64_windows_{1}.zip' -f $env:JAVA_BASE_URL, $env:JAVA_URL_VERSION); 	Write-Host ('Downloading {0} ...' -f $url); 	[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12; 	Invoke-WebRequest -Uri $url -OutFile 'openjdk.zip'; 		Write-Host 'Expanding ...'; 	New-Item -ItemType Directory -Path C:\temp | Out-Null; 	Expand-Archive openjdk.zip -DestinationPath C:\temp; 	Move-Item -Path C:\temp\* -Destination $env:JAVA_HOME; 	Remove-Item C:\temp; 		Write-Host 'Removing ...'; 	Remove-Item openjdk.zip -Force; 		Write-Host 'Verifying install ...'; 	Write-Host '  java -version'; java -version; 		Write-Host 'Complete.'
 ```
 
@@ -48,35 +48,35 @@ RUN $url = ('{0}x64_windows_{1}.zip' -f $env:JAVA_BASE_URL, $env:JAVA_URL_VERSIO
 		Last Modified: Tue, 18 Sep 2018 22:43:55 GMT  
 		Size: 1.7 GB (1659688273 bytes)  
 		MIME: application/vnd.docker.image.rootfs.foreign.diff.tar.gzip
-	-	`sha256:e87cd51997cd540d9699c641331da2751d26140dbeb1160e919cce544a8172dc`  
-		Last Modified: Thu, 05 Sep 2019 15:42:27 GMT  
-		Size: 680.9 MB (680857728 bytes)  
+	-	`sha256:d8f170766a535406983bc5b2ee79c71e7926e6f5580d50e3cb2540aaf4aeb32a`  
+		Last Modified: Sun, 06 Oct 2019 14:26:48 GMT  
+		Size: 688.6 MB (688636945 bytes)  
 		MIME: application/vnd.docker.image.rootfs.foreign.diff.tar.gzip
-	-	`sha256:b3b045bea319dc7ea6ffe5c8cfbe12fca539f11c82369f4ecf8870d4ee4f9fde`  
-		Last Modified: Wed, 11 Sep 2019 13:51:34 GMT  
-		Size: 1.2 KB (1207 bytes)  
-		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:706b10931d4519b5e7e908650ad4f77f5b72c3ad9f022cf4456ed062f6b7e344`  
-		Last Modified: Wed, 11 Sep 2019 21:04:07 GMT  
-		Size: 1.2 KB (1194 bytes)  
-		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:ea6151a7bfc08c47c87bae43ff31615941dab7779885174033060fc05c96bcb6`  
-		Last Modified: Wed, 11 Sep 2019 21:04:07 GMT  
-		Size: 4.8 MB (4799597 bytes)  
-		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:e2e3d7a55c1c3131ec214fa4a2267517ab2139b9d7cb273972f999c9f917ec2c`  
-		Last Modified: Wed, 11 Sep 2019 21:04:05 GMT  
-		Size: 1.2 KB (1173 bytes)  
-		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:def7927b0c0fb4d199ce4d3516a2e6866c8755d7da7ab21fe3855e486bb739a8`  
-		Last Modified: Wed, 11 Sep 2019 21:06:04 GMT  
-		Size: 1.2 KB (1177 bytes)  
-		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:25b8597ea1e8cce1d08a30e530c7d645d3f8c03eb901c70b84fbf189e6e9b691`  
-		Last Modified: Wed, 11 Sep 2019 21:06:04 GMT  
+	-	`sha256:ea7ccb23adfb015b938b092cea99550a661417af468d80b14b0560777f162e6a`  
+		Last Modified: Wed, 09 Oct 2019 14:00:11 GMT  
 		Size: 1.2 KB (1185 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:19f86ff79f4702def35c887202f038f0bed9a4962a18430461641b9f58c166d9`  
-		Last Modified: Wed, 11 Sep 2019 21:06:11 GMT  
-		Size: 37.6 MB (37554831 bytes)  
+	-	`sha256:62f87b88f79b2e906aad524b1f6dda5bb0ecff1038dcaf870ede3555ce7a76a4`  
+		Last Modified: Wed, 09 Oct 2019 20:14:09 GMT  
+		Size: 1.2 KB (1217 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:cb029064856e6c32f0a693944721168392595b9a352d9359376bb018e30ab183`  
+		Last Modified: Wed, 09 Oct 2019 20:14:08 GMT  
+		Size: 4.9 MB (4854004 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:cfd6c678800077c4aa8ac30f8e389dbf23c1d44a70c110d5ff2926c6999e6b8d`  
+		Last Modified: Wed, 09 Oct 2019 20:14:06 GMT  
+		Size: 1.2 KB (1176 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:c5b34671b457df0d459e3a783c1717c5494dd397662b539ec468903cac606eaa`  
+		Last Modified: Wed, 09 Oct 2019 20:16:19 GMT  
+		Size: 1.2 KB (1177 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:98e3151fef5d80770bd153fd26288e3679bc78a0c27866c161c9102a759eb99f`  
+		Last Modified: Wed, 09 Oct 2019 20:16:19 GMT  
+		Size: 1.2 KB (1204 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:9ad1dd87863d91838344cae182dbc06f306981ac39ac6fc1082811b5abb2d80c`  
+		Last Modified: Wed, 09 Oct 2019 20:16:25 GMT  
+		Size: 37.6 MB (37551482 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
