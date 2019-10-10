@@ -1,10 +1,10 @@
-# `docker:19.03.2-git`
+# `docker:19.03.3-git`
 
 ## Docker Metadata
 
-- Image ID: `sha256:7f9cb90f0dd6704c5107374da260227722c2ddfd36845203fd7470af962ad7dd`
-- Created: `2019-09-04T19:24:15.750898893Z`
-- Virtual Size: ~ 236.71 Mb  
+- Image ID: `sha256:2b7f7c35e9be7324e3afa0bad5c123a5a2d19d36cd0a6575f5d14b66cd2baaee`
+- Created: `2019-10-09T20:24:45.224953494Z`
+- Virtual Size: ~ 236.77 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["docker-entrypoint.sh"]`
@@ -12,7 +12,7 @@
 - Environment:
   - `PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
   - `DOCKER_CHANNEL=stable`
-  - `DOCKER_VERSION=19.03.2`
+  - `DOCKER_VERSION=19.03.3`
   - `DOCKER_TLS_CERTDIR=/certs`
 
 ## `apk` (`.apk`-based packages)
@@ -122,16 +122,16 @@ MPL-2.0 GPL-2.0-or-later
 ### `apk` package: `expat`
 
 ```console
-expat-2.2.7-r0 description:
+expat-2.2.8-r0 description:
 An XML Parser library written in C
 
-expat-2.2.7-r0 webpage:
+expat-2.2.8-r0 webpage:
 http://www.libexpat.org/
 
-expat-2.2.7-r0 installed size:
+expat-2.2.8-r0 installed size:
 184320
 
-expat-2.2.7-r0 license:
+expat-2.2.8-r0 license:
 MIT
 
 ```
@@ -190,16 +190,16 @@ OpenSSL
 ### `apk` package: `libcurl`
 
 ```console
-libcurl-7.65.1-r0 description:
+libcurl-7.66.0-r0 description:
 The multiprotocol file transfer library
 
-libcurl-7.65.1-r0 webpage:
+libcurl-7.66.0-r0 webpage:
 https://curl.haxx.se/
 
-libcurl-7.65.1-r0 installed size:
-450560
+libcurl-7.66.0-r0 installed size:
+454656
 
-libcurl-7.65.1-r0 license:
+libcurl-7.66.0-r0 license:
 MIT
 
 ```

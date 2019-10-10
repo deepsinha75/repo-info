@@ -1,17 +1,17 @@
-# `docker:19.03.3-rc1-dind-rootless`
+# `docker:19.03.3-dind-rootless`
 
 ## Docker Metadata
 
-- Image ID: `sha256:2230c5d2d947e468633ebe400997ae289613dc608e8373c1708297b92240dbaa`
-- Created: `2019-10-03T20:20:16.954660224Z`
+- Image ID: `sha256:7e8b55853e9ce9dffca577734498c6a2429f10a016fb9117061ab947150f2d62`
+- Created: `2019-10-09T20:24:39.479172284Z`
 - Virtual Size: ~ 294.50 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["dockerd-entrypoint.sh"]`
 - Environment:
   - `PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
-  - `DOCKER_CHANNEL=test`
-  - `DOCKER_VERSION=19.03.3-rc1`
+  - `DOCKER_CHANNEL=stable`
+  - `DOCKER_VERSION=19.03.3`
   - `DOCKER_TLS_CERTDIR=/certs`
   - `DIND_COMMIT=37498f009d8bf25fbb6199e8ccd34bed84f2874b`
   - `ROOTLESSKIT_VERSION=0.6.0`

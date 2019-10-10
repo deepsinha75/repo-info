@@ -1,17 +1,17 @@
-# `docker:19.03.2-dind`
+# `docker:19.03.3-dind`
 
 ## Docker Metadata
 
-- Image ID: `sha256:5768e15eefd175c1ba6969b616cfe827152556c5fe691b9258cb57d1a5c37e9d`
-- Created: `2019-09-04T19:23:46.708966983Z`
-- Virtual Size: ~ 229.72 Mb  
+- Image ID: `sha256:0891431bfc89e11908174cc2c0fc1157c930bd74ace8b2a8134067a3628e4116`
+- Created: `2019-10-09T20:24:19.486883797Z`
+- Virtual Size: ~ 229.77 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["dockerd-entrypoint.sh"]`
 - Environment:
   - `PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
   - `DOCKER_CHANNEL=stable`
-  - `DOCKER_VERSION=19.03.2`
+  - `DOCKER_VERSION=19.03.3`
   - `DOCKER_TLS_CERTDIR=/certs`
   - `DIND_COMMIT=37498f009d8bf25fbb6199e8ccd34bed84f2874b`
 
@@ -513,16 +513,16 @@ MIT BSD GPL2+
 ### `apk` package: `openssl`
 
 ```console
-openssl-1.1.1c-r0 description:
+openssl-1.1.1d-r0 description:
 Toolkit for Transport Layer Security (TLS)
 
-openssl-1.1.1c-r0 webpage:
+openssl-1.1.1d-r0 webpage:
 https://www.openssl.org
 
-openssl-1.1.1c-r0 installed size:
+openssl-1.1.1d-r0 installed size:
 679936
 
-openssl-1.1.1c-r0 license:
+openssl-1.1.1d-r0 license:
 OpenSSL
 
 ```
