@@ -1,10 +1,10 @@
-# `mediawiki:1.27.7`
+# `mediawiki:1.31.4`
 
 ## Docker Metadata
 
-- Image ID: `sha256:9a7e298d7841db1032406f8473cc0022d75e85e3d729211f349a1122069d5ba5`
-- Created: `2019-10-05T06:25:08.209141311Z`
-- Virtual Size: ~ 701.30 Mb  
+- Image ID: `sha256:1000b0b23d08ac2c138a234563682820ad67a3caae2a4cd798cc8c7dcc2f6f41`
+- Created: `2019-10-09T20:29:23.584889331Z`
+- Virtual Size: ~ 728.07 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["docker-php-entrypoint"]`
@@ -20,16 +20,16 @@
   - `PHP_CFLAGS=-fstack-protector-strong -fpic -fpie -O2`
   - `PHP_CPPFLAGS=-fstack-protector-strong -fpic -fpie -O2`
   - `PHP_LDFLAGS=-Wl,-O1 -Wl,--hash-style=both -pie`
-  - `GPG_KEYS=A917B1ECDA84AEC2B568FED6F50ABC807BD5DCD0 528995BFEDFBA7191D46839EF9BA0ADA31CBD89E 1729F83938DA44E27BA0F4D3DBDB397470D12172`
-  - `PHP_VERSION=7.1.32`
-  - `PHP_URL=https://www.php.net/get/php-7.1.32.tar.xz/from/this/mirror`
-  - `PHP_ASC_URL=https://www.php.net/get/php-7.1.32.tar.xz.asc/from/this/mirror`
-  - `PHP_SHA256=7f38b5bdaae3184d325a8c70e86c010afcc33651d15faafe277a0db6d2ea2741`
+  - `GPG_KEYS=1729F83938DA44E27BA0F4D3DBDB397470D12172 B1B44D8F021E4E2D6021E995DC9FF8D3EE5AF27F`
+  - `PHP_VERSION=7.2.23`
+  - `PHP_URL=https://www.php.net/get/php-7.2.23.tar.xz/from/this/mirror`
+  - `PHP_ASC_URL=https://www.php.net/get/php-7.2.23.tar.xz.asc/from/this/mirror`
+  - `PHP_SHA256=74e045ec8ff26290db6a3688826dcdf43b87bc509e508e9cb76dab742804ca14`
   - `PHP_MD5=`
-  - `MEDIAWIKI_MAJOR_VERSION=1.27`
-  - `MEDIAWIKI_BRANCH=REL1_27`
-  - `MEDIAWIKI_VERSION=1.27.7`
-  - `MEDIAWIKI_SHA512=3dcee01d483be27eed1a901ef24a9080a2cccf3d9ee4eebc544d0c0fdb5a1a7272a68daa024d89754542e56a4d19eebec407775b38a00f067f2179f712deda76`
+  - `MEDIAWIKI_MAJOR_VERSION=1.31`
+  - `MEDIAWIKI_BRANCH=REL1_31`
+  - `MEDIAWIKI_VERSION=1.31.4`
+  - `MEDIAWIKI_SHA512=92809a15c3d5367940964e50639eaa24993758de463c0563ad8ec6440e41794aef6ec43a9dfa6421a466e4ea7305dcd8c44b05cf96798674cce67cd81c2b54dc`
 
 ## `dpkg` (`.deb`-based packages)
 
@@ -3157,6 +3157,37 @@ Other potentially useful URLs:
 - https://sources.debian.net/src/libsigsegv/2.12-2/debian/copyright/ (for direct copyright/license information)
 - http://snapshot.debian.org/package/libsigsegv/2.12-2/ (for access to the source package after it no longer exists in the archive)
 
+### `dpkg` source package: `libsodium=1.0.17-1`
+
+Binary Packages:
+
+- `libsodium23:amd64=1.0.17-1`
+
+Licenses: (parsed from: `/usr/share/doc/libsodium23/copyright`)
+
+- `BSD-2-clause`
+- `CC0`
+- `GPL-2`
+- `GPL-2+`
+- `ISC`
+- `MIT`
+- `public-domain`
+
+Source:
+
+```console
+$ apt-get source -qq --print-uris libsodium=1.0.17-1
+'http://deb.debian.org/debian/pool/main/libs/libsodium/libsodium_1.0.17-1.dsc' libsodium_1.0.17-1.dsc 1913 SHA256:e2fb1951476b7b7177e7b2848b6d896a55ddffb11b0e5f82563d24944fc910ac
+'http://deb.debian.org/debian/pool/main/libs/libsodium/libsodium_1.0.17.orig.tar.gz' libsodium_1.0.17.orig.tar.gz 1604410 SHA256:602e07029c780e154347fb95495b13ce48709ae705c6cff927ecb0c485b95672
+'http://deb.debian.org/debian/pool/main/libs/libsodium/libsodium_1.0.17-1.debian.tar.xz' libsodium_1.0.17-1.debian.tar.xz 7256 SHA256:fdaf9fcb6b5a0801f1344d2350da2882d49273ed9c641e1dd747a66e5b318b6c
+```
+
+Other potentially useful URLs:
+
+- https://sources.debian.net/src/libsodium/1.0.17-1/ (for browsing the source)
+- https://sources.debian.net/src/libsodium/1.0.17-1/debian/copyright/ (for direct copyright/license information)
+- http://snapshot.debian.org/package/libsodium/1.0.17-1/ (for access to the source package after it no longer exists in the archive)
+
 ### `dpkg` source package: `libsoup2.4=2.64.2-2`
 
 Binary Packages:
@@ -4030,6 +4061,33 @@ Other potentially useful URLs:
 - https://sources.debian.net/src/mpclib3/1.1.0-1/debian/copyright/ (for direct copyright/license information)
 - http://snapshot.debian.org/package/mpclib3/1.1.0-1/ (for access to the source package after it no longer exists in the archive)
 
+### `dpkg` source package: `mpdecimal=2.4.2-2`
+
+Binary Packages:
+
+- `libmpdec2:amd64=2.4.2-2`
+
+Licenses: (parsed from: `/usr/share/doc/libmpdec2/copyright`)
+
+- `BSD`
+- `GPL-2`
+- `GPL-2+`
+
+Source:
+
+```console
+$ apt-get source -qq --print-uris mpdecimal=2.4.2-2
+'http://deb.debian.org/debian/pool/main/m/mpdecimal/mpdecimal_2.4.2-2.dsc' mpdecimal_2.4.2-2.dsc 1932 SHA256:716e61fc8315a22804adf8403e4d332c1883235b5c3801b6769e6040dc962fe3
+'http://deb.debian.org/debian/pool/main/m/mpdecimal/mpdecimal_2.4.2.orig.tar.gz' mpdecimal_2.4.2.orig.tar.gz 2271529 SHA256:83c628b90f009470981cf084c5418329c88b19835d8af3691b930afccb7d79c7
+'http://deb.debian.org/debian/pool/main/m/mpdecimal/mpdecimal_2.4.2-2.debian.tar.xz' mpdecimal_2.4.2-2.debian.tar.xz 5256 SHA256:159113f11169afc675a431840792e1ed8c2d00438bf3e1c5a3eb2c17d9e8da3d
+```
+
+Other potentially useful URLs:
+
+- https://sources.debian.net/src/mpdecimal/2.4.2-2/ (for browsing the source)
+- https://sources.debian.net/src/mpdecimal/2.4.2-2/debian/copyright/ (for direct copyright/license information)
+- http://snapshot.debian.org/package/mpdecimal/2.4.2-2/ (for access to the source package after it no longer exists in the archive)
+
 ### `dpkg` source package: `mpfr4=4.0.2-1`
 
 Binary Packages:
@@ -4593,16 +4651,13 @@ Other potentially useful URLs:
 - https://sources.debian.net/src/procps/2:3.3.15-2/debian/copyright/ (for direct copyright/license information)
 - http://snapshot.debian.org/package/procps/2:3.3.15-2/ (for access to the source package after it no longer exists in the archive)
 
-### `dpkg` source package: `python-defaults=2.7.16-1`
+### `dpkg` source package: `python3-defaults=3.7.3-1`
 
 Binary Packages:
 
-- `libpython-stdlib:amd64=2.7.16-1`
-- `libpython2-stdlib:amd64=2.7.16-1`
-- `python=2.7.16-1`
-- `python-minimal=2.7.16-1`
-- `python2=2.7.16-1`
-- `python2-minimal=2.7.16-1`
+- `libpython3-stdlib:amd64=3.7.3-1`
+- `python3=3.7.3-1`
+- `python3-minimal=3.7.3-1`
 
 **WARNING:** unable to detect licenses! (package likely not compliant with DEP-5)  
 If source is available (seen below), check the contents of `debian/copyright` within it.
@@ -4611,59 +4666,60 @@ If source is available (seen below), check the contents of `debian/copyright` wi
 Source:
 
 ```console
-$ apt-get source -qq --print-uris python-defaults=2.7.16-1
-'http://deb.debian.org/debian/pool/main/p/python-defaults/python-defaults_2.7.16-1.dsc' python-defaults_2.7.16-1.dsc 2917 SHA256:6482803ce46522db092fcd3d67ed380bdfbe817b77b5ec93b65f5825fe45e544
-'http://deb.debian.org/debian/pool/main/p/python-defaults/python-defaults_2.7.16-1.tar.gz' python-defaults_2.7.16-1.tar.gz 82643 SHA256:4623728a4070ba58f15d2885a4ad2f590a94e705c4f18c8f0ff51151ad89fbc1
+$ apt-get source -qq --print-uris python3-defaults=3.7.3-1
+'http://deb.debian.org/debian/pool/main/p/python3-defaults/python3-defaults_3.7.3-1.dsc' python3-defaults_3.7.3-1.dsc 2797 SHA256:00fc9d88fab413659b27886833b4f20c15400cb335de94a3f2dbb01f7adf9058
+'http://deb.debian.org/debian/pool/main/p/python3-defaults/python3-defaults_3.7.3-1.tar.gz' python3-defaults_3.7.3-1.tar.gz 137436 SHA256:ed0fe03fc72b766bc4449088ff82764ac7486431efca38de89841a139f3362ad
 ```
 
 Other potentially useful URLs:
 
-- https://sources.debian.net/src/python-defaults/2.7.16-1/ (for browsing the source)
-- https://sources.debian.net/src/python-defaults/2.7.16-1/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/python-defaults/2.7.16-1/ (for access to the source package after it no longer exists in the archive)
+- https://sources.debian.net/src/python3-defaults/3.7.3-1/ (for browsing the source)
+- https://sources.debian.net/src/python3-defaults/3.7.3-1/debian/copyright/ (for direct copyright/license information)
+- http://snapshot.debian.org/package/python3-defaults/3.7.3-1/ (for access to the source package after it no longer exists in the archive)
 
-### `dpkg` source package: `python2.7=2.7.16-2`
+### `dpkg` source package: `python3.7=3.7.3-2`
 
 Binary Packages:
 
-- `libpython2.7-minimal:amd64=2.7.16-2`
-- `libpython2.7-stdlib:amd64=2.7.16-2`
-- `python2.7=2.7.16-2`
-- `python2.7-minimal=2.7.16-2`
+- `libpython3.7-minimal:amd64=3.7.3-2`
+- `libpython3.7-stdlib:amd64=3.7.3-2`
+- `python3.7=3.7.3-2`
+- `python3.7-minimal=3.7.3-2`
 
-Licenses: (parsed from: `/usr/share/doc/libpython2.7-minimal/copyright`, `/usr/share/doc/libpython2.7-stdlib/copyright`, `/usr/share/doc/python2.7/copyright`, `/usr/share/doc/python2.7-minimal/copyright`)
+Licenses: (parsed from: `/usr/share/doc/libpython3.7-minimal/copyright`, `/usr/share/doc/libpython3.7-stdlib/copyright`, `/usr/share/doc/python3.7/copyright`, `/usr/share/doc/python3.7-minimal/copyright`)
 
-- `# Licensed to PSF under a Contributor Agreement`
 - `* Permission to use this software in any way is granted without`
-- `Apache`
-- `Apache-2`
-- `Apache-2.0`
-- `Expat`
+- `By obtaining, using, and/or copying this software and/or its`
 - `GPL-2`
-- `ISC`
-- `LGPL-2.1+`
-- `PSF-2`
+- `Permission  is  hereby granted,  free  of charge,  to  any person`
 - `Permission is hereby granted, free of charge, to any person obtaining`
-- `Python`
+- `Permission to use, copy, modify,`
+- `Redistribution`
 - `This software is provided 'as-is', without any express`
 - `This software is provided as-is, without express`
+- `binary forms, with`
+- `distribute this software`
+- `distribute this software and`
+- `distribute this software for any`
 - `implied`
-- `see above, some license as Python`
+- `its`
+- `use in source`
+- `without`
 
 Source:
 
 ```console
-$ apt-get source -qq --print-uris python2.7=2.7.16-2
-'http://deb.debian.org/debian/pool/main/p/python2.7/python2.7_2.7.16-2.dsc' python2.7_2.7.16-2.dsc 3355 SHA256:52fd1acdfe3e96ac389403ee54e78f2495234c15edbeae6a7859e4044d0a9aa2
-'http://deb.debian.org/debian/pool/main/p/python2.7/python2.7_2.7.16.orig.tar.gz' python2.7_2.7.16.orig.tar.gz 17431748 SHA256:01da813a3600876f03f46db11cc5c408175e99f03af2ba942ef324389a83bad5
-'http://deb.debian.org/debian/pool/main/p/python2.7/python2.7_2.7.16-2.diff.gz' python2.7_2.7.16-2.diff.gz 288124 SHA256:6ef1adb23d697d68a41d41cf97822179569852bce7b6ab5613b664a158f1609c
+$ apt-get source -qq --print-uris python3.7=3.7.3-2
+'http://deb.debian.org/debian/pool/main/p/python3.7/python3.7_3.7.3-2.dsc' python3.7_3.7.3-2.dsc 3397 SHA256:84466c4659b264b71e78fd61dc1ad14b05ace08f6dcf54f5d4d0f6d27abbdeba
+'http://deb.debian.org/debian/pool/main/p/python3.7/python3.7_3.7.3.orig.tar.xz' python3.7_3.7.3.orig.tar.xz 17108364 SHA256:da60b54064d4cfcd9c26576f6df2690e62085123826cff2e667e72a91952d318
+'http://deb.debian.org/debian/pool/main/p/python3.7/python3.7_3.7.3-2.debian.tar.xz' python3.7_3.7.3-2.debian.tar.xz 210300 SHA256:f36776d64431df9f015cc3da31ed398a518f595ca83ae6b19a4acafcd1c3d286
 ```
 
 Other potentially useful URLs:
 
-- https://sources.debian.net/src/python2.7/2.7.16-2/ (for browsing the source)
-- https://sources.debian.net/src/python2.7/2.7.16-2/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/python2.7/2.7.16-2/ (for access to the source package after it no longer exists in the archive)
+- https://sources.debian.net/src/python3.7/3.7.3-2/ (for browsing the source)
+- https://sources.debian.net/src/python3.7/3.7.3-2/debian/copyright/ (for direct copyright/license information)
+- http://snapshot.debian.org/package/python3.7/3.7.3-2/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `re2c=1.1.1-1`
 
