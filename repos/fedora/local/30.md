@@ -26,11 +26,7 @@ Source:
 
 ```console
 $ yumdownloader --quiet --source --urls acl-2.2.53-3.fc30
-http://mirror.stavlor.net/pub/fedora/linux/releases/30/Everything/x86_64/os/repodata/repomd.xml: [Errno 12] Timeout on http://mirror.stavlor.net/pub/fedora/linux/releases/30/Everything/x86_64/os/repodata/repomd.xml: (28, 'Connection timed out after 30000 milliseconds')
-Trying other mirror.
 Enabling fedora-modular-source repository
-http://mirror.stavlor.net/pub/fedora/linux/releases/30/Modular/source/tree/repodata/repomd.xml: [Errno 12] Timeout on http://mirror.stavlor.net/pub/fedora/linux/releases/30/Modular/source/tree/repodata/repomd.xml: (28, 'Connection timed out after 30001 milliseconds')
-Trying other mirror.
 Enabling updates-source repository
 Enabling updates-modular-source repository
 Enabling fedora-source repository
@@ -1838,31 +1834,13 @@ https://d2lzkl7pfhq30w.cloudfront.net/pub/fedora/linux/releases/30/Everything/so
 
 Licenses (from `rpm --query`): OpenSSL
 
-Source:
-
-```console
-$ yumdownloader --quiet --source --urls openssl-1.1.1d-1.fc30
-Enabling fedora-modular-source repository
-Enabling updates-source repository
-Enabling updates-modular-source repository
-Enabling fedora-source repository
-https://d2lzkl7pfhq30w.cloudfront.net/pub/fedora/linux/updates/30/Everything/SRPMS//Packages/o/openssl-1.1.1d-1.fc30.src.rpm
-```
+**WARNING:** unable to find source (`yumdownloader` failed or returned no results)!
 
 ### `rpm` package: `openssl-libs-1.1.1d-1.fc30.x86_64`
 
 Licenses (from `rpm --query`): OpenSSL
 
-Source:
-
-```console
-$ yumdownloader --quiet --source --urls openssl-libs-1.1.1d-1.fc30
-Enabling fedora-modular-source repository
-Enabling updates-source repository
-Enabling updates-modular-source repository
-Enabling fedora-source repository
-https://d2lzkl7pfhq30w.cloudfront.net/pub/fedora/linux/updates/30/Everything/SRPMS//Packages/o/openssl-1.1.1d-1.fc30.src.rpm
-```
+**WARNING:** unable to find source (`yumdownloader` failed or returned no results)!
 
 ### `rpm` package: `openssl-pkcs11-0.4.10-1.fc30.x86_64`
 
