@@ -2,19 +2,19 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:8d75a295025194d28b4c22a13a0aa67cc601cd9d138ad0edeac5e269bfc9188e`
-- Created: `2019-09-27T22:37:01.407187836Z`
-- Virtual Size: ~ 270.63 Mb  
+- Image ID: `sha256:414491c33b37eb19cbeb63bd9b9ce163603073301a2899712d2178ba54b40e74`
+- Created: `2019-10-11T01:21:19.920285718Z`
+- Virtual Size: ~ 270.64 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Command: `["iex"]`
 - Environment:
   - `PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
-  - `OTP_VERSION=22.1.1`
+  - `OTP_VERSION=22.1.3`
   - `ELIXIR_VERSION=v1.9.1`
   - `LANG=C.UTF-8`
 - Labels:
-  - `org.opencontainers.image.version=22.1.1`
+  - `org.opencontainers.image.version=22.1.3`
 
 ## `dpkg` (`.deb`-based packages)
 
@@ -1278,11 +1278,11 @@ Other potentially useful URLs:
 - https://sources.debian.net/src/nettle/3.3-1/debian/copyright/ (for direct copyright/license information)
 - http://snapshot.debian.org/package/nettle/3.3-1/ (for access to the source package after it no longer exists in the archive)
 
-### `dpkg` source package: `openssl=1.1.0k-1~deb9u1`
+### `dpkg` source package: `openssl=1.1.0l-1~deb9u1`
 
 Binary Packages:
 
-- `libssl1.1:amd64=1.1.0k-1~deb9u1`
+- `libssl1.1:amd64=1.1.0l-1~deb9u1`
 
 **WARNING:** unable to detect licenses! (package likely not compliant with DEP-5)  
 If source is available (seen below), check the contents of `debian/copyright` within it.
@@ -1291,18 +1291,18 @@ If source is available (seen below), check the contents of `debian/copyright` wi
 Source:
 
 ```console
-$ apt-get source -qq --print-uris openssl=1.1.0k-1~deb9u1
-'http://deb.debian.org/debian/pool/main/o/openssl/openssl_1.1.0k-1~deb9u1.dsc' openssl_1.1.0k-1~deb9u1.dsc 2437 SHA256:81d1127296775e23080740d8bd0f8b8696f0edd6a8cd5c87d95f2dea23d128d9
-'http://deb.debian.org/debian/pool/main/o/openssl/openssl_1.1.0k.orig.tar.gz' openssl_1.1.0k.orig.tar.gz 5287321 SHA256:efa4965f4f773574d6cbda1cf874dbbe455ab1c0d4f906115f867d30444470b1
-'http://deb.debian.org/debian/pool/main/o/openssl/openssl_1.1.0k.orig.tar.gz.asc' openssl_1.1.0k.orig.tar.gz.asc 833 SHA256:82b4338a150147d3c67a0bc0aa1ae4b209b8dc985af2bf523d72097bdf12a743
-'http://deb.debian.org/debian/pool/main/o/openssl/openssl_1.1.0k-1~deb9u1.debian.tar.xz' openssl_1.1.0k-1~deb9u1.debian.tar.xz 71996 SHA256:782054f0183e65469f97402cecff23c0d9fc00a026f263afbca3ba77415ffa27
+$ apt-get source -qq --print-uris openssl=1.1.0l-1~deb9u1
+'http://security.debian.org/debian-security/pool/updates/main/o/openssl/openssl_1.1.0l-1~deb9u1.dsc' openssl_1.1.0l-1~deb9u1.dsc 2437 SHA256:9ae8fb3e89110ad3c75ba6a52b8f40cc5419b56f31c5c8b6f6aca0949cd90ea7
+'http://security.debian.org/debian-security/pool/updates/main/o/openssl/openssl_1.1.0l.orig.tar.gz' openssl_1.1.0l.orig.tar.gz 5294857 SHA256:74a2f756c64fd7386a29184dc0344f4831192d61dc2481a93a4c5dd727f41148
+'http://security.debian.org/debian-security/pool/updates/main/o/openssl/openssl_1.1.0l.orig.tar.gz.asc' openssl_1.1.0l.orig.tar.gz.asc 488 SHA256:afc83de9f9f1ef5f79ab8a31bbdeb26f9ac9a07cfdab7628a773267d31f85e42
+'http://security.debian.org/debian-security/pool/updates/main/o/openssl/openssl_1.1.0l-1~deb9u1.debian.tar.xz' openssl_1.1.0l-1~deb9u1.debian.tar.xz 72100 SHA256:78290d8a50219fe9c1c5676084a5567b23aff12f701bcd975e4c0d32264d5116
 ```
 
 Other potentially useful URLs:
 
-- https://sources.debian.net/src/openssl/1.1.0k-1~deb9u1/ (for browsing the source)
-- https://sources.debian.net/src/openssl/1.1.0k-1~deb9u1/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/openssl/1.1.0k-1~deb9u1/ (for access to the source package after it no longer exists in the archive)
+- https://sources.debian.net/src/openssl/1.1.0l-1~deb9u1/ (for browsing the source)
+- https://sources.debian.net/src/openssl/1.1.0l-1~deb9u1/debian/copyright/ (for direct copyright/license information)
+- http://snapshot.debian.org/package/openssl/1.1.0l-1~deb9u1/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `pam=1.1.8-3.6`
 
