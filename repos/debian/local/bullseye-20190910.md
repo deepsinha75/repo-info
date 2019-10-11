@@ -813,20 +813,13 @@ Licenses: (parsed from: `/usr/share/doc/iputils-ping/copyright`)
 
 - `GPL`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris iputils=3:20190709-1
-'http://deb.debian.org/debian/pool/main/i/iputils/iputils_20190709-1.dsc' iputils_20190709-1.dsc 2103 SHA256:ec4e68f4bfb5b1b53a1a312361a0f8f5edb45be4aa663312763aa19d209a8207
-'http://deb.debian.org/debian/pool/main/i/iputils/iputils_20190709.orig.tar.xz' iputils_20190709.orig.tar.xz 361144 SHA256:bec0321ee1489c8f73e88f7d34b6fd40fbec7b3af5b3a1940306bd8d8835c3c0
-'http://deb.debian.org/debian/pool/main/i/iputils/iputils_20190709-1.debian.tar.xz' iputils_20190709-1.debian.tar.xz 9952 SHA256:5a2e802b06d3c4e559095498caf9971f96895f591b43fd4aac17e0d191973c8a
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/iputils/3:20190709-1/
 
-- https://sources.debian.net/src/iputils/3:20190709-1/ (for browsing the source)
-- https://sources.debian.net/src/iputils/3:20190709-1/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/iputils/3:20190709-1/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `libbsd=0.10.0-1`
 
