@@ -2,8 +2,8 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:a895f5eb7ccec14755997f9eeaac4cde160f262d957b25dc0ddd2eff6cf20dd1`
-- Created: `2019-09-30T22:44:31.426719958Z`
+- Image ID: `sha256:ea95399d9511d5aeaac81f2f527c68247ee9ca62f371ab97f416729683bc8517`
+- Created: `2019-10-09T20:32:04.466810745Z`
 - Virtual Size: ~ 1.29 Gb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
@@ -23,9 +23,9 @@
   - `TOMCAT_MAJOR=8`
   - `TOMCAT_VERSION=8.5.46`
   - `TOMCAT_SHA512=9d6243ec47ec0f431c55a612fa6a8fac00262ed2731640ad98628b275221d3e8e241b2fee748196b64029997f4d9f8e63831b43986fedb88a62381a92b05ca68`
-  - `XWIKI_VERSION=11.8`
-  - `XWIKI_URL_PREFIX=https://maven.xwiki.org/releases/org/xwiki/platform/xwiki-platform-distribution-war/11.8`
-  - `XWIKI_DOWNLOAD_SHA256=0143c34ba155125bbeefe4e8fa2f0ae2f5c54af02454174d39cfdc7bd713e6ee`
+  - `XWIKI_VERSION=11.8.1`
+  - `XWIKI_URL_PREFIX=https://maven.xwiki.org/releases/org/xwiki/platform/xwiki-platform-distribution-war/11.8.1`
+  - `XWIKI_DOWNLOAD_SHA256=fc08acd66e3b7f229bad301039de0be1dcae5fc2b360d985424215c324c4dc47`
 
 ## `dpkg` (`.deb`-based packages)
 
@@ -280,13 +280,9 @@ Licenses: (parsed from: `/usr/share/doc/base-files/copyright`)
 
 - `GPL`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris base-files=10.1ubuntu2.6
-'http://archive.ubuntu.com/ubuntu/pool/main/b/base-files/base-files_10.1ubuntu2.6.dsc' base-files_10.1ubuntu2.6.dsc 1620 SHA256:3b2bb107b6e818e9e75b4aaffadfd5934055feb08313e40129bea43cbcc1a2ad
-'http://archive.ubuntu.com/ubuntu/pool/main/b/base-files/base-files_10.1ubuntu2.6.tar.xz' base-files_10.1ubuntu2.6.tar.xz 78212 SHA256:9c5b1f13a900f3610b7015317d25484101f13ecad1360ff3fa20a033ddff6171
-```
 
 ### `dpkg` source package: `base-passwd=3.5.44`
 
@@ -3970,9 +3966,9 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris systemd=237-3ubuntu10.29
-'http://archive.ubuntu.com/ubuntu/pool/main/s/systemd/systemd_237-3ubuntu10.29.dsc' systemd_237-3ubuntu10.29.dsc 4841 SHA256:456b85beeb190e1cb97bad9655e0ddcfb7fd8a63bad9477bac77f13ee41b84ab
-'http://archive.ubuntu.com/ubuntu/pool/main/s/systemd/systemd_237.orig.tar.gz' systemd_237.orig.tar.gz 6871350 SHA256:c83dabbe1c9de6b9db1dafdb7e04140c7d0535705c68842f6c0768653ba4913c
-'http://archive.ubuntu.com/ubuntu/pool/main/s/systemd/systemd_237-3ubuntu10.29.debian.tar.xz' systemd_237-3ubuntu10.29.debian.tar.xz 221276 SHA256:15c9e5803ceee783fd859e0ca7fce46a79ab3895ea1158bf1dd43b6405ed7674
+'http://security.ubuntu.com/ubuntu/pool/main/s/systemd/systemd_237-3ubuntu10.29.dsc' systemd_237-3ubuntu10.29.dsc 4841 SHA256:456b85beeb190e1cb97bad9655e0ddcfb7fd8a63bad9477bac77f13ee41b84ab
+'http://security.ubuntu.com/ubuntu/pool/main/s/systemd/systemd_237.orig.tar.gz' systemd_237.orig.tar.gz 6871350 SHA256:c83dabbe1c9de6b9db1dafdb7e04140c7d0535705c68842f6c0768653ba4913c
+'http://security.ubuntu.com/ubuntu/pool/main/s/systemd/systemd_237-3ubuntu10.29.debian.tar.xz' systemd_237-3ubuntu10.29.debian.tar.xz 221276 SHA256:15c9e5803ceee783fd859e0ca7fce46a79ab3895ea1158bf1dd43b6405ed7674
 ```
 
 ### `dpkg` source package: `sysvinit=2.88dsf-59.10ubuntu1`
