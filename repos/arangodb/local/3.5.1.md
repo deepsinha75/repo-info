@@ -2,20 +2,20 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:c57c4e7302ba63e8a7b01dd6988ca0f19eaff0d7f7faa78f4afa346aca0ca4d5`
-- Created: `2019-08-22T19:20:53.762604433Z`
-- Virtual Size: ~ 292.73 Mb  
+- Image ID: `sha256:13110a0482d82b70b8d7604c384119e98d4b7f046e9d18fc5f4eaf098e961e84`
+- Created: `2019-10-09T20:20:18.90294352Z`
+- Virtual Size: ~ 296.91 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["/entrypoint.sh"]`
 - Command: `["arangod"]`
 - Environment:
   - `PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
-  - `ARANGO_VERSION=3.5.0`
+  - `ARANGO_VERSION=3.5.1`
   - `ARANGO_URL=https://download.arangodb.com/arangodb35/DEBIAN/amd64`
-  - `ARANGO_PACKAGE=arangodb3_3.5.0-1_amd64.deb`
-  - `ARANGO_PACKAGE_URL=https://download.arangodb.com/arangodb35/DEBIAN/amd64/arangodb3_3.5.0-1_amd64.deb`
-  - `ARANGO_SIGNATURE_URL=https://download.arangodb.com/arangodb35/DEBIAN/amd64/arangodb3_3.5.0-1_amd64.deb.asc`
+  - `ARANGO_PACKAGE=arangodb3_3.5.1-1_amd64.deb`
+  - `ARANGO_PACKAGE_URL=https://download.arangodb.com/arangodb35/DEBIAN/amd64/arangodb3_3.5.1-1_amd64.deb`
+  - `ARANGO_SIGNATURE_URL=https://download.arangodb.com/arangodb35/DEBIAN/amd64/arangodb3_3.5.1-1_amd64.deb.asc`
 
 ## `apk` (`.apk`-based packages)
 
@@ -328,16 +328,16 @@ MIT BSD GPL2+
 ### `apk` package: `nodejs`
 
 ```console
-nodejs-10.16.0-r0 description:
+nodejs-10.16.3-r0 description:
 JavaScript runtime built on V8 engine - LTS version
 
-nodejs-10.16.0-r0 webpage:
+nodejs-10.16.3-r0 webpage:
 https://nodejs.org/
 
-nodejs-10.16.0-r0 installed size:
-25067520
+nodejs-10.16.3-r0 installed size:
+25088000
 
-nodejs-10.16.0-r0 license:
+nodejs-10.16.3-r0 license:
 MIT
 
 ```
@@ -345,16 +345,16 @@ MIT
 ### `apk` package: `npm`
 
 ```console
-npm-10.16.0-r0 description:
+npm-10.16.3-r0 description:
 A package manager for JavaScript
 
-npm-10.16.0-r0 webpage:
+npm-10.16.3-r0 webpage:
 https://nodejs.org/
 
-npm-10.16.0-r0 installed size:
+npm-10.16.3-r0 installed size:
 28676096
 
-npm-10.16.0-r0 license:
+npm-10.16.3-r0 license:
 MIT
 
 ```
@@ -372,6 +372,23 @@ numactl-2.0.12-r2 installed size:
 61440
 
 numactl-2.0.12-r2 license:
+GPL-2.0 LGPL-2.0
+
+```
+
+### `apk` package: `numactl-tools`
+
+```console
+numactl-tools-2.0.12-r2 description:
+NUMA policy control tools
+
+numactl-tools-2.0.12-r2 webpage:
+https://github.com/numactl/numactl
+
+numactl-tools-2.0.12-r2 installed size:
+167936
+
+numactl-tools-2.0.12-r2 license:
 GPL-2.0 LGPL-2.0
 
 ```
