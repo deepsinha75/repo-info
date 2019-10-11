@@ -2,9 +2,9 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:6308362aee6dd055dd59f3aa922818955b816b833cfb8339467658d2936528b5`
-- Created: `2019-09-19T02:55:33.036974597Z`
-- Virtual Size: ~ 464.60 Mb  
+- Image ID: `sha256:1e88a3d5a98484640cb76496b6745dc3be9127b96622828139cec12fa98388cb`
+- Created: `2019-10-11T00:22:59.190313952Z`
+- Virtual Size: ~ 472.19 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Command: `["gradle"]`
@@ -170,13 +170,9 @@ Licenses: (parsed from: `/usr/share/doc/base-files/copyright`)
 
 - `GPL`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris base-files=10.1ubuntu2.6
-'http://archive.ubuntu.com/ubuntu/pool/main/b/base-files/base-files_10.1ubuntu2.6.dsc' base-files_10.1ubuntu2.6.dsc 1620 SHA256:3b2bb107b6e818e9e75b4aaffadfd5934055feb08313e40129bea43cbcc1a2ad
-'http://archive.ubuntu.com/ubuntu/pool/main/b/base-files/base-files_10.1ubuntu2.6.tar.xz' base-files_10.1ubuntu2.6.tar.xz 78212 SHA256:9c5b1f13a900f3610b7015317d25484101f13ecad1360ff3fa20a033ddff6171
-```
 
 ### `dpkg` source package: `base-passwd=3.5.44`
 
@@ -665,6 +661,25 @@ $ apt-get source -qq --print-uris gdbm=1.14.1-6
 'http://archive.ubuntu.com/ubuntu/pool/main/g/gdbm/gdbm_1.14.1-6.dsc' gdbm_1.14.1-6.dsc 2293 SHA256:85fc353e81fc54b49d9c13c71f4247836fb1aac2693e98416a6821de8cfe7b41
 'http://archive.ubuntu.com/ubuntu/pool/main/g/gdbm/gdbm_1.14.1.orig.tar.gz' gdbm_1.14.1.orig.tar.gz 894412 SHA256:cdceff00ffe014495bed3aed71c7910aa88bf29379f795abc0f46d4ee5f8bc5f
 'http://archive.ubuntu.com/ubuntu/pool/main/g/gdbm/gdbm_1.14.1-6.debian.tar.xz' gdbm_1.14.1-6.debian.tar.xz 27492 SHA256:c9da59f11d5e40ecd877f1256c53ea4750b9d614c7885800e42d0f1885996658
+```
+
+### `dpkg` source package: `git-lfs=2.3.4-1`
+
+Binary Packages:
+
+- `git-lfs=2.3.4-1`
+
+Licenses: (parsed from: `/usr/share/doc/git-lfs/copyright`)
+
+- `Expat`
+
+Source:
+
+```console
+$ apt-get source -qq --print-uris git-lfs=2.3.4-1
+'http://archive.ubuntu.com/ubuntu/pool/universe/g/git-lfs/git-lfs_2.3.4-1.dsc' git-lfs_2.3.4-1.dsc 2354 SHA256:81403c59110c21baeaacdd55d3eb97ee87ae914a997d722877079b3428dbdec2
+'http://archive.ubuntu.com/ubuntu/pool/universe/g/git-lfs/git-lfs_2.3.4.orig.tar.gz' git-lfs_2.3.4.orig.tar.gz 504946 SHA256:9d4e37be4d4790b01b5432dba44ec78cd4e95c111c03b4bc731f7dff9db0e2a8
+'http://archive.ubuntu.com/ubuntu/pool/universe/g/git-lfs/git-lfs_2.3.4-1.debian.tar.xz' git-lfs_2.3.4-1.debian.tar.xz 2732 SHA256:a39c2308d562dd52f7425d2c4a152ac15d296c27b796ad7abbe704680f62f98f
 ```
 
 ### `dpkg` source package: `git=1:2.17.1-1ubuntu0.4`
@@ -1774,14 +1789,14 @@ $ apt-get source -qq --print-uris python-defaults=2.7.15~rc1-1
 'http://archive.ubuntu.com/ubuntu/pool/main/p/python-defaults/python-defaults_2.7.15~rc1-1.tar.gz' python-defaults_2.7.15~rc1-1.tar.gz 1958015 SHA256:f3bed2b81091821d2e514c2e17c6846f7e744487fd15f7d3c48fa1c91b9cd49b
 ```
 
-### `dpkg` source package: `python2.7=2.7.15-4ubuntu4~18.04.1`
+### `dpkg` source package: `python2.7=2.7.15-4ubuntu4~18.04.2`
 
 Binary Packages:
 
-- `libpython2.7-minimal:amd64=2.7.15-4ubuntu4~18.04.1`
-- `libpython2.7-stdlib:amd64=2.7.15-4ubuntu4~18.04.1`
-- `python2.7=2.7.15-4ubuntu4~18.04.1`
-- `python2.7-minimal=2.7.15-4ubuntu4~18.04.1`
+- `libpython2.7-minimal:amd64=2.7.15-4ubuntu4~18.04.2`
+- `libpython2.7-stdlib:amd64=2.7.15-4ubuntu4~18.04.2`
+- `python2.7=2.7.15-4ubuntu4~18.04.2`
+- `python2.7-minimal=2.7.15-4ubuntu4~18.04.2`
 
 Licenses: (parsed from: `/usr/share/doc/libpython2.7-minimal/copyright`, `/usr/share/doc/libpython2.7-stdlib/copyright`, `/usr/share/doc/python2.7/copyright`, `/usr/share/doc/python2.7-minimal/copyright`)
 
@@ -1805,10 +1820,10 @@ Licenses: (parsed from: `/usr/share/doc/libpython2.7-minimal/copyright`, `/usr/s
 Source:
 
 ```console
-$ apt-get source -qq --print-uris python2.7=2.7.15-4ubuntu4~18.04.1
-'http://archive.ubuntu.com/ubuntu/pool/main/p/python2.7/python2.7_2.7.15-4ubuntu4~18.04.1.dsc' python2.7_2.7.15-4ubuntu4~18.04.1.dsc 3476 SHA256:680399ad4fa59c5ab097f1546c159440d602df7bac2837208f4978a3a63ca979
-'http://archive.ubuntu.com/ubuntu/pool/main/p/python2.7/python2.7_2.7.15.orig.tar.gz' python2.7_2.7.15.orig.tar.gz 17496336 SHA256:18617d1f15a380a919d517630a9cd85ce17ea602f9bbdc58ddc672df4b0239db
-'http://archive.ubuntu.com/ubuntu/pool/main/p/python2.7/python2.7_2.7.15-4ubuntu4~18.04.1.diff.gz' python2.7_2.7.15-4ubuntu4~18.04.1.diff.gz 555429 SHA256:57262f5d8281a7e41f7a9f3e0f3f000c4fe2b6de4c832dd0ee877794b05ade6b
+$ apt-get source -qq --print-uris python2.7=2.7.15-4ubuntu4~18.04.2
+'http://security.ubuntu.com/ubuntu/pool/main/p/python2.7/python2.7_2.7.15-4ubuntu4~18.04.2.dsc' python2.7_2.7.15-4ubuntu4~18.04.2.dsc 3476 SHA256:3876165628c986dc5f9dc128aeccc1d238cfea95f3dd67ac3ab23f6d00823bdc
+'http://security.ubuntu.com/ubuntu/pool/main/p/python2.7/python2.7_2.7.15.orig.tar.gz' python2.7_2.7.15.orig.tar.gz 17496336 SHA256:18617d1f15a380a919d517630a9cd85ce17ea602f9bbdc58ddc672df4b0239db
+'http://security.ubuntu.com/ubuntu/pool/main/p/python2.7/python2.7_2.7.15-4ubuntu4~18.04.2.diff.gz' python2.7_2.7.15-4ubuntu4~18.04.2.diff.gz 557289 SHA256:f23200e92acf8276eed8c0b90f0f71d9d0956e91efea40d3166f1b468d142ffa
 ```
 
 ### `dpkg` source package: `readline=7.0-3`
@@ -2017,9 +2032,9 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris systemd=237-3ubuntu10.29
-'http://archive.ubuntu.com/ubuntu/pool/main/s/systemd/systemd_237-3ubuntu10.29.dsc' systemd_237-3ubuntu10.29.dsc 4841 SHA256:456b85beeb190e1cb97bad9655e0ddcfb7fd8a63bad9477bac77f13ee41b84ab
-'http://archive.ubuntu.com/ubuntu/pool/main/s/systemd/systemd_237.orig.tar.gz' systemd_237.orig.tar.gz 6871350 SHA256:c83dabbe1c9de6b9db1dafdb7e04140c7d0535705c68842f6c0768653ba4913c
-'http://archive.ubuntu.com/ubuntu/pool/main/s/systemd/systemd_237-3ubuntu10.29.debian.tar.xz' systemd_237-3ubuntu10.29.debian.tar.xz 221276 SHA256:15c9e5803ceee783fd859e0ca7fce46a79ab3895ea1158bf1dd43b6405ed7674
+'http://security.ubuntu.com/ubuntu/pool/main/s/systemd/systemd_237-3ubuntu10.29.dsc' systemd_237-3ubuntu10.29.dsc 4841 SHA256:456b85beeb190e1cb97bad9655e0ddcfb7fd8a63bad9477bac77f13ee41b84ab
+'http://security.ubuntu.com/ubuntu/pool/main/s/systemd/systemd_237.orig.tar.gz' systemd_237.orig.tar.gz 6871350 SHA256:c83dabbe1c9de6b9db1dafdb7e04140c7d0535705c68842f6c0768653ba4913c
+'http://security.ubuntu.com/ubuntu/pool/main/s/systemd/systemd_237-3ubuntu10.29.debian.tar.xz' systemd_237-3ubuntu10.29.debian.tar.xz 221276 SHA256:15c9e5803ceee783fd859e0ca7fce46a79ab3895ea1158bf1dd43b6405ed7674
 ```
 
 ### `dpkg` source package: `sysvinit=2.88dsf-59.10ubuntu1`
