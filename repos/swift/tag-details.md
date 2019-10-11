@@ -22,6 +22,12 @@
 -	[`swift:5.0-xenial`](#swift50-xenial)
 -	[`swift:5.0-xenial-slim`](#swift50-xenial-slim)
 -	[`swift:5.1`](#swift51)
+-	[`swift:5.1.1`](#swift511)
+-	[`swift:5.1.1-bionic`](#swift511-bionic)
+-	[`swift:5.1.1-bionic-sim`](#swift511-bionic-sim)
+-	[`swift:5.1.1-slim`](#swift511-slim)
+-	[`swift:5.1.1-xenial`](#swift511-xenial)
+-	[`swift:5.1.1-xenial-slim`](#swift511-xenial-slim)
 -	[`swift:5.1-bionic`](#swift51-bionic)
 -	[`swift:5.1-bionic-slim`](#swift51-bionic-slim)
 -	[`swift:5.1-slim`](#swift51-slim)
@@ -1625,6 +1631,30 @@ RUN swift --version
 		Last Modified: Mon, 23 Sep 2019 23:30:19 GMT  
 		Size: 344.4 MB (344364877 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+
+## `swift:5.1.1`
+
+**does not exist** (yet?)
+
+## `swift:5.1.1-bionic`
+
+**does not exist** (yet?)
+
+## `swift:5.1.1-bionic-sim`
+
+**does not exist** (yet?)
+
+## `swift:5.1.1-slim`
+
+**does not exist** (yet?)
+
+## `swift:5.1.1-xenial`
+
+**does not exist** (yet?)
+
+## `swift:5.1.1-xenial-slim`
+
+**does not exist** (yet?)
 
 ## `swift:5.1-bionic`
 
