@@ -1,19 +1,19 @@
-# `erlang:21.3.8.7-alpine`
+# `erlang:21.3.8.8-alpine`
 
 ## Docker Metadata
 
-- Image ID: `sha256:0a0e993b617af24282e08a245592581662d0264224423e8b39a9ac2f7675befd`
-- Created: `2019-09-21T01:07:52.582476354Z`
-- Virtual Size: ~ 74.05 Mb  
+- Image ID: `sha256:38f7b775faf5d024de1676841b00b758382be095ed687af5eff2d2e70ca2941e`
+- Created: `2019-10-09T23:08:48.593516107Z`
+- Virtual Size: ~ 77.25 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Command: `["erl"]`
 - Environment:
   - `PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
-  - `OTP_VERSION=21.3.8.7`
+  - `OTP_VERSION=21.3.8.8`
   - `REBAR3_VERSION=3.12.0`
 - Labels:
-  - `org.opencontainers.image.version=21.3.8.7`
+  - `org.opencontainers.image.version=21.3.8.8`
 
 ## `apk` (`.apk`-based packages)
 
@@ -139,16 +139,16 @@ BSD
 ### `apk` package: `libcrypto1.1`
 
 ```console
-libcrypto1.1-1.1.1b-r1 description:
+libcrypto1.1-1.1.1d-r0 description:
 Crypto library from openssl
 
-libcrypto1.1-1.1.1b-r1 webpage:
+libcrypto1.1-1.1.1d-r0 webpage:
 https://www.openssl.org
 
-libcrypto1.1-1.1.1b-r1 installed size:
+libcrypto1.1-1.1.1d-r0 installed size:
 2748416
 
-libcrypto1.1-1.1.1b-r1 license:
+libcrypto1.1-1.1.1d-r0 license:
 OpenSSL
 
 ```
@@ -156,16 +156,16 @@ OpenSSL
 ### `apk` package: `libssl1.1`
 
 ```console
-libssl1.1-1.1.1b-r1 description:
+libssl1.1-1.1.1d-r0 description:
 SSL shared libraries
 
-libssl1.1-1.1.1b-r1 webpage:
+libssl1.1-1.1.1d-r0 webpage:
 https://www.openssl.org
 
-libssl1.1-1.1.1b-r1 installed size:
+libssl1.1-1.1.1d-r0 installed size:
 536576
 
-libssl1.1-1.1.1b-r1 license:
+libssl1.1-1.1.1d-r0 license:
 OpenSSL
 
 ```
