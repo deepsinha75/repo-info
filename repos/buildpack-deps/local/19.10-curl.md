@@ -473,14 +473,9 @@ Licenses: (parsed from: `/usr/share/doc/gcc-9-base/copyright`, `/usr/share/doc/l
 - `LGPL`
 - `LGPL-2.1+`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris gcc-9=9.2.1-8ubuntu1
-'http://archive.ubuntu.com/ubuntu/pool/main/g/gcc-9/gcc-9_9.2.1-8ubuntu1.dsc' gcc-9_9.2.1-8ubuntu1.dsc 37925 SHA256:74d2dc01076a4ad30f71f839d8c0722a5416a826139bbae5ffa63d7471100af0
-'http://archive.ubuntu.com/ubuntu/pool/main/g/gcc-9/gcc-9_9.2.1.orig.tar.gz' gcc-9_9.2.1.orig.tar.gz 90195906 SHA256:8819e4bbae43592726be676262f81f242bc5b7a50a019012d8ef02d135a1280c
-'http://archive.ubuntu.com/ubuntu/pool/main/g/gcc-9/gcc-9_9.2.1-8ubuntu1.debian.tar.xz' gcc-9_9.2.1-8ubuntu1.debian.tar.xz 516076 SHA256:0b2d04462925ca26fced2139021536e1108bf0aa0e89b5ad469a7f0de0b94713
-```
 
 ### `dpkg` source package: `glibc=2.30-0ubuntu1`
 
@@ -1005,15 +1000,13 @@ Licenses: (parsed from: `/usr/share/doc/libssh-4/copyright`)
 - `LGPL-2.1+~OpenSSL`
 - `public-domain`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris libssh=0.9.0-1
-'http://archive.ubuntu.com/ubuntu/pool/main/libs/libssh/libssh_0.9.0-1.dsc' libssh_0.9.0-1.dsc 2356 SHA256:a950977148b6d5923b2ff4d269c664c7644c279752f54fb628c0222852d305f0
-'http://archive.ubuntu.com/ubuntu/pool/main/libs/libssh/libssh_0.9.0.orig.tar.xz' libssh_0.9.0.orig.tar.xz 487628 SHA256:25303c2995e663cd169fdd902bae88106f48242d7e96311d74f812023482c7a5
-'http://archive.ubuntu.com/ubuntu/pool/main/libs/libssh/libssh_0.9.0.orig.tar.xz.asc' libssh_0.9.0.orig.tar.xz.asc 833 SHA256:376c3d17bd252290b911903cae6a0bacae7864194224d5bf6f3a0073baf7b83a
-'http://archive.ubuntu.com/ubuntu/pool/main/libs/libssh/libssh_0.9.0-1.debian.tar.xz' libssh_0.9.0-1.debian.tar.xz 26304 SHA256:03530744c368fc54cdbe28d4976fd17b09287ea5c54d9da28fe83daf91baaffe
-```
+The source package *may* still be available for download from:
+
+- http://snapshot.debian.org/package/libssh/0.9.0-1/
+
 
 ### `dpkg` source package: `libtasn1-6=4.14-2`
 

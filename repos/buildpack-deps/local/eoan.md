@@ -918,14 +918,9 @@ Licenses: (parsed from: `/usr/share/doc/cpp-9/copyright`, `/usr/share/doc/g++-9/
 - `LGPL`
 - `LGPL-2.1+`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris gcc-9=9.2.1-8ubuntu1
-'http://archive.ubuntu.com/ubuntu/pool/main/g/gcc-9/gcc-9_9.2.1-8ubuntu1.dsc' gcc-9_9.2.1-8ubuntu1.dsc 37925 SHA256:74d2dc01076a4ad30f71f839d8c0722a5416a826139bbae5ffa63d7471100af0
-'http://archive.ubuntu.com/ubuntu/pool/main/g/gcc-9/gcc-9_9.2.1.orig.tar.gz' gcc-9_9.2.1.orig.tar.gz 90195906 SHA256:8819e4bbae43592726be676262f81f242bc5b7a50a019012d8ef02d135a1280c
-'http://archive.ubuntu.com/ubuntu/pool/main/g/gcc-9/gcc-9_9.2.1-8ubuntu1.debian.tar.xz' gcc-9_9.2.1-8ubuntu1.debian.tar.xz 516076 SHA256:0b2d04462925ca26fced2139021536e1108bf0aa0e89b5ad469a7f0de0b94713
-```
 
 ### `dpkg` source package: `gcc-defaults=1.185.1ubuntu1`
 
@@ -2251,15 +2246,13 @@ Licenses: (parsed from: `/usr/share/doc/libssh-4/copyright`)
 - `LGPL-2.1+~OpenSSL`
 - `public-domain`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris libssh=0.9.0-1
-'http://archive.ubuntu.com/ubuntu/pool/main/libs/libssh/libssh_0.9.0-1.dsc' libssh_0.9.0-1.dsc 2356 SHA256:a950977148b6d5923b2ff4d269c664c7644c279752f54fb628c0222852d305f0
-'http://archive.ubuntu.com/ubuntu/pool/main/libs/libssh/libssh_0.9.0.orig.tar.xz' libssh_0.9.0.orig.tar.xz 487628 SHA256:25303c2995e663cd169fdd902bae88106f48242d7e96311d74f812023482c7a5
-'http://archive.ubuntu.com/ubuntu/pool/main/libs/libssh/libssh_0.9.0.orig.tar.xz.asc' libssh_0.9.0.orig.tar.xz.asc 833 SHA256:376c3d17bd252290b911903cae6a0bacae7864194224d5bf6f3a0073baf7b83a
-'http://archive.ubuntu.com/ubuntu/pool/main/libs/libssh/libssh_0.9.0-1.debian.tar.xz' libssh_0.9.0-1.debian.tar.xz 26304 SHA256:03530744c368fc54cdbe28d4976fd17b09287ea5c54d9da28fe83daf91baaffe
-```
+The source package *may* still be available for download from:
+
+- http://snapshot.debian.org/package/libssh/0.9.0-1/
+
 
 ### `dpkg` source package: `libtasn1-6=4.14-2`
 
@@ -2885,14 +2878,9 @@ Licenses: (parsed from: `/usr/share/doc/libmysqlclient-dev/copyright`, `/usr/sha
 - `public-domain`
 - `zlib/libpng`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris mysql-8.0=8.0.16-0ubuntu3
-'http://archive.ubuntu.com/ubuntu/pool/main/m/mysql-8.0/mysql-8.0_8.0.16-0ubuntu3.dsc' mysql-8.0_8.0.16-0ubuntu3.dsc 3388 SHA256:1196e1b676b1e8e7bd4c01e122d9365678273123780cbb632b7090bb7f341b77
-'http://archive.ubuntu.com/ubuntu/pool/main/m/mysql-8.0/mysql-8.0_8.0.16.orig.tar.gz' mysql-8.0_8.0.16.orig.tar.gz 145939027 SHA256:7c936aa7bc9f4c462b24bade2e9abe1b3a6869ea19c46e78ec0a9b2a87a3d17f
-'http://archive.ubuntu.com/ubuntu/pool/main/m/mysql-8.0/mysql-8.0_8.0.16-0ubuntu3.debian.tar.xz' mysql-8.0_8.0.16-0ubuntu3.debian.tar.xz 157584 SHA256:cc460e665d66f9a86c2f980668316fe21b596f0208a842b9eb8d94402b35efa8
-```
 
 ### `dpkg` source package: `mysql-defaults=1.0.5ubuntu2`
 
@@ -3481,14 +3469,13 @@ Licenses: (parsed from: `/usr/share/doc/libpython2.7-minimal/copyright`, `/usr/s
 - `implied`
 - `see above, some license as Python`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris python2.7=2.7.16-4
-'http://archive.ubuntu.com/ubuntu/pool/universe/p/python2.7/python2.7_2.7.16-4.dsc' python2.7_2.7.16-4.dsc 3365 SHA256:758dbe6bc5d8aeb386ee82caef9a66b98c2c9bb7ef756e60e55f1bfc16365e69
-'http://archive.ubuntu.com/ubuntu/pool/universe/p/python2.7/python2.7_2.7.16.orig.tar.gz' python2.7_2.7.16.orig.tar.gz 17431748 SHA256:01da813a3600876f03f46db11cc5c408175e99f03af2ba942ef324389a83bad5
-'http://archive.ubuntu.com/ubuntu/pool/universe/p/python2.7/python2.7_2.7.16-4.diff.gz' python2.7_2.7.16-4.diff.gz 339437 SHA256:d50edd2665e02bd50b0e98fbfebd5f436c7ec02b33f50bde3788583ffd31e62c
-```
+The source package *may* still be available for download from:
+
+- http://snapshot.debian.org/package/python2.7/2.7.16-4/
+
 
 ### `dpkg` source package: `python3-defaults=3.7.3-1`
 
@@ -3502,13 +3489,13 @@ Binary Packages:
 If source is available (seen below), check the contents of `debian/copyright` within it.
 
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris python3-defaults=3.7.3-1
-'http://archive.ubuntu.com/ubuntu/pool/main/p/python3-defaults/python3-defaults_3.7.3-1.dsc' python3-defaults_3.7.3-1.dsc 2797 SHA256:00fc9d88fab413659b27886833b4f20c15400cb335de94a3f2dbb01f7adf9058
-'http://archive.ubuntu.com/ubuntu/pool/main/p/python3-defaults/python3-defaults_3.7.3-1.tar.gz' python3-defaults_3.7.3-1.tar.gz 137436 SHA256:ed0fe03fc72b766bc4449088ff82764ac7486431efca38de89841a139f3362ad
-```
+The source package *may* still be available for download from:
+
+- http://snapshot.debian.org/package/python3-defaults/3.7.3-1/
+
 
 ### `dpkg` source package: `python3-stdlib-extensions=3.7.4-3`
 
