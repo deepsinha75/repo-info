@@ -1,10 +1,10 @@
-# `orientdb:3.0.23`
+# `orientdb:3.0.24`
 
 ## Docker Metadata
 
-- Image ID: `sha256:e65216e457058227d7d824f3a0babb2bd5f185d1583de38f40db2e7694d98e20`
-- Created: `2019-09-14T02:31:03.597816049Z`
-- Virtual Size: ~ 332.61 Mb  
+- Image ID: `sha256:a457c6c09087ca10df192ad69d78b434678e41c932ea29e73576db2b42cc4665`
+- Created: `2019-10-11T21:21:28.626521669Z`
+- Virtual Size: ~ 332.62 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Command: `["server.sh"]`
@@ -15,10 +15,10 @@
   - `JAVA_VERSION=8u222`
   - `JAVA_BASE_URL=https://github.com/AdoptOpenJDK/openjdk8-upstream-binaries/releases/download/jdk8u222-b10/OpenJDK8U-jdk_`
   - `JAVA_URL_VERSION=8u222b10`
-  - `ORIENTDB_VERSION=3.0.23`
-  - `ORIENTDB_DOWNLOAD_MD5=06b832429af59c74ffeb8a11c56eb137`
-  - `ORIENTDB_DOWNLOAD_SHA1=f7ba46e9cdbe087f99bae097a57a9a3c6f7d8546`
-  - `ORIENTDB_DOWNLOAD_URL=http://central.maven.org/maven2/com/orientechnologies/orientdb-community/3.0.23/orientdb-community-3.0.23.tar.gz`
+  - `ORIENTDB_VERSION=3.0.24`
+  - `ORIENTDB_DOWNLOAD_MD5=ec0efc6ec4845451a5552b32a74deeec`
+  - `ORIENTDB_DOWNLOAD_SHA1=20af3b8228dee2bd5f5371a6bc592307f5552817`
+  - `ORIENTDB_DOWNLOAD_URL=http://central.maven.org/maven2/com/orientechnologies/orientdb-community/3.0.24/orientdb-community-3.0.24.tar.gz`
 
 ## `dpkg` (`.deb`-based packages)
 
