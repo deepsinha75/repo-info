@@ -2,8 +2,8 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:110d43ff3c70a653283bd23576ab74755fbd00b094548d9b666f0abd69608b78`
-- Created: `2019-10-04T21:23:22.231209402Z`
+- Image ID: `sha256:3afe4f08025559f303778861ba47c45e14827ff5b40ef5dd9fa4749699c377b1`
+- Created: `2019-10-11T21:20:22.330444143Z`
 - Virtual Size: ~ 34.15 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
@@ -11,7 +11,7 @@
 - Environment:
   - `PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
 - Labels:
-  - `build-date=20191004`
+  - `build-date=20191011`
   - `name=Photon OS x86_64/3.0 Base Image`
   - `vendor=VMware`
 
@@ -41,13 +41,13 @@ Licenses (from `rpm --query`): Custom
 
 **WARNING:** unable to find source (`yumdownloader` failed or returned no results)!
 
-### `rpm` package: `curl-7.61.1-4.ph3.x86_64`
+### `rpm` package: `curl-7.61.1-5.ph3.x86_64`
 
 Licenses (from `rpm --query`): MIT
 
 **WARNING:** unable to find source (`yumdownloader` failed or returned no results)!
 
-### `rpm` package: `curl-libs-7.61.1-4.ph3.x86_64`
+### `rpm` package: `curl-libs-7.61.1-5.ph3.x86_64`
 
 Licenses (from `rpm --query`): MIT
 
@@ -143,7 +143,7 @@ Licenses (from `rpm --query`): MPLv2.0
 
 **WARNING:** unable to find source (`yumdownloader` failed or returned no results)!
 
-### `rpm` package: `openssl-1.0.2s-2.ph3.x86_64`
+### `rpm` package: `openssl-1.0.2t-1.ph3.x86_64`
 
 Licenses (from `rpm --query`): OpenSSL
 
