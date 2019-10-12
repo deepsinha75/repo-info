@@ -1,18 +1,18 @@
-# `node:8.16.1-onbuild`
+# `node:8.16.2-onbuild`
 
 ## Docker Metadata
 
-- Image ID: `sha256:a0a6826b770ebbefe51d97fcd34719861190074c011ced3549ab3bc3f1825e11`
-- Created: `2019-09-12T04:40:52.856574722Z`
-- Virtual Size: ~ 894.50 Mb  
+- Image ID: `sha256:98558f3c7201efc72c6e38df8c1b355d8bd870048ea20153a15548b301e30c3c`
+- Created: `2019-10-11T01:06:47.195801896Z`
+- Virtual Size: ~ 894.91 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["docker-entrypoint.sh"]`
 - Command: `["npm","start"]`
 - Environment:
   - `PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
-  - `NODE_VERSION=8.16.1`
-  - `YARN_VERSION=1.15.2`
+  - `NODE_VERSION=8.16.2`
+  - `YARN_VERSION=1.19.1`
 
 ## `dpkg` (`.deb`-based packages)
 
