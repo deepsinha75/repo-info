@@ -2,9 +2,9 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:7fd2b0d3e6f8c60840900dabdcb42253acf856cb93f613bf20958ccb27515b29`
-- Created: `2019-09-19T00:08:38.496270794Z`
-- Virtual Size: ~ 960.67 Mb  
+- Image ID: `sha256:11e97ed9f4ec8ba28159ef8d4e21f3555a081e58a421041760f9c7259603b6ce`
+- Created: `2019-10-10T23:20:24.914612426Z`
+- Virtual Size: ~ 962.88 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["/entrypoint.sh"]`
@@ -146,13 +146,9 @@ Licenses: (parsed from: `/usr/share/doc/base-files/copyright`)
 
 - `GPL`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris base-files=9.4ubuntu4.8
-'http://archive.ubuntu.com/ubuntu/pool/main/b/base-files/base-files_9.4ubuntu4.8.dsc' base-files_9.4ubuntu4.8.dsc 1226 SHA256:2b0cdc78c2179100eb0004baa3aae274babadae5251e111894c94982e4db5005
-'http://archive.ubuntu.com/ubuntu/pool/main/b/base-files/base-files_9.4ubuntu4.8.tar.xz' base-files_9.4ubuntu4.8.tar.xz 63140 SHA256:44447e9dfe7000b3d03043fde24b4d37bea4c9e1c9f986b1f3ecc9797c266dd4
-```
 
 ### `dpkg` source package: `base-passwd=3.5.39`
 
@@ -287,11 +283,11 @@ $ apt-get source -qq --print-uris coreutils=8.25-2ubuntu3~16.04
 'http://archive.ubuntu.com/ubuntu/pool/main/c/coreutils/coreutils_8.25-2ubuntu3~16.04.debian.tar.xz' coreutils_8.25-2ubuntu3~16.04.debian.tar.xz 28336 SHA256:f6fd913f2b0b08df9109308dfd1202b06060e130b8e6bf94daad32e86a3937cf
 ```
 
-### `dpkg` source package: `couchbase-server=6.0.2-2413-1`
+### `dpkg` source package: `couchbase-server=6.0.3-2895-1`
 
 Binary Packages:
 
-- `couchbase-server=6.0.2-2413-1`
+- `couchbase-server=6.0.3-2895-1`
 
 **WARNING:** unable to detect licenses! (package likely not compliant with DEP-5)  
 If source is available (seen below), check the contents of `debian/copyright` within it.
