@@ -1345,14 +1345,9 @@ Binary Packages:
 If source is available (seen below), check the contents of `debian/copyright` within it.
 
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris mysql-community=8.0.17-1debian9
-'http://repo.mysql.com/apt/debian/pool/mysql-8.0/m/mysql-community/mysql-community_8.0.17-1debian9.dsc' mysql-community_8.0.17-1debian9.dsc 2524 SHA256:e6372f5db9754c85ee0677d94ea8f91d62943af1fbabb6864f4392d155ebc616
-'http://repo.mysql.com/apt/debian/pool/mysql-8.0/m/mysql-community/mysql-community_8.0.17.orig.tar.gz' mysql-community_8.0.17.orig.tar.gz 190203398 SHA256:c6e3f38199a77bfd8a4925ca00b252d3b6159b90e4980c7232f1c58d6ca759d6
-'http://repo.mysql.com/apt/debian/pool/mysql-8.0/m/mysql-community/mysql-community_8.0.17-1debian9.debian.tar.xz' mysql-community_8.0.17-1debian9.debian.tar.xz 20508 SHA256:8ac244428d087ecf8f96fa44cceb0dd7222079b50d6fb46fc6f6dee78089cb48
-```
 
 ### `dpkg` source package: `ncurses=6.0+20161126-1+deb9u2`
 
