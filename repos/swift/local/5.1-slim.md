@@ -1,9 +1,9 @@
-# `swift:5.1-slim`
+# `swift:5.1.1-slim`
 
 ## Docker Metadata
 
-- Image ID: `sha256:86d4bdab707515bf0259d0f80ef43da0097c1c469a5e678dca362dae72f291f7`
-- Created: `2019-09-23T23:27:27.744184163Z`
+- Image ID: `sha256:98a959d8463c058ea139524d5e78acad0efcbec050ed05e60d408f79d069e084`
+- Created: `2019-10-11T22:24:17.706155408Z`
 - Virtual Size: ~ 205.03 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
@@ -12,8 +12,8 @@
   - `PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
   - `SWIFT_SIGNING_KEY=A62AE125BBBFBB96A6E042EC925CC1CCED3D1561`
   - `SWIFT_PLATFORM=ubuntu18.04`
-  - `SWIFT_BRANCH=swift-5.1-release`
-  - `SWIFT_VERSION=swift-5.1-RELEASE`
+  - `SWIFT_BRANCH=swift-5.1.1-release`
+  - `SWIFT_VERSION=swift-5.1.1-RELEASE`
   - `SWIFT_WEBROOT=https://swift.org/builds/`
 - Labels:
   - `Description=Docker Container for the Swift programming language`
@@ -131,13 +131,9 @@ Licenses: (parsed from: `/usr/share/doc/base-files/copyright`)
 
 - `GPL`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris base-files=10.1ubuntu2.6
-'http://archive.ubuntu.com/ubuntu/pool/main/b/base-files/base-files_10.1ubuntu2.6.dsc' base-files_10.1ubuntu2.6.dsc 1620 SHA256:3b2bb107b6e818e9e75b4aaffadfd5934055feb08313e40129bea43cbcc1a2ad
-'http://archive.ubuntu.com/ubuntu/pool/main/b/base-files/base-files_10.1ubuntu2.6.tar.xz' base-files_10.1ubuntu2.6.tar.xz 78212 SHA256:9c5b1f13a900f3610b7015317d25484101f13ecad1360ff3fa20a033ddff6171
-```
 
 ### `dpkg` source package: `base-passwd=3.5.44`
 
