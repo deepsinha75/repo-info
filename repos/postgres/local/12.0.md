@@ -2,9 +2,9 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:f9b3d2f9a593d3bc42df0fd9a224eb90356891414881268590d547132d21e7df`
-- Created: `2019-10-04T00:27:23.094782283Z`
-- Virtual Size: ~ 347.99 Mb  
+- Image ID: `sha256:ee227fd504c856220ab9d4a785858d3ea21a622adf971aa0f90c636adcc763b1`
+- Created: `2019-10-12T00:23:48.618379899Z`
+- Virtual Size: ~ 348.00 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["docker-entrypoint.sh"]`
@@ -14,7 +14,7 @@
   - `GOSU_VERSION=1.11`
   - `LANG=en_US.utf8`
   - `PG_MAJOR=12`
-  - `PG_VERSION=12.0-1.pgdg100+1`
+  - `PG_VERSION=12.0-2.pgdg100+1`
   - `PGDATA=/var/lib/postgresql/data`
 
 ## `dpkg` (`.deb`-based packages)
@@ -2341,21 +2341,13 @@ Binary Packages:
 If source is available (seen below), check the contents of `debian/copyright` within it.
 
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris openssl=1.1.1d-0+deb10u1
-'http://security.debian.org/debian-security/pool/updates/main/o/openssl/openssl_1.1.1d-0+deb10u1.dsc' openssl_1.1.1d-0+deb10u1.dsc 2472 SHA256:7329a436fffa21d398f10ef9108be3cf75495bbb83e38387d7679d12b4eda05e
-'http://security.debian.org/debian-security/pool/updates/main/o/openssl/openssl_1.1.1d.orig.tar.gz' openssl_1.1.1d.orig.tar.gz 8845861 SHA256:1e3a91bc1f9dfce01af26026f856e064eab4c8ee0a8f457b5ae30b40b8b711f2
-'http://security.debian.org/debian-security/pool/updates/main/o/openssl/openssl_1.1.1d.orig.tar.gz.asc' openssl_1.1.1d.orig.tar.gz.asc 488 SHA256:f3fd3299a79421fffd51d35f62636b8e987dab1d3033d93a19d7685868e15395
-'http://security.debian.org/debian-security/pool/updates/main/o/openssl/openssl_1.1.1d-0+deb10u1.debian.tar.xz' openssl_1.1.1d-0+deb10u1.debian.tar.xz 84040 SHA256:b0cbf0a6219ddcb3ae325f321affd9614c6cf04c9ecc475f7a070be22f3e9376
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/openssl/1.1.1d-0+deb10u1/
 
-- https://sources.debian.net/src/openssl/1.1.1d-0+deb10u1/ (for browsing the source)
-- https://sources.debian.net/src/openssl/1.1.1d-0+deb10u1/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/openssl/1.1.1d-0+deb10u1/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `p11-kit=0.23.15-2`
 
@@ -2567,13 +2559,13 @@ Other potentially useful URLs:
 - https://sources.debian.net/src/popt/1.16-12/debian/copyright/ (for direct copyright/license information)
 - http://snapshot.debian.org/package/popt/1.16-12/ (for access to the source package after it no longer exists in the archive)
 
-### `dpkg` source package: `postgresql-12=12.0-1.pgdg100+1`
+### `dpkg` source package: `postgresql-12=12.0-2.pgdg100+1`
 
 Binary Packages:
 
-- `libpq5:amd64=12.0-1.pgdg100+1`
-- `postgresql-12=12.0-1.pgdg100+1`
-- `postgresql-client-12=12.0-1.pgdg100+1`
+- `libpq5:amd64=12.0-2.pgdg100+1`
+- `postgresql-12=12.0-2.pgdg100+1`
+- `postgresql-client-12=12.0-2.pgdg100+1`
 
 Licenses: (parsed from: `/usr/share/doc/libpq5/copyright`, `/usr/share/doc/postgresql-12/copyright`, `/usr/share/doc/postgresql-client-12/copyright`)
 
@@ -2596,10 +2588,10 @@ Licenses: (parsed from: `/usr/share/doc/libpq5/copyright`, `/usr/share/doc/postg
 Source:
 
 ```console
-$ apt-get source -qq --print-uris postgresql-12=12.0-1.pgdg100+1
-'http://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-12/postgresql-12_12.0-1.pgdg100+1.dsc' postgresql-12_12.0-1.pgdg100+1.dsc 2760 SHA256:55a828b7f9fb1ed2bffb980957a857f49599e25f4792823bca75135c8971ebc5
+$ apt-get source -qq --print-uris postgresql-12=12.0-2.pgdg100+1
+'http://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-12/postgresql-12_12.0-2.pgdg100+1.dsc' postgresql-12_12.0-2.pgdg100+1.dsc 2760 SHA256:694f6d04bc44c0b23f0fe390e3f36a88c28faa481003eb9cd57b9f8cc070d109
 'http://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-12/postgresql-12_12.0.orig.tar.bz2' postgresql-12_12.0.orig.tar.bz2 20177458 SHA256:cda2397215f758b793f741c86be05468257b0e6bcb1a6113882ab5d0df0855c6
-'http://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-12/postgresql-12_12.0-1.pgdg100+1.debian.tar.xz' postgresql-12_12.0-1.pgdg100+1.debian.tar.xz 22380 SHA256:bd6b1466e50ae19be499deef31fc8c242f003a2386b212a00a4d059d96d190de
+'http://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-12/postgresql-12_12.0-2.pgdg100+1.debian.tar.xz' postgresql-12_12.0-2.pgdg100+1.debian.tar.xz 23800 SHA256:d43e01fb50dd5e8c2e3d6429d91aac0f91c2d7a195f235851c2ef6f1c4a5d3df
 ```
 
 ### `dpkg` source package: `postgresql-common=207.pgdg100+1`
