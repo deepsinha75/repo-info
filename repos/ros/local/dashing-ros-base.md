@@ -3614,14 +3614,9 @@ Licenses: (parsed from: `/usr/share/doc/libpython2.7-minimal/copyright`, `/usr/s
 - `implied`
 - `see above, some license as Python`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris python2.7=2.7.15-4ubuntu4~18.04.1
-'http://archive.ubuntu.com/ubuntu/pool/main/p/python2.7/python2.7_2.7.15-4ubuntu4~18.04.1.dsc' python2.7_2.7.15-4ubuntu4~18.04.1.dsc 3476 SHA256:680399ad4fa59c5ab097f1546c159440d602df7bac2837208f4978a3a63ca979
-'http://archive.ubuntu.com/ubuntu/pool/main/p/python2.7/python2.7_2.7.15.orig.tar.gz' python2.7_2.7.15.orig.tar.gz 17496336 SHA256:18617d1f15a380a919d517630a9cd85ce17ea602f9bbdc58ddc672df4b0239db
-'http://archive.ubuntu.com/ubuntu/pool/main/p/python2.7/python2.7_2.7.15-4ubuntu4~18.04.1.diff.gz' python2.7_2.7.15-4ubuntu4~18.04.1.diff.gz 555429 SHA256:57262f5d8281a7e41f7a9f3e0f3f000c4fe2b6de4c832dd0ee877794b05ade6b
-```
 
 ### `dpkg` source package: `python3-catkin-pkg-modules=0.4.13-1`
 
@@ -4222,14 +4217,9 @@ Licenses: (parsed from: `/usr/share/doc/libpython3.6/copyright`, `/usr/share/doc
 - `use in source`
 - `without`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris python3.6=3.6.8-1~18.04.2
-'http://archive.ubuntu.com/ubuntu/pool/main/p/python3.6/python3.6_3.6.8-1~18.04.2.dsc' python3.6_3.6.8-1~18.04.2.dsc 3442 SHA256:445fbb58eeb3968411ffa134c41bf2c8495f2c28c8a2f28330f7782f9d84e989
-'http://archive.ubuntu.com/ubuntu/pool/main/p/python3.6/python3.6_3.6.8.orig.tar.xz' python3.6_3.6.8.orig.tar.xz 17212420 SHA256:35446241e995773b1bed7d196f4b624dadcadc8429f26282e756b2fb8a351193
-'http://archive.ubuntu.com/ubuntu/pool/main/p/python3.6/python3.6_3.6.8-1~18.04.2.debian.tar.xz' python3.6_3.6.8-1~18.04.2.debian.tar.xz 217568 SHA256:ce9303b92c356b74dcdf6be2fad96fcba395fddf2582f4c74837c46239ef60c0
-```
 
 ### `dpkg` source package: `pyxdg=0.25-4ubuntu1`
 

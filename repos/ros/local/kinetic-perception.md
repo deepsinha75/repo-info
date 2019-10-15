@@ -7328,14 +7328,9 @@ Binary Packages:
 If source is available (seen below), check the contents of `debian/copyright` within it.
 
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris python-rosdistro-modules=0.7.4-1
-'http://packages.ros.org/ros/ubuntu/pool/main/p/python-rosdistro-modules/python-rosdistro-modules_0.7.4-1.debian.tar.xz' python-rosdistro-modules_0.7.4-1.debian.tar.xz 1908 SHA512:45c0ea0a9395b172d87eac57e715d55130845fba490cf64e795efe93b640c0e642b8f7627b2d33b188b86e9e62c484105354511d8d1171a31b6fc5f8aad22847
-'http://packages.ros.org/ros/ubuntu/pool/main/p/python-rosdistro-modules/python-rosdistro-modules_0.7.4-1.dsc' python-rosdistro-modules_0.7.4-1.dsc 1033 SHA512:0e5c2a5605caaebdbeaae40c0f4c14280e6751f1ef6b29a19206a6d7eb980339b05611873446eeb600c6a80256b44f57f915e861da7771ae762d81db192ae627
-'http://packages.ros.org/ros/ubuntu/pool/main/p/python-rosdistro-modules/python-rosdistro-modules_0.7.4.orig.tar.gz' python-rosdistro-modules_0.7.4.orig.tar.gz 41874 SHA512:fe47ddf118982083205ad0808f8113839c107dd278d484d60dfe0712d142d33de83fe91f551d2f0e9f76d222fbdf779d2ec2f1757b79a9de9c3f8cdf92663177
-```
 
 ### `dpkg` source package: `python-rosdistro=0.7.4-100`
 
@@ -7347,14 +7342,9 @@ Binary Packages:
 If source is available (seen below), check the contents of `debian/copyright` within it.
 
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris python-rosdistro=0.7.4-100
-'http://packages.ros.org/ros/ubuntu/pool/main/p/python-rosdistro/python-rosdistro_0.7.4-100.debian.tar.xz' python-rosdistro_0.7.4-100.debian.tar.xz 1896 SHA512:3134bdaf8c8317a4c4794ab482e0ea52ddc82e70bf23e0a7b6a38e202c947d7936cb4c66b1d2d8e79ef35ac6389d36e00ca594aa17dc83cbe1bdaa8b8127c452
-'http://packages.ros.org/ros/ubuntu/pool/main/p/python-rosdistro/python-rosdistro_0.7.4-100.dsc' python-rosdistro_0.7.4-100.dsc 969 SHA512:ce25e34e23527b6d906a14d38ee2207d0070c9f9ae35eac8a4b14915ced861df45bafa6d2936b95ca7a343a555e5c8b262007623a838a1e97d35fce3458f453d
-'http://packages.ros.org/ros/ubuntu/pool/main/p/python-rosdistro/python-rosdistro_0.7.4.orig.tar.gz' python-rosdistro_0.7.4.orig.tar.gz 10096 SHA512:ca6a3a7c86c6c071270061f9a55f76aadd03b3f863b3c8b7751eb996a1d55ae866cbf229cb19d629010562055d63a7e2804d100900384b4f6c86ded8372fb35a
-```
 
 ### `dpkg` source package: `python-rosinstall=0.7.8-1`
 
@@ -7579,14 +7569,9 @@ Licenses: (parsed from: `/usr/share/doc/libpython2.7/copyright`, `/usr/share/doc
 - `implied`
 - `see above, some license as Python`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris python2.7=2.7.12-1ubuntu0~16.04.8
-'http://archive.ubuntu.com/ubuntu/pool/main/p/python2.7/python2.7_2.7.12-1ubuntu0~16.04.8.dsc' python2.7_2.7.12-1ubuntu0~16.04.8.dsc 3387 SHA256:5ce616f6ccaa3ceee667df1e14299da689bd3cd31dd9dc2829b634b37e55e016
-'http://archive.ubuntu.com/ubuntu/pool/main/p/python2.7/python2.7_2.7.12.orig.tar.gz' python2.7_2.7.12.orig.tar.gz 16935960 SHA256:3cb522d17463dfa69a155ab18cffa399b358c966c0363d6c8b5b3bf1384da4b6
-'http://archive.ubuntu.com/ubuntu/pool/main/p/python2.7/python2.7_2.7.12-1ubuntu0~16.04.8.diff.gz' python2.7_2.7.12-1ubuntu0~16.04.8.diff.gz 302358 SHA256:8556c53c1b74b496978652bc15bdd11462bbb24b01a927b708df398bbe454bbe
-```
 
 ### `dpkg` source package: `python3-defaults=3.5.1-3`
 
@@ -7646,14 +7631,9 @@ Licenses: (parsed from: `/usr/share/doc/libpython3.5-minimal/copyright`, `/usr/s
 - `use in source`
 - `without`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris python3.5=3.5.2-2ubuntu0~16.04.8
-'http://archive.ubuntu.com/ubuntu/pool/main/p/python3.5/python3.5_3.5.2-2ubuntu0~16.04.8.dsc' python3.5_3.5.2-2ubuntu0~16.04.8.dsc 3387 SHA256:0b45216b73e91ae7e5d96b43488f32946d38f42cdc50e8e59922d1ec1059a5bb
-'http://archive.ubuntu.com/ubuntu/pool/main/p/python3.5/python3.5_3.5.2.orig.tar.xz' python3.5_3.5.2.orig.tar.xz 15222676 SHA256:0010f56100b9b74259ebcd5d4b295a32324b58b517403a10d1a2aa7cb22bca40
-'http://archive.ubuntu.com/ubuntu/pool/main/p/python3.5/python3.5_3.5.2-2ubuntu0~16.04.8.debian.tar.xz' python3.5_3.5.2-2ubuntu0~16.04.8.debian.tar.xz 230172 SHA256:2b50c076a9b0f9ecd0978fbe9ce1d7c6a758b1b896ccd74a71eadc735461ccc7
-```
 
 ### `dpkg` source package: `pyyaml=3.11-3build1`
 
