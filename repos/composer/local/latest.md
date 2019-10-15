@@ -1,10 +1,10 @@
-# `composer:1.8.6`
+# `composer:1.9.0`
 
 ## Docker Metadata
 
-- Image ID: `sha256:755174f413c605f4006a76c6bcde0463ae15bf1af6a227d852237f4296965fe7`
-- Created: `2019-10-05T05:23:21.523359915Z`
-- Virtual Size: ~ 161.55 Mb  
+- Image ID: `sha256:45cfc05b86db1649456651a04d8da0bd856dcc02bc25ec677d45fea90bb751f1`
+- Created: `2019-10-15T21:19:37.130575914Z`
+- Virtual Size: ~ 162.14 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["/bin/sh","/docker-entrypoint.sh"]`
@@ -24,7 +24,7 @@
   - `PHP_MD5=`
   - `COMPOSER_ALLOW_SUPERUSER=1`
   - `COMPOSER_HOME=/tmp`
-  - `COMPOSER_VERSION=1.8.6`
+  - `COMPOSER_VERSION=1.9.0`
 
 ## `apk` (`.apk`-based packages)
 
@@ -711,16 +711,16 @@ MIT
 ### `apk` package: `openssh-client`
 
 ```console
-openssh-client-8.0_p1-r0 description:
+openssh-client-8.1_p1-r0 description:
 OpenBSD's SSH client
 
-openssh-client-8.0_p1-r0 webpage:
+openssh-client-8.1_p1-r0 webpage:
 https://www.openssh.com/portable.html
 
-openssh-client-8.0_p1-r0 installed size:
-2752512
+openssh-client-8.1_p1-r0 installed size:
+3485696
 
-openssh-client-8.0_p1-r0 license:
+openssh-client-8.1_p1-r0 license:
 BSD
 
 ```
@@ -728,16 +728,16 @@ BSD
 ### `apk` package: `openssh-keygen`
 
 ```console
-openssh-keygen-8.0_p1-r0 description:
+openssh-keygen-8.1_p1-r0 description:
 ssh helper program for generating keys
 
-openssh-keygen-8.0_p1-r0 webpage:
+openssh-keygen-8.1_p1-r0 webpage:
 https://www.openssh.com/portable.html
 
-openssh-keygen-8.0_p1-r0 installed size:
-385024
+openssh-keygen-8.1_p1-r0 installed size:
+409600
 
-openssh-keygen-8.0_p1-r0 license:
+openssh-keygen-8.1_p1-r0 license:
 BSD
 
 ```
