@@ -2,8 +2,8 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:327d8052637ccad999571a4312ac9dbe8cc160e32f0a7b65bc82818d9272f039`
-- Created: `2019-09-20T02:12:53.034859573Z`
+- Image ID: `sha256:698270cde9522923eb2b589cabac32bb83239523bcf32ac175c3a3a3bd31b235`
+- Created: `2019-10-12T04:03:59.374354091Z`
 - Virtual Size: ~ 1.13 Gb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
@@ -21,8 +21,8 @@
   - `LD_LIBRARY_PATH=/usr/local/tomcat/native-jni-lib`
   - `GPG_KEYS=05AB33110949707C93A279E3D3EFE6B686867BA6 07E48665A34DCAFAE522E5E6266191C37C037D42 47309207D818FFD8DCD3F83F1931D684307A10A5 541FBE7D8F78B25E055DDEE13C370389288584E7 61B832AC2F1C5A90F0F9B00A1C506407564C17A3 713DA88BE50911535FE716F5208B0AB1D63011C7 79F7026C690BAA50B92CD8B66A3AD3F4F22C4FED 9BA44C2621385CB966EBA586F72C284D731FABEE A27677289986DB50844682F8ACB77FC2E86E29AC A9C5DF4D22E99998D9875A5110C01C5A2F6059E7 DCFD35E0BF8CA7344752DE8B6FB21E8933C60243 F3A04C595DB5B6A5F1ECA43E3B7BBB100D811BBE F7DA48BB64BCB84ECBA7EE6935CD23C10D498E23`
   - `TOMCAT_MAJOR=8`
-  - `TOMCAT_VERSION=8.5.46`
-  - `TOMCAT_SHA512=9d6243ec47ec0f431c55a612fa6a8fac00262ed2731640ad98628b275221d3e8e241b2fee748196b64029997f4d9f8e63831b43986fedb88a62381a92b05ca68`
+  - `TOMCAT_VERSION=8.5.47`
+  - `TOMCAT_SHA512=079b85f3dfca2b137634859208fae6012860201d720d12ff0add3473f1e267d332cb12803958754e1f922599e0d42b7e97f00bcd62584d9148a6f45fde091716`
   - `XWIKI_VERSION=10.11.9`
   - `XWIKI_URL_PREFIX=https://maven.xwiki.org/releases/org/xwiki/platform/xwiki-platform-distribution-war/10.11.9`
   - `XWIKI_DOWNLOAD_SHA256=299fe60d5b32ee1a363ba48ff2346e78eea5f713a0174c20fe9d7531be426a58`
@@ -2316,29 +2316,29 @@ $ apt-get source -qq --print-uris libpsl=0.19.1-5build1
 'http://archive.ubuntu.com/ubuntu/pool/main/libp/libpsl/libpsl_0.19.1-5build1.debian.tar.xz' libpsl_0.19.1-5build1.debian.tar.xz 9860 SHA256:53285bee66ac22a25dd41f7778cc4e94ae3d61929eb6701a8064a38a964e40e2
 ```
 
-### `dpkg` source package: `libreoffice=1:6.0.7-0ubuntu0.18.04.9`
+### `dpkg` source package: `libreoffice=1:6.0.7-0ubuntu0.18.04.10`
 
 Binary Packages:
 
-- `fonts-opensymbol=2:102.10+LibO6.0.7-0ubuntu0.18.04.9`
-- `libreoffice=1:6.0.7-0ubuntu0.18.04.9`
-- `libreoffice-avmedia-backend-gstreamer=1:6.0.7-0ubuntu0.18.04.9`
-- `libreoffice-base=1:6.0.7-0ubuntu0.18.04.9`
-- `libreoffice-base-core=1:6.0.7-0ubuntu0.18.04.9`
-- `libreoffice-base-drivers=1:6.0.7-0ubuntu0.18.04.9`
-- `libreoffice-calc=1:6.0.7-0ubuntu0.18.04.9`
-- `libreoffice-common=1:6.0.7-0ubuntu0.18.04.9`
-- `libreoffice-core=1:6.0.7-0ubuntu0.18.04.9`
-- `libreoffice-draw=1:6.0.7-0ubuntu0.18.04.9`
-- `libreoffice-impress=1:6.0.7-0ubuntu0.18.04.9`
-- `libreoffice-math=1:6.0.7-0ubuntu0.18.04.9`
-- `libreoffice-report-builder-bin=1:6.0.7-0ubuntu0.18.04.9`
-- `libreoffice-style-galaxy=1:6.0.7-0ubuntu0.18.04.9`
-- `libreoffice-style-tango=1:6.0.7-0ubuntu0.18.04.9`
-- `libreoffice-writer=1:6.0.7-0ubuntu0.18.04.9`
-- `python3-uno=1:6.0.7-0ubuntu0.18.04.9`
-- `uno-libs3=6.0.7-0ubuntu0.18.04.9`
-- `ure=6.0.7-0ubuntu0.18.04.9`
+- `fonts-opensymbol=2:102.10+LibO6.0.7-0ubuntu0.18.04.10`
+- `libreoffice=1:6.0.7-0ubuntu0.18.04.10`
+- `libreoffice-avmedia-backend-gstreamer=1:6.0.7-0ubuntu0.18.04.10`
+- `libreoffice-base=1:6.0.7-0ubuntu0.18.04.10`
+- `libreoffice-base-core=1:6.0.7-0ubuntu0.18.04.10`
+- `libreoffice-base-drivers=1:6.0.7-0ubuntu0.18.04.10`
+- `libreoffice-calc=1:6.0.7-0ubuntu0.18.04.10`
+- `libreoffice-common=1:6.0.7-0ubuntu0.18.04.10`
+- `libreoffice-core=1:6.0.7-0ubuntu0.18.04.10`
+- `libreoffice-draw=1:6.0.7-0ubuntu0.18.04.10`
+- `libreoffice-impress=1:6.0.7-0ubuntu0.18.04.10`
+- `libreoffice-math=1:6.0.7-0ubuntu0.18.04.10`
+- `libreoffice-report-builder-bin=1:6.0.7-0ubuntu0.18.04.10`
+- `libreoffice-style-galaxy=1:6.0.7-0ubuntu0.18.04.10`
+- `libreoffice-style-tango=1:6.0.7-0ubuntu0.18.04.10`
+- `libreoffice-writer=1:6.0.7-0ubuntu0.18.04.10`
+- `python3-uno=1:6.0.7-0ubuntu0.18.04.10`
+- `uno-libs3=6.0.7-0ubuntu0.18.04.10`
+- `ure=6.0.7-0ubuntu0.18.04.10`
 
 Licenses: (parsed from: `/usr/share/doc/fonts-opensymbol/copyright`, `/usr/share/doc/libreoffice/copyright`, `/usr/share/doc/libreoffice-avmedia-backend-gstreamer/copyright`, `/usr/share/doc/libreoffice-base/copyright`, `/usr/share/doc/libreoffice-base-core/copyright`, `/usr/share/doc/libreoffice-base-drivers/copyright`, `/usr/share/doc/libreoffice-calc/copyright`, `/usr/share/doc/libreoffice-common/copyright`, `/usr/share/doc/libreoffice-core/copyright`, `/usr/share/doc/libreoffice-draw/copyright`, `/usr/share/doc/libreoffice-impress/copyright`, `/usr/share/doc/libreoffice-math/copyright`, `/usr/share/doc/libreoffice-report-builder-bin/copyright`, `/usr/share/doc/libreoffice-style-galaxy/copyright`, `/usr/share/doc/libreoffice-style-tango/copyright`, `/usr/share/doc/libreoffice-writer/copyright`, `/usr/share/doc/python3-uno/copyright`, `/usr/share/doc/uno-libs3/copyright`, `/usr/share/doc/ure/copyright`)
 
@@ -2354,9 +2354,17 @@ Licenses: (parsed from: `/usr/share/doc/fonts-opensymbol/copyright`, `/usr/share
 - `MPL-2.0`
 - `other`
 
-**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
-This is *usually* due to a new package version being released and the old version being removed.
+Source:
 
+```console
+$ apt-get source -qq --print-uris libreoffice=1:6.0.7-0ubuntu0.18.04.10
+'http://archive.ubuntu.com/ubuntu/pool/main/libr/libreoffice/libreoffice_6.0.7-0ubuntu0.18.04.10.dsc' libreoffice_6.0.7-0ubuntu0.18.04.10.dsc 18078 SHA256:d74b61f11018aed63dd965480c93ce6aba94a741b19b3866a65a510fb3aa2fb4
+'http://archive.ubuntu.com/ubuntu/pool/main/libr/libreoffice/libreoffice_6.0.7.orig-helpcontent2.tar.xz' libreoffice_6.0.7.orig-helpcontent2.tar.xz 2423012 SHA256:41c1ef4b0437acd7e8ba36789b45906e99e0487b12198bce0d30ed74c9e0ccaf
+'http://archive.ubuntu.com/ubuntu/pool/main/libr/libreoffice/libreoffice_6.0.7.orig-tarballs.tar.xz' libreoffice_6.0.7.orig-tarballs.tar.xz 215486780 SHA256:96116dcc195ab1f47fa677bf88f8d233561422dbfe5a0539f7408b56e254c194
+'http://archive.ubuntu.com/ubuntu/pool/main/libr/libreoffice/libreoffice_6.0.7.orig-translations.tar.xz' libreoffice_6.0.7.orig-translations.tar.xz 139598364 SHA256:24a3ef909cfb0722dec3d6e40924681b41641f175e5df90b3e5507fdceb43186
+'http://archive.ubuntu.com/ubuntu/pool/main/libr/libreoffice/libreoffice_6.0.7.orig.tar.xz' libreoffice_6.0.7.orig.tar.xz 183202236 SHA256:fc67036b0c00c1685d39acec6c485a4a250b6bb92fc08a88377d39d2f7fd7923
+'http://archive.ubuntu.com/ubuntu/pool/main/libr/libreoffice/libreoffice_6.0.7-0ubuntu0.18.04.10.debian.tar.xz' libreoffice_6.0.7-0ubuntu0.18.04.10.debian.tar.xz 2178480 SHA256:c3a47dcedfedb834044bcffcb333016c07c497a86ea5884fca8361d215ffd441
+```
 
 ### `dpkg` source package: `librest=0.8.0-2`
 
@@ -2523,12 +2531,12 @@ $ apt-get source -qq --print-uris libsm=2:1.2.2-1
 'http://archive.ubuntu.com/ubuntu/pool/main/libs/libsm/libsm_1.2.2-1.diff.gz' libsm_1.2.2-1.diff.gz 6183 SHA256:9848714292ead15fcc48ab2d337f2cc5fc08910abbdfaf69d3ef1b89d3fdb2d5
 ```
 
-### `dpkg` source package: `libsoup2.4=2.62.1-1ubuntu0.3`
+### `dpkg` source package: `libsoup2.4=2.62.1-1ubuntu0.4`
 
 Binary Packages:
 
-- `libsoup-gnome2.4-1:amd64=2.62.1-1ubuntu0.3`
-- `libsoup2.4-1:amd64=2.62.1-1ubuntu0.3`
+- `libsoup-gnome2.4-1:amd64=2.62.1-1ubuntu0.4`
+- `libsoup2.4-1:amd64=2.62.1-1ubuntu0.4`
 
 Licenses: (parsed from: `/usr/share/doc/libsoup-gnome2.4-1/copyright`, `/usr/share/doc/libsoup2.4-1/copyright`)
 
@@ -2538,10 +2546,10 @@ Licenses: (parsed from: `/usr/share/doc/libsoup-gnome2.4-1/copyright`, `/usr/sha
 Source:
 
 ```console
-$ apt-get source -qq --print-uris libsoup2.4=2.62.1-1ubuntu0.3
-'http://archive.ubuntu.com/ubuntu/pool/main/libs/libsoup2.4/libsoup2.4_2.62.1-1ubuntu0.3.dsc' libsoup2.4_2.62.1-1ubuntu0.3.dsc 2171 SHA256:fee7a3e99670e01a754e1300d62dbd4d35ea46505e06665d02d42a3c66f4676f
+$ apt-get source -qq --print-uris libsoup2.4=2.62.1-1ubuntu0.4
+'http://archive.ubuntu.com/ubuntu/pool/main/libs/libsoup2.4/libsoup2.4_2.62.1-1ubuntu0.4.dsc' libsoup2.4_2.62.1-1ubuntu0.4.dsc 2825 SHA256:7988e3bd4be850de335adac80ed04e5ef33e83f19fcd199b3ae5daf53fcb5766
 'http://archive.ubuntu.com/ubuntu/pool/main/libs/libsoup2.4/libsoup2.4_2.62.1.orig.tar.xz' libsoup2.4_2.62.1.orig.tar.xz 1848776 SHA256:f037ddac2e0f9b1c842a0060fa6119bea1d3b349a2c901283c961247e45883d7
-'http://archive.ubuntu.com/ubuntu/pool/main/libs/libsoup2.4/libsoup2.4_2.62.1-1ubuntu0.3.debian.tar.xz' libsoup2.4_2.62.1-1ubuntu0.3.debian.tar.xz 22408 SHA256:0eda59fedf29dd8619ade76728887b1173b9f7650c8d0e13ae5aa9b19c314a07
+'http://archive.ubuntu.com/ubuntu/pool/main/libs/libsoup2.4/libsoup2.4_2.62.1-1ubuntu0.4.debian.tar.xz' libsoup2.4_2.62.1-1ubuntu0.4.debian.tar.xz 22764 SHA256:43250ded120ca401d7d9d8a8f31f2a0a482ff2ed59875e51990c5c9596a598de
 ```
 
 ### `dpkg` source package: `libtasn1-6=4.13-2`
@@ -3667,15 +3675,15 @@ $ apt-get source -qq --print-uris python3-defaults=3.6.7-1~18.04
 'http://archive.ubuntu.com/ubuntu/pool/main/p/python3-defaults/python3-defaults_3.6.7-1~18.04.tar.gz' python3-defaults_3.6.7-1~18.04.tar.gz 137600 SHA256:df14f4993ac87537415f1abaa69d80790fb01e51033416bc123038f731286ed4
 ```
 
-### `dpkg` source package: `python3.6=3.6.8-1~18.04.2`
+### `dpkg` source package: `python3.6=3.6.8-1~18.04.3`
 
 Binary Packages:
 
-- `libpython3.6:amd64=3.6.8-1~18.04.2`
-- `libpython3.6-minimal:amd64=3.6.8-1~18.04.2`
-- `libpython3.6-stdlib:amd64=3.6.8-1~18.04.2`
-- `python3.6=3.6.8-1~18.04.2`
-- `python3.6-minimal=3.6.8-1~18.04.2`
+- `libpython3.6:amd64=3.6.8-1~18.04.3`
+- `libpython3.6-minimal:amd64=3.6.8-1~18.04.3`
+- `libpython3.6-stdlib:amd64=3.6.8-1~18.04.3`
+- `python3.6=3.6.8-1~18.04.3`
+- `python3.6-minimal=3.6.8-1~18.04.3`
 
 Licenses: (parsed from: `/usr/share/doc/libpython3.6/copyright`, `/usr/share/doc/libpython3.6-minimal/copyright`, `/usr/share/doc/libpython3.6-stdlib/copyright`, `/usr/share/doc/python3.6/copyright`, `/usr/share/doc/python3.6-minimal/copyright`)
 
@@ -3700,10 +3708,10 @@ Licenses: (parsed from: `/usr/share/doc/libpython3.6/copyright`, `/usr/share/doc
 Source:
 
 ```console
-$ apt-get source -qq --print-uris python3.6=3.6.8-1~18.04.2
-'http://archive.ubuntu.com/ubuntu/pool/main/p/python3.6/python3.6_3.6.8-1~18.04.2.dsc' python3.6_3.6.8-1~18.04.2.dsc 3442 SHA256:445fbb58eeb3968411ffa134c41bf2c8495f2c28c8a2f28330f7782f9d84e989
+$ apt-get source -qq --print-uris python3.6=3.6.8-1~18.04.3
+'http://archive.ubuntu.com/ubuntu/pool/main/p/python3.6/python3.6_3.6.8-1~18.04.3.dsc' python3.6_3.6.8-1~18.04.3.dsc 3442 SHA256:e2c90a908ea841a600b86b48e2972614acbf3f599ade8fe820cb6ee2451ff9ce
 'http://archive.ubuntu.com/ubuntu/pool/main/p/python3.6/python3.6_3.6.8.orig.tar.xz' python3.6_3.6.8.orig.tar.xz 17212420 SHA256:35446241e995773b1bed7d196f4b624dadcadc8429f26282e756b2fb8a351193
-'http://archive.ubuntu.com/ubuntu/pool/main/p/python3.6/python3.6_3.6.8-1~18.04.2.debian.tar.xz' python3.6_3.6.8-1~18.04.2.debian.tar.xz 217568 SHA256:ce9303b92c356b74dcdf6be2fad96fcba395fddf2582f4c74837c46239ef60c0
+'http://archive.ubuntu.com/ubuntu/pool/main/p/python3.6/python3.6_3.6.8-1~18.04.3.debian.tar.xz' python3.6_3.6.8-1~18.04.3.debian.tar.xz 219568 SHA256:471019002d17b33edfa6e4dd4a18b22b9602ab39d87077ac94886f7243b6ad94
 ```
 
 ### `dpkg` source package: `raptor2=2.0.14-1build1`
