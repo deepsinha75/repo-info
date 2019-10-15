@@ -2,17 +2,17 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:883b77a81ec3550b113f6133e33063f124e8eced78aa3ae7dd5c2795df1c96db`
-- Created: `2019-08-05T20:21:46.810314715Z`
-- Virtual Size: ~ 37.40 Mb  
+- Image ID: `sha256:181b71fb5255242e24b7e0216f272851d00f48cc01909af55399dd6db60b980d`
+- Created: `2019-10-15T00:30:04.74257469Z`
+- Virtual Size: ~ 38.09 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["/home/eggdrop/eggdrop/entrypoint.sh"]`
 - Command: `["eggdrop.conf"]`
 - Environment:
   - `PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
-  - `EGGDROP_SHA256=d1130aa32161f734f1be255cdb25b0b44cae621f447f93c96edabf98c2783109`
-  - `EGGDROP_COMMIT=d7a38a8a337db527a63dfd17b624fea9efdfc0f0`
+  - `EGGDROP_SHA256=4e7fc37600dea432a905ccf56c15ef7bb46a3724786eeb08a4bbc1736595214e`
+  - `EGGDROP_COMMIT=1b58814e2a4c9ca73c7f6c1b9301681cba8d9af2`
   - `NICK=`
   - `SERVER=`
   - `LISTEN=3333`
@@ -127,16 +127,16 @@ BSD
 ### `apk` package: `libcrypto1.0`
 
 ```console
-libcrypto1.0-1.0.2r-r0 description:
+libcrypto1.0-1.0.2t-r0 description:
 Crypto library from openssl
 
-libcrypto1.0-1.0.2r-r0 webpage:
+libcrypto1.0-1.0.2t-r0 webpage:
 https://openssl.org
 
-libcrypto1.0-1.0.2r-r0 installed size:
-2523136
+libcrypto1.0-1.0.2t-r0 installed size:
+2527232
 
-libcrypto1.0-1.0.2r-r0 license:
+libcrypto1.0-1.0.2t-r0 license:
 openssl
 
 ```
@@ -195,16 +195,16 @@ custom
 ### `apk` package: `libssl1.0`
 
 ```console
-libssl1.0-1.0.2r-r0 description:
+libssl1.0-1.0.2t-r0 description:
 SSL shared libraries
 
-libssl1.0-1.0.2r-r0 webpage:
+libssl1.0-1.0.2t-r0 webpage:
 https://openssl.org
 
-libssl1.0-1.0.2r-r0 installed size:
+libssl1.0-1.0.2t-r0 installed size:
 446464
 
-libssl1.0-1.0.2r-r0 license:
+libssl1.0-1.0.2t-r0 license:
 openssl
 
 ```
@@ -212,16 +212,16 @@ openssl
 ### `apk` package: `musl`
 
 ```console
-musl-1.1.18-r3 description:
+musl-1.1.18-r4 description:
 the musl c library (libc) implementation
 
-musl-1.1.18-r3 webpage:
+musl-1.1.18-r4 webpage:
 http://www.musl-libc.org/
 
-musl-1.1.18-r3 installed size:
+musl-1.1.18-r4 installed size:
 581632
 
-musl-1.1.18-r3 license:
+musl-1.1.18-r4 license:
 MIT
 
 ```
@@ -229,16 +229,16 @@ MIT
 ### `apk` package: `musl-utils`
 
 ```console
-musl-utils-1.1.18-r3 description:
+musl-utils-1.1.18-r4 description:
 the musl c library (libc) implementation
 
-musl-utils-1.1.18-r3 webpage:
+musl-utils-1.1.18-r4 webpage:
 http://www.musl-libc.org/
 
-musl-utils-1.1.18-r3 installed size:
+musl-utils-1.1.18-r4 installed size:
 122880
 
-musl-utils-1.1.18-r3 license:
+musl-utils-1.1.18-r4 license:
 MIT BSD GPL2+
 
 ```
@@ -297,16 +297,16 @@ MIT
 ### `apk` package: `openssl`
 
 ```console
-openssl-1.0.2r-r0 description:
+openssl-1.0.2t-r0 description:
 Toolkit for SSL v2/v3 and TLS v1
 
-openssl-1.0.2r-r0 webpage:
+openssl-1.0.2t-r0 webpage:
 https://openssl.org
 
-openssl-1.0.2r-r0 installed size:
+openssl-1.0.2t-r0 installed size:
 606208
 
-openssl-1.0.2r-r0 license:
+openssl-1.0.2t-r0 license:
 openssl
 
 ```
