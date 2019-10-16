@@ -1,7 +1,7 @@
 ## `python:buster`
 
 ```console
-$ docker pull python@sha256:3c9a63f7b21a50286bc59bc8a1faa309277ff4702c9270cb533415222c2698a4
+$ docker pull python@sha256:110dd1117dabc28bbf7bcc8f6d24ace3e999880af7772a18f0ea6a29458dcb8b
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -467,14 +467,14 @@ CMD ["python3"]
 ### `python:buster` - linux; ppc64le
 
 ```console
-$ docker pull python@sha256:9ad2c50639478a0d270109147643d52edb96d589ea8f1fe9f49ea5a5940027a4
+$ docker pull python@sha256:b3b02183ee0965a24ba1f64d1c6fff1b90fe268e3a39352ce4c6d04a7b593c96
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **369.2 MB (369173481 bytes)**  
+-	Total Size: **372.1 MB (372089300 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:e662df83eb5fddcb65ea2e1dc5713597ba8f1caf521041a368f61dbf3c2bc902`
+-	Image ID: `sha256:28e37cd4786312ff11c15e1159e7f74b7d4e5627f09274ca09af1dc8a0d6be95`
 -	Default Command: `["python3"]`
 
 ```dockerfile
@@ -496,23 +496,23 @@ ENV PATH=/usr/local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:
 ENV LANG=C.UTF-8
 # Thu, 12 Sep 2019 08:03:48 GMT
 RUN apt-get update && apt-get install -y --no-install-recommends 		tk-dev 		uuid-dev 	&& rm -rf /var/lib/apt/lists/*
-# Thu, 12 Sep 2019 08:35:50 GMT
-ENV GPG_KEY=0D96DF4D4110E5C43FBFB17F2D347EA6AA65421D
-# Thu, 12 Sep 2019 08:35:54 GMT
-ENV PYTHON_VERSION=3.7.4
-# Thu, 12 Sep 2019 08:47:17 GMT
-RUN set -ex 		&& wget -O python.tar.xz "https://www.python.org/ftp/python/${PYTHON_VERSION%%[a-z]*}/Python-$PYTHON_VERSION.tar.xz" 	&& wget -O python.tar.xz.asc "https://www.python.org/ftp/python/${PYTHON_VERSION%%[a-z]*}/Python-$PYTHON_VERSION.tar.xz.asc" 	&& export GNUPGHOME="$(mktemp -d)" 	&& gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys "$GPG_KEY" 	&& gpg --batch --verify python.tar.xz.asc python.tar.xz 	&& { command -v gpgconf > /dev/null && gpgconf --kill all || :; } 	&& rm -rf "$GNUPGHOME" python.tar.xz.asc 	&& mkdir -p /usr/src/python 	&& tar -xJC /usr/src/python --strip-components=1 -f python.tar.xz 	&& rm python.tar.xz 		&& cd /usr/src/python 	&& gnuArch="$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)" 	&& ./configure 		--build="$gnuArch" 		--enable-loadable-sqlite-extensions 		--enable-optimizations 		--enable-shared 		--with-system-expat 		--with-system-ffi 		--without-ensurepip 	&& make -j "$(nproc)" 		PROFILE_TASK='-m test.regrtest --pgo 			test_array 			test_base64 			test_binascii 			test_binhex 			test_binop 			test_bytes 			test_c_locale_coercion 			test_class 			test_cmath 			test_codecs 			test_compile 			test_complex 			test_csv 			test_decimal 			test_dict 			test_float 			test_fstring 			test_hashlib 			test_io 			test_iter 			test_json 			test_long 			test_math 			test_memoryview 			test_pickle 			test_re 			test_set 			test_slice 			test_struct 			test_threading 			test_time 			test_traceback 			test_unicode 		' 	&& make install 	&& ldconfig 		&& find /usr/local -depth 		\( 			\( -type d -a \( -name test -o -name tests \) \) 			-o 			\( -type f -a \( -name '*.pyc' -o -name '*.pyo' \) \) 		\) -exec rm -rf '{}' + 	&& rm -rf /usr/src/python 		&& python3 --version
-# Thu, 12 Sep 2019 08:47:28 GMT
+# Thu, 12 Sep 2019 08:03:51 GMT
+ENV GPG_KEY=E3FF2839C048B25C084DEBE9B26995E310250568
+# Tue, 15 Oct 2019 23:20:32 GMT
+ENV PYTHON_VERSION=3.8.0
+# Tue, 15 Oct 2019 23:29:36 GMT
+RUN set -ex 		&& wget -O python.tar.xz "https://www.python.org/ftp/python/${PYTHON_VERSION%%[a-z]*}/Python-$PYTHON_VERSION.tar.xz" 	&& wget -O python.tar.xz.asc "https://www.python.org/ftp/python/${PYTHON_VERSION%%[a-z]*}/Python-$PYTHON_VERSION.tar.xz.asc" 	&& export GNUPGHOME="$(mktemp -d)" 	&& gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys "$GPG_KEY" 	&& gpg --batch --verify python.tar.xz.asc python.tar.xz 	&& { command -v gpgconf > /dev/null && gpgconf --kill all || :; } 	&& rm -rf "$GNUPGHOME" python.tar.xz.asc 	&& mkdir -p /usr/src/python 	&& tar -xJC /usr/src/python --strip-components=1 -f python.tar.xz 	&& rm python.tar.xz 		&& cd /usr/src/python 	&& gnuArch="$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)" 	&& ./configure 		--build="$gnuArch" 		--enable-loadable-sqlite-extensions 		--enable-optimizations 		--enable-shared 		--with-system-expat 		--with-system-ffi 		--without-ensurepip 	&& make -j "$(nproc)" 	&& make install 	&& ldconfig 		&& find /usr/local -depth 		\( 			\( -type d -a \( -name test -o -name tests \) \) 			-o 			\( -type f -a \( -name '*.pyc' -o -name '*.pyo' \) \) 		\) -exec rm -rf '{}' + 	&& rm -rf /usr/src/python 		&& python3 --version
+# Tue, 15 Oct 2019 23:29:41 GMT
 RUN cd /usr/local/bin 	&& ln -s idle3 idle 	&& ln -s pydoc3 pydoc 	&& ln -s python3 python 	&& ln -s python3-config python-config
-# Thu, 12 Sep 2019 08:47:32 GMT
-ENV PYTHON_PIP_VERSION=19.2.3
-# Thu, 12 Sep 2019 08:47:36 GMT
-ENV PYTHON_GET_PIP_URL=https://github.com/pypa/get-pip/raw/309a56c5fd94bd1134053a541cb4657a4e47e09d/get-pip.py
-# Thu, 12 Sep 2019 08:47:41 GMT
-ENV PYTHON_GET_PIP_SHA256=57e3643ff19f018f8a00dfaa6b7e4620e3c1a7a2171fd218425366ec006b3bfe
-# Thu, 12 Sep 2019 08:48:00 GMT
+# Tue, 15 Oct 2019 23:29:42 GMT
+ENV PYTHON_PIP_VERSION=19.3
+# Tue, 15 Oct 2019 23:29:44 GMT
+ENV PYTHON_GET_PIP_URL=https://github.com/pypa/get-pip/raw/65986a26949050d26e6ec98915da4aade8d8679d/get-pip.py
+# Tue, 15 Oct 2019 23:29:45 GMT
+ENV PYTHON_GET_PIP_SHA256=8d412752ae26b46a39a201ec618ef9ef7656c5b2d8529cdcbe60cd70dc94f40c
+# Tue, 15 Oct 2019 23:30:02 GMT
 RUN set -ex; 		wget -O get-pip.py "$PYTHON_GET_PIP_URL"; 	echo "$PYTHON_GET_PIP_SHA256 *get-pip.py" | sha256sum --check --strict -; 		python get-pip.py 		--disable-pip-version-check 		--no-cache-dir 		"pip==$PYTHON_PIP_VERSION" 	; 	pip --version; 		find /usr/local -depth 		\( 			\( -type d -a \( -name test -o -name tests \) \) 			-o 			\( -type f -a \( -name '*.pyc' -o -name '*.pyo' \) \) 		\) -exec rm -rf '{}' +; 	rm -f get-pip.py
-# Thu, 12 Sep 2019 08:48:04 GMT
+# Tue, 15 Oct 2019 23:30:04 GMT
 CMD ["python3"]
 ```
 
@@ -541,17 +541,17 @@ CMD ["python3"]
 		Last Modified: Thu, 12 Sep 2019 11:31:17 GMT  
 		Size: 6.5 MB (6527468 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:ebea6c3b4063e9f351ea82a8bdae0defeae482c601baa927e041f029d79a0f57`  
-		Last Modified: Thu, 12 Sep 2019 11:32:43 GMT  
-		Size: 27.5 MB (27470071 bytes)  
+	-	`sha256:7995ec6d1ecb66ac2b5265121db7bc9423b6fff6d453f4ed9f51f523b68b3be9`  
+		Last Modified: Wed, 16 Oct 2019 00:17:34 GMT  
+		Size: 30.4 MB (30382193 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:e7837428b919c5c5cabf4800a857e87642ef204ce06ff03864ad956fc4e0a250`  
-		Last Modified: Thu, 12 Sep 2019 11:32:28 GMT  
-		Size: 233.0 B  
+	-	`sha256:a90a50d2a477858515d676a1d44e7fc030aed45ba0ba4240193ffc26297a9f0f`  
+		Last Modified: Wed, 16 Oct 2019 00:17:26 GMT  
+		Size: 234.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:0df10371e33441c2818d2363963870b10b1ab180a4584b51359d5e0512c028af`  
-		Last Modified: Thu, 12 Sep 2019 11:32:31 GMT  
-		Size: 1.9 MB (1863941 bytes)  
+	-	`sha256:1eee7839f4527251846140408612c566f61ea9a8215302049af19925bda33db2`  
+		Last Modified: Wed, 16 Oct 2019 00:17:28 GMT  
+		Size: 1.9 MB (1867637 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `python:buster` - linux; s390x
