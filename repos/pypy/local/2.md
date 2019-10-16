@@ -1,20 +1,20 @@
-# `pypy:2.7-7.1.1`
+# `pypy:2.7-7.2.0`
 
 ## Docker Metadata
 
-- Image ID: `sha256:3f335882b2733da2ce2dc6860ded1801a0dbd46de795c2b849ee889b63becac1`
-- Created: `2019-09-12T13:23:14.590471736Z`
-- Virtual Size: ~ 736.99 Mb  
+- Image ID: `sha256:2c073a4b42d065bae30bb35b467a310529874c3004d3a63ea09a27c383deba76`
+- Created: `2019-10-15T23:26:08.504994235Z`
+- Virtual Size: ~ 739.82 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Command: `["pypy"]`
 - Environment:
   - `PATH=/usr/local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
   - `LANG=C.UTF-8`
-  - `PYPY_VERSION=7.1.1`
-  - `PYTHON_PIP_VERSION=19.2.3`
-  - `PYTHON_GET_PIP_URL=https://github.com/pypa/get-pip/raw/309a56c5fd94bd1134053a541cb4657a4e47e09d/get-pip.py`
-  - `PYTHON_GET_PIP_SHA256=57e3643ff19f018f8a00dfaa6b7e4620e3c1a7a2171fd218425366ec006b3bfe`
+  - `PYPY_VERSION=7.2.0`
+  - `PYTHON_PIP_VERSION=19.3`
+  - `PYTHON_GET_PIP_URL=https://github.com/pypa/get-pip/raw/65986a26949050d26e6ec98915da4aade8d8679d/get-pip.py`
+  - `PYTHON_GET_PIP_SHA256=8d412752ae26b46a39a201ec618ef9ef7656c5b2d8529cdcbe60cd70dc94f40c`
 
 ## `dpkg` (`.deb`-based packages)
 
@@ -4886,20 +4886,13 @@ Binary Packages:
 If source is available (seen below), check the contents of `debian/copyright` within it.
 
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris tzdata=2019a-0+deb8u1
-'http://security.debian.org/debian-security/pool/updates/main/t/tzdata/tzdata_2019a-0+deb8u1.dsc' tzdata_2019a-0+deb8u1.dsc 1985 SHA256:858fe36e4f1ae1d6612f97c2d0a9e1c134bd7b5b5959b4980ce96d0c6e929468
-'http://security.debian.org/debian-security/pool/updates/main/t/tzdata/tzdata_2019a.orig.tar.gz' tzdata_2019a.orig.tar.gz 378961 SHA256:90366ddf4aa03e37a16cd49255af77f801822310b213f195e2206ead48c59772
-'http://security.debian.org/debian-security/pool/updates/main/t/tzdata/tzdata_2019a-0+deb8u1.debian.tar.xz' tzdata_2019a-0+deb8u1.debian.tar.xz 102980 SHA256:29477395b140ebff19d2e1da116cccf0366762fa8064ec07287e0b315c729af9
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/tzdata/2019a-0+deb8u1/
 
-- https://sources.debian.net/src/tzdata/2019a-0+deb8u1/ (for browsing the source)
-- https://sources.debian.net/src/tzdata/2019a-0+deb8u1/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/tzdata/2019a-0+deb8u1/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `ucf=3.0030`
 
