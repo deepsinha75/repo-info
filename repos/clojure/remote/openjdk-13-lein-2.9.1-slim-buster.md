@@ -1,7 +1,7 @@
 ## `clojure:openjdk-13-lein-2.9.1-slim-buster`
 
 ```console
-$ docker pull clojure@sha256:d430874135f91e0fb537f2de77b8535490e3cff079a5f519ee5c4bd99b4c5e6a
+$ docker pull clojure@sha256:018c415904b883ef7b1c6e732b6708ededfbd385febbb97f59c999541a5c7097
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -11,14 +11,14 @@ $ docker pull clojure@sha256:d430874135f91e0fb537f2de77b8535490e3cff079a5f519ee5
 ### `clojure:openjdk-13-lein-2.9.1-slim-buster` - linux; amd64
 
 ```console
-$ docker pull clojure@sha256:0b1360e37155c16cc5859b4926464f3465e014b9d1db3adc427b2b322e826730
+$ docker pull clojure@sha256:3f5b68df756a694d8ce83d76c5298414b5690a4eda7cbd4138c1a4077e2ccfd1
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **249.5 MB (249515358 bytes)**  
+-	Total Size: **249.0 MB (249024960 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:e681f222d6dbc5a7264c97734b643ea06729a1aa4e6f44b7ca98ff286e34cdf4`
+-	Image ID: `sha256:c917e21b6a18b2266a422799cf270717a1eb7192698f9f8461758c9e65477f2d`
 -	Default Command: `["lein","repl"]`
 
 ```dockerfile
@@ -36,31 +36,31 @@ ENV JAVA_HOME=/usr/java/openjdk-13
 ENV PATH=/usr/java/openjdk-13/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
 # Wed, 18 Sep 2019 21:24:34 GMT
 RUN { echo '#/bin/sh'; echo 'echo "$JAVA_HOME"'; } > /usr/local/bin/docker-java-home && chmod +x /usr/local/bin/docker-java-home && [ "$JAVA_HOME" = "$(docker-java-home)" ]
-# Wed, 18 Sep 2019 21:24:34 GMT
-ENV JAVA_VERSION=13
-# Wed, 18 Sep 2019 21:24:34 GMT
-ENV JAVA_URL=https://download.java.net/java/GA/jdk13/5b8a42f3905b406298b72d750b6919f6/33/GPL/openjdk-13_linux-x64_bin.tar.gz
-# Wed, 18 Sep 2019 21:24:34 GMT
-ENV JAVA_SHA256=5f547b8f0ffa7da517223f6f929a5055d749776b1878ccedbd6cc1334f4d6f4d
-# Wed, 18 Sep 2019 21:24:58 GMT
+# Tue, 15 Oct 2019 21:41:50 GMT
+ENV JAVA_VERSION=13.0.1
+# Tue, 15 Oct 2019 21:41:50 GMT
+ENV JAVA_URL=https://download.java.net/java/GA/jdk13.0.1/cec27d702aa74d5a8630c65ae61e4305/9/GPL/openjdk-13.0.1_linux-x64_bin.tar.gz
+# Tue, 15 Oct 2019 21:41:51 GMT
+ENV JAVA_SHA256=2e01716546395694d3fad54c9b36d1cd46c5894c06f72d156772efbcf4b41335
+# Tue, 15 Oct 2019 21:42:07 GMT
 RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		wget 	; 	rm -rf /var/lib/apt/lists/*; 		wget -O openjdk.tgz "$JAVA_URL"; 	echo "$JAVA_SHA256 */openjdk.tgz" | sha256sum -c -; 		mkdir -p "$JAVA_HOME"; 	tar --extract 		--file openjdk.tgz 		--directory "$JAVA_HOME" 		--strip-components 1 		--no-same-owner 	; 	rm openjdk.tgz; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark > /dev/null; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 		{ 		echo '#!/usr/bin/env bash'; 		echo 'set -Eeuo pipefail'; 		echo 'if ! [ -d "$JAVA_HOME" ]; then echo >&2 "error: missing JAVA_HOME environment variable"; exit 1; fi'; 		echo 'cacertsFile=; for f in "$JAVA_HOME/lib/security/cacerts" "$JAVA_HOME/jre/lib/security/cacerts"; do if [ -e "$f" ]; then cacertsFile="$f"; break; fi; done'; 		echo 'if [ -z "$cacertsFile" ] || ! [ -f "$cacertsFile" ]; then echo >&2 "error: failed to find cacerts file in $JAVA_HOME"; exit 1; fi'; 		echo 'trust extract --overwrite --format=java-cacerts --filter=ca-anchors --purpose=server-auth "$cacertsFile"'; 	} > /etc/ca-certificates/update.d/docker-openjdk; 	chmod +x /etc/ca-certificates/update.d/docker-openjdk; 	/etc/ca-certificates/update.d/docker-openjdk; 		find "$JAVA_HOME/lib" -name '*.so' -exec dirname '{}' ';' | sort -u > /etc/ld.so.conf.d/docker-openjdk.conf; 	ldconfig; 		java -Xshare:dump; 		javac --version; 	java --version
-# Wed, 18 Sep 2019 21:24:58 GMT
+# Tue, 15 Oct 2019 21:42:07 GMT
 CMD ["jshell"]
-# Thu, 03 Oct 2019 22:26:18 GMT
+# Tue, 15 Oct 2019 22:08:07 GMT
 ENV LEIN_VERSION=2.9.1
-# Thu, 03 Oct 2019 22:26:19 GMT
+# Tue, 15 Oct 2019 22:08:07 GMT
 ENV LEIN_INSTALL=/usr/local/bin/
-# Thu, 03 Oct 2019 22:26:19 GMT
+# Tue, 15 Oct 2019 22:08:07 GMT
 WORKDIR /tmp
-# Thu, 03 Oct 2019 22:28:09 GMT
+# Tue, 15 Oct 2019 22:08:18 GMT
 RUN apt-get update && apt-get install -y gnupg wget && rm -rf /var/lib/apt/lists/* && mkdir -p $LEIN_INSTALL && wget -q https://raw.githubusercontent.com/technomancy/leiningen/$LEIN_VERSION/bin/lein-pkg && echo "Comparing lein-pkg checksum ..." && sha1sum lein-pkg && echo "93be2c23ab4ff2fc4fcf531d7510ca4069b8d24a *lein-pkg" | sha1sum -c - && mv lein-pkg $LEIN_INSTALL/lein && chmod 0755 $LEIN_INSTALL/lein && wget -q https://github.com/technomancy/leiningen/releases/download/$LEIN_VERSION/leiningen-$LEIN_VERSION-standalone.zip && wget -q https://github.com/technomancy/leiningen/releases/download/$LEIN_VERSION/leiningen-$LEIN_VERSION-standalone.zip.asc && gpg --batch --keyserver pool.sks-keyservers.net --recv-key 2B72BF956E23DE5E830D50F6002AF007D1A7CC18 && echo "Verifying Jar file signature ..." && gpg --verify leiningen-$LEIN_VERSION-standalone.zip.asc && rm leiningen-$LEIN_VERSION-standalone.zip.asc && mkdir -p /usr/share/java && mv leiningen-$LEIN_VERSION-standalone.zip /usr/share/java/leiningen-$LEIN_VERSION-standalone.jar && apt-get remove -y --purge gnupg wget
-# Thu, 03 Oct 2019 22:28:09 GMT
+# Tue, 15 Oct 2019 22:08:18 GMT
 ENV PATH=/usr/java/openjdk-13/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/local/bin/
-# Thu, 03 Oct 2019 22:28:09 GMT
+# Tue, 15 Oct 2019 22:08:18 GMT
 ENV LEIN_ROOT=1
-# Thu, 03 Oct 2019 22:28:13 GMT
+# Tue, 15 Oct 2019 22:08:22 GMT
 RUN echo '(defproject dummy "" :dependencies [[org.clojure/clojure "1.10.1"]])' > project.clj   && lein deps && rm project.clj
-# Thu, 03 Oct 2019 22:28:13 GMT
+# Tue, 15 Oct 2019 22:08:22 GMT
 CMD ["lein" "repl"]
 ```
 
@@ -77,15 +77,15 @@ CMD ["lein" "repl"]
 		Last Modified: Wed, 18 Sep 2019 21:29:13 GMT  
 		Size: 212.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:5b17f8416c98b249c89f950aa6ca2806f482aae6aaf3b4e4cb6e6c2996bd46a8`  
-		Last Modified: Wed, 18 Sep 2019 21:29:35 GMT  
-		Size: 197.2 MB (197216286 bytes)  
+	-	`sha256:853f4111054ab67c1ffb4f668633f4a7cba0887cabe23f74036184916c058d03`  
+		Last Modified: Tue, 15 Oct 2019 21:44:47 GMT  
+		Size: 196.7 MB (196726000 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:573044aab19b74c83f2bbb28a15efe39987ba9b92307b32ed5d26d43c241d73f`  
-		Last Modified: Thu, 03 Oct 2019 22:36:59 GMT  
-		Size: 17.8 MB (17789524 bytes)  
+	-	`sha256:15e33ec2fe6baaa46006db65a14a64521bbc518cf8b9aa7bcd863311a8f0308e`  
+		Last Modified: Tue, 15 Oct 2019 22:13:07 GMT  
+		Size: 17.8 MB (17789491 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:7daa6f8876c92501b2d918831ecb8e353f4449567c50856f2acaeeb3337fbb75`  
-		Last Modified: Thu, 03 Oct 2019 22:36:58 GMT  
-		Size: 4.2 MB (4168218 bytes)  
+	-	`sha256:980c635c16153613d410deb82d9abffd6b0414c11cb68a2e1426c8389c334295`  
+		Last Modified: Tue, 15 Oct 2019 22:13:06 GMT  
+		Size: 4.2 MB (4168139 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
