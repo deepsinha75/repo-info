@@ -2180,20 +2180,13 @@ Binary Packages:
 If source is available (seen below), check the contents of `debian/copyright` within it.
 
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris tzdata=2019a-0+deb8u1
-'http://security.debian.org/debian-security/pool/updates/main/t/tzdata/tzdata_2019a-0+deb8u1.dsc' tzdata_2019a-0+deb8u1.dsc 1985 SHA256:858fe36e4f1ae1d6612f97c2d0a9e1c134bd7b5b5959b4980ce96d0c6e929468
-'http://security.debian.org/debian-security/pool/updates/main/t/tzdata/tzdata_2019a.orig.tar.gz' tzdata_2019a.orig.tar.gz 378961 SHA256:90366ddf4aa03e37a16cd49255af77f801822310b213f195e2206ead48c59772
-'http://security.debian.org/debian-security/pool/updates/main/t/tzdata/tzdata_2019a-0+deb8u1.debian.tar.xz' tzdata_2019a-0+deb8u1.debian.tar.xz 102980 SHA256:29477395b140ebff19d2e1da116cccf0366762fa8064ec07287e0b315c729af9
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/tzdata/2019a-0+deb8u1/
 
-- https://sources.debian.net/src/tzdata/2019a-0+deb8u1/ (for browsing the source)
-- https://sources.debian.net/src/tzdata/2019a-0+deb8u1/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/tzdata/2019a-0+deb8u1/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `ustr=1.0.4-3`
 
