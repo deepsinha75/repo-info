@@ -3195,17 +3195,11 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris perl=5.28.1-6
-'http://deb.debian.org/debian/pool/main/p/perl/perl_5.28.1-6.dsc' perl_5.28.1-6.dsc 2835 SHA256:3af8a65b216c6aadf9093d979c25eb48f6f2b3286264a3f1f65ccefcc9fc653c
-'http://deb.debian.org/debian/pool/main/p/perl/perl_5.28.1.orig-regen-configure.tar.xz' perl_5.28.1.orig-regen-configure.tar.xz 411944 SHA256:5873b81af4514d3910ab1a8267b15ff8c0e2100dbae4edfd10b65ef72cd31ef8
-'http://deb.debian.org/debian/pool/main/p/perl/perl_5.28.1.orig.tar.xz' perl_5.28.1.orig.tar.xz 12372080 SHA256:fea7162d4cca940a387f0587b93f6737d884bf74d8a9d7cfd978bc12cd0b202d
-'http://deb.debian.org/debian/pool/main/p/perl/perl_5.28.1-6.debian.tar.xz' perl_5.28.1-6.debian.tar.xz 178708 SHA256:59a3fd93229c9ca1a1f8a4692eb768f16444494e6bf0d454ea27de5f5a1655cd
+'http://http.debian.net/debian/pool/main/p/perl/perl_5.28.1-6.dsc' perl_5.28.1-6.dsc 2835 SHA256:3af8a65b216c6aadf9093d979c25eb48f6f2b3286264a3f1f65ccefcc9fc653c
+'http://http.debian.net/debian/pool/main/p/perl/perl_5.28.1.orig-regen-configure.tar.xz' perl_5.28.1.orig-regen-configure.tar.xz 411944 SHA256:5873b81af4514d3910ab1a8267b15ff8c0e2100dbae4edfd10b65ef72cd31ef8
+'http://http.debian.net/debian/pool/main/p/perl/perl_5.28.1.orig.tar.xz' perl_5.28.1.orig.tar.xz 12372080 SHA256:fea7162d4cca940a387f0587b93f6737d884bf74d8a9d7cfd978bc12cd0b202d
+'http://http.debian.net/debian/pool/main/p/perl/perl_5.28.1-6.debian.tar.xz' perl_5.28.1-6.debian.tar.xz 178708 SHA256:59a3fd93229c9ca1a1f8a4692eb768f16444494e6bf0d454ea27de5f5a1655cd
 ```
-
-Other potentially useful URLs:
-
-- https://sources.debian.net/src/perl/5.28.1-6/ (for browsing the source)
-- https://sources.debian.net/src/perl/5.28.1-6/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/perl/5.28.1-6/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `pixman=0.36.0-1`
 
@@ -3911,20 +3905,13 @@ Licenses: (parsed from: `/usr/share/doc/vim-common/copyright`, `/usr/share/doc/v
 - `XPM`
 - `public-domain`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris vim=2:8.1.0875-5
-'http://deb.debian.org/debian/pool/main/v/vim/vim_8.1.0875-5.dsc' vim_8.1.0875-5.dsc 2918 SHA256:f7d7437afe28e4de2e08cabcd27316b9df57f5235e8bc5465bf5865360821c3a
-'http://deb.debian.org/debian/pool/main/v/vim/vim_8.1.0875.orig.tar.gz' vim_8.1.0875.orig.tar.gz 14067291 SHA256:fb5b487f424d3a4d17b7c74fe64bf1faa9dc9a65da6da246e6d8c02489ba8b0b
-'http://deb.debian.org/debian/pool/main/v/vim/vim_8.1.0875-5.debian.tar.xz' vim_8.1.0875-5.debian.tar.xz 181820 SHA256:9c607b54aacb37587de1e88428763ac3ef1555df86ab00e0698fa26f98048ce7
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/vim/2:8.1.0875-5/
 
-- https://sources.debian.net/src/vim/2:8.1.0875-5/ (for browsing the source)
-- https://sources.debian.net/src/vim/2:8.1.0875-5/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/vim/2:8.1.0875-5/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `wget=1.20.3-1`
 
