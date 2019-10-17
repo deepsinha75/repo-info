@@ -1,7 +1,7 @@
 ## `r-base:latest`
 
 ```console
-$ docker pull r-base@sha256:cc03d8890644b302b0a81dfc42883b04e27f0ca72e1139bdfb6bbb8394759de1
+$ docker pull r-base@sha256:591343c729ecabdac4543345a32d0b46a15a74d0b31fcce16a61712571adf6ad
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -12,131 +12,131 @@ $ docker pull r-base@sha256:cc03d8890644b302b0a81dfc42883b04e27f0ca72e1139bdfb6b
 ### `r-base:latest` - linux; amd64
 
 ```console
-$ docker pull r-base@sha256:27685d8f76d4c1761c513ba7bfd6cbb14a6da99798f6fc84b237253afb5dfdf6
+$ docker pull r-base@sha256:d75b718a3cc51d49e4d29ecc86889828246212ca3130a8d315f71bfa4e6d0cdd
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **297.6 MB (297581075 bytes)**  
+-	Total Size: **290.1 MB (290138707 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:8465a38a821dd07bf57c619dacdf5f938df35417bf212f6422eac4edb4cf1121`
+-	Image ID: `sha256:3f037ef6767c0a2b59b0f83b13714420312bbdc33b8402d1e3e4deef3742e81d`
 -	Default Command: `["R"]`
 
 ```dockerfile
-# Wed, 11 Sep 2019 23:28:06 GMT
-ADD file:d40a33e30564ed121e50b26469dea764605d5be892c091d6eb081763a625114a in / 
-# Wed, 11 Sep 2019 23:28:07 GMT
+# Wed, 16 Oct 2019 23:29:34 GMT
+ADD file:5248b06934367d4cc0d33c1aa7a9b1c88e550b2f39e186da82c1e07e19a9b47c in / 
+# Wed, 16 Oct 2019 23:29:34 GMT
 CMD ["bash"]
-# Thu, 12 Sep 2019 13:50:25 GMT
+# Thu, 17 Oct 2019 04:31:52 GMT
 LABEL org.label-schema.license=GPL-2.0 org.label-schema.vcs-url=https://github.com/rocker-org/r-base org.label-schema.vendor=Rocker Project maintainer=Dirk Eddelbuettel <edd@debian.org>
-# Thu, 12 Sep 2019 13:50:27 GMT
+# Thu, 17 Oct 2019 04:31:53 GMT
 RUN useradd docker 	&& mkdir /home/docker 	&& chown docker:docker /home/docker 	&& addgroup docker staff
-# Thu, 12 Sep 2019 13:50:39 GMT
+# Thu, 17 Oct 2019 04:32:11 GMT
 RUN apt-get update 	&& apt-get install -y --no-install-recommends 		ed 		less 		locales 		vim-tiny 		wget 		ca-certificates 		fonts-texgyre 	&& rm -rf /var/lib/apt/lists/*
-# Thu, 12 Sep 2019 13:50:42 GMT
+# Thu, 17 Oct 2019 04:32:16 GMT
 RUN echo "en_US.UTF-8 UTF-8" >> /etc/locale.gen 	&& locale-gen en_US.utf8 	&& /usr/sbin/update-locale LANG=en_US.UTF-8
-# Thu, 12 Sep 2019 13:50:43 GMT
+# Thu, 17 Oct 2019 04:32:16 GMT
 ENV LC_ALL=en_US.UTF-8
-# Thu, 12 Sep 2019 13:50:43 GMT
+# Thu, 17 Oct 2019 04:32:16 GMT
 ENV LANG=en_US.UTF-8
-# Thu, 12 Sep 2019 13:50:45 GMT
+# Thu, 17 Oct 2019 04:32:18 GMT
 RUN echo "deb http://http.debian.net/debian sid main" > /etc/apt/sources.list.d/debian-unstable.list         && echo 'APT::Default-Release "testing";' > /etc/apt/apt.conf.d/default
-# Thu, 12 Sep 2019 13:50:45 GMT
+# Thu, 17 Oct 2019 04:32:18 GMT
 ENV R_BASE_VERSION=3.6.1
-# Thu, 12 Sep 2019 13:51:55 GMT
+# Thu, 17 Oct 2019 04:33:34 GMT
 RUN apt-get update 	&& apt-get install -t unstable -y --no-install-recommends 		littler                 r-cran-littler 		r-base=${R_BASE_VERSION}-* 		r-base-dev=${R_BASE_VERSION}-* 		r-recommended=${R_BASE_VERSION}-* 	&& ln -s /usr/lib/R/site-library/littler/examples/install.r /usr/local/bin/install.r 	&& ln -s /usr/lib/R/site-library/littler/examples/install2.r /usr/local/bin/install2.r 	&& ln -s /usr/lib/R/site-library/littler/examples/installGithub.r /usr/local/bin/installGithub.r 	&& ln -s /usr/lib/R/site-library/littler/examples/testInstalled.r /usr/local/bin/testInstalled.r 	&& install.r docopt 	&& rm -rf /tmp/downloaded_packages/ /tmp/*.rds 	&& rm -rf /var/lib/apt/lists/*
-# Thu, 12 Sep 2019 13:51:55 GMT
+# Thu, 17 Oct 2019 04:33:35 GMT
 CMD ["R"]
 ```
 
 -	Layers:
-	-	`sha256:01dbb4d0f3aa0182ab3723e98e098cc470dbabb46672f6ec9327cabff2d38d37`  
-		Last Modified: Wed, 11 Sep 2019 23:35:10 GMT  
-		Size: 51.2 MB (51171304 bytes)  
+	-	`sha256:538a4e07009edf43139719d7450f1dac0f909a95826eff57a6c8c735522876a6`  
+		Last Modified: Wed, 16 Oct 2019 23:35:33 GMT  
+		Size: 51.3 MB (51260961 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:5fc76099a25f7a065ad885f1c520f5960520a1e579aa040a59b1b684a5618764`  
-		Last Modified: Thu, 12 Sep 2019 13:52:13 GMT  
-		Size: 1.8 KB (1847 bytes)  
+	-	`sha256:18a6108256847e3c65098a1a64ccea585b393566fab9657c9ef069635db0ba5e`  
+		Last Modified: Thu, 17 Oct 2019 04:33:53 GMT  
+		Size: 1.9 KB (1856 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c22ac7a20e5de6dde05b878a411a2af858ac4533ac3922cf5fa2b51cf2609e04`  
-		Last Modified: Thu, 12 Sep 2019 13:52:18 GMT  
-		Size: 27.2 MB (27189969 bytes)  
+	-	`sha256:9ffff53d9fd1e34a2b4130bf3f9ef80ef45cf968eb2120dcfd13b223e10606ce`  
+		Last Modified: Thu, 17 Oct 2019 04:33:58 GMT  
+		Size: 27.3 MB (27323673 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:ae679b9ef8d642e24ef21ba3aa83df9127d1c65911545fd155786f6754c3072b`  
-		Last Modified: Thu, 12 Sep 2019 13:52:13 GMT  
-		Size: 862.9 KB (862869 bytes)  
+	-	`sha256:abc486aef30e0bb13f4cbc3856da1e91b5b36645a1b8e46a96be29f0ad9bfe01`  
+		Last Modified: Thu, 17 Oct 2019 04:33:53 GMT  
+		Size: 862.9 KB (862856 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:42060bd49eaaf6266549aaf3820dfb8c128aa2ad172568cbf48bda58d96db478`  
-		Last Modified: Thu, 12 Sep 2019 13:52:13 GMT  
+	-	`sha256:abb23deb65fd0570fb0c1db6e621d450e97f667f283d3fe918d0d94520d73215`  
+		Last Modified: Thu, 17 Oct 2019 04:33:53 GMT  
 		Size: 297.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:751f95cbe9cb76781830e87380b8fee867ee07ec30f46788ea9bd26c3a9623ba`  
-		Last Modified: Thu, 12 Sep 2019 13:52:46 GMT  
-		Size: 218.4 MB (218354789 bytes)  
+	-	`sha256:504ef99df6c542f1336b20c95d1663eba5c7bf3b52d6a92cdade87e7e5021b79`  
+		Last Modified: Thu, 17 Oct 2019 04:34:30 GMT  
+		Size: 210.7 MB (210689064 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `r-base:latest` - linux; arm64 variant v8
 
 ```console
-$ docker pull r-base@sha256:64d1402565f29d53eaf9678e81f6d45cf7de23ec32a2686d04b0ec4f2a200059
+$ docker pull r-base@sha256:c2fe705262bb2a2724a9c0077cca472d26a3b7c288b52e7817a31e80f7932637
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **292.1 MB (292111327 bytes)**  
+-	Total Size: **285.6 MB (285564517 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:6d0a93a29239914f94697965a8189f730b296754052f10f30c69e70e740e3375`
+-	Image ID: `sha256:8a912a5f0bc38690bf1f2030d11a83d1a184160aadce0930b1cedf22ce503d5b`
 -	Default Command: `["R"]`
 
 ```dockerfile
-# Wed, 11 Sep 2019 22:43:42 GMT
-ADD file:bdda773fe997cf69e03a86ae69f4295ce26c46f6055074fb9b1d4bb6dd85a58f in / 
-# Wed, 11 Sep 2019 22:43:43 GMT
+# Wed, 16 Oct 2019 23:44:07 GMT
+ADD file:8bd11be8b1ff3f542a900605566b3ba551adccb8c42ff39b491d0ac4e79b4b2a in / 
+# Wed, 16 Oct 2019 23:44:11 GMT
 CMD ["bash"]
-# Thu, 12 Sep 2019 01:32:37 GMT
+# Thu, 17 Oct 2019 03:52:55 GMT
 LABEL org.label-schema.license=GPL-2.0 org.label-schema.vcs-url=https://github.com/rocker-org/r-base org.label-schema.vendor=Rocker Project maintainer=Dirk Eddelbuettel <edd@debian.org>
-# Thu, 12 Sep 2019 01:32:39 GMT
+# Thu, 17 Oct 2019 03:52:57 GMT
 RUN useradd docker 	&& mkdir /home/docker 	&& chown docker:docker /home/docker 	&& addgroup docker staff
-# Thu, 12 Sep 2019 01:32:59 GMT
+# Thu, 17 Oct 2019 03:53:24 GMT
 RUN apt-get update 	&& apt-get install -y --no-install-recommends 		ed 		less 		locales 		vim-tiny 		wget 		ca-certificates 		fonts-texgyre 	&& rm -rf /var/lib/apt/lists/*
-# Thu, 12 Sep 2019 01:33:05 GMT
+# Thu, 17 Oct 2019 03:53:32 GMT
 RUN echo "en_US.UTF-8 UTF-8" >> /etc/locale.gen 	&& locale-gen en_US.utf8 	&& /usr/sbin/update-locale LANG=en_US.UTF-8
-# Thu, 12 Sep 2019 01:33:05 GMT
+# Thu, 17 Oct 2019 03:53:33 GMT
 ENV LC_ALL=en_US.UTF-8
-# Thu, 12 Sep 2019 01:33:06 GMT
+# Thu, 17 Oct 2019 03:53:34 GMT
 ENV LANG=en_US.UTF-8
-# Thu, 12 Sep 2019 01:33:07 GMT
+# Thu, 17 Oct 2019 03:53:37 GMT
 RUN echo "deb http://http.debian.net/debian sid main" > /etc/apt/sources.list.d/debian-unstable.list         && echo 'APT::Default-Release "testing";' > /etc/apt/apt.conf.d/default
-# Thu, 12 Sep 2019 01:33:08 GMT
+# Thu, 17 Oct 2019 03:53:37 GMT
 ENV R_BASE_VERSION=3.6.1
-# Thu, 12 Sep 2019 01:35:00 GMT
+# Thu, 17 Oct 2019 03:55:21 GMT
 RUN apt-get update 	&& apt-get install -t unstable -y --no-install-recommends 		littler                 r-cran-littler 		r-base=${R_BASE_VERSION}-* 		r-base-dev=${R_BASE_VERSION}-* 		r-recommended=${R_BASE_VERSION}-* 	&& ln -s /usr/lib/R/site-library/littler/examples/install.r /usr/local/bin/install.r 	&& ln -s /usr/lib/R/site-library/littler/examples/install2.r /usr/local/bin/install2.r 	&& ln -s /usr/lib/R/site-library/littler/examples/installGithub.r /usr/local/bin/installGithub.r 	&& ln -s /usr/lib/R/site-library/littler/examples/testInstalled.r /usr/local/bin/testInstalled.r 	&& install.r docopt 	&& rm -rf /tmp/downloaded_packages/ /tmp/*.rds 	&& rm -rf /var/lib/apt/lists/*
-# Thu, 12 Sep 2019 01:35:04 GMT
+# Thu, 17 Oct 2019 03:55:27 GMT
 CMD ["R"]
 ```
 
 -	Layers:
-	-	`sha256:767213eb7f05fab6ea397937120b27e036fcd065adddd0550ad8e1bb15501dba`  
-		Last Modified: Wed, 11 Sep 2019 22:49:13 GMT  
-		Size: 50.0 MB (49989901 bytes)  
+	-	`sha256:2e0df5818c8e8d4567ac8803072993065561d32898e49fe319a15f9cc64ea065`  
+		Last Modified: Wed, 16 Oct 2019 23:50:35 GMT  
+		Size: 50.2 MB (50216805 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:70dc91ba87e8e0a9140c5bf039c71a262ca062ab6019e869c220da1f3eabdb66`  
-		Last Modified: Thu, 12 Sep 2019 01:35:28 GMT  
-		Size: 1.9 KB (1883 bytes)  
+	-	`sha256:afc82546fc935a2745aba2f4e7d105c998aa24a0931cc873d9ce14bcd69f804f`  
+		Last Modified: Thu, 17 Oct 2019 03:55:45 GMT  
+		Size: 1.9 KB (1873 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:f77aa9dc269a06148296db2b0df337238ec5f69e88db12907c30cc82f7d2d8ab`  
-		Last Modified: Thu, 12 Sep 2019 01:35:34 GMT  
-		Size: 27.0 MB (27048679 bytes)  
+	-	`sha256:96ab22e08bc1241e27b5d850f91434b2f217925f9ea625f5f6ed807d7d4bdf91`  
+		Last Modified: Thu, 17 Oct 2019 03:55:51 GMT  
+		Size: 27.2 MB (27191286 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:6f6c66b45144fda8423b4e0749c21fd18bd0d35e4821724305a1a61e643d6757`  
-		Last Modified: Thu, 12 Sep 2019 01:35:28 GMT  
-		Size: 862.9 KB (862860 bytes)  
+	-	`sha256:29c647f7828a55058399d959603f398896f8abad88d417c4815f65807479a8b5`  
+		Last Modified: Thu, 17 Oct 2019 03:55:45 GMT  
+		Size: 862.9 KB (862850 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:98d4e615a56274724c1b5f964ab76b1c81991f4ee22e4a8dd97b507a01d21a2d`  
-		Last Modified: Thu, 12 Sep 2019 01:35:27 GMT  
-		Size: 297.0 B  
+	-	`sha256:f6e4d1155957609626b2e24e210120a30c9ae692c00f46e43db50de5856e136c`  
+		Last Modified: Thu, 17 Oct 2019 03:55:45 GMT  
+		Size: 298.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:372cebd1e38dd34c83c7429230d4f5dfe981c38eec58c67a67898fa6c878ff4e`  
-		Last Modified: Thu, 12 Sep 2019 01:36:15 GMT  
-		Size: 214.2 MB (214207707 bytes)  
+	-	`sha256:f3ce778eb4275ddc6933ee5d6f8f29dad2add081217166d1ad154596829aef48`  
+		Last Modified: Thu, 17 Oct 2019 03:56:34 GMT  
+		Size: 207.3 MB (207291405 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
