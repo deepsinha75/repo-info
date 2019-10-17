@@ -19,7 +19,7 @@
 ## `gcc:6`
 
 ```console
-$ docker pull gcc@sha256:3ebad024fbd04a56ca2106838712f03ed4883d5af29a4d8bdb8cdc1b000408ed
+$ docker pull gcc@sha256:41b5040a434bbe812d396e7c840240d9ebed08c6d4c445b9c30211ed8f1b7b5e
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -109,79 +109,79 @@ RUN set -ex; 	dpkg-divert --divert /usr/bin/gcc.orig --rename /usr/bin/gcc; 	dpk
 ### `gcc:6` - linux; arm variant v5
 
 ```console
-$ docker pull gcc@sha256:fa9974efe17253187d095d9dc1c965b3a768cafa3c97959e4c5dc27d66ebc5e9
+$ docker pull gcc@sha256:7805afdf5eae56be384f44bf5cb09b8d33818851be582331c0277c7e71e1e6f1
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **297.1 MB (297138199 bytes)**  
+-	Total Size: **297.2 MB (297164575 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:6bf932815e99e28c2c7b39c880c1ef98e637e9a398036c47484e6f7955806eac`
+-	Image ID: `sha256:1d9ef878037de5489141e8540e4c24356a2d4efc672e397410d8b32f0c6f5838`
 -	Default Command: `["bash"]`
 
 ```dockerfile
-# Wed, 11 Sep 2019 22:50:01 GMT
-ADD file:a0dd886f9cb9ffc702f5c9431861ca08139806ff840c20b734a02520e980107d in / 
-# Wed, 11 Sep 2019 22:50:03 GMT
+# Wed, 16 Oct 2019 23:52:23 GMT
+ADD file:8a07f37db1bea8d9deb340eb0e1e0459d2062e97d2344e90e7bc4101f952c395 in / 
+# Wed, 16 Oct 2019 23:52:27 GMT
 CMD ["bash"]
-# Wed, 11 Sep 2019 23:34:55 GMT
+# Thu, 17 Oct 2019 00:30:40 GMT
 RUN apt-get update && apt-get install -y --no-install-recommends 		ca-certificates 		curl 		netbase 		wget 	&& rm -rf /var/lib/apt/lists/*
-# Wed, 11 Sep 2019 23:34:59 GMT
+# Thu, 17 Oct 2019 00:30:42 GMT
 RUN set -ex; 	if ! command -v gpg > /dev/null; then 		apt-get update; 		apt-get install -y --no-install-recommends 			gnupg 			dirmngr 		; 		rm -rf /var/lib/apt/lists/*; 	fi
-# Wed, 11 Sep 2019 23:36:41 GMT
+# Thu, 17 Oct 2019 00:32:32 GMT
 RUN apt-get update && apt-get install -y --no-install-recommends 		bzr 		git 		mercurial 		openssh-client 		subversion 				procps 	&& rm -rf /var/lib/apt/lists/*
-# Wed, 11 Sep 2019 23:39:43 GMT
+# Thu, 17 Oct 2019 00:35:45 GMT
 RUN set -ex; 	apt-get update; 	apt-get install -y --no-install-recommends 		autoconf 		automake 		bzip2 		dpkg-dev 		file 		g++ 		gcc 		imagemagick 		libbz2-dev 		libc6-dev 		libcurl4-openssl-dev 		libdb-dev 		libevent-dev 		libffi-dev 		libgdbm-dev 		libglib2.0-dev 		libgmp-dev 		libjpeg-dev 		libkrb5-dev 		liblzma-dev 		libmagickcore-dev 		libmagickwand-dev 		libncurses5-dev 		libncursesw5-dev 		libpng-dev 		libpq-dev 		libreadline-dev 		libsqlite3-dev 		libssl-dev 		libtool 		libwebp-dev 		libxml2-dev 		libxslt-dev 		libyaml-dev 		make 		patch 		unzip 		xz-utils 		zlib1g-dev 				$( 			if apt-cache show 'default-libmysqlclient-dev' 2>/dev/null | grep -q '^Version:'; then 				echo 'default-libmysqlclient-dev'; 			else 				echo 'libmysqlclient-dev'; 			fi 		) 	; 	rm -rf /var/lib/apt/lists/*
-# Thu, 12 Sep 2019 09:58:39 GMT
+# Thu, 17 Oct 2019 10:38:44 GMT
 RUN set -ex; 	if ! command -v gpg > /dev/null; then 		apt-get update; 		apt-get install -y --no-install-recommends 			gnupg 			dirmngr 		; 		rm -rf /var/lib/apt/lists/*; 	fi
-# Thu, 12 Sep 2019 09:58:40 GMT
+# Thu, 17 Oct 2019 10:38:45 GMT
 ENV GPG_KEYS=B215C1633BCA0477615F1B35A5B3A004745C015A 	B3C42148A44E6983B3E4CC0793FA9B1AB75C61B8 	90AA470469D3965A87A5DCB494D03953902C9419 	80F98B2E0DAB6C8281BDF541A7C8C3B2F71EDF1C 	7F74F97C103468EE5D750B583AB00996FC26A641 	33C235A34C46AA3FFB293709A328C3A2C3C45C06
-# Thu, 12 Sep 2019 09:58:42 GMT
+# Thu, 17 Oct 2019 10:38:51 GMT
 RUN set -ex; 	for key in $GPG_KEYS; do 		gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys "$key"; 	done
-# Thu, 12 Sep 2019 09:58:43 GMT
+# Thu, 17 Oct 2019 10:38:51 GMT
 ENV GCC_MIRRORS=https://ftpmirror.gnu.org/gcc 		https://bigsearcher.com/mirrors/gcc/releases 		https://mirrors-usa.go-parts.com/gcc/releases 		https://mirrors.concertpass.com/gcc/releases 		http://www.netgull.com/gcc/releases
-# Thu, 12 Sep 2019 09:58:44 GMT
+# Thu, 17 Oct 2019 10:38:52 GMT
 ENV GCC_VERSION=6.5.0
-# Thu, 12 Sep 2019 10:39:55 GMT
+# Thu, 17 Oct 2019 11:18:49 GMT
 RUN set -ex; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		dpkg-dev 		flex 	; 	rm -r /var/lib/apt/lists/*; 		_fetch() { 		local fetch="$1"; shift; 		local file="$1"; shift; 		for mirror in $GCC_MIRRORS; do 			if curl -fL "$mirror/$fetch" -o "$file"; then 				return 0; 			fi; 		done; 		echo >&2 "error: failed to download '$fetch' from several mirrors"; 		return 1; 	}; 		_fetch "gcc-$GCC_VERSION/gcc-$GCC_VERSION.tar.xz.sig" 'gcc.tar.xz.sig' 		|| _fetch "$GCC_VERSION/gcc-$GCC_VERSION.tar.xz.sig"; 	_fetch "gcc-$GCC_VERSION/gcc-$GCC_VERSION.tar.xz" 'gcc.tar.xz' 		|| _fetch "$GCC_VERSION/gcc-$GCC_VERSION.tar.xz" 'gcc.tar.xz'; 	gpg --batch --verify gcc.tar.xz.sig gcc.tar.xz; 	mkdir -p /usr/src/gcc; 	tar -xf gcc.tar.xz -C /usr/src/gcc --strip-components=1; 	rm gcc.tar.xz*; 		cd /usr/src/gcc; 		./contrib/download_prerequisites; 	{ rm *.tar.* || true; }; 		for f in config.guess config.sub; do 		wget -O "$f" "https://git.savannah.gnu.org/cgit/config.git/plain/$f?id=7d3d27baf8107b630586c962c057e22149653deb"; 		find -mindepth 2 -name "$f" -exec cp -v "$f" '{}' ';'; 	done; 		dir="$(mktemp -d)"; 	cd "$dir"; 		extraConfigureArgs=''; 	dpkgArch="$(dpkg --print-architecture)"; 	case "$dpkgArch" in 		armel) 			extraConfigureArgs="$extraConfigureArgs --with-arch=armv4t --with-float=soft" 			;; 		armhf) 			extraConfigureArgs="$extraConfigureArgs --with-arch=armv7-a --with-float=hard --with-fpu=vfpv3-d16 --with-mode=thumb" 			;; 				i386) 			osVersionID="$(set -e; . /etc/os-release; echo "$VERSION_ID")"; 			case "$osVersionID" in 				8) extraConfigureArgs="$extraConfigureArgs --with-arch-32=i586" ;; 				*) extraConfigureArgs="$extraConfigureArgs --with-arch-32=i686" ;; 			esac; 			;; 	esac; 		gnuArch="$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)"; 	/usr/src/gcc/configure 		--build="$gnuArch" 		--disable-multilib 		--enable-languages=c,c++,fortran,go 		$extraConfigureArgs 	; 	make -j "$(nproc)"; 	make install-strip; 		cd ..; 		rm -rf "$dir" /usr/src/gcc; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false
-# Thu, 12 Sep 2019 10:40:00 GMT
+# Thu, 17 Oct 2019 11:18:53 GMT
 RUN set -ex; 	echo '/usr/local/lib64' > /etc/ld.so.conf.d/local-lib64.conf; 	ldconfig -v
-# Thu, 12 Sep 2019 10:40:02 GMT
+# Thu, 17 Oct 2019 11:18:55 GMT
 RUN set -ex; 	dpkg-divert --divert /usr/bin/gcc.orig --rename /usr/bin/gcc; 	dpkg-divert --divert /usr/bin/g++.orig --rename /usr/bin/g++; 	dpkg-divert --divert /usr/bin/gfortran.orig --rename /usr/bin/gfortran; 	update-alternatives --install /usr/bin/cc cc /usr/local/bin/gcc 999
 ```
 
 -	Layers:
-	-	`sha256:9bed8b6dedaf2d003c98c9a76b8bf208e59d63e6afbbdfabbbdf374322c0c079`  
-		Last Modified: Wed, 11 Sep 2019 22:57:22 GMT  
-		Size: 52.6 MB (52575176 bytes)  
+	-	`sha256:31990660b073a4261bd3e3daa645f2f3e09fa0f5676cb3f34820b83aa13b0b21`  
+		Last Modified: Thu, 17 Oct 2019 00:00:01 GMT  
+		Size: 52.6 MB (52575285 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:9d3dcbc1201e9211e306b4d13b8b608afd958ae35bcbab4e13f604204cf3a6ee`  
-		Last Modified: Wed, 11 Sep 2019 23:53:09 GMT  
-		Size: 17.0 MB (17035126 bytes)  
+	-	`sha256:988b20e43789a941113e5cf72080ffd2bbe18a6f80d1f4a7cc5a8fcd00085f51`  
+		Last Modified: Thu, 17 Oct 2019 00:49:52 GMT  
+		Size: 17.0 MB (17036088 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:a3ab33c869f16386f4e04ef8576e90cb2293171f326d702c40108f873343771d`  
-		Last Modified: Wed, 11 Sep 2019 23:53:30 GMT  
-		Size: 41.2 MB (41156504 bytes)  
+	-	`sha256:6d77fe60875d680023e74a84a93a94d1f9b0d72160ed904bcf2e5f3c0b5d238e`  
+		Last Modified: Thu, 17 Oct 2019 00:50:15 GMT  
+		Size: 41.2 MB (41160122 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:ddbcb45785b559caf8f64c6ad7bd4cdca899b3c3ebda615e3943182f8a16b2a3`  
-		Last Modified: Wed, 11 Sep 2019 23:54:12 GMT  
-		Size: 116.3 MB (116329432 bytes)  
+	-	`sha256:f5c2adee04edf245686b88db991d15a96424d2d0e11172674158adaafd3f7a07`  
+		Last Modified: Thu, 17 Oct 2019 00:50:57 GMT  
+		Size: 116.3 MB (116338803 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:38fa3e58751b30e588b2f73f3edcc07ecdbc4410205eebaa761f854db87f9410`  
-		Last Modified: Thu, 12 Sep 2019 13:01:18 GMT  
-		Size: 116.6 KB (116629 bytes)  
+	-	`sha256:484d6af8135d473c522b026d74b61a4bb549c8252c887efb3cee63a33a2ea7b4`  
+		Last Modified: Thu, 17 Oct 2019 13:36:28 GMT  
+		Size: 116.6 KB (116632 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:d62c44d3706db00f21b2fb709e1f994082e7c9c3a98237aa2844ed9c5d89ae28`  
-		Last Modified: Thu, 12 Sep 2019 13:01:45 GMT  
-		Size: 69.9 MB (69913134 bytes)  
+	-	`sha256:dfbee27a6970081d2e53df4ee9bdf31ca41f49b40d6400d77b70bc6b961130dd`  
+		Last Modified: Thu, 17 Oct 2019 13:36:54 GMT  
+		Size: 69.9 MB (69925397 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:6c8d749aca3bf645fada840c62f226c08a695b1662705b1a4e75bce7b5c5cabb`  
-		Last Modified: Thu, 12 Sep 2019 13:01:18 GMT  
-		Size: 10.6 KB (10592 bytes)  
+	-	`sha256:994d2a8ea7af65cc7d881f552db13fdea13071c3a981545b1b380069c6f0ea28`  
+		Last Modified: Thu, 17 Oct 2019 13:36:28 GMT  
+		Size: 10.6 KB (10634 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:cee7629da1fbcd465f6bb4fa44bf36f16d14e9d5f399bbe9ba7bf39d5dfca9db`  
-		Last Modified: Thu, 12 Sep 2019 13:01:18 GMT  
-		Size: 1.6 KB (1606 bytes)  
+	-	`sha256:87b73625bac10908154800671575e78b29ee5ba202b8a629c792cf1b045c1bfc`  
+		Last Modified: Thu, 17 Oct 2019 13:36:28 GMT  
+		Size: 1.6 KB (1614 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `gcc:6` - linux; arm variant v7
@@ -265,7 +265,7 @@ RUN set -ex; 	dpkg-divert --divert /usr/bin/gcc.orig --rename /usr/bin/gcc; 	dpk
 ## `gcc:6.5`
 
 ```console
-$ docker pull gcc@sha256:3ebad024fbd04a56ca2106838712f03ed4883d5af29a4d8bdb8cdc1b000408ed
+$ docker pull gcc@sha256:41b5040a434bbe812d396e7c840240d9ebed08c6d4c445b9c30211ed8f1b7b5e
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -355,79 +355,79 @@ RUN set -ex; 	dpkg-divert --divert /usr/bin/gcc.orig --rename /usr/bin/gcc; 	dpk
 ### `gcc:6.5` - linux; arm variant v5
 
 ```console
-$ docker pull gcc@sha256:fa9974efe17253187d095d9dc1c965b3a768cafa3c97959e4c5dc27d66ebc5e9
+$ docker pull gcc@sha256:7805afdf5eae56be384f44bf5cb09b8d33818851be582331c0277c7e71e1e6f1
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **297.1 MB (297138199 bytes)**  
+-	Total Size: **297.2 MB (297164575 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:6bf932815e99e28c2c7b39c880c1ef98e637e9a398036c47484e6f7955806eac`
+-	Image ID: `sha256:1d9ef878037de5489141e8540e4c24356a2d4efc672e397410d8b32f0c6f5838`
 -	Default Command: `["bash"]`
 
 ```dockerfile
-# Wed, 11 Sep 2019 22:50:01 GMT
-ADD file:a0dd886f9cb9ffc702f5c9431861ca08139806ff840c20b734a02520e980107d in / 
-# Wed, 11 Sep 2019 22:50:03 GMT
+# Wed, 16 Oct 2019 23:52:23 GMT
+ADD file:8a07f37db1bea8d9deb340eb0e1e0459d2062e97d2344e90e7bc4101f952c395 in / 
+# Wed, 16 Oct 2019 23:52:27 GMT
 CMD ["bash"]
-# Wed, 11 Sep 2019 23:34:55 GMT
+# Thu, 17 Oct 2019 00:30:40 GMT
 RUN apt-get update && apt-get install -y --no-install-recommends 		ca-certificates 		curl 		netbase 		wget 	&& rm -rf /var/lib/apt/lists/*
-# Wed, 11 Sep 2019 23:34:59 GMT
+# Thu, 17 Oct 2019 00:30:42 GMT
 RUN set -ex; 	if ! command -v gpg > /dev/null; then 		apt-get update; 		apt-get install -y --no-install-recommends 			gnupg 			dirmngr 		; 		rm -rf /var/lib/apt/lists/*; 	fi
-# Wed, 11 Sep 2019 23:36:41 GMT
+# Thu, 17 Oct 2019 00:32:32 GMT
 RUN apt-get update && apt-get install -y --no-install-recommends 		bzr 		git 		mercurial 		openssh-client 		subversion 				procps 	&& rm -rf /var/lib/apt/lists/*
-# Wed, 11 Sep 2019 23:39:43 GMT
+# Thu, 17 Oct 2019 00:35:45 GMT
 RUN set -ex; 	apt-get update; 	apt-get install -y --no-install-recommends 		autoconf 		automake 		bzip2 		dpkg-dev 		file 		g++ 		gcc 		imagemagick 		libbz2-dev 		libc6-dev 		libcurl4-openssl-dev 		libdb-dev 		libevent-dev 		libffi-dev 		libgdbm-dev 		libglib2.0-dev 		libgmp-dev 		libjpeg-dev 		libkrb5-dev 		liblzma-dev 		libmagickcore-dev 		libmagickwand-dev 		libncurses5-dev 		libncursesw5-dev 		libpng-dev 		libpq-dev 		libreadline-dev 		libsqlite3-dev 		libssl-dev 		libtool 		libwebp-dev 		libxml2-dev 		libxslt-dev 		libyaml-dev 		make 		patch 		unzip 		xz-utils 		zlib1g-dev 				$( 			if apt-cache show 'default-libmysqlclient-dev' 2>/dev/null | grep -q '^Version:'; then 				echo 'default-libmysqlclient-dev'; 			else 				echo 'libmysqlclient-dev'; 			fi 		) 	; 	rm -rf /var/lib/apt/lists/*
-# Thu, 12 Sep 2019 09:58:39 GMT
+# Thu, 17 Oct 2019 10:38:44 GMT
 RUN set -ex; 	if ! command -v gpg > /dev/null; then 		apt-get update; 		apt-get install -y --no-install-recommends 			gnupg 			dirmngr 		; 		rm -rf /var/lib/apt/lists/*; 	fi
-# Thu, 12 Sep 2019 09:58:40 GMT
+# Thu, 17 Oct 2019 10:38:45 GMT
 ENV GPG_KEYS=B215C1633BCA0477615F1B35A5B3A004745C015A 	B3C42148A44E6983B3E4CC0793FA9B1AB75C61B8 	90AA470469D3965A87A5DCB494D03953902C9419 	80F98B2E0DAB6C8281BDF541A7C8C3B2F71EDF1C 	7F74F97C103468EE5D750B583AB00996FC26A641 	33C235A34C46AA3FFB293709A328C3A2C3C45C06
-# Thu, 12 Sep 2019 09:58:42 GMT
+# Thu, 17 Oct 2019 10:38:51 GMT
 RUN set -ex; 	for key in $GPG_KEYS; do 		gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys "$key"; 	done
-# Thu, 12 Sep 2019 09:58:43 GMT
+# Thu, 17 Oct 2019 10:38:51 GMT
 ENV GCC_MIRRORS=https://ftpmirror.gnu.org/gcc 		https://bigsearcher.com/mirrors/gcc/releases 		https://mirrors-usa.go-parts.com/gcc/releases 		https://mirrors.concertpass.com/gcc/releases 		http://www.netgull.com/gcc/releases
-# Thu, 12 Sep 2019 09:58:44 GMT
+# Thu, 17 Oct 2019 10:38:52 GMT
 ENV GCC_VERSION=6.5.0
-# Thu, 12 Sep 2019 10:39:55 GMT
+# Thu, 17 Oct 2019 11:18:49 GMT
 RUN set -ex; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		dpkg-dev 		flex 	; 	rm -r /var/lib/apt/lists/*; 		_fetch() { 		local fetch="$1"; shift; 		local file="$1"; shift; 		for mirror in $GCC_MIRRORS; do 			if curl -fL "$mirror/$fetch" -o "$file"; then 				return 0; 			fi; 		done; 		echo >&2 "error: failed to download '$fetch' from several mirrors"; 		return 1; 	}; 		_fetch "gcc-$GCC_VERSION/gcc-$GCC_VERSION.tar.xz.sig" 'gcc.tar.xz.sig' 		|| _fetch "$GCC_VERSION/gcc-$GCC_VERSION.tar.xz.sig"; 	_fetch "gcc-$GCC_VERSION/gcc-$GCC_VERSION.tar.xz" 'gcc.tar.xz' 		|| _fetch "$GCC_VERSION/gcc-$GCC_VERSION.tar.xz" 'gcc.tar.xz'; 	gpg --batch --verify gcc.tar.xz.sig gcc.tar.xz; 	mkdir -p /usr/src/gcc; 	tar -xf gcc.tar.xz -C /usr/src/gcc --strip-components=1; 	rm gcc.tar.xz*; 		cd /usr/src/gcc; 		./contrib/download_prerequisites; 	{ rm *.tar.* || true; }; 		for f in config.guess config.sub; do 		wget -O "$f" "https://git.savannah.gnu.org/cgit/config.git/plain/$f?id=7d3d27baf8107b630586c962c057e22149653deb"; 		find -mindepth 2 -name "$f" -exec cp -v "$f" '{}' ';'; 	done; 		dir="$(mktemp -d)"; 	cd "$dir"; 		extraConfigureArgs=''; 	dpkgArch="$(dpkg --print-architecture)"; 	case "$dpkgArch" in 		armel) 			extraConfigureArgs="$extraConfigureArgs --with-arch=armv4t --with-float=soft" 			;; 		armhf) 			extraConfigureArgs="$extraConfigureArgs --with-arch=armv7-a --with-float=hard --with-fpu=vfpv3-d16 --with-mode=thumb" 			;; 				i386) 			osVersionID="$(set -e; . /etc/os-release; echo "$VERSION_ID")"; 			case "$osVersionID" in 				8) extraConfigureArgs="$extraConfigureArgs --with-arch-32=i586" ;; 				*) extraConfigureArgs="$extraConfigureArgs --with-arch-32=i686" ;; 			esac; 			;; 	esac; 		gnuArch="$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)"; 	/usr/src/gcc/configure 		--build="$gnuArch" 		--disable-multilib 		--enable-languages=c,c++,fortran,go 		$extraConfigureArgs 	; 	make -j "$(nproc)"; 	make install-strip; 		cd ..; 		rm -rf "$dir" /usr/src/gcc; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false
-# Thu, 12 Sep 2019 10:40:00 GMT
+# Thu, 17 Oct 2019 11:18:53 GMT
 RUN set -ex; 	echo '/usr/local/lib64' > /etc/ld.so.conf.d/local-lib64.conf; 	ldconfig -v
-# Thu, 12 Sep 2019 10:40:02 GMT
+# Thu, 17 Oct 2019 11:18:55 GMT
 RUN set -ex; 	dpkg-divert --divert /usr/bin/gcc.orig --rename /usr/bin/gcc; 	dpkg-divert --divert /usr/bin/g++.orig --rename /usr/bin/g++; 	dpkg-divert --divert /usr/bin/gfortran.orig --rename /usr/bin/gfortran; 	update-alternatives --install /usr/bin/cc cc /usr/local/bin/gcc 999
 ```
 
 -	Layers:
-	-	`sha256:9bed8b6dedaf2d003c98c9a76b8bf208e59d63e6afbbdfabbbdf374322c0c079`  
-		Last Modified: Wed, 11 Sep 2019 22:57:22 GMT  
-		Size: 52.6 MB (52575176 bytes)  
+	-	`sha256:31990660b073a4261bd3e3daa645f2f3e09fa0f5676cb3f34820b83aa13b0b21`  
+		Last Modified: Thu, 17 Oct 2019 00:00:01 GMT  
+		Size: 52.6 MB (52575285 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:9d3dcbc1201e9211e306b4d13b8b608afd958ae35bcbab4e13f604204cf3a6ee`  
-		Last Modified: Wed, 11 Sep 2019 23:53:09 GMT  
-		Size: 17.0 MB (17035126 bytes)  
+	-	`sha256:988b20e43789a941113e5cf72080ffd2bbe18a6f80d1f4a7cc5a8fcd00085f51`  
+		Last Modified: Thu, 17 Oct 2019 00:49:52 GMT  
+		Size: 17.0 MB (17036088 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:a3ab33c869f16386f4e04ef8576e90cb2293171f326d702c40108f873343771d`  
-		Last Modified: Wed, 11 Sep 2019 23:53:30 GMT  
-		Size: 41.2 MB (41156504 bytes)  
+	-	`sha256:6d77fe60875d680023e74a84a93a94d1f9b0d72160ed904bcf2e5f3c0b5d238e`  
+		Last Modified: Thu, 17 Oct 2019 00:50:15 GMT  
+		Size: 41.2 MB (41160122 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:ddbcb45785b559caf8f64c6ad7bd4cdca899b3c3ebda615e3943182f8a16b2a3`  
-		Last Modified: Wed, 11 Sep 2019 23:54:12 GMT  
-		Size: 116.3 MB (116329432 bytes)  
+	-	`sha256:f5c2adee04edf245686b88db991d15a96424d2d0e11172674158adaafd3f7a07`  
+		Last Modified: Thu, 17 Oct 2019 00:50:57 GMT  
+		Size: 116.3 MB (116338803 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:38fa3e58751b30e588b2f73f3edcc07ecdbc4410205eebaa761f854db87f9410`  
-		Last Modified: Thu, 12 Sep 2019 13:01:18 GMT  
-		Size: 116.6 KB (116629 bytes)  
+	-	`sha256:484d6af8135d473c522b026d74b61a4bb549c8252c887efb3cee63a33a2ea7b4`  
+		Last Modified: Thu, 17 Oct 2019 13:36:28 GMT  
+		Size: 116.6 KB (116632 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:d62c44d3706db00f21b2fb709e1f994082e7c9c3a98237aa2844ed9c5d89ae28`  
-		Last Modified: Thu, 12 Sep 2019 13:01:45 GMT  
-		Size: 69.9 MB (69913134 bytes)  
+	-	`sha256:dfbee27a6970081d2e53df4ee9bdf31ca41f49b40d6400d77b70bc6b961130dd`  
+		Last Modified: Thu, 17 Oct 2019 13:36:54 GMT  
+		Size: 69.9 MB (69925397 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:6c8d749aca3bf645fada840c62f226c08a695b1662705b1a4e75bce7b5c5cabb`  
-		Last Modified: Thu, 12 Sep 2019 13:01:18 GMT  
-		Size: 10.6 KB (10592 bytes)  
+	-	`sha256:994d2a8ea7af65cc7d881f552db13fdea13071c3a981545b1b380069c6f0ea28`  
+		Last Modified: Thu, 17 Oct 2019 13:36:28 GMT  
+		Size: 10.6 KB (10634 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:cee7629da1fbcd465f6bb4fa44bf36f16d14e9d5f399bbe9ba7bf39d5dfca9db`  
-		Last Modified: Thu, 12 Sep 2019 13:01:18 GMT  
-		Size: 1.6 KB (1606 bytes)  
+	-	`sha256:87b73625bac10908154800671575e78b29ee5ba202b8a629c792cf1b045c1bfc`  
+		Last Modified: Thu, 17 Oct 2019 13:36:28 GMT  
+		Size: 1.6 KB (1614 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `gcc:6.5` - linux; arm variant v7
@@ -511,7 +511,7 @@ RUN set -ex; 	dpkg-divert --divert /usr/bin/gcc.orig --rename /usr/bin/gcc; 	dpk
 ## `gcc:6.5.0`
 
 ```console
-$ docker pull gcc@sha256:3ebad024fbd04a56ca2106838712f03ed4883d5af29a4d8bdb8cdc1b000408ed
+$ docker pull gcc@sha256:41b5040a434bbe812d396e7c840240d9ebed08c6d4c445b9c30211ed8f1b7b5e
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -601,79 +601,79 @@ RUN set -ex; 	dpkg-divert --divert /usr/bin/gcc.orig --rename /usr/bin/gcc; 	dpk
 ### `gcc:6.5.0` - linux; arm variant v5
 
 ```console
-$ docker pull gcc@sha256:fa9974efe17253187d095d9dc1c965b3a768cafa3c97959e4c5dc27d66ebc5e9
+$ docker pull gcc@sha256:7805afdf5eae56be384f44bf5cb09b8d33818851be582331c0277c7e71e1e6f1
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **297.1 MB (297138199 bytes)**  
+-	Total Size: **297.2 MB (297164575 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:6bf932815e99e28c2c7b39c880c1ef98e637e9a398036c47484e6f7955806eac`
+-	Image ID: `sha256:1d9ef878037de5489141e8540e4c24356a2d4efc672e397410d8b32f0c6f5838`
 -	Default Command: `["bash"]`
 
 ```dockerfile
-# Wed, 11 Sep 2019 22:50:01 GMT
-ADD file:a0dd886f9cb9ffc702f5c9431861ca08139806ff840c20b734a02520e980107d in / 
-# Wed, 11 Sep 2019 22:50:03 GMT
+# Wed, 16 Oct 2019 23:52:23 GMT
+ADD file:8a07f37db1bea8d9deb340eb0e1e0459d2062e97d2344e90e7bc4101f952c395 in / 
+# Wed, 16 Oct 2019 23:52:27 GMT
 CMD ["bash"]
-# Wed, 11 Sep 2019 23:34:55 GMT
+# Thu, 17 Oct 2019 00:30:40 GMT
 RUN apt-get update && apt-get install -y --no-install-recommends 		ca-certificates 		curl 		netbase 		wget 	&& rm -rf /var/lib/apt/lists/*
-# Wed, 11 Sep 2019 23:34:59 GMT
+# Thu, 17 Oct 2019 00:30:42 GMT
 RUN set -ex; 	if ! command -v gpg > /dev/null; then 		apt-get update; 		apt-get install -y --no-install-recommends 			gnupg 			dirmngr 		; 		rm -rf /var/lib/apt/lists/*; 	fi
-# Wed, 11 Sep 2019 23:36:41 GMT
+# Thu, 17 Oct 2019 00:32:32 GMT
 RUN apt-get update && apt-get install -y --no-install-recommends 		bzr 		git 		mercurial 		openssh-client 		subversion 				procps 	&& rm -rf /var/lib/apt/lists/*
-# Wed, 11 Sep 2019 23:39:43 GMT
+# Thu, 17 Oct 2019 00:35:45 GMT
 RUN set -ex; 	apt-get update; 	apt-get install -y --no-install-recommends 		autoconf 		automake 		bzip2 		dpkg-dev 		file 		g++ 		gcc 		imagemagick 		libbz2-dev 		libc6-dev 		libcurl4-openssl-dev 		libdb-dev 		libevent-dev 		libffi-dev 		libgdbm-dev 		libglib2.0-dev 		libgmp-dev 		libjpeg-dev 		libkrb5-dev 		liblzma-dev 		libmagickcore-dev 		libmagickwand-dev 		libncurses5-dev 		libncursesw5-dev 		libpng-dev 		libpq-dev 		libreadline-dev 		libsqlite3-dev 		libssl-dev 		libtool 		libwebp-dev 		libxml2-dev 		libxslt-dev 		libyaml-dev 		make 		patch 		unzip 		xz-utils 		zlib1g-dev 				$( 			if apt-cache show 'default-libmysqlclient-dev' 2>/dev/null | grep -q '^Version:'; then 				echo 'default-libmysqlclient-dev'; 			else 				echo 'libmysqlclient-dev'; 			fi 		) 	; 	rm -rf /var/lib/apt/lists/*
-# Thu, 12 Sep 2019 09:58:39 GMT
+# Thu, 17 Oct 2019 10:38:44 GMT
 RUN set -ex; 	if ! command -v gpg > /dev/null; then 		apt-get update; 		apt-get install -y --no-install-recommends 			gnupg 			dirmngr 		; 		rm -rf /var/lib/apt/lists/*; 	fi
-# Thu, 12 Sep 2019 09:58:40 GMT
+# Thu, 17 Oct 2019 10:38:45 GMT
 ENV GPG_KEYS=B215C1633BCA0477615F1B35A5B3A004745C015A 	B3C42148A44E6983B3E4CC0793FA9B1AB75C61B8 	90AA470469D3965A87A5DCB494D03953902C9419 	80F98B2E0DAB6C8281BDF541A7C8C3B2F71EDF1C 	7F74F97C103468EE5D750B583AB00996FC26A641 	33C235A34C46AA3FFB293709A328C3A2C3C45C06
-# Thu, 12 Sep 2019 09:58:42 GMT
+# Thu, 17 Oct 2019 10:38:51 GMT
 RUN set -ex; 	for key in $GPG_KEYS; do 		gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys "$key"; 	done
-# Thu, 12 Sep 2019 09:58:43 GMT
+# Thu, 17 Oct 2019 10:38:51 GMT
 ENV GCC_MIRRORS=https://ftpmirror.gnu.org/gcc 		https://bigsearcher.com/mirrors/gcc/releases 		https://mirrors-usa.go-parts.com/gcc/releases 		https://mirrors.concertpass.com/gcc/releases 		http://www.netgull.com/gcc/releases
-# Thu, 12 Sep 2019 09:58:44 GMT
+# Thu, 17 Oct 2019 10:38:52 GMT
 ENV GCC_VERSION=6.5.0
-# Thu, 12 Sep 2019 10:39:55 GMT
+# Thu, 17 Oct 2019 11:18:49 GMT
 RUN set -ex; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		dpkg-dev 		flex 	; 	rm -r /var/lib/apt/lists/*; 		_fetch() { 		local fetch="$1"; shift; 		local file="$1"; shift; 		for mirror in $GCC_MIRRORS; do 			if curl -fL "$mirror/$fetch" -o "$file"; then 				return 0; 			fi; 		done; 		echo >&2 "error: failed to download '$fetch' from several mirrors"; 		return 1; 	}; 		_fetch "gcc-$GCC_VERSION/gcc-$GCC_VERSION.tar.xz.sig" 'gcc.tar.xz.sig' 		|| _fetch "$GCC_VERSION/gcc-$GCC_VERSION.tar.xz.sig"; 	_fetch "gcc-$GCC_VERSION/gcc-$GCC_VERSION.tar.xz" 'gcc.tar.xz' 		|| _fetch "$GCC_VERSION/gcc-$GCC_VERSION.tar.xz" 'gcc.tar.xz'; 	gpg --batch --verify gcc.tar.xz.sig gcc.tar.xz; 	mkdir -p /usr/src/gcc; 	tar -xf gcc.tar.xz -C /usr/src/gcc --strip-components=1; 	rm gcc.tar.xz*; 		cd /usr/src/gcc; 		./contrib/download_prerequisites; 	{ rm *.tar.* || true; }; 		for f in config.guess config.sub; do 		wget -O "$f" "https://git.savannah.gnu.org/cgit/config.git/plain/$f?id=7d3d27baf8107b630586c962c057e22149653deb"; 		find -mindepth 2 -name "$f" -exec cp -v "$f" '{}' ';'; 	done; 		dir="$(mktemp -d)"; 	cd "$dir"; 		extraConfigureArgs=''; 	dpkgArch="$(dpkg --print-architecture)"; 	case "$dpkgArch" in 		armel) 			extraConfigureArgs="$extraConfigureArgs --with-arch=armv4t --with-float=soft" 			;; 		armhf) 			extraConfigureArgs="$extraConfigureArgs --with-arch=armv7-a --with-float=hard --with-fpu=vfpv3-d16 --with-mode=thumb" 			;; 				i386) 			osVersionID="$(set -e; . /etc/os-release; echo "$VERSION_ID")"; 			case "$osVersionID" in 				8) extraConfigureArgs="$extraConfigureArgs --with-arch-32=i586" ;; 				*) extraConfigureArgs="$extraConfigureArgs --with-arch-32=i686" ;; 			esac; 			;; 	esac; 		gnuArch="$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)"; 	/usr/src/gcc/configure 		--build="$gnuArch" 		--disable-multilib 		--enable-languages=c,c++,fortran,go 		$extraConfigureArgs 	; 	make -j "$(nproc)"; 	make install-strip; 		cd ..; 		rm -rf "$dir" /usr/src/gcc; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false
-# Thu, 12 Sep 2019 10:40:00 GMT
+# Thu, 17 Oct 2019 11:18:53 GMT
 RUN set -ex; 	echo '/usr/local/lib64' > /etc/ld.so.conf.d/local-lib64.conf; 	ldconfig -v
-# Thu, 12 Sep 2019 10:40:02 GMT
+# Thu, 17 Oct 2019 11:18:55 GMT
 RUN set -ex; 	dpkg-divert --divert /usr/bin/gcc.orig --rename /usr/bin/gcc; 	dpkg-divert --divert /usr/bin/g++.orig --rename /usr/bin/g++; 	dpkg-divert --divert /usr/bin/gfortran.orig --rename /usr/bin/gfortran; 	update-alternatives --install /usr/bin/cc cc /usr/local/bin/gcc 999
 ```
 
 -	Layers:
-	-	`sha256:9bed8b6dedaf2d003c98c9a76b8bf208e59d63e6afbbdfabbbdf374322c0c079`  
-		Last Modified: Wed, 11 Sep 2019 22:57:22 GMT  
-		Size: 52.6 MB (52575176 bytes)  
+	-	`sha256:31990660b073a4261bd3e3daa645f2f3e09fa0f5676cb3f34820b83aa13b0b21`  
+		Last Modified: Thu, 17 Oct 2019 00:00:01 GMT  
+		Size: 52.6 MB (52575285 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:9d3dcbc1201e9211e306b4d13b8b608afd958ae35bcbab4e13f604204cf3a6ee`  
-		Last Modified: Wed, 11 Sep 2019 23:53:09 GMT  
-		Size: 17.0 MB (17035126 bytes)  
+	-	`sha256:988b20e43789a941113e5cf72080ffd2bbe18a6f80d1f4a7cc5a8fcd00085f51`  
+		Last Modified: Thu, 17 Oct 2019 00:49:52 GMT  
+		Size: 17.0 MB (17036088 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:a3ab33c869f16386f4e04ef8576e90cb2293171f326d702c40108f873343771d`  
-		Last Modified: Wed, 11 Sep 2019 23:53:30 GMT  
-		Size: 41.2 MB (41156504 bytes)  
+	-	`sha256:6d77fe60875d680023e74a84a93a94d1f9b0d72160ed904bcf2e5f3c0b5d238e`  
+		Last Modified: Thu, 17 Oct 2019 00:50:15 GMT  
+		Size: 41.2 MB (41160122 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:ddbcb45785b559caf8f64c6ad7bd4cdca899b3c3ebda615e3943182f8a16b2a3`  
-		Last Modified: Wed, 11 Sep 2019 23:54:12 GMT  
-		Size: 116.3 MB (116329432 bytes)  
+	-	`sha256:f5c2adee04edf245686b88db991d15a96424d2d0e11172674158adaafd3f7a07`  
+		Last Modified: Thu, 17 Oct 2019 00:50:57 GMT  
+		Size: 116.3 MB (116338803 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:38fa3e58751b30e588b2f73f3edcc07ecdbc4410205eebaa761f854db87f9410`  
-		Last Modified: Thu, 12 Sep 2019 13:01:18 GMT  
-		Size: 116.6 KB (116629 bytes)  
+	-	`sha256:484d6af8135d473c522b026d74b61a4bb549c8252c887efb3cee63a33a2ea7b4`  
+		Last Modified: Thu, 17 Oct 2019 13:36:28 GMT  
+		Size: 116.6 KB (116632 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:d62c44d3706db00f21b2fb709e1f994082e7c9c3a98237aa2844ed9c5d89ae28`  
-		Last Modified: Thu, 12 Sep 2019 13:01:45 GMT  
-		Size: 69.9 MB (69913134 bytes)  
+	-	`sha256:dfbee27a6970081d2e53df4ee9bdf31ca41f49b40d6400d77b70bc6b961130dd`  
+		Last Modified: Thu, 17 Oct 2019 13:36:54 GMT  
+		Size: 69.9 MB (69925397 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:6c8d749aca3bf645fada840c62f226c08a695b1662705b1a4e75bce7b5c5cabb`  
-		Last Modified: Thu, 12 Sep 2019 13:01:18 GMT  
-		Size: 10.6 KB (10592 bytes)  
+	-	`sha256:994d2a8ea7af65cc7d881f552db13fdea13071c3a981545b1b380069c6f0ea28`  
+		Last Modified: Thu, 17 Oct 2019 13:36:28 GMT  
+		Size: 10.6 KB (10634 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:cee7629da1fbcd465f6bb4fa44bf36f16d14e9d5f399bbe9ba7bf39d5dfca9db`  
-		Last Modified: Thu, 12 Sep 2019 13:01:18 GMT  
-		Size: 1.6 KB (1606 bytes)  
+	-	`sha256:87b73625bac10908154800671575e78b29ee5ba202b8a629c792cf1b045c1bfc`  
+		Last Modified: Thu, 17 Oct 2019 13:36:28 GMT  
+		Size: 1.6 KB (1614 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `gcc:6.5.0` - linux; arm variant v7
@@ -757,7 +757,7 @@ RUN set -ex; 	dpkg-divert --divert /usr/bin/gcc.orig --rename /usr/bin/gcc; 	dpk
 ## `gcc:7`
 
 ```console
-$ docker pull gcc@sha256:aee0db966064b4953699bca85f8b9ecf8bf3c8b3e94c72186f2311d594c276a3
+$ docker pull gcc@sha256:132d79c3b44acbfe61199679f8811b1cf5bb001c57a7b51c75284a137db6b6dd
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -854,83 +854,83 @@ RUN set -ex; 	dpkg-divert --divert /usr/bin/gcc.orig --rename /usr/bin/gcc; 	dpk
 ### `gcc:7` - linux; arm variant v5
 
 ```console
-$ docker pull gcc@sha256:2948defada4f2b58687de86a60f6fbddf197ad94be29463b5c31f161c88c5629
+$ docker pull gcc@sha256:42b3ebcfff6fb9d86b30fe2000a989cf54b2be1175c55a09dbf60c4331d06440
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **362.9 MB (362934273 bytes)**  
+-	Total Size: **363.0 MB (362952882 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:ee819ceb2e8f2412faefb8b25151d27eb5152483636b21a7baa35e8dd90ec0b0`
+-	Image ID: `sha256:344f60963e7f11f31b2a4b5e8b18aa5a81b01e82e69c1735c71c3fc553377898`
 -	Default Command: `["bash"]`
 
 ```dockerfile
-# Wed, 11 Sep 2019 22:49:23 GMT
-ADD file:c8a27f0444070cda03b0c725efe2029ac4d252caf23df60b563d3428c5c9ae68 in / 
-# Wed, 11 Sep 2019 22:49:24 GMT
+# Wed, 16 Oct 2019 23:51:41 GMT
+ADD file:973269fc84c93672e5b6aed0fc83691c324334705ff78170de37b2646dfc33cd in / 
+# Wed, 16 Oct 2019 23:51:42 GMT
 CMD ["bash"]
-# Wed, 11 Sep 2019 23:29:06 GMT
+# Thu, 17 Oct 2019 00:25:37 GMT
 RUN apt-get update && apt-get install -y --no-install-recommends 		ca-certificates 		curl 		netbase 		wget 	&& rm -rf /var/lib/apt/lists/*
-# Wed, 11 Sep 2019 23:29:23 GMT
+# Thu, 17 Oct 2019 00:25:51 GMT
 RUN set -ex; 	if ! command -v gpg > /dev/null; then 		apt-get update; 		apt-get install -y --no-install-recommends 			gnupg 			dirmngr 		; 		rm -rf /var/lib/apt/lists/*; 	fi
-# Wed, 11 Sep 2019 23:30:11 GMT
+# Thu, 17 Oct 2019 00:26:39 GMT
 RUN apt-get update && apt-get install -y --no-install-recommends 		git 		mercurial 		openssh-client 		subversion 				procps 	&& rm -rf /var/lib/apt/lists/*
-# Wed, 11 Sep 2019 23:32:37 GMT
+# Thu, 17 Oct 2019 00:29:08 GMT
 RUN set -ex; 	apt-get update; 	apt-get install -y --no-install-recommends 		autoconf 		automake 		bzip2 		dpkg-dev 		file 		g++ 		gcc 		imagemagick 		libbz2-dev 		libc6-dev 		libcurl4-openssl-dev 		libdb-dev 		libevent-dev 		libffi-dev 		libgdbm-dev 		libglib2.0-dev 		libgmp-dev 		libjpeg-dev 		libkrb5-dev 		liblzma-dev 		libmagickcore-dev 		libmagickwand-dev 		libmaxminddb-dev 		libncurses5-dev 		libncursesw5-dev 		libpng-dev 		libpq-dev 		libreadline-dev 		libsqlite3-dev 		libssl-dev 		libtool 		libwebp-dev 		libxml2-dev 		libxslt-dev 		libyaml-dev 		make 		patch 		unzip 		xz-utils 		zlib1g-dev 				$( 			if apt-cache show 'default-libmysqlclient-dev' 2>/dev/null | grep -q '^Version:'; then 				echo 'default-libmysqlclient-dev'; 			else 				echo 'libmysqlclient-dev'; 			fi 		) 	; 	rm -rf /var/lib/apt/lists/*
-# Thu, 12 Sep 2019 10:40:13 GMT
+# Thu, 17 Oct 2019 11:19:08 GMT
 RUN set -ex; 	if ! command -v gpg > /dev/null; then 		apt-get update; 		apt-get install -y --no-install-recommends 			gnupg 			dirmngr 		; 		rm -rf /var/lib/apt/lists/*; 	fi
-# Thu, 12 Sep 2019 10:40:14 GMT
+# Thu, 17 Oct 2019 11:19:09 GMT
 ENV GPG_KEYS=B215C1633BCA0477615F1B35A5B3A004745C015A 	B3C42148A44E6983B3E4CC0793FA9B1AB75C61B8 	90AA470469D3965A87A5DCB494D03953902C9419 	80F98B2E0DAB6C8281BDF541A7C8C3B2F71EDF1C 	7F74F97C103468EE5D750B583AB00996FC26A641 	33C235A34C46AA3FFB293709A328C3A2C3C45C06
-# Thu, 12 Sep 2019 10:40:17 GMT
+# Thu, 17 Oct 2019 11:19:12 GMT
 RUN set -ex; 	for key in $GPG_KEYS; do 		gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys "$key"; 	done
-# Thu, 12 Sep 2019 10:40:17 GMT
+# Thu, 17 Oct 2019 11:19:13 GMT
 ENV GCC_MIRRORS=https://ftpmirror.gnu.org/gcc 		https://bigsearcher.com/mirrors/gcc/releases 		https://mirrors-usa.go-parts.com/gcc/releases 		https://mirrors.concertpass.com/gcc/releases 		http://www.netgull.com/gcc/releases
-# Thu, 12 Sep 2019 10:40:18 GMT
+# Thu, 17 Oct 2019 11:19:13 GMT
 ENV GCC_VERSION=7.4.0
-# Thu, 12 Sep 2019 11:23:00 GMT
+# Thu, 17 Oct 2019 12:00:05 GMT
 RUN set -ex; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		dpkg-dev 		flex 	; 	rm -r /var/lib/apt/lists/*; 		_fetch() { 		local fetch="$1"; shift; 		local file="$1"; shift; 		for mirror in $GCC_MIRRORS; do 			if curl -fL "$mirror/$fetch" -o "$file"; then 				return 0; 			fi; 		done; 		echo >&2 "error: failed to download '$fetch' from several mirrors"; 		return 1; 	}; 		_fetch "gcc-$GCC_VERSION/gcc-$GCC_VERSION.tar.xz.sig" 'gcc.tar.xz.sig' 		|| _fetch "$GCC_VERSION/gcc-$GCC_VERSION.tar.xz.sig"; 	_fetch "gcc-$GCC_VERSION/gcc-$GCC_VERSION.tar.xz" 'gcc.tar.xz' 		|| _fetch "$GCC_VERSION/gcc-$GCC_VERSION.tar.xz" 'gcc.tar.xz'; 	gpg --batch --verify gcc.tar.xz.sig gcc.tar.xz; 	mkdir -p /usr/src/gcc; 	tar -xf gcc.tar.xz -C /usr/src/gcc --strip-components=1; 	rm gcc.tar.xz*; 		cd /usr/src/gcc; 		./contrib/download_prerequisites; 	{ rm *.tar.* || true; }; 		for f in config.guess config.sub; do 		wget -O "$f" "https://git.savannah.gnu.org/cgit/config.git/plain/$f?id=7d3d27baf8107b630586c962c057e22149653deb"; 		find -mindepth 2 -name "$f" -exec cp -v "$f" '{}' ';'; 	done; 		dir="$(mktemp -d)"; 	cd "$dir"; 		extraConfigureArgs=''; 	dpkgArch="$(dpkg --print-architecture)"; 	case "$dpkgArch" in 		armel) 			extraConfigureArgs="$extraConfigureArgs --with-arch=armv4t --with-float=soft" 			;; 		armhf) 			extraConfigureArgs="$extraConfigureArgs --with-arch=armv7-a --with-float=hard --with-fpu=vfpv3-d16 --with-mode=thumb" 			;; 				i386) 			osVersionID="$(set -e; . /etc/os-release; echo "$VERSION_ID")"; 			case "$osVersionID" in 				8) extraConfigureArgs="$extraConfigureArgs --with-arch-32=i586" ;; 				*) extraConfigureArgs="$extraConfigureArgs --with-arch-32=i686" ;; 			esac; 			;; 	esac; 		gnuArch="$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)"; 	/usr/src/gcc/configure 		--build="$gnuArch" 		--disable-multilib 		--enable-languages=c,c++,fortran,go 		$extraConfigureArgs 	; 	make -j "$(nproc)"; 	make install-strip; 		cd ..; 		rm -rf "$dir" /usr/src/gcc; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false
-# Thu, 12 Sep 2019 11:23:03 GMT
+# Thu, 17 Oct 2019 12:00:09 GMT
 RUN set -ex; 	echo '/usr/local/lib64' > /etc/ld.so.conf.d/local-lib64.conf; 	ldconfig -v
-# Thu, 12 Sep 2019 11:23:05 GMT
+# Thu, 17 Oct 2019 12:00:11 GMT
 RUN set -ex; 	dpkg-divert --divert /usr/bin/gcc.orig --rename /usr/bin/gcc; 	dpkg-divert --divert /usr/bin/g++.orig --rename /usr/bin/g++; 	dpkg-divert --divert /usr/bin/gfortran.orig --rename /usr/bin/gfortran; 	update-alternatives --install /usr/bin/cc cc /usr/local/bin/gcc 999
 ```
 
 -	Layers:
-	-	`sha256:a1188c71bb8b0f44792369b8880b4445a04cff52d183f2abce5207a0fa60f0db`  
-		Last Modified: Wed, 11 Sep 2019 22:56:38 GMT  
-		Size: 48.1 MB (48080876 bytes)  
+	-	`sha256:fbc660c6e95ccb3457d04b94c4a7c4a0dc07f31549e3b4b11540806aae928286`  
+		Last Modified: Wed, 16 Oct 2019 23:59:13 GMT  
+		Size: 48.1 MB (48088526 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:33f64e9913bed4e7b4d259eba3fd47756535467312efc0ec4ba074f2da038e5b`  
-		Last Modified: Wed, 11 Sep 2019 23:51:32 GMT  
-		Size: 7.3 MB (7346258 bytes)  
+	-	`sha256:5011b513b5639ad4cfa7d2278910a8299bdd679d14c525d5cdff4cfc44e9a396`  
+		Last Modified: Thu, 17 Oct 2019 00:48:12 GMT  
+		Size: 7.4 MB (7358286 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c03cbc1ba246fae55f9694d79f7413c94915e260ec9f422681aa0e32e237306f`  
-		Last Modified: Wed, 11 Sep 2019 23:51:32 GMT  
+	-	`sha256:649fb464536e65c6b3565235f549816862f81bf742a28e80507c446e430ef619`  
+		Last Modified: Thu, 17 Oct 2019 00:48:12 GMT  
 		Size: 9.7 MB (9686847 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:7a279bb26fc5498f1644093698f24c270e04ca08521123f9a5d0b5df57c98625`  
-		Last Modified: Wed, 11 Sep 2019 23:51:58 GMT  
-		Size: 49.5 MB (49518772 bytes)  
+	-	`sha256:9d918c39359c26561401ada6508713e3b1cf82f4bf804ed0bcf9997518fb855d`  
+		Last Modified: Thu, 17 Oct 2019 00:48:42 GMT  
+		Size: 49.5 MB (49521484 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:3dea6797fb74bbda0b8d798c8499f33b9fb5163ffa716a07484a581ffd69ac6e`  
-		Last Modified: Wed, 11 Sep 2019 23:52:55 GMT  
-		Size: 171.0 MB (170969582 bytes)  
+	-	`sha256:7f768bcab047369f910f6ba04a72c70f31faf33dc4a30bf3814fbcb9508c94a9`  
+		Last Modified: Thu, 17 Oct 2019 00:49:34 GMT  
+		Size: 171.0 MB (170974646 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:fe9226e273faefc5751a775b06d71c4c172bcaf84df7ba4022b6993c5441e4d6`  
-		Last Modified: Thu, 12 Sep 2019 13:01:53 GMT  
-		Size: 11.6 KB (11602 bytes)  
+	-	`sha256:8cc381fc0a62aeb746b9905cb87a3d9cafe299a22a830efd27aabf08b4911df7`  
+		Last Modified: Thu, 17 Oct 2019 13:37:03 GMT  
+		Size: 11.6 KB (11604 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:8a0e6d6f0adefaa6258ad8988f0f5c82b90ba0f9679d5b24c6a1ce304003a94c`  
-		Last Modified: Thu, 12 Sep 2019 13:02:22 GMT  
-		Size: 77.3 MB (77307132 bytes)  
+	-	`sha256:03656eb6544e521ebacc967a709c35aecef7cb4f272413dba820fec9828d9017`  
+		Last Modified: Thu, 17 Oct 2019 13:37:31 GMT  
+		Size: 77.3 MB (77298311 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:ff82461372b9914af7a1a9938033feed7f7ecedb1ea5ccc116c94f64fb7a5da1`  
-		Last Modified: Thu, 12 Sep 2019 13:01:53 GMT  
-		Size: 11.3 KB (11257 bytes)  
+	-	`sha256:7a5c617173bef176a1addd43818e24de9dc797d784929694fd6d05c925b786a6`  
+		Last Modified: Thu, 17 Oct 2019 13:37:03 GMT  
+		Size: 11.2 KB (11238 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:76157c4b5a74d1e133cb7aa81e8da617a7c3f1a32616fed75f2330cb22661aba`  
-		Last Modified: Thu, 12 Sep 2019 13:01:53 GMT  
-		Size: 1.9 KB (1947 bytes)  
+	-	`sha256:ac6376a43e367368e9c1506a65653a137eb99f9a9f630bd7c7be06f0d2f96741`  
+		Last Modified: Thu, 17 Oct 2019 13:37:03 GMT  
+		Size: 1.9 KB (1940 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `gcc:7` - linux; arm variant v7
@@ -1264,7 +1264,7 @@ RUN set -ex; 	dpkg-divert --divert /usr/bin/gcc.orig --rename /usr/bin/gcc; 	dpk
 ## `gcc:7.4`
 
 ```console
-$ docker pull gcc@sha256:aee0db966064b4953699bca85f8b9ecf8bf3c8b3e94c72186f2311d594c276a3
+$ docker pull gcc@sha256:132d79c3b44acbfe61199679f8811b1cf5bb001c57a7b51c75284a137db6b6dd
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -1361,83 +1361,83 @@ RUN set -ex; 	dpkg-divert --divert /usr/bin/gcc.orig --rename /usr/bin/gcc; 	dpk
 ### `gcc:7.4` - linux; arm variant v5
 
 ```console
-$ docker pull gcc@sha256:2948defada4f2b58687de86a60f6fbddf197ad94be29463b5c31f161c88c5629
+$ docker pull gcc@sha256:42b3ebcfff6fb9d86b30fe2000a989cf54b2be1175c55a09dbf60c4331d06440
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **362.9 MB (362934273 bytes)**  
+-	Total Size: **363.0 MB (362952882 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:ee819ceb2e8f2412faefb8b25151d27eb5152483636b21a7baa35e8dd90ec0b0`
+-	Image ID: `sha256:344f60963e7f11f31b2a4b5e8b18aa5a81b01e82e69c1735c71c3fc553377898`
 -	Default Command: `["bash"]`
 
 ```dockerfile
-# Wed, 11 Sep 2019 22:49:23 GMT
-ADD file:c8a27f0444070cda03b0c725efe2029ac4d252caf23df60b563d3428c5c9ae68 in / 
-# Wed, 11 Sep 2019 22:49:24 GMT
+# Wed, 16 Oct 2019 23:51:41 GMT
+ADD file:973269fc84c93672e5b6aed0fc83691c324334705ff78170de37b2646dfc33cd in / 
+# Wed, 16 Oct 2019 23:51:42 GMT
 CMD ["bash"]
-# Wed, 11 Sep 2019 23:29:06 GMT
+# Thu, 17 Oct 2019 00:25:37 GMT
 RUN apt-get update && apt-get install -y --no-install-recommends 		ca-certificates 		curl 		netbase 		wget 	&& rm -rf /var/lib/apt/lists/*
-# Wed, 11 Sep 2019 23:29:23 GMT
+# Thu, 17 Oct 2019 00:25:51 GMT
 RUN set -ex; 	if ! command -v gpg > /dev/null; then 		apt-get update; 		apt-get install -y --no-install-recommends 			gnupg 			dirmngr 		; 		rm -rf /var/lib/apt/lists/*; 	fi
-# Wed, 11 Sep 2019 23:30:11 GMT
+# Thu, 17 Oct 2019 00:26:39 GMT
 RUN apt-get update && apt-get install -y --no-install-recommends 		git 		mercurial 		openssh-client 		subversion 				procps 	&& rm -rf /var/lib/apt/lists/*
-# Wed, 11 Sep 2019 23:32:37 GMT
+# Thu, 17 Oct 2019 00:29:08 GMT
 RUN set -ex; 	apt-get update; 	apt-get install -y --no-install-recommends 		autoconf 		automake 		bzip2 		dpkg-dev 		file 		g++ 		gcc 		imagemagick 		libbz2-dev 		libc6-dev 		libcurl4-openssl-dev 		libdb-dev 		libevent-dev 		libffi-dev 		libgdbm-dev 		libglib2.0-dev 		libgmp-dev 		libjpeg-dev 		libkrb5-dev 		liblzma-dev 		libmagickcore-dev 		libmagickwand-dev 		libmaxminddb-dev 		libncurses5-dev 		libncursesw5-dev 		libpng-dev 		libpq-dev 		libreadline-dev 		libsqlite3-dev 		libssl-dev 		libtool 		libwebp-dev 		libxml2-dev 		libxslt-dev 		libyaml-dev 		make 		patch 		unzip 		xz-utils 		zlib1g-dev 				$( 			if apt-cache show 'default-libmysqlclient-dev' 2>/dev/null | grep -q '^Version:'; then 				echo 'default-libmysqlclient-dev'; 			else 				echo 'libmysqlclient-dev'; 			fi 		) 	; 	rm -rf /var/lib/apt/lists/*
-# Thu, 12 Sep 2019 10:40:13 GMT
+# Thu, 17 Oct 2019 11:19:08 GMT
 RUN set -ex; 	if ! command -v gpg > /dev/null; then 		apt-get update; 		apt-get install -y --no-install-recommends 			gnupg 			dirmngr 		; 		rm -rf /var/lib/apt/lists/*; 	fi
-# Thu, 12 Sep 2019 10:40:14 GMT
+# Thu, 17 Oct 2019 11:19:09 GMT
 ENV GPG_KEYS=B215C1633BCA0477615F1B35A5B3A004745C015A 	B3C42148A44E6983B3E4CC0793FA9B1AB75C61B8 	90AA470469D3965A87A5DCB494D03953902C9419 	80F98B2E0DAB6C8281BDF541A7C8C3B2F71EDF1C 	7F74F97C103468EE5D750B583AB00996FC26A641 	33C235A34C46AA3FFB293709A328C3A2C3C45C06
-# Thu, 12 Sep 2019 10:40:17 GMT
+# Thu, 17 Oct 2019 11:19:12 GMT
 RUN set -ex; 	for key in $GPG_KEYS; do 		gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys "$key"; 	done
-# Thu, 12 Sep 2019 10:40:17 GMT
+# Thu, 17 Oct 2019 11:19:13 GMT
 ENV GCC_MIRRORS=https://ftpmirror.gnu.org/gcc 		https://bigsearcher.com/mirrors/gcc/releases 		https://mirrors-usa.go-parts.com/gcc/releases 		https://mirrors.concertpass.com/gcc/releases 		http://www.netgull.com/gcc/releases
-# Thu, 12 Sep 2019 10:40:18 GMT
+# Thu, 17 Oct 2019 11:19:13 GMT
 ENV GCC_VERSION=7.4.0
-# Thu, 12 Sep 2019 11:23:00 GMT
+# Thu, 17 Oct 2019 12:00:05 GMT
 RUN set -ex; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		dpkg-dev 		flex 	; 	rm -r /var/lib/apt/lists/*; 		_fetch() { 		local fetch="$1"; shift; 		local file="$1"; shift; 		for mirror in $GCC_MIRRORS; do 			if curl -fL "$mirror/$fetch" -o "$file"; then 				return 0; 			fi; 		done; 		echo >&2 "error: failed to download '$fetch' from several mirrors"; 		return 1; 	}; 		_fetch "gcc-$GCC_VERSION/gcc-$GCC_VERSION.tar.xz.sig" 'gcc.tar.xz.sig' 		|| _fetch "$GCC_VERSION/gcc-$GCC_VERSION.tar.xz.sig"; 	_fetch "gcc-$GCC_VERSION/gcc-$GCC_VERSION.tar.xz" 'gcc.tar.xz' 		|| _fetch "$GCC_VERSION/gcc-$GCC_VERSION.tar.xz" 'gcc.tar.xz'; 	gpg --batch --verify gcc.tar.xz.sig gcc.tar.xz; 	mkdir -p /usr/src/gcc; 	tar -xf gcc.tar.xz -C /usr/src/gcc --strip-components=1; 	rm gcc.tar.xz*; 		cd /usr/src/gcc; 		./contrib/download_prerequisites; 	{ rm *.tar.* || true; }; 		for f in config.guess config.sub; do 		wget -O "$f" "https://git.savannah.gnu.org/cgit/config.git/plain/$f?id=7d3d27baf8107b630586c962c057e22149653deb"; 		find -mindepth 2 -name "$f" -exec cp -v "$f" '{}' ';'; 	done; 		dir="$(mktemp -d)"; 	cd "$dir"; 		extraConfigureArgs=''; 	dpkgArch="$(dpkg --print-architecture)"; 	case "$dpkgArch" in 		armel) 			extraConfigureArgs="$extraConfigureArgs --with-arch=armv4t --with-float=soft" 			;; 		armhf) 			extraConfigureArgs="$extraConfigureArgs --with-arch=armv7-a --with-float=hard --with-fpu=vfpv3-d16 --with-mode=thumb" 			;; 				i386) 			osVersionID="$(set -e; . /etc/os-release; echo "$VERSION_ID")"; 			case "$osVersionID" in 				8) extraConfigureArgs="$extraConfigureArgs --with-arch-32=i586" ;; 				*) extraConfigureArgs="$extraConfigureArgs --with-arch-32=i686" ;; 			esac; 			;; 	esac; 		gnuArch="$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)"; 	/usr/src/gcc/configure 		--build="$gnuArch" 		--disable-multilib 		--enable-languages=c,c++,fortran,go 		$extraConfigureArgs 	; 	make -j "$(nproc)"; 	make install-strip; 		cd ..; 		rm -rf "$dir" /usr/src/gcc; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false
-# Thu, 12 Sep 2019 11:23:03 GMT
+# Thu, 17 Oct 2019 12:00:09 GMT
 RUN set -ex; 	echo '/usr/local/lib64' > /etc/ld.so.conf.d/local-lib64.conf; 	ldconfig -v
-# Thu, 12 Sep 2019 11:23:05 GMT
+# Thu, 17 Oct 2019 12:00:11 GMT
 RUN set -ex; 	dpkg-divert --divert /usr/bin/gcc.orig --rename /usr/bin/gcc; 	dpkg-divert --divert /usr/bin/g++.orig --rename /usr/bin/g++; 	dpkg-divert --divert /usr/bin/gfortran.orig --rename /usr/bin/gfortran; 	update-alternatives --install /usr/bin/cc cc /usr/local/bin/gcc 999
 ```
 
 -	Layers:
-	-	`sha256:a1188c71bb8b0f44792369b8880b4445a04cff52d183f2abce5207a0fa60f0db`  
-		Last Modified: Wed, 11 Sep 2019 22:56:38 GMT  
-		Size: 48.1 MB (48080876 bytes)  
+	-	`sha256:fbc660c6e95ccb3457d04b94c4a7c4a0dc07f31549e3b4b11540806aae928286`  
+		Last Modified: Wed, 16 Oct 2019 23:59:13 GMT  
+		Size: 48.1 MB (48088526 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:33f64e9913bed4e7b4d259eba3fd47756535467312efc0ec4ba074f2da038e5b`  
-		Last Modified: Wed, 11 Sep 2019 23:51:32 GMT  
-		Size: 7.3 MB (7346258 bytes)  
+	-	`sha256:5011b513b5639ad4cfa7d2278910a8299bdd679d14c525d5cdff4cfc44e9a396`  
+		Last Modified: Thu, 17 Oct 2019 00:48:12 GMT  
+		Size: 7.4 MB (7358286 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c03cbc1ba246fae55f9694d79f7413c94915e260ec9f422681aa0e32e237306f`  
-		Last Modified: Wed, 11 Sep 2019 23:51:32 GMT  
+	-	`sha256:649fb464536e65c6b3565235f549816862f81bf742a28e80507c446e430ef619`  
+		Last Modified: Thu, 17 Oct 2019 00:48:12 GMT  
 		Size: 9.7 MB (9686847 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:7a279bb26fc5498f1644093698f24c270e04ca08521123f9a5d0b5df57c98625`  
-		Last Modified: Wed, 11 Sep 2019 23:51:58 GMT  
-		Size: 49.5 MB (49518772 bytes)  
+	-	`sha256:9d918c39359c26561401ada6508713e3b1cf82f4bf804ed0bcf9997518fb855d`  
+		Last Modified: Thu, 17 Oct 2019 00:48:42 GMT  
+		Size: 49.5 MB (49521484 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:3dea6797fb74bbda0b8d798c8499f33b9fb5163ffa716a07484a581ffd69ac6e`  
-		Last Modified: Wed, 11 Sep 2019 23:52:55 GMT  
-		Size: 171.0 MB (170969582 bytes)  
+	-	`sha256:7f768bcab047369f910f6ba04a72c70f31faf33dc4a30bf3814fbcb9508c94a9`  
+		Last Modified: Thu, 17 Oct 2019 00:49:34 GMT  
+		Size: 171.0 MB (170974646 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:fe9226e273faefc5751a775b06d71c4c172bcaf84df7ba4022b6993c5441e4d6`  
-		Last Modified: Thu, 12 Sep 2019 13:01:53 GMT  
-		Size: 11.6 KB (11602 bytes)  
+	-	`sha256:8cc381fc0a62aeb746b9905cb87a3d9cafe299a22a830efd27aabf08b4911df7`  
+		Last Modified: Thu, 17 Oct 2019 13:37:03 GMT  
+		Size: 11.6 KB (11604 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:8a0e6d6f0adefaa6258ad8988f0f5c82b90ba0f9679d5b24c6a1ce304003a94c`  
-		Last Modified: Thu, 12 Sep 2019 13:02:22 GMT  
-		Size: 77.3 MB (77307132 bytes)  
+	-	`sha256:03656eb6544e521ebacc967a709c35aecef7cb4f272413dba820fec9828d9017`  
+		Last Modified: Thu, 17 Oct 2019 13:37:31 GMT  
+		Size: 77.3 MB (77298311 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:ff82461372b9914af7a1a9938033feed7f7ecedb1ea5ccc116c94f64fb7a5da1`  
-		Last Modified: Thu, 12 Sep 2019 13:01:53 GMT  
-		Size: 11.3 KB (11257 bytes)  
+	-	`sha256:7a5c617173bef176a1addd43818e24de9dc797d784929694fd6d05c925b786a6`  
+		Last Modified: Thu, 17 Oct 2019 13:37:03 GMT  
+		Size: 11.2 KB (11238 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:76157c4b5a74d1e133cb7aa81e8da617a7c3f1a32616fed75f2330cb22661aba`  
-		Last Modified: Thu, 12 Sep 2019 13:01:53 GMT  
-		Size: 1.9 KB (1947 bytes)  
+	-	`sha256:ac6376a43e367368e9c1506a65653a137eb99f9a9f630bd7c7be06f0d2f96741`  
+		Last Modified: Thu, 17 Oct 2019 13:37:03 GMT  
+		Size: 1.9 KB (1940 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `gcc:7.4` - linux; arm variant v7
@@ -1771,7 +1771,7 @@ RUN set -ex; 	dpkg-divert --divert /usr/bin/gcc.orig --rename /usr/bin/gcc; 	dpk
 ## `gcc:7.4.0`
 
 ```console
-$ docker pull gcc@sha256:aee0db966064b4953699bca85f8b9ecf8bf3c8b3e94c72186f2311d594c276a3
+$ docker pull gcc@sha256:132d79c3b44acbfe61199679f8811b1cf5bb001c57a7b51c75284a137db6b6dd
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -1868,83 +1868,83 @@ RUN set -ex; 	dpkg-divert --divert /usr/bin/gcc.orig --rename /usr/bin/gcc; 	dpk
 ### `gcc:7.4.0` - linux; arm variant v5
 
 ```console
-$ docker pull gcc@sha256:2948defada4f2b58687de86a60f6fbddf197ad94be29463b5c31f161c88c5629
+$ docker pull gcc@sha256:42b3ebcfff6fb9d86b30fe2000a989cf54b2be1175c55a09dbf60c4331d06440
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **362.9 MB (362934273 bytes)**  
+-	Total Size: **363.0 MB (362952882 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:ee819ceb2e8f2412faefb8b25151d27eb5152483636b21a7baa35e8dd90ec0b0`
+-	Image ID: `sha256:344f60963e7f11f31b2a4b5e8b18aa5a81b01e82e69c1735c71c3fc553377898`
 -	Default Command: `["bash"]`
 
 ```dockerfile
-# Wed, 11 Sep 2019 22:49:23 GMT
-ADD file:c8a27f0444070cda03b0c725efe2029ac4d252caf23df60b563d3428c5c9ae68 in / 
-# Wed, 11 Sep 2019 22:49:24 GMT
+# Wed, 16 Oct 2019 23:51:41 GMT
+ADD file:973269fc84c93672e5b6aed0fc83691c324334705ff78170de37b2646dfc33cd in / 
+# Wed, 16 Oct 2019 23:51:42 GMT
 CMD ["bash"]
-# Wed, 11 Sep 2019 23:29:06 GMT
+# Thu, 17 Oct 2019 00:25:37 GMT
 RUN apt-get update && apt-get install -y --no-install-recommends 		ca-certificates 		curl 		netbase 		wget 	&& rm -rf /var/lib/apt/lists/*
-# Wed, 11 Sep 2019 23:29:23 GMT
+# Thu, 17 Oct 2019 00:25:51 GMT
 RUN set -ex; 	if ! command -v gpg > /dev/null; then 		apt-get update; 		apt-get install -y --no-install-recommends 			gnupg 			dirmngr 		; 		rm -rf /var/lib/apt/lists/*; 	fi
-# Wed, 11 Sep 2019 23:30:11 GMT
+# Thu, 17 Oct 2019 00:26:39 GMT
 RUN apt-get update && apt-get install -y --no-install-recommends 		git 		mercurial 		openssh-client 		subversion 				procps 	&& rm -rf /var/lib/apt/lists/*
-# Wed, 11 Sep 2019 23:32:37 GMT
+# Thu, 17 Oct 2019 00:29:08 GMT
 RUN set -ex; 	apt-get update; 	apt-get install -y --no-install-recommends 		autoconf 		automake 		bzip2 		dpkg-dev 		file 		g++ 		gcc 		imagemagick 		libbz2-dev 		libc6-dev 		libcurl4-openssl-dev 		libdb-dev 		libevent-dev 		libffi-dev 		libgdbm-dev 		libglib2.0-dev 		libgmp-dev 		libjpeg-dev 		libkrb5-dev 		liblzma-dev 		libmagickcore-dev 		libmagickwand-dev 		libmaxminddb-dev 		libncurses5-dev 		libncursesw5-dev 		libpng-dev 		libpq-dev 		libreadline-dev 		libsqlite3-dev 		libssl-dev 		libtool 		libwebp-dev 		libxml2-dev 		libxslt-dev 		libyaml-dev 		make 		patch 		unzip 		xz-utils 		zlib1g-dev 				$( 			if apt-cache show 'default-libmysqlclient-dev' 2>/dev/null | grep -q '^Version:'; then 				echo 'default-libmysqlclient-dev'; 			else 				echo 'libmysqlclient-dev'; 			fi 		) 	; 	rm -rf /var/lib/apt/lists/*
-# Thu, 12 Sep 2019 10:40:13 GMT
+# Thu, 17 Oct 2019 11:19:08 GMT
 RUN set -ex; 	if ! command -v gpg > /dev/null; then 		apt-get update; 		apt-get install -y --no-install-recommends 			gnupg 			dirmngr 		; 		rm -rf /var/lib/apt/lists/*; 	fi
-# Thu, 12 Sep 2019 10:40:14 GMT
+# Thu, 17 Oct 2019 11:19:09 GMT
 ENV GPG_KEYS=B215C1633BCA0477615F1B35A5B3A004745C015A 	B3C42148A44E6983B3E4CC0793FA9B1AB75C61B8 	90AA470469D3965A87A5DCB494D03953902C9419 	80F98B2E0DAB6C8281BDF541A7C8C3B2F71EDF1C 	7F74F97C103468EE5D750B583AB00996FC26A641 	33C235A34C46AA3FFB293709A328C3A2C3C45C06
-# Thu, 12 Sep 2019 10:40:17 GMT
+# Thu, 17 Oct 2019 11:19:12 GMT
 RUN set -ex; 	for key in $GPG_KEYS; do 		gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys "$key"; 	done
-# Thu, 12 Sep 2019 10:40:17 GMT
+# Thu, 17 Oct 2019 11:19:13 GMT
 ENV GCC_MIRRORS=https://ftpmirror.gnu.org/gcc 		https://bigsearcher.com/mirrors/gcc/releases 		https://mirrors-usa.go-parts.com/gcc/releases 		https://mirrors.concertpass.com/gcc/releases 		http://www.netgull.com/gcc/releases
-# Thu, 12 Sep 2019 10:40:18 GMT
+# Thu, 17 Oct 2019 11:19:13 GMT
 ENV GCC_VERSION=7.4.0
-# Thu, 12 Sep 2019 11:23:00 GMT
+# Thu, 17 Oct 2019 12:00:05 GMT
 RUN set -ex; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		dpkg-dev 		flex 	; 	rm -r /var/lib/apt/lists/*; 		_fetch() { 		local fetch="$1"; shift; 		local file="$1"; shift; 		for mirror in $GCC_MIRRORS; do 			if curl -fL "$mirror/$fetch" -o "$file"; then 				return 0; 			fi; 		done; 		echo >&2 "error: failed to download '$fetch' from several mirrors"; 		return 1; 	}; 		_fetch "gcc-$GCC_VERSION/gcc-$GCC_VERSION.tar.xz.sig" 'gcc.tar.xz.sig' 		|| _fetch "$GCC_VERSION/gcc-$GCC_VERSION.tar.xz.sig"; 	_fetch "gcc-$GCC_VERSION/gcc-$GCC_VERSION.tar.xz" 'gcc.tar.xz' 		|| _fetch "$GCC_VERSION/gcc-$GCC_VERSION.tar.xz" 'gcc.tar.xz'; 	gpg --batch --verify gcc.tar.xz.sig gcc.tar.xz; 	mkdir -p /usr/src/gcc; 	tar -xf gcc.tar.xz -C /usr/src/gcc --strip-components=1; 	rm gcc.tar.xz*; 		cd /usr/src/gcc; 		./contrib/download_prerequisites; 	{ rm *.tar.* || true; }; 		for f in config.guess config.sub; do 		wget -O "$f" "https://git.savannah.gnu.org/cgit/config.git/plain/$f?id=7d3d27baf8107b630586c962c057e22149653deb"; 		find -mindepth 2 -name "$f" -exec cp -v "$f" '{}' ';'; 	done; 		dir="$(mktemp -d)"; 	cd "$dir"; 		extraConfigureArgs=''; 	dpkgArch="$(dpkg --print-architecture)"; 	case "$dpkgArch" in 		armel) 			extraConfigureArgs="$extraConfigureArgs --with-arch=armv4t --with-float=soft" 			;; 		armhf) 			extraConfigureArgs="$extraConfigureArgs --with-arch=armv7-a --with-float=hard --with-fpu=vfpv3-d16 --with-mode=thumb" 			;; 				i386) 			osVersionID="$(set -e; . /etc/os-release; echo "$VERSION_ID")"; 			case "$osVersionID" in 				8) extraConfigureArgs="$extraConfigureArgs --with-arch-32=i586" ;; 				*) extraConfigureArgs="$extraConfigureArgs --with-arch-32=i686" ;; 			esac; 			;; 	esac; 		gnuArch="$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)"; 	/usr/src/gcc/configure 		--build="$gnuArch" 		--disable-multilib 		--enable-languages=c,c++,fortran,go 		$extraConfigureArgs 	; 	make -j "$(nproc)"; 	make install-strip; 		cd ..; 		rm -rf "$dir" /usr/src/gcc; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false
-# Thu, 12 Sep 2019 11:23:03 GMT
+# Thu, 17 Oct 2019 12:00:09 GMT
 RUN set -ex; 	echo '/usr/local/lib64' > /etc/ld.so.conf.d/local-lib64.conf; 	ldconfig -v
-# Thu, 12 Sep 2019 11:23:05 GMT
+# Thu, 17 Oct 2019 12:00:11 GMT
 RUN set -ex; 	dpkg-divert --divert /usr/bin/gcc.orig --rename /usr/bin/gcc; 	dpkg-divert --divert /usr/bin/g++.orig --rename /usr/bin/g++; 	dpkg-divert --divert /usr/bin/gfortran.orig --rename /usr/bin/gfortran; 	update-alternatives --install /usr/bin/cc cc /usr/local/bin/gcc 999
 ```
 
 -	Layers:
-	-	`sha256:a1188c71bb8b0f44792369b8880b4445a04cff52d183f2abce5207a0fa60f0db`  
-		Last Modified: Wed, 11 Sep 2019 22:56:38 GMT  
-		Size: 48.1 MB (48080876 bytes)  
+	-	`sha256:fbc660c6e95ccb3457d04b94c4a7c4a0dc07f31549e3b4b11540806aae928286`  
+		Last Modified: Wed, 16 Oct 2019 23:59:13 GMT  
+		Size: 48.1 MB (48088526 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:33f64e9913bed4e7b4d259eba3fd47756535467312efc0ec4ba074f2da038e5b`  
-		Last Modified: Wed, 11 Sep 2019 23:51:32 GMT  
-		Size: 7.3 MB (7346258 bytes)  
+	-	`sha256:5011b513b5639ad4cfa7d2278910a8299bdd679d14c525d5cdff4cfc44e9a396`  
+		Last Modified: Thu, 17 Oct 2019 00:48:12 GMT  
+		Size: 7.4 MB (7358286 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c03cbc1ba246fae55f9694d79f7413c94915e260ec9f422681aa0e32e237306f`  
-		Last Modified: Wed, 11 Sep 2019 23:51:32 GMT  
+	-	`sha256:649fb464536e65c6b3565235f549816862f81bf742a28e80507c446e430ef619`  
+		Last Modified: Thu, 17 Oct 2019 00:48:12 GMT  
 		Size: 9.7 MB (9686847 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:7a279bb26fc5498f1644093698f24c270e04ca08521123f9a5d0b5df57c98625`  
-		Last Modified: Wed, 11 Sep 2019 23:51:58 GMT  
-		Size: 49.5 MB (49518772 bytes)  
+	-	`sha256:9d918c39359c26561401ada6508713e3b1cf82f4bf804ed0bcf9997518fb855d`  
+		Last Modified: Thu, 17 Oct 2019 00:48:42 GMT  
+		Size: 49.5 MB (49521484 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:3dea6797fb74bbda0b8d798c8499f33b9fb5163ffa716a07484a581ffd69ac6e`  
-		Last Modified: Wed, 11 Sep 2019 23:52:55 GMT  
-		Size: 171.0 MB (170969582 bytes)  
+	-	`sha256:7f768bcab047369f910f6ba04a72c70f31faf33dc4a30bf3814fbcb9508c94a9`  
+		Last Modified: Thu, 17 Oct 2019 00:49:34 GMT  
+		Size: 171.0 MB (170974646 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:fe9226e273faefc5751a775b06d71c4c172bcaf84df7ba4022b6993c5441e4d6`  
-		Last Modified: Thu, 12 Sep 2019 13:01:53 GMT  
-		Size: 11.6 KB (11602 bytes)  
+	-	`sha256:8cc381fc0a62aeb746b9905cb87a3d9cafe299a22a830efd27aabf08b4911df7`  
+		Last Modified: Thu, 17 Oct 2019 13:37:03 GMT  
+		Size: 11.6 KB (11604 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:8a0e6d6f0adefaa6258ad8988f0f5c82b90ba0f9679d5b24c6a1ce304003a94c`  
-		Last Modified: Thu, 12 Sep 2019 13:02:22 GMT  
-		Size: 77.3 MB (77307132 bytes)  
+	-	`sha256:03656eb6544e521ebacc967a709c35aecef7cb4f272413dba820fec9828d9017`  
+		Last Modified: Thu, 17 Oct 2019 13:37:31 GMT  
+		Size: 77.3 MB (77298311 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:ff82461372b9914af7a1a9938033feed7f7ecedb1ea5ccc116c94f64fb7a5da1`  
-		Last Modified: Thu, 12 Sep 2019 13:01:53 GMT  
-		Size: 11.3 KB (11257 bytes)  
+	-	`sha256:7a5c617173bef176a1addd43818e24de9dc797d784929694fd6d05c925b786a6`  
+		Last Modified: Thu, 17 Oct 2019 13:37:03 GMT  
+		Size: 11.2 KB (11238 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:76157c4b5a74d1e133cb7aa81e8da617a7c3f1a32616fed75f2330cb22661aba`  
-		Last Modified: Thu, 12 Sep 2019 13:01:53 GMT  
-		Size: 1.9 KB (1947 bytes)  
+	-	`sha256:ac6376a43e367368e9c1506a65653a137eb99f9a9f630bd7c7be06f0d2f96741`  
+		Last Modified: Thu, 17 Oct 2019 13:37:03 GMT  
+		Size: 1.9 KB (1940 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `gcc:7.4.0` - linux; arm variant v7
@@ -2278,7 +2278,7 @@ RUN set -ex; 	dpkg-divert --divert /usr/bin/gcc.orig --rename /usr/bin/gcc; 	dpk
 ## `gcc:8`
 
 ```console
-$ docker pull gcc@sha256:34a57aa152f175d75308c4ecbb96982aa20c1830c33f8564c372038ae862dd8a
+$ docker pull gcc@sha256:604af4b7ebe8d0cb8691c83e5b04386055e65b8d19a8ba775a19c1f051dc10f0
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -2375,83 +2375,83 @@ RUN set -ex; 	dpkg-divert --divert /usr/bin/gcc.orig --rename /usr/bin/gcc; 	dpk
 ### `gcc:8` - linux; arm variant v5
 
 ```console
-$ docker pull gcc@sha256:4425b79ffa5434c183d8e56169c39b6a2b4baf9ad10a9dc69d56514ce7539665
+$ docker pull gcc@sha256:c2e965431958c3fbc3f6ea62ac9ae78a29a32aafea669e8cf1f8b153da4e8237
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **366.7 MB (366746203 bytes)**  
+-	Total Size: **366.8 MB (366793358 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:46476bf84b8da26397c8cace91211a963de2e7caab20ebd4d298d1efa567d567`
+-	Image ID: `sha256:c850f6e1a1ce9d2fd8c0def74d6dcf055bcc285d5eb878aff68498c35bcd2da3`
 -	Default Command: `["bash"]`
 
 ```dockerfile
-# Wed, 11 Sep 2019 22:49:23 GMT
-ADD file:c8a27f0444070cda03b0c725efe2029ac4d252caf23df60b563d3428c5c9ae68 in / 
-# Wed, 11 Sep 2019 22:49:24 GMT
+# Wed, 16 Oct 2019 23:51:41 GMT
+ADD file:973269fc84c93672e5b6aed0fc83691c324334705ff78170de37b2646dfc33cd in / 
+# Wed, 16 Oct 2019 23:51:42 GMT
 CMD ["bash"]
-# Wed, 11 Sep 2019 23:29:06 GMT
+# Thu, 17 Oct 2019 00:25:37 GMT
 RUN apt-get update && apt-get install -y --no-install-recommends 		ca-certificates 		curl 		netbase 		wget 	&& rm -rf /var/lib/apt/lists/*
-# Wed, 11 Sep 2019 23:29:23 GMT
+# Thu, 17 Oct 2019 00:25:51 GMT
 RUN set -ex; 	if ! command -v gpg > /dev/null; then 		apt-get update; 		apt-get install -y --no-install-recommends 			gnupg 			dirmngr 		; 		rm -rf /var/lib/apt/lists/*; 	fi
-# Wed, 11 Sep 2019 23:30:11 GMT
+# Thu, 17 Oct 2019 00:26:39 GMT
 RUN apt-get update && apt-get install -y --no-install-recommends 		git 		mercurial 		openssh-client 		subversion 				procps 	&& rm -rf /var/lib/apt/lists/*
-# Wed, 11 Sep 2019 23:32:37 GMT
+# Thu, 17 Oct 2019 00:29:08 GMT
 RUN set -ex; 	apt-get update; 	apt-get install -y --no-install-recommends 		autoconf 		automake 		bzip2 		dpkg-dev 		file 		g++ 		gcc 		imagemagick 		libbz2-dev 		libc6-dev 		libcurl4-openssl-dev 		libdb-dev 		libevent-dev 		libffi-dev 		libgdbm-dev 		libglib2.0-dev 		libgmp-dev 		libjpeg-dev 		libkrb5-dev 		liblzma-dev 		libmagickcore-dev 		libmagickwand-dev 		libmaxminddb-dev 		libncurses5-dev 		libncursesw5-dev 		libpng-dev 		libpq-dev 		libreadline-dev 		libsqlite3-dev 		libssl-dev 		libtool 		libwebp-dev 		libxml2-dev 		libxslt-dev 		libyaml-dev 		make 		patch 		unzip 		xz-utils 		zlib1g-dev 				$( 			if apt-cache show 'default-libmysqlclient-dev' 2>/dev/null | grep -q '^Version:'; then 				echo 'default-libmysqlclient-dev'; 			else 				echo 'libmysqlclient-dev'; 			fi 		) 	; 	rm -rf /var/lib/apt/lists/*
-# Thu, 12 Sep 2019 10:40:13 GMT
+# Thu, 17 Oct 2019 11:19:08 GMT
 RUN set -ex; 	if ! command -v gpg > /dev/null; then 		apt-get update; 		apt-get install -y --no-install-recommends 			gnupg 			dirmngr 		; 		rm -rf /var/lib/apt/lists/*; 	fi
-# Thu, 12 Sep 2019 10:40:14 GMT
+# Thu, 17 Oct 2019 11:19:09 GMT
 ENV GPG_KEYS=B215C1633BCA0477615F1B35A5B3A004745C015A 	B3C42148A44E6983B3E4CC0793FA9B1AB75C61B8 	90AA470469D3965A87A5DCB494D03953902C9419 	80F98B2E0DAB6C8281BDF541A7C8C3B2F71EDF1C 	7F74F97C103468EE5D750B583AB00996FC26A641 	33C235A34C46AA3FFB293709A328C3A2C3C45C06
-# Thu, 12 Sep 2019 10:40:17 GMT
+# Thu, 17 Oct 2019 11:19:12 GMT
 RUN set -ex; 	for key in $GPG_KEYS; do 		gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys "$key"; 	done
-# Thu, 12 Sep 2019 10:40:17 GMT
+# Thu, 17 Oct 2019 11:19:13 GMT
 ENV GCC_MIRRORS=https://ftpmirror.gnu.org/gcc 		https://bigsearcher.com/mirrors/gcc/releases 		https://mirrors-usa.go-parts.com/gcc/releases 		https://mirrors.concertpass.com/gcc/releases 		http://www.netgull.com/gcc/releases
-# Thu, 12 Sep 2019 11:23:20 GMT
+# Thu, 17 Oct 2019 12:00:32 GMT
 ENV GCC_VERSION=8.3.0
-# Thu, 12 Sep 2019 12:12:13 GMT
+# Thu, 17 Oct 2019 12:48:00 GMT
 RUN set -ex; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		dpkg-dev 		flex 	; 	rm -r /var/lib/apt/lists/*; 		_fetch() { 		local fetch="$1"; shift; 		local file="$1"; shift; 		for mirror in $GCC_MIRRORS; do 			if curl -fL "$mirror/$fetch" -o "$file"; then 				return 0; 			fi; 		done; 		echo >&2 "error: failed to download '$fetch' from several mirrors"; 		return 1; 	}; 		_fetch "gcc-$GCC_VERSION/gcc-$GCC_VERSION.tar.xz.sig" 'gcc.tar.xz.sig' 		|| _fetch "$GCC_VERSION/gcc-$GCC_VERSION.tar.xz.sig"; 	_fetch "gcc-$GCC_VERSION/gcc-$GCC_VERSION.tar.xz" 'gcc.tar.xz' 		|| _fetch "$GCC_VERSION/gcc-$GCC_VERSION.tar.xz" 'gcc.tar.xz'; 	gpg --batch --verify gcc.tar.xz.sig gcc.tar.xz; 	mkdir -p /usr/src/gcc; 	tar -xf gcc.tar.xz -C /usr/src/gcc --strip-components=1; 	rm gcc.tar.xz*; 		cd /usr/src/gcc; 		./contrib/download_prerequisites; 	{ rm *.tar.* || true; }; 		for f in config.guess config.sub; do 		wget -O "$f" "https://git.savannah.gnu.org/cgit/config.git/plain/$f?id=7d3d27baf8107b630586c962c057e22149653deb"; 		find -mindepth 2 -name "$f" -exec cp -v "$f" '{}' ';'; 	done; 		dir="$(mktemp -d)"; 	cd "$dir"; 		extraConfigureArgs=''; 	dpkgArch="$(dpkg --print-architecture)"; 	case "$dpkgArch" in 		armel) 			extraConfigureArgs="$extraConfigureArgs --with-arch=armv4t --with-float=soft" 			;; 		armhf) 			extraConfigureArgs="$extraConfigureArgs --with-arch=armv7-a --with-float=hard --with-fpu=vfpv3-d16 --with-mode=thumb" 			;; 				i386) 			osVersionID="$(set -e; . /etc/os-release; echo "$VERSION_ID")"; 			case "$osVersionID" in 				8) extraConfigureArgs="$extraConfigureArgs --with-arch-32=i586" ;; 				*) extraConfigureArgs="$extraConfigureArgs --with-arch-32=i686" ;; 			esac; 			;; 	esac; 		gnuArch="$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)"; 	/usr/src/gcc/configure 		--build="$gnuArch" 		--disable-multilib 		--enable-languages=c,c++,fortran,go 		$extraConfigureArgs 	; 	make -j "$(nproc)"; 	make install-strip; 		cd ..; 		rm -rf "$dir" /usr/src/gcc; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false
-# Thu, 12 Sep 2019 12:12:17 GMT
+# Thu, 17 Oct 2019 12:48:04 GMT
 RUN set -ex; 	echo '/usr/local/lib64' > /etc/ld.so.conf.d/local-lib64.conf; 	ldconfig -v
-# Thu, 12 Sep 2019 12:12:20 GMT
+# Thu, 17 Oct 2019 12:48:07 GMT
 RUN set -ex; 	dpkg-divert --divert /usr/bin/gcc.orig --rename /usr/bin/gcc; 	dpkg-divert --divert /usr/bin/g++.orig --rename /usr/bin/g++; 	dpkg-divert --divert /usr/bin/gfortran.orig --rename /usr/bin/gfortran; 	update-alternatives --install /usr/bin/cc cc /usr/local/bin/gcc 999
 ```
 
 -	Layers:
-	-	`sha256:a1188c71bb8b0f44792369b8880b4445a04cff52d183f2abce5207a0fa60f0db`  
-		Last Modified: Wed, 11 Sep 2019 22:56:38 GMT  
-		Size: 48.1 MB (48080876 bytes)  
+	-	`sha256:fbc660c6e95ccb3457d04b94c4a7c4a0dc07f31549e3b4b11540806aae928286`  
+		Last Modified: Wed, 16 Oct 2019 23:59:13 GMT  
+		Size: 48.1 MB (48088526 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:33f64e9913bed4e7b4d259eba3fd47756535467312efc0ec4ba074f2da038e5b`  
-		Last Modified: Wed, 11 Sep 2019 23:51:32 GMT  
-		Size: 7.3 MB (7346258 bytes)  
+	-	`sha256:5011b513b5639ad4cfa7d2278910a8299bdd679d14c525d5cdff4cfc44e9a396`  
+		Last Modified: Thu, 17 Oct 2019 00:48:12 GMT  
+		Size: 7.4 MB (7358286 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c03cbc1ba246fae55f9694d79f7413c94915e260ec9f422681aa0e32e237306f`  
-		Last Modified: Wed, 11 Sep 2019 23:51:32 GMT  
+	-	`sha256:649fb464536e65c6b3565235f549816862f81bf742a28e80507c446e430ef619`  
+		Last Modified: Thu, 17 Oct 2019 00:48:12 GMT  
 		Size: 9.7 MB (9686847 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:7a279bb26fc5498f1644093698f24c270e04ca08521123f9a5d0b5df57c98625`  
-		Last Modified: Wed, 11 Sep 2019 23:51:58 GMT  
-		Size: 49.5 MB (49518772 bytes)  
+	-	`sha256:9d918c39359c26561401ada6508713e3b1cf82f4bf804ed0bcf9997518fb855d`  
+		Last Modified: Thu, 17 Oct 2019 00:48:42 GMT  
+		Size: 49.5 MB (49521484 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:3dea6797fb74bbda0b8d798c8499f33b9fb5163ffa716a07484a581ffd69ac6e`  
-		Last Modified: Wed, 11 Sep 2019 23:52:55 GMT  
-		Size: 171.0 MB (170969582 bytes)  
+	-	`sha256:7f768bcab047369f910f6ba04a72c70f31faf33dc4a30bf3814fbcb9508c94a9`  
+		Last Modified: Thu, 17 Oct 2019 00:49:34 GMT  
+		Size: 171.0 MB (170974646 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:fe9226e273faefc5751a775b06d71c4c172bcaf84df7ba4022b6993c5441e4d6`  
-		Last Modified: Thu, 12 Sep 2019 13:01:53 GMT  
-		Size: 11.6 KB (11602 bytes)  
+	-	`sha256:8cc381fc0a62aeb746b9905cb87a3d9cafe299a22a830efd27aabf08b4911df7`  
+		Last Modified: Thu, 17 Oct 2019 13:37:03 GMT  
+		Size: 11.6 KB (11604 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:6ef9e6b52b1270d0866bad483edb0fd6874ef90321555823f3fa628e6a4303d7`  
-		Last Modified: Thu, 12 Sep 2019 13:02:58 GMT  
-		Size: 81.1 MB (81119195 bytes)  
+	-	`sha256:fdfa739321cab6a99a793bd5ec9c164de0d59fd4af7061ffad7afa086ad08b47`  
+		Last Modified: Thu, 17 Oct 2019 13:38:09 GMT  
+		Size: 81.1 MB (81138874 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:7fcaec2cfdbb693a5ed4a6ce4bb949824eca020f1ae0c18cd24c121fcd609c43`  
-		Last Modified: Thu, 12 Sep 2019 13:02:29 GMT  
-		Size: 11.1 KB (11129 bytes)  
+	-	`sha256:3725b618f8253d3a7fe7181090ca6a39538be44a67c71a79562ae99ccc69aee2`  
+		Last Modified: Thu, 17 Oct 2019 13:37:40 GMT  
+		Size: 11.1 KB (11143 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:5170a3c2eb7e41a155fab51754f50986bf90c94082f9baa1b34374a1d449d399`  
-		Last Modified: Thu, 12 Sep 2019 13:02:29 GMT  
-		Size: 1.9 KB (1942 bytes)  
+	-	`sha256:5e2c0c6a0da3489472a2f65ece85e04a7c6511af8971a9acce0c341f878135cf`  
+		Last Modified: Thu, 17 Oct 2019 13:37:40 GMT  
+		Size: 1.9 KB (1948 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `gcc:8` - linux; arm variant v7
@@ -2785,7 +2785,7 @@ RUN set -ex; 	dpkg-divert --divert /usr/bin/gcc.orig --rename /usr/bin/gcc; 	dpk
 ## `gcc:8.3`
 
 ```console
-$ docker pull gcc@sha256:34a57aa152f175d75308c4ecbb96982aa20c1830c33f8564c372038ae862dd8a
+$ docker pull gcc@sha256:604af4b7ebe8d0cb8691c83e5b04386055e65b8d19a8ba775a19c1f051dc10f0
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -2882,83 +2882,83 @@ RUN set -ex; 	dpkg-divert --divert /usr/bin/gcc.orig --rename /usr/bin/gcc; 	dpk
 ### `gcc:8.3` - linux; arm variant v5
 
 ```console
-$ docker pull gcc@sha256:4425b79ffa5434c183d8e56169c39b6a2b4baf9ad10a9dc69d56514ce7539665
+$ docker pull gcc@sha256:c2e965431958c3fbc3f6ea62ac9ae78a29a32aafea669e8cf1f8b153da4e8237
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **366.7 MB (366746203 bytes)**  
+-	Total Size: **366.8 MB (366793358 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:46476bf84b8da26397c8cace91211a963de2e7caab20ebd4d298d1efa567d567`
+-	Image ID: `sha256:c850f6e1a1ce9d2fd8c0def74d6dcf055bcc285d5eb878aff68498c35bcd2da3`
 -	Default Command: `["bash"]`
 
 ```dockerfile
-# Wed, 11 Sep 2019 22:49:23 GMT
-ADD file:c8a27f0444070cda03b0c725efe2029ac4d252caf23df60b563d3428c5c9ae68 in / 
-# Wed, 11 Sep 2019 22:49:24 GMT
+# Wed, 16 Oct 2019 23:51:41 GMT
+ADD file:973269fc84c93672e5b6aed0fc83691c324334705ff78170de37b2646dfc33cd in / 
+# Wed, 16 Oct 2019 23:51:42 GMT
 CMD ["bash"]
-# Wed, 11 Sep 2019 23:29:06 GMT
+# Thu, 17 Oct 2019 00:25:37 GMT
 RUN apt-get update && apt-get install -y --no-install-recommends 		ca-certificates 		curl 		netbase 		wget 	&& rm -rf /var/lib/apt/lists/*
-# Wed, 11 Sep 2019 23:29:23 GMT
+# Thu, 17 Oct 2019 00:25:51 GMT
 RUN set -ex; 	if ! command -v gpg > /dev/null; then 		apt-get update; 		apt-get install -y --no-install-recommends 			gnupg 			dirmngr 		; 		rm -rf /var/lib/apt/lists/*; 	fi
-# Wed, 11 Sep 2019 23:30:11 GMT
+# Thu, 17 Oct 2019 00:26:39 GMT
 RUN apt-get update && apt-get install -y --no-install-recommends 		git 		mercurial 		openssh-client 		subversion 				procps 	&& rm -rf /var/lib/apt/lists/*
-# Wed, 11 Sep 2019 23:32:37 GMT
+# Thu, 17 Oct 2019 00:29:08 GMT
 RUN set -ex; 	apt-get update; 	apt-get install -y --no-install-recommends 		autoconf 		automake 		bzip2 		dpkg-dev 		file 		g++ 		gcc 		imagemagick 		libbz2-dev 		libc6-dev 		libcurl4-openssl-dev 		libdb-dev 		libevent-dev 		libffi-dev 		libgdbm-dev 		libglib2.0-dev 		libgmp-dev 		libjpeg-dev 		libkrb5-dev 		liblzma-dev 		libmagickcore-dev 		libmagickwand-dev 		libmaxminddb-dev 		libncurses5-dev 		libncursesw5-dev 		libpng-dev 		libpq-dev 		libreadline-dev 		libsqlite3-dev 		libssl-dev 		libtool 		libwebp-dev 		libxml2-dev 		libxslt-dev 		libyaml-dev 		make 		patch 		unzip 		xz-utils 		zlib1g-dev 				$( 			if apt-cache show 'default-libmysqlclient-dev' 2>/dev/null | grep -q '^Version:'; then 				echo 'default-libmysqlclient-dev'; 			else 				echo 'libmysqlclient-dev'; 			fi 		) 	; 	rm -rf /var/lib/apt/lists/*
-# Thu, 12 Sep 2019 10:40:13 GMT
+# Thu, 17 Oct 2019 11:19:08 GMT
 RUN set -ex; 	if ! command -v gpg > /dev/null; then 		apt-get update; 		apt-get install -y --no-install-recommends 			gnupg 			dirmngr 		; 		rm -rf /var/lib/apt/lists/*; 	fi
-# Thu, 12 Sep 2019 10:40:14 GMT
+# Thu, 17 Oct 2019 11:19:09 GMT
 ENV GPG_KEYS=B215C1633BCA0477615F1B35A5B3A004745C015A 	B3C42148A44E6983B3E4CC0793FA9B1AB75C61B8 	90AA470469D3965A87A5DCB494D03953902C9419 	80F98B2E0DAB6C8281BDF541A7C8C3B2F71EDF1C 	7F74F97C103468EE5D750B583AB00996FC26A641 	33C235A34C46AA3FFB293709A328C3A2C3C45C06
-# Thu, 12 Sep 2019 10:40:17 GMT
+# Thu, 17 Oct 2019 11:19:12 GMT
 RUN set -ex; 	for key in $GPG_KEYS; do 		gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys "$key"; 	done
-# Thu, 12 Sep 2019 10:40:17 GMT
+# Thu, 17 Oct 2019 11:19:13 GMT
 ENV GCC_MIRRORS=https://ftpmirror.gnu.org/gcc 		https://bigsearcher.com/mirrors/gcc/releases 		https://mirrors-usa.go-parts.com/gcc/releases 		https://mirrors.concertpass.com/gcc/releases 		http://www.netgull.com/gcc/releases
-# Thu, 12 Sep 2019 11:23:20 GMT
+# Thu, 17 Oct 2019 12:00:32 GMT
 ENV GCC_VERSION=8.3.0
-# Thu, 12 Sep 2019 12:12:13 GMT
+# Thu, 17 Oct 2019 12:48:00 GMT
 RUN set -ex; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		dpkg-dev 		flex 	; 	rm -r /var/lib/apt/lists/*; 		_fetch() { 		local fetch="$1"; shift; 		local file="$1"; shift; 		for mirror in $GCC_MIRRORS; do 			if curl -fL "$mirror/$fetch" -o "$file"; then 				return 0; 			fi; 		done; 		echo >&2 "error: failed to download '$fetch' from several mirrors"; 		return 1; 	}; 		_fetch "gcc-$GCC_VERSION/gcc-$GCC_VERSION.tar.xz.sig" 'gcc.tar.xz.sig' 		|| _fetch "$GCC_VERSION/gcc-$GCC_VERSION.tar.xz.sig"; 	_fetch "gcc-$GCC_VERSION/gcc-$GCC_VERSION.tar.xz" 'gcc.tar.xz' 		|| _fetch "$GCC_VERSION/gcc-$GCC_VERSION.tar.xz" 'gcc.tar.xz'; 	gpg --batch --verify gcc.tar.xz.sig gcc.tar.xz; 	mkdir -p /usr/src/gcc; 	tar -xf gcc.tar.xz -C /usr/src/gcc --strip-components=1; 	rm gcc.tar.xz*; 		cd /usr/src/gcc; 		./contrib/download_prerequisites; 	{ rm *.tar.* || true; }; 		for f in config.guess config.sub; do 		wget -O "$f" "https://git.savannah.gnu.org/cgit/config.git/plain/$f?id=7d3d27baf8107b630586c962c057e22149653deb"; 		find -mindepth 2 -name "$f" -exec cp -v "$f" '{}' ';'; 	done; 		dir="$(mktemp -d)"; 	cd "$dir"; 		extraConfigureArgs=''; 	dpkgArch="$(dpkg --print-architecture)"; 	case "$dpkgArch" in 		armel) 			extraConfigureArgs="$extraConfigureArgs --with-arch=armv4t --with-float=soft" 			;; 		armhf) 			extraConfigureArgs="$extraConfigureArgs --with-arch=armv7-a --with-float=hard --with-fpu=vfpv3-d16 --with-mode=thumb" 			;; 				i386) 			osVersionID="$(set -e; . /etc/os-release; echo "$VERSION_ID")"; 			case "$osVersionID" in 				8) extraConfigureArgs="$extraConfigureArgs --with-arch-32=i586" ;; 				*) extraConfigureArgs="$extraConfigureArgs --with-arch-32=i686" ;; 			esac; 			;; 	esac; 		gnuArch="$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)"; 	/usr/src/gcc/configure 		--build="$gnuArch" 		--disable-multilib 		--enable-languages=c,c++,fortran,go 		$extraConfigureArgs 	; 	make -j "$(nproc)"; 	make install-strip; 		cd ..; 		rm -rf "$dir" /usr/src/gcc; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false
-# Thu, 12 Sep 2019 12:12:17 GMT
+# Thu, 17 Oct 2019 12:48:04 GMT
 RUN set -ex; 	echo '/usr/local/lib64' > /etc/ld.so.conf.d/local-lib64.conf; 	ldconfig -v
-# Thu, 12 Sep 2019 12:12:20 GMT
+# Thu, 17 Oct 2019 12:48:07 GMT
 RUN set -ex; 	dpkg-divert --divert /usr/bin/gcc.orig --rename /usr/bin/gcc; 	dpkg-divert --divert /usr/bin/g++.orig --rename /usr/bin/g++; 	dpkg-divert --divert /usr/bin/gfortran.orig --rename /usr/bin/gfortran; 	update-alternatives --install /usr/bin/cc cc /usr/local/bin/gcc 999
 ```
 
 -	Layers:
-	-	`sha256:a1188c71bb8b0f44792369b8880b4445a04cff52d183f2abce5207a0fa60f0db`  
-		Last Modified: Wed, 11 Sep 2019 22:56:38 GMT  
-		Size: 48.1 MB (48080876 bytes)  
+	-	`sha256:fbc660c6e95ccb3457d04b94c4a7c4a0dc07f31549e3b4b11540806aae928286`  
+		Last Modified: Wed, 16 Oct 2019 23:59:13 GMT  
+		Size: 48.1 MB (48088526 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:33f64e9913bed4e7b4d259eba3fd47756535467312efc0ec4ba074f2da038e5b`  
-		Last Modified: Wed, 11 Sep 2019 23:51:32 GMT  
-		Size: 7.3 MB (7346258 bytes)  
+	-	`sha256:5011b513b5639ad4cfa7d2278910a8299bdd679d14c525d5cdff4cfc44e9a396`  
+		Last Modified: Thu, 17 Oct 2019 00:48:12 GMT  
+		Size: 7.4 MB (7358286 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c03cbc1ba246fae55f9694d79f7413c94915e260ec9f422681aa0e32e237306f`  
-		Last Modified: Wed, 11 Sep 2019 23:51:32 GMT  
+	-	`sha256:649fb464536e65c6b3565235f549816862f81bf742a28e80507c446e430ef619`  
+		Last Modified: Thu, 17 Oct 2019 00:48:12 GMT  
 		Size: 9.7 MB (9686847 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:7a279bb26fc5498f1644093698f24c270e04ca08521123f9a5d0b5df57c98625`  
-		Last Modified: Wed, 11 Sep 2019 23:51:58 GMT  
-		Size: 49.5 MB (49518772 bytes)  
+	-	`sha256:9d918c39359c26561401ada6508713e3b1cf82f4bf804ed0bcf9997518fb855d`  
+		Last Modified: Thu, 17 Oct 2019 00:48:42 GMT  
+		Size: 49.5 MB (49521484 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:3dea6797fb74bbda0b8d798c8499f33b9fb5163ffa716a07484a581ffd69ac6e`  
-		Last Modified: Wed, 11 Sep 2019 23:52:55 GMT  
-		Size: 171.0 MB (170969582 bytes)  
+	-	`sha256:7f768bcab047369f910f6ba04a72c70f31faf33dc4a30bf3814fbcb9508c94a9`  
+		Last Modified: Thu, 17 Oct 2019 00:49:34 GMT  
+		Size: 171.0 MB (170974646 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:fe9226e273faefc5751a775b06d71c4c172bcaf84df7ba4022b6993c5441e4d6`  
-		Last Modified: Thu, 12 Sep 2019 13:01:53 GMT  
-		Size: 11.6 KB (11602 bytes)  
+	-	`sha256:8cc381fc0a62aeb746b9905cb87a3d9cafe299a22a830efd27aabf08b4911df7`  
+		Last Modified: Thu, 17 Oct 2019 13:37:03 GMT  
+		Size: 11.6 KB (11604 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:6ef9e6b52b1270d0866bad483edb0fd6874ef90321555823f3fa628e6a4303d7`  
-		Last Modified: Thu, 12 Sep 2019 13:02:58 GMT  
-		Size: 81.1 MB (81119195 bytes)  
+	-	`sha256:fdfa739321cab6a99a793bd5ec9c164de0d59fd4af7061ffad7afa086ad08b47`  
+		Last Modified: Thu, 17 Oct 2019 13:38:09 GMT  
+		Size: 81.1 MB (81138874 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:7fcaec2cfdbb693a5ed4a6ce4bb949824eca020f1ae0c18cd24c121fcd609c43`  
-		Last Modified: Thu, 12 Sep 2019 13:02:29 GMT  
-		Size: 11.1 KB (11129 bytes)  
+	-	`sha256:3725b618f8253d3a7fe7181090ca6a39538be44a67c71a79562ae99ccc69aee2`  
+		Last Modified: Thu, 17 Oct 2019 13:37:40 GMT  
+		Size: 11.1 KB (11143 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:5170a3c2eb7e41a155fab51754f50986bf90c94082f9baa1b34374a1d449d399`  
-		Last Modified: Thu, 12 Sep 2019 13:02:29 GMT  
-		Size: 1.9 KB (1942 bytes)  
+	-	`sha256:5e2c0c6a0da3489472a2f65ece85e04a7c6511af8971a9acce0c341f878135cf`  
+		Last Modified: Thu, 17 Oct 2019 13:37:40 GMT  
+		Size: 1.9 KB (1948 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `gcc:8.3` - linux; arm variant v7
@@ -3292,7 +3292,7 @@ RUN set -ex; 	dpkg-divert --divert /usr/bin/gcc.orig --rename /usr/bin/gcc; 	dpk
 ## `gcc:8.3.0`
 
 ```console
-$ docker pull gcc@sha256:34a57aa152f175d75308c4ecbb96982aa20c1830c33f8564c372038ae862dd8a
+$ docker pull gcc@sha256:604af4b7ebe8d0cb8691c83e5b04386055e65b8d19a8ba775a19c1f051dc10f0
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -3389,83 +3389,83 @@ RUN set -ex; 	dpkg-divert --divert /usr/bin/gcc.orig --rename /usr/bin/gcc; 	dpk
 ### `gcc:8.3.0` - linux; arm variant v5
 
 ```console
-$ docker pull gcc@sha256:4425b79ffa5434c183d8e56169c39b6a2b4baf9ad10a9dc69d56514ce7539665
+$ docker pull gcc@sha256:c2e965431958c3fbc3f6ea62ac9ae78a29a32aafea669e8cf1f8b153da4e8237
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **366.7 MB (366746203 bytes)**  
+-	Total Size: **366.8 MB (366793358 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:46476bf84b8da26397c8cace91211a963de2e7caab20ebd4d298d1efa567d567`
+-	Image ID: `sha256:c850f6e1a1ce9d2fd8c0def74d6dcf055bcc285d5eb878aff68498c35bcd2da3`
 -	Default Command: `["bash"]`
 
 ```dockerfile
-# Wed, 11 Sep 2019 22:49:23 GMT
-ADD file:c8a27f0444070cda03b0c725efe2029ac4d252caf23df60b563d3428c5c9ae68 in / 
-# Wed, 11 Sep 2019 22:49:24 GMT
+# Wed, 16 Oct 2019 23:51:41 GMT
+ADD file:973269fc84c93672e5b6aed0fc83691c324334705ff78170de37b2646dfc33cd in / 
+# Wed, 16 Oct 2019 23:51:42 GMT
 CMD ["bash"]
-# Wed, 11 Sep 2019 23:29:06 GMT
+# Thu, 17 Oct 2019 00:25:37 GMT
 RUN apt-get update && apt-get install -y --no-install-recommends 		ca-certificates 		curl 		netbase 		wget 	&& rm -rf /var/lib/apt/lists/*
-# Wed, 11 Sep 2019 23:29:23 GMT
+# Thu, 17 Oct 2019 00:25:51 GMT
 RUN set -ex; 	if ! command -v gpg > /dev/null; then 		apt-get update; 		apt-get install -y --no-install-recommends 			gnupg 			dirmngr 		; 		rm -rf /var/lib/apt/lists/*; 	fi
-# Wed, 11 Sep 2019 23:30:11 GMT
+# Thu, 17 Oct 2019 00:26:39 GMT
 RUN apt-get update && apt-get install -y --no-install-recommends 		git 		mercurial 		openssh-client 		subversion 				procps 	&& rm -rf /var/lib/apt/lists/*
-# Wed, 11 Sep 2019 23:32:37 GMT
+# Thu, 17 Oct 2019 00:29:08 GMT
 RUN set -ex; 	apt-get update; 	apt-get install -y --no-install-recommends 		autoconf 		automake 		bzip2 		dpkg-dev 		file 		g++ 		gcc 		imagemagick 		libbz2-dev 		libc6-dev 		libcurl4-openssl-dev 		libdb-dev 		libevent-dev 		libffi-dev 		libgdbm-dev 		libglib2.0-dev 		libgmp-dev 		libjpeg-dev 		libkrb5-dev 		liblzma-dev 		libmagickcore-dev 		libmagickwand-dev 		libmaxminddb-dev 		libncurses5-dev 		libncursesw5-dev 		libpng-dev 		libpq-dev 		libreadline-dev 		libsqlite3-dev 		libssl-dev 		libtool 		libwebp-dev 		libxml2-dev 		libxslt-dev 		libyaml-dev 		make 		patch 		unzip 		xz-utils 		zlib1g-dev 				$( 			if apt-cache show 'default-libmysqlclient-dev' 2>/dev/null | grep -q '^Version:'; then 				echo 'default-libmysqlclient-dev'; 			else 				echo 'libmysqlclient-dev'; 			fi 		) 	; 	rm -rf /var/lib/apt/lists/*
-# Thu, 12 Sep 2019 10:40:13 GMT
+# Thu, 17 Oct 2019 11:19:08 GMT
 RUN set -ex; 	if ! command -v gpg > /dev/null; then 		apt-get update; 		apt-get install -y --no-install-recommends 			gnupg 			dirmngr 		; 		rm -rf /var/lib/apt/lists/*; 	fi
-# Thu, 12 Sep 2019 10:40:14 GMT
+# Thu, 17 Oct 2019 11:19:09 GMT
 ENV GPG_KEYS=B215C1633BCA0477615F1B35A5B3A004745C015A 	B3C42148A44E6983B3E4CC0793FA9B1AB75C61B8 	90AA470469D3965A87A5DCB494D03953902C9419 	80F98B2E0DAB6C8281BDF541A7C8C3B2F71EDF1C 	7F74F97C103468EE5D750B583AB00996FC26A641 	33C235A34C46AA3FFB293709A328C3A2C3C45C06
-# Thu, 12 Sep 2019 10:40:17 GMT
+# Thu, 17 Oct 2019 11:19:12 GMT
 RUN set -ex; 	for key in $GPG_KEYS; do 		gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys "$key"; 	done
-# Thu, 12 Sep 2019 10:40:17 GMT
+# Thu, 17 Oct 2019 11:19:13 GMT
 ENV GCC_MIRRORS=https://ftpmirror.gnu.org/gcc 		https://bigsearcher.com/mirrors/gcc/releases 		https://mirrors-usa.go-parts.com/gcc/releases 		https://mirrors.concertpass.com/gcc/releases 		http://www.netgull.com/gcc/releases
-# Thu, 12 Sep 2019 11:23:20 GMT
+# Thu, 17 Oct 2019 12:00:32 GMT
 ENV GCC_VERSION=8.3.0
-# Thu, 12 Sep 2019 12:12:13 GMT
+# Thu, 17 Oct 2019 12:48:00 GMT
 RUN set -ex; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		dpkg-dev 		flex 	; 	rm -r /var/lib/apt/lists/*; 		_fetch() { 		local fetch="$1"; shift; 		local file="$1"; shift; 		for mirror in $GCC_MIRRORS; do 			if curl -fL "$mirror/$fetch" -o "$file"; then 				return 0; 			fi; 		done; 		echo >&2 "error: failed to download '$fetch' from several mirrors"; 		return 1; 	}; 		_fetch "gcc-$GCC_VERSION/gcc-$GCC_VERSION.tar.xz.sig" 'gcc.tar.xz.sig' 		|| _fetch "$GCC_VERSION/gcc-$GCC_VERSION.tar.xz.sig"; 	_fetch "gcc-$GCC_VERSION/gcc-$GCC_VERSION.tar.xz" 'gcc.tar.xz' 		|| _fetch "$GCC_VERSION/gcc-$GCC_VERSION.tar.xz" 'gcc.tar.xz'; 	gpg --batch --verify gcc.tar.xz.sig gcc.tar.xz; 	mkdir -p /usr/src/gcc; 	tar -xf gcc.tar.xz -C /usr/src/gcc --strip-components=1; 	rm gcc.tar.xz*; 		cd /usr/src/gcc; 		./contrib/download_prerequisites; 	{ rm *.tar.* || true; }; 		for f in config.guess config.sub; do 		wget -O "$f" "https://git.savannah.gnu.org/cgit/config.git/plain/$f?id=7d3d27baf8107b630586c962c057e22149653deb"; 		find -mindepth 2 -name "$f" -exec cp -v "$f" '{}' ';'; 	done; 		dir="$(mktemp -d)"; 	cd "$dir"; 		extraConfigureArgs=''; 	dpkgArch="$(dpkg --print-architecture)"; 	case "$dpkgArch" in 		armel) 			extraConfigureArgs="$extraConfigureArgs --with-arch=armv4t --with-float=soft" 			;; 		armhf) 			extraConfigureArgs="$extraConfigureArgs --with-arch=armv7-a --with-float=hard --with-fpu=vfpv3-d16 --with-mode=thumb" 			;; 				i386) 			osVersionID="$(set -e; . /etc/os-release; echo "$VERSION_ID")"; 			case "$osVersionID" in 				8) extraConfigureArgs="$extraConfigureArgs --with-arch-32=i586" ;; 				*) extraConfigureArgs="$extraConfigureArgs --with-arch-32=i686" ;; 			esac; 			;; 	esac; 		gnuArch="$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)"; 	/usr/src/gcc/configure 		--build="$gnuArch" 		--disable-multilib 		--enable-languages=c,c++,fortran,go 		$extraConfigureArgs 	; 	make -j "$(nproc)"; 	make install-strip; 		cd ..; 		rm -rf "$dir" /usr/src/gcc; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false
-# Thu, 12 Sep 2019 12:12:17 GMT
+# Thu, 17 Oct 2019 12:48:04 GMT
 RUN set -ex; 	echo '/usr/local/lib64' > /etc/ld.so.conf.d/local-lib64.conf; 	ldconfig -v
-# Thu, 12 Sep 2019 12:12:20 GMT
+# Thu, 17 Oct 2019 12:48:07 GMT
 RUN set -ex; 	dpkg-divert --divert /usr/bin/gcc.orig --rename /usr/bin/gcc; 	dpkg-divert --divert /usr/bin/g++.orig --rename /usr/bin/g++; 	dpkg-divert --divert /usr/bin/gfortran.orig --rename /usr/bin/gfortran; 	update-alternatives --install /usr/bin/cc cc /usr/local/bin/gcc 999
 ```
 
 -	Layers:
-	-	`sha256:a1188c71bb8b0f44792369b8880b4445a04cff52d183f2abce5207a0fa60f0db`  
-		Last Modified: Wed, 11 Sep 2019 22:56:38 GMT  
-		Size: 48.1 MB (48080876 bytes)  
+	-	`sha256:fbc660c6e95ccb3457d04b94c4a7c4a0dc07f31549e3b4b11540806aae928286`  
+		Last Modified: Wed, 16 Oct 2019 23:59:13 GMT  
+		Size: 48.1 MB (48088526 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:33f64e9913bed4e7b4d259eba3fd47756535467312efc0ec4ba074f2da038e5b`  
-		Last Modified: Wed, 11 Sep 2019 23:51:32 GMT  
-		Size: 7.3 MB (7346258 bytes)  
+	-	`sha256:5011b513b5639ad4cfa7d2278910a8299bdd679d14c525d5cdff4cfc44e9a396`  
+		Last Modified: Thu, 17 Oct 2019 00:48:12 GMT  
+		Size: 7.4 MB (7358286 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c03cbc1ba246fae55f9694d79f7413c94915e260ec9f422681aa0e32e237306f`  
-		Last Modified: Wed, 11 Sep 2019 23:51:32 GMT  
+	-	`sha256:649fb464536e65c6b3565235f549816862f81bf742a28e80507c446e430ef619`  
+		Last Modified: Thu, 17 Oct 2019 00:48:12 GMT  
 		Size: 9.7 MB (9686847 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:7a279bb26fc5498f1644093698f24c270e04ca08521123f9a5d0b5df57c98625`  
-		Last Modified: Wed, 11 Sep 2019 23:51:58 GMT  
-		Size: 49.5 MB (49518772 bytes)  
+	-	`sha256:9d918c39359c26561401ada6508713e3b1cf82f4bf804ed0bcf9997518fb855d`  
+		Last Modified: Thu, 17 Oct 2019 00:48:42 GMT  
+		Size: 49.5 MB (49521484 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:3dea6797fb74bbda0b8d798c8499f33b9fb5163ffa716a07484a581ffd69ac6e`  
-		Last Modified: Wed, 11 Sep 2019 23:52:55 GMT  
-		Size: 171.0 MB (170969582 bytes)  
+	-	`sha256:7f768bcab047369f910f6ba04a72c70f31faf33dc4a30bf3814fbcb9508c94a9`  
+		Last Modified: Thu, 17 Oct 2019 00:49:34 GMT  
+		Size: 171.0 MB (170974646 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:fe9226e273faefc5751a775b06d71c4c172bcaf84df7ba4022b6993c5441e4d6`  
-		Last Modified: Thu, 12 Sep 2019 13:01:53 GMT  
-		Size: 11.6 KB (11602 bytes)  
+	-	`sha256:8cc381fc0a62aeb746b9905cb87a3d9cafe299a22a830efd27aabf08b4911df7`  
+		Last Modified: Thu, 17 Oct 2019 13:37:03 GMT  
+		Size: 11.6 KB (11604 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:6ef9e6b52b1270d0866bad483edb0fd6874ef90321555823f3fa628e6a4303d7`  
-		Last Modified: Thu, 12 Sep 2019 13:02:58 GMT  
-		Size: 81.1 MB (81119195 bytes)  
+	-	`sha256:fdfa739321cab6a99a793bd5ec9c164de0d59fd4af7061ffad7afa086ad08b47`  
+		Last Modified: Thu, 17 Oct 2019 13:38:09 GMT  
+		Size: 81.1 MB (81138874 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:7fcaec2cfdbb693a5ed4a6ce4bb949824eca020f1ae0c18cd24c121fcd609c43`  
-		Last Modified: Thu, 12 Sep 2019 13:02:29 GMT  
-		Size: 11.1 KB (11129 bytes)  
+	-	`sha256:3725b618f8253d3a7fe7181090ca6a39538be44a67c71a79562ae99ccc69aee2`  
+		Last Modified: Thu, 17 Oct 2019 13:37:40 GMT  
+		Size: 11.1 KB (11143 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:5170a3c2eb7e41a155fab51754f50986bf90c94082f9baa1b34374a1d449d399`  
-		Last Modified: Thu, 12 Sep 2019 13:02:29 GMT  
-		Size: 1.9 KB (1942 bytes)  
+	-	`sha256:5e2c0c6a0da3489472a2f65ece85e04a7c6511af8971a9acce0c341f878135cf`  
+		Last Modified: Thu, 17 Oct 2019 13:37:40 GMT  
+		Size: 1.9 KB (1948 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `gcc:8.3.0` - linux; arm variant v7
@@ -3799,7 +3799,7 @@ RUN set -ex; 	dpkg-divert --divert /usr/bin/gcc.orig --rename /usr/bin/gcc; 	dpk
 ## `gcc:9`
 
 ```console
-$ docker pull gcc@sha256:c0f4919207ad6d73dad9f98e532f1cb224159e9c7d0a257665564526ae85bf7f
+$ docker pull gcc@sha256:eb6dd61d3040f4132c957331e3e238ed97f824978889f48e0cf3e21cbd16a9d9
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -3896,83 +3896,83 @@ RUN set -ex; 	dpkg-divert --divert /usr/bin/gcc.orig --rename /usr/bin/gcc; 	dpk
 ### `gcc:9` - linux; arm variant v5
 
 ```console
-$ docker pull gcc@sha256:44ec6163595c934cc59d2bb40c5f7a936c86ea96b685684daebcd8d42967139e
+$ docker pull gcc@sha256:936f38cb6bdbd80003fc7131b8772254cc6e7523f0ff8589e6f0a176a81f615d
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **369.6 MB (369583268 bytes)**  
+-	Total Size: **369.6 MB (369610373 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:ed5dd470d0eb6862da7b70063ca9e5f0a48a23349381dde1208119d214db5301`
+-	Image ID: `sha256:ee0dd071dd4ad713d3d3bfcc44505545be8c9b9a78ef379aa30a4185465f52e6`
 -	Default Command: `["bash"]`
 
 ```dockerfile
-# Wed, 11 Sep 2019 22:49:23 GMT
-ADD file:c8a27f0444070cda03b0c725efe2029ac4d252caf23df60b563d3428c5c9ae68 in / 
-# Wed, 11 Sep 2019 22:49:24 GMT
+# Wed, 16 Oct 2019 23:51:41 GMT
+ADD file:973269fc84c93672e5b6aed0fc83691c324334705ff78170de37b2646dfc33cd in / 
+# Wed, 16 Oct 2019 23:51:42 GMT
 CMD ["bash"]
-# Wed, 11 Sep 2019 23:29:06 GMT
+# Thu, 17 Oct 2019 00:25:37 GMT
 RUN apt-get update && apt-get install -y --no-install-recommends 		ca-certificates 		curl 		netbase 		wget 	&& rm -rf /var/lib/apt/lists/*
-# Wed, 11 Sep 2019 23:29:23 GMT
+# Thu, 17 Oct 2019 00:25:51 GMT
 RUN set -ex; 	if ! command -v gpg > /dev/null; then 		apt-get update; 		apt-get install -y --no-install-recommends 			gnupg 			dirmngr 		; 		rm -rf /var/lib/apt/lists/*; 	fi
-# Wed, 11 Sep 2019 23:30:11 GMT
+# Thu, 17 Oct 2019 00:26:39 GMT
 RUN apt-get update && apt-get install -y --no-install-recommends 		git 		mercurial 		openssh-client 		subversion 				procps 	&& rm -rf /var/lib/apt/lists/*
-# Wed, 11 Sep 2019 23:32:37 GMT
+# Thu, 17 Oct 2019 00:29:08 GMT
 RUN set -ex; 	apt-get update; 	apt-get install -y --no-install-recommends 		autoconf 		automake 		bzip2 		dpkg-dev 		file 		g++ 		gcc 		imagemagick 		libbz2-dev 		libc6-dev 		libcurl4-openssl-dev 		libdb-dev 		libevent-dev 		libffi-dev 		libgdbm-dev 		libglib2.0-dev 		libgmp-dev 		libjpeg-dev 		libkrb5-dev 		liblzma-dev 		libmagickcore-dev 		libmagickwand-dev 		libmaxminddb-dev 		libncurses5-dev 		libncursesw5-dev 		libpng-dev 		libpq-dev 		libreadline-dev 		libsqlite3-dev 		libssl-dev 		libtool 		libwebp-dev 		libxml2-dev 		libxslt-dev 		libyaml-dev 		make 		patch 		unzip 		xz-utils 		zlib1g-dev 				$( 			if apt-cache show 'default-libmysqlclient-dev' 2>/dev/null | grep -q '^Version:'; then 				echo 'default-libmysqlclient-dev'; 			else 				echo 'libmysqlclient-dev'; 			fi 		) 	; 	rm -rf /var/lib/apt/lists/*
-# Thu, 12 Sep 2019 10:40:13 GMT
+# Thu, 17 Oct 2019 11:19:08 GMT
 RUN set -ex; 	if ! command -v gpg > /dev/null; then 		apt-get update; 		apt-get install -y --no-install-recommends 			gnupg 			dirmngr 		; 		rm -rf /var/lib/apt/lists/*; 	fi
-# Thu, 12 Sep 2019 10:40:14 GMT
+# Thu, 17 Oct 2019 11:19:09 GMT
 ENV GPG_KEYS=B215C1633BCA0477615F1B35A5B3A004745C015A 	B3C42148A44E6983B3E4CC0793FA9B1AB75C61B8 	90AA470469D3965A87A5DCB494D03953902C9419 	80F98B2E0DAB6C8281BDF541A7C8C3B2F71EDF1C 	7F74F97C103468EE5D750B583AB00996FC26A641 	33C235A34C46AA3FFB293709A328C3A2C3C45C06
-# Thu, 12 Sep 2019 10:40:17 GMT
+# Thu, 17 Oct 2019 11:19:12 GMT
 RUN set -ex; 	for key in $GPG_KEYS; do 		gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys "$key"; 	done
-# Thu, 12 Sep 2019 10:40:17 GMT
+# Thu, 17 Oct 2019 11:19:13 GMT
 ENV GCC_MIRRORS=https://ftpmirror.gnu.org/gcc 		https://bigsearcher.com/mirrors/gcc/releases 		https://mirrors-usa.go-parts.com/gcc/releases 		https://mirrors.concertpass.com/gcc/releases 		http://www.netgull.com/gcc/releases
-# Thu, 12 Sep 2019 12:12:35 GMT
+# Thu, 17 Oct 2019 12:48:16 GMT
 ENV GCC_VERSION=9.2.0
-# Thu, 12 Sep 2019 13:00:50 GMT
+# Thu, 17 Oct 2019 13:35:58 GMT
 RUN set -ex; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		dpkg-dev 		flex 	; 	rm -r /var/lib/apt/lists/*; 		_fetch() { 		local fetch="$1"; shift; 		local file="$1"; shift; 		for mirror in $GCC_MIRRORS; do 			if curl -fL "$mirror/$fetch" -o "$file"; then 				return 0; 			fi; 		done; 		echo >&2 "error: failed to download '$fetch' from several mirrors"; 		return 1; 	}; 		_fetch "gcc-$GCC_VERSION/gcc-$GCC_VERSION.tar.xz.sig" 'gcc.tar.xz.sig' 		|| _fetch "$GCC_VERSION/gcc-$GCC_VERSION.tar.xz.sig"; 	_fetch "gcc-$GCC_VERSION/gcc-$GCC_VERSION.tar.xz" 'gcc.tar.xz' 		|| _fetch "$GCC_VERSION/gcc-$GCC_VERSION.tar.xz" 'gcc.tar.xz'; 	gpg --batch --verify gcc.tar.xz.sig gcc.tar.xz; 	mkdir -p /usr/src/gcc; 	tar -xf gcc.tar.xz -C /usr/src/gcc --strip-components=1; 	rm gcc.tar.xz*; 		cd /usr/src/gcc; 		./contrib/download_prerequisites; 	{ rm *.tar.* || true; }; 		for f in config.guess config.sub; do 		wget -O "$f" "https://git.savannah.gnu.org/cgit/config.git/plain/$f?id=7d3d27baf8107b630586c962c057e22149653deb"; 		find -mindepth 2 -name "$f" -exec cp -v "$f" '{}' ';'; 	done; 		dir="$(mktemp -d)"; 	cd "$dir"; 		extraConfigureArgs=''; 	dpkgArch="$(dpkg --print-architecture)"; 	case "$dpkgArch" in 		armel) 			extraConfigureArgs="$extraConfigureArgs --with-arch=armv4t --with-float=soft" 			;; 		armhf) 			extraConfigureArgs="$extraConfigureArgs --with-arch=armv7-a --with-float=hard --with-fpu=vfpv3-d16 --with-mode=thumb" 			;; 				i386) 			osVersionID="$(set -e; . /etc/os-release; echo "$VERSION_ID")"; 			case "$osVersionID" in 				8) extraConfigureArgs="$extraConfigureArgs --with-arch-32=i586" ;; 				*) extraConfigureArgs="$extraConfigureArgs --with-arch-32=i686" ;; 			esac; 			;; 	esac; 		gnuArch="$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)"; 	/usr/src/gcc/configure 		--build="$gnuArch" 		--disable-multilib 		--enable-languages=c,c++,fortran,go 		$extraConfigureArgs 	; 	make -j "$(nproc)"; 	make install-strip; 		cd ..; 		rm -rf "$dir" /usr/src/gcc; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false
-# Thu, 12 Sep 2019 13:00:53 GMT
+# Thu, 17 Oct 2019 13:36:02 GMT
 RUN set -ex; 	echo '/usr/local/lib64' > /etc/ld.so.conf.d/local-lib64.conf; 	ldconfig -v
-# Thu, 12 Sep 2019 13:00:55 GMT
+# Thu, 17 Oct 2019 13:36:03 GMT
 RUN set -ex; 	dpkg-divert --divert /usr/bin/gcc.orig --rename /usr/bin/gcc; 	dpkg-divert --divert /usr/bin/g++.orig --rename /usr/bin/g++; 	dpkg-divert --divert /usr/bin/gfortran.orig --rename /usr/bin/gfortran; 	update-alternatives --install /usr/bin/cc cc /usr/local/bin/gcc 999
 ```
 
 -	Layers:
-	-	`sha256:a1188c71bb8b0f44792369b8880b4445a04cff52d183f2abce5207a0fa60f0db`  
-		Last Modified: Wed, 11 Sep 2019 22:56:38 GMT  
-		Size: 48.1 MB (48080876 bytes)  
+	-	`sha256:fbc660c6e95ccb3457d04b94c4a7c4a0dc07f31549e3b4b11540806aae928286`  
+		Last Modified: Wed, 16 Oct 2019 23:59:13 GMT  
+		Size: 48.1 MB (48088526 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:33f64e9913bed4e7b4d259eba3fd47756535467312efc0ec4ba074f2da038e5b`  
-		Last Modified: Wed, 11 Sep 2019 23:51:32 GMT  
-		Size: 7.3 MB (7346258 bytes)  
+	-	`sha256:5011b513b5639ad4cfa7d2278910a8299bdd679d14c525d5cdff4cfc44e9a396`  
+		Last Modified: Thu, 17 Oct 2019 00:48:12 GMT  
+		Size: 7.4 MB (7358286 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c03cbc1ba246fae55f9694d79f7413c94915e260ec9f422681aa0e32e237306f`  
-		Last Modified: Wed, 11 Sep 2019 23:51:32 GMT  
+	-	`sha256:649fb464536e65c6b3565235f549816862f81bf742a28e80507c446e430ef619`  
+		Last Modified: Thu, 17 Oct 2019 00:48:12 GMT  
 		Size: 9.7 MB (9686847 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:7a279bb26fc5498f1644093698f24c270e04ca08521123f9a5d0b5df57c98625`  
-		Last Modified: Wed, 11 Sep 2019 23:51:58 GMT  
-		Size: 49.5 MB (49518772 bytes)  
+	-	`sha256:9d918c39359c26561401ada6508713e3b1cf82f4bf804ed0bcf9997518fb855d`  
+		Last Modified: Thu, 17 Oct 2019 00:48:42 GMT  
+		Size: 49.5 MB (49521484 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:3dea6797fb74bbda0b8d798c8499f33b9fb5163ffa716a07484a581ffd69ac6e`  
-		Last Modified: Wed, 11 Sep 2019 23:52:55 GMT  
-		Size: 171.0 MB (170969582 bytes)  
+	-	`sha256:7f768bcab047369f910f6ba04a72c70f31faf33dc4a30bf3814fbcb9508c94a9`  
+		Last Modified: Thu, 17 Oct 2019 00:49:34 GMT  
+		Size: 171.0 MB (170974646 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:fe9226e273faefc5751a775b06d71c4c172bcaf84df7ba4022b6993c5441e4d6`  
-		Last Modified: Thu, 12 Sep 2019 13:01:53 GMT  
-		Size: 11.6 KB (11602 bytes)  
+	-	`sha256:8cc381fc0a62aeb746b9905cb87a3d9cafe299a22a830efd27aabf08b4911df7`  
+		Last Modified: Thu, 17 Oct 2019 13:37:03 GMT  
+		Size: 11.6 KB (11604 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:7f78e730aa13433b51e11a65dbf345757f3fa5ed9dcc0cf6ff76bd700159ffa8`  
-		Last Modified: Thu, 12 Sep 2019 13:03:35 GMT  
-		Size: 84.0 MB (83956245 bytes)  
+	-	`sha256:aecb171cf506f37bb3da191fd994ab03aa6637ef608b0379b8876ce6f7b523cf`  
+		Last Modified: Thu, 17 Oct 2019 13:38:49 GMT  
+		Size: 84.0 MB (83955889 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c3a00677e26a437c7cc25ba16f6205b7de1471afbf59e1ab96b61f9f227d9a94`  
-		Last Modified: Thu, 12 Sep 2019 13:03:06 GMT  
-		Size: 11.1 KB (11138 bytes)  
+	-	`sha256:4c1e9318cc71b894b03e167baa1ec24f26a35a880ad153adfbfe07d3dfa136c9`  
+		Last Modified: Thu, 17 Oct 2019 13:38:19 GMT  
+		Size: 11.2 KB (11151 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:b320aa0fb473bac2efd0cc115abbad5593f16dcc6ea598f55164c41c28582326`  
-		Last Modified: Thu, 12 Sep 2019 13:03:06 GMT  
-		Size: 1.9 KB (1948 bytes)  
+	-	`sha256:b704f882d0be893e48711631cb3a6e23eef9663c2853f2c9abd313ed9a2904a6`  
+		Last Modified: Thu, 17 Oct 2019 13:38:19 GMT  
+		Size: 1.9 KB (1940 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `gcc:9` - linux; arm variant v7
@@ -4306,7 +4306,7 @@ RUN set -ex; 	dpkg-divert --divert /usr/bin/gcc.orig --rename /usr/bin/gcc; 	dpk
 ## `gcc:9.2`
 
 ```console
-$ docker pull gcc@sha256:c0f4919207ad6d73dad9f98e532f1cb224159e9c7d0a257665564526ae85bf7f
+$ docker pull gcc@sha256:eb6dd61d3040f4132c957331e3e238ed97f824978889f48e0cf3e21cbd16a9d9
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -4403,83 +4403,83 @@ RUN set -ex; 	dpkg-divert --divert /usr/bin/gcc.orig --rename /usr/bin/gcc; 	dpk
 ### `gcc:9.2` - linux; arm variant v5
 
 ```console
-$ docker pull gcc@sha256:44ec6163595c934cc59d2bb40c5f7a936c86ea96b685684daebcd8d42967139e
+$ docker pull gcc@sha256:936f38cb6bdbd80003fc7131b8772254cc6e7523f0ff8589e6f0a176a81f615d
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **369.6 MB (369583268 bytes)**  
+-	Total Size: **369.6 MB (369610373 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:ed5dd470d0eb6862da7b70063ca9e5f0a48a23349381dde1208119d214db5301`
+-	Image ID: `sha256:ee0dd071dd4ad713d3d3bfcc44505545be8c9b9a78ef379aa30a4185465f52e6`
 -	Default Command: `["bash"]`
 
 ```dockerfile
-# Wed, 11 Sep 2019 22:49:23 GMT
-ADD file:c8a27f0444070cda03b0c725efe2029ac4d252caf23df60b563d3428c5c9ae68 in / 
-# Wed, 11 Sep 2019 22:49:24 GMT
+# Wed, 16 Oct 2019 23:51:41 GMT
+ADD file:973269fc84c93672e5b6aed0fc83691c324334705ff78170de37b2646dfc33cd in / 
+# Wed, 16 Oct 2019 23:51:42 GMT
 CMD ["bash"]
-# Wed, 11 Sep 2019 23:29:06 GMT
+# Thu, 17 Oct 2019 00:25:37 GMT
 RUN apt-get update && apt-get install -y --no-install-recommends 		ca-certificates 		curl 		netbase 		wget 	&& rm -rf /var/lib/apt/lists/*
-# Wed, 11 Sep 2019 23:29:23 GMT
+# Thu, 17 Oct 2019 00:25:51 GMT
 RUN set -ex; 	if ! command -v gpg > /dev/null; then 		apt-get update; 		apt-get install -y --no-install-recommends 			gnupg 			dirmngr 		; 		rm -rf /var/lib/apt/lists/*; 	fi
-# Wed, 11 Sep 2019 23:30:11 GMT
+# Thu, 17 Oct 2019 00:26:39 GMT
 RUN apt-get update && apt-get install -y --no-install-recommends 		git 		mercurial 		openssh-client 		subversion 				procps 	&& rm -rf /var/lib/apt/lists/*
-# Wed, 11 Sep 2019 23:32:37 GMT
+# Thu, 17 Oct 2019 00:29:08 GMT
 RUN set -ex; 	apt-get update; 	apt-get install -y --no-install-recommends 		autoconf 		automake 		bzip2 		dpkg-dev 		file 		g++ 		gcc 		imagemagick 		libbz2-dev 		libc6-dev 		libcurl4-openssl-dev 		libdb-dev 		libevent-dev 		libffi-dev 		libgdbm-dev 		libglib2.0-dev 		libgmp-dev 		libjpeg-dev 		libkrb5-dev 		liblzma-dev 		libmagickcore-dev 		libmagickwand-dev 		libmaxminddb-dev 		libncurses5-dev 		libncursesw5-dev 		libpng-dev 		libpq-dev 		libreadline-dev 		libsqlite3-dev 		libssl-dev 		libtool 		libwebp-dev 		libxml2-dev 		libxslt-dev 		libyaml-dev 		make 		patch 		unzip 		xz-utils 		zlib1g-dev 				$( 			if apt-cache show 'default-libmysqlclient-dev' 2>/dev/null | grep -q '^Version:'; then 				echo 'default-libmysqlclient-dev'; 			else 				echo 'libmysqlclient-dev'; 			fi 		) 	; 	rm -rf /var/lib/apt/lists/*
-# Thu, 12 Sep 2019 10:40:13 GMT
+# Thu, 17 Oct 2019 11:19:08 GMT
 RUN set -ex; 	if ! command -v gpg > /dev/null; then 		apt-get update; 		apt-get install -y --no-install-recommends 			gnupg 			dirmngr 		; 		rm -rf /var/lib/apt/lists/*; 	fi
-# Thu, 12 Sep 2019 10:40:14 GMT
+# Thu, 17 Oct 2019 11:19:09 GMT
 ENV GPG_KEYS=B215C1633BCA0477615F1B35A5B3A004745C015A 	B3C42148A44E6983B3E4CC0793FA9B1AB75C61B8 	90AA470469D3965A87A5DCB494D03953902C9419 	80F98B2E0DAB6C8281BDF541A7C8C3B2F71EDF1C 	7F74F97C103468EE5D750B583AB00996FC26A641 	33C235A34C46AA3FFB293709A328C3A2C3C45C06
-# Thu, 12 Sep 2019 10:40:17 GMT
+# Thu, 17 Oct 2019 11:19:12 GMT
 RUN set -ex; 	for key in $GPG_KEYS; do 		gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys "$key"; 	done
-# Thu, 12 Sep 2019 10:40:17 GMT
+# Thu, 17 Oct 2019 11:19:13 GMT
 ENV GCC_MIRRORS=https://ftpmirror.gnu.org/gcc 		https://bigsearcher.com/mirrors/gcc/releases 		https://mirrors-usa.go-parts.com/gcc/releases 		https://mirrors.concertpass.com/gcc/releases 		http://www.netgull.com/gcc/releases
-# Thu, 12 Sep 2019 12:12:35 GMT
+# Thu, 17 Oct 2019 12:48:16 GMT
 ENV GCC_VERSION=9.2.0
-# Thu, 12 Sep 2019 13:00:50 GMT
+# Thu, 17 Oct 2019 13:35:58 GMT
 RUN set -ex; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		dpkg-dev 		flex 	; 	rm -r /var/lib/apt/lists/*; 		_fetch() { 		local fetch="$1"; shift; 		local file="$1"; shift; 		for mirror in $GCC_MIRRORS; do 			if curl -fL "$mirror/$fetch" -o "$file"; then 				return 0; 			fi; 		done; 		echo >&2 "error: failed to download '$fetch' from several mirrors"; 		return 1; 	}; 		_fetch "gcc-$GCC_VERSION/gcc-$GCC_VERSION.tar.xz.sig" 'gcc.tar.xz.sig' 		|| _fetch "$GCC_VERSION/gcc-$GCC_VERSION.tar.xz.sig"; 	_fetch "gcc-$GCC_VERSION/gcc-$GCC_VERSION.tar.xz" 'gcc.tar.xz' 		|| _fetch "$GCC_VERSION/gcc-$GCC_VERSION.tar.xz" 'gcc.tar.xz'; 	gpg --batch --verify gcc.tar.xz.sig gcc.tar.xz; 	mkdir -p /usr/src/gcc; 	tar -xf gcc.tar.xz -C /usr/src/gcc --strip-components=1; 	rm gcc.tar.xz*; 		cd /usr/src/gcc; 		./contrib/download_prerequisites; 	{ rm *.tar.* || true; }; 		for f in config.guess config.sub; do 		wget -O "$f" "https://git.savannah.gnu.org/cgit/config.git/plain/$f?id=7d3d27baf8107b630586c962c057e22149653deb"; 		find -mindepth 2 -name "$f" -exec cp -v "$f" '{}' ';'; 	done; 		dir="$(mktemp -d)"; 	cd "$dir"; 		extraConfigureArgs=''; 	dpkgArch="$(dpkg --print-architecture)"; 	case "$dpkgArch" in 		armel) 			extraConfigureArgs="$extraConfigureArgs --with-arch=armv4t --with-float=soft" 			;; 		armhf) 			extraConfigureArgs="$extraConfigureArgs --with-arch=armv7-a --with-float=hard --with-fpu=vfpv3-d16 --with-mode=thumb" 			;; 				i386) 			osVersionID="$(set -e; . /etc/os-release; echo "$VERSION_ID")"; 			case "$osVersionID" in 				8) extraConfigureArgs="$extraConfigureArgs --with-arch-32=i586" ;; 				*) extraConfigureArgs="$extraConfigureArgs --with-arch-32=i686" ;; 			esac; 			;; 	esac; 		gnuArch="$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)"; 	/usr/src/gcc/configure 		--build="$gnuArch" 		--disable-multilib 		--enable-languages=c,c++,fortran,go 		$extraConfigureArgs 	; 	make -j "$(nproc)"; 	make install-strip; 		cd ..; 		rm -rf "$dir" /usr/src/gcc; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false
-# Thu, 12 Sep 2019 13:00:53 GMT
+# Thu, 17 Oct 2019 13:36:02 GMT
 RUN set -ex; 	echo '/usr/local/lib64' > /etc/ld.so.conf.d/local-lib64.conf; 	ldconfig -v
-# Thu, 12 Sep 2019 13:00:55 GMT
+# Thu, 17 Oct 2019 13:36:03 GMT
 RUN set -ex; 	dpkg-divert --divert /usr/bin/gcc.orig --rename /usr/bin/gcc; 	dpkg-divert --divert /usr/bin/g++.orig --rename /usr/bin/g++; 	dpkg-divert --divert /usr/bin/gfortran.orig --rename /usr/bin/gfortran; 	update-alternatives --install /usr/bin/cc cc /usr/local/bin/gcc 999
 ```
 
 -	Layers:
-	-	`sha256:a1188c71bb8b0f44792369b8880b4445a04cff52d183f2abce5207a0fa60f0db`  
-		Last Modified: Wed, 11 Sep 2019 22:56:38 GMT  
-		Size: 48.1 MB (48080876 bytes)  
+	-	`sha256:fbc660c6e95ccb3457d04b94c4a7c4a0dc07f31549e3b4b11540806aae928286`  
+		Last Modified: Wed, 16 Oct 2019 23:59:13 GMT  
+		Size: 48.1 MB (48088526 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:33f64e9913bed4e7b4d259eba3fd47756535467312efc0ec4ba074f2da038e5b`  
-		Last Modified: Wed, 11 Sep 2019 23:51:32 GMT  
-		Size: 7.3 MB (7346258 bytes)  
+	-	`sha256:5011b513b5639ad4cfa7d2278910a8299bdd679d14c525d5cdff4cfc44e9a396`  
+		Last Modified: Thu, 17 Oct 2019 00:48:12 GMT  
+		Size: 7.4 MB (7358286 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c03cbc1ba246fae55f9694d79f7413c94915e260ec9f422681aa0e32e237306f`  
-		Last Modified: Wed, 11 Sep 2019 23:51:32 GMT  
+	-	`sha256:649fb464536e65c6b3565235f549816862f81bf742a28e80507c446e430ef619`  
+		Last Modified: Thu, 17 Oct 2019 00:48:12 GMT  
 		Size: 9.7 MB (9686847 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:7a279bb26fc5498f1644093698f24c270e04ca08521123f9a5d0b5df57c98625`  
-		Last Modified: Wed, 11 Sep 2019 23:51:58 GMT  
-		Size: 49.5 MB (49518772 bytes)  
+	-	`sha256:9d918c39359c26561401ada6508713e3b1cf82f4bf804ed0bcf9997518fb855d`  
+		Last Modified: Thu, 17 Oct 2019 00:48:42 GMT  
+		Size: 49.5 MB (49521484 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:3dea6797fb74bbda0b8d798c8499f33b9fb5163ffa716a07484a581ffd69ac6e`  
-		Last Modified: Wed, 11 Sep 2019 23:52:55 GMT  
-		Size: 171.0 MB (170969582 bytes)  
+	-	`sha256:7f768bcab047369f910f6ba04a72c70f31faf33dc4a30bf3814fbcb9508c94a9`  
+		Last Modified: Thu, 17 Oct 2019 00:49:34 GMT  
+		Size: 171.0 MB (170974646 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:fe9226e273faefc5751a775b06d71c4c172bcaf84df7ba4022b6993c5441e4d6`  
-		Last Modified: Thu, 12 Sep 2019 13:01:53 GMT  
-		Size: 11.6 KB (11602 bytes)  
+	-	`sha256:8cc381fc0a62aeb746b9905cb87a3d9cafe299a22a830efd27aabf08b4911df7`  
+		Last Modified: Thu, 17 Oct 2019 13:37:03 GMT  
+		Size: 11.6 KB (11604 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:7f78e730aa13433b51e11a65dbf345757f3fa5ed9dcc0cf6ff76bd700159ffa8`  
-		Last Modified: Thu, 12 Sep 2019 13:03:35 GMT  
-		Size: 84.0 MB (83956245 bytes)  
+	-	`sha256:aecb171cf506f37bb3da191fd994ab03aa6637ef608b0379b8876ce6f7b523cf`  
+		Last Modified: Thu, 17 Oct 2019 13:38:49 GMT  
+		Size: 84.0 MB (83955889 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c3a00677e26a437c7cc25ba16f6205b7de1471afbf59e1ab96b61f9f227d9a94`  
-		Last Modified: Thu, 12 Sep 2019 13:03:06 GMT  
-		Size: 11.1 KB (11138 bytes)  
+	-	`sha256:4c1e9318cc71b894b03e167baa1ec24f26a35a880ad153adfbfe07d3dfa136c9`  
+		Last Modified: Thu, 17 Oct 2019 13:38:19 GMT  
+		Size: 11.2 KB (11151 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:b320aa0fb473bac2efd0cc115abbad5593f16dcc6ea598f55164c41c28582326`  
-		Last Modified: Thu, 12 Sep 2019 13:03:06 GMT  
-		Size: 1.9 KB (1948 bytes)  
+	-	`sha256:b704f882d0be893e48711631cb3a6e23eef9663c2853f2c9abd313ed9a2904a6`  
+		Last Modified: Thu, 17 Oct 2019 13:38:19 GMT  
+		Size: 1.9 KB (1940 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `gcc:9.2` - linux; arm variant v7
@@ -4813,7 +4813,7 @@ RUN set -ex; 	dpkg-divert --divert /usr/bin/gcc.orig --rename /usr/bin/gcc; 	dpk
 ## `gcc:9.2.0`
 
 ```console
-$ docker pull gcc@sha256:c0f4919207ad6d73dad9f98e532f1cb224159e9c7d0a257665564526ae85bf7f
+$ docker pull gcc@sha256:eb6dd61d3040f4132c957331e3e238ed97f824978889f48e0cf3e21cbd16a9d9
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -4910,83 +4910,83 @@ RUN set -ex; 	dpkg-divert --divert /usr/bin/gcc.orig --rename /usr/bin/gcc; 	dpk
 ### `gcc:9.2.0` - linux; arm variant v5
 
 ```console
-$ docker pull gcc@sha256:44ec6163595c934cc59d2bb40c5f7a936c86ea96b685684daebcd8d42967139e
+$ docker pull gcc@sha256:936f38cb6bdbd80003fc7131b8772254cc6e7523f0ff8589e6f0a176a81f615d
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **369.6 MB (369583268 bytes)**  
+-	Total Size: **369.6 MB (369610373 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:ed5dd470d0eb6862da7b70063ca9e5f0a48a23349381dde1208119d214db5301`
+-	Image ID: `sha256:ee0dd071dd4ad713d3d3bfcc44505545be8c9b9a78ef379aa30a4185465f52e6`
 -	Default Command: `["bash"]`
 
 ```dockerfile
-# Wed, 11 Sep 2019 22:49:23 GMT
-ADD file:c8a27f0444070cda03b0c725efe2029ac4d252caf23df60b563d3428c5c9ae68 in / 
-# Wed, 11 Sep 2019 22:49:24 GMT
+# Wed, 16 Oct 2019 23:51:41 GMT
+ADD file:973269fc84c93672e5b6aed0fc83691c324334705ff78170de37b2646dfc33cd in / 
+# Wed, 16 Oct 2019 23:51:42 GMT
 CMD ["bash"]
-# Wed, 11 Sep 2019 23:29:06 GMT
+# Thu, 17 Oct 2019 00:25:37 GMT
 RUN apt-get update && apt-get install -y --no-install-recommends 		ca-certificates 		curl 		netbase 		wget 	&& rm -rf /var/lib/apt/lists/*
-# Wed, 11 Sep 2019 23:29:23 GMT
+# Thu, 17 Oct 2019 00:25:51 GMT
 RUN set -ex; 	if ! command -v gpg > /dev/null; then 		apt-get update; 		apt-get install -y --no-install-recommends 			gnupg 			dirmngr 		; 		rm -rf /var/lib/apt/lists/*; 	fi
-# Wed, 11 Sep 2019 23:30:11 GMT
+# Thu, 17 Oct 2019 00:26:39 GMT
 RUN apt-get update && apt-get install -y --no-install-recommends 		git 		mercurial 		openssh-client 		subversion 				procps 	&& rm -rf /var/lib/apt/lists/*
-# Wed, 11 Sep 2019 23:32:37 GMT
+# Thu, 17 Oct 2019 00:29:08 GMT
 RUN set -ex; 	apt-get update; 	apt-get install -y --no-install-recommends 		autoconf 		automake 		bzip2 		dpkg-dev 		file 		g++ 		gcc 		imagemagick 		libbz2-dev 		libc6-dev 		libcurl4-openssl-dev 		libdb-dev 		libevent-dev 		libffi-dev 		libgdbm-dev 		libglib2.0-dev 		libgmp-dev 		libjpeg-dev 		libkrb5-dev 		liblzma-dev 		libmagickcore-dev 		libmagickwand-dev 		libmaxminddb-dev 		libncurses5-dev 		libncursesw5-dev 		libpng-dev 		libpq-dev 		libreadline-dev 		libsqlite3-dev 		libssl-dev 		libtool 		libwebp-dev 		libxml2-dev 		libxslt-dev 		libyaml-dev 		make 		patch 		unzip 		xz-utils 		zlib1g-dev 				$( 			if apt-cache show 'default-libmysqlclient-dev' 2>/dev/null | grep -q '^Version:'; then 				echo 'default-libmysqlclient-dev'; 			else 				echo 'libmysqlclient-dev'; 			fi 		) 	; 	rm -rf /var/lib/apt/lists/*
-# Thu, 12 Sep 2019 10:40:13 GMT
+# Thu, 17 Oct 2019 11:19:08 GMT
 RUN set -ex; 	if ! command -v gpg > /dev/null; then 		apt-get update; 		apt-get install -y --no-install-recommends 			gnupg 			dirmngr 		; 		rm -rf /var/lib/apt/lists/*; 	fi
-# Thu, 12 Sep 2019 10:40:14 GMT
+# Thu, 17 Oct 2019 11:19:09 GMT
 ENV GPG_KEYS=B215C1633BCA0477615F1B35A5B3A004745C015A 	B3C42148A44E6983B3E4CC0793FA9B1AB75C61B8 	90AA470469D3965A87A5DCB494D03953902C9419 	80F98B2E0DAB6C8281BDF541A7C8C3B2F71EDF1C 	7F74F97C103468EE5D750B583AB00996FC26A641 	33C235A34C46AA3FFB293709A328C3A2C3C45C06
-# Thu, 12 Sep 2019 10:40:17 GMT
+# Thu, 17 Oct 2019 11:19:12 GMT
 RUN set -ex; 	for key in $GPG_KEYS; do 		gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys "$key"; 	done
-# Thu, 12 Sep 2019 10:40:17 GMT
+# Thu, 17 Oct 2019 11:19:13 GMT
 ENV GCC_MIRRORS=https://ftpmirror.gnu.org/gcc 		https://bigsearcher.com/mirrors/gcc/releases 		https://mirrors-usa.go-parts.com/gcc/releases 		https://mirrors.concertpass.com/gcc/releases 		http://www.netgull.com/gcc/releases
-# Thu, 12 Sep 2019 12:12:35 GMT
+# Thu, 17 Oct 2019 12:48:16 GMT
 ENV GCC_VERSION=9.2.0
-# Thu, 12 Sep 2019 13:00:50 GMT
+# Thu, 17 Oct 2019 13:35:58 GMT
 RUN set -ex; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		dpkg-dev 		flex 	; 	rm -r /var/lib/apt/lists/*; 		_fetch() { 		local fetch="$1"; shift; 		local file="$1"; shift; 		for mirror in $GCC_MIRRORS; do 			if curl -fL "$mirror/$fetch" -o "$file"; then 				return 0; 			fi; 		done; 		echo >&2 "error: failed to download '$fetch' from several mirrors"; 		return 1; 	}; 		_fetch "gcc-$GCC_VERSION/gcc-$GCC_VERSION.tar.xz.sig" 'gcc.tar.xz.sig' 		|| _fetch "$GCC_VERSION/gcc-$GCC_VERSION.tar.xz.sig"; 	_fetch "gcc-$GCC_VERSION/gcc-$GCC_VERSION.tar.xz" 'gcc.tar.xz' 		|| _fetch "$GCC_VERSION/gcc-$GCC_VERSION.tar.xz" 'gcc.tar.xz'; 	gpg --batch --verify gcc.tar.xz.sig gcc.tar.xz; 	mkdir -p /usr/src/gcc; 	tar -xf gcc.tar.xz -C /usr/src/gcc --strip-components=1; 	rm gcc.tar.xz*; 		cd /usr/src/gcc; 		./contrib/download_prerequisites; 	{ rm *.tar.* || true; }; 		for f in config.guess config.sub; do 		wget -O "$f" "https://git.savannah.gnu.org/cgit/config.git/plain/$f?id=7d3d27baf8107b630586c962c057e22149653deb"; 		find -mindepth 2 -name "$f" -exec cp -v "$f" '{}' ';'; 	done; 		dir="$(mktemp -d)"; 	cd "$dir"; 		extraConfigureArgs=''; 	dpkgArch="$(dpkg --print-architecture)"; 	case "$dpkgArch" in 		armel) 			extraConfigureArgs="$extraConfigureArgs --with-arch=armv4t --with-float=soft" 			;; 		armhf) 			extraConfigureArgs="$extraConfigureArgs --with-arch=armv7-a --with-float=hard --with-fpu=vfpv3-d16 --with-mode=thumb" 			;; 				i386) 			osVersionID="$(set -e; . /etc/os-release; echo "$VERSION_ID")"; 			case "$osVersionID" in 				8) extraConfigureArgs="$extraConfigureArgs --with-arch-32=i586" ;; 				*) extraConfigureArgs="$extraConfigureArgs --with-arch-32=i686" ;; 			esac; 			;; 	esac; 		gnuArch="$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)"; 	/usr/src/gcc/configure 		--build="$gnuArch" 		--disable-multilib 		--enable-languages=c,c++,fortran,go 		$extraConfigureArgs 	; 	make -j "$(nproc)"; 	make install-strip; 		cd ..; 		rm -rf "$dir" /usr/src/gcc; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false
-# Thu, 12 Sep 2019 13:00:53 GMT
+# Thu, 17 Oct 2019 13:36:02 GMT
 RUN set -ex; 	echo '/usr/local/lib64' > /etc/ld.so.conf.d/local-lib64.conf; 	ldconfig -v
-# Thu, 12 Sep 2019 13:00:55 GMT
+# Thu, 17 Oct 2019 13:36:03 GMT
 RUN set -ex; 	dpkg-divert --divert /usr/bin/gcc.orig --rename /usr/bin/gcc; 	dpkg-divert --divert /usr/bin/g++.orig --rename /usr/bin/g++; 	dpkg-divert --divert /usr/bin/gfortran.orig --rename /usr/bin/gfortran; 	update-alternatives --install /usr/bin/cc cc /usr/local/bin/gcc 999
 ```
 
 -	Layers:
-	-	`sha256:a1188c71bb8b0f44792369b8880b4445a04cff52d183f2abce5207a0fa60f0db`  
-		Last Modified: Wed, 11 Sep 2019 22:56:38 GMT  
-		Size: 48.1 MB (48080876 bytes)  
+	-	`sha256:fbc660c6e95ccb3457d04b94c4a7c4a0dc07f31549e3b4b11540806aae928286`  
+		Last Modified: Wed, 16 Oct 2019 23:59:13 GMT  
+		Size: 48.1 MB (48088526 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:33f64e9913bed4e7b4d259eba3fd47756535467312efc0ec4ba074f2da038e5b`  
-		Last Modified: Wed, 11 Sep 2019 23:51:32 GMT  
-		Size: 7.3 MB (7346258 bytes)  
+	-	`sha256:5011b513b5639ad4cfa7d2278910a8299bdd679d14c525d5cdff4cfc44e9a396`  
+		Last Modified: Thu, 17 Oct 2019 00:48:12 GMT  
+		Size: 7.4 MB (7358286 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c03cbc1ba246fae55f9694d79f7413c94915e260ec9f422681aa0e32e237306f`  
-		Last Modified: Wed, 11 Sep 2019 23:51:32 GMT  
+	-	`sha256:649fb464536e65c6b3565235f549816862f81bf742a28e80507c446e430ef619`  
+		Last Modified: Thu, 17 Oct 2019 00:48:12 GMT  
 		Size: 9.7 MB (9686847 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:7a279bb26fc5498f1644093698f24c270e04ca08521123f9a5d0b5df57c98625`  
-		Last Modified: Wed, 11 Sep 2019 23:51:58 GMT  
-		Size: 49.5 MB (49518772 bytes)  
+	-	`sha256:9d918c39359c26561401ada6508713e3b1cf82f4bf804ed0bcf9997518fb855d`  
+		Last Modified: Thu, 17 Oct 2019 00:48:42 GMT  
+		Size: 49.5 MB (49521484 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:3dea6797fb74bbda0b8d798c8499f33b9fb5163ffa716a07484a581ffd69ac6e`  
-		Last Modified: Wed, 11 Sep 2019 23:52:55 GMT  
-		Size: 171.0 MB (170969582 bytes)  
+	-	`sha256:7f768bcab047369f910f6ba04a72c70f31faf33dc4a30bf3814fbcb9508c94a9`  
+		Last Modified: Thu, 17 Oct 2019 00:49:34 GMT  
+		Size: 171.0 MB (170974646 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:fe9226e273faefc5751a775b06d71c4c172bcaf84df7ba4022b6993c5441e4d6`  
-		Last Modified: Thu, 12 Sep 2019 13:01:53 GMT  
-		Size: 11.6 KB (11602 bytes)  
+	-	`sha256:8cc381fc0a62aeb746b9905cb87a3d9cafe299a22a830efd27aabf08b4911df7`  
+		Last Modified: Thu, 17 Oct 2019 13:37:03 GMT  
+		Size: 11.6 KB (11604 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:7f78e730aa13433b51e11a65dbf345757f3fa5ed9dcc0cf6ff76bd700159ffa8`  
-		Last Modified: Thu, 12 Sep 2019 13:03:35 GMT  
-		Size: 84.0 MB (83956245 bytes)  
+	-	`sha256:aecb171cf506f37bb3da191fd994ab03aa6637ef608b0379b8876ce6f7b523cf`  
+		Last Modified: Thu, 17 Oct 2019 13:38:49 GMT  
+		Size: 84.0 MB (83955889 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c3a00677e26a437c7cc25ba16f6205b7de1471afbf59e1ab96b61f9f227d9a94`  
-		Last Modified: Thu, 12 Sep 2019 13:03:06 GMT  
-		Size: 11.1 KB (11138 bytes)  
+	-	`sha256:4c1e9318cc71b894b03e167baa1ec24f26a35a880ad153adfbfe07d3dfa136c9`  
+		Last Modified: Thu, 17 Oct 2019 13:38:19 GMT  
+		Size: 11.2 KB (11151 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:b320aa0fb473bac2efd0cc115abbad5593f16dcc6ea598f55164c41c28582326`  
-		Last Modified: Thu, 12 Sep 2019 13:03:06 GMT  
-		Size: 1.9 KB (1948 bytes)  
+	-	`sha256:b704f882d0be893e48711631cb3a6e23eef9663c2853f2c9abd313ed9a2904a6`  
+		Last Modified: Thu, 17 Oct 2019 13:38:19 GMT  
+		Size: 1.9 KB (1940 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `gcc:9.2.0` - linux; arm variant v7
@@ -5320,7 +5320,7 @@ RUN set -ex; 	dpkg-divert --divert /usr/bin/gcc.orig --rename /usr/bin/gcc; 	dpk
 ## `gcc:latest`
 
 ```console
-$ docker pull gcc@sha256:c0f4919207ad6d73dad9f98e532f1cb224159e9c7d0a257665564526ae85bf7f
+$ docker pull gcc@sha256:eb6dd61d3040f4132c957331e3e238ed97f824978889f48e0cf3e21cbd16a9d9
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -5417,83 +5417,83 @@ RUN set -ex; 	dpkg-divert --divert /usr/bin/gcc.orig --rename /usr/bin/gcc; 	dpk
 ### `gcc:latest` - linux; arm variant v5
 
 ```console
-$ docker pull gcc@sha256:44ec6163595c934cc59d2bb40c5f7a936c86ea96b685684daebcd8d42967139e
+$ docker pull gcc@sha256:936f38cb6bdbd80003fc7131b8772254cc6e7523f0ff8589e6f0a176a81f615d
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **369.6 MB (369583268 bytes)**  
+-	Total Size: **369.6 MB (369610373 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:ed5dd470d0eb6862da7b70063ca9e5f0a48a23349381dde1208119d214db5301`
+-	Image ID: `sha256:ee0dd071dd4ad713d3d3bfcc44505545be8c9b9a78ef379aa30a4185465f52e6`
 -	Default Command: `["bash"]`
 
 ```dockerfile
-# Wed, 11 Sep 2019 22:49:23 GMT
-ADD file:c8a27f0444070cda03b0c725efe2029ac4d252caf23df60b563d3428c5c9ae68 in / 
-# Wed, 11 Sep 2019 22:49:24 GMT
+# Wed, 16 Oct 2019 23:51:41 GMT
+ADD file:973269fc84c93672e5b6aed0fc83691c324334705ff78170de37b2646dfc33cd in / 
+# Wed, 16 Oct 2019 23:51:42 GMT
 CMD ["bash"]
-# Wed, 11 Sep 2019 23:29:06 GMT
+# Thu, 17 Oct 2019 00:25:37 GMT
 RUN apt-get update && apt-get install -y --no-install-recommends 		ca-certificates 		curl 		netbase 		wget 	&& rm -rf /var/lib/apt/lists/*
-# Wed, 11 Sep 2019 23:29:23 GMT
+# Thu, 17 Oct 2019 00:25:51 GMT
 RUN set -ex; 	if ! command -v gpg > /dev/null; then 		apt-get update; 		apt-get install -y --no-install-recommends 			gnupg 			dirmngr 		; 		rm -rf /var/lib/apt/lists/*; 	fi
-# Wed, 11 Sep 2019 23:30:11 GMT
+# Thu, 17 Oct 2019 00:26:39 GMT
 RUN apt-get update && apt-get install -y --no-install-recommends 		git 		mercurial 		openssh-client 		subversion 				procps 	&& rm -rf /var/lib/apt/lists/*
-# Wed, 11 Sep 2019 23:32:37 GMT
+# Thu, 17 Oct 2019 00:29:08 GMT
 RUN set -ex; 	apt-get update; 	apt-get install -y --no-install-recommends 		autoconf 		automake 		bzip2 		dpkg-dev 		file 		g++ 		gcc 		imagemagick 		libbz2-dev 		libc6-dev 		libcurl4-openssl-dev 		libdb-dev 		libevent-dev 		libffi-dev 		libgdbm-dev 		libglib2.0-dev 		libgmp-dev 		libjpeg-dev 		libkrb5-dev 		liblzma-dev 		libmagickcore-dev 		libmagickwand-dev 		libmaxminddb-dev 		libncurses5-dev 		libncursesw5-dev 		libpng-dev 		libpq-dev 		libreadline-dev 		libsqlite3-dev 		libssl-dev 		libtool 		libwebp-dev 		libxml2-dev 		libxslt-dev 		libyaml-dev 		make 		patch 		unzip 		xz-utils 		zlib1g-dev 				$( 			if apt-cache show 'default-libmysqlclient-dev' 2>/dev/null | grep -q '^Version:'; then 				echo 'default-libmysqlclient-dev'; 			else 				echo 'libmysqlclient-dev'; 			fi 		) 	; 	rm -rf /var/lib/apt/lists/*
-# Thu, 12 Sep 2019 10:40:13 GMT
+# Thu, 17 Oct 2019 11:19:08 GMT
 RUN set -ex; 	if ! command -v gpg > /dev/null; then 		apt-get update; 		apt-get install -y --no-install-recommends 			gnupg 			dirmngr 		; 		rm -rf /var/lib/apt/lists/*; 	fi
-# Thu, 12 Sep 2019 10:40:14 GMT
+# Thu, 17 Oct 2019 11:19:09 GMT
 ENV GPG_KEYS=B215C1633BCA0477615F1B35A5B3A004745C015A 	B3C42148A44E6983B3E4CC0793FA9B1AB75C61B8 	90AA470469D3965A87A5DCB494D03953902C9419 	80F98B2E0DAB6C8281BDF541A7C8C3B2F71EDF1C 	7F74F97C103468EE5D750B583AB00996FC26A641 	33C235A34C46AA3FFB293709A328C3A2C3C45C06
-# Thu, 12 Sep 2019 10:40:17 GMT
+# Thu, 17 Oct 2019 11:19:12 GMT
 RUN set -ex; 	for key in $GPG_KEYS; do 		gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys "$key"; 	done
-# Thu, 12 Sep 2019 10:40:17 GMT
+# Thu, 17 Oct 2019 11:19:13 GMT
 ENV GCC_MIRRORS=https://ftpmirror.gnu.org/gcc 		https://bigsearcher.com/mirrors/gcc/releases 		https://mirrors-usa.go-parts.com/gcc/releases 		https://mirrors.concertpass.com/gcc/releases 		http://www.netgull.com/gcc/releases
-# Thu, 12 Sep 2019 12:12:35 GMT
+# Thu, 17 Oct 2019 12:48:16 GMT
 ENV GCC_VERSION=9.2.0
-# Thu, 12 Sep 2019 13:00:50 GMT
+# Thu, 17 Oct 2019 13:35:58 GMT
 RUN set -ex; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		dpkg-dev 		flex 	; 	rm -r /var/lib/apt/lists/*; 		_fetch() { 		local fetch="$1"; shift; 		local file="$1"; shift; 		for mirror in $GCC_MIRRORS; do 			if curl -fL "$mirror/$fetch" -o "$file"; then 				return 0; 			fi; 		done; 		echo >&2 "error: failed to download '$fetch' from several mirrors"; 		return 1; 	}; 		_fetch "gcc-$GCC_VERSION/gcc-$GCC_VERSION.tar.xz.sig" 'gcc.tar.xz.sig' 		|| _fetch "$GCC_VERSION/gcc-$GCC_VERSION.tar.xz.sig"; 	_fetch "gcc-$GCC_VERSION/gcc-$GCC_VERSION.tar.xz" 'gcc.tar.xz' 		|| _fetch "$GCC_VERSION/gcc-$GCC_VERSION.tar.xz" 'gcc.tar.xz'; 	gpg --batch --verify gcc.tar.xz.sig gcc.tar.xz; 	mkdir -p /usr/src/gcc; 	tar -xf gcc.tar.xz -C /usr/src/gcc --strip-components=1; 	rm gcc.tar.xz*; 		cd /usr/src/gcc; 		./contrib/download_prerequisites; 	{ rm *.tar.* || true; }; 		for f in config.guess config.sub; do 		wget -O "$f" "https://git.savannah.gnu.org/cgit/config.git/plain/$f?id=7d3d27baf8107b630586c962c057e22149653deb"; 		find -mindepth 2 -name "$f" -exec cp -v "$f" '{}' ';'; 	done; 		dir="$(mktemp -d)"; 	cd "$dir"; 		extraConfigureArgs=''; 	dpkgArch="$(dpkg --print-architecture)"; 	case "$dpkgArch" in 		armel) 			extraConfigureArgs="$extraConfigureArgs --with-arch=armv4t --with-float=soft" 			;; 		armhf) 			extraConfigureArgs="$extraConfigureArgs --with-arch=armv7-a --with-float=hard --with-fpu=vfpv3-d16 --with-mode=thumb" 			;; 				i386) 			osVersionID="$(set -e; . /etc/os-release; echo "$VERSION_ID")"; 			case "$osVersionID" in 				8) extraConfigureArgs="$extraConfigureArgs --with-arch-32=i586" ;; 				*) extraConfigureArgs="$extraConfigureArgs --with-arch-32=i686" ;; 			esac; 			;; 	esac; 		gnuArch="$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)"; 	/usr/src/gcc/configure 		--build="$gnuArch" 		--disable-multilib 		--enable-languages=c,c++,fortran,go 		$extraConfigureArgs 	; 	make -j "$(nproc)"; 	make install-strip; 		cd ..; 		rm -rf "$dir" /usr/src/gcc; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false
-# Thu, 12 Sep 2019 13:00:53 GMT
+# Thu, 17 Oct 2019 13:36:02 GMT
 RUN set -ex; 	echo '/usr/local/lib64' > /etc/ld.so.conf.d/local-lib64.conf; 	ldconfig -v
-# Thu, 12 Sep 2019 13:00:55 GMT
+# Thu, 17 Oct 2019 13:36:03 GMT
 RUN set -ex; 	dpkg-divert --divert /usr/bin/gcc.orig --rename /usr/bin/gcc; 	dpkg-divert --divert /usr/bin/g++.orig --rename /usr/bin/g++; 	dpkg-divert --divert /usr/bin/gfortran.orig --rename /usr/bin/gfortran; 	update-alternatives --install /usr/bin/cc cc /usr/local/bin/gcc 999
 ```
 
 -	Layers:
-	-	`sha256:a1188c71bb8b0f44792369b8880b4445a04cff52d183f2abce5207a0fa60f0db`  
-		Last Modified: Wed, 11 Sep 2019 22:56:38 GMT  
-		Size: 48.1 MB (48080876 bytes)  
+	-	`sha256:fbc660c6e95ccb3457d04b94c4a7c4a0dc07f31549e3b4b11540806aae928286`  
+		Last Modified: Wed, 16 Oct 2019 23:59:13 GMT  
+		Size: 48.1 MB (48088526 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:33f64e9913bed4e7b4d259eba3fd47756535467312efc0ec4ba074f2da038e5b`  
-		Last Modified: Wed, 11 Sep 2019 23:51:32 GMT  
-		Size: 7.3 MB (7346258 bytes)  
+	-	`sha256:5011b513b5639ad4cfa7d2278910a8299bdd679d14c525d5cdff4cfc44e9a396`  
+		Last Modified: Thu, 17 Oct 2019 00:48:12 GMT  
+		Size: 7.4 MB (7358286 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c03cbc1ba246fae55f9694d79f7413c94915e260ec9f422681aa0e32e237306f`  
-		Last Modified: Wed, 11 Sep 2019 23:51:32 GMT  
+	-	`sha256:649fb464536e65c6b3565235f549816862f81bf742a28e80507c446e430ef619`  
+		Last Modified: Thu, 17 Oct 2019 00:48:12 GMT  
 		Size: 9.7 MB (9686847 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:7a279bb26fc5498f1644093698f24c270e04ca08521123f9a5d0b5df57c98625`  
-		Last Modified: Wed, 11 Sep 2019 23:51:58 GMT  
-		Size: 49.5 MB (49518772 bytes)  
+	-	`sha256:9d918c39359c26561401ada6508713e3b1cf82f4bf804ed0bcf9997518fb855d`  
+		Last Modified: Thu, 17 Oct 2019 00:48:42 GMT  
+		Size: 49.5 MB (49521484 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:3dea6797fb74bbda0b8d798c8499f33b9fb5163ffa716a07484a581ffd69ac6e`  
-		Last Modified: Wed, 11 Sep 2019 23:52:55 GMT  
-		Size: 171.0 MB (170969582 bytes)  
+	-	`sha256:7f768bcab047369f910f6ba04a72c70f31faf33dc4a30bf3814fbcb9508c94a9`  
+		Last Modified: Thu, 17 Oct 2019 00:49:34 GMT  
+		Size: 171.0 MB (170974646 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:fe9226e273faefc5751a775b06d71c4c172bcaf84df7ba4022b6993c5441e4d6`  
-		Last Modified: Thu, 12 Sep 2019 13:01:53 GMT  
-		Size: 11.6 KB (11602 bytes)  
+	-	`sha256:8cc381fc0a62aeb746b9905cb87a3d9cafe299a22a830efd27aabf08b4911df7`  
+		Last Modified: Thu, 17 Oct 2019 13:37:03 GMT  
+		Size: 11.6 KB (11604 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:7f78e730aa13433b51e11a65dbf345757f3fa5ed9dcc0cf6ff76bd700159ffa8`  
-		Last Modified: Thu, 12 Sep 2019 13:03:35 GMT  
-		Size: 84.0 MB (83956245 bytes)  
+	-	`sha256:aecb171cf506f37bb3da191fd994ab03aa6637ef608b0379b8876ce6f7b523cf`  
+		Last Modified: Thu, 17 Oct 2019 13:38:49 GMT  
+		Size: 84.0 MB (83955889 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c3a00677e26a437c7cc25ba16f6205b7de1471afbf59e1ab96b61f9f227d9a94`  
-		Last Modified: Thu, 12 Sep 2019 13:03:06 GMT  
-		Size: 11.1 KB (11138 bytes)  
+	-	`sha256:4c1e9318cc71b894b03e167baa1ec24f26a35a880ad153adfbfe07d3dfa136c9`  
+		Last Modified: Thu, 17 Oct 2019 13:38:19 GMT  
+		Size: 11.2 KB (11151 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:b320aa0fb473bac2efd0cc115abbad5593f16dcc6ea598f55164c41c28582326`  
-		Last Modified: Thu, 12 Sep 2019 13:03:06 GMT  
-		Size: 1.9 KB (1948 bytes)  
+	-	`sha256:b704f882d0be893e48711631cb3a6e23eef9663c2853f2c9abd313ed9a2904a6`  
+		Last Modified: Thu, 17 Oct 2019 13:38:19 GMT  
+		Size: 1.9 KB (1940 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `gcc:latest` - linux; arm variant v7
