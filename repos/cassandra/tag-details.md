@@ -222,7 +222,7 @@ CMD ["cassandra" "-f"]
 ## `cassandra:2.1`
 
 ```console
-$ docker pull cassandra@sha256:d24cfa249b8b0a28b8eca1917eb0ec99197d0c7a26358634b34b69366aefc06a
+$ docker pull cassandra@sha256:3d16a06408ab79acde81c9f451ed0acc8eb8150df54f34c52457167327d8a5a8
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -331,98 +331,98 @@ CMD ["cassandra" "-f"]
 ### `cassandra:2.1` - linux; arm64 variant v8
 
 ```console
-$ docker pull cassandra@sha256:9c1947cc82c940a64f1124efffe04ab1433de2cc5bfeaa99c6b72a076058b0ae
+$ docker pull cassandra@sha256:0764a5be23e32d9ce703ada02c04ac11c042efe3cf27d8d51075d3f50b0b415e
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **186.6 MB (186635810 bytes)**  
+-	Total Size: **186.7 MB (186654801 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:1ad7dcc666acad513fe8a9f163037ea246d0c7f84725e848c61e337bfd9d8e4b`
+-	Image ID: `sha256:f9f6e9ea5c8cc9e4d5ed2275add56e28cce09a54c3daca59eaeb4195bdfa2ad5`
 -	Entrypoint: `["docker-entrypoint.sh"]`
 -	Default Command: `["cassandra","-f"]`
 
 ```dockerfile
-# Wed, 11 Sep 2019 22:43:25 GMT
-ADD file:df1ea2e06395a898225f404c63170ac2cfb428ceb374c3c1adc9e87727ab867d in / 
-# Wed, 11 Sep 2019 22:43:26 GMT
+# Wed, 16 Oct 2019 23:43:48 GMT
+ADD file:595705d44062d7a26efb09095239752e50ffc13a94aedb87d9d2bade6bf42e27 in / 
+# Wed, 16 Oct 2019 23:43:50 GMT
 CMD ["bash"]
-# Wed, 11 Sep 2019 23:05:44 GMT
+# Thu, 17 Oct 2019 00:29:25 GMT
 RUN groupadd -r cassandra --gid=999 && useradd -r -g cassandra --uid=999 cassandra
-# Wed, 11 Sep 2019 23:05:58 GMT
+# Thu, 17 Oct 2019 00:29:40 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		gnupg dirmngr 		libjemalloc1 		procps 		iproute2 		numactl 	; 	rm -rf /var/lib/apt/lists/*
-# Wed, 11 Sep 2019 23:05:59 GMT
+# Thu, 17 Oct 2019 00:29:41 GMT
 ENV GOSU_VERSION=1.10
-# Wed, 11 Sep 2019 23:06:19 GMT
+# Thu, 17 Oct 2019 00:30:00 GMT
 RUN set -eux; 	savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends ca-certificates wget; 	rm -rf /var/lib/apt/lists/*; 	wget -O /usr/local/bin/gosu "https://github.com/tianon/gosu/releases/download/$GOSU_VERSION/gosu-$(dpkg --print-architecture)"; 	wget -O /usr/local/bin/gosu.asc "https://github.com/tianon/gosu/releases/download/$GOSU_VERSION/gosu-$(dpkg --print-architecture).asc"; 	export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver hkps://keys.openpgp.org --recv-keys B42F6819007F00F88E364FD4036A9C25BF357DD4; 	gpg --batch --verify /usr/local/bin/gosu.asc /usr/local/bin/gosu; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME" /usr/local/bin/gosu.asc; 	chmod +x /usr/local/bin/gosu; 	apt-mark auto '.*' > /dev/null; 	apt-mark manual $savedAptMark > /dev/null; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 	gosu nobody true
-# Wed, 11 Sep 2019 23:06:20 GMT
+# Thu, 17 Oct 2019 00:30:01 GMT
 ENV GPG_KEYS=514A2AD631A57A16DD0047EC749D6EEC0353B12C 	A26E528B271F19B9E5D8E19EA278B781FE4B2BDA
-# Wed, 11 Sep 2019 23:06:24 GMT
+# Thu, 17 Oct 2019 00:30:05 GMT
 RUN set -eux; 	export GNUPGHOME="$(mktemp -d)"; 	for key in $GPG_KEYS; do 		gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys "$key"; 	done; 	gpg --batch --export $GPG_KEYS > /etc/apt/trusted.gpg.d/cassandra.gpg; 	command -v gpgconf && gpgconf --kill all || :; 	rm -rf "$GNUPGHOME"; 	apt-key list
-# Wed, 11 Sep 2019 23:06:24 GMT
+# Thu, 17 Oct 2019 00:30:05 GMT
 ENV CASSANDRA_VERSION=2.1.21
-# Wed, 11 Sep 2019 23:08:37 GMT
+# Thu, 17 Oct 2019 00:32:18 GMT
 RUN set -eux; 		mkdir -p /usr/share/man/man1/; 		dpkgArch="$(dpkg --print-architecture)"; 	case "$dpkgArch" in 		amd64|i386) 			echo 'deb http://www.apache.org/dist/cassandra/debian 21x main' > /etc/apt/sources.list.d/cassandra.list; 			apt-get update; 			;; 		*) 						savedAptMark="$(apt-mark showmanual)"; 						apt-get update; 			apt-get install -y --no-install-recommends 				wget ca-certificates 				dpkg-dev 			; 						apt-mark showmanual | xargs apt-mark auto > /dev/null; 			apt-mark manual $savedAptMark; 						tempDir="$(mktemp -d)"; 			for pkg in cassandra cassandra-tools; do 				deb="${pkg}_${CASSANDRA_VERSION}_all.deb"; 				wget -O "$tempDir/$deb" "https://www.apache.org/dist/cassandra/debian/pool/main/c/cassandra/$deb"; 			done; 						ls -lAFh "$tempDir"; 			( cd "$tempDir" && dpkg-scanpackages . > Packages ); 			grep '^Package: ' "$tempDir/Packages"; 			echo "deb [ trusted=yes ] file://$tempDir ./" > /etc/apt/sources.list.d/temp.list; 			apt-get -o Acquire::GzipIndexes=false update; 			;; 	esac; 		apt-get install -y 		cassandra="$CASSANDRA_VERSION" 		cassandra-tools="$CASSANDRA_VERSION" 	; 		rm -rf /var/lib/apt/lists/*; 		if [ -n "${tempDir:-}" ]; then 		apt-get purge -y --auto-remove; 		rm -rf "$tempDir" /etc/apt/sources.list.d/temp.list; 	fi
-# Wed, 11 Sep 2019 23:08:39 GMT
+# Thu, 17 Oct 2019 00:32:22 GMT
 ENV CASSANDRA_CONFIG=/etc/cassandra
-# Wed, 11 Sep 2019 23:08:41 GMT
+# Thu, 17 Oct 2019 00:32:24 GMT
 RUN set -eux; 		dpkgArch="$(dpkg --print-architecture)"; 	case "$dpkgArch" in 		ppc64el) 			if grep -q -- '^-Xss' "$CASSANDRA_CONFIG/jvm.options"; then 				grep -- '^-Xss256k$' "$CASSANDRA_CONFIG/jvm.options"; 				sed -ri 's/^-Xss256k$/-Xss512k/' "$CASSANDRA_CONFIG/jvm.options"; 				grep -- '^-Xss512k$' "$CASSANDRA_CONFIG/jvm.options"; 			elif grep -q -- '-Xss256k' "$CASSANDRA_CONFIG/cassandra-env.sh"; then 				sed -ri 's/-Xss256k/-Xss512k/g' "$CASSANDRA_CONFIG/cassandra-env.sh"; 				grep -- '-Xss512k' "$CASSANDRA_CONFIG/cassandra-env.sh"; 			fi; 			;; 	esac; 		sed -ri 's/^(JVM_PATCH_VERSION)=.*/\1=25/' "$CASSANDRA_CONFIG/cassandra-env.sh"
-# Wed, 11 Sep 2019 23:08:41 GMT
+# Thu, 17 Oct 2019 00:32:25 GMT
 COPY file:32df6d10eaefa72af8b8f14546dffbafa553b673990a6dbbe9870c1909627db8 in /usr/local/bin/ 
-# Wed, 11 Sep 2019 23:08:43 GMT
+# Thu, 17 Oct 2019 00:32:27 GMT
 RUN ln -s usr/local/bin/docker-entrypoint.sh /docker-entrypoint.sh # backwards compat
-# Wed, 11 Sep 2019 23:08:43 GMT
+# Thu, 17 Oct 2019 00:32:27 GMT
 ENTRYPOINT ["docker-entrypoint.sh"]
-# Wed, 11 Sep 2019 23:08:45 GMT
+# Thu, 17 Oct 2019 00:32:31 GMT
 RUN mkdir -p /var/lib/cassandra "$CASSANDRA_CONFIG" 	&& chown -R cassandra:cassandra /var/lib/cassandra "$CASSANDRA_CONFIG" 	&& chmod 777 /var/lib/cassandra "$CASSANDRA_CONFIG"
-# Wed, 11 Sep 2019 23:08:46 GMT
+# Thu, 17 Oct 2019 00:32:33 GMT
 VOLUME [/var/lib/cassandra]
-# Wed, 11 Sep 2019 23:08:46 GMT
+# Thu, 17 Oct 2019 00:32:34 GMT
 EXPOSE 7000 7001 7199 9042 9160
-# Wed, 11 Sep 2019 23:08:47 GMT
+# Thu, 17 Oct 2019 00:32:34 GMT
 CMD ["cassandra" "-f"]
 ```
 
 -	Layers:
-	-	`sha256:e422c0b78be7b58a3182ebe0b2308b9b8e2bc3ea5acab94de48b6d354e305ca8`  
-		Last Modified: Wed, 11 Sep 2019 22:48:50 GMT  
-		Size: 20.4 MB (20368348 bytes)  
+	-	`sha256:328f7589734548c4697486a4844de8ac2ce5add32626818498ce07ccd8344869`  
+		Last Modified: Wed, 16 Oct 2019 23:50:13 GMT  
+		Size: 20.4 MB (20385766 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:603a6e59bc049618f00d02bc3b89b24e777ae9c03583124239c568fbfa06b8a3`  
-		Last Modified: Wed, 11 Sep 2019 23:11:43 GMT  
-		Size: 1.7 KB (1747 bytes)  
+	-	`sha256:af1aac2a65354ccb1b9bf159fa72a087b255e239aaa0e6031da30aa5bd06e01a`  
+		Last Modified: Thu, 17 Oct 2019 00:36:05 GMT  
+		Size: 1.7 KB (1743 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:3056d95ee1cb41a0cd27cfd951aaf7006bccdc9deb3569c08dba361952a14dbf`  
-		Last Modified: Wed, 11 Sep 2019 23:11:44 GMT  
-		Size: 5.2 MB (5195134 bytes)  
+	-	`sha256:3dbafeb675e14803a6dc2ec4130ea3a7fcf6562da1416ae57288e39fd9c700b4`  
+		Last Modified: Thu, 17 Oct 2019 00:36:06 GMT  
+		Size: 5.2 MB (5195104 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:fb3b74837b6b73af19ee925ce47bd1b2f70b70ab605ad106789776997ce7846c`  
-		Last Modified: Wed, 11 Sep 2019 23:11:43 GMT  
-		Size: 925.7 KB (925671 bytes)  
+	-	`sha256:3bddaf6b6f231bd34277c598a16563369ea5f8e836173597ce36b4e2024d02a5`  
+		Last Modified: Thu, 17 Oct 2019 00:36:05 GMT  
+		Size: 925.7 KB (925673 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:2d0075837091a74405043c2990486c9fe0def41fa2c4759f73e32acac200b3e3`  
-		Last Modified: Wed, 11 Sep 2019 23:11:43 GMT  
-		Size: 18.2 KB (18221 bytes)  
+	-	`sha256:e78abbd7645214cb1471e4900a8831d03ff272cd5b0c11e5c5462a4a9cc66aab`  
+		Last Modified: Thu, 17 Oct 2019 00:36:05 GMT  
+		Size: 18.2 KB (18218 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c0be9df8be88280c1c8ca7ac5bbcd25de14ba729190571bba51b98932ef9b43d`  
-		Last Modified: Wed, 11 Sep 2019 23:12:22 GMT  
-		Size: 160.1 MB (160100206 bytes)  
+	-	`sha256:70d12cad1b1d4178de338c88cec3882b88805ee3415cbf3b21af748bfba8540b`  
+		Last Modified: Thu, 17 Oct 2019 00:36:39 GMT  
+		Size: 160.1 MB (160101814 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:acdba40486bf9b45fb6807c82e4d8f58cd7dce3224c3142337fd41e12a572733`  
-		Last Modified: Wed, 11 Sep 2019 23:11:41 GMT  
-		Size: 4.7 KB (4675 bytes)  
+	-	`sha256:4317e5a6f9e09e23b96dcbf2da50839ae75aee5a7e65f7e0e179f3cdca50ba36`  
+		Last Modified: Thu, 17 Oct 2019 00:36:03 GMT  
+		Size: 4.7 KB (4673 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:654790fec7838d457c888cf7ff2d3a82bda61a37e8b0ed99aa25286570ecd1c6`  
-		Last Modified: Wed, 11 Sep 2019 23:11:42 GMT  
-		Size: 1.2 KB (1163 bytes)  
+	-	`sha256:f66e36c1a5706d2c62112ac371ffb085332988a920bb6525c7e6f0cb60f9f6c0`  
+		Last Modified: Thu, 17 Oct 2019 00:36:03 GMT  
+		Size: 1.2 KB (1161 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:619d596e3e3f8181e8f7d1dff66cbf6b0e525409df7c21040f8fb88c42ebc91e`  
-		Last Modified: Wed, 11 Sep 2019 23:11:41 GMT  
+	-	`sha256:a5531dd813326417e35452d389858b826d60f443dc6c0654f166ad8dc3a056e8`  
+		Last Modified: Thu, 17 Oct 2019 00:36:02 GMT  
 		Size: 121.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:3f72782d64b65eb8cc5516f6d38457609d58487b0ee5b27a521f821ace76ecc0`  
-		Last Modified: Wed, 11 Sep 2019 23:11:41 GMT  
-		Size: 20.5 KB (20524 bytes)  
+	-	`sha256:10526719d66600e72cae8085bd45db9f82ffc1bcf6264f120b713af48974071f`  
+		Last Modified: Thu, 17 Oct 2019 00:36:02 GMT  
+		Size: 20.5 KB (20528 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `cassandra:2.1` - linux; 386
@@ -525,7 +525,7 @@ CMD ["cassandra" "-f"]
 ## `cassandra:2.1.21`
 
 ```console
-$ docker pull cassandra@sha256:d24cfa249b8b0a28b8eca1917eb0ec99197d0c7a26358634b34b69366aefc06a
+$ docker pull cassandra@sha256:3d16a06408ab79acde81c9f451ed0acc8eb8150df54f34c52457167327d8a5a8
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -634,98 +634,98 @@ CMD ["cassandra" "-f"]
 ### `cassandra:2.1.21` - linux; arm64 variant v8
 
 ```console
-$ docker pull cassandra@sha256:9c1947cc82c940a64f1124efffe04ab1433de2cc5bfeaa99c6b72a076058b0ae
+$ docker pull cassandra@sha256:0764a5be23e32d9ce703ada02c04ac11c042efe3cf27d8d51075d3f50b0b415e
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **186.6 MB (186635810 bytes)**  
+-	Total Size: **186.7 MB (186654801 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:1ad7dcc666acad513fe8a9f163037ea246d0c7f84725e848c61e337bfd9d8e4b`
+-	Image ID: `sha256:f9f6e9ea5c8cc9e4d5ed2275add56e28cce09a54c3daca59eaeb4195bdfa2ad5`
 -	Entrypoint: `["docker-entrypoint.sh"]`
 -	Default Command: `["cassandra","-f"]`
 
 ```dockerfile
-# Wed, 11 Sep 2019 22:43:25 GMT
-ADD file:df1ea2e06395a898225f404c63170ac2cfb428ceb374c3c1adc9e87727ab867d in / 
-# Wed, 11 Sep 2019 22:43:26 GMT
+# Wed, 16 Oct 2019 23:43:48 GMT
+ADD file:595705d44062d7a26efb09095239752e50ffc13a94aedb87d9d2bade6bf42e27 in / 
+# Wed, 16 Oct 2019 23:43:50 GMT
 CMD ["bash"]
-# Wed, 11 Sep 2019 23:05:44 GMT
+# Thu, 17 Oct 2019 00:29:25 GMT
 RUN groupadd -r cassandra --gid=999 && useradd -r -g cassandra --uid=999 cassandra
-# Wed, 11 Sep 2019 23:05:58 GMT
+# Thu, 17 Oct 2019 00:29:40 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		gnupg dirmngr 		libjemalloc1 		procps 		iproute2 		numactl 	; 	rm -rf /var/lib/apt/lists/*
-# Wed, 11 Sep 2019 23:05:59 GMT
+# Thu, 17 Oct 2019 00:29:41 GMT
 ENV GOSU_VERSION=1.10
-# Wed, 11 Sep 2019 23:06:19 GMT
+# Thu, 17 Oct 2019 00:30:00 GMT
 RUN set -eux; 	savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends ca-certificates wget; 	rm -rf /var/lib/apt/lists/*; 	wget -O /usr/local/bin/gosu "https://github.com/tianon/gosu/releases/download/$GOSU_VERSION/gosu-$(dpkg --print-architecture)"; 	wget -O /usr/local/bin/gosu.asc "https://github.com/tianon/gosu/releases/download/$GOSU_VERSION/gosu-$(dpkg --print-architecture).asc"; 	export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver hkps://keys.openpgp.org --recv-keys B42F6819007F00F88E364FD4036A9C25BF357DD4; 	gpg --batch --verify /usr/local/bin/gosu.asc /usr/local/bin/gosu; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME" /usr/local/bin/gosu.asc; 	chmod +x /usr/local/bin/gosu; 	apt-mark auto '.*' > /dev/null; 	apt-mark manual $savedAptMark > /dev/null; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 	gosu nobody true
-# Wed, 11 Sep 2019 23:06:20 GMT
+# Thu, 17 Oct 2019 00:30:01 GMT
 ENV GPG_KEYS=514A2AD631A57A16DD0047EC749D6EEC0353B12C 	A26E528B271F19B9E5D8E19EA278B781FE4B2BDA
-# Wed, 11 Sep 2019 23:06:24 GMT
+# Thu, 17 Oct 2019 00:30:05 GMT
 RUN set -eux; 	export GNUPGHOME="$(mktemp -d)"; 	for key in $GPG_KEYS; do 		gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys "$key"; 	done; 	gpg --batch --export $GPG_KEYS > /etc/apt/trusted.gpg.d/cassandra.gpg; 	command -v gpgconf && gpgconf --kill all || :; 	rm -rf "$GNUPGHOME"; 	apt-key list
-# Wed, 11 Sep 2019 23:06:24 GMT
+# Thu, 17 Oct 2019 00:30:05 GMT
 ENV CASSANDRA_VERSION=2.1.21
-# Wed, 11 Sep 2019 23:08:37 GMT
+# Thu, 17 Oct 2019 00:32:18 GMT
 RUN set -eux; 		mkdir -p /usr/share/man/man1/; 		dpkgArch="$(dpkg --print-architecture)"; 	case "$dpkgArch" in 		amd64|i386) 			echo 'deb http://www.apache.org/dist/cassandra/debian 21x main' > /etc/apt/sources.list.d/cassandra.list; 			apt-get update; 			;; 		*) 						savedAptMark="$(apt-mark showmanual)"; 						apt-get update; 			apt-get install -y --no-install-recommends 				wget ca-certificates 				dpkg-dev 			; 						apt-mark showmanual | xargs apt-mark auto > /dev/null; 			apt-mark manual $savedAptMark; 						tempDir="$(mktemp -d)"; 			for pkg in cassandra cassandra-tools; do 				deb="${pkg}_${CASSANDRA_VERSION}_all.deb"; 				wget -O "$tempDir/$deb" "https://www.apache.org/dist/cassandra/debian/pool/main/c/cassandra/$deb"; 			done; 						ls -lAFh "$tempDir"; 			( cd "$tempDir" && dpkg-scanpackages . > Packages ); 			grep '^Package: ' "$tempDir/Packages"; 			echo "deb [ trusted=yes ] file://$tempDir ./" > /etc/apt/sources.list.d/temp.list; 			apt-get -o Acquire::GzipIndexes=false update; 			;; 	esac; 		apt-get install -y 		cassandra="$CASSANDRA_VERSION" 		cassandra-tools="$CASSANDRA_VERSION" 	; 		rm -rf /var/lib/apt/lists/*; 		if [ -n "${tempDir:-}" ]; then 		apt-get purge -y --auto-remove; 		rm -rf "$tempDir" /etc/apt/sources.list.d/temp.list; 	fi
-# Wed, 11 Sep 2019 23:08:39 GMT
+# Thu, 17 Oct 2019 00:32:22 GMT
 ENV CASSANDRA_CONFIG=/etc/cassandra
-# Wed, 11 Sep 2019 23:08:41 GMT
+# Thu, 17 Oct 2019 00:32:24 GMT
 RUN set -eux; 		dpkgArch="$(dpkg --print-architecture)"; 	case "$dpkgArch" in 		ppc64el) 			if grep -q -- '^-Xss' "$CASSANDRA_CONFIG/jvm.options"; then 				grep -- '^-Xss256k$' "$CASSANDRA_CONFIG/jvm.options"; 				sed -ri 's/^-Xss256k$/-Xss512k/' "$CASSANDRA_CONFIG/jvm.options"; 				grep -- '^-Xss512k$' "$CASSANDRA_CONFIG/jvm.options"; 			elif grep -q -- '-Xss256k' "$CASSANDRA_CONFIG/cassandra-env.sh"; then 				sed -ri 's/-Xss256k/-Xss512k/g' "$CASSANDRA_CONFIG/cassandra-env.sh"; 				grep -- '-Xss512k' "$CASSANDRA_CONFIG/cassandra-env.sh"; 			fi; 			;; 	esac; 		sed -ri 's/^(JVM_PATCH_VERSION)=.*/\1=25/' "$CASSANDRA_CONFIG/cassandra-env.sh"
-# Wed, 11 Sep 2019 23:08:41 GMT
+# Thu, 17 Oct 2019 00:32:25 GMT
 COPY file:32df6d10eaefa72af8b8f14546dffbafa553b673990a6dbbe9870c1909627db8 in /usr/local/bin/ 
-# Wed, 11 Sep 2019 23:08:43 GMT
+# Thu, 17 Oct 2019 00:32:27 GMT
 RUN ln -s usr/local/bin/docker-entrypoint.sh /docker-entrypoint.sh # backwards compat
-# Wed, 11 Sep 2019 23:08:43 GMT
+# Thu, 17 Oct 2019 00:32:27 GMT
 ENTRYPOINT ["docker-entrypoint.sh"]
-# Wed, 11 Sep 2019 23:08:45 GMT
+# Thu, 17 Oct 2019 00:32:31 GMT
 RUN mkdir -p /var/lib/cassandra "$CASSANDRA_CONFIG" 	&& chown -R cassandra:cassandra /var/lib/cassandra "$CASSANDRA_CONFIG" 	&& chmod 777 /var/lib/cassandra "$CASSANDRA_CONFIG"
-# Wed, 11 Sep 2019 23:08:46 GMT
+# Thu, 17 Oct 2019 00:32:33 GMT
 VOLUME [/var/lib/cassandra]
-# Wed, 11 Sep 2019 23:08:46 GMT
+# Thu, 17 Oct 2019 00:32:34 GMT
 EXPOSE 7000 7001 7199 9042 9160
-# Wed, 11 Sep 2019 23:08:47 GMT
+# Thu, 17 Oct 2019 00:32:34 GMT
 CMD ["cassandra" "-f"]
 ```
 
 -	Layers:
-	-	`sha256:e422c0b78be7b58a3182ebe0b2308b9b8e2bc3ea5acab94de48b6d354e305ca8`  
-		Last Modified: Wed, 11 Sep 2019 22:48:50 GMT  
-		Size: 20.4 MB (20368348 bytes)  
+	-	`sha256:328f7589734548c4697486a4844de8ac2ce5add32626818498ce07ccd8344869`  
+		Last Modified: Wed, 16 Oct 2019 23:50:13 GMT  
+		Size: 20.4 MB (20385766 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:603a6e59bc049618f00d02bc3b89b24e777ae9c03583124239c568fbfa06b8a3`  
-		Last Modified: Wed, 11 Sep 2019 23:11:43 GMT  
-		Size: 1.7 KB (1747 bytes)  
+	-	`sha256:af1aac2a65354ccb1b9bf159fa72a087b255e239aaa0e6031da30aa5bd06e01a`  
+		Last Modified: Thu, 17 Oct 2019 00:36:05 GMT  
+		Size: 1.7 KB (1743 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:3056d95ee1cb41a0cd27cfd951aaf7006bccdc9deb3569c08dba361952a14dbf`  
-		Last Modified: Wed, 11 Sep 2019 23:11:44 GMT  
-		Size: 5.2 MB (5195134 bytes)  
+	-	`sha256:3dbafeb675e14803a6dc2ec4130ea3a7fcf6562da1416ae57288e39fd9c700b4`  
+		Last Modified: Thu, 17 Oct 2019 00:36:06 GMT  
+		Size: 5.2 MB (5195104 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:fb3b74837b6b73af19ee925ce47bd1b2f70b70ab605ad106789776997ce7846c`  
-		Last Modified: Wed, 11 Sep 2019 23:11:43 GMT  
-		Size: 925.7 KB (925671 bytes)  
+	-	`sha256:3bddaf6b6f231bd34277c598a16563369ea5f8e836173597ce36b4e2024d02a5`  
+		Last Modified: Thu, 17 Oct 2019 00:36:05 GMT  
+		Size: 925.7 KB (925673 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:2d0075837091a74405043c2990486c9fe0def41fa2c4759f73e32acac200b3e3`  
-		Last Modified: Wed, 11 Sep 2019 23:11:43 GMT  
-		Size: 18.2 KB (18221 bytes)  
+	-	`sha256:e78abbd7645214cb1471e4900a8831d03ff272cd5b0c11e5c5462a4a9cc66aab`  
+		Last Modified: Thu, 17 Oct 2019 00:36:05 GMT  
+		Size: 18.2 KB (18218 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c0be9df8be88280c1c8ca7ac5bbcd25de14ba729190571bba51b98932ef9b43d`  
-		Last Modified: Wed, 11 Sep 2019 23:12:22 GMT  
-		Size: 160.1 MB (160100206 bytes)  
+	-	`sha256:70d12cad1b1d4178de338c88cec3882b88805ee3415cbf3b21af748bfba8540b`  
+		Last Modified: Thu, 17 Oct 2019 00:36:39 GMT  
+		Size: 160.1 MB (160101814 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:acdba40486bf9b45fb6807c82e4d8f58cd7dce3224c3142337fd41e12a572733`  
-		Last Modified: Wed, 11 Sep 2019 23:11:41 GMT  
-		Size: 4.7 KB (4675 bytes)  
+	-	`sha256:4317e5a6f9e09e23b96dcbf2da50839ae75aee5a7e65f7e0e179f3cdca50ba36`  
+		Last Modified: Thu, 17 Oct 2019 00:36:03 GMT  
+		Size: 4.7 KB (4673 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:654790fec7838d457c888cf7ff2d3a82bda61a37e8b0ed99aa25286570ecd1c6`  
-		Last Modified: Wed, 11 Sep 2019 23:11:42 GMT  
-		Size: 1.2 KB (1163 bytes)  
+	-	`sha256:f66e36c1a5706d2c62112ac371ffb085332988a920bb6525c7e6f0cb60f9f6c0`  
+		Last Modified: Thu, 17 Oct 2019 00:36:03 GMT  
+		Size: 1.2 KB (1161 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:619d596e3e3f8181e8f7d1dff66cbf6b0e525409df7c21040f8fb88c42ebc91e`  
-		Last Modified: Wed, 11 Sep 2019 23:11:41 GMT  
+	-	`sha256:a5531dd813326417e35452d389858b826d60f443dc6c0654f166ad8dc3a056e8`  
+		Last Modified: Thu, 17 Oct 2019 00:36:02 GMT  
 		Size: 121.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:3f72782d64b65eb8cc5516f6d38457609d58487b0ee5b27a521f821ace76ecc0`  
-		Last Modified: Wed, 11 Sep 2019 23:11:41 GMT  
-		Size: 20.5 KB (20524 bytes)  
+	-	`sha256:10526719d66600e72cae8085bd45db9f82ffc1bcf6264f120b713af48974071f`  
+		Last Modified: Thu, 17 Oct 2019 00:36:02 GMT  
+		Size: 20.5 KB (20528 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `cassandra:2.1.21` - linux; 386
@@ -1238,7 +1238,7 @@ CMD ["cassandra" "-f"]
 ## `cassandra:3`
 
 ```console
-$ docker pull cassandra@sha256:0c03f24ba76bbbc33548e2bd22da44ab9589960e8346f84ccd71adff13fc2ec5
+$ docker pull cassandra@sha256:f7d5688f98099a65ea6f63e566e28e8f265d28c910aa2b531a0512e3f874320f
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -1348,98 +1348,98 @@ CMD ["cassandra" "-f"]
 ### `cassandra:3` - linux; arm64 variant v8
 
 ```console
-$ docker pull cassandra@sha256:9251ee5502b9884487140c0d99e1bdbe97499ec191cf396398974d368615385b
+$ docker pull cassandra@sha256:a75d344daa98910a746674174e839e5d3727668fc867d03e4a7ee1be6f6c9cd5
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **122.3 MB (122269205 bytes)**  
+-	Total Size: **122.3 MB (122287292 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:7fdad0c0b355f5ef4397dabd3a6bb71fbbe7685edc957fe29d568db5424494f8`
+-	Image ID: `sha256:e9f8f694d95115bd28d09a1299dfeb821e1133a98c3cf8d70a79848f61b44375`
 -	Entrypoint: `["docker-entrypoint.sh"]`
 -	Default Command: `["cassandra","-f"]`
 
 ```dockerfile
-# Wed, 11 Sep 2019 22:43:25 GMT
-ADD file:df1ea2e06395a898225f404c63170ac2cfb428ceb374c3c1adc9e87727ab867d in / 
-# Wed, 11 Sep 2019 22:43:26 GMT
+# Wed, 16 Oct 2019 23:43:48 GMT
+ADD file:595705d44062d7a26efb09095239752e50ffc13a94aedb87d9d2bade6bf42e27 in / 
+# Wed, 16 Oct 2019 23:43:50 GMT
 CMD ["bash"]
-# Wed, 11 Sep 2019 23:05:44 GMT
+# Thu, 17 Oct 2019 00:29:25 GMT
 RUN groupadd -r cassandra --gid=999 && useradd -r -g cassandra --uid=999 cassandra
-# Wed, 11 Sep 2019 23:05:58 GMT
+# Thu, 17 Oct 2019 00:29:40 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		gnupg dirmngr 		libjemalloc1 		procps 		iproute2 		numactl 	; 	rm -rf /var/lib/apt/lists/*
-# Wed, 11 Sep 2019 23:05:59 GMT
+# Thu, 17 Oct 2019 00:29:41 GMT
 ENV GOSU_VERSION=1.10
-# Wed, 11 Sep 2019 23:06:19 GMT
+# Thu, 17 Oct 2019 00:30:00 GMT
 RUN set -eux; 	savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends ca-certificates wget; 	rm -rf /var/lib/apt/lists/*; 	wget -O /usr/local/bin/gosu "https://github.com/tianon/gosu/releases/download/$GOSU_VERSION/gosu-$(dpkg --print-architecture)"; 	wget -O /usr/local/bin/gosu.asc "https://github.com/tianon/gosu/releases/download/$GOSU_VERSION/gosu-$(dpkg --print-architecture).asc"; 	export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver hkps://keys.openpgp.org --recv-keys B42F6819007F00F88E364FD4036A9C25BF357DD4; 	gpg --batch --verify /usr/local/bin/gosu.asc /usr/local/bin/gosu; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME" /usr/local/bin/gosu.asc; 	chmod +x /usr/local/bin/gosu; 	apt-mark auto '.*' > /dev/null; 	apt-mark manual $savedAptMark > /dev/null; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 	gosu nobody true
-# Wed, 11 Sep 2019 23:06:20 GMT
+# Thu, 17 Oct 2019 00:30:01 GMT
 ENV GPG_KEYS=514A2AD631A57A16DD0047EC749D6EEC0353B12C 	A26E528B271F19B9E5D8E19EA278B781FE4B2BDA
-# Wed, 11 Sep 2019 23:06:24 GMT
+# Thu, 17 Oct 2019 00:30:05 GMT
 RUN set -eux; 	export GNUPGHOME="$(mktemp -d)"; 	for key in $GPG_KEYS; do 		gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys "$key"; 	done; 	gpg --batch --export $GPG_KEYS > /etc/apt/trusted.gpg.d/cassandra.gpg; 	command -v gpgconf && gpgconf --kill all || :; 	rm -rf "$GNUPGHOME"; 	apt-key list
-# Wed, 11 Sep 2019 23:10:15 GMT
+# Thu, 17 Oct 2019 00:34:11 GMT
 ENV CASSANDRA_VERSION=3.11.4
-# Wed, 11 Sep 2019 23:11:15 GMT
+# Thu, 17 Oct 2019 00:35:30 GMT
 RUN set -eux; 		mkdir -p /usr/share/man/man1/; 		dpkgArch="$(dpkg --print-architecture)"; 	case "$dpkgArch" in 		amd64|i386) 			echo 'deb http://www.apache.org/dist/cassandra/debian 311x main' > /etc/apt/sources.list.d/cassandra.list; 			apt-get update; 			;; 		*) 						savedAptMark="$(apt-mark showmanual)"; 						apt-get update; 			apt-get install -y --no-install-recommends 				wget ca-certificates 				dpkg-dev 			; 						apt-mark showmanual | xargs apt-mark auto > /dev/null; 			apt-mark manual $savedAptMark; 						tempDir="$(mktemp -d)"; 			for pkg in cassandra cassandra-tools; do 				deb="${pkg}_${CASSANDRA_VERSION}_all.deb"; 				wget -O "$tempDir/$deb" "https://www.apache.org/dist/cassandra/debian/pool/main/c/cassandra/$deb"; 			done; 						ls -lAFh "$tempDir"; 			( cd "$tempDir" && dpkg-scanpackages . > Packages ); 			grep '^Package: ' "$tempDir/Packages"; 			echo "deb [ trusted=yes ] file://$tempDir ./" > /etc/apt/sources.list.d/temp.list; 			apt-get -o Acquire::GzipIndexes=false update; 			;; 	esac; 		apt-get install -y 		cassandra="$CASSANDRA_VERSION" 		cassandra-tools="$CASSANDRA_VERSION" 	; 		rm -rf /var/lib/apt/lists/*; 		if [ -n "${tempDir:-}" ]; then 		apt-get purge -y --auto-remove; 		rm -rf "$tempDir" /etc/apt/sources.list.d/temp.list; 	fi
-# Wed, 11 Sep 2019 23:11:17 GMT
+# Thu, 17 Oct 2019 00:35:34 GMT
 ENV CASSANDRA_CONFIG=/etc/cassandra
-# Wed, 11 Sep 2019 23:11:19 GMT
+# Thu, 17 Oct 2019 00:35:36 GMT
 RUN set -eux; 		dpkgArch="$(dpkg --print-architecture)"; 	case "$dpkgArch" in 		ppc64el) 			if grep -q -- '^-Xss' "$CASSANDRA_CONFIG/jvm.options"; then 				grep -- '^-Xss256k$' "$CASSANDRA_CONFIG/jvm.options"; 				sed -ri 's/^-Xss256k$/-Xss512k/' "$CASSANDRA_CONFIG/jvm.options"; 				grep -- '^-Xss512k$' "$CASSANDRA_CONFIG/jvm.options"; 			elif grep -q -- '-Xss256k' "$CASSANDRA_CONFIG/cassandra-env.sh"; then 				sed -ri 's/-Xss256k/-Xss512k/g' "$CASSANDRA_CONFIG/cassandra-env.sh"; 				grep -- '-Xss512k' "$CASSANDRA_CONFIG/cassandra-env.sh"; 			fi; 			;; 	esac; 		sed -ri 's/^(JVM_PATCH_VERSION)=.*/\1=25/' "$CASSANDRA_CONFIG/cassandra-env.sh"
-# Wed, 11 Sep 2019 23:11:19 GMT
+# Thu, 17 Oct 2019 00:35:37 GMT
 COPY file:32df6d10eaefa72af8b8f14546dffbafa553b673990a6dbbe9870c1909627db8 in /usr/local/bin/ 
-# Wed, 11 Sep 2019 23:11:20 GMT
+# Thu, 17 Oct 2019 00:35:40 GMT
 RUN ln -s usr/local/bin/docker-entrypoint.sh /docker-entrypoint.sh # backwards compat
-# Wed, 11 Sep 2019 23:11:21 GMT
+# Thu, 17 Oct 2019 00:35:41 GMT
 ENTRYPOINT ["docker-entrypoint.sh"]
-# Wed, 11 Sep 2019 23:11:23 GMT
+# Thu, 17 Oct 2019 00:35:44 GMT
 RUN mkdir -p /var/lib/cassandra "$CASSANDRA_CONFIG" 	&& chown -R cassandra:cassandra /var/lib/cassandra "$CASSANDRA_CONFIG" 	&& chmod 777 /var/lib/cassandra "$CASSANDRA_CONFIG"
-# Wed, 11 Sep 2019 23:11:23 GMT
+# Thu, 17 Oct 2019 00:35:46 GMT
 VOLUME [/var/lib/cassandra]
-# Wed, 11 Sep 2019 23:11:24 GMT
+# Thu, 17 Oct 2019 00:35:48 GMT
 EXPOSE 7000 7001 7199 9042 9160
-# Wed, 11 Sep 2019 23:11:24 GMT
+# Thu, 17 Oct 2019 00:35:49 GMT
 CMD ["cassandra" "-f"]
 ```
 
 -	Layers:
-	-	`sha256:e422c0b78be7b58a3182ebe0b2308b9b8e2bc3ea5acab94de48b6d354e305ca8`  
-		Last Modified: Wed, 11 Sep 2019 22:48:50 GMT  
-		Size: 20.4 MB (20368348 bytes)  
+	-	`sha256:328f7589734548c4697486a4844de8ac2ce5add32626818498ce07ccd8344869`  
+		Last Modified: Wed, 16 Oct 2019 23:50:13 GMT  
+		Size: 20.4 MB (20385766 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:603a6e59bc049618f00d02bc3b89b24e777ae9c03583124239c568fbfa06b8a3`  
-		Last Modified: Wed, 11 Sep 2019 23:11:43 GMT  
-		Size: 1.7 KB (1747 bytes)  
+	-	`sha256:af1aac2a65354ccb1b9bf159fa72a087b255e239aaa0e6031da30aa5bd06e01a`  
+		Last Modified: Thu, 17 Oct 2019 00:36:05 GMT  
+		Size: 1.7 KB (1743 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:3056d95ee1cb41a0cd27cfd951aaf7006bccdc9deb3569c08dba361952a14dbf`  
-		Last Modified: Wed, 11 Sep 2019 23:11:44 GMT  
-		Size: 5.2 MB (5195134 bytes)  
+	-	`sha256:3dbafeb675e14803a6dc2ec4130ea3a7fcf6562da1416ae57288e39fd9c700b4`  
+		Last Modified: Thu, 17 Oct 2019 00:36:06 GMT  
+		Size: 5.2 MB (5195104 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:fb3b74837b6b73af19ee925ce47bd1b2f70b70ab605ad106789776997ce7846c`  
-		Last Modified: Wed, 11 Sep 2019 23:11:43 GMT  
-		Size: 925.7 KB (925671 bytes)  
+	-	`sha256:3bddaf6b6f231bd34277c598a16563369ea5f8e836173597ce36b4e2024d02a5`  
+		Last Modified: Thu, 17 Oct 2019 00:36:05 GMT  
+		Size: 925.7 KB (925673 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:2d0075837091a74405043c2990486c9fe0def41fa2c4759f73e32acac200b3e3`  
-		Last Modified: Wed, 11 Sep 2019 23:11:43 GMT  
-		Size: 18.2 KB (18221 bytes)  
+	-	`sha256:e78abbd7645214cb1471e4900a8831d03ff272cd5b0c11e5c5462a4a9cc66aab`  
+		Last Modified: Thu, 17 Oct 2019 00:36:05 GMT  
+		Size: 18.2 KB (18218 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:a606ccb394a19f60fc9703cf7579cff82de032d51083d22b5cdbc08017adaacc`  
-		Last Modified: Wed, 11 Sep 2019 23:13:21 GMT  
-		Size: 95.7 MB (95723643 bytes)  
+	-	`sha256:1cc6d6f940ded33c860cc3829bbc8b2fbd8758306110e65fa246327b8d5033d5`  
+		Last Modified: Thu, 17 Oct 2019 00:37:40 GMT  
+		Size: 95.7 MB (95724345 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:59b422d2ba1d95ff847f54e30c68f795bb3fe8f2946a1a0ad0bba2a8d6162fe7`  
-		Last Modified: Wed, 11 Sep 2019 23:12:55 GMT  
+	-	`sha256:120c971042d3acf96f0b943e1cb80d21d0ed072f1c2a64592ac16f2e57f2b814`  
+		Last Modified: Thu, 17 Oct 2019 00:37:15 GMT  
 		Size: 4.7 KB (4654 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:6d2b2a68067ad13f0c74964babddad3d42e6d5d3e08733d222ff91533285c9eb`  
-		Last Modified: Wed, 11 Sep 2019 23:12:56 GMT  
+	-	`sha256:a9b0f8b9c9a8592e40801c304f02d940975bda858e1579276635c25335659f70`  
+		Last Modified: Thu, 17 Oct 2019 00:37:16 GMT  
 		Size: 1.2 KB (1162 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:5ebfa9f4e03bfb2f496f9cdd5a277a76a6e382c893b0b54f29f1416d503926c2`  
-		Last Modified: Wed, 11 Sep 2019 23:12:55 GMT  
+	-	`sha256:c3c3a84c27aab8e66241eea18c4854f56cd113672647ea4e68c0d3dc6e1aa9c6`  
+		Last Modified: Thu, 17 Oct 2019 00:37:16 GMT  
 		Size: 121.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:6cb9f0e4228a0aa4a04baeb0742046f39004c3f13c110daea7305d6f2340dd28`  
-		Last Modified: Wed, 11 Sep 2019 23:12:55 GMT  
-		Size: 30.5 KB (30504 bytes)  
+	-	`sha256:914fdb55318a4034402ecb4ccdf408055e5ebf3daf8d440340fb0332f0580bb1`  
+		Last Modified: Thu, 17 Oct 2019 00:37:15 GMT  
+		Size: 30.5 KB (30506 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `cassandra:3` - linux; 386
@@ -1639,7 +1639,7 @@ CMD ["cassandra" "-f"]
 ## `cassandra:3.0`
 
 ```console
-$ docker pull cassandra@sha256:35a8ac1b46109887b52a4a9476bfb10a1ec52addc73d217f08d449bc58396c22
+$ docker pull cassandra@sha256:5b533f8f8210ac560340b510ef8873ab92f2a3a439ed10ebf6cb4ccbe27b7220
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -1749,98 +1749,98 @@ CMD ["cassandra" "-f"]
 ### `cassandra:3.0` - linux; arm64 variant v8
 
 ```console
-$ docker pull cassandra@sha256:db7c5ca73e190d4f31f8938f4024ccc44105a52233e6382a03819536b3d79d09
+$ docker pull cassandra@sha256:9e8ecf40cfed06f80ce20cb40586547c052a2ae0ace2477607aa038aea73288c
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **117.5 MB (117462479 bytes)**  
+-	Total Size: **117.5 MB (117477775 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:13dc2da6b2c4919cc41c9bd523cf07fe596527e53b983cefc8d05e758986afe7`
+-	Image ID: `sha256:92acd8070aa73ea5d27a69dcde67adb647e97d5dc62af5edb36cf67f9f23043e`
 -	Entrypoint: `["docker-entrypoint.sh"]`
 -	Default Command: `["cassandra","-f"]`
 
 ```dockerfile
-# Wed, 11 Sep 2019 22:43:25 GMT
-ADD file:df1ea2e06395a898225f404c63170ac2cfb428ceb374c3c1adc9e87727ab867d in / 
-# Wed, 11 Sep 2019 22:43:26 GMT
+# Wed, 16 Oct 2019 23:43:48 GMT
+ADD file:595705d44062d7a26efb09095239752e50ffc13a94aedb87d9d2bade6bf42e27 in / 
+# Wed, 16 Oct 2019 23:43:50 GMT
 CMD ["bash"]
-# Wed, 11 Sep 2019 23:05:44 GMT
+# Thu, 17 Oct 2019 00:29:25 GMT
 RUN groupadd -r cassandra --gid=999 && useradd -r -g cassandra --uid=999 cassandra
-# Wed, 11 Sep 2019 23:05:58 GMT
+# Thu, 17 Oct 2019 00:29:40 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		gnupg dirmngr 		libjemalloc1 		procps 		iproute2 		numactl 	; 	rm -rf /var/lib/apt/lists/*
-# Wed, 11 Sep 2019 23:05:59 GMT
+# Thu, 17 Oct 2019 00:29:41 GMT
 ENV GOSU_VERSION=1.10
-# Wed, 11 Sep 2019 23:06:19 GMT
+# Thu, 17 Oct 2019 00:30:00 GMT
 RUN set -eux; 	savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends ca-certificates wget; 	rm -rf /var/lib/apt/lists/*; 	wget -O /usr/local/bin/gosu "https://github.com/tianon/gosu/releases/download/$GOSU_VERSION/gosu-$(dpkg --print-architecture)"; 	wget -O /usr/local/bin/gosu.asc "https://github.com/tianon/gosu/releases/download/$GOSU_VERSION/gosu-$(dpkg --print-architecture).asc"; 	export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver hkps://keys.openpgp.org --recv-keys B42F6819007F00F88E364FD4036A9C25BF357DD4; 	gpg --batch --verify /usr/local/bin/gosu.asc /usr/local/bin/gosu; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME" /usr/local/bin/gosu.asc; 	chmod +x /usr/local/bin/gosu; 	apt-mark auto '.*' > /dev/null; 	apt-mark manual $savedAptMark > /dev/null; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 	gosu nobody true
-# Wed, 11 Sep 2019 23:06:20 GMT
+# Thu, 17 Oct 2019 00:30:01 GMT
 ENV GPG_KEYS=514A2AD631A57A16DD0047EC749D6EEC0353B12C 	A26E528B271F19B9E5D8E19EA278B781FE4B2BDA
-# Wed, 11 Sep 2019 23:06:24 GMT
+# Thu, 17 Oct 2019 00:30:05 GMT
 RUN set -eux; 	export GNUPGHOME="$(mktemp -d)"; 	for key in $GPG_KEYS; do 		gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys "$key"; 	done; 	gpg --batch --export $GPG_KEYS > /etc/apt/trusted.gpg.d/cassandra.gpg; 	command -v gpgconf && gpgconf --kill all || :; 	rm -rf "$GNUPGHOME"; 	apt-key list
-# Wed, 11 Sep 2019 23:08:59 GMT
+# Thu, 17 Oct 2019 00:32:40 GMT
 ENV CASSANDRA_VERSION=3.0.18
-# Wed, 11 Sep 2019 23:09:57 GMT
+# Thu, 17 Oct 2019 00:33:40 GMT
 RUN set -eux; 		mkdir -p /usr/share/man/man1/; 		dpkgArch="$(dpkg --print-architecture)"; 	case "$dpkgArch" in 		amd64|i386) 			echo 'deb http://www.apache.org/dist/cassandra/debian 30x main' > /etc/apt/sources.list.d/cassandra.list; 			apt-get update; 			;; 		*) 						savedAptMark="$(apt-mark showmanual)"; 						apt-get update; 			apt-get install -y --no-install-recommends 				wget ca-certificates 				dpkg-dev 			; 						apt-mark showmanual | xargs apt-mark auto > /dev/null; 			apt-mark manual $savedAptMark; 						tempDir="$(mktemp -d)"; 			for pkg in cassandra cassandra-tools; do 				deb="${pkg}_${CASSANDRA_VERSION}_all.deb"; 				wget -O "$tempDir/$deb" "https://www.apache.org/dist/cassandra/debian/pool/main/c/cassandra/$deb"; 			done; 						ls -lAFh "$tempDir"; 			( cd "$tempDir" && dpkg-scanpackages . > Packages ); 			grep '^Package: ' "$tempDir/Packages"; 			echo "deb [ trusted=yes ] file://$tempDir ./" > /etc/apt/sources.list.d/temp.list; 			apt-get -o Acquire::GzipIndexes=false update; 			;; 	esac; 		apt-get install -y 		cassandra="$CASSANDRA_VERSION" 		cassandra-tools="$CASSANDRA_VERSION" 	; 		rm -rf /var/lib/apt/lists/*; 		if [ -n "${tempDir:-}" ]; then 		apt-get purge -y --auto-remove; 		rm -rf "$tempDir" /etc/apt/sources.list.d/temp.list; 	fi
-# Wed, 11 Sep 2019 23:09:59 GMT
+# Thu, 17 Oct 2019 00:33:43 GMT
 ENV CASSANDRA_CONFIG=/etc/cassandra
-# Wed, 11 Sep 2019 23:10:01 GMT
+# Thu, 17 Oct 2019 00:33:45 GMT
 RUN set -eux; 		dpkgArch="$(dpkg --print-architecture)"; 	case "$dpkgArch" in 		ppc64el) 			if grep -q -- '^-Xss' "$CASSANDRA_CONFIG/jvm.options"; then 				grep -- '^-Xss256k$' "$CASSANDRA_CONFIG/jvm.options"; 				sed -ri 's/^-Xss256k$/-Xss512k/' "$CASSANDRA_CONFIG/jvm.options"; 				grep -- '^-Xss512k$' "$CASSANDRA_CONFIG/jvm.options"; 			elif grep -q -- '-Xss256k' "$CASSANDRA_CONFIG/cassandra-env.sh"; then 				sed -ri 's/-Xss256k/-Xss512k/g' "$CASSANDRA_CONFIG/cassandra-env.sh"; 				grep -- '-Xss512k' "$CASSANDRA_CONFIG/cassandra-env.sh"; 			fi; 			;; 	esac; 		sed -ri 's/^(JVM_PATCH_VERSION)=.*/\1=25/' "$CASSANDRA_CONFIG/cassandra-env.sh"
-# Wed, 11 Sep 2019 23:10:01 GMT
+# Thu, 17 Oct 2019 00:33:46 GMT
 COPY file:32df6d10eaefa72af8b8f14546dffbafa553b673990a6dbbe9870c1909627db8 in /usr/local/bin/ 
-# Wed, 11 Sep 2019 23:10:02 GMT
+# Thu, 17 Oct 2019 00:33:48 GMT
 RUN ln -s usr/local/bin/docker-entrypoint.sh /docker-entrypoint.sh # backwards compat
-# Wed, 11 Sep 2019 23:10:03 GMT
+# Thu, 17 Oct 2019 00:33:48 GMT
 ENTRYPOINT ["docker-entrypoint.sh"]
-# Wed, 11 Sep 2019 23:10:04 GMT
+# Thu, 17 Oct 2019 00:33:50 GMT
 RUN mkdir -p /var/lib/cassandra "$CASSANDRA_CONFIG" 	&& chown -R cassandra:cassandra /var/lib/cassandra "$CASSANDRA_CONFIG" 	&& chmod 777 /var/lib/cassandra "$CASSANDRA_CONFIG"
-# Wed, 11 Sep 2019 23:10:05 GMT
+# Thu, 17 Oct 2019 00:33:51 GMT
 VOLUME [/var/lib/cassandra]
-# Wed, 11 Sep 2019 23:10:06 GMT
+# Thu, 17 Oct 2019 00:33:51 GMT
 EXPOSE 7000 7001 7199 9042 9160
-# Wed, 11 Sep 2019 23:10:06 GMT
+# Thu, 17 Oct 2019 00:33:52 GMT
 CMD ["cassandra" "-f"]
 ```
 
 -	Layers:
-	-	`sha256:e422c0b78be7b58a3182ebe0b2308b9b8e2bc3ea5acab94de48b6d354e305ca8`  
-		Last Modified: Wed, 11 Sep 2019 22:48:50 GMT  
-		Size: 20.4 MB (20368348 bytes)  
+	-	`sha256:328f7589734548c4697486a4844de8ac2ce5add32626818498ce07ccd8344869`  
+		Last Modified: Wed, 16 Oct 2019 23:50:13 GMT  
+		Size: 20.4 MB (20385766 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:603a6e59bc049618f00d02bc3b89b24e777ae9c03583124239c568fbfa06b8a3`  
-		Last Modified: Wed, 11 Sep 2019 23:11:43 GMT  
-		Size: 1.7 KB (1747 bytes)  
+	-	`sha256:af1aac2a65354ccb1b9bf159fa72a087b255e239aaa0e6031da30aa5bd06e01a`  
+		Last Modified: Thu, 17 Oct 2019 00:36:05 GMT  
+		Size: 1.7 KB (1743 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:3056d95ee1cb41a0cd27cfd951aaf7006bccdc9deb3569c08dba361952a14dbf`  
-		Last Modified: Wed, 11 Sep 2019 23:11:44 GMT  
-		Size: 5.2 MB (5195134 bytes)  
+	-	`sha256:3dbafeb675e14803a6dc2ec4130ea3a7fcf6562da1416ae57288e39fd9c700b4`  
+		Last Modified: Thu, 17 Oct 2019 00:36:06 GMT  
+		Size: 5.2 MB (5195104 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:fb3b74837b6b73af19ee925ce47bd1b2f70b70ab605ad106789776997ce7846c`  
-		Last Modified: Wed, 11 Sep 2019 23:11:43 GMT  
-		Size: 925.7 KB (925671 bytes)  
+	-	`sha256:3bddaf6b6f231bd34277c598a16563369ea5f8e836173597ce36b4e2024d02a5`  
+		Last Modified: Thu, 17 Oct 2019 00:36:05 GMT  
+		Size: 925.7 KB (925673 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:2d0075837091a74405043c2990486c9fe0def41fa2c4759f73e32acac200b3e3`  
-		Last Modified: Wed, 11 Sep 2019 23:11:43 GMT  
-		Size: 18.2 KB (18221 bytes)  
+	-	`sha256:e78abbd7645214cb1471e4900a8831d03ff272cd5b0c11e5c5462a4a9cc66aab`  
+		Last Modified: Thu, 17 Oct 2019 00:36:05 GMT  
+		Size: 18.2 KB (18218 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:0bd3ad6ad8a3cb73495b02792f2beb22a79da07b06b8837fbf2af88403240d83`  
-		Last Modified: Wed, 11 Sep 2019 23:12:49 GMT  
-		Size: 90.9 MB (90921276 bytes)  
+	-	`sha256:fee8538e667f68d9c563dc42fb72dfac1c4b3aebee2a5c5dcfade76e5e611909`  
+		Last Modified: Thu, 17 Oct 2019 00:37:08 GMT  
+		Size: 90.9 MB (90919189 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:cc477b3dc030b09de57d7ba4ac58501f73efd44c90a2c715b0bc503f8c1cac56`  
-		Last Modified: Wed, 11 Sep 2019 23:12:28 GMT  
-		Size: 4.9 KB (4948 bytes)  
+	-	`sha256:fc2fb1a45f3dcde51585a7563c67f45e68fbcaf72a0a5a917efa1cda85f2a4f7`  
+		Last Modified: Thu, 17 Oct 2019 00:36:46 GMT  
+		Size: 5.0 KB (4950 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:b3678d207a2a5f654adf3d8401d26a6faa52bdd35c69aa111639b93b98e1ef1e`  
-		Last Modified: Wed, 11 Sep 2019 23:12:28 GMT  
-		Size: 1.2 KB (1161 bytes)  
+	-	`sha256:8bbe0407cf21cca1492ea539b0376f6e68d3be5517c94c242d963b835d7b52cd`  
+		Last Modified: Thu, 17 Oct 2019 00:36:46 GMT  
+		Size: 1.2 KB (1162 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:f40df9b8d292ac9cae37b476c8573dd8b05b8c9a1f245dd09e12216edc8370af`  
-		Last Modified: Wed, 11 Sep 2019 23:12:28 GMT  
+	-	`sha256:278b42d26ea8685e840909de8992873359d27f16905d8b8cf1e962bd7db8d3c1`  
+		Last Modified: Thu, 17 Oct 2019 00:36:46 GMT  
 		Size: 121.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:21e7b2fc6400fb5e6f927fc051792746cc09e72bd73ab61a8d9c1a057c254483`  
-		Last Modified: Wed, 11 Sep 2019 23:12:28 GMT  
-		Size: 25.9 KB (25852 bytes)  
+	-	`sha256:e7cffc3b2891901347854da1cadb7f7e8dbd2cd1e634e4b1d5b7d26ed024edb5`  
+		Last Modified: Thu, 17 Oct 2019 00:36:46 GMT  
+		Size: 25.8 KB (25849 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `cassandra:3.0` - linux; 386
@@ -2040,7 +2040,7 @@ CMD ["cassandra" "-f"]
 ## `cassandra:3.0.18`
 
 ```console
-$ docker pull cassandra@sha256:35a8ac1b46109887b52a4a9476bfb10a1ec52addc73d217f08d449bc58396c22
+$ docker pull cassandra@sha256:5b533f8f8210ac560340b510ef8873ab92f2a3a439ed10ebf6cb4ccbe27b7220
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -2150,98 +2150,98 @@ CMD ["cassandra" "-f"]
 ### `cassandra:3.0.18` - linux; arm64 variant v8
 
 ```console
-$ docker pull cassandra@sha256:db7c5ca73e190d4f31f8938f4024ccc44105a52233e6382a03819536b3d79d09
+$ docker pull cassandra@sha256:9e8ecf40cfed06f80ce20cb40586547c052a2ae0ace2477607aa038aea73288c
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **117.5 MB (117462479 bytes)**  
+-	Total Size: **117.5 MB (117477775 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:13dc2da6b2c4919cc41c9bd523cf07fe596527e53b983cefc8d05e758986afe7`
+-	Image ID: `sha256:92acd8070aa73ea5d27a69dcde67adb647e97d5dc62af5edb36cf67f9f23043e`
 -	Entrypoint: `["docker-entrypoint.sh"]`
 -	Default Command: `["cassandra","-f"]`
 
 ```dockerfile
-# Wed, 11 Sep 2019 22:43:25 GMT
-ADD file:df1ea2e06395a898225f404c63170ac2cfb428ceb374c3c1adc9e87727ab867d in / 
-# Wed, 11 Sep 2019 22:43:26 GMT
+# Wed, 16 Oct 2019 23:43:48 GMT
+ADD file:595705d44062d7a26efb09095239752e50ffc13a94aedb87d9d2bade6bf42e27 in / 
+# Wed, 16 Oct 2019 23:43:50 GMT
 CMD ["bash"]
-# Wed, 11 Sep 2019 23:05:44 GMT
+# Thu, 17 Oct 2019 00:29:25 GMT
 RUN groupadd -r cassandra --gid=999 && useradd -r -g cassandra --uid=999 cassandra
-# Wed, 11 Sep 2019 23:05:58 GMT
+# Thu, 17 Oct 2019 00:29:40 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		gnupg dirmngr 		libjemalloc1 		procps 		iproute2 		numactl 	; 	rm -rf /var/lib/apt/lists/*
-# Wed, 11 Sep 2019 23:05:59 GMT
+# Thu, 17 Oct 2019 00:29:41 GMT
 ENV GOSU_VERSION=1.10
-# Wed, 11 Sep 2019 23:06:19 GMT
+# Thu, 17 Oct 2019 00:30:00 GMT
 RUN set -eux; 	savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends ca-certificates wget; 	rm -rf /var/lib/apt/lists/*; 	wget -O /usr/local/bin/gosu "https://github.com/tianon/gosu/releases/download/$GOSU_VERSION/gosu-$(dpkg --print-architecture)"; 	wget -O /usr/local/bin/gosu.asc "https://github.com/tianon/gosu/releases/download/$GOSU_VERSION/gosu-$(dpkg --print-architecture).asc"; 	export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver hkps://keys.openpgp.org --recv-keys B42F6819007F00F88E364FD4036A9C25BF357DD4; 	gpg --batch --verify /usr/local/bin/gosu.asc /usr/local/bin/gosu; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME" /usr/local/bin/gosu.asc; 	chmod +x /usr/local/bin/gosu; 	apt-mark auto '.*' > /dev/null; 	apt-mark manual $savedAptMark > /dev/null; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 	gosu nobody true
-# Wed, 11 Sep 2019 23:06:20 GMT
+# Thu, 17 Oct 2019 00:30:01 GMT
 ENV GPG_KEYS=514A2AD631A57A16DD0047EC749D6EEC0353B12C 	A26E528B271F19B9E5D8E19EA278B781FE4B2BDA
-# Wed, 11 Sep 2019 23:06:24 GMT
+# Thu, 17 Oct 2019 00:30:05 GMT
 RUN set -eux; 	export GNUPGHOME="$(mktemp -d)"; 	for key in $GPG_KEYS; do 		gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys "$key"; 	done; 	gpg --batch --export $GPG_KEYS > /etc/apt/trusted.gpg.d/cassandra.gpg; 	command -v gpgconf && gpgconf --kill all || :; 	rm -rf "$GNUPGHOME"; 	apt-key list
-# Wed, 11 Sep 2019 23:08:59 GMT
+# Thu, 17 Oct 2019 00:32:40 GMT
 ENV CASSANDRA_VERSION=3.0.18
-# Wed, 11 Sep 2019 23:09:57 GMT
+# Thu, 17 Oct 2019 00:33:40 GMT
 RUN set -eux; 		mkdir -p /usr/share/man/man1/; 		dpkgArch="$(dpkg --print-architecture)"; 	case "$dpkgArch" in 		amd64|i386) 			echo 'deb http://www.apache.org/dist/cassandra/debian 30x main' > /etc/apt/sources.list.d/cassandra.list; 			apt-get update; 			;; 		*) 						savedAptMark="$(apt-mark showmanual)"; 						apt-get update; 			apt-get install -y --no-install-recommends 				wget ca-certificates 				dpkg-dev 			; 						apt-mark showmanual | xargs apt-mark auto > /dev/null; 			apt-mark manual $savedAptMark; 						tempDir="$(mktemp -d)"; 			for pkg in cassandra cassandra-tools; do 				deb="${pkg}_${CASSANDRA_VERSION}_all.deb"; 				wget -O "$tempDir/$deb" "https://www.apache.org/dist/cassandra/debian/pool/main/c/cassandra/$deb"; 			done; 						ls -lAFh "$tempDir"; 			( cd "$tempDir" && dpkg-scanpackages . > Packages ); 			grep '^Package: ' "$tempDir/Packages"; 			echo "deb [ trusted=yes ] file://$tempDir ./" > /etc/apt/sources.list.d/temp.list; 			apt-get -o Acquire::GzipIndexes=false update; 			;; 	esac; 		apt-get install -y 		cassandra="$CASSANDRA_VERSION" 		cassandra-tools="$CASSANDRA_VERSION" 	; 		rm -rf /var/lib/apt/lists/*; 		if [ -n "${tempDir:-}" ]; then 		apt-get purge -y --auto-remove; 		rm -rf "$tempDir" /etc/apt/sources.list.d/temp.list; 	fi
-# Wed, 11 Sep 2019 23:09:59 GMT
+# Thu, 17 Oct 2019 00:33:43 GMT
 ENV CASSANDRA_CONFIG=/etc/cassandra
-# Wed, 11 Sep 2019 23:10:01 GMT
+# Thu, 17 Oct 2019 00:33:45 GMT
 RUN set -eux; 		dpkgArch="$(dpkg --print-architecture)"; 	case "$dpkgArch" in 		ppc64el) 			if grep -q -- '^-Xss' "$CASSANDRA_CONFIG/jvm.options"; then 				grep -- '^-Xss256k$' "$CASSANDRA_CONFIG/jvm.options"; 				sed -ri 's/^-Xss256k$/-Xss512k/' "$CASSANDRA_CONFIG/jvm.options"; 				grep -- '^-Xss512k$' "$CASSANDRA_CONFIG/jvm.options"; 			elif grep -q -- '-Xss256k' "$CASSANDRA_CONFIG/cassandra-env.sh"; then 				sed -ri 's/-Xss256k/-Xss512k/g' "$CASSANDRA_CONFIG/cassandra-env.sh"; 				grep -- '-Xss512k' "$CASSANDRA_CONFIG/cassandra-env.sh"; 			fi; 			;; 	esac; 		sed -ri 's/^(JVM_PATCH_VERSION)=.*/\1=25/' "$CASSANDRA_CONFIG/cassandra-env.sh"
-# Wed, 11 Sep 2019 23:10:01 GMT
+# Thu, 17 Oct 2019 00:33:46 GMT
 COPY file:32df6d10eaefa72af8b8f14546dffbafa553b673990a6dbbe9870c1909627db8 in /usr/local/bin/ 
-# Wed, 11 Sep 2019 23:10:02 GMT
+# Thu, 17 Oct 2019 00:33:48 GMT
 RUN ln -s usr/local/bin/docker-entrypoint.sh /docker-entrypoint.sh # backwards compat
-# Wed, 11 Sep 2019 23:10:03 GMT
+# Thu, 17 Oct 2019 00:33:48 GMT
 ENTRYPOINT ["docker-entrypoint.sh"]
-# Wed, 11 Sep 2019 23:10:04 GMT
+# Thu, 17 Oct 2019 00:33:50 GMT
 RUN mkdir -p /var/lib/cassandra "$CASSANDRA_CONFIG" 	&& chown -R cassandra:cassandra /var/lib/cassandra "$CASSANDRA_CONFIG" 	&& chmod 777 /var/lib/cassandra "$CASSANDRA_CONFIG"
-# Wed, 11 Sep 2019 23:10:05 GMT
+# Thu, 17 Oct 2019 00:33:51 GMT
 VOLUME [/var/lib/cassandra]
-# Wed, 11 Sep 2019 23:10:06 GMT
+# Thu, 17 Oct 2019 00:33:51 GMT
 EXPOSE 7000 7001 7199 9042 9160
-# Wed, 11 Sep 2019 23:10:06 GMT
+# Thu, 17 Oct 2019 00:33:52 GMT
 CMD ["cassandra" "-f"]
 ```
 
 -	Layers:
-	-	`sha256:e422c0b78be7b58a3182ebe0b2308b9b8e2bc3ea5acab94de48b6d354e305ca8`  
-		Last Modified: Wed, 11 Sep 2019 22:48:50 GMT  
-		Size: 20.4 MB (20368348 bytes)  
+	-	`sha256:328f7589734548c4697486a4844de8ac2ce5add32626818498ce07ccd8344869`  
+		Last Modified: Wed, 16 Oct 2019 23:50:13 GMT  
+		Size: 20.4 MB (20385766 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:603a6e59bc049618f00d02bc3b89b24e777ae9c03583124239c568fbfa06b8a3`  
-		Last Modified: Wed, 11 Sep 2019 23:11:43 GMT  
-		Size: 1.7 KB (1747 bytes)  
+	-	`sha256:af1aac2a65354ccb1b9bf159fa72a087b255e239aaa0e6031da30aa5bd06e01a`  
+		Last Modified: Thu, 17 Oct 2019 00:36:05 GMT  
+		Size: 1.7 KB (1743 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:3056d95ee1cb41a0cd27cfd951aaf7006bccdc9deb3569c08dba361952a14dbf`  
-		Last Modified: Wed, 11 Sep 2019 23:11:44 GMT  
-		Size: 5.2 MB (5195134 bytes)  
+	-	`sha256:3dbafeb675e14803a6dc2ec4130ea3a7fcf6562da1416ae57288e39fd9c700b4`  
+		Last Modified: Thu, 17 Oct 2019 00:36:06 GMT  
+		Size: 5.2 MB (5195104 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:fb3b74837b6b73af19ee925ce47bd1b2f70b70ab605ad106789776997ce7846c`  
-		Last Modified: Wed, 11 Sep 2019 23:11:43 GMT  
-		Size: 925.7 KB (925671 bytes)  
+	-	`sha256:3bddaf6b6f231bd34277c598a16563369ea5f8e836173597ce36b4e2024d02a5`  
+		Last Modified: Thu, 17 Oct 2019 00:36:05 GMT  
+		Size: 925.7 KB (925673 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:2d0075837091a74405043c2990486c9fe0def41fa2c4759f73e32acac200b3e3`  
-		Last Modified: Wed, 11 Sep 2019 23:11:43 GMT  
-		Size: 18.2 KB (18221 bytes)  
+	-	`sha256:e78abbd7645214cb1471e4900a8831d03ff272cd5b0c11e5c5462a4a9cc66aab`  
+		Last Modified: Thu, 17 Oct 2019 00:36:05 GMT  
+		Size: 18.2 KB (18218 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:0bd3ad6ad8a3cb73495b02792f2beb22a79da07b06b8837fbf2af88403240d83`  
-		Last Modified: Wed, 11 Sep 2019 23:12:49 GMT  
-		Size: 90.9 MB (90921276 bytes)  
+	-	`sha256:fee8538e667f68d9c563dc42fb72dfac1c4b3aebee2a5c5dcfade76e5e611909`  
+		Last Modified: Thu, 17 Oct 2019 00:37:08 GMT  
+		Size: 90.9 MB (90919189 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:cc477b3dc030b09de57d7ba4ac58501f73efd44c90a2c715b0bc503f8c1cac56`  
-		Last Modified: Wed, 11 Sep 2019 23:12:28 GMT  
-		Size: 4.9 KB (4948 bytes)  
+	-	`sha256:fc2fb1a45f3dcde51585a7563c67f45e68fbcaf72a0a5a917efa1cda85f2a4f7`  
+		Last Modified: Thu, 17 Oct 2019 00:36:46 GMT  
+		Size: 5.0 KB (4950 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:b3678d207a2a5f654adf3d8401d26a6faa52bdd35c69aa111639b93b98e1ef1e`  
-		Last Modified: Wed, 11 Sep 2019 23:12:28 GMT  
-		Size: 1.2 KB (1161 bytes)  
+	-	`sha256:8bbe0407cf21cca1492ea539b0376f6e68d3be5517c94c242d963b835d7b52cd`  
+		Last Modified: Thu, 17 Oct 2019 00:36:46 GMT  
+		Size: 1.2 KB (1162 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:f40df9b8d292ac9cae37b476c8573dd8b05b8c9a1f245dd09e12216edc8370af`  
-		Last Modified: Wed, 11 Sep 2019 23:12:28 GMT  
+	-	`sha256:278b42d26ea8685e840909de8992873359d27f16905d8b8cf1e962bd7db8d3c1`  
+		Last Modified: Thu, 17 Oct 2019 00:36:46 GMT  
 		Size: 121.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:21e7b2fc6400fb5e6f927fc051792746cc09e72bd73ab61a8d9c1a057c254483`  
-		Last Modified: Wed, 11 Sep 2019 23:12:28 GMT  
-		Size: 25.9 KB (25852 bytes)  
+	-	`sha256:e7cffc3b2891901347854da1cadb7f7e8dbd2cd1e634e4b1d5b7d26ed024edb5`  
+		Last Modified: Thu, 17 Oct 2019 00:36:46 GMT  
+		Size: 25.8 KB (25849 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `cassandra:3.0.18` - linux; 386
@@ -2441,7 +2441,7 @@ CMD ["cassandra" "-f"]
 ## `cassandra:3.11`
 
 ```console
-$ docker pull cassandra@sha256:0c03f24ba76bbbc33548e2bd22da44ab9589960e8346f84ccd71adff13fc2ec5
+$ docker pull cassandra@sha256:f7d5688f98099a65ea6f63e566e28e8f265d28c910aa2b531a0512e3f874320f
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -2551,98 +2551,98 @@ CMD ["cassandra" "-f"]
 ### `cassandra:3.11` - linux; arm64 variant v8
 
 ```console
-$ docker pull cassandra@sha256:9251ee5502b9884487140c0d99e1bdbe97499ec191cf396398974d368615385b
+$ docker pull cassandra@sha256:a75d344daa98910a746674174e839e5d3727668fc867d03e4a7ee1be6f6c9cd5
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **122.3 MB (122269205 bytes)**  
+-	Total Size: **122.3 MB (122287292 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:7fdad0c0b355f5ef4397dabd3a6bb71fbbe7685edc957fe29d568db5424494f8`
+-	Image ID: `sha256:e9f8f694d95115bd28d09a1299dfeb821e1133a98c3cf8d70a79848f61b44375`
 -	Entrypoint: `["docker-entrypoint.sh"]`
 -	Default Command: `["cassandra","-f"]`
 
 ```dockerfile
-# Wed, 11 Sep 2019 22:43:25 GMT
-ADD file:df1ea2e06395a898225f404c63170ac2cfb428ceb374c3c1adc9e87727ab867d in / 
-# Wed, 11 Sep 2019 22:43:26 GMT
+# Wed, 16 Oct 2019 23:43:48 GMT
+ADD file:595705d44062d7a26efb09095239752e50ffc13a94aedb87d9d2bade6bf42e27 in / 
+# Wed, 16 Oct 2019 23:43:50 GMT
 CMD ["bash"]
-# Wed, 11 Sep 2019 23:05:44 GMT
+# Thu, 17 Oct 2019 00:29:25 GMT
 RUN groupadd -r cassandra --gid=999 && useradd -r -g cassandra --uid=999 cassandra
-# Wed, 11 Sep 2019 23:05:58 GMT
+# Thu, 17 Oct 2019 00:29:40 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		gnupg dirmngr 		libjemalloc1 		procps 		iproute2 		numactl 	; 	rm -rf /var/lib/apt/lists/*
-# Wed, 11 Sep 2019 23:05:59 GMT
+# Thu, 17 Oct 2019 00:29:41 GMT
 ENV GOSU_VERSION=1.10
-# Wed, 11 Sep 2019 23:06:19 GMT
+# Thu, 17 Oct 2019 00:30:00 GMT
 RUN set -eux; 	savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends ca-certificates wget; 	rm -rf /var/lib/apt/lists/*; 	wget -O /usr/local/bin/gosu "https://github.com/tianon/gosu/releases/download/$GOSU_VERSION/gosu-$(dpkg --print-architecture)"; 	wget -O /usr/local/bin/gosu.asc "https://github.com/tianon/gosu/releases/download/$GOSU_VERSION/gosu-$(dpkg --print-architecture).asc"; 	export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver hkps://keys.openpgp.org --recv-keys B42F6819007F00F88E364FD4036A9C25BF357DD4; 	gpg --batch --verify /usr/local/bin/gosu.asc /usr/local/bin/gosu; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME" /usr/local/bin/gosu.asc; 	chmod +x /usr/local/bin/gosu; 	apt-mark auto '.*' > /dev/null; 	apt-mark manual $savedAptMark > /dev/null; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 	gosu nobody true
-# Wed, 11 Sep 2019 23:06:20 GMT
+# Thu, 17 Oct 2019 00:30:01 GMT
 ENV GPG_KEYS=514A2AD631A57A16DD0047EC749D6EEC0353B12C 	A26E528B271F19B9E5D8E19EA278B781FE4B2BDA
-# Wed, 11 Sep 2019 23:06:24 GMT
+# Thu, 17 Oct 2019 00:30:05 GMT
 RUN set -eux; 	export GNUPGHOME="$(mktemp -d)"; 	for key in $GPG_KEYS; do 		gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys "$key"; 	done; 	gpg --batch --export $GPG_KEYS > /etc/apt/trusted.gpg.d/cassandra.gpg; 	command -v gpgconf && gpgconf --kill all || :; 	rm -rf "$GNUPGHOME"; 	apt-key list
-# Wed, 11 Sep 2019 23:10:15 GMT
+# Thu, 17 Oct 2019 00:34:11 GMT
 ENV CASSANDRA_VERSION=3.11.4
-# Wed, 11 Sep 2019 23:11:15 GMT
+# Thu, 17 Oct 2019 00:35:30 GMT
 RUN set -eux; 		mkdir -p /usr/share/man/man1/; 		dpkgArch="$(dpkg --print-architecture)"; 	case "$dpkgArch" in 		amd64|i386) 			echo 'deb http://www.apache.org/dist/cassandra/debian 311x main' > /etc/apt/sources.list.d/cassandra.list; 			apt-get update; 			;; 		*) 						savedAptMark="$(apt-mark showmanual)"; 						apt-get update; 			apt-get install -y --no-install-recommends 				wget ca-certificates 				dpkg-dev 			; 						apt-mark showmanual | xargs apt-mark auto > /dev/null; 			apt-mark manual $savedAptMark; 						tempDir="$(mktemp -d)"; 			for pkg in cassandra cassandra-tools; do 				deb="${pkg}_${CASSANDRA_VERSION}_all.deb"; 				wget -O "$tempDir/$deb" "https://www.apache.org/dist/cassandra/debian/pool/main/c/cassandra/$deb"; 			done; 						ls -lAFh "$tempDir"; 			( cd "$tempDir" && dpkg-scanpackages . > Packages ); 			grep '^Package: ' "$tempDir/Packages"; 			echo "deb [ trusted=yes ] file://$tempDir ./" > /etc/apt/sources.list.d/temp.list; 			apt-get -o Acquire::GzipIndexes=false update; 			;; 	esac; 		apt-get install -y 		cassandra="$CASSANDRA_VERSION" 		cassandra-tools="$CASSANDRA_VERSION" 	; 		rm -rf /var/lib/apt/lists/*; 		if [ -n "${tempDir:-}" ]; then 		apt-get purge -y --auto-remove; 		rm -rf "$tempDir" /etc/apt/sources.list.d/temp.list; 	fi
-# Wed, 11 Sep 2019 23:11:17 GMT
+# Thu, 17 Oct 2019 00:35:34 GMT
 ENV CASSANDRA_CONFIG=/etc/cassandra
-# Wed, 11 Sep 2019 23:11:19 GMT
+# Thu, 17 Oct 2019 00:35:36 GMT
 RUN set -eux; 		dpkgArch="$(dpkg --print-architecture)"; 	case "$dpkgArch" in 		ppc64el) 			if grep -q -- '^-Xss' "$CASSANDRA_CONFIG/jvm.options"; then 				grep -- '^-Xss256k$' "$CASSANDRA_CONFIG/jvm.options"; 				sed -ri 's/^-Xss256k$/-Xss512k/' "$CASSANDRA_CONFIG/jvm.options"; 				grep -- '^-Xss512k$' "$CASSANDRA_CONFIG/jvm.options"; 			elif grep -q -- '-Xss256k' "$CASSANDRA_CONFIG/cassandra-env.sh"; then 				sed -ri 's/-Xss256k/-Xss512k/g' "$CASSANDRA_CONFIG/cassandra-env.sh"; 				grep -- '-Xss512k' "$CASSANDRA_CONFIG/cassandra-env.sh"; 			fi; 			;; 	esac; 		sed -ri 's/^(JVM_PATCH_VERSION)=.*/\1=25/' "$CASSANDRA_CONFIG/cassandra-env.sh"
-# Wed, 11 Sep 2019 23:11:19 GMT
+# Thu, 17 Oct 2019 00:35:37 GMT
 COPY file:32df6d10eaefa72af8b8f14546dffbafa553b673990a6dbbe9870c1909627db8 in /usr/local/bin/ 
-# Wed, 11 Sep 2019 23:11:20 GMT
+# Thu, 17 Oct 2019 00:35:40 GMT
 RUN ln -s usr/local/bin/docker-entrypoint.sh /docker-entrypoint.sh # backwards compat
-# Wed, 11 Sep 2019 23:11:21 GMT
+# Thu, 17 Oct 2019 00:35:41 GMT
 ENTRYPOINT ["docker-entrypoint.sh"]
-# Wed, 11 Sep 2019 23:11:23 GMT
+# Thu, 17 Oct 2019 00:35:44 GMT
 RUN mkdir -p /var/lib/cassandra "$CASSANDRA_CONFIG" 	&& chown -R cassandra:cassandra /var/lib/cassandra "$CASSANDRA_CONFIG" 	&& chmod 777 /var/lib/cassandra "$CASSANDRA_CONFIG"
-# Wed, 11 Sep 2019 23:11:23 GMT
+# Thu, 17 Oct 2019 00:35:46 GMT
 VOLUME [/var/lib/cassandra]
-# Wed, 11 Sep 2019 23:11:24 GMT
+# Thu, 17 Oct 2019 00:35:48 GMT
 EXPOSE 7000 7001 7199 9042 9160
-# Wed, 11 Sep 2019 23:11:24 GMT
+# Thu, 17 Oct 2019 00:35:49 GMT
 CMD ["cassandra" "-f"]
 ```
 
 -	Layers:
-	-	`sha256:e422c0b78be7b58a3182ebe0b2308b9b8e2bc3ea5acab94de48b6d354e305ca8`  
-		Last Modified: Wed, 11 Sep 2019 22:48:50 GMT  
-		Size: 20.4 MB (20368348 bytes)  
+	-	`sha256:328f7589734548c4697486a4844de8ac2ce5add32626818498ce07ccd8344869`  
+		Last Modified: Wed, 16 Oct 2019 23:50:13 GMT  
+		Size: 20.4 MB (20385766 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:603a6e59bc049618f00d02bc3b89b24e777ae9c03583124239c568fbfa06b8a3`  
-		Last Modified: Wed, 11 Sep 2019 23:11:43 GMT  
-		Size: 1.7 KB (1747 bytes)  
+	-	`sha256:af1aac2a65354ccb1b9bf159fa72a087b255e239aaa0e6031da30aa5bd06e01a`  
+		Last Modified: Thu, 17 Oct 2019 00:36:05 GMT  
+		Size: 1.7 KB (1743 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:3056d95ee1cb41a0cd27cfd951aaf7006bccdc9deb3569c08dba361952a14dbf`  
-		Last Modified: Wed, 11 Sep 2019 23:11:44 GMT  
-		Size: 5.2 MB (5195134 bytes)  
+	-	`sha256:3dbafeb675e14803a6dc2ec4130ea3a7fcf6562da1416ae57288e39fd9c700b4`  
+		Last Modified: Thu, 17 Oct 2019 00:36:06 GMT  
+		Size: 5.2 MB (5195104 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:fb3b74837b6b73af19ee925ce47bd1b2f70b70ab605ad106789776997ce7846c`  
-		Last Modified: Wed, 11 Sep 2019 23:11:43 GMT  
-		Size: 925.7 KB (925671 bytes)  
+	-	`sha256:3bddaf6b6f231bd34277c598a16563369ea5f8e836173597ce36b4e2024d02a5`  
+		Last Modified: Thu, 17 Oct 2019 00:36:05 GMT  
+		Size: 925.7 KB (925673 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:2d0075837091a74405043c2990486c9fe0def41fa2c4759f73e32acac200b3e3`  
-		Last Modified: Wed, 11 Sep 2019 23:11:43 GMT  
-		Size: 18.2 KB (18221 bytes)  
+	-	`sha256:e78abbd7645214cb1471e4900a8831d03ff272cd5b0c11e5c5462a4a9cc66aab`  
+		Last Modified: Thu, 17 Oct 2019 00:36:05 GMT  
+		Size: 18.2 KB (18218 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:a606ccb394a19f60fc9703cf7579cff82de032d51083d22b5cdbc08017adaacc`  
-		Last Modified: Wed, 11 Sep 2019 23:13:21 GMT  
-		Size: 95.7 MB (95723643 bytes)  
+	-	`sha256:1cc6d6f940ded33c860cc3829bbc8b2fbd8758306110e65fa246327b8d5033d5`  
+		Last Modified: Thu, 17 Oct 2019 00:37:40 GMT  
+		Size: 95.7 MB (95724345 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:59b422d2ba1d95ff847f54e30c68f795bb3fe8f2946a1a0ad0bba2a8d6162fe7`  
-		Last Modified: Wed, 11 Sep 2019 23:12:55 GMT  
+	-	`sha256:120c971042d3acf96f0b943e1cb80d21d0ed072f1c2a64592ac16f2e57f2b814`  
+		Last Modified: Thu, 17 Oct 2019 00:37:15 GMT  
 		Size: 4.7 KB (4654 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:6d2b2a68067ad13f0c74964babddad3d42e6d5d3e08733d222ff91533285c9eb`  
-		Last Modified: Wed, 11 Sep 2019 23:12:56 GMT  
+	-	`sha256:a9b0f8b9c9a8592e40801c304f02d940975bda858e1579276635c25335659f70`  
+		Last Modified: Thu, 17 Oct 2019 00:37:16 GMT  
 		Size: 1.2 KB (1162 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:5ebfa9f4e03bfb2f496f9cdd5a277a76a6e382c893b0b54f29f1416d503926c2`  
-		Last Modified: Wed, 11 Sep 2019 23:12:55 GMT  
+	-	`sha256:c3c3a84c27aab8e66241eea18c4854f56cd113672647ea4e68c0d3dc6e1aa9c6`  
+		Last Modified: Thu, 17 Oct 2019 00:37:16 GMT  
 		Size: 121.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:6cb9f0e4228a0aa4a04baeb0742046f39004c3f13c110daea7305d6f2340dd28`  
-		Last Modified: Wed, 11 Sep 2019 23:12:55 GMT  
-		Size: 30.5 KB (30504 bytes)  
+	-	`sha256:914fdb55318a4034402ecb4ccdf408055e5ebf3daf8d440340fb0332f0580bb1`  
+		Last Modified: Thu, 17 Oct 2019 00:37:15 GMT  
+		Size: 30.5 KB (30506 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `cassandra:3.11` - linux; 386
@@ -2842,7 +2842,7 @@ CMD ["cassandra" "-f"]
 ## `cassandra:3.11.4`
 
 ```console
-$ docker pull cassandra@sha256:0c03f24ba76bbbc33548e2bd22da44ab9589960e8346f84ccd71adff13fc2ec5
+$ docker pull cassandra@sha256:f7d5688f98099a65ea6f63e566e28e8f265d28c910aa2b531a0512e3f874320f
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -2952,98 +2952,98 @@ CMD ["cassandra" "-f"]
 ### `cassandra:3.11.4` - linux; arm64 variant v8
 
 ```console
-$ docker pull cassandra@sha256:9251ee5502b9884487140c0d99e1bdbe97499ec191cf396398974d368615385b
+$ docker pull cassandra@sha256:a75d344daa98910a746674174e839e5d3727668fc867d03e4a7ee1be6f6c9cd5
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **122.3 MB (122269205 bytes)**  
+-	Total Size: **122.3 MB (122287292 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:7fdad0c0b355f5ef4397dabd3a6bb71fbbe7685edc957fe29d568db5424494f8`
+-	Image ID: `sha256:e9f8f694d95115bd28d09a1299dfeb821e1133a98c3cf8d70a79848f61b44375`
 -	Entrypoint: `["docker-entrypoint.sh"]`
 -	Default Command: `["cassandra","-f"]`
 
 ```dockerfile
-# Wed, 11 Sep 2019 22:43:25 GMT
-ADD file:df1ea2e06395a898225f404c63170ac2cfb428ceb374c3c1adc9e87727ab867d in / 
-# Wed, 11 Sep 2019 22:43:26 GMT
+# Wed, 16 Oct 2019 23:43:48 GMT
+ADD file:595705d44062d7a26efb09095239752e50ffc13a94aedb87d9d2bade6bf42e27 in / 
+# Wed, 16 Oct 2019 23:43:50 GMT
 CMD ["bash"]
-# Wed, 11 Sep 2019 23:05:44 GMT
+# Thu, 17 Oct 2019 00:29:25 GMT
 RUN groupadd -r cassandra --gid=999 && useradd -r -g cassandra --uid=999 cassandra
-# Wed, 11 Sep 2019 23:05:58 GMT
+# Thu, 17 Oct 2019 00:29:40 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		gnupg dirmngr 		libjemalloc1 		procps 		iproute2 		numactl 	; 	rm -rf /var/lib/apt/lists/*
-# Wed, 11 Sep 2019 23:05:59 GMT
+# Thu, 17 Oct 2019 00:29:41 GMT
 ENV GOSU_VERSION=1.10
-# Wed, 11 Sep 2019 23:06:19 GMT
+# Thu, 17 Oct 2019 00:30:00 GMT
 RUN set -eux; 	savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends ca-certificates wget; 	rm -rf /var/lib/apt/lists/*; 	wget -O /usr/local/bin/gosu "https://github.com/tianon/gosu/releases/download/$GOSU_VERSION/gosu-$(dpkg --print-architecture)"; 	wget -O /usr/local/bin/gosu.asc "https://github.com/tianon/gosu/releases/download/$GOSU_VERSION/gosu-$(dpkg --print-architecture).asc"; 	export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver hkps://keys.openpgp.org --recv-keys B42F6819007F00F88E364FD4036A9C25BF357DD4; 	gpg --batch --verify /usr/local/bin/gosu.asc /usr/local/bin/gosu; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME" /usr/local/bin/gosu.asc; 	chmod +x /usr/local/bin/gosu; 	apt-mark auto '.*' > /dev/null; 	apt-mark manual $savedAptMark > /dev/null; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 	gosu nobody true
-# Wed, 11 Sep 2019 23:06:20 GMT
+# Thu, 17 Oct 2019 00:30:01 GMT
 ENV GPG_KEYS=514A2AD631A57A16DD0047EC749D6EEC0353B12C 	A26E528B271F19B9E5D8E19EA278B781FE4B2BDA
-# Wed, 11 Sep 2019 23:06:24 GMT
+# Thu, 17 Oct 2019 00:30:05 GMT
 RUN set -eux; 	export GNUPGHOME="$(mktemp -d)"; 	for key in $GPG_KEYS; do 		gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys "$key"; 	done; 	gpg --batch --export $GPG_KEYS > /etc/apt/trusted.gpg.d/cassandra.gpg; 	command -v gpgconf && gpgconf --kill all || :; 	rm -rf "$GNUPGHOME"; 	apt-key list
-# Wed, 11 Sep 2019 23:10:15 GMT
+# Thu, 17 Oct 2019 00:34:11 GMT
 ENV CASSANDRA_VERSION=3.11.4
-# Wed, 11 Sep 2019 23:11:15 GMT
+# Thu, 17 Oct 2019 00:35:30 GMT
 RUN set -eux; 		mkdir -p /usr/share/man/man1/; 		dpkgArch="$(dpkg --print-architecture)"; 	case "$dpkgArch" in 		amd64|i386) 			echo 'deb http://www.apache.org/dist/cassandra/debian 311x main' > /etc/apt/sources.list.d/cassandra.list; 			apt-get update; 			;; 		*) 						savedAptMark="$(apt-mark showmanual)"; 						apt-get update; 			apt-get install -y --no-install-recommends 				wget ca-certificates 				dpkg-dev 			; 						apt-mark showmanual | xargs apt-mark auto > /dev/null; 			apt-mark manual $savedAptMark; 						tempDir="$(mktemp -d)"; 			for pkg in cassandra cassandra-tools; do 				deb="${pkg}_${CASSANDRA_VERSION}_all.deb"; 				wget -O "$tempDir/$deb" "https://www.apache.org/dist/cassandra/debian/pool/main/c/cassandra/$deb"; 			done; 						ls -lAFh "$tempDir"; 			( cd "$tempDir" && dpkg-scanpackages . > Packages ); 			grep '^Package: ' "$tempDir/Packages"; 			echo "deb [ trusted=yes ] file://$tempDir ./" > /etc/apt/sources.list.d/temp.list; 			apt-get -o Acquire::GzipIndexes=false update; 			;; 	esac; 		apt-get install -y 		cassandra="$CASSANDRA_VERSION" 		cassandra-tools="$CASSANDRA_VERSION" 	; 		rm -rf /var/lib/apt/lists/*; 		if [ -n "${tempDir:-}" ]; then 		apt-get purge -y --auto-remove; 		rm -rf "$tempDir" /etc/apt/sources.list.d/temp.list; 	fi
-# Wed, 11 Sep 2019 23:11:17 GMT
+# Thu, 17 Oct 2019 00:35:34 GMT
 ENV CASSANDRA_CONFIG=/etc/cassandra
-# Wed, 11 Sep 2019 23:11:19 GMT
+# Thu, 17 Oct 2019 00:35:36 GMT
 RUN set -eux; 		dpkgArch="$(dpkg --print-architecture)"; 	case "$dpkgArch" in 		ppc64el) 			if grep -q -- '^-Xss' "$CASSANDRA_CONFIG/jvm.options"; then 				grep -- '^-Xss256k$' "$CASSANDRA_CONFIG/jvm.options"; 				sed -ri 's/^-Xss256k$/-Xss512k/' "$CASSANDRA_CONFIG/jvm.options"; 				grep -- '^-Xss512k$' "$CASSANDRA_CONFIG/jvm.options"; 			elif grep -q -- '-Xss256k' "$CASSANDRA_CONFIG/cassandra-env.sh"; then 				sed -ri 's/-Xss256k/-Xss512k/g' "$CASSANDRA_CONFIG/cassandra-env.sh"; 				grep -- '-Xss512k' "$CASSANDRA_CONFIG/cassandra-env.sh"; 			fi; 			;; 	esac; 		sed -ri 's/^(JVM_PATCH_VERSION)=.*/\1=25/' "$CASSANDRA_CONFIG/cassandra-env.sh"
-# Wed, 11 Sep 2019 23:11:19 GMT
+# Thu, 17 Oct 2019 00:35:37 GMT
 COPY file:32df6d10eaefa72af8b8f14546dffbafa553b673990a6dbbe9870c1909627db8 in /usr/local/bin/ 
-# Wed, 11 Sep 2019 23:11:20 GMT
+# Thu, 17 Oct 2019 00:35:40 GMT
 RUN ln -s usr/local/bin/docker-entrypoint.sh /docker-entrypoint.sh # backwards compat
-# Wed, 11 Sep 2019 23:11:21 GMT
+# Thu, 17 Oct 2019 00:35:41 GMT
 ENTRYPOINT ["docker-entrypoint.sh"]
-# Wed, 11 Sep 2019 23:11:23 GMT
+# Thu, 17 Oct 2019 00:35:44 GMT
 RUN mkdir -p /var/lib/cassandra "$CASSANDRA_CONFIG" 	&& chown -R cassandra:cassandra /var/lib/cassandra "$CASSANDRA_CONFIG" 	&& chmod 777 /var/lib/cassandra "$CASSANDRA_CONFIG"
-# Wed, 11 Sep 2019 23:11:23 GMT
+# Thu, 17 Oct 2019 00:35:46 GMT
 VOLUME [/var/lib/cassandra]
-# Wed, 11 Sep 2019 23:11:24 GMT
+# Thu, 17 Oct 2019 00:35:48 GMT
 EXPOSE 7000 7001 7199 9042 9160
-# Wed, 11 Sep 2019 23:11:24 GMT
+# Thu, 17 Oct 2019 00:35:49 GMT
 CMD ["cassandra" "-f"]
 ```
 
 -	Layers:
-	-	`sha256:e422c0b78be7b58a3182ebe0b2308b9b8e2bc3ea5acab94de48b6d354e305ca8`  
-		Last Modified: Wed, 11 Sep 2019 22:48:50 GMT  
-		Size: 20.4 MB (20368348 bytes)  
+	-	`sha256:328f7589734548c4697486a4844de8ac2ce5add32626818498ce07ccd8344869`  
+		Last Modified: Wed, 16 Oct 2019 23:50:13 GMT  
+		Size: 20.4 MB (20385766 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:603a6e59bc049618f00d02bc3b89b24e777ae9c03583124239c568fbfa06b8a3`  
-		Last Modified: Wed, 11 Sep 2019 23:11:43 GMT  
-		Size: 1.7 KB (1747 bytes)  
+	-	`sha256:af1aac2a65354ccb1b9bf159fa72a087b255e239aaa0e6031da30aa5bd06e01a`  
+		Last Modified: Thu, 17 Oct 2019 00:36:05 GMT  
+		Size: 1.7 KB (1743 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:3056d95ee1cb41a0cd27cfd951aaf7006bccdc9deb3569c08dba361952a14dbf`  
-		Last Modified: Wed, 11 Sep 2019 23:11:44 GMT  
-		Size: 5.2 MB (5195134 bytes)  
+	-	`sha256:3dbafeb675e14803a6dc2ec4130ea3a7fcf6562da1416ae57288e39fd9c700b4`  
+		Last Modified: Thu, 17 Oct 2019 00:36:06 GMT  
+		Size: 5.2 MB (5195104 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:fb3b74837b6b73af19ee925ce47bd1b2f70b70ab605ad106789776997ce7846c`  
-		Last Modified: Wed, 11 Sep 2019 23:11:43 GMT  
-		Size: 925.7 KB (925671 bytes)  
+	-	`sha256:3bddaf6b6f231bd34277c598a16563369ea5f8e836173597ce36b4e2024d02a5`  
+		Last Modified: Thu, 17 Oct 2019 00:36:05 GMT  
+		Size: 925.7 KB (925673 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:2d0075837091a74405043c2990486c9fe0def41fa2c4759f73e32acac200b3e3`  
-		Last Modified: Wed, 11 Sep 2019 23:11:43 GMT  
-		Size: 18.2 KB (18221 bytes)  
+	-	`sha256:e78abbd7645214cb1471e4900a8831d03ff272cd5b0c11e5c5462a4a9cc66aab`  
+		Last Modified: Thu, 17 Oct 2019 00:36:05 GMT  
+		Size: 18.2 KB (18218 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:a606ccb394a19f60fc9703cf7579cff82de032d51083d22b5cdbc08017adaacc`  
-		Last Modified: Wed, 11 Sep 2019 23:13:21 GMT  
-		Size: 95.7 MB (95723643 bytes)  
+	-	`sha256:1cc6d6f940ded33c860cc3829bbc8b2fbd8758306110e65fa246327b8d5033d5`  
+		Last Modified: Thu, 17 Oct 2019 00:37:40 GMT  
+		Size: 95.7 MB (95724345 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:59b422d2ba1d95ff847f54e30c68f795bb3fe8f2946a1a0ad0bba2a8d6162fe7`  
-		Last Modified: Wed, 11 Sep 2019 23:12:55 GMT  
+	-	`sha256:120c971042d3acf96f0b943e1cb80d21d0ed072f1c2a64592ac16f2e57f2b814`  
+		Last Modified: Thu, 17 Oct 2019 00:37:15 GMT  
 		Size: 4.7 KB (4654 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:6d2b2a68067ad13f0c74964babddad3d42e6d5d3e08733d222ff91533285c9eb`  
-		Last Modified: Wed, 11 Sep 2019 23:12:56 GMT  
+	-	`sha256:a9b0f8b9c9a8592e40801c304f02d940975bda858e1579276635c25335659f70`  
+		Last Modified: Thu, 17 Oct 2019 00:37:16 GMT  
 		Size: 1.2 KB (1162 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:5ebfa9f4e03bfb2f496f9cdd5a277a76a6e382c893b0b54f29f1416d503926c2`  
-		Last Modified: Wed, 11 Sep 2019 23:12:55 GMT  
+	-	`sha256:c3c3a84c27aab8e66241eea18c4854f56cd113672647ea4e68c0d3dc6e1aa9c6`  
+		Last Modified: Thu, 17 Oct 2019 00:37:16 GMT  
 		Size: 121.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:6cb9f0e4228a0aa4a04baeb0742046f39004c3f13c110daea7305d6f2340dd28`  
-		Last Modified: Wed, 11 Sep 2019 23:12:55 GMT  
-		Size: 30.5 KB (30504 bytes)  
+	-	`sha256:914fdb55318a4034402ecb4ccdf408055e5ebf3daf8d440340fb0332f0580bb1`  
+		Last Modified: Thu, 17 Oct 2019 00:37:15 GMT  
+		Size: 30.5 KB (30506 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `cassandra:3.11.4` - linux; 386
@@ -3243,7 +3243,7 @@ CMD ["cassandra" "-f"]
 ## `cassandra:latest`
 
 ```console
-$ docker pull cassandra@sha256:0c03f24ba76bbbc33548e2bd22da44ab9589960e8346f84ccd71adff13fc2ec5
+$ docker pull cassandra@sha256:f7d5688f98099a65ea6f63e566e28e8f265d28c910aa2b531a0512e3f874320f
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -3353,98 +3353,98 @@ CMD ["cassandra" "-f"]
 ### `cassandra:latest` - linux; arm64 variant v8
 
 ```console
-$ docker pull cassandra@sha256:9251ee5502b9884487140c0d99e1bdbe97499ec191cf396398974d368615385b
+$ docker pull cassandra@sha256:a75d344daa98910a746674174e839e5d3727668fc867d03e4a7ee1be6f6c9cd5
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **122.3 MB (122269205 bytes)**  
+-	Total Size: **122.3 MB (122287292 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:7fdad0c0b355f5ef4397dabd3a6bb71fbbe7685edc957fe29d568db5424494f8`
+-	Image ID: `sha256:e9f8f694d95115bd28d09a1299dfeb821e1133a98c3cf8d70a79848f61b44375`
 -	Entrypoint: `["docker-entrypoint.sh"]`
 -	Default Command: `["cassandra","-f"]`
 
 ```dockerfile
-# Wed, 11 Sep 2019 22:43:25 GMT
-ADD file:df1ea2e06395a898225f404c63170ac2cfb428ceb374c3c1adc9e87727ab867d in / 
-# Wed, 11 Sep 2019 22:43:26 GMT
+# Wed, 16 Oct 2019 23:43:48 GMT
+ADD file:595705d44062d7a26efb09095239752e50ffc13a94aedb87d9d2bade6bf42e27 in / 
+# Wed, 16 Oct 2019 23:43:50 GMT
 CMD ["bash"]
-# Wed, 11 Sep 2019 23:05:44 GMT
+# Thu, 17 Oct 2019 00:29:25 GMT
 RUN groupadd -r cassandra --gid=999 && useradd -r -g cassandra --uid=999 cassandra
-# Wed, 11 Sep 2019 23:05:58 GMT
+# Thu, 17 Oct 2019 00:29:40 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		gnupg dirmngr 		libjemalloc1 		procps 		iproute2 		numactl 	; 	rm -rf /var/lib/apt/lists/*
-# Wed, 11 Sep 2019 23:05:59 GMT
+# Thu, 17 Oct 2019 00:29:41 GMT
 ENV GOSU_VERSION=1.10
-# Wed, 11 Sep 2019 23:06:19 GMT
+# Thu, 17 Oct 2019 00:30:00 GMT
 RUN set -eux; 	savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends ca-certificates wget; 	rm -rf /var/lib/apt/lists/*; 	wget -O /usr/local/bin/gosu "https://github.com/tianon/gosu/releases/download/$GOSU_VERSION/gosu-$(dpkg --print-architecture)"; 	wget -O /usr/local/bin/gosu.asc "https://github.com/tianon/gosu/releases/download/$GOSU_VERSION/gosu-$(dpkg --print-architecture).asc"; 	export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver hkps://keys.openpgp.org --recv-keys B42F6819007F00F88E364FD4036A9C25BF357DD4; 	gpg --batch --verify /usr/local/bin/gosu.asc /usr/local/bin/gosu; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME" /usr/local/bin/gosu.asc; 	chmod +x /usr/local/bin/gosu; 	apt-mark auto '.*' > /dev/null; 	apt-mark manual $savedAptMark > /dev/null; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 	gosu nobody true
-# Wed, 11 Sep 2019 23:06:20 GMT
+# Thu, 17 Oct 2019 00:30:01 GMT
 ENV GPG_KEYS=514A2AD631A57A16DD0047EC749D6EEC0353B12C 	A26E528B271F19B9E5D8E19EA278B781FE4B2BDA
-# Wed, 11 Sep 2019 23:06:24 GMT
+# Thu, 17 Oct 2019 00:30:05 GMT
 RUN set -eux; 	export GNUPGHOME="$(mktemp -d)"; 	for key in $GPG_KEYS; do 		gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys "$key"; 	done; 	gpg --batch --export $GPG_KEYS > /etc/apt/trusted.gpg.d/cassandra.gpg; 	command -v gpgconf && gpgconf --kill all || :; 	rm -rf "$GNUPGHOME"; 	apt-key list
-# Wed, 11 Sep 2019 23:10:15 GMT
+# Thu, 17 Oct 2019 00:34:11 GMT
 ENV CASSANDRA_VERSION=3.11.4
-# Wed, 11 Sep 2019 23:11:15 GMT
+# Thu, 17 Oct 2019 00:35:30 GMT
 RUN set -eux; 		mkdir -p /usr/share/man/man1/; 		dpkgArch="$(dpkg --print-architecture)"; 	case "$dpkgArch" in 		amd64|i386) 			echo 'deb http://www.apache.org/dist/cassandra/debian 311x main' > /etc/apt/sources.list.d/cassandra.list; 			apt-get update; 			;; 		*) 						savedAptMark="$(apt-mark showmanual)"; 						apt-get update; 			apt-get install -y --no-install-recommends 				wget ca-certificates 				dpkg-dev 			; 						apt-mark showmanual | xargs apt-mark auto > /dev/null; 			apt-mark manual $savedAptMark; 						tempDir="$(mktemp -d)"; 			for pkg in cassandra cassandra-tools; do 				deb="${pkg}_${CASSANDRA_VERSION}_all.deb"; 				wget -O "$tempDir/$deb" "https://www.apache.org/dist/cassandra/debian/pool/main/c/cassandra/$deb"; 			done; 						ls -lAFh "$tempDir"; 			( cd "$tempDir" && dpkg-scanpackages . > Packages ); 			grep '^Package: ' "$tempDir/Packages"; 			echo "deb [ trusted=yes ] file://$tempDir ./" > /etc/apt/sources.list.d/temp.list; 			apt-get -o Acquire::GzipIndexes=false update; 			;; 	esac; 		apt-get install -y 		cassandra="$CASSANDRA_VERSION" 		cassandra-tools="$CASSANDRA_VERSION" 	; 		rm -rf /var/lib/apt/lists/*; 		if [ -n "${tempDir:-}" ]; then 		apt-get purge -y --auto-remove; 		rm -rf "$tempDir" /etc/apt/sources.list.d/temp.list; 	fi
-# Wed, 11 Sep 2019 23:11:17 GMT
+# Thu, 17 Oct 2019 00:35:34 GMT
 ENV CASSANDRA_CONFIG=/etc/cassandra
-# Wed, 11 Sep 2019 23:11:19 GMT
+# Thu, 17 Oct 2019 00:35:36 GMT
 RUN set -eux; 		dpkgArch="$(dpkg --print-architecture)"; 	case "$dpkgArch" in 		ppc64el) 			if grep -q -- '^-Xss' "$CASSANDRA_CONFIG/jvm.options"; then 				grep -- '^-Xss256k$' "$CASSANDRA_CONFIG/jvm.options"; 				sed -ri 's/^-Xss256k$/-Xss512k/' "$CASSANDRA_CONFIG/jvm.options"; 				grep -- '^-Xss512k$' "$CASSANDRA_CONFIG/jvm.options"; 			elif grep -q -- '-Xss256k' "$CASSANDRA_CONFIG/cassandra-env.sh"; then 				sed -ri 's/-Xss256k/-Xss512k/g' "$CASSANDRA_CONFIG/cassandra-env.sh"; 				grep -- '-Xss512k' "$CASSANDRA_CONFIG/cassandra-env.sh"; 			fi; 			;; 	esac; 		sed -ri 's/^(JVM_PATCH_VERSION)=.*/\1=25/' "$CASSANDRA_CONFIG/cassandra-env.sh"
-# Wed, 11 Sep 2019 23:11:19 GMT
+# Thu, 17 Oct 2019 00:35:37 GMT
 COPY file:32df6d10eaefa72af8b8f14546dffbafa553b673990a6dbbe9870c1909627db8 in /usr/local/bin/ 
-# Wed, 11 Sep 2019 23:11:20 GMT
+# Thu, 17 Oct 2019 00:35:40 GMT
 RUN ln -s usr/local/bin/docker-entrypoint.sh /docker-entrypoint.sh # backwards compat
-# Wed, 11 Sep 2019 23:11:21 GMT
+# Thu, 17 Oct 2019 00:35:41 GMT
 ENTRYPOINT ["docker-entrypoint.sh"]
-# Wed, 11 Sep 2019 23:11:23 GMT
+# Thu, 17 Oct 2019 00:35:44 GMT
 RUN mkdir -p /var/lib/cassandra "$CASSANDRA_CONFIG" 	&& chown -R cassandra:cassandra /var/lib/cassandra "$CASSANDRA_CONFIG" 	&& chmod 777 /var/lib/cassandra "$CASSANDRA_CONFIG"
-# Wed, 11 Sep 2019 23:11:23 GMT
+# Thu, 17 Oct 2019 00:35:46 GMT
 VOLUME [/var/lib/cassandra]
-# Wed, 11 Sep 2019 23:11:24 GMT
+# Thu, 17 Oct 2019 00:35:48 GMT
 EXPOSE 7000 7001 7199 9042 9160
-# Wed, 11 Sep 2019 23:11:24 GMT
+# Thu, 17 Oct 2019 00:35:49 GMT
 CMD ["cassandra" "-f"]
 ```
 
 -	Layers:
-	-	`sha256:e422c0b78be7b58a3182ebe0b2308b9b8e2bc3ea5acab94de48b6d354e305ca8`  
-		Last Modified: Wed, 11 Sep 2019 22:48:50 GMT  
-		Size: 20.4 MB (20368348 bytes)  
+	-	`sha256:328f7589734548c4697486a4844de8ac2ce5add32626818498ce07ccd8344869`  
+		Last Modified: Wed, 16 Oct 2019 23:50:13 GMT  
+		Size: 20.4 MB (20385766 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:603a6e59bc049618f00d02bc3b89b24e777ae9c03583124239c568fbfa06b8a3`  
-		Last Modified: Wed, 11 Sep 2019 23:11:43 GMT  
-		Size: 1.7 KB (1747 bytes)  
+	-	`sha256:af1aac2a65354ccb1b9bf159fa72a087b255e239aaa0e6031da30aa5bd06e01a`  
+		Last Modified: Thu, 17 Oct 2019 00:36:05 GMT  
+		Size: 1.7 KB (1743 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:3056d95ee1cb41a0cd27cfd951aaf7006bccdc9deb3569c08dba361952a14dbf`  
-		Last Modified: Wed, 11 Sep 2019 23:11:44 GMT  
-		Size: 5.2 MB (5195134 bytes)  
+	-	`sha256:3dbafeb675e14803a6dc2ec4130ea3a7fcf6562da1416ae57288e39fd9c700b4`  
+		Last Modified: Thu, 17 Oct 2019 00:36:06 GMT  
+		Size: 5.2 MB (5195104 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:fb3b74837b6b73af19ee925ce47bd1b2f70b70ab605ad106789776997ce7846c`  
-		Last Modified: Wed, 11 Sep 2019 23:11:43 GMT  
-		Size: 925.7 KB (925671 bytes)  
+	-	`sha256:3bddaf6b6f231bd34277c598a16563369ea5f8e836173597ce36b4e2024d02a5`  
+		Last Modified: Thu, 17 Oct 2019 00:36:05 GMT  
+		Size: 925.7 KB (925673 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:2d0075837091a74405043c2990486c9fe0def41fa2c4759f73e32acac200b3e3`  
-		Last Modified: Wed, 11 Sep 2019 23:11:43 GMT  
-		Size: 18.2 KB (18221 bytes)  
+	-	`sha256:e78abbd7645214cb1471e4900a8831d03ff272cd5b0c11e5c5462a4a9cc66aab`  
+		Last Modified: Thu, 17 Oct 2019 00:36:05 GMT  
+		Size: 18.2 KB (18218 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:a606ccb394a19f60fc9703cf7579cff82de032d51083d22b5cdbc08017adaacc`  
-		Last Modified: Wed, 11 Sep 2019 23:13:21 GMT  
-		Size: 95.7 MB (95723643 bytes)  
+	-	`sha256:1cc6d6f940ded33c860cc3829bbc8b2fbd8758306110e65fa246327b8d5033d5`  
+		Last Modified: Thu, 17 Oct 2019 00:37:40 GMT  
+		Size: 95.7 MB (95724345 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:59b422d2ba1d95ff847f54e30c68f795bb3fe8f2946a1a0ad0bba2a8d6162fe7`  
-		Last Modified: Wed, 11 Sep 2019 23:12:55 GMT  
+	-	`sha256:120c971042d3acf96f0b943e1cb80d21d0ed072f1c2a64592ac16f2e57f2b814`  
+		Last Modified: Thu, 17 Oct 2019 00:37:15 GMT  
 		Size: 4.7 KB (4654 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:6d2b2a68067ad13f0c74964babddad3d42e6d5d3e08733d222ff91533285c9eb`  
-		Last Modified: Wed, 11 Sep 2019 23:12:56 GMT  
+	-	`sha256:a9b0f8b9c9a8592e40801c304f02d940975bda858e1579276635c25335659f70`  
+		Last Modified: Thu, 17 Oct 2019 00:37:16 GMT  
 		Size: 1.2 KB (1162 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:5ebfa9f4e03bfb2f496f9cdd5a277a76a6e382c893b0b54f29f1416d503926c2`  
-		Last Modified: Wed, 11 Sep 2019 23:12:55 GMT  
+	-	`sha256:c3c3a84c27aab8e66241eea18c4854f56cd113672647ea4e68c0d3dc6e1aa9c6`  
+		Last Modified: Thu, 17 Oct 2019 00:37:16 GMT  
 		Size: 121.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:6cb9f0e4228a0aa4a04baeb0742046f39004c3f13c110daea7305d6f2340dd28`  
-		Last Modified: Wed, 11 Sep 2019 23:12:55 GMT  
-		Size: 30.5 KB (30504 bytes)  
+	-	`sha256:914fdb55318a4034402ecb4ccdf408055e5ebf3daf8d440340fb0332f0580bb1`  
+		Last Modified: Thu, 17 Oct 2019 00:37:15 GMT  
+		Size: 30.5 KB (30506 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `cassandra:latest` - linux; 386
