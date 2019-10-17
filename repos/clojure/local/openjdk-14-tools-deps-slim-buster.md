@@ -2,9 +2,9 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:9528bc67d7d375861397c472873c8e7b590ba07653a08dc81cd2998894ce1c88`
-- Created: `2019-10-04T01:02:28.367065558Z`
-- Virtual Size: ~ 521.10 Mb  
+- Image ID: `sha256:fd495b4e849181f8f2f11935a8e10b2af1256c87599e1709ef335470aaa5e6ce`
+- Created: `2019-10-14T20:44:48.158592833Z`
+- Virtual Size: ~ 520.81 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Command: `["sh","-c","sleep 1 && exec clj"]`
@@ -12,9 +12,9 @@
   - `PATH=/usr/java/openjdk-14/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
   - `LANG=C.UTF-8`
   - `JAVA_HOME=/usr/java/openjdk-14`
-  - `JAVA_VERSION=14-ea+17`
-  - `JAVA_URL=https://download.java.net/java/early_access/jdk14/17/GPL/openjdk-14-ea+17_linux-x64_bin.tar.gz`
-  - `JAVA_SHA256=c1c6627fd797900f64b72ed119c0d58e39955a7759803c324198cb39fe67c657`
+  - `JAVA_VERSION=14-ea+18`
+  - `JAVA_URL=https://download.java.net/java/early_access/jdk14/18/GPL/openjdk-14-ea+18_linux-x64_bin.tar.gz`
+  - `JAVA_SHA256=7e97fffda6c9f2ba0640e5e61a1627482532ae18c33c6541ed9cc0f21d498a1d`
   - `CLOJURE_VERSION=1.10.1.469`
 
 ## `dpkg` (`.deb`-based packages)
