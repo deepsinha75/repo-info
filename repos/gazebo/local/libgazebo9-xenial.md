@@ -5806,14 +5806,9 @@ Licenses: (parsed from: `/usr/share/doc/libpython2.7/copyright`, `/usr/share/doc
 - `implied`
 - `see above, some license as Python`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris python2.7=2.7.12-1ubuntu0~16.04.8
-'http://archive.ubuntu.com/ubuntu/pool/main/p/python2.7/python2.7_2.7.12-1ubuntu0~16.04.8.dsc' python2.7_2.7.12-1ubuntu0~16.04.8.dsc 3387 SHA256:5ce616f6ccaa3ceee667df1e14299da689bd3cd31dd9dc2829b634b37e55e016
-'http://archive.ubuntu.com/ubuntu/pool/main/p/python2.7/python2.7_2.7.12.orig.tar.gz' python2.7_2.7.12.orig.tar.gz 16935960 SHA256:3cb522d17463dfa69a155ab18cffa399b358c966c0363d6c8b5b3bf1384da4b6
-'http://archive.ubuntu.com/ubuntu/pool/main/p/python2.7/python2.7_2.7.12-1ubuntu0~16.04.8.diff.gz' python2.7_2.7.12-1ubuntu0~16.04.8.diff.gz 302358 SHA256:8556c53c1b74b496978652bc15bdd11462bbb24b01a927b708df398bbe454bbe
-```
 
 ### `dpkg` source package: `python3-defaults=3.5.1-3`
 
@@ -5873,14 +5868,9 @@ Licenses: (parsed from: `/usr/share/doc/libpython3.5-minimal/copyright`, `/usr/s
 - `use in source`
 - `without`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris python3.5=3.5.2-2ubuntu0~16.04.8
-'http://archive.ubuntu.com/ubuntu/pool/main/p/python3.5/python3.5_3.5.2-2ubuntu0~16.04.8.dsc' python3.5_3.5.2-2ubuntu0~16.04.8.dsc 3387 SHA256:0b45216b73e91ae7e5d96b43488f32946d38f42cdc50e8e59922d1ec1059a5bb
-'http://archive.ubuntu.com/ubuntu/pool/main/p/python3.5/python3.5_3.5.2.orig.tar.xz' python3.5_3.5.2.orig.tar.xz 15222676 SHA256:0010f56100b9b74259ebcd5d4b295a32324b58b517403a10d1a2aa7cb22bca40
-'http://archive.ubuntu.com/ubuntu/pool/main/p/python3.5/python3.5_3.5.2-2ubuntu0~16.04.8.debian.tar.xz' python3.5_3.5.2-2ubuntu0~16.04.8.debian.tar.xz 230172 SHA256:2b50c076a9b0f9ecd0978fbe9ce1d7c6a758b1b896ccd74a71eadc735461ccc7
-```
 
 ### `dpkg` source package: `qtbase-opensource-src=5.5.1+dfsg-16ubuntu7.6`
 

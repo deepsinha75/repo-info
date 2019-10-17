@@ -3674,14 +3674,9 @@ Licenses: (parsed from: `/usr/share/doc/libsoup-gnome2.4-1/copyright`, `/usr/sha
 - `LGPL-2`
 - `LGPL-2+`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris libsoup2.4=2.62.1-1ubuntu0.3
-'http://archive.ubuntu.com/ubuntu/pool/main/libs/libsoup2.4/libsoup2.4_2.62.1-1ubuntu0.3.dsc' libsoup2.4_2.62.1-1ubuntu0.3.dsc 2171 SHA256:fee7a3e99670e01a754e1300d62dbd4d35ea46505e06665d02d42a3c66f4676f
-'http://archive.ubuntu.com/ubuntu/pool/main/libs/libsoup2.4/libsoup2.4_2.62.1.orig.tar.xz' libsoup2.4_2.62.1.orig.tar.xz 1848776 SHA256:f037ddac2e0f9b1c842a0060fa6119bea1d3b349a2c901283c961247e45883d7
-'http://archive.ubuntu.com/ubuntu/pool/main/libs/libsoup2.4/libsoup2.4_2.62.1-1ubuntu0.3.debian.tar.xz' libsoup2.4_2.62.1-1ubuntu0.3.debian.tar.xz 22408 SHA256:0eda59fedf29dd8619ade76728887b1173b9f7650c8d0e13ae5aa9b19c314a07
-```
 
 ### `dpkg` source package: `libsoxr=0.1.2-3`
 
@@ -5703,14 +5698,9 @@ Licenses: (parsed from: `/usr/share/doc/libpython3.6-minimal/copyright`, `/usr/s
 - `use in source`
 - `without`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris python3.6=3.6.8-1~18.04.2
-'http://archive.ubuntu.com/ubuntu/pool/main/p/python3.6/python3.6_3.6.8-1~18.04.2.dsc' python3.6_3.6.8-1~18.04.2.dsc 3442 SHA256:445fbb58eeb3968411ffa134c41bf2c8495f2c28c8a2f28330f7782f9d84e989
-'http://archive.ubuntu.com/ubuntu/pool/main/p/python3.6/python3.6_3.6.8.orig.tar.xz' python3.6_3.6.8.orig.tar.xz 17212420 SHA256:35446241e995773b1bed7d196f4b624dadcadc8429f26282e756b2fb8a351193
-'http://archive.ubuntu.com/ubuntu/pool/main/p/python3.6/python3.6_3.6.8-1~18.04.2.debian.tar.xz' python3.6_3.6.8-1~18.04.2.debian.tar.xz 217568 SHA256:ce9303b92c356b74dcdf6be2fad96fcba395fddf2582f4c74837c46239ef60c0
-```
 
 ### `dpkg` source package: `qhull=2015.2-4`
 
