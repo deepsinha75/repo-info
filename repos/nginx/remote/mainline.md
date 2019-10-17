@@ -1,7 +1,7 @@
 ## `nginx:mainline`
 
 ```console
-$ docker pull nginx@sha256:aeded0f2a861747f43a01cf1018cf9efe2bdd02afd57d2b11fcc7fcadc16ccd1
+$ docker pull nginx@sha256:4beb37169b46f78deb2bfde858c17322d2c1eb562ece5d80b631f2fe2ed4a692
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -68,53 +68,53 @@ CMD ["nginx" "-g" "daemon off;"]
 ### `nginx:mainline` - linux; arm variant v7
 
 ```console
-$ docker pull nginx@sha256:f1ed18065d70824477256c7e71451a76ca78725239470abbf6817c99c13f9f43
+$ docker pull nginx@sha256:6bcb0dbdbc2fd338e6a28db66198a0b59e5f0b26afde4b5dde3f00f607d9abf6
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **44.6 MB (44649094 bytes)**  
+-	Total Size: **44.7 MB (44667484 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:96fa93c111fd6c3695d64cb82235a2abb4eb494dc7daa251a0cba180a7afdbcb`
+-	Image ID: `sha256:f8150062ad27fed161b122a79215bf047f74a9aafc156ac975837ff1b4a57878`
 -	Default Command: `["nginx","-g","daemon off;"]`
 
 ```dockerfile
-# Wed, 11 Sep 2019 22:59:13 GMT
-ADD file:3d41286b4121a968f4d314e01bd32eb1d9b8f91ad7336fee8516e888ca11a306 in / 
-# Wed, 11 Sep 2019 22:59:14 GMT
+# Thu, 17 Oct 2019 00:05:51 GMT
+ADD file:aec8ae5d1bd3bffdcab55efc79e947f802af8efa4266cc074679cc305949f7b9 in / 
+# Thu, 17 Oct 2019 00:05:55 GMT
 CMD ["bash"]
-# Thu, 12 Sep 2019 14:57:44 GMT
+# Thu, 17 Oct 2019 01:03:55 GMT
 LABEL maintainer=NGINX Docker Maintainers <docker-maint@nginx.com>
-# Tue, 24 Sep 2019 23:22:19 GMT
+# Thu, 17 Oct 2019 01:03:56 GMT
 ENV NGINX_VERSION=1.17.4
-# Tue, 24 Sep 2019 23:22:19 GMT
+# Thu, 17 Oct 2019 01:03:56 GMT
 ENV NJS_VERSION=0.3.5
-# Tue, 24 Sep 2019 23:22:20 GMT
+# Thu, 17 Oct 2019 01:03:57 GMT
 ENV PKG_RELEASE=1~buster
-# Tue, 24 Sep 2019 23:27:38 GMT
+# Thu, 17 Oct 2019 01:10:01 GMT
 RUN set -x     && addgroup --system --gid 101 nginx     && adduser --system --disabled-login --ingroup nginx --no-create-home --home /nonexistent --gecos "nginx user" --shell /bin/false --uid 101 nginx     && apt-get update     && apt-get install --no-install-recommends --no-install-suggests -y gnupg1 ca-certificates     &&     NGINX_GPGKEY=573BFD6B3D8FBC641079A6ABABF5BD827BD9BF62;     found='';     for server in         ha.pool.sks-keyservers.net         hkp://keyserver.ubuntu.com:80         hkp://p80.pool.sks-keyservers.net:80         pgp.mit.edu     ; do         echo "Fetching GPG key $NGINX_GPGKEY from $server";         apt-key adv --keyserver "$server" --keyserver-options timeout=10 --recv-keys "$NGINX_GPGKEY" && found=yes && break;     done;     test -z "$found" && echo >&2 "error: failed to fetch GPG key $NGINX_GPGKEY" && exit 1;     apt-get remove --purge --auto-remove -y gnupg1 && rm -rf /var/lib/apt/lists/*     && dpkgArch="$(dpkg --print-architecture)"     && nginxPackages="         nginx=${NGINX_VERSION}-${PKG_RELEASE}         nginx-module-xslt=${NGINX_VERSION}-${PKG_RELEASE}         nginx-module-geoip=${NGINX_VERSION}-${PKG_RELEASE}         nginx-module-image-filter=${NGINX_VERSION}-${PKG_RELEASE}         nginx-module-njs=${NGINX_VERSION}.${NJS_VERSION}-${PKG_RELEASE}     "     && case "$dpkgArch" in         amd64|i386)             echo "deb https://nginx.org/packages/mainline/debian/ buster nginx" >> /etc/apt/sources.list.d/nginx.list             && apt-get update             ;;         *)             echo "deb-src https://nginx.org/packages/mainline/debian/ buster nginx" >> /etc/apt/sources.list.d/nginx.list                         && tempDir="$(mktemp -d)"             && chmod 777 "$tempDir"                         && savedAptMark="$(apt-mark showmanual)"                         && apt-get update             && apt-get build-dep -y $nginxPackages             && (                 cd "$tempDir"                 && DEB_BUILD_OPTIONS="nocheck parallel=$(nproc)"                     apt-get source --compile $nginxPackages             )                         && apt-mark showmanual | xargs apt-mark auto > /dev/null             && { [ -z "$savedAptMark" ] || apt-mark manual $savedAptMark; }                         && ls -lAFh "$tempDir"             && ( cd "$tempDir" && dpkg-scanpackages . > Packages )             && grep '^Package: ' "$tempDir/Packages"             && echo "deb [ trusted=yes ] file://$tempDir ./" > /etc/apt/sources.list.d/temp.list             && apt-get -o Acquire::GzipIndexes=false update             ;;     esac         && apt-get install --no-install-recommends --no-install-suggests -y                         $nginxPackages                         gettext-base     && apt-get remove --purge --auto-remove -y ca-certificates && rm -rf /var/lib/apt/lists/* /etc/apt/sources.list.d/nginx.list         && if [ -n "$tempDir" ]; then         apt-get purge -y --auto-remove         && rm -rf "$tempDir" /etc/apt/sources.list.d/temp.list;     fi
-# Tue, 24 Sep 2019 23:27:40 GMT
+# Thu, 17 Oct 2019 01:10:06 GMT
 RUN ln -sf /dev/stdout /var/log/nginx/access.log     && ln -sf /dev/stderr /var/log/nginx/error.log
-# Tue, 24 Sep 2019 23:27:40 GMT
+# Thu, 17 Oct 2019 01:10:07 GMT
 EXPOSE 80
-# Tue, 24 Sep 2019 23:27:41 GMT
+# Thu, 17 Oct 2019 01:10:07 GMT
 STOPSIGNAL SIGTERM
-# Tue, 24 Sep 2019 23:27:41 GMT
+# Thu, 17 Oct 2019 01:10:08 GMT
 CMD ["nginx" "-g" "daemon off;"]
 ```
 
 -	Layers:
-	-	`sha256:882347dcba58523fb133e5e4f525ff95b93cfc8c0d5e8c2938e59d0d22dad2e6`  
-		Last Modified: Wed, 11 Sep 2019 23:07:21 GMT  
-		Size: 22.7 MB (22697384 bytes)  
+	-	`sha256:ffb3a1edd2f5d689daee77b16634ddec87a4f724ac3bbef287c397ea731af2ac`  
+		Last Modified: Thu, 17 Oct 2019 00:15:00 GMT  
+		Size: 22.7 MB (22711906 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:16c5855e123e65fd4fa8e39d033d961624b4d3cbcee388412f4fc2bb535759a0`  
-		Last Modified: Tue, 24 Sep 2019 23:34:05 GMT  
-		Size: 22.0 MB (21951506 bytes)  
+	-	`sha256:56fc50a240dbbbd51629ce0d1e249c90821fcf3cfb149c7aaebe02158d41fd8b`  
+		Last Modified: Thu, 17 Oct 2019 01:29:28 GMT  
+		Size: 22.0 MB (21955375 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:9d9738c7fee854a663647359bbc4f78db234c9db064f4fb8f48cdc831072ede0`  
-		Last Modified: Tue, 24 Sep 2019 23:33:59 GMT  
-		Size: 204.0 B  
+	-	`sha256:283a8e21a6a07f3c7b063693004aa2180905161039488892ce764ead997d6361`  
+		Last Modified: Thu, 17 Oct 2019 01:29:23 GMT  
+		Size: 203.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `nginx:mainline` - linux; arm64 variant v8
