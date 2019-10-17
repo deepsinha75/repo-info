@@ -2,14 +2,15 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:ff116790ae55c6bb4bbdc19701be78957e2d1cb72b8decb4b5241c29f3ddf985`
-- Created: `2019-09-19T01:07:45.732015285Z`
-- Virtual Size: ~ 409.69 Mb  
+- Image ID: `sha256:5c16f594cf522574308537a90346dd6458574256aab36a63025cad68cb2dabea`
+- Created: `2019-10-16T23:00:01.593021037Z`
+- Virtual Size: ~ 411.11 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Command: `["jshell"]`
 - Environment:
   - `PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
+  - `JAVA_HOME=/usr/lib/jvm/sapmachine-11`
 
 ## `dpkg` (`.deb`-based packages)
 
@@ -1713,11 +1714,11 @@ $ apt-get source -qq --print-uris readline=7.0-3
 'http://archive.ubuntu.com/ubuntu/pool/main/r/readline/readline_7.0-3.debian.tar.xz' readline_7.0-3.debian.tar.xz 30012 SHA256:bf166310d6ca7716f2bd0e9e06cee2458b0157f7989d028730fc305643560175
 ```
 
-### `dpkg` source package: `sapmachine-11-jdk=11.0.4`
+### `dpkg` source package: `sapmachine-11-jdk=11.0.5`
 
 Binary Packages:
 
-- `sapmachine-11-jdk=11.0.4`
+- `sapmachine-11-jdk=11.0.5`
 
 **WARNING:** unable to detect licenses! (package likely not compliant with DEP-5)  
 If source is available (seen below), check the contents of `debian/copyright` within it.
