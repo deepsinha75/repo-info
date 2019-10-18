@@ -1,7 +1,7 @@
 ## `golang:1-buster`
 
 ```console
-$ docker pull golang@sha256:cc349ba35a0e2310adc2a8d3c47ea92d7d33d488148ff5755f9c7fb525d066e5
+$ docker pull golang@sha256:d87b62b2d26b700a886d16b9405f2c38467be81b084f3908e111478762d76d82
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -16,14 +16,14 @@ $ docker pull golang@sha256:cc349ba35a0e2310adc2a8d3c47ea92d7d33d488148ff5755f9c
 ### `golang:1-buster` - linux; amd64
 
 ```console
-$ docker pull golang@sha256:07c39b48351cc4e477c4653e04543a3c23eefaa87e01a20688155a6d4859138a
+$ docker pull golang@sha256:3d607e3e3a9dd7d1094b634e6d1f69ae65f5d9a2193d3b3b9fd46b780bd221fe
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **308.5 MB (308526039 bytes)**  
+-	Total Size: **308.5 MB (308539250 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:09e4a674e450f60f29334500f0ba3f4aa885c0df13370a2fbad82366df156b01`
+-	Image ID: `sha256:dc7582e06f8e0a61b450f02b8ab83484acc6b437a75b4e9959f11a964aea1169`
 -	Default Command: `["bash"]`
 
 ```dockerfile
@@ -39,17 +39,17 @@ RUN set -ex; 	if ! command -v gpg > /dev/null; then 		apt-get update; 		apt-get 
 RUN apt-get update && apt-get install -y --no-install-recommends 		git 		mercurial 		openssh-client 		subversion 				procps 	&& rm -rf /var/lib/apt/lists/*
 # Fri, 18 Oct 2019 03:01:19 GMT
 RUN apt-get update && apt-get install -y --no-install-recommends 		g++ 		gcc 		libc6-dev 		make 		pkg-config 	&& rm -rf /var/lib/apt/lists/*
-# Fri, 18 Oct 2019 03:01:20 GMT
-ENV GOLANG_VERSION=1.13.1
-# Fri, 18 Oct 2019 03:01:29 GMT
-RUN set -eux; 		dpkgArch="$(dpkg --print-architecture)"; 	case "${dpkgArch##*-}" in 		amd64) goRelArch='linux-amd64'; goRelSha256='94f874037b82ea5353f4061e543681a0e79657f787437974214629af8407d124' ;; 		armhf) goRelArch='linux-armv6l'; goRelSha256='7c75d4002321ea4a066dfe13f6dd5168076e9a231317c5afd55e78b86f478e37' ;; 		arm64) goRelArch='linux-arm64'; goRelSha256='8af8787b7c2a3c0eb3f20f872577fcb6c36098bf725c59c4923921443084c807' ;; 		i386) goRelArch='linux-386'; goRelSha256='4bf7a961fda7ad892b8824002036de8c0f290df05df2e8f11252d1f8c77dcd8f' ;; 		ppc64el) goRelArch='linux-ppc64le'; goRelSha256='72422c68dbed013ee321a05dbb97d9c8d6b2c75f347de707138c2c748fc4aceb' ;; 		s390x) goRelArch='linux-s390x'; goRelSha256='5f0859ae1037ad7af6cdb6d16f638de908fd9de044d463eeab92b9578d4c7c75' ;; 		*) goRelArch='src'; goRelSha256='81f154e69544b9fa92b1475ff5f11e64270260d46e7e36c34aafc8bc96209358'; 			echo >&2; echo >&2 "warning: current architecture ($dpkgArch) does not have a corresponding Go binary release; will be building from source"; echo >&2 ;; 	esac; 		url="https://golang.org/dl/go${GOLANG_VERSION}.${goRelArch}.tar.gz"; 	wget -O go.tgz "$url"; 	echo "${goRelSha256} *go.tgz" | sha256sum -c -; 	tar -C /usr/local -xzf go.tgz; 	rm go.tgz; 		if [ "$goRelArch" = 'src' ]; then 		echo >&2; 		echo >&2 'error: UNIMPLEMENTED'; 		echo >&2 'TODO install golang-any from jessie-backports for GOROOT_BOOTSTRAP (and uninstall after build)'; 		echo >&2; 		exit 1; 	fi; 		export PATH="/usr/local/go/bin:$PATH"; 	go version
-# Fri, 18 Oct 2019 03:01:29 GMT
+# Fri, 18 Oct 2019 07:01:30 GMT
+ENV GOLANG_VERSION=1.13.3
+# Fri, 18 Oct 2019 07:01:40 GMT
+RUN set -eux; 		dpkgArch="$(dpkg --print-architecture)"; 	case "${dpkgArch##*-}" in 		amd64) goRelArch='linux-amd64'; goRelSha256='0804bf02020dceaa8a7d7275ee79f7a142f1996bfd0c39216ccb405f93f994c0' ;; 		armhf) goRelArch='linux-armv6l'; goRelSha256='9f15d6aa4098cd53ec5cb48d1a1e554d062b2263a03985d50c2568757d966dc6' ;; 		arm64) goRelArch='linux-arm64'; goRelSha256='9fa65ae42665baff53802091b49b83af6f2e397986b6cbea2ae30e2c7ee0f2f2' ;; 		i386) goRelArch='linux-386'; goRelSha256='c68ebb127924ee753d05fcd4cc893e3409a6754e8884bb04e5248e9b5849f6ba' ;; 		ppc64el) goRelArch='linux-ppc64le'; goRelSha256='2373b60d7f7b4825b1d0ec195079833a3dac72ddd55b207ee22b0032b1a658d9' ;; 		s390x) goRelArch='linux-s390x'; goRelSha256='9241ce5bf362b7066c90da5abc4c85ec7b4054637e1a8a01b8cc83281e228b7e' ;; 		*) goRelArch='src'; goRelSha256='4f7123044375d5c404280737fbd2d0b17064b66182a65919ffe20ffe8620e3df'; 			echo >&2; echo >&2 "warning: current architecture ($dpkgArch) does not have a corresponding Go binary release; will be building from source"; echo >&2 ;; 	esac; 		url="https://golang.org/dl/go${GOLANG_VERSION}.${goRelArch}.tar.gz"; 	wget -O go.tgz "$url"; 	echo "${goRelSha256} *go.tgz" | sha256sum -c -; 	tar -C /usr/local -xzf go.tgz; 	rm go.tgz; 		if [ "$goRelArch" = 'src' ]; then 		echo >&2; 		echo >&2 'error: UNIMPLEMENTED'; 		echo >&2 'TODO install golang-any from jessie-backports for GOROOT_BOOTSTRAP (and uninstall after build)'; 		echo >&2; 		exit 1; 	fi; 		export PATH="/usr/local/go/bin:$PATH"; 	go version
+# Fri, 18 Oct 2019 07:01:40 GMT
 ENV GOPATH=/go
-# Fri, 18 Oct 2019 03:01:29 GMT
+# Fri, 18 Oct 2019 07:01:40 GMT
 ENV PATH=/go/bin:/usr/local/go/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Fri, 18 Oct 2019 03:01:30 GMT
+# Fri, 18 Oct 2019 07:01:41 GMT
 RUN mkdir -p "$GOPATH/src" "$GOPATH/bin" && chmod -R 777 "$GOPATH"
-# Fri, 18 Oct 2019 03:01:30 GMT
+# Fri, 18 Oct 2019 07:01:41 GMT
 WORKDIR /go
 ```
 
@@ -74,13 +74,13 @@ WORKDIR /go
 		Last Modified: Fri, 18 Oct 2019 03:03:13 GMT  
 		Size: 68.5 MB (68524087 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:fbe0c397b69b91e8da0aa242a126b1d7cef5684ed28487cc4b74d3af76432132`  
-		Last Modified: Fri, 18 Oct 2019 03:03:21 GMT  
-		Size: 120.0 MB (120046276 bytes)  
+	-	`sha256:f332e1ccc3d895f13e9660c053e8bda16c4894c5179526cf7702ad014cd5fa88`  
+		Last Modified: Fri, 18 Oct 2019 07:10:41 GMT  
+		Size: 120.1 MB (120059488 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:5aa66278e5b323d849e0061d995ba6fff66a63e1cce27b1f63614a44aa4a1fe5`  
-		Last Modified: Fri, 18 Oct 2019 03:03:01 GMT  
-		Size: 126.0 B  
+	-	`sha256:07e0a3e016334dc43ddfb498264511edf2341c6a4c9ceea921f6100e70bae220`  
+		Last Modified: Fri, 18 Oct 2019 07:10:21 GMT  
+		Size: 125.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `golang:1-buster` - linux; arm variant v7
