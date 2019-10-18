@@ -84,9 +84,9 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris apache2=2.4.18-2ubuntu3.13
-'http://archive.ubuntu.com/ubuntu/pool/main/a/apache2/apache2_2.4.18-2ubuntu3.13.dsc' apache2_2.4.18-2ubuntu3.13.dsc 2791 SHA256:9e1f0f972b6e3b64a2f0fa807d2f28a60dac05e22020fa199d2f34bf93b415f9
-'http://archive.ubuntu.com/ubuntu/pool/main/a/apache2/apache2_2.4.18.orig.tar.bz2' apache2_2.4.18.orig.tar.bz2 5181291 SHA256:0644b050de41f5c9f67c825285049b144690421acb709b06fe53eddfa8a9fd4c
-'http://archive.ubuntu.com/ubuntu/pool/main/a/apache2/apache2_2.4.18-2ubuntu3.13.debian.tar.xz' apache2_2.4.18-2ubuntu3.13.debian.tar.xz 407508 SHA256:d95274526dccec0eceebcebde7a48806c874a6bf3df7a2caac95881724c34554
+'http://security.ubuntu.com/ubuntu/pool/main/a/apache2/apache2_2.4.18-2ubuntu3.13.dsc' apache2_2.4.18-2ubuntu3.13.dsc 2791 SHA256:9e1f0f972b6e3b64a2f0fa807d2f28a60dac05e22020fa199d2f34bf93b415f9
+'http://security.ubuntu.com/ubuntu/pool/main/a/apache2/apache2_2.4.18.orig.tar.bz2' apache2_2.4.18.orig.tar.bz2 5181291 SHA256:0644b050de41f5c9f67c825285049b144690421acb709b06fe53eddfa8a9fd4c
+'http://security.ubuntu.com/ubuntu/pool/main/a/apache2/apache2_2.4.18-2ubuntu3.13.debian.tar.xz' apache2_2.4.18-2ubuntu3.13.debian.tar.xz 407508 SHA256:d95274526dccec0eceebcebde7a48806c874a6bf3df7a2caac95881724c34554
 ```
 
 ### `dpkg` source package: `apparmor=2.10.95-0ubuntu2.11`
