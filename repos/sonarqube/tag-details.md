@@ -4,6 +4,15 @@
 
 -	[`sonarqube:7.9.1-community`](#sonarqube791-community)
 -	[`sonarqube:7.9-community`](#sonarqube79-community)
+-	[`sonarqube:8.0-community-beta`](#sonarqube80-community-beta)
+-	[`sonarqube:8.0-developer-beta`](#sonarqube80-developer-beta)
+-	[`sonarqube:8.0-enterprise-beta`](#sonarqube80-enterprise-beta)
+-	[`sonarqube:8-community-beta`](#sonarqube8-community-beta)
+-	[`sonarqube:8-developer-beta`](#sonarqube8-developer-beta)
+-	[`sonarqube:8-enterprise-beta`](#sonarqube8-enterprise-beta)
+-	[`sonarqube:community-beta`](#sonarqubecommunity-beta)
+-	[`sonarqube:developer-beta`](#sonarqubedeveloper-beta)
+-	[`sonarqube:enterprise-beta`](#sonarqubeenterprise-beta)
 -	[`sonarqube:latest`](#sonarqubelatest)
 -	[`sonarqube:lts`](#sonarqubelts)
 
@@ -226,6 +235,87 @@ ENTRYPOINT ["./bin/run.sh"]
 		Last Modified: Fri, 18 Oct 2019 03:55:20 GMT  
 		Size: 787.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+
+## `sonarqube:8.0-community-beta`
+
+```console
+$ docker pull sonarqube@sha256:a8409dff6597f2ef5f7ecd3c672671bb2af9a390073efd74f95c54aa41cba22a
+```
+
+-	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
+-	Platforms:
+
+## `sonarqube:8.0-developer-beta`
+
+```console
+$ docker pull sonarqube@sha256:a8409dff6597f2ef5f7ecd3c672671bb2af9a390073efd74f95c54aa41cba22a
+```
+
+-	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
+-	Platforms:
+
+## `sonarqube:8.0-enterprise-beta`
+
+```console
+$ docker pull sonarqube@sha256:a8409dff6597f2ef5f7ecd3c672671bb2af9a390073efd74f95c54aa41cba22a
+```
+
+-	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
+-	Platforms:
+
+## `sonarqube:8-community-beta`
+
+```console
+$ docker pull sonarqube@sha256:a8409dff6597f2ef5f7ecd3c672671bb2af9a390073efd74f95c54aa41cba22a
+```
+
+-	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
+-	Platforms:
+
+## `sonarqube:8-developer-beta`
+
+```console
+$ docker pull sonarqube@sha256:a8409dff6597f2ef5f7ecd3c672671bb2af9a390073efd74f95c54aa41cba22a
+```
+
+-	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
+-	Platforms:
+
+## `sonarqube:8-enterprise-beta`
+
+```console
+$ docker pull sonarqube@sha256:a8409dff6597f2ef5f7ecd3c672671bb2af9a390073efd74f95c54aa41cba22a
+```
+
+-	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
+-	Platforms:
+
+## `sonarqube:community-beta`
+
+```console
+$ docker pull sonarqube@sha256:a8409dff6597f2ef5f7ecd3c672671bb2af9a390073efd74f95c54aa41cba22a
+```
+
+-	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
+-	Platforms:
+
+## `sonarqube:developer-beta`
+
+```console
+$ docker pull sonarqube@sha256:a8409dff6597f2ef5f7ecd3c672671bb2af9a390073efd74f95c54aa41cba22a
+```
+
+-	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
+-	Platforms:
+
+## `sonarqube:enterprise-beta`
+
+```console
+$ docker pull sonarqube@sha256:a8409dff6597f2ef5f7ecd3c672671bb2af9a390073efd74f95c54aa41cba22a
+```
+
+-	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
+-	Platforms:
 
 ## `sonarqube:latest`
 
