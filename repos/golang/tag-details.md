@@ -4,6 +4,19 @@
 
 -	[`golang:1`](#golang1)
 -	[`golang:1.12`](#golang112)
+-	[`golang:1.12.11`](#golang11211)
+-	[`golang:1.12.11-alpine`](#golang11211-alpine)
+-	[`golang:1.12.11-alpine3.10`](#golang11211-alpine310)
+-	[`golang:1.12.11-alpine3.9`](#golang11211-alpine39)
+-	[`golang:1.12.11-buster`](#golang11211-buster)
+-	[`golang:1.12.11-nanoserver`](#golang11211-nanoserver)
+-	[`golang:1.12.11-nanoserver-1803`](#golang11211-nanoserver-1803)
+-	[`golang:1.12.11-nanoserver-1809`](#golang11211-nanoserver-1809)
+-	[`golang:1.12.11-stretch`](#golang11211-stretch)
+-	[`golang:1.12.11-windowsservercore`](#golang11211-windowsservercore)
+-	[`golang:1.12.11-windowsservercore-1803`](#golang11211-windowsservercore-1803)
+-	[`golang:1.12.11-windowsservercore-1809`](#golang11211-windowsservercore-1809)
+-	[`golang:1.12.11-windowsservercore-ltsc2016`](#golang11211-windowsservercore-ltsc2016)
 -	[`golang:1.12.12`](#golang11212)
 -	[`golang:1.12.12-alpine`](#golang11212-alpine)
 -	[`golang:1.12.12-alpine3.10`](#golang11212-alpine310)
@@ -30,6 +43,18 @@
 -	[`golang:1.12-windowsservercore-1809`](#golang112-windowsservercore-1809)
 -	[`golang:1.12-windowsservercore-ltsc2016`](#golang112-windowsservercore-ltsc2016)
 -	[`golang:1.13`](#golang113)
+-	[`golang:1.13.2`](#golang1132)
+-	[`golang:1.13.2-alpine`](#golang1132-alpine)
+-	[`golang:1.13.2-alpine3.10`](#golang1132-alpine310)
+-	[`golang:1.13.2-buster`](#golang1132-buster)
+-	[`golang:1.13.2-nanoserver`](#golang1132-nanoserver)
+-	[`golang:1.13.2-nanoserver-1803`](#golang1132-nanoserver-1803)
+-	[`golang:1.13.2-nanoserver-1809`](#golang1132-nanoserver-1809)
+-	[`golang:1.13.2-stretch`](#golang1132-stretch)
+-	[`golang:1.13.2-windowsservercore`](#golang1132-windowsservercore)
+-	[`golang:1.13.2-windowsservercore-1803`](#golang1132-windowsservercore-1803)
+-	[`golang:1.13.2-windowsservercore-1809`](#golang1132-windowsservercore-1809)
+-	[`golang:1.13.2-windowsservercore-ltsc2016`](#golang1132-windowsservercore-ltsc2016)
 -	[`golang:1.13.3`](#golang1133)
 -	[`golang:1.13.3-alpine`](#golang1133-alpine)
 -	[`golang:1.13.3-alpine3.10`](#golang1133-alpine310)
@@ -1534,6 +1559,123 @@ WORKDIR C:\gopath
 		Last Modified: Fri, 18 Oct 2019 05:37:35 GMT  
 		Size: 1.3 KB (1317 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+
+## `golang:1.12.11`
+
+```console
+$ docker pull golang@sha256:a8409dff6597f2ef5f7ecd3c672671bb2af9a390073efd74f95c54aa41cba22a
+```
+
+-	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
+-	Platforms:
+
+## `golang:1.12.11-alpine`
+
+```console
+$ docker pull golang@sha256:a8409dff6597f2ef5f7ecd3c672671bb2af9a390073efd74f95c54aa41cba22a
+```
+
+-	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
+-	Platforms:
+
+## `golang:1.12.11-alpine3.10`
+
+```console
+$ docker pull golang@sha256:a8409dff6597f2ef5f7ecd3c672671bb2af9a390073efd74f95c54aa41cba22a
+```
+
+-	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
+-	Platforms:
+
+## `golang:1.12.11-alpine3.9`
+
+```console
+$ docker pull golang@sha256:a8409dff6597f2ef5f7ecd3c672671bb2af9a390073efd74f95c54aa41cba22a
+```
+
+-	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
+-	Platforms:
+
+## `golang:1.12.11-buster`
+
+```console
+$ docker pull golang@sha256:a8409dff6597f2ef5f7ecd3c672671bb2af9a390073efd74f95c54aa41cba22a
+```
+
+-	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
+-	Platforms:
+
+## `golang:1.12.11-nanoserver`
+
+```console
+$ docker pull golang@sha256:a8409dff6597f2ef5f7ecd3c672671bb2af9a390073efd74f95c54aa41cba22a
+```
+
+-	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
+-	Platforms:
+
+## `golang:1.12.11-nanoserver-1803`
+
+```console
+$ docker pull golang@sha256:a8409dff6597f2ef5f7ecd3c672671bb2af9a390073efd74f95c54aa41cba22a
+```
+
+-	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
+-	Platforms:
+
+## `golang:1.12.11-nanoserver-1809`
+
+```console
+$ docker pull golang@sha256:a8409dff6597f2ef5f7ecd3c672671bb2af9a390073efd74f95c54aa41cba22a
+```
+
+-	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
+-	Platforms:
+
+## `golang:1.12.11-stretch`
+
+```console
+$ docker pull golang@sha256:a8409dff6597f2ef5f7ecd3c672671bb2af9a390073efd74f95c54aa41cba22a
+```
+
+-	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
+-	Platforms:
+
+## `golang:1.12.11-windowsservercore`
+
+```console
+$ docker pull golang@sha256:a8409dff6597f2ef5f7ecd3c672671bb2af9a390073efd74f95c54aa41cba22a
+```
+
+-	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
+-	Platforms:
+
+## `golang:1.12.11-windowsservercore-1803`
+
+```console
+$ docker pull golang@sha256:a8409dff6597f2ef5f7ecd3c672671bb2af9a390073efd74f95c54aa41cba22a
+```
+
+-	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
+-	Platforms:
+
+## `golang:1.12.11-windowsservercore-1809`
+
+```console
+$ docker pull golang@sha256:a8409dff6597f2ef5f7ecd3c672671bb2af9a390073efd74f95c54aa41cba22a
+```
+
+-	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
+-	Platforms:
+
+## `golang:1.12.11-windowsservercore-ltsc2016`
+
+```console
+$ docker pull golang@sha256:a8409dff6597f2ef5f7ecd3c672671bb2af9a390073efd74f95c54aa41cba22a
+```
+
+-	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
+-	Platforms:
 
 ## `golang:1.12.12`
 
@@ -9230,6 +9372,114 @@ WORKDIR C:\gopath
 		Last Modified: Fri, 18 Oct 2019 05:26:13 GMT  
 		Size: 1.3 KB (1335 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+
+## `golang:1.13.2`
+
+```console
+$ docker pull golang@sha256:a8409dff6597f2ef5f7ecd3c672671bb2af9a390073efd74f95c54aa41cba22a
+```
+
+-	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
+-	Platforms:
+
+## `golang:1.13.2-alpine`
+
+```console
+$ docker pull golang@sha256:a8409dff6597f2ef5f7ecd3c672671bb2af9a390073efd74f95c54aa41cba22a
+```
+
+-	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
+-	Platforms:
+
+## `golang:1.13.2-alpine3.10`
+
+```console
+$ docker pull golang@sha256:a8409dff6597f2ef5f7ecd3c672671bb2af9a390073efd74f95c54aa41cba22a
+```
+
+-	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
+-	Platforms:
+
+## `golang:1.13.2-buster`
+
+```console
+$ docker pull golang@sha256:a8409dff6597f2ef5f7ecd3c672671bb2af9a390073efd74f95c54aa41cba22a
+```
+
+-	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
+-	Platforms:
+
+## `golang:1.13.2-nanoserver`
+
+```console
+$ docker pull golang@sha256:a8409dff6597f2ef5f7ecd3c672671bb2af9a390073efd74f95c54aa41cba22a
+```
+
+-	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
+-	Platforms:
+
+## `golang:1.13.2-nanoserver-1803`
+
+```console
+$ docker pull golang@sha256:a8409dff6597f2ef5f7ecd3c672671bb2af9a390073efd74f95c54aa41cba22a
+```
+
+-	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
+-	Platforms:
+
+## `golang:1.13.2-nanoserver-1809`
+
+```console
+$ docker pull golang@sha256:a8409dff6597f2ef5f7ecd3c672671bb2af9a390073efd74f95c54aa41cba22a
+```
+
+-	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
+-	Platforms:
+
+## `golang:1.13.2-stretch`
+
+```console
+$ docker pull golang@sha256:a8409dff6597f2ef5f7ecd3c672671bb2af9a390073efd74f95c54aa41cba22a
+```
+
+-	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
+-	Platforms:
+
+## `golang:1.13.2-windowsservercore`
+
+```console
+$ docker pull golang@sha256:a8409dff6597f2ef5f7ecd3c672671bb2af9a390073efd74f95c54aa41cba22a
+```
+
+-	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
+-	Platforms:
+
+## `golang:1.13.2-windowsservercore-1803`
+
+```console
+$ docker pull golang@sha256:a8409dff6597f2ef5f7ecd3c672671bb2af9a390073efd74f95c54aa41cba22a
+```
+
+-	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
+-	Platforms:
+
+## `golang:1.13.2-windowsservercore-1809`
+
+```console
+$ docker pull golang@sha256:a8409dff6597f2ef5f7ecd3c672671bb2af9a390073efd74f95c54aa41cba22a
+```
+
+-	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
+-	Platforms:
+
+## `golang:1.13.2-windowsservercore-ltsc2016`
+
+```console
+$ docker pull golang@sha256:a8409dff6597f2ef5f7ecd3c672671bb2af9a390073efd74f95c54aa41cba22a
+```
+
+-	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
+-	Platforms:
 
 ## `golang:1.13.3`
 
