@@ -38,7 +38,7 @@
 ## `drupal:7`
 
 ```console
-$ docker pull drupal@sha256:620e937aa23558f4c790418fb268a4461d9681a0c5614d350b6be6085fba3169
+$ docker pull drupal@sha256:8c63294c06da6ff25778d9adf83dfa2db2bd950cbdaca9b12c76b322c871e300
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -53,160 +53,160 @@ $ docker pull drupal@sha256:620e937aa23558f4c790418fb268a4461d9681a0c5614d350b6b
 ### `drupal:7` - linux; amd64
 
 ```console
-$ docker pull drupal@sha256:7f88e187d8c2c573f16055a50c3ec8dd5029bf65f9e3dbed00b389b902e77402
+$ docker pull drupal@sha256:8b8fa39d7fb1e6ec9615cbb79a266e8e90c00f2c7ef68eefe75d01729f28c196
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **139.7 MB (139745414 bytes)**  
+-	Total Size: **138.2 MB (138170994 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:ecd04d7398c6dd99f5188d2298c159fc123e47409fe82060b8f04fa66e82cd32`
+-	Image ID: `sha256:399807ca83336ccaabaddeb70730c1fb15b01f810695b33e554f3123accd214d`
 -	Entrypoint: `["docker-php-entrypoint"]`
 -	Default Command: `["apache2-foreground"]`
 
 ```dockerfile
-# Wed, 11 Sep 2019 23:27:46 GMT
-ADD file:e82c447c3eae5d1d0282d8557b0c271b29d1be0d0f23204a09ad468be7a80d8c in / 
-# Wed, 11 Sep 2019 23:27:47 GMT
+# Wed, 16 Oct 2019 23:29:18 GMT
+ADD file:37512e59e7c324f9ec5b01628ef87efee73d2092cfe97d05ca949dc3528e4c2a in / 
+# Wed, 16 Oct 2019 23:29:19 GMT
 CMD ["bash"]
-# Thu, 12 Sep 2019 10:35:06 GMT
+# Thu, 17 Oct 2019 15:19:17 GMT
 RUN set -eux; 	{ 		echo 'Package: php*'; 		echo 'Pin: release *'; 		echo 'Pin-Priority: -1'; 	} > /etc/apt/preferences.d/no-debian-php
-# Thu, 12 Sep 2019 10:35:06 GMT
+# Thu, 17 Oct 2019 15:19:17 GMT
 ENV PHPIZE_DEPS=autoconf 		dpkg-dev 		file 		g++ 		gcc 		libc-dev 		make 		pkg-config 		re2c
-# Thu, 12 Sep 2019 10:35:36 GMT
+# Thu, 17 Oct 2019 15:19:56 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		$PHPIZE_DEPS 		ca-certificates 		curl 		xz-utils 	; 	rm -rf /var/lib/apt/lists/*
-# Thu, 12 Sep 2019 10:35:36 GMT
+# Thu, 17 Oct 2019 15:19:57 GMT
 ENV PHP_INI_DIR=/usr/local/etc/php
-# Thu, 12 Sep 2019 10:35:37 GMT
+# Thu, 17 Oct 2019 15:19:58 GMT
 RUN set -eux; 	mkdir -p "$PHP_INI_DIR/conf.d"; 	[ ! -d /var/www/html ]; 	mkdir -p /var/www/html; 	chown www-data:www-data /var/www/html; 	chmod 777 /var/www/html
-# Thu, 12 Sep 2019 10:44:55 GMT
+# Thu, 17 Oct 2019 15:27:50 GMT
 ENV APACHE_CONFDIR=/etc/apache2
-# Thu, 12 Sep 2019 10:44:55 GMT
+# Thu, 17 Oct 2019 15:27:50 GMT
 ENV APACHE_ENVVARS=/etc/apache2/envvars
-# Thu, 12 Sep 2019 10:45:06 GMT
+# Thu, 17 Oct 2019 15:28:01 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends apache2; 	rm -rf /var/lib/apt/lists/*; 		sed -ri 's/^export ([^=]+)=(.*)$/: ${\1:=\2}\nexport \1/' "$APACHE_ENVVARS"; 		. "$APACHE_ENVVARS"; 	for dir in 		"$APACHE_LOCK_DIR" 		"$APACHE_RUN_DIR" 		"$APACHE_LOG_DIR" 	; do 		rm -rvf "$dir"; 		mkdir -p "$dir"; 		chown "$APACHE_RUN_USER:$APACHE_RUN_GROUP" "$dir"; 		chmod 777 "$dir"; 	done; 		rm -rvf /var/www/html/*; 		ln -sfT /dev/stderr "$APACHE_LOG_DIR/error.log"; 	ln -sfT /dev/stdout "$APACHE_LOG_DIR/access.log"; 	ln -sfT /dev/stdout "$APACHE_LOG_DIR/other_vhosts_access.log"; 	chown -R --no-dereference "$APACHE_RUN_USER:$APACHE_RUN_GROUP" "$APACHE_LOG_DIR"
-# Thu, 12 Sep 2019 10:45:07 GMT
+# Thu, 17 Oct 2019 15:28:03 GMT
 RUN a2dismod mpm_event && a2enmod mpm_prefork
-# Thu, 12 Sep 2019 10:45:08 GMT
+# Thu, 17 Oct 2019 15:28:04 GMT
 RUN { 		echo '<FilesMatch \.php$>'; 		echo '\tSetHandler application/x-httpd-php'; 		echo '</FilesMatch>'; 		echo; 		echo 'DirectoryIndex disabled'; 		echo 'DirectoryIndex index.php index.html'; 		echo; 		echo '<Directory /var/www/>'; 		echo '\tOptions -Indexes'; 		echo '\tAllowOverride All'; 		echo '</Directory>'; 	} | tee "$APACHE_CONFDIR/conf-available/docker-php.conf" 	&& a2enconf docker-php
-# Thu, 12 Sep 2019 10:45:08 GMT
+# Thu, 17 Oct 2019 15:28:04 GMT
 ENV PHP_EXTRA_BUILD_DEPS=apache2-dev
-# Thu, 12 Sep 2019 10:45:08 GMT
+# Thu, 17 Oct 2019 15:28:05 GMT
 ENV PHP_EXTRA_CONFIGURE_ARGS=--with-apxs2 --disable-cgi
-# Thu, 12 Sep 2019 10:45:08 GMT
+# Thu, 17 Oct 2019 15:28:05 GMT
 ENV PHP_CFLAGS=-fstack-protector-strong -fpic -fpie -O2
-# Thu, 12 Sep 2019 10:45:08 GMT
+# Thu, 17 Oct 2019 15:28:05 GMT
 ENV PHP_CPPFLAGS=-fstack-protector-strong -fpic -fpie -O2
-# Thu, 12 Sep 2019 10:45:08 GMT
+# Thu, 17 Oct 2019 15:28:05 GMT
 ENV PHP_LDFLAGS=-Wl,-O1 -Wl,--hash-style=both -pie
-# Thu, 12 Sep 2019 11:49:15 GMT
+# Thu, 17 Oct 2019 16:16:18 GMT
 ENV GPG_KEYS=1729F83938DA44E27BA0F4D3DBDB397470D12172 B1B44D8F021E4E2D6021E995DC9FF8D3EE5AF27F
-# Thu, 26 Sep 2019 23:57:30 GMT
+# Thu, 17 Oct 2019 16:16:19 GMT
 ENV PHP_VERSION=7.2.23
-# Thu, 26 Sep 2019 23:57:30 GMT
+# Thu, 17 Oct 2019 16:16:19 GMT
 ENV PHP_URL=https://www.php.net/get/php-7.2.23.tar.xz/from/this/mirror PHP_ASC_URL=https://www.php.net/get/php-7.2.23.tar.xz.asc/from/this/mirror
-# Thu, 26 Sep 2019 23:57:30 GMT
+# Thu, 17 Oct 2019 16:16:19 GMT
 ENV PHP_SHA256=74e045ec8ff26290db6a3688826dcdf43b87bc509e508e9cb76dab742804ca14 PHP_MD5=
-# Thu, 26 Sep 2019 23:57:42 GMT
+# Thu, 17 Oct 2019 16:16:28 GMT
 RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends gnupg dirmngr; 	rm -rf /var/lib/apt/lists/*; 		mkdir -p /usr/src; 	cd /usr/src; 		curl -fsSL -o php.tar.xz "$PHP_URL"; 		if [ -n "$PHP_SHA256" ]; then 		echo "$PHP_SHA256 *php.tar.xz" | sha256sum -c -; 	fi; 	if [ -n "$PHP_MD5" ]; then 		echo "$PHP_MD5 *php.tar.xz" | md5sum -c -; 	fi; 		if [ -n "$PHP_ASC_URL" ]; then 		curl -fsSL -o php.tar.xz.asc "$PHP_ASC_URL"; 		export GNUPGHOME="$(mktemp -d)"; 		for key in $GPG_KEYS; do 			gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys "$key"; 		done; 		gpg --batch --verify php.tar.xz.asc php.tar.xz; 		gpgconf --kill all; 		rm -rf "$GNUPGHOME"; 	fi; 		apt-mark auto '.*' > /dev/null; 	apt-mark manual $savedAptMark > /dev/null; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false
-# Thu, 26 Sep 2019 23:57:43 GMT
+# Thu, 17 Oct 2019 16:16:28 GMT
 COPY file:ce57c04b70896f77cc11eb2766417d8a1240fcffe5bba92179ec78c458844110 in /usr/local/bin/ 
-# Sat, 05 Oct 2019 00:55:44 GMT
+# Thu, 17 Oct 2019 16:20:14 GMT
 RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	sed -e 's/stretch/buster/g' /etc/apt/sources.list > /etc/apt/sources.list.d/buster.list; 	{ 		echo 'Package: *'; 		echo 'Pin: release n=buster'; 		echo 'Pin-Priority: -10'; 		echo; 		echo 'Package: libargon2*'; 		echo 'Pin: release n=buster'; 		echo 'Pin-Priority: 990'; 	} > /etc/apt/preferences.d/argon2-buster; 	apt-get update; 	apt-get install -y --no-install-recommends 		libargon2-dev 		libcurl4-openssl-dev 		libedit-dev 		libsodium-dev 		libsqlite3-dev 		libssl-dev 		libxml2-dev 		zlib1g-dev 		${PHP_EXTRA_BUILD_DEPS:-} 	; 	rm -rf /var/lib/apt/lists/*; 		export 		CFLAGS="$PHP_CFLAGS" 		CPPFLAGS="$PHP_CPPFLAGS" 		LDFLAGS="$PHP_LDFLAGS" 	; 	docker-php-source extract; 	cd /usr/src/php; 	gnuArch="$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)"; 	debMultiarch="$(dpkg-architecture --query DEB_BUILD_MULTIARCH)"; 	if [ ! -d /usr/include/curl ]; then 		ln -sT "/usr/include/$debMultiarch/curl" /usr/local/include/curl; 	fi; 	./configure 		--build="$gnuArch" 		--with-config-file-path="$PHP_INI_DIR" 		--with-config-file-scan-dir="$PHP_INI_DIR/conf.d" 				--enable-option-checking=fatal 				--with-mhash 				--enable-ftp 		--enable-mbstring 		--enable-mysqlnd 		--with-password-argon2 		--with-sodium=shared 		--with-pdo-sqlite=/usr 		--with-sqlite3=/usr 				--with-curl 		--with-libedit 		--with-openssl 		--with-zlib 				$(test "$gnuArch" = 's390x-linux-gnu' && echo '--without-pcre-jit') 		--with-libdir="lib/$debMultiarch" 				${PHP_EXTRA_CONFIGURE_ARGS:-} 	; 	make -j "$(nproc)"; 	find -type f -name '*.a' -delete; 	make install; 	find /usr/local/bin /usr/local/sbin -type f -executable -exec strip --strip-all '{}' + || true; 	make clean; 		cp -v php.ini-* "$PHP_INI_DIR/"; 		cd /; 	docker-php-source delete; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark; 	find /usr/local -type f -executable -exec ldd '{}' ';' 		| awk '/=>/ { print $(NF-1) }' 		| sort -u 		| xargs -r dpkg-query --search 		| cut -d: -f1 		| sort -u 		| xargs -r apt-mark manual 	; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 		pecl update-channels; 	rm -rf /tmp/pear ~/.pearrc; 	php --version
-# Sat, 05 Oct 2019 00:55:45 GMT
+# Thu, 17 Oct 2019 16:20:15 GMT
 COPY multi:99e4ad617c6193834e78d12470f6dde09f70f4d40463009c5724954902e60676 in /usr/local/bin/ 
-# Sat, 05 Oct 2019 00:55:46 GMT
+# Thu, 17 Oct 2019 16:20:15 GMT
 RUN docker-php-ext-enable sodium
-# Sat, 05 Oct 2019 00:55:46 GMT
+# Thu, 17 Oct 2019 16:20:16 GMT
 ENTRYPOINT ["docker-php-entrypoint"]
-# Sat, 05 Oct 2019 00:55:46 GMT
+# Thu, 17 Oct 2019 16:20:16 GMT
 STOPSIGNAL WINCH
-# Sat, 05 Oct 2019 00:55:47 GMT
+# Thu, 17 Oct 2019 16:20:16 GMT
 COPY file:e3123fcb6566efa979f945bfac1c94c854a559d7b82723e42118882a8ac4de66 in /usr/local/bin/ 
-# Sat, 05 Oct 2019 00:55:47 GMT
+# Thu, 17 Oct 2019 16:20:16 GMT
 WORKDIR /var/www/html
-# Sat, 05 Oct 2019 00:55:47 GMT
+# Thu, 17 Oct 2019 16:20:16 GMT
 EXPOSE 80
-# Sat, 05 Oct 2019 00:55:48 GMT
+# Thu, 17 Oct 2019 16:20:17 GMT
 CMD ["apache2-foreground"]
-# Sat, 05 Oct 2019 05:44:49 GMT
+# Fri, 18 Oct 2019 06:28:44 GMT
 RUN set -eux; 		if command -v a2enmod; then 		a2enmod rewrite; 	fi; 		savedAptMark="$(apt-mark showmanual)"; 		apt-get update; 	apt-get install -y --no-install-recommends 		libfreetype6-dev 		libjpeg-dev 		libpng-dev 		libpq-dev 		libzip-dev 	; 		docker-php-ext-configure gd 		--with-freetype-dir=/usr 		--with-jpeg-dir=/usr 		--with-png-dir=/usr 	; 		docker-php-ext-install -j "$(nproc)" 		gd 		opcache 		pdo_mysql 		pdo_pgsql 		zip 	; 		apt-mark auto '.*' > /dev/null; 	apt-mark manual $savedAptMark; 	ldd "$(php -r 'echo ini_get("extension_dir");')"/*.so 		| awk '/=>/ { print $3 }' 		| sort -u 		| xargs -r dpkg-query -S 		| cut -d: -f1 		| sort -u 		| xargs -rt apt-mark manual; 		apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 	rm -rf /var/lib/apt/lists/*
-# Sat, 05 Oct 2019 05:44:50 GMT
+# Fri, 18 Oct 2019 06:28:45 GMT
 RUN { 		echo 'opcache.memory_consumption=128'; 		echo 'opcache.interned_strings_buffer=8'; 		echo 'opcache.max_accelerated_files=4000'; 		echo 'opcache.revalidate_freq=60'; 		echo 'opcache.fast_shutdown=1'; 	} > /usr/local/etc/php/conf.d/opcache-recommended.ini
-# Sat, 05 Oct 2019 05:44:51 GMT
+# Fri, 18 Oct 2019 06:28:45 GMT
 WORKDIR /var/www/html
-# Sat, 05 Oct 2019 05:44:51 GMT
+# Fri, 18 Oct 2019 06:28:45 GMT
 ENV DRUPAL_VERSION=7.67
-# Sat, 05 Oct 2019 05:44:51 GMT
+# Fri, 18 Oct 2019 06:28:45 GMT
 ENV DRUPAL_MD5=78b1814e55fdaf40e753fd523d059f8d
-# Sat, 05 Oct 2019 05:44:54 GMT
+# Fri, 18 Oct 2019 06:28:46 GMT
 RUN set -eux; 	curl -fSL "https://ftp.drupal.org/files/projects/drupal-${DRUPAL_VERSION}.tar.gz" -o drupal.tar.gz; 	echo "${DRUPAL_MD5} *drupal.tar.gz" | md5sum -c -; 	tar -xz --strip-components=1 -f drupal.tar.gz; 	rm drupal.tar.gz; 	chown -R www-data:www-data sites modules themes
 ```
 
 -	Layers:
-	-	`sha256:8f91359f1fffbf32b24ca854fb263d88a222371f38e90cf4583c5742cfdc3039`  
-		Last Modified: Wed, 11 Sep 2019 23:34:50 GMT  
-		Size: 22.5 MB (22510654 bytes)  
+	-	`sha256:80369df487363e56aea88d4d41b61f1607fc2ec198e9327cfde36a5346c71bf2`  
+		Last Modified: Wed, 16 Oct 2019 23:35:19 GMT  
+		Size: 22.5 MB (22524636 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:bf2faaedf741a44c5457bc029621724b7f316482f99de58522e1b659ddc8fd99`  
-		Last Modified: Thu, 12 Sep 2019 13:15:25 GMT  
-		Size: 225.0 B  
+	-	`sha256:60e80cb3f70356b666135b9d9acc19345b74bf7feedb2b6ac494dd6d224b8574`  
+		Last Modified: Thu, 17 Oct 2019 17:20:16 GMT  
+		Size: 226.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:24cd1299a53e525f85fdd79c524463ec6b6569df13c6af402ca0f706ad89c28b`  
-		Last Modified: Thu, 12 Sep 2019 13:15:49 GMT  
-		Size: 67.5 MB (67450331 bytes)  
+	-	`sha256:e3b2450987de138dcaf9f09559f25a8b2cd6ceaac8e28d858fdb73530d40f92e`  
+		Last Modified: Thu, 17 Oct 2019 17:20:33 GMT  
+		Size: 67.4 MB (67447849 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:17091cc665e4a0e967d00b8b36fcabb2b17d7bceba421f717f5d138063e22ad6`  
-		Last Modified: Thu, 12 Sep 2019 13:15:25 GMT  
-		Size: 237.0 B  
+	-	`sha256:c413b7377c2f336391745613272b75d32b6f52110d5cf6bb28949ed2eea52906`  
+		Last Modified: Thu, 17 Oct 2019 17:20:16 GMT  
+		Size: 238.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:ac9365919f9b10c759648e7efa92752c1443400e4178d6411f5a458a90e09ca2`  
-		Last Modified: Thu, 12 Sep 2019 13:16:08 GMT  
-		Size: 17.1 MB (17125603 bytes)  
+	-	`sha256:6dd9eff17a14f4fd1ad899a27f318151a4b2fa2d935cb85307637563d6973d17`  
+		Last Modified: Thu, 17 Oct 2019 17:20:46 GMT  
+		Size: 17.1 MB (17125324 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:4f1b34e209eee27994691cd890ca1422857bc1c2c166a700049ae0af84d6fb2a`  
-		Last Modified: Thu, 12 Sep 2019 13:16:02 GMT  
-		Size: 431.0 B  
+	-	`sha256:5126e57aff9b8bc91dfaa6885060a8b4cd41887d4a85621d5778c2ec6c660f2a`  
+		Last Modified: Thu, 17 Oct 2019 17:20:43 GMT  
+		Size: 437.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:832757fa04a4aea3b2f6e686cf9741254a6a03855e86b603417b6d3ce6c0038f`  
-		Last Modified: Thu, 12 Sep 2019 13:16:02 GMT  
-		Size: 487.0 B  
+	-	`sha256:943df09926ea3a42f821bbdfd1d3112e72b5da0fbc6761b35b50da5570cfb438`  
+		Last Modified: Thu, 17 Oct 2019 17:20:43 GMT  
+		Size: 490.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:6872b25b9fabc5c40614d5c48a76fb67ec6045da0a37dc2ac5317247627940bf`  
-		Last Modified: Fri, 27 Sep 2019 01:30:10 GMT  
-		Size: 12.6 MB (12623230 bytes)  
+	-	`sha256:ea464ff429303e903027d0f3ed724af15baa7291a1f935630f5839c13cc19fd2`  
+		Last Modified: Thu, 17 Oct 2019 17:22:22 GMT  
+		Size: 12.6 MB (12623241 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:f54b85668b74001619dfa277989aa72d67167fe6835cb7a16ac0f69df53b7d0d`  
-		Last Modified: Fri, 27 Sep 2019 01:30:07 GMT  
+	-	`sha256:1642b58d27b1e5afcccc2d3f271d2b341d88867117b9e4a41c1408875216a500`  
+		Last Modified: Thu, 17 Oct 2019 17:22:20 GMT  
 		Size: 499.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:13dc8296ebba491a797865fb2724fb2c8e87b3aef150e9b1a294311bf1eafb50`  
-		Last Modified: Sat, 05 Oct 2019 03:53:41 GMT  
-		Size: 15.1 MB (15120318 bytes)  
+	-	`sha256:9ae19688677dcabf51a4db76d5ca59facf1b99f02f4959f3fe0016f8a51888f8`  
+		Last Modified: Thu, 17 Oct 2019 17:22:24 GMT  
+		Size: 13.5 MB (13534988 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:cffe2eb7c545ce17ba9579be0cef4b2e7fedd235b4b514c030d333f09c633c80`  
-		Last Modified: Sat, 05 Oct 2019 03:53:36 GMT  
-		Size: 2.2 KB (2228 bytes)  
+	-	`sha256:55cccc313b8cd2acf460cb2c60004dcad4a711cc079f8e3d3c1cb9c9719d2759`  
+		Last Modified: Thu, 17 Oct 2019 17:22:21 GMT  
+		Size: 2.2 KB (2227 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:bf8b43b070ba3728fc9c5161004e5b9d014e2e7f7318cd83ab7a8e568438c64e`  
-		Last Modified: Sat, 05 Oct 2019 03:53:36 GMT  
-		Size: 260.0 B  
+	-	`sha256:0505d835c1ce37bd686067aed77487bcc80a02a5d76cc222d56e0a45dd9b7584`  
+		Last Modified: Thu, 17 Oct 2019 17:22:20 GMT  
+		Size: 255.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:6aa7c737b75bf0e471bc7a1eac438866b31295c7c7c275dcfe5321d8ea2736b4`  
-		Last Modified: Sat, 05 Oct 2019 03:53:36 GMT  
-		Size: 906.0 B  
+	-	`sha256:48f36c7eb398f0ffba6299270f019f1b90e41a499b0354073bb513195b204c1e`  
+		Last Modified: Thu, 17 Oct 2019 17:22:21 GMT  
+		Size: 904.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:54e2616bbc4463e695137acdaa04e28583910aed2508b48900b598fe76c96790`  
-		Last Modified: Sat, 05 Oct 2019 05:51:24 GMT  
-		Size: 1.6 MB (1576900 bytes)  
+	-	`sha256:606217055498a3a965fe1d6c1f2ba5d01242bdeb4c3e0c282f97b45f5a6a3c83`  
+		Last Modified: Fri, 18 Oct 2019 06:31:17 GMT  
+		Size: 1.6 MB (1576566 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:a0f40a3cbef848154aebeb197a51850c6d061c8bf10ed57b79285bb2733f0388`  
-		Last Modified: Sat, 05 Oct 2019 05:51:24 GMT  
-		Size: 340.0 B  
+	-	`sha256:e8f341cf7670f2a517537804e0b8287968435733c4db236572b116c66f0187d6`  
+		Last Modified: Fri, 18 Oct 2019 06:31:17 GMT  
+		Size: 337.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:3d34bb0a165401d88b50d3713585b37327bc168821cdf2cab9a3ee4b00991272`  
-		Last Modified: Sat, 05 Oct 2019 05:51:25 GMT  
-		Size: 3.3 MB (3332765 bytes)  
+	-	`sha256:d264cf50aa2929cfca46ea669a7e81eacc14aba2588f52f97a61e8f9e3a120ec`  
+		Last Modified: Fri, 18 Oct 2019 06:31:17 GMT  
+		Size: 3.3 MB (3332777 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `drupal:7` - linux; arm variant v5
@@ -1007,7 +1007,7 @@ RUN set -eux; 	curl -fSL "https://ftp.drupal.org/files/projects/drupal-${DRUPAL_
 ## `drupal:7.67`
 
 ```console
-$ docker pull drupal@sha256:620e937aa23558f4c790418fb268a4461d9681a0c5614d350b6be6085fba3169
+$ docker pull drupal@sha256:8c63294c06da6ff25778d9adf83dfa2db2bd950cbdaca9b12c76b322c871e300
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -1022,160 +1022,160 @@ $ docker pull drupal@sha256:620e937aa23558f4c790418fb268a4461d9681a0c5614d350b6b
 ### `drupal:7.67` - linux; amd64
 
 ```console
-$ docker pull drupal@sha256:7f88e187d8c2c573f16055a50c3ec8dd5029bf65f9e3dbed00b389b902e77402
+$ docker pull drupal@sha256:8b8fa39d7fb1e6ec9615cbb79a266e8e90c00f2c7ef68eefe75d01729f28c196
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **139.7 MB (139745414 bytes)**  
+-	Total Size: **138.2 MB (138170994 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:ecd04d7398c6dd99f5188d2298c159fc123e47409fe82060b8f04fa66e82cd32`
+-	Image ID: `sha256:399807ca83336ccaabaddeb70730c1fb15b01f810695b33e554f3123accd214d`
 -	Entrypoint: `["docker-php-entrypoint"]`
 -	Default Command: `["apache2-foreground"]`
 
 ```dockerfile
-# Wed, 11 Sep 2019 23:27:46 GMT
-ADD file:e82c447c3eae5d1d0282d8557b0c271b29d1be0d0f23204a09ad468be7a80d8c in / 
-# Wed, 11 Sep 2019 23:27:47 GMT
+# Wed, 16 Oct 2019 23:29:18 GMT
+ADD file:37512e59e7c324f9ec5b01628ef87efee73d2092cfe97d05ca949dc3528e4c2a in / 
+# Wed, 16 Oct 2019 23:29:19 GMT
 CMD ["bash"]
-# Thu, 12 Sep 2019 10:35:06 GMT
+# Thu, 17 Oct 2019 15:19:17 GMT
 RUN set -eux; 	{ 		echo 'Package: php*'; 		echo 'Pin: release *'; 		echo 'Pin-Priority: -1'; 	} > /etc/apt/preferences.d/no-debian-php
-# Thu, 12 Sep 2019 10:35:06 GMT
+# Thu, 17 Oct 2019 15:19:17 GMT
 ENV PHPIZE_DEPS=autoconf 		dpkg-dev 		file 		g++ 		gcc 		libc-dev 		make 		pkg-config 		re2c
-# Thu, 12 Sep 2019 10:35:36 GMT
+# Thu, 17 Oct 2019 15:19:56 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		$PHPIZE_DEPS 		ca-certificates 		curl 		xz-utils 	; 	rm -rf /var/lib/apt/lists/*
-# Thu, 12 Sep 2019 10:35:36 GMT
+# Thu, 17 Oct 2019 15:19:57 GMT
 ENV PHP_INI_DIR=/usr/local/etc/php
-# Thu, 12 Sep 2019 10:35:37 GMT
+# Thu, 17 Oct 2019 15:19:58 GMT
 RUN set -eux; 	mkdir -p "$PHP_INI_DIR/conf.d"; 	[ ! -d /var/www/html ]; 	mkdir -p /var/www/html; 	chown www-data:www-data /var/www/html; 	chmod 777 /var/www/html
-# Thu, 12 Sep 2019 10:44:55 GMT
+# Thu, 17 Oct 2019 15:27:50 GMT
 ENV APACHE_CONFDIR=/etc/apache2
-# Thu, 12 Sep 2019 10:44:55 GMT
+# Thu, 17 Oct 2019 15:27:50 GMT
 ENV APACHE_ENVVARS=/etc/apache2/envvars
-# Thu, 12 Sep 2019 10:45:06 GMT
+# Thu, 17 Oct 2019 15:28:01 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends apache2; 	rm -rf /var/lib/apt/lists/*; 		sed -ri 's/^export ([^=]+)=(.*)$/: ${\1:=\2}\nexport \1/' "$APACHE_ENVVARS"; 		. "$APACHE_ENVVARS"; 	for dir in 		"$APACHE_LOCK_DIR" 		"$APACHE_RUN_DIR" 		"$APACHE_LOG_DIR" 	; do 		rm -rvf "$dir"; 		mkdir -p "$dir"; 		chown "$APACHE_RUN_USER:$APACHE_RUN_GROUP" "$dir"; 		chmod 777 "$dir"; 	done; 		rm -rvf /var/www/html/*; 		ln -sfT /dev/stderr "$APACHE_LOG_DIR/error.log"; 	ln -sfT /dev/stdout "$APACHE_LOG_DIR/access.log"; 	ln -sfT /dev/stdout "$APACHE_LOG_DIR/other_vhosts_access.log"; 	chown -R --no-dereference "$APACHE_RUN_USER:$APACHE_RUN_GROUP" "$APACHE_LOG_DIR"
-# Thu, 12 Sep 2019 10:45:07 GMT
+# Thu, 17 Oct 2019 15:28:03 GMT
 RUN a2dismod mpm_event && a2enmod mpm_prefork
-# Thu, 12 Sep 2019 10:45:08 GMT
+# Thu, 17 Oct 2019 15:28:04 GMT
 RUN { 		echo '<FilesMatch \.php$>'; 		echo '\tSetHandler application/x-httpd-php'; 		echo '</FilesMatch>'; 		echo; 		echo 'DirectoryIndex disabled'; 		echo 'DirectoryIndex index.php index.html'; 		echo; 		echo '<Directory /var/www/>'; 		echo '\tOptions -Indexes'; 		echo '\tAllowOverride All'; 		echo '</Directory>'; 	} | tee "$APACHE_CONFDIR/conf-available/docker-php.conf" 	&& a2enconf docker-php
-# Thu, 12 Sep 2019 10:45:08 GMT
+# Thu, 17 Oct 2019 15:28:04 GMT
 ENV PHP_EXTRA_BUILD_DEPS=apache2-dev
-# Thu, 12 Sep 2019 10:45:08 GMT
+# Thu, 17 Oct 2019 15:28:05 GMT
 ENV PHP_EXTRA_CONFIGURE_ARGS=--with-apxs2 --disable-cgi
-# Thu, 12 Sep 2019 10:45:08 GMT
+# Thu, 17 Oct 2019 15:28:05 GMT
 ENV PHP_CFLAGS=-fstack-protector-strong -fpic -fpie -O2
-# Thu, 12 Sep 2019 10:45:08 GMT
+# Thu, 17 Oct 2019 15:28:05 GMT
 ENV PHP_CPPFLAGS=-fstack-protector-strong -fpic -fpie -O2
-# Thu, 12 Sep 2019 10:45:08 GMT
+# Thu, 17 Oct 2019 15:28:05 GMT
 ENV PHP_LDFLAGS=-Wl,-O1 -Wl,--hash-style=both -pie
-# Thu, 12 Sep 2019 11:49:15 GMT
+# Thu, 17 Oct 2019 16:16:18 GMT
 ENV GPG_KEYS=1729F83938DA44E27BA0F4D3DBDB397470D12172 B1B44D8F021E4E2D6021E995DC9FF8D3EE5AF27F
-# Thu, 26 Sep 2019 23:57:30 GMT
+# Thu, 17 Oct 2019 16:16:19 GMT
 ENV PHP_VERSION=7.2.23
-# Thu, 26 Sep 2019 23:57:30 GMT
+# Thu, 17 Oct 2019 16:16:19 GMT
 ENV PHP_URL=https://www.php.net/get/php-7.2.23.tar.xz/from/this/mirror PHP_ASC_URL=https://www.php.net/get/php-7.2.23.tar.xz.asc/from/this/mirror
-# Thu, 26 Sep 2019 23:57:30 GMT
+# Thu, 17 Oct 2019 16:16:19 GMT
 ENV PHP_SHA256=74e045ec8ff26290db6a3688826dcdf43b87bc509e508e9cb76dab742804ca14 PHP_MD5=
-# Thu, 26 Sep 2019 23:57:42 GMT
+# Thu, 17 Oct 2019 16:16:28 GMT
 RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends gnupg dirmngr; 	rm -rf /var/lib/apt/lists/*; 		mkdir -p /usr/src; 	cd /usr/src; 		curl -fsSL -o php.tar.xz "$PHP_URL"; 		if [ -n "$PHP_SHA256" ]; then 		echo "$PHP_SHA256 *php.tar.xz" | sha256sum -c -; 	fi; 	if [ -n "$PHP_MD5" ]; then 		echo "$PHP_MD5 *php.tar.xz" | md5sum -c -; 	fi; 		if [ -n "$PHP_ASC_URL" ]; then 		curl -fsSL -o php.tar.xz.asc "$PHP_ASC_URL"; 		export GNUPGHOME="$(mktemp -d)"; 		for key in $GPG_KEYS; do 			gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys "$key"; 		done; 		gpg --batch --verify php.tar.xz.asc php.tar.xz; 		gpgconf --kill all; 		rm -rf "$GNUPGHOME"; 	fi; 		apt-mark auto '.*' > /dev/null; 	apt-mark manual $savedAptMark > /dev/null; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false
-# Thu, 26 Sep 2019 23:57:43 GMT
+# Thu, 17 Oct 2019 16:16:28 GMT
 COPY file:ce57c04b70896f77cc11eb2766417d8a1240fcffe5bba92179ec78c458844110 in /usr/local/bin/ 
-# Sat, 05 Oct 2019 00:55:44 GMT
+# Thu, 17 Oct 2019 16:20:14 GMT
 RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	sed -e 's/stretch/buster/g' /etc/apt/sources.list > /etc/apt/sources.list.d/buster.list; 	{ 		echo 'Package: *'; 		echo 'Pin: release n=buster'; 		echo 'Pin-Priority: -10'; 		echo; 		echo 'Package: libargon2*'; 		echo 'Pin: release n=buster'; 		echo 'Pin-Priority: 990'; 	} > /etc/apt/preferences.d/argon2-buster; 	apt-get update; 	apt-get install -y --no-install-recommends 		libargon2-dev 		libcurl4-openssl-dev 		libedit-dev 		libsodium-dev 		libsqlite3-dev 		libssl-dev 		libxml2-dev 		zlib1g-dev 		${PHP_EXTRA_BUILD_DEPS:-} 	; 	rm -rf /var/lib/apt/lists/*; 		export 		CFLAGS="$PHP_CFLAGS" 		CPPFLAGS="$PHP_CPPFLAGS" 		LDFLAGS="$PHP_LDFLAGS" 	; 	docker-php-source extract; 	cd /usr/src/php; 	gnuArch="$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)"; 	debMultiarch="$(dpkg-architecture --query DEB_BUILD_MULTIARCH)"; 	if [ ! -d /usr/include/curl ]; then 		ln -sT "/usr/include/$debMultiarch/curl" /usr/local/include/curl; 	fi; 	./configure 		--build="$gnuArch" 		--with-config-file-path="$PHP_INI_DIR" 		--with-config-file-scan-dir="$PHP_INI_DIR/conf.d" 				--enable-option-checking=fatal 				--with-mhash 				--enable-ftp 		--enable-mbstring 		--enable-mysqlnd 		--with-password-argon2 		--with-sodium=shared 		--with-pdo-sqlite=/usr 		--with-sqlite3=/usr 				--with-curl 		--with-libedit 		--with-openssl 		--with-zlib 				$(test "$gnuArch" = 's390x-linux-gnu' && echo '--without-pcre-jit') 		--with-libdir="lib/$debMultiarch" 				${PHP_EXTRA_CONFIGURE_ARGS:-} 	; 	make -j "$(nproc)"; 	find -type f -name '*.a' -delete; 	make install; 	find /usr/local/bin /usr/local/sbin -type f -executable -exec strip --strip-all '{}' + || true; 	make clean; 		cp -v php.ini-* "$PHP_INI_DIR/"; 		cd /; 	docker-php-source delete; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark; 	find /usr/local -type f -executable -exec ldd '{}' ';' 		| awk '/=>/ { print $(NF-1) }' 		| sort -u 		| xargs -r dpkg-query --search 		| cut -d: -f1 		| sort -u 		| xargs -r apt-mark manual 	; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 		pecl update-channels; 	rm -rf /tmp/pear ~/.pearrc; 	php --version
-# Sat, 05 Oct 2019 00:55:45 GMT
+# Thu, 17 Oct 2019 16:20:15 GMT
 COPY multi:99e4ad617c6193834e78d12470f6dde09f70f4d40463009c5724954902e60676 in /usr/local/bin/ 
-# Sat, 05 Oct 2019 00:55:46 GMT
+# Thu, 17 Oct 2019 16:20:15 GMT
 RUN docker-php-ext-enable sodium
-# Sat, 05 Oct 2019 00:55:46 GMT
+# Thu, 17 Oct 2019 16:20:16 GMT
 ENTRYPOINT ["docker-php-entrypoint"]
-# Sat, 05 Oct 2019 00:55:46 GMT
+# Thu, 17 Oct 2019 16:20:16 GMT
 STOPSIGNAL WINCH
-# Sat, 05 Oct 2019 00:55:47 GMT
+# Thu, 17 Oct 2019 16:20:16 GMT
 COPY file:e3123fcb6566efa979f945bfac1c94c854a559d7b82723e42118882a8ac4de66 in /usr/local/bin/ 
-# Sat, 05 Oct 2019 00:55:47 GMT
+# Thu, 17 Oct 2019 16:20:16 GMT
 WORKDIR /var/www/html
-# Sat, 05 Oct 2019 00:55:47 GMT
+# Thu, 17 Oct 2019 16:20:16 GMT
 EXPOSE 80
-# Sat, 05 Oct 2019 00:55:48 GMT
+# Thu, 17 Oct 2019 16:20:17 GMT
 CMD ["apache2-foreground"]
-# Sat, 05 Oct 2019 05:44:49 GMT
+# Fri, 18 Oct 2019 06:28:44 GMT
 RUN set -eux; 		if command -v a2enmod; then 		a2enmod rewrite; 	fi; 		savedAptMark="$(apt-mark showmanual)"; 		apt-get update; 	apt-get install -y --no-install-recommends 		libfreetype6-dev 		libjpeg-dev 		libpng-dev 		libpq-dev 		libzip-dev 	; 		docker-php-ext-configure gd 		--with-freetype-dir=/usr 		--with-jpeg-dir=/usr 		--with-png-dir=/usr 	; 		docker-php-ext-install -j "$(nproc)" 		gd 		opcache 		pdo_mysql 		pdo_pgsql 		zip 	; 		apt-mark auto '.*' > /dev/null; 	apt-mark manual $savedAptMark; 	ldd "$(php -r 'echo ini_get("extension_dir");')"/*.so 		| awk '/=>/ { print $3 }' 		| sort -u 		| xargs -r dpkg-query -S 		| cut -d: -f1 		| sort -u 		| xargs -rt apt-mark manual; 		apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 	rm -rf /var/lib/apt/lists/*
-# Sat, 05 Oct 2019 05:44:50 GMT
+# Fri, 18 Oct 2019 06:28:45 GMT
 RUN { 		echo 'opcache.memory_consumption=128'; 		echo 'opcache.interned_strings_buffer=8'; 		echo 'opcache.max_accelerated_files=4000'; 		echo 'opcache.revalidate_freq=60'; 		echo 'opcache.fast_shutdown=1'; 	} > /usr/local/etc/php/conf.d/opcache-recommended.ini
-# Sat, 05 Oct 2019 05:44:51 GMT
+# Fri, 18 Oct 2019 06:28:45 GMT
 WORKDIR /var/www/html
-# Sat, 05 Oct 2019 05:44:51 GMT
+# Fri, 18 Oct 2019 06:28:45 GMT
 ENV DRUPAL_VERSION=7.67
-# Sat, 05 Oct 2019 05:44:51 GMT
+# Fri, 18 Oct 2019 06:28:45 GMT
 ENV DRUPAL_MD5=78b1814e55fdaf40e753fd523d059f8d
-# Sat, 05 Oct 2019 05:44:54 GMT
+# Fri, 18 Oct 2019 06:28:46 GMT
 RUN set -eux; 	curl -fSL "https://ftp.drupal.org/files/projects/drupal-${DRUPAL_VERSION}.tar.gz" -o drupal.tar.gz; 	echo "${DRUPAL_MD5} *drupal.tar.gz" | md5sum -c -; 	tar -xz --strip-components=1 -f drupal.tar.gz; 	rm drupal.tar.gz; 	chown -R www-data:www-data sites modules themes
 ```
 
 -	Layers:
-	-	`sha256:8f91359f1fffbf32b24ca854fb263d88a222371f38e90cf4583c5742cfdc3039`  
-		Last Modified: Wed, 11 Sep 2019 23:34:50 GMT  
-		Size: 22.5 MB (22510654 bytes)  
+	-	`sha256:80369df487363e56aea88d4d41b61f1607fc2ec198e9327cfde36a5346c71bf2`  
+		Last Modified: Wed, 16 Oct 2019 23:35:19 GMT  
+		Size: 22.5 MB (22524636 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:bf2faaedf741a44c5457bc029621724b7f316482f99de58522e1b659ddc8fd99`  
-		Last Modified: Thu, 12 Sep 2019 13:15:25 GMT  
-		Size: 225.0 B  
+	-	`sha256:60e80cb3f70356b666135b9d9acc19345b74bf7feedb2b6ac494dd6d224b8574`  
+		Last Modified: Thu, 17 Oct 2019 17:20:16 GMT  
+		Size: 226.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:24cd1299a53e525f85fdd79c524463ec6b6569df13c6af402ca0f706ad89c28b`  
-		Last Modified: Thu, 12 Sep 2019 13:15:49 GMT  
-		Size: 67.5 MB (67450331 bytes)  
+	-	`sha256:e3b2450987de138dcaf9f09559f25a8b2cd6ceaac8e28d858fdb73530d40f92e`  
+		Last Modified: Thu, 17 Oct 2019 17:20:33 GMT  
+		Size: 67.4 MB (67447849 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:17091cc665e4a0e967d00b8b36fcabb2b17d7bceba421f717f5d138063e22ad6`  
-		Last Modified: Thu, 12 Sep 2019 13:15:25 GMT  
-		Size: 237.0 B  
+	-	`sha256:c413b7377c2f336391745613272b75d32b6f52110d5cf6bb28949ed2eea52906`  
+		Last Modified: Thu, 17 Oct 2019 17:20:16 GMT  
+		Size: 238.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:ac9365919f9b10c759648e7efa92752c1443400e4178d6411f5a458a90e09ca2`  
-		Last Modified: Thu, 12 Sep 2019 13:16:08 GMT  
-		Size: 17.1 MB (17125603 bytes)  
+	-	`sha256:6dd9eff17a14f4fd1ad899a27f318151a4b2fa2d935cb85307637563d6973d17`  
+		Last Modified: Thu, 17 Oct 2019 17:20:46 GMT  
+		Size: 17.1 MB (17125324 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:4f1b34e209eee27994691cd890ca1422857bc1c2c166a700049ae0af84d6fb2a`  
-		Last Modified: Thu, 12 Sep 2019 13:16:02 GMT  
-		Size: 431.0 B  
+	-	`sha256:5126e57aff9b8bc91dfaa6885060a8b4cd41887d4a85621d5778c2ec6c660f2a`  
+		Last Modified: Thu, 17 Oct 2019 17:20:43 GMT  
+		Size: 437.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:832757fa04a4aea3b2f6e686cf9741254a6a03855e86b603417b6d3ce6c0038f`  
-		Last Modified: Thu, 12 Sep 2019 13:16:02 GMT  
-		Size: 487.0 B  
+	-	`sha256:943df09926ea3a42f821bbdfd1d3112e72b5da0fbc6761b35b50da5570cfb438`  
+		Last Modified: Thu, 17 Oct 2019 17:20:43 GMT  
+		Size: 490.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:6872b25b9fabc5c40614d5c48a76fb67ec6045da0a37dc2ac5317247627940bf`  
-		Last Modified: Fri, 27 Sep 2019 01:30:10 GMT  
-		Size: 12.6 MB (12623230 bytes)  
+	-	`sha256:ea464ff429303e903027d0f3ed724af15baa7291a1f935630f5839c13cc19fd2`  
+		Last Modified: Thu, 17 Oct 2019 17:22:22 GMT  
+		Size: 12.6 MB (12623241 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:f54b85668b74001619dfa277989aa72d67167fe6835cb7a16ac0f69df53b7d0d`  
-		Last Modified: Fri, 27 Sep 2019 01:30:07 GMT  
+	-	`sha256:1642b58d27b1e5afcccc2d3f271d2b341d88867117b9e4a41c1408875216a500`  
+		Last Modified: Thu, 17 Oct 2019 17:22:20 GMT  
 		Size: 499.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:13dc8296ebba491a797865fb2724fb2c8e87b3aef150e9b1a294311bf1eafb50`  
-		Last Modified: Sat, 05 Oct 2019 03:53:41 GMT  
-		Size: 15.1 MB (15120318 bytes)  
+	-	`sha256:9ae19688677dcabf51a4db76d5ca59facf1b99f02f4959f3fe0016f8a51888f8`  
+		Last Modified: Thu, 17 Oct 2019 17:22:24 GMT  
+		Size: 13.5 MB (13534988 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:cffe2eb7c545ce17ba9579be0cef4b2e7fedd235b4b514c030d333f09c633c80`  
-		Last Modified: Sat, 05 Oct 2019 03:53:36 GMT  
-		Size: 2.2 KB (2228 bytes)  
+	-	`sha256:55cccc313b8cd2acf460cb2c60004dcad4a711cc079f8e3d3c1cb9c9719d2759`  
+		Last Modified: Thu, 17 Oct 2019 17:22:21 GMT  
+		Size: 2.2 KB (2227 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:bf8b43b070ba3728fc9c5161004e5b9d014e2e7f7318cd83ab7a8e568438c64e`  
-		Last Modified: Sat, 05 Oct 2019 03:53:36 GMT  
-		Size: 260.0 B  
+	-	`sha256:0505d835c1ce37bd686067aed77487bcc80a02a5d76cc222d56e0a45dd9b7584`  
+		Last Modified: Thu, 17 Oct 2019 17:22:20 GMT  
+		Size: 255.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:6aa7c737b75bf0e471bc7a1eac438866b31295c7c7c275dcfe5321d8ea2736b4`  
-		Last Modified: Sat, 05 Oct 2019 03:53:36 GMT  
-		Size: 906.0 B  
+	-	`sha256:48f36c7eb398f0ffba6299270f019f1b90e41a499b0354073bb513195b204c1e`  
+		Last Modified: Thu, 17 Oct 2019 17:22:21 GMT  
+		Size: 904.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:54e2616bbc4463e695137acdaa04e28583910aed2508b48900b598fe76c96790`  
-		Last Modified: Sat, 05 Oct 2019 05:51:24 GMT  
-		Size: 1.6 MB (1576900 bytes)  
+	-	`sha256:606217055498a3a965fe1d6c1f2ba5d01242bdeb4c3e0c282f97b45f5a6a3c83`  
+		Last Modified: Fri, 18 Oct 2019 06:31:17 GMT  
+		Size: 1.6 MB (1576566 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:a0f40a3cbef848154aebeb197a51850c6d061c8bf10ed57b79285bb2733f0388`  
-		Last Modified: Sat, 05 Oct 2019 05:51:24 GMT  
-		Size: 340.0 B  
+	-	`sha256:e8f341cf7670f2a517537804e0b8287968435733c4db236572b116c66f0187d6`  
+		Last Modified: Fri, 18 Oct 2019 06:31:17 GMT  
+		Size: 337.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:3d34bb0a165401d88b50d3713585b37327bc168821cdf2cab9a3ee4b00991272`  
-		Last Modified: Sat, 05 Oct 2019 05:51:25 GMT  
-		Size: 3.3 MB (3332765 bytes)  
+	-	`sha256:d264cf50aa2929cfca46ea669a7e81eacc14aba2588f52f97a61e8f9e3a120ec`  
+		Last Modified: Fri, 18 Oct 2019 06:31:17 GMT  
+		Size: 3.3 MB (3332777 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `drupal:7.67` - linux; arm variant v5
@@ -1976,7 +1976,7 @@ RUN set -eux; 	curl -fSL "https://ftp.drupal.org/files/projects/drupal-${DRUPAL_
 ## `drupal:7.67-apache`
 
 ```console
-$ docker pull drupal@sha256:620e937aa23558f4c790418fb268a4461d9681a0c5614d350b6be6085fba3169
+$ docker pull drupal@sha256:8c63294c06da6ff25778d9adf83dfa2db2bd950cbdaca9b12c76b322c871e300
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -1991,160 +1991,160 @@ $ docker pull drupal@sha256:620e937aa23558f4c790418fb268a4461d9681a0c5614d350b6b
 ### `drupal:7.67-apache` - linux; amd64
 
 ```console
-$ docker pull drupal@sha256:7f88e187d8c2c573f16055a50c3ec8dd5029bf65f9e3dbed00b389b902e77402
+$ docker pull drupal@sha256:8b8fa39d7fb1e6ec9615cbb79a266e8e90c00f2c7ef68eefe75d01729f28c196
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **139.7 MB (139745414 bytes)**  
+-	Total Size: **138.2 MB (138170994 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:ecd04d7398c6dd99f5188d2298c159fc123e47409fe82060b8f04fa66e82cd32`
+-	Image ID: `sha256:399807ca83336ccaabaddeb70730c1fb15b01f810695b33e554f3123accd214d`
 -	Entrypoint: `["docker-php-entrypoint"]`
 -	Default Command: `["apache2-foreground"]`
 
 ```dockerfile
-# Wed, 11 Sep 2019 23:27:46 GMT
-ADD file:e82c447c3eae5d1d0282d8557b0c271b29d1be0d0f23204a09ad468be7a80d8c in / 
-# Wed, 11 Sep 2019 23:27:47 GMT
+# Wed, 16 Oct 2019 23:29:18 GMT
+ADD file:37512e59e7c324f9ec5b01628ef87efee73d2092cfe97d05ca949dc3528e4c2a in / 
+# Wed, 16 Oct 2019 23:29:19 GMT
 CMD ["bash"]
-# Thu, 12 Sep 2019 10:35:06 GMT
+# Thu, 17 Oct 2019 15:19:17 GMT
 RUN set -eux; 	{ 		echo 'Package: php*'; 		echo 'Pin: release *'; 		echo 'Pin-Priority: -1'; 	} > /etc/apt/preferences.d/no-debian-php
-# Thu, 12 Sep 2019 10:35:06 GMT
+# Thu, 17 Oct 2019 15:19:17 GMT
 ENV PHPIZE_DEPS=autoconf 		dpkg-dev 		file 		g++ 		gcc 		libc-dev 		make 		pkg-config 		re2c
-# Thu, 12 Sep 2019 10:35:36 GMT
+# Thu, 17 Oct 2019 15:19:56 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		$PHPIZE_DEPS 		ca-certificates 		curl 		xz-utils 	; 	rm -rf /var/lib/apt/lists/*
-# Thu, 12 Sep 2019 10:35:36 GMT
+# Thu, 17 Oct 2019 15:19:57 GMT
 ENV PHP_INI_DIR=/usr/local/etc/php
-# Thu, 12 Sep 2019 10:35:37 GMT
+# Thu, 17 Oct 2019 15:19:58 GMT
 RUN set -eux; 	mkdir -p "$PHP_INI_DIR/conf.d"; 	[ ! -d /var/www/html ]; 	mkdir -p /var/www/html; 	chown www-data:www-data /var/www/html; 	chmod 777 /var/www/html
-# Thu, 12 Sep 2019 10:44:55 GMT
+# Thu, 17 Oct 2019 15:27:50 GMT
 ENV APACHE_CONFDIR=/etc/apache2
-# Thu, 12 Sep 2019 10:44:55 GMT
+# Thu, 17 Oct 2019 15:27:50 GMT
 ENV APACHE_ENVVARS=/etc/apache2/envvars
-# Thu, 12 Sep 2019 10:45:06 GMT
+# Thu, 17 Oct 2019 15:28:01 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends apache2; 	rm -rf /var/lib/apt/lists/*; 		sed -ri 's/^export ([^=]+)=(.*)$/: ${\1:=\2}\nexport \1/' "$APACHE_ENVVARS"; 		. "$APACHE_ENVVARS"; 	for dir in 		"$APACHE_LOCK_DIR" 		"$APACHE_RUN_DIR" 		"$APACHE_LOG_DIR" 	; do 		rm -rvf "$dir"; 		mkdir -p "$dir"; 		chown "$APACHE_RUN_USER:$APACHE_RUN_GROUP" "$dir"; 		chmod 777 "$dir"; 	done; 		rm -rvf /var/www/html/*; 		ln -sfT /dev/stderr "$APACHE_LOG_DIR/error.log"; 	ln -sfT /dev/stdout "$APACHE_LOG_DIR/access.log"; 	ln -sfT /dev/stdout "$APACHE_LOG_DIR/other_vhosts_access.log"; 	chown -R --no-dereference "$APACHE_RUN_USER:$APACHE_RUN_GROUP" "$APACHE_LOG_DIR"
-# Thu, 12 Sep 2019 10:45:07 GMT
+# Thu, 17 Oct 2019 15:28:03 GMT
 RUN a2dismod mpm_event && a2enmod mpm_prefork
-# Thu, 12 Sep 2019 10:45:08 GMT
+# Thu, 17 Oct 2019 15:28:04 GMT
 RUN { 		echo '<FilesMatch \.php$>'; 		echo '\tSetHandler application/x-httpd-php'; 		echo '</FilesMatch>'; 		echo; 		echo 'DirectoryIndex disabled'; 		echo 'DirectoryIndex index.php index.html'; 		echo; 		echo '<Directory /var/www/>'; 		echo '\tOptions -Indexes'; 		echo '\tAllowOverride All'; 		echo '</Directory>'; 	} | tee "$APACHE_CONFDIR/conf-available/docker-php.conf" 	&& a2enconf docker-php
-# Thu, 12 Sep 2019 10:45:08 GMT
+# Thu, 17 Oct 2019 15:28:04 GMT
 ENV PHP_EXTRA_BUILD_DEPS=apache2-dev
-# Thu, 12 Sep 2019 10:45:08 GMT
+# Thu, 17 Oct 2019 15:28:05 GMT
 ENV PHP_EXTRA_CONFIGURE_ARGS=--with-apxs2 --disable-cgi
-# Thu, 12 Sep 2019 10:45:08 GMT
+# Thu, 17 Oct 2019 15:28:05 GMT
 ENV PHP_CFLAGS=-fstack-protector-strong -fpic -fpie -O2
-# Thu, 12 Sep 2019 10:45:08 GMT
+# Thu, 17 Oct 2019 15:28:05 GMT
 ENV PHP_CPPFLAGS=-fstack-protector-strong -fpic -fpie -O2
-# Thu, 12 Sep 2019 10:45:08 GMT
+# Thu, 17 Oct 2019 15:28:05 GMT
 ENV PHP_LDFLAGS=-Wl,-O1 -Wl,--hash-style=both -pie
-# Thu, 12 Sep 2019 11:49:15 GMT
+# Thu, 17 Oct 2019 16:16:18 GMT
 ENV GPG_KEYS=1729F83938DA44E27BA0F4D3DBDB397470D12172 B1B44D8F021E4E2D6021E995DC9FF8D3EE5AF27F
-# Thu, 26 Sep 2019 23:57:30 GMT
+# Thu, 17 Oct 2019 16:16:19 GMT
 ENV PHP_VERSION=7.2.23
-# Thu, 26 Sep 2019 23:57:30 GMT
+# Thu, 17 Oct 2019 16:16:19 GMT
 ENV PHP_URL=https://www.php.net/get/php-7.2.23.tar.xz/from/this/mirror PHP_ASC_URL=https://www.php.net/get/php-7.2.23.tar.xz.asc/from/this/mirror
-# Thu, 26 Sep 2019 23:57:30 GMT
+# Thu, 17 Oct 2019 16:16:19 GMT
 ENV PHP_SHA256=74e045ec8ff26290db6a3688826dcdf43b87bc509e508e9cb76dab742804ca14 PHP_MD5=
-# Thu, 26 Sep 2019 23:57:42 GMT
+# Thu, 17 Oct 2019 16:16:28 GMT
 RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends gnupg dirmngr; 	rm -rf /var/lib/apt/lists/*; 		mkdir -p /usr/src; 	cd /usr/src; 		curl -fsSL -o php.tar.xz "$PHP_URL"; 		if [ -n "$PHP_SHA256" ]; then 		echo "$PHP_SHA256 *php.tar.xz" | sha256sum -c -; 	fi; 	if [ -n "$PHP_MD5" ]; then 		echo "$PHP_MD5 *php.tar.xz" | md5sum -c -; 	fi; 		if [ -n "$PHP_ASC_URL" ]; then 		curl -fsSL -o php.tar.xz.asc "$PHP_ASC_URL"; 		export GNUPGHOME="$(mktemp -d)"; 		for key in $GPG_KEYS; do 			gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys "$key"; 		done; 		gpg --batch --verify php.tar.xz.asc php.tar.xz; 		gpgconf --kill all; 		rm -rf "$GNUPGHOME"; 	fi; 		apt-mark auto '.*' > /dev/null; 	apt-mark manual $savedAptMark > /dev/null; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false
-# Thu, 26 Sep 2019 23:57:43 GMT
+# Thu, 17 Oct 2019 16:16:28 GMT
 COPY file:ce57c04b70896f77cc11eb2766417d8a1240fcffe5bba92179ec78c458844110 in /usr/local/bin/ 
-# Sat, 05 Oct 2019 00:55:44 GMT
+# Thu, 17 Oct 2019 16:20:14 GMT
 RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	sed -e 's/stretch/buster/g' /etc/apt/sources.list > /etc/apt/sources.list.d/buster.list; 	{ 		echo 'Package: *'; 		echo 'Pin: release n=buster'; 		echo 'Pin-Priority: -10'; 		echo; 		echo 'Package: libargon2*'; 		echo 'Pin: release n=buster'; 		echo 'Pin-Priority: 990'; 	} > /etc/apt/preferences.d/argon2-buster; 	apt-get update; 	apt-get install -y --no-install-recommends 		libargon2-dev 		libcurl4-openssl-dev 		libedit-dev 		libsodium-dev 		libsqlite3-dev 		libssl-dev 		libxml2-dev 		zlib1g-dev 		${PHP_EXTRA_BUILD_DEPS:-} 	; 	rm -rf /var/lib/apt/lists/*; 		export 		CFLAGS="$PHP_CFLAGS" 		CPPFLAGS="$PHP_CPPFLAGS" 		LDFLAGS="$PHP_LDFLAGS" 	; 	docker-php-source extract; 	cd /usr/src/php; 	gnuArch="$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)"; 	debMultiarch="$(dpkg-architecture --query DEB_BUILD_MULTIARCH)"; 	if [ ! -d /usr/include/curl ]; then 		ln -sT "/usr/include/$debMultiarch/curl" /usr/local/include/curl; 	fi; 	./configure 		--build="$gnuArch" 		--with-config-file-path="$PHP_INI_DIR" 		--with-config-file-scan-dir="$PHP_INI_DIR/conf.d" 				--enable-option-checking=fatal 				--with-mhash 				--enable-ftp 		--enable-mbstring 		--enable-mysqlnd 		--with-password-argon2 		--with-sodium=shared 		--with-pdo-sqlite=/usr 		--with-sqlite3=/usr 				--with-curl 		--with-libedit 		--with-openssl 		--with-zlib 				$(test "$gnuArch" = 's390x-linux-gnu' && echo '--without-pcre-jit') 		--with-libdir="lib/$debMultiarch" 				${PHP_EXTRA_CONFIGURE_ARGS:-} 	; 	make -j "$(nproc)"; 	find -type f -name '*.a' -delete; 	make install; 	find /usr/local/bin /usr/local/sbin -type f -executable -exec strip --strip-all '{}' + || true; 	make clean; 		cp -v php.ini-* "$PHP_INI_DIR/"; 		cd /; 	docker-php-source delete; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark; 	find /usr/local -type f -executable -exec ldd '{}' ';' 		| awk '/=>/ { print $(NF-1) }' 		| sort -u 		| xargs -r dpkg-query --search 		| cut -d: -f1 		| sort -u 		| xargs -r apt-mark manual 	; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 		pecl update-channels; 	rm -rf /tmp/pear ~/.pearrc; 	php --version
-# Sat, 05 Oct 2019 00:55:45 GMT
+# Thu, 17 Oct 2019 16:20:15 GMT
 COPY multi:99e4ad617c6193834e78d12470f6dde09f70f4d40463009c5724954902e60676 in /usr/local/bin/ 
-# Sat, 05 Oct 2019 00:55:46 GMT
+# Thu, 17 Oct 2019 16:20:15 GMT
 RUN docker-php-ext-enable sodium
-# Sat, 05 Oct 2019 00:55:46 GMT
+# Thu, 17 Oct 2019 16:20:16 GMT
 ENTRYPOINT ["docker-php-entrypoint"]
-# Sat, 05 Oct 2019 00:55:46 GMT
+# Thu, 17 Oct 2019 16:20:16 GMT
 STOPSIGNAL WINCH
-# Sat, 05 Oct 2019 00:55:47 GMT
+# Thu, 17 Oct 2019 16:20:16 GMT
 COPY file:e3123fcb6566efa979f945bfac1c94c854a559d7b82723e42118882a8ac4de66 in /usr/local/bin/ 
-# Sat, 05 Oct 2019 00:55:47 GMT
+# Thu, 17 Oct 2019 16:20:16 GMT
 WORKDIR /var/www/html
-# Sat, 05 Oct 2019 00:55:47 GMT
+# Thu, 17 Oct 2019 16:20:16 GMT
 EXPOSE 80
-# Sat, 05 Oct 2019 00:55:48 GMT
+# Thu, 17 Oct 2019 16:20:17 GMT
 CMD ["apache2-foreground"]
-# Sat, 05 Oct 2019 05:44:49 GMT
+# Fri, 18 Oct 2019 06:28:44 GMT
 RUN set -eux; 		if command -v a2enmod; then 		a2enmod rewrite; 	fi; 		savedAptMark="$(apt-mark showmanual)"; 		apt-get update; 	apt-get install -y --no-install-recommends 		libfreetype6-dev 		libjpeg-dev 		libpng-dev 		libpq-dev 		libzip-dev 	; 		docker-php-ext-configure gd 		--with-freetype-dir=/usr 		--with-jpeg-dir=/usr 		--with-png-dir=/usr 	; 		docker-php-ext-install -j "$(nproc)" 		gd 		opcache 		pdo_mysql 		pdo_pgsql 		zip 	; 		apt-mark auto '.*' > /dev/null; 	apt-mark manual $savedAptMark; 	ldd "$(php -r 'echo ini_get("extension_dir");')"/*.so 		| awk '/=>/ { print $3 }' 		| sort -u 		| xargs -r dpkg-query -S 		| cut -d: -f1 		| sort -u 		| xargs -rt apt-mark manual; 		apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 	rm -rf /var/lib/apt/lists/*
-# Sat, 05 Oct 2019 05:44:50 GMT
+# Fri, 18 Oct 2019 06:28:45 GMT
 RUN { 		echo 'opcache.memory_consumption=128'; 		echo 'opcache.interned_strings_buffer=8'; 		echo 'opcache.max_accelerated_files=4000'; 		echo 'opcache.revalidate_freq=60'; 		echo 'opcache.fast_shutdown=1'; 	} > /usr/local/etc/php/conf.d/opcache-recommended.ini
-# Sat, 05 Oct 2019 05:44:51 GMT
+# Fri, 18 Oct 2019 06:28:45 GMT
 WORKDIR /var/www/html
-# Sat, 05 Oct 2019 05:44:51 GMT
+# Fri, 18 Oct 2019 06:28:45 GMT
 ENV DRUPAL_VERSION=7.67
-# Sat, 05 Oct 2019 05:44:51 GMT
+# Fri, 18 Oct 2019 06:28:45 GMT
 ENV DRUPAL_MD5=78b1814e55fdaf40e753fd523d059f8d
-# Sat, 05 Oct 2019 05:44:54 GMT
+# Fri, 18 Oct 2019 06:28:46 GMT
 RUN set -eux; 	curl -fSL "https://ftp.drupal.org/files/projects/drupal-${DRUPAL_VERSION}.tar.gz" -o drupal.tar.gz; 	echo "${DRUPAL_MD5} *drupal.tar.gz" | md5sum -c -; 	tar -xz --strip-components=1 -f drupal.tar.gz; 	rm drupal.tar.gz; 	chown -R www-data:www-data sites modules themes
 ```
 
 -	Layers:
-	-	`sha256:8f91359f1fffbf32b24ca854fb263d88a222371f38e90cf4583c5742cfdc3039`  
-		Last Modified: Wed, 11 Sep 2019 23:34:50 GMT  
-		Size: 22.5 MB (22510654 bytes)  
+	-	`sha256:80369df487363e56aea88d4d41b61f1607fc2ec198e9327cfde36a5346c71bf2`  
+		Last Modified: Wed, 16 Oct 2019 23:35:19 GMT  
+		Size: 22.5 MB (22524636 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:bf2faaedf741a44c5457bc029621724b7f316482f99de58522e1b659ddc8fd99`  
-		Last Modified: Thu, 12 Sep 2019 13:15:25 GMT  
-		Size: 225.0 B  
+	-	`sha256:60e80cb3f70356b666135b9d9acc19345b74bf7feedb2b6ac494dd6d224b8574`  
+		Last Modified: Thu, 17 Oct 2019 17:20:16 GMT  
+		Size: 226.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:24cd1299a53e525f85fdd79c524463ec6b6569df13c6af402ca0f706ad89c28b`  
-		Last Modified: Thu, 12 Sep 2019 13:15:49 GMT  
-		Size: 67.5 MB (67450331 bytes)  
+	-	`sha256:e3b2450987de138dcaf9f09559f25a8b2cd6ceaac8e28d858fdb73530d40f92e`  
+		Last Modified: Thu, 17 Oct 2019 17:20:33 GMT  
+		Size: 67.4 MB (67447849 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:17091cc665e4a0e967d00b8b36fcabb2b17d7bceba421f717f5d138063e22ad6`  
-		Last Modified: Thu, 12 Sep 2019 13:15:25 GMT  
-		Size: 237.0 B  
+	-	`sha256:c413b7377c2f336391745613272b75d32b6f52110d5cf6bb28949ed2eea52906`  
+		Last Modified: Thu, 17 Oct 2019 17:20:16 GMT  
+		Size: 238.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:ac9365919f9b10c759648e7efa92752c1443400e4178d6411f5a458a90e09ca2`  
-		Last Modified: Thu, 12 Sep 2019 13:16:08 GMT  
-		Size: 17.1 MB (17125603 bytes)  
+	-	`sha256:6dd9eff17a14f4fd1ad899a27f318151a4b2fa2d935cb85307637563d6973d17`  
+		Last Modified: Thu, 17 Oct 2019 17:20:46 GMT  
+		Size: 17.1 MB (17125324 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:4f1b34e209eee27994691cd890ca1422857bc1c2c166a700049ae0af84d6fb2a`  
-		Last Modified: Thu, 12 Sep 2019 13:16:02 GMT  
-		Size: 431.0 B  
+	-	`sha256:5126e57aff9b8bc91dfaa6885060a8b4cd41887d4a85621d5778c2ec6c660f2a`  
+		Last Modified: Thu, 17 Oct 2019 17:20:43 GMT  
+		Size: 437.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:832757fa04a4aea3b2f6e686cf9741254a6a03855e86b603417b6d3ce6c0038f`  
-		Last Modified: Thu, 12 Sep 2019 13:16:02 GMT  
-		Size: 487.0 B  
+	-	`sha256:943df09926ea3a42f821bbdfd1d3112e72b5da0fbc6761b35b50da5570cfb438`  
+		Last Modified: Thu, 17 Oct 2019 17:20:43 GMT  
+		Size: 490.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:6872b25b9fabc5c40614d5c48a76fb67ec6045da0a37dc2ac5317247627940bf`  
-		Last Modified: Fri, 27 Sep 2019 01:30:10 GMT  
-		Size: 12.6 MB (12623230 bytes)  
+	-	`sha256:ea464ff429303e903027d0f3ed724af15baa7291a1f935630f5839c13cc19fd2`  
+		Last Modified: Thu, 17 Oct 2019 17:22:22 GMT  
+		Size: 12.6 MB (12623241 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:f54b85668b74001619dfa277989aa72d67167fe6835cb7a16ac0f69df53b7d0d`  
-		Last Modified: Fri, 27 Sep 2019 01:30:07 GMT  
+	-	`sha256:1642b58d27b1e5afcccc2d3f271d2b341d88867117b9e4a41c1408875216a500`  
+		Last Modified: Thu, 17 Oct 2019 17:22:20 GMT  
 		Size: 499.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:13dc8296ebba491a797865fb2724fb2c8e87b3aef150e9b1a294311bf1eafb50`  
-		Last Modified: Sat, 05 Oct 2019 03:53:41 GMT  
-		Size: 15.1 MB (15120318 bytes)  
+	-	`sha256:9ae19688677dcabf51a4db76d5ca59facf1b99f02f4959f3fe0016f8a51888f8`  
+		Last Modified: Thu, 17 Oct 2019 17:22:24 GMT  
+		Size: 13.5 MB (13534988 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:cffe2eb7c545ce17ba9579be0cef4b2e7fedd235b4b514c030d333f09c633c80`  
-		Last Modified: Sat, 05 Oct 2019 03:53:36 GMT  
-		Size: 2.2 KB (2228 bytes)  
+	-	`sha256:55cccc313b8cd2acf460cb2c60004dcad4a711cc079f8e3d3c1cb9c9719d2759`  
+		Last Modified: Thu, 17 Oct 2019 17:22:21 GMT  
+		Size: 2.2 KB (2227 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:bf8b43b070ba3728fc9c5161004e5b9d014e2e7f7318cd83ab7a8e568438c64e`  
-		Last Modified: Sat, 05 Oct 2019 03:53:36 GMT  
-		Size: 260.0 B  
+	-	`sha256:0505d835c1ce37bd686067aed77487bcc80a02a5d76cc222d56e0a45dd9b7584`  
+		Last Modified: Thu, 17 Oct 2019 17:22:20 GMT  
+		Size: 255.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:6aa7c737b75bf0e471bc7a1eac438866b31295c7c7c275dcfe5321d8ea2736b4`  
-		Last Modified: Sat, 05 Oct 2019 03:53:36 GMT  
-		Size: 906.0 B  
+	-	`sha256:48f36c7eb398f0ffba6299270f019f1b90e41a499b0354073bb513195b204c1e`  
+		Last Modified: Thu, 17 Oct 2019 17:22:21 GMT  
+		Size: 904.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:54e2616bbc4463e695137acdaa04e28583910aed2508b48900b598fe76c96790`  
-		Last Modified: Sat, 05 Oct 2019 05:51:24 GMT  
-		Size: 1.6 MB (1576900 bytes)  
+	-	`sha256:606217055498a3a965fe1d6c1f2ba5d01242bdeb4c3e0c282f97b45f5a6a3c83`  
+		Last Modified: Fri, 18 Oct 2019 06:31:17 GMT  
+		Size: 1.6 MB (1576566 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:a0f40a3cbef848154aebeb197a51850c6d061c8bf10ed57b79285bb2733f0388`  
-		Last Modified: Sat, 05 Oct 2019 05:51:24 GMT  
-		Size: 340.0 B  
+	-	`sha256:e8f341cf7670f2a517537804e0b8287968435733c4db236572b116c66f0187d6`  
+		Last Modified: Fri, 18 Oct 2019 06:31:17 GMT  
+		Size: 337.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:3d34bb0a165401d88b50d3713585b37327bc168821cdf2cab9a3ee4b00991272`  
-		Last Modified: Sat, 05 Oct 2019 05:51:25 GMT  
-		Size: 3.3 MB (3332765 bytes)  
+	-	`sha256:d264cf50aa2929cfca46ea669a7e81eacc14aba2588f52f97a61e8f9e3a120ec`  
+		Last Modified: Fri, 18 Oct 2019 06:31:17 GMT  
+		Size: 3.3 MB (3332777 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `drupal:7.67-apache` - linux; arm variant v5
@@ -2945,7 +2945,7 @@ RUN set -eux; 	curl -fSL "https://ftp.drupal.org/files/projects/drupal-${DRUPAL_
 ## `drupal:7.67-fpm`
 
 ```console
-$ docker pull drupal@sha256:09ecf3686f767596d136f642eb03c28a693e0c0d5899062f272f573e8e1c900d
+$ docker pull drupal@sha256:903788271ab67ffe21a717c205cac47987814309d5ed885d6c962babd8d54db3
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -2960,136 +2960,136 @@ $ docker pull drupal@sha256:09ecf3686f767596d136f642eb03c28a693e0c0d5899062f272f
 ### `drupal:7.67-fpm` - linux; amd64
 
 ```console
-$ docker pull drupal@sha256:56ae8ed5b667fb469b06b98e34c0b4adbb9b058339e493997e2c4415c27e5af6
+$ docker pull drupal@sha256:2b0765a0dd6cac4e5f0b0511bff0580dcadd658539d9cabe7bdb80d0bea2ae68
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **136.5 MB (136475713 bytes)**  
+-	Total Size: **134.8 MB (134811312 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:228bfa9a001bd517fe44718c87d0268cc21da4a80d198338f9df1a0ffbfaa507`
+-	Image ID: `sha256:f5c897cf18d96d1b22eab584f1b434b935d4a36c3b712d572b9824b1ed9c18e5`
 -	Entrypoint: `["docker-php-entrypoint"]`
 -	Default Command: `["php-fpm"]`
 
 ```dockerfile
-# Wed, 11 Sep 2019 23:27:46 GMT
-ADD file:e82c447c3eae5d1d0282d8557b0c271b29d1be0d0f23204a09ad468be7a80d8c in / 
-# Wed, 11 Sep 2019 23:27:47 GMT
+# Wed, 16 Oct 2019 23:29:18 GMT
+ADD file:37512e59e7c324f9ec5b01628ef87efee73d2092cfe97d05ca949dc3528e4c2a in / 
+# Wed, 16 Oct 2019 23:29:19 GMT
 CMD ["bash"]
-# Thu, 12 Sep 2019 10:35:06 GMT
+# Thu, 17 Oct 2019 15:19:17 GMT
 RUN set -eux; 	{ 		echo 'Package: php*'; 		echo 'Pin: release *'; 		echo 'Pin-Priority: -1'; 	} > /etc/apt/preferences.d/no-debian-php
-# Thu, 12 Sep 2019 10:35:06 GMT
+# Thu, 17 Oct 2019 15:19:17 GMT
 ENV PHPIZE_DEPS=autoconf 		dpkg-dev 		file 		g++ 		gcc 		libc-dev 		make 		pkg-config 		re2c
-# Thu, 12 Sep 2019 10:35:36 GMT
+# Thu, 17 Oct 2019 15:19:56 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		$PHPIZE_DEPS 		ca-certificates 		curl 		xz-utils 	; 	rm -rf /var/lib/apt/lists/*
-# Thu, 12 Sep 2019 10:35:36 GMT
+# Thu, 17 Oct 2019 15:19:57 GMT
 ENV PHP_INI_DIR=/usr/local/etc/php
-# Thu, 12 Sep 2019 10:35:37 GMT
+# Thu, 17 Oct 2019 15:19:58 GMT
 RUN set -eux; 	mkdir -p "$PHP_INI_DIR/conf.d"; 	[ ! -d /var/www/html ]; 	mkdir -p /var/www/html; 	chown www-data:www-data /var/www/html; 	chmod 777 /var/www/html
-# Thu, 12 Sep 2019 10:51:13 GMT
+# Thu, 17 Oct 2019 15:32:36 GMT
 ENV PHP_EXTRA_CONFIGURE_ARGS=--enable-fpm --with-fpm-user=www-data --with-fpm-group=www-data --disable-cgi
-# Thu, 12 Sep 2019 10:51:13 GMT
+# Thu, 17 Oct 2019 15:32:36 GMT
 ENV PHP_CFLAGS=-fstack-protector-strong -fpic -fpie -O2
-# Thu, 12 Sep 2019 10:51:13 GMT
+# Thu, 17 Oct 2019 15:32:36 GMT
 ENV PHP_CPPFLAGS=-fstack-protector-strong -fpic -fpie -O2
-# Thu, 12 Sep 2019 10:51:14 GMT
+# Thu, 17 Oct 2019 15:32:36 GMT
 ENV PHP_LDFLAGS=-Wl,-O1 -Wl,--hash-style=both -pie
-# Thu, 12 Sep 2019 11:55:16 GMT
+# Thu, 17 Oct 2019 16:20:34 GMT
 ENV GPG_KEYS=1729F83938DA44E27BA0F4D3DBDB397470D12172 B1B44D8F021E4E2D6021E995DC9FF8D3EE5AF27F
-# Fri, 27 Sep 2019 00:03:33 GMT
+# Thu, 17 Oct 2019 16:20:34 GMT
 ENV PHP_VERSION=7.2.23
-# Fri, 27 Sep 2019 00:03:34 GMT
+# Thu, 17 Oct 2019 16:20:35 GMT
 ENV PHP_URL=https://www.php.net/get/php-7.2.23.tar.xz/from/this/mirror PHP_ASC_URL=https://www.php.net/get/php-7.2.23.tar.xz.asc/from/this/mirror
-# Fri, 27 Sep 2019 00:03:34 GMT
+# Thu, 17 Oct 2019 16:20:35 GMT
 ENV PHP_SHA256=74e045ec8ff26290db6a3688826dcdf43b87bc509e508e9cb76dab742804ca14 PHP_MD5=
-# Fri, 27 Sep 2019 00:03:42 GMT
+# Thu, 17 Oct 2019 16:20:44 GMT
 RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends gnupg dirmngr; 	rm -rf /var/lib/apt/lists/*; 		mkdir -p /usr/src; 	cd /usr/src; 		curl -fsSL -o php.tar.xz "$PHP_URL"; 		if [ -n "$PHP_SHA256" ]; then 		echo "$PHP_SHA256 *php.tar.xz" | sha256sum -c -; 	fi; 	if [ -n "$PHP_MD5" ]; then 		echo "$PHP_MD5 *php.tar.xz" | md5sum -c -; 	fi; 		if [ -n "$PHP_ASC_URL" ]; then 		curl -fsSL -o php.tar.xz.asc "$PHP_ASC_URL"; 		export GNUPGHOME="$(mktemp -d)"; 		for key in $GPG_KEYS; do 			gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys "$key"; 		done; 		gpg --batch --verify php.tar.xz.asc php.tar.xz; 		gpgconf --kill all; 		rm -rf "$GNUPGHOME"; 	fi; 		apt-mark auto '.*' > /dev/null; 	apt-mark manual $savedAptMark > /dev/null; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false
-# Fri, 27 Sep 2019 00:03:43 GMT
+# Thu, 17 Oct 2019 16:20:44 GMT
 COPY file:ce57c04b70896f77cc11eb2766417d8a1240fcffe5bba92179ec78c458844110 in /usr/local/bin/ 
-# Sat, 05 Oct 2019 01:03:35 GMT
+# Thu, 17 Oct 2019 16:26:26 GMT
 RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	sed -e 's/stretch/buster/g' /etc/apt/sources.list > /etc/apt/sources.list.d/buster.list; 	{ 		echo 'Package: *'; 		echo 'Pin: release n=buster'; 		echo 'Pin-Priority: -10'; 		echo; 		echo 'Package: libargon2*'; 		echo 'Pin: release n=buster'; 		echo 'Pin-Priority: 990'; 	} > /etc/apt/preferences.d/argon2-buster; 	apt-get update; 	apt-get install -y --no-install-recommends 		libargon2-dev 		libcurl4-openssl-dev 		libedit-dev 		libsodium-dev 		libsqlite3-dev 		libssl-dev 		libxml2-dev 		zlib1g-dev 		${PHP_EXTRA_BUILD_DEPS:-} 	; 	rm -rf /var/lib/apt/lists/*; 		export 		CFLAGS="$PHP_CFLAGS" 		CPPFLAGS="$PHP_CPPFLAGS" 		LDFLAGS="$PHP_LDFLAGS" 	; 	docker-php-source extract; 	cd /usr/src/php; 	gnuArch="$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)"; 	debMultiarch="$(dpkg-architecture --query DEB_BUILD_MULTIARCH)"; 	if [ ! -d /usr/include/curl ]; then 		ln -sT "/usr/include/$debMultiarch/curl" /usr/local/include/curl; 	fi; 	./configure 		--build="$gnuArch" 		--with-config-file-path="$PHP_INI_DIR" 		--with-config-file-scan-dir="$PHP_INI_DIR/conf.d" 				--enable-option-checking=fatal 				--with-mhash 				--enable-ftp 		--enable-mbstring 		--enable-mysqlnd 		--with-password-argon2 		--with-sodium=shared 		--with-pdo-sqlite=/usr 		--with-sqlite3=/usr 				--with-curl 		--with-libedit 		--with-openssl 		--with-zlib 				$(test "$gnuArch" = 's390x-linux-gnu' && echo '--without-pcre-jit') 		--with-libdir="lib/$debMultiarch" 				${PHP_EXTRA_CONFIGURE_ARGS:-} 	; 	make -j "$(nproc)"; 	find -type f -name '*.a' -delete; 	make install; 	find /usr/local/bin /usr/local/sbin -type f -executable -exec strip --strip-all '{}' + || true; 	make clean; 		cp -v php.ini-* "$PHP_INI_DIR/"; 		cd /; 	docker-php-source delete; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark; 	find /usr/local -type f -executable -exec ldd '{}' ';' 		| awk '/=>/ { print $(NF-1) }' 		| sort -u 		| xargs -r dpkg-query --search 		| cut -d: -f1 		| sort -u 		| xargs -r apt-mark manual 	; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 		pecl update-channels; 	rm -rf /tmp/pear ~/.pearrc; 	php --version
-# Sat, 05 Oct 2019 01:03:36 GMT
+# Thu, 17 Oct 2019 16:26:26 GMT
 COPY multi:c1ff99c7805e8f41fdb0717f754884884ce2157d746a82343d7c737c86ded761 in /usr/local/bin/ 
-# Sat, 05 Oct 2019 01:03:37 GMT
+# Thu, 17 Oct 2019 16:26:27 GMT
 RUN docker-php-ext-enable sodium
-# Sat, 05 Oct 2019 01:03:37 GMT
+# Thu, 17 Oct 2019 16:26:27 GMT
 ENTRYPOINT ["docker-php-entrypoint"]
-# Sat, 05 Oct 2019 01:03:38 GMT
+# Thu, 17 Oct 2019 16:26:28 GMT
 WORKDIR /var/www/html
-# Sat, 05 Oct 2019 01:03:39 GMT
+# Thu, 17 Oct 2019 16:26:28 GMT
 RUN set -eux; 	cd /usr/local/etc; 	if [ -d php-fpm.d ]; then 		sed 's!=NONE/!=!g' php-fpm.conf.default | tee php-fpm.conf > /dev/null; 		cp php-fpm.d/www.conf.default php-fpm.d/www.conf; 	else 		mkdir php-fpm.d; 		cp php-fpm.conf.default php-fpm.d/www.conf; 		{ 			echo '[global]'; 			echo 'include=etc/php-fpm.d/*.conf'; 		} | tee php-fpm.conf; 	fi; 	{ 		echo '[global]'; 		echo 'error_log = /proc/self/fd/2'; 		echo; 		echo '[www]'; 		echo '; if we send this to /proc/self/fd/1, it never appears'; 		echo 'access.log = /proc/self/fd/2'; 		echo; 		echo 'clear_env = no'; 		echo; 		echo '; Ensure worker stdout and stderr are sent to the main error log.'; 		echo 'catch_workers_output = yes'; 	} | tee php-fpm.d/docker.conf; 	{ 		echo '[global]'; 		echo 'daemonize = no'; 		echo; 		echo '[www]'; 		echo 'listen = 9000'; 	} | tee php-fpm.d/zz-docker.conf
-# Sat, 05 Oct 2019 01:03:39 GMT
+# Thu, 17 Oct 2019 16:26:28 GMT
 STOPSIGNAL SIGQUIT
-# Sat, 05 Oct 2019 01:03:39 GMT
+# Thu, 17 Oct 2019 16:26:29 GMT
 EXPOSE 9000
-# Sat, 05 Oct 2019 01:03:40 GMT
+# Thu, 17 Oct 2019 16:26:29 GMT
 CMD ["php-fpm"]
-# Sat, 05 Oct 2019 05:47:02 GMT
+# Fri, 18 Oct 2019 06:29:47 GMT
 RUN set -eux; 		if command -v a2enmod; then 		a2enmod rewrite; 	fi; 		savedAptMark="$(apt-mark showmanual)"; 		apt-get update; 	apt-get install -y --no-install-recommends 		libfreetype6-dev 		libjpeg-dev 		libpng-dev 		libpq-dev 		libzip-dev 	; 		docker-php-ext-configure gd 		--with-freetype-dir=/usr 		--with-jpeg-dir=/usr 		--with-png-dir=/usr 	; 		docker-php-ext-install -j "$(nproc)" 		gd 		opcache 		pdo_mysql 		pdo_pgsql 		zip 	; 		apt-mark auto '.*' > /dev/null; 	apt-mark manual $savedAptMark; 	ldd "$(php -r 'echo ini_get("extension_dir");')"/*.so 		| awk '/=>/ { print $3 }' 		| sort -u 		| xargs -r dpkg-query -S 		| cut -d: -f1 		| sort -u 		| xargs -rt apt-mark manual; 		apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 	rm -rf /var/lib/apt/lists/*
-# Sat, 05 Oct 2019 05:47:03 GMT
+# Fri, 18 Oct 2019 06:29:47 GMT
 RUN { 		echo 'opcache.memory_consumption=128'; 		echo 'opcache.interned_strings_buffer=8'; 		echo 'opcache.max_accelerated_files=4000'; 		echo 'opcache.revalidate_freq=60'; 		echo 'opcache.fast_shutdown=1'; 	} > /usr/local/etc/php/conf.d/opcache-recommended.ini
-# Sat, 05 Oct 2019 05:47:04 GMT
+# Fri, 18 Oct 2019 06:29:47 GMT
 WORKDIR /var/www/html
-# Sat, 05 Oct 2019 05:47:04 GMT
+# Fri, 18 Oct 2019 06:29:48 GMT
 ENV DRUPAL_VERSION=7.67
-# Sat, 05 Oct 2019 05:47:04 GMT
+# Fri, 18 Oct 2019 06:29:48 GMT
 ENV DRUPAL_MD5=78b1814e55fdaf40e753fd523d059f8d
-# Sat, 05 Oct 2019 05:47:07 GMT
+# Fri, 18 Oct 2019 06:29:49 GMT
 RUN set -eux; 	curl -fSL "https://ftp.drupal.org/files/projects/drupal-${DRUPAL_VERSION}.tar.gz" -o drupal.tar.gz; 	echo "${DRUPAL_MD5} *drupal.tar.gz" | md5sum -c -; 	tar -xz --strip-components=1 -f drupal.tar.gz; 	rm drupal.tar.gz; 	chown -R www-data:www-data sites modules themes
 ```
 
 -	Layers:
-	-	`sha256:8f91359f1fffbf32b24ca854fb263d88a222371f38e90cf4583c5742cfdc3039`  
-		Last Modified: Wed, 11 Sep 2019 23:34:50 GMT  
-		Size: 22.5 MB (22510654 bytes)  
+	-	`sha256:80369df487363e56aea88d4d41b61f1607fc2ec198e9327cfde36a5346c71bf2`  
+		Last Modified: Wed, 16 Oct 2019 23:35:19 GMT  
+		Size: 22.5 MB (22524636 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:bf2faaedf741a44c5457bc029621724b7f316482f99de58522e1b659ddc8fd99`  
-		Last Modified: Thu, 12 Sep 2019 13:15:25 GMT  
-		Size: 225.0 B  
+	-	`sha256:60e80cb3f70356b666135b9d9acc19345b74bf7feedb2b6ac494dd6d224b8574`  
+		Last Modified: Thu, 17 Oct 2019 17:20:16 GMT  
+		Size: 226.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:24cd1299a53e525f85fdd79c524463ec6b6569df13c6af402ca0f706ad89c28b`  
-		Last Modified: Thu, 12 Sep 2019 13:15:49 GMT  
-		Size: 67.5 MB (67450331 bytes)  
+	-	`sha256:e3b2450987de138dcaf9f09559f25a8b2cd6ceaac8e28d858fdb73530d40f92e`  
+		Last Modified: Thu, 17 Oct 2019 17:20:33 GMT  
+		Size: 67.4 MB (67447849 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:17091cc665e4a0e967d00b8b36fcabb2b17d7bceba421f717f5d138063e22ad6`  
-		Last Modified: Thu, 12 Sep 2019 13:15:25 GMT  
-		Size: 237.0 B  
+	-	`sha256:c413b7377c2f336391745613272b75d32b6f52110d5cf6bb28949ed2eea52906`  
+		Last Modified: Thu, 17 Oct 2019 17:20:16 GMT  
+		Size: 238.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c1b19c486fe456473111a23b952f18c020efd39215955a1cffd7d74e2761b1cc`  
-		Last Modified: Fri, 27 Sep 2019 01:30:21 GMT  
-		Size: 12.6 MB (12602078 bytes)  
+	-	`sha256:aac2378acf850ccd4bd2c855b04e88bf335844813c3720fbad8d50a9d2110913`  
+		Last Modified: Thu, 17 Oct 2019 17:22:47 GMT  
+		Size: 12.6 MB (12602118 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:3873085d22e8ca7905f3ea8618155c00fa888c4778d7be25b0889c326b20939d`  
-		Last Modified: Fri, 27 Sep 2019 01:30:18 GMT  
-		Size: 501.0 B  
+	-	`sha256:36e39e9148c725b2ee3a2e59b0cf8ff483675fe34bb317d435a731f688457519`  
+		Last Modified: Thu, 17 Oct 2019 17:22:44 GMT  
+		Size: 500.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:1b9cf70b30bcc05c7746535126e36833feb69e3e49c4de9c11a000c4dcdfb7d8`  
-		Last Modified: Sat, 05 Oct 2019 03:53:56 GMT  
-		Size: 29.0 MB (29014537 bytes)  
+	-	`sha256:5f1a617bc9669725e6b2e7bfe8cf59c1acc21913a6a2e3e22ce2ac74e14242a6`  
+		Last Modified: Thu, 17 Oct 2019 17:22:50 GMT  
+		Size: 27.3 MB (27338764 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:49b8059b0d5cc45f659a737474f7e67fc8066944a69d1c41f8dc7bdbd920314c`  
-		Last Modified: Sat, 05 Oct 2019 03:53:46 GMT  
-		Size: 2.2 KB (2218 bytes)  
+	-	`sha256:deacb2e15048ace81a56d540dc7c82a80c34e26dff04650ef34f5594c23d02a1`  
+		Last Modified: Thu, 17 Oct 2019 17:22:45 GMT  
+		Size: 2.2 KB (2216 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:4d4a79a9ddb344def2702e3a490a1c6480637bc5a24bcf80930c3ce97b9d64a4`  
-		Last Modified: Sat, 05 Oct 2019 03:53:46 GMT  
-		Size: 259.0 B  
+	-	`sha256:bff7e3d3e8fc2104d2a5e50d33a2fb442d87eb3b2ea51715b9544bc61782a466`  
+		Last Modified: Thu, 17 Oct 2019 17:22:45 GMT  
+		Size: 258.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:d58fecef2b2667f5e152bfc0ec8d7fd296a5d1085aa47dea80bf9d9189ec05f7`  
-		Last Modified: Sat, 05 Oct 2019 03:53:46 GMT  
-		Size: 7.8 KB (7803 bytes)  
+	-	`sha256:109fc38d4cc8bfb06604771fad247bda0f19f9ef59a94e9ac64063dacf817bc2`  
+		Last Modified: Thu, 17 Oct 2019 17:22:45 GMT  
+		Size: 7.8 KB (7801 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:0e56bb4248ff165c86d4812b96dbc6481637fe14a7f921c653ce287b3f8dfdf5`  
-		Last Modified: Sat, 05 Oct 2019 05:51:33 GMT  
-		Size: 1.6 MB (1553748 bytes)  
+	-	`sha256:1e9e108fa89693b39151ac4b67418584060afddc1f32c4e0784e6647de8d3b50`  
+		Last Modified: Fri, 18 Oct 2019 06:31:24 GMT  
+		Size: 1.6 MB (1553590 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:08cebaa26affb514c27b1115a1e27cd0ab18dfe73cf56310ad7c54f25e0dab99`  
-		Last Modified: Sat, 05 Oct 2019 05:51:32 GMT  
-		Size: 340.0 B  
+	-	`sha256:9435354a56856d90932a4f6d1d40392bb4a274d680feabf27dc493f1d442f291`  
+		Last Modified: Fri, 18 Oct 2019 06:31:24 GMT  
+		Size: 339.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:dfb499eca3a8d719d00a930609138cecd2c618924c553eac7330e5126f46d596`  
-		Last Modified: Sat, 05 Oct 2019 05:51:33 GMT  
-		Size: 3.3 MB (3332782 bytes)  
+	-	`sha256:2fb0eb09fda4f2707a7403477db64bc756461fa631a5f7faa6bdeeb198dc9770`  
+		Last Modified: Fri, 18 Oct 2019 06:31:25 GMT  
+		Size: 3.3 MB (3332777 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `drupal:7.67-fpm` - linux; arm variant v5
@@ -4595,7 +4595,7 @@ RUN set -eux; 	curl -fSL "https://ftp.drupal.org/files/projects/drupal-${DRUPAL_
 ## `drupal:7-apache`
 
 ```console
-$ docker pull drupal@sha256:620e937aa23558f4c790418fb268a4461d9681a0c5614d350b6be6085fba3169
+$ docker pull drupal@sha256:8c63294c06da6ff25778d9adf83dfa2db2bd950cbdaca9b12c76b322c871e300
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -4610,160 +4610,160 @@ $ docker pull drupal@sha256:620e937aa23558f4c790418fb268a4461d9681a0c5614d350b6b
 ### `drupal:7-apache` - linux; amd64
 
 ```console
-$ docker pull drupal@sha256:7f88e187d8c2c573f16055a50c3ec8dd5029bf65f9e3dbed00b389b902e77402
+$ docker pull drupal@sha256:8b8fa39d7fb1e6ec9615cbb79a266e8e90c00f2c7ef68eefe75d01729f28c196
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **139.7 MB (139745414 bytes)**  
+-	Total Size: **138.2 MB (138170994 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:ecd04d7398c6dd99f5188d2298c159fc123e47409fe82060b8f04fa66e82cd32`
+-	Image ID: `sha256:399807ca83336ccaabaddeb70730c1fb15b01f810695b33e554f3123accd214d`
 -	Entrypoint: `["docker-php-entrypoint"]`
 -	Default Command: `["apache2-foreground"]`
 
 ```dockerfile
-# Wed, 11 Sep 2019 23:27:46 GMT
-ADD file:e82c447c3eae5d1d0282d8557b0c271b29d1be0d0f23204a09ad468be7a80d8c in / 
-# Wed, 11 Sep 2019 23:27:47 GMT
+# Wed, 16 Oct 2019 23:29:18 GMT
+ADD file:37512e59e7c324f9ec5b01628ef87efee73d2092cfe97d05ca949dc3528e4c2a in / 
+# Wed, 16 Oct 2019 23:29:19 GMT
 CMD ["bash"]
-# Thu, 12 Sep 2019 10:35:06 GMT
+# Thu, 17 Oct 2019 15:19:17 GMT
 RUN set -eux; 	{ 		echo 'Package: php*'; 		echo 'Pin: release *'; 		echo 'Pin-Priority: -1'; 	} > /etc/apt/preferences.d/no-debian-php
-# Thu, 12 Sep 2019 10:35:06 GMT
+# Thu, 17 Oct 2019 15:19:17 GMT
 ENV PHPIZE_DEPS=autoconf 		dpkg-dev 		file 		g++ 		gcc 		libc-dev 		make 		pkg-config 		re2c
-# Thu, 12 Sep 2019 10:35:36 GMT
+# Thu, 17 Oct 2019 15:19:56 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		$PHPIZE_DEPS 		ca-certificates 		curl 		xz-utils 	; 	rm -rf /var/lib/apt/lists/*
-# Thu, 12 Sep 2019 10:35:36 GMT
+# Thu, 17 Oct 2019 15:19:57 GMT
 ENV PHP_INI_DIR=/usr/local/etc/php
-# Thu, 12 Sep 2019 10:35:37 GMT
+# Thu, 17 Oct 2019 15:19:58 GMT
 RUN set -eux; 	mkdir -p "$PHP_INI_DIR/conf.d"; 	[ ! -d /var/www/html ]; 	mkdir -p /var/www/html; 	chown www-data:www-data /var/www/html; 	chmod 777 /var/www/html
-# Thu, 12 Sep 2019 10:44:55 GMT
+# Thu, 17 Oct 2019 15:27:50 GMT
 ENV APACHE_CONFDIR=/etc/apache2
-# Thu, 12 Sep 2019 10:44:55 GMT
+# Thu, 17 Oct 2019 15:27:50 GMT
 ENV APACHE_ENVVARS=/etc/apache2/envvars
-# Thu, 12 Sep 2019 10:45:06 GMT
+# Thu, 17 Oct 2019 15:28:01 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends apache2; 	rm -rf /var/lib/apt/lists/*; 		sed -ri 's/^export ([^=]+)=(.*)$/: ${\1:=\2}\nexport \1/' "$APACHE_ENVVARS"; 		. "$APACHE_ENVVARS"; 	for dir in 		"$APACHE_LOCK_DIR" 		"$APACHE_RUN_DIR" 		"$APACHE_LOG_DIR" 	; do 		rm -rvf "$dir"; 		mkdir -p "$dir"; 		chown "$APACHE_RUN_USER:$APACHE_RUN_GROUP" "$dir"; 		chmod 777 "$dir"; 	done; 		rm -rvf /var/www/html/*; 		ln -sfT /dev/stderr "$APACHE_LOG_DIR/error.log"; 	ln -sfT /dev/stdout "$APACHE_LOG_DIR/access.log"; 	ln -sfT /dev/stdout "$APACHE_LOG_DIR/other_vhosts_access.log"; 	chown -R --no-dereference "$APACHE_RUN_USER:$APACHE_RUN_GROUP" "$APACHE_LOG_DIR"
-# Thu, 12 Sep 2019 10:45:07 GMT
+# Thu, 17 Oct 2019 15:28:03 GMT
 RUN a2dismod mpm_event && a2enmod mpm_prefork
-# Thu, 12 Sep 2019 10:45:08 GMT
+# Thu, 17 Oct 2019 15:28:04 GMT
 RUN { 		echo '<FilesMatch \.php$>'; 		echo '\tSetHandler application/x-httpd-php'; 		echo '</FilesMatch>'; 		echo; 		echo 'DirectoryIndex disabled'; 		echo 'DirectoryIndex index.php index.html'; 		echo; 		echo '<Directory /var/www/>'; 		echo '\tOptions -Indexes'; 		echo '\tAllowOverride All'; 		echo '</Directory>'; 	} | tee "$APACHE_CONFDIR/conf-available/docker-php.conf" 	&& a2enconf docker-php
-# Thu, 12 Sep 2019 10:45:08 GMT
+# Thu, 17 Oct 2019 15:28:04 GMT
 ENV PHP_EXTRA_BUILD_DEPS=apache2-dev
-# Thu, 12 Sep 2019 10:45:08 GMT
+# Thu, 17 Oct 2019 15:28:05 GMT
 ENV PHP_EXTRA_CONFIGURE_ARGS=--with-apxs2 --disable-cgi
-# Thu, 12 Sep 2019 10:45:08 GMT
+# Thu, 17 Oct 2019 15:28:05 GMT
 ENV PHP_CFLAGS=-fstack-protector-strong -fpic -fpie -O2
-# Thu, 12 Sep 2019 10:45:08 GMT
+# Thu, 17 Oct 2019 15:28:05 GMT
 ENV PHP_CPPFLAGS=-fstack-protector-strong -fpic -fpie -O2
-# Thu, 12 Sep 2019 10:45:08 GMT
+# Thu, 17 Oct 2019 15:28:05 GMT
 ENV PHP_LDFLAGS=-Wl,-O1 -Wl,--hash-style=both -pie
-# Thu, 12 Sep 2019 11:49:15 GMT
+# Thu, 17 Oct 2019 16:16:18 GMT
 ENV GPG_KEYS=1729F83938DA44E27BA0F4D3DBDB397470D12172 B1B44D8F021E4E2D6021E995DC9FF8D3EE5AF27F
-# Thu, 26 Sep 2019 23:57:30 GMT
+# Thu, 17 Oct 2019 16:16:19 GMT
 ENV PHP_VERSION=7.2.23
-# Thu, 26 Sep 2019 23:57:30 GMT
+# Thu, 17 Oct 2019 16:16:19 GMT
 ENV PHP_URL=https://www.php.net/get/php-7.2.23.tar.xz/from/this/mirror PHP_ASC_URL=https://www.php.net/get/php-7.2.23.tar.xz.asc/from/this/mirror
-# Thu, 26 Sep 2019 23:57:30 GMT
+# Thu, 17 Oct 2019 16:16:19 GMT
 ENV PHP_SHA256=74e045ec8ff26290db6a3688826dcdf43b87bc509e508e9cb76dab742804ca14 PHP_MD5=
-# Thu, 26 Sep 2019 23:57:42 GMT
+# Thu, 17 Oct 2019 16:16:28 GMT
 RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends gnupg dirmngr; 	rm -rf /var/lib/apt/lists/*; 		mkdir -p /usr/src; 	cd /usr/src; 		curl -fsSL -o php.tar.xz "$PHP_URL"; 		if [ -n "$PHP_SHA256" ]; then 		echo "$PHP_SHA256 *php.tar.xz" | sha256sum -c -; 	fi; 	if [ -n "$PHP_MD5" ]; then 		echo "$PHP_MD5 *php.tar.xz" | md5sum -c -; 	fi; 		if [ -n "$PHP_ASC_URL" ]; then 		curl -fsSL -o php.tar.xz.asc "$PHP_ASC_URL"; 		export GNUPGHOME="$(mktemp -d)"; 		for key in $GPG_KEYS; do 			gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys "$key"; 		done; 		gpg --batch --verify php.tar.xz.asc php.tar.xz; 		gpgconf --kill all; 		rm -rf "$GNUPGHOME"; 	fi; 		apt-mark auto '.*' > /dev/null; 	apt-mark manual $savedAptMark > /dev/null; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false
-# Thu, 26 Sep 2019 23:57:43 GMT
+# Thu, 17 Oct 2019 16:16:28 GMT
 COPY file:ce57c04b70896f77cc11eb2766417d8a1240fcffe5bba92179ec78c458844110 in /usr/local/bin/ 
-# Sat, 05 Oct 2019 00:55:44 GMT
+# Thu, 17 Oct 2019 16:20:14 GMT
 RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	sed -e 's/stretch/buster/g' /etc/apt/sources.list > /etc/apt/sources.list.d/buster.list; 	{ 		echo 'Package: *'; 		echo 'Pin: release n=buster'; 		echo 'Pin-Priority: -10'; 		echo; 		echo 'Package: libargon2*'; 		echo 'Pin: release n=buster'; 		echo 'Pin-Priority: 990'; 	} > /etc/apt/preferences.d/argon2-buster; 	apt-get update; 	apt-get install -y --no-install-recommends 		libargon2-dev 		libcurl4-openssl-dev 		libedit-dev 		libsodium-dev 		libsqlite3-dev 		libssl-dev 		libxml2-dev 		zlib1g-dev 		${PHP_EXTRA_BUILD_DEPS:-} 	; 	rm -rf /var/lib/apt/lists/*; 		export 		CFLAGS="$PHP_CFLAGS" 		CPPFLAGS="$PHP_CPPFLAGS" 		LDFLAGS="$PHP_LDFLAGS" 	; 	docker-php-source extract; 	cd /usr/src/php; 	gnuArch="$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)"; 	debMultiarch="$(dpkg-architecture --query DEB_BUILD_MULTIARCH)"; 	if [ ! -d /usr/include/curl ]; then 		ln -sT "/usr/include/$debMultiarch/curl" /usr/local/include/curl; 	fi; 	./configure 		--build="$gnuArch" 		--with-config-file-path="$PHP_INI_DIR" 		--with-config-file-scan-dir="$PHP_INI_DIR/conf.d" 				--enable-option-checking=fatal 				--with-mhash 				--enable-ftp 		--enable-mbstring 		--enable-mysqlnd 		--with-password-argon2 		--with-sodium=shared 		--with-pdo-sqlite=/usr 		--with-sqlite3=/usr 				--with-curl 		--with-libedit 		--with-openssl 		--with-zlib 				$(test "$gnuArch" = 's390x-linux-gnu' && echo '--without-pcre-jit') 		--with-libdir="lib/$debMultiarch" 				${PHP_EXTRA_CONFIGURE_ARGS:-} 	; 	make -j "$(nproc)"; 	find -type f -name '*.a' -delete; 	make install; 	find /usr/local/bin /usr/local/sbin -type f -executable -exec strip --strip-all '{}' + || true; 	make clean; 		cp -v php.ini-* "$PHP_INI_DIR/"; 		cd /; 	docker-php-source delete; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark; 	find /usr/local -type f -executable -exec ldd '{}' ';' 		| awk '/=>/ { print $(NF-1) }' 		| sort -u 		| xargs -r dpkg-query --search 		| cut -d: -f1 		| sort -u 		| xargs -r apt-mark manual 	; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 		pecl update-channels; 	rm -rf /tmp/pear ~/.pearrc; 	php --version
-# Sat, 05 Oct 2019 00:55:45 GMT
+# Thu, 17 Oct 2019 16:20:15 GMT
 COPY multi:99e4ad617c6193834e78d12470f6dde09f70f4d40463009c5724954902e60676 in /usr/local/bin/ 
-# Sat, 05 Oct 2019 00:55:46 GMT
+# Thu, 17 Oct 2019 16:20:15 GMT
 RUN docker-php-ext-enable sodium
-# Sat, 05 Oct 2019 00:55:46 GMT
+# Thu, 17 Oct 2019 16:20:16 GMT
 ENTRYPOINT ["docker-php-entrypoint"]
-# Sat, 05 Oct 2019 00:55:46 GMT
+# Thu, 17 Oct 2019 16:20:16 GMT
 STOPSIGNAL WINCH
-# Sat, 05 Oct 2019 00:55:47 GMT
+# Thu, 17 Oct 2019 16:20:16 GMT
 COPY file:e3123fcb6566efa979f945bfac1c94c854a559d7b82723e42118882a8ac4de66 in /usr/local/bin/ 
-# Sat, 05 Oct 2019 00:55:47 GMT
+# Thu, 17 Oct 2019 16:20:16 GMT
 WORKDIR /var/www/html
-# Sat, 05 Oct 2019 00:55:47 GMT
+# Thu, 17 Oct 2019 16:20:16 GMT
 EXPOSE 80
-# Sat, 05 Oct 2019 00:55:48 GMT
+# Thu, 17 Oct 2019 16:20:17 GMT
 CMD ["apache2-foreground"]
-# Sat, 05 Oct 2019 05:44:49 GMT
+# Fri, 18 Oct 2019 06:28:44 GMT
 RUN set -eux; 		if command -v a2enmod; then 		a2enmod rewrite; 	fi; 		savedAptMark="$(apt-mark showmanual)"; 		apt-get update; 	apt-get install -y --no-install-recommends 		libfreetype6-dev 		libjpeg-dev 		libpng-dev 		libpq-dev 		libzip-dev 	; 		docker-php-ext-configure gd 		--with-freetype-dir=/usr 		--with-jpeg-dir=/usr 		--with-png-dir=/usr 	; 		docker-php-ext-install -j "$(nproc)" 		gd 		opcache 		pdo_mysql 		pdo_pgsql 		zip 	; 		apt-mark auto '.*' > /dev/null; 	apt-mark manual $savedAptMark; 	ldd "$(php -r 'echo ini_get("extension_dir");')"/*.so 		| awk '/=>/ { print $3 }' 		| sort -u 		| xargs -r dpkg-query -S 		| cut -d: -f1 		| sort -u 		| xargs -rt apt-mark manual; 		apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 	rm -rf /var/lib/apt/lists/*
-# Sat, 05 Oct 2019 05:44:50 GMT
+# Fri, 18 Oct 2019 06:28:45 GMT
 RUN { 		echo 'opcache.memory_consumption=128'; 		echo 'opcache.interned_strings_buffer=8'; 		echo 'opcache.max_accelerated_files=4000'; 		echo 'opcache.revalidate_freq=60'; 		echo 'opcache.fast_shutdown=1'; 	} > /usr/local/etc/php/conf.d/opcache-recommended.ini
-# Sat, 05 Oct 2019 05:44:51 GMT
+# Fri, 18 Oct 2019 06:28:45 GMT
 WORKDIR /var/www/html
-# Sat, 05 Oct 2019 05:44:51 GMT
+# Fri, 18 Oct 2019 06:28:45 GMT
 ENV DRUPAL_VERSION=7.67
-# Sat, 05 Oct 2019 05:44:51 GMT
+# Fri, 18 Oct 2019 06:28:45 GMT
 ENV DRUPAL_MD5=78b1814e55fdaf40e753fd523d059f8d
-# Sat, 05 Oct 2019 05:44:54 GMT
+# Fri, 18 Oct 2019 06:28:46 GMT
 RUN set -eux; 	curl -fSL "https://ftp.drupal.org/files/projects/drupal-${DRUPAL_VERSION}.tar.gz" -o drupal.tar.gz; 	echo "${DRUPAL_MD5} *drupal.tar.gz" | md5sum -c -; 	tar -xz --strip-components=1 -f drupal.tar.gz; 	rm drupal.tar.gz; 	chown -R www-data:www-data sites modules themes
 ```
 
 -	Layers:
-	-	`sha256:8f91359f1fffbf32b24ca854fb263d88a222371f38e90cf4583c5742cfdc3039`  
-		Last Modified: Wed, 11 Sep 2019 23:34:50 GMT  
-		Size: 22.5 MB (22510654 bytes)  
+	-	`sha256:80369df487363e56aea88d4d41b61f1607fc2ec198e9327cfde36a5346c71bf2`  
+		Last Modified: Wed, 16 Oct 2019 23:35:19 GMT  
+		Size: 22.5 MB (22524636 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:bf2faaedf741a44c5457bc029621724b7f316482f99de58522e1b659ddc8fd99`  
-		Last Modified: Thu, 12 Sep 2019 13:15:25 GMT  
-		Size: 225.0 B  
+	-	`sha256:60e80cb3f70356b666135b9d9acc19345b74bf7feedb2b6ac494dd6d224b8574`  
+		Last Modified: Thu, 17 Oct 2019 17:20:16 GMT  
+		Size: 226.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:24cd1299a53e525f85fdd79c524463ec6b6569df13c6af402ca0f706ad89c28b`  
-		Last Modified: Thu, 12 Sep 2019 13:15:49 GMT  
-		Size: 67.5 MB (67450331 bytes)  
+	-	`sha256:e3b2450987de138dcaf9f09559f25a8b2cd6ceaac8e28d858fdb73530d40f92e`  
+		Last Modified: Thu, 17 Oct 2019 17:20:33 GMT  
+		Size: 67.4 MB (67447849 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:17091cc665e4a0e967d00b8b36fcabb2b17d7bceba421f717f5d138063e22ad6`  
-		Last Modified: Thu, 12 Sep 2019 13:15:25 GMT  
-		Size: 237.0 B  
+	-	`sha256:c413b7377c2f336391745613272b75d32b6f52110d5cf6bb28949ed2eea52906`  
+		Last Modified: Thu, 17 Oct 2019 17:20:16 GMT  
+		Size: 238.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:ac9365919f9b10c759648e7efa92752c1443400e4178d6411f5a458a90e09ca2`  
-		Last Modified: Thu, 12 Sep 2019 13:16:08 GMT  
-		Size: 17.1 MB (17125603 bytes)  
+	-	`sha256:6dd9eff17a14f4fd1ad899a27f318151a4b2fa2d935cb85307637563d6973d17`  
+		Last Modified: Thu, 17 Oct 2019 17:20:46 GMT  
+		Size: 17.1 MB (17125324 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:4f1b34e209eee27994691cd890ca1422857bc1c2c166a700049ae0af84d6fb2a`  
-		Last Modified: Thu, 12 Sep 2019 13:16:02 GMT  
-		Size: 431.0 B  
+	-	`sha256:5126e57aff9b8bc91dfaa6885060a8b4cd41887d4a85621d5778c2ec6c660f2a`  
+		Last Modified: Thu, 17 Oct 2019 17:20:43 GMT  
+		Size: 437.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:832757fa04a4aea3b2f6e686cf9741254a6a03855e86b603417b6d3ce6c0038f`  
-		Last Modified: Thu, 12 Sep 2019 13:16:02 GMT  
-		Size: 487.0 B  
+	-	`sha256:943df09926ea3a42f821bbdfd1d3112e72b5da0fbc6761b35b50da5570cfb438`  
+		Last Modified: Thu, 17 Oct 2019 17:20:43 GMT  
+		Size: 490.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:6872b25b9fabc5c40614d5c48a76fb67ec6045da0a37dc2ac5317247627940bf`  
-		Last Modified: Fri, 27 Sep 2019 01:30:10 GMT  
-		Size: 12.6 MB (12623230 bytes)  
+	-	`sha256:ea464ff429303e903027d0f3ed724af15baa7291a1f935630f5839c13cc19fd2`  
+		Last Modified: Thu, 17 Oct 2019 17:22:22 GMT  
+		Size: 12.6 MB (12623241 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:f54b85668b74001619dfa277989aa72d67167fe6835cb7a16ac0f69df53b7d0d`  
-		Last Modified: Fri, 27 Sep 2019 01:30:07 GMT  
+	-	`sha256:1642b58d27b1e5afcccc2d3f271d2b341d88867117b9e4a41c1408875216a500`  
+		Last Modified: Thu, 17 Oct 2019 17:22:20 GMT  
 		Size: 499.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:13dc8296ebba491a797865fb2724fb2c8e87b3aef150e9b1a294311bf1eafb50`  
-		Last Modified: Sat, 05 Oct 2019 03:53:41 GMT  
-		Size: 15.1 MB (15120318 bytes)  
+	-	`sha256:9ae19688677dcabf51a4db76d5ca59facf1b99f02f4959f3fe0016f8a51888f8`  
+		Last Modified: Thu, 17 Oct 2019 17:22:24 GMT  
+		Size: 13.5 MB (13534988 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:cffe2eb7c545ce17ba9579be0cef4b2e7fedd235b4b514c030d333f09c633c80`  
-		Last Modified: Sat, 05 Oct 2019 03:53:36 GMT  
-		Size: 2.2 KB (2228 bytes)  
+	-	`sha256:55cccc313b8cd2acf460cb2c60004dcad4a711cc079f8e3d3c1cb9c9719d2759`  
+		Last Modified: Thu, 17 Oct 2019 17:22:21 GMT  
+		Size: 2.2 KB (2227 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:bf8b43b070ba3728fc9c5161004e5b9d014e2e7f7318cd83ab7a8e568438c64e`  
-		Last Modified: Sat, 05 Oct 2019 03:53:36 GMT  
-		Size: 260.0 B  
+	-	`sha256:0505d835c1ce37bd686067aed77487bcc80a02a5d76cc222d56e0a45dd9b7584`  
+		Last Modified: Thu, 17 Oct 2019 17:22:20 GMT  
+		Size: 255.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:6aa7c737b75bf0e471bc7a1eac438866b31295c7c7c275dcfe5321d8ea2736b4`  
-		Last Modified: Sat, 05 Oct 2019 03:53:36 GMT  
-		Size: 906.0 B  
+	-	`sha256:48f36c7eb398f0ffba6299270f019f1b90e41a499b0354073bb513195b204c1e`  
+		Last Modified: Thu, 17 Oct 2019 17:22:21 GMT  
+		Size: 904.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:54e2616bbc4463e695137acdaa04e28583910aed2508b48900b598fe76c96790`  
-		Last Modified: Sat, 05 Oct 2019 05:51:24 GMT  
-		Size: 1.6 MB (1576900 bytes)  
+	-	`sha256:606217055498a3a965fe1d6c1f2ba5d01242bdeb4c3e0c282f97b45f5a6a3c83`  
+		Last Modified: Fri, 18 Oct 2019 06:31:17 GMT  
+		Size: 1.6 MB (1576566 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:a0f40a3cbef848154aebeb197a51850c6d061c8bf10ed57b79285bb2733f0388`  
-		Last Modified: Sat, 05 Oct 2019 05:51:24 GMT  
-		Size: 340.0 B  
+	-	`sha256:e8f341cf7670f2a517537804e0b8287968435733c4db236572b116c66f0187d6`  
+		Last Modified: Fri, 18 Oct 2019 06:31:17 GMT  
+		Size: 337.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:3d34bb0a165401d88b50d3713585b37327bc168821cdf2cab9a3ee4b00991272`  
-		Last Modified: Sat, 05 Oct 2019 05:51:25 GMT  
-		Size: 3.3 MB (3332765 bytes)  
+	-	`sha256:d264cf50aa2929cfca46ea669a7e81eacc14aba2588f52f97a61e8f9e3a120ec`  
+		Last Modified: Fri, 18 Oct 2019 06:31:17 GMT  
+		Size: 3.3 MB (3332777 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `drupal:7-apache` - linux; arm variant v5
@@ -5564,7 +5564,7 @@ RUN set -eux; 	curl -fSL "https://ftp.drupal.org/files/projects/drupal-${DRUPAL_
 ## `drupal:7-fpm`
 
 ```console
-$ docker pull drupal@sha256:09ecf3686f767596d136f642eb03c28a693e0c0d5899062f272f573e8e1c900d
+$ docker pull drupal@sha256:903788271ab67ffe21a717c205cac47987814309d5ed885d6c962babd8d54db3
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -5579,136 +5579,136 @@ $ docker pull drupal@sha256:09ecf3686f767596d136f642eb03c28a693e0c0d5899062f272f
 ### `drupal:7-fpm` - linux; amd64
 
 ```console
-$ docker pull drupal@sha256:56ae8ed5b667fb469b06b98e34c0b4adbb9b058339e493997e2c4415c27e5af6
+$ docker pull drupal@sha256:2b0765a0dd6cac4e5f0b0511bff0580dcadd658539d9cabe7bdb80d0bea2ae68
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **136.5 MB (136475713 bytes)**  
+-	Total Size: **134.8 MB (134811312 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:228bfa9a001bd517fe44718c87d0268cc21da4a80d198338f9df1a0ffbfaa507`
+-	Image ID: `sha256:f5c897cf18d96d1b22eab584f1b434b935d4a36c3b712d572b9824b1ed9c18e5`
 -	Entrypoint: `["docker-php-entrypoint"]`
 -	Default Command: `["php-fpm"]`
 
 ```dockerfile
-# Wed, 11 Sep 2019 23:27:46 GMT
-ADD file:e82c447c3eae5d1d0282d8557b0c271b29d1be0d0f23204a09ad468be7a80d8c in / 
-# Wed, 11 Sep 2019 23:27:47 GMT
+# Wed, 16 Oct 2019 23:29:18 GMT
+ADD file:37512e59e7c324f9ec5b01628ef87efee73d2092cfe97d05ca949dc3528e4c2a in / 
+# Wed, 16 Oct 2019 23:29:19 GMT
 CMD ["bash"]
-# Thu, 12 Sep 2019 10:35:06 GMT
+# Thu, 17 Oct 2019 15:19:17 GMT
 RUN set -eux; 	{ 		echo 'Package: php*'; 		echo 'Pin: release *'; 		echo 'Pin-Priority: -1'; 	} > /etc/apt/preferences.d/no-debian-php
-# Thu, 12 Sep 2019 10:35:06 GMT
+# Thu, 17 Oct 2019 15:19:17 GMT
 ENV PHPIZE_DEPS=autoconf 		dpkg-dev 		file 		g++ 		gcc 		libc-dev 		make 		pkg-config 		re2c
-# Thu, 12 Sep 2019 10:35:36 GMT
+# Thu, 17 Oct 2019 15:19:56 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		$PHPIZE_DEPS 		ca-certificates 		curl 		xz-utils 	; 	rm -rf /var/lib/apt/lists/*
-# Thu, 12 Sep 2019 10:35:36 GMT
+# Thu, 17 Oct 2019 15:19:57 GMT
 ENV PHP_INI_DIR=/usr/local/etc/php
-# Thu, 12 Sep 2019 10:35:37 GMT
+# Thu, 17 Oct 2019 15:19:58 GMT
 RUN set -eux; 	mkdir -p "$PHP_INI_DIR/conf.d"; 	[ ! -d /var/www/html ]; 	mkdir -p /var/www/html; 	chown www-data:www-data /var/www/html; 	chmod 777 /var/www/html
-# Thu, 12 Sep 2019 10:51:13 GMT
+# Thu, 17 Oct 2019 15:32:36 GMT
 ENV PHP_EXTRA_CONFIGURE_ARGS=--enable-fpm --with-fpm-user=www-data --with-fpm-group=www-data --disable-cgi
-# Thu, 12 Sep 2019 10:51:13 GMT
+# Thu, 17 Oct 2019 15:32:36 GMT
 ENV PHP_CFLAGS=-fstack-protector-strong -fpic -fpie -O2
-# Thu, 12 Sep 2019 10:51:13 GMT
+# Thu, 17 Oct 2019 15:32:36 GMT
 ENV PHP_CPPFLAGS=-fstack-protector-strong -fpic -fpie -O2
-# Thu, 12 Sep 2019 10:51:14 GMT
+# Thu, 17 Oct 2019 15:32:36 GMT
 ENV PHP_LDFLAGS=-Wl,-O1 -Wl,--hash-style=both -pie
-# Thu, 12 Sep 2019 11:55:16 GMT
+# Thu, 17 Oct 2019 16:20:34 GMT
 ENV GPG_KEYS=1729F83938DA44E27BA0F4D3DBDB397470D12172 B1B44D8F021E4E2D6021E995DC9FF8D3EE5AF27F
-# Fri, 27 Sep 2019 00:03:33 GMT
+# Thu, 17 Oct 2019 16:20:34 GMT
 ENV PHP_VERSION=7.2.23
-# Fri, 27 Sep 2019 00:03:34 GMT
+# Thu, 17 Oct 2019 16:20:35 GMT
 ENV PHP_URL=https://www.php.net/get/php-7.2.23.tar.xz/from/this/mirror PHP_ASC_URL=https://www.php.net/get/php-7.2.23.tar.xz.asc/from/this/mirror
-# Fri, 27 Sep 2019 00:03:34 GMT
+# Thu, 17 Oct 2019 16:20:35 GMT
 ENV PHP_SHA256=74e045ec8ff26290db6a3688826dcdf43b87bc509e508e9cb76dab742804ca14 PHP_MD5=
-# Fri, 27 Sep 2019 00:03:42 GMT
+# Thu, 17 Oct 2019 16:20:44 GMT
 RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends gnupg dirmngr; 	rm -rf /var/lib/apt/lists/*; 		mkdir -p /usr/src; 	cd /usr/src; 		curl -fsSL -o php.tar.xz "$PHP_URL"; 		if [ -n "$PHP_SHA256" ]; then 		echo "$PHP_SHA256 *php.tar.xz" | sha256sum -c -; 	fi; 	if [ -n "$PHP_MD5" ]; then 		echo "$PHP_MD5 *php.tar.xz" | md5sum -c -; 	fi; 		if [ -n "$PHP_ASC_URL" ]; then 		curl -fsSL -o php.tar.xz.asc "$PHP_ASC_URL"; 		export GNUPGHOME="$(mktemp -d)"; 		for key in $GPG_KEYS; do 			gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys "$key"; 		done; 		gpg --batch --verify php.tar.xz.asc php.tar.xz; 		gpgconf --kill all; 		rm -rf "$GNUPGHOME"; 	fi; 		apt-mark auto '.*' > /dev/null; 	apt-mark manual $savedAptMark > /dev/null; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false
-# Fri, 27 Sep 2019 00:03:43 GMT
+# Thu, 17 Oct 2019 16:20:44 GMT
 COPY file:ce57c04b70896f77cc11eb2766417d8a1240fcffe5bba92179ec78c458844110 in /usr/local/bin/ 
-# Sat, 05 Oct 2019 01:03:35 GMT
+# Thu, 17 Oct 2019 16:26:26 GMT
 RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	sed -e 's/stretch/buster/g' /etc/apt/sources.list > /etc/apt/sources.list.d/buster.list; 	{ 		echo 'Package: *'; 		echo 'Pin: release n=buster'; 		echo 'Pin-Priority: -10'; 		echo; 		echo 'Package: libargon2*'; 		echo 'Pin: release n=buster'; 		echo 'Pin-Priority: 990'; 	} > /etc/apt/preferences.d/argon2-buster; 	apt-get update; 	apt-get install -y --no-install-recommends 		libargon2-dev 		libcurl4-openssl-dev 		libedit-dev 		libsodium-dev 		libsqlite3-dev 		libssl-dev 		libxml2-dev 		zlib1g-dev 		${PHP_EXTRA_BUILD_DEPS:-} 	; 	rm -rf /var/lib/apt/lists/*; 		export 		CFLAGS="$PHP_CFLAGS" 		CPPFLAGS="$PHP_CPPFLAGS" 		LDFLAGS="$PHP_LDFLAGS" 	; 	docker-php-source extract; 	cd /usr/src/php; 	gnuArch="$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)"; 	debMultiarch="$(dpkg-architecture --query DEB_BUILD_MULTIARCH)"; 	if [ ! -d /usr/include/curl ]; then 		ln -sT "/usr/include/$debMultiarch/curl" /usr/local/include/curl; 	fi; 	./configure 		--build="$gnuArch" 		--with-config-file-path="$PHP_INI_DIR" 		--with-config-file-scan-dir="$PHP_INI_DIR/conf.d" 				--enable-option-checking=fatal 				--with-mhash 				--enable-ftp 		--enable-mbstring 		--enable-mysqlnd 		--with-password-argon2 		--with-sodium=shared 		--with-pdo-sqlite=/usr 		--with-sqlite3=/usr 				--with-curl 		--with-libedit 		--with-openssl 		--with-zlib 				$(test "$gnuArch" = 's390x-linux-gnu' && echo '--without-pcre-jit') 		--with-libdir="lib/$debMultiarch" 				${PHP_EXTRA_CONFIGURE_ARGS:-} 	; 	make -j "$(nproc)"; 	find -type f -name '*.a' -delete; 	make install; 	find /usr/local/bin /usr/local/sbin -type f -executable -exec strip --strip-all '{}' + || true; 	make clean; 		cp -v php.ini-* "$PHP_INI_DIR/"; 		cd /; 	docker-php-source delete; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark; 	find /usr/local -type f -executable -exec ldd '{}' ';' 		| awk '/=>/ { print $(NF-1) }' 		| sort -u 		| xargs -r dpkg-query --search 		| cut -d: -f1 		| sort -u 		| xargs -r apt-mark manual 	; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 		pecl update-channels; 	rm -rf /tmp/pear ~/.pearrc; 	php --version
-# Sat, 05 Oct 2019 01:03:36 GMT
+# Thu, 17 Oct 2019 16:26:26 GMT
 COPY multi:c1ff99c7805e8f41fdb0717f754884884ce2157d746a82343d7c737c86ded761 in /usr/local/bin/ 
-# Sat, 05 Oct 2019 01:03:37 GMT
+# Thu, 17 Oct 2019 16:26:27 GMT
 RUN docker-php-ext-enable sodium
-# Sat, 05 Oct 2019 01:03:37 GMT
+# Thu, 17 Oct 2019 16:26:27 GMT
 ENTRYPOINT ["docker-php-entrypoint"]
-# Sat, 05 Oct 2019 01:03:38 GMT
+# Thu, 17 Oct 2019 16:26:28 GMT
 WORKDIR /var/www/html
-# Sat, 05 Oct 2019 01:03:39 GMT
+# Thu, 17 Oct 2019 16:26:28 GMT
 RUN set -eux; 	cd /usr/local/etc; 	if [ -d php-fpm.d ]; then 		sed 's!=NONE/!=!g' php-fpm.conf.default | tee php-fpm.conf > /dev/null; 		cp php-fpm.d/www.conf.default php-fpm.d/www.conf; 	else 		mkdir php-fpm.d; 		cp php-fpm.conf.default php-fpm.d/www.conf; 		{ 			echo '[global]'; 			echo 'include=etc/php-fpm.d/*.conf'; 		} | tee php-fpm.conf; 	fi; 	{ 		echo '[global]'; 		echo 'error_log = /proc/self/fd/2'; 		echo; 		echo '[www]'; 		echo '; if we send this to /proc/self/fd/1, it never appears'; 		echo 'access.log = /proc/self/fd/2'; 		echo; 		echo 'clear_env = no'; 		echo; 		echo '; Ensure worker stdout and stderr are sent to the main error log.'; 		echo 'catch_workers_output = yes'; 	} | tee php-fpm.d/docker.conf; 	{ 		echo '[global]'; 		echo 'daemonize = no'; 		echo; 		echo '[www]'; 		echo 'listen = 9000'; 	} | tee php-fpm.d/zz-docker.conf
-# Sat, 05 Oct 2019 01:03:39 GMT
+# Thu, 17 Oct 2019 16:26:28 GMT
 STOPSIGNAL SIGQUIT
-# Sat, 05 Oct 2019 01:03:39 GMT
+# Thu, 17 Oct 2019 16:26:29 GMT
 EXPOSE 9000
-# Sat, 05 Oct 2019 01:03:40 GMT
+# Thu, 17 Oct 2019 16:26:29 GMT
 CMD ["php-fpm"]
-# Sat, 05 Oct 2019 05:47:02 GMT
+# Fri, 18 Oct 2019 06:29:47 GMT
 RUN set -eux; 		if command -v a2enmod; then 		a2enmod rewrite; 	fi; 		savedAptMark="$(apt-mark showmanual)"; 		apt-get update; 	apt-get install -y --no-install-recommends 		libfreetype6-dev 		libjpeg-dev 		libpng-dev 		libpq-dev 		libzip-dev 	; 		docker-php-ext-configure gd 		--with-freetype-dir=/usr 		--with-jpeg-dir=/usr 		--with-png-dir=/usr 	; 		docker-php-ext-install -j "$(nproc)" 		gd 		opcache 		pdo_mysql 		pdo_pgsql 		zip 	; 		apt-mark auto '.*' > /dev/null; 	apt-mark manual $savedAptMark; 	ldd "$(php -r 'echo ini_get("extension_dir");')"/*.so 		| awk '/=>/ { print $3 }' 		| sort -u 		| xargs -r dpkg-query -S 		| cut -d: -f1 		| sort -u 		| xargs -rt apt-mark manual; 		apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 	rm -rf /var/lib/apt/lists/*
-# Sat, 05 Oct 2019 05:47:03 GMT
+# Fri, 18 Oct 2019 06:29:47 GMT
 RUN { 		echo 'opcache.memory_consumption=128'; 		echo 'opcache.interned_strings_buffer=8'; 		echo 'opcache.max_accelerated_files=4000'; 		echo 'opcache.revalidate_freq=60'; 		echo 'opcache.fast_shutdown=1'; 	} > /usr/local/etc/php/conf.d/opcache-recommended.ini
-# Sat, 05 Oct 2019 05:47:04 GMT
+# Fri, 18 Oct 2019 06:29:47 GMT
 WORKDIR /var/www/html
-# Sat, 05 Oct 2019 05:47:04 GMT
+# Fri, 18 Oct 2019 06:29:48 GMT
 ENV DRUPAL_VERSION=7.67
-# Sat, 05 Oct 2019 05:47:04 GMT
+# Fri, 18 Oct 2019 06:29:48 GMT
 ENV DRUPAL_MD5=78b1814e55fdaf40e753fd523d059f8d
-# Sat, 05 Oct 2019 05:47:07 GMT
+# Fri, 18 Oct 2019 06:29:49 GMT
 RUN set -eux; 	curl -fSL "https://ftp.drupal.org/files/projects/drupal-${DRUPAL_VERSION}.tar.gz" -o drupal.tar.gz; 	echo "${DRUPAL_MD5} *drupal.tar.gz" | md5sum -c -; 	tar -xz --strip-components=1 -f drupal.tar.gz; 	rm drupal.tar.gz; 	chown -R www-data:www-data sites modules themes
 ```
 
 -	Layers:
-	-	`sha256:8f91359f1fffbf32b24ca854fb263d88a222371f38e90cf4583c5742cfdc3039`  
-		Last Modified: Wed, 11 Sep 2019 23:34:50 GMT  
-		Size: 22.5 MB (22510654 bytes)  
+	-	`sha256:80369df487363e56aea88d4d41b61f1607fc2ec198e9327cfde36a5346c71bf2`  
+		Last Modified: Wed, 16 Oct 2019 23:35:19 GMT  
+		Size: 22.5 MB (22524636 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:bf2faaedf741a44c5457bc029621724b7f316482f99de58522e1b659ddc8fd99`  
-		Last Modified: Thu, 12 Sep 2019 13:15:25 GMT  
-		Size: 225.0 B  
+	-	`sha256:60e80cb3f70356b666135b9d9acc19345b74bf7feedb2b6ac494dd6d224b8574`  
+		Last Modified: Thu, 17 Oct 2019 17:20:16 GMT  
+		Size: 226.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:24cd1299a53e525f85fdd79c524463ec6b6569df13c6af402ca0f706ad89c28b`  
-		Last Modified: Thu, 12 Sep 2019 13:15:49 GMT  
-		Size: 67.5 MB (67450331 bytes)  
+	-	`sha256:e3b2450987de138dcaf9f09559f25a8b2cd6ceaac8e28d858fdb73530d40f92e`  
+		Last Modified: Thu, 17 Oct 2019 17:20:33 GMT  
+		Size: 67.4 MB (67447849 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:17091cc665e4a0e967d00b8b36fcabb2b17d7bceba421f717f5d138063e22ad6`  
-		Last Modified: Thu, 12 Sep 2019 13:15:25 GMT  
-		Size: 237.0 B  
+	-	`sha256:c413b7377c2f336391745613272b75d32b6f52110d5cf6bb28949ed2eea52906`  
+		Last Modified: Thu, 17 Oct 2019 17:20:16 GMT  
+		Size: 238.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c1b19c486fe456473111a23b952f18c020efd39215955a1cffd7d74e2761b1cc`  
-		Last Modified: Fri, 27 Sep 2019 01:30:21 GMT  
-		Size: 12.6 MB (12602078 bytes)  
+	-	`sha256:aac2378acf850ccd4bd2c855b04e88bf335844813c3720fbad8d50a9d2110913`  
+		Last Modified: Thu, 17 Oct 2019 17:22:47 GMT  
+		Size: 12.6 MB (12602118 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:3873085d22e8ca7905f3ea8618155c00fa888c4778d7be25b0889c326b20939d`  
-		Last Modified: Fri, 27 Sep 2019 01:30:18 GMT  
-		Size: 501.0 B  
+	-	`sha256:36e39e9148c725b2ee3a2e59b0cf8ff483675fe34bb317d435a731f688457519`  
+		Last Modified: Thu, 17 Oct 2019 17:22:44 GMT  
+		Size: 500.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:1b9cf70b30bcc05c7746535126e36833feb69e3e49c4de9c11a000c4dcdfb7d8`  
-		Last Modified: Sat, 05 Oct 2019 03:53:56 GMT  
-		Size: 29.0 MB (29014537 bytes)  
+	-	`sha256:5f1a617bc9669725e6b2e7bfe8cf59c1acc21913a6a2e3e22ce2ac74e14242a6`  
+		Last Modified: Thu, 17 Oct 2019 17:22:50 GMT  
+		Size: 27.3 MB (27338764 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:49b8059b0d5cc45f659a737474f7e67fc8066944a69d1c41f8dc7bdbd920314c`  
-		Last Modified: Sat, 05 Oct 2019 03:53:46 GMT  
-		Size: 2.2 KB (2218 bytes)  
+	-	`sha256:deacb2e15048ace81a56d540dc7c82a80c34e26dff04650ef34f5594c23d02a1`  
+		Last Modified: Thu, 17 Oct 2019 17:22:45 GMT  
+		Size: 2.2 KB (2216 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:4d4a79a9ddb344def2702e3a490a1c6480637bc5a24bcf80930c3ce97b9d64a4`  
-		Last Modified: Sat, 05 Oct 2019 03:53:46 GMT  
-		Size: 259.0 B  
+	-	`sha256:bff7e3d3e8fc2104d2a5e50d33a2fb442d87eb3b2ea51715b9544bc61782a466`  
+		Last Modified: Thu, 17 Oct 2019 17:22:45 GMT  
+		Size: 258.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:d58fecef2b2667f5e152bfc0ec8d7fd296a5d1085aa47dea80bf9d9189ec05f7`  
-		Last Modified: Sat, 05 Oct 2019 03:53:46 GMT  
-		Size: 7.8 KB (7803 bytes)  
+	-	`sha256:109fc38d4cc8bfb06604771fad247bda0f19f9ef59a94e9ac64063dacf817bc2`  
+		Last Modified: Thu, 17 Oct 2019 17:22:45 GMT  
+		Size: 7.8 KB (7801 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:0e56bb4248ff165c86d4812b96dbc6481637fe14a7f921c653ce287b3f8dfdf5`  
-		Last Modified: Sat, 05 Oct 2019 05:51:33 GMT  
-		Size: 1.6 MB (1553748 bytes)  
+	-	`sha256:1e9e108fa89693b39151ac4b67418584060afddc1f32c4e0784e6647de8d3b50`  
+		Last Modified: Fri, 18 Oct 2019 06:31:24 GMT  
+		Size: 1.6 MB (1553590 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:08cebaa26affb514c27b1115a1e27cd0ab18dfe73cf56310ad7c54f25e0dab99`  
-		Last Modified: Sat, 05 Oct 2019 05:51:32 GMT  
-		Size: 340.0 B  
+	-	`sha256:9435354a56856d90932a4f6d1d40392bb4a274d680feabf27dc493f1d442f291`  
+		Last Modified: Fri, 18 Oct 2019 06:31:24 GMT  
+		Size: 339.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:dfb499eca3a8d719d00a930609138cecd2c618924c553eac7330e5126f46d596`  
-		Last Modified: Sat, 05 Oct 2019 05:51:33 GMT  
-		Size: 3.3 MB (3332782 bytes)  
+	-	`sha256:2fb0eb09fda4f2707a7403477db64bc756461fa631a5f7faa6bdeeb198dc9770`  
+		Last Modified: Fri, 18 Oct 2019 06:31:25 GMT  
+		Size: 3.3 MB (3332777 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `drupal:7-fpm` - linux; arm variant v5
@@ -7214,7 +7214,7 @@ RUN set -eux; 	curl -fSL "https://ftp.drupal.org/files/projects/drupal-${DRUPAL_
 ## `drupal:8`
 
 ```console
-$ docker pull drupal@sha256:bb49d97d37087bf6a2d82c31a8baa477cba3983427242bc5bad334dae69611e3
+$ docker pull drupal@sha256:b5b9d1a33393aa3a54aa8639cb777ae2388d5b41bd855778633ba775234a29bf
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -7229,159 +7229,159 @@ $ docker pull drupal@sha256:bb49d97d37087bf6a2d82c31a8baa477cba3983427242bc5bad3
 ### `drupal:8` - linux; amd64
 
 ```console
-$ docker pull drupal@sha256:73a9b0def4d6d99b41e02a2dccd54200fc5dda7d8f38ac87174e1bf83e7f4219
+$ docker pull drupal@sha256:37037fd55f74b297e795a1abd0ba7d7e1c030e78e221f0018a9d1ee429eaa1a1
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **154.5 MB (154523243 bytes)**  
+-	Total Size: **152.9 MB (152945310 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:84af2ca3d9d5b7c4790ee0e1b2622bd6836c06cee3b601b7149ea9c92bcbf43b`
+-	Image ID: `sha256:db077f17914826f101cf283aa2bf0c07f0447562eed5f2069b5ea62b6e8edeec`
 -	Entrypoint: `["docker-php-entrypoint"]`
 -	Default Command: `["apache2-foreground"]`
 
 ```dockerfile
-# Wed, 11 Sep 2019 23:27:46 GMT
-ADD file:e82c447c3eae5d1d0282d8557b0c271b29d1be0d0f23204a09ad468be7a80d8c in / 
-# Wed, 11 Sep 2019 23:27:47 GMT
+# Wed, 16 Oct 2019 23:29:18 GMT
+ADD file:37512e59e7c324f9ec5b01628ef87efee73d2092cfe97d05ca949dc3528e4c2a in / 
+# Wed, 16 Oct 2019 23:29:19 GMT
 CMD ["bash"]
-# Thu, 12 Sep 2019 10:35:06 GMT
+# Thu, 17 Oct 2019 15:19:17 GMT
 RUN set -eux; 	{ 		echo 'Package: php*'; 		echo 'Pin: release *'; 		echo 'Pin-Priority: -1'; 	} > /etc/apt/preferences.d/no-debian-php
-# Thu, 12 Sep 2019 10:35:06 GMT
+# Thu, 17 Oct 2019 15:19:17 GMT
 ENV PHPIZE_DEPS=autoconf 		dpkg-dev 		file 		g++ 		gcc 		libc-dev 		make 		pkg-config 		re2c
-# Thu, 12 Sep 2019 10:35:36 GMT
+# Thu, 17 Oct 2019 15:19:56 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		$PHPIZE_DEPS 		ca-certificates 		curl 		xz-utils 	; 	rm -rf /var/lib/apt/lists/*
-# Thu, 12 Sep 2019 10:35:36 GMT
+# Thu, 17 Oct 2019 15:19:57 GMT
 ENV PHP_INI_DIR=/usr/local/etc/php
-# Thu, 12 Sep 2019 10:35:37 GMT
+# Thu, 17 Oct 2019 15:19:58 GMT
 RUN set -eux; 	mkdir -p "$PHP_INI_DIR/conf.d"; 	[ ! -d /var/www/html ]; 	mkdir -p /var/www/html; 	chown www-data:www-data /var/www/html; 	chmod 777 /var/www/html
-# Thu, 12 Sep 2019 10:44:55 GMT
+# Thu, 17 Oct 2019 15:27:50 GMT
 ENV APACHE_CONFDIR=/etc/apache2
-# Thu, 12 Sep 2019 10:44:55 GMT
+# Thu, 17 Oct 2019 15:27:50 GMT
 ENV APACHE_ENVVARS=/etc/apache2/envvars
-# Thu, 12 Sep 2019 10:45:06 GMT
+# Thu, 17 Oct 2019 15:28:01 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends apache2; 	rm -rf /var/lib/apt/lists/*; 		sed -ri 's/^export ([^=]+)=(.*)$/: ${\1:=\2}\nexport \1/' "$APACHE_ENVVARS"; 		. "$APACHE_ENVVARS"; 	for dir in 		"$APACHE_LOCK_DIR" 		"$APACHE_RUN_DIR" 		"$APACHE_LOG_DIR" 	; do 		rm -rvf "$dir"; 		mkdir -p "$dir"; 		chown "$APACHE_RUN_USER:$APACHE_RUN_GROUP" "$dir"; 		chmod 777 "$dir"; 	done; 		rm -rvf /var/www/html/*; 		ln -sfT /dev/stderr "$APACHE_LOG_DIR/error.log"; 	ln -sfT /dev/stdout "$APACHE_LOG_DIR/access.log"; 	ln -sfT /dev/stdout "$APACHE_LOG_DIR/other_vhosts_access.log"; 	chown -R --no-dereference "$APACHE_RUN_USER:$APACHE_RUN_GROUP" "$APACHE_LOG_DIR"
-# Thu, 12 Sep 2019 10:45:07 GMT
+# Thu, 17 Oct 2019 15:28:03 GMT
 RUN a2dismod mpm_event && a2enmod mpm_prefork
-# Thu, 12 Sep 2019 10:45:08 GMT
+# Thu, 17 Oct 2019 15:28:04 GMT
 RUN { 		echo '<FilesMatch \.php$>'; 		echo '\tSetHandler application/x-httpd-php'; 		echo '</FilesMatch>'; 		echo; 		echo 'DirectoryIndex disabled'; 		echo 'DirectoryIndex index.php index.html'; 		echo; 		echo '<Directory /var/www/>'; 		echo '\tOptions -Indexes'; 		echo '\tAllowOverride All'; 		echo '</Directory>'; 	} | tee "$APACHE_CONFDIR/conf-available/docker-php.conf" 	&& a2enconf docker-php
-# Thu, 12 Sep 2019 10:45:08 GMT
+# Thu, 17 Oct 2019 15:28:04 GMT
 ENV PHP_EXTRA_BUILD_DEPS=apache2-dev
-# Thu, 12 Sep 2019 10:45:08 GMT
+# Thu, 17 Oct 2019 15:28:05 GMT
 ENV PHP_EXTRA_CONFIGURE_ARGS=--with-apxs2 --disable-cgi
-# Thu, 12 Sep 2019 10:45:08 GMT
+# Thu, 17 Oct 2019 15:28:05 GMT
 ENV PHP_CFLAGS=-fstack-protector-strong -fpic -fpie -O2
-# Thu, 12 Sep 2019 10:45:08 GMT
+# Thu, 17 Oct 2019 15:28:05 GMT
 ENV PHP_CPPFLAGS=-fstack-protector-strong -fpic -fpie -O2
-# Thu, 12 Sep 2019 10:45:08 GMT
+# Thu, 17 Oct 2019 15:28:05 GMT
 ENV PHP_LDFLAGS=-Wl,-O1 -Wl,--hash-style=both -pie
-# Thu, 12 Sep 2019 10:45:09 GMT
+# Thu, 17 Oct 2019 15:28:06 GMT
 ENV GPG_KEYS=CBAF69F173A0FEA4B537F470D66C9593118BCCB6 F38252826ACD957EF380D39F2F7956BC5DA04B5D
-# Thu, 26 Sep 2019 21:50:18 GMT
+# Thu, 17 Oct 2019 15:28:06 GMT
 ENV PHP_VERSION=7.3.10
-# Thu, 26 Sep 2019 21:50:18 GMT
+# Thu, 17 Oct 2019 15:28:06 GMT
 ENV PHP_URL=https://www.php.net/get/php-7.3.10.tar.xz/from/this/mirror PHP_ASC_URL=https://www.php.net/get/php-7.3.10.tar.xz.asc/from/this/mirror
-# Thu, 26 Sep 2019 21:50:18 GMT
+# Thu, 17 Oct 2019 15:28:07 GMT
 ENV PHP_SHA256=42f00a15419e05771734b7159c8d39d639b8a5a6770413adfa2615f6f923d906 PHP_MD5=
-# Thu, 26 Sep 2019 21:50:30 GMT
+# Thu, 17 Oct 2019 15:28:20 GMT
 RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends gnupg dirmngr; 	rm -rf /var/lib/apt/lists/*; 		mkdir -p /usr/src; 	cd /usr/src; 		curl -fsSL -o php.tar.xz "$PHP_URL"; 		if [ -n "$PHP_SHA256" ]; then 		echo "$PHP_SHA256 *php.tar.xz" | sha256sum -c -; 	fi; 	if [ -n "$PHP_MD5" ]; then 		echo "$PHP_MD5 *php.tar.xz" | md5sum -c -; 	fi; 		if [ -n "$PHP_ASC_URL" ]; then 		curl -fsSL -o php.tar.xz.asc "$PHP_ASC_URL"; 		export GNUPGHOME="$(mktemp -d)"; 		for key in $GPG_KEYS; do 			gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys "$key"; 		done; 		gpg --batch --verify php.tar.xz.asc php.tar.xz; 		gpgconf --kill all; 		rm -rf "$GNUPGHOME"; 	fi; 		apt-mark auto '.*' > /dev/null; 	apt-mark manual $savedAptMark > /dev/null; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false
-# Thu, 26 Sep 2019 21:50:30 GMT
+# Thu, 17 Oct 2019 15:28:20 GMT
 COPY file:ce57c04b70896f77cc11eb2766417d8a1240fcffe5bba92179ec78c458844110 in /usr/local/bin/ 
-# Fri, 04 Oct 2019 23:00:02 GMT
+# Thu, 17 Oct 2019 15:32:23 GMT
 RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	sed -e 's/stretch/buster/g' /etc/apt/sources.list > /etc/apt/sources.list.d/buster.list; 	{ 		echo 'Package: *'; 		echo 'Pin: release n=buster'; 		echo 'Pin-Priority: -10'; 		echo; 		echo 'Package: libargon2*'; 		echo 'Pin: release n=buster'; 		echo 'Pin-Priority: 990'; 	} > /etc/apt/preferences.d/argon2-buster; 	apt-get update; 	apt-get install -y --no-install-recommends 		libargon2-dev 		libcurl4-openssl-dev 		libedit-dev 		libsodium-dev 		libsqlite3-dev 		libssl-dev 		libxml2-dev 		zlib1g-dev 		${PHP_EXTRA_BUILD_DEPS:-} 	; 	rm -rf /var/lib/apt/lists/*; 		export 		CFLAGS="$PHP_CFLAGS" 		CPPFLAGS="$PHP_CPPFLAGS" 		LDFLAGS="$PHP_LDFLAGS" 	; 	docker-php-source extract; 	cd /usr/src/php; 	gnuArch="$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)"; 	debMultiarch="$(dpkg-architecture --query DEB_BUILD_MULTIARCH)"; 	if [ ! -d /usr/include/curl ]; then 		ln -sT "/usr/include/$debMultiarch/curl" /usr/local/include/curl; 	fi; 	./configure 		--build="$gnuArch" 		--with-config-file-path="$PHP_INI_DIR" 		--with-config-file-scan-dir="$PHP_INI_DIR/conf.d" 				--enable-option-checking=fatal 				--with-mhash 				--enable-ftp 		--enable-mbstring 		--enable-mysqlnd 		--with-password-argon2 		--with-sodium=shared 		--with-pdo-sqlite=/usr 		--with-sqlite3=/usr 				--with-curl 		--with-libedit 		--with-openssl 		--with-zlib 				$(test "$gnuArch" = 's390x-linux-gnu' && echo '--without-pcre-jit') 		--with-libdir="lib/$debMultiarch" 				${PHP_EXTRA_CONFIGURE_ARGS:-} 	; 	make -j "$(nproc)"; 	find -type f -name '*.a' -delete; 	make install; 	find /usr/local/bin /usr/local/sbin -type f -executable -exec strip --strip-all '{}' + || true; 	make clean; 		cp -v php.ini-* "$PHP_INI_DIR/"; 		cd /; 	docker-php-source delete; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark; 	find /usr/local -type f -executable -exec ldd '{}' ';' 		| awk '/=>/ { print $(NF-1) }' 		| sort -u 		| xargs -r dpkg-query --search 		| cut -d: -f1 		| sort -u 		| xargs -r apt-mark manual 	; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 		pecl update-channels; 	rm -rf /tmp/pear ~/.pearrc; 	php --version
-# Fri, 04 Oct 2019 23:00:02 GMT
+# Thu, 17 Oct 2019 15:32:24 GMT
 COPY multi:99e4ad617c6193834e78d12470f6dde09f70f4d40463009c5724954902e60676 in /usr/local/bin/ 
-# Fri, 04 Oct 2019 23:00:04 GMT
+# Thu, 17 Oct 2019 15:32:25 GMT
 RUN docker-php-ext-enable sodium
-# Fri, 04 Oct 2019 23:00:04 GMT
+# Thu, 17 Oct 2019 15:32:25 GMT
 ENTRYPOINT ["docker-php-entrypoint"]
-# Fri, 04 Oct 2019 23:00:04 GMT
+# Thu, 17 Oct 2019 15:32:25 GMT
 STOPSIGNAL WINCH
-# Fri, 04 Oct 2019 23:00:05 GMT
+# Thu, 17 Oct 2019 15:32:25 GMT
 COPY file:e3123fcb6566efa979f945bfac1c94c854a559d7b82723e42118882a8ac4de66 in /usr/local/bin/ 
-# Fri, 04 Oct 2019 23:00:05 GMT
+# Thu, 17 Oct 2019 15:32:25 GMT
 WORKDIR /var/www/html
-# Fri, 04 Oct 2019 23:00:05 GMT
+# Thu, 17 Oct 2019 15:32:26 GMT
 EXPOSE 80
-# Fri, 04 Oct 2019 23:00:05 GMT
+# Thu, 17 Oct 2019 15:32:26 GMT
 CMD ["apache2-foreground"]
-# Sat, 05 Oct 2019 05:37:18 GMT
+# Fri, 18 Oct 2019 06:25:57 GMT
 RUN set -eux; 		if command -v a2enmod; then 		a2enmod rewrite; 	fi; 		savedAptMark="$(apt-mark showmanual)"; 		apt-get update; 	apt-get install -y --no-install-recommends 		libfreetype6-dev 		libjpeg-dev 		libpng-dev 		libpq-dev 		libzip-dev 	; 		docker-php-ext-configure gd 		--with-freetype-dir=/usr 		--with-jpeg-dir=/usr 		--with-png-dir=/usr 	; 		docker-php-ext-install -j "$(nproc)" 		gd 		opcache 		pdo_mysql 		pdo_pgsql 		zip 	; 		apt-mark auto '.*' > /dev/null; 	apt-mark manual $savedAptMark; 	ldd "$(php -r 'echo ini_get("extension_dir");')"/*.so 		| awk '/=>/ { print $3 }' 		| sort -u 		| xargs -r dpkg-query -S 		| cut -d: -f1 		| sort -u 		| xargs -rt apt-mark manual; 		apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 	rm -rf /var/lib/apt/lists/*
-# Sat, 05 Oct 2019 05:37:20 GMT
+# Fri, 18 Oct 2019 06:25:57 GMT
 RUN { 		echo 'opcache.memory_consumption=128'; 		echo 'opcache.interned_strings_buffer=8'; 		echo 'opcache.max_accelerated_files=4000'; 		echo 'opcache.revalidate_freq=60'; 		echo 'opcache.fast_shutdown=1'; 	} > /usr/local/etc/php/conf.d/opcache-recommended.ini
-# Sat, 05 Oct 2019 05:37:20 GMT
+# Fri, 18 Oct 2019 06:25:57 GMT
 WORKDIR /var/www/html
-# Sat, 05 Oct 2019 05:37:20 GMT
+# Fri, 18 Oct 2019 06:25:58 GMT
 ENV DRUPAL_VERSION=8.7.8
-# Sat, 05 Oct 2019 05:37:21 GMT
+# Fri, 18 Oct 2019 06:25:58 GMT
 ENV DRUPAL_MD5=f281eb14d8aabf0c3e78dd519ca4b640
-# Sat, 05 Oct 2019 05:37:34 GMT
+# Fri, 18 Oct 2019 06:26:03 GMT
 RUN set -eux; 	curl -fSL "https://ftp.drupal.org/files/projects/drupal-${DRUPAL_VERSION}.tar.gz" -o drupal.tar.gz; 	echo "${DRUPAL_MD5} *drupal.tar.gz" | md5sum -c -; 	tar -xz --strip-components=1 -f drupal.tar.gz; 	rm drupal.tar.gz; 	chown -R www-data:www-data sites modules themes
 ```
 
 -	Layers:
-	-	`sha256:8f91359f1fffbf32b24ca854fb263d88a222371f38e90cf4583c5742cfdc3039`  
-		Last Modified: Wed, 11 Sep 2019 23:34:50 GMT  
-		Size: 22.5 MB (22510654 bytes)  
+	-	`sha256:80369df487363e56aea88d4d41b61f1607fc2ec198e9327cfde36a5346c71bf2`  
+		Last Modified: Wed, 16 Oct 2019 23:35:19 GMT  
+		Size: 22.5 MB (22524636 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:bf2faaedf741a44c5457bc029621724b7f316482f99de58522e1b659ddc8fd99`  
-		Last Modified: Thu, 12 Sep 2019 13:15:25 GMT  
-		Size: 225.0 B  
+	-	`sha256:60e80cb3f70356b666135b9d9acc19345b74bf7feedb2b6ac494dd6d224b8574`  
+		Last Modified: Thu, 17 Oct 2019 17:20:16 GMT  
+		Size: 226.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:24cd1299a53e525f85fdd79c524463ec6b6569df13c6af402ca0f706ad89c28b`  
-		Last Modified: Thu, 12 Sep 2019 13:15:49 GMT  
-		Size: 67.5 MB (67450331 bytes)  
+	-	`sha256:e3b2450987de138dcaf9f09559f25a8b2cd6ceaac8e28d858fdb73530d40f92e`  
+		Last Modified: Thu, 17 Oct 2019 17:20:33 GMT  
+		Size: 67.4 MB (67447849 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:17091cc665e4a0e967d00b8b36fcabb2b17d7bceba421f717f5d138063e22ad6`  
-		Last Modified: Thu, 12 Sep 2019 13:15:25 GMT  
-		Size: 237.0 B  
+	-	`sha256:c413b7377c2f336391745613272b75d32b6f52110d5cf6bb28949ed2eea52906`  
+		Last Modified: Thu, 17 Oct 2019 17:20:16 GMT  
+		Size: 238.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:ac9365919f9b10c759648e7efa92752c1443400e4178d6411f5a458a90e09ca2`  
-		Last Modified: Thu, 12 Sep 2019 13:16:08 GMT  
-		Size: 17.1 MB (17125603 bytes)  
+	-	`sha256:6dd9eff17a14f4fd1ad899a27f318151a4b2fa2d935cb85307637563d6973d17`  
+		Last Modified: Thu, 17 Oct 2019 17:20:46 GMT  
+		Size: 17.1 MB (17125324 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:4f1b34e209eee27994691cd890ca1422857bc1c2c166a700049ae0af84d6fb2a`  
-		Last Modified: Thu, 12 Sep 2019 13:16:02 GMT  
-		Size: 431.0 B  
+	-	`sha256:5126e57aff9b8bc91dfaa6885060a8b4cd41887d4a85621d5778c2ec6c660f2a`  
+		Last Modified: Thu, 17 Oct 2019 17:20:43 GMT  
+		Size: 437.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:832757fa04a4aea3b2f6e686cf9741254a6a03855e86b603417b6d3ce6c0038f`  
-		Last Modified: Thu, 12 Sep 2019 13:16:02 GMT  
-		Size: 487.0 B  
+	-	`sha256:943df09926ea3a42f821bbdfd1d3112e72b5da0fbc6761b35b50da5570cfb438`  
+		Last Modified: Thu, 17 Oct 2019 17:20:43 GMT  
+		Size: 490.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:640a8cc59ee46638b569b4797bc4a773e22ff83223d1d94620047e7acdf4f121`  
-		Last Modified: Fri, 27 Sep 2019 01:26:12 GMT  
-		Size: 12.4 MB (12435253 bytes)  
+	-	`sha256:9945a6d6fd51d29053a01e7362f98478704156cb0344028887de5de27b56f8cd`  
+		Last Modified: Thu, 17 Oct 2019 17:20:43 GMT  
+		Size: 12.4 MB (12435307 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:375d45a647bd866c4211aeda97b2b5bedb12dc76350eb92cdbcd172943efbf37`  
-		Last Modified: Fri, 27 Sep 2019 01:26:09 GMT  
+	-	`sha256:975035f5a785ddf7bea6b46a40a2beae1617b991dd4965bb2632ce819c0ebae4`  
+		Last Modified: Thu, 17 Oct 2019 17:20:42 GMT  
 		Size: 501.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:699f6141932e10e137db5a06352130c87535007fc4d71d0d21cf5204db76d728`  
-		Last Modified: Sat, 05 Oct 2019 03:49:47 GMT  
-		Size: 15.4 MB (15395755 bytes)  
+	-	`sha256:561abe18d8c31cf78ff6f1569ed5e894ccabfae65dd247928b73ca194c455f7a`  
+		Last Modified: Thu, 17 Oct 2019 17:20:45 GMT  
+		Size: 13.8 MB (13806779 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:be6c200d07db998ed59695b4d5635fadfcc871f2a0dd2ce5ed45e83ad94bfe5c`  
-		Last Modified: Sat, 05 Oct 2019 03:49:41 GMT  
-		Size: 2.2 KB (2223 bytes)  
+	-	`sha256:ecfae1d03a560507c8358c1dd3b5ea4d85df3274f721c12d1f5bf2f4f846a84c`  
+		Last Modified: Thu, 17 Oct 2019 17:20:42 GMT  
+		Size: 2.2 KB (2225 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c5a9afabd1a71f323e7c4c48a4bf311e19637c1dcfdd8e56930b318010c7a322`  
-		Last Modified: Sat, 05 Oct 2019 03:49:42 GMT  
-		Size: 259.0 B  
+	-	`sha256:69a47ac39f697f9eb8a508965dcd3b51d3365b5e3625aa08085f02866fb1531d`  
+		Last Modified: Thu, 17 Oct 2019 17:20:41 GMT  
+		Size: 261.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:f517a6395f969bd01b32606233e12344abd854953769c7fcced6d776964aac74`  
-		Last Modified: Sat, 05 Oct 2019 03:49:42 GMT  
-		Size: 901.0 B  
+	-	`sha256:4b0bd7b07f693ddfca86b3f94a7eb7f7d56d2f0d7d8b96b80ad7f3b438173b29`  
+		Last Modified: Thu, 17 Oct 2019 17:20:41 GMT  
+		Size: 905.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:4834256bfafcc2acba5ce5afc6eca80c529b1fd74620511b5ff32d99cc63c61f`  
-		Last Modified: Sat, 05 Oct 2019 05:49:42 GMT  
-		Size: 1.6 MB (1594511 bytes)  
+	-	`sha256:cbbcd711c9961e0745e2348424d92efce8a7c76228be39b3897db99c6c6120d8`  
+		Last Modified: Fri, 18 Oct 2019 06:30:30 GMT  
+		Size: 1.6 MB (1594259 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:658398927ac0c2d9570ced0232f6c98915b6bc254e4eb8654c20082a71484a82`  
-		Last Modified: Sat, 05 Oct 2019 05:49:41 GMT  
-		Size: 339.0 B  
+	-	`sha256:fab086cdefa2ad6d5c4ba0ef31daddc017cc3d10f842a3c1ad81cefa482e0de4`  
+		Last Modified: Fri, 18 Oct 2019 06:30:30 GMT  
+		Size: 340.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:dab98cb0ae912b1a85e6a906c59eec8fe7e8035a28425cf9842d37fbf0a348a4`  
-		Last Modified: Sat, 05 Oct 2019 05:49:51 GMT  
+	-	`sha256:8bc233ea200f92189618c3ce830efe5fc1541cc2dbe1a355e7a4f9e02b27d945`  
+		Last Modified: Fri, 18 Oct 2019 06:30:35 GMT  
 		Size: 18.0 MB (18005533 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
@@ -8183,7 +8183,7 @@ RUN set -eux; 	curl -fSL "https://ftp.drupal.org/files/projects/drupal-${DRUPAL_
 ## `drupal:8.6`
 
 ```console
-$ docker pull drupal@sha256:8b95871cbd97a166f5318435e0c3417f5723a52b10a36178879ed5c045d8ae14
+$ docker pull drupal@sha256:a999607b19389e4ea1e89459c517e768ecc95faa51ac97269961ff002ff54aae
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -8198,160 +8198,160 @@ $ docker pull drupal@sha256:8b95871cbd97a166f5318435e0c3417f5723a52b10a36178879e
 ### `drupal:8.6` - linux; amd64
 
 ```console
-$ docker pull drupal@sha256:95f519f1442a07e110c6872f2dbebc85f2e04b3146388f862f2ba30856c68bf0
+$ docker pull drupal@sha256:6459371bf24349b1fffe56e8765297360da0f73c34ca640127f8792e101bada8
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **153.8 MB (153783534 bytes)**  
+-	Total Size: **152.2 MB (152205585 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:10b1e07a7ef9849b378b764ac51b2d849ae1a2b4f57b73e817ed5badae3e2e13`
+-	Image ID: `sha256:12578b75bad59006bff5bb63447c4369e33d968280972766e235b6e019da1403`
 -	Entrypoint: `["docker-php-entrypoint"]`
 -	Default Command: `["apache2-foreground"]`
 
 ```dockerfile
-# Wed, 11 Sep 2019 23:27:46 GMT
-ADD file:e82c447c3eae5d1d0282d8557b0c271b29d1be0d0f23204a09ad468be7a80d8c in / 
-# Wed, 11 Sep 2019 23:27:47 GMT
+# Wed, 16 Oct 2019 23:29:18 GMT
+ADD file:37512e59e7c324f9ec5b01628ef87efee73d2092cfe97d05ca949dc3528e4c2a in / 
+# Wed, 16 Oct 2019 23:29:19 GMT
 CMD ["bash"]
-# Thu, 12 Sep 2019 10:35:06 GMT
+# Thu, 17 Oct 2019 15:19:17 GMT
 RUN set -eux; 	{ 		echo 'Package: php*'; 		echo 'Pin: release *'; 		echo 'Pin-Priority: -1'; 	} > /etc/apt/preferences.d/no-debian-php
-# Thu, 12 Sep 2019 10:35:06 GMT
+# Thu, 17 Oct 2019 15:19:17 GMT
 ENV PHPIZE_DEPS=autoconf 		dpkg-dev 		file 		g++ 		gcc 		libc-dev 		make 		pkg-config 		re2c
-# Thu, 12 Sep 2019 10:35:36 GMT
+# Thu, 17 Oct 2019 15:19:56 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		$PHPIZE_DEPS 		ca-certificates 		curl 		xz-utils 	; 	rm -rf /var/lib/apt/lists/*
-# Thu, 12 Sep 2019 10:35:36 GMT
+# Thu, 17 Oct 2019 15:19:57 GMT
 ENV PHP_INI_DIR=/usr/local/etc/php
-# Thu, 12 Sep 2019 10:35:37 GMT
+# Thu, 17 Oct 2019 15:19:58 GMT
 RUN set -eux; 	mkdir -p "$PHP_INI_DIR/conf.d"; 	[ ! -d /var/www/html ]; 	mkdir -p /var/www/html; 	chown www-data:www-data /var/www/html; 	chmod 777 /var/www/html
-# Thu, 12 Sep 2019 10:44:55 GMT
+# Thu, 17 Oct 2019 15:27:50 GMT
 ENV APACHE_CONFDIR=/etc/apache2
-# Thu, 12 Sep 2019 10:44:55 GMT
+# Thu, 17 Oct 2019 15:27:50 GMT
 ENV APACHE_ENVVARS=/etc/apache2/envvars
-# Thu, 12 Sep 2019 10:45:06 GMT
+# Thu, 17 Oct 2019 15:28:01 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends apache2; 	rm -rf /var/lib/apt/lists/*; 		sed -ri 's/^export ([^=]+)=(.*)$/: ${\1:=\2}\nexport \1/' "$APACHE_ENVVARS"; 		. "$APACHE_ENVVARS"; 	for dir in 		"$APACHE_LOCK_DIR" 		"$APACHE_RUN_DIR" 		"$APACHE_LOG_DIR" 	; do 		rm -rvf "$dir"; 		mkdir -p "$dir"; 		chown "$APACHE_RUN_USER:$APACHE_RUN_GROUP" "$dir"; 		chmod 777 "$dir"; 	done; 		rm -rvf /var/www/html/*; 		ln -sfT /dev/stderr "$APACHE_LOG_DIR/error.log"; 	ln -sfT /dev/stdout "$APACHE_LOG_DIR/access.log"; 	ln -sfT /dev/stdout "$APACHE_LOG_DIR/other_vhosts_access.log"; 	chown -R --no-dereference "$APACHE_RUN_USER:$APACHE_RUN_GROUP" "$APACHE_LOG_DIR"
-# Thu, 12 Sep 2019 10:45:07 GMT
+# Thu, 17 Oct 2019 15:28:03 GMT
 RUN a2dismod mpm_event && a2enmod mpm_prefork
-# Thu, 12 Sep 2019 10:45:08 GMT
+# Thu, 17 Oct 2019 15:28:04 GMT
 RUN { 		echo '<FilesMatch \.php$>'; 		echo '\tSetHandler application/x-httpd-php'; 		echo '</FilesMatch>'; 		echo; 		echo 'DirectoryIndex disabled'; 		echo 'DirectoryIndex index.php index.html'; 		echo; 		echo '<Directory /var/www/>'; 		echo '\tOptions -Indexes'; 		echo '\tAllowOverride All'; 		echo '</Directory>'; 	} | tee "$APACHE_CONFDIR/conf-available/docker-php.conf" 	&& a2enconf docker-php
-# Thu, 12 Sep 2019 10:45:08 GMT
+# Thu, 17 Oct 2019 15:28:04 GMT
 ENV PHP_EXTRA_BUILD_DEPS=apache2-dev
-# Thu, 12 Sep 2019 10:45:08 GMT
+# Thu, 17 Oct 2019 15:28:05 GMT
 ENV PHP_EXTRA_CONFIGURE_ARGS=--with-apxs2 --disable-cgi
-# Thu, 12 Sep 2019 10:45:08 GMT
+# Thu, 17 Oct 2019 15:28:05 GMT
 ENV PHP_CFLAGS=-fstack-protector-strong -fpic -fpie -O2
-# Thu, 12 Sep 2019 10:45:08 GMT
+# Thu, 17 Oct 2019 15:28:05 GMT
 ENV PHP_CPPFLAGS=-fstack-protector-strong -fpic -fpie -O2
-# Thu, 12 Sep 2019 10:45:08 GMT
+# Thu, 17 Oct 2019 15:28:05 GMT
 ENV PHP_LDFLAGS=-Wl,-O1 -Wl,--hash-style=both -pie
-# Thu, 12 Sep 2019 10:45:09 GMT
+# Thu, 17 Oct 2019 15:28:06 GMT
 ENV GPG_KEYS=CBAF69F173A0FEA4B537F470D66C9593118BCCB6 F38252826ACD957EF380D39F2F7956BC5DA04B5D
-# Thu, 26 Sep 2019 21:50:18 GMT
+# Thu, 17 Oct 2019 15:28:06 GMT
 ENV PHP_VERSION=7.3.10
-# Thu, 26 Sep 2019 21:50:18 GMT
+# Thu, 17 Oct 2019 15:28:06 GMT
 ENV PHP_URL=https://www.php.net/get/php-7.3.10.tar.xz/from/this/mirror PHP_ASC_URL=https://www.php.net/get/php-7.3.10.tar.xz.asc/from/this/mirror
-# Thu, 26 Sep 2019 21:50:18 GMT
+# Thu, 17 Oct 2019 15:28:07 GMT
 ENV PHP_SHA256=42f00a15419e05771734b7159c8d39d639b8a5a6770413adfa2615f6f923d906 PHP_MD5=
-# Thu, 26 Sep 2019 21:50:30 GMT
+# Thu, 17 Oct 2019 15:28:20 GMT
 RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends gnupg dirmngr; 	rm -rf /var/lib/apt/lists/*; 		mkdir -p /usr/src; 	cd /usr/src; 		curl -fsSL -o php.tar.xz "$PHP_URL"; 		if [ -n "$PHP_SHA256" ]; then 		echo "$PHP_SHA256 *php.tar.xz" | sha256sum -c -; 	fi; 	if [ -n "$PHP_MD5" ]; then 		echo "$PHP_MD5 *php.tar.xz" | md5sum -c -; 	fi; 		if [ -n "$PHP_ASC_URL" ]; then 		curl -fsSL -o php.tar.xz.asc "$PHP_ASC_URL"; 		export GNUPGHOME="$(mktemp -d)"; 		for key in $GPG_KEYS; do 			gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys "$key"; 		done; 		gpg --batch --verify php.tar.xz.asc php.tar.xz; 		gpgconf --kill all; 		rm -rf "$GNUPGHOME"; 	fi; 		apt-mark auto '.*' > /dev/null; 	apt-mark manual $savedAptMark > /dev/null; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false
-# Thu, 26 Sep 2019 21:50:30 GMT
+# Thu, 17 Oct 2019 15:28:20 GMT
 COPY file:ce57c04b70896f77cc11eb2766417d8a1240fcffe5bba92179ec78c458844110 in /usr/local/bin/ 
-# Fri, 04 Oct 2019 23:00:02 GMT
+# Thu, 17 Oct 2019 15:32:23 GMT
 RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	sed -e 's/stretch/buster/g' /etc/apt/sources.list > /etc/apt/sources.list.d/buster.list; 	{ 		echo 'Package: *'; 		echo 'Pin: release n=buster'; 		echo 'Pin-Priority: -10'; 		echo; 		echo 'Package: libargon2*'; 		echo 'Pin: release n=buster'; 		echo 'Pin-Priority: 990'; 	} > /etc/apt/preferences.d/argon2-buster; 	apt-get update; 	apt-get install -y --no-install-recommends 		libargon2-dev 		libcurl4-openssl-dev 		libedit-dev 		libsodium-dev 		libsqlite3-dev 		libssl-dev 		libxml2-dev 		zlib1g-dev 		${PHP_EXTRA_BUILD_DEPS:-} 	; 	rm -rf /var/lib/apt/lists/*; 		export 		CFLAGS="$PHP_CFLAGS" 		CPPFLAGS="$PHP_CPPFLAGS" 		LDFLAGS="$PHP_LDFLAGS" 	; 	docker-php-source extract; 	cd /usr/src/php; 	gnuArch="$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)"; 	debMultiarch="$(dpkg-architecture --query DEB_BUILD_MULTIARCH)"; 	if [ ! -d /usr/include/curl ]; then 		ln -sT "/usr/include/$debMultiarch/curl" /usr/local/include/curl; 	fi; 	./configure 		--build="$gnuArch" 		--with-config-file-path="$PHP_INI_DIR" 		--with-config-file-scan-dir="$PHP_INI_DIR/conf.d" 				--enable-option-checking=fatal 				--with-mhash 				--enable-ftp 		--enable-mbstring 		--enable-mysqlnd 		--with-password-argon2 		--with-sodium=shared 		--with-pdo-sqlite=/usr 		--with-sqlite3=/usr 				--with-curl 		--with-libedit 		--with-openssl 		--with-zlib 				$(test "$gnuArch" = 's390x-linux-gnu' && echo '--without-pcre-jit') 		--with-libdir="lib/$debMultiarch" 				${PHP_EXTRA_CONFIGURE_ARGS:-} 	; 	make -j "$(nproc)"; 	find -type f -name '*.a' -delete; 	make install; 	find /usr/local/bin /usr/local/sbin -type f -executable -exec strip --strip-all '{}' + || true; 	make clean; 		cp -v php.ini-* "$PHP_INI_DIR/"; 		cd /; 	docker-php-source delete; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark; 	find /usr/local -type f -executable -exec ldd '{}' ';' 		| awk '/=>/ { print $(NF-1) }' 		| sort -u 		| xargs -r dpkg-query --search 		| cut -d: -f1 		| sort -u 		| xargs -r apt-mark manual 	; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 		pecl update-channels; 	rm -rf /tmp/pear ~/.pearrc; 	php --version
-# Fri, 04 Oct 2019 23:00:02 GMT
+# Thu, 17 Oct 2019 15:32:24 GMT
 COPY multi:99e4ad617c6193834e78d12470f6dde09f70f4d40463009c5724954902e60676 in /usr/local/bin/ 
-# Fri, 04 Oct 2019 23:00:04 GMT
+# Thu, 17 Oct 2019 15:32:25 GMT
 RUN docker-php-ext-enable sodium
-# Fri, 04 Oct 2019 23:00:04 GMT
+# Thu, 17 Oct 2019 15:32:25 GMT
 ENTRYPOINT ["docker-php-entrypoint"]
-# Fri, 04 Oct 2019 23:00:04 GMT
+# Thu, 17 Oct 2019 15:32:25 GMT
 STOPSIGNAL WINCH
-# Fri, 04 Oct 2019 23:00:05 GMT
+# Thu, 17 Oct 2019 15:32:25 GMT
 COPY file:e3123fcb6566efa979f945bfac1c94c854a559d7b82723e42118882a8ac4de66 in /usr/local/bin/ 
-# Fri, 04 Oct 2019 23:00:05 GMT
+# Thu, 17 Oct 2019 15:32:25 GMT
 WORKDIR /var/www/html
-# Fri, 04 Oct 2019 23:00:05 GMT
+# Thu, 17 Oct 2019 15:32:26 GMT
 EXPOSE 80
-# Fri, 04 Oct 2019 23:00:05 GMT
+# Thu, 17 Oct 2019 15:32:26 GMT
 CMD ["apache2-foreground"]
-# Sat, 05 Oct 2019 05:37:18 GMT
+# Fri, 18 Oct 2019 06:25:57 GMT
 RUN set -eux; 		if command -v a2enmod; then 		a2enmod rewrite; 	fi; 		savedAptMark="$(apt-mark showmanual)"; 		apt-get update; 	apt-get install -y --no-install-recommends 		libfreetype6-dev 		libjpeg-dev 		libpng-dev 		libpq-dev 		libzip-dev 	; 		docker-php-ext-configure gd 		--with-freetype-dir=/usr 		--with-jpeg-dir=/usr 		--with-png-dir=/usr 	; 		docker-php-ext-install -j "$(nproc)" 		gd 		opcache 		pdo_mysql 		pdo_pgsql 		zip 	; 		apt-mark auto '.*' > /dev/null; 	apt-mark manual $savedAptMark; 	ldd "$(php -r 'echo ini_get("extension_dir");')"/*.so 		| awk '/=>/ { print $3 }' 		| sort -u 		| xargs -r dpkg-query -S 		| cut -d: -f1 		| sort -u 		| xargs -rt apt-mark manual; 		apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 	rm -rf /var/lib/apt/lists/*
-# Sat, 05 Oct 2019 05:37:20 GMT
+# Fri, 18 Oct 2019 06:25:57 GMT
 RUN { 		echo 'opcache.memory_consumption=128'; 		echo 'opcache.interned_strings_buffer=8'; 		echo 'opcache.max_accelerated_files=4000'; 		echo 'opcache.revalidate_freq=60'; 		echo 'opcache.fast_shutdown=1'; 	} > /usr/local/etc/php/conf.d/opcache-recommended.ini
-# Sat, 05 Oct 2019 05:37:20 GMT
+# Fri, 18 Oct 2019 06:25:57 GMT
 WORKDIR /var/www/html
-# Sat, 05 Oct 2019 05:41:51 GMT
+# Fri, 18 Oct 2019 06:27:25 GMT
 ENV DRUPAL_VERSION=8.6.17
-# Sat, 05 Oct 2019 05:41:52 GMT
+# Fri, 18 Oct 2019 06:27:25 GMT
 ENV DRUPAL_MD5=9018a2d11381aeb0e269ca696fed9ac5
-# Sat, 05 Oct 2019 05:42:06 GMT
+# Fri, 18 Oct 2019 06:27:31 GMT
 RUN set -eux; 	curl -fSL "https://ftp.drupal.org/files/projects/drupal-${DRUPAL_VERSION}.tar.gz" -o drupal.tar.gz; 	echo "${DRUPAL_MD5} *drupal.tar.gz" | md5sum -c -; 	tar -xz --strip-components=1 -f drupal.tar.gz; 	rm drupal.tar.gz; 	chown -R www-data:www-data sites modules themes
 ```
 
 -	Layers:
-	-	`sha256:8f91359f1fffbf32b24ca854fb263d88a222371f38e90cf4583c5742cfdc3039`  
-		Last Modified: Wed, 11 Sep 2019 23:34:50 GMT  
-		Size: 22.5 MB (22510654 bytes)  
+	-	`sha256:80369df487363e56aea88d4d41b61f1607fc2ec198e9327cfde36a5346c71bf2`  
+		Last Modified: Wed, 16 Oct 2019 23:35:19 GMT  
+		Size: 22.5 MB (22524636 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:bf2faaedf741a44c5457bc029621724b7f316482f99de58522e1b659ddc8fd99`  
-		Last Modified: Thu, 12 Sep 2019 13:15:25 GMT  
-		Size: 225.0 B  
+	-	`sha256:60e80cb3f70356b666135b9d9acc19345b74bf7feedb2b6ac494dd6d224b8574`  
+		Last Modified: Thu, 17 Oct 2019 17:20:16 GMT  
+		Size: 226.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:24cd1299a53e525f85fdd79c524463ec6b6569df13c6af402ca0f706ad89c28b`  
-		Last Modified: Thu, 12 Sep 2019 13:15:49 GMT  
-		Size: 67.5 MB (67450331 bytes)  
+	-	`sha256:e3b2450987de138dcaf9f09559f25a8b2cd6ceaac8e28d858fdb73530d40f92e`  
+		Last Modified: Thu, 17 Oct 2019 17:20:33 GMT  
+		Size: 67.4 MB (67447849 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:17091cc665e4a0e967d00b8b36fcabb2b17d7bceba421f717f5d138063e22ad6`  
-		Last Modified: Thu, 12 Sep 2019 13:15:25 GMT  
-		Size: 237.0 B  
+	-	`sha256:c413b7377c2f336391745613272b75d32b6f52110d5cf6bb28949ed2eea52906`  
+		Last Modified: Thu, 17 Oct 2019 17:20:16 GMT  
+		Size: 238.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:ac9365919f9b10c759648e7efa92752c1443400e4178d6411f5a458a90e09ca2`  
-		Last Modified: Thu, 12 Sep 2019 13:16:08 GMT  
-		Size: 17.1 MB (17125603 bytes)  
+	-	`sha256:6dd9eff17a14f4fd1ad899a27f318151a4b2fa2d935cb85307637563d6973d17`  
+		Last Modified: Thu, 17 Oct 2019 17:20:46 GMT  
+		Size: 17.1 MB (17125324 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:4f1b34e209eee27994691cd890ca1422857bc1c2c166a700049ae0af84d6fb2a`  
-		Last Modified: Thu, 12 Sep 2019 13:16:02 GMT  
-		Size: 431.0 B  
+	-	`sha256:5126e57aff9b8bc91dfaa6885060a8b4cd41887d4a85621d5778c2ec6c660f2a`  
+		Last Modified: Thu, 17 Oct 2019 17:20:43 GMT  
+		Size: 437.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:832757fa04a4aea3b2f6e686cf9741254a6a03855e86b603417b6d3ce6c0038f`  
-		Last Modified: Thu, 12 Sep 2019 13:16:02 GMT  
-		Size: 487.0 B  
+	-	`sha256:943df09926ea3a42f821bbdfd1d3112e72b5da0fbc6761b35b50da5570cfb438`  
+		Last Modified: Thu, 17 Oct 2019 17:20:43 GMT  
+		Size: 490.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:640a8cc59ee46638b569b4797bc4a773e22ff83223d1d94620047e7acdf4f121`  
-		Last Modified: Fri, 27 Sep 2019 01:26:12 GMT  
-		Size: 12.4 MB (12435253 bytes)  
+	-	`sha256:9945a6d6fd51d29053a01e7362f98478704156cb0344028887de5de27b56f8cd`  
+		Last Modified: Thu, 17 Oct 2019 17:20:43 GMT  
+		Size: 12.4 MB (12435307 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:375d45a647bd866c4211aeda97b2b5bedb12dc76350eb92cdbcd172943efbf37`  
-		Last Modified: Fri, 27 Sep 2019 01:26:09 GMT  
+	-	`sha256:975035f5a785ddf7bea6b46a40a2beae1617b991dd4965bb2632ce819c0ebae4`  
+		Last Modified: Thu, 17 Oct 2019 17:20:42 GMT  
 		Size: 501.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:699f6141932e10e137db5a06352130c87535007fc4d71d0d21cf5204db76d728`  
-		Last Modified: Sat, 05 Oct 2019 03:49:47 GMT  
-		Size: 15.4 MB (15395755 bytes)  
+	-	`sha256:561abe18d8c31cf78ff6f1569ed5e894ccabfae65dd247928b73ca194c455f7a`  
+		Last Modified: Thu, 17 Oct 2019 17:20:45 GMT  
+		Size: 13.8 MB (13806779 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:be6c200d07db998ed59695b4d5635fadfcc871f2a0dd2ce5ed45e83ad94bfe5c`  
-		Last Modified: Sat, 05 Oct 2019 03:49:41 GMT  
-		Size: 2.2 KB (2223 bytes)  
+	-	`sha256:ecfae1d03a560507c8358c1dd3b5ea4d85df3274f721c12d1f5bf2f4f846a84c`  
+		Last Modified: Thu, 17 Oct 2019 17:20:42 GMT  
+		Size: 2.2 KB (2225 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c5a9afabd1a71f323e7c4c48a4bf311e19637c1dcfdd8e56930b318010c7a322`  
-		Last Modified: Sat, 05 Oct 2019 03:49:42 GMT  
-		Size: 259.0 B  
+	-	`sha256:69a47ac39f697f9eb8a508965dcd3b51d3365b5e3625aa08085f02866fb1531d`  
+		Last Modified: Thu, 17 Oct 2019 17:20:41 GMT  
+		Size: 261.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:f517a6395f969bd01b32606233e12344abd854953769c7fcced6d776964aac74`  
-		Last Modified: Sat, 05 Oct 2019 03:49:42 GMT  
-		Size: 901.0 B  
+	-	`sha256:4b0bd7b07f693ddfca86b3f94a7eb7f7d56d2f0d7d8b96b80ad7f3b438173b29`  
+		Last Modified: Thu, 17 Oct 2019 17:20:41 GMT  
+		Size: 905.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:4834256bfafcc2acba5ce5afc6eca80c529b1fd74620511b5ff32d99cc63c61f`  
-		Last Modified: Sat, 05 Oct 2019 05:49:42 GMT  
-		Size: 1.6 MB (1594511 bytes)  
+	-	`sha256:cbbcd711c9961e0745e2348424d92efce8a7c76228be39b3897db99c6c6120d8`  
+		Last Modified: Fri, 18 Oct 2019 06:30:30 GMT  
+		Size: 1.6 MB (1594259 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:658398927ac0c2d9570ced0232f6c98915b6bc254e4eb8654c20082a71484a82`  
-		Last Modified: Sat, 05 Oct 2019 05:49:41 GMT  
-		Size: 339.0 B  
+	-	`sha256:fab086cdefa2ad6d5c4ba0ef31daddc017cc3d10f842a3c1ad81cefa482e0de4`  
+		Last Modified: Fri, 18 Oct 2019 06:30:30 GMT  
+		Size: 340.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:f7e9fdc84ee21bd457cae7fe15e31d02970b2f2d30aae8fd6d26d548f72682ca`  
-		Last Modified: Sat, 05 Oct 2019 05:50:52 GMT  
-		Size: 17.3 MB (17265824 bytes)  
+	-	`sha256:4c7f968913ef116b13cb82c4253467e99e88c5314b0add2ece52e7406a2b48b8`  
+		Last Modified: Fri, 18 Oct 2019 06:31:01 GMT  
+		Size: 17.3 MB (17265808 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `drupal:8.6` - linux; arm variant v5
@@ -9152,7 +9152,7 @@ RUN set -eux; 	curl -fSL "https://ftp.drupal.org/files/projects/drupal-${DRUPAL_
 ## `drupal:8.6.17`
 
 ```console
-$ docker pull drupal@sha256:8b95871cbd97a166f5318435e0c3417f5723a52b10a36178879ed5c045d8ae14
+$ docker pull drupal@sha256:a999607b19389e4ea1e89459c517e768ecc95faa51ac97269961ff002ff54aae
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -9167,160 +9167,160 @@ $ docker pull drupal@sha256:8b95871cbd97a166f5318435e0c3417f5723a52b10a36178879e
 ### `drupal:8.6.17` - linux; amd64
 
 ```console
-$ docker pull drupal@sha256:95f519f1442a07e110c6872f2dbebc85f2e04b3146388f862f2ba30856c68bf0
+$ docker pull drupal@sha256:6459371bf24349b1fffe56e8765297360da0f73c34ca640127f8792e101bada8
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **153.8 MB (153783534 bytes)**  
+-	Total Size: **152.2 MB (152205585 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:10b1e07a7ef9849b378b764ac51b2d849ae1a2b4f57b73e817ed5badae3e2e13`
+-	Image ID: `sha256:12578b75bad59006bff5bb63447c4369e33d968280972766e235b6e019da1403`
 -	Entrypoint: `["docker-php-entrypoint"]`
 -	Default Command: `["apache2-foreground"]`
 
 ```dockerfile
-# Wed, 11 Sep 2019 23:27:46 GMT
-ADD file:e82c447c3eae5d1d0282d8557b0c271b29d1be0d0f23204a09ad468be7a80d8c in / 
-# Wed, 11 Sep 2019 23:27:47 GMT
+# Wed, 16 Oct 2019 23:29:18 GMT
+ADD file:37512e59e7c324f9ec5b01628ef87efee73d2092cfe97d05ca949dc3528e4c2a in / 
+# Wed, 16 Oct 2019 23:29:19 GMT
 CMD ["bash"]
-# Thu, 12 Sep 2019 10:35:06 GMT
+# Thu, 17 Oct 2019 15:19:17 GMT
 RUN set -eux; 	{ 		echo 'Package: php*'; 		echo 'Pin: release *'; 		echo 'Pin-Priority: -1'; 	} > /etc/apt/preferences.d/no-debian-php
-# Thu, 12 Sep 2019 10:35:06 GMT
+# Thu, 17 Oct 2019 15:19:17 GMT
 ENV PHPIZE_DEPS=autoconf 		dpkg-dev 		file 		g++ 		gcc 		libc-dev 		make 		pkg-config 		re2c
-# Thu, 12 Sep 2019 10:35:36 GMT
+# Thu, 17 Oct 2019 15:19:56 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		$PHPIZE_DEPS 		ca-certificates 		curl 		xz-utils 	; 	rm -rf /var/lib/apt/lists/*
-# Thu, 12 Sep 2019 10:35:36 GMT
+# Thu, 17 Oct 2019 15:19:57 GMT
 ENV PHP_INI_DIR=/usr/local/etc/php
-# Thu, 12 Sep 2019 10:35:37 GMT
+# Thu, 17 Oct 2019 15:19:58 GMT
 RUN set -eux; 	mkdir -p "$PHP_INI_DIR/conf.d"; 	[ ! -d /var/www/html ]; 	mkdir -p /var/www/html; 	chown www-data:www-data /var/www/html; 	chmod 777 /var/www/html
-# Thu, 12 Sep 2019 10:44:55 GMT
+# Thu, 17 Oct 2019 15:27:50 GMT
 ENV APACHE_CONFDIR=/etc/apache2
-# Thu, 12 Sep 2019 10:44:55 GMT
+# Thu, 17 Oct 2019 15:27:50 GMT
 ENV APACHE_ENVVARS=/etc/apache2/envvars
-# Thu, 12 Sep 2019 10:45:06 GMT
+# Thu, 17 Oct 2019 15:28:01 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends apache2; 	rm -rf /var/lib/apt/lists/*; 		sed -ri 's/^export ([^=]+)=(.*)$/: ${\1:=\2}\nexport \1/' "$APACHE_ENVVARS"; 		. "$APACHE_ENVVARS"; 	for dir in 		"$APACHE_LOCK_DIR" 		"$APACHE_RUN_DIR" 		"$APACHE_LOG_DIR" 	; do 		rm -rvf "$dir"; 		mkdir -p "$dir"; 		chown "$APACHE_RUN_USER:$APACHE_RUN_GROUP" "$dir"; 		chmod 777 "$dir"; 	done; 		rm -rvf /var/www/html/*; 		ln -sfT /dev/stderr "$APACHE_LOG_DIR/error.log"; 	ln -sfT /dev/stdout "$APACHE_LOG_DIR/access.log"; 	ln -sfT /dev/stdout "$APACHE_LOG_DIR/other_vhosts_access.log"; 	chown -R --no-dereference "$APACHE_RUN_USER:$APACHE_RUN_GROUP" "$APACHE_LOG_DIR"
-# Thu, 12 Sep 2019 10:45:07 GMT
+# Thu, 17 Oct 2019 15:28:03 GMT
 RUN a2dismod mpm_event && a2enmod mpm_prefork
-# Thu, 12 Sep 2019 10:45:08 GMT
+# Thu, 17 Oct 2019 15:28:04 GMT
 RUN { 		echo '<FilesMatch \.php$>'; 		echo '\tSetHandler application/x-httpd-php'; 		echo '</FilesMatch>'; 		echo; 		echo 'DirectoryIndex disabled'; 		echo 'DirectoryIndex index.php index.html'; 		echo; 		echo '<Directory /var/www/>'; 		echo '\tOptions -Indexes'; 		echo '\tAllowOverride All'; 		echo '</Directory>'; 	} | tee "$APACHE_CONFDIR/conf-available/docker-php.conf" 	&& a2enconf docker-php
-# Thu, 12 Sep 2019 10:45:08 GMT
+# Thu, 17 Oct 2019 15:28:04 GMT
 ENV PHP_EXTRA_BUILD_DEPS=apache2-dev
-# Thu, 12 Sep 2019 10:45:08 GMT
+# Thu, 17 Oct 2019 15:28:05 GMT
 ENV PHP_EXTRA_CONFIGURE_ARGS=--with-apxs2 --disable-cgi
-# Thu, 12 Sep 2019 10:45:08 GMT
+# Thu, 17 Oct 2019 15:28:05 GMT
 ENV PHP_CFLAGS=-fstack-protector-strong -fpic -fpie -O2
-# Thu, 12 Sep 2019 10:45:08 GMT
+# Thu, 17 Oct 2019 15:28:05 GMT
 ENV PHP_CPPFLAGS=-fstack-protector-strong -fpic -fpie -O2
-# Thu, 12 Sep 2019 10:45:08 GMT
+# Thu, 17 Oct 2019 15:28:05 GMT
 ENV PHP_LDFLAGS=-Wl,-O1 -Wl,--hash-style=both -pie
-# Thu, 12 Sep 2019 10:45:09 GMT
+# Thu, 17 Oct 2019 15:28:06 GMT
 ENV GPG_KEYS=CBAF69F173A0FEA4B537F470D66C9593118BCCB6 F38252826ACD957EF380D39F2F7956BC5DA04B5D
-# Thu, 26 Sep 2019 21:50:18 GMT
+# Thu, 17 Oct 2019 15:28:06 GMT
 ENV PHP_VERSION=7.3.10
-# Thu, 26 Sep 2019 21:50:18 GMT
+# Thu, 17 Oct 2019 15:28:06 GMT
 ENV PHP_URL=https://www.php.net/get/php-7.3.10.tar.xz/from/this/mirror PHP_ASC_URL=https://www.php.net/get/php-7.3.10.tar.xz.asc/from/this/mirror
-# Thu, 26 Sep 2019 21:50:18 GMT
+# Thu, 17 Oct 2019 15:28:07 GMT
 ENV PHP_SHA256=42f00a15419e05771734b7159c8d39d639b8a5a6770413adfa2615f6f923d906 PHP_MD5=
-# Thu, 26 Sep 2019 21:50:30 GMT
+# Thu, 17 Oct 2019 15:28:20 GMT
 RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends gnupg dirmngr; 	rm -rf /var/lib/apt/lists/*; 		mkdir -p /usr/src; 	cd /usr/src; 		curl -fsSL -o php.tar.xz "$PHP_URL"; 		if [ -n "$PHP_SHA256" ]; then 		echo "$PHP_SHA256 *php.tar.xz" | sha256sum -c -; 	fi; 	if [ -n "$PHP_MD5" ]; then 		echo "$PHP_MD5 *php.tar.xz" | md5sum -c -; 	fi; 		if [ -n "$PHP_ASC_URL" ]; then 		curl -fsSL -o php.tar.xz.asc "$PHP_ASC_URL"; 		export GNUPGHOME="$(mktemp -d)"; 		for key in $GPG_KEYS; do 			gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys "$key"; 		done; 		gpg --batch --verify php.tar.xz.asc php.tar.xz; 		gpgconf --kill all; 		rm -rf "$GNUPGHOME"; 	fi; 		apt-mark auto '.*' > /dev/null; 	apt-mark manual $savedAptMark > /dev/null; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false
-# Thu, 26 Sep 2019 21:50:30 GMT
+# Thu, 17 Oct 2019 15:28:20 GMT
 COPY file:ce57c04b70896f77cc11eb2766417d8a1240fcffe5bba92179ec78c458844110 in /usr/local/bin/ 
-# Fri, 04 Oct 2019 23:00:02 GMT
+# Thu, 17 Oct 2019 15:32:23 GMT
 RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	sed -e 's/stretch/buster/g' /etc/apt/sources.list > /etc/apt/sources.list.d/buster.list; 	{ 		echo 'Package: *'; 		echo 'Pin: release n=buster'; 		echo 'Pin-Priority: -10'; 		echo; 		echo 'Package: libargon2*'; 		echo 'Pin: release n=buster'; 		echo 'Pin-Priority: 990'; 	} > /etc/apt/preferences.d/argon2-buster; 	apt-get update; 	apt-get install -y --no-install-recommends 		libargon2-dev 		libcurl4-openssl-dev 		libedit-dev 		libsodium-dev 		libsqlite3-dev 		libssl-dev 		libxml2-dev 		zlib1g-dev 		${PHP_EXTRA_BUILD_DEPS:-} 	; 	rm -rf /var/lib/apt/lists/*; 		export 		CFLAGS="$PHP_CFLAGS" 		CPPFLAGS="$PHP_CPPFLAGS" 		LDFLAGS="$PHP_LDFLAGS" 	; 	docker-php-source extract; 	cd /usr/src/php; 	gnuArch="$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)"; 	debMultiarch="$(dpkg-architecture --query DEB_BUILD_MULTIARCH)"; 	if [ ! -d /usr/include/curl ]; then 		ln -sT "/usr/include/$debMultiarch/curl" /usr/local/include/curl; 	fi; 	./configure 		--build="$gnuArch" 		--with-config-file-path="$PHP_INI_DIR" 		--with-config-file-scan-dir="$PHP_INI_DIR/conf.d" 				--enable-option-checking=fatal 				--with-mhash 				--enable-ftp 		--enable-mbstring 		--enable-mysqlnd 		--with-password-argon2 		--with-sodium=shared 		--with-pdo-sqlite=/usr 		--with-sqlite3=/usr 				--with-curl 		--with-libedit 		--with-openssl 		--with-zlib 				$(test "$gnuArch" = 's390x-linux-gnu' && echo '--without-pcre-jit') 		--with-libdir="lib/$debMultiarch" 				${PHP_EXTRA_CONFIGURE_ARGS:-} 	; 	make -j "$(nproc)"; 	find -type f -name '*.a' -delete; 	make install; 	find /usr/local/bin /usr/local/sbin -type f -executable -exec strip --strip-all '{}' + || true; 	make clean; 		cp -v php.ini-* "$PHP_INI_DIR/"; 		cd /; 	docker-php-source delete; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark; 	find /usr/local -type f -executable -exec ldd '{}' ';' 		| awk '/=>/ { print $(NF-1) }' 		| sort -u 		| xargs -r dpkg-query --search 		| cut -d: -f1 		| sort -u 		| xargs -r apt-mark manual 	; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 		pecl update-channels; 	rm -rf /tmp/pear ~/.pearrc; 	php --version
-# Fri, 04 Oct 2019 23:00:02 GMT
+# Thu, 17 Oct 2019 15:32:24 GMT
 COPY multi:99e4ad617c6193834e78d12470f6dde09f70f4d40463009c5724954902e60676 in /usr/local/bin/ 
-# Fri, 04 Oct 2019 23:00:04 GMT
+# Thu, 17 Oct 2019 15:32:25 GMT
 RUN docker-php-ext-enable sodium
-# Fri, 04 Oct 2019 23:00:04 GMT
+# Thu, 17 Oct 2019 15:32:25 GMT
 ENTRYPOINT ["docker-php-entrypoint"]
-# Fri, 04 Oct 2019 23:00:04 GMT
+# Thu, 17 Oct 2019 15:32:25 GMT
 STOPSIGNAL WINCH
-# Fri, 04 Oct 2019 23:00:05 GMT
+# Thu, 17 Oct 2019 15:32:25 GMT
 COPY file:e3123fcb6566efa979f945bfac1c94c854a559d7b82723e42118882a8ac4de66 in /usr/local/bin/ 
-# Fri, 04 Oct 2019 23:00:05 GMT
+# Thu, 17 Oct 2019 15:32:25 GMT
 WORKDIR /var/www/html
-# Fri, 04 Oct 2019 23:00:05 GMT
+# Thu, 17 Oct 2019 15:32:26 GMT
 EXPOSE 80
-# Fri, 04 Oct 2019 23:00:05 GMT
+# Thu, 17 Oct 2019 15:32:26 GMT
 CMD ["apache2-foreground"]
-# Sat, 05 Oct 2019 05:37:18 GMT
+# Fri, 18 Oct 2019 06:25:57 GMT
 RUN set -eux; 		if command -v a2enmod; then 		a2enmod rewrite; 	fi; 		savedAptMark="$(apt-mark showmanual)"; 		apt-get update; 	apt-get install -y --no-install-recommends 		libfreetype6-dev 		libjpeg-dev 		libpng-dev 		libpq-dev 		libzip-dev 	; 		docker-php-ext-configure gd 		--with-freetype-dir=/usr 		--with-jpeg-dir=/usr 		--with-png-dir=/usr 	; 		docker-php-ext-install -j "$(nproc)" 		gd 		opcache 		pdo_mysql 		pdo_pgsql 		zip 	; 		apt-mark auto '.*' > /dev/null; 	apt-mark manual $savedAptMark; 	ldd "$(php -r 'echo ini_get("extension_dir");')"/*.so 		| awk '/=>/ { print $3 }' 		| sort -u 		| xargs -r dpkg-query -S 		| cut -d: -f1 		| sort -u 		| xargs -rt apt-mark manual; 		apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 	rm -rf /var/lib/apt/lists/*
-# Sat, 05 Oct 2019 05:37:20 GMT
+# Fri, 18 Oct 2019 06:25:57 GMT
 RUN { 		echo 'opcache.memory_consumption=128'; 		echo 'opcache.interned_strings_buffer=8'; 		echo 'opcache.max_accelerated_files=4000'; 		echo 'opcache.revalidate_freq=60'; 		echo 'opcache.fast_shutdown=1'; 	} > /usr/local/etc/php/conf.d/opcache-recommended.ini
-# Sat, 05 Oct 2019 05:37:20 GMT
+# Fri, 18 Oct 2019 06:25:57 GMT
 WORKDIR /var/www/html
-# Sat, 05 Oct 2019 05:41:51 GMT
+# Fri, 18 Oct 2019 06:27:25 GMT
 ENV DRUPAL_VERSION=8.6.17
-# Sat, 05 Oct 2019 05:41:52 GMT
+# Fri, 18 Oct 2019 06:27:25 GMT
 ENV DRUPAL_MD5=9018a2d11381aeb0e269ca696fed9ac5
-# Sat, 05 Oct 2019 05:42:06 GMT
+# Fri, 18 Oct 2019 06:27:31 GMT
 RUN set -eux; 	curl -fSL "https://ftp.drupal.org/files/projects/drupal-${DRUPAL_VERSION}.tar.gz" -o drupal.tar.gz; 	echo "${DRUPAL_MD5} *drupal.tar.gz" | md5sum -c -; 	tar -xz --strip-components=1 -f drupal.tar.gz; 	rm drupal.tar.gz; 	chown -R www-data:www-data sites modules themes
 ```
 
 -	Layers:
-	-	`sha256:8f91359f1fffbf32b24ca854fb263d88a222371f38e90cf4583c5742cfdc3039`  
-		Last Modified: Wed, 11 Sep 2019 23:34:50 GMT  
-		Size: 22.5 MB (22510654 bytes)  
+	-	`sha256:80369df487363e56aea88d4d41b61f1607fc2ec198e9327cfde36a5346c71bf2`  
+		Last Modified: Wed, 16 Oct 2019 23:35:19 GMT  
+		Size: 22.5 MB (22524636 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:bf2faaedf741a44c5457bc029621724b7f316482f99de58522e1b659ddc8fd99`  
-		Last Modified: Thu, 12 Sep 2019 13:15:25 GMT  
-		Size: 225.0 B  
+	-	`sha256:60e80cb3f70356b666135b9d9acc19345b74bf7feedb2b6ac494dd6d224b8574`  
+		Last Modified: Thu, 17 Oct 2019 17:20:16 GMT  
+		Size: 226.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:24cd1299a53e525f85fdd79c524463ec6b6569df13c6af402ca0f706ad89c28b`  
-		Last Modified: Thu, 12 Sep 2019 13:15:49 GMT  
-		Size: 67.5 MB (67450331 bytes)  
+	-	`sha256:e3b2450987de138dcaf9f09559f25a8b2cd6ceaac8e28d858fdb73530d40f92e`  
+		Last Modified: Thu, 17 Oct 2019 17:20:33 GMT  
+		Size: 67.4 MB (67447849 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:17091cc665e4a0e967d00b8b36fcabb2b17d7bceba421f717f5d138063e22ad6`  
-		Last Modified: Thu, 12 Sep 2019 13:15:25 GMT  
-		Size: 237.0 B  
+	-	`sha256:c413b7377c2f336391745613272b75d32b6f52110d5cf6bb28949ed2eea52906`  
+		Last Modified: Thu, 17 Oct 2019 17:20:16 GMT  
+		Size: 238.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:ac9365919f9b10c759648e7efa92752c1443400e4178d6411f5a458a90e09ca2`  
-		Last Modified: Thu, 12 Sep 2019 13:16:08 GMT  
-		Size: 17.1 MB (17125603 bytes)  
+	-	`sha256:6dd9eff17a14f4fd1ad899a27f318151a4b2fa2d935cb85307637563d6973d17`  
+		Last Modified: Thu, 17 Oct 2019 17:20:46 GMT  
+		Size: 17.1 MB (17125324 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:4f1b34e209eee27994691cd890ca1422857bc1c2c166a700049ae0af84d6fb2a`  
-		Last Modified: Thu, 12 Sep 2019 13:16:02 GMT  
-		Size: 431.0 B  
+	-	`sha256:5126e57aff9b8bc91dfaa6885060a8b4cd41887d4a85621d5778c2ec6c660f2a`  
+		Last Modified: Thu, 17 Oct 2019 17:20:43 GMT  
+		Size: 437.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:832757fa04a4aea3b2f6e686cf9741254a6a03855e86b603417b6d3ce6c0038f`  
-		Last Modified: Thu, 12 Sep 2019 13:16:02 GMT  
-		Size: 487.0 B  
+	-	`sha256:943df09926ea3a42f821bbdfd1d3112e72b5da0fbc6761b35b50da5570cfb438`  
+		Last Modified: Thu, 17 Oct 2019 17:20:43 GMT  
+		Size: 490.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:640a8cc59ee46638b569b4797bc4a773e22ff83223d1d94620047e7acdf4f121`  
-		Last Modified: Fri, 27 Sep 2019 01:26:12 GMT  
-		Size: 12.4 MB (12435253 bytes)  
+	-	`sha256:9945a6d6fd51d29053a01e7362f98478704156cb0344028887de5de27b56f8cd`  
+		Last Modified: Thu, 17 Oct 2019 17:20:43 GMT  
+		Size: 12.4 MB (12435307 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:375d45a647bd866c4211aeda97b2b5bedb12dc76350eb92cdbcd172943efbf37`  
-		Last Modified: Fri, 27 Sep 2019 01:26:09 GMT  
+	-	`sha256:975035f5a785ddf7bea6b46a40a2beae1617b991dd4965bb2632ce819c0ebae4`  
+		Last Modified: Thu, 17 Oct 2019 17:20:42 GMT  
 		Size: 501.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:699f6141932e10e137db5a06352130c87535007fc4d71d0d21cf5204db76d728`  
-		Last Modified: Sat, 05 Oct 2019 03:49:47 GMT  
-		Size: 15.4 MB (15395755 bytes)  
+	-	`sha256:561abe18d8c31cf78ff6f1569ed5e894ccabfae65dd247928b73ca194c455f7a`  
+		Last Modified: Thu, 17 Oct 2019 17:20:45 GMT  
+		Size: 13.8 MB (13806779 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:be6c200d07db998ed59695b4d5635fadfcc871f2a0dd2ce5ed45e83ad94bfe5c`  
-		Last Modified: Sat, 05 Oct 2019 03:49:41 GMT  
-		Size: 2.2 KB (2223 bytes)  
+	-	`sha256:ecfae1d03a560507c8358c1dd3b5ea4d85df3274f721c12d1f5bf2f4f846a84c`  
+		Last Modified: Thu, 17 Oct 2019 17:20:42 GMT  
+		Size: 2.2 KB (2225 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c5a9afabd1a71f323e7c4c48a4bf311e19637c1dcfdd8e56930b318010c7a322`  
-		Last Modified: Sat, 05 Oct 2019 03:49:42 GMT  
-		Size: 259.0 B  
+	-	`sha256:69a47ac39f697f9eb8a508965dcd3b51d3365b5e3625aa08085f02866fb1531d`  
+		Last Modified: Thu, 17 Oct 2019 17:20:41 GMT  
+		Size: 261.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:f517a6395f969bd01b32606233e12344abd854953769c7fcced6d776964aac74`  
-		Last Modified: Sat, 05 Oct 2019 03:49:42 GMT  
-		Size: 901.0 B  
+	-	`sha256:4b0bd7b07f693ddfca86b3f94a7eb7f7d56d2f0d7d8b96b80ad7f3b438173b29`  
+		Last Modified: Thu, 17 Oct 2019 17:20:41 GMT  
+		Size: 905.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:4834256bfafcc2acba5ce5afc6eca80c529b1fd74620511b5ff32d99cc63c61f`  
-		Last Modified: Sat, 05 Oct 2019 05:49:42 GMT  
-		Size: 1.6 MB (1594511 bytes)  
+	-	`sha256:cbbcd711c9961e0745e2348424d92efce8a7c76228be39b3897db99c6c6120d8`  
+		Last Modified: Fri, 18 Oct 2019 06:30:30 GMT  
+		Size: 1.6 MB (1594259 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:658398927ac0c2d9570ced0232f6c98915b6bc254e4eb8654c20082a71484a82`  
-		Last Modified: Sat, 05 Oct 2019 05:49:41 GMT  
-		Size: 339.0 B  
+	-	`sha256:fab086cdefa2ad6d5c4ba0ef31daddc017cc3d10f842a3c1ad81cefa482e0de4`  
+		Last Modified: Fri, 18 Oct 2019 06:30:30 GMT  
+		Size: 340.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:f7e9fdc84ee21bd457cae7fe15e31d02970b2f2d30aae8fd6d26d548f72682ca`  
-		Last Modified: Sat, 05 Oct 2019 05:50:52 GMT  
-		Size: 17.3 MB (17265824 bytes)  
+	-	`sha256:4c7f968913ef116b13cb82c4253467e99e88c5314b0add2ece52e7406a2b48b8`  
+		Last Modified: Fri, 18 Oct 2019 06:31:01 GMT  
+		Size: 17.3 MB (17265808 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `drupal:8.6.17` - linux; arm variant v5
@@ -10121,7 +10121,7 @@ RUN set -eux; 	curl -fSL "https://ftp.drupal.org/files/projects/drupal-${DRUPAL_
 ## `drupal:8.6.17-apache`
 
 ```console
-$ docker pull drupal@sha256:8b95871cbd97a166f5318435e0c3417f5723a52b10a36178879ed5c045d8ae14
+$ docker pull drupal@sha256:a999607b19389e4ea1e89459c517e768ecc95faa51ac97269961ff002ff54aae
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -10136,160 +10136,160 @@ $ docker pull drupal@sha256:8b95871cbd97a166f5318435e0c3417f5723a52b10a36178879e
 ### `drupal:8.6.17-apache` - linux; amd64
 
 ```console
-$ docker pull drupal@sha256:95f519f1442a07e110c6872f2dbebc85f2e04b3146388f862f2ba30856c68bf0
+$ docker pull drupal@sha256:6459371bf24349b1fffe56e8765297360da0f73c34ca640127f8792e101bada8
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **153.8 MB (153783534 bytes)**  
+-	Total Size: **152.2 MB (152205585 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:10b1e07a7ef9849b378b764ac51b2d849ae1a2b4f57b73e817ed5badae3e2e13`
+-	Image ID: `sha256:12578b75bad59006bff5bb63447c4369e33d968280972766e235b6e019da1403`
 -	Entrypoint: `["docker-php-entrypoint"]`
 -	Default Command: `["apache2-foreground"]`
 
 ```dockerfile
-# Wed, 11 Sep 2019 23:27:46 GMT
-ADD file:e82c447c3eae5d1d0282d8557b0c271b29d1be0d0f23204a09ad468be7a80d8c in / 
-# Wed, 11 Sep 2019 23:27:47 GMT
+# Wed, 16 Oct 2019 23:29:18 GMT
+ADD file:37512e59e7c324f9ec5b01628ef87efee73d2092cfe97d05ca949dc3528e4c2a in / 
+# Wed, 16 Oct 2019 23:29:19 GMT
 CMD ["bash"]
-# Thu, 12 Sep 2019 10:35:06 GMT
+# Thu, 17 Oct 2019 15:19:17 GMT
 RUN set -eux; 	{ 		echo 'Package: php*'; 		echo 'Pin: release *'; 		echo 'Pin-Priority: -1'; 	} > /etc/apt/preferences.d/no-debian-php
-# Thu, 12 Sep 2019 10:35:06 GMT
+# Thu, 17 Oct 2019 15:19:17 GMT
 ENV PHPIZE_DEPS=autoconf 		dpkg-dev 		file 		g++ 		gcc 		libc-dev 		make 		pkg-config 		re2c
-# Thu, 12 Sep 2019 10:35:36 GMT
+# Thu, 17 Oct 2019 15:19:56 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		$PHPIZE_DEPS 		ca-certificates 		curl 		xz-utils 	; 	rm -rf /var/lib/apt/lists/*
-# Thu, 12 Sep 2019 10:35:36 GMT
+# Thu, 17 Oct 2019 15:19:57 GMT
 ENV PHP_INI_DIR=/usr/local/etc/php
-# Thu, 12 Sep 2019 10:35:37 GMT
+# Thu, 17 Oct 2019 15:19:58 GMT
 RUN set -eux; 	mkdir -p "$PHP_INI_DIR/conf.d"; 	[ ! -d /var/www/html ]; 	mkdir -p /var/www/html; 	chown www-data:www-data /var/www/html; 	chmod 777 /var/www/html
-# Thu, 12 Sep 2019 10:44:55 GMT
+# Thu, 17 Oct 2019 15:27:50 GMT
 ENV APACHE_CONFDIR=/etc/apache2
-# Thu, 12 Sep 2019 10:44:55 GMT
+# Thu, 17 Oct 2019 15:27:50 GMT
 ENV APACHE_ENVVARS=/etc/apache2/envvars
-# Thu, 12 Sep 2019 10:45:06 GMT
+# Thu, 17 Oct 2019 15:28:01 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends apache2; 	rm -rf /var/lib/apt/lists/*; 		sed -ri 's/^export ([^=]+)=(.*)$/: ${\1:=\2}\nexport \1/' "$APACHE_ENVVARS"; 		. "$APACHE_ENVVARS"; 	for dir in 		"$APACHE_LOCK_DIR" 		"$APACHE_RUN_DIR" 		"$APACHE_LOG_DIR" 	; do 		rm -rvf "$dir"; 		mkdir -p "$dir"; 		chown "$APACHE_RUN_USER:$APACHE_RUN_GROUP" "$dir"; 		chmod 777 "$dir"; 	done; 		rm -rvf /var/www/html/*; 		ln -sfT /dev/stderr "$APACHE_LOG_DIR/error.log"; 	ln -sfT /dev/stdout "$APACHE_LOG_DIR/access.log"; 	ln -sfT /dev/stdout "$APACHE_LOG_DIR/other_vhosts_access.log"; 	chown -R --no-dereference "$APACHE_RUN_USER:$APACHE_RUN_GROUP" "$APACHE_LOG_DIR"
-# Thu, 12 Sep 2019 10:45:07 GMT
+# Thu, 17 Oct 2019 15:28:03 GMT
 RUN a2dismod mpm_event && a2enmod mpm_prefork
-# Thu, 12 Sep 2019 10:45:08 GMT
+# Thu, 17 Oct 2019 15:28:04 GMT
 RUN { 		echo '<FilesMatch \.php$>'; 		echo '\tSetHandler application/x-httpd-php'; 		echo '</FilesMatch>'; 		echo; 		echo 'DirectoryIndex disabled'; 		echo 'DirectoryIndex index.php index.html'; 		echo; 		echo '<Directory /var/www/>'; 		echo '\tOptions -Indexes'; 		echo '\tAllowOverride All'; 		echo '</Directory>'; 	} | tee "$APACHE_CONFDIR/conf-available/docker-php.conf" 	&& a2enconf docker-php
-# Thu, 12 Sep 2019 10:45:08 GMT
+# Thu, 17 Oct 2019 15:28:04 GMT
 ENV PHP_EXTRA_BUILD_DEPS=apache2-dev
-# Thu, 12 Sep 2019 10:45:08 GMT
+# Thu, 17 Oct 2019 15:28:05 GMT
 ENV PHP_EXTRA_CONFIGURE_ARGS=--with-apxs2 --disable-cgi
-# Thu, 12 Sep 2019 10:45:08 GMT
+# Thu, 17 Oct 2019 15:28:05 GMT
 ENV PHP_CFLAGS=-fstack-protector-strong -fpic -fpie -O2
-# Thu, 12 Sep 2019 10:45:08 GMT
+# Thu, 17 Oct 2019 15:28:05 GMT
 ENV PHP_CPPFLAGS=-fstack-protector-strong -fpic -fpie -O2
-# Thu, 12 Sep 2019 10:45:08 GMT
+# Thu, 17 Oct 2019 15:28:05 GMT
 ENV PHP_LDFLAGS=-Wl,-O1 -Wl,--hash-style=both -pie
-# Thu, 12 Sep 2019 10:45:09 GMT
+# Thu, 17 Oct 2019 15:28:06 GMT
 ENV GPG_KEYS=CBAF69F173A0FEA4B537F470D66C9593118BCCB6 F38252826ACD957EF380D39F2F7956BC5DA04B5D
-# Thu, 26 Sep 2019 21:50:18 GMT
+# Thu, 17 Oct 2019 15:28:06 GMT
 ENV PHP_VERSION=7.3.10
-# Thu, 26 Sep 2019 21:50:18 GMT
+# Thu, 17 Oct 2019 15:28:06 GMT
 ENV PHP_URL=https://www.php.net/get/php-7.3.10.tar.xz/from/this/mirror PHP_ASC_URL=https://www.php.net/get/php-7.3.10.tar.xz.asc/from/this/mirror
-# Thu, 26 Sep 2019 21:50:18 GMT
+# Thu, 17 Oct 2019 15:28:07 GMT
 ENV PHP_SHA256=42f00a15419e05771734b7159c8d39d639b8a5a6770413adfa2615f6f923d906 PHP_MD5=
-# Thu, 26 Sep 2019 21:50:30 GMT
+# Thu, 17 Oct 2019 15:28:20 GMT
 RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends gnupg dirmngr; 	rm -rf /var/lib/apt/lists/*; 		mkdir -p /usr/src; 	cd /usr/src; 		curl -fsSL -o php.tar.xz "$PHP_URL"; 		if [ -n "$PHP_SHA256" ]; then 		echo "$PHP_SHA256 *php.tar.xz" | sha256sum -c -; 	fi; 	if [ -n "$PHP_MD5" ]; then 		echo "$PHP_MD5 *php.tar.xz" | md5sum -c -; 	fi; 		if [ -n "$PHP_ASC_URL" ]; then 		curl -fsSL -o php.tar.xz.asc "$PHP_ASC_URL"; 		export GNUPGHOME="$(mktemp -d)"; 		for key in $GPG_KEYS; do 			gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys "$key"; 		done; 		gpg --batch --verify php.tar.xz.asc php.tar.xz; 		gpgconf --kill all; 		rm -rf "$GNUPGHOME"; 	fi; 		apt-mark auto '.*' > /dev/null; 	apt-mark manual $savedAptMark > /dev/null; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false
-# Thu, 26 Sep 2019 21:50:30 GMT
+# Thu, 17 Oct 2019 15:28:20 GMT
 COPY file:ce57c04b70896f77cc11eb2766417d8a1240fcffe5bba92179ec78c458844110 in /usr/local/bin/ 
-# Fri, 04 Oct 2019 23:00:02 GMT
+# Thu, 17 Oct 2019 15:32:23 GMT
 RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	sed -e 's/stretch/buster/g' /etc/apt/sources.list > /etc/apt/sources.list.d/buster.list; 	{ 		echo 'Package: *'; 		echo 'Pin: release n=buster'; 		echo 'Pin-Priority: -10'; 		echo; 		echo 'Package: libargon2*'; 		echo 'Pin: release n=buster'; 		echo 'Pin-Priority: 990'; 	} > /etc/apt/preferences.d/argon2-buster; 	apt-get update; 	apt-get install -y --no-install-recommends 		libargon2-dev 		libcurl4-openssl-dev 		libedit-dev 		libsodium-dev 		libsqlite3-dev 		libssl-dev 		libxml2-dev 		zlib1g-dev 		${PHP_EXTRA_BUILD_DEPS:-} 	; 	rm -rf /var/lib/apt/lists/*; 		export 		CFLAGS="$PHP_CFLAGS" 		CPPFLAGS="$PHP_CPPFLAGS" 		LDFLAGS="$PHP_LDFLAGS" 	; 	docker-php-source extract; 	cd /usr/src/php; 	gnuArch="$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)"; 	debMultiarch="$(dpkg-architecture --query DEB_BUILD_MULTIARCH)"; 	if [ ! -d /usr/include/curl ]; then 		ln -sT "/usr/include/$debMultiarch/curl" /usr/local/include/curl; 	fi; 	./configure 		--build="$gnuArch" 		--with-config-file-path="$PHP_INI_DIR" 		--with-config-file-scan-dir="$PHP_INI_DIR/conf.d" 				--enable-option-checking=fatal 				--with-mhash 				--enable-ftp 		--enable-mbstring 		--enable-mysqlnd 		--with-password-argon2 		--with-sodium=shared 		--with-pdo-sqlite=/usr 		--with-sqlite3=/usr 				--with-curl 		--with-libedit 		--with-openssl 		--with-zlib 				$(test "$gnuArch" = 's390x-linux-gnu' && echo '--without-pcre-jit') 		--with-libdir="lib/$debMultiarch" 				${PHP_EXTRA_CONFIGURE_ARGS:-} 	; 	make -j "$(nproc)"; 	find -type f -name '*.a' -delete; 	make install; 	find /usr/local/bin /usr/local/sbin -type f -executable -exec strip --strip-all '{}' + || true; 	make clean; 		cp -v php.ini-* "$PHP_INI_DIR/"; 		cd /; 	docker-php-source delete; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark; 	find /usr/local -type f -executable -exec ldd '{}' ';' 		| awk '/=>/ { print $(NF-1) }' 		| sort -u 		| xargs -r dpkg-query --search 		| cut -d: -f1 		| sort -u 		| xargs -r apt-mark manual 	; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 		pecl update-channels; 	rm -rf /tmp/pear ~/.pearrc; 	php --version
-# Fri, 04 Oct 2019 23:00:02 GMT
+# Thu, 17 Oct 2019 15:32:24 GMT
 COPY multi:99e4ad617c6193834e78d12470f6dde09f70f4d40463009c5724954902e60676 in /usr/local/bin/ 
-# Fri, 04 Oct 2019 23:00:04 GMT
+# Thu, 17 Oct 2019 15:32:25 GMT
 RUN docker-php-ext-enable sodium
-# Fri, 04 Oct 2019 23:00:04 GMT
+# Thu, 17 Oct 2019 15:32:25 GMT
 ENTRYPOINT ["docker-php-entrypoint"]
-# Fri, 04 Oct 2019 23:00:04 GMT
+# Thu, 17 Oct 2019 15:32:25 GMT
 STOPSIGNAL WINCH
-# Fri, 04 Oct 2019 23:00:05 GMT
+# Thu, 17 Oct 2019 15:32:25 GMT
 COPY file:e3123fcb6566efa979f945bfac1c94c854a559d7b82723e42118882a8ac4de66 in /usr/local/bin/ 
-# Fri, 04 Oct 2019 23:00:05 GMT
+# Thu, 17 Oct 2019 15:32:25 GMT
 WORKDIR /var/www/html
-# Fri, 04 Oct 2019 23:00:05 GMT
+# Thu, 17 Oct 2019 15:32:26 GMT
 EXPOSE 80
-# Fri, 04 Oct 2019 23:00:05 GMT
+# Thu, 17 Oct 2019 15:32:26 GMT
 CMD ["apache2-foreground"]
-# Sat, 05 Oct 2019 05:37:18 GMT
+# Fri, 18 Oct 2019 06:25:57 GMT
 RUN set -eux; 		if command -v a2enmod; then 		a2enmod rewrite; 	fi; 		savedAptMark="$(apt-mark showmanual)"; 		apt-get update; 	apt-get install -y --no-install-recommends 		libfreetype6-dev 		libjpeg-dev 		libpng-dev 		libpq-dev 		libzip-dev 	; 		docker-php-ext-configure gd 		--with-freetype-dir=/usr 		--with-jpeg-dir=/usr 		--with-png-dir=/usr 	; 		docker-php-ext-install -j "$(nproc)" 		gd 		opcache 		pdo_mysql 		pdo_pgsql 		zip 	; 		apt-mark auto '.*' > /dev/null; 	apt-mark manual $savedAptMark; 	ldd "$(php -r 'echo ini_get("extension_dir");')"/*.so 		| awk '/=>/ { print $3 }' 		| sort -u 		| xargs -r dpkg-query -S 		| cut -d: -f1 		| sort -u 		| xargs -rt apt-mark manual; 		apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 	rm -rf /var/lib/apt/lists/*
-# Sat, 05 Oct 2019 05:37:20 GMT
+# Fri, 18 Oct 2019 06:25:57 GMT
 RUN { 		echo 'opcache.memory_consumption=128'; 		echo 'opcache.interned_strings_buffer=8'; 		echo 'opcache.max_accelerated_files=4000'; 		echo 'opcache.revalidate_freq=60'; 		echo 'opcache.fast_shutdown=1'; 	} > /usr/local/etc/php/conf.d/opcache-recommended.ini
-# Sat, 05 Oct 2019 05:37:20 GMT
+# Fri, 18 Oct 2019 06:25:57 GMT
 WORKDIR /var/www/html
-# Sat, 05 Oct 2019 05:41:51 GMT
+# Fri, 18 Oct 2019 06:27:25 GMT
 ENV DRUPAL_VERSION=8.6.17
-# Sat, 05 Oct 2019 05:41:52 GMT
+# Fri, 18 Oct 2019 06:27:25 GMT
 ENV DRUPAL_MD5=9018a2d11381aeb0e269ca696fed9ac5
-# Sat, 05 Oct 2019 05:42:06 GMT
+# Fri, 18 Oct 2019 06:27:31 GMT
 RUN set -eux; 	curl -fSL "https://ftp.drupal.org/files/projects/drupal-${DRUPAL_VERSION}.tar.gz" -o drupal.tar.gz; 	echo "${DRUPAL_MD5} *drupal.tar.gz" | md5sum -c -; 	tar -xz --strip-components=1 -f drupal.tar.gz; 	rm drupal.tar.gz; 	chown -R www-data:www-data sites modules themes
 ```
 
 -	Layers:
-	-	`sha256:8f91359f1fffbf32b24ca854fb263d88a222371f38e90cf4583c5742cfdc3039`  
-		Last Modified: Wed, 11 Sep 2019 23:34:50 GMT  
-		Size: 22.5 MB (22510654 bytes)  
+	-	`sha256:80369df487363e56aea88d4d41b61f1607fc2ec198e9327cfde36a5346c71bf2`  
+		Last Modified: Wed, 16 Oct 2019 23:35:19 GMT  
+		Size: 22.5 MB (22524636 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:bf2faaedf741a44c5457bc029621724b7f316482f99de58522e1b659ddc8fd99`  
-		Last Modified: Thu, 12 Sep 2019 13:15:25 GMT  
-		Size: 225.0 B  
+	-	`sha256:60e80cb3f70356b666135b9d9acc19345b74bf7feedb2b6ac494dd6d224b8574`  
+		Last Modified: Thu, 17 Oct 2019 17:20:16 GMT  
+		Size: 226.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:24cd1299a53e525f85fdd79c524463ec6b6569df13c6af402ca0f706ad89c28b`  
-		Last Modified: Thu, 12 Sep 2019 13:15:49 GMT  
-		Size: 67.5 MB (67450331 bytes)  
+	-	`sha256:e3b2450987de138dcaf9f09559f25a8b2cd6ceaac8e28d858fdb73530d40f92e`  
+		Last Modified: Thu, 17 Oct 2019 17:20:33 GMT  
+		Size: 67.4 MB (67447849 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:17091cc665e4a0e967d00b8b36fcabb2b17d7bceba421f717f5d138063e22ad6`  
-		Last Modified: Thu, 12 Sep 2019 13:15:25 GMT  
-		Size: 237.0 B  
+	-	`sha256:c413b7377c2f336391745613272b75d32b6f52110d5cf6bb28949ed2eea52906`  
+		Last Modified: Thu, 17 Oct 2019 17:20:16 GMT  
+		Size: 238.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:ac9365919f9b10c759648e7efa92752c1443400e4178d6411f5a458a90e09ca2`  
-		Last Modified: Thu, 12 Sep 2019 13:16:08 GMT  
-		Size: 17.1 MB (17125603 bytes)  
+	-	`sha256:6dd9eff17a14f4fd1ad899a27f318151a4b2fa2d935cb85307637563d6973d17`  
+		Last Modified: Thu, 17 Oct 2019 17:20:46 GMT  
+		Size: 17.1 MB (17125324 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:4f1b34e209eee27994691cd890ca1422857bc1c2c166a700049ae0af84d6fb2a`  
-		Last Modified: Thu, 12 Sep 2019 13:16:02 GMT  
-		Size: 431.0 B  
+	-	`sha256:5126e57aff9b8bc91dfaa6885060a8b4cd41887d4a85621d5778c2ec6c660f2a`  
+		Last Modified: Thu, 17 Oct 2019 17:20:43 GMT  
+		Size: 437.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:832757fa04a4aea3b2f6e686cf9741254a6a03855e86b603417b6d3ce6c0038f`  
-		Last Modified: Thu, 12 Sep 2019 13:16:02 GMT  
-		Size: 487.0 B  
+	-	`sha256:943df09926ea3a42f821bbdfd1d3112e72b5da0fbc6761b35b50da5570cfb438`  
+		Last Modified: Thu, 17 Oct 2019 17:20:43 GMT  
+		Size: 490.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:640a8cc59ee46638b569b4797bc4a773e22ff83223d1d94620047e7acdf4f121`  
-		Last Modified: Fri, 27 Sep 2019 01:26:12 GMT  
-		Size: 12.4 MB (12435253 bytes)  
+	-	`sha256:9945a6d6fd51d29053a01e7362f98478704156cb0344028887de5de27b56f8cd`  
+		Last Modified: Thu, 17 Oct 2019 17:20:43 GMT  
+		Size: 12.4 MB (12435307 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:375d45a647bd866c4211aeda97b2b5bedb12dc76350eb92cdbcd172943efbf37`  
-		Last Modified: Fri, 27 Sep 2019 01:26:09 GMT  
+	-	`sha256:975035f5a785ddf7bea6b46a40a2beae1617b991dd4965bb2632ce819c0ebae4`  
+		Last Modified: Thu, 17 Oct 2019 17:20:42 GMT  
 		Size: 501.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:699f6141932e10e137db5a06352130c87535007fc4d71d0d21cf5204db76d728`  
-		Last Modified: Sat, 05 Oct 2019 03:49:47 GMT  
-		Size: 15.4 MB (15395755 bytes)  
+	-	`sha256:561abe18d8c31cf78ff6f1569ed5e894ccabfae65dd247928b73ca194c455f7a`  
+		Last Modified: Thu, 17 Oct 2019 17:20:45 GMT  
+		Size: 13.8 MB (13806779 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:be6c200d07db998ed59695b4d5635fadfcc871f2a0dd2ce5ed45e83ad94bfe5c`  
-		Last Modified: Sat, 05 Oct 2019 03:49:41 GMT  
-		Size: 2.2 KB (2223 bytes)  
+	-	`sha256:ecfae1d03a560507c8358c1dd3b5ea4d85df3274f721c12d1f5bf2f4f846a84c`  
+		Last Modified: Thu, 17 Oct 2019 17:20:42 GMT  
+		Size: 2.2 KB (2225 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c5a9afabd1a71f323e7c4c48a4bf311e19637c1dcfdd8e56930b318010c7a322`  
-		Last Modified: Sat, 05 Oct 2019 03:49:42 GMT  
-		Size: 259.0 B  
+	-	`sha256:69a47ac39f697f9eb8a508965dcd3b51d3365b5e3625aa08085f02866fb1531d`  
+		Last Modified: Thu, 17 Oct 2019 17:20:41 GMT  
+		Size: 261.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:f517a6395f969bd01b32606233e12344abd854953769c7fcced6d776964aac74`  
-		Last Modified: Sat, 05 Oct 2019 03:49:42 GMT  
-		Size: 901.0 B  
+	-	`sha256:4b0bd7b07f693ddfca86b3f94a7eb7f7d56d2f0d7d8b96b80ad7f3b438173b29`  
+		Last Modified: Thu, 17 Oct 2019 17:20:41 GMT  
+		Size: 905.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:4834256bfafcc2acba5ce5afc6eca80c529b1fd74620511b5ff32d99cc63c61f`  
-		Last Modified: Sat, 05 Oct 2019 05:49:42 GMT  
-		Size: 1.6 MB (1594511 bytes)  
+	-	`sha256:cbbcd711c9961e0745e2348424d92efce8a7c76228be39b3897db99c6c6120d8`  
+		Last Modified: Fri, 18 Oct 2019 06:30:30 GMT  
+		Size: 1.6 MB (1594259 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:658398927ac0c2d9570ced0232f6c98915b6bc254e4eb8654c20082a71484a82`  
-		Last Modified: Sat, 05 Oct 2019 05:49:41 GMT  
-		Size: 339.0 B  
+	-	`sha256:fab086cdefa2ad6d5c4ba0ef31daddc017cc3d10f842a3c1ad81cefa482e0de4`  
+		Last Modified: Fri, 18 Oct 2019 06:30:30 GMT  
+		Size: 340.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:f7e9fdc84ee21bd457cae7fe15e31d02970b2f2d30aae8fd6d26d548f72682ca`  
-		Last Modified: Sat, 05 Oct 2019 05:50:52 GMT  
-		Size: 17.3 MB (17265824 bytes)  
+	-	`sha256:4c7f968913ef116b13cb82c4253467e99e88c5314b0add2ece52e7406a2b48b8`  
+		Last Modified: Fri, 18 Oct 2019 06:31:01 GMT  
+		Size: 17.3 MB (17265808 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `drupal:8.6.17-apache` - linux; arm variant v5
@@ -11090,7 +11090,7 @@ RUN set -eux; 	curl -fSL "https://ftp.drupal.org/files/projects/drupal-${DRUPAL_
 ## `drupal:8.6.17-fpm`
 
 ```console
-$ docker pull drupal@sha256:cbee4ccc1883c678d22702a545d67251404812b4396316c9e6b33312f118fb96
+$ docker pull drupal@sha256:18ffdf89f19682121d740f0e16ec49578ec0cd2e5c9dcbe7e33cceae66873585
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -11105,136 +11105,136 @@ $ docker pull drupal@sha256:cbee4ccc1883c678d22702a545d67251404812b4396316c9e6b3
 ### `drupal:8.6.17-fpm` - linux; amd64
 
 ```console
-$ docker pull drupal@sha256:164ba44b76dce4dad18e0c5510de56fe6e34034d1ecc61f18e17fe260f15090f
+$ docker pull drupal@sha256:8512aa5b1f4e63d7ba67bcfb1c3fc0c25cb25c1e0e6a182003195a7d0f30fd91
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **150.5 MB (150513117 bytes)**  
+-	Total Size: **148.9 MB (148851329 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:0e875bce02c7fb7af82c4c9276f96f833a79a40f0d994939359c8e76c4aa56d0`
+-	Image ID: `sha256:1847935f940a697acff7e1d1e3737549375ed6b2417ef58a225c49eaec9b5d1a`
 -	Entrypoint: `["docker-php-entrypoint"]`
 -	Default Command: `["php-fpm"]`
 
 ```dockerfile
-# Wed, 11 Sep 2019 23:27:46 GMT
-ADD file:e82c447c3eae5d1d0282d8557b0c271b29d1be0d0f23204a09ad468be7a80d8c in / 
-# Wed, 11 Sep 2019 23:27:47 GMT
+# Wed, 16 Oct 2019 23:29:18 GMT
+ADD file:37512e59e7c324f9ec5b01628ef87efee73d2092cfe97d05ca949dc3528e4c2a in / 
+# Wed, 16 Oct 2019 23:29:19 GMT
 CMD ["bash"]
-# Thu, 12 Sep 2019 10:35:06 GMT
+# Thu, 17 Oct 2019 15:19:17 GMT
 RUN set -eux; 	{ 		echo 'Package: php*'; 		echo 'Pin: release *'; 		echo 'Pin-Priority: -1'; 	} > /etc/apt/preferences.d/no-debian-php
-# Thu, 12 Sep 2019 10:35:06 GMT
+# Thu, 17 Oct 2019 15:19:17 GMT
 ENV PHPIZE_DEPS=autoconf 		dpkg-dev 		file 		g++ 		gcc 		libc-dev 		make 		pkg-config 		re2c
-# Thu, 12 Sep 2019 10:35:36 GMT
+# Thu, 17 Oct 2019 15:19:56 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		$PHPIZE_DEPS 		ca-certificates 		curl 		xz-utils 	; 	rm -rf /var/lib/apt/lists/*
-# Thu, 12 Sep 2019 10:35:36 GMT
+# Thu, 17 Oct 2019 15:19:57 GMT
 ENV PHP_INI_DIR=/usr/local/etc/php
-# Thu, 12 Sep 2019 10:35:37 GMT
+# Thu, 17 Oct 2019 15:19:58 GMT
 RUN set -eux; 	mkdir -p "$PHP_INI_DIR/conf.d"; 	[ ! -d /var/www/html ]; 	mkdir -p /var/www/html; 	chown www-data:www-data /var/www/html; 	chmod 777 /var/www/html
-# Thu, 12 Sep 2019 10:51:13 GMT
+# Thu, 17 Oct 2019 15:32:36 GMT
 ENV PHP_EXTRA_CONFIGURE_ARGS=--enable-fpm --with-fpm-user=www-data --with-fpm-group=www-data --disable-cgi
-# Thu, 12 Sep 2019 10:51:13 GMT
+# Thu, 17 Oct 2019 15:32:36 GMT
 ENV PHP_CFLAGS=-fstack-protector-strong -fpic -fpie -O2
-# Thu, 12 Sep 2019 10:51:13 GMT
+# Thu, 17 Oct 2019 15:32:36 GMT
 ENV PHP_CPPFLAGS=-fstack-protector-strong -fpic -fpie -O2
-# Thu, 12 Sep 2019 10:51:14 GMT
+# Thu, 17 Oct 2019 15:32:36 GMT
 ENV PHP_LDFLAGS=-Wl,-O1 -Wl,--hash-style=both -pie
-# Thu, 12 Sep 2019 10:51:14 GMT
+# Thu, 17 Oct 2019 15:32:37 GMT
 ENV GPG_KEYS=CBAF69F173A0FEA4B537F470D66C9593118BCCB6 F38252826ACD957EF380D39F2F7956BC5DA04B5D
-# Thu, 26 Sep 2019 21:55:51 GMT
+# Thu, 17 Oct 2019 15:32:37 GMT
 ENV PHP_VERSION=7.3.10
-# Thu, 26 Sep 2019 21:55:52 GMT
+# Thu, 17 Oct 2019 15:32:37 GMT
 ENV PHP_URL=https://www.php.net/get/php-7.3.10.tar.xz/from/this/mirror PHP_ASC_URL=https://www.php.net/get/php-7.3.10.tar.xz.asc/from/this/mirror
-# Thu, 26 Sep 2019 21:55:52 GMT
+# Thu, 17 Oct 2019 15:32:37 GMT
 ENV PHP_SHA256=42f00a15419e05771734b7159c8d39d639b8a5a6770413adfa2615f6f923d906 PHP_MD5=
-# Thu, 26 Sep 2019 21:56:04 GMT
+# Thu, 17 Oct 2019 15:32:46 GMT
 RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends gnupg dirmngr; 	rm -rf /var/lib/apt/lists/*; 		mkdir -p /usr/src; 	cd /usr/src; 		curl -fsSL -o php.tar.xz "$PHP_URL"; 		if [ -n "$PHP_SHA256" ]; then 		echo "$PHP_SHA256 *php.tar.xz" | sha256sum -c -; 	fi; 	if [ -n "$PHP_MD5" ]; then 		echo "$PHP_MD5 *php.tar.xz" | md5sum -c -; 	fi; 		if [ -n "$PHP_ASC_URL" ]; then 		curl -fsSL -o php.tar.xz.asc "$PHP_ASC_URL"; 		export GNUPGHOME="$(mktemp -d)"; 		for key in $GPG_KEYS; do 			gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys "$key"; 		done; 		gpg --batch --verify php.tar.xz.asc php.tar.xz; 		gpgconf --kill all; 		rm -rf "$GNUPGHOME"; 	fi; 		apt-mark auto '.*' > /dev/null; 	apt-mark manual $savedAptMark > /dev/null; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false
-# Thu, 26 Sep 2019 21:56:05 GMT
+# Thu, 17 Oct 2019 15:32:46 GMT
 COPY file:ce57c04b70896f77cc11eb2766417d8a1240fcffe5bba92179ec78c458844110 in /usr/local/bin/ 
-# Fri, 04 Oct 2019 23:08:24 GMT
+# Thu, 17 Oct 2019 15:39:24 GMT
 RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	sed -e 's/stretch/buster/g' /etc/apt/sources.list > /etc/apt/sources.list.d/buster.list; 	{ 		echo 'Package: *'; 		echo 'Pin: release n=buster'; 		echo 'Pin-Priority: -10'; 		echo; 		echo 'Package: libargon2*'; 		echo 'Pin: release n=buster'; 		echo 'Pin-Priority: 990'; 	} > /etc/apt/preferences.d/argon2-buster; 	apt-get update; 	apt-get install -y --no-install-recommends 		libargon2-dev 		libcurl4-openssl-dev 		libedit-dev 		libsodium-dev 		libsqlite3-dev 		libssl-dev 		libxml2-dev 		zlib1g-dev 		${PHP_EXTRA_BUILD_DEPS:-} 	; 	rm -rf /var/lib/apt/lists/*; 		export 		CFLAGS="$PHP_CFLAGS" 		CPPFLAGS="$PHP_CPPFLAGS" 		LDFLAGS="$PHP_LDFLAGS" 	; 	docker-php-source extract; 	cd /usr/src/php; 	gnuArch="$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)"; 	debMultiarch="$(dpkg-architecture --query DEB_BUILD_MULTIARCH)"; 	if [ ! -d /usr/include/curl ]; then 		ln -sT "/usr/include/$debMultiarch/curl" /usr/local/include/curl; 	fi; 	./configure 		--build="$gnuArch" 		--with-config-file-path="$PHP_INI_DIR" 		--with-config-file-scan-dir="$PHP_INI_DIR/conf.d" 				--enable-option-checking=fatal 				--with-mhash 				--enable-ftp 		--enable-mbstring 		--enable-mysqlnd 		--with-password-argon2 		--with-sodium=shared 		--with-pdo-sqlite=/usr 		--with-sqlite3=/usr 				--with-curl 		--with-libedit 		--with-openssl 		--with-zlib 				$(test "$gnuArch" = 's390x-linux-gnu' && echo '--without-pcre-jit') 		--with-libdir="lib/$debMultiarch" 				${PHP_EXTRA_CONFIGURE_ARGS:-} 	; 	make -j "$(nproc)"; 	find -type f -name '*.a' -delete; 	make install; 	find /usr/local/bin /usr/local/sbin -type f -executable -exec strip --strip-all '{}' + || true; 	make clean; 		cp -v php.ini-* "$PHP_INI_DIR/"; 		cd /; 	docker-php-source delete; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark; 	find /usr/local -type f -executable -exec ldd '{}' ';' 		| awk '/=>/ { print $(NF-1) }' 		| sort -u 		| xargs -r dpkg-query --search 		| cut -d: -f1 		| sort -u 		| xargs -r apt-mark manual 	; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 		pecl update-channels; 	rm -rf /tmp/pear ~/.pearrc; 	php --version
-# Fri, 04 Oct 2019 23:08:24 GMT
+# Thu, 17 Oct 2019 15:39:24 GMT
 COPY multi:c1ff99c7805e8f41fdb0717f754884884ce2157d746a82343d7c737c86ded761 in /usr/local/bin/ 
-# Fri, 04 Oct 2019 23:08:26 GMT
+# Thu, 17 Oct 2019 15:39:25 GMT
 RUN docker-php-ext-enable sodium
-# Fri, 04 Oct 2019 23:08:26 GMT
+# Thu, 17 Oct 2019 15:39:25 GMT
 ENTRYPOINT ["docker-php-entrypoint"]
-# Fri, 04 Oct 2019 23:08:26 GMT
+# Thu, 17 Oct 2019 15:39:25 GMT
 WORKDIR /var/www/html
-# Fri, 04 Oct 2019 23:08:27 GMT
+# Thu, 17 Oct 2019 15:39:26 GMT
 RUN set -eux; 	cd /usr/local/etc; 	if [ -d php-fpm.d ]; then 		sed 's!=NONE/!=!g' php-fpm.conf.default | tee php-fpm.conf > /dev/null; 		cp php-fpm.d/www.conf.default php-fpm.d/www.conf; 	else 		mkdir php-fpm.d; 		cp php-fpm.conf.default php-fpm.d/www.conf; 		{ 			echo '[global]'; 			echo 'include=etc/php-fpm.d/*.conf'; 		} | tee php-fpm.conf; 	fi; 	{ 		echo '[global]'; 		echo 'error_log = /proc/self/fd/2'; 		echo; echo '; https://github.com/docker-library/php/pull/725#issuecomment-443540114'; echo 'log_limit = 8192'; 		echo; 		echo '[www]'; 		echo '; if we send this to /proc/self/fd/1, it never appears'; 		echo 'access.log = /proc/self/fd/2'; 		echo; 		echo 'clear_env = no'; 		echo; 		echo '; Ensure worker stdout and stderr are sent to the main error log.'; 		echo 'catch_workers_output = yes'; 		echo 'decorate_workers_output = no'; 	} | tee php-fpm.d/docker.conf; 	{ 		echo '[global]'; 		echo 'daemonize = no'; 		echo; 		echo '[www]'; 		echo 'listen = 9000'; 	} | tee php-fpm.d/zz-docker.conf
-# Fri, 04 Oct 2019 23:08:28 GMT
+# Thu, 17 Oct 2019 15:39:26 GMT
 STOPSIGNAL SIGQUIT
-# Fri, 04 Oct 2019 23:08:28 GMT
+# Thu, 17 Oct 2019 15:39:26 GMT
 EXPOSE 9000
-# Fri, 04 Oct 2019 23:08:28 GMT
+# Thu, 17 Oct 2019 15:39:27 GMT
 CMD ["php-fpm"]
-# Sat, 05 Oct 2019 05:39:32 GMT
+# Fri, 18 Oct 2019 06:27:08 GMT
 RUN set -eux; 		if command -v a2enmod; then 		a2enmod rewrite; 	fi; 		savedAptMark="$(apt-mark showmanual)"; 		apt-get update; 	apt-get install -y --no-install-recommends 		libfreetype6-dev 		libjpeg-dev 		libpng-dev 		libpq-dev 		libzip-dev 	; 		docker-php-ext-configure gd 		--with-freetype-dir=/usr 		--with-jpeg-dir=/usr 		--with-png-dir=/usr 	; 		docker-php-ext-install -j "$(nproc)" 		gd 		opcache 		pdo_mysql 		pdo_pgsql 		zip 	; 		apt-mark auto '.*' > /dev/null; 	apt-mark manual $savedAptMark; 	ldd "$(php -r 'echo ini_get("extension_dir");')"/*.so 		| awk '/=>/ { print $3 }' 		| sort -u 		| xargs -r dpkg-query -S 		| cut -d: -f1 		| sort -u 		| xargs -rt apt-mark manual; 		apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 	rm -rf /var/lib/apt/lists/*
-# Sat, 05 Oct 2019 05:39:33 GMT
+# Fri, 18 Oct 2019 06:27:09 GMT
 RUN { 		echo 'opcache.memory_consumption=128'; 		echo 'opcache.interned_strings_buffer=8'; 		echo 'opcache.max_accelerated_files=4000'; 		echo 'opcache.revalidate_freq=60'; 		echo 'opcache.fast_shutdown=1'; 	} > /usr/local/etc/php/conf.d/opcache-recommended.ini
-# Sat, 05 Oct 2019 05:39:33 GMT
+# Fri, 18 Oct 2019 06:27:09 GMT
 WORKDIR /var/www/html
-# Sat, 05 Oct 2019 05:42:13 GMT
+# Fri, 18 Oct 2019 06:27:35 GMT
 ENV DRUPAL_VERSION=8.6.17
-# Sat, 05 Oct 2019 05:42:13 GMT
+# Fri, 18 Oct 2019 06:27:35 GMT
 ENV DRUPAL_MD5=9018a2d11381aeb0e269ca696fed9ac5
-# Sat, 05 Oct 2019 05:42:27 GMT
+# Fri, 18 Oct 2019 06:27:41 GMT
 RUN set -eux; 	curl -fSL "https://ftp.drupal.org/files/projects/drupal-${DRUPAL_VERSION}.tar.gz" -o drupal.tar.gz; 	echo "${DRUPAL_MD5} *drupal.tar.gz" | md5sum -c -; 	tar -xz --strip-components=1 -f drupal.tar.gz; 	rm drupal.tar.gz; 	chown -R www-data:www-data sites modules themes
 ```
 
 -	Layers:
-	-	`sha256:8f91359f1fffbf32b24ca854fb263d88a222371f38e90cf4583c5742cfdc3039`  
-		Last Modified: Wed, 11 Sep 2019 23:34:50 GMT  
-		Size: 22.5 MB (22510654 bytes)  
+	-	`sha256:80369df487363e56aea88d4d41b61f1607fc2ec198e9327cfde36a5346c71bf2`  
+		Last Modified: Wed, 16 Oct 2019 23:35:19 GMT  
+		Size: 22.5 MB (22524636 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:bf2faaedf741a44c5457bc029621724b7f316482f99de58522e1b659ddc8fd99`  
-		Last Modified: Thu, 12 Sep 2019 13:15:25 GMT  
-		Size: 225.0 B  
+	-	`sha256:60e80cb3f70356b666135b9d9acc19345b74bf7feedb2b6ac494dd6d224b8574`  
+		Last Modified: Thu, 17 Oct 2019 17:20:16 GMT  
+		Size: 226.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:24cd1299a53e525f85fdd79c524463ec6b6569df13c6af402ca0f706ad89c28b`  
-		Last Modified: Thu, 12 Sep 2019 13:15:49 GMT  
-		Size: 67.5 MB (67450331 bytes)  
+	-	`sha256:e3b2450987de138dcaf9f09559f25a8b2cd6ceaac8e28d858fdb73530d40f92e`  
+		Last Modified: Thu, 17 Oct 2019 17:20:33 GMT  
+		Size: 67.4 MB (67447849 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:17091cc665e4a0e967d00b8b36fcabb2b17d7bceba421f717f5d138063e22ad6`  
-		Last Modified: Thu, 12 Sep 2019 13:15:25 GMT  
-		Size: 237.0 B  
+	-	`sha256:c413b7377c2f336391745613272b75d32b6f52110d5cf6bb28949ed2eea52906`  
+		Last Modified: Thu, 17 Oct 2019 17:20:16 GMT  
+		Size: 238.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:8880c01fadaf626a1ac9c93de76f80b0a02b905c57d9f0365d4ac7c140f73e8c`  
-		Last Modified: Fri, 27 Sep 2019 01:26:22 GMT  
-		Size: 12.4 MB (12414280 bytes)  
+	-	`sha256:a4b596a71a07bc97264060cb0d57f0a891799939bd0e967d554d51545ada78be`  
+		Last Modified: Thu, 17 Oct 2019 17:20:58 GMT  
+		Size: 12.4 MB (12414267 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:d7c57fbcfc142a1709892e77f655b6d3bc3a360f3a53baa61f11532b82c8c515`  
-		Last Modified: Fri, 27 Sep 2019 01:26:20 GMT  
-		Size: 501.0 B  
+	-	`sha256:2cf73d873c0e64ef386aaa2a4d767e8926c300028add95393ca378292a310c35`  
+		Last Modified: Thu, 17 Oct 2019 17:20:58 GMT  
+		Size: 499.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:6892f4a86a2085651c3e09630b9bf14329145a52732afa800916109d2d9bd02f`  
-		Last Modified: Sat, 05 Oct 2019 03:50:12 GMT  
-		Size: 29.3 MB (29288310 bytes)  
+	-	`sha256:8e7b760badfbfbd3508bfd56e884f1a4c31e3ff00f630d4624139ec14e27eafe`  
+		Last Modified: Thu, 17 Oct 2019 17:20:58 GMT  
+		Size: 27.6 MB (27615254 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:22cf8b69eff81a1164b28f190d3b463fbbf520226b72995d0e4694e1739938f2`  
-		Last Modified: Sat, 05 Oct 2019 03:50:04 GMT  
-		Size: 2.2 KB (2220 bytes)  
+	-	`sha256:cbf349b24dffa2417c332e0bb55e2b980bcf46b3d7fbaa00fe87a08049c00b37`  
+		Last Modified: Thu, 17 Oct 2019 17:20:52 GMT  
+		Size: 2.2 KB (2217 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:ad2e7ee133845ff994982ea6b2f1c4004b526a57a802799a3c2112c6bb61403b`  
-		Last Modified: Sat, 05 Oct 2019 03:50:05 GMT  
+	-	`sha256:7c7f8431d945db36e6d726da1ce843ab4926b2674813197ebc4df8ef645e1fad`  
+		Last Modified: Thu, 17 Oct 2019 17:20:52 GMT  
 		Size: 258.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:24280bd5a9e9c27e015b3688cc4f6a0cad035125203e12bdb8bf032f5ac2157c`  
-		Last Modified: Sat, 05 Oct 2019 03:50:04 GMT  
-		Size: 8.3 KB (8287 bytes)  
+	-	`sha256:4158250e7cbb6afb6bad049e8f6c42837af7388056d517299036b15c1e985735`  
+		Last Modified: Thu, 17 Oct 2019 17:20:52 GMT  
+		Size: 8.3 KB (8282 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:bb8ba779b8dea8b1239cad15d567a2a08795231cf3f90db5b6a6994bbf1ce482`  
-		Last Modified: Sat, 05 Oct 2019 05:50:06 GMT  
-		Size: 1.6 MB (1571648 bytes)  
+	-	`sha256:3330fb06dfea77578c0b38bcd9ea770fcb018dccaad2e0e0e6126ea07c464b42`  
+		Last Modified: Fri, 18 Oct 2019 06:30:44 GMT  
+		Size: 1.6 MB (1571457 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:98637942b66d74c5fee0f05722ee152214d79356567bc25ae93b392d4f328711`  
-		Last Modified: Sat, 05 Oct 2019 05:50:06 GMT  
-		Size: 340.0 B  
+	-	`sha256:7b616380d0c6bbfd5a0f9dce7d63136cf3dac391a1171ec150ae05a5b211187a`  
+		Last Modified: Fri, 18 Oct 2019 06:30:44 GMT  
+		Size: 338.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:fc7d2fc476e42ef05f160a845ae0fedc163f99a7aa2a91ea3fab627963faf89b`  
-		Last Modified: Sat, 05 Oct 2019 05:51:09 GMT  
-		Size: 17.3 MB (17265826 bytes)  
+	-	`sha256:007e3923d65380e0fe9735d89f86a845f0447d6fff78701efe5812f968880192`  
+		Last Modified: Fri, 18 Oct 2019 06:31:12 GMT  
+		Size: 17.3 MB (17265808 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `drupal:8.6.17-fpm` - linux; arm variant v5
@@ -12740,7 +12740,7 @@ RUN set -eux; 	curl -fSL "https://ftp.drupal.org/files/projects/drupal-${DRUPAL_
 ## `drupal:8.6-apache`
 
 ```console
-$ docker pull drupal@sha256:8b95871cbd97a166f5318435e0c3417f5723a52b10a36178879ed5c045d8ae14
+$ docker pull drupal@sha256:a999607b19389e4ea1e89459c517e768ecc95faa51ac97269961ff002ff54aae
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -12755,160 +12755,160 @@ $ docker pull drupal@sha256:8b95871cbd97a166f5318435e0c3417f5723a52b10a36178879e
 ### `drupal:8.6-apache` - linux; amd64
 
 ```console
-$ docker pull drupal@sha256:95f519f1442a07e110c6872f2dbebc85f2e04b3146388f862f2ba30856c68bf0
+$ docker pull drupal@sha256:6459371bf24349b1fffe56e8765297360da0f73c34ca640127f8792e101bada8
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **153.8 MB (153783534 bytes)**  
+-	Total Size: **152.2 MB (152205585 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:10b1e07a7ef9849b378b764ac51b2d849ae1a2b4f57b73e817ed5badae3e2e13`
+-	Image ID: `sha256:12578b75bad59006bff5bb63447c4369e33d968280972766e235b6e019da1403`
 -	Entrypoint: `["docker-php-entrypoint"]`
 -	Default Command: `["apache2-foreground"]`
 
 ```dockerfile
-# Wed, 11 Sep 2019 23:27:46 GMT
-ADD file:e82c447c3eae5d1d0282d8557b0c271b29d1be0d0f23204a09ad468be7a80d8c in / 
-# Wed, 11 Sep 2019 23:27:47 GMT
+# Wed, 16 Oct 2019 23:29:18 GMT
+ADD file:37512e59e7c324f9ec5b01628ef87efee73d2092cfe97d05ca949dc3528e4c2a in / 
+# Wed, 16 Oct 2019 23:29:19 GMT
 CMD ["bash"]
-# Thu, 12 Sep 2019 10:35:06 GMT
+# Thu, 17 Oct 2019 15:19:17 GMT
 RUN set -eux; 	{ 		echo 'Package: php*'; 		echo 'Pin: release *'; 		echo 'Pin-Priority: -1'; 	} > /etc/apt/preferences.d/no-debian-php
-# Thu, 12 Sep 2019 10:35:06 GMT
+# Thu, 17 Oct 2019 15:19:17 GMT
 ENV PHPIZE_DEPS=autoconf 		dpkg-dev 		file 		g++ 		gcc 		libc-dev 		make 		pkg-config 		re2c
-# Thu, 12 Sep 2019 10:35:36 GMT
+# Thu, 17 Oct 2019 15:19:56 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		$PHPIZE_DEPS 		ca-certificates 		curl 		xz-utils 	; 	rm -rf /var/lib/apt/lists/*
-# Thu, 12 Sep 2019 10:35:36 GMT
+# Thu, 17 Oct 2019 15:19:57 GMT
 ENV PHP_INI_DIR=/usr/local/etc/php
-# Thu, 12 Sep 2019 10:35:37 GMT
+# Thu, 17 Oct 2019 15:19:58 GMT
 RUN set -eux; 	mkdir -p "$PHP_INI_DIR/conf.d"; 	[ ! -d /var/www/html ]; 	mkdir -p /var/www/html; 	chown www-data:www-data /var/www/html; 	chmod 777 /var/www/html
-# Thu, 12 Sep 2019 10:44:55 GMT
+# Thu, 17 Oct 2019 15:27:50 GMT
 ENV APACHE_CONFDIR=/etc/apache2
-# Thu, 12 Sep 2019 10:44:55 GMT
+# Thu, 17 Oct 2019 15:27:50 GMT
 ENV APACHE_ENVVARS=/etc/apache2/envvars
-# Thu, 12 Sep 2019 10:45:06 GMT
+# Thu, 17 Oct 2019 15:28:01 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends apache2; 	rm -rf /var/lib/apt/lists/*; 		sed -ri 's/^export ([^=]+)=(.*)$/: ${\1:=\2}\nexport \1/' "$APACHE_ENVVARS"; 		. "$APACHE_ENVVARS"; 	for dir in 		"$APACHE_LOCK_DIR" 		"$APACHE_RUN_DIR" 		"$APACHE_LOG_DIR" 	; do 		rm -rvf "$dir"; 		mkdir -p "$dir"; 		chown "$APACHE_RUN_USER:$APACHE_RUN_GROUP" "$dir"; 		chmod 777 "$dir"; 	done; 		rm -rvf /var/www/html/*; 		ln -sfT /dev/stderr "$APACHE_LOG_DIR/error.log"; 	ln -sfT /dev/stdout "$APACHE_LOG_DIR/access.log"; 	ln -sfT /dev/stdout "$APACHE_LOG_DIR/other_vhosts_access.log"; 	chown -R --no-dereference "$APACHE_RUN_USER:$APACHE_RUN_GROUP" "$APACHE_LOG_DIR"
-# Thu, 12 Sep 2019 10:45:07 GMT
+# Thu, 17 Oct 2019 15:28:03 GMT
 RUN a2dismod mpm_event && a2enmod mpm_prefork
-# Thu, 12 Sep 2019 10:45:08 GMT
+# Thu, 17 Oct 2019 15:28:04 GMT
 RUN { 		echo '<FilesMatch \.php$>'; 		echo '\tSetHandler application/x-httpd-php'; 		echo '</FilesMatch>'; 		echo; 		echo 'DirectoryIndex disabled'; 		echo 'DirectoryIndex index.php index.html'; 		echo; 		echo '<Directory /var/www/>'; 		echo '\tOptions -Indexes'; 		echo '\tAllowOverride All'; 		echo '</Directory>'; 	} | tee "$APACHE_CONFDIR/conf-available/docker-php.conf" 	&& a2enconf docker-php
-# Thu, 12 Sep 2019 10:45:08 GMT
+# Thu, 17 Oct 2019 15:28:04 GMT
 ENV PHP_EXTRA_BUILD_DEPS=apache2-dev
-# Thu, 12 Sep 2019 10:45:08 GMT
+# Thu, 17 Oct 2019 15:28:05 GMT
 ENV PHP_EXTRA_CONFIGURE_ARGS=--with-apxs2 --disable-cgi
-# Thu, 12 Sep 2019 10:45:08 GMT
+# Thu, 17 Oct 2019 15:28:05 GMT
 ENV PHP_CFLAGS=-fstack-protector-strong -fpic -fpie -O2
-# Thu, 12 Sep 2019 10:45:08 GMT
+# Thu, 17 Oct 2019 15:28:05 GMT
 ENV PHP_CPPFLAGS=-fstack-protector-strong -fpic -fpie -O2
-# Thu, 12 Sep 2019 10:45:08 GMT
+# Thu, 17 Oct 2019 15:28:05 GMT
 ENV PHP_LDFLAGS=-Wl,-O1 -Wl,--hash-style=both -pie
-# Thu, 12 Sep 2019 10:45:09 GMT
+# Thu, 17 Oct 2019 15:28:06 GMT
 ENV GPG_KEYS=CBAF69F173A0FEA4B537F470D66C9593118BCCB6 F38252826ACD957EF380D39F2F7956BC5DA04B5D
-# Thu, 26 Sep 2019 21:50:18 GMT
+# Thu, 17 Oct 2019 15:28:06 GMT
 ENV PHP_VERSION=7.3.10
-# Thu, 26 Sep 2019 21:50:18 GMT
+# Thu, 17 Oct 2019 15:28:06 GMT
 ENV PHP_URL=https://www.php.net/get/php-7.3.10.tar.xz/from/this/mirror PHP_ASC_URL=https://www.php.net/get/php-7.3.10.tar.xz.asc/from/this/mirror
-# Thu, 26 Sep 2019 21:50:18 GMT
+# Thu, 17 Oct 2019 15:28:07 GMT
 ENV PHP_SHA256=42f00a15419e05771734b7159c8d39d639b8a5a6770413adfa2615f6f923d906 PHP_MD5=
-# Thu, 26 Sep 2019 21:50:30 GMT
+# Thu, 17 Oct 2019 15:28:20 GMT
 RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends gnupg dirmngr; 	rm -rf /var/lib/apt/lists/*; 		mkdir -p /usr/src; 	cd /usr/src; 		curl -fsSL -o php.tar.xz "$PHP_URL"; 		if [ -n "$PHP_SHA256" ]; then 		echo "$PHP_SHA256 *php.tar.xz" | sha256sum -c -; 	fi; 	if [ -n "$PHP_MD5" ]; then 		echo "$PHP_MD5 *php.tar.xz" | md5sum -c -; 	fi; 		if [ -n "$PHP_ASC_URL" ]; then 		curl -fsSL -o php.tar.xz.asc "$PHP_ASC_URL"; 		export GNUPGHOME="$(mktemp -d)"; 		for key in $GPG_KEYS; do 			gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys "$key"; 		done; 		gpg --batch --verify php.tar.xz.asc php.tar.xz; 		gpgconf --kill all; 		rm -rf "$GNUPGHOME"; 	fi; 		apt-mark auto '.*' > /dev/null; 	apt-mark manual $savedAptMark > /dev/null; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false
-# Thu, 26 Sep 2019 21:50:30 GMT
+# Thu, 17 Oct 2019 15:28:20 GMT
 COPY file:ce57c04b70896f77cc11eb2766417d8a1240fcffe5bba92179ec78c458844110 in /usr/local/bin/ 
-# Fri, 04 Oct 2019 23:00:02 GMT
+# Thu, 17 Oct 2019 15:32:23 GMT
 RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	sed -e 's/stretch/buster/g' /etc/apt/sources.list > /etc/apt/sources.list.d/buster.list; 	{ 		echo 'Package: *'; 		echo 'Pin: release n=buster'; 		echo 'Pin-Priority: -10'; 		echo; 		echo 'Package: libargon2*'; 		echo 'Pin: release n=buster'; 		echo 'Pin-Priority: 990'; 	} > /etc/apt/preferences.d/argon2-buster; 	apt-get update; 	apt-get install -y --no-install-recommends 		libargon2-dev 		libcurl4-openssl-dev 		libedit-dev 		libsodium-dev 		libsqlite3-dev 		libssl-dev 		libxml2-dev 		zlib1g-dev 		${PHP_EXTRA_BUILD_DEPS:-} 	; 	rm -rf /var/lib/apt/lists/*; 		export 		CFLAGS="$PHP_CFLAGS" 		CPPFLAGS="$PHP_CPPFLAGS" 		LDFLAGS="$PHP_LDFLAGS" 	; 	docker-php-source extract; 	cd /usr/src/php; 	gnuArch="$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)"; 	debMultiarch="$(dpkg-architecture --query DEB_BUILD_MULTIARCH)"; 	if [ ! -d /usr/include/curl ]; then 		ln -sT "/usr/include/$debMultiarch/curl" /usr/local/include/curl; 	fi; 	./configure 		--build="$gnuArch" 		--with-config-file-path="$PHP_INI_DIR" 		--with-config-file-scan-dir="$PHP_INI_DIR/conf.d" 				--enable-option-checking=fatal 				--with-mhash 				--enable-ftp 		--enable-mbstring 		--enable-mysqlnd 		--with-password-argon2 		--with-sodium=shared 		--with-pdo-sqlite=/usr 		--with-sqlite3=/usr 				--with-curl 		--with-libedit 		--with-openssl 		--with-zlib 				$(test "$gnuArch" = 's390x-linux-gnu' && echo '--without-pcre-jit') 		--with-libdir="lib/$debMultiarch" 				${PHP_EXTRA_CONFIGURE_ARGS:-} 	; 	make -j "$(nproc)"; 	find -type f -name '*.a' -delete; 	make install; 	find /usr/local/bin /usr/local/sbin -type f -executable -exec strip --strip-all '{}' + || true; 	make clean; 		cp -v php.ini-* "$PHP_INI_DIR/"; 		cd /; 	docker-php-source delete; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark; 	find /usr/local -type f -executable -exec ldd '{}' ';' 		| awk '/=>/ { print $(NF-1) }' 		| sort -u 		| xargs -r dpkg-query --search 		| cut -d: -f1 		| sort -u 		| xargs -r apt-mark manual 	; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 		pecl update-channels; 	rm -rf /tmp/pear ~/.pearrc; 	php --version
-# Fri, 04 Oct 2019 23:00:02 GMT
+# Thu, 17 Oct 2019 15:32:24 GMT
 COPY multi:99e4ad617c6193834e78d12470f6dde09f70f4d40463009c5724954902e60676 in /usr/local/bin/ 
-# Fri, 04 Oct 2019 23:00:04 GMT
+# Thu, 17 Oct 2019 15:32:25 GMT
 RUN docker-php-ext-enable sodium
-# Fri, 04 Oct 2019 23:00:04 GMT
+# Thu, 17 Oct 2019 15:32:25 GMT
 ENTRYPOINT ["docker-php-entrypoint"]
-# Fri, 04 Oct 2019 23:00:04 GMT
+# Thu, 17 Oct 2019 15:32:25 GMT
 STOPSIGNAL WINCH
-# Fri, 04 Oct 2019 23:00:05 GMT
+# Thu, 17 Oct 2019 15:32:25 GMT
 COPY file:e3123fcb6566efa979f945bfac1c94c854a559d7b82723e42118882a8ac4de66 in /usr/local/bin/ 
-# Fri, 04 Oct 2019 23:00:05 GMT
+# Thu, 17 Oct 2019 15:32:25 GMT
 WORKDIR /var/www/html
-# Fri, 04 Oct 2019 23:00:05 GMT
+# Thu, 17 Oct 2019 15:32:26 GMT
 EXPOSE 80
-# Fri, 04 Oct 2019 23:00:05 GMT
+# Thu, 17 Oct 2019 15:32:26 GMT
 CMD ["apache2-foreground"]
-# Sat, 05 Oct 2019 05:37:18 GMT
+# Fri, 18 Oct 2019 06:25:57 GMT
 RUN set -eux; 		if command -v a2enmod; then 		a2enmod rewrite; 	fi; 		savedAptMark="$(apt-mark showmanual)"; 		apt-get update; 	apt-get install -y --no-install-recommends 		libfreetype6-dev 		libjpeg-dev 		libpng-dev 		libpq-dev 		libzip-dev 	; 		docker-php-ext-configure gd 		--with-freetype-dir=/usr 		--with-jpeg-dir=/usr 		--with-png-dir=/usr 	; 		docker-php-ext-install -j "$(nproc)" 		gd 		opcache 		pdo_mysql 		pdo_pgsql 		zip 	; 		apt-mark auto '.*' > /dev/null; 	apt-mark manual $savedAptMark; 	ldd "$(php -r 'echo ini_get("extension_dir");')"/*.so 		| awk '/=>/ { print $3 }' 		| sort -u 		| xargs -r dpkg-query -S 		| cut -d: -f1 		| sort -u 		| xargs -rt apt-mark manual; 		apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 	rm -rf /var/lib/apt/lists/*
-# Sat, 05 Oct 2019 05:37:20 GMT
+# Fri, 18 Oct 2019 06:25:57 GMT
 RUN { 		echo 'opcache.memory_consumption=128'; 		echo 'opcache.interned_strings_buffer=8'; 		echo 'opcache.max_accelerated_files=4000'; 		echo 'opcache.revalidate_freq=60'; 		echo 'opcache.fast_shutdown=1'; 	} > /usr/local/etc/php/conf.d/opcache-recommended.ini
-# Sat, 05 Oct 2019 05:37:20 GMT
+# Fri, 18 Oct 2019 06:25:57 GMT
 WORKDIR /var/www/html
-# Sat, 05 Oct 2019 05:41:51 GMT
+# Fri, 18 Oct 2019 06:27:25 GMT
 ENV DRUPAL_VERSION=8.6.17
-# Sat, 05 Oct 2019 05:41:52 GMT
+# Fri, 18 Oct 2019 06:27:25 GMT
 ENV DRUPAL_MD5=9018a2d11381aeb0e269ca696fed9ac5
-# Sat, 05 Oct 2019 05:42:06 GMT
+# Fri, 18 Oct 2019 06:27:31 GMT
 RUN set -eux; 	curl -fSL "https://ftp.drupal.org/files/projects/drupal-${DRUPAL_VERSION}.tar.gz" -o drupal.tar.gz; 	echo "${DRUPAL_MD5} *drupal.tar.gz" | md5sum -c -; 	tar -xz --strip-components=1 -f drupal.tar.gz; 	rm drupal.tar.gz; 	chown -R www-data:www-data sites modules themes
 ```
 
 -	Layers:
-	-	`sha256:8f91359f1fffbf32b24ca854fb263d88a222371f38e90cf4583c5742cfdc3039`  
-		Last Modified: Wed, 11 Sep 2019 23:34:50 GMT  
-		Size: 22.5 MB (22510654 bytes)  
+	-	`sha256:80369df487363e56aea88d4d41b61f1607fc2ec198e9327cfde36a5346c71bf2`  
+		Last Modified: Wed, 16 Oct 2019 23:35:19 GMT  
+		Size: 22.5 MB (22524636 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:bf2faaedf741a44c5457bc029621724b7f316482f99de58522e1b659ddc8fd99`  
-		Last Modified: Thu, 12 Sep 2019 13:15:25 GMT  
-		Size: 225.0 B  
+	-	`sha256:60e80cb3f70356b666135b9d9acc19345b74bf7feedb2b6ac494dd6d224b8574`  
+		Last Modified: Thu, 17 Oct 2019 17:20:16 GMT  
+		Size: 226.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:24cd1299a53e525f85fdd79c524463ec6b6569df13c6af402ca0f706ad89c28b`  
-		Last Modified: Thu, 12 Sep 2019 13:15:49 GMT  
-		Size: 67.5 MB (67450331 bytes)  
+	-	`sha256:e3b2450987de138dcaf9f09559f25a8b2cd6ceaac8e28d858fdb73530d40f92e`  
+		Last Modified: Thu, 17 Oct 2019 17:20:33 GMT  
+		Size: 67.4 MB (67447849 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:17091cc665e4a0e967d00b8b36fcabb2b17d7bceba421f717f5d138063e22ad6`  
-		Last Modified: Thu, 12 Sep 2019 13:15:25 GMT  
-		Size: 237.0 B  
+	-	`sha256:c413b7377c2f336391745613272b75d32b6f52110d5cf6bb28949ed2eea52906`  
+		Last Modified: Thu, 17 Oct 2019 17:20:16 GMT  
+		Size: 238.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:ac9365919f9b10c759648e7efa92752c1443400e4178d6411f5a458a90e09ca2`  
-		Last Modified: Thu, 12 Sep 2019 13:16:08 GMT  
-		Size: 17.1 MB (17125603 bytes)  
+	-	`sha256:6dd9eff17a14f4fd1ad899a27f318151a4b2fa2d935cb85307637563d6973d17`  
+		Last Modified: Thu, 17 Oct 2019 17:20:46 GMT  
+		Size: 17.1 MB (17125324 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:4f1b34e209eee27994691cd890ca1422857bc1c2c166a700049ae0af84d6fb2a`  
-		Last Modified: Thu, 12 Sep 2019 13:16:02 GMT  
-		Size: 431.0 B  
+	-	`sha256:5126e57aff9b8bc91dfaa6885060a8b4cd41887d4a85621d5778c2ec6c660f2a`  
+		Last Modified: Thu, 17 Oct 2019 17:20:43 GMT  
+		Size: 437.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:832757fa04a4aea3b2f6e686cf9741254a6a03855e86b603417b6d3ce6c0038f`  
-		Last Modified: Thu, 12 Sep 2019 13:16:02 GMT  
-		Size: 487.0 B  
+	-	`sha256:943df09926ea3a42f821bbdfd1d3112e72b5da0fbc6761b35b50da5570cfb438`  
+		Last Modified: Thu, 17 Oct 2019 17:20:43 GMT  
+		Size: 490.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:640a8cc59ee46638b569b4797bc4a773e22ff83223d1d94620047e7acdf4f121`  
-		Last Modified: Fri, 27 Sep 2019 01:26:12 GMT  
-		Size: 12.4 MB (12435253 bytes)  
+	-	`sha256:9945a6d6fd51d29053a01e7362f98478704156cb0344028887de5de27b56f8cd`  
+		Last Modified: Thu, 17 Oct 2019 17:20:43 GMT  
+		Size: 12.4 MB (12435307 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:375d45a647bd866c4211aeda97b2b5bedb12dc76350eb92cdbcd172943efbf37`  
-		Last Modified: Fri, 27 Sep 2019 01:26:09 GMT  
+	-	`sha256:975035f5a785ddf7bea6b46a40a2beae1617b991dd4965bb2632ce819c0ebae4`  
+		Last Modified: Thu, 17 Oct 2019 17:20:42 GMT  
 		Size: 501.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:699f6141932e10e137db5a06352130c87535007fc4d71d0d21cf5204db76d728`  
-		Last Modified: Sat, 05 Oct 2019 03:49:47 GMT  
-		Size: 15.4 MB (15395755 bytes)  
+	-	`sha256:561abe18d8c31cf78ff6f1569ed5e894ccabfae65dd247928b73ca194c455f7a`  
+		Last Modified: Thu, 17 Oct 2019 17:20:45 GMT  
+		Size: 13.8 MB (13806779 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:be6c200d07db998ed59695b4d5635fadfcc871f2a0dd2ce5ed45e83ad94bfe5c`  
-		Last Modified: Sat, 05 Oct 2019 03:49:41 GMT  
-		Size: 2.2 KB (2223 bytes)  
+	-	`sha256:ecfae1d03a560507c8358c1dd3b5ea4d85df3274f721c12d1f5bf2f4f846a84c`  
+		Last Modified: Thu, 17 Oct 2019 17:20:42 GMT  
+		Size: 2.2 KB (2225 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c5a9afabd1a71f323e7c4c48a4bf311e19637c1dcfdd8e56930b318010c7a322`  
-		Last Modified: Sat, 05 Oct 2019 03:49:42 GMT  
-		Size: 259.0 B  
+	-	`sha256:69a47ac39f697f9eb8a508965dcd3b51d3365b5e3625aa08085f02866fb1531d`  
+		Last Modified: Thu, 17 Oct 2019 17:20:41 GMT  
+		Size: 261.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:f517a6395f969bd01b32606233e12344abd854953769c7fcced6d776964aac74`  
-		Last Modified: Sat, 05 Oct 2019 03:49:42 GMT  
-		Size: 901.0 B  
+	-	`sha256:4b0bd7b07f693ddfca86b3f94a7eb7f7d56d2f0d7d8b96b80ad7f3b438173b29`  
+		Last Modified: Thu, 17 Oct 2019 17:20:41 GMT  
+		Size: 905.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:4834256bfafcc2acba5ce5afc6eca80c529b1fd74620511b5ff32d99cc63c61f`  
-		Last Modified: Sat, 05 Oct 2019 05:49:42 GMT  
-		Size: 1.6 MB (1594511 bytes)  
+	-	`sha256:cbbcd711c9961e0745e2348424d92efce8a7c76228be39b3897db99c6c6120d8`  
+		Last Modified: Fri, 18 Oct 2019 06:30:30 GMT  
+		Size: 1.6 MB (1594259 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:658398927ac0c2d9570ced0232f6c98915b6bc254e4eb8654c20082a71484a82`  
-		Last Modified: Sat, 05 Oct 2019 05:49:41 GMT  
-		Size: 339.0 B  
+	-	`sha256:fab086cdefa2ad6d5c4ba0ef31daddc017cc3d10f842a3c1ad81cefa482e0de4`  
+		Last Modified: Fri, 18 Oct 2019 06:30:30 GMT  
+		Size: 340.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:f7e9fdc84ee21bd457cae7fe15e31d02970b2f2d30aae8fd6d26d548f72682ca`  
-		Last Modified: Sat, 05 Oct 2019 05:50:52 GMT  
-		Size: 17.3 MB (17265824 bytes)  
+	-	`sha256:4c7f968913ef116b13cb82c4253467e99e88c5314b0add2ece52e7406a2b48b8`  
+		Last Modified: Fri, 18 Oct 2019 06:31:01 GMT  
+		Size: 17.3 MB (17265808 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `drupal:8.6-apache` - linux; arm variant v5
@@ -13709,7 +13709,7 @@ RUN set -eux; 	curl -fSL "https://ftp.drupal.org/files/projects/drupal-${DRUPAL_
 ## `drupal:8.6-fpm`
 
 ```console
-$ docker pull drupal@sha256:cbee4ccc1883c678d22702a545d67251404812b4396316c9e6b33312f118fb96
+$ docker pull drupal@sha256:18ffdf89f19682121d740f0e16ec49578ec0cd2e5c9dcbe7e33cceae66873585
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -13724,136 +13724,136 @@ $ docker pull drupal@sha256:cbee4ccc1883c678d22702a545d67251404812b4396316c9e6b3
 ### `drupal:8.6-fpm` - linux; amd64
 
 ```console
-$ docker pull drupal@sha256:164ba44b76dce4dad18e0c5510de56fe6e34034d1ecc61f18e17fe260f15090f
+$ docker pull drupal@sha256:8512aa5b1f4e63d7ba67bcfb1c3fc0c25cb25c1e0e6a182003195a7d0f30fd91
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **150.5 MB (150513117 bytes)**  
+-	Total Size: **148.9 MB (148851329 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:0e875bce02c7fb7af82c4c9276f96f833a79a40f0d994939359c8e76c4aa56d0`
+-	Image ID: `sha256:1847935f940a697acff7e1d1e3737549375ed6b2417ef58a225c49eaec9b5d1a`
 -	Entrypoint: `["docker-php-entrypoint"]`
 -	Default Command: `["php-fpm"]`
 
 ```dockerfile
-# Wed, 11 Sep 2019 23:27:46 GMT
-ADD file:e82c447c3eae5d1d0282d8557b0c271b29d1be0d0f23204a09ad468be7a80d8c in / 
-# Wed, 11 Sep 2019 23:27:47 GMT
+# Wed, 16 Oct 2019 23:29:18 GMT
+ADD file:37512e59e7c324f9ec5b01628ef87efee73d2092cfe97d05ca949dc3528e4c2a in / 
+# Wed, 16 Oct 2019 23:29:19 GMT
 CMD ["bash"]
-# Thu, 12 Sep 2019 10:35:06 GMT
+# Thu, 17 Oct 2019 15:19:17 GMT
 RUN set -eux; 	{ 		echo 'Package: php*'; 		echo 'Pin: release *'; 		echo 'Pin-Priority: -1'; 	} > /etc/apt/preferences.d/no-debian-php
-# Thu, 12 Sep 2019 10:35:06 GMT
+# Thu, 17 Oct 2019 15:19:17 GMT
 ENV PHPIZE_DEPS=autoconf 		dpkg-dev 		file 		g++ 		gcc 		libc-dev 		make 		pkg-config 		re2c
-# Thu, 12 Sep 2019 10:35:36 GMT
+# Thu, 17 Oct 2019 15:19:56 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		$PHPIZE_DEPS 		ca-certificates 		curl 		xz-utils 	; 	rm -rf /var/lib/apt/lists/*
-# Thu, 12 Sep 2019 10:35:36 GMT
+# Thu, 17 Oct 2019 15:19:57 GMT
 ENV PHP_INI_DIR=/usr/local/etc/php
-# Thu, 12 Sep 2019 10:35:37 GMT
+# Thu, 17 Oct 2019 15:19:58 GMT
 RUN set -eux; 	mkdir -p "$PHP_INI_DIR/conf.d"; 	[ ! -d /var/www/html ]; 	mkdir -p /var/www/html; 	chown www-data:www-data /var/www/html; 	chmod 777 /var/www/html
-# Thu, 12 Sep 2019 10:51:13 GMT
+# Thu, 17 Oct 2019 15:32:36 GMT
 ENV PHP_EXTRA_CONFIGURE_ARGS=--enable-fpm --with-fpm-user=www-data --with-fpm-group=www-data --disable-cgi
-# Thu, 12 Sep 2019 10:51:13 GMT
+# Thu, 17 Oct 2019 15:32:36 GMT
 ENV PHP_CFLAGS=-fstack-protector-strong -fpic -fpie -O2
-# Thu, 12 Sep 2019 10:51:13 GMT
+# Thu, 17 Oct 2019 15:32:36 GMT
 ENV PHP_CPPFLAGS=-fstack-protector-strong -fpic -fpie -O2
-# Thu, 12 Sep 2019 10:51:14 GMT
+# Thu, 17 Oct 2019 15:32:36 GMT
 ENV PHP_LDFLAGS=-Wl,-O1 -Wl,--hash-style=both -pie
-# Thu, 12 Sep 2019 10:51:14 GMT
+# Thu, 17 Oct 2019 15:32:37 GMT
 ENV GPG_KEYS=CBAF69F173A0FEA4B537F470D66C9593118BCCB6 F38252826ACD957EF380D39F2F7956BC5DA04B5D
-# Thu, 26 Sep 2019 21:55:51 GMT
+# Thu, 17 Oct 2019 15:32:37 GMT
 ENV PHP_VERSION=7.3.10
-# Thu, 26 Sep 2019 21:55:52 GMT
+# Thu, 17 Oct 2019 15:32:37 GMT
 ENV PHP_URL=https://www.php.net/get/php-7.3.10.tar.xz/from/this/mirror PHP_ASC_URL=https://www.php.net/get/php-7.3.10.tar.xz.asc/from/this/mirror
-# Thu, 26 Sep 2019 21:55:52 GMT
+# Thu, 17 Oct 2019 15:32:37 GMT
 ENV PHP_SHA256=42f00a15419e05771734b7159c8d39d639b8a5a6770413adfa2615f6f923d906 PHP_MD5=
-# Thu, 26 Sep 2019 21:56:04 GMT
+# Thu, 17 Oct 2019 15:32:46 GMT
 RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends gnupg dirmngr; 	rm -rf /var/lib/apt/lists/*; 		mkdir -p /usr/src; 	cd /usr/src; 		curl -fsSL -o php.tar.xz "$PHP_URL"; 		if [ -n "$PHP_SHA256" ]; then 		echo "$PHP_SHA256 *php.tar.xz" | sha256sum -c -; 	fi; 	if [ -n "$PHP_MD5" ]; then 		echo "$PHP_MD5 *php.tar.xz" | md5sum -c -; 	fi; 		if [ -n "$PHP_ASC_URL" ]; then 		curl -fsSL -o php.tar.xz.asc "$PHP_ASC_URL"; 		export GNUPGHOME="$(mktemp -d)"; 		for key in $GPG_KEYS; do 			gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys "$key"; 		done; 		gpg --batch --verify php.tar.xz.asc php.tar.xz; 		gpgconf --kill all; 		rm -rf "$GNUPGHOME"; 	fi; 		apt-mark auto '.*' > /dev/null; 	apt-mark manual $savedAptMark > /dev/null; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false
-# Thu, 26 Sep 2019 21:56:05 GMT
+# Thu, 17 Oct 2019 15:32:46 GMT
 COPY file:ce57c04b70896f77cc11eb2766417d8a1240fcffe5bba92179ec78c458844110 in /usr/local/bin/ 
-# Fri, 04 Oct 2019 23:08:24 GMT
+# Thu, 17 Oct 2019 15:39:24 GMT
 RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	sed -e 's/stretch/buster/g' /etc/apt/sources.list > /etc/apt/sources.list.d/buster.list; 	{ 		echo 'Package: *'; 		echo 'Pin: release n=buster'; 		echo 'Pin-Priority: -10'; 		echo; 		echo 'Package: libargon2*'; 		echo 'Pin: release n=buster'; 		echo 'Pin-Priority: 990'; 	} > /etc/apt/preferences.d/argon2-buster; 	apt-get update; 	apt-get install -y --no-install-recommends 		libargon2-dev 		libcurl4-openssl-dev 		libedit-dev 		libsodium-dev 		libsqlite3-dev 		libssl-dev 		libxml2-dev 		zlib1g-dev 		${PHP_EXTRA_BUILD_DEPS:-} 	; 	rm -rf /var/lib/apt/lists/*; 		export 		CFLAGS="$PHP_CFLAGS" 		CPPFLAGS="$PHP_CPPFLAGS" 		LDFLAGS="$PHP_LDFLAGS" 	; 	docker-php-source extract; 	cd /usr/src/php; 	gnuArch="$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)"; 	debMultiarch="$(dpkg-architecture --query DEB_BUILD_MULTIARCH)"; 	if [ ! -d /usr/include/curl ]; then 		ln -sT "/usr/include/$debMultiarch/curl" /usr/local/include/curl; 	fi; 	./configure 		--build="$gnuArch" 		--with-config-file-path="$PHP_INI_DIR" 		--with-config-file-scan-dir="$PHP_INI_DIR/conf.d" 				--enable-option-checking=fatal 				--with-mhash 				--enable-ftp 		--enable-mbstring 		--enable-mysqlnd 		--with-password-argon2 		--with-sodium=shared 		--with-pdo-sqlite=/usr 		--with-sqlite3=/usr 				--with-curl 		--with-libedit 		--with-openssl 		--with-zlib 				$(test "$gnuArch" = 's390x-linux-gnu' && echo '--without-pcre-jit') 		--with-libdir="lib/$debMultiarch" 				${PHP_EXTRA_CONFIGURE_ARGS:-} 	; 	make -j "$(nproc)"; 	find -type f -name '*.a' -delete; 	make install; 	find /usr/local/bin /usr/local/sbin -type f -executable -exec strip --strip-all '{}' + || true; 	make clean; 		cp -v php.ini-* "$PHP_INI_DIR/"; 		cd /; 	docker-php-source delete; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark; 	find /usr/local -type f -executable -exec ldd '{}' ';' 		| awk '/=>/ { print $(NF-1) }' 		| sort -u 		| xargs -r dpkg-query --search 		| cut -d: -f1 		| sort -u 		| xargs -r apt-mark manual 	; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 		pecl update-channels; 	rm -rf /tmp/pear ~/.pearrc; 	php --version
-# Fri, 04 Oct 2019 23:08:24 GMT
+# Thu, 17 Oct 2019 15:39:24 GMT
 COPY multi:c1ff99c7805e8f41fdb0717f754884884ce2157d746a82343d7c737c86ded761 in /usr/local/bin/ 
-# Fri, 04 Oct 2019 23:08:26 GMT
+# Thu, 17 Oct 2019 15:39:25 GMT
 RUN docker-php-ext-enable sodium
-# Fri, 04 Oct 2019 23:08:26 GMT
+# Thu, 17 Oct 2019 15:39:25 GMT
 ENTRYPOINT ["docker-php-entrypoint"]
-# Fri, 04 Oct 2019 23:08:26 GMT
+# Thu, 17 Oct 2019 15:39:25 GMT
 WORKDIR /var/www/html
-# Fri, 04 Oct 2019 23:08:27 GMT
+# Thu, 17 Oct 2019 15:39:26 GMT
 RUN set -eux; 	cd /usr/local/etc; 	if [ -d php-fpm.d ]; then 		sed 's!=NONE/!=!g' php-fpm.conf.default | tee php-fpm.conf > /dev/null; 		cp php-fpm.d/www.conf.default php-fpm.d/www.conf; 	else 		mkdir php-fpm.d; 		cp php-fpm.conf.default php-fpm.d/www.conf; 		{ 			echo '[global]'; 			echo 'include=etc/php-fpm.d/*.conf'; 		} | tee php-fpm.conf; 	fi; 	{ 		echo '[global]'; 		echo 'error_log = /proc/self/fd/2'; 		echo; echo '; https://github.com/docker-library/php/pull/725#issuecomment-443540114'; echo 'log_limit = 8192'; 		echo; 		echo '[www]'; 		echo '; if we send this to /proc/self/fd/1, it never appears'; 		echo 'access.log = /proc/self/fd/2'; 		echo; 		echo 'clear_env = no'; 		echo; 		echo '; Ensure worker stdout and stderr are sent to the main error log.'; 		echo 'catch_workers_output = yes'; 		echo 'decorate_workers_output = no'; 	} | tee php-fpm.d/docker.conf; 	{ 		echo '[global]'; 		echo 'daemonize = no'; 		echo; 		echo '[www]'; 		echo 'listen = 9000'; 	} | tee php-fpm.d/zz-docker.conf
-# Fri, 04 Oct 2019 23:08:28 GMT
+# Thu, 17 Oct 2019 15:39:26 GMT
 STOPSIGNAL SIGQUIT
-# Fri, 04 Oct 2019 23:08:28 GMT
+# Thu, 17 Oct 2019 15:39:26 GMT
 EXPOSE 9000
-# Fri, 04 Oct 2019 23:08:28 GMT
+# Thu, 17 Oct 2019 15:39:27 GMT
 CMD ["php-fpm"]
-# Sat, 05 Oct 2019 05:39:32 GMT
+# Fri, 18 Oct 2019 06:27:08 GMT
 RUN set -eux; 		if command -v a2enmod; then 		a2enmod rewrite; 	fi; 		savedAptMark="$(apt-mark showmanual)"; 		apt-get update; 	apt-get install -y --no-install-recommends 		libfreetype6-dev 		libjpeg-dev 		libpng-dev 		libpq-dev 		libzip-dev 	; 		docker-php-ext-configure gd 		--with-freetype-dir=/usr 		--with-jpeg-dir=/usr 		--with-png-dir=/usr 	; 		docker-php-ext-install -j "$(nproc)" 		gd 		opcache 		pdo_mysql 		pdo_pgsql 		zip 	; 		apt-mark auto '.*' > /dev/null; 	apt-mark manual $savedAptMark; 	ldd "$(php -r 'echo ini_get("extension_dir");')"/*.so 		| awk '/=>/ { print $3 }' 		| sort -u 		| xargs -r dpkg-query -S 		| cut -d: -f1 		| sort -u 		| xargs -rt apt-mark manual; 		apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 	rm -rf /var/lib/apt/lists/*
-# Sat, 05 Oct 2019 05:39:33 GMT
+# Fri, 18 Oct 2019 06:27:09 GMT
 RUN { 		echo 'opcache.memory_consumption=128'; 		echo 'opcache.interned_strings_buffer=8'; 		echo 'opcache.max_accelerated_files=4000'; 		echo 'opcache.revalidate_freq=60'; 		echo 'opcache.fast_shutdown=1'; 	} > /usr/local/etc/php/conf.d/opcache-recommended.ini
-# Sat, 05 Oct 2019 05:39:33 GMT
+# Fri, 18 Oct 2019 06:27:09 GMT
 WORKDIR /var/www/html
-# Sat, 05 Oct 2019 05:42:13 GMT
+# Fri, 18 Oct 2019 06:27:35 GMT
 ENV DRUPAL_VERSION=8.6.17
-# Sat, 05 Oct 2019 05:42:13 GMT
+# Fri, 18 Oct 2019 06:27:35 GMT
 ENV DRUPAL_MD5=9018a2d11381aeb0e269ca696fed9ac5
-# Sat, 05 Oct 2019 05:42:27 GMT
+# Fri, 18 Oct 2019 06:27:41 GMT
 RUN set -eux; 	curl -fSL "https://ftp.drupal.org/files/projects/drupal-${DRUPAL_VERSION}.tar.gz" -o drupal.tar.gz; 	echo "${DRUPAL_MD5} *drupal.tar.gz" | md5sum -c -; 	tar -xz --strip-components=1 -f drupal.tar.gz; 	rm drupal.tar.gz; 	chown -R www-data:www-data sites modules themes
 ```
 
 -	Layers:
-	-	`sha256:8f91359f1fffbf32b24ca854fb263d88a222371f38e90cf4583c5742cfdc3039`  
-		Last Modified: Wed, 11 Sep 2019 23:34:50 GMT  
-		Size: 22.5 MB (22510654 bytes)  
+	-	`sha256:80369df487363e56aea88d4d41b61f1607fc2ec198e9327cfde36a5346c71bf2`  
+		Last Modified: Wed, 16 Oct 2019 23:35:19 GMT  
+		Size: 22.5 MB (22524636 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:bf2faaedf741a44c5457bc029621724b7f316482f99de58522e1b659ddc8fd99`  
-		Last Modified: Thu, 12 Sep 2019 13:15:25 GMT  
-		Size: 225.0 B  
+	-	`sha256:60e80cb3f70356b666135b9d9acc19345b74bf7feedb2b6ac494dd6d224b8574`  
+		Last Modified: Thu, 17 Oct 2019 17:20:16 GMT  
+		Size: 226.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:24cd1299a53e525f85fdd79c524463ec6b6569df13c6af402ca0f706ad89c28b`  
-		Last Modified: Thu, 12 Sep 2019 13:15:49 GMT  
-		Size: 67.5 MB (67450331 bytes)  
+	-	`sha256:e3b2450987de138dcaf9f09559f25a8b2cd6ceaac8e28d858fdb73530d40f92e`  
+		Last Modified: Thu, 17 Oct 2019 17:20:33 GMT  
+		Size: 67.4 MB (67447849 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:17091cc665e4a0e967d00b8b36fcabb2b17d7bceba421f717f5d138063e22ad6`  
-		Last Modified: Thu, 12 Sep 2019 13:15:25 GMT  
-		Size: 237.0 B  
+	-	`sha256:c413b7377c2f336391745613272b75d32b6f52110d5cf6bb28949ed2eea52906`  
+		Last Modified: Thu, 17 Oct 2019 17:20:16 GMT  
+		Size: 238.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:8880c01fadaf626a1ac9c93de76f80b0a02b905c57d9f0365d4ac7c140f73e8c`  
-		Last Modified: Fri, 27 Sep 2019 01:26:22 GMT  
-		Size: 12.4 MB (12414280 bytes)  
+	-	`sha256:a4b596a71a07bc97264060cb0d57f0a891799939bd0e967d554d51545ada78be`  
+		Last Modified: Thu, 17 Oct 2019 17:20:58 GMT  
+		Size: 12.4 MB (12414267 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:d7c57fbcfc142a1709892e77f655b6d3bc3a360f3a53baa61f11532b82c8c515`  
-		Last Modified: Fri, 27 Sep 2019 01:26:20 GMT  
-		Size: 501.0 B  
+	-	`sha256:2cf73d873c0e64ef386aaa2a4d767e8926c300028add95393ca378292a310c35`  
+		Last Modified: Thu, 17 Oct 2019 17:20:58 GMT  
+		Size: 499.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:6892f4a86a2085651c3e09630b9bf14329145a52732afa800916109d2d9bd02f`  
-		Last Modified: Sat, 05 Oct 2019 03:50:12 GMT  
-		Size: 29.3 MB (29288310 bytes)  
+	-	`sha256:8e7b760badfbfbd3508bfd56e884f1a4c31e3ff00f630d4624139ec14e27eafe`  
+		Last Modified: Thu, 17 Oct 2019 17:20:58 GMT  
+		Size: 27.6 MB (27615254 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:22cf8b69eff81a1164b28f190d3b463fbbf520226b72995d0e4694e1739938f2`  
-		Last Modified: Sat, 05 Oct 2019 03:50:04 GMT  
-		Size: 2.2 KB (2220 bytes)  
+	-	`sha256:cbf349b24dffa2417c332e0bb55e2b980bcf46b3d7fbaa00fe87a08049c00b37`  
+		Last Modified: Thu, 17 Oct 2019 17:20:52 GMT  
+		Size: 2.2 KB (2217 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:ad2e7ee133845ff994982ea6b2f1c4004b526a57a802799a3c2112c6bb61403b`  
-		Last Modified: Sat, 05 Oct 2019 03:50:05 GMT  
+	-	`sha256:7c7f8431d945db36e6d726da1ce843ab4926b2674813197ebc4df8ef645e1fad`  
+		Last Modified: Thu, 17 Oct 2019 17:20:52 GMT  
 		Size: 258.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:24280bd5a9e9c27e015b3688cc4f6a0cad035125203e12bdb8bf032f5ac2157c`  
-		Last Modified: Sat, 05 Oct 2019 03:50:04 GMT  
-		Size: 8.3 KB (8287 bytes)  
+	-	`sha256:4158250e7cbb6afb6bad049e8f6c42837af7388056d517299036b15c1e985735`  
+		Last Modified: Thu, 17 Oct 2019 17:20:52 GMT  
+		Size: 8.3 KB (8282 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:bb8ba779b8dea8b1239cad15d567a2a08795231cf3f90db5b6a6994bbf1ce482`  
-		Last Modified: Sat, 05 Oct 2019 05:50:06 GMT  
-		Size: 1.6 MB (1571648 bytes)  
+	-	`sha256:3330fb06dfea77578c0b38bcd9ea770fcb018dccaad2e0e0e6126ea07c464b42`  
+		Last Modified: Fri, 18 Oct 2019 06:30:44 GMT  
+		Size: 1.6 MB (1571457 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:98637942b66d74c5fee0f05722ee152214d79356567bc25ae93b392d4f328711`  
-		Last Modified: Sat, 05 Oct 2019 05:50:06 GMT  
-		Size: 340.0 B  
+	-	`sha256:7b616380d0c6bbfd5a0f9dce7d63136cf3dac391a1171ec150ae05a5b211187a`  
+		Last Modified: Fri, 18 Oct 2019 06:30:44 GMT  
+		Size: 338.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:fc7d2fc476e42ef05f160a845ae0fedc163f99a7aa2a91ea3fab627963faf89b`  
-		Last Modified: Sat, 05 Oct 2019 05:51:09 GMT  
-		Size: 17.3 MB (17265826 bytes)  
+	-	`sha256:007e3923d65380e0fe9735d89f86a845f0447d6fff78701efe5812f968880192`  
+		Last Modified: Fri, 18 Oct 2019 06:31:12 GMT  
+		Size: 17.3 MB (17265808 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `drupal:8.6-fpm` - linux; arm variant v5
@@ -15359,7 +15359,7 @@ RUN set -eux; 	curl -fSL "https://ftp.drupal.org/files/projects/drupal-${DRUPAL_
 ## `drupal:8.7`
 
 ```console
-$ docker pull drupal@sha256:bb49d97d37087bf6a2d82c31a8baa477cba3983427242bc5bad334dae69611e3
+$ docker pull drupal@sha256:b5b9d1a33393aa3a54aa8639cb777ae2388d5b41bd855778633ba775234a29bf
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -15374,159 +15374,159 @@ $ docker pull drupal@sha256:bb49d97d37087bf6a2d82c31a8baa477cba3983427242bc5bad3
 ### `drupal:8.7` - linux; amd64
 
 ```console
-$ docker pull drupal@sha256:73a9b0def4d6d99b41e02a2dccd54200fc5dda7d8f38ac87174e1bf83e7f4219
+$ docker pull drupal@sha256:37037fd55f74b297e795a1abd0ba7d7e1c030e78e221f0018a9d1ee429eaa1a1
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **154.5 MB (154523243 bytes)**  
+-	Total Size: **152.9 MB (152945310 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:84af2ca3d9d5b7c4790ee0e1b2622bd6836c06cee3b601b7149ea9c92bcbf43b`
+-	Image ID: `sha256:db077f17914826f101cf283aa2bf0c07f0447562eed5f2069b5ea62b6e8edeec`
 -	Entrypoint: `["docker-php-entrypoint"]`
 -	Default Command: `["apache2-foreground"]`
 
 ```dockerfile
-# Wed, 11 Sep 2019 23:27:46 GMT
-ADD file:e82c447c3eae5d1d0282d8557b0c271b29d1be0d0f23204a09ad468be7a80d8c in / 
-# Wed, 11 Sep 2019 23:27:47 GMT
+# Wed, 16 Oct 2019 23:29:18 GMT
+ADD file:37512e59e7c324f9ec5b01628ef87efee73d2092cfe97d05ca949dc3528e4c2a in / 
+# Wed, 16 Oct 2019 23:29:19 GMT
 CMD ["bash"]
-# Thu, 12 Sep 2019 10:35:06 GMT
+# Thu, 17 Oct 2019 15:19:17 GMT
 RUN set -eux; 	{ 		echo 'Package: php*'; 		echo 'Pin: release *'; 		echo 'Pin-Priority: -1'; 	} > /etc/apt/preferences.d/no-debian-php
-# Thu, 12 Sep 2019 10:35:06 GMT
+# Thu, 17 Oct 2019 15:19:17 GMT
 ENV PHPIZE_DEPS=autoconf 		dpkg-dev 		file 		g++ 		gcc 		libc-dev 		make 		pkg-config 		re2c
-# Thu, 12 Sep 2019 10:35:36 GMT
+# Thu, 17 Oct 2019 15:19:56 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		$PHPIZE_DEPS 		ca-certificates 		curl 		xz-utils 	; 	rm -rf /var/lib/apt/lists/*
-# Thu, 12 Sep 2019 10:35:36 GMT
+# Thu, 17 Oct 2019 15:19:57 GMT
 ENV PHP_INI_DIR=/usr/local/etc/php
-# Thu, 12 Sep 2019 10:35:37 GMT
+# Thu, 17 Oct 2019 15:19:58 GMT
 RUN set -eux; 	mkdir -p "$PHP_INI_DIR/conf.d"; 	[ ! -d /var/www/html ]; 	mkdir -p /var/www/html; 	chown www-data:www-data /var/www/html; 	chmod 777 /var/www/html
-# Thu, 12 Sep 2019 10:44:55 GMT
+# Thu, 17 Oct 2019 15:27:50 GMT
 ENV APACHE_CONFDIR=/etc/apache2
-# Thu, 12 Sep 2019 10:44:55 GMT
+# Thu, 17 Oct 2019 15:27:50 GMT
 ENV APACHE_ENVVARS=/etc/apache2/envvars
-# Thu, 12 Sep 2019 10:45:06 GMT
+# Thu, 17 Oct 2019 15:28:01 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends apache2; 	rm -rf /var/lib/apt/lists/*; 		sed -ri 's/^export ([^=]+)=(.*)$/: ${\1:=\2}\nexport \1/' "$APACHE_ENVVARS"; 		. "$APACHE_ENVVARS"; 	for dir in 		"$APACHE_LOCK_DIR" 		"$APACHE_RUN_DIR" 		"$APACHE_LOG_DIR" 	; do 		rm -rvf "$dir"; 		mkdir -p "$dir"; 		chown "$APACHE_RUN_USER:$APACHE_RUN_GROUP" "$dir"; 		chmod 777 "$dir"; 	done; 		rm -rvf /var/www/html/*; 		ln -sfT /dev/stderr "$APACHE_LOG_DIR/error.log"; 	ln -sfT /dev/stdout "$APACHE_LOG_DIR/access.log"; 	ln -sfT /dev/stdout "$APACHE_LOG_DIR/other_vhosts_access.log"; 	chown -R --no-dereference "$APACHE_RUN_USER:$APACHE_RUN_GROUP" "$APACHE_LOG_DIR"
-# Thu, 12 Sep 2019 10:45:07 GMT
+# Thu, 17 Oct 2019 15:28:03 GMT
 RUN a2dismod mpm_event && a2enmod mpm_prefork
-# Thu, 12 Sep 2019 10:45:08 GMT
+# Thu, 17 Oct 2019 15:28:04 GMT
 RUN { 		echo '<FilesMatch \.php$>'; 		echo '\tSetHandler application/x-httpd-php'; 		echo '</FilesMatch>'; 		echo; 		echo 'DirectoryIndex disabled'; 		echo 'DirectoryIndex index.php index.html'; 		echo; 		echo '<Directory /var/www/>'; 		echo '\tOptions -Indexes'; 		echo '\tAllowOverride All'; 		echo '</Directory>'; 	} | tee "$APACHE_CONFDIR/conf-available/docker-php.conf" 	&& a2enconf docker-php
-# Thu, 12 Sep 2019 10:45:08 GMT
+# Thu, 17 Oct 2019 15:28:04 GMT
 ENV PHP_EXTRA_BUILD_DEPS=apache2-dev
-# Thu, 12 Sep 2019 10:45:08 GMT
+# Thu, 17 Oct 2019 15:28:05 GMT
 ENV PHP_EXTRA_CONFIGURE_ARGS=--with-apxs2 --disable-cgi
-# Thu, 12 Sep 2019 10:45:08 GMT
+# Thu, 17 Oct 2019 15:28:05 GMT
 ENV PHP_CFLAGS=-fstack-protector-strong -fpic -fpie -O2
-# Thu, 12 Sep 2019 10:45:08 GMT
+# Thu, 17 Oct 2019 15:28:05 GMT
 ENV PHP_CPPFLAGS=-fstack-protector-strong -fpic -fpie -O2
-# Thu, 12 Sep 2019 10:45:08 GMT
+# Thu, 17 Oct 2019 15:28:05 GMT
 ENV PHP_LDFLAGS=-Wl,-O1 -Wl,--hash-style=both -pie
-# Thu, 12 Sep 2019 10:45:09 GMT
+# Thu, 17 Oct 2019 15:28:06 GMT
 ENV GPG_KEYS=CBAF69F173A0FEA4B537F470D66C9593118BCCB6 F38252826ACD957EF380D39F2F7956BC5DA04B5D
-# Thu, 26 Sep 2019 21:50:18 GMT
+# Thu, 17 Oct 2019 15:28:06 GMT
 ENV PHP_VERSION=7.3.10
-# Thu, 26 Sep 2019 21:50:18 GMT
+# Thu, 17 Oct 2019 15:28:06 GMT
 ENV PHP_URL=https://www.php.net/get/php-7.3.10.tar.xz/from/this/mirror PHP_ASC_URL=https://www.php.net/get/php-7.3.10.tar.xz.asc/from/this/mirror
-# Thu, 26 Sep 2019 21:50:18 GMT
+# Thu, 17 Oct 2019 15:28:07 GMT
 ENV PHP_SHA256=42f00a15419e05771734b7159c8d39d639b8a5a6770413adfa2615f6f923d906 PHP_MD5=
-# Thu, 26 Sep 2019 21:50:30 GMT
+# Thu, 17 Oct 2019 15:28:20 GMT
 RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends gnupg dirmngr; 	rm -rf /var/lib/apt/lists/*; 		mkdir -p /usr/src; 	cd /usr/src; 		curl -fsSL -o php.tar.xz "$PHP_URL"; 		if [ -n "$PHP_SHA256" ]; then 		echo "$PHP_SHA256 *php.tar.xz" | sha256sum -c -; 	fi; 	if [ -n "$PHP_MD5" ]; then 		echo "$PHP_MD5 *php.tar.xz" | md5sum -c -; 	fi; 		if [ -n "$PHP_ASC_URL" ]; then 		curl -fsSL -o php.tar.xz.asc "$PHP_ASC_URL"; 		export GNUPGHOME="$(mktemp -d)"; 		for key in $GPG_KEYS; do 			gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys "$key"; 		done; 		gpg --batch --verify php.tar.xz.asc php.tar.xz; 		gpgconf --kill all; 		rm -rf "$GNUPGHOME"; 	fi; 		apt-mark auto '.*' > /dev/null; 	apt-mark manual $savedAptMark > /dev/null; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false
-# Thu, 26 Sep 2019 21:50:30 GMT
+# Thu, 17 Oct 2019 15:28:20 GMT
 COPY file:ce57c04b70896f77cc11eb2766417d8a1240fcffe5bba92179ec78c458844110 in /usr/local/bin/ 
-# Fri, 04 Oct 2019 23:00:02 GMT
+# Thu, 17 Oct 2019 15:32:23 GMT
 RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	sed -e 's/stretch/buster/g' /etc/apt/sources.list > /etc/apt/sources.list.d/buster.list; 	{ 		echo 'Package: *'; 		echo 'Pin: release n=buster'; 		echo 'Pin-Priority: -10'; 		echo; 		echo 'Package: libargon2*'; 		echo 'Pin: release n=buster'; 		echo 'Pin-Priority: 990'; 	} > /etc/apt/preferences.d/argon2-buster; 	apt-get update; 	apt-get install -y --no-install-recommends 		libargon2-dev 		libcurl4-openssl-dev 		libedit-dev 		libsodium-dev 		libsqlite3-dev 		libssl-dev 		libxml2-dev 		zlib1g-dev 		${PHP_EXTRA_BUILD_DEPS:-} 	; 	rm -rf /var/lib/apt/lists/*; 		export 		CFLAGS="$PHP_CFLAGS" 		CPPFLAGS="$PHP_CPPFLAGS" 		LDFLAGS="$PHP_LDFLAGS" 	; 	docker-php-source extract; 	cd /usr/src/php; 	gnuArch="$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)"; 	debMultiarch="$(dpkg-architecture --query DEB_BUILD_MULTIARCH)"; 	if [ ! -d /usr/include/curl ]; then 		ln -sT "/usr/include/$debMultiarch/curl" /usr/local/include/curl; 	fi; 	./configure 		--build="$gnuArch" 		--with-config-file-path="$PHP_INI_DIR" 		--with-config-file-scan-dir="$PHP_INI_DIR/conf.d" 				--enable-option-checking=fatal 				--with-mhash 				--enable-ftp 		--enable-mbstring 		--enable-mysqlnd 		--with-password-argon2 		--with-sodium=shared 		--with-pdo-sqlite=/usr 		--with-sqlite3=/usr 				--with-curl 		--with-libedit 		--with-openssl 		--with-zlib 				$(test "$gnuArch" = 's390x-linux-gnu' && echo '--without-pcre-jit') 		--with-libdir="lib/$debMultiarch" 				${PHP_EXTRA_CONFIGURE_ARGS:-} 	; 	make -j "$(nproc)"; 	find -type f -name '*.a' -delete; 	make install; 	find /usr/local/bin /usr/local/sbin -type f -executable -exec strip --strip-all '{}' + || true; 	make clean; 		cp -v php.ini-* "$PHP_INI_DIR/"; 		cd /; 	docker-php-source delete; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark; 	find /usr/local -type f -executable -exec ldd '{}' ';' 		| awk '/=>/ { print $(NF-1) }' 		| sort -u 		| xargs -r dpkg-query --search 		| cut -d: -f1 		| sort -u 		| xargs -r apt-mark manual 	; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 		pecl update-channels; 	rm -rf /tmp/pear ~/.pearrc; 	php --version
-# Fri, 04 Oct 2019 23:00:02 GMT
+# Thu, 17 Oct 2019 15:32:24 GMT
 COPY multi:99e4ad617c6193834e78d12470f6dde09f70f4d40463009c5724954902e60676 in /usr/local/bin/ 
-# Fri, 04 Oct 2019 23:00:04 GMT
+# Thu, 17 Oct 2019 15:32:25 GMT
 RUN docker-php-ext-enable sodium
-# Fri, 04 Oct 2019 23:00:04 GMT
+# Thu, 17 Oct 2019 15:32:25 GMT
 ENTRYPOINT ["docker-php-entrypoint"]
-# Fri, 04 Oct 2019 23:00:04 GMT
+# Thu, 17 Oct 2019 15:32:25 GMT
 STOPSIGNAL WINCH
-# Fri, 04 Oct 2019 23:00:05 GMT
+# Thu, 17 Oct 2019 15:32:25 GMT
 COPY file:e3123fcb6566efa979f945bfac1c94c854a559d7b82723e42118882a8ac4de66 in /usr/local/bin/ 
-# Fri, 04 Oct 2019 23:00:05 GMT
+# Thu, 17 Oct 2019 15:32:25 GMT
 WORKDIR /var/www/html
-# Fri, 04 Oct 2019 23:00:05 GMT
+# Thu, 17 Oct 2019 15:32:26 GMT
 EXPOSE 80
-# Fri, 04 Oct 2019 23:00:05 GMT
+# Thu, 17 Oct 2019 15:32:26 GMT
 CMD ["apache2-foreground"]
-# Sat, 05 Oct 2019 05:37:18 GMT
+# Fri, 18 Oct 2019 06:25:57 GMT
 RUN set -eux; 		if command -v a2enmod; then 		a2enmod rewrite; 	fi; 		savedAptMark="$(apt-mark showmanual)"; 		apt-get update; 	apt-get install -y --no-install-recommends 		libfreetype6-dev 		libjpeg-dev 		libpng-dev 		libpq-dev 		libzip-dev 	; 		docker-php-ext-configure gd 		--with-freetype-dir=/usr 		--with-jpeg-dir=/usr 		--with-png-dir=/usr 	; 		docker-php-ext-install -j "$(nproc)" 		gd 		opcache 		pdo_mysql 		pdo_pgsql 		zip 	; 		apt-mark auto '.*' > /dev/null; 	apt-mark manual $savedAptMark; 	ldd "$(php -r 'echo ini_get("extension_dir");')"/*.so 		| awk '/=>/ { print $3 }' 		| sort -u 		| xargs -r dpkg-query -S 		| cut -d: -f1 		| sort -u 		| xargs -rt apt-mark manual; 		apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 	rm -rf /var/lib/apt/lists/*
-# Sat, 05 Oct 2019 05:37:20 GMT
+# Fri, 18 Oct 2019 06:25:57 GMT
 RUN { 		echo 'opcache.memory_consumption=128'; 		echo 'opcache.interned_strings_buffer=8'; 		echo 'opcache.max_accelerated_files=4000'; 		echo 'opcache.revalidate_freq=60'; 		echo 'opcache.fast_shutdown=1'; 	} > /usr/local/etc/php/conf.d/opcache-recommended.ini
-# Sat, 05 Oct 2019 05:37:20 GMT
+# Fri, 18 Oct 2019 06:25:57 GMT
 WORKDIR /var/www/html
-# Sat, 05 Oct 2019 05:37:20 GMT
+# Fri, 18 Oct 2019 06:25:58 GMT
 ENV DRUPAL_VERSION=8.7.8
-# Sat, 05 Oct 2019 05:37:21 GMT
+# Fri, 18 Oct 2019 06:25:58 GMT
 ENV DRUPAL_MD5=f281eb14d8aabf0c3e78dd519ca4b640
-# Sat, 05 Oct 2019 05:37:34 GMT
+# Fri, 18 Oct 2019 06:26:03 GMT
 RUN set -eux; 	curl -fSL "https://ftp.drupal.org/files/projects/drupal-${DRUPAL_VERSION}.tar.gz" -o drupal.tar.gz; 	echo "${DRUPAL_MD5} *drupal.tar.gz" | md5sum -c -; 	tar -xz --strip-components=1 -f drupal.tar.gz; 	rm drupal.tar.gz; 	chown -R www-data:www-data sites modules themes
 ```
 
 -	Layers:
-	-	`sha256:8f91359f1fffbf32b24ca854fb263d88a222371f38e90cf4583c5742cfdc3039`  
-		Last Modified: Wed, 11 Sep 2019 23:34:50 GMT  
-		Size: 22.5 MB (22510654 bytes)  
+	-	`sha256:80369df487363e56aea88d4d41b61f1607fc2ec198e9327cfde36a5346c71bf2`  
+		Last Modified: Wed, 16 Oct 2019 23:35:19 GMT  
+		Size: 22.5 MB (22524636 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:bf2faaedf741a44c5457bc029621724b7f316482f99de58522e1b659ddc8fd99`  
-		Last Modified: Thu, 12 Sep 2019 13:15:25 GMT  
-		Size: 225.0 B  
+	-	`sha256:60e80cb3f70356b666135b9d9acc19345b74bf7feedb2b6ac494dd6d224b8574`  
+		Last Modified: Thu, 17 Oct 2019 17:20:16 GMT  
+		Size: 226.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:24cd1299a53e525f85fdd79c524463ec6b6569df13c6af402ca0f706ad89c28b`  
-		Last Modified: Thu, 12 Sep 2019 13:15:49 GMT  
-		Size: 67.5 MB (67450331 bytes)  
+	-	`sha256:e3b2450987de138dcaf9f09559f25a8b2cd6ceaac8e28d858fdb73530d40f92e`  
+		Last Modified: Thu, 17 Oct 2019 17:20:33 GMT  
+		Size: 67.4 MB (67447849 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:17091cc665e4a0e967d00b8b36fcabb2b17d7bceba421f717f5d138063e22ad6`  
-		Last Modified: Thu, 12 Sep 2019 13:15:25 GMT  
-		Size: 237.0 B  
+	-	`sha256:c413b7377c2f336391745613272b75d32b6f52110d5cf6bb28949ed2eea52906`  
+		Last Modified: Thu, 17 Oct 2019 17:20:16 GMT  
+		Size: 238.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:ac9365919f9b10c759648e7efa92752c1443400e4178d6411f5a458a90e09ca2`  
-		Last Modified: Thu, 12 Sep 2019 13:16:08 GMT  
-		Size: 17.1 MB (17125603 bytes)  
+	-	`sha256:6dd9eff17a14f4fd1ad899a27f318151a4b2fa2d935cb85307637563d6973d17`  
+		Last Modified: Thu, 17 Oct 2019 17:20:46 GMT  
+		Size: 17.1 MB (17125324 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:4f1b34e209eee27994691cd890ca1422857bc1c2c166a700049ae0af84d6fb2a`  
-		Last Modified: Thu, 12 Sep 2019 13:16:02 GMT  
-		Size: 431.0 B  
+	-	`sha256:5126e57aff9b8bc91dfaa6885060a8b4cd41887d4a85621d5778c2ec6c660f2a`  
+		Last Modified: Thu, 17 Oct 2019 17:20:43 GMT  
+		Size: 437.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:832757fa04a4aea3b2f6e686cf9741254a6a03855e86b603417b6d3ce6c0038f`  
-		Last Modified: Thu, 12 Sep 2019 13:16:02 GMT  
-		Size: 487.0 B  
+	-	`sha256:943df09926ea3a42f821bbdfd1d3112e72b5da0fbc6761b35b50da5570cfb438`  
+		Last Modified: Thu, 17 Oct 2019 17:20:43 GMT  
+		Size: 490.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:640a8cc59ee46638b569b4797bc4a773e22ff83223d1d94620047e7acdf4f121`  
-		Last Modified: Fri, 27 Sep 2019 01:26:12 GMT  
-		Size: 12.4 MB (12435253 bytes)  
+	-	`sha256:9945a6d6fd51d29053a01e7362f98478704156cb0344028887de5de27b56f8cd`  
+		Last Modified: Thu, 17 Oct 2019 17:20:43 GMT  
+		Size: 12.4 MB (12435307 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:375d45a647bd866c4211aeda97b2b5bedb12dc76350eb92cdbcd172943efbf37`  
-		Last Modified: Fri, 27 Sep 2019 01:26:09 GMT  
+	-	`sha256:975035f5a785ddf7bea6b46a40a2beae1617b991dd4965bb2632ce819c0ebae4`  
+		Last Modified: Thu, 17 Oct 2019 17:20:42 GMT  
 		Size: 501.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:699f6141932e10e137db5a06352130c87535007fc4d71d0d21cf5204db76d728`  
-		Last Modified: Sat, 05 Oct 2019 03:49:47 GMT  
-		Size: 15.4 MB (15395755 bytes)  
+	-	`sha256:561abe18d8c31cf78ff6f1569ed5e894ccabfae65dd247928b73ca194c455f7a`  
+		Last Modified: Thu, 17 Oct 2019 17:20:45 GMT  
+		Size: 13.8 MB (13806779 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:be6c200d07db998ed59695b4d5635fadfcc871f2a0dd2ce5ed45e83ad94bfe5c`  
-		Last Modified: Sat, 05 Oct 2019 03:49:41 GMT  
-		Size: 2.2 KB (2223 bytes)  
+	-	`sha256:ecfae1d03a560507c8358c1dd3b5ea4d85df3274f721c12d1f5bf2f4f846a84c`  
+		Last Modified: Thu, 17 Oct 2019 17:20:42 GMT  
+		Size: 2.2 KB (2225 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c5a9afabd1a71f323e7c4c48a4bf311e19637c1dcfdd8e56930b318010c7a322`  
-		Last Modified: Sat, 05 Oct 2019 03:49:42 GMT  
-		Size: 259.0 B  
+	-	`sha256:69a47ac39f697f9eb8a508965dcd3b51d3365b5e3625aa08085f02866fb1531d`  
+		Last Modified: Thu, 17 Oct 2019 17:20:41 GMT  
+		Size: 261.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:f517a6395f969bd01b32606233e12344abd854953769c7fcced6d776964aac74`  
-		Last Modified: Sat, 05 Oct 2019 03:49:42 GMT  
-		Size: 901.0 B  
+	-	`sha256:4b0bd7b07f693ddfca86b3f94a7eb7f7d56d2f0d7d8b96b80ad7f3b438173b29`  
+		Last Modified: Thu, 17 Oct 2019 17:20:41 GMT  
+		Size: 905.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:4834256bfafcc2acba5ce5afc6eca80c529b1fd74620511b5ff32d99cc63c61f`  
-		Last Modified: Sat, 05 Oct 2019 05:49:42 GMT  
-		Size: 1.6 MB (1594511 bytes)  
+	-	`sha256:cbbcd711c9961e0745e2348424d92efce8a7c76228be39b3897db99c6c6120d8`  
+		Last Modified: Fri, 18 Oct 2019 06:30:30 GMT  
+		Size: 1.6 MB (1594259 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:658398927ac0c2d9570ced0232f6c98915b6bc254e4eb8654c20082a71484a82`  
-		Last Modified: Sat, 05 Oct 2019 05:49:41 GMT  
-		Size: 339.0 B  
+	-	`sha256:fab086cdefa2ad6d5c4ba0ef31daddc017cc3d10f842a3c1ad81cefa482e0de4`  
+		Last Modified: Fri, 18 Oct 2019 06:30:30 GMT  
+		Size: 340.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:dab98cb0ae912b1a85e6a906c59eec8fe7e8035a28425cf9842d37fbf0a348a4`  
-		Last Modified: Sat, 05 Oct 2019 05:49:51 GMT  
+	-	`sha256:8bc233ea200f92189618c3ce830efe5fc1541cc2dbe1a355e7a4f9e02b27d945`  
+		Last Modified: Fri, 18 Oct 2019 06:30:35 GMT  
 		Size: 18.0 MB (18005533 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
@@ -16328,7 +16328,7 @@ RUN set -eux; 	curl -fSL "https://ftp.drupal.org/files/projects/drupal-${DRUPAL_
 ## `drupal:8.7.8`
 
 ```console
-$ docker pull drupal@sha256:bb49d97d37087bf6a2d82c31a8baa477cba3983427242bc5bad334dae69611e3
+$ docker pull drupal@sha256:b5b9d1a33393aa3a54aa8639cb777ae2388d5b41bd855778633ba775234a29bf
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -16343,159 +16343,159 @@ $ docker pull drupal@sha256:bb49d97d37087bf6a2d82c31a8baa477cba3983427242bc5bad3
 ### `drupal:8.7.8` - linux; amd64
 
 ```console
-$ docker pull drupal@sha256:73a9b0def4d6d99b41e02a2dccd54200fc5dda7d8f38ac87174e1bf83e7f4219
+$ docker pull drupal@sha256:37037fd55f74b297e795a1abd0ba7d7e1c030e78e221f0018a9d1ee429eaa1a1
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **154.5 MB (154523243 bytes)**  
+-	Total Size: **152.9 MB (152945310 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:84af2ca3d9d5b7c4790ee0e1b2622bd6836c06cee3b601b7149ea9c92bcbf43b`
+-	Image ID: `sha256:db077f17914826f101cf283aa2bf0c07f0447562eed5f2069b5ea62b6e8edeec`
 -	Entrypoint: `["docker-php-entrypoint"]`
 -	Default Command: `["apache2-foreground"]`
 
 ```dockerfile
-# Wed, 11 Sep 2019 23:27:46 GMT
-ADD file:e82c447c3eae5d1d0282d8557b0c271b29d1be0d0f23204a09ad468be7a80d8c in / 
-# Wed, 11 Sep 2019 23:27:47 GMT
+# Wed, 16 Oct 2019 23:29:18 GMT
+ADD file:37512e59e7c324f9ec5b01628ef87efee73d2092cfe97d05ca949dc3528e4c2a in / 
+# Wed, 16 Oct 2019 23:29:19 GMT
 CMD ["bash"]
-# Thu, 12 Sep 2019 10:35:06 GMT
+# Thu, 17 Oct 2019 15:19:17 GMT
 RUN set -eux; 	{ 		echo 'Package: php*'; 		echo 'Pin: release *'; 		echo 'Pin-Priority: -1'; 	} > /etc/apt/preferences.d/no-debian-php
-# Thu, 12 Sep 2019 10:35:06 GMT
+# Thu, 17 Oct 2019 15:19:17 GMT
 ENV PHPIZE_DEPS=autoconf 		dpkg-dev 		file 		g++ 		gcc 		libc-dev 		make 		pkg-config 		re2c
-# Thu, 12 Sep 2019 10:35:36 GMT
+# Thu, 17 Oct 2019 15:19:56 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		$PHPIZE_DEPS 		ca-certificates 		curl 		xz-utils 	; 	rm -rf /var/lib/apt/lists/*
-# Thu, 12 Sep 2019 10:35:36 GMT
+# Thu, 17 Oct 2019 15:19:57 GMT
 ENV PHP_INI_DIR=/usr/local/etc/php
-# Thu, 12 Sep 2019 10:35:37 GMT
+# Thu, 17 Oct 2019 15:19:58 GMT
 RUN set -eux; 	mkdir -p "$PHP_INI_DIR/conf.d"; 	[ ! -d /var/www/html ]; 	mkdir -p /var/www/html; 	chown www-data:www-data /var/www/html; 	chmod 777 /var/www/html
-# Thu, 12 Sep 2019 10:44:55 GMT
+# Thu, 17 Oct 2019 15:27:50 GMT
 ENV APACHE_CONFDIR=/etc/apache2
-# Thu, 12 Sep 2019 10:44:55 GMT
+# Thu, 17 Oct 2019 15:27:50 GMT
 ENV APACHE_ENVVARS=/etc/apache2/envvars
-# Thu, 12 Sep 2019 10:45:06 GMT
+# Thu, 17 Oct 2019 15:28:01 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends apache2; 	rm -rf /var/lib/apt/lists/*; 		sed -ri 's/^export ([^=]+)=(.*)$/: ${\1:=\2}\nexport \1/' "$APACHE_ENVVARS"; 		. "$APACHE_ENVVARS"; 	for dir in 		"$APACHE_LOCK_DIR" 		"$APACHE_RUN_DIR" 		"$APACHE_LOG_DIR" 	; do 		rm -rvf "$dir"; 		mkdir -p "$dir"; 		chown "$APACHE_RUN_USER:$APACHE_RUN_GROUP" "$dir"; 		chmod 777 "$dir"; 	done; 		rm -rvf /var/www/html/*; 		ln -sfT /dev/stderr "$APACHE_LOG_DIR/error.log"; 	ln -sfT /dev/stdout "$APACHE_LOG_DIR/access.log"; 	ln -sfT /dev/stdout "$APACHE_LOG_DIR/other_vhosts_access.log"; 	chown -R --no-dereference "$APACHE_RUN_USER:$APACHE_RUN_GROUP" "$APACHE_LOG_DIR"
-# Thu, 12 Sep 2019 10:45:07 GMT
+# Thu, 17 Oct 2019 15:28:03 GMT
 RUN a2dismod mpm_event && a2enmod mpm_prefork
-# Thu, 12 Sep 2019 10:45:08 GMT
+# Thu, 17 Oct 2019 15:28:04 GMT
 RUN { 		echo '<FilesMatch \.php$>'; 		echo '\tSetHandler application/x-httpd-php'; 		echo '</FilesMatch>'; 		echo; 		echo 'DirectoryIndex disabled'; 		echo 'DirectoryIndex index.php index.html'; 		echo; 		echo '<Directory /var/www/>'; 		echo '\tOptions -Indexes'; 		echo '\tAllowOverride All'; 		echo '</Directory>'; 	} | tee "$APACHE_CONFDIR/conf-available/docker-php.conf" 	&& a2enconf docker-php
-# Thu, 12 Sep 2019 10:45:08 GMT
+# Thu, 17 Oct 2019 15:28:04 GMT
 ENV PHP_EXTRA_BUILD_DEPS=apache2-dev
-# Thu, 12 Sep 2019 10:45:08 GMT
+# Thu, 17 Oct 2019 15:28:05 GMT
 ENV PHP_EXTRA_CONFIGURE_ARGS=--with-apxs2 --disable-cgi
-# Thu, 12 Sep 2019 10:45:08 GMT
+# Thu, 17 Oct 2019 15:28:05 GMT
 ENV PHP_CFLAGS=-fstack-protector-strong -fpic -fpie -O2
-# Thu, 12 Sep 2019 10:45:08 GMT
+# Thu, 17 Oct 2019 15:28:05 GMT
 ENV PHP_CPPFLAGS=-fstack-protector-strong -fpic -fpie -O2
-# Thu, 12 Sep 2019 10:45:08 GMT
+# Thu, 17 Oct 2019 15:28:05 GMT
 ENV PHP_LDFLAGS=-Wl,-O1 -Wl,--hash-style=both -pie
-# Thu, 12 Sep 2019 10:45:09 GMT
+# Thu, 17 Oct 2019 15:28:06 GMT
 ENV GPG_KEYS=CBAF69F173A0FEA4B537F470D66C9593118BCCB6 F38252826ACD957EF380D39F2F7956BC5DA04B5D
-# Thu, 26 Sep 2019 21:50:18 GMT
+# Thu, 17 Oct 2019 15:28:06 GMT
 ENV PHP_VERSION=7.3.10
-# Thu, 26 Sep 2019 21:50:18 GMT
+# Thu, 17 Oct 2019 15:28:06 GMT
 ENV PHP_URL=https://www.php.net/get/php-7.3.10.tar.xz/from/this/mirror PHP_ASC_URL=https://www.php.net/get/php-7.3.10.tar.xz.asc/from/this/mirror
-# Thu, 26 Sep 2019 21:50:18 GMT
+# Thu, 17 Oct 2019 15:28:07 GMT
 ENV PHP_SHA256=42f00a15419e05771734b7159c8d39d639b8a5a6770413adfa2615f6f923d906 PHP_MD5=
-# Thu, 26 Sep 2019 21:50:30 GMT
+# Thu, 17 Oct 2019 15:28:20 GMT
 RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends gnupg dirmngr; 	rm -rf /var/lib/apt/lists/*; 		mkdir -p /usr/src; 	cd /usr/src; 		curl -fsSL -o php.tar.xz "$PHP_URL"; 		if [ -n "$PHP_SHA256" ]; then 		echo "$PHP_SHA256 *php.tar.xz" | sha256sum -c -; 	fi; 	if [ -n "$PHP_MD5" ]; then 		echo "$PHP_MD5 *php.tar.xz" | md5sum -c -; 	fi; 		if [ -n "$PHP_ASC_URL" ]; then 		curl -fsSL -o php.tar.xz.asc "$PHP_ASC_URL"; 		export GNUPGHOME="$(mktemp -d)"; 		for key in $GPG_KEYS; do 			gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys "$key"; 		done; 		gpg --batch --verify php.tar.xz.asc php.tar.xz; 		gpgconf --kill all; 		rm -rf "$GNUPGHOME"; 	fi; 		apt-mark auto '.*' > /dev/null; 	apt-mark manual $savedAptMark > /dev/null; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false
-# Thu, 26 Sep 2019 21:50:30 GMT
+# Thu, 17 Oct 2019 15:28:20 GMT
 COPY file:ce57c04b70896f77cc11eb2766417d8a1240fcffe5bba92179ec78c458844110 in /usr/local/bin/ 
-# Fri, 04 Oct 2019 23:00:02 GMT
+# Thu, 17 Oct 2019 15:32:23 GMT
 RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	sed -e 's/stretch/buster/g' /etc/apt/sources.list > /etc/apt/sources.list.d/buster.list; 	{ 		echo 'Package: *'; 		echo 'Pin: release n=buster'; 		echo 'Pin-Priority: -10'; 		echo; 		echo 'Package: libargon2*'; 		echo 'Pin: release n=buster'; 		echo 'Pin-Priority: 990'; 	} > /etc/apt/preferences.d/argon2-buster; 	apt-get update; 	apt-get install -y --no-install-recommends 		libargon2-dev 		libcurl4-openssl-dev 		libedit-dev 		libsodium-dev 		libsqlite3-dev 		libssl-dev 		libxml2-dev 		zlib1g-dev 		${PHP_EXTRA_BUILD_DEPS:-} 	; 	rm -rf /var/lib/apt/lists/*; 		export 		CFLAGS="$PHP_CFLAGS" 		CPPFLAGS="$PHP_CPPFLAGS" 		LDFLAGS="$PHP_LDFLAGS" 	; 	docker-php-source extract; 	cd /usr/src/php; 	gnuArch="$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)"; 	debMultiarch="$(dpkg-architecture --query DEB_BUILD_MULTIARCH)"; 	if [ ! -d /usr/include/curl ]; then 		ln -sT "/usr/include/$debMultiarch/curl" /usr/local/include/curl; 	fi; 	./configure 		--build="$gnuArch" 		--with-config-file-path="$PHP_INI_DIR" 		--with-config-file-scan-dir="$PHP_INI_DIR/conf.d" 				--enable-option-checking=fatal 				--with-mhash 				--enable-ftp 		--enable-mbstring 		--enable-mysqlnd 		--with-password-argon2 		--with-sodium=shared 		--with-pdo-sqlite=/usr 		--with-sqlite3=/usr 				--with-curl 		--with-libedit 		--with-openssl 		--with-zlib 				$(test "$gnuArch" = 's390x-linux-gnu' && echo '--without-pcre-jit') 		--with-libdir="lib/$debMultiarch" 				${PHP_EXTRA_CONFIGURE_ARGS:-} 	; 	make -j "$(nproc)"; 	find -type f -name '*.a' -delete; 	make install; 	find /usr/local/bin /usr/local/sbin -type f -executable -exec strip --strip-all '{}' + || true; 	make clean; 		cp -v php.ini-* "$PHP_INI_DIR/"; 		cd /; 	docker-php-source delete; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark; 	find /usr/local -type f -executable -exec ldd '{}' ';' 		| awk '/=>/ { print $(NF-1) }' 		| sort -u 		| xargs -r dpkg-query --search 		| cut -d: -f1 		| sort -u 		| xargs -r apt-mark manual 	; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 		pecl update-channels; 	rm -rf /tmp/pear ~/.pearrc; 	php --version
-# Fri, 04 Oct 2019 23:00:02 GMT
+# Thu, 17 Oct 2019 15:32:24 GMT
 COPY multi:99e4ad617c6193834e78d12470f6dde09f70f4d40463009c5724954902e60676 in /usr/local/bin/ 
-# Fri, 04 Oct 2019 23:00:04 GMT
+# Thu, 17 Oct 2019 15:32:25 GMT
 RUN docker-php-ext-enable sodium
-# Fri, 04 Oct 2019 23:00:04 GMT
+# Thu, 17 Oct 2019 15:32:25 GMT
 ENTRYPOINT ["docker-php-entrypoint"]
-# Fri, 04 Oct 2019 23:00:04 GMT
+# Thu, 17 Oct 2019 15:32:25 GMT
 STOPSIGNAL WINCH
-# Fri, 04 Oct 2019 23:00:05 GMT
+# Thu, 17 Oct 2019 15:32:25 GMT
 COPY file:e3123fcb6566efa979f945bfac1c94c854a559d7b82723e42118882a8ac4de66 in /usr/local/bin/ 
-# Fri, 04 Oct 2019 23:00:05 GMT
+# Thu, 17 Oct 2019 15:32:25 GMT
 WORKDIR /var/www/html
-# Fri, 04 Oct 2019 23:00:05 GMT
+# Thu, 17 Oct 2019 15:32:26 GMT
 EXPOSE 80
-# Fri, 04 Oct 2019 23:00:05 GMT
+# Thu, 17 Oct 2019 15:32:26 GMT
 CMD ["apache2-foreground"]
-# Sat, 05 Oct 2019 05:37:18 GMT
+# Fri, 18 Oct 2019 06:25:57 GMT
 RUN set -eux; 		if command -v a2enmod; then 		a2enmod rewrite; 	fi; 		savedAptMark="$(apt-mark showmanual)"; 		apt-get update; 	apt-get install -y --no-install-recommends 		libfreetype6-dev 		libjpeg-dev 		libpng-dev 		libpq-dev 		libzip-dev 	; 		docker-php-ext-configure gd 		--with-freetype-dir=/usr 		--with-jpeg-dir=/usr 		--with-png-dir=/usr 	; 		docker-php-ext-install -j "$(nproc)" 		gd 		opcache 		pdo_mysql 		pdo_pgsql 		zip 	; 		apt-mark auto '.*' > /dev/null; 	apt-mark manual $savedAptMark; 	ldd "$(php -r 'echo ini_get("extension_dir");')"/*.so 		| awk '/=>/ { print $3 }' 		| sort -u 		| xargs -r dpkg-query -S 		| cut -d: -f1 		| sort -u 		| xargs -rt apt-mark manual; 		apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 	rm -rf /var/lib/apt/lists/*
-# Sat, 05 Oct 2019 05:37:20 GMT
+# Fri, 18 Oct 2019 06:25:57 GMT
 RUN { 		echo 'opcache.memory_consumption=128'; 		echo 'opcache.interned_strings_buffer=8'; 		echo 'opcache.max_accelerated_files=4000'; 		echo 'opcache.revalidate_freq=60'; 		echo 'opcache.fast_shutdown=1'; 	} > /usr/local/etc/php/conf.d/opcache-recommended.ini
-# Sat, 05 Oct 2019 05:37:20 GMT
+# Fri, 18 Oct 2019 06:25:57 GMT
 WORKDIR /var/www/html
-# Sat, 05 Oct 2019 05:37:20 GMT
+# Fri, 18 Oct 2019 06:25:58 GMT
 ENV DRUPAL_VERSION=8.7.8
-# Sat, 05 Oct 2019 05:37:21 GMT
+# Fri, 18 Oct 2019 06:25:58 GMT
 ENV DRUPAL_MD5=f281eb14d8aabf0c3e78dd519ca4b640
-# Sat, 05 Oct 2019 05:37:34 GMT
+# Fri, 18 Oct 2019 06:26:03 GMT
 RUN set -eux; 	curl -fSL "https://ftp.drupal.org/files/projects/drupal-${DRUPAL_VERSION}.tar.gz" -o drupal.tar.gz; 	echo "${DRUPAL_MD5} *drupal.tar.gz" | md5sum -c -; 	tar -xz --strip-components=1 -f drupal.tar.gz; 	rm drupal.tar.gz; 	chown -R www-data:www-data sites modules themes
 ```
 
 -	Layers:
-	-	`sha256:8f91359f1fffbf32b24ca854fb263d88a222371f38e90cf4583c5742cfdc3039`  
-		Last Modified: Wed, 11 Sep 2019 23:34:50 GMT  
-		Size: 22.5 MB (22510654 bytes)  
+	-	`sha256:80369df487363e56aea88d4d41b61f1607fc2ec198e9327cfde36a5346c71bf2`  
+		Last Modified: Wed, 16 Oct 2019 23:35:19 GMT  
+		Size: 22.5 MB (22524636 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:bf2faaedf741a44c5457bc029621724b7f316482f99de58522e1b659ddc8fd99`  
-		Last Modified: Thu, 12 Sep 2019 13:15:25 GMT  
-		Size: 225.0 B  
+	-	`sha256:60e80cb3f70356b666135b9d9acc19345b74bf7feedb2b6ac494dd6d224b8574`  
+		Last Modified: Thu, 17 Oct 2019 17:20:16 GMT  
+		Size: 226.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:24cd1299a53e525f85fdd79c524463ec6b6569df13c6af402ca0f706ad89c28b`  
-		Last Modified: Thu, 12 Sep 2019 13:15:49 GMT  
-		Size: 67.5 MB (67450331 bytes)  
+	-	`sha256:e3b2450987de138dcaf9f09559f25a8b2cd6ceaac8e28d858fdb73530d40f92e`  
+		Last Modified: Thu, 17 Oct 2019 17:20:33 GMT  
+		Size: 67.4 MB (67447849 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:17091cc665e4a0e967d00b8b36fcabb2b17d7bceba421f717f5d138063e22ad6`  
-		Last Modified: Thu, 12 Sep 2019 13:15:25 GMT  
-		Size: 237.0 B  
+	-	`sha256:c413b7377c2f336391745613272b75d32b6f52110d5cf6bb28949ed2eea52906`  
+		Last Modified: Thu, 17 Oct 2019 17:20:16 GMT  
+		Size: 238.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:ac9365919f9b10c759648e7efa92752c1443400e4178d6411f5a458a90e09ca2`  
-		Last Modified: Thu, 12 Sep 2019 13:16:08 GMT  
-		Size: 17.1 MB (17125603 bytes)  
+	-	`sha256:6dd9eff17a14f4fd1ad899a27f318151a4b2fa2d935cb85307637563d6973d17`  
+		Last Modified: Thu, 17 Oct 2019 17:20:46 GMT  
+		Size: 17.1 MB (17125324 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:4f1b34e209eee27994691cd890ca1422857bc1c2c166a700049ae0af84d6fb2a`  
-		Last Modified: Thu, 12 Sep 2019 13:16:02 GMT  
-		Size: 431.0 B  
+	-	`sha256:5126e57aff9b8bc91dfaa6885060a8b4cd41887d4a85621d5778c2ec6c660f2a`  
+		Last Modified: Thu, 17 Oct 2019 17:20:43 GMT  
+		Size: 437.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:832757fa04a4aea3b2f6e686cf9741254a6a03855e86b603417b6d3ce6c0038f`  
-		Last Modified: Thu, 12 Sep 2019 13:16:02 GMT  
-		Size: 487.0 B  
+	-	`sha256:943df09926ea3a42f821bbdfd1d3112e72b5da0fbc6761b35b50da5570cfb438`  
+		Last Modified: Thu, 17 Oct 2019 17:20:43 GMT  
+		Size: 490.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:640a8cc59ee46638b569b4797bc4a773e22ff83223d1d94620047e7acdf4f121`  
-		Last Modified: Fri, 27 Sep 2019 01:26:12 GMT  
-		Size: 12.4 MB (12435253 bytes)  
+	-	`sha256:9945a6d6fd51d29053a01e7362f98478704156cb0344028887de5de27b56f8cd`  
+		Last Modified: Thu, 17 Oct 2019 17:20:43 GMT  
+		Size: 12.4 MB (12435307 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:375d45a647bd866c4211aeda97b2b5bedb12dc76350eb92cdbcd172943efbf37`  
-		Last Modified: Fri, 27 Sep 2019 01:26:09 GMT  
+	-	`sha256:975035f5a785ddf7bea6b46a40a2beae1617b991dd4965bb2632ce819c0ebae4`  
+		Last Modified: Thu, 17 Oct 2019 17:20:42 GMT  
 		Size: 501.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:699f6141932e10e137db5a06352130c87535007fc4d71d0d21cf5204db76d728`  
-		Last Modified: Sat, 05 Oct 2019 03:49:47 GMT  
-		Size: 15.4 MB (15395755 bytes)  
+	-	`sha256:561abe18d8c31cf78ff6f1569ed5e894ccabfae65dd247928b73ca194c455f7a`  
+		Last Modified: Thu, 17 Oct 2019 17:20:45 GMT  
+		Size: 13.8 MB (13806779 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:be6c200d07db998ed59695b4d5635fadfcc871f2a0dd2ce5ed45e83ad94bfe5c`  
-		Last Modified: Sat, 05 Oct 2019 03:49:41 GMT  
-		Size: 2.2 KB (2223 bytes)  
+	-	`sha256:ecfae1d03a560507c8358c1dd3b5ea4d85df3274f721c12d1f5bf2f4f846a84c`  
+		Last Modified: Thu, 17 Oct 2019 17:20:42 GMT  
+		Size: 2.2 KB (2225 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c5a9afabd1a71f323e7c4c48a4bf311e19637c1dcfdd8e56930b318010c7a322`  
-		Last Modified: Sat, 05 Oct 2019 03:49:42 GMT  
-		Size: 259.0 B  
+	-	`sha256:69a47ac39f697f9eb8a508965dcd3b51d3365b5e3625aa08085f02866fb1531d`  
+		Last Modified: Thu, 17 Oct 2019 17:20:41 GMT  
+		Size: 261.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:f517a6395f969bd01b32606233e12344abd854953769c7fcced6d776964aac74`  
-		Last Modified: Sat, 05 Oct 2019 03:49:42 GMT  
-		Size: 901.0 B  
+	-	`sha256:4b0bd7b07f693ddfca86b3f94a7eb7f7d56d2f0d7d8b96b80ad7f3b438173b29`  
+		Last Modified: Thu, 17 Oct 2019 17:20:41 GMT  
+		Size: 905.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:4834256bfafcc2acba5ce5afc6eca80c529b1fd74620511b5ff32d99cc63c61f`  
-		Last Modified: Sat, 05 Oct 2019 05:49:42 GMT  
-		Size: 1.6 MB (1594511 bytes)  
+	-	`sha256:cbbcd711c9961e0745e2348424d92efce8a7c76228be39b3897db99c6c6120d8`  
+		Last Modified: Fri, 18 Oct 2019 06:30:30 GMT  
+		Size: 1.6 MB (1594259 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:658398927ac0c2d9570ced0232f6c98915b6bc254e4eb8654c20082a71484a82`  
-		Last Modified: Sat, 05 Oct 2019 05:49:41 GMT  
-		Size: 339.0 B  
+	-	`sha256:fab086cdefa2ad6d5c4ba0ef31daddc017cc3d10f842a3c1ad81cefa482e0de4`  
+		Last Modified: Fri, 18 Oct 2019 06:30:30 GMT  
+		Size: 340.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:dab98cb0ae912b1a85e6a906c59eec8fe7e8035a28425cf9842d37fbf0a348a4`  
-		Last Modified: Sat, 05 Oct 2019 05:49:51 GMT  
+	-	`sha256:8bc233ea200f92189618c3ce830efe5fc1541cc2dbe1a355e7a4f9e02b27d945`  
+		Last Modified: Fri, 18 Oct 2019 06:30:35 GMT  
 		Size: 18.0 MB (18005533 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
@@ -17297,7 +17297,7 @@ RUN set -eux; 	curl -fSL "https://ftp.drupal.org/files/projects/drupal-${DRUPAL_
 ## `drupal:8.7.8-apache`
 
 ```console
-$ docker pull drupal@sha256:bb49d97d37087bf6a2d82c31a8baa477cba3983427242bc5bad334dae69611e3
+$ docker pull drupal@sha256:b5b9d1a33393aa3a54aa8639cb777ae2388d5b41bd855778633ba775234a29bf
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -17312,159 +17312,159 @@ $ docker pull drupal@sha256:bb49d97d37087bf6a2d82c31a8baa477cba3983427242bc5bad3
 ### `drupal:8.7.8-apache` - linux; amd64
 
 ```console
-$ docker pull drupal@sha256:73a9b0def4d6d99b41e02a2dccd54200fc5dda7d8f38ac87174e1bf83e7f4219
+$ docker pull drupal@sha256:37037fd55f74b297e795a1abd0ba7d7e1c030e78e221f0018a9d1ee429eaa1a1
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **154.5 MB (154523243 bytes)**  
+-	Total Size: **152.9 MB (152945310 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:84af2ca3d9d5b7c4790ee0e1b2622bd6836c06cee3b601b7149ea9c92bcbf43b`
+-	Image ID: `sha256:db077f17914826f101cf283aa2bf0c07f0447562eed5f2069b5ea62b6e8edeec`
 -	Entrypoint: `["docker-php-entrypoint"]`
 -	Default Command: `["apache2-foreground"]`
 
 ```dockerfile
-# Wed, 11 Sep 2019 23:27:46 GMT
-ADD file:e82c447c3eae5d1d0282d8557b0c271b29d1be0d0f23204a09ad468be7a80d8c in / 
-# Wed, 11 Sep 2019 23:27:47 GMT
+# Wed, 16 Oct 2019 23:29:18 GMT
+ADD file:37512e59e7c324f9ec5b01628ef87efee73d2092cfe97d05ca949dc3528e4c2a in / 
+# Wed, 16 Oct 2019 23:29:19 GMT
 CMD ["bash"]
-# Thu, 12 Sep 2019 10:35:06 GMT
+# Thu, 17 Oct 2019 15:19:17 GMT
 RUN set -eux; 	{ 		echo 'Package: php*'; 		echo 'Pin: release *'; 		echo 'Pin-Priority: -1'; 	} > /etc/apt/preferences.d/no-debian-php
-# Thu, 12 Sep 2019 10:35:06 GMT
+# Thu, 17 Oct 2019 15:19:17 GMT
 ENV PHPIZE_DEPS=autoconf 		dpkg-dev 		file 		g++ 		gcc 		libc-dev 		make 		pkg-config 		re2c
-# Thu, 12 Sep 2019 10:35:36 GMT
+# Thu, 17 Oct 2019 15:19:56 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		$PHPIZE_DEPS 		ca-certificates 		curl 		xz-utils 	; 	rm -rf /var/lib/apt/lists/*
-# Thu, 12 Sep 2019 10:35:36 GMT
+# Thu, 17 Oct 2019 15:19:57 GMT
 ENV PHP_INI_DIR=/usr/local/etc/php
-# Thu, 12 Sep 2019 10:35:37 GMT
+# Thu, 17 Oct 2019 15:19:58 GMT
 RUN set -eux; 	mkdir -p "$PHP_INI_DIR/conf.d"; 	[ ! -d /var/www/html ]; 	mkdir -p /var/www/html; 	chown www-data:www-data /var/www/html; 	chmod 777 /var/www/html
-# Thu, 12 Sep 2019 10:44:55 GMT
+# Thu, 17 Oct 2019 15:27:50 GMT
 ENV APACHE_CONFDIR=/etc/apache2
-# Thu, 12 Sep 2019 10:44:55 GMT
+# Thu, 17 Oct 2019 15:27:50 GMT
 ENV APACHE_ENVVARS=/etc/apache2/envvars
-# Thu, 12 Sep 2019 10:45:06 GMT
+# Thu, 17 Oct 2019 15:28:01 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends apache2; 	rm -rf /var/lib/apt/lists/*; 		sed -ri 's/^export ([^=]+)=(.*)$/: ${\1:=\2}\nexport \1/' "$APACHE_ENVVARS"; 		. "$APACHE_ENVVARS"; 	for dir in 		"$APACHE_LOCK_DIR" 		"$APACHE_RUN_DIR" 		"$APACHE_LOG_DIR" 	; do 		rm -rvf "$dir"; 		mkdir -p "$dir"; 		chown "$APACHE_RUN_USER:$APACHE_RUN_GROUP" "$dir"; 		chmod 777 "$dir"; 	done; 		rm -rvf /var/www/html/*; 		ln -sfT /dev/stderr "$APACHE_LOG_DIR/error.log"; 	ln -sfT /dev/stdout "$APACHE_LOG_DIR/access.log"; 	ln -sfT /dev/stdout "$APACHE_LOG_DIR/other_vhosts_access.log"; 	chown -R --no-dereference "$APACHE_RUN_USER:$APACHE_RUN_GROUP" "$APACHE_LOG_DIR"
-# Thu, 12 Sep 2019 10:45:07 GMT
+# Thu, 17 Oct 2019 15:28:03 GMT
 RUN a2dismod mpm_event && a2enmod mpm_prefork
-# Thu, 12 Sep 2019 10:45:08 GMT
+# Thu, 17 Oct 2019 15:28:04 GMT
 RUN { 		echo '<FilesMatch \.php$>'; 		echo '\tSetHandler application/x-httpd-php'; 		echo '</FilesMatch>'; 		echo; 		echo 'DirectoryIndex disabled'; 		echo 'DirectoryIndex index.php index.html'; 		echo; 		echo '<Directory /var/www/>'; 		echo '\tOptions -Indexes'; 		echo '\tAllowOverride All'; 		echo '</Directory>'; 	} | tee "$APACHE_CONFDIR/conf-available/docker-php.conf" 	&& a2enconf docker-php
-# Thu, 12 Sep 2019 10:45:08 GMT
+# Thu, 17 Oct 2019 15:28:04 GMT
 ENV PHP_EXTRA_BUILD_DEPS=apache2-dev
-# Thu, 12 Sep 2019 10:45:08 GMT
+# Thu, 17 Oct 2019 15:28:05 GMT
 ENV PHP_EXTRA_CONFIGURE_ARGS=--with-apxs2 --disable-cgi
-# Thu, 12 Sep 2019 10:45:08 GMT
+# Thu, 17 Oct 2019 15:28:05 GMT
 ENV PHP_CFLAGS=-fstack-protector-strong -fpic -fpie -O2
-# Thu, 12 Sep 2019 10:45:08 GMT
+# Thu, 17 Oct 2019 15:28:05 GMT
 ENV PHP_CPPFLAGS=-fstack-protector-strong -fpic -fpie -O2
-# Thu, 12 Sep 2019 10:45:08 GMT
+# Thu, 17 Oct 2019 15:28:05 GMT
 ENV PHP_LDFLAGS=-Wl,-O1 -Wl,--hash-style=both -pie
-# Thu, 12 Sep 2019 10:45:09 GMT
+# Thu, 17 Oct 2019 15:28:06 GMT
 ENV GPG_KEYS=CBAF69F173A0FEA4B537F470D66C9593118BCCB6 F38252826ACD957EF380D39F2F7956BC5DA04B5D
-# Thu, 26 Sep 2019 21:50:18 GMT
+# Thu, 17 Oct 2019 15:28:06 GMT
 ENV PHP_VERSION=7.3.10
-# Thu, 26 Sep 2019 21:50:18 GMT
+# Thu, 17 Oct 2019 15:28:06 GMT
 ENV PHP_URL=https://www.php.net/get/php-7.3.10.tar.xz/from/this/mirror PHP_ASC_URL=https://www.php.net/get/php-7.3.10.tar.xz.asc/from/this/mirror
-# Thu, 26 Sep 2019 21:50:18 GMT
+# Thu, 17 Oct 2019 15:28:07 GMT
 ENV PHP_SHA256=42f00a15419e05771734b7159c8d39d639b8a5a6770413adfa2615f6f923d906 PHP_MD5=
-# Thu, 26 Sep 2019 21:50:30 GMT
+# Thu, 17 Oct 2019 15:28:20 GMT
 RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends gnupg dirmngr; 	rm -rf /var/lib/apt/lists/*; 		mkdir -p /usr/src; 	cd /usr/src; 		curl -fsSL -o php.tar.xz "$PHP_URL"; 		if [ -n "$PHP_SHA256" ]; then 		echo "$PHP_SHA256 *php.tar.xz" | sha256sum -c -; 	fi; 	if [ -n "$PHP_MD5" ]; then 		echo "$PHP_MD5 *php.tar.xz" | md5sum -c -; 	fi; 		if [ -n "$PHP_ASC_URL" ]; then 		curl -fsSL -o php.tar.xz.asc "$PHP_ASC_URL"; 		export GNUPGHOME="$(mktemp -d)"; 		for key in $GPG_KEYS; do 			gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys "$key"; 		done; 		gpg --batch --verify php.tar.xz.asc php.tar.xz; 		gpgconf --kill all; 		rm -rf "$GNUPGHOME"; 	fi; 		apt-mark auto '.*' > /dev/null; 	apt-mark manual $savedAptMark > /dev/null; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false
-# Thu, 26 Sep 2019 21:50:30 GMT
+# Thu, 17 Oct 2019 15:28:20 GMT
 COPY file:ce57c04b70896f77cc11eb2766417d8a1240fcffe5bba92179ec78c458844110 in /usr/local/bin/ 
-# Fri, 04 Oct 2019 23:00:02 GMT
+# Thu, 17 Oct 2019 15:32:23 GMT
 RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	sed -e 's/stretch/buster/g' /etc/apt/sources.list > /etc/apt/sources.list.d/buster.list; 	{ 		echo 'Package: *'; 		echo 'Pin: release n=buster'; 		echo 'Pin-Priority: -10'; 		echo; 		echo 'Package: libargon2*'; 		echo 'Pin: release n=buster'; 		echo 'Pin-Priority: 990'; 	} > /etc/apt/preferences.d/argon2-buster; 	apt-get update; 	apt-get install -y --no-install-recommends 		libargon2-dev 		libcurl4-openssl-dev 		libedit-dev 		libsodium-dev 		libsqlite3-dev 		libssl-dev 		libxml2-dev 		zlib1g-dev 		${PHP_EXTRA_BUILD_DEPS:-} 	; 	rm -rf /var/lib/apt/lists/*; 		export 		CFLAGS="$PHP_CFLAGS" 		CPPFLAGS="$PHP_CPPFLAGS" 		LDFLAGS="$PHP_LDFLAGS" 	; 	docker-php-source extract; 	cd /usr/src/php; 	gnuArch="$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)"; 	debMultiarch="$(dpkg-architecture --query DEB_BUILD_MULTIARCH)"; 	if [ ! -d /usr/include/curl ]; then 		ln -sT "/usr/include/$debMultiarch/curl" /usr/local/include/curl; 	fi; 	./configure 		--build="$gnuArch" 		--with-config-file-path="$PHP_INI_DIR" 		--with-config-file-scan-dir="$PHP_INI_DIR/conf.d" 				--enable-option-checking=fatal 				--with-mhash 				--enable-ftp 		--enable-mbstring 		--enable-mysqlnd 		--with-password-argon2 		--with-sodium=shared 		--with-pdo-sqlite=/usr 		--with-sqlite3=/usr 				--with-curl 		--with-libedit 		--with-openssl 		--with-zlib 				$(test "$gnuArch" = 's390x-linux-gnu' && echo '--without-pcre-jit') 		--with-libdir="lib/$debMultiarch" 				${PHP_EXTRA_CONFIGURE_ARGS:-} 	; 	make -j "$(nproc)"; 	find -type f -name '*.a' -delete; 	make install; 	find /usr/local/bin /usr/local/sbin -type f -executable -exec strip --strip-all '{}' + || true; 	make clean; 		cp -v php.ini-* "$PHP_INI_DIR/"; 		cd /; 	docker-php-source delete; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark; 	find /usr/local -type f -executable -exec ldd '{}' ';' 		| awk '/=>/ { print $(NF-1) }' 		| sort -u 		| xargs -r dpkg-query --search 		| cut -d: -f1 		| sort -u 		| xargs -r apt-mark manual 	; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 		pecl update-channels; 	rm -rf /tmp/pear ~/.pearrc; 	php --version
-# Fri, 04 Oct 2019 23:00:02 GMT
+# Thu, 17 Oct 2019 15:32:24 GMT
 COPY multi:99e4ad617c6193834e78d12470f6dde09f70f4d40463009c5724954902e60676 in /usr/local/bin/ 
-# Fri, 04 Oct 2019 23:00:04 GMT
+# Thu, 17 Oct 2019 15:32:25 GMT
 RUN docker-php-ext-enable sodium
-# Fri, 04 Oct 2019 23:00:04 GMT
+# Thu, 17 Oct 2019 15:32:25 GMT
 ENTRYPOINT ["docker-php-entrypoint"]
-# Fri, 04 Oct 2019 23:00:04 GMT
+# Thu, 17 Oct 2019 15:32:25 GMT
 STOPSIGNAL WINCH
-# Fri, 04 Oct 2019 23:00:05 GMT
+# Thu, 17 Oct 2019 15:32:25 GMT
 COPY file:e3123fcb6566efa979f945bfac1c94c854a559d7b82723e42118882a8ac4de66 in /usr/local/bin/ 
-# Fri, 04 Oct 2019 23:00:05 GMT
+# Thu, 17 Oct 2019 15:32:25 GMT
 WORKDIR /var/www/html
-# Fri, 04 Oct 2019 23:00:05 GMT
+# Thu, 17 Oct 2019 15:32:26 GMT
 EXPOSE 80
-# Fri, 04 Oct 2019 23:00:05 GMT
+# Thu, 17 Oct 2019 15:32:26 GMT
 CMD ["apache2-foreground"]
-# Sat, 05 Oct 2019 05:37:18 GMT
+# Fri, 18 Oct 2019 06:25:57 GMT
 RUN set -eux; 		if command -v a2enmod; then 		a2enmod rewrite; 	fi; 		savedAptMark="$(apt-mark showmanual)"; 		apt-get update; 	apt-get install -y --no-install-recommends 		libfreetype6-dev 		libjpeg-dev 		libpng-dev 		libpq-dev 		libzip-dev 	; 		docker-php-ext-configure gd 		--with-freetype-dir=/usr 		--with-jpeg-dir=/usr 		--with-png-dir=/usr 	; 		docker-php-ext-install -j "$(nproc)" 		gd 		opcache 		pdo_mysql 		pdo_pgsql 		zip 	; 		apt-mark auto '.*' > /dev/null; 	apt-mark manual $savedAptMark; 	ldd "$(php -r 'echo ini_get("extension_dir");')"/*.so 		| awk '/=>/ { print $3 }' 		| sort -u 		| xargs -r dpkg-query -S 		| cut -d: -f1 		| sort -u 		| xargs -rt apt-mark manual; 		apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 	rm -rf /var/lib/apt/lists/*
-# Sat, 05 Oct 2019 05:37:20 GMT
+# Fri, 18 Oct 2019 06:25:57 GMT
 RUN { 		echo 'opcache.memory_consumption=128'; 		echo 'opcache.interned_strings_buffer=8'; 		echo 'opcache.max_accelerated_files=4000'; 		echo 'opcache.revalidate_freq=60'; 		echo 'opcache.fast_shutdown=1'; 	} > /usr/local/etc/php/conf.d/opcache-recommended.ini
-# Sat, 05 Oct 2019 05:37:20 GMT
+# Fri, 18 Oct 2019 06:25:57 GMT
 WORKDIR /var/www/html
-# Sat, 05 Oct 2019 05:37:20 GMT
+# Fri, 18 Oct 2019 06:25:58 GMT
 ENV DRUPAL_VERSION=8.7.8
-# Sat, 05 Oct 2019 05:37:21 GMT
+# Fri, 18 Oct 2019 06:25:58 GMT
 ENV DRUPAL_MD5=f281eb14d8aabf0c3e78dd519ca4b640
-# Sat, 05 Oct 2019 05:37:34 GMT
+# Fri, 18 Oct 2019 06:26:03 GMT
 RUN set -eux; 	curl -fSL "https://ftp.drupal.org/files/projects/drupal-${DRUPAL_VERSION}.tar.gz" -o drupal.tar.gz; 	echo "${DRUPAL_MD5} *drupal.tar.gz" | md5sum -c -; 	tar -xz --strip-components=1 -f drupal.tar.gz; 	rm drupal.tar.gz; 	chown -R www-data:www-data sites modules themes
 ```
 
 -	Layers:
-	-	`sha256:8f91359f1fffbf32b24ca854fb263d88a222371f38e90cf4583c5742cfdc3039`  
-		Last Modified: Wed, 11 Sep 2019 23:34:50 GMT  
-		Size: 22.5 MB (22510654 bytes)  
+	-	`sha256:80369df487363e56aea88d4d41b61f1607fc2ec198e9327cfde36a5346c71bf2`  
+		Last Modified: Wed, 16 Oct 2019 23:35:19 GMT  
+		Size: 22.5 MB (22524636 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:bf2faaedf741a44c5457bc029621724b7f316482f99de58522e1b659ddc8fd99`  
-		Last Modified: Thu, 12 Sep 2019 13:15:25 GMT  
-		Size: 225.0 B  
+	-	`sha256:60e80cb3f70356b666135b9d9acc19345b74bf7feedb2b6ac494dd6d224b8574`  
+		Last Modified: Thu, 17 Oct 2019 17:20:16 GMT  
+		Size: 226.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:24cd1299a53e525f85fdd79c524463ec6b6569df13c6af402ca0f706ad89c28b`  
-		Last Modified: Thu, 12 Sep 2019 13:15:49 GMT  
-		Size: 67.5 MB (67450331 bytes)  
+	-	`sha256:e3b2450987de138dcaf9f09559f25a8b2cd6ceaac8e28d858fdb73530d40f92e`  
+		Last Modified: Thu, 17 Oct 2019 17:20:33 GMT  
+		Size: 67.4 MB (67447849 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:17091cc665e4a0e967d00b8b36fcabb2b17d7bceba421f717f5d138063e22ad6`  
-		Last Modified: Thu, 12 Sep 2019 13:15:25 GMT  
-		Size: 237.0 B  
+	-	`sha256:c413b7377c2f336391745613272b75d32b6f52110d5cf6bb28949ed2eea52906`  
+		Last Modified: Thu, 17 Oct 2019 17:20:16 GMT  
+		Size: 238.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:ac9365919f9b10c759648e7efa92752c1443400e4178d6411f5a458a90e09ca2`  
-		Last Modified: Thu, 12 Sep 2019 13:16:08 GMT  
-		Size: 17.1 MB (17125603 bytes)  
+	-	`sha256:6dd9eff17a14f4fd1ad899a27f318151a4b2fa2d935cb85307637563d6973d17`  
+		Last Modified: Thu, 17 Oct 2019 17:20:46 GMT  
+		Size: 17.1 MB (17125324 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:4f1b34e209eee27994691cd890ca1422857bc1c2c166a700049ae0af84d6fb2a`  
-		Last Modified: Thu, 12 Sep 2019 13:16:02 GMT  
-		Size: 431.0 B  
+	-	`sha256:5126e57aff9b8bc91dfaa6885060a8b4cd41887d4a85621d5778c2ec6c660f2a`  
+		Last Modified: Thu, 17 Oct 2019 17:20:43 GMT  
+		Size: 437.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:832757fa04a4aea3b2f6e686cf9741254a6a03855e86b603417b6d3ce6c0038f`  
-		Last Modified: Thu, 12 Sep 2019 13:16:02 GMT  
-		Size: 487.0 B  
+	-	`sha256:943df09926ea3a42f821bbdfd1d3112e72b5da0fbc6761b35b50da5570cfb438`  
+		Last Modified: Thu, 17 Oct 2019 17:20:43 GMT  
+		Size: 490.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:640a8cc59ee46638b569b4797bc4a773e22ff83223d1d94620047e7acdf4f121`  
-		Last Modified: Fri, 27 Sep 2019 01:26:12 GMT  
-		Size: 12.4 MB (12435253 bytes)  
+	-	`sha256:9945a6d6fd51d29053a01e7362f98478704156cb0344028887de5de27b56f8cd`  
+		Last Modified: Thu, 17 Oct 2019 17:20:43 GMT  
+		Size: 12.4 MB (12435307 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:375d45a647bd866c4211aeda97b2b5bedb12dc76350eb92cdbcd172943efbf37`  
-		Last Modified: Fri, 27 Sep 2019 01:26:09 GMT  
+	-	`sha256:975035f5a785ddf7bea6b46a40a2beae1617b991dd4965bb2632ce819c0ebae4`  
+		Last Modified: Thu, 17 Oct 2019 17:20:42 GMT  
 		Size: 501.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:699f6141932e10e137db5a06352130c87535007fc4d71d0d21cf5204db76d728`  
-		Last Modified: Sat, 05 Oct 2019 03:49:47 GMT  
-		Size: 15.4 MB (15395755 bytes)  
+	-	`sha256:561abe18d8c31cf78ff6f1569ed5e894ccabfae65dd247928b73ca194c455f7a`  
+		Last Modified: Thu, 17 Oct 2019 17:20:45 GMT  
+		Size: 13.8 MB (13806779 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:be6c200d07db998ed59695b4d5635fadfcc871f2a0dd2ce5ed45e83ad94bfe5c`  
-		Last Modified: Sat, 05 Oct 2019 03:49:41 GMT  
-		Size: 2.2 KB (2223 bytes)  
+	-	`sha256:ecfae1d03a560507c8358c1dd3b5ea4d85df3274f721c12d1f5bf2f4f846a84c`  
+		Last Modified: Thu, 17 Oct 2019 17:20:42 GMT  
+		Size: 2.2 KB (2225 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c5a9afabd1a71f323e7c4c48a4bf311e19637c1dcfdd8e56930b318010c7a322`  
-		Last Modified: Sat, 05 Oct 2019 03:49:42 GMT  
-		Size: 259.0 B  
+	-	`sha256:69a47ac39f697f9eb8a508965dcd3b51d3365b5e3625aa08085f02866fb1531d`  
+		Last Modified: Thu, 17 Oct 2019 17:20:41 GMT  
+		Size: 261.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:f517a6395f969bd01b32606233e12344abd854953769c7fcced6d776964aac74`  
-		Last Modified: Sat, 05 Oct 2019 03:49:42 GMT  
-		Size: 901.0 B  
+	-	`sha256:4b0bd7b07f693ddfca86b3f94a7eb7f7d56d2f0d7d8b96b80ad7f3b438173b29`  
+		Last Modified: Thu, 17 Oct 2019 17:20:41 GMT  
+		Size: 905.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:4834256bfafcc2acba5ce5afc6eca80c529b1fd74620511b5ff32d99cc63c61f`  
-		Last Modified: Sat, 05 Oct 2019 05:49:42 GMT  
-		Size: 1.6 MB (1594511 bytes)  
+	-	`sha256:cbbcd711c9961e0745e2348424d92efce8a7c76228be39b3897db99c6c6120d8`  
+		Last Modified: Fri, 18 Oct 2019 06:30:30 GMT  
+		Size: 1.6 MB (1594259 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:658398927ac0c2d9570ced0232f6c98915b6bc254e4eb8654c20082a71484a82`  
-		Last Modified: Sat, 05 Oct 2019 05:49:41 GMT  
-		Size: 339.0 B  
+	-	`sha256:fab086cdefa2ad6d5c4ba0ef31daddc017cc3d10f842a3c1ad81cefa482e0de4`  
+		Last Modified: Fri, 18 Oct 2019 06:30:30 GMT  
+		Size: 340.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:dab98cb0ae912b1a85e6a906c59eec8fe7e8035a28425cf9842d37fbf0a348a4`  
-		Last Modified: Sat, 05 Oct 2019 05:49:51 GMT  
+	-	`sha256:8bc233ea200f92189618c3ce830efe5fc1541cc2dbe1a355e7a4f9e02b27d945`  
+		Last Modified: Fri, 18 Oct 2019 06:30:35 GMT  
 		Size: 18.0 MB (18005533 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
@@ -18266,7 +18266,7 @@ RUN set -eux; 	curl -fSL "https://ftp.drupal.org/files/projects/drupal-${DRUPAL_
 ## `drupal:8.7.8-fpm`
 
 ```console
-$ docker pull drupal@sha256:701c723f8932697372d6ce007ed99cd0099500f749483e381a58057b7eff8075
+$ docker pull drupal@sha256:99f98be373b1a34bf0866f863609257f83ca42eb232ebeafdb89c68dfac20678
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -18281,135 +18281,135 @@ $ docker pull drupal@sha256:701c723f8932697372d6ce007ed99cd0099500f749483e381a58
 ### `drupal:8.7.8-fpm` - linux; amd64
 
 ```console
-$ docker pull drupal@sha256:f46dbffc79089009d60a2368474f93159cf6c9ff6207d20d04c300e41895050e
+$ docker pull drupal@sha256:77fd62f00360643bff1118c8ef0e348a3f59fb135366dd3947134a819ba0d821
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **151.3 MB (151252817 bytes)**  
+-	Total Size: **149.6 MB (149591047 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:d95c8dc3c4a56853941fa498238ab14d20f419e40fbfd514066f7cccbef8d7b0`
+-	Image ID: `sha256:7e6359a86ef497503ba8a7c76024929b54cbeb63efe84f36793e5f806a96386d`
 -	Entrypoint: `["docker-php-entrypoint"]`
 -	Default Command: `["php-fpm"]`
 
 ```dockerfile
-# Wed, 11 Sep 2019 23:27:46 GMT
-ADD file:e82c447c3eae5d1d0282d8557b0c271b29d1be0d0f23204a09ad468be7a80d8c in / 
-# Wed, 11 Sep 2019 23:27:47 GMT
+# Wed, 16 Oct 2019 23:29:18 GMT
+ADD file:37512e59e7c324f9ec5b01628ef87efee73d2092cfe97d05ca949dc3528e4c2a in / 
+# Wed, 16 Oct 2019 23:29:19 GMT
 CMD ["bash"]
-# Thu, 12 Sep 2019 10:35:06 GMT
+# Thu, 17 Oct 2019 15:19:17 GMT
 RUN set -eux; 	{ 		echo 'Package: php*'; 		echo 'Pin: release *'; 		echo 'Pin-Priority: -1'; 	} > /etc/apt/preferences.d/no-debian-php
-# Thu, 12 Sep 2019 10:35:06 GMT
+# Thu, 17 Oct 2019 15:19:17 GMT
 ENV PHPIZE_DEPS=autoconf 		dpkg-dev 		file 		g++ 		gcc 		libc-dev 		make 		pkg-config 		re2c
-# Thu, 12 Sep 2019 10:35:36 GMT
+# Thu, 17 Oct 2019 15:19:56 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		$PHPIZE_DEPS 		ca-certificates 		curl 		xz-utils 	; 	rm -rf /var/lib/apt/lists/*
-# Thu, 12 Sep 2019 10:35:36 GMT
+# Thu, 17 Oct 2019 15:19:57 GMT
 ENV PHP_INI_DIR=/usr/local/etc/php
-# Thu, 12 Sep 2019 10:35:37 GMT
+# Thu, 17 Oct 2019 15:19:58 GMT
 RUN set -eux; 	mkdir -p "$PHP_INI_DIR/conf.d"; 	[ ! -d /var/www/html ]; 	mkdir -p /var/www/html; 	chown www-data:www-data /var/www/html; 	chmod 777 /var/www/html
-# Thu, 12 Sep 2019 10:51:13 GMT
+# Thu, 17 Oct 2019 15:32:36 GMT
 ENV PHP_EXTRA_CONFIGURE_ARGS=--enable-fpm --with-fpm-user=www-data --with-fpm-group=www-data --disable-cgi
-# Thu, 12 Sep 2019 10:51:13 GMT
+# Thu, 17 Oct 2019 15:32:36 GMT
 ENV PHP_CFLAGS=-fstack-protector-strong -fpic -fpie -O2
-# Thu, 12 Sep 2019 10:51:13 GMT
+# Thu, 17 Oct 2019 15:32:36 GMT
 ENV PHP_CPPFLAGS=-fstack-protector-strong -fpic -fpie -O2
-# Thu, 12 Sep 2019 10:51:14 GMT
+# Thu, 17 Oct 2019 15:32:36 GMT
 ENV PHP_LDFLAGS=-Wl,-O1 -Wl,--hash-style=both -pie
-# Thu, 12 Sep 2019 10:51:14 GMT
+# Thu, 17 Oct 2019 15:32:37 GMT
 ENV GPG_KEYS=CBAF69F173A0FEA4B537F470D66C9593118BCCB6 F38252826ACD957EF380D39F2F7956BC5DA04B5D
-# Thu, 26 Sep 2019 21:55:51 GMT
+# Thu, 17 Oct 2019 15:32:37 GMT
 ENV PHP_VERSION=7.3.10
-# Thu, 26 Sep 2019 21:55:52 GMT
+# Thu, 17 Oct 2019 15:32:37 GMT
 ENV PHP_URL=https://www.php.net/get/php-7.3.10.tar.xz/from/this/mirror PHP_ASC_URL=https://www.php.net/get/php-7.3.10.tar.xz.asc/from/this/mirror
-# Thu, 26 Sep 2019 21:55:52 GMT
+# Thu, 17 Oct 2019 15:32:37 GMT
 ENV PHP_SHA256=42f00a15419e05771734b7159c8d39d639b8a5a6770413adfa2615f6f923d906 PHP_MD5=
-# Thu, 26 Sep 2019 21:56:04 GMT
+# Thu, 17 Oct 2019 15:32:46 GMT
 RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends gnupg dirmngr; 	rm -rf /var/lib/apt/lists/*; 		mkdir -p /usr/src; 	cd /usr/src; 		curl -fsSL -o php.tar.xz "$PHP_URL"; 		if [ -n "$PHP_SHA256" ]; then 		echo "$PHP_SHA256 *php.tar.xz" | sha256sum -c -; 	fi; 	if [ -n "$PHP_MD5" ]; then 		echo "$PHP_MD5 *php.tar.xz" | md5sum -c -; 	fi; 		if [ -n "$PHP_ASC_URL" ]; then 		curl -fsSL -o php.tar.xz.asc "$PHP_ASC_URL"; 		export GNUPGHOME="$(mktemp -d)"; 		for key in $GPG_KEYS; do 			gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys "$key"; 		done; 		gpg --batch --verify php.tar.xz.asc php.tar.xz; 		gpgconf --kill all; 		rm -rf "$GNUPGHOME"; 	fi; 		apt-mark auto '.*' > /dev/null; 	apt-mark manual $savedAptMark > /dev/null; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false
-# Thu, 26 Sep 2019 21:56:05 GMT
+# Thu, 17 Oct 2019 15:32:46 GMT
 COPY file:ce57c04b70896f77cc11eb2766417d8a1240fcffe5bba92179ec78c458844110 in /usr/local/bin/ 
-# Fri, 04 Oct 2019 23:08:24 GMT
+# Thu, 17 Oct 2019 15:39:24 GMT
 RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	sed -e 's/stretch/buster/g' /etc/apt/sources.list > /etc/apt/sources.list.d/buster.list; 	{ 		echo 'Package: *'; 		echo 'Pin: release n=buster'; 		echo 'Pin-Priority: -10'; 		echo; 		echo 'Package: libargon2*'; 		echo 'Pin: release n=buster'; 		echo 'Pin-Priority: 990'; 	} > /etc/apt/preferences.d/argon2-buster; 	apt-get update; 	apt-get install -y --no-install-recommends 		libargon2-dev 		libcurl4-openssl-dev 		libedit-dev 		libsodium-dev 		libsqlite3-dev 		libssl-dev 		libxml2-dev 		zlib1g-dev 		${PHP_EXTRA_BUILD_DEPS:-} 	; 	rm -rf /var/lib/apt/lists/*; 		export 		CFLAGS="$PHP_CFLAGS" 		CPPFLAGS="$PHP_CPPFLAGS" 		LDFLAGS="$PHP_LDFLAGS" 	; 	docker-php-source extract; 	cd /usr/src/php; 	gnuArch="$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)"; 	debMultiarch="$(dpkg-architecture --query DEB_BUILD_MULTIARCH)"; 	if [ ! -d /usr/include/curl ]; then 		ln -sT "/usr/include/$debMultiarch/curl" /usr/local/include/curl; 	fi; 	./configure 		--build="$gnuArch" 		--with-config-file-path="$PHP_INI_DIR" 		--with-config-file-scan-dir="$PHP_INI_DIR/conf.d" 				--enable-option-checking=fatal 				--with-mhash 				--enable-ftp 		--enable-mbstring 		--enable-mysqlnd 		--with-password-argon2 		--with-sodium=shared 		--with-pdo-sqlite=/usr 		--with-sqlite3=/usr 				--with-curl 		--with-libedit 		--with-openssl 		--with-zlib 				$(test "$gnuArch" = 's390x-linux-gnu' && echo '--without-pcre-jit') 		--with-libdir="lib/$debMultiarch" 				${PHP_EXTRA_CONFIGURE_ARGS:-} 	; 	make -j "$(nproc)"; 	find -type f -name '*.a' -delete; 	make install; 	find /usr/local/bin /usr/local/sbin -type f -executable -exec strip --strip-all '{}' + || true; 	make clean; 		cp -v php.ini-* "$PHP_INI_DIR/"; 		cd /; 	docker-php-source delete; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark; 	find /usr/local -type f -executable -exec ldd '{}' ';' 		| awk '/=>/ { print $(NF-1) }' 		| sort -u 		| xargs -r dpkg-query --search 		| cut -d: -f1 		| sort -u 		| xargs -r apt-mark manual 	; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 		pecl update-channels; 	rm -rf /tmp/pear ~/.pearrc; 	php --version
-# Fri, 04 Oct 2019 23:08:24 GMT
+# Thu, 17 Oct 2019 15:39:24 GMT
 COPY multi:c1ff99c7805e8f41fdb0717f754884884ce2157d746a82343d7c737c86ded761 in /usr/local/bin/ 
-# Fri, 04 Oct 2019 23:08:26 GMT
+# Thu, 17 Oct 2019 15:39:25 GMT
 RUN docker-php-ext-enable sodium
-# Fri, 04 Oct 2019 23:08:26 GMT
+# Thu, 17 Oct 2019 15:39:25 GMT
 ENTRYPOINT ["docker-php-entrypoint"]
-# Fri, 04 Oct 2019 23:08:26 GMT
+# Thu, 17 Oct 2019 15:39:25 GMT
 WORKDIR /var/www/html
-# Fri, 04 Oct 2019 23:08:27 GMT
+# Thu, 17 Oct 2019 15:39:26 GMT
 RUN set -eux; 	cd /usr/local/etc; 	if [ -d php-fpm.d ]; then 		sed 's!=NONE/!=!g' php-fpm.conf.default | tee php-fpm.conf > /dev/null; 		cp php-fpm.d/www.conf.default php-fpm.d/www.conf; 	else 		mkdir php-fpm.d; 		cp php-fpm.conf.default php-fpm.d/www.conf; 		{ 			echo '[global]'; 			echo 'include=etc/php-fpm.d/*.conf'; 		} | tee php-fpm.conf; 	fi; 	{ 		echo '[global]'; 		echo 'error_log = /proc/self/fd/2'; 		echo; echo '; https://github.com/docker-library/php/pull/725#issuecomment-443540114'; echo 'log_limit = 8192'; 		echo; 		echo '[www]'; 		echo '; if we send this to /proc/self/fd/1, it never appears'; 		echo 'access.log = /proc/self/fd/2'; 		echo; 		echo 'clear_env = no'; 		echo; 		echo '; Ensure worker stdout and stderr are sent to the main error log.'; 		echo 'catch_workers_output = yes'; 		echo 'decorate_workers_output = no'; 	} | tee php-fpm.d/docker.conf; 	{ 		echo '[global]'; 		echo 'daemonize = no'; 		echo; 		echo '[www]'; 		echo 'listen = 9000'; 	} | tee php-fpm.d/zz-docker.conf
-# Fri, 04 Oct 2019 23:08:28 GMT
+# Thu, 17 Oct 2019 15:39:26 GMT
 STOPSIGNAL SIGQUIT
-# Fri, 04 Oct 2019 23:08:28 GMT
+# Thu, 17 Oct 2019 15:39:26 GMT
 EXPOSE 9000
-# Fri, 04 Oct 2019 23:08:28 GMT
+# Thu, 17 Oct 2019 15:39:27 GMT
 CMD ["php-fpm"]
-# Sat, 05 Oct 2019 05:39:32 GMT
+# Fri, 18 Oct 2019 06:27:08 GMT
 RUN set -eux; 		if command -v a2enmod; then 		a2enmod rewrite; 	fi; 		savedAptMark="$(apt-mark showmanual)"; 		apt-get update; 	apt-get install -y --no-install-recommends 		libfreetype6-dev 		libjpeg-dev 		libpng-dev 		libpq-dev 		libzip-dev 	; 		docker-php-ext-configure gd 		--with-freetype-dir=/usr 		--with-jpeg-dir=/usr 		--with-png-dir=/usr 	; 		docker-php-ext-install -j "$(nproc)" 		gd 		opcache 		pdo_mysql 		pdo_pgsql 		zip 	; 		apt-mark auto '.*' > /dev/null; 	apt-mark manual $savedAptMark; 	ldd "$(php -r 'echo ini_get("extension_dir");')"/*.so 		| awk '/=>/ { print $3 }' 		| sort -u 		| xargs -r dpkg-query -S 		| cut -d: -f1 		| sort -u 		| xargs -rt apt-mark manual; 		apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 	rm -rf /var/lib/apt/lists/*
-# Sat, 05 Oct 2019 05:39:33 GMT
+# Fri, 18 Oct 2019 06:27:09 GMT
 RUN { 		echo 'opcache.memory_consumption=128'; 		echo 'opcache.interned_strings_buffer=8'; 		echo 'opcache.max_accelerated_files=4000'; 		echo 'opcache.revalidate_freq=60'; 		echo 'opcache.fast_shutdown=1'; 	} > /usr/local/etc/php/conf.d/opcache-recommended.ini
-# Sat, 05 Oct 2019 05:39:33 GMT
+# Fri, 18 Oct 2019 06:27:09 GMT
 WORKDIR /var/www/html
-# Sat, 05 Oct 2019 05:39:33 GMT
+# Fri, 18 Oct 2019 06:27:09 GMT
 ENV DRUPAL_VERSION=8.7.8
-# Sat, 05 Oct 2019 05:39:34 GMT
+# Fri, 18 Oct 2019 06:27:10 GMT
 ENV DRUPAL_MD5=f281eb14d8aabf0c3e78dd519ca4b640
-# Sat, 05 Oct 2019 05:39:47 GMT
+# Fri, 18 Oct 2019 06:27:15 GMT
 RUN set -eux; 	curl -fSL "https://ftp.drupal.org/files/projects/drupal-${DRUPAL_VERSION}.tar.gz" -o drupal.tar.gz; 	echo "${DRUPAL_MD5} *drupal.tar.gz" | md5sum -c -; 	tar -xz --strip-components=1 -f drupal.tar.gz; 	rm drupal.tar.gz; 	chown -R www-data:www-data sites modules themes
 ```
 
 -	Layers:
-	-	`sha256:8f91359f1fffbf32b24ca854fb263d88a222371f38e90cf4583c5742cfdc3039`  
-		Last Modified: Wed, 11 Sep 2019 23:34:50 GMT  
-		Size: 22.5 MB (22510654 bytes)  
+	-	`sha256:80369df487363e56aea88d4d41b61f1607fc2ec198e9327cfde36a5346c71bf2`  
+		Last Modified: Wed, 16 Oct 2019 23:35:19 GMT  
+		Size: 22.5 MB (22524636 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:bf2faaedf741a44c5457bc029621724b7f316482f99de58522e1b659ddc8fd99`  
-		Last Modified: Thu, 12 Sep 2019 13:15:25 GMT  
-		Size: 225.0 B  
+	-	`sha256:60e80cb3f70356b666135b9d9acc19345b74bf7feedb2b6ac494dd6d224b8574`  
+		Last Modified: Thu, 17 Oct 2019 17:20:16 GMT  
+		Size: 226.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:24cd1299a53e525f85fdd79c524463ec6b6569df13c6af402ca0f706ad89c28b`  
-		Last Modified: Thu, 12 Sep 2019 13:15:49 GMT  
-		Size: 67.5 MB (67450331 bytes)  
+	-	`sha256:e3b2450987de138dcaf9f09559f25a8b2cd6ceaac8e28d858fdb73530d40f92e`  
+		Last Modified: Thu, 17 Oct 2019 17:20:33 GMT  
+		Size: 67.4 MB (67447849 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:17091cc665e4a0e967d00b8b36fcabb2b17d7bceba421f717f5d138063e22ad6`  
-		Last Modified: Thu, 12 Sep 2019 13:15:25 GMT  
-		Size: 237.0 B  
+	-	`sha256:c413b7377c2f336391745613272b75d32b6f52110d5cf6bb28949ed2eea52906`  
+		Last Modified: Thu, 17 Oct 2019 17:20:16 GMT  
+		Size: 238.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:8880c01fadaf626a1ac9c93de76f80b0a02b905c57d9f0365d4ac7c140f73e8c`  
-		Last Modified: Fri, 27 Sep 2019 01:26:22 GMT  
-		Size: 12.4 MB (12414280 bytes)  
+	-	`sha256:a4b596a71a07bc97264060cb0d57f0a891799939bd0e967d554d51545ada78be`  
+		Last Modified: Thu, 17 Oct 2019 17:20:58 GMT  
+		Size: 12.4 MB (12414267 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:d7c57fbcfc142a1709892e77f655b6d3bc3a360f3a53baa61f11532b82c8c515`  
-		Last Modified: Fri, 27 Sep 2019 01:26:20 GMT  
-		Size: 501.0 B  
+	-	`sha256:2cf73d873c0e64ef386aaa2a4d767e8926c300028add95393ca378292a310c35`  
+		Last Modified: Thu, 17 Oct 2019 17:20:58 GMT  
+		Size: 499.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:6892f4a86a2085651c3e09630b9bf14329145a52732afa800916109d2d9bd02f`  
-		Last Modified: Sat, 05 Oct 2019 03:50:12 GMT  
-		Size: 29.3 MB (29288310 bytes)  
+	-	`sha256:8e7b760badfbfbd3508bfd56e884f1a4c31e3ff00f630d4624139ec14e27eafe`  
+		Last Modified: Thu, 17 Oct 2019 17:20:58 GMT  
+		Size: 27.6 MB (27615254 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:22cf8b69eff81a1164b28f190d3b463fbbf520226b72995d0e4694e1739938f2`  
-		Last Modified: Sat, 05 Oct 2019 03:50:04 GMT  
-		Size: 2.2 KB (2220 bytes)  
+	-	`sha256:cbf349b24dffa2417c332e0bb55e2b980bcf46b3d7fbaa00fe87a08049c00b37`  
+		Last Modified: Thu, 17 Oct 2019 17:20:52 GMT  
+		Size: 2.2 KB (2217 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:ad2e7ee133845ff994982ea6b2f1c4004b526a57a802799a3c2112c6bb61403b`  
-		Last Modified: Sat, 05 Oct 2019 03:50:05 GMT  
+	-	`sha256:7c7f8431d945db36e6d726da1ce843ab4926b2674813197ebc4df8ef645e1fad`  
+		Last Modified: Thu, 17 Oct 2019 17:20:52 GMT  
 		Size: 258.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:24280bd5a9e9c27e015b3688cc4f6a0cad035125203e12bdb8bf032f5ac2157c`  
-		Last Modified: Sat, 05 Oct 2019 03:50:04 GMT  
-		Size: 8.3 KB (8287 bytes)  
+	-	`sha256:4158250e7cbb6afb6bad049e8f6c42837af7388056d517299036b15c1e985735`  
+		Last Modified: Thu, 17 Oct 2019 17:20:52 GMT  
+		Size: 8.3 KB (8282 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:bb8ba779b8dea8b1239cad15d567a2a08795231cf3f90db5b6a6994bbf1ce482`  
-		Last Modified: Sat, 05 Oct 2019 05:50:06 GMT  
-		Size: 1.6 MB (1571648 bytes)  
+	-	`sha256:3330fb06dfea77578c0b38bcd9ea770fcb018dccaad2e0e0e6126ea07c464b42`  
+		Last Modified: Fri, 18 Oct 2019 06:30:44 GMT  
+		Size: 1.6 MB (1571457 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:98637942b66d74c5fee0f05722ee152214d79356567bc25ae93b392d4f328711`  
-		Last Modified: Sat, 05 Oct 2019 05:50:06 GMT  
-		Size: 340.0 B  
+	-	`sha256:7b616380d0c6bbfd5a0f9dce7d63136cf3dac391a1171ec150ae05a5b211187a`  
+		Last Modified: Fri, 18 Oct 2019 06:30:44 GMT  
+		Size: 338.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c243379e0059c809bc7c6c0ad6d509b901da81482644a577f34624c9e2c860b5`  
-		Last Modified: Sat, 05 Oct 2019 05:50:18 GMT  
+	-	`sha256:433c3962f963c20086701b05347d595344d23f64adcb7b2a9dca22a7abb25a07`  
+		Last Modified: Fri, 18 Oct 2019 06:30:49 GMT  
 		Size: 18.0 MB (18005526 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
@@ -19916,7 +19916,7 @@ RUN set -eux; 	curl -fSL "https://ftp.drupal.org/files/projects/drupal-${DRUPAL_
 ## `drupal:8.7-apache`
 
 ```console
-$ docker pull drupal@sha256:bb49d97d37087bf6a2d82c31a8baa477cba3983427242bc5bad334dae69611e3
+$ docker pull drupal@sha256:b5b9d1a33393aa3a54aa8639cb777ae2388d5b41bd855778633ba775234a29bf
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -19931,159 +19931,159 @@ $ docker pull drupal@sha256:bb49d97d37087bf6a2d82c31a8baa477cba3983427242bc5bad3
 ### `drupal:8.7-apache` - linux; amd64
 
 ```console
-$ docker pull drupal@sha256:73a9b0def4d6d99b41e02a2dccd54200fc5dda7d8f38ac87174e1bf83e7f4219
+$ docker pull drupal@sha256:37037fd55f74b297e795a1abd0ba7d7e1c030e78e221f0018a9d1ee429eaa1a1
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **154.5 MB (154523243 bytes)**  
+-	Total Size: **152.9 MB (152945310 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:84af2ca3d9d5b7c4790ee0e1b2622bd6836c06cee3b601b7149ea9c92bcbf43b`
+-	Image ID: `sha256:db077f17914826f101cf283aa2bf0c07f0447562eed5f2069b5ea62b6e8edeec`
 -	Entrypoint: `["docker-php-entrypoint"]`
 -	Default Command: `["apache2-foreground"]`
 
 ```dockerfile
-# Wed, 11 Sep 2019 23:27:46 GMT
-ADD file:e82c447c3eae5d1d0282d8557b0c271b29d1be0d0f23204a09ad468be7a80d8c in / 
-# Wed, 11 Sep 2019 23:27:47 GMT
+# Wed, 16 Oct 2019 23:29:18 GMT
+ADD file:37512e59e7c324f9ec5b01628ef87efee73d2092cfe97d05ca949dc3528e4c2a in / 
+# Wed, 16 Oct 2019 23:29:19 GMT
 CMD ["bash"]
-# Thu, 12 Sep 2019 10:35:06 GMT
+# Thu, 17 Oct 2019 15:19:17 GMT
 RUN set -eux; 	{ 		echo 'Package: php*'; 		echo 'Pin: release *'; 		echo 'Pin-Priority: -1'; 	} > /etc/apt/preferences.d/no-debian-php
-# Thu, 12 Sep 2019 10:35:06 GMT
+# Thu, 17 Oct 2019 15:19:17 GMT
 ENV PHPIZE_DEPS=autoconf 		dpkg-dev 		file 		g++ 		gcc 		libc-dev 		make 		pkg-config 		re2c
-# Thu, 12 Sep 2019 10:35:36 GMT
+# Thu, 17 Oct 2019 15:19:56 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		$PHPIZE_DEPS 		ca-certificates 		curl 		xz-utils 	; 	rm -rf /var/lib/apt/lists/*
-# Thu, 12 Sep 2019 10:35:36 GMT
+# Thu, 17 Oct 2019 15:19:57 GMT
 ENV PHP_INI_DIR=/usr/local/etc/php
-# Thu, 12 Sep 2019 10:35:37 GMT
+# Thu, 17 Oct 2019 15:19:58 GMT
 RUN set -eux; 	mkdir -p "$PHP_INI_DIR/conf.d"; 	[ ! -d /var/www/html ]; 	mkdir -p /var/www/html; 	chown www-data:www-data /var/www/html; 	chmod 777 /var/www/html
-# Thu, 12 Sep 2019 10:44:55 GMT
+# Thu, 17 Oct 2019 15:27:50 GMT
 ENV APACHE_CONFDIR=/etc/apache2
-# Thu, 12 Sep 2019 10:44:55 GMT
+# Thu, 17 Oct 2019 15:27:50 GMT
 ENV APACHE_ENVVARS=/etc/apache2/envvars
-# Thu, 12 Sep 2019 10:45:06 GMT
+# Thu, 17 Oct 2019 15:28:01 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends apache2; 	rm -rf /var/lib/apt/lists/*; 		sed -ri 's/^export ([^=]+)=(.*)$/: ${\1:=\2}\nexport \1/' "$APACHE_ENVVARS"; 		. "$APACHE_ENVVARS"; 	for dir in 		"$APACHE_LOCK_DIR" 		"$APACHE_RUN_DIR" 		"$APACHE_LOG_DIR" 	; do 		rm -rvf "$dir"; 		mkdir -p "$dir"; 		chown "$APACHE_RUN_USER:$APACHE_RUN_GROUP" "$dir"; 		chmod 777 "$dir"; 	done; 		rm -rvf /var/www/html/*; 		ln -sfT /dev/stderr "$APACHE_LOG_DIR/error.log"; 	ln -sfT /dev/stdout "$APACHE_LOG_DIR/access.log"; 	ln -sfT /dev/stdout "$APACHE_LOG_DIR/other_vhosts_access.log"; 	chown -R --no-dereference "$APACHE_RUN_USER:$APACHE_RUN_GROUP" "$APACHE_LOG_DIR"
-# Thu, 12 Sep 2019 10:45:07 GMT
+# Thu, 17 Oct 2019 15:28:03 GMT
 RUN a2dismod mpm_event && a2enmod mpm_prefork
-# Thu, 12 Sep 2019 10:45:08 GMT
+# Thu, 17 Oct 2019 15:28:04 GMT
 RUN { 		echo '<FilesMatch \.php$>'; 		echo '\tSetHandler application/x-httpd-php'; 		echo '</FilesMatch>'; 		echo; 		echo 'DirectoryIndex disabled'; 		echo 'DirectoryIndex index.php index.html'; 		echo; 		echo '<Directory /var/www/>'; 		echo '\tOptions -Indexes'; 		echo '\tAllowOverride All'; 		echo '</Directory>'; 	} | tee "$APACHE_CONFDIR/conf-available/docker-php.conf" 	&& a2enconf docker-php
-# Thu, 12 Sep 2019 10:45:08 GMT
+# Thu, 17 Oct 2019 15:28:04 GMT
 ENV PHP_EXTRA_BUILD_DEPS=apache2-dev
-# Thu, 12 Sep 2019 10:45:08 GMT
+# Thu, 17 Oct 2019 15:28:05 GMT
 ENV PHP_EXTRA_CONFIGURE_ARGS=--with-apxs2 --disable-cgi
-# Thu, 12 Sep 2019 10:45:08 GMT
+# Thu, 17 Oct 2019 15:28:05 GMT
 ENV PHP_CFLAGS=-fstack-protector-strong -fpic -fpie -O2
-# Thu, 12 Sep 2019 10:45:08 GMT
+# Thu, 17 Oct 2019 15:28:05 GMT
 ENV PHP_CPPFLAGS=-fstack-protector-strong -fpic -fpie -O2
-# Thu, 12 Sep 2019 10:45:08 GMT
+# Thu, 17 Oct 2019 15:28:05 GMT
 ENV PHP_LDFLAGS=-Wl,-O1 -Wl,--hash-style=both -pie
-# Thu, 12 Sep 2019 10:45:09 GMT
+# Thu, 17 Oct 2019 15:28:06 GMT
 ENV GPG_KEYS=CBAF69F173A0FEA4B537F470D66C9593118BCCB6 F38252826ACD957EF380D39F2F7956BC5DA04B5D
-# Thu, 26 Sep 2019 21:50:18 GMT
+# Thu, 17 Oct 2019 15:28:06 GMT
 ENV PHP_VERSION=7.3.10
-# Thu, 26 Sep 2019 21:50:18 GMT
+# Thu, 17 Oct 2019 15:28:06 GMT
 ENV PHP_URL=https://www.php.net/get/php-7.3.10.tar.xz/from/this/mirror PHP_ASC_URL=https://www.php.net/get/php-7.3.10.tar.xz.asc/from/this/mirror
-# Thu, 26 Sep 2019 21:50:18 GMT
+# Thu, 17 Oct 2019 15:28:07 GMT
 ENV PHP_SHA256=42f00a15419e05771734b7159c8d39d639b8a5a6770413adfa2615f6f923d906 PHP_MD5=
-# Thu, 26 Sep 2019 21:50:30 GMT
+# Thu, 17 Oct 2019 15:28:20 GMT
 RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends gnupg dirmngr; 	rm -rf /var/lib/apt/lists/*; 		mkdir -p /usr/src; 	cd /usr/src; 		curl -fsSL -o php.tar.xz "$PHP_URL"; 		if [ -n "$PHP_SHA256" ]; then 		echo "$PHP_SHA256 *php.tar.xz" | sha256sum -c -; 	fi; 	if [ -n "$PHP_MD5" ]; then 		echo "$PHP_MD5 *php.tar.xz" | md5sum -c -; 	fi; 		if [ -n "$PHP_ASC_URL" ]; then 		curl -fsSL -o php.tar.xz.asc "$PHP_ASC_URL"; 		export GNUPGHOME="$(mktemp -d)"; 		for key in $GPG_KEYS; do 			gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys "$key"; 		done; 		gpg --batch --verify php.tar.xz.asc php.tar.xz; 		gpgconf --kill all; 		rm -rf "$GNUPGHOME"; 	fi; 		apt-mark auto '.*' > /dev/null; 	apt-mark manual $savedAptMark > /dev/null; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false
-# Thu, 26 Sep 2019 21:50:30 GMT
+# Thu, 17 Oct 2019 15:28:20 GMT
 COPY file:ce57c04b70896f77cc11eb2766417d8a1240fcffe5bba92179ec78c458844110 in /usr/local/bin/ 
-# Fri, 04 Oct 2019 23:00:02 GMT
+# Thu, 17 Oct 2019 15:32:23 GMT
 RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	sed -e 's/stretch/buster/g' /etc/apt/sources.list > /etc/apt/sources.list.d/buster.list; 	{ 		echo 'Package: *'; 		echo 'Pin: release n=buster'; 		echo 'Pin-Priority: -10'; 		echo; 		echo 'Package: libargon2*'; 		echo 'Pin: release n=buster'; 		echo 'Pin-Priority: 990'; 	} > /etc/apt/preferences.d/argon2-buster; 	apt-get update; 	apt-get install -y --no-install-recommends 		libargon2-dev 		libcurl4-openssl-dev 		libedit-dev 		libsodium-dev 		libsqlite3-dev 		libssl-dev 		libxml2-dev 		zlib1g-dev 		${PHP_EXTRA_BUILD_DEPS:-} 	; 	rm -rf /var/lib/apt/lists/*; 		export 		CFLAGS="$PHP_CFLAGS" 		CPPFLAGS="$PHP_CPPFLAGS" 		LDFLAGS="$PHP_LDFLAGS" 	; 	docker-php-source extract; 	cd /usr/src/php; 	gnuArch="$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)"; 	debMultiarch="$(dpkg-architecture --query DEB_BUILD_MULTIARCH)"; 	if [ ! -d /usr/include/curl ]; then 		ln -sT "/usr/include/$debMultiarch/curl" /usr/local/include/curl; 	fi; 	./configure 		--build="$gnuArch" 		--with-config-file-path="$PHP_INI_DIR" 		--with-config-file-scan-dir="$PHP_INI_DIR/conf.d" 				--enable-option-checking=fatal 				--with-mhash 				--enable-ftp 		--enable-mbstring 		--enable-mysqlnd 		--with-password-argon2 		--with-sodium=shared 		--with-pdo-sqlite=/usr 		--with-sqlite3=/usr 				--with-curl 		--with-libedit 		--with-openssl 		--with-zlib 				$(test "$gnuArch" = 's390x-linux-gnu' && echo '--without-pcre-jit') 		--with-libdir="lib/$debMultiarch" 				${PHP_EXTRA_CONFIGURE_ARGS:-} 	; 	make -j "$(nproc)"; 	find -type f -name '*.a' -delete; 	make install; 	find /usr/local/bin /usr/local/sbin -type f -executable -exec strip --strip-all '{}' + || true; 	make clean; 		cp -v php.ini-* "$PHP_INI_DIR/"; 		cd /; 	docker-php-source delete; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark; 	find /usr/local -type f -executable -exec ldd '{}' ';' 		| awk '/=>/ { print $(NF-1) }' 		| sort -u 		| xargs -r dpkg-query --search 		| cut -d: -f1 		| sort -u 		| xargs -r apt-mark manual 	; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 		pecl update-channels; 	rm -rf /tmp/pear ~/.pearrc; 	php --version
-# Fri, 04 Oct 2019 23:00:02 GMT
+# Thu, 17 Oct 2019 15:32:24 GMT
 COPY multi:99e4ad617c6193834e78d12470f6dde09f70f4d40463009c5724954902e60676 in /usr/local/bin/ 
-# Fri, 04 Oct 2019 23:00:04 GMT
+# Thu, 17 Oct 2019 15:32:25 GMT
 RUN docker-php-ext-enable sodium
-# Fri, 04 Oct 2019 23:00:04 GMT
+# Thu, 17 Oct 2019 15:32:25 GMT
 ENTRYPOINT ["docker-php-entrypoint"]
-# Fri, 04 Oct 2019 23:00:04 GMT
+# Thu, 17 Oct 2019 15:32:25 GMT
 STOPSIGNAL WINCH
-# Fri, 04 Oct 2019 23:00:05 GMT
+# Thu, 17 Oct 2019 15:32:25 GMT
 COPY file:e3123fcb6566efa979f945bfac1c94c854a559d7b82723e42118882a8ac4de66 in /usr/local/bin/ 
-# Fri, 04 Oct 2019 23:00:05 GMT
+# Thu, 17 Oct 2019 15:32:25 GMT
 WORKDIR /var/www/html
-# Fri, 04 Oct 2019 23:00:05 GMT
+# Thu, 17 Oct 2019 15:32:26 GMT
 EXPOSE 80
-# Fri, 04 Oct 2019 23:00:05 GMT
+# Thu, 17 Oct 2019 15:32:26 GMT
 CMD ["apache2-foreground"]
-# Sat, 05 Oct 2019 05:37:18 GMT
+# Fri, 18 Oct 2019 06:25:57 GMT
 RUN set -eux; 		if command -v a2enmod; then 		a2enmod rewrite; 	fi; 		savedAptMark="$(apt-mark showmanual)"; 		apt-get update; 	apt-get install -y --no-install-recommends 		libfreetype6-dev 		libjpeg-dev 		libpng-dev 		libpq-dev 		libzip-dev 	; 		docker-php-ext-configure gd 		--with-freetype-dir=/usr 		--with-jpeg-dir=/usr 		--with-png-dir=/usr 	; 		docker-php-ext-install -j "$(nproc)" 		gd 		opcache 		pdo_mysql 		pdo_pgsql 		zip 	; 		apt-mark auto '.*' > /dev/null; 	apt-mark manual $savedAptMark; 	ldd "$(php -r 'echo ini_get("extension_dir");')"/*.so 		| awk '/=>/ { print $3 }' 		| sort -u 		| xargs -r dpkg-query -S 		| cut -d: -f1 		| sort -u 		| xargs -rt apt-mark manual; 		apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 	rm -rf /var/lib/apt/lists/*
-# Sat, 05 Oct 2019 05:37:20 GMT
+# Fri, 18 Oct 2019 06:25:57 GMT
 RUN { 		echo 'opcache.memory_consumption=128'; 		echo 'opcache.interned_strings_buffer=8'; 		echo 'opcache.max_accelerated_files=4000'; 		echo 'opcache.revalidate_freq=60'; 		echo 'opcache.fast_shutdown=1'; 	} > /usr/local/etc/php/conf.d/opcache-recommended.ini
-# Sat, 05 Oct 2019 05:37:20 GMT
+# Fri, 18 Oct 2019 06:25:57 GMT
 WORKDIR /var/www/html
-# Sat, 05 Oct 2019 05:37:20 GMT
+# Fri, 18 Oct 2019 06:25:58 GMT
 ENV DRUPAL_VERSION=8.7.8
-# Sat, 05 Oct 2019 05:37:21 GMT
+# Fri, 18 Oct 2019 06:25:58 GMT
 ENV DRUPAL_MD5=f281eb14d8aabf0c3e78dd519ca4b640
-# Sat, 05 Oct 2019 05:37:34 GMT
+# Fri, 18 Oct 2019 06:26:03 GMT
 RUN set -eux; 	curl -fSL "https://ftp.drupal.org/files/projects/drupal-${DRUPAL_VERSION}.tar.gz" -o drupal.tar.gz; 	echo "${DRUPAL_MD5} *drupal.tar.gz" | md5sum -c -; 	tar -xz --strip-components=1 -f drupal.tar.gz; 	rm drupal.tar.gz; 	chown -R www-data:www-data sites modules themes
 ```
 
 -	Layers:
-	-	`sha256:8f91359f1fffbf32b24ca854fb263d88a222371f38e90cf4583c5742cfdc3039`  
-		Last Modified: Wed, 11 Sep 2019 23:34:50 GMT  
-		Size: 22.5 MB (22510654 bytes)  
+	-	`sha256:80369df487363e56aea88d4d41b61f1607fc2ec198e9327cfde36a5346c71bf2`  
+		Last Modified: Wed, 16 Oct 2019 23:35:19 GMT  
+		Size: 22.5 MB (22524636 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:bf2faaedf741a44c5457bc029621724b7f316482f99de58522e1b659ddc8fd99`  
-		Last Modified: Thu, 12 Sep 2019 13:15:25 GMT  
-		Size: 225.0 B  
+	-	`sha256:60e80cb3f70356b666135b9d9acc19345b74bf7feedb2b6ac494dd6d224b8574`  
+		Last Modified: Thu, 17 Oct 2019 17:20:16 GMT  
+		Size: 226.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:24cd1299a53e525f85fdd79c524463ec6b6569df13c6af402ca0f706ad89c28b`  
-		Last Modified: Thu, 12 Sep 2019 13:15:49 GMT  
-		Size: 67.5 MB (67450331 bytes)  
+	-	`sha256:e3b2450987de138dcaf9f09559f25a8b2cd6ceaac8e28d858fdb73530d40f92e`  
+		Last Modified: Thu, 17 Oct 2019 17:20:33 GMT  
+		Size: 67.4 MB (67447849 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:17091cc665e4a0e967d00b8b36fcabb2b17d7bceba421f717f5d138063e22ad6`  
-		Last Modified: Thu, 12 Sep 2019 13:15:25 GMT  
-		Size: 237.0 B  
+	-	`sha256:c413b7377c2f336391745613272b75d32b6f52110d5cf6bb28949ed2eea52906`  
+		Last Modified: Thu, 17 Oct 2019 17:20:16 GMT  
+		Size: 238.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:ac9365919f9b10c759648e7efa92752c1443400e4178d6411f5a458a90e09ca2`  
-		Last Modified: Thu, 12 Sep 2019 13:16:08 GMT  
-		Size: 17.1 MB (17125603 bytes)  
+	-	`sha256:6dd9eff17a14f4fd1ad899a27f318151a4b2fa2d935cb85307637563d6973d17`  
+		Last Modified: Thu, 17 Oct 2019 17:20:46 GMT  
+		Size: 17.1 MB (17125324 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:4f1b34e209eee27994691cd890ca1422857bc1c2c166a700049ae0af84d6fb2a`  
-		Last Modified: Thu, 12 Sep 2019 13:16:02 GMT  
-		Size: 431.0 B  
+	-	`sha256:5126e57aff9b8bc91dfaa6885060a8b4cd41887d4a85621d5778c2ec6c660f2a`  
+		Last Modified: Thu, 17 Oct 2019 17:20:43 GMT  
+		Size: 437.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:832757fa04a4aea3b2f6e686cf9741254a6a03855e86b603417b6d3ce6c0038f`  
-		Last Modified: Thu, 12 Sep 2019 13:16:02 GMT  
-		Size: 487.0 B  
+	-	`sha256:943df09926ea3a42f821bbdfd1d3112e72b5da0fbc6761b35b50da5570cfb438`  
+		Last Modified: Thu, 17 Oct 2019 17:20:43 GMT  
+		Size: 490.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:640a8cc59ee46638b569b4797bc4a773e22ff83223d1d94620047e7acdf4f121`  
-		Last Modified: Fri, 27 Sep 2019 01:26:12 GMT  
-		Size: 12.4 MB (12435253 bytes)  
+	-	`sha256:9945a6d6fd51d29053a01e7362f98478704156cb0344028887de5de27b56f8cd`  
+		Last Modified: Thu, 17 Oct 2019 17:20:43 GMT  
+		Size: 12.4 MB (12435307 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:375d45a647bd866c4211aeda97b2b5bedb12dc76350eb92cdbcd172943efbf37`  
-		Last Modified: Fri, 27 Sep 2019 01:26:09 GMT  
+	-	`sha256:975035f5a785ddf7bea6b46a40a2beae1617b991dd4965bb2632ce819c0ebae4`  
+		Last Modified: Thu, 17 Oct 2019 17:20:42 GMT  
 		Size: 501.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:699f6141932e10e137db5a06352130c87535007fc4d71d0d21cf5204db76d728`  
-		Last Modified: Sat, 05 Oct 2019 03:49:47 GMT  
-		Size: 15.4 MB (15395755 bytes)  
+	-	`sha256:561abe18d8c31cf78ff6f1569ed5e894ccabfae65dd247928b73ca194c455f7a`  
+		Last Modified: Thu, 17 Oct 2019 17:20:45 GMT  
+		Size: 13.8 MB (13806779 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:be6c200d07db998ed59695b4d5635fadfcc871f2a0dd2ce5ed45e83ad94bfe5c`  
-		Last Modified: Sat, 05 Oct 2019 03:49:41 GMT  
-		Size: 2.2 KB (2223 bytes)  
+	-	`sha256:ecfae1d03a560507c8358c1dd3b5ea4d85df3274f721c12d1f5bf2f4f846a84c`  
+		Last Modified: Thu, 17 Oct 2019 17:20:42 GMT  
+		Size: 2.2 KB (2225 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c5a9afabd1a71f323e7c4c48a4bf311e19637c1dcfdd8e56930b318010c7a322`  
-		Last Modified: Sat, 05 Oct 2019 03:49:42 GMT  
-		Size: 259.0 B  
+	-	`sha256:69a47ac39f697f9eb8a508965dcd3b51d3365b5e3625aa08085f02866fb1531d`  
+		Last Modified: Thu, 17 Oct 2019 17:20:41 GMT  
+		Size: 261.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:f517a6395f969bd01b32606233e12344abd854953769c7fcced6d776964aac74`  
-		Last Modified: Sat, 05 Oct 2019 03:49:42 GMT  
-		Size: 901.0 B  
+	-	`sha256:4b0bd7b07f693ddfca86b3f94a7eb7f7d56d2f0d7d8b96b80ad7f3b438173b29`  
+		Last Modified: Thu, 17 Oct 2019 17:20:41 GMT  
+		Size: 905.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:4834256bfafcc2acba5ce5afc6eca80c529b1fd74620511b5ff32d99cc63c61f`  
-		Last Modified: Sat, 05 Oct 2019 05:49:42 GMT  
-		Size: 1.6 MB (1594511 bytes)  
+	-	`sha256:cbbcd711c9961e0745e2348424d92efce8a7c76228be39b3897db99c6c6120d8`  
+		Last Modified: Fri, 18 Oct 2019 06:30:30 GMT  
+		Size: 1.6 MB (1594259 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:658398927ac0c2d9570ced0232f6c98915b6bc254e4eb8654c20082a71484a82`  
-		Last Modified: Sat, 05 Oct 2019 05:49:41 GMT  
-		Size: 339.0 B  
+	-	`sha256:fab086cdefa2ad6d5c4ba0ef31daddc017cc3d10f842a3c1ad81cefa482e0de4`  
+		Last Modified: Fri, 18 Oct 2019 06:30:30 GMT  
+		Size: 340.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:dab98cb0ae912b1a85e6a906c59eec8fe7e8035a28425cf9842d37fbf0a348a4`  
-		Last Modified: Sat, 05 Oct 2019 05:49:51 GMT  
+	-	`sha256:8bc233ea200f92189618c3ce830efe5fc1541cc2dbe1a355e7a4f9e02b27d945`  
+		Last Modified: Fri, 18 Oct 2019 06:30:35 GMT  
 		Size: 18.0 MB (18005533 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
@@ -20885,7 +20885,7 @@ RUN set -eux; 	curl -fSL "https://ftp.drupal.org/files/projects/drupal-${DRUPAL_
 ## `drupal:8.7-fpm`
 
 ```console
-$ docker pull drupal@sha256:701c723f8932697372d6ce007ed99cd0099500f749483e381a58057b7eff8075
+$ docker pull drupal@sha256:99f98be373b1a34bf0866f863609257f83ca42eb232ebeafdb89c68dfac20678
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -20900,135 +20900,135 @@ $ docker pull drupal@sha256:701c723f8932697372d6ce007ed99cd0099500f749483e381a58
 ### `drupal:8.7-fpm` - linux; amd64
 
 ```console
-$ docker pull drupal@sha256:f46dbffc79089009d60a2368474f93159cf6c9ff6207d20d04c300e41895050e
+$ docker pull drupal@sha256:77fd62f00360643bff1118c8ef0e348a3f59fb135366dd3947134a819ba0d821
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **151.3 MB (151252817 bytes)**  
+-	Total Size: **149.6 MB (149591047 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:d95c8dc3c4a56853941fa498238ab14d20f419e40fbfd514066f7cccbef8d7b0`
+-	Image ID: `sha256:7e6359a86ef497503ba8a7c76024929b54cbeb63efe84f36793e5f806a96386d`
 -	Entrypoint: `["docker-php-entrypoint"]`
 -	Default Command: `["php-fpm"]`
 
 ```dockerfile
-# Wed, 11 Sep 2019 23:27:46 GMT
-ADD file:e82c447c3eae5d1d0282d8557b0c271b29d1be0d0f23204a09ad468be7a80d8c in / 
-# Wed, 11 Sep 2019 23:27:47 GMT
+# Wed, 16 Oct 2019 23:29:18 GMT
+ADD file:37512e59e7c324f9ec5b01628ef87efee73d2092cfe97d05ca949dc3528e4c2a in / 
+# Wed, 16 Oct 2019 23:29:19 GMT
 CMD ["bash"]
-# Thu, 12 Sep 2019 10:35:06 GMT
+# Thu, 17 Oct 2019 15:19:17 GMT
 RUN set -eux; 	{ 		echo 'Package: php*'; 		echo 'Pin: release *'; 		echo 'Pin-Priority: -1'; 	} > /etc/apt/preferences.d/no-debian-php
-# Thu, 12 Sep 2019 10:35:06 GMT
+# Thu, 17 Oct 2019 15:19:17 GMT
 ENV PHPIZE_DEPS=autoconf 		dpkg-dev 		file 		g++ 		gcc 		libc-dev 		make 		pkg-config 		re2c
-# Thu, 12 Sep 2019 10:35:36 GMT
+# Thu, 17 Oct 2019 15:19:56 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		$PHPIZE_DEPS 		ca-certificates 		curl 		xz-utils 	; 	rm -rf /var/lib/apt/lists/*
-# Thu, 12 Sep 2019 10:35:36 GMT
+# Thu, 17 Oct 2019 15:19:57 GMT
 ENV PHP_INI_DIR=/usr/local/etc/php
-# Thu, 12 Sep 2019 10:35:37 GMT
+# Thu, 17 Oct 2019 15:19:58 GMT
 RUN set -eux; 	mkdir -p "$PHP_INI_DIR/conf.d"; 	[ ! -d /var/www/html ]; 	mkdir -p /var/www/html; 	chown www-data:www-data /var/www/html; 	chmod 777 /var/www/html
-# Thu, 12 Sep 2019 10:51:13 GMT
+# Thu, 17 Oct 2019 15:32:36 GMT
 ENV PHP_EXTRA_CONFIGURE_ARGS=--enable-fpm --with-fpm-user=www-data --with-fpm-group=www-data --disable-cgi
-# Thu, 12 Sep 2019 10:51:13 GMT
+# Thu, 17 Oct 2019 15:32:36 GMT
 ENV PHP_CFLAGS=-fstack-protector-strong -fpic -fpie -O2
-# Thu, 12 Sep 2019 10:51:13 GMT
+# Thu, 17 Oct 2019 15:32:36 GMT
 ENV PHP_CPPFLAGS=-fstack-protector-strong -fpic -fpie -O2
-# Thu, 12 Sep 2019 10:51:14 GMT
+# Thu, 17 Oct 2019 15:32:36 GMT
 ENV PHP_LDFLAGS=-Wl,-O1 -Wl,--hash-style=both -pie
-# Thu, 12 Sep 2019 10:51:14 GMT
+# Thu, 17 Oct 2019 15:32:37 GMT
 ENV GPG_KEYS=CBAF69F173A0FEA4B537F470D66C9593118BCCB6 F38252826ACD957EF380D39F2F7956BC5DA04B5D
-# Thu, 26 Sep 2019 21:55:51 GMT
+# Thu, 17 Oct 2019 15:32:37 GMT
 ENV PHP_VERSION=7.3.10
-# Thu, 26 Sep 2019 21:55:52 GMT
+# Thu, 17 Oct 2019 15:32:37 GMT
 ENV PHP_URL=https://www.php.net/get/php-7.3.10.tar.xz/from/this/mirror PHP_ASC_URL=https://www.php.net/get/php-7.3.10.tar.xz.asc/from/this/mirror
-# Thu, 26 Sep 2019 21:55:52 GMT
+# Thu, 17 Oct 2019 15:32:37 GMT
 ENV PHP_SHA256=42f00a15419e05771734b7159c8d39d639b8a5a6770413adfa2615f6f923d906 PHP_MD5=
-# Thu, 26 Sep 2019 21:56:04 GMT
+# Thu, 17 Oct 2019 15:32:46 GMT
 RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends gnupg dirmngr; 	rm -rf /var/lib/apt/lists/*; 		mkdir -p /usr/src; 	cd /usr/src; 		curl -fsSL -o php.tar.xz "$PHP_URL"; 		if [ -n "$PHP_SHA256" ]; then 		echo "$PHP_SHA256 *php.tar.xz" | sha256sum -c -; 	fi; 	if [ -n "$PHP_MD5" ]; then 		echo "$PHP_MD5 *php.tar.xz" | md5sum -c -; 	fi; 		if [ -n "$PHP_ASC_URL" ]; then 		curl -fsSL -o php.tar.xz.asc "$PHP_ASC_URL"; 		export GNUPGHOME="$(mktemp -d)"; 		for key in $GPG_KEYS; do 			gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys "$key"; 		done; 		gpg --batch --verify php.tar.xz.asc php.tar.xz; 		gpgconf --kill all; 		rm -rf "$GNUPGHOME"; 	fi; 		apt-mark auto '.*' > /dev/null; 	apt-mark manual $savedAptMark > /dev/null; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false
-# Thu, 26 Sep 2019 21:56:05 GMT
+# Thu, 17 Oct 2019 15:32:46 GMT
 COPY file:ce57c04b70896f77cc11eb2766417d8a1240fcffe5bba92179ec78c458844110 in /usr/local/bin/ 
-# Fri, 04 Oct 2019 23:08:24 GMT
+# Thu, 17 Oct 2019 15:39:24 GMT
 RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	sed -e 's/stretch/buster/g' /etc/apt/sources.list > /etc/apt/sources.list.d/buster.list; 	{ 		echo 'Package: *'; 		echo 'Pin: release n=buster'; 		echo 'Pin-Priority: -10'; 		echo; 		echo 'Package: libargon2*'; 		echo 'Pin: release n=buster'; 		echo 'Pin-Priority: 990'; 	} > /etc/apt/preferences.d/argon2-buster; 	apt-get update; 	apt-get install -y --no-install-recommends 		libargon2-dev 		libcurl4-openssl-dev 		libedit-dev 		libsodium-dev 		libsqlite3-dev 		libssl-dev 		libxml2-dev 		zlib1g-dev 		${PHP_EXTRA_BUILD_DEPS:-} 	; 	rm -rf /var/lib/apt/lists/*; 		export 		CFLAGS="$PHP_CFLAGS" 		CPPFLAGS="$PHP_CPPFLAGS" 		LDFLAGS="$PHP_LDFLAGS" 	; 	docker-php-source extract; 	cd /usr/src/php; 	gnuArch="$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)"; 	debMultiarch="$(dpkg-architecture --query DEB_BUILD_MULTIARCH)"; 	if [ ! -d /usr/include/curl ]; then 		ln -sT "/usr/include/$debMultiarch/curl" /usr/local/include/curl; 	fi; 	./configure 		--build="$gnuArch" 		--with-config-file-path="$PHP_INI_DIR" 		--with-config-file-scan-dir="$PHP_INI_DIR/conf.d" 				--enable-option-checking=fatal 				--with-mhash 				--enable-ftp 		--enable-mbstring 		--enable-mysqlnd 		--with-password-argon2 		--with-sodium=shared 		--with-pdo-sqlite=/usr 		--with-sqlite3=/usr 				--with-curl 		--with-libedit 		--with-openssl 		--with-zlib 				$(test "$gnuArch" = 's390x-linux-gnu' && echo '--without-pcre-jit') 		--with-libdir="lib/$debMultiarch" 				${PHP_EXTRA_CONFIGURE_ARGS:-} 	; 	make -j "$(nproc)"; 	find -type f -name '*.a' -delete; 	make install; 	find /usr/local/bin /usr/local/sbin -type f -executable -exec strip --strip-all '{}' + || true; 	make clean; 		cp -v php.ini-* "$PHP_INI_DIR/"; 		cd /; 	docker-php-source delete; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark; 	find /usr/local -type f -executable -exec ldd '{}' ';' 		| awk '/=>/ { print $(NF-1) }' 		| sort -u 		| xargs -r dpkg-query --search 		| cut -d: -f1 		| sort -u 		| xargs -r apt-mark manual 	; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 		pecl update-channels; 	rm -rf /tmp/pear ~/.pearrc; 	php --version
-# Fri, 04 Oct 2019 23:08:24 GMT
+# Thu, 17 Oct 2019 15:39:24 GMT
 COPY multi:c1ff99c7805e8f41fdb0717f754884884ce2157d746a82343d7c737c86ded761 in /usr/local/bin/ 
-# Fri, 04 Oct 2019 23:08:26 GMT
+# Thu, 17 Oct 2019 15:39:25 GMT
 RUN docker-php-ext-enable sodium
-# Fri, 04 Oct 2019 23:08:26 GMT
+# Thu, 17 Oct 2019 15:39:25 GMT
 ENTRYPOINT ["docker-php-entrypoint"]
-# Fri, 04 Oct 2019 23:08:26 GMT
+# Thu, 17 Oct 2019 15:39:25 GMT
 WORKDIR /var/www/html
-# Fri, 04 Oct 2019 23:08:27 GMT
+# Thu, 17 Oct 2019 15:39:26 GMT
 RUN set -eux; 	cd /usr/local/etc; 	if [ -d php-fpm.d ]; then 		sed 's!=NONE/!=!g' php-fpm.conf.default | tee php-fpm.conf > /dev/null; 		cp php-fpm.d/www.conf.default php-fpm.d/www.conf; 	else 		mkdir php-fpm.d; 		cp php-fpm.conf.default php-fpm.d/www.conf; 		{ 			echo '[global]'; 			echo 'include=etc/php-fpm.d/*.conf'; 		} | tee php-fpm.conf; 	fi; 	{ 		echo '[global]'; 		echo 'error_log = /proc/self/fd/2'; 		echo; echo '; https://github.com/docker-library/php/pull/725#issuecomment-443540114'; echo 'log_limit = 8192'; 		echo; 		echo '[www]'; 		echo '; if we send this to /proc/self/fd/1, it never appears'; 		echo 'access.log = /proc/self/fd/2'; 		echo; 		echo 'clear_env = no'; 		echo; 		echo '; Ensure worker stdout and stderr are sent to the main error log.'; 		echo 'catch_workers_output = yes'; 		echo 'decorate_workers_output = no'; 	} | tee php-fpm.d/docker.conf; 	{ 		echo '[global]'; 		echo 'daemonize = no'; 		echo; 		echo '[www]'; 		echo 'listen = 9000'; 	} | tee php-fpm.d/zz-docker.conf
-# Fri, 04 Oct 2019 23:08:28 GMT
+# Thu, 17 Oct 2019 15:39:26 GMT
 STOPSIGNAL SIGQUIT
-# Fri, 04 Oct 2019 23:08:28 GMT
+# Thu, 17 Oct 2019 15:39:26 GMT
 EXPOSE 9000
-# Fri, 04 Oct 2019 23:08:28 GMT
+# Thu, 17 Oct 2019 15:39:27 GMT
 CMD ["php-fpm"]
-# Sat, 05 Oct 2019 05:39:32 GMT
+# Fri, 18 Oct 2019 06:27:08 GMT
 RUN set -eux; 		if command -v a2enmod; then 		a2enmod rewrite; 	fi; 		savedAptMark="$(apt-mark showmanual)"; 		apt-get update; 	apt-get install -y --no-install-recommends 		libfreetype6-dev 		libjpeg-dev 		libpng-dev 		libpq-dev 		libzip-dev 	; 		docker-php-ext-configure gd 		--with-freetype-dir=/usr 		--with-jpeg-dir=/usr 		--with-png-dir=/usr 	; 		docker-php-ext-install -j "$(nproc)" 		gd 		opcache 		pdo_mysql 		pdo_pgsql 		zip 	; 		apt-mark auto '.*' > /dev/null; 	apt-mark manual $savedAptMark; 	ldd "$(php -r 'echo ini_get("extension_dir");')"/*.so 		| awk '/=>/ { print $3 }' 		| sort -u 		| xargs -r dpkg-query -S 		| cut -d: -f1 		| sort -u 		| xargs -rt apt-mark manual; 		apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 	rm -rf /var/lib/apt/lists/*
-# Sat, 05 Oct 2019 05:39:33 GMT
+# Fri, 18 Oct 2019 06:27:09 GMT
 RUN { 		echo 'opcache.memory_consumption=128'; 		echo 'opcache.interned_strings_buffer=8'; 		echo 'opcache.max_accelerated_files=4000'; 		echo 'opcache.revalidate_freq=60'; 		echo 'opcache.fast_shutdown=1'; 	} > /usr/local/etc/php/conf.d/opcache-recommended.ini
-# Sat, 05 Oct 2019 05:39:33 GMT
+# Fri, 18 Oct 2019 06:27:09 GMT
 WORKDIR /var/www/html
-# Sat, 05 Oct 2019 05:39:33 GMT
+# Fri, 18 Oct 2019 06:27:09 GMT
 ENV DRUPAL_VERSION=8.7.8
-# Sat, 05 Oct 2019 05:39:34 GMT
+# Fri, 18 Oct 2019 06:27:10 GMT
 ENV DRUPAL_MD5=f281eb14d8aabf0c3e78dd519ca4b640
-# Sat, 05 Oct 2019 05:39:47 GMT
+# Fri, 18 Oct 2019 06:27:15 GMT
 RUN set -eux; 	curl -fSL "https://ftp.drupal.org/files/projects/drupal-${DRUPAL_VERSION}.tar.gz" -o drupal.tar.gz; 	echo "${DRUPAL_MD5} *drupal.tar.gz" | md5sum -c -; 	tar -xz --strip-components=1 -f drupal.tar.gz; 	rm drupal.tar.gz; 	chown -R www-data:www-data sites modules themes
 ```
 
 -	Layers:
-	-	`sha256:8f91359f1fffbf32b24ca854fb263d88a222371f38e90cf4583c5742cfdc3039`  
-		Last Modified: Wed, 11 Sep 2019 23:34:50 GMT  
-		Size: 22.5 MB (22510654 bytes)  
+	-	`sha256:80369df487363e56aea88d4d41b61f1607fc2ec198e9327cfde36a5346c71bf2`  
+		Last Modified: Wed, 16 Oct 2019 23:35:19 GMT  
+		Size: 22.5 MB (22524636 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:bf2faaedf741a44c5457bc029621724b7f316482f99de58522e1b659ddc8fd99`  
-		Last Modified: Thu, 12 Sep 2019 13:15:25 GMT  
-		Size: 225.0 B  
+	-	`sha256:60e80cb3f70356b666135b9d9acc19345b74bf7feedb2b6ac494dd6d224b8574`  
+		Last Modified: Thu, 17 Oct 2019 17:20:16 GMT  
+		Size: 226.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:24cd1299a53e525f85fdd79c524463ec6b6569df13c6af402ca0f706ad89c28b`  
-		Last Modified: Thu, 12 Sep 2019 13:15:49 GMT  
-		Size: 67.5 MB (67450331 bytes)  
+	-	`sha256:e3b2450987de138dcaf9f09559f25a8b2cd6ceaac8e28d858fdb73530d40f92e`  
+		Last Modified: Thu, 17 Oct 2019 17:20:33 GMT  
+		Size: 67.4 MB (67447849 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:17091cc665e4a0e967d00b8b36fcabb2b17d7bceba421f717f5d138063e22ad6`  
-		Last Modified: Thu, 12 Sep 2019 13:15:25 GMT  
-		Size: 237.0 B  
+	-	`sha256:c413b7377c2f336391745613272b75d32b6f52110d5cf6bb28949ed2eea52906`  
+		Last Modified: Thu, 17 Oct 2019 17:20:16 GMT  
+		Size: 238.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:8880c01fadaf626a1ac9c93de76f80b0a02b905c57d9f0365d4ac7c140f73e8c`  
-		Last Modified: Fri, 27 Sep 2019 01:26:22 GMT  
-		Size: 12.4 MB (12414280 bytes)  
+	-	`sha256:a4b596a71a07bc97264060cb0d57f0a891799939bd0e967d554d51545ada78be`  
+		Last Modified: Thu, 17 Oct 2019 17:20:58 GMT  
+		Size: 12.4 MB (12414267 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:d7c57fbcfc142a1709892e77f655b6d3bc3a360f3a53baa61f11532b82c8c515`  
-		Last Modified: Fri, 27 Sep 2019 01:26:20 GMT  
-		Size: 501.0 B  
+	-	`sha256:2cf73d873c0e64ef386aaa2a4d767e8926c300028add95393ca378292a310c35`  
+		Last Modified: Thu, 17 Oct 2019 17:20:58 GMT  
+		Size: 499.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:6892f4a86a2085651c3e09630b9bf14329145a52732afa800916109d2d9bd02f`  
-		Last Modified: Sat, 05 Oct 2019 03:50:12 GMT  
-		Size: 29.3 MB (29288310 bytes)  
+	-	`sha256:8e7b760badfbfbd3508bfd56e884f1a4c31e3ff00f630d4624139ec14e27eafe`  
+		Last Modified: Thu, 17 Oct 2019 17:20:58 GMT  
+		Size: 27.6 MB (27615254 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:22cf8b69eff81a1164b28f190d3b463fbbf520226b72995d0e4694e1739938f2`  
-		Last Modified: Sat, 05 Oct 2019 03:50:04 GMT  
-		Size: 2.2 KB (2220 bytes)  
+	-	`sha256:cbf349b24dffa2417c332e0bb55e2b980bcf46b3d7fbaa00fe87a08049c00b37`  
+		Last Modified: Thu, 17 Oct 2019 17:20:52 GMT  
+		Size: 2.2 KB (2217 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:ad2e7ee133845ff994982ea6b2f1c4004b526a57a802799a3c2112c6bb61403b`  
-		Last Modified: Sat, 05 Oct 2019 03:50:05 GMT  
+	-	`sha256:7c7f8431d945db36e6d726da1ce843ab4926b2674813197ebc4df8ef645e1fad`  
+		Last Modified: Thu, 17 Oct 2019 17:20:52 GMT  
 		Size: 258.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:24280bd5a9e9c27e015b3688cc4f6a0cad035125203e12bdb8bf032f5ac2157c`  
-		Last Modified: Sat, 05 Oct 2019 03:50:04 GMT  
-		Size: 8.3 KB (8287 bytes)  
+	-	`sha256:4158250e7cbb6afb6bad049e8f6c42837af7388056d517299036b15c1e985735`  
+		Last Modified: Thu, 17 Oct 2019 17:20:52 GMT  
+		Size: 8.3 KB (8282 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:bb8ba779b8dea8b1239cad15d567a2a08795231cf3f90db5b6a6994bbf1ce482`  
-		Last Modified: Sat, 05 Oct 2019 05:50:06 GMT  
-		Size: 1.6 MB (1571648 bytes)  
+	-	`sha256:3330fb06dfea77578c0b38bcd9ea770fcb018dccaad2e0e0e6126ea07c464b42`  
+		Last Modified: Fri, 18 Oct 2019 06:30:44 GMT  
+		Size: 1.6 MB (1571457 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:98637942b66d74c5fee0f05722ee152214d79356567bc25ae93b392d4f328711`  
-		Last Modified: Sat, 05 Oct 2019 05:50:06 GMT  
-		Size: 340.0 B  
+	-	`sha256:7b616380d0c6bbfd5a0f9dce7d63136cf3dac391a1171ec150ae05a5b211187a`  
+		Last Modified: Fri, 18 Oct 2019 06:30:44 GMT  
+		Size: 338.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c243379e0059c809bc7c6c0ad6d509b901da81482644a577f34624c9e2c860b5`  
-		Last Modified: Sat, 05 Oct 2019 05:50:18 GMT  
+	-	`sha256:433c3962f963c20086701b05347d595344d23f64adcb7b2a9dca22a7abb25a07`  
+		Last Modified: Fri, 18 Oct 2019 06:30:49 GMT  
 		Size: 18.0 MB (18005526 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
@@ -22535,7 +22535,7 @@ RUN set -eux; 	curl -fSL "https://ftp.drupal.org/files/projects/drupal-${DRUPAL_
 ## `drupal:8-apache`
 
 ```console
-$ docker pull drupal@sha256:bb49d97d37087bf6a2d82c31a8baa477cba3983427242bc5bad334dae69611e3
+$ docker pull drupal@sha256:b5b9d1a33393aa3a54aa8639cb777ae2388d5b41bd855778633ba775234a29bf
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -22550,159 +22550,159 @@ $ docker pull drupal@sha256:bb49d97d37087bf6a2d82c31a8baa477cba3983427242bc5bad3
 ### `drupal:8-apache` - linux; amd64
 
 ```console
-$ docker pull drupal@sha256:73a9b0def4d6d99b41e02a2dccd54200fc5dda7d8f38ac87174e1bf83e7f4219
+$ docker pull drupal@sha256:37037fd55f74b297e795a1abd0ba7d7e1c030e78e221f0018a9d1ee429eaa1a1
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **154.5 MB (154523243 bytes)**  
+-	Total Size: **152.9 MB (152945310 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:84af2ca3d9d5b7c4790ee0e1b2622bd6836c06cee3b601b7149ea9c92bcbf43b`
+-	Image ID: `sha256:db077f17914826f101cf283aa2bf0c07f0447562eed5f2069b5ea62b6e8edeec`
 -	Entrypoint: `["docker-php-entrypoint"]`
 -	Default Command: `["apache2-foreground"]`
 
 ```dockerfile
-# Wed, 11 Sep 2019 23:27:46 GMT
-ADD file:e82c447c3eae5d1d0282d8557b0c271b29d1be0d0f23204a09ad468be7a80d8c in / 
-# Wed, 11 Sep 2019 23:27:47 GMT
+# Wed, 16 Oct 2019 23:29:18 GMT
+ADD file:37512e59e7c324f9ec5b01628ef87efee73d2092cfe97d05ca949dc3528e4c2a in / 
+# Wed, 16 Oct 2019 23:29:19 GMT
 CMD ["bash"]
-# Thu, 12 Sep 2019 10:35:06 GMT
+# Thu, 17 Oct 2019 15:19:17 GMT
 RUN set -eux; 	{ 		echo 'Package: php*'; 		echo 'Pin: release *'; 		echo 'Pin-Priority: -1'; 	} > /etc/apt/preferences.d/no-debian-php
-# Thu, 12 Sep 2019 10:35:06 GMT
+# Thu, 17 Oct 2019 15:19:17 GMT
 ENV PHPIZE_DEPS=autoconf 		dpkg-dev 		file 		g++ 		gcc 		libc-dev 		make 		pkg-config 		re2c
-# Thu, 12 Sep 2019 10:35:36 GMT
+# Thu, 17 Oct 2019 15:19:56 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		$PHPIZE_DEPS 		ca-certificates 		curl 		xz-utils 	; 	rm -rf /var/lib/apt/lists/*
-# Thu, 12 Sep 2019 10:35:36 GMT
+# Thu, 17 Oct 2019 15:19:57 GMT
 ENV PHP_INI_DIR=/usr/local/etc/php
-# Thu, 12 Sep 2019 10:35:37 GMT
+# Thu, 17 Oct 2019 15:19:58 GMT
 RUN set -eux; 	mkdir -p "$PHP_INI_DIR/conf.d"; 	[ ! -d /var/www/html ]; 	mkdir -p /var/www/html; 	chown www-data:www-data /var/www/html; 	chmod 777 /var/www/html
-# Thu, 12 Sep 2019 10:44:55 GMT
+# Thu, 17 Oct 2019 15:27:50 GMT
 ENV APACHE_CONFDIR=/etc/apache2
-# Thu, 12 Sep 2019 10:44:55 GMT
+# Thu, 17 Oct 2019 15:27:50 GMT
 ENV APACHE_ENVVARS=/etc/apache2/envvars
-# Thu, 12 Sep 2019 10:45:06 GMT
+# Thu, 17 Oct 2019 15:28:01 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends apache2; 	rm -rf /var/lib/apt/lists/*; 		sed -ri 's/^export ([^=]+)=(.*)$/: ${\1:=\2}\nexport \1/' "$APACHE_ENVVARS"; 		. "$APACHE_ENVVARS"; 	for dir in 		"$APACHE_LOCK_DIR" 		"$APACHE_RUN_DIR" 		"$APACHE_LOG_DIR" 	; do 		rm -rvf "$dir"; 		mkdir -p "$dir"; 		chown "$APACHE_RUN_USER:$APACHE_RUN_GROUP" "$dir"; 		chmod 777 "$dir"; 	done; 		rm -rvf /var/www/html/*; 		ln -sfT /dev/stderr "$APACHE_LOG_DIR/error.log"; 	ln -sfT /dev/stdout "$APACHE_LOG_DIR/access.log"; 	ln -sfT /dev/stdout "$APACHE_LOG_DIR/other_vhosts_access.log"; 	chown -R --no-dereference "$APACHE_RUN_USER:$APACHE_RUN_GROUP" "$APACHE_LOG_DIR"
-# Thu, 12 Sep 2019 10:45:07 GMT
+# Thu, 17 Oct 2019 15:28:03 GMT
 RUN a2dismod mpm_event && a2enmod mpm_prefork
-# Thu, 12 Sep 2019 10:45:08 GMT
+# Thu, 17 Oct 2019 15:28:04 GMT
 RUN { 		echo '<FilesMatch \.php$>'; 		echo '\tSetHandler application/x-httpd-php'; 		echo '</FilesMatch>'; 		echo; 		echo 'DirectoryIndex disabled'; 		echo 'DirectoryIndex index.php index.html'; 		echo; 		echo '<Directory /var/www/>'; 		echo '\tOptions -Indexes'; 		echo '\tAllowOverride All'; 		echo '</Directory>'; 	} | tee "$APACHE_CONFDIR/conf-available/docker-php.conf" 	&& a2enconf docker-php
-# Thu, 12 Sep 2019 10:45:08 GMT
+# Thu, 17 Oct 2019 15:28:04 GMT
 ENV PHP_EXTRA_BUILD_DEPS=apache2-dev
-# Thu, 12 Sep 2019 10:45:08 GMT
+# Thu, 17 Oct 2019 15:28:05 GMT
 ENV PHP_EXTRA_CONFIGURE_ARGS=--with-apxs2 --disable-cgi
-# Thu, 12 Sep 2019 10:45:08 GMT
+# Thu, 17 Oct 2019 15:28:05 GMT
 ENV PHP_CFLAGS=-fstack-protector-strong -fpic -fpie -O2
-# Thu, 12 Sep 2019 10:45:08 GMT
+# Thu, 17 Oct 2019 15:28:05 GMT
 ENV PHP_CPPFLAGS=-fstack-protector-strong -fpic -fpie -O2
-# Thu, 12 Sep 2019 10:45:08 GMT
+# Thu, 17 Oct 2019 15:28:05 GMT
 ENV PHP_LDFLAGS=-Wl,-O1 -Wl,--hash-style=both -pie
-# Thu, 12 Sep 2019 10:45:09 GMT
+# Thu, 17 Oct 2019 15:28:06 GMT
 ENV GPG_KEYS=CBAF69F173A0FEA4B537F470D66C9593118BCCB6 F38252826ACD957EF380D39F2F7956BC5DA04B5D
-# Thu, 26 Sep 2019 21:50:18 GMT
+# Thu, 17 Oct 2019 15:28:06 GMT
 ENV PHP_VERSION=7.3.10
-# Thu, 26 Sep 2019 21:50:18 GMT
+# Thu, 17 Oct 2019 15:28:06 GMT
 ENV PHP_URL=https://www.php.net/get/php-7.3.10.tar.xz/from/this/mirror PHP_ASC_URL=https://www.php.net/get/php-7.3.10.tar.xz.asc/from/this/mirror
-# Thu, 26 Sep 2019 21:50:18 GMT
+# Thu, 17 Oct 2019 15:28:07 GMT
 ENV PHP_SHA256=42f00a15419e05771734b7159c8d39d639b8a5a6770413adfa2615f6f923d906 PHP_MD5=
-# Thu, 26 Sep 2019 21:50:30 GMT
+# Thu, 17 Oct 2019 15:28:20 GMT
 RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends gnupg dirmngr; 	rm -rf /var/lib/apt/lists/*; 		mkdir -p /usr/src; 	cd /usr/src; 		curl -fsSL -o php.tar.xz "$PHP_URL"; 		if [ -n "$PHP_SHA256" ]; then 		echo "$PHP_SHA256 *php.tar.xz" | sha256sum -c -; 	fi; 	if [ -n "$PHP_MD5" ]; then 		echo "$PHP_MD5 *php.tar.xz" | md5sum -c -; 	fi; 		if [ -n "$PHP_ASC_URL" ]; then 		curl -fsSL -o php.tar.xz.asc "$PHP_ASC_URL"; 		export GNUPGHOME="$(mktemp -d)"; 		for key in $GPG_KEYS; do 			gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys "$key"; 		done; 		gpg --batch --verify php.tar.xz.asc php.tar.xz; 		gpgconf --kill all; 		rm -rf "$GNUPGHOME"; 	fi; 		apt-mark auto '.*' > /dev/null; 	apt-mark manual $savedAptMark > /dev/null; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false
-# Thu, 26 Sep 2019 21:50:30 GMT
+# Thu, 17 Oct 2019 15:28:20 GMT
 COPY file:ce57c04b70896f77cc11eb2766417d8a1240fcffe5bba92179ec78c458844110 in /usr/local/bin/ 
-# Fri, 04 Oct 2019 23:00:02 GMT
+# Thu, 17 Oct 2019 15:32:23 GMT
 RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	sed -e 's/stretch/buster/g' /etc/apt/sources.list > /etc/apt/sources.list.d/buster.list; 	{ 		echo 'Package: *'; 		echo 'Pin: release n=buster'; 		echo 'Pin-Priority: -10'; 		echo; 		echo 'Package: libargon2*'; 		echo 'Pin: release n=buster'; 		echo 'Pin-Priority: 990'; 	} > /etc/apt/preferences.d/argon2-buster; 	apt-get update; 	apt-get install -y --no-install-recommends 		libargon2-dev 		libcurl4-openssl-dev 		libedit-dev 		libsodium-dev 		libsqlite3-dev 		libssl-dev 		libxml2-dev 		zlib1g-dev 		${PHP_EXTRA_BUILD_DEPS:-} 	; 	rm -rf /var/lib/apt/lists/*; 		export 		CFLAGS="$PHP_CFLAGS" 		CPPFLAGS="$PHP_CPPFLAGS" 		LDFLAGS="$PHP_LDFLAGS" 	; 	docker-php-source extract; 	cd /usr/src/php; 	gnuArch="$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)"; 	debMultiarch="$(dpkg-architecture --query DEB_BUILD_MULTIARCH)"; 	if [ ! -d /usr/include/curl ]; then 		ln -sT "/usr/include/$debMultiarch/curl" /usr/local/include/curl; 	fi; 	./configure 		--build="$gnuArch" 		--with-config-file-path="$PHP_INI_DIR" 		--with-config-file-scan-dir="$PHP_INI_DIR/conf.d" 				--enable-option-checking=fatal 				--with-mhash 				--enable-ftp 		--enable-mbstring 		--enable-mysqlnd 		--with-password-argon2 		--with-sodium=shared 		--with-pdo-sqlite=/usr 		--with-sqlite3=/usr 				--with-curl 		--with-libedit 		--with-openssl 		--with-zlib 				$(test "$gnuArch" = 's390x-linux-gnu' && echo '--without-pcre-jit') 		--with-libdir="lib/$debMultiarch" 				${PHP_EXTRA_CONFIGURE_ARGS:-} 	; 	make -j "$(nproc)"; 	find -type f -name '*.a' -delete; 	make install; 	find /usr/local/bin /usr/local/sbin -type f -executable -exec strip --strip-all '{}' + || true; 	make clean; 		cp -v php.ini-* "$PHP_INI_DIR/"; 		cd /; 	docker-php-source delete; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark; 	find /usr/local -type f -executable -exec ldd '{}' ';' 		| awk '/=>/ { print $(NF-1) }' 		| sort -u 		| xargs -r dpkg-query --search 		| cut -d: -f1 		| sort -u 		| xargs -r apt-mark manual 	; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 		pecl update-channels; 	rm -rf /tmp/pear ~/.pearrc; 	php --version
-# Fri, 04 Oct 2019 23:00:02 GMT
+# Thu, 17 Oct 2019 15:32:24 GMT
 COPY multi:99e4ad617c6193834e78d12470f6dde09f70f4d40463009c5724954902e60676 in /usr/local/bin/ 
-# Fri, 04 Oct 2019 23:00:04 GMT
+# Thu, 17 Oct 2019 15:32:25 GMT
 RUN docker-php-ext-enable sodium
-# Fri, 04 Oct 2019 23:00:04 GMT
+# Thu, 17 Oct 2019 15:32:25 GMT
 ENTRYPOINT ["docker-php-entrypoint"]
-# Fri, 04 Oct 2019 23:00:04 GMT
+# Thu, 17 Oct 2019 15:32:25 GMT
 STOPSIGNAL WINCH
-# Fri, 04 Oct 2019 23:00:05 GMT
+# Thu, 17 Oct 2019 15:32:25 GMT
 COPY file:e3123fcb6566efa979f945bfac1c94c854a559d7b82723e42118882a8ac4de66 in /usr/local/bin/ 
-# Fri, 04 Oct 2019 23:00:05 GMT
+# Thu, 17 Oct 2019 15:32:25 GMT
 WORKDIR /var/www/html
-# Fri, 04 Oct 2019 23:00:05 GMT
+# Thu, 17 Oct 2019 15:32:26 GMT
 EXPOSE 80
-# Fri, 04 Oct 2019 23:00:05 GMT
+# Thu, 17 Oct 2019 15:32:26 GMT
 CMD ["apache2-foreground"]
-# Sat, 05 Oct 2019 05:37:18 GMT
+# Fri, 18 Oct 2019 06:25:57 GMT
 RUN set -eux; 		if command -v a2enmod; then 		a2enmod rewrite; 	fi; 		savedAptMark="$(apt-mark showmanual)"; 		apt-get update; 	apt-get install -y --no-install-recommends 		libfreetype6-dev 		libjpeg-dev 		libpng-dev 		libpq-dev 		libzip-dev 	; 		docker-php-ext-configure gd 		--with-freetype-dir=/usr 		--with-jpeg-dir=/usr 		--with-png-dir=/usr 	; 		docker-php-ext-install -j "$(nproc)" 		gd 		opcache 		pdo_mysql 		pdo_pgsql 		zip 	; 		apt-mark auto '.*' > /dev/null; 	apt-mark manual $savedAptMark; 	ldd "$(php -r 'echo ini_get("extension_dir");')"/*.so 		| awk '/=>/ { print $3 }' 		| sort -u 		| xargs -r dpkg-query -S 		| cut -d: -f1 		| sort -u 		| xargs -rt apt-mark manual; 		apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 	rm -rf /var/lib/apt/lists/*
-# Sat, 05 Oct 2019 05:37:20 GMT
+# Fri, 18 Oct 2019 06:25:57 GMT
 RUN { 		echo 'opcache.memory_consumption=128'; 		echo 'opcache.interned_strings_buffer=8'; 		echo 'opcache.max_accelerated_files=4000'; 		echo 'opcache.revalidate_freq=60'; 		echo 'opcache.fast_shutdown=1'; 	} > /usr/local/etc/php/conf.d/opcache-recommended.ini
-# Sat, 05 Oct 2019 05:37:20 GMT
+# Fri, 18 Oct 2019 06:25:57 GMT
 WORKDIR /var/www/html
-# Sat, 05 Oct 2019 05:37:20 GMT
+# Fri, 18 Oct 2019 06:25:58 GMT
 ENV DRUPAL_VERSION=8.7.8
-# Sat, 05 Oct 2019 05:37:21 GMT
+# Fri, 18 Oct 2019 06:25:58 GMT
 ENV DRUPAL_MD5=f281eb14d8aabf0c3e78dd519ca4b640
-# Sat, 05 Oct 2019 05:37:34 GMT
+# Fri, 18 Oct 2019 06:26:03 GMT
 RUN set -eux; 	curl -fSL "https://ftp.drupal.org/files/projects/drupal-${DRUPAL_VERSION}.tar.gz" -o drupal.tar.gz; 	echo "${DRUPAL_MD5} *drupal.tar.gz" | md5sum -c -; 	tar -xz --strip-components=1 -f drupal.tar.gz; 	rm drupal.tar.gz; 	chown -R www-data:www-data sites modules themes
 ```
 
 -	Layers:
-	-	`sha256:8f91359f1fffbf32b24ca854fb263d88a222371f38e90cf4583c5742cfdc3039`  
-		Last Modified: Wed, 11 Sep 2019 23:34:50 GMT  
-		Size: 22.5 MB (22510654 bytes)  
+	-	`sha256:80369df487363e56aea88d4d41b61f1607fc2ec198e9327cfde36a5346c71bf2`  
+		Last Modified: Wed, 16 Oct 2019 23:35:19 GMT  
+		Size: 22.5 MB (22524636 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:bf2faaedf741a44c5457bc029621724b7f316482f99de58522e1b659ddc8fd99`  
-		Last Modified: Thu, 12 Sep 2019 13:15:25 GMT  
-		Size: 225.0 B  
+	-	`sha256:60e80cb3f70356b666135b9d9acc19345b74bf7feedb2b6ac494dd6d224b8574`  
+		Last Modified: Thu, 17 Oct 2019 17:20:16 GMT  
+		Size: 226.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:24cd1299a53e525f85fdd79c524463ec6b6569df13c6af402ca0f706ad89c28b`  
-		Last Modified: Thu, 12 Sep 2019 13:15:49 GMT  
-		Size: 67.5 MB (67450331 bytes)  
+	-	`sha256:e3b2450987de138dcaf9f09559f25a8b2cd6ceaac8e28d858fdb73530d40f92e`  
+		Last Modified: Thu, 17 Oct 2019 17:20:33 GMT  
+		Size: 67.4 MB (67447849 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:17091cc665e4a0e967d00b8b36fcabb2b17d7bceba421f717f5d138063e22ad6`  
-		Last Modified: Thu, 12 Sep 2019 13:15:25 GMT  
-		Size: 237.0 B  
+	-	`sha256:c413b7377c2f336391745613272b75d32b6f52110d5cf6bb28949ed2eea52906`  
+		Last Modified: Thu, 17 Oct 2019 17:20:16 GMT  
+		Size: 238.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:ac9365919f9b10c759648e7efa92752c1443400e4178d6411f5a458a90e09ca2`  
-		Last Modified: Thu, 12 Sep 2019 13:16:08 GMT  
-		Size: 17.1 MB (17125603 bytes)  
+	-	`sha256:6dd9eff17a14f4fd1ad899a27f318151a4b2fa2d935cb85307637563d6973d17`  
+		Last Modified: Thu, 17 Oct 2019 17:20:46 GMT  
+		Size: 17.1 MB (17125324 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:4f1b34e209eee27994691cd890ca1422857bc1c2c166a700049ae0af84d6fb2a`  
-		Last Modified: Thu, 12 Sep 2019 13:16:02 GMT  
-		Size: 431.0 B  
+	-	`sha256:5126e57aff9b8bc91dfaa6885060a8b4cd41887d4a85621d5778c2ec6c660f2a`  
+		Last Modified: Thu, 17 Oct 2019 17:20:43 GMT  
+		Size: 437.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:832757fa04a4aea3b2f6e686cf9741254a6a03855e86b603417b6d3ce6c0038f`  
-		Last Modified: Thu, 12 Sep 2019 13:16:02 GMT  
-		Size: 487.0 B  
+	-	`sha256:943df09926ea3a42f821bbdfd1d3112e72b5da0fbc6761b35b50da5570cfb438`  
+		Last Modified: Thu, 17 Oct 2019 17:20:43 GMT  
+		Size: 490.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:640a8cc59ee46638b569b4797bc4a773e22ff83223d1d94620047e7acdf4f121`  
-		Last Modified: Fri, 27 Sep 2019 01:26:12 GMT  
-		Size: 12.4 MB (12435253 bytes)  
+	-	`sha256:9945a6d6fd51d29053a01e7362f98478704156cb0344028887de5de27b56f8cd`  
+		Last Modified: Thu, 17 Oct 2019 17:20:43 GMT  
+		Size: 12.4 MB (12435307 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:375d45a647bd866c4211aeda97b2b5bedb12dc76350eb92cdbcd172943efbf37`  
-		Last Modified: Fri, 27 Sep 2019 01:26:09 GMT  
+	-	`sha256:975035f5a785ddf7bea6b46a40a2beae1617b991dd4965bb2632ce819c0ebae4`  
+		Last Modified: Thu, 17 Oct 2019 17:20:42 GMT  
 		Size: 501.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:699f6141932e10e137db5a06352130c87535007fc4d71d0d21cf5204db76d728`  
-		Last Modified: Sat, 05 Oct 2019 03:49:47 GMT  
-		Size: 15.4 MB (15395755 bytes)  
+	-	`sha256:561abe18d8c31cf78ff6f1569ed5e894ccabfae65dd247928b73ca194c455f7a`  
+		Last Modified: Thu, 17 Oct 2019 17:20:45 GMT  
+		Size: 13.8 MB (13806779 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:be6c200d07db998ed59695b4d5635fadfcc871f2a0dd2ce5ed45e83ad94bfe5c`  
-		Last Modified: Sat, 05 Oct 2019 03:49:41 GMT  
-		Size: 2.2 KB (2223 bytes)  
+	-	`sha256:ecfae1d03a560507c8358c1dd3b5ea4d85df3274f721c12d1f5bf2f4f846a84c`  
+		Last Modified: Thu, 17 Oct 2019 17:20:42 GMT  
+		Size: 2.2 KB (2225 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c5a9afabd1a71f323e7c4c48a4bf311e19637c1dcfdd8e56930b318010c7a322`  
-		Last Modified: Sat, 05 Oct 2019 03:49:42 GMT  
-		Size: 259.0 B  
+	-	`sha256:69a47ac39f697f9eb8a508965dcd3b51d3365b5e3625aa08085f02866fb1531d`  
+		Last Modified: Thu, 17 Oct 2019 17:20:41 GMT  
+		Size: 261.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:f517a6395f969bd01b32606233e12344abd854953769c7fcced6d776964aac74`  
-		Last Modified: Sat, 05 Oct 2019 03:49:42 GMT  
-		Size: 901.0 B  
+	-	`sha256:4b0bd7b07f693ddfca86b3f94a7eb7f7d56d2f0d7d8b96b80ad7f3b438173b29`  
+		Last Modified: Thu, 17 Oct 2019 17:20:41 GMT  
+		Size: 905.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:4834256bfafcc2acba5ce5afc6eca80c529b1fd74620511b5ff32d99cc63c61f`  
-		Last Modified: Sat, 05 Oct 2019 05:49:42 GMT  
-		Size: 1.6 MB (1594511 bytes)  
+	-	`sha256:cbbcd711c9961e0745e2348424d92efce8a7c76228be39b3897db99c6c6120d8`  
+		Last Modified: Fri, 18 Oct 2019 06:30:30 GMT  
+		Size: 1.6 MB (1594259 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:658398927ac0c2d9570ced0232f6c98915b6bc254e4eb8654c20082a71484a82`  
-		Last Modified: Sat, 05 Oct 2019 05:49:41 GMT  
-		Size: 339.0 B  
+	-	`sha256:fab086cdefa2ad6d5c4ba0ef31daddc017cc3d10f842a3c1ad81cefa482e0de4`  
+		Last Modified: Fri, 18 Oct 2019 06:30:30 GMT  
+		Size: 340.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:dab98cb0ae912b1a85e6a906c59eec8fe7e8035a28425cf9842d37fbf0a348a4`  
-		Last Modified: Sat, 05 Oct 2019 05:49:51 GMT  
+	-	`sha256:8bc233ea200f92189618c3ce830efe5fc1541cc2dbe1a355e7a4f9e02b27d945`  
+		Last Modified: Fri, 18 Oct 2019 06:30:35 GMT  
 		Size: 18.0 MB (18005533 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
@@ -23504,7 +23504,7 @@ RUN set -eux; 	curl -fSL "https://ftp.drupal.org/files/projects/drupal-${DRUPAL_
 ## `drupal:8-fpm`
 
 ```console
-$ docker pull drupal@sha256:701c723f8932697372d6ce007ed99cd0099500f749483e381a58057b7eff8075
+$ docker pull drupal@sha256:99f98be373b1a34bf0866f863609257f83ca42eb232ebeafdb89c68dfac20678
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -23519,135 +23519,135 @@ $ docker pull drupal@sha256:701c723f8932697372d6ce007ed99cd0099500f749483e381a58
 ### `drupal:8-fpm` - linux; amd64
 
 ```console
-$ docker pull drupal@sha256:f46dbffc79089009d60a2368474f93159cf6c9ff6207d20d04c300e41895050e
+$ docker pull drupal@sha256:77fd62f00360643bff1118c8ef0e348a3f59fb135366dd3947134a819ba0d821
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **151.3 MB (151252817 bytes)**  
+-	Total Size: **149.6 MB (149591047 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:d95c8dc3c4a56853941fa498238ab14d20f419e40fbfd514066f7cccbef8d7b0`
+-	Image ID: `sha256:7e6359a86ef497503ba8a7c76024929b54cbeb63efe84f36793e5f806a96386d`
 -	Entrypoint: `["docker-php-entrypoint"]`
 -	Default Command: `["php-fpm"]`
 
 ```dockerfile
-# Wed, 11 Sep 2019 23:27:46 GMT
-ADD file:e82c447c3eae5d1d0282d8557b0c271b29d1be0d0f23204a09ad468be7a80d8c in / 
-# Wed, 11 Sep 2019 23:27:47 GMT
+# Wed, 16 Oct 2019 23:29:18 GMT
+ADD file:37512e59e7c324f9ec5b01628ef87efee73d2092cfe97d05ca949dc3528e4c2a in / 
+# Wed, 16 Oct 2019 23:29:19 GMT
 CMD ["bash"]
-# Thu, 12 Sep 2019 10:35:06 GMT
+# Thu, 17 Oct 2019 15:19:17 GMT
 RUN set -eux; 	{ 		echo 'Package: php*'; 		echo 'Pin: release *'; 		echo 'Pin-Priority: -1'; 	} > /etc/apt/preferences.d/no-debian-php
-# Thu, 12 Sep 2019 10:35:06 GMT
+# Thu, 17 Oct 2019 15:19:17 GMT
 ENV PHPIZE_DEPS=autoconf 		dpkg-dev 		file 		g++ 		gcc 		libc-dev 		make 		pkg-config 		re2c
-# Thu, 12 Sep 2019 10:35:36 GMT
+# Thu, 17 Oct 2019 15:19:56 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		$PHPIZE_DEPS 		ca-certificates 		curl 		xz-utils 	; 	rm -rf /var/lib/apt/lists/*
-# Thu, 12 Sep 2019 10:35:36 GMT
+# Thu, 17 Oct 2019 15:19:57 GMT
 ENV PHP_INI_DIR=/usr/local/etc/php
-# Thu, 12 Sep 2019 10:35:37 GMT
+# Thu, 17 Oct 2019 15:19:58 GMT
 RUN set -eux; 	mkdir -p "$PHP_INI_DIR/conf.d"; 	[ ! -d /var/www/html ]; 	mkdir -p /var/www/html; 	chown www-data:www-data /var/www/html; 	chmod 777 /var/www/html
-# Thu, 12 Sep 2019 10:51:13 GMT
+# Thu, 17 Oct 2019 15:32:36 GMT
 ENV PHP_EXTRA_CONFIGURE_ARGS=--enable-fpm --with-fpm-user=www-data --with-fpm-group=www-data --disable-cgi
-# Thu, 12 Sep 2019 10:51:13 GMT
+# Thu, 17 Oct 2019 15:32:36 GMT
 ENV PHP_CFLAGS=-fstack-protector-strong -fpic -fpie -O2
-# Thu, 12 Sep 2019 10:51:13 GMT
+# Thu, 17 Oct 2019 15:32:36 GMT
 ENV PHP_CPPFLAGS=-fstack-protector-strong -fpic -fpie -O2
-# Thu, 12 Sep 2019 10:51:14 GMT
+# Thu, 17 Oct 2019 15:32:36 GMT
 ENV PHP_LDFLAGS=-Wl,-O1 -Wl,--hash-style=both -pie
-# Thu, 12 Sep 2019 10:51:14 GMT
+# Thu, 17 Oct 2019 15:32:37 GMT
 ENV GPG_KEYS=CBAF69F173A0FEA4B537F470D66C9593118BCCB6 F38252826ACD957EF380D39F2F7956BC5DA04B5D
-# Thu, 26 Sep 2019 21:55:51 GMT
+# Thu, 17 Oct 2019 15:32:37 GMT
 ENV PHP_VERSION=7.3.10
-# Thu, 26 Sep 2019 21:55:52 GMT
+# Thu, 17 Oct 2019 15:32:37 GMT
 ENV PHP_URL=https://www.php.net/get/php-7.3.10.tar.xz/from/this/mirror PHP_ASC_URL=https://www.php.net/get/php-7.3.10.tar.xz.asc/from/this/mirror
-# Thu, 26 Sep 2019 21:55:52 GMT
+# Thu, 17 Oct 2019 15:32:37 GMT
 ENV PHP_SHA256=42f00a15419e05771734b7159c8d39d639b8a5a6770413adfa2615f6f923d906 PHP_MD5=
-# Thu, 26 Sep 2019 21:56:04 GMT
+# Thu, 17 Oct 2019 15:32:46 GMT
 RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends gnupg dirmngr; 	rm -rf /var/lib/apt/lists/*; 		mkdir -p /usr/src; 	cd /usr/src; 		curl -fsSL -o php.tar.xz "$PHP_URL"; 		if [ -n "$PHP_SHA256" ]; then 		echo "$PHP_SHA256 *php.tar.xz" | sha256sum -c -; 	fi; 	if [ -n "$PHP_MD5" ]; then 		echo "$PHP_MD5 *php.tar.xz" | md5sum -c -; 	fi; 		if [ -n "$PHP_ASC_URL" ]; then 		curl -fsSL -o php.tar.xz.asc "$PHP_ASC_URL"; 		export GNUPGHOME="$(mktemp -d)"; 		for key in $GPG_KEYS; do 			gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys "$key"; 		done; 		gpg --batch --verify php.tar.xz.asc php.tar.xz; 		gpgconf --kill all; 		rm -rf "$GNUPGHOME"; 	fi; 		apt-mark auto '.*' > /dev/null; 	apt-mark manual $savedAptMark > /dev/null; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false
-# Thu, 26 Sep 2019 21:56:05 GMT
+# Thu, 17 Oct 2019 15:32:46 GMT
 COPY file:ce57c04b70896f77cc11eb2766417d8a1240fcffe5bba92179ec78c458844110 in /usr/local/bin/ 
-# Fri, 04 Oct 2019 23:08:24 GMT
+# Thu, 17 Oct 2019 15:39:24 GMT
 RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	sed -e 's/stretch/buster/g' /etc/apt/sources.list > /etc/apt/sources.list.d/buster.list; 	{ 		echo 'Package: *'; 		echo 'Pin: release n=buster'; 		echo 'Pin-Priority: -10'; 		echo; 		echo 'Package: libargon2*'; 		echo 'Pin: release n=buster'; 		echo 'Pin-Priority: 990'; 	} > /etc/apt/preferences.d/argon2-buster; 	apt-get update; 	apt-get install -y --no-install-recommends 		libargon2-dev 		libcurl4-openssl-dev 		libedit-dev 		libsodium-dev 		libsqlite3-dev 		libssl-dev 		libxml2-dev 		zlib1g-dev 		${PHP_EXTRA_BUILD_DEPS:-} 	; 	rm -rf /var/lib/apt/lists/*; 		export 		CFLAGS="$PHP_CFLAGS" 		CPPFLAGS="$PHP_CPPFLAGS" 		LDFLAGS="$PHP_LDFLAGS" 	; 	docker-php-source extract; 	cd /usr/src/php; 	gnuArch="$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)"; 	debMultiarch="$(dpkg-architecture --query DEB_BUILD_MULTIARCH)"; 	if [ ! -d /usr/include/curl ]; then 		ln -sT "/usr/include/$debMultiarch/curl" /usr/local/include/curl; 	fi; 	./configure 		--build="$gnuArch" 		--with-config-file-path="$PHP_INI_DIR" 		--with-config-file-scan-dir="$PHP_INI_DIR/conf.d" 				--enable-option-checking=fatal 				--with-mhash 				--enable-ftp 		--enable-mbstring 		--enable-mysqlnd 		--with-password-argon2 		--with-sodium=shared 		--with-pdo-sqlite=/usr 		--with-sqlite3=/usr 				--with-curl 		--with-libedit 		--with-openssl 		--with-zlib 				$(test "$gnuArch" = 's390x-linux-gnu' && echo '--without-pcre-jit') 		--with-libdir="lib/$debMultiarch" 				${PHP_EXTRA_CONFIGURE_ARGS:-} 	; 	make -j "$(nproc)"; 	find -type f -name '*.a' -delete; 	make install; 	find /usr/local/bin /usr/local/sbin -type f -executable -exec strip --strip-all '{}' + || true; 	make clean; 		cp -v php.ini-* "$PHP_INI_DIR/"; 		cd /; 	docker-php-source delete; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark; 	find /usr/local -type f -executable -exec ldd '{}' ';' 		| awk '/=>/ { print $(NF-1) }' 		| sort -u 		| xargs -r dpkg-query --search 		| cut -d: -f1 		| sort -u 		| xargs -r apt-mark manual 	; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 		pecl update-channels; 	rm -rf /tmp/pear ~/.pearrc; 	php --version
-# Fri, 04 Oct 2019 23:08:24 GMT
+# Thu, 17 Oct 2019 15:39:24 GMT
 COPY multi:c1ff99c7805e8f41fdb0717f754884884ce2157d746a82343d7c737c86ded761 in /usr/local/bin/ 
-# Fri, 04 Oct 2019 23:08:26 GMT
+# Thu, 17 Oct 2019 15:39:25 GMT
 RUN docker-php-ext-enable sodium
-# Fri, 04 Oct 2019 23:08:26 GMT
+# Thu, 17 Oct 2019 15:39:25 GMT
 ENTRYPOINT ["docker-php-entrypoint"]
-# Fri, 04 Oct 2019 23:08:26 GMT
+# Thu, 17 Oct 2019 15:39:25 GMT
 WORKDIR /var/www/html
-# Fri, 04 Oct 2019 23:08:27 GMT
+# Thu, 17 Oct 2019 15:39:26 GMT
 RUN set -eux; 	cd /usr/local/etc; 	if [ -d php-fpm.d ]; then 		sed 's!=NONE/!=!g' php-fpm.conf.default | tee php-fpm.conf > /dev/null; 		cp php-fpm.d/www.conf.default php-fpm.d/www.conf; 	else 		mkdir php-fpm.d; 		cp php-fpm.conf.default php-fpm.d/www.conf; 		{ 			echo '[global]'; 			echo 'include=etc/php-fpm.d/*.conf'; 		} | tee php-fpm.conf; 	fi; 	{ 		echo '[global]'; 		echo 'error_log = /proc/self/fd/2'; 		echo; echo '; https://github.com/docker-library/php/pull/725#issuecomment-443540114'; echo 'log_limit = 8192'; 		echo; 		echo '[www]'; 		echo '; if we send this to /proc/self/fd/1, it never appears'; 		echo 'access.log = /proc/self/fd/2'; 		echo; 		echo 'clear_env = no'; 		echo; 		echo '; Ensure worker stdout and stderr are sent to the main error log.'; 		echo 'catch_workers_output = yes'; 		echo 'decorate_workers_output = no'; 	} | tee php-fpm.d/docker.conf; 	{ 		echo '[global]'; 		echo 'daemonize = no'; 		echo; 		echo '[www]'; 		echo 'listen = 9000'; 	} | tee php-fpm.d/zz-docker.conf
-# Fri, 04 Oct 2019 23:08:28 GMT
+# Thu, 17 Oct 2019 15:39:26 GMT
 STOPSIGNAL SIGQUIT
-# Fri, 04 Oct 2019 23:08:28 GMT
+# Thu, 17 Oct 2019 15:39:26 GMT
 EXPOSE 9000
-# Fri, 04 Oct 2019 23:08:28 GMT
+# Thu, 17 Oct 2019 15:39:27 GMT
 CMD ["php-fpm"]
-# Sat, 05 Oct 2019 05:39:32 GMT
+# Fri, 18 Oct 2019 06:27:08 GMT
 RUN set -eux; 		if command -v a2enmod; then 		a2enmod rewrite; 	fi; 		savedAptMark="$(apt-mark showmanual)"; 		apt-get update; 	apt-get install -y --no-install-recommends 		libfreetype6-dev 		libjpeg-dev 		libpng-dev 		libpq-dev 		libzip-dev 	; 		docker-php-ext-configure gd 		--with-freetype-dir=/usr 		--with-jpeg-dir=/usr 		--with-png-dir=/usr 	; 		docker-php-ext-install -j "$(nproc)" 		gd 		opcache 		pdo_mysql 		pdo_pgsql 		zip 	; 		apt-mark auto '.*' > /dev/null; 	apt-mark manual $savedAptMark; 	ldd "$(php -r 'echo ini_get("extension_dir");')"/*.so 		| awk '/=>/ { print $3 }' 		| sort -u 		| xargs -r dpkg-query -S 		| cut -d: -f1 		| sort -u 		| xargs -rt apt-mark manual; 		apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 	rm -rf /var/lib/apt/lists/*
-# Sat, 05 Oct 2019 05:39:33 GMT
+# Fri, 18 Oct 2019 06:27:09 GMT
 RUN { 		echo 'opcache.memory_consumption=128'; 		echo 'opcache.interned_strings_buffer=8'; 		echo 'opcache.max_accelerated_files=4000'; 		echo 'opcache.revalidate_freq=60'; 		echo 'opcache.fast_shutdown=1'; 	} > /usr/local/etc/php/conf.d/opcache-recommended.ini
-# Sat, 05 Oct 2019 05:39:33 GMT
+# Fri, 18 Oct 2019 06:27:09 GMT
 WORKDIR /var/www/html
-# Sat, 05 Oct 2019 05:39:33 GMT
+# Fri, 18 Oct 2019 06:27:09 GMT
 ENV DRUPAL_VERSION=8.7.8
-# Sat, 05 Oct 2019 05:39:34 GMT
+# Fri, 18 Oct 2019 06:27:10 GMT
 ENV DRUPAL_MD5=f281eb14d8aabf0c3e78dd519ca4b640
-# Sat, 05 Oct 2019 05:39:47 GMT
+# Fri, 18 Oct 2019 06:27:15 GMT
 RUN set -eux; 	curl -fSL "https://ftp.drupal.org/files/projects/drupal-${DRUPAL_VERSION}.tar.gz" -o drupal.tar.gz; 	echo "${DRUPAL_MD5} *drupal.tar.gz" | md5sum -c -; 	tar -xz --strip-components=1 -f drupal.tar.gz; 	rm drupal.tar.gz; 	chown -R www-data:www-data sites modules themes
 ```
 
 -	Layers:
-	-	`sha256:8f91359f1fffbf32b24ca854fb263d88a222371f38e90cf4583c5742cfdc3039`  
-		Last Modified: Wed, 11 Sep 2019 23:34:50 GMT  
-		Size: 22.5 MB (22510654 bytes)  
+	-	`sha256:80369df487363e56aea88d4d41b61f1607fc2ec198e9327cfde36a5346c71bf2`  
+		Last Modified: Wed, 16 Oct 2019 23:35:19 GMT  
+		Size: 22.5 MB (22524636 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:bf2faaedf741a44c5457bc029621724b7f316482f99de58522e1b659ddc8fd99`  
-		Last Modified: Thu, 12 Sep 2019 13:15:25 GMT  
-		Size: 225.0 B  
+	-	`sha256:60e80cb3f70356b666135b9d9acc19345b74bf7feedb2b6ac494dd6d224b8574`  
+		Last Modified: Thu, 17 Oct 2019 17:20:16 GMT  
+		Size: 226.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:24cd1299a53e525f85fdd79c524463ec6b6569df13c6af402ca0f706ad89c28b`  
-		Last Modified: Thu, 12 Sep 2019 13:15:49 GMT  
-		Size: 67.5 MB (67450331 bytes)  
+	-	`sha256:e3b2450987de138dcaf9f09559f25a8b2cd6ceaac8e28d858fdb73530d40f92e`  
+		Last Modified: Thu, 17 Oct 2019 17:20:33 GMT  
+		Size: 67.4 MB (67447849 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:17091cc665e4a0e967d00b8b36fcabb2b17d7bceba421f717f5d138063e22ad6`  
-		Last Modified: Thu, 12 Sep 2019 13:15:25 GMT  
-		Size: 237.0 B  
+	-	`sha256:c413b7377c2f336391745613272b75d32b6f52110d5cf6bb28949ed2eea52906`  
+		Last Modified: Thu, 17 Oct 2019 17:20:16 GMT  
+		Size: 238.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:8880c01fadaf626a1ac9c93de76f80b0a02b905c57d9f0365d4ac7c140f73e8c`  
-		Last Modified: Fri, 27 Sep 2019 01:26:22 GMT  
-		Size: 12.4 MB (12414280 bytes)  
+	-	`sha256:a4b596a71a07bc97264060cb0d57f0a891799939bd0e967d554d51545ada78be`  
+		Last Modified: Thu, 17 Oct 2019 17:20:58 GMT  
+		Size: 12.4 MB (12414267 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:d7c57fbcfc142a1709892e77f655b6d3bc3a360f3a53baa61f11532b82c8c515`  
-		Last Modified: Fri, 27 Sep 2019 01:26:20 GMT  
-		Size: 501.0 B  
+	-	`sha256:2cf73d873c0e64ef386aaa2a4d767e8926c300028add95393ca378292a310c35`  
+		Last Modified: Thu, 17 Oct 2019 17:20:58 GMT  
+		Size: 499.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:6892f4a86a2085651c3e09630b9bf14329145a52732afa800916109d2d9bd02f`  
-		Last Modified: Sat, 05 Oct 2019 03:50:12 GMT  
-		Size: 29.3 MB (29288310 bytes)  
+	-	`sha256:8e7b760badfbfbd3508bfd56e884f1a4c31e3ff00f630d4624139ec14e27eafe`  
+		Last Modified: Thu, 17 Oct 2019 17:20:58 GMT  
+		Size: 27.6 MB (27615254 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:22cf8b69eff81a1164b28f190d3b463fbbf520226b72995d0e4694e1739938f2`  
-		Last Modified: Sat, 05 Oct 2019 03:50:04 GMT  
-		Size: 2.2 KB (2220 bytes)  
+	-	`sha256:cbf349b24dffa2417c332e0bb55e2b980bcf46b3d7fbaa00fe87a08049c00b37`  
+		Last Modified: Thu, 17 Oct 2019 17:20:52 GMT  
+		Size: 2.2 KB (2217 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:ad2e7ee133845ff994982ea6b2f1c4004b526a57a802799a3c2112c6bb61403b`  
-		Last Modified: Sat, 05 Oct 2019 03:50:05 GMT  
+	-	`sha256:7c7f8431d945db36e6d726da1ce843ab4926b2674813197ebc4df8ef645e1fad`  
+		Last Modified: Thu, 17 Oct 2019 17:20:52 GMT  
 		Size: 258.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:24280bd5a9e9c27e015b3688cc4f6a0cad035125203e12bdb8bf032f5ac2157c`  
-		Last Modified: Sat, 05 Oct 2019 03:50:04 GMT  
-		Size: 8.3 KB (8287 bytes)  
+	-	`sha256:4158250e7cbb6afb6bad049e8f6c42837af7388056d517299036b15c1e985735`  
+		Last Modified: Thu, 17 Oct 2019 17:20:52 GMT  
+		Size: 8.3 KB (8282 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:bb8ba779b8dea8b1239cad15d567a2a08795231cf3f90db5b6a6994bbf1ce482`  
-		Last Modified: Sat, 05 Oct 2019 05:50:06 GMT  
-		Size: 1.6 MB (1571648 bytes)  
+	-	`sha256:3330fb06dfea77578c0b38bcd9ea770fcb018dccaad2e0e0e6126ea07c464b42`  
+		Last Modified: Fri, 18 Oct 2019 06:30:44 GMT  
+		Size: 1.6 MB (1571457 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:98637942b66d74c5fee0f05722ee152214d79356567bc25ae93b392d4f328711`  
-		Last Modified: Sat, 05 Oct 2019 05:50:06 GMT  
-		Size: 340.0 B  
+	-	`sha256:7b616380d0c6bbfd5a0f9dce7d63136cf3dac391a1171ec150ae05a5b211187a`  
+		Last Modified: Fri, 18 Oct 2019 06:30:44 GMT  
+		Size: 338.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c243379e0059c809bc7c6c0ad6d509b901da81482644a577f34624c9e2c860b5`  
-		Last Modified: Sat, 05 Oct 2019 05:50:18 GMT  
+	-	`sha256:433c3962f963c20086701b05347d595344d23f64adcb7b2a9dca22a7abb25a07`  
+		Last Modified: Fri, 18 Oct 2019 06:30:49 GMT  
 		Size: 18.0 MB (18005526 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
@@ -25154,7 +25154,7 @@ RUN set -eux; 	curl -fSL "https://ftp.drupal.org/files/projects/drupal-${DRUPAL_
 ## `drupal:apache`
 
 ```console
-$ docker pull drupal@sha256:bb49d97d37087bf6a2d82c31a8baa477cba3983427242bc5bad334dae69611e3
+$ docker pull drupal@sha256:b5b9d1a33393aa3a54aa8639cb777ae2388d5b41bd855778633ba775234a29bf
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -25169,159 +25169,159 @@ $ docker pull drupal@sha256:bb49d97d37087bf6a2d82c31a8baa477cba3983427242bc5bad3
 ### `drupal:apache` - linux; amd64
 
 ```console
-$ docker pull drupal@sha256:73a9b0def4d6d99b41e02a2dccd54200fc5dda7d8f38ac87174e1bf83e7f4219
+$ docker pull drupal@sha256:37037fd55f74b297e795a1abd0ba7d7e1c030e78e221f0018a9d1ee429eaa1a1
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **154.5 MB (154523243 bytes)**  
+-	Total Size: **152.9 MB (152945310 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:84af2ca3d9d5b7c4790ee0e1b2622bd6836c06cee3b601b7149ea9c92bcbf43b`
+-	Image ID: `sha256:db077f17914826f101cf283aa2bf0c07f0447562eed5f2069b5ea62b6e8edeec`
 -	Entrypoint: `["docker-php-entrypoint"]`
 -	Default Command: `["apache2-foreground"]`
 
 ```dockerfile
-# Wed, 11 Sep 2019 23:27:46 GMT
-ADD file:e82c447c3eae5d1d0282d8557b0c271b29d1be0d0f23204a09ad468be7a80d8c in / 
-# Wed, 11 Sep 2019 23:27:47 GMT
+# Wed, 16 Oct 2019 23:29:18 GMT
+ADD file:37512e59e7c324f9ec5b01628ef87efee73d2092cfe97d05ca949dc3528e4c2a in / 
+# Wed, 16 Oct 2019 23:29:19 GMT
 CMD ["bash"]
-# Thu, 12 Sep 2019 10:35:06 GMT
+# Thu, 17 Oct 2019 15:19:17 GMT
 RUN set -eux; 	{ 		echo 'Package: php*'; 		echo 'Pin: release *'; 		echo 'Pin-Priority: -1'; 	} > /etc/apt/preferences.d/no-debian-php
-# Thu, 12 Sep 2019 10:35:06 GMT
+# Thu, 17 Oct 2019 15:19:17 GMT
 ENV PHPIZE_DEPS=autoconf 		dpkg-dev 		file 		g++ 		gcc 		libc-dev 		make 		pkg-config 		re2c
-# Thu, 12 Sep 2019 10:35:36 GMT
+# Thu, 17 Oct 2019 15:19:56 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		$PHPIZE_DEPS 		ca-certificates 		curl 		xz-utils 	; 	rm -rf /var/lib/apt/lists/*
-# Thu, 12 Sep 2019 10:35:36 GMT
+# Thu, 17 Oct 2019 15:19:57 GMT
 ENV PHP_INI_DIR=/usr/local/etc/php
-# Thu, 12 Sep 2019 10:35:37 GMT
+# Thu, 17 Oct 2019 15:19:58 GMT
 RUN set -eux; 	mkdir -p "$PHP_INI_DIR/conf.d"; 	[ ! -d /var/www/html ]; 	mkdir -p /var/www/html; 	chown www-data:www-data /var/www/html; 	chmod 777 /var/www/html
-# Thu, 12 Sep 2019 10:44:55 GMT
+# Thu, 17 Oct 2019 15:27:50 GMT
 ENV APACHE_CONFDIR=/etc/apache2
-# Thu, 12 Sep 2019 10:44:55 GMT
+# Thu, 17 Oct 2019 15:27:50 GMT
 ENV APACHE_ENVVARS=/etc/apache2/envvars
-# Thu, 12 Sep 2019 10:45:06 GMT
+# Thu, 17 Oct 2019 15:28:01 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends apache2; 	rm -rf /var/lib/apt/lists/*; 		sed -ri 's/^export ([^=]+)=(.*)$/: ${\1:=\2}\nexport \1/' "$APACHE_ENVVARS"; 		. "$APACHE_ENVVARS"; 	for dir in 		"$APACHE_LOCK_DIR" 		"$APACHE_RUN_DIR" 		"$APACHE_LOG_DIR" 	; do 		rm -rvf "$dir"; 		mkdir -p "$dir"; 		chown "$APACHE_RUN_USER:$APACHE_RUN_GROUP" "$dir"; 		chmod 777 "$dir"; 	done; 		rm -rvf /var/www/html/*; 		ln -sfT /dev/stderr "$APACHE_LOG_DIR/error.log"; 	ln -sfT /dev/stdout "$APACHE_LOG_DIR/access.log"; 	ln -sfT /dev/stdout "$APACHE_LOG_DIR/other_vhosts_access.log"; 	chown -R --no-dereference "$APACHE_RUN_USER:$APACHE_RUN_GROUP" "$APACHE_LOG_DIR"
-# Thu, 12 Sep 2019 10:45:07 GMT
+# Thu, 17 Oct 2019 15:28:03 GMT
 RUN a2dismod mpm_event && a2enmod mpm_prefork
-# Thu, 12 Sep 2019 10:45:08 GMT
+# Thu, 17 Oct 2019 15:28:04 GMT
 RUN { 		echo '<FilesMatch \.php$>'; 		echo '\tSetHandler application/x-httpd-php'; 		echo '</FilesMatch>'; 		echo; 		echo 'DirectoryIndex disabled'; 		echo 'DirectoryIndex index.php index.html'; 		echo; 		echo '<Directory /var/www/>'; 		echo '\tOptions -Indexes'; 		echo '\tAllowOverride All'; 		echo '</Directory>'; 	} | tee "$APACHE_CONFDIR/conf-available/docker-php.conf" 	&& a2enconf docker-php
-# Thu, 12 Sep 2019 10:45:08 GMT
+# Thu, 17 Oct 2019 15:28:04 GMT
 ENV PHP_EXTRA_BUILD_DEPS=apache2-dev
-# Thu, 12 Sep 2019 10:45:08 GMT
+# Thu, 17 Oct 2019 15:28:05 GMT
 ENV PHP_EXTRA_CONFIGURE_ARGS=--with-apxs2 --disable-cgi
-# Thu, 12 Sep 2019 10:45:08 GMT
+# Thu, 17 Oct 2019 15:28:05 GMT
 ENV PHP_CFLAGS=-fstack-protector-strong -fpic -fpie -O2
-# Thu, 12 Sep 2019 10:45:08 GMT
+# Thu, 17 Oct 2019 15:28:05 GMT
 ENV PHP_CPPFLAGS=-fstack-protector-strong -fpic -fpie -O2
-# Thu, 12 Sep 2019 10:45:08 GMT
+# Thu, 17 Oct 2019 15:28:05 GMT
 ENV PHP_LDFLAGS=-Wl,-O1 -Wl,--hash-style=both -pie
-# Thu, 12 Sep 2019 10:45:09 GMT
+# Thu, 17 Oct 2019 15:28:06 GMT
 ENV GPG_KEYS=CBAF69F173A0FEA4B537F470D66C9593118BCCB6 F38252826ACD957EF380D39F2F7956BC5DA04B5D
-# Thu, 26 Sep 2019 21:50:18 GMT
+# Thu, 17 Oct 2019 15:28:06 GMT
 ENV PHP_VERSION=7.3.10
-# Thu, 26 Sep 2019 21:50:18 GMT
+# Thu, 17 Oct 2019 15:28:06 GMT
 ENV PHP_URL=https://www.php.net/get/php-7.3.10.tar.xz/from/this/mirror PHP_ASC_URL=https://www.php.net/get/php-7.3.10.tar.xz.asc/from/this/mirror
-# Thu, 26 Sep 2019 21:50:18 GMT
+# Thu, 17 Oct 2019 15:28:07 GMT
 ENV PHP_SHA256=42f00a15419e05771734b7159c8d39d639b8a5a6770413adfa2615f6f923d906 PHP_MD5=
-# Thu, 26 Sep 2019 21:50:30 GMT
+# Thu, 17 Oct 2019 15:28:20 GMT
 RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends gnupg dirmngr; 	rm -rf /var/lib/apt/lists/*; 		mkdir -p /usr/src; 	cd /usr/src; 		curl -fsSL -o php.tar.xz "$PHP_URL"; 		if [ -n "$PHP_SHA256" ]; then 		echo "$PHP_SHA256 *php.tar.xz" | sha256sum -c -; 	fi; 	if [ -n "$PHP_MD5" ]; then 		echo "$PHP_MD5 *php.tar.xz" | md5sum -c -; 	fi; 		if [ -n "$PHP_ASC_URL" ]; then 		curl -fsSL -o php.tar.xz.asc "$PHP_ASC_URL"; 		export GNUPGHOME="$(mktemp -d)"; 		for key in $GPG_KEYS; do 			gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys "$key"; 		done; 		gpg --batch --verify php.tar.xz.asc php.tar.xz; 		gpgconf --kill all; 		rm -rf "$GNUPGHOME"; 	fi; 		apt-mark auto '.*' > /dev/null; 	apt-mark manual $savedAptMark > /dev/null; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false
-# Thu, 26 Sep 2019 21:50:30 GMT
+# Thu, 17 Oct 2019 15:28:20 GMT
 COPY file:ce57c04b70896f77cc11eb2766417d8a1240fcffe5bba92179ec78c458844110 in /usr/local/bin/ 
-# Fri, 04 Oct 2019 23:00:02 GMT
+# Thu, 17 Oct 2019 15:32:23 GMT
 RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	sed -e 's/stretch/buster/g' /etc/apt/sources.list > /etc/apt/sources.list.d/buster.list; 	{ 		echo 'Package: *'; 		echo 'Pin: release n=buster'; 		echo 'Pin-Priority: -10'; 		echo; 		echo 'Package: libargon2*'; 		echo 'Pin: release n=buster'; 		echo 'Pin-Priority: 990'; 	} > /etc/apt/preferences.d/argon2-buster; 	apt-get update; 	apt-get install -y --no-install-recommends 		libargon2-dev 		libcurl4-openssl-dev 		libedit-dev 		libsodium-dev 		libsqlite3-dev 		libssl-dev 		libxml2-dev 		zlib1g-dev 		${PHP_EXTRA_BUILD_DEPS:-} 	; 	rm -rf /var/lib/apt/lists/*; 		export 		CFLAGS="$PHP_CFLAGS" 		CPPFLAGS="$PHP_CPPFLAGS" 		LDFLAGS="$PHP_LDFLAGS" 	; 	docker-php-source extract; 	cd /usr/src/php; 	gnuArch="$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)"; 	debMultiarch="$(dpkg-architecture --query DEB_BUILD_MULTIARCH)"; 	if [ ! -d /usr/include/curl ]; then 		ln -sT "/usr/include/$debMultiarch/curl" /usr/local/include/curl; 	fi; 	./configure 		--build="$gnuArch" 		--with-config-file-path="$PHP_INI_DIR" 		--with-config-file-scan-dir="$PHP_INI_DIR/conf.d" 				--enable-option-checking=fatal 				--with-mhash 				--enable-ftp 		--enable-mbstring 		--enable-mysqlnd 		--with-password-argon2 		--with-sodium=shared 		--with-pdo-sqlite=/usr 		--with-sqlite3=/usr 				--with-curl 		--with-libedit 		--with-openssl 		--with-zlib 				$(test "$gnuArch" = 's390x-linux-gnu' && echo '--without-pcre-jit') 		--with-libdir="lib/$debMultiarch" 				${PHP_EXTRA_CONFIGURE_ARGS:-} 	; 	make -j "$(nproc)"; 	find -type f -name '*.a' -delete; 	make install; 	find /usr/local/bin /usr/local/sbin -type f -executable -exec strip --strip-all '{}' + || true; 	make clean; 		cp -v php.ini-* "$PHP_INI_DIR/"; 		cd /; 	docker-php-source delete; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark; 	find /usr/local -type f -executable -exec ldd '{}' ';' 		| awk '/=>/ { print $(NF-1) }' 		| sort -u 		| xargs -r dpkg-query --search 		| cut -d: -f1 		| sort -u 		| xargs -r apt-mark manual 	; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 		pecl update-channels; 	rm -rf /tmp/pear ~/.pearrc; 	php --version
-# Fri, 04 Oct 2019 23:00:02 GMT
+# Thu, 17 Oct 2019 15:32:24 GMT
 COPY multi:99e4ad617c6193834e78d12470f6dde09f70f4d40463009c5724954902e60676 in /usr/local/bin/ 
-# Fri, 04 Oct 2019 23:00:04 GMT
+# Thu, 17 Oct 2019 15:32:25 GMT
 RUN docker-php-ext-enable sodium
-# Fri, 04 Oct 2019 23:00:04 GMT
+# Thu, 17 Oct 2019 15:32:25 GMT
 ENTRYPOINT ["docker-php-entrypoint"]
-# Fri, 04 Oct 2019 23:00:04 GMT
+# Thu, 17 Oct 2019 15:32:25 GMT
 STOPSIGNAL WINCH
-# Fri, 04 Oct 2019 23:00:05 GMT
+# Thu, 17 Oct 2019 15:32:25 GMT
 COPY file:e3123fcb6566efa979f945bfac1c94c854a559d7b82723e42118882a8ac4de66 in /usr/local/bin/ 
-# Fri, 04 Oct 2019 23:00:05 GMT
+# Thu, 17 Oct 2019 15:32:25 GMT
 WORKDIR /var/www/html
-# Fri, 04 Oct 2019 23:00:05 GMT
+# Thu, 17 Oct 2019 15:32:26 GMT
 EXPOSE 80
-# Fri, 04 Oct 2019 23:00:05 GMT
+# Thu, 17 Oct 2019 15:32:26 GMT
 CMD ["apache2-foreground"]
-# Sat, 05 Oct 2019 05:37:18 GMT
+# Fri, 18 Oct 2019 06:25:57 GMT
 RUN set -eux; 		if command -v a2enmod; then 		a2enmod rewrite; 	fi; 		savedAptMark="$(apt-mark showmanual)"; 		apt-get update; 	apt-get install -y --no-install-recommends 		libfreetype6-dev 		libjpeg-dev 		libpng-dev 		libpq-dev 		libzip-dev 	; 		docker-php-ext-configure gd 		--with-freetype-dir=/usr 		--with-jpeg-dir=/usr 		--with-png-dir=/usr 	; 		docker-php-ext-install -j "$(nproc)" 		gd 		opcache 		pdo_mysql 		pdo_pgsql 		zip 	; 		apt-mark auto '.*' > /dev/null; 	apt-mark manual $savedAptMark; 	ldd "$(php -r 'echo ini_get("extension_dir");')"/*.so 		| awk '/=>/ { print $3 }' 		| sort -u 		| xargs -r dpkg-query -S 		| cut -d: -f1 		| sort -u 		| xargs -rt apt-mark manual; 		apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 	rm -rf /var/lib/apt/lists/*
-# Sat, 05 Oct 2019 05:37:20 GMT
+# Fri, 18 Oct 2019 06:25:57 GMT
 RUN { 		echo 'opcache.memory_consumption=128'; 		echo 'opcache.interned_strings_buffer=8'; 		echo 'opcache.max_accelerated_files=4000'; 		echo 'opcache.revalidate_freq=60'; 		echo 'opcache.fast_shutdown=1'; 	} > /usr/local/etc/php/conf.d/opcache-recommended.ini
-# Sat, 05 Oct 2019 05:37:20 GMT
+# Fri, 18 Oct 2019 06:25:57 GMT
 WORKDIR /var/www/html
-# Sat, 05 Oct 2019 05:37:20 GMT
+# Fri, 18 Oct 2019 06:25:58 GMT
 ENV DRUPAL_VERSION=8.7.8
-# Sat, 05 Oct 2019 05:37:21 GMT
+# Fri, 18 Oct 2019 06:25:58 GMT
 ENV DRUPAL_MD5=f281eb14d8aabf0c3e78dd519ca4b640
-# Sat, 05 Oct 2019 05:37:34 GMT
+# Fri, 18 Oct 2019 06:26:03 GMT
 RUN set -eux; 	curl -fSL "https://ftp.drupal.org/files/projects/drupal-${DRUPAL_VERSION}.tar.gz" -o drupal.tar.gz; 	echo "${DRUPAL_MD5} *drupal.tar.gz" | md5sum -c -; 	tar -xz --strip-components=1 -f drupal.tar.gz; 	rm drupal.tar.gz; 	chown -R www-data:www-data sites modules themes
 ```
 
 -	Layers:
-	-	`sha256:8f91359f1fffbf32b24ca854fb263d88a222371f38e90cf4583c5742cfdc3039`  
-		Last Modified: Wed, 11 Sep 2019 23:34:50 GMT  
-		Size: 22.5 MB (22510654 bytes)  
+	-	`sha256:80369df487363e56aea88d4d41b61f1607fc2ec198e9327cfde36a5346c71bf2`  
+		Last Modified: Wed, 16 Oct 2019 23:35:19 GMT  
+		Size: 22.5 MB (22524636 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:bf2faaedf741a44c5457bc029621724b7f316482f99de58522e1b659ddc8fd99`  
-		Last Modified: Thu, 12 Sep 2019 13:15:25 GMT  
-		Size: 225.0 B  
+	-	`sha256:60e80cb3f70356b666135b9d9acc19345b74bf7feedb2b6ac494dd6d224b8574`  
+		Last Modified: Thu, 17 Oct 2019 17:20:16 GMT  
+		Size: 226.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:24cd1299a53e525f85fdd79c524463ec6b6569df13c6af402ca0f706ad89c28b`  
-		Last Modified: Thu, 12 Sep 2019 13:15:49 GMT  
-		Size: 67.5 MB (67450331 bytes)  
+	-	`sha256:e3b2450987de138dcaf9f09559f25a8b2cd6ceaac8e28d858fdb73530d40f92e`  
+		Last Modified: Thu, 17 Oct 2019 17:20:33 GMT  
+		Size: 67.4 MB (67447849 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:17091cc665e4a0e967d00b8b36fcabb2b17d7bceba421f717f5d138063e22ad6`  
-		Last Modified: Thu, 12 Sep 2019 13:15:25 GMT  
-		Size: 237.0 B  
+	-	`sha256:c413b7377c2f336391745613272b75d32b6f52110d5cf6bb28949ed2eea52906`  
+		Last Modified: Thu, 17 Oct 2019 17:20:16 GMT  
+		Size: 238.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:ac9365919f9b10c759648e7efa92752c1443400e4178d6411f5a458a90e09ca2`  
-		Last Modified: Thu, 12 Sep 2019 13:16:08 GMT  
-		Size: 17.1 MB (17125603 bytes)  
+	-	`sha256:6dd9eff17a14f4fd1ad899a27f318151a4b2fa2d935cb85307637563d6973d17`  
+		Last Modified: Thu, 17 Oct 2019 17:20:46 GMT  
+		Size: 17.1 MB (17125324 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:4f1b34e209eee27994691cd890ca1422857bc1c2c166a700049ae0af84d6fb2a`  
-		Last Modified: Thu, 12 Sep 2019 13:16:02 GMT  
-		Size: 431.0 B  
+	-	`sha256:5126e57aff9b8bc91dfaa6885060a8b4cd41887d4a85621d5778c2ec6c660f2a`  
+		Last Modified: Thu, 17 Oct 2019 17:20:43 GMT  
+		Size: 437.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:832757fa04a4aea3b2f6e686cf9741254a6a03855e86b603417b6d3ce6c0038f`  
-		Last Modified: Thu, 12 Sep 2019 13:16:02 GMT  
-		Size: 487.0 B  
+	-	`sha256:943df09926ea3a42f821bbdfd1d3112e72b5da0fbc6761b35b50da5570cfb438`  
+		Last Modified: Thu, 17 Oct 2019 17:20:43 GMT  
+		Size: 490.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:640a8cc59ee46638b569b4797bc4a773e22ff83223d1d94620047e7acdf4f121`  
-		Last Modified: Fri, 27 Sep 2019 01:26:12 GMT  
-		Size: 12.4 MB (12435253 bytes)  
+	-	`sha256:9945a6d6fd51d29053a01e7362f98478704156cb0344028887de5de27b56f8cd`  
+		Last Modified: Thu, 17 Oct 2019 17:20:43 GMT  
+		Size: 12.4 MB (12435307 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:375d45a647bd866c4211aeda97b2b5bedb12dc76350eb92cdbcd172943efbf37`  
-		Last Modified: Fri, 27 Sep 2019 01:26:09 GMT  
+	-	`sha256:975035f5a785ddf7bea6b46a40a2beae1617b991dd4965bb2632ce819c0ebae4`  
+		Last Modified: Thu, 17 Oct 2019 17:20:42 GMT  
 		Size: 501.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:699f6141932e10e137db5a06352130c87535007fc4d71d0d21cf5204db76d728`  
-		Last Modified: Sat, 05 Oct 2019 03:49:47 GMT  
-		Size: 15.4 MB (15395755 bytes)  
+	-	`sha256:561abe18d8c31cf78ff6f1569ed5e894ccabfae65dd247928b73ca194c455f7a`  
+		Last Modified: Thu, 17 Oct 2019 17:20:45 GMT  
+		Size: 13.8 MB (13806779 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:be6c200d07db998ed59695b4d5635fadfcc871f2a0dd2ce5ed45e83ad94bfe5c`  
-		Last Modified: Sat, 05 Oct 2019 03:49:41 GMT  
-		Size: 2.2 KB (2223 bytes)  
+	-	`sha256:ecfae1d03a560507c8358c1dd3b5ea4d85df3274f721c12d1f5bf2f4f846a84c`  
+		Last Modified: Thu, 17 Oct 2019 17:20:42 GMT  
+		Size: 2.2 KB (2225 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c5a9afabd1a71f323e7c4c48a4bf311e19637c1dcfdd8e56930b318010c7a322`  
-		Last Modified: Sat, 05 Oct 2019 03:49:42 GMT  
-		Size: 259.0 B  
+	-	`sha256:69a47ac39f697f9eb8a508965dcd3b51d3365b5e3625aa08085f02866fb1531d`  
+		Last Modified: Thu, 17 Oct 2019 17:20:41 GMT  
+		Size: 261.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:f517a6395f969bd01b32606233e12344abd854953769c7fcced6d776964aac74`  
-		Last Modified: Sat, 05 Oct 2019 03:49:42 GMT  
-		Size: 901.0 B  
+	-	`sha256:4b0bd7b07f693ddfca86b3f94a7eb7f7d56d2f0d7d8b96b80ad7f3b438173b29`  
+		Last Modified: Thu, 17 Oct 2019 17:20:41 GMT  
+		Size: 905.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:4834256bfafcc2acba5ce5afc6eca80c529b1fd74620511b5ff32d99cc63c61f`  
-		Last Modified: Sat, 05 Oct 2019 05:49:42 GMT  
-		Size: 1.6 MB (1594511 bytes)  
+	-	`sha256:cbbcd711c9961e0745e2348424d92efce8a7c76228be39b3897db99c6c6120d8`  
+		Last Modified: Fri, 18 Oct 2019 06:30:30 GMT  
+		Size: 1.6 MB (1594259 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:658398927ac0c2d9570ced0232f6c98915b6bc254e4eb8654c20082a71484a82`  
-		Last Modified: Sat, 05 Oct 2019 05:49:41 GMT  
-		Size: 339.0 B  
+	-	`sha256:fab086cdefa2ad6d5c4ba0ef31daddc017cc3d10f842a3c1ad81cefa482e0de4`  
+		Last Modified: Fri, 18 Oct 2019 06:30:30 GMT  
+		Size: 340.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:dab98cb0ae912b1a85e6a906c59eec8fe7e8035a28425cf9842d37fbf0a348a4`  
-		Last Modified: Sat, 05 Oct 2019 05:49:51 GMT  
+	-	`sha256:8bc233ea200f92189618c3ce830efe5fc1541cc2dbe1a355e7a4f9e02b27d945`  
+		Last Modified: Fri, 18 Oct 2019 06:30:35 GMT  
 		Size: 18.0 MB (18005533 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
@@ -26123,7 +26123,7 @@ RUN set -eux; 	curl -fSL "https://ftp.drupal.org/files/projects/drupal-${DRUPAL_
 ## `drupal:fpm`
 
 ```console
-$ docker pull drupal@sha256:701c723f8932697372d6ce007ed99cd0099500f749483e381a58057b7eff8075
+$ docker pull drupal@sha256:99f98be373b1a34bf0866f863609257f83ca42eb232ebeafdb89c68dfac20678
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -26138,135 +26138,135 @@ $ docker pull drupal@sha256:701c723f8932697372d6ce007ed99cd0099500f749483e381a58
 ### `drupal:fpm` - linux; amd64
 
 ```console
-$ docker pull drupal@sha256:f46dbffc79089009d60a2368474f93159cf6c9ff6207d20d04c300e41895050e
+$ docker pull drupal@sha256:77fd62f00360643bff1118c8ef0e348a3f59fb135366dd3947134a819ba0d821
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **151.3 MB (151252817 bytes)**  
+-	Total Size: **149.6 MB (149591047 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:d95c8dc3c4a56853941fa498238ab14d20f419e40fbfd514066f7cccbef8d7b0`
+-	Image ID: `sha256:7e6359a86ef497503ba8a7c76024929b54cbeb63efe84f36793e5f806a96386d`
 -	Entrypoint: `["docker-php-entrypoint"]`
 -	Default Command: `["php-fpm"]`
 
 ```dockerfile
-# Wed, 11 Sep 2019 23:27:46 GMT
-ADD file:e82c447c3eae5d1d0282d8557b0c271b29d1be0d0f23204a09ad468be7a80d8c in / 
-# Wed, 11 Sep 2019 23:27:47 GMT
+# Wed, 16 Oct 2019 23:29:18 GMT
+ADD file:37512e59e7c324f9ec5b01628ef87efee73d2092cfe97d05ca949dc3528e4c2a in / 
+# Wed, 16 Oct 2019 23:29:19 GMT
 CMD ["bash"]
-# Thu, 12 Sep 2019 10:35:06 GMT
+# Thu, 17 Oct 2019 15:19:17 GMT
 RUN set -eux; 	{ 		echo 'Package: php*'; 		echo 'Pin: release *'; 		echo 'Pin-Priority: -1'; 	} > /etc/apt/preferences.d/no-debian-php
-# Thu, 12 Sep 2019 10:35:06 GMT
+# Thu, 17 Oct 2019 15:19:17 GMT
 ENV PHPIZE_DEPS=autoconf 		dpkg-dev 		file 		g++ 		gcc 		libc-dev 		make 		pkg-config 		re2c
-# Thu, 12 Sep 2019 10:35:36 GMT
+# Thu, 17 Oct 2019 15:19:56 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		$PHPIZE_DEPS 		ca-certificates 		curl 		xz-utils 	; 	rm -rf /var/lib/apt/lists/*
-# Thu, 12 Sep 2019 10:35:36 GMT
+# Thu, 17 Oct 2019 15:19:57 GMT
 ENV PHP_INI_DIR=/usr/local/etc/php
-# Thu, 12 Sep 2019 10:35:37 GMT
+# Thu, 17 Oct 2019 15:19:58 GMT
 RUN set -eux; 	mkdir -p "$PHP_INI_DIR/conf.d"; 	[ ! -d /var/www/html ]; 	mkdir -p /var/www/html; 	chown www-data:www-data /var/www/html; 	chmod 777 /var/www/html
-# Thu, 12 Sep 2019 10:51:13 GMT
+# Thu, 17 Oct 2019 15:32:36 GMT
 ENV PHP_EXTRA_CONFIGURE_ARGS=--enable-fpm --with-fpm-user=www-data --with-fpm-group=www-data --disable-cgi
-# Thu, 12 Sep 2019 10:51:13 GMT
+# Thu, 17 Oct 2019 15:32:36 GMT
 ENV PHP_CFLAGS=-fstack-protector-strong -fpic -fpie -O2
-# Thu, 12 Sep 2019 10:51:13 GMT
+# Thu, 17 Oct 2019 15:32:36 GMT
 ENV PHP_CPPFLAGS=-fstack-protector-strong -fpic -fpie -O2
-# Thu, 12 Sep 2019 10:51:14 GMT
+# Thu, 17 Oct 2019 15:32:36 GMT
 ENV PHP_LDFLAGS=-Wl,-O1 -Wl,--hash-style=both -pie
-# Thu, 12 Sep 2019 10:51:14 GMT
+# Thu, 17 Oct 2019 15:32:37 GMT
 ENV GPG_KEYS=CBAF69F173A0FEA4B537F470D66C9593118BCCB6 F38252826ACD957EF380D39F2F7956BC5DA04B5D
-# Thu, 26 Sep 2019 21:55:51 GMT
+# Thu, 17 Oct 2019 15:32:37 GMT
 ENV PHP_VERSION=7.3.10
-# Thu, 26 Sep 2019 21:55:52 GMT
+# Thu, 17 Oct 2019 15:32:37 GMT
 ENV PHP_URL=https://www.php.net/get/php-7.3.10.tar.xz/from/this/mirror PHP_ASC_URL=https://www.php.net/get/php-7.3.10.tar.xz.asc/from/this/mirror
-# Thu, 26 Sep 2019 21:55:52 GMT
+# Thu, 17 Oct 2019 15:32:37 GMT
 ENV PHP_SHA256=42f00a15419e05771734b7159c8d39d639b8a5a6770413adfa2615f6f923d906 PHP_MD5=
-# Thu, 26 Sep 2019 21:56:04 GMT
+# Thu, 17 Oct 2019 15:32:46 GMT
 RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends gnupg dirmngr; 	rm -rf /var/lib/apt/lists/*; 		mkdir -p /usr/src; 	cd /usr/src; 		curl -fsSL -o php.tar.xz "$PHP_URL"; 		if [ -n "$PHP_SHA256" ]; then 		echo "$PHP_SHA256 *php.tar.xz" | sha256sum -c -; 	fi; 	if [ -n "$PHP_MD5" ]; then 		echo "$PHP_MD5 *php.tar.xz" | md5sum -c -; 	fi; 		if [ -n "$PHP_ASC_URL" ]; then 		curl -fsSL -o php.tar.xz.asc "$PHP_ASC_URL"; 		export GNUPGHOME="$(mktemp -d)"; 		for key in $GPG_KEYS; do 			gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys "$key"; 		done; 		gpg --batch --verify php.tar.xz.asc php.tar.xz; 		gpgconf --kill all; 		rm -rf "$GNUPGHOME"; 	fi; 		apt-mark auto '.*' > /dev/null; 	apt-mark manual $savedAptMark > /dev/null; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false
-# Thu, 26 Sep 2019 21:56:05 GMT
+# Thu, 17 Oct 2019 15:32:46 GMT
 COPY file:ce57c04b70896f77cc11eb2766417d8a1240fcffe5bba92179ec78c458844110 in /usr/local/bin/ 
-# Fri, 04 Oct 2019 23:08:24 GMT
+# Thu, 17 Oct 2019 15:39:24 GMT
 RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	sed -e 's/stretch/buster/g' /etc/apt/sources.list > /etc/apt/sources.list.d/buster.list; 	{ 		echo 'Package: *'; 		echo 'Pin: release n=buster'; 		echo 'Pin-Priority: -10'; 		echo; 		echo 'Package: libargon2*'; 		echo 'Pin: release n=buster'; 		echo 'Pin-Priority: 990'; 	} > /etc/apt/preferences.d/argon2-buster; 	apt-get update; 	apt-get install -y --no-install-recommends 		libargon2-dev 		libcurl4-openssl-dev 		libedit-dev 		libsodium-dev 		libsqlite3-dev 		libssl-dev 		libxml2-dev 		zlib1g-dev 		${PHP_EXTRA_BUILD_DEPS:-} 	; 	rm -rf /var/lib/apt/lists/*; 		export 		CFLAGS="$PHP_CFLAGS" 		CPPFLAGS="$PHP_CPPFLAGS" 		LDFLAGS="$PHP_LDFLAGS" 	; 	docker-php-source extract; 	cd /usr/src/php; 	gnuArch="$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)"; 	debMultiarch="$(dpkg-architecture --query DEB_BUILD_MULTIARCH)"; 	if [ ! -d /usr/include/curl ]; then 		ln -sT "/usr/include/$debMultiarch/curl" /usr/local/include/curl; 	fi; 	./configure 		--build="$gnuArch" 		--with-config-file-path="$PHP_INI_DIR" 		--with-config-file-scan-dir="$PHP_INI_DIR/conf.d" 				--enable-option-checking=fatal 				--with-mhash 				--enable-ftp 		--enable-mbstring 		--enable-mysqlnd 		--with-password-argon2 		--with-sodium=shared 		--with-pdo-sqlite=/usr 		--with-sqlite3=/usr 				--with-curl 		--with-libedit 		--with-openssl 		--with-zlib 				$(test "$gnuArch" = 's390x-linux-gnu' && echo '--without-pcre-jit') 		--with-libdir="lib/$debMultiarch" 				${PHP_EXTRA_CONFIGURE_ARGS:-} 	; 	make -j "$(nproc)"; 	find -type f -name '*.a' -delete; 	make install; 	find /usr/local/bin /usr/local/sbin -type f -executable -exec strip --strip-all '{}' + || true; 	make clean; 		cp -v php.ini-* "$PHP_INI_DIR/"; 		cd /; 	docker-php-source delete; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark; 	find /usr/local -type f -executable -exec ldd '{}' ';' 		| awk '/=>/ { print $(NF-1) }' 		| sort -u 		| xargs -r dpkg-query --search 		| cut -d: -f1 		| sort -u 		| xargs -r apt-mark manual 	; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 		pecl update-channels; 	rm -rf /tmp/pear ~/.pearrc; 	php --version
-# Fri, 04 Oct 2019 23:08:24 GMT
+# Thu, 17 Oct 2019 15:39:24 GMT
 COPY multi:c1ff99c7805e8f41fdb0717f754884884ce2157d746a82343d7c737c86ded761 in /usr/local/bin/ 
-# Fri, 04 Oct 2019 23:08:26 GMT
+# Thu, 17 Oct 2019 15:39:25 GMT
 RUN docker-php-ext-enable sodium
-# Fri, 04 Oct 2019 23:08:26 GMT
+# Thu, 17 Oct 2019 15:39:25 GMT
 ENTRYPOINT ["docker-php-entrypoint"]
-# Fri, 04 Oct 2019 23:08:26 GMT
+# Thu, 17 Oct 2019 15:39:25 GMT
 WORKDIR /var/www/html
-# Fri, 04 Oct 2019 23:08:27 GMT
+# Thu, 17 Oct 2019 15:39:26 GMT
 RUN set -eux; 	cd /usr/local/etc; 	if [ -d php-fpm.d ]; then 		sed 's!=NONE/!=!g' php-fpm.conf.default | tee php-fpm.conf > /dev/null; 		cp php-fpm.d/www.conf.default php-fpm.d/www.conf; 	else 		mkdir php-fpm.d; 		cp php-fpm.conf.default php-fpm.d/www.conf; 		{ 			echo '[global]'; 			echo 'include=etc/php-fpm.d/*.conf'; 		} | tee php-fpm.conf; 	fi; 	{ 		echo '[global]'; 		echo 'error_log = /proc/self/fd/2'; 		echo; echo '; https://github.com/docker-library/php/pull/725#issuecomment-443540114'; echo 'log_limit = 8192'; 		echo; 		echo '[www]'; 		echo '; if we send this to /proc/self/fd/1, it never appears'; 		echo 'access.log = /proc/self/fd/2'; 		echo; 		echo 'clear_env = no'; 		echo; 		echo '; Ensure worker stdout and stderr are sent to the main error log.'; 		echo 'catch_workers_output = yes'; 		echo 'decorate_workers_output = no'; 	} | tee php-fpm.d/docker.conf; 	{ 		echo '[global]'; 		echo 'daemonize = no'; 		echo; 		echo '[www]'; 		echo 'listen = 9000'; 	} | tee php-fpm.d/zz-docker.conf
-# Fri, 04 Oct 2019 23:08:28 GMT
+# Thu, 17 Oct 2019 15:39:26 GMT
 STOPSIGNAL SIGQUIT
-# Fri, 04 Oct 2019 23:08:28 GMT
+# Thu, 17 Oct 2019 15:39:26 GMT
 EXPOSE 9000
-# Fri, 04 Oct 2019 23:08:28 GMT
+# Thu, 17 Oct 2019 15:39:27 GMT
 CMD ["php-fpm"]
-# Sat, 05 Oct 2019 05:39:32 GMT
+# Fri, 18 Oct 2019 06:27:08 GMT
 RUN set -eux; 		if command -v a2enmod; then 		a2enmod rewrite; 	fi; 		savedAptMark="$(apt-mark showmanual)"; 		apt-get update; 	apt-get install -y --no-install-recommends 		libfreetype6-dev 		libjpeg-dev 		libpng-dev 		libpq-dev 		libzip-dev 	; 		docker-php-ext-configure gd 		--with-freetype-dir=/usr 		--with-jpeg-dir=/usr 		--with-png-dir=/usr 	; 		docker-php-ext-install -j "$(nproc)" 		gd 		opcache 		pdo_mysql 		pdo_pgsql 		zip 	; 		apt-mark auto '.*' > /dev/null; 	apt-mark manual $savedAptMark; 	ldd "$(php -r 'echo ini_get("extension_dir");')"/*.so 		| awk '/=>/ { print $3 }' 		| sort -u 		| xargs -r dpkg-query -S 		| cut -d: -f1 		| sort -u 		| xargs -rt apt-mark manual; 		apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 	rm -rf /var/lib/apt/lists/*
-# Sat, 05 Oct 2019 05:39:33 GMT
+# Fri, 18 Oct 2019 06:27:09 GMT
 RUN { 		echo 'opcache.memory_consumption=128'; 		echo 'opcache.interned_strings_buffer=8'; 		echo 'opcache.max_accelerated_files=4000'; 		echo 'opcache.revalidate_freq=60'; 		echo 'opcache.fast_shutdown=1'; 	} > /usr/local/etc/php/conf.d/opcache-recommended.ini
-# Sat, 05 Oct 2019 05:39:33 GMT
+# Fri, 18 Oct 2019 06:27:09 GMT
 WORKDIR /var/www/html
-# Sat, 05 Oct 2019 05:39:33 GMT
+# Fri, 18 Oct 2019 06:27:09 GMT
 ENV DRUPAL_VERSION=8.7.8
-# Sat, 05 Oct 2019 05:39:34 GMT
+# Fri, 18 Oct 2019 06:27:10 GMT
 ENV DRUPAL_MD5=f281eb14d8aabf0c3e78dd519ca4b640
-# Sat, 05 Oct 2019 05:39:47 GMT
+# Fri, 18 Oct 2019 06:27:15 GMT
 RUN set -eux; 	curl -fSL "https://ftp.drupal.org/files/projects/drupal-${DRUPAL_VERSION}.tar.gz" -o drupal.tar.gz; 	echo "${DRUPAL_MD5} *drupal.tar.gz" | md5sum -c -; 	tar -xz --strip-components=1 -f drupal.tar.gz; 	rm drupal.tar.gz; 	chown -R www-data:www-data sites modules themes
 ```
 
 -	Layers:
-	-	`sha256:8f91359f1fffbf32b24ca854fb263d88a222371f38e90cf4583c5742cfdc3039`  
-		Last Modified: Wed, 11 Sep 2019 23:34:50 GMT  
-		Size: 22.5 MB (22510654 bytes)  
+	-	`sha256:80369df487363e56aea88d4d41b61f1607fc2ec198e9327cfde36a5346c71bf2`  
+		Last Modified: Wed, 16 Oct 2019 23:35:19 GMT  
+		Size: 22.5 MB (22524636 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:bf2faaedf741a44c5457bc029621724b7f316482f99de58522e1b659ddc8fd99`  
-		Last Modified: Thu, 12 Sep 2019 13:15:25 GMT  
-		Size: 225.0 B  
+	-	`sha256:60e80cb3f70356b666135b9d9acc19345b74bf7feedb2b6ac494dd6d224b8574`  
+		Last Modified: Thu, 17 Oct 2019 17:20:16 GMT  
+		Size: 226.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:24cd1299a53e525f85fdd79c524463ec6b6569df13c6af402ca0f706ad89c28b`  
-		Last Modified: Thu, 12 Sep 2019 13:15:49 GMT  
-		Size: 67.5 MB (67450331 bytes)  
+	-	`sha256:e3b2450987de138dcaf9f09559f25a8b2cd6ceaac8e28d858fdb73530d40f92e`  
+		Last Modified: Thu, 17 Oct 2019 17:20:33 GMT  
+		Size: 67.4 MB (67447849 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:17091cc665e4a0e967d00b8b36fcabb2b17d7bceba421f717f5d138063e22ad6`  
-		Last Modified: Thu, 12 Sep 2019 13:15:25 GMT  
-		Size: 237.0 B  
+	-	`sha256:c413b7377c2f336391745613272b75d32b6f52110d5cf6bb28949ed2eea52906`  
+		Last Modified: Thu, 17 Oct 2019 17:20:16 GMT  
+		Size: 238.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:8880c01fadaf626a1ac9c93de76f80b0a02b905c57d9f0365d4ac7c140f73e8c`  
-		Last Modified: Fri, 27 Sep 2019 01:26:22 GMT  
-		Size: 12.4 MB (12414280 bytes)  
+	-	`sha256:a4b596a71a07bc97264060cb0d57f0a891799939bd0e967d554d51545ada78be`  
+		Last Modified: Thu, 17 Oct 2019 17:20:58 GMT  
+		Size: 12.4 MB (12414267 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:d7c57fbcfc142a1709892e77f655b6d3bc3a360f3a53baa61f11532b82c8c515`  
-		Last Modified: Fri, 27 Sep 2019 01:26:20 GMT  
-		Size: 501.0 B  
+	-	`sha256:2cf73d873c0e64ef386aaa2a4d767e8926c300028add95393ca378292a310c35`  
+		Last Modified: Thu, 17 Oct 2019 17:20:58 GMT  
+		Size: 499.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:6892f4a86a2085651c3e09630b9bf14329145a52732afa800916109d2d9bd02f`  
-		Last Modified: Sat, 05 Oct 2019 03:50:12 GMT  
-		Size: 29.3 MB (29288310 bytes)  
+	-	`sha256:8e7b760badfbfbd3508bfd56e884f1a4c31e3ff00f630d4624139ec14e27eafe`  
+		Last Modified: Thu, 17 Oct 2019 17:20:58 GMT  
+		Size: 27.6 MB (27615254 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:22cf8b69eff81a1164b28f190d3b463fbbf520226b72995d0e4694e1739938f2`  
-		Last Modified: Sat, 05 Oct 2019 03:50:04 GMT  
-		Size: 2.2 KB (2220 bytes)  
+	-	`sha256:cbf349b24dffa2417c332e0bb55e2b980bcf46b3d7fbaa00fe87a08049c00b37`  
+		Last Modified: Thu, 17 Oct 2019 17:20:52 GMT  
+		Size: 2.2 KB (2217 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:ad2e7ee133845ff994982ea6b2f1c4004b526a57a802799a3c2112c6bb61403b`  
-		Last Modified: Sat, 05 Oct 2019 03:50:05 GMT  
+	-	`sha256:7c7f8431d945db36e6d726da1ce843ab4926b2674813197ebc4df8ef645e1fad`  
+		Last Modified: Thu, 17 Oct 2019 17:20:52 GMT  
 		Size: 258.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:24280bd5a9e9c27e015b3688cc4f6a0cad035125203e12bdb8bf032f5ac2157c`  
-		Last Modified: Sat, 05 Oct 2019 03:50:04 GMT  
-		Size: 8.3 KB (8287 bytes)  
+	-	`sha256:4158250e7cbb6afb6bad049e8f6c42837af7388056d517299036b15c1e985735`  
+		Last Modified: Thu, 17 Oct 2019 17:20:52 GMT  
+		Size: 8.3 KB (8282 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:bb8ba779b8dea8b1239cad15d567a2a08795231cf3f90db5b6a6994bbf1ce482`  
-		Last Modified: Sat, 05 Oct 2019 05:50:06 GMT  
-		Size: 1.6 MB (1571648 bytes)  
+	-	`sha256:3330fb06dfea77578c0b38bcd9ea770fcb018dccaad2e0e0e6126ea07c464b42`  
+		Last Modified: Fri, 18 Oct 2019 06:30:44 GMT  
+		Size: 1.6 MB (1571457 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:98637942b66d74c5fee0f05722ee152214d79356567bc25ae93b392d4f328711`  
-		Last Modified: Sat, 05 Oct 2019 05:50:06 GMT  
-		Size: 340.0 B  
+	-	`sha256:7b616380d0c6bbfd5a0f9dce7d63136cf3dac391a1171ec150ae05a5b211187a`  
+		Last Modified: Fri, 18 Oct 2019 06:30:44 GMT  
+		Size: 338.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c243379e0059c809bc7c6c0ad6d509b901da81482644a577f34624c9e2c860b5`  
-		Last Modified: Sat, 05 Oct 2019 05:50:18 GMT  
+	-	`sha256:433c3962f963c20086701b05347d595344d23f64adcb7b2a9dca22a7abb25a07`  
+		Last Modified: Fri, 18 Oct 2019 06:30:49 GMT  
 		Size: 18.0 MB (18005526 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
@@ -27773,7 +27773,7 @@ RUN set -eux; 	curl -fSL "https://ftp.drupal.org/files/projects/drupal-${DRUPAL_
 ## `drupal:latest`
 
 ```console
-$ docker pull drupal@sha256:bb49d97d37087bf6a2d82c31a8baa477cba3983427242bc5bad334dae69611e3
+$ docker pull drupal@sha256:b5b9d1a33393aa3a54aa8639cb777ae2388d5b41bd855778633ba775234a29bf
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -27788,159 +27788,159 @@ $ docker pull drupal@sha256:bb49d97d37087bf6a2d82c31a8baa477cba3983427242bc5bad3
 ### `drupal:latest` - linux; amd64
 
 ```console
-$ docker pull drupal@sha256:73a9b0def4d6d99b41e02a2dccd54200fc5dda7d8f38ac87174e1bf83e7f4219
+$ docker pull drupal@sha256:37037fd55f74b297e795a1abd0ba7d7e1c030e78e221f0018a9d1ee429eaa1a1
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **154.5 MB (154523243 bytes)**  
+-	Total Size: **152.9 MB (152945310 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:84af2ca3d9d5b7c4790ee0e1b2622bd6836c06cee3b601b7149ea9c92bcbf43b`
+-	Image ID: `sha256:db077f17914826f101cf283aa2bf0c07f0447562eed5f2069b5ea62b6e8edeec`
 -	Entrypoint: `["docker-php-entrypoint"]`
 -	Default Command: `["apache2-foreground"]`
 
 ```dockerfile
-# Wed, 11 Sep 2019 23:27:46 GMT
-ADD file:e82c447c3eae5d1d0282d8557b0c271b29d1be0d0f23204a09ad468be7a80d8c in / 
-# Wed, 11 Sep 2019 23:27:47 GMT
+# Wed, 16 Oct 2019 23:29:18 GMT
+ADD file:37512e59e7c324f9ec5b01628ef87efee73d2092cfe97d05ca949dc3528e4c2a in / 
+# Wed, 16 Oct 2019 23:29:19 GMT
 CMD ["bash"]
-# Thu, 12 Sep 2019 10:35:06 GMT
+# Thu, 17 Oct 2019 15:19:17 GMT
 RUN set -eux; 	{ 		echo 'Package: php*'; 		echo 'Pin: release *'; 		echo 'Pin-Priority: -1'; 	} > /etc/apt/preferences.d/no-debian-php
-# Thu, 12 Sep 2019 10:35:06 GMT
+# Thu, 17 Oct 2019 15:19:17 GMT
 ENV PHPIZE_DEPS=autoconf 		dpkg-dev 		file 		g++ 		gcc 		libc-dev 		make 		pkg-config 		re2c
-# Thu, 12 Sep 2019 10:35:36 GMT
+# Thu, 17 Oct 2019 15:19:56 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		$PHPIZE_DEPS 		ca-certificates 		curl 		xz-utils 	; 	rm -rf /var/lib/apt/lists/*
-# Thu, 12 Sep 2019 10:35:36 GMT
+# Thu, 17 Oct 2019 15:19:57 GMT
 ENV PHP_INI_DIR=/usr/local/etc/php
-# Thu, 12 Sep 2019 10:35:37 GMT
+# Thu, 17 Oct 2019 15:19:58 GMT
 RUN set -eux; 	mkdir -p "$PHP_INI_DIR/conf.d"; 	[ ! -d /var/www/html ]; 	mkdir -p /var/www/html; 	chown www-data:www-data /var/www/html; 	chmod 777 /var/www/html
-# Thu, 12 Sep 2019 10:44:55 GMT
+# Thu, 17 Oct 2019 15:27:50 GMT
 ENV APACHE_CONFDIR=/etc/apache2
-# Thu, 12 Sep 2019 10:44:55 GMT
+# Thu, 17 Oct 2019 15:27:50 GMT
 ENV APACHE_ENVVARS=/etc/apache2/envvars
-# Thu, 12 Sep 2019 10:45:06 GMT
+# Thu, 17 Oct 2019 15:28:01 GMT
 RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends apache2; 	rm -rf /var/lib/apt/lists/*; 		sed -ri 's/^export ([^=]+)=(.*)$/: ${\1:=\2}\nexport \1/' "$APACHE_ENVVARS"; 		. "$APACHE_ENVVARS"; 	for dir in 		"$APACHE_LOCK_DIR" 		"$APACHE_RUN_DIR" 		"$APACHE_LOG_DIR" 	; do 		rm -rvf "$dir"; 		mkdir -p "$dir"; 		chown "$APACHE_RUN_USER:$APACHE_RUN_GROUP" "$dir"; 		chmod 777 "$dir"; 	done; 		rm -rvf /var/www/html/*; 		ln -sfT /dev/stderr "$APACHE_LOG_DIR/error.log"; 	ln -sfT /dev/stdout "$APACHE_LOG_DIR/access.log"; 	ln -sfT /dev/stdout "$APACHE_LOG_DIR/other_vhosts_access.log"; 	chown -R --no-dereference "$APACHE_RUN_USER:$APACHE_RUN_GROUP" "$APACHE_LOG_DIR"
-# Thu, 12 Sep 2019 10:45:07 GMT
+# Thu, 17 Oct 2019 15:28:03 GMT
 RUN a2dismod mpm_event && a2enmod mpm_prefork
-# Thu, 12 Sep 2019 10:45:08 GMT
+# Thu, 17 Oct 2019 15:28:04 GMT
 RUN { 		echo '<FilesMatch \.php$>'; 		echo '\tSetHandler application/x-httpd-php'; 		echo '</FilesMatch>'; 		echo; 		echo 'DirectoryIndex disabled'; 		echo 'DirectoryIndex index.php index.html'; 		echo; 		echo '<Directory /var/www/>'; 		echo '\tOptions -Indexes'; 		echo '\tAllowOverride All'; 		echo '</Directory>'; 	} | tee "$APACHE_CONFDIR/conf-available/docker-php.conf" 	&& a2enconf docker-php
-# Thu, 12 Sep 2019 10:45:08 GMT
+# Thu, 17 Oct 2019 15:28:04 GMT
 ENV PHP_EXTRA_BUILD_DEPS=apache2-dev
-# Thu, 12 Sep 2019 10:45:08 GMT
+# Thu, 17 Oct 2019 15:28:05 GMT
 ENV PHP_EXTRA_CONFIGURE_ARGS=--with-apxs2 --disable-cgi
-# Thu, 12 Sep 2019 10:45:08 GMT
+# Thu, 17 Oct 2019 15:28:05 GMT
 ENV PHP_CFLAGS=-fstack-protector-strong -fpic -fpie -O2
-# Thu, 12 Sep 2019 10:45:08 GMT
+# Thu, 17 Oct 2019 15:28:05 GMT
 ENV PHP_CPPFLAGS=-fstack-protector-strong -fpic -fpie -O2
-# Thu, 12 Sep 2019 10:45:08 GMT
+# Thu, 17 Oct 2019 15:28:05 GMT
 ENV PHP_LDFLAGS=-Wl,-O1 -Wl,--hash-style=both -pie
-# Thu, 12 Sep 2019 10:45:09 GMT
+# Thu, 17 Oct 2019 15:28:06 GMT
 ENV GPG_KEYS=CBAF69F173A0FEA4B537F470D66C9593118BCCB6 F38252826ACD957EF380D39F2F7956BC5DA04B5D
-# Thu, 26 Sep 2019 21:50:18 GMT
+# Thu, 17 Oct 2019 15:28:06 GMT
 ENV PHP_VERSION=7.3.10
-# Thu, 26 Sep 2019 21:50:18 GMT
+# Thu, 17 Oct 2019 15:28:06 GMT
 ENV PHP_URL=https://www.php.net/get/php-7.3.10.tar.xz/from/this/mirror PHP_ASC_URL=https://www.php.net/get/php-7.3.10.tar.xz.asc/from/this/mirror
-# Thu, 26 Sep 2019 21:50:18 GMT
+# Thu, 17 Oct 2019 15:28:07 GMT
 ENV PHP_SHA256=42f00a15419e05771734b7159c8d39d639b8a5a6770413adfa2615f6f923d906 PHP_MD5=
-# Thu, 26 Sep 2019 21:50:30 GMT
+# Thu, 17 Oct 2019 15:28:20 GMT
 RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends gnupg dirmngr; 	rm -rf /var/lib/apt/lists/*; 		mkdir -p /usr/src; 	cd /usr/src; 		curl -fsSL -o php.tar.xz "$PHP_URL"; 		if [ -n "$PHP_SHA256" ]; then 		echo "$PHP_SHA256 *php.tar.xz" | sha256sum -c -; 	fi; 	if [ -n "$PHP_MD5" ]; then 		echo "$PHP_MD5 *php.tar.xz" | md5sum -c -; 	fi; 		if [ -n "$PHP_ASC_URL" ]; then 		curl -fsSL -o php.tar.xz.asc "$PHP_ASC_URL"; 		export GNUPGHOME="$(mktemp -d)"; 		for key in $GPG_KEYS; do 			gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys "$key"; 		done; 		gpg --batch --verify php.tar.xz.asc php.tar.xz; 		gpgconf --kill all; 		rm -rf "$GNUPGHOME"; 	fi; 		apt-mark auto '.*' > /dev/null; 	apt-mark manual $savedAptMark > /dev/null; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false
-# Thu, 26 Sep 2019 21:50:30 GMT
+# Thu, 17 Oct 2019 15:28:20 GMT
 COPY file:ce57c04b70896f77cc11eb2766417d8a1240fcffe5bba92179ec78c458844110 in /usr/local/bin/ 
-# Fri, 04 Oct 2019 23:00:02 GMT
+# Thu, 17 Oct 2019 15:32:23 GMT
 RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	sed -e 's/stretch/buster/g' /etc/apt/sources.list > /etc/apt/sources.list.d/buster.list; 	{ 		echo 'Package: *'; 		echo 'Pin: release n=buster'; 		echo 'Pin-Priority: -10'; 		echo; 		echo 'Package: libargon2*'; 		echo 'Pin: release n=buster'; 		echo 'Pin-Priority: 990'; 	} > /etc/apt/preferences.d/argon2-buster; 	apt-get update; 	apt-get install -y --no-install-recommends 		libargon2-dev 		libcurl4-openssl-dev 		libedit-dev 		libsodium-dev 		libsqlite3-dev 		libssl-dev 		libxml2-dev 		zlib1g-dev 		${PHP_EXTRA_BUILD_DEPS:-} 	; 	rm -rf /var/lib/apt/lists/*; 		export 		CFLAGS="$PHP_CFLAGS" 		CPPFLAGS="$PHP_CPPFLAGS" 		LDFLAGS="$PHP_LDFLAGS" 	; 	docker-php-source extract; 	cd /usr/src/php; 	gnuArch="$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)"; 	debMultiarch="$(dpkg-architecture --query DEB_BUILD_MULTIARCH)"; 	if [ ! -d /usr/include/curl ]; then 		ln -sT "/usr/include/$debMultiarch/curl" /usr/local/include/curl; 	fi; 	./configure 		--build="$gnuArch" 		--with-config-file-path="$PHP_INI_DIR" 		--with-config-file-scan-dir="$PHP_INI_DIR/conf.d" 				--enable-option-checking=fatal 				--with-mhash 				--enable-ftp 		--enable-mbstring 		--enable-mysqlnd 		--with-password-argon2 		--with-sodium=shared 		--with-pdo-sqlite=/usr 		--with-sqlite3=/usr 				--with-curl 		--with-libedit 		--with-openssl 		--with-zlib 				$(test "$gnuArch" = 's390x-linux-gnu' && echo '--without-pcre-jit') 		--with-libdir="lib/$debMultiarch" 				${PHP_EXTRA_CONFIGURE_ARGS:-} 	; 	make -j "$(nproc)"; 	find -type f -name '*.a' -delete; 	make install; 	find /usr/local/bin /usr/local/sbin -type f -executable -exec strip --strip-all '{}' + || true; 	make clean; 		cp -v php.ini-* "$PHP_INI_DIR/"; 		cd /; 	docker-php-source delete; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark; 	find /usr/local -type f -executable -exec ldd '{}' ';' 		| awk '/=>/ { print $(NF-1) }' 		| sort -u 		| xargs -r dpkg-query --search 		| cut -d: -f1 		| sort -u 		| xargs -r apt-mark manual 	; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 		pecl update-channels; 	rm -rf /tmp/pear ~/.pearrc; 	php --version
-# Fri, 04 Oct 2019 23:00:02 GMT
+# Thu, 17 Oct 2019 15:32:24 GMT
 COPY multi:99e4ad617c6193834e78d12470f6dde09f70f4d40463009c5724954902e60676 in /usr/local/bin/ 
-# Fri, 04 Oct 2019 23:00:04 GMT
+# Thu, 17 Oct 2019 15:32:25 GMT
 RUN docker-php-ext-enable sodium
-# Fri, 04 Oct 2019 23:00:04 GMT
+# Thu, 17 Oct 2019 15:32:25 GMT
 ENTRYPOINT ["docker-php-entrypoint"]
-# Fri, 04 Oct 2019 23:00:04 GMT
+# Thu, 17 Oct 2019 15:32:25 GMT
 STOPSIGNAL WINCH
-# Fri, 04 Oct 2019 23:00:05 GMT
+# Thu, 17 Oct 2019 15:32:25 GMT
 COPY file:e3123fcb6566efa979f945bfac1c94c854a559d7b82723e42118882a8ac4de66 in /usr/local/bin/ 
-# Fri, 04 Oct 2019 23:00:05 GMT
+# Thu, 17 Oct 2019 15:32:25 GMT
 WORKDIR /var/www/html
-# Fri, 04 Oct 2019 23:00:05 GMT
+# Thu, 17 Oct 2019 15:32:26 GMT
 EXPOSE 80
-# Fri, 04 Oct 2019 23:00:05 GMT
+# Thu, 17 Oct 2019 15:32:26 GMT
 CMD ["apache2-foreground"]
-# Sat, 05 Oct 2019 05:37:18 GMT
+# Fri, 18 Oct 2019 06:25:57 GMT
 RUN set -eux; 		if command -v a2enmod; then 		a2enmod rewrite; 	fi; 		savedAptMark="$(apt-mark showmanual)"; 		apt-get update; 	apt-get install -y --no-install-recommends 		libfreetype6-dev 		libjpeg-dev 		libpng-dev 		libpq-dev 		libzip-dev 	; 		docker-php-ext-configure gd 		--with-freetype-dir=/usr 		--with-jpeg-dir=/usr 		--with-png-dir=/usr 	; 		docker-php-ext-install -j "$(nproc)" 		gd 		opcache 		pdo_mysql 		pdo_pgsql 		zip 	; 		apt-mark auto '.*' > /dev/null; 	apt-mark manual $savedAptMark; 	ldd "$(php -r 'echo ini_get("extension_dir");')"/*.so 		| awk '/=>/ { print $3 }' 		| sort -u 		| xargs -r dpkg-query -S 		| cut -d: -f1 		| sort -u 		| xargs -rt apt-mark manual; 		apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 	rm -rf /var/lib/apt/lists/*
-# Sat, 05 Oct 2019 05:37:20 GMT
+# Fri, 18 Oct 2019 06:25:57 GMT
 RUN { 		echo 'opcache.memory_consumption=128'; 		echo 'opcache.interned_strings_buffer=8'; 		echo 'opcache.max_accelerated_files=4000'; 		echo 'opcache.revalidate_freq=60'; 		echo 'opcache.fast_shutdown=1'; 	} > /usr/local/etc/php/conf.d/opcache-recommended.ini
-# Sat, 05 Oct 2019 05:37:20 GMT
+# Fri, 18 Oct 2019 06:25:57 GMT
 WORKDIR /var/www/html
-# Sat, 05 Oct 2019 05:37:20 GMT
+# Fri, 18 Oct 2019 06:25:58 GMT
 ENV DRUPAL_VERSION=8.7.8
-# Sat, 05 Oct 2019 05:37:21 GMT
+# Fri, 18 Oct 2019 06:25:58 GMT
 ENV DRUPAL_MD5=f281eb14d8aabf0c3e78dd519ca4b640
-# Sat, 05 Oct 2019 05:37:34 GMT
+# Fri, 18 Oct 2019 06:26:03 GMT
 RUN set -eux; 	curl -fSL "https://ftp.drupal.org/files/projects/drupal-${DRUPAL_VERSION}.tar.gz" -o drupal.tar.gz; 	echo "${DRUPAL_MD5} *drupal.tar.gz" | md5sum -c -; 	tar -xz --strip-components=1 -f drupal.tar.gz; 	rm drupal.tar.gz; 	chown -R www-data:www-data sites modules themes
 ```
 
 -	Layers:
-	-	`sha256:8f91359f1fffbf32b24ca854fb263d88a222371f38e90cf4583c5742cfdc3039`  
-		Last Modified: Wed, 11 Sep 2019 23:34:50 GMT  
-		Size: 22.5 MB (22510654 bytes)  
+	-	`sha256:80369df487363e56aea88d4d41b61f1607fc2ec198e9327cfde36a5346c71bf2`  
+		Last Modified: Wed, 16 Oct 2019 23:35:19 GMT  
+		Size: 22.5 MB (22524636 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:bf2faaedf741a44c5457bc029621724b7f316482f99de58522e1b659ddc8fd99`  
-		Last Modified: Thu, 12 Sep 2019 13:15:25 GMT  
-		Size: 225.0 B  
+	-	`sha256:60e80cb3f70356b666135b9d9acc19345b74bf7feedb2b6ac494dd6d224b8574`  
+		Last Modified: Thu, 17 Oct 2019 17:20:16 GMT  
+		Size: 226.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:24cd1299a53e525f85fdd79c524463ec6b6569df13c6af402ca0f706ad89c28b`  
-		Last Modified: Thu, 12 Sep 2019 13:15:49 GMT  
-		Size: 67.5 MB (67450331 bytes)  
+	-	`sha256:e3b2450987de138dcaf9f09559f25a8b2cd6ceaac8e28d858fdb73530d40f92e`  
+		Last Modified: Thu, 17 Oct 2019 17:20:33 GMT  
+		Size: 67.4 MB (67447849 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:17091cc665e4a0e967d00b8b36fcabb2b17d7bceba421f717f5d138063e22ad6`  
-		Last Modified: Thu, 12 Sep 2019 13:15:25 GMT  
-		Size: 237.0 B  
+	-	`sha256:c413b7377c2f336391745613272b75d32b6f52110d5cf6bb28949ed2eea52906`  
+		Last Modified: Thu, 17 Oct 2019 17:20:16 GMT  
+		Size: 238.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:ac9365919f9b10c759648e7efa92752c1443400e4178d6411f5a458a90e09ca2`  
-		Last Modified: Thu, 12 Sep 2019 13:16:08 GMT  
-		Size: 17.1 MB (17125603 bytes)  
+	-	`sha256:6dd9eff17a14f4fd1ad899a27f318151a4b2fa2d935cb85307637563d6973d17`  
+		Last Modified: Thu, 17 Oct 2019 17:20:46 GMT  
+		Size: 17.1 MB (17125324 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:4f1b34e209eee27994691cd890ca1422857bc1c2c166a700049ae0af84d6fb2a`  
-		Last Modified: Thu, 12 Sep 2019 13:16:02 GMT  
-		Size: 431.0 B  
+	-	`sha256:5126e57aff9b8bc91dfaa6885060a8b4cd41887d4a85621d5778c2ec6c660f2a`  
+		Last Modified: Thu, 17 Oct 2019 17:20:43 GMT  
+		Size: 437.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:832757fa04a4aea3b2f6e686cf9741254a6a03855e86b603417b6d3ce6c0038f`  
-		Last Modified: Thu, 12 Sep 2019 13:16:02 GMT  
-		Size: 487.0 B  
+	-	`sha256:943df09926ea3a42f821bbdfd1d3112e72b5da0fbc6761b35b50da5570cfb438`  
+		Last Modified: Thu, 17 Oct 2019 17:20:43 GMT  
+		Size: 490.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:640a8cc59ee46638b569b4797bc4a773e22ff83223d1d94620047e7acdf4f121`  
-		Last Modified: Fri, 27 Sep 2019 01:26:12 GMT  
-		Size: 12.4 MB (12435253 bytes)  
+	-	`sha256:9945a6d6fd51d29053a01e7362f98478704156cb0344028887de5de27b56f8cd`  
+		Last Modified: Thu, 17 Oct 2019 17:20:43 GMT  
+		Size: 12.4 MB (12435307 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:375d45a647bd866c4211aeda97b2b5bedb12dc76350eb92cdbcd172943efbf37`  
-		Last Modified: Fri, 27 Sep 2019 01:26:09 GMT  
+	-	`sha256:975035f5a785ddf7bea6b46a40a2beae1617b991dd4965bb2632ce819c0ebae4`  
+		Last Modified: Thu, 17 Oct 2019 17:20:42 GMT  
 		Size: 501.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:699f6141932e10e137db5a06352130c87535007fc4d71d0d21cf5204db76d728`  
-		Last Modified: Sat, 05 Oct 2019 03:49:47 GMT  
-		Size: 15.4 MB (15395755 bytes)  
+	-	`sha256:561abe18d8c31cf78ff6f1569ed5e894ccabfae65dd247928b73ca194c455f7a`  
+		Last Modified: Thu, 17 Oct 2019 17:20:45 GMT  
+		Size: 13.8 MB (13806779 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:be6c200d07db998ed59695b4d5635fadfcc871f2a0dd2ce5ed45e83ad94bfe5c`  
-		Last Modified: Sat, 05 Oct 2019 03:49:41 GMT  
-		Size: 2.2 KB (2223 bytes)  
+	-	`sha256:ecfae1d03a560507c8358c1dd3b5ea4d85df3274f721c12d1f5bf2f4f846a84c`  
+		Last Modified: Thu, 17 Oct 2019 17:20:42 GMT  
+		Size: 2.2 KB (2225 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c5a9afabd1a71f323e7c4c48a4bf311e19637c1dcfdd8e56930b318010c7a322`  
-		Last Modified: Sat, 05 Oct 2019 03:49:42 GMT  
-		Size: 259.0 B  
+	-	`sha256:69a47ac39f697f9eb8a508965dcd3b51d3365b5e3625aa08085f02866fb1531d`  
+		Last Modified: Thu, 17 Oct 2019 17:20:41 GMT  
+		Size: 261.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:f517a6395f969bd01b32606233e12344abd854953769c7fcced6d776964aac74`  
-		Last Modified: Sat, 05 Oct 2019 03:49:42 GMT  
-		Size: 901.0 B  
+	-	`sha256:4b0bd7b07f693ddfca86b3f94a7eb7f7d56d2f0d7d8b96b80ad7f3b438173b29`  
+		Last Modified: Thu, 17 Oct 2019 17:20:41 GMT  
+		Size: 905.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:4834256bfafcc2acba5ce5afc6eca80c529b1fd74620511b5ff32d99cc63c61f`  
-		Last Modified: Sat, 05 Oct 2019 05:49:42 GMT  
-		Size: 1.6 MB (1594511 bytes)  
+	-	`sha256:cbbcd711c9961e0745e2348424d92efce8a7c76228be39b3897db99c6c6120d8`  
+		Last Modified: Fri, 18 Oct 2019 06:30:30 GMT  
+		Size: 1.6 MB (1594259 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:658398927ac0c2d9570ced0232f6c98915b6bc254e4eb8654c20082a71484a82`  
-		Last Modified: Sat, 05 Oct 2019 05:49:41 GMT  
-		Size: 339.0 B  
+	-	`sha256:fab086cdefa2ad6d5c4ba0ef31daddc017cc3d10f842a3c1ad81cefa482e0de4`  
+		Last Modified: Fri, 18 Oct 2019 06:30:30 GMT  
+		Size: 340.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:dab98cb0ae912b1a85e6a906c59eec8fe7e8035a28425cf9842d37fbf0a348a4`  
-		Last Modified: Sat, 05 Oct 2019 05:49:51 GMT  
+	-	`sha256:8bc233ea200f92189618c3ce830efe5fc1541cc2dbe1a355e7a4f9e02b27d945`  
+		Last Modified: Fri, 18 Oct 2019 06:30:35 GMT  
 		Size: 18.0 MB (18005533 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
