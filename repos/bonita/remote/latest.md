@@ -1,7 +1,7 @@
 ## `bonita:latest`
 
 ```console
-$ docker pull bonita@sha256:c8f6943af18f929c1d9499fb26b15388028e5ae597978be2078ac42b157136a2
+$ docker pull bonita@sha256:4cafdc79b35d4a17b8b0890bfeace40b26f181983f12d1e7961e89441814e87b
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -123,14 +123,14 @@ CMD ["/opt/files/startup.sh"]
 ### `bonita:latest` - linux; arm64 variant v8
 
 ```console
-$ docker pull bonita@sha256:bba07a7adad743f827055b3460ac183f68841e312582360db383beb034474f08
+$ docker pull bonita@sha256:9b21d778fc540cde856cc885cc93e0135880d406a354ead8e5a69eab24696d90
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **218.1 MB (218050477 bytes)**  
+-	Total Size: **217.5 MB (217511257 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:71ac599871de5b95e11fc992dadfb342cda17064bd64f5dc11afc96561327474`
+-	Image ID: `sha256:1731dba42cec2d0c4364a8b1fadcf0cff2f60c58b4ae64d6f5560874b48379ce`
 -	Default Command: `["\/opt\/files\/startup.sh"]`
 
 ```dockerfile
@@ -160,27 +160,27 @@ ARG BONITA_VERSION
 ARG BONITA_SHA256
 # Thu, 19 Sep 2019 01:07:01 GMT
 ARG BONITA_URL
-# Wed, 09 Oct 2019 20:39:35 GMT
-ENV BONITA_VERSION=7.9.3
-# Wed, 09 Oct 2019 20:39:35 GMT
-ENV BONITA_SHA256=249c1ac37705a132d9299b9badd5439c958a2654ef6066fe1e55056db5fe289e
-# Wed, 09 Oct 2019 20:39:36 GMT
-ENV BONITA_URL=https://release.ow2.org/bonita/BonitaCommunity-7.9.3-tomcat.zip
-# Wed, 09 Oct 2019 20:39:45 GMT
+# Fri, 18 Oct 2019 17:55:21 GMT
+ENV BONITA_VERSION=7.9.4
+# Fri, 18 Oct 2019 17:55:22 GMT
+ENV BONITA_SHA256=0ef0adc47b3886a588802626cc941e43c8fb5c99d0ad815b3e96bdee17c321f7
+# Fri, 18 Oct 2019 17:55:22 GMT
+ENV BONITA_URL=https://release.ow2.org/bonita/BonitaCommunity-7.9.4-tomcat.zip
+# Fri, 18 Oct 2019 17:55:33 GMT
 RUN mkdir /opt/files   && curl -fsSL ${BONITA_URL} -o /opt/files/BonitaCommunity-${BONITA_VERSION}-tomcat.zip
-# Wed, 09 Oct 2019 20:39:48 GMT
+# Fri, 18 Oct 2019 17:55:36 GMT
 RUN sha256sum /opt/files/BonitaCommunity-${BONITA_VERSION}-tomcat.zip
-# Wed, 09 Oct 2019 20:39:50 GMT
+# Fri, 18 Oct 2019 17:55:38 GMT
 RUN echo "$BONITA_SHA256" /opt/files/BonitaCommunity-${BONITA_VERSION}-tomcat.zip | sha256sum -c -
-# Wed, 09 Oct 2019 20:39:50 GMT
+# Fri, 18 Oct 2019 17:55:39 GMT
 VOLUME [/opt/bonita]
-# Wed, 09 Oct 2019 20:39:51 GMT
+# Fri, 18 Oct 2019 17:55:39 GMT
 COPY dir:ef58daa6df201fe2eac6b87ad183ec81a5dbb212d47f61a3244b65faca8cb3c6 in /opt/files 
-# Wed, 09 Oct 2019 20:39:51 GMT
+# Fri, 18 Oct 2019 17:55:40 GMT
 COPY dir:157c135edc1215565cc6815861e1a1728bdf09f6cfceca03c1639b2262f1cd65 in /opt/templates 
-# Wed, 09 Oct 2019 20:39:52 GMT
+# Fri, 18 Oct 2019 17:55:40 GMT
 EXPOSE 8080
-# Wed, 09 Oct 2019 20:39:53 GMT
+# Fri, 18 Oct 2019 17:55:41 GMT
 CMD ["/opt/files/startup.sh"]
 ```
 
@@ -217,17 +217,17 @@ CMD ["/opt/files/startup.sh"]
 		Last Modified: Thu, 19 Sep 2019 01:08:09 GMT  
 		Size: 541.8 KB (541818 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:9599271843eee5e8f8a667314f4b83cffda410dd61dbddd789a6d1a7588b09d2`  
-		Last Modified: Wed, 09 Oct 2019 20:40:26 GMT  
-		Size: 100.6 MB (100565490 bytes)  
+	-	`sha256:2f8b812c8f29a235f249da85091dbdb360448084122a7a78011c42a8475f1a84`  
+		Last Modified: Fri, 18 Oct 2019 17:56:01 GMT  
+		Size: 100.0 MB (100026271 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c7a3245bcf728f7ce694701b94022375721f51a14e1ede534658525a4c0b8a1a`  
-		Last Modified: Wed, 09 Oct 2019 20:40:06 GMT  
-		Size: 7.6 KB (7585 bytes)  
+	-	`sha256:62f2be234cf2d967e9ff27a6626241496bf01d02f854b11a8e050b1d54c9e3f1`  
+		Last Modified: Fri, 18 Oct 2019 17:55:52 GMT  
+		Size: 7.6 KB (7586 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:7e1b3bfaaedf06d9856953e1eb1e750577b69da8de3c03fa18f1761438fd35fc`  
-		Last Modified: Wed, 09 Oct 2019 20:40:06 GMT  
-		Size: 1.7 KB (1651 bytes)  
+	-	`sha256:376799a1928eda9a8cfd325806eb566d6c5239b7626b41953bd5237a56ca8017`  
+		Last Modified: Fri, 18 Oct 2019 17:55:52 GMT  
+		Size: 1.6 KB (1649 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `bonita:latest` - linux; ppc64le
