@@ -169,13 +169,9 @@ Licenses: (parsed from: `/usr/share/doc/base-files/copyright`)
 
 - `GPL`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris base-files=10.2ubuntu6
-'http://archive.ubuntu.com/ubuntu/pool/main/b/base-files/base-files_10.2ubuntu6.dsc' base-files_10.2ubuntu6.dsc 1612 SHA256:147af3f7e249b29489c818c5007451bab41402d330647f0d9901b8c42300eea7
-'http://archive.ubuntu.com/ubuntu/pool/main/b/base-files/base-files_10.2ubuntu6.tar.xz' base-files_10.2ubuntu6.tar.xz 78664 SHA256:0fcb460ba04e4ad1288906053980ddd2ddd37e2b52978031bb3e631945e0de5f
-```
 
 ### `dpkg` source package: `base-passwd=3.5.46`
 
@@ -1803,13 +1799,13 @@ Binary Packages:
 If source is available (seen below), check the contents of `debian/copyright` within it.
 
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris python-defaults=2.7.16-1
-'http://archive.ubuntu.com/ubuntu/pool/universe/p/python-defaults/python-defaults_2.7.16-1.dsc' python-defaults_2.7.16-1.dsc 2917 SHA256:6482803ce46522db092fcd3d67ed380bdfbe817b77b5ec93b65f5825fe45e544
-'http://archive.ubuntu.com/ubuntu/pool/universe/p/python-defaults/python-defaults_2.7.16-1.tar.gz' python-defaults_2.7.16-1.tar.gz 82643 SHA256:4623728a4070ba58f15d2885a4ad2f590a94e705c4f18c8f0ff51151ad89fbc1
-```
+The source package *may* still be available for download from:
+
+- http://snapshot.debian.org/package/python-defaults/2.7.16-1/
+
 
 ### `dpkg` source package: `python2.7=2.7.16-4`
 

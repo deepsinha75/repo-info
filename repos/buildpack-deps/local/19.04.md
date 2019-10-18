@@ -3532,14 +3532,9 @@ Licenses: (parsed from: `/usr/share/doc/libpython2.7-minimal/copyright`, `/usr/s
 - `implied`
 - `see above, some license as Python`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris python2.7=2.7.16-2ubuntu0.1
-'http://archive.ubuntu.com/ubuntu/pool/main/p/python2.7/python2.7_2.7.16-2ubuntu0.1.dsc' python2.7_2.7.16-2ubuntu0.1.dsc 3450 SHA256:f489993dfef80a98e6887e9b229bef8179a1c81092477d93decd5a97cea349d4
-'http://archive.ubuntu.com/ubuntu/pool/main/p/python2.7/python2.7_2.7.16.orig.tar.gz' python2.7_2.7.16.orig.tar.gz 17431748 SHA256:01da813a3600876f03f46db11cc5c408175e99f03af2ba942ef324389a83bad5
-'http://archive.ubuntu.com/ubuntu/pool/main/p/python2.7/python2.7_2.7.16-2ubuntu0.1.diff.gz' python2.7_2.7.16-2ubuntu0.1.diff.gz 296444 SHA256:81f33557788aff712b33f92b553de25bafe2eb870aabd905cba6ab279e2d4f0c
-```
 
 ### `dpkg` source package: `python3-defaults=3.7.3-1`
 
@@ -3610,14 +3605,9 @@ Licenses: (parsed from: `/usr/share/doc/libpython3.7-minimal/copyright`, `/usr/s
 - `use in source`
 - `without`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris python3.7=3.7.3-2ubuntu0.1
-'http://archive.ubuntu.com/ubuntu/pool/main/p/python3.7/python3.7_3.7.3-2ubuntu0.1.dsc' python3.7_3.7.3-2ubuntu0.1.dsc 3492 SHA256:4c0457d19b32a4e68c2f91277db9c592aeaee1b5329a7703e68e868717bfcbd6
-'http://archive.ubuntu.com/ubuntu/pool/main/p/python3.7/python3.7_3.7.3.orig.tar.xz' python3.7_3.7.3.orig.tar.xz 17108364 SHA256:da60b54064d4cfcd9c26576f6df2690e62085123826cff2e667e72a91952d318
-'http://archive.ubuntu.com/ubuntu/pool/main/p/python3.7/python3.7_3.7.3-2ubuntu0.1.debian.tar.xz' python3.7_3.7.3-2ubuntu0.1.debian.tar.xz 214608 SHA256:a259da650989e391a0047b47ae7536739f4bd3e811f62f0ff6206db55dfb1645
-```
 
 ### `dpkg` source package: `readline=8.0-1`
 

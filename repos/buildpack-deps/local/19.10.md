@@ -246,13 +246,9 @@ Licenses: (parsed from: `/usr/share/doc/base-files/copyright`)
 
 - `GPL`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris base-files=10.2ubuntu6
-'http://archive.ubuntu.com/ubuntu/pool/main/b/base-files/base-files_10.2ubuntu6.dsc' base-files_10.2ubuntu6.dsc 1612 SHA256:147af3f7e249b29489c818c5007451bab41402d330647f0d9901b8c42300eea7
-'http://archive.ubuntu.com/ubuntu/pool/main/b/base-files/base-files_10.2ubuntu6.tar.xz' base-files_10.2ubuntu6.tar.xz 78664 SHA256:0fcb460ba04e4ad1288906053980ddd2ddd37e2b52978031bb3e631945e0de5f
-```
 
 ### `dpkg` source package: `base-passwd=3.5.46`
 
@@ -986,14 +982,13 @@ Licenses: (parsed from: `/usr/share/doc/gir1.2-gdkpixbuf-2.0/copyright`, `/usr/s
 - `LGPL-2+`
 - `MPL-1.1-or-LGPL-2+`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris gdk-pixbuf=2.39.2-3
-'http://archive.ubuntu.com/ubuntu/pool/main/g/gdk-pixbuf/gdk-pixbuf_2.39.2-3.dsc' gdk-pixbuf_2.39.2-3.dsc 2813 SHA256:788d23709e85670dd740169a0fd09427f7a6d18e32770812e7c4df87bae0dc1d
-'http://archive.ubuntu.com/ubuntu/pool/main/g/gdk-pixbuf/gdk-pixbuf_2.39.2.orig.tar.xz' gdk-pixbuf_2.39.2.orig.tar.xz 5510876 SHA256:63e59387b5c5504f3bf07530bac0b69542e55936e09283400d32529b2b32e1ca
-'http://archive.ubuntu.com/ubuntu/pool/main/g/gdk-pixbuf/gdk-pixbuf_2.39.2-3.debian.tar.xz' gdk-pixbuf_2.39.2-3.debian.tar.xz 16928 SHA256:1b6f7d8a9bc543f3e3747313482016241a91c7c06226639f06fb15fec6bb89c7
-```
+The source package *may* still be available for download from:
+
+- http://snapshot.debian.org/package/gdk-pixbuf/2.39.2-3/
+
 
 ### `dpkg` source package: `git=1:2.20.1-2ubuntu1`
 
@@ -1048,14 +1043,13 @@ Licenses: (parsed from: `/usr/share/doc/libglib2.0-0/copyright`, `/usr/share/doc
 - `GPL-2+`
 - `LGPL`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris glib2.0=2.62.0-1
-'http://archive.ubuntu.com/ubuntu/pool/main/g/glib2.0/glib2.0_2.62.0-1.dsc' glib2.0_2.62.0-1.dsc 3232 SHA256:58212f211cb0d5a2d4a35c48cea911c7d5eb98b6f58977b7e5da2a0802942430
-'http://archive.ubuntu.com/ubuntu/pool/main/g/glib2.0/glib2.0_2.62.0.orig.tar.xz' glib2.0_2.62.0.orig.tar.xz 4676280 SHA256:6c257205a0a343b662c9961a58bb4ba1f1e31c82f5c6b909ec741194abc3da10
-'http://archive.ubuntu.com/ubuntu/pool/main/g/glib2.0/glib2.0_2.62.0-1.debian.tar.xz' glib2.0_2.62.0-1.debian.tar.xz 84344 SHA256:0984f3d144a00fed9f1616abafc450b7c1a738cde8d31d81ca3d3eccb31e89ba
-```
+The source package *may* still be available for download from:
+
+- http://snapshot.debian.org/package/glib2.0/2.62.0-1/
+
 
 ### `dpkg` source package: `glibc=2.30-0ubuntu1`
 
@@ -3433,13 +3427,13 @@ Binary Packages:
 If source is available (seen below), check the contents of `debian/copyright` within it.
 
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris python-defaults=2.7.16-1
-'http://archive.ubuntu.com/ubuntu/pool/universe/p/python-defaults/python-defaults_2.7.16-1.dsc' python-defaults_2.7.16-1.dsc 2917 SHA256:6482803ce46522db092fcd3d67ed380bdfbe817b77b5ec93b65f5825fe45e544
-'http://archive.ubuntu.com/ubuntu/pool/universe/p/python-defaults/python-defaults_2.7.16-1.tar.gz' python-defaults_2.7.16-1.tar.gz 82643 SHA256:4623728a4070ba58f15d2885a4ad2f590a94e705c4f18c8f0ff51151ad89fbc1
-```
+The source package *may* still be available for download from:
+
+- http://snapshot.debian.org/package/python-defaults/2.7.16-1/
+
 
 ### `dpkg` source package: `python2.7=2.7.16-4`
 
