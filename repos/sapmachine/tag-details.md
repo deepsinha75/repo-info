@@ -5,6 +5,7 @@
 -	[`sapmachine:11`](#sapmachine11)
 -	[`sapmachine:11.0.5`](#sapmachine1105)
 -	[`sapmachine:13`](#sapmachine13)
+-	[`sapmachine:13.0.1`](#sapmachine1301)
 -	[`sapmachine:latest`](#sapmachinelatest)
 -	[`sapmachine:lts`](#sapmachinelts)
 
@@ -215,6 +216,10 @@ CMD ["jshell"]
 		Last Modified: Thu, 19 Sep 2019 01:09:24 GMT  
 		Size: 206.7 MB (206707016 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+
+## `sapmachine:13.0.1`
+
+**does not exist** (yet?)
 
 ## `sapmachine:latest`
 
