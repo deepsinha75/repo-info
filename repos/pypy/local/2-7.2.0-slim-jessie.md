@@ -2,9 +2,9 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:8fc804851bf056534e3124e46801a89421ddc75e5be24050d136863dc7087e46`
-- Created: `2019-10-15T23:32:58.862771043Z`
-- Virtual Size: ~ 225.10 Mb  
+- Image ID: `sha256:9a15bb75f84dc278f8f84223a34dcf5054f53b8695f11de9d436c61dbf67ca29`
+- Created: `2019-10-18T23:53:19.395475391Z`
+- Virtual Size: ~ 221.32 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Command: `["pypy"]`
@@ -12,9 +12,9 @@
   - `PATH=/usr/local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
   - `LANG=C.UTF-8`
   - `PYPY_VERSION=7.2.0`
-  - `PYTHON_PIP_VERSION=19.3`
-  - `PYTHON_GET_PIP_URL=https://github.com/pypa/get-pip/raw/65986a26949050d26e6ec98915da4aade8d8679d/get-pip.py`
-  - `PYTHON_GET_PIP_SHA256=8d412752ae26b46a39a201ec618ef9ef7656c5b2d8529cdcbe60cd70dc94f40c`
+  - `PYTHON_PIP_VERSION=19.3.1`
+  - `PYTHON_GET_PIP_URL=https://github.com/pypa/get-pip/raw/ffe826207a010164265d9cc807978e3604d18ca0/get-pip.py`
+  - `PYTHON_GET_PIP_SHA256=b86f36cc4345ae87bfd4f10ef6b2dbfa7a872fbff70608a1e43944d283fd0eee`
 
 ## `dpkg` (`.deb`-based packages)
 
@@ -524,14 +524,14 @@ Other potentially useful URLs:
 - https://sources.debian.net/src/dpkg/1.17.27/debian/copyright/ (for direct copyright/license information)
 - http://snapshot.debian.org/package/dpkg/1.17.27/ (for access to the source package after it no longer exists in the archive)
 
-### `dpkg` source package: `e2fsprogs=1.42.12-2`
+### `dpkg` source package: `e2fsprogs=1.42.12-2+deb8u1`
 
 Binary Packages:
 
-- `e2fslibs:amd64=1.42.12-2+b1`
-- `e2fsprogs=1.42.12-2+b1`
-- `libcomerr2:amd64=1.42.12-2+b1`
-- `libss2:amd64=1.42.12-2+b1`
+- `e2fslibs:amd64=1.42.12-2+deb8u1`
+- `e2fsprogs=1.42.12-2+deb8u1`
+- `libcomerr2:amd64=1.42.12-2+deb8u1`
+- `libss2:amd64=1.42.12-2+deb8u1`
 
 Licenses: (parsed from: `/usr/share/doc/e2fslibs/copyright`, `/usr/share/doc/e2fsprogs/copyright`, `/usr/share/doc/libcomerr2/copyright`, `/usr/share/doc/libss2/copyright`)
 
@@ -541,7 +541,7 @@ Licenses: (parsed from: `/usr/share/doc/e2fslibs/copyright`, `/usr/share/doc/e2f
 Source:
 
 ```console
-$ apt-get source -qq --print-uris e2fsprogs=1.42.12-2
+$ apt-get source -qq --print-uris e2fsprogs=1.42.12-2+deb8u1
 'http://security.debian.org/debian-security/pool/updates/main/e/e2fsprogs/e2fsprogs_1.42.12-2+deb8u1.dsc' e2fsprogs_1.42.12-2+deb8u1.dsc 2747 SHA256:f3c40ff73088858d41c1d936c79836e066bdffe8f9b6351ad67d4fa73184c5b8
 'http://security.debian.org/debian-security/pool/updates/main/e/e2fsprogs/e2fsprogs_1.42.12.orig.tar.gz' e2fsprogs_1.42.12.orig.tar.gz 6381695 SHA256:e17846d91a0edd89fa59b064bde8f8e5cec5851e35f587bcccb4014dbd63186c
 'http://security.debian.org/debian-security/pool/updates/main/e/e2fsprogs/e2fsprogs_1.42.12-2+deb8u1.debian.tar.xz' e2fsprogs_1.42.12-2+deb8u1.debian.tar.xz 70292 SHA256:250ad73c0d8577b83bfb9004be0691667cb2ec913fecf9947903ba250cfc013c
@@ -549,9 +549,9 @@ $ apt-get source -qq --print-uris e2fsprogs=1.42.12-2
 
 Other potentially useful URLs:
 
-- https://sources.debian.net/src/e2fsprogs/1.42.12-2/ (for browsing the source)
-- https://sources.debian.net/src/e2fsprogs/1.42.12-2/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/e2fsprogs/1.42.12-2/ (for access to the source package after it no longer exists in the archive)
+- https://sources.debian.net/src/e2fsprogs/1.42.12-2+deb8u1/ (for browsing the source)
+- https://sources.debian.net/src/e2fsprogs/1.42.12-2+deb8u1/debian/copyright/ (for direct copyright/license information)
+- http://snapshot.debian.org/package/e2fsprogs/1.42.12-2+deb8u1/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `expat=2.1.0-6+deb8u6`
 
@@ -951,24 +951,31 @@ Other potentially useful URLs:
 - https://sources.debian.net/src/libffi/3.1-2+deb8u1/debian/copyright/ (for direct copyright/license information)
 - http://snapshot.debian.org/package/libffi/3.1-2+deb8u1/ (for access to the source package after it no longer exists in the archive)
 
-### `dpkg` source package: `libgcrypt20=1.6.3-2+deb8u5`
+### `dpkg` source package: `libgcrypt20=1.6.3-2+deb8u7`
 
 Binary Packages:
 
-- `libgcrypt20:amd64=1.6.3-2+deb8u5`
+- `libgcrypt20:amd64=1.6.3-2+deb8u7`
 
 Licenses: (parsed from: `/usr/share/doc/libgcrypt20/copyright`)
 
 - `GPL-2`
 - `LGPL`
 
-**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
-This is *usually* due to a new package version being released and the old version being removed.
+Source:
 
-The source package *may* still be available for download from:
+```console
+$ apt-get source -qq --print-uris libgcrypt20=1.6.3-2+deb8u7
+'http://security.debian.org/debian-security/pool/updates/main/libg/libgcrypt20/libgcrypt20_1.6.3-2+deb8u7.dsc' libgcrypt20_1.6.3-2+deb8u7.dsc 2587 SHA256:19b70695823f679597b4a7f32c8b477b4872054ac12f6bd03ceb43c14d5e7f73
+'http://security.debian.org/debian-security/pool/updates/main/libg/libgcrypt20/libgcrypt20_1.6.3.orig.tar.bz2' libgcrypt20_1.6.3.orig.tar.bz2 2494052 SHA256:41b4917b93ae34c6a0e2127378d7a4d66d805a2a86a09911d4f9bd871db7025f
+'http://security.debian.org/debian-security/pool/updates/main/libg/libgcrypt20/libgcrypt20_1.6.3-2+deb8u7.debian.tar.xz' libgcrypt20_1.6.3-2+deb8u7.debian.tar.xz 36280 SHA256:2e328fa29871700207d2af9586f94c60770d784a8e93ba8dae39cf08fcafaf83
+```
 
-- http://snapshot.debian.org/package/libgcrypt20/1.6.3-2+deb8u5/
+Other potentially useful URLs:
 
+- https://sources.debian.net/src/libgcrypt20/1.6.3-2+deb8u7/ (for browsing the source)
+- https://sources.debian.net/src/libgcrypt20/1.6.3-2+deb8u7/debian/copyright/ (for direct copyright/license information)
+- http://snapshot.debian.org/package/libgcrypt20/1.6.3-2+deb8u7/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `libgpg-error=1.17-3`
 
@@ -1338,29 +1345,12 @@ Other potentially useful URLs:
 - https://sources.debian.net/src/ncurses/5.9+20140913-1+deb8u3/debian/copyright/ (for direct copyright/license information)
 - http://snapshot.debian.org/package/ncurses/5.9+20140913-1+deb8u3/ (for access to the source package after it no longer exists in the archive)
 
-### `dpkg` source package: `openssl=1.0.1t-1+deb8u11`
-
-Binary Packages:
-
-- `openssl=1.0.1t-1+deb8u11`
-
-**WARNING:** unable to detect licenses! (package likely not compliant with DEP-5)  
-If source is available (seen below), check the contents of `debian/copyright` within it.
-
-
-**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
-This is *usually* due to a new package version being released and the old version being removed.
-
-The source package *may* still be available for download from:
-
-- http://snapshot.debian.org/package/openssl/1.0.1t-1+deb8u11/
-
-
 ### `dpkg` source package: `openssl=1.0.1t-1+deb8u12`
 
 Binary Packages:
 
 - `libssl1.0.0:amd64=1.0.1t-1+deb8u12`
+- `openssl=1.0.1t-1+deb8u12`
 
 **WARNING:** unable to detect licenses! (package likely not compliant with DEP-5)  
 If source is available (seen below), check the contents of `debian/copyright` within it.
