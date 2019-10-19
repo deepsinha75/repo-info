@@ -1,7 +1,7 @@
 ## `clojure:openjdk-11-boot-slim-buster`
 
 ```console
-$ docker pull clojure@sha256:2eea8ac066dcb0f33f5664fbbd8e86cdeeeaa034af79ef213e96c798946afec4
+$ docker pull clojure@sha256:f7ac0880ac5375cbcff35cd08036488b7cafea17e18f7071e552da97d862923f
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -12,14 +12,14 @@ $ docker pull clojure@sha256:2eea8ac066dcb0f33f5664fbbd8e86cdeeeaa034af79ef213e9
 ### `clojure:openjdk-11-boot-slim-buster` - linux; amd64
 
 ```console
-$ docker pull clojure@sha256:276db2864dba40fa25fe73625997c1de0121ba00fa3f9848cb8abd02766ac78c
+$ docker pull clojure@sha256:c28dc7c279d8621fdedf70f9ec6900afdca489bff958b03aa41f4e1649d6ee1e
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **285.4 MB (285435897 bytes)**  
+-	Total Size: **285.6 MB (285594908 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:82c2528df802634ef1c4e0aadc012407777640107035f71bb73274428a3ce9d3`
+-	Image ID: `sha256:71d940c40df6843c1f1498d9cde7cd6e022d95faf07ad5ca2556d9d1e95ef96a`
 -	Default Command: `["boot","repl"]`
 
 ```dockerfile
@@ -37,31 +37,31 @@ ENV JAVA_HOME=/usr/local/openjdk-11
 ENV PATH=/usr/local/openjdk-11/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
 # Thu, 17 Oct 2019 08:29:46 GMT
 RUN { echo '#/bin/sh'; echo 'echo "$JAVA_HOME"'; } > /usr/local/bin/docker-java-home && chmod +x /usr/local/bin/docker-java-home && [ "$JAVA_HOME" = "$(docker-java-home)" ]
-# Thu, 17 Oct 2019 08:29:46 GMT
-ENV JAVA_VERSION=11.0.4
-# Thu, 17 Oct 2019 08:29:46 GMT
-ENV JAVA_BASE_URL=https://github.com/AdoptOpenJDK/openjdk11-upstream-binaries/releases/download/jdk-11.0.4%2B11/OpenJDK11U-jdk_
-# Thu, 17 Oct 2019 08:29:46 GMT
-ENV JAVA_URL_VERSION=11.0.4_11
-# Thu, 17 Oct 2019 08:30:07 GMT
+# Fri, 18 Oct 2019 23:39:50 GMT
+ENV JAVA_VERSION=11.0.5
+# Fri, 18 Oct 2019 23:39:50 GMT
+ENV JAVA_BASE_URL=https://github.com/AdoptOpenJDK/openjdk11-upstream-binaries/releases/download/jdk-11.0.5%2B10/OpenJDK11U-jdk_
+# Fri, 18 Oct 2019 23:39:50 GMT
+ENV JAVA_URL_VERSION=11.0.5_10
+# Fri, 18 Oct 2019 23:40:16 GMT
 RUN set -eux; 		dpkgArch="$(dpkg --print-architecture)"; 	case "$dpkgArch" in 		amd64) upstreamArch='x64' ;; 		arm64) upstreamArch='aarch64' ;; 		*) echo >&2 "error: unsupported architecture: $dpkgArch" ;; 	esac; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		dirmngr 		gnupg 		wget 	; 	rm -rf /var/lib/apt/lists/*; 		wget -O openjdk.tgz.asc "${JAVA_BASE_URL}${upstreamArch}_linux_${JAVA_URL_VERSION}.tar.gz.sign"; 	wget -O openjdk.tgz "${JAVA_BASE_URL}${upstreamArch}_linux_${JAVA_URL_VERSION}.tar.gz" --progress=dot:giga; 		export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver ha.pool.sks-keyservers.net --keyserver-options no-self-sigs-only --recv-keys CA5F11C6CE22644D42C6AC4492EF8D39DC13168F; 	gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys EAC843EBD3EFDB98CC772FADA5CD6035332FA671; 	gpg --batch --list-sigs --keyid-format 0xLONG CA5F11C6CE22644D42C6AC4492EF8D39DC13168F 		| tee /dev/stderr 		| grep '0xA5CD6035332FA671' 		| grep 'Andrew Haley'; 	gpg --batch --verify openjdk.tgz.asc openjdk.tgz; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME"; 		mkdir -p "$JAVA_HOME"; 	tar --extract 		--file openjdk.tgz 		--directory "$JAVA_HOME" 		--strip-components 1 		--no-same-owner 	; 	rm openjdk.tgz*; 			apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark > /dev/null; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 		{ 		echo '#!/usr/bin/env bash'; 		echo 'set -Eeuo pipefail'; 		echo 'if ! [ -d "$JAVA_HOME" ]; then echo >&2 "error: missing JAVA_HOME environment variable"; exit 1; fi'; 		echo 'cacertsFile=; for f in "$JAVA_HOME/lib/security/cacerts" "$JAVA_HOME/jre/lib/security/cacerts"; do if [ -e "$f" ]; then cacertsFile="$f"; break; fi; done'; 		echo 'if [ -z "$cacertsFile" ] || ! [ -f "$cacertsFile" ]; then echo >&2 "error: failed to find cacerts file in $JAVA_HOME"; exit 1; fi'; 		echo 'trust extract --overwrite --format=java-cacerts --filter=ca-anchors --purpose=server-auth "$cacertsFile"'; 	} > /etc/ca-certificates/update.d/docker-openjdk; 	chmod +x /etc/ca-certificates/update.d/docker-openjdk; 	/etc/ca-certificates/update.d/docker-openjdk; 		find "$JAVA_HOME/lib" -name '*.so' -exec dirname '{}' ';' | sort -u > /etc/ld.so.conf.d/docker-openjdk.conf; 	ldconfig; 		javac --version; 	java --version
-# Thu, 17 Oct 2019 08:30:07 GMT
+# Fri, 18 Oct 2019 23:40:17 GMT
 CMD ["jshell"]
-# Fri, 18 Oct 2019 03:38:12 GMT
+# Sat, 19 Oct 2019 07:23:11 GMT
 ENV BOOT_VERSION=2.8.3
-# Fri, 18 Oct 2019 03:38:12 GMT
+# Sat, 19 Oct 2019 07:23:11 GMT
 ENV BOOT_INSTALL=/usr/local/bin/
-# Fri, 18 Oct 2019 03:38:12 GMT
+# Sat, 19 Oct 2019 07:23:11 GMT
 WORKDIR /tmp
-# Fri, 18 Oct 2019 03:38:17 GMT
+# Sat, 19 Oct 2019 07:23:16 GMT
 RUN apt-get update && apt-get install -y wget && rm -rf /var/lib/apt/lists/* && mkdir -p $BOOT_INSTALL && wget -q https://github.com/boot-clj/boot-bin/releases/download/latest/boot.sh && echo "Comparing installer checksum..." && echo "f717ef381f2863a4cad47bf0dcc61e923b3d2afb *boot.sh" | sha1sum -c - && mv boot.sh $BOOT_INSTALL/boot && chmod 0755 $BOOT_INSTALL/boot && apt-get remove -y --purge wget && apt-get autoremove -y
-# Fri, 18 Oct 2019 03:38:17 GMT
+# Sat, 19 Oct 2019 07:23:16 GMT
 ENV PATH=/usr/local/openjdk-11/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/local/bin/
-# Fri, 18 Oct 2019 03:38:17 GMT
+# Sat, 19 Oct 2019 07:23:16 GMT
 ENV BOOT_AS_ROOT=yes
-# Fri, 18 Oct 2019 03:38:56 GMT
+# Sat, 19 Oct 2019 07:23:56 GMT
 RUN boot
-# Fri, 18 Oct 2019 03:38:56 GMT
+# Sat, 19 Oct 2019 07:23:56 GMT
 CMD ["boot" "repl"]
 ```
 
@@ -78,17 +78,17 @@ CMD ["boot" "repl"]
 		Last Modified: Thu, 17 Oct 2019 08:38:38 GMT  
 		Size: 210.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:208dbdb57f64b9643f7760ea628f0e2a21deff0af0b2eb33a0e66f6e3165fbfc`  
-		Last Modified: Thu, 17 Oct 2019 08:39:01 GMT  
-		Size: 196.0 MB (195975541 bytes)  
+	-	`sha256:ebc78a5f677c03a8f4aa611b558b55c4e42cf3113517ec2400695512c176d5ea`  
+		Last Modified: Fri, 18 Oct 2019 23:45:47 GMT  
+		Size: 196.1 MB (196134537 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:7996bc06f9efc211f078454398bc0b599709082416933d7fd212b8d58dab0241`  
-		Last Modified: Fri, 18 Oct 2019 03:47:16 GMT  
-		Size: 282.6 KB (282580 bytes)  
+	-	`sha256:362db53774ae3e5d6a0962025ed615fc91f9b38f3f5d756cc71e0bcadecad56c`  
+		Last Modified: Sat, 19 Oct 2019 07:37:22 GMT  
+		Size: 282.6 KB (282610 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:ff2d8a0822ab383adfcf754361789c33532d02e5eda76cd6bde5ba53f37c70e4`  
-		Last Modified: Fri, 18 Oct 2019 03:47:20 GMT  
-		Size: 58.8 MB (58821022 bytes)  
+	-	`sha256:029bac4be68c7f53bded68ad95c3410ddcf4357659e28d0b71d343f4a3a14915`  
+		Last Modified: Sat, 19 Oct 2019 07:37:25 GMT  
+		Size: 58.8 MB (58821007 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `clojure:openjdk-11-boot-slim-buster` - linux; arm64 variant v8
