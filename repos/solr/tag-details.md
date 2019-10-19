@@ -48,7 +48,7 @@
 ## `solr:5`
 
 ```console
-$ docker pull solr@sha256:70ccc8c7161d6e24d1d8d2a7fdc676aadeb139c7fa41834b6f8fce43ed72898b
+$ docker pull solr@sha256:ff89d62e82a46540f3c64b1388b0a7477fd155c59c290bfa41a54e761d829699
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -58,14 +58,14 @@ $ docker pull solr@sha256:70ccc8c7161d6e24d1d8d2a7fdc676aadeb139c7fa41834b6f8fce
 ### `solr:5` - linux; amd64
 
 ```console
-$ docker pull solr@sha256:5f2286084b5d04f650bde8514cca81cf8b5ef1f59d3c1221213d248bf1e1e335
+$ docker pull solr@sha256:bde1eaeffd02df6b2fbe6a3cb3e2f0dfd2c0445feecf69109eacc7f9d071ea8c
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **240.3 MB (240270537 bytes)**  
+-	Total Size: **240.3 MB (240281394 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:835508637ed351368933408578c33bb62acf8e01f70aa3f3e63b4535c1765263`
+-	Image ID: `sha256:699185026ea53c7490defd479c014efb17ca5fcdf0e91ac2728749b1a0033cda`
 -	Entrypoint: `["docker-entrypoint.sh"]`
 -	Default Command: `["solr-foreground"]`
 
@@ -88,49 +88,49 @@ ENV JAVA_HOME=/usr/local/openjdk-8
 ENV PATH=/usr/local/openjdk-8/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
 # Thu, 17 Oct 2019 08:31:53 GMT
 RUN { echo '#/bin/sh'; echo 'echo "$JAVA_HOME"'; } > /usr/local/bin/docker-java-home && chmod +x /usr/local/bin/docker-java-home && [ "$JAVA_HOME" = "$(docker-java-home)" ]
-# Thu, 17 Oct 2019 08:31:54 GMT
-ENV JAVA_VERSION=8u222
-# Thu, 17 Oct 2019 08:31:54 GMT
-ENV JAVA_BASE_URL=https://github.com/AdoptOpenJDK/openjdk8-upstream-binaries/releases/download/jdk8u222-b10/OpenJDK8U-jre_
-# Thu, 17 Oct 2019 08:31:54 GMT
-ENV JAVA_URL_VERSION=8u222b10
-# Thu, 17 Oct 2019 08:32:01 GMT
+# Fri, 18 Oct 2019 23:41:20 GMT
+ENV JAVA_VERSION=8u232
+# Fri, 18 Oct 2019 23:41:20 GMT
+ENV JAVA_BASE_URL=https://github.com/AdoptOpenJDK/openjdk8-upstream-binaries/releases/download/jdk8u232-b09/OpenJDK8U-jre_
+# Fri, 18 Oct 2019 23:41:20 GMT
+ENV JAVA_URL_VERSION=8u232b09
+# Fri, 18 Oct 2019 23:41:26 GMT
 RUN set -eux; 		dpkgArch="$(dpkg --print-architecture)"; 	case "$dpkgArch" in 		amd64) upstreamArch='x64' ;; 		arm64) upstreamArch='aarch64' ;; 		*) echo >&2 "error: unsupported architecture: $dpkgArch" ;; 	esac; 		wget -O openjdk.tgz.asc "${JAVA_BASE_URL}${upstreamArch}_linux_${JAVA_URL_VERSION}.tar.gz.sign"; 	wget -O openjdk.tgz "${JAVA_BASE_URL}${upstreamArch}_linux_${JAVA_URL_VERSION}.tar.gz" --progress=dot:giga; 		export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver ha.pool.sks-keyservers.net --keyserver-options no-self-sigs-only --recv-keys CA5F11C6CE22644D42C6AC4492EF8D39DC13168F; 	gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys EAC843EBD3EFDB98CC772FADA5CD6035332FA671; 	gpg --batch --list-sigs --keyid-format 0xLONG CA5F11C6CE22644D42C6AC4492EF8D39DC13168F 		| tee /dev/stderr 		| grep '0xA5CD6035332FA671' 		| grep 'Andrew Haley'; 	gpg --batch --verify openjdk.tgz.asc openjdk.tgz; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME"; 		mkdir -p "$JAVA_HOME"; 	tar --extract 		--file openjdk.tgz 		--directory "$JAVA_HOME" 		--strip-components 1 		--no-same-owner 	; 	rm openjdk.tgz*; 			{ 		echo '#!/usr/bin/env bash'; 		echo 'set -Eeuo pipefail'; 		echo 'if ! [ -d "$JAVA_HOME" ]; then echo >&2 "error: missing JAVA_HOME environment variable"; exit 1; fi'; 		echo 'cacertsFile=; for f in "$JAVA_HOME/lib/security/cacerts" "$JAVA_HOME/jre/lib/security/cacerts"; do if [ -e "$f" ]; then cacertsFile="$f"; break; fi; done'; 		echo 'if [ -z "$cacertsFile" ] || ! [ -f "$cacertsFile" ]; then echo >&2 "error: failed to find cacerts file in $JAVA_HOME"; exit 1; fi'; 		echo 'trust extract --overwrite --format=java-cacerts --filter=ca-anchors --purpose=server-auth "$cacertsFile"'; 	} > /etc/ca-certificates/update.d/docker-openjdk; 	chmod +x /etc/ca-certificates/update.d/docker-openjdk; 	/etc/ca-certificates/update.d/docker-openjdk; 		find "$JAVA_HOME/lib" -name '*.so' -exec dirname '{}' ';' | sort -u > /etc/ld.so.conf.d/docker-openjdk.conf; 	ldconfig; 		java -version
-# Fri, 18 Oct 2019 04:41:22 GMT
+# Sat, 19 Oct 2019 07:51:05 GMT
 LABEL maintainer=Martijn Koster "mak-docker@greenhills.co.uk"
-# Fri, 18 Oct 2019 04:41:22 GMT
+# Sat, 19 Oct 2019 07:51:05 GMT
 LABEL repository=https://github.com/docker-solr/docker-solr
-# Fri, 18 Oct 2019 04:41:22 GMT
+# Sat, 19 Oct 2019 07:51:05 GMT
 ARG SOLR_DOWNLOAD_SERVER
-# Fri, 18 Oct 2019 04:41:31 GMT
+# Sat, 19 Oct 2019 07:51:10 GMT
 RUN apt-get update &&   apt-get -y install acl dirmngr gpg lsof procps wget &&   rm -rf /var/lib/apt/lists/*
-# Fri, 18 Oct 2019 04:42:34 GMT
+# Sat, 19 Oct 2019 07:52:00 GMT
 ENV SOLR_USER=solr SOLR_UID=8983 SOLR_GROUP=solr SOLR_GID=8983 SOLR_VERSION=5.5.5 SOLR_URL=https://archive.apache.org/dist/lucene/solr/5.5.5/solr-5.5.5.tgz SOLR_SHA256=2bbe3a55976f118c5d8c2382d4591257f6e2af779c08c6561e44afa3181a87c1 SOLR_KEYS=5F55943E13D49059D3F342777186B06E1ED139E7 PATH=/opt/solr/bin:/opt/docker-solr/scripts:/usr/local/openjdk-8/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Fri, 18 Oct 2019 04:42:35 GMT
+# Sat, 19 Oct 2019 07:52:01 GMT
 ENV GOSU_VERSION=1.11
-# Fri, 18 Oct 2019 04:42:35 GMT
+# Sat, 19 Oct 2019 07:52:01 GMT
 ENV GOSU_KEY=B42F6819007F00F88E364FD4036A9C25BF357DD4
-# Fri, 18 Oct 2019 04:42:35 GMT
+# Sat, 19 Oct 2019 07:52:01 GMT
 ENV TINI_VERSION=v0.18.0
-# Fri, 18 Oct 2019 04:42:35 GMT
+# Sat, 19 Oct 2019 07:52:02 GMT
 ENV TINI_KEY=595E85A6B1B4779EA4DAAEC70B588DFF0527A9B7
-# Fri, 18 Oct 2019 04:42:36 GMT
+# Sat, 19 Oct 2019 07:52:02 GMT
 RUN groupadd -r --gid "$SOLR_GID" "$SOLR_GROUP" &&   useradd -r --uid "$SOLR_UID" --gid "$SOLR_GID" "$SOLR_USER"
-# Fri, 18 Oct 2019 04:42:39 GMT
+# Sat, 19 Oct 2019 07:52:05 GMT
 RUN set -e;   export GNUPGHOME="/tmp/gnupg_home" &&   mkdir -p "$GNUPGHOME" &&   chmod 700 "$GNUPGHOME" &&   echo "disable-ipv6" >> "$GNUPGHOME/dirmngr.conf" &&   for key in $SOLR_KEYS $GOSU_KEY $TINI_KEY; do     found='';     for server in       ha.pool.sks-keyservers.net       hkp://keyserver.ubuntu.com:80       hkp://p80.pool.sks-keyservers.net:80       pgp.mit.edu     ; do       echo "  trying $server for $key";       gpg --batch --keyserver "$server" --keyserver-options timeout=10 --recv-keys "$key" && found=yes && break;       gpg --batch --keyserver "$server" --keyserver-options timeout=10 --recv-keys "$key" && found=yes && break;     done;     test -z "$found" && echo >&2 "error: failed to fetch $key from several disparate servers -- network issues?" && exit 1;   done;   exit 0
-# Fri, 18 Oct 2019 04:42:55 GMT
+# Sat, 19 Oct 2019 07:52:17 GMT
 RUN set -e;   export GNUPGHOME="/tmp/gnupg_home" &&   pkgArch="$(dpkg --print-architecture | awk -F- '{ print $NF }')" &&   wget -O /usr/local/bin/gosu "https://github.com/tianon/gosu/releases/download/$GOSU_VERSION/gosu-$pkgArch" &&   wget -O /usr/local/bin/gosu.asc "https://github.com/tianon/gosu/releases/download/$GOSU_VERSION/gosu-$pkgArch.asc" &&   gpg --batch --verify /usr/local/bin/gosu.asc /usr/local/bin/gosu &&   rm /usr/local/bin/gosu.asc &&   chmod +x /usr/local/bin/gosu &&   gosu nobody true &&   wget -O /usr/local/bin/tini "https://github.com/krallin/tini/releases/download/${TINI_VERSION}/tini-$pkgArch" &&   wget -O /usr/local/bin/tini.asc "https://github.com/krallin/tini/releases/download/${TINI_VERSION}/tini-$pkgArch.asc" &&   gpg --batch --verify /usr/local/bin/tini.asc /usr/local/bin/tini;   rm /usr/local/bin/tini.asc &&   chmod +x /usr/local/bin/tini &&   tini --version &&   echo "downloading $SOLR_URL" &&   wget -nv "$SOLR_URL" -O "/opt/solr-$SOLR_VERSION.tgz" &&   echo "downloading $SOLR_URL.asc" &&   wget -nv "$SOLR_URL.asc" -O "/opt/solr-$SOLR_VERSION.tgz.asc" &&   echo "$SOLR_SHA256 */opt/solr-$SOLR_VERSION.tgz" | sha256sum -c - &&   (>&2 ls -l "/opt/solr-$SOLR_VERSION.tgz" "/opt/solr-$SOLR_VERSION.tgz.asc") &&   gpg --batch --verify "/opt/solr-$SOLR_VERSION.tgz.asc" "/opt/solr-$SOLR_VERSION.tgz" &&   tar -C /opt --extract --file "/opt/solr-$SOLR_VERSION.tgz" &&   mv "/opt/solr-$SOLR_VERSION" /opt/solr &&   rm "/opt/solr-$SOLR_VERSION.tgz"* &&   rm -Rf /opt/solr/docs/ &&   mkdir -p /opt/solr/server/solr/lib /docker-entrypoint-initdb.d /opt/docker-solr &&   mkdir -p /opt/solr/server/solr/mycores /opt/solr/server/logs /opt/mysolrhome &&   sed -i -e "s/\"\$(whoami)\" == \"root\"/\$(id -u) == 0/" /opt/solr/bin/solr &&   sed -i -e 's/lsof -PniTCP:/lsof -t -PniTCP:/' /opt/solr/bin/solr &&   if [ -f "/opt/solr/contrib/prometheus-exporter/bin/solr-exporter" ]; then chmod 0755 "/opt/solr/contrib/prometheus-exporter/bin/solr-exporter"; fi &&   chmod -R 0755 /opt/solr/server/scripts/cloud-scripts &&   chown -R "$SOLR_USER:$SOLR_GROUP" /opt/solr /docker-entrypoint-initdb.d /opt/docker-solr &&   chown -R "$SOLR_USER:$SOLR_GROUP" /opt/mysolrhome &&   { command -v gpgconf && gpgconf --kill all || :; } &&   rm -r "$GNUPGHOME"
-# Fri, 18 Oct 2019 04:42:55 GMT
+# Sat, 19 Oct 2019 07:52:17 GMT
 COPY --chown=solr:solrdir:a038244bf4fec30d0dea82744cb1fc715508d4b53322690c9848d442ff4e0dc6 in /opt/docker-solr/scripts 
-# Fri, 18 Oct 2019 04:42:56 GMT
+# Sat, 19 Oct 2019 07:52:17 GMT
 EXPOSE 8983
-# Fri, 18 Oct 2019 04:42:56 GMT
+# Sat, 19 Oct 2019 07:52:17 GMT
 WORKDIR /opt/solr
-# Fri, 18 Oct 2019 04:42:56 GMT
+# Sat, 19 Oct 2019 07:52:18 GMT
 USER solr
-# Fri, 18 Oct 2019 04:42:56 GMT
+# Sat, 19 Oct 2019 07:52:18 GMT
 ENTRYPOINT ["docker-entrypoint.sh"]
-# Fri, 18 Oct 2019 04:42:56 GMT
+# Sat, 19 Oct 2019 07:52:18 GMT
 CMD ["solr-foreground"]
 ```
 
@@ -155,35 +155,35 @@ CMD ["solr-foreground"]
 		Last Modified: Thu, 17 Oct 2019 08:41:08 GMT  
 		Size: 221.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:d6307286bdcdf56d9803709b0b3e4575dd477c8a702ced3a859c13e63ecc7264`  
-		Last Modified: Thu, 17 Oct 2019 08:41:15 GMT  
-		Size: 40.2 MB (40185608 bytes)  
+	-	`sha256:6585137b08a32b71cc7147c10ae8601ac4cf0bf42e9859cdb0d22b2087cdb90e`  
+		Last Modified: Fri, 18 Oct 2019 23:47:16 GMT  
+		Size: 40.2 MB (40196580 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:e94054ada84f01d2bedd382b23cb46edf193f07e88ec25e013b2b08e4af16c6f`  
-		Last Modified: Fri, 18 Oct 2019 04:48:00 GMT  
-		Size: 1.4 MB (1432247 bytes)  
+	-	`sha256:c1968659637fef445303c58037068526ffdb817cfde10378fab1aacdff881ebd`  
+		Last Modified: Sat, 19 Oct 2019 07:56:53 GMT  
+		Size: 1.4 MB (1432187 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:d746801016a3ec1d3026c882fa9ce255ba48b0864d8b8f1c0b0b0d380f62f01d`  
-		Last Modified: Fri, 18 Oct 2019 04:48:55 GMT  
+	-	`sha256:aa90bb752cf8dde974a3dd013ed5f8008ab86f1c816ba7d7d1375e25a0c77742`  
+		Last Modified: Sat, 19 Oct 2019 07:57:22 GMT  
 		Size: 4.3 KB (4292 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:8c4506ceeed9011e4e6a816b67a5307c37fe7bf12ffcbf04a366267f953a735b`  
-		Last Modified: Fri, 18 Oct 2019 04:48:55 GMT  
-		Size: 169.1 KB (169107 bytes)  
+	-	`sha256:cd7cb487fd0454d4a8859e5cb9ff90d92ee655cde62b311859263f3e09909130`  
+		Last Modified: Sat, 19 Oct 2019 07:57:21 GMT  
+		Size: 169.1 KB (169101 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:5acd252759da02424501f929c70473b379216ac726f738d5579d14f20523e349`  
-		Last Modified: Fri, 18 Oct 2019 04:49:07 GMT  
-		Size: 132.8 MB (132829766 bytes)  
+	-	`sha256:db0454f9f4c420fdb08452367549e9c0f5ce262ae89549b637ce082d2011100e`  
+		Last Modified: Sat, 19 Oct 2019 07:57:30 GMT  
+		Size: 132.8 MB (132829716 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:6263e76dd673a29b70fa5d37615c5ef7f30d9990a19b60da0ef3b82de0306944`  
-		Last Modified: Fri, 18 Oct 2019 04:48:55 GMT  
-		Size: 5.2 KB (5193 bytes)  
+	-	`sha256:9022b06d7150f4fcbc04a675f1f827b497d2ff4a37614271a84cbb20ef49a8d9`  
+		Last Modified: Sat, 19 Oct 2019 07:57:21 GMT  
+		Size: 5.2 KB (5194 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `solr:5.5`
 
 ```console
-$ docker pull solr@sha256:70ccc8c7161d6e24d1d8d2a7fdc676aadeb139c7fa41834b6f8fce43ed72898b
+$ docker pull solr@sha256:ff89d62e82a46540f3c64b1388b0a7477fd155c59c290bfa41a54e761d829699
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -193,14 +193,14 @@ $ docker pull solr@sha256:70ccc8c7161d6e24d1d8d2a7fdc676aadeb139c7fa41834b6f8fce
 ### `solr:5.5` - linux; amd64
 
 ```console
-$ docker pull solr@sha256:5f2286084b5d04f650bde8514cca81cf8b5ef1f59d3c1221213d248bf1e1e335
+$ docker pull solr@sha256:bde1eaeffd02df6b2fbe6a3cb3e2f0dfd2c0445feecf69109eacc7f9d071ea8c
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **240.3 MB (240270537 bytes)**  
+-	Total Size: **240.3 MB (240281394 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:835508637ed351368933408578c33bb62acf8e01f70aa3f3e63b4535c1765263`
+-	Image ID: `sha256:699185026ea53c7490defd479c014efb17ca5fcdf0e91ac2728749b1a0033cda`
 -	Entrypoint: `["docker-entrypoint.sh"]`
 -	Default Command: `["solr-foreground"]`
 
@@ -223,49 +223,49 @@ ENV JAVA_HOME=/usr/local/openjdk-8
 ENV PATH=/usr/local/openjdk-8/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
 # Thu, 17 Oct 2019 08:31:53 GMT
 RUN { echo '#/bin/sh'; echo 'echo "$JAVA_HOME"'; } > /usr/local/bin/docker-java-home && chmod +x /usr/local/bin/docker-java-home && [ "$JAVA_HOME" = "$(docker-java-home)" ]
-# Thu, 17 Oct 2019 08:31:54 GMT
-ENV JAVA_VERSION=8u222
-# Thu, 17 Oct 2019 08:31:54 GMT
-ENV JAVA_BASE_URL=https://github.com/AdoptOpenJDK/openjdk8-upstream-binaries/releases/download/jdk8u222-b10/OpenJDK8U-jre_
-# Thu, 17 Oct 2019 08:31:54 GMT
-ENV JAVA_URL_VERSION=8u222b10
-# Thu, 17 Oct 2019 08:32:01 GMT
+# Fri, 18 Oct 2019 23:41:20 GMT
+ENV JAVA_VERSION=8u232
+# Fri, 18 Oct 2019 23:41:20 GMT
+ENV JAVA_BASE_URL=https://github.com/AdoptOpenJDK/openjdk8-upstream-binaries/releases/download/jdk8u232-b09/OpenJDK8U-jre_
+# Fri, 18 Oct 2019 23:41:20 GMT
+ENV JAVA_URL_VERSION=8u232b09
+# Fri, 18 Oct 2019 23:41:26 GMT
 RUN set -eux; 		dpkgArch="$(dpkg --print-architecture)"; 	case "$dpkgArch" in 		amd64) upstreamArch='x64' ;; 		arm64) upstreamArch='aarch64' ;; 		*) echo >&2 "error: unsupported architecture: $dpkgArch" ;; 	esac; 		wget -O openjdk.tgz.asc "${JAVA_BASE_URL}${upstreamArch}_linux_${JAVA_URL_VERSION}.tar.gz.sign"; 	wget -O openjdk.tgz "${JAVA_BASE_URL}${upstreamArch}_linux_${JAVA_URL_VERSION}.tar.gz" --progress=dot:giga; 		export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver ha.pool.sks-keyservers.net --keyserver-options no-self-sigs-only --recv-keys CA5F11C6CE22644D42C6AC4492EF8D39DC13168F; 	gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys EAC843EBD3EFDB98CC772FADA5CD6035332FA671; 	gpg --batch --list-sigs --keyid-format 0xLONG CA5F11C6CE22644D42C6AC4492EF8D39DC13168F 		| tee /dev/stderr 		| grep '0xA5CD6035332FA671' 		| grep 'Andrew Haley'; 	gpg --batch --verify openjdk.tgz.asc openjdk.tgz; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME"; 		mkdir -p "$JAVA_HOME"; 	tar --extract 		--file openjdk.tgz 		--directory "$JAVA_HOME" 		--strip-components 1 		--no-same-owner 	; 	rm openjdk.tgz*; 			{ 		echo '#!/usr/bin/env bash'; 		echo 'set -Eeuo pipefail'; 		echo 'if ! [ -d "$JAVA_HOME" ]; then echo >&2 "error: missing JAVA_HOME environment variable"; exit 1; fi'; 		echo 'cacertsFile=; for f in "$JAVA_HOME/lib/security/cacerts" "$JAVA_HOME/jre/lib/security/cacerts"; do if [ -e "$f" ]; then cacertsFile="$f"; break; fi; done'; 		echo 'if [ -z "$cacertsFile" ] || ! [ -f "$cacertsFile" ]; then echo >&2 "error: failed to find cacerts file in $JAVA_HOME"; exit 1; fi'; 		echo 'trust extract --overwrite --format=java-cacerts --filter=ca-anchors --purpose=server-auth "$cacertsFile"'; 	} > /etc/ca-certificates/update.d/docker-openjdk; 	chmod +x /etc/ca-certificates/update.d/docker-openjdk; 	/etc/ca-certificates/update.d/docker-openjdk; 		find "$JAVA_HOME/lib" -name '*.so' -exec dirname '{}' ';' | sort -u > /etc/ld.so.conf.d/docker-openjdk.conf; 	ldconfig; 		java -version
-# Fri, 18 Oct 2019 04:41:22 GMT
+# Sat, 19 Oct 2019 07:51:05 GMT
 LABEL maintainer=Martijn Koster "mak-docker@greenhills.co.uk"
-# Fri, 18 Oct 2019 04:41:22 GMT
+# Sat, 19 Oct 2019 07:51:05 GMT
 LABEL repository=https://github.com/docker-solr/docker-solr
-# Fri, 18 Oct 2019 04:41:22 GMT
+# Sat, 19 Oct 2019 07:51:05 GMT
 ARG SOLR_DOWNLOAD_SERVER
-# Fri, 18 Oct 2019 04:41:31 GMT
+# Sat, 19 Oct 2019 07:51:10 GMT
 RUN apt-get update &&   apt-get -y install acl dirmngr gpg lsof procps wget &&   rm -rf /var/lib/apt/lists/*
-# Fri, 18 Oct 2019 04:42:34 GMT
+# Sat, 19 Oct 2019 07:52:00 GMT
 ENV SOLR_USER=solr SOLR_UID=8983 SOLR_GROUP=solr SOLR_GID=8983 SOLR_VERSION=5.5.5 SOLR_URL=https://archive.apache.org/dist/lucene/solr/5.5.5/solr-5.5.5.tgz SOLR_SHA256=2bbe3a55976f118c5d8c2382d4591257f6e2af779c08c6561e44afa3181a87c1 SOLR_KEYS=5F55943E13D49059D3F342777186B06E1ED139E7 PATH=/opt/solr/bin:/opt/docker-solr/scripts:/usr/local/openjdk-8/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Fri, 18 Oct 2019 04:42:35 GMT
+# Sat, 19 Oct 2019 07:52:01 GMT
 ENV GOSU_VERSION=1.11
-# Fri, 18 Oct 2019 04:42:35 GMT
+# Sat, 19 Oct 2019 07:52:01 GMT
 ENV GOSU_KEY=B42F6819007F00F88E364FD4036A9C25BF357DD4
-# Fri, 18 Oct 2019 04:42:35 GMT
+# Sat, 19 Oct 2019 07:52:01 GMT
 ENV TINI_VERSION=v0.18.0
-# Fri, 18 Oct 2019 04:42:35 GMT
+# Sat, 19 Oct 2019 07:52:02 GMT
 ENV TINI_KEY=595E85A6B1B4779EA4DAAEC70B588DFF0527A9B7
-# Fri, 18 Oct 2019 04:42:36 GMT
+# Sat, 19 Oct 2019 07:52:02 GMT
 RUN groupadd -r --gid "$SOLR_GID" "$SOLR_GROUP" &&   useradd -r --uid "$SOLR_UID" --gid "$SOLR_GID" "$SOLR_USER"
-# Fri, 18 Oct 2019 04:42:39 GMT
+# Sat, 19 Oct 2019 07:52:05 GMT
 RUN set -e;   export GNUPGHOME="/tmp/gnupg_home" &&   mkdir -p "$GNUPGHOME" &&   chmod 700 "$GNUPGHOME" &&   echo "disable-ipv6" >> "$GNUPGHOME/dirmngr.conf" &&   for key in $SOLR_KEYS $GOSU_KEY $TINI_KEY; do     found='';     for server in       ha.pool.sks-keyservers.net       hkp://keyserver.ubuntu.com:80       hkp://p80.pool.sks-keyservers.net:80       pgp.mit.edu     ; do       echo "  trying $server for $key";       gpg --batch --keyserver "$server" --keyserver-options timeout=10 --recv-keys "$key" && found=yes && break;       gpg --batch --keyserver "$server" --keyserver-options timeout=10 --recv-keys "$key" && found=yes && break;     done;     test -z "$found" && echo >&2 "error: failed to fetch $key from several disparate servers -- network issues?" && exit 1;   done;   exit 0
-# Fri, 18 Oct 2019 04:42:55 GMT
+# Sat, 19 Oct 2019 07:52:17 GMT
 RUN set -e;   export GNUPGHOME="/tmp/gnupg_home" &&   pkgArch="$(dpkg --print-architecture | awk -F- '{ print $NF }')" &&   wget -O /usr/local/bin/gosu "https://github.com/tianon/gosu/releases/download/$GOSU_VERSION/gosu-$pkgArch" &&   wget -O /usr/local/bin/gosu.asc "https://github.com/tianon/gosu/releases/download/$GOSU_VERSION/gosu-$pkgArch.asc" &&   gpg --batch --verify /usr/local/bin/gosu.asc /usr/local/bin/gosu &&   rm /usr/local/bin/gosu.asc &&   chmod +x /usr/local/bin/gosu &&   gosu nobody true &&   wget -O /usr/local/bin/tini "https://github.com/krallin/tini/releases/download/${TINI_VERSION}/tini-$pkgArch" &&   wget -O /usr/local/bin/tini.asc "https://github.com/krallin/tini/releases/download/${TINI_VERSION}/tini-$pkgArch.asc" &&   gpg --batch --verify /usr/local/bin/tini.asc /usr/local/bin/tini;   rm /usr/local/bin/tini.asc &&   chmod +x /usr/local/bin/tini &&   tini --version &&   echo "downloading $SOLR_URL" &&   wget -nv "$SOLR_URL" -O "/opt/solr-$SOLR_VERSION.tgz" &&   echo "downloading $SOLR_URL.asc" &&   wget -nv "$SOLR_URL.asc" -O "/opt/solr-$SOLR_VERSION.tgz.asc" &&   echo "$SOLR_SHA256 */opt/solr-$SOLR_VERSION.tgz" | sha256sum -c - &&   (>&2 ls -l "/opt/solr-$SOLR_VERSION.tgz" "/opt/solr-$SOLR_VERSION.tgz.asc") &&   gpg --batch --verify "/opt/solr-$SOLR_VERSION.tgz.asc" "/opt/solr-$SOLR_VERSION.tgz" &&   tar -C /opt --extract --file "/opt/solr-$SOLR_VERSION.tgz" &&   mv "/opt/solr-$SOLR_VERSION" /opt/solr &&   rm "/opt/solr-$SOLR_VERSION.tgz"* &&   rm -Rf /opt/solr/docs/ &&   mkdir -p /opt/solr/server/solr/lib /docker-entrypoint-initdb.d /opt/docker-solr &&   mkdir -p /opt/solr/server/solr/mycores /opt/solr/server/logs /opt/mysolrhome &&   sed -i -e "s/\"\$(whoami)\" == \"root\"/\$(id -u) == 0/" /opt/solr/bin/solr &&   sed -i -e 's/lsof -PniTCP:/lsof -t -PniTCP:/' /opt/solr/bin/solr &&   if [ -f "/opt/solr/contrib/prometheus-exporter/bin/solr-exporter" ]; then chmod 0755 "/opt/solr/contrib/prometheus-exporter/bin/solr-exporter"; fi &&   chmod -R 0755 /opt/solr/server/scripts/cloud-scripts &&   chown -R "$SOLR_USER:$SOLR_GROUP" /opt/solr /docker-entrypoint-initdb.d /opt/docker-solr &&   chown -R "$SOLR_USER:$SOLR_GROUP" /opt/mysolrhome &&   { command -v gpgconf && gpgconf --kill all || :; } &&   rm -r "$GNUPGHOME"
-# Fri, 18 Oct 2019 04:42:55 GMT
+# Sat, 19 Oct 2019 07:52:17 GMT
 COPY --chown=solr:solrdir:a038244bf4fec30d0dea82744cb1fc715508d4b53322690c9848d442ff4e0dc6 in /opt/docker-solr/scripts 
-# Fri, 18 Oct 2019 04:42:56 GMT
+# Sat, 19 Oct 2019 07:52:17 GMT
 EXPOSE 8983
-# Fri, 18 Oct 2019 04:42:56 GMT
+# Sat, 19 Oct 2019 07:52:17 GMT
 WORKDIR /opt/solr
-# Fri, 18 Oct 2019 04:42:56 GMT
+# Sat, 19 Oct 2019 07:52:18 GMT
 USER solr
-# Fri, 18 Oct 2019 04:42:56 GMT
+# Sat, 19 Oct 2019 07:52:18 GMT
 ENTRYPOINT ["docker-entrypoint.sh"]
-# Fri, 18 Oct 2019 04:42:56 GMT
+# Sat, 19 Oct 2019 07:52:18 GMT
 CMD ["solr-foreground"]
 ```
 
@@ -290,35 +290,35 @@ CMD ["solr-foreground"]
 		Last Modified: Thu, 17 Oct 2019 08:41:08 GMT  
 		Size: 221.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:d6307286bdcdf56d9803709b0b3e4575dd477c8a702ced3a859c13e63ecc7264`  
-		Last Modified: Thu, 17 Oct 2019 08:41:15 GMT  
-		Size: 40.2 MB (40185608 bytes)  
+	-	`sha256:6585137b08a32b71cc7147c10ae8601ac4cf0bf42e9859cdb0d22b2087cdb90e`  
+		Last Modified: Fri, 18 Oct 2019 23:47:16 GMT  
+		Size: 40.2 MB (40196580 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:e94054ada84f01d2bedd382b23cb46edf193f07e88ec25e013b2b08e4af16c6f`  
-		Last Modified: Fri, 18 Oct 2019 04:48:00 GMT  
-		Size: 1.4 MB (1432247 bytes)  
+	-	`sha256:c1968659637fef445303c58037068526ffdb817cfde10378fab1aacdff881ebd`  
+		Last Modified: Sat, 19 Oct 2019 07:56:53 GMT  
+		Size: 1.4 MB (1432187 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:d746801016a3ec1d3026c882fa9ce255ba48b0864d8b8f1c0b0b0d380f62f01d`  
-		Last Modified: Fri, 18 Oct 2019 04:48:55 GMT  
+	-	`sha256:aa90bb752cf8dde974a3dd013ed5f8008ab86f1c816ba7d7d1375e25a0c77742`  
+		Last Modified: Sat, 19 Oct 2019 07:57:22 GMT  
 		Size: 4.3 KB (4292 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:8c4506ceeed9011e4e6a816b67a5307c37fe7bf12ffcbf04a366267f953a735b`  
-		Last Modified: Fri, 18 Oct 2019 04:48:55 GMT  
-		Size: 169.1 KB (169107 bytes)  
+	-	`sha256:cd7cb487fd0454d4a8859e5cb9ff90d92ee655cde62b311859263f3e09909130`  
+		Last Modified: Sat, 19 Oct 2019 07:57:21 GMT  
+		Size: 169.1 KB (169101 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:5acd252759da02424501f929c70473b379216ac726f738d5579d14f20523e349`  
-		Last Modified: Fri, 18 Oct 2019 04:49:07 GMT  
-		Size: 132.8 MB (132829766 bytes)  
+	-	`sha256:db0454f9f4c420fdb08452367549e9c0f5ce262ae89549b637ce082d2011100e`  
+		Last Modified: Sat, 19 Oct 2019 07:57:30 GMT  
+		Size: 132.8 MB (132829716 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:6263e76dd673a29b70fa5d37615c5ef7f30d9990a19b60da0ef3b82de0306944`  
-		Last Modified: Fri, 18 Oct 2019 04:48:55 GMT  
-		Size: 5.2 KB (5193 bytes)  
+	-	`sha256:9022b06d7150f4fcbc04a675f1f827b497d2ff4a37614271a84cbb20ef49a8d9`  
+		Last Modified: Sat, 19 Oct 2019 07:57:21 GMT  
+		Size: 5.2 KB (5194 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `solr:5.5.5`
 
 ```console
-$ docker pull solr@sha256:70ccc8c7161d6e24d1d8d2a7fdc676aadeb139c7fa41834b6f8fce43ed72898b
+$ docker pull solr@sha256:ff89d62e82a46540f3c64b1388b0a7477fd155c59c290bfa41a54e761d829699
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -328,14 +328,14 @@ $ docker pull solr@sha256:70ccc8c7161d6e24d1d8d2a7fdc676aadeb139c7fa41834b6f8fce
 ### `solr:5.5.5` - linux; amd64
 
 ```console
-$ docker pull solr@sha256:5f2286084b5d04f650bde8514cca81cf8b5ef1f59d3c1221213d248bf1e1e335
+$ docker pull solr@sha256:bde1eaeffd02df6b2fbe6a3cb3e2f0dfd2c0445feecf69109eacc7f9d071ea8c
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **240.3 MB (240270537 bytes)**  
+-	Total Size: **240.3 MB (240281394 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:835508637ed351368933408578c33bb62acf8e01f70aa3f3e63b4535c1765263`
+-	Image ID: `sha256:699185026ea53c7490defd479c014efb17ca5fcdf0e91ac2728749b1a0033cda`
 -	Entrypoint: `["docker-entrypoint.sh"]`
 -	Default Command: `["solr-foreground"]`
 
@@ -358,49 +358,49 @@ ENV JAVA_HOME=/usr/local/openjdk-8
 ENV PATH=/usr/local/openjdk-8/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
 # Thu, 17 Oct 2019 08:31:53 GMT
 RUN { echo '#/bin/sh'; echo 'echo "$JAVA_HOME"'; } > /usr/local/bin/docker-java-home && chmod +x /usr/local/bin/docker-java-home && [ "$JAVA_HOME" = "$(docker-java-home)" ]
-# Thu, 17 Oct 2019 08:31:54 GMT
-ENV JAVA_VERSION=8u222
-# Thu, 17 Oct 2019 08:31:54 GMT
-ENV JAVA_BASE_URL=https://github.com/AdoptOpenJDK/openjdk8-upstream-binaries/releases/download/jdk8u222-b10/OpenJDK8U-jre_
-# Thu, 17 Oct 2019 08:31:54 GMT
-ENV JAVA_URL_VERSION=8u222b10
-# Thu, 17 Oct 2019 08:32:01 GMT
+# Fri, 18 Oct 2019 23:41:20 GMT
+ENV JAVA_VERSION=8u232
+# Fri, 18 Oct 2019 23:41:20 GMT
+ENV JAVA_BASE_URL=https://github.com/AdoptOpenJDK/openjdk8-upstream-binaries/releases/download/jdk8u232-b09/OpenJDK8U-jre_
+# Fri, 18 Oct 2019 23:41:20 GMT
+ENV JAVA_URL_VERSION=8u232b09
+# Fri, 18 Oct 2019 23:41:26 GMT
 RUN set -eux; 		dpkgArch="$(dpkg --print-architecture)"; 	case "$dpkgArch" in 		amd64) upstreamArch='x64' ;; 		arm64) upstreamArch='aarch64' ;; 		*) echo >&2 "error: unsupported architecture: $dpkgArch" ;; 	esac; 		wget -O openjdk.tgz.asc "${JAVA_BASE_URL}${upstreamArch}_linux_${JAVA_URL_VERSION}.tar.gz.sign"; 	wget -O openjdk.tgz "${JAVA_BASE_URL}${upstreamArch}_linux_${JAVA_URL_VERSION}.tar.gz" --progress=dot:giga; 		export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver ha.pool.sks-keyservers.net --keyserver-options no-self-sigs-only --recv-keys CA5F11C6CE22644D42C6AC4492EF8D39DC13168F; 	gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys EAC843EBD3EFDB98CC772FADA5CD6035332FA671; 	gpg --batch --list-sigs --keyid-format 0xLONG CA5F11C6CE22644D42C6AC4492EF8D39DC13168F 		| tee /dev/stderr 		| grep '0xA5CD6035332FA671' 		| grep 'Andrew Haley'; 	gpg --batch --verify openjdk.tgz.asc openjdk.tgz; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME"; 		mkdir -p "$JAVA_HOME"; 	tar --extract 		--file openjdk.tgz 		--directory "$JAVA_HOME" 		--strip-components 1 		--no-same-owner 	; 	rm openjdk.tgz*; 			{ 		echo '#!/usr/bin/env bash'; 		echo 'set -Eeuo pipefail'; 		echo 'if ! [ -d "$JAVA_HOME" ]; then echo >&2 "error: missing JAVA_HOME environment variable"; exit 1; fi'; 		echo 'cacertsFile=; for f in "$JAVA_HOME/lib/security/cacerts" "$JAVA_HOME/jre/lib/security/cacerts"; do if [ -e "$f" ]; then cacertsFile="$f"; break; fi; done'; 		echo 'if [ -z "$cacertsFile" ] || ! [ -f "$cacertsFile" ]; then echo >&2 "error: failed to find cacerts file in $JAVA_HOME"; exit 1; fi'; 		echo 'trust extract --overwrite --format=java-cacerts --filter=ca-anchors --purpose=server-auth "$cacertsFile"'; 	} > /etc/ca-certificates/update.d/docker-openjdk; 	chmod +x /etc/ca-certificates/update.d/docker-openjdk; 	/etc/ca-certificates/update.d/docker-openjdk; 		find "$JAVA_HOME/lib" -name '*.so' -exec dirname '{}' ';' | sort -u > /etc/ld.so.conf.d/docker-openjdk.conf; 	ldconfig; 		java -version
-# Fri, 18 Oct 2019 04:41:22 GMT
+# Sat, 19 Oct 2019 07:51:05 GMT
 LABEL maintainer=Martijn Koster "mak-docker@greenhills.co.uk"
-# Fri, 18 Oct 2019 04:41:22 GMT
+# Sat, 19 Oct 2019 07:51:05 GMT
 LABEL repository=https://github.com/docker-solr/docker-solr
-# Fri, 18 Oct 2019 04:41:22 GMT
+# Sat, 19 Oct 2019 07:51:05 GMT
 ARG SOLR_DOWNLOAD_SERVER
-# Fri, 18 Oct 2019 04:41:31 GMT
+# Sat, 19 Oct 2019 07:51:10 GMT
 RUN apt-get update &&   apt-get -y install acl dirmngr gpg lsof procps wget &&   rm -rf /var/lib/apt/lists/*
-# Fri, 18 Oct 2019 04:42:34 GMT
+# Sat, 19 Oct 2019 07:52:00 GMT
 ENV SOLR_USER=solr SOLR_UID=8983 SOLR_GROUP=solr SOLR_GID=8983 SOLR_VERSION=5.5.5 SOLR_URL=https://archive.apache.org/dist/lucene/solr/5.5.5/solr-5.5.5.tgz SOLR_SHA256=2bbe3a55976f118c5d8c2382d4591257f6e2af779c08c6561e44afa3181a87c1 SOLR_KEYS=5F55943E13D49059D3F342777186B06E1ED139E7 PATH=/opt/solr/bin:/opt/docker-solr/scripts:/usr/local/openjdk-8/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Fri, 18 Oct 2019 04:42:35 GMT
+# Sat, 19 Oct 2019 07:52:01 GMT
 ENV GOSU_VERSION=1.11
-# Fri, 18 Oct 2019 04:42:35 GMT
+# Sat, 19 Oct 2019 07:52:01 GMT
 ENV GOSU_KEY=B42F6819007F00F88E364FD4036A9C25BF357DD4
-# Fri, 18 Oct 2019 04:42:35 GMT
+# Sat, 19 Oct 2019 07:52:01 GMT
 ENV TINI_VERSION=v0.18.0
-# Fri, 18 Oct 2019 04:42:35 GMT
+# Sat, 19 Oct 2019 07:52:02 GMT
 ENV TINI_KEY=595E85A6B1B4779EA4DAAEC70B588DFF0527A9B7
-# Fri, 18 Oct 2019 04:42:36 GMT
+# Sat, 19 Oct 2019 07:52:02 GMT
 RUN groupadd -r --gid "$SOLR_GID" "$SOLR_GROUP" &&   useradd -r --uid "$SOLR_UID" --gid "$SOLR_GID" "$SOLR_USER"
-# Fri, 18 Oct 2019 04:42:39 GMT
+# Sat, 19 Oct 2019 07:52:05 GMT
 RUN set -e;   export GNUPGHOME="/tmp/gnupg_home" &&   mkdir -p "$GNUPGHOME" &&   chmod 700 "$GNUPGHOME" &&   echo "disable-ipv6" >> "$GNUPGHOME/dirmngr.conf" &&   for key in $SOLR_KEYS $GOSU_KEY $TINI_KEY; do     found='';     for server in       ha.pool.sks-keyservers.net       hkp://keyserver.ubuntu.com:80       hkp://p80.pool.sks-keyservers.net:80       pgp.mit.edu     ; do       echo "  trying $server for $key";       gpg --batch --keyserver "$server" --keyserver-options timeout=10 --recv-keys "$key" && found=yes && break;       gpg --batch --keyserver "$server" --keyserver-options timeout=10 --recv-keys "$key" && found=yes && break;     done;     test -z "$found" && echo >&2 "error: failed to fetch $key from several disparate servers -- network issues?" && exit 1;   done;   exit 0
-# Fri, 18 Oct 2019 04:42:55 GMT
+# Sat, 19 Oct 2019 07:52:17 GMT
 RUN set -e;   export GNUPGHOME="/tmp/gnupg_home" &&   pkgArch="$(dpkg --print-architecture | awk -F- '{ print $NF }')" &&   wget -O /usr/local/bin/gosu "https://github.com/tianon/gosu/releases/download/$GOSU_VERSION/gosu-$pkgArch" &&   wget -O /usr/local/bin/gosu.asc "https://github.com/tianon/gosu/releases/download/$GOSU_VERSION/gosu-$pkgArch.asc" &&   gpg --batch --verify /usr/local/bin/gosu.asc /usr/local/bin/gosu &&   rm /usr/local/bin/gosu.asc &&   chmod +x /usr/local/bin/gosu &&   gosu nobody true &&   wget -O /usr/local/bin/tini "https://github.com/krallin/tini/releases/download/${TINI_VERSION}/tini-$pkgArch" &&   wget -O /usr/local/bin/tini.asc "https://github.com/krallin/tini/releases/download/${TINI_VERSION}/tini-$pkgArch.asc" &&   gpg --batch --verify /usr/local/bin/tini.asc /usr/local/bin/tini;   rm /usr/local/bin/tini.asc &&   chmod +x /usr/local/bin/tini &&   tini --version &&   echo "downloading $SOLR_URL" &&   wget -nv "$SOLR_URL" -O "/opt/solr-$SOLR_VERSION.tgz" &&   echo "downloading $SOLR_URL.asc" &&   wget -nv "$SOLR_URL.asc" -O "/opt/solr-$SOLR_VERSION.tgz.asc" &&   echo "$SOLR_SHA256 */opt/solr-$SOLR_VERSION.tgz" | sha256sum -c - &&   (>&2 ls -l "/opt/solr-$SOLR_VERSION.tgz" "/opt/solr-$SOLR_VERSION.tgz.asc") &&   gpg --batch --verify "/opt/solr-$SOLR_VERSION.tgz.asc" "/opt/solr-$SOLR_VERSION.tgz" &&   tar -C /opt --extract --file "/opt/solr-$SOLR_VERSION.tgz" &&   mv "/opt/solr-$SOLR_VERSION" /opt/solr &&   rm "/opt/solr-$SOLR_VERSION.tgz"* &&   rm -Rf /opt/solr/docs/ &&   mkdir -p /opt/solr/server/solr/lib /docker-entrypoint-initdb.d /opt/docker-solr &&   mkdir -p /opt/solr/server/solr/mycores /opt/solr/server/logs /opt/mysolrhome &&   sed -i -e "s/\"\$(whoami)\" == \"root\"/\$(id -u) == 0/" /opt/solr/bin/solr &&   sed -i -e 's/lsof -PniTCP:/lsof -t -PniTCP:/' /opt/solr/bin/solr &&   if [ -f "/opt/solr/contrib/prometheus-exporter/bin/solr-exporter" ]; then chmod 0755 "/opt/solr/contrib/prometheus-exporter/bin/solr-exporter"; fi &&   chmod -R 0755 /opt/solr/server/scripts/cloud-scripts &&   chown -R "$SOLR_USER:$SOLR_GROUP" /opt/solr /docker-entrypoint-initdb.d /opt/docker-solr &&   chown -R "$SOLR_USER:$SOLR_GROUP" /opt/mysolrhome &&   { command -v gpgconf && gpgconf --kill all || :; } &&   rm -r "$GNUPGHOME"
-# Fri, 18 Oct 2019 04:42:55 GMT
+# Sat, 19 Oct 2019 07:52:17 GMT
 COPY --chown=solr:solrdir:a038244bf4fec30d0dea82744cb1fc715508d4b53322690c9848d442ff4e0dc6 in /opt/docker-solr/scripts 
-# Fri, 18 Oct 2019 04:42:56 GMT
+# Sat, 19 Oct 2019 07:52:17 GMT
 EXPOSE 8983
-# Fri, 18 Oct 2019 04:42:56 GMT
+# Sat, 19 Oct 2019 07:52:17 GMT
 WORKDIR /opt/solr
-# Fri, 18 Oct 2019 04:42:56 GMT
+# Sat, 19 Oct 2019 07:52:18 GMT
 USER solr
-# Fri, 18 Oct 2019 04:42:56 GMT
+# Sat, 19 Oct 2019 07:52:18 GMT
 ENTRYPOINT ["docker-entrypoint.sh"]
-# Fri, 18 Oct 2019 04:42:56 GMT
+# Sat, 19 Oct 2019 07:52:18 GMT
 CMD ["solr-foreground"]
 ```
 
@@ -425,35 +425,35 @@ CMD ["solr-foreground"]
 		Last Modified: Thu, 17 Oct 2019 08:41:08 GMT  
 		Size: 221.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:d6307286bdcdf56d9803709b0b3e4575dd477c8a702ced3a859c13e63ecc7264`  
-		Last Modified: Thu, 17 Oct 2019 08:41:15 GMT  
-		Size: 40.2 MB (40185608 bytes)  
+	-	`sha256:6585137b08a32b71cc7147c10ae8601ac4cf0bf42e9859cdb0d22b2087cdb90e`  
+		Last Modified: Fri, 18 Oct 2019 23:47:16 GMT  
+		Size: 40.2 MB (40196580 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:e94054ada84f01d2bedd382b23cb46edf193f07e88ec25e013b2b08e4af16c6f`  
-		Last Modified: Fri, 18 Oct 2019 04:48:00 GMT  
-		Size: 1.4 MB (1432247 bytes)  
+	-	`sha256:c1968659637fef445303c58037068526ffdb817cfde10378fab1aacdff881ebd`  
+		Last Modified: Sat, 19 Oct 2019 07:56:53 GMT  
+		Size: 1.4 MB (1432187 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:d746801016a3ec1d3026c882fa9ce255ba48b0864d8b8f1c0b0b0d380f62f01d`  
-		Last Modified: Fri, 18 Oct 2019 04:48:55 GMT  
+	-	`sha256:aa90bb752cf8dde974a3dd013ed5f8008ab86f1c816ba7d7d1375e25a0c77742`  
+		Last Modified: Sat, 19 Oct 2019 07:57:22 GMT  
 		Size: 4.3 KB (4292 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:8c4506ceeed9011e4e6a816b67a5307c37fe7bf12ffcbf04a366267f953a735b`  
-		Last Modified: Fri, 18 Oct 2019 04:48:55 GMT  
-		Size: 169.1 KB (169107 bytes)  
+	-	`sha256:cd7cb487fd0454d4a8859e5cb9ff90d92ee655cde62b311859263f3e09909130`  
+		Last Modified: Sat, 19 Oct 2019 07:57:21 GMT  
+		Size: 169.1 KB (169101 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:5acd252759da02424501f929c70473b379216ac726f738d5579d14f20523e349`  
-		Last Modified: Fri, 18 Oct 2019 04:49:07 GMT  
-		Size: 132.8 MB (132829766 bytes)  
+	-	`sha256:db0454f9f4c420fdb08452367549e9c0f5ce262ae89549b637ce082d2011100e`  
+		Last Modified: Sat, 19 Oct 2019 07:57:30 GMT  
+		Size: 132.8 MB (132829716 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:6263e76dd673a29b70fa5d37615c5ef7f30d9990a19b60da0ef3b82de0306944`  
-		Last Modified: Fri, 18 Oct 2019 04:48:55 GMT  
-		Size: 5.2 KB (5193 bytes)  
+	-	`sha256:9022b06d7150f4fcbc04a675f1f827b497d2ff4a37614271a84cbb20ef49a8d9`  
+		Last Modified: Sat, 19 Oct 2019 07:57:21 GMT  
+		Size: 5.2 KB (5194 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `solr:5.5.5-slim`
 
 ```console
-$ docker pull solr@sha256:bcabd1ebcdf6a1bb86002f1e70dafb02bbd9339f9575c180d5d63af9102c418b
+$ docker pull solr@sha256:3c3648524a207915c7e73afbc9caa232236d5622f9d48ad06bfef65ceeab30b5
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -463,14 +463,14 @@ $ docker pull solr@sha256:bcabd1ebcdf6a1bb86002f1e70dafb02bbd9339f9575c180d5d63a
 ### `solr:5.5.5-slim` - linux; amd64
 
 ```console
-$ docker pull solr@sha256:62e7de082ace85696582b2dc09e3cba7393e6ab50aebbe3f8a0d72cfa72688a4
+$ docker pull solr@sha256:2b8f542b3679276e70acfc6f37fa86ef0fe3be529bcebbbf6b2763a0439fc2cd
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **209.1 MB (209120112 bytes)**  
+-	Total Size: **209.1 MB (209128608 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:cfd45bad7b40b9b6bf3383f232eb959fb65eb8431757ec83c2222c69894a53a8`
+-	Image ID: `sha256:7035c692de0de5a5b68d1e9fdc9682ccfd9b0cf23f80327b905e4a812969356d`
 -	Entrypoint: `["docker-entrypoint.sh"]`
 -	Default Command: `["solr-foreground"]`
 
@@ -489,49 +489,49 @@ ENV JAVA_HOME=/usr/local/openjdk-8
 ENV PATH=/usr/local/openjdk-8/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
 # Thu, 17 Oct 2019 08:31:20 GMT
 RUN { echo '#/bin/sh'; echo 'echo "$JAVA_HOME"'; } > /usr/local/bin/docker-java-home && chmod +x /usr/local/bin/docker-java-home && [ "$JAVA_HOME" = "$(docker-java-home)" ]
-# Thu, 17 Oct 2019 08:31:21 GMT
-ENV JAVA_VERSION=8u222
-# Thu, 17 Oct 2019 08:32:05 GMT
-ENV JAVA_BASE_URL=https://github.com/AdoptOpenJDK/openjdk8-upstream-binaries/releases/download/jdk8u222-b10/OpenJDK8U-jre_
-# Thu, 17 Oct 2019 08:32:06 GMT
-ENV JAVA_URL_VERSION=8u222b10
-# Thu, 17 Oct 2019 08:32:21 GMT
+# Fri, 18 Oct 2019 23:41:02 GMT
+ENV JAVA_VERSION=8u232
+# Fri, 18 Oct 2019 23:41:30 GMT
+ENV JAVA_BASE_URL=https://github.com/AdoptOpenJDK/openjdk8-upstream-binaries/releases/download/jdk8u232-b09/OpenJDK8U-jre_
+# Fri, 18 Oct 2019 23:41:30 GMT
+ENV JAVA_URL_VERSION=8u232b09
+# Fri, 18 Oct 2019 23:41:41 GMT
 RUN set -eux; 		dpkgArch="$(dpkg --print-architecture)"; 	case "$dpkgArch" in 		amd64) upstreamArch='x64' ;; 		arm64) upstreamArch='aarch64' ;; 		*) echo >&2 "error: unsupported architecture: $dpkgArch" ;; 	esac; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		dirmngr 		gnupg 		wget 	; 	rm -rf /var/lib/apt/lists/*; 		wget -O openjdk.tgz.asc "${JAVA_BASE_URL}${upstreamArch}_linux_${JAVA_URL_VERSION}.tar.gz.sign"; 	wget -O openjdk.tgz "${JAVA_BASE_URL}${upstreamArch}_linux_${JAVA_URL_VERSION}.tar.gz" --progress=dot:giga; 		export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver ha.pool.sks-keyservers.net --keyserver-options no-self-sigs-only --recv-keys CA5F11C6CE22644D42C6AC4492EF8D39DC13168F; 	gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys EAC843EBD3EFDB98CC772FADA5CD6035332FA671; 	gpg --batch --list-sigs --keyid-format 0xLONG CA5F11C6CE22644D42C6AC4492EF8D39DC13168F 		| tee /dev/stderr 		| grep '0xA5CD6035332FA671' 		| grep 'Andrew Haley'; 	gpg --batch --verify openjdk.tgz.asc openjdk.tgz; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME"; 		mkdir -p "$JAVA_HOME"; 	tar --extract 		--file openjdk.tgz 		--directory "$JAVA_HOME" 		--strip-components 1 		--no-same-owner 	; 	rm openjdk.tgz*; 			apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark > /dev/null; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 		{ 		echo '#!/usr/bin/env bash'; 		echo 'set -Eeuo pipefail'; 		echo 'if ! [ -d "$JAVA_HOME" ]; then echo >&2 "error: missing JAVA_HOME environment variable"; exit 1; fi'; 		echo 'cacertsFile=; for f in "$JAVA_HOME/lib/security/cacerts" "$JAVA_HOME/jre/lib/security/cacerts"; do if [ -e "$f" ]; then cacertsFile="$f"; break; fi; done'; 		echo 'if [ -z "$cacertsFile" ] || ! [ -f "$cacertsFile" ]; then echo >&2 "error: failed to find cacerts file in $JAVA_HOME"; exit 1; fi'; 		echo 'trust extract --overwrite --format=java-cacerts --filter=ca-anchors --purpose=server-auth "$cacertsFile"'; 	} > /etc/ca-certificates/update.d/docker-openjdk; 	chmod +x /etc/ca-certificates/update.d/docker-openjdk; 	/etc/ca-certificates/update.d/docker-openjdk; 		find "$JAVA_HOME/lib" -name '*.so' -exec dirname '{}' ';' | sort -u > /etc/ld.so.conf.d/docker-openjdk.conf; 	ldconfig; 		java -version
-# Fri, 18 Oct 2019 04:42:01 GMT
+# Sat, 19 Oct 2019 07:51:32 GMT
 LABEL maintainer=Martijn Koster "mak-docker@greenhills.co.uk"
-# Fri, 18 Oct 2019 04:42:01 GMT
+# Sat, 19 Oct 2019 07:51:33 GMT
 LABEL repository=https://github.com/docker-solr/docker-solr
-# Fri, 18 Oct 2019 04:42:02 GMT
+# Sat, 19 Oct 2019 07:51:33 GMT
 ARG SOLR_DOWNLOAD_SERVER
-# Fri, 18 Oct 2019 04:42:13 GMT
+# Sat, 19 Oct 2019 07:51:39 GMT
 RUN apt-get update &&   apt-get -y install acl dirmngr gpg lsof procps wget &&   rm -rf /var/lib/apt/lists/*
-# Fri, 18 Oct 2019 04:43:03 GMT
+# Sat, 19 Oct 2019 07:52:24 GMT
 ENV SOLR_USER=solr SOLR_UID=8983 SOLR_GROUP=solr SOLR_GID=8983 SOLR_VERSION=5.5.5 SOLR_URL=https://archive.apache.org/dist/lucene/solr/5.5.5/solr-5.5.5.tgz SOLR_SHA256=2bbe3a55976f118c5d8c2382d4591257f6e2af779c08c6561e44afa3181a87c1 SOLR_KEYS=5F55943E13D49059D3F342777186B06E1ED139E7 PATH=/opt/solr/bin:/opt/docker-solr/scripts:/usr/local/openjdk-8/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Fri, 18 Oct 2019 04:43:03 GMT
+# Sat, 19 Oct 2019 07:52:24 GMT
 ENV GOSU_VERSION=1.11
-# Fri, 18 Oct 2019 04:43:03 GMT
+# Sat, 19 Oct 2019 07:52:24 GMT
 ENV GOSU_KEY=B42F6819007F00F88E364FD4036A9C25BF357DD4
-# Fri, 18 Oct 2019 04:43:03 GMT
+# Sat, 19 Oct 2019 07:52:24 GMT
 ENV TINI_VERSION=v0.18.0
-# Fri, 18 Oct 2019 04:43:03 GMT
+# Sat, 19 Oct 2019 07:52:25 GMT
 ENV TINI_KEY=595E85A6B1B4779EA4DAAEC70B588DFF0527A9B7
-# Fri, 18 Oct 2019 04:43:04 GMT
+# Sat, 19 Oct 2019 07:52:25 GMT
 RUN groupadd -r --gid "$SOLR_GID" "$SOLR_GROUP" &&   useradd -r --uid "$SOLR_UID" --gid "$SOLR_GID" "$SOLR_USER"
-# Fri, 18 Oct 2019 04:43:06 GMT
+# Sat, 19 Oct 2019 07:52:26 GMT
 RUN set -e;   export GNUPGHOME="/tmp/gnupg_home" &&   mkdir -p "$GNUPGHOME" &&   chmod 700 "$GNUPGHOME" &&   echo "disable-ipv6" >> "$GNUPGHOME/dirmngr.conf" &&   for key in $SOLR_KEYS $GOSU_KEY $TINI_KEY; do     found='';     for server in       ha.pool.sks-keyservers.net       hkp://keyserver.ubuntu.com:80       hkp://p80.pool.sks-keyservers.net:80       pgp.mit.edu     ; do       echo "  trying $server for $key";       gpg --batch --keyserver "$server" --keyserver-options timeout=10 --recv-keys "$key" && found=yes && break;       gpg --batch --keyserver "$server" --keyserver-options timeout=10 --recv-keys "$key" && found=yes && break;     done;     test -z "$found" && echo >&2 "error: failed to fetch $key from several disparate servers -- network issues?" && exit 1;   done;   exit 0
-# Fri, 18 Oct 2019 04:43:21 GMT
+# Sat, 19 Oct 2019 07:52:39 GMT
 RUN set -e;   export GNUPGHOME="/tmp/gnupg_home" &&   pkgArch="$(dpkg --print-architecture | awk -F- '{ print $NF }')" &&   wget -O /usr/local/bin/gosu "https://github.com/tianon/gosu/releases/download/$GOSU_VERSION/gosu-$pkgArch" &&   wget -O /usr/local/bin/gosu.asc "https://github.com/tianon/gosu/releases/download/$GOSU_VERSION/gosu-$pkgArch.asc" &&   gpg --batch --verify /usr/local/bin/gosu.asc /usr/local/bin/gosu &&   rm /usr/local/bin/gosu.asc &&   chmod +x /usr/local/bin/gosu &&   gosu nobody true &&   wget -O /usr/local/bin/tini "https://github.com/krallin/tini/releases/download/${TINI_VERSION}/tini-$pkgArch" &&   wget -O /usr/local/bin/tini.asc "https://github.com/krallin/tini/releases/download/${TINI_VERSION}/tini-$pkgArch.asc" &&   gpg --batch --verify /usr/local/bin/tini.asc /usr/local/bin/tini;   rm /usr/local/bin/tini.asc &&   chmod +x /usr/local/bin/tini &&   tini --version &&   echo "downloading $SOLR_URL" &&   wget -nv "$SOLR_URL" -O "/opt/solr-$SOLR_VERSION.tgz" &&   echo "downloading $SOLR_URL.asc" &&   wget -nv "$SOLR_URL.asc" -O "/opt/solr-$SOLR_VERSION.tgz.asc" &&   echo "$SOLR_SHA256 */opt/solr-$SOLR_VERSION.tgz" | sha256sum -c - &&   (>&2 ls -l "/opt/solr-$SOLR_VERSION.tgz" "/opt/solr-$SOLR_VERSION.tgz.asc") &&   gpg --batch --verify "/opt/solr-$SOLR_VERSION.tgz.asc" "/opt/solr-$SOLR_VERSION.tgz" &&   tar -C /opt --extract --file "/opt/solr-$SOLR_VERSION.tgz" &&   mv "/opt/solr-$SOLR_VERSION" /opt/solr &&   rm "/opt/solr-$SOLR_VERSION.tgz"* &&   rm -Rf /opt/solr/docs/ &&   mkdir -p /opt/solr/server/solr/lib /docker-entrypoint-initdb.d /opt/docker-solr &&   mkdir -p /opt/solr/server/solr/mycores /opt/solr/server/logs /opt/mysolrhome &&   sed -i -e "s/\"\$(whoami)\" == \"root\"/\$(id -u) == 0/" /opt/solr/bin/solr &&   sed -i -e 's/lsof -PniTCP:/lsof -t -PniTCP:/' /opt/solr/bin/solr &&   if [ -f "/opt/solr/contrib/prometheus-exporter/bin/solr-exporter" ]; then chmod 0755 "/opt/solr/contrib/prometheus-exporter/bin/solr-exporter"; fi &&   chmod -R 0755 /opt/solr/server/scripts/cloud-scripts &&   chown -R "$SOLR_USER:$SOLR_GROUP" /opt/solr /docker-entrypoint-initdb.d /opt/docker-solr &&   chown -R "$SOLR_USER:$SOLR_GROUP" /opt/mysolrhome &&   { command -v gpgconf && gpgconf --kill all || :; } &&   rm -r "$GNUPGHOME"
-# Fri, 18 Oct 2019 04:43:22 GMT
+# Sat, 19 Oct 2019 07:52:39 GMT
 COPY --chown=solr:solrdir:a038244bf4fec30d0dea82744cb1fc715508d4b53322690c9848d442ff4e0dc6 in /opt/docker-solr/scripts 
-# Fri, 18 Oct 2019 04:43:22 GMT
+# Sat, 19 Oct 2019 07:52:39 GMT
 EXPOSE 8983
-# Fri, 18 Oct 2019 04:43:22 GMT
+# Sat, 19 Oct 2019 07:52:39 GMT
 WORKDIR /opt/solr
-# Fri, 18 Oct 2019 04:43:22 GMT
+# Sat, 19 Oct 2019 07:52:39 GMT
 USER solr
-# Fri, 18 Oct 2019 04:43:22 GMT
+# Sat, 19 Oct 2019 07:52:40 GMT
 ENTRYPOINT ["docker-entrypoint.sh"]
-# Fri, 18 Oct 2019 04:43:23 GMT
+# Sat, 19 Oct 2019 07:52:40 GMT
 CMD ["solr-foreground"]
 ```
 
@@ -548,35 +548,35 @@ CMD ["solr-foreground"]
 		Last Modified: Thu, 17 Oct 2019 08:40:39 GMT  
 		Size: 209.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:e28e16a356a2159bd931ef811fe18809e1e69c3b529e7920da941c7f4500efcb`  
-		Last Modified: Thu, 17 Oct 2019 08:41:28 GMT  
-		Size: 40.4 MB (40446129 bytes)  
+	-	`sha256:c5b17f485691c7c47664b65395c35771d441eb15cd8f9b3c432c9655b98b2da2`  
+		Last Modified: Fri, 18 Oct 2019 23:47:27 GMT  
+		Size: 40.5 MB (40454623 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:69da21abeca5fd7d71be3c05629eeeec7883c6225ea2a035222592e6eea0a8fe`  
-		Last Modified: Fri, 18 Oct 2019 04:48:20 GMT  
-		Size: 5.5 MB (5452320 bytes)  
+	-	`sha256:11cd0edbbb847dbfc2fa48324b1e68c56b78f3913c715c281b34c9879098ea14`  
+		Last Modified: Sat, 19 Oct 2019 07:57:08 GMT  
+		Size: 5.5 MB (5452299 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:e67af4d2ee21b301af53a9aa15399af4d187bf47b982528fdeaebc1620fa789e`  
-		Last Modified: Fri, 18 Oct 2019 04:49:14 GMT  
-		Size: 4.3 KB (4286 bytes)  
+	-	`sha256:c7ea8f2332360efe98211ac90daf534335628ba8a00405ddf10910f7b1d63656`  
+		Last Modified: Sat, 19 Oct 2019 07:57:35 GMT  
+		Size: 4.3 KB (4285 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:212c5a661c0500e0a2a88a95af75ff2923750ebc8886bddfe9ac27cf86179c86`  
-		Last Modified: Fri, 18 Oct 2019 04:49:14 GMT  
-		Size: 25.4 KB (25449 bytes)  
+	-	`sha256:c98ce2d29315f3cc06f945a492772672fe9e2d56cc4983ad4646b9c91fd07f46`  
+		Last Modified: Sat, 19 Oct 2019 07:57:35 GMT  
+		Size: 25.5 KB (25451 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:f30ce75e00db4552825a9e1dd81d6551b4f4dbce56bddda6758fabdfb96d5cc9`  
-		Last Modified: Fri, 18 Oct 2019 04:49:26 GMT  
-		Size: 132.8 MB (132829984 bytes)  
+	-	`sha256:cd1afed2f1ead9d869253c8920ecd6a4af0c172fff5b8a1a633e4e274722f82c`  
+		Last Modified: Sat, 19 Oct 2019 07:57:43 GMT  
+		Size: 132.8 MB (132830004 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:8426e6aaa0e10adc2a1cec77476c5b47cecd2a427832e4a2d5bdfc41c16df0a7`  
-		Last Modified: Fri, 18 Oct 2019 04:49:14 GMT  
-		Size: 5.2 KB (5191 bytes)  
+	-	`sha256:d3fd6cf4faf14c6367144f9fa0d4ca5242090b9d388acbe0993bb8cf298fec6d`  
+		Last Modified: Sat, 19 Oct 2019 07:57:35 GMT  
+		Size: 5.2 KB (5193 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `solr:5.5-slim`
 
 ```console
-$ docker pull solr@sha256:bcabd1ebcdf6a1bb86002f1e70dafb02bbd9339f9575c180d5d63af9102c418b
+$ docker pull solr@sha256:3c3648524a207915c7e73afbc9caa232236d5622f9d48ad06bfef65ceeab30b5
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -586,14 +586,14 @@ $ docker pull solr@sha256:bcabd1ebcdf6a1bb86002f1e70dafb02bbd9339f9575c180d5d63a
 ### `solr:5.5-slim` - linux; amd64
 
 ```console
-$ docker pull solr@sha256:62e7de082ace85696582b2dc09e3cba7393e6ab50aebbe3f8a0d72cfa72688a4
+$ docker pull solr@sha256:2b8f542b3679276e70acfc6f37fa86ef0fe3be529bcebbbf6b2763a0439fc2cd
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **209.1 MB (209120112 bytes)**  
+-	Total Size: **209.1 MB (209128608 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:cfd45bad7b40b9b6bf3383f232eb959fb65eb8431757ec83c2222c69894a53a8`
+-	Image ID: `sha256:7035c692de0de5a5b68d1e9fdc9682ccfd9b0cf23f80327b905e4a812969356d`
 -	Entrypoint: `["docker-entrypoint.sh"]`
 -	Default Command: `["solr-foreground"]`
 
@@ -612,49 +612,49 @@ ENV JAVA_HOME=/usr/local/openjdk-8
 ENV PATH=/usr/local/openjdk-8/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
 # Thu, 17 Oct 2019 08:31:20 GMT
 RUN { echo '#/bin/sh'; echo 'echo "$JAVA_HOME"'; } > /usr/local/bin/docker-java-home && chmod +x /usr/local/bin/docker-java-home && [ "$JAVA_HOME" = "$(docker-java-home)" ]
-# Thu, 17 Oct 2019 08:31:21 GMT
-ENV JAVA_VERSION=8u222
-# Thu, 17 Oct 2019 08:32:05 GMT
-ENV JAVA_BASE_URL=https://github.com/AdoptOpenJDK/openjdk8-upstream-binaries/releases/download/jdk8u222-b10/OpenJDK8U-jre_
-# Thu, 17 Oct 2019 08:32:06 GMT
-ENV JAVA_URL_VERSION=8u222b10
-# Thu, 17 Oct 2019 08:32:21 GMT
+# Fri, 18 Oct 2019 23:41:02 GMT
+ENV JAVA_VERSION=8u232
+# Fri, 18 Oct 2019 23:41:30 GMT
+ENV JAVA_BASE_URL=https://github.com/AdoptOpenJDK/openjdk8-upstream-binaries/releases/download/jdk8u232-b09/OpenJDK8U-jre_
+# Fri, 18 Oct 2019 23:41:30 GMT
+ENV JAVA_URL_VERSION=8u232b09
+# Fri, 18 Oct 2019 23:41:41 GMT
 RUN set -eux; 		dpkgArch="$(dpkg --print-architecture)"; 	case "$dpkgArch" in 		amd64) upstreamArch='x64' ;; 		arm64) upstreamArch='aarch64' ;; 		*) echo >&2 "error: unsupported architecture: $dpkgArch" ;; 	esac; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		dirmngr 		gnupg 		wget 	; 	rm -rf /var/lib/apt/lists/*; 		wget -O openjdk.tgz.asc "${JAVA_BASE_URL}${upstreamArch}_linux_${JAVA_URL_VERSION}.tar.gz.sign"; 	wget -O openjdk.tgz "${JAVA_BASE_URL}${upstreamArch}_linux_${JAVA_URL_VERSION}.tar.gz" --progress=dot:giga; 		export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver ha.pool.sks-keyservers.net --keyserver-options no-self-sigs-only --recv-keys CA5F11C6CE22644D42C6AC4492EF8D39DC13168F; 	gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys EAC843EBD3EFDB98CC772FADA5CD6035332FA671; 	gpg --batch --list-sigs --keyid-format 0xLONG CA5F11C6CE22644D42C6AC4492EF8D39DC13168F 		| tee /dev/stderr 		| grep '0xA5CD6035332FA671' 		| grep 'Andrew Haley'; 	gpg --batch --verify openjdk.tgz.asc openjdk.tgz; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME"; 		mkdir -p "$JAVA_HOME"; 	tar --extract 		--file openjdk.tgz 		--directory "$JAVA_HOME" 		--strip-components 1 		--no-same-owner 	; 	rm openjdk.tgz*; 			apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark > /dev/null; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 		{ 		echo '#!/usr/bin/env bash'; 		echo 'set -Eeuo pipefail'; 		echo 'if ! [ -d "$JAVA_HOME" ]; then echo >&2 "error: missing JAVA_HOME environment variable"; exit 1; fi'; 		echo 'cacertsFile=; for f in "$JAVA_HOME/lib/security/cacerts" "$JAVA_HOME/jre/lib/security/cacerts"; do if [ -e "$f" ]; then cacertsFile="$f"; break; fi; done'; 		echo 'if [ -z "$cacertsFile" ] || ! [ -f "$cacertsFile" ]; then echo >&2 "error: failed to find cacerts file in $JAVA_HOME"; exit 1; fi'; 		echo 'trust extract --overwrite --format=java-cacerts --filter=ca-anchors --purpose=server-auth "$cacertsFile"'; 	} > /etc/ca-certificates/update.d/docker-openjdk; 	chmod +x /etc/ca-certificates/update.d/docker-openjdk; 	/etc/ca-certificates/update.d/docker-openjdk; 		find "$JAVA_HOME/lib" -name '*.so' -exec dirname '{}' ';' | sort -u > /etc/ld.so.conf.d/docker-openjdk.conf; 	ldconfig; 		java -version
-# Fri, 18 Oct 2019 04:42:01 GMT
+# Sat, 19 Oct 2019 07:51:32 GMT
 LABEL maintainer=Martijn Koster "mak-docker@greenhills.co.uk"
-# Fri, 18 Oct 2019 04:42:01 GMT
+# Sat, 19 Oct 2019 07:51:33 GMT
 LABEL repository=https://github.com/docker-solr/docker-solr
-# Fri, 18 Oct 2019 04:42:02 GMT
+# Sat, 19 Oct 2019 07:51:33 GMT
 ARG SOLR_DOWNLOAD_SERVER
-# Fri, 18 Oct 2019 04:42:13 GMT
+# Sat, 19 Oct 2019 07:51:39 GMT
 RUN apt-get update &&   apt-get -y install acl dirmngr gpg lsof procps wget &&   rm -rf /var/lib/apt/lists/*
-# Fri, 18 Oct 2019 04:43:03 GMT
+# Sat, 19 Oct 2019 07:52:24 GMT
 ENV SOLR_USER=solr SOLR_UID=8983 SOLR_GROUP=solr SOLR_GID=8983 SOLR_VERSION=5.5.5 SOLR_URL=https://archive.apache.org/dist/lucene/solr/5.5.5/solr-5.5.5.tgz SOLR_SHA256=2bbe3a55976f118c5d8c2382d4591257f6e2af779c08c6561e44afa3181a87c1 SOLR_KEYS=5F55943E13D49059D3F342777186B06E1ED139E7 PATH=/opt/solr/bin:/opt/docker-solr/scripts:/usr/local/openjdk-8/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Fri, 18 Oct 2019 04:43:03 GMT
+# Sat, 19 Oct 2019 07:52:24 GMT
 ENV GOSU_VERSION=1.11
-# Fri, 18 Oct 2019 04:43:03 GMT
+# Sat, 19 Oct 2019 07:52:24 GMT
 ENV GOSU_KEY=B42F6819007F00F88E364FD4036A9C25BF357DD4
-# Fri, 18 Oct 2019 04:43:03 GMT
+# Sat, 19 Oct 2019 07:52:24 GMT
 ENV TINI_VERSION=v0.18.0
-# Fri, 18 Oct 2019 04:43:03 GMT
+# Sat, 19 Oct 2019 07:52:25 GMT
 ENV TINI_KEY=595E85A6B1B4779EA4DAAEC70B588DFF0527A9B7
-# Fri, 18 Oct 2019 04:43:04 GMT
+# Sat, 19 Oct 2019 07:52:25 GMT
 RUN groupadd -r --gid "$SOLR_GID" "$SOLR_GROUP" &&   useradd -r --uid "$SOLR_UID" --gid "$SOLR_GID" "$SOLR_USER"
-# Fri, 18 Oct 2019 04:43:06 GMT
+# Sat, 19 Oct 2019 07:52:26 GMT
 RUN set -e;   export GNUPGHOME="/tmp/gnupg_home" &&   mkdir -p "$GNUPGHOME" &&   chmod 700 "$GNUPGHOME" &&   echo "disable-ipv6" >> "$GNUPGHOME/dirmngr.conf" &&   for key in $SOLR_KEYS $GOSU_KEY $TINI_KEY; do     found='';     for server in       ha.pool.sks-keyservers.net       hkp://keyserver.ubuntu.com:80       hkp://p80.pool.sks-keyservers.net:80       pgp.mit.edu     ; do       echo "  trying $server for $key";       gpg --batch --keyserver "$server" --keyserver-options timeout=10 --recv-keys "$key" && found=yes && break;       gpg --batch --keyserver "$server" --keyserver-options timeout=10 --recv-keys "$key" && found=yes && break;     done;     test -z "$found" && echo >&2 "error: failed to fetch $key from several disparate servers -- network issues?" && exit 1;   done;   exit 0
-# Fri, 18 Oct 2019 04:43:21 GMT
+# Sat, 19 Oct 2019 07:52:39 GMT
 RUN set -e;   export GNUPGHOME="/tmp/gnupg_home" &&   pkgArch="$(dpkg --print-architecture | awk -F- '{ print $NF }')" &&   wget -O /usr/local/bin/gosu "https://github.com/tianon/gosu/releases/download/$GOSU_VERSION/gosu-$pkgArch" &&   wget -O /usr/local/bin/gosu.asc "https://github.com/tianon/gosu/releases/download/$GOSU_VERSION/gosu-$pkgArch.asc" &&   gpg --batch --verify /usr/local/bin/gosu.asc /usr/local/bin/gosu &&   rm /usr/local/bin/gosu.asc &&   chmod +x /usr/local/bin/gosu &&   gosu nobody true &&   wget -O /usr/local/bin/tini "https://github.com/krallin/tini/releases/download/${TINI_VERSION}/tini-$pkgArch" &&   wget -O /usr/local/bin/tini.asc "https://github.com/krallin/tini/releases/download/${TINI_VERSION}/tini-$pkgArch.asc" &&   gpg --batch --verify /usr/local/bin/tini.asc /usr/local/bin/tini;   rm /usr/local/bin/tini.asc &&   chmod +x /usr/local/bin/tini &&   tini --version &&   echo "downloading $SOLR_URL" &&   wget -nv "$SOLR_URL" -O "/opt/solr-$SOLR_VERSION.tgz" &&   echo "downloading $SOLR_URL.asc" &&   wget -nv "$SOLR_URL.asc" -O "/opt/solr-$SOLR_VERSION.tgz.asc" &&   echo "$SOLR_SHA256 */opt/solr-$SOLR_VERSION.tgz" | sha256sum -c - &&   (>&2 ls -l "/opt/solr-$SOLR_VERSION.tgz" "/opt/solr-$SOLR_VERSION.tgz.asc") &&   gpg --batch --verify "/opt/solr-$SOLR_VERSION.tgz.asc" "/opt/solr-$SOLR_VERSION.tgz" &&   tar -C /opt --extract --file "/opt/solr-$SOLR_VERSION.tgz" &&   mv "/opt/solr-$SOLR_VERSION" /opt/solr &&   rm "/opt/solr-$SOLR_VERSION.tgz"* &&   rm -Rf /opt/solr/docs/ &&   mkdir -p /opt/solr/server/solr/lib /docker-entrypoint-initdb.d /opt/docker-solr &&   mkdir -p /opt/solr/server/solr/mycores /opt/solr/server/logs /opt/mysolrhome &&   sed -i -e "s/\"\$(whoami)\" == \"root\"/\$(id -u) == 0/" /opt/solr/bin/solr &&   sed -i -e 's/lsof -PniTCP:/lsof -t -PniTCP:/' /opt/solr/bin/solr &&   if [ -f "/opt/solr/contrib/prometheus-exporter/bin/solr-exporter" ]; then chmod 0755 "/opt/solr/contrib/prometheus-exporter/bin/solr-exporter"; fi &&   chmod -R 0755 /opt/solr/server/scripts/cloud-scripts &&   chown -R "$SOLR_USER:$SOLR_GROUP" /opt/solr /docker-entrypoint-initdb.d /opt/docker-solr &&   chown -R "$SOLR_USER:$SOLR_GROUP" /opt/mysolrhome &&   { command -v gpgconf && gpgconf --kill all || :; } &&   rm -r "$GNUPGHOME"
-# Fri, 18 Oct 2019 04:43:22 GMT
+# Sat, 19 Oct 2019 07:52:39 GMT
 COPY --chown=solr:solrdir:a038244bf4fec30d0dea82744cb1fc715508d4b53322690c9848d442ff4e0dc6 in /opt/docker-solr/scripts 
-# Fri, 18 Oct 2019 04:43:22 GMT
+# Sat, 19 Oct 2019 07:52:39 GMT
 EXPOSE 8983
-# Fri, 18 Oct 2019 04:43:22 GMT
+# Sat, 19 Oct 2019 07:52:39 GMT
 WORKDIR /opt/solr
-# Fri, 18 Oct 2019 04:43:22 GMT
+# Sat, 19 Oct 2019 07:52:39 GMT
 USER solr
-# Fri, 18 Oct 2019 04:43:22 GMT
+# Sat, 19 Oct 2019 07:52:40 GMT
 ENTRYPOINT ["docker-entrypoint.sh"]
-# Fri, 18 Oct 2019 04:43:23 GMT
+# Sat, 19 Oct 2019 07:52:40 GMT
 CMD ["solr-foreground"]
 ```
 
@@ -671,35 +671,35 @@ CMD ["solr-foreground"]
 		Last Modified: Thu, 17 Oct 2019 08:40:39 GMT  
 		Size: 209.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:e28e16a356a2159bd931ef811fe18809e1e69c3b529e7920da941c7f4500efcb`  
-		Last Modified: Thu, 17 Oct 2019 08:41:28 GMT  
-		Size: 40.4 MB (40446129 bytes)  
+	-	`sha256:c5b17f485691c7c47664b65395c35771d441eb15cd8f9b3c432c9655b98b2da2`  
+		Last Modified: Fri, 18 Oct 2019 23:47:27 GMT  
+		Size: 40.5 MB (40454623 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:69da21abeca5fd7d71be3c05629eeeec7883c6225ea2a035222592e6eea0a8fe`  
-		Last Modified: Fri, 18 Oct 2019 04:48:20 GMT  
-		Size: 5.5 MB (5452320 bytes)  
+	-	`sha256:11cd0edbbb847dbfc2fa48324b1e68c56b78f3913c715c281b34c9879098ea14`  
+		Last Modified: Sat, 19 Oct 2019 07:57:08 GMT  
+		Size: 5.5 MB (5452299 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:e67af4d2ee21b301af53a9aa15399af4d187bf47b982528fdeaebc1620fa789e`  
-		Last Modified: Fri, 18 Oct 2019 04:49:14 GMT  
-		Size: 4.3 KB (4286 bytes)  
+	-	`sha256:c7ea8f2332360efe98211ac90daf534335628ba8a00405ddf10910f7b1d63656`  
+		Last Modified: Sat, 19 Oct 2019 07:57:35 GMT  
+		Size: 4.3 KB (4285 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:212c5a661c0500e0a2a88a95af75ff2923750ebc8886bddfe9ac27cf86179c86`  
-		Last Modified: Fri, 18 Oct 2019 04:49:14 GMT  
-		Size: 25.4 KB (25449 bytes)  
+	-	`sha256:c98ce2d29315f3cc06f945a492772672fe9e2d56cc4983ad4646b9c91fd07f46`  
+		Last Modified: Sat, 19 Oct 2019 07:57:35 GMT  
+		Size: 25.5 KB (25451 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:f30ce75e00db4552825a9e1dd81d6551b4f4dbce56bddda6758fabdfb96d5cc9`  
-		Last Modified: Fri, 18 Oct 2019 04:49:26 GMT  
-		Size: 132.8 MB (132829984 bytes)  
+	-	`sha256:cd1afed2f1ead9d869253c8920ecd6a4af0c172fff5b8a1a633e4e274722f82c`  
+		Last Modified: Sat, 19 Oct 2019 07:57:43 GMT  
+		Size: 132.8 MB (132830004 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:8426e6aaa0e10adc2a1cec77476c5b47cecd2a427832e4a2d5bdfc41c16df0a7`  
-		Last Modified: Fri, 18 Oct 2019 04:49:14 GMT  
-		Size: 5.2 KB (5191 bytes)  
+	-	`sha256:d3fd6cf4faf14c6367144f9fa0d4ca5242090b9d388acbe0993bb8cf298fec6d`  
+		Last Modified: Sat, 19 Oct 2019 07:57:35 GMT  
+		Size: 5.2 KB (5193 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `solr:5-slim`
 
 ```console
-$ docker pull solr@sha256:bcabd1ebcdf6a1bb86002f1e70dafb02bbd9339f9575c180d5d63af9102c418b
+$ docker pull solr@sha256:3c3648524a207915c7e73afbc9caa232236d5622f9d48ad06bfef65ceeab30b5
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -709,14 +709,14 @@ $ docker pull solr@sha256:bcabd1ebcdf6a1bb86002f1e70dafb02bbd9339f9575c180d5d63a
 ### `solr:5-slim` - linux; amd64
 
 ```console
-$ docker pull solr@sha256:62e7de082ace85696582b2dc09e3cba7393e6ab50aebbe3f8a0d72cfa72688a4
+$ docker pull solr@sha256:2b8f542b3679276e70acfc6f37fa86ef0fe3be529bcebbbf6b2763a0439fc2cd
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **209.1 MB (209120112 bytes)**  
+-	Total Size: **209.1 MB (209128608 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:cfd45bad7b40b9b6bf3383f232eb959fb65eb8431757ec83c2222c69894a53a8`
+-	Image ID: `sha256:7035c692de0de5a5b68d1e9fdc9682ccfd9b0cf23f80327b905e4a812969356d`
 -	Entrypoint: `["docker-entrypoint.sh"]`
 -	Default Command: `["solr-foreground"]`
 
@@ -735,49 +735,49 @@ ENV JAVA_HOME=/usr/local/openjdk-8
 ENV PATH=/usr/local/openjdk-8/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
 # Thu, 17 Oct 2019 08:31:20 GMT
 RUN { echo '#/bin/sh'; echo 'echo "$JAVA_HOME"'; } > /usr/local/bin/docker-java-home && chmod +x /usr/local/bin/docker-java-home && [ "$JAVA_HOME" = "$(docker-java-home)" ]
-# Thu, 17 Oct 2019 08:31:21 GMT
-ENV JAVA_VERSION=8u222
-# Thu, 17 Oct 2019 08:32:05 GMT
-ENV JAVA_BASE_URL=https://github.com/AdoptOpenJDK/openjdk8-upstream-binaries/releases/download/jdk8u222-b10/OpenJDK8U-jre_
-# Thu, 17 Oct 2019 08:32:06 GMT
-ENV JAVA_URL_VERSION=8u222b10
-# Thu, 17 Oct 2019 08:32:21 GMT
+# Fri, 18 Oct 2019 23:41:02 GMT
+ENV JAVA_VERSION=8u232
+# Fri, 18 Oct 2019 23:41:30 GMT
+ENV JAVA_BASE_URL=https://github.com/AdoptOpenJDK/openjdk8-upstream-binaries/releases/download/jdk8u232-b09/OpenJDK8U-jre_
+# Fri, 18 Oct 2019 23:41:30 GMT
+ENV JAVA_URL_VERSION=8u232b09
+# Fri, 18 Oct 2019 23:41:41 GMT
 RUN set -eux; 		dpkgArch="$(dpkg --print-architecture)"; 	case "$dpkgArch" in 		amd64) upstreamArch='x64' ;; 		arm64) upstreamArch='aarch64' ;; 		*) echo >&2 "error: unsupported architecture: $dpkgArch" ;; 	esac; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		dirmngr 		gnupg 		wget 	; 	rm -rf /var/lib/apt/lists/*; 		wget -O openjdk.tgz.asc "${JAVA_BASE_URL}${upstreamArch}_linux_${JAVA_URL_VERSION}.tar.gz.sign"; 	wget -O openjdk.tgz "${JAVA_BASE_URL}${upstreamArch}_linux_${JAVA_URL_VERSION}.tar.gz" --progress=dot:giga; 		export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver ha.pool.sks-keyservers.net --keyserver-options no-self-sigs-only --recv-keys CA5F11C6CE22644D42C6AC4492EF8D39DC13168F; 	gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys EAC843EBD3EFDB98CC772FADA5CD6035332FA671; 	gpg --batch --list-sigs --keyid-format 0xLONG CA5F11C6CE22644D42C6AC4492EF8D39DC13168F 		| tee /dev/stderr 		| grep '0xA5CD6035332FA671' 		| grep 'Andrew Haley'; 	gpg --batch --verify openjdk.tgz.asc openjdk.tgz; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME"; 		mkdir -p "$JAVA_HOME"; 	tar --extract 		--file openjdk.tgz 		--directory "$JAVA_HOME" 		--strip-components 1 		--no-same-owner 	; 	rm openjdk.tgz*; 			apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark > /dev/null; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 		{ 		echo '#!/usr/bin/env bash'; 		echo 'set -Eeuo pipefail'; 		echo 'if ! [ -d "$JAVA_HOME" ]; then echo >&2 "error: missing JAVA_HOME environment variable"; exit 1; fi'; 		echo 'cacertsFile=; for f in "$JAVA_HOME/lib/security/cacerts" "$JAVA_HOME/jre/lib/security/cacerts"; do if [ -e "$f" ]; then cacertsFile="$f"; break; fi; done'; 		echo 'if [ -z "$cacertsFile" ] || ! [ -f "$cacertsFile" ]; then echo >&2 "error: failed to find cacerts file in $JAVA_HOME"; exit 1; fi'; 		echo 'trust extract --overwrite --format=java-cacerts --filter=ca-anchors --purpose=server-auth "$cacertsFile"'; 	} > /etc/ca-certificates/update.d/docker-openjdk; 	chmod +x /etc/ca-certificates/update.d/docker-openjdk; 	/etc/ca-certificates/update.d/docker-openjdk; 		find "$JAVA_HOME/lib" -name '*.so' -exec dirname '{}' ';' | sort -u > /etc/ld.so.conf.d/docker-openjdk.conf; 	ldconfig; 		java -version
-# Fri, 18 Oct 2019 04:42:01 GMT
+# Sat, 19 Oct 2019 07:51:32 GMT
 LABEL maintainer=Martijn Koster "mak-docker@greenhills.co.uk"
-# Fri, 18 Oct 2019 04:42:01 GMT
+# Sat, 19 Oct 2019 07:51:33 GMT
 LABEL repository=https://github.com/docker-solr/docker-solr
-# Fri, 18 Oct 2019 04:42:02 GMT
+# Sat, 19 Oct 2019 07:51:33 GMT
 ARG SOLR_DOWNLOAD_SERVER
-# Fri, 18 Oct 2019 04:42:13 GMT
+# Sat, 19 Oct 2019 07:51:39 GMT
 RUN apt-get update &&   apt-get -y install acl dirmngr gpg lsof procps wget &&   rm -rf /var/lib/apt/lists/*
-# Fri, 18 Oct 2019 04:43:03 GMT
+# Sat, 19 Oct 2019 07:52:24 GMT
 ENV SOLR_USER=solr SOLR_UID=8983 SOLR_GROUP=solr SOLR_GID=8983 SOLR_VERSION=5.5.5 SOLR_URL=https://archive.apache.org/dist/lucene/solr/5.5.5/solr-5.5.5.tgz SOLR_SHA256=2bbe3a55976f118c5d8c2382d4591257f6e2af779c08c6561e44afa3181a87c1 SOLR_KEYS=5F55943E13D49059D3F342777186B06E1ED139E7 PATH=/opt/solr/bin:/opt/docker-solr/scripts:/usr/local/openjdk-8/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Fri, 18 Oct 2019 04:43:03 GMT
+# Sat, 19 Oct 2019 07:52:24 GMT
 ENV GOSU_VERSION=1.11
-# Fri, 18 Oct 2019 04:43:03 GMT
+# Sat, 19 Oct 2019 07:52:24 GMT
 ENV GOSU_KEY=B42F6819007F00F88E364FD4036A9C25BF357DD4
-# Fri, 18 Oct 2019 04:43:03 GMT
+# Sat, 19 Oct 2019 07:52:24 GMT
 ENV TINI_VERSION=v0.18.0
-# Fri, 18 Oct 2019 04:43:03 GMT
+# Sat, 19 Oct 2019 07:52:25 GMT
 ENV TINI_KEY=595E85A6B1B4779EA4DAAEC70B588DFF0527A9B7
-# Fri, 18 Oct 2019 04:43:04 GMT
+# Sat, 19 Oct 2019 07:52:25 GMT
 RUN groupadd -r --gid "$SOLR_GID" "$SOLR_GROUP" &&   useradd -r --uid "$SOLR_UID" --gid "$SOLR_GID" "$SOLR_USER"
-# Fri, 18 Oct 2019 04:43:06 GMT
+# Sat, 19 Oct 2019 07:52:26 GMT
 RUN set -e;   export GNUPGHOME="/tmp/gnupg_home" &&   mkdir -p "$GNUPGHOME" &&   chmod 700 "$GNUPGHOME" &&   echo "disable-ipv6" >> "$GNUPGHOME/dirmngr.conf" &&   for key in $SOLR_KEYS $GOSU_KEY $TINI_KEY; do     found='';     for server in       ha.pool.sks-keyservers.net       hkp://keyserver.ubuntu.com:80       hkp://p80.pool.sks-keyservers.net:80       pgp.mit.edu     ; do       echo "  trying $server for $key";       gpg --batch --keyserver "$server" --keyserver-options timeout=10 --recv-keys "$key" && found=yes && break;       gpg --batch --keyserver "$server" --keyserver-options timeout=10 --recv-keys "$key" && found=yes && break;     done;     test -z "$found" && echo >&2 "error: failed to fetch $key from several disparate servers -- network issues?" && exit 1;   done;   exit 0
-# Fri, 18 Oct 2019 04:43:21 GMT
+# Sat, 19 Oct 2019 07:52:39 GMT
 RUN set -e;   export GNUPGHOME="/tmp/gnupg_home" &&   pkgArch="$(dpkg --print-architecture | awk -F- '{ print $NF }')" &&   wget -O /usr/local/bin/gosu "https://github.com/tianon/gosu/releases/download/$GOSU_VERSION/gosu-$pkgArch" &&   wget -O /usr/local/bin/gosu.asc "https://github.com/tianon/gosu/releases/download/$GOSU_VERSION/gosu-$pkgArch.asc" &&   gpg --batch --verify /usr/local/bin/gosu.asc /usr/local/bin/gosu &&   rm /usr/local/bin/gosu.asc &&   chmod +x /usr/local/bin/gosu &&   gosu nobody true &&   wget -O /usr/local/bin/tini "https://github.com/krallin/tini/releases/download/${TINI_VERSION}/tini-$pkgArch" &&   wget -O /usr/local/bin/tini.asc "https://github.com/krallin/tini/releases/download/${TINI_VERSION}/tini-$pkgArch.asc" &&   gpg --batch --verify /usr/local/bin/tini.asc /usr/local/bin/tini;   rm /usr/local/bin/tini.asc &&   chmod +x /usr/local/bin/tini &&   tini --version &&   echo "downloading $SOLR_URL" &&   wget -nv "$SOLR_URL" -O "/opt/solr-$SOLR_VERSION.tgz" &&   echo "downloading $SOLR_URL.asc" &&   wget -nv "$SOLR_URL.asc" -O "/opt/solr-$SOLR_VERSION.tgz.asc" &&   echo "$SOLR_SHA256 */opt/solr-$SOLR_VERSION.tgz" | sha256sum -c - &&   (>&2 ls -l "/opt/solr-$SOLR_VERSION.tgz" "/opt/solr-$SOLR_VERSION.tgz.asc") &&   gpg --batch --verify "/opt/solr-$SOLR_VERSION.tgz.asc" "/opt/solr-$SOLR_VERSION.tgz" &&   tar -C /opt --extract --file "/opt/solr-$SOLR_VERSION.tgz" &&   mv "/opt/solr-$SOLR_VERSION" /opt/solr &&   rm "/opt/solr-$SOLR_VERSION.tgz"* &&   rm -Rf /opt/solr/docs/ &&   mkdir -p /opt/solr/server/solr/lib /docker-entrypoint-initdb.d /opt/docker-solr &&   mkdir -p /opt/solr/server/solr/mycores /opt/solr/server/logs /opt/mysolrhome &&   sed -i -e "s/\"\$(whoami)\" == \"root\"/\$(id -u) == 0/" /opt/solr/bin/solr &&   sed -i -e 's/lsof -PniTCP:/lsof -t -PniTCP:/' /opt/solr/bin/solr &&   if [ -f "/opt/solr/contrib/prometheus-exporter/bin/solr-exporter" ]; then chmod 0755 "/opt/solr/contrib/prometheus-exporter/bin/solr-exporter"; fi &&   chmod -R 0755 /opt/solr/server/scripts/cloud-scripts &&   chown -R "$SOLR_USER:$SOLR_GROUP" /opt/solr /docker-entrypoint-initdb.d /opt/docker-solr &&   chown -R "$SOLR_USER:$SOLR_GROUP" /opt/mysolrhome &&   { command -v gpgconf && gpgconf --kill all || :; } &&   rm -r "$GNUPGHOME"
-# Fri, 18 Oct 2019 04:43:22 GMT
+# Sat, 19 Oct 2019 07:52:39 GMT
 COPY --chown=solr:solrdir:a038244bf4fec30d0dea82744cb1fc715508d4b53322690c9848d442ff4e0dc6 in /opt/docker-solr/scripts 
-# Fri, 18 Oct 2019 04:43:22 GMT
+# Sat, 19 Oct 2019 07:52:39 GMT
 EXPOSE 8983
-# Fri, 18 Oct 2019 04:43:22 GMT
+# Sat, 19 Oct 2019 07:52:39 GMT
 WORKDIR /opt/solr
-# Fri, 18 Oct 2019 04:43:22 GMT
+# Sat, 19 Oct 2019 07:52:39 GMT
 USER solr
-# Fri, 18 Oct 2019 04:43:22 GMT
+# Sat, 19 Oct 2019 07:52:40 GMT
 ENTRYPOINT ["docker-entrypoint.sh"]
-# Fri, 18 Oct 2019 04:43:23 GMT
+# Sat, 19 Oct 2019 07:52:40 GMT
 CMD ["solr-foreground"]
 ```
 
@@ -794,35 +794,35 @@ CMD ["solr-foreground"]
 		Last Modified: Thu, 17 Oct 2019 08:40:39 GMT  
 		Size: 209.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:e28e16a356a2159bd931ef811fe18809e1e69c3b529e7920da941c7f4500efcb`  
-		Last Modified: Thu, 17 Oct 2019 08:41:28 GMT  
-		Size: 40.4 MB (40446129 bytes)  
+	-	`sha256:c5b17f485691c7c47664b65395c35771d441eb15cd8f9b3c432c9655b98b2da2`  
+		Last Modified: Fri, 18 Oct 2019 23:47:27 GMT  
+		Size: 40.5 MB (40454623 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:69da21abeca5fd7d71be3c05629eeeec7883c6225ea2a035222592e6eea0a8fe`  
-		Last Modified: Fri, 18 Oct 2019 04:48:20 GMT  
-		Size: 5.5 MB (5452320 bytes)  
+	-	`sha256:11cd0edbbb847dbfc2fa48324b1e68c56b78f3913c715c281b34c9879098ea14`  
+		Last Modified: Sat, 19 Oct 2019 07:57:08 GMT  
+		Size: 5.5 MB (5452299 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:e67af4d2ee21b301af53a9aa15399af4d187bf47b982528fdeaebc1620fa789e`  
-		Last Modified: Fri, 18 Oct 2019 04:49:14 GMT  
-		Size: 4.3 KB (4286 bytes)  
+	-	`sha256:c7ea8f2332360efe98211ac90daf534335628ba8a00405ddf10910f7b1d63656`  
+		Last Modified: Sat, 19 Oct 2019 07:57:35 GMT  
+		Size: 4.3 KB (4285 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:212c5a661c0500e0a2a88a95af75ff2923750ebc8886bddfe9ac27cf86179c86`  
-		Last Modified: Fri, 18 Oct 2019 04:49:14 GMT  
-		Size: 25.4 KB (25449 bytes)  
+	-	`sha256:c98ce2d29315f3cc06f945a492772672fe9e2d56cc4983ad4646b9c91fd07f46`  
+		Last Modified: Sat, 19 Oct 2019 07:57:35 GMT  
+		Size: 25.5 KB (25451 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:f30ce75e00db4552825a9e1dd81d6551b4f4dbce56bddda6758fabdfb96d5cc9`  
-		Last Modified: Fri, 18 Oct 2019 04:49:26 GMT  
-		Size: 132.8 MB (132829984 bytes)  
+	-	`sha256:cd1afed2f1ead9d869253c8920ecd6a4af0c172fff5b8a1a633e4e274722f82c`  
+		Last Modified: Sat, 19 Oct 2019 07:57:43 GMT  
+		Size: 132.8 MB (132830004 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:8426e6aaa0e10adc2a1cec77476c5b47cecd2a427832e4a2d5bdfc41c16df0a7`  
-		Last Modified: Fri, 18 Oct 2019 04:49:14 GMT  
-		Size: 5.2 KB (5191 bytes)  
+	-	`sha256:d3fd6cf4faf14c6367144f9fa0d4ca5242090b9d388acbe0993bb8cf298fec6d`  
+		Last Modified: Sat, 19 Oct 2019 07:57:35 GMT  
+		Size: 5.2 KB (5193 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `solr:6`
 
 ```console
-$ docker pull solr@sha256:116b46764055efd2a694da28a2afa987fb9e7e6c7c575f0ff6f00984789f5fd8
+$ docker pull solr@sha256:0758779d1d4127a67ad6a87db6dca200388dac524ac076a7551bde9ab16f2407
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -832,14 +832,14 @@ $ docker pull solr@sha256:116b46764055efd2a694da28a2afa987fb9e7e6c7c575f0ff6f009
 ### `solr:6` - linux; amd64
 
 ```console
-$ docker pull solr@sha256:7d3d23280cd73114f5dc6b5a13afa46e48571916a7e45f52bd184df2a4722099
+$ docker pull solr@sha256:e4acb22113d8274c5c50757a1df19d936f22b29e92f0c32d7246ba18eb083227
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **255.8 MB (255797348 bytes)**  
+-	Total Size: **255.8 MB (255808229 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:b82020047bcbe201a12078a9f187fa91068f71908f2215b8ad672044a852187b`
+-	Image ID: `sha256:b1bd775c7b34d3247397b9e5d026d03366ea760a05cb4c4d635e5e101efba051`
 -	Entrypoint: `["docker-entrypoint.sh"]`
 -	Default Command: `["solr-foreground"]`
 
@@ -862,49 +862,49 @@ ENV JAVA_HOME=/usr/local/openjdk-8
 ENV PATH=/usr/local/openjdk-8/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
 # Thu, 17 Oct 2019 08:31:53 GMT
 RUN { echo '#/bin/sh'; echo 'echo "$JAVA_HOME"'; } > /usr/local/bin/docker-java-home && chmod +x /usr/local/bin/docker-java-home && [ "$JAVA_HOME" = "$(docker-java-home)" ]
-# Thu, 17 Oct 2019 08:31:54 GMT
-ENV JAVA_VERSION=8u222
-# Thu, 17 Oct 2019 08:31:54 GMT
-ENV JAVA_BASE_URL=https://github.com/AdoptOpenJDK/openjdk8-upstream-binaries/releases/download/jdk8u222-b10/OpenJDK8U-jre_
-# Thu, 17 Oct 2019 08:31:54 GMT
-ENV JAVA_URL_VERSION=8u222b10
-# Thu, 17 Oct 2019 08:32:01 GMT
+# Fri, 18 Oct 2019 23:41:20 GMT
+ENV JAVA_VERSION=8u232
+# Fri, 18 Oct 2019 23:41:20 GMT
+ENV JAVA_BASE_URL=https://github.com/AdoptOpenJDK/openjdk8-upstream-binaries/releases/download/jdk8u232-b09/OpenJDK8U-jre_
+# Fri, 18 Oct 2019 23:41:20 GMT
+ENV JAVA_URL_VERSION=8u232b09
+# Fri, 18 Oct 2019 23:41:26 GMT
 RUN set -eux; 		dpkgArch="$(dpkg --print-architecture)"; 	case "$dpkgArch" in 		amd64) upstreamArch='x64' ;; 		arm64) upstreamArch='aarch64' ;; 		*) echo >&2 "error: unsupported architecture: $dpkgArch" ;; 	esac; 		wget -O openjdk.tgz.asc "${JAVA_BASE_URL}${upstreamArch}_linux_${JAVA_URL_VERSION}.tar.gz.sign"; 	wget -O openjdk.tgz "${JAVA_BASE_URL}${upstreamArch}_linux_${JAVA_URL_VERSION}.tar.gz" --progress=dot:giga; 		export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver ha.pool.sks-keyservers.net --keyserver-options no-self-sigs-only --recv-keys CA5F11C6CE22644D42C6AC4492EF8D39DC13168F; 	gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys EAC843EBD3EFDB98CC772FADA5CD6035332FA671; 	gpg --batch --list-sigs --keyid-format 0xLONG CA5F11C6CE22644D42C6AC4492EF8D39DC13168F 		| tee /dev/stderr 		| grep '0xA5CD6035332FA671' 		| grep 'Andrew Haley'; 	gpg --batch --verify openjdk.tgz.asc openjdk.tgz; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME"; 		mkdir -p "$JAVA_HOME"; 	tar --extract 		--file openjdk.tgz 		--directory "$JAVA_HOME" 		--strip-components 1 		--no-same-owner 	; 	rm openjdk.tgz*; 			{ 		echo '#!/usr/bin/env bash'; 		echo 'set -Eeuo pipefail'; 		echo 'if ! [ -d "$JAVA_HOME" ]; then echo >&2 "error: missing JAVA_HOME environment variable"; exit 1; fi'; 		echo 'cacertsFile=; for f in "$JAVA_HOME/lib/security/cacerts" "$JAVA_HOME/jre/lib/security/cacerts"; do if [ -e "$f" ]; then cacertsFile="$f"; break; fi; done'; 		echo 'if [ -z "$cacertsFile" ] || ! [ -f "$cacertsFile" ]; then echo >&2 "error: failed to find cacerts file in $JAVA_HOME"; exit 1; fi'; 		echo 'trust extract --overwrite --format=java-cacerts --filter=ca-anchors --purpose=server-auth "$cacertsFile"'; 	} > /etc/ca-certificates/update.d/docker-openjdk; 	chmod +x /etc/ca-certificates/update.d/docker-openjdk; 	/etc/ca-certificates/update.d/docker-openjdk; 		find "$JAVA_HOME/lib" -name '*.so' -exec dirname '{}' ';' | sort -u > /etc/ld.so.conf.d/docker-openjdk.conf; 	ldconfig; 		java -version
-# Fri, 18 Oct 2019 04:41:22 GMT
+# Sat, 19 Oct 2019 07:51:05 GMT
 LABEL maintainer=Martijn Koster "mak-docker@greenhills.co.uk"
-# Fri, 18 Oct 2019 04:41:22 GMT
+# Sat, 19 Oct 2019 07:51:05 GMT
 LABEL repository=https://github.com/docker-solr/docker-solr
-# Fri, 18 Oct 2019 04:41:22 GMT
+# Sat, 19 Oct 2019 07:51:05 GMT
 ARG SOLR_DOWNLOAD_SERVER
-# Fri, 18 Oct 2019 04:41:31 GMT
+# Sat, 19 Oct 2019 07:51:10 GMT
 RUN apt-get update &&   apt-get -y install acl dirmngr gpg lsof procps wget &&   rm -rf /var/lib/apt/lists/*
-# Fri, 18 Oct 2019 04:41:31 GMT
+# Sat, 19 Oct 2019 07:51:10 GMT
 ENV SOLR_USER=solr SOLR_UID=8983 SOLR_GROUP=solr SOLR_GID=8983 SOLR_VERSION=6.6.6 SOLR_URL=https://archive.apache.org/dist/lucene/solr/6.6.6/solr-6.6.6.tgz SOLR_SHA256=149ec1a7ee950867ab6257a1a96246df79ccda983983389dc639220f3447b6e8 SOLR_KEYS=2085660D9C1FCCACC4A479A3BF160FF14992A24C PATH=/opt/solr/bin:/opt/docker-solr/scripts:/usr/local/openjdk-8/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Fri, 18 Oct 2019 04:41:31 GMT
+# Sat, 19 Oct 2019 07:51:10 GMT
 ENV GOSU_VERSION=1.11
-# Fri, 18 Oct 2019 04:41:32 GMT
+# Sat, 19 Oct 2019 07:51:11 GMT
 ENV GOSU_KEY=B42F6819007F00F88E364FD4036A9C25BF357DD4
-# Fri, 18 Oct 2019 04:41:32 GMT
+# Sat, 19 Oct 2019 07:51:11 GMT
 ENV TINI_VERSION=v0.18.0
-# Fri, 18 Oct 2019 04:41:32 GMT
+# Sat, 19 Oct 2019 07:51:11 GMT
 ENV TINI_KEY=595E85A6B1B4779EA4DAAEC70B588DFF0527A9B7
-# Fri, 18 Oct 2019 04:41:33 GMT
+# Sat, 19 Oct 2019 07:51:12 GMT
 RUN groupadd -r --gid "$SOLR_GID" "$SOLR_GROUP" &&   useradd -r --uid "$SOLR_UID" --gid "$SOLR_GID" "$SOLR_USER"
-# Fri, 18 Oct 2019 04:41:37 GMT
+# Sat, 19 Oct 2019 07:51:15 GMT
 RUN set -e;   export GNUPGHOME="/tmp/gnupg_home" &&   mkdir -p "$GNUPGHOME" &&   chmod 700 "$GNUPGHOME" &&   echo "disable-ipv6" >> "$GNUPGHOME/dirmngr.conf" &&   for key in $SOLR_KEYS $GOSU_KEY $TINI_KEY; do     found='';     for server in       ha.pool.sks-keyservers.net       hkp://keyserver.ubuntu.com:80       hkp://p80.pool.sks-keyservers.net:80       pgp.mit.edu     ; do       echo "  trying $server for $key";       gpg --batch --keyserver "$server" --keyserver-options timeout=10 --recv-keys "$key" && found=yes && break;       gpg --batch --keyserver "$server" --keyserver-options timeout=10 --recv-keys "$key" && found=yes && break;     done;     test -z "$found" && echo >&2 "error: failed to fetch $key from several disparate servers -- network issues?" && exit 1;   done;   exit 0
-# Fri, 18 Oct 2019 04:41:53 GMT
+# Sat, 19 Oct 2019 07:51:27 GMT
 RUN set -e;   export GNUPGHOME="/tmp/gnupg_home" &&   pkgArch="$(dpkg --print-architecture | awk -F- '{ print $NF }')" &&   wget -O /usr/local/bin/gosu "https://github.com/tianon/gosu/releases/download/$GOSU_VERSION/gosu-$pkgArch" &&   wget -O /usr/local/bin/gosu.asc "https://github.com/tianon/gosu/releases/download/$GOSU_VERSION/gosu-$pkgArch.asc" &&   gpg --batch --verify /usr/local/bin/gosu.asc /usr/local/bin/gosu &&   rm /usr/local/bin/gosu.asc &&   chmod +x /usr/local/bin/gosu &&   gosu nobody true &&   wget -O /usr/local/bin/tini "https://github.com/krallin/tini/releases/download/${TINI_VERSION}/tini-$pkgArch" &&   wget -O /usr/local/bin/tini.asc "https://github.com/krallin/tini/releases/download/${TINI_VERSION}/tini-$pkgArch.asc" &&   gpg --batch --verify /usr/local/bin/tini.asc /usr/local/bin/tini;   rm /usr/local/bin/tini.asc &&   chmod +x /usr/local/bin/tini &&   tini --version &&   echo "downloading $SOLR_URL" &&   wget -nv "$SOLR_URL" -O "/opt/solr-$SOLR_VERSION.tgz" &&   echo "downloading $SOLR_URL.asc" &&   wget -nv "$SOLR_URL.asc" -O "/opt/solr-$SOLR_VERSION.tgz.asc" &&   echo "$SOLR_SHA256 */opt/solr-$SOLR_VERSION.tgz" | sha256sum -c - &&   (>&2 ls -l "/opt/solr-$SOLR_VERSION.tgz" "/opt/solr-$SOLR_VERSION.tgz.asc") &&   gpg --batch --verify "/opt/solr-$SOLR_VERSION.tgz.asc" "/opt/solr-$SOLR_VERSION.tgz" &&   tar -C /opt --extract --file "/opt/solr-$SOLR_VERSION.tgz" &&   mv "/opt/solr-$SOLR_VERSION" /opt/solr &&   rm "/opt/solr-$SOLR_VERSION.tgz"* &&   rm -Rf /opt/solr/docs/ &&   mkdir -p /opt/solr/server/solr/lib /docker-entrypoint-initdb.d /opt/docker-solr &&   mkdir -p /opt/solr/server/solr/mycores /opt/solr/server/logs /opt/mysolrhome &&   sed -i -e "s/\"\$(whoami)\" == \"root\"/\$(id -u) == 0/" /opt/solr/bin/solr &&   sed -i -e 's/lsof -PniTCP:/lsof -t -PniTCP:/' /opt/solr/bin/solr &&   if [ -f "/opt/solr/contrib/prometheus-exporter/bin/solr-exporter" ]; then chmod 0755 "/opt/solr/contrib/prometheus-exporter/bin/solr-exporter"; fi &&   chmod -R 0755 /opt/solr/server/scripts/cloud-scripts &&   chown -R "$SOLR_USER:$SOLR_GROUP" /opt/solr /docker-entrypoint-initdb.d /opt/docker-solr &&   chown -R "$SOLR_USER:$SOLR_GROUP" /opt/mysolrhome &&   { command -v gpgconf && gpgconf --kill all || :; } &&   rm -r "$GNUPGHOME"
-# Fri, 18 Oct 2019 04:41:54 GMT
+# Sat, 19 Oct 2019 07:51:28 GMT
 COPY --chown=solr:solrdir:a038244bf4fec30d0dea82744cb1fc715508d4b53322690c9848d442ff4e0dc6 in /opt/docker-solr/scripts 
-# Fri, 18 Oct 2019 04:41:54 GMT
+# Sat, 19 Oct 2019 07:51:28 GMT
 EXPOSE 8983
-# Fri, 18 Oct 2019 04:41:55 GMT
+# Sat, 19 Oct 2019 07:51:28 GMT
 WORKDIR /opt/solr
-# Fri, 18 Oct 2019 04:41:55 GMT
+# Sat, 19 Oct 2019 07:51:28 GMT
 USER solr
-# Fri, 18 Oct 2019 04:41:55 GMT
+# Sat, 19 Oct 2019 07:51:28 GMT
 ENTRYPOINT ["docker-entrypoint.sh"]
-# Fri, 18 Oct 2019 04:41:55 GMT
+# Sat, 19 Oct 2019 07:51:28 GMT
 CMD ["solr-foreground"]
 ```
 
@@ -929,35 +929,35 @@ CMD ["solr-foreground"]
 		Last Modified: Thu, 17 Oct 2019 08:41:08 GMT  
 		Size: 221.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:d6307286bdcdf56d9803709b0b3e4575dd477c8a702ced3a859c13e63ecc7264`  
-		Last Modified: Thu, 17 Oct 2019 08:41:15 GMT  
-		Size: 40.2 MB (40185608 bytes)  
+	-	`sha256:6585137b08a32b71cc7147c10ae8601ac4cf0bf42e9859cdb0d22b2087cdb90e`  
+		Last Modified: Fri, 18 Oct 2019 23:47:16 GMT  
+		Size: 40.2 MB (40196580 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:e94054ada84f01d2bedd382b23cb46edf193f07e88ec25e013b2b08e4af16c6f`  
-		Last Modified: Fri, 18 Oct 2019 04:48:00 GMT  
-		Size: 1.4 MB (1432247 bytes)  
+	-	`sha256:c1968659637fef445303c58037068526ffdb817cfde10378fab1aacdff881ebd`  
+		Last Modified: Sat, 19 Oct 2019 07:56:53 GMT  
+		Size: 1.4 MB (1432187 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:a2958f2cc5516659a1706eb4680b036d082e5b51fdfe6a123509bf63f805e2a6`  
-		Last Modified: Fri, 18 Oct 2019 04:47:59 GMT  
-		Size: 4.3 KB (4291 bytes)  
+	-	`sha256:0a51580f463c9bdf4701b4dd54bbbe5d9893fe71348e34323ad3ac87d1268583`  
+		Last Modified: Sat, 19 Oct 2019 07:56:52 GMT  
+		Size: 4.3 KB (4292 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:de7b4f7799d3fdfd957a0727b81532d62283bbeb6a519a6c85ed48cea0c0b776`  
-		Last Modified: Fri, 18 Oct 2019 04:47:59 GMT  
-		Size: 154.4 KB (154436 bytes)  
+	-	`sha256:0ab75a63f9e02e7664c52c1a58522f6db518643af7522782731100e9421fd9c0`  
+		Last Modified: Sat, 19 Oct 2019 07:56:52 GMT  
+		Size: 154.4 KB (154438 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:6d32c1739fc0a76c80b21233daedaa947cd955a8b6868f7aac125e4c59dc9002`  
-		Last Modified: Fri, 18 Oct 2019 04:48:12 GMT  
-		Size: 148.4 MB (148371251 bytes)  
+	-	`sha256:5f1200655076516a2ff8ebabb2e30df0de542d5d2a2dbd8f2d84a67d97e28706`  
+		Last Modified: Sat, 19 Oct 2019 07:57:01 GMT  
+		Size: 148.4 MB (148371211 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:eda06bea8cd62eaf10a9924ccfd4ec177b7f48611a9144fa505e170e8df48911`  
-		Last Modified: Fri, 18 Oct 2019 04:47:59 GMT  
-		Size: 5.2 KB (5191 bytes)  
+	-	`sha256:6e71f629761d58ff0d2dfefaa0f4a50c28972183560d894050f33d7ba26799f7`  
+		Last Modified: Sat, 19 Oct 2019 07:56:53 GMT  
+		Size: 5.2 KB (5197 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `solr:6.6`
 
 ```console
-$ docker pull solr@sha256:116b46764055efd2a694da28a2afa987fb9e7e6c7c575f0ff6f00984789f5fd8
+$ docker pull solr@sha256:0758779d1d4127a67ad6a87db6dca200388dac524ac076a7551bde9ab16f2407
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -967,14 +967,14 @@ $ docker pull solr@sha256:116b46764055efd2a694da28a2afa987fb9e7e6c7c575f0ff6f009
 ### `solr:6.6` - linux; amd64
 
 ```console
-$ docker pull solr@sha256:7d3d23280cd73114f5dc6b5a13afa46e48571916a7e45f52bd184df2a4722099
+$ docker pull solr@sha256:e4acb22113d8274c5c50757a1df19d936f22b29e92f0c32d7246ba18eb083227
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **255.8 MB (255797348 bytes)**  
+-	Total Size: **255.8 MB (255808229 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:b82020047bcbe201a12078a9f187fa91068f71908f2215b8ad672044a852187b`
+-	Image ID: `sha256:b1bd775c7b34d3247397b9e5d026d03366ea760a05cb4c4d635e5e101efba051`
 -	Entrypoint: `["docker-entrypoint.sh"]`
 -	Default Command: `["solr-foreground"]`
 
@@ -997,49 +997,49 @@ ENV JAVA_HOME=/usr/local/openjdk-8
 ENV PATH=/usr/local/openjdk-8/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
 # Thu, 17 Oct 2019 08:31:53 GMT
 RUN { echo '#/bin/sh'; echo 'echo "$JAVA_HOME"'; } > /usr/local/bin/docker-java-home && chmod +x /usr/local/bin/docker-java-home && [ "$JAVA_HOME" = "$(docker-java-home)" ]
-# Thu, 17 Oct 2019 08:31:54 GMT
-ENV JAVA_VERSION=8u222
-# Thu, 17 Oct 2019 08:31:54 GMT
-ENV JAVA_BASE_URL=https://github.com/AdoptOpenJDK/openjdk8-upstream-binaries/releases/download/jdk8u222-b10/OpenJDK8U-jre_
-# Thu, 17 Oct 2019 08:31:54 GMT
-ENV JAVA_URL_VERSION=8u222b10
-# Thu, 17 Oct 2019 08:32:01 GMT
+# Fri, 18 Oct 2019 23:41:20 GMT
+ENV JAVA_VERSION=8u232
+# Fri, 18 Oct 2019 23:41:20 GMT
+ENV JAVA_BASE_URL=https://github.com/AdoptOpenJDK/openjdk8-upstream-binaries/releases/download/jdk8u232-b09/OpenJDK8U-jre_
+# Fri, 18 Oct 2019 23:41:20 GMT
+ENV JAVA_URL_VERSION=8u232b09
+# Fri, 18 Oct 2019 23:41:26 GMT
 RUN set -eux; 		dpkgArch="$(dpkg --print-architecture)"; 	case "$dpkgArch" in 		amd64) upstreamArch='x64' ;; 		arm64) upstreamArch='aarch64' ;; 		*) echo >&2 "error: unsupported architecture: $dpkgArch" ;; 	esac; 		wget -O openjdk.tgz.asc "${JAVA_BASE_URL}${upstreamArch}_linux_${JAVA_URL_VERSION}.tar.gz.sign"; 	wget -O openjdk.tgz "${JAVA_BASE_URL}${upstreamArch}_linux_${JAVA_URL_VERSION}.tar.gz" --progress=dot:giga; 		export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver ha.pool.sks-keyservers.net --keyserver-options no-self-sigs-only --recv-keys CA5F11C6CE22644D42C6AC4492EF8D39DC13168F; 	gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys EAC843EBD3EFDB98CC772FADA5CD6035332FA671; 	gpg --batch --list-sigs --keyid-format 0xLONG CA5F11C6CE22644D42C6AC4492EF8D39DC13168F 		| tee /dev/stderr 		| grep '0xA5CD6035332FA671' 		| grep 'Andrew Haley'; 	gpg --batch --verify openjdk.tgz.asc openjdk.tgz; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME"; 		mkdir -p "$JAVA_HOME"; 	tar --extract 		--file openjdk.tgz 		--directory "$JAVA_HOME" 		--strip-components 1 		--no-same-owner 	; 	rm openjdk.tgz*; 			{ 		echo '#!/usr/bin/env bash'; 		echo 'set -Eeuo pipefail'; 		echo 'if ! [ -d "$JAVA_HOME" ]; then echo >&2 "error: missing JAVA_HOME environment variable"; exit 1; fi'; 		echo 'cacertsFile=; for f in "$JAVA_HOME/lib/security/cacerts" "$JAVA_HOME/jre/lib/security/cacerts"; do if [ -e "$f" ]; then cacertsFile="$f"; break; fi; done'; 		echo 'if [ -z "$cacertsFile" ] || ! [ -f "$cacertsFile" ]; then echo >&2 "error: failed to find cacerts file in $JAVA_HOME"; exit 1; fi'; 		echo 'trust extract --overwrite --format=java-cacerts --filter=ca-anchors --purpose=server-auth "$cacertsFile"'; 	} > /etc/ca-certificates/update.d/docker-openjdk; 	chmod +x /etc/ca-certificates/update.d/docker-openjdk; 	/etc/ca-certificates/update.d/docker-openjdk; 		find "$JAVA_HOME/lib" -name '*.so' -exec dirname '{}' ';' | sort -u > /etc/ld.so.conf.d/docker-openjdk.conf; 	ldconfig; 		java -version
-# Fri, 18 Oct 2019 04:41:22 GMT
+# Sat, 19 Oct 2019 07:51:05 GMT
 LABEL maintainer=Martijn Koster "mak-docker@greenhills.co.uk"
-# Fri, 18 Oct 2019 04:41:22 GMT
+# Sat, 19 Oct 2019 07:51:05 GMT
 LABEL repository=https://github.com/docker-solr/docker-solr
-# Fri, 18 Oct 2019 04:41:22 GMT
+# Sat, 19 Oct 2019 07:51:05 GMT
 ARG SOLR_DOWNLOAD_SERVER
-# Fri, 18 Oct 2019 04:41:31 GMT
+# Sat, 19 Oct 2019 07:51:10 GMT
 RUN apt-get update &&   apt-get -y install acl dirmngr gpg lsof procps wget &&   rm -rf /var/lib/apt/lists/*
-# Fri, 18 Oct 2019 04:41:31 GMT
+# Sat, 19 Oct 2019 07:51:10 GMT
 ENV SOLR_USER=solr SOLR_UID=8983 SOLR_GROUP=solr SOLR_GID=8983 SOLR_VERSION=6.6.6 SOLR_URL=https://archive.apache.org/dist/lucene/solr/6.6.6/solr-6.6.6.tgz SOLR_SHA256=149ec1a7ee950867ab6257a1a96246df79ccda983983389dc639220f3447b6e8 SOLR_KEYS=2085660D9C1FCCACC4A479A3BF160FF14992A24C PATH=/opt/solr/bin:/opt/docker-solr/scripts:/usr/local/openjdk-8/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Fri, 18 Oct 2019 04:41:31 GMT
+# Sat, 19 Oct 2019 07:51:10 GMT
 ENV GOSU_VERSION=1.11
-# Fri, 18 Oct 2019 04:41:32 GMT
+# Sat, 19 Oct 2019 07:51:11 GMT
 ENV GOSU_KEY=B42F6819007F00F88E364FD4036A9C25BF357DD4
-# Fri, 18 Oct 2019 04:41:32 GMT
+# Sat, 19 Oct 2019 07:51:11 GMT
 ENV TINI_VERSION=v0.18.0
-# Fri, 18 Oct 2019 04:41:32 GMT
+# Sat, 19 Oct 2019 07:51:11 GMT
 ENV TINI_KEY=595E85A6B1B4779EA4DAAEC70B588DFF0527A9B7
-# Fri, 18 Oct 2019 04:41:33 GMT
+# Sat, 19 Oct 2019 07:51:12 GMT
 RUN groupadd -r --gid "$SOLR_GID" "$SOLR_GROUP" &&   useradd -r --uid "$SOLR_UID" --gid "$SOLR_GID" "$SOLR_USER"
-# Fri, 18 Oct 2019 04:41:37 GMT
+# Sat, 19 Oct 2019 07:51:15 GMT
 RUN set -e;   export GNUPGHOME="/tmp/gnupg_home" &&   mkdir -p "$GNUPGHOME" &&   chmod 700 "$GNUPGHOME" &&   echo "disable-ipv6" >> "$GNUPGHOME/dirmngr.conf" &&   for key in $SOLR_KEYS $GOSU_KEY $TINI_KEY; do     found='';     for server in       ha.pool.sks-keyservers.net       hkp://keyserver.ubuntu.com:80       hkp://p80.pool.sks-keyservers.net:80       pgp.mit.edu     ; do       echo "  trying $server for $key";       gpg --batch --keyserver "$server" --keyserver-options timeout=10 --recv-keys "$key" && found=yes && break;       gpg --batch --keyserver "$server" --keyserver-options timeout=10 --recv-keys "$key" && found=yes && break;     done;     test -z "$found" && echo >&2 "error: failed to fetch $key from several disparate servers -- network issues?" && exit 1;   done;   exit 0
-# Fri, 18 Oct 2019 04:41:53 GMT
+# Sat, 19 Oct 2019 07:51:27 GMT
 RUN set -e;   export GNUPGHOME="/tmp/gnupg_home" &&   pkgArch="$(dpkg --print-architecture | awk -F- '{ print $NF }')" &&   wget -O /usr/local/bin/gosu "https://github.com/tianon/gosu/releases/download/$GOSU_VERSION/gosu-$pkgArch" &&   wget -O /usr/local/bin/gosu.asc "https://github.com/tianon/gosu/releases/download/$GOSU_VERSION/gosu-$pkgArch.asc" &&   gpg --batch --verify /usr/local/bin/gosu.asc /usr/local/bin/gosu &&   rm /usr/local/bin/gosu.asc &&   chmod +x /usr/local/bin/gosu &&   gosu nobody true &&   wget -O /usr/local/bin/tini "https://github.com/krallin/tini/releases/download/${TINI_VERSION}/tini-$pkgArch" &&   wget -O /usr/local/bin/tini.asc "https://github.com/krallin/tini/releases/download/${TINI_VERSION}/tini-$pkgArch.asc" &&   gpg --batch --verify /usr/local/bin/tini.asc /usr/local/bin/tini;   rm /usr/local/bin/tini.asc &&   chmod +x /usr/local/bin/tini &&   tini --version &&   echo "downloading $SOLR_URL" &&   wget -nv "$SOLR_URL" -O "/opt/solr-$SOLR_VERSION.tgz" &&   echo "downloading $SOLR_URL.asc" &&   wget -nv "$SOLR_URL.asc" -O "/opt/solr-$SOLR_VERSION.tgz.asc" &&   echo "$SOLR_SHA256 */opt/solr-$SOLR_VERSION.tgz" | sha256sum -c - &&   (>&2 ls -l "/opt/solr-$SOLR_VERSION.tgz" "/opt/solr-$SOLR_VERSION.tgz.asc") &&   gpg --batch --verify "/opt/solr-$SOLR_VERSION.tgz.asc" "/opt/solr-$SOLR_VERSION.tgz" &&   tar -C /opt --extract --file "/opt/solr-$SOLR_VERSION.tgz" &&   mv "/opt/solr-$SOLR_VERSION" /opt/solr &&   rm "/opt/solr-$SOLR_VERSION.tgz"* &&   rm -Rf /opt/solr/docs/ &&   mkdir -p /opt/solr/server/solr/lib /docker-entrypoint-initdb.d /opt/docker-solr &&   mkdir -p /opt/solr/server/solr/mycores /opt/solr/server/logs /opt/mysolrhome &&   sed -i -e "s/\"\$(whoami)\" == \"root\"/\$(id -u) == 0/" /opt/solr/bin/solr &&   sed -i -e 's/lsof -PniTCP:/lsof -t -PniTCP:/' /opt/solr/bin/solr &&   if [ -f "/opt/solr/contrib/prometheus-exporter/bin/solr-exporter" ]; then chmod 0755 "/opt/solr/contrib/prometheus-exporter/bin/solr-exporter"; fi &&   chmod -R 0755 /opt/solr/server/scripts/cloud-scripts &&   chown -R "$SOLR_USER:$SOLR_GROUP" /opt/solr /docker-entrypoint-initdb.d /opt/docker-solr &&   chown -R "$SOLR_USER:$SOLR_GROUP" /opt/mysolrhome &&   { command -v gpgconf && gpgconf --kill all || :; } &&   rm -r "$GNUPGHOME"
-# Fri, 18 Oct 2019 04:41:54 GMT
+# Sat, 19 Oct 2019 07:51:28 GMT
 COPY --chown=solr:solrdir:a038244bf4fec30d0dea82744cb1fc715508d4b53322690c9848d442ff4e0dc6 in /opt/docker-solr/scripts 
-# Fri, 18 Oct 2019 04:41:54 GMT
+# Sat, 19 Oct 2019 07:51:28 GMT
 EXPOSE 8983
-# Fri, 18 Oct 2019 04:41:55 GMT
+# Sat, 19 Oct 2019 07:51:28 GMT
 WORKDIR /opt/solr
-# Fri, 18 Oct 2019 04:41:55 GMT
+# Sat, 19 Oct 2019 07:51:28 GMT
 USER solr
-# Fri, 18 Oct 2019 04:41:55 GMT
+# Sat, 19 Oct 2019 07:51:28 GMT
 ENTRYPOINT ["docker-entrypoint.sh"]
-# Fri, 18 Oct 2019 04:41:55 GMT
+# Sat, 19 Oct 2019 07:51:28 GMT
 CMD ["solr-foreground"]
 ```
 
@@ -1064,35 +1064,35 @@ CMD ["solr-foreground"]
 		Last Modified: Thu, 17 Oct 2019 08:41:08 GMT  
 		Size: 221.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:d6307286bdcdf56d9803709b0b3e4575dd477c8a702ced3a859c13e63ecc7264`  
-		Last Modified: Thu, 17 Oct 2019 08:41:15 GMT  
-		Size: 40.2 MB (40185608 bytes)  
+	-	`sha256:6585137b08a32b71cc7147c10ae8601ac4cf0bf42e9859cdb0d22b2087cdb90e`  
+		Last Modified: Fri, 18 Oct 2019 23:47:16 GMT  
+		Size: 40.2 MB (40196580 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:e94054ada84f01d2bedd382b23cb46edf193f07e88ec25e013b2b08e4af16c6f`  
-		Last Modified: Fri, 18 Oct 2019 04:48:00 GMT  
-		Size: 1.4 MB (1432247 bytes)  
+	-	`sha256:c1968659637fef445303c58037068526ffdb817cfde10378fab1aacdff881ebd`  
+		Last Modified: Sat, 19 Oct 2019 07:56:53 GMT  
+		Size: 1.4 MB (1432187 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:a2958f2cc5516659a1706eb4680b036d082e5b51fdfe6a123509bf63f805e2a6`  
-		Last Modified: Fri, 18 Oct 2019 04:47:59 GMT  
-		Size: 4.3 KB (4291 bytes)  
+	-	`sha256:0a51580f463c9bdf4701b4dd54bbbe5d9893fe71348e34323ad3ac87d1268583`  
+		Last Modified: Sat, 19 Oct 2019 07:56:52 GMT  
+		Size: 4.3 KB (4292 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:de7b4f7799d3fdfd957a0727b81532d62283bbeb6a519a6c85ed48cea0c0b776`  
-		Last Modified: Fri, 18 Oct 2019 04:47:59 GMT  
-		Size: 154.4 KB (154436 bytes)  
+	-	`sha256:0ab75a63f9e02e7664c52c1a58522f6db518643af7522782731100e9421fd9c0`  
+		Last Modified: Sat, 19 Oct 2019 07:56:52 GMT  
+		Size: 154.4 KB (154438 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:6d32c1739fc0a76c80b21233daedaa947cd955a8b6868f7aac125e4c59dc9002`  
-		Last Modified: Fri, 18 Oct 2019 04:48:12 GMT  
-		Size: 148.4 MB (148371251 bytes)  
+	-	`sha256:5f1200655076516a2ff8ebabb2e30df0de542d5d2a2dbd8f2d84a67d97e28706`  
+		Last Modified: Sat, 19 Oct 2019 07:57:01 GMT  
+		Size: 148.4 MB (148371211 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:eda06bea8cd62eaf10a9924ccfd4ec177b7f48611a9144fa505e170e8df48911`  
-		Last Modified: Fri, 18 Oct 2019 04:47:59 GMT  
-		Size: 5.2 KB (5191 bytes)  
+	-	`sha256:6e71f629761d58ff0d2dfefaa0f4a50c28972183560d894050f33d7ba26799f7`  
+		Last Modified: Sat, 19 Oct 2019 07:56:53 GMT  
+		Size: 5.2 KB (5197 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `solr:6.6.6`
 
 ```console
-$ docker pull solr@sha256:116b46764055efd2a694da28a2afa987fb9e7e6c7c575f0ff6f00984789f5fd8
+$ docker pull solr@sha256:0758779d1d4127a67ad6a87db6dca200388dac524ac076a7551bde9ab16f2407
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -1102,14 +1102,14 @@ $ docker pull solr@sha256:116b46764055efd2a694da28a2afa987fb9e7e6c7c575f0ff6f009
 ### `solr:6.6.6` - linux; amd64
 
 ```console
-$ docker pull solr@sha256:7d3d23280cd73114f5dc6b5a13afa46e48571916a7e45f52bd184df2a4722099
+$ docker pull solr@sha256:e4acb22113d8274c5c50757a1df19d936f22b29e92f0c32d7246ba18eb083227
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **255.8 MB (255797348 bytes)**  
+-	Total Size: **255.8 MB (255808229 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:b82020047bcbe201a12078a9f187fa91068f71908f2215b8ad672044a852187b`
+-	Image ID: `sha256:b1bd775c7b34d3247397b9e5d026d03366ea760a05cb4c4d635e5e101efba051`
 -	Entrypoint: `["docker-entrypoint.sh"]`
 -	Default Command: `["solr-foreground"]`
 
@@ -1132,49 +1132,49 @@ ENV JAVA_HOME=/usr/local/openjdk-8
 ENV PATH=/usr/local/openjdk-8/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
 # Thu, 17 Oct 2019 08:31:53 GMT
 RUN { echo '#/bin/sh'; echo 'echo "$JAVA_HOME"'; } > /usr/local/bin/docker-java-home && chmod +x /usr/local/bin/docker-java-home && [ "$JAVA_HOME" = "$(docker-java-home)" ]
-# Thu, 17 Oct 2019 08:31:54 GMT
-ENV JAVA_VERSION=8u222
-# Thu, 17 Oct 2019 08:31:54 GMT
-ENV JAVA_BASE_URL=https://github.com/AdoptOpenJDK/openjdk8-upstream-binaries/releases/download/jdk8u222-b10/OpenJDK8U-jre_
-# Thu, 17 Oct 2019 08:31:54 GMT
-ENV JAVA_URL_VERSION=8u222b10
-# Thu, 17 Oct 2019 08:32:01 GMT
+# Fri, 18 Oct 2019 23:41:20 GMT
+ENV JAVA_VERSION=8u232
+# Fri, 18 Oct 2019 23:41:20 GMT
+ENV JAVA_BASE_URL=https://github.com/AdoptOpenJDK/openjdk8-upstream-binaries/releases/download/jdk8u232-b09/OpenJDK8U-jre_
+# Fri, 18 Oct 2019 23:41:20 GMT
+ENV JAVA_URL_VERSION=8u232b09
+# Fri, 18 Oct 2019 23:41:26 GMT
 RUN set -eux; 		dpkgArch="$(dpkg --print-architecture)"; 	case "$dpkgArch" in 		amd64) upstreamArch='x64' ;; 		arm64) upstreamArch='aarch64' ;; 		*) echo >&2 "error: unsupported architecture: $dpkgArch" ;; 	esac; 		wget -O openjdk.tgz.asc "${JAVA_BASE_URL}${upstreamArch}_linux_${JAVA_URL_VERSION}.tar.gz.sign"; 	wget -O openjdk.tgz "${JAVA_BASE_URL}${upstreamArch}_linux_${JAVA_URL_VERSION}.tar.gz" --progress=dot:giga; 		export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver ha.pool.sks-keyservers.net --keyserver-options no-self-sigs-only --recv-keys CA5F11C6CE22644D42C6AC4492EF8D39DC13168F; 	gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys EAC843EBD3EFDB98CC772FADA5CD6035332FA671; 	gpg --batch --list-sigs --keyid-format 0xLONG CA5F11C6CE22644D42C6AC4492EF8D39DC13168F 		| tee /dev/stderr 		| grep '0xA5CD6035332FA671' 		| grep 'Andrew Haley'; 	gpg --batch --verify openjdk.tgz.asc openjdk.tgz; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME"; 		mkdir -p "$JAVA_HOME"; 	tar --extract 		--file openjdk.tgz 		--directory "$JAVA_HOME" 		--strip-components 1 		--no-same-owner 	; 	rm openjdk.tgz*; 			{ 		echo '#!/usr/bin/env bash'; 		echo 'set -Eeuo pipefail'; 		echo 'if ! [ -d "$JAVA_HOME" ]; then echo >&2 "error: missing JAVA_HOME environment variable"; exit 1; fi'; 		echo 'cacertsFile=; for f in "$JAVA_HOME/lib/security/cacerts" "$JAVA_HOME/jre/lib/security/cacerts"; do if [ -e "$f" ]; then cacertsFile="$f"; break; fi; done'; 		echo 'if [ -z "$cacertsFile" ] || ! [ -f "$cacertsFile" ]; then echo >&2 "error: failed to find cacerts file in $JAVA_HOME"; exit 1; fi'; 		echo 'trust extract --overwrite --format=java-cacerts --filter=ca-anchors --purpose=server-auth "$cacertsFile"'; 	} > /etc/ca-certificates/update.d/docker-openjdk; 	chmod +x /etc/ca-certificates/update.d/docker-openjdk; 	/etc/ca-certificates/update.d/docker-openjdk; 		find "$JAVA_HOME/lib" -name '*.so' -exec dirname '{}' ';' | sort -u > /etc/ld.so.conf.d/docker-openjdk.conf; 	ldconfig; 		java -version
-# Fri, 18 Oct 2019 04:41:22 GMT
+# Sat, 19 Oct 2019 07:51:05 GMT
 LABEL maintainer=Martijn Koster "mak-docker@greenhills.co.uk"
-# Fri, 18 Oct 2019 04:41:22 GMT
+# Sat, 19 Oct 2019 07:51:05 GMT
 LABEL repository=https://github.com/docker-solr/docker-solr
-# Fri, 18 Oct 2019 04:41:22 GMT
+# Sat, 19 Oct 2019 07:51:05 GMT
 ARG SOLR_DOWNLOAD_SERVER
-# Fri, 18 Oct 2019 04:41:31 GMT
+# Sat, 19 Oct 2019 07:51:10 GMT
 RUN apt-get update &&   apt-get -y install acl dirmngr gpg lsof procps wget &&   rm -rf /var/lib/apt/lists/*
-# Fri, 18 Oct 2019 04:41:31 GMT
+# Sat, 19 Oct 2019 07:51:10 GMT
 ENV SOLR_USER=solr SOLR_UID=8983 SOLR_GROUP=solr SOLR_GID=8983 SOLR_VERSION=6.6.6 SOLR_URL=https://archive.apache.org/dist/lucene/solr/6.6.6/solr-6.6.6.tgz SOLR_SHA256=149ec1a7ee950867ab6257a1a96246df79ccda983983389dc639220f3447b6e8 SOLR_KEYS=2085660D9C1FCCACC4A479A3BF160FF14992A24C PATH=/opt/solr/bin:/opt/docker-solr/scripts:/usr/local/openjdk-8/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Fri, 18 Oct 2019 04:41:31 GMT
+# Sat, 19 Oct 2019 07:51:10 GMT
 ENV GOSU_VERSION=1.11
-# Fri, 18 Oct 2019 04:41:32 GMT
+# Sat, 19 Oct 2019 07:51:11 GMT
 ENV GOSU_KEY=B42F6819007F00F88E364FD4036A9C25BF357DD4
-# Fri, 18 Oct 2019 04:41:32 GMT
+# Sat, 19 Oct 2019 07:51:11 GMT
 ENV TINI_VERSION=v0.18.0
-# Fri, 18 Oct 2019 04:41:32 GMT
+# Sat, 19 Oct 2019 07:51:11 GMT
 ENV TINI_KEY=595E85A6B1B4779EA4DAAEC70B588DFF0527A9B7
-# Fri, 18 Oct 2019 04:41:33 GMT
+# Sat, 19 Oct 2019 07:51:12 GMT
 RUN groupadd -r --gid "$SOLR_GID" "$SOLR_GROUP" &&   useradd -r --uid "$SOLR_UID" --gid "$SOLR_GID" "$SOLR_USER"
-# Fri, 18 Oct 2019 04:41:37 GMT
+# Sat, 19 Oct 2019 07:51:15 GMT
 RUN set -e;   export GNUPGHOME="/tmp/gnupg_home" &&   mkdir -p "$GNUPGHOME" &&   chmod 700 "$GNUPGHOME" &&   echo "disable-ipv6" >> "$GNUPGHOME/dirmngr.conf" &&   for key in $SOLR_KEYS $GOSU_KEY $TINI_KEY; do     found='';     for server in       ha.pool.sks-keyservers.net       hkp://keyserver.ubuntu.com:80       hkp://p80.pool.sks-keyservers.net:80       pgp.mit.edu     ; do       echo "  trying $server for $key";       gpg --batch --keyserver "$server" --keyserver-options timeout=10 --recv-keys "$key" && found=yes && break;       gpg --batch --keyserver "$server" --keyserver-options timeout=10 --recv-keys "$key" && found=yes && break;     done;     test -z "$found" && echo >&2 "error: failed to fetch $key from several disparate servers -- network issues?" && exit 1;   done;   exit 0
-# Fri, 18 Oct 2019 04:41:53 GMT
+# Sat, 19 Oct 2019 07:51:27 GMT
 RUN set -e;   export GNUPGHOME="/tmp/gnupg_home" &&   pkgArch="$(dpkg --print-architecture | awk -F- '{ print $NF }')" &&   wget -O /usr/local/bin/gosu "https://github.com/tianon/gosu/releases/download/$GOSU_VERSION/gosu-$pkgArch" &&   wget -O /usr/local/bin/gosu.asc "https://github.com/tianon/gosu/releases/download/$GOSU_VERSION/gosu-$pkgArch.asc" &&   gpg --batch --verify /usr/local/bin/gosu.asc /usr/local/bin/gosu &&   rm /usr/local/bin/gosu.asc &&   chmod +x /usr/local/bin/gosu &&   gosu nobody true &&   wget -O /usr/local/bin/tini "https://github.com/krallin/tini/releases/download/${TINI_VERSION}/tini-$pkgArch" &&   wget -O /usr/local/bin/tini.asc "https://github.com/krallin/tini/releases/download/${TINI_VERSION}/tini-$pkgArch.asc" &&   gpg --batch --verify /usr/local/bin/tini.asc /usr/local/bin/tini;   rm /usr/local/bin/tini.asc &&   chmod +x /usr/local/bin/tini &&   tini --version &&   echo "downloading $SOLR_URL" &&   wget -nv "$SOLR_URL" -O "/opt/solr-$SOLR_VERSION.tgz" &&   echo "downloading $SOLR_URL.asc" &&   wget -nv "$SOLR_URL.asc" -O "/opt/solr-$SOLR_VERSION.tgz.asc" &&   echo "$SOLR_SHA256 */opt/solr-$SOLR_VERSION.tgz" | sha256sum -c - &&   (>&2 ls -l "/opt/solr-$SOLR_VERSION.tgz" "/opt/solr-$SOLR_VERSION.tgz.asc") &&   gpg --batch --verify "/opt/solr-$SOLR_VERSION.tgz.asc" "/opt/solr-$SOLR_VERSION.tgz" &&   tar -C /opt --extract --file "/opt/solr-$SOLR_VERSION.tgz" &&   mv "/opt/solr-$SOLR_VERSION" /opt/solr &&   rm "/opt/solr-$SOLR_VERSION.tgz"* &&   rm -Rf /opt/solr/docs/ &&   mkdir -p /opt/solr/server/solr/lib /docker-entrypoint-initdb.d /opt/docker-solr &&   mkdir -p /opt/solr/server/solr/mycores /opt/solr/server/logs /opt/mysolrhome &&   sed -i -e "s/\"\$(whoami)\" == \"root\"/\$(id -u) == 0/" /opt/solr/bin/solr &&   sed -i -e 's/lsof -PniTCP:/lsof -t -PniTCP:/' /opt/solr/bin/solr &&   if [ -f "/opt/solr/contrib/prometheus-exporter/bin/solr-exporter" ]; then chmod 0755 "/opt/solr/contrib/prometheus-exporter/bin/solr-exporter"; fi &&   chmod -R 0755 /opt/solr/server/scripts/cloud-scripts &&   chown -R "$SOLR_USER:$SOLR_GROUP" /opt/solr /docker-entrypoint-initdb.d /opt/docker-solr &&   chown -R "$SOLR_USER:$SOLR_GROUP" /opt/mysolrhome &&   { command -v gpgconf && gpgconf --kill all || :; } &&   rm -r "$GNUPGHOME"
-# Fri, 18 Oct 2019 04:41:54 GMT
+# Sat, 19 Oct 2019 07:51:28 GMT
 COPY --chown=solr:solrdir:a038244bf4fec30d0dea82744cb1fc715508d4b53322690c9848d442ff4e0dc6 in /opt/docker-solr/scripts 
-# Fri, 18 Oct 2019 04:41:54 GMT
+# Sat, 19 Oct 2019 07:51:28 GMT
 EXPOSE 8983
-# Fri, 18 Oct 2019 04:41:55 GMT
+# Sat, 19 Oct 2019 07:51:28 GMT
 WORKDIR /opt/solr
-# Fri, 18 Oct 2019 04:41:55 GMT
+# Sat, 19 Oct 2019 07:51:28 GMT
 USER solr
-# Fri, 18 Oct 2019 04:41:55 GMT
+# Sat, 19 Oct 2019 07:51:28 GMT
 ENTRYPOINT ["docker-entrypoint.sh"]
-# Fri, 18 Oct 2019 04:41:55 GMT
+# Sat, 19 Oct 2019 07:51:28 GMT
 CMD ["solr-foreground"]
 ```
 
@@ -1199,35 +1199,35 @@ CMD ["solr-foreground"]
 		Last Modified: Thu, 17 Oct 2019 08:41:08 GMT  
 		Size: 221.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:d6307286bdcdf56d9803709b0b3e4575dd477c8a702ced3a859c13e63ecc7264`  
-		Last Modified: Thu, 17 Oct 2019 08:41:15 GMT  
-		Size: 40.2 MB (40185608 bytes)  
+	-	`sha256:6585137b08a32b71cc7147c10ae8601ac4cf0bf42e9859cdb0d22b2087cdb90e`  
+		Last Modified: Fri, 18 Oct 2019 23:47:16 GMT  
+		Size: 40.2 MB (40196580 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:e94054ada84f01d2bedd382b23cb46edf193f07e88ec25e013b2b08e4af16c6f`  
-		Last Modified: Fri, 18 Oct 2019 04:48:00 GMT  
-		Size: 1.4 MB (1432247 bytes)  
+	-	`sha256:c1968659637fef445303c58037068526ffdb817cfde10378fab1aacdff881ebd`  
+		Last Modified: Sat, 19 Oct 2019 07:56:53 GMT  
+		Size: 1.4 MB (1432187 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:a2958f2cc5516659a1706eb4680b036d082e5b51fdfe6a123509bf63f805e2a6`  
-		Last Modified: Fri, 18 Oct 2019 04:47:59 GMT  
-		Size: 4.3 KB (4291 bytes)  
+	-	`sha256:0a51580f463c9bdf4701b4dd54bbbe5d9893fe71348e34323ad3ac87d1268583`  
+		Last Modified: Sat, 19 Oct 2019 07:56:52 GMT  
+		Size: 4.3 KB (4292 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:de7b4f7799d3fdfd957a0727b81532d62283bbeb6a519a6c85ed48cea0c0b776`  
-		Last Modified: Fri, 18 Oct 2019 04:47:59 GMT  
-		Size: 154.4 KB (154436 bytes)  
+	-	`sha256:0ab75a63f9e02e7664c52c1a58522f6db518643af7522782731100e9421fd9c0`  
+		Last Modified: Sat, 19 Oct 2019 07:56:52 GMT  
+		Size: 154.4 KB (154438 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:6d32c1739fc0a76c80b21233daedaa947cd955a8b6868f7aac125e4c59dc9002`  
-		Last Modified: Fri, 18 Oct 2019 04:48:12 GMT  
-		Size: 148.4 MB (148371251 bytes)  
+	-	`sha256:5f1200655076516a2ff8ebabb2e30df0de542d5d2a2dbd8f2d84a67d97e28706`  
+		Last Modified: Sat, 19 Oct 2019 07:57:01 GMT  
+		Size: 148.4 MB (148371211 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:eda06bea8cd62eaf10a9924ccfd4ec177b7f48611a9144fa505e170e8df48911`  
-		Last Modified: Fri, 18 Oct 2019 04:47:59 GMT  
-		Size: 5.2 KB (5191 bytes)  
+	-	`sha256:6e71f629761d58ff0d2dfefaa0f4a50c28972183560d894050f33d7ba26799f7`  
+		Last Modified: Sat, 19 Oct 2019 07:56:53 GMT  
+		Size: 5.2 KB (5197 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `solr:6.6.6-slim`
 
 ```console
-$ docker pull solr@sha256:fb98572c28fda0ce1524c1c7ee9a03d25e3b9d303feb0e5f3dfd45836301faa1
+$ docker pull solr@sha256:4be03103b33f938368c5df4b3528307c0a2865cc0b19933d6db8858b5d0df91d
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -1237,14 +1237,14 @@ $ docker pull solr@sha256:fb98572c28fda0ce1524c1c7ee9a03d25e3b9d303feb0e5f3dfd45
 ### `solr:6.6.6-slim` - linux; amd64
 
 ```console
-$ docker pull solr@sha256:0de9880f42fd258aa71c096ab41c29f72af51a067e0e88820a9c8e5e12c58042
+$ docker pull solr@sha256:f1a597aeea0b91ca4078e1c1f8bb84f7370e237c838f4e411a8258bb13c11e00
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **224.7 MB (224660588 bytes)**  
+-	Total Size: **224.7 MB (224668879 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:c67a7a46782c2facb57b9506e8786339493c0cccb6cb22d3e44e3461076b11ea`
+-	Image ID: `sha256:27191a01fd2f038bb9fcf23c794fdbf01a4164e8261832ba0bf831966560f7d3`
 -	Entrypoint: `["docker-entrypoint.sh"]`
 -	Default Command: `["solr-foreground"]`
 
@@ -1263,49 +1263,49 @@ ENV JAVA_HOME=/usr/local/openjdk-8
 ENV PATH=/usr/local/openjdk-8/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
 # Thu, 17 Oct 2019 08:31:20 GMT
 RUN { echo '#/bin/sh'; echo 'echo "$JAVA_HOME"'; } > /usr/local/bin/docker-java-home && chmod +x /usr/local/bin/docker-java-home && [ "$JAVA_HOME" = "$(docker-java-home)" ]
-# Thu, 17 Oct 2019 08:31:21 GMT
-ENV JAVA_VERSION=8u222
-# Thu, 17 Oct 2019 08:32:05 GMT
-ENV JAVA_BASE_URL=https://github.com/AdoptOpenJDK/openjdk8-upstream-binaries/releases/download/jdk8u222-b10/OpenJDK8U-jre_
-# Thu, 17 Oct 2019 08:32:06 GMT
-ENV JAVA_URL_VERSION=8u222b10
-# Thu, 17 Oct 2019 08:32:21 GMT
+# Fri, 18 Oct 2019 23:41:02 GMT
+ENV JAVA_VERSION=8u232
+# Fri, 18 Oct 2019 23:41:30 GMT
+ENV JAVA_BASE_URL=https://github.com/AdoptOpenJDK/openjdk8-upstream-binaries/releases/download/jdk8u232-b09/OpenJDK8U-jre_
+# Fri, 18 Oct 2019 23:41:30 GMT
+ENV JAVA_URL_VERSION=8u232b09
+# Fri, 18 Oct 2019 23:41:41 GMT
 RUN set -eux; 		dpkgArch="$(dpkg --print-architecture)"; 	case "$dpkgArch" in 		amd64) upstreamArch='x64' ;; 		arm64) upstreamArch='aarch64' ;; 		*) echo >&2 "error: unsupported architecture: $dpkgArch" ;; 	esac; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		dirmngr 		gnupg 		wget 	; 	rm -rf /var/lib/apt/lists/*; 		wget -O openjdk.tgz.asc "${JAVA_BASE_URL}${upstreamArch}_linux_${JAVA_URL_VERSION}.tar.gz.sign"; 	wget -O openjdk.tgz "${JAVA_BASE_URL}${upstreamArch}_linux_${JAVA_URL_VERSION}.tar.gz" --progress=dot:giga; 		export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver ha.pool.sks-keyservers.net --keyserver-options no-self-sigs-only --recv-keys CA5F11C6CE22644D42C6AC4492EF8D39DC13168F; 	gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys EAC843EBD3EFDB98CC772FADA5CD6035332FA671; 	gpg --batch --list-sigs --keyid-format 0xLONG CA5F11C6CE22644D42C6AC4492EF8D39DC13168F 		| tee /dev/stderr 		| grep '0xA5CD6035332FA671' 		| grep 'Andrew Haley'; 	gpg --batch --verify openjdk.tgz.asc openjdk.tgz; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME"; 		mkdir -p "$JAVA_HOME"; 	tar --extract 		--file openjdk.tgz 		--directory "$JAVA_HOME" 		--strip-components 1 		--no-same-owner 	; 	rm openjdk.tgz*; 			apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark > /dev/null; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 		{ 		echo '#!/usr/bin/env bash'; 		echo 'set -Eeuo pipefail'; 		echo 'if ! [ -d "$JAVA_HOME" ]; then echo >&2 "error: missing JAVA_HOME environment variable"; exit 1; fi'; 		echo 'cacertsFile=; for f in "$JAVA_HOME/lib/security/cacerts" "$JAVA_HOME/jre/lib/security/cacerts"; do if [ -e "$f" ]; then cacertsFile="$f"; break; fi; done'; 		echo 'if [ -z "$cacertsFile" ] || ! [ -f "$cacertsFile" ]; then echo >&2 "error: failed to find cacerts file in $JAVA_HOME"; exit 1; fi'; 		echo 'trust extract --overwrite --format=java-cacerts --filter=ca-anchors --purpose=server-auth "$cacertsFile"'; 	} > /etc/ca-certificates/update.d/docker-openjdk; 	chmod +x /etc/ca-certificates/update.d/docker-openjdk; 	/etc/ca-certificates/update.d/docker-openjdk; 		find "$JAVA_HOME/lib" -name '*.so' -exec dirname '{}' ';' | sort -u > /etc/ld.so.conf.d/docker-openjdk.conf; 	ldconfig; 		java -version
-# Fri, 18 Oct 2019 04:42:01 GMT
+# Sat, 19 Oct 2019 07:51:32 GMT
 LABEL maintainer=Martijn Koster "mak-docker@greenhills.co.uk"
-# Fri, 18 Oct 2019 04:42:01 GMT
+# Sat, 19 Oct 2019 07:51:33 GMT
 LABEL repository=https://github.com/docker-solr/docker-solr
-# Fri, 18 Oct 2019 04:42:02 GMT
+# Sat, 19 Oct 2019 07:51:33 GMT
 ARG SOLR_DOWNLOAD_SERVER
-# Fri, 18 Oct 2019 04:42:13 GMT
+# Sat, 19 Oct 2019 07:51:39 GMT
 RUN apt-get update &&   apt-get -y install acl dirmngr gpg lsof procps wget &&   rm -rf /var/lib/apt/lists/*
-# Fri, 18 Oct 2019 04:42:13 GMT
+# Sat, 19 Oct 2019 07:51:40 GMT
 ENV SOLR_USER=solr SOLR_UID=8983 SOLR_GROUP=solr SOLR_GID=8983 SOLR_VERSION=6.6.6 SOLR_URL=https://archive.apache.org/dist/lucene/solr/6.6.6/solr-6.6.6.tgz SOLR_SHA256=149ec1a7ee950867ab6257a1a96246df79ccda983983389dc639220f3447b6e8 SOLR_KEYS=2085660D9C1FCCACC4A479A3BF160FF14992A24C PATH=/opt/solr/bin:/opt/docker-solr/scripts:/usr/local/openjdk-8/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Fri, 18 Oct 2019 04:42:13 GMT
+# Sat, 19 Oct 2019 07:51:40 GMT
 ENV GOSU_VERSION=1.11
-# Fri, 18 Oct 2019 04:42:13 GMT
+# Sat, 19 Oct 2019 07:51:40 GMT
 ENV GOSU_KEY=B42F6819007F00F88E364FD4036A9C25BF357DD4
-# Fri, 18 Oct 2019 04:42:13 GMT
+# Sat, 19 Oct 2019 07:51:40 GMT
 ENV TINI_VERSION=v0.18.0
-# Fri, 18 Oct 2019 04:42:14 GMT
+# Sat, 19 Oct 2019 07:51:40 GMT
 ENV TINI_KEY=595E85A6B1B4779EA4DAAEC70B588DFF0527A9B7
-# Fri, 18 Oct 2019 04:42:15 GMT
+# Sat, 19 Oct 2019 07:51:41 GMT
 RUN groupadd -r --gid "$SOLR_GID" "$SOLR_GROUP" &&   useradd -r --uid "$SOLR_UID" --gid "$SOLR_GID" "$SOLR_USER"
-# Fri, 18 Oct 2019 04:42:16 GMT
+# Sat, 19 Oct 2019 07:51:42 GMT
 RUN set -e;   export GNUPGHOME="/tmp/gnupg_home" &&   mkdir -p "$GNUPGHOME" &&   chmod 700 "$GNUPGHOME" &&   echo "disable-ipv6" >> "$GNUPGHOME/dirmngr.conf" &&   for key in $SOLR_KEYS $GOSU_KEY $TINI_KEY; do     found='';     for server in       ha.pool.sks-keyservers.net       hkp://keyserver.ubuntu.com:80       hkp://p80.pool.sks-keyservers.net:80       pgp.mit.edu     ; do       echo "  trying $server for $key";       gpg --batch --keyserver "$server" --keyserver-options timeout=10 --recv-keys "$key" && found=yes && break;       gpg --batch --keyserver "$server" --keyserver-options timeout=10 --recv-keys "$key" && found=yes && break;     done;     test -z "$found" && echo >&2 "error: failed to fetch $key from several disparate servers -- network issues?" && exit 1;   done;   exit 0
-# Fri, 18 Oct 2019 04:42:29 GMT
+# Sat, 19 Oct 2019 07:51:54 GMT
 RUN set -e;   export GNUPGHOME="/tmp/gnupg_home" &&   pkgArch="$(dpkg --print-architecture | awk -F- '{ print $NF }')" &&   wget -O /usr/local/bin/gosu "https://github.com/tianon/gosu/releases/download/$GOSU_VERSION/gosu-$pkgArch" &&   wget -O /usr/local/bin/gosu.asc "https://github.com/tianon/gosu/releases/download/$GOSU_VERSION/gosu-$pkgArch.asc" &&   gpg --batch --verify /usr/local/bin/gosu.asc /usr/local/bin/gosu &&   rm /usr/local/bin/gosu.asc &&   chmod +x /usr/local/bin/gosu &&   gosu nobody true &&   wget -O /usr/local/bin/tini "https://github.com/krallin/tini/releases/download/${TINI_VERSION}/tini-$pkgArch" &&   wget -O /usr/local/bin/tini.asc "https://github.com/krallin/tini/releases/download/${TINI_VERSION}/tini-$pkgArch.asc" &&   gpg --batch --verify /usr/local/bin/tini.asc /usr/local/bin/tini;   rm /usr/local/bin/tini.asc &&   chmod +x /usr/local/bin/tini &&   tini --version &&   echo "downloading $SOLR_URL" &&   wget -nv "$SOLR_URL" -O "/opt/solr-$SOLR_VERSION.tgz" &&   echo "downloading $SOLR_URL.asc" &&   wget -nv "$SOLR_URL.asc" -O "/opt/solr-$SOLR_VERSION.tgz.asc" &&   echo "$SOLR_SHA256 */opt/solr-$SOLR_VERSION.tgz" | sha256sum -c - &&   (>&2 ls -l "/opt/solr-$SOLR_VERSION.tgz" "/opt/solr-$SOLR_VERSION.tgz.asc") &&   gpg --batch --verify "/opt/solr-$SOLR_VERSION.tgz.asc" "/opt/solr-$SOLR_VERSION.tgz" &&   tar -C /opt --extract --file "/opt/solr-$SOLR_VERSION.tgz" &&   mv "/opt/solr-$SOLR_VERSION" /opt/solr &&   rm "/opt/solr-$SOLR_VERSION.tgz"* &&   rm -Rf /opt/solr/docs/ &&   mkdir -p /opt/solr/server/solr/lib /docker-entrypoint-initdb.d /opt/docker-solr &&   mkdir -p /opt/solr/server/solr/mycores /opt/solr/server/logs /opt/mysolrhome &&   sed -i -e "s/\"\$(whoami)\" == \"root\"/\$(id -u) == 0/" /opt/solr/bin/solr &&   sed -i -e 's/lsof -PniTCP:/lsof -t -PniTCP:/' /opt/solr/bin/solr &&   if [ -f "/opt/solr/contrib/prometheus-exporter/bin/solr-exporter" ]; then chmod 0755 "/opt/solr/contrib/prometheus-exporter/bin/solr-exporter"; fi &&   chmod -R 0755 /opt/solr/server/scripts/cloud-scripts &&   chown -R "$SOLR_USER:$SOLR_GROUP" /opt/solr /docker-entrypoint-initdb.d /opt/docker-solr &&   chown -R "$SOLR_USER:$SOLR_GROUP" /opt/mysolrhome &&   { command -v gpgconf && gpgconf --kill all || :; } &&   rm -r "$GNUPGHOME"
-# Fri, 18 Oct 2019 04:42:30 GMT
+# Sat, 19 Oct 2019 07:51:54 GMT
 COPY --chown=solr:solrdir:a038244bf4fec30d0dea82744cb1fc715508d4b53322690c9848d442ff4e0dc6 in /opt/docker-solr/scripts 
-# Fri, 18 Oct 2019 04:42:30 GMT
+# Sat, 19 Oct 2019 07:51:54 GMT
 EXPOSE 8983
-# Fri, 18 Oct 2019 04:42:30 GMT
+# Sat, 19 Oct 2019 07:51:55 GMT
 WORKDIR /opt/solr
-# Fri, 18 Oct 2019 04:42:30 GMT
+# Sat, 19 Oct 2019 07:51:55 GMT
 USER solr
-# Fri, 18 Oct 2019 04:42:30 GMT
+# Sat, 19 Oct 2019 07:51:55 GMT
 ENTRYPOINT ["docker-entrypoint.sh"]
-# Fri, 18 Oct 2019 04:42:30 GMT
+# Sat, 19 Oct 2019 07:51:55 GMT
 CMD ["solr-foreground"]
 ```
 
@@ -1322,35 +1322,35 @@ CMD ["solr-foreground"]
 		Last Modified: Thu, 17 Oct 2019 08:40:39 GMT  
 		Size: 209.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:e28e16a356a2159bd931ef811fe18809e1e69c3b529e7920da941c7f4500efcb`  
-		Last Modified: Thu, 17 Oct 2019 08:41:28 GMT  
-		Size: 40.4 MB (40446129 bytes)  
+	-	`sha256:c5b17f485691c7c47664b65395c35771d441eb15cd8f9b3c432c9655b98b2da2`  
+		Last Modified: Fri, 18 Oct 2019 23:47:27 GMT  
+		Size: 40.5 MB (40454623 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:69da21abeca5fd7d71be3c05629eeeec7883c6225ea2a035222592e6eea0a8fe`  
-		Last Modified: Fri, 18 Oct 2019 04:48:20 GMT  
-		Size: 5.5 MB (5452320 bytes)  
+	-	`sha256:11cd0edbbb847dbfc2fa48324b1e68c56b78f3913c715c281b34c9879098ea14`  
+		Last Modified: Sat, 19 Oct 2019 07:57:08 GMT  
+		Size: 5.5 MB (5452299 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:87daba8257575d94598e619150b1995c911993a2b014395d48878cfe6a2dff5c`  
-		Last Modified: Fri, 18 Oct 2019 04:48:18 GMT  
+	-	`sha256:58ae339aad293ead9175b9655607a50c00bd6495d05df82e89abe44346bb9944`  
+		Last Modified: Sat, 19 Oct 2019 07:57:06 GMT  
 		Size: 4.3 KB (4285 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c99a185f1945405a952a66b515fb0c6d469ce99a40025acdaedcab64611c38da`  
-		Last Modified: Fri, 18 Oct 2019 04:48:18 GMT  
-		Size: 24.4 KB (24361 bytes)  
+	-	`sha256:bf089bca33a628b20dc93233e3b5dc275d5d8aecf348a33de6db671f0619e611`  
+		Last Modified: Sat, 19 Oct 2019 07:57:07 GMT  
+		Size: 24.4 KB (24370 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:92a6d59d140631b9a5158808b763a640acd4053b8bf335bd2ec14181ecce73a5`  
-		Last Modified: Fri, 18 Oct 2019 04:48:32 GMT  
-		Size: 148.4 MB (148371548 bytes)  
+	-	`sha256:248780ed6b3b9f68d9dd079b5d6dc8357aed1ce831ebeb58ff4376d9dfed35a6`  
+		Last Modified: Sat, 19 Oct 2019 07:57:15 GMT  
+		Size: 148.4 MB (148371356 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:19596f75e5cc87063049c7309054567d1441bf9262f02699274a39de10dabc24`  
-		Last Modified: Fri, 18 Oct 2019 04:48:18 GMT  
-		Size: 5.2 KB (5192 bytes)  
+	-	`sha256:1d0a2cea47602429ab6e4df6ad14b1064e61c725fdab68ff626af90d1a49fa3d`  
+		Last Modified: Sat, 19 Oct 2019 07:57:06 GMT  
+		Size: 5.2 KB (5193 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `solr:6.6-slim`
 
 ```console
-$ docker pull solr@sha256:fb98572c28fda0ce1524c1c7ee9a03d25e3b9d303feb0e5f3dfd45836301faa1
+$ docker pull solr@sha256:4be03103b33f938368c5df4b3528307c0a2865cc0b19933d6db8858b5d0df91d
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -1360,14 +1360,14 @@ $ docker pull solr@sha256:fb98572c28fda0ce1524c1c7ee9a03d25e3b9d303feb0e5f3dfd45
 ### `solr:6.6-slim` - linux; amd64
 
 ```console
-$ docker pull solr@sha256:0de9880f42fd258aa71c096ab41c29f72af51a067e0e88820a9c8e5e12c58042
+$ docker pull solr@sha256:f1a597aeea0b91ca4078e1c1f8bb84f7370e237c838f4e411a8258bb13c11e00
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **224.7 MB (224660588 bytes)**  
+-	Total Size: **224.7 MB (224668879 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:c67a7a46782c2facb57b9506e8786339493c0cccb6cb22d3e44e3461076b11ea`
+-	Image ID: `sha256:27191a01fd2f038bb9fcf23c794fdbf01a4164e8261832ba0bf831966560f7d3`
 -	Entrypoint: `["docker-entrypoint.sh"]`
 -	Default Command: `["solr-foreground"]`
 
@@ -1386,49 +1386,49 @@ ENV JAVA_HOME=/usr/local/openjdk-8
 ENV PATH=/usr/local/openjdk-8/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
 # Thu, 17 Oct 2019 08:31:20 GMT
 RUN { echo '#/bin/sh'; echo 'echo "$JAVA_HOME"'; } > /usr/local/bin/docker-java-home && chmod +x /usr/local/bin/docker-java-home && [ "$JAVA_HOME" = "$(docker-java-home)" ]
-# Thu, 17 Oct 2019 08:31:21 GMT
-ENV JAVA_VERSION=8u222
-# Thu, 17 Oct 2019 08:32:05 GMT
-ENV JAVA_BASE_URL=https://github.com/AdoptOpenJDK/openjdk8-upstream-binaries/releases/download/jdk8u222-b10/OpenJDK8U-jre_
-# Thu, 17 Oct 2019 08:32:06 GMT
-ENV JAVA_URL_VERSION=8u222b10
-# Thu, 17 Oct 2019 08:32:21 GMT
+# Fri, 18 Oct 2019 23:41:02 GMT
+ENV JAVA_VERSION=8u232
+# Fri, 18 Oct 2019 23:41:30 GMT
+ENV JAVA_BASE_URL=https://github.com/AdoptOpenJDK/openjdk8-upstream-binaries/releases/download/jdk8u232-b09/OpenJDK8U-jre_
+# Fri, 18 Oct 2019 23:41:30 GMT
+ENV JAVA_URL_VERSION=8u232b09
+# Fri, 18 Oct 2019 23:41:41 GMT
 RUN set -eux; 		dpkgArch="$(dpkg --print-architecture)"; 	case "$dpkgArch" in 		amd64) upstreamArch='x64' ;; 		arm64) upstreamArch='aarch64' ;; 		*) echo >&2 "error: unsupported architecture: $dpkgArch" ;; 	esac; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		dirmngr 		gnupg 		wget 	; 	rm -rf /var/lib/apt/lists/*; 		wget -O openjdk.tgz.asc "${JAVA_BASE_URL}${upstreamArch}_linux_${JAVA_URL_VERSION}.tar.gz.sign"; 	wget -O openjdk.tgz "${JAVA_BASE_URL}${upstreamArch}_linux_${JAVA_URL_VERSION}.tar.gz" --progress=dot:giga; 		export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver ha.pool.sks-keyservers.net --keyserver-options no-self-sigs-only --recv-keys CA5F11C6CE22644D42C6AC4492EF8D39DC13168F; 	gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys EAC843EBD3EFDB98CC772FADA5CD6035332FA671; 	gpg --batch --list-sigs --keyid-format 0xLONG CA5F11C6CE22644D42C6AC4492EF8D39DC13168F 		| tee /dev/stderr 		| grep '0xA5CD6035332FA671' 		| grep 'Andrew Haley'; 	gpg --batch --verify openjdk.tgz.asc openjdk.tgz; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME"; 		mkdir -p "$JAVA_HOME"; 	tar --extract 		--file openjdk.tgz 		--directory "$JAVA_HOME" 		--strip-components 1 		--no-same-owner 	; 	rm openjdk.tgz*; 			apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark > /dev/null; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 		{ 		echo '#!/usr/bin/env bash'; 		echo 'set -Eeuo pipefail'; 		echo 'if ! [ -d "$JAVA_HOME" ]; then echo >&2 "error: missing JAVA_HOME environment variable"; exit 1; fi'; 		echo 'cacertsFile=; for f in "$JAVA_HOME/lib/security/cacerts" "$JAVA_HOME/jre/lib/security/cacerts"; do if [ -e "$f" ]; then cacertsFile="$f"; break; fi; done'; 		echo 'if [ -z "$cacertsFile" ] || ! [ -f "$cacertsFile" ]; then echo >&2 "error: failed to find cacerts file in $JAVA_HOME"; exit 1; fi'; 		echo 'trust extract --overwrite --format=java-cacerts --filter=ca-anchors --purpose=server-auth "$cacertsFile"'; 	} > /etc/ca-certificates/update.d/docker-openjdk; 	chmod +x /etc/ca-certificates/update.d/docker-openjdk; 	/etc/ca-certificates/update.d/docker-openjdk; 		find "$JAVA_HOME/lib" -name '*.so' -exec dirname '{}' ';' | sort -u > /etc/ld.so.conf.d/docker-openjdk.conf; 	ldconfig; 		java -version
-# Fri, 18 Oct 2019 04:42:01 GMT
+# Sat, 19 Oct 2019 07:51:32 GMT
 LABEL maintainer=Martijn Koster "mak-docker@greenhills.co.uk"
-# Fri, 18 Oct 2019 04:42:01 GMT
+# Sat, 19 Oct 2019 07:51:33 GMT
 LABEL repository=https://github.com/docker-solr/docker-solr
-# Fri, 18 Oct 2019 04:42:02 GMT
+# Sat, 19 Oct 2019 07:51:33 GMT
 ARG SOLR_DOWNLOAD_SERVER
-# Fri, 18 Oct 2019 04:42:13 GMT
+# Sat, 19 Oct 2019 07:51:39 GMT
 RUN apt-get update &&   apt-get -y install acl dirmngr gpg lsof procps wget &&   rm -rf /var/lib/apt/lists/*
-# Fri, 18 Oct 2019 04:42:13 GMT
+# Sat, 19 Oct 2019 07:51:40 GMT
 ENV SOLR_USER=solr SOLR_UID=8983 SOLR_GROUP=solr SOLR_GID=8983 SOLR_VERSION=6.6.6 SOLR_URL=https://archive.apache.org/dist/lucene/solr/6.6.6/solr-6.6.6.tgz SOLR_SHA256=149ec1a7ee950867ab6257a1a96246df79ccda983983389dc639220f3447b6e8 SOLR_KEYS=2085660D9C1FCCACC4A479A3BF160FF14992A24C PATH=/opt/solr/bin:/opt/docker-solr/scripts:/usr/local/openjdk-8/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Fri, 18 Oct 2019 04:42:13 GMT
+# Sat, 19 Oct 2019 07:51:40 GMT
 ENV GOSU_VERSION=1.11
-# Fri, 18 Oct 2019 04:42:13 GMT
+# Sat, 19 Oct 2019 07:51:40 GMT
 ENV GOSU_KEY=B42F6819007F00F88E364FD4036A9C25BF357DD4
-# Fri, 18 Oct 2019 04:42:13 GMT
+# Sat, 19 Oct 2019 07:51:40 GMT
 ENV TINI_VERSION=v0.18.0
-# Fri, 18 Oct 2019 04:42:14 GMT
+# Sat, 19 Oct 2019 07:51:40 GMT
 ENV TINI_KEY=595E85A6B1B4779EA4DAAEC70B588DFF0527A9B7
-# Fri, 18 Oct 2019 04:42:15 GMT
+# Sat, 19 Oct 2019 07:51:41 GMT
 RUN groupadd -r --gid "$SOLR_GID" "$SOLR_GROUP" &&   useradd -r --uid "$SOLR_UID" --gid "$SOLR_GID" "$SOLR_USER"
-# Fri, 18 Oct 2019 04:42:16 GMT
+# Sat, 19 Oct 2019 07:51:42 GMT
 RUN set -e;   export GNUPGHOME="/tmp/gnupg_home" &&   mkdir -p "$GNUPGHOME" &&   chmod 700 "$GNUPGHOME" &&   echo "disable-ipv6" >> "$GNUPGHOME/dirmngr.conf" &&   for key in $SOLR_KEYS $GOSU_KEY $TINI_KEY; do     found='';     for server in       ha.pool.sks-keyservers.net       hkp://keyserver.ubuntu.com:80       hkp://p80.pool.sks-keyservers.net:80       pgp.mit.edu     ; do       echo "  trying $server for $key";       gpg --batch --keyserver "$server" --keyserver-options timeout=10 --recv-keys "$key" && found=yes && break;       gpg --batch --keyserver "$server" --keyserver-options timeout=10 --recv-keys "$key" && found=yes && break;     done;     test -z "$found" && echo >&2 "error: failed to fetch $key from several disparate servers -- network issues?" && exit 1;   done;   exit 0
-# Fri, 18 Oct 2019 04:42:29 GMT
+# Sat, 19 Oct 2019 07:51:54 GMT
 RUN set -e;   export GNUPGHOME="/tmp/gnupg_home" &&   pkgArch="$(dpkg --print-architecture | awk -F- '{ print $NF }')" &&   wget -O /usr/local/bin/gosu "https://github.com/tianon/gosu/releases/download/$GOSU_VERSION/gosu-$pkgArch" &&   wget -O /usr/local/bin/gosu.asc "https://github.com/tianon/gosu/releases/download/$GOSU_VERSION/gosu-$pkgArch.asc" &&   gpg --batch --verify /usr/local/bin/gosu.asc /usr/local/bin/gosu &&   rm /usr/local/bin/gosu.asc &&   chmod +x /usr/local/bin/gosu &&   gosu nobody true &&   wget -O /usr/local/bin/tini "https://github.com/krallin/tini/releases/download/${TINI_VERSION}/tini-$pkgArch" &&   wget -O /usr/local/bin/tini.asc "https://github.com/krallin/tini/releases/download/${TINI_VERSION}/tini-$pkgArch.asc" &&   gpg --batch --verify /usr/local/bin/tini.asc /usr/local/bin/tini;   rm /usr/local/bin/tini.asc &&   chmod +x /usr/local/bin/tini &&   tini --version &&   echo "downloading $SOLR_URL" &&   wget -nv "$SOLR_URL" -O "/opt/solr-$SOLR_VERSION.tgz" &&   echo "downloading $SOLR_URL.asc" &&   wget -nv "$SOLR_URL.asc" -O "/opt/solr-$SOLR_VERSION.tgz.asc" &&   echo "$SOLR_SHA256 */opt/solr-$SOLR_VERSION.tgz" | sha256sum -c - &&   (>&2 ls -l "/opt/solr-$SOLR_VERSION.tgz" "/opt/solr-$SOLR_VERSION.tgz.asc") &&   gpg --batch --verify "/opt/solr-$SOLR_VERSION.tgz.asc" "/opt/solr-$SOLR_VERSION.tgz" &&   tar -C /opt --extract --file "/opt/solr-$SOLR_VERSION.tgz" &&   mv "/opt/solr-$SOLR_VERSION" /opt/solr &&   rm "/opt/solr-$SOLR_VERSION.tgz"* &&   rm -Rf /opt/solr/docs/ &&   mkdir -p /opt/solr/server/solr/lib /docker-entrypoint-initdb.d /opt/docker-solr &&   mkdir -p /opt/solr/server/solr/mycores /opt/solr/server/logs /opt/mysolrhome &&   sed -i -e "s/\"\$(whoami)\" == \"root\"/\$(id -u) == 0/" /opt/solr/bin/solr &&   sed -i -e 's/lsof -PniTCP:/lsof -t -PniTCP:/' /opt/solr/bin/solr &&   if [ -f "/opt/solr/contrib/prometheus-exporter/bin/solr-exporter" ]; then chmod 0755 "/opt/solr/contrib/prometheus-exporter/bin/solr-exporter"; fi &&   chmod -R 0755 /opt/solr/server/scripts/cloud-scripts &&   chown -R "$SOLR_USER:$SOLR_GROUP" /opt/solr /docker-entrypoint-initdb.d /opt/docker-solr &&   chown -R "$SOLR_USER:$SOLR_GROUP" /opt/mysolrhome &&   { command -v gpgconf && gpgconf --kill all || :; } &&   rm -r "$GNUPGHOME"
-# Fri, 18 Oct 2019 04:42:30 GMT
+# Sat, 19 Oct 2019 07:51:54 GMT
 COPY --chown=solr:solrdir:a038244bf4fec30d0dea82744cb1fc715508d4b53322690c9848d442ff4e0dc6 in /opt/docker-solr/scripts 
-# Fri, 18 Oct 2019 04:42:30 GMT
+# Sat, 19 Oct 2019 07:51:54 GMT
 EXPOSE 8983
-# Fri, 18 Oct 2019 04:42:30 GMT
+# Sat, 19 Oct 2019 07:51:55 GMT
 WORKDIR /opt/solr
-# Fri, 18 Oct 2019 04:42:30 GMT
+# Sat, 19 Oct 2019 07:51:55 GMT
 USER solr
-# Fri, 18 Oct 2019 04:42:30 GMT
+# Sat, 19 Oct 2019 07:51:55 GMT
 ENTRYPOINT ["docker-entrypoint.sh"]
-# Fri, 18 Oct 2019 04:42:30 GMT
+# Sat, 19 Oct 2019 07:51:55 GMT
 CMD ["solr-foreground"]
 ```
 
@@ -1445,35 +1445,35 @@ CMD ["solr-foreground"]
 		Last Modified: Thu, 17 Oct 2019 08:40:39 GMT  
 		Size: 209.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:e28e16a356a2159bd931ef811fe18809e1e69c3b529e7920da941c7f4500efcb`  
-		Last Modified: Thu, 17 Oct 2019 08:41:28 GMT  
-		Size: 40.4 MB (40446129 bytes)  
+	-	`sha256:c5b17f485691c7c47664b65395c35771d441eb15cd8f9b3c432c9655b98b2da2`  
+		Last Modified: Fri, 18 Oct 2019 23:47:27 GMT  
+		Size: 40.5 MB (40454623 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:69da21abeca5fd7d71be3c05629eeeec7883c6225ea2a035222592e6eea0a8fe`  
-		Last Modified: Fri, 18 Oct 2019 04:48:20 GMT  
-		Size: 5.5 MB (5452320 bytes)  
+	-	`sha256:11cd0edbbb847dbfc2fa48324b1e68c56b78f3913c715c281b34c9879098ea14`  
+		Last Modified: Sat, 19 Oct 2019 07:57:08 GMT  
+		Size: 5.5 MB (5452299 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:87daba8257575d94598e619150b1995c911993a2b014395d48878cfe6a2dff5c`  
-		Last Modified: Fri, 18 Oct 2019 04:48:18 GMT  
+	-	`sha256:58ae339aad293ead9175b9655607a50c00bd6495d05df82e89abe44346bb9944`  
+		Last Modified: Sat, 19 Oct 2019 07:57:06 GMT  
 		Size: 4.3 KB (4285 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c99a185f1945405a952a66b515fb0c6d469ce99a40025acdaedcab64611c38da`  
-		Last Modified: Fri, 18 Oct 2019 04:48:18 GMT  
-		Size: 24.4 KB (24361 bytes)  
+	-	`sha256:bf089bca33a628b20dc93233e3b5dc275d5d8aecf348a33de6db671f0619e611`  
+		Last Modified: Sat, 19 Oct 2019 07:57:07 GMT  
+		Size: 24.4 KB (24370 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:92a6d59d140631b9a5158808b763a640acd4053b8bf335bd2ec14181ecce73a5`  
-		Last Modified: Fri, 18 Oct 2019 04:48:32 GMT  
-		Size: 148.4 MB (148371548 bytes)  
+	-	`sha256:248780ed6b3b9f68d9dd079b5d6dc8357aed1ce831ebeb58ff4376d9dfed35a6`  
+		Last Modified: Sat, 19 Oct 2019 07:57:15 GMT  
+		Size: 148.4 MB (148371356 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:19596f75e5cc87063049c7309054567d1441bf9262f02699274a39de10dabc24`  
-		Last Modified: Fri, 18 Oct 2019 04:48:18 GMT  
-		Size: 5.2 KB (5192 bytes)  
+	-	`sha256:1d0a2cea47602429ab6e4df6ad14b1064e61c725fdab68ff626af90d1a49fa3d`  
+		Last Modified: Sat, 19 Oct 2019 07:57:06 GMT  
+		Size: 5.2 KB (5193 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `solr:6-slim`
 
 ```console
-$ docker pull solr@sha256:fb98572c28fda0ce1524c1c7ee9a03d25e3b9d303feb0e5f3dfd45836301faa1
+$ docker pull solr@sha256:4be03103b33f938368c5df4b3528307c0a2865cc0b19933d6db8858b5d0df91d
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -1483,14 +1483,14 @@ $ docker pull solr@sha256:fb98572c28fda0ce1524c1c7ee9a03d25e3b9d303feb0e5f3dfd45
 ### `solr:6-slim` - linux; amd64
 
 ```console
-$ docker pull solr@sha256:0de9880f42fd258aa71c096ab41c29f72af51a067e0e88820a9c8e5e12c58042
+$ docker pull solr@sha256:f1a597aeea0b91ca4078e1c1f8bb84f7370e237c838f4e411a8258bb13c11e00
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **224.7 MB (224660588 bytes)**  
+-	Total Size: **224.7 MB (224668879 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:c67a7a46782c2facb57b9506e8786339493c0cccb6cb22d3e44e3461076b11ea`
+-	Image ID: `sha256:27191a01fd2f038bb9fcf23c794fdbf01a4164e8261832ba0bf831966560f7d3`
 -	Entrypoint: `["docker-entrypoint.sh"]`
 -	Default Command: `["solr-foreground"]`
 
@@ -1509,49 +1509,49 @@ ENV JAVA_HOME=/usr/local/openjdk-8
 ENV PATH=/usr/local/openjdk-8/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
 # Thu, 17 Oct 2019 08:31:20 GMT
 RUN { echo '#/bin/sh'; echo 'echo "$JAVA_HOME"'; } > /usr/local/bin/docker-java-home && chmod +x /usr/local/bin/docker-java-home && [ "$JAVA_HOME" = "$(docker-java-home)" ]
-# Thu, 17 Oct 2019 08:31:21 GMT
-ENV JAVA_VERSION=8u222
-# Thu, 17 Oct 2019 08:32:05 GMT
-ENV JAVA_BASE_URL=https://github.com/AdoptOpenJDK/openjdk8-upstream-binaries/releases/download/jdk8u222-b10/OpenJDK8U-jre_
-# Thu, 17 Oct 2019 08:32:06 GMT
-ENV JAVA_URL_VERSION=8u222b10
-# Thu, 17 Oct 2019 08:32:21 GMT
+# Fri, 18 Oct 2019 23:41:02 GMT
+ENV JAVA_VERSION=8u232
+# Fri, 18 Oct 2019 23:41:30 GMT
+ENV JAVA_BASE_URL=https://github.com/AdoptOpenJDK/openjdk8-upstream-binaries/releases/download/jdk8u232-b09/OpenJDK8U-jre_
+# Fri, 18 Oct 2019 23:41:30 GMT
+ENV JAVA_URL_VERSION=8u232b09
+# Fri, 18 Oct 2019 23:41:41 GMT
 RUN set -eux; 		dpkgArch="$(dpkg --print-architecture)"; 	case "$dpkgArch" in 		amd64) upstreamArch='x64' ;; 		arm64) upstreamArch='aarch64' ;; 		*) echo >&2 "error: unsupported architecture: $dpkgArch" ;; 	esac; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		dirmngr 		gnupg 		wget 	; 	rm -rf /var/lib/apt/lists/*; 		wget -O openjdk.tgz.asc "${JAVA_BASE_URL}${upstreamArch}_linux_${JAVA_URL_VERSION}.tar.gz.sign"; 	wget -O openjdk.tgz "${JAVA_BASE_URL}${upstreamArch}_linux_${JAVA_URL_VERSION}.tar.gz" --progress=dot:giga; 		export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver ha.pool.sks-keyservers.net --keyserver-options no-self-sigs-only --recv-keys CA5F11C6CE22644D42C6AC4492EF8D39DC13168F; 	gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys EAC843EBD3EFDB98CC772FADA5CD6035332FA671; 	gpg --batch --list-sigs --keyid-format 0xLONG CA5F11C6CE22644D42C6AC4492EF8D39DC13168F 		| tee /dev/stderr 		| grep '0xA5CD6035332FA671' 		| grep 'Andrew Haley'; 	gpg --batch --verify openjdk.tgz.asc openjdk.tgz; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME"; 		mkdir -p "$JAVA_HOME"; 	tar --extract 		--file openjdk.tgz 		--directory "$JAVA_HOME" 		--strip-components 1 		--no-same-owner 	; 	rm openjdk.tgz*; 			apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark > /dev/null; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 		{ 		echo '#!/usr/bin/env bash'; 		echo 'set -Eeuo pipefail'; 		echo 'if ! [ -d "$JAVA_HOME" ]; then echo >&2 "error: missing JAVA_HOME environment variable"; exit 1; fi'; 		echo 'cacertsFile=; for f in "$JAVA_HOME/lib/security/cacerts" "$JAVA_HOME/jre/lib/security/cacerts"; do if [ -e "$f" ]; then cacertsFile="$f"; break; fi; done'; 		echo 'if [ -z "$cacertsFile" ] || ! [ -f "$cacertsFile" ]; then echo >&2 "error: failed to find cacerts file in $JAVA_HOME"; exit 1; fi'; 		echo 'trust extract --overwrite --format=java-cacerts --filter=ca-anchors --purpose=server-auth "$cacertsFile"'; 	} > /etc/ca-certificates/update.d/docker-openjdk; 	chmod +x /etc/ca-certificates/update.d/docker-openjdk; 	/etc/ca-certificates/update.d/docker-openjdk; 		find "$JAVA_HOME/lib" -name '*.so' -exec dirname '{}' ';' | sort -u > /etc/ld.so.conf.d/docker-openjdk.conf; 	ldconfig; 		java -version
-# Fri, 18 Oct 2019 04:42:01 GMT
+# Sat, 19 Oct 2019 07:51:32 GMT
 LABEL maintainer=Martijn Koster "mak-docker@greenhills.co.uk"
-# Fri, 18 Oct 2019 04:42:01 GMT
+# Sat, 19 Oct 2019 07:51:33 GMT
 LABEL repository=https://github.com/docker-solr/docker-solr
-# Fri, 18 Oct 2019 04:42:02 GMT
+# Sat, 19 Oct 2019 07:51:33 GMT
 ARG SOLR_DOWNLOAD_SERVER
-# Fri, 18 Oct 2019 04:42:13 GMT
+# Sat, 19 Oct 2019 07:51:39 GMT
 RUN apt-get update &&   apt-get -y install acl dirmngr gpg lsof procps wget &&   rm -rf /var/lib/apt/lists/*
-# Fri, 18 Oct 2019 04:42:13 GMT
+# Sat, 19 Oct 2019 07:51:40 GMT
 ENV SOLR_USER=solr SOLR_UID=8983 SOLR_GROUP=solr SOLR_GID=8983 SOLR_VERSION=6.6.6 SOLR_URL=https://archive.apache.org/dist/lucene/solr/6.6.6/solr-6.6.6.tgz SOLR_SHA256=149ec1a7ee950867ab6257a1a96246df79ccda983983389dc639220f3447b6e8 SOLR_KEYS=2085660D9C1FCCACC4A479A3BF160FF14992A24C PATH=/opt/solr/bin:/opt/docker-solr/scripts:/usr/local/openjdk-8/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Fri, 18 Oct 2019 04:42:13 GMT
+# Sat, 19 Oct 2019 07:51:40 GMT
 ENV GOSU_VERSION=1.11
-# Fri, 18 Oct 2019 04:42:13 GMT
+# Sat, 19 Oct 2019 07:51:40 GMT
 ENV GOSU_KEY=B42F6819007F00F88E364FD4036A9C25BF357DD4
-# Fri, 18 Oct 2019 04:42:13 GMT
+# Sat, 19 Oct 2019 07:51:40 GMT
 ENV TINI_VERSION=v0.18.0
-# Fri, 18 Oct 2019 04:42:14 GMT
+# Sat, 19 Oct 2019 07:51:40 GMT
 ENV TINI_KEY=595E85A6B1B4779EA4DAAEC70B588DFF0527A9B7
-# Fri, 18 Oct 2019 04:42:15 GMT
+# Sat, 19 Oct 2019 07:51:41 GMT
 RUN groupadd -r --gid "$SOLR_GID" "$SOLR_GROUP" &&   useradd -r --uid "$SOLR_UID" --gid "$SOLR_GID" "$SOLR_USER"
-# Fri, 18 Oct 2019 04:42:16 GMT
+# Sat, 19 Oct 2019 07:51:42 GMT
 RUN set -e;   export GNUPGHOME="/tmp/gnupg_home" &&   mkdir -p "$GNUPGHOME" &&   chmod 700 "$GNUPGHOME" &&   echo "disable-ipv6" >> "$GNUPGHOME/dirmngr.conf" &&   for key in $SOLR_KEYS $GOSU_KEY $TINI_KEY; do     found='';     for server in       ha.pool.sks-keyservers.net       hkp://keyserver.ubuntu.com:80       hkp://p80.pool.sks-keyservers.net:80       pgp.mit.edu     ; do       echo "  trying $server for $key";       gpg --batch --keyserver "$server" --keyserver-options timeout=10 --recv-keys "$key" && found=yes && break;       gpg --batch --keyserver "$server" --keyserver-options timeout=10 --recv-keys "$key" && found=yes && break;     done;     test -z "$found" && echo >&2 "error: failed to fetch $key from several disparate servers -- network issues?" && exit 1;   done;   exit 0
-# Fri, 18 Oct 2019 04:42:29 GMT
+# Sat, 19 Oct 2019 07:51:54 GMT
 RUN set -e;   export GNUPGHOME="/tmp/gnupg_home" &&   pkgArch="$(dpkg --print-architecture | awk -F- '{ print $NF }')" &&   wget -O /usr/local/bin/gosu "https://github.com/tianon/gosu/releases/download/$GOSU_VERSION/gosu-$pkgArch" &&   wget -O /usr/local/bin/gosu.asc "https://github.com/tianon/gosu/releases/download/$GOSU_VERSION/gosu-$pkgArch.asc" &&   gpg --batch --verify /usr/local/bin/gosu.asc /usr/local/bin/gosu &&   rm /usr/local/bin/gosu.asc &&   chmod +x /usr/local/bin/gosu &&   gosu nobody true &&   wget -O /usr/local/bin/tini "https://github.com/krallin/tini/releases/download/${TINI_VERSION}/tini-$pkgArch" &&   wget -O /usr/local/bin/tini.asc "https://github.com/krallin/tini/releases/download/${TINI_VERSION}/tini-$pkgArch.asc" &&   gpg --batch --verify /usr/local/bin/tini.asc /usr/local/bin/tini;   rm /usr/local/bin/tini.asc &&   chmod +x /usr/local/bin/tini &&   tini --version &&   echo "downloading $SOLR_URL" &&   wget -nv "$SOLR_URL" -O "/opt/solr-$SOLR_VERSION.tgz" &&   echo "downloading $SOLR_URL.asc" &&   wget -nv "$SOLR_URL.asc" -O "/opt/solr-$SOLR_VERSION.tgz.asc" &&   echo "$SOLR_SHA256 */opt/solr-$SOLR_VERSION.tgz" | sha256sum -c - &&   (>&2 ls -l "/opt/solr-$SOLR_VERSION.tgz" "/opt/solr-$SOLR_VERSION.tgz.asc") &&   gpg --batch --verify "/opt/solr-$SOLR_VERSION.tgz.asc" "/opt/solr-$SOLR_VERSION.tgz" &&   tar -C /opt --extract --file "/opt/solr-$SOLR_VERSION.tgz" &&   mv "/opt/solr-$SOLR_VERSION" /opt/solr &&   rm "/opt/solr-$SOLR_VERSION.tgz"* &&   rm -Rf /opt/solr/docs/ &&   mkdir -p /opt/solr/server/solr/lib /docker-entrypoint-initdb.d /opt/docker-solr &&   mkdir -p /opt/solr/server/solr/mycores /opt/solr/server/logs /opt/mysolrhome &&   sed -i -e "s/\"\$(whoami)\" == \"root\"/\$(id -u) == 0/" /opt/solr/bin/solr &&   sed -i -e 's/lsof -PniTCP:/lsof -t -PniTCP:/' /opt/solr/bin/solr &&   if [ -f "/opt/solr/contrib/prometheus-exporter/bin/solr-exporter" ]; then chmod 0755 "/opt/solr/contrib/prometheus-exporter/bin/solr-exporter"; fi &&   chmod -R 0755 /opt/solr/server/scripts/cloud-scripts &&   chown -R "$SOLR_USER:$SOLR_GROUP" /opt/solr /docker-entrypoint-initdb.d /opt/docker-solr &&   chown -R "$SOLR_USER:$SOLR_GROUP" /opt/mysolrhome &&   { command -v gpgconf && gpgconf --kill all || :; } &&   rm -r "$GNUPGHOME"
-# Fri, 18 Oct 2019 04:42:30 GMT
+# Sat, 19 Oct 2019 07:51:54 GMT
 COPY --chown=solr:solrdir:a038244bf4fec30d0dea82744cb1fc715508d4b53322690c9848d442ff4e0dc6 in /opt/docker-solr/scripts 
-# Fri, 18 Oct 2019 04:42:30 GMT
+# Sat, 19 Oct 2019 07:51:54 GMT
 EXPOSE 8983
-# Fri, 18 Oct 2019 04:42:30 GMT
+# Sat, 19 Oct 2019 07:51:55 GMT
 WORKDIR /opt/solr
-# Fri, 18 Oct 2019 04:42:30 GMT
+# Sat, 19 Oct 2019 07:51:55 GMT
 USER solr
-# Fri, 18 Oct 2019 04:42:30 GMT
+# Sat, 19 Oct 2019 07:51:55 GMT
 ENTRYPOINT ["docker-entrypoint.sh"]
-# Fri, 18 Oct 2019 04:42:30 GMT
+# Sat, 19 Oct 2019 07:51:55 GMT
 CMD ["solr-foreground"]
 ```
 
@@ -1568,35 +1568,35 @@ CMD ["solr-foreground"]
 		Last Modified: Thu, 17 Oct 2019 08:40:39 GMT  
 		Size: 209.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:e28e16a356a2159bd931ef811fe18809e1e69c3b529e7920da941c7f4500efcb`  
-		Last Modified: Thu, 17 Oct 2019 08:41:28 GMT  
-		Size: 40.4 MB (40446129 bytes)  
+	-	`sha256:c5b17f485691c7c47664b65395c35771d441eb15cd8f9b3c432c9655b98b2da2`  
+		Last Modified: Fri, 18 Oct 2019 23:47:27 GMT  
+		Size: 40.5 MB (40454623 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:69da21abeca5fd7d71be3c05629eeeec7883c6225ea2a035222592e6eea0a8fe`  
-		Last Modified: Fri, 18 Oct 2019 04:48:20 GMT  
-		Size: 5.5 MB (5452320 bytes)  
+	-	`sha256:11cd0edbbb847dbfc2fa48324b1e68c56b78f3913c715c281b34c9879098ea14`  
+		Last Modified: Sat, 19 Oct 2019 07:57:08 GMT  
+		Size: 5.5 MB (5452299 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:87daba8257575d94598e619150b1995c911993a2b014395d48878cfe6a2dff5c`  
-		Last Modified: Fri, 18 Oct 2019 04:48:18 GMT  
+	-	`sha256:58ae339aad293ead9175b9655607a50c00bd6495d05df82e89abe44346bb9944`  
+		Last Modified: Sat, 19 Oct 2019 07:57:06 GMT  
 		Size: 4.3 KB (4285 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c99a185f1945405a952a66b515fb0c6d469ce99a40025acdaedcab64611c38da`  
-		Last Modified: Fri, 18 Oct 2019 04:48:18 GMT  
-		Size: 24.4 KB (24361 bytes)  
+	-	`sha256:bf089bca33a628b20dc93233e3b5dc275d5d8aecf348a33de6db671f0619e611`  
+		Last Modified: Sat, 19 Oct 2019 07:57:07 GMT  
+		Size: 24.4 KB (24370 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:92a6d59d140631b9a5158808b763a640acd4053b8bf335bd2ec14181ecce73a5`  
-		Last Modified: Fri, 18 Oct 2019 04:48:32 GMT  
-		Size: 148.4 MB (148371548 bytes)  
+	-	`sha256:248780ed6b3b9f68d9dd079b5d6dc8357aed1ce831ebeb58ff4376d9dfed35a6`  
+		Last Modified: Sat, 19 Oct 2019 07:57:15 GMT  
+		Size: 148.4 MB (148371356 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:19596f75e5cc87063049c7309054567d1441bf9262f02699274a39de10dabc24`  
-		Last Modified: Fri, 18 Oct 2019 04:48:18 GMT  
-		Size: 5.2 KB (5192 bytes)  
+	-	`sha256:1d0a2cea47602429ab6e4df6ad14b1064e61c725fdab68ff626af90d1a49fa3d`  
+		Last Modified: Sat, 19 Oct 2019 07:57:06 GMT  
+		Size: 5.2 KB (5193 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `solr:7`
 
 ```console
-$ docker pull solr@sha256:ba9dd6776056bb2bf025baef397c0ac9c5c5ecbfb23f9ba359c2710c2e6ee8ae
+$ docker pull solr@sha256:bcfc4e3908f72307fbc4a75cba1730dc80f281659dd2e78042b3462d4e0e6a22
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -1607,14 +1607,14 @@ $ docker pull solr@sha256:ba9dd6776056bb2bf025baef397c0ac9c5c5ecbfb23f9ba359c271
 ### `solr:7` - linux; amd64
 
 ```console
-$ docker pull solr@sha256:75b301a08cfbf33465b85fdec09bad9a4a2bb3484ab055ec15326a5df8e20676
+$ docker pull solr@sha256:31ce3e56ac877a663ec76c02d16e0df575d20a1f7883f090e84627d17b338b68
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **484.6 MB (484606744 bytes)**  
+-	Total Size: **484.8 MB (484763257 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:bc7399bfda02b68f17c09c106652d19fba42e654c943952566f8be8418980bfe`
+-	Image ID: `sha256:523ebb9ba8b9b4234d8c1e539db1be10c61a2fff324b193afe8b101de1ecb6b2`
 -	Entrypoint: `["docker-entrypoint.sh"]`
 -	Default Command: `["solr-foreground"]`
 
@@ -1639,51 +1639,51 @@ ENV JAVA_HOME=/usr/local/openjdk-11
 ENV PATH=/usr/local/openjdk-11/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
 # Thu, 17 Oct 2019 08:29:25 GMT
 RUN { echo '#/bin/sh'; echo 'echo "$JAVA_HOME"'; } > /usr/local/bin/docker-java-home && chmod +x /usr/local/bin/docker-java-home && [ "$JAVA_HOME" = "$(docker-java-home)" ]
-# Thu, 17 Oct 2019 08:29:25 GMT
-ENV JAVA_VERSION=11.0.4
-# Thu, 17 Oct 2019 08:29:25 GMT
-ENV JAVA_BASE_URL=https://github.com/AdoptOpenJDK/openjdk11-upstream-binaries/releases/download/jdk-11.0.4%2B11/OpenJDK11U-jdk_
-# Thu, 17 Oct 2019 08:29:26 GMT
-ENV JAVA_URL_VERSION=11.0.4_11
-# Thu, 17 Oct 2019 08:29:39 GMT
+# Fri, 18 Oct 2019 23:39:21 GMT
+ENV JAVA_VERSION=11.0.5
+# Fri, 18 Oct 2019 23:39:21 GMT
+ENV JAVA_BASE_URL=https://github.com/AdoptOpenJDK/openjdk11-upstream-binaries/releases/download/jdk-11.0.5%2B10/OpenJDK11U-jdk_
+# Fri, 18 Oct 2019 23:39:21 GMT
+ENV JAVA_URL_VERSION=11.0.5_10
+# Fri, 18 Oct 2019 23:39:41 GMT
 RUN set -eux; 		dpkgArch="$(dpkg --print-architecture)"; 	case "$dpkgArch" in 		amd64) upstreamArch='x64' ;; 		arm64) upstreamArch='aarch64' ;; 		*) echo >&2 "error: unsupported architecture: $dpkgArch" ;; 	esac; 		wget -O openjdk.tgz.asc "${JAVA_BASE_URL}${upstreamArch}_linux_${JAVA_URL_VERSION}.tar.gz.sign"; 	wget -O openjdk.tgz "${JAVA_BASE_URL}${upstreamArch}_linux_${JAVA_URL_VERSION}.tar.gz" --progress=dot:giga; 		export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver ha.pool.sks-keyservers.net --keyserver-options no-self-sigs-only --recv-keys CA5F11C6CE22644D42C6AC4492EF8D39DC13168F; 	gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys EAC843EBD3EFDB98CC772FADA5CD6035332FA671; 	gpg --batch --list-sigs --keyid-format 0xLONG CA5F11C6CE22644D42C6AC4492EF8D39DC13168F 		| tee /dev/stderr 		| grep '0xA5CD6035332FA671' 		| grep 'Andrew Haley'; 	gpg --batch --verify openjdk.tgz.asc openjdk.tgz; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME"; 		mkdir -p "$JAVA_HOME"; 	tar --extract 		--file openjdk.tgz 		--directory "$JAVA_HOME" 		--strip-components 1 		--no-same-owner 	; 	rm openjdk.tgz*; 			{ 		echo '#!/usr/bin/env bash'; 		echo 'set -Eeuo pipefail'; 		echo 'if ! [ -d "$JAVA_HOME" ]; then echo >&2 "error: missing JAVA_HOME environment variable"; exit 1; fi'; 		echo 'cacertsFile=; for f in "$JAVA_HOME/lib/security/cacerts" "$JAVA_HOME/jre/lib/security/cacerts"; do if [ -e "$f" ]; then cacertsFile="$f"; break; fi; done'; 		echo 'if [ -z "$cacertsFile" ] || ! [ -f "$cacertsFile" ]; then echo >&2 "error: failed to find cacerts file in $JAVA_HOME"; exit 1; fi'; 		echo 'trust extract --overwrite --format=java-cacerts --filter=ca-anchors --purpose=server-auth "$cacertsFile"'; 	} > /etc/ca-certificates/update.d/docker-openjdk; 	chmod +x /etc/ca-certificates/update.d/docker-openjdk; 	/etc/ca-certificates/update.d/docker-openjdk; 		find "$JAVA_HOME/lib" -name '*.so' -exec dirname '{}' ';' | sort -u > /etc/ld.so.conf.d/docker-openjdk.conf; 	ldconfig; 		javac --version; 	java --version
-# Thu, 17 Oct 2019 08:29:39 GMT
+# Fri, 18 Oct 2019 23:39:42 GMT
 CMD ["jshell"]
-# Fri, 18 Oct 2019 04:35:50 GMT
+# Sat, 19 Oct 2019 07:46:10 GMT
 LABEL maintainer=Martijn Koster "mak-docker@greenhills.co.uk"
-# Fri, 18 Oct 2019 04:35:50 GMT
+# Sat, 19 Oct 2019 07:46:11 GMT
 LABEL repository=https://github.com/docker-solr/docker-solr
-# Fri, 18 Oct 2019 04:35:50 GMT
+# Sat, 19 Oct 2019 07:46:11 GMT
 ARG SOLR_DOWNLOAD_SERVER
-# Fri, 18 Oct 2019 04:35:55 GMT
+# Sat, 19 Oct 2019 07:46:15 GMT
 RUN apt-get update &&   apt-get -y install acl dirmngr gpg lsof procps wget &&   rm -rf /var/lib/apt/lists/*
-# Fri, 18 Oct 2019 04:38:28 GMT
+# Sat, 19 Oct 2019 07:48:48 GMT
 ENV SOLR_USER=solr SOLR_UID=8983 SOLR_GROUP=solr SOLR_GID=8983 SOLR_VERSION=7.7.2 SOLR_URL=https://archive.apache.org/dist/lucene/solr/7.7.2/solr-7.7.2.tgz SOLR_SHA256=eb8ee4038f25364328355de3338e46961093e39166c9bcc28b5915ae491320df SOLR_KEYS=2CECBFBA181601547B654B9FFA81AC8A490F538E PATH=/opt/solr/bin:/opt/docker-solr/scripts:/usr/local/openjdk-11/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Fri, 18 Oct 2019 04:38:28 GMT
+# Sat, 19 Oct 2019 07:48:48 GMT
 ENV GOSU_VERSION=1.11
-# Fri, 18 Oct 2019 04:38:29 GMT
+# Sat, 19 Oct 2019 07:48:48 GMT
 ENV GOSU_KEY=B42F6819007F00F88E364FD4036A9C25BF357DD4
-# Fri, 18 Oct 2019 04:38:29 GMT
+# Sat, 19 Oct 2019 07:48:49 GMT
 ENV TINI_VERSION=v0.18.0
-# Fri, 18 Oct 2019 04:38:29 GMT
+# Sat, 19 Oct 2019 07:48:49 GMT
 ENV TINI_KEY=595E85A6B1B4779EA4DAAEC70B588DFF0527A9B7
-# Fri, 18 Oct 2019 04:38:30 GMT
+# Sat, 19 Oct 2019 07:48:50 GMT
 RUN groupadd -r --gid "$SOLR_GID" "$SOLR_GROUP" &&   useradd -r --uid "$SOLR_UID" --gid "$SOLR_GID" "$SOLR_USER"
-# Fri, 18 Oct 2019 04:38:33 GMT
+# Sat, 19 Oct 2019 07:48:53 GMT
 RUN set -e;   export GNUPGHOME="/tmp/gnupg_home" &&   mkdir -p "$GNUPGHOME" &&   chmod 700 "$GNUPGHOME" &&   echo "disable-ipv6" >> "$GNUPGHOME/dirmngr.conf" &&   for key in $SOLR_KEYS $GOSU_KEY $TINI_KEY; do     found='';     for server in       ha.pool.sks-keyservers.net       hkp://keyserver.ubuntu.com:80       hkp://p80.pool.sks-keyservers.net:80       pgp.mit.edu     ; do       echo "  trying $server for $key";       gpg --batch --keyserver "$server" --keyserver-options timeout=10 --recv-keys "$key" && found=yes && break;       gpg --batch --keyserver "$server" --keyserver-options timeout=10 --recv-keys "$key" && found=yes && break;     done;     test -z "$found" && echo >&2 "error: failed to fetch $key from several disparate servers -- network issues?" && exit 1;   done;   exit 0
-# Fri, 18 Oct 2019 04:38:48 GMT
+# Sat, 19 Oct 2019 07:49:07 GMT
 RUN set -e;   export GNUPGHOME="/tmp/gnupg_home" &&   pkgArch="$(dpkg --print-architecture | awk -F- '{ print $NF }')" &&   wget -O /usr/local/bin/gosu "https://github.com/tianon/gosu/releases/download/$GOSU_VERSION/gosu-$pkgArch" &&   wget -O /usr/local/bin/gosu.asc "https://github.com/tianon/gosu/releases/download/$GOSU_VERSION/gosu-$pkgArch.asc" &&   gpg --batch --verify /usr/local/bin/gosu.asc /usr/local/bin/gosu &&   rm /usr/local/bin/gosu.asc &&   chmod +x /usr/local/bin/gosu &&   gosu nobody true &&   wget -O /usr/local/bin/tini "https://github.com/krallin/tini/releases/download/${TINI_VERSION}/tini-$pkgArch" &&   wget -O /usr/local/bin/tini.asc "https://github.com/krallin/tini/releases/download/${TINI_VERSION}/tini-$pkgArch.asc" &&   gpg --batch --verify /usr/local/bin/tini.asc /usr/local/bin/tini;   rm /usr/local/bin/tini.asc &&   chmod +x /usr/local/bin/tini &&   tini --version &&   echo "downloading $SOLR_URL" &&   wget -nv "$SOLR_URL" -O "/opt/solr-$SOLR_VERSION.tgz" &&   echo "downloading $SOLR_URL.asc" &&   wget -nv "$SOLR_URL.asc" -O "/opt/solr-$SOLR_VERSION.tgz.asc" &&   echo "$SOLR_SHA256 */opt/solr-$SOLR_VERSION.tgz" | sha256sum -c - &&   (>&2 ls -l "/opt/solr-$SOLR_VERSION.tgz" "/opt/solr-$SOLR_VERSION.tgz.asc") &&   gpg --batch --verify "/opt/solr-$SOLR_VERSION.tgz.asc" "/opt/solr-$SOLR_VERSION.tgz" &&   tar -C /opt --extract --file "/opt/solr-$SOLR_VERSION.tgz" &&   mv "/opt/solr-$SOLR_VERSION" /opt/solr &&   rm "/opt/solr-$SOLR_VERSION.tgz"* &&   rm -Rf /opt/solr/docs/ &&   mkdir -p /opt/solr/server/solr/lib /docker-entrypoint-initdb.d /opt/docker-solr &&   mkdir -p /opt/solr/server/solr/mycores /opt/solr/server/logs /opt/mysolrhome &&   sed -i -e "s/\"\$(whoami)\" == \"root\"/\$(id -u) == 0/" /opt/solr/bin/solr &&   sed -i -e 's/lsof -PniTCP:/lsof -t -PniTCP:/' /opt/solr/bin/solr &&   if [ -f "/opt/solr/contrib/prometheus-exporter/bin/solr-exporter" ]; then chmod 0755 "/opt/solr/contrib/prometheus-exporter/bin/solr-exporter"; fi &&   chmod -R 0755 /opt/solr/server/scripts/cloud-scripts &&   chown -R "$SOLR_USER:$SOLR_GROUP" /opt/solr /docker-entrypoint-initdb.d /opt/docker-solr &&   chown -R "$SOLR_USER:$SOLR_GROUP" /opt/mysolrhome &&   { command -v gpgconf && gpgconf --kill all || :; } &&   rm -r "$GNUPGHOME"
-# Fri, 18 Oct 2019 04:38:48 GMT
+# Sat, 19 Oct 2019 07:49:07 GMT
 COPY --chown=solr:solrdir:a038244bf4fec30d0dea82744cb1fc715508d4b53322690c9848d442ff4e0dc6 in /opt/docker-solr/scripts 
-# Fri, 18 Oct 2019 04:38:49 GMT
+# Sat, 19 Oct 2019 07:49:07 GMT
 EXPOSE 8983
-# Fri, 18 Oct 2019 04:38:49 GMT
+# Sat, 19 Oct 2019 07:49:07 GMT
 WORKDIR /opt/solr
-# Fri, 18 Oct 2019 04:38:49 GMT
+# Sat, 19 Oct 2019 07:49:08 GMT
 USER solr
-# Fri, 18 Oct 2019 04:38:49 GMT
+# Sat, 19 Oct 2019 07:49:08 GMT
 ENTRYPOINT ["docker-entrypoint.sh"]
-# Fri, 18 Oct 2019 04:38:49 GMT
+# Sat, 19 Oct 2019 07:49:08 GMT
 CMD ["solr-foreground"]
 ```
 
@@ -1712,29 +1712,29 @@ CMD ["solr-foreground"]
 		Last Modified: Thu, 17 Oct 2019 08:38:05 GMT  
 		Size: 218.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:115f4a5a7971e04e4fed86d76c049ff73c54e467dc07423546790188502ce0bc`  
-		Last Modified: Thu, 17 Oct 2019 08:38:28 GMT  
-		Size: 195.7 MB (195718813 bytes)  
+	-	`sha256:0ce121b6a2ffae7f0fc0b7c20d3a0a46f62762dd7c1f14db73fa2ab9248bf1dc`  
+		Last Modified: Fri, 18 Oct 2019 23:45:21 GMT  
+		Size: 195.9 MB (195875192 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:8f99c82bd7831902ccf2bd474012a7be46a8161ba0124a4864ac469ffcad5bbe`  
-		Last Modified: Fri, 18 Oct 2019 04:43:52 GMT  
-		Size: 761.5 KB (761483 bytes)  
+	-	`sha256:73e1c53bd62b5d1b2ee52a9c04be2a0e5a5b245abc76a4d9365fd1ceba45f32c`  
+		Last Modified: Sat, 19 Oct 2019 07:53:23 GMT  
+		Size: 761.5 KB (761492 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:e42981739346e02539dd2f1627885fb3fbc0840d801e840788a96779f131f4c4`  
-		Last Modified: Fri, 18 Oct 2019 04:46:02 GMT  
-		Size: 4.3 KB (4305 bytes)  
+	-	`sha256:3114b528e10a4ab2b2da46d734971e7af0e50fdab1d62dbf8c4e47de5701798d`  
+		Last Modified: Sat, 19 Oct 2019 07:55:03 GMT  
+		Size: 4.3 KB (4301 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:912e0e23b19d98ae0bbe672d5467b3777be6e4b391bee52bc6a375d00e07e3ee`  
-		Last Modified: Fri, 18 Oct 2019 04:46:02 GMT  
-		Size: 175.8 KB (175803 bytes)  
+	-	`sha256:49142d10e445e0c84a9c0774c82b35bacb8e64de10f3cb29a42b6a1c3c49d437`  
+		Last Modified: Sat, 19 Oct 2019 07:55:03 GMT  
+		Size: 175.8 KB (175799 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:18b8801d45f5025fc7aa622a2879d9ced8deab946d78511146a6fcc245ceda54`  
-		Last Modified: Fri, 18 Oct 2019 04:46:18 GMT  
-		Size: 172.4 MB (172422080 bytes)  
+	-	`sha256:9ad1410e38477884a0793eddb649dfba25f241f18c854de76268f06a98c05fa6`  
+		Last Modified: Sat, 19 Oct 2019 07:55:13 GMT  
+		Size: 172.4 MB (172422215 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:139ce4d60133f1b3c55a5bc9e09428dfe68c896a48a96b18c9a8340265115bd4`  
-		Last Modified: Fri, 18 Oct 2019 04:46:02 GMT  
-		Size: 5.2 KB (5193 bytes)  
+	-	`sha256:9e9ddf5d2901da7b287bcc9016e22cd26ba0bf33400420a55ed91497bb9ca8a6`  
+		Last Modified: Sat, 19 Oct 2019 07:55:03 GMT  
+		Size: 5.2 KB (5191 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `solr:7` - linux; arm64 variant v8
@@ -1873,7 +1873,7 @@ CMD ["solr-foreground"]
 ## `solr:7.5`
 
 ```console
-$ docker pull solr@sha256:03f9e5c851026de561ec06ae90ca42939dadc6c3a6f7812125371f6201ac5abc
+$ docker pull solr@sha256:a61365686a9981fca2832e881db0ed1f4c56f90f68e043bfb2b664814a9b024b
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -1884,14 +1884,14 @@ $ docker pull solr@sha256:03f9e5c851026de561ec06ae90ca42939dadc6c3a6f7812125371f
 ### `solr:7.5` - linux; amd64
 
 ```console
-$ docker pull solr@sha256:3454280383e137b8c1688e59bdb8ba0c131f78187f88b2beae979f2bbb8af5c9
+$ docker pull solr@sha256:34b575a23462513301f9ed0e59acc2a337ef6433d1aa4d282788d8f9438b67f6
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **481.6 MB (481621298 bytes)**  
+-	Total Size: **481.8 MB (481777744 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:561bdf71cbcc44ea7302e56a41b7cb3a0803dd164fff756f967c9921a36bbca4`
+-	Image ID: `sha256:ebacbe734004b33ff47ee5d062ef756ab93062fabd9583d35544b979247e80bd`
 -	Entrypoint: `["docker-entrypoint.sh"]`
 -	Default Command: `["solr-foreground"]`
 
@@ -1916,51 +1916,51 @@ ENV JAVA_HOME=/usr/local/openjdk-11
 ENV PATH=/usr/local/openjdk-11/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
 # Thu, 17 Oct 2019 08:29:25 GMT
 RUN { echo '#/bin/sh'; echo 'echo "$JAVA_HOME"'; } > /usr/local/bin/docker-java-home && chmod +x /usr/local/bin/docker-java-home && [ "$JAVA_HOME" = "$(docker-java-home)" ]
-# Thu, 17 Oct 2019 08:29:25 GMT
-ENV JAVA_VERSION=11.0.4
-# Thu, 17 Oct 2019 08:29:25 GMT
-ENV JAVA_BASE_URL=https://github.com/AdoptOpenJDK/openjdk11-upstream-binaries/releases/download/jdk-11.0.4%2B11/OpenJDK11U-jdk_
-# Thu, 17 Oct 2019 08:29:26 GMT
-ENV JAVA_URL_VERSION=11.0.4_11
-# Thu, 17 Oct 2019 08:29:39 GMT
+# Fri, 18 Oct 2019 23:39:21 GMT
+ENV JAVA_VERSION=11.0.5
+# Fri, 18 Oct 2019 23:39:21 GMT
+ENV JAVA_BASE_URL=https://github.com/AdoptOpenJDK/openjdk11-upstream-binaries/releases/download/jdk-11.0.5%2B10/OpenJDK11U-jdk_
+# Fri, 18 Oct 2019 23:39:21 GMT
+ENV JAVA_URL_VERSION=11.0.5_10
+# Fri, 18 Oct 2019 23:39:41 GMT
 RUN set -eux; 		dpkgArch="$(dpkg --print-architecture)"; 	case "$dpkgArch" in 		amd64) upstreamArch='x64' ;; 		arm64) upstreamArch='aarch64' ;; 		*) echo >&2 "error: unsupported architecture: $dpkgArch" ;; 	esac; 		wget -O openjdk.tgz.asc "${JAVA_BASE_URL}${upstreamArch}_linux_${JAVA_URL_VERSION}.tar.gz.sign"; 	wget -O openjdk.tgz "${JAVA_BASE_URL}${upstreamArch}_linux_${JAVA_URL_VERSION}.tar.gz" --progress=dot:giga; 		export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver ha.pool.sks-keyservers.net --keyserver-options no-self-sigs-only --recv-keys CA5F11C6CE22644D42C6AC4492EF8D39DC13168F; 	gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys EAC843EBD3EFDB98CC772FADA5CD6035332FA671; 	gpg --batch --list-sigs --keyid-format 0xLONG CA5F11C6CE22644D42C6AC4492EF8D39DC13168F 		| tee /dev/stderr 		| grep '0xA5CD6035332FA671' 		| grep 'Andrew Haley'; 	gpg --batch --verify openjdk.tgz.asc openjdk.tgz; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME"; 		mkdir -p "$JAVA_HOME"; 	tar --extract 		--file openjdk.tgz 		--directory "$JAVA_HOME" 		--strip-components 1 		--no-same-owner 	; 	rm openjdk.tgz*; 			{ 		echo '#!/usr/bin/env bash'; 		echo 'set -Eeuo pipefail'; 		echo 'if ! [ -d "$JAVA_HOME" ]; then echo >&2 "error: missing JAVA_HOME environment variable"; exit 1; fi'; 		echo 'cacertsFile=; for f in "$JAVA_HOME/lib/security/cacerts" "$JAVA_HOME/jre/lib/security/cacerts"; do if [ -e "$f" ]; then cacertsFile="$f"; break; fi; done'; 		echo 'if [ -z "$cacertsFile" ] || ! [ -f "$cacertsFile" ]; then echo >&2 "error: failed to find cacerts file in $JAVA_HOME"; exit 1; fi'; 		echo 'trust extract --overwrite --format=java-cacerts --filter=ca-anchors --purpose=server-auth "$cacertsFile"'; 	} > /etc/ca-certificates/update.d/docker-openjdk; 	chmod +x /etc/ca-certificates/update.d/docker-openjdk; 	/etc/ca-certificates/update.d/docker-openjdk; 		find "$JAVA_HOME/lib" -name '*.so' -exec dirname '{}' ';' | sort -u > /etc/ld.so.conf.d/docker-openjdk.conf; 	ldconfig; 		javac --version; 	java --version
-# Thu, 17 Oct 2019 08:29:39 GMT
+# Fri, 18 Oct 2019 23:39:42 GMT
 CMD ["jshell"]
-# Fri, 18 Oct 2019 04:35:50 GMT
+# Sat, 19 Oct 2019 07:46:10 GMT
 LABEL maintainer=Martijn Koster "mak-docker@greenhills.co.uk"
-# Fri, 18 Oct 2019 04:35:50 GMT
+# Sat, 19 Oct 2019 07:46:11 GMT
 LABEL repository=https://github.com/docker-solr/docker-solr
-# Fri, 18 Oct 2019 04:35:50 GMT
+# Sat, 19 Oct 2019 07:46:11 GMT
 ARG SOLR_DOWNLOAD_SERVER
-# Fri, 18 Oct 2019 04:35:55 GMT
+# Sat, 19 Oct 2019 07:46:15 GMT
 RUN apt-get update &&   apt-get -y install acl dirmngr gpg lsof procps wget &&   rm -rf /var/lib/apt/lists/*
-# Fri, 18 Oct 2019 04:40:21 GMT
+# Sat, 19 Oct 2019 07:50:20 GMT
 ENV SOLR_USER=solr SOLR_UID=8983 SOLR_GROUP=solr SOLR_GID=8983 SOLR_VERSION=7.5.0 SOLR_URL=https://archive.apache.org/dist/lucene/solr/7.5.0/solr-7.5.0.tgz SOLR_SHA256=eac2daffc376dd8057ee831fbfc4a1b8ee236b8ad94122e11d67fd2b242acebc SOLR_KEYS=052C5B48A480B9CEA9E218A5F98C13CFA5A135D8 PATH=/opt/solr/bin:/opt/docker-solr/scripts:/usr/local/openjdk-11/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Fri, 18 Oct 2019 04:40:21 GMT
+# Sat, 19 Oct 2019 07:50:20 GMT
 ENV GOSU_VERSION=1.11
-# Fri, 18 Oct 2019 04:40:21 GMT
+# Sat, 19 Oct 2019 07:50:20 GMT
 ENV GOSU_KEY=B42F6819007F00F88E364FD4036A9C25BF357DD4
-# Fri, 18 Oct 2019 04:40:21 GMT
+# Sat, 19 Oct 2019 07:50:20 GMT
 ENV TINI_VERSION=v0.18.0
-# Fri, 18 Oct 2019 04:40:22 GMT
+# Sat, 19 Oct 2019 07:50:20 GMT
 ENV TINI_KEY=595E85A6B1B4779EA4DAAEC70B588DFF0527A9B7
-# Fri, 18 Oct 2019 04:40:23 GMT
+# Sat, 19 Oct 2019 07:50:21 GMT
 RUN groupadd -r --gid "$SOLR_GID" "$SOLR_GROUP" &&   useradd -r --uid "$SOLR_UID" --gid "$SOLR_GID" "$SOLR_USER"
-# Fri, 18 Oct 2019 04:40:27 GMT
+# Sat, 19 Oct 2019 07:50:24 GMT
 RUN set -e;   export GNUPGHOME="/tmp/gnupg_home" &&   mkdir -p "$GNUPGHOME" &&   chmod 700 "$GNUPGHOME" &&   echo "disable-ipv6" >> "$GNUPGHOME/dirmngr.conf" &&   for key in $SOLR_KEYS $GOSU_KEY $TINI_KEY; do     found='';     for server in       ha.pool.sks-keyservers.net       hkp://keyserver.ubuntu.com:80       hkp://p80.pool.sks-keyservers.net:80       pgp.mit.edu     ; do       echo "  trying $server for $key";       gpg --batch --keyserver "$server" --keyserver-options timeout=10 --recv-keys "$key" && found=yes && break;       gpg --batch --keyserver "$server" --keyserver-options timeout=10 --recv-keys "$key" && found=yes && break;     done;     test -z "$found" && echo >&2 "error: failed to fetch $key from several disparate servers -- network issues?" && exit 1;   done;   exit 0
-# Fri, 18 Oct 2019 04:40:45 GMT
+# Sat, 19 Oct 2019 07:50:37 GMT
 RUN set -e;   export GNUPGHOME="/tmp/gnupg_home" &&   pkgArch="$(dpkg --print-architecture | awk -F- '{ print $NF }')" &&   wget -O /usr/local/bin/gosu "https://github.com/tianon/gosu/releases/download/$GOSU_VERSION/gosu-$pkgArch" &&   wget -O /usr/local/bin/gosu.asc "https://github.com/tianon/gosu/releases/download/$GOSU_VERSION/gosu-$pkgArch.asc" &&   gpg --batch --verify /usr/local/bin/gosu.asc /usr/local/bin/gosu &&   rm /usr/local/bin/gosu.asc &&   chmod +x /usr/local/bin/gosu &&   gosu nobody true &&   wget -O /usr/local/bin/tini "https://github.com/krallin/tini/releases/download/${TINI_VERSION}/tini-$pkgArch" &&   wget -O /usr/local/bin/tini.asc "https://github.com/krallin/tini/releases/download/${TINI_VERSION}/tini-$pkgArch.asc" &&   gpg --batch --verify /usr/local/bin/tini.asc /usr/local/bin/tini;   rm /usr/local/bin/tini.asc &&   chmod +x /usr/local/bin/tini &&   tini --version &&   echo "downloading $SOLR_URL" &&   wget -nv "$SOLR_URL" -O "/opt/solr-$SOLR_VERSION.tgz" &&   echo "downloading $SOLR_URL.asc" &&   wget -nv "$SOLR_URL.asc" -O "/opt/solr-$SOLR_VERSION.tgz.asc" &&   echo "$SOLR_SHA256 */opt/solr-$SOLR_VERSION.tgz" | sha256sum -c - &&   (>&2 ls -l "/opt/solr-$SOLR_VERSION.tgz" "/opt/solr-$SOLR_VERSION.tgz.asc") &&   gpg --batch --verify "/opt/solr-$SOLR_VERSION.tgz.asc" "/opt/solr-$SOLR_VERSION.tgz" &&   tar -C /opt --extract --file "/opt/solr-$SOLR_VERSION.tgz" &&   mv "/opt/solr-$SOLR_VERSION" /opt/solr &&   rm "/opt/solr-$SOLR_VERSION.tgz"* &&   rm -Rf /opt/solr/docs/ &&   mkdir -p /opt/solr/server/solr/lib /docker-entrypoint-initdb.d /opt/docker-solr &&   mkdir -p /opt/solr/server/solr/mycores /opt/solr/server/logs /opt/mysolrhome &&   sed -i -e "s/\"\$(whoami)\" == \"root\"/\$(id -u) == 0/" /opt/solr/bin/solr &&   sed -i -e 's/lsof -PniTCP:/lsof -t -PniTCP:/' /opt/solr/bin/solr &&   if [ -f "/opt/solr/contrib/prometheus-exporter/bin/solr-exporter" ]; then chmod 0755 "/opt/solr/contrib/prometheus-exporter/bin/solr-exporter"; fi &&   chmod -R 0755 /opt/solr/server/scripts/cloud-scripts &&   chown -R "$SOLR_USER:$SOLR_GROUP" /opt/solr /docker-entrypoint-initdb.d /opt/docker-solr &&   chown -R "$SOLR_USER:$SOLR_GROUP" /opt/mysolrhome &&   { command -v gpgconf && gpgconf --kill all || :; } &&   rm -r "$GNUPGHOME"
-# Fri, 18 Oct 2019 04:40:46 GMT
+# Sat, 19 Oct 2019 07:50:38 GMT
 COPY --chown=solr:solrdir:a038244bf4fec30d0dea82744cb1fc715508d4b53322690c9848d442ff4e0dc6 in /opt/docker-solr/scripts 
-# Fri, 18 Oct 2019 04:40:46 GMT
+# Sat, 19 Oct 2019 07:50:38 GMT
 EXPOSE 8983
-# Fri, 18 Oct 2019 04:40:47 GMT
+# Sat, 19 Oct 2019 07:50:38 GMT
 WORKDIR /opt/solr
-# Fri, 18 Oct 2019 04:40:47 GMT
+# Sat, 19 Oct 2019 07:50:38 GMT
 USER solr
-# Fri, 18 Oct 2019 04:40:47 GMT
+# Sat, 19 Oct 2019 07:50:38 GMT
 ENTRYPOINT ["docker-entrypoint.sh"]
-# Fri, 18 Oct 2019 04:40:48 GMT
+# Sat, 19 Oct 2019 07:50:38 GMT
 CMD ["solr-foreground"]
 ```
 
@@ -1989,29 +1989,29 @@ CMD ["solr-foreground"]
 		Last Modified: Thu, 17 Oct 2019 08:38:05 GMT  
 		Size: 218.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:115f4a5a7971e04e4fed86d76c049ff73c54e467dc07423546790188502ce0bc`  
-		Last Modified: Thu, 17 Oct 2019 08:38:28 GMT  
-		Size: 195.7 MB (195718813 bytes)  
+	-	`sha256:0ce121b6a2ffae7f0fc0b7c20d3a0a46f62762dd7c1f14db73fa2ab9248bf1dc`  
+		Last Modified: Fri, 18 Oct 2019 23:45:21 GMT  
+		Size: 195.9 MB (195875192 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:8f99c82bd7831902ccf2bd474012a7be46a8161ba0124a4864ac469ffcad5bbe`  
-		Last Modified: Fri, 18 Oct 2019 04:43:52 GMT  
-		Size: 761.5 KB (761483 bytes)  
+	-	`sha256:73e1c53bd62b5d1b2ee52a9c04be2a0e5a5b245abc76a4d9365fd1ceba45f32c`  
+		Last Modified: Sat, 19 Oct 2019 07:53:23 GMT  
+		Size: 761.5 KB (761492 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:a029d43c8fd5e268d4b2c08fe19b522c68828c6e8918d89d0666b803531e71cb`  
-		Last Modified: Fri, 18 Oct 2019 04:47:20 GMT  
+	-	`sha256:488ad3356f8a11853395b75ac17aca49f118841b6eb613f28578e0e49281b635`  
+		Last Modified: Sat, 19 Oct 2019 07:56:23 GMT  
 		Size: 4.3 KB (4305 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:359bcef83af49a005ac907110f0a3af3dfa629d7f6ce690290f6691a73749260`  
-		Last Modified: Fri, 18 Oct 2019 04:47:20 GMT  
-		Size: 155.6 KB (155567 bytes)  
+	-	`sha256:19f602e37d9b7bcf0fa95ef5b6cc9ceb066bc8825ffd255da087a9e9cdf89ae6`  
+		Last Modified: Sat, 19 Oct 2019 07:56:23 GMT  
+		Size: 155.6 KB (155558 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:75914acd7cbd6965aa26e3b5ef51e6bacf44ee63150b915702fb3999c570301b`  
-		Last Modified: Fri, 18 Oct 2019 04:47:33 GMT  
-		Size: 169.5 MB (169456876 bytes)  
+	-	`sha256:4ae24a5e9a427e8d3268afc1e9a764648ffcf4a4c94ced122628944b8b74e72f`  
+		Last Modified: Sat, 19 Oct 2019 07:56:33 GMT  
+		Size: 169.5 MB (169456934 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:f54b0e83b9b980caa89508945b80b79d5dcb78b79b58a53595a4795ee44b7692`  
-		Last Modified: Fri, 18 Oct 2019 04:47:19 GMT  
-		Size: 5.2 KB (5187 bytes)  
+	-	`sha256:ec1d23447f02d02fafbdc743d14d050133f54bd6196bdfe83a757e8fdf2e8abf`  
+		Last Modified: Sat, 19 Oct 2019 07:56:23 GMT  
+		Size: 5.2 KB (5196 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `solr:7.5` - linux; arm64 variant v8
@@ -2150,7 +2150,7 @@ CMD ["solr-foreground"]
 ## `solr:7.5.0`
 
 ```console
-$ docker pull solr@sha256:03f9e5c851026de561ec06ae90ca42939dadc6c3a6f7812125371f6201ac5abc
+$ docker pull solr@sha256:a61365686a9981fca2832e881db0ed1f4c56f90f68e043bfb2b664814a9b024b
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -2161,14 +2161,14 @@ $ docker pull solr@sha256:03f9e5c851026de561ec06ae90ca42939dadc6c3a6f7812125371f
 ### `solr:7.5.0` - linux; amd64
 
 ```console
-$ docker pull solr@sha256:3454280383e137b8c1688e59bdb8ba0c131f78187f88b2beae979f2bbb8af5c9
+$ docker pull solr@sha256:34b575a23462513301f9ed0e59acc2a337ef6433d1aa4d282788d8f9438b67f6
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **481.6 MB (481621298 bytes)**  
+-	Total Size: **481.8 MB (481777744 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:561bdf71cbcc44ea7302e56a41b7cb3a0803dd164fff756f967c9921a36bbca4`
+-	Image ID: `sha256:ebacbe734004b33ff47ee5d062ef756ab93062fabd9583d35544b979247e80bd`
 -	Entrypoint: `["docker-entrypoint.sh"]`
 -	Default Command: `["solr-foreground"]`
 
@@ -2193,51 +2193,51 @@ ENV JAVA_HOME=/usr/local/openjdk-11
 ENV PATH=/usr/local/openjdk-11/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
 # Thu, 17 Oct 2019 08:29:25 GMT
 RUN { echo '#/bin/sh'; echo 'echo "$JAVA_HOME"'; } > /usr/local/bin/docker-java-home && chmod +x /usr/local/bin/docker-java-home && [ "$JAVA_HOME" = "$(docker-java-home)" ]
-# Thu, 17 Oct 2019 08:29:25 GMT
-ENV JAVA_VERSION=11.0.4
-# Thu, 17 Oct 2019 08:29:25 GMT
-ENV JAVA_BASE_URL=https://github.com/AdoptOpenJDK/openjdk11-upstream-binaries/releases/download/jdk-11.0.4%2B11/OpenJDK11U-jdk_
-# Thu, 17 Oct 2019 08:29:26 GMT
-ENV JAVA_URL_VERSION=11.0.4_11
-# Thu, 17 Oct 2019 08:29:39 GMT
+# Fri, 18 Oct 2019 23:39:21 GMT
+ENV JAVA_VERSION=11.0.5
+# Fri, 18 Oct 2019 23:39:21 GMT
+ENV JAVA_BASE_URL=https://github.com/AdoptOpenJDK/openjdk11-upstream-binaries/releases/download/jdk-11.0.5%2B10/OpenJDK11U-jdk_
+# Fri, 18 Oct 2019 23:39:21 GMT
+ENV JAVA_URL_VERSION=11.0.5_10
+# Fri, 18 Oct 2019 23:39:41 GMT
 RUN set -eux; 		dpkgArch="$(dpkg --print-architecture)"; 	case "$dpkgArch" in 		amd64) upstreamArch='x64' ;; 		arm64) upstreamArch='aarch64' ;; 		*) echo >&2 "error: unsupported architecture: $dpkgArch" ;; 	esac; 		wget -O openjdk.tgz.asc "${JAVA_BASE_URL}${upstreamArch}_linux_${JAVA_URL_VERSION}.tar.gz.sign"; 	wget -O openjdk.tgz "${JAVA_BASE_URL}${upstreamArch}_linux_${JAVA_URL_VERSION}.tar.gz" --progress=dot:giga; 		export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver ha.pool.sks-keyservers.net --keyserver-options no-self-sigs-only --recv-keys CA5F11C6CE22644D42C6AC4492EF8D39DC13168F; 	gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys EAC843EBD3EFDB98CC772FADA5CD6035332FA671; 	gpg --batch --list-sigs --keyid-format 0xLONG CA5F11C6CE22644D42C6AC4492EF8D39DC13168F 		| tee /dev/stderr 		| grep '0xA5CD6035332FA671' 		| grep 'Andrew Haley'; 	gpg --batch --verify openjdk.tgz.asc openjdk.tgz; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME"; 		mkdir -p "$JAVA_HOME"; 	tar --extract 		--file openjdk.tgz 		--directory "$JAVA_HOME" 		--strip-components 1 		--no-same-owner 	; 	rm openjdk.tgz*; 			{ 		echo '#!/usr/bin/env bash'; 		echo 'set -Eeuo pipefail'; 		echo 'if ! [ -d "$JAVA_HOME" ]; then echo >&2 "error: missing JAVA_HOME environment variable"; exit 1; fi'; 		echo 'cacertsFile=; for f in "$JAVA_HOME/lib/security/cacerts" "$JAVA_HOME/jre/lib/security/cacerts"; do if [ -e "$f" ]; then cacertsFile="$f"; break; fi; done'; 		echo 'if [ -z "$cacertsFile" ] || ! [ -f "$cacertsFile" ]; then echo >&2 "error: failed to find cacerts file in $JAVA_HOME"; exit 1; fi'; 		echo 'trust extract --overwrite --format=java-cacerts --filter=ca-anchors --purpose=server-auth "$cacertsFile"'; 	} > /etc/ca-certificates/update.d/docker-openjdk; 	chmod +x /etc/ca-certificates/update.d/docker-openjdk; 	/etc/ca-certificates/update.d/docker-openjdk; 		find "$JAVA_HOME/lib" -name '*.so' -exec dirname '{}' ';' | sort -u > /etc/ld.so.conf.d/docker-openjdk.conf; 	ldconfig; 		javac --version; 	java --version
-# Thu, 17 Oct 2019 08:29:39 GMT
+# Fri, 18 Oct 2019 23:39:42 GMT
 CMD ["jshell"]
-# Fri, 18 Oct 2019 04:35:50 GMT
+# Sat, 19 Oct 2019 07:46:10 GMT
 LABEL maintainer=Martijn Koster "mak-docker@greenhills.co.uk"
-# Fri, 18 Oct 2019 04:35:50 GMT
+# Sat, 19 Oct 2019 07:46:11 GMT
 LABEL repository=https://github.com/docker-solr/docker-solr
-# Fri, 18 Oct 2019 04:35:50 GMT
+# Sat, 19 Oct 2019 07:46:11 GMT
 ARG SOLR_DOWNLOAD_SERVER
-# Fri, 18 Oct 2019 04:35:55 GMT
+# Sat, 19 Oct 2019 07:46:15 GMT
 RUN apt-get update &&   apt-get -y install acl dirmngr gpg lsof procps wget &&   rm -rf /var/lib/apt/lists/*
-# Fri, 18 Oct 2019 04:40:21 GMT
+# Sat, 19 Oct 2019 07:50:20 GMT
 ENV SOLR_USER=solr SOLR_UID=8983 SOLR_GROUP=solr SOLR_GID=8983 SOLR_VERSION=7.5.0 SOLR_URL=https://archive.apache.org/dist/lucene/solr/7.5.0/solr-7.5.0.tgz SOLR_SHA256=eac2daffc376dd8057ee831fbfc4a1b8ee236b8ad94122e11d67fd2b242acebc SOLR_KEYS=052C5B48A480B9CEA9E218A5F98C13CFA5A135D8 PATH=/opt/solr/bin:/opt/docker-solr/scripts:/usr/local/openjdk-11/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Fri, 18 Oct 2019 04:40:21 GMT
+# Sat, 19 Oct 2019 07:50:20 GMT
 ENV GOSU_VERSION=1.11
-# Fri, 18 Oct 2019 04:40:21 GMT
+# Sat, 19 Oct 2019 07:50:20 GMT
 ENV GOSU_KEY=B42F6819007F00F88E364FD4036A9C25BF357DD4
-# Fri, 18 Oct 2019 04:40:21 GMT
+# Sat, 19 Oct 2019 07:50:20 GMT
 ENV TINI_VERSION=v0.18.0
-# Fri, 18 Oct 2019 04:40:22 GMT
+# Sat, 19 Oct 2019 07:50:20 GMT
 ENV TINI_KEY=595E85A6B1B4779EA4DAAEC70B588DFF0527A9B7
-# Fri, 18 Oct 2019 04:40:23 GMT
+# Sat, 19 Oct 2019 07:50:21 GMT
 RUN groupadd -r --gid "$SOLR_GID" "$SOLR_GROUP" &&   useradd -r --uid "$SOLR_UID" --gid "$SOLR_GID" "$SOLR_USER"
-# Fri, 18 Oct 2019 04:40:27 GMT
+# Sat, 19 Oct 2019 07:50:24 GMT
 RUN set -e;   export GNUPGHOME="/tmp/gnupg_home" &&   mkdir -p "$GNUPGHOME" &&   chmod 700 "$GNUPGHOME" &&   echo "disable-ipv6" >> "$GNUPGHOME/dirmngr.conf" &&   for key in $SOLR_KEYS $GOSU_KEY $TINI_KEY; do     found='';     for server in       ha.pool.sks-keyservers.net       hkp://keyserver.ubuntu.com:80       hkp://p80.pool.sks-keyservers.net:80       pgp.mit.edu     ; do       echo "  trying $server for $key";       gpg --batch --keyserver "$server" --keyserver-options timeout=10 --recv-keys "$key" && found=yes && break;       gpg --batch --keyserver "$server" --keyserver-options timeout=10 --recv-keys "$key" && found=yes && break;     done;     test -z "$found" && echo >&2 "error: failed to fetch $key from several disparate servers -- network issues?" && exit 1;   done;   exit 0
-# Fri, 18 Oct 2019 04:40:45 GMT
+# Sat, 19 Oct 2019 07:50:37 GMT
 RUN set -e;   export GNUPGHOME="/tmp/gnupg_home" &&   pkgArch="$(dpkg --print-architecture | awk -F- '{ print $NF }')" &&   wget -O /usr/local/bin/gosu "https://github.com/tianon/gosu/releases/download/$GOSU_VERSION/gosu-$pkgArch" &&   wget -O /usr/local/bin/gosu.asc "https://github.com/tianon/gosu/releases/download/$GOSU_VERSION/gosu-$pkgArch.asc" &&   gpg --batch --verify /usr/local/bin/gosu.asc /usr/local/bin/gosu &&   rm /usr/local/bin/gosu.asc &&   chmod +x /usr/local/bin/gosu &&   gosu nobody true &&   wget -O /usr/local/bin/tini "https://github.com/krallin/tini/releases/download/${TINI_VERSION}/tini-$pkgArch" &&   wget -O /usr/local/bin/tini.asc "https://github.com/krallin/tini/releases/download/${TINI_VERSION}/tini-$pkgArch.asc" &&   gpg --batch --verify /usr/local/bin/tini.asc /usr/local/bin/tini;   rm /usr/local/bin/tini.asc &&   chmod +x /usr/local/bin/tini &&   tini --version &&   echo "downloading $SOLR_URL" &&   wget -nv "$SOLR_URL" -O "/opt/solr-$SOLR_VERSION.tgz" &&   echo "downloading $SOLR_URL.asc" &&   wget -nv "$SOLR_URL.asc" -O "/opt/solr-$SOLR_VERSION.tgz.asc" &&   echo "$SOLR_SHA256 */opt/solr-$SOLR_VERSION.tgz" | sha256sum -c - &&   (>&2 ls -l "/opt/solr-$SOLR_VERSION.tgz" "/opt/solr-$SOLR_VERSION.tgz.asc") &&   gpg --batch --verify "/opt/solr-$SOLR_VERSION.tgz.asc" "/opt/solr-$SOLR_VERSION.tgz" &&   tar -C /opt --extract --file "/opt/solr-$SOLR_VERSION.tgz" &&   mv "/opt/solr-$SOLR_VERSION" /opt/solr &&   rm "/opt/solr-$SOLR_VERSION.tgz"* &&   rm -Rf /opt/solr/docs/ &&   mkdir -p /opt/solr/server/solr/lib /docker-entrypoint-initdb.d /opt/docker-solr &&   mkdir -p /opt/solr/server/solr/mycores /opt/solr/server/logs /opt/mysolrhome &&   sed -i -e "s/\"\$(whoami)\" == \"root\"/\$(id -u) == 0/" /opt/solr/bin/solr &&   sed -i -e 's/lsof -PniTCP:/lsof -t -PniTCP:/' /opt/solr/bin/solr &&   if [ -f "/opt/solr/contrib/prometheus-exporter/bin/solr-exporter" ]; then chmod 0755 "/opt/solr/contrib/prometheus-exporter/bin/solr-exporter"; fi &&   chmod -R 0755 /opt/solr/server/scripts/cloud-scripts &&   chown -R "$SOLR_USER:$SOLR_GROUP" /opt/solr /docker-entrypoint-initdb.d /opt/docker-solr &&   chown -R "$SOLR_USER:$SOLR_GROUP" /opt/mysolrhome &&   { command -v gpgconf && gpgconf --kill all || :; } &&   rm -r "$GNUPGHOME"
-# Fri, 18 Oct 2019 04:40:46 GMT
+# Sat, 19 Oct 2019 07:50:38 GMT
 COPY --chown=solr:solrdir:a038244bf4fec30d0dea82744cb1fc715508d4b53322690c9848d442ff4e0dc6 in /opt/docker-solr/scripts 
-# Fri, 18 Oct 2019 04:40:46 GMT
+# Sat, 19 Oct 2019 07:50:38 GMT
 EXPOSE 8983
-# Fri, 18 Oct 2019 04:40:47 GMT
+# Sat, 19 Oct 2019 07:50:38 GMT
 WORKDIR /opt/solr
-# Fri, 18 Oct 2019 04:40:47 GMT
+# Sat, 19 Oct 2019 07:50:38 GMT
 USER solr
-# Fri, 18 Oct 2019 04:40:47 GMT
+# Sat, 19 Oct 2019 07:50:38 GMT
 ENTRYPOINT ["docker-entrypoint.sh"]
-# Fri, 18 Oct 2019 04:40:48 GMT
+# Sat, 19 Oct 2019 07:50:38 GMT
 CMD ["solr-foreground"]
 ```
 
@@ -2266,29 +2266,29 @@ CMD ["solr-foreground"]
 		Last Modified: Thu, 17 Oct 2019 08:38:05 GMT  
 		Size: 218.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:115f4a5a7971e04e4fed86d76c049ff73c54e467dc07423546790188502ce0bc`  
-		Last Modified: Thu, 17 Oct 2019 08:38:28 GMT  
-		Size: 195.7 MB (195718813 bytes)  
+	-	`sha256:0ce121b6a2ffae7f0fc0b7c20d3a0a46f62762dd7c1f14db73fa2ab9248bf1dc`  
+		Last Modified: Fri, 18 Oct 2019 23:45:21 GMT  
+		Size: 195.9 MB (195875192 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:8f99c82bd7831902ccf2bd474012a7be46a8161ba0124a4864ac469ffcad5bbe`  
-		Last Modified: Fri, 18 Oct 2019 04:43:52 GMT  
-		Size: 761.5 KB (761483 bytes)  
+	-	`sha256:73e1c53bd62b5d1b2ee52a9c04be2a0e5a5b245abc76a4d9365fd1ceba45f32c`  
+		Last Modified: Sat, 19 Oct 2019 07:53:23 GMT  
+		Size: 761.5 KB (761492 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:a029d43c8fd5e268d4b2c08fe19b522c68828c6e8918d89d0666b803531e71cb`  
-		Last Modified: Fri, 18 Oct 2019 04:47:20 GMT  
+	-	`sha256:488ad3356f8a11853395b75ac17aca49f118841b6eb613f28578e0e49281b635`  
+		Last Modified: Sat, 19 Oct 2019 07:56:23 GMT  
 		Size: 4.3 KB (4305 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:359bcef83af49a005ac907110f0a3af3dfa629d7f6ce690290f6691a73749260`  
-		Last Modified: Fri, 18 Oct 2019 04:47:20 GMT  
-		Size: 155.6 KB (155567 bytes)  
+	-	`sha256:19f602e37d9b7bcf0fa95ef5b6cc9ceb066bc8825ffd255da087a9e9cdf89ae6`  
+		Last Modified: Sat, 19 Oct 2019 07:56:23 GMT  
+		Size: 155.6 KB (155558 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:75914acd7cbd6965aa26e3b5ef51e6bacf44ee63150b915702fb3999c570301b`  
-		Last Modified: Fri, 18 Oct 2019 04:47:33 GMT  
-		Size: 169.5 MB (169456876 bytes)  
+	-	`sha256:4ae24a5e9a427e8d3268afc1e9a764648ffcf4a4c94ced122628944b8b74e72f`  
+		Last Modified: Sat, 19 Oct 2019 07:56:33 GMT  
+		Size: 169.5 MB (169456934 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:f54b0e83b9b980caa89508945b80b79d5dcb78b79b58a53595a4795ee44b7692`  
-		Last Modified: Fri, 18 Oct 2019 04:47:19 GMT  
-		Size: 5.2 KB (5187 bytes)  
+	-	`sha256:ec1d23447f02d02fafbdc743d14d050133f54bd6196bdfe83a757e8fdf2e8abf`  
+		Last Modified: Sat, 19 Oct 2019 07:56:23 GMT  
+		Size: 5.2 KB (5196 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `solr:7.5.0` - linux; arm64 variant v8
@@ -2427,7 +2427,7 @@ CMD ["solr-foreground"]
 ## `solr:7.5.0-slim`
 
 ```console
-$ docker pull solr@sha256:145b5c2624f278ff8db9c28db8706a807416b9167c9ece3261c13a14cb6a21dd
+$ docker pull solr@sha256:1cefcc16b88103d47a8562ca7cdbd4224c3bad1d7e2df92250d651769a9f0de9
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -2438,14 +2438,14 @@ $ docker pull solr@sha256:145b5c2624f278ff8db9c28db8706a807416b9167c9ece3261c13a
 ### `solr:7.5.0-slim` - linux; amd64
 
 ```console
-$ docker pull solr@sha256:1beadac154cdd4ec5690d63eac7779192b64347e610829612c03c78b594d0b77
+$ docker pull solr@sha256:3a60df6a387ed1a77455ae2a5cbaa48084a4a7bbe3f8c15eeb556ea49dd37a7c
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **401.3 MB (401276301 bytes)**  
+-	Total Size: **401.4 MB (401435500 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:85b1f0cb10188d30d5127c5e20163f1f6a3c7090593b2b65ebb35e6723932f11`
+-	Image ID: `sha256:d84e30bd38093bca821c2960c2160de8fd9b357b1be068261ead4fa14b095136`
 -	Entrypoint: `["docker-entrypoint.sh"]`
 -	Default Command: `["solr-foreground"]`
 
@@ -2464,51 +2464,51 @@ ENV JAVA_HOME=/usr/local/openjdk-11
 ENV PATH=/usr/local/openjdk-11/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
 # Thu, 17 Oct 2019 08:29:46 GMT
 RUN { echo '#/bin/sh'; echo 'echo "$JAVA_HOME"'; } > /usr/local/bin/docker-java-home && chmod +x /usr/local/bin/docker-java-home && [ "$JAVA_HOME" = "$(docker-java-home)" ]
-# Thu, 17 Oct 2019 08:29:46 GMT
-ENV JAVA_VERSION=11.0.4
-# Thu, 17 Oct 2019 08:29:46 GMT
-ENV JAVA_BASE_URL=https://github.com/AdoptOpenJDK/openjdk11-upstream-binaries/releases/download/jdk-11.0.4%2B11/OpenJDK11U-jdk_
-# Thu, 17 Oct 2019 08:29:46 GMT
-ENV JAVA_URL_VERSION=11.0.4_11
-# Thu, 17 Oct 2019 08:30:07 GMT
+# Fri, 18 Oct 2019 23:39:50 GMT
+ENV JAVA_VERSION=11.0.5
+# Fri, 18 Oct 2019 23:39:50 GMT
+ENV JAVA_BASE_URL=https://github.com/AdoptOpenJDK/openjdk11-upstream-binaries/releases/download/jdk-11.0.5%2B10/OpenJDK11U-jdk_
+# Fri, 18 Oct 2019 23:39:50 GMT
+ENV JAVA_URL_VERSION=11.0.5_10
+# Fri, 18 Oct 2019 23:40:16 GMT
 RUN set -eux; 		dpkgArch="$(dpkg --print-architecture)"; 	case "$dpkgArch" in 		amd64) upstreamArch='x64' ;; 		arm64) upstreamArch='aarch64' ;; 		*) echo >&2 "error: unsupported architecture: $dpkgArch" ;; 	esac; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		dirmngr 		gnupg 		wget 	; 	rm -rf /var/lib/apt/lists/*; 		wget -O openjdk.tgz.asc "${JAVA_BASE_URL}${upstreamArch}_linux_${JAVA_URL_VERSION}.tar.gz.sign"; 	wget -O openjdk.tgz "${JAVA_BASE_URL}${upstreamArch}_linux_${JAVA_URL_VERSION}.tar.gz" --progress=dot:giga; 		export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver ha.pool.sks-keyservers.net --keyserver-options no-self-sigs-only --recv-keys CA5F11C6CE22644D42C6AC4492EF8D39DC13168F; 	gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys EAC843EBD3EFDB98CC772FADA5CD6035332FA671; 	gpg --batch --list-sigs --keyid-format 0xLONG CA5F11C6CE22644D42C6AC4492EF8D39DC13168F 		| tee /dev/stderr 		| grep '0xA5CD6035332FA671' 		| grep 'Andrew Haley'; 	gpg --batch --verify openjdk.tgz.asc openjdk.tgz; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME"; 		mkdir -p "$JAVA_HOME"; 	tar --extract 		--file openjdk.tgz 		--directory "$JAVA_HOME" 		--strip-components 1 		--no-same-owner 	; 	rm openjdk.tgz*; 			apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark > /dev/null; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 		{ 		echo '#!/usr/bin/env bash'; 		echo 'set -Eeuo pipefail'; 		echo 'if ! [ -d "$JAVA_HOME" ]; then echo >&2 "error: missing JAVA_HOME environment variable"; exit 1; fi'; 		echo 'cacertsFile=; for f in "$JAVA_HOME/lib/security/cacerts" "$JAVA_HOME/jre/lib/security/cacerts"; do if [ -e "$f" ]; then cacertsFile="$f"; break; fi; done'; 		echo 'if [ -z "$cacertsFile" ] || ! [ -f "$cacertsFile" ]; then echo >&2 "error: failed to find cacerts file in $JAVA_HOME"; exit 1; fi'; 		echo 'trust extract --overwrite --format=java-cacerts --filter=ca-anchors --purpose=server-auth "$cacertsFile"'; 	} > /etc/ca-certificates/update.d/docker-openjdk; 	chmod +x /etc/ca-certificates/update.d/docker-openjdk; 	/etc/ca-certificates/update.d/docker-openjdk; 		find "$JAVA_HOME/lib" -name '*.so' -exec dirname '{}' ';' | sort -u > /etc/ld.so.conf.d/docker-openjdk.conf; 	ldconfig; 		javac --version; 	java --version
-# Thu, 17 Oct 2019 08:30:07 GMT
+# Fri, 18 Oct 2019 23:40:17 GMT
 CMD ["jshell"]
-# Fri, 18 Oct 2019 04:36:23 GMT
+# Sat, 19 Oct 2019 07:46:43 GMT
 LABEL maintainer=Martijn Koster "mak-docker@greenhills.co.uk"
-# Fri, 18 Oct 2019 04:36:23 GMT
+# Sat, 19 Oct 2019 07:46:43 GMT
 LABEL repository=https://github.com/docker-solr/docker-solr
-# Fri, 18 Oct 2019 04:36:23 GMT
+# Sat, 19 Oct 2019 07:46:44 GMT
 ARG SOLR_DOWNLOAD_SERVER
-# Fri, 18 Oct 2019 04:36:30 GMT
+# Sat, 19 Oct 2019 07:46:51 GMT
 RUN apt-get update &&   apt-get -y install acl dirmngr gpg lsof procps wget &&   rm -rf /var/lib/apt/lists/*
-# Fri, 18 Oct 2019 04:40:54 GMT
+# Sat, 19 Oct 2019 07:50:44 GMT
 ENV SOLR_USER=solr SOLR_UID=8983 SOLR_GROUP=solr SOLR_GID=8983 SOLR_VERSION=7.5.0 SOLR_URL=https://archive.apache.org/dist/lucene/solr/7.5.0/solr-7.5.0.tgz SOLR_SHA256=eac2daffc376dd8057ee831fbfc4a1b8ee236b8ad94122e11d67fd2b242acebc SOLR_KEYS=052C5B48A480B9CEA9E218A5F98C13CFA5A135D8 PATH=/opt/solr/bin:/opt/docker-solr/scripts:/usr/local/openjdk-11/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Fri, 18 Oct 2019 04:40:54 GMT
+# Sat, 19 Oct 2019 07:50:44 GMT
 ENV GOSU_VERSION=1.11
-# Fri, 18 Oct 2019 04:40:54 GMT
+# Sat, 19 Oct 2019 07:50:44 GMT
 ENV GOSU_KEY=B42F6819007F00F88E364FD4036A9C25BF357DD4
-# Fri, 18 Oct 2019 04:40:54 GMT
+# Sat, 19 Oct 2019 07:50:44 GMT
 ENV TINI_VERSION=v0.18.0
-# Fri, 18 Oct 2019 04:40:54 GMT
+# Sat, 19 Oct 2019 07:50:44 GMT
 ENV TINI_KEY=595E85A6B1B4779EA4DAAEC70B588DFF0527A9B7
-# Fri, 18 Oct 2019 04:40:55 GMT
+# Sat, 19 Oct 2019 07:50:45 GMT
 RUN groupadd -r --gid "$SOLR_GID" "$SOLR_GROUP" &&   useradd -r --uid "$SOLR_UID" --gid "$SOLR_GID" "$SOLR_USER"
-# Fri, 18 Oct 2019 04:40:57 GMT
+# Sat, 19 Oct 2019 07:50:47 GMT
 RUN set -e;   export GNUPGHOME="/tmp/gnupg_home" &&   mkdir -p "$GNUPGHOME" &&   chmod 700 "$GNUPGHOME" &&   echo "disable-ipv6" >> "$GNUPGHOME/dirmngr.conf" &&   for key in $SOLR_KEYS $GOSU_KEY $TINI_KEY; do     found='';     for server in       ha.pool.sks-keyservers.net       hkp://keyserver.ubuntu.com:80       hkp://p80.pool.sks-keyservers.net:80       pgp.mit.edu     ; do       echo "  trying $server for $key";       gpg --batch --keyserver "$server" --keyserver-options timeout=10 --recv-keys "$key" && found=yes && break;       gpg --batch --keyserver "$server" --keyserver-options timeout=10 --recv-keys "$key" && found=yes && break;     done;     test -z "$found" && echo >&2 "error: failed to fetch $key from several disparate servers -- network issues?" && exit 1;   done;   exit 0
-# Fri, 18 Oct 2019 04:41:15 GMT
+# Sat, 19 Oct 2019 07:51:00 GMT
 RUN set -e;   export GNUPGHOME="/tmp/gnupg_home" &&   pkgArch="$(dpkg --print-architecture | awk -F- '{ print $NF }')" &&   wget -O /usr/local/bin/gosu "https://github.com/tianon/gosu/releases/download/$GOSU_VERSION/gosu-$pkgArch" &&   wget -O /usr/local/bin/gosu.asc "https://github.com/tianon/gosu/releases/download/$GOSU_VERSION/gosu-$pkgArch.asc" &&   gpg --batch --verify /usr/local/bin/gosu.asc /usr/local/bin/gosu &&   rm /usr/local/bin/gosu.asc &&   chmod +x /usr/local/bin/gosu &&   gosu nobody true &&   wget -O /usr/local/bin/tini "https://github.com/krallin/tini/releases/download/${TINI_VERSION}/tini-$pkgArch" &&   wget -O /usr/local/bin/tini.asc "https://github.com/krallin/tini/releases/download/${TINI_VERSION}/tini-$pkgArch.asc" &&   gpg --batch --verify /usr/local/bin/tini.asc /usr/local/bin/tini;   rm /usr/local/bin/tini.asc &&   chmod +x /usr/local/bin/tini &&   tini --version &&   echo "downloading $SOLR_URL" &&   wget -nv "$SOLR_URL" -O "/opt/solr-$SOLR_VERSION.tgz" &&   echo "downloading $SOLR_URL.asc" &&   wget -nv "$SOLR_URL.asc" -O "/opt/solr-$SOLR_VERSION.tgz.asc" &&   echo "$SOLR_SHA256 */opt/solr-$SOLR_VERSION.tgz" | sha256sum -c - &&   (>&2 ls -l "/opt/solr-$SOLR_VERSION.tgz" "/opt/solr-$SOLR_VERSION.tgz.asc") &&   gpg --batch --verify "/opt/solr-$SOLR_VERSION.tgz.asc" "/opt/solr-$SOLR_VERSION.tgz" &&   tar -C /opt --extract --file "/opt/solr-$SOLR_VERSION.tgz" &&   mv "/opt/solr-$SOLR_VERSION" /opt/solr &&   rm "/opt/solr-$SOLR_VERSION.tgz"* &&   rm -Rf /opt/solr/docs/ &&   mkdir -p /opt/solr/server/solr/lib /docker-entrypoint-initdb.d /opt/docker-solr &&   mkdir -p /opt/solr/server/solr/mycores /opt/solr/server/logs /opt/mysolrhome &&   sed -i -e "s/\"\$(whoami)\" == \"root\"/\$(id -u) == 0/" /opt/solr/bin/solr &&   sed -i -e 's/lsof -PniTCP:/lsof -t -PniTCP:/' /opt/solr/bin/solr &&   if [ -f "/opt/solr/contrib/prometheus-exporter/bin/solr-exporter" ]; then chmod 0755 "/opt/solr/contrib/prometheus-exporter/bin/solr-exporter"; fi &&   chmod -R 0755 /opt/solr/server/scripts/cloud-scripts &&   chown -R "$SOLR_USER:$SOLR_GROUP" /opt/solr /docker-entrypoint-initdb.d /opt/docker-solr &&   chown -R "$SOLR_USER:$SOLR_GROUP" /opt/mysolrhome &&   { command -v gpgconf && gpgconf --kill all || :; } &&   rm -r "$GNUPGHOME"
-# Fri, 18 Oct 2019 04:41:15 GMT
+# Sat, 19 Oct 2019 07:51:00 GMT
 COPY --chown=solr:solrdir:a038244bf4fec30d0dea82744cb1fc715508d4b53322690c9848d442ff4e0dc6 in /opt/docker-solr/scripts 
-# Fri, 18 Oct 2019 04:41:15 GMT
+# Sat, 19 Oct 2019 07:51:00 GMT
 EXPOSE 8983
-# Fri, 18 Oct 2019 04:41:16 GMT
+# Sat, 19 Oct 2019 07:51:00 GMT
 WORKDIR /opt/solr
-# Fri, 18 Oct 2019 04:41:16 GMT
+# Sat, 19 Oct 2019 07:51:00 GMT
 USER solr
-# Fri, 18 Oct 2019 04:41:16 GMT
+# Sat, 19 Oct 2019 07:51:01 GMT
 ENTRYPOINT ["docker-entrypoint.sh"]
-# Fri, 18 Oct 2019 04:41:16 GMT
+# Sat, 19 Oct 2019 07:51:01 GMT
 CMD ["solr-foreground"]
 ```
 
@@ -2525,29 +2525,29 @@ CMD ["solr-foreground"]
 		Last Modified: Thu, 17 Oct 2019 08:38:38 GMT  
 		Size: 210.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:208dbdb57f64b9643f7760ea628f0e2a21deff0af0b2eb33a0e66f6e3165fbfc`  
-		Last Modified: Thu, 17 Oct 2019 08:39:01 GMT  
-		Size: 196.0 MB (195975541 bytes)  
+	-	`sha256:ebc78a5f677c03a8f4aa611b558b55c4e42cf3113517ec2400695512c176d5ea`  
+		Last Modified: Fri, 18 Oct 2019 23:45:47 GMT  
+		Size: 196.1 MB (196134537 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:0b6e87939381d5f5bf58ebbda7764e5988a7f85de329392991840d7de2392b46`  
-		Last Modified: Fri, 18 Oct 2019 04:44:14 GMT  
-		Size: 5.5 MB (5452429 bytes)  
+	-	`sha256:5422c55f6c915b61b16c325a8d6c50b854cfa1a68d01cdf3257e0544867074c1`  
+		Last Modified: Sat, 19 Oct 2019 07:53:47 GMT  
+		Size: 5.5 MB (5452476 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:a0959a90292ce19312df19c8581cccf5ad5074b4ad5c8ff0715b96ef4b9f447d`  
-		Last Modified: Fri, 18 Oct 2019 04:47:39 GMT  
-		Size: 4.3 KB (4283 bytes)  
+	-	`sha256:7534db3b642f9df1e54da675f2cc4f6c27d6241a98c7a1ee684459626a2c4849`  
+		Last Modified: Sat, 19 Oct 2019 07:56:37 GMT  
+		Size: 4.3 KB (4285 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:ef7a3bcb5807060329bedcdd7c6b81833d4bcd66eae402670a5843612fb6054c`  
-		Last Modified: Fri, 18 Oct 2019 04:47:39 GMT  
-		Size: 24.9 KB (24910 bytes)  
+	-	`sha256:a1f3ad6835d42843441e196a8e212fe1ffc986ca75e8b3ce4707ad6b31be17d5`  
+		Last Modified: Sat, 19 Oct 2019 07:56:37 GMT  
+		Size: 24.9 KB (24920 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:a76231c2ac3882d295a810059cc683172a4a80940091f7c22bef5208af4e1bd1`  
-		Last Modified: Fri, 18 Oct 2019 04:47:54 GMT  
-		Size: 169.5 MB (169457192 bytes)  
+	-	`sha256:245b6df482488c39b16f5ec5b97fb7185c147d64784a0cd5c67dc5738463234a`  
+		Last Modified: Sat, 19 Oct 2019 07:56:47 GMT  
+		Size: 169.5 MB (169457335 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:139f4efcceb1dee5e7ca6c3c22e26e2b63bf1f1ace55adc6330f2b3cf7c024b2`  
-		Last Modified: Fri, 18 Oct 2019 04:47:38 GMT  
-		Size: 5.2 KB (5192 bytes)  
+	-	`sha256:cac70e0dfde1c07b278257c94b24eec10995c4494cb759e0f00a327506871fc6`  
+		Last Modified: Sat, 19 Oct 2019 07:56:37 GMT  
+		Size: 5.2 KB (5193 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `solr:7.5.0-slim` - linux; arm64 variant v8
@@ -2668,7 +2668,7 @@ CMD ["solr-foreground"]
 ## `solr:7.5-slim`
 
 ```console
-$ docker pull solr@sha256:145b5c2624f278ff8db9c28db8706a807416b9167c9ece3261c13a14cb6a21dd
+$ docker pull solr@sha256:1cefcc16b88103d47a8562ca7cdbd4224c3bad1d7e2df92250d651769a9f0de9
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -2679,14 +2679,14 @@ $ docker pull solr@sha256:145b5c2624f278ff8db9c28db8706a807416b9167c9ece3261c13a
 ### `solr:7.5-slim` - linux; amd64
 
 ```console
-$ docker pull solr@sha256:1beadac154cdd4ec5690d63eac7779192b64347e610829612c03c78b594d0b77
+$ docker pull solr@sha256:3a60df6a387ed1a77455ae2a5cbaa48084a4a7bbe3f8c15eeb556ea49dd37a7c
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **401.3 MB (401276301 bytes)**  
+-	Total Size: **401.4 MB (401435500 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:85b1f0cb10188d30d5127c5e20163f1f6a3c7090593b2b65ebb35e6723932f11`
+-	Image ID: `sha256:d84e30bd38093bca821c2960c2160de8fd9b357b1be068261ead4fa14b095136`
 -	Entrypoint: `["docker-entrypoint.sh"]`
 -	Default Command: `["solr-foreground"]`
 
@@ -2705,51 +2705,51 @@ ENV JAVA_HOME=/usr/local/openjdk-11
 ENV PATH=/usr/local/openjdk-11/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
 # Thu, 17 Oct 2019 08:29:46 GMT
 RUN { echo '#/bin/sh'; echo 'echo "$JAVA_HOME"'; } > /usr/local/bin/docker-java-home && chmod +x /usr/local/bin/docker-java-home && [ "$JAVA_HOME" = "$(docker-java-home)" ]
-# Thu, 17 Oct 2019 08:29:46 GMT
-ENV JAVA_VERSION=11.0.4
-# Thu, 17 Oct 2019 08:29:46 GMT
-ENV JAVA_BASE_URL=https://github.com/AdoptOpenJDK/openjdk11-upstream-binaries/releases/download/jdk-11.0.4%2B11/OpenJDK11U-jdk_
-# Thu, 17 Oct 2019 08:29:46 GMT
-ENV JAVA_URL_VERSION=11.0.4_11
-# Thu, 17 Oct 2019 08:30:07 GMT
+# Fri, 18 Oct 2019 23:39:50 GMT
+ENV JAVA_VERSION=11.0.5
+# Fri, 18 Oct 2019 23:39:50 GMT
+ENV JAVA_BASE_URL=https://github.com/AdoptOpenJDK/openjdk11-upstream-binaries/releases/download/jdk-11.0.5%2B10/OpenJDK11U-jdk_
+# Fri, 18 Oct 2019 23:39:50 GMT
+ENV JAVA_URL_VERSION=11.0.5_10
+# Fri, 18 Oct 2019 23:40:16 GMT
 RUN set -eux; 		dpkgArch="$(dpkg --print-architecture)"; 	case "$dpkgArch" in 		amd64) upstreamArch='x64' ;; 		arm64) upstreamArch='aarch64' ;; 		*) echo >&2 "error: unsupported architecture: $dpkgArch" ;; 	esac; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		dirmngr 		gnupg 		wget 	; 	rm -rf /var/lib/apt/lists/*; 		wget -O openjdk.tgz.asc "${JAVA_BASE_URL}${upstreamArch}_linux_${JAVA_URL_VERSION}.tar.gz.sign"; 	wget -O openjdk.tgz "${JAVA_BASE_URL}${upstreamArch}_linux_${JAVA_URL_VERSION}.tar.gz" --progress=dot:giga; 		export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver ha.pool.sks-keyservers.net --keyserver-options no-self-sigs-only --recv-keys CA5F11C6CE22644D42C6AC4492EF8D39DC13168F; 	gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys EAC843EBD3EFDB98CC772FADA5CD6035332FA671; 	gpg --batch --list-sigs --keyid-format 0xLONG CA5F11C6CE22644D42C6AC4492EF8D39DC13168F 		| tee /dev/stderr 		| grep '0xA5CD6035332FA671' 		| grep 'Andrew Haley'; 	gpg --batch --verify openjdk.tgz.asc openjdk.tgz; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME"; 		mkdir -p "$JAVA_HOME"; 	tar --extract 		--file openjdk.tgz 		--directory "$JAVA_HOME" 		--strip-components 1 		--no-same-owner 	; 	rm openjdk.tgz*; 			apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark > /dev/null; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 		{ 		echo '#!/usr/bin/env bash'; 		echo 'set -Eeuo pipefail'; 		echo 'if ! [ -d "$JAVA_HOME" ]; then echo >&2 "error: missing JAVA_HOME environment variable"; exit 1; fi'; 		echo 'cacertsFile=; for f in "$JAVA_HOME/lib/security/cacerts" "$JAVA_HOME/jre/lib/security/cacerts"; do if [ -e "$f" ]; then cacertsFile="$f"; break; fi; done'; 		echo 'if [ -z "$cacertsFile" ] || ! [ -f "$cacertsFile" ]; then echo >&2 "error: failed to find cacerts file in $JAVA_HOME"; exit 1; fi'; 		echo 'trust extract --overwrite --format=java-cacerts --filter=ca-anchors --purpose=server-auth "$cacertsFile"'; 	} > /etc/ca-certificates/update.d/docker-openjdk; 	chmod +x /etc/ca-certificates/update.d/docker-openjdk; 	/etc/ca-certificates/update.d/docker-openjdk; 		find "$JAVA_HOME/lib" -name '*.so' -exec dirname '{}' ';' | sort -u > /etc/ld.so.conf.d/docker-openjdk.conf; 	ldconfig; 		javac --version; 	java --version
-# Thu, 17 Oct 2019 08:30:07 GMT
+# Fri, 18 Oct 2019 23:40:17 GMT
 CMD ["jshell"]
-# Fri, 18 Oct 2019 04:36:23 GMT
+# Sat, 19 Oct 2019 07:46:43 GMT
 LABEL maintainer=Martijn Koster "mak-docker@greenhills.co.uk"
-# Fri, 18 Oct 2019 04:36:23 GMT
+# Sat, 19 Oct 2019 07:46:43 GMT
 LABEL repository=https://github.com/docker-solr/docker-solr
-# Fri, 18 Oct 2019 04:36:23 GMT
+# Sat, 19 Oct 2019 07:46:44 GMT
 ARG SOLR_DOWNLOAD_SERVER
-# Fri, 18 Oct 2019 04:36:30 GMT
+# Sat, 19 Oct 2019 07:46:51 GMT
 RUN apt-get update &&   apt-get -y install acl dirmngr gpg lsof procps wget &&   rm -rf /var/lib/apt/lists/*
-# Fri, 18 Oct 2019 04:40:54 GMT
+# Sat, 19 Oct 2019 07:50:44 GMT
 ENV SOLR_USER=solr SOLR_UID=8983 SOLR_GROUP=solr SOLR_GID=8983 SOLR_VERSION=7.5.0 SOLR_URL=https://archive.apache.org/dist/lucene/solr/7.5.0/solr-7.5.0.tgz SOLR_SHA256=eac2daffc376dd8057ee831fbfc4a1b8ee236b8ad94122e11d67fd2b242acebc SOLR_KEYS=052C5B48A480B9CEA9E218A5F98C13CFA5A135D8 PATH=/opt/solr/bin:/opt/docker-solr/scripts:/usr/local/openjdk-11/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Fri, 18 Oct 2019 04:40:54 GMT
+# Sat, 19 Oct 2019 07:50:44 GMT
 ENV GOSU_VERSION=1.11
-# Fri, 18 Oct 2019 04:40:54 GMT
+# Sat, 19 Oct 2019 07:50:44 GMT
 ENV GOSU_KEY=B42F6819007F00F88E364FD4036A9C25BF357DD4
-# Fri, 18 Oct 2019 04:40:54 GMT
+# Sat, 19 Oct 2019 07:50:44 GMT
 ENV TINI_VERSION=v0.18.0
-# Fri, 18 Oct 2019 04:40:54 GMT
+# Sat, 19 Oct 2019 07:50:44 GMT
 ENV TINI_KEY=595E85A6B1B4779EA4DAAEC70B588DFF0527A9B7
-# Fri, 18 Oct 2019 04:40:55 GMT
+# Sat, 19 Oct 2019 07:50:45 GMT
 RUN groupadd -r --gid "$SOLR_GID" "$SOLR_GROUP" &&   useradd -r --uid "$SOLR_UID" --gid "$SOLR_GID" "$SOLR_USER"
-# Fri, 18 Oct 2019 04:40:57 GMT
+# Sat, 19 Oct 2019 07:50:47 GMT
 RUN set -e;   export GNUPGHOME="/tmp/gnupg_home" &&   mkdir -p "$GNUPGHOME" &&   chmod 700 "$GNUPGHOME" &&   echo "disable-ipv6" >> "$GNUPGHOME/dirmngr.conf" &&   for key in $SOLR_KEYS $GOSU_KEY $TINI_KEY; do     found='';     for server in       ha.pool.sks-keyservers.net       hkp://keyserver.ubuntu.com:80       hkp://p80.pool.sks-keyservers.net:80       pgp.mit.edu     ; do       echo "  trying $server for $key";       gpg --batch --keyserver "$server" --keyserver-options timeout=10 --recv-keys "$key" && found=yes && break;       gpg --batch --keyserver "$server" --keyserver-options timeout=10 --recv-keys "$key" && found=yes && break;     done;     test -z "$found" && echo >&2 "error: failed to fetch $key from several disparate servers -- network issues?" && exit 1;   done;   exit 0
-# Fri, 18 Oct 2019 04:41:15 GMT
+# Sat, 19 Oct 2019 07:51:00 GMT
 RUN set -e;   export GNUPGHOME="/tmp/gnupg_home" &&   pkgArch="$(dpkg --print-architecture | awk -F- '{ print $NF }')" &&   wget -O /usr/local/bin/gosu "https://github.com/tianon/gosu/releases/download/$GOSU_VERSION/gosu-$pkgArch" &&   wget -O /usr/local/bin/gosu.asc "https://github.com/tianon/gosu/releases/download/$GOSU_VERSION/gosu-$pkgArch.asc" &&   gpg --batch --verify /usr/local/bin/gosu.asc /usr/local/bin/gosu &&   rm /usr/local/bin/gosu.asc &&   chmod +x /usr/local/bin/gosu &&   gosu nobody true &&   wget -O /usr/local/bin/tini "https://github.com/krallin/tini/releases/download/${TINI_VERSION}/tini-$pkgArch" &&   wget -O /usr/local/bin/tini.asc "https://github.com/krallin/tini/releases/download/${TINI_VERSION}/tini-$pkgArch.asc" &&   gpg --batch --verify /usr/local/bin/tini.asc /usr/local/bin/tini;   rm /usr/local/bin/tini.asc &&   chmod +x /usr/local/bin/tini &&   tini --version &&   echo "downloading $SOLR_URL" &&   wget -nv "$SOLR_URL" -O "/opt/solr-$SOLR_VERSION.tgz" &&   echo "downloading $SOLR_URL.asc" &&   wget -nv "$SOLR_URL.asc" -O "/opt/solr-$SOLR_VERSION.tgz.asc" &&   echo "$SOLR_SHA256 */opt/solr-$SOLR_VERSION.tgz" | sha256sum -c - &&   (>&2 ls -l "/opt/solr-$SOLR_VERSION.tgz" "/opt/solr-$SOLR_VERSION.tgz.asc") &&   gpg --batch --verify "/opt/solr-$SOLR_VERSION.tgz.asc" "/opt/solr-$SOLR_VERSION.tgz" &&   tar -C /opt --extract --file "/opt/solr-$SOLR_VERSION.tgz" &&   mv "/opt/solr-$SOLR_VERSION" /opt/solr &&   rm "/opt/solr-$SOLR_VERSION.tgz"* &&   rm -Rf /opt/solr/docs/ &&   mkdir -p /opt/solr/server/solr/lib /docker-entrypoint-initdb.d /opt/docker-solr &&   mkdir -p /opt/solr/server/solr/mycores /opt/solr/server/logs /opt/mysolrhome &&   sed -i -e "s/\"\$(whoami)\" == \"root\"/\$(id -u) == 0/" /opt/solr/bin/solr &&   sed -i -e 's/lsof -PniTCP:/lsof -t -PniTCP:/' /opt/solr/bin/solr &&   if [ -f "/opt/solr/contrib/prometheus-exporter/bin/solr-exporter" ]; then chmod 0755 "/opt/solr/contrib/prometheus-exporter/bin/solr-exporter"; fi &&   chmod -R 0755 /opt/solr/server/scripts/cloud-scripts &&   chown -R "$SOLR_USER:$SOLR_GROUP" /opt/solr /docker-entrypoint-initdb.d /opt/docker-solr &&   chown -R "$SOLR_USER:$SOLR_GROUP" /opt/mysolrhome &&   { command -v gpgconf && gpgconf --kill all || :; } &&   rm -r "$GNUPGHOME"
-# Fri, 18 Oct 2019 04:41:15 GMT
+# Sat, 19 Oct 2019 07:51:00 GMT
 COPY --chown=solr:solrdir:a038244bf4fec30d0dea82744cb1fc715508d4b53322690c9848d442ff4e0dc6 in /opt/docker-solr/scripts 
-# Fri, 18 Oct 2019 04:41:15 GMT
+# Sat, 19 Oct 2019 07:51:00 GMT
 EXPOSE 8983
-# Fri, 18 Oct 2019 04:41:16 GMT
+# Sat, 19 Oct 2019 07:51:00 GMT
 WORKDIR /opt/solr
-# Fri, 18 Oct 2019 04:41:16 GMT
+# Sat, 19 Oct 2019 07:51:00 GMT
 USER solr
-# Fri, 18 Oct 2019 04:41:16 GMT
+# Sat, 19 Oct 2019 07:51:01 GMT
 ENTRYPOINT ["docker-entrypoint.sh"]
-# Fri, 18 Oct 2019 04:41:16 GMT
+# Sat, 19 Oct 2019 07:51:01 GMT
 CMD ["solr-foreground"]
 ```
 
@@ -2766,29 +2766,29 @@ CMD ["solr-foreground"]
 		Last Modified: Thu, 17 Oct 2019 08:38:38 GMT  
 		Size: 210.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:208dbdb57f64b9643f7760ea628f0e2a21deff0af0b2eb33a0e66f6e3165fbfc`  
-		Last Modified: Thu, 17 Oct 2019 08:39:01 GMT  
-		Size: 196.0 MB (195975541 bytes)  
+	-	`sha256:ebc78a5f677c03a8f4aa611b558b55c4e42cf3113517ec2400695512c176d5ea`  
+		Last Modified: Fri, 18 Oct 2019 23:45:47 GMT  
+		Size: 196.1 MB (196134537 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:0b6e87939381d5f5bf58ebbda7764e5988a7f85de329392991840d7de2392b46`  
-		Last Modified: Fri, 18 Oct 2019 04:44:14 GMT  
-		Size: 5.5 MB (5452429 bytes)  
+	-	`sha256:5422c55f6c915b61b16c325a8d6c50b854cfa1a68d01cdf3257e0544867074c1`  
+		Last Modified: Sat, 19 Oct 2019 07:53:47 GMT  
+		Size: 5.5 MB (5452476 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:a0959a90292ce19312df19c8581cccf5ad5074b4ad5c8ff0715b96ef4b9f447d`  
-		Last Modified: Fri, 18 Oct 2019 04:47:39 GMT  
-		Size: 4.3 KB (4283 bytes)  
+	-	`sha256:7534db3b642f9df1e54da675f2cc4f6c27d6241a98c7a1ee684459626a2c4849`  
+		Last Modified: Sat, 19 Oct 2019 07:56:37 GMT  
+		Size: 4.3 KB (4285 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:ef7a3bcb5807060329bedcdd7c6b81833d4bcd66eae402670a5843612fb6054c`  
-		Last Modified: Fri, 18 Oct 2019 04:47:39 GMT  
-		Size: 24.9 KB (24910 bytes)  
+	-	`sha256:a1f3ad6835d42843441e196a8e212fe1ffc986ca75e8b3ce4707ad6b31be17d5`  
+		Last Modified: Sat, 19 Oct 2019 07:56:37 GMT  
+		Size: 24.9 KB (24920 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:a76231c2ac3882d295a810059cc683172a4a80940091f7c22bef5208af4e1bd1`  
-		Last Modified: Fri, 18 Oct 2019 04:47:54 GMT  
-		Size: 169.5 MB (169457192 bytes)  
+	-	`sha256:245b6df482488c39b16f5ec5b97fb7185c147d64784a0cd5c67dc5738463234a`  
+		Last Modified: Sat, 19 Oct 2019 07:56:47 GMT  
+		Size: 169.5 MB (169457335 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:139f4efcceb1dee5e7ca6c3c22e26e2b63bf1f1ace55adc6330f2b3cf7c024b2`  
-		Last Modified: Fri, 18 Oct 2019 04:47:38 GMT  
-		Size: 5.2 KB (5192 bytes)  
+	-	`sha256:cac70e0dfde1c07b278257c94b24eec10995c4494cb759e0f00a327506871fc6`  
+		Last Modified: Sat, 19 Oct 2019 07:56:37 GMT  
+		Size: 5.2 KB (5193 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `solr:7.5-slim` - linux; arm64 variant v8
@@ -2909,7 +2909,7 @@ CMD ["solr-foreground"]
 ## `solr:7.6`
 
 ```console
-$ docker pull solr@sha256:50bcf1cdf27d11fdf3d5a0aea9f0904f087e577aab6cd33c2bc19e7cc69ca19a
+$ docker pull solr@sha256:509bf625f5d8f90fbdd36edb10ee9c88c602a3d8130036b8ed6c789449e8717c
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -2920,14 +2920,14 @@ $ docker pull solr@sha256:50bcf1cdf27d11fdf3d5a0aea9f0904f087e577aab6cd33c2bc19e
 ### `solr:7.6` - linux; amd64
 
 ```console
-$ docker pull solr@sha256:a4962cdf1030565a0f3cc0a779cb8f0ef18e1acb81a1494b7caa1d8835855397
+$ docker pull solr@sha256:fc3de15667246fea6262ceb2717ebe1aafda0c6d881246ef3f86ac27acc90271
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **483.8 MB (483832283 bytes)**  
+-	Total Size: **484.0 MB (483988620 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:8a53232424eeb4a1e92bc4f87d727e6c7645a200c1cd078920fcf9f34cb3ea99`
+-	Image ID: `sha256:af629cdcc93531740ae9df10dbc89849adec5a78b53bfe550afdff9de481f1ff`
 -	Entrypoint: `["docker-entrypoint.sh"]`
 -	Default Command: `["solr-foreground"]`
 
@@ -2952,51 +2952,51 @@ ENV JAVA_HOME=/usr/local/openjdk-11
 ENV PATH=/usr/local/openjdk-11/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
 # Thu, 17 Oct 2019 08:29:25 GMT
 RUN { echo '#/bin/sh'; echo 'echo "$JAVA_HOME"'; } > /usr/local/bin/docker-java-home && chmod +x /usr/local/bin/docker-java-home && [ "$JAVA_HOME" = "$(docker-java-home)" ]
-# Thu, 17 Oct 2019 08:29:25 GMT
-ENV JAVA_VERSION=11.0.4
-# Thu, 17 Oct 2019 08:29:25 GMT
-ENV JAVA_BASE_URL=https://github.com/AdoptOpenJDK/openjdk11-upstream-binaries/releases/download/jdk-11.0.4%2B11/OpenJDK11U-jdk_
-# Thu, 17 Oct 2019 08:29:26 GMT
-ENV JAVA_URL_VERSION=11.0.4_11
-# Thu, 17 Oct 2019 08:29:39 GMT
+# Fri, 18 Oct 2019 23:39:21 GMT
+ENV JAVA_VERSION=11.0.5
+# Fri, 18 Oct 2019 23:39:21 GMT
+ENV JAVA_BASE_URL=https://github.com/AdoptOpenJDK/openjdk11-upstream-binaries/releases/download/jdk-11.0.5%2B10/OpenJDK11U-jdk_
+# Fri, 18 Oct 2019 23:39:21 GMT
+ENV JAVA_URL_VERSION=11.0.5_10
+# Fri, 18 Oct 2019 23:39:41 GMT
 RUN set -eux; 		dpkgArch="$(dpkg --print-architecture)"; 	case "$dpkgArch" in 		amd64) upstreamArch='x64' ;; 		arm64) upstreamArch='aarch64' ;; 		*) echo >&2 "error: unsupported architecture: $dpkgArch" ;; 	esac; 		wget -O openjdk.tgz.asc "${JAVA_BASE_URL}${upstreamArch}_linux_${JAVA_URL_VERSION}.tar.gz.sign"; 	wget -O openjdk.tgz "${JAVA_BASE_URL}${upstreamArch}_linux_${JAVA_URL_VERSION}.tar.gz" --progress=dot:giga; 		export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver ha.pool.sks-keyservers.net --keyserver-options no-self-sigs-only --recv-keys CA5F11C6CE22644D42C6AC4492EF8D39DC13168F; 	gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys EAC843EBD3EFDB98CC772FADA5CD6035332FA671; 	gpg --batch --list-sigs --keyid-format 0xLONG CA5F11C6CE22644D42C6AC4492EF8D39DC13168F 		| tee /dev/stderr 		| grep '0xA5CD6035332FA671' 		| grep 'Andrew Haley'; 	gpg --batch --verify openjdk.tgz.asc openjdk.tgz; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME"; 		mkdir -p "$JAVA_HOME"; 	tar --extract 		--file openjdk.tgz 		--directory "$JAVA_HOME" 		--strip-components 1 		--no-same-owner 	; 	rm openjdk.tgz*; 			{ 		echo '#!/usr/bin/env bash'; 		echo 'set -Eeuo pipefail'; 		echo 'if ! [ -d "$JAVA_HOME" ]; then echo >&2 "error: missing JAVA_HOME environment variable"; exit 1; fi'; 		echo 'cacertsFile=; for f in "$JAVA_HOME/lib/security/cacerts" "$JAVA_HOME/jre/lib/security/cacerts"; do if [ -e "$f" ]; then cacertsFile="$f"; break; fi; done'; 		echo 'if [ -z "$cacertsFile" ] || ! [ -f "$cacertsFile" ]; then echo >&2 "error: failed to find cacerts file in $JAVA_HOME"; exit 1; fi'; 		echo 'trust extract --overwrite --format=java-cacerts --filter=ca-anchors --purpose=server-auth "$cacertsFile"'; 	} > /etc/ca-certificates/update.d/docker-openjdk; 	chmod +x /etc/ca-certificates/update.d/docker-openjdk; 	/etc/ca-certificates/update.d/docker-openjdk; 		find "$JAVA_HOME/lib" -name '*.so' -exec dirname '{}' ';' | sort -u > /etc/ld.so.conf.d/docker-openjdk.conf; 	ldconfig; 		javac --version; 	java --version
-# Thu, 17 Oct 2019 08:29:39 GMT
+# Fri, 18 Oct 2019 23:39:42 GMT
 CMD ["jshell"]
-# Fri, 18 Oct 2019 04:35:50 GMT
+# Sat, 19 Oct 2019 07:46:10 GMT
 LABEL maintainer=Martijn Koster "mak-docker@greenhills.co.uk"
-# Fri, 18 Oct 2019 04:35:50 GMT
+# Sat, 19 Oct 2019 07:46:11 GMT
 LABEL repository=https://github.com/docker-solr/docker-solr
-# Fri, 18 Oct 2019 04:35:50 GMT
+# Sat, 19 Oct 2019 07:46:11 GMT
 ARG SOLR_DOWNLOAD_SERVER
-# Fri, 18 Oct 2019 04:35:55 GMT
+# Sat, 19 Oct 2019 07:46:15 GMT
 RUN apt-get update &&   apt-get -y install acl dirmngr gpg lsof procps wget &&   rm -rf /var/lib/apt/lists/*
-# Fri, 18 Oct 2019 04:39:24 GMT
+# Sat, 19 Oct 2019 07:49:32 GMT
 ENV SOLR_USER=solr SOLR_UID=8983 SOLR_GROUP=solr SOLR_GID=8983 SOLR_VERSION=7.6.0 SOLR_URL=https://archive.apache.org/dist/lucene/solr/7.6.0/solr-7.6.0.tgz SOLR_SHA256=2cb425a0b30ff153465d306803e514e53e41924d74f28d842cb3a07cace759d5 SOLR_KEYS=95B01F0E78111D63D331C1A751F0CC22F625308A PATH=/opt/solr/bin:/opt/docker-solr/scripts:/usr/local/openjdk-11/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Fri, 18 Oct 2019 04:39:24 GMT
+# Sat, 19 Oct 2019 07:49:32 GMT
 ENV GOSU_VERSION=1.11
-# Fri, 18 Oct 2019 04:39:25 GMT
+# Sat, 19 Oct 2019 07:49:32 GMT
 ENV GOSU_KEY=B42F6819007F00F88E364FD4036A9C25BF357DD4
-# Fri, 18 Oct 2019 04:39:25 GMT
+# Sat, 19 Oct 2019 07:49:32 GMT
 ENV TINI_VERSION=v0.18.0
-# Fri, 18 Oct 2019 04:39:25 GMT
+# Sat, 19 Oct 2019 07:49:33 GMT
 ENV TINI_KEY=595E85A6B1B4779EA4DAAEC70B588DFF0527A9B7
-# Fri, 18 Oct 2019 04:39:26 GMT
+# Sat, 19 Oct 2019 07:49:33 GMT
 RUN groupadd -r --gid "$SOLR_GID" "$SOLR_GROUP" &&   useradd -r --uid "$SOLR_UID" --gid "$SOLR_GID" "$SOLR_USER"
-# Fri, 18 Oct 2019 04:39:29 GMT
+# Sat, 19 Oct 2019 07:49:36 GMT
 RUN set -e;   export GNUPGHOME="/tmp/gnupg_home" &&   mkdir -p "$GNUPGHOME" &&   chmod 700 "$GNUPGHOME" &&   echo "disable-ipv6" >> "$GNUPGHOME/dirmngr.conf" &&   for key in $SOLR_KEYS $GOSU_KEY $TINI_KEY; do     found='';     for server in       ha.pool.sks-keyservers.net       hkp://keyserver.ubuntu.com:80       hkp://p80.pool.sks-keyservers.net:80       pgp.mit.edu     ; do       echo "  trying $server for $key";       gpg --batch --keyserver "$server" --keyserver-options timeout=10 --recv-keys "$key" && found=yes && break;       gpg --batch --keyserver "$server" --keyserver-options timeout=10 --recv-keys "$key" && found=yes && break;     done;     test -z "$found" && echo >&2 "error: failed to fetch $key from several disparate servers -- network issues?" && exit 1;   done;   exit 0
-# Fri, 18 Oct 2019 04:39:45 GMT
+# Sat, 19 Oct 2019 07:49:51 GMT
 RUN set -e;   export GNUPGHOME="/tmp/gnupg_home" &&   pkgArch="$(dpkg --print-architecture | awk -F- '{ print $NF }')" &&   wget -O /usr/local/bin/gosu "https://github.com/tianon/gosu/releases/download/$GOSU_VERSION/gosu-$pkgArch" &&   wget -O /usr/local/bin/gosu.asc "https://github.com/tianon/gosu/releases/download/$GOSU_VERSION/gosu-$pkgArch.asc" &&   gpg --batch --verify /usr/local/bin/gosu.asc /usr/local/bin/gosu &&   rm /usr/local/bin/gosu.asc &&   chmod +x /usr/local/bin/gosu &&   gosu nobody true &&   wget -O /usr/local/bin/tini "https://github.com/krallin/tini/releases/download/${TINI_VERSION}/tini-$pkgArch" &&   wget -O /usr/local/bin/tini.asc "https://github.com/krallin/tini/releases/download/${TINI_VERSION}/tini-$pkgArch.asc" &&   gpg --batch --verify /usr/local/bin/tini.asc /usr/local/bin/tini;   rm /usr/local/bin/tini.asc &&   chmod +x /usr/local/bin/tini &&   tini --version &&   echo "downloading $SOLR_URL" &&   wget -nv "$SOLR_URL" -O "/opt/solr-$SOLR_VERSION.tgz" &&   echo "downloading $SOLR_URL.asc" &&   wget -nv "$SOLR_URL.asc" -O "/opt/solr-$SOLR_VERSION.tgz.asc" &&   echo "$SOLR_SHA256 */opt/solr-$SOLR_VERSION.tgz" | sha256sum -c - &&   (>&2 ls -l "/opt/solr-$SOLR_VERSION.tgz" "/opt/solr-$SOLR_VERSION.tgz.asc") &&   gpg --batch --verify "/opt/solr-$SOLR_VERSION.tgz.asc" "/opt/solr-$SOLR_VERSION.tgz" &&   tar -C /opt --extract --file "/opt/solr-$SOLR_VERSION.tgz" &&   mv "/opt/solr-$SOLR_VERSION" /opt/solr &&   rm "/opt/solr-$SOLR_VERSION.tgz"* &&   rm -Rf /opt/solr/docs/ &&   mkdir -p /opt/solr/server/solr/lib /docker-entrypoint-initdb.d /opt/docker-solr &&   mkdir -p /opt/solr/server/solr/mycores /opt/solr/server/logs /opt/mysolrhome &&   sed -i -e "s/\"\$(whoami)\" == \"root\"/\$(id -u) == 0/" /opt/solr/bin/solr &&   sed -i -e 's/lsof -PniTCP:/lsof -t -PniTCP:/' /opt/solr/bin/solr &&   if [ -f "/opt/solr/contrib/prometheus-exporter/bin/solr-exporter" ]; then chmod 0755 "/opt/solr/contrib/prometheus-exporter/bin/solr-exporter"; fi &&   chmod -R 0755 /opt/solr/server/scripts/cloud-scripts &&   chown -R "$SOLR_USER:$SOLR_GROUP" /opt/solr /docker-entrypoint-initdb.d /opt/docker-solr &&   chown -R "$SOLR_USER:$SOLR_GROUP" /opt/mysolrhome &&   { command -v gpgconf && gpgconf --kill all || :; } &&   rm -r "$GNUPGHOME"
-# Fri, 18 Oct 2019 04:39:45 GMT
+# Sat, 19 Oct 2019 07:49:51 GMT
 COPY --chown=solr:solrdir:a038244bf4fec30d0dea82744cb1fc715508d4b53322690c9848d442ff4e0dc6 in /opt/docker-solr/scripts 
-# Fri, 18 Oct 2019 04:39:45 GMT
+# Sat, 19 Oct 2019 07:49:51 GMT
 EXPOSE 8983
-# Fri, 18 Oct 2019 04:39:45 GMT
+# Sat, 19 Oct 2019 07:49:51 GMT
 WORKDIR /opt/solr
-# Fri, 18 Oct 2019 04:39:46 GMT
+# Sat, 19 Oct 2019 07:49:51 GMT
 USER solr
-# Fri, 18 Oct 2019 04:39:46 GMT
+# Sat, 19 Oct 2019 07:49:52 GMT
 ENTRYPOINT ["docker-entrypoint.sh"]
-# Fri, 18 Oct 2019 04:39:46 GMT
+# Sat, 19 Oct 2019 07:49:52 GMT
 CMD ["solr-foreground"]
 ```
 
@@ -3025,29 +3025,29 @@ CMD ["solr-foreground"]
 		Last Modified: Thu, 17 Oct 2019 08:38:05 GMT  
 		Size: 218.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:115f4a5a7971e04e4fed86d76c049ff73c54e467dc07423546790188502ce0bc`  
-		Last Modified: Thu, 17 Oct 2019 08:38:28 GMT  
-		Size: 195.7 MB (195718813 bytes)  
+	-	`sha256:0ce121b6a2ffae7f0fc0b7c20d3a0a46f62762dd7c1f14db73fa2ab9248bf1dc`  
+		Last Modified: Fri, 18 Oct 2019 23:45:21 GMT  
+		Size: 195.9 MB (195875192 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:8f99c82bd7831902ccf2bd474012a7be46a8161ba0124a4864ac469ffcad5bbe`  
-		Last Modified: Fri, 18 Oct 2019 04:43:52 GMT  
-		Size: 761.5 KB (761483 bytes)  
+	-	`sha256:73e1c53bd62b5d1b2ee52a9c04be2a0e5a5b245abc76a4d9365fd1ceba45f32c`  
+		Last Modified: Sat, 19 Oct 2019 07:53:23 GMT  
+		Size: 761.5 KB (761492 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:7badbf50edc3f049b145f1c8f76328f6307b8cd46513e5720d098669eb4aea27`  
-		Last Modified: Fri, 18 Oct 2019 04:46:42 GMT  
-		Size: 4.3 KB (4304 bytes)  
+	-	`sha256:5ead354a5788a57c2e71bb1d71f051c1cfcf7b5612bfb42c08fb9cdd934f09ce`  
+		Last Modified: Sat, 19 Oct 2019 07:55:53 GMT  
+		Size: 4.3 KB (4305 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:a4c834afed35a32a3429f360c7e95cee6bcea240c24f4f9f648a1f25442da2c6`  
-		Last Modified: Fri, 18 Oct 2019 04:46:42 GMT  
-		Size: 153.4 KB (153384 bytes)  
+	-	`sha256:5b6ae56dadb68980c4dd2cb8742d5333eb29ce0cfa6851adeef0e7332ecc3e20`  
+		Last Modified: Sat, 19 Oct 2019 07:55:52 GMT  
+		Size: 153.4 KB (153380 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:ae6a7b079f8d999424bd32a52f8a357350e0e8684f5fa1507cfd0c96b8509188`  
-		Last Modified: Fri, 18 Oct 2019 04:46:57 GMT  
-		Size: 171.7 MB (171670038 bytes)  
+	-	`sha256:6a95b24b504955e6297256a0c005a3cd586a458ba1bc7c18377e4fdb7f9a2b73`  
+		Last Modified: Sat, 19 Oct 2019 07:56:02 GMT  
+		Size: 171.7 MB (171669991 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:a777aa50b19fe7337d626da273bb0e62e48ba92e873d0b832d5f4107ca73c69a`  
-		Last Modified: Fri, 18 Oct 2019 04:46:42 GMT  
-		Size: 5.2 KB (5194 bytes)  
+	-	`sha256:768a49c13e80df210aade017bb4231fe3658074022707a81b7689b24e4d29a42`  
+		Last Modified: Sat, 19 Oct 2019 07:55:52 GMT  
+		Size: 5.2 KB (5193 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `solr:7.6` - linux; arm64 variant v8
@@ -3186,7 +3186,7 @@ CMD ["solr-foreground"]
 ## `solr:7.6.0`
 
 ```console
-$ docker pull solr@sha256:50bcf1cdf27d11fdf3d5a0aea9f0904f087e577aab6cd33c2bc19e7cc69ca19a
+$ docker pull solr@sha256:509bf625f5d8f90fbdd36edb10ee9c88c602a3d8130036b8ed6c789449e8717c
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -3197,14 +3197,14 @@ $ docker pull solr@sha256:50bcf1cdf27d11fdf3d5a0aea9f0904f087e577aab6cd33c2bc19e
 ### `solr:7.6.0` - linux; amd64
 
 ```console
-$ docker pull solr@sha256:a4962cdf1030565a0f3cc0a779cb8f0ef18e1acb81a1494b7caa1d8835855397
+$ docker pull solr@sha256:fc3de15667246fea6262ceb2717ebe1aafda0c6d881246ef3f86ac27acc90271
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **483.8 MB (483832283 bytes)**  
+-	Total Size: **484.0 MB (483988620 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:8a53232424eeb4a1e92bc4f87d727e6c7645a200c1cd078920fcf9f34cb3ea99`
+-	Image ID: `sha256:af629cdcc93531740ae9df10dbc89849adec5a78b53bfe550afdff9de481f1ff`
 -	Entrypoint: `["docker-entrypoint.sh"]`
 -	Default Command: `["solr-foreground"]`
 
@@ -3229,51 +3229,51 @@ ENV JAVA_HOME=/usr/local/openjdk-11
 ENV PATH=/usr/local/openjdk-11/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
 # Thu, 17 Oct 2019 08:29:25 GMT
 RUN { echo '#/bin/sh'; echo 'echo "$JAVA_HOME"'; } > /usr/local/bin/docker-java-home && chmod +x /usr/local/bin/docker-java-home && [ "$JAVA_HOME" = "$(docker-java-home)" ]
-# Thu, 17 Oct 2019 08:29:25 GMT
-ENV JAVA_VERSION=11.0.4
-# Thu, 17 Oct 2019 08:29:25 GMT
-ENV JAVA_BASE_URL=https://github.com/AdoptOpenJDK/openjdk11-upstream-binaries/releases/download/jdk-11.0.4%2B11/OpenJDK11U-jdk_
-# Thu, 17 Oct 2019 08:29:26 GMT
-ENV JAVA_URL_VERSION=11.0.4_11
-# Thu, 17 Oct 2019 08:29:39 GMT
+# Fri, 18 Oct 2019 23:39:21 GMT
+ENV JAVA_VERSION=11.0.5
+# Fri, 18 Oct 2019 23:39:21 GMT
+ENV JAVA_BASE_URL=https://github.com/AdoptOpenJDK/openjdk11-upstream-binaries/releases/download/jdk-11.0.5%2B10/OpenJDK11U-jdk_
+# Fri, 18 Oct 2019 23:39:21 GMT
+ENV JAVA_URL_VERSION=11.0.5_10
+# Fri, 18 Oct 2019 23:39:41 GMT
 RUN set -eux; 		dpkgArch="$(dpkg --print-architecture)"; 	case "$dpkgArch" in 		amd64) upstreamArch='x64' ;; 		arm64) upstreamArch='aarch64' ;; 		*) echo >&2 "error: unsupported architecture: $dpkgArch" ;; 	esac; 		wget -O openjdk.tgz.asc "${JAVA_BASE_URL}${upstreamArch}_linux_${JAVA_URL_VERSION}.tar.gz.sign"; 	wget -O openjdk.tgz "${JAVA_BASE_URL}${upstreamArch}_linux_${JAVA_URL_VERSION}.tar.gz" --progress=dot:giga; 		export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver ha.pool.sks-keyservers.net --keyserver-options no-self-sigs-only --recv-keys CA5F11C6CE22644D42C6AC4492EF8D39DC13168F; 	gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys EAC843EBD3EFDB98CC772FADA5CD6035332FA671; 	gpg --batch --list-sigs --keyid-format 0xLONG CA5F11C6CE22644D42C6AC4492EF8D39DC13168F 		| tee /dev/stderr 		| grep '0xA5CD6035332FA671' 		| grep 'Andrew Haley'; 	gpg --batch --verify openjdk.tgz.asc openjdk.tgz; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME"; 		mkdir -p "$JAVA_HOME"; 	tar --extract 		--file openjdk.tgz 		--directory "$JAVA_HOME" 		--strip-components 1 		--no-same-owner 	; 	rm openjdk.tgz*; 			{ 		echo '#!/usr/bin/env bash'; 		echo 'set -Eeuo pipefail'; 		echo 'if ! [ -d "$JAVA_HOME" ]; then echo >&2 "error: missing JAVA_HOME environment variable"; exit 1; fi'; 		echo 'cacertsFile=; for f in "$JAVA_HOME/lib/security/cacerts" "$JAVA_HOME/jre/lib/security/cacerts"; do if [ -e "$f" ]; then cacertsFile="$f"; break; fi; done'; 		echo 'if [ -z "$cacertsFile" ] || ! [ -f "$cacertsFile" ]; then echo >&2 "error: failed to find cacerts file in $JAVA_HOME"; exit 1; fi'; 		echo 'trust extract --overwrite --format=java-cacerts --filter=ca-anchors --purpose=server-auth "$cacertsFile"'; 	} > /etc/ca-certificates/update.d/docker-openjdk; 	chmod +x /etc/ca-certificates/update.d/docker-openjdk; 	/etc/ca-certificates/update.d/docker-openjdk; 		find "$JAVA_HOME/lib" -name '*.so' -exec dirname '{}' ';' | sort -u > /etc/ld.so.conf.d/docker-openjdk.conf; 	ldconfig; 		javac --version; 	java --version
-# Thu, 17 Oct 2019 08:29:39 GMT
+# Fri, 18 Oct 2019 23:39:42 GMT
 CMD ["jshell"]
-# Fri, 18 Oct 2019 04:35:50 GMT
+# Sat, 19 Oct 2019 07:46:10 GMT
 LABEL maintainer=Martijn Koster "mak-docker@greenhills.co.uk"
-# Fri, 18 Oct 2019 04:35:50 GMT
+# Sat, 19 Oct 2019 07:46:11 GMT
 LABEL repository=https://github.com/docker-solr/docker-solr
-# Fri, 18 Oct 2019 04:35:50 GMT
+# Sat, 19 Oct 2019 07:46:11 GMT
 ARG SOLR_DOWNLOAD_SERVER
-# Fri, 18 Oct 2019 04:35:55 GMT
+# Sat, 19 Oct 2019 07:46:15 GMT
 RUN apt-get update &&   apt-get -y install acl dirmngr gpg lsof procps wget &&   rm -rf /var/lib/apt/lists/*
-# Fri, 18 Oct 2019 04:39:24 GMT
+# Sat, 19 Oct 2019 07:49:32 GMT
 ENV SOLR_USER=solr SOLR_UID=8983 SOLR_GROUP=solr SOLR_GID=8983 SOLR_VERSION=7.6.0 SOLR_URL=https://archive.apache.org/dist/lucene/solr/7.6.0/solr-7.6.0.tgz SOLR_SHA256=2cb425a0b30ff153465d306803e514e53e41924d74f28d842cb3a07cace759d5 SOLR_KEYS=95B01F0E78111D63D331C1A751F0CC22F625308A PATH=/opt/solr/bin:/opt/docker-solr/scripts:/usr/local/openjdk-11/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Fri, 18 Oct 2019 04:39:24 GMT
+# Sat, 19 Oct 2019 07:49:32 GMT
 ENV GOSU_VERSION=1.11
-# Fri, 18 Oct 2019 04:39:25 GMT
+# Sat, 19 Oct 2019 07:49:32 GMT
 ENV GOSU_KEY=B42F6819007F00F88E364FD4036A9C25BF357DD4
-# Fri, 18 Oct 2019 04:39:25 GMT
+# Sat, 19 Oct 2019 07:49:32 GMT
 ENV TINI_VERSION=v0.18.0
-# Fri, 18 Oct 2019 04:39:25 GMT
+# Sat, 19 Oct 2019 07:49:33 GMT
 ENV TINI_KEY=595E85A6B1B4779EA4DAAEC70B588DFF0527A9B7
-# Fri, 18 Oct 2019 04:39:26 GMT
+# Sat, 19 Oct 2019 07:49:33 GMT
 RUN groupadd -r --gid "$SOLR_GID" "$SOLR_GROUP" &&   useradd -r --uid "$SOLR_UID" --gid "$SOLR_GID" "$SOLR_USER"
-# Fri, 18 Oct 2019 04:39:29 GMT
+# Sat, 19 Oct 2019 07:49:36 GMT
 RUN set -e;   export GNUPGHOME="/tmp/gnupg_home" &&   mkdir -p "$GNUPGHOME" &&   chmod 700 "$GNUPGHOME" &&   echo "disable-ipv6" >> "$GNUPGHOME/dirmngr.conf" &&   for key in $SOLR_KEYS $GOSU_KEY $TINI_KEY; do     found='';     for server in       ha.pool.sks-keyservers.net       hkp://keyserver.ubuntu.com:80       hkp://p80.pool.sks-keyservers.net:80       pgp.mit.edu     ; do       echo "  trying $server for $key";       gpg --batch --keyserver "$server" --keyserver-options timeout=10 --recv-keys "$key" && found=yes && break;       gpg --batch --keyserver "$server" --keyserver-options timeout=10 --recv-keys "$key" && found=yes && break;     done;     test -z "$found" && echo >&2 "error: failed to fetch $key from several disparate servers -- network issues?" && exit 1;   done;   exit 0
-# Fri, 18 Oct 2019 04:39:45 GMT
+# Sat, 19 Oct 2019 07:49:51 GMT
 RUN set -e;   export GNUPGHOME="/tmp/gnupg_home" &&   pkgArch="$(dpkg --print-architecture | awk -F- '{ print $NF }')" &&   wget -O /usr/local/bin/gosu "https://github.com/tianon/gosu/releases/download/$GOSU_VERSION/gosu-$pkgArch" &&   wget -O /usr/local/bin/gosu.asc "https://github.com/tianon/gosu/releases/download/$GOSU_VERSION/gosu-$pkgArch.asc" &&   gpg --batch --verify /usr/local/bin/gosu.asc /usr/local/bin/gosu &&   rm /usr/local/bin/gosu.asc &&   chmod +x /usr/local/bin/gosu &&   gosu nobody true &&   wget -O /usr/local/bin/tini "https://github.com/krallin/tini/releases/download/${TINI_VERSION}/tini-$pkgArch" &&   wget -O /usr/local/bin/tini.asc "https://github.com/krallin/tini/releases/download/${TINI_VERSION}/tini-$pkgArch.asc" &&   gpg --batch --verify /usr/local/bin/tini.asc /usr/local/bin/tini;   rm /usr/local/bin/tini.asc &&   chmod +x /usr/local/bin/tini &&   tini --version &&   echo "downloading $SOLR_URL" &&   wget -nv "$SOLR_URL" -O "/opt/solr-$SOLR_VERSION.tgz" &&   echo "downloading $SOLR_URL.asc" &&   wget -nv "$SOLR_URL.asc" -O "/opt/solr-$SOLR_VERSION.tgz.asc" &&   echo "$SOLR_SHA256 */opt/solr-$SOLR_VERSION.tgz" | sha256sum -c - &&   (>&2 ls -l "/opt/solr-$SOLR_VERSION.tgz" "/opt/solr-$SOLR_VERSION.tgz.asc") &&   gpg --batch --verify "/opt/solr-$SOLR_VERSION.tgz.asc" "/opt/solr-$SOLR_VERSION.tgz" &&   tar -C /opt --extract --file "/opt/solr-$SOLR_VERSION.tgz" &&   mv "/opt/solr-$SOLR_VERSION" /opt/solr &&   rm "/opt/solr-$SOLR_VERSION.tgz"* &&   rm -Rf /opt/solr/docs/ &&   mkdir -p /opt/solr/server/solr/lib /docker-entrypoint-initdb.d /opt/docker-solr &&   mkdir -p /opt/solr/server/solr/mycores /opt/solr/server/logs /opt/mysolrhome &&   sed -i -e "s/\"\$(whoami)\" == \"root\"/\$(id -u) == 0/" /opt/solr/bin/solr &&   sed -i -e 's/lsof -PniTCP:/lsof -t -PniTCP:/' /opt/solr/bin/solr &&   if [ -f "/opt/solr/contrib/prometheus-exporter/bin/solr-exporter" ]; then chmod 0755 "/opt/solr/contrib/prometheus-exporter/bin/solr-exporter"; fi &&   chmod -R 0755 /opt/solr/server/scripts/cloud-scripts &&   chown -R "$SOLR_USER:$SOLR_GROUP" /opt/solr /docker-entrypoint-initdb.d /opt/docker-solr &&   chown -R "$SOLR_USER:$SOLR_GROUP" /opt/mysolrhome &&   { command -v gpgconf && gpgconf --kill all || :; } &&   rm -r "$GNUPGHOME"
-# Fri, 18 Oct 2019 04:39:45 GMT
+# Sat, 19 Oct 2019 07:49:51 GMT
 COPY --chown=solr:solrdir:a038244bf4fec30d0dea82744cb1fc715508d4b53322690c9848d442ff4e0dc6 in /opt/docker-solr/scripts 
-# Fri, 18 Oct 2019 04:39:45 GMT
+# Sat, 19 Oct 2019 07:49:51 GMT
 EXPOSE 8983
-# Fri, 18 Oct 2019 04:39:45 GMT
+# Sat, 19 Oct 2019 07:49:51 GMT
 WORKDIR /opt/solr
-# Fri, 18 Oct 2019 04:39:46 GMT
+# Sat, 19 Oct 2019 07:49:51 GMT
 USER solr
-# Fri, 18 Oct 2019 04:39:46 GMT
+# Sat, 19 Oct 2019 07:49:52 GMT
 ENTRYPOINT ["docker-entrypoint.sh"]
-# Fri, 18 Oct 2019 04:39:46 GMT
+# Sat, 19 Oct 2019 07:49:52 GMT
 CMD ["solr-foreground"]
 ```
 
@@ -3302,29 +3302,29 @@ CMD ["solr-foreground"]
 		Last Modified: Thu, 17 Oct 2019 08:38:05 GMT  
 		Size: 218.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:115f4a5a7971e04e4fed86d76c049ff73c54e467dc07423546790188502ce0bc`  
-		Last Modified: Thu, 17 Oct 2019 08:38:28 GMT  
-		Size: 195.7 MB (195718813 bytes)  
+	-	`sha256:0ce121b6a2ffae7f0fc0b7c20d3a0a46f62762dd7c1f14db73fa2ab9248bf1dc`  
+		Last Modified: Fri, 18 Oct 2019 23:45:21 GMT  
+		Size: 195.9 MB (195875192 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:8f99c82bd7831902ccf2bd474012a7be46a8161ba0124a4864ac469ffcad5bbe`  
-		Last Modified: Fri, 18 Oct 2019 04:43:52 GMT  
-		Size: 761.5 KB (761483 bytes)  
+	-	`sha256:73e1c53bd62b5d1b2ee52a9c04be2a0e5a5b245abc76a4d9365fd1ceba45f32c`  
+		Last Modified: Sat, 19 Oct 2019 07:53:23 GMT  
+		Size: 761.5 KB (761492 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:7badbf50edc3f049b145f1c8f76328f6307b8cd46513e5720d098669eb4aea27`  
-		Last Modified: Fri, 18 Oct 2019 04:46:42 GMT  
-		Size: 4.3 KB (4304 bytes)  
+	-	`sha256:5ead354a5788a57c2e71bb1d71f051c1cfcf7b5612bfb42c08fb9cdd934f09ce`  
+		Last Modified: Sat, 19 Oct 2019 07:55:53 GMT  
+		Size: 4.3 KB (4305 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:a4c834afed35a32a3429f360c7e95cee6bcea240c24f4f9f648a1f25442da2c6`  
-		Last Modified: Fri, 18 Oct 2019 04:46:42 GMT  
-		Size: 153.4 KB (153384 bytes)  
+	-	`sha256:5b6ae56dadb68980c4dd2cb8742d5333eb29ce0cfa6851adeef0e7332ecc3e20`  
+		Last Modified: Sat, 19 Oct 2019 07:55:52 GMT  
+		Size: 153.4 KB (153380 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:ae6a7b079f8d999424bd32a52f8a357350e0e8684f5fa1507cfd0c96b8509188`  
-		Last Modified: Fri, 18 Oct 2019 04:46:57 GMT  
-		Size: 171.7 MB (171670038 bytes)  
+	-	`sha256:6a95b24b504955e6297256a0c005a3cd586a458ba1bc7c18377e4fdb7f9a2b73`  
+		Last Modified: Sat, 19 Oct 2019 07:56:02 GMT  
+		Size: 171.7 MB (171669991 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:a777aa50b19fe7337d626da273bb0e62e48ba92e873d0b832d5f4107ca73c69a`  
-		Last Modified: Fri, 18 Oct 2019 04:46:42 GMT  
-		Size: 5.2 KB (5194 bytes)  
+	-	`sha256:768a49c13e80df210aade017bb4231fe3658074022707a81b7689b24e4d29a42`  
+		Last Modified: Sat, 19 Oct 2019 07:55:52 GMT  
+		Size: 5.2 KB (5193 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `solr:7.6.0` - linux; arm64 variant v8
@@ -3463,7 +3463,7 @@ CMD ["solr-foreground"]
 ## `solr:7.6.0-slim`
 
 ```console
-$ docker pull solr@sha256:cc853a64d606f1693bfcec63f8df2bb591be64cafeaf4ef5f3a61c5d1b4861ad
+$ docker pull solr@sha256:bc8f9008b81f7bcff6d4682c1aa73b84b9acfe83023d19c758208d1cea5e8d94
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -3474,14 +3474,14 @@ $ docker pull solr@sha256:cc853a64d606f1693bfcec63f8df2bb591be64cafeaf4ef5f3a61c
 ### `solr:7.6.0-slim` - linux; amd64
 
 ```console
-$ docker pull solr@sha256:c65289dcf54b542d0b9e4a6b8df98f647d868346bc9a863131ff50504afaec95
+$ docker pull solr@sha256:767f9f9e27ab2425ae384d02e5cd4066499daf2faf92d2b1a54a8a0dcf2d5574
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **403.5 MB (403488880 bytes)**  
+-	Total Size: **403.6 MB (403647780 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:3cd93649c285f27cc86813f31c3bbe26c9883512f1334a5bc6bb64d32fbfd353`
+-	Image ID: `sha256:a1a539357ddb37e0633cdfd5d6987c0dc8093464262c96454059fa40492e3e36`
 -	Entrypoint: `["docker-entrypoint.sh"]`
 -	Default Command: `["solr-foreground"]`
 
@@ -3500,51 +3500,51 @@ ENV JAVA_HOME=/usr/local/openjdk-11
 ENV PATH=/usr/local/openjdk-11/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
 # Thu, 17 Oct 2019 08:29:46 GMT
 RUN { echo '#/bin/sh'; echo 'echo "$JAVA_HOME"'; } > /usr/local/bin/docker-java-home && chmod +x /usr/local/bin/docker-java-home && [ "$JAVA_HOME" = "$(docker-java-home)" ]
-# Thu, 17 Oct 2019 08:29:46 GMT
-ENV JAVA_VERSION=11.0.4
-# Thu, 17 Oct 2019 08:29:46 GMT
-ENV JAVA_BASE_URL=https://github.com/AdoptOpenJDK/openjdk11-upstream-binaries/releases/download/jdk-11.0.4%2B11/OpenJDK11U-jdk_
-# Thu, 17 Oct 2019 08:29:46 GMT
-ENV JAVA_URL_VERSION=11.0.4_11
-# Thu, 17 Oct 2019 08:30:07 GMT
+# Fri, 18 Oct 2019 23:39:50 GMT
+ENV JAVA_VERSION=11.0.5
+# Fri, 18 Oct 2019 23:39:50 GMT
+ENV JAVA_BASE_URL=https://github.com/AdoptOpenJDK/openjdk11-upstream-binaries/releases/download/jdk-11.0.5%2B10/OpenJDK11U-jdk_
+# Fri, 18 Oct 2019 23:39:50 GMT
+ENV JAVA_URL_VERSION=11.0.5_10
+# Fri, 18 Oct 2019 23:40:16 GMT
 RUN set -eux; 		dpkgArch="$(dpkg --print-architecture)"; 	case "$dpkgArch" in 		amd64) upstreamArch='x64' ;; 		arm64) upstreamArch='aarch64' ;; 		*) echo >&2 "error: unsupported architecture: $dpkgArch" ;; 	esac; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		dirmngr 		gnupg 		wget 	; 	rm -rf /var/lib/apt/lists/*; 		wget -O openjdk.tgz.asc "${JAVA_BASE_URL}${upstreamArch}_linux_${JAVA_URL_VERSION}.tar.gz.sign"; 	wget -O openjdk.tgz "${JAVA_BASE_URL}${upstreamArch}_linux_${JAVA_URL_VERSION}.tar.gz" --progress=dot:giga; 		export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver ha.pool.sks-keyservers.net --keyserver-options no-self-sigs-only --recv-keys CA5F11C6CE22644D42C6AC4492EF8D39DC13168F; 	gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys EAC843EBD3EFDB98CC772FADA5CD6035332FA671; 	gpg --batch --list-sigs --keyid-format 0xLONG CA5F11C6CE22644D42C6AC4492EF8D39DC13168F 		| tee /dev/stderr 		| grep '0xA5CD6035332FA671' 		| grep 'Andrew Haley'; 	gpg --batch --verify openjdk.tgz.asc openjdk.tgz; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME"; 		mkdir -p "$JAVA_HOME"; 	tar --extract 		--file openjdk.tgz 		--directory "$JAVA_HOME" 		--strip-components 1 		--no-same-owner 	; 	rm openjdk.tgz*; 			apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark > /dev/null; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 		{ 		echo '#!/usr/bin/env bash'; 		echo 'set -Eeuo pipefail'; 		echo 'if ! [ -d "$JAVA_HOME" ]; then echo >&2 "error: missing JAVA_HOME environment variable"; exit 1; fi'; 		echo 'cacertsFile=; for f in "$JAVA_HOME/lib/security/cacerts" "$JAVA_HOME/jre/lib/security/cacerts"; do if [ -e "$f" ]; then cacertsFile="$f"; break; fi; done'; 		echo 'if [ -z "$cacertsFile" ] || ! [ -f "$cacertsFile" ]; then echo >&2 "error: failed to find cacerts file in $JAVA_HOME"; exit 1; fi'; 		echo 'trust extract --overwrite --format=java-cacerts --filter=ca-anchors --purpose=server-auth "$cacertsFile"'; 	} > /etc/ca-certificates/update.d/docker-openjdk; 	chmod +x /etc/ca-certificates/update.d/docker-openjdk; 	/etc/ca-certificates/update.d/docker-openjdk; 		find "$JAVA_HOME/lib" -name '*.so' -exec dirname '{}' ';' | sort -u > /etc/ld.so.conf.d/docker-openjdk.conf; 	ldconfig; 		javac --version; 	java --version
-# Thu, 17 Oct 2019 08:30:07 GMT
+# Fri, 18 Oct 2019 23:40:17 GMT
 CMD ["jshell"]
-# Fri, 18 Oct 2019 04:36:23 GMT
+# Sat, 19 Oct 2019 07:46:43 GMT
 LABEL maintainer=Martijn Koster "mak-docker@greenhills.co.uk"
-# Fri, 18 Oct 2019 04:36:23 GMT
+# Sat, 19 Oct 2019 07:46:43 GMT
 LABEL repository=https://github.com/docker-solr/docker-solr
-# Fri, 18 Oct 2019 04:36:23 GMT
+# Sat, 19 Oct 2019 07:46:44 GMT
 ARG SOLR_DOWNLOAD_SERVER
-# Fri, 18 Oct 2019 04:36:30 GMT
+# Sat, 19 Oct 2019 07:46:51 GMT
 RUN apt-get update &&   apt-get -y install acl dirmngr gpg lsof procps wget &&   rm -rf /var/lib/apt/lists/*
-# Fri, 18 Oct 2019 04:39:52 GMT
+# Sat, 19 Oct 2019 07:49:56 GMT
 ENV SOLR_USER=solr SOLR_UID=8983 SOLR_GROUP=solr SOLR_GID=8983 SOLR_VERSION=7.6.0 SOLR_URL=https://archive.apache.org/dist/lucene/solr/7.6.0/solr-7.6.0.tgz SOLR_SHA256=2cb425a0b30ff153465d306803e514e53e41924d74f28d842cb3a07cace759d5 SOLR_KEYS=95B01F0E78111D63D331C1A751F0CC22F625308A PATH=/opt/solr/bin:/opt/docker-solr/scripts:/usr/local/openjdk-11/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Fri, 18 Oct 2019 04:39:52 GMT
+# Sat, 19 Oct 2019 07:49:56 GMT
 ENV GOSU_VERSION=1.11
-# Fri, 18 Oct 2019 04:39:53 GMT
+# Sat, 19 Oct 2019 07:49:56 GMT
 ENV GOSU_KEY=B42F6819007F00F88E364FD4036A9C25BF357DD4
-# Fri, 18 Oct 2019 04:39:53 GMT
+# Sat, 19 Oct 2019 07:49:56 GMT
 ENV TINI_VERSION=v0.18.0
-# Fri, 18 Oct 2019 04:39:53 GMT
+# Sat, 19 Oct 2019 07:49:56 GMT
 ENV TINI_KEY=595E85A6B1B4779EA4DAAEC70B588DFF0527A9B7
-# Fri, 18 Oct 2019 04:39:54 GMT
+# Sat, 19 Oct 2019 07:49:57 GMT
 RUN groupadd -r --gid "$SOLR_GID" "$SOLR_GROUP" &&   useradd -r --uid "$SOLR_UID" --gid "$SOLR_GID" "$SOLR_USER"
-# Fri, 18 Oct 2019 04:39:57 GMT
+# Sat, 19 Oct 2019 07:49:59 GMT
 RUN set -e;   export GNUPGHOME="/tmp/gnupg_home" &&   mkdir -p "$GNUPGHOME" &&   chmod 700 "$GNUPGHOME" &&   echo "disable-ipv6" >> "$GNUPGHOME/dirmngr.conf" &&   for key in $SOLR_KEYS $GOSU_KEY $TINI_KEY; do     found='';     for server in       ha.pool.sks-keyservers.net       hkp://keyserver.ubuntu.com:80       hkp://p80.pool.sks-keyservers.net:80       pgp.mit.edu     ; do       echo "  trying $server for $key";       gpg --batch --keyserver "$server" --keyserver-options timeout=10 --recv-keys "$key" && found=yes && break;       gpg --batch --keyserver "$server" --keyserver-options timeout=10 --recv-keys "$key" && found=yes && break;     done;     test -z "$found" && echo >&2 "error: failed to fetch $key from several disparate servers -- network issues?" && exit 1;   done;   exit 0
-# Fri, 18 Oct 2019 04:40:13 GMT
+# Sat, 19 Oct 2019 07:50:13 GMT
 RUN set -e;   export GNUPGHOME="/tmp/gnupg_home" &&   pkgArch="$(dpkg --print-architecture | awk -F- '{ print $NF }')" &&   wget -O /usr/local/bin/gosu "https://github.com/tianon/gosu/releases/download/$GOSU_VERSION/gosu-$pkgArch" &&   wget -O /usr/local/bin/gosu.asc "https://github.com/tianon/gosu/releases/download/$GOSU_VERSION/gosu-$pkgArch.asc" &&   gpg --batch --verify /usr/local/bin/gosu.asc /usr/local/bin/gosu &&   rm /usr/local/bin/gosu.asc &&   chmod +x /usr/local/bin/gosu &&   gosu nobody true &&   wget -O /usr/local/bin/tini "https://github.com/krallin/tini/releases/download/${TINI_VERSION}/tini-$pkgArch" &&   wget -O /usr/local/bin/tini.asc "https://github.com/krallin/tini/releases/download/${TINI_VERSION}/tini-$pkgArch.asc" &&   gpg --batch --verify /usr/local/bin/tini.asc /usr/local/bin/tini;   rm /usr/local/bin/tini.asc &&   chmod +x /usr/local/bin/tini &&   tini --version &&   echo "downloading $SOLR_URL" &&   wget -nv "$SOLR_URL" -O "/opt/solr-$SOLR_VERSION.tgz" &&   echo "downloading $SOLR_URL.asc" &&   wget -nv "$SOLR_URL.asc" -O "/opt/solr-$SOLR_VERSION.tgz.asc" &&   echo "$SOLR_SHA256 */opt/solr-$SOLR_VERSION.tgz" | sha256sum -c - &&   (>&2 ls -l "/opt/solr-$SOLR_VERSION.tgz" "/opt/solr-$SOLR_VERSION.tgz.asc") &&   gpg --batch --verify "/opt/solr-$SOLR_VERSION.tgz.asc" "/opt/solr-$SOLR_VERSION.tgz" &&   tar -C /opt --extract --file "/opt/solr-$SOLR_VERSION.tgz" &&   mv "/opt/solr-$SOLR_VERSION" /opt/solr &&   rm "/opt/solr-$SOLR_VERSION.tgz"* &&   rm -Rf /opt/solr/docs/ &&   mkdir -p /opt/solr/server/solr/lib /docker-entrypoint-initdb.d /opt/docker-solr &&   mkdir -p /opt/solr/server/solr/mycores /opt/solr/server/logs /opt/mysolrhome &&   sed -i -e "s/\"\$(whoami)\" == \"root\"/\$(id -u) == 0/" /opt/solr/bin/solr &&   sed -i -e 's/lsof -PniTCP:/lsof -t -PniTCP:/' /opt/solr/bin/solr &&   if [ -f "/opt/solr/contrib/prometheus-exporter/bin/solr-exporter" ]; then chmod 0755 "/opt/solr/contrib/prometheus-exporter/bin/solr-exporter"; fi &&   chmod -R 0755 /opt/solr/server/scripts/cloud-scripts &&   chown -R "$SOLR_USER:$SOLR_GROUP" /opt/solr /docker-entrypoint-initdb.d /opt/docker-solr &&   chown -R "$SOLR_USER:$SOLR_GROUP" /opt/mysolrhome &&   { command -v gpgconf && gpgconf --kill all || :; } &&   rm -r "$GNUPGHOME"
-# Fri, 18 Oct 2019 04:40:13 GMT
+# Sat, 19 Oct 2019 07:50:13 GMT
 COPY --chown=solr:solrdir:a038244bf4fec30d0dea82744cb1fc715508d4b53322690c9848d442ff4e0dc6 in /opt/docker-solr/scripts 
-# Fri, 18 Oct 2019 04:40:13 GMT
+# Sat, 19 Oct 2019 07:50:13 GMT
 EXPOSE 8983
-# Fri, 18 Oct 2019 04:40:13 GMT
+# Sat, 19 Oct 2019 07:50:13 GMT
 WORKDIR /opt/solr
-# Fri, 18 Oct 2019 04:40:14 GMT
+# Sat, 19 Oct 2019 07:50:13 GMT
 USER solr
-# Fri, 18 Oct 2019 04:40:14 GMT
+# Sat, 19 Oct 2019 07:50:14 GMT
 ENTRYPOINT ["docker-entrypoint.sh"]
-# Fri, 18 Oct 2019 04:40:14 GMT
+# Sat, 19 Oct 2019 07:50:14 GMT
 CMD ["solr-foreground"]
 ```
 
@@ -3561,29 +3561,29 @@ CMD ["solr-foreground"]
 		Last Modified: Thu, 17 Oct 2019 08:38:38 GMT  
 		Size: 210.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:208dbdb57f64b9643f7760ea628f0e2a21deff0af0b2eb33a0e66f6e3165fbfc`  
-		Last Modified: Thu, 17 Oct 2019 08:39:01 GMT  
-		Size: 196.0 MB (195975541 bytes)  
+	-	`sha256:ebc78a5f677c03a8f4aa611b558b55c4e42cf3113517ec2400695512c176d5ea`  
+		Last Modified: Fri, 18 Oct 2019 23:45:47 GMT  
+		Size: 196.1 MB (196134537 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:0b6e87939381d5f5bf58ebbda7764e5988a7f85de329392991840d7de2392b46`  
-		Last Modified: Fri, 18 Oct 2019 04:44:14 GMT  
-		Size: 5.5 MB (5452429 bytes)  
+	-	`sha256:5422c55f6c915b61b16c325a8d6c50b854cfa1a68d01cdf3257e0544867074c1`  
+		Last Modified: Sat, 19 Oct 2019 07:53:47 GMT  
+		Size: 5.5 MB (5452476 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:44ef8b2f01bfa117204d6fffe835b1440f3a45c3dde76f571fc45e4ea8d35bf2`  
-		Last Modified: Fri, 18 Oct 2019 04:47:02 GMT  
-		Size: 4.3 KB (4281 bytes)  
+	-	`sha256:ce4468a8eb949dc2019f35b61f52f15704df19375f178a053347da53f2430f7c`  
+		Last Modified: Sat, 19 Oct 2019 07:56:07 GMT  
+		Size: 4.3 KB (4285 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c624f9b910c38fc1e5c609bd2ca48fbbb629b378475e28a0e7b3e0d2f6aed01d`  
-		Last Modified: Fri, 18 Oct 2019 04:47:02 GMT  
-		Size: 24.4 KB (24371 bytes)  
+	-	`sha256:5519de4104a882868b3f281f64f8afb2999fe4d8d92add532a7c3c4f2e769f76`  
+		Last Modified: Sat, 19 Oct 2019 07:56:08 GMT  
+		Size: 24.4 KB (24366 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:3c72d5773e166d00efd171e3b2b0a4b8b07a19cd195837c99cffa067808e7e8e`  
-		Last Modified: Fri, 18 Oct 2019 04:47:14 GMT  
-		Size: 171.7 MB (171670311 bytes)  
+	-	`sha256:99d6e6d269569280c213f89924c909333253e1b962072f0ddeb654144ba8d4ae`  
+		Last Modified: Sat, 19 Oct 2019 07:56:18 GMT  
+		Size: 171.7 MB (171670173 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:79e5c5fe1d6bbab5a2806c253a4946cf01758e63d85fdb7fae5b910009ecdaf1`  
-		Last Modified: Fri, 18 Oct 2019 04:47:02 GMT  
-		Size: 5.2 KB (5193 bytes)  
+	-	`sha256:5689ebd6a07ae722c8d2a36a38963e6fff394ad7849a06236f60a007ba68813e`  
+		Last Modified: Sat, 19 Oct 2019 07:56:07 GMT  
+		Size: 5.2 KB (5189 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `solr:7.6.0-slim` - linux; arm64 variant v8
@@ -3704,7 +3704,7 @@ CMD ["solr-foreground"]
 ## `solr:7.6-slim`
 
 ```console
-$ docker pull solr@sha256:cc853a64d606f1693bfcec63f8df2bb591be64cafeaf4ef5f3a61c5d1b4861ad
+$ docker pull solr@sha256:bc8f9008b81f7bcff6d4682c1aa73b84b9acfe83023d19c758208d1cea5e8d94
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -3715,14 +3715,14 @@ $ docker pull solr@sha256:cc853a64d606f1693bfcec63f8df2bb591be64cafeaf4ef5f3a61c
 ### `solr:7.6-slim` - linux; amd64
 
 ```console
-$ docker pull solr@sha256:c65289dcf54b542d0b9e4a6b8df98f647d868346bc9a863131ff50504afaec95
+$ docker pull solr@sha256:767f9f9e27ab2425ae384d02e5cd4066499daf2faf92d2b1a54a8a0dcf2d5574
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **403.5 MB (403488880 bytes)**  
+-	Total Size: **403.6 MB (403647780 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:3cd93649c285f27cc86813f31c3bbe26c9883512f1334a5bc6bb64d32fbfd353`
+-	Image ID: `sha256:a1a539357ddb37e0633cdfd5d6987c0dc8093464262c96454059fa40492e3e36`
 -	Entrypoint: `["docker-entrypoint.sh"]`
 -	Default Command: `["solr-foreground"]`
 
@@ -3741,51 +3741,51 @@ ENV JAVA_HOME=/usr/local/openjdk-11
 ENV PATH=/usr/local/openjdk-11/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
 # Thu, 17 Oct 2019 08:29:46 GMT
 RUN { echo '#/bin/sh'; echo 'echo "$JAVA_HOME"'; } > /usr/local/bin/docker-java-home && chmod +x /usr/local/bin/docker-java-home && [ "$JAVA_HOME" = "$(docker-java-home)" ]
-# Thu, 17 Oct 2019 08:29:46 GMT
-ENV JAVA_VERSION=11.0.4
-# Thu, 17 Oct 2019 08:29:46 GMT
-ENV JAVA_BASE_URL=https://github.com/AdoptOpenJDK/openjdk11-upstream-binaries/releases/download/jdk-11.0.4%2B11/OpenJDK11U-jdk_
-# Thu, 17 Oct 2019 08:29:46 GMT
-ENV JAVA_URL_VERSION=11.0.4_11
-# Thu, 17 Oct 2019 08:30:07 GMT
+# Fri, 18 Oct 2019 23:39:50 GMT
+ENV JAVA_VERSION=11.0.5
+# Fri, 18 Oct 2019 23:39:50 GMT
+ENV JAVA_BASE_URL=https://github.com/AdoptOpenJDK/openjdk11-upstream-binaries/releases/download/jdk-11.0.5%2B10/OpenJDK11U-jdk_
+# Fri, 18 Oct 2019 23:39:50 GMT
+ENV JAVA_URL_VERSION=11.0.5_10
+# Fri, 18 Oct 2019 23:40:16 GMT
 RUN set -eux; 		dpkgArch="$(dpkg --print-architecture)"; 	case "$dpkgArch" in 		amd64) upstreamArch='x64' ;; 		arm64) upstreamArch='aarch64' ;; 		*) echo >&2 "error: unsupported architecture: $dpkgArch" ;; 	esac; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		dirmngr 		gnupg 		wget 	; 	rm -rf /var/lib/apt/lists/*; 		wget -O openjdk.tgz.asc "${JAVA_BASE_URL}${upstreamArch}_linux_${JAVA_URL_VERSION}.tar.gz.sign"; 	wget -O openjdk.tgz "${JAVA_BASE_URL}${upstreamArch}_linux_${JAVA_URL_VERSION}.tar.gz" --progress=dot:giga; 		export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver ha.pool.sks-keyservers.net --keyserver-options no-self-sigs-only --recv-keys CA5F11C6CE22644D42C6AC4492EF8D39DC13168F; 	gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys EAC843EBD3EFDB98CC772FADA5CD6035332FA671; 	gpg --batch --list-sigs --keyid-format 0xLONG CA5F11C6CE22644D42C6AC4492EF8D39DC13168F 		| tee /dev/stderr 		| grep '0xA5CD6035332FA671' 		| grep 'Andrew Haley'; 	gpg --batch --verify openjdk.tgz.asc openjdk.tgz; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME"; 		mkdir -p "$JAVA_HOME"; 	tar --extract 		--file openjdk.tgz 		--directory "$JAVA_HOME" 		--strip-components 1 		--no-same-owner 	; 	rm openjdk.tgz*; 			apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark > /dev/null; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 		{ 		echo '#!/usr/bin/env bash'; 		echo 'set -Eeuo pipefail'; 		echo 'if ! [ -d "$JAVA_HOME" ]; then echo >&2 "error: missing JAVA_HOME environment variable"; exit 1; fi'; 		echo 'cacertsFile=; for f in "$JAVA_HOME/lib/security/cacerts" "$JAVA_HOME/jre/lib/security/cacerts"; do if [ -e "$f" ]; then cacertsFile="$f"; break; fi; done'; 		echo 'if [ -z "$cacertsFile" ] || ! [ -f "$cacertsFile" ]; then echo >&2 "error: failed to find cacerts file in $JAVA_HOME"; exit 1; fi'; 		echo 'trust extract --overwrite --format=java-cacerts --filter=ca-anchors --purpose=server-auth "$cacertsFile"'; 	} > /etc/ca-certificates/update.d/docker-openjdk; 	chmod +x /etc/ca-certificates/update.d/docker-openjdk; 	/etc/ca-certificates/update.d/docker-openjdk; 		find "$JAVA_HOME/lib" -name '*.so' -exec dirname '{}' ';' | sort -u > /etc/ld.so.conf.d/docker-openjdk.conf; 	ldconfig; 		javac --version; 	java --version
-# Thu, 17 Oct 2019 08:30:07 GMT
+# Fri, 18 Oct 2019 23:40:17 GMT
 CMD ["jshell"]
-# Fri, 18 Oct 2019 04:36:23 GMT
+# Sat, 19 Oct 2019 07:46:43 GMT
 LABEL maintainer=Martijn Koster "mak-docker@greenhills.co.uk"
-# Fri, 18 Oct 2019 04:36:23 GMT
+# Sat, 19 Oct 2019 07:46:43 GMT
 LABEL repository=https://github.com/docker-solr/docker-solr
-# Fri, 18 Oct 2019 04:36:23 GMT
+# Sat, 19 Oct 2019 07:46:44 GMT
 ARG SOLR_DOWNLOAD_SERVER
-# Fri, 18 Oct 2019 04:36:30 GMT
+# Sat, 19 Oct 2019 07:46:51 GMT
 RUN apt-get update &&   apt-get -y install acl dirmngr gpg lsof procps wget &&   rm -rf /var/lib/apt/lists/*
-# Fri, 18 Oct 2019 04:39:52 GMT
+# Sat, 19 Oct 2019 07:49:56 GMT
 ENV SOLR_USER=solr SOLR_UID=8983 SOLR_GROUP=solr SOLR_GID=8983 SOLR_VERSION=7.6.0 SOLR_URL=https://archive.apache.org/dist/lucene/solr/7.6.0/solr-7.6.0.tgz SOLR_SHA256=2cb425a0b30ff153465d306803e514e53e41924d74f28d842cb3a07cace759d5 SOLR_KEYS=95B01F0E78111D63D331C1A751F0CC22F625308A PATH=/opt/solr/bin:/opt/docker-solr/scripts:/usr/local/openjdk-11/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Fri, 18 Oct 2019 04:39:52 GMT
+# Sat, 19 Oct 2019 07:49:56 GMT
 ENV GOSU_VERSION=1.11
-# Fri, 18 Oct 2019 04:39:53 GMT
+# Sat, 19 Oct 2019 07:49:56 GMT
 ENV GOSU_KEY=B42F6819007F00F88E364FD4036A9C25BF357DD4
-# Fri, 18 Oct 2019 04:39:53 GMT
+# Sat, 19 Oct 2019 07:49:56 GMT
 ENV TINI_VERSION=v0.18.0
-# Fri, 18 Oct 2019 04:39:53 GMT
+# Sat, 19 Oct 2019 07:49:56 GMT
 ENV TINI_KEY=595E85A6B1B4779EA4DAAEC70B588DFF0527A9B7
-# Fri, 18 Oct 2019 04:39:54 GMT
+# Sat, 19 Oct 2019 07:49:57 GMT
 RUN groupadd -r --gid "$SOLR_GID" "$SOLR_GROUP" &&   useradd -r --uid "$SOLR_UID" --gid "$SOLR_GID" "$SOLR_USER"
-# Fri, 18 Oct 2019 04:39:57 GMT
+# Sat, 19 Oct 2019 07:49:59 GMT
 RUN set -e;   export GNUPGHOME="/tmp/gnupg_home" &&   mkdir -p "$GNUPGHOME" &&   chmod 700 "$GNUPGHOME" &&   echo "disable-ipv6" >> "$GNUPGHOME/dirmngr.conf" &&   for key in $SOLR_KEYS $GOSU_KEY $TINI_KEY; do     found='';     for server in       ha.pool.sks-keyservers.net       hkp://keyserver.ubuntu.com:80       hkp://p80.pool.sks-keyservers.net:80       pgp.mit.edu     ; do       echo "  trying $server for $key";       gpg --batch --keyserver "$server" --keyserver-options timeout=10 --recv-keys "$key" && found=yes && break;       gpg --batch --keyserver "$server" --keyserver-options timeout=10 --recv-keys "$key" && found=yes && break;     done;     test -z "$found" && echo >&2 "error: failed to fetch $key from several disparate servers -- network issues?" && exit 1;   done;   exit 0
-# Fri, 18 Oct 2019 04:40:13 GMT
+# Sat, 19 Oct 2019 07:50:13 GMT
 RUN set -e;   export GNUPGHOME="/tmp/gnupg_home" &&   pkgArch="$(dpkg --print-architecture | awk -F- '{ print $NF }')" &&   wget -O /usr/local/bin/gosu "https://github.com/tianon/gosu/releases/download/$GOSU_VERSION/gosu-$pkgArch" &&   wget -O /usr/local/bin/gosu.asc "https://github.com/tianon/gosu/releases/download/$GOSU_VERSION/gosu-$pkgArch.asc" &&   gpg --batch --verify /usr/local/bin/gosu.asc /usr/local/bin/gosu &&   rm /usr/local/bin/gosu.asc &&   chmod +x /usr/local/bin/gosu &&   gosu nobody true &&   wget -O /usr/local/bin/tini "https://github.com/krallin/tini/releases/download/${TINI_VERSION}/tini-$pkgArch" &&   wget -O /usr/local/bin/tini.asc "https://github.com/krallin/tini/releases/download/${TINI_VERSION}/tini-$pkgArch.asc" &&   gpg --batch --verify /usr/local/bin/tini.asc /usr/local/bin/tini;   rm /usr/local/bin/tini.asc &&   chmod +x /usr/local/bin/tini &&   tini --version &&   echo "downloading $SOLR_URL" &&   wget -nv "$SOLR_URL" -O "/opt/solr-$SOLR_VERSION.tgz" &&   echo "downloading $SOLR_URL.asc" &&   wget -nv "$SOLR_URL.asc" -O "/opt/solr-$SOLR_VERSION.tgz.asc" &&   echo "$SOLR_SHA256 */opt/solr-$SOLR_VERSION.tgz" | sha256sum -c - &&   (>&2 ls -l "/opt/solr-$SOLR_VERSION.tgz" "/opt/solr-$SOLR_VERSION.tgz.asc") &&   gpg --batch --verify "/opt/solr-$SOLR_VERSION.tgz.asc" "/opt/solr-$SOLR_VERSION.tgz" &&   tar -C /opt --extract --file "/opt/solr-$SOLR_VERSION.tgz" &&   mv "/opt/solr-$SOLR_VERSION" /opt/solr &&   rm "/opt/solr-$SOLR_VERSION.tgz"* &&   rm -Rf /opt/solr/docs/ &&   mkdir -p /opt/solr/server/solr/lib /docker-entrypoint-initdb.d /opt/docker-solr &&   mkdir -p /opt/solr/server/solr/mycores /opt/solr/server/logs /opt/mysolrhome &&   sed -i -e "s/\"\$(whoami)\" == \"root\"/\$(id -u) == 0/" /opt/solr/bin/solr &&   sed -i -e 's/lsof -PniTCP:/lsof -t -PniTCP:/' /opt/solr/bin/solr &&   if [ -f "/opt/solr/contrib/prometheus-exporter/bin/solr-exporter" ]; then chmod 0755 "/opt/solr/contrib/prometheus-exporter/bin/solr-exporter"; fi &&   chmod -R 0755 /opt/solr/server/scripts/cloud-scripts &&   chown -R "$SOLR_USER:$SOLR_GROUP" /opt/solr /docker-entrypoint-initdb.d /opt/docker-solr &&   chown -R "$SOLR_USER:$SOLR_GROUP" /opt/mysolrhome &&   { command -v gpgconf && gpgconf --kill all || :; } &&   rm -r "$GNUPGHOME"
-# Fri, 18 Oct 2019 04:40:13 GMT
+# Sat, 19 Oct 2019 07:50:13 GMT
 COPY --chown=solr:solrdir:a038244bf4fec30d0dea82744cb1fc715508d4b53322690c9848d442ff4e0dc6 in /opt/docker-solr/scripts 
-# Fri, 18 Oct 2019 04:40:13 GMT
+# Sat, 19 Oct 2019 07:50:13 GMT
 EXPOSE 8983
-# Fri, 18 Oct 2019 04:40:13 GMT
+# Sat, 19 Oct 2019 07:50:13 GMT
 WORKDIR /opt/solr
-# Fri, 18 Oct 2019 04:40:14 GMT
+# Sat, 19 Oct 2019 07:50:13 GMT
 USER solr
-# Fri, 18 Oct 2019 04:40:14 GMT
+# Sat, 19 Oct 2019 07:50:14 GMT
 ENTRYPOINT ["docker-entrypoint.sh"]
-# Fri, 18 Oct 2019 04:40:14 GMT
+# Sat, 19 Oct 2019 07:50:14 GMT
 CMD ["solr-foreground"]
 ```
 
@@ -3802,29 +3802,29 @@ CMD ["solr-foreground"]
 		Last Modified: Thu, 17 Oct 2019 08:38:38 GMT  
 		Size: 210.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:208dbdb57f64b9643f7760ea628f0e2a21deff0af0b2eb33a0e66f6e3165fbfc`  
-		Last Modified: Thu, 17 Oct 2019 08:39:01 GMT  
-		Size: 196.0 MB (195975541 bytes)  
+	-	`sha256:ebc78a5f677c03a8f4aa611b558b55c4e42cf3113517ec2400695512c176d5ea`  
+		Last Modified: Fri, 18 Oct 2019 23:45:47 GMT  
+		Size: 196.1 MB (196134537 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:0b6e87939381d5f5bf58ebbda7764e5988a7f85de329392991840d7de2392b46`  
-		Last Modified: Fri, 18 Oct 2019 04:44:14 GMT  
-		Size: 5.5 MB (5452429 bytes)  
+	-	`sha256:5422c55f6c915b61b16c325a8d6c50b854cfa1a68d01cdf3257e0544867074c1`  
+		Last Modified: Sat, 19 Oct 2019 07:53:47 GMT  
+		Size: 5.5 MB (5452476 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:44ef8b2f01bfa117204d6fffe835b1440f3a45c3dde76f571fc45e4ea8d35bf2`  
-		Last Modified: Fri, 18 Oct 2019 04:47:02 GMT  
-		Size: 4.3 KB (4281 bytes)  
+	-	`sha256:ce4468a8eb949dc2019f35b61f52f15704df19375f178a053347da53f2430f7c`  
+		Last Modified: Sat, 19 Oct 2019 07:56:07 GMT  
+		Size: 4.3 KB (4285 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c624f9b910c38fc1e5c609bd2ca48fbbb629b378475e28a0e7b3e0d2f6aed01d`  
-		Last Modified: Fri, 18 Oct 2019 04:47:02 GMT  
-		Size: 24.4 KB (24371 bytes)  
+	-	`sha256:5519de4104a882868b3f281f64f8afb2999fe4d8d92add532a7c3c4f2e769f76`  
+		Last Modified: Sat, 19 Oct 2019 07:56:08 GMT  
+		Size: 24.4 KB (24366 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:3c72d5773e166d00efd171e3b2b0a4b8b07a19cd195837c99cffa067808e7e8e`  
-		Last Modified: Fri, 18 Oct 2019 04:47:14 GMT  
-		Size: 171.7 MB (171670311 bytes)  
+	-	`sha256:99d6e6d269569280c213f89924c909333253e1b962072f0ddeb654144ba8d4ae`  
+		Last Modified: Sat, 19 Oct 2019 07:56:18 GMT  
+		Size: 171.7 MB (171670173 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:79e5c5fe1d6bbab5a2806c253a4946cf01758e63d85fdb7fae5b910009ecdaf1`  
-		Last Modified: Fri, 18 Oct 2019 04:47:02 GMT  
-		Size: 5.2 KB (5193 bytes)  
+	-	`sha256:5689ebd6a07ae722c8d2a36a38963e6fff394ad7849a06236f60a007ba68813e`  
+		Last Modified: Sat, 19 Oct 2019 07:56:07 GMT  
+		Size: 5.2 KB (5189 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `solr:7.6-slim` - linux; arm64 variant v8
@@ -3945,7 +3945,7 @@ CMD ["solr-foreground"]
 ## `solr:7.7`
 
 ```console
-$ docker pull solr@sha256:ba9dd6776056bb2bf025baef397c0ac9c5c5ecbfb23f9ba359c2710c2e6ee8ae
+$ docker pull solr@sha256:bcfc4e3908f72307fbc4a75cba1730dc80f281659dd2e78042b3462d4e0e6a22
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -3956,14 +3956,14 @@ $ docker pull solr@sha256:ba9dd6776056bb2bf025baef397c0ac9c5c5ecbfb23f9ba359c271
 ### `solr:7.7` - linux; amd64
 
 ```console
-$ docker pull solr@sha256:75b301a08cfbf33465b85fdec09bad9a4a2bb3484ab055ec15326a5df8e20676
+$ docker pull solr@sha256:31ce3e56ac877a663ec76c02d16e0df575d20a1f7883f090e84627d17b338b68
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **484.6 MB (484606744 bytes)**  
+-	Total Size: **484.8 MB (484763257 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:bc7399bfda02b68f17c09c106652d19fba42e654c943952566f8be8418980bfe`
+-	Image ID: `sha256:523ebb9ba8b9b4234d8c1e539db1be10c61a2fff324b193afe8b101de1ecb6b2`
 -	Entrypoint: `["docker-entrypoint.sh"]`
 -	Default Command: `["solr-foreground"]`
 
@@ -3988,51 +3988,51 @@ ENV JAVA_HOME=/usr/local/openjdk-11
 ENV PATH=/usr/local/openjdk-11/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
 # Thu, 17 Oct 2019 08:29:25 GMT
 RUN { echo '#/bin/sh'; echo 'echo "$JAVA_HOME"'; } > /usr/local/bin/docker-java-home && chmod +x /usr/local/bin/docker-java-home && [ "$JAVA_HOME" = "$(docker-java-home)" ]
-# Thu, 17 Oct 2019 08:29:25 GMT
-ENV JAVA_VERSION=11.0.4
-# Thu, 17 Oct 2019 08:29:25 GMT
-ENV JAVA_BASE_URL=https://github.com/AdoptOpenJDK/openjdk11-upstream-binaries/releases/download/jdk-11.0.4%2B11/OpenJDK11U-jdk_
-# Thu, 17 Oct 2019 08:29:26 GMT
-ENV JAVA_URL_VERSION=11.0.4_11
-# Thu, 17 Oct 2019 08:29:39 GMT
+# Fri, 18 Oct 2019 23:39:21 GMT
+ENV JAVA_VERSION=11.0.5
+# Fri, 18 Oct 2019 23:39:21 GMT
+ENV JAVA_BASE_URL=https://github.com/AdoptOpenJDK/openjdk11-upstream-binaries/releases/download/jdk-11.0.5%2B10/OpenJDK11U-jdk_
+# Fri, 18 Oct 2019 23:39:21 GMT
+ENV JAVA_URL_VERSION=11.0.5_10
+# Fri, 18 Oct 2019 23:39:41 GMT
 RUN set -eux; 		dpkgArch="$(dpkg --print-architecture)"; 	case "$dpkgArch" in 		amd64) upstreamArch='x64' ;; 		arm64) upstreamArch='aarch64' ;; 		*) echo >&2 "error: unsupported architecture: $dpkgArch" ;; 	esac; 		wget -O openjdk.tgz.asc "${JAVA_BASE_URL}${upstreamArch}_linux_${JAVA_URL_VERSION}.tar.gz.sign"; 	wget -O openjdk.tgz "${JAVA_BASE_URL}${upstreamArch}_linux_${JAVA_URL_VERSION}.tar.gz" --progress=dot:giga; 		export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver ha.pool.sks-keyservers.net --keyserver-options no-self-sigs-only --recv-keys CA5F11C6CE22644D42C6AC4492EF8D39DC13168F; 	gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys EAC843EBD3EFDB98CC772FADA5CD6035332FA671; 	gpg --batch --list-sigs --keyid-format 0xLONG CA5F11C6CE22644D42C6AC4492EF8D39DC13168F 		| tee /dev/stderr 		| grep '0xA5CD6035332FA671' 		| grep 'Andrew Haley'; 	gpg --batch --verify openjdk.tgz.asc openjdk.tgz; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME"; 		mkdir -p "$JAVA_HOME"; 	tar --extract 		--file openjdk.tgz 		--directory "$JAVA_HOME" 		--strip-components 1 		--no-same-owner 	; 	rm openjdk.tgz*; 			{ 		echo '#!/usr/bin/env bash'; 		echo 'set -Eeuo pipefail'; 		echo 'if ! [ -d "$JAVA_HOME" ]; then echo >&2 "error: missing JAVA_HOME environment variable"; exit 1; fi'; 		echo 'cacertsFile=; for f in "$JAVA_HOME/lib/security/cacerts" "$JAVA_HOME/jre/lib/security/cacerts"; do if [ -e "$f" ]; then cacertsFile="$f"; break; fi; done'; 		echo 'if [ -z "$cacertsFile" ] || ! [ -f "$cacertsFile" ]; then echo >&2 "error: failed to find cacerts file in $JAVA_HOME"; exit 1; fi'; 		echo 'trust extract --overwrite --format=java-cacerts --filter=ca-anchors --purpose=server-auth "$cacertsFile"'; 	} > /etc/ca-certificates/update.d/docker-openjdk; 	chmod +x /etc/ca-certificates/update.d/docker-openjdk; 	/etc/ca-certificates/update.d/docker-openjdk; 		find "$JAVA_HOME/lib" -name '*.so' -exec dirname '{}' ';' | sort -u > /etc/ld.so.conf.d/docker-openjdk.conf; 	ldconfig; 		javac --version; 	java --version
-# Thu, 17 Oct 2019 08:29:39 GMT
+# Fri, 18 Oct 2019 23:39:42 GMT
 CMD ["jshell"]
-# Fri, 18 Oct 2019 04:35:50 GMT
+# Sat, 19 Oct 2019 07:46:10 GMT
 LABEL maintainer=Martijn Koster "mak-docker@greenhills.co.uk"
-# Fri, 18 Oct 2019 04:35:50 GMT
+# Sat, 19 Oct 2019 07:46:11 GMT
 LABEL repository=https://github.com/docker-solr/docker-solr
-# Fri, 18 Oct 2019 04:35:50 GMT
+# Sat, 19 Oct 2019 07:46:11 GMT
 ARG SOLR_DOWNLOAD_SERVER
-# Fri, 18 Oct 2019 04:35:55 GMT
+# Sat, 19 Oct 2019 07:46:15 GMT
 RUN apt-get update &&   apt-get -y install acl dirmngr gpg lsof procps wget &&   rm -rf /var/lib/apt/lists/*
-# Fri, 18 Oct 2019 04:38:28 GMT
+# Sat, 19 Oct 2019 07:48:48 GMT
 ENV SOLR_USER=solr SOLR_UID=8983 SOLR_GROUP=solr SOLR_GID=8983 SOLR_VERSION=7.7.2 SOLR_URL=https://archive.apache.org/dist/lucene/solr/7.7.2/solr-7.7.2.tgz SOLR_SHA256=eb8ee4038f25364328355de3338e46961093e39166c9bcc28b5915ae491320df SOLR_KEYS=2CECBFBA181601547B654B9FFA81AC8A490F538E PATH=/opt/solr/bin:/opt/docker-solr/scripts:/usr/local/openjdk-11/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Fri, 18 Oct 2019 04:38:28 GMT
+# Sat, 19 Oct 2019 07:48:48 GMT
 ENV GOSU_VERSION=1.11
-# Fri, 18 Oct 2019 04:38:29 GMT
+# Sat, 19 Oct 2019 07:48:48 GMT
 ENV GOSU_KEY=B42F6819007F00F88E364FD4036A9C25BF357DD4
-# Fri, 18 Oct 2019 04:38:29 GMT
+# Sat, 19 Oct 2019 07:48:49 GMT
 ENV TINI_VERSION=v0.18.0
-# Fri, 18 Oct 2019 04:38:29 GMT
+# Sat, 19 Oct 2019 07:48:49 GMT
 ENV TINI_KEY=595E85A6B1B4779EA4DAAEC70B588DFF0527A9B7
-# Fri, 18 Oct 2019 04:38:30 GMT
+# Sat, 19 Oct 2019 07:48:50 GMT
 RUN groupadd -r --gid "$SOLR_GID" "$SOLR_GROUP" &&   useradd -r --uid "$SOLR_UID" --gid "$SOLR_GID" "$SOLR_USER"
-# Fri, 18 Oct 2019 04:38:33 GMT
+# Sat, 19 Oct 2019 07:48:53 GMT
 RUN set -e;   export GNUPGHOME="/tmp/gnupg_home" &&   mkdir -p "$GNUPGHOME" &&   chmod 700 "$GNUPGHOME" &&   echo "disable-ipv6" >> "$GNUPGHOME/dirmngr.conf" &&   for key in $SOLR_KEYS $GOSU_KEY $TINI_KEY; do     found='';     for server in       ha.pool.sks-keyservers.net       hkp://keyserver.ubuntu.com:80       hkp://p80.pool.sks-keyservers.net:80       pgp.mit.edu     ; do       echo "  trying $server for $key";       gpg --batch --keyserver "$server" --keyserver-options timeout=10 --recv-keys "$key" && found=yes && break;       gpg --batch --keyserver "$server" --keyserver-options timeout=10 --recv-keys "$key" && found=yes && break;     done;     test -z "$found" && echo >&2 "error: failed to fetch $key from several disparate servers -- network issues?" && exit 1;   done;   exit 0
-# Fri, 18 Oct 2019 04:38:48 GMT
+# Sat, 19 Oct 2019 07:49:07 GMT
 RUN set -e;   export GNUPGHOME="/tmp/gnupg_home" &&   pkgArch="$(dpkg --print-architecture | awk -F- '{ print $NF }')" &&   wget -O /usr/local/bin/gosu "https://github.com/tianon/gosu/releases/download/$GOSU_VERSION/gosu-$pkgArch" &&   wget -O /usr/local/bin/gosu.asc "https://github.com/tianon/gosu/releases/download/$GOSU_VERSION/gosu-$pkgArch.asc" &&   gpg --batch --verify /usr/local/bin/gosu.asc /usr/local/bin/gosu &&   rm /usr/local/bin/gosu.asc &&   chmod +x /usr/local/bin/gosu &&   gosu nobody true &&   wget -O /usr/local/bin/tini "https://github.com/krallin/tini/releases/download/${TINI_VERSION}/tini-$pkgArch" &&   wget -O /usr/local/bin/tini.asc "https://github.com/krallin/tini/releases/download/${TINI_VERSION}/tini-$pkgArch.asc" &&   gpg --batch --verify /usr/local/bin/tini.asc /usr/local/bin/tini;   rm /usr/local/bin/tini.asc &&   chmod +x /usr/local/bin/tini &&   tini --version &&   echo "downloading $SOLR_URL" &&   wget -nv "$SOLR_URL" -O "/opt/solr-$SOLR_VERSION.tgz" &&   echo "downloading $SOLR_URL.asc" &&   wget -nv "$SOLR_URL.asc" -O "/opt/solr-$SOLR_VERSION.tgz.asc" &&   echo "$SOLR_SHA256 */opt/solr-$SOLR_VERSION.tgz" | sha256sum -c - &&   (>&2 ls -l "/opt/solr-$SOLR_VERSION.tgz" "/opt/solr-$SOLR_VERSION.tgz.asc") &&   gpg --batch --verify "/opt/solr-$SOLR_VERSION.tgz.asc" "/opt/solr-$SOLR_VERSION.tgz" &&   tar -C /opt --extract --file "/opt/solr-$SOLR_VERSION.tgz" &&   mv "/opt/solr-$SOLR_VERSION" /opt/solr &&   rm "/opt/solr-$SOLR_VERSION.tgz"* &&   rm -Rf /opt/solr/docs/ &&   mkdir -p /opt/solr/server/solr/lib /docker-entrypoint-initdb.d /opt/docker-solr &&   mkdir -p /opt/solr/server/solr/mycores /opt/solr/server/logs /opt/mysolrhome &&   sed -i -e "s/\"\$(whoami)\" == \"root\"/\$(id -u) == 0/" /opt/solr/bin/solr &&   sed -i -e 's/lsof -PniTCP:/lsof -t -PniTCP:/' /opt/solr/bin/solr &&   if [ -f "/opt/solr/contrib/prometheus-exporter/bin/solr-exporter" ]; then chmod 0755 "/opt/solr/contrib/prometheus-exporter/bin/solr-exporter"; fi &&   chmod -R 0755 /opt/solr/server/scripts/cloud-scripts &&   chown -R "$SOLR_USER:$SOLR_GROUP" /opt/solr /docker-entrypoint-initdb.d /opt/docker-solr &&   chown -R "$SOLR_USER:$SOLR_GROUP" /opt/mysolrhome &&   { command -v gpgconf && gpgconf --kill all || :; } &&   rm -r "$GNUPGHOME"
-# Fri, 18 Oct 2019 04:38:48 GMT
+# Sat, 19 Oct 2019 07:49:07 GMT
 COPY --chown=solr:solrdir:a038244bf4fec30d0dea82744cb1fc715508d4b53322690c9848d442ff4e0dc6 in /opt/docker-solr/scripts 
-# Fri, 18 Oct 2019 04:38:49 GMT
+# Sat, 19 Oct 2019 07:49:07 GMT
 EXPOSE 8983
-# Fri, 18 Oct 2019 04:38:49 GMT
+# Sat, 19 Oct 2019 07:49:07 GMT
 WORKDIR /opt/solr
-# Fri, 18 Oct 2019 04:38:49 GMT
+# Sat, 19 Oct 2019 07:49:08 GMT
 USER solr
-# Fri, 18 Oct 2019 04:38:49 GMT
+# Sat, 19 Oct 2019 07:49:08 GMT
 ENTRYPOINT ["docker-entrypoint.sh"]
-# Fri, 18 Oct 2019 04:38:49 GMT
+# Sat, 19 Oct 2019 07:49:08 GMT
 CMD ["solr-foreground"]
 ```
 
@@ -4061,29 +4061,29 @@ CMD ["solr-foreground"]
 		Last Modified: Thu, 17 Oct 2019 08:38:05 GMT  
 		Size: 218.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:115f4a5a7971e04e4fed86d76c049ff73c54e467dc07423546790188502ce0bc`  
-		Last Modified: Thu, 17 Oct 2019 08:38:28 GMT  
-		Size: 195.7 MB (195718813 bytes)  
+	-	`sha256:0ce121b6a2ffae7f0fc0b7c20d3a0a46f62762dd7c1f14db73fa2ab9248bf1dc`  
+		Last Modified: Fri, 18 Oct 2019 23:45:21 GMT  
+		Size: 195.9 MB (195875192 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:8f99c82bd7831902ccf2bd474012a7be46a8161ba0124a4864ac469ffcad5bbe`  
-		Last Modified: Fri, 18 Oct 2019 04:43:52 GMT  
-		Size: 761.5 KB (761483 bytes)  
+	-	`sha256:73e1c53bd62b5d1b2ee52a9c04be2a0e5a5b245abc76a4d9365fd1ceba45f32c`  
+		Last Modified: Sat, 19 Oct 2019 07:53:23 GMT  
+		Size: 761.5 KB (761492 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:e42981739346e02539dd2f1627885fb3fbc0840d801e840788a96779f131f4c4`  
-		Last Modified: Fri, 18 Oct 2019 04:46:02 GMT  
-		Size: 4.3 KB (4305 bytes)  
+	-	`sha256:3114b528e10a4ab2b2da46d734971e7af0e50fdab1d62dbf8c4e47de5701798d`  
+		Last Modified: Sat, 19 Oct 2019 07:55:03 GMT  
+		Size: 4.3 KB (4301 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:912e0e23b19d98ae0bbe672d5467b3777be6e4b391bee52bc6a375d00e07e3ee`  
-		Last Modified: Fri, 18 Oct 2019 04:46:02 GMT  
-		Size: 175.8 KB (175803 bytes)  
+	-	`sha256:49142d10e445e0c84a9c0774c82b35bacb8e64de10f3cb29a42b6a1c3c49d437`  
+		Last Modified: Sat, 19 Oct 2019 07:55:03 GMT  
+		Size: 175.8 KB (175799 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:18b8801d45f5025fc7aa622a2879d9ced8deab946d78511146a6fcc245ceda54`  
-		Last Modified: Fri, 18 Oct 2019 04:46:18 GMT  
-		Size: 172.4 MB (172422080 bytes)  
+	-	`sha256:9ad1410e38477884a0793eddb649dfba25f241f18c854de76268f06a98c05fa6`  
+		Last Modified: Sat, 19 Oct 2019 07:55:13 GMT  
+		Size: 172.4 MB (172422215 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:139ce4d60133f1b3c55a5bc9e09428dfe68c896a48a96b18c9a8340265115bd4`  
-		Last Modified: Fri, 18 Oct 2019 04:46:02 GMT  
-		Size: 5.2 KB (5193 bytes)  
+	-	`sha256:9e9ddf5d2901da7b287bcc9016e22cd26ba0bf33400420a55ed91497bb9ca8a6`  
+		Last Modified: Sat, 19 Oct 2019 07:55:03 GMT  
+		Size: 5.2 KB (5191 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `solr:7.7` - linux; arm64 variant v8
@@ -4222,7 +4222,7 @@ CMD ["solr-foreground"]
 ## `solr:7.7.2`
 
 ```console
-$ docker pull solr@sha256:ba9dd6776056bb2bf025baef397c0ac9c5c5ecbfb23f9ba359c2710c2e6ee8ae
+$ docker pull solr@sha256:bcfc4e3908f72307fbc4a75cba1730dc80f281659dd2e78042b3462d4e0e6a22
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -4233,14 +4233,14 @@ $ docker pull solr@sha256:ba9dd6776056bb2bf025baef397c0ac9c5c5ecbfb23f9ba359c271
 ### `solr:7.7.2` - linux; amd64
 
 ```console
-$ docker pull solr@sha256:75b301a08cfbf33465b85fdec09bad9a4a2bb3484ab055ec15326a5df8e20676
+$ docker pull solr@sha256:31ce3e56ac877a663ec76c02d16e0df575d20a1f7883f090e84627d17b338b68
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **484.6 MB (484606744 bytes)**  
+-	Total Size: **484.8 MB (484763257 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:bc7399bfda02b68f17c09c106652d19fba42e654c943952566f8be8418980bfe`
+-	Image ID: `sha256:523ebb9ba8b9b4234d8c1e539db1be10c61a2fff324b193afe8b101de1ecb6b2`
 -	Entrypoint: `["docker-entrypoint.sh"]`
 -	Default Command: `["solr-foreground"]`
 
@@ -4265,51 +4265,51 @@ ENV JAVA_HOME=/usr/local/openjdk-11
 ENV PATH=/usr/local/openjdk-11/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
 # Thu, 17 Oct 2019 08:29:25 GMT
 RUN { echo '#/bin/sh'; echo 'echo "$JAVA_HOME"'; } > /usr/local/bin/docker-java-home && chmod +x /usr/local/bin/docker-java-home && [ "$JAVA_HOME" = "$(docker-java-home)" ]
-# Thu, 17 Oct 2019 08:29:25 GMT
-ENV JAVA_VERSION=11.0.4
-# Thu, 17 Oct 2019 08:29:25 GMT
-ENV JAVA_BASE_URL=https://github.com/AdoptOpenJDK/openjdk11-upstream-binaries/releases/download/jdk-11.0.4%2B11/OpenJDK11U-jdk_
-# Thu, 17 Oct 2019 08:29:26 GMT
-ENV JAVA_URL_VERSION=11.0.4_11
-# Thu, 17 Oct 2019 08:29:39 GMT
+# Fri, 18 Oct 2019 23:39:21 GMT
+ENV JAVA_VERSION=11.0.5
+# Fri, 18 Oct 2019 23:39:21 GMT
+ENV JAVA_BASE_URL=https://github.com/AdoptOpenJDK/openjdk11-upstream-binaries/releases/download/jdk-11.0.5%2B10/OpenJDK11U-jdk_
+# Fri, 18 Oct 2019 23:39:21 GMT
+ENV JAVA_URL_VERSION=11.0.5_10
+# Fri, 18 Oct 2019 23:39:41 GMT
 RUN set -eux; 		dpkgArch="$(dpkg --print-architecture)"; 	case "$dpkgArch" in 		amd64) upstreamArch='x64' ;; 		arm64) upstreamArch='aarch64' ;; 		*) echo >&2 "error: unsupported architecture: $dpkgArch" ;; 	esac; 		wget -O openjdk.tgz.asc "${JAVA_BASE_URL}${upstreamArch}_linux_${JAVA_URL_VERSION}.tar.gz.sign"; 	wget -O openjdk.tgz "${JAVA_BASE_URL}${upstreamArch}_linux_${JAVA_URL_VERSION}.tar.gz" --progress=dot:giga; 		export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver ha.pool.sks-keyservers.net --keyserver-options no-self-sigs-only --recv-keys CA5F11C6CE22644D42C6AC4492EF8D39DC13168F; 	gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys EAC843EBD3EFDB98CC772FADA5CD6035332FA671; 	gpg --batch --list-sigs --keyid-format 0xLONG CA5F11C6CE22644D42C6AC4492EF8D39DC13168F 		| tee /dev/stderr 		| grep '0xA5CD6035332FA671' 		| grep 'Andrew Haley'; 	gpg --batch --verify openjdk.tgz.asc openjdk.tgz; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME"; 		mkdir -p "$JAVA_HOME"; 	tar --extract 		--file openjdk.tgz 		--directory "$JAVA_HOME" 		--strip-components 1 		--no-same-owner 	; 	rm openjdk.tgz*; 			{ 		echo '#!/usr/bin/env bash'; 		echo 'set -Eeuo pipefail'; 		echo 'if ! [ -d "$JAVA_HOME" ]; then echo >&2 "error: missing JAVA_HOME environment variable"; exit 1; fi'; 		echo 'cacertsFile=; for f in "$JAVA_HOME/lib/security/cacerts" "$JAVA_HOME/jre/lib/security/cacerts"; do if [ -e "$f" ]; then cacertsFile="$f"; break; fi; done'; 		echo 'if [ -z "$cacertsFile" ] || ! [ -f "$cacertsFile" ]; then echo >&2 "error: failed to find cacerts file in $JAVA_HOME"; exit 1; fi'; 		echo 'trust extract --overwrite --format=java-cacerts --filter=ca-anchors --purpose=server-auth "$cacertsFile"'; 	} > /etc/ca-certificates/update.d/docker-openjdk; 	chmod +x /etc/ca-certificates/update.d/docker-openjdk; 	/etc/ca-certificates/update.d/docker-openjdk; 		find "$JAVA_HOME/lib" -name '*.so' -exec dirname '{}' ';' | sort -u > /etc/ld.so.conf.d/docker-openjdk.conf; 	ldconfig; 		javac --version; 	java --version
-# Thu, 17 Oct 2019 08:29:39 GMT
+# Fri, 18 Oct 2019 23:39:42 GMT
 CMD ["jshell"]
-# Fri, 18 Oct 2019 04:35:50 GMT
+# Sat, 19 Oct 2019 07:46:10 GMT
 LABEL maintainer=Martijn Koster "mak-docker@greenhills.co.uk"
-# Fri, 18 Oct 2019 04:35:50 GMT
+# Sat, 19 Oct 2019 07:46:11 GMT
 LABEL repository=https://github.com/docker-solr/docker-solr
-# Fri, 18 Oct 2019 04:35:50 GMT
+# Sat, 19 Oct 2019 07:46:11 GMT
 ARG SOLR_DOWNLOAD_SERVER
-# Fri, 18 Oct 2019 04:35:55 GMT
+# Sat, 19 Oct 2019 07:46:15 GMT
 RUN apt-get update &&   apt-get -y install acl dirmngr gpg lsof procps wget &&   rm -rf /var/lib/apt/lists/*
-# Fri, 18 Oct 2019 04:38:28 GMT
+# Sat, 19 Oct 2019 07:48:48 GMT
 ENV SOLR_USER=solr SOLR_UID=8983 SOLR_GROUP=solr SOLR_GID=8983 SOLR_VERSION=7.7.2 SOLR_URL=https://archive.apache.org/dist/lucene/solr/7.7.2/solr-7.7.2.tgz SOLR_SHA256=eb8ee4038f25364328355de3338e46961093e39166c9bcc28b5915ae491320df SOLR_KEYS=2CECBFBA181601547B654B9FFA81AC8A490F538E PATH=/opt/solr/bin:/opt/docker-solr/scripts:/usr/local/openjdk-11/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Fri, 18 Oct 2019 04:38:28 GMT
+# Sat, 19 Oct 2019 07:48:48 GMT
 ENV GOSU_VERSION=1.11
-# Fri, 18 Oct 2019 04:38:29 GMT
+# Sat, 19 Oct 2019 07:48:48 GMT
 ENV GOSU_KEY=B42F6819007F00F88E364FD4036A9C25BF357DD4
-# Fri, 18 Oct 2019 04:38:29 GMT
+# Sat, 19 Oct 2019 07:48:49 GMT
 ENV TINI_VERSION=v0.18.0
-# Fri, 18 Oct 2019 04:38:29 GMT
+# Sat, 19 Oct 2019 07:48:49 GMT
 ENV TINI_KEY=595E85A6B1B4779EA4DAAEC70B588DFF0527A9B7
-# Fri, 18 Oct 2019 04:38:30 GMT
+# Sat, 19 Oct 2019 07:48:50 GMT
 RUN groupadd -r --gid "$SOLR_GID" "$SOLR_GROUP" &&   useradd -r --uid "$SOLR_UID" --gid "$SOLR_GID" "$SOLR_USER"
-# Fri, 18 Oct 2019 04:38:33 GMT
+# Sat, 19 Oct 2019 07:48:53 GMT
 RUN set -e;   export GNUPGHOME="/tmp/gnupg_home" &&   mkdir -p "$GNUPGHOME" &&   chmod 700 "$GNUPGHOME" &&   echo "disable-ipv6" >> "$GNUPGHOME/dirmngr.conf" &&   for key in $SOLR_KEYS $GOSU_KEY $TINI_KEY; do     found='';     for server in       ha.pool.sks-keyservers.net       hkp://keyserver.ubuntu.com:80       hkp://p80.pool.sks-keyservers.net:80       pgp.mit.edu     ; do       echo "  trying $server for $key";       gpg --batch --keyserver "$server" --keyserver-options timeout=10 --recv-keys "$key" && found=yes && break;       gpg --batch --keyserver "$server" --keyserver-options timeout=10 --recv-keys "$key" && found=yes && break;     done;     test -z "$found" && echo >&2 "error: failed to fetch $key from several disparate servers -- network issues?" && exit 1;   done;   exit 0
-# Fri, 18 Oct 2019 04:38:48 GMT
+# Sat, 19 Oct 2019 07:49:07 GMT
 RUN set -e;   export GNUPGHOME="/tmp/gnupg_home" &&   pkgArch="$(dpkg --print-architecture | awk -F- '{ print $NF }')" &&   wget -O /usr/local/bin/gosu "https://github.com/tianon/gosu/releases/download/$GOSU_VERSION/gosu-$pkgArch" &&   wget -O /usr/local/bin/gosu.asc "https://github.com/tianon/gosu/releases/download/$GOSU_VERSION/gosu-$pkgArch.asc" &&   gpg --batch --verify /usr/local/bin/gosu.asc /usr/local/bin/gosu &&   rm /usr/local/bin/gosu.asc &&   chmod +x /usr/local/bin/gosu &&   gosu nobody true &&   wget -O /usr/local/bin/tini "https://github.com/krallin/tini/releases/download/${TINI_VERSION}/tini-$pkgArch" &&   wget -O /usr/local/bin/tini.asc "https://github.com/krallin/tini/releases/download/${TINI_VERSION}/tini-$pkgArch.asc" &&   gpg --batch --verify /usr/local/bin/tini.asc /usr/local/bin/tini;   rm /usr/local/bin/tini.asc &&   chmod +x /usr/local/bin/tini &&   tini --version &&   echo "downloading $SOLR_URL" &&   wget -nv "$SOLR_URL" -O "/opt/solr-$SOLR_VERSION.tgz" &&   echo "downloading $SOLR_URL.asc" &&   wget -nv "$SOLR_URL.asc" -O "/opt/solr-$SOLR_VERSION.tgz.asc" &&   echo "$SOLR_SHA256 */opt/solr-$SOLR_VERSION.tgz" | sha256sum -c - &&   (>&2 ls -l "/opt/solr-$SOLR_VERSION.tgz" "/opt/solr-$SOLR_VERSION.tgz.asc") &&   gpg --batch --verify "/opt/solr-$SOLR_VERSION.tgz.asc" "/opt/solr-$SOLR_VERSION.tgz" &&   tar -C /opt --extract --file "/opt/solr-$SOLR_VERSION.tgz" &&   mv "/opt/solr-$SOLR_VERSION" /opt/solr &&   rm "/opt/solr-$SOLR_VERSION.tgz"* &&   rm -Rf /opt/solr/docs/ &&   mkdir -p /opt/solr/server/solr/lib /docker-entrypoint-initdb.d /opt/docker-solr &&   mkdir -p /opt/solr/server/solr/mycores /opt/solr/server/logs /opt/mysolrhome &&   sed -i -e "s/\"\$(whoami)\" == \"root\"/\$(id -u) == 0/" /opt/solr/bin/solr &&   sed -i -e 's/lsof -PniTCP:/lsof -t -PniTCP:/' /opt/solr/bin/solr &&   if [ -f "/opt/solr/contrib/prometheus-exporter/bin/solr-exporter" ]; then chmod 0755 "/opt/solr/contrib/prometheus-exporter/bin/solr-exporter"; fi &&   chmod -R 0755 /opt/solr/server/scripts/cloud-scripts &&   chown -R "$SOLR_USER:$SOLR_GROUP" /opt/solr /docker-entrypoint-initdb.d /opt/docker-solr &&   chown -R "$SOLR_USER:$SOLR_GROUP" /opt/mysolrhome &&   { command -v gpgconf && gpgconf --kill all || :; } &&   rm -r "$GNUPGHOME"
-# Fri, 18 Oct 2019 04:38:48 GMT
+# Sat, 19 Oct 2019 07:49:07 GMT
 COPY --chown=solr:solrdir:a038244bf4fec30d0dea82744cb1fc715508d4b53322690c9848d442ff4e0dc6 in /opt/docker-solr/scripts 
-# Fri, 18 Oct 2019 04:38:49 GMT
+# Sat, 19 Oct 2019 07:49:07 GMT
 EXPOSE 8983
-# Fri, 18 Oct 2019 04:38:49 GMT
+# Sat, 19 Oct 2019 07:49:07 GMT
 WORKDIR /opt/solr
-# Fri, 18 Oct 2019 04:38:49 GMT
+# Sat, 19 Oct 2019 07:49:08 GMT
 USER solr
-# Fri, 18 Oct 2019 04:38:49 GMT
+# Sat, 19 Oct 2019 07:49:08 GMT
 ENTRYPOINT ["docker-entrypoint.sh"]
-# Fri, 18 Oct 2019 04:38:49 GMT
+# Sat, 19 Oct 2019 07:49:08 GMT
 CMD ["solr-foreground"]
 ```
 
@@ -4338,29 +4338,29 @@ CMD ["solr-foreground"]
 		Last Modified: Thu, 17 Oct 2019 08:38:05 GMT  
 		Size: 218.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:115f4a5a7971e04e4fed86d76c049ff73c54e467dc07423546790188502ce0bc`  
-		Last Modified: Thu, 17 Oct 2019 08:38:28 GMT  
-		Size: 195.7 MB (195718813 bytes)  
+	-	`sha256:0ce121b6a2ffae7f0fc0b7c20d3a0a46f62762dd7c1f14db73fa2ab9248bf1dc`  
+		Last Modified: Fri, 18 Oct 2019 23:45:21 GMT  
+		Size: 195.9 MB (195875192 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:8f99c82bd7831902ccf2bd474012a7be46a8161ba0124a4864ac469ffcad5bbe`  
-		Last Modified: Fri, 18 Oct 2019 04:43:52 GMT  
-		Size: 761.5 KB (761483 bytes)  
+	-	`sha256:73e1c53bd62b5d1b2ee52a9c04be2a0e5a5b245abc76a4d9365fd1ceba45f32c`  
+		Last Modified: Sat, 19 Oct 2019 07:53:23 GMT  
+		Size: 761.5 KB (761492 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:e42981739346e02539dd2f1627885fb3fbc0840d801e840788a96779f131f4c4`  
-		Last Modified: Fri, 18 Oct 2019 04:46:02 GMT  
-		Size: 4.3 KB (4305 bytes)  
+	-	`sha256:3114b528e10a4ab2b2da46d734971e7af0e50fdab1d62dbf8c4e47de5701798d`  
+		Last Modified: Sat, 19 Oct 2019 07:55:03 GMT  
+		Size: 4.3 KB (4301 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:912e0e23b19d98ae0bbe672d5467b3777be6e4b391bee52bc6a375d00e07e3ee`  
-		Last Modified: Fri, 18 Oct 2019 04:46:02 GMT  
-		Size: 175.8 KB (175803 bytes)  
+	-	`sha256:49142d10e445e0c84a9c0774c82b35bacb8e64de10f3cb29a42b6a1c3c49d437`  
+		Last Modified: Sat, 19 Oct 2019 07:55:03 GMT  
+		Size: 175.8 KB (175799 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:18b8801d45f5025fc7aa622a2879d9ced8deab946d78511146a6fcc245ceda54`  
-		Last Modified: Fri, 18 Oct 2019 04:46:18 GMT  
-		Size: 172.4 MB (172422080 bytes)  
+	-	`sha256:9ad1410e38477884a0793eddb649dfba25f241f18c854de76268f06a98c05fa6`  
+		Last Modified: Sat, 19 Oct 2019 07:55:13 GMT  
+		Size: 172.4 MB (172422215 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:139ce4d60133f1b3c55a5bc9e09428dfe68c896a48a96b18c9a8340265115bd4`  
-		Last Modified: Fri, 18 Oct 2019 04:46:02 GMT  
-		Size: 5.2 KB (5193 bytes)  
+	-	`sha256:9e9ddf5d2901da7b287bcc9016e22cd26ba0bf33400420a55ed91497bb9ca8a6`  
+		Last Modified: Sat, 19 Oct 2019 07:55:03 GMT  
+		Size: 5.2 KB (5191 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `solr:7.7.2` - linux; arm64 variant v8
@@ -4499,7 +4499,7 @@ CMD ["solr-foreground"]
 ## `solr:7.7.2-slim`
 
 ```console
-$ docker pull solr@sha256:82a53d960b4dab6cf0b1f1c60dd8102f3cc4f0a31885fd2d628884e3fd39742d
+$ docker pull solr@sha256:1bb232369cbf9d1038f7dfd0d372321cf5c241b4e9ab82089ee26226e46ca8bc
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -4510,14 +4510,14 @@ $ docker pull solr@sha256:82a53d960b4dab6cf0b1f1c60dd8102f3cc4f0a31885fd2d628884
 ### `solr:7.7.2-slim` - linux; amd64
 
 ```console
-$ docker pull solr@sha256:52cf0bb20bd2d044d13ead2b4f5f27ffd6c54f8df2e97facc574b40a85f1611b
+$ docker pull solr@sha256:8d63bd837f4a71aded3e3c6f4329e93caf40f201e667ab874f5c40b37ca13612
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **404.2 MB (404242482 bytes)**  
+-	Total Size: **404.4 MB (404401673 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:45a4cbd245e98011ae437e2b7fcf537cc2f917643c51352f55885f7c1b159483`
+-	Image ID: `sha256:954bb1dd10005c28895f55bed63497cd95ce3a69809d4d5ac8e03a08f6f7cf80`
 -	Entrypoint: `["docker-entrypoint.sh"]`
 -	Default Command: `["solr-foreground"]`
 
@@ -4536,51 +4536,51 @@ ENV JAVA_HOME=/usr/local/openjdk-11
 ENV PATH=/usr/local/openjdk-11/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
 # Thu, 17 Oct 2019 08:29:46 GMT
 RUN { echo '#/bin/sh'; echo 'echo "$JAVA_HOME"'; } > /usr/local/bin/docker-java-home && chmod +x /usr/local/bin/docker-java-home && [ "$JAVA_HOME" = "$(docker-java-home)" ]
-# Thu, 17 Oct 2019 08:29:46 GMT
-ENV JAVA_VERSION=11.0.4
-# Thu, 17 Oct 2019 08:29:46 GMT
-ENV JAVA_BASE_URL=https://github.com/AdoptOpenJDK/openjdk11-upstream-binaries/releases/download/jdk-11.0.4%2B11/OpenJDK11U-jdk_
-# Thu, 17 Oct 2019 08:29:46 GMT
-ENV JAVA_URL_VERSION=11.0.4_11
-# Thu, 17 Oct 2019 08:30:07 GMT
+# Fri, 18 Oct 2019 23:39:50 GMT
+ENV JAVA_VERSION=11.0.5
+# Fri, 18 Oct 2019 23:39:50 GMT
+ENV JAVA_BASE_URL=https://github.com/AdoptOpenJDK/openjdk11-upstream-binaries/releases/download/jdk-11.0.5%2B10/OpenJDK11U-jdk_
+# Fri, 18 Oct 2019 23:39:50 GMT
+ENV JAVA_URL_VERSION=11.0.5_10
+# Fri, 18 Oct 2019 23:40:16 GMT
 RUN set -eux; 		dpkgArch="$(dpkg --print-architecture)"; 	case "$dpkgArch" in 		amd64) upstreamArch='x64' ;; 		arm64) upstreamArch='aarch64' ;; 		*) echo >&2 "error: unsupported architecture: $dpkgArch" ;; 	esac; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		dirmngr 		gnupg 		wget 	; 	rm -rf /var/lib/apt/lists/*; 		wget -O openjdk.tgz.asc "${JAVA_BASE_URL}${upstreamArch}_linux_${JAVA_URL_VERSION}.tar.gz.sign"; 	wget -O openjdk.tgz "${JAVA_BASE_URL}${upstreamArch}_linux_${JAVA_URL_VERSION}.tar.gz" --progress=dot:giga; 		export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver ha.pool.sks-keyservers.net --keyserver-options no-self-sigs-only --recv-keys CA5F11C6CE22644D42C6AC4492EF8D39DC13168F; 	gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys EAC843EBD3EFDB98CC772FADA5CD6035332FA671; 	gpg --batch --list-sigs --keyid-format 0xLONG CA5F11C6CE22644D42C6AC4492EF8D39DC13168F 		| tee /dev/stderr 		| grep '0xA5CD6035332FA671' 		| grep 'Andrew Haley'; 	gpg --batch --verify openjdk.tgz.asc openjdk.tgz; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME"; 		mkdir -p "$JAVA_HOME"; 	tar --extract 		--file openjdk.tgz 		--directory "$JAVA_HOME" 		--strip-components 1 		--no-same-owner 	; 	rm openjdk.tgz*; 			apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark > /dev/null; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 		{ 		echo '#!/usr/bin/env bash'; 		echo 'set -Eeuo pipefail'; 		echo 'if ! [ -d "$JAVA_HOME" ]; then echo >&2 "error: missing JAVA_HOME environment variable"; exit 1; fi'; 		echo 'cacertsFile=; for f in "$JAVA_HOME/lib/security/cacerts" "$JAVA_HOME/jre/lib/security/cacerts"; do if [ -e "$f" ]; then cacertsFile="$f"; break; fi; done'; 		echo 'if [ -z "$cacertsFile" ] || ! [ -f "$cacertsFile" ]; then echo >&2 "error: failed to find cacerts file in $JAVA_HOME"; exit 1; fi'; 		echo 'trust extract --overwrite --format=java-cacerts --filter=ca-anchors --purpose=server-auth "$cacertsFile"'; 	} > /etc/ca-certificates/update.d/docker-openjdk; 	chmod +x /etc/ca-certificates/update.d/docker-openjdk; 	/etc/ca-certificates/update.d/docker-openjdk; 		find "$JAVA_HOME/lib" -name '*.so' -exec dirname '{}' ';' | sort -u > /etc/ld.so.conf.d/docker-openjdk.conf; 	ldconfig; 		javac --version; 	java --version
-# Thu, 17 Oct 2019 08:30:07 GMT
+# Fri, 18 Oct 2019 23:40:17 GMT
 CMD ["jshell"]
-# Fri, 18 Oct 2019 04:36:23 GMT
+# Sat, 19 Oct 2019 07:46:43 GMT
 LABEL maintainer=Martijn Koster "mak-docker@greenhills.co.uk"
-# Fri, 18 Oct 2019 04:36:23 GMT
+# Sat, 19 Oct 2019 07:46:43 GMT
 LABEL repository=https://github.com/docker-solr/docker-solr
-# Fri, 18 Oct 2019 04:36:23 GMT
+# Sat, 19 Oct 2019 07:46:44 GMT
 ARG SOLR_DOWNLOAD_SERVER
-# Fri, 18 Oct 2019 04:36:30 GMT
+# Sat, 19 Oct 2019 07:46:51 GMT
 RUN apt-get update &&   apt-get -y install acl dirmngr gpg lsof procps wget &&   rm -rf /var/lib/apt/lists/*
-# Fri, 18 Oct 2019 04:38:56 GMT
+# Sat, 19 Oct 2019 07:49:11 GMT
 ENV SOLR_USER=solr SOLR_UID=8983 SOLR_GROUP=solr SOLR_GID=8983 SOLR_VERSION=7.7.2 SOLR_URL=https://archive.apache.org/dist/lucene/solr/7.7.2/solr-7.7.2.tgz SOLR_SHA256=eb8ee4038f25364328355de3338e46961093e39166c9bcc28b5915ae491320df SOLR_KEYS=2CECBFBA181601547B654B9FFA81AC8A490F538E PATH=/opt/solr/bin:/opt/docker-solr/scripts:/usr/local/openjdk-11/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Fri, 18 Oct 2019 04:38:57 GMT
+# Sat, 19 Oct 2019 07:49:12 GMT
 ENV GOSU_VERSION=1.11
-# Fri, 18 Oct 2019 04:38:57 GMT
+# Sat, 19 Oct 2019 07:49:12 GMT
 ENV GOSU_KEY=B42F6819007F00F88E364FD4036A9C25BF357DD4
-# Fri, 18 Oct 2019 04:38:57 GMT
+# Sat, 19 Oct 2019 07:49:12 GMT
 ENV TINI_VERSION=v0.18.0
-# Fri, 18 Oct 2019 04:38:57 GMT
+# Sat, 19 Oct 2019 07:49:12 GMT
 ENV TINI_KEY=595E85A6B1B4779EA4DAAEC70B588DFF0527A9B7
-# Fri, 18 Oct 2019 04:38:58 GMT
+# Sat, 19 Oct 2019 07:49:13 GMT
 RUN groupadd -r --gid "$SOLR_GID" "$SOLR_GROUP" &&   useradd -r --uid "$SOLR_UID" --gid "$SOLR_GID" "$SOLR_USER"
-# Fri, 18 Oct 2019 04:38:59 GMT
+# Sat, 19 Oct 2019 07:49:14 GMT
 RUN set -e;   export GNUPGHOME="/tmp/gnupg_home" &&   mkdir -p "$GNUPGHOME" &&   chmod 700 "$GNUPGHOME" &&   echo "disable-ipv6" >> "$GNUPGHOME/dirmngr.conf" &&   for key in $SOLR_KEYS $GOSU_KEY $TINI_KEY; do     found='';     for server in       ha.pool.sks-keyservers.net       hkp://keyserver.ubuntu.com:80       hkp://p80.pool.sks-keyservers.net:80       pgp.mit.edu     ; do       echo "  trying $server for $key";       gpg --batch --keyserver "$server" --keyserver-options timeout=10 --recv-keys "$key" && found=yes && break;       gpg --batch --keyserver "$server" --keyserver-options timeout=10 --recv-keys "$key" && found=yes && break;     done;     test -z "$found" && echo >&2 "error: failed to fetch $key from several disparate servers -- network issues?" && exit 1;   done;   exit 0
-# Fri, 18 Oct 2019 04:39:16 GMT
+# Sat, 19 Oct 2019 07:49:27 GMT
 RUN set -e;   export GNUPGHOME="/tmp/gnupg_home" &&   pkgArch="$(dpkg --print-architecture | awk -F- '{ print $NF }')" &&   wget -O /usr/local/bin/gosu "https://github.com/tianon/gosu/releases/download/$GOSU_VERSION/gosu-$pkgArch" &&   wget -O /usr/local/bin/gosu.asc "https://github.com/tianon/gosu/releases/download/$GOSU_VERSION/gosu-$pkgArch.asc" &&   gpg --batch --verify /usr/local/bin/gosu.asc /usr/local/bin/gosu &&   rm /usr/local/bin/gosu.asc &&   chmod +x /usr/local/bin/gosu &&   gosu nobody true &&   wget -O /usr/local/bin/tini "https://github.com/krallin/tini/releases/download/${TINI_VERSION}/tini-$pkgArch" &&   wget -O /usr/local/bin/tini.asc "https://github.com/krallin/tini/releases/download/${TINI_VERSION}/tini-$pkgArch.asc" &&   gpg --batch --verify /usr/local/bin/tini.asc /usr/local/bin/tini;   rm /usr/local/bin/tini.asc &&   chmod +x /usr/local/bin/tini &&   tini --version &&   echo "downloading $SOLR_URL" &&   wget -nv "$SOLR_URL" -O "/opt/solr-$SOLR_VERSION.tgz" &&   echo "downloading $SOLR_URL.asc" &&   wget -nv "$SOLR_URL.asc" -O "/opt/solr-$SOLR_VERSION.tgz.asc" &&   echo "$SOLR_SHA256 */opt/solr-$SOLR_VERSION.tgz" | sha256sum -c - &&   (>&2 ls -l "/opt/solr-$SOLR_VERSION.tgz" "/opt/solr-$SOLR_VERSION.tgz.asc") &&   gpg --batch --verify "/opt/solr-$SOLR_VERSION.tgz.asc" "/opt/solr-$SOLR_VERSION.tgz" &&   tar -C /opt --extract --file "/opt/solr-$SOLR_VERSION.tgz" &&   mv "/opt/solr-$SOLR_VERSION" /opt/solr &&   rm "/opt/solr-$SOLR_VERSION.tgz"* &&   rm -Rf /opt/solr/docs/ &&   mkdir -p /opt/solr/server/solr/lib /docker-entrypoint-initdb.d /opt/docker-solr &&   mkdir -p /opt/solr/server/solr/mycores /opt/solr/server/logs /opt/mysolrhome &&   sed -i -e "s/\"\$(whoami)\" == \"root\"/\$(id -u) == 0/" /opt/solr/bin/solr &&   sed -i -e 's/lsof -PniTCP:/lsof -t -PniTCP:/' /opt/solr/bin/solr &&   if [ -f "/opt/solr/contrib/prometheus-exporter/bin/solr-exporter" ]; then chmod 0755 "/opt/solr/contrib/prometheus-exporter/bin/solr-exporter"; fi &&   chmod -R 0755 /opt/solr/server/scripts/cloud-scripts &&   chown -R "$SOLR_USER:$SOLR_GROUP" /opt/solr /docker-entrypoint-initdb.d /opt/docker-solr &&   chown -R "$SOLR_USER:$SOLR_GROUP" /opt/mysolrhome &&   { command -v gpgconf && gpgconf --kill all || :; } &&   rm -r "$GNUPGHOME"
-# Fri, 18 Oct 2019 04:39:17 GMT
+# Sat, 19 Oct 2019 07:49:27 GMT
 COPY --chown=solr:solrdir:a038244bf4fec30d0dea82744cb1fc715508d4b53322690c9848d442ff4e0dc6 in /opt/docker-solr/scripts 
-# Fri, 18 Oct 2019 04:39:17 GMT
+# Sat, 19 Oct 2019 07:49:27 GMT
 EXPOSE 8983
-# Fri, 18 Oct 2019 04:39:17 GMT
+# Sat, 19 Oct 2019 07:49:28 GMT
 WORKDIR /opt/solr
-# Fri, 18 Oct 2019 04:39:18 GMT
+# Sat, 19 Oct 2019 07:49:28 GMT
 USER solr
-# Fri, 18 Oct 2019 04:39:18 GMT
+# Sat, 19 Oct 2019 07:49:28 GMT
 ENTRYPOINT ["docker-entrypoint.sh"]
-# Fri, 18 Oct 2019 04:39:18 GMT
+# Sat, 19 Oct 2019 07:49:28 GMT
 CMD ["solr-foreground"]
 ```
 
@@ -4597,29 +4597,29 @@ CMD ["solr-foreground"]
 		Last Modified: Thu, 17 Oct 2019 08:38:38 GMT  
 		Size: 210.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:208dbdb57f64b9643f7760ea628f0e2a21deff0af0b2eb33a0e66f6e3165fbfc`  
-		Last Modified: Thu, 17 Oct 2019 08:39:01 GMT  
-		Size: 196.0 MB (195975541 bytes)  
+	-	`sha256:ebc78a5f677c03a8f4aa611b558b55c4e42cf3113517ec2400695512c176d5ea`  
+		Last Modified: Fri, 18 Oct 2019 23:45:47 GMT  
+		Size: 196.1 MB (196134537 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:0b6e87939381d5f5bf58ebbda7764e5988a7f85de329392991840d7de2392b46`  
-		Last Modified: Fri, 18 Oct 2019 04:44:14 GMT  
-		Size: 5.5 MB (5452429 bytes)  
+	-	`sha256:5422c55f6c915b61b16c325a8d6c50b854cfa1a68d01cdf3257e0544867074c1`  
+		Last Modified: Sat, 19 Oct 2019 07:53:47 GMT  
+		Size: 5.5 MB (5452476 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:970eb7439c142f255d1a1465dd78d80385f4c0ee36853d7af08ddfa628e79d82`  
-		Last Modified: Fri, 18 Oct 2019 04:46:24 GMT  
-		Size: 4.3 KB (4283 bytes)  
+	-	`sha256:573a8c3be02a6763b5f503e5724f3c0daea74900ccebd2f71ee4d0e16d6fd821`  
+		Last Modified: Sat, 19 Oct 2019 07:55:18 GMT  
+		Size: 4.3 KB (4286 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:eed465f89d328c251b1b8395163290ebe40ee618c06aee62378306f32f3bfad9`  
-		Last Modified: Fri, 18 Oct 2019 04:46:24 GMT  
-		Size: 26.1 KB (26053 bytes)  
+	-	`sha256:2c7fe7da2d40557c435dc9512467b3ef130f7e724f1e34d579dea0607f2fb8c8`  
+		Last Modified: Sat, 19 Oct 2019 07:55:19 GMT  
+		Size: 26.0 KB (26029 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:35bda77f69bb99b75985d230230842c8914d85142877437c86fc24de6cc6322a`  
-		Last Modified: Fri, 18 Oct 2019 04:46:35 GMT  
-		Size: 172.4 MB (172422231 bytes)  
+	-	`sha256:93a7b6f9d0bdce24459c2616aeb4dbc3b649a5a8bc1db291537eb488eecbde98`  
+		Last Modified: Sat, 19 Oct 2019 07:55:29 GMT  
+		Size: 172.4 MB (172422395 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:219fc1423e12e2d88c4360c2fe299563070a488825fb022e09930c2d49025baa`  
-		Last Modified: Fri, 18 Oct 2019 04:46:24 GMT  
-		Size: 5.2 KB (5191 bytes)  
+	-	`sha256:346b7e8d048dfba2ffbed24ea8d13cddceef8b6851de4759e5e269e993258242`  
+		Last Modified: Sat, 19 Oct 2019 07:55:19 GMT  
+		Size: 5.2 KB (5196 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `solr:7.7.2-slim` - linux; arm64 variant v8
@@ -4740,7 +4740,7 @@ CMD ["solr-foreground"]
 ## `solr:7.7-slim`
 
 ```console
-$ docker pull solr@sha256:82a53d960b4dab6cf0b1f1c60dd8102f3cc4f0a31885fd2d628884e3fd39742d
+$ docker pull solr@sha256:1bb232369cbf9d1038f7dfd0d372321cf5c241b4e9ab82089ee26226e46ca8bc
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -4751,14 +4751,14 @@ $ docker pull solr@sha256:82a53d960b4dab6cf0b1f1c60dd8102f3cc4f0a31885fd2d628884
 ### `solr:7.7-slim` - linux; amd64
 
 ```console
-$ docker pull solr@sha256:52cf0bb20bd2d044d13ead2b4f5f27ffd6c54f8df2e97facc574b40a85f1611b
+$ docker pull solr@sha256:8d63bd837f4a71aded3e3c6f4329e93caf40f201e667ab874f5c40b37ca13612
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **404.2 MB (404242482 bytes)**  
+-	Total Size: **404.4 MB (404401673 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:45a4cbd245e98011ae437e2b7fcf537cc2f917643c51352f55885f7c1b159483`
+-	Image ID: `sha256:954bb1dd10005c28895f55bed63497cd95ce3a69809d4d5ac8e03a08f6f7cf80`
 -	Entrypoint: `["docker-entrypoint.sh"]`
 -	Default Command: `["solr-foreground"]`
 
@@ -4777,51 +4777,51 @@ ENV JAVA_HOME=/usr/local/openjdk-11
 ENV PATH=/usr/local/openjdk-11/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
 # Thu, 17 Oct 2019 08:29:46 GMT
 RUN { echo '#/bin/sh'; echo 'echo "$JAVA_HOME"'; } > /usr/local/bin/docker-java-home && chmod +x /usr/local/bin/docker-java-home && [ "$JAVA_HOME" = "$(docker-java-home)" ]
-# Thu, 17 Oct 2019 08:29:46 GMT
-ENV JAVA_VERSION=11.0.4
-# Thu, 17 Oct 2019 08:29:46 GMT
-ENV JAVA_BASE_URL=https://github.com/AdoptOpenJDK/openjdk11-upstream-binaries/releases/download/jdk-11.0.4%2B11/OpenJDK11U-jdk_
-# Thu, 17 Oct 2019 08:29:46 GMT
-ENV JAVA_URL_VERSION=11.0.4_11
-# Thu, 17 Oct 2019 08:30:07 GMT
+# Fri, 18 Oct 2019 23:39:50 GMT
+ENV JAVA_VERSION=11.0.5
+# Fri, 18 Oct 2019 23:39:50 GMT
+ENV JAVA_BASE_URL=https://github.com/AdoptOpenJDK/openjdk11-upstream-binaries/releases/download/jdk-11.0.5%2B10/OpenJDK11U-jdk_
+# Fri, 18 Oct 2019 23:39:50 GMT
+ENV JAVA_URL_VERSION=11.0.5_10
+# Fri, 18 Oct 2019 23:40:16 GMT
 RUN set -eux; 		dpkgArch="$(dpkg --print-architecture)"; 	case "$dpkgArch" in 		amd64) upstreamArch='x64' ;; 		arm64) upstreamArch='aarch64' ;; 		*) echo >&2 "error: unsupported architecture: $dpkgArch" ;; 	esac; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		dirmngr 		gnupg 		wget 	; 	rm -rf /var/lib/apt/lists/*; 		wget -O openjdk.tgz.asc "${JAVA_BASE_URL}${upstreamArch}_linux_${JAVA_URL_VERSION}.tar.gz.sign"; 	wget -O openjdk.tgz "${JAVA_BASE_URL}${upstreamArch}_linux_${JAVA_URL_VERSION}.tar.gz" --progress=dot:giga; 		export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver ha.pool.sks-keyservers.net --keyserver-options no-self-sigs-only --recv-keys CA5F11C6CE22644D42C6AC4492EF8D39DC13168F; 	gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys EAC843EBD3EFDB98CC772FADA5CD6035332FA671; 	gpg --batch --list-sigs --keyid-format 0xLONG CA5F11C6CE22644D42C6AC4492EF8D39DC13168F 		| tee /dev/stderr 		| grep '0xA5CD6035332FA671' 		| grep 'Andrew Haley'; 	gpg --batch --verify openjdk.tgz.asc openjdk.tgz; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME"; 		mkdir -p "$JAVA_HOME"; 	tar --extract 		--file openjdk.tgz 		--directory "$JAVA_HOME" 		--strip-components 1 		--no-same-owner 	; 	rm openjdk.tgz*; 			apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark > /dev/null; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 		{ 		echo '#!/usr/bin/env bash'; 		echo 'set -Eeuo pipefail'; 		echo 'if ! [ -d "$JAVA_HOME" ]; then echo >&2 "error: missing JAVA_HOME environment variable"; exit 1; fi'; 		echo 'cacertsFile=; for f in "$JAVA_HOME/lib/security/cacerts" "$JAVA_HOME/jre/lib/security/cacerts"; do if [ -e "$f" ]; then cacertsFile="$f"; break; fi; done'; 		echo 'if [ -z "$cacertsFile" ] || ! [ -f "$cacertsFile" ]; then echo >&2 "error: failed to find cacerts file in $JAVA_HOME"; exit 1; fi'; 		echo 'trust extract --overwrite --format=java-cacerts --filter=ca-anchors --purpose=server-auth "$cacertsFile"'; 	} > /etc/ca-certificates/update.d/docker-openjdk; 	chmod +x /etc/ca-certificates/update.d/docker-openjdk; 	/etc/ca-certificates/update.d/docker-openjdk; 		find "$JAVA_HOME/lib" -name '*.so' -exec dirname '{}' ';' | sort -u > /etc/ld.so.conf.d/docker-openjdk.conf; 	ldconfig; 		javac --version; 	java --version
-# Thu, 17 Oct 2019 08:30:07 GMT
+# Fri, 18 Oct 2019 23:40:17 GMT
 CMD ["jshell"]
-# Fri, 18 Oct 2019 04:36:23 GMT
+# Sat, 19 Oct 2019 07:46:43 GMT
 LABEL maintainer=Martijn Koster "mak-docker@greenhills.co.uk"
-# Fri, 18 Oct 2019 04:36:23 GMT
+# Sat, 19 Oct 2019 07:46:43 GMT
 LABEL repository=https://github.com/docker-solr/docker-solr
-# Fri, 18 Oct 2019 04:36:23 GMT
+# Sat, 19 Oct 2019 07:46:44 GMT
 ARG SOLR_DOWNLOAD_SERVER
-# Fri, 18 Oct 2019 04:36:30 GMT
+# Sat, 19 Oct 2019 07:46:51 GMT
 RUN apt-get update &&   apt-get -y install acl dirmngr gpg lsof procps wget &&   rm -rf /var/lib/apt/lists/*
-# Fri, 18 Oct 2019 04:38:56 GMT
+# Sat, 19 Oct 2019 07:49:11 GMT
 ENV SOLR_USER=solr SOLR_UID=8983 SOLR_GROUP=solr SOLR_GID=8983 SOLR_VERSION=7.7.2 SOLR_URL=https://archive.apache.org/dist/lucene/solr/7.7.2/solr-7.7.2.tgz SOLR_SHA256=eb8ee4038f25364328355de3338e46961093e39166c9bcc28b5915ae491320df SOLR_KEYS=2CECBFBA181601547B654B9FFA81AC8A490F538E PATH=/opt/solr/bin:/opt/docker-solr/scripts:/usr/local/openjdk-11/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Fri, 18 Oct 2019 04:38:57 GMT
+# Sat, 19 Oct 2019 07:49:12 GMT
 ENV GOSU_VERSION=1.11
-# Fri, 18 Oct 2019 04:38:57 GMT
+# Sat, 19 Oct 2019 07:49:12 GMT
 ENV GOSU_KEY=B42F6819007F00F88E364FD4036A9C25BF357DD4
-# Fri, 18 Oct 2019 04:38:57 GMT
+# Sat, 19 Oct 2019 07:49:12 GMT
 ENV TINI_VERSION=v0.18.0
-# Fri, 18 Oct 2019 04:38:57 GMT
+# Sat, 19 Oct 2019 07:49:12 GMT
 ENV TINI_KEY=595E85A6B1B4779EA4DAAEC70B588DFF0527A9B7
-# Fri, 18 Oct 2019 04:38:58 GMT
+# Sat, 19 Oct 2019 07:49:13 GMT
 RUN groupadd -r --gid "$SOLR_GID" "$SOLR_GROUP" &&   useradd -r --uid "$SOLR_UID" --gid "$SOLR_GID" "$SOLR_USER"
-# Fri, 18 Oct 2019 04:38:59 GMT
+# Sat, 19 Oct 2019 07:49:14 GMT
 RUN set -e;   export GNUPGHOME="/tmp/gnupg_home" &&   mkdir -p "$GNUPGHOME" &&   chmod 700 "$GNUPGHOME" &&   echo "disable-ipv6" >> "$GNUPGHOME/dirmngr.conf" &&   for key in $SOLR_KEYS $GOSU_KEY $TINI_KEY; do     found='';     for server in       ha.pool.sks-keyservers.net       hkp://keyserver.ubuntu.com:80       hkp://p80.pool.sks-keyservers.net:80       pgp.mit.edu     ; do       echo "  trying $server for $key";       gpg --batch --keyserver "$server" --keyserver-options timeout=10 --recv-keys "$key" && found=yes && break;       gpg --batch --keyserver "$server" --keyserver-options timeout=10 --recv-keys "$key" && found=yes && break;     done;     test -z "$found" && echo >&2 "error: failed to fetch $key from several disparate servers -- network issues?" && exit 1;   done;   exit 0
-# Fri, 18 Oct 2019 04:39:16 GMT
+# Sat, 19 Oct 2019 07:49:27 GMT
 RUN set -e;   export GNUPGHOME="/tmp/gnupg_home" &&   pkgArch="$(dpkg --print-architecture | awk -F- '{ print $NF }')" &&   wget -O /usr/local/bin/gosu "https://github.com/tianon/gosu/releases/download/$GOSU_VERSION/gosu-$pkgArch" &&   wget -O /usr/local/bin/gosu.asc "https://github.com/tianon/gosu/releases/download/$GOSU_VERSION/gosu-$pkgArch.asc" &&   gpg --batch --verify /usr/local/bin/gosu.asc /usr/local/bin/gosu &&   rm /usr/local/bin/gosu.asc &&   chmod +x /usr/local/bin/gosu &&   gosu nobody true &&   wget -O /usr/local/bin/tini "https://github.com/krallin/tini/releases/download/${TINI_VERSION}/tini-$pkgArch" &&   wget -O /usr/local/bin/tini.asc "https://github.com/krallin/tini/releases/download/${TINI_VERSION}/tini-$pkgArch.asc" &&   gpg --batch --verify /usr/local/bin/tini.asc /usr/local/bin/tini;   rm /usr/local/bin/tini.asc &&   chmod +x /usr/local/bin/tini &&   tini --version &&   echo "downloading $SOLR_URL" &&   wget -nv "$SOLR_URL" -O "/opt/solr-$SOLR_VERSION.tgz" &&   echo "downloading $SOLR_URL.asc" &&   wget -nv "$SOLR_URL.asc" -O "/opt/solr-$SOLR_VERSION.tgz.asc" &&   echo "$SOLR_SHA256 */opt/solr-$SOLR_VERSION.tgz" | sha256sum -c - &&   (>&2 ls -l "/opt/solr-$SOLR_VERSION.tgz" "/opt/solr-$SOLR_VERSION.tgz.asc") &&   gpg --batch --verify "/opt/solr-$SOLR_VERSION.tgz.asc" "/opt/solr-$SOLR_VERSION.tgz" &&   tar -C /opt --extract --file "/opt/solr-$SOLR_VERSION.tgz" &&   mv "/opt/solr-$SOLR_VERSION" /opt/solr &&   rm "/opt/solr-$SOLR_VERSION.tgz"* &&   rm -Rf /opt/solr/docs/ &&   mkdir -p /opt/solr/server/solr/lib /docker-entrypoint-initdb.d /opt/docker-solr &&   mkdir -p /opt/solr/server/solr/mycores /opt/solr/server/logs /opt/mysolrhome &&   sed -i -e "s/\"\$(whoami)\" == \"root\"/\$(id -u) == 0/" /opt/solr/bin/solr &&   sed -i -e 's/lsof -PniTCP:/lsof -t -PniTCP:/' /opt/solr/bin/solr &&   if [ -f "/opt/solr/contrib/prometheus-exporter/bin/solr-exporter" ]; then chmod 0755 "/opt/solr/contrib/prometheus-exporter/bin/solr-exporter"; fi &&   chmod -R 0755 /opt/solr/server/scripts/cloud-scripts &&   chown -R "$SOLR_USER:$SOLR_GROUP" /opt/solr /docker-entrypoint-initdb.d /opt/docker-solr &&   chown -R "$SOLR_USER:$SOLR_GROUP" /opt/mysolrhome &&   { command -v gpgconf && gpgconf --kill all || :; } &&   rm -r "$GNUPGHOME"
-# Fri, 18 Oct 2019 04:39:17 GMT
+# Sat, 19 Oct 2019 07:49:27 GMT
 COPY --chown=solr:solrdir:a038244bf4fec30d0dea82744cb1fc715508d4b53322690c9848d442ff4e0dc6 in /opt/docker-solr/scripts 
-# Fri, 18 Oct 2019 04:39:17 GMT
+# Sat, 19 Oct 2019 07:49:27 GMT
 EXPOSE 8983
-# Fri, 18 Oct 2019 04:39:17 GMT
+# Sat, 19 Oct 2019 07:49:28 GMT
 WORKDIR /opt/solr
-# Fri, 18 Oct 2019 04:39:18 GMT
+# Sat, 19 Oct 2019 07:49:28 GMT
 USER solr
-# Fri, 18 Oct 2019 04:39:18 GMT
+# Sat, 19 Oct 2019 07:49:28 GMT
 ENTRYPOINT ["docker-entrypoint.sh"]
-# Fri, 18 Oct 2019 04:39:18 GMT
+# Sat, 19 Oct 2019 07:49:28 GMT
 CMD ["solr-foreground"]
 ```
 
@@ -4838,29 +4838,29 @@ CMD ["solr-foreground"]
 		Last Modified: Thu, 17 Oct 2019 08:38:38 GMT  
 		Size: 210.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:208dbdb57f64b9643f7760ea628f0e2a21deff0af0b2eb33a0e66f6e3165fbfc`  
-		Last Modified: Thu, 17 Oct 2019 08:39:01 GMT  
-		Size: 196.0 MB (195975541 bytes)  
+	-	`sha256:ebc78a5f677c03a8f4aa611b558b55c4e42cf3113517ec2400695512c176d5ea`  
+		Last Modified: Fri, 18 Oct 2019 23:45:47 GMT  
+		Size: 196.1 MB (196134537 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:0b6e87939381d5f5bf58ebbda7764e5988a7f85de329392991840d7de2392b46`  
-		Last Modified: Fri, 18 Oct 2019 04:44:14 GMT  
-		Size: 5.5 MB (5452429 bytes)  
+	-	`sha256:5422c55f6c915b61b16c325a8d6c50b854cfa1a68d01cdf3257e0544867074c1`  
+		Last Modified: Sat, 19 Oct 2019 07:53:47 GMT  
+		Size: 5.5 MB (5452476 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:970eb7439c142f255d1a1465dd78d80385f4c0ee36853d7af08ddfa628e79d82`  
-		Last Modified: Fri, 18 Oct 2019 04:46:24 GMT  
-		Size: 4.3 KB (4283 bytes)  
+	-	`sha256:573a8c3be02a6763b5f503e5724f3c0daea74900ccebd2f71ee4d0e16d6fd821`  
+		Last Modified: Sat, 19 Oct 2019 07:55:18 GMT  
+		Size: 4.3 KB (4286 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:eed465f89d328c251b1b8395163290ebe40ee618c06aee62378306f32f3bfad9`  
-		Last Modified: Fri, 18 Oct 2019 04:46:24 GMT  
-		Size: 26.1 KB (26053 bytes)  
+	-	`sha256:2c7fe7da2d40557c435dc9512467b3ef130f7e724f1e34d579dea0607f2fb8c8`  
+		Last Modified: Sat, 19 Oct 2019 07:55:19 GMT  
+		Size: 26.0 KB (26029 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:35bda77f69bb99b75985d230230842c8914d85142877437c86fc24de6cc6322a`  
-		Last Modified: Fri, 18 Oct 2019 04:46:35 GMT  
-		Size: 172.4 MB (172422231 bytes)  
+	-	`sha256:93a7b6f9d0bdce24459c2616aeb4dbc3b649a5a8bc1db291537eb488eecbde98`  
+		Last Modified: Sat, 19 Oct 2019 07:55:29 GMT  
+		Size: 172.4 MB (172422395 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:219fc1423e12e2d88c4360c2fe299563070a488825fb022e09930c2d49025baa`  
-		Last Modified: Fri, 18 Oct 2019 04:46:24 GMT  
-		Size: 5.2 KB (5191 bytes)  
+	-	`sha256:346b7e8d048dfba2ffbed24ea8d13cddceef8b6851de4759e5e269e993258242`  
+		Last Modified: Sat, 19 Oct 2019 07:55:19 GMT  
+		Size: 5.2 KB (5196 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `solr:7.7-slim` - linux; arm64 variant v8
@@ -4981,7 +4981,7 @@ CMD ["solr-foreground"]
 ## `solr:7-slim`
 
 ```console
-$ docker pull solr@sha256:82a53d960b4dab6cf0b1f1c60dd8102f3cc4f0a31885fd2d628884e3fd39742d
+$ docker pull solr@sha256:1bb232369cbf9d1038f7dfd0d372321cf5c241b4e9ab82089ee26226e46ca8bc
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -4992,14 +4992,14 @@ $ docker pull solr@sha256:82a53d960b4dab6cf0b1f1c60dd8102f3cc4f0a31885fd2d628884
 ### `solr:7-slim` - linux; amd64
 
 ```console
-$ docker pull solr@sha256:52cf0bb20bd2d044d13ead2b4f5f27ffd6c54f8df2e97facc574b40a85f1611b
+$ docker pull solr@sha256:8d63bd837f4a71aded3e3c6f4329e93caf40f201e667ab874f5c40b37ca13612
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **404.2 MB (404242482 bytes)**  
+-	Total Size: **404.4 MB (404401673 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:45a4cbd245e98011ae437e2b7fcf537cc2f917643c51352f55885f7c1b159483`
+-	Image ID: `sha256:954bb1dd10005c28895f55bed63497cd95ce3a69809d4d5ac8e03a08f6f7cf80`
 -	Entrypoint: `["docker-entrypoint.sh"]`
 -	Default Command: `["solr-foreground"]`
 
@@ -5018,51 +5018,51 @@ ENV JAVA_HOME=/usr/local/openjdk-11
 ENV PATH=/usr/local/openjdk-11/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
 # Thu, 17 Oct 2019 08:29:46 GMT
 RUN { echo '#/bin/sh'; echo 'echo "$JAVA_HOME"'; } > /usr/local/bin/docker-java-home && chmod +x /usr/local/bin/docker-java-home && [ "$JAVA_HOME" = "$(docker-java-home)" ]
-# Thu, 17 Oct 2019 08:29:46 GMT
-ENV JAVA_VERSION=11.0.4
-# Thu, 17 Oct 2019 08:29:46 GMT
-ENV JAVA_BASE_URL=https://github.com/AdoptOpenJDK/openjdk11-upstream-binaries/releases/download/jdk-11.0.4%2B11/OpenJDK11U-jdk_
-# Thu, 17 Oct 2019 08:29:46 GMT
-ENV JAVA_URL_VERSION=11.0.4_11
-# Thu, 17 Oct 2019 08:30:07 GMT
+# Fri, 18 Oct 2019 23:39:50 GMT
+ENV JAVA_VERSION=11.0.5
+# Fri, 18 Oct 2019 23:39:50 GMT
+ENV JAVA_BASE_URL=https://github.com/AdoptOpenJDK/openjdk11-upstream-binaries/releases/download/jdk-11.0.5%2B10/OpenJDK11U-jdk_
+# Fri, 18 Oct 2019 23:39:50 GMT
+ENV JAVA_URL_VERSION=11.0.5_10
+# Fri, 18 Oct 2019 23:40:16 GMT
 RUN set -eux; 		dpkgArch="$(dpkg --print-architecture)"; 	case "$dpkgArch" in 		amd64) upstreamArch='x64' ;; 		arm64) upstreamArch='aarch64' ;; 		*) echo >&2 "error: unsupported architecture: $dpkgArch" ;; 	esac; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		dirmngr 		gnupg 		wget 	; 	rm -rf /var/lib/apt/lists/*; 		wget -O openjdk.tgz.asc "${JAVA_BASE_URL}${upstreamArch}_linux_${JAVA_URL_VERSION}.tar.gz.sign"; 	wget -O openjdk.tgz "${JAVA_BASE_URL}${upstreamArch}_linux_${JAVA_URL_VERSION}.tar.gz" --progress=dot:giga; 		export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver ha.pool.sks-keyservers.net --keyserver-options no-self-sigs-only --recv-keys CA5F11C6CE22644D42C6AC4492EF8D39DC13168F; 	gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys EAC843EBD3EFDB98CC772FADA5CD6035332FA671; 	gpg --batch --list-sigs --keyid-format 0xLONG CA5F11C6CE22644D42C6AC4492EF8D39DC13168F 		| tee /dev/stderr 		| grep '0xA5CD6035332FA671' 		| grep 'Andrew Haley'; 	gpg --batch --verify openjdk.tgz.asc openjdk.tgz; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME"; 		mkdir -p "$JAVA_HOME"; 	tar --extract 		--file openjdk.tgz 		--directory "$JAVA_HOME" 		--strip-components 1 		--no-same-owner 	; 	rm openjdk.tgz*; 			apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark > /dev/null; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 		{ 		echo '#!/usr/bin/env bash'; 		echo 'set -Eeuo pipefail'; 		echo 'if ! [ -d "$JAVA_HOME" ]; then echo >&2 "error: missing JAVA_HOME environment variable"; exit 1; fi'; 		echo 'cacertsFile=; for f in "$JAVA_HOME/lib/security/cacerts" "$JAVA_HOME/jre/lib/security/cacerts"; do if [ -e "$f" ]; then cacertsFile="$f"; break; fi; done'; 		echo 'if [ -z "$cacertsFile" ] || ! [ -f "$cacertsFile" ]; then echo >&2 "error: failed to find cacerts file in $JAVA_HOME"; exit 1; fi'; 		echo 'trust extract --overwrite --format=java-cacerts --filter=ca-anchors --purpose=server-auth "$cacertsFile"'; 	} > /etc/ca-certificates/update.d/docker-openjdk; 	chmod +x /etc/ca-certificates/update.d/docker-openjdk; 	/etc/ca-certificates/update.d/docker-openjdk; 		find "$JAVA_HOME/lib" -name '*.so' -exec dirname '{}' ';' | sort -u > /etc/ld.so.conf.d/docker-openjdk.conf; 	ldconfig; 		javac --version; 	java --version
-# Thu, 17 Oct 2019 08:30:07 GMT
+# Fri, 18 Oct 2019 23:40:17 GMT
 CMD ["jshell"]
-# Fri, 18 Oct 2019 04:36:23 GMT
+# Sat, 19 Oct 2019 07:46:43 GMT
 LABEL maintainer=Martijn Koster "mak-docker@greenhills.co.uk"
-# Fri, 18 Oct 2019 04:36:23 GMT
+# Sat, 19 Oct 2019 07:46:43 GMT
 LABEL repository=https://github.com/docker-solr/docker-solr
-# Fri, 18 Oct 2019 04:36:23 GMT
+# Sat, 19 Oct 2019 07:46:44 GMT
 ARG SOLR_DOWNLOAD_SERVER
-# Fri, 18 Oct 2019 04:36:30 GMT
+# Sat, 19 Oct 2019 07:46:51 GMT
 RUN apt-get update &&   apt-get -y install acl dirmngr gpg lsof procps wget &&   rm -rf /var/lib/apt/lists/*
-# Fri, 18 Oct 2019 04:38:56 GMT
+# Sat, 19 Oct 2019 07:49:11 GMT
 ENV SOLR_USER=solr SOLR_UID=8983 SOLR_GROUP=solr SOLR_GID=8983 SOLR_VERSION=7.7.2 SOLR_URL=https://archive.apache.org/dist/lucene/solr/7.7.2/solr-7.7.2.tgz SOLR_SHA256=eb8ee4038f25364328355de3338e46961093e39166c9bcc28b5915ae491320df SOLR_KEYS=2CECBFBA181601547B654B9FFA81AC8A490F538E PATH=/opt/solr/bin:/opt/docker-solr/scripts:/usr/local/openjdk-11/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Fri, 18 Oct 2019 04:38:57 GMT
+# Sat, 19 Oct 2019 07:49:12 GMT
 ENV GOSU_VERSION=1.11
-# Fri, 18 Oct 2019 04:38:57 GMT
+# Sat, 19 Oct 2019 07:49:12 GMT
 ENV GOSU_KEY=B42F6819007F00F88E364FD4036A9C25BF357DD4
-# Fri, 18 Oct 2019 04:38:57 GMT
+# Sat, 19 Oct 2019 07:49:12 GMT
 ENV TINI_VERSION=v0.18.0
-# Fri, 18 Oct 2019 04:38:57 GMT
+# Sat, 19 Oct 2019 07:49:12 GMT
 ENV TINI_KEY=595E85A6B1B4779EA4DAAEC70B588DFF0527A9B7
-# Fri, 18 Oct 2019 04:38:58 GMT
+# Sat, 19 Oct 2019 07:49:13 GMT
 RUN groupadd -r --gid "$SOLR_GID" "$SOLR_GROUP" &&   useradd -r --uid "$SOLR_UID" --gid "$SOLR_GID" "$SOLR_USER"
-# Fri, 18 Oct 2019 04:38:59 GMT
+# Sat, 19 Oct 2019 07:49:14 GMT
 RUN set -e;   export GNUPGHOME="/tmp/gnupg_home" &&   mkdir -p "$GNUPGHOME" &&   chmod 700 "$GNUPGHOME" &&   echo "disable-ipv6" >> "$GNUPGHOME/dirmngr.conf" &&   for key in $SOLR_KEYS $GOSU_KEY $TINI_KEY; do     found='';     for server in       ha.pool.sks-keyservers.net       hkp://keyserver.ubuntu.com:80       hkp://p80.pool.sks-keyservers.net:80       pgp.mit.edu     ; do       echo "  trying $server for $key";       gpg --batch --keyserver "$server" --keyserver-options timeout=10 --recv-keys "$key" && found=yes && break;       gpg --batch --keyserver "$server" --keyserver-options timeout=10 --recv-keys "$key" && found=yes && break;     done;     test -z "$found" && echo >&2 "error: failed to fetch $key from several disparate servers -- network issues?" && exit 1;   done;   exit 0
-# Fri, 18 Oct 2019 04:39:16 GMT
+# Sat, 19 Oct 2019 07:49:27 GMT
 RUN set -e;   export GNUPGHOME="/tmp/gnupg_home" &&   pkgArch="$(dpkg --print-architecture | awk -F- '{ print $NF }')" &&   wget -O /usr/local/bin/gosu "https://github.com/tianon/gosu/releases/download/$GOSU_VERSION/gosu-$pkgArch" &&   wget -O /usr/local/bin/gosu.asc "https://github.com/tianon/gosu/releases/download/$GOSU_VERSION/gosu-$pkgArch.asc" &&   gpg --batch --verify /usr/local/bin/gosu.asc /usr/local/bin/gosu &&   rm /usr/local/bin/gosu.asc &&   chmod +x /usr/local/bin/gosu &&   gosu nobody true &&   wget -O /usr/local/bin/tini "https://github.com/krallin/tini/releases/download/${TINI_VERSION}/tini-$pkgArch" &&   wget -O /usr/local/bin/tini.asc "https://github.com/krallin/tini/releases/download/${TINI_VERSION}/tini-$pkgArch.asc" &&   gpg --batch --verify /usr/local/bin/tini.asc /usr/local/bin/tini;   rm /usr/local/bin/tini.asc &&   chmod +x /usr/local/bin/tini &&   tini --version &&   echo "downloading $SOLR_URL" &&   wget -nv "$SOLR_URL" -O "/opt/solr-$SOLR_VERSION.tgz" &&   echo "downloading $SOLR_URL.asc" &&   wget -nv "$SOLR_URL.asc" -O "/opt/solr-$SOLR_VERSION.tgz.asc" &&   echo "$SOLR_SHA256 */opt/solr-$SOLR_VERSION.tgz" | sha256sum -c - &&   (>&2 ls -l "/opt/solr-$SOLR_VERSION.tgz" "/opt/solr-$SOLR_VERSION.tgz.asc") &&   gpg --batch --verify "/opt/solr-$SOLR_VERSION.tgz.asc" "/opt/solr-$SOLR_VERSION.tgz" &&   tar -C /opt --extract --file "/opt/solr-$SOLR_VERSION.tgz" &&   mv "/opt/solr-$SOLR_VERSION" /opt/solr &&   rm "/opt/solr-$SOLR_VERSION.tgz"* &&   rm -Rf /opt/solr/docs/ &&   mkdir -p /opt/solr/server/solr/lib /docker-entrypoint-initdb.d /opt/docker-solr &&   mkdir -p /opt/solr/server/solr/mycores /opt/solr/server/logs /opt/mysolrhome &&   sed -i -e "s/\"\$(whoami)\" == \"root\"/\$(id -u) == 0/" /opt/solr/bin/solr &&   sed -i -e 's/lsof -PniTCP:/lsof -t -PniTCP:/' /opt/solr/bin/solr &&   if [ -f "/opt/solr/contrib/prometheus-exporter/bin/solr-exporter" ]; then chmod 0755 "/opt/solr/contrib/prometheus-exporter/bin/solr-exporter"; fi &&   chmod -R 0755 /opt/solr/server/scripts/cloud-scripts &&   chown -R "$SOLR_USER:$SOLR_GROUP" /opt/solr /docker-entrypoint-initdb.d /opt/docker-solr &&   chown -R "$SOLR_USER:$SOLR_GROUP" /opt/mysolrhome &&   { command -v gpgconf && gpgconf --kill all || :; } &&   rm -r "$GNUPGHOME"
-# Fri, 18 Oct 2019 04:39:17 GMT
+# Sat, 19 Oct 2019 07:49:27 GMT
 COPY --chown=solr:solrdir:a038244bf4fec30d0dea82744cb1fc715508d4b53322690c9848d442ff4e0dc6 in /opt/docker-solr/scripts 
-# Fri, 18 Oct 2019 04:39:17 GMT
+# Sat, 19 Oct 2019 07:49:27 GMT
 EXPOSE 8983
-# Fri, 18 Oct 2019 04:39:17 GMT
+# Sat, 19 Oct 2019 07:49:28 GMT
 WORKDIR /opt/solr
-# Fri, 18 Oct 2019 04:39:18 GMT
+# Sat, 19 Oct 2019 07:49:28 GMT
 USER solr
-# Fri, 18 Oct 2019 04:39:18 GMT
+# Sat, 19 Oct 2019 07:49:28 GMT
 ENTRYPOINT ["docker-entrypoint.sh"]
-# Fri, 18 Oct 2019 04:39:18 GMT
+# Sat, 19 Oct 2019 07:49:28 GMT
 CMD ["solr-foreground"]
 ```
 
@@ -5079,29 +5079,29 @@ CMD ["solr-foreground"]
 		Last Modified: Thu, 17 Oct 2019 08:38:38 GMT  
 		Size: 210.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:208dbdb57f64b9643f7760ea628f0e2a21deff0af0b2eb33a0e66f6e3165fbfc`  
-		Last Modified: Thu, 17 Oct 2019 08:39:01 GMT  
-		Size: 196.0 MB (195975541 bytes)  
+	-	`sha256:ebc78a5f677c03a8f4aa611b558b55c4e42cf3113517ec2400695512c176d5ea`  
+		Last Modified: Fri, 18 Oct 2019 23:45:47 GMT  
+		Size: 196.1 MB (196134537 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:0b6e87939381d5f5bf58ebbda7764e5988a7f85de329392991840d7de2392b46`  
-		Last Modified: Fri, 18 Oct 2019 04:44:14 GMT  
-		Size: 5.5 MB (5452429 bytes)  
+	-	`sha256:5422c55f6c915b61b16c325a8d6c50b854cfa1a68d01cdf3257e0544867074c1`  
+		Last Modified: Sat, 19 Oct 2019 07:53:47 GMT  
+		Size: 5.5 MB (5452476 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:970eb7439c142f255d1a1465dd78d80385f4c0ee36853d7af08ddfa628e79d82`  
-		Last Modified: Fri, 18 Oct 2019 04:46:24 GMT  
-		Size: 4.3 KB (4283 bytes)  
+	-	`sha256:573a8c3be02a6763b5f503e5724f3c0daea74900ccebd2f71ee4d0e16d6fd821`  
+		Last Modified: Sat, 19 Oct 2019 07:55:18 GMT  
+		Size: 4.3 KB (4286 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:eed465f89d328c251b1b8395163290ebe40ee618c06aee62378306f32f3bfad9`  
-		Last Modified: Fri, 18 Oct 2019 04:46:24 GMT  
-		Size: 26.1 KB (26053 bytes)  
+	-	`sha256:2c7fe7da2d40557c435dc9512467b3ef130f7e724f1e34d579dea0607f2fb8c8`  
+		Last Modified: Sat, 19 Oct 2019 07:55:19 GMT  
+		Size: 26.0 KB (26029 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:35bda77f69bb99b75985d230230842c8914d85142877437c86fc24de6cc6322a`  
-		Last Modified: Fri, 18 Oct 2019 04:46:35 GMT  
-		Size: 172.4 MB (172422231 bytes)  
+	-	`sha256:93a7b6f9d0bdce24459c2616aeb4dbc3b649a5a8bc1db291537eb488eecbde98`  
+		Last Modified: Sat, 19 Oct 2019 07:55:29 GMT  
+		Size: 172.4 MB (172422395 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:219fc1423e12e2d88c4360c2fe299563070a488825fb022e09930c2d49025baa`  
-		Last Modified: Fri, 18 Oct 2019 04:46:24 GMT  
-		Size: 5.2 KB (5191 bytes)  
+	-	`sha256:346b7e8d048dfba2ffbed24ea8d13cddceef8b6851de4759e5e269e993258242`  
+		Last Modified: Sat, 19 Oct 2019 07:55:19 GMT  
+		Size: 5.2 KB (5196 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `solr:7-slim` - linux; arm64 variant v8
@@ -5222,7 +5222,7 @@ CMD ["solr-foreground"]
 ## `solr:8`
 
 ```console
-$ docker pull solr@sha256:7930df1f5fb513c223cde5ee506440f7fafe66b404fb7ad6f5bada82886b490f
+$ docker pull solr@sha256:19b45b08f398460db66d2ba76a95e03a07b75619952d61e82f3bb1fe384209ef
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -5233,14 +5233,14 @@ $ docker pull solr@sha256:7930df1f5fb513c223cde5ee506440f7fafe66b404fb7ad6f5bada
 ### `solr:8` - linux; amd64
 
 ```console
-$ docker pull solr@sha256:3c5f062f54fb11adf59220f29d6bb142b0bd16fad2b1dda91b080973c1ffa5bb
+$ docker pull solr@sha256:abafe8e6b31e7cff2c9166e451e27d8c306297bb2fa3dc0c4e4a66cf8906dff8
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **495.1 MB (495104965 bytes)**  
+-	Total Size: **495.3 MB (495261324 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:599bf6c5d04ef4836e442ad45febd9784d1ed1146f85fa8f288fafe46bd52a23`
+-	Image ID: `sha256:6946dff5c83262f8341ecd874e6b89c2643b92e2a255b080cbe6fbfdc7c884fe`
 -	Entrypoint: `["docker-entrypoint.sh"]`
 -	Default Command: `["solr-foreground"]`
 
@@ -5265,53 +5265,53 @@ ENV JAVA_HOME=/usr/local/openjdk-11
 ENV PATH=/usr/local/openjdk-11/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
 # Thu, 17 Oct 2019 08:29:25 GMT
 RUN { echo '#/bin/sh'; echo 'echo "$JAVA_HOME"'; } > /usr/local/bin/docker-java-home && chmod +x /usr/local/bin/docker-java-home && [ "$JAVA_HOME" = "$(docker-java-home)" ]
-# Thu, 17 Oct 2019 08:29:25 GMT
-ENV JAVA_VERSION=11.0.4
-# Thu, 17 Oct 2019 08:29:25 GMT
-ENV JAVA_BASE_URL=https://github.com/AdoptOpenJDK/openjdk11-upstream-binaries/releases/download/jdk-11.0.4%2B11/OpenJDK11U-jdk_
-# Thu, 17 Oct 2019 08:29:26 GMT
-ENV JAVA_URL_VERSION=11.0.4_11
-# Thu, 17 Oct 2019 08:29:39 GMT
+# Fri, 18 Oct 2019 23:39:21 GMT
+ENV JAVA_VERSION=11.0.5
+# Fri, 18 Oct 2019 23:39:21 GMT
+ENV JAVA_BASE_URL=https://github.com/AdoptOpenJDK/openjdk11-upstream-binaries/releases/download/jdk-11.0.5%2B10/OpenJDK11U-jdk_
+# Fri, 18 Oct 2019 23:39:21 GMT
+ENV JAVA_URL_VERSION=11.0.5_10
+# Fri, 18 Oct 2019 23:39:41 GMT
 RUN set -eux; 		dpkgArch="$(dpkg --print-architecture)"; 	case "$dpkgArch" in 		amd64) upstreamArch='x64' ;; 		arm64) upstreamArch='aarch64' ;; 		*) echo >&2 "error: unsupported architecture: $dpkgArch" ;; 	esac; 		wget -O openjdk.tgz.asc "${JAVA_BASE_URL}${upstreamArch}_linux_${JAVA_URL_VERSION}.tar.gz.sign"; 	wget -O openjdk.tgz "${JAVA_BASE_URL}${upstreamArch}_linux_${JAVA_URL_VERSION}.tar.gz" --progress=dot:giga; 		export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver ha.pool.sks-keyservers.net --keyserver-options no-self-sigs-only --recv-keys CA5F11C6CE22644D42C6AC4492EF8D39DC13168F; 	gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys EAC843EBD3EFDB98CC772FADA5CD6035332FA671; 	gpg --batch --list-sigs --keyid-format 0xLONG CA5F11C6CE22644D42C6AC4492EF8D39DC13168F 		| tee /dev/stderr 		| grep '0xA5CD6035332FA671' 		| grep 'Andrew Haley'; 	gpg --batch --verify openjdk.tgz.asc openjdk.tgz; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME"; 		mkdir -p "$JAVA_HOME"; 	tar --extract 		--file openjdk.tgz 		--directory "$JAVA_HOME" 		--strip-components 1 		--no-same-owner 	; 	rm openjdk.tgz*; 			{ 		echo '#!/usr/bin/env bash'; 		echo 'set -Eeuo pipefail'; 		echo 'if ! [ -d "$JAVA_HOME" ]; then echo >&2 "error: missing JAVA_HOME environment variable"; exit 1; fi'; 		echo 'cacertsFile=; for f in "$JAVA_HOME/lib/security/cacerts" "$JAVA_HOME/jre/lib/security/cacerts"; do if [ -e "$f" ]; then cacertsFile="$f"; break; fi; done'; 		echo 'if [ -z "$cacertsFile" ] || ! [ -f "$cacertsFile" ]; then echo >&2 "error: failed to find cacerts file in $JAVA_HOME"; exit 1; fi'; 		echo 'trust extract --overwrite --format=java-cacerts --filter=ca-anchors --purpose=server-auth "$cacertsFile"'; 	} > /etc/ca-certificates/update.d/docker-openjdk; 	chmod +x /etc/ca-certificates/update.d/docker-openjdk; 	/etc/ca-certificates/update.d/docker-openjdk; 		find "$JAVA_HOME/lib" -name '*.so' -exec dirname '{}' ';' | sort -u > /etc/ld.so.conf.d/docker-openjdk.conf; 	ldconfig; 		javac --version; 	java --version
-# Thu, 17 Oct 2019 08:29:39 GMT
+# Fri, 18 Oct 2019 23:39:42 GMT
 CMD ["jshell"]
-# Fri, 18 Oct 2019 04:35:50 GMT
+# Sat, 19 Oct 2019 07:46:10 GMT
 LABEL maintainer=Martijn Koster "mak-docker@greenhills.co.uk"
-# Fri, 18 Oct 2019 04:35:50 GMT
+# Sat, 19 Oct 2019 07:46:11 GMT
 LABEL repository=https://github.com/docker-solr/docker-solr
-# Fri, 18 Oct 2019 04:35:50 GMT
+# Sat, 19 Oct 2019 07:46:11 GMT
 ARG SOLR_DOWNLOAD_SERVER
-# Fri, 18 Oct 2019 04:35:55 GMT
+# Sat, 19 Oct 2019 07:46:15 GMT
 RUN apt-get update &&   apt-get -y install acl dirmngr gpg lsof procps wget &&   rm -rf /var/lib/apt/lists/*
-# Fri, 18 Oct 2019 04:35:55 GMT
+# Sat, 19 Oct 2019 07:46:15 GMT
 ENV SOLR_USER=solr SOLR_UID=8983 SOLR_GROUP=solr SOLR_GID=8983 SOLR_VERSION=8.2.0 SOLR_URL=https://archive.apache.org/dist/lucene/solr/8.2.0/solr-8.2.0.tgz SOLR_SHA256=bfa4b39b236e5d714f4233138b8b5cb7e1996ddc0aad60052ce83c4b7bf33449 SOLR_KEYS=E58A6F4D5B2B48AC66D5E53BD4F181881A42F9E6 PATH=/opt/solr/bin:/opt/docker-solr/scripts:/usr/local/openjdk-11/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin SOLR_INCLUDE=/etc/default/solr.in.sh SOLR_HOME=/var/solr/data SOLR_PID_DIR=/var/solr SOLR_LOGS_DIR=/var/solr/logs LOG4J_PROPS=/var/solr/log4j2.xml
-# Fri, 18 Oct 2019 04:35:55 GMT
+# Sat, 19 Oct 2019 07:46:15 GMT
 ENV GOSU_VERSION=1.11
-# Fri, 18 Oct 2019 04:35:55 GMT
+# Sat, 19 Oct 2019 07:46:16 GMT
 ENV GOSU_KEY=B42F6819007F00F88E364FD4036A9C25BF357DD4
-# Fri, 18 Oct 2019 04:35:56 GMT
+# Sat, 19 Oct 2019 07:46:16 GMT
 ENV TINI_VERSION=v0.18.0
-# Fri, 18 Oct 2019 04:35:56 GMT
+# Sat, 19 Oct 2019 07:46:16 GMT
 ENV TINI_KEY=595E85A6B1B4779EA4DAAEC70B588DFF0527A9B7
-# Fri, 18 Oct 2019 04:35:56 GMT
+# Sat, 19 Oct 2019 07:46:17 GMT
 RUN groupadd -r --gid "$SOLR_GID" "$SOLR_GROUP" &&   useradd -r --uid "$SOLR_UID" --gid "$SOLR_GID" "$SOLR_USER"
-# Fri, 18 Oct 2019 04:36:00 GMT
+# Sat, 19 Oct 2019 07:46:20 GMT
 RUN set -e;   export GNUPGHOME="/tmp/gnupg_home" &&   mkdir -p "$GNUPGHOME" &&   chmod 700 "$GNUPGHOME" &&   echo "disable-ipv6" >> "$GNUPGHOME/dirmngr.conf" &&   for key in $SOLR_KEYS $GOSU_KEY $TINI_KEY; do     found='';     for server in       ha.pool.sks-keyservers.net       hkp://keyserver.ubuntu.com:80       hkp://p80.pool.sks-keyservers.net:80       pgp.mit.edu     ; do       echo "  trying $server for $key";       gpg --batch --keyserver "$server" --keyserver-options timeout=10 --recv-keys "$key" && found=yes && break;       gpg --batch --keyserver "$server" --keyserver-options timeout=10 --recv-keys "$key" && found=yes && break;     done;     test -z "$found" && echo >&2 "error: failed to fetch $key from several disparate servers -- network issues?" && exit 1;   done;   exit 0
-# Fri, 18 Oct 2019 04:36:14 GMT
+# Sat, 19 Oct 2019 07:46:35 GMT
 RUN set -e;   export GNUPGHOME="/tmp/gnupg_home" &&   pkgArch="$(dpkg --print-architecture | awk -F- '{ print $NF }')" &&   wget -O /usr/local/bin/gosu "https://github.com/tianon/gosu/releases/download/$GOSU_VERSION/gosu-$pkgArch" &&   wget -O /usr/local/bin/gosu.asc "https://github.com/tianon/gosu/releases/download/$GOSU_VERSION/gosu-$pkgArch.asc" &&   gpg --batch --verify /usr/local/bin/gosu.asc /usr/local/bin/gosu &&   rm /usr/local/bin/gosu.asc &&   chmod +x /usr/local/bin/gosu &&   gosu nobody true &&   wget -O /usr/local/bin/tini "https://github.com/krallin/tini/releases/download/${TINI_VERSION}/tini-$pkgArch" &&   wget -O /usr/local/bin/tini.asc "https://github.com/krallin/tini/releases/download/${TINI_VERSION}/tini-$pkgArch.asc" &&   gpg --batch --verify /usr/local/bin/tini.asc /usr/local/bin/tini;   rm /usr/local/bin/tini.asc &&   chmod +x /usr/local/bin/tini &&   tini --version &&   echo "downloading $SOLR_URL" &&   wget -nv "$SOLR_URL" -O "/opt/solr-$SOLR_VERSION.tgz" &&   echo "downloading $SOLR_URL.asc" &&   wget -nv "$SOLR_URL.asc" -O "/opt/solr-$SOLR_VERSION.tgz.asc" &&   echo "$SOLR_SHA256 */opt/solr-$SOLR_VERSION.tgz" | sha256sum -c - &&   (>&2 ls -l "/opt/solr-$SOLR_VERSION.tgz" "/opt/solr-$SOLR_VERSION.tgz.asc") &&   gpg --batch --verify "/opt/solr-$SOLR_VERSION.tgz.asc" "/opt/solr-$SOLR_VERSION.tgz" &&   tar -C /opt --extract --file "/opt/solr-$SOLR_VERSION.tgz" &&   (cd /opt && ln -s "solr-$SOLR_VERSION" solr) &&   rm "/opt/solr-$SOLR_VERSION.tgz"* &&   rm -Rf /opt/solr/docs/ &&   mkdir -p /opt/solr/server/solr/lib /docker-entrypoint-initdb.d /opt/docker-solr &&   chown -R 0:0 "/opt/solr-$SOLR_VERSION" &&   find "/opt/solr-$SOLR_VERSION" -type d -print0 | xargs -0 chmod 0755 &&   find "/opt/solr-$SOLR_VERSION" -type f -print0 | xargs -0 chmod 0644 &&   chmod -R 0755 "/opt/solr-$SOLR_VERSION/bin" "/opt/solr-$SOLR_VERSION/contrib/prometheus-exporter/bin/solr-exporter" /opt/solr-$SOLR_VERSION/server/scripts/cloud-scripts &&   cp /opt/solr/bin/solr.in.sh /etc/default/solr.in.sh &&   mv /opt/solr/bin/solr.in.sh /opt/solr/bin/solr.in.sh.orig &&   mv /opt/solr/bin/solr.in.cmd /opt/solr/bin/solr.in.cmd.orig &&   chown root:0 /etc/default/solr.in.sh &&   chmod 0664 /etc/default/solr.in.sh &&   mkdir -p /var/solr/data /var/solr/logs &&   (cd /opt/solr/server/solr && cp solr.xml zoo.cfg /var/solr/data/) &&   cp /opt/solr/server/resources/log4j2.xml /var/solr/log4j2.xml &&   find /var/solr -type d -print0 | xargs -0 chmod 0770 &&   find /var/solr -type f -print0 | xargs -0 chmod 0660 &&   sed -i -e "s/\"\$(whoami)\" == \"root\"/\$(id -u) == 0/" /opt/solr/bin/solr &&   sed -i -e 's/lsof -PniTCP:/lsof -t -PniTCP:/' /opt/solr/bin/solr &&   chown -R "0:0" /opt/solr-$SOLR_VERSION /docker-entrypoint-initdb.d /opt/docker-solr &&   chown -R "$SOLR_USER:0" /var/solr &&   { command -v gpgconf && gpgconf --kill all || :; } &&   rm -r "$GNUPGHOME"
-# Fri, 18 Oct 2019 04:36:14 GMT
+# Sat, 19 Oct 2019 07:46:35 GMT
 COPY --chown=0:0dir:7c0a3213efab10f68cd89ca4d91a13cb6084a7764ed341bf0617ce144943839b in /opt/docker-solr/scripts 
-# Fri, 18 Oct 2019 04:36:14 GMT
+# Sat, 19 Oct 2019 07:46:35 GMT
 VOLUME [/var/solr]
-# Fri, 18 Oct 2019 04:36:15 GMT
+# Sat, 19 Oct 2019 07:46:35 GMT
 EXPOSE 8983
-# Fri, 18 Oct 2019 04:36:15 GMT
+# Sat, 19 Oct 2019 07:46:35 GMT
 WORKDIR /opt/solr
-# Fri, 18 Oct 2019 04:36:15 GMT
+# Sat, 19 Oct 2019 07:46:36 GMT
 USER solr
-# Fri, 18 Oct 2019 04:36:15 GMT
+# Sat, 19 Oct 2019 07:46:36 GMT
 ENTRYPOINT ["docker-entrypoint.sh"]
-# Fri, 18 Oct 2019 04:36:15 GMT
+# Sat, 19 Oct 2019 07:46:36 GMT
 CMD ["solr-foreground"]
 ```
 
@@ -5340,29 +5340,29 @@ CMD ["solr-foreground"]
 		Last Modified: Thu, 17 Oct 2019 08:38:05 GMT  
 		Size: 218.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:115f4a5a7971e04e4fed86d76c049ff73c54e467dc07423546790188502ce0bc`  
-		Last Modified: Thu, 17 Oct 2019 08:38:28 GMT  
-		Size: 195.7 MB (195718813 bytes)  
+	-	`sha256:0ce121b6a2ffae7f0fc0b7c20d3a0a46f62762dd7c1f14db73fa2ab9248bf1dc`  
+		Last Modified: Fri, 18 Oct 2019 23:45:21 GMT  
+		Size: 195.9 MB (195875192 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:8f99c82bd7831902ccf2bd474012a7be46a8161ba0124a4864ac469ffcad5bbe`  
-		Last Modified: Fri, 18 Oct 2019 04:43:52 GMT  
-		Size: 761.5 KB (761483 bytes)  
+	-	`sha256:73e1c53bd62b5d1b2ee52a9c04be2a0e5a5b245abc76a4d9365fd1ceba45f32c`  
+		Last Modified: Sat, 19 Oct 2019 07:53:23 GMT  
+		Size: 761.5 KB (761492 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:24b9878c73c565485faab38c9cb826fb56827cb96eeab8ad37608a3795b0d625`  
-		Last Modified: Fri, 18 Oct 2019 04:43:52 GMT  
-		Size: 4.3 KB (4304 bytes)  
+	-	`sha256:06f01d291976f1e509428a975f81014db0267acc9d2817f5698e920ede4e1103`  
+		Last Modified: Sat, 19 Oct 2019 07:53:23 GMT  
+		Size: 4.3 KB (4305 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:e0e6ed9b8ce2ec5c986ddf1099e02fee18caaa45889316ae189de5037fa78a67`  
-		Last Modified: Fri, 18 Oct 2019 04:43:52 GMT  
-		Size: 153.4 KB (153415 bytes)  
+	-	`sha256:bff33dd5f6e0343386308838c1295ba8794dd2c9f9db779f423422695a3cde4f`  
+		Last Modified: Sat, 19 Oct 2019 07:53:23 GMT  
+		Size: 153.4 KB (153414 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:26dd70d91a84c539db72df240cc6d00d1c374102e93e8de500a4278a4ec02943`  
-		Last Modified: Fri, 18 Oct 2019 04:44:06 GMT  
-		Size: 182.9 MB (182943094 bytes)  
+	-	`sha256:67e3445b1bc130da6b8202f8be27d7aa524fd9e690effbdd1a94bdd14dfb67a7`  
+		Last Modified: Sat, 19 Oct 2019 07:53:38 GMT  
+		Size: 182.9 MB (182943068 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:f8efd0836f0d647b89e14cc3f6dbe042b2c292a6d3e7ada8d13b2823295377c3`  
-		Last Modified: Fri, 18 Oct 2019 04:43:52 GMT  
-		Size: 4.8 KB (4789 bytes)  
+	-	`sha256:c577b79e0205c0b4f820a8bb5095975609de674921a40dbe9d2d392c77da6f3e`  
+		Last Modified: Sat, 19 Oct 2019 07:53:23 GMT  
+		Size: 4.8 KB (4786 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `solr:8` - linux; arm64 variant v8
@@ -5503,7 +5503,7 @@ CMD ["solr-foreground"]
 ## `solr:8.0`
 
 ```console
-$ docker pull solr@sha256:e2c4576749066fd0f8edddaf557b3172432fad5acc871c1ce1547b1b45c689d3
+$ docker pull solr@sha256:afa6543c070974f4488c17aebf75ef7e113bac7913b21b1dd422ba879b3825de
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -5514,14 +5514,14 @@ $ docker pull solr@sha256:e2c4576749066fd0f8edddaf557b3172432fad5acc871c1ce1547b
 ### `solr:8.0` - linux; amd64
 
 ```console
-$ docker pull solr@sha256:e6a40222bafe6ada9c2445c11ae09f19549c4cddc6d98b19aba82484c4c5b92f
+$ docker pull solr@sha256:756dde61e623e1ce6b67b87bd7858fd4784de41062008276e4f5640d907fa979
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **485.1 MB (485107348 bytes)**  
+-	Total Size: **485.3 MB (485263694 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:fd8df2668c9701d160fb2427dbd1ae1c20ee70183e24c715af9d2f71d6aa4e87`
+-	Image ID: `sha256:55a66698641aa35594180f10d3f851296df18948abfdbb91cf73170c8be6a2cb`
 -	Entrypoint: `["docker-entrypoint.sh"]`
 -	Default Command: `["solr-foreground"]`
 
@@ -5546,53 +5546,53 @@ ENV JAVA_HOME=/usr/local/openjdk-11
 ENV PATH=/usr/local/openjdk-11/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
 # Thu, 17 Oct 2019 08:29:25 GMT
 RUN { echo '#/bin/sh'; echo 'echo "$JAVA_HOME"'; } > /usr/local/bin/docker-java-home && chmod +x /usr/local/bin/docker-java-home && [ "$JAVA_HOME" = "$(docker-java-home)" ]
-# Thu, 17 Oct 2019 08:29:25 GMT
-ENV JAVA_VERSION=11.0.4
-# Thu, 17 Oct 2019 08:29:25 GMT
-ENV JAVA_BASE_URL=https://github.com/AdoptOpenJDK/openjdk11-upstream-binaries/releases/download/jdk-11.0.4%2B11/OpenJDK11U-jdk_
-# Thu, 17 Oct 2019 08:29:26 GMT
-ENV JAVA_URL_VERSION=11.0.4_11
-# Thu, 17 Oct 2019 08:29:39 GMT
+# Fri, 18 Oct 2019 23:39:21 GMT
+ENV JAVA_VERSION=11.0.5
+# Fri, 18 Oct 2019 23:39:21 GMT
+ENV JAVA_BASE_URL=https://github.com/AdoptOpenJDK/openjdk11-upstream-binaries/releases/download/jdk-11.0.5%2B10/OpenJDK11U-jdk_
+# Fri, 18 Oct 2019 23:39:21 GMT
+ENV JAVA_URL_VERSION=11.0.5_10
+# Fri, 18 Oct 2019 23:39:41 GMT
 RUN set -eux; 		dpkgArch="$(dpkg --print-architecture)"; 	case "$dpkgArch" in 		amd64) upstreamArch='x64' ;; 		arm64) upstreamArch='aarch64' ;; 		*) echo >&2 "error: unsupported architecture: $dpkgArch" ;; 	esac; 		wget -O openjdk.tgz.asc "${JAVA_BASE_URL}${upstreamArch}_linux_${JAVA_URL_VERSION}.tar.gz.sign"; 	wget -O openjdk.tgz "${JAVA_BASE_URL}${upstreamArch}_linux_${JAVA_URL_VERSION}.tar.gz" --progress=dot:giga; 		export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver ha.pool.sks-keyservers.net --keyserver-options no-self-sigs-only --recv-keys CA5F11C6CE22644D42C6AC4492EF8D39DC13168F; 	gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys EAC843EBD3EFDB98CC772FADA5CD6035332FA671; 	gpg --batch --list-sigs --keyid-format 0xLONG CA5F11C6CE22644D42C6AC4492EF8D39DC13168F 		| tee /dev/stderr 		| grep '0xA5CD6035332FA671' 		| grep 'Andrew Haley'; 	gpg --batch --verify openjdk.tgz.asc openjdk.tgz; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME"; 		mkdir -p "$JAVA_HOME"; 	tar --extract 		--file openjdk.tgz 		--directory "$JAVA_HOME" 		--strip-components 1 		--no-same-owner 	; 	rm openjdk.tgz*; 			{ 		echo '#!/usr/bin/env bash'; 		echo 'set -Eeuo pipefail'; 		echo 'if ! [ -d "$JAVA_HOME" ]; then echo >&2 "error: missing JAVA_HOME environment variable"; exit 1; fi'; 		echo 'cacertsFile=; for f in "$JAVA_HOME/lib/security/cacerts" "$JAVA_HOME/jre/lib/security/cacerts"; do if [ -e "$f" ]; then cacertsFile="$f"; break; fi; done'; 		echo 'if [ -z "$cacertsFile" ] || ! [ -f "$cacertsFile" ]; then echo >&2 "error: failed to find cacerts file in $JAVA_HOME"; exit 1; fi'; 		echo 'trust extract --overwrite --format=java-cacerts --filter=ca-anchors --purpose=server-auth "$cacertsFile"'; 	} > /etc/ca-certificates/update.d/docker-openjdk; 	chmod +x /etc/ca-certificates/update.d/docker-openjdk; 	/etc/ca-certificates/update.d/docker-openjdk; 		find "$JAVA_HOME/lib" -name '*.so' -exec dirname '{}' ';' | sort -u > /etc/ld.so.conf.d/docker-openjdk.conf; 	ldconfig; 		javac --version; 	java --version
-# Thu, 17 Oct 2019 08:29:39 GMT
+# Fri, 18 Oct 2019 23:39:42 GMT
 CMD ["jshell"]
-# Fri, 18 Oct 2019 04:35:50 GMT
+# Sat, 19 Oct 2019 07:46:10 GMT
 LABEL maintainer=Martijn Koster "mak-docker@greenhills.co.uk"
-# Fri, 18 Oct 2019 04:35:50 GMT
+# Sat, 19 Oct 2019 07:46:11 GMT
 LABEL repository=https://github.com/docker-solr/docker-solr
-# Fri, 18 Oct 2019 04:35:50 GMT
+# Sat, 19 Oct 2019 07:46:11 GMT
 ARG SOLR_DOWNLOAD_SERVER
-# Fri, 18 Oct 2019 04:35:55 GMT
+# Sat, 19 Oct 2019 07:46:15 GMT
 RUN apt-get update &&   apt-get -y install acl dirmngr gpg lsof procps wget &&   rm -rf /var/lib/apt/lists/*
-# Fri, 18 Oct 2019 04:37:40 GMT
+# Sat, 19 Oct 2019 07:48:00 GMT
 ENV SOLR_USER=solr SOLR_UID=8983 SOLR_GROUP=solr SOLR_GID=8983 SOLR_VERSION=8.0.0 SOLR_URL=https://archive.apache.org/dist/lucene/solr/8.0.0/solr-8.0.0.tgz SOLR_SHA256=0e6392d3b980ab917c731b054101aafcebceacc0e5063cb1e305aeeaec911d12 SOLR_KEYS=052C5B48A480B9CEA9E218A5F98C13CFA5A135D8 PATH=/opt/solr/bin:/opt/docker-solr/scripts:/usr/local/openjdk-11/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin SOLR_INCLUDE=/etc/default/solr.in.sh SOLR_HOME=/var/solr/data SOLR_PID_DIR=/var/solr SOLR_LOGS_DIR=/var/solr/logs LOG4J_PROPS=/var/solr/log4j2.xml
-# Fri, 18 Oct 2019 04:37:40 GMT
+# Sat, 19 Oct 2019 07:48:00 GMT
 ENV GOSU_VERSION=1.11
-# Fri, 18 Oct 2019 04:37:40 GMT
+# Sat, 19 Oct 2019 07:48:00 GMT
 ENV GOSU_KEY=B42F6819007F00F88E364FD4036A9C25BF357DD4
-# Fri, 18 Oct 2019 04:37:41 GMT
+# Sat, 19 Oct 2019 07:48:00 GMT
 ENV TINI_VERSION=v0.18.0
-# Fri, 18 Oct 2019 04:37:41 GMT
+# Sat, 19 Oct 2019 07:48:01 GMT
 ENV TINI_KEY=595E85A6B1B4779EA4DAAEC70B588DFF0527A9B7
-# Fri, 18 Oct 2019 04:37:42 GMT
+# Sat, 19 Oct 2019 07:48:01 GMT
 RUN groupadd -r --gid "$SOLR_GID" "$SOLR_GROUP" &&   useradd -r --uid "$SOLR_UID" --gid "$SOLR_GID" "$SOLR_USER"
-# Fri, 18 Oct 2019 04:37:46 GMT
+# Sat, 19 Oct 2019 07:48:04 GMT
 RUN set -e;   export GNUPGHOME="/tmp/gnupg_home" &&   mkdir -p "$GNUPGHOME" &&   chmod 700 "$GNUPGHOME" &&   echo "disable-ipv6" >> "$GNUPGHOME/dirmngr.conf" &&   for key in $SOLR_KEYS $GOSU_KEY $TINI_KEY; do     found='';     for server in       ha.pool.sks-keyservers.net       hkp://keyserver.ubuntu.com:80       hkp://p80.pool.sks-keyservers.net:80       pgp.mit.edu     ; do       echo "  trying $server for $key";       gpg --batch --keyserver "$server" --keyserver-options timeout=10 --recv-keys "$key" && found=yes && break;       gpg --batch --keyserver "$server" --keyserver-options timeout=10 --recv-keys "$key" && found=yes && break;     done;     test -z "$found" && echo >&2 "error: failed to fetch $key from several disparate servers -- network issues?" && exit 1;   done;   exit 0
-# Fri, 18 Oct 2019 04:37:59 GMT
+# Sat, 19 Oct 2019 07:48:19 GMT
 RUN set -e;   export GNUPGHOME="/tmp/gnupg_home" &&   pkgArch="$(dpkg --print-architecture | awk -F- '{ print $NF }')" &&   wget -O /usr/local/bin/gosu "https://github.com/tianon/gosu/releases/download/$GOSU_VERSION/gosu-$pkgArch" &&   wget -O /usr/local/bin/gosu.asc "https://github.com/tianon/gosu/releases/download/$GOSU_VERSION/gosu-$pkgArch.asc" &&   gpg --batch --verify /usr/local/bin/gosu.asc /usr/local/bin/gosu &&   rm /usr/local/bin/gosu.asc &&   chmod +x /usr/local/bin/gosu &&   gosu nobody true &&   wget -O /usr/local/bin/tini "https://github.com/krallin/tini/releases/download/${TINI_VERSION}/tini-$pkgArch" &&   wget -O /usr/local/bin/tini.asc "https://github.com/krallin/tini/releases/download/${TINI_VERSION}/tini-$pkgArch.asc" &&   gpg --batch --verify /usr/local/bin/tini.asc /usr/local/bin/tini;   rm /usr/local/bin/tini.asc &&   chmod +x /usr/local/bin/tini &&   tini --version &&   echo "downloading $SOLR_URL" &&   wget -nv "$SOLR_URL" -O "/opt/solr-$SOLR_VERSION.tgz" &&   echo "downloading $SOLR_URL.asc" &&   wget -nv "$SOLR_URL.asc" -O "/opt/solr-$SOLR_VERSION.tgz.asc" &&   echo "$SOLR_SHA256 */opt/solr-$SOLR_VERSION.tgz" | sha256sum -c - &&   (>&2 ls -l "/opt/solr-$SOLR_VERSION.tgz" "/opt/solr-$SOLR_VERSION.tgz.asc") &&   gpg --batch --verify "/opt/solr-$SOLR_VERSION.tgz.asc" "/opt/solr-$SOLR_VERSION.tgz" &&   tar -C /opt --extract --file "/opt/solr-$SOLR_VERSION.tgz" &&   (cd /opt && ln -s "solr-$SOLR_VERSION" solr) &&   rm "/opt/solr-$SOLR_VERSION.tgz"* &&   rm -Rf /opt/solr/docs/ &&   mkdir -p /opt/solr/server/solr/lib /docker-entrypoint-initdb.d /opt/docker-solr &&   chown -R 0:0 "/opt/solr-$SOLR_VERSION" &&   find "/opt/solr-$SOLR_VERSION" -type d -print0 | xargs -0 chmod 0755 &&   find "/opt/solr-$SOLR_VERSION" -type f -print0 | xargs -0 chmod 0644 &&   chmod -R 0755 "/opt/solr-$SOLR_VERSION/bin" "/opt/solr-$SOLR_VERSION/contrib/prometheus-exporter/bin/solr-exporter" /opt/solr-$SOLR_VERSION/server/scripts/cloud-scripts &&   cp /opt/solr/bin/solr.in.sh /etc/default/solr.in.sh &&   mv /opt/solr/bin/solr.in.sh /opt/solr/bin/solr.in.sh.orig &&   mv /opt/solr/bin/solr.in.cmd /opt/solr/bin/solr.in.cmd.orig &&   chown root:0 /etc/default/solr.in.sh &&   chmod 0664 /etc/default/solr.in.sh &&   mkdir -p /var/solr/data /var/solr/logs &&   (cd /opt/solr/server/solr && cp solr.xml zoo.cfg /var/solr/data/) &&   cp /opt/solr/server/resources/log4j2.xml /var/solr/log4j2.xml &&   find /var/solr -type d -print0 | xargs -0 chmod 0770 &&   find /var/solr -type f -print0 | xargs -0 chmod 0660 &&   sed -i -e "s/\"\$(whoami)\" == \"root\"/\$(id -u) == 0/" /opt/solr/bin/solr &&   sed -i -e 's/lsof -PniTCP:/lsof -t -PniTCP:/' /opt/solr/bin/solr &&   chown -R "0:0" /opt/solr-$SOLR_VERSION /docker-entrypoint-initdb.d /opt/docker-solr &&   chown -R "$SOLR_USER:0" /var/solr &&   { command -v gpgconf && gpgconf --kill all || :; } &&   rm -r "$GNUPGHOME"
-# Fri, 18 Oct 2019 04:37:59 GMT
+# Sat, 19 Oct 2019 07:48:19 GMT
 COPY --chown=0:0dir:7c0a3213efab10f68cd89ca4d91a13cb6084a7764ed341bf0617ce144943839b in /opt/docker-solr/scripts 
-# Fri, 18 Oct 2019 04:37:59 GMT
+# Sat, 19 Oct 2019 07:48:19 GMT
 VOLUME [/var/solr]
-# Fri, 18 Oct 2019 04:37:59 GMT
+# Sat, 19 Oct 2019 07:48:19 GMT
 EXPOSE 8983
-# Fri, 18 Oct 2019 04:38:00 GMT
+# Sat, 19 Oct 2019 07:48:19 GMT
 WORKDIR /opt/solr
-# Fri, 18 Oct 2019 04:38:00 GMT
+# Sat, 19 Oct 2019 07:48:20 GMT
 USER solr
-# Fri, 18 Oct 2019 04:38:00 GMT
+# Sat, 19 Oct 2019 07:48:20 GMT
 ENTRYPOINT ["docker-entrypoint.sh"]
-# Fri, 18 Oct 2019 04:38:00 GMT
+# Sat, 19 Oct 2019 07:48:20 GMT
 CMD ["solr-foreground"]
 ```
 
@@ -5621,29 +5621,29 @@ CMD ["solr-foreground"]
 		Last Modified: Thu, 17 Oct 2019 08:38:05 GMT  
 		Size: 218.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:115f4a5a7971e04e4fed86d76c049ff73c54e467dc07423546790188502ce0bc`  
-		Last Modified: Thu, 17 Oct 2019 08:38:28 GMT  
-		Size: 195.7 MB (195718813 bytes)  
+	-	`sha256:0ce121b6a2ffae7f0fc0b7c20d3a0a46f62762dd7c1f14db73fa2ab9248bf1dc`  
+		Last Modified: Fri, 18 Oct 2019 23:45:21 GMT  
+		Size: 195.9 MB (195875192 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:8f99c82bd7831902ccf2bd474012a7be46a8161ba0124a4864ac469ffcad5bbe`  
-		Last Modified: Fri, 18 Oct 2019 04:43:52 GMT  
-		Size: 761.5 KB (761483 bytes)  
+	-	`sha256:73e1c53bd62b5d1b2ee52a9c04be2a0e5a5b245abc76a4d9365fd1ceba45f32c`  
+		Last Modified: Sat, 19 Oct 2019 07:53:23 GMT  
+		Size: 761.5 KB (761492 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:4a942ea0f9ad310fc2ad23788561db5ee9bc050bffefd16bfab7f99535f0411d`  
-		Last Modified: Fri, 18 Oct 2019 04:45:18 GMT  
-		Size: 4.3 KB (4304 bytes)  
+	-	`sha256:2b9ce4ea73ac152eb2c63e49f8e66f6ac5c4f8b3cb641888ed9466410319feea`  
+		Last Modified: Sat, 19 Oct 2019 07:54:34 GMT  
+		Size: 4.3 KB (4301 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:2f33b6864b1013c10e7e37c222b687c078262a55fa58f96af3f038a877bbfb82`  
-		Last Modified: Fri, 18 Oct 2019 04:45:19 GMT  
-		Size: 155.6 KB (155565 bytes)  
+	-	`sha256:b8937a1302ad3771b4786f2df074d772494425804d05deec49ff9e678ba2c048`  
+		Last Modified: Sat, 19 Oct 2019 07:54:34 GMT  
+		Size: 155.6 KB (155563 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:31121bc5d4b04e836bb48be7a42500e3c79f7cfe98b32a97450ee8bed73e2fb1`  
-		Last Modified: Fri, 18 Oct 2019 04:45:35 GMT  
-		Size: 172.9 MB (172943327 bytes)  
+	-	`sha256:aa0588d194306616dca0837e541dcfcc422a2ca800176a2ca7840c58a44f1e9c`  
+		Last Modified: Sat, 19 Oct 2019 07:54:44 GMT  
+		Size: 172.9 MB (172943288 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:dbe394cb13334a4493434eff1040a40da110eece909b2efbb2586e285850bec1`  
-		Last Modified: Fri, 18 Oct 2019 04:45:18 GMT  
-		Size: 4.8 KB (4789 bytes)  
+	-	`sha256:bc6be69b90ab4486fef194b44b5405a26ddf60726058466cefed23066d8b5f68`  
+		Last Modified: Sat, 19 Oct 2019 07:54:37 GMT  
+		Size: 4.8 KB (4791 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `solr:8.0` - linux; arm64 variant v8
@@ -5784,7 +5784,7 @@ CMD ["solr-foreground"]
 ## `solr:8.0.0`
 
 ```console
-$ docker pull solr@sha256:e2c4576749066fd0f8edddaf557b3172432fad5acc871c1ce1547b1b45c689d3
+$ docker pull solr@sha256:afa6543c070974f4488c17aebf75ef7e113bac7913b21b1dd422ba879b3825de
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -5795,14 +5795,14 @@ $ docker pull solr@sha256:e2c4576749066fd0f8edddaf557b3172432fad5acc871c1ce1547b
 ### `solr:8.0.0` - linux; amd64
 
 ```console
-$ docker pull solr@sha256:e6a40222bafe6ada9c2445c11ae09f19549c4cddc6d98b19aba82484c4c5b92f
+$ docker pull solr@sha256:756dde61e623e1ce6b67b87bd7858fd4784de41062008276e4f5640d907fa979
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **485.1 MB (485107348 bytes)**  
+-	Total Size: **485.3 MB (485263694 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:fd8df2668c9701d160fb2427dbd1ae1c20ee70183e24c715af9d2f71d6aa4e87`
+-	Image ID: `sha256:55a66698641aa35594180f10d3f851296df18948abfdbb91cf73170c8be6a2cb`
 -	Entrypoint: `["docker-entrypoint.sh"]`
 -	Default Command: `["solr-foreground"]`
 
@@ -5827,53 +5827,53 @@ ENV JAVA_HOME=/usr/local/openjdk-11
 ENV PATH=/usr/local/openjdk-11/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
 # Thu, 17 Oct 2019 08:29:25 GMT
 RUN { echo '#/bin/sh'; echo 'echo "$JAVA_HOME"'; } > /usr/local/bin/docker-java-home && chmod +x /usr/local/bin/docker-java-home && [ "$JAVA_HOME" = "$(docker-java-home)" ]
-# Thu, 17 Oct 2019 08:29:25 GMT
-ENV JAVA_VERSION=11.0.4
-# Thu, 17 Oct 2019 08:29:25 GMT
-ENV JAVA_BASE_URL=https://github.com/AdoptOpenJDK/openjdk11-upstream-binaries/releases/download/jdk-11.0.4%2B11/OpenJDK11U-jdk_
-# Thu, 17 Oct 2019 08:29:26 GMT
-ENV JAVA_URL_VERSION=11.0.4_11
-# Thu, 17 Oct 2019 08:29:39 GMT
+# Fri, 18 Oct 2019 23:39:21 GMT
+ENV JAVA_VERSION=11.0.5
+# Fri, 18 Oct 2019 23:39:21 GMT
+ENV JAVA_BASE_URL=https://github.com/AdoptOpenJDK/openjdk11-upstream-binaries/releases/download/jdk-11.0.5%2B10/OpenJDK11U-jdk_
+# Fri, 18 Oct 2019 23:39:21 GMT
+ENV JAVA_URL_VERSION=11.0.5_10
+# Fri, 18 Oct 2019 23:39:41 GMT
 RUN set -eux; 		dpkgArch="$(dpkg --print-architecture)"; 	case "$dpkgArch" in 		amd64) upstreamArch='x64' ;; 		arm64) upstreamArch='aarch64' ;; 		*) echo >&2 "error: unsupported architecture: $dpkgArch" ;; 	esac; 		wget -O openjdk.tgz.asc "${JAVA_BASE_URL}${upstreamArch}_linux_${JAVA_URL_VERSION}.tar.gz.sign"; 	wget -O openjdk.tgz "${JAVA_BASE_URL}${upstreamArch}_linux_${JAVA_URL_VERSION}.tar.gz" --progress=dot:giga; 		export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver ha.pool.sks-keyservers.net --keyserver-options no-self-sigs-only --recv-keys CA5F11C6CE22644D42C6AC4492EF8D39DC13168F; 	gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys EAC843EBD3EFDB98CC772FADA5CD6035332FA671; 	gpg --batch --list-sigs --keyid-format 0xLONG CA5F11C6CE22644D42C6AC4492EF8D39DC13168F 		| tee /dev/stderr 		| grep '0xA5CD6035332FA671' 		| grep 'Andrew Haley'; 	gpg --batch --verify openjdk.tgz.asc openjdk.tgz; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME"; 		mkdir -p "$JAVA_HOME"; 	tar --extract 		--file openjdk.tgz 		--directory "$JAVA_HOME" 		--strip-components 1 		--no-same-owner 	; 	rm openjdk.tgz*; 			{ 		echo '#!/usr/bin/env bash'; 		echo 'set -Eeuo pipefail'; 		echo 'if ! [ -d "$JAVA_HOME" ]; then echo >&2 "error: missing JAVA_HOME environment variable"; exit 1; fi'; 		echo 'cacertsFile=; for f in "$JAVA_HOME/lib/security/cacerts" "$JAVA_HOME/jre/lib/security/cacerts"; do if [ -e "$f" ]; then cacertsFile="$f"; break; fi; done'; 		echo 'if [ -z "$cacertsFile" ] || ! [ -f "$cacertsFile" ]; then echo >&2 "error: failed to find cacerts file in $JAVA_HOME"; exit 1; fi'; 		echo 'trust extract --overwrite --format=java-cacerts --filter=ca-anchors --purpose=server-auth "$cacertsFile"'; 	} > /etc/ca-certificates/update.d/docker-openjdk; 	chmod +x /etc/ca-certificates/update.d/docker-openjdk; 	/etc/ca-certificates/update.d/docker-openjdk; 		find "$JAVA_HOME/lib" -name '*.so' -exec dirname '{}' ';' | sort -u > /etc/ld.so.conf.d/docker-openjdk.conf; 	ldconfig; 		javac --version; 	java --version
-# Thu, 17 Oct 2019 08:29:39 GMT
+# Fri, 18 Oct 2019 23:39:42 GMT
 CMD ["jshell"]
-# Fri, 18 Oct 2019 04:35:50 GMT
+# Sat, 19 Oct 2019 07:46:10 GMT
 LABEL maintainer=Martijn Koster "mak-docker@greenhills.co.uk"
-# Fri, 18 Oct 2019 04:35:50 GMT
+# Sat, 19 Oct 2019 07:46:11 GMT
 LABEL repository=https://github.com/docker-solr/docker-solr
-# Fri, 18 Oct 2019 04:35:50 GMT
+# Sat, 19 Oct 2019 07:46:11 GMT
 ARG SOLR_DOWNLOAD_SERVER
-# Fri, 18 Oct 2019 04:35:55 GMT
+# Sat, 19 Oct 2019 07:46:15 GMT
 RUN apt-get update &&   apt-get -y install acl dirmngr gpg lsof procps wget &&   rm -rf /var/lib/apt/lists/*
-# Fri, 18 Oct 2019 04:37:40 GMT
+# Sat, 19 Oct 2019 07:48:00 GMT
 ENV SOLR_USER=solr SOLR_UID=8983 SOLR_GROUP=solr SOLR_GID=8983 SOLR_VERSION=8.0.0 SOLR_URL=https://archive.apache.org/dist/lucene/solr/8.0.0/solr-8.0.0.tgz SOLR_SHA256=0e6392d3b980ab917c731b054101aafcebceacc0e5063cb1e305aeeaec911d12 SOLR_KEYS=052C5B48A480B9CEA9E218A5F98C13CFA5A135D8 PATH=/opt/solr/bin:/opt/docker-solr/scripts:/usr/local/openjdk-11/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin SOLR_INCLUDE=/etc/default/solr.in.sh SOLR_HOME=/var/solr/data SOLR_PID_DIR=/var/solr SOLR_LOGS_DIR=/var/solr/logs LOG4J_PROPS=/var/solr/log4j2.xml
-# Fri, 18 Oct 2019 04:37:40 GMT
+# Sat, 19 Oct 2019 07:48:00 GMT
 ENV GOSU_VERSION=1.11
-# Fri, 18 Oct 2019 04:37:40 GMT
+# Sat, 19 Oct 2019 07:48:00 GMT
 ENV GOSU_KEY=B42F6819007F00F88E364FD4036A9C25BF357DD4
-# Fri, 18 Oct 2019 04:37:41 GMT
+# Sat, 19 Oct 2019 07:48:00 GMT
 ENV TINI_VERSION=v0.18.0
-# Fri, 18 Oct 2019 04:37:41 GMT
+# Sat, 19 Oct 2019 07:48:01 GMT
 ENV TINI_KEY=595E85A6B1B4779EA4DAAEC70B588DFF0527A9B7
-# Fri, 18 Oct 2019 04:37:42 GMT
+# Sat, 19 Oct 2019 07:48:01 GMT
 RUN groupadd -r --gid "$SOLR_GID" "$SOLR_GROUP" &&   useradd -r --uid "$SOLR_UID" --gid "$SOLR_GID" "$SOLR_USER"
-# Fri, 18 Oct 2019 04:37:46 GMT
+# Sat, 19 Oct 2019 07:48:04 GMT
 RUN set -e;   export GNUPGHOME="/tmp/gnupg_home" &&   mkdir -p "$GNUPGHOME" &&   chmod 700 "$GNUPGHOME" &&   echo "disable-ipv6" >> "$GNUPGHOME/dirmngr.conf" &&   for key in $SOLR_KEYS $GOSU_KEY $TINI_KEY; do     found='';     for server in       ha.pool.sks-keyservers.net       hkp://keyserver.ubuntu.com:80       hkp://p80.pool.sks-keyservers.net:80       pgp.mit.edu     ; do       echo "  trying $server for $key";       gpg --batch --keyserver "$server" --keyserver-options timeout=10 --recv-keys "$key" && found=yes && break;       gpg --batch --keyserver "$server" --keyserver-options timeout=10 --recv-keys "$key" && found=yes && break;     done;     test -z "$found" && echo >&2 "error: failed to fetch $key from several disparate servers -- network issues?" && exit 1;   done;   exit 0
-# Fri, 18 Oct 2019 04:37:59 GMT
+# Sat, 19 Oct 2019 07:48:19 GMT
 RUN set -e;   export GNUPGHOME="/tmp/gnupg_home" &&   pkgArch="$(dpkg --print-architecture | awk -F- '{ print $NF }')" &&   wget -O /usr/local/bin/gosu "https://github.com/tianon/gosu/releases/download/$GOSU_VERSION/gosu-$pkgArch" &&   wget -O /usr/local/bin/gosu.asc "https://github.com/tianon/gosu/releases/download/$GOSU_VERSION/gosu-$pkgArch.asc" &&   gpg --batch --verify /usr/local/bin/gosu.asc /usr/local/bin/gosu &&   rm /usr/local/bin/gosu.asc &&   chmod +x /usr/local/bin/gosu &&   gosu nobody true &&   wget -O /usr/local/bin/tini "https://github.com/krallin/tini/releases/download/${TINI_VERSION}/tini-$pkgArch" &&   wget -O /usr/local/bin/tini.asc "https://github.com/krallin/tini/releases/download/${TINI_VERSION}/tini-$pkgArch.asc" &&   gpg --batch --verify /usr/local/bin/tini.asc /usr/local/bin/tini;   rm /usr/local/bin/tini.asc &&   chmod +x /usr/local/bin/tini &&   tini --version &&   echo "downloading $SOLR_URL" &&   wget -nv "$SOLR_URL" -O "/opt/solr-$SOLR_VERSION.tgz" &&   echo "downloading $SOLR_URL.asc" &&   wget -nv "$SOLR_URL.asc" -O "/opt/solr-$SOLR_VERSION.tgz.asc" &&   echo "$SOLR_SHA256 */opt/solr-$SOLR_VERSION.tgz" | sha256sum -c - &&   (>&2 ls -l "/opt/solr-$SOLR_VERSION.tgz" "/opt/solr-$SOLR_VERSION.tgz.asc") &&   gpg --batch --verify "/opt/solr-$SOLR_VERSION.tgz.asc" "/opt/solr-$SOLR_VERSION.tgz" &&   tar -C /opt --extract --file "/opt/solr-$SOLR_VERSION.tgz" &&   (cd /opt && ln -s "solr-$SOLR_VERSION" solr) &&   rm "/opt/solr-$SOLR_VERSION.tgz"* &&   rm -Rf /opt/solr/docs/ &&   mkdir -p /opt/solr/server/solr/lib /docker-entrypoint-initdb.d /opt/docker-solr &&   chown -R 0:0 "/opt/solr-$SOLR_VERSION" &&   find "/opt/solr-$SOLR_VERSION" -type d -print0 | xargs -0 chmod 0755 &&   find "/opt/solr-$SOLR_VERSION" -type f -print0 | xargs -0 chmod 0644 &&   chmod -R 0755 "/opt/solr-$SOLR_VERSION/bin" "/opt/solr-$SOLR_VERSION/contrib/prometheus-exporter/bin/solr-exporter" /opt/solr-$SOLR_VERSION/server/scripts/cloud-scripts &&   cp /opt/solr/bin/solr.in.sh /etc/default/solr.in.sh &&   mv /opt/solr/bin/solr.in.sh /opt/solr/bin/solr.in.sh.orig &&   mv /opt/solr/bin/solr.in.cmd /opt/solr/bin/solr.in.cmd.orig &&   chown root:0 /etc/default/solr.in.sh &&   chmod 0664 /etc/default/solr.in.sh &&   mkdir -p /var/solr/data /var/solr/logs &&   (cd /opt/solr/server/solr && cp solr.xml zoo.cfg /var/solr/data/) &&   cp /opt/solr/server/resources/log4j2.xml /var/solr/log4j2.xml &&   find /var/solr -type d -print0 | xargs -0 chmod 0770 &&   find /var/solr -type f -print0 | xargs -0 chmod 0660 &&   sed -i -e "s/\"\$(whoami)\" == \"root\"/\$(id -u) == 0/" /opt/solr/bin/solr &&   sed -i -e 's/lsof -PniTCP:/lsof -t -PniTCP:/' /opt/solr/bin/solr &&   chown -R "0:0" /opt/solr-$SOLR_VERSION /docker-entrypoint-initdb.d /opt/docker-solr &&   chown -R "$SOLR_USER:0" /var/solr &&   { command -v gpgconf && gpgconf --kill all || :; } &&   rm -r "$GNUPGHOME"
-# Fri, 18 Oct 2019 04:37:59 GMT
+# Sat, 19 Oct 2019 07:48:19 GMT
 COPY --chown=0:0dir:7c0a3213efab10f68cd89ca4d91a13cb6084a7764ed341bf0617ce144943839b in /opt/docker-solr/scripts 
-# Fri, 18 Oct 2019 04:37:59 GMT
+# Sat, 19 Oct 2019 07:48:19 GMT
 VOLUME [/var/solr]
-# Fri, 18 Oct 2019 04:37:59 GMT
+# Sat, 19 Oct 2019 07:48:19 GMT
 EXPOSE 8983
-# Fri, 18 Oct 2019 04:38:00 GMT
+# Sat, 19 Oct 2019 07:48:19 GMT
 WORKDIR /opt/solr
-# Fri, 18 Oct 2019 04:38:00 GMT
+# Sat, 19 Oct 2019 07:48:20 GMT
 USER solr
-# Fri, 18 Oct 2019 04:38:00 GMT
+# Sat, 19 Oct 2019 07:48:20 GMT
 ENTRYPOINT ["docker-entrypoint.sh"]
-# Fri, 18 Oct 2019 04:38:00 GMT
+# Sat, 19 Oct 2019 07:48:20 GMT
 CMD ["solr-foreground"]
 ```
 
@@ -5902,29 +5902,29 @@ CMD ["solr-foreground"]
 		Last Modified: Thu, 17 Oct 2019 08:38:05 GMT  
 		Size: 218.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:115f4a5a7971e04e4fed86d76c049ff73c54e467dc07423546790188502ce0bc`  
-		Last Modified: Thu, 17 Oct 2019 08:38:28 GMT  
-		Size: 195.7 MB (195718813 bytes)  
+	-	`sha256:0ce121b6a2ffae7f0fc0b7c20d3a0a46f62762dd7c1f14db73fa2ab9248bf1dc`  
+		Last Modified: Fri, 18 Oct 2019 23:45:21 GMT  
+		Size: 195.9 MB (195875192 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:8f99c82bd7831902ccf2bd474012a7be46a8161ba0124a4864ac469ffcad5bbe`  
-		Last Modified: Fri, 18 Oct 2019 04:43:52 GMT  
-		Size: 761.5 KB (761483 bytes)  
+	-	`sha256:73e1c53bd62b5d1b2ee52a9c04be2a0e5a5b245abc76a4d9365fd1ceba45f32c`  
+		Last Modified: Sat, 19 Oct 2019 07:53:23 GMT  
+		Size: 761.5 KB (761492 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:4a942ea0f9ad310fc2ad23788561db5ee9bc050bffefd16bfab7f99535f0411d`  
-		Last Modified: Fri, 18 Oct 2019 04:45:18 GMT  
-		Size: 4.3 KB (4304 bytes)  
+	-	`sha256:2b9ce4ea73ac152eb2c63e49f8e66f6ac5c4f8b3cb641888ed9466410319feea`  
+		Last Modified: Sat, 19 Oct 2019 07:54:34 GMT  
+		Size: 4.3 KB (4301 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:2f33b6864b1013c10e7e37c222b687c078262a55fa58f96af3f038a877bbfb82`  
-		Last Modified: Fri, 18 Oct 2019 04:45:19 GMT  
-		Size: 155.6 KB (155565 bytes)  
+	-	`sha256:b8937a1302ad3771b4786f2df074d772494425804d05deec49ff9e678ba2c048`  
+		Last Modified: Sat, 19 Oct 2019 07:54:34 GMT  
+		Size: 155.6 KB (155563 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:31121bc5d4b04e836bb48be7a42500e3c79f7cfe98b32a97450ee8bed73e2fb1`  
-		Last Modified: Fri, 18 Oct 2019 04:45:35 GMT  
-		Size: 172.9 MB (172943327 bytes)  
+	-	`sha256:aa0588d194306616dca0837e541dcfcc422a2ca800176a2ca7840c58a44f1e9c`  
+		Last Modified: Sat, 19 Oct 2019 07:54:44 GMT  
+		Size: 172.9 MB (172943288 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:dbe394cb13334a4493434eff1040a40da110eece909b2efbb2586e285850bec1`  
-		Last Modified: Fri, 18 Oct 2019 04:45:18 GMT  
-		Size: 4.8 KB (4789 bytes)  
+	-	`sha256:bc6be69b90ab4486fef194b44b5405a26ddf60726058466cefed23066d8b5f68`  
+		Last Modified: Sat, 19 Oct 2019 07:54:37 GMT  
+		Size: 4.8 KB (4791 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `solr:8.0.0` - linux; arm64 variant v8
@@ -6065,7 +6065,7 @@ CMD ["solr-foreground"]
 ## `solr:8.0.0-slim`
 
 ```console
-$ docker pull solr@sha256:ff7c7708e56537e9d6b9b19f5d6b7f2a88ebd97d52f7147820907b39271905a3
+$ docker pull solr@sha256:2b9d8595d96574f72cc11262958bb9b60c3916e851982034f110a7226337ecf2
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -6076,14 +6076,14 @@ $ docker pull solr@sha256:ff7c7708e56537e9d6b9b19f5d6b7f2a88ebd97d52f7147820907b
 ### `solr:8.0.0-slim` - linux; amd64
 
 ```console
-$ docker pull solr@sha256:68bd7a4d22251845e06ea97f845a2de0d65f6c9225e8ac6c335807554a493a41
+$ docker pull solr@sha256:4be94439b0be71ca0cfd85eebb4c37d9a80d75079435ad21ce3446b0585df8f8
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **404.8 MB (404762251 bytes)**  
+-	Total Size: **404.9 MB (404921311 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:bdc49bc8ad0aa6a0ee6eeaf45b70380eef9f4ab52bb93b1dda46e0b423db102b`
+-	Image ID: `sha256:dd47b66c8de92d3edee32148e33842caf92259a24dbec8302723511d17c65eb3`
 -	Entrypoint: `["docker-entrypoint.sh"]`
 -	Default Command: `["solr-foreground"]`
 
@@ -6102,53 +6102,53 @@ ENV JAVA_HOME=/usr/local/openjdk-11
 ENV PATH=/usr/local/openjdk-11/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
 # Thu, 17 Oct 2019 08:29:46 GMT
 RUN { echo '#/bin/sh'; echo 'echo "$JAVA_HOME"'; } > /usr/local/bin/docker-java-home && chmod +x /usr/local/bin/docker-java-home && [ "$JAVA_HOME" = "$(docker-java-home)" ]
-# Thu, 17 Oct 2019 08:29:46 GMT
-ENV JAVA_VERSION=11.0.4
-# Thu, 17 Oct 2019 08:29:46 GMT
-ENV JAVA_BASE_URL=https://github.com/AdoptOpenJDK/openjdk11-upstream-binaries/releases/download/jdk-11.0.4%2B11/OpenJDK11U-jdk_
-# Thu, 17 Oct 2019 08:29:46 GMT
-ENV JAVA_URL_VERSION=11.0.4_11
-# Thu, 17 Oct 2019 08:30:07 GMT
+# Fri, 18 Oct 2019 23:39:50 GMT
+ENV JAVA_VERSION=11.0.5
+# Fri, 18 Oct 2019 23:39:50 GMT
+ENV JAVA_BASE_URL=https://github.com/AdoptOpenJDK/openjdk11-upstream-binaries/releases/download/jdk-11.0.5%2B10/OpenJDK11U-jdk_
+# Fri, 18 Oct 2019 23:39:50 GMT
+ENV JAVA_URL_VERSION=11.0.5_10
+# Fri, 18 Oct 2019 23:40:16 GMT
 RUN set -eux; 		dpkgArch="$(dpkg --print-architecture)"; 	case "$dpkgArch" in 		amd64) upstreamArch='x64' ;; 		arm64) upstreamArch='aarch64' ;; 		*) echo >&2 "error: unsupported architecture: $dpkgArch" ;; 	esac; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		dirmngr 		gnupg 		wget 	; 	rm -rf /var/lib/apt/lists/*; 		wget -O openjdk.tgz.asc "${JAVA_BASE_URL}${upstreamArch}_linux_${JAVA_URL_VERSION}.tar.gz.sign"; 	wget -O openjdk.tgz "${JAVA_BASE_URL}${upstreamArch}_linux_${JAVA_URL_VERSION}.tar.gz" --progress=dot:giga; 		export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver ha.pool.sks-keyservers.net --keyserver-options no-self-sigs-only --recv-keys CA5F11C6CE22644D42C6AC4492EF8D39DC13168F; 	gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys EAC843EBD3EFDB98CC772FADA5CD6035332FA671; 	gpg --batch --list-sigs --keyid-format 0xLONG CA5F11C6CE22644D42C6AC4492EF8D39DC13168F 		| tee /dev/stderr 		| grep '0xA5CD6035332FA671' 		| grep 'Andrew Haley'; 	gpg --batch --verify openjdk.tgz.asc openjdk.tgz; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME"; 		mkdir -p "$JAVA_HOME"; 	tar --extract 		--file openjdk.tgz 		--directory "$JAVA_HOME" 		--strip-components 1 		--no-same-owner 	; 	rm openjdk.tgz*; 			apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark > /dev/null; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 		{ 		echo '#!/usr/bin/env bash'; 		echo 'set -Eeuo pipefail'; 		echo 'if ! [ -d "$JAVA_HOME" ]; then echo >&2 "error: missing JAVA_HOME environment variable"; exit 1; fi'; 		echo 'cacertsFile=; for f in "$JAVA_HOME/lib/security/cacerts" "$JAVA_HOME/jre/lib/security/cacerts"; do if [ -e "$f" ]; then cacertsFile="$f"; break; fi; done'; 		echo 'if [ -z "$cacertsFile" ] || ! [ -f "$cacertsFile" ]; then echo >&2 "error: failed to find cacerts file in $JAVA_HOME"; exit 1; fi'; 		echo 'trust extract --overwrite --format=java-cacerts --filter=ca-anchors --purpose=server-auth "$cacertsFile"'; 	} > /etc/ca-certificates/update.d/docker-openjdk; 	chmod +x /etc/ca-certificates/update.d/docker-openjdk; 	/etc/ca-certificates/update.d/docker-openjdk; 		find "$JAVA_HOME/lib" -name '*.so' -exec dirname '{}' ';' | sort -u > /etc/ld.so.conf.d/docker-openjdk.conf; 	ldconfig; 		javac --version; 	java --version
-# Thu, 17 Oct 2019 08:30:07 GMT
+# Fri, 18 Oct 2019 23:40:17 GMT
 CMD ["jshell"]
-# Fri, 18 Oct 2019 04:36:23 GMT
+# Sat, 19 Oct 2019 07:46:43 GMT
 LABEL maintainer=Martijn Koster "mak-docker@greenhills.co.uk"
-# Fri, 18 Oct 2019 04:36:23 GMT
+# Sat, 19 Oct 2019 07:46:43 GMT
 LABEL repository=https://github.com/docker-solr/docker-solr
-# Fri, 18 Oct 2019 04:36:23 GMT
+# Sat, 19 Oct 2019 07:46:44 GMT
 ARG SOLR_DOWNLOAD_SERVER
-# Fri, 18 Oct 2019 04:36:30 GMT
+# Sat, 19 Oct 2019 07:46:51 GMT
 RUN apt-get update &&   apt-get -y install acl dirmngr gpg lsof procps wget &&   rm -rf /var/lib/apt/lists/*
-# Fri, 18 Oct 2019 04:38:04 GMT
+# Sat, 19 Oct 2019 07:48:24 GMT
 ENV SOLR_USER=solr SOLR_UID=8983 SOLR_GROUP=solr SOLR_GID=8983 SOLR_VERSION=8.0.0 SOLR_URL=https://archive.apache.org/dist/lucene/solr/8.0.0/solr-8.0.0.tgz SOLR_SHA256=0e6392d3b980ab917c731b054101aafcebceacc0e5063cb1e305aeeaec911d12 SOLR_KEYS=052C5B48A480B9CEA9E218A5F98C13CFA5A135D8 PATH=/opt/solr/bin:/opt/docker-solr/scripts:/usr/local/openjdk-11/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin SOLR_INCLUDE=/etc/default/solr.in.sh SOLR_HOME=/var/solr/data SOLR_PID_DIR=/var/solr SOLR_LOGS_DIR=/var/solr/logs LOG4J_PROPS=/var/solr/log4j2.xml
-# Fri, 18 Oct 2019 04:38:04 GMT
+# Sat, 19 Oct 2019 07:48:24 GMT
 ENV GOSU_VERSION=1.11
-# Fri, 18 Oct 2019 04:38:05 GMT
+# Sat, 19 Oct 2019 07:48:24 GMT
 ENV GOSU_KEY=B42F6819007F00F88E364FD4036A9C25BF357DD4
-# Fri, 18 Oct 2019 04:38:05 GMT
+# Sat, 19 Oct 2019 07:48:24 GMT
 ENV TINI_VERSION=v0.18.0
-# Fri, 18 Oct 2019 04:38:05 GMT
+# Sat, 19 Oct 2019 07:48:24 GMT
 ENV TINI_KEY=595E85A6B1B4779EA4DAAEC70B588DFF0527A9B7
-# Fri, 18 Oct 2019 04:38:06 GMT
+# Sat, 19 Oct 2019 07:48:25 GMT
 RUN groupadd -r --gid "$SOLR_GID" "$SOLR_GROUP" &&   useradd -r --uid "$SOLR_UID" --gid "$SOLR_GID" "$SOLR_USER"
-# Fri, 18 Oct 2019 04:38:07 GMT
+# Sat, 19 Oct 2019 07:48:26 GMT
 RUN set -e;   export GNUPGHOME="/tmp/gnupg_home" &&   mkdir -p "$GNUPGHOME" &&   chmod 700 "$GNUPGHOME" &&   echo "disable-ipv6" >> "$GNUPGHOME/dirmngr.conf" &&   for key in $SOLR_KEYS $GOSU_KEY $TINI_KEY; do     found='';     for server in       ha.pool.sks-keyservers.net       hkp://keyserver.ubuntu.com:80       hkp://p80.pool.sks-keyservers.net:80       pgp.mit.edu     ; do       echo "  trying $server for $key";       gpg --batch --keyserver "$server" --keyserver-options timeout=10 --recv-keys "$key" && found=yes && break;       gpg --batch --keyserver "$server" --keyserver-options timeout=10 --recv-keys "$key" && found=yes && break;     done;     test -z "$found" && echo >&2 "error: failed to fetch $key from several disparate servers -- network issues?" && exit 1;   done;   exit 0
-# Fri, 18 Oct 2019 04:38:21 GMT
+# Sat, 19 Oct 2019 07:48:43 GMT
 RUN set -e;   export GNUPGHOME="/tmp/gnupg_home" &&   pkgArch="$(dpkg --print-architecture | awk -F- '{ print $NF }')" &&   wget -O /usr/local/bin/gosu "https://github.com/tianon/gosu/releases/download/$GOSU_VERSION/gosu-$pkgArch" &&   wget -O /usr/local/bin/gosu.asc "https://github.com/tianon/gosu/releases/download/$GOSU_VERSION/gosu-$pkgArch.asc" &&   gpg --batch --verify /usr/local/bin/gosu.asc /usr/local/bin/gosu &&   rm /usr/local/bin/gosu.asc &&   chmod +x /usr/local/bin/gosu &&   gosu nobody true &&   wget -O /usr/local/bin/tini "https://github.com/krallin/tini/releases/download/${TINI_VERSION}/tini-$pkgArch" &&   wget -O /usr/local/bin/tini.asc "https://github.com/krallin/tini/releases/download/${TINI_VERSION}/tini-$pkgArch.asc" &&   gpg --batch --verify /usr/local/bin/tini.asc /usr/local/bin/tini;   rm /usr/local/bin/tini.asc &&   chmod +x /usr/local/bin/tini &&   tini --version &&   echo "downloading $SOLR_URL" &&   wget -nv "$SOLR_URL" -O "/opt/solr-$SOLR_VERSION.tgz" &&   echo "downloading $SOLR_URL.asc" &&   wget -nv "$SOLR_URL.asc" -O "/opt/solr-$SOLR_VERSION.tgz.asc" &&   echo "$SOLR_SHA256 */opt/solr-$SOLR_VERSION.tgz" | sha256sum -c - &&   (>&2 ls -l "/opt/solr-$SOLR_VERSION.tgz" "/opt/solr-$SOLR_VERSION.tgz.asc") &&   gpg --batch --verify "/opt/solr-$SOLR_VERSION.tgz.asc" "/opt/solr-$SOLR_VERSION.tgz" &&   tar -C /opt --extract --file "/opt/solr-$SOLR_VERSION.tgz" &&   (cd /opt && ln -s "solr-$SOLR_VERSION" solr) &&   rm "/opt/solr-$SOLR_VERSION.tgz"* &&   rm -Rf /opt/solr/docs/ &&   mkdir -p /opt/solr/server/solr/lib /docker-entrypoint-initdb.d /opt/docker-solr &&   chown -R 0:0 "/opt/solr-$SOLR_VERSION" &&   find "/opt/solr-$SOLR_VERSION" -type d -print0 | xargs -0 chmod 0755 &&   find "/opt/solr-$SOLR_VERSION" -type f -print0 | xargs -0 chmod 0644 &&   chmod -R 0755 "/opt/solr-$SOLR_VERSION/bin" "/opt/solr-$SOLR_VERSION/contrib/prometheus-exporter/bin/solr-exporter" /opt/solr-$SOLR_VERSION/server/scripts/cloud-scripts &&   cp /opt/solr/bin/solr.in.sh /etc/default/solr.in.sh &&   mv /opt/solr/bin/solr.in.sh /opt/solr/bin/solr.in.sh.orig &&   mv /opt/solr/bin/solr.in.cmd /opt/solr/bin/solr.in.cmd.orig &&   chown root:0 /etc/default/solr.in.sh &&   chmod 0664 /etc/default/solr.in.sh &&   mkdir -p /var/solr/data /var/solr/logs &&   (cd /opt/solr/server/solr && cp solr.xml zoo.cfg /var/solr/data/) &&   cp /opt/solr/server/resources/log4j2.xml /var/solr/log4j2.xml &&   find /var/solr -type d -print0 | xargs -0 chmod 0770 &&   find /var/solr -type f -print0 | xargs -0 chmod 0660 &&   sed -i -e "s/\"\$(whoami)\" == \"root\"/\$(id -u) == 0/" /opt/solr/bin/solr &&   sed -i -e 's/lsof -PniTCP:/lsof -t -PniTCP:/' /opt/solr/bin/solr &&   chown -R "0:0" /opt/solr-$SOLR_VERSION /docker-entrypoint-initdb.d /opt/docker-solr &&   chown -R "$SOLR_USER:0" /var/solr &&   { command -v gpgconf && gpgconf --kill all || :; } &&   rm -r "$GNUPGHOME"
-# Fri, 18 Oct 2019 04:38:21 GMT
+# Sat, 19 Oct 2019 07:48:43 GMT
 COPY --chown=0:0dir:7c0a3213efab10f68cd89ca4d91a13cb6084a7764ed341bf0617ce144943839b in /opt/docker-solr/scripts 
-# Fri, 18 Oct 2019 04:38:21 GMT
+# Sat, 19 Oct 2019 07:48:43 GMT
 VOLUME [/var/solr]
-# Fri, 18 Oct 2019 04:38:22 GMT
+# Sat, 19 Oct 2019 07:48:43 GMT
 EXPOSE 8983
-# Fri, 18 Oct 2019 04:38:22 GMT
+# Sat, 19 Oct 2019 07:48:44 GMT
 WORKDIR /opt/solr
-# Fri, 18 Oct 2019 04:38:22 GMT
+# Sat, 19 Oct 2019 07:48:44 GMT
 USER solr
-# Fri, 18 Oct 2019 04:38:22 GMT
+# Sat, 19 Oct 2019 07:48:44 GMT
 ENTRYPOINT ["docker-entrypoint.sh"]
-# Fri, 18 Oct 2019 04:38:22 GMT
+# Sat, 19 Oct 2019 07:48:44 GMT
 CMD ["solr-foreground"]
 ```
 
@@ -6165,29 +6165,29 @@ CMD ["solr-foreground"]
 		Last Modified: Thu, 17 Oct 2019 08:38:38 GMT  
 		Size: 210.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:208dbdb57f64b9643f7760ea628f0e2a21deff0af0b2eb33a0e66f6e3165fbfc`  
-		Last Modified: Thu, 17 Oct 2019 08:39:01 GMT  
-		Size: 196.0 MB (195975541 bytes)  
+	-	`sha256:ebc78a5f677c03a8f4aa611b558b55c4e42cf3113517ec2400695512c176d5ea`  
+		Last Modified: Fri, 18 Oct 2019 23:45:47 GMT  
+		Size: 196.1 MB (196134537 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:0b6e87939381d5f5bf58ebbda7764e5988a7f85de329392991840d7de2392b46`  
-		Last Modified: Fri, 18 Oct 2019 04:44:14 GMT  
-		Size: 5.5 MB (5452429 bytes)  
+	-	`sha256:5422c55f6c915b61b16c325a8d6c50b854cfa1a68d01cdf3257e0544867074c1`  
+		Last Modified: Sat, 19 Oct 2019 07:53:47 GMT  
+		Size: 5.5 MB (5452476 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:baa6b9e4032da897a96972f1ee3d9c74e56ac03a4743b22e342736d83a54e955`  
-		Last Modified: Fri, 18 Oct 2019 04:45:42 GMT  
-		Size: 4.3 KB (4283 bytes)  
+	-	`sha256:1733ab4ea892abe746d8b600566dd4e76c8445d759a116d1a0cea80be77d549f`  
+		Last Modified: Sat, 19 Oct 2019 07:54:48 GMT  
+		Size: 4.3 KB (4284 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:024356877fda72a190a2ddfc61db1fa84b352b2dcafdb454dc89d4b243c79510`  
-		Last Modified: Fri, 18 Oct 2019 04:45:41 GMT  
-		Size: 24.9 KB (24906 bytes)  
+	-	`sha256:d2176ea3714c533e638a0470718b55427d0b35544779b0f6130bc33bc8e3acee`  
+		Last Modified: Sat, 19 Oct 2019 07:54:48 GMT  
+		Size: 24.9 KB (24908 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:2cb74eee03295405ceffc0e0b08c9c5358c8658b7c4e86b55040370404a6548d`  
-		Last Modified: Fri, 18 Oct 2019 04:45:56 GMT  
-		Size: 172.9 MB (172943549 bytes)  
+	-	`sha256:df81ac8a72616fe19eb309ca071b3ffe68788e499bbec919a328b4e45a9e5963`  
+		Last Modified: Sat, 19 Oct 2019 07:54:58 GMT  
+		Size: 172.9 MB (172943565 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:893832a69266794d344c0645f9119298ad2274ff8361e1760127c927c8464b73`  
-		Last Modified: Fri, 18 Oct 2019 04:45:42 GMT  
-		Size: 4.8 KB (4789 bytes)  
+	-	`sha256:078aa961e4e3c595431b48dda3633a388cbed2cbb5d1e9fbaf2bdbf78f925d2d`  
+		Last Modified: Sat, 19 Oct 2019 07:54:49 GMT  
+		Size: 4.8 KB (4787 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `solr:8.0.0-slim` - linux; arm64 variant v8
@@ -6310,7 +6310,7 @@ CMD ["solr-foreground"]
 ## `solr:8.0-slim`
 
 ```console
-$ docker pull solr@sha256:ff7c7708e56537e9d6b9b19f5d6b7f2a88ebd97d52f7147820907b39271905a3
+$ docker pull solr@sha256:2b9d8595d96574f72cc11262958bb9b60c3916e851982034f110a7226337ecf2
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -6321,14 +6321,14 @@ $ docker pull solr@sha256:ff7c7708e56537e9d6b9b19f5d6b7f2a88ebd97d52f7147820907b
 ### `solr:8.0-slim` - linux; amd64
 
 ```console
-$ docker pull solr@sha256:68bd7a4d22251845e06ea97f845a2de0d65f6c9225e8ac6c335807554a493a41
+$ docker pull solr@sha256:4be94439b0be71ca0cfd85eebb4c37d9a80d75079435ad21ce3446b0585df8f8
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **404.8 MB (404762251 bytes)**  
+-	Total Size: **404.9 MB (404921311 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:bdc49bc8ad0aa6a0ee6eeaf45b70380eef9f4ab52bb93b1dda46e0b423db102b`
+-	Image ID: `sha256:dd47b66c8de92d3edee32148e33842caf92259a24dbec8302723511d17c65eb3`
 -	Entrypoint: `["docker-entrypoint.sh"]`
 -	Default Command: `["solr-foreground"]`
 
@@ -6347,53 +6347,53 @@ ENV JAVA_HOME=/usr/local/openjdk-11
 ENV PATH=/usr/local/openjdk-11/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
 # Thu, 17 Oct 2019 08:29:46 GMT
 RUN { echo '#/bin/sh'; echo 'echo "$JAVA_HOME"'; } > /usr/local/bin/docker-java-home && chmod +x /usr/local/bin/docker-java-home && [ "$JAVA_HOME" = "$(docker-java-home)" ]
-# Thu, 17 Oct 2019 08:29:46 GMT
-ENV JAVA_VERSION=11.0.4
-# Thu, 17 Oct 2019 08:29:46 GMT
-ENV JAVA_BASE_URL=https://github.com/AdoptOpenJDK/openjdk11-upstream-binaries/releases/download/jdk-11.0.4%2B11/OpenJDK11U-jdk_
-# Thu, 17 Oct 2019 08:29:46 GMT
-ENV JAVA_URL_VERSION=11.0.4_11
-# Thu, 17 Oct 2019 08:30:07 GMT
+# Fri, 18 Oct 2019 23:39:50 GMT
+ENV JAVA_VERSION=11.0.5
+# Fri, 18 Oct 2019 23:39:50 GMT
+ENV JAVA_BASE_URL=https://github.com/AdoptOpenJDK/openjdk11-upstream-binaries/releases/download/jdk-11.0.5%2B10/OpenJDK11U-jdk_
+# Fri, 18 Oct 2019 23:39:50 GMT
+ENV JAVA_URL_VERSION=11.0.5_10
+# Fri, 18 Oct 2019 23:40:16 GMT
 RUN set -eux; 		dpkgArch="$(dpkg --print-architecture)"; 	case "$dpkgArch" in 		amd64) upstreamArch='x64' ;; 		arm64) upstreamArch='aarch64' ;; 		*) echo >&2 "error: unsupported architecture: $dpkgArch" ;; 	esac; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		dirmngr 		gnupg 		wget 	; 	rm -rf /var/lib/apt/lists/*; 		wget -O openjdk.tgz.asc "${JAVA_BASE_URL}${upstreamArch}_linux_${JAVA_URL_VERSION}.tar.gz.sign"; 	wget -O openjdk.tgz "${JAVA_BASE_URL}${upstreamArch}_linux_${JAVA_URL_VERSION}.tar.gz" --progress=dot:giga; 		export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver ha.pool.sks-keyservers.net --keyserver-options no-self-sigs-only --recv-keys CA5F11C6CE22644D42C6AC4492EF8D39DC13168F; 	gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys EAC843EBD3EFDB98CC772FADA5CD6035332FA671; 	gpg --batch --list-sigs --keyid-format 0xLONG CA5F11C6CE22644D42C6AC4492EF8D39DC13168F 		| tee /dev/stderr 		| grep '0xA5CD6035332FA671' 		| grep 'Andrew Haley'; 	gpg --batch --verify openjdk.tgz.asc openjdk.tgz; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME"; 		mkdir -p "$JAVA_HOME"; 	tar --extract 		--file openjdk.tgz 		--directory "$JAVA_HOME" 		--strip-components 1 		--no-same-owner 	; 	rm openjdk.tgz*; 			apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark > /dev/null; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 		{ 		echo '#!/usr/bin/env bash'; 		echo 'set -Eeuo pipefail'; 		echo 'if ! [ -d "$JAVA_HOME" ]; then echo >&2 "error: missing JAVA_HOME environment variable"; exit 1; fi'; 		echo 'cacertsFile=; for f in "$JAVA_HOME/lib/security/cacerts" "$JAVA_HOME/jre/lib/security/cacerts"; do if [ -e "$f" ]; then cacertsFile="$f"; break; fi; done'; 		echo 'if [ -z "$cacertsFile" ] || ! [ -f "$cacertsFile" ]; then echo >&2 "error: failed to find cacerts file in $JAVA_HOME"; exit 1; fi'; 		echo 'trust extract --overwrite --format=java-cacerts --filter=ca-anchors --purpose=server-auth "$cacertsFile"'; 	} > /etc/ca-certificates/update.d/docker-openjdk; 	chmod +x /etc/ca-certificates/update.d/docker-openjdk; 	/etc/ca-certificates/update.d/docker-openjdk; 		find "$JAVA_HOME/lib" -name '*.so' -exec dirname '{}' ';' | sort -u > /etc/ld.so.conf.d/docker-openjdk.conf; 	ldconfig; 		javac --version; 	java --version
-# Thu, 17 Oct 2019 08:30:07 GMT
+# Fri, 18 Oct 2019 23:40:17 GMT
 CMD ["jshell"]
-# Fri, 18 Oct 2019 04:36:23 GMT
+# Sat, 19 Oct 2019 07:46:43 GMT
 LABEL maintainer=Martijn Koster "mak-docker@greenhills.co.uk"
-# Fri, 18 Oct 2019 04:36:23 GMT
+# Sat, 19 Oct 2019 07:46:43 GMT
 LABEL repository=https://github.com/docker-solr/docker-solr
-# Fri, 18 Oct 2019 04:36:23 GMT
+# Sat, 19 Oct 2019 07:46:44 GMT
 ARG SOLR_DOWNLOAD_SERVER
-# Fri, 18 Oct 2019 04:36:30 GMT
+# Sat, 19 Oct 2019 07:46:51 GMT
 RUN apt-get update &&   apt-get -y install acl dirmngr gpg lsof procps wget &&   rm -rf /var/lib/apt/lists/*
-# Fri, 18 Oct 2019 04:38:04 GMT
+# Sat, 19 Oct 2019 07:48:24 GMT
 ENV SOLR_USER=solr SOLR_UID=8983 SOLR_GROUP=solr SOLR_GID=8983 SOLR_VERSION=8.0.0 SOLR_URL=https://archive.apache.org/dist/lucene/solr/8.0.0/solr-8.0.0.tgz SOLR_SHA256=0e6392d3b980ab917c731b054101aafcebceacc0e5063cb1e305aeeaec911d12 SOLR_KEYS=052C5B48A480B9CEA9E218A5F98C13CFA5A135D8 PATH=/opt/solr/bin:/opt/docker-solr/scripts:/usr/local/openjdk-11/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin SOLR_INCLUDE=/etc/default/solr.in.sh SOLR_HOME=/var/solr/data SOLR_PID_DIR=/var/solr SOLR_LOGS_DIR=/var/solr/logs LOG4J_PROPS=/var/solr/log4j2.xml
-# Fri, 18 Oct 2019 04:38:04 GMT
+# Sat, 19 Oct 2019 07:48:24 GMT
 ENV GOSU_VERSION=1.11
-# Fri, 18 Oct 2019 04:38:05 GMT
+# Sat, 19 Oct 2019 07:48:24 GMT
 ENV GOSU_KEY=B42F6819007F00F88E364FD4036A9C25BF357DD4
-# Fri, 18 Oct 2019 04:38:05 GMT
+# Sat, 19 Oct 2019 07:48:24 GMT
 ENV TINI_VERSION=v0.18.0
-# Fri, 18 Oct 2019 04:38:05 GMT
+# Sat, 19 Oct 2019 07:48:24 GMT
 ENV TINI_KEY=595E85A6B1B4779EA4DAAEC70B588DFF0527A9B7
-# Fri, 18 Oct 2019 04:38:06 GMT
+# Sat, 19 Oct 2019 07:48:25 GMT
 RUN groupadd -r --gid "$SOLR_GID" "$SOLR_GROUP" &&   useradd -r --uid "$SOLR_UID" --gid "$SOLR_GID" "$SOLR_USER"
-# Fri, 18 Oct 2019 04:38:07 GMT
+# Sat, 19 Oct 2019 07:48:26 GMT
 RUN set -e;   export GNUPGHOME="/tmp/gnupg_home" &&   mkdir -p "$GNUPGHOME" &&   chmod 700 "$GNUPGHOME" &&   echo "disable-ipv6" >> "$GNUPGHOME/dirmngr.conf" &&   for key in $SOLR_KEYS $GOSU_KEY $TINI_KEY; do     found='';     for server in       ha.pool.sks-keyservers.net       hkp://keyserver.ubuntu.com:80       hkp://p80.pool.sks-keyservers.net:80       pgp.mit.edu     ; do       echo "  trying $server for $key";       gpg --batch --keyserver "$server" --keyserver-options timeout=10 --recv-keys "$key" && found=yes && break;       gpg --batch --keyserver "$server" --keyserver-options timeout=10 --recv-keys "$key" && found=yes && break;     done;     test -z "$found" && echo >&2 "error: failed to fetch $key from several disparate servers -- network issues?" && exit 1;   done;   exit 0
-# Fri, 18 Oct 2019 04:38:21 GMT
+# Sat, 19 Oct 2019 07:48:43 GMT
 RUN set -e;   export GNUPGHOME="/tmp/gnupg_home" &&   pkgArch="$(dpkg --print-architecture | awk -F- '{ print $NF }')" &&   wget -O /usr/local/bin/gosu "https://github.com/tianon/gosu/releases/download/$GOSU_VERSION/gosu-$pkgArch" &&   wget -O /usr/local/bin/gosu.asc "https://github.com/tianon/gosu/releases/download/$GOSU_VERSION/gosu-$pkgArch.asc" &&   gpg --batch --verify /usr/local/bin/gosu.asc /usr/local/bin/gosu &&   rm /usr/local/bin/gosu.asc &&   chmod +x /usr/local/bin/gosu &&   gosu nobody true &&   wget -O /usr/local/bin/tini "https://github.com/krallin/tini/releases/download/${TINI_VERSION}/tini-$pkgArch" &&   wget -O /usr/local/bin/tini.asc "https://github.com/krallin/tini/releases/download/${TINI_VERSION}/tini-$pkgArch.asc" &&   gpg --batch --verify /usr/local/bin/tini.asc /usr/local/bin/tini;   rm /usr/local/bin/tini.asc &&   chmod +x /usr/local/bin/tini &&   tini --version &&   echo "downloading $SOLR_URL" &&   wget -nv "$SOLR_URL" -O "/opt/solr-$SOLR_VERSION.tgz" &&   echo "downloading $SOLR_URL.asc" &&   wget -nv "$SOLR_URL.asc" -O "/opt/solr-$SOLR_VERSION.tgz.asc" &&   echo "$SOLR_SHA256 */opt/solr-$SOLR_VERSION.tgz" | sha256sum -c - &&   (>&2 ls -l "/opt/solr-$SOLR_VERSION.tgz" "/opt/solr-$SOLR_VERSION.tgz.asc") &&   gpg --batch --verify "/opt/solr-$SOLR_VERSION.tgz.asc" "/opt/solr-$SOLR_VERSION.tgz" &&   tar -C /opt --extract --file "/opt/solr-$SOLR_VERSION.tgz" &&   (cd /opt && ln -s "solr-$SOLR_VERSION" solr) &&   rm "/opt/solr-$SOLR_VERSION.tgz"* &&   rm -Rf /opt/solr/docs/ &&   mkdir -p /opt/solr/server/solr/lib /docker-entrypoint-initdb.d /opt/docker-solr &&   chown -R 0:0 "/opt/solr-$SOLR_VERSION" &&   find "/opt/solr-$SOLR_VERSION" -type d -print0 | xargs -0 chmod 0755 &&   find "/opt/solr-$SOLR_VERSION" -type f -print0 | xargs -0 chmod 0644 &&   chmod -R 0755 "/opt/solr-$SOLR_VERSION/bin" "/opt/solr-$SOLR_VERSION/contrib/prometheus-exporter/bin/solr-exporter" /opt/solr-$SOLR_VERSION/server/scripts/cloud-scripts &&   cp /opt/solr/bin/solr.in.sh /etc/default/solr.in.sh &&   mv /opt/solr/bin/solr.in.sh /opt/solr/bin/solr.in.sh.orig &&   mv /opt/solr/bin/solr.in.cmd /opt/solr/bin/solr.in.cmd.orig &&   chown root:0 /etc/default/solr.in.sh &&   chmod 0664 /etc/default/solr.in.sh &&   mkdir -p /var/solr/data /var/solr/logs &&   (cd /opt/solr/server/solr && cp solr.xml zoo.cfg /var/solr/data/) &&   cp /opt/solr/server/resources/log4j2.xml /var/solr/log4j2.xml &&   find /var/solr -type d -print0 | xargs -0 chmod 0770 &&   find /var/solr -type f -print0 | xargs -0 chmod 0660 &&   sed -i -e "s/\"\$(whoami)\" == \"root\"/\$(id -u) == 0/" /opt/solr/bin/solr &&   sed -i -e 's/lsof -PniTCP:/lsof -t -PniTCP:/' /opt/solr/bin/solr &&   chown -R "0:0" /opt/solr-$SOLR_VERSION /docker-entrypoint-initdb.d /opt/docker-solr &&   chown -R "$SOLR_USER:0" /var/solr &&   { command -v gpgconf && gpgconf --kill all || :; } &&   rm -r "$GNUPGHOME"
-# Fri, 18 Oct 2019 04:38:21 GMT
+# Sat, 19 Oct 2019 07:48:43 GMT
 COPY --chown=0:0dir:7c0a3213efab10f68cd89ca4d91a13cb6084a7764ed341bf0617ce144943839b in /opt/docker-solr/scripts 
-# Fri, 18 Oct 2019 04:38:21 GMT
+# Sat, 19 Oct 2019 07:48:43 GMT
 VOLUME [/var/solr]
-# Fri, 18 Oct 2019 04:38:22 GMT
+# Sat, 19 Oct 2019 07:48:43 GMT
 EXPOSE 8983
-# Fri, 18 Oct 2019 04:38:22 GMT
+# Sat, 19 Oct 2019 07:48:44 GMT
 WORKDIR /opt/solr
-# Fri, 18 Oct 2019 04:38:22 GMT
+# Sat, 19 Oct 2019 07:48:44 GMT
 USER solr
-# Fri, 18 Oct 2019 04:38:22 GMT
+# Sat, 19 Oct 2019 07:48:44 GMT
 ENTRYPOINT ["docker-entrypoint.sh"]
-# Fri, 18 Oct 2019 04:38:22 GMT
+# Sat, 19 Oct 2019 07:48:44 GMT
 CMD ["solr-foreground"]
 ```
 
@@ -6410,29 +6410,29 @@ CMD ["solr-foreground"]
 		Last Modified: Thu, 17 Oct 2019 08:38:38 GMT  
 		Size: 210.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:208dbdb57f64b9643f7760ea628f0e2a21deff0af0b2eb33a0e66f6e3165fbfc`  
-		Last Modified: Thu, 17 Oct 2019 08:39:01 GMT  
-		Size: 196.0 MB (195975541 bytes)  
+	-	`sha256:ebc78a5f677c03a8f4aa611b558b55c4e42cf3113517ec2400695512c176d5ea`  
+		Last Modified: Fri, 18 Oct 2019 23:45:47 GMT  
+		Size: 196.1 MB (196134537 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:0b6e87939381d5f5bf58ebbda7764e5988a7f85de329392991840d7de2392b46`  
-		Last Modified: Fri, 18 Oct 2019 04:44:14 GMT  
-		Size: 5.5 MB (5452429 bytes)  
+	-	`sha256:5422c55f6c915b61b16c325a8d6c50b854cfa1a68d01cdf3257e0544867074c1`  
+		Last Modified: Sat, 19 Oct 2019 07:53:47 GMT  
+		Size: 5.5 MB (5452476 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:baa6b9e4032da897a96972f1ee3d9c74e56ac03a4743b22e342736d83a54e955`  
-		Last Modified: Fri, 18 Oct 2019 04:45:42 GMT  
-		Size: 4.3 KB (4283 bytes)  
+	-	`sha256:1733ab4ea892abe746d8b600566dd4e76c8445d759a116d1a0cea80be77d549f`  
+		Last Modified: Sat, 19 Oct 2019 07:54:48 GMT  
+		Size: 4.3 KB (4284 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:024356877fda72a190a2ddfc61db1fa84b352b2dcafdb454dc89d4b243c79510`  
-		Last Modified: Fri, 18 Oct 2019 04:45:41 GMT  
-		Size: 24.9 KB (24906 bytes)  
+	-	`sha256:d2176ea3714c533e638a0470718b55427d0b35544779b0f6130bc33bc8e3acee`  
+		Last Modified: Sat, 19 Oct 2019 07:54:48 GMT  
+		Size: 24.9 KB (24908 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:2cb74eee03295405ceffc0e0b08c9c5358c8658b7c4e86b55040370404a6548d`  
-		Last Modified: Fri, 18 Oct 2019 04:45:56 GMT  
-		Size: 172.9 MB (172943549 bytes)  
+	-	`sha256:df81ac8a72616fe19eb309ca071b3ffe68788e499bbec919a328b4e45a9e5963`  
+		Last Modified: Sat, 19 Oct 2019 07:54:58 GMT  
+		Size: 172.9 MB (172943565 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:893832a69266794d344c0645f9119298ad2274ff8361e1760127c927c8464b73`  
-		Last Modified: Fri, 18 Oct 2019 04:45:42 GMT  
-		Size: 4.8 KB (4789 bytes)  
+	-	`sha256:078aa961e4e3c595431b48dda3633a388cbed2cbb5d1e9fbaf2bdbf78f925d2d`  
+		Last Modified: Sat, 19 Oct 2019 07:54:49 GMT  
+		Size: 4.8 KB (4787 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `solr:8.0-slim` - linux; arm64 variant v8
@@ -6555,7 +6555,7 @@ CMD ["solr-foreground"]
 ## `solr:8.1`
 
 ```console
-$ docker pull solr@sha256:6b898f4b0e787f9477fbc03b92832665d04622054085f0e5a32139d23a0a49c4
+$ docker pull solr@sha256:3447520a193eeb953f8b880c36548910838c8ca45c4d76bfd9b8b6b2f62d446f
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -6566,14 +6566,14 @@ $ docker pull solr@sha256:6b898f4b0e787f9477fbc03b92832665d04622054085f0e5a32139
 ### `solr:8.1` - linux; amd64
 
 ```console
-$ docker pull solr@sha256:761898e8cff51b9b96b152d10d2464feae3ea95e488c3fe7e0ce01daa6054310
+$ docker pull solr@sha256:9ee6ae67249184c927d12e4ffcdc8ac337f1c3ddfc1b38b2be1afd2e67fb1e0b
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **488.8 MB (488826005 bytes)**  
+-	Total Size: **489.0 MB (488982368 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:8f21f42a10a0ac3b7aa15938fee5b2186d0550d23ff12c099d86f900ed7f8a66`
+-	Image ID: `sha256:347671715fe926bb4a4b0846fd7dc8da99406aa1b4d623f9a4c21861a3467046`
 -	Entrypoint: `["docker-entrypoint.sh"]`
 -	Default Command: `["solr-foreground"]`
 
@@ -6598,53 +6598,53 @@ ENV JAVA_HOME=/usr/local/openjdk-11
 ENV PATH=/usr/local/openjdk-11/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
 # Thu, 17 Oct 2019 08:29:25 GMT
 RUN { echo '#/bin/sh'; echo 'echo "$JAVA_HOME"'; } > /usr/local/bin/docker-java-home && chmod +x /usr/local/bin/docker-java-home && [ "$JAVA_HOME" = "$(docker-java-home)" ]
-# Thu, 17 Oct 2019 08:29:25 GMT
-ENV JAVA_VERSION=11.0.4
-# Thu, 17 Oct 2019 08:29:25 GMT
-ENV JAVA_BASE_URL=https://github.com/AdoptOpenJDK/openjdk11-upstream-binaries/releases/download/jdk-11.0.4%2B11/OpenJDK11U-jdk_
-# Thu, 17 Oct 2019 08:29:26 GMT
-ENV JAVA_URL_VERSION=11.0.4_11
-# Thu, 17 Oct 2019 08:29:39 GMT
+# Fri, 18 Oct 2019 23:39:21 GMT
+ENV JAVA_VERSION=11.0.5
+# Fri, 18 Oct 2019 23:39:21 GMT
+ENV JAVA_BASE_URL=https://github.com/AdoptOpenJDK/openjdk11-upstream-binaries/releases/download/jdk-11.0.5%2B10/OpenJDK11U-jdk_
+# Fri, 18 Oct 2019 23:39:21 GMT
+ENV JAVA_URL_VERSION=11.0.5_10
+# Fri, 18 Oct 2019 23:39:41 GMT
 RUN set -eux; 		dpkgArch="$(dpkg --print-architecture)"; 	case "$dpkgArch" in 		amd64) upstreamArch='x64' ;; 		arm64) upstreamArch='aarch64' ;; 		*) echo >&2 "error: unsupported architecture: $dpkgArch" ;; 	esac; 		wget -O openjdk.tgz.asc "${JAVA_BASE_URL}${upstreamArch}_linux_${JAVA_URL_VERSION}.tar.gz.sign"; 	wget -O openjdk.tgz "${JAVA_BASE_URL}${upstreamArch}_linux_${JAVA_URL_VERSION}.tar.gz" --progress=dot:giga; 		export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver ha.pool.sks-keyservers.net --keyserver-options no-self-sigs-only --recv-keys CA5F11C6CE22644D42C6AC4492EF8D39DC13168F; 	gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys EAC843EBD3EFDB98CC772FADA5CD6035332FA671; 	gpg --batch --list-sigs --keyid-format 0xLONG CA5F11C6CE22644D42C6AC4492EF8D39DC13168F 		| tee /dev/stderr 		| grep '0xA5CD6035332FA671' 		| grep 'Andrew Haley'; 	gpg --batch --verify openjdk.tgz.asc openjdk.tgz; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME"; 		mkdir -p "$JAVA_HOME"; 	tar --extract 		--file openjdk.tgz 		--directory "$JAVA_HOME" 		--strip-components 1 		--no-same-owner 	; 	rm openjdk.tgz*; 			{ 		echo '#!/usr/bin/env bash'; 		echo 'set -Eeuo pipefail'; 		echo 'if ! [ -d "$JAVA_HOME" ]; then echo >&2 "error: missing JAVA_HOME environment variable"; exit 1; fi'; 		echo 'cacertsFile=; for f in "$JAVA_HOME/lib/security/cacerts" "$JAVA_HOME/jre/lib/security/cacerts"; do if [ -e "$f" ]; then cacertsFile="$f"; break; fi; done'; 		echo 'if [ -z "$cacertsFile" ] || ! [ -f "$cacertsFile" ]; then echo >&2 "error: failed to find cacerts file in $JAVA_HOME"; exit 1; fi'; 		echo 'trust extract --overwrite --format=java-cacerts --filter=ca-anchors --purpose=server-auth "$cacertsFile"'; 	} > /etc/ca-certificates/update.d/docker-openjdk; 	chmod +x /etc/ca-certificates/update.d/docker-openjdk; 	/etc/ca-certificates/update.d/docker-openjdk; 		find "$JAVA_HOME/lib" -name '*.so' -exec dirname '{}' ';' | sort -u > /etc/ld.so.conf.d/docker-openjdk.conf; 	ldconfig; 		javac --version; 	java --version
-# Thu, 17 Oct 2019 08:29:39 GMT
+# Fri, 18 Oct 2019 23:39:42 GMT
 CMD ["jshell"]
-# Fri, 18 Oct 2019 04:35:50 GMT
+# Sat, 19 Oct 2019 07:46:10 GMT
 LABEL maintainer=Martijn Koster "mak-docker@greenhills.co.uk"
-# Fri, 18 Oct 2019 04:35:50 GMT
+# Sat, 19 Oct 2019 07:46:11 GMT
 LABEL repository=https://github.com/docker-solr/docker-solr
-# Fri, 18 Oct 2019 04:35:50 GMT
+# Sat, 19 Oct 2019 07:46:11 GMT
 ARG SOLR_DOWNLOAD_SERVER
-# Fri, 18 Oct 2019 04:35:55 GMT
+# Sat, 19 Oct 2019 07:46:15 GMT
 RUN apt-get update &&   apt-get -y install acl dirmngr gpg lsof procps wget &&   rm -rf /var/lib/apt/lists/*
-# Fri, 18 Oct 2019 04:36:56 GMT
+# Sat, 19 Oct 2019 07:47:16 GMT
 ENV SOLR_USER=solr SOLR_UID=8983 SOLR_GROUP=solr SOLR_GID=8983 SOLR_VERSION=8.1.1 SOLR_URL=https://archive.apache.org/dist/lucene/solr/8.1.1/solr-8.1.1.tgz SOLR_SHA256=b515598c11f53fe28d682e3d71238642e9f34509194e3c4746e39bb7d7bb46a1 SOLR_KEYS=F23F054D9EC50F2397FF2B814E67A2711D053DDB PATH=/opt/solr/bin:/opt/docker-solr/scripts:/usr/local/openjdk-11/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin SOLR_INCLUDE=/etc/default/solr.in.sh SOLR_HOME=/var/solr/data SOLR_PID_DIR=/var/solr SOLR_LOGS_DIR=/var/solr/logs LOG4J_PROPS=/var/solr/log4j2.xml
-# Fri, 18 Oct 2019 04:36:56 GMT
+# Sat, 19 Oct 2019 07:47:16 GMT
 ENV GOSU_VERSION=1.11
-# Fri, 18 Oct 2019 04:36:56 GMT
+# Sat, 19 Oct 2019 07:47:16 GMT
 ENV GOSU_KEY=B42F6819007F00F88E364FD4036A9C25BF357DD4
-# Fri, 18 Oct 2019 04:36:56 GMT
+# Sat, 19 Oct 2019 07:47:16 GMT
 ENV TINI_VERSION=v0.18.0
-# Fri, 18 Oct 2019 04:36:56 GMT
+# Sat, 19 Oct 2019 07:47:16 GMT
 ENV TINI_KEY=595E85A6B1B4779EA4DAAEC70B588DFF0527A9B7
-# Fri, 18 Oct 2019 04:36:57 GMT
+# Sat, 19 Oct 2019 07:47:17 GMT
 RUN groupadd -r --gid "$SOLR_GID" "$SOLR_GROUP" &&   useradd -r --uid "$SOLR_UID" --gid "$SOLR_GID" "$SOLR_USER"
-# Fri, 18 Oct 2019 04:37:00 GMT
+# Sat, 19 Oct 2019 07:47:20 GMT
 RUN set -e;   export GNUPGHOME="/tmp/gnupg_home" &&   mkdir -p "$GNUPGHOME" &&   chmod 700 "$GNUPGHOME" &&   echo "disable-ipv6" >> "$GNUPGHOME/dirmngr.conf" &&   for key in $SOLR_KEYS $GOSU_KEY $TINI_KEY; do     found='';     for server in       ha.pool.sks-keyservers.net       hkp://keyserver.ubuntu.com:80       hkp://p80.pool.sks-keyservers.net:80       pgp.mit.edu     ; do       echo "  trying $server for $key";       gpg --batch --keyserver "$server" --keyserver-options timeout=10 --recv-keys "$key" && found=yes && break;       gpg --batch --keyserver "$server" --keyserver-options timeout=10 --recv-keys "$key" && found=yes && break;     done;     test -z "$found" && echo >&2 "error: failed to fetch $key from several disparate servers -- network issues?" && exit 1;   done;   exit 0
-# Fri, 18 Oct 2019 04:37:14 GMT
+# Sat, 19 Oct 2019 07:47:34 GMT
 RUN set -e;   export GNUPGHOME="/tmp/gnupg_home" &&   pkgArch="$(dpkg --print-architecture | awk -F- '{ print $NF }')" &&   wget -O /usr/local/bin/gosu "https://github.com/tianon/gosu/releases/download/$GOSU_VERSION/gosu-$pkgArch" &&   wget -O /usr/local/bin/gosu.asc "https://github.com/tianon/gosu/releases/download/$GOSU_VERSION/gosu-$pkgArch.asc" &&   gpg --batch --verify /usr/local/bin/gosu.asc /usr/local/bin/gosu &&   rm /usr/local/bin/gosu.asc &&   chmod +x /usr/local/bin/gosu &&   gosu nobody true &&   wget -O /usr/local/bin/tini "https://github.com/krallin/tini/releases/download/${TINI_VERSION}/tini-$pkgArch" &&   wget -O /usr/local/bin/tini.asc "https://github.com/krallin/tini/releases/download/${TINI_VERSION}/tini-$pkgArch.asc" &&   gpg --batch --verify /usr/local/bin/tini.asc /usr/local/bin/tini;   rm /usr/local/bin/tini.asc &&   chmod +x /usr/local/bin/tini &&   tini --version &&   echo "downloading $SOLR_URL" &&   wget -nv "$SOLR_URL" -O "/opt/solr-$SOLR_VERSION.tgz" &&   echo "downloading $SOLR_URL.asc" &&   wget -nv "$SOLR_URL.asc" -O "/opt/solr-$SOLR_VERSION.tgz.asc" &&   echo "$SOLR_SHA256 */opt/solr-$SOLR_VERSION.tgz" | sha256sum -c - &&   (>&2 ls -l "/opt/solr-$SOLR_VERSION.tgz" "/opt/solr-$SOLR_VERSION.tgz.asc") &&   gpg --batch --verify "/opt/solr-$SOLR_VERSION.tgz.asc" "/opt/solr-$SOLR_VERSION.tgz" &&   tar -C /opt --extract --file "/opt/solr-$SOLR_VERSION.tgz" &&   (cd /opt && ln -s "solr-$SOLR_VERSION" solr) &&   rm "/opt/solr-$SOLR_VERSION.tgz"* &&   rm -Rf /opt/solr/docs/ &&   mkdir -p /opt/solr/server/solr/lib /docker-entrypoint-initdb.d /opt/docker-solr &&   chown -R 0:0 "/opt/solr-$SOLR_VERSION" &&   find "/opt/solr-$SOLR_VERSION" -type d -print0 | xargs -0 chmod 0755 &&   find "/opt/solr-$SOLR_VERSION" -type f -print0 | xargs -0 chmod 0644 &&   chmod -R 0755 "/opt/solr-$SOLR_VERSION/bin" "/opt/solr-$SOLR_VERSION/contrib/prometheus-exporter/bin/solr-exporter" /opt/solr-$SOLR_VERSION/server/scripts/cloud-scripts &&   cp /opt/solr/bin/solr.in.sh /etc/default/solr.in.sh &&   mv /opt/solr/bin/solr.in.sh /opt/solr/bin/solr.in.sh.orig &&   mv /opt/solr/bin/solr.in.cmd /opt/solr/bin/solr.in.cmd.orig &&   chown root:0 /etc/default/solr.in.sh &&   chmod 0664 /etc/default/solr.in.sh &&   mkdir -p /var/solr/data /var/solr/logs &&   (cd /opt/solr/server/solr && cp solr.xml zoo.cfg /var/solr/data/) &&   cp /opt/solr/server/resources/log4j2.xml /var/solr/log4j2.xml &&   find /var/solr -type d -print0 | xargs -0 chmod 0770 &&   find /var/solr -type f -print0 | xargs -0 chmod 0660 &&   sed -i -e "s/\"\$(whoami)\" == \"root\"/\$(id -u) == 0/" /opt/solr/bin/solr &&   sed -i -e 's/lsof -PniTCP:/lsof -t -PniTCP:/' /opt/solr/bin/solr &&   chown -R "0:0" /opt/solr-$SOLR_VERSION /docker-entrypoint-initdb.d /opt/docker-solr &&   chown -R "$SOLR_USER:0" /var/solr &&   { command -v gpgconf && gpgconf --kill all || :; } &&   rm -r "$GNUPGHOME"
-# Fri, 18 Oct 2019 04:37:14 GMT
+# Sat, 19 Oct 2019 07:47:35 GMT
 COPY --chown=0:0dir:7c0a3213efab10f68cd89ca4d91a13cb6084a7764ed341bf0617ce144943839b in /opt/docker-solr/scripts 
-# Fri, 18 Oct 2019 04:37:15 GMT
+# Sat, 19 Oct 2019 07:47:35 GMT
 VOLUME [/var/solr]
-# Fri, 18 Oct 2019 04:37:15 GMT
+# Sat, 19 Oct 2019 07:47:35 GMT
 EXPOSE 8983
-# Fri, 18 Oct 2019 04:37:15 GMT
+# Sat, 19 Oct 2019 07:47:35 GMT
 WORKDIR /opt/solr
-# Fri, 18 Oct 2019 04:37:15 GMT
+# Sat, 19 Oct 2019 07:47:35 GMT
 USER solr
-# Fri, 18 Oct 2019 04:37:15 GMT
+# Sat, 19 Oct 2019 07:47:35 GMT
 ENTRYPOINT ["docker-entrypoint.sh"]
-# Fri, 18 Oct 2019 04:37:15 GMT
+# Sat, 19 Oct 2019 07:47:36 GMT
 CMD ["solr-foreground"]
 ```
 
@@ -6673,29 +6673,29 @@ CMD ["solr-foreground"]
 		Last Modified: Thu, 17 Oct 2019 08:38:05 GMT  
 		Size: 218.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:115f4a5a7971e04e4fed86d76c049ff73c54e467dc07423546790188502ce0bc`  
-		Last Modified: Thu, 17 Oct 2019 08:38:28 GMT  
-		Size: 195.7 MB (195718813 bytes)  
+	-	`sha256:0ce121b6a2ffae7f0fc0b7c20d3a0a46f62762dd7c1f14db73fa2ab9248bf1dc`  
+		Last Modified: Fri, 18 Oct 2019 23:45:21 GMT  
+		Size: 195.9 MB (195875192 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:8f99c82bd7831902ccf2bd474012a7be46a8161ba0124a4864ac469ffcad5bbe`  
-		Last Modified: Fri, 18 Oct 2019 04:43:52 GMT  
-		Size: 761.5 KB (761483 bytes)  
+	-	`sha256:73e1c53bd62b5d1b2ee52a9c04be2a0e5a5b245abc76a4d9365fd1ceba45f32c`  
+		Last Modified: Sat, 19 Oct 2019 07:53:23 GMT  
+		Size: 761.5 KB (761492 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:5980eff64418bd8c0563b7a2286df1974bea79a83f2ea77ebdb2edb00f9db073`  
-		Last Modified: Fri, 18 Oct 2019 04:44:37 GMT  
-		Size: 4.3 KB (4303 bytes)  
+	-	`sha256:16012015b29cca09fd5439442483fc0e370de381891f6763366054d8d44e2a49`  
+		Last Modified: Sat, 19 Oct 2019 07:54:03 GMT  
+		Size: 4.3 KB (4305 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:676e31b072ae8ea3b3f0b98be988fe1b41602fa4e08752fa83fe104dca11d386`  
-		Last Modified: Fri, 18 Oct 2019 04:44:37 GMT  
-		Size: 155.6 KB (155635 bytes)  
+	-	`sha256:75e19aad589c5e0d850a43766b7f1e1906b198d4329c18cd8cfa78cbe3a1f533`  
+		Last Modified: Sat, 19 Oct 2019 07:54:03 GMT  
+		Size: 155.6 KB (155638 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:bb5a79d64f7145cbbb00a859b9764ca1156a10a2c8f3f38620c9787d266ba389`  
-		Last Modified: Fri, 18 Oct 2019 04:44:52 GMT  
-		Size: 176.7 MB (176661914 bytes)  
+	-	`sha256:2b4ffc9207eeb9893d2be7fe110f22ef1a1bd93e690a01c749157733dcf86818`  
+		Last Modified: Sat, 19 Oct 2019 07:54:13 GMT  
+		Size: 176.7 MB (176661887 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:78f8c847324eb6351d375b7fed40123ccec942513df4bb57b66ab78950f8c845`  
-		Last Modified: Fri, 18 Oct 2019 04:44:37 GMT  
-		Size: 4.8 KB (4790 bytes)  
+	-	`sha256:c958a016ceb3caf87f1dc62383035fed146898edd7f22828eda28ce8f03a002d`  
+		Last Modified: Sat, 19 Oct 2019 07:54:03 GMT  
+		Size: 4.8 KB (4787 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `solr:8.1` - linux; arm64 variant v8
@@ -6836,7 +6836,7 @@ CMD ["solr-foreground"]
 ## `solr:8.1.1`
 
 ```console
-$ docker pull solr@sha256:6b898f4b0e787f9477fbc03b92832665d04622054085f0e5a32139d23a0a49c4
+$ docker pull solr@sha256:3447520a193eeb953f8b880c36548910838c8ca45c4d76bfd9b8b6b2f62d446f
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -6847,14 +6847,14 @@ $ docker pull solr@sha256:6b898f4b0e787f9477fbc03b92832665d04622054085f0e5a32139
 ### `solr:8.1.1` - linux; amd64
 
 ```console
-$ docker pull solr@sha256:761898e8cff51b9b96b152d10d2464feae3ea95e488c3fe7e0ce01daa6054310
+$ docker pull solr@sha256:9ee6ae67249184c927d12e4ffcdc8ac337f1c3ddfc1b38b2be1afd2e67fb1e0b
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **488.8 MB (488826005 bytes)**  
+-	Total Size: **489.0 MB (488982368 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:8f21f42a10a0ac3b7aa15938fee5b2186d0550d23ff12c099d86f900ed7f8a66`
+-	Image ID: `sha256:347671715fe926bb4a4b0846fd7dc8da99406aa1b4d623f9a4c21861a3467046`
 -	Entrypoint: `["docker-entrypoint.sh"]`
 -	Default Command: `["solr-foreground"]`
 
@@ -6879,53 +6879,53 @@ ENV JAVA_HOME=/usr/local/openjdk-11
 ENV PATH=/usr/local/openjdk-11/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
 # Thu, 17 Oct 2019 08:29:25 GMT
 RUN { echo '#/bin/sh'; echo 'echo "$JAVA_HOME"'; } > /usr/local/bin/docker-java-home && chmod +x /usr/local/bin/docker-java-home && [ "$JAVA_HOME" = "$(docker-java-home)" ]
-# Thu, 17 Oct 2019 08:29:25 GMT
-ENV JAVA_VERSION=11.0.4
-# Thu, 17 Oct 2019 08:29:25 GMT
-ENV JAVA_BASE_URL=https://github.com/AdoptOpenJDK/openjdk11-upstream-binaries/releases/download/jdk-11.0.4%2B11/OpenJDK11U-jdk_
-# Thu, 17 Oct 2019 08:29:26 GMT
-ENV JAVA_URL_VERSION=11.0.4_11
-# Thu, 17 Oct 2019 08:29:39 GMT
+# Fri, 18 Oct 2019 23:39:21 GMT
+ENV JAVA_VERSION=11.0.5
+# Fri, 18 Oct 2019 23:39:21 GMT
+ENV JAVA_BASE_URL=https://github.com/AdoptOpenJDK/openjdk11-upstream-binaries/releases/download/jdk-11.0.5%2B10/OpenJDK11U-jdk_
+# Fri, 18 Oct 2019 23:39:21 GMT
+ENV JAVA_URL_VERSION=11.0.5_10
+# Fri, 18 Oct 2019 23:39:41 GMT
 RUN set -eux; 		dpkgArch="$(dpkg --print-architecture)"; 	case "$dpkgArch" in 		amd64) upstreamArch='x64' ;; 		arm64) upstreamArch='aarch64' ;; 		*) echo >&2 "error: unsupported architecture: $dpkgArch" ;; 	esac; 		wget -O openjdk.tgz.asc "${JAVA_BASE_URL}${upstreamArch}_linux_${JAVA_URL_VERSION}.tar.gz.sign"; 	wget -O openjdk.tgz "${JAVA_BASE_URL}${upstreamArch}_linux_${JAVA_URL_VERSION}.tar.gz" --progress=dot:giga; 		export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver ha.pool.sks-keyservers.net --keyserver-options no-self-sigs-only --recv-keys CA5F11C6CE22644D42C6AC4492EF8D39DC13168F; 	gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys EAC843EBD3EFDB98CC772FADA5CD6035332FA671; 	gpg --batch --list-sigs --keyid-format 0xLONG CA5F11C6CE22644D42C6AC4492EF8D39DC13168F 		| tee /dev/stderr 		| grep '0xA5CD6035332FA671' 		| grep 'Andrew Haley'; 	gpg --batch --verify openjdk.tgz.asc openjdk.tgz; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME"; 		mkdir -p "$JAVA_HOME"; 	tar --extract 		--file openjdk.tgz 		--directory "$JAVA_HOME" 		--strip-components 1 		--no-same-owner 	; 	rm openjdk.tgz*; 			{ 		echo '#!/usr/bin/env bash'; 		echo 'set -Eeuo pipefail'; 		echo 'if ! [ -d "$JAVA_HOME" ]; then echo >&2 "error: missing JAVA_HOME environment variable"; exit 1; fi'; 		echo 'cacertsFile=; for f in "$JAVA_HOME/lib/security/cacerts" "$JAVA_HOME/jre/lib/security/cacerts"; do if [ -e "$f" ]; then cacertsFile="$f"; break; fi; done'; 		echo 'if [ -z "$cacertsFile" ] || ! [ -f "$cacertsFile" ]; then echo >&2 "error: failed to find cacerts file in $JAVA_HOME"; exit 1; fi'; 		echo 'trust extract --overwrite --format=java-cacerts --filter=ca-anchors --purpose=server-auth "$cacertsFile"'; 	} > /etc/ca-certificates/update.d/docker-openjdk; 	chmod +x /etc/ca-certificates/update.d/docker-openjdk; 	/etc/ca-certificates/update.d/docker-openjdk; 		find "$JAVA_HOME/lib" -name '*.so' -exec dirname '{}' ';' | sort -u > /etc/ld.so.conf.d/docker-openjdk.conf; 	ldconfig; 		javac --version; 	java --version
-# Thu, 17 Oct 2019 08:29:39 GMT
+# Fri, 18 Oct 2019 23:39:42 GMT
 CMD ["jshell"]
-# Fri, 18 Oct 2019 04:35:50 GMT
+# Sat, 19 Oct 2019 07:46:10 GMT
 LABEL maintainer=Martijn Koster "mak-docker@greenhills.co.uk"
-# Fri, 18 Oct 2019 04:35:50 GMT
+# Sat, 19 Oct 2019 07:46:11 GMT
 LABEL repository=https://github.com/docker-solr/docker-solr
-# Fri, 18 Oct 2019 04:35:50 GMT
+# Sat, 19 Oct 2019 07:46:11 GMT
 ARG SOLR_DOWNLOAD_SERVER
-# Fri, 18 Oct 2019 04:35:55 GMT
+# Sat, 19 Oct 2019 07:46:15 GMT
 RUN apt-get update &&   apt-get -y install acl dirmngr gpg lsof procps wget &&   rm -rf /var/lib/apt/lists/*
-# Fri, 18 Oct 2019 04:36:56 GMT
+# Sat, 19 Oct 2019 07:47:16 GMT
 ENV SOLR_USER=solr SOLR_UID=8983 SOLR_GROUP=solr SOLR_GID=8983 SOLR_VERSION=8.1.1 SOLR_URL=https://archive.apache.org/dist/lucene/solr/8.1.1/solr-8.1.1.tgz SOLR_SHA256=b515598c11f53fe28d682e3d71238642e9f34509194e3c4746e39bb7d7bb46a1 SOLR_KEYS=F23F054D9EC50F2397FF2B814E67A2711D053DDB PATH=/opt/solr/bin:/opt/docker-solr/scripts:/usr/local/openjdk-11/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin SOLR_INCLUDE=/etc/default/solr.in.sh SOLR_HOME=/var/solr/data SOLR_PID_DIR=/var/solr SOLR_LOGS_DIR=/var/solr/logs LOG4J_PROPS=/var/solr/log4j2.xml
-# Fri, 18 Oct 2019 04:36:56 GMT
+# Sat, 19 Oct 2019 07:47:16 GMT
 ENV GOSU_VERSION=1.11
-# Fri, 18 Oct 2019 04:36:56 GMT
+# Sat, 19 Oct 2019 07:47:16 GMT
 ENV GOSU_KEY=B42F6819007F00F88E364FD4036A9C25BF357DD4
-# Fri, 18 Oct 2019 04:36:56 GMT
+# Sat, 19 Oct 2019 07:47:16 GMT
 ENV TINI_VERSION=v0.18.0
-# Fri, 18 Oct 2019 04:36:56 GMT
+# Sat, 19 Oct 2019 07:47:16 GMT
 ENV TINI_KEY=595E85A6B1B4779EA4DAAEC70B588DFF0527A9B7
-# Fri, 18 Oct 2019 04:36:57 GMT
+# Sat, 19 Oct 2019 07:47:17 GMT
 RUN groupadd -r --gid "$SOLR_GID" "$SOLR_GROUP" &&   useradd -r --uid "$SOLR_UID" --gid "$SOLR_GID" "$SOLR_USER"
-# Fri, 18 Oct 2019 04:37:00 GMT
+# Sat, 19 Oct 2019 07:47:20 GMT
 RUN set -e;   export GNUPGHOME="/tmp/gnupg_home" &&   mkdir -p "$GNUPGHOME" &&   chmod 700 "$GNUPGHOME" &&   echo "disable-ipv6" >> "$GNUPGHOME/dirmngr.conf" &&   for key in $SOLR_KEYS $GOSU_KEY $TINI_KEY; do     found='';     for server in       ha.pool.sks-keyservers.net       hkp://keyserver.ubuntu.com:80       hkp://p80.pool.sks-keyservers.net:80       pgp.mit.edu     ; do       echo "  trying $server for $key";       gpg --batch --keyserver "$server" --keyserver-options timeout=10 --recv-keys "$key" && found=yes && break;       gpg --batch --keyserver "$server" --keyserver-options timeout=10 --recv-keys "$key" && found=yes && break;     done;     test -z "$found" && echo >&2 "error: failed to fetch $key from several disparate servers -- network issues?" && exit 1;   done;   exit 0
-# Fri, 18 Oct 2019 04:37:14 GMT
+# Sat, 19 Oct 2019 07:47:34 GMT
 RUN set -e;   export GNUPGHOME="/tmp/gnupg_home" &&   pkgArch="$(dpkg --print-architecture | awk -F- '{ print $NF }')" &&   wget -O /usr/local/bin/gosu "https://github.com/tianon/gosu/releases/download/$GOSU_VERSION/gosu-$pkgArch" &&   wget -O /usr/local/bin/gosu.asc "https://github.com/tianon/gosu/releases/download/$GOSU_VERSION/gosu-$pkgArch.asc" &&   gpg --batch --verify /usr/local/bin/gosu.asc /usr/local/bin/gosu &&   rm /usr/local/bin/gosu.asc &&   chmod +x /usr/local/bin/gosu &&   gosu nobody true &&   wget -O /usr/local/bin/tini "https://github.com/krallin/tini/releases/download/${TINI_VERSION}/tini-$pkgArch" &&   wget -O /usr/local/bin/tini.asc "https://github.com/krallin/tini/releases/download/${TINI_VERSION}/tini-$pkgArch.asc" &&   gpg --batch --verify /usr/local/bin/tini.asc /usr/local/bin/tini;   rm /usr/local/bin/tini.asc &&   chmod +x /usr/local/bin/tini &&   tini --version &&   echo "downloading $SOLR_URL" &&   wget -nv "$SOLR_URL" -O "/opt/solr-$SOLR_VERSION.tgz" &&   echo "downloading $SOLR_URL.asc" &&   wget -nv "$SOLR_URL.asc" -O "/opt/solr-$SOLR_VERSION.tgz.asc" &&   echo "$SOLR_SHA256 */opt/solr-$SOLR_VERSION.tgz" | sha256sum -c - &&   (>&2 ls -l "/opt/solr-$SOLR_VERSION.tgz" "/opt/solr-$SOLR_VERSION.tgz.asc") &&   gpg --batch --verify "/opt/solr-$SOLR_VERSION.tgz.asc" "/opt/solr-$SOLR_VERSION.tgz" &&   tar -C /opt --extract --file "/opt/solr-$SOLR_VERSION.tgz" &&   (cd /opt && ln -s "solr-$SOLR_VERSION" solr) &&   rm "/opt/solr-$SOLR_VERSION.tgz"* &&   rm -Rf /opt/solr/docs/ &&   mkdir -p /opt/solr/server/solr/lib /docker-entrypoint-initdb.d /opt/docker-solr &&   chown -R 0:0 "/opt/solr-$SOLR_VERSION" &&   find "/opt/solr-$SOLR_VERSION" -type d -print0 | xargs -0 chmod 0755 &&   find "/opt/solr-$SOLR_VERSION" -type f -print0 | xargs -0 chmod 0644 &&   chmod -R 0755 "/opt/solr-$SOLR_VERSION/bin" "/opt/solr-$SOLR_VERSION/contrib/prometheus-exporter/bin/solr-exporter" /opt/solr-$SOLR_VERSION/server/scripts/cloud-scripts &&   cp /opt/solr/bin/solr.in.sh /etc/default/solr.in.sh &&   mv /opt/solr/bin/solr.in.sh /opt/solr/bin/solr.in.sh.orig &&   mv /opt/solr/bin/solr.in.cmd /opt/solr/bin/solr.in.cmd.orig &&   chown root:0 /etc/default/solr.in.sh &&   chmod 0664 /etc/default/solr.in.sh &&   mkdir -p /var/solr/data /var/solr/logs &&   (cd /opt/solr/server/solr && cp solr.xml zoo.cfg /var/solr/data/) &&   cp /opt/solr/server/resources/log4j2.xml /var/solr/log4j2.xml &&   find /var/solr -type d -print0 | xargs -0 chmod 0770 &&   find /var/solr -type f -print0 | xargs -0 chmod 0660 &&   sed -i -e "s/\"\$(whoami)\" == \"root\"/\$(id -u) == 0/" /opt/solr/bin/solr &&   sed -i -e 's/lsof -PniTCP:/lsof -t -PniTCP:/' /opt/solr/bin/solr &&   chown -R "0:0" /opt/solr-$SOLR_VERSION /docker-entrypoint-initdb.d /opt/docker-solr &&   chown -R "$SOLR_USER:0" /var/solr &&   { command -v gpgconf && gpgconf --kill all || :; } &&   rm -r "$GNUPGHOME"
-# Fri, 18 Oct 2019 04:37:14 GMT
+# Sat, 19 Oct 2019 07:47:35 GMT
 COPY --chown=0:0dir:7c0a3213efab10f68cd89ca4d91a13cb6084a7764ed341bf0617ce144943839b in /opt/docker-solr/scripts 
-# Fri, 18 Oct 2019 04:37:15 GMT
+# Sat, 19 Oct 2019 07:47:35 GMT
 VOLUME [/var/solr]
-# Fri, 18 Oct 2019 04:37:15 GMT
+# Sat, 19 Oct 2019 07:47:35 GMT
 EXPOSE 8983
-# Fri, 18 Oct 2019 04:37:15 GMT
+# Sat, 19 Oct 2019 07:47:35 GMT
 WORKDIR /opt/solr
-# Fri, 18 Oct 2019 04:37:15 GMT
+# Sat, 19 Oct 2019 07:47:35 GMT
 USER solr
-# Fri, 18 Oct 2019 04:37:15 GMT
+# Sat, 19 Oct 2019 07:47:35 GMT
 ENTRYPOINT ["docker-entrypoint.sh"]
-# Fri, 18 Oct 2019 04:37:15 GMT
+# Sat, 19 Oct 2019 07:47:36 GMT
 CMD ["solr-foreground"]
 ```
 
@@ -6954,29 +6954,29 @@ CMD ["solr-foreground"]
 		Last Modified: Thu, 17 Oct 2019 08:38:05 GMT  
 		Size: 218.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:115f4a5a7971e04e4fed86d76c049ff73c54e467dc07423546790188502ce0bc`  
-		Last Modified: Thu, 17 Oct 2019 08:38:28 GMT  
-		Size: 195.7 MB (195718813 bytes)  
+	-	`sha256:0ce121b6a2ffae7f0fc0b7c20d3a0a46f62762dd7c1f14db73fa2ab9248bf1dc`  
+		Last Modified: Fri, 18 Oct 2019 23:45:21 GMT  
+		Size: 195.9 MB (195875192 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:8f99c82bd7831902ccf2bd474012a7be46a8161ba0124a4864ac469ffcad5bbe`  
-		Last Modified: Fri, 18 Oct 2019 04:43:52 GMT  
-		Size: 761.5 KB (761483 bytes)  
+	-	`sha256:73e1c53bd62b5d1b2ee52a9c04be2a0e5a5b245abc76a4d9365fd1ceba45f32c`  
+		Last Modified: Sat, 19 Oct 2019 07:53:23 GMT  
+		Size: 761.5 KB (761492 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:5980eff64418bd8c0563b7a2286df1974bea79a83f2ea77ebdb2edb00f9db073`  
-		Last Modified: Fri, 18 Oct 2019 04:44:37 GMT  
-		Size: 4.3 KB (4303 bytes)  
+	-	`sha256:16012015b29cca09fd5439442483fc0e370de381891f6763366054d8d44e2a49`  
+		Last Modified: Sat, 19 Oct 2019 07:54:03 GMT  
+		Size: 4.3 KB (4305 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:676e31b072ae8ea3b3f0b98be988fe1b41602fa4e08752fa83fe104dca11d386`  
-		Last Modified: Fri, 18 Oct 2019 04:44:37 GMT  
-		Size: 155.6 KB (155635 bytes)  
+	-	`sha256:75e19aad589c5e0d850a43766b7f1e1906b198d4329c18cd8cfa78cbe3a1f533`  
+		Last Modified: Sat, 19 Oct 2019 07:54:03 GMT  
+		Size: 155.6 KB (155638 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:bb5a79d64f7145cbbb00a859b9764ca1156a10a2c8f3f38620c9787d266ba389`  
-		Last Modified: Fri, 18 Oct 2019 04:44:52 GMT  
-		Size: 176.7 MB (176661914 bytes)  
+	-	`sha256:2b4ffc9207eeb9893d2be7fe110f22ef1a1bd93e690a01c749157733dcf86818`  
+		Last Modified: Sat, 19 Oct 2019 07:54:13 GMT  
+		Size: 176.7 MB (176661887 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:78f8c847324eb6351d375b7fed40123ccec942513df4bb57b66ab78950f8c845`  
-		Last Modified: Fri, 18 Oct 2019 04:44:37 GMT  
-		Size: 4.8 KB (4790 bytes)  
+	-	`sha256:c958a016ceb3caf87f1dc62383035fed146898edd7f22828eda28ce8f03a002d`  
+		Last Modified: Sat, 19 Oct 2019 07:54:03 GMT  
+		Size: 4.8 KB (4787 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `solr:8.1.1` - linux; arm64 variant v8
@@ -7117,7 +7117,7 @@ CMD ["solr-foreground"]
 ## `solr:8.1.1-slim`
 
 ```console
-$ docker pull solr@sha256:a5d1bfd5c2afb17668288cb1f8354125189677ab8fc203ce7104251f6589f9fa
+$ docker pull solr@sha256:107241dc3a34b2c5482aca65d0d7c81f80c77dc1c521c1f1707213688774d675
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -7128,14 +7128,14 @@ $ docker pull solr@sha256:a5d1bfd5c2afb17668288cb1f8354125189677ab8fc203ce710425
 ### `solr:8.1.1-slim` - linux; amd64
 
 ```console
-$ docker pull solr@sha256:d460acf9ee66aa3658c529846e6335564f5102423cd1e71095b132671450bb39
+$ docker pull solr@sha256:17f706f031dddb25807c6cbeb9afe647fdfd214431a09cc0d1eda739025fabd8
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **408.5 MB (408480388 bytes)**  
+-	Total Size: **408.6 MB (408639456 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:98473894cbf3c9c4632fc722a0932d9ed4d9cf72c1a87d9f6211015419d0c587`
+-	Image ID: `sha256:e218ee17c9def2f79b6521c9492691bbb75dff111eea608ef508ec1409f783dd`
 -	Entrypoint: `["docker-entrypoint.sh"]`
 -	Default Command: `["solr-foreground"]`
 
@@ -7154,53 +7154,53 @@ ENV JAVA_HOME=/usr/local/openjdk-11
 ENV PATH=/usr/local/openjdk-11/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
 # Thu, 17 Oct 2019 08:29:46 GMT
 RUN { echo '#/bin/sh'; echo 'echo "$JAVA_HOME"'; } > /usr/local/bin/docker-java-home && chmod +x /usr/local/bin/docker-java-home && [ "$JAVA_HOME" = "$(docker-java-home)" ]
-# Thu, 17 Oct 2019 08:29:46 GMT
-ENV JAVA_VERSION=11.0.4
-# Thu, 17 Oct 2019 08:29:46 GMT
-ENV JAVA_BASE_URL=https://github.com/AdoptOpenJDK/openjdk11-upstream-binaries/releases/download/jdk-11.0.4%2B11/OpenJDK11U-jdk_
-# Thu, 17 Oct 2019 08:29:46 GMT
-ENV JAVA_URL_VERSION=11.0.4_11
-# Thu, 17 Oct 2019 08:30:07 GMT
+# Fri, 18 Oct 2019 23:39:50 GMT
+ENV JAVA_VERSION=11.0.5
+# Fri, 18 Oct 2019 23:39:50 GMT
+ENV JAVA_BASE_URL=https://github.com/AdoptOpenJDK/openjdk11-upstream-binaries/releases/download/jdk-11.0.5%2B10/OpenJDK11U-jdk_
+# Fri, 18 Oct 2019 23:39:50 GMT
+ENV JAVA_URL_VERSION=11.0.5_10
+# Fri, 18 Oct 2019 23:40:16 GMT
 RUN set -eux; 		dpkgArch="$(dpkg --print-architecture)"; 	case "$dpkgArch" in 		amd64) upstreamArch='x64' ;; 		arm64) upstreamArch='aarch64' ;; 		*) echo >&2 "error: unsupported architecture: $dpkgArch" ;; 	esac; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		dirmngr 		gnupg 		wget 	; 	rm -rf /var/lib/apt/lists/*; 		wget -O openjdk.tgz.asc "${JAVA_BASE_URL}${upstreamArch}_linux_${JAVA_URL_VERSION}.tar.gz.sign"; 	wget -O openjdk.tgz "${JAVA_BASE_URL}${upstreamArch}_linux_${JAVA_URL_VERSION}.tar.gz" --progress=dot:giga; 		export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver ha.pool.sks-keyservers.net --keyserver-options no-self-sigs-only --recv-keys CA5F11C6CE22644D42C6AC4492EF8D39DC13168F; 	gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys EAC843EBD3EFDB98CC772FADA5CD6035332FA671; 	gpg --batch --list-sigs --keyid-format 0xLONG CA5F11C6CE22644D42C6AC4492EF8D39DC13168F 		| tee /dev/stderr 		| grep '0xA5CD6035332FA671' 		| grep 'Andrew Haley'; 	gpg --batch --verify openjdk.tgz.asc openjdk.tgz; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME"; 		mkdir -p "$JAVA_HOME"; 	tar --extract 		--file openjdk.tgz 		--directory "$JAVA_HOME" 		--strip-components 1 		--no-same-owner 	; 	rm openjdk.tgz*; 			apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark > /dev/null; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 		{ 		echo '#!/usr/bin/env bash'; 		echo 'set -Eeuo pipefail'; 		echo 'if ! [ -d "$JAVA_HOME" ]; then echo >&2 "error: missing JAVA_HOME environment variable"; exit 1; fi'; 		echo 'cacertsFile=; for f in "$JAVA_HOME/lib/security/cacerts" "$JAVA_HOME/jre/lib/security/cacerts"; do if [ -e "$f" ]; then cacertsFile="$f"; break; fi; done'; 		echo 'if [ -z "$cacertsFile" ] || ! [ -f "$cacertsFile" ]; then echo >&2 "error: failed to find cacerts file in $JAVA_HOME"; exit 1; fi'; 		echo 'trust extract --overwrite --format=java-cacerts --filter=ca-anchors --purpose=server-auth "$cacertsFile"'; 	} > /etc/ca-certificates/update.d/docker-openjdk; 	chmod +x /etc/ca-certificates/update.d/docker-openjdk; 	/etc/ca-certificates/update.d/docker-openjdk; 		find "$JAVA_HOME/lib" -name '*.so' -exec dirname '{}' ';' | sort -u > /etc/ld.so.conf.d/docker-openjdk.conf; 	ldconfig; 		javac --version; 	java --version
-# Thu, 17 Oct 2019 08:30:07 GMT
+# Fri, 18 Oct 2019 23:40:17 GMT
 CMD ["jshell"]
-# Fri, 18 Oct 2019 04:36:23 GMT
+# Sat, 19 Oct 2019 07:46:43 GMT
 LABEL maintainer=Martijn Koster "mak-docker@greenhills.co.uk"
-# Fri, 18 Oct 2019 04:36:23 GMT
+# Sat, 19 Oct 2019 07:46:43 GMT
 LABEL repository=https://github.com/docker-solr/docker-solr
-# Fri, 18 Oct 2019 04:36:23 GMT
+# Sat, 19 Oct 2019 07:46:44 GMT
 ARG SOLR_DOWNLOAD_SERVER
-# Fri, 18 Oct 2019 04:36:30 GMT
+# Sat, 19 Oct 2019 07:46:51 GMT
 RUN apt-get update &&   apt-get -y install acl dirmngr gpg lsof procps wget &&   rm -rf /var/lib/apt/lists/*
-# Fri, 18 Oct 2019 04:37:20 GMT
+# Sat, 19 Oct 2019 07:47:40 GMT
 ENV SOLR_USER=solr SOLR_UID=8983 SOLR_GROUP=solr SOLR_GID=8983 SOLR_VERSION=8.1.1 SOLR_URL=https://archive.apache.org/dist/lucene/solr/8.1.1/solr-8.1.1.tgz SOLR_SHA256=b515598c11f53fe28d682e3d71238642e9f34509194e3c4746e39bb7d7bb46a1 SOLR_KEYS=F23F054D9EC50F2397FF2B814E67A2711D053DDB PATH=/opt/solr/bin:/opt/docker-solr/scripts:/usr/local/openjdk-11/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin SOLR_INCLUDE=/etc/default/solr.in.sh SOLR_HOME=/var/solr/data SOLR_PID_DIR=/var/solr SOLR_LOGS_DIR=/var/solr/logs LOG4J_PROPS=/var/solr/log4j2.xml
-# Fri, 18 Oct 2019 04:37:20 GMT
+# Sat, 19 Oct 2019 07:47:40 GMT
 ENV GOSU_VERSION=1.11
-# Fri, 18 Oct 2019 04:37:20 GMT
+# Sat, 19 Oct 2019 07:47:40 GMT
 ENV GOSU_KEY=B42F6819007F00F88E364FD4036A9C25BF357DD4
-# Fri, 18 Oct 2019 04:37:20 GMT
+# Sat, 19 Oct 2019 07:47:40 GMT
 ENV TINI_VERSION=v0.18.0
-# Fri, 18 Oct 2019 04:37:20 GMT
+# Sat, 19 Oct 2019 07:47:40 GMT
 ENV TINI_KEY=595E85A6B1B4779EA4DAAEC70B588DFF0527A9B7
-# Fri, 18 Oct 2019 04:37:21 GMT
+# Sat, 19 Oct 2019 07:47:41 GMT
 RUN groupadd -r --gid "$SOLR_GID" "$SOLR_GROUP" &&   useradd -r --uid "$SOLR_UID" --gid "$SOLR_GID" "$SOLR_USER"
-# Fri, 18 Oct 2019 04:37:22 GMT
+# Sat, 19 Oct 2019 07:47:42 GMT
 RUN set -e;   export GNUPGHOME="/tmp/gnupg_home" &&   mkdir -p "$GNUPGHOME" &&   chmod 700 "$GNUPGHOME" &&   echo "disable-ipv6" >> "$GNUPGHOME/dirmngr.conf" &&   for key in $SOLR_KEYS $GOSU_KEY $TINI_KEY; do     found='';     for server in       ha.pool.sks-keyservers.net       hkp://keyserver.ubuntu.com:80       hkp://p80.pool.sks-keyservers.net:80       pgp.mit.edu     ; do       echo "  trying $server for $key";       gpg --batch --keyserver "$server" --keyserver-options timeout=10 --recv-keys "$key" && found=yes && break;       gpg --batch --keyserver "$server" --keyserver-options timeout=10 --recv-keys "$key" && found=yes && break;     done;     test -z "$found" && echo >&2 "error: failed to fetch $key from several disparate servers -- network issues?" && exit 1;   done;   exit 0
-# Fri, 18 Oct 2019 04:37:35 GMT
+# Sat, 19 Oct 2019 07:47:56 GMT
 RUN set -e;   export GNUPGHOME="/tmp/gnupg_home" &&   pkgArch="$(dpkg --print-architecture | awk -F- '{ print $NF }')" &&   wget -O /usr/local/bin/gosu "https://github.com/tianon/gosu/releases/download/$GOSU_VERSION/gosu-$pkgArch" &&   wget -O /usr/local/bin/gosu.asc "https://github.com/tianon/gosu/releases/download/$GOSU_VERSION/gosu-$pkgArch.asc" &&   gpg --batch --verify /usr/local/bin/gosu.asc /usr/local/bin/gosu &&   rm /usr/local/bin/gosu.asc &&   chmod +x /usr/local/bin/gosu &&   gosu nobody true &&   wget -O /usr/local/bin/tini "https://github.com/krallin/tini/releases/download/${TINI_VERSION}/tini-$pkgArch" &&   wget -O /usr/local/bin/tini.asc "https://github.com/krallin/tini/releases/download/${TINI_VERSION}/tini-$pkgArch.asc" &&   gpg --batch --verify /usr/local/bin/tini.asc /usr/local/bin/tini;   rm /usr/local/bin/tini.asc &&   chmod +x /usr/local/bin/tini &&   tini --version &&   echo "downloading $SOLR_URL" &&   wget -nv "$SOLR_URL" -O "/opt/solr-$SOLR_VERSION.tgz" &&   echo "downloading $SOLR_URL.asc" &&   wget -nv "$SOLR_URL.asc" -O "/opt/solr-$SOLR_VERSION.tgz.asc" &&   echo "$SOLR_SHA256 */opt/solr-$SOLR_VERSION.tgz" | sha256sum -c - &&   (>&2 ls -l "/opt/solr-$SOLR_VERSION.tgz" "/opt/solr-$SOLR_VERSION.tgz.asc") &&   gpg --batch --verify "/opt/solr-$SOLR_VERSION.tgz.asc" "/opt/solr-$SOLR_VERSION.tgz" &&   tar -C /opt --extract --file "/opt/solr-$SOLR_VERSION.tgz" &&   (cd /opt && ln -s "solr-$SOLR_VERSION" solr) &&   rm "/opt/solr-$SOLR_VERSION.tgz"* &&   rm -Rf /opt/solr/docs/ &&   mkdir -p /opt/solr/server/solr/lib /docker-entrypoint-initdb.d /opt/docker-solr &&   chown -R 0:0 "/opt/solr-$SOLR_VERSION" &&   find "/opt/solr-$SOLR_VERSION" -type d -print0 | xargs -0 chmod 0755 &&   find "/opt/solr-$SOLR_VERSION" -type f -print0 | xargs -0 chmod 0644 &&   chmod -R 0755 "/opt/solr-$SOLR_VERSION/bin" "/opt/solr-$SOLR_VERSION/contrib/prometheus-exporter/bin/solr-exporter" /opt/solr-$SOLR_VERSION/server/scripts/cloud-scripts &&   cp /opt/solr/bin/solr.in.sh /etc/default/solr.in.sh &&   mv /opt/solr/bin/solr.in.sh /opt/solr/bin/solr.in.sh.orig &&   mv /opt/solr/bin/solr.in.cmd /opt/solr/bin/solr.in.cmd.orig &&   chown root:0 /etc/default/solr.in.sh &&   chmod 0664 /etc/default/solr.in.sh &&   mkdir -p /var/solr/data /var/solr/logs &&   (cd /opt/solr/server/solr && cp solr.xml zoo.cfg /var/solr/data/) &&   cp /opt/solr/server/resources/log4j2.xml /var/solr/log4j2.xml &&   find /var/solr -type d -print0 | xargs -0 chmod 0770 &&   find /var/solr -type f -print0 | xargs -0 chmod 0660 &&   sed -i -e "s/\"\$(whoami)\" == \"root\"/\$(id -u) == 0/" /opt/solr/bin/solr &&   sed -i -e 's/lsof -PniTCP:/lsof -t -PniTCP:/' /opt/solr/bin/solr &&   chown -R "0:0" /opt/solr-$SOLR_VERSION /docker-entrypoint-initdb.d /opt/docker-solr &&   chown -R "$SOLR_USER:0" /var/solr &&   { command -v gpgconf && gpgconf --kill all || :; } &&   rm -r "$GNUPGHOME"
-# Fri, 18 Oct 2019 04:37:36 GMT
+# Sat, 19 Oct 2019 07:47:56 GMT
 COPY --chown=0:0dir:7c0a3213efab10f68cd89ca4d91a13cb6084a7764ed341bf0617ce144943839b in /opt/docker-solr/scripts 
-# Fri, 18 Oct 2019 04:37:36 GMT
+# Sat, 19 Oct 2019 07:47:56 GMT
 VOLUME [/var/solr]
-# Fri, 18 Oct 2019 04:37:36 GMT
+# Sat, 19 Oct 2019 07:47:56 GMT
 EXPOSE 8983
-# Fri, 18 Oct 2019 04:37:36 GMT
+# Sat, 19 Oct 2019 07:47:56 GMT
 WORKDIR /opt/solr
-# Fri, 18 Oct 2019 04:37:36 GMT
+# Sat, 19 Oct 2019 07:47:56 GMT
 USER solr
-# Fri, 18 Oct 2019 04:37:37 GMT
+# Sat, 19 Oct 2019 07:47:57 GMT
 ENTRYPOINT ["docker-entrypoint.sh"]
-# Fri, 18 Oct 2019 04:37:37 GMT
+# Sat, 19 Oct 2019 07:47:57 GMT
 CMD ["solr-foreground"]
 ```
 
@@ -7217,29 +7217,29 @@ CMD ["solr-foreground"]
 		Last Modified: Thu, 17 Oct 2019 08:38:38 GMT  
 		Size: 210.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:208dbdb57f64b9643f7760ea628f0e2a21deff0af0b2eb33a0e66f6e3165fbfc`  
-		Last Modified: Thu, 17 Oct 2019 08:39:01 GMT  
-		Size: 196.0 MB (195975541 bytes)  
+	-	`sha256:ebc78a5f677c03a8f4aa611b558b55c4e42cf3113517ec2400695512c176d5ea`  
+		Last Modified: Fri, 18 Oct 2019 23:45:47 GMT  
+		Size: 196.1 MB (196134537 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:0b6e87939381d5f5bf58ebbda7764e5988a7f85de329392991840d7de2392b46`  
-		Last Modified: Fri, 18 Oct 2019 04:44:14 GMT  
-		Size: 5.5 MB (5452429 bytes)  
+	-	`sha256:5422c55f6c915b61b16c325a8d6c50b854cfa1a68d01cdf3257e0544867074c1`  
+		Last Modified: Sat, 19 Oct 2019 07:53:47 GMT  
+		Size: 5.5 MB (5452476 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:2d8a19231ed183cb774de9077d83ac447f82d00dfb903d3002eaacc81bbcd1cd`  
-		Last Modified: Fri, 18 Oct 2019 04:44:58 GMT  
-		Size: 4.3 KB (4285 bytes)  
+	-	`sha256:c42c4a9a7dbfa42474ad46e1a66115904816387316d6c57823f79a1a9a0bf2b9`  
+		Last Modified: Sat, 19 Oct 2019 07:54:19 GMT  
+		Size: 4.3 KB (4286 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:cd8dd0834522fee4e4125510c71e7eb5dd950aba96901c30117ac2570afd4952`  
-		Last Modified: Fri, 18 Oct 2019 04:44:58 GMT  
+	-	`sha256:9dda2ecc4ccfd9f27f3d8acd05089edfc20f8f397dd2f2373f36daf96009ddc9`  
+		Last Modified: Sat, 19 Oct 2019 07:54:18 GMT  
 		Size: 24.4 KB (24403 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:d32a9c085a7ae0f9bba137a007090dc62b34a52ff0d6e9fd3a946bf4364d474a`  
-		Last Modified: Fri, 18 Oct 2019 04:45:13 GMT  
-		Size: 176.7 MB (176662182 bytes)  
+	-	`sha256:3fb35c90d2e66faea0f83be18b294290f0a1e9bcb2cf9c12ebb8ae7facfb3295`  
+		Last Modified: Sat, 19 Oct 2019 07:54:29 GMT  
+		Size: 176.7 MB (176662212 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:a6f9aaa4d906f827645a9e92c978a2d6ede72488975750e464476f078e8ac655`  
-		Last Modified: Fri, 18 Oct 2019 04:44:58 GMT  
-		Size: 4.8 KB (4794 bytes)  
+	-	`sha256:154c6d88fa3a839aad6f34e91b6deff396a6ace09b0a603971c02eba9e04f38f`  
+		Last Modified: Sat, 19 Oct 2019 07:54:19 GMT  
+		Size: 4.8 KB (4788 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `solr:8.1.1-slim` - linux; arm64 variant v8
@@ -7362,7 +7362,7 @@ CMD ["solr-foreground"]
 ## `solr:8.1-slim`
 
 ```console
-$ docker pull solr@sha256:a5d1bfd5c2afb17668288cb1f8354125189677ab8fc203ce7104251f6589f9fa
+$ docker pull solr@sha256:107241dc3a34b2c5482aca65d0d7c81f80c77dc1c521c1f1707213688774d675
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -7373,14 +7373,14 @@ $ docker pull solr@sha256:a5d1bfd5c2afb17668288cb1f8354125189677ab8fc203ce710425
 ### `solr:8.1-slim` - linux; amd64
 
 ```console
-$ docker pull solr@sha256:d460acf9ee66aa3658c529846e6335564f5102423cd1e71095b132671450bb39
+$ docker pull solr@sha256:17f706f031dddb25807c6cbeb9afe647fdfd214431a09cc0d1eda739025fabd8
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **408.5 MB (408480388 bytes)**  
+-	Total Size: **408.6 MB (408639456 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:98473894cbf3c9c4632fc722a0932d9ed4d9cf72c1a87d9f6211015419d0c587`
+-	Image ID: `sha256:e218ee17c9def2f79b6521c9492691bbb75dff111eea608ef508ec1409f783dd`
 -	Entrypoint: `["docker-entrypoint.sh"]`
 -	Default Command: `["solr-foreground"]`
 
@@ -7399,53 +7399,53 @@ ENV JAVA_HOME=/usr/local/openjdk-11
 ENV PATH=/usr/local/openjdk-11/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
 # Thu, 17 Oct 2019 08:29:46 GMT
 RUN { echo '#/bin/sh'; echo 'echo "$JAVA_HOME"'; } > /usr/local/bin/docker-java-home && chmod +x /usr/local/bin/docker-java-home && [ "$JAVA_HOME" = "$(docker-java-home)" ]
-# Thu, 17 Oct 2019 08:29:46 GMT
-ENV JAVA_VERSION=11.0.4
-# Thu, 17 Oct 2019 08:29:46 GMT
-ENV JAVA_BASE_URL=https://github.com/AdoptOpenJDK/openjdk11-upstream-binaries/releases/download/jdk-11.0.4%2B11/OpenJDK11U-jdk_
-# Thu, 17 Oct 2019 08:29:46 GMT
-ENV JAVA_URL_VERSION=11.0.4_11
-# Thu, 17 Oct 2019 08:30:07 GMT
+# Fri, 18 Oct 2019 23:39:50 GMT
+ENV JAVA_VERSION=11.0.5
+# Fri, 18 Oct 2019 23:39:50 GMT
+ENV JAVA_BASE_URL=https://github.com/AdoptOpenJDK/openjdk11-upstream-binaries/releases/download/jdk-11.0.5%2B10/OpenJDK11U-jdk_
+# Fri, 18 Oct 2019 23:39:50 GMT
+ENV JAVA_URL_VERSION=11.0.5_10
+# Fri, 18 Oct 2019 23:40:16 GMT
 RUN set -eux; 		dpkgArch="$(dpkg --print-architecture)"; 	case "$dpkgArch" in 		amd64) upstreamArch='x64' ;; 		arm64) upstreamArch='aarch64' ;; 		*) echo >&2 "error: unsupported architecture: $dpkgArch" ;; 	esac; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		dirmngr 		gnupg 		wget 	; 	rm -rf /var/lib/apt/lists/*; 		wget -O openjdk.tgz.asc "${JAVA_BASE_URL}${upstreamArch}_linux_${JAVA_URL_VERSION}.tar.gz.sign"; 	wget -O openjdk.tgz "${JAVA_BASE_URL}${upstreamArch}_linux_${JAVA_URL_VERSION}.tar.gz" --progress=dot:giga; 		export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver ha.pool.sks-keyservers.net --keyserver-options no-self-sigs-only --recv-keys CA5F11C6CE22644D42C6AC4492EF8D39DC13168F; 	gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys EAC843EBD3EFDB98CC772FADA5CD6035332FA671; 	gpg --batch --list-sigs --keyid-format 0xLONG CA5F11C6CE22644D42C6AC4492EF8D39DC13168F 		| tee /dev/stderr 		| grep '0xA5CD6035332FA671' 		| grep 'Andrew Haley'; 	gpg --batch --verify openjdk.tgz.asc openjdk.tgz; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME"; 		mkdir -p "$JAVA_HOME"; 	tar --extract 		--file openjdk.tgz 		--directory "$JAVA_HOME" 		--strip-components 1 		--no-same-owner 	; 	rm openjdk.tgz*; 			apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark > /dev/null; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 		{ 		echo '#!/usr/bin/env bash'; 		echo 'set -Eeuo pipefail'; 		echo 'if ! [ -d "$JAVA_HOME" ]; then echo >&2 "error: missing JAVA_HOME environment variable"; exit 1; fi'; 		echo 'cacertsFile=; for f in "$JAVA_HOME/lib/security/cacerts" "$JAVA_HOME/jre/lib/security/cacerts"; do if [ -e "$f" ]; then cacertsFile="$f"; break; fi; done'; 		echo 'if [ -z "$cacertsFile" ] || ! [ -f "$cacertsFile" ]; then echo >&2 "error: failed to find cacerts file in $JAVA_HOME"; exit 1; fi'; 		echo 'trust extract --overwrite --format=java-cacerts --filter=ca-anchors --purpose=server-auth "$cacertsFile"'; 	} > /etc/ca-certificates/update.d/docker-openjdk; 	chmod +x /etc/ca-certificates/update.d/docker-openjdk; 	/etc/ca-certificates/update.d/docker-openjdk; 		find "$JAVA_HOME/lib" -name '*.so' -exec dirname '{}' ';' | sort -u > /etc/ld.so.conf.d/docker-openjdk.conf; 	ldconfig; 		javac --version; 	java --version
-# Thu, 17 Oct 2019 08:30:07 GMT
+# Fri, 18 Oct 2019 23:40:17 GMT
 CMD ["jshell"]
-# Fri, 18 Oct 2019 04:36:23 GMT
+# Sat, 19 Oct 2019 07:46:43 GMT
 LABEL maintainer=Martijn Koster "mak-docker@greenhills.co.uk"
-# Fri, 18 Oct 2019 04:36:23 GMT
+# Sat, 19 Oct 2019 07:46:43 GMT
 LABEL repository=https://github.com/docker-solr/docker-solr
-# Fri, 18 Oct 2019 04:36:23 GMT
+# Sat, 19 Oct 2019 07:46:44 GMT
 ARG SOLR_DOWNLOAD_SERVER
-# Fri, 18 Oct 2019 04:36:30 GMT
+# Sat, 19 Oct 2019 07:46:51 GMT
 RUN apt-get update &&   apt-get -y install acl dirmngr gpg lsof procps wget &&   rm -rf /var/lib/apt/lists/*
-# Fri, 18 Oct 2019 04:37:20 GMT
+# Sat, 19 Oct 2019 07:47:40 GMT
 ENV SOLR_USER=solr SOLR_UID=8983 SOLR_GROUP=solr SOLR_GID=8983 SOLR_VERSION=8.1.1 SOLR_URL=https://archive.apache.org/dist/lucene/solr/8.1.1/solr-8.1.1.tgz SOLR_SHA256=b515598c11f53fe28d682e3d71238642e9f34509194e3c4746e39bb7d7bb46a1 SOLR_KEYS=F23F054D9EC50F2397FF2B814E67A2711D053DDB PATH=/opt/solr/bin:/opt/docker-solr/scripts:/usr/local/openjdk-11/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin SOLR_INCLUDE=/etc/default/solr.in.sh SOLR_HOME=/var/solr/data SOLR_PID_DIR=/var/solr SOLR_LOGS_DIR=/var/solr/logs LOG4J_PROPS=/var/solr/log4j2.xml
-# Fri, 18 Oct 2019 04:37:20 GMT
+# Sat, 19 Oct 2019 07:47:40 GMT
 ENV GOSU_VERSION=1.11
-# Fri, 18 Oct 2019 04:37:20 GMT
+# Sat, 19 Oct 2019 07:47:40 GMT
 ENV GOSU_KEY=B42F6819007F00F88E364FD4036A9C25BF357DD4
-# Fri, 18 Oct 2019 04:37:20 GMT
+# Sat, 19 Oct 2019 07:47:40 GMT
 ENV TINI_VERSION=v0.18.0
-# Fri, 18 Oct 2019 04:37:20 GMT
+# Sat, 19 Oct 2019 07:47:40 GMT
 ENV TINI_KEY=595E85A6B1B4779EA4DAAEC70B588DFF0527A9B7
-# Fri, 18 Oct 2019 04:37:21 GMT
+# Sat, 19 Oct 2019 07:47:41 GMT
 RUN groupadd -r --gid "$SOLR_GID" "$SOLR_GROUP" &&   useradd -r --uid "$SOLR_UID" --gid "$SOLR_GID" "$SOLR_USER"
-# Fri, 18 Oct 2019 04:37:22 GMT
+# Sat, 19 Oct 2019 07:47:42 GMT
 RUN set -e;   export GNUPGHOME="/tmp/gnupg_home" &&   mkdir -p "$GNUPGHOME" &&   chmod 700 "$GNUPGHOME" &&   echo "disable-ipv6" >> "$GNUPGHOME/dirmngr.conf" &&   for key in $SOLR_KEYS $GOSU_KEY $TINI_KEY; do     found='';     for server in       ha.pool.sks-keyservers.net       hkp://keyserver.ubuntu.com:80       hkp://p80.pool.sks-keyservers.net:80       pgp.mit.edu     ; do       echo "  trying $server for $key";       gpg --batch --keyserver "$server" --keyserver-options timeout=10 --recv-keys "$key" && found=yes && break;       gpg --batch --keyserver "$server" --keyserver-options timeout=10 --recv-keys "$key" && found=yes && break;     done;     test -z "$found" && echo >&2 "error: failed to fetch $key from several disparate servers -- network issues?" && exit 1;   done;   exit 0
-# Fri, 18 Oct 2019 04:37:35 GMT
+# Sat, 19 Oct 2019 07:47:56 GMT
 RUN set -e;   export GNUPGHOME="/tmp/gnupg_home" &&   pkgArch="$(dpkg --print-architecture | awk -F- '{ print $NF }')" &&   wget -O /usr/local/bin/gosu "https://github.com/tianon/gosu/releases/download/$GOSU_VERSION/gosu-$pkgArch" &&   wget -O /usr/local/bin/gosu.asc "https://github.com/tianon/gosu/releases/download/$GOSU_VERSION/gosu-$pkgArch.asc" &&   gpg --batch --verify /usr/local/bin/gosu.asc /usr/local/bin/gosu &&   rm /usr/local/bin/gosu.asc &&   chmod +x /usr/local/bin/gosu &&   gosu nobody true &&   wget -O /usr/local/bin/tini "https://github.com/krallin/tini/releases/download/${TINI_VERSION}/tini-$pkgArch" &&   wget -O /usr/local/bin/tini.asc "https://github.com/krallin/tini/releases/download/${TINI_VERSION}/tini-$pkgArch.asc" &&   gpg --batch --verify /usr/local/bin/tini.asc /usr/local/bin/tini;   rm /usr/local/bin/tini.asc &&   chmod +x /usr/local/bin/tini &&   tini --version &&   echo "downloading $SOLR_URL" &&   wget -nv "$SOLR_URL" -O "/opt/solr-$SOLR_VERSION.tgz" &&   echo "downloading $SOLR_URL.asc" &&   wget -nv "$SOLR_URL.asc" -O "/opt/solr-$SOLR_VERSION.tgz.asc" &&   echo "$SOLR_SHA256 */opt/solr-$SOLR_VERSION.tgz" | sha256sum -c - &&   (>&2 ls -l "/opt/solr-$SOLR_VERSION.tgz" "/opt/solr-$SOLR_VERSION.tgz.asc") &&   gpg --batch --verify "/opt/solr-$SOLR_VERSION.tgz.asc" "/opt/solr-$SOLR_VERSION.tgz" &&   tar -C /opt --extract --file "/opt/solr-$SOLR_VERSION.tgz" &&   (cd /opt && ln -s "solr-$SOLR_VERSION" solr) &&   rm "/opt/solr-$SOLR_VERSION.tgz"* &&   rm -Rf /opt/solr/docs/ &&   mkdir -p /opt/solr/server/solr/lib /docker-entrypoint-initdb.d /opt/docker-solr &&   chown -R 0:0 "/opt/solr-$SOLR_VERSION" &&   find "/opt/solr-$SOLR_VERSION" -type d -print0 | xargs -0 chmod 0755 &&   find "/opt/solr-$SOLR_VERSION" -type f -print0 | xargs -0 chmod 0644 &&   chmod -R 0755 "/opt/solr-$SOLR_VERSION/bin" "/opt/solr-$SOLR_VERSION/contrib/prometheus-exporter/bin/solr-exporter" /opt/solr-$SOLR_VERSION/server/scripts/cloud-scripts &&   cp /opt/solr/bin/solr.in.sh /etc/default/solr.in.sh &&   mv /opt/solr/bin/solr.in.sh /opt/solr/bin/solr.in.sh.orig &&   mv /opt/solr/bin/solr.in.cmd /opt/solr/bin/solr.in.cmd.orig &&   chown root:0 /etc/default/solr.in.sh &&   chmod 0664 /etc/default/solr.in.sh &&   mkdir -p /var/solr/data /var/solr/logs &&   (cd /opt/solr/server/solr && cp solr.xml zoo.cfg /var/solr/data/) &&   cp /opt/solr/server/resources/log4j2.xml /var/solr/log4j2.xml &&   find /var/solr -type d -print0 | xargs -0 chmod 0770 &&   find /var/solr -type f -print0 | xargs -0 chmod 0660 &&   sed -i -e "s/\"\$(whoami)\" == \"root\"/\$(id -u) == 0/" /opt/solr/bin/solr &&   sed -i -e 's/lsof -PniTCP:/lsof -t -PniTCP:/' /opt/solr/bin/solr &&   chown -R "0:0" /opt/solr-$SOLR_VERSION /docker-entrypoint-initdb.d /opt/docker-solr &&   chown -R "$SOLR_USER:0" /var/solr &&   { command -v gpgconf && gpgconf --kill all || :; } &&   rm -r "$GNUPGHOME"
-# Fri, 18 Oct 2019 04:37:36 GMT
+# Sat, 19 Oct 2019 07:47:56 GMT
 COPY --chown=0:0dir:7c0a3213efab10f68cd89ca4d91a13cb6084a7764ed341bf0617ce144943839b in /opt/docker-solr/scripts 
-# Fri, 18 Oct 2019 04:37:36 GMT
+# Sat, 19 Oct 2019 07:47:56 GMT
 VOLUME [/var/solr]
-# Fri, 18 Oct 2019 04:37:36 GMT
+# Sat, 19 Oct 2019 07:47:56 GMT
 EXPOSE 8983
-# Fri, 18 Oct 2019 04:37:36 GMT
+# Sat, 19 Oct 2019 07:47:56 GMT
 WORKDIR /opt/solr
-# Fri, 18 Oct 2019 04:37:36 GMT
+# Sat, 19 Oct 2019 07:47:56 GMT
 USER solr
-# Fri, 18 Oct 2019 04:37:37 GMT
+# Sat, 19 Oct 2019 07:47:57 GMT
 ENTRYPOINT ["docker-entrypoint.sh"]
-# Fri, 18 Oct 2019 04:37:37 GMT
+# Sat, 19 Oct 2019 07:47:57 GMT
 CMD ["solr-foreground"]
 ```
 
@@ -7462,29 +7462,29 @@ CMD ["solr-foreground"]
 		Last Modified: Thu, 17 Oct 2019 08:38:38 GMT  
 		Size: 210.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:208dbdb57f64b9643f7760ea628f0e2a21deff0af0b2eb33a0e66f6e3165fbfc`  
-		Last Modified: Thu, 17 Oct 2019 08:39:01 GMT  
-		Size: 196.0 MB (195975541 bytes)  
+	-	`sha256:ebc78a5f677c03a8f4aa611b558b55c4e42cf3113517ec2400695512c176d5ea`  
+		Last Modified: Fri, 18 Oct 2019 23:45:47 GMT  
+		Size: 196.1 MB (196134537 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:0b6e87939381d5f5bf58ebbda7764e5988a7f85de329392991840d7de2392b46`  
-		Last Modified: Fri, 18 Oct 2019 04:44:14 GMT  
-		Size: 5.5 MB (5452429 bytes)  
+	-	`sha256:5422c55f6c915b61b16c325a8d6c50b854cfa1a68d01cdf3257e0544867074c1`  
+		Last Modified: Sat, 19 Oct 2019 07:53:47 GMT  
+		Size: 5.5 MB (5452476 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:2d8a19231ed183cb774de9077d83ac447f82d00dfb903d3002eaacc81bbcd1cd`  
-		Last Modified: Fri, 18 Oct 2019 04:44:58 GMT  
-		Size: 4.3 KB (4285 bytes)  
+	-	`sha256:c42c4a9a7dbfa42474ad46e1a66115904816387316d6c57823f79a1a9a0bf2b9`  
+		Last Modified: Sat, 19 Oct 2019 07:54:19 GMT  
+		Size: 4.3 KB (4286 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:cd8dd0834522fee4e4125510c71e7eb5dd950aba96901c30117ac2570afd4952`  
-		Last Modified: Fri, 18 Oct 2019 04:44:58 GMT  
+	-	`sha256:9dda2ecc4ccfd9f27f3d8acd05089edfc20f8f397dd2f2373f36daf96009ddc9`  
+		Last Modified: Sat, 19 Oct 2019 07:54:18 GMT  
 		Size: 24.4 KB (24403 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:d32a9c085a7ae0f9bba137a007090dc62b34a52ff0d6e9fd3a946bf4364d474a`  
-		Last Modified: Fri, 18 Oct 2019 04:45:13 GMT  
-		Size: 176.7 MB (176662182 bytes)  
+	-	`sha256:3fb35c90d2e66faea0f83be18b294290f0a1e9bcb2cf9c12ebb8ae7facfb3295`  
+		Last Modified: Sat, 19 Oct 2019 07:54:29 GMT  
+		Size: 176.7 MB (176662212 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:a6f9aaa4d906f827645a9e92c978a2d6ede72488975750e464476f078e8ac655`  
-		Last Modified: Fri, 18 Oct 2019 04:44:58 GMT  
-		Size: 4.8 KB (4794 bytes)  
+	-	`sha256:154c6d88fa3a839aad6f34e91b6deff396a6ace09b0a603971c02eba9e04f38f`  
+		Last Modified: Sat, 19 Oct 2019 07:54:19 GMT  
+		Size: 4.8 KB (4788 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `solr:8.1-slim` - linux; arm64 variant v8
@@ -7607,7 +7607,7 @@ CMD ["solr-foreground"]
 ## `solr:8.2`
 
 ```console
-$ docker pull solr@sha256:7930df1f5fb513c223cde5ee506440f7fafe66b404fb7ad6f5bada82886b490f
+$ docker pull solr@sha256:19b45b08f398460db66d2ba76a95e03a07b75619952d61e82f3bb1fe384209ef
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -7618,14 +7618,14 @@ $ docker pull solr@sha256:7930df1f5fb513c223cde5ee506440f7fafe66b404fb7ad6f5bada
 ### `solr:8.2` - linux; amd64
 
 ```console
-$ docker pull solr@sha256:3c5f062f54fb11adf59220f29d6bb142b0bd16fad2b1dda91b080973c1ffa5bb
+$ docker pull solr@sha256:abafe8e6b31e7cff2c9166e451e27d8c306297bb2fa3dc0c4e4a66cf8906dff8
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **495.1 MB (495104965 bytes)**  
+-	Total Size: **495.3 MB (495261324 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:599bf6c5d04ef4836e442ad45febd9784d1ed1146f85fa8f288fafe46bd52a23`
+-	Image ID: `sha256:6946dff5c83262f8341ecd874e6b89c2643b92e2a255b080cbe6fbfdc7c884fe`
 -	Entrypoint: `["docker-entrypoint.sh"]`
 -	Default Command: `["solr-foreground"]`
 
@@ -7650,53 +7650,53 @@ ENV JAVA_HOME=/usr/local/openjdk-11
 ENV PATH=/usr/local/openjdk-11/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
 # Thu, 17 Oct 2019 08:29:25 GMT
 RUN { echo '#/bin/sh'; echo 'echo "$JAVA_HOME"'; } > /usr/local/bin/docker-java-home && chmod +x /usr/local/bin/docker-java-home && [ "$JAVA_HOME" = "$(docker-java-home)" ]
-# Thu, 17 Oct 2019 08:29:25 GMT
-ENV JAVA_VERSION=11.0.4
-# Thu, 17 Oct 2019 08:29:25 GMT
-ENV JAVA_BASE_URL=https://github.com/AdoptOpenJDK/openjdk11-upstream-binaries/releases/download/jdk-11.0.4%2B11/OpenJDK11U-jdk_
-# Thu, 17 Oct 2019 08:29:26 GMT
-ENV JAVA_URL_VERSION=11.0.4_11
-# Thu, 17 Oct 2019 08:29:39 GMT
+# Fri, 18 Oct 2019 23:39:21 GMT
+ENV JAVA_VERSION=11.0.5
+# Fri, 18 Oct 2019 23:39:21 GMT
+ENV JAVA_BASE_URL=https://github.com/AdoptOpenJDK/openjdk11-upstream-binaries/releases/download/jdk-11.0.5%2B10/OpenJDK11U-jdk_
+# Fri, 18 Oct 2019 23:39:21 GMT
+ENV JAVA_URL_VERSION=11.0.5_10
+# Fri, 18 Oct 2019 23:39:41 GMT
 RUN set -eux; 		dpkgArch="$(dpkg --print-architecture)"; 	case "$dpkgArch" in 		amd64) upstreamArch='x64' ;; 		arm64) upstreamArch='aarch64' ;; 		*) echo >&2 "error: unsupported architecture: $dpkgArch" ;; 	esac; 		wget -O openjdk.tgz.asc "${JAVA_BASE_URL}${upstreamArch}_linux_${JAVA_URL_VERSION}.tar.gz.sign"; 	wget -O openjdk.tgz "${JAVA_BASE_URL}${upstreamArch}_linux_${JAVA_URL_VERSION}.tar.gz" --progress=dot:giga; 		export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver ha.pool.sks-keyservers.net --keyserver-options no-self-sigs-only --recv-keys CA5F11C6CE22644D42C6AC4492EF8D39DC13168F; 	gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys EAC843EBD3EFDB98CC772FADA5CD6035332FA671; 	gpg --batch --list-sigs --keyid-format 0xLONG CA5F11C6CE22644D42C6AC4492EF8D39DC13168F 		| tee /dev/stderr 		| grep '0xA5CD6035332FA671' 		| grep 'Andrew Haley'; 	gpg --batch --verify openjdk.tgz.asc openjdk.tgz; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME"; 		mkdir -p "$JAVA_HOME"; 	tar --extract 		--file openjdk.tgz 		--directory "$JAVA_HOME" 		--strip-components 1 		--no-same-owner 	; 	rm openjdk.tgz*; 			{ 		echo '#!/usr/bin/env bash'; 		echo 'set -Eeuo pipefail'; 		echo 'if ! [ -d "$JAVA_HOME" ]; then echo >&2 "error: missing JAVA_HOME environment variable"; exit 1; fi'; 		echo 'cacertsFile=; for f in "$JAVA_HOME/lib/security/cacerts" "$JAVA_HOME/jre/lib/security/cacerts"; do if [ -e "$f" ]; then cacertsFile="$f"; break; fi; done'; 		echo 'if [ -z "$cacertsFile" ] || ! [ -f "$cacertsFile" ]; then echo >&2 "error: failed to find cacerts file in $JAVA_HOME"; exit 1; fi'; 		echo 'trust extract --overwrite --format=java-cacerts --filter=ca-anchors --purpose=server-auth "$cacertsFile"'; 	} > /etc/ca-certificates/update.d/docker-openjdk; 	chmod +x /etc/ca-certificates/update.d/docker-openjdk; 	/etc/ca-certificates/update.d/docker-openjdk; 		find "$JAVA_HOME/lib" -name '*.so' -exec dirname '{}' ';' | sort -u > /etc/ld.so.conf.d/docker-openjdk.conf; 	ldconfig; 		javac --version; 	java --version
-# Thu, 17 Oct 2019 08:29:39 GMT
+# Fri, 18 Oct 2019 23:39:42 GMT
 CMD ["jshell"]
-# Fri, 18 Oct 2019 04:35:50 GMT
+# Sat, 19 Oct 2019 07:46:10 GMT
 LABEL maintainer=Martijn Koster "mak-docker@greenhills.co.uk"
-# Fri, 18 Oct 2019 04:35:50 GMT
+# Sat, 19 Oct 2019 07:46:11 GMT
 LABEL repository=https://github.com/docker-solr/docker-solr
-# Fri, 18 Oct 2019 04:35:50 GMT
+# Sat, 19 Oct 2019 07:46:11 GMT
 ARG SOLR_DOWNLOAD_SERVER
-# Fri, 18 Oct 2019 04:35:55 GMT
+# Sat, 19 Oct 2019 07:46:15 GMT
 RUN apt-get update &&   apt-get -y install acl dirmngr gpg lsof procps wget &&   rm -rf /var/lib/apt/lists/*
-# Fri, 18 Oct 2019 04:35:55 GMT
+# Sat, 19 Oct 2019 07:46:15 GMT
 ENV SOLR_USER=solr SOLR_UID=8983 SOLR_GROUP=solr SOLR_GID=8983 SOLR_VERSION=8.2.0 SOLR_URL=https://archive.apache.org/dist/lucene/solr/8.2.0/solr-8.2.0.tgz SOLR_SHA256=bfa4b39b236e5d714f4233138b8b5cb7e1996ddc0aad60052ce83c4b7bf33449 SOLR_KEYS=E58A6F4D5B2B48AC66D5E53BD4F181881A42F9E6 PATH=/opt/solr/bin:/opt/docker-solr/scripts:/usr/local/openjdk-11/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin SOLR_INCLUDE=/etc/default/solr.in.sh SOLR_HOME=/var/solr/data SOLR_PID_DIR=/var/solr SOLR_LOGS_DIR=/var/solr/logs LOG4J_PROPS=/var/solr/log4j2.xml
-# Fri, 18 Oct 2019 04:35:55 GMT
+# Sat, 19 Oct 2019 07:46:15 GMT
 ENV GOSU_VERSION=1.11
-# Fri, 18 Oct 2019 04:35:55 GMT
+# Sat, 19 Oct 2019 07:46:16 GMT
 ENV GOSU_KEY=B42F6819007F00F88E364FD4036A9C25BF357DD4
-# Fri, 18 Oct 2019 04:35:56 GMT
+# Sat, 19 Oct 2019 07:46:16 GMT
 ENV TINI_VERSION=v0.18.0
-# Fri, 18 Oct 2019 04:35:56 GMT
+# Sat, 19 Oct 2019 07:46:16 GMT
 ENV TINI_KEY=595E85A6B1B4779EA4DAAEC70B588DFF0527A9B7
-# Fri, 18 Oct 2019 04:35:56 GMT
+# Sat, 19 Oct 2019 07:46:17 GMT
 RUN groupadd -r --gid "$SOLR_GID" "$SOLR_GROUP" &&   useradd -r --uid "$SOLR_UID" --gid "$SOLR_GID" "$SOLR_USER"
-# Fri, 18 Oct 2019 04:36:00 GMT
+# Sat, 19 Oct 2019 07:46:20 GMT
 RUN set -e;   export GNUPGHOME="/tmp/gnupg_home" &&   mkdir -p "$GNUPGHOME" &&   chmod 700 "$GNUPGHOME" &&   echo "disable-ipv6" >> "$GNUPGHOME/dirmngr.conf" &&   for key in $SOLR_KEYS $GOSU_KEY $TINI_KEY; do     found='';     for server in       ha.pool.sks-keyservers.net       hkp://keyserver.ubuntu.com:80       hkp://p80.pool.sks-keyservers.net:80       pgp.mit.edu     ; do       echo "  trying $server for $key";       gpg --batch --keyserver "$server" --keyserver-options timeout=10 --recv-keys "$key" && found=yes && break;       gpg --batch --keyserver "$server" --keyserver-options timeout=10 --recv-keys "$key" && found=yes && break;     done;     test -z "$found" && echo >&2 "error: failed to fetch $key from several disparate servers -- network issues?" && exit 1;   done;   exit 0
-# Fri, 18 Oct 2019 04:36:14 GMT
+# Sat, 19 Oct 2019 07:46:35 GMT
 RUN set -e;   export GNUPGHOME="/tmp/gnupg_home" &&   pkgArch="$(dpkg --print-architecture | awk -F- '{ print $NF }')" &&   wget -O /usr/local/bin/gosu "https://github.com/tianon/gosu/releases/download/$GOSU_VERSION/gosu-$pkgArch" &&   wget -O /usr/local/bin/gosu.asc "https://github.com/tianon/gosu/releases/download/$GOSU_VERSION/gosu-$pkgArch.asc" &&   gpg --batch --verify /usr/local/bin/gosu.asc /usr/local/bin/gosu &&   rm /usr/local/bin/gosu.asc &&   chmod +x /usr/local/bin/gosu &&   gosu nobody true &&   wget -O /usr/local/bin/tini "https://github.com/krallin/tini/releases/download/${TINI_VERSION}/tini-$pkgArch" &&   wget -O /usr/local/bin/tini.asc "https://github.com/krallin/tini/releases/download/${TINI_VERSION}/tini-$pkgArch.asc" &&   gpg --batch --verify /usr/local/bin/tini.asc /usr/local/bin/tini;   rm /usr/local/bin/tini.asc &&   chmod +x /usr/local/bin/tini &&   tini --version &&   echo "downloading $SOLR_URL" &&   wget -nv "$SOLR_URL" -O "/opt/solr-$SOLR_VERSION.tgz" &&   echo "downloading $SOLR_URL.asc" &&   wget -nv "$SOLR_URL.asc" -O "/opt/solr-$SOLR_VERSION.tgz.asc" &&   echo "$SOLR_SHA256 */opt/solr-$SOLR_VERSION.tgz" | sha256sum -c - &&   (>&2 ls -l "/opt/solr-$SOLR_VERSION.tgz" "/opt/solr-$SOLR_VERSION.tgz.asc") &&   gpg --batch --verify "/opt/solr-$SOLR_VERSION.tgz.asc" "/opt/solr-$SOLR_VERSION.tgz" &&   tar -C /opt --extract --file "/opt/solr-$SOLR_VERSION.tgz" &&   (cd /opt && ln -s "solr-$SOLR_VERSION" solr) &&   rm "/opt/solr-$SOLR_VERSION.tgz"* &&   rm -Rf /opt/solr/docs/ &&   mkdir -p /opt/solr/server/solr/lib /docker-entrypoint-initdb.d /opt/docker-solr &&   chown -R 0:0 "/opt/solr-$SOLR_VERSION" &&   find "/opt/solr-$SOLR_VERSION" -type d -print0 | xargs -0 chmod 0755 &&   find "/opt/solr-$SOLR_VERSION" -type f -print0 | xargs -0 chmod 0644 &&   chmod -R 0755 "/opt/solr-$SOLR_VERSION/bin" "/opt/solr-$SOLR_VERSION/contrib/prometheus-exporter/bin/solr-exporter" /opt/solr-$SOLR_VERSION/server/scripts/cloud-scripts &&   cp /opt/solr/bin/solr.in.sh /etc/default/solr.in.sh &&   mv /opt/solr/bin/solr.in.sh /opt/solr/bin/solr.in.sh.orig &&   mv /opt/solr/bin/solr.in.cmd /opt/solr/bin/solr.in.cmd.orig &&   chown root:0 /etc/default/solr.in.sh &&   chmod 0664 /etc/default/solr.in.sh &&   mkdir -p /var/solr/data /var/solr/logs &&   (cd /opt/solr/server/solr && cp solr.xml zoo.cfg /var/solr/data/) &&   cp /opt/solr/server/resources/log4j2.xml /var/solr/log4j2.xml &&   find /var/solr -type d -print0 | xargs -0 chmod 0770 &&   find /var/solr -type f -print0 | xargs -0 chmod 0660 &&   sed -i -e "s/\"\$(whoami)\" == \"root\"/\$(id -u) == 0/" /opt/solr/bin/solr &&   sed -i -e 's/lsof -PniTCP:/lsof -t -PniTCP:/' /opt/solr/bin/solr &&   chown -R "0:0" /opt/solr-$SOLR_VERSION /docker-entrypoint-initdb.d /opt/docker-solr &&   chown -R "$SOLR_USER:0" /var/solr &&   { command -v gpgconf && gpgconf --kill all || :; } &&   rm -r "$GNUPGHOME"
-# Fri, 18 Oct 2019 04:36:14 GMT
+# Sat, 19 Oct 2019 07:46:35 GMT
 COPY --chown=0:0dir:7c0a3213efab10f68cd89ca4d91a13cb6084a7764ed341bf0617ce144943839b in /opt/docker-solr/scripts 
-# Fri, 18 Oct 2019 04:36:14 GMT
+# Sat, 19 Oct 2019 07:46:35 GMT
 VOLUME [/var/solr]
-# Fri, 18 Oct 2019 04:36:15 GMT
+# Sat, 19 Oct 2019 07:46:35 GMT
 EXPOSE 8983
-# Fri, 18 Oct 2019 04:36:15 GMT
+# Sat, 19 Oct 2019 07:46:35 GMT
 WORKDIR /opt/solr
-# Fri, 18 Oct 2019 04:36:15 GMT
+# Sat, 19 Oct 2019 07:46:36 GMT
 USER solr
-# Fri, 18 Oct 2019 04:36:15 GMT
+# Sat, 19 Oct 2019 07:46:36 GMT
 ENTRYPOINT ["docker-entrypoint.sh"]
-# Fri, 18 Oct 2019 04:36:15 GMT
+# Sat, 19 Oct 2019 07:46:36 GMT
 CMD ["solr-foreground"]
 ```
 
@@ -7725,29 +7725,29 @@ CMD ["solr-foreground"]
 		Last Modified: Thu, 17 Oct 2019 08:38:05 GMT  
 		Size: 218.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:115f4a5a7971e04e4fed86d76c049ff73c54e467dc07423546790188502ce0bc`  
-		Last Modified: Thu, 17 Oct 2019 08:38:28 GMT  
-		Size: 195.7 MB (195718813 bytes)  
+	-	`sha256:0ce121b6a2ffae7f0fc0b7c20d3a0a46f62762dd7c1f14db73fa2ab9248bf1dc`  
+		Last Modified: Fri, 18 Oct 2019 23:45:21 GMT  
+		Size: 195.9 MB (195875192 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:8f99c82bd7831902ccf2bd474012a7be46a8161ba0124a4864ac469ffcad5bbe`  
-		Last Modified: Fri, 18 Oct 2019 04:43:52 GMT  
-		Size: 761.5 KB (761483 bytes)  
+	-	`sha256:73e1c53bd62b5d1b2ee52a9c04be2a0e5a5b245abc76a4d9365fd1ceba45f32c`  
+		Last Modified: Sat, 19 Oct 2019 07:53:23 GMT  
+		Size: 761.5 KB (761492 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:24b9878c73c565485faab38c9cb826fb56827cb96eeab8ad37608a3795b0d625`  
-		Last Modified: Fri, 18 Oct 2019 04:43:52 GMT  
-		Size: 4.3 KB (4304 bytes)  
+	-	`sha256:06f01d291976f1e509428a975f81014db0267acc9d2817f5698e920ede4e1103`  
+		Last Modified: Sat, 19 Oct 2019 07:53:23 GMT  
+		Size: 4.3 KB (4305 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:e0e6ed9b8ce2ec5c986ddf1099e02fee18caaa45889316ae189de5037fa78a67`  
-		Last Modified: Fri, 18 Oct 2019 04:43:52 GMT  
-		Size: 153.4 KB (153415 bytes)  
+	-	`sha256:bff33dd5f6e0343386308838c1295ba8794dd2c9f9db779f423422695a3cde4f`  
+		Last Modified: Sat, 19 Oct 2019 07:53:23 GMT  
+		Size: 153.4 KB (153414 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:26dd70d91a84c539db72df240cc6d00d1c374102e93e8de500a4278a4ec02943`  
-		Last Modified: Fri, 18 Oct 2019 04:44:06 GMT  
-		Size: 182.9 MB (182943094 bytes)  
+	-	`sha256:67e3445b1bc130da6b8202f8be27d7aa524fd9e690effbdd1a94bdd14dfb67a7`  
+		Last Modified: Sat, 19 Oct 2019 07:53:38 GMT  
+		Size: 182.9 MB (182943068 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:f8efd0836f0d647b89e14cc3f6dbe042b2c292a6d3e7ada8d13b2823295377c3`  
-		Last Modified: Fri, 18 Oct 2019 04:43:52 GMT  
-		Size: 4.8 KB (4789 bytes)  
+	-	`sha256:c577b79e0205c0b4f820a8bb5095975609de674921a40dbe9d2d392c77da6f3e`  
+		Last Modified: Sat, 19 Oct 2019 07:53:23 GMT  
+		Size: 4.8 KB (4786 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `solr:8.2` - linux; arm64 variant v8
@@ -7888,7 +7888,7 @@ CMD ["solr-foreground"]
 ## `solr:8.2.0`
 
 ```console
-$ docker pull solr@sha256:7930df1f5fb513c223cde5ee506440f7fafe66b404fb7ad6f5bada82886b490f
+$ docker pull solr@sha256:19b45b08f398460db66d2ba76a95e03a07b75619952d61e82f3bb1fe384209ef
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -7899,14 +7899,14 @@ $ docker pull solr@sha256:7930df1f5fb513c223cde5ee506440f7fafe66b404fb7ad6f5bada
 ### `solr:8.2.0` - linux; amd64
 
 ```console
-$ docker pull solr@sha256:3c5f062f54fb11adf59220f29d6bb142b0bd16fad2b1dda91b080973c1ffa5bb
+$ docker pull solr@sha256:abafe8e6b31e7cff2c9166e451e27d8c306297bb2fa3dc0c4e4a66cf8906dff8
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **495.1 MB (495104965 bytes)**  
+-	Total Size: **495.3 MB (495261324 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:599bf6c5d04ef4836e442ad45febd9784d1ed1146f85fa8f288fafe46bd52a23`
+-	Image ID: `sha256:6946dff5c83262f8341ecd874e6b89c2643b92e2a255b080cbe6fbfdc7c884fe`
 -	Entrypoint: `["docker-entrypoint.sh"]`
 -	Default Command: `["solr-foreground"]`
 
@@ -7931,53 +7931,53 @@ ENV JAVA_HOME=/usr/local/openjdk-11
 ENV PATH=/usr/local/openjdk-11/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
 # Thu, 17 Oct 2019 08:29:25 GMT
 RUN { echo '#/bin/sh'; echo 'echo "$JAVA_HOME"'; } > /usr/local/bin/docker-java-home && chmod +x /usr/local/bin/docker-java-home && [ "$JAVA_HOME" = "$(docker-java-home)" ]
-# Thu, 17 Oct 2019 08:29:25 GMT
-ENV JAVA_VERSION=11.0.4
-# Thu, 17 Oct 2019 08:29:25 GMT
-ENV JAVA_BASE_URL=https://github.com/AdoptOpenJDK/openjdk11-upstream-binaries/releases/download/jdk-11.0.4%2B11/OpenJDK11U-jdk_
-# Thu, 17 Oct 2019 08:29:26 GMT
-ENV JAVA_URL_VERSION=11.0.4_11
-# Thu, 17 Oct 2019 08:29:39 GMT
+# Fri, 18 Oct 2019 23:39:21 GMT
+ENV JAVA_VERSION=11.0.5
+# Fri, 18 Oct 2019 23:39:21 GMT
+ENV JAVA_BASE_URL=https://github.com/AdoptOpenJDK/openjdk11-upstream-binaries/releases/download/jdk-11.0.5%2B10/OpenJDK11U-jdk_
+# Fri, 18 Oct 2019 23:39:21 GMT
+ENV JAVA_URL_VERSION=11.0.5_10
+# Fri, 18 Oct 2019 23:39:41 GMT
 RUN set -eux; 		dpkgArch="$(dpkg --print-architecture)"; 	case "$dpkgArch" in 		amd64) upstreamArch='x64' ;; 		arm64) upstreamArch='aarch64' ;; 		*) echo >&2 "error: unsupported architecture: $dpkgArch" ;; 	esac; 		wget -O openjdk.tgz.asc "${JAVA_BASE_URL}${upstreamArch}_linux_${JAVA_URL_VERSION}.tar.gz.sign"; 	wget -O openjdk.tgz "${JAVA_BASE_URL}${upstreamArch}_linux_${JAVA_URL_VERSION}.tar.gz" --progress=dot:giga; 		export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver ha.pool.sks-keyservers.net --keyserver-options no-self-sigs-only --recv-keys CA5F11C6CE22644D42C6AC4492EF8D39DC13168F; 	gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys EAC843EBD3EFDB98CC772FADA5CD6035332FA671; 	gpg --batch --list-sigs --keyid-format 0xLONG CA5F11C6CE22644D42C6AC4492EF8D39DC13168F 		| tee /dev/stderr 		| grep '0xA5CD6035332FA671' 		| grep 'Andrew Haley'; 	gpg --batch --verify openjdk.tgz.asc openjdk.tgz; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME"; 		mkdir -p "$JAVA_HOME"; 	tar --extract 		--file openjdk.tgz 		--directory "$JAVA_HOME" 		--strip-components 1 		--no-same-owner 	; 	rm openjdk.tgz*; 			{ 		echo '#!/usr/bin/env bash'; 		echo 'set -Eeuo pipefail'; 		echo 'if ! [ -d "$JAVA_HOME" ]; then echo >&2 "error: missing JAVA_HOME environment variable"; exit 1; fi'; 		echo 'cacertsFile=; for f in "$JAVA_HOME/lib/security/cacerts" "$JAVA_HOME/jre/lib/security/cacerts"; do if [ -e "$f" ]; then cacertsFile="$f"; break; fi; done'; 		echo 'if [ -z "$cacertsFile" ] || ! [ -f "$cacertsFile" ]; then echo >&2 "error: failed to find cacerts file in $JAVA_HOME"; exit 1; fi'; 		echo 'trust extract --overwrite --format=java-cacerts --filter=ca-anchors --purpose=server-auth "$cacertsFile"'; 	} > /etc/ca-certificates/update.d/docker-openjdk; 	chmod +x /etc/ca-certificates/update.d/docker-openjdk; 	/etc/ca-certificates/update.d/docker-openjdk; 		find "$JAVA_HOME/lib" -name '*.so' -exec dirname '{}' ';' | sort -u > /etc/ld.so.conf.d/docker-openjdk.conf; 	ldconfig; 		javac --version; 	java --version
-# Thu, 17 Oct 2019 08:29:39 GMT
+# Fri, 18 Oct 2019 23:39:42 GMT
 CMD ["jshell"]
-# Fri, 18 Oct 2019 04:35:50 GMT
+# Sat, 19 Oct 2019 07:46:10 GMT
 LABEL maintainer=Martijn Koster "mak-docker@greenhills.co.uk"
-# Fri, 18 Oct 2019 04:35:50 GMT
+# Sat, 19 Oct 2019 07:46:11 GMT
 LABEL repository=https://github.com/docker-solr/docker-solr
-# Fri, 18 Oct 2019 04:35:50 GMT
+# Sat, 19 Oct 2019 07:46:11 GMT
 ARG SOLR_DOWNLOAD_SERVER
-# Fri, 18 Oct 2019 04:35:55 GMT
+# Sat, 19 Oct 2019 07:46:15 GMT
 RUN apt-get update &&   apt-get -y install acl dirmngr gpg lsof procps wget &&   rm -rf /var/lib/apt/lists/*
-# Fri, 18 Oct 2019 04:35:55 GMT
+# Sat, 19 Oct 2019 07:46:15 GMT
 ENV SOLR_USER=solr SOLR_UID=8983 SOLR_GROUP=solr SOLR_GID=8983 SOLR_VERSION=8.2.0 SOLR_URL=https://archive.apache.org/dist/lucene/solr/8.2.0/solr-8.2.0.tgz SOLR_SHA256=bfa4b39b236e5d714f4233138b8b5cb7e1996ddc0aad60052ce83c4b7bf33449 SOLR_KEYS=E58A6F4D5B2B48AC66D5E53BD4F181881A42F9E6 PATH=/opt/solr/bin:/opt/docker-solr/scripts:/usr/local/openjdk-11/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin SOLR_INCLUDE=/etc/default/solr.in.sh SOLR_HOME=/var/solr/data SOLR_PID_DIR=/var/solr SOLR_LOGS_DIR=/var/solr/logs LOG4J_PROPS=/var/solr/log4j2.xml
-# Fri, 18 Oct 2019 04:35:55 GMT
+# Sat, 19 Oct 2019 07:46:15 GMT
 ENV GOSU_VERSION=1.11
-# Fri, 18 Oct 2019 04:35:55 GMT
+# Sat, 19 Oct 2019 07:46:16 GMT
 ENV GOSU_KEY=B42F6819007F00F88E364FD4036A9C25BF357DD4
-# Fri, 18 Oct 2019 04:35:56 GMT
+# Sat, 19 Oct 2019 07:46:16 GMT
 ENV TINI_VERSION=v0.18.0
-# Fri, 18 Oct 2019 04:35:56 GMT
+# Sat, 19 Oct 2019 07:46:16 GMT
 ENV TINI_KEY=595E85A6B1B4779EA4DAAEC70B588DFF0527A9B7
-# Fri, 18 Oct 2019 04:35:56 GMT
+# Sat, 19 Oct 2019 07:46:17 GMT
 RUN groupadd -r --gid "$SOLR_GID" "$SOLR_GROUP" &&   useradd -r --uid "$SOLR_UID" --gid "$SOLR_GID" "$SOLR_USER"
-# Fri, 18 Oct 2019 04:36:00 GMT
+# Sat, 19 Oct 2019 07:46:20 GMT
 RUN set -e;   export GNUPGHOME="/tmp/gnupg_home" &&   mkdir -p "$GNUPGHOME" &&   chmod 700 "$GNUPGHOME" &&   echo "disable-ipv6" >> "$GNUPGHOME/dirmngr.conf" &&   for key in $SOLR_KEYS $GOSU_KEY $TINI_KEY; do     found='';     for server in       ha.pool.sks-keyservers.net       hkp://keyserver.ubuntu.com:80       hkp://p80.pool.sks-keyservers.net:80       pgp.mit.edu     ; do       echo "  trying $server for $key";       gpg --batch --keyserver "$server" --keyserver-options timeout=10 --recv-keys "$key" && found=yes && break;       gpg --batch --keyserver "$server" --keyserver-options timeout=10 --recv-keys "$key" && found=yes && break;     done;     test -z "$found" && echo >&2 "error: failed to fetch $key from several disparate servers -- network issues?" && exit 1;   done;   exit 0
-# Fri, 18 Oct 2019 04:36:14 GMT
+# Sat, 19 Oct 2019 07:46:35 GMT
 RUN set -e;   export GNUPGHOME="/tmp/gnupg_home" &&   pkgArch="$(dpkg --print-architecture | awk -F- '{ print $NF }')" &&   wget -O /usr/local/bin/gosu "https://github.com/tianon/gosu/releases/download/$GOSU_VERSION/gosu-$pkgArch" &&   wget -O /usr/local/bin/gosu.asc "https://github.com/tianon/gosu/releases/download/$GOSU_VERSION/gosu-$pkgArch.asc" &&   gpg --batch --verify /usr/local/bin/gosu.asc /usr/local/bin/gosu &&   rm /usr/local/bin/gosu.asc &&   chmod +x /usr/local/bin/gosu &&   gosu nobody true &&   wget -O /usr/local/bin/tini "https://github.com/krallin/tini/releases/download/${TINI_VERSION}/tini-$pkgArch" &&   wget -O /usr/local/bin/tini.asc "https://github.com/krallin/tini/releases/download/${TINI_VERSION}/tini-$pkgArch.asc" &&   gpg --batch --verify /usr/local/bin/tini.asc /usr/local/bin/tini;   rm /usr/local/bin/tini.asc &&   chmod +x /usr/local/bin/tini &&   tini --version &&   echo "downloading $SOLR_URL" &&   wget -nv "$SOLR_URL" -O "/opt/solr-$SOLR_VERSION.tgz" &&   echo "downloading $SOLR_URL.asc" &&   wget -nv "$SOLR_URL.asc" -O "/opt/solr-$SOLR_VERSION.tgz.asc" &&   echo "$SOLR_SHA256 */opt/solr-$SOLR_VERSION.tgz" | sha256sum -c - &&   (>&2 ls -l "/opt/solr-$SOLR_VERSION.tgz" "/opt/solr-$SOLR_VERSION.tgz.asc") &&   gpg --batch --verify "/opt/solr-$SOLR_VERSION.tgz.asc" "/opt/solr-$SOLR_VERSION.tgz" &&   tar -C /opt --extract --file "/opt/solr-$SOLR_VERSION.tgz" &&   (cd /opt && ln -s "solr-$SOLR_VERSION" solr) &&   rm "/opt/solr-$SOLR_VERSION.tgz"* &&   rm -Rf /opt/solr/docs/ &&   mkdir -p /opt/solr/server/solr/lib /docker-entrypoint-initdb.d /opt/docker-solr &&   chown -R 0:0 "/opt/solr-$SOLR_VERSION" &&   find "/opt/solr-$SOLR_VERSION" -type d -print0 | xargs -0 chmod 0755 &&   find "/opt/solr-$SOLR_VERSION" -type f -print0 | xargs -0 chmod 0644 &&   chmod -R 0755 "/opt/solr-$SOLR_VERSION/bin" "/opt/solr-$SOLR_VERSION/contrib/prometheus-exporter/bin/solr-exporter" /opt/solr-$SOLR_VERSION/server/scripts/cloud-scripts &&   cp /opt/solr/bin/solr.in.sh /etc/default/solr.in.sh &&   mv /opt/solr/bin/solr.in.sh /opt/solr/bin/solr.in.sh.orig &&   mv /opt/solr/bin/solr.in.cmd /opt/solr/bin/solr.in.cmd.orig &&   chown root:0 /etc/default/solr.in.sh &&   chmod 0664 /etc/default/solr.in.sh &&   mkdir -p /var/solr/data /var/solr/logs &&   (cd /opt/solr/server/solr && cp solr.xml zoo.cfg /var/solr/data/) &&   cp /opt/solr/server/resources/log4j2.xml /var/solr/log4j2.xml &&   find /var/solr -type d -print0 | xargs -0 chmod 0770 &&   find /var/solr -type f -print0 | xargs -0 chmod 0660 &&   sed -i -e "s/\"\$(whoami)\" == \"root\"/\$(id -u) == 0/" /opt/solr/bin/solr &&   sed -i -e 's/lsof -PniTCP:/lsof -t -PniTCP:/' /opt/solr/bin/solr &&   chown -R "0:0" /opt/solr-$SOLR_VERSION /docker-entrypoint-initdb.d /opt/docker-solr &&   chown -R "$SOLR_USER:0" /var/solr &&   { command -v gpgconf && gpgconf --kill all || :; } &&   rm -r "$GNUPGHOME"
-# Fri, 18 Oct 2019 04:36:14 GMT
+# Sat, 19 Oct 2019 07:46:35 GMT
 COPY --chown=0:0dir:7c0a3213efab10f68cd89ca4d91a13cb6084a7764ed341bf0617ce144943839b in /opt/docker-solr/scripts 
-# Fri, 18 Oct 2019 04:36:14 GMT
+# Sat, 19 Oct 2019 07:46:35 GMT
 VOLUME [/var/solr]
-# Fri, 18 Oct 2019 04:36:15 GMT
+# Sat, 19 Oct 2019 07:46:35 GMT
 EXPOSE 8983
-# Fri, 18 Oct 2019 04:36:15 GMT
+# Sat, 19 Oct 2019 07:46:35 GMT
 WORKDIR /opt/solr
-# Fri, 18 Oct 2019 04:36:15 GMT
+# Sat, 19 Oct 2019 07:46:36 GMT
 USER solr
-# Fri, 18 Oct 2019 04:36:15 GMT
+# Sat, 19 Oct 2019 07:46:36 GMT
 ENTRYPOINT ["docker-entrypoint.sh"]
-# Fri, 18 Oct 2019 04:36:15 GMT
+# Sat, 19 Oct 2019 07:46:36 GMT
 CMD ["solr-foreground"]
 ```
 
@@ -8006,29 +8006,29 @@ CMD ["solr-foreground"]
 		Last Modified: Thu, 17 Oct 2019 08:38:05 GMT  
 		Size: 218.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:115f4a5a7971e04e4fed86d76c049ff73c54e467dc07423546790188502ce0bc`  
-		Last Modified: Thu, 17 Oct 2019 08:38:28 GMT  
-		Size: 195.7 MB (195718813 bytes)  
+	-	`sha256:0ce121b6a2ffae7f0fc0b7c20d3a0a46f62762dd7c1f14db73fa2ab9248bf1dc`  
+		Last Modified: Fri, 18 Oct 2019 23:45:21 GMT  
+		Size: 195.9 MB (195875192 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:8f99c82bd7831902ccf2bd474012a7be46a8161ba0124a4864ac469ffcad5bbe`  
-		Last Modified: Fri, 18 Oct 2019 04:43:52 GMT  
-		Size: 761.5 KB (761483 bytes)  
+	-	`sha256:73e1c53bd62b5d1b2ee52a9c04be2a0e5a5b245abc76a4d9365fd1ceba45f32c`  
+		Last Modified: Sat, 19 Oct 2019 07:53:23 GMT  
+		Size: 761.5 KB (761492 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:24b9878c73c565485faab38c9cb826fb56827cb96eeab8ad37608a3795b0d625`  
-		Last Modified: Fri, 18 Oct 2019 04:43:52 GMT  
-		Size: 4.3 KB (4304 bytes)  
+	-	`sha256:06f01d291976f1e509428a975f81014db0267acc9d2817f5698e920ede4e1103`  
+		Last Modified: Sat, 19 Oct 2019 07:53:23 GMT  
+		Size: 4.3 KB (4305 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:e0e6ed9b8ce2ec5c986ddf1099e02fee18caaa45889316ae189de5037fa78a67`  
-		Last Modified: Fri, 18 Oct 2019 04:43:52 GMT  
-		Size: 153.4 KB (153415 bytes)  
+	-	`sha256:bff33dd5f6e0343386308838c1295ba8794dd2c9f9db779f423422695a3cde4f`  
+		Last Modified: Sat, 19 Oct 2019 07:53:23 GMT  
+		Size: 153.4 KB (153414 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:26dd70d91a84c539db72df240cc6d00d1c374102e93e8de500a4278a4ec02943`  
-		Last Modified: Fri, 18 Oct 2019 04:44:06 GMT  
-		Size: 182.9 MB (182943094 bytes)  
+	-	`sha256:67e3445b1bc130da6b8202f8be27d7aa524fd9e690effbdd1a94bdd14dfb67a7`  
+		Last Modified: Sat, 19 Oct 2019 07:53:38 GMT  
+		Size: 182.9 MB (182943068 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:f8efd0836f0d647b89e14cc3f6dbe042b2c292a6d3e7ada8d13b2823295377c3`  
-		Last Modified: Fri, 18 Oct 2019 04:43:52 GMT  
-		Size: 4.8 KB (4789 bytes)  
+	-	`sha256:c577b79e0205c0b4f820a8bb5095975609de674921a40dbe9d2d392c77da6f3e`  
+		Last Modified: Sat, 19 Oct 2019 07:53:23 GMT  
+		Size: 4.8 KB (4786 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `solr:8.2.0` - linux; arm64 variant v8
@@ -8169,7 +8169,7 @@ CMD ["solr-foreground"]
 ## `solr:8.2.0-slim`
 
 ```console
-$ docker pull solr@sha256:de10425005e4414ad265d1ab8babdd1b62205dfbb24ff5de84c00755d9d75b6a
+$ docker pull solr@sha256:be12223417a20cce95279e5b547822ca8a8aa2ae669f2636374d7e39c0f2ca70
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -8180,14 +8180,14 @@ $ docker pull solr@sha256:de10425005e4414ad265d1ab8babdd1b62205dfbb24ff5de84c007
 ### `solr:8.2.0-slim` - linux; amd64
 
 ```console
-$ docker pull solr@sha256:6c1450fef6ccacb298b42eedb842b27f37ba64a309a50c1c69c480573255f52f
+$ docker pull solr@sha256:656970fdabeeefc382b5eec8789022e359cc7ac92eeb66eb0225cd4a4b402c25
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **414.8 MB (414761564 bytes)**  
+-	Total Size: **414.9 MB (414920502 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:de7d504414c285047272361980b1b2b81373e7db6c6893cfcd5f7477b127825b`
+-	Image ID: `sha256:c0c569638e58ccc0397d228ae1c145e105cb8879f91b4edfcd04b09f486f2b33`
 -	Entrypoint: `["docker-entrypoint.sh"]`
 -	Default Command: `["solr-foreground"]`
 
@@ -8206,53 +8206,53 @@ ENV JAVA_HOME=/usr/local/openjdk-11
 ENV PATH=/usr/local/openjdk-11/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
 # Thu, 17 Oct 2019 08:29:46 GMT
 RUN { echo '#/bin/sh'; echo 'echo "$JAVA_HOME"'; } > /usr/local/bin/docker-java-home && chmod +x /usr/local/bin/docker-java-home && [ "$JAVA_HOME" = "$(docker-java-home)" ]
-# Thu, 17 Oct 2019 08:29:46 GMT
-ENV JAVA_VERSION=11.0.4
-# Thu, 17 Oct 2019 08:29:46 GMT
-ENV JAVA_BASE_URL=https://github.com/AdoptOpenJDK/openjdk11-upstream-binaries/releases/download/jdk-11.0.4%2B11/OpenJDK11U-jdk_
-# Thu, 17 Oct 2019 08:29:46 GMT
-ENV JAVA_URL_VERSION=11.0.4_11
-# Thu, 17 Oct 2019 08:30:07 GMT
+# Fri, 18 Oct 2019 23:39:50 GMT
+ENV JAVA_VERSION=11.0.5
+# Fri, 18 Oct 2019 23:39:50 GMT
+ENV JAVA_BASE_URL=https://github.com/AdoptOpenJDK/openjdk11-upstream-binaries/releases/download/jdk-11.0.5%2B10/OpenJDK11U-jdk_
+# Fri, 18 Oct 2019 23:39:50 GMT
+ENV JAVA_URL_VERSION=11.0.5_10
+# Fri, 18 Oct 2019 23:40:16 GMT
 RUN set -eux; 		dpkgArch="$(dpkg --print-architecture)"; 	case "$dpkgArch" in 		amd64) upstreamArch='x64' ;; 		arm64) upstreamArch='aarch64' ;; 		*) echo >&2 "error: unsupported architecture: $dpkgArch" ;; 	esac; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		dirmngr 		gnupg 		wget 	; 	rm -rf /var/lib/apt/lists/*; 		wget -O openjdk.tgz.asc "${JAVA_BASE_URL}${upstreamArch}_linux_${JAVA_URL_VERSION}.tar.gz.sign"; 	wget -O openjdk.tgz "${JAVA_BASE_URL}${upstreamArch}_linux_${JAVA_URL_VERSION}.tar.gz" --progress=dot:giga; 		export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver ha.pool.sks-keyservers.net --keyserver-options no-self-sigs-only --recv-keys CA5F11C6CE22644D42C6AC4492EF8D39DC13168F; 	gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys EAC843EBD3EFDB98CC772FADA5CD6035332FA671; 	gpg --batch --list-sigs --keyid-format 0xLONG CA5F11C6CE22644D42C6AC4492EF8D39DC13168F 		| tee /dev/stderr 		| grep '0xA5CD6035332FA671' 		| grep 'Andrew Haley'; 	gpg --batch --verify openjdk.tgz.asc openjdk.tgz; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME"; 		mkdir -p "$JAVA_HOME"; 	tar --extract 		--file openjdk.tgz 		--directory "$JAVA_HOME" 		--strip-components 1 		--no-same-owner 	; 	rm openjdk.tgz*; 			apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark > /dev/null; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 		{ 		echo '#!/usr/bin/env bash'; 		echo 'set -Eeuo pipefail'; 		echo 'if ! [ -d "$JAVA_HOME" ]; then echo >&2 "error: missing JAVA_HOME environment variable"; exit 1; fi'; 		echo 'cacertsFile=; for f in "$JAVA_HOME/lib/security/cacerts" "$JAVA_HOME/jre/lib/security/cacerts"; do if [ -e "$f" ]; then cacertsFile="$f"; break; fi; done'; 		echo 'if [ -z "$cacertsFile" ] || ! [ -f "$cacertsFile" ]; then echo >&2 "error: failed to find cacerts file in $JAVA_HOME"; exit 1; fi'; 		echo 'trust extract --overwrite --format=java-cacerts --filter=ca-anchors --purpose=server-auth "$cacertsFile"'; 	} > /etc/ca-certificates/update.d/docker-openjdk; 	chmod +x /etc/ca-certificates/update.d/docker-openjdk; 	/etc/ca-certificates/update.d/docker-openjdk; 		find "$JAVA_HOME/lib" -name '*.so' -exec dirname '{}' ';' | sort -u > /etc/ld.so.conf.d/docker-openjdk.conf; 	ldconfig; 		javac --version; 	java --version
-# Thu, 17 Oct 2019 08:30:07 GMT
+# Fri, 18 Oct 2019 23:40:17 GMT
 CMD ["jshell"]
-# Fri, 18 Oct 2019 04:36:23 GMT
+# Sat, 19 Oct 2019 07:46:43 GMT
 LABEL maintainer=Martijn Koster "mak-docker@greenhills.co.uk"
-# Fri, 18 Oct 2019 04:36:23 GMT
+# Sat, 19 Oct 2019 07:46:43 GMT
 LABEL repository=https://github.com/docker-solr/docker-solr
-# Fri, 18 Oct 2019 04:36:23 GMT
+# Sat, 19 Oct 2019 07:46:44 GMT
 ARG SOLR_DOWNLOAD_SERVER
-# Fri, 18 Oct 2019 04:36:30 GMT
+# Sat, 19 Oct 2019 07:46:51 GMT
 RUN apt-get update &&   apt-get -y install acl dirmngr gpg lsof procps wget &&   rm -rf /var/lib/apt/lists/*
-# Fri, 18 Oct 2019 04:36:31 GMT
+# Sat, 19 Oct 2019 07:46:51 GMT
 ENV SOLR_USER=solr SOLR_UID=8983 SOLR_GROUP=solr SOLR_GID=8983 SOLR_VERSION=8.2.0 SOLR_URL=https://archive.apache.org/dist/lucene/solr/8.2.0/solr-8.2.0.tgz SOLR_SHA256=bfa4b39b236e5d714f4233138b8b5cb7e1996ddc0aad60052ce83c4b7bf33449 SOLR_KEYS=E58A6F4D5B2B48AC66D5E53BD4F181881A42F9E6 PATH=/opt/solr/bin:/opt/docker-solr/scripts:/usr/local/openjdk-11/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin SOLR_INCLUDE=/etc/default/solr.in.sh SOLR_HOME=/var/solr/data SOLR_PID_DIR=/var/solr SOLR_LOGS_DIR=/var/solr/logs LOG4J_PROPS=/var/solr/log4j2.xml
-# Fri, 18 Oct 2019 04:36:31 GMT
+# Sat, 19 Oct 2019 07:46:51 GMT
 ENV GOSU_VERSION=1.11
-# Fri, 18 Oct 2019 04:36:31 GMT
+# Sat, 19 Oct 2019 07:46:51 GMT
 ENV GOSU_KEY=B42F6819007F00F88E364FD4036A9C25BF357DD4
-# Fri, 18 Oct 2019 04:36:31 GMT
+# Sat, 19 Oct 2019 07:46:52 GMT
 ENV TINI_VERSION=v0.18.0
-# Fri, 18 Oct 2019 04:36:31 GMT
+# Sat, 19 Oct 2019 07:46:52 GMT
 ENV TINI_KEY=595E85A6B1B4779EA4DAAEC70B588DFF0527A9B7
-# Fri, 18 Oct 2019 04:36:32 GMT
+# Sat, 19 Oct 2019 07:46:53 GMT
 RUN groupadd -r --gid "$SOLR_GID" "$SOLR_GROUP" &&   useradd -r --uid "$SOLR_UID" --gid "$SOLR_GID" "$SOLR_USER"
-# Fri, 18 Oct 2019 04:36:34 GMT
+# Sat, 19 Oct 2019 07:46:54 GMT
 RUN set -e;   export GNUPGHOME="/tmp/gnupg_home" &&   mkdir -p "$GNUPGHOME" &&   chmod 700 "$GNUPGHOME" &&   echo "disable-ipv6" >> "$GNUPGHOME/dirmngr.conf" &&   for key in $SOLR_KEYS $GOSU_KEY $TINI_KEY; do     found='';     for server in       ha.pool.sks-keyservers.net       hkp://keyserver.ubuntu.com:80       hkp://p80.pool.sks-keyservers.net:80       pgp.mit.edu     ; do       echo "  trying $server for $key";       gpg --batch --keyserver "$server" --keyserver-options timeout=10 --recv-keys "$key" && found=yes && break;       gpg --batch --keyserver "$server" --keyserver-options timeout=10 --recv-keys "$key" && found=yes && break;     done;     test -z "$found" && echo >&2 "error: failed to fetch $key from several disparate servers -- network issues?" && exit 1;   done;   exit 0
-# Fri, 18 Oct 2019 04:36:48 GMT
+# Sat, 19 Oct 2019 07:47:08 GMT
 RUN set -e;   export GNUPGHOME="/tmp/gnupg_home" &&   pkgArch="$(dpkg --print-architecture | awk -F- '{ print $NF }')" &&   wget -O /usr/local/bin/gosu "https://github.com/tianon/gosu/releases/download/$GOSU_VERSION/gosu-$pkgArch" &&   wget -O /usr/local/bin/gosu.asc "https://github.com/tianon/gosu/releases/download/$GOSU_VERSION/gosu-$pkgArch.asc" &&   gpg --batch --verify /usr/local/bin/gosu.asc /usr/local/bin/gosu &&   rm /usr/local/bin/gosu.asc &&   chmod +x /usr/local/bin/gosu &&   gosu nobody true &&   wget -O /usr/local/bin/tini "https://github.com/krallin/tini/releases/download/${TINI_VERSION}/tini-$pkgArch" &&   wget -O /usr/local/bin/tini.asc "https://github.com/krallin/tini/releases/download/${TINI_VERSION}/tini-$pkgArch.asc" &&   gpg --batch --verify /usr/local/bin/tini.asc /usr/local/bin/tini;   rm /usr/local/bin/tini.asc &&   chmod +x /usr/local/bin/tini &&   tini --version &&   echo "downloading $SOLR_URL" &&   wget -nv "$SOLR_URL" -O "/opt/solr-$SOLR_VERSION.tgz" &&   echo "downloading $SOLR_URL.asc" &&   wget -nv "$SOLR_URL.asc" -O "/opt/solr-$SOLR_VERSION.tgz.asc" &&   echo "$SOLR_SHA256 */opt/solr-$SOLR_VERSION.tgz" | sha256sum -c - &&   (>&2 ls -l "/opt/solr-$SOLR_VERSION.tgz" "/opt/solr-$SOLR_VERSION.tgz.asc") &&   gpg --batch --verify "/opt/solr-$SOLR_VERSION.tgz.asc" "/opt/solr-$SOLR_VERSION.tgz" &&   tar -C /opt --extract --file "/opt/solr-$SOLR_VERSION.tgz" &&   (cd /opt && ln -s "solr-$SOLR_VERSION" solr) &&   rm "/opt/solr-$SOLR_VERSION.tgz"* &&   rm -Rf /opt/solr/docs/ &&   mkdir -p /opt/solr/server/solr/lib /docker-entrypoint-initdb.d /opt/docker-solr &&   chown -R 0:0 "/opt/solr-$SOLR_VERSION" &&   find "/opt/solr-$SOLR_VERSION" -type d -print0 | xargs -0 chmod 0755 &&   find "/opt/solr-$SOLR_VERSION" -type f -print0 | xargs -0 chmod 0644 &&   chmod -R 0755 "/opt/solr-$SOLR_VERSION/bin" "/opt/solr-$SOLR_VERSION/contrib/prometheus-exporter/bin/solr-exporter" /opt/solr-$SOLR_VERSION/server/scripts/cloud-scripts &&   cp /opt/solr/bin/solr.in.sh /etc/default/solr.in.sh &&   mv /opt/solr/bin/solr.in.sh /opt/solr/bin/solr.in.sh.orig &&   mv /opt/solr/bin/solr.in.cmd /opt/solr/bin/solr.in.cmd.orig &&   chown root:0 /etc/default/solr.in.sh &&   chmod 0664 /etc/default/solr.in.sh &&   mkdir -p /var/solr/data /var/solr/logs &&   (cd /opt/solr/server/solr && cp solr.xml zoo.cfg /var/solr/data/) &&   cp /opt/solr/server/resources/log4j2.xml /var/solr/log4j2.xml &&   find /var/solr -type d -print0 | xargs -0 chmod 0770 &&   find /var/solr -type f -print0 | xargs -0 chmod 0660 &&   sed -i -e "s/\"\$(whoami)\" == \"root\"/\$(id -u) == 0/" /opt/solr/bin/solr &&   sed -i -e 's/lsof -PniTCP:/lsof -t -PniTCP:/' /opt/solr/bin/solr &&   chown -R "0:0" /opt/solr-$SOLR_VERSION /docker-entrypoint-initdb.d /opt/docker-solr &&   chown -R "$SOLR_USER:0" /var/solr &&   { command -v gpgconf && gpgconf --kill all || :; } &&   rm -r "$GNUPGHOME"
-# Fri, 18 Oct 2019 04:36:48 GMT
+# Sat, 19 Oct 2019 07:47:09 GMT
 COPY --chown=0:0dir:7c0a3213efab10f68cd89ca4d91a13cb6084a7764ed341bf0617ce144943839b in /opt/docker-solr/scripts 
-# Fri, 18 Oct 2019 04:36:49 GMT
+# Sat, 19 Oct 2019 07:47:09 GMT
 VOLUME [/var/solr]
-# Fri, 18 Oct 2019 04:36:49 GMT
+# Sat, 19 Oct 2019 07:47:09 GMT
 EXPOSE 8983
-# Fri, 18 Oct 2019 04:36:49 GMT
+# Sat, 19 Oct 2019 07:47:09 GMT
 WORKDIR /opt/solr
-# Fri, 18 Oct 2019 04:36:49 GMT
+# Sat, 19 Oct 2019 07:47:09 GMT
 USER solr
-# Fri, 18 Oct 2019 04:36:49 GMT
+# Sat, 19 Oct 2019 07:47:10 GMT
 ENTRYPOINT ["docker-entrypoint.sh"]
-# Fri, 18 Oct 2019 04:36:49 GMT
+# Sat, 19 Oct 2019 07:47:10 GMT
 CMD ["solr-foreground"]
 ```
 
@@ -8269,29 +8269,29 @@ CMD ["solr-foreground"]
 		Last Modified: Thu, 17 Oct 2019 08:38:38 GMT  
 		Size: 210.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:208dbdb57f64b9643f7760ea628f0e2a21deff0af0b2eb33a0e66f6e3165fbfc`  
-		Last Modified: Thu, 17 Oct 2019 08:39:01 GMT  
-		Size: 196.0 MB (195975541 bytes)  
+	-	`sha256:ebc78a5f677c03a8f4aa611b558b55c4e42cf3113517ec2400695512c176d5ea`  
+		Last Modified: Fri, 18 Oct 2019 23:45:47 GMT  
+		Size: 196.1 MB (196134537 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:0b6e87939381d5f5bf58ebbda7764e5988a7f85de329392991840d7de2392b46`  
-		Last Modified: Fri, 18 Oct 2019 04:44:14 GMT  
-		Size: 5.5 MB (5452429 bytes)  
+	-	`sha256:5422c55f6c915b61b16c325a8d6c50b854cfa1a68d01cdf3257e0544867074c1`  
+		Last Modified: Sat, 19 Oct 2019 07:53:47 GMT  
+		Size: 5.5 MB (5452476 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:b81a437b54a898a4270dba9b20969a50a131a978941a55532f0fa1dc7f3b1091`  
-		Last Modified: Fri, 18 Oct 2019 04:44:13 GMT  
-		Size: 4.3 KB (4284 bytes)  
+	-	`sha256:71492f36b16b5a88138ccf6f9778c8510443a71904e3a4fe09a4b5531e088965`  
+		Last Modified: Sat, 19 Oct 2019 07:53:46 GMT  
+		Size: 4.3 KB (4286 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:ea68050ea3f3fc98bc66c6e420ee5b30a82f3c58b049ecc2eeb280567c768953`  
-		Last Modified: Fri, 18 Oct 2019 04:44:13 GMT  
-		Size: 24.4 KB (24398 bytes)  
+	-	`sha256:cb39ba4b1cda21b7ba259e1736daa099c2e766024b968b7a1e9bc87ca02e6744`  
+		Last Modified: Sat, 19 Oct 2019 07:53:45 GMT  
+		Size: 24.4 KB (24387 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:a2af4ff9ad024662bc211b93e48685d4e60fc8e68db66006bfad1762f5aa5a63`  
-		Last Modified: Fri, 18 Oct 2019 04:44:30 GMT  
-		Size: 182.9 MB (182943369 bytes)  
+	-	`sha256:92d36f98239a5e57185ce9a40f71aba0c34e42173931d1bcbad8bc5d5b5287d8`  
+		Last Modified: Sat, 19 Oct 2019 07:53:56 GMT  
+		Size: 182.9 MB (182943272 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:ef75043227b237b23835fd9bef702edad8ab6fa2da3e44d516e541b71cf8c576`  
-		Last Modified: Fri, 18 Oct 2019 04:44:13 GMT  
-		Size: 4.8 KB (4789 bytes)  
+	-	`sha256:cdb7f6c0ef8e321b7fd1f0b09716f1ad5592b2891096c39cd0c68421414363fe`  
+		Last Modified: Sat, 19 Oct 2019 07:53:45 GMT  
+		Size: 4.8 KB (4790 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `solr:8.2.0-slim` - linux; arm64 variant v8
@@ -8414,7 +8414,7 @@ CMD ["solr-foreground"]
 ## `solr:8.2-slim`
 
 ```console
-$ docker pull solr@sha256:de10425005e4414ad265d1ab8babdd1b62205dfbb24ff5de84c00755d9d75b6a
+$ docker pull solr@sha256:be12223417a20cce95279e5b547822ca8a8aa2ae669f2636374d7e39c0f2ca70
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -8425,14 +8425,14 @@ $ docker pull solr@sha256:de10425005e4414ad265d1ab8babdd1b62205dfbb24ff5de84c007
 ### `solr:8.2-slim` - linux; amd64
 
 ```console
-$ docker pull solr@sha256:6c1450fef6ccacb298b42eedb842b27f37ba64a309a50c1c69c480573255f52f
+$ docker pull solr@sha256:656970fdabeeefc382b5eec8789022e359cc7ac92eeb66eb0225cd4a4b402c25
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **414.8 MB (414761564 bytes)**  
+-	Total Size: **414.9 MB (414920502 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:de7d504414c285047272361980b1b2b81373e7db6c6893cfcd5f7477b127825b`
+-	Image ID: `sha256:c0c569638e58ccc0397d228ae1c145e105cb8879f91b4edfcd04b09f486f2b33`
 -	Entrypoint: `["docker-entrypoint.sh"]`
 -	Default Command: `["solr-foreground"]`
 
@@ -8451,53 +8451,53 @@ ENV JAVA_HOME=/usr/local/openjdk-11
 ENV PATH=/usr/local/openjdk-11/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
 # Thu, 17 Oct 2019 08:29:46 GMT
 RUN { echo '#/bin/sh'; echo 'echo "$JAVA_HOME"'; } > /usr/local/bin/docker-java-home && chmod +x /usr/local/bin/docker-java-home && [ "$JAVA_HOME" = "$(docker-java-home)" ]
-# Thu, 17 Oct 2019 08:29:46 GMT
-ENV JAVA_VERSION=11.0.4
-# Thu, 17 Oct 2019 08:29:46 GMT
-ENV JAVA_BASE_URL=https://github.com/AdoptOpenJDK/openjdk11-upstream-binaries/releases/download/jdk-11.0.4%2B11/OpenJDK11U-jdk_
-# Thu, 17 Oct 2019 08:29:46 GMT
-ENV JAVA_URL_VERSION=11.0.4_11
-# Thu, 17 Oct 2019 08:30:07 GMT
+# Fri, 18 Oct 2019 23:39:50 GMT
+ENV JAVA_VERSION=11.0.5
+# Fri, 18 Oct 2019 23:39:50 GMT
+ENV JAVA_BASE_URL=https://github.com/AdoptOpenJDK/openjdk11-upstream-binaries/releases/download/jdk-11.0.5%2B10/OpenJDK11U-jdk_
+# Fri, 18 Oct 2019 23:39:50 GMT
+ENV JAVA_URL_VERSION=11.0.5_10
+# Fri, 18 Oct 2019 23:40:16 GMT
 RUN set -eux; 		dpkgArch="$(dpkg --print-architecture)"; 	case "$dpkgArch" in 		amd64) upstreamArch='x64' ;; 		arm64) upstreamArch='aarch64' ;; 		*) echo >&2 "error: unsupported architecture: $dpkgArch" ;; 	esac; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		dirmngr 		gnupg 		wget 	; 	rm -rf /var/lib/apt/lists/*; 		wget -O openjdk.tgz.asc "${JAVA_BASE_URL}${upstreamArch}_linux_${JAVA_URL_VERSION}.tar.gz.sign"; 	wget -O openjdk.tgz "${JAVA_BASE_URL}${upstreamArch}_linux_${JAVA_URL_VERSION}.tar.gz" --progress=dot:giga; 		export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver ha.pool.sks-keyservers.net --keyserver-options no-self-sigs-only --recv-keys CA5F11C6CE22644D42C6AC4492EF8D39DC13168F; 	gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys EAC843EBD3EFDB98CC772FADA5CD6035332FA671; 	gpg --batch --list-sigs --keyid-format 0xLONG CA5F11C6CE22644D42C6AC4492EF8D39DC13168F 		| tee /dev/stderr 		| grep '0xA5CD6035332FA671' 		| grep 'Andrew Haley'; 	gpg --batch --verify openjdk.tgz.asc openjdk.tgz; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME"; 		mkdir -p "$JAVA_HOME"; 	tar --extract 		--file openjdk.tgz 		--directory "$JAVA_HOME" 		--strip-components 1 		--no-same-owner 	; 	rm openjdk.tgz*; 			apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark > /dev/null; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 		{ 		echo '#!/usr/bin/env bash'; 		echo 'set -Eeuo pipefail'; 		echo 'if ! [ -d "$JAVA_HOME" ]; then echo >&2 "error: missing JAVA_HOME environment variable"; exit 1; fi'; 		echo 'cacertsFile=; for f in "$JAVA_HOME/lib/security/cacerts" "$JAVA_HOME/jre/lib/security/cacerts"; do if [ -e "$f" ]; then cacertsFile="$f"; break; fi; done'; 		echo 'if [ -z "$cacertsFile" ] || ! [ -f "$cacertsFile" ]; then echo >&2 "error: failed to find cacerts file in $JAVA_HOME"; exit 1; fi'; 		echo 'trust extract --overwrite --format=java-cacerts --filter=ca-anchors --purpose=server-auth "$cacertsFile"'; 	} > /etc/ca-certificates/update.d/docker-openjdk; 	chmod +x /etc/ca-certificates/update.d/docker-openjdk; 	/etc/ca-certificates/update.d/docker-openjdk; 		find "$JAVA_HOME/lib" -name '*.so' -exec dirname '{}' ';' | sort -u > /etc/ld.so.conf.d/docker-openjdk.conf; 	ldconfig; 		javac --version; 	java --version
-# Thu, 17 Oct 2019 08:30:07 GMT
+# Fri, 18 Oct 2019 23:40:17 GMT
 CMD ["jshell"]
-# Fri, 18 Oct 2019 04:36:23 GMT
+# Sat, 19 Oct 2019 07:46:43 GMT
 LABEL maintainer=Martijn Koster "mak-docker@greenhills.co.uk"
-# Fri, 18 Oct 2019 04:36:23 GMT
+# Sat, 19 Oct 2019 07:46:43 GMT
 LABEL repository=https://github.com/docker-solr/docker-solr
-# Fri, 18 Oct 2019 04:36:23 GMT
+# Sat, 19 Oct 2019 07:46:44 GMT
 ARG SOLR_DOWNLOAD_SERVER
-# Fri, 18 Oct 2019 04:36:30 GMT
+# Sat, 19 Oct 2019 07:46:51 GMT
 RUN apt-get update &&   apt-get -y install acl dirmngr gpg lsof procps wget &&   rm -rf /var/lib/apt/lists/*
-# Fri, 18 Oct 2019 04:36:31 GMT
+# Sat, 19 Oct 2019 07:46:51 GMT
 ENV SOLR_USER=solr SOLR_UID=8983 SOLR_GROUP=solr SOLR_GID=8983 SOLR_VERSION=8.2.0 SOLR_URL=https://archive.apache.org/dist/lucene/solr/8.2.0/solr-8.2.0.tgz SOLR_SHA256=bfa4b39b236e5d714f4233138b8b5cb7e1996ddc0aad60052ce83c4b7bf33449 SOLR_KEYS=E58A6F4D5B2B48AC66D5E53BD4F181881A42F9E6 PATH=/opt/solr/bin:/opt/docker-solr/scripts:/usr/local/openjdk-11/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin SOLR_INCLUDE=/etc/default/solr.in.sh SOLR_HOME=/var/solr/data SOLR_PID_DIR=/var/solr SOLR_LOGS_DIR=/var/solr/logs LOG4J_PROPS=/var/solr/log4j2.xml
-# Fri, 18 Oct 2019 04:36:31 GMT
+# Sat, 19 Oct 2019 07:46:51 GMT
 ENV GOSU_VERSION=1.11
-# Fri, 18 Oct 2019 04:36:31 GMT
+# Sat, 19 Oct 2019 07:46:51 GMT
 ENV GOSU_KEY=B42F6819007F00F88E364FD4036A9C25BF357DD4
-# Fri, 18 Oct 2019 04:36:31 GMT
+# Sat, 19 Oct 2019 07:46:52 GMT
 ENV TINI_VERSION=v0.18.0
-# Fri, 18 Oct 2019 04:36:31 GMT
+# Sat, 19 Oct 2019 07:46:52 GMT
 ENV TINI_KEY=595E85A6B1B4779EA4DAAEC70B588DFF0527A9B7
-# Fri, 18 Oct 2019 04:36:32 GMT
+# Sat, 19 Oct 2019 07:46:53 GMT
 RUN groupadd -r --gid "$SOLR_GID" "$SOLR_GROUP" &&   useradd -r --uid "$SOLR_UID" --gid "$SOLR_GID" "$SOLR_USER"
-# Fri, 18 Oct 2019 04:36:34 GMT
+# Sat, 19 Oct 2019 07:46:54 GMT
 RUN set -e;   export GNUPGHOME="/tmp/gnupg_home" &&   mkdir -p "$GNUPGHOME" &&   chmod 700 "$GNUPGHOME" &&   echo "disable-ipv6" >> "$GNUPGHOME/dirmngr.conf" &&   for key in $SOLR_KEYS $GOSU_KEY $TINI_KEY; do     found='';     for server in       ha.pool.sks-keyservers.net       hkp://keyserver.ubuntu.com:80       hkp://p80.pool.sks-keyservers.net:80       pgp.mit.edu     ; do       echo "  trying $server for $key";       gpg --batch --keyserver "$server" --keyserver-options timeout=10 --recv-keys "$key" && found=yes && break;       gpg --batch --keyserver "$server" --keyserver-options timeout=10 --recv-keys "$key" && found=yes && break;     done;     test -z "$found" && echo >&2 "error: failed to fetch $key from several disparate servers -- network issues?" && exit 1;   done;   exit 0
-# Fri, 18 Oct 2019 04:36:48 GMT
+# Sat, 19 Oct 2019 07:47:08 GMT
 RUN set -e;   export GNUPGHOME="/tmp/gnupg_home" &&   pkgArch="$(dpkg --print-architecture | awk -F- '{ print $NF }')" &&   wget -O /usr/local/bin/gosu "https://github.com/tianon/gosu/releases/download/$GOSU_VERSION/gosu-$pkgArch" &&   wget -O /usr/local/bin/gosu.asc "https://github.com/tianon/gosu/releases/download/$GOSU_VERSION/gosu-$pkgArch.asc" &&   gpg --batch --verify /usr/local/bin/gosu.asc /usr/local/bin/gosu &&   rm /usr/local/bin/gosu.asc &&   chmod +x /usr/local/bin/gosu &&   gosu nobody true &&   wget -O /usr/local/bin/tini "https://github.com/krallin/tini/releases/download/${TINI_VERSION}/tini-$pkgArch" &&   wget -O /usr/local/bin/tini.asc "https://github.com/krallin/tini/releases/download/${TINI_VERSION}/tini-$pkgArch.asc" &&   gpg --batch --verify /usr/local/bin/tini.asc /usr/local/bin/tini;   rm /usr/local/bin/tini.asc &&   chmod +x /usr/local/bin/tini &&   tini --version &&   echo "downloading $SOLR_URL" &&   wget -nv "$SOLR_URL" -O "/opt/solr-$SOLR_VERSION.tgz" &&   echo "downloading $SOLR_URL.asc" &&   wget -nv "$SOLR_URL.asc" -O "/opt/solr-$SOLR_VERSION.tgz.asc" &&   echo "$SOLR_SHA256 */opt/solr-$SOLR_VERSION.tgz" | sha256sum -c - &&   (>&2 ls -l "/opt/solr-$SOLR_VERSION.tgz" "/opt/solr-$SOLR_VERSION.tgz.asc") &&   gpg --batch --verify "/opt/solr-$SOLR_VERSION.tgz.asc" "/opt/solr-$SOLR_VERSION.tgz" &&   tar -C /opt --extract --file "/opt/solr-$SOLR_VERSION.tgz" &&   (cd /opt && ln -s "solr-$SOLR_VERSION" solr) &&   rm "/opt/solr-$SOLR_VERSION.tgz"* &&   rm -Rf /opt/solr/docs/ &&   mkdir -p /opt/solr/server/solr/lib /docker-entrypoint-initdb.d /opt/docker-solr &&   chown -R 0:0 "/opt/solr-$SOLR_VERSION" &&   find "/opt/solr-$SOLR_VERSION" -type d -print0 | xargs -0 chmod 0755 &&   find "/opt/solr-$SOLR_VERSION" -type f -print0 | xargs -0 chmod 0644 &&   chmod -R 0755 "/opt/solr-$SOLR_VERSION/bin" "/opt/solr-$SOLR_VERSION/contrib/prometheus-exporter/bin/solr-exporter" /opt/solr-$SOLR_VERSION/server/scripts/cloud-scripts &&   cp /opt/solr/bin/solr.in.sh /etc/default/solr.in.sh &&   mv /opt/solr/bin/solr.in.sh /opt/solr/bin/solr.in.sh.orig &&   mv /opt/solr/bin/solr.in.cmd /opt/solr/bin/solr.in.cmd.orig &&   chown root:0 /etc/default/solr.in.sh &&   chmod 0664 /etc/default/solr.in.sh &&   mkdir -p /var/solr/data /var/solr/logs &&   (cd /opt/solr/server/solr && cp solr.xml zoo.cfg /var/solr/data/) &&   cp /opt/solr/server/resources/log4j2.xml /var/solr/log4j2.xml &&   find /var/solr -type d -print0 | xargs -0 chmod 0770 &&   find /var/solr -type f -print0 | xargs -0 chmod 0660 &&   sed -i -e "s/\"\$(whoami)\" == \"root\"/\$(id -u) == 0/" /opt/solr/bin/solr &&   sed -i -e 's/lsof -PniTCP:/lsof -t -PniTCP:/' /opt/solr/bin/solr &&   chown -R "0:0" /opt/solr-$SOLR_VERSION /docker-entrypoint-initdb.d /opt/docker-solr &&   chown -R "$SOLR_USER:0" /var/solr &&   { command -v gpgconf && gpgconf --kill all || :; } &&   rm -r "$GNUPGHOME"
-# Fri, 18 Oct 2019 04:36:48 GMT
+# Sat, 19 Oct 2019 07:47:09 GMT
 COPY --chown=0:0dir:7c0a3213efab10f68cd89ca4d91a13cb6084a7764ed341bf0617ce144943839b in /opt/docker-solr/scripts 
-# Fri, 18 Oct 2019 04:36:49 GMT
+# Sat, 19 Oct 2019 07:47:09 GMT
 VOLUME [/var/solr]
-# Fri, 18 Oct 2019 04:36:49 GMT
+# Sat, 19 Oct 2019 07:47:09 GMT
 EXPOSE 8983
-# Fri, 18 Oct 2019 04:36:49 GMT
+# Sat, 19 Oct 2019 07:47:09 GMT
 WORKDIR /opt/solr
-# Fri, 18 Oct 2019 04:36:49 GMT
+# Sat, 19 Oct 2019 07:47:09 GMT
 USER solr
-# Fri, 18 Oct 2019 04:36:49 GMT
+# Sat, 19 Oct 2019 07:47:10 GMT
 ENTRYPOINT ["docker-entrypoint.sh"]
-# Fri, 18 Oct 2019 04:36:49 GMT
+# Sat, 19 Oct 2019 07:47:10 GMT
 CMD ["solr-foreground"]
 ```
 
@@ -8514,29 +8514,29 @@ CMD ["solr-foreground"]
 		Last Modified: Thu, 17 Oct 2019 08:38:38 GMT  
 		Size: 210.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:208dbdb57f64b9643f7760ea628f0e2a21deff0af0b2eb33a0e66f6e3165fbfc`  
-		Last Modified: Thu, 17 Oct 2019 08:39:01 GMT  
-		Size: 196.0 MB (195975541 bytes)  
+	-	`sha256:ebc78a5f677c03a8f4aa611b558b55c4e42cf3113517ec2400695512c176d5ea`  
+		Last Modified: Fri, 18 Oct 2019 23:45:47 GMT  
+		Size: 196.1 MB (196134537 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:0b6e87939381d5f5bf58ebbda7764e5988a7f85de329392991840d7de2392b46`  
-		Last Modified: Fri, 18 Oct 2019 04:44:14 GMT  
-		Size: 5.5 MB (5452429 bytes)  
+	-	`sha256:5422c55f6c915b61b16c325a8d6c50b854cfa1a68d01cdf3257e0544867074c1`  
+		Last Modified: Sat, 19 Oct 2019 07:53:47 GMT  
+		Size: 5.5 MB (5452476 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:b81a437b54a898a4270dba9b20969a50a131a978941a55532f0fa1dc7f3b1091`  
-		Last Modified: Fri, 18 Oct 2019 04:44:13 GMT  
-		Size: 4.3 KB (4284 bytes)  
+	-	`sha256:71492f36b16b5a88138ccf6f9778c8510443a71904e3a4fe09a4b5531e088965`  
+		Last Modified: Sat, 19 Oct 2019 07:53:46 GMT  
+		Size: 4.3 KB (4286 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:ea68050ea3f3fc98bc66c6e420ee5b30a82f3c58b049ecc2eeb280567c768953`  
-		Last Modified: Fri, 18 Oct 2019 04:44:13 GMT  
-		Size: 24.4 KB (24398 bytes)  
+	-	`sha256:cb39ba4b1cda21b7ba259e1736daa099c2e766024b968b7a1e9bc87ca02e6744`  
+		Last Modified: Sat, 19 Oct 2019 07:53:45 GMT  
+		Size: 24.4 KB (24387 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:a2af4ff9ad024662bc211b93e48685d4e60fc8e68db66006bfad1762f5aa5a63`  
-		Last Modified: Fri, 18 Oct 2019 04:44:30 GMT  
-		Size: 182.9 MB (182943369 bytes)  
+	-	`sha256:92d36f98239a5e57185ce9a40f71aba0c34e42173931d1bcbad8bc5d5b5287d8`  
+		Last Modified: Sat, 19 Oct 2019 07:53:56 GMT  
+		Size: 182.9 MB (182943272 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:ef75043227b237b23835fd9bef702edad8ab6fa2da3e44d516e541b71cf8c576`  
-		Last Modified: Fri, 18 Oct 2019 04:44:13 GMT  
-		Size: 4.8 KB (4789 bytes)  
+	-	`sha256:cdb7f6c0ef8e321b7fd1f0b09716f1ad5592b2891096c39cd0c68421414363fe`  
+		Last Modified: Sat, 19 Oct 2019 07:53:45 GMT  
+		Size: 4.8 KB (4790 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `solr:8.2-slim` - linux; arm64 variant v8
@@ -8659,7 +8659,7 @@ CMD ["solr-foreground"]
 ## `solr:8-slim`
 
 ```console
-$ docker pull solr@sha256:de10425005e4414ad265d1ab8babdd1b62205dfbb24ff5de84c00755d9d75b6a
+$ docker pull solr@sha256:be12223417a20cce95279e5b547822ca8a8aa2ae669f2636374d7e39c0f2ca70
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -8670,14 +8670,14 @@ $ docker pull solr@sha256:de10425005e4414ad265d1ab8babdd1b62205dfbb24ff5de84c007
 ### `solr:8-slim` - linux; amd64
 
 ```console
-$ docker pull solr@sha256:6c1450fef6ccacb298b42eedb842b27f37ba64a309a50c1c69c480573255f52f
+$ docker pull solr@sha256:656970fdabeeefc382b5eec8789022e359cc7ac92eeb66eb0225cd4a4b402c25
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **414.8 MB (414761564 bytes)**  
+-	Total Size: **414.9 MB (414920502 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:de7d504414c285047272361980b1b2b81373e7db6c6893cfcd5f7477b127825b`
+-	Image ID: `sha256:c0c569638e58ccc0397d228ae1c145e105cb8879f91b4edfcd04b09f486f2b33`
 -	Entrypoint: `["docker-entrypoint.sh"]`
 -	Default Command: `["solr-foreground"]`
 
@@ -8696,53 +8696,53 @@ ENV JAVA_HOME=/usr/local/openjdk-11
 ENV PATH=/usr/local/openjdk-11/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
 # Thu, 17 Oct 2019 08:29:46 GMT
 RUN { echo '#/bin/sh'; echo 'echo "$JAVA_HOME"'; } > /usr/local/bin/docker-java-home && chmod +x /usr/local/bin/docker-java-home && [ "$JAVA_HOME" = "$(docker-java-home)" ]
-# Thu, 17 Oct 2019 08:29:46 GMT
-ENV JAVA_VERSION=11.0.4
-# Thu, 17 Oct 2019 08:29:46 GMT
-ENV JAVA_BASE_URL=https://github.com/AdoptOpenJDK/openjdk11-upstream-binaries/releases/download/jdk-11.0.4%2B11/OpenJDK11U-jdk_
-# Thu, 17 Oct 2019 08:29:46 GMT
-ENV JAVA_URL_VERSION=11.0.4_11
-# Thu, 17 Oct 2019 08:30:07 GMT
+# Fri, 18 Oct 2019 23:39:50 GMT
+ENV JAVA_VERSION=11.0.5
+# Fri, 18 Oct 2019 23:39:50 GMT
+ENV JAVA_BASE_URL=https://github.com/AdoptOpenJDK/openjdk11-upstream-binaries/releases/download/jdk-11.0.5%2B10/OpenJDK11U-jdk_
+# Fri, 18 Oct 2019 23:39:50 GMT
+ENV JAVA_URL_VERSION=11.0.5_10
+# Fri, 18 Oct 2019 23:40:16 GMT
 RUN set -eux; 		dpkgArch="$(dpkg --print-architecture)"; 	case "$dpkgArch" in 		amd64) upstreamArch='x64' ;; 		arm64) upstreamArch='aarch64' ;; 		*) echo >&2 "error: unsupported architecture: $dpkgArch" ;; 	esac; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		dirmngr 		gnupg 		wget 	; 	rm -rf /var/lib/apt/lists/*; 		wget -O openjdk.tgz.asc "${JAVA_BASE_URL}${upstreamArch}_linux_${JAVA_URL_VERSION}.tar.gz.sign"; 	wget -O openjdk.tgz "${JAVA_BASE_URL}${upstreamArch}_linux_${JAVA_URL_VERSION}.tar.gz" --progress=dot:giga; 		export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver ha.pool.sks-keyservers.net --keyserver-options no-self-sigs-only --recv-keys CA5F11C6CE22644D42C6AC4492EF8D39DC13168F; 	gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys EAC843EBD3EFDB98CC772FADA5CD6035332FA671; 	gpg --batch --list-sigs --keyid-format 0xLONG CA5F11C6CE22644D42C6AC4492EF8D39DC13168F 		| tee /dev/stderr 		| grep '0xA5CD6035332FA671' 		| grep 'Andrew Haley'; 	gpg --batch --verify openjdk.tgz.asc openjdk.tgz; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME"; 		mkdir -p "$JAVA_HOME"; 	tar --extract 		--file openjdk.tgz 		--directory "$JAVA_HOME" 		--strip-components 1 		--no-same-owner 	; 	rm openjdk.tgz*; 			apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark > /dev/null; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 		{ 		echo '#!/usr/bin/env bash'; 		echo 'set -Eeuo pipefail'; 		echo 'if ! [ -d "$JAVA_HOME" ]; then echo >&2 "error: missing JAVA_HOME environment variable"; exit 1; fi'; 		echo 'cacertsFile=; for f in "$JAVA_HOME/lib/security/cacerts" "$JAVA_HOME/jre/lib/security/cacerts"; do if [ -e "$f" ]; then cacertsFile="$f"; break; fi; done'; 		echo 'if [ -z "$cacertsFile" ] || ! [ -f "$cacertsFile" ]; then echo >&2 "error: failed to find cacerts file in $JAVA_HOME"; exit 1; fi'; 		echo 'trust extract --overwrite --format=java-cacerts --filter=ca-anchors --purpose=server-auth "$cacertsFile"'; 	} > /etc/ca-certificates/update.d/docker-openjdk; 	chmod +x /etc/ca-certificates/update.d/docker-openjdk; 	/etc/ca-certificates/update.d/docker-openjdk; 		find "$JAVA_HOME/lib" -name '*.so' -exec dirname '{}' ';' | sort -u > /etc/ld.so.conf.d/docker-openjdk.conf; 	ldconfig; 		javac --version; 	java --version
-# Thu, 17 Oct 2019 08:30:07 GMT
+# Fri, 18 Oct 2019 23:40:17 GMT
 CMD ["jshell"]
-# Fri, 18 Oct 2019 04:36:23 GMT
+# Sat, 19 Oct 2019 07:46:43 GMT
 LABEL maintainer=Martijn Koster "mak-docker@greenhills.co.uk"
-# Fri, 18 Oct 2019 04:36:23 GMT
+# Sat, 19 Oct 2019 07:46:43 GMT
 LABEL repository=https://github.com/docker-solr/docker-solr
-# Fri, 18 Oct 2019 04:36:23 GMT
+# Sat, 19 Oct 2019 07:46:44 GMT
 ARG SOLR_DOWNLOAD_SERVER
-# Fri, 18 Oct 2019 04:36:30 GMT
+# Sat, 19 Oct 2019 07:46:51 GMT
 RUN apt-get update &&   apt-get -y install acl dirmngr gpg lsof procps wget &&   rm -rf /var/lib/apt/lists/*
-# Fri, 18 Oct 2019 04:36:31 GMT
+# Sat, 19 Oct 2019 07:46:51 GMT
 ENV SOLR_USER=solr SOLR_UID=8983 SOLR_GROUP=solr SOLR_GID=8983 SOLR_VERSION=8.2.0 SOLR_URL=https://archive.apache.org/dist/lucene/solr/8.2.0/solr-8.2.0.tgz SOLR_SHA256=bfa4b39b236e5d714f4233138b8b5cb7e1996ddc0aad60052ce83c4b7bf33449 SOLR_KEYS=E58A6F4D5B2B48AC66D5E53BD4F181881A42F9E6 PATH=/opt/solr/bin:/opt/docker-solr/scripts:/usr/local/openjdk-11/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin SOLR_INCLUDE=/etc/default/solr.in.sh SOLR_HOME=/var/solr/data SOLR_PID_DIR=/var/solr SOLR_LOGS_DIR=/var/solr/logs LOG4J_PROPS=/var/solr/log4j2.xml
-# Fri, 18 Oct 2019 04:36:31 GMT
+# Sat, 19 Oct 2019 07:46:51 GMT
 ENV GOSU_VERSION=1.11
-# Fri, 18 Oct 2019 04:36:31 GMT
+# Sat, 19 Oct 2019 07:46:51 GMT
 ENV GOSU_KEY=B42F6819007F00F88E364FD4036A9C25BF357DD4
-# Fri, 18 Oct 2019 04:36:31 GMT
+# Sat, 19 Oct 2019 07:46:52 GMT
 ENV TINI_VERSION=v0.18.0
-# Fri, 18 Oct 2019 04:36:31 GMT
+# Sat, 19 Oct 2019 07:46:52 GMT
 ENV TINI_KEY=595E85A6B1B4779EA4DAAEC70B588DFF0527A9B7
-# Fri, 18 Oct 2019 04:36:32 GMT
+# Sat, 19 Oct 2019 07:46:53 GMT
 RUN groupadd -r --gid "$SOLR_GID" "$SOLR_GROUP" &&   useradd -r --uid "$SOLR_UID" --gid "$SOLR_GID" "$SOLR_USER"
-# Fri, 18 Oct 2019 04:36:34 GMT
+# Sat, 19 Oct 2019 07:46:54 GMT
 RUN set -e;   export GNUPGHOME="/tmp/gnupg_home" &&   mkdir -p "$GNUPGHOME" &&   chmod 700 "$GNUPGHOME" &&   echo "disable-ipv6" >> "$GNUPGHOME/dirmngr.conf" &&   for key in $SOLR_KEYS $GOSU_KEY $TINI_KEY; do     found='';     for server in       ha.pool.sks-keyservers.net       hkp://keyserver.ubuntu.com:80       hkp://p80.pool.sks-keyservers.net:80       pgp.mit.edu     ; do       echo "  trying $server for $key";       gpg --batch --keyserver "$server" --keyserver-options timeout=10 --recv-keys "$key" && found=yes && break;       gpg --batch --keyserver "$server" --keyserver-options timeout=10 --recv-keys "$key" && found=yes && break;     done;     test -z "$found" && echo >&2 "error: failed to fetch $key from several disparate servers -- network issues?" && exit 1;   done;   exit 0
-# Fri, 18 Oct 2019 04:36:48 GMT
+# Sat, 19 Oct 2019 07:47:08 GMT
 RUN set -e;   export GNUPGHOME="/tmp/gnupg_home" &&   pkgArch="$(dpkg --print-architecture | awk -F- '{ print $NF }')" &&   wget -O /usr/local/bin/gosu "https://github.com/tianon/gosu/releases/download/$GOSU_VERSION/gosu-$pkgArch" &&   wget -O /usr/local/bin/gosu.asc "https://github.com/tianon/gosu/releases/download/$GOSU_VERSION/gosu-$pkgArch.asc" &&   gpg --batch --verify /usr/local/bin/gosu.asc /usr/local/bin/gosu &&   rm /usr/local/bin/gosu.asc &&   chmod +x /usr/local/bin/gosu &&   gosu nobody true &&   wget -O /usr/local/bin/tini "https://github.com/krallin/tini/releases/download/${TINI_VERSION}/tini-$pkgArch" &&   wget -O /usr/local/bin/tini.asc "https://github.com/krallin/tini/releases/download/${TINI_VERSION}/tini-$pkgArch.asc" &&   gpg --batch --verify /usr/local/bin/tini.asc /usr/local/bin/tini;   rm /usr/local/bin/tini.asc &&   chmod +x /usr/local/bin/tini &&   tini --version &&   echo "downloading $SOLR_URL" &&   wget -nv "$SOLR_URL" -O "/opt/solr-$SOLR_VERSION.tgz" &&   echo "downloading $SOLR_URL.asc" &&   wget -nv "$SOLR_URL.asc" -O "/opt/solr-$SOLR_VERSION.tgz.asc" &&   echo "$SOLR_SHA256 */opt/solr-$SOLR_VERSION.tgz" | sha256sum -c - &&   (>&2 ls -l "/opt/solr-$SOLR_VERSION.tgz" "/opt/solr-$SOLR_VERSION.tgz.asc") &&   gpg --batch --verify "/opt/solr-$SOLR_VERSION.tgz.asc" "/opt/solr-$SOLR_VERSION.tgz" &&   tar -C /opt --extract --file "/opt/solr-$SOLR_VERSION.tgz" &&   (cd /opt && ln -s "solr-$SOLR_VERSION" solr) &&   rm "/opt/solr-$SOLR_VERSION.tgz"* &&   rm -Rf /opt/solr/docs/ &&   mkdir -p /opt/solr/server/solr/lib /docker-entrypoint-initdb.d /opt/docker-solr &&   chown -R 0:0 "/opt/solr-$SOLR_VERSION" &&   find "/opt/solr-$SOLR_VERSION" -type d -print0 | xargs -0 chmod 0755 &&   find "/opt/solr-$SOLR_VERSION" -type f -print0 | xargs -0 chmod 0644 &&   chmod -R 0755 "/opt/solr-$SOLR_VERSION/bin" "/opt/solr-$SOLR_VERSION/contrib/prometheus-exporter/bin/solr-exporter" /opt/solr-$SOLR_VERSION/server/scripts/cloud-scripts &&   cp /opt/solr/bin/solr.in.sh /etc/default/solr.in.sh &&   mv /opt/solr/bin/solr.in.sh /opt/solr/bin/solr.in.sh.orig &&   mv /opt/solr/bin/solr.in.cmd /opt/solr/bin/solr.in.cmd.orig &&   chown root:0 /etc/default/solr.in.sh &&   chmod 0664 /etc/default/solr.in.sh &&   mkdir -p /var/solr/data /var/solr/logs &&   (cd /opt/solr/server/solr && cp solr.xml zoo.cfg /var/solr/data/) &&   cp /opt/solr/server/resources/log4j2.xml /var/solr/log4j2.xml &&   find /var/solr -type d -print0 | xargs -0 chmod 0770 &&   find /var/solr -type f -print0 | xargs -0 chmod 0660 &&   sed -i -e "s/\"\$(whoami)\" == \"root\"/\$(id -u) == 0/" /opt/solr/bin/solr &&   sed -i -e 's/lsof -PniTCP:/lsof -t -PniTCP:/' /opt/solr/bin/solr &&   chown -R "0:0" /opt/solr-$SOLR_VERSION /docker-entrypoint-initdb.d /opt/docker-solr &&   chown -R "$SOLR_USER:0" /var/solr &&   { command -v gpgconf && gpgconf --kill all || :; } &&   rm -r "$GNUPGHOME"
-# Fri, 18 Oct 2019 04:36:48 GMT
+# Sat, 19 Oct 2019 07:47:09 GMT
 COPY --chown=0:0dir:7c0a3213efab10f68cd89ca4d91a13cb6084a7764ed341bf0617ce144943839b in /opt/docker-solr/scripts 
-# Fri, 18 Oct 2019 04:36:49 GMT
+# Sat, 19 Oct 2019 07:47:09 GMT
 VOLUME [/var/solr]
-# Fri, 18 Oct 2019 04:36:49 GMT
+# Sat, 19 Oct 2019 07:47:09 GMT
 EXPOSE 8983
-# Fri, 18 Oct 2019 04:36:49 GMT
+# Sat, 19 Oct 2019 07:47:09 GMT
 WORKDIR /opt/solr
-# Fri, 18 Oct 2019 04:36:49 GMT
+# Sat, 19 Oct 2019 07:47:09 GMT
 USER solr
-# Fri, 18 Oct 2019 04:36:49 GMT
+# Sat, 19 Oct 2019 07:47:10 GMT
 ENTRYPOINT ["docker-entrypoint.sh"]
-# Fri, 18 Oct 2019 04:36:49 GMT
+# Sat, 19 Oct 2019 07:47:10 GMT
 CMD ["solr-foreground"]
 ```
 
@@ -8759,29 +8759,29 @@ CMD ["solr-foreground"]
 		Last Modified: Thu, 17 Oct 2019 08:38:38 GMT  
 		Size: 210.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:208dbdb57f64b9643f7760ea628f0e2a21deff0af0b2eb33a0e66f6e3165fbfc`  
-		Last Modified: Thu, 17 Oct 2019 08:39:01 GMT  
-		Size: 196.0 MB (195975541 bytes)  
+	-	`sha256:ebc78a5f677c03a8f4aa611b558b55c4e42cf3113517ec2400695512c176d5ea`  
+		Last Modified: Fri, 18 Oct 2019 23:45:47 GMT  
+		Size: 196.1 MB (196134537 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:0b6e87939381d5f5bf58ebbda7764e5988a7f85de329392991840d7de2392b46`  
-		Last Modified: Fri, 18 Oct 2019 04:44:14 GMT  
-		Size: 5.5 MB (5452429 bytes)  
+	-	`sha256:5422c55f6c915b61b16c325a8d6c50b854cfa1a68d01cdf3257e0544867074c1`  
+		Last Modified: Sat, 19 Oct 2019 07:53:47 GMT  
+		Size: 5.5 MB (5452476 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:b81a437b54a898a4270dba9b20969a50a131a978941a55532f0fa1dc7f3b1091`  
-		Last Modified: Fri, 18 Oct 2019 04:44:13 GMT  
-		Size: 4.3 KB (4284 bytes)  
+	-	`sha256:71492f36b16b5a88138ccf6f9778c8510443a71904e3a4fe09a4b5531e088965`  
+		Last Modified: Sat, 19 Oct 2019 07:53:46 GMT  
+		Size: 4.3 KB (4286 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:ea68050ea3f3fc98bc66c6e420ee5b30a82f3c58b049ecc2eeb280567c768953`  
-		Last Modified: Fri, 18 Oct 2019 04:44:13 GMT  
-		Size: 24.4 KB (24398 bytes)  
+	-	`sha256:cb39ba4b1cda21b7ba259e1736daa099c2e766024b968b7a1e9bc87ca02e6744`  
+		Last Modified: Sat, 19 Oct 2019 07:53:45 GMT  
+		Size: 24.4 KB (24387 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:a2af4ff9ad024662bc211b93e48685d4e60fc8e68db66006bfad1762f5aa5a63`  
-		Last Modified: Fri, 18 Oct 2019 04:44:30 GMT  
-		Size: 182.9 MB (182943369 bytes)  
+	-	`sha256:92d36f98239a5e57185ce9a40f71aba0c34e42173931d1bcbad8bc5d5b5287d8`  
+		Last Modified: Sat, 19 Oct 2019 07:53:56 GMT  
+		Size: 182.9 MB (182943272 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:ef75043227b237b23835fd9bef702edad8ab6fa2da3e44d516e541b71cf8c576`  
-		Last Modified: Fri, 18 Oct 2019 04:44:13 GMT  
-		Size: 4.8 KB (4789 bytes)  
+	-	`sha256:cdb7f6c0ef8e321b7fd1f0b09716f1ad5592b2891096c39cd0c68421414363fe`  
+		Last Modified: Sat, 19 Oct 2019 07:53:45 GMT  
+		Size: 4.8 KB (4790 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `solr:8-slim` - linux; arm64 variant v8
@@ -8904,7 +8904,7 @@ CMD ["solr-foreground"]
 ## `solr:latest`
 
 ```console
-$ docker pull solr@sha256:7930df1f5fb513c223cde5ee506440f7fafe66b404fb7ad6f5bada82886b490f
+$ docker pull solr@sha256:19b45b08f398460db66d2ba76a95e03a07b75619952d61e82f3bb1fe384209ef
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -8915,14 +8915,14 @@ $ docker pull solr@sha256:7930df1f5fb513c223cde5ee506440f7fafe66b404fb7ad6f5bada
 ### `solr:latest` - linux; amd64
 
 ```console
-$ docker pull solr@sha256:3c5f062f54fb11adf59220f29d6bb142b0bd16fad2b1dda91b080973c1ffa5bb
+$ docker pull solr@sha256:abafe8e6b31e7cff2c9166e451e27d8c306297bb2fa3dc0c4e4a66cf8906dff8
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **495.1 MB (495104965 bytes)**  
+-	Total Size: **495.3 MB (495261324 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:599bf6c5d04ef4836e442ad45febd9784d1ed1146f85fa8f288fafe46bd52a23`
+-	Image ID: `sha256:6946dff5c83262f8341ecd874e6b89c2643b92e2a255b080cbe6fbfdc7c884fe`
 -	Entrypoint: `["docker-entrypoint.sh"]`
 -	Default Command: `["solr-foreground"]`
 
@@ -8947,53 +8947,53 @@ ENV JAVA_HOME=/usr/local/openjdk-11
 ENV PATH=/usr/local/openjdk-11/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
 # Thu, 17 Oct 2019 08:29:25 GMT
 RUN { echo '#/bin/sh'; echo 'echo "$JAVA_HOME"'; } > /usr/local/bin/docker-java-home && chmod +x /usr/local/bin/docker-java-home && [ "$JAVA_HOME" = "$(docker-java-home)" ]
-# Thu, 17 Oct 2019 08:29:25 GMT
-ENV JAVA_VERSION=11.0.4
-# Thu, 17 Oct 2019 08:29:25 GMT
-ENV JAVA_BASE_URL=https://github.com/AdoptOpenJDK/openjdk11-upstream-binaries/releases/download/jdk-11.0.4%2B11/OpenJDK11U-jdk_
-# Thu, 17 Oct 2019 08:29:26 GMT
-ENV JAVA_URL_VERSION=11.0.4_11
-# Thu, 17 Oct 2019 08:29:39 GMT
+# Fri, 18 Oct 2019 23:39:21 GMT
+ENV JAVA_VERSION=11.0.5
+# Fri, 18 Oct 2019 23:39:21 GMT
+ENV JAVA_BASE_URL=https://github.com/AdoptOpenJDK/openjdk11-upstream-binaries/releases/download/jdk-11.0.5%2B10/OpenJDK11U-jdk_
+# Fri, 18 Oct 2019 23:39:21 GMT
+ENV JAVA_URL_VERSION=11.0.5_10
+# Fri, 18 Oct 2019 23:39:41 GMT
 RUN set -eux; 		dpkgArch="$(dpkg --print-architecture)"; 	case "$dpkgArch" in 		amd64) upstreamArch='x64' ;; 		arm64) upstreamArch='aarch64' ;; 		*) echo >&2 "error: unsupported architecture: $dpkgArch" ;; 	esac; 		wget -O openjdk.tgz.asc "${JAVA_BASE_URL}${upstreamArch}_linux_${JAVA_URL_VERSION}.tar.gz.sign"; 	wget -O openjdk.tgz "${JAVA_BASE_URL}${upstreamArch}_linux_${JAVA_URL_VERSION}.tar.gz" --progress=dot:giga; 		export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver ha.pool.sks-keyservers.net --keyserver-options no-self-sigs-only --recv-keys CA5F11C6CE22644D42C6AC4492EF8D39DC13168F; 	gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys EAC843EBD3EFDB98CC772FADA5CD6035332FA671; 	gpg --batch --list-sigs --keyid-format 0xLONG CA5F11C6CE22644D42C6AC4492EF8D39DC13168F 		| tee /dev/stderr 		| grep '0xA5CD6035332FA671' 		| grep 'Andrew Haley'; 	gpg --batch --verify openjdk.tgz.asc openjdk.tgz; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME"; 		mkdir -p "$JAVA_HOME"; 	tar --extract 		--file openjdk.tgz 		--directory "$JAVA_HOME" 		--strip-components 1 		--no-same-owner 	; 	rm openjdk.tgz*; 			{ 		echo '#!/usr/bin/env bash'; 		echo 'set -Eeuo pipefail'; 		echo 'if ! [ -d "$JAVA_HOME" ]; then echo >&2 "error: missing JAVA_HOME environment variable"; exit 1; fi'; 		echo 'cacertsFile=; for f in "$JAVA_HOME/lib/security/cacerts" "$JAVA_HOME/jre/lib/security/cacerts"; do if [ -e "$f" ]; then cacertsFile="$f"; break; fi; done'; 		echo 'if [ -z "$cacertsFile" ] || ! [ -f "$cacertsFile" ]; then echo >&2 "error: failed to find cacerts file in $JAVA_HOME"; exit 1; fi'; 		echo 'trust extract --overwrite --format=java-cacerts --filter=ca-anchors --purpose=server-auth "$cacertsFile"'; 	} > /etc/ca-certificates/update.d/docker-openjdk; 	chmod +x /etc/ca-certificates/update.d/docker-openjdk; 	/etc/ca-certificates/update.d/docker-openjdk; 		find "$JAVA_HOME/lib" -name '*.so' -exec dirname '{}' ';' | sort -u > /etc/ld.so.conf.d/docker-openjdk.conf; 	ldconfig; 		javac --version; 	java --version
-# Thu, 17 Oct 2019 08:29:39 GMT
+# Fri, 18 Oct 2019 23:39:42 GMT
 CMD ["jshell"]
-# Fri, 18 Oct 2019 04:35:50 GMT
+# Sat, 19 Oct 2019 07:46:10 GMT
 LABEL maintainer=Martijn Koster "mak-docker@greenhills.co.uk"
-# Fri, 18 Oct 2019 04:35:50 GMT
+# Sat, 19 Oct 2019 07:46:11 GMT
 LABEL repository=https://github.com/docker-solr/docker-solr
-# Fri, 18 Oct 2019 04:35:50 GMT
+# Sat, 19 Oct 2019 07:46:11 GMT
 ARG SOLR_DOWNLOAD_SERVER
-# Fri, 18 Oct 2019 04:35:55 GMT
+# Sat, 19 Oct 2019 07:46:15 GMT
 RUN apt-get update &&   apt-get -y install acl dirmngr gpg lsof procps wget &&   rm -rf /var/lib/apt/lists/*
-# Fri, 18 Oct 2019 04:35:55 GMT
+# Sat, 19 Oct 2019 07:46:15 GMT
 ENV SOLR_USER=solr SOLR_UID=8983 SOLR_GROUP=solr SOLR_GID=8983 SOLR_VERSION=8.2.0 SOLR_URL=https://archive.apache.org/dist/lucene/solr/8.2.0/solr-8.2.0.tgz SOLR_SHA256=bfa4b39b236e5d714f4233138b8b5cb7e1996ddc0aad60052ce83c4b7bf33449 SOLR_KEYS=E58A6F4D5B2B48AC66D5E53BD4F181881A42F9E6 PATH=/opt/solr/bin:/opt/docker-solr/scripts:/usr/local/openjdk-11/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin SOLR_INCLUDE=/etc/default/solr.in.sh SOLR_HOME=/var/solr/data SOLR_PID_DIR=/var/solr SOLR_LOGS_DIR=/var/solr/logs LOG4J_PROPS=/var/solr/log4j2.xml
-# Fri, 18 Oct 2019 04:35:55 GMT
+# Sat, 19 Oct 2019 07:46:15 GMT
 ENV GOSU_VERSION=1.11
-# Fri, 18 Oct 2019 04:35:55 GMT
+# Sat, 19 Oct 2019 07:46:16 GMT
 ENV GOSU_KEY=B42F6819007F00F88E364FD4036A9C25BF357DD4
-# Fri, 18 Oct 2019 04:35:56 GMT
+# Sat, 19 Oct 2019 07:46:16 GMT
 ENV TINI_VERSION=v0.18.0
-# Fri, 18 Oct 2019 04:35:56 GMT
+# Sat, 19 Oct 2019 07:46:16 GMT
 ENV TINI_KEY=595E85A6B1B4779EA4DAAEC70B588DFF0527A9B7
-# Fri, 18 Oct 2019 04:35:56 GMT
+# Sat, 19 Oct 2019 07:46:17 GMT
 RUN groupadd -r --gid "$SOLR_GID" "$SOLR_GROUP" &&   useradd -r --uid "$SOLR_UID" --gid "$SOLR_GID" "$SOLR_USER"
-# Fri, 18 Oct 2019 04:36:00 GMT
+# Sat, 19 Oct 2019 07:46:20 GMT
 RUN set -e;   export GNUPGHOME="/tmp/gnupg_home" &&   mkdir -p "$GNUPGHOME" &&   chmod 700 "$GNUPGHOME" &&   echo "disable-ipv6" >> "$GNUPGHOME/dirmngr.conf" &&   for key in $SOLR_KEYS $GOSU_KEY $TINI_KEY; do     found='';     for server in       ha.pool.sks-keyservers.net       hkp://keyserver.ubuntu.com:80       hkp://p80.pool.sks-keyservers.net:80       pgp.mit.edu     ; do       echo "  trying $server for $key";       gpg --batch --keyserver "$server" --keyserver-options timeout=10 --recv-keys "$key" && found=yes && break;       gpg --batch --keyserver "$server" --keyserver-options timeout=10 --recv-keys "$key" && found=yes && break;     done;     test -z "$found" && echo >&2 "error: failed to fetch $key from several disparate servers -- network issues?" && exit 1;   done;   exit 0
-# Fri, 18 Oct 2019 04:36:14 GMT
+# Sat, 19 Oct 2019 07:46:35 GMT
 RUN set -e;   export GNUPGHOME="/tmp/gnupg_home" &&   pkgArch="$(dpkg --print-architecture | awk -F- '{ print $NF }')" &&   wget -O /usr/local/bin/gosu "https://github.com/tianon/gosu/releases/download/$GOSU_VERSION/gosu-$pkgArch" &&   wget -O /usr/local/bin/gosu.asc "https://github.com/tianon/gosu/releases/download/$GOSU_VERSION/gosu-$pkgArch.asc" &&   gpg --batch --verify /usr/local/bin/gosu.asc /usr/local/bin/gosu &&   rm /usr/local/bin/gosu.asc &&   chmod +x /usr/local/bin/gosu &&   gosu nobody true &&   wget -O /usr/local/bin/tini "https://github.com/krallin/tini/releases/download/${TINI_VERSION}/tini-$pkgArch" &&   wget -O /usr/local/bin/tini.asc "https://github.com/krallin/tini/releases/download/${TINI_VERSION}/tini-$pkgArch.asc" &&   gpg --batch --verify /usr/local/bin/tini.asc /usr/local/bin/tini;   rm /usr/local/bin/tini.asc &&   chmod +x /usr/local/bin/tini &&   tini --version &&   echo "downloading $SOLR_URL" &&   wget -nv "$SOLR_URL" -O "/opt/solr-$SOLR_VERSION.tgz" &&   echo "downloading $SOLR_URL.asc" &&   wget -nv "$SOLR_URL.asc" -O "/opt/solr-$SOLR_VERSION.tgz.asc" &&   echo "$SOLR_SHA256 */opt/solr-$SOLR_VERSION.tgz" | sha256sum -c - &&   (>&2 ls -l "/opt/solr-$SOLR_VERSION.tgz" "/opt/solr-$SOLR_VERSION.tgz.asc") &&   gpg --batch --verify "/opt/solr-$SOLR_VERSION.tgz.asc" "/opt/solr-$SOLR_VERSION.tgz" &&   tar -C /opt --extract --file "/opt/solr-$SOLR_VERSION.tgz" &&   (cd /opt && ln -s "solr-$SOLR_VERSION" solr) &&   rm "/opt/solr-$SOLR_VERSION.tgz"* &&   rm -Rf /opt/solr/docs/ &&   mkdir -p /opt/solr/server/solr/lib /docker-entrypoint-initdb.d /opt/docker-solr &&   chown -R 0:0 "/opt/solr-$SOLR_VERSION" &&   find "/opt/solr-$SOLR_VERSION" -type d -print0 | xargs -0 chmod 0755 &&   find "/opt/solr-$SOLR_VERSION" -type f -print0 | xargs -0 chmod 0644 &&   chmod -R 0755 "/opt/solr-$SOLR_VERSION/bin" "/opt/solr-$SOLR_VERSION/contrib/prometheus-exporter/bin/solr-exporter" /opt/solr-$SOLR_VERSION/server/scripts/cloud-scripts &&   cp /opt/solr/bin/solr.in.sh /etc/default/solr.in.sh &&   mv /opt/solr/bin/solr.in.sh /opt/solr/bin/solr.in.sh.orig &&   mv /opt/solr/bin/solr.in.cmd /opt/solr/bin/solr.in.cmd.orig &&   chown root:0 /etc/default/solr.in.sh &&   chmod 0664 /etc/default/solr.in.sh &&   mkdir -p /var/solr/data /var/solr/logs &&   (cd /opt/solr/server/solr && cp solr.xml zoo.cfg /var/solr/data/) &&   cp /opt/solr/server/resources/log4j2.xml /var/solr/log4j2.xml &&   find /var/solr -type d -print0 | xargs -0 chmod 0770 &&   find /var/solr -type f -print0 | xargs -0 chmod 0660 &&   sed -i -e "s/\"\$(whoami)\" == \"root\"/\$(id -u) == 0/" /opt/solr/bin/solr &&   sed -i -e 's/lsof -PniTCP:/lsof -t -PniTCP:/' /opt/solr/bin/solr &&   chown -R "0:0" /opt/solr-$SOLR_VERSION /docker-entrypoint-initdb.d /opt/docker-solr &&   chown -R "$SOLR_USER:0" /var/solr &&   { command -v gpgconf && gpgconf --kill all || :; } &&   rm -r "$GNUPGHOME"
-# Fri, 18 Oct 2019 04:36:14 GMT
+# Sat, 19 Oct 2019 07:46:35 GMT
 COPY --chown=0:0dir:7c0a3213efab10f68cd89ca4d91a13cb6084a7764ed341bf0617ce144943839b in /opt/docker-solr/scripts 
-# Fri, 18 Oct 2019 04:36:14 GMT
+# Sat, 19 Oct 2019 07:46:35 GMT
 VOLUME [/var/solr]
-# Fri, 18 Oct 2019 04:36:15 GMT
+# Sat, 19 Oct 2019 07:46:35 GMT
 EXPOSE 8983
-# Fri, 18 Oct 2019 04:36:15 GMT
+# Sat, 19 Oct 2019 07:46:35 GMT
 WORKDIR /opt/solr
-# Fri, 18 Oct 2019 04:36:15 GMT
+# Sat, 19 Oct 2019 07:46:36 GMT
 USER solr
-# Fri, 18 Oct 2019 04:36:15 GMT
+# Sat, 19 Oct 2019 07:46:36 GMT
 ENTRYPOINT ["docker-entrypoint.sh"]
-# Fri, 18 Oct 2019 04:36:15 GMT
+# Sat, 19 Oct 2019 07:46:36 GMT
 CMD ["solr-foreground"]
 ```
 
@@ -9022,29 +9022,29 @@ CMD ["solr-foreground"]
 		Last Modified: Thu, 17 Oct 2019 08:38:05 GMT  
 		Size: 218.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:115f4a5a7971e04e4fed86d76c049ff73c54e467dc07423546790188502ce0bc`  
-		Last Modified: Thu, 17 Oct 2019 08:38:28 GMT  
-		Size: 195.7 MB (195718813 bytes)  
+	-	`sha256:0ce121b6a2ffae7f0fc0b7c20d3a0a46f62762dd7c1f14db73fa2ab9248bf1dc`  
+		Last Modified: Fri, 18 Oct 2019 23:45:21 GMT  
+		Size: 195.9 MB (195875192 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:8f99c82bd7831902ccf2bd474012a7be46a8161ba0124a4864ac469ffcad5bbe`  
-		Last Modified: Fri, 18 Oct 2019 04:43:52 GMT  
-		Size: 761.5 KB (761483 bytes)  
+	-	`sha256:73e1c53bd62b5d1b2ee52a9c04be2a0e5a5b245abc76a4d9365fd1ceba45f32c`  
+		Last Modified: Sat, 19 Oct 2019 07:53:23 GMT  
+		Size: 761.5 KB (761492 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:24b9878c73c565485faab38c9cb826fb56827cb96eeab8ad37608a3795b0d625`  
-		Last Modified: Fri, 18 Oct 2019 04:43:52 GMT  
-		Size: 4.3 KB (4304 bytes)  
+	-	`sha256:06f01d291976f1e509428a975f81014db0267acc9d2817f5698e920ede4e1103`  
+		Last Modified: Sat, 19 Oct 2019 07:53:23 GMT  
+		Size: 4.3 KB (4305 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:e0e6ed9b8ce2ec5c986ddf1099e02fee18caaa45889316ae189de5037fa78a67`  
-		Last Modified: Fri, 18 Oct 2019 04:43:52 GMT  
-		Size: 153.4 KB (153415 bytes)  
+	-	`sha256:bff33dd5f6e0343386308838c1295ba8794dd2c9f9db779f423422695a3cde4f`  
+		Last Modified: Sat, 19 Oct 2019 07:53:23 GMT  
+		Size: 153.4 KB (153414 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:26dd70d91a84c539db72df240cc6d00d1c374102e93e8de500a4278a4ec02943`  
-		Last Modified: Fri, 18 Oct 2019 04:44:06 GMT  
-		Size: 182.9 MB (182943094 bytes)  
+	-	`sha256:67e3445b1bc130da6b8202f8be27d7aa524fd9e690effbdd1a94bdd14dfb67a7`  
+		Last Modified: Sat, 19 Oct 2019 07:53:38 GMT  
+		Size: 182.9 MB (182943068 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:f8efd0836f0d647b89e14cc3f6dbe042b2c292a6d3e7ada8d13b2823295377c3`  
-		Last Modified: Fri, 18 Oct 2019 04:43:52 GMT  
-		Size: 4.8 KB (4789 bytes)  
+	-	`sha256:c577b79e0205c0b4f820a8bb5095975609de674921a40dbe9d2d392c77da6f3e`  
+		Last Modified: Sat, 19 Oct 2019 07:53:23 GMT  
+		Size: 4.8 KB (4786 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `solr:latest` - linux; arm64 variant v8
@@ -9185,7 +9185,7 @@ CMD ["solr-foreground"]
 ## `solr:slim`
 
 ```console
-$ docker pull solr@sha256:de10425005e4414ad265d1ab8babdd1b62205dfbb24ff5de84c00755d9d75b6a
+$ docker pull solr@sha256:be12223417a20cce95279e5b547822ca8a8aa2ae669f2636374d7e39c0f2ca70
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -9196,14 +9196,14 @@ $ docker pull solr@sha256:de10425005e4414ad265d1ab8babdd1b62205dfbb24ff5de84c007
 ### `solr:slim` - linux; amd64
 
 ```console
-$ docker pull solr@sha256:6c1450fef6ccacb298b42eedb842b27f37ba64a309a50c1c69c480573255f52f
+$ docker pull solr@sha256:656970fdabeeefc382b5eec8789022e359cc7ac92eeb66eb0225cd4a4b402c25
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **414.8 MB (414761564 bytes)**  
+-	Total Size: **414.9 MB (414920502 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:de7d504414c285047272361980b1b2b81373e7db6c6893cfcd5f7477b127825b`
+-	Image ID: `sha256:c0c569638e58ccc0397d228ae1c145e105cb8879f91b4edfcd04b09f486f2b33`
 -	Entrypoint: `["docker-entrypoint.sh"]`
 -	Default Command: `["solr-foreground"]`
 
@@ -9222,53 +9222,53 @@ ENV JAVA_HOME=/usr/local/openjdk-11
 ENV PATH=/usr/local/openjdk-11/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
 # Thu, 17 Oct 2019 08:29:46 GMT
 RUN { echo '#/bin/sh'; echo 'echo "$JAVA_HOME"'; } > /usr/local/bin/docker-java-home && chmod +x /usr/local/bin/docker-java-home && [ "$JAVA_HOME" = "$(docker-java-home)" ]
-# Thu, 17 Oct 2019 08:29:46 GMT
-ENV JAVA_VERSION=11.0.4
-# Thu, 17 Oct 2019 08:29:46 GMT
-ENV JAVA_BASE_URL=https://github.com/AdoptOpenJDK/openjdk11-upstream-binaries/releases/download/jdk-11.0.4%2B11/OpenJDK11U-jdk_
-# Thu, 17 Oct 2019 08:29:46 GMT
-ENV JAVA_URL_VERSION=11.0.4_11
-# Thu, 17 Oct 2019 08:30:07 GMT
+# Fri, 18 Oct 2019 23:39:50 GMT
+ENV JAVA_VERSION=11.0.5
+# Fri, 18 Oct 2019 23:39:50 GMT
+ENV JAVA_BASE_URL=https://github.com/AdoptOpenJDK/openjdk11-upstream-binaries/releases/download/jdk-11.0.5%2B10/OpenJDK11U-jdk_
+# Fri, 18 Oct 2019 23:39:50 GMT
+ENV JAVA_URL_VERSION=11.0.5_10
+# Fri, 18 Oct 2019 23:40:16 GMT
 RUN set -eux; 		dpkgArch="$(dpkg --print-architecture)"; 	case "$dpkgArch" in 		amd64) upstreamArch='x64' ;; 		arm64) upstreamArch='aarch64' ;; 		*) echo >&2 "error: unsupported architecture: $dpkgArch" ;; 	esac; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		dirmngr 		gnupg 		wget 	; 	rm -rf /var/lib/apt/lists/*; 		wget -O openjdk.tgz.asc "${JAVA_BASE_URL}${upstreamArch}_linux_${JAVA_URL_VERSION}.tar.gz.sign"; 	wget -O openjdk.tgz "${JAVA_BASE_URL}${upstreamArch}_linux_${JAVA_URL_VERSION}.tar.gz" --progress=dot:giga; 		export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver ha.pool.sks-keyservers.net --keyserver-options no-self-sigs-only --recv-keys CA5F11C6CE22644D42C6AC4492EF8D39DC13168F; 	gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys EAC843EBD3EFDB98CC772FADA5CD6035332FA671; 	gpg --batch --list-sigs --keyid-format 0xLONG CA5F11C6CE22644D42C6AC4492EF8D39DC13168F 		| tee /dev/stderr 		| grep '0xA5CD6035332FA671' 		| grep 'Andrew Haley'; 	gpg --batch --verify openjdk.tgz.asc openjdk.tgz; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME"; 		mkdir -p "$JAVA_HOME"; 	tar --extract 		--file openjdk.tgz 		--directory "$JAVA_HOME" 		--strip-components 1 		--no-same-owner 	; 	rm openjdk.tgz*; 			apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark > /dev/null; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 		{ 		echo '#!/usr/bin/env bash'; 		echo 'set -Eeuo pipefail'; 		echo 'if ! [ -d "$JAVA_HOME" ]; then echo >&2 "error: missing JAVA_HOME environment variable"; exit 1; fi'; 		echo 'cacertsFile=; for f in "$JAVA_HOME/lib/security/cacerts" "$JAVA_HOME/jre/lib/security/cacerts"; do if [ -e "$f" ]; then cacertsFile="$f"; break; fi; done'; 		echo 'if [ -z "$cacertsFile" ] || ! [ -f "$cacertsFile" ]; then echo >&2 "error: failed to find cacerts file in $JAVA_HOME"; exit 1; fi'; 		echo 'trust extract --overwrite --format=java-cacerts --filter=ca-anchors --purpose=server-auth "$cacertsFile"'; 	} > /etc/ca-certificates/update.d/docker-openjdk; 	chmod +x /etc/ca-certificates/update.d/docker-openjdk; 	/etc/ca-certificates/update.d/docker-openjdk; 		find "$JAVA_HOME/lib" -name '*.so' -exec dirname '{}' ';' | sort -u > /etc/ld.so.conf.d/docker-openjdk.conf; 	ldconfig; 		javac --version; 	java --version
-# Thu, 17 Oct 2019 08:30:07 GMT
+# Fri, 18 Oct 2019 23:40:17 GMT
 CMD ["jshell"]
-# Fri, 18 Oct 2019 04:36:23 GMT
+# Sat, 19 Oct 2019 07:46:43 GMT
 LABEL maintainer=Martijn Koster "mak-docker@greenhills.co.uk"
-# Fri, 18 Oct 2019 04:36:23 GMT
+# Sat, 19 Oct 2019 07:46:43 GMT
 LABEL repository=https://github.com/docker-solr/docker-solr
-# Fri, 18 Oct 2019 04:36:23 GMT
+# Sat, 19 Oct 2019 07:46:44 GMT
 ARG SOLR_DOWNLOAD_SERVER
-# Fri, 18 Oct 2019 04:36:30 GMT
+# Sat, 19 Oct 2019 07:46:51 GMT
 RUN apt-get update &&   apt-get -y install acl dirmngr gpg lsof procps wget &&   rm -rf /var/lib/apt/lists/*
-# Fri, 18 Oct 2019 04:36:31 GMT
+# Sat, 19 Oct 2019 07:46:51 GMT
 ENV SOLR_USER=solr SOLR_UID=8983 SOLR_GROUP=solr SOLR_GID=8983 SOLR_VERSION=8.2.0 SOLR_URL=https://archive.apache.org/dist/lucene/solr/8.2.0/solr-8.2.0.tgz SOLR_SHA256=bfa4b39b236e5d714f4233138b8b5cb7e1996ddc0aad60052ce83c4b7bf33449 SOLR_KEYS=E58A6F4D5B2B48AC66D5E53BD4F181881A42F9E6 PATH=/opt/solr/bin:/opt/docker-solr/scripts:/usr/local/openjdk-11/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin SOLR_INCLUDE=/etc/default/solr.in.sh SOLR_HOME=/var/solr/data SOLR_PID_DIR=/var/solr SOLR_LOGS_DIR=/var/solr/logs LOG4J_PROPS=/var/solr/log4j2.xml
-# Fri, 18 Oct 2019 04:36:31 GMT
+# Sat, 19 Oct 2019 07:46:51 GMT
 ENV GOSU_VERSION=1.11
-# Fri, 18 Oct 2019 04:36:31 GMT
+# Sat, 19 Oct 2019 07:46:51 GMT
 ENV GOSU_KEY=B42F6819007F00F88E364FD4036A9C25BF357DD4
-# Fri, 18 Oct 2019 04:36:31 GMT
+# Sat, 19 Oct 2019 07:46:52 GMT
 ENV TINI_VERSION=v0.18.0
-# Fri, 18 Oct 2019 04:36:31 GMT
+# Sat, 19 Oct 2019 07:46:52 GMT
 ENV TINI_KEY=595E85A6B1B4779EA4DAAEC70B588DFF0527A9B7
-# Fri, 18 Oct 2019 04:36:32 GMT
+# Sat, 19 Oct 2019 07:46:53 GMT
 RUN groupadd -r --gid "$SOLR_GID" "$SOLR_GROUP" &&   useradd -r --uid "$SOLR_UID" --gid "$SOLR_GID" "$SOLR_USER"
-# Fri, 18 Oct 2019 04:36:34 GMT
+# Sat, 19 Oct 2019 07:46:54 GMT
 RUN set -e;   export GNUPGHOME="/tmp/gnupg_home" &&   mkdir -p "$GNUPGHOME" &&   chmod 700 "$GNUPGHOME" &&   echo "disable-ipv6" >> "$GNUPGHOME/dirmngr.conf" &&   for key in $SOLR_KEYS $GOSU_KEY $TINI_KEY; do     found='';     for server in       ha.pool.sks-keyservers.net       hkp://keyserver.ubuntu.com:80       hkp://p80.pool.sks-keyservers.net:80       pgp.mit.edu     ; do       echo "  trying $server for $key";       gpg --batch --keyserver "$server" --keyserver-options timeout=10 --recv-keys "$key" && found=yes && break;       gpg --batch --keyserver "$server" --keyserver-options timeout=10 --recv-keys "$key" && found=yes && break;     done;     test -z "$found" && echo >&2 "error: failed to fetch $key from several disparate servers -- network issues?" && exit 1;   done;   exit 0
-# Fri, 18 Oct 2019 04:36:48 GMT
+# Sat, 19 Oct 2019 07:47:08 GMT
 RUN set -e;   export GNUPGHOME="/tmp/gnupg_home" &&   pkgArch="$(dpkg --print-architecture | awk -F- '{ print $NF }')" &&   wget -O /usr/local/bin/gosu "https://github.com/tianon/gosu/releases/download/$GOSU_VERSION/gosu-$pkgArch" &&   wget -O /usr/local/bin/gosu.asc "https://github.com/tianon/gosu/releases/download/$GOSU_VERSION/gosu-$pkgArch.asc" &&   gpg --batch --verify /usr/local/bin/gosu.asc /usr/local/bin/gosu &&   rm /usr/local/bin/gosu.asc &&   chmod +x /usr/local/bin/gosu &&   gosu nobody true &&   wget -O /usr/local/bin/tini "https://github.com/krallin/tini/releases/download/${TINI_VERSION}/tini-$pkgArch" &&   wget -O /usr/local/bin/tini.asc "https://github.com/krallin/tini/releases/download/${TINI_VERSION}/tini-$pkgArch.asc" &&   gpg --batch --verify /usr/local/bin/tini.asc /usr/local/bin/tini;   rm /usr/local/bin/tini.asc &&   chmod +x /usr/local/bin/tini &&   tini --version &&   echo "downloading $SOLR_URL" &&   wget -nv "$SOLR_URL" -O "/opt/solr-$SOLR_VERSION.tgz" &&   echo "downloading $SOLR_URL.asc" &&   wget -nv "$SOLR_URL.asc" -O "/opt/solr-$SOLR_VERSION.tgz.asc" &&   echo "$SOLR_SHA256 */opt/solr-$SOLR_VERSION.tgz" | sha256sum -c - &&   (>&2 ls -l "/opt/solr-$SOLR_VERSION.tgz" "/opt/solr-$SOLR_VERSION.tgz.asc") &&   gpg --batch --verify "/opt/solr-$SOLR_VERSION.tgz.asc" "/opt/solr-$SOLR_VERSION.tgz" &&   tar -C /opt --extract --file "/opt/solr-$SOLR_VERSION.tgz" &&   (cd /opt && ln -s "solr-$SOLR_VERSION" solr) &&   rm "/opt/solr-$SOLR_VERSION.tgz"* &&   rm -Rf /opt/solr/docs/ &&   mkdir -p /opt/solr/server/solr/lib /docker-entrypoint-initdb.d /opt/docker-solr &&   chown -R 0:0 "/opt/solr-$SOLR_VERSION" &&   find "/opt/solr-$SOLR_VERSION" -type d -print0 | xargs -0 chmod 0755 &&   find "/opt/solr-$SOLR_VERSION" -type f -print0 | xargs -0 chmod 0644 &&   chmod -R 0755 "/opt/solr-$SOLR_VERSION/bin" "/opt/solr-$SOLR_VERSION/contrib/prometheus-exporter/bin/solr-exporter" /opt/solr-$SOLR_VERSION/server/scripts/cloud-scripts &&   cp /opt/solr/bin/solr.in.sh /etc/default/solr.in.sh &&   mv /opt/solr/bin/solr.in.sh /opt/solr/bin/solr.in.sh.orig &&   mv /opt/solr/bin/solr.in.cmd /opt/solr/bin/solr.in.cmd.orig &&   chown root:0 /etc/default/solr.in.sh &&   chmod 0664 /etc/default/solr.in.sh &&   mkdir -p /var/solr/data /var/solr/logs &&   (cd /opt/solr/server/solr && cp solr.xml zoo.cfg /var/solr/data/) &&   cp /opt/solr/server/resources/log4j2.xml /var/solr/log4j2.xml &&   find /var/solr -type d -print0 | xargs -0 chmod 0770 &&   find /var/solr -type f -print0 | xargs -0 chmod 0660 &&   sed -i -e "s/\"\$(whoami)\" == \"root\"/\$(id -u) == 0/" /opt/solr/bin/solr &&   sed -i -e 's/lsof -PniTCP:/lsof -t -PniTCP:/' /opt/solr/bin/solr &&   chown -R "0:0" /opt/solr-$SOLR_VERSION /docker-entrypoint-initdb.d /opt/docker-solr &&   chown -R "$SOLR_USER:0" /var/solr &&   { command -v gpgconf && gpgconf --kill all || :; } &&   rm -r "$GNUPGHOME"
-# Fri, 18 Oct 2019 04:36:48 GMT
+# Sat, 19 Oct 2019 07:47:09 GMT
 COPY --chown=0:0dir:7c0a3213efab10f68cd89ca4d91a13cb6084a7764ed341bf0617ce144943839b in /opt/docker-solr/scripts 
-# Fri, 18 Oct 2019 04:36:49 GMT
+# Sat, 19 Oct 2019 07:47:09 GMT
 VOLUME [/var/solr]
-# Fri, 18 Oct 2019 04:36:49 GMT
+# Sat, 19 Oct 2019 07:47:09 GMT
 EXPOSE 8983
-# Fri, 18 Oct 2019 04:36:49 GMT
+# Sat, 19 Oct 2019 07:47:09 GMT
 WORKDIR /opt/solr
-# Fri, 18 Oct 2019 04:36:49 GMT
+# Sat, 19 Oct 2019 07:47:09 GMT
 USER solr
-# Fri, 18 Oct 2019 04:36:49 GMT
+# Sat, 19 Oct 2019 07:47:10 GMT
 ENTRYPOINT ["docker-entrypoint.sh"]
-# Fri, 18 Oct 2019 04:36:49 GMT
+# Sat, 19 Oct 2019 07:47:10 GMT
 CMD ["solr-foreground"]
 ```
 
@@ -9285,29 +9285,29 @@ CMD ["solr-foreground"]
 		Last Modified: Thu, 17 Oct 2019 08:38:38 GMT  
 		Size: 210.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:208dbdb57f64b9643f7760ea628f0e2a21deff0af0b2eb33a0e66f6e3165fbfc`  
-		Last Modified: Thu, 17 Oct 2019 08:39:01 GMT  
-		Size: 196.0 MB (195975541 bytes)  
+	-	`sha256:ebc78a5f677c03a8f4aa611b558b55c4e42cf3113517ec2400695512c176d5ea`  
+		Last Modified: Fri, 18 Oct 2019 23:45:47 GMT  
+		Size: 196.1 MB (196134537 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:0b6e87939381d5f5bf58ebbda7764e5988a7f85de329392991840d7de2392b46`  
-		Last Modified: Fri, 18 Oct 2019 04:44:14 GMT  
-		Size: 5.5 MB (5452429 bytes)  
+	-	`sha256:5422c55f6c915b61b16c325a8d6c50b854cfa1a68d01cdf3257e0544867074c1`  
+		Last Modified: Sat, 19 Oct 2019 07:53:47 GMT  
+		Size: 5.5 MB (5452476 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:b81a437b54a898a4270dba9b20969a50a131a978941a55532f0fa1dc7f3b1091`  
-		Last Modified: Fri, 18 Oct 2019 04:44:13 GMT  
-		Size: 4.3 KB (4284 bytes)  
+	-	`sha256:71492f36b16b5a88138ccf6f9778c8510443a71904e3a4fe09a4b5531e088965`  
+		Last Modified: Sat, 19 Oct 2019 07:53:46 GMT  
+		Size: 4.3 KB (4286 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:ea68050ea3f3fc98bc66c6e420ee5b30a82f3c58b049ecc2eeb280567c768953`  
-		Last Modified: Fri, 18 Oct 2019 04:44:13 GMT  
-		Size: 24.4 KB (24398 bytes)  
+	-	`sha256:cb39ba4b1cda21b7ba259e1736daa099c2e766024b968b7a1e9bc87ca02e6744`  
+		Last Modified: Sat, 19 Oct 2019 07:53:45 GMT  
+		Size: 24.4 KB (24387 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:a2af4ff9ad024662bc211b93e48685d4e60fc8e68db66006bfad1762f5aa5a63`  
-		Last Modified: Fri, 18 Oct 2019 04:44:30 GMT  
-		Size: 182.9 MB (182943369 bytes)  
+	-	`sha256:92d36f98239a5e57185ce9a40f71aba0c34e42173931d1bcbad8bc5d5b5287d8`  
+		Last Modified: Sat, 19 Oct 2019 07:53:56 GMT  
+		Size: 182.9 MB (182943272 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:ef75043227b237b23835fd9bef702edad8ab6fa2da3e44d516e541b71cf8c576`  
-		Last Modified: Fri, 18 Oct 2019 04:44:13 GMT  
-		Size: 4.8 KB (4789 bytes)  
+	-	`sha256:cdb7f6c0ef8e321b7fd1f0b09716f1ad5592b2891096c39cd0c68421414363fe`  
+		Last Modified: Sat, 19 Oct 2019 07:53:45 GMT  
+		Size: 4.8 KB (4790 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `solr:slim` - linux; arm64 variant v8
