@@ -1,7 +1,7 @@
 ## `gradle:jdk12`
 
 ```console
-$ docker pull gradle@sha256:b2ac6caf02c2e1ef1965610f68b8cd07f2c21429f2bcebe213f777b2d9cbaf1a
+$ docker pull gradle@sha256:7a6df17c9ee36f38dfc4f8d48c58889978119926224dc1e8ad35e293a2fe5fff
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -108,96 +108,96 @@ RUN set -o errexit -o nounset     && echo "Downloading Gradle"     && wget --no-
 ### `gradle:jdk12` - linux; ppc64le
 
 ```console
-$ docker pull gradle@sha256:8f6e8ac2de8cf55d1fdf61e97ad3de9ffc161b7bd4f9ff864ae539604ad4d04b
+$ docker pull gradle@sha256:3308f5ff4e2adb48611fb4c0b1e52256f625a2ba48de6315114ba95dfb5a1f74
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **387.0 MB (386986742 bytes)**  
+-	Total Size: **387.0 MB (387002504 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:1a5003fd1e0da20666325b041c191bf1d7e61b145ff2ec26adac9fd140beb4eb`
+-	Image ID: `sha256:bb99d5fe7227455208cbb7ae675d28b1447ca9504f13511b7b045eb641b55fd3`
 -	Default Command: `["gradle"]`
 
 ```dockerfile
-# Thu, 19 Sep 2019 00:19:08 GMT
-ADD file:57f764ec0e32687eae53f30460a378772f5ceeac6b4d9e927c9f0b756dd88a5a in / 
-# Thu, 19 Sep 2019 00:19:16 GMT
+# Fri, 18 Oct 2019 18:44:43 GMT
+ADD file:0db86b6f06b4b2c5207f46a9b20a7ad12be2e0ed517426b808e6971b16ef98bf in / 
+# Fri, 18 Oct 2019 18:44:55 GMT
 RUN [ -z "$(apt-get indextargets)" ]
-# Thu, 19 Sep 2019 00:19:23 GMT
+# Fri, 18 Oct 2019 18:45:03 GMT
 RUN set -xe 		&& echo '#!/bin/sh' > /usr/sbin/policy-rc.d 	&& echo 'exit 101' >> /usr/sbin/policy-rc.d 	&& chmod +x /usr/sbin/policy-rc.d 		&& dpkg-divert --local --rename --add /sbin/initctl 	&& cp -a /usr/sbin/policy-rc.d /sbin/initctl 	&& sed -i 's/^exit.*/exit 0/' /sbin/initctl 		&& echo 'force-unsafe-io' > /etc/dpkg/dpkg.cfg.d/docker-apt-speedup 		&& echo 'DPkg::Post-Invoke { "rm -f /var/cache/apt/archives/*.deb /var/cache/apt/archives/partial/*.deb /var/cache/apt/*.bin || true"; };' > /etc/apt/apt.conf.d/docker-clean 	&& echo 'APT::Update::Post-Invoke { "rm -f /var/cache/apt/archives/*.deb /var/cache/apt/archives/partial/*.deb /var/cache/apt/*.bin || true"; };' >> /etc/apt/apt.conf.d/docker-clean 	&& echo 'Dir::Cache::pkgcache ""; Dir::Cache::srcpkgcache "";' >> /etc/apt/apt.conf.d/docker-clean 		&& echo 'Acquire::Languages "none";' > /etc/apt/apt.conf.d/docker-no-languages 		&& echo 'Acquire::GzipIndexes "true"; Acquire::CompressionTypes::Order:: "gz";' > /etc/apt/apt.conf.d/docker-gzip-indexes 		&& echo 'Apt::AutoRemove::SuggestsImportant "false";' > /etc/apt/apt.conf.d/docker-autoremove-suggests
-# Thu, 19 Sep 2019 00:19:29 GMT
+# Fri, 18 Oct 2019 18:45:08 GMT
 RUN mkdir -p /run/systemd && echo 'docker' > /run/systemd/container
-# Thu, 19 Sep 2019 00:19:32 GMT
+# Fri, 18 Oct 2019 18:45:10 GMT
 CMD ["/bin/bash"]
-# Thu, 19 Sep 2019 01:01:41 GMT
+# Fri, 18 Oct 2019 21:29:19 GMT
 ENV LANG=en_US.UTF-8 LANGUAGE=en_US:en LC_ALL=en_US.UTF-8
-# Thu, 19 Sep 2019 01:03:10 GMT
+# Fri, 18 Oct 2019 21:30:14 GMT
 RUN apt-get update     && apt-get install -y --no-install-recommends curl ca-certificates locales     && echo "en_US.UTF-8 UTF-8" >> /etc/locale.gen     && locale-gen en_US.UTF-8     && rm -rf /var/lib/apt/lists/*
-# Thu, 19 Sep 2019 01:05:20 GMT
+# Fri, 18 Oct 2019 21:31:49 GMT
 ENV JAVA_VERSION=jdk-12.0.2+10
-# Thu, 19 Sep 2019 01:05:45 GMT
+# Fri, 18 Oct 2019 21:32:09 GMT
 RUN set -eux;     ARCH="$(dpkg --print-architecture)";     case "${ARCH}" in        aarch64|arm64)          ESUM='855f046afc5a5230ad6da45a5c811194267acd1748f16b648bfe5710703fe8c6';          BINARY_URL='https://github.com/AdoptOpenJDK/openjdk12-binaries/releases/download/jdk-12.0.2%2B10/OpenJDK12U-jdk_aarch64_linux_hotspot_12.0.2_10.tar.gz';          ;;        armhf)          ESUM='9fec85826ffb7b2b2cf2853a6ed3e001b528ed5cf13e435cd13026398b5178d8';          BINARY_URL='https://github.com/AdoptOpenJDK/openjdk12-binaries/releases/download/jdk-12.0.2%2B10/OpenJDK12U-jdk_arm_linux_hotspot_12.0.2_10.tar.gz';          ;;        ppc64el|ppc64le)          ESUM='4b0c9f5cdea1b26d7f079fa6478aceebf1923c947c4209d5709c0869dd71b98f';          BINARY_URL='https://github.com/AdoptOpenJDK/openjdk12-binaries/releases/download/jdk-12.0.2%2B10/OpenJDK12U-jdk_ppc64le_linux_hotspot_12.0.2_10.tar.gz';          ;;        s390x)          ESUM='9897deeaf7a2c90374fbaca8b3eb8e63267d8fc1863b43b21c0bfc86e4783470';          BINARY_URL='https://github.com/AdoptOpenJDK/openjdk12-binaries/releases/download/jdk-12.0.2%2B10/OpenJDK12U-jdk_s390x_linux_hotspot_12.0.2_10.tar.gz';          ;;        amd64|x86_64)          ESUM='1202f536984c28d68681d51207a84b6c76e5998579132d3fe1b8085aa6a5f21e';          BINARY_URL='https://github.com/AdoptOpenJDK/openjdk12-binaries/releases/download/jdk-12.0.2%2B10/OpenJDK12U-jdk_x64_linux_hotspot_12.0.2_10.tar.gz';          ;;        *)          echo "Unsupported arch: ${ARCH}";          exit 1;          ;;     esac;     curl -LfsSo /tmp/openjdk.tar.gz ${BINARY_URL};     echo "${ESUM} */tmp/openjdk.tar.gz" | sha256sum -c -;     mkdir -p /opt/java/openjdk;     cd /opt/java/openjdk;     tar -xf /tmp/openjdk.tar.gz --strip-components=1;     rm -rf /tmp/openjdk.tar.gz;
-# Thu, 19 Sep 2019 01:05:54 GMT
+# Fri, 18 Oct 2019 21:32:13 GMT
 ENV JAVA_HOME=/opt/java/openjdk PATH=/opt/java/openjdk/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Thu, 19 Sep 2019 01:06:01 GMT
+# Fri, 18 Oct 2019 21:32:14 GMT
 CMD ["jshell"]
-# Thu, 19 Sep 2019 05:01:51 GMT
+# Sat, 19 Oct 2019 02:34:46 GMT
 CMD ["gradle"]
-# Thu, 19 Sep 2019 05:01:57 GMT
+# Sat, 19 Oct 2019 02:34:50 GMT
 ENV GRADLE_HOME=/opt/gradle
-# Thu, 19 Sep 2019 05:02:10 GMT
+# Sat, 19 Oct 2019 02:34:58 GMT
 RUN set -o errexit -o nounset     && echo "Adding gradle user and group"     && groupadd --system --gid 1000 gradle     && useradd --system --gid gradle --uid 1000 --shell /bin/bash --create-home gradle     && mkdir /home/gradle/.gradle     && chown --recursive gradle:gradle /home/gradle         && echo "Symlinking root Gradle cache to gradle Gradle cache"     && ln -s /home/gradle/.gradle /root/.gradle
-# Thu, 19 Sep 2019 05:02:13 GMT
+# Sat, 19 Oct 2019 02:34:59 GMT
 VOLUME [/home/gradle/.gradle]
-# Thu, 19 Sep 2019 05:02:17 GMT
+# Sat, 19 Oct 2019 02:35:01 GMT
 WORKDIR /home/gradle
-# Fri, 11 Oct 2019 00:00:41 GMT
+# Sat, 19 Oct 2019 02:36:15 GMT
 RUN apt-get update     && apt-get install --yes --no-install-recommends         fontconfig         unzip         wget                 bzr         git         git-lfs         mercurial         openssh-client         subversion     && rm -rf /var/lib/apt/lists/*
-# Fri, 11 Oct 2019 00:00:47 GMT
-ENV GRADLE_VERSION=5.6.2
-# Fri, 11 Oct 2019 00:00:49 GMT
-ARG GRADLE_DOWNLOAD_SHA256=32fce6628848f799b0ad3205ae8db67d0d828c10ffe62b748a7c0d9f4a5d9ee0
-# Fri, 11 Oct 2019 00:01:02 GMT
-# ARGS: GRADLE_DOWNLOAD_SHA256=32fce6628848f799b0ad3205ae8db67d0d828c10ffe62b748a7c0d9f4a5d9ee0
+# Sat, 19 Oct 2019 02:36:22 GMT
+ENV GRADLE_VERSION=5.6.3
+# Sat, 19 Oct 2019 02:36:24 GMT
+ARG GRADLE_DOWNLOAD_SHA256=60a6d8f687e3e7a4bc901cc6bc3db190efae0f02f0cc697e323e0f9336f224a3
+# Sat, 19 Oct 2019 02:36:39 GMT
+# ARGS: GRADLE_DOWNLOAD_SHA256=60a6d8f687e3e7a4bc901cc6bc3db190efae0f02f0cc697e323e0f9336f224a3
 RUN set -o errexit -o nounset     && echo "Downloading Gradle"     && wget --no-verbose --output-document=gradle.zip "https://services.gradle.org/distributions/gradle-${GRADLE_VERSION}-bin.zip"         && echo "Checking download hash"     && echo "${GRADLE_DOWNLOAD_SHA256} *gradle.zip" | sha256sum --check -         && echo "Installing Gradle"     && unzip gradle.zip     && rm gradle.zip     && mv "gradle-${GRADLE_VERSION}" "${GRADLE_HOME}/"     && ln --symbolic "${GRADLE_HOME}/bin/gradle" /usr/bin/gradle         && echo "Testing Gradle installation"     && gradle --version
 ```
 
 -	Layers:
-	-	`sha256:f309ce53899a1d2e09a2ce9aa80b73f891c340960bec5987530a3972f836330f`  
-		Last Modified: Mon, 16 Sep 2019 15:24:19 GMT  
-		Size: 30.4 MB (30385806 bytes)  
+	-	`sha256:1b7d863c7bd3c45f586c3f5c2b0ada7a7554004eeb8651e15f02887b65683bab`  
+		Last Modified: Fri, 18 Oct 2019 18:47:47 GMT  
+		Size: 30.4 MB (30398388 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:4d4cc94895deda359bec002ec569988e3bd596947afa8fa801d50cc006f40262`  
-		Last Modified: Thu, 19 Sep 2019 00:22:34 GMT  
-		Size: 35.2 KB (35175 bytes)  
+	-	`sha256:1c0a1c33dbe777b44818ce2e990b9f4958e6d56fd7ae7dc681902d510f585069`  
+		Last Modified: Fri, 18 Oct 2019 18:47:40 GMT  
+		Size: 35.2 KB (35210 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:bb89148ef2dc0d9707aeacb2b859f7d1c82aed774c2d171afc40869394971bac`  
-		Last Modified: Thu, 19 Sep 2019 00:22:34 GMT  
-		Size: 847.0 B  
+	-	`sha256:96d51126a2ced2f2cb15ee56ae7f9b242dd1c11f4b1e275a98b1cc0dd0921e68`  
+		Last Modified: Fri, 18 Oct 2019 18:47:40 GMT  
+		Size: 854.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:a914b0be845383665294ed5be63948a7734eaef37040dbae7f2c82b9396ef322`  
-		Last Modified: Thu, 19 Sep 2019 00:22:34 GMT  
-		Size: 186.0 B  
+	-	`sha256:a3e809ad6a1e5485175184d5821569396c745af274b4b310dbaff78658c5a7b7`  
+		Last Modified: Fri, 18 Oct 2019 18:47:40 GMT  
+		Size: 187.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:43f23fb018bfea038342d24ad2895912ce4a9331a921b85989293e9ac37b14f9`  
-		Last Modified: Thu, 19 Sep 2019 01:12:50 GMT  
-		Size: 11.2 MB (11222241 bytes)  
+	-	`sha256:6d3f360bd6ebbf366bb5a84b1ff9f52dbc2e42354960d956255cb9fefb4b3215`  
+		Last Modified: Fri, 18 Oct 2019 21:36:33 GMT  
+		Size: 11.2 MB (11222147 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:622bb75be091a0959baf9dad4dbcacdd8579bbf9a48a93d0909e0cc44111632b`  
-		Last Modified: Thu, 19 Sep 2019 01:14:52 GMT  
-		Size: 192.1 MB (192054094 bytes)  
+	-	`sha256:677f446f1bc3d3bd4d9acedfdc931c7e30b0764b7bb2c8d4850e173cb8193f9b`  
+		Last Modified: Fri, 18 Oct 2019 21:38:33 GMT  
+		Size: 192.1 MB (192054072 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:8e3f87dfc3b9cdfdb8d14085609cca8fb29392b208584ed1cb66a5591e5c11bf`  
-		Last Modified: Thu, 19 Sep 2019 05:11:08 GMT  
-		Size: 4.5 KB (4516 bytes)  
+	-	`sha256:ec9a034d46f4e055c190eb0b3ab12a02ab9f56b6cc280ffb2490e7e1b5bda1d5`  
+		Last Modified: Sat, 19 Oct 2019 02:41:49 GMT  
+		Size: 4.5 KB (4523 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:51e0a2b5dd43be3448c22bf54efe6eac02705bd7f3c6fa7361d3af236fa98203`  
-		Last Modified: Fri, 11 Oct 2019 00:06:19 GMT  
-		Size: 59.4 MB (59408370 bytes)  
+	-	`sha256:2d2ad0df668d5f786a8fde80edaaf78e3d500995cc1a2a300825ddae189ae296`  
+		Last Modified: Sat, 19 Oct 2019 02:42:04 GMT  
+		Size: 59.4 MB (59408023 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:f4a2f39a0f3fa9318754ae0ac141c34f1cd587e1da7a1006f7f74015c22cb4f9`  
-		Last Modified: Fri, 11 Oct 2019 00:06:13 GMT  
-		Size: 93.9 MB (93875507 bytes)  
+	-	`sha256:251ec32f6321c650b84e58f67e398e2bb71ec92f81fe8c4880a820a2611c8cf5`  
+		Last Modified: Sat, 19 Oct 2019 02:41:59 GMT  
+		Size: 93.9 MB (93879100 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `gradle:jdk12` - linux; s390x
