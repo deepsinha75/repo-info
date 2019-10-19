@@ -1,7 +1,7 @@
 ## `sapmachine:latest`
 
 ```console
-$ docker pull sapmachine@sha256:7a4283caa85a5967af49ff8cf30a2c3dd7d2508504e5fd0a38a3d5b32b2415a4
+$ docker pull sapmachine@sha256:53a5791d1190776cd3a8e1775b10a1ffaf6503b75b9d47e13633984fd417c32a
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -11,59 +11,59 @@ $ docker pull sapmachine@sha256:7a4283caa85a5967af49ff8cf30a2c3dd7d2508504e5fd0a
 ### `sapmachine:latest` - linux; amd64
 
 ```console
-$ docker pull sapmachine@sha256:3913c9795c8d09f153140ca6e08e0f06c2dca57b1778b7c865126e812d817a31
+$ docker pull sapmachine@sha256:26eb07405617d5d62242a13697a75f9abe84c143090571601ac04f60d295a666
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **241.8 MB (241764828 bytes)**  
+-	Total Size: **241.8 MB (241769448 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:c5fa5f79c5445c46925cb61092b7a7e268a33645e9cb256eebd579bc15aa5195`
+-	Image ID: `sha256:09d915d58cdb9b431fd340780aa0140dbc6c6317fff094fe1d469238dbc4497c`
 -	Default Command: `["jshell"]`
 
 ```dockerfile
-# Wed, 18 Sep 2019 23:20:25 GMT
-ADD file:288ac0434f65264f3c50cf3e2766c5dbf3fa953c89995dd9445063fd565aac81 in / 
-# Wed, 18 Sep 2019 23:20:25 GMT
+# Fri, 18 Oct 2019 18:48:49 GMT
+ADD file:d13b09e8b3cc98bf0868e2af7a49b14622d2111e2a4e10341859902e43bd872a in / 
+# Fri, 18 Oct 2019 18:48:50 GMT
 RUN [ -z "$(apt-get indextargets)" ]
-# Wed, 18 Sep 2019 23:20:26 GMT
+# Fri, 18 Oct 2019 18:48:50 GMT
 RUN set -xe 		&& echo '#!/bin/sh' > /usr/sbin/policy-rc.d 	&& echo 'exit 101' >> /usr/sbin/policy-rc.d 	&& chmod +x /usr/sbin/policy-rc.d 		&& dpkg-divert --local --rename --add /sbin/initctl 	&& cp -a /usr/sbin/policy-rc.d /sbin/initctl 	&& sed -i 's/^exit.*/exit 0/' /sbin/initctl 		&& echo 'force-unsafe-io' > /etc/dpkg/dpkg.cfg.d/docker-apt-speedup 		&& echo 'DPkg::Post-Invoke { "rm -f /var/cache/apt/archives/*.deb /var/cache/apt/archives/partial/*.deb /var/cache/apt/*.bin || true"; };' > /etc/apt/apt.conf.d/docker-clean 	&& echo 'APT::Update::Post-Invoke { "rm -f /var/cache/apt/archives/*.deb /var/cache/apt/archives/partial/*.deb /var/cache/apt/*.bin || true"; };' >> /etc/apt/apt.conf.d/docker-clean 	&& echo 'Dir::Cache::pkgcache ""; Dir::Cache::srcpkgcache "";' >> /etc/apt/apt.conf.d/docker-clean 		&& echo 'Acquire::Languages "none";' > /etc/apt/apt.conf.d/docker-no-languages 		&& echo 'Acquire::GzipIndexes "true"; Acquire::CompressionTypes::Order:: "gz";' > /etc/apt/apt.conf.d/docker-gzip-indexes 		&& echo 'Apt::AutoRemove::SuggestsImportant "false";' > /etc/apt/apt.conf.d/docker-autoremove-suggests
-# Wed, 18 Sep 2019 23:20:27 GMT
+# Fri, 18 Oct 2019 18:48:51 GMT
 RUN mkdir -p /run/systemd && echo 'docker' > /run/systemd/container
-# Wed, 18 Sep 2019 23:20:27 GMT
+# Fri, 18 Oct 2019 18:48:51 GMT
 CMD ["/bin/bash"]
-# Thu, 19 Sep 2019 01:07:17 GMT
+# Fri, 18 Oct 2019 22:42:31 GMT
 RUN apt-get update     && apt-get install -y --no-install-recommends wget ca-certificates gnupg2     && rm -rf /var/lib/apt/lists/*
-# Fri, 18 Oct 2019 18:43:28 GMT
+# Fri, 18 Oct 2019 22:44:08 GMT
 RUN export GNUPGHOME="$(mktemp -d)"     && wget -q -O - https://dist.sapmachine.io/debian/sapmachine.old.key | gpg --batch --import     && gpg --batch --export --armor 'DA4C 00C1 BDB1 3763 8608 4E20 C7EB 4578 740A EEA2' > /etc/apt/trusted.gpg.d/sapmachine.old.gpg.asc     && wget -q -O - https://dist.sapmachine.io/debian/sapmachine.key | gpg --batch --import     && gpg --batch --export --armor 'CACB 9FE0 9150 307D 1D22 D829 6275 4C3B 3ABC FE23' > /etc/apt/trusted.gpg.d/sapmachine.gpg.asc     && gpgconf --kill all && rm -rf "$GNUPGHOME"     && echo "deb http://dist.sapmachine.io/debian/amd64/ ./" > /etc/apt/sources.list.d/sapmachine.list     && apt-get update     && apt-get -y --no-install-recommends install sapmachine-13-jdk=13.0.1     && rm -rf /var/lib/apt/lists/*
-# Fri, 18 Oct 2019 18:43:28 GMT
+# Fri, 18 Oct 2019 22:44:08 GMT
 ENV JAVA_HOME=/usr/lib/jvm/sapmachine-13
-# Fri, 18 Oct 2019 18:43:28 GMT
+# Fri, 18 Oct 2019 22:44:08 GMT
 CMD ["jshell"]
 ```
 
 -	Layers:
-	-	`sha256:5667fdb72017d1fb364744ca1abf7b6f3bbe9c98c3786f294a461c2866db69ab`  
-		Last Modified: Fri, 13 Sep 2019 00:25:06 GMT  
-		Size: 26.7 MB (26683298 bytes)  
+	-	`sha256:22e816666fd6516bccd19765947232debc14a5baf2418b2202fd67b3807b6b91`  
+		Last Modified: Fri, 11 Oct 2019 00:25:17 GMT  
+		Size: 26.7 MB (26687648 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:d83811f270d56d34a208f721f3dbf1b9242d1900ad8981fc7071339681998a31`  
-		Last Modified: Wed, 18 Sep 2019 23:21:23 GMT  
-		Size: 35.4 KB (35355 bytes)  
+	-	`sha256:079b6d2a1e53c648abc48222c63809de745146c2ee8322a1b9e93703318290d6`  
+		Last Modified: Fri, 18 Oct 2019 18:49:48 GMT  
+		Size: 35.4 KB (35373 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:ee671aafb583e2321880e275c94d49a49185006730e871435cd851f42d2a775d`  
-		Last Modified: Wed, 18 Sep 2019 23:21:23 GMT  
-		Size: 850.0 B  
+	-	`sha256:11048ebae90883c19c9b20f003d5dd2f5bbf5b48556dabf06c8ea5c871c8debe`  
+		Last Modified: Fri, 18 Oct 2019 18:49:48 GMT  
+		Size: 849.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:7fc152dfb3a6b5c9a436b49ff6cd72ed7eb5f1fd349128b50ee04c3c5c2355fb`  
-		Last Modified: Wed, 18 Sep 2019 23:21:23 GMT  
-		Size: 163.0 B  
+	-	`sha256:c58094023a2e61ef9388e283026c5d6a4b6ff6d10d4f626e866d38f061e79bb9`  
+		Last Modified: Fri, 18 Oct 2019 18:49:48 GMT  
+		Size: 162.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:2987b7eff32ce20bbb727d92577a8998f80e3d1a7a9cf46dbc9fed8a85e1cc74`  
-		Last Modified: Thu, 19 Sep 2019 01:08:40 GMT  
-		Size: 7.6 MB (7563259 bytes)  
+	-	`sha256:b0b9dfe1fadbab5350f6551e56bd3d3d7d761a53de5f05ec91e308ce35394ddf`  
+		Last Modified: Fri, 18 Oct 2019 22:44:25 GMT  
+		Size: 7.6 MB (7563393 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:a8da13ea2fbb2525d3a231baeb3631e9bdec15313e1615f3ddb8dd4953b2dc00`  
-		Last Modified: Fri, 18 Oct 2019 18:44:04 GMT  
-		Size: 207.5 MB (207481903 bytes)  
+	-	`sha256:e8b586361ff13d20dad9d9d6e0c247c4528b7eb5f26c3cb7f35f1bd628f984bb`  
+		Last Modified: Fri, 18 Oct 2019 22:45:08 GMT  
+		Size: 207.5 MB (207482023 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
