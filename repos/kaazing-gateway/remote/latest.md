@@ -1,7 +1,7 @@
 ## `kaazing-gateway:latest`
 
 ```console
-$ docker pull kaazing-gateway@sha256:ef1aa7f5d5c987a7a278da4aabf83b1d2bcf3a75a0b2608653e7fab0af33aa40
+$ docker pull kaazing-gateway@sha256:ff6cfa48fcab9b462469e60370534fcf63729bdf778c76c8af62791861bc6c6e
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -12,14 +12,14 @@ $ docker pull kaazing-gateway@sha256:ef1aa7f5d5c987a7a278da4aabf83b1d2bcf3a75a0b
 ### `kaazing-gateway:latest` - linux; amd64
 
 ```console
-$ docker pull kaazing-gateway@sha256:eff6a49451a853c9955a416aad0f31c183e0d7ecce6275538a9f75ac5edd18fb
+$ docker pull kaazing-gateway@sha256:9a43069f485a4f54d1ed72a3daf1428ddb13dec3c1f6d5538d159fedc22e68be
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **123.0 MB (122960021 bytes)**  
+-	Total Size: **123.0 MB (122970998 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:6fdd3cef2f053f3540cb500928797b1168d116b124bd0d0f6ad68a21e89633f1`
+-	Image ID: `sha256:ac79bdd9f6906d48b1c2457c95016f5cf837c11d8ef364f3c4ecc544024f7b01`
 -	Default Command: `["gateway.start"]`
 
 ```dockerfile
@@ -41,33 +41,33 @@ ENV JAVA_HOME=/usr/local/openjdk-8
 ENV PATH=/usr/local/openjdk-8/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
 # Thu, 17 Oct 2019 08:31:53 GMT
 RUN { echo '#/bin/sh'; echo 'echo "$JAVA_HOME"'; } > /usr/local/bin/docker-java-home && chmod +x /usr/local/bin/docker-java-home && [ "$JAVA_HOME" = "$(docker-java-home)" ]
-# Thu, 17 Oct 2019 08:31:54 GMT
-ENV JAVA_VERSION=8u222
-# Thu, 17 Oct 2019 08:31:54 GMT
-ENV JAVA_BASE_URL=https://github.com/AdoptOpenJDK/openjdk8-upstream-binaries/releases/download/jdk8u222-b10/OpenJDK8U-jre_
-# Thu, 17 Oct 2019 08:31:54 GMT
-ENV JAVA_URL_VERSION=8u222b10
-# Thu, 17 Oct 2019 08:32:01 GMT
+# Fri, 18 Oct 2019 23:41:20 GMT
+ENV JAVA_VERSION=8u232
+# Fri, 18 Oct 2019 23:41:20 GMT
+ENV JAVA_BASE_URL=https://github.com/AdoptOpenJDK/openjdk8-upstream-binaries/releases/download/jdk8u232-b09/OpenJDK8U-jre_
+# Fri, 18 Oct 2019 23:41:20 GMT
+ENV JAVA_URL_VERSION=8u232b09
+# Fri, 18 Oct 2019 23:41:26 GMT
 RUN set -eux; 		dpkgArch="$(dpkg --print-architecture)"; 	case "$dpkgArch" in 		amd64) upstreamArch='x64' ;; 		arm64) upstreamArch='aarch64' ;; 		*) echo >&2 "error: unsupported architecture: $dpkgArch" ;; 	esac; 		wget -O openjdk.tgz.asc "${JAVA_BASE_URL}${upstreamArch}_linux_${JAVA_URL_VERSION}.tar.gz.sign"; 	wget -O openjdk.tgz "${JAVA_BASE_URL}${upstreamArch}_linux_${JAVA_URL_VERSION}.tar.gz" --progress=dot:giga; 		export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver ha.pool.sks-keyservers.net --keyserver-options no-self-sigs-only --recv-keys CA5F11C6CE22644D42C6AC4492EF8D39DC13168F; 	gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys EAC843EBD3EFDB98CC772FADA5CD6035332FA671; 	gpg --batch --list-sigs --keyid-format 0xLONG CA5F11C6CE22644D42C6AC4492EF8D39DC13168F 		| tee /dev/stderr 		| grep '0xA5CD6035332FA671' 		| grep 'Andrew Haley'; 	gpg --batch --verify openjdk.tgz.asc openjdk.tgz; 	gpgconf --kill all; 	rm -rf "$GNUPGHOME"; 		mkdir -p "$JAVA_HOME"; 	tar --extract 		--file openjdk.tgz 		--directory "$JAVA_HOME" 		--strip-components 1 		--no-same-owner 	; 	rm openjdk.tgz*; 			{ 		echo '#!/usr/bin/env bash'; 		echo 'set -Eeuo pipefail'; 		echo 'if ! [ -d "$JAVA_HOME" ]; then echo >&2 "error: missing JAVA_HOME environment variable"; exit 1; fi'; 		echo 'cacertsFile=; for f in "$JAVA_HOME/lib/security/cacerts" "$JAVA_HOME/jre/lib/security/cacerts"; do if [ -e "$f" ]; then cacertsFile="$f"; break; fi; done'; 		echo 'if [ -z "$cacertsFile" ] || ! [ -f "$cacertsFile" ]; then echo >&2 "error: failed to find cacerts file in $JAVA_HOME"; exit 1; fi'; 		echo 'trust extract --overwrite --format=java-cacerts --filter=ca-anchors --purpose=server-auth "$cacertsFile"'; 	} > /etc/ca-certificates/update.d/docker-openjdk; 	chmod +x /etc/ca-certificates/update.d/docker-openjdk; 	/etc/ca-certificates/update.d/docker-openjdk; 		find "$JAVA_HOME/lib" -name '*.so' -exec dirname '{}' ';' | sort -u > /etc/ld.so.conf.d/docker-openjdk.conf; 	ldconfig; 		java -version
-# Fri, 18 Oct 2019 04:32:33 GMT
+# Sat, 19 Oct 2019 07:58:31 GMT
 MAINTAINER Kaazing Docker Maintainers, contact via github issues: https://github.com/kaazing/gateway.docker/issues
-# Fri, 18 Oct 2019 04:32:36 GMT
+# Sat, 19 Oct 2019 07:58:34 GMT
 RUN gpg --keyserver ha.pool.sks-keyservers.net --recv-keys F8F4B66E022A4668E532DAC03AA0B82C385B4D59
-# Fri, 18 Oct 2019 04:32:36 GMT
+# Sat, 19 Oct 2019 07:58:34 GMT
 ENV KAAZING_GATEWAY_VERSION=5.6.0
-# Fri, 18 Oct 2019 04:32:37 GMT
+# Sat, 19 Oct 2019 07:58:34 GMT
 ENV KAAZING_GATEWAY_URL=https://oss.sonatype.org/content/repositories/releases/org/kaazing/gateway.distribution/5.6.0/gateway.distribution-5.6.0.tar.gz
-# Fri, 18 Oct 2019 04:32:37 GMT
+# Sat, 19 Oct 2019 07:58:34 GMT
 WORKDIR /kaazing-gateway
-# Fri, 18 Oct 2019 04:32:39 GMT
+# Sat, 19 Oct 2019 07:58:36 GMT
 RUN curl -fSL -o gateway.tar.gz $KAAZING_GATEWAY_URL 	&& curl -fSL -o gateway.tar.gz.asc ${KAAZING_GATEWAY_URL}.asc 	&& gpg --verify gateway.tar.gz.asc 	&& tar -xvf gateway.tar.gz --strip-components=1 	&& rm gateway.tar.gz*
-# Fri, 18 Oct 2019 04:32:39 GMT
+# Sat, 19 Oct 2019 07:58:36 GMT
 ENV GATEWAY_OPTS=-Xmx512m -Djava.security.egd=file:/dev/urandom
-# Fri, 18 Oct 2019 04:32:39 GMT
+# Sat, 19 Oct 2019 07:58:36 GMT
 ENV PATH=/usr/local/openjdk-8/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/kaazing-gateway/bin
-# Fri, 18 Oct 2019 04:32:39 GMT
+# Sat, 19 Oct 2019 07:58:36 GMT
 EXPOSE 8000
-# Fri, 18 Oct 2019 04:32:39 GMT
+# Sat, 19 Oct 2019 07:58:36 GMT
 CMD ["gateway.start"]
 ```
 
@@ -92,21 +92,21 @@ CMD ["gateway.start"]
 		Last Modified: Thu, 17 Oct 2019 08:41:08 GMT  
 		Size: 221.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:d6307286bdcdf56d9803709b0b3e4575dd477c8a702ced3a859c13e63ecc7264`  
-		Last Modified: Thu, 17 Oct 2019 08:41:15 GMT  
-		Size: 40.2 MB (40185608 bytes)  
+	-	`sha256:6585137b08a32b71cc7147c10ae8601ac4cf0bf42e9859cdb0d22b2087cdb90e`  
+		Last Modified: Fri, 18 Oct 2019 23:47:16 GMT  
+		Size: 40.2 MB (40196580 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c0d61ff46508a5970d8309342d6fb636675692dfc141267022ffeae4cf9dc162`  
-		Last Modified: Fri, 18 Oct 2019 04:32:47 GMT  
+	-	`sha256:e4c8de314b7a6c4f3003459da4a2b210e2b7a5536bf7264fdbf503cf03801f11`  
+		Last Modified: Sat, 19 Oct 2019 07:58:45 GMT  
 		Size: 3.2 KB (3156 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:3655015d049dac91b99a15f98816efccbef8bc629c9422dcdbc6317c379ed7b5`  
-		Last Modified: Fri, 18 Oct 2019 04:32:47 GMT  
+	-	`sha256:922f35b2bd2d25cba4c052012868c41205d0d5055c991ef6ee60fccb3d416ff5`  
+		Last Modified: Sat, 19 Oct 2019 07:58:45 GMT  
 		Size: 104.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:33d11b98a8c823f4505a046d1b3c8cbc132d893831761d22bd32ac5a4238e5c4`  
-		Last Modified: Fri, 18 Oct 2019 04:32:48 GMT  
-		Size: 17.1 MB (17126829 bytes)  
+	-	`sha256:07fd15f90c29c07e3f9afc40323129ad89f601f2d75b0490e3151ebaee303483`  
+		Last Modified: Sat, 19 Oct 2019 07:58:51 GMT  
+		Size: 17.1 MB (17126834 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `kaazing-gateway:latest` - linux; arm64 variant v8
