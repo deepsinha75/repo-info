@@ -1,7 +1,7 @@
 ## `redmine:passenger`
 
 ```console
-$ docker pull redmine@sha256:52d122a9ca55454583d8a0471645411ce80c7095939849c4eb3f87ddfd77d292
+$ docker pull redmine@sha256:24d62f6f0cba17e6d9118f087da05a967c1178b1f5d67a090ee0f276f0712373
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -11,14 +11,14 @@ $ docker pull redmine@sha256:52d122a9ca55454583d8a0471645411ce80c7095939849c4eb3
 ### `redmine:passenger` - linux; amd64
 
 ```console
-$ docker pull redmine@sha256:8b426930365401c24b33f6bad32aaef9c17a6618c01d6d3e56e6cefba4405306
+$ docker pull redmine@sha256:e9dd141dbbc2713aa84ffc166ac44f9fa456099811e57d62f06d38d91b1c97b5
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **230.8 MB (230810960 bytes)**  
+-	Total Size: **230.8 MB (230808627 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:50bdbc94fceef83f81170fa592a3666d5baa885585fd4a3a15dcdb0213a1d9ae`
+-	Image ID: `sha256:e7c519304bcd8dad84a6d4ce1f15082bbba0f80f9821338c38d1a5165fe43478`
 -	Entrypoint: `["\/docker-entrypoint.sh"]`
 -	Default Command: `["passenger","start"]`
 
@@ -63,33 +63,33 @@ WORKDIR /usr/src/redmine
 ENV HOME=/home/redmine
 # Fri, 18 Oct 2019 05:24:35 GMT
 RUN set -eux; 	[ ! -d "$HOME" ]; 	mkdir -p "$HOME"; 	chown redmine:redmine "$HOME"; 	chmod 1777 "$HOME"
-# Fri, 18 Oct 2019 05:24:35 GMT
-ENV REDMINE_VERSION=4.0.4
-# Fri, 18 Oct 2019 05:24:35 GMT
-ENV REDMINE_DOWNLOAD_MD5=35a4f60b35fed2b10d14cb12fc8aef50
-# Fri, 18 Oct 2019 05:24:38 GMT
+# Mon, 21 Oct 2019 16:42:49 GMT
+ENV REDMINE_VERSION=4.0.5
+# Mon, 21 Oct 2019 16:42:49 GMT
+ENV REDMINE_DOWNLOAD_MD5=d25649272a9c347e4368cdd50e039e86
+# Mon, 21 Oct 2019 16:42:52 GMT
 RUN set -eux; 	wget -O redmine.tar.gz "https://www.redmine.org/releases/redmine-${REDMINE_VERSION}.tar.gz"; 	echo "$REDMINE_DOWNLOAD_MD5 *redmine.tar.gz" | md5sum -c -; 	tar -xf redmine.tar.gz --strip-components=1; 	rm redmine.tar.gz files/delete.me log/delete.me; 	mkdir -p log public/plugin_assets sqlite tmp/pdf tmp/pids; 	chown -R redmine:redmine ./; 	echo 'config.logger = Logger.new(STDOUT)' > config/additional_environment.rb; 	chmod -R ugo=rwX config db sqlite; 	find log tmp -type d -exec chmod 1777 '{}' +
-# Fri, 18 Oct 2019 05:27:10 GMT
+# Mon, 21 Oct 2019 16:45:51 GMT
 RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		freetds-dev 		gcc 		libmagickcore-dev 		libmagickwand-dev 		libmariadbclient-dev 		libpq-dev 		libsqlite3-dev 		make 		patch 	; 	rm -rf /var/lib/apt/lists/*; 		gosu redmine bundle install --jobs "$(nproc)" --without development test; 	for adapter in mysql2 postgresql sqlserver sqlite3; do 		echo "$RAILS_ENV:" > ./config/database.yml; 		echo "  adapter: $adapter" >> ./config/database.yml; 		gosu redmine bundle install --jobs "$(nproc)" --without development test; 		cp Gemfile.lock "Gemfile.lock.${adapter}"; 	done; 	rm ./config/database.yml; 	chmod -R ugo=rwX Gemfile.lock "$GEM_HOME"; 	rm -rf ~redmine/.bundle; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark; 	find /usr/local -type f -executable -exec ldd '{}' ';' 		| awk '/=>/ { print $(NF-1) }' 		| sort -u 		| grep -v '^/usr/local/' 		| xargs -r dpkg-query --search 		| cut -d: -f1 		| sort -u 		| xargs -r apt-mark manual 	; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false
-# Fri, 18 Oct 2019 05:27:11 GMT
+# Mon, 21 Oct 2019 16:45:52 GMT
 VOLUME [/usr/src/redmine/files]
-# Fri, 18 Oct 2019 05:27:11 GMT
+# Mon, 21 Oct 2019 16:45:52 GMT
 COPY file:df6d0160357b381a47abf010e78172591272c9029cb0436b6b6dfcc71483244e in / 
-# Fri, 18 Oct 2019 05:27:11 GMT
+# Mon, 21 Oct 2019 16:45:52 GMT
 ENTRYPOINT ["/docker-entrypoint.sh"]
-# Fri, 18 Oct 2019 05:27:11 GMT
+# Mon, 21 Oct 2019 16:45:52 GMT
 EXPOSE 3000
-# Fri, 18 Oct 2019 05:27:11 GMT
+# Mon, 21 Oct 2019 16:45:52 GMT
 CMD ["rails" "server" "-b" "0.0.0.0"]
-# Fri, 18 Oct 2019 05:27:25 GMT
+# Mon, 21 Oct 2019 16:46:04 GMT
 ENV PASSENGER_VERSION=6.0.4
-# Fri, 18 Oct 2019 05:27:41 GMT
+# Mon, 21 Oct 2019 16:46:21 GMT
 RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		gcc 		make 	; 	rm -rf /var/lib/apt/lists/*; 		gem install passenger --version "$PASSENGER_VERSION"; 	passenger-config build-native-support; 	if [ -n "$(passenger-config build-native-support 2>&1)" ]; then cat /tmp/passenger_native_support-*.log; false; fi; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false
-# Fri, 18 Oct 2019 05:27:43 GMT
+# Mon, 21 Oct 2019 16:46:23 GMT
 RUN set -eux; 	passenger-config install-agent; 	passenger-config download-nginx-engine
-# Fri, 18 Oct 2019 05:27:43 GMT
+# Mon, 21 Oct 2019 16:46:23 GMT
 ENV PASSENGER_PID_FILE=tmp/pids/server.pid
-# Fri, 18 Oct 2019 05:27:43 GMT
+# Mon, 21 Oct 2019 16:46:23 GMT
 CMD ["passenger" "start"]
 ```
 
@@ -134,23 +134,23 @@ CMD ["passenger" "start"]
 		Last Modified: Fri, 18 Oct 2019 05:31:32 GMT  
 		Size: 128.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:e778ed82421e9a8b38317ca30852097e53292a97521f4f8863dd0e4dfa2ee9dd`  
-		Last Modified: Fri, 18 Oct 2019 05:31:33 GMT  
-		Size: 2.5 MB (2533031 bytes)  
+	-	`sha256:f1aa4a04d806e1028874b4c21948c8c8e98969c8f4c2e0383f9b292181f4ee1d`  
+		Last Modified: Mon, 21 Oct 2019 16:53:42 GMT  
+		Size: 2.5 MB (2533580 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:e95e075f2816c04ad3f601629b7283ad26f60d724f2bf70f838c976cb1795a87`  
-		Last Modified: Fri, 18 Oct 2019 05:31:41 GMT  
-		Size: 60.9 MB (60873347 bytes)  
+	-	`sha256:9adfcc647a792fa0661b4423ae8ccead690b3a0b5a580b7657b91872d202740a`  
+		Last Modified: Mon, 21 Oct 2019 16:53:48 GMT  
+		Size: 60.9 MB (60870325 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:b54c3a0ff852295f1b17dc460cfb5833091d2640b8d294ceacf377fea0e339e2`  
-		Last Modified: Fri, 18 Oct 2019 05:31:32 GMT  
+	-	`sha256:470633959b3cc59e60acc9c743e32410ac0087227614903e0dd1b83e7e9d7248`  
+		Last Modified: Mon, 21 Oct 2019 16:53:41 GMT  
 		Size: 2.1 KB (2053 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:379a1f7803b0a7dee49dcb31cb3440701d17b3b857ddb09bd5e2a20b0be45d64`  
-		Last Modified: Fri, 18 Oct 2019 05:31:58 GMT  
-		Size: 19.9 MB (19939547 bytes)  
+	-	`sha256:33fdbdc9cba2161aeb3a9f9586a07c4d7dd4eabc359896a7ddd53a002ad34dbd`  
+		Last Modified: Mon, 21 Oct 2019 16:53:58 GMT  
+		Size: 19.9 MB (19939692 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:99d433e6b523dfda7cd6470a963d4b6dd9e1710ad43f64bf6756b0f179537281`  
-		Last Modified: Fri, 18 Oct 2019 05:31:56 GMT  
-		Size: 4.9 MB (4917843 bytes)  
+	-	`sha256:472742de5f6224c5ae299ed393bd9b41085ec1e51fb2a4aeaad6bf4fe7ef27b7`  
+		Last Modified: Mon, 21 Oct 2019 16:54:01 GMT  
+		Size: 4.9 MB (4917838 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
