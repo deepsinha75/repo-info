@@ -1,10 +1,10 @@
-# `redmine:4.0.4-alpine`
+# `redmine:4.0.5-alpine`
 
 ## Docker Metadata
 
-- Image ID: `sha256:02cec89276920292b1487e18fd467f6abe0e23e9de33d6595e1ea57b4319b99b`
-- Created: `2019-10-01T21:07:01.906209781Z`
-- Virtual Size: ~ 368.62 Mb  
+- Image ID: `sha256:a25741fee14f532626638ecf9341958fa5767116746ddbdefc380f78e4447cb0`
+- Created: `2019-10-21T16:48:19.095326215Z`
+- Virtual Size: ~ 375.11 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["/docker-entrypoint.sh"]`
@@ -20,8 +20,8 @@
   - `BUNDLE_APP_CONFIG=/usr/local/bundle`
   - `RAILS_ENV=production`
   - `HOME=/home/redmine`
-  - `REDMINE_VERSION=4.0.4`
-  - `REDMINE_DOWNLOAD_MD5=35a4f60b35fed2b10d14cb12fc8aef50`
+  - `REDMINE_VERSION=4.0.5`
+  - `REDMINE_DOWNLOAD_MD5=d25649272a9c347e4368cdd50e039e86`
 
 ## `apk` (`.apk`-based packages)
 
@@ -589,16 +589,16 @@ Apache-2.0
 ### `apk` package: `imagemagick6-libs`
 
 ```console
-imagemagick6-libs-6.9.10.60-r0 description:
+imagemagick6-libs-6.9.10.68-r0 description:
 A collection of tools and libraries for many image formats (legacy version 6) (libraries)
 
-imagemagick6-libs-6.9.10.60-r0 webpage:
+imagemagick6-libs-6.9.10.68-r0 webpage:
 https://www.imagemagick.org/
 
-imagemagick6-libs-6.9.10.60-r0 installed size:
-6934528
+imagemagick6-libs-6.9.10.68-r0 installed size:
+6942720
 
-imagemagick6-libs-6.9.10.60-r0 license:
+imagemagick6-libs-6.9.10.68-r0 license:
 Apache-2.0
 
 ```
@@ -1694,16 +1694,16 @@ GPL-2.0-or-later
 ### `apk` package: `sqlite-libs`
 
 ```console
-sqlite-libs-3.28.0-r0 description:
+sqlite-libs-3.28.0-r1 description:
 Sqlite3 library
 
-sqlite-libs-3.28.0-r0 webpage:
+sqlite-libs-3.28.0-r1 webpage:
 https://www.sqlite.org/
 
-sqlite-libs-3.28.0-r0 installed size:
+sqlite-libs-3.28.0-r1 installed size:
 925696
 
-sqlite-libs-3.28.0-r0 license:
+sqlite-libs-3.28.0-r1 license:
 Public-Domain
 
 ```
