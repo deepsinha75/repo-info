@@ -2,9 +2,9 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:90a1aac032d360f11be44b4edc0e3e5faa33b4f8c85dc54bb50b40712b0b2662`
-- Created: `2019-10-16T00:11:42.034930464Z`
-- Virtual Size: ~ 602.15 Mb  
+- Image ID: `sha256:e435ba42c87c67f4adf5d5ad7f313bf7f06c1365029f343881b86f2777df3b25`
+- Created: `2019-10-19T09:16:36.979360991Z`
+- Virtual Size: ~ 598.76 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["/docker-entrypoint.sh"]`
@@ -15,9 +15,9 @@
   - `PYTHONIOENCODING=UTF-8`
   - `GPG_KEY=C01E1CAD5EA2C4F0B8E3571504C367C218ADD4FF`
   - `PYTHON_VERSION=2.7.16`
-  - `PYTHON_PIP_VERSION=19.3`
-  - `PYTHON_GET_PIP_URL=https://github.com/pypa/get-pip/raw/65986a26949050d26e6ec98915da4aade8d8679d/get-pip.py`
-  - `PYTHON_GET_PIP_SHA256=8d412752ae26b46a39a201ec618ef9ef7656c5b2d8529cdcbe60cd70dc94f40c`
+  - `PYTHON_PIP_VERSION=19.3.1`
+  - `PYTHON_GET_PIP_URL=https://github.com/pypa/get-pip/raw/ffe826207a010164265d9cc807978e3604d18ca0/get-pip.py`
+  - `PYTHON_GET_PIP_SHA256=b86f36cc4345ae87bfd4f10ef6b2dbfa7a872fbff70608a1e43944d283fd0eee`
   - `PIP=19.0.3`
   - `ZC_BUILDOUT=2.13.1`
   - `SETUPTOOLS=41.0.0`
@@ -541,14 +541,14 @@ Other potentially useful URLs:
 - https://sources.debian.net/src/dpkg/1.18.25/debian/copyright/ (for direct copyright/license information)
 - http://snapshot.debian.org/package/dpkg/1.18.25/ (for access to the source package after it no longer exists in the archive)
 
-### `dpkg` source package: `e2fsprogs=1.43.4-2`
+### `dpkg` source package: `e2fsprogs=1.43.4-2+deb9u1`
 
 Binary Packages:
 
-- `e2fslibs:amd64=1.43.4-2`
-- `e2fsprogs=1.43.4-2`
-- `libcomerr2:amd64=1.43.4-2`
-- `libss2:amd64=1.43.4-2`
+- `e2fslibs:amd64=1.43.4-2+deb9u1`
+- `e2fsprogs=1.43.4-2+deb9u1`
+- `libcomerr2:amd64=1.43.4-2+deb9u1`
+- `libss2:amd64=1.43.4-2+deb9u1`
 
 Licenses: (parsed from: `/usr/share/doc/e2fslibs/copyright`, `/usr/share/doc/e2fsprogs/copyright`, `/usr/share/doc/libcomerr2/copyright`, `/usr/share/doc/libss2/copyright`)
 
@@ -558,17 +558,17 @@ Licenses: (parsed from: `/usr/share/doc/e2fslibs/copyright`, `/usr/share/doc/e2f
 Source:
 
 ```console
-$ apt-get source -qq --print-uris e2fsprogs=1.43.4-2
-'http://deb.debian.org/debian/pool/main/e/e2fsprogs/e2fsprogs_1.43.4-2.dsc' e2fsprogs_1.43.4-2.dsc 2043 SHA256:e6f6b8dddeb97cc81c3aa7aa826305e1f9c9cd1c3066b2b916e558682fdc7f70
-'http://deb.debian.org/debian/pool/main/e/e2fsprogs/e2fsprogs_1.43.4.orig.tar.gz' e2fsprogs_1.43.4.orig.tar.gz 7552218 SHA256:484ab0bc1bc07c64267b18cfe7871b6b975bf0a705c5a4563001f035071cdc7c
-'http://deb.debian.org/debian/pool/main/e/e2fsprogs/e2fsprogs_1.43.4-2.debian.tar.xz' e2fsprogs_1.43.4-2.debian.tar.xz 76444 SHA256:e1713f9e686a71a9d6f119cd178c4ebea502a7c2b43901cc41bcdb61b142b1c8
+$ apt-get source -qq --print-uris e2fsprogs=1.43.4-2+deb9u1
+'http://security.debian.org/debian-security/pool/updates/main/e/e2fsprogs/e2fsprogs_1.43.4-2+deb9u1.dsc' e2fsprogs_1.43.4-2+deb9u1.dsc 2071 SHA256:b3d4d80f72ef552369448b0f2ecc2b68e3a670fdab5a14705fcaf8607579cc32
+'http://security.debian.org/debian-security/pool/updates/main/e/e2fsprogs/e2fsprogs_1.43.4.orig.tar.gz' e2fsprogs_1.43.4.orig.tar.gz 7552218 SHA256:484ab0bc1bc07c64267b18cfe7871b6b975bf0a705c5a4563001f035071cdc7c
+'http://security.debian.org/debian-security/pool/updates/main/e/e2fsprogs/e2fsprogs_1.43.4-2+deb9u1.debian.tar.xz' e2fsprogs_1.43.4-2+deb9u1.debian.tar.xz 78168 SHA256:d238b0872e2aad029fbcd02a9e83242befb3b2cc445bbaa4712a90f2741fbeeb
 ```
 
 Other potentially useful URLs:
 
-- https://sources.debian.net/src/e2fsprogs/1.43.4-2/ (for browsing the source)
-- https://sources.debian.net/src/e2fsprogs/1.43.4-2/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/e2fsprogs/1.43.4-2/ (for access to the source package after it no longer exists in the archive)
+- https://sources.debian.net/src/e2fsprogs/1.43.4-2+deb9u1/ (for browsing the source)
+- https://sources.debian.net/src/e2fsprogs/1.43.4-2+deb9u1/debian/copyright/ (for direct copyright/license information)
+- http://snapshot.debian.org/package/e2fsprogs/1.43.4-2+deb9u1/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `expat=2.2.0-2+deb9u3`
 
@@ -2048,37 +2048,12 @@ Other potentially useful URLs:
 - https://sources.debian.net/src/openjpeg2/2.1.2-1.1+deb9u3/debian/copyright/ (for direct copyright/license information)
 - http://snapshot.debian.org/package/openjpeg2/2.1.2-1.1+deb9u3/ (for access to the source package after it no longer exists in the archive)
 
-### `dpkg` source package: `openssl=1.1.0k-1~deb9u1`
-
-Binary Packages:
-
-- `openssl=1.1.0k-1~deb9u1`
-
-**WARNING:** unable to detect licenses! (package likely not compliant with DEP-5)  
-If source is available (seen below), check the contents of `debian/copyright` within it.
-
-
-Source:
-
-```console
-$ apt-get source -qq --print-uris openssl=1.1.0k-1~deb9u1
-'http://deb.debian.org/debian/pool/main/o/openssl/openssl_1.1.0k-1~deb9u1.dsc' openssl_1.1.0k-1~deb9u1.dsc 2437 SHA256:81d1127296775e23080740d8bd0f8b8696f0edd6a8cd5c87d95f2dea23d128d9
-'http://deb.debian.org/debian/pool/main/o/openssl/openssl_1.1.0k.orig.tar.gz' openssl_1.1.0k.orig.tar.gz 5287321 SHA256:efa4965f4f773574d6cbda1cf874dbbe455ab1c0d4f906115f867d30444470b1
-'http://deb.debian.org/debian/pool/main/o/openssl/openssl_1.1.0k.orig.tar.gz.asc' openssl_1.1.0k.orig.tar.gz.asc 833 SHA256:82b4338a150147d3c67a0bc0aa1ae4b209b8dc985af2bf523d72097bdf12a743
-'http://deb.debian.org/debian/pool/main/o/openssl/openssl_1.1.0k-1~deb9u1.debian.tar.xz' openssl_1.1.0k-1~deb9u1.debian.tar.xz 71996 SHA256:782054f0183e65469f97402cecff23c0d9fc00a026f263afbca3ba77415ffa27
-```
-
-Other potentially useful URLs:
-
-- https://sources.debian.net/src/openssl/1.1.0k-1~deb9u1/ (for browsing the source)
-- https://sources.debian.net/src/openssl/1.1.0k-1~deb9u1/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/openssl/1.1.0k-1~deb9u1/ (for access to the source package after it no longer exists in the archive)
-
 ### `dpkg` source package: `openssl=1.1.0l-1~deb9u1`
 
 Binary Packages:
 
 - `libssl1.1:amd64=1.1.0l-1~deb9u1`
+- `openssl=1.1.0l-1~deb9u1`
 
 **WARNING:** unable to detect licenses! (package likely not compliant with DEP-5)  
 If source is available (seen below), check the contents of `debian/copyright` within it.
@@ -2600,11 +2575,11 @@ Other potentially useful URLs:
 - https://sources.debian.net/src/tiff/4.0.8-2+deb9u4/debian/copyright/ (for direct copyright/license information)
 - http://snapshot.debian.org/package/tiff/4.0.8-2+deb9u4/ (for access to the source package after it no longer exists in the archive)
 
-### `dpkg` source package: `tzdata=2019b-0+deb9u1`
+### `dpkg` source package: `tzdata=2019c-0+deb9u1`
 
 Binary Packages:
 
-- `tzdata=2019b-0+deb9u1`
+- `tzdata=2019c-0+deb9u1`
 
 **WARNING:** unable to detect licenses! (package likely not compliant with DEP-5)  
 If source is available (seen below), check the contents of `debian/copyright` within it.
@@ -2613,18 +2588,18 @@ If source is available (seen below), check the contents of `debian/copyright` wi
 Source:
 
 ```console
-$ apt-get source -qq --print-uris tzdata=2019b-0+deb9u1
-'http://deb.debian.org/debian/pool/main/t/tzdata/tzdata_2019b-0+deb9u1.dsc' tzdata_2019b-0+deb9u1.dsc 2270 SHA256:7ef304af8fa2989f5799ada6435dea6ab6aded5a9e1e405c57f6f9a4d20dffba
-'http://deb.debian.org/debian/pool/main/t/tzdata/tzdata_2019b.orig.tar.gz' tzdata_2019b.orig.tar.gz 384667 SHA256:05d9092c90dcf9ec4f3ccfdea80c7dcea5e882b3b105c3422da172aaa9a50c64
-'http://deb.debian.org/debian/pool/main/t/tzdata/tzdata_2019b.orig.tar.gz.asc' tzdata_2019b.orig.tar.gz.asc 833 SHA256:2e3bd0245d3e63cffe8580551074b07cbdc7dcb37ab92ec7dad5af84331ce3da
-'http://deb.debian.org/debian/pool/main/t/tzdata/tzdata_2019b-0+deb9u1.debian.tar.xz' tzdata_2019b-0+deb9u1.debian.tar.xz 101816 SHA256:d230717d6420ca9089c824ec8034e1846cd094639d54193d2f69970eaa10ce25
+$ apt-get source -qq --print-uris tzdata=2019c-0+deb9u1
+'http://deb.debian.org/debian/pool/main/t/tzdata/tzdata_2019c-0+deb9u1.dsc' tzdata_2019c-0+deb9u1.dsc 2270 SHA256:5e6c0a29f32b80acf5e2a6bc739a45f19f1a47a729e5bbcb9e90bc8cbfeaad34
+'http://deb.debian.org/debian/pool/main/t/tzdata/tzdata_2019c.orig.tar.gz' tzdata_2019c.orig.tar.gz 392087 SHA256:79c7806dab09072308da0e3d22c37d3b245015a591891ea147d3b133b60ffc7c
+'http://deb.debian.org/debian/pool/main/t/tzdata/tzdata_2019c.orig.tar.gz.asc' tzdata_2019c.orig.tar.gz.asc 833 SHA256:cd31deaeee229d45e4f4b973441189e7619ef81679359e9c8b47b2a87aaf6a07
+'http://deb.debian.org/debian/pool/main/t/tzdata/tzdata_2019c-0+deb9u1.debian.tar.xz' tzdata_2019c-0+deb9u1.debian.tar.xz 101948 SHA256:96a84b44365eadc4007b4e6d7928061e4f014d0c3de0ff1b711ccda8057a405f
 ```
 
 Other potentially useful URLs:
 
-- https://sources.debian.net/src/tzdata/2019b-0+deb9u1/ (for browsing the source)
-- https://sources.debian.net/src/tzdata/2019b-0+deb9u1/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/tzdata/2019b-0+deb9u1/ (for access to the source package after it no longer exists in the archive)
+- https://sources.debian.net/src/tzdata/2019c-0+deb9u1/ (for browsing the source)
+- https://sources.debian.net/src/tzdata/2019c-0+deb9u1/debian/copyright/ (for direct copyright/license information)
+- http://snapshot.debian.org/package/tzdata/2019c-0+deb9u1/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `ucf=3.0036`
 
