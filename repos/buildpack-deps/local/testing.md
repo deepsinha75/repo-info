@@ -1097,25 +1097,13 @@ Licenses: (parsed from: `/usr/share/doc/libfreetype6/copyright`, `/usr/share/doc
 - `Public-Domain`
 - `Zlib`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris freetype=2.9.1-4
-'http://deb.debian.org/debian/pool/main/f/freetype/freetype_2.9.1-4.dsc' freetype_2.9.1-4.dsc 3663 SHA256:3338e9b56ef7e7557c1d00ee439dee089c5b918710ed00dbdc58f7b582946aa4
-'http://deb.debian.org/debian/pool/main/f/freetype/freetype_2.9.1.orig-ft2demos.tar.gz' freetype_2.9.1.orig-ft2demos.tar.gz 294850 SHA256:3d440aad3481285c7455f1593577e375c9d5792c800bbaba68d46fd75130fab9
-'http://deb.debian.org/debian/pool/main/f/freetype/freetype_2.9.1.orig-ft2demos.tar.gz.asc' freetype_2.9.1.orig-ft2demos.tar.gz.asc 359 SHA256:665b8357378dc715fbac964d05cdcc2a2f7fd1e9d7918a27bf50f4d0a17f0d30
-'http://deb.debian.org/debian/pool/main/f/freetype/freetype_2.9.1.orig-ft2docs.tar.gz' freetype_2.9.1.orig-ft2docs.tar.gz 2123920 SHA256:f57c1297f5ad2ad4764f491317fa0f548bd307c4513185d4a0602412e83b1dc9
-'http://deb.debian.org/debian/pool/main/f/freetype/freetype_2.9.1.orig-ft2docs.tar.gz.asc' freetype_2.9.1.orig-ft2docs.tar.gz.asc 359 SHA256:c4c674db43603f719018716970569d1722d0de46fa94757eb7f39266d72cdbd1
-'http://deb.debian.org/debian/pool/main/f/freetype/freetype_2.9.1.orig.tar.gz' freetype_2.9.1.orig.tar.gz 2533956 SHA256:ec391504e55498adceb30baceebd147a6e963f636eb617424bcfc47a169898ce
-'http://deb.debian.org/debian/pool/main/f/freetype/freetype_2.9.1.orig.tar.gz.asc' freetype_2.9.1.orig.tar.gz.asc 359 SHA256:2c2c5ae3b3838053b94366639e802b18bc4761003ea15ce73402d276baec424d
-'http://deb.debian.org/debian/pool/main/f/freetype/freetype_2.9.1-4.debian.tar.xz' freetype_2.9.1-4.debian.tar.xz 111992 SHA256:94311247da835d2b32e5e7a00e5db998e87e79a20948d9c526e44a17efa0e3af
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/freetype/2.9.1-4/
 
-- https://sources.debian.net/src/freetype/2.9.1-4/ (for browsing the source)
-- https://sources.debian.net/src/freetype/2.9.1-4/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/freetype/2.9.1-4/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `fribidi=1.0.7-1`
 
@@ -4633,20 +4621,13 @@ Licenses: (parsed from: `/usr/share/doc/libpython2.7-minimal/copyright`, `/usr/s
 - `implied`
 - `see above, some license as Python`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris python2.7=2.7.17~rc1-1
-'http://deb.debian.org/debian/pool/main/p/python2.7/python2.7_2.7.17~rc1-1.dsc' python2.7_2.7.17~rc1-1.dsc 3393 SHA256:aa75ad37cb320dad690aaf3892a163ed3604bfc4ff0e026349c1e6bdfefddab1
-'http://deb.debian.org/debian/pool/main/p/python2.7/python2.7_2.7.17~rc1.orig.tar.gz' python2.7_2.7.17~rc1.orig.tar.gz 17539373 SHA256:ec020b417d5507c78c100d4ff3fb23187bb1405801aeb7aa620d4f5023a4e226
-'http://deb.debian.org/debian/pool/main/p/python2.7/python2.7_2.7.17~rc1-1.diff.gz' python2.7_2.7.17~rc1-1.diff.gz 286056 SHA256:886f08048984f58f1b5a0f98b067e4ff6de8c080a413ba93ef4d2afa366cebc8
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/python2.7/2.7.17~rc1-1/
 
-- https://sources.debian.net/src/python2.7/2.7.17~rc1-1/ (for browsing the source)
-- https://sources.debian.net/src/python2.7/2.7.17~rc1-1/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/python2.7/2.7.17~rc1-1/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `python3-defaults=3.7.5-1`
 
@@ -4685,20 +4666,13 @@ Binary Packages:
 If source is available (seen below), check the contents of `debian/copyright` within it.
 
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris python3-stdlib-extensions=3.7.5~rc1-1
-'http://deb.debian.org/debian/pool/main/p/python3-stdlib-extensions/python3-stdlib-extensions_3.7.5~rc1-1.dsc' python3-stdlib-extensions_3.7.5~rc1-1.dsc 2567 SHA256:706f11315743d17ce9f4dd7dee68eaddb0a011d5cf2270681313f252a1f112d5
-'http://deb.debian.org/debian/pool/main/p/python3-stdlib-extensions/python3-stdlib-extensions_3.7.5~rc1.orig.tar.xz' python3-stdlib-extensions_3.7.5~rc1.orig.tar.xz 1056844 SHA256:b6a0d3d070f2970293af7ed3d7ba48a809608692ce399b483edb9518ba13c574
-'http://deb.debian.org/debian/pool/main/p/python3-stdlib-extensions/python3-stdlib-extensions_3.7.5~rc1-1.debian.tar.xz' python3-stdlib-extensions_3.7.5~rc1-1.debian.tar.xz 17212 SHA256:d9dfb35f2e73490c189e0ba4fea835ff2b5fb63dedd05636cdac219236e0d1ce
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/python3-stdlib-extensions/3.7.5~rc1-1/
 
-- https://sources.debian.net/src/python3-stdlib-extensions/3.7.5~rc1-1/ (for browsing the source)
-- https://sources.debian.net/src/python3-stdlib-extensions/3.7.5~rc1-1/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/python3-stdlib-extensions/3.7.5~rc1-1/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `python3.7=3.7.5~rc1-2`
 

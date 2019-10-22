@@ -2469,20 +2469,13 @@ Licenses: (parsed from: `/usr/share/doc/libpython2.7-minimal/copyright`, `/usr/s
 - `implied`
 - `see above, some license as Python`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris python2.7=2.7.17~rc1-1
-'http://deb.debian.org/debian/pool/main/p/python2.7/python2.7_2.7.17~rc1-1.dsc' python2.7_2.7.17~rc1-1.dsc 3393 SHA256:aa75ad37cb320dad690aaf3892a163ed3604bfc4ff0e026349c1e6bdfefddab1
-'http://deb.debian.org/debian/pool/main/p/python2.7/python2.7_2.7.17~rc1.orig.tar.gz' python2.7_2.7.17~rc1.orig.tar.gz 17539373 SHA256:ec020b417d5507c78c100d4ff3fb23187bb1405801aeb7aa620d4f5023a4e226
-'http://deb.debian.org/debian/pool/main/p/python2.7/python2.7_2.7.17~rc1-1.diff.gz' python2.7_2.7.17~rc1-1.diff.gz 286056 SHA256:886f08048984f58f1b5a0f98b067e4ff6de8c080a413ba93ef4d2afa366cebc8
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/python2.7/2.7.17~rc1-1/
 
-- https://sources.debian.net/src/python2.7/2.7.17~rc1-1/ (for browsing the source)
-- https://sources.debian.net/src/python2.7/2.7.17~rc1-1/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/python2.7/2.7.17~rc1-1/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `readline=8.0-3`
 
