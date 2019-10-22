@@ -1,7 +1,7 @@
 ## `clojure:openjdk-14-tools-deps-alpine`
 
 ```console
-$ docker pull clojure@sha256:3bab1f1ebcaf51c117c0286cf3a6ca8fd4cd7f8947e118ea8dbe555e7e0d3898
+$ docker pull clojure@sha256:4d9b764a5c235e09b04fe7faf2913a15738af4423f4b3222f69031ef58be3941
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -11,55 +11,55 @@ $ docker pull clojure@sha256:3bab1f1ebcaf51c117c0286cf3a6ca8fd4cd7f8947e118ea8db
 ### `clojure:openjdk-14-tools-deps-alpine` - linux; amd64
 
 ```console
-$ docker pull clojure@sha256:b09919e94fb60b41232cead849e9d2a656c6ac2574651b3cd21531b6423cab7c
+$ docker pull clojure@sha256:7832be884c3d14eba2211caec63f67319b5a32e5bbac86b2e9a81e18f54ecc77
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **225.4 MB (225417139 bytes)**  
+-	Total Size: **225.4 MB (225414691 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:555c90f2140ed54327867779b05052fe2cfbe3dd1e12eea0dd6e99f7dc927f38`
+-	Image ID: `sha256:88c9036e78dc3fdc0e763cbc3416a6a2b2326861bf647f30a3f1be8d59952a0f`
 -	Default Command: `["sh","-c","sleep 1 && exec clj"]`
 
 ```dockerfile
-# Tue, 20 Aug 2019 20:19:55 GMT
-ADD file:fe64057fbb83dccb960efabbf1cd8777920ef279a7fa8dbca0a8801c651bdf7c in / 
-# Tue, 20 Aug 2019 20:19:55 GMT
+# Mon, 21 Oct 2019 17:21:42 GMT
+ADD file:fe1f09249227e2da2089afb4d07e16cbf832eeb804120074acd2b8192876cd28 in / 
+# Mon, 21 Oct 2019 17:21:42 GMT
 CMD ["/bin/sh"]
-# Tue, 20 Aug 2019 23:58:28 GMT
+# Mon, 21 Oct 2019 19:48:20 GMT
 ENV JAVA_HOME=/opt/openjdk-14
-# Tue, 20 Aug 2019 23:58:29 GMT
+# Mon, 21 Oct 2019 19:48:21 GMT
 ENV PATH=/opt/openjdk-14/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Wed, 25 Sep 2019 21:50:04 GMT
+# Mon, 21 Oct 2019 19:48:21 GMT
 ENV JAVA_VERSION=14-ea+15
-# Wed, 25 Sep 2019 21:50:04 GMT
+# Mon, 21 Oct 2019 19:48:21 GMT
 ENV JAVA_URL=https://download.java.net/java/early_access/alpine/15/binaries/openjdk-14-ea+15_linux-x64-musl_bin.tar.gz
-# Wed, 25 Sep 2019 21:50:04 GMT
+# Mon, 21 Oct 2019 19:48:21 GMT
 ENV JAVA_SHA256=76091da1b6ed29788f0cf85454d23900a4134286e5feb571247e5861f618d3cd
-# Wed, 25 Sep 2019 21:51:32 GMT
+# Mon, 21 Oct 2019 19:49:55 GMT
 RUN set -eux; 		wget -O /openjdk.tgz "$JAVA_URL"; 	echo "$JAVA_SHA256 */openjdk.tgz" | sha256sum -c -; 	mkdir -p "$JAVA_HOME"; 	tar --extract --file /openjdk.tgz --directory "$JAVA_HOME" --strip-components 1; 	rm /openjdk.tgz; 		java -Xshare:dump; 		java --version; 	javac --version
-# Wed, 25 Sep 2019 21:51:32 GMT
+# Mon, 21 Oct 2019 19:49:56 GMT
 CMD ["jshell"]
-# Thu, 03 Oct 2019 22:34:24 GMT
+# Mon, 21 Oct 2019 22:55:33 GMT
 ENV CLOJURE_VERSION=1.10.1.469
-# Thu, 03 Oct 2019 22:34:24 GMT
+# Mon, 21 Oct 2019 22:55:34 GMT
 WORKDIR /tmp
-# Thu, 03 Oct 2019 22:34:32 GMT
+# Mon, 21 Oct 2019 22:55:42 GMT
 RUN apk add --update --no-cache curl bash && wget https://download.clojure.org/install/linux-install-$CLOJURE_VERSION.sh && chmod +x linux-install-$CLOJURE_VERSION.sh && ./linux-install-$CLOJURE_VERSION.sh && clojure -e "(clojure-version)" && apk del curl bash
-# Thu, 03 Oct 2019 22:34:32 GMT
+# Mon, 21 Oct 2019 22:55:42 GMT
 CMD ["sh" "-c" "sleep 1 && exec clj"]
 ```
 
 -	Layers:
-	-	`sha256:9d48c3bd43c520dc2784e868a780e976b207cbf493eaff8c6596eb871cbd9609`  
-		Last Modified: Tue, 20 Aug 2019 20:20:16 GMT  
-		Size: 2.8 MB (2789669 bytes)  
+	-	`sha256:89d9c30c1d48bac627e5c6cb0d1ed1eec28e7dbdfbcc04712e4c79c0f83faf17`  
+		Last Modified: Mon, 21 Oct 2019 17:22:48 GMT  
+		Size: 2.8 MB (2787134 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:fc475160c533c14f80279b82e77d6f012c0c20b4312f72cbc8d4cc4579430ecf`  
-		Last Modified: Wed, 25 Sep 2019 21:54:34 GMT  
-		Size: 198.7 MB (198726931 bytes)  
+	-	`sha256:c141eadf845ae2db8859f319ed5c75bdf9b8b4e29aa9c2ed428c6be11f3e9b16`  
+		Last Modified: Mon, 21 Oct 2019 19:52:12 GMT  
+		Size: 198.7 MB (198727031 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:d8eadbab9392da2c8204e9f9fd8c3087d79d8cdb20c554a3a752894175e80b00`  
-		Last Modified: Thu, 03 Oct 2019 22:39:15 GMT  
-		Size: 23.9 MB (23900539 bytes)  
+	-	`sha256:65713d3ade31234028b564ad995c3634e2c6e27ea7c64cebf1a1f59b5e50dd18`  
+		Last Modified: Mon, 21 Oct 2019 22:56:52 GMT  
+		Size: 23.9 MB (23900526 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip

@@ -8793,7 +8793,7 @@ CMD ["lein" "repl"]
 ## `clojure:openjdk-14-alpine`
 
 ```console
-$ docker pull clojure@sha256:dc346fe4a3005509df97366a46dcb8447b361dc2c62db06cba5b9d17c23c0fa1
+$ docker pull clojure@sha256:bf58c81b46a33d44b935dfe817b9a9d33f4daebcf26eeae2ed316601d64741d8
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -8803,69 +8803,69 @@ $ docker pull clojure@sha256:dc346fe4a3005509df97366a46dcb8447b361dc2c62db06cba5
 ### `clojure:openjdk-14-alpine` - linux; amd64
 
 ```console
-$ docker pull clojure@sha256:f6301164a5ec7d5289e591614c328d025cff0ad9de6b1b4548cb0fa074280aca
+$ docker pull clojure@sha256:f40fbd1d28c841e40cf52ae3c1504c20a50bf6066e89fd3621c960459483c45e
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **220.0 MB (220036039 bytes)**  
+-	Total Size: **220.0 MB (220033569 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:3f456dc5db74d6052b68ea0a4b4a53458e24732f908928813588d053ca992387`
+-	Image ID: `sha256:f51497e91201204f51b7eed0e4c842be48b422889bc45d526fdd018c4b3113d4`
 -	Default Command: `["lein","repl"]`
 
 ```dockerfile
-# Tue, 20 Aug 2019 20:19:55 GMT
-ADD file:fe64057fbb83dccb960efabbf1cd8777920ef279a7fa8dbca0a8801c651bdf7c in / 
-# Tue, 20 Aug 2019 20:19:55 GMT
+# Mon, 21 Oct 2019 17:21:42 GMT
+ADD file:fe1f09249227e2da2089afb4d07e16cbf832eeb804120074acd2b8192876cd28 in / 
+# Mon, 21 Oct 2019 17:21:42 GMT
 CMD ["/bin/sh"]
-# Tue, 20 Aug 2019 23:58:28 GMT
+# Mon, 21 Oct 2019 19:48:20 GMT
 ENV JAVA_HOME=/opt/openjdk-14
-# Tue, 20 Aug 2019 23:58:29 GMT
+# Mon, 21 Oct 2019 19:48:21 GMT
 ENV PATH=/opt/openjdk-14/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Wed, 25 Sep 2019 21:50:04 GMT
+# Mon, 21 Oct 2019 19:48:21 GMT
 ENV JAVA_VERSION=14-ea+15
-# Wed, 25 Sep 2019 21:50:04 GMT
+# Mon, 21 Oct 2019 19:48:21 GMT
 ENV JAVA_URL=https://download.java.net/java/early_access/alpine/15/binaries/openjdk-14-ea+15_linux-x64-musl_bin.tar.gz
-# Wed, 25 Sep 2019 21:50:04 GMT
+# Mon, 21 Oct 2019 19:48:21 GMT
 ENV JAVA_SHA256=76091da1b6ed29788f0cf85454d23900a4134286e5feb571247e5861f618d3cd
-# Wed, 25 Sep 2019 21:51:32 GMT
+# Mon, 21 Oct 2019 19:49:55 GMT
 RUN set -eux; 		wget -O /openjdk.tgz "$JAVA_URL"; 	echo "$JAVA_SHA256 */openjdk.tgz" | sha256sum -c -; 	mkdir -p "$JAVA_HOME"; 	tar --extract --file /openjdk.tgz --directory "$JAVA_HOME" --strip-components 1; 	rm /openjdk.tgz; 		java -Xshare:dump; 		java --version; 	javac --version
-# Wed, 25 Sep 2019 21:51:32 GMT
+# Mon, 21 Oct 2019 19:49:56 GMT
 CMD ["jshell"]
-# Thu, 03 Oct 2019 22:33:26 GMT
+# Mon, 21 Oct 2019 22:53:53 GMT
 ENV LEIN_VERSION=2.9.1
-# Thu, 03 Oct 2019 22:33:26 GMT
+# Mon, 21 Oct 2019 22:53:54 GMT
 ENV LEIN_INSTALL=/usr/local/bin/
-# Thu, 03 Oct 2019 22:33:26 GMT
+# Mon, 21 Oct 2019 22:53:54 GMT
 WORKDIR /tmp
-# Thu, 03 Oct 2019 22:33:29 GMT
+# Mon, 21 Oct 2019 22:53:57 GMT
 RUN apk add --update --no-cache bash tar openssl gnupg && mkdir -p $LEIN_INSTALL && wget -q https://raw.githubusercontent.com/technomancy/leiningen/$LEIN_VERSION/bin/lein-pkg && echo "Comparing lein-pkg checksum ..." && sha1sum lein-pkg && echo "93be2c23ab4ff2fc4fcf531d7510ca4069b8d24a *lein-pkg" | sha1sum -c - && mv lein-pkg $LEIN_INSTALL/lein && chmod 0755 $LEIN_INSTALL/lein && wget -q https://github.com/technomancy/leiningen/releases/download/$LEIN_VERSION/leiningen-$LEIN_VERSION-standalone.zip && wget -q https://github.com/technomancy/leiningen/releases/download/$LEIN_VERSION/leiningen-$LEIN_VERSION-standalone.zip.asc && gpg --batch --keyserver pool.sks-keyservers.net --recv-key 2B72BF956E23DE5E830D50F6002AF007D1A7CC18 && echo "Verifying Jar file signature ..." && gpg --verify leiningen-$LEIN_VERSION-standalone.zip.asc && rm leiningen-$LEIN_VERSION-standalone.zip.asc && mkdir -p /usr/share/java && mv leiningen-$LEIN_VERSION-standalone.zip /usr/share/java/leiningen-$LEIN_VERSION-standalone.jar && apk del tar openssl gnupg
-# Thu, 03 Oct 2019 22:33:29 GMT
+# Mon, 21 Oct 2019 22:53:57 GMT
 ENV PATH=/opt/openjdk-14/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/local/bin/
-# Thu, 03 Oct 2019 22:33:29 GMT
+# Mon, 21 Oct 2019 22:53:57 GMT
 ENV LEIN_ROOT=1
-# Thu, 03 Oct 2019 22:33:34 GMT
+# Mon, 21 Oct 2019 22:54:01 GMT
 RUN echo '(defproject dummy "" :dependencies [[org.clojure/clojure "1.10.1"]])' > project.clj   && lein deps && rm project.clj
-# Thu, 03 Oct 2019 22:33:34 GMT
+# Mon, 21 Oct 2019 22:54:01 GMT
 CMD ["lein" "repl"]
 ```
 
 -	Layers:
-	-	`sha256:9d48c3bd43c520dc2784e868a780e976b207cbf493eaff8c6596eb871cbd9609`  
-		Last Modified: Tue, 20 Aug 2019 20:20:16 GMT  
-		Size: 2.8 MB (2789669 bytes)  
+	-	`sha256:89d9c30c1d48bac627e5c6cb0d1ed1eec28e7dbdfbcc04712e4c79c0f83faf17`  
+		Last Modified: Mon, 21 Oct 2019 17:22:48 GMT  
+		Size: 2.8 MB (2787134 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:fc475160c533c14f80279b82e77d6f012c0c20b4312f72cbc8d4cc4579430ecf`  
-		Last Modified: Wed, 25 Sep 2019 21:54:34 GMT  
-		Size: 198.7 MB (198726931 bytes)  
+	-	`sha256:c141eadf845ae2db8859f319ed5c75bdf9b8b4e29aa9c2ed428c6be11f3e9b16`  
+		Last Modified: Mon, 21 Oct 2019 19:52:12 GMT  
+		Size: 198.7 MB (198727031 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:e10a667fa6c78b030716fd2d5ce9ad8ec19eb3543b154e161ab1a368fe5ee0bc`  
-		Last Modified: Thu, 03 Oct 2019 22:38:51 GMT  
-		Size: 14.4 MB (14351291 bytes)  
+	-	`sha256:8bdc989a414a69a7b487fd5dd325d70af3a70666ce50fe3f30e0790319cab810`  
+		Last Modified: Mon, 21 Oct 2019 22:56:31 GMT  
+		Size: 14.4 MB (14351272 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:2792b6b0ed40a0eebb47139fc3dfcc07c3814aa494f1e5b2541e19c72d30041a`  
-		Last Modified: Thu, 03 Oct 2019 22:38:49 GMT  
-		Size: 4.2 MB (4168148 bytes)  
+	-	`sha256:62be6930525dd19312ee49f6cd2b2a4aa57aeeda1788edee8e08377a75624f3f`  
+		Last Modified: Mon, 21 Oct 2019 22:56:33 GMT  
+		Size: 4.2 MB (4168132 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `clojure:openjdk-14-boot`
@@ -9055,7 +9055,7 @@ CMD ["boot" "repl"]
 ## `clojure:openjdk-14-boot-2.8.3-alpine`
 
 ```console
-$ docker pull clojure@sha256:a789133a9dd74883d4ab25411deb9bc3cab27a54d69ca1b487c06cf688c7d71f
+$ docker pull clojure@sha256:89ef253f7cb70bf31522643e12a1f6eb9493dfe6c13d8cb3a3214c265f65d5d7
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -9065,69 +9065,69 @@ $ docker pull clojure@sha256:a789133a9dd74883d4ab25411deb9bc3cab27a54d69ca1b487c
 ### `clojure:openjdk-14-boot-2.8.3-alpine` - linux; amd64
 
 ```console
-$ docker pull clojure@sha256:00c3bd8743649376e137516c7615112062f5c4b923d9142b3a4e953899de5bf1
+$ docker pull clojure@sha256:c4d8923fa6438e188bca31b800fce2eb780846c16c2dfcb2a63346d9fd4fdac8
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **261.6 MB (261554552 bytes)**  
+-	Total Size: **261.6 MB (261552764 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:63d51faeea300d42edae8609dba4c7bd6a94e3271e5bc5e84d8f66fb4235bee9`
+-	Image ID: `sha256:7159956cc5081700adef3e41ed8a46cd285b08bcac46959caf1faac899d9d2c2`
 -	Default Command: `["boot","repl"]`
 
 ```dockerfile
-# Tue, 20 Aug 2019 20:19:55 GMT
-ADD file:fe64057fbb83dccb960efabbf1cd8777920ef279a7fa8dbca0a8801c651bdf7c in / 
-# Tue, 20 Aug 2019 20:19:55 GMT
+# Mon, 21 Oct 2019 17:21:42 GMT
+ADD file:fe1f09249227e2da2089afb4d07e16cbf832eeb804120074acd2b8192876cd28 in / 
+# Mon, 21 Oct 2019 17:21:42 GMT
 CMD ["/bin/sh"]
-# Tue, 20 Aug 2019 23:58:28 GMT
+# Mon, 21 Oct 2019 19:48:20 GMT
 ENV JAVA_HOME=/opt/openjdk-14
-# Tue, 20 Aug 2019 23:58:29 GMT
+# Mon, 21 Oct 2019 19:48:21 GMT
 ENV PATH=/opt/openjdk-14/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Wed, 25 Sep 2019 21:50:04 GMT
+# Mon, 21 Oct 2019 19:48:21 GMT
 ENV JAVA_VERSION=14-ea+15
-# Wed, 25 Sep 2019 21:50:04 GMT
+# Mon, 21 Oct 2019 19:48:21 GMT
 ENV JAVA_URL=https://download.java.net/java/early_access/alpine/15/binaries/openjdk-14-ea+15_linux-x64-musl_bin.tar.gz
-# Wed, 25 Sep 2019 21:50:04 GMT
+# Mon, 21 Oct 2019 19:48:21 GMT
 ENV JAVA_SHA256=76091da1b6ed29788f0cf85454d23900a4134286e5feb571247e5861f618d3cd
-# Wed, 25 Sep 2019 21:51:32 GMT
+# Mon, 21 Oct 2019 19:49:55 GMT
 RUN set -eux; 		wget -O /openjdk.tgz "$JAVA_URL"; 	echo "$JAVA_SHA256 */openjdk.tgz" | sha256sum -c -; 	mkdir -p "$JAVA_HOME"; 	tar --extract --file /openjdk.tgz --directory "$JAVA_HOME" --strip-components 1; 	rm /openjdk.tgz; 		java -Xshare:dump; 		java --version; 	javac --version
-# Wed, 25 Sep 2019 21:51:32 GMT
+# Mon, 21 Oct 2019 19:49:56 GMT
 CMD ["jshell"]
-# Thu, 03 Oct 2019 22:33:39 GMT
+# Mon, 21 Oct 2019 22:54:05 GMT
 ENV BOOT_VERSION=2.8.3
-# Thu, 03 Oct 2019 22:33:39 GMT
+# Mon, 21 Oct 2019 22:54:05 GMT
 ENV BOOT_INSTALL=/usr/local/bin/
-# Thu, 03 Oct 2019 22:33:39 GMT
+# Mon, 21 Oct 2019 22:54:05 GMT
 WORKDIR /tmp
-# Thu, 03 Oct 2019 22:33:41 GMT
+# Mon, 21 Oct 2019 22:54:07 GMT
 RUN apk add --update --no-cache bash openssl && mkdir -p $BOOT_INSTALL && wget -q https://github.com/boot-clj/boot-bin/releases/download/latest/boot.sh && echo "Comparing installer checksum..." && echo "f717ef381f2863a4cad47bf0dcc61e923b3d2afb *boot.sh" | sha1sum -c - && mv boot.sh $BOOT_INSTALL/boot && chmod 0755 $BOOT_INSTALL/boot && apk del openssl
-# Thu, 03 Oct 2019 22:33:41 GMT
+# Mon, 21 Oct 2019 22:54:07 GMT
 ENV PATH=/opt/openjdk-14/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/local/bin/
-# Thu, 03 Oct 2019 22:33:41 GMT
+# Mon, 21 Oct 2019 22:54:07 GMT
 ENV BOOT_AS_ROOT=yes
-# Thu, 03 Oct 2019 22:34:19 GMT
+# Mon, 21 Oct 2019 22:55:25 GMT
 RUN boot
-# Thu, 03 Oct 2019 22:34:19 GMT
+# Mon, 21 Oct 2019 22:55:25 GMT
 CMD ["boot" "repl"]
 ```
 
 -	Layers:
-	-	`sha256:9d48c3bd43c520dc2784e868a780e976b207cbf493eaff8c6596eb871cbd9609`  
-		Last Modified: Tue, 20 Aug 2019 20:20:16 GMT  
-		Size: 2.8 MB (2789669 bytes)  
+	-	`sha256:89d9c30c1d48bac627e5c6cb0d1ed1eec28e7dbdfbcc04712e4c79c0f83faf17`  
+		Last Modified: Mon, 21 Oct 2019 17:22:48 GMT  
+		Size: 2.8 MB (2787134 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:fc475160c533c14f80279b82e77d6f012c0c20b4312f72cbc8d4cc4579430ecf`  
-		Last Modified: Wed, 25 Sep 2019 21:54:34 GMT  
-		Size: 198.7 MB (198726931 bytes)  
+	-	`sha256:c141eadf845ae2db8859f319ed5c75bdf9b8b4e29aa9c2ed428c6be11f3e9b16`  
+		Last Modified: Mon, 21 Oct 2019 19:52:12 GMT  
+		Size: 198.7 MB (198727031 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:566b5343c40ee5d16f39d13fc2ad01eeaf6f6b731e0eaea8e69facd0ed5b7457`  
-		Last Modified: Thu, 03 Oct 2019 22:38:57 GMT  
-		Size: 1.2 MB (1217246 bytes)  
+	-	`sha256:23ba81a8492634559cbf83428943ed23a144cd66ea062ffb42282aa9e1b2cdd9`  
+		Last Modified: Mon, 21 Oct 2019 22:56:37 GMT  
+		Size: 1.2 MB (1217235 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:ef3008e3cc2f3da3773d3d1dac68e4e7a012f323c36b18fc8140bff20b7083b4`  
-		Last Modified: Thu, 03 Oct 2019 22:39:00 GMT  
-		Size: 58.8 MB (58820706 bytes)  
+	-	`sha256:e0d45c7fb8e2fbed0ed38680f43b0feb25df92bd56f5767d844681e967d9b199`  
+		Last Modified: Mon, 21 Oct 2019 22:56:40 GMT  
+		Size: 58.8 MB (58821364 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `clojure:openjdk-14-boot-2.8.3-buster`
@@ -9335,7 +9335,7 @@ CMD ["boot" "repl"]
 ## `clojure:openjdk-14-boot-alpine`
 
 ```console
-$ docker pull clojure@sha256:a789133a9dd74883d4ab25411deb9bc3cab27a54d69ca1b487c06cf688c7d71f
+$ docker pull clojure@sha256:89ef253f7cb70bf31522643e12a1f6eb9493dfe6c13d8cb3a3214c265f65d5d7
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -9345,69 +9345,69 @@ $ docker pull clojure@sha256:a789133a9dd74883d4ab25411deb9bc3cab27a54d69ca1b487c
 ### `clojure:openjdk-14-boot-alpine` - linux; amd64
 
 ```console
-$ docker pull clojure@sha256:00c3bd8743649376e137516c7615112062f5c4b923d9142b3a4e953899de5bf1
+$ docker pull clojure@sha256:c4d8923fa6438e188bca31b800fce2eb780846c16c2dfcb2a63346d9fd4fdac8
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **261.6 MB (261554552 bytes)**  
+-	Total Size: **261.6 MB (261552764 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:63d51faeea300d42edae8609dba4c7bd6a94e3271e5bc5e84d8f66fb4235bee9`
+-	Image ID: `sha256:7159956cc5081700adef3e41ed8a46cd285b08bcac46959caf1faac899d9d2c2`
 -	Default Command: `["boot","repl"]`
 
 ```dockerfile
-# Tue, 20 Aug 2019 20:19:55 GMT
-ADD file:fe64057fbb83dccb960efabbf1cd8777920ef279a7fa8dbca0a8801c651bdf7c in / 
-# Tue, 20 Aug 2019 20:19:55 GMT
+# Mon, 21 Oct 2019 17:21:42 GMT
+ADD file:fe1f09249227e2da2089afb4d07e16cbf832eeb804120074acd2b8192876cd28 in / 
+# Mon, 21 Oct 2019 17:21:42 GMT
 CMD ["/bin/sh"]
-# Tue, 20 Aug 2019 23:58:28 GMT
+# Mon, 21 Oct 2019 19:48:20 GMT
 ENV JAVA_HOME=/opt/openjdk-14
-# Tue, 20 Aug 2019 23:58:29 GMT
+# Mon, 21 Oct 2019 19:48:21 GMT
 ENV PATH=/opt/openjdk-14/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Wed, 25 Sep 2019 21:50:04 GMT
+# Mon, 21 Oct 2019 19:48:21 GMT
 ENV JAVA_VERSION=14-ea+15
-# Wed, 25 Sep 2019 21:50:04 GMT
+# Mon, 21 Oct 2019 19:48:21 GMT
 ENV JAVA_URL=https://download.java.net/java/early_access/alpine/15/binaries/openjdk-14-ea+15_linux-x64-musl_bin.tar.gz
-# Wed, 25 Sep 2019 21:50:04 GMT
+# Mon, 21 Oct 2019 19:48:21 GMT
 ENV JAVA_SHA256=76091da1b6ed29788f0cf85454d23900a4134286e5feb571247e5861f618d3cd
-# Wed, 25 Sep 2019 21:51:32 GMT
+# Mon, 21 Oct 2019 19:49:55 GMT
 RUN set -eux; 		wget -O /openjdk.tgz "$JAVA_URL"; 	echo "$JAVA_SHA256 */openjdk.tgz" | sha256sum -c -; 	mkdir -p "$JAVA_HOME"; 	tar --extract --file /openjdk.tgz --directory "$JAVA_HOME" --strip-components 1; 	rm /openjdk.tgz; 		java -Xshare:dump; 		java --version; 	javac --version
-# Wed, 25 Sep 2019 21:51:32 GMT
+# Mon, 21 Oct 2019 19:49:56 GMT
 CMD ["jshell"]
-# Thu, 03 Oct 2019 22:33:39 GMT
+# Mon, 21 Oct 2019 22:54:05 GMT
 ENV BOOT_VERSION=2.8.3
-# Thu, 03 Oct 2019 22:33:39 GMT
+# Mon, 21 Oct 2019 22:54:05 GMT
 ENV BOOT_INSTALL=/usr/local/bin/
-# Thu, 03 Oct 2019 22:33:39 GMT
+# Mon, 21 Oct 2019 22:54:05 GMT
 WORKDIR /tmp
-# Thu, 03 Oct 2019 22:33:41 GMT
+# Mon, 21 Oct 2019 22:54:07 GMT
 RUN apk add --update --no-cache bash openssl && mkdir -p $BOOT_INSTALL && wget -q https://github.com/boot-clj/boot-bin/releases/download/latest/boot.sh && echo "Comparing installer checksum..." && echo "f717ef381f2863a4cad47bf0dcc61e923b3d2afb *boot.sh" | sha1sum -c - && mv boot.sh $BOOT_INSTALL/boot && chmod 0755 $BOOT_INSTALL/boot && apk del openssl
-# Thu, 03 Oct 2019 22:33:41 GMT
+# Mon, 21 Oct 2019 22:54:07 GMT
 ENV PATH=/opt/openjdk-14/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/local/bin/
-# Thu, 03 Oct 2019 22:33:41 GMT
+# Mon, 21 Oct 2019 22:54:07 GMT
 ENV BOOT_AS_ROOT=yes
-# Thu, 03 Oct 2019 22:34:19 GMT
+# Mon, 21 Oct 2019 22:55:25 GMT
 RUN boot
-# Thu, 03 Oct 2019 22:34:19 GMT
+# Mon, 21 Oct 2019 22:55:25 GMT
 CMD ["boot" "repl"]
 ```
 
 -	Layers:
-	-	`sha256:9d48c3bd43c520dc2784e868a780e976b207cbf493eaff8c6596eb871cbd9609`  
-		Last Modified: Tue, 20 Aug 2019 20:20:16 GMT  
-		Size: 2.8 MB (2789669 bytes)  
+	-	`sha256:89d9c30c1d48bac627e5c6cb0d1ed1eec28e7dbdfbcc04712e4c79c0f83faf17`  
+		Last Modified: Mon, 21 Oct 2019 17:22:48 GMT  
+		Size: 2.8 MB (2787134 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:fc475160c533c14f80279b82e77d6f012c0c20b4312f72cbc8d4cc4579430ecf`  
-		Last Modified: Wed, 25 Sep 2019 21:54:34 GMT  
-		Size: 198.7 MB (198726931 bytes)  
+	-	`sha256:c141eadf845ae2db8859f319ed5c75bdf9b8b4e29aa9c2ed428c6be11f3e9b16`  
+		Last Modified: Mon, 21 Oct 2019 19:52:12 GMT  
+		Size: 198.7 MB (198727031 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:566b5343c40ee5d16f39d13fc2ad01eeaf6f6b731e0eaea8e69facd0ed5b7457`  
-		Last Modified: Thu, 03 Oct 2019 22:38:57 GMT  
-		Size: 1.2 MB (1217246 bytes)  
+	-	`sha256:23ba81a8492634559cbf83428943ed23a144cd66ea062ffb42282aa9e1b2cdd9`  
+		Last Modified: Mon, 21 Oct 2019 22:56:37 GMT  
+		Size: 1.2 MB (1217235 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:ef3008e3cc2f3da3773d3d1dac68e4e7a012f323c36b18fc8140bff20b7083b4`  
-		Last Modified: Thu, 03 Oct 2019 22:39:00 GMT  
-		Size: 58.8 MB (58820706 bytes)  
+	-	`sha256:e0d45c7fb8e2fbed0ed38680f43b0feb25df92bd56f5767d844681e967d9b199`  
+		Last Modified: Mon, 21 Oct 2019 22:56:40 GMT  
+		Size: 58.8 MB (58821364 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `clojure:openjdk-14-boot-buster`
@@ -9909,7 +9909,7 @@ CMD ["lein" "repl"]
 ## `clojure:openjdk-14-lein-2.9.1-alpine`
 
 ```console
-$ docker pull clojure@sha256:dc346fe4a3005509df97366a46dcb8447b361dc2c62db06cba5b9d17c23c0fa1
+$ docker pull clojure@sha256:bf58c81b46a33d44b935dfe817b9a9d33f4daebcf26eeae2ed316601d64741d8
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -9919,69 +9919,69 @@ $ docker pull clojure@sha256:dc346fe4a3005509df97366a46dcb8447b361dc2c62db06cba5
 ### `clojure:openjdk-14-lein-2.9.1-alpine` - linux; amd64
 
 ```console
-$ docker pull clojure@sha256:f6301164a5ec7d5289e591614c328d025cff0ad9de6b1b4548cb0fa074280aca
+$ docker pull clojure@sha256:f40fbd1d28c841e40cf52ae3c1504c20a50bf6066e89fd3621c960459483c45e
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **220.0 MB (220036039 bytes)**  
+-	Total Size: **220.0 MB (220033569 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:3f456dc5db74d6052b68ea0a4b4a53458e24732f908928813588d053ca992387`
+-	Image ID: `sha256:f51497e91201204f51b7eed0e4c842be48b422889bc45d526fdd018c4b3113d4`
 -	Default Command: `["lein","repl"]`
 
 ```dockerfile
-# Tue, 20 Aug 2019 20:19:55 GMT
-ADD file:fe64057fbb83dccb960efabbf1cd8777920ef279a7fa8dbca0a8801c651bdf7c in / 
-# Tue, 20 Aug 2019 20:19:55 GMT
+# Mon, 21 Oct 2019 17:21:42 GMT
+ADD file:fe1f09249227e2da2089afb4d07e16cbf832eeb804120074acd2b8192876cd28 in / 
+# Mon, 21 Oct 2019 17:21:42 GMT
 CMD ["/bin/sh"]
-# Tue, 20 Aug 2019 23:58:28 GMT
+# Mon, 21 Oct 2019 19:48:20 GMT
 ENV JAVA_HOME=/opt/openjdk-14
-# Tue, 20 Aug 2019 23:58:29 GMT
+# Mon, 21 Oct 2019 19:48:21 GMT
 ENV PATH=/opt/openjdk-14/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Wed, 25 Sep 2019 21:50:04 GMT
+# Mon, 21 Oct 2019 19:48:21 GMT
 ENV JAVA_VERSION=14-ea+15
-# Wed, 25 Sep 2019 21:50:04 GMT
+# Mon, 21 Oct 2019 19:48:21 GMT
 ENV JAVA_URL=https://download.java.net/java/early_access/alpine/15/binaries/openjdk-14-ea+15_linux-x64-musl_bin.tar.gz
-# Wed, 25 Sep 2019 21:50:04 GMT
+# Mon, 21 Oct 2019 19:48:21 GMT
 ENV JAVA_SHA256=76091da1b6ed29788f0cf85454d23900a4134286e5feb571247e5861f618d3cd
-# Wed, 25 Sep 2019 21:51:32 GMT
+# Mon, 21 Oct 2019 19:49:55 GMT
 RUN set -eux; 		wget -O /openjdk.tgz "$JAVA_URL"; 	echo "$JAVA_SHA256 */openjdk.tgz" | sha256sum -c -; 	mkdir -p "$JAVA_HOME"; 	tar --extract --file /openjdk.tgz --directory "$JAVA_HOME" --strip-components 1; 	rm /openjdk.tgz; 		java -Xshare:dump; 		java --version; 	javac --version
-# Wed, 25 Sep 2019 21:51:32 GMT
+# Mon, 21 Oct 2019 19:49:56 GMT
 CMD ["jshell"]
-# Thu, 03 Oct 2019 22:33:26 GMT
+# Mon, 21 Oct 2019 22:53:53 GMT
 ENV LEIN_VERSION=2.9.1
-# Thu, 03 Oct 2019 22:33:26 GMT
+# Mon, 21 Oct 2019 22:53:54 GMT
 ENV LEIN_INSTALL=/usr/local/bin/
-# Thu, 03 Oct 2019 22:33:26 GMT
+# Mon, 21 Oct 2019 22:53:54 GMT
 WORKDIR /tmp
-# Thu, 03 Oct 2019 22:33:29 GMT
+# Mon, 21 Oct 2019 22:53:57 GMT
 RUN apk add --update --no-cache bash tar openssl gnupg && mkdir -p $LEIN_INSTALL && wget -q https://raw.githubusercontent.com/technomancy/leiningen/$LEIN_VERSION/bin/lein-pkg && echo "Comparing lein-pkg checksum ..." && sha1sum lein-pkg && echo "93be2c23ab4ff2fc4fcf531d7510ca4069b8d24a *lein-pkg" | sha1sum -c - && mv lein-pkg $LEIN_INSTALL/lein && chmod 0755 $LEIN_INSTALL/lein && wget -q https://github.com/technomancy/leiningen/releases/download/$LEIN_VERSION/leiningen-$LEIN_VERSION-standalone.zip && wget -q https://github.com/technomancy/leiningen/releases/download/$LEIN_VERSION/leiningen-$LEIN_VERSION-standalone.zip.asc && gpg --batch --keyserver pool.sks-keyservers.net --recv-key 2B72BF956E23DE5E830D50F6002AF007D1A7CC18 && echo "Verifying Jar file signature ..." && gpg --verify leiningen-$LEIN_VERSION-standalone.zip.asc && rm leiningen-$LEIN_VERSION-standalone.zip.asc && mkdir -p /usr/share/java && mv leiningen-$LEIN_VERSION-standalone.zip /usr/share/java/leiningen-$LEIN_VERSION-standalone.jar && apk del tar openssl gnupg
-# Thu, 03 Oct 2019 22:33:29 GMT
+# Mon, 21 Oct 2019 22:53:57 GMT
 ENV PATH=/opt/openjdk-14/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/local/bin/
-# Thu, 03 Oct 2019 22:33:29 GMT
+# Mon, 21 Oct 2019 22:53:57 GMT
 ENV LEIN_ROOT=1
-# Thu, 03 Oct 2019 22:33:34 GMT
+# Mon, 21 Oct 2019 22:54:01 GMT
 RUN echo '(defproject dummy "" :dependencies [[org.clojure/clojure "1.10.1"]])' > project.clj   && lein deps && rm project.clj
-# Thu, 03 Oct 2019 22:33:34 GMT
+# Mon, 21 Oct 2019 22:54:01 GMT
 CMD ["lein" "repl"]
 ```
 
 -	Layers:
-	-	`sha256:9d48c3bd43c520dc2784e868a780e976b207cbf493eaff8c6596eb871cbd9609`  
-		Last Modified: Tue, 20 Aug 2019 20:20:16 GMT  
-		Size: 2.8 MB (2789669 bytes)  
+	-	`sha256:89d9c30c1d48bac627e5c6cb0d1ed1eec28e7dbdfbcc04712e4c79c0f83faf17`  
+		Last Modified: Mon, 21 Oct 2019 17:22:48 GMT  
+		Size: 2.8 MB (2787134 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:fc475160c533c14f80279b82e77d6f012c0c20b4312f72cbc8d4cc4579430ecf`  
-		Last Modified: Wed, 25 Sep 2019 21:54:34 GMT  
-		Size: 198.7 MB (198726931 bytes)  
+	-	`sha256:c141eadf845ae2db8859f319ed5c75bdf9b8b4e29aa9c2ed428c6be11f3e9b16`  
+		Last Modified: Mon, 21 Oct 2019 19:52:12 GMT  
+		Size: 198.7 MB (198727031 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:e10a667fa6c78b030716fd2d5ce9ad8ec19eb3543b154e161ab1a368fe5ee0bc`  
-		Last Modified: Thu, 03 Oct 2019 22:38:51 GMT  
-		Size: 14.4 MB (14351291 bytes)  
+	-	`sha256:8bdc989a414a69a7b487fd5dd325d70af3a70666ce50fe3f30e0790319cab810`  
+		Last Modified: Mon, 21 Oct 2019 22:56:31 GMT  
+		Size: 14.4 MB (14351272 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:2792b6b0ed40a0eebb47139fc3dfcc07c3814aa494f1e5b2541e19c72d30041a`  
-		Last Modified: Thu, 03 Oct 2019 22:38:49 GMT  
-		Size: 4.2 MB (4168148 bytes)  
+	-	`sha256:62be6930525dd19312ee49f6cd2b2a4aa57aeeda1788edee8e08377a75624f3f`  
+		Last Modified: Mon, 21 Oct 2019 22:56:33 GMT  
+		Size: 4.2 MB (4168132 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `clojure:openjdk-14-lein-2.9.1-buster`
@@ -10189,7 +10189,7 @@ CMD ["lein" "repl"]
 ## `clojure:openjdk-14-lein-alpine`
 
 ```console
-$ docker pull clojure@sha256:dc346fe4a3005509df97366a46dcb8447b361dc2c62db06cba5b9d17c23c0fa1
+$ docker pull clojure@sha256:bf58c81b46a33d44b935dfe817b9a9d33f4daebcf26eeae2ed316601d64741d8
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -10199,69 +10199,69 @@ $ docker pull clojure@sha256:dc346fe4a3005509df97366a46dcb8447b361dc2c62db06cba5
 ### `clojure:openjdk-14-lein-alpine` - linux; amd64
 
 ```console
-$ docker pull clojure@sha256:f6301164a5ec7d5289e591614c328d025cff0ad9de6b1b4548cb0fa074280aca
+$ docker pull clojure@sha256:f40fbd1d28c841e40cf52ae3c1504c20a50bf6066e89fd3621c960459483c45e
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **220.0 MB (220036039 bytes)**  
+-	Total Size: **220.0 MB (220033569 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:3f456dc5db74d6052b68ea0a4b4a53458e24732f908928813588d053ca992387`
+-	Image ID: `sha256:f51497e91201204f51b7eed0e4c842be48b422889bc45d526fdd018c4b3113d4`
 -	Default Command: `["lein","repl"]`
 
 ```dockerfile
-# Tue, 20 Aug 2019 20:19:55 GMT
-ADD file:fe64057fbb83dccb960efabbf1cd8777920ef279a7fa8dbca0a8801c651bdf7c in / 
-# Tue, 20 Aug 2019 20:19:55 GMT
+# Mon, 21 Oct 2019 17:21:42 GMT
+ADD file:fe1f09249227e2da2089afb4d07e16cbf832eeb804120074acd2b8192876cd28 in / 
+# Mon, 21 Oct 2019 17:21:42 GMT
 CMD ["/bin/sh"]
-# Tue, 20 Aug 2019 23:58:28 GMT
+# Mon, 21 Oct 2019 19:48:20 GMT
 ENV JAVA_HOME=/opt/openjdk-14
-# Tue, 20 Aug 2019 23:58:29 GMT
+# Mon, 21 Oct 2019 19:48:21 GMT
 ENV PATH=/opt/openjdk-14/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Wed, 25 Sep 2019 21:50:04 GMT
+# Mon, 21 Oct 2019 19:48:21 GMT
 ENV JAVA_VERSION=14-ea+15
-# Wed, 25 Sep 2019 21:50:04 GMT
+# Mon, 21 Oct 2019 19:48:21 GMT
 ENV JAVA_URL=https://download.java.net/java/early_access/alpine/15/binaries/openjdk-14-ea+15_linux-x64-musl_bin.tar.gz
-# Wed, 25 Sep 2019 21:50:04 GMT
+# Mon, 21 Oct 2019 19:48:21 GMT
 ENV JAVA_SHA256=76091da1b6ed29788f0cf85454d23900a4134286e5feb571247e5861f618d3cd
-# Wed, 25 Sep 2019 21:51:32 GMT
+# Mon, 21 Oct 2019 19:49:55 GMT
 RUN set -eux; 		wget -O /openjdk.tgz "$JAVA_URL"; 	echo "$JAVA_SHA256 */openjdk.tgz" | sha256sum -c -; 	mkdir -p "$JAVA_HOME"; 	tar --extract --file /openjdk.tgz --directory "$JAVA_HOME" --strip-components 1; 	rm /openjdk.tgz; 		java -Xshare:dump; 		java --version; 	javac --version
-# Wed, 25 Sep 2019 21:51:32 GMT
+# Mon, 21 Oct 2019 19:49:56 GMT
 CMD ["jshell"]
-# Thu, 03 Oct 2019 22:33:26 GMT
+# Mon, 21 Oct 2019 22:53:53 GMT
 ENV LEIN_VERSION=2.9.1
-# Thu, 03 Oct 2019 22:33:26 GMT
+# Mon, 21 Oct 2019 22:53:54 GMT
 ENV LEIN_INSTALL=/usr/local/bin/
-# Thu, 03 Oct 2019 22:33:26 GMT
+# Mon, 21 Oct 2019 22:53:54 GMT
 WORKDIR /tmp
-# Thu, 03 Oct 2019 22:33:29 GMT
+# Mon, 21 Oct 2019 22:53:57 GMT
 RUN apk add --update --no-cache bash tar openssl gnupg && mkdir -p $LEIN_INSTALL && wget -q https://raw.githubusercontent.com/technomancy/leiningen/$LEIN_VERSION/bin/lein-pkg && echo "Comparing lein-pkg checksum ..." && sha1sum lein-pkg && echo "93be2c23ab4ff2fc4fcf531d7510ca4069b8d24a *lein-pkg" | sha1sum -c - && mv lein-pkg $LEIN_INSTALL/lein && chmod 0755 $LEIN_INSTALL/lein && wget -q https://github.com/technomancy/leiningen/releases/download/$LEIN_VERSION/leiningen-$LEIN_VERSION-standalone.zip && wget -q https://github.com/technomancy/leiningen/releases/download/$LEIN_VERSION/leiningen-$LEIN_VERSION-standalone.zip.asc && gpg --batch --keyserver pool.sks-keyservers.net --recv-key 2B72BF956E23DE5E830D50F6002AF007D1A7CC18 && echo "Verifying Jar file signature ..." && gpg --verify leiningen-$LEIN_VERSION-standalone.zip.asc && rm leiningen-$LEIN_VERSION-standalone.zip.asc && mkdir -p /usr/share/java && mv leiningen-$LEIN_VERSION-standalone.zip /usr/share/java/leiningen-$LEIN_VERSION-standalone.jar && apk del tar openssl gnupg
-# Thu, 03 Oct 2019 22:33:29 GMT
+# Mon, 21 Oct 2019 22:53:57 GMT
 ENV PATH=/opt/openjdk-14/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/local/bin/
-# Thu, 03 Oct 2019 22:33:29 GMT
+# Mon, 21 Oct 2019 22:53:57 GMT
 ENV LEIN_ROOT=1
-# Thu, 03 Oct 2019 22:33:34 GMT
+# Mon, 21 Oct 2019 22:54:01 GMT
 RUN echo '(defproject dummy "" :dependencies [[org.clojure/clojure "1.10.1"]])' > project.clj   && lein deps && rm project.clj
-# Thu, 03 Oct 2019 22:33:34 GMT
+# Mon, 21 Oct 2019 22:54:01 GMT
 CMD ["lein" "repl"]
 ```
 
 -	Layers:
-	-	`sha256:9d48c3bd43c520dc2784e868a780e976b207cbf493eaff8c6596eb871cbd9609`  
-		Last Modified: Tue, 20 Aug 2019 20:20:16 GMT  
-		Size: 2.8 MB (2789669 bytes)  
+	-	`sha256:89d9c30c1d48bac627e5c6cb0d1ed1eec28e7dbdfbcc04712e4c79c0f83faf17`  
+		Last Modified: Mon, 21 Oct 2019 17:22:48 GMT  
+		Size: 2.8 MB (2787134 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:fc475160c533c14f80279b82e77d6f012c0c20b4312f72cbc8d4cc4579430ecf`  
-		Last Modified: Wed, 25 Sep 2019 21:54:34 GMT  
-		Size: 198.7 MB (198726931 bytes)  
+	-	`sha256:c141eadf845ae2db8859f319ed5c75bdf9b8b4e29aa9c2ed428c6be11f3e9b16`  
+		Last Modified: Mon, 21 Oct 2019 19:52:12 GMT  
+		Size: 198.7 MB (198727031 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:e10a667fa6c78b030716fd2d5ce9ad8ec19eb3543b154e161ab1a368fe5ee0bc`  
-		Last Modified: Thu, 03 Oct 2019 22:38:51 GMT  
-		Size: 14.4 MB (14351291 bytes)  
+	-	`sha256:8bdc989a414a69a7b487fd5dd325d70af3a70666ce50fe3f30e0790319cab810`  
+		Last Modified: Mon, 21 Oct 2019 22:56:31 GMT  
+		Size: 14.4 MB (14351272 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:2792b6b0ed40a0eebb47139fc3dfcc07c3814aa494f1e5b2541e19c72d30041a`  
-		Last Modified: Thu, 03 Oct 2019 22:38:49 GMT  
-		Size: 4.2 MB (4168148 bytes)  
+	-	`sha256:62be6930525dd19312ee49f6cd2b2a4aa57aeeda1788edee8e08377a75624f3f`  
+		Last Modified: Mon, 21 Oct 2019 22:56:33 GMT  
+		Size: 4.2 MB (4168132 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `clojure:openjdk-14-lein-buster`
@@ -10721,7 +10721,7 @@ CMD ["sh" "-c" "sleep 1 && exec clj"]
 ## `clojure:openjdk-14-tools-deps-1.10.1.469-alpine`
 
 ```console
-$ docker pull clojure@sha256:3bab1f1ebcaf51c117c0286cf3a6ca8fd4cd7f8947e118ea8dbe555e7e0d3898
+$ docker pull clojure@sha256:4d9b764a5c235e09b04fe7faf2913a15738af4423f4b3222f69031ef58be3941
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -10731,57 +10731,57 @@ $ docker pull clojure@sha256:3bab1f1ebcaf51c117c0286cf3a6ca8fd4cd7f8947e118ea8db
 ### `clojure:openjdk-14-tools-deps-1.10.1.469-alpine` - linux; amd64
 
 ```console
-$ docker pull clojure@sha256:b09919e94fb60b41232cead849e9d2a656c6ac2574651b3cd21531b6423cab7c
+$ docker pull clojure@sha256:7832be884c3d14eba2211caec63f67319b5a32e5bbac86b2e9a81e18f54ecc77
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **225.4 MB (225417139 bytes)**  
+-	Total Size: **225.4 MB (225414691 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:555c90f2140ed54327867779b05052fe2cfbe3dd1e12eea0dd6e99f7dc927f38`
+-	Image ID: `sha256:88c9036e78dc3fdc0e763cbc3416a6a2b2326861bf647f30a3f1be8d59952a0f`
 -	Default Command: `["sh","-c","sleep 1 && exec clj"]`
 
 ```dockerfile
-# Tue, 20 Aug 2019 20:19:55 GMT
-ADD file:fe64057fbb83dccb960efabbf1cd8777920ef279a7fa8dbca0a8801c651bdf7c in / 
-# Tue, 20 Aug 2019 20:19:55 GMT
+# Mon, 21 Oct 2019 17:21:42 GMT
+ADD file:fe1f09249227e2da2089afb4d07e16cbf832eeb804120074acd2b8192876cd28 in / 
+# Mon, 21 Oct 2019 17:21:42 GMT
 CMD ["/bin/sh"]
-# Tue, 20 Aug 2019 23:58:28 GMT
+# Mon, 21 Oct 2019 19:48:20 GMT
 ENV JAVA_HOME=/opt/openjdk-14
-# Tue, 20 Aug 2019 23:58:29 GMT
+# Mon, 21 Oct 2019 19:48:21 GMT
 ENV PATH=/opt/openjdk-14/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Wed, 25 Sep 2019 21:50:04 GMT
+# Mon, 21 Oct 2019 19:48:21 GMT
 ENV JAVA_VERSION=14-ea+15
-# Wed, 25 Sep 2019 21:50:04 GMT
+# Mon, 21 Oct 2019 19:48:21 GMT
 ENV JAVA_URL=https://download.java.net/java/early_access/alpine/15/binaries/openjdk-14-ea+15_linux-x64-musl_bin.tar.gz
-# Wed, 25 Sep 2019 21:50:04 GMT
+# Mon, 21 Oct 2019 19:48:21 GMT
 ENV JAVA_SHA256=76091da1b6ed29788f0cf85454d23900a4134286e5feb571247e5861f618d3cd
-# Wed, 25 Sep 2019 21:51:32 GMT
+# Mon, 21 Oct 2019 19:49:55 GMT
 RUN set -eux; 		wget -O /openjdk.tgz "$JAVA_URL"; 	echo "$JAVA_SHA256 */openjdk.tgz" | sha256sum -c -; 	mkdir -p "$JAVA_HOME"; 	tar --extract --file /openjdk.tgz --directory "$JAVA_HOME" --strip-components 1; 	rm /openjdk.tgz; 		java -Xshare:dump; 		java --version; 	javac --version
-# Wed, 25 Sep 2019 21:51:32 GMT
+# Mon, 21 Oct 2019 19:49:56 GMT
 CMD ["jshell"]
-# Thu, 03 Oct 2019 22:34:24 GMT
+# Mon, 21 Oct 2019 22:55:33 GMT
 ENV CLOJURE_VERSION=1.10.1.469
-# Thu, 03 Oct 2019 22:34:24 GMT
+# Mon, 21 Oct 2019 22:55:34 GMT
 WORKDIR /tmp
-# Thu, 03 Oct 2019 22:34:32 GMT
+# Mon, 21 Oct 2019 22:55:42 GMT
 RUN apk add --update --no-cache curl bash && wget https://download.clojure.org/install/linux-install-$CLOJURE_VERSION.sh && chmod +x linux-install-$CLOJURE_VERSION.sh && ./linux-install-$CLOJURE_VERSION.sh && clojure -e "(clojure-version)" && apk del curl bash
-# Thu, 03 Oct 2019 22:34:32 GMT
+# Mon, 21 Oct 2019 22:55:42 GMT
 CMD ["sh" "-c" "sleep 1 && exec clj"]
 ```
 
 -	Layers:
-	-	`sha256:9d48c3bd43c520dc2784e868a780e976b207cbf493eaff8c6596eb871cbd9609`  
-		Last Modified: Tue, 20 Aug 2019 20:20:16 GMT  
-		Size: 2.8 MB (2789669 bytes)  
+	-	`sha256:89d9c30c1d48bac627e5c6cb0d1ed1eec28e7dbdfbcc04712e4c79c0f83faf17`  
+		Last Modified: Mon, 21 Oct 2019 17:22:48 GMT  
+		Size: 2.8 MB (2787134 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:fc475160c533c14f80279b82e77d6f012c0c20b4312f72cbc8d4cc4579430ecf`  
-		Last Modified: Wed, 25 Sep 2019 21:54:34 GMT  
-		Size: 198.7 MB (198726931 bytes)  
+	-	`sha256:c141eadf845ae2db8859f319ed5c75bdf9b8b4e29aa9c2ed428c6be11f3e9b16`  
+		Last Modified: Mon, 21 Oct 2019 19:52:12 GMT  
+		Size: 198.7 MB (198727031 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:d8eadbab9392da2c8204e9f9fd8c3087d79d8cdb20c554a3a752894175e80b00`  
-		Last Modified: Thu, 03 Oct 2019 22:39:15 GMT  
-		Size: 23.9 MB (23900539 bytes)  
+	-	`sha256:65713d3ade31234028b564ad995c3634e2c6e27ea7c64cebf1a1f59b5e50dd18`  
+		Last Modified: Mon, 21 Oct 2019 22:56:52 GMT  
+		Size: 23.9 MB (23900526 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `clojure:openjdk-14-tools-deps-1.10.1.469-buster`
@@ -10965,7 +10965,7 @@ CMD ["sh" "-c" "sleep 1 && exec clj"]
 ## `clojure:openjdk-14-tools-deps-alpine`
 
 ```console
-$ docker pull clojure@sha256:3bab1f1ebcaf51c117c0286cf3a6ca8fd4cd7f8947e118ea8dbe555e7e0d3898
+$ docker pull clojure@sha256:4d9b764a5c235e09b04fe7faf2913a15738af4423f4b3222f69031ef58be3941
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -10975,57 +10975,57 @@ $ docker pull clojure@sha256:3bab1f1ebcaf51c117c0286cf3a6ca8fd4cd7f8947e118ea8db
 ### `clojure:openjdk-14-tools-deps-alpine` - linux; amd64
 
 ```console
-$ docker pull clojure@sha256:b09919e94fb60b41232cead849e9d2a656c6ac2574651b3cd21531b6423cab7c
+$ docker pull clojure@sha256:7832be884c3d14eba2211caec63f67319b5a32e5bbac86b2e9a81e18f54ecc77
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **225.4 MB (225417139 bytes)**  
+-	Total Size: **225.4 MB (225414691 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:555c90f2140ed54327867779b05052fe2cfbe3dd1e12eea0dd6e99f7dc927f38`
+-	Image ID: `sha256:88c9036e78dc3fdc0e763cbc3416a6a2b2326861bf647f30a3f1be8d59952a0f`
 -	Default Command: `["sh","-c","sleep 1 && exec clj"]`
 
 ```dockerfile
-# Tue, 20 Aug 2019 20:19:55 GMT
-ADD file:fe64057fbb83dccb960efabbf1cd8777920ef279a7fa8dbca0a8801c651bdf7c in / 
-# Tue, 20 Aug 2019 20:19:55 GMT
+# Mon, 21 Oct 2019 17:21:42 GMT
+ADD file:fe1f09249227e2da2089afb4d07e16cbf832eeb804120074acd2b8192876cd28 in / 
+# Mon, 21 Oct 2019 17:21:42 GMT
 CMD ["/bin/sh"]
-# Tue, 20 Aug 2019 23:58:28 GMT
+# Mon, 21 Oct 2019 19:48:20 GMT
 ENV JAVA_HOME=/opt/openjdk-14
-# Tue, 20 Aug 2019 23:58:29 GMT
+# Mon, 21 Oct 2019 19:48:21 GMT
 ENV PATH=/opt/openjdk-14/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Wed, 25 Sep 2019 21:50:04 GMT
+# Mon, 21 Oct 2019 19:48:21 GMT
 ENV JAVA_VERSION=14-ea+15
-# Wed, 25 Sep 2019 21:50:04 GMT
+# Mon, 21 Oct 2019 19:48:21 GMT
 ENV JAVA_URL=https://download.java.net/java/early_access/alpine/15/binaries/openjdk-14-ea+15_linux-x64-musl_bin.tar.gz
-# Wed, 25 Sep 2019 21:50:04 GMT
+# Mon, 21 Oct 2019 19:48:21 GMT
 ENV JAVA_SHA256=76091da1b6ed29788f0cf85454d23900a4134286e5feb571247e5861f618d3cd
-# Wed, 25 Sep 2019 21:51:32 GMT
+# Mon, 21 Oct 2019 19:49:55 GMT
 RUN set -eux; 		wget -O /openjdk.tgz "$JAVA_URL"; 	echo "$JAVA_SHA256 */openjdk.tgz" | sha256sum -c -; 	mkdir -p "$JAVA_HOME"; 	tar --extract --file /openjdk.tgz --directory "$JAVA_HOME" --strip-components 1; 	rm /openjdk.tgz; 		java -Xshare:dump; 		java --version; 	javac --version
-# Wed, 25 Sep 2019 21:51:32 GMT
+# Mon, 21 Oct 2019 19:49:56 GMT
 CMD ["jshell"]
-# Thu, 03 Oct 2019 22:34:24 GMT
+# Mon, 21 Oct 2019 22:55:33 GMT
 ENV CLOJURE_VERSION=1.10.1.469
-# Thu, 03 Oct 2019 22:34:24 GMT
+# Mon, 21 Oct 2019 22:55:34 GMT
 WORKDIR /tmp
-# Thu, 03 Oct 2019 22:34:32 GMT
+# Mon, 21 Oct 2019 22:55:42 GMT
 RUN apk add --update --no-cache curl bash && wget https://download.clojure.org/install/linux-install-$CLOJURE_VERSION.sh && chmod +x linux-install-$CLOJURE_VERSION.sh && ./linux-install-$CLOJURE_VERSION.sh && clojure -e "(clojure-version)" && apk del curl bash
-# Thu, 03 Oct 2019 22:34:32 GMT
+# Mon, 21 Oct 2019 22:55:42 GMT
 CMD ["sh" "-c" "sleep 1 && exec clj"]
 ```
 
 -	Layers:
-	-	`sha256:9d48c3bd43c520dc2784e868a780e976b207cbf493eaff8c6596eb871cbd9609`  
-		Last Modified: Tue, 20 Aug 2019 20:20:16 GMT  
-		Size: 2.8 MB (2789669 bytes)  
+	-	`sha256:89d9c30c1d48bac627e5c6cb0d1ed1eec28e7dbdfbcc04712e4c79c0f83faf17`  
+		Last Modified: Mon, 21 Oct 2019 17:22:48 GMT  
+		Size: 2.8 MB (2787134 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:fc475160c533c14f80279b82e77d6f012c0c20b4312f72cbc8d4cc4579430ecf`  
-		Last Modified: Wed, 25 Sep 2019 21:54:34 GMT  
-		Size: 198.7 MB (198726931 bytes)  
+	-	`sha256:c141eadf845ae2db8859f319ed5c75bdf9b8b4e29aa9c2ed428c6be11f3e9b16`  
+		Last Modified: Mon, 21 Oct 2019 19:52:12 GMT  
+		Size: 198.7 MB (198727031 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:d8eadbab9392da2c8204e9f9fd8c3087d79d8cdb20c554a3a752894175e80b00`  
-		Last Modified: Thu, 03 Oct 2019 22:39:15 GMT  
-		Size: 23.9 MB (23900539 bytes)  
+	-	`sha256:65713d3ade31234028b564ad995c3634e2c6e27ea7c64cebf1a1f59b5e50dd18`  
+		Last Modified: Mon, 21 Oct 2019 22:56:52 GMT  
+		Size: 23.9 MB (23900526 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `clojure:openjdk-14-tools-deps-buster`
