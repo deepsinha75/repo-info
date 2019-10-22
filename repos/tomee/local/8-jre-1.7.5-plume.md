@@ -2,9 +2,9 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:463fa668bd88a2cff85a1aba0b45c1d5ed238cedfaec8772fc5aa425c24b2f03`
-- Created: `2019-10-18T04:50:09.994967069Z`
-- Virtual Size: ~ 307.25 Mb  
+- Image ID: `sha256:036697c9d45a9442c492010bfac0eeb52bdd3f847955080c96e3b79fbc1ff979`
+- Created: `2019-10-19T08:31:01.182284221Z`
+- Virtual Size: ~ 307.29 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Command: `["catalina.sh","run"]`
@@ -12,9 +12,9 @@
   - `PATH=/usr/local/tomee/bin:/usr/local/openjdk-8/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
   - `LANG=C.UTF-8`
   - `JAVA_HOME=/usr/local/openjdk-8`
-  - `JAVA_VERSION=8u222`
-  - `JAVA_BASE_URL=https://github.com/AdoptOpenJDK/openjdk8-upstream-binaries/releases/download/jdk8u222-b10/OpenJDK8U-jre_`
-  - `JAVA_URL_VERSION=8u222b10`
+  - `JAVA_VERSION=8u232`
+  - `JAVA_BASE_URL=https://github.com/AdoptOpenJDK/openjdk8-upstream-binaries/releases/download/jdk8u232-b09/OpenJDK8U-jre_`
+  - `JAVA_URL_VERSION=8u232b09`
   - `GPG_KEYS=BDD0BBEB753192957EFC5F896A62FC8EF17D8FEF 	223D3A74B068ECA354DC385CE126833F9CF64915 	7A2744A8A9AAF063C23EB7868EBE7DBE8D050EEF 	82D8419BA697F0E7FB85916EE91287822FDB81B1 	9056B710F1E332780DE7AF34CBAEBE39A46C4CA1 	A57DAF81C1B69921F4BA8723A8DE0A4DB863A7C1 	B7574789F5018690043E6DD9C212662E12F3E1DD 	B8B301E6105DF628076BD92C5483E55897ABD9B9 	DBCCD103B8B24F86FFAAB025C8BB472CD297D428 	F067B8140F5DD80E1D3B5D92318242FE9A0B1183 	FAA603D58B1BA4EDF65896D0ED340E0E6D545F97`
 
 ## `dpkg` (`.deb`-based packages)
