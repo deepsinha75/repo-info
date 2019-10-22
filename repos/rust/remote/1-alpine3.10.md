@@ -1,7 +1,7 @@
 ## `rust:1-alpine3.10`
 
 ```console
-$ docker pull rust@sha256:b4ab1b16d522fc44a7936ca94f81c6334acd1c0915b6de2c35cb3c4ff9fb7991
+$ docker pull rust@sha256:06e5108bf7ba0dc6e90921d09198fd104b5181df3f4a69880600d78a9b8a4bb0
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -11,39 +11,39 @@ $ docker pull rust@sha256:b4ab1b16d522fc44a7936ca94f81c6334acd1c0915b6de2c35cb3c
 ### `rust:1-alpine3.10` - linux; amd64
 
 ```console
-$ docker pull rust@sha256:42217cbdf0cd3a8260242a38eae4889c60a9eb1f3dab6e644abd45313a0472d8
+$ docker pull rust@sha256:4f49d580e5a152f9f6cd673758706f709cd40d3070c462e6936141a393850975
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **316.3 MB (316254344 bytes)**  
+-	Total Size: **316.3 MB (316251929 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:21e58af417713949e9621548a41d227c1e4e34e7de285cb81c641d52cfe9dd92`
+-	Image ID: `sha256:437ee943429b5bf7749f864a3cf5e1e1e09eeb6f83f1a402e13083a9d3ef75ca`
 -	Default Command: `["\/bin\/sh"]`
 
 ```dockerfile
-# Tue, 20 Aug 2019 20:19:55 GMT
-ADD file:fe64057fbb83dccb960efabbf1cd8777920ef279a7fa8dbca0a8801c651bdf7c in / 
-# Tue, 20 Aug 2019 20:19:55 GMT
+# Mon, 21 Oct 2019 17:21:42 GMT
+ADD file:fe1f09249227e2da2089afb4d07e16cbf832eeb804120074acd2b8192876cd28 in / 
+# Mon, 21 Oct 2019 17:21:42 GMT
 CMD ["/bin/sh"]
-# Fri, 13 Sep 2019 04:46:52 GMT
+# Mon, 21 Oct 2019 22:01:44 GMT
 RUN apk add --no-cache         ca-certificates         gcc
-# Fri, 27 Sep 2019 01:40:50 GMT
+# Mon, 21 Oct 2019 22:01:45 GMT
 ENV RUSTUP_HOME=/usr/local/rustup CARGO_HOME=/usr/local/cargo PATH=/usr/local/cargo/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin RUST_VERSION=1.38.0
-# Fri, 27 Sep 2019 01:41:25 GMT
+# Mon, 21 Oct 2019 22:02:12 GMT
 RUN set -eux;     url="https://static.rust-lang.org/rustup/archive/1.19.0/x86_64-unknown-linux-musl/rustup-init";     wget "$url";     echo "b535be813cd89000044764806f569a8c1428417d4226f16ee9993867f0c4ea4e *rustup-init" | sha256sum -c -;     chmod +x rustup-init;     ./rustup-init -y --no-modify-path --default-toolchain $RUST_VERSION;     rm rustup-init;     chmod -R a+w $RUSTUP_HOME $CARGO_HOME;     rustup --version;     cargo --version;     rustc --version;
 ```
 
 -	Layers:
-	-	`sha256:9d48c3bd43c520dc2784e868a780e976b207cbf493eaff8c6596eb871cbd9609`  
-		Last Modified: Tue, 20 Aug 2019 20:20:16 GMT  
-		Size: 2.8 MB (2789669 bytes)  
+	-	`sha256:89d9c30c1d48bac627e5c6cb0d1ed1eec28e7dbdfbcc04712e4c79c0f83faf17`  
+		Last Modified: Mon, 21 Oct 2019 17:22:48 GMT  
+		Size: 2.8 MB (2787134 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:4a86ee31cf12f38046aaea40a996ddb226dfd0276832688474d60623601220c2`  
-		Last Modified: Fri, 13 Sep 2019 04:47:54 GMT  
-		Size: 34.0 MB (33983632 bytes)  
+	-	`sha256:d0bac046ab5c04d79d04b250c2e8a820c5109feb3adb8f29ce4aafedbe33628f`  
+		Last Modified: Mon, 21 Oct 2019 22:02:43 GMT  
+		Size: 34.0 MB (33983607 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:ba18ca4af86836e54b1ebdc4129c06b61f0f052d265817b5a4816b2f5d2315d6`  
-		Last Modified: Fri, 27 Sep 2019 01:49:20 GMT  
-		Size: 279.5 MB (279481043 bytes)  
+	-	`sha256:7882ff0f7c90cefb414f570aeef40aecac244fd89e5317e5ab75d97ec74546ad`  
+		Last Modified: Mon, 21 Oct 2019 22:03:11 GMT  
+		Size: 279.5 MB (279481188 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
