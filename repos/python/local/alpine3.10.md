@@ -2,9 +2,9 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:9571314a1c4b084b25183fd0a3355c13966eed6c633d0ba633d6f13cef2a9e55`
-- Created: `2019-10-15T23:15:29.523643656Z`
-- Virtual Size: ~ 114.37 Mb  
+- Image ID: `sha256:204216b3821ecb89bf467e3b8030fbaef51508d70d9231c6cab9b77e85563d7d`
+- Created: `2019-10-21T20:04:27.539763064Z`
+- Virtual Size: ~ 110.93 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Command: `["python3"]`
@@ -13,9 +13,9 @@
   - `LANG=C.UTF-8`
   - `GPG_KEY=E3FF2839C048B25C084DEBE9B26995E310250568`
   - `PYTHON_VERSION=3.8.0`
-  - `PYTHON_PIP_VERSION=19.3`
-  - `PYTHON_GET_PIP_URL=https://github.com/pypa/get-pip/raw/65986a26949050d26e6ec98915da4aade8d8679d/get-pip.py`
-  - `PYTHON_GET_PIP_SHA256=8d412752ae26b46a39a201ec618ef9ef7656c5b2d8529cdcbe60cd70dc94f40c`
+  - `PYTHON_PIP_VERSION=19.3.1`
+  - `PYTHON_GET_PIP_URL=https://github.com/pypa/get-pip/raw/ffe826207a010164265d9cc807978e3604d18ca0/get-pip.py`
+  - `PYTHON_GET_PIP_SHA256=b86f36cc4345ae87bfd4f10ef6b2dbfa7a872fbff70608a1e43944d283fd0eee`
 
 ## `apk` (`.apk`-based packages)
 
@@ -243,16 +243,16 @@ BSD
 ### `apk` package: `libcom_err`
 
 ```console
-libcom_err-1.45.2-r0 description:
+libcom_err-1.45.2-r1 description:
 Common error description library
 
-libcom_err-1.45.2-r0 webpage:
+libcom_err-1.45.2-r1 webpage:
 http://e2fsprogs.sourceforge.net
 
-libcom_err-1.45.2-r0 installed size:
+libcom_err-1.45.2-r1 installed size:
 24576
 
-libcom_err-1.45.2-r0 license:
+libcom_err-1.45.2-r1 license:
 GPL-2.0-or-later AND LGPL-2.0-or-later AND BSD-3-Clause AND MIT
 
 ```
