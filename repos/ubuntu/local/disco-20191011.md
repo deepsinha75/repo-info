@@ -2,8 +2,8 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:a157bb38198796b0c06ca5ed5648f94686796e32586d7e65dd8275a5390e116b`
-- Created: `2019-09-18T23:20:48.530746972Z`
+- Image ID: `sha256:1d35dd7ac9e90f31cd88cab9f708d4544fa652b8d2d13431bdb7996e129cbe77`
+- Created: `2019-10-18T18:49:06.947517551Z`
 - Virtual Size: ~ 69.98 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
@@ -119,19 +119,23 @@ $ apt-get source -qq --print-uris audit=1:2.8.3-1ubuntu3
 'http://archive.ubuntu.com/ubuntu/pool/main/a/audit/audit_2.8.3-1ubuntu3.debian.tar.xz' audit_2.8.3-1ubuntu3.debian.tar.xz 17700 SHA256:14f0df21c3eae3b94611d98b9bc1f5c0d9d7ea857ba3f0f00714a5916f18f47e
 ```
 
-### `dpkg` source package: `base-files=10.1ubuntu9.1`
+### `dpkg` source package: `base-files=10.1ubuntu9.2`
 
 Binary Packages:
 
-- `base-files=10.1ubuntu9.1`
+- `base-files=10.1ubuntu9.2`
 
 Licenses: (parsed from: `/usr/share/doc/base-files/copyright`)
 
 - `GPL`
 
-**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
-This is *usually* due to a new package version being released and the old version being removed.
+Source:
 
+```console
+$ apt-get source -qq --print-uris base-files=10.1ubuntu9.2
+'http://archive.ubuntu.com/ubuntu/pool/main/b/base-files/base-files_10.1ubuntu9.2.dsc' base-files_10.1ubuntu9.2.dsc 1620 SHA256:e6f069f73755fa418a8c0aca8964e48cb58bffb6e9aae41549d78616bbe340b0
+'http://archive.ubuntu.com/ubuntu/pool/main/b/base-files/base-files_10.1ubuntu9.2.tar.xz' base-files_10.1ubuntu9.2.tar.xz 78384 SHA256:0a0b47e5ccbc5b932e7dbe9aa8cd248c72b944303cc0d22657ddbbf4dd3af8bf
+```
 
 ### `dpkg` source package: `base-passwd=3.5.46`
 
@@ -345,14 +349,14 @@ $ apt-get source -qq --print-uris dpkg=1.19.6ubuntu1.1
 'http://archive.ubuntu.com/ubuntu/pool/main/d/dpkg/dpkg_1.19.6ubuntu1.1.tar.xz' dpkg_1.19.6ubuntu1.1.tar.xz 4815760 SHA256:6cc8461f0b626d10ab25d94276a04535532df61f8d24a63dd599192b079333d9
 ```
 
-### `dpkg` source package: `e2fsprogs=1.44.6-1`
+### `dpkg` source package: `e2fsprogs=1.44.6-1ubuntu0.1`
 
 Binary Packages:
 
-- `e2fsprogs=1.44.6-1`
-- `libcom-err2:amd64=1.44.6-1`
-- `libext2fs2:amd64=1.44.6-1`
-- `libss2:amd64=1.44.6-1`
+- `e2fsprogs=1.44.6-1ubuntu0.1`
+- `libcom-err2:amd64=1.44.6-1ubuntu0.1`
+- `libext2fs2:amd64=1.44.6-1ubuntu0.1`
+- `libss2:amd64=1.44.6-1ubuntu0.1`
 
 Licenses: (parsed from: `/usr/share/doc/e2fsprogs/copyright`, `/usr/share/doc/libcom-err2/copyright`, `/usr/share/doc/libext2fs2/copyright`, `/usr/share/doc/libss2/copyright`)
 
@@ -362,11 +366,11 @@ Licenses: (parsed from: `/usr/share/doc/e2fsprogs/copyright`, `/usr/share/doc/li
 Source:
 
 ```console
-$ apt-get source -qq --print-uris e2fsprogs=1.44.6-1
-'http://archive.ubuntu.com/ubuntu/pool/main/e/e2fsprogs/e2fsprogs_1.44.6-1.dsc' e2fsprogs_1.44.6-1.dsc 2747 SHA256:8e06a639f054e843a140523eb82c02f3272939215ebd6bd3883f7233e591751d
+$ apt-get source -qq --print-uris e2fsprogs=1.44.6-1ubuntu0.1
+'http://archive.ubuntu.com/ubuntu/pool/main/e/e2fsprogs/e2fsprogs_1.44.6-1ubuntu0.1.dsc' e2fsprogs_1.44.6-1ubuntu0.1.dsc 3191 SHA256:23f4e363441e35bc27608740a4ec1be9d098119dc6baed2b2cd9390969a2117a
 'http://archive.ubuntu.com/ubuntu/pool/main/e/e2fsprogs/e2fsprogs_1.44.6.orig.tar.gz' e2fsprogs_1.44.6.orig.tar.gz 7624019 SHA256:9bf7200d2737ed13f50a080af285c11529f91b088d84ecb71aae9fac58a8fbee
 'http://archive.ubuntu.com/ubuntu/pool/main/e/e2fsprogs/e2fsprogs_1.44.6.orig.tar.gz.asc' e2fsprogs_1.44.6.orig.tar.gz.asc 488 SHA256:341aec7ef8c296b1e48e616b4978f72992f2394773a7253e1998f977a5103eca
-'http://archive.ubuntu.com/ubuntu/pool/main/e/e2fsprogs/e2fsprogs_1.44.6-1.debian.tar.xz' e2fsprogs_1.44.6-1.debian.tar.xz 78276 SHA256:f69abc62472fba729d682e0fa3ceeaacb63aae912929fe4973eeb478edb1a212
+'http://archive.ubuntu.com/ubuntu/pool/main/e/e2fsprogs/e2fsprogs_1.44.6-1ubuntu0.1.debian.tar.xz' e2fsprogs_1.44.6-1ubuntu0.1.debian.tar.xz 80252 SHA256:489815a32df49287a6301c4ca7e4f05cc8fdefe1adb378de23706a1ebb11f30c
 ```
 
 ### `dpkg` source package: `findutils=4.6.0+git+20190209-2`
