@@ -1,20 +1,20 @@
-# `openjdk:11.0.4-jre-slim-buster`
+# `openjdk:8u232-jdk-slim-buster`
 
 ## Docker Metadata
 
-- Image ID: `sha256:5bb978db62a425c0b4a23d9f6c49f637b578b84bac4580896e935f2941caa023`
-- Created: `2019-10-17T08:30:50.051316993Z`
-- Virtual Size: ~ 204.00 Mb  
+- Image ID: `sha256:971671e78456acbc3a2226534e382ebd2b2cb07d8c4fabcbe5a72aa3b6021c77`
+- Created: `2019-10-18T23:41:15.90014766Z`
+- Virtual Size: ~ 284.06 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
-- Command: `["jshell"]`
+- Command: `["bash"]`
 - Environment:
-  - `PATH=/usr/local/openjdk-11/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
+  - `PATH=/usr/local/openjdk-8/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
   - `LANG=C.UTF-8`
-  - `JAVA_HOME=/usr/local/openjdk-11`
-  - `JAVA_VERSION=11.0.4`
-  - `JAVA_BASE_URL=https://github.com/AdoptOpenJDK/openjdk11-upstream-binaries/releases/download/jdk-11.0.4%2B11/OpenJDK11U-jre_`
-  - `JAVA_URL_VERSION=11.0.4_11`
+  - `JAVA_HOME=/usr/local/openjdk-8`
+  - `JAVA_VERSION=8u232`
+  - `JAVA_BASE_URL=https://github.com/AdoptOpenJDK/openjdk8-upstream-binaries/releases/download/jdk8u232-b09/OpenJDK8U-jdk_`
+  - `JAVA_URL_VERSION=8u232b09`
 
 ## `dpkg` (`.deb`-based packages)
 
