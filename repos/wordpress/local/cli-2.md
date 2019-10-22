@@ -2,9 +2,9 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:ca379873a4a2999f523ceece89b4b51c4e8d2a6993c9fb7ed47232d7947317c3`
-- Created: `2019-10-05T06:51:59.082890057Z`
-- Virtual Size: ~ 136.34 Mb  
+- Image ID: `sha256:54caa192095b2efb25995febd998cad9b5966e0c4239010265456492fa3bb02e`
+- Created: `2019-10-21T23:57:03.330629011Z`
+- Virtual Size: ~ 132.32 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["docker-entrypoint.sh"]`
@@ -167,16 +167,16 @@ MPL-2.0 GPL-2.0-or-later
 ### `apk` package: `curl`
 
 ```console
-curl-7.65.1-r0 description:
+curl-7.66.0-r0 description:
 URL retrival utility and library
 
-curl-7.65.1-r0 webpage:
+curl-7.66.0-r0 webpage:
 https://curl.haxx.se/
 
-curl-7.65.1-r0 installed size:
+curl-7.66.0-r0 installed size:
 225280
 
-curl-7.65.1-r0 license:
+curl-7.66.0-r0 license:
 MIT
 
 ```
@@ -660,16 +660,16 @@ BSD-3-Clause
 ### `apk` package: `mariadb-client`
 
 ```console
-mariadb-client-10.3.17-r0 description:
+mariadb-client-10.3.18-r0 description:
 Client for the MariaDB database
 
-mariadb-client-10.3.17-r0 webpage:
+mariadb-client-10.3.18-r0 webpage:
 https://www.mariadb.org/
 
-mariadb-client-10.3.17-r0 installed size:
+mariadb-client-10.3.18-r0 installed size:
 29376512
 
-mariadb-client-10.3.17-r0 license:
+mariadb-client-10.3.18-r0 license:
 GPL-2.0-or-later
 
 ```
@@ -677,16 +677,16 @@ GPL-2.0-or-later
 ### `apk` package: `mariadb-common`
 
 ```console
-mariadb-common-10.3.17-r0 description:
+mariadb-common-10.3.18-r0 description:
 MariaDB common files for both server and client
 
-mariadb-common-10.3.17-r0 webpage:
+mariadb-common-10.3.18-r0 webpage:
 https://www.mariadb.org/
 
-mariadb-common-10.3.17-r0 installed size:
+mariadb-common-10.3.18-r0 installed size:
 2240512
 
-mariadb-common-10.3.17-r0 license:
+mariadb-common-10.3.18-r0 license:
 GPL-2.0-or-later
 
 ```
@@ -728,16 +728,16 @@ MIT BSD GPL2+
 ### `apk` package: `mysql-client`
 
 ```console
-mysql-client-10.3.17-r0 description:
+mysql-client-10.3.18-r0 description:
 Dummy package for mysql-client migration
 
-mysql-client-10.3.17-r0 webpage:
+mysql-client-10.3.18-r0 webpage:
 https://www.mariadb.org/
 
-mysql-client-10.3.17-r0 installed size:
+mysql-client-10.3.18-r0 installed size:
 4096
 
-mysql-client-10.3.17-r0 license:
+mysql-client-10.3.18-r0 license:
 GPL-2.0-or-later
 
 ```
@@ -813,16 +813,16 @@ MIT
 ### `apk` package: `openssl`
 
 ```console
-openssl-1.1.1c-r0 description:
+openssl-1.1.1d-r0 description:
 Toolkit for Transport Layer Security (TLS)
 
-openssl-1.1.1c-r0 webpage:
+openssl-1.1.1d-r0 webpage:
 https://www.openssl.org
 
-openssl-1.1.1c-r0 installed size:
+openssl-1.1.1d-r0 installed size:
 679936
 
-openssl-1.1.1c-r0 license:
+openssl-1.1.1d-r0 license:
 OpenSSL
 
 ```
@@ -864,16 +864,16 @@ GPL-2.0
 ### `apk` package: `sqlite-libs`
 
 ```console
-sqlite-libs-3.28.0-r0 description:
+sqlite-libs-3.28.0-r1 description:
 Sqlite3 library
 
-sqlite-libs-3.28.0-r0 webpage:
+sqlite-libs-3.28.0-r1 webpage:
 https://www.sqlite.org/
 
-sqlite-libs-3.28.0-r0 installed size:
+sqlite-libs-3.28.0-r1 installed size:
 925696
 
-sqlite-libs-3.28.0-r0 license:
+sqlite-libs-3.28.0-r1 license:
 Public-Domain
 
 ```
