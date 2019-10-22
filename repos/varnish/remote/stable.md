@@ -1,7 +1,7 @@
 ## `varnish:stable`
 
 ```console
-$ docker pull varnish@sha256:a3399af0c710d1a47431eb7b1a30e15ae3a4bf476296e9f923dc5c331149f179
+$ docker pull varnish@sha256:b73cdd22db459b514ca6913e39403c737bd98759fb653441105b4978ddd34534
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -11,14 +11,14 @@ $ docker pull varnish@sha256:a3399af0c710d1a47431eb7b1a30e15ae3a4bf476296e9f923d
 ### `varnish:stable` - linux; amd64
 
 ```console
-$ docker pull varnish@sha256:ff86f3d85d8917eac558f853adeb3360118b0ea02ac3084f8f9b35a27167a915
+$ docker pull varnish@sha256:29295c1b1ee54e9d28f22c8684a40ae414642c9c6d81ccc42b93c63c99d70474
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **67.2 MB (67194336 bytes)**  
+-	Total Size: **67.2 MB (67212438 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:d5904004c688565859d77720725d696359aa59f96cbf43c0bdb512a7695a2d4b`
+-	Image ID: `sha256:fb9c005fec0d28c44dfdfdab97a852d55c8cadabc2f0b21e6f0ecba8f508f641`
 -	Entrypoint: `["docker-varnish-entrypoint"]`
 -	Default Command: `["varnishd","-F","-f","\/etc\/varnish\/default.vcl"]`
 
@@ -27,19 +27,19 @@ $ docker pull varnish@sha256:ff86f3d85d8917eac558f853adeb3360118b0ea02ac3084f8f9
 ADD file:37512e59e7c324f9ec5b01628ef87efee73d2092cfe97d05ca949dc3528e4c2a in / 
 # Wed, 16 Oct 2019 23:29:19 GMT
 CMD ["bash"]
-# Thu, 17 Oct 2019 04:23:12 GMT
-ENV VARNISH_VERSION=6.0.4-1~stretch
-# Thu, 17 Oct 2019 04:23:44 GMT
+# Tue, 22 Oct 2019 15:20:58 GMT
+ENV VARNISH_VERSION=6.0.5-1~stretch
+# Tue, 22 Oct 2019 15:21:21 GMT
 RUN set -ex; 	fetchDeps=" 		dirmngr 		gnupg 	"; 	apt-get update; 	apt-get install -y --no-install-recommends apt-transport-https ca-certificates $fetchDeps; 	key=48D81A24CB0456F5D59431D94CFCFD6BA750EDCD; 	export GNUPGHOME="$(mktemp -d)"; 	gpg --batch --keyserver http://ha.pool.sks-keyservers.net/ --recv-keys $key; 	gpg --batch --export export $key > /etc/apt/trusted.gpg.d/varnish.gpg; 	gpgconf --kill all; 	rm -rf $GNUPGHOME; 	echo deb https://packagecloud.io/varnishcache/varnish60lts/debian/ stretch main > /etc/apt/sources.list.d/varnish.list; 	apt-get update; 	apt-get install -y --no-install-recommends varnish=$VARNISH_VERSION; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false $fetchDeps; 	rm -rf /var/lib/apt/lists/*
-# Thu, 17 Oct 2019 04:23:44 GMT
+# Tue, 22 Oct 2019 15:21:21 GMT
 WORKDIR /etc/varnish
-# Thu, 17 Oct 2019 04:23:45 GMT
-COPY file:1a9ac5e85b0e6fec4c04c946ecf8bc35d71a0d5f2f14db639ec697522be2eece in /usr/local/bin/ 
-# Thu, 17 Oct 2019 04:23:45 GMT
+# Tue, 22 Oct 2019 15:21:21 GMT
+COPY file:0301ec458d312e5c085462f916888bc85bb94c134ed6116667d225487db56cac in /usr/local/bin/ 
+# Tue, 22 Oct 2019 15:21:21 GMT
 ENTRYPOINT ["docker-varnish-entrypoint"]
-# Thu, 17 Oct 2019 04:23:45 GMT
+# Tue, 22 Oct 2019 15:21:22 GMT
 EXPOSE 80
-# Thu, 17 Oct 2019 04:23:45 GMT
+# Tue, 22 Oct 2019 15:21:22 GMT
 CMD ["varnishd" "-F" "-f" "/etc/varnish/default.vcl"]
 ```
 
@@ -48,11 +48,11 @@ CMD ["varnishd" "-F" "-f" "/etc/varnish/default.vcl"]
 		Last Modified: Wed, 16 Oct 2019 23:35:19 GMT  
 		Size: 22.5 MB (22524636 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:ff2b37e0f3a3be48f4e8d0e65d82e6feeac348516072d57ab8a45c518010bc73`  
-		Last Modified: Thu, 17 Oct 2019 04:24:29 GMT  
-		Size: 44.7 MB (44669319 bytes)  
+	-	`sha256:79eaa77125f495a051890a10148ae5251f813ad76b60d310770cc08dfc754050`  
+		Last Modified: Tue, 22 Oct 2019 15:22:07 GMT  
+		Size: 44.7 MB (44687421 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:2477a4945b6e3b0fca41e792425dda21e7f21847449a8396d71374051115fdc0`  
-		Last Modified: Thu, 17 Oct 2019 04:24:17 GMT  
+	-	`sha256:64d53faf6484e54db45d7755ec3e79ec94da4cd04faabfa60082475fbfe3e195`  
+		Last Modified: Tue, 22 Oct 2019 15:21:59 GMT  
 		Size: 381.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
