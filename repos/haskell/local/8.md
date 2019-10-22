@@ -2,9 +2,9 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:f38040caf0f2fcb78d15bf06f6d83e68236988efdb980b3376f2b6362ad9c57c`
-- Created: `2019-10-17T02:18:41.433700848Z`
-- Virtual Size: ~ 1.46 Gb  
+- Image ID: `sha256:54259304dd0bf073208fd30fdc95947d693fe2cd1e9acdafa4d5390e6e440104`
+- Created: `2019-10-22T00:10:45.227845904Z`
+- Virtual Size: ~ 1.47 Gb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Command: `["ghci"]`
@@ -1295,6 +1295,47 @@ Other potentially useful URLs:
 - https://sources.debian.net/src/libassuan/2.4.3-2/debian/copyright/ (for direct copyright/license information)
 - http://snapshot.debian.org/package/libassuan/2.4.3-2/ (for access to the source package after it no longer exists in the archive)
 
+### `dpkg` source package: `libbsd=0.8.3-1`
+
+Binary Packages:
+
+- `libbsd0:amd64=0.8.3-1`
+
+Licenses: (parsed from: `/usr/share/doc/libbsd0/copyright`)
+
+- `BSD-2-clause`
+- `BSD-2-clause-NetBSD`
+- `BSD-2-clause-author`
+- `BSD-2-clause-verbatim`
+- `BSD-3-clause`
+- `BSD-3-clause-Peter-Wemm`
+- `BSD-3-clause-Regents`
+- `BSD-4-clause-Christopher-G-Demetriou`
+- `BSD-4-clause-Niels-Provos`
+- `BSD-5-clause-Peter-Wemm`
+- `Beerware`
+- `Expat`
+- `ISC`
+- `ISC-Original`
+- `public-domain`
+- `public-domain-Colin-Plumb`
+
+Source:
+
+```console
+$ apt-get source -qq --print-uris libbsd=0.8.3-1
+'http://deb.debian.org/debian/pool/main/libb/libbsd/libbsd_0.8.3-1.dsc' libbsd_0.8.3-1.dsc 2212 SHA256:8b53b3731a95f00a0f47195e6afdf8dc4bcb3ed3b9b0d3e7046d8c9c98e5c8f2
+'http://deb.debian.org/debian/pool/main/libb/libbsd/libbsd_0.8.3.orig.tar.xz' libbsd_0.8.3.orig.tar.xz 356772 SHA256:934b634f4dfd865b6482650b8f522c70ae65c463529de8be907b53c89c3a34a8
+'http://deb.debian.org/debian/pool/main/libb/libbsd/libbsd_0.8.3.orig.tar.xz.asc' libbsd_0.8.3.orig.tar.xz.asc 819 SHA256:c0e26a577d19404d05515e0559b9224106a59ecd30910d6896694c4a5a4b021d
+'http://deb.debian.org/debian/pool/main/libb/libbsd/libbsd_0.8.3-1.debian.tar.xz' libbsd_0.8.3-1.debian.tar.xz 14924 SHA256:c2beb8b2c4678c9f700b09834d1083fb6b1f883b112e493bd1ed1177355114fc
+```
+
+Other potentially useful URLs:
+
+- https://sources.debian.net/src/libbsd/0.8.3-1/ (for browsing the source)
+- https://sources.debian.net/src/libbsd/0.8.3-1/debian/copyright/ (for direct copyright/license information)
+- http://snapshot.debian.org/package/libbsd/0.8.3-1/ (for access to the source package after it no longer exists in the archive)
+
 ### `dpkg` source package: `libcap-ng=0.7.7-3`
 
 Binary Packages:
@@ -1348,6 +1389,31 @@ Other potentially useful URLs:
 - https://sources.debian.net/src/libcap2/1:2.25-1/ (for browsing the source)
 - https://sources.debian.net/src/libcap2/1:2.25-1/debian/copyright/ (for direct copyright/license information)
 - http://snapshot.debian.org/package/libcap2/1:2.25-1/ (for access to the source package after it no longer exists in the archive)
+
+### `dpkg` source package: `libedit=3.1-20160903-3`
+
+Binary Packages:
+
+- `libedit2:amd64=3.1-20160903-3`
+
+**WARNING:** unable to detect licenses! (package likely not compliant with DEP-5)  
+If source is available (seen below), check the contents of `debian/copyright` within it.
+
+
+Source:
+
+```console
+$ apt-get source -qq --print-uris libedit=3.1-20160903-3
+'http://deb.debian.org/debian/pool/main/libe/libedit/libedit_3.1-20160903-3.dsc' libedit_3.1-20160903-3.dsc 2240 SHA256:d143cac52af230cce5ee3d8f181f5b496da675dd6abc1d30a14d5bbb0926a71a
+'http://deb.debian.org/debian/pool/main/libe/libedit/libedit_3.1-20160903.orig.tar.gz' libedit_3.1-20160903.orig.tar.gz 508108 SHA256:0ccbd2e7d46097f136fcb1aaa0d5bc24e23bb73f57d25bee5a852a683eaa7567
+'http://deb.debian.org/debian/pool/main/libe/libedit/libedit_3.1-20160903-3.debian.tar.bz2' libedit_3.1-20160903-3.debian.tar.bz2 11290 SHA256:6508b14c90bd756b6a5b3d3e7183b167276958e445a78ca753e460482da774f4
+```
+
+Other potentially useful URLs:
+
+- https://sources.debian.net/src/libedit/3.1-20160903-3/ (for browsing the source)
+- https://sources.debian.net/src/libedit/3.1-20160903-3/debian/copyright/ (for direct copyright/license information)
+- http://snapshot.debian.org/package/libedit/3.1-20160903-3/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `liberror-perl=0.17024-1`
 
@@ -1951,6 +2017,7 @@ Other potentially useful URLs:
 
 Binary Packages:
 
+- `libncurses5:amd64=6.0+20161126-1+deb9u2`
 - `libncursesw5:amd64=6.0+20161126-1+deb9u2`
 - `libtinfo-dev:amd64=6.0+20161126-1+deb9u2`
 - `libtinfo5:amd64=6.0+20161126-1+deb9u2`
@@ -2120,6 +2187,39 @@ Other potentially useful URLs:
 - https://sources.debian.net/src/openldap/2.4.44+dfsg-5+deb9u3/ (for browsing the source)
 - https://sources.debian.net/src/openldap/2.4.44+dfsg-5+deb9u3/debian/copyright/ (for direct copyright/license information)
 - http://snapshot.debian.org/package/openldap/2.4.44+dfsg-5+deb9u3/ (for access to the source package after it no longer exists in the archive)
+
+### `dpkg` source package: `openssh=1:7.4p1-10+deb9u7`
+
+Binary Packages:
+
+- `openssh-client=1:7.4p1-10+deb9u7`
+
+Licenses: (parsed from: `/usr/share/doc/openssh-client/copyright`)
+
+- `BSD-3-clause`
+- `Beer-ware`
+- `CORE-SDI-BSD-style`
+- `Expat-with-advertising-restriction`
+- `GPL-2 with OpenSSH-linking exception`
+- `Mazieres-BSD-style`
+- `OpenSSH`
+- `Powell-BSD-style`
+- `public-domain`
+
+Source:
+
+```console
+$ apt-get source -qq --print-uris openssh=1:7.4p1-10+deb9u7
+'http://deb.debian.org/debian/pool/main/o/openssh/openssh_7.4p1-10+deb9u7.dsc' openssh_7.4p1-10+deb9u7.dsc 2924 SHA256:8446f0cc09ef50c650188e674e0cefe77fcc853e874357b1c68e620dfee9dbf4
+'http://deb.debian.org/debian/pool/main/o/openssh/openssh_7.4p1.orig.tar.gz' openssh_7.4p1.orig.tar.gz 1511780 SHA256:1b1fc4a14e2024293181924ed24872e6f2e06293f3e8926a376b8aec481f19d1
+'http://deb.debian.org/debian/pool/main/o/openssh/openssh_7.4p1-10+deb9u7.debian.tar.xz' openssh_7.4p1-10+deb9u7.debian.tar.xz 171104 SHA256:3620c8d683ffa5e16361caed3339ea1c3064c6d456d6ff718e138e33786cc06d
+```
+
+Other potentially useful URLs:
+
+- https://sources.debian.net/src/openssh/1:7.4p1-10+deb9u7/ (for browsing the source)
+- https://sources.debian.net/src/openssh/1:7.4p1-10+deb9u7/debian/copyright/ (for direct copyright/license information)
+- http://snapshot.debian.org/package/openssh/1:7.4p1-10+deb9u7/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `openssl1.0=1.0.2t-1~deb9u1`
 
