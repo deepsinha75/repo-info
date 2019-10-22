@@ -65,13 +65,9 @@ Licenses: (parsed from: `/usr/share/doc/apt/copyright`, `/usr/share/doc/apt-util
 - `GPL-2`
 - `GPLv2+`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris apt=1.0.1ubuntu2.23
-'http://archive.ubuntu.com/ubuntu/pool/main/a/apt/apt_1.0.1ubuntu2.23.dsc' apt_1.0.1ubuntu2.23.dsc 2428 SHA256:55706f2176e3d733a4e84c38f2088f4a08370da2e1a0276dd4f30183fec0aa9d
-'http://archive.ubuntu.com/ubuntu/pool/main/a/apt/apt_1.0.1ubuntu2.23.tar.xz' apt_1.0.1ubuntu2.23.tar.xz 1770048 SHA256:ec03f9ef9019f213b33417035be4dce5b33f70997fb5fb938af96d4351ca7b30
-```
 
 ### `dpkg` source package: `attr=1:2.4.47-1ubuntu1`
 
