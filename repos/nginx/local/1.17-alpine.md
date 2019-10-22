@@ -2,9 +2,9 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:4d3c246dfef2edb11eccb051b47d896d0db8f1c4563c0cce9f6274b9abd9ac74`
-- Created: `2019-09-24T23:33:59.102487314Z`
-- Virtual Size: ~ 21.23 Mb  
+- Image ID: `sha256:dfc78cd150cf0145edb3c8343d34ef3e202cb246b97273d64d2e83c971bce0ee`
+- Created: `2019-10-21T19:02:21.296235377Z`
+- Virtual Size: ~ 21.20 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Command: `["nginx","-g","daemon off;"]`
@@ -174,16 +174,16 @@ BSD
 ### `apk` package: `libcrypto1.1`
 
 ```console
-libcrypto1.1-1.1.1c-r0 description:
+libcrypto1.1-1.1.1d-r0 description:
 Crypto library from openssl
 
-libcrypto1.1-1.1.1c-r0 webpage:
+libcrypto1.1-1.1.1d-r0 webpage:
 https://www.openssl.org
 
-libcrypto1.1-1.1.1c-r0 installed size:
-2760704
+libcrypto1.1-1.1.1d-r0 installed size:
+2736128
 
-libcrypto1.1-1.1.1c-r0 license:
+libcrypto1.1-1.1.1d-r0 license:
 OpenSSL
 
 ```
@@ -208,16 +208,16 @@ BSD-3-Clause
 ### `apk` package: `libgcrypt`
 
 ```console
-libgcrypt-1.8.4-r2 description:
+libgcrypt-1.8.5-r0 description:
 general purpose crypto library based on the code used in GnuPG
 
-libgcrypt-1.8.4-r2 webpage:
-http://www.gnupg.org
+libgcrypt-1.8.5-r0 webpage:
+https://www.gnupg.org/
 
-libgcrypt-1.8.4-r2 installed size:
-1142784
+libgcrypt-1.8.5-r0 installed size:
+1146880
 
-libgcrypt-1.8.4-r2 license:
+libgcrypt-1.8.5-r0 license:
 LGPL-2.1-or-later
 
 ```
@@ -310,16 +310,16 @@ Libpng
 ### `apk` package: `libssl1.1`
 
 ```console
-libssl1.1-1.1.1c-r0 description:
+libssl1.1-1.1.1d-r0 description:
 SSL shared libraries
 
-libssl1.1-1.1.1c-r0 webpage:
+libssl1.1-1.1.1d-r0 webpage:
 https://www.openssl.org
 
-libssl1.1-1.1.1c-r0 installed size:
-536576
+libssl1.1-1.1.1d-r0 installed size:
+532480
 
-libssl1.1-1.1.1c-r0 license:
+libssl1.1-1.1.1d-r0 license:
 OpenSSL
 
 ```
@@ -616,16 +616,16 @@ GPL-2.0
 ### `apk` package: `tzdata`
 
 ```console
-tzdata-2019b-r0 description:
+tzdata-2019c-r0 description:
 Timezone data
 
-tzdata-2019b-r0 webpage:
+tzdata-2019c-r0 webpage:
 https://www.iana.org/time-zones
 
-tzdata-2019b-r0 installed size:
+tzdata-2019c-r0 installed size:
 3538944
 
-tzdata-2019b-r0 license:
+tzdata-2019c-r0 license:
 Public-Domain
 
 ```
