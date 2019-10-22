@@ -2,9 +2,9 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:d99d2dc89b07a21192ca59c0d3b5ac6d8c494812d21e050a78ffd2c1d5f46596`
-- Created: `2019-10-11T23:25:00.402838041Z`
-- Virtual Size: ~ 276.76 Mb  
+- Image ID: `sha256:20f781ab82144e41ca6e1281c20b45661d2faa1aa3d02538741ea4cf53403f99`
+- Created: `2019-10-21T22:29:41.137620228Z`
+- Virtual Size: ~ 280.32 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["/opt/ol/helpers/runtime/docker-server.sh"]`
@@ -30,33 +30,33 @@
 ### `apk` package: `alpine-baselayout`
 
 ```console
-alpine-baselayout-3.0.5-r2 description:
+alpine-baselayout-3.1.2-r0 description:
 Alpine base dir structure and init scripts
 
-alpine-baselayout-3.0.5-r2 webpage:
-http://git.alpinelinux.org/cgit/aports/tree/main/alpine-baselayout
+alpine-baselayout-3.1.2-r0 webpage:
+https://git.alpinelinux.org/cgit/aports/tree/main/alpine-baselayout
 
-alpine-baselayout-3.0.5-r2 installed size:
-397312
+alpine-baselayout-3.1.2-r0 installed size:
+405504
 
-alpine-baselayout-3.0.5-r2 license:
-GPL2
+alpine-baselayout-3.1.2-r0 license:
+GPL-2.0-only
 
 ```
 
 ### `apk` package: `alpine-keys`
 
 ```console
-alpine-keys-2.1-r1 description:
+alpine-keys-2.1-r2 description:
 Public keys for Alpine Linux packages
 
-alpine-keys-2.1-r1 webpage:
-http://alpinelinux.org
+alpine-keys-2.1-r2 webpage:
+https://alpinelinux.org
 
-alpine-keys-2.1-r1 installed size:
+alpine-keys-2.1-r2 installed size:
 98304
 
-alpine-keys-2.1-r1 license:
+alpine-keys-2.1-r2 license:
 MIT
 
 ```
@@ -64,16 +64,16 @@ MIT
 ### `apk` package: `apk-tools`
 
 ```console
-apk-tools-2.10.1-r0 description:
+apk-tools-2.10.4-r2 description:
 Alpine Package Keeper - package manager for alpine
 
-apk-tools-2.10.1-r0 webpage:
+apk-tools-2.10.4-r2 webpage:
 https://git.alpinelinux.org/cgit/apk-tools/
 
-apk-tools-2.10.1-r0 installed size:
+apk-tools-2.10.4-r2 installed size:
 262144
 
-apk-tools-2.10.1-r0 license:
+apk-tools-2.10.4-r2 license:
 GPL2
 
 ```
@@ -81,50 +81,67 @@ GPL2
 ### `apk` package: `busybox`
 
 ```console
-busybox-1.27.2-r11 description:
+busybox-1.30.1-r2 description:
 Size optimized toolbox of many common UNIX utilities
 
-busybox-1.27.2-r11 webpage:
-http://busybox.net
+busybox-1.30.1-r2 webpage:
+https://busybox.net/
 
-busybox-1.27.2-r11 installed size:
-901120
+busybox-1.30.1-r2 installed size:
+942080
 
-busybox-1.27.2-r11 license:
-GPL2
+busybox-1.30.1-r2 license:
+GPL-2.0
 
 ```
 
 ### `apk` package: `ca-certificates`
 
 ```console
-ca-certificates-20171114-r0 description:
+ca-certificates-20190108-r0 description:
 Common CA certificates PEM files
 
-ca-certificates-20171114-r0 webpage:
+ca-certificates-20190108-r0 webpage:
 https://www.mozilla.org/en-US/about/governance/policies/security-group/certs/
 
-ca-certificates-20171114-r0 installed size:
-741376
+ca-certificates-20190108-r0 installed size:
+737280
 
-ca-certificates-20171114-r0 license:
-MPL 2.0 GPL2+
+ca-certificates-20190108-r0 license:
+MPL-2.0 GPL-2.0-or-later
+
+```
+
+### `apk` package: `ca-certificates-cacert`
+
+```console
+ca-certificates-cacert-20190108-r0 description:
+Mozilla bundled certificates
+
+ca-certificates-cacert-20190108-r0 webpage:
+https://www.mozilla.org/en-US/about/governance/policies/security-group/certs/
+
+ca-certificates-cacert-20190108-r0 installed size:
+245760
+
+ca-certificates-cacert-20190108-r0 license:
+MPL-2.0 GPL-2.0-or-later
 
 ```
 
 ### `apk` package: `glibc`
 
 ```console
-glibc-2.29-r0 description:
+glibc-2.30-r0 description:
 GNU C Library compatibility layer
 
-glibc-2.29-r0 webpage:
+glibc-2.30-r0 webpage:
 https://github.com/sgerrand/alpine-pkg-glibc
 
-glibc-2.29-r0 installed size:
-4186112
+glibc-2.30-r0 installed size:
+9244672
 
-glibc-2.29-r0 license:
+glibc-2.30-r0 license:
 LGPL
 
 ```
@@ -146,104 +163,70 @@ BSD
 
 ```
 
-### `apk` package: `libcrypto1.0`
+### `apk` package: `libcrypto1.1`
 
 ```console
-libcrypto1.0-1.0.2r-r0 description:
+libcrypto1.1-1.1.1d-r0 description:
 Crypto library from openssl
 
-libcrypto1.0-1.0.2r-r0 webpage:
-https://openssl.org
+libcrypto1.1-1.1.1d-r0 webpage:
+https://www.openssl.org
 
-libcrypto1.0-1.0.2r-r0 installed size:
-2523136
+libcrypto1.1-1.1.1d-r0 installed size:
+2736128
 
-libcrypto1.0-1.0.2r-r0 license:
-openssl
-
-```
-
-### `apk` package: `libressl2.6-libcrypto`
-
-```console
-libressl2.6-libcrypto-2.6.5-r0 description:
-libressl libcrypto library
-
-libressl2.6-libcrypto-2.6.5-r0 webpage:
-https://www.libressl.org/
-
-libressl2.6-libcrypto-2.6.5-r0 installed size:
-1953792
-
-libressl2.6-libcrypto-2.6.5-r0 license:
-custom
+libcrypto1.1-1.1.1d-r0 license:
+OpenSSL
 
 ```
 
-### `apk` package: `libressl2.6-libssl`
+### `apk` package: `libssl1.1`
 
 ```console
-libressl2.6-libssl-2.6.5-r0 description:
-libressl libssl library
-
-libressl2.6-libssl-2.6.5-r0 webpage:
-https://www.libressl.org/
-
-libressl2.6-libssl-2.6.5-r0 installed size:
-327680
-
-libressl2.6-libssl-2.6.5-r0 license:
-custom
-
-```
-
-### `apk` package: `libressl2.6-libtls`
-
-```console
-libressl2.6-libtls-2.6.5-r0 description:
-libressl libtls library
-
-libressl2.6-libtls-2.6.5-r0 webpage:
-https://www.libressl.org/
-
-libressl2.6-libtls-2.6.5-r0 installed size:
-73728
-
-libressl2.6-libtls-2.6.5-r0 license:
-custom
-
-```
-
-### `apk` package: `libssl1.0`
-
-```console
-libssl1.0-1.0.2r-r0 description:
+libssl1.1-1.1.1d-r0 description:
 SSL shared libraries
 
-libssl1.0-1.0.2r-r0 webpage:
-https://openssl.org
+libssl1.1-1.1.1d-r0 webpage:
+https://www.openssl.org
 
-libssl1.0-1.0.2r-r0 installed size:
-446464
+libssl1.1-1.1.1d-r0 installed size:
+532480
 
-libssl1.0-1.0.2r-r0 license:
-openssl
+libssl1.1-1.1.1d-r0 license:
+OpenSSL
+
+```
+
+### `apk` package: `libtls-standalone`
+
+```console
+libtls-standalone-2.9.1-r0 description:
+libtls extricated from libressl sources
+
+libtls-standalone-2.9.1-r0 webpage:
+https://www.libressl.org/
+
+libtls-standalone-2.9.1-r0 installed size:
+110592
+
+libtls-standalone-2.9.1-r0 license:
+ISC
 
 ```
 
 ### `apk` package: `musl`
 
 ```console
-musl-1.1.18-r3 description:
+musl-1.1.22-r3 description:
 the musl c library (libc) implementation
 
-musl-1.1.18-r3 webpage:
+musl-1.1.22-r3 webpage:
 http://www.musl-libc.org/
 
-musl-1.1.18-r3 installed size:
-581632
+musl-1.1.22-r3 installed size:
+598016
 
-musl-1.1.18-r3 license:
+musl-1.1.22-r3 license:
 MIT
 
 ```
@@ -251,16 +234,16 @@ MIT
 ### `apk` package: `musl-utils`
 
 ```console
-musl-utils-1.1.18-r3 description:
+musl-utils-1.1.22-r3 description:
 the musl c library (libc) implementation
 
-musl-utils-1.1.18-r3 webpage:
+musl-utils-1.1.22-r3 webpage:
 http://www.musl-libc.org/
 
-musl-utils-1.1.18-r3 installed size:
-122880
+musl-utils-1.1.22-r3 installed size:
+147456
 
-musl-utils-1.1.18-r3 license:
+musl-utils-1.1.22-r3 license:
 MIT BSD GPL2+
 
 ```
@@ -268,51 +251,51 @@ MIT BSD GPL2+
 ### `apk` package: `openssl`
 
 ```console
-openssl-1.0.2r-r0 description:
-Toolkit for SSL v2/v3 and TLS v1
+openssl-1.1.1d-r0 description:
+Toolkit for Transport Layer Security (TLS)
 
-openssl-1.0.2r-r0 webpage:
-https://openssl.org
+openssl-1.1.1d-r0 webpage:
+https://www.openssl.org
 
-openssl-1.0.2r-r0 installed size:
-606208
+openssl-1.1.1d-r0 installed size:
+679936
 
-openssl-1.0.2r-r0 license:
-openssl
+openssl-1.1.1d-r0 license:
+OpenSSL
 
 ```
 
 ### `apk` package: `scanelf`
 
 ```console
-scanelf-1.2.2-r1 description:
+scanelf-1.2.3-r0 description:
 Scan ELF binaries for stuff
 
-scanelf-1.2.2-r1 webpage:
+scanelf-1.2.3-r0 webpage:
 https://wiki.gentoo.org/wiki/Hardened/PaX_Utilities
 
-scanelf-1.2.2-r1 installed size:
-90112
+scanelf-1.2.3-r0 installed size:
+98304
 
-scanelf-1.2.2-r1 license:
-GPL2
+scanelf-1.2.3-r0 license:
+GPL-2.0
 
 ```
 
 ### `apk` package: `ssl_client`
 
 ```console
-ssl_client-1.27.2-r11 description:
+ssl_client-1.30.1-r2 description:
 EXternal ssl_client for busybox wget
 
-ssl_client-1.27.2-r11 webpage:
-http://busybox.net
+ssl_client-1.30.1-r2 webpage:
+https://busybox.net/
 
-ssl_client-1.27.2-r11 installed size:
-24576
+ssl_client-1.30.1-r2 installed size:
+28672
 
-ssl_client-1.27.2-r11 license:
-GPL2
+ssl_client-1.30.1-r2 license:
+GPL-2.0
 
 ```
 
@@ -326,7 +309,7 @@ zlib-1.2.11-r1 webpage:
 http://zlib.net
 
 zlib-1.2.11-r1 installed size:
-102400
+110592
 
 zlib-1.2.11-r1 license:
 zlib
