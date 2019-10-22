@@ -13,7 +13,7 @@
 ## `amazoncorretto:11`
 
 ```console
-$ docker pull amazoncorretto@sha256:47c1f84ec713bc0a3154d4db124b7ca0bca2b101ae72f41da9c06f016309f344
+$ docker pull amazoncorretto@sha256:c7f3a72ae91a20054301b294b72c9722999f3ce073f57be86d3771bfb9355966
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -24,101 +24,101 @@ $ docker pull amazoncorretto@sha256:47c1f84ec713bc0a3154d4db124b7ca0bca2b101ae72
 ### `amazoncorretto:11` - linux; amd64
 
 ```console
-$ docker pull amazoncorretto@sha256:622301b7fed41f51745384095822bae3e8d240b4d5f6dae26297fbe520b2df6b
+$ docker pull amazoncorretto@sha256:e4ae9f9ba3d4b03ddda4c54ba2caeee009bac547348cba48be0e3427d894308d
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **258.9 MB (258889000 bytes)**  
+-	Total Size: **258.9 MB (258869041 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:6255bc9837174c62cd8a18edb0a8ecbc91ec6a0c302ed392c565a977b0228d50`
+-	Image ID: `sha256:baf7d8995918f01bd64a48e965bc330de47c92d65290bd9dfe5eab11d8e452ef`
 -	Default Command: `["\/bin\/bash"]`
 
 ```dockerfile
-# Thu, 05 Sep 2019 23:36:52 GMT
-ADD file:ee5d76cace83097841fd6a9fe1406be3e2176b9ec4de511cb5594bf959f9e657 in / 
-# Thu, 05 Sep 2019 23:36:53 GMT
+# Tue, 22 Oct 2019 01:28:31 GMT
+ADD file:7b0629b865f6a424605580d655d74b7e23b2f3518177b7df4559597a1a87a4c7 in / 
+# Tue, 22 Oct 2019 01:28:31 GMT
 CMD ["/bin/bash"]
-# Thu, 17 Oct 2019 17:35:29 GMT
+# Tue, 22 Oct 2019 01:47:15 GMT
 ARG rpm_x64=java-11-amazon-corretto-devel-11.0.5.10-1.x86_64.rpm
-# Thu, 17 Oct 2019 17:35:29 GMT
+# Tue, 22 Oct 2019 01:47:15 GMT
 ARG path_x64=https://d3pxv6yz143wms.cloudfront.net/11.0.5.10.1
-# Thu, 17 Oct 2019 17:35:30 GMT
+# Tue, 22 Oct 2019 01:47:15 GMT
 ARG key_x64=13817E35D6AA26BB2D85267712EABAC5209DDBC0
-# Thu, 17 Oct 2019 17:35:30 GMT
+# Tue, 22 Oct 2019 01:47:15 GMT
 ARG rpm_aarch64=java-11-amazon-corretto-devel-11.0.5.10-1.aarch64.rpm
-# Thu, 17 Oct 2019 17:35:30 GMT
+# Tue, 22 Oct 2019 01:47:16 GMT
 ARG path_aarch64=https://d3pxv6yz143wms.cloudfront.net/11.0.5.10.1
-# Thu, 17 Oct 2019 17:35:30 GMT
+# Tue, 22 Oct 2019 01:47:16 GMT
 ARG key_aarch64=13817E35D6AA26BB2D85267712EABAC5209DDBC0
-# Thu, 17 Oct 2019 17:35:57 GMT
+# Tue, 22 Oct 2019 01:47:41 GMT
 # ARGS: key_aarch64=13817E35D6AA26BB2D85267712EABAC5209DDBC0 key_x64=13817E35D6AA26BB2D85267712EABAC5209DDBC0 path_aarch64=https://d3pxv6yz143wms.cloudfront.net/11.0.5.10.1 path_x64=https://d3pxv6yz143wms.cloudfront.net/11.0.5.10.1 rpm_aarch64=java-11-amazon-corretto-devel-11.0.5.10-1.aarch64.rpm rpm_x64=java-11-amazon-corretto-devel-11.0.5.10-1.x86_64.rpm
 RUN set -eux;     case "$(uname -p)" in         x86_64) rpm=$rpm_x64; path=$path_x64; key=$key_x64 ;;         aarch64) rpm=$rpm_aarch64; path=$path_aarch64; key=$key_aarch64 ;;         *) echo >&2 "Unsupported architecture $(uname -p)."; exit 1 ;;     esac;         curl -O $path/$rpm     && export GNUPGHOME="$(mktemp -d)"     && gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys $key     && gpg --armor --export $key > corretto.asc     && rpm --import corretto.asc     && rpm -K $rpm     && rpm -i $rpm     && rm -r $GNUPGHOME corretto.asc $rpm     && yum install -y fontconfig     && yum clean all
-# Thu, 17 Oct 2019 17:35:57 GMT
+# Tue, 22 Oct 2019 01:47:41 GMT
 ENV JAVA_HOME=/usr/lib/jvm/java-11-amazon-corretto
 ```
 
 -	Layers:
-	-	`sha256:4910da0c66710ed2414cd0223e48cbeed94209b9c77053dc30d48532a651dd22`  
-		Last Modified: Thu, 05 Sep 2019 23:38:39 GMT  
-		Size: 61.7 MB (61665831 bytes)  
+	-	`sha256:17282fad1a5eb72a6f1f7a05102a1e3474fd2193cd013d44845d43c013cd594b`  
+		Last Modified: Tue, 22 Oct 2019 01:30:07 GMT  
+		Size: 61.7 MB (61659797 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:1e152d7b07f1ba9c8465699e4c78d55c0f60977913df6aebaa607fa460253f28`  
-		Last Modified: Thu, 17 Oct 2019 17:36:42 GMT  
-		Size: 197.2 MB (197223169 bytes)  
+	-	`sha256:3d2ecadfcc76dac14ddf0377e0339d89d93b357bf384289513a8f446943005ec`  
+		Last Modified: Tue, 22 Oct 2019 01:48:47 GMT  
+		Size: 197.2 MB (197209244 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `amazoncorretto:11` - linux; arm64 variant v8
 
 ```console
-$ docker pull amazoncorretto@sha256:b0a6c77fe726564570ba42980163bae8132c8fa50a4e910ba55a6e0cb703692a
+$ docker pull amazoncorretto@sha256:8f06c4a09e6a0784d6da3fb580bd57c4881df3fc8f56de1f3c0fd66dde20e43c
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **258.3 MB (258280288 bytes)**  
+-	Total Size: **258.3 MB (258278566 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:68a4e00b7511e57b0e48526ffb2098a3b55051830965660d159547afbfe8031b`
+-	Image ID: `sha256:965af83f2febc36612a80268982f98ae48be01846b47baaefc57405e4f44a651`
 -	Default Command: `["\/bin\/bash"]`
 
 ```dockerfile
-# Thu, 05 Sep 2019 20:39:50 GMT
-ADD file:a72ff266718add2a5d4d63264fd3ce1f5191448aa441ffdb064ed570a651b36a in / 
-# Thu, 05 Sep 2019 20:39:51 GMT
+# Tue, 22 Oct 2019 01:09:30 GMT
+ADD file:01531581542d07e40e72ce8cd4e0ec4407d5fda4da394ac63e13b78513b8dbe8 in / 
+# Tue, 22 Oct 2019 01:09:33 GMT
 CMD ["/bin/bash"]
-# Thu, 17 Oct 2019 16:21:11 GMT
+# Tue, 22 Oct 2019 01:27:13 GMT
 ARG rpm_x64=java-11-amazon-corretto-devel-11.0.5.10-1.x86_64.rpm
-# Thu, 17 Oct 2019 16:21:12 GMT
+# Tue, 22 Oct 2019 01:27:14 GMT
 ARG path_x64=https://d3pxv6yz143wms.cloudfront.net/11.0.5.10.1
-# Thu, 17 Oct 2019 16:21:12 GMT
+# Tue, 22 Oct 2019 01:27:15 GMT
 ARG key_x64=13817E35D6AA26BB2D85267712EABAC5209DDBC0
-# Thu, 17 Oct 2019 16:21:13 GMT
+# Tue, 22 Oct 2019 01:27:17 GMT
 ARG rpm_aarch64=java-11-amazon-corretto-devel-11.0.5.10-1.aarch64.rpm
-# Thu, 17 Oct 2019 16:21:13 GMT
+# Tue, 22 Oct 2019 01:27:19 GMT
 ARG path_aarch64=https://d3pxv6yz143wms.cloudfront.net/11.0.5.10.1
-# Thu, 17 Oct 2019 16:21:14 GMT
+# Tue, 22 Oct 2019 01:27:20 GMT
 ARG key_aarch64=13817E35D6AA26BB2D85267712EABAC5209DDBC0
-# Thu, 17 Oct 2019 16:21:42 GMT
+# Tue, 22 Oct 2019 01:27:51 GMT
 # ARGS: key_aarch64=13817E35D6AA26BB2D85267712EABAC5209DDBC0 key_x64=13817E35D6AA26BB2D85267712EABAC5209DDBC0 path_aarch64=https://d3pxv6yz143wms.cloudfront.net/11.0.5.10.1 path_x64=https://d3pxv6yz143wms.cloudfront.net/11.0.5.10.1 rpm_aarch64=java-11-amazon-corretto-devel-11.0.5.10-1.aarch64.rpm rpm_x64=java-11-amazon-corretto-devel-11.0.5.10-1.x86_64.rpm
 RUN set -eux;     case "$(uname -p)" in         x86_64) rpm=$rpm_x64; path=$path_x64; key=$key_x64 ;;         aarch64) rpm=$rpm_aarch64; path=$path_aarch64; key=$key_aarch64 ;;         *) echo >&2 "Unsupported architecture $(uname -p)."; exit 1 ;;     esac;         curl -O $path/$rpm     && export GNUPGHOME="$(mktemp -d)"     && gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys $key     && gpg --armor --export $key > corretto.asc     && rpm --import corretto.asc     && rpm -K $rpm     && rpm -i $rpm     && rm -r $GNUPGHOME corretto.asc $rpm     && yum install -y fontconfig     && yum clean all
-# Thu, 17 Oct 2019 16:21:43 GMT
+# Tue, 22 Oct 2019 01:27:53 GMT
 ENV JAVA_HOME=/usr/lib/jvm/java-11-amazon-corretto
 ```
 
 -	Layers:
-	-	`sha256:e75eebfae1ce8742ae53a518590bca4735e2a5dbfa46418fa709591a7b42e522`  
-		Last Modified: Thu, 05 Sep 2019 20:43:10 GMT  
-		Size: 62.8 MB (62797593 bytes)  
+	-	`sha256:502dfb788f6ca3e66517bd9090f7b27b9bd7e455e2ce1e6b1df693451492d769`  
+		Last Modified: Tue, 22 Oct 2019 01:10:26 GMT  
+		Size: 62.8 MB (62831385 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:7d4f5f8a5b282b57bf94f7893b0854d3b2a53e3f21e0345bbc382701e54fa956`  
-		Last Modified: Thu, 17 Oct 2019 16:22:56 GMT  
-		Size: 195.5 MB (195482695 bytes)  
+	-	`sha256:40e8ed3b958887637d4a889f96a4f6869df0f96a66e942aec7b35b74cc78ec8f`  
+		Last Modified: Tue, 22 Oct 2019 01:29:08 GMT  
+		Size: 195.4 MB (195447181 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `amazoncorretto:11.0.5`
 
 ```console
-$ docker pull amazoncorretto@sha256:47c1f84ec713bc0a3154d4db124b7ca0bca2b101ae72f41da9c06f016309f344
+$ docker pull amazoncorretto@sha256:c7f3a72ae91a20054301b294b72c9722999f3ce073f57be86d3771bfb9355966
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -129,101 +129,101 @@ $ docker pull amazoncorretto@sha256:47c1f84ec713bc0a3154d4db124b7ca0bca2b101ae72
 ### `amazoncorretto:11.0.5` - linux; amd64
 
 ```console
-$ docker pull amazoncorretto@sha256:622301b7fed41f51745384095822bae3e8d240b4d5f6dae26297fbe520b2df6b
+$ docker pull amazoncorretto@sha256:e4ae9f9ba3d4b03ddda4c54ba2caeee009bac547348cba48be0e3427d894308d
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **258.9 MB (258889000 bytes)**  
+-	Total Size: **258.9 MB (258869041 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:6255bc9837174c62cd8a18edb0a8ecbc91ec6a0c302ed392c565a977b0228d50`
+-	Image ID: `sha256:baf7d8995918f01bd64a48e965bc330de47c92d65290bd9dfe5eab11d8e452ef`
 -	Default Command: `["\/bin\/bash"]`
 
 ```dockerfile
-# Thu, 05 Sep 2019 23:36:52 GMT
-ADD file:ee5d76cace83097841fd6a9fe1406be3e2176b9ec4de511cb5594bf959f9e657 in / 
-# Thu, 05 Sep 2019 23:36:53 GMT
+# Tue, 22 Oct 2019 01:28:31 GMT
+ADD file:7b0629b865f6a424605580d655d74b7e23b2f3518177b7df4559597a1a87a4c7 in / 
+# Tue, 22 Oct 2019 01:28:31 GMT
 CMD ["/bin/bash"]
-# Thu, 17 Oct 2019 17:35:29 GMT
+# Tue, 22 Oct 2019 01:47:15 GMT
 ARG rpm_x64=java-11-amazon-corretto-devel-11.0.5.10-1.x86_64.rpm
-# Thu, 17 Oct 2019 17:35:29 GMT
+# Tue, 22 Oct 2019 01:47:15 GMT
 ARG path_x64=https://d3pxv6yz143wms.cloudfront.net/11.0.5.10.1
-# Thu, 17 Oct 2019 17:35:30 GMT
+# Tue, 22 Oct 2019 01:47:15 GMT
 ARG key_x64=13817E35D6AA26BB2D85267712EABAC5209DDBC0
-# Thu, 17 Oct 2019 17:35:30 GMT
+# Tue, 22 Oct 2019 01:47:15 GMT
 ARG rpm_aarch64=java-11-amazon-corretto-devel-11.0.5.10-1.aarch64.rpm
-# Thu, 17 Oct 2019 17:35:30 GMT
+# Tue, 22 Oct 2019 01:47:16 GMT
 ARG path_aarch64=https://d3pxv6yz143wms.cloudfront.net/11.0.5.10.1
-# Thu, 17 Oct 2019 17:35:30 GMT
+# Tue, 22 Oct 2019 01:47:16 GMT
 ARG key_aarch64=13817E35D6AA26BB2D85267712EABAC5209DDBC0
-# Thu, 17 Oct 2019 17:35:57 GMT
+# Tue, 22 Oct 2019 01:47:41 GMT
 # ARGS: key_aarch64=13817E35D6AA26BB2D85267712EABAC5209DDBC0 key_x64=13817E35D6AA26BB2D85267712EABAC5209DDBC0 path_aarch64=https://d3pxv6yz143wms.cloudfront.net/11.0.5.10.1 path_x64=https://d3pxv6yz143wms.cloudfront.net/11.0.5.10.1 rpm_aarch64=java-11-amazon-corretto-devel-11.0.5.10-1.aarch64.rpm rpm_x64=java-11-amazon-corretto-devel-11.0.5.10-1.x86_64.rpm
 RUN set -eux;     case "$(uname -p)" in         x86_64) rpm=$rpm_x64; path=$path_x64; key=$key_x64 ;;         aarch64) rpm=$rpm_aarch64; path=$path_aarch64; key=$key_aarch64 ;;         *) echo >&2 "Unsupported architecture $(uname -p)."; exit 1 ;;     esac;         curl -O $path/$rpm     && export GNUPGHOME="$(mktemp -d)"     && gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys $key     && gpg --armor --export $key > corretto.asc     && rpm --import corretto.asc     && rpm -K $rpm     && rpm -i $rpm     && rm -r $GNUPGHOME corretto.asc $rpm     && yum install -y fontconfig     && yum clean all
-# Thu, 17 Oct 2019 17:35:57 GMT
+# Tue, 22 Oct 2019 01:47:41 GMT
 ENV JAVA_HOME=/usr/lib/jvm/java-11-amazon-corretto
 ```
 
 -	Layers:
-	-	`sha256:4910da0c66710ed2414cd0223e48cbeed94209b9c77053dc30d48532a651dd22`  
-		Last Modified: Thu, 05 Sep 2019 23:38:39 GMT  
-		Size: 61.7 MB (61665831 bytes)  
+	-	`sha256:17282fad1a5eb72a6f1f7a05102a1e3474fd2193cd013d44845d43c013cd594b`  
+		Last Modified: Tue, 22 Oct 2019 01:30:07 GMT  
+		Size: 61.7 MB (61659797 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:1e152d7b07f1ba9c8465699e4c78d55c0f60977913df6aebaa607fa460253f28`  
-		Last Modified: Thu, 17 Oct 2019 17:36:42 GMT  
-		Size: 197.2 MB (197223169 bytes)  
+	-	`sha256:3d2ecadfcc76dac14ddf0377e0339d89d93b357bf384289513a8f446943005ec`  
+		Last Modified: Tue, 22 Oct 2019 01:48:47 GMT  
+		Size: 197.2 MB (197209244 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `amazoncorretto:11.0.5` - linux; arm64 variant v8
 
 ```console
-$ docker pull amazoncorretto@sha256:b0a6c77fe726564570ba42980163bae8132c8fa50a4e910ba55a6e0cb703692a
+$ docker pull amazoncorretto@sha256:8f06c4a09e6a0784d6da3fb580bd57c4881df3fc8f56de1f3c0fd66dde20e43c
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **258.3 MB (258280288 bytes)**  
+-	Total Size: **258.3 MB (258278566 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:68a4e00b7511e57b0e48526ffb2098a3b55051830965660d159547afbfe8031b`
+-	Image ID: `sha256:965af83f2febc36612a80268982f98ae48be01846b47baaefc57405e4f44a651`
 -	Default Command: `["\/bin\/bash"]`
 
 ```dockerfile
-# Thu, 05 Sep 2019 20:39:50 GMT
-ADD file:a72ff266718add2a5d4d63264fd3ce1f5191448aa441ffdb064ed570a651b36a in / 
-# Thu, 05 Sep 2019 20:39:51 GMT
+# Tue, 22 Oct 2019 01:09:30 GMT
+ADD file:01531581542d07e40e72ce8cd4e0ec4407d5fda4da394ac63e13b78513b8dbe8 in / 
+# Tue, 22 Oct 2019 01:09:33 GMT
 CMD ["/bin/bash"]
-# Thu, 17 Oct 2019 16:21:11 GMT
+# Tue, 22 Oct 2019 01:27:13 GMT
 ARG rpm_x64=java-11-amazon-corretto-devel-11.0.5.10-1.x86_64.rpm
-# Thu, 17 Oct 2019 16:21:12 GMT
+# Tue, 22 Oct 2019 01:27:14 GMT
 ARG path_x64=https://d3pxv6yz143wms.cloudfront.net/11.0.5.10.1
-# Thu, 17 Oct 2019 16:21:12 GMT
+# Tue, 22 Oct 2019 01:27:15 GMT
 ARG key_x64=13817E35D6AA26BB2D85267712EABAC5209DDBC0
-# Thu, 17 Oct 2019 16:21:13 GMT
+# Tue, 22 Oct 2019 01:27:17 GMT
 ARG rpm_aarch64=java-11-amazon-corretto-devel-11.0.5.10-1.aarch64.rpm
-# Thu, 17 Oct 2019 16:21:13 GMT
+# Tue, 22 Oct 2019 01:27:19 GMT
 ARG path_aarch64=https://d3pxv6yz143wms.cloudfront.net/11.0.5.10.1
-# Thu, 17 Oct 2019 16:21:14 GMT
+# Tue, 22 Oct 2019 01:27:20 GMT
 ARG key_aarch64=13817E35D6AA26BB2D85267712EABAC5209DDBC0
-# Thu, 17 Oct 2019 16:21:42 GMT
+# Tue, 22 Oct 2019 01:27:51 GMT
 # ARGS: key_aarch64=13817E35D6AA26BB2D85267712EABAC5209DDBC0 key_x64=13817E35D6AA26BB2D85267712EABAC5209DDBC0 path_aarch64=https://d3pxv6yz143wms.cloudfront.net/11.0.5.10.1 path_x64=https://d3pxv6yz143wms.cloudfront.net/11.0.5.10.1 rpm_aarch64=java-11-amazon-corretto-devel-11.0.5.10-1.aarch64.rpm rpm_x64=java-11-amazon-corretto-devel-11.0.5.10-1.x86_64.rpm
 RUN set -eux;     case "$(uname -p)" in         x86_64) rpm=$rpm_x64; path=$path_x64; key=$key_x64 ;;         aarch64) rpm=$rpm_aarch64; path=$path_aarch64; key=$key_aarch64 ;;         *) echo >&2 "Unsupported architecture $(uname -p)."; exit 1 ;;     esac;         curl -O $path/$rpm     && export GNUPGHOME="$(mktemp -d)"     && gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys $key     && gpg --armor --export $key > corretto.asc     && rpm --import corretto.asc     && rpm -K $rpm     && rpm -i $rpm     && rm -r $GNUPGHOME corretto.asc $rpm     && yum install -y fontconfig     && yum clean all
-# Thu, 17 Oct 2019 16:21:43 GMT
+# Tue, 22 Oct 2019 01:27:53 GMT
 ENV JAVA_HOME=/usr/lib/jvm/java-11-amazon-corretto
 ```
 
 -	Layers:
-	-	`sha256:e75eebfae1ce8742ae53a518590bca4735e2a5dbfa46418fa709591a7b42e522`  
-		Last Modified: Thu, 05 Sep 2019 20:43:10 GMT  
-		Size: 62.8 MB (62797593 bytes)  
+	-	`sha256:502dfb788f6ca3e66517bd9090f7b27b9bd7e455e2ce1e6b1df693451492d769`  
+		Last Modified: Tue, 22 Oct 2019 01:10:26 GMT  
+		Size: 62.8 MB (62831385 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:7d4f5f8a5b282b57bf94f7893b0854d3b2a53e3f21e0345bbc382701e54fa956`  
-		Last Modified: Thu, 17 Oct 2019 16:22:56 GMT  
-		Size: 195.5 MB (195482695 bytes)  
+	-	`sha256:40e8ed3b958887637d4a889f96a4f6869df0f96a66e942aec7b35b74cc78ec8f`  
+		Last Modified: Tue, 22 Oct 2019 01:29:08 GMT  
+		Size: 195.4 MB (195447181 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `amazoncorretto:11-al2-full`
 
 ```console
-$ docker pull amazoncorretto@sha256:47c1f84ec713bc0a3154d4db124b7ca0bca2b101ae72f41da9c06f016309f344
+$ docker pull amazoncorretto@sha256:c7f3a72ae91a20054301b294b72c9722999f3ce073f57be86d3771bfb9355966
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -234,101 +234,101 @@ $ docker pull amazoncorretto@sha256:47c1f84ec713bc0a3154d4db124b7ca0bca2b101ae72
 ### `amazoncorretto:11-al2-full` - linux; amd64
 
 ```console
-$ docker pull amazoncorretto@sha256:622301b7fed41f51745384095822bae3e8d240b4d5f6dae26297fbe520b2df6b
+$ docker pull amazoncorretto@sha256:e4ae9f9ba3d4b03ddda4c54ba2caeee009bac547348cba48be0e3427d894308d
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **258.9 MB (258889000 bytes)**  
+-	Total Size: **258.9 MB (258869041 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:6255bc9837174c62cd8a18edb0a8ecbc91ec6a0c302ed392c565a977b0228d50`
+-	Image ID: `sha256:baf7d8995918f01bd64a48e965bc330de47c92d65290bd9dfe5eab11d8e452ef`
 -	Default Command: `["\/bin\/bash"]`
 
 ```dockerfile
-# Thu, 05 Sep 2019 23:36:52 GMT
-ADD file:ee5d76cace83097841fd6a9fe1406be3e2176b9ec4de511cb5594bf959f9e657 in / 
-# Thu, 05 Sep 2019 23:36:53 GMT
+# Tue, 22 Oct 2019 01:28:31 GMT
+ADD file:7b0629b865f6a424605580d655d74b7e23b2f3518177b7df4559597a1a87a4c7 in / 
+# Tue, 22 Oct 2019 01:28:31 GMT
 CMD ["/bin/bash"]
-# Thu, 17 Oct 2019 17:35:29 GMT
+# Tue, 22 Oct 2019 01:47:15 GMT
 ARG rpm_x64=java-11-amazon-corretto-devel-11.0.5.10-1.x86_64.rpm
-# Thu, 17 Oct 2019 17:35:29 GMT
+# Tue, 22 Oct 2019 01:47:15 GMT
 ARG path_x64=https://d3pxv6yz143wms.cloudfront.net/11.0.5.10.1
-# Thu, 17 Oct 2019 17:35:30 GMT
+# Tue, 22 Oct 2019 01:47:15 GMT
 ARG key_x64=13817E35D6AA26BB2D85267712EABAC5209DDBC0
-# Thu, 17 Oct 2019 17:35:30 GMT
+# Tue, 22 Oct 2019 01:47:15 GMT
 ARG rpm_aarch64=java-11-amazon-corretto-devel-11.0.5.10-1.aarch64.rpm
-# Thu, 17 Oct 2019 17:35:30 GMT
+# Tue, 22 Oct 2019 01:47:16 GMT
 ARG path_aarch64=https://d3pxv6yz143wms.cloudfront.net/11.0.5.10.1
-# Thu, 17 Oct 2019 17:35:30 GMT
+# Tue, 22 Oct 2019 01:47:16 GMT
 ARG key_aarch64=13817E35D6AA26BB2D85267712EABAC5209DDBC0
-# Thu, 17 Oct 2019 17:35:57 GMT
+# Tue, 22 Oct 2019 01:47:41 GMT
 # ARGS: key_aarch64=13817E35D6AA26BB2D85267712EABAC5209DDBC0 key_x64=13817E35D6AA26BB2D85267712EABAC5209DDBC0 path_aarch64=https://d3pxv6yz143wms.cloudfront.net/11.0.5.10.1 path_x64=https://d3pxv6yz143wms.cloudfront.net/11.0.5.10.1 rpm_aarch64=java-11-amazon-corretto-devel-11.0.5.10-1.aarch64.rpm rpm_x64=java-11-amazon-corretto-devel-11.0.5.10-1.x86_64.rpm
 RUN set -eux;     case "$(uname -p)" in         x86_64) rpm=$rpm_x64; path=$path_x64; key=$key_x64 ;;         aarch64) rpm=$rpm_aarch64; path=$path_aarch64; key=$key_aarch64 ;;         *) echo >&2 "Unsupported architecture $(uname -p)."; exit 1 ;;     esac;         curl -O $path/$rpm     && export GNUPGHOME="$(mktemp -d)"     && gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys $key     && gpg --armor --export $key > corretto.asc     && rpm --import corretto.asc     && rpm -K $rpm     && rpm -i $rpm     && rm -r $GNUPGHOME corretto.asc $rpm     && yum install -y fontconfig     && yum clean all
-# Thu, 17 Oct 2019 17:35:57 GMT
+# Tue, 22 Oct 2019 01:47:41 GMT
 ENV JAVA_HOME=/usr/lib/jvm/java-11-amazon-corretto
 ```
 
 -	Layers:
-	-	`sha256:4910da0c66710ed2414cd0223e48cbeed94209b9c77053dc30d48532a651dd22`  
-		Last Modified: Thu, 05 Sep 2019 23:38:39 GMT  
-		Size: 61.7 MB (61665831 bytes)  
+	-	`sha256:17282fad1a5eb72a6f1f7a05102a1e3474fd2193cd013d44845d43c013cd594b`  
+		Last Modified: Tue, 22 Oct 2019 01:30:07 GMT  
+		Size: 61.7 MB (61659797 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:1e152d7b07f1ba9c8465699e4c78d55c0f60977913df6aebaa607fa460253f28`  
-		Last Modified: Thu, 17 Oct 2019 17:36:42 GMT  
-		Size: 197.2 MB (197223169 bytes)  
+	-	`sha256:3d2ecadfcc76dac14ddf0377e0339d89d93b357bf384289513a8f446943005ec`  
+		Last Modified: Tue, 22 Oct 2019 01:48:47 GMT  
+		Size: 197.2 MB (197209244 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `amazoncorretto:11-al2-full` - linux; arm64 variant v8
 
 ```console
-$ docker pull amazoncorretto@sha256:b0a6c77fe726564570ba42980163bae8132c8fa50a4e910ba55a6e0cb703692a
+$ docker pull amazoncorretto@sha256:8f06c4a09e6a0784d6da3fb580bd57c4881df3fc8f56de1f3c0fd66dde20e43c
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **258.3 MB (258280288 bytes)**  
+-	Total Size: **258.3 MB (258278566 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:68a4e00b7511e57b0e48526ffb2098a3b55051830965660d159547afbfe8031b`
+-	Image ID: `sha256:965af83f2febc36612a80268982f98ae48be01846b47baaefc57405e4f44a651`
 -	Default Command: `["\/bin\/bash"]`
 
 ```dockerfile
-# Thu, 05 Sep 2019 20:39:50 GMT
-ADD file:a72ff266718add2a5d4d63264fd3ce1f5191448aa441ffdb064ed570a651b36a in / 
-# Thu, 05 Sep 2019 20:39:51 GMT
+# Tue, 22 Oct 2019 01:09:30 GMT
+ADD file:01531581542d07e40e72ce8cd4e0ec4407d5fda4da394ac63e13b78513b8dbe8 in / 
+# Tue, 22 Oct 2019 01:09:33 GMT
 CMD ["/bin/bash"]
-# Thu, 17 Oct 2019 16:21:11 GMT
+# Tue, 22 Oct 2019 01:27:13 GMT
 ARG rpm_x64=java-11-amazon-corretto-devel-11.0.5.10-1.x86_64.rpm
-# Thu, 17 Oct 2019 16:21:12 GMT
+# Tue, 22 Oct 2019 01:27:14 GMT
 ARG path_x64=https://d3pxv6yz143wms.cloudfront.net/11.0.5.10.1
-# Thu, 17 Oct 2019 16:21:12 GMT
+# Tue, 22 Oct 2019 01:27:15 GMT
 ARG key_x64=13817E35D6AA26BB2D85267712EABAC5209DDBC0
-# Thu, 17 Oct 2019 16:21:13 GMT
+# Tue, 22 Oct 2019 01:27:17 GMT
 ARG rpm_aarch64=java-11-amazon-corretto-devel-11.0.5.10-1.aarch64.rpm
-# Thu, 17 Oct 2019 16:21:13 GMT
+# Tue, 22 Oct 2019 01:27:19 GMT
 ARG path_aarch64=https://d3pxv6yz143wms.cloudfront.net/11.0.5.10.1
-# Thu, 17 Oct 2019 16:21:14 GMT
+# Tue, 22 Oct 2019 01:27:20 GMT
 ARG key_aarch64=13817E35D6AA26BB2D85267712EABAC5209DDBC0
-# Thu, 17 Oct 2019 16:21:42 GMT
+# Tue, 22 Oct 2019 01:27:51 GMT
 # ARGS: key_aarch64=13817E35D6AA26BB2D85267712EABAC5209DDBC0 key_x64=13817E35D6AA26BB2D85267712EABAC5209DDBC0 path_aarch64=https://d3pxv6yz143wms.cloudfront.net/11.0.5.10.1 path_x64=https://d3pxv6yz143wms.cloudfront.net/11.0.5.10.1 rpm_aarch64=java-11-amazon-corretto-devel-11.0.5.10-1.aarch64.rpm rpm_x64=java-11-amazon-corretto-devel-11.0.5.10-1.x86_64.rpm
 RUN set -eux;     case "$(uname -p)" in         x86_64) rpm=$rpm_x64; path=$path_x64; key=$key_x64 ;;         aarch64) rpm=$rpm_aarch64; path=$path_aarch64; key=$key_aarch64 ;;         *) echo >&2 "Unsupported architecture $(uname -p)."; exit 1 ;;     esac;         curl -O $path/$rpm     && export GNUPGHOME="$(mktemp -d)"     && gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys $key     && gpg --armor --export $key > corretto.asc     && rpm --import corretto.asc     && rpm -K $rpm     && rpm -i $rpm     && rm -r $GNUPGHOME corretto.asc $rpm     && yum install -y fontconfig     && yum clean all
-# Thu, 17 Oct 2019 16:21:43 GMT
+# Tue, 22 Oct 2019 01:27:53 GMT
 ENV JAVA_HOME=/usr/lib/jvm/java-11-amazon-corretto
 ```
 
 -	Layers:
-	-	`sha256:e75eebfae1ce8742ae53a518590bca4735e2a5dbfa46418fa709591a7b42e522`  
-		Last Modified: Thu, 05 Sep 2019 20:43:10 GMT  
-		Size: 62.8 MB (62797593 bytes)  
+	-	`sha256:502dfb788f6ca3e66517bd9090f7b27b9bd7e455e2ce1e6b1df693451492d769`  
+		Last Modified: Tue, 22 Oct 2019 01:10:26 GMT  
+		Size: 62.8 MB (62831385 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:7d4f5f8a5b282b57bf94f7893b0854d3b2a53e3f21e0345bbc382701e54fa956`  
-		Last Modified: Thu, 17 Oct 2019 16:22:56 GMT  
-		Size: 195.5 MB (195482695 bytes)  
+	-	`sha256:40e8ed3b958887637d4a889f96a4f6869df0f96a66e942aec7b35b74cc78ec8f`  
+		Last Modified: Tue, 22 Oct 2019 01:29:08 GMT  
+		Size: 195.4 MB (195447181 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `amazoncorretto:8`
 
 ```console
-$ docker pull amazoncorretto@sha256:a72e9976d8edc9c74304c585a5b556bb0b8b835c848e4682414788fe3b2ccd5c
+$ docker pull amazoncorretto@sha256:89141ee12c24d7f2c360bc62d38e34b7bd95cdd311ed742332c0ce969923eecd
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -339,101 +339,101 @@ $ docker pull amazoncorretto@sha256:a72e9976d8edc9c74304c585a5b556bb0b8b835c848e
 ### `amazoncorretto:8` - linux; amd64
 
 ```console
-$ docker pull amazoncorretto@sha256:238d3b871088799bb59fb537e16e54ceb14f900eac119fdba5b721737319b722
+$ docker pull amazoncorretto@sha256:82fa28eb59218751f17ffe942ba57283f6698e31a26e677a32c5dc6023cf7ba7
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **183.2 MB (183210861 bytes)**  
+-	Total Size: **183.2 MB (183194861 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:2b979c56b33011c63b15b809a85cd130659bf1dd16da908582242400cb386804`
+-	Image ID: `sha256:5dc6819f98d7cb1fcee9db5fab55a8a9016e3111c95f90bdbf651d1094dcb68e`
 -	Default Command: `["\/bin\/bash"]`
 
 ```dockerfile
-# Thu, 05 Sep 2019 23:36:52 GMT
-ADD file:ee5d76cace83097841fd6a9fe1406be3e2176b9ec4de511cb5594bf959f9e657 in / 
-# Thu, 05 Sep 2019 23:36:53 GMT
+# Tue, 22 Oct 2019 01:28:31 GMT
+ADD file:7b0629b865f6a424605580d655d74b7e23b2f3518177b7df4559597a1a87a4c7 in / 
+# Tue, 22 Oct 2019 01:28:31 GMT
 CMD ["/bin/bash"]
-# Thu, 17 Oct 2019 17:34:57 GMT
+# Tue, 22 Oct 2019 01:46:43 GMT
 ARG rpm_x64=java-1.8.0-amazon-corretto-devel-1.8.0_232.b09-1.x86_64.rpm
-# Thu, 17 Oct 2019 17:34:57 GMT
+# Tue, 22 Oct 2019 01:46:43 GMT
 ARG path_x64=https://d3pxv6yz143wms.cloudfront.net/8.232.09.1
-# Thu, 17 Oct 2019 17:34:57 GMT
+# Tue, 22 Oct 2019 01:46:43 GMT
 ARG key_x64=E8EB406377AD2B9E9A4765D19CB3BC6FF6C9FC19
-# Thu, 17 Oct 2019 17:34:57 GMT
+# Tue, 22 Oct 2019 01:46:43 GMT
 ARG rpm_aarch64=java-1.8.0-amazon-corretto-devel-1.8.0_232.b09-1.aarch64.rpm
-# Thu, 17 Oct 2019 17:34:58 GMT
+# Tue, 22 Oct 2019 01:46:43 GMT
 ARG path_aarch64=https://d3pxv6yz143wms.cloudfront.net/8.232.09.1
-# Thu, 17 Oct 2019 17:34:58 GMT
+# Tue, 22 Oct 2019 01:46:44 GMT
 ARG key_aarch64=E8EB406377AD2B9E9A4765D19CB3BC6FF6C9FC19
-# Thu, 17 Oct 2019 17:35:22 GMT
+# Tue, 22 Oct 2019 01:47:07 GMT
 # ARGS: key_aarch64=E8EB406377AD2B9E9A4765D19CB3BC6FF6C9FC19 key_x64=E8EB406377AD2B9E9A4765D19CB3BC6FF6C9FC19 path_aarch64=https://d3pxv6yz143wms.cloudfront.net/8.232.09.1 path_x64=https://d3pxv6yz143wms.cloudfront.net/8.232.09.1 rpm_aarch64=java-1.8.0-amazon-corretto-devel-1.8.0_232.b09-1.aarch64.rpm rpm_x64=java-1.8.0-amazon-corretto-devel-1.8.0_232.b09-1.x86_64.rpm
 RUN set -eux;     case "$(uname -p)" in         x86_64) rpm=$rpm_x64; path=$path_x64; key=$key_x64 ;;         aarch64) rpm=$rpm_aarch64; path=$path_aarch64; key=$key_aarch64 ;;         *) echo >&2 "Unsupported architecture $(uname -p)."; exit 1 ;;     esac;         curl -O $path/$rpm     && export GNUPGHOME="$(mktemp -d)"     && gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys $key     && gpg --armor --export $key > corretto.asc     && rpm --import corretto.asc     && rpm -K $rpm     && rpm -i $rpm     && rm -r $GNUPGHOME corretto.asc $rpm     && yum install -y fontconfig     && yum clean all
-# Thu, 17 Oct 2019 17:35:22 GMT
+# Tue, 22 Oct 2019 01:47:07 GMT
 ENV JAVA_HOME=/usr/lib/jvm/java-1.8.0-amazon-corretto
 ```
 
 -	Layers:
-	-	`sha256:4910da0c66710ed2414cd0223e48cbeed94209b9c77053dc30d48532a651dd22`  
-		Last Modified: Thu, 05 Sep 2019 23:38:39 GMT  
-		Size: 61.7 MB (61665831 bytes)  
+	-	`sha256:17282fad1a5eb72a6f1f7a05102a1e3474fd2193cd013d44845d43c013cd594b`  
+		Last Modified: Tue, 22 Oct 2019 01:30:07 GMT  
+		Size: 61.7 MB (61659797 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:9da8e61f5311ca899883a35f64e893d5ec813469168407c8494fb1394d8dd1ae`  
-		Last Modified: Thu, 17 Oct 2019 17:36:19 GMT  
-		Size: 121.5 MB (121545030 bytes)  
+	-	`sha256:df91445036d98351518effb36775508864ce7a6255482960e622b7b4906ed39b`  
+		Last Modified: Tue, 22 Oct 2019 01:48:03 GMT  
+		Size: 121.5 MB (121535064 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `amazoncorretto:8` - linux; arm64 variant v8
 
 ```console
-$ docker pull amazoncorretto@sha256:cf398f0542dbc32c69e78437140c05f9b728a7805ce272baa6a9e8072af62e51
+$ docker pull amazoncorretto@sha256:b78fa911cb6bd1f8a3871fbf3bb86dd7b6409d8d83e3d6e3e005d0c755942f74
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **167.8 MB (167765624 bytes)**  
+-	Total Size: **167.8 MB (167750663 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:67f8478d9afa57fc35576c61f509234b6861c3efddd686dba20c91f94058d3fc`
+-	Image ID: `sha256:0436382a2bbb2699139a72de6209ef05a79fb7bb8027b42f2db0e3d23b9ae94b`
 -	Default Command: `["\/bin\/bash"]`
 
 ```dockerfile
-# Thu, 05 Sep 2019 20:39:50 GMT
-ADD file:a72ff266718add2a5d4d63264fd3ce1f5191448aa441ffdb064ed570a651b36a in / 
-# Thu, 05 Sep 2019 20:39:51 GMT
+# Tue, 22 Oct 2019 01:09:30 GMT
+ADD file:01531581542d07e40e72ce8cd4e0ec4407d5fda4da394ac63e13b78513b8dbe8 in / 
+# Tue, 22 Oct 2019 01:09:33 GMT
 CMD ["/bin/bash"]
-# Thu, 17 Oct 2019 16:20:24 GMT
+# Tue, 22 Oct 2019 01:26:34 GMT
 ARG rpm_x64=java-1.8.0-amazon-corretto-devel-1.8.0_232.b09-1.x86_64.rpm
-# Thu, 17 Oct 2019 16:20:25 GMT
+# Tue, 22 Oct 2019 01:26:35 GMT
 ARG path_x64=https://d3pxv6yz143wms.cloudfront.net/8.232.09.1
-# Thu, 17 Oct 2019 16:20:25 GMT
+# Tue, 22 Oct 2019 01:26:35 GMT
 ARG key_x64=E8EB406377AD2B9E9A4765D19CB3BC6FF6C9FC19
-# Thu, 17 Oct 2019 16:20:26 GMT
+# Tue, 22 Oct 2019 01:26:37 GMT
 ARG rpm_aarch64=java-1.8.0-amazon-corretto-devel-1.8.0_232.b09-1.aarch64.rpm
-# Thu, 17 Oct 2019 16:20:27 GMT
+# Tue, 22 Oct 2019 01:26:37 GMT
 ARG path_aarch64=https://d3pxv6yz143wms.cloudfront.net/8.232.09.1
-# Thu, 17 Oct 2019 16:20:27 GMT
+# Tue, 22 Oct 2019 01:26:37 GMT
 ARG key_aarch64=E8EB406377AD2B9E9A4765D19CB3BC6FF6C9FC19
-# Thu, 17 Oct 2019 16:21:02 GMT
+# Tue, 22 Oct 2019 01:27:05 GMT
 # ARGS: key_aarch64=E8EB406377AD2B9E9A4765D19CB3BC6FF6C9FC19 key_x64=E8EB406377AD2B9E9A4765D19CB3BC6FF6C9FC19 path_aarch64=https://d3pxv6yz143wms.cloudfront.net/8.232.09.1 path_x64=https://d3pxv6yz143wms.cloudfront.net/8.232.09.1 rpm_aarch64=java-1.8.0-amazon-corretto-devel-1.8.0_232.b09-1.aarch64.rpm rpm_x64=java-1.8.0-amazon-corretto-devel-1.8.0_232.b09-1.x86_64.rpm
 RUN set -eux;     case "$(uname -p)" in         x86_64) rpm=$rpm_x64; path=$path_x64; key=$key_x64 ;;         aarch64) rpm=$rpm_aarch64; path=$path_aarch64; key=$key_aarch64 ;;         *) echo >&2 "Unsupported architecture $(uname -p)."; exit 1 ;;     esac;         curl -O $path/$rpm     && export GNUPGHOME="$(mktemp -d)"     && gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys $key     && gpg --armor --export $key > corretto.asc     && rpm --import corretto.asc     && rpm -K $rpm     && rpm -i $rpm     && rm -r $GNUPGHOME corretto.asc $rpm     && yum install -y fontconfig     && yum clean all
-# Thu, 17 Oct 2019 16:21:03 GMT
+# Tue, 22 Oct 2019 01:27:06 GMT
 ENV JAVA_HOME=/usr/lib/jvm/java-1.8.0-amazon-corretto
 ```
 
 -	Layers:
-	-	`sha256:e75eebfae1ce8742ae53a518590bca4735e2a5dbfa46418fa709591a7b42e522`  
-		Last Modified: Thu, 05 Sep 2019 20:43:10 GMT  
-		Size: 62.8 MB (62797593 bytes)  
+	-	`sha256:502dfb788f6ca3e66517bd9090f7b27b9bd7e455e2ce1e6b1df693451492d769`  
+		Last Modified: Tue, 22 Oct 2019 01:10:26 GMT  
+		Size: 62.8 MB (62831385 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:7bacee07a8d81306c3fa9315dbcda577cc6bb004c6db6f4f021af42c8f1af955`  
-		Last Modified: Thu, 17 Oct 2019 16:22:16 GMT  
-		Size: 105.0 MB (104968031 bytes)  
+	-	`sha256:12ae98675221a13530d5edf6548eb2af23d95718106b5e46fd51fdd362cdb217`  
+		Last Modified: Tue, 22 Oct 2019 01:28:25 GMT  
+		Size: 104.9 MB (104919278 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `amazoncorretto:8-al2-full`
 
 ```console
-$ docker pull amazoncorretto@sha256:a72e9976d8edc9c74304c585a5b556bb0b8b835c848e4682414788fe3b2ccd5c
+$ docker pull amazoncorretto@sha256:89141ee12c24d7f2c360bc62d38e34b7bd95cdd311ed742332c0ce969923eecd
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -444,101 +444,101 @@ $ docker pull amazoncorretto@sha256:a72e9976d8edc9c74304c585a5b556bb0b8b835c848e
 ### `amazoncorretto:8-al2-full` - linux; amd64
 
 ```console
-$ docker pull amazoncorretto@sha256:238d3b871088799bb59fb537e16e54ceb14f900eac119fdba5b721737319b722
+$ docker pull amazoncorretto@sha256:82fa28eb59218751f17ffe942ba57283f6698e31a26e677a32c5dc6023cf7ba7
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **183.2 MB (183210861 bytes)**  
+-	Total Size: **183.2 MB (183194861 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:2b979c56b33011c63b15b809a85cd130659bf1dd16da908582242400cb386804`
+-	Image ID: `sha256:5dc6819f98d7cb1fcee9db5fab55a8a9016e3111c95f90bdbf651d1094dcb68e`
 -	Default Command: `["\/bin\/bash"]`
 
 ```dockerfile
-# Thu, 05 Sep 2019 23:36:52 GMT
-ADD file:ee5d76cace83097841fd6a9fe1406be3e2176b9ec4de511cb5594bf959f9e657 in / 
-# Thu, 05 Sep 2019 23:36:53 GMT
+# Tue, 22 Oct 2019 01:28:31 GMT
+ADD file:7b0629b865f6a424605580d655d74b7e23b2f3518177b7df4559597a1a87a4c7 in / 
+# Tue, 22 Oct 2019 01:28:31 GMT
 CMD ["/bin/bash"]
-# Thu, 17 Oct 2019 17:34:57 GMT
+# Tue, 22 Oct 2019 01:46:43 GMT
 ARG rpm_x64=java-1.8.0-amazon-corretto-devel-1.8.0_232.b09-1.x86_64.rpm
-# Thu, 17 Oct 2019 17:34:57 GMT
+# Tue, 22 Oct 2019 01:46:43 GMT
 ARG path_x64=https://d3pxv6yz143wms.cloudfront.net/8.232.09.1
-# Thu, 17 Oct 2019 17:34:57 GMT
+# Tue, 22 Oct 2019 01:46:43 GMT
 ARG key_x64=E8EB406377AD2B9E9A4765D19CB3BC6FF6C9FC19
-# Thu, 17 Oct 2019 17:34:57 GMT
+# Tue, 22 Oct 2019 01:46:43 GMT
 ARG rpm_aarch64=java-1.8.0-amazon-corretto-devel-1.8.0_232.b09-1.aarch64.rpm
-# Thu, 17 Oct 2019 17:34:58 GMT
+# Tue, 22 Oct 2019 01:46:43 GMT
 ARG path_aarch64=https://d3pxv6yz143wms.cloudfront.net/8.232.09.1
-# Thu, 17 Oct 2019 17:34:58 GMT
+# Tue, 22 Oct 2019 01:46:44 GMT
 ARG key_aarch64=E8EB406377AD2B9E9A4765D19CB3BC6FF6C9FC19
-# Thu, 17 Oct 2019 17:35:22 GMT
+# Tue, 22 Oct 2019 01:47:07 GMT
 # ARGS: key_aarch64=E8EB406377AD2B9E9A4765D19CB3BC6FF6C9FC19 key_x64=E8EB406377AD2B9E9A4765D19CB3BC6FF6C9FC19 path_aarch64=https://d3pxv6yz143wms.cloudfront.net/8.232.09.1 path_x64=https://d3pxv6yz143wms.cloudfront.net/8.232.09.1 rpm_aarch64=java-1.8.0-amazon-corretto-devel-1.8.0_232.b09-1.aarch64.rpm rpm_x64=java-1.8.0-amazon-corretto-devel-1.8.0_232.b09-1.x86_64.rpm
 RUN set -eux;     case "$(uname -p)" in         x86_64) rpm=$rpm_x64; path=$path_x64; key=$key_x64 ;;         aarch64) rpm=$rpm_aarch64; path=$path_aarch64; key=$key_aarch64 ;;         *) echo >&2 "Unsupported architecture $(uname -p)."; exit 1 ;;     esac;         curl -O $path/$rpm     && export GNUPGHOME="$(mktemp -d)"     && gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys $key     && gpg --armor --export $key > corretto.asc     && rpm --import corretto.asc     && rpm -K $rpm     && rpm -i $rpm     && rm -r $GNUPGHOME corretto.asc $rpm     && yum install -y fontconfig     && yum clean all
-# Thu, 17 Oct 2019 17:35:22 GMT
+# Tue, 22 Oct 2019 01:47:07 GMT
 ENV JAVA_HOME=/usr/lib/jvm/java-1.8.0-amazon-corretto
 ```
 
 -	Layers:
-	-	`sha256:4910da0c66710ed2414cd0223e48cbeed94209b9c77053dc30d48532a651dd22`  
-		Last Modified: Thu, 05 Sep 2019 23:38:39 GMT  
-		Size: 61.7 MB (61665831 bytes)  
+	-	`sha256:17282fad1a5eb72a6f1f7a05102a1e3474fd2193cd013d44845d43c013cd594b`  
+		Last Modified: Tue, 22 Oct 2019 01:30:07 GMT  
+		Size: 61.7 MB (61659797 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:9da8e61f5311ca899883a35f64e893d5ec813469168407c8494fb1394d8dd1ae`  
-		Last Modified: Thu, 17 Oct 2019 17:36:19 GMT  
-		Size: 121.5 MB (121545030 bytes)  
+	-	`sha256:df91445036d98351518effb36775508864ce7a6255482960e622b7b4906ed39b`  
+		Last Modified: Tue, 22 Oct 2019 01:48:03 GMT  
+		Size: 121.5 MB (121535064 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `amazoncorretto:8-al2-full` - linux; arm64 variant v8
 
 ```console
-$ docker pull amazoncorretto@sha256:cf398f0542dbc32c69e78437140c05f9b728a7805ce272baa6a9e8072af62e51
+$ docker pull amazoncorretto@sha256:b78fa911cb6bd1f8a3871fbf3bb86dd7b6409d8d83e3d6e3e005d0c755942f74
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **167.8 MB (167765624 bytes)**  
+-	Total Size: **167.8 MB (167750663 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:67f8478d9afa57fc35576c61f509234b6861c3efddd686dba20c91f94058d3fc`
+-	Image ID: `sha256:0436382a2bbb2699139a72de6209ef05a79fb7bb8027b42f2db0e3d23b9ae94b`
 -	Default Command: `["\/bin\/bash"]`
 
 ```dockerfile
-# Thu, 05 Sep 2019 20:39:50 GMT
-ADD file:a72ff266718add2a5d4d63264fd3ce1f5191448aa441ffdb064ed570a651b36a in / 
-# Thu, 05 Sep 2019 20:39:51 GMT
+# Tue, 22 Oct 2019 01:09:30 GMT
+ADD file:01531581542d07e40e72ce8cd4e0ec4407d5fda4da394ac63e13b78513b8dbe8 in / 
+# Tue, 22 Oct 2019 01:09:33 GMT
 CMD ["/bin/bash"]
-# Thu, 17 Oct 2019 16:20:24 GMT
+# Tue, 22 Oct 2019 01:26:34 GMT
 ARG rpm_x64=java-1.8.0-amazon-corretto-devel-1.8.0_232.b09-1.x86_64.rpm
-# Thu, 17 Oct 2019 16:20:25 GMT
+# Tue, 22 Oct 2019 01:26:35 GMT
 ARG path_x64=https://d3pxv6yz143wms.cloudfront.net/8.232.09.1
-# Thu, 17 Oct 2019 16:20:25 GMT
+# Tue, 22 Oct 2019 01:26:35 GMT
 ARG key_x64=E8EB406377AD2B9E9A4765D19CB3BC6FF6C9FC19
-# Thu, 17 Oct 2019 16:20:26 GMT
+# Tue, 22 Oct 2019 01:26:37 GMT
 ARG rpm_aarch64=java-1.8.0-amazon-corretto-devel-1.8.0_232.b09-1.aarch64.rpm
-# Thu, 17 Oct 2019 16:20:27 GMT
+# Tue, 22 Oct 2019 01:26:37 GMT
 ARG path_aarch64=https://d3pxv6yz143wms.cloudfront.net/8.232.09.1
-# Thu, 17 Oct 2019 16:20:27 GMT
+# Tue, 22 Oct 2019 01:26:37 GMT
 ARG key_aarch64=E8EB406377AD2B9E9A4765D19CB3BC6FF6C9FC19
-# Thu, 17 Oct 2019 16:21:02 GMT
+# Tue, 22 Oct 2019 01:27:05 GMT
 # ARGS: key_aarch64=E8EB406377AD2B9E9A4765D19CB3BC6FF6C9FC19 key_x64=E8EB406377AD2B9E9A4765D19CB3BC6FF6C9FC19 path_aarch64=https://d3pxv6yz143wms.cloudfront.net/8.232.09.1 path_x64=https://d3pxv6yz143wms.cloudfront.net/8.232.09.1 rpm_aarch64=java-1.8.0-amazon-corretto-devel-1.8.0_232.b09-1.aarch64.rpm rpm_x64=java-1.8.0-amazon-corretto-devel-1.8.0_232.b09-1.x86_64.rpm
 RUN set -eux;     case "$(uname -p)" in         x86_64) rpm=$rpm_x64; path=$path_x64; key=$key_x64 ;;         aarch64) rpm=$rpm_aarch64; path=$path_aarch64; key=$key_aarch64 ;;         *) echo >&2 "Unsupported architecture $(uname -p)."; exit 1 ;;     esac;         curl -O $path/$rpm     && export GNUPGHOME="$(mktemp -d)"     && gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys $key     && gpg --armor --export $key > corretto.asc     && rpm --import corretto.asc     && rpm -K $rpm     && rpm -i $rpm     && rm -r $GNUPGHOME corretto.asc $rpm     && yum install -y fontconfig     && yum clean all
-# Thu, 17 Oct 2019 16:21:03 GMT
+# Tue, 22 Oct 2019 01:27:06 GMT
 ENV JAVA_HOME=/usr/lib/jvm/java-1.8.0-amazon-corretto
 ```
 
 -	Layers:
-	-	`sha256:e75eebfae1ce8742ae53a518590bca4735e2a5dbfa46418fa709591a7b42e522`  
-		Last Modified: Thu, 05 Sep 2019 20:43:10 GMT  
-		Size: 62.8 MB (62797593 bytes)  
+	-	`sha256:502dfb788f6ca3e66517bd9090f7b27b9bd7e455e2ce1e6b1df693451492d769`  
+		Last Modified: Tue, 22 Oct 2019 01:10:26 GMT  
+		Size: 62.8 MB (62831385 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:7bacee07a8d81306c3fa9315dbcda577cc6bb004c6db6f4f021af42c8f1af955`  
-		Last Modified: Thu, 17 Oct 2019 16:22:16 GMT  
-		Size: 105.0 MB (104968031 bytes)  
+	-	`sha256:12ae98675221a13530d5edf6548eb2af23d95718106b5e46fd51fdd362cdb217`  
+		Last Modified: Tue, 22 Oct 2019 01:28:25 GMT  
+		Size: 104.9 MB (104919278 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `amazoncorretto:8u232`
 
 ```console
-$ docker pull amazoncorretto@sha256:a72e9976d8edc9c74304c585a5b556bb0b8b835c848e4682414788fe3b2ccd5c
+$ docker pull amazoncorretto@sha256:89141ee12c24d7f2c360bc62d38e34b7bd95cdd311ed742332c0ce969923eecd
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -549,101 +549,101 @@ $ docker pull amazoncorretto@sha256:a72e9976d8edc9c74304c585a5b556bb0b8b835c848e
 ### `amazoncorretto:8u232` - linux; amd64
 
 ```console
-$ docker pull amazoncorretto@sha256:238d3b871088799bb59fb537e16e54ceb14f900eac119fdba5b721737319b722
+$ docker pull amazoncorretto@sha256:82fa28eb59218751f17ffe942ba57283f6698e31a26e677a32c5dc6023cf7ba7
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **183.2 MB (183210861 bytes)**  
+-	Total Size: **183.2 MB (183194861 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:2b979c56b33011c63b15b809a85cd130659bf1dd16da908582242400cb386804`
+-	Image ID: `sha256:5dc6819f98d7cb1fcee9db5fab55a8a9016e3111c95f90bdbf651d1094dcb68e`
 -	Default Command: `["\/bin\/bash"]`
 
 ```dockerfile
-# Thu, 05 Sep 2019 23:36:52 GMT
-ADD file:ee5d76cace83097841fd6a9fe1406be3e2176b9ec4de511cb5594bf959f9e657 in / 
-# Thu, 05 Sep 2019 23:36:53 GMT
+# Tue, 22 Oct 2019 01:28:31 GMT
+ADD file:7b0629b865f6a424605580d655d74b7e23b2f3518177b7df4559597a1a87a4c7 in / 
+# Tue, 22 Oct 2019 01:28:31 GMT
 CMD ["/bin/bash"]
-# Thu, 17 Oct 2019 17:34:57 GMT
+# Tue, 22 Oct 2019 01:46:43 GMT
 ARG rpm_x64=java-1.8.0-amazon-corretto-devel-1.8.0_232.b09-1.x86_64.rpm
-# Thu, 17 Oct 2019 17:34:57 GMT
+# Tue, 22 Oct 2019 01:46:43 GMT
 ARG path_x64=https://d3pxv6yz143wms.cloudfront.net/8.232.09.1
-# Thu, 17 Oct 2019 17:34:57 GMT
+# Tue, 22 Oct 2019 01:46:43 GMT
 ARG key_x64=E8EB406377AD2B9E9A4765D19CB3BC6FF6C9FC19
-# Thu, 17 Oct 2019 17:34:57 GMT
+# Tue, 22 Oct 2019 01:46:43 GMT
 ARG rpm_aarch64=java-1.8.0-amazon-corretto-devel-1.8.0_232.b09-1.aarch64.rpm
-# Thu, 17 Oct 2019 17:34:58 GMT
+# Tue, 22 Oct 2019 01:46:43 GMT
 ARG path_aarch64=https://d3pxv6yz143wms.cloudfront.net/8.232.09.1
-# Thu, 17 Oct 2019 17:34:58 GMT
+# Tue, 22 Oct 2019 01:46:44 GMT
 ARG key_aarch64=E8EB406377AD2B9E9A4765D19CB3BC6FF6C9FC19
-# Thu, 17 Oct 2019 17:35:22 GMT
+# Tue, 22 Oct 2019 01:47:07 GMT
 # ARGS: key_aarch64=E8EB406377AD2B9E9A4765D19CB3BC6FF6C9FC19 key_x64=E8EB406377AD2B9E9A4765D19CB3BC6FF6C9FC19 path_aarch64=https://d3pxv6yz143wms.cloudfront.net/8.232.09.1 path_x64=https://d3pxv6yz143wms.cloudfront.net/8.232.09.1 rpm_aarch64=java-1.8.0-amazon-corretto-devel-1.8.0_232.b09-1.aarch64.rpm rpm_x64=java-1.8.0-amazon-corretto-devel-1.8.0_232.b09-1.x86_64.rpm
 RUN set -eux;     case "$(uname -p)" in         x86_64) rpm=$rpm_x64; path=$path_x64; key=$key_x64 ;;         aarch64) rpm=$rpm_aarch64; path=$path_aarch64; key=$key_aarch64 ;;         *) echo >&2 "Unsupported architecture $(uname -p)."; exit 1 ;;     esac;         curl -O $path/$rpm     && export GNUPGHOME="$(mktemp -d)"     && gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys $key     && gpg --armor --export $key > corretto.asc     && rpm --import corretto.asc     && rpm -K $rpm     && rpm -i $rpm     && rm -r $GNUPGHOME corretto.asc $rpm     && yum install -y fontconfig     && yum clean all
-# Thu, 17 Oct 2019 17:35:22 GMT
+# Tue, 22 Oct 2019 01:47:07 GMT
 ENV JAVA_HOME=/usr/lib/jvm/java-1.8.0-amazon-corretto
 ```
 
 -	Layers:
-	-	`sha256:4910da0c66710ed2414cd0223e48cbeed94209b9c77053dc30d48532a651dd22`  
-		Last Modified: Thu, 05 Sep 2019 23:38:39 GMT  
-		Size: 61.7 MB (61665831 bytes)  
+	-	`sha256:17282fad1a5eb72a6f1f7a05102a1e3474fd2193cd013d44845d43c013cd594b`  
+		Last Modified: Tue, 22 Oct 2019 01:30:07 GMT  
+		Size: 61.7 MB (61659797 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:9da8e61f5311ca899883a35f64e893d5ec813469168407c8494fb1394d8dd1ae`  
-		Last Modified: Thu, 17 Oct 2019 17:36:19 GMT  
-		Size: 121.5 MB (121545030 bytes)  
+	-	`sha256:df91445036d98351518effb36775508864ce7a6255482960e622b7b4906ed39b`  
+		Last Modified: Tue, 22 Oct 2019 01:48:03 GMT  
+		Size: 121.5 MB (121535064 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `amazoncorretto:8u232` - linux; arm64 variant v8
 
 ```console
-$ docker pull amazoncorretto@sha256:cf398f0542dbc32c69e78437140c05f9b728a7805ce272baa6a9e8072af62e51
+$ docker pull amazoncorretto@sha256:b78fa911cb6bd1f8a3871fbf3bb86dd7b6409d8d83e3d6e3e005d0c755942f74
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **167.8 MB (167765624 bytes)**  
+-	Total Size: **167.8 MB (167750663 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:67f8478d9afa57fc35576c61f509234b6861c3efddd686dba20c91f94058d3fc`
+-	Image ID: `sha256:0436382a2bbb2699139a72de6209ef05a79fb7bb8027b42f2db0e3d23b9ae94b`
 -	Default Command: `["\/bin\/bash"]`
 
 ```dockerfile
-# Thu, 05 Sep 2019 20:39:50 GMT
-ADD file:a72ff266718add2a5d4d63264fd3ce1f5191448aa441ffdb064ed570a651b36a in / 
-# Thu, 05 Sep 2019 20:39:51 GMT
+# Tue, 22 Oct 2019 01:09:30 GMT
+ADD file:01531581542d07e40e72ce8cd4e0ec4407d5fda4da394ac63e13b78513b8dbe8 in / 
+# Tue, 22 Oct 2019 01:09:33 GMT
 CMD ["/bin/bash"]
-# Thu, 17 Oct 2019 16:20:24 GMT
+# Tue, 22 Oct 2019 01:26:34 GMT
 ARG rpm_x64=java-1.8.0-amazon-corretto-devel-1.8.0_232.b09-1.x86_64.rpm
-# Thu, 17 Oct 2019 16:20:25 GMT
+# Tue, 22 Oct 2019 01:26:35 GMT
 ARG path_x64=https://d3pxv6yz143wms.cloudfront.net/8.232.09.1
-# Thu, 17 Oct 2019 16:20:25 GMT
+# Tue, 22 Oct 2019 01:26:35 GMT
 ARG key_x64=E8EB406377AD2B9E9A4765D19CB3BC6FF6C9FC19
-# Thu, 17 Oct 2019 16:20:26 GMT
+# Tue, 22 Oct 2019 01:26:37 GMT
 ARG rpm_aarch64=java-1.8.0-amazon-corretto-devel-1.8.0_232.b09-1.aarch64.rpm
-# Thu, 17 Oct 2019 16:20:27 GMT
+# Tue, 22 Oct 2019 01:26:37 GMT
 ARG path_aarch64=https://d3pxv6yz143wms.cloudfront.net/8.232.09.1
-# Thu, 17 Oct 2019 16:20:27 GMT
+# Tue, 22 Oct 2019 01:26:37 GMT
 ARG key_aarch64=E8EB406377AD2B9E9A4765D19CB3BC6FF6C9FC19
-# Thu, 17 Oct 2019 16:21:02 GMT
+# Tue, 22 Oct 2019 01:27:05 GMT
 # ARGS: key_aarch64=E8EB406377AD2B9E9A4765D19CB3BC6FF6C9FC19 key_x64=E8EB406377AD2B9E9A4765D19CB3BC6FF6C9FC19 path_aarch64=https://d3pxv6yz143wms.cloudfront.net/8.232.09.1 path_x64=https://d3pxv6yz143wms.cloudfront.net/8.232.09.1 rpm_aarch64=java-1.8.0-amazon-corretto-devel-1.8.0_232.b09-1.aarch64.rpm rpm_x64=java-1.8.0-amazon-corretto-devel-1.8.0_232.b09-1.x86_64.rpm
 RUN set -eux;     case "$(uname -p)" in         x86_64) rpm=$rpm_x64; path=$path_x64; key=$key_x64 ;;         aarch64) rpm=$rpm_aarch64; path=$path_aarch64; key=$key_aarch64 ;;         *) echo >&2 "Unsupported architecture $(uname -p)."; exit 1 ;;     esac;         curl -O $path/$rpm     && export GNUPGHOME="$(mktemp -d)"     && gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys $key     && gpg --armor --export $key > corretto.asc     && rpm --import corretto.asc     && rpm -K $rpm     && rpm -i $rpm     && rm -r $GNUPGHOME corretto.asc $rpm     && yum install -y fontconfig     && yum clean all
-# Thu, 17 Oct 2019 16:21:03 GMT
+# Tue, 22 Oct 2019 01:27:06 GMT
 ENV JAVA_HOME=/usr/lib/jvm/java-1.8.0-amazon-corretto
 ```
 
 -	Layers:
-	-	`sha256:e75eebfae1ce8742ae53a518590bca4735e2a5dbfa46418fa709591a7b42e522`  
-		Last Modified: Thu, 05 Sep 2019 20:43:10 GMT  
-		Size: 62.8 MB (62797593 bytes)  
+	-	`sha256:502dfb788f6ca3e66517bd9090f7b27b9bd7e455e2ce1e6b1df693451492d769`  
+		Last Modified: Tue, 22 Oct 2019 01:10:26 GMT  
+		Size: 62.8 MB (62831385 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:7bacee07a8d81306c3fa9315dbcda577cc6bb004c6db6f4f021af42c8f1af955`  
-		Last Modified: Thu, 17 Oct 2019 16:22:16 GMT  
-		Size: 105.0 MB (104968031 bytes)  
+	-	`sha256:12ae98675221a13530d5edf6548eb2af23d95718106b5e46fd51fdd362cdb217`  
+		Last Modified: Tue, 22 Oct 2019 01:28:25 GMT  
+		Size: 104.9 MB (104919278 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `amazoncorretto:latest`
 
 ```console
-$ docker pull amazoncorretto@sha256:a72e9976d8edc9c74304c585a5b556bb0b8b835c848e4682414788fe3b2ccd5c
+$ docker pull amazoncorretto@sha256:89141ee12c24d7f2c360bc62d38e34b7bd95cdd311ed742332c0ce969923eecd
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -654,93 +654,93 @@ $ docker pull amazoncorretto@sha256:a72e9976d8edc9c74304c585a5b556bb0b8b835c848e
 ### `amazoncorretto:latest` - linux; amd64
 
 ```console
-$ docker pull amazoncorretto@sha256:238d3b871088799bb59fb537e16e54ceb14f900eac119fdba5b721737319b722
+$ docker pull amazoncorretto@sha256:82fa28eb59218751f17ffe942ba57283f6698e31a26e677a32c5dc6023cf7ba7
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **183.2 MB (183210861 bytes)**  
+-	Total Size: **183.2 MB (183194861 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:2b979c56b33011c63b15b809a85cd130659bf1dd16da908582242400cb386804`
+-	Image ID: `sha256:5dc6819f98d7cb1fcee9db5fab55a8a9016e3111c95f90bdbf651d1094dcb68e`
 -	Default Command: `["\/bin\/bash"]`
 
 ```dockerfile
-# Thu, 05 Sep 2019 23:36:52 GMT
-ADD file:ee5d76cace83097841fd6a9fe1406be3e2176b9ec4de511cb5594bf959f9e657 in / 
-# Thu, 05 Sep 2019 23:36:53 GMT
+# Tue, 22 Oct 2019 01:28:31 GMT
+ADD file:7b0629b865f6a424605580d655d74b7e23b2f3518177b7df4559597a1a87a4c7 in / 
+# Tue, 22 Oct 2019 01:28:31 GMT
 CMD ["/bin/bash"]
-# Thu, 17 Oct 2019 17:34:57 GMT
+# Tue, 22 Oct 2019 01:46:43 GMT
 ARG rpm_x64=java-1.8.0-amazon-corretto-devel-1.8.0_232.b09-1.x86_64.rpm
-# Thu, 17 Oct 2019 17:34:57 GMT
+# Tue, 22 Oct 2019 01:46:43 GMT
 ARG path_x64=https://d3pxv6yz143wms.cloudfront.net/8.232.09.1
-# Thu, 17 Oct 2019 17:34:57 GMT
+# Tue, 22 Oct 2019 01:46:43 GMT
 ARG key_x64=E8EB406377AD2B9E9A4765D19CB3BC6FF6C9FC19
-# Thu, 17 Oct 2019 17:34:57 GMT
+# Tue, 22 Oct 2019 01:46:43 GMT
 ARG rpm_aarch64=java-1.8.0-amazon-corretto-devel-1.8.0_232.b09-1.aarch64.rpm
-# Thu, 17 Oct 2019 17:34:58 GMT
+# Tue, 22 Oct 2019 01:46:43 GMT
 ARG path_aarch64=https://d3pxv6yz143wms.cloudfront.net/8.232.09.1
-# Thu, 17 Oct 2019 17:34:58 GMT
+# Tue, 22 Oct 2019 01:46:44 GMT
 ARG key_aarch64=E8EB406377AD2B9E9A4765D19CB3BC6FF6C9FC19
-# Thu, 17 Oct 2019 17:35:22 GMT
+# Tue, 22 Oct 2019 01:47:07 GMT
 # ARGS: key_aarch64=E8EB406377AD2B9E9A4765D19CB3BC6FF6C9FC19 key_x64=E8EB406377AD2B9E9A4765D19CB3BC6FF6C9FC19 path_aarch64=https://d3pxv6yz143wms.cloudfront.net/8.232.09.1 path_x64=https://d3pxv6yz143wms.cloudfront.net/8.232.09.1 rpm_aarch64=java-1.8.0-amazon-corretto-devel-1.8.0_232.b09-1.aarch64.rpm rpm_x64=java-1.8.0-amazon-corretto-devel-1.8.0_232.b09-1.x86_64.rpm
 RUN set -eux;     case "$(uname -p)" in         x86_64) rpm=$rpm_x64; path=$path_x64; key=$key_x64 ;;         aarch64) rpm=$rpm_aarch64; path=$path_aarch64; key=$key_aarch64 ;;         *) echo >&2 "Unsupported architecture $(uname -p)."; exit 1 ;;     esac;         curl -O $path/$rpm     && export GNUPGHOME="$(mktemp -d)"     && gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys $key     && gpg --armor --export $key > corretto.asc     && rpm --import corretto.asc     && rpm -K $rpm     && rpm -i $rpm     && rm -r $GNUPGHOME corretto.asc $rpm     && yum install -y fontconfig     && yum clean all
-# Thu, 17 Oct 2019 17:35:22 GMT
+# Tue, 22 Oct 2019 01:47:07 GMT
 ENV JAVA_HOME=/usr/lib/jvm/java-1.8.0-amazon-corretto
 ```
 
 -	Layers:
-	-	`sha256:4910da0c66710ed2414cd0223e48cbeed94209b9c77053dc30d48532a651dd22`  
-		Last Modified: Thu, 05 Sep 2019 23:38:39 GMT  
-		Size: 61.7 MB (61665831 bytes)  
+	-	`sha256:17282fad1a5eb72a6f1f7a05102a1e3474fd2193cd013d44845d43c013cd594b`  
+		Last Modified: Tue, 22 Oct 2019 01:30:07 GMT  
+		Size: 61.7 MB (61659797 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:9da8e61f5311ca899883a35f64e893d5ec813469168407c8494fb1394d8dd1ae`  
-		Last Modified: Thu, 17 Oct 2019 17:36:19 GMT  
-		Size: 121.5 MB (121545030 bytes)  
+	-	`sha256:df91445036d98351518effb36775508864ce7a6255482960e622b7b4906ed39b`  
+		Last Modified: Tue, 22 Oct 2019 01:48:03 GMT  
+		Size: 121.5 MB (121535064 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `amazoncorretto:latest` - linux; arm64 variant v8
 
 ```console
-$ docker pull amazoncorretto@sha256:cf398f0542dbc32c69e78437140c05f9b728a7805ce272baa6a9e8072af62e51
+$ docker pull amazoncorretto@sha256:b78fa911cb6bd1f8a3871fbf3bb86dd7b6409d8d83e3d6e3e005d0c755942f74
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **167.8 MB (167765624 bytes)**  
+-	Total Size: **167.8 MB (167750663 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:67f8478d9afa57fc35576c61f509234b6861c3efddd686dba20c91f94058d3fc`
+-	Image ID: `sha256:0436382a2bbb2699139a72de6209ef05a79fb7bb8027b42f2db0e3d23b9ae94b`
 -	Default Command: `["\/bin\/bash"]`
 
 ```dockerfile
-# Thu, 05 Sep 2019 20:39:50 GMT
-ADD file:a72ff266718add2a5d4d63264fd3ce1f5191448aa441ffdb064ed570a651b36a in / 
-# Thu, 05 Sep 2019 20:39:51 GMT
+# Tue, 22 Oct 2019 01:09:30 GMT
+ADD file:01531581542d07e40e72ce8cd4e0ec4407d5fda4da394ac63e13b78513b8dbe8 in / 
+# Tue, 22 Oct 2019 01:09:33 GMT
 CMD ["/bin/bash"]
-# Thu, 17 Oct 2019 16:20:24 GMT
+# Tue, 22 Oct 2019 01:26:34 GMT
 ARG rpm_x64=java-1.8.0-amazon-corretto-devel-1.8.0_232.b09-1.x86_64.rpm
-# Thu, 17 Oct 2019 16:20:25 GMT
+# Tue, 22 Oct 2019 01:26:35 GMT
 ARG path_x64=https://d3pxv6yz143wms.cloudfront.net/8.232.09.1
-# Thu, 17 Oct 2019 16:20:25 GMT
+# Tue, 22 Oct 2019 01:26:35 GMT
 ARG key_x64=E8EB406377AD2B9E9A4765D19CB3BC6FF6C9FC19
-# Thu, 17 Oct 2019 16:20:26 GMT
+# Tue, 22 Oct 2019 01:26:37 GMT
 ARG rpm_aarch64=java-1.8.0-amazon-corretto-devel-1.8.0_232.b09-1.aarch64.rpm
-# Thu, 17 Oct 2019 16:20:27 GMT
+# Tue, 22 Oct 2019 01:26:37 GMT
 ARG path_aarch64=https://d3pxv6yz143wms.cloudfront.net/8.232.09.1
-# Thu, 17 Oct 2019 16:20:27 GMT
+# Tue, 22 Oct 2019 01:26:37 GMT
 ARG key_aarch64=E8EB406377AD2B9E9A4765D19CB3BC6FF6C9FC19
-# Thu, 17 Oct 2019 16:21:02 GMT
+# Tue, 22 Oct 2019 01:27:05 GMT
 # ARGS: key_aarch64=E8EB406377AD2B9E9A4765D19CB3BC6FF6C9FC19 key_x64=E8EB406377AD2B9E9A4765D19CB3BC6FF6C9FC19 path_aarch64=https://d3pxv6yz143wms.cloudfront.net/8.232.09.1 path_x64=https://d3pxv6yz143wms.cloudfront.net/8.232.09.1 rpm_aarch64=java-1.8.0-amazon-corretto-devel-1.8.0_232.b09-1.aarch64.rpm rpm_x64=java-1.8.0-amazon-corretto-devel-1.8.0_232.b09-1.x86_64.rpm
 RUN set -eux;     case "$(uname -p)" in         x86_64) rpm=$rpm_x64; path=$path_x64; key=$key_x64 ;;         aarch64) rpm=$rpm_aarch64; path=$path_aarch64; key=$key_aarch64 ;;         *) echo >&2 "Unsupported architecture $(uname -p)."; exit 1 ;;     esac;         curl -O $path/$rpm     && export GNUPGHOME="$(mktemp -d)"     && gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys $key     && gpg --armor --export $key > corretto.asc     && rpm --import corretto.asc     && rpm -K $rpm     && rpm -i $rpm     && rm -r $GNUPGHOME corretto.asc $rpm     && yum install -y fontconfig     && yum clean all
-# Thu, 17 Oct 2019 16:21:03 GMT
+# Tue, 22 Oct 2019 01:27:06 GMT
 ENV JAVA_HOME=/usr/lib/jvm/java-1.8.0-amazon-corretto
 ```
 
 -	Layers:
-	-	`sha256:e75eebfae1ce8742ae53a518590bca4735e2a5dbfa46418fa709591a7b42e522`  
-		Last Modified: Thu, 05 Sep 2019 20:43:10 GMT  
-		Size: 62.8 MB (62797593 bytes)  
+	-	`sha256:502dfb788f6ca3e66517bd9090f7b27b9bd7e455e2ce1e6b1df693451492d769`  
+		Last Modified: Tue, 22 Oct 2019 01:10:26 GMT  
+		Size: 62.8 MB (62831385 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:7bacee07a8d81306c3fa9315dbcda577cc6bb004c6db6f4f021af42c8f1af955`  
-		Last Modified: Thu, 17 Oct 2019 16:22:16 GMT  
-		Size: 105.0 MB (104968031 bytes)  
+	-	`sha256:12ae98675221a13530d5edf6548eb2af23d95718106b5e46fd51fdd362cdb217`  
+		Last Modified: Tue, 22 Oct 2019 01:28:25 GMT  
+		Size: 104.9 MB (104919278 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
