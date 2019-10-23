@@ -2,8 +2,8 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:141bb8d01fbdb85ebce154d431ba4c3fc25e2eaa21895f70345a21d0448fdcec`
-- Created: `2019-08-21T21:27:27.447013008Z`
+- Image ID: `sha256:4a2de5f2d3c8a2639f38373573960cb6f25321c6221bb9b57a91aab21f412993`
+- Created: `2019-10-21T18:56:22.067324524Z`
 - Virtual Size: ~ 127.01 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
@@ -292,16 +292,16 @@ custom
 ### `apk` package: `expat`
 
 ```console
-expat-2.2.7-r0 description:
+expat-2.2.8-r0 description:
 An XML Parser library written in C
 
-expat-2.2.7-r0 webpage:
+expat-2.2.8-r0 webpage:
 http://www.libexpat.org/
 
-expat-2.2.7-r0 installed size:
+expat-2.2.8-r0 installed size:
 184320
 
-expat-2.2.7-r0 license:
+expat-2.2.8-r0 license:
 MIT
 
 ```
@@ -309,16 +309,16 @@ MIT
 ### `apk` package: `expat-dev`
 
 ```console
-expat-dev-2.2.7-r0 description:
+expat-dev-2.2.8-r0 description:
 An XML Parser library written in C (development files)
 
-expat-dev-2.2.7-r0 webpage:
+expat-dev-2.2.8-r0 webpage:
 http://www.libexpat.org/
 
-expat-dev-2.2.7-r0 installed size:
+expat-dev-2.2.8-r0 installed size:
 286720
 
-expat-dev-2.2.7-r0 license:
+expat-dev-2.2.8-r0 license:
 MIT
 
 ```
@@ -411,16 +411,16 @@ BSD
 ### `apk` package: `libcrypto1.1`
 
 ```console
-libcrypto1.1-1.1.1c-r0 description:
+libcrypto1.1-1.1.1d-r0 description:
 Crypto library from openssl
 
-libcrypto1.1-1.1.1c-r0 webpage:
+libcrypto1.1-1.1.1d-r0 webpage:
 https://www.openssl.org
 
-libcrypto1.1-1.1.1c-r0 installed size:
-2760704
+libcrypto1.1-1.1.1d-r0 installed size:
+2736128
 
-libcrypto1.1-1.1.1c-r0 license:
+libcrypto1.1-1.1.1d-r0 license:
 OpenSSL
 
 ```
@@ -428,16 +428,16 @@ OpenSSL
 ### `apk` package: `libcurl`
 
 ```console
-libcurl-7.65.1-r0 description:
+libcurl-7.66.0-r0 description:
 The multiprotocol file transfer library
 
-libcurl-7.65.1-r0 webpage:
+libcurl-7.66.0-r0 webpage:
 https://curl.haxx.se/
 
-libcurl-7.65.1-r0 installed size:
-450560
+libcurl-7.66.0-r0 installed size:
+454656
 
-libcurl-7.65.1-r0 license:
+libcurl-7.66.0-r0 license:
 MIT
 
 ```
@@ -479,16 +479,16 @@ GPL LGPL
 ### `apk` package: `libldap`
 
 ```console
-libldap-2.4.47-r2 description:
+libldap-2.4.48-r0 description:
 OpenLDAP libraries
 
-libldap-2.4.47-r2 webpage:
+libldap-2.4.48-r0 webpage:
 http://www.openldap.org/
 
-libldap-2.4.47-r2 installed size:
+libldap-2.4.48-r0 installed size:
 626688
 
-libldap-2.4.47-r2 license:
+libldap-2.4.48-r0 license:
 custom
 
 ```
@@ -513,16 +513,16 @@ GPL-2.0 GPL-2.0-or-later LGPL-2.0-or-later BSD Public-Domain
 ### `apk` package: `libpq`
 
 ```console
-libpq-11.5-r0 description:
+libpq-11.5-r1 description:
 PostgreSQL libraries
 
-libpq-11.5-r0 webpage:
+libpq-11.5-r1 webpage:
 https://www.postgresql.org/
 
-libpq-11.5-r0 installed size:
+libpq-11.5-r1 installed size:
 315392
 
-libpq-11.5-r0 license:
+libpq-11.5-r1 license:
 PostgreSQL
 
 ```
@@ -564,16 +564,16 @@ GPL-2.0 GPL-2.0-or-later LGPL-2.0-or-later BSD Public-Domain
 ### `apk` package: `libssl1.1`
 
 ```console
-libssl1.1-1.1.1c-r0 description:
+libssl1.1-1.1.1d-r0 description:
 SSL shared libraries
 
-libssl1.1-1.1.1c-r0 webpage:
+libssl1.1-1.1.1d-r0 webpage:
 https://www.openssl.org
 
-libssl1.1-1.1.1c-r0 installed size:
-536576
+libssl1.1-1.1.1d-r0 installed size:
+532480
 
-libssl1.1-1.1.1c-r0 license:
+libssl1.1-1.1.1d-r0 license:
 OpenSSL
 
 ```
@@ -666,16 +666,16 @@ MIT
 ### `apk` package: `mariadb-common`
 
 ```console
-mariadb-common-10.3.17-r0 description:
+mariadb-common-10.3.18-r0 description:
 MariaDB common files for both server and client
 
-mariadb-common-10.3.17-r0 webpage:
+mariadb-common-10.3.18-r0 webpage:
 https://www.mariadb.org/
 
-mariadb-common-10.3.17-r0 installed size:
+mariadb-common-10.3.18-r0 installed size:
 2240512
 
-mariadb-common-10.3.17-r0 license:
+mariadb-common-10.3.18-r0 license:
 GPL-2.0-or-later
 
 ```
@@ -717,16 +717,16 @@ LGPL-2.1-or-later
 ### `apk` package: `mariadb-dev`
 
 ```console
-mariadb-dev-10.3.17-r0 description:
+mariadb-dev-10.3.18-r0 description:
 A fast SQL database server (development files)
 
-mariadb-dev-10.3.17-r0 webpage:
+mariadb-dev-10.3.18-r0 webpage:
 https://www.mariadb.org/
 
-mariadb-dev-10.3.17-r0 installed size:
-5808128
+mariadb-dev-10.3.18-r0 installed size:
+5816320
 
-mariadb-dev-10.3.17-r0 license:
+mariadb-dev-10.3.18-r0 license:
 GPL-2.0-or-later
 
 ```
@@ -734,16 +734,16 @@ GPL-2.0-or-later
 ### `apk` package: `mariadb-embedded`
 
 ```console
-mariadb-embedded-10.3.17-r0 description:
+mariadb-embedded-10.3.18-r0 description:
 MariaDB as an embeddable library
 
-mariadb-embedded-10.3.17-r0 webpage:
+mariadb-embedded-10.3.18-r0 webpage:
 https://www.mariadb.org/
 
-mariadb-embedded-10.3.17-r0 installed size:
-16920576
+mariadb-embedded-10.3.18-r0 installed size:
+16945152
 
-mariadb-embedded-10.3.17-r0 license:
+mariadb-embedded-10.3.18-r0 license:
 GPL-2.0-or-later
 
 ```
@@ -836,16 +836,16 @@ MIT
 ### `apk` package: `nghttp2-libs`
 
 ```console
-nghttp2-libs-1.38.0-r0 description:
+nghttp2-libs-1.39.2-r0 description:
 Experimental HTTP/2 client, server and proxy (libraries)
 
-nghttp2-libs-1.38.0-r0 webpage:
+nghttp2-libs-1.39.2-r0 webpage:
 https://nghttp2.org
 
-nghttp2-libs-1.38.0-r0 installed size:
+nghttp2-libs-1.39.2-r0 installed size:
 155648
 
-nghttp2-libs-1.38.0-r0 license:
+nghttp2-libs-1.39.2-r0 license:
 MIT
 
 ```
@@ -853,16 +853,16 @@ MIT
 ### `apk` package: `openldap-dev`
 
 ```console
-openldap-dev-2.4.47-r2 description:
+openldap-dev-2.4.48-r0 description:
 LDAP Server (development files)
 
-openldap-dev-2.4.47-r2 webpage:
+openldap-dev-2.4.48-r0 webpage:
 http://www.openldap.org/
 
-openldap-dev-2.4.47-r2 installed size:
-1495040
+openldap-dev-2.4.48-r0 installed size:
+1503232
 
-openldap-dev-2.4.47-r2 license:
+openldap-dev-2.4.48-r0 license:
 custom
 
 ```
@@ -870,16 +870,16 @@ custom
 ### `apk` package: `openssl-dev`
 
 ```console
-openssl-dev-1.1.1c-r0 description:
+openssl-dev-1.1.1d-r0 description:
 Toolkit for Transport Layer Security (TLS) (development files)
 
-openssl-dev-1.1.1c-r0 webpage:
+openssl-dev-1.1.1d-r0 webpage:
 https://www.openssl.org
 
-openssl-dev-1.1.1c-r0 installed size:
-20529152
+openssl-dev-1.1.1d-r0 installed size:
+20504576
 
-openssl-dev-1.1.1c-r0 license:
+openssl-dev-1.1.1d-r0 license:
 OpenSSL
 
 ```
@@ -938,16 +938,16 @@ ISC
 ### `apk` package: `postgresql-dev`
 
 ```console
-postgresql-dev-11.5-r0 description:
+postgresql-dev-11.5-r1 description:
 A sophisticated object-relational DBMS (development files)
 
-postgresql-dev-11.5-r0 webpage:
+postgresql-dev-11.5-r1 webpage:
 https://www.postgresql.org/
 
-postgresql-dev-11.5-r0 installed size:
+postgresql-dev-11.5-r1 installed size:
 8568832
 
-postgresql-dev-11.5-r0 license:
+postgresql-dev-11.5-r1 license:
 PostgreSQL
 
 ```
@@ -955,16 +955,16 @@ PostgreSQL
 ### `apk` package: `postgresql-libs`
 
 ```console
-postgresql-libs-11.5-r0 description:
+postgresql-libs-11.5-r1 description:
 A sophisticated object-relational DBMS (libraries)
 
-postgresql-libs-11.5-r0 webpage:
+postgresql-libs-11.5-r1 webpage:
 https://www.postgresql.org/
 
-postgresql-libs-11.5-r0 installed size:
+postgresql-libs-11.5-r1 installed size:
 200704
 
-postgresql-libs-11.5-r0 license:
+postgresql-libs-11.5-r1 license:
 PostgreSQL
 
 ```
@@ -1006,16 +1006,16 @@ GPL-2.0
 ### `apk` package: `sqlite-dev`
 
 ```console
-sqlite-dev-3.28.0-r0 description:
+sqlite-dev-3.28.0-r1 description:
 C library that implements an SQL database engine (development files)
 
-sqlite-dev-3.28.0-r0 webpage:
+sqlite-dev-3.28.0-r1 webpage:
 https://www.sqlite.org/
 
-sqlite-dev-3.28.0-r0 installed size:
+sqlite-dev-3.28.0-r1 installed size:
 622592
 
-sqlite-dev-3.28.0-r0 license:
+sqlite-dev-3.28.0-r1 license:
 Public-Domain
 
 ```
@@ -1023,16 +1023,16 @@ Public-Domain
 ### `apk` package: `sqlite-libs`
 
 ```console
-sqlite-libs-3.28.0-r0 description:
+sqlite-libs-3.28.0-r1 description:
 Sqlite3 library
 
-sqlite-libs-3.28.0-r0 webpage:
+sqlite-libs-3.28.0-r1 webpage:
 https://www.sqlite.org/
 
-sqlite-libs-3.28.0-r0 installed size:
+sqlite-libs-3.28.0-r1 installed size:
 925696
 
-sqlite-libs-3.28.0-r0 license:
+sqlite-libs-3.28.0-r1 license:
 Public-Domain
 
 ```
