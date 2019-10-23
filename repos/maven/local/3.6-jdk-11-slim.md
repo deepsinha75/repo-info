@@ -2,9 +2,9 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:32672716f579675bcafd4319d2098822d5779a7a5d9d60c7fcd02e02bc41407e`
-- Created: `2019-10-18T03:51:56.311575816Z`
-- Virtual Size: ~ 418.22 Mb  
+- Image ID: `sha256:4e8ccc085d7766f71a4257051aca19ba957bf17c9b459504b1eb9bee7f12c9df`
+- Created: `2019-10-19T03:20:21.7824973Z`
+- Virtual Size: ~ 418.48 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["/usr/local/bin/mvn-entrypoint.sh"]`
@@ -13,9 +13,9 @@
   - `PATH=/usr/local/openjdk-11/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
   - `LANG=C.UTF-8`
   - `JAVA_HOME=/usr/local/openjdk-11`
-  - `JAVA_VERSION=11.0.4`
-  - `JAVA_BASE_URL=https://github.com/AdoptOpenJDK/openjdk11-upstream-binaries/releases/download/jdk-11.0.4%2B11/OpenJDK11U-jdk_`
-  - `JAVA_URL_VERSION=11.0.4_11`
+  - `JAVA_VERSION=11.0.5`
+  - `JAVA_BASE_URL=https://github.com/AdoptOpenJDK/openjdk11-upstream-binaries/releases/download/jdk-11.0.5%2B10/OpenJDK11U-jdk_`
+  - `JAVA_URL_VERSION=11.0.5_10`
   - `MAVEN_HOME=/usr/share/maven`
   - `MAVEN_CONFIG=/root/.m2`
 
