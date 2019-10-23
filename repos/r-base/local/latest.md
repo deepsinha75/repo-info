@@ -1004,15 +1004,21 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris freetype=2.10.1-2
-'http://http.debian.net/debian/pool/main/f/freetype/freetype_2.10.1-2.dsc' freetype_2.10.1-2.dsc 3749 SHA256:3515097c45d05c7f82f8636a7fa65c12ed70868affbc270fe6788bf61b5d4cd8
-'http://http.debian.net/debian/pool/main/f/freetype/freetype_2.10.1.orig-ft2demos.tar.gz' freetype_2.10.1.orig-ft2demos.tar.gz 305328 SHA256:5e9e94a2db9d1a945293a1644a502f6664a2173a454d4a55b19695e2e2f4a0bc
-'http://http.debian.net/debian/pool/main/f/freetype/freetype_2.10.1.orig-ft2demos.tar.gz.asc' freetype_2.10.1.orig-ft2demos.tar.gz.asc 195 SHA256:ccee51c4b4101b89a66ba5f2bdd54d127e93e120086982db57fa33761f310e9e
-'http://http.debian.net/debian/pool/main/f/freetype/freetype_2.10.1.orig-ft2docs.tar.gz' freetype_2.10.1.orig-ft2docs.tar.gz 2123885 SHA256:a4e4a8e69c7bf833eba7c158254a572fd43131d5e9b8791bd2ecbb03546ce155
-'http://http.debian.net/debian/pool/main/f/freetype/freetype_2.10.1.orig-ft2docs.tar.gz.asc' freetype_2.10.1.orig-ft2docs.tar.gz.asc 195 SHA256:aaedd84036d9e615fbb5acf71081dd05c9d7333686593432e445ee89655a79c9
-'http://http.debian.net/debian/pool/main/f/freetype/freetype_2.10.1.orig.tar.gz' freetype_2.10.1.orig.tar.gz 3478158 SHA256:3a60d391fd579440561bf0e7f31af2222bc610ad6ce4d9d7bd2165bca8669110
-'http://http.debian.net/debian/pool/main/f/freetype/freetype_2.10.1.orig.tar.gz.asc' freetype_2.10.1.orig.tar.gz.asc 195 SHA256:3952cc2651536ef5157601143d1efc453a7fe5ca64eaf765d034c417aabd4210
-'http://http.debian.net/debian/pool/main/f/freetype/freetype_2.10.1-2.debian.tar.xz' freetype_2.10.1-2.debian.tar.xz 114884 SHA256:3d1405fe90e17ee290e06f4fd65a16ff38d9f9604aff12c40a0574edb3dbbe62
+'http://deb.debian.org/debian/pool/main/f/freetype/freetype_2.10.1-2.dsc' freetype_2.10.1-2.dsc 3749 SHA256:3515097c45d05c7f82f8636a7fa65c12ed70868affbc270fe6788bf61b5d4cd8
+'http://deb.debian.org/debian/pool/main/f/freetype/freetype_2.10.1.orig-ft2demos.tar.gz' freetype_2.10.1.orig-ft2demos.tar.gz 305328 SHA256:5e9e94a2db9d1a945293a1644a502f6664a2173a454d4a55b19695e2e2f4a0bc
+'http://deb.debian.org/debian/pool/main/f/freetype/freetype_2.10.1.orig-ft2demos.tar.gz.asc' freetype_2.10.1.orig-ft2demos.tar.gz.asc 195 SHA256:ccee51c4b4101b89a66ba5f2bdd54d127e93e120086982db57fa33761f310e9e
+'http://deb.debian.org/debian/pool/main/f/freetype/freetype_2.10.1.orig-ft2docs.tar.gz' freetype_2.10.1.orig-ft2docs.tar.gz 2123885 SHA256:a4e4a8e69c7bf833eba7c158254a572fd43131d5e9b8791bd2ecbb03546ce155
+'http://deb.debian.org/debian/pool/main/f/freetype/freetype_2.10.1.orig-ft2docs.tar.gz.asc' freetype_2.10.1.orig-ft2docs.tar.gz.asc 195 SHA256:aaedd84036d9e615fbb5acf71081dd05c9d7333686593432e445ee89655a79c9
+'http://deb.debian.org/debian/pool/main/f/freetype/freetype_2.10.1.orig.tar.gz' freetype_2.10.1.orig.tar.gz 3478158 SHA256:3a60d391fd579440561bf0e7f31af2222bc610ad6ce4d9d7bd2165bca8669110
+'http://deb.debian.org/debian/pool/main/f/freetype/freetype_2.10.1.orig.tar.gz.asc' freetype_2.10.1.orig.tar.gz.asc 195 SHA256:3952cc2651536ef5157601143d1efc453a7fe5ca64eaf765d034c417aabd4210
+'http://deb.debian.org/debian/pool/main/f/freetype/freetype_2.10.1-2.debian.tar.xz' freetype_2.10.1-2.debian.tar.xz 114884 SHA256:3d1405fe90e17ee290e06f4fd65a16ff38d9f9604aff12c40a0574edb3dbbe62
 ```
+
+Other potentially useful URLs:
+
+- https://sources.debian.net/src/freetype/2.10.1-2/ (for browsing the source)
+- https://sources.debian.net/src/freetype/2.10.1-2/debian/copyright/ (for direct copyright/license information)
+- http://snapshot.debian.org/package/freetype/2.10.1-2/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `fribidi=1.0.7-1`
 
@@ -1635,10 +1641,16 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris kernsmooth=2.23-16-1+1
-'http://http.debian.net/debian/pool/main/k/kernsmooth/kernsmooth_2.23-16-1+1.dsc' kernsmooth_2.23-16-1+1.dsc 1897 SHA256:675af5d78c8a76b7262fcae89a706a2d831ad1ea9ff188a855092d0511ccc57d
-'http://http.debian.net/debian/pool/main/k/kernsmooth/kernsmooth_2.23-16.orig.tar.gz' kernsmooth_2.23-16.orig.tar.gz 24632 SHA256:b8c251fea1483a8ade005faf31dff9d85d2b6da08dcd661bf1e4a861db9a99a9
-'http://http.debian.net/debian/pool/main/k/kernsmooth/kernsmooth_2.23-16-1+1.debian.tar.xz' kernsmooth_2.23-16-1+1.debian.tar.xz 3300 SHA256:dea58d33ba1e85c3f1c0d601a045e5c00507a5634442ee85a643839e610b4566
+'http://deb.debian.org/debian/pool/main/k/kernsmooth/kernsmooth_2.23-16-1+1.dsc' kernsmooth_2.23-16-1+1.dsc 1897 SHA256:675af5d78c8a76b7262fcae89a706a2d831ad1ea9ff188a855092d0511ccc57d
+'http://deb.debian.org/debian/pool/main/k/kernsmooth/kernsmooth_2.23-16.orig.tar.gz' kernsmooth_2.23-16.orig.tar.gz 24632 SHA256:b8c251fea1483a8ade005faf31dff9d85d2b6da08dcd661bf1e4a861db9a99a9
+'http://deb.debian.org/debian/pool/main/k/kernsmooth/kernsmooth_2.23-16-1+1.debian.tar.xz' kernsmooth_2.23-16-1+1.debian.tar.xz 3300 SHA256:dea58d33ba1e85c3f1c0d601a045e5c00507a5634442ee85a643839e610b4566
 ```
+
+Other potentially useful URLs:
+
+- https://sources.debian.net/src/kernsmooth/2.23-16-1+1/ (for browsing the source)
+- https://sources.debian.net/src/kernsmooth/2.23-16-1+1/debian/copyright/ (for direct copyright/license information)
+- http://snapshot.debian.org/package/kernsmooth/2.23-16-1+1/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `keyutils=1.6-6`
 
