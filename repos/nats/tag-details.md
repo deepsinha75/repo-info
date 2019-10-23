@@ -858,11 +858,21 @@ RUN cmd /S /C #(nop)  CMD ["--config" "nats-server.conf"]
 
 ## `nats:2.1.0-alpine`
 
-**does not exist** (yet?)
+```console
+$ docker pull nats@sha256:a8409dff6597f2ef5f7ecd3c672671bb2af9a390073efd74f95c54aa41cba22a
+```
+
+-	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
+-	Platforms:
 
 ## `nats:2.1.0-alpine3.10`
 
-**does not exist** (yet?)
+```console
+$ docker pull nats@sha256:a8409dff6597f2ef5f7ecd3c672671bb2af9a390073efd74f95c54aa41cba22a
+```
+
+-	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
+-	Platforms:
 
 ## `nats:2.1.0-linux`
 
@@ -2069,11 +2079,21 @@ CMD ["--config" "nats-server.conf"]
 
 ## `nats:2.1-alpine`
 
-**does not exist** (yet?)
+```console
+$ docker pull nats@sha256:a8409dff6597f2ef5f7ecd3c672671bb2af9a390073efd74f95c54aa41cba22a
+```
+
+-	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
+-	Platforms:
 
 ## `nats:2.1-alpine3.10`
 
-**does not exist** (yet?)
+```console
+$ docker pull nats@sha256:a8409dff6597f2ef5f7ecd3c672671bb2af9a390073efd74f95c54aa41cba22a
+```
+
+-	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
+-	Platforms:
 
 ## `nats:2.1-linux`
 
@@ -3280,11 +3300,21 @@ CMD ["--config" "nats-server.conf"]
 
 ## `nats:2-alpine`
 
-**does not exist** (yet?)
+```console
+$ docker pull nats@sha256:a8409dff6597f2ef5f7ecd3c672671bb2af9a390073efd74f95c54aa41cba22a
+```
+
+-	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
+-	Platforms:
 
 ## `nats:2-alpine3.10`
 
-**does not exist** (yet?)
+```console
+$ docker pull nats@sha256:a8409dff6597f2ef5f7ecd3c672671bb2af9a390073efd74f95c54aa41cba22a
+```
+
+-	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
+-	Platforms:
 
 ## `nats:2-linux`
 
@@ -4491,11 +4521,21 @@ CMD ["--config" "nats-server.conf"]
 
 ## `nats:alpine`
 
-**does not exist** (yet?)
+```console
+$ docker pull nats@sha256:a8409dff6597f2ef5f7ecd3c672671bb2af9a390073efd74f95c54aa41cba22a
+```
+
+-	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
+-	Platforms:
 
 ## `nats:alpine3.10`
 
-**does not exist** (yet?)
+```console
+$ docker pull nats@sha256:a8409dff6597f2ef5f7ecd3c672671bb2af9a390073efd74f95c54aa41cba22a
+```
+
+-	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
+-	Platforms:
 
 ## `nats:latest`
 
