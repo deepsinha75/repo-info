@@ -2,9 +2,9 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:7e803dc4a6d083b6919f441a1da919149bd9ceac65101ebbae1af42e5331d308`
-- Created: `2019-10-18T07:20:48.25163431Z`
-- Virtual Size: ~ 666.64 Mb  
+- Image ID: `sha256:7ab4bd24c184930aec47d52ec675eb2ce1cbd7c7bcca94e68a33115c493b13dd`
+- Created: `2019-10-19T09:30:34.518239704Z`
+- Virtual Size: ~ 666.69 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["tini","--","/docker-entrypoint.sh"]`
@@ -13,9 +13,9 @@
   - `PATH=/usr/local/tomcat/bin:/usr/local/openjdk-8/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
   - `LANG=C.UTF-8`
   - `JAVA_HOME=/usr/local/openjdk-8`
-  - `JAVA_VERSION=8u222`
-  - `JAVA_BASE_URL=https://github.com/AdoptOpenJDK/openjdk8-upstream-binaries/releases/download/jdk8u222-b10/OpenJDK8U-jdk_`
-  - `JAVA_URL_VERSION=8u222b10`
+  - `JAVA_VERSION=8u232`
+  - `JAVA_BASE_URL=https://github.com/AdoptOpenJDK/openjdk8-upstream-binaries/releases/download/jdk8u232-b09/OpenJDK8U-jdk_`
+  - `JAVA_URL_VERSION=8u232b09`
   - `CATALINA_HOME=/usr/local/tomcat`
   - `TOMCAT_NATIVE_LIBDIR=/usr/local/tomcat/native-jni-lib`
   - `LD_LIBRARY_PATH=/usr/local/tomcat/native-jni-lib`
