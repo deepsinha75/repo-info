@@ -2,9 +2,9 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:c4e67d4c2455db9bf791ce4a8cf8d52790db23a3f4bee188fa45054587bfd0aa`
-- Created: `2019-10-09T23:20:34.258786709Z`
-- Virtual Size: ~ 325.32 Mb  
+- Image ID: `sha256:4c0852bcce79733fc595a5f256c5a7076ccccd90697e609f8ab407ee222f7350`
+- Created: `2019-10-21T23:28:57.082273749Z`
+- Virtual Size: ~ 321.30 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["/entrypoint.sh"]`
@@ -149,16 +149,16 @@ MPL-2.0 GPL-2.0-or-later
 ### `apk` package: `curl`
 
 ```console
-curl-7.65.1-r0 description:
+curl-7.66.0-r0 description:
 URL retrival utility and library
 
-curl-7.65.1-r0 webpage:
+curl-7.66.0-r0 webpage:
 https://curl.haxx.se/
 
-curl-7.65.1-r0 installed size:
+curl-7.66.0-r0 installed size:
 225280
 
-curl-7.65.1-r0 license:
+curl-7.66.0-r0 license:
 MIT
 
 ```
@@ -880,16 +880,16 @@ MIT
 ### `apk` package: `openssl`
 
 ```console
-openssl-1.1.1c-r0 description:
+openssl-1.1.1d-r0 description:
 Toolkit for Transport Layer Security (TLS)
 
-openssl-1.1.1c-r0 webpage:
+openssl-1.1.1d-r0 webpage:
 https://www.openssl.org
 
-openssl-1.1.1c-r0 installed size:
+openssl-1.1.1d-r0 installed size:
 679936
 
-openssl-1.1.1c-r0 license:
+openssl-1.1.1d-r0 license:
 OpenSSL
 
 ```
@@ -948,16 +948,16 @@ GPL-2.0
 ### `apk` package: `sqlite-libs`
 
 ```console
-sqlite-libs-3.28.0-r0 description:
+sqlite-libs-3.28.0-r1 description:
 Sqlite3 library
 
-sqlite-libs-3.28.0-r0 webpage:
+sqlite-libs-3.28.0-r1 webpage:
 https://www.sqlite.org/
 
-sqlite-libs-3.28.0-r0 installed size:
+sqlite-libs-3.28.0-r1 installed size:
 925696
 
-sqlite-libs-3.28.0-r0 license:
+sqlite-libs-3.28.0-r1 license:
 Public-Domain
 
 ```
