@@ -1,10 +1,10 @@
-# `adminer:4.7.3-standalone`
+# `adminer:4.7.4-standalone`
 
 ## Docker Metadata
 
-- Image ID: `sha256:c36a5b81ad323af32cafbb936473722b8b9e77726f1ef9119fb12486d14271a9`
-- Created: `2019-10-05T05:12:30.066790851Z`
-- Virtual Size: ~ 84.76 Mb  
+- Image ID: `sha256:232c891bc58f66c394fefd35bf8afa6b6091334b47cbb8e8cfa6b3a7c48edd4c`
+- Created: `2019-10-22T23:19:24.102530687Z`
+- Virtual Size: ~ 80.74 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["entrypoint.sh","docker-php-entrypoint"]`
@@ -22,9 +22,9 @@
   - `PHP_ASC_URL=https://www.php.net/get/php-7.3.10.tar.xz.asc/from/this/mirror`
   - `PHP_SHA256=42f00a15419e05771734b7159c8d39d639b8a5a6770413adfa2615f6f923d906`
   - `PHP_MD5=`
-  - `ADMINER_VERSION=4.7.3`
-  - `ADMINER_DOWNLOAD_SHA256=1ebfd69d1ae128cb85a05fbb4ff81af3253821a320e5a65a8a95fd31b14e899e`
-  - `ADMINER_SRC_DOWNLOAD_SHA256=b0c8a5a2a6a41b0bc4e147f8091f0ba3ee3245c71af0b7242043e59c617341da`
+  - `ADMINER_VERSION=4.7.4`
+  - `ADMINER_DOWNLOAD_SHA256=b8c4e0c6f7dfd9b7a7421be17ec5d6b1259e180d5ff4b79645621ce1d5575e66`
+  - `ADMINER_SRC_DOWNLOAD_SHA256=aa28890a1c1832c81329d18b72f05145fb9f78b13062129319256c3231b50e85`
 
 ## `apk` (`.apk`-based packages)
 
@@ -150,16 +150,16 @@ MPL-2.0 GPL-2.0-or-later
 ### `apk` package: `curl`
 
 ```console
-curl-7.65.1-r0 description:
+curl-7.66.0-r0 description:
 URL retrival utility and library
 
-curl-7.65.1-r0 webpage:
+curl-7.66.0-r0 webpage:
 https://curl.haxx.se/
 
-curl-7.65.1-r0 installed size:
+curl-7.66.0-r0 installed size:
 225280
 
-curl-7.65.1-r0 license:
+curl-7.66.0-r0 license:
 MIT
 
 ```
@@ -473,16 +473,16 @@ MIT
 ### `apk` package: `openssl`
 
 ```console
-openssl-1.1.1c-r0 description:
+openssl-1.1.1d-r0 description:
 Toolkit for Transport Layer Security (TLS)
 
-openssl-1.1.1c-r0 webpage:
+openssl-1.1.1d-r0 webpage:
 https://www.openssl.org
 
-openssl-1.1.1c-r0 installed size:
+openssl-1.1.1d-r0 installed size:
 679936
 
-openssl-1.1.1c-r0 license:
+openssl-1.1.1d-r0 license:
 OpenSSL
 
 ```
@@ -507,16 +507,16 @@ GPL-2.0
 ### `apk` package: `sqlite-libs`
 
 ```console
-sqlite-libs-3.28.0-r0 description:
+sqlite-libs-3.28.0-r1 description:
 Sqlite3 library
 
-sqlite-libs-3.28.0-r0 webpage:
+sqlite-libs-3.28.0-r1 webpage:
 https://www.sqlite.org/
 
-sqlite-libs-3.28.0-r0 installed size:
+sqlite-libs-3.28.0-r1 installed size:
 925696
 
-sqlite-libs-3.28.0-r0 license:
+sqlite-libs-3.28.0-r1 license:
 Public-Domain
 
 ```
