@@ -1822,20 +1822,13 @@ Licenses: (parsed from: `/usr/share/doc/imagemagick/copyright`, `/usr/share/doc/
 - `Perllikelicence`
 - `TatcherUlrichPublicDomain`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris imagemagick=8:6.8.9.9-5+deb8u17
-'http://security.debian.org/debian-security/pool/updates/main/i/imagemagick/imagemagick_6.8.9.9-5+deb8u17.dsc' imagemagick_6.8.9.9-5+deb8u17.dsc 4054 SHA256:8524ba0d7f3e27eb79d0c1e695b3949db9a075876c87f644509f8f8bb17998c9
-'http://security.debian.org/debian-security/pool/updates/main/i/imagemagick/imagemagick_6.8.9.9.orig.tar.xz' imagemagick_6.8.9.9.orig.tar.xz 7891624 SHA256:a4cccc70179ff2c67550e063cdcb2e62907338ef3e68b45bb1c41931e515b3eb
-'http://security.debian.org/debian-security/pool/updates/main/i/imagemagick/imagemagick_6.8.9.9-5+deb8u17.debian.tar.xz' imagemagick_6.8.9.9-5+deb8u17.debian.tar.xz 312272 SHA256:a20b748826566be73d88a6b3ba4d05b0617eda4d08ccf90c8433d388c98d129c
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/imagemagick/8:6.8.9.9-5+deb8u17/
 
-- https://sources.debian.net/src/imagemagick/8:6.8.9.9-5+deb8u17/ (for browsing the source)
-- https://sources.debian.net/src/imagemagick/8:6.8.9.9-5+deb8u17/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/imagemagick/8:6.8.9.9-5+deb8u17/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `init-system-helpers=1.22`
 
