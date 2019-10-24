@@ -1,7 +1,7 @@
 ## `php:rc-zts-buster`
 
 ```console
-$ docker pull php@sha256:313809f6ded174a8d95f8f81a5f828961e10597e3ca822a0bb620c36368ddfc2
+$ docker pull php@sha256:e05a5d574a2535bfc5e327a08c15c4632c4bf1c33e664c04252b742af22bde35
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -115,14 +115,14 @@ CMD ["php" "-a"]
 ### `php:rc-zts-buster` - linux; arm variant v5
 
 ```console
-$ docker pull php@sha256:c78e6e3cf6149a4f82774f510086409e4c76af0fa4a3d3e4ae8e16aedb7383d1
+$ docker pull php@sha256:bb79d1a301bfcfe0198bf955a826cf54dff690885e0564f8e1a1ecea447a3d1b
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **118.2 MB (118156150 bytes)**  
+-	Total Size: **118.2 MB (118157096 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:a28fed51ae745356bfe9e62b77976715027d1f2a67637737f35fa00be5ee4f3f`
+-	Image ID: `sha256:f146a0f1091f3954e3bba695191aa4784894aba1be2cf47d927fc039f12dd81e`
 -	Entrypoint: `["docker-php-entrypoint"]`
 -	Default Command: `["php","-a"]`
 
@@ -143,33 +143,33 @@ ENV PHP_INI_DIR=/usr/local/etc/php
 RUN set -eux; 	mkdir -p "$PHP_INI_DIR/conf.d"; 	[ ! -d /var/www/html ]; 	mkdir -p /var/www/html; 	chown www-data:www-data /var/www/html; 	chmod 777 /var/www/html
 # Thu, 17 Oct 2019 07:20:08 GMT
 ENV PHP_EXTRA_CONFIGURE_ARGS=--enable-maintainer-zts --disable-cgi
-# Thu, 17 Oct 2019 07:20:09 GMT
-ENV PHP_CFLAGS=-fstack-protector-strong -fpic -fpie -O2
-# Thu, 17 Oct 2019 07:20:10 GMT
-ENV PHP_CPPFLAGS=-fstack-protector-strong -fpic -fpie -O2
-# Thu, 17 Oct 2019 07:20:10 GMT
+# Thu, 24 Oct 2019 00:01:47 GMT
+ENV PHP_CFLAGS=-fstack-protector-strong -fpic -fpie -O2 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64
+# Thu, 24 Oct 2019 00:01:48 GMT
+ENV PHP_CPPFLAGS=-fstack-protector-strong -fpic -fpie -O2 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64
+# Thu, 24 Oct 2019 00:01:49 GMT
 ENV PHP_LDFLAGS=-Wl,-O1 -Wl,--hash-style=both -pie
-# Thu, 17 Oct 2019 07:20:11 GMT
+# Thu, 24 Oct 2019 00:01:49 GMT
 ENV GPG_KEYS=42670A7FE4D0441C8E4632349E4FDC074A4EF02D 5A52880781F755608BF815FC910DEB46F53EA312
-# Sat, 19 Oct 2019 00:08:54 GMT
+# Thu, 24 Oct 2019 00:01:50 GMT
 ENV PHP_VERSION=7.4.0RC4
-# Sat, 19 Oct 2019 00:08:55 GMT
+# Thu, 24 Oct 2019 00:01:51 GMT
 ENV PHP_URL=https://downloads.php.net/~derick/php-7.4.0RC4.tar.xz PHP_ASC_URL=https://downloads.php.net/~derick/php-7.4.0RC4.tar.xz.asc
-# Sat, 19 Oct 2019 00:08:56 GMT
+# Thu, 24 Oct 2019 00:01:52 GMT
 ENV PHP_SHA256=6fcce4c914825fbf5510b448df1485469da621d419d798ef77168808ce0bd10c PHP_MD5=
-# Sat, 19 Oct 2019 00:09:20 GMT
+# Thu, 24 Oct 2019 00:02:11 GMT
 RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends gnupg dirmngr; 	rm -rf /var/lib/apt/lists/*; 		mkdir -p /usr/src; 	cd /usr/src; 		curl -fsSL -o php.tar.xz "$PHP_URL"; 		if [ -n "$PHP_SHA256" ]; then 		echo "$PHP_SHA256 *php.tar.xz" | sha256sum -c -; 	fi; 	if [ -n "$PHP_MD5" ]; then 		echo "$PHP_MD5 *php.tar.xz" | md5sum -c -; 	fi; 		if [ -n "$PHP_ASC_URL" ]; then 		curl -fsSL -o php.tar.xz.asc "$PHP_ASC_URL"; 		export GNUPGHOME="$(mktemp -d)"; 		for key in $GPG_KEYS; do 			gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys "$key"; 		done; 		gpg --batch --verify php.tar.xz.asc php.tar.xz; 		gpgconf --kill all; 		rm -rf "$GNUPGHOME"; 	fi; 		apt-mark auto '.*' > /dev/null; 	apt-mark manual $savedAptMark > /dev/null; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false
-# Sat, 19 Oct 2019 00:09:21 GMT
+# Thu, 24 Oct 2019 00:02:12 GMT
 COPY file:ce57c04b70896f77cc11eb2766417d8a1240fcffe5bba92179ec78c458844110 in /usr/local/bin/ 
-# Sat, 19 Oct 2019 00:12:45 GMT
+# Thu, 24 Oct 2019 00:05:38 GMT
 RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		libargon2-dev 		libcurl4-openssl-dev 		libedit-dev 		libonig-dev 		libsodium-dev 		libsqlite3-dev 		libssl-dev 		libxml2-dev 		zlib1g-dev 		${PHP_EXTRA_BUILD_DEPS:-} 	; 	rm -rf /var/lib/apt/lists/*; 		export 		CFLAGS="$PHP_CFLAGS" 		CPPFLAGS="$PHP_CPPFLAGS" 		LDFLAGS="$PHP_LDFLAGS" 	; 	docker-php-source extract; 	cd /usr/src/php; 	gnuArch="$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)"; 	debMultiarch="$(dpkg-architecture --query DEB_BUILD_MULTIARCH)"; 	if [ ! -d /usr/include/curl ]; then 		ln -sT "/usr/include/$debMultiarch/curl" /usr/local/include/curl; 	fi; 	./configure 		--build="$gnuArch" 		--with-config-file-path="$PHP_INI_DIR" 		--with-config-file-scan-dir="$PHP_INI_DIR/conf.d" 				--enable-option-checking=fatal 				--with-mhash 				--enable-ftp 		--enable-mbstring 		--enable-mysqlnd 		--with-password-argon2 		--with-sodium=shared 		--with-pdo-sqlite=/usr 		--with-sqlite3=/usr 				--with-curl 		--with-libedit 		--with-openssl 		--with-zlib 				--with-pear 				$(test "$gnuArch" = 's390x-linux-gnu' && echo '--without-pcre-jit') 		--with-libdir="lib/$debMultiarch" 				${PHP_EXTRA_CONFIGURE_ARGS:-} 	; 	make -j "$(nproc)"; 	find -type f -name '*.a' -delete; 	make install; 	find /usr/local/bin /usr/local/sbin -type f -executable -exec strip --strip-all '{}' + || true; 	make clean; 		cp -v php.ini-* "$PHP_INI_DIR/"; 		cd /; 	docker-php-source delete; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark; 	find /usr/local -type f -executable -exec ldd '{}' ';' 		| awk '/=>/ { print $(NF-1) }' 		| sort -u 		| xargs -r dpkg-query --search 		| cut -d: -f1 		| sort -u 		| xargs -r apt-mark manual 	; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 		pecl update-channels; 	rm -rf /tmp/pear ~/.pearrc; 	php --version
-# Sat, 19 Oct 2019 00:12:47 GMT
+# Thu, 24 Oct 2019 00:05:40 GMT
 COPY multi:287fef6856464a54cd9ef266c5fea3bd820d4cf2e2666723e9d9ddd1afc6db67 in /usr/local/bin/ 
-# Sat, 19 Oct 2019 00:12:49 GMT
+# Thu, 24 Oct 2019 00:05:42 GMT
 RUN docker-php-ext-enable sodium
-# Sat, 19 Oct 2019 00:12:50 GMT
+# Thu, 24 Oct 2019 00:05:43 GMT
 ENTRYPOINT ["docker-php-entrypoint"]
-# Sat, 19 Oct 2019 00:12:50 GMT
+# Thu, 24 Oct 2019 00:05:43 GMT
 CMD ["php" "-a"]
 ```
 
@@ -190,25 +190,25 @@ CMD ["php" "-a"]
 		Last Modified: Thu, 17 Oct 2019 09:11:58 GMT  
 		Size: 269.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:3e80d52f29dc48e43ce649fc4da1bdbdeb18889375e4ce6431f0c64e9e5bded1`  
-		Last Modified: Sat, 19 Oct 2019 00:18:40 GMT  
-		Size: 10.5 MB (10542598 bytes)  
+	-	`sha256:50851b36fb9faadebe986f5d63cdcfc73e14ed90dfa5a3e0dea2392716e69d49`  
+		Last Modified: Thu, 24 Oct 2019 02:08:08 GMT  
+		Size: 10.5 MB (10542601 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:1433f35b51db160d23b25a57d5602a6084be25769d1ef632767e5511f79a93a1`  
-		Last Modified: Sat, 19 Oct 2019 00:18:39 GMT  
-		Size: 492.0 B  
+	-	`sha256:5d1b8b3dac1feb0a29b63f4812faed59af5b8fc00b52ce3265ff1573a2620a48`  
+		Last Modified: Thu, 24 Oct 2019 02:08:07 GMT  
+		Size: 495.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:76e3aff96eaf9a9e50f7634342981a549df1001875419d9944b06c34dc1abcc0`  
-		Last Modified: Sat, 19 Oct 2019 00:18:47 GMT  
-		Size: 24.0 MB (23967542 bytes)  
+	-	`sha256:c5da52d92beb8135a7999dc615244630e3dd8ac40f4bf5b07d5ccc19c5613ad0`  
+		Last Modified: Thu, 24 Oct 2019 02:08:16 GMT  
+		Size: 24.0 MB (23968481 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:9ca1edfdbb26fa6f3fa5921bb44758e179d3ebd487187e0e8b16bdca6c6e8bd9`  
-		Last Modified: Sat, 19 Oct 2019 00:18:39 GMT  
+	-	`sha256:a8b75dfc1fa7eb1de8533ce8172a4a1d9ae7830d9295aa8032b68d711efea46b`  
+		Last Modified: Thu, 24 Oct 2019 02:08:06 GMT  
 		Size: 2.2 KB (2205 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:29c39c91c0611aac1701bae232428958dfd35ed45e98b1d6b0e7d497499b9c7d`  
-		Last Modified: Sat, 19 Oct 2019 00:18:39 GMT  
-		Size: 248.0 B  
+	-	`sha256:22af1ebdf6b00ed54a4128f0a3ec782b067af82954e4ec6a6ec8cc9e4de05d1a`  
+		Last Modified: Thu, 24 Oct 2019 02:08:06 GMT  
+		Size: 249.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `php:rc-zts-buster` - linux; arm variant v7
