@@ -3802,14 +3802,9 @@ Binary Packages:
 If source is available (seen below), check the contents of `debian/copyright` within it.
 
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris libxslt=1.1.28-2.1ubuntu0.2
-'http://archive.ubuntu.com/ubuntu/pool/main/libx/libxslt/libxslt_1.1.28-2.1ubuntu0.2.dsc' libxslt_1.1.28-2.1ubuntu0.2.dsc 2482 SHA256:ed0a32ca46874e0fd508e5467f1e2ed8757496a83516e6429c899cd6e917c99f
-'http://archive.ubuntu.com/ubuntu/pool/main/libx/libxslt/libxslt_1.1.28.orig.tar.gz' libxslt_1.1.28.orig.tar.gz 3435907 SHA256:5fc7151a57b89c03d7b825df5a0fae0a8d5f05674c0e7cf2937ecec4d54a028c
-'http://archive.ubuntu.com/ubuntu/pool/main/libx/libxslt/libxslt_1.1.28-2.1ubuntu0.2.debian.tar.xz' libxslt_1.1.28-2.1ubuntu0.2.debian.tar.xz 41348 SHA256:d222d08f2ad8552f8bb63b5b234f2c4683787ab3e2bd131b387cdd2ca34b1033
-```
 
 ### `dpkg` source package: `libxt=1:1.1.5-0ubuntu1`
 
@@ -3881,14 +3876,9 @@ Licenses: (parsed from: `/usr/share/doc/linux-libc-dev/copyright`)
 - `GPL-2`
 - `redpine-signals`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris linux=4.4.0-165.193
-'http://archive.ubuntu.com/ubuntu/pool/main/l/linux/linux_4.4.0-165.193.dsc' linux_4.4.0-165.193.dsc 11909 SHA256:e349cb7c4930c14b4ae98bde16c01f558577151f2bdbb0f75c2757c42f4fc8db
-'http://archive.ubuntu.com/ubuntu/pool/main/l/linux/linux_4.4.0.orig.tar.gz' linux_4.4.0.orig.tar.gz 132860730 SHA256:730e75919b5d30a9bc934ccb300eaedfdf44994ca9ee1d07a46901c46c221357
-'http://archive.ubuntu.com/ubuntu/pool/main/l/linux/linux_4.4.0-165.193.diff.gz' linux_4.4.0-165.193.diff.gz 15788316 SHA256:c54e26b261228097d2a20058f322ed9ef0e47152a6b9129c3cfeafe9cd781db2
-```
 
 ### `dpkg` source package: `llvm-toolchain-6.0=1:6.0-1ubuntu2~16.04.1`
 
@@ -5965,14 +5955,9 @@ Licenses: (parsed from: `/usr/share/doc/bsdutils/copyright`, `/usr/share/doc/lib
 - `MIT`
 - `public-domain`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris util-linux=2.27.1-6ubuntu3.8
-'http://archive.ubuntu.com/ubuntu/pool/main/u/util-linux/util-linux_2.27.1-6ubuntu3.8.dsc' util-linux_2.27.1-6ubuntu3.8.dsc 3531 SHA256:a64f117d16d02054a55d587859e51abe970b3fdabb4f7d3aa67c084ce7aba40e
-'http://archive.ubuntu.com/ubuntu/pool/main/u/util-linux/util-linux_2.27.1.orig.tar.xz' util-linux_2.27.1.orig.tar.xz 3964512 SHA256:0a818fcdede99aec43ffe6ca5b5388bff80d162f2f7bd4541dca94fecb87a290
-'http://archive.ubuntu.com/ubuntu/pool/main/u/util-linux/util-linux_2.27.1-6ubuntu3.8.debian.tar.xz' util-linux_2.27.1-6ubuntu3.8.debian.tar.xz 87708 SHA256:7fffa45263d9c41c81d54e4c765d0f4b7e0fb636a73e3e07f2e324526593ca66
-```
 
 ### `dpkg` source package: `wavpack=4.75.2-2ubuntu0.2`
 

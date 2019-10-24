@@ -4897,9 +4897,9 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris libxkbcommon=0.8.0-1ubuntu0.1
-'http://archive.ubuntu.com/ubuntu/pool/main/libx/libxkbcommon/libxkbcommon_0.8.0-1ubuntu0.1.dsc' libxkbcommon_0.8.0-1ubuntu0.1.dsc 2432 SHA256:994121c71e321fd676705b8cca9e5f3569b614578c957b32131c7127a9f13309
-'http://archive.ubuntu.com/ubuntu/pool/main/libx/libxkbcommon/libxkbcommon_0.8.0.orig.tar.gz' libxkbcommon_0.8.0.orig.tar.gz 584451 SHA256:7a22796dbf6e0d5ef7cfde686b8a503aba60e153ba07b405a9a8eadd47f60a07
-'http://archive.ubuntu.com/ubuntu/pool/main/libx/libxkbcommon/libxkbcommon_0.8.0-1ubuntu0.1.diff.gz' libxkbcommon_0.8.0-1ubuntu0.1.diff.gz 34014 SHA256:d7a6b0d5103bbcb59aabdb57dc7fba651635b4eec929b94a8f1d06956a4dcdf0
+'http://security.ubuntu.com/ubuntu/pool/main/libx/libxkbcommon/libxkbcommon_0.8.0-1ubuntu0.1.dsc' libxkbcommon_0.8.0-1ubuntu0.1.dsc 2432 SHA256:994121c71e321fd676705b8cca9e5f3569b614578c957b32131c7127a9f13309
+'http://security.ubuntu.com/ubuntu/pool/main/libx/libxkbcommon/libxkbcommon_0.8.0.orig.tar.gz' libxkbcommon_0.8.0.orig.tar.gz 584451 SHA256:7a22796dbf6e0d5ef7cfde686b8a503aba60e153ba07b405a9a8eadd47f60a07
+'http://security.ubuntu.com/ubuntu/pool/main/libx/libxkbcommon/libxkbcommon_0.8.0-1ubuntu0.1.diff.gz' libxkbcommon_0.8.0-1ubuntu0.1.diff.gz 34014 SHA256:d7a6b0d5103bbcb59aabdb57dc7fba651635b4eec929b94a8f1d06956a4dcdf0
 ```
 
 ### `dpkg` source package: `libxml2=2.9.4+dfsg1-6.1ubuntu1.2`
@@ -5192,14 +5192,9 @@ Licenses: (parsed from: `/usr/share/doc/linux-libc-dev/copyright`)
 
 - `GPL-2`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris linux=4.15.0-65.74
-'http://archive.ubuntu.com/ubuntu/pool/main/l/linux/linux_4.15.0-65.74.dsc' linux_4.15.0-65.74.dsc 6996 SHA256:c6f69810f0063f5b2f77e2977004d49799273ea99b8ca17ccdbaa0535e9fd483
-'http://archive.ubuntu.com/ubuntu/pool/main/l/linux/linux_4.15.0.orig.tar.gz' linux_4.15.0.orig.tar.gz 157656459 SHA256:c33b8ba5c45a40b689979caa2421c4d933864cd70eb93c00eb69adf43e9a24fc
-'http://archive.ubuntu.com/ubuntu/pool/main/l/linux/linux_4.15.0-65.74.diff.gz' linux_4.15.0-65.74.diff.gz 8342681 SHA256:4e4ed5fc65ef0f865da039a7b74047c8945fb464f41ff9689330ea77ff44e5fc
-```
 
 ### `dpkg` source package: `llvm-toolchain-8=1:8-3~ubuntu18.04.1`
 

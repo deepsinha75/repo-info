@@ -4312,9 +4312,9 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris libxkbcommon=0.8.0-1ubuntu0.1
-'http://archive.ubuntu.com/ubuntu/pool/main/libx/libxkbcommon/libxkbcommon_0.8.0-1ubuntu0.1.dsc' libxkbcommon_0.8.0-1ubuntu0.1.dsc 2432 SHA256:994121c71e321fd676705b8cca9e5f3569b614578c957b32131c7127a9f13309
-'http://archive.ubuntu.com/ubuntu/pool/main/libx/libxkbcommon/libxkbcommon_0.8.0.orig.tar.gz' libxkbcommon_0.8.0.orig.tar.gz 584451 SHA256:7a22796dbf6e0d5ef7cfde686b8a503aba60e153ba07b405a9a8eadd47f60a07
-'http://archive.ubuntu.com/ubuntu/pool/main/libx/libxkbcommon/libxkbcommon_0.8.0-1ubuntu0.1.diff.gz' libxkbcommon_0.8.0-1ubuntu0.1.diff.gz 34014 SHA256:d7a6b0d5103bbcb59aabdb57dc7fba651635b4eec929b94a8f1d06956a4dcdf0
+'http://security.ubuntu.com/ubuntu/pool/main/libx/libxkbcommon/libxkbcommon_0.8.0-1ubuntu0.1.dsc' libxkbcommon_0.8.0-1ubuntu0.1.dsc 2432 SHA256:994121c71e321fd676705b8cca9e5f3569b614578c957b32131c7127a9f13309
+'http://security.ubuntu.com/ubuntu/pool/main/libx/libxkbcommon/libxkbcommon_0.8.0.orig.tar.gz' libxkbcommon_0.8.0.orig.tar.gz 584451 SHA256:7a22796dbf6e0d5ef7cfde686b8a503aba60e153ba07b405a9a8eadd47f60a07
+'http://security.ubuntu.com/ubuntu/pool/main/libx/libxkbcommon/libxkbcommon_0.8.0-1ubuntu0.1.diff.gz' libxkbcommon_0.8.0-1ubuntu0.1.diff.gz 34014 SHA256:d7a6b0d5103bbcb59aabdb57dc7fba651635b4eec929b94a8f1d06956a4dcdf0
 ```
 
 ### `dpkg` source package: `libxml2=2.9.4+dfsg1-6.1ubuntu1.2`

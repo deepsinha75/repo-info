@@ -5649,14 +5649,9 @@ Licenses: (parsed from: `/usr/share/doc/bsdutils/copyright`, `/usr/share/doc/lib
 - `MIT`
 - `public-domain`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris util-linux=2.27.1-6ubuntu3.8
-'http://archive.ubuntu.com/ubuntu/pool/main/u/util-linux/util-linux_2.27.1-6ubuntu3.8.dsc' util-linux_2.27.1-6ubuntu3.8.dsc 3531 SHA256:a64f117d16d02054a55d587859e51abe970b3fdabb4f7d3aa67c084ce7aba40e
-'http://archive.ubuntu.com/ubuntu/pool/main/u/util-linux/util-linux_2.27.1.orig.tar.xz' util-linux_2.27.1.orig.tar.xz 3964512 SHA256:0a818fcdede99aec43ffe6ca5b5388bff80d162f2f7bd4541dca94fecb87a290
-'http://archive.ubuntu.com/ubuntu/pool/main/u/util-linux/util-linux_2.27.1-6ubuntu3.8.debian.tar.xz' util-linux_2.27.1-6ubuntu3.8.debian.tar.xz 87708 SHA256:7fffa45263d9c41c81d54e4c765d0f4b7e0fb636a73e3e07f2e324526593ca66
-```
 
 ### `dpkg` source package: `wavpack=4.75.2-2ubuntu0.2`
 
