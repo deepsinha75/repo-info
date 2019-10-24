@@ -2,8 +2,8 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:56fffd5c4bcd2763a72e8a5afbbd663e6efc01a3193634fafc5160897347ff8f`
-- Created: `2019-10-19T09:18:57.422933782Z`
+- Image ID: `sha256:5db7f4463d3537b26323ddde0bf9417486b4d4587e08415be2f15937d6883800`
+- Created: `2019-10-24T08:12:11.017593317Z`
 - Virtual Size: ~ 723.67 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
@@ -17,8 +17,8 @@
   - `APACHE_ENVVARS=/etc/apache2/envvars`
   - `PHP_EXTRA_BUILD_DEPS=apache2-dev`
   - `PHP_EXTRA_CONFIGURE_ARGS=--with-apxs2 --disable-cgi`
-  - `PHP_CFLAGS=-fstack-protector-strong -fpic -fpie -O2`
-  - `PHP_CPPFLAGS=-fstack-protector-strong -fpic -fpie -O2`
+  - `PHP_CFLAGS=-fstack-protector-strong -fpic -fpie -O2 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64`
+  - `PHP_CPPFLAGS=-fstack-protector-strong -fpic -fpie -O2 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64`
   - `PHP_LDFLAGS=-Wl,-O1 -Wl,--hash-style=both -pie`
   - `GPG_KEYS=1729F83938DA44E27BA0F4D3DBDB397470D12172 B1B44D8F021E4E2D6021E995DC9FF8D3EE5AF27F`
   - `PHP_VERSION=7.2.23`
