@@ -2,9 +2,9 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:a25741fee14f532626638ecf9341958fa5767116746ddbdefc380f78e4447cb0`
-- Created: `2019-10-21T16:48:19.095326215Z`
-- Virtual Size: ~ 375.11 Mb  
+- Image ID: `sha256:8e6f1d480236349be832d6fdbce846af7aab4a803de19c6ae35c9b31ad0b4fae`
+- Created: `2019-10-22T00:18:36.084287127Z`
+- Virtual Size: ~ 365.54 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["/docker-entrypoint.sh"]`
@@ -572,16 +572,16 @@ MIT
 ### `apk` package: `imagemagick6`
 
 ```console
-imagemagick6-6.9.10.60-r0 description:
+imagemagick6-6.9.10.68-r0 description:
 A collection of tools and libraries for many image formats (legacy version 6)
 
-imagemagick6-6.9.10.60-r0 webpage:
+imagemagick6-6.9.10.68-r0 webpage:
 https://www.imagemagick.org/
 
-imagemagick6-6.9.10.60-r0 installed size:
+imagemagick6-6.9.10.68-r0 installed size:
 196608
 
-imagemagick6-6.9.10.60-r0 license:
+imagemagick6-6.9.10.68-r0 license:
 Apache-2.0
 
 ```
@@ -1456,16 +1456,16 @@ MIT
 ### `apk` package: `openssh-client`
 
 ```console
-openssh-client-8.0_p1-r0 description:
+openssh-client-8.1_p1-r0 description:
 OpenBSD's SSH client
 
-openssh-client-8.0_p1-r0 webpage:
+openssh-client-8.1_p1-r0 webpage:
 https://www.openssh.com/portable.html
 
-openssh-client-8.0_p1-r0 installed size:
-2752512
+openssh-client-8.1_p1-r0 installed size:
+3485696
 
-openssh-client-8.0_p1-r0 license:
+openssh-client-8.1_p1-r0 license:
 BSD
 
 ```
@@ -1473,16 +1473,16 @@ BSD
 ### `apk` package: `openssh-keygen`
 
 ```console
-openssh-keygen-8.0_p1-r0 description:
+openssh-keygen-8.1_p1-r0 description:
 ssh helper program for generating keys
 
-openssh-keygen-8.0_p1-r0 webpage:
+openssh-keygen-8.1_p1-r0 webpage:
 https://www.openssh.com/portable.html
 
-openssh-keygen-8.0_p1-r0 installed size:
-385024
+openssh-keygen-8.1_p1-r0 installed size:
+409600
 
-openssh-keygen-8.0_p1-r0 license:
+openssh-keygen-8.1_p1-r0 license:
 BSD
 
 ```
@@ -1813,16 +1813,16 @@ MIT
 ### `apk` package: `tzdata`
 
 ```console
-tzdata-2019b-r0 description:
+tzdata-2019c-r0 description:
 Timezone data
 
-tzdata-2019b-r0 webpage:
+tzdata-2019c-r0 webpage:
 https://www.iana.org/time-zones
 
-tzdata-2019b-r0 installed size:
+tzdata-2019c-r0 installed size:
 3538944
 
-tzdata-2019b-r0 license:
+tzdata-2019c-r0 license:
 Public-Domain
 
 ```
