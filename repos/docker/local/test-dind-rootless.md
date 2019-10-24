@@ -1,17 +1,17 @@
-# `docker:19.03.4-rc1-dind-rootless`
+# `docker:19.03.4-dind-rootless`
 
 ## Docker Metadata
 
-- Image ID: `sha256:ddf4c1cef2ae069390ea63253d0bd60c199632c7efb14f5901a9c9a9861bc03d`
-- Created: `2019-10-15T01:21:30.682671314Z`
-- Virtual Size: ~ 294.50 Mb  
+- Image ID: `sha256:62f58c18449c808752bb9774c10a1c5b908ba0ab64f889d2690c1f7b3d73138f`
+- Created: `2019-10-21T18:19:30.007853732Z`
+- Virtual Size: ~ 294.47 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["dockerd-entrypoint.sh"]`
 - Environment:
   - `PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
-  - `DOCKER_CHANNEL=test`
-  - `DOCKER_VERSION=19.03.4-rc1`
+  - `DOCKER_CHANNEL=stable`
+  - `DOCKER_VERSION=19.03.4`
   - `DOCKER_TLS_CERTDIR=/certs`
   - `DIND_COMMIT=37498f009d8bf25fbb6199e8ccd34bed84f2874b`
   - `ROOTLESSKIT_VERSION=0.6.0`
@@ -140,16 +140,16 @@ MPL-2.0 GPL-2.0-or-later
 ### `apk` package: `e2fsprogs`
 
 ```console
-e2fsprogs-1.45.2-r0 description:
+e2fsprogs-1.45.2-r1 description:
 Standard Ext2/3/4 filesystem utilities
 
-e2fsprogs-1.45.2-r0 webpage:
+e2fsprogs-1.45.2-r1 webpage:
 http://e2fsprogs.sourceforge.net
 
-e2fsprogs-1.45.2-r0 installed size:
+e2fsprogs-1.45.2-r1 installed size:
 421888
 
-e2fsprogs-1.45.2-r0 license:
+e2fsprogs-1.45.2-r1 license:
 GPL-2.0-or-later AND LGPL-2.0-or-later AND BSD-3-Clause AND MIT
 
 ```
@@ -157,16 +157,16 @@ GPL-2.0-or-later AND LGPL-2.0-or-later AND BSD-3-Clause AND MIT
 ### `apk` package: `e2fsprogs-extra`
 
 ```console
-e2fsprogs-extra-1.45.2-r0 description:
+e2fsprogs-extra-1.45.2-r1 description:
 Ext2/3/4 filesystem extra utilities
 
-e2fsprogs-extra-1.45.2-r0 webpage:
+e2fsprogs-extra-1.45.2-r1 webpage:
 http://e2fsprogs.sourceforge.net
 
-e2fsprogs-extra-1.45.2-r0 installed size:
+e2fsprogs-extra-1.45.2-r1 installed size:
 700416
 
-e2fsprogs-extra-1.45.2-r0 license:
+e2fsprogs-extra-1.45.2-r1 license:
 GPL-2.0-or-later AND LGPL-2.0-or-later AND BSD-3-Clause AND MIT
 
 ```
@@ -174,16 +174,16 @@ GPL-2.0-or-later AND LGPL-2.0-or-later AND BSD-3-Clause AND MIT
 ### `apk` package: `e2fsprogs-libs`
 
 ```console
-e2fsprogs-libs-1.45.2-r0 description:
+e2fsprogs-libs-1.45.2-r1 description:
 Standard Ext2/3/4 filesystem utilities (libraries)
 
-e2fsprogs-libs-1.45.2-r0 webpage:
+e2fsprogs-libs-1.45.2-r1 webpage:
 http://e2fsprogs.sourceforge.net
 
-e2fsprogs-libs-1.45.2-r0 installed size:
+e2fsprogs-libs-1.45.2-r1 installed size:
 454656
 
-e2fsprogs-libs-1.45.2-r0 license:
+e2fsprogs-libs-1.45.2-r1 license:
 GPL-2.0-or-later AND LGPL-2.0-or-later AND BSD-3-Clause AND MIT
 
 ```
@@ -310,16 +310,16 @@ BSD
 ### `apk` package: `libcom_err`
 
 ```console
-libcom_err-1.45.2-r0 description:
+libcom_err-1.45.2-r1 description:
 Common error description library
 
-libcom_err-1.45.2-r0 webpage:
+libcom_err-1.45.2-r1 webpage:
 http://e2fsprogs.sourceforge.net
 
-libcom_err-1.45.2-r0 installed size:
+libcom_err-1.45.2-r1 installed size:
 24576
 
-libcom_err-1.45.2-r0 license:
+libcom_err-1.45.2-r1 license:
 GPL-2.0-or-later AND LGPL-2.0-or-later AND BSD-3-Clause AND MIT
 
 ```
@@ -327,16 +327,16 @@ GPL-2.0-or-later AND LGPL-2.0-or-later AND BSD-3-Clause AND MIT
 ### `apk` package: `libcrypto1.1`
 
 ```console
-libcrypto1.1-1.1.1c-r0 description:
+libcrypto1.1-1.1.1d-r0 description:
 Crypto library from openssl
 
-libcrypto1.1-1.1.1c-r0 webpage:
+libcrypto1.1-1.1.1d-r0 webpage:
 https://www.openssl.org
 
-libcrypto1.1-1.1.1c-r0 installed size:
-2760704
+libcrypto1.1-1.1.1d-r0 installed size:
+2736128
 
-libcrypto1.1-1.1.1c-r0 license:
+libcrypto1.1-1.1.1d-r0 license:
 OpenSSL
 
 ```
@@ -395,16 +395,16 @@ GPL-2.0-or-later
 ### `apk` package: `libssl1.1`
 
 ```console
-libssl1.1-1.1.1c-r0 description:
+libssl1.1-1.1.1d-r0 description:
 SSL shared libraries
 
-libssl1.1-1.1.1c-r0 webpage:
+libssl1.1-1.1.1d-r0 webpage:
 https://www.openssl.org
 
-libssl1.1-1.1.1c-r0 installed size:
-536576
+libssl1.1-1.1.1d-r0 installed size:
+532480
 
-libssl1.1-1.1.1c-r0 license:
+libssl1.1-1.1.1d-r0 license:
 OpenSSL
 
 ```
@@ -667,16 +667,16 @@ GPL-2.0-or-later Public-Domain
 ### `apk` package: `zfs`
 
 ```console
-zfs-0.8.1-r0 description:
+zfs-0.8.2-r0 description:
 ZFS for Linux
 
-zfs-0.8.1-r0 webpage:
+zfs-0.8.2-r0 webpage:
 http://zfsonlinux.org
 
-zfs-0.8.1-r0 installed size:
-1232896
+zfs-0.8.2-r0 installed size:
+1236992
 
-zfs-0.8.1-r0 license:
+zfs-0.8.2-r0 license:
 CDDL-1.0
 
 ```
@@ -684,16 +684,16 @@ CDDL-1.0
 ### `apk` package: `zfs-libs`
 
 ```console
-zfs-libs-0.8.1-r0 description:
+zfs-libs-0.8.2-r0 description:
 ZFS for Linux (libraries)
 
-zfs-libs-0.8.1-r0 webpage:
+zfs-libs-0.8.2-r0 webpage:
 http://zfsonlinux.org
 
-zfs-libs-0.8.1-r0 installed size:
+zfs-libs-0.8.2-r0 installed size:
 3108864
 
-zfs-libs-0.8.1-r0 license:
+zfs-libs-0.8.2-r0 license:
 CDDL-1.0
 
 ```
