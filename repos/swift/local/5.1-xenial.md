@@ -1790,14 +1790,9 @@ Licenses: (parsed from: `/usr/share/doc/linux-libc-dev/copyright`)
 - `GPL-2`
 - `redpine-signals`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris linux=4.4.0-165.193
-'http://archive.ubuntu.com/ubuntu/pool/main/l/linux/linux_4.4.0-165.193.dsc' linux_4.4.0-165.193.dsc 11909 SHA256:e349cb7c4930c14b4ae98bde16c01f558577151f2bdbb0f75c2757c42f4fc8db
-'http://archive.ubuntu.com/ubuntu/pool/main/l/linux/linux_4.4.0.orig.tar.gz' linux_4.4.0.orig.tar.gz 132860730 SHA256:730e75919b5d30a9bc934ccb300eaedfdf44994ca9ee1d07a46901c46c221357
-'http://archive.ubuntu.com/ubuntu/pool/main/l/linux/linux_4.4.0-165.193.diff.gz' linux_4.4.0-165.193.diff.gz 15788316 SHA256:c54e26b261228097d2a20058f322ed9ef0e47152a6b9129c3cfeafe9cd781db2
-```
 
 ### `dpkg` source package: `lsb=9.20160110ubuntu0.2`
 
@@ -2722,14 +2717,9 @@ Licenses: (parsed from: `/usr/share/doc/bsdutils/copyright`, `/usr/share/doc/lib
 - `MIT`
 - `public-domain`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris util-linux=2.27.1-6ubuntu3.8
-'http://archive.ubuntu.com/ubuntu/pool/main/u/util-linux/util-linux_2.27.1-6ubuntu3.8.dsc' util-linux_2.27.1-6ubuntu3.8.dsc 3531 SHA256:a64f117d16d02054a55d587859e51abe970b3fdabb4f7d3aa67c084ce7aba40e
-'http://archive.ubuntu.com/ubuntu/pool/main/u/util-linux/util-linux_2.27.1.orig.tar.xz' util-linux_2.27.1.orig.tar.xz 3964512 SHA256:0a818fcdede99aec43ffe6ca5b5388bff80d162f2f7bd4541dca94fecb87a290
-'http://archive.ubuntu.com/ubuntu/pool/main/u/util-linux/util-linux_2.27.1-6ubuntu3.8.debian.tar.xz' util-linux_2.27.1-6ubuntu3.8.debian.tar.xz 87708 SHA256:7fffa45263d9c41c81d54e4c765d0f4b7e0fb636a73e3e07f2e324526593ca66
-```
 
 ### `dpkg` source package: `xauth=1:1.0.9-1ubuntu2`
 
