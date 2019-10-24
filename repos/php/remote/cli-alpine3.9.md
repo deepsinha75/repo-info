@@ -1,7 +1,7 @@
 ## `php:cli-alpine3.9`
 
 ```console
-$ docker pull php@sha256:9b7a35ad8bc67de4b19770308d0606cfad9fe74dad95ad3b8a80f748e9cd5dad
+$ docker pull php@sha256:38ba78637b05aa2e89a0f408f98ba4da8cf2cd7754d32689263e5fb5d2564206
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -404,14 +404,14 @@ CMD ["php" "-a"]
 ### `php:cli-alpine3.9` - linux; 386
 
 ```console
-$ docker pull php@sha256:e4ff7375e4f3f0354fd5d039c25ec0340fe8c32c543eb918ab2d1a7ccf9fef04
+$ docker pull php@sha256:6e4cff3c2baf124b42dca904a6802d752d8f96f317741e166360d12c0fd30b7f
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **34.0 MB (34014327 bytes)**  
+-	Total Size: **34.1 MB (34129093 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:abaa514b30dfb8e30205d8f902ed57d3c7beb0778975af5a4b0bd6a0b2732e78`
+-	Image ID: `sha256:458995ad086cdf8fa7f2cb2c1dc436a1f152df0928cef377b00b5072ca46bb60`
 -	Entrypoint: `["docker-php-entrypoint"]`
 -	Default Command: `["php","-a"]`
 
@@ -430,33 +430,33 @@ RUN set -eux; 	addgroup -g 82 -S www-data; 	adduser -u 82 -D -S -G www-data www-
 ENV PHP_INI_DIR=/usr/local/etc/php
 # Fri, 28 Jun 2019 02:16:55 GMT
 RUN set -eux; 	mkdir -p "$PHP_INI_DIR/conf.d"; 	[ ! -d /var/www/html ]; 	mkdir -p /var/www/html; 	chown www-data:www-data /var/www/html; 	chmod 777 /var/www/html
-# Fri, 28 Jun 2019 02:16:55 GMT
-ENV PHP_CFLAGS=-fstack-protector-strong -fpic -fpie -O2
-# Fri, 28 Jun 2019 02:16:55 GMT
-ENV PHP_CPPFLAGS=-fstack-protector-strong -fpic -fpie -O2
-# Fri, 28 Jun 2019 02:16:56 GMT
+# Thu, 24 Oct 2019 09:53:15 GMT
+ENV PHP_CFLAGS=-fstack-protector-strong -fpic -fpie -O2 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64
+# Thu, 24 Oct 2019 09:53:15 GMT
+ENV PHP_CPPFLAGS=-fstack-protector-strong -fpic -fpie -O2 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64
+# Thu, 24 Oct 2019 09:53:15 GMT
 ENV PHP_LDFLAGS=-Wl,-O1 -Wl,--hash-style=both -pie
-# Fri, 28 Jun 2019 03:57:57 GMT
+# Thu, 24 Oct 2019 09:53:15 GMT
 ENV GPG_KEYS=CBAF69F173A0FEA4B537F470D66C9593118BCCB6 F38252826ACD957EF380D39F2F7956BC5DA04B5D
-# Thu, 26 Sep 2019 23:23:42 GMT
+# Thu, 24 Oct 2019 09:53:16 GMT
 ENV PHP_VERSION=7.3.10
-# Thu, 26 Sep 2019 23:23:43 GMT
+# Thu, 24 Oct 2019 09:53:16 GMT
 ENV PHP_URL=https://www.php.net/get/php-7.3.10.tar.xz/from/this/mirror PHP_ASC_URL=https://www.php.net/get/php-7.3.10.tar.xz.asc/from/this/mirror
-# Thu, 26 Sep 2019 23:23:43 GMT
+# Thu, 24 Oct 2019 09:53:16 GMT
 ENV PHP_SHA256=42f00a15419e05771734b7159c8d39d639b8a5a6770413adfa2615f6f923d906 PHP_MD5=
-# Thu, 26 Sep 2019 23:23:46 GMT
+# Thu, 24 Oct 2019 09:53:19 GMT
 RUN set -eux; 		apk add --no-cache --virtual .fetch-deps gnupg; 		mkdir -p /usr/src; 	cd /usr/src; 		curl -fsSL -o php.tar.xz "$PHP_URL"; 		if [ -n "$PHP_SHA256" ]; then 		echo "$PHP_SHA256 *php.tar.xz" | sha256sum -c -; 	fi; 	if [ -n "$PHP_MD5" ]; then 		echo "$PHP_MD5 *php.tar.xz" | md5sum -c -; 	fi; 		if [ -n "$PHP_ASC_URL" ]; then 		curl -fsSL -o php.tar.xz.asc "$PHP_ASC_URL"; 		export GNUPGHOME="$(mktemp -d)"; 		for key in $GPG_KEYS; do 			gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys "$key"; 		done; 		gpg --batch --verify php.tar.xz.asc php.tar.xz; 		gpgconf --kill all; 		rm -rf "$GNUPGHOME"; 	fi; 		apk del --no-network .fetch-deps
-# Thu, 26 Sep 2019 23:23:46 GMT
+# Thu, 24 Oct 2019 09:53:19 GMT
 COPY file:ce57c04b70896f77cc11eb2766417d8a1240fcffe5bba92179ec78c458844110 in /usr/local/bin/ 
-# Sat, 05 Oct 2019 00:33:12 GMT
+# Thu, 24 Oct 2019 09:59:01 GMT
 RUN set -eux; 	apk add --no-cache --virtual .build-deps 		$PHPIZE_DEPS 		argon2-dev 		coreutils 		curl-dev 		libedit-dev 		libsodium-dev 		libxml2-dev 		openssl-dev 		sqlite-dev 	; 		export CFLAGS="$PHP_CFLAGS" 		CPPFLAGS="$PHP_CPPFLAGS" 		LDFLAGS="$PHP_LDFLAGS" 	; 	docker-php-source extract; 	cd /usr/src/php; 	gnuArch="$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)"; 	./configure 		--build="$gnuArch" 		--with-config-file-path="$PHP_INI_DIR" 		--with-config-file-scan-dir="$PHP_INI_DIR/conf.d" 				--enable-option-checking=fatal 				--with-mhash 				--enable-ftp 		--enable-mbstring 		--enable-mysqlnd 		--with-password-argon2 		--with-sodium=shared 		--with-pdo-sqlite=/usr 		--with-sqlite3=/usr 				--with-curl 		--with-libedit 		--with-openssl 		--with-zlib 				$(test "$gnuArch" = 's390x-linux-musl' && echo '--without-pcre-jit') 				${PHP_EXTRA_CONFIGURE_ARGS:-} 	; 	make -j "$(nproc)"; 	find -type f -name '*.a' -delete; 	make install; 	find /usr/local/bin /usr/local/sbin -type f -perm +0111 -exec strip --strip-all '{}' + || true; 	make clean; 		cp -v php.ini-* "$PHP_INI_DIR/"; 		cd /; 	docker-php-source delete; 		runDeps="$( 		scanelf --needed --nobanner --format '%n#p' --recursive /usr/local 			| tr ',' '\n' 			| sort -u 			| awk 'system("[ -e /usr/local/lib/" $1 " ]") == 0 { next } { print "so:" $1 }' 	)"; 	apk add --no-cache $runDeps; 		apk del --no-network .build-deps; 		pecl update-channels; 	rm -rf /tmp/pear ~/.pearrc; 	php --version
-# Sat, 05 Oct 2019 00:33:12 GMT
+# Thu, 24 Oct 2019 09:59:01 GMT
 COPY multi:287fef6856464a54cd9ef266c5fea3bd820d4cf2e2666723e9d9ddd1afc6db67 in /usr/local/bin/ 
-# Sat, 05 Oct 2019 00:33:13 GMT
+# Thu, 24 Oct 2019 09:59:02 GMT
 RUN docker-php-ext-enable sodium
-# Sat, 05 Oct 2019 00:33:13 GMT
+# Thu, 24 Oct 2019 09:59:03 GMT
 ENTRYPOINT ["docker-php-entrypoint"]
-# Sat, 05 Oct 2019 00:33:13 GMT
+# Thu, 24 Oct 2019 09:59:03 GMT
 CMD ["php" "-a"]
 ```
 
@@ -477,25 +477,25 @@ CMD ["php" "-a"]
 		Last Modified: Fri, 28 Jun 2019 07:24:18 GMT  
 		Size: 228.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:fea97e8375d5b6334442169f9acd6049a5e0c2f600365aaa2754cc5a77880e46`  
-		Last Modified: Fri, 27 Sep 2019 02:03:54 GMT  
-		Size: 12.1 MB (12106390 bytes)  
+	-	`sha256:8f3b00b1a9fa687ae93b86838d2aa5b71eb928de70fa7391f5ecce755f19976c`  
+		Last Modified: Thu, 24 Oct 2019 12:45:02 GMT  
+		Size: 12.1 MB (12106389 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:1f4defecc830a7f523cd5d4de3deebc5dcb3b19054986339512f47f0f7ecf00a`  
-		Last Modified: Fri, 27 Sep 2019 02:03:52 GMT  
+	-	`sha256:57107e03dca945c994e3e64b801915126a228ea7f353557081df158348459cba`  
+		Last Modified: Thu, 24 Oct 2019 12:45:01 GMT  
 		Size: 498.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:4ebb2a1bc68e80c186ba444d9b670ed98592d1aabd1f43f95c31dadf193a797c`  
-		Last Modified: Sat, 05 Oct 2019 04:59:29 GMT  
-		Size: 17.5 MB (17544727 bytes)  
+	-	`sha256:e9460950fa6ab33851efe0351a249ec21ac8da997531e6afe888456f8217b21e`  
+		Last Modified: Thu, 24 Oct 2019 12:45:07 GMT  
+		Size: 17.7 MB (17659506 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:f196fbc2f84f2b04a1fe224e4326369a3e564755ffd6fff5e45cbd12a639a5f0`  
-		Last Modified: Sat, 05 Oct 2019 04:59:22 GMT  
-		Size: 2.2 KB (2203 bytes)  
+	-	`sha256:434f9963553f637d1669e245b483f0d3922449b633a19e693005697f6dc6f0cc`  
+		Last Modified: Thu, 24 Oct 2019 12:45:01 GMT  
+		Size: 2.2 KB (2199 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:576bc46eac73babdc5c2b73c0d35b94c811dbec735ad6ae12fb5316d1324f6ae`  
-		Last Modified: Sat, 05 Oct 2019 04:59:23 GMT  
-		Size: 71.5 KB (71534 bytes)  
+	-	`sha256:50aac920dbdc0d3c254a3e30dbe535d28a70d0f71ba19911a6c07b48c8d4951b`  
+		Last Modified: Thu, 24 Oct 2019 12:45:02 GMT  
+		Size: 71.5 KB (71526 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `php:cli-alpine3.9` - linux; ppc64le
