@@ -2,9 +2,9 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:a64c089fa3685a022938567dc268e29eb8695b4e992d13840fa6b39ad77fc67b`
-- Created: `2019-09-13T21:20:25.477547747Z`
-- Virtual Size: ~ 134.25 Mb  
+- Image ID: `sha256:1620ecf619634d5bace002ba54e715b18eb2ebf5ece18912feceafe6198fec7a`
+- Created: `2019-10-21T22:25:17.319117956Z`
+- Virtual Size: ~ 134.22 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["docker-entrypoint.sh"]`
@@ -170,16 +170,16 @@ BSD-3-Clause OR GPL-2.0-only
 ### `apk` package: `libcrypto1.1`
 
 ```console
-libcrypto1.1-1.1.1c-r0 description:
+libcrypto1.1-1.1.1d-r0 description:
 Crypto library from openssl
 
-libcrypto1.1-1.1.1c-r0 webpage:
+libcrypto1.1-1.1.1d-r0 webpage:
 https://www.openssl.org
 
-libcrypto1.1-1.1.1c-r0 installed size:
-2760704
+libcrypto1.1-1.1.1d-r0 installed size:
+2736128
 
-libcrypto1.1-1.1.1c-r0 license:
+libcrypto1.1-1.1.1d-r0 license:
 OpenSSL
 
 ```
@@ -187,16 +187,16 @@ OpenSSL
 ### `apk` package: `libssl1.1`
 
 ```console
-libssl1.1-1.1.1c-r0 description:
+libssl1.1-1.1.1d-r0 description:
 SSL shared libraries
 
-libssl1.1-1.1.1c-r0 webpage:
+libssl1.1-1.1.1d-r0 webpage:
 https://www.openssl.org
 
-libssl1.1-1.1.1c-r0 installed size:
-536576
+libssl1.1-1.1.1d-r0 installed size:
+532480
 
-libssl1.1-1.1.1c-r0 license:
+libssl1.1-1.1.1d-r0 license:
 OpenSSL
 
 ```
@@ -306,16 +306,16 @@ MIT
 ### `apk` package: `tzdata`
 
 ```console
-tzdata-2019b-r0 description:
+tzdata-2019c-r0 description:
 Timezone data
 
-tzdata-2019b-r0 webpage:
+tzdata-2019c-r0 webpage:
 https://www.iana.org/time-zones
 
-tzdata-2019b-r0 installed size:
+tzdata-2019c-r0 installed size:
 3538944
 
-tzdata-2019b-r0 license:
+tzdata-2019c-r0 license:
 Public-Domain
 
 ```
