@@ -2,9 +2,9 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:cef3c8b4bfa5fd8b9f40508dee9ad538b38e33a47d743ce4a7d1c1c54e42139c`
-- Created: `2019-10-04T00:30:29.60146555Z`
-- Virtual Size: ~ 75.99 Mb  
+- Image ID: `sha256:5b681acb1cfc3ed5e7c1757c857a3155c70e28be9965347335b38235e2b32f13`
+- Created: `2019-10-21T19:22:06.326993143Z`
+- Virtual Size: ~ 72.78 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["docker-entrypoint.sh"]`
@@ -209,16 +209,16 @@ GPL LGPL
 ### `apk` package: `libgcrypt`
 
 ```console
-libgcrypt-1.8.4-r2 description:
+libgcrypt-1.8.5-r0 description:
 general purpose crypto library based on the code used in GnuPG
 
-libgcrypt-1.8.4-r2 webpage:
-http://www.gnupg.org
+libgcrypt-1.8.5-r0 webpage:
+https://www.gnupg.org/
 
-libgcrypt-1.8.4-r2 installed size:
-1142784
+libgcrypt-1.8.5-r0 installed size:
+1146880
 
-libgcrypt-1.8.4-r2 license:
+libgcrypt-1.8.5-r0 license:
 LGPL-2.1-or-later
 
 ```
@@ -498,16 +498,16 @@ MIT
 ### `apk` package: `tzdata`
 
 ```console
-tzdata-2019b-r0 description:
+tzdata-2019c-r0 description:
 Timezone data
 
-tzdata-2019b-r0 webpage:
+tzdata-2019c-r0 webpage:
 https://www.iana.org/time-zones
 
-tzdata-2019b-r0 installed size:
+tzdata-2019c-r0 installed size:
 3538944
 
-tzdata-2019b-r0 license:
+tzdata-2019c-r0 license:
 Public-Domain
 
 ```
