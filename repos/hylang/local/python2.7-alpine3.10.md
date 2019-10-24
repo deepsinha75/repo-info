@@ -2,9 +2,9 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:47cb41fea035413f49509590cd5e265f1d77603eb8cbe8ea17b8e3a3d0609b46`
-- Created: `2019-10-19T08:51:44.382381223Z`
-- Virtual Size: ~ 69.40 Mb  
+- Image ID: `sha256:b73dbeb518cb42d2c052a8d961739cf1c355c425be73f957b83ff877ceca0b89`
+- Created: `2019-10-21T23:24:57.050222865Z`
+- Virtual Size: ~ 69.38 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Command: `["hy"]`
@@ -126,16 +126,16 @@ MPL-2.0 GPL-2.0-or-later
 ### `apk` package: `expat`
 
 ```console
-expat-2.2.7-r0 description:
+expat-2.2.8-r0 description:
 An XML Parser library written in C
 
-expat-2.2.7-r0 webpage:
+expat-2.2.8-r0 webpage:
 http://www.libexpat.org/
 
-expat-2.2.7-r0 installed size:
+expat-2.2.8-r0 installed size:
 184320
 
-expat-2.2.7-r0 license:
+expat-2.2.8-r0 license:
 MIT
 
 ```
@@ -245,16 +245,16 @@ BSD
 ### `apk` package: `libcom_err`
 
 ```console
-libcom_err-1.45.2-r0 description:
+libcom_err-1.45.2-r1 description:
 Common error description library
 
-libcom_err-1.45.2-r0 webpage:
+libcom_err-1.45.2-r1 webpage:
 http://e2fsprogs.sourceforge.net
 
-libcom_err-1.45.2-r0 installed size:
+libcom_err-1.45.2-r1 installed size:
 24576
 
-libcom_err-1.45.2-r0 license:
+libcom_err-1.45.2-r1 license:
 GPL-2.0-or-later AND LGPL-2.0-or-later AND BSD-3-Clause AND MIT
 
 ```
@@ -262,16 +262,16 @@ GPL-2.0-or-later AND LGPL-2.0-or-later AND BSD-3-Clause AND MIT
 ### `apk` package: `libcrypto1.1`
 
 ```console
-libcrypto1.1-1.1.1c-r0 description:
+libcrypto1.1-1.1.1d-r0 description:
 Crypto library from openssl
 
-libcrypto1.1-1.1.1c-r0 webpage:
+libcrypto1.1-1.1.1d-r0 webpage:
 https://www.openssl.org
 
-libcrypto1.1-1.1.1c-r0 installed size:
-2760704
+libcrypto1.1-1.1.1d-r0 installed size:
+2736128
 
-libcrypto1.1-1.1.1c-r0 license:
+libcrypto1.1-1.1.1d-r0 license:
 OpenSSL
 
 ```
@@ -330,16 +330,16 @@ LGPL-2.0-or-later
 ### `apk` package: `libssl1.1`
 
 ```console
-libssl1.1-1.1.1c-r0 description:
+libssl1.1-1.1.1d-r0 description:
 SSL shared libraries
 
-libssl1.1-1.1.1c-r0 webpage:
+libssl1.1-1.1.1d-r0 webpage:
 https://www.openssl.org
 
-libssl1.1-1.1.1c-r0 installed size:
-536576
+libssl1.1-1.1.1d-r0 installed size:
+532480
 
-libssl1.1-1.1.1c-r0 license:
+libssl1.1-1.1.1d-r0 license:
 OpenSSL
 
 ```
@@ -517,16 +517,16 @@ GPL-2.0
 ### `apk` package: `sqlite-libs`
 
 ```console
-sqlite-libs-3.28.0-r0 description:
+sqlite-libs-3.28.0-r1 description:
 Sqlite3 library
 
-sqlite-libs-3.28.0-r0 webpage:
+sqlite-libs-3.28.0-r1 webpage:
 https://www.sqlite.org/
 
-sqlite-libs-3.28.0-r0 installed size:
+sqlite-libs-3.28.0-r1 installed size:
 925696
 
-sqlite-libs-3.28.0-r0 license:
+sqlite-libs-3.28.0-r1 license:
 Public-Domain
 
 ```

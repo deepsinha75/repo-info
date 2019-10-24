@@ -2,9 +2,9 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:b5c75fe652f96eb6ce2ee93fa16f26a357e86b9088ada05f1c014acb86cd9f1c`
-- Created: `2019-10-19T08:51:08.739210946Z`
-- Virtual Size: ~ 95.88 Mb  
+- Image ID: `sha256:f1758348f331e44609a5b60a600a304324152764bc65970917060da3866470aa`
+- Created: `2019-10-21T23:24:37.498236633Z`
+- Virtual Size: ~ 95.93 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Command: `["hy"]`
@@ -125,16 +125,16 @@ MPL-2.0 GPL-2.0-or-later
 ### `apk` package: `expat`
 
 ```console
-expat-2.2.7-r0 description:
+expat-2.2.8-r0 description:
 An XML Parser library written in C
 
-expat-2.2.7-r0 webpage:
+expat-2.2.8-r0 webpage:
 http://www.libexpat.org/
 
-expat-2.2.7-r0 installed size:
+expat-2.2.8-r0 installed size:
 184320
 
-expat-2.2.7-r0 license:
+expat-2.2.8-r0 license:
 MIT
 
 ```
@@ -193,16 +193,16 @@ BSD
 ### `apk` package: `libcrypto1.1`
 
 ```console
-libcrypto1.1-1.1.1c-r0 description:
+libcrypto1.1-1.1.1d-r0 description:
 Crypto library from openssl
 
-libcrypto1.1-1.1.1c-r0 webpage:
+libcrypto1.1-1.1.1d-r0 webpage:
 https://www.openssl.org
 
-libcrypto1.1-1.1.1c-r0 installed size:
-2760704
+libcrypto1.1-1.1.1d-r0 installed size:
+2736128
 
-libcrypto1.1-1.1.1c-r0 license:
+libcrypto1.1-1.1.1d-r0 license:
 OpenSSL
 
 ```
@@ -227,16 +227,16 @@ MIT
 ### `apk` package: `libssl1.1`
 
 ```console
-libssl1.1-1.1.1c-r0 description:
+libssl1.1-1.1.1d-r0 description:
 SSL shared libraries
 
-libssl1.1-1.1.1c-r0 webpage:
+libssl1.1-1.1.1d-r0 webpage:
 https://www.openssl.org
 
-libssl1.1-1.1.1c-r0 installed size:
-536576
+libssl1.1-1.1.1d-r0 installed size:
+532480
 
-libssl1.1-1.1.1c-r0 license:
+libssl1.1-1.1.1d-r0 license:
 OpenSSL
 
 ```
@@ -380,16 +380,16 @@ GPL-2.0
 ### `apk` package: `sqlite-libs`
 
 ```console
-sqlite-libs-3.28.0-r0 description:
+sqlite-libs-3.28.0-r1 description:
 Sqlite3 library
 
-sqlite-libs-3.28.0-r0 webpage:
+sqlite-libs-3.28.0-r1 webpage:
 https://www.sqlite.org/
 
-sqlite-libs-3.28.0-r0 installed size:
+sqlite-libs-3.28.0-r1 installed size:
 925696
 
-sqlite-libs-3.28.0-r0 license:
+sqlite-libs-3.28.0-r1 license:
 Public-Domain
 
 ```
