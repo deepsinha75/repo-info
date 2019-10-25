@@ -3042,14 +3042,9 @@ Binary Packages:
 If source is available (seen below), check the contents of `debian/copyright` within it.
 
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris libxslt=1.1.29-5ubuntu0.1
-'http://archive.ubuntu.com/ubuntu/pool/main/libx/libxslt/libxslt_1.1.29-5ubuntu0.1.dsc' libxslt_1.1.29-5ubuntu0.1.dsc 2502 SHA256:571281e974f7cdf0d27174b4354d9ce462e3537acc98ccea6cf719d279566469
-'http://archive.ubuntu.com/ubuntu/pool/main/libx/libxslt/libxslt_1.1.29.orig.tar.gz' libxslt_1.1.29.orig.tar.gz 3428524 SHA256:b5976e3857837e7617b29f2249ebb5eeac34e249208d31f1fbf7a6ba7a4090ce
-'http://archive.ubuntu.com/ubuntu/pool/main/libx/libxslt/libxslt_1.1.29-5ubuntu0.1.debian.tar.xz' libxslt_1.1.29-5ubuntu0.1.debian.tar.xz 35396 SHA256:8fc21c9c4e04f7e5773aa41972986e5b62e08fe364f1fdc5f85938d9e4d2c28e
-```
 
 ### `dpkg` source package: `libzstd=1.3.3+dfsg-2ubuntu1.1`
 
