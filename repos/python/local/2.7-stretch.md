@@ -1,10 +1,10 @@
-# `python:2.7.16-stretch`
+# `python:2.7.17-stretch`
 
 ## Docker Metadata
 
-- Image ID: `sha256:76bec2b356feb4c1d7f081d22426bcee62bcc63f8c0d9d88dfc27cd3e6fd1a17`
-- Created: `2019-10-19T00:56:16.334394392Z`
-- Virtual Size: ~ 915.01 Mb  
+- Image ID: `sha256:2bc254ad1db5e13023b0040826d7aa9140962312c021ed3a4b32dff53224742b`
+- Created: `2019-10-24T00:04:05.426573691Z`
+- Virtual Size: ~ 915.12 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Command: `["python2"]`
@@ -13,7 +13,7 @@
   - `LANG=C.UTF-8`
   - `PYTHONIOENCODING=UTF-8`
   - `GPG_KEY=C01E1CAD5EA2C4F0B8E3571504C367C218ADD4FF`
-  - `PYTHON_VERSION=2.7.16`
+  - `PYTHON_VERSION=2.7.17`
   - `PYTHON_PIP_VERSION=19.3.1`
   - `PYTHON_GET_PIP_URL=https://github.com/pypa/get-pip/raw/ffe826207a010164265d9cc807978e3604d18ca0/get-pip.py`
   - `PYTHON_GET_PIP_SHA256=b86f36cc4345ae87bfd4f10ef6b2dbfa7a872fbff70608a1e43944d283fd0eee`

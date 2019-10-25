@@ -1,10 +1,10 @@
-# `python:2.7.16-slim-stretch`
+# `python:2.7.17-slim-stretch`
 
 ## Docker Metadata
 
-- Image ID: `sha256:c83cd09cfbe7c80be37f2111f5a26a0118a11e35212b6a2a4e1e8b1759ad7302`
-- Created: `2019-10-19T00:56:34.262497323Z`
-- Virtual Size: ~ 120.57 Mb  
+- Image ID: `sha256:d2b0ba23dcf167b85b14b4d9d08344e48d8acc1c7ccdb93b859b0eca2ea1c824`
+- Created: `2019-10-24T00:06:48.659838041Z`
+- Virtual Size: ~ 120.67 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Command: `["python2"]`
@@ -13,7 +13,7 @@
   - `LANG=C.UTF-8`
   - `PYTHONIOENCODING=UTF-8`
   - `GPG_KEY=C01E1CAD5EA2C4F0B8E3571504C367C218ADD4FF`
-  - `PYTHON_VERSION=2.7.16`
+  - `PYTHON_VERSION=2.7.17`
   - `PYTHON_PIP_VERSION=19.3.1`
   - `PYTHON_GET_PIP_URL=https://github.com/pypa/get-pip/raw/ffe826207a010164265d9cc807978e3604d18ca0/get-pip.py`
   - `PYTHON_GET_PIP_SHA256=b86f36cc4345ae87bfd4f10ef6b2dbfa7a872fbff70608a1e43944d283fd0eee`
