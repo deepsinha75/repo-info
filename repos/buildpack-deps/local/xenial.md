@@ -2860,14 +2860,9 @@ Binary Packages:
 If source is available (seen below), check the contents of `debian/copyright` within it.
 
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris libxslt=1.1.28-2.1ubuntu0.2
-'http://archive.ubuntu.com/ubuntu/pool/main/libx/libxslt/libxslt_1.1.28-2.1ubuntu0.2.dsc' libxslt_1.1.28-2.1ubuntu0.2.dsc 2482 SHA256:ed0a32ca46874e0fd508e5467f1e2ed8757496a83516e6429c899cd6e917c99f
-'http://archive.ubuntu.com/ubuntu/pool/main/libx/libxslt/libxslt_1.1.28.orig.tar.gz' libxslt_1.1.28.orig.tar.gz 3435907 SHA256:5fc7151a57b89c03d7b825df5a0fae0a8d5f05674c0e7cf2937ecec4d54a028c
-'http://archive.ubuntu.com/ubuntu/pool/main/libx/libxslt/libxslt_1.1.28-2.1ubuntu0.2.debian.tar.xz' libxslt_1.1.28-2.1ubuntu0.2.debian.tar.xz 41348 SHA256:d222d08f2ad8552f8bb63b5b234f2c4683787ab3e2bd131b387cdd2ca34b1033
-```
 
 ### `dpkg` source package: `libxt=1:1.1.5-0ubuntu1`
 

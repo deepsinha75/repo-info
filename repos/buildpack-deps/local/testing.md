@@ -411,20 +411,13 @@ Licenses: (parsed from: `/usr/share/doc/libbrotli1/copyright`)
 
 - `MIT`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris brotli=1.0.7-3
-'http://deb.debian.org/debian/pool/main/b/brotli/brotli_1.0.7-3.dsc' brotli_1.0.7-3.dsc 2416 SHA256:c187e8070a3da5ab25cd112d0b50a7e17034a9b63fbbbe46d0c75e2d6dee1b10
-'http://deb.debian.org/debian/pool/main/b/brotli/brotli_1.0.7.orig.tar.gz' brotli_1.0.7.orig.tar.gz 23827908 SHA256:4c61bfb0faca87219ea587326c467b95acb25555b53d1a421ffa3c8a9296ee2c
-'http://deb.debian.org/debian/pool/main/b/brotli/brotli_1.0.7-3.debian.tar.xz' brotli_1.0.7-3.debian.tar.xz 4152 SHA256:21313a91cf56a0e4454b3ab509c42db6403c3cb418d4c9e3686c3aea5bfa046e
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/brotli/1.0.7-3/
 
-- https://sources.debian.net/src/brotli/1.0.7-3/ (for browsing the source)
-- https://sources.debian.net/src/brotli/1.0.7-3/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/brotli/1.0.7-3/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `bzip2=1.0.8-2`
 
@@ -975,21 +968,13 @@ Licenses: (parsed from: `/usr/share/doc/file/copyright`, `/usr/share/doc/libmagi
 - `MIT-Old-Style-with-legal-disclaimer-2`
 - `public-domain`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris file=1:5.37-5
-'http://deb.debian.org/debian/pool/main/f/file/file_5.37-5.dsc' file_5.37-5.dsc 2214 SHA256:dd2899078d7e497ca9d9a4f1a20f7a3ef499851e07e6e99c1ef22f59735416f1
-'http://deb.debian.org/debian/pool/main/f/file/file_5.37.orig.tar.gz' file_5.37.orig.tar.gz 887682 SHA256:e9c13967f7dd339a3c241b7710ba093560b9a33013491318e88e6b8b57bae07f
-'http://deb.debian.org/debian/pool/main/f/file/file_5.37.orig.tar.gz.asc' file_5.37.orig.tar.gz.asc 169 SHA256:f73642d84908665dad226f247ae223e6bf52da8b2ca20ca88bd4e4966eef6bc7
-'http://deb.debian.org/debian/pool/main/f/file/file_5.37-5.debian.tar.xz' file_5.37-5.debian.tar.xz 37212 SHA256:6ab5ab73da113ca3a910fd8e773d52c6d0719560193f3d64e376b23ef95dd100
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/file/1:5.37-5/
 
-- https://sources.debian.net/src/file/1:5.37-5/ (for browsing the source)
-- https://sources.debian.net/src/file/1:5.37-5/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/file/1:5.37-5/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `findutils=4.7.0-1`
 
@@ -4518,20 +4503,13 @@ Licenses: (parsed from: `/usr/share/doc/libpq-dev/copyright`, `/usr/share/doc/li
 - `nagaysau-ishii`
 - `rijndael`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris postgresql-11=11.5-2
-'http://deb.debian.org/debian/pool/main/p/postgresql-11/postgresql-11_11.5-2.dsc' postgresql-11_11.5-2.dsc 3625 SHA256:9ed3a03db0a263cd66f6838ec0148fee9a35ecaa3a0f359b0210905f7a7f7385
-'http://deb.debian.org/debian/pool/main/p/postgresql-11/postgresql-11_11.5.orig.tar.bz2' postgresql-11_11.5.orig.tar.bz2 19773087 SHA256:7fdf23060bfc715144cbf2696cf05b0fa284ad3eb21f0c378591c6bca99ad180
-'http://deb.debian.org/debian/pool/main/p/postgresql-11/postgresql-11_11.5-2.debian.tar.xz' postgresql-11_11.5-2.debian.tar.xz 25552 SHA256:ef7a61ca953371a9c42004d2c0dc09911c903b9330f10d263fc51ad295e52e01
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/postgresql-11/11.5-2/
 
-- https://sources.debian.net/src/postgresql-11/11.5-2/ (for browsing the source)
-- https://sources.debian.net/src/postgresql-11/11.5-2/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/postgresql-11/11.5-2/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `procps=2:3.3.15-2`
 
@@ -4999,20 +4977,13 @@ Licenses: (parsed from: `/usr/share/doc/sysvinit-utils/copyright`)
 - `GPL-2`
 - `GPL-2+`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris sysvinit=2.96~beta-3
-'http://deb.debian.org/debian/pool/main/s/sysvinit/sysvinit_2.96~beta-3.dsc' sysvinit_2.96~beta-3.dsc 2430 SHA256:fd97863b538929eec046e0f85e2ed9b23b9bdb2eeb798fdffa297469837f5c72
-'http://deb.debian.org/debian/pool/main/s/sysvinit/sysvinit_2.96~beta.orig.tar.xz' sysvinit_2.96~beta.orig.tar.xz 122212 SHA256:56493d8796808ce97f8a0409886b71359b8af6262412af01703c3721e27245c5
-'http://deb.debian.org/debian/pool/main/s/sysvinit/sysvinit_2.96~beta-3.debian.tar.xz' sysvinit_2.96~beta-3.debian.tar.xz 128552 SHA256:94d47066a707937c0fb5d79eb1ca9e5833d3146395e46e87320040c1f9ebd5c3
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/sysvinit/2.96~beta-3/
 
-- https://sources.debian.net/src/sysvinit/2.96~beta-3/ (for browsing the source)
-- https://sources.debian.net/src/sysvinit/2.96~beta-3/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/sysvinit/2.96~beta-3/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `tar=1.30+dfsg-6`
 
