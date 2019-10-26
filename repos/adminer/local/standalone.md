@@ -2,9 +2,9 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:232c891bc58f66c394fefd35bf8afa6b6091334b47cbb8e8cfa6b3a7c48edd4c`
-- Created: `2019-10-22T23:19:24.102530687Z`
-- Virtual Size: ~ 80.74 Mb  
+- Image ID: `sha256:3b6cdeaf177c8e1032eddc1c09f5c19a76eee10c9831c600199ea434343f552e`
+- Created: `2019-10-25T08:12:04.235592468Z`
+- Virtual Size: ~ 80.75 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["entrypoint.sh","docker-php-entrypoint"]`
@@ -13,14 +13,14 @@
   - `PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
   - `PHPIZE_DEPS=autoconf 		dpkg-dev dpkg 		file 		g++ 		gcc 		libc-dev 		make 		pkgconf 		re2c`
   - `PHP_INI_DIR=/usr/local/etc/php`
-  - `PHP_CFLAGS=-fstack-protector-strong -fpic -fpie -O2`
-  - `PHP_CPPFLAGS=-fstack-protector-strong -fpic -fpie -O2`
+  - `PHP_CFLAGS=-fstack-protector-strong -fpic -fpie -O2 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64`
+  - `PHP_CPPFLAGS=-fstack-protector-strong -fpic -fpie -O2 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64`
   - `PHP_LDFLAGS=-Wl,-O1 -Wl,--hash-style=both -pie`
   - `GPG_KEYS=CBAF69F173A0FEA4B537F470D66C9593118BCCB6 F38252826ACD957EF380D39F2F7956BC5DA04B5D`
-  - `PHP_VERSION=7.3.10`
-  - `PHP_URL=https://www.php.net/get/php-7.3.10.tar.xz/from/this/mirror`
-  - `PHP_ASC_URL=https://www.php.net/get/php-7.3.10.tar.xz.asc/from/this/mirror`
-  - `PHP_SHA256=42f00a15419e05771734b7159c8d39d639b8a5a6770413adfa2615f6f923d906`
+  - `PHP_VERSION=7.3.11`
+  - `PHP_URL=https://www.php.net/get/php-7.3.11.tar.xz/from/this/mirror`
+  - `PHP_ASC_URL=https://www.php.net/get/php-7.3.11.tar.xz.asc/from/this/mirror`
+  - `PHP_SHA256=657cf6464bac28e9490c59c07a2cf7bb76c200f09cfadf6e44ea64e95fa01021`
   - `PHP_MD5=`
   - `ADMINER_VERSION=4.7.4`
   - `ADMINER_DOWNLOAD_SHA256=b8c4e0c6f7dfd9b7a7421be17ec5d6b1259e180d5ff4b79645621ce1d5575e66`
