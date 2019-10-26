@@ -1,17 +1,17 @@
-# `kong:1.3.0-centos`
+# `kong:1.4.0-centos`
 
 ## Docker Metadata
 
-- Image ID: `sha256:c433144eb322c32b27155d8b6af868f73b99ac2286afc31449206604daab51d6`
-- Created: `2019-08-22T00:48:45.05118347Z`
-- Virtual Size: ~ 393.46 Mb  
+- Image ID: `sha256:e693211eee92e7921a6dd1747f5f77c7c4833ac568dcbbf53a7f2e0e94a661ec`
+- Created: `2019-10-23T20:29:16.64670485Z`
+- Virtual Size: ~ 419.45 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["/docker-entrypoint.sh"]`
 - Command: `["kong","docker-start"]`
 - Environment:
   - `PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
-  - `KONG_VERSION=1.3.0`
+  - `KONG_VERSION=1.4.0`
 - Labels:
   - `maintainer=Kong Core Team <team-core@konghq.com>`
   - `org.label-schema.build-date=20190801`
@@ -432,17 +432,33 @@ Licenses (from `rpm --query`): LGPLv2+
 
 **WARNING:** unable to find source (`yumdownloader` failed or returned no results)!
 
-### `rpm` package: `glibc-2.17-260.el7_6.6.x86_64`
+### `rpm` package: `glibc-2.17-292.el7.x86_64`
 
 Licenses (from `rpm --query`): LGPLv2+ and LGPLv2+ with exceptions and GPLv2+
 
-**WARNING:** unable to find source (`yumdownloader` failed or returned no results)!
+Source:
 
-### `rpm` package: `glibc-common-2.17-260.el7_6.6.x86_64`
+```console
+$ yumdownloader --quiet --source --urls glibc-2.17-292.el7
+Enabling updates-source repository
+Enabling base-source repository
+Enabling extras-source repository
+http://vault.centos.org/centos/7/os/Source//SPackages/glibc-2.17-292.el7.src.rpm
+```
+
+### `rpm` package: `glibc-common-2.17-292.el7.x86_64`
 
 Licenses (from `rpm --query`): LGPLv2+ and LGPLv2+ with exceptions and GPLv2+
 
-**WARNING:** unable to find source (`yumdownloader` failed or returned no results)!
+Source:
+
+```console
+$ yumdownloader --quiet --source --urls glibc-common-2.17-292.el7
+Enabling updates-source repository
+Enabling base-source repository
+Enabling extras-source repository
+http://vault.centos.org/centos/7/os/Source//SPackages/glibc-2.17-292.el7.src.rpm
+```
 
 ### `rpm` package: `gmp-6.0.0-15.el7.x86_64`
 
@@ -652,7 +668,7 @@ Licenses (from `rpm --query`): LGPLv2+
 
 **WARNING:** unable to find source (`yumdownloader` failed or returned no results)!
 
-### `rpm` package: `kong-1.3.0-1.x86_64`
+### `rpm` package: `kong-1.4.0-1.x86_64`
 
 Licenses (from `rpm --query`): ASL 2.0
 
@@ -800,11 +816,19 @@ Enabling extras-source repository
 http://vault.centos.org/centos/7/os/Source//SPackages/libffi-3.0.13-18.el7.src.rpm
 ```
 
-### `rpm` package: `libgcc-4.8.5-36.el7_6.2.x86_64`
+### `rpm` package: `libgcc-4.8.5-39.el7.x86_64`
 
 Licenses (from `rpm --query`): GPLv3+ and GPLv3+ with exceptions and GPLv2+ with exceptions and LGPLv2+ and BSD
 
-**WARNING:** unable to find source (`yumdownloader` failed or returned no results)!
+Source:
+
+```console
+$ yumdownloader --quiet --source --urls libgcc-4.8.5-39.el7
+Enabling updates-source repository
+Enabling base-source repository
+Enabling extras-source repository
+http://vault.centos.org/centos/7/os/Source//SPackages/gcc-4.8.5-39.el7.src.rpm
+```
 
 ### `rpm` package: `libgcrypt-1.5.3-14.el7.x86_64`
 
@@ -1996,18 +2020,18 @@ Enabling extras-source repository
 http://vault.centos.org/centos/7/os/Source//SPackages/tzdata-2019b-1.el7.src.rpm
 ```
 
-### `rpm` package: `unzip-6.0-19.el7.x86_64`
+### `rpm` package: `unzip-6.0-20.el7.x86_64`
 
 Licenses (from `rpm --query`): BSD
 
 Source:
 
 ```console
-$ yumdownloader --quiet --source --urls unzip-6.0-19.el7
+$ yumdownloader --quiet --source --urls unzip-6.0-20.el7
 Enabling updates-source repository
 Enabling base-source repository
 Enabling extras-source repository
-http://vault.centos.org/centos/7/os/Source//SPackages/unzip-6.0-19.el7.src.rpm
+http://vault.centos.org/centos/7/os/Source//SPackages/unzip-6.0-20.el7.src.rpm
 ```
 
 ### `rpm` package: `ustr-1.0.4-16.el7.x86_64`
