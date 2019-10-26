@@ -1,18 +1,18 @@
-# `node:10.16.3-buster`
+# `node:10.17.0-buster`
 
 ## Docker Metadata
 
-- Image ID: `sha256:f33661c4fad807751425528ca1199aa45fe6395e54aad25c62e344e07a8787da`
-- Created: `2019-10-18T01:46:52.882472605Z`
-- Virtual Size: ~ 871.47 Mb  
+- Image ID: `sha256:d71f0dc8e93bafe62c23dd232f3a9b5eb72dbd4443401dd83e7c537d4834b671`
+- Created: `2019-10-23T23:42:06.79504704Z`
+- Virtual Size: ~ 871.30 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["docker-entrypoint.sh"]`
 - Command: `["node"]`
 - Environment:
   - `PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
-  - `NODE_VERSION=10.16.3`
-  - `YARN_VERSION=1.17.3`
+  - `NODE_VERSION=10.17.0`
+  - `YARN_VERSION=1.19.1`
 
 ## `dpkg` (`.deb`-based packages)
 

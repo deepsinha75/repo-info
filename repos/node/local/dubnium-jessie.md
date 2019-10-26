@@ -1,18 +1,18 @@
-# `node:10.16.3-jessie`
+# `node:10.17.0-jessie`
 
 ## Docker Metadata
 
-- Image ID: `sha256:6d56aa91a3dbbaca7203b0a48ed65d1b455a8ff6bdfcf811fbb7fe57410cadaa`
-- Created: `2019-10-18T01:46:15.522356826Z`
-- Virtual Size: ~ 683.52 Mb  
+- Image ID: `sha256:613b5f0a7cf7dc5b21667151eac164db855a12e76ed5d967a253f237e9fdf7e3`
+- Created: `2019-10-23T23:11:40.222127393Z`
+- Virtual Size: ~ 683.35 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["docker-entrypoint.sh"]`
 - Command: `["node"]`
 - Environment:
   - `PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
-  - `NODE_VERSION=10.16.3`
-  - `YARN_VERSION=1.17.3`
+  - `NODE_VERSION=10.17.0`
+  - `YARN_VERSION=1.19.1`
 
 ## `dpkg` (`.deb`-based packages)
 
@@ -1042,20 +1042,13 @@ Licenses: (parsed from: `/usr/share/doc/file/copyright`, `/usr/share/doc/libmagi
 - `MIT-Old-Style-with-legal-disclaimer-2`
 - `public-domain`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris file=1:5.22+15-2+deb8u5
-'http://security.debian.org/debian-security/pool/updates/main/f/file/file_5.22+15-2+deb8u5.dsc' file_5.22+15-2+deb8u5.dsc 2096 SHA256:44d89fc615bd814d54d78cc270b6392d450d20925c48d6dc02718d102701070a
-'http://security.debian.org/debian-security/pool/updates/main/f/file/file_5.22+15.orig.tar.xz' file_5.22+15.orig.tar.xz 569332 SHA256:c021e9f73b3eb3b6cc2532c5d9a77af1a92902935013c2740ba3fef83f1804d2
-'http://security.debian.org/debian-security/pool/updates/main/f/file/file_5.22+15-2+deb8u5.debian.tar.xz' file_5.22+15-2+deb8u5.debian.tar.xz 31984 SHA256:e5bf051d897cf9e49622c5fa350b700c22cc424d5e2579722261563f80c41e5d
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/file/1:5.22+15-2+deb8u5/
 
-- https://sources.debian.net/src/file/1:5.22+15-2+deb8u5/ (for browsing the source)
-- https://sources.debian.net/src/file/1:5.22+15-2+deb8u5/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/file/1:5.22+15-2+deb8u5/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `findutils=4.4.2-9`
 
