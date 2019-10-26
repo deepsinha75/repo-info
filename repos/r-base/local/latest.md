@@ -296,20 +296,13 @@ Licenses: (parsed from: `/usr/share/doc/libbrotli1/copyright`)
 
 - `MIT`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris brotli=1.0.7-3
-'http://deb.debian.org/debian/pool/main/b/brotli/brotli_1.0.7-3.dsc' brotli_1.0.7-3.dsc 2416 SHA256:c187e8070a3da5ab25cd112d0b50a7e17034a9b63fbbbe46d0c75e2d6dee1b10
-'http://deb.debian.org/debian/pool/main/b/brotli/brotli_1.0.7.orig.tar.gz' brotli_1.0.7.orig.tar.gz 23827908 SHA256:4c61bfb0faca87219ea587326c467b95acb25555b53d1a421ffa3c8a9296ee2c
-'http://deb.debian.org/debian/pool/main/b/brotli/brotli_1.0.7-3.debian.tar.xz' brotli_1.0.7-3.debian.tar.xz 4152 SHA256:21313a91cf56a0e4454b3ab509c42db6403c3cb418d4c9e3686c3aea5bfa046e
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/brotli/1.0.7-3/
 
-- https://sources.debian.net/src/brotli/1.0.7-3/ (for browsing the source)
-- https://sources.debian.net/src/brotli/1.0.7-3/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/brotli/1.0.7-3/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `build-essential=12.8`
 
@@ -3350,21 +3343,13 @@ Licenses: (parsed from: `/usr/share/doc/libperl5.30/copyright`, `/usr/share/doc/
 - `Unicode`
 - `ZLIB`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris perl=5.30.0-7
-'http://deb.debian.org/debian/pool/main/p/perl/perl_5.30.0-7.dsc' perl_5.30.0-7.dsc 2983 SHA256:157e87f098fda6b1a275bc017ee68b307480fc30b8bc0b857ddce75f8baf5d27
-'http://deb.debian.org/debian/pool/main/p/perl/perl_5.30.0.orig-regen-configure.tar.gz' perl_5.30.0.orig-regen-configure.tar.gz 833235 SHA256:fc55a7309f9e2c404119b005774fc85a8488bad047aee611d17bbe2d608bf4de
-'http://deb.debian.org/debian/pool/main/p/perl/perl_5.30.0.orig.tar.xz' perl_5.30.0.orig.tar.xz 12419868 SHA256:ac501cad4af904d33370a9ea39dbb7a8ad4cb19bc7bc8a9c17d8dc3e81ef6306
-'http://deb.debian.org/debian/pool/main/p/perl/perl_5.30.0-7.debian.tar.xz' perl_5.30.0-7.debian.tar.xz 161336 SHA256:e48e075cb8a7394aa00ce8c94ff024658fcfc50e43e9cb3aecf466125b74260e
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/perl/5.30.0-7/
 
-- https://sources.debian.net/src/perl/5.30.0-7/ (for browsing the source)
-- https://sources.debian.net/src/perl/5.30.0-7/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/perl/5.30.0-7/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `pixman=0.36.0-1`
 
@@ -3808,20 +3793,13 @@ Licenses: (parsed from: `/usr/share/doc/sysvinit-utils/copyright`)
 - `GPL-2`
 - `GPL-2+`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris sysvinit=2.96~beta-3
-'http://deb.debian.org/debian/pool/main/s/sysvinit/sysvinit_2.96~beta-3.dsc' sysvinit_2.96~beta-3.dsc 2430 SHA256:fd97863b538929eec046e0f85e2ed9b23b9bdb2eeb798fdffa297469837f5c72
-'http://deb.debian.org/debian/pool/main/s/sysvinit/sysvinit_2.96~beta.orig.tar.xz' sysvinit_2.96~beta.orig.tar.xz 122212 SHA256:56493d8796808ce97f8a0409886b71359b8af6262412af01703c3721e27245c5
-'http://deb.debian.org/debian/pool/main/s/sysvinit/sysvinit_2.96~beta-3.debian.tar.xz' sysvinit_2.96~beta-3.debian.tar.xz 128552 SHA256:94d47066a707937c0fb5d79eb1ca9e5833d3146395e46e87320040c1f9ebd5c3
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/sysvinit/2.96~beta-3/
 
-- https://sources.debian.net/src/sysvinit/2.96~beta-3/ (for browsing the source)
-- https://sources.debian.net/src/sysvinit/2.96~beta-3/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/sysvinit/2.96~beta-3/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `tar=1.30+dfsg-6`
 
