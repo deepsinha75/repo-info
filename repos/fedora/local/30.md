@@ -1135,16 +1135,7 @@ https://d2lzkl7pfhq30w.cloudfront.net/pub/fedora/linux/releases/30/Everything/so
 
 Licenses (from `rpm --query`): MIT
 
-Source:
-
-```console
-$ yumdownloader --quiet --source --urls libmodulemd1-1.8.15-3.fc30.1
-Enabling fedora-modular-source repository
-Enabling updates-source repository
-Enabling updates-modular-source repository
-Enabling fedora-source repository
-https://d2lzkl7pfhq30w.cloudfront.net/pub/fedora/linux/updates/30/Everything/SRPMS//Packages/l/libmodulemd1-1.8.15-3.fc30.1.src.rpm
-```
+**WARNING:** unable to find source (`yumdownloader` failed or returned no results)!
 
 ### `rpm` package: `libmount-2.33.2-2.fc30.x86_64`
 
@@ -1351,16 +1342,7 @@ https://d2lzkl7pfhq30w.cloudfront.net/pub/fedora/linux/updates/30/Everything/SRP
 
 Licenses (from `rpm --query`): BSD
 
-Source:
-
-```console
-$ yumdownloader --quiet --source --urls libsolv-0.7.5-1.fc30
-Enabling fedora-modular-source repository
-Enabling updates-source repository
-Enabling updates-modular-source repository
-Enabling fedora-source repository
-https://d2lzkl7pfhq30w.cloudfront.net/pub/fedora/linux/updates/30/Everything/SRPMS//Packages/l/libsolv-0.7.5-1.fc30.src.rpm
-```
+**WARNING:** unable to find source (`yumdownloader` failed or returned no results)!
 
 ### `rpm` package: `libssh-0.9.0-5.fc30.x86_64`
 
