@@ -3,6 +3,8 @@
 # Tags of `rakudo-star`
 
 -	[`rakudo-star:2019.03`](#rakudo-star201903)
+-	[`rakudo-star:2019.03-alpine`](#rakudo-star201903-alpine)
+-	[`rakudo-star:alpine`](#rakudo-staralpine)
 -	[`rakudo-star:latest`](#rakudo-starlatest)
 
 ## `rakudo-star:2019.03`
@@ -147,6 +149,14 @@ CMD ["perl6"]
 		Last Modified: Thu, 17 Oct 2019 22:10:16 GMT  
 		Size: 27.3 MB (27318875 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+
+## `rakudo-star:2019.03-alpine`
+
+**does not exist** (yet?)
+
+## `rakudo-star:alpine`
+
+**does not exist** (yet?)
 
 ## `rakudo-star:latest`
 
