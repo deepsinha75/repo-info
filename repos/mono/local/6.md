@@ -1482,14 +1482,9 @@ Binary Packages:
 If source is available (seen below), check the contents of `debian/copyright` within it.
 
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris libgdiplus=6.0.2-0xamarin1+debian9b1
-'http://download.mono-project.com/repo/debian/pool/main/libg/libgdiplus/libgdiplus_6.0.2-0xamarin1+debian9b1.dsc' libgdiplus_6.0.2-0xamarin1+debian9b1.dsc 1625 SHA256:228053b3adfed4de34610226432a2c8156b825427435338a1a9152ef95ae539e
-'http://download.mono-project.com/repo/debian/pool/main/libg/libgdiplus/libgdiplus_6.0.2.orig.tar.gz' libgdiplus_6.0.2.orig.tar.gz 1377140 SHA256:716cf8fbbca6963022d5f1510b58a44cf8f40380cf6f7433d68c3db651f6f904
-'http://download.mono-project.com/repo/debian/pool/main/libg/libgdiplus/libgdiplus_6.0.2-0xamarin1+debian9b1.debian.tar.xz' libgdiplus_6.0.2-0xamarin1+debian9b1.debian.tar.xz 7284 SHA256:eeeab171fc2538b0259b9779bf7df149bf7f56f7654cc916efa8bf0b36bb740f
-```
 
 ### `dpkg` source package: `libgpg-error=1.26-2`
 
