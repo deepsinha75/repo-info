@@ -1,10 +1,10 @@
-# `php:7.4.0RC3-fpm-alpine3.10`
+# `php:7.4.0RC4-fpm-alpine3.10`
 
 ## Docker Metadata
 
-- Image ID: `sha256:a28017345b8341f5e7195ed6e2bbd279d8e9535015a66e1dc0bff10e493fc37d`
-- Created: `2019-10-04T22:04:47.240151557Z`
-- Virtual Size: ~ 87.46 Mb  
+- Image ID: `sha256:5375993bb5210ed471c370958d3187c0f467be697a2603706d5b84eb088721ff`
+- Created: `2019-10-24T01:20:56.518969987Z`
+- Virtual Size: ~ 83.44 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["docker-php-entrypoint"]`
@@ -14,14 +14,14 @@
   - `PHPIZE_DEPS=autoconf 		dpkg-dev dpkg 		file 		g++ 		gcc 		libc-dev 		make 		pkgconf 		re2c`
   - `PHP_INI_DIR=/usr/local/etc/php`
   - `PHP_EXTRA_CONFIGURE_ARGS=--enable-fpm --with-fpm-user=www-data --with-fpm-group=www-data --disable-cgi`
-  - `PHP_CFLAGS=-fstack-protector-strong -fpic -fpie -O2`
-  - `PHP_CPPFLAGS=-fstack-protector-strong -fpic -fpie -O2`
+  - `PHP_CFLAGS=-fstack-protector-strong -fpic -fpie -O2 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64`
+  - `PHP_CPPFLAGS=-fstack-protector-strong -fpic -fpie -O2 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64`
   - `PHP_LDFLAGS=-Wl,-O1 -Wl,--hash-style=both -pie`
   - `GPG_KEYS=42670A7FE4D0441C8E4632349E4FDC074A4EF02D 5A52880781F755608BF815FC910DEB46F53EA312`
-  - `PHP_VERSION=7.4.0RC3`
-  - `PHP_URL=https://downloads.php.net/~derick/php-7.4.0RC3.tar.xz`
-  - `PHP_ASC_URL=https://downloads.php.net/~derick/php-7.4.0RC3.tar.xz.asc`
-  - `PHP_SHA256=0f9aa7a1b42bd9c43895e676fc9383b8392156001e34735e0911c72ae8e81d4a`
+  - `PHP_VERSION=7.4.0RC4`
+  - `PHP_URL=https://downloads.php.net/~derick/php-7.4.0RC4.tar.xz`
+  - `PHP_ASC_URL=https://downloads.php.net/~derick/php-7.4.0RC4.tar.xz.asc`
+  - `PHP_SHA256=6fcce4c914825fbf5510b448df1485469da621d419d798ef77168808ce0bd10c`
   - `PHP_MD5=`
 
 ## `apk` (`.apk`-based packages)
@@ -148,16 +148,16 @@ MPL-2.0 GPL-2.0-or-later
 ### `apk` package: `curl`
 
 ```console
-curl-7.65.1-r0 description:
+curl-7.66.0-r0 description:
 URL retrival utility and library
 
-curl-7.65.1-r0 webpage:
+curl-7.66.0-r0 webpage:
 https://curl.haxx.se/
 
-curl-7.65.1-r0 installed size:
+curl-7.66.0-r0 installed size:
 225280
 
-curl-7.65.1-r0 license:
+curl-7.66.0-r0 license:
 MIT
 
 ```
@@ -420,16 +420,16 @@ BSD-2-Clause
 ### `apk` package: `openssl`
 
 ```console
-openssl-1.1.1c-r0 description:
+openssl-1.1.1d-r0 description:
 Toolkit for Transport Layer Security (TLS)
 
-openssl-1.1.1c-r0 webpage:
+openssl-1.1.1d-r0 webpage:
 https://www.openssl.org
 
-openssl-1.1.1c-r0 installed size:
+openssl-1.1.1d-r0 installed size:
 679936
 
-openssl-1.1.1c-r0 license:
+openssl-1.1.1d-r0 license:
 OpenSSL
 
 ```
@@ -454,16 +454,16 @@ GPL-2.0
 ### `apk` package: `sqlite-libs`
 
 ```console
-sqlite-libs-3.28.0-r0 description:
+sqlite-libs-3.28.0-r1 description:
 Sqlite3 library
 
-sqlite-libs-3.28.0-r0 webpage:
+sqlite-libs-3.28.0-r1 webpage:
 https://www.sqlite.org/
 
-sqlite-libs-3.28.0-r0 installed size:
+sqlite-libs-3.28.0-r1 installed size:
 925696
 
-sqlite-libs-3.28.0-r0 license:
+sqlite-libs-3.28.0-r1 license:
 Public-Domain
 
 ```

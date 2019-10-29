@@ -1,10 +1,10 @@
-# `php:7.3.10-zts-alpine3.9`
+# `php:7.3.11-zts-alpine3.9`
 
 ## Docker Metadata
 
-- Image ID: `sha256:1256df06b8835a6c19a008f0574eda833a6f43fd4744673c66d2ef018b2e265a`
-- Created: `2019-10-05T00:10:50.759224742Z`
-- Virtual Size: ~ 68.00 Mb  
+- Image ID: `sha256:d2eaaeeece4c7d83b3017ff40fc7caed9e53a3f62e6fdbde7e5d3ebffff08a06`
+- Created: `2019-10-25T04:08:31.180626051Z`
+- Virtual Size: ~ 68.23 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["docker-php-entrypoint"]`
@@ -14,14 +14,14 @@
   - `PHPIZE_DEPS=autoconf 		dpkg-dev dpkg 		file 		g++ 		gcc 		libc-dev 		make 		pkgconf 		re2c`
   - `PHP_INI_DIR=/usr/local/etc/php`
   - `PHP_EXTRA_CONFIGURE_ARGS=--enable-maintainer-zts --disable-cgi`
-  - `PHP_CFLAGS=-fstack-protector-strong -fpic -fpie -O2`
-  - `PHP_CPPFLAGS=-fstack-protector-strong -fpic -fpie -O2`
+  - `PHP_CFLAGS=-fstack-protector-strong -fpic -fpie -O2 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64`
+  - `PHP_CPPFLAGS=-fstack-protector-strong -fpic -fpie -O2 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64`
   - `PHP_LDFLAGS=-Wl,-O1 -Wl,--hash-style=both -pie`
   - `GPG_KEYS=CBAF69F173A0FEA4B537F470D66C9593118BCCB6 F38252826ACD957EF380D39F2F7956BC5DA04B5D`
-  - `PHP_VERSION=7.3.10`
-  - `PHP_URL=https://www.php.net/get/php-7.3.10.tar.xz/from/this/mirror`
-  - `PHP_ASC_URL=https://www.php.net/get/php-7.3.10.tar.xz.asc/from/this/mirror`
-  - `PHP_SHA256=42f00a15419e05771734b7159c8d39d639b8a5a6770413adfa2615f6f923d906`
+  - `PHP_VERSION=7.3.11`
+  - `PHP_URL=https://www.php.net/get/php-7.3.11.tar.xz/from/this/mirror`
+  - `PHP_ASC_URL=https://www.php.net/get/php-7.3.11.tar.xz.asc/from/this/mirror`
+  - `PHP_SHA256=657cf6464bac28e9490c59c07a2cf7bb76c200f09cfadf6e44ea64e95fa01021`
   - `PHP_MD5=`
 
 ## `apk` (`.apk`-based packages)
@@ -250,16 +250,16 @@ ISC
 ### `apk` package: `libssh2`
 
 ```console
-libssh2-1.8.2-r0 description:
+libssh2-1.9.0-r0 description:
 library for accessing ssh1/ssh2 protocol servers
 
-libssh2-1.8.2-r0 webpage:
+libssh2-1.9.0-r0 webpage:
 https://libssh2.org/
 
-libssh2-1.8.2-r0 installed size:
-180224
+libssh2-1.9.0-r0 installed size:
+241664
 
-libssh2-1.8.2-r0 license:
+libssh2-1.9.0-r0 license:
 BSD
 
 ```
@@ -454,16 +454,16 @@ GPL-2.0
 ### `apk` package: `sqlite-libs`
 
 ```console
-sqlite-libs-3.28.0-r0 description:
+sqlite-libs-3.28.0-r1 description:
 Sqlite3 library
 
-sqlite-libs-3.28.0-r0 webpage:
+sqlite-libs-3.28.0-r1 webpage:
 https://www.sqlite.org/
 
-sqlite-libs-3.28.0-r0 installed size:
+sqlite-libs-3.28.0-r1 installed size:
 933888
 
-sqlite-libs-3.28.0-r0 license:
+sqlite-libs-3.28.0-r1 license:
 Public-Domain
 
 ```

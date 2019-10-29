@@ -1,9 +1,9 @@
-# `php:7.4.0RC3-cli-buster`
+# `php:7.4.0RC4-cli-buster`
 
 ## Docker Metadata
 
-- Image ID: `sha256:a30b26608a114215c551177e917c970ad2859283e3937e7e18be2a70f8f93224`
-- Created: `2019-10-17T14:28:19.794884197Z`
+- Image ID: `sha256:6c01e7d4894092ddb6316c68b6dbb05208bd76f5077648f0a75b6fa713e9f746`
+- Created: `2019-10-24T00:56:32.398165484Z`
 - Virtual Size: ~ 404.95 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
@@ -13,14 +13,14 @@
   - `PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
   - `PHPIZE_DEPS=autoconf 		dpkg-dev 		file 		g++ 		gcc 		libc-dev 		make 		pkg-config 		re2c`
   - `PHP_INI_DIR=/usr/local/etc/php`
-  - `PHP_CFLAGS=-fstack-protector-strong -fpic -fpie -O2`
-  - `PHP_CPPFLAGS=-fstack-protector-strong -fpic -fpie -O2`
+  - `PHP_CFLAGS=-fstack-protector-strong -fpic -fpie -O2 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64`
+  - `PHP_CPPFLAGS=-fstack-protector-strong -fpic -fpie -O2 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64`
   - `PHP_LDFLAGS=-Wl,-O1 -Wl,--hash-style=both -pie`
   - `GPG_KEYS=42670A7FE4D0441C8E4632349E4FDC074A4EF02D 5A52880781F755608BF815FC910DEB46F53EA312`
-  - `PHP_VERSION=7.4.0RC3`
-  - `PHP_URL=https://downloads.php.net/~derick/php-7.4.0RC3.tar.xz`
-  - `PHP_ASC_URL=https://downloads.php.net/~derick/php-7.4.0RC3.tar.xz.asc`
-  - `PHP_SHA256=0f9aa7a1b42bd9c43895e676fc9383b8392156001e34735e0911c72ae8e81d4a`
+  - `PHP_VERSION=7.4.0RC4`
+  - `PHP_URL=https://downloads.php.net/~derick/php-7.4.0RC4.tar.xz`
+  - `PHP_ASC_URL=https://downloads.php.net/~derick/php-7.4.0RC4.tar.xz.asc`
+  - `PHP_SHA256=6fcce4c914825fbf5510b448df1485469da621d419d798ef77168808ce0bd10c`
   - `PHP_MD5=`
 
 ## `dpkg` (`.deb`-based packages)
