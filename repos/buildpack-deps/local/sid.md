@@ -1321,20 +1321,13 @@ Licenses: (parsed from: `/usr/share/doc/libglib2.0-0/copyright`, `/usr/share/doc
 - `GPL-2+`
 - `LGPL`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris glib2.0=2.62.1-1
-'http://deb.debian.org/debian/pool/main/g/glib2.0/glib2.0_2.62.1-1.dsc' glib2.0_2.62.1-1.dsc 3232 SHA256:ca848af046b9f6d01562f7c2555feec2c06bbc063e49677a4c758af165c8badc
-'http://deb.debian.org/debian/pool/main/g/glib2.0/glib2.0_2.62.1.orig.tar.xz' glib2.0_2.62.1.orig.tar.xz 4681716 SHA256:3dd9024e1d0872a6da7ac509937ccf997161b11d7d35be337c7e829cbae0f9df
-'http://deb.debian.org/debian/pool/main/g/glib2.0/glib2.0_2.62.1-1.debian.tar.xz' glib2.0_2.62.1-1.debian.tar.xz 85312 SHA256:7aa788a4d805f0dc16eea9373811ba9b29bc4928d57575649389a3b83a1db2df
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/glib2.0/2.62.1-1/
 
-- https://sources.debian.net/src/glib2.0/2.62.1-1/ (for browsing the source)
-- https://sources.debian.net/src/glib2.0/2.62.1-1/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/glib2.0/2.62.1-1/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `glibc=2.29-2`
 
@@ -2262,20 +2255,13 @@ Licenses: (parsed from: `/usr/share/doc/libedit2/copyright`)
 
 - `BSD-3-clause`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris libedit=3.1-20190324-1
-'http://deb.debian.org/debian/pool/main/libe/libedit/libedit_3.1-20190324-1.dsc' libedit_3.1-20190324-1.dsc 2129 SHA256:c4374f38990a3f5dba5da74a78602cd8e87c3c966c9fc2fb9b31aabc27dcff54
-'http://deb.debian.org/debian/pool/main/libe/libedit/libedit_3.1-20190324.orig.tar.gz' libedit_3.1-20190324.orig.tar.gz 521999 SHA256:ac8f0f51c1cf65492e4d1e3ed2be360bda41e54633444666422fbf393bba1bae
-'http://deb.debian.org/debian/pool/main/libe/libedit/libedit_3.1-20190324-1.debian.tar.xz' libedit_3.1-20190324-1.debian.tar.xz 14112 SHA256:b65610cc1c1e46144705b3627881ed51ffd91ddee349c47d30674f588d1b84b6
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/libedit/3.1-20190324-1/
 
-- https://sources.debian.net/src/libedit/3.1-20190324-1/ (for browsing the source)
-- https://sources.debian.net/src/libedit/3.1-20190324-1/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/libedit/3.1-20190324-1/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `liberror-perl=0.17028-1`
 
@@ -4649,20 +4635,13 @@ Binary Packages:
 If source is available (seen below), check the contents of `debian/copyright` within it.
 
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris python3-stdlib-extensions=3.7.5-1
-'http://deb.debian.org/debian/pool/main/p/python3-stdlib-extensions/python3-stdlib-extensions_3.7.5-1.dsc' python3-stdlib-extensions_3.7.5-1.dsc 2539 SHA256:978b6545f5d128587a423e3eecd249ee3b50a16ada88ce3a320a70123693c491
-'http://deb.debian.org/debian/pool/main/p/python3-stdlib-extensions/python3-stdlib-extensions_3.7.5.orig.tar.xz' python3-stdlib-extensions_3.7.5.orig.tar.xz 1058456 SHA256:e4a158e0c1571a831c51cff2e785b9c06340b363756ffe9615593b11f63b2a3f
-'http://deb.debian.org/debian/pool/main/p/python3-stdlib-extensions/python3-stdlib-extensions_3.7.5-1.debian.tar.xz' python3-stdlib-extensions_3.7.5-1.debian.tar.xz 17224 SHA256:8d4e737918780b09d8a243708e33787d9da30ebb8ab7d82f2ceaae13a3fd5e19
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/python3-stdlib-extensions/3.7.5-1/
 
-- https://sources.debian.net/src/python3-stdlib-extensions/3.7.5-1/ (for browsing the source)
-- https://sources.debian.net/src/python3-stdlib-extensions/3.7.5-1/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/python3-stdlib-extensions/3.7.5-1/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `python3.7=3.7.5-1`
 
@@ -4693,20 +4672,13 @@ Licenses: (parsed from: `/usr/share/doc/libpython3.7-minimal/copyright`, `/usr/s
 - `use in source`
 - `without`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris python3.7=3.7.5-1
-'http://deb.debian.org/debian/pool/main/p/python3.7/python3.7_3.7.5-1.dsc' python3.7_3.7.5-1.dsc 3419 SHA256:0ce8f112b326af0b468aa3c51ad768890a652f91a3e952d16577850c0a34ed21
-'http://deb.debian.org/debian/pool/main/p/python3.7/python3.7_3.7.5.orig.tar.xz' python3.7_3.7.5.orig.tar.xz 17236432 SHA256:e85a76ea9f3d6c485ec1780fca4e500725a4a7bbc63c78ebc44170de9b619d94
-'http://deb.debian.org/debian/pool/main/p/python3.7/python3.7_3.7.5-1.debian.tar.xz' python3.7_3.7.5-1.debian.tar.xz 210776 SHA256:a72c2fe052dba784ace47ecc22952bceeceb9ff05ab5dc3b6cc0c56d577ca2b2
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/python3.7/3.7.5-1/
 
-- https://sources.debian.net/src/python3.7/3.7.5-1/ (for browsing the source)
-- https://sources.debian.net/src/python3.7/3.7.5-1/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/python3.7/3.7.5-1/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `readline=8.0-3`
 
@@ -5132,21 +5104,13 @@ Licenses: (parsed from: `/usr/share/doc/libunbound8/copyright`)
 - `ISC`
 - `public-domain`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris unbound=1.9.4-1
-'http://deb.debian.org/debian/pool/main/u/unbound/unbound_1.9.4-1.dsc' unbound_1.9.4-1.dsc 3270 SHA256:6c59e7e2d25bdee7d334bf2f60cdce8baf5ae4beda2e4334c605143e286ef0f0
-'http://deb.debian.org/debian/pool/main/u/unbound/unbound_1.9.4.orig.tar.gz' unbound_1.9.4.orig.tar.gz 5686242 SHA256:3d3e25fb224025f0e732c7970e5676f53fd1764c16d6a01be073a13e42954bb0
-'http://deb.debian.org/debian/pool/main/u/unbound/unbound_1.9.4.orig.tar.gz.asc' unbound_1.9.4.orig.tar.gz.asc 833 SHA256:d9b0936fa989dfe966b053302cc21a34536bf6274f3a9a1f9d3ac41f14e970c8
-'http://deb.debian.org/debian/pool/main/u/unbound/unbound_1.9.4-1.debian.tar.xz' unbound_1.9.4-1.debian.tar.xz 18628 SHA256:41ec954cdb1dd661c73c5b4eba8ba5ef18652a5c76f8f9948262f08f78e22f28
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/unbound/1.9.4-1/
 
-- https://sources.debian.net/src/unbound/1.9.4-1/ (for browsing the source)
-- https://sources.debian.net/src/unbound/1.9.4-1/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/unbound/1.9.4-1/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `unzip=6.0-25`
 
@@ -5342,19 +5306,13 @@ Licenses: (parsed from: `/usr/share/doc/x11-common/copyright`)
 
 - `GPL`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris xorg=1:7.7+19
-'http://deb.debian.org/debian/pool/main/x/xorg/xorg_7.7+19.dsc' xorg_7.7+19.dsc 2016 SHA256:fc4a577eee67f3604c56701e21b28dccd3858da0f110b708ca3359e2718e3d46
-'http://deb.debian.org/debian/pool/main/x/xorg/xorg_7.7+19.tar.gz' xorg_7.7+19.tar.gz 288723 SHA256:5de6df9e19009450b94f4f5307049bc2c7dc1114222f6f2f6fc60d737a33a537
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/xorg/1:7.7+19/
 
-- https://sources.debian.net/src/xorg/1:7.7+19/ (for browsing the source)
-- https://sources.debian.net/src/xorg/1:7.7+19/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/xorg/1:7.7+19/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `xorgproto=2018.4-4`
 
