@@ -2,16 +2,16 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:3afe4f08025559f303778861ba47c45e14827ff5b40ef5dd9fa4749699c377b1`
-- Created: `2019-10-11T21:20:22.330444143Z`
-- Virtual Size: ~ 34.15 Mb  
+- Image ID: `sha256:42281ed3bfd6c7748b200493c3c4a86bf11c9212bfb13110e1c89831a96d0203`
+- Created: `2019-10-28T21:25:48.287275538Z`
+- Virtual Size: ~ 35.04 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Command: `["/bin/bash"]`
 - Environment:
   - `PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
 - Labels:
-  - `build-date=20191011`
+  - `build-date=20191025`
   - `name=Photon OS x86_64/3.0 Base Image`
   - `vendor=VMware`
 
@@ -23,7 +23,7 @@ Licenses (from `rpm --query`): GPLv3
 
 **WARNING:** unable to find source (`yumdownloader` failed or returned no results)!
 
-### `rpm` package: `bzip2-libs-1.0.6-10.ph3.x86_64`
+### `rpm` package: `bzip2-libs-1.0.8-1.ph3.x86_64`
 
 Licenses (from `rpm --query`): BSD
 
@@ -65,7 +65,7 @@ Licenses (from `rpm --query`): GPLv2+ or LGPLv3+
 
 **WARNING:** unable to find source (`yumdownloader` failed or returned no results)!
 
-### `rpm` package: `expat-libs-2.2.6-2.ph3.x86_64`
+### `rpm` package: `expat-libs-2.2.7-1.ph3.x86_64`
 
 Licenses (from `rpm --query`): MIT
 
@@ -77,7 +77,7 @@ Licenses (from `rpm --query`): GPLv3
 
 **WARNING:** unable to find source (`yumdownloader` failed or returned no results)!
 
-### `rpm` package: `glibc-2.28-3.ph3.x86_64`
+### `rpm` package: `glibc-2.28-4.ph3.x86_64`
 
 Licenses (from `rpm --query`): LGPLv2+
 
@@ -113,7 +113,7 @@ Licenses (from `rpm --query`): GPLv2+
 
 **WARNING:** unable to find source (`yumdownloader` failed or returned no results)!
 
-### `rpm` package: `libsolv-0.6.26-5.ph3.x86_64`
+### `rpm` package: `libsolv-0.6.35-1.ph3.x86_64`
 
 Licenses (from `rpm --query`): BSD
 
@@ -122,6 +122,12 @@ Licenses (from `rpm --query`): BSD
 ### `rpm` package: `libssh2-1.9.0-1.ph3.x86_64`
 
 Licenses (from `rpm --query`): BSD
+
+**WARNING:** unable to find source (`yumdownloader` failed or returned no results)!
+
+### `rpm` package: `lua-5.3.5-2.ph3.x86_64`
+
+Licenses (from `rpm --query`): MIT
 
 **WARNING:** unable to find source (`yumdownloader` failed or returned no results)!
 
@@ -137,7 +143,7 @@ Licenses (from `rpm --query`): MPLv2.0
 
 **WARNING:** unable to find source (`yumdownloader` failed or returned no results)!
 
-### `rpm` package: `nss-libs-3.44-2.ph3.x86_64`
+### `rpm` package: `nss-libs-3.44-3.ph3.x86_64`
 
 Licenses (from `rpm --query`): MPLv2.0
 
@@ -173,13 +179,13 @@ Licenses (from `rpm --query`): GPLv3+
 
 **WARNING:** unable to find source (`yumdownloader` failed or returned no results)!
 
-### `rpm` package: `rpm-libs-4.14.2-4.ph3.x86_64`
+### `rpm` package: `rpm-libs-4.14.2-5.ph3.x86_64`
 
 Licenses (from `rpm --query`): GPLv2+
 
 **WARNING:** unable to find source (`yumdownloader` failed or returned no results)!
 
-### `rpm` package: `sqlite-libs-3.27.2-4.ph3.x86_64`
+### `rpm` package: `sqlite-libs-3.27.2-5.ph3.x86_64`
 
 Licenses (from `rpm --query`): Public Domain
 
