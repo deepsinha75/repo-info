@@ -3431,20 +3431,13 @@ Binary Packages:
 If source is available (seen below), check the contents of `debian/copyright` within it.
 
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris libxslt=1.1.28-2+deb8u5
-'http://security.debian.org/debian-security/pool/updates/main/libx/libxslt/libxslt_1.1.28-2+deb8u5.dsc' libxslt_1.1.28-2+deb8u5.dsc 2554 SHA256:07e3b5c407fe8b16a149016c644564f8fd8f5e028d23c0908b8342aeb29dc8ec
-'http://security.debian.org/debian-security/pool/updates/main/libx/libxslt/libxslt_1.1.28.orig.tar.gz' libxslt_1.1.28.orig.tar.gz 3435907 SHA256:5fc7151a57b89c03d7b825df5a0fae0a8d5f05674c0e7cf2937ecec4d54a028c
-'http://security.debian.org/debian-security/pool/updates/main/libx/libxslt/libxslt_1.1.28-2+deb8u5.debian.tar.xz' libxslt_1.1.28-2+deb8u5.debian.tar.xz 40992 SHA256:b16233b1c69d3d46b0c5354e50e1bde721101ebd5af8b36797a076f4b60aa095
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/libxslt/1.1.28-2+deb8u5/
 
-- https://sources.debian.net/src/libxslt/1.1.28-2+deb8u5/ (for browsing the source)
-- https://sources.debian.net/src/libxslt/1.1.28-2+deb8u5/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/libxslt/1.1.28-2+deb8u5/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `libxt=1:1.1.4-1`
 
