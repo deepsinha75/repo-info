@@ -2,9 +2,9 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:4a2de5f2d3c8a2639f38373573960cb6f25321c6221bb9b57a91aab21f412993`
-- Created: `2019-10-21T18:56:22.067324524Z`
-- Virtual Size: ~ 127.01 Mb  
+- Image ID: `sha256:4f3b76b9d469159e0845480fb4ca9e1c14384c14f7eb8a58fa323ca03878c3e7`
+- Created: `2019-10-28T20:30:40.106759967Z`
+- Virtual Size: ~ 128.70 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Command: `["httpd-foreground"]`
@@ -167,6 +167,23 @@ bash-5.0.0-r0 installed size:
 
 bash-5.0.0-r0 license:
 GPL-3.0-or-later
+
+```
+
+### `apk` package: `brotli`
+
+```console
+brotli-1.0.7-r1 description:
+Generic lossless compressor
+
+brotli-1.0.7-r1 webpage:
+https://github.com/google/brotli
+
+brotli-1.0.7-r1 installed size:
+1691648
+
+brotli-1.0.7-r1 license:
+MIT
 
 ```
 
