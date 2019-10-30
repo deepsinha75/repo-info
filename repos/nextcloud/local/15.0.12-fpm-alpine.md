@@ -2,9 +2,9 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:f416b373393558249c72ea4d3c0b811f2d6a7881691a9062c45d78ed2492b87a`
-- Created: `2019-10-25T09:16:26.734904145Z`
-- Virtual Size: ~ 321.31 Mb  
+- Image ID: `sha256:fcd8e0c63c268616e13bb9fd0c3f3dec6a3d03566019f4811e56b4e39fcc076a`
+- Created: `2019-10-29T02:21:54.479968128Z`
+- Virtual Size: ~ 321.81 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["/entrypoint.sh"]`
@@ -228,6 +228,23 @@ freetype-2.10.0-r0 installed size:
 
 freetype-2.10.0-r0 license:
 FTL GPL-2.0-or-later
+
+```
+
+### `apk` package: `gmp`
+
+```console
+gmp-6.1.2-r1 description:
+A free library for arbitrary precision arithmetic
+
+gmp-6.1.2-r1 webpage:
+https://gmplib.org/
+
+gmp-6.1.2-r1 installed size:
+421888
+
+gmp-6.1.2-r1 license:
+LGPL-3.0
 
 ```
 
