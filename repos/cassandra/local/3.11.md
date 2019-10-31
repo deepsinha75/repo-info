@@ -1,10 +1,10 @@
-# `cassandra:3.11.4`
+# `cassandra:3.11.5`
 
 ## Docker Metadata
 
-- Image ID: `sha256:ca795bbd8fd77f90eb58d09bbe738a79afb1b335b09a5122b6a31c36db802319`
-- Created: `2019-10-17T02:11:56.283210324Z`
-- Virtual Size: ~ 323.60 Mb  
+- Image ID: `sha256:cc126d830f479c2df94ee0b417a8fb17727911256be1ad4f76991e671a27db54`
+- Created: `2019-10-30T23:24:05.110433889Z`
+- Virtual Size: ~ 323.72 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["docker-entrypoint.sh"]`
@@ -13,7 +13,7 @@
   - `PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
   - `GOSU_VERSION=1.10`
   - `GPG_KEYS=514A2AD631A57A16DD0047EC749D6EEC0353B12C 	A26E528B271F19B9E5D8E19EA278B781FE4B2BDA`
-  - `CASSANDRA_VERSION=3.11.4`
+  - `CASSANDRA_VERSION=3.11.5`
   - `CASSANDRA_CONFIG=/etc/cassandra`
 
 ## `dpkg` (`.deb`-based packages)
@@ -389,12 +389,12 @@ Other potentially useful URLs:
 - https://sources.debian.net/src/ca-certificates/20161130+nmu1+deb9u1/debian/copyright/ (for direct copyright/license information)
 - http://snapshot.debian.org/package/ca-certificates/20161130+nmu1+deb9u1/ (for access to the source package after it no longer exists in the archive)
 
-### `dpkg` source package: `cassandra=3.11.4`
+### `dpkg` source package: `cassandra=3.11.5`
 
 Binary Packages:
 
-- `cassandra=3.11.4`
-- `cassandra-tools=3.11.4`
+- `cassandra=3.11.5`
+- `cassandra-tools=3.11.5`
 
 Licenses: (parsed from: `/usr/share/doc/cassandra/copyright`, `/usr/share/doc/cassandra-tools/copyright`)
 
@@ -403,10 +403,10 @@ Licenses: (parsed from: `/usr/share/doc/cassandra/copyright`, `/usr/share/doc/ca
 Source:
 
 ```console
-$ apt-get source -qq --print-uris cassandra=3.11.4
-'http://www.apache.org/dist/cassandra/debian/pool/main/c/cassandra/cassandra_3.11.4.dsc' cassandra_3.11.4.dsc 2036 SHA256:3b42dedaa0bc7e15f093ad79de1bb4ebaa6492c8c15ba7b4feaaa028d15e4007
-'http://www.apache.org/dist/cassandra/debian/pool/main/c/cassandra/cassandra_3.11.4.orig.tar.gz' cassandra_3.11.4.orig.tar.gz 39719274 SHA256:b01fea1b0a987adcc6078eef1f7e7fc43aacc3b4b0bfa3f29bc8a1cc9ba02cc6
-'http://www.apache.org/dist/cassandra/debian/pool/main/c/cassandra/cassandra_3.11.4.diff.gz' cassandra_3.11.4.diff.gz 20 SHA256:f61f27bd17de546264aa58f40f3aafaac7021e0ef69c17f6b1b4cd7664a037ec
+$ apt-get source -qq --print-uris cassandra=3.11.5
+'http://www.apache.org/dist/cassandra/debian/pool/main/c/cassandra/cassandra_3.11.5.dsc' cassandra_3.11.5.dsc 2036 SHA256:d37c42a9b4f1b3c910038030f44723a3b3772b35fe70a66281ae2f71e5d95c23
+'http://www.apache.org/dist/cassandra/debian/pool/main/c/cassandra/cassandra_3.11.5.orig.tar.gz' cassandra_3.11.5.orig.tar.gz 39798994 SHA256:d5363386b6ddbee59cf7dbbb2564a5f23ca236e728eebce12daf83b5ccdd50d8
+'http://www.apache.org/dist/cassandra/debian/pool/main/c/cassandra/cassandra_3.11.5.diff.gz' cassandra_3.11.5.diff.gz 20 SHA256:f61f27bd17de546264aa58f40f3aafaac7021e0ef69c17f6b1b4cd7664a037ec
 ```
 
 ### `dpkg` source package: `cdebconf=0.227`
@@ -810,13 +810,13 @@ Other potentially useful URLs:
 - https://sources.debian.net/src/expat/2.2.0-2+deb9u3/debian/copyright/ (for direct copyright/license information)
 - http://snapshot.debian.org/package/expat/2.2.0-2+deb9u3/ (for access to the source package after it no longer exists in the archive)
 
-### `dpkg` source package: `file=1:5.30-1+deb9u2`
+### `dpkg` source package: `file=1:5.30-1+deb9u3`
 
 Binary Packages:
 
-- `file=1:5.30-1+deb9u2`
-- `libmagic-mgc=1:5.30-1+deb9u2`
-- `libmagic1:amd64=1:5.30-1+deb9u2`
+- `file=1:5.30-1+deb9u3`
+- `libmagic-mgc=1:5.30-1+deb9u3`
+- `libmagic1:amd64=1:5.30-1+deb9u3`
 
 Licenses: (parsed from: `/usr/share/doc/file/copyright`, `/usr/share/doc/libmagic-mgc/copyright`, `/usr/share/doc/libmagic1/copyright`)
 
@@ -829,17 +829,17 @@ Licenses: (parsed from: `/usr/share/doc/file/copyright`, `/usr/share/doc/libmagi
 Source:
 
 ```console
-$ apt-get source -qq --print-uris file=1:5.30-1+deb9u2
-'http://deb.debian.org/debian/pool/main/f/file/file_5.30-1+deb9u2.dsc' file_5.30-1+deb9u2.dsc 2166 SHA256:18a1366842ea3434545d86c10edcf38147e818d9d4e31aa44cc4be7b412553f1
-'http://deb.debian.org/debian/pool/main/f/file/file_5.30.orig.tar.xz' file_5.30.orig.tar.xz 578628 SHA256:813feaa00da67897b652aa2f0bdeba46f1a265223071a3ea0591476b4e1b0291
-'http://deb.debian.org/debian/pool/main/f/file/file_5.30-1+deb9u2.debian.tar.xz' file_5.30-1+deb9u2.debian.tar.xz 39892 SHA256:80ff891aabcba79494ec356ca4dabe44b8808cfa2707522a13814d7153685ab1
+$ apt-get source -qq --print-uris file=1:5.30-1+deb9u3
+'http://security.debian.org/debian-security/pool/updates/main/f/file/file_5.30-1+deb9u3.dsc' file_5.30-1+deb9u3.dsc 2166 SHA256:ef90aa103f3ed04e3c8b199533a2197405599a38bc8091fb8170b20d6d7a18c2
+'http://security.debian.org/debian-security/pool/updates/main/f/file/file_5.30.orig.tar.xz' file_5.30.orig.tar.xz 578628 SHA256:813feaa00da67897b652aa2f0bdeba46f1a265223071a3ea0591476b4e1b0291
+'http://security.debian.org/debian-security/pool/updates/main/f/file/file_5.30-1+deb9u3.debian.tar.xz' file_5.30-1+deb9u3.debian.tar.xz 40224 SHA256:03fa6392b9681915e386d93baa729ebbde3fa1d204a34368eb1877302ebbf4d7
 ```
 
 Other potentially useful URLs:
 
-- https://sources.debian.net/src/file/1:5.30-1+deb9u2/ (for browsing the source)
-- https://sources.debian.net/src/file/1:5.30-1+deb9u2/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/file/1:5.30-1+deb9u2/ (for access to the source package after it no longer exists in the archive)
+- https://sources.debian.net/src/file/1:5.30-1+deb9u3/ (for browsing the source)
+- https://sources.debian.net/src/file/1:5.30-1+deb9u3/debian/copyright/ (for direct copyright/license information)
+- http://snapshot.debian.org/package/file/1:5.30-1+deb9u3/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `findutils=4.6.0+git+20161106-2`
 
@@ -2402,11 +2402,11 @@ Other potentially useful URLs:
 - https://sources.debian.net/src/numactl/2.0.11-2.1/debian/copyright/ (for direct copyright/license information)
 - http://snapshot.debian.org/package/numactl/2.0.11-2.1/ (for access to the source package after it no longer exists in the archive)
 
-### `dpkg` source package: `openjdk-8=8u222-b10-1~deb9u1`
+### `dpkg` source package: `openjdk-8=8u232-b09-1~deb9u1`
 
 Binary Packages:
 
-- `openjdk-8-jre-headless:amd64=8u222-b10-1~deb9u1`
+- `openjdk-8-jre-headless:amd64=8u232-b09-1~deb9u1`
 
 Licenses: (parsed from: `/usr/share/doc/openjdk-8-jre-headless/copyright`)
 
@@ -2418,17 +2418,17 @@ Licenses: (parsed from: `/usr/share/doc/openjdk-8-jre-headless/copyright`)
 Source:
 
 ```console
-$ apt-get source -qq --print-uris openjdk-8=8u222-b10-1~deb9u1
-'http://deb.debian.org/debian/pool/main/o/openjdk-8/openjdk-8_8u222-b10-1~deb9u1.dsc' openjdk-8_8u222-b10-1~deb9u1.dsc 4603 SHA256:ccec6a5f1c2482dc7f02ab37a2b1a41f9b8e12207072b89f0c5077847e3b835d
-'http://deb.debian.org/debian/pool/main/o/openjdk-8/openjdk-8_8u222-b10.orig.tar.bz2' openjdk-8_8u222-b10.orig.tar.bz2 71574291 SHA256:da4bdd7e334a83f1bd63a26d83b940db813794d18d1136ae6dc8bd0dc0e07bfd
-'http://deb.debian.org/debian/pool/main/o/openjdk-8/openjdk-8_8u222-b10-1~deb9u1.debian.tar.xz' openjdk-8_8u222-b10-1~deb9u1.debian.tar.xz 241276 SHA256:ef7aa44f94b2f2fd300f5fa7dd57813a72150d71351aa8e2d6f20bb58e33caf3
+$ apt-get source -qq --print-uris openjdk-8=8u232-b09-1~deb9u1
+'http://security.debian.org/debian-security/pool/updates/main/o/openjdk-8/openjdk-8_8u232-b09-1~deb9u1.dsc' openjdk-8_8u232-b09-1~deb9u1.dsc 4667 SHA256:2b0c04fccde9f79e85914c79c1f526b5c1151c4642b4707632f7ec84d6e71d77
+'http://security.debian.org/debian-security/pool/updates/main/o/openjdk-8/openjdk-8_8u232-b09.orig.tar.gz' openjdk-8_8u232-b09.orig.tar.gz 71246949 SHA256:ff994d499d270fad5b827618629816f25605556892f0049496f1e0dc2d22410a
+'http://security.debian.org/debian-security/pool/updates/main/o/openjdk-8/openjdk-8_8u232-b09-1~deb9u1.debian.tar.xz' openjdk-8_8u232-b09-1~deb9u1.debian.tar.xz 242760 SHA256:be4664e8fed38c8cf7365d18409aaca6c14f990d517b093a3fb8cc5db7b6d772
 ```
 
 Other potentially useful URLs:
 
-- https://sources.debian.net/src/openjdk-8/8u222-b10-1~deb9u1/ (for browsing the source)
-- https://sources.debian.net/src/openjdk-8/8u222-b10-1~deb9u1/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/openjdk-8/8u222-b10-1~deb9u1/ (for access to the source package after it no longer exists in the archive)
+- https://sources.debian.net/src/openjdk-8/8u232-b09-1~deb9u1/ (for browsing the source)
+- https://sources.debian.net/src/openjdk-8/8u232-b09-1~deb9u1/debian/copyright/ (for direct copyright/license information)
+- http://snapshot.debian.org/package/openjdk-8/8u232-b09-1~deb9u1/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `openldap=2.4.44+dfsg-5+deb9u3`
 
