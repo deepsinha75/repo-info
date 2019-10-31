@@ -2,9 +2,9 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:c89412c716fa00bd2d62703eb56bea0d42d15250297513a5e614595ea7d1d990`
-- Created: `2019-10-19T07:27:28.686152879Z`
-- Virtual Size: ~ 440.55 Mb  
+- Image ID: `sha256:5261bc58a1d3131a5079c7c4c10f48bd20c8731bc66beb25e9fb33a742b78146`
+- Created: `2019-10-29T03:56:53.581277146Z`
+- Virtual Size: ~ 440.59 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Command: `["lein","repl"]`
@@ -12,9 +12,9 @@
   - `PATH=/usr/java/openjdk-14/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/local/bin/`
   - `LANG=C.UTF-8`
   - `JAVA_HOME=/usr/java/openjdk-14`
-  - `JAVA_VERSION=14-ea+19`
-  - `JAVA_URL=https://download.java.net/java/early_access/jdk14/19/GPL/openjdk-14-ea+19_linux-x64_bin.tar.gz`
-  - `JAVA_SHA256=b476022ce17e86ac7e6a229395f93e025b8cd82184e2cd528976501f19c8da36`
+  - `JAVA_VERSION=14-ea+20`
+  - `JAVA_URL=https://download.java.net/java/early_access/jdk14/20/GPL/openjdk-14-ea+20_linux-x64_bin.tar.gz`
+  - `JAVA_SHA256=83d1d3d799a72ae7b2ee4eeb5b48ad878234425acfea6638e689ad22e220b0d8`
   - `LEIN_VERSION=2.9.1`
   - `LEIN_INSTALL=/usr/local/bin/`
   - `LEIN_ROOT=1`
