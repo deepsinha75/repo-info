@@ -3,6 +3,7 @@
 # Tags of `vault`
 
 -	[`vault:1.2.3`](#vault123)
+-	[`vault:1.3.0-beta1`](#vault130-beta1)
 -	[`vault:latest`](#vaultlatest)
 
 ## `vault:1.2.3`
@@ -281,6 +282,10 @@ CMD ["server" "-dev"]
 		Last Modified: Mon, 21 Oct 2019 17:18:35 GMT  
 		Size: 1.8 KB (1820 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+
+## `vault:1.3.0-beta1`
+
+**does not exist** (yet?)
 
 ## `vault:latest`
 
