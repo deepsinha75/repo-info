@@ -1015,14 +1015,9 @@ Licenses: (parsed from: `/usr/share/doc/file/copyright`, `/usr/share/doc/libmagi
 - `MIT-Old-Style-with-legal-disclaimer-2`
 - `public-domain`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris file=1:5.32-2ubuntu0.2
-'http://archive.ubuntu.com/ubuntu/pool/main/f/file/file_5.32-2ubuntu0.2.dsc' file_5.32-2ubuntu0.2.dsc 1972 SHA256:52aa48b2560293f5f5ed113d2ed103086855d10e59535e5f995c097ba0b3b6da
-'http://archive.ubuntu.com/ubuntu/pool/main/f/file/file_5.32.orig.tar.xz' file_5.32.orig.tar.xz 584352 SHA256:07627dc16c9a5b64352b00f24afb8d328b9ecade82afe2e2fa55201d324fd360
-'http://archive.ubuntu.com/ubuntu/pool/main/f/file/file_5.32-2ubuntu0.2.debian.tar.xz' file_5.32-2ubuntu0.2.debian.tar.xz 33332 SHA256:676faefe6020355c354683c1477261ab6a4d299bbbae52bdb6004449ad17edbf
-```
 
 ### `dpkg` source package: `findutils=4.6.0+git+20170828-2`
 

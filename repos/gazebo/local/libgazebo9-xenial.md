@@ -1078,14 +1078,9 @@ Licenses: (parsed from: `/usr/share/doc/file/copyright`, `/usr/share/doc/libmagi
 - `MIT-Old-Style-with-legal-disclaimer-2`
 - `public-domain`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris file=1:5.25-2ubuntu1.2
-'http://archive.ubuntu.com/ubuntu/pool/main/f/file/file_5.25-2ubuntu1.2.dsc' file_5.25-2ubuntu1.2.dsc 2252 SHA256:626c4e22cca205dc1a9923a7b28f69c0f728224dee694e2d2f1eb492aaba9edf
-'http://archive.ubuntu.com/ubuntu/pool/main/f/file/file_5.25.orig.tar.xz' file_5.25.orig.tar.xz 537916 SHA256:8062cae8be640ff8583b8714e394dc73c3127d23f8fe9097f1433cdb36bff31c
-'http://archive.ubuntu.com/ubuntu/pool/main/f/file/file_5.25-2ubuntu1.2.debian.tar.xz' file_5.25-2ubuntu1.2.debian.tar.xz 34664 SHA256:b221bc43fee814aae230b52837bdad6e08eae7fb5f6f6cf602d446502a257c1f
-```
 
 ### `dpkg` source package: `findutils=4.6.0+git+20160126-2`
 
@@ -2585,14 +2580,9 @@ Binary Packages:
 If source is available (seen below), check the contents of `debian/copyright` within it.
 
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris libarchive=3.1.2-11ubuntu0.16.04.6
-'http://archive.ubuntu.com/ubuntu/pool/main/liba/libarchive/libarchive_3.1.2-11ubuntu0.16.04.6.dsc' libarchive_3.1.2-11ubuntu0.16.04.6.dsc 2422 SHA256:cf75520a612b100c97cacfea22b3c951c4debdd66970cdb554b44e71d857e9de
-'http://archive.ubuntu.com/ubuntu/pool/main/liba/libarchive/libarchive_3.1.2.orig.tar.gz' libarchive_3.1.2.orig.tar.gz 4527540 SHA256:eb87eacd8fe49e8d90c8fdc189813023ccc319c5e752b01fb6ad0cc7b2c53d5e
-'http://archive.ubuntu.com/ubuntu/pool/main/liba/libarchive/libarchive_3.1.2-11ubuntu0.16.04.6.debian.tar.xz' libarchive_3.1.2-11ubuntu0.16.04.6.debian.tar.xz 44804 SHA256:19d935ed1356818f417d7bd204904c54637208312d934aaa85c400d72494bb2d
-```
 
 ### `dpkg` source package: `libass=0.13.1-1`
 
