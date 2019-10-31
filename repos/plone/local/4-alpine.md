@@ -1,10 +1,10 @@
-# `plone:5.2.0-alpine`
+# `plone:4.3.19-alpine`
 
 ## Docker Metadata
 
-- Image ID: `sha256:e9b3549b9bd7202e190e6675dd7d66db725e5670bc43f1cc1b7bce187fc1553b`
-- Created: `2019-10-29T23:28:01.655102718Z`
-- Virtual Size: ~ 493.25 Mb  
+- Image ID: `sha256:5cd78c49ac27e77a96ca50c76f27b71bfcb25d4276db617c84dc7cd7238dd4f9`
+- Created: `2019-10-29T23:56:32.339019819Z`
+- Virtual Size: ~ 367.39 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["/docker-entrypoint.sh"]`
@@ -12,26 +12,26 @@
 - Environment:
   - `PATH=/usr/local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
   - `LANG=C.UTF-8`
-  - `GPG_KEY=0D96DF4D4110E5C43FBFB17F2D347EA6AA65421D`
-  - `PYTHON_VERSION=3.7.5`
+  - `PYTHONIOENCODING=UTF-8`
+  - `GPG_KEY=C01E1CAD5EA2C4F0B8E3571504C367C218ADD4FF`
+  - `PYTHON_VERSION=2.7.17`
   - `PYTHON_PIP_VERSION=19.3.1`
   - `PYTHON_GET_PIP_URL=https://github.com/pypa/get-pip/raw/ffe826207a010164265d9cc807978e3604d18ca0/get-pip.py`
   - `PYTHON_GET_PIP_SHA256=b86f36cc4345ae87bfd4f10ef6b2dbfa7a872fbff70608a1e43944d283fd0eee`
-  - `PIP=19.0.3`
+  - `PIP=9.0.3`
   - `ZC_BUILDOUT=2.13.1`
-  - `SETUPTOOLS=41.0.0`
+  - `SETUPTOOLS=40.8.0`
   - `WHEEL=0.33.1`
-  - `PLONE_MAJOR=5.2`
-  - `PLONE_VERSION=5.2`
-  - `PLONE_VERSION_RELEASE=5.2.0`
-  - `PLONE_MD5=211ff749422611db2e448dea639e1fba`
+  - `PLONE_MAJOR=4.3`
+  - `PLONE_VERSION=4.3.19`
+  - `PLONE_MD5=04ed5beac7fb8504f06a36d44e407b06`
 - Labels:
   - `description=Plone image, based on Unified Installer`
   - `maintainer=Plone Community`
-  - `name=Plone 5.2`
+  - `name=Plone 4.3`
   - `os=alpine`
   - `os.version=3.10`
-  - `plone=5.2`
+  - `plone=4.3.19`
 
 ## `apk` (`.apk`-based packages)
 
@@ -494,23 +494,6 @@ ISC
 
 ```
 
-### `apk` package: `libuuid`
-
-```console
-libuuid-2.33.2-r0 description:
-DCE compatible Universally Unique Identifier library
-
-libuuid-2.33.2-r0 webpage:
-https://git.kernel.org/cgit/utils/util-linux/util-linux.git
-
-libuuid-2.33.2-r0 installed size:
-40960
-
-libuuid-2.33.2-r0 license:
-GPL-2.0 GPL-2.0-or-later LGPL-2.0-or-later BSD Public-Domain
-
-```
-
 ### `apk` package: `libverto`
 
 ```console
@@ -763,23 +746,6 @@ su-exec-0.2-r0 installed size:
 
 su-exec-0.2-r0 license:
 MIT
-
-```
-
-### `apk` package: `xz-libs`
-
-```console
-xz-libs-5.2.4-r0 description:
-Library and CLI tools for XZ and LZMA compressed files (libraries)
-
-xz-libs-5.2.4-r0 webpage:
-https://tukaani.org/xz
-
-xz-libs-5.2.4-r0 installed size:
-151552
-
-xz-libs-5.2.4-r0 license:
-GPL-2.0-or-later Public-Domain
 
 ```
 
