@@ -2,8 +2,8 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:240e4c4fdba443bd472bdd7cf4e0e195ff8d3a2708c3a0df32c6da96453a01f1`
-- Created: `2019-10-19T01:10:26.461685915Z`
+- Image ID: `sha256:ab514ff6cc71c8e4401bcd4ac83d51a34753908e0890bf34bae17daefcb9a7ab`
+- Created: `2019-11-01T02:47:55.581636518Z`
 - Virtual Size: ~ 380.68 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
@@ -842,11 +842,11 @@ $ apt-get source -qq --print-uris libgpg-error=1.27-6
 'http://archive.ubuntu.com/ubuntu/pool/main/libg/libgpg-error/libgpg-error_1.27-6.debian.tar.xz' libgpg-error_1.27-6.debian.tar.xz 20556 SHA256:89bc57dc3df449febf037226daf1aee830455c4efa493c0e3bdeab2a48971479
 ```
 
-### `dpkg` source package: `libidn2=2.0.4-1.1build2`
+### `dpkg` source package: `libidn2=2.0.4-1.1ubuntu0.2`
 
 Binary Packages:
 
-- `libidn2-0:amd64=2.0.4-1.1build2`
+- `libidn2-0:amd64=2.0.4-1.1ubuntu0.2`
 
 Licenses: (parsed from: `/usr/share/doc/libidn2-0/copyright`)
 
@@ -861,10 +861,10 @@ Licenses: (parsed from: `/usr/share/doc/libidn2-0/copyright`)
 Source:
 
 ```console
-$ apt-get source -qq --print-uris libidn2=2.0.4-1.1build2
-'http://archive.ubuntu.com/ubuntu/pool/main/libi/libidn2/libidn2_2.0.4-1.1build2.dsc' libidn2_2.0.4-1.1build2.dsc 2284 SHA256:1a2ebdd471b5d3da5674337594d28213b134464c53d0f5ae529a4bc53f2115fe
+$ apt-get source -qq --print-uris libidn2=2.0.4-1.1ubuntu0.2
+'http://archive.ubuntu.com/ubuntu/pool/main/libi/libidn2/libidn2_2.0.4-1.1ubuntu0.2.dsc' libidn2_2.0.4-1.1ubuntu0.2.dsc 2391 SHA256:013191e4a413de9928b5f76b2ab7237055d2e51ed1f82c7bd5ddddff6615d7c8
 'http://archive.ubuntu.com/ubuntu/pool/main/libi/libidn2/libidn2_2.0.4.orig.tar.gz' libidn2_2.0.4.orig.tar.gz 2008524 SHA256:644b6b03b285fb0ace02d241d59483d98bc462729d8bb3608d5cad5532f3d2f0
-'http://archive.ubuntu.com/ubuntu/pool/main/libi/libidn2/libidn2_2.0.4-1.1build2.debian.tar.xz' libidn2_2.0.4-1.1build2.debian.tar.xz 10285784 SHA256:fd3d28167dba38fcfd2951f09a6dc5408fa0a62c68597e743bb20e6b0a0367d1
+'http://archive.ubuntu.com/ubuntu/pool/main/libi/libidn2/libidn2_2.0.4-1.1ubuntu0.2.debian.tar.xz' libidn2_2.0.4-1.1ubuntu0.2.debian.tar.xz 10290460 SHA256:45c587e0bf489b0367a7a1c2eadbd2efcc774c035ef4868c95ea5b0e0f399be2
 ```
 
 ### `dpkg` source package: `libpsl=0.19.1-5build1`
