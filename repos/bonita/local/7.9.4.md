@@ -2,8 +2,8 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:db7f578129aa9740fc55b134846af94e6c6c637e56ff70b33a32c54964f938f8`
-- Created: `2019-10-18T21:02:28.27124401Z`
+- Image ID: `sha256:97f7e196c07d6e5ab41ffd3d32df4f66dba7b7e67664bff99163964d8b740d63`
+- Created: `2019-11-01T01:43:11.026470714Z`
 - Virtual Size: ~ 455.05 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
@@ -613,13 +613,13 @@ $ apt-get source -qq --print-uris expat=2.2.5-3ubuntu0.2
 'http://archive.ubuntu.com/ubuntu/pool/main/e/expat/expat_2.2.5-3ubuntu0.2.debian.tar.xz' expat_2.2.5-3ubuntu0.2.debian.tar.xz 12024 SHA256:9d9b040636ebf98fe3e401e6ebacc53073a2d508385bc91bde0fcb6b2aaa5675
 ```
 
-### `dpkg` source package: `file=1:5.32-2ubuntu0.2`
+### `dpkg` source package: `file=1:5.32-2ubuntu0.3`
 
 Binary Packages:
 
-- `file=1:5.32-2ubuntu0.2`
-- `libmagic-mgc=1:5.32-2ubuntu0.2`
-- `libmagic1:amd64=1:5.32-2ubuntu0.2`
+- `file=1:5.32-2ubuntu0.3`
+- `libmagic-mgc=1:5.32-2ubuntu0.3`
+- `libmagic1:amd64=1:5.32-2ubuntu0.3`
 
 Licenses: (parsed from: `/usr/share/doc/file/copyright`, `/usr/share/doc/libmagic-mgc/copyright`, `/usr/share/doc/libmagic1/copyright`)
 
@@ -632,10 +632,10 @@ Licenses: (parsed from: `/usr/share/doc/file/copyright`, `/usr/share/doc/libmagi
 Source:
 
 ```console
-$ apt-get source -qq --print-uris file=1:5.32-2ubuntu0.2
-'http://archive.ubuntu.com/ubuntu/pool/main/f/file/file_5.32-2ubuntu0.2.dsc' file_5.32-2ubuntu0.2.dsc 1972 SHA256:52aa48b2560293f5f5ed113d2ed103086855d10e59535e5f995c097ba0b3b6da
+$ apt-get source -qq --print-uris file=1:5.32-2ubuntu0.3
+'http://archive.ubuntu.com/ubuntu/pool/main/f/file/file_5.32-2ubuntu0.3.dsc' file_5.32-2ubuntu0.3.dsc 1972 SHA256:821a16b82933d389739edad6a476381672ad1a3fde7355a800d248b72477456a
 'http://archive.ubuntu.com/ubuntu/pool/main/f/file/file_5.32.orig.tar.xz' file_5.32.orig.tar.xz 584352 SHA256:07627dc16c9a5b64352b00f24afb8d328b9ecade82afe2e2fa55201d324fd360
-'http://archive.ubuntu.com/ubuntu/pool/main/f/file/file_5.32-2ubuntu0.2.debian.tar.xz' file_5.32-2ubuntu0.2.debian.tar.xz 33332 SHA256:676faefe6020355c354683c1477261ab6a4d299bbbae52bdb6004449ad17edbf
+'http://archive.ubuntu.com/ubuntu/pool/main/f/file/file_5.32-2ubuntu0.3.debian.tar.xz' file_5.32-2ubuntu0.3.debian.tar.xz 33820 SHA256:e3aaaf526a2fda754c658d15e4ea56de0c69b9aeac5738858bb4aa2375773da9
 ```
 
 ### `dpkg` source package: `findutils=4.6.0+git+20170828-2`
@@ -1246,11 +1246,11 @@ $ apt-get source -qq --print-uris libgpg-error=1.27-6
 'http://archive.ubuntu.com/ubuntu/pool/main/libg/libgpg-error/libgpg-error_1.27-6.debian.tar.xz' libgpg-error_1.27-6.debian.tar.xz 20556 SHA256:89bc57dc3df449febf037226daf1aee830455c4efa493c0e3bdeab2a48971479
 ```
 
-### `dpkg` source package: `libidn2=2.0.4-1.1build2`
+### `dpkg` source package: `libidn2=2.0.4-1.1ubuntu0.2`
 
 Binary Packages:
 
-- `libidn2-0:amd64=2.0.4-1.1build2`
+- `libidn2-0:amd64=2.0.4-1.1ubuntu0.2`
 
 Licenses: (parsed from: `/usr/share/doc/libidn2-0/copyright`)
 
@@ -1265,10 +1265,10 @@ Licenses: (parsed from: `/usr/share/doc/libidn2-0/copyright`)
 Source:
 
 ```console
-$ apt-get source -qq --print-uris libidn2=2.0.4-1.1build2
-'http://archive.ubuntu.com/ubuntu/pool/main/libi/libidn2/libidn2_2.0.4-1.1build2.dsc' libidn2_2.0.4-1.1build2.dsc 2284 SHA256:1a2ebdd471b5d3da5674337594d28213b134464c53d0f5ae529a4bc53f2115fe
+$ apt-get source -qq --print-uris libidn2=2.0.4-1.1ubuntu0.2
+'http://archive.ubuntu.com/ubuntu/pool/main/libi/libidn2/libidn2_2.0.4-1.1ubuntu0.2.dsc' libidn2_2.0.4-1.1ubuntu0.2.dsc 2391 SHA256:013191e4a413de9928b5f76b2ab7237055d2e51ed1f82c7bd5ddddff6615d7c8
 'http://archive.ubuntu.com/ubuntu/pool/main/libi/libidn2/libidn2_2.0.4.orig.tar.gz' libidn2_2.0.4.orig.tar.gz 2008524 SHA256:644b6b03b285fb0ace02d241d59483d98bc462729d8bb3608d5cad5532f3d2f0
-'http://archive.ubuntu.com/ubuntu/pool/main/libi/libidn2/libidn2_2.0.4-1.1build2.debian.tar.xz' libidn2_2.0.4-1.1build2.debian.tar.xz 10285784 SHA256:fd3d28167dba38fcfd2951f09a6dc5408fa0a62c68597e743bb20e6b0a0367d1
+'http://archive.ubuntu.com/ubuntu/pool/main/libi/libidn2/libidn2_2.0.4-1.1ubuntu0.2.debian.tar.xz' libidn2_2.0.4-1.1ubuntu0.2.debian.tar.xz 10290460 SHA256:45c587e0bf489b0367a7a1c2eadbd2efcc774c035ef4868c95ea5b0e0f399be2
 ```
 
 ### `dpkg` source package: `libjpeg-turbo=1.5.2-0ubuntu5.18.04.1`
