@@ -2,9 +2,9 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:c3395129a8c5570594add48160e2a298f7e9b6cd6028a98aa988d91efbafbe13`
-- Created: `2019-10-18T21:34:18.962203332Z`
-- Virtual Size: ~ 1.52 Gb  
+- Image ID: `sha256:e9cc34cec96467413581c19ec79fff050e1ed5fb46f97ca4de6a98c7c87abeef`
+- Created: `2019-10-31T23:31:21.463807135Z`
+- Virtual Size: ~ 1.53 Gb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["/ros_entrypoint.sh"]`
@@ -1357,12 +1357,12 @@ $ apt-get source -qq --print-uris fakeroot=1.20.2-1ubuntu1
 'http://archive.ubuntu.com/ubuntu/pool/main/f/fakeroot/fakeroot_1.20.2-1ubuntu1.debian.tar.xz' fakeroot_1.20.2-1ubuntu1.debian.tar.xz 49168 SHA256:b4ce948517685a73645175ad62f16d52506186417823f43b7899b7f8f5498d98
 ```
 
-### `dpkg` source package: `file=1:5.25-2ubuntu1.2`
+### `dpkg` source package: `file=1:5.25-2ubuntu1.3`
 
 Binary Packages:
 
-- `file=1:5.25-2ubuntu1.2`
-- `libmagic1:amd64=1:5.25-2ubuntu1.2`
+- `file=1:5.25-2ubuntu1.3`
+- `libmagic1:amd64=1:5.25-2ubuntu1.3`
 
 Licenses: (parsed from: `/usr/share/doc/file/copyright`, `/usr/share/doc/libmagic1/copyright`)
 
@@ -1375,10 +1375,10 @@ Licenses: (parsed from: `/usr/share/doc/file/copyright`, `/usr/share/doc/libmagi
 Source:
 
 ```console
-$ apt-get source -qq --print-uris file=1:5.25-2ubuntu1.2
-'http://archive.ubuntu.com/ubuntu/pool/main/f/file/file_5.25-2ubuntu1.2.dsc' file_5.25-2ubuntu1.2.dsc 2252 SHA256:626c4e22cca205dc1a9923a7b28f69c0f728224dee694e2d2f1eb492aaba9edf
+$ apt-get source -qq --print-uris file=1:5.25-2ubuntu1.3
+'http://archive.ubuntu.com/ubuntu/pool/main/f/file/file_5.25-2ubuntu1.3.dsc' file_5.25-2ubuntu1.3.dsc 2252 SHA256:a6dcb0bd9ce6962897fd16cedb2a189ffc0152eada59e5ece522b67bae71766c
 'http://archive.ubuntu.com/ubuntu/pool/main/f/file/file_5.25.orig.tar.xz' file_5.25.orig.tar.xz 537916 SHA256:8062cae8be640ff8583b8714e394dc73c3127d23f8fe9097f1433cdb36bff31c
-'http://archive.ubuntu.com/ubuntu/pool/main/f/file/file_5.25-2ubuntu1.2.debian.tar.xz' file_5.25-2ubuntu1.2.debian.tar.xz 34664 SHA256:b221bc43fee814aae230b52837bdad6e08eae7fb5f6f6cf602d446502a257c1f
+'http://archive.ubuntu.com/ubuntu/pool/main/f/file/file_5.25-2ubuntu1.3.debian.tar.xz' file_5.25-2ubuntu1.3.debian.tar.xz 35184 SHA256:5eafa8f4a72094feb7d212fdea29d9aefcfd3d928788ad0e8ac96a01c8930389
 ```
 
 ### `dpkg` source package: `findutils=4.6.0+git+20160126-2`
@@ -2601,11 +2601,11 @@ $ apt-get source -qq --print-uris libalgorithm-merge-perl=0.08-3
 'http://archive.ubuntu.com/ubuntu/pool/main/liba/libalgorithm-merge-perl/libalgorithm-merge-perl_0.08-3.debian.tar.xz' libalgorithm-merge-perl_0.08-3.debian.tar.xz 2436 SHA256:241e8212e7b8607b7f5c6b7969d7bb1b62361eb013f0e48c28f8ef6390c7bce3
 ```
 
-### `dpkg` source package: `libarchive=3.1.2-11ubuntu0.16.04.6`
+### `dpkg` source package: `libarchive=3.1.2-11ubuntu0.16.04.7`
 
 Binary Packages:
 
-- `libarchive13:amd64=3.1.2-11ubuntu0.16.04.6`
+- `libarchive13:amd64=3.1.2-11ubuntu0.16.04.7`
 
 **WARNING:** unable to detect licenses! (package likely not compliant with DEP-5)  
 If source is available (seen below), check the contents of `debian/copyright` within it.
@@ -2614,10 +2614,10 @@ If source is available (seen below), check the contents of `debian/copyright` wi
 Source:
 
 ```console
-$ apt-get source -qq --print-uris libarchive=3.1.2-11ubuntu0.16.04.6
-'http://archive.ubuntu.com/ubuntu/pool/main/liba/libarchive/libarchive_3.1.2-11ubuntu0.16.04.6.dsc' libarchive_3.1.2-11ubuntu0.16.04.6.dsc 2422 SHA256:cf75520a612b100c97cacfea22b3c951c4debdd66970cdb554b44e71d857e9de
+$ apt-get source -qq --print-uris libarchive=3.1.2-11ubuntu0.16.04.7
+'http://archive.ubuntu.com/ubuntu/pool/main/liba/libarchive/libarchive_3.1.2-11ubuntu0.16.04.7.dsc' libarchive_3.1.2-11ubuntu0.16.04.7.dsc 2422 SHA256:6cd219b34c2e8ade7eeb6b6a1275873361206abe4bf4cbe27b6928e249a4a308
 'http://archive.ubuntu.com/ubuntu/pool/main/liba/libarchive/libarchive_3.1.2.orig.tar.gz' libarchive_3.1.2.orig.tar.gz 4527540 SHA256:eb87eacd8fe49e8d90c8fdc189813023ccc319c5e752b01fb6ad0cc7b2c53d5e
-'http://archive.ubuntu.com/ubuntu/pool/main/liba/libarchive/libarchive_3.1.2-11ubuntu0.16.04.6.debian.tar.xz' libarchive_3.1.2-11ubuntu0.16.04.6.debian.tar.xz 44804 SHA256:19d935ed1356818f417d7bd204904c54637208312d934aaa85c400d72494bb2d
+'http://archive.ubuntu.com/ubuntu/pool/main/liba/libarchive/libarchive_3.1.2-11ubuntu0.16.04.7.debian.tar.xz' libarchive_3.1.2-11ubuntu0.16.04.7.debian.tar.xz 45180 SHA256:074f4623c3a220ce5dba6b372e698b6e36be4aa775f52f21ee95b5f6d7e4accc
 ```
 
 ### `dpkg` source package: `libassuan=2.4.2-2`
@@ -4239,19 +4239,24 @@ $ apt-get source -qq --print-uris libxshmfence=1.2-1
 'http://archive.ubuntu.com/ubuntu/pool/main/libx/libxshmfence/libxshmfence_1.2-1.diff.gz' libxshmfence_1.2-1.diff.gz 13284 SHA256:65db7e07c5c5b12d0b1f93cdb0c4e3e448429240044247ea2f64a89c0cce5f8e
 ```
 
-### `dpkg` source package: `libxslt=1.1.28-2.1ubuntu0.2`
+### `dpkg` source package: `libxslt=1.1.28-2.1ubuntu0.3`
 
 Binary Packages:
 
-- `libxslt1.1:amd64=1.1.28-2.1ubuntu0.2`
+- `libxslt1.1:amd64=1.1.28-2.1ubuntu0.3`
 
 **WARNING:** unable to detect licenses! (package likely not compliant with DEP-5)  
 If source is available (seen below), check the contents of `debian/copyright` within it.
 
 
-**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
-This is *usually* due to a new package version being released and the old version being removed.
+Source:
 
+```console
+$ apt-get source -qq --print-uris libxslt=1.1.28-2.1ubuntu0.3
+'http://archive.ubuntu.com/ubuntu/pool/main/libx/libxslt/libxslt_1.1.28-2.1ubuntu0.3.dsc' libxslt_1.1.28-2.1ubuntu0.3.dsc 2482 SHA256:430bdf4c9147f094d327d0778d7288ae4097af224343263f5b19f14919f0e071
+'http://archive.ubuntu.com/ubuntu/pool/main/libx/libxslt/libxslt_1.1.28.orig.tar.gz' libxslt_1.1.28.orig.tar.gz 3435907 SHA256:5fc7151a57b89c03d7b825df5a0fae0a8d5f05674c0e7cf2937ecec4d54a028c
+'http://archive.ubuntu.com/ubuntu/pool/main/libx/libxslt/libxslt_1.1.28-2.1ubuntu0.3.debian.tar.xz' libxslt_1.1.28-2.1ubuntu0.3.debian.tar.xz 42428 SHA256:d51924988291e776f2d31e532d060dbf47464f494602757f0d23e8baad6e7a29
+```
 
 ### `dpkg` source package: `libxt=1:1.1.5-0ubuntu1`
 
@@ -4331,20 +4336,25 @@ $ apt-get source -qq --print-uris libyaml=0.1.6-3
 'http://archive.ubuntu.com/ubuntu/pool/main/liby/libyaml/libyaml_0.1.6-3.debian.tar.xz' libyaml_0.1.6-3.debian.tar.xz 4268 SHA256:fd567e6918903833e5c4f1f87254c550eca07c2bba1ccbe6031da33243cf4297
 ```
 
-### `dpkg` source package: `linux=4.4.0-165.193`
+### `dpkg` source package: `linux=4.4.0-166.195`
 
 Binary Packages:
 
-- `linux-libc-dev:amd64=4.4.0-165.193`
+- `linux-libc-dev:amd64=4.4.0-166.195`
 
 Licenses: (parsed from: `/usr/share/doc/linux-libc-dev/copyright`)
 
 - `GPL-2`
 - `redpine-signals`
 
-**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
-This is *usually* due to a new package version being released and the old version being removed.
+Source:
 
+```console
+$ apt-get source -qq --print-uris linux=4.4.0-166.195
+'http://archive.ubuntu.com/ubuntu/pool/main/l/linux/linux_4.4.0-166.195.dsc' linux_4.4.0-166.195.dsc 11601 SHA256:7d1e9593a8d606882275012d35ed61d825140da5f552c4ccc188bcaa3c67ff9f
+'http://archive.ubuntu.com/ubuntu/pool/main/l/linux/linux_4.4.0.orig.tar.gz' linux_4.4.0.orig.tar.gz 132860730 SHA256:730e75919b5d30a9bc934ccb300eaedfdf44994ca9ee1d07a46901c46c221357
+'http://archive.ubuntu.com/ubuntu/pool/main/l/linux/linux_4.4.0-166.195.diff.gz' linux_4.4.0-166.195.diff.gz 15844506 SHA256:32bb40feece9558c8b8915d21df746f0e13b710ce1b78fdd4f8138d26bdc122a
+```
 
 ### `dpkg` source package: `lksctp-tools=1.0.16+dfsg-3`
 
@@ -5589,33 +5599,43 @@ Licenses: (parsed from: `/usr/share/doc/libpyside-py3-2.0/copyright`, `/usr/shar
 This is *usually* due to a new package version being released and the old version being removed.
 
 
-### `dpkg` source package: `python-catkin-pkg-modules=0.4.13-1`
+### `dpkg` source package: `python-catkin-pkg-modules=0.4.14-1`
 
 Binary Packages:
 
-- `python-catkin-pkg-modules=0.4.13-1`
+- `python-catkin-pkg-modules=0.4.14-1`
 
 **WARNING:** unable to detect licenses! (package likely not compliant with DEP-5)  
 If source is available (seen below), check the contents of `debian/copyright` within it.
 
 
-**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
-This is *usually* due to a new package version being released and the old version being removed.
+Source:
 
+```console
+$ apt-get source -qq --print-uris python-catkin-pkg-modules=0.4.14-1
+'http://packages.ros.org/ros/ubuntu/pool/main/p/python-catkin-pkg-modules/python-catkin-pkg-modules_0.4.14-1.debian.tar.xz' python-catkin-pkg-modules_0.4.14-1.debian.tar.xz 1932 SHA512:28c02c5229359f7cdf553a0936bc0cdf2f6831b7c62b1756aac552a37c803f37f796f7ecce661e59be5281107e928afaa0ca54e8d0c3d75846f2e4fd9a58583d
+'http://packages.ros.org/ros/ubuntu/pool/main/p/python-catkin-pkg-modules/python-catkin-pkg-modules_0.4.14-1.dsc' python-catkin-pkg-modules_0.4.14-1.dsc 1050 SHA512:af3c24f24819c7aacd401f03c98611782b5f8b419d6342a524d77464e4fd2eee9d85fcc136bce67e8b730bdaef46387748292358b4853a547cfc3286329da6e7
+'http://packages.ros.org/ros/ubuntu/pool/main/p/python-catkin-pkg-modules/python-catkin-pkg-modules_0.4.14.orig.tar.gz' python-catkin-pkg-modules_0.4.14.orig.tar.gz 60571 SHA512:0785407ddad632af01484a7199bec410b4bce41a0cdb15581a7e8ac42df921c3228df2f80d1814c8c75e50061d99cf1e1c7d27ee143c0f69aee93eec14af5f89
+```
 
-### `dpkg` source package: `python-catkin-pkg=0.4.13-100`
+### `dpkg` source package: `python-catkin-pkg=0.4.14-100`
 
 Binary Packages:
 
-- `python-catkin-pkg=0.4.13-100`
+- `python-catkin-pkg=0.4.14-100`
 
 **WARNING:** unable to detect licenses! (package likely not compliant with DEP-5)  
 If source is available (seen below), check the contents of `debian/copyright` within it.
 
 
-**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
-This is *usually* due to a new package version being released and the old version being removed.
+Source:
 
+```console
+$ apt-get source -qq --print-uris python-catkin-pkg=0.4.14-100
+'http://packages.ros.org/ros/ubuntu/pool/main/p/python-catkin-pkg/python-catkin-pkg_0.4.14-100.debian.tar.xz' python-catkin-pkg_0.4.14-100.debian.tar.xz 1908 SHA512:cfb935f0e966437303f8fac37ff8186b90e44e172c96d4118e5dad0bcba1aeae8147894d854e43e8b513d4075a51986cec5a6274e1e9a2ed0bed9c5104a69fee
+'http://packages.ros.org/ros/ubuntu/pool/main/p/python-catkin-pkg/python-catkin-pkg_0.4.14-100.dsc' python-catkin-pkg_0.4.14-100.dsc 986 SHA512:7ce552427adfd87815e4e52f7f4a548f854577885776f8e8fcf2351eca003312e604aa785b02440d7edc9d35ec56960892deea4a5f020aaa690064560d6afa4f
+'http://packages.ros.org/ros/ubuntu/pool/main/p/python-catkin-pkg/python-catkin-pkg_0.4.14.orig.tar.gz' python-catkin-pkg_0.4.14.orig.tar.gz 13610 SHA512:2923fda4da44c3103464fc8293484fda5c369aaa74ceb8740898bf1f951847364dad5055ebf10deecb5f1324b4769ea2e22374da5433b4f981bda730fc33ac6b
+```
 
 ### `dpkg` source package: `python-crypto=2.6.1-6ubuntu0.16.04.3`
 
@@ -5782,19 +5802,24 @@ $ apt-get source -qq --print-uris python-roman=2.0.0-2
 'http://archive.ubuntu.com/ubuntu/pool/main/p/python-roman/python-roman_2.0.0-2.debian.tar.xz' python-roman_2.0.0-2.debian.tar.xz 8508 SHA256:fdb23384ad4ab4701214c5776bb2b181e794a347d024fc0483e4ebe5055f4362
 ```
 
-### `dpkg` source package: `python-rosdep=0.16.1-1`
+### `dpkg` source package: `python-rosdep=0.17.1-1`
 
 Binary Packages:
 
-- `python-rosdep=0.16.1-1`
+- `python-rosdep=0.17.1-1`
 
 **WARNING:** unable to detect licenses! (package likely not compliant with DEP-5)  
 If source is available (seen below), check the contents of `debian/copyright` within it.
 
 
-**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
-This is *usually* due to a new package version being released and the old version being removed.
+Source:
 
+```console
+$ apt-get source -qq --print-uris python-rosdep=0.17.1-1
+'http://packages.ros.org/ros/ubuntu/pool/main/p/python-rosdep/python-rosdep_0.17.1-1.debian.tar.xz' python-rosdep_0.17.1-1.debian.tar.xz 1908 SHA512:b36a0f73fc1e2547f90f28c924cbea22fa880bad5061a2e1f90143ff318d2f73216faae55f3868d55c9327db1c766e02e2706bb3c03ee39083320bb6ece16ade
+'http://packages.ros.org/ros/ubuntu/pool/main/p/python-rosdep/python-rosdep_0.17.1-1.dsc' python-rosdep_0.17.1-1.dsc 905 SHA512:b2b3fb9bd38eaa4798b856fdaa0db1362dff64edd6a8490f3d455e02fa3a36e45b36f59bc2bfaacb07bc184d982b80b72f8d87d091affb52eab152da4a66b264
+'http://packages.ros.org/ros/ubuntu/pool/main/p/python-rosdep/python-rosdep_0.17.1.orig.tar.gz' python-rosdep_0.17.1.orig.tar.gz 87669 SHA512:fe1f509050daeb32bfabbe767ae1677d34d2e177bceabc48763a92dbd0aabb5239a5af1037b854b537b217dd549c067c167e86709db9e91c20fcbdb74e6ce910
+```
 
 ### `dpkg` source package: `python-rosdistro-modules=0.7.5-1`
 
@@ -6766,11 +6791,11 @@ If source is available (seen below), check the contents of `debian/copyright` wi
 This is *usually* due to a new package version being released and the old version being removed.
 
 
-### `dpkg` source package: `ros-kinetic-eigen-conversions=1.11.9-0xenial-20190607-190420-0800`
+### `dpkg` source package: `ros-kinetic-eigen-conversions=1.11.9-0xenial-20191024-153928+0000`
 
 Binary Packages:
 
-- `ros-kinetic-eigen-conversions=1.11.9-0xenial-20190607-190420-0800`
+- `ros-kinetic-eigen-conversions=1.11.9-0xenial-20191024-153928+0000`
 
 **WARNING:** unable to detect licenses! (package likely not compliant with DEP-5)  
 If source is available (seen below), check the contents of `debian/copyright` within it.
@@ -6934,11 +6959,11 @@ If source is available (seen below), check the contents of `debian/copyright` wi
 This is *usually* due to a new package version being released and the old version being removed.
 
 
-### `dpkg` source package: `ros-kinetic-geometry=1.11.9-0xenial-20190608-162728-0800`
+### `dpkg` source package: `ros-kinetic-geometry=1.11.9-0xenial-20191024-160039+0000`
 
 Binary Packages:
 
-- `ros-kinetic-geometry=1.11.9-0xenial-20190608-162728-0800`
+- `ros-kinetic-geometry=1.11.9-0xenial-20191024-160039+0000`
 
 **WARNING:** unable to detect licenses! (package likely not compliant with DEP-5)  
 If source is available (seen below), check the contents of `debian/copyright` within it.
@@ -6962,11 +6987,11 @@ If source is available (seen below), check the contents of `debian/copyright` wi
 This is *usually* due to a new package version being released and the old version being removed.
 
 
-### `dpkg` source package: `ros-kinetic-kdl-conversions=1.11.9-0xenial-20190607-190127-0800`
+### `dpkg` source package: `ros-kinetic-kdl-conversions=1.11.9-0xenial-20191024-154338+0000`
 
 Binary Packages:
 
-- `ros-kinetic-kdl-conversions=1.11.9-0xenial-20190607-190127-0800`
+- `ros-kinetic-kdl-conversions=1.11.9-0xenial-20191024-154338+0000`
 
 **WARNING:** unable to detect licenses! (package likely not compliant with DEP-5)  
 If source is available (seen below), check the contents of `debian/copyright` within it.
@@ -6976,11 +7001,11 @@ If source is available (seen below), check the contents of `debian/copyright` wi
 This is *usually* due to a new package version being released and the old version being removed.
 
 
-### `dpkg` source package: `ros-kinetic-kdl-parser=1.12.11-0xenial-20190608-035540-0800`
+### `dpkg` source package: `ros-kinetic-kdl-parser=1.12.11-0xenial-20191024-153710+0000`
 
 Binary Packages:
 
-- `ros-kinetic-kdl-parser=1.12.11-0xenial-20190608-035540-0800`
+- `ros-kinetic-kdl-parser=1.12.11-0xenial-20191024-153710+0000`
 
 **WARNING:** unable to detect licenses! (package likely not compliant with DEP-5)  
 If source is available (seen below), check the contents of `debian/copyright` within it.
@@ -7116,11 +7141,11 @@ If source is available (seen below), check the contents of `debian/copyright` wi
 This is *usually* due to a new package version being released and the old version being removed.
 
 
-### `dpkg` source package: `ros-kinetic-orocos-kdl=1.3.1-0xenial-20190607-171314-0800`
+### `dpkg` source package: `ros-kinetic-orocos-kdl=1.3.2-1xenial-20191024-152541+0000`
 
 Binary Packages:
 
-- `ros-kinetic-orocos-kdl=1.3.1-0xenial-20190607-171314-0800`
+- `ros-kinetic-orocos-kdl=1.3.2-1xenial-20191024-152541+0000`
 
 Licenses: (parsed from: `/usr/share/doc/ros-kinetic-orocos-kdl/copyright`)
 
@@ -7144,11 +7169,11 @@ If source is available (seen below), check the contents of `debian/copyright` wi
 This is *usually* due to a new package version being released and the old version being removed.
 
 
-### `dpkg` source package: `ros-kinetic-python-orocos-kdl=1.3.1-0xenial-20190607-181050-0800`
+### `dpkg` source package: `ros-kinetic-python-orocos-kdl=1.3.2-1xenial-20191024-152923+0000`
 
 Binary Packages:
 
-- `ros-kinetic-python-orocos-kdl=1.3.1-0xenial-20190607-181050-0800`
+- `ros-kinetic-python-orocos-kdl=1.3.2-1xenial-20191024-152923+0000`
 
 **WARNING:** unable to detect licenses! (package likely not compliant with DEP-5)  
 If source is available (seen below), check the contents of `debian/copyright` within it.
@@ -7200,11 +7225,11 @@ If source is available (seen below), check the contents of `debian/copyright` wi
 This is *usually* due to a new package version being released and the old version being removed.
 
 
-### `dpkg` source package: `ros-kinetic-robot-model=1.12.11-0xenial-20190913-220024+0000`
+### `dpkg` source package: `ros-kinetic-robot-model=1.12.11-0xenial-20191024-155621+0000`
 
 Binary Packages:
 
-- `ros-kinetic-robot-model=1.12.11-0xenial-20190913-220024+0000`
+- `ros-kinetic-robot-model=1.12.11-0xenial-20191024-155621+0000`
 
 **WARNING:** unable to detect licenses! (package likely not compliant with DEP-5)  
 If source is available (seen below), check the contents of `debian/copyright` within it.
@@ -7214,11 +7239,11 @@ If source is available (seen below), check the contents of `debian/copyright` wi
 This is *usually* due to a new package version being released and the old version being removed.
 
 
-### `dpkg` source package: `ros-kinetic-robot-state-publisher=1.13.7-1xenial-20190827-223736+0000`
+### `dpkg` source package: `ros-kinetic-robot-state-publisher=1.13.7-1xenial-20191024-154213+0000`
 
 Binary Packages:
 
-- `ros-kinetic-robot-state-publisher=1.13.7-1xenial-20190827-223736+0000`
+- `ros-kinetic-robot-state-publisher=1.13.7-1xenial-20191024-154213+0000`
 
 **WARNING:** unable to detect licenses! (package likely not compliant with DEP-5)  
 If source is available (seen below), check the contents of `debian/copyright` within it.
@@ -7228,11 +7253,11 @@ If source is available (seen below), check the contents of `debian/copyright` wi
 This is *usually* due to a new package version being released and the old version being removed.
 
 
-### `dpkg` source package: `ros-kinetic-robot=1.3.2-0xenial-20190913-221506+0000`
+### `dpkg` source package: `ros-kinetic-robot=1.3.2-0xenial-20191024-160819+0000`
 
 Binary Packages:
 
-- `ros-kinetic-robot=1.3.2-0xenial-20190913-221506+0000`
+- `ros-kinetic-robot=1.3.2-0xenial-20191024-160819+0000`
 
 **WARNING:** unable to detect licenses! (package likely not compliant with DEP-5)  
 If source is available (seen below), check the contents of `debian/copyright` within it.
@@ -7942,11 +7967,11 @@ If source is available (seen below), check the contents of `debian/copyright` wi
 This is *usually* due to a new package version being released and the old version being removed.
 
 
-### `dpkg` source package: `ros-kinetic-tf-conversions=1.11.9-0xenial-20190608-155050-0800`
+### `dpkg` source package: `ros-kinetic-tf-conversions=1.11.9-0xenial-20191024-154748+0000`
 
 Binary Packages:
 
-- `ros-kinetic-tf-conversions=1.11.9-0xenial-20190608-155050-0800`
+- `ros-kinetic-tf-conversions=1.11.9-0xenial-20191024-154748+0000`
 
 **WARNING:** unable to detect licenses! (package likely not compliant with DEP-5)  
 If source is available (seen below), check the contents of `debian/copyright` within it.
@@ -7956,11 +7981,11 @@ If source is available (seen below), check the contents of `debian/copyright` wi
 This is *usually* due to a new package version being released and the old version being removed.
 
 
-### `dpkg` source package: `ros-kinetic-tf2-kdl=0.5.20-0xenial-20190608-051410-0800`
+### `dpkg` source package: `ros-kinetic-tf2-kdl=0.5.20-0xenial-20191024-153501+0000`
 
 Binary Packages:
 
-- `ros-kinetic-tf2-kdl=0.5.20-0xenial-20190608-051410-0800`
+- `ros-kinetic-tf2-kdl=0.5.20-0xenial-20191024-153501+0000`
 
 **WARNING:** unable to detect licenses! (package likely not compliant with DEP-5)  
 If source is available (seen below), check the contents of `debian/copyright` within it.
@@ -8801,19 +8826,19 @@ $ apt-get source -qq --print-uris ustr=1.0.4-5
 'http://archive.ubuntu.com/ubuntu/pool/main/u/ustr/ustr_1.0.4-5.debian.tar.xz' ustr_1.0.4-5.debian.tar.xz 24948 SHA256:a21e78acf82dcccef2893932ef7b85852419bfd9b18382e63c34e7710c1d7762
 ```
 
-### `dpkg` source package: `util-linux=2.27.1-6ubuntu3.8`
+### `dpkg` source package: `util-linux=2.27.1-6ubuntu3.9`
 
 Binary Packages:
 
-- `bsdutils=1:2.27.1-6ubuntu3.8`
-- `libblkid1:amd64=2.27.1-6ubuntu3.8`
-- `libfdisk1:amd64=2.27.1-6ubuntu3.8`
-- `libmount1:amd64=2.27.1-6ubuntu3.8`
-- `libsmartcols1:amd64=2.27.1-6ubuntu3.8`
-- `libuuid1:amd64=2.27.1-6ubuntu3.8`
-- `mount=2.27.1-6ubuntu3.8`
-- `util-linux=2.27.1-6ubuntu3.8`
-- `uuid-dev:amd64=2.27.1-6ubuntu3.8`
+- `bsdutils=1:2.27.1-6ubuntu3.9`
+- `libblkid1:amd64=2.27.1-6ubuntu3.9`
+- `libfdisk1:amd64=2.27.1-6ubuntu3.9`
+- `libmount1:amd64=2.27.1-6ubuntu3.9`
+- `libsmartcols1:amd64=2.27.1-6ubuntu3.9`
+- `libuuid1:amd64=2.27.1-6ubuntu3.9`
+- `mount=2.27.1-6ubuntu3.9`
+- `util-linux=2.27.1-6ubuntu3.9`
+- `uuid-dev:amd64=2.27.1-6ubuntu3.9`
 
 Licenses: (parsed from: `/usr/share/doc/bsdutils/copyright`, `/usr/share/doc/libblkid1/copyright`, `/usr/share/doc/libfdisk1/copyright`, `/usr/share/doc/libmount1/copyright`, `/usr/share/doc/libsmartcols1/copyright`, `/usr/share/doc/libuuid1/copyright`, `/usr/share/doc/mount/copyright`, `/usr/share/doc/util-linux/copyright`, `/usr/share/doc/uuid-dev/copyright`)
 
@@ -8834,9 +8859,14 @@ Licenses: (parsed from: `/usr/share/doc/bsdutils/copyright`, `/usr/share/doc/lib
 - `MIT`
 - `public-domain`
 
-**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
-This is *usually* due to a new package version being released and the old version being removed.
+Source:
 
+```console
+$ apt-get source -qq --print-uris util-linux=2.27.1-6ubuntu3.9
+'http://archive.ubuntu.com/ubuntu/pool/main/u/util-linux/util-linux_2.27.1-6ubuntu3.9.dsc' util-linux_2.27.1-6ubuntu3.9.dsc 3586 SHA256:184c6e918aab02046b1f8769e488013a4da2c59d9108123447ead31ee9270d72
+'http://archive.ubuntu.com/ubuntu/pool/main/u/util-linux/util-linux_2.27.1.orig.tar.xz' util-linux_2.27.1.orig.tar.xz 3964512 SHA256:0a818fcdede99aec43ffe6ca5b5388bff80d162f2f7bd4541dca94fecb87a290
+'http://archive.ubuntu.com/ubuntu/pool/main/u/util-linux/util-linux_2.27.1-6ubuntu3.9.debian.tar.xz' util-linux_2.27.1-6ubuntu3.9.debian.tar.xz 88260 SHA256:6d82ba9a363e1c5aa96b8ee964808d5678bb1749547bc173a701e70082e223bd
+```
 
 ### `dpkg` source package: `wayland=1.12.0-1~ubuntu16.04.3`
 
