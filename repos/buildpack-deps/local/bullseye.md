@@ -1282,20 +1282,13 @@ Licenses: (parsed from: `/usr/share/doc/git/copyright`, `/usr/share/doc/git-man/
 - `dlmalloc`
 - `mingw-runtime`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris git=1:2.23.0-1
-'http://deb.debian.org/debian/pool/main/g/git/git_2.23.0-1.dsc' git_2.23.0-1.dsc 2891 SHA256:14770f7487d163b018b22b94c532d569567046c03dfab843ba05a19456d3886c
-'http://deb.debian.org/debian/pool/main/g/git/git_2.23.0.orig.tar.xz' git_2.23.0.orig.tar.xz 5707148 SHA256:234fa05b6839e92dc300b2dd78c92ec9c0c8d439f65e1d430a7034f60af16067
-'http://deb.debian.org/debian/pool/main/g/git/git_2.23.0-1.debian.tar.xz' git_2.23.0-1.debian.tar.xz 621552 SHA256:a30f36147ddab53adcd7840669b61912593e5ec4a575b0c45f5bc547b120fd41
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/git/1:2.23.0-1/
 
-- https://sources.debian.net/src/git/1:2.23.0-1/ (for browsing the source)
-- https://sources.debian.net/src/git/1:2.23.0-1/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/git/1:2.23.0-1/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `glib2.0=2.62.1-1`
 
@@ -2117,20 +2110,13 @@ Licenses: (parsed from: `/usr/share/doc/libcap-ng0/copyright`)
 - `GPL-3`
 - `LGPL-2.1`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris libcap-ng=0.7.9-2
-'http://deb.debian.org/debian/pool/main/libc/libcap-ng/libcap-ng_0.7.9-2.dsc' libcap-ng_0.7.9-2.dsc 1912 SHA256:e787ebb86a7c9fdcfe429c20f2b17528d084917a34b5efc0022619e1e11572a4
-'http://deb.debian.org/debian/pool/main/libc/libcap-ng/libcap-ng_0.7.9.orig.tar.gz' libcap-ng_0.7.9.orig.tar.gz 449038 SHA256:4a1532bcf3731aade40936f6d6a586ed5a66ca4c7455e1338d1f6c3e09221328
-'http://deb.debian.org/debian/pool/main/libc/libcap-ng/libcap-ng_0.7.9-2.debian.tar.xz' libcap-ng_0.7.9-2.debian.tar.xz 6220 SHA256:1ce4d5f7ee041b01f254e9d12ae86fef563566871bc457579c70b058b071ae22
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/libcap-ng/0.7.9-2/
 
-- https://sources.debian.net/src/libcap-ng/0.7.9-2/ (for browsing the source)
-- https://sources.debian.net/src/libcap-ng/0.7.9-2/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/libcap-ng/0.7.9-2/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `libcap2=1:2.25-2`
 
@@ -5104,21 +5090,13 @@ Licenses: (parsed from: `/usr/share/doc/libunbound8/copyright`)
 - `ISC`
 - `public-domain`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris unbound=1.9.4-1
-'http://deb.debian.org/debian/pool/main/u/unbound/unbound_1.9.4-1.dsc' unbound_1.9.4-1.dsc 3270 SHA256:6c59e7e2d25bdee7d334bf2f60cdce8baf5ae4beda2e4334c605143e286ef0f0
-'http://deb.debian.org/debian/pool/main/u/unbound/unbound_1.9.4.orig.tar.gz' unbound_1.9.4.orig.tar.gz 5686242 SHA256:3d3e25fb224025f0e732c7970e5676f53fd1764c16d6a01be073a13e42954bb0
-'http://deb.debian.org/debian/pool/main/u/unbound/unbound_1.9.4.orig.tar.gz.asc' unbound_1.9.4.orig.tar.gz.asc 833 SHA256:d9b0936fa989dfe966b053302cc21a34536bf6274f3a9a1f9d3ac41f14e970c8
-'http://deb.debian.org/debian/pool/main/u/unbound/unbound_1.9.4-1.debian.tar.xz' unbound_1.9.4-1.debian.tar.xz 18628 SHA256:41ec954cdb1dd661c73c5b4eba8ba5ef18652a5c76f8f9948262f08f78e22f28
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/unbound/1.9.4-1/
 
-- https://sources.debian.net/src/unbound/1.9.4-1/ (for browsing the source)
-- https://sources.debian.net/src/unbound/1.9.4-1/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/unbound/1.9.4-1/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `unzip=6.0-25`
 
@@ -5314,19 +5292,13 @@ Licenses: (parsed from: `/usr/share/doc/x11-common/copyright`)
 
 - `GPL`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris xorg=1:7.7+19
-'http://deb.debian.org/debian/pool/main/x/xorg/xorg_7.7+19.dsc' xorg_7.7+19.dsc 2016 SHA256:fc4a577eee67f3604c56701e21b28dccd3858da0f110b708ca3359e2718e3d46
-'http://deb.debian.org/debian/pool/main/x/xorg/xorg_7.7+19.tar.gz' xorg_7.7+19.tar.gz 288723 SHA256:5de6df9e19009450b94f4f5307049bc2c7dc1114222f6f2f6fc60d737a33a537
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/xorg/1:7.7+19/
 
-- https://sources.debian.net/src/xorg/1:7.7+19/ (for browsing the source)
-- https://sources.debian.net/src/xorg/1:7.7+19/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/xorg/1:7.7+19/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `xorgproto=2018.4-4`
 

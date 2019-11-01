@@ -2,9 +2,9 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:53f11eadab076cafd4771f6224993f560ff9e621bb0c9fec2aeb3b2e9ea1dba2`
-- Created: `2019-10-18T20:05:03.628646219Z`
-- Virtual Size: ~ 659.38 Mb  
+- Image ID: `sha256:1e744a6e5337b66dceb2f88fcb801654815160a3d75f295886c7d1c767eb4df4`
+- Created: `2019-11-01T00:45:37.56049152Z`
+- Virtual Size: ~ 659.39 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Command: `["/bin/bash"]`
@@ -751,13 +751,13 @@ $ apt-get source -qq --print-uris fftw3=3.3.8-2
 'http://archive.ubuntu.com/ubuntu/pool/main/f/fftw3/fftw3_3.3.8-2.debian.tar.xz' fftw3_3.3.8-2.debian.tar.xz 13696 SHA256:684dede6b4124f309033d128dc7bdf1eb394984e6e8dd79e1fd5d73b95b12461
 ```
 
-### `dpkg` source package: `file=1:5.35-4`
+### `dpkg` source package: `file=1:5.35-4ubuntu0.1`
 
 Binary Packages:
 
-- `file=1:5.35-4`
-- `libmagic-mgc=1:5.35-4`
-- `libmagic1:amd64=1:5.35-4`
+- `file=1:5.35-4ubuntu0.1`
+- `libmagic-mgc=1:5.35-4ubuntu0.1`
+- `libmagic1:amd64=1:5.35-4ubuntu0.1`
 
 Licenses: (parsed from: `/usr/share/doc/file/copyright`, `/usr/share/doc/libmagic-mgc/copyright`, `/usr/share/doc/libmagic1/copyright`)
 
@@ -770,10 +770,10 @@ Licenses: (parsed from: `/usr/share/doc/file/copyright`, `/usr/share/doc/libmagi
 Source:
 
 ```console
-$ apt-get source -qq --print-uris file=1:5.35-4
-'http://archive.ubuntu.com/ubuntu/pool/main/f/file/file_5.35-4.dsc' file_5.35-4.dsc 1952 SHA256:a58fed533e674de9b99eb6ff725e4f5f79a05ba10684b85c9b20d88776b92d0f
+$ apt-get source -qq --print-uris file=1:5.35-4ubuntu0.1
+'http://archive.ubuntu.com/ubuntu/pool/main/f/file/file_5.35-4ubuntu0.1.dsc' file_5.35-4ubuntu0.1.dsc 2067 SHA256:12dd016b14fb4137ab652d28a30f0bb05d49000af30f6aa172b9da16cd1bf063
 'http://archive.ubuntu.com/ubuntu/pool/main/f/file/file_5.35.orig.tar.xz' file_5.35.orig.tar.xz 643268 SHA256:60b5b8bc762d35452c7995f3db7e8a5e2004d736b8763f086585a5b1af57a632
-'http://archive.ubuntu.com/ubuntu/pool/main/f/file/file_5.35-4.debian.tar.xz' file_5.35-4.debian.tar.xz 55868 SHA256:19c72cae807a28a4950c59773432bd6a4898a98efe25ed629d5fad61a551ee0b
+'http://archive.ubuntu.com/ubuntu/pool/main/f/file/file_5.35-4ubuntu0.1.debian.tar.xz' file_5.35-4ubuntu0.1.debian.tar.xz 56524 SHA256:c27d4d2c54ec55630cfebaf94d55e76975d7de20615a8ea907a8f9d45cecf3c9
 ```
 
 ### `dpkg` source package: `findutils=4.6.0+git+20190209-2`
@@ -1936,11 +1936,11 @@ $ apt-get source -qq --print-uris libice=2:1.0.9-2
 'http://archive.ubuntu.com/ubuntu/pool/main/libi/libice/libice_1.0.9-2.diff.gz' libice_1.0.9-2.diff.gz 6384 SHA256:777f13e08aada3103c32a0b93a26782ca959027bcd98c2c1ddaade8f944fa40a
 ```
 
-### `dpkg` source package: `libidn2=2.0.5-1`
+### `dpkg` source package: `libidn2=2.0.5-1ubuntu0.3`
 
 Binary Packages:
 
-- `libidn2-0:amd64=2.0.5-1`
+- `libidn2-0:amd64=2.0.5-1ubuntu0.3`
 
 Licenses: (parsed from: `/usr/share/doc/libidn2-0/copyright`)
 
@@ -1955,10 +1955,10 @@ Licenses: (parsed from: `/usr/share/doc/libidn2-0/copyright`)
 Source:
 
 ```console
-$ apt-get source -qq --print-uris libidn2=2.0.5-1
-'http://archive.ubuntu.com/ubuntu/pool/main/libi/libidn2/libidn2_2.0.5-1.dsc' libidn2_2.0.5-1.dsc 2444 SHA256:e35fbdf3b14d0a46e62ebde16345d6e70700972791cfc59df5d9d9b7088f7284
+$ apt-get source -qq --print-uris libidn2=2.0.5-1ubuntu0.3
+'http://archive.ubuntu.com/ubuntu/pool/main/libi/libidn2/libidn2_2.0.5-1ubuntu0.3.dsc' libidn2_2.0.5-1ubuntu0.3.dsc 2413 SHA256:9550d553d10cc557b1835529987ddc379f42a33613187dc88a1288f25e7615ec
 'http://archive.ubuntu.com/ubuntu/pool/main/libi/libidn2/libidn2_2.0.5.orig.tar.gz' libidn2_2.0.5.orig.tar.gz 2091929 SHA256:53f69170886f1fa6fa5b332439c7a77a7d22626a82ef17e2c1224858bb4ca2b8
-'http://archive.ubuntu.com/ubuntu/pool/main/libi/libidn2/libidn2_2.0.5-1.debian.tar.xz' libidn2_2.0.5-1.debian.tar.xz 10285396 SHA256:e86f9ef6dfa45a35008851a688e020cbe0a2772437cdaa6381ed2704bf1e774d
+'http://archive.ubuntu.com/ubuntu/pool/main/libi/libidn2/libidn2_2.0.5-1ubuntu0.3.debian.tar.xz' libidn2_2.0.5-1ubuntu0.3.debian.tar.xz 10290636 SHA256:a97da8d870f10b7df27cd163ff00e31c7d8dd3154564500a6f5046a1b5afb636
 ```
 
 ### `dpkg` source package: `libjpeg-turbo=2.0.1-0ubuntu2`
@@ -2604,12 +2604,12 @@ $ apt-get source -qq --print-uris libxrender=1:0.9.10-1
 'http://archive.ubuntu.com/ubuntu/pool/main/libx/libxrender/libxrender_0.9.10-1.diff.gz' libxrender_0.9.10-1.diff.gz 15399 SHA256:ff56a0a00119383adc5f1731e86155ae5c2de069e1d059a9da1d777917430588
 ```
 
-### `dpkg` source package: `libxslt=1.1.32-2ubuntu0.1`
+### `dpkg` source package: `libxslt=1.1.32-2ubuntu0.2`
 
 Binary Packages:
 
-- `libxslt1-dev:amd64=1.1.32-2ubuntu0.1`
-- `libxslt1.1:amd64=1.1.32-2ubuntu0.1`
+- `libxslt1-dev:amd64=1.1.32-2ubuntu0.2`
+- `libxslt1.1:amd64=1.1.32-2ubuntu0.2`
 
 **WARNING:** unable to detect licenses! (package likely not compliant with DEP-5)  
 If source is available (seen below), check the contents of `debian/copyright` within it.
@@ -2618,11 +2618,11 @@ If source is available (seen below), check the contents of `debian/copyright` wi
 Source:
 
 ```console
-$ apt-get source -qq --print-uris libxslt=1.1.32-2ubuntu0.1
-'http://archive.ubuntu.com/ubuntu/pool/main/libx/libxslt/libxslt_1.1.32-2ubuntu0.1.dsc' libxslt_1.1.32-2ubuntu0.1.dsc 2685 SHA256:c80121b724bd7569c5b2793dedf7a96306a0450ad46a3b05b2b223796d8f1f36
+$ apt-get source -qq --print-uris libxslt=1.1.32-2ubuntu0.2
+'http://archive.ubuntu.com/ubuntu/pool/main/libx/libxslt/libxslt_1.1.32-2ubuntu0.2.dsc' libxslt_1.1.32-2ubuntu0.2.dsc 2685 SHA256:278ae2b63c4eada1aa03c2e1db5cd2fdebb5d1d939bc22575e2309d6624893ba
 'http://archive.ubuntu.com/ubuntu/pool/main/libx/libxslt/libxslt_1.1.32.orig.tar.gz' libxslt_1.1.32.orig.tar.gz 3440715 SHA256:526ecd0abaf4a7789041622c3950c0e7f2c4c8835471515fd77eec684a355460
 'http://archive.ubuntu.com/ubuntu/pool/main/libx/libxslt/libxslt_1.1.32.orig.tar.gz.asc' libxslt_1.1.32.orig.tar.gz.asc 455 SHA256:68b374a73747c57a17d62f0ccc1e9714f68a292e700fe4c88e3c2d9dcba71871
-'http://archive.ubuntu.com/ubuntu/pool/main/libx/libxslt/libxslt_1.1.32-2ubuntu0.1.debian.tar.xz' libxslt_1.1.32-2ubuntu0.1.debian.tar.xz 32864 SHA256:4e9ef3a1dce3f462c3aa3220f44dbaced5d265ab49dd11ab632101d45fc56ec6
+'http://archive.ubuntu.com/ubuntu/pool/main/libx/libxslt/libxslt_1.1.32-2ubuntu0.2.debian.tar.xz' libxslt_1.1.32-2ubuntu0.2.debian.tar.xz 34096 SHA256:42c3d69c82efb9d715fb029bad53218a054cb1ad67d67f829c11056d942dd3da
 ```
 
 ### `dpkg` source package: `libxt=1:1.1.5-1`
