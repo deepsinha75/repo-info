@@ -2,9 +2,9 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:f0fcf778483702aff0e0a4c3c9c147a97880a87326bf07ed1250a74e5a4d6d8f`
-- Created: `2019-10-19T08:51:18.88553747Z`
-- Virtual Size: ~ 95.81 Mb  
+- Image ID: `sha256:9cd77e94d47cb049eac290e47cd576b6ad919c53378f33eebdf1df635436e7d3`
+- Created: `2019-11-01T06:17:05.950261975Z`
+- Virtual Size: ~ 100.19 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Command: `["hy"]`
@@ -12,7 +12,7 @@
   - `PATH=/usr/local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
   - `LANG=C.UTF-8`
   - `GPG_KEY=97FC712E4C024BBEA48A61ED3A5CA953F73C700D`
-  - `PYTHON_VERSION=3.5.7`
+  - `PYTHON_VERSION=3.5.8`
   - `PYTHON_PIP_VERSION=19.3.1`
   - `PYTHON_GET_PIP_URL=https://github.com/pypa/get-pip/raw/ffe826207a010164265d9cc807978e3604d18ca0/get-pip.py`
   - `PYTHON_GET_PIP_SHA256=b86f36cc4345ae87bfd4f10ef6b2dbfa7a872fbff70608a1e43944d283fd0eee`
@@ -125,16 +125,16 @@ MPL-2.0 GPL-2.0-or-later
 ### `apk` package: `expat`
 
 ```console
-expat-2.2.7-r0 description:
+expat-2.2.8-r0 description:
 An XML Parser library written in C
 
-expat-2.2.7-r0 webpage:
+expat-2.2.8-r0 webpage:
 http://www.libexpat.org/
 
-expat-2.2.7-r0 installed size:
-184320
+expat-2.2.8-r0 installed size:
+188416
 
-expat-2.2.7-r0 license:
+expat-2.2.8-r0 license:
 MIT
 
 ```
@@ -193,16 +193,16 @@ BSD
 ### `apk` package: `libcrypto1.1`
 
 ```console
-libcrypto1.1-1.1.1b-r1 description:
+libcrypto1.1-1.1.1d-r0 description:
 Crypto library from openssl
 
-libcrypto1.1-1.1.1b-r1 webpage:
+libcrypto1.1-1.1.1d-r0 webpage:
 https://www.openssl.org
 
-libcrypto1.1-1.1.1b-r1 installed size:
+libcrypto1.1-1.1.1d-r0 installed size:
 2748416
 
-libcrypto1.1-1.1.1b-r1 license:
+libcrypto1.1-1.1.1d-r0 license:
 OpenSSL
 
 ```
@@ -227,16 +227,16 @@ MIT
 ### `apk` package: `libssl1.1`
 
 ```console
-libssl1.1-1.1.1b-r1 description:
+libssl1.1-1.1.1d-r0 description:
 SSL shared libraries
 
-libssl1.1-1.1.1b-r1 webpage:
+libssl1.1-1.1.1d-r0 webpage:
 https://www.openssl.org
 
-libssl1.1-1.1.1b-r1 installed size:
+libssl1.1-1.1.1d-r0 installed size:
 536576
 
-libssl1.1-1.1.1b-r1 license:
+libssl1.1-1.1.1d-r0 license:
 OpenSSL
 
 ```
@@ -261,16 +261,16 @@ ISC
 ### `apk` package: `musl`
 
 ```console
-musl-1.1.20-r4 description:
+musl-1.1.20-r5 description:
 the musl c library (libc) implementation
 
-musl-1.1.20-r4 webpage:
+musl-1.1.20-r5 webpage:
 http://www.musl-libc.org/
 
-musl-1.1.20-r4 installed size:
+musl-1.1.20-r5 installed size:
 602112
 
-musl-1.1.20-r4 license:
+musl-1.1.20-r5 license:
 MIT
 
 ```
@@ -278,16 +278,16 @@ MIT
 ### `apk` package: `musl-utils`
 
 ```console
-musl-utils-1.1.20-r4 description:
+musl-utils-1.1.20-r5 description:
 the musl c library (libc) implementation
 
-musl-utils-1.1.20-r4 webpage:
+musl-utils-1.1.20-r5 webpage:
 http://www.musl-libc.org/
 
-musl-utils-1.1.20-r4 installed size:
+musl-utils-1.1.20-r5 installed size:
 139264
 
-musl-utils-1.1.20-r4 license:
+musl-utils-1.1.20-r5 license:
 MIT BSD GPL2+
 
 ```
@@ -380,16 +380,16 @@ GPL-2.0
 ### `apk` package: `sqlite-libs`
 
 ```console
-sqlite-libs-3.28.0-r0 description:
+sqlite-libs-3.28.0-r1 description:
 Sqlite3 library
 
-sqlite-libs-3.28.0-r0 webpage:
+sqlite-libs-3.28.0-r1 webpage:
 https://www.sqlite.org/
 
-sqlite-libs-3.28.0-r0 installed size:
+sqlite-libs-3.28.0-r1 installed size:
 933888
 
-sqlite-libs-3.28.0-r0 license:
+sqlite-libs-3.28.0-r1 license:
 Public-Domain
 
 ```
