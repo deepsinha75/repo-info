@@ -2,8 +2,8 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:3bb24d0d528903e3816bb04c60008c1ba96381fd12b427dac34dbea5fa68983e`
-- Created: `2019-10-18T20:44:04.003418201Z`
+- Image ID: `sha256:eca52078de877bf909c9f8113cae08938e146c5e023772d3e6df0beec1c2f4a3`
+- Created: `2019-11-01T01:13:37.289534385Z`
 - Virtual Size: ~ 1.61 Gb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
@@ -1252,13 +1252,13 @@ $ apt-get source -qq --print-uris fftw3=3.3.7-1
 'http://archive.ubuntu.com/ubuntu/pool/main/f/fftw3/fftw3_3.3.7-1.debian.tar.xz' fftw3_3.3.7-1.debian.tar.xz 13628 SHA256:5b3763ecfa0177e7c43bf330038b4b2c4d71a5b8c9c33b3e89ccfa4e59f2011b
 ```
 
-### `dpkg` source package: `file=1:5.32-2ubuntu0.2`
+### `dpkg` source package: `file=1:5.32-2ubuntu0.3`
 
 Binary Packages:
 
-- `file=1:5.32-2ubuntu0.2`
-- `libmagic-mgc=1:5.32-2ubuntu0.2`
-- `libmagic1:amd64=1:5.32-2ubuntu0.2`
+- `file=1:5.32-2ubuntu0.3`
+- `libmagic-mgc=1:5.32-2ubuntu0.3`
+- `libmagic1:amd64=1:5.32-2ubuntu0.3`
 
 Licenses: (parsed from: `/usr/share/doc/file/copyright`, `/usr/share/doc/libmagic-mgc/copyright`, `/usr/share/doc/libmagic1/copyright`)
 
@@ -1268,9 +1268,14 @@ Licenses: (parsed from: `/usr/share/doc/file/copyright`, `/usr/share/doc/libmagi
 - `MIT-Old-Style-with-legal-disclaimer-2`
 - `public-domain`
 
-**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
-This is *usually* due to a new package version being released and the old version being removed.
+Source:
 
+```console
+$ apt-get source -qq --print-uris file=1:5.32-2ubuntu0.3
+'http://archive.ubuntu.com/ubuntu/pool/main/f/file/file_5.32-2ubuntu0.3.dsc' file_5.32-2ubuntu0.3.dsc 1972 SHA256:821a16b82933d389739edad6a476381672ad1a3fde7355a800d248b72477456a
+'http://archive.ubuntu.com/ubuntu/pool/main/f/file/file_5.32.orig.tar.xz' file_5.32.orig.tar.xz 584352 SHA256:07627dc16c9a5b64352b00f24afb8d328b9ecade82afe2e2fa55201d324fd360
+'http://archive.ubuntu.com/ubuntu/pool/main/f/file/file_5.32-2ubuntu0.3.debian.tar.xz' file_5.32-2ubuntu0.3.debian.tar.xz 33820 SHA256:e3aaaf526a2fda754c658d15e4ea56de0c69b9aeac5738858bb4aa2375773da9
+```
 
 ### `dpkg` source package: `findutils=4.6.0+git+20170828-2`
 
@@ -2886,11 +2891,11 @@ $ apt-get source -qq --print-uris libalgorithm-merge-perl=0.08-3
 'http://archive.ubuntu.com/ubuntu/pool/main/liba/libalgorithm-merge-perl/libalgorithm-merge-perl_0.08-3.debian.tar.xz' libalgorithm-merge-perl_0.08-3.debian.tar.xz 2436 SHA256:241e8212e7b8607b7f5c6b7969d7bb1b62361eb013f0e48c28f8ef6390c7bce3
 ```
 
-### `dpkg` source package: `libarchive=3.2.2-3.1ubuntu0.4`
+### `dpkg` source package: `libarchive=3.2.2-3.1ubuntu0.5`
 
 Binary Packages:
 
-- `libarchive13:amd64=3.2.2-3.1ubuntu0.4`
+- `libarchive13:amd64=3.2.2-3.1ubuntu0.5`
 
 Licenses: (parsed from: `/usr/share/doc/libarchive13/copyright`)
 
@@ -2903,9 +2908,14 @@ Licenses: (parsed from: `/usr/share/doc/libarchive13/copyright`)
 - `Expat`
 - `PD`
 
-**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
-This is *usually* due to a new package version being released and the old version being removed.
+Source:
 
+```console
+$ apt-get source -qq --print-uris libarchive=3.2.2-3.1ubuntu0.5
+'http://archive.ubuntu.com/ubuntu/pool/main/liba/libarchive/libarchive_3.2.2-3.1ubuntu0.5.dsc' libarchive_3.2.2-3.1ubuntu0.5.dsc 2457 SHA256:e15c8624c578dc43e15a57a7ecc93220d829ea367266a9f716c18c931fc2b91d
+'http://archive.ubuntu.com/ubuntu/pool/main/liba/libarchive/libarchive_3.2.2.orig.tar.gz' libarchive_3.2.2.orig.tar.gz 5458241 SHA256:691c194ee132d1f0f7a42541f091db811bc2e56f7107e9121be2bc8c04f1060f
+'http://archive.ubuntu.com/ubuntu/pool/main/liba/libarchive/libarchive_3.2.2-3.1ubuntu0.5.debian.tar.xz' libarchive_3.2.2-3.1ubuntu0.5.debian.tar.xz 23952 SHA256:6e3bd6adb7f2cb2b15d58bc16955bee855b1256c78ea742902db8655bf09d6b8
+```
 
 ### `dpkg` source package: `libass=1:0.14.0-1`
 
@@ -3661,11 +3671,11 @@ $ apt-get source -qq --print-uris libice=2:1.0.9-2
 'http://archive.ubuntu.com/ubuntu/pool/main/libi/libice/libice_1.0.9-2.diff.gz' libice_1.0.9-2.diff.gz 6384 SHA256:777f13e08aada3103c32a0b93a26782ca959027bcd98c2c1ddaade8f944fa40a
 ```
 
-### `dpkg` source package: `libidn2=2.0.4-1.1build2`
+### `dpkg` source package: `libidn2=2.0.4-1.1ubuntu0.2`
 
 Binary Packages:
 
-- `libidn2-0:amd64=2.0.4-1.1build2`
+- `libidn2-0:amd64=2.0.4-1.1ubuntu0.2`
 
 Licenses: (parsed from: `/usr/share/doc/libidn2-0/copyright`)
 
@@ -3680,10 +3690,10 @@ Licenses: (parsed from: `/usr/share/doc/libidn2-0/copyright`)
 Source:
 
 ```console
-$ apt-get source -qq --print-uris libidn2=2.0.4-1.1build2
-'http://archive.ubuntu.com/ubuntu/pool/main/libi/libidn2/libidn2_2.0.4-1.1build2.dsc' libidn2_2.0.4-1.1build2.dsc 2284 SHA256:1a2ebdd471b5d3da5674337594d28213b134464c53d0f5ae529a4bc53f2115fe
+$ apt-get source -qq --print-uris libidn2=2.0.4-1.1ubuntu0.2
+'http://archive.ubuntu.com/ubuntu/pool/main/libi/libidn2/libidn2_2.0.4-1.1ubuntu0.2.dsc' libidn2_2.0.4-1.1ubuntu0.2.dsc 2391 SHA256:013191e4a413de9928b5f76b2ab7237055d2e51ed1f82c7bd5ddddff6615d7c8
 'http://archive.ubuntu.com/ubuntu/pool/main/libi/libidn2/libidn2_2.0.4.orig.tar.gz' libidn2_2.0.4.orig.tar.gz 2008524 SHA256:644b6b03b285fb0ace02d241d59483d98bc462729d8bb3608d5cad5532f3d2f0
-'http://archive.ubuntu.com/ubuntu/pool/main/libi/libidn2/libidn2_2.0.4-1.1build2.debian.tar.xz' libidn2_2.0.4-1.1build2.debian.tar.xz 10285784 SHA256:fd3d28167dba38fcfd2951f09a6dc5408fa0a62c68597e743bb20e6b0a0367d1
+'http://archive.ubuntu.com/ubuntu/pool/main/libi/libidn2/libidn2_2.0.4-1.1ubuntu0.2.debian.tar.xz' libidn2_2.0.4-1.1ubuntu0.2.debian.tar.xz 10290460 SHA256:45c587e0bf489b0367a7a1c2eadbd2efcc774c035ef4868c95ea5b0e0f399be2
 ```
 
 ### `dpkg` source package: `libiec61883=1.2.0-2`
@@ -5043,12 +5053,12 @@ $ apt-get source -qq --print-uris libxinerama=2:1.1.3-1
 'http://archive.ubuntu.com/ubuntu/pool/main/libx/libxinerama/libxinerama_1.1.3-1.diff.gz' libxinerama_1.1.3-1.diff.gz 15738 SHA256:2b1487e3511ddabfec666a62f6e5e8ac4f97536b0d53c51f7bf4cbe07508a130
 ```
 
-### `dpkg` source package: `libxkbcommon=0.8.0-1ubuntu0.1`
+### `dpkg` source package: `libxkbcommon=0.8.2-1~ubuntu18.04.1`
 
 Binary Packages:
 
-- `libxkbcommon-x11-0:amd64=0.8.0-1ubuntu0.1`
-- `libxkbcommon0:amd64=0.8.0-1ubuntu0.1`
+- `libxkbcommon-x11-0:amd64=0.8.2-1~ubuntu18.04.1`
+- `libxkbcommon0:amd64=0.8.2-1~ubuntu18.04.1`
 
 **WARNING:** unable to detect licenses! (package likely not compliant with DEP-5)  
 If source is available (seen below), check the contents of `debian/copyright` within it.
@@ -5057,10 +5067,9 @@ If source is available (seen below), check the contents of `debian/copyright` wi
 Source:
 
 ```console
-$ apt-get source -qq --print-uris libxkbcommon=0.8.0-1ubuntu0.1
-'http://security.ubuntu.com/ubuntu/pool/main/libx/libxkbcommon/libxkbcommon_0.8.0-1ubuntu0.1.dsc' libxkbcommon_0.8.0-1ubuntu0.1.dsc 2432 SHA256:994121c71e321fd676705b8cca9e5f3569b614578c957b32131c7127a9f13309
-'http://security.ubuntu.com/ubuntu/pool/main/libx/libxkbcommon/libxkbcommon_0.8.0.orig.tar.gz' libxkbcommon_0.8.0.orig.tar.gz 584451 SHA256:7a22796dbf6e0d5ef7cfde686b8a503aba60e153ba07b405a9a8eadd47f60a07
-'http://security.ubuntu.com/ubuntu/pool/main/libx/libxkbcommon/libxkbcommon_0.8.0-1ubuntu0.1.diff.gz' libxkbcommon_0.8.0-1ubuntu0.1.diff.gz 34014 SHA256:d7a6b0d5103bbcb59aabdb57dc7fba651635b4eec929b94a8f1d06956a4dcdf0
+$ apt-get source -qq --print-uris libxkbcommon=0.8.2-1~ubuntu18.04.1
+'http://archive.ubuntu.com/ubuntu/pool/main/libx/libxkbcommon/libxkbcommon_0.8.2-1~ubuntu18.04.1.dsc' libxkbcommon_0.8.2-1~ubuntu18.04.1.dsc 2178 SHA256:86b561d0df66d061cd968b532f0d8c463ab47953cc18a2a592e87ec63edcafa1
+'http://archive.ubuntu.com/ubuntu/pool/main/libx/libxkbcommon/libxkbcommon_0.8.2-1~ubuntu18.04.1.tar.gz' libxkbcommon_0.8.2-1~ubuntu18.04.1.tar.gz 615081 SHA256:d17cd2366ca48362589fd759eb715982e48570629b6a2c1c70ffd499847de720
 ```
 
 ### `dpkg` source package: `libxml2=2.9.4+dfsg1-6.1ubuntu1.2`
@@ -5343,19 +5352,24 @@ $ apt-get source -qq --print-uris libzstd=1.3.3+dfsg-2ubuntu1.1
 'http://archive.ubuntu.com/ubuntu/pool/main/libz/libzstd/libzstd_1.3.3+dfsg-2ubuntu1.1.debian.tar.xz' libzstd_1.3.3+dfsg-2ubuntu1.1.debian.tar.xz 12808 SHA256:9c7421170f0a1e6234147a89ba7fa5933c0771177423e962e6faf3fd13dcbb64
 ```
 
-### `dpkg` source package: `linux=4.15.0-65.74`
+### `dpkg` source package: `linux=4.15.0-66.75`
 
 Binary Packages:
 
-- `linux-libc-dev:amd64=4.15.0-65.74`
+- `linux-libc-dev:amd64=4.15.0-66.75`
 
 Licenses: (parsed from: `/usr/share/doc/linux-libc-dev/copyright`)
 
 - `GPL-2`
 
-**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
-This is *usually* due to a new package version being released and the old version being removed.
+Source:
 
+```console
+$ apt-get source -qq --print-uris linux=4.15.0-66.75
+'http://archive.ubuntu.com/ubuntu/pool/main/l/linux/linux_4.15.0-66.75.dsc' linux_4.15.0-66.75.dsc 7304 SHA256:5964d5d5710195b66afd5070138df2603d6f67c10f283f4e1267043f006afb4d
+'http://archive.ubuntu.com/ubuntu/pool/main/l/linux/linux_4.15.0.orig.tar.gz' linux_4.15.0.orig.tar.gz 157656459 SHA256:c33b8ba5c45a40b689979caa2421c4d933864cd70eb93c00eb69adf43e9a24fc
+'http://archive.ubuntu.com/ubuntu/pool/main/l/linux/linux_4.15.0-66.75.diff.gz' linux_4.15.0-66.75.diff.gz 8440678 SHA256:3130f9b7d12bf209cbec5dce3dc8ab2a089d213869f5109a836bb46e1bb1c250
+```
 
 ### `dpkg` source package: `llvm-toolchain-8=1:8-3~ubuntu18.04.1`
 
@@ -7042,14 +7056,14 @@ $ apt-get source -qq --print-uris qwt=6.1.3-1
 'http://archive.ubuntu.com/ubuntu/pool/universe/q/qwt/qwt_6.1.3-1.debian.tar.xz' qwt_6.1.3-1.debian.tar.xz 32020 SHA256:11d58f463a62ac89530b5fa2b4ee86740cc9cce09fe9e3aa92aba163e74db336
 ```
 
-### `dpkg` source package: `rdma-core=17.1-1ubuntu0.1`
+### `dpkg` source package: `rdma-core=17.1-1ubuntu0.2`
 
 Binary Packages:
 
-- `ibverbs-providers:amd64=17.1-1ubuntu0.1`
-- `libibverbs-dev:amd64=17.1-1ubuntu0.1`
-- `libibverbs1:amd64=17.1-1ubuntu0.1`
-- `librdmacm1:amd64=17.1-1ubuntu0.1`
+- `ibverbs-providers:amd64=17.1-1ubuntu0.2`
+- `libibverbs-dev:amd64=17.1-1ubuntu0.2`
+- `libibverbs1:amd64=17.1-1ubuntu0.2`
+- `librdmacm1:amd64=17.1-1ubuntu0.2`
 
 Licenses: (parsed from: `/usr/share/doc/ibverbs-providers/copyright`, `/usr/share/doc/libibverbs-dev/copyright`, `/usr/share/doc/libibverbs1/copyright`, `/usr/share/doc/librdmacm1/copyright`)
 
@@ -7065,10 +7079,10 @@ Licenses: (parsed from: `/usr/share/doc/ibverbs-providers/copyright`, `/usr/shar
 Source:
 
 ```console
-$ apt-get source -qq --print-uris rdma-core=17.1-1ubuntu0.1
-'http://archive.ubuntu.com/ubuntu/pool/main/r/rdma-core/rdma-core_17.1-1ubuntu0.1.dsc' rdma-core_17.1-1ubuntu0.1.dsc 2762 SHA256:21d0f5db001da07b8723b3b9260abf142c364421e0d2b93ea11ba941859b4d94
+$ apt-get source -qq --print-uris rdma-core=17.1-1ubuntu0.2
+'http://archive.ubuntu.com/ubuntu/pool/main/r/rdma-core/rdma-core_17.1-1ubuntu0.2.dsc' rdma-core_17.1-1ubuntu0.2.dsc 2762 SHA256:e0662733332aa3953a389dd9631f3a3480b93f992cb378bb76d008743de89c2f
 'http://archive.ubuntu.com/ubuntu/pool/main/r/rdma-core/rdma-core_17.1.orig.tar.gz' rdma-core_17.1.orig.tar.gz 1027903 SHA256:b47444b7c05d3906deb8771eec3e634984dd83f5e620d5e37d3a83f74f0cc1ba
-'http://archive.ubuntu.com/ubuntu/pool/main/r/rdma-core/rdma-core_17.1-1ubuntu0.1.debian.tar.xz' rdma-core_17.1-1ubuntu0.1.debian.tar.xz 17900 SHA256:afb27c3d287cca78b2dda348bae500ee16de68fb6e0b1ab965eb6bf6fa006833
+'http://archive.ubuntu.com/ubuntu/pool/main/r/rdma-core/rdma-core_17.1-1ubuntu0.2.debian.tar.xz' rdma-core_17.1-1ubuntu0.2.debian.tar.xz 18696 SHA256:d9e7d151be854278f61db12e7348cbd58cffcc2bb25674693b50b7c726b11b72
 ```
 
 ### `dpkg` source package: `readline=7.0-3`

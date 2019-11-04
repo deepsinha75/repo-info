@@ -2,8 +2,8 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:04d7e2aa1314845c371115ccfddceb03aba9b0900c465e943eb12590f9dfdd98`
-- Created: `2019-10-18T20:30:41.952606642Z`
+- Image ID: `sha256:87683c90bf94aa5d00ccc0534abff048f10ebb86765fa49b98043f2a1807179d`
+- Created: `2019-11-01T00:59:25.711694843Z`
 - Virtual Size: ~ 1.47 Gb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
@@ -1027,12 +1027,12 @@ $ apt-get source -qq --print-uris ffmpeg=7:2.8.15-0ubuntu0.16.04.1
 'http://archive.ubuntu.com/ubuntu/pool/universe/f/ffmpeg/ffmpeg_2.8.15-0ubuntu0.16.04.1.debian.tar.xz' ffmpeg_2.8.15-0ubuntu0.16.04.1.debian.tar.xz 44272 SHA256:64c1f1a71d301321fe2b101b81423b05e552f6bd683743354b9159bd73f1ce5b
 ```
 
-### `dpkg` source package: `file=1:5.25-2ubuntu1.2`
+### `dpkg` source package: `file=1:5.25-2ubuntu1.3`
 
 Binary Packages:
 
-- `file=1:5.25-2ubuntu1.2`
-- `libmagic1:amd64=1:5.25-2ubuntu1.2`
+- `file=1:5.25-2ubuntu1.3`
+- `libmagic1:amd64=1:5.25-2ubuntu1.3`
 
 Licenses: (parsed from: `/usr/share/doc/file/copyright`, `/usr/share/doc/libmagic1/copyright`)
 
@@ -1042,9 +1042,14 @@ Licenses: (parsed from: `/usr/share/doc/file/copyright`, `/usr/share/doc/libmagi
 - `MIT-Old-Style-with-legal-disclaimer-2`
 - `public-domain`
 
-**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
-This is *usually* due to a new package version being released and the old version being removed.
+Source:
 
+```console
+$ apt-get source -qq --print-uris file=1:5.25-2ubuntu1.3
+'http://archive.ubuntu.com/ubuntu/pool/main/f/file/file_5.25-2ubuntu1.3.dsc' file_5.25-2ubuntu1.3.dsc 2252 SHA256:a6dcb0bd9ce6962897fd16cedb2a189ffc0152eada59e5ece522b67bae71766c
+'http://archive.ubuntu.com/ubuntu/pool/main/f/file/file_5.25.orig.tar.xz' file_5.25.orig.tar.xz 537916 SHA256:8062cae8be640ff8583b8714e394dc73c3127d23f8fe9097f1433cdb36bff31c
+'http://archive.ubuntu.com/ubuntu/pool/main/f/file/file_5.25-2ubuntu1.3.debian.tar.xz' file_5.25-2ubuntu1.3.debian.tar.xz 35184 SHA256:5eafa8f4a72094feb7d212fdea29d9aefcfd3d928788ad0e8ac96a01c8930389
+```
 
 ### `dpkg` source package: `findutils=4.6.0+git+20160126-2`
 
@@ -3787,19 +3792,24 @@ $ apt-get source -qq --print-uris libxshmfence=1.2-1
 'http://archive.ubuntu.com/ubuntu/pool/main/libx/libxshmfence/libxshmfence_1.2-1.diff.gz' libxshmfence_1.2-1.diff.gz 13284 SHA256:65db7e07c5c5b12d0b1f93cdb0c4e3e448429240044247ea2f64a89c0cce5f8e
 ```
 
-### `dpkg` source package: `libxslt=1.1.28-2.1ubuntu0.2`
+### `dpkg` source package: `libxslt=1.1.28-2.1ubuntu0.3`
 
 Binary Packages:
 
-- `libxslt1.1:amd64=1.1.28-2.1ubuntu0.2`
+- `libxslt1.1:amd64=1.1.28-2.1ubuntu0.3`
 
 **WARNING:** unable to detect licenses! (package likely not compliant with DEP-5)  
 If source is available (seen below), check the contents of `debian/copyright` within it.
 
 
-**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
-This is *usually* due to a new package version being released and the old version being removed.
+Source:
 
+```console
+$ apt-get source -qq --print-uris libxslt=1.1.28-2.1ubuntu0.3
+'http://archive.ubuntu.com/ubuntu/pool/main/libx/libxslt/libxslt_1.1.28-2.1ubuntu0.3.dsc' libxslt_1.1.28-2.1ubuntu0.3.dsc 2482 SHA256:430bdf4c9147f094d327d0778d7288ae4097af224343263f5b19f14919f0e071
+'http://archive.ubuntu.com/ubuntu/pool/main/libx/libxslt/libxslt_1.1.28.orig.tar.gz' libxslt_1.1.28.orig.tar.gz 3435907 SHA256:5fc7151a57b89c03d7b825df5a0fae0a8d5f05674c0e7cf2937ecec4d54a028c
+'http://archive.ubuntu.com/ubuntu/pool/main/libx/libxslt/libxslt_1.1.28-2.1ubuntu0.3.debian.tar.xz' libxslt_1.1.28-2.1ubuntu0.3.debian.tar.xz 42428 SHA256:d51924988291e776f2d31e532d060dbf47464f494602757f0d23e8baad6e7a29
+```
 
 ### `dpkg` source package: `libxt=1:1.1.5-0ubuntu1`
 
@@ -3860,20 +3870,25 @@ $ apt-get source -qq --print-uris linux-atm=1:2.5.1-1.5
 'http://archive.ubuntu.com/ubuntu/pool/main/l/linux-atm/linux-atm_2.5.1-1.5.debian.tar.gz' linux-atm_2.5.1-1.5.debian.tar.gz 10723 SHA256:9b2325859b3fd008b588a3897e713f52137abae08d1f5a44f5661f45a87f4d29
 ```
 
-### `dpkg` source package: `linux=4.4.0-165.193`
+### `dpkg` source package: `linux=4.4.0-166.195`
 
 Binary Packages:
 
-- `linux-libc-dev:amd64=4.4.0-165.193`
+- `linux-libc-dev:amd64=4.4.0-166.195`
 
 Licenses: (parsed from: `/usr/share/doc/linux-libc-dev/copyright`)
 
 - `GPL-2`
 - `redpine-signals`
 
-**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
-This is *usually* due to a new package version being released and the old version being removed.
+Source:
 
+```console
+$ apt-get source -qq --print-uris linux=4.4.0-166.195
+'http://archive.ubuntu.com/ubuntu/pool/main/l/linux/linux_4.4.0-166.195.dsc' linux_4.4.0-166.195.dsc 11601 SHA256:7d1e9593a8d606882275012d35ed61d825140da5f552c4ccc188bcaa3c67ff9f
+'http://archive.ubuntu.com/ubuntu/pool/main/l/linux/linux_4.4.0.orig.tar.gz' linux_4.4.0.orig.tar.gz 132860730 SHA256:730e75919b5d30a9bc934ccb300eaedfdf44994ca9ee1d07a46901c46c221357
+'http://archive.ubuntu.com/ubuntu/pool/main/l/linux/linux_4.4.0-166.195.diff.gz' linux_4.4.0-166.195.diff.gz 15844506 SHA256:32bb40feece9558c8b8915d21df746f0e13b710ce1b78fdd4f8138d26bdc122a
+```
 
 ### `dpkg` source package: `llvm-toolchain-6.0=1:6.0-1ubuntu2~16.04.1`
 
@@ -5917,19 +5932,19 @@ $ apt-get source -qq --print-uris ustr=1.0.4-5
 'http://archive.ubuntu.com/ubuntu/pool/main/u/ustr/ustr_1.0.4-5.debian.tar.xz' ustr_1.0.4-5.debian.tar.xz 24948 SHA256:a21e78acf82dcccef2893932ef7b85852419bfd9b18382e63c34e7710c1d7762
 ```
 
-### `dpkg` source package: `util-linux=2.27.1-6ubuntu3.8`
+### `dpkg` source package: `util-linux=2.27.1-6ubuntu3.9`
 
 Binary Packages:
 
-- `bsdutils=1:2.27.1-6ubuntu3.8`
-- `libblkid1:amd64=2.27.1-6ubuntu3.8`
-- `libfdisk1:amd64=2.27.1-6ubuntu3.8`
-- `libmount1:amd64=2.27.1-6ubuntu3.8`
-- `libsmartcols1:amd64=2.27.1-6ubuntu3.8`
-- `libuuid1:amd64=2.27.1-6ubuntu3.8`
-- `mount=2.27.1-6ubuntu3.8`
-- `util-linux=2.27.1-6ubuntu3.8`
-- `uuid-dev:amd64=2.27.1-6ubuntu3.8`
+- `bsdutils=1:2.27.1-6ubuntu3.9`
+- `libblkid1:amd64=2.27.1-6ubuntu3.9`
+- `libfdisk1:amd64=2.27.1-6ubuntu3.9`
+- `libmount1:amd64=2.27.1-6ubuntu3.9`
+- `libsmartcols1:amd64=2.27.1-6ubuntu3.9`
+- `libuuid1:amd64=2.27.1-6ubuntu3.9`
+- `mount=2.27.1-6ubuntu3.9`
+- `util-linux=2.27.1-6ubuntu3.9`
+- `uuid-dev:amd64=2.27.1-6ubuntu3.9`
 
 Licenses: (parsed from: `/usr/share/doc/bsdutils/copyright`, `/usr/share/doc/libblkid1/copyright`, `/usr/share/doc/libfdisk1/copyright`, `/usr/share/doc/libmount1/copyright`, `/usr/share/doc/libsmartcols1/copyright`, `/usr/share/doc/libuuid1/copyright`, `/usr/share/doc/mount/copyright`, `/usr/share/doc/util-linux/copyright`, `/usr/share/doc/uuid-dev/copyright`)
 
@@ -5950,9 +5965,14 @@ Licenses: (parsed from: `/usr/share/doc/bsdutils/copyright`, `/usr/share/doc/lib
 - `MIT`
 - `public-domain`
 
-**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
-This is *usually* due to a new package version being released and the old version being removed.
+Source:
 
+```console
+$ apt-get source -qq --print-uris util-linux=2.27.1-6ubuntu3.9
+'http://archive.ubuntu.com/ubuntu/pool/main/u/util-linux/util-linux_2.27.1-6ubuntu3.9.dsc' util-linux_2.27.1-6ubuntu3.9.dsc 3586 SHA256:184c6e918aab02046b1f8769e488013a4da2c59d9108123447ead31ee9270d72
+'http://archive.ubuntu.com/ubuntu/pool/main/u/util-linux/util-linux_2.27.1.orig.tar.xz' util-linux_2.27.1.orig.tar.xz 3964512 SHA256:0a818fcdede99aec43ffe6ca5b5388bff80d162f2f7bd4541dca94fecb87a290
+'http://archive.ubuntu.com/ubuntu/pool/main/u/util-linux/util-linux_2.27.1-6ubuntu3.9.debian.tar.xz' util-linux_2.27.1-6ubuntu3.9.debian.tar.xz 88260 SHA256:6d82ba9a363e1c5aa96b8ee964808d5678bb1749547bc173a701e70082e223bd
+```
 
 ### `dpkg` source package: `wavpack=4.75.2-2ubuntu0.2`
 
