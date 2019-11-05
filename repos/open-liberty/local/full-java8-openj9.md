@@ -1,10 +1,10 @@
-# `open-liberty:microProfile2-java11`
+# `open-liberty:full`
 
 ## Docker Metadata
 
-- Image ID: `sha256:37905d075860236298ae811005a21a3ac0de64d61b2508617f24df94b9047afb`
-- Created: `2019-11-01T01:56:34.671026907Z`
-- Virtual Size: ~ 379.91 Mb  
+- Image ID: `sha256:0ac8d00c9149373a7f68861cf5d145aea2e8ea663e5e836593b6e35c95719da8`
+- Created: `2019-11-05T06:00:32.219426545Z`
+- Virtual Size: ~ 383.74 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["/opt/ol/helpers/runtime/docker-server.sh"]`
@@ -14,7 +14,7 @@
   - `LANG=en_US.UTF-8`
   - `LANGUAGE=en_US:en`
   - `LC_ALL=en_US.UTF-8`
-  - `JAVA_VERSION=jdk-11.0.4+11_openj9-0.15.1`
+  - `JAVA_VERSION=jdk8u222-b10_openj9-0.15.1`
   - `JAVA_HOME=/opt/java/openjdk`
   - `JAVA_TOOL_OPTIONS=-XX:+IgnoreUnrecognizedVMOptions -XX:+UseContainerSupport -XX:+IdleTuningCompactOnIdle -XX:+IdleTuningGcOnIdle`
   - `LOG_DIR=/logs`
