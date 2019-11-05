@@ -1306,20 +1306,13 @@ Licenses: (parsed from: `/usr/share/doc/libglib2.0-0/copyright`, `/usr/share/doc
 - `GPL-2+`
 - `LGPL`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris glib2.0=2.62.1-1
-'http://deb.debian.org/debian/pool/main/g/glib2.0/glib2.0_2.62.1-1.dsc' glib2.0_2.62.1-1.dsc 3232 SHA256:ca848af046b9f6d01562f7c2555feec2c06bbc063e49677a4c758af165c8badc
-'http://deb.debian.org/debian/pool/main/g/glib2.0/glib2.0_2.62.1.orig.tar.xz' glib2.0_2.62.1.orig.tar.xz 4681716 SHA256:3dd9024e1d0872a6da7ac509937ccf997161b11d7d35be337c7e829cbae0f9df
-'http://deb.debian.org/debian/pool/main/g/glib2.0/glib2.0_2.62.1-1.debian.tar.xz' glib2.0_2.62.1-1.debian.tar.xz 85312 SHA256:7aa788a4d805f0dc16eea9373811ba9b29bc4928d57575649389a3b83a1db2df
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/glib2.0/2.62.1-1/
 
-- https://sources.debian.net/src/glib2.0/2.62.1-1/ (for browsing the source)
-- https://sources.debian.net/src/glib2.0/2.62.1-1/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/glib2.0/2.62.1-1/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `glibc=2.29-2`
 
@@ -2241,20 +2234,13 @@ Licenses: (parsed from: `/usr/share/doc/libedit2/copyright`)
 
 - `BSD-3-clause`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris libedit=3.1-20190324-1
-'http://deb.debian.org/debian/pool/main/libe/libedit/libedit_3.1-20190324-1.dsc' libedit_3.1-20190324-1.dsc 2129 SHA256:c4374f38990a3f5dba5da74a78602cd8e87c3c966c9fc2fb9b31aabc27dcff54
-'http://deb.debian.org/debian/pool/main/libe/libedit/libedit_3.1-20190324.orig.tar.gz' libedit_3.1-20190324.orig.tar.gz 521999 SHA256:ac8f0f51c1cf65492e4d1e3ed2be360bda41e54633444666422fbf393bba1bae
-'http://deb.debian.org/debian/pool/main/libe/libedit/libedit_3.1-20190324-1.debian.tar.xz' libedit_3.1-20190324-1.debian.tar.xz 14112 SHA256:b65610cc1c1e46144705b3627881ed51ffd91ddee349c47d30674f588d1b84b6
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/libedit/3.1-20190324-1/
 
-- https://sources.debian.net/src/libedit/3.1-20190324-1/ (for browsing the source)
-- https://sources.debian.net/src/libedit/3.1-20190324-1/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/libedit/3.1-20190324-1/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `liberror-perl=0.17028-1`
 
@@ -3346,20 +3332,13 @@ Binary Packages:
 If source is available (seen below), check the contents of `debian/copyright` within it.
 
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris libxslt=1.1.32-2.1
-'http://deb.debian.org/debian/pool/main/libx/libxslt/libxslt_1.1.32-2.1.dsc' libxslt_1.1.32-2.1.dsc 2502 SHA256:bc9454624f5127960244d433676a654c96790ed3c3e5c01b416188953a0f3421
-'http://deb.debian.org/debian/pool/main/libx/libxslt/libxslt_1.1.32.orig.tar.gz' libxslt_1.1.32.orig.tar.gz 3440715 SHA256:526ecd0abaf4a7789041622c3950c0e7f2c4c8835471515fd77eec684a355460
-'http://deb.debian.org/debian/pool/main/libx/libxslt/libxslt_1.1.32-2.1.debian.tar.xz' libxslt_1.1.32-2.1.debian.tar.xz 33792 SHA256:68a20c62f69574822af5f01e807228fbaf5ab23868df3a2b57d4915d0f799dd7
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/libxslt/1.1.32-2.1/
 
-- https://sources.debian.net/src/libxslt/1.1.32-2.1/ (for browsing the source)
-- https://sources.debian.net/src/libxslt/1.1.32-2.1/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/libxslt/1.1.32-2.1/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `libxt=1:1.1.5-1`
 
@@ -4659,20 +4638,13 @@ Licenses: (parsed from: `/usr/share/doc/libpython3.7-minimal/copyright`, `/usr/s
 - `use in source`
 - `without`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris python3.7=3.7.5~rc1-2
-'http://deb.debian.org/debian/pool/main/p/python3.7/python3.7_3.7.5~rc1-2.dsc' python3.7_3.7.5~rc1-2.dsc 3447 SHA256:59776ecf138fe9f50034a88bb05e2e7b8a55f3278903780c16587291843df4b3
-'http://deb.debian.org/debian/pool/main/p/python3.7/python3.7_3.7.5~rc1.orig.tar.xz' python3.7_3.7.5~rc1.orig.tar.xz 17238100 SHA256:6aea4110c8cb9c828b149041f03b01a1247497b8b587b39e5857cdc53179373a
-'http://deb.debian.org/debian/pool/main/p/python3.7/python3.7_3.7.5~rc1-2.debian.tar.xz' python3.7_3.7.5~rc1-2.debian.tar.xz 213648 SHA256:04e6372b036ed26bcdee4a4ab44624b253832430f1b035325dd8174585c40190
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/python3.7/3.7.5~rc1-2/
 
-- https://sources.debian.net/src/python3.7/3.7.5~rc1-2/ (for browsing the source)
-- https://sources.debian.net/src/python3.7/3.7.5~rc1-2/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/python3.7/3.7.5~rc1-2/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `readline=8.0-3`
 
