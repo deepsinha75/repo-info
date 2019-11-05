@@ -1367,20 +1367,13 @@ Licenses: (parsed from: `/usr/share/doc/liblz4-1/copyright`)
 - `GPL-2`
 - `GPL-2+`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris lz4=1.9.1-2
-'http://deb.debian.org/debian/pool/main/l/lz4/lz4_1.9.1-2.dsc' lz4_1.9.1-2.dsc 1932 SHA256:178e39c5e5b44f7c97a49e518fd69338e3720078639be82cc3e596e5e593748d
-'http://deb.debian.org/debian/pool/main/l/lz4/lz4_1.9.1.orig.tar.gz' lz4_1.9.1.orig.tar.gz 285336 SHA256:f8377c89dad5c9f266edc0be9b73595296ecafd5bfa1000de148096c50052dc4
-'http://deb.debian.org/debian/pool/main/l/lz4/lz4_1.9.1-2.debian.tar.xz' lz4_1.9.1-2.debian.tar.xz 11812 SHA256:7dd45dd23232d3059d69558161a11143e68e3fb850c6a4061da9ccbcb52f9675
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/lz4/1.9.1-2/
 
-- https://sources.debian.net/src/lz4/1.9.1-2/ (for browsing the source)
-- https://sources.debian.net/src/lz4/1.9.1-2/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/lz4/1.9.1-2/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `mawk=1.3.3-17`
 
