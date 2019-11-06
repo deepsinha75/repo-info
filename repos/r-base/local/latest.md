@@ -1078,10 +1078,16 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris gcc-9=9.2.1-9
-'http://http.debian.net/debian/pool/main/g/gcc-9/gcc-9_9.2.1-9.dsc' gcc-9_9.2.1-9.dsc 33838 SHA256:4164b3ad0e3661ca3de5646af2d981d285e53a4ccf933f8323d339cc2ecd2256
-'http://http.debian.net/debian/pool/main/g/gcc-9/gcc-9_9.2.1.orig.tar.gz' gcc-9_9.2.1.orig.tar.gz 92887421 SHA256:f259d1c6344f5d89fee3a182d7a211925f507d477d3659d53ac64c76cea8bb11
-'http://http.debian.net/debian/pool/main/g/gcc-9/gcc-9_9.2.1-9.debian.tar.xz' gcc-9_9.2.1-9.debian.tar.xz 537816 SHA256:9db7efb364c5534b9bb2579a36bb2783131433073513868e25110dc1f2a3a059
+'http://deb.debian.org/debian/pool/main/g/gcc-9/gcc-9_9.2.1-9.dsc' gcc-9_9.2.1-9.dsc 33838 SHA256:4164b3ad0e3661ca3de5646af2d981d285e53a4ccf933f8323d339cc2ecd2256
+'http://deb.debian.org/debian/pool/main/g/gcc-9/gcc-9_9.2.1.orig.tar.gz' gcc-9_9.2.1.orig.tar.gz 92887421 SHA256:f259d1c6344f5d89fee3a182d7a211925f507d477d3659d53ac64c76cea8bb11
+'http://deb.debian.org/debian/pool/main/g/gcc-9/gcc-9_9.2.1-9.debian.tar.xz' gcc-9_9.2.1-9.debian.tar.xz 537816 SHA256:9db7efb364c5534b9bb2579a36bb2783131433073513868e25110dc1f2a3a059
 ```
+
+Other potentially useful URLs:
+
+- https://sources.debian.net/src/gcc-9/9.2.1-9/ (for browsing the source)
+- https://sources.debian.net/src/gcc-9/9.2.1-9/debian/copyright/ (for direct copyright/license information)
+- http://snapshot.debian.org/package/gcc-9/9.2.1-9/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `gcc-defaults=1.185.1`
 
@@ -1153,20 +1159,13 @@ Licenses: (parsed from: `/usr/share/doc/libglib2.0-0/copyright`)
 - `GPL-2+`
 - `LGPL`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris glib2.0=2.62.1-1
-'http://deb.debian.org/debian/pool/main/g/glib2.0/glib2.0_2.62.1-1.dsc' glib2.0_2.62.1-1.dsc 3232 SHA256:ca848af046b9f6d01562f7c2555feec2c06bbc063e49677a4c758af165c8badc
-'http://deb.debian.org/debian/pool/main/g/glib2.0/glib2.0_2.62.1.orig.tar.xz' glib2.0_2.62.1.orig.tar.xz 4681716 SHA256:3dd9024e1d0872a6da7ac509937ccf997161b11d7d35be337c7e829cbae0f9df
-'http://deb.debian.org/debian/pool/main/g/glib2.0/glib2.0_2.62.1-1.debian.tar.xz' glib2.0_2.62.1-1.debian.tar.xz 85312 SHA256:7aa788a4d805f0dc16eea9373811ba9b29bc4928d57575649389a3b83a1db2df
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/glib2.0/2.62.1-1/
 
-- https://sources.debian.net/src/glib2.0/2.62.1-1/ (for browsing the source)
-- https://sources.debian.net/src/glib2.0/2.62.1-1/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/glib2.0/2.62.1-1/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `glibc=2.29-2`
 
@@ -1715,20 +1714,13 @@ Licenses: (parsed from: `/usr/share/doc/libblas-dev/copyright`, `/usr/share/doc/
 - `BSD-3-clause`
 - `BSD-3-clause-intel`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris lapack=3.8.0-7
-'http://deb.debian.org/debian/pool/main/l/lapack/lapack_3.8.0-7.dsc' lapack_3.8.0-7.dsc 3381 SHA256:9eaca12b4f15d4cf13e41f21e9a8f9bcac7627a47e8a836697ef2606de4e5944
-'http://deb.debian.org/debian/pool/main/l/lapack/lapack_3.8.0.orig.tar.gz' lapack_3.8.0.orig.tar.gz 7426094 SHA256:deb22cc4a6120bff72621155a9917f485f96ef8319ac074a7afbc68aab88bcf6
-'http://deb.debian.org/debian/pool/main/l/lapack/lapack_3.8.0-7.debian.tar.xz' lapack_3.8.0-7.debian.tar.xz 25596 SHA256:59d6d2044b8b8c5315992240ef4d6579dd0118326bed0b494b6f49d1f1b1a7cb
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/lapack/3.8.0-7/
 
-- https://sources.debian.net/src/lapack/3.8.0-7/ (for browsing the source)
-- https://sources.debian.net/src/lapack/3.8.0-7/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/lapack/3.8.0-7/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `lattice=0.20-38-1`
 
@@ -2751,20 +2743,13 @@ Licenses: (parsed from: `/usr/share/doc/littler/copyright`, `/usr/share/doc/r-cr
 
 - `GPL`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris littler=0.3.8-2
-'http://deb.debian.org/debian/pool/main/l/littler/littler_0.3.8-2.dsc' littler_0.3.8-2.dsc 1889 SHA256:e6e1303db131d0a5f4873ad335ad3576d099aa8ba1cd66ae1f5f85edfc7d7d58
-'http://deb.debian.org/debian/pool/main/l/littler/littler_0.3.8.orig.tar.gz' littler_0.3.8.orig.tar.gz 649584 SHA256:6a18a7e18e183f05a2ec715df0ef4b4b4b201b02e305a84e4c666b1706e08a3c
-'http://deb.debian.org/debian/pool/main/l/littler/littler_0.3.8-2.debian.tar.xz' littler_0.3.8-2.debian.tar.xz 6820 SHA256:667554fb54313882f3aee4b7d534fec51e3e916f4dab2b44f71a409ec7402167
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/littler/0.3.8-2/
 
-- https://sources.debian.net/src/littler/0.3.8-2/ (for browsing the source)
-- https://sources.debian.net/src/littler/0.3.8-2/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/littler/0.3.8-2/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `lsb=11.1.0`
 
@@ -2879,20 +2864,13 @@ Licenses: (parsed from: `/usr/share/doc/r-cran-mgcv/copyright`)
 
 - `GPL`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris mgcv=1.8-29-1
-'http://deb.debian.org/debian/pool/main/m/mgcv/mgcv_1.8-29-1.dsc' mgcv_1.8-29-1.dsc 1827 SHA256:3de66bb03694d3d8404632f22d4fe989cd05d7ac9d539f6c162a222cb4db1698
-'http://deb.debian.org/debian/pool/main/m/mgcv/mgcv_1.8-29.orig.tar.gz' mgcv_1.8-29.orig.tar.gz 935227 SHA256:9c97ae305597219324a1ac212fd766c8196a6bdd38b3bdf255e12a5bc47f6688
-'http://deb.debian.org/debian/pool/main/m/mgcv/mgcv_1.8-29-1.debian.tar.xz' mgcv_1.8-29-1.debian.tar.xz 5224 SHA256:d8d46735736f6624e4e2695f50f7dab73f9e141dddec938765590cc1b1aa3a29
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/mgcv/1.8-29-1/
 
-- https://sources.debian.net/src/mgcv/1.8-29-1/ (for browsing the source)
-- https://sources.debian.net/src/mgcv/1.8-29-1/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/mgcv/1.8-29-1/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `mpclib3=1.1.0-1`
 
@@ -4062,20 +4040,13 @@ Licenses: (parsed from: `/usr/share/doc/vim-common/copyright`, `/usr/share/doc/v
 - `XPM`
 - `public-domain`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris vim=2:8.1.2136-1
-'http://deb.debian.org/debian/pool/main/v/vim/vim_8.1.2136-1.dsc' vim_8.1.2136-1.dsc 2898 SHA256:03d445cf384116255e4fc0710e6ab00f838a3636ff5b0cf68e041d52791425d8
-'http://deb.debian.org/debian/pool/main/v/vim/vim_8.1.2136.orig.tar.gz' vim_8.1.2136.orig.tar.gz 14504875 SHA256:cdd9deae782e88c774bd636435b4d91c1fd5b3d21bdc435fa8ae451c259118a5
-'http://deb.debian.org/debian/pool/main/v/vim/vim_8.1.2136-1.debian.tar.xz' vim_8.1.2136-1.debian.tar.xz 193144 SHA256:5386add2505d5f59d3a41912553b73ad73e32526c15ff410fc8250104f84471b
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/vim/2:8.1.2136-1/
 
-- https://sources.debian.net/src/vim/2:8.1.2136-1/ (for browsing the source)
-- https://sources.debian.net/src/vim/2:8.1.2136-1/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/vim/2:8.1.2136-1/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `wget=1.20.3-1`
 
@@ -4189,19 +4160,13 @@ Licenses: (parsed from: `/usr/share/doc/x11-common/copyright`)
 
 - `GPL`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris xorg=1:7.7+19
-'http://deb.debian.org/debian/pool/main/x/xorg/xorg_7.7+19.dsc' xorg_7.7+19.dsc 2016 SHA256:fc4a577eee67f3604c56701e21b28dccd3858da0f110b708ca3359e2718e3d46
-'http://deb.debian.org/debian/pool/main/x/xorg/xorg_7.7+19.tar.gz' xorg_7.7+19.tar.gz 288723 SHA256:5de6df9e19009450b94f4f5307049bc2c7dc1114222f6f2f6fc60d737a33a537
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/xorg/1:7.7+19/
 
-- https://sources.debian.net/src/xorg/1:7.7+19/ (for browsing the source)
-- https://sources.debian.net/src/xorg/1:7.7+19/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/xorg/1:7.7+19/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `xz-utils=5.2.4-1`
 
