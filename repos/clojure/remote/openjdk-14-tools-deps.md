@@ -1,7 +1,7 @@
 ## `clojure:openjdk-14-tools-deps`
 
 ```console
-$ docker pull clojure@sha256:80f8367542381f9b4aad641a874972153ed7208be66c71abbb37a755759d4398
+$ docker pull clojure@sha256:bdc09ff3727ea62626bc174a5585a9ea29686e1ef3469431550a04ef4f6f8469
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -11,14 +11,14 @@ $ docker pull clojure@sha256:80f8367542381f9b4aad641a874972153ed7208be66c71abbb3
 ### `clojure:openjdk-14-tools-deps` - linux; amd64
 
 ```console
-$ docker pull clojure@sha256:af2536132a9817c1e51ffffff42a0979734427fe2ac13d1821b8b91c1948ef50
+$ docker pull clojure@sha256:773544327e8dbecc758f53dae4832bdd80f4f33d5f1e57ecd3b6bf42447ee0ac
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **275.6 MB (275596125 bytes)**  
+-	Total Size: **275.6 MB (275596150 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:68dff437674f99cb561ecb779273b1148f6b49d480056f1a5d9b47e9c78a7b64`
+-	Image ID: `sha256:537d8cbaa56a5589fbb10e92f4fd01ba5559afad0e4e061581d3d0331eded11e`
 -	Default Command: `["sh","-c","sleep 1 && exec clj"]`
 
 ```dockerfile
@@ -46,13 +46,13 @@ ENV JAVA_SHA256=734cfc204c93ed2b63bf889869de68dd611c8d4d3135c38f2343b57992a1f65f
 RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		wget 	; 	rm -rf /var/lib/apt/lists/*; 		wget -O openjdk.tgz "$JAVA_URL"; 	echo "$JAVA_SHA256 */openjdk.tgz" | sha256sum -c -; 		mkdir -p "$JAVA_HOME"; 	tar --extract 		--file openjdk.tgz 		--directory "$JAVA_HOME" 		--strip-components 1 		--no-same-owner 	; 	rm openjdk.tgz; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark > /dev/null; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 		{ 		echo '#!/usr/bin/env bash'; 		echo 'set -Eeuo pipefail'; 		echo 'if ! [ -d "$JAVA_HOME" ]; then echo >&2 "error: missing JAVA_HOME environment variable"; exit 1; fi'; 		echo 'cacertsFile=; for f in "$JAVA_HOME/lib/security/cacerts" "$JAVA_HOME/jre/lib/security/cacerts"; do if [ -e "$f" ]; then cacertsFile="$f"; break; fi; done'; 		echo 'if [ -z "$cacertsFile" ] || ! [ -f "$cacertsFile" ]; then echo >&2 "error: failed to find cacerts file in $JAVA_HOME"; exit 1; fi'; 		echo 'trust extract --overwrite --format=java-cacerts --filter=ca-anchors --purpose=server-auth "$cacertsFile"'; 	} > /etc/ca-certificates/update.d/docker-openjdk; 	chmod +x /etc/ca-certificates/update.d/docker-openjdk; 	/etc/ca-certificates/update.d/docker-openjdk; 		find "$JAVA_HOME/lib" -name '*.so' -exec dirname '{}' ';' | sort -u > /etc/ld.so.conf.d/docker-openjdk.conf; 	ldconfig; 		java -Xshare:dump; 		javac --version; 	java --version
 # Tue, 05 Nov 2019 01:38:57 GMT
 CMD ["jshell"]
-# Tue, 05 Nov 2019 05:31:15 GMT
-ENV CLOJURE_VERSION=1.10.1.478
-# Tue, 05 Nov 2019 05:31:15 GMT
+# Thu, 07 Nov 2019 02:22:36 GMT
+ENV CLOJURE_VERSION=1.10.1.483
+# Thu, 07 Nov 2019 02:22:36 GMT
 WORKDIR /tmp
-# Tue, 05 Nov 2019 05:31:37 GMT
+# Thu, 07 Nov 2019 02:22:54 GMT
 RUN apt-get update && apt-get install -y curl rlwrap wget && rm -rf /var/lib/apt/lists/* && wget https://download.clojure.org/install/linux-install-$CLOJURE_VERSION.sh && chmod +x linux-install-$CLOJURE_VERSION.sh && ./linux-install-$CLOJURE_VERSION.sh && clojure -e "(clojure-version)" && apt-get remove -y --purge curl wget
-# Tue, 05 Nov 2019 05:31:37 GMT
+# Thu, 07 Nov 2019 02:22:54 GMT
 CMD ["sh" "-c" "sleep 1 && exec clj"]
 ```
 
@@ -73,7 +73,7 @@ CMD ["sh" "-c" "sleep 1 && exec clj"]
 		Last Modified: Tue, 05 Nov 2019 01:42:04 GMT  
 		Size: 198.6 MB (198620634 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:6e3bcc159a6006f73fd77550e78b7d3614ea3cbad130bfa03ab053dec8341f63`  
-		Last Modified: Tue, 05 Nov 2019 05:33:45 GMT  
-		Size: 46.6 MB (46618736 bytes)  
+	-	`sha256:e32943a92786984412a991b7dc5024ac00685b0c1f6fb859f70be864a8f85c8d`  
+		Last Modified: Thu, 07 Nov 2019 02:25:25 GMT  
+		Size: 46.6 MB (46618761 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
