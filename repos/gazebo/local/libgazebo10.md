@@ -6809,14 +6809,9 @@ Binary Packages:
 If source is available (seen below), check the contents of `debian/copyright` within it.
 
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris python3-stdlib-extensions=3.6.8-1~18.04
-'http://archive.ubuntu.com/ubuntu/pool/main/p/python3-stdlib-extensions/python3-stdlib-extensions_3.6.8-1~18.04.dsc' python3-stdlib-extensions_3.6.8-1~18.04.dsc 2547 SHA256:355fda97bc53aa4464a95afb352253ddb09dafc19f76132989b6b688d8b2975d
-'http://archive.ubuntu.com/ubuntu/pool/main/p/python3-stdlib-extensions/python3-stdlib-extensions_3.6.8.orig.tar.xz' python3-stdlib-extensions_3.6.8.orig.tar.xz 1038024 SHA256:b1bd07c373c0055ce1de5305d06aa71b44d3cf879c0cb31b3db79dbf7d9010e6
-'http://archive.ubuntu.com/ubuntu/pool/main/p/python3-stdlib-extensions/python3-stdlib-extensions_3.6.8-1~18.04.debian.tar.xz' python3-stdlib-extensions_3.6.8-1~18.04.debian.tar.xz 16008 SHA256:599f95ae5d9366345bc651b05744a7c259ef6eee0f4fbde14d8fc24837a99a23
-```
 
 ### `dpkg` source package: `python3.6=3.6.8-1~18.04.3`
 
