@@ -1,10 +1,10 @@
-# `mongo:3.6.14-xenial`
+# `mongo:3.6.15-xenial`
 
 ## Docker Metadata
 
-- Image ID: `sha256:63abac6699cdb799dbc4a1db1a2fd2b8bdfa3d74624148372004aae0feeebf98`
-- Created: `2019-11-01T00:34:06.806725522Z`
-- Virtual Size: ~ 436.23 Mb  
+- Image ID: `sha256:aa70f39d5953734e30977a17d4c2505c058afd60bc2548b139b23c70788cf713`
+- Created: `2019-11-05T01:35:58.290239919Z`
+- Virtual Size: ~ 436.43 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["docker-entrypoint.sh"]`
@@ -17,7 +17,7 @@
   - `MONGO_PACKAGE=mongodb-org`
   - `MONGO_REPO=repo.mongodb.org`
   - `MONGO_MAJOR=3.6`
-  - `MONGO_VERSION=3.6.14`
+  - `MONGO_VERSION=3.6.15`
 
 ## `dpkg` (`.deb`-based packages)
 
@@ -469,14 +469,9 @@ Licenses: (parsed from: `/usr/share/doc/gcc-5-base/copyright`, `/usr/share/doc/l
 - `GPL-2`
 - `GPL-3`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris gcc-5=5.4.0-6ubuntu1~16.04.11
-'http://archive.ubuntu.com/ubuntu/pool/main/g/gcc-5/gcc-5_5.4.0-6ubuntu1~16.04.11.dsc' gcc-5_5.4.0-6ubuntu1~16.04.11.dsc 28318 SHA256:fd7629f95cb155f067a2fea1d54a6e31684df2f669b9f23d3521c5ed4aafc7cc
-'http://archive.ubuntu.com/ubuntu/pool/main/g/gcc-5/gcc-5_5.4.0.orig.tar.gz' gcc-5_5.4.0.orig.tar.gz 73530162 SHA256:00f73e8382aa8653aa501ce2263597c2c4429912bfa18102f47cc362f00ed88d
-'http://archive.ubuntu.com/ubuntu/pool/main/g/gcc-5/gcc-5_5.4.0-6ubuntu1~16.04.11.diff.gz' gcc-5_5.4.0-6ubuntu1~16.04.11.diff.gz 1486206 SHA256:f5fb02ea3cf13efbc95c2a75d39b426b8a2cf167c3d6cbe103711e40a10f8cd8
-```
 
 ### `dpkg` source package: `gccgo-6=6.0.1-0ubuntu1`
 
@@ -969,15 +964,15 @@ $ apt-get source -qq --print-uris mawk=1.3.3-17ubuntu2
 'http://archive.ubuntu.com/ubuntu/pool/main/m/mawk/mawk_1.3.3-17ubuntu2.diff.gz' mawk_1.3.3-17ubuntu2.diff.gz 63882 SHA256:670103046767474be29e80f2143dc67e3d0b958972f5942c3df94883f978eded
 ```
 
-### `dpkg` source package: `mongodb-org=3.6.14`
+### `dpkg` source package: `mongodb-org=3.6.15`
 
 Binary Packages:
 
-- `mongodb-org=3.6.14`
-- `mongodb-org-mongos=3.6.14`
-- `mongodb-org-server=3.6.14`
-- `mongodb-org-shell=3.6.14`
-- `mongodb-org-tools=3.6.14`
+- `mongodb-org=3.6.15`
+- `mongodb-org-mongos=3.6.15`
+- `mongodb-org-server=3.6.15`
+- `mongodb-org-shell=3.6.15`
+- `mongodb-org-tools=3.6.15`
 
 **WARNING:** unable to detect licenses! (package likely not compliant with DEP-5)  
 If source is available (seen below), check the contents of `debian/copyright` within it.
