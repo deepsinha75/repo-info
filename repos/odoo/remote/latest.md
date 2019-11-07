@@ -1,7 +1,7 @@
 ## `odoo:latest`
 
 ```console
-$ docker pull odoo@sha256:57f2dcdcfe084928209129781908511a4dda76b4a410d015b52d13f4af56a665
+$ docker pull odoo@sha256:7bc96c025ebaf6860446b24749c964c26d5e575a8ef13ef2bdb625f4c157d336
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -11,14 +11,14 @@ $ docker pull odoo@sha256:57f2dcdcfe084928209129781908511a4dda76b4a410d015b52d13
 ### `odoo:latest` - linux; amd64
 
 ```console
-$ docker pull odoo@sha256:c5e06e862a308ff6279937d2e9f2f4e39b74934e1ed351aa93e8d35f76872361
+$ docker pull odoo@sha256:70b3f8c91a4bc5fa47ef008b449bcf63f6950c33f7ad572ce2b01baf698f6adb
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **371.4 MB (371405112 bytes)**  
+-	Total Size: **371.8 MB (371844520 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:cfa4290aaa06662a91ad827b8fd338b64ab11b2ec8ba034ad722bdf24dee12f2`
+-	Image ID: `sha256:a59788b2229d2f2c6b78874656561419790bea9a90b3cdbcdc108fd543696a0a`
 -	Entrypoint: `["\/entrypoint.sh"]`
 -	Default Command: `["odoo"]`
 
@@ -39,36 +39,36 @@ RUN set -x;         echo 'deb http://apt.postgresql.org/pub/repos/apt/ buster-pg
 RUN set -x;     npm install -g rtlcss
 # Wed, 23 Oct 2019 23:48:16 GMT
 ENV ODOO_VERSION=13.0
-# Wed, 23 Oct 2019 23:48:16 GMT
-ARG ODOO_RELEASE=20191022
-# Wed, 23 Oct 2019 23:48:17 GMT
-ARG ODOO_SHA=09eb205ed1e4348dd4762263cafa9819e17dba7e
-# Wed, 23 Oct 2019 23:49:16 GMT
-# ARGS: ODOO_RELEASE=20191022 ODOO_SHA=09eb205ed1e4348dd4762263cafa9819e17dba7e
+# Thu, 07 Nov 2019 01:21:04 GMT
+ARG ODOO_RELEASE=20191106
+# Thu, 07 Nov 2019 01:21:04 GMT
+ARG ODOO_SHA=b13bec4d20dfe36f1baa923719e37ea6bbe18a7d
+# Thu, 07 Nov 2019 01:22:02 GMT
+# ARGS: ODOO_RELEASE=20191106 ODOO_SHA=b13bec4d20dfe36f1baa923719e37ea6bbe18a7d
 RUN set -x;         curl -o odoo.deb -sSL http://nightly.odoo.com/${ODOO_VERSION}/nightly/deb/odoo_${ODOO_VERSION}.${ODOO_RELEASE}_all.deb         && echo "${ODOO_SHA} odoo.deb" | sha1sum -c -         && dpkg --force-depends -i odoo.deb         && apt-get update         && apt-get -y install -f --no-install-recommends         && rm -rf /var/lib/apt/lists/* odoo.deb
-# Wed, 23 Oct 2019 23:49:17 GMT
-COPY file:2905c3e40e927f18edeec6416ebbcde3fd0ec3b8a7146293bd62f9f6d6e7583f in / 
-# Wed, 23 Oct 2019 23:49:17 GMT
+# Thu, 07 Nov 2019 01:22:03 GMT
+COPY file:172308c3aaff854a6daab6713c49c8fb84bf96ef2503f0209ef7502dd7574931 in / 
+# Thu, 07 Nov 2019 01:22:04 GMT
 COPY file:1e7209cce5525d270c422815db614f496d4d0da4820de1ab0000e9e592223235 in /etc/odoo/ 
-# Wed, 23 Oct 2019 23:49:18 GMT
-# ARGS: ODOO_RELEASE=20191022 ODOO_SHA=09eb205ed1e4348dd4762263cafa9819e17dba7e
+# Thu, 07 Nov 2019 01:22:04 GMT
+# ARGS: ODOO_RELEASE=20191106 ODOO_SHA=b13bec4d20dfe36f1baa923719e37ea6bbe18a7d
 RUN chown odoo /etc/odoo/odoo.conf
-# Wed, 23 Oct 2019 23:49:18 GMT
-# ARGS: ODOO_RELEASE=20191022 ODOO_SHA=09eb205ed1e4348dd4762263cafa9819e17dba7e
+# Thu, 07 Nov 2019 01:22:05 GMT
+# ARGS: ODOO_RELEASE=20191106 ODOO_SHA=b13bec4d20dfe36f1baa923719e37ea6bbe18a7d
 RUN mkdir -p /mnt/extra-addons         && chown -R odoo /mnt/extra-addons
-# Wed, 23 Oct 2019 23:49:19 GMT
+# Thu, 07 Nov 2019 01:22:05 GMT
 VOLUME [/var/lib/odoo /mnt/extra-addons]
-# Wed, 23 Oct 2019 23:49:19 GMT
+# Thu, 07 Nov 2019 01:22:05 GMT
 EXPOSE 8069 8071
-# Wed, 23 Oct 2019 23:49:19 GMT
+# Thu, 07 Nov 2019 01:22:05 GMT
 ENV ODOO_RC=/etc/odoo/odoo.conf
-# Wed, 23 Oct 2019 23:49:19 GMT
+# Thu, 07 Nov 2019 01:22:06 GMT
 COPY file:0bc771c66dfeb517d19d13ea2699a0d3cbbbba684c8851640e6b87fe85b40619 in /usr/local/bin/wait-for-psql.py 
-# Wed, 23 Oct 2019 23:49:19 GMT
+# Thu, 07 Nov 2019 01:22:06 GMT
 USER odoo
-# Wed, 23 Oct 2019 23:49:19 GMT
+# Thu, 07 Nov 2019 01:22:06 GMT
 ENTRYPOINT ["/entrypoint.sh"]
-# Wed, 23 Oct 2019 23:49:20 GMT
+# Thu, 07 Nov 2019 01:22:06 GMT
 CMD ["odoo"]
 ```
 
@@ -89,27 +89,27 @@ CMD ["odoo"]
 		Last Modified: Wed, 23 Oct 2019 23:53:37 GMT  
 		Size: 1.1 MB (1056541 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c4d75effbcf8f285fd77431e0daa1fe483414edd2bda240e8b8ea45ab0dfec08`  
-		Last Modified: Wed, 23 Oct 2019 23:54:25 GMT  
-		Size: 138.1 MB (138053025 bytes)  
+	-	`sha256:ef460b861e916d8a403039b65136a2a03ee18b21f3e98c41403b11efff99ed24`  
+		Last Modified: Thu, 07 Nov 2019 01:24:46 GMT  
+		Size: 138.5 MB (138492386 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:55b9a2d2459ecf40a9f2eb5ddb7ae75af6c9711079a4263e027b0e1a1d1cae17`  
-		Last Modified: Wed, 23 Oct 2019 23:53:36 GMT  
-		Size: 632.0 B  
+	-	`sha256:727ee437be0d0769471156d138f3c0f6a3a6d72f1b98e52b0c02a55c25c27543`  
+		Last Modified: Thu, 07 Nov 2019 01:24:19 GMT  
+		Size: 672.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:f36cf1786b0cefccadce34676e71dc38c2d52ab6e6a556f31bfac02bb35ffb75`  
-		Last Modified: Wed, 23 Oct 2019 23:53:36 GMT  
+	-	`sha256:3d4479040182f4aba0f0d9a1f047029f3bbe1f1adb3f11534910bfe17eb64704`  
+		Last Modified: Thu, 07 Nov 2019 01:24:19 GMT  
 		Size: 555.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:848d2bf5442c319e785452e18a59bffc27cb60ac257147d4fc611aada1a26857`  
-		Last Modified: Wed, 23 Oct 2019 23:53:36 GMT  
-		Size: 553.0 B  
+	-	`sha256:ea86b899bcfc8bccce0e261757d9a946c759c49533a5b660ed59a9b9c0fec03d`  
+		Last Modified: Thu, 07 Nov 2019 01:24:19 GMT  
+		Size: 558.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:ffb73fb1eabc7b6f9ab28c2c9196daa774a745b65720f377ca4d35c8e34c2e87`  
-		Last Modified: Wed, 23 Oct 2019 23:53:36 GMT  
+	-	`sha256:e81b0dcabd9406434756decdba1c9e94673ba74a2e08c84726e4e3814323b0b8`  
+		Last Modified: Thu, 07 Nov 2019 01:24:19 GMT  
 		Size: 128.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:3f8357a6f03d9991a53b4ba3955863db70799a2ed85b3d356cc48b1cbd49385b`  
-		Last Modified: Wed, 23 Oct 2019 23:53:36 GMT  
-		Size: 582.0 B  
+	-	`sha256:a6806f8d1c08283f2bf6468f3a363039437cd8240c2b9c3031c22d98c8fe3f0e`  
+		Last Modified: Thu, 07 Nov 2019 01:24:19 GMT  
+		Size: 584.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
