@@ -1582,20 +1582,13 @@ Licenses: (parsed from: `/usr/share/doc/libharfbuzz0b/copyright`)
 
 - `MIT`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris harfbuzz=2.6.2-1
-'http://deb.debian.org/debian/pool/main/h/harfbuzz/harfbuzz_2.6.2-1.dsc' harfbuzz_2.6.2-1.dsc 2308 SHA256:fa8388c5808e0c4a2d2088f3c6d747322e88d7b2c0dfdf688a8df96eaf5c26cf
-'http://deb.debian.org/debian/pool/main/h/harfbuzz/harfbuzz_2.6.2.orig.tar.xz' harfbuzz_2.6.2.orig.tar.xz 5769792 SHA256:3b4c6a72f7f2b05d54f6c3112b3ebee5131c199fe4de4cf9bbbf71a56666f624
-'http://deb.debian.org/debian/pool/main/h/harfbuzz/harfbuzz_2.6.2-1.debian.tar.xz' harfbuzz_2.6.2-1.debian.tar.xz 10920 SHA256:ed10e8d9084d6886cddc9ce912b5540a6c548b4cce5c425a72876ff6f4bf88d7
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/harfbuzz/2.6.2-1/
 
-- https://sources.debian.net/src/harfbuzz/2.6.2-1/ (for browsing the source)
-- https://sources.debian.net/src/harfbuzz/2.6.2-1/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/harfbuzz/2.6.2-1/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `hicolor-icon-theme=0.17-2`
 
@@ -3541,20 +3534,13 @@ Licenses: (parsed from: `/usr/share/doc/m4/copyright`)
 - `GFDL`
 - `GPL`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris m4=1.4.18-2
-'http://deb.debian.org/debian/pool/main/m/m4/m4_1.4.18-2.dsc' m4_1.4.18-2.dsc 1426 SHA256:93dda06744f90619c4666515c9b5bc51aa584519c16cafd1e74aaa3733628c1b
-'http://deb.debian.org/debian/pool/main/m/m4/m4_1.4.18.orig.tar.xz' m4_1.4.18.orig.tar.xz 1207688 SHA256:f2c1e86ca0a404ff281631bdc8377638992744b175afb806e25871a24a934e07
-'http://deb.debian.org/debian/pool/main/m/m4/m4_1.4.18-2.debian.tar.xz' m4_1.4.18-2.debian.tar.xz 17032 SHA256:73718bae96a2f63f0ed38c614ea081074914698207e73450da571461af1c58ec
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/m4/1.4.18-2/
 
-- https://sources.debian.net/src/m4/1.4.18-2/ (for browsing the source)
-- https://sources.debian.net/src/m4/1.4.18-2/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/m4/1.4.18-2/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `make-dfsg=4.2.1-1.2`
 

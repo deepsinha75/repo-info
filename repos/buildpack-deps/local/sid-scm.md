@@ -1041,19 +1041,13 @@ Licenses: (parsed from: `/usr/share/doc/hostname/copyright`)
 
 - `GPL-2`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris hostname=3.22
-'http://deb.debian.org/debian/pool/main/h/hostname/hostname_3.22.dsc' hostname_3.22.dsc 1396 SHA256:778995b1edea78bb96c07ca916dd7a681f4d109582551db355738b421801efd4
-'http://deb.debian.org/debian/pool/main/h/hostname/hostname_3.22.tar.gz' hostname_3.22.tar.gz 13565 SHA256:b6d712d9e65687755e77b2451165bfd6ee72b4418300edfc4b718d347be256a4
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/hostname/3.22/
 
-- https://sources.debian.net/src/hostname/3.22/ (for browsing the source)
-- https://sources.debian.net/src/hostname/3.22/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/hostname/3.22/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `init-system-helpers=1.57`
 
@@ -1887,21 +1881,13 @@ Licenses: (parsed from: `/usr/share/doc/mercurial/copyright`, `/usr/share/doc/me
 - `LGPL-2.1`
 - `LGPL-2.1+`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris mercurial=5.1.1-1
-'http://deb.debian.org/debian/pool/main/m/mercurial/mercurial_5.1.1-1.dsc' mercurial_5.1.1-1.dsc 2757 SHA256:71b21e8e4e8558ccb5aea151fad5ad9efa0111e55d5243a3fd93ba3c56136401
-'http://deb.debian.org/debian/pool/main/m/mercurial/mercurial_5.1.1.orig.tar.gz' mercurial_5.1.1.orig.tar.gz 7285831 SHA256:35fc8ba5e0379c1b3affa2757e83fb0509e8ac314cbd9f1fd133cf265d16e49f
-'http://deb.debian.org/debian/pool/main/m/mercurial/mercurial_5.1.1.orig.tar.gz.asc' mercurial_5.1.1.orig.tar.gz.asc 833 SHA256:0163ec056ae70283c7a09f4d07c76182af9c30963583db564e285639123fd5a9
-'http://deb.debian.org/debian/pool/main/m/mercurial/mercurial_5.1.1-1.debian.tar.xz' mercurial_5.1.1-1.debian.tar.xz 62668 SHA256:7abcf76f29e478e1131f5883553cc3733092b17c332540773d741d29ded8a5b2
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/mercurial/5.1.1-1/
 
-- https://sources.debian.net/src/mercurial/5.1.1-1/ (for browsing the source)
-- https://sources.debian.net/src/mercurial/5.1.1-1/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/mercurial/5.1.1-1/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `mime-support=3.64`
 
