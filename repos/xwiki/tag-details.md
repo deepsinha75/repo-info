@@ -32,7 +32,7 @@
 ## `xwiki:10`
 
 ```console
-$ docker pull xwiki@sha256:c304d3bfc03954a3669f47757a63918a4d36af088c34537e15093d7cbb2192e5
+$ docker pull xwiki@sha256:e50eee1ee16e97510d2c2878b44ba59cff37121d520dcfcc6ab39815203541fc
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -42,14 +42,14 @@ $ docker pull xwiki@sha256:c304d3bfc03954a3669f47757a63918a4d36af088c34537e15093
 ### `xwiki:10` - linux; amd64
 
 ```console
-$ docker pull xwiki@sha256:031e6cf9f5f62c9ac15be9a93473d15a5cb805445d8efbdb68835da5502d7999
+$ docker pull xwiki@sha256:1eac0ad7e3285c13b277110fd956cc05a3c5774a7c8d88207eff821713040840
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **583.2 MB (583220294 bytes)**  
+-	Total Size: **583.1 MB (583142464 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:5ed311c670c181f7bd2a3837a9ba97b7629e74b535eb19efdb8e7d33871c9a2d`
+-	Image ID: `sha256:a9f71ff8b734e920564dff7b18c8327bdac99724df51a87a2bc0f57ed06bd995`
 -	Entrypoint: `["docker-entrypoint.sh"]`
 -	Default Command: `["xwiki"]`
 
@@ -66,69 +66,69 @@ RUN mkdir -p /run/systemd && echo 'docker' > /run/systemd/container
 CMD ["/bin/bash"]
 # Thu, 31 Oct 2019 22:37:37 GMT
 ENV LANG=en_US.UTF-8 LANGUAGE=en_US:en LC_ALL=en_US.UTF-8
-# Thu, 31 Oct 2019 22:38:04 GMT
-RUN apt-get update     && apt-get install -y --no-install-recommends curl ca-certificates locales     && echo "en_US.UTF-8 UTF-8" >> /etc/locale.gen     && locale-gen en_US.UTF-8     && rm -rf /var/lib/apt/lists/*
-# Thu, 31 Oct 2019 22:38:04 GMT
-ENV JAVA_VERSION=jdk8u222-b10
-# Thu, 31 Oct 2019 22:38:10 GMT
-RUN set -eux;     ARCH="$(dpkg --print-architecture)";     case "${ARCH}" in        aarch64|arm64)          ESUM='652776586ede124189dc218174b5922cc97feac81021ad81905900b349a352d2';          BINARY_URL='https://github.com/AdoptOpenJDK/openjdk8-binaries/releases/download/jdk8u222-b10/OpenJDK8U-jdk_aarch64_linux_hotspot_8u222b10.tar.gz';          ;;        armhf)          ESUM='7b3d6ade8c25adca01095ba66642132d8c87a1a8caf3883850e34778453afcec';          BINARY_URL='https://github.com/AdoptOpenJDK/openjdk8-binaries/releases/download/jdk8u222-b10/OpenJDK8U-jdk_arm_linux_hotspot_8u222b10.tar.gz';          ;;        ppc64el|ppc64le)          ESUM='f85de48f1dcfd78a39bf5817d3c2f8247c75df6abd56c8721172bf2bd757eb69';          BINARY_URL='https://github.com/AdoptOpenJDK/openjdk8-binaries/releases/download/jdk8u222-b10/OpenJDK8U-jdk_ppc64le_linux_hotspot_8u222b10.tar.gz';          ;;        s390x)          ESUM='d56d6a128f8827e5baeae379bcb1b3ead2cfd5b1abb03befa4588f89f08ea626';          BINARY_URL='https://github.com/AdoptOpenJDK/openjdk8-binaries/releases/download/jdk8u222-b10/OpenJDK8U-jdk_s390x_linux_hotspot_8u222b10.tar.gz';          ;;        amd64|x86_64)          ESUM='37356281345b93feb4212e6267109b4409b55b06f107619dde4960e402bafa77';          BINARY_URL='https://github.com/AdoptOpenJDK/openjdk8-binaries/releases/download/jdk8u222-b10/OpenJDK8U-jdk_x64_linux_hotspot_8u222b10.tar.gz';          ;;        *)          echo "Unsupported arch: ${ARCH}";          exit 1;          ;;     esac;     curl -LfsSo /tmp/openjdk.tar.gz ${BINARY_URL};     echo "${ESUM} */tmp/openjdk.tar.gz" | sha256sum -c -;     mkdir -p /opt/java/openjdk;     cd /opt/java/openjdk;     tar -xf /tmp/openjdk.tar.gz --strip-components=1;     rm -rf /tmp/openjdk.tar.gz;
-# Thu, 31 Oct 2019 22:38:11 GMT
+# Fri, 08 Nov 2019 02:20:03 GMT
+RUN apt-get update     && apt-get install -y --no-install-recommends curl ca-certificates fontconfig locales     && echo "en_US.UTF-8 UTF-8" >> /etc/locale.gen     && locale-gen en_US.UTF-8     && rm -rf /var/lib/apt/lists/*
+# Fri, 08 Nov 2019 02:20:03 GMT
+ENV JAVA_VERSION=jdk8u232-b09
+# Fri, 08 Nov 2019 02:20:09 GMT
+RUN set -eux;     ARCH="$(dpkg --print-architecture)";     case "${ARCH}" in        ppc64el|ppc64le)          ESUM='da87bdc04b47477b42afc76066dbd96efa35ad967238be03a0081f8840e893a8';          BINARY_URL='https://github.com/AdoptOpenJDK/openjdk8-binaries/releases/download/jdk8u232-b09/OpenJDK8U-jdk_ppc64le_linux_hotspot_8u232b09.tar.gz';          ;;        s390x)          ESUM='bd20cb8bf4cfab9d3e2b2ccfb9a6f9eda1e4e67b4103b9975d29de12c05ad1f5';          BINARY_URL='https://github.com/AdoptOpenJDK/openjdk8-binaries/releases/download/jdk8u232-b09/OpenJDK8U-jdk_s390x_linux_hotspot_8u232b09.tar.gz';          ;;        amd64|x86_64)          ESUM='7b7884f2eb2ba2d47f4c0bf3bb1a2a95b73a3a7734bd47ebf9798483a7bcc423';          BINARY_URL='https://github.com/AdoptOpenJDK/openjdk8-binaries/releases/download/jdk8u232-b09/OpenJDK8U-jdk_x64_linux_hotspot_8u232b09.tar.gz';          ;;        *)          echo "Unsupported arch: ${ARCH}";          exit 1;          ;;     esac;     curl -LfsSo /tmp/openjdk.tar.gz ${BINARY_URL};     echo "${ESUM} */tmp/openjdk.tar.gz" | sha256sum -c -;     mkdir -p /opt/java/openjdk;     cd /opt/java/openjdk;     tar -xf /tmp/openjdk.tar.gz --strip-components=1;     rm -rf /tmp/openjdk.tar.gz;
+# Fri, 08 Nov 2019 02:20:09 GMT
 ENV JAVA_HOME=/opt/java/openjdk PATH=/opt/java/openjdk/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Fri, 01 Nov 2019 02:29:48 GMT
+# Fri, 08 Nov 2019 02:52:20 GMT
 ENV CATALINA_HOME=/usr/local/tomcat
-# Fri, 01 Nov 2019 02:29:48 GMT
+# Fri, 08 Nov 2019 02:52:21 GMT
 ENV PATH=/usr/local/tomcat/bin:/opt/java/openjdk/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Fri, 01 Nov 2019 02:29:49 GMT
+# Fri, 08 Nov 2019 02:52:22 GMT
 RUN mkdir -p "$CATALINA_HOME"
-# Fri, 01 Nov 2019 02:29:49 GMT
+# Fri, 08 Nov 2019 02:52:22 GMT
 WORKDIR /usr/local/tomcat
-# Fri, 01 Nov 2019 02:29:49 GMT
+# Fri, 08 Nov 2019 02:52:23 GMT
 ENV TOMCAT_NATIVE_LIBDIR=/usr/local/tomcat/native-jni-lib
-# Fri, 01 Nov 2019 02:29:49 GMT
+# Fri, 08 Nov 2019 02:52:23 GMT
 ENV LD_LIBRARY_PATH=/usr/local/tomcat/native-jni-lib
-# Fri, 01 Nov 2019 02:34:53 GMT
+# Fri, 08 Nov 2019 02:58:08 GMT
 ENV GPG_KEYS=05AB33110949707C93A279E3D3EFE6B686867BA6 07E48665A34DCAFAE522E5E6266191C37C037D42 47309207D818FFD8DCD3F83F1931D684307A10A5 541FBE7D8F78B25E055DDEE13C370389288584E7 61B832AC2F1C5A90F0F9B00A1C506407564C17A3 713DA88BE50911535FE716F5208B0AB1D63011C7 79F7026C690BAA50B92CD8B66A3AD3F4F22C4FED 9BA44C2621385CB966EBA586F72C284D731FABEE A27677289986DB50844682F8ACB77FC2E86E29AC A9C5DF4D22E99998D9875A5110C01C5A2F6059E7 DCFD35E0BF8CA7344752DE8B6FB21E8933C60243 F3A04C595DB5B6A5F1ECA43E3B7BBB100D811BBE F7DA48BB64BCB84ECBA7EE6935CD23C10D498E23
-# Fri, 01 Nov 2019 02:34:53 GMT
+# Fri, 08 Nov 2019 02:58:08 GMT
 ENV TOMCAT_MAJOR=8
-# Fri, 01 Nov 2019 02:34:53 GMT
+# Fri, 08 Nov 2019 02:58:09 GMT
 ENV TOMCAT_VERSION=8.5.47
-# Fri, 01 Nov 2019 02:34:53 GMT
+# Fri, 08 Nov 2019 02:58:09 GMT
 ENV TOMCAT_SHA512=079b85f3dfca2b137634859208fae6012860201d720d12ff0add3473f1e267d332cb12803958754e1f922599e0d42b7e97f00bcd62584d9148a6f45fde091716
-# Fri, 01 Nov 2019 02:35:26 GMT
+# Fri, 08 Nov 2019 02:59:03 GMT
 RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		gnupg dirmngr 		wget ca-certificates 	; 		ddist() { 		local f="$1"; shift; 		local distFile="$1"; shift; 		local success=; 		local distUrl=; 		for distUrl in 			'https://www.apache.org/dyn/closer.cgi?action=download&filename=' 			https://www-us.apache.org/dist/ 			https://www.apache.org/dist/ 			https://archive.apache.org/dist/ 		; do 			if wget -O "$f" "$distUrl$distFile" && [ -s "$f" ]; then 				success=1; 				break; 			fi; 		done; 		[ -n "$success" ]; 	}; 		ddist 'tomcat.tar.gz' "tomcat/tomcat-$TOMCAT_MAJOR/v$TOMCAT_VERSION/bin/apache-tomcat-$TOMCAT_VERSION.tar.gz"; 	echo "$TOMCAT_SHA512 *tomcat.tar.gz" | sha512sum --strict --check -; 	ddist 'tomcat.tar.gz.asc' "tomcat/tomcat-$TOMCAT_MAJOR/v$TOMCAT_VERSION/bin/apache-tomcat-$TOMCAT_VERSION.tar.gz.asc"; 	export GNUPGHOME="$(mktemp -d)"; 	for key in $GPG_KEYS; do 		gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys "$key"; 	done; 	gpg --batch --verify tomcat.tar.gz.asc tomcat.tar.gz; 	tar -xf tomcat.tar.gz --strip-components=1; 	rm bin/*.bat; 	rm tomcat.tar.gz*; 	command -v gpgconf && gpgconf --kill all || :; 	rm -rf "$GNUPGHOME"; 		nativeBuildDir="$(mktemp -d)"; 	tar -xf bin/tomcat-native.tar.gz -C "$nativeBuildDir" --strip-components=1; 	apt-get install -y --no-install-recommends 		dpkg-dev 		gcc 		libapr1-dev 		libssl-dev 		make 	; 	( 		export CATALINA_HOME="$PWD"; 		cd "$nativeBuildDir/native"; 		gnuArch="$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)"; 		aprConfig="$(command -v apr-1-config)"; 		./configure 			--build="$gnuArch" 			--libdir="$TOMCAT_NATIVE_LIBDIR" 			--prefix="$CATALINA_HOME" 			--with-apr="$aprConfig" 			--with-java-home="$JAVA_HOME" 			--with-ssl=yes; 		make -j "$(nproc)"; 		make install; 	); 	rm -rf "$nativeBuildDir"; 	rm bin/tomcat-native.tar.gz; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark > /dev/null; 	find "$TOMCAT_NATIVE_LIBDIR" -type f -executable -exec ldd '{}' ';' 		| awk '/=>/ { print $(NF-1) }' 		| sort -u 		| xargs -r dpkg-query --search 		| cut -d: -f1 		| sort -u 		| xargs -r apt-mark manual 	; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 	rm -rf /var/lib/apt/lists/*; 		find ./bin/ -name '*.sh' -exec sed -ri 's|^#!/bin/sh$|#!/usr/bin/env bash|' '{}' +; 		chmod -R +rX .; 	chmod 777 logs temp work
-# Fri, 01 Nov 2019 02:35:29 GMT
+# Fri, 08 Nov 2019 02:59:07 GMT
 RUN set -e 	&& nativeLines="$(catalina.sh configtest 2>&1)" 	&& nativeLines="$(echo "$nativeLines" | grep 'Apache Tomcat Native')" 	&& nativeLines="$(echo "$nativeLines" | sort -u)" 	&& if ! echo "$nativeLines" | grep 'INFO: Loaded APR based Apache Tomcat Native library' >&2; then 		echo >&2 "$nativeLines"; 		exit 1; 	fi
-# Fri, 01 Nov 2019 02:35:29 GMT
+# Fri, 08 Nov 2019 02:59:07 GMT
 EXPOSE 8080
-# Fri, 01 Nov 2019 02:35:30 GMT
+# Fri, 08 Nov 2019 02:59:08 GMT
 CMD ["catalina.sh" "run"]
-# Fri, 01 Nov 2019 05:46:09 GMT
+# Fri, 08 Nov 2019 03:47:57 GMT
 MAINTAINER Vincent Massol <vincent@massol.net>
-# Fri, 01 Nov 2019 05:48:00 GMT
+# Fri, 08 Nov 2019 03:49:52 GMT
 RUN apt-get update &&   apt-get --no-install-recommends -y install     curl     libreoffice     unzip     procps     libmysql-java &&   rm -rf /var/lib/apt/lists/*
-# Fri, 01 Nov 2019 05:48:01 GMT
+# Fri, 08 Nov 2019 03:49:52 GMT
 ENV XWIKI_VERSION=10.11.9
-# Fri, 01 Nov 2019 05:48:01 GMT
+# Fri, 08 Nov 2019 03:49:53 GMT
 ENV XWIKI_URL_PREFIX=https://maven.xwiki.org/releases/org/xwiki/platform/xwiki-platform-distribution-war/10.11.9
-# Fri, 01 Nov 2019 05:48:01 GMT
+# Fri, 08 Nov 2019 03:49:53 GMT
 ENV XWIKI_DOWNLOAD_SHA256=299fe60d5b32ee1a363ba48ff2346e78eea5f713a0174c20fe9d7531be426a58
-# Fri, 01 Nov 2019 05:48:35 GMT
+# Fri, 08 Nov 2019 03:50:25 GMT
 RUN rm -rf /usr/local/tomcat/webapps/* &&   mkdir -p /usr/local/tomcat/temp &&   mkdir -p /usr/local/xwiki/data &&   curl -fSL "${XWIKI_URL_PREFIX}/xwiki-platform-distribution-war-${XWIKI_VERSION}.war" -o xwiki.war &&   echo "$XWIKI_DOWNLOAD_SHA256 xwiki.war" | sha256sum -c - &&   unzip -d /usr/local/tomcat/webapps/ROOT xwiki.war &&   rm -f xwiki.war
-# Fri, 01 Nov 2019 05:48:36 GMT
+# Fri, 08 Nov 2019 03:50:26 GMT
 RUN cp /usr/share/java/mysql-connector-java-*.jar /usr/local/tomcat/webapps/ROOT/WEB-INF/lib/
-# Fri, 01 Nov 2019 05:48:36 GMT
+# Fri, 08 Nov 2019 03:50:26 GMT
 COPY file:0a1be11e2eb610a1dbcd415404e3a592641110b93090030cb831e3a19a163017 in /usr/local/tomcat/bin/ 
-# Fri, 01 Nov 2019 05:48:36 GMT
+# Fri, 08 Nov 2019 03:50:26 GMT
 COPY file:c4e95f70490b423a9379f336f8f4d780824e06f56fa73bc69a238e245b53e842 in /usr/local/tomcat/webapps/ROOT/WEB-INF/hibernate.cfg.xml 
-# Fri, 01 Nov 2019 05:48:37 GMT
+# Fri, 08 Nov 2019 03:50:27 GMT
 RUN sed -i 's/<id>org.xwiki.platform:xwiki-platform-distribution-war/<id>org.xwiki.platform:xwiki-platform-distribution-docker/'   /usr/local/tomcat/webapps/ROOT/META-INF/extension.xed
-# Fri, 01 Nov 2019 05:48:37 GMT
+# Fri, 08 Nov 2019 03:50:27 GMT
 COPY file:f901b2d7ac3d76cd8346f9aee81b40529183e81d8aa027bb390856ac01fa6cc0 in /usr/local/bin/docker-entrypoint.sh 
-# Fri, 01 Nov 2019 05:48:37 GMT
+# Fri, 08 Nov 2019 03:50:27 GMT
 VOLUME [/usr/local/xwiki]
-# Fri, 01 Nov 2019 05:48:37 GMT
+# Fri, 08 Nov 2019 03:50:27 GMT
 ENTRYPOINT ["docker-entrypoint.sh"]
-# Fri, 01 Nov 2019 05:48:37 GMT
+# Fri, 08 Nov 2019 03:50:27 GMT
 CMD ["xwiki"]
 ```
 
@@ -149,59 +149,59 @@ CMD ["xwiki"]
 		Last Modified: Thu, 31 Oct 2019 22:21:39 GMT  
 		Size: 162.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:b5035666b1cd262e3117ca99ecbe11fc92c973a1164cd5c69bca60165f501520`  
-		Last Modified: Thu, 31 Oct 2019 22:40:53 GMT  
-		Size: 10.8 MB (10842099 bytes)  
+	-	`sha256:da4c04c54fa4a9b55ddef0b116fa7969185639621c525e1fe19f2b194f1ca4bc`  
+		Last Modified: Fri, 08 Nov 2019 02:22:45 GMT  
+		Size: 13.3 MB (13322685 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:efde61b742b5cb70e5b4addf1af5ad7280bffe7d8dd1df5eff600523285f3ea4`  
-		Last Modified: Thu, 31 Oct 2019 22:41:03 GMT  
-		Size: 105.0 MB (105002961 bytes)  
+	-	`sha256:2e619a1c4087f3c7f3728ceb4445f1a7a5039161cf3289478a8883c6ee035404`  
+		Last Modified: Fri, 08 Nov 2019 02:22:53 GMT  
+		Size: 105.1 MB (105052686 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:225d7996c0304b5ffbdcf6098af5c263ffc4d1b4179e9dca599cea72150685aa`  
-		Last Modified: Fri, 01 Nov 2019 02:39:12 GMT  
-		Size: 138.0 B  
+	-	`sha256:9d52f3e37b5909a34e61705bcdbc8935d682242f0c5fccdb29e117df8639b535`  
+		Last Modified: Fri, 08 Nov 2019 03:05:59 GMT  
+		Size: 139.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:79ec1eb33f408e2e622babc4045fe851ed5836f38b9e58daa1eb39284ace03cf`  
-		Last Modified: Fri, 01 Nov 2019 02:39:56 GMT  
-		Size: 11.2 MB (11233772 bytes)  
+	-	`sha256:e36d9bbb9a695ea2424edb1ab9bbf4fd43d87d68ad2e511fed36af7a18d3d3e8`  
+		Last Modified: Fri, 08 Nov 2019 03:06:53 GMT  
+		Size: 11.3 MB (11250353 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:1e181f3682b7d9ea77955bcda4108fc60c381f24ed390b0a3d08b67642aef2a7`  
-		Last Modified: Fri, 01 Nov 2019 02:39:55 GMT  
-		Size: 131.0 B  
+	-	`sha256:32d2a60a869b7029538438ffc8b6bc2975016c77fd3d3e4bc74b106903b3cca4`  
+		Last Modified: Fri, 08 Nov 2019 03:06:51 GMT  
+		Size: 132.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:248409c0f5d78edeb3d761e8c51a335df3b426a41b4ec8cde818dc7c42ac9303`  
-		Last Modified: Fri, 01 Nov 2019 05:54:24 GMT  
-		Size: 182.5 MB (182519889 bytes)  
+	-	`sha256:a0ecb74c3432d2f07db2c599a41070972647d5e39217a796364ea9f894433395`  
+		Last Modified: Fri, 08 Nov 2019 03:56:18 GMT  
+		Size: 179.9 MB (179895164 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:59e11cead95223d99208c1a56b2ff70a4c400bce48fc1a180c920bb8bdfe9b9e`  
-		Last Modified: Fri, 01 Nov 2019 05:54:10 GMT  
-		Size: 245.9 MB (245930567 bytes)  
+	-	`sha256:f60cc6c4e6989a78ffa4eda461e37f0c14fa8d1664ed98154a893b743a133b53`  
+		Last Modified: Fri, 08 Nov 2019 03:56:08 GMT  
+		Size: 245.9 MB (245930552 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:d6d385233a9152fa2829ee24a53aff146593c925d7cbdd903fc89fb68831abb3`  
-		Last Modified: Fri, 01 Nov 2019 05:53:51 GMT  
-		Size: 955.6 KB (955596 bytes)  
+	-	`sha256:211a8ff63ee53dd83cfb2ef14fd7c5f220e870f7b4a24bd7c056a6dfb3ea3195`  
+		Last Modified: Fri, 08 Nov 2019 03:55:45 GMT  
+		Size: 955.6 KB (955606 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:f4c1267abe977a216254032c7bdae4dc95710175a32b47d20bb86fcfab611e53`  
-		Last Modified: Fri, 01 Nov 2019 05:53:51 GMT  
+	-	`sha256:d2e0a05a7c703bf048e0d1025315d34bd397200ba693101fd6293aaa24e39665`  
+		Last Modified: Fri, 08 Nov 2019 03:55:45 GMT  
 		Size: 1.3 KB (1345 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:e0a9fd9bde07de0f3b22e22358c5a553b96b8ffb94f7efdf54be1acb865f294f`  
-		Last Modified: Fri, 01 Nov 2019 05:53:51 GMT  
-		Size: 2.3 KB (2341 bytes)  
+	-	`sha256:07de7e380b498b0a7a00eab52eb6163ee8c032a35ec4b2597ffc611f6c9f7f18`  
+		Last Modified: Fri, 08 Nov 2019 03:55:45 GMT  
+		Size: 2.3 KB (2344 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:9c5892c3d351297bbd95311554d447023392f4d53a0602c76eaaf171fc22a791`  
-		Last Modified: Fri, 01 Nov 2019 05:53:51 GMT  
-		Size: 3.8 KB (3835 bytes)  
+	-	`sha256:360a0fed78607fc123133c9c254e66bd48facd092ed428ed26198dc6bfc0260a`  
+		Last Modified: Fri, 08 Nov 2019 03:55:45 GMT  
+		Size: 3.8 KB (3838 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:6958577bb68ad9dd0aac0e54301206f89b27e741e2a11bf454642821ffe148e6`  
-		Last Modified: Fri, 01 Nov 2019 05:53:51 GMT  
+	-	`sha256:f8f1d28ac8dbc927cf661687f024476d2558c833a1794dad36552cf17b4fad2f`  
+		Last Modified: Fri, 08 Nov 2019 03:55:45 GMT  
 		Size: 2.4 KB (2404 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `xwiki:10.11`
 
 ```console
-$ docker pull xwiki@sha256:c304d3bfc03954a3669f47757a63918a4d36af088c34537e15093d7cbb2192e5
+$ docker pull xwiki@sha256:e50eee1ee16e97510d2c2878b44ba59cff37121d520dcfcc6ab39815203541fc
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -211,14 +211,14 @@ $ docker pull xwiki@sha256:c304d3bfc03954a3669f47757a63918a4d36af088c34537e15093
 ### `xwiki:10.11` - linux; amd64
 
 ```console
-$ docker pull xwiki@sha256:031e6cf9f5f62c9ac15be9a93473d15a5cb805445d8efbdb68835da5502d7999
+$ docker pull xwiki@sha256:1eac0ad7e3285c13b277110fd956cc05a3c5774a7c8d88207eff821713040840
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **583.2 MB (583220294 bytes)**  
+-	Total Size: **583.1 MB (583142464 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:5ed311c670c181f7bd2a3837a9ba97b7629e74b535eb19efdb8e7d33871c9a2d`
+-	Image ID: `sha256:a9f71ff8b734e920564dff7b18c8327bdac99724df51a87a2bc0f57ed06bd995`
 -	Entrypoint: `["docker-entrypoint.sh"]`
 -	Default Command: `["xwiki"]`
 
@@ -235,69 +235,69 @@ RUN mkdir -p /run/systemd && echo 'docker' > /run/systemd/container
 CMD ["/bin/bash"]
 # Thu, 31 Oct 2019 22:37:37 GMT
 ENV LANG=en_US.UTF-8 LANGUAGE=en_US:en LC_ALL=en_US.UTF-8
-# Thu, 31 Oct 2019 22:38:04 GMT
-RUN apt-get update     && apt-get install -y --no-install-recommends curl ca-certificates locales     && echo "en_US.UTF-8 UTF-8" >> /etc/locale.gen     && locale-gen en_US.UTF-8     && rm -rf /var/lib/apt/lists/*
-# Thu, 31 Oct 2019 22:38:04 GMT
-ENV JAVA_VERSION=jdk8u222-b10
-# Thu, 31 Oct 2019 22:38:10 GMT
-RUN set -eux;     ARCH="$(dpkg --print-architecture)";     case "${ARCH}" in        aarch64|arm64)          ESUM='652776586ede124189dc218174b5922cc97feac81021ad81905900b349a352d2';          BINARY_URL='https://github.com/AdoptOpenJDK/openjdk8-binaries/releases/download/jdk8u222-b10/OpenJDK8U-jdk_aarch64_linux_hotspot_8u222b10.tar.gz';          ;;        armhf)          ESUM='7b3d6ade8c25adca01095ba66642132d8c87a1a8caf3883850e34778453afcec';          BINARY_URL='https://github.com/AdoptOpenJDK/openjdk8-binaries/releases/download/jdk8u222-b10/OpenJDK8U-jdk_arm_linux_hotspot_8u222b10.tar.gz';          ;;        ppc64el|ppc64le)          ESUM='f85de48f1dcfd78a39bf5817d3c2f8247c75df6abd56c8721172bf2bd757eb69';          BINARY_URL='https://github.com/AdoptOpenJDK/openjdk8-binaries/releases/download/jdk8u222-b10/OpenJDK8U-jdk_ppc64le_linux_hotspot_8u222b10.tar.gz';          ;;        s390x)          ESUM='d56d6a128f8827e5baeae379bcb1b3ead2cfd5b1abb03befa4588f89f08ea626';          BINARY_URL='https://github.com/AdoptOpenJDK/openjdk8-binaries/releases/download/jdk8u222-b10/OpenJDK8U-jdk_s390x_linux_hotspot_8u222b10.tar.gz';          ;;        amd64|x86_64)          ESUM='37356281345b93feb4212e6267109b4409b55b06f107619dde4960e402bafa77';          BINARY_URL='https://github.com/AdoptOpenJDK/openjdk8-binaries/releases/download/jdk8u222-b10/OpenJDK8U-jdk_x64_linux_hotspot_8u222b10.tar.gz';          ;;        *)          echo "Unsupported arch: ${ARCH}";          exit 1;          ;;     esac;     curl -LfsSo /tmp/openjdk.tar.gz ${BINARY_URL};     echo "${ESUM} */tmp/openjdk.tar.gz" | sha256sum -c -;     mkdir -p /opt/java/openjdk;     cd /opt/java/openjdk;     tar -xf /tmp/openjdk.tar.gz --strip-components=1;     rm -rf /tmp/openjdk.tar.gz;
-# Thu, 31 Oct 2019 22:38:11 GMT
+# Fri, 08 Nov 2019 02:20:03 GMT
+RUN apt-get update     && apt-get install -y --no-install-recommends curl ca-certificates fontconfig locales     && echo "en_US.UTF-8 UTF-8" >> /etc/locale.gen     && locale-gen en_US.UTF-8     && rm -rf /var/lib/apt/lists/*
+# Fri, 08 Nov 2019 02:20:03 GMT
+ENV JAVA_VERSION=jdk8u232-b09
+# Fri, 08 Nov 2019 02:20:09 GMT
+RUN set -eux;     ARCH="$(dpkg --print-architecture)";     case "${ARCH}" in        ppc64el|ppc64le)          ESUM='da87bdc04b47477b42afc76066dbd96efa35ad967238be03a0081f8840e893a8';          BINARY_URL='https://github.com/AdoptOpenJDK/openjdk8-binaries/releases/download/jdk8u232-b09/OpenJDK8U-jdk_ppc64le_linux_hotspot_8u232b09.tar.gz';          ;;        s390x)          ESUM='bd20cb8bf4cfab9d3e2b2ccfb9a6f9eda1e4e67b4103b9975d29de12c05ad1f5';          BINARY_URL='https://github.com/AdoptOpenJDK/openjdk8-binaries/releases/download/jdk8u232-b09/OpenJDK8U-jdk_s390x_linux_hotspot_8u232b09.tar.gz';          ;;        amd64|x86_64)          ESUM='7b7884f2eb2ba2d47f4c0bf3bb1a2a95b73a3a7734bd47ebf9798483a7bcc423';          BINARY_URL='https://github.com/AdoptOpenJDK/openjdk8-binaries/releases/download/jdk8u232-b09/OpenJDK8U-jdk_x64_linux_hotspot_8u232b09.tar.gz';          ;;        *)          echo "Unsupported arch: ${ARCH}";          exit 1;          ;;     esac;     curl -LfsSo /tmp/openjdk.tar.gz ${BINARY_URL};     echo "${ESUM} */tmp/openjdk.tar.gz" | sha256sum -c -;     mkdir -p /opt/java/openjdk;     cd /opt/java/openjdk;     tar -xf /tmp/openjdk.tar.gz --strip-components=1;     rm -rf /tmp/openjdk.tar.gz;
+# Fri, 08 Nov 2019 02:20:09 GMT
 ENV JAVA_HOME=/opt/java/openjdk PATH=/opt/java/openjdk/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Fri, 01 Nov 2019 02:29:48 GMT
+# Fri, 08 Nov 2019 02:52:20 GMT
 ENV CATALINA_HOME=/usr/local/tomcat
-# Fri, 01 Nov 2019 02:29:48 GMT
+# Fri, 08 Nov 2019 02:52:21 GMT
 ENV PATH=/usr/local/tomcat/bin:/opt/java/openjdk/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Fri, 01 Nov 2019 02:29:49 GMT
+# Fri, 08 Nov 2019 02:52:22 GMT
 RUN mkdir -p "$CATALINA_HOME"
-# Fri, 01 Nov 2019 02:29:49 GMT
+# Fri, 08 Nov 2019 02:52:22 GMT
 WORKDIR /usr/local/tomcat
-# Fri, 01 Nov 2019 02:29:49 GMT
+# Fri, 08 Nov 2019 02:52:23 GMT
 ENV TOMCAT_NATIVE_LIBDIR=/usr/local/tomcat/native-jni-lib
-# Fri, 01 Nov 2019 02:29:49 GMT
+# Fri, 08 Nov 2019 02:52:23 GMT
 ENV LD_LIBRARY_PATH=/usr/local/tomcat/native-jni-lib
-# Fri, 01 Nov 2019 02:34:53 GMT
+# Fri, 08 Nov 2019 02:58:08 GMT
 ENV GPG_KEYS=05AB33110949707C93A279E3D3EFE6B686867BA6 07E48665A34DCAFAE522E5E6266191C37C037D42 47309207D818FFD8DCD3F83F1931D684307A10A5 541FBE7D8F78B25E055DDEE13C370389288584E7 61B832AC2F1C5A90F0F9B00A1C506407564C17A3 713DA88BE50911535FE716F5208B0AB1D63011C7 79F7026C690BAA50B92CD8B66A3AD3F4F22C4FED 9BA44C2621385CB966EBA586F72C284D731FABEE A27677289986DB50844682F8ACB77FC2E86E29AC A9C5DF4D22E99998D9875A5110C01C5A2F6059E7 DCFD35E0BF8CA7344752DE8B6FB21E8933C60243 F3A04C595DB5B6A5F1ECA43E3B7BBB100D811BBE F7DA48BB64BCB84ECBA7EE6935CD23C10D498E23
-# Fri, 01 Nov 2019 02:34:53 GMT
+# Fri, 08 Nov 2019 02:58:08 GMT
 ENV TOMCAT_MAJOR=8
-# Fri, 01 Nov 2019 02:34:53 GMT
+# Fri, 08 Nov 2019 02:58:09 GMT
 ENV TOMCAT_VERSION=8.5.47
-# Fri, 01 Nov 2019 02:34:53 GMT
+# Fri, 08 Nov 2019 02:58:09 GMT
 ENV TOMCAT_SHA512=079b85f3dfca2b137634859208fae6012860201d720d12ff0add3473f1e267d332cb12803958754e1f922599e0d42b7e97f00bcd62584d9148a6f45fde091716
-# Fri, 01 Nov 2019 02:35:26 GMT
+# Fri, 08 Nov 2019 02:59:03 GMT
 RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		gnupg dirmngr 		wget ca-certificates 	; 		ddist() { 		local f="$1"; shift; 		local distFile="$1"; shift; 		local success=; 		local distUrl=; 		for distUrl in 			'https://www.apache.org/dyn/closer.cgi?action=download&filename=' 			https://www-us.apache.org/dist/ 			https://www.apache.org/dist/ 			https://archive.apache.org/dist/ 		; do 			if wget -O "$f" "$distUrl$distFile" && [ -s "$f" ]; then 				success=1; 				break; 			fi; 		done; 		[ -n "$success" ]; 	}; 		ddist 'tomcat.tar.gz' "tomcat/tomcat-$TOMCAT_MAJOR/v$TOMCAT_VERSION/bin/apache-tomcat-$TOMCAT_VERSION.tar.gz"; 	echo "$TOMCAT_SHA512 *tomcat.tar.gz" | sha512sum --strict --check -; 	ddist 'tomcat.tar.gz.asc' "tomcat/tomcat-$TOMCAT_MAJOR/v$TOMCAT_VERSION/bin/apache-tomcat-$TOMCAT_VERSION.tar.gz.asc"; 	export GNUPGHOME="$(mktemp -d)"; 	for key in $GPG_KEYS; do 		gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys "$key"; 	done; 	gpg --batch --verify tomcat.tar.gz.asc tomcat.tar.gz; 	tar -xf tomcat.tar.gz --strip-components=1; 	rm bin/*.bat; 	rm tomcat.tar.gz*; 	command -v gpgconf && gpgconf --kill all || :; 	rm -rf "$GNUPGHOME"; 		nativeBuildDir="$(mktemp -d)"; 	tar -xf bin/tomcat-native.tar.gz -C "$nativeBuildDir" --strip-components=1; 	apt-get install -y --no-install-recommends 		dpkg-dev 		gcc 		libapr1-dev 		libssl-dev 		make 	; 	( 		export CATALINA_HOME="$PWD"; 		cd "$nativeBuildDir/native"; 		gnuArch="$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)"; 		aprConfig="$(command -v apr-1-config)"; 		./configure 			--build="$gnuArch" 			--libdir="$TOMCAT_NATIVE_LIBDIR" 			--prefix="$CATALINA_HOME" 			--with-apr="$aprConfig" 			--with-java-home="$JAVA_HOME" 			--with-ssl=yes; 		make -j "$(nproc)"; 		make install; 	); 	rm -rf "$nativeBuildDir"; 	rm bin/tomcat-native.tar.gz; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark > /dev/null; 	find "$TOMCAT_NATIVE_LIBDIR" -type f -executable -exec ldd '{}' ';' 		| awk '/=>/ { print $(NF-1) }' 		| sort -u 		| xargs -r dpkg-query --search 		| cut -d: -f1 		| sort -u 		| xargs -r apt-mark manual 	; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 	rm -rf /var/lib/apt/lists/*; 		find ./bin/ -name '*.sh' -exec sed -ri 's|^#!/bin/sh$|#!/usr/bin/env bash|' '{}' +; 		chmod -R +rX .; 	chmod 777 logs temp work
-# Fri, 01 Nov 2019 02:35:29 GMT
+# Fri, 08 Nov 2019 02:59:07 GMT
 RUN set -e 	&& nativeLines="$(catalina.sh configtest 2>&1)" 	&& nativeLines="$(echo "$nativeLines" | grep 'Apache Tomcat Native')" 	&& nativeLines="$(echo "$nativeLines" | sort -u)" 	&& if ! echo "$nativeLines" | grep 'INFO: Loaded APR based Apache Tomcat Native library' >&2; then 		echo >&2 "$nativeLines"; 		exit 1; 	fi
-# Fri, 01 Nov 2019 02:35:29 GMT
+# Fri, 08 Nov 2019 02:59:07 GMT
 EXPOSE 8080
-# Fri, 01 Nov 2019 02:35:30 GMT
+# Fri, 08 Nov 2019 02:59:08 GMT
 CMD ["catalina.sh" "run"]
-# Fri, 01 Nov 2019 05:46:09 GMT
+# Fri, 08 Nov 2019 03:47:57 GMT
 MAINTAINER Vincent Massol <vincent@massol.net>
-# Fri, 01 Nov 2019 05:48:00 GMT
+# Fri, 08 Nov 2019 03:49:52 GMT
 RUN apt-get update &&   apt-get --no-install-recommends -y install     curl     libreoffice     unzip     procps     libmysql-java &&   rm -rf /var/lib/apt/lists/*
-# Fri, 01 Nov 2019 05:48:01 GMT
+# Fri, 08 Nov 2019 03:49:52 GMT
 ENV XWIKI_VERSION=10.11.9
-# Fri, 01 Nov 2019 05:48:01 GMT
+# Fri, 08 Nov 2019 03:49:53 GMT
 ENV XWIKI_URL_PREFIX=https://maven.xwiki.org/releases/org/xwiki/platform/xwiki-platform-distribution-war/10.11.9
-# Fri, 01 Nov 2019 05:48:01 GMT
+# Fri, 08 Nov 2019 03:49:53 GMT
 ENV XWIKI_DOWNLOAD_SHA256=299fe60d5b32ee1a363ba48ff2346e78eea5f713a0174c20fe9d7531be426a58
-# Fri, 01 Nov 2019 05:48:35 GMT
+# Fri, 08 Nov 2019 03:50:25 GMT
 RUN rm -rf /usr/local/tomcat/webapps/* &&   mkdir -p /usr/local/tomcat/temp &&   mkdir -p /usr/local/xwiki/data &&   curl -fSL "${XWIKI_URL_PREFIX}/xwiki-platform-distribution-war-${XWIKI_VERSION}.war" -o xwiki.war &&   echo "$XWIKI_DOWNLOAD_SHA256 xwiki.war" | sha256sum -c - &&   unzip -d /usr/local/tomcat/webapps/ROOT xwiki.war &&   rm -f xwiki.war
-# Fri, 01 Nov 2019 05:48:36 GMT
+# Fri, 08 Nov 2019 03:50:26 GMT
 RUN cp /usr/share/java/mysql-connector-java-*.jar /usr/local/tomcat/webapps/ROOT/WEB-INF/lib/
-# Fri, 01 Nov 2019 05:48:36 GMT
+# Fri, 08 Nov 2019 03:50:26 GMT
 COPY file:0a1be11e2eb610a1dbcd415404e3a592641110b93090030cb831e3a19a163017 in /usr/local/tomcat/bin/ 
-# Fri, 01 Nov 2019 05:48:36 GMT
+# Fri, 08 Nov 2019 03:50:26 GMT
 COPY file:c4e95f70490b423a9379f336f8f4d780824e06f56fa73bc69a238e245b53e842 in /usr/local/tomcat/webapps/ROOT/WEB-INF/hibernate.cfg.xml 
-# Fri, 01 Nov 2019 05:48:37 GMT
+# Fri, 08 Nov 2019 03:50:27 GMT
 RUN sed -i 's/<id>org.xwiki.platform:xwiki-platform-distribution-war/<id>org.xwiki.platform:xwiki-platform-distribution-docker/'   /usr/local/tomcat/webapps/ROOT/META-INF/extension.xed
-# Fri, 01 Nov 2019 05:48:37 GMT
+# Fri, 08 Nov 2019 03:50:27 GMT
 COPY file:f901b2d7ac3d76cd8346f9aee81b40529183e81d8aa027bb390856ac01fa6cc0 in /usr/local/bin/docker-entrypoint.sh 
-# Fri, 01 Nov 2019 05:48:37 GMT
+# Fri, 08 Nov 2019 03:50:27 GMT
 VOLUME [/usr/local/xwiki]
-# Fri, 01 Nov 2019 05:48:37 GMT
+# Fri, 08 Nov 2019 03:50:27 GMT
 ENTRYPOINT ["docker-entrypoint.sh"]
-# Fri, 01 Nov 2019 05:48:37 GMT
+# Fri, 08 Nov 2019 03:50:27 GMT
 CMD ["xwiki"]
 ```
 
@@ -318,59 +318,59 @@ CMD ["xwiki"]
 		Last Modified: Thu, 31 Oct 2019 22:21:39 GMT  
 		Size: 162.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:b5035666b1cd262e3117ca99ecbe11fc92c973a1164cd5c69bca60165f501520`  
-		Last Modified: Thu, 31 Oct 2019 22:40:53 GMT  
-		Size: 10.8 MB (10842099 bytes)  
+	-	`sha256:da4c04c54fa4a9b55ddef0b116fa7969185639621c525e1fe19f2b194f1ca4bc`  
+		Last Modified: Fri, 08 Nov 2019 02:22:45 GMT  
+		Size: 13.3 MB (13322685 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:efde61b742b5cb70e5b4addf1af5ad7280bffe7d8dd1df5eff600523285f3ea4`  
-		Last Modified: Thu, 31 Oct 2019 22:41:03 GMT  
-		Size: 105.0 MB (105002961 bytes)  
+	-	`sha256:2e619a1c4087f3c7f3728ceb4445f1a7a5039161cf3289478a8883c6ee035404`  
+		Last Modified: Fri, 08 Nov 2019 02:22:53 GMT  
+		Size: 105.1 MB (105052686 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:225d7996c0304b5ffbdcf6098af5c263ffc4d1b4179e9dca599cea72150685aa`  
-		Last Modified: Fri, 01 Nov 2019 02:39:12 GMT  
-		Size: 138.0 B  
+	-	`sha256:9d52f3e37b5909a34e61705bcdbc8935d682242f0c5fccdb29e117df8639b535`  
+		Last Modified: Fri, 08 Nov 2019 03:05:59 GMT  
+		Size: 139.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:79ec1eb33f408e2e622babc4045fe851ed5836f38b9e58daa1eb39284ace03cf`  
-		Last Modified: Fri, 01 Nov 2019 02:39:56 GMT  
-		Size: 11.2 MB (11233772 bytes)  
+	-	`sha256:e36d9bbb9a695ea2424edb1ab9bbf4fd43d87d68ad2e511fed36af7a18d3d3e8`  
+		Last Modified: Fri, 08 Nov 2019 03:06:53 GMT  
+		Size: 11.3 MB (11250353 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:1e181f3682b7d9ea77955bcda4108fc60c381f24ed390b0a3d08b67642aef2a7`  
-		Last Modified: Fri, 01 Nov 2019 02:39:55 GMT  
-		Size: 131.0 B  
+	-	`sha256:32d2a60a869b7029538438ffc8b6bc2975016c77fd3d3e4bc74b106903b3cca4`  
+		Last Modified: Fri, 08 Nov 2019 03:06:51 GMT  
+		Size: 132.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:248409c0f5d78edeb3d761e8c51a335df3b426a41b4ec8cde818dc7c42ac9303`  
-		Last Modified: Fri, 01 Nov 2019 05:54:24 GMT  
-		Size: 182.5 MB (182519889 bytes)  
+	-	`sha256:a0ecb74c3432d2f07db2c599a41070972647d5e39217a796364ea9f894433395`  
+		Last Modified: Fri, 08 Nov 2019 03:56:18 GMT  
+		Size: 179.9 MB (179895164 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:59e11cead95223d99208c1a56b2ff70a4c400bce48fc1a180c920bb8bdfe9b9e`  
-		Last Modified: Fri, 01 Nov 2019 05:54:10 GMT  
-		Size: 245.9 MB (245930567 bytes)  
+	-	`sha256:f60cc6c4e6989a78ffa4eda461e37f0c14fa8d1664ed98154a893b743a133b53`  
+		Last Modified: Fri, 08 Nov 2019 03:56:08 GMT  
+		Size: 245.9 MB (245930552 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:d6d385233a9152fa2829ee24a53aff146593c925d7cbdd903fc89fb68831abb3`  
-		Last Modified: Fri, 01 Nov 2019 05:53:51 GMT  
-		Size: 955.6 KB (955596 bytes)  
+	-	`sha256:211a8ff63ee53dd83cfb2ef14fd7c5f220e870f7b4a24bd7c056a6dfb3ea3195`  
+		Last Modified: Fri, 08 Nov 2019 03:55:45 GMT  
+		Size: 955.6 KB (955606 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:f4c1267abe977a216254032c7bdae4dc95710175a32b47d20bb86fcfab611e53`  
-		Last Modified: Fri, 01 Nov 2019 05:53:51 GMT  
+	-	`sha256:d2e0a05a7c703bf048e0d1025315d34bd397200ba693101fd6293aaa24e39665`  
+		Last Modified: Fri, 08 Nov 2019 03:55:45 GMT  
 		Size: 1.3 KB (1345 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:e0a9fd9bde07de0f3b22e22358c5a553b96b8ffb94f7efdf54be1acb865f294f`  
-		Last Modified: Fri, 01 Nov 2019 05:53:51 GMT  
-		Size: 2.3 KB (2341 bytes)  
+	-	`sha256:07de7e380b498b0a7a00eab52eb6163ee8c032a35ec4b2597ffc611f6c9f7f18`  
+		Last Modified: Fri, 08 Nov 2019 03:55:45 GMT  
+		Size: 2.3 KB (2344 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:9c5892c3d351297bbd95311554d447023392f4d53a0602c76eaaf171fc22a791`  
-		Last Modified: Fri, 01 Nov 2019 05:53:51 GMT  
-		Size: 3.8 KB (3835 bytes)  
+	-	`sha256:360a0fed78607fc123133c9c254e66bd48facd092ed428ed26198dc6bfc0260a`  
+		Last Modified: Fri, 08 Nov 2019 03:55:45 GMT  
+		Size: 3.8 KB (3838 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:6958577bb68ad9dd0aac0e54301206f89b27e741e2a11bf454642821ffe148e6`  
-		Last Modified: Fri, 01 Nov 2019 05:53:51 GMT  
+	-	`sha256:f8f1d28ac8dbc927cf661687f024476d2558c833a1794dad36552cf17b4fad2f`  
+		Last Modified: Fri, 08 Nov 2019 03:55:45 GMT  
 		Size: 2.4 KB (2404 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `xwiki:10.11.9`
 
 ```console
-$ docker pull xwiki@sha256:c304d3bfc03954a3669f47757a63918a4d36af088c34537e15093d7cbb2192e5
+$ docker pull xwiki@sha256:e50eee1ee16e97510d2c2878b44ba59cff37121d520dcfcc6ab39815203541fc
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -380,14 +380,14 @@ $ docker pull xwiki@sha256:c304d3bfc03954a3669f47757a63918a4d36af088c34537e15093
 ### `xwiki:10.11.9` - linux; amd64
 
 ```console
-$ docker pull xwiki@sha256:031e6cf9f5f62c9ac15be9a93473d15a5cb805445d8efbdb68835da5502d7999
+$ docker pull xwiki@sha256:1eac0ad7e3285c13b277110fd956cc05a3c5774a7c8d88207eff821713040840
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **583.2 MB (583220294 bytes)**  
+-	Total Size: **583.1 MB (583142464 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:5ed311c670c181f7bd2a3837a9ba97b7629e74b535eb19efdb8e7d33871c9a2d`
+-	Image ID: `sha256:a9f71ff8b734e920564dff7b18c8327bdac99724df51a87a2bc0f57ed06bd995`
 -	Entrypoint: `["docker-entrypoint.sh"]`
 -	Default Command: `["xwiki"]`
 
@@ -404,69 +404,69 @@ RUN mkdir -p /run/systemd && echo 'docker' > /run/systemd/container
 CMD ["/bin/bash"]
 # Thu, 31 Oct 2019 22:37:37 GMT
 ENV LANG=en_US.UTF-8 LANGUAGE=en_US:en LC_ALL=en_US.UTF-8
-# Thu, 31 Oct 2019 22:38:04 GMT
-RUN apt-get update     && apt-get install -y --no-install-recommends curl ca-certificates locales     && echo "en_US.UTF-8 UTF-8" >> /etc/locale.gen     && locale-gen en_US.UTF-8     && rm -rf /var/lib/apt/lists/*
-# Thu, 31 Oct 2019 22:38:04 GMT
-ENV JAVA_VERSION=jdk8u222-b10
-# Thu, 31 Oct 2019 22:38:10 GMT
-RUN set -eux;     ARCH="$(dpkg --print-architecture)";     case "${ARCH}" in        aarch64|arm64)          ESUM='652776586ede124189dc218174b5922cc97feac81021ad81905900b349a352d2';          BINARY_URL='https://github.com/AdoptOpenJDK/openjdk8-binaries/releases/download/jdk8u222-b10/OpenJDK8U-jdk_aarch64_linux_hotspot_8u222b10.tar.gz';          ;;        armhf)          ESUM='7b3d6ade8c25adca01095ba66642132d8c87a1a8caf3883850e34778453afcec';          BINARY_URL='https://github.com/AdoptOpenJDK/openjdk8-binaries/releases/download/jdk8u222-b10/OpenJDK8U-jdk_arm_linux_hotspot_8u222b10.tar.gz';          ;;        ppc64el|ppc64le)          ESUM='f85de48f1dcfd78a39bf5817d3c2f8247c75df6abd56c8721172bf2bd757eb69';          BINARY_URL='https://github.com/AdoptOpenJDK/openjdk8-binaries/releases/download/jdk8u222-b10/OpenJDK8U-jdk_ppc64le_linux_hotspot_8u222b10.tar.gz';          ;;        s390x)          ESUM='d56d6a128f8827e5baeae379bcb1b3ead2cfd5b1abb03befa4588f89f08ea626';          BINARY_URL='https://github.com/AdoptOpenJDK/openjdk8-binaries/releases/download/jdk8u222-b10/OpenJDK8U-jdk_s390x_linux_hotspot_8u222b10.tar.gz';          ;;        amd64|x86_64)          ESUM='37356281345b93feb4212e6267109b4409b55b06f107619dde4960e402bafa77';          BINARY_URL='https://github.com/AdoptOpenJDK/openjdk8-binaries/releases/download/jdk8u222-b10/OpenJDK8U-jdk_x64_linux_hotspot_8u222b10.tar.gz';          ;;        *)          echo "Unsupported arch: ${ARCH}";          exit 1;          ;;     esac;     curl -LfsSo /tmp/openjdk.tar.gz ${BINARY_URL};     echo "${ESUM} */tmp/openjdk.tar.gz" | sha256sum -c -;     mkdir -p /opt/java/openjdk;     cd /opt/java/openjdk;     tar -xf /tmp/openjdk.tar.gz --strip-components=1;     rm -rf /tmp/openjdk.tar.gz;
-# Thu, 31 Oct 2019 22:38:11 GMT
+# Fri, 08 Nov 2019 02:20:03 GMT
+RUN apt-get update     && apt-get install -y --no-install-recommends curl ca-certificates fontconfig locales     && echo "en_US.UTF-8 UTF-8" >> /etc/locale.gen     && locale-gen en_US.UTF-8     && rm -rf /var/lib/apt/lists/*
+# Fri, 08 Nov 2019 02:20:03 GMT
+ENV JAVA_VERSION=jdk8u232-b09
+# Fri, 08 Nov 2019 02:20:09 GMT
+RUN set -eux;     ARCH="$(dpkg --print-architecture)";     case "${ARCH}" in        ppc64el|ppc64le)          ESUM='da87bdc04b47477b42afc76066dbd96efa35ad967238be03a0081f8840e893a8';          BINARY_URL='https://github.com/AdoptOpenJDK/openjdk8-binaries/releases/download/jdk8u232-b09/OpenJDK8U-jdk_ppc64le_linux_hotspot_8u232b09.tar.gz';          ;;        s390x)          ESUM='bd20cb8bf4cfab9d3e2b2ccfb9a6f9eda1e4e67b4103b9975d29de12c05ad1f5';          BINARY_URL='https://github.com/AdoptOpenJDK/openjdk8-binaries/releases/download/jdk8u232-b09/OpenJDK8U-jdk_s390x_linux_hotspot_8u232b09.tar.gz';          ;;        amd64|x86_64)          ESUM='7b7884f2eb2ba2d47f4c0bf3bb1a2a95b73a3a7734bd47ebf9798483a7bcc423';          BINARY_URL='https://github.com/AdoptOpenJDK/openjdk8-binaries/releases/download/jdk8u232-b09/OpenJDK8U-jdk_x64_linux_hotspot_8u232b09.tar.gz';          ;;        *)          echo "Unsupported arch: ${ARCH}";          exit 1;          ;;     esac;     curl -LfsSo /tmp/openjdk.tar.gz ${BINARY_URL};     echo "${ESUM} */tmp/openjdk.tar.gz" | sha256sum -c -;     mkdir -p /opt/java/openjdk;     cd /opt/java/openjdk;     tar -xf /tmp/openjdk.tar.gz --strip-components=1;     rm -rf /tmp/openjdk.tar.gz;
+# Fri, 08 Nov 2019 02:20:09 GMT
 ENV JAVA_HOME=/opt/java/openjdk PATH=/opt/java/openjdk/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Fri, 01 Nov 2019 02:29:48 GMT
+# Fri, 08 Nov 2019 02:52:20 GMT
 ENV CATALINA_HOME=/usr/local/tomcat
-# Fri, 01 Nov 2019 02:29:48 GMT
+# Fri, 08 Nov 2019 02:52:21 GMT
 ENV PATH=/usr/local/tomcat/bin:/opt/java/openjdk/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Fri, 01 Nov 2019 02:29:49 GMT
+# Fri, 08 Nov 2019 02:52:22 GMT
 RUN mkdir -p "$CATALINA_HOME"
-# Fri, 01 Nov 2019 02:29:49 GMT
+# Fri, 08 Nov 2019 02:52:22 GMT
 WORKDIR /usr/local/tomcat
-# Fri, 01 Nov 2019 02:29:49 GMT
+# Fri, 08 Nov 2019 02:52:23 GMT
 ENV TOMCAT_NATIVE_LIBDIR=/usr/local/tomcat/native-jni-lib
-# Fri, 01 Nov 2019 02:29:49 GMT
+# Fri, 08 Nov 2019 02:52:23 GMT
 ENV LD_LIBRARY_PATH=/usr/local/tomcat/native-jni-lib
-# Fri, 01 Nov 2019 02:34:53 GMT
+# Fri, 08 Nov 2019 02:58:08 GMT
 ENV GPG_KEYS=05AB33110949707C93A279E3D3EFE6B686867BA6 07E48665A34DCAFAE522E5E6266191C37C037D42 47309207D818FFD8DCD3F83F1931D684307A10A5 541FBE7D8F78B25E055DDEE13C370389288584E7 61B832AC2F1C5A90F0F9B00A1C506407564C17A3 713DA88BE50911535FE716F5208B0AB1D63011C7 79F7026C690BAA50B92CD8B66A3AD3F4F22C4FED 9BA44C2621385CB966EBA586F72C284D731FABEE A27677289986DB50844682F8ACB77FC2E86E29AC A9C5DF4D22E99998D9875A5110C01C5A2F6059E7 DCFD35E0BF8CA7344752DE8B6FB21E8933C60243 F3A04C595DB5B6A5F1ECA43E3B7BBB100D811BBE F7DA48BB64BCB84ECBA7EE6935CD23C10D498E23
-# Fri, 01 Nov 2019 02:34:53 GMT
+# Fri, 08 Nov 2019 02:58:08 GMT
 ENV TOMCAT_MAJOR=8
-# Fri, 01 Nov 2019 02:34:53 GMT
+# Fri, 08 Nov 2019 02:58:09 GMT
 ENV TOMCAT_VERSION=8.5.47
-# Fri, 01 Nov 2019 02:34:53 GMT
+# Fri, 08 Nov 2019 02:58:09 GMT
 ENV TOMCAT_SHA512=079b85f3dfca2b137634859208fae6012860201d720d12ff0add3473f1e267d332cb12803958754e1f922599e0d42b7e97f00bcd62584d9148a6f45fde091716
-# Fri, 01 Nov 2019 02:35:26 GMT
+# Fri, 08 Nov 2019 02:59:03 GMT
 RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		gnupg dirmngr 		wget ca-certificates 	; 		ddist() { 		local f="$1"; shift; 		local distFile="$1"; shift; 		local success=; 		local distUrl=; 		for distUrl in 			'https://www.apache.org/dyn/closer.cgi?action=download&filename=' 			https://www-us.apache.org/dist/ 			https://www.apache.org/dist/ 			https://archive.apache.org/dist/ 		; do 			if wget -O "$f" "$distUrl$distFile" && [ -s "$f" ]; then 				success=1; 				break; 			fi; 		done; 		[ -n "$success" ]; 	}; 		ddist 'tomcat.tar.gz' "tomcat/tomcat-$TOMCAT_MAJOR/v$TOMCAT_VERSION/bin/apache-tomcat-$TOMCAT_VERSION.tar.gz"; 	echo "$TOMCAT_SHA512 *tomcat.tar.gz" | sha512sum --strict --check -; 	ddist 'tomcat.tar.gz.asc' "tomcat/tomcat-$TOMCAT_MAJOR/v$TOMCAT_VERSION/bin/apache-tomcat-$TOMCAT_VERSION.tar.gz.asc"; 	export GNUPGHOME="$(mktemp -d)"; 	for key in $GPG_KEYS; do 		gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys "$key"; 	done; 	gpg --batch --verify tomcat.tar.gz.asc tomcat.tar.gz; 	tar -xf tomcat.tar.gz --strip-components=1; 	rm bin/*.bat; 	rm tomcat.tar.gz*; 	command -v gpgconf && gpgconf --kill all || :; 	rm -rf "$GNUPGHOME"; 		nativeBuildDir="$(mktemp -d)"; 	tar -xf bin/tomcat-native.tar.gz -C "$nativeBuildDir" --strip-components=1; 	apt-get install -y --no-install-recommends 		dpkg-dev 		gcc 		libapr1-dev 		libssl-dev 		make 	; 	( 		export CATALINA_HOME="$PWD"; 		cd "$nativeBuildDir/native"; 		gnuArch="$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)"; 		aprConfig="$(command -v apr-1-config)"; 		./configure 			--build="$gnuArch" 			--libdir="$TOMCAT_NATIVE_LIBDIR" 			--prefix="$CATALINA_HOME" 			--with-apr="$aprConfig" 			--with-java-home="$JAVA_HOME" 			--with-ssl=yes; 		make -j "$(nproc)"; 		make install; 	); 	rm -rf "$nativeBuildDir"; 	rm bin/tomcat-native.tar.gz; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark > /dev/null; 	find "$TOMCAT_NATIVE_LIBDIR" -type f -executable -exec ldd '{}' ';' 		| awk '/=>/ { print $(NF-1) }' 		| sort -u 		| xargs -r dpkg-query --search 		| cut -d: -f1 		| sort -u 		| xargs -r apt-mark manual 	; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 	rm -rf /var/lib/apt/lists/*; 		find ./bin/ -name '*.sh' -exec sed -ri 's|^#!/bin/sh$|#!/usr/bin/env bash|' '{}' +; 		chmod -R +rX .; 	chmod 777 logs temp work
-# Fri, 01 Nov 2019 02:35:29 GMT
+# Fri, 08 Nov 2019 02:59:07 GMT
 RUN set -e 	&& nativeLines="$(catalina.sh configtest 2>&1)" 	&& nativeLines="$(echo "$nativeLines" | grep 'Apache Tomcat Native')" 	&& nativeLines="$(echo "$nativeLines" | sort -u)" 	&& if ! echo "$nativeLines" | grep 'INFO: Loaded APR based Apache Tomcat Native library' >&2; then 		echo >&2 "$nativeLines"; 		exit 1; 	fi
-# Fri, 01 Nov 2019 02:35:29 GMT
+# Fri, 08 Nov 2019 02:59:07 GMT
 EXPOSE 8080
-# Fri, 01 Nov 2019 02:35:30 GMT
+# Fri, 08 Nov 2019 02:59:08 GMT
 CMD ["catalina.sh" "run"]
-# Fri, 01 Nov 2019 05:46:09 GMT
+# Fri, 08 Nov 2019 03:47:57 GMT
 MAINTAINER Vincent Massol <vincent@massol.net>
-# Fri, 01 Nov 2019 05:48:00 GMT
+# Fri, 08 Nov 2019 03:49:52 GMT
 RUN apt-get update &&   apt-get --no-install-recommends -y install     curl     libreoffice     unzip     procps     libmysql-java &&   rm -rf /var/lib/apt/lists/*
-# Fri, 01 Nov 2019 05:48:01 GMT
+# Fri, 08 Nov 2019 03:49:52 GMT
 ENV XWIKI_VERSION=10.11.9
-# Fri, 01 Nov 2019 05:48:01 GMT
+# Fri, 08 Nov 2019 03:49:53 GMT
 ENV XWIKI_URL_PREFIX=https://maven.xwiki.org/releases/org/xwiki/platform/xwiki-platform-distribution-war/10.11.9
-# Fri, 01 Nov 2019 05:48:01 GMT
+# Fri, 08 Nov 2019 03:49:53 GMT
 ENV XWIKI_DOWNLOAD_SHA256=299fe60d5b32ee1a363ba48ff2346e78eea5f713a0174c20fe9d7531be426a58
-# Fri, 01 Nov 2019 05:48:35 GMT
+# Fri, 08 Nov 2019 03:50:25 GMT
 RUN rm -rf /usr/local/tomcat/webapps/* &&   mkdir -p /usr/local/tomcat/temp &&   mkdir -p /usr/local/xwiki/data &&   curl -fSL "${XWIKI_URL_PREFIX}/xwiki-platform-distribution-war-${XWIKI_VERSION}.war" -o xwiki.war &&   echo "$XWIKI_DOWNLOAD_SHA256 xwiki.war" | sha256sum -c - &&   unzip -d /usr/local/tomcat/webapps/ROOT xwiki.war &&   rm -f xwiki.war
-# Fri, 01 Nov 2019 05:48:36 GMT
+# Fri, 08 Nov 2019 03:50:26 GMT
 RUN cp /usr/share/java/mysql-connector-java-*.jar /usr/local/tomcat/webapps/ROOT/WEB-INF/lib/
-# Fri, 01 Nov 2019 05:48:36 GMT
+# Fri, 08 Nov 2019 03:50:26 GMT
 COPY file:0a1be11e2eb610a1dbcd415404e3a592641110b93090030cb831e3a19a163017 in /usr/local/tomcat/bin/ 
-# Fri, 01 Nov 2019 05:48:36 GMT
+# Fri, 08 Nov 2019 03:50:26 GMT
 COPY file:c4e95f70490b423a9379f336f8f4d780824e06f56fa73bc69a238e245b53e842 in /usr/local/tomcat/webapps/ROOT/WEB-INF/hibernate.cfg.xml 
-# Fri, 01 Nov 2019 05:48:37 GMT
+# Fri, 08 Nov 2019 03:50:27 GMT
 RUN sed -i 's/<id>org.xwiki.platform:xwiki-platform-distribution-war/<id>org.xwiki.platform:xwiki-platform-distribution-docker/'   /usr/local/tomcat/webapps/ROOT/META-INF/extension.xed
-# Fri, 01 Nov 2019 05:48:37 GMT
+# Fri, 08 Nov 2019 03:50:27 GMT
 COPY file:f901b2d7ac3d76cd8346f9aee81b40529183e81d8aa027bb390856ac01fa6cc0 in /usr/local/bin/docker-entrypoint.sh 
-# Fri, 01 Nov 2019 05:48:37 GMT
+# Fri, 08 Nov 2019 03:50:27 GMT
 VOLUME [/usr/local/xwiki]
-# Fri, 01 Nov 2019 05:48:37 GMT
+# Fri, 08 Nov 2019 03:50:27 GMT
 ENTRYPOINT ["docker-entrypoint.sh"]
-# Fri, 01 Nov 2019 05:48:37 GMT
+# Fri, 08 Nov 2019 03:50:27 GMT
 CMD ["xwiki"]
 ```
 
@@ -487,59 +487,59 @@ CMD ["xwiki"]
 		Last Modified: Thu, 31 Oct 2019 22:21:39 GMT  
 		Size: 162.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:b5035666b1cd262e3117ca99ecbe11fc92c973a1164cd5c69bca60165f501520`  
-		Last Modified: Thu, 31 Oct 2019 22:40:53 GMT  
-		Size: 10.8 MB (10842099 bytes)  
+	-	`sha256:da4c04c54fa4a9b55ddef0b116fa7969185639621c525e1fe19f2b194f1ca4bc`  
+		Last Modified: Fri, 08 Nov 2019 02:22:45 GMT  
+		Size: 13.3 MB (13322685 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:efde61b742b5cb70e5b4addf1af5ad7280bffe7d8dd1df5eff600523285f3ea4`  
-		Last Modified: Thu, 31 Oct 2019 22:41:03 GMT  
-		Size: 105.0 MB (105002961 bytes)  
+	-	`sha256:2e619a1c4087f3c7f3728ceb4445f1a7a5039161cf3289478a8883c6ee035404`  
+		Last Modified: Fri, 08 Nov 2019 02:22:53 GMT  
+		Size: 105.1 MB (105052686 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:225d7996c0304b5ffbdcf6098af5c263ffc4d1b4179e9dca599cea72150685aa`  
-		Last Modified: Fri, 01 Nov 2019 02:39:12 GMT  
-		Size: 138.0 B  
+	-	`sha256:9d52f3e37b5909a34e61705bcdbc8935d682242f0c5fccdb29e117df8639b535`  
+		Last Modified: Fri, 08 Nov 2019 03:05:59 GMT  
+		Size: 139.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:79ec1eb33f408e2e622babc4045fe851ed5836f38b9e58daa1eb39284ace03cf`  
-		Last Modified: Fri, 01 Nov 2019 02:39:56 GMT  
-		Size: 11.2 MB (11233772 bytes)  
+	-	`sha256:e36d9bbb9a695ea2424edb1ab9bbf4fd43d87d68ad2e511fed36af7a18d3d3e8`  
+		Last Modified: Fri, 08 Nov 2019 03:06:53 GMT  
+		Size: 11.3 MB (11250353 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:1e181f3682b7d9ea77955bcda4108fc60c381f24ed390b0a3d08b67642aef2a7`  
-		Last Modified: Fri, 01 Nov 2019 02:39:55 GMT  
-		Size: 131.0 B  
+	-	`sha256:32d2a60a869b7029538438ffc8b6bc2975016c77fd3d3e4bc74b106903b3cca4`  
+		Last Modified: Fri, 08 Nov 2019 03:06:51 GMT  
+		Size: 132.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:248409c0f5d78edeb3d761e8c51a335df3b426a41b4ec8cde818dc7c42ac9303`  
-		Last Modified: Fri, 01 Nov 2019 05:54:24 GMT  
-		Size: 182.5 MB (182519889 bytes)  
+	-	`sha256:a0ecb74c3432d2f07db2c599a41070972647d5e39217a796364ea9f894433395`  
+		Last Modified: Fri, 08 Nov 2019 03:56:18 GMT  
+		Size: 179.9 MB (179895164 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:59e11cead95223d99208c1a56b2ff70a4c400bce48fc1a180c920bb8bdfe9b9e`  
-		Last Modified: Fri, 01 Nov 2019 05:54:10 GMT  
-		Size: 245.9 MB (245930567 bytes)  
+	-	`sha256:f60cc6c4e6989a78ffa4eda461e37f0c14fa8d1664ed98154a893b743a133b53`  
+		Last Modified: Fri, 08 Nov 2019 03:56:08 GMT  
+		Size: 245.9 MB (245930552 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:d6d385233a9152fa2829ee24a53aff146593c925d7cbdd903fc89fb68831abb3`  
-		Last Modified: Fri, 01 Nov 2019 05:53:51 GMT  
-		Size: 955.6 KB (955596 bytes)  
+	-	`sha256:211a8ff63ee53dd83cfb2ef14fd7c5f220e870f7b4a24bd7c056a6dfb3ea3195`  
+		Last Modified: Fri, 08 Nov 2019 03:55:45 GMT  
+		Size: 955.6 KB (955606 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:f4c1267abe977a216254032c7bdae4dc95710175a32b47d20bb86fcfab611e53`  
-		Last Modified: Fri, 01 Nov 2019 05:53:51 GMT  
+	-	`sha256:d2e0a05a7c703bf048e0d1025315d34bd397200ba693101fd6293aaa24e39665`  
+		Last Modified: Fri, 08 Nov 2019 03:55:45 GMT  
 		Size: 1.3 KB (1345 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:e0a9fd9bde07de0f3b22e22358c5a553b96b8ffb94f7efdf54be1acb865f294f`  
-		Last Modified: Fri, 01 Nov 2019 05:53:51 GMT  
-		Size: 2.3 KB (2341 bytes)  
+	-	`sha256:07de7e380b498b0a7a00eab52eb6163ee8c032a35ec4b2597ffc611f6c9f7f18`  
+		Last Modified: Fri, 08 Nov 2019 03:55:45 GMT  
+		Size: 2.3 KB (2344 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:9c5892c3d351297bbd95311554d447023392f4d53a0602c76eaaf171fc22a791`  
-		Last Modified: Fri, 01 Nov 2019 05:53:51 GMT  
-		Size: 3.8 KB (3835 bytes)  
+	-	`sha256:360a0fed78607fc123133c9c254e66bd48facd092ed428ed26198dc6bfc0260a`  
+		Last Modified: Fri, 08 Nov 2019 03:55:45 GMT  
+		Size: 3.8 KB (3838 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:6958577bb68ad9dd0aac0e54301206f89b27e741e2a11bf454642821ffe148e6`  
-		Last Modified: Fri, 01 Nov 2019 05:53:51 GMT  
+	-	`sha256:f8f1d28ac8dbc927cf661687f024476d2558c833a1794dad36552cf17b4fad2f`  
+		Last Modified: Fri, 08 Nov 2019 03:55:45 GMT  
 		Size: 2.4 KB (2404 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `xwiki:10.11.9-postgres-tomcat`
 
 ```console
-$ docker pull xwiki@sha256:73fccaaa608864b5b071af07e057613e197031530c2a981718e3827f4cd8dc00
+$ docker pull xwiki@sha256:2cf75066811db036a72feaa2c476773888ec9e34d14b8186424224101659ad63
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -549,14 +549,14 @@ $ docker pull xwiki@sha256:73fccaaa608864b5b071af07e057613e197031530c2a981718e38
 ### `xwiki:10.11.9-postgres-tomcat` - linux; amd64
 
 ```console
-$ docker pull xwiki@sha256:510720581fca923293bfeef79c0a8224b4e3f5717bdedb2eeeb77d79f9954384
+$ docker pull xwiki@sha256:7336446a1f272ff98fc5fc226351e5b019d411718f51f6b8f977b7d94aef754f
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **582.5 MB (582549609 bytes)**  
+-	Total Size: **582.5 MB (582471163 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:8ff560e664b744450f13c4bdf12f8e8d4e74ec87490f4110956734077fa1c26a`
+-	Image ID: `sha256:6d9ce4ab486781eee5120459565ad0d301f0458a52556b0cde046e86de3ece6d`
 -	Entrypoint: `["docker-entrypoint.sh"]`
 -	Default Command: `["xwiki"]`
 
@@ -573,69 +573,69 @@ RUN mkdir -p /run/systemd && echo 'docker' > /run/systemd/container
 CMD ["/bin/bash"]
 # Thu, 31 Oct 2019 22:37:37 GMT
 ENV LANG=en_US.UTF-8 LANGUAGE=en_US:en LC_ALL=en_US.UTF-8
-# Thu, 31 Oct 2019 22:38:04 GMT
-RUN apt-get update     && apt-get install -y --no-install-recommends curl ca-certificates locales     && echo "en_US.UTF-8 UTF-8" >> /etc/locale.gen     && locale-gen en_US.UTF-8     && rm -rf /var/lib/apt/lists/*
-# Thu, 31 Oct 2019 22:38:04 GMT
-ENV JAVA_VERSION=jdk8u222-b10
-# Thu, 31 Oct 2019 22:38:10 GMT
-RUN set -eux;     ARCH="$(dpkg --print-architecture)";     case "${ARCH}" in        aarch64|arm64)          ESUM='652776586ede124189dc218174b5922cc97feac81021ad81905900b349a352d2';          BINARY_URL='https://github.com/AdoptOpenJDK/openjdk8-binaries/releases/download/jdk8u222-b10/OpenJDK8U-jdk_aarch64_linux_hotspot_8u222b10.tar.gz';          ;;        armhf)          ESUM='7b3d6ade8c25adca01095ba66642132d8c87a1a8caf3883850e34778453afcec';          BINARY_URL='https://github.com/AdoptOpenJDK/openjdk8-binaries/releases/download/jdk8u222-b10/OpenJDK8U-jdk_arm_linux_hotspot_8u222b10.tar.gz';          ;;        ppc64el|ppc64le)          ESUM='f85de48f1dcfd78a39bf5817d3c2f8247c75df6abd56c8721172bf2bd757eb69';          BINARY_URL='https://github.com/AdoptOpenJDK/openjdk8-binaries/releases/download/jdk8u222-b10/OpenJDK8U-jdk_ppc64le_linux_hotspot_8u222b10.tar.gz';          ;;        s390x)          ESUM='d56d6a128f8827e5baeae379bcb1b3ead2cfd5b1abb03befa4588f89f08ea626';          BINARY_URL='https://github.com/AdoptOpenJDK/openjdk8-binaries/releases/download/jdk8u222-b10/OpenJDK8U-jdk_s390x_linux_hotspot_8u222b10.tar.gz';          ;;        amd64|x86_64)          ESUM='37356281345b93feb4212e6267109b4409b55b06f107619dde4960e402bafa77';          BINARY_URL='https://github.com/AdoptOpenJDK/openjdk8-binaries/releases/download/jdk8u222-b10/OpenJDK8U-jdk_x64_linux_hotspot_8u222b10.tar.gz';          ;;        *)          echo "Unsupported arch: ${ARCH}";          exit 1;          ;;     esac;     curl -LfsSo /tmp/openjdk.tar.gz ${BINARY_URL};     echo "${ESUM} */tmp/openjdk.tar.gz" | sha256sum -c -;     mkdir -p /opt/java/openjdk;     cd /opt/java/openjdk;     tar -xf /tmp/openjdk.tar.gz --strip-components=1;     rm -rf /tmp/openjdk.tar.gz;
-# Thu, 31 Oct 2019 22:38:11 GMT
+# Fri, 08 Nov 2019 02:20:03 GMT
+RUN apt-get update     && apt-get install -y --no-install-recommends curl ca-certificates fontconfig locales     && echo "en_US.UTF-8 UTF-8" >> /etc/locale.gen     && locale-gen en_US.UTF-8     && rm -rf /var/lib/apt/lists/*
+# Fri, 08 Nov 2019 02:20:03 GMT
+ENV JAVA_VERSION=jdk8u232-b09
+# Fri, 08 Nov 2019 02:20:09 GMT
+RUN set -eux;     ARCH="$(dpkg --print-architecture)";     case "${ARCH}" in        ppc64el|ppc64le)          ESUM='da87bdc04b47477b42afc76066dbd96efa35ad967238be03a0081f8840e893a8';          BINARY_URL='https://github.com/AdoptOpenJDK/openjdk8-binaries/releases/download/jdk8u232-b09/OpenJDK8U-jdk_ppc64le_linux_hotspot_8u232b09.tar.gz';          ;;        s390x)          ESUM='bd20cb8bf4cfab9d3e2b2ccfb9a6f9eda1e4e67b4103b9975d29de12c05ad1f5';          BINARY_URL='https://github.com/AdoptOpenJDK/openjdk8-binaries/releases/download/jdk8u232-b09/OpenJDK8U-jdk_s390x_linux_hotspot_8u232b09.tar.gz';          ;;        amd64|x86_64)          ESUM='7b7884f2eb2ba2d47f4c0bf3bb1a2a95b73a3a7734bd47ebf9798483a7bcc423';          BINARY_URL='https://github.com/AdoptOpenJDK/openjdk8-binaries/releases/download/jdk8u232-b09/OpenJDK8U-jdk_x64_linux_hotspot_8u232b09.tar.gz';          ;;        *)          echo "Unsupported arch: ${ARCH}";          exit 1;          ;;     esac;     curl -LfsSo /tmp/openjdk.tar.gz ${BINARY_URL};     echo "${ESUM} */tmp/openjdk.tar.gz" | sha256sum -c -;     mkdir -p /opt/java/openjdk;     cd /opt/java/openjdk;     tar -xf /tmp/openjdk.tar.gz --strip-components=1;     rm -rf /tmp/openjdk.tar.gz;
+# Fri, 08 Nov 2019 02:20:09 GMT
 ENV JAVA_HOME=/opt/java/openjdk PATH=/opt/java/openjdk/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Fri, 01 Nov 2019 02:29:48 GMT
+# Fri, 08 Nov 2019 02:52:20 GMT
 ENV CATALINA_HOME=/usr/local/tomcat
-# Fri, 01 Nov 2019 02:29:48 GMT
+# Fri, 08 Nov 2019 02:52:21 GMT
 ENV PATH=/usr/local/tomcat/bin:/opt/java/openjdk/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Fri, 01 Nov 2019 02:29:49 GMT
+# Fri, 08 Nov 2019 02:52:22 GMT
 RUN mkdir -p "$CATALINA_HOME"
-# Fri, 01 Nov 2019 02:29:49 GMT
+# Fri, 08 Nov 2019 02:52:22 GMT
 WORKDIR /usr/local/tomcat
-# Fri, 01 Nov 2019 02:29:49 GMT
+# Fri, 08 Nov 2019 02:52:23 GMT
 ENV TOMCAT_NATIVE_LIBDIR=/usr/local/tomcat/native-jni-lib
-# Fri, 01 Nov 2019 02:29:49 GMT
+# Fri, 08 Nov 2019 02:52:23 GMT
 ENV LD_LIBRARY_PATH=/usr/local/tomcat/native-jni-lib
-# Fri, 01 Nov 2019 02:34:53 GMT
+# Fri, 08 Nov 2019 02:58:08 GMT
 ENV GPG_KEYS=05AB33110949707C93A279E3D3EFE6B686867BA6 07E48665A34DCAFAE522E5E6266191C37C037D42 47309207D818FFD8DCD3F83F1931D684307A10A5 541FBE7D8F78B25E055DDEE13C370389288584E7 61B832AC2F1C5A90F0F9B00A1C506407564C17A3 713DA88BE50911535FE716F5208B0AB1D63011C7 79F7026C690BAA50B92CD8B66A3AD3F4F22C4FED 9BA44C2621385CB966EBA586F72C284D731FABEE A27677289986DB50844682F8ACB77FC2E86E29AC A9C5DF4D22E99998D9875A5110C01C5A2F6059E7 DCFD35E0BF8CA7344752DE8B6FB21E8933C60243 F3A04C595DB5B6A5F1ECA43E3B7BBB100D811BBE F7DA48BB64BCB84ECBA7EE6935CD23C10D498E23
-# Fri, 01 Nov 2019 02:34:53 GMT
+# Fri, 08 Nov 2019 02:58:08 GMT
 ENV TOMCAT_MAJOR=8
-# Fri, 01 Nov 2019 02:34:53 GMT
+# Fri, 08 Nov 2019 02:58:09 GMT
 ENV TOMCAT_VERSION=8.5.47
-# Fri, 01 Nov 2019 02:34:53 GMT
+# Fri, 08 Nov 2019 02:58:09 GMT
 ENV TOMCAT_SHA512=079b85f3dfca2b137634859208fae6012860201d720d12ff0add3473f1e267d332cb12803958754e1f922599e0d42b7e97f00bcd62584d9148a6f45fde091716
-# Fri, 01 Nov 2019 02:35:26 GMT
+# Fri, 08 Nov 2019 02:59:03 GMT
 RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		gnupg dirmngr 		wget ca-certificates 	; 		ddist() { 		local f="$1"; shift; 		local distFile="$1"; shift; 		local success=; 		local distUrl=; 		for distUrl in 			'https://www.apache.org/dyn/closer.cgi?action=download&filename=' 			https://www-us.apache.org/dist/ 			https://www.apache.org/dist/ 			https://archive.apache.org/dist/ 		; do 			if wget -O "$f" "$distUrl$distFile" && [ -s "$f" ]; then 				success=1; 				break; 			fi; 		done; 		[ -n "$success" ]; 	}; 		ddist 'tomcat.tar.gz' "tomcat/tomcat-$TOMCAT_MAJOR/v$TOMCAT_VERSION/bin/apache-tomcat-$TOMCAT_VERSION.tar.gz"; 	echo "$TOMCAT_SHA512 *tomcat.tar.gz" | sha512sum --strict --check -; 	ddist 'tomcat.tar.gz.asc' "tomcat/tomcat-$TOMCAT_MAJOR/v$TOMCAT_VERSION/bin/apache-tomcat-$TOMCAT_VERSION.tar.gz.asc"; 	export GNUPGHOME="$(mktemp -d)"; 	for key in $GPG_KEYS; do 		gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys "$key"; 	done; 	gpg --batch --verify tomcat.tar.gz.asc tomcat.tar.gz; 	tar -xf tomcat.tar.gz --strip-components=1; 	rm bin/*.bat; 	rm tomcat.tar.gz*; 	command -v gpgconf && gpgconf --kill all || :; 	rm -rf "$GNUPGHOME"; 		nativeBuildDir="$(mktemp -d)"; 	tar -xf bin/tomcat-native.tar.gz -C "$nativeBuildDir" --strip-components=1; 	apt-get install -y --no-install-recommends 		dpkg-dev 		gcc 		libapr1-dev 		libssl-dev 		make 	; 	( 		export CATALINA_HOME="$PWD"; 		cd "$nativeBuildDir/native"; 		gnuArch="$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)"; 		aprConfig="$(command -v apr-1-config)"; 		./configure 			--build="$gnuArch" 			--libdir="$TOMCAT_NATIVE_LIBDIR" 			--prefix="$CATALINA_HOME" 			--with-apr="$aprConfig" 			--with-java-home="$JAVA_HOME" 			--with-ssl=yes; 		make -j "$(nproc)"; 		make install; 	); 	rm -rf "$nativeBuildDir"; 	rm bin/tomcat-native.tar.gz; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark > /dev/null; 	find "$TOMCAT_NATIVE_LIBDIR" -type f -executable -exec ldd '{}' ';' 		| awk '/=>/ { print $(NF-1) }' 		| sort -u 		| xargs -r dpkg-query --search 		| cut -d: -f1 		| sort -u 		| xargs -r apt-mark manual 	; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 	rm -rf /var/lib/apt/lists/*; 		find ./bin/ -name '*.sh' -exec sed -ri 's|^#!/bin/sh$|#!/usr/bin/env bash|' '{}' +; 		chmod -R +rX .; 	chmod 777 logs temp work
-# Fri, 01 Nov 2019 02:35:29 GMT
+# Fri, 08 Nov 2019 02:59:07 GMT
 RUN set -e 	&& nativeLines="$(catalina.sh configtest 2>&1)" 	&& nativeLines="$(echo "$nativeLines" | grep 'Apache Tomcat Native')" 	&& nativeLines="$(echo "$nativeLines" | sort -u)" 	&& if ! echo "$nativeLines" | grep 'INFO: Loaded APR based Apache Tomcat Native library' >&2; then 		echo >&2 "$nativeLines"; 		exit 1; 	fi
-# Fri, 01 Nov 2019 02:35:29 GMT
+# Fri, 08 Nov 2019 02:59:07 GMT
 EXPOSE 8080
-# Fri, 01 Nov 2019 02:35:30 GMT
+# Fri, 08 Nov 2019 02:59:08 GMT
 CMD ["catalina.sh" "run"]
-# Fri, 01 Nov 2019 05:46:09 GMT
+# Fri, 08 Nov 2019 03:47:57 GMT
 MAINTAINER Vincent Massol <vincent@massol.net>
-# Fri, 01 Nov 2019 05:49:41 GMT
+# Fri, 08 Nov 2019 03:51:28 GMT
 RUN apt-get update &&   apt-get --no-install-recommends -y install     curl     libreoffice     unzip     procps     libpostgresql-jdbc-java &&   rm -rf /var/lib/apt/lists/*
-# Fri, 01 Nov 2019 05:49:41 GMT
+# Fri, 08 Nov 2019 03:51:28 GMT
 ENV XWIKI_VERSION=10.11.9
-# Fri, 01 Nov 2019 05:49:41 GMT
+# Fri, 08 Nov 2019 03:51:29 GMT
 ENV XWIKI_URL_PREFIX=https://maven.xwiki.org/releases/org/xwiki/platform/xwiki-platform-distribution-war/10.11.9
-# Fri, 01 Nov 2019 05:49:42 GMT
+# Fri, 08 Nov 2019 03:51:29 GMT
 ENV XWIKI_DOWNLOAD_SHA256=299fe60d5b32ee1a363ba48ff2346e78eea5f713a0174c20fe9d7531be426a58
-# Fri, 01 Nov 2019 05:50:14 GMT
+# Fri, 08 Nov 2019 03:51:59 GMT
 RUN rm -rf /usr/local/tomcat/webapps/* &&   mkdir -p /usr/local/tomcat/temp &&   mkdir -p /usr/local/xwiki/data &&   curl -fSL "${XWIKI_URL_PREFIX}/xwiki-platform-distribution-war-${XWIKI_VERSION}.war" -o xwiki.war &&   echo "$XWIKI_DOWNLOAD_SHA256 xwiki.war" | sha256sum -c - &&   unzip -d /usr/local/tomcat/webapps/ROOT xwiki.war &&   rm -f xwiki.war
-# Fri, 01 Nov 2019 05:50:15 GMT
+# Fri, 08 Nov 2019 03:52:01 GMT
 RUN cp /usr/share/java/postgresql-jdbc4.jar /usr/local/tomcat/webapps/ROOT/WEB-INF/lib/
-# Fri, 01 Nov 2019 05:50:15 GMT
+# Fri, 08 Nov 2019 03:52:01 GMT
 COPY file:0a1be11e2eb610a1dbcd415404e3a592641110b93090030cb831e3a19a163017 in /usr/local/tomcat/bin/ 
-# Fri, 01 Nov 2019 05:50:15 GMT
+# Fri, 08 Nov 2019 03:52:02 GMT
 COPY file:bd68ae28ec068b0f89a2e05a10b1098af3b375c97a69f9255831e8fa6e87f773 in /usr/local/tomcat/webapps/ROOT/WEB-INF/hibernate.cfg.xml 
-# Fri, 01 Nov 2019 05:50:16 GMT
+# Fri, 08 Nov 2019 03:52:02 GMT
 RUN sed -i 's/<id>org.xwiki.platform:xwiki-platform-distribution-war/<id>org.xwiki.platform:xwiki-platform-distribution-docker/'   /usr/local/tomcat/webapps/ROOT/META-INF/extension.xed
-# Fri, 01 Nov 2019 05:50:16 GMT
+# Fri, 08 Nov 2019 03:52:03 GMT
 COPY file:f901b2d7ac3d76cd8346f9aee81b40529183e81d8aa027bb390856ac01fa6cc0 in /usr/local/bin/docker-entrypoint.sh 
-# Fri, 01 Nov 2019 05:50:16 GMT
+# Fri, 08 Nov 2019 03:52:03 GMT
 VOLUME [/usr/local/xwiki]
-# Fri, 01 Nov 2019 05:50:16 GMT
+# Fri, 08 Nov 2019 03:52:03 GMT
 ENTRYPOINT ["docker-entrypoint.sh"]
-# Fri, 01 Nov 2019 05:50:17 GMT
+# Fri, 08 Nov 2019 03:52:03 GMT
 CMD ["xwiki"]
 ```
 
@@ -656,59 +656,59 @@ CMD ["xwiki"]
 		Last Modified: Thu, 31 Oct 2019 22:21:39 GMT  
 		Size: 162.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:b5035666b1cd262e3117ca99ecbe11fc92c973a1164cd5c69bca60165f501520`  
-		Last Modified: Thu, 31 Oct 2019 22:40:53 GMT  
-		Size: 10.8 MB (10842099 bytes)  
+	-	`sha256:da4c04c54fa4a9b55ddef0b116fa7969185639621c525e1fe19f2b194f1ca4bc`  
+		Last Modified: Fri, 08 Nov 2019 02:22:45 GMT  
+		Size: 13.3 MB (13322685 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:efde61b742b5cb70e5b4addf1af5ad7280bffe7d8dd1df5eff600523285f3ea4`  
-		Last Modified: Thu, 31 Oct 2019 22:41:03 GMT  
-		Size: 105.0 MB (105002961 bytes)  
+	-	`sha256:2e619a1c4087f3c7f3728ceb4445f1a7a5039161cf3289478a8883c6ee035404`  
+		Last Modified: Fri, 08 Nov 2019 02:22:53 GMT  
+		Size: 105.1 MB (105052686 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:225d7996c0304b5ffbdcf6098af5c263ffc4d1b4179e9dca599cea72150685aa`  
-		Last Modified: Fri, 01 Nov 2019 02:39:12 GMT  
-		Size: 138.0 B  
+	-	`sha256:9d52f3e37b5909a34e61705bcdbc8935d682242f0c5fccdb29e117df8639b535`  
+		Last Modified: Fri, 08 Nov 2019 03:05:59 GMT  
+		Size: 139.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:79ec1eb33f408e2e622babc4045fe851ed5836f38b9e58daa1eb39284ace03cf`  
-		Last Modified: Fri, 01 Nov 2019 02:39:56 GMT  
-		Size: 11.2 MB (11233772 bytes)  
+	-	`sha256:e36d9bbb9a695ea2424edb1ab9bbf4fd43d87d68ad2e511fed36af7a18d3d3e8`  
+		Last Modified: Fri, 08 Nov 2019 03:06:53 GMT  
+		Size: 11.3 MB (11250353 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:1e181f3682b7d9ea77955bcda4108fc60c381f24ed390b0a3d08b67642aef2a7`  
-		Last Modified: Fri, 01 Nov 2019 02:39:55 GMT  
-		Size: 131.0 B  
+	-	`sha256:32d2a60a869b7029538438ffc8b6bc2975016c77fd3d3e4bc74b106903b3cca4`  
+		Last Modified: Fri, 08 Nov 2019 03:06:51 GMT  
+		Size: 132.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:dcf4aa8aa7a3257538cad7f9faea616c74da5211891ba894dbcc9b9710a0c249`  
-		Last Modified: Fri, 01 Nov 2019 05:55:36 GMT  
-		Size: 182.2 MB (182185768 bytes)  
+	-	`sha256:2fcdae1100d077d3795b80a5e54c0346fc292b4d314721bf81cbeab5d1cad0c9`  
+		Last Modified: Fri, 08 Nov 2019 03:57:01 GMT  
+		Size: 179.6 MB (179560416 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:271eddddcf5db8b7382c4a5a27d9848fb7d5fb21f33540c4d568551f8d1a1d74`  
-		Last Modified: Fri, 01 Nov 2019 05:55:05 GMT  
-		Size: 245.9 MB (245930609 bytes)  
+	-	`sha256:e9c0195e272b852492c7f599358c99e7712204ed7071a3f7d48bfa5edc8429b3`  
+		Last Modified: Fri, 08 Nov 2019 03:56:51 GMT  
+		Size: 245.9 MB (245930599 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:65ae8c33ab10be903ca209e3b0340dd40b0ac013067b5905dce5b1590fb6eb25`  
-		Last Modified: Fri, 01 Nov 2019 05:54:46 GMT  
-		Size: 618.9 KB (618853 bytes)  
+	-	`sha256:95965084b5e2103657f340e4d45f96ad9dbc8c820257fb84fab6f3bbd0833ceb`  
+		Last Modified: Fri, 08 Nov 2019 03:56:28 GMT  
+		Size: 618.9 KB (618865 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:5eaf917a4793b28e0de2cf6064d02c2c7f23165867f7200f26e9262942bb5113`  
-		Last Modified: Fri, 01 Nov 2019 05:54:46 GMT  
+	-	`sha256:08f9eccff140a38ee9c426aae4c63d8c21f0e92db3348820c411240df0156827`  
+		Last Modified: Fri, 08 Nov 2019 03:56:28 GMT  
 		Size: 1.3 KB (1344 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:224c12cf161cb91df2d9a67077c6c1fb00abcbb4811ddfd497905f0462cfe175`  
-		Last Modified: Fri, 01 Nov 2019 05:54:46 GMT  
-		Size: 2.5 KB (2481 bytes)  
+	-	`sha256:5069dc1afa774e636d3eb81c76fb8d2a9622cb5847696c251fd5f78cfea28948`  
+		Last Modified: Fri, 08 Nov 2019 03:56:28 GMT  
+		Size: 2.5 KB (2487 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:a92741fd543e631d383d8c7fc2e68c724ddf6802f40e7ca99c5d4de11260cf88`  
-		Last Modified: Fri, 01 Nov 2019 05:54:46 GMT  
-		Size: 3.8 KB (3836 bytes)  
+	-	`sha256:09af7f365508bef54bba891ca7da80be68278562b25792cf5c05e9556188d9b5`  
+		Last Modified: Fri, 08 Nov 2019 03:56:28 GMT  
+		Size: 3.8 KB (3838 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:6bb237db7536872170fc150a94fc0259404a88eb600a3ce9f61e0d20b9dffe3a`  
-		Last Modified: Fri, 01 Nov 2019 05:54:46 GMT  
-		Size: 2.4 KB (2401 bytes)  
+	-	`sha256:df4e73de1508117ac4210c94c2f4e2f8abf840ab184be9fed77905f71b14e600`  
+		Last Modified: Fri, 08 Nov 2019 03:56:28 GMT  
+		Size: 2.4 KB (2403 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `xwiki:10.11-postgres-tomcat`
 
 ```console
-$ docker pull xwiki@sha256:73fccaaa608864b5b071af07e057613e197031530c2a981718e3827f4cd8dc00
+$ docker pull xwiki@sha256:2cf75066811db036a72feaa2c476773888ec9e34d14b8186424224101659ad63
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -718,14 +718,14 @@ $ docker pull xwiki@sha256:73fccaaa608864b5b071af07e057613e197031530c2a981718e38
 ### `xwiki:10.11-postgres-tomcat` - linux; amd64
 
 ```console
-$ docker pull xwiki@sha256:510720581fca923293bfeef79c0a8224b4e3f5717bdedb2eeeb77d79f9954384
+$ docker pull xwiki@sha256:7336446a1f272ff98fc5fc226351e5b019d411718f51f6b8f977b7d94aef754f
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **582.5 MB (582549609 bytes)**  
+-	Total Size: **582.5 MB (582471163 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:8ff560e664b744450f13c4bdf12f8e8d4e74ec87490f4110956734077fa1c26a`
+-	Image ID: `sha256:6d9ce4ab486781eee5120459565ad0d301f0458a52556b0cde046e86de3ece6d`
 -	Entrypoint: `["docker-entrypoint.sh"]`
 -	Default Command: `["xwiki"]`
 
@@ -742,69 +742,69 @@ RUN mkdir -p /run/systemd && echo 'docker' > /run/systemd/container
 CMD ["/bin/bash"]
 # Thu, 31 Oct 2019 22:37:37 GMT
 ENV LANG=en_US.UTF-8 LANGUAGE=en_US:en LC_ALL=en_US.UTF-8
-# Thu, 31 Oct 2019 22:38:04 GMT
-RUN apt-get update     && apt-get install -y --no-install-recommends curl ca-certificates locales     && echo "en_US.UTF-8 UTF-8" >> /etc/locale.gen     && locale-gen en_US.UTF-8     && rm -rf /var/lib/apt/lists/*
-# Thu, 31 Oct 2019 22:38:04 GMT
-ENV JAVA_VERSION=jdk8u222-b10
-# Thu, 31 Oct 2019 22:38:10 GMT
-RUN set -eux;     ARCH="$(dpkg --print-architecture)";     case "${ARCH}" in        aarch64|arm64)          ESUM='652776586ede124189dc218174b5922cc97feac81021ad81905900b349a352d2';          BINARY_URL='https://github.com/AdoptOpenJDK/openjdk8-binaries/releases/download/jdk8u222-b10/OpenJDK8U-jdk_aarch64_linux_hotspot_8u222b10.tar.gz';          ;;        armhf)          ESUM='7b3d6ade8c25adca01095ba66642132d8c87a1a8caf3883850e34778453afcec';          BINARY_URL='https://github.com/AdoptOpenJDK/openjdk8-binaries/releases/download/jdk8u222-b10/OpenJDK8U-jdk_arm_linux_hotspot_8u222b10.tar.gz';          ;;        ppc64el|ppc64le)          ESUM='f85de48f1dcfd78a39bf5817d3c2f8247c75df6abd56c8721172bf2bd757eb69';          BINARY_URL='https://github.com/AdoptOpenJDK/openjdk8-binaries/releases/download/jdk8u222-b10/OpenJDK8U-jdk_ppc64le_linux_hotspot_8u222b10.tar.gz';          ;;        s390x)          ESUM='d56d6a128f8827e5baeae379bcb1b3ead2cfd5b1abb03befa4588f89f08ea626';          BINARY_URL='https://github.com/AdoptOpenJDK/openjdk8-binaries/releases/download/jdk8u222-b10/OpenJDK8U-jdk_s390x_linux_hotspot_8u222b10.tar.gz';          ;;        amd64|x86_64)          ESUM='37356281345b93feb4212e6267109b4409b55b06f107619dde4960e402bafa77';          BINARY_URL='https://github.com/AdoptOpenJDK/openjdk8-binaries/releases/download/jdk8u222-b10/OpenJDK8U-jdk_x64_linux_hotspot_8u222b10.tar.gz';          ;;        *)          echo "Unsupported arch: ${ARCH}";          exit 1;          ;;     esac;     curl -LfsSo /tmp/openjdk.tar.gz ${BINARY_URL};     echo "${ESUM} */tmp/openjdk.tar.gz" | sha256sum -c -;     mkdir -p /opt/java/openjdk;     cd /opt/java/openjdk;     tar -xf /tmp/openjdk.tar.gz --strip-components=1;     rm -rf /tmp/openjdk.tar.gz;
-# Thu, 31 Oct 2019 22:38:11 GMT
+# Fri, 08 Nov 2019 02:20:03 GMT
+RUN apt-get update     && apt-get install -y --no-install-recommends curl ca-certificates fontconfig locales     && echo "en_US.UTF-8 UTF-8" >> /etc/locale.gen     && locale-gen en_US.UTF-8     && rm -rf /var/lib/apt/lists/*
+# Fri, 08 Nov 2019 02:20:03 GMT
+ENV JAVA_VERSION=jdk8u232-b09
+# Fri, 08 Nov 2019 02:20:09 GMT
+RUN set -eux;     ARCH="$(dpkg --print-architecture)";     case "${ARCH}" in        ppc64el|ppc64le)          ESUM='da87bdc04b47477b42afc76066dbd96efa35ad967238be03a0081f8840e893a8';          BINARY_URL='https://github.com/AdoptOpenJDK/openjdk8-binaries/releases/download/jdk8u232-b09/OpenJDK8U-jdk_ppc64le_linux_hotspot_8u232b09.tar.gz';          ;;        s390x)          ESUM='bd20cb8bf4cfab9d3e2b2ccfb9a6f9eda1e4e67b4103b9975d29de12c05ad1f5';          BINARY_URL='https://github.com/AdoptOpenJDK/openjdk8-binaries/releases/download/jdk8u232-b09/OpenJDK8U-jdk_s390x_linux_hotspot_8u232b09.tar.gz';          ;;        amd64|x86_64)          ESUM='7b7884f2eb2ba2d47f4c0bf3bb1a2a95b73a3a7734bd47ebf9798483a7bcc423';          BINARY_URL='https://github.com/AdoptOpenJDK/openjdk8-binaries/releases/download/jdk8u232-b09/OpenJDK8U-jdk_x64_linux_hotspot_8u232b09.tar.gz';          ;;        *)          echo "Unsupported arch: ${ARCH}";          exit 1;          ;;     esac;     curl -LfsSo /tmp/openjdk.tar.gz ${BINARY_URL};     echo "${ESUM} */tmp/openjdk.tar.gz" | sha256sum -c -;     mkdir -p /opt/java/openjdk;     cd /opt/java/openjdk;     tar -xf /tmp/openjdk.tar.gz --strip-components=1;     rm -rf /tmp/openjdk.tar.gz;
+# Fri, 08 Nov 2019 02:20:09 GMT
 ENV JAVA_HOME=/opt/java/openjdk PATH=/opt/java/openjdk/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Fri, 01 Nov 2019 02:29:48 GMT
+# Fri, 08 Nov 2019 02:52:20 GMT
 ENV CATALINA_HOME=/usr/local/tomcat
-# Fri, 01 Nov 2019 02:29:48 GMT
+# Fri, 08 Nov 2019 02:52:21 GMT
 ENV PATH=/usr/local/tomcat/bin:/opt/java/openjdk/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Fri, 01 Nov 2019 02:29:49 GMT
+# Fri, 08 Nov 2019 02:52:22 GMT
 RUN mkdir -p "$CATALINA_HOME"
-# Fri, 01 Nov 2019 02:29:49 GMT
+# Fri, 08 Nov 2019 02:52:22 GMT
 WORKDIR /usr/local/tomcat
-# Fri, 01 Nov 2019 02:29:49 GMT
+# Fri, 08 Nov 2019 02:52:23 GMT
 ENV TOMCAT_NATIVE_LIBDIR=/usr/local/tomcat/native-jni-lib
-# Fri, 01 Nov 2019 02:29:49 GMT
+# Fri, 08 Nov 2019 02:52:23 GMT
 ENV LD_LIBRARY_PATH=/usr/local/tomcat/native-jni-lib
-# Fri, 01 Nov 2019 02:34:53 GMT
+# Fri, 08 Nov 2019 02:58:08 GMT
 ENV GPG_KEYS=05AB33110949707C93A279E3D3EFE6B686867BA6 07E48665A34DCAFAE522E5E6266191C37C037D42 47309207D818FFD8DCD3F83F1931D684307A10A5 541FBE7D8F78B25E055DDEE13C370389288584E7 61B832AC2F1C5A90F0F9B00A1C506407564C17A3 713DA88BE50911535FE716F5208B0AB1D63011C7 79F7026C690BAA50B92CD8B66A3AD3F4F22C4FED 9BA44C2621385CB966EBA586F72C284D731FABEE A27677289986DB50844682F8ACB77FC2E86E29AC A9C5DF4D22E99998D9875A5110C01C5A2F6059E7 DCFD35E0BF8CA7344752DE8B6FB21E8933C60243 F3A04C595DB5B6A5F1ECA43E3B7BBB100D811BBE F7DA48BB64BCB84ECBA7EE6935CD23C10D498E23
-# Fri, 01 Nov 2019 02:34:53 GMT
+# Fri, 08 Nov 2019 02:58:08 GMT
 ENV TOMCAT_MAJOR=8
-# Fri, 01 Nov 2019 02:34:53 GMT
+# Fri, 08 Nov 2019 02:58:09 GMT
 ENV TOMCAT_VERSION=8.5.47
-# Fri, 01 Nov 2019 02:34:53 GMT
+# Fri, 08 Nov 2019 02:58:09 GMT
 ENV TOMCAT_SHA512=079b85f3dfca2b137634859208fae6012860201d720d12ff0add3473f1e267d332cb12803958754e1f922599e0d42b7e97f00bcd62584d9148a6f45fde091716
-# Fri, 01 Nov 2019 02:35:26 GMT
+# Fri, 08 Nov 2019 02:59:03 GMT
 RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		gnupg dirmngr 		wget ca-certificates 	; 		ddist() { 		local f="$1"; shift; 		local distFile="$1"; shift; 		local success=; 		local distUrl=; 		for distUrl in 			'https://www.apache.org/dyn/closer.cgi?action=download&filename=' 			https://www-us.apache.org/dist/ 			https://www.apache.org/dist/ 			https://archive.apache.org/dist/ 		; do 			if wget -O "$f" "$distUrl$distFile" && [ -s "$f" ]; then 				success=1; 				break; 			fi; 		done; 		[ -n "$success" ]; 	}; 		ddist 'tomcat.tar.gz' "tomcat/tomcat-$TOMCAT_MAJOR/v$TOMCAT_VERSION/bin/apache-tomcat-$TOMCAT_VERSION.tar.gz"; 	echo "$TOMCAT_SHA512 *tomcat.tar.gz" | sha512sum --strict --check -; 	ddist 'tomcat.tar.gz.asc' "tomcat/tomcat-$TOMCAT_MAJOR/v$TOMCAT_VERSION/bin/apache-tomcat-$TOMCAT_VERSION.tar.gz.asc"; 	export GNUPGHOME="$(mktemp -d)"; 	for key in $GPG_KEYS; do 		gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys "$key"; 	done; 	gpg --batch --verify tomcat.tar.gz.asc tomcat.tar.gz; 	tar -xf tomcat.tar.gz --strip-components=1; 	rm bin/*.bat; 	rm tomcat.tar.gz*; 	command -v gpgconf && gpgconf --kill all || :; 	rm -rf "$GNUPGHOME"; 		nativeBuildDir="$(mktemp -d)"; 	tar -xf bin/tomcat-native.tar.gz -C "$nativeBuildDir" --strip-components=1; 	apt-get install -y --no-install-recommends 		dpkg-dev 		gcc 		libapr1-dev 		libssl-dev 		make 	; 	( 		export CATALINA_HOME="$PWD"; 		cd "$nativeBuildDir/native"; 		gnuArch="$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)"; 		aprConfig="$(command -v apr-1-config)"; 		./configure 			--build="$gnuArch" 			--libdir="$TOMCAT_NATIVE_LIBDIR" 			--prefix="$CATALINA_HOME" 			--with-apr="$aprConfig" 			--with-java-home="$JAVA_HOME" 			--with-ssl=yes; 		make -j "$(nproc)"; 		make install; 	); 	rm -rf "$nativeBuildDir"; 	rm bin/tomcat-native.tar.gz; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark > /dev/null; 	find "$TOMCAT_NATIVE_LIBDIR" -type f -executable -exec ldd '{}' ';' 		| awk '/=>/ { print $(NF-1) }' 		| sort -u 		| xargs -r dpkg-query --search 		| cut -d: -f1 		| sort -u 		| xargs -r apt-mark manual 	; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 	rm -rf /var/lib/apt/lists/*; 		find ./bin/ -name '*.sh' -exec sed -ri 's|^#!/bin/sh$|#!/usr/bin/env bash|' '{}' +; 		chmod -R +rX .; 	chmod 777 logs temp work
-# Fri, 01 Nov 2019 02:35:29 GMT
+# Fri, 08 Nov 2019 02:59:07 GMT
 RUN set -e 	&& nativeLines="$(catalina.sh configtest 2>&1)" 	&& nativeLines="$(echo "$nativeLines" | grep 'Apache Tomcat Native')" 	&& nativeLines="$(echo "$nativeLines" | sort -u)" 	&& if ! echo "$nativeLines" | grep 'INFO: Loaded APR based Apache Tomcat Native library' >&2; then 		echo >&2 "$nativeLines"; 		exit 1; 	fi
-# Fri, 01 Nov 2019 02:35:29 GMT
+# Fri, 08 Nov 2019 02:59:07 GMT
 EXPOSE 8080
-# Fri, 01 Nov 2019 02:35:30 GMT
+# Fri, 08 Nov 2019 02:59:08 GMT
 CMD ["catalina.sh" "run"]
-# Fri, 01 Nov 2019 05:46:09 GMT
+# Fri, 08 Nov 2019 03:47:57 GMT
 MAINTAINER Vincent Massol <vincent@massol.net>
-# Fri, 01 Nov 2019 05:49:41 GMT
+# Fri, 08 Nov 2019 03:51:28 GMT
 RUN apt-get update &&   apt-get --no-install-recommends -y install     curl     libreoffice     unzip     procps     libpostgresql-jdbc-java &&   rm -rf /var/lib/apt/lists/*
-# Fri, 01 Nov 2019 05:49:41 GMT
+# Fri, 08 Nov 2019 03:51:28 GMT
 ENV XWIKI_VERSION=10.11.9
-# Fri, 01 Nov 2019 05:49:41 GMT
+# Fri, 08 Nov 2019 03:51:29 GMT
 ENV XWIKI_URL_PREFIX=https://maven.xwiki.org/releases/org/xwiki/platform/xwiki-platform-distribution-war/10.11.9
-# Fri, 01 Nov 2019 05:49:42 GMT
+# Fri, 08 Nov 2019 03:51:29 GMT
 ENV XWIKI_DOWNLOAD_SHA256=299fe60d5b32ee1a363ba48ff2346e78eea5f713a0174c20fe9d7531be426a58
-# Fri, 01 Nov 2019 05:50:14 GMT
+# Fri, 08 Nov 2019 03:51:59 GMT
 RUN rm -rf /usr/local/tomcat/webapps/* &&   mkdir -p /usr/local/tomcat/temp &&   mkdir -p /usr/local/xwiki/data &&   curl -fSL "${XWIKI_URL_PREFIX}/xwiki-platform-distribution-war-${XWIKI_VERSION}.war" -o xwiki.war &&   echo "$XWIKI_DOWNLOAD_SHA256 xwiki.war" | sha256sum -c - &&   unzip -d /usr/local/tomcat/webapps/ROOT xwiki.war &&   rm -f xwiki.war
-# Fri, 01 Nov 2019 05:50:15 GMT
+# Fri, 08 Nov 2019 03:52:01 GMT
 RUN cp /usr/share/java/postgresql-jdbc4.jar /usr/local/tomcat/webapps/ROOT/WEB-INF/lib/
-# Fri, 01 Nov 2019 05:50:15 GMT
+# Fri, 08 Nov 2019 03:52:01 GMT
 COPY file:0a1be11e2eb610a1dbcd415404e3a592641110b93090030cb831e3a19a163017 in /usr/local/tomcat/bin/ 
-# Fri, 01 Nov 2019 05:50:15 GMT
+# Fri, 08 Nov 2019 03:52:02 GMT
 COPY file:bd68ae28ec068b0f89a2e05a10b1098af3b375c97a69f9255831e8fa6e87f773 in /usr/local/tomcat/webapps/ROOT/WEB-INF/hibernate.cfg.xml 
-# Fri, 01 Nov 2019 05:50:16 GMT
+# Fri, 08 Nov 2019 03:52:02 GMT
 RUN sed -i 's/<id>org.xwiki.platform:xwiki-platform-distribution-war/<id>org.xwiki.platform:xwiki-platform-distribution-docker/'   /usr/local/tomcat/webapps/ROOT/META-INF/extension.xed
-# Fri, 01 Nov 2019 05:50:16 GMT
+# Fri, 08 Nov 2019 03:52:03 GMT
 COPY file:f901b2d7ac3d76cd8346f9aee81b40529183e81d8aa027bb390856ac01fa6cc0 in /usr/local/bin/docker-entrypoint.sh 
-# Fri, 01 Nov 2019 05:50:16 GMT
+# Fri, 08 Nov 2019 03:52:03 GMT
 VOLUME [/usr/local/xwiki]
-# Fri, 01 Nov 2019 05:50:16 GMT
+# Fri, 08 Nov 2019 03:52:03 GMT
 ENTRYPOINT ["docker-entrypoint.sh"]
-# Fri, 01 Nov 2019 05:50:17 GMT
+# Fri, 08 Nov 2019 03:52:03 GMT
 CMD ["xwiki"]
 ```
 
@@ -825,59 +825,59 @@ CMD ["xwiki"]
 		Last Modified: Thu, 31 Oct 2019 22:21:39 GMT  
 		Size: 162.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:b5035666b1cd262e3117ca99ecbe11fc92c973a1164cd5c69bca60165f501520`  
-		Last Modified: Thu, 31 Oct 2019 22:40:53 GMT  
-		Size: 10.8 MB (10842099 bytes)  
+	-	`sha256:da4c04c54fa4a9b55ddef0b116fa7969185639621c525e1fe19f2b194f1ca4bc`  
+		Last Modified: Fri, 08 Nov 2019 02:22:45 GMT  
+		Size: 13.3 MB (13322685 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:efde61b742b5cb70e5b4addf1af5ad7280bffe7d8dd1df5eff600523285f3ea4`  
-		Last Modified: Thu, 31 Oct 2019 22:41:03 GMT  
-		Size: 105.0 MB (105002961 bytes)  
+	-	`sha256:2e619a1c4087f3c7f3728ceb4445f1a7a5039161cf3289478a8883c6ee035404`  
+		Last Modified: Fri, 08 Nov 2019 02:22:53 GMT  
+		Size: 105.1 MB (105052686 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:225d7996c0304b5ffbdcf6098af5c263ffc4d1b4179e9dca599cea72150685aa`  
-		Last Modified: Fri, 01 Nov 2019 02:39:12 GMT  
-		Size: 138.0 B  
+	-	`sha256:9d52f3e37b5909a34e61705bcdbc8935d682242f0c5fccdb29e117df8639b535`  
+		Last Modified: Fri, 08 Nov 2019 03:05:59 GMT  
+		Size: 139.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:79ec1eb33f408e2e622babc4045fe851ed5836f38b9e58daa1eb39284ace03cf`  
-		Last Modified: Fri, 01 Nov 2019 02:39:56 GMT  
-		Size: 11.2 MB (11233772 bytes)  
+	-	`sha256:e36d9bbb9a695ea2424edb1ab9bbf4fd43d87d68ad2e511fed36af7a18d3d3e8`  
+		Last Modified: Fri, 08 Nov 2019 03:06:53 GMT  
+		Size: 11.3 MB (11250353 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:1e181f3682b7d9ea77955bcda4108fc60c381f24ed390b0a3d08b67642aef2a7`  
-		Last Modified: Fri, 01 Nov 2019 02:39:55 GMT  
-		Size: 131.0 B  
+	-	`sha256:32d2a60a869b7029538438ffc8b6bc2975016c77fd3d3e4bc74b106903b3cca4`  
+		Last Modified: Fri, 08 Nov 2019 03:06:51 GMT  
+		Size: 132.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:dcf4aa8aa7a3257538cad7f9faea616c74da5211891ba894dbcc9b9710a0c249`  
-		Last Modified: Fri, 01 Nov 2019 05:55:36 GMT  
-		Size: 182.2 MB (182185768 bytes)  
+	-	`sha256:2fcdae1100d077d3795b80a5e54c0346fc292b4d314721bf81cbeab5d1cad0c9`  
+		Last Modified: Fri, 08 Nov 2019 03:57:01 GMT  
+		Size: 179.6 MB (179560416 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:271eddddcf5db8b7382c4a5a27d9848fb7d5fb21f33540c4d568551f8d1a1d74`  
-		Last Modified: Fri, 01 Nov 2019 05:55:05 GMT  
-		Size: 245.9 MB (245930609 bytes)  
+	-	`sha256:e9c0195e272b852492c7f599358c99e7712204ed7071a3f7d48bfa5edc8429b3`  
+		Last Modified: Fri, 08 Nov 2019 03:56:51 GMT  
+		Size: 245.9 MB (245930599 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:65ae8c33ab10be903ca209e3b0340dd40b0ac013067b5905dce5b1590fb6eb25`  
-		Last Modified: Fri, 01 Nov 2019 05:54:46 GMT  
-		Size: 618.9 KB (618853 bytes)  
+	-	`sha256:95965084b5e2103657f340e4d45f96ad9dbc8c820257fb84fab6f3bbd0833ceb`  
+		Last Modified: Fri, 08 Nov 2019 03:56:28 GMT  
+		Size: 618.9 KB (618865 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:5eaf917a4793b28e0de2cf6064d02c2c7f23165867f7200f26e9262942bb5113`  
-		Last Modified: Fri, 01 Nov 2019 05:54:46 GMT  
+	-	`sha256:08f9eccff140a38ee9c426aae4c63d8c21f0e92db3348820c411240df0156827`  
+		Last Modified: Fri, 08 Nov 2019 03:56:28 GMT  
 		Size: 1.3 KB (1344 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:224c12cf161cb91df2d9a67077c6c1fb00abcbb4811ddfd497905f0462cfe175`  
-		Last Modified: Fri, 01 Nov 2019 05:54:46 GMT  
-		Size: 2.5 KB (2481 bytes)  
+	-	`sha256:5069dc1afa774e636d3eb81c76fb8d2a9622cb5847696c251fd5f78cfea28948`  
+		Last Modified: Fri, 08 Nov 2019 03:56:28 GMT  
+		Size: 2.5 KB (2487 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:a92741fd543e631d383d8c7fc2e68c724ddf6802f40e7ca99c5d4de11260cf88`  
-		Last Modified: Fri, 01 Nov 2019 05:54:46 GMT  
-		Size: 3.8 KB (3836 bytes)  
+	-	`sha256:09af7f365508bef54bba891ca7da80be68278562b25792cf5c05e9556188d9b5`  
+		Last Modified: Fri, 08 Nov 2019 03:56:28 GMT  
+		Size: 3.8 KB (3838 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:6bb237db7536872170fc150a94fc0259404a88eb600a3ce9f61e0d20b9dffe3a`  
-		Last Modified: Fri, 01 Nov 2019 05:54:46 GMT  
-		Size: 2.4 KB (2401 bytes)  
+	-	`sha256:df4e73de1508117ac4210c94c2f4e2f8abf840ab184be9fed77905f71b14e600`  
+		Last Modified: Fri, 08 Nov 2019 03:56:28 GMT  
+		Size: 2.4 KB (2403 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `xwiki:10-mysql-tomcat`
 
 ```console
-$ docker pull xwiki@sha256:c304d3bfc03954a3669f47757a63918a4d36af088c34537e15093d7cbb2192e5
+$ docker pull xwiki@sha256:e50eee1ee16e97510d2c2878b44ba59cff37121d520dcfcc6ab39815203541fc
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -887,14 +887,14 @@ $ docker pull xwiki@sha256:c304d3bfc03954a3669f47757a63918a4d36af088c34537e15093
 ### `xwiki:10-mysql-tomcat` - linux; amd64
 
 ```console
-$ docker pull xwiki@sha256:031e6cf9f5f62c9ac15be9a93473d15a5cb805445d8efbdb68835da5502d7999
+$ docker pull xwiki@sha256:1eac0ad7e3285c13b277110fd956cc05a3c5774a7c8d88207eff821713040840
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **583.2 MB (583220294 bytes)**  
+-	Total Size: **583.1 MB (583142464 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:5ed311c670c181f7bd2a3837a9ba97b7629e74b535eb19efdb8e7d33871c9a2d`
+-	Image ID: `sha256:a9f71ff8b734e920564dff7b18c8327bdac99724df51a87a2bc0f57ed06bd995`
 -	Entrypoint: `["docker-entrypoint.sh"]`
 -	Default Command: `["xwiki"]`
 
@@ -911,69 +911,69 @@ RUN mkdir -p /run/systemd && echo 'docker' > /run/systemd/container
 CMD ["/bin/bash"]
 # Thu, 31 Oct 2019 22:37:37 GMT
 ENV LANG=en_US.UTF-8 LANGUAGE=en_US:en LC_ALL=en_US.UTF-8
-# Thu, 31 Oct 2019 22:38:04 GMT
-RUN apt-get update     && apt-get install -y --no-install-recommends curl ca-certificates locales     && echo "en_US.UTF-8 UTF-8" >> /etc/locale.gen     && locale-gen en_US.UTF-8     && rm -rf /var/lib/apt/lists/*
-# Thu, 31 Oct 2019 22:38:04 GMT
-ENV JAVA_VERSION=jdk8u222-b10
-# Thu, 31 Oct 2019 22:38:10 GMT
-RUN set -eux;     ARCH="$(dpkg --print-architecture)";     case "${ARCH}" in        aarch64|arm64)          ESUM='652776586ede124189dc218174b5922cc97feac81021ad81905900b349a352d2';          BINARY_URL='https://github.com/AdoptOpenJDK/openjdk8-binaries/releases/download/jdk8u222-b10/OpenJDK8U-jdk_aarch64_linux_hotspot_8u222b10.tar.gz';          ;;        armhf)          ESUM='7b3d6ade8c25adca01095ba66642132d8c87a1a8caf3883850e34778453afcec';          BINARY_URL='https://github.com/AdoptOpenJDK/openjdk8-binaries/releases/download/jdk8u222-b10/OpenJDK8U-jdk_arm_linux_hotspot_8u222b10.tar.gz';          ;;        ppc64el|ppc64le)          ESUM='f85de48f1dcfd78a39bf5817d3c2f8247c75df6abd56c8721172bf2bd757eb69';          BINARY_URL='https://github.com/AdoptOpenJDK/openjdk8-binaries/releases/download/jdk8u222-b10/OpenJDK8U-jdk_ppc64le_linux_hotspot_8u222b10.tar.gz';          ;;        s390x)          ESUM='d56d6a128f8827e5baeae379bcb1b3ead2cfd5b1abb03befa4588f89f08ea626';          BINARY_URL='https://github.com/AdoptOpenJDK/openjdk8-binaries/releases/download/jdk8u222-b10/OpenJDK8U-jdk_s390x_linux_hotspot_8u222b10.tar.gz';          ;;        amd64|x86_64)          ESUM='37356281345b93feb4212e6267109b4409b55b06f107619dde4960e402bafa77';          BINARY_URL='https://github.com/AdoptOpenJDK/openjdk8-binaries/releases/download/jdk8u222-b10/OpenJDK8U-jdk_x64_linux_hotspot_8u222b10.tar.gz';          ;;        *)          echo "Unsupported arch: ${ARCH}";          exit 1;          ;;     esac;     curl -LfsSo /tmp/openjdk.tar.gz ${BINARY_URL};     echo "${ESUM} */tmp/openjdk.tar.gz" | sha256sum -c -;     mkdir -p /opt/java/openjdk;     cd /opt/java/openjdk;     tar -xf /tmp/openjdk.tar.gz --strip-components=1;     rm -rf /tmp/openjdk.tar.gz;
-# Thu, 31 Oct 2019 22:38:11 GMT
+# Fri, 08 Nov 2019 02:20:03 GMT
+RUN apt-get update     && apt-get install -y --no-install-recommends curl ca-certificates fontconfig locales     && echo "en_US.UTF-8 UTF-8" >> /etc/locale.gen     && locale-gen en_US.UTF-8     && rm -rf /var/lib/apt/lists/*
+# Fri, 08 Nov 2019 02:20:03 GMT
+ENV JAVA_VERSION=jdk8u232-b09
+# Fri, 08 Nov 2019 02:20:09 GMT
+RUN set -eux;     ARCH="$(dpkg --print-architecture)";     case "${ARCH}" in        ppc64el|ppc64le)          ESUM='da87bdc04b47477b42afc76066dbd96efa35ad967238be03a0081f8840e893a8';          BINARY_URL='https://github.com/AdoptOpenJDK/openjdk8-binaries/releases/download/jdk8u232-b09/OpenJDK8U-jdk_ppc64le_linux_hotspot_8u232b09.tar.gz';          ;;        s390x)          ESUM='bd20cb8bf4cfab9d3e2b2ccfb9a6f9eda1e4e67b4103b9975d29de12c05ad1f5';          BINARY_URL='https://github.com/AdoptOpenJDK/openjdk8-binaries/releases/download/jdk8u232-b09/OpenJDK8U-jdk_s390x_linux_hotspot_8u232b09.tar.gz';          ;;        amd64|x86_64)          ESUM='7b7884f2eb2ba2d47f4c0bf3bb1a2a95b73a3a7734bd47ebf9798483a7bcc423';          BINARY_URL='https://github.com/AdoptOpenJDK/openjdk8-binaries/releases/download/jdk8u232-b09/OpenJDK8U-jdk_x64_linux_hotspot_8u232b09.tar.gz';          ;;        *)          echo "Unsupported arch: ${ARCH}";          exit 1;          ;;     esac;     curl -LfsSo /tmp/openjdk.tar.gz ${BINARY_URL};     echo "${ESUM} */tmp/openjdk.tar.gz" | sha256sum -c -;     mkdir -p /opt/java/openjdk;     cd /opt/java/openjdk;     tar -xf /tmp/openjdk.tar.gz --strip-components=1;     rm -rf /tmp/openjdk.tar.gz;
+# Fri, 08 Nov 2019 02:20:09 GMT
 ENV JAVA_HOME=/opt/java/openjdk PATH=/opt/java/openjdk/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Fri, 01 Nov 2019 02:29:48 GMT
+# Fri, 08 Nov 2019 02:52:20 GMT
 ENV CATALINA_HOME=/usr/local/tomcat
-# Fri, 01 Nov 2019 02:29:48 GMT
+# Fri, 08 Nov 2019 02:52:21 GMT
 ENV PATH=/usr/local/tomcat/bin:/opt/java/openjdk/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Fri, 01 Nov 2019 02:29:49 GMT
+# Fri, 08 Nov 2019 02:52:22 GMT
 RUN mkdir -p "$CATALINA_HOME"
-# Fri, 01 Nov 2019 02:29:49 GMT
+# Fri, 08 Nov 2019 02:52:22 GMT
 WORKDIR /usr/local/tomcat
-# Fri, 01 Nov 2019 02:29:49 GMT
+# Fri, 08 Nov 2019 02:52:23 GMT
 ENV TOMCAT_NATIVE_LIBDIR=/usr/local/tomcat/native-jni-lib
-# Fri, 01 Nov 2019 02:29:49 GMT
+# Fri, 08 Nov 2019 02:52:23 GMT
 ENV LD_LIBRARY_PATH=/usr/local/tomcat/native-jni-lib
-# Fri, 01 Nov 2019 02:34:53 GMT
+# Fri, 08 Nov 2019 02:58:08 GMT
 ENV GPG_KEYS=05AB33110949707C93A279E3D3EFE6B686867BA6 07E48665A34DCAFAE522E5E6266191C37C037D42 47309207D818FFD8DCD3F83F1931D684307A10A5 541FBE7D8F78B25E055DDEE13C370389288584E7 61B832AC2F1C5A90F0F9B00A1C506407564C17A3 713DA88BE50911535FE716F5208B0AB1D63011C7 79F7026C690BAA50B92CD8B66A3AD3F4F22C4FED 9BA44C2621385CB966EBA586F72C284D731FABEE A27677289986DB50844682F8ACB77FC2E86E29AC A9C5DF4D22E99998D9875A5110C01C5A2F6059E7 DCFD35E0BF8CA7344752DE8B6FB21E8933C60243 F3A04C595DB5B6A5F1ECA43E3B7BBB100D811BBE F7DA48BB64BCB84ECBA7EE6935CD23C10D498E23
-# Fri, 01 Nov 2019 02:34:53 GMT
+# Fri, 08 Nov 2019 02:58:08 GMT
 ENV TOMCAT_MAJOR=8
-# Fri, 01 Nov 2019 02:34:53 GMT
+# Fri, 08 Nov 2019 02:58:09 GMT
 ENV TOMCAT_VERSION=8.5.47
-# Fri, 01 Nov 2019 02:34:53 GMT
+# Fri, 08 Nov 2019 02:58:09 GMT
 ENV TOMCAT_SHA512=079b85f3dfca2b137634859208fae6012860201d720d12ff0add3473f1e267d332cb12803958754e1f922599e0d42b7e97f00bcd62584d9148a6f45fde091716
-# Fri, 01 Nov 2019 02:35:26 GMT
+# Fri, 08 Nov 2019 02:59:03 GMT
 RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		gnupg dirmngr 		wget ca-certificates 	; 		ddist() { 		local f="$1"; shift; 		local distFile="$1"; shift; 		local success=; 		local distUrl=; 		for distUrl in 			'https://www.apache.org/dyn/closer.cgi?action=download&filename=' 			https://www-us.apache.org/dist/ 			https://www.apache.org/dist/ 			https://archive.apache.org/dist/ 		; do 			if wget -O "$f" "$distUrl$distFile" && [ -s "$f" ]; then 				success=1; 				break; 			fi; 		done; 		[ -n "$success" ]; 	}; 		ddist 'tomcat.tar.gz' "tomcat/tomcat-$TOMCAT_MAJOR/v$TOMCAT_VERSION/bin/apache-tomcat-$TOMCAT_VERSION.tar.gz"; 	echo "$TOMCAT_SHA512 *tomcat.tar.gz" | sha512sum --strict --check -; 	ddist 'tomcat.tar.gz.asc' "tomcat/tomcat-$TOMCAT_MAJOR/v$TOMCAT_VERSION/bin/apache-tomcat-$TOMCAT_VERSION.tar.gz.asc"; 	export GNUPGHOME="$(mktemp -d)"; 	for key in $GPG_KEYS; do 		gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys "$key"; 	done; 	gpg --batch --verify tomcat.tar.gz.asc tomcat.tar.gz; 	tar -xf tomcat.tar.gz --strip-components=1; 	rm bin/*.bat; 	rm tomcat.tar.gz*; 	command -v gpgconf && gpgconf --kill all || :; 	rm -rf "$GNUPGHOME"; 		nativeBuildDir="$(mktemp -d)"; 	tar -xf bin/tomcat-native.tar.gz -C "$nativeBuildDir" --strip-components=1; 	apt-get install -y --no-install-recommends 		dpkg-dev 		gcc 		libapr1-dev 		libssl-dev 		make 	; 	( 		export CATALINA_HOME="$PWD"; 		cd "$nativeBuildDir/native"; 		gnuArch="$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)"; 		aprConfig="$(command -v apr-1-config)"; 		./configure 			--build="$gnuArch" 			--libdir="$TOMCAT_NATIVE_LIBDIR" 			--prefix="$CATALINA_HOME" 			--with-apr="$aprConfig" 			--with-java-home="$JAVA_HOME" 			--with-ssl=yes; 		make -j "$(nproc)"; 		make install; 	); 	rm -rf "$nativeBuildDir"; 	rm bin/tomcat-native.tar.gz; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark > /dev/null; 	find "$TOMCAT_NATIVE_LIBDIR" -type f -executable -exec ldd '{}' ';' 		| awk '/=>/ { print $(NF-1) }' 		| sort -u 		| xargs -r dpkg-query --search 		| cut -d: -f1 		| sort -u 		| xargs -r apt-mark manual 	; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 	rm -rf /var/lib/apt/lists/*; 		find ./bin/ -name '*.sh' -exec sed -ri 's|^#!/bin/sh$|#!/usr/bin/env bash|' '{}' +; 		chmod -R +rX .; 	chmod 777 logs temp work
-# Fri, 01 Nov 2019 02:35:29 GMT
+# Fri, 08 Nov 2019 02:59:07 GMT
 RUN set -e 	&& nativeLines="$(catalina.sh configtest 2>&1)" 	&& nativeLines="$(echo "$nativeLines" | grep 'Apache Tomcat Native')" 	&& nativeLines="$(echo "$nativeLines" | sort -u)" 	&& if ! echo "$nativeLines" | grep 'INFO: Loaded APR based Apache Tomcat Native library' >&2; then 		echo >&2 "$nativeLines"; 		exit 1; 	fi
-# Fri, 01 Nov 2019 02:35:29 GMT
+# Fri, 08 Nov 2019 02:59:07 GMT
 EXPOSE 8080
-# Fri, 01 Nov 2019 02:35:30 GMT
+# Fri, 08 Nov 2019 02:59:08 GMT
 CMD ["catalina.sh" "run"]
-# Fri, 01 Nov 2019 05:46:09 GMT
+# Fri, 08 Nov 2019 03:47:57 GMT
 MAINTAINER Vincent Massol <vincent@massol.net>
-# Fri, 01 Nov 2019 05:48:00 GMT
+# Fri, 08 Nov 2019 03:49:52 GMT
 RUN apt-get update &&   apt-get --no-install-recommends -y install     curl     libreoffice     unzip     procps     libmysql-java &&   rm -rf /var/lib/apt/lists/*
-# Fri, 01 Nov 2019 05:48:01 GMT
+# Fri, 08 Nov 2019 03:49:52 GMT
 ENV XWIKI_VERSION=10.11.9
-# Fri, 01 Nov 2019 05:48:01 GMT
+# Fri, 08 Nov 2019 03:49:53 GMT
 ENV XWIKI_URL_PREFIX=https://maven.xwiki.org/releases/org/xwiki/platform/xwiki-platform-distribution-war/10.11.9
-# Fri, 01 Nov 2019 05:48:01 GMT
+# Fri, 08 Nov 2019 03:49:53 GMT
 ENV XWIKI_DOWNLOAD_SHA256=299fe60d5b32ee1a363ba48ff2346e78eea5f713a0174c20fe9d7531be426a58
-# Fri, 01 Nov 2019 05:48:35 GMT
+# Fri, 08 Nov 2019 03:50:25 GMT
 RUN rm -rf /usr/local/tomcat/webapps/* &&   mkdir -p /usr/local/tomcat/temp &&   mkdir -p /usr/local/xwiki/data &&   curl -fSL "${XWIKI_URL_PREFIX}/xwiki-platform-distribution-war-${XWIKI_VERSION}.war" -o xwiki.war &&   echo "$XWIKI_DOWNLOAD_SHA256 xwiki.war" | sha256sum -c - &&   unzip -d /usr/local/tomcat/webapps/ROOT xwiki.war &&   rm -f xwiki.war
-# Fri, 01 Nov 2019 05:48:36 GMT
+# Fri, 08 Nov 2019 03:50:26 GMT
 RUN cp /usr/share/java/mysql-connector-java-*.jar /usr/local/tomcat/webapps/ROOT/WEB-INF/lib/
-# Fri, 01 Nov 2019 05:48:36 GMT
+# Fri, 08 Nov 2019 03:50:26 GMT
 COPY file:0a1be11e2eb610a1dbcd415404e3a592641110b93090030cb831e3a19a163017 in /usr/local/tomcat/bin/ 
-# Fri, 01 Nov 2019 05:48:36 GMT
+# Fri, 08 Nov 2019 03:50:26 GMT
 COPY file:c4e95f70490b423a9379f336f8f4d780824e06f56fa73bc69a238e245b53e842 in /usr/local/tomcat/webapps/ROOT/WEB-INF/hibernate.cfg.xml 
-# Fri, 01 Nov 2019 05:48:37 GMT
+# Fri, 08 Nov 2019 03:50:27 GMT
 RUN sed -i 's/<id>org.xwiki.platform:xwiki-platform-distribution-war/<id>org.xwiki.platform:xwiki-platform-distribution-docker/'   /usr/local/tomcat/webapps/ROOT/META-INF/extension.xed
-# Fri, 01 Nov 2019 05:48:37 GMT
+# Fri, 08 Nov 2019 03:50:27 GMT
 COPY file:f901b2d7ac3d76cd8346f9aee81b40529183e81d8aa027bb390856ac01fa6cc0 in /usr/local/bin/docker-entrypoint.sh 
-# Fri, 01 Nov 2019 05:48:37 GMT
+# Fri, 08 Nov 2019 03:50:27 GMT
 VOLUME [/usr/local/xwiki]
-# Fri, 01 Nov 2019 05:48:37 GMT
+# Fri, 08 Nov 2019 03:50:27 GMT
 ENTRYPOINT ["docker-entrypoint.sh"]
-# Fri, 01 Nov 2019 05:48:37 GMT
+# Fri, 08 Nov 2019 03:50:27 GMT
 CMD ["xwiki"]
 ```
 
@@ -994,59 +994,59 @@ CMD ["xwiki"]
 		Last Modified: Thu, 31 Oct 2019 22:21:39 GMT  
 		Size: 162.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:b5035666b1cd262e3117ca99ecbe11fc92c973a1164cd5c69bca60165f501520`  
-		Last Modified: Thu, 31 Oct 2019 22:40:53 GMT  
-		Size: 10.8 MB (10842099 bytes)  
+	-	`sha256:da4c04c54fa4a9b55ddef0b116fa7969185639621c525e1fe19f2b194f1ca4bc`  
+		Last Modified: Fri, 08 Nov 2019 02:22:45 GMT  
+		Size: 13.3 MB (13322685 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:efde61b742b5cb70e5b4addf1af5ad7280bffe7d8dd1df5eff600523285f3ea4`  
-		Last Modified: Thu, 31 Oct 2019 22:41:03 GMT  
-		Size: 105.0 MB (105002961 bytes)  
+	-	`sha256:2e619a1c4087f3c7f3728ceb4445f1a7a5039161cf3289478a8883c6ee035404`  
+		Last Modified: Fri, 08 Nov 2019 02:22:53 GMT  
+		Size: 105.1 MB (105052686 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:225d7996c0304b5ffbdcf6098af5c263ffc4d1b4179e9dca599cea72150685aa`  
-		Last Modified: Fri, 01 Nov 2019 02:39:12 GMT  
-		Size: 138.0 B  
+	-	`sha256:9d52f3e37b5909a34e61705bcdbc8935d682242f0c5fccdb29e117df8639b535`  
+		Last Modified: Fri, 08 Nov 2019 03:05:59 GMT  
+		Size: 139.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:79ec1eb33f408e2e622babc4045fe851ed5836f38b9e58daa1eb39284ace03cf`  
-		Last Modified: Fri, 01 Nov 2019 02:39:56 GMT  
-		Size: 11.2 MB (11233772 bytes)  
+	-	`sha256:e36d9bbb9a695ea2424edb1ab9bbf4fd43d87d68ad2e511fed36af7a18d3d3e8`  
+		Last Modified: Fri, 08 Nov 2019 03:06:53 GMT  
+		Size: 11.3 MB (11250353 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:1e181f3682b7d9ea77955bcda4108fc60c381f24ed390b0a3d08b67642aef2a7`  
-		Last Modified: Fri, 01 Nov 2019 02:39:55 GMT  
-		Size: 131.0 B  
+	-	`sha256:32d2a60a869b7029538438ffc8b6bc2975016c77fd3d3e4bc74b106903b3cca4`  
+		Last Modified: Fri, 08 Nov 2019 03:06:51 GMT  
+		Size: 132.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:248409c0f5d78edeb3d761e8c51a335df3b426a41b4ec8cde818dc7c42ac9303`  
-		Last Modified: Fri, 01 Nov 2019 05:54:24 GMT  
-		Size: 182.5 MB (182519889 bytes)  
+	-	`sha256:a0ecb74c3432d2f07db2c599a41070972647d5e39217a796364ea9f894433395`  
+		Last Modified: Fri, 08 Nov 2019 03:56:18 GMT  
+		Size: 179.9 MB (179895164 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:59e11cead95223d99208c1a56b2ff70a4c400bce48fc1a180c920bb8bdfe9b9e`  
-		Last Modified: Fri, 01 Nov 2019 05:54:10 GMT  
-		Size: 245.9 MB (245930567 bytes)  
+	-	`sha256:f60cc6c4e6989a78ffa4eda461e37f0c14fa8d1664ed98154a893b743a133b53`  
+		Last Modified: Fri, 08 Nov 2019 03:56:08 GMT  
+		Size: 245.9 MB (245930552 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:d6d385233a9152fa2829ee24a53aff146593c925d7cbdd903fc89fb68831abb3`  
-		Last Modified: Fri, 01 Nov 2019 05:53:51 GMT  
-		Size: 955.6 KB (955596 bytes)  
+	-	`sha256:211a8ff63ee53dd83cfb2ef14fd7c5f220e870f7b4a24bd7c056a6dfb3ea3195`  
+		Last Modified: Fri, 08 Nov 2019 03:55:45 GMT  
+		Size: 955.6 KB (955606 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:f4c1267abe977a216254032c7bdae4dc95710175a32b47d20bb86fcfab611e53`  
-		Last Modified: Fri, 01 Nov 2019 05:53:51 GMT  
+	-	`sha256:d2e0a05a7c703bf048e0d1025315d34bd397200ba693101fd6293aaa24e39665`  
+		Last Modified: Fri, 08 Nov 2019 03:55:45 GMT  
 		Size: 1.3 KB (1345 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:e0a9fd9bde07de0f3b22e22358c5a553b96b8ffb94f7efdf54be1acb865f294f`  
-		Last Modified: Fri, 01 Nov 2019 05:53:51 GMT  
-		Size: 2.3 KB (2341 bytes)  
+	-	`sha256:07de7e380b498b0a7a00eab52eb6163ee8c032a35ec4b2597ffc611f6c9f7f18`  
+		Last Modified: Fri, 08 Nov 2019 03:55:45 GMT  
+		Size: 2.3 KB (2344 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:9c5892c3d351297bbd95311554d447023392f4d53a0602c76eaaf171fc22a791`  
-		Last Modified: Fri, 01 Nov 2019 05:53:51 GMT  
-		Size: 3.8 KB (3835 bytes)  
+	-	`sha256:360a0fed78607fc123133c9c254e66bd48facd092ed428ed26198dc6bfc0260a`  
+		Last Modified: Fri, 08 Nov 2019 03:55:45 GMT  
+		Size: 3.8 KB (3838 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:6958577bb68ad9dd0aac0e54301206f89b27e741e2a11bf454642821ffe148e6`  
-		Last Modified: Fri, 01 Nov 2019 05:53:51 GMT  
+	-	`sha256:f8f1d28ac8dbc927cf661687f024476d2558c833a1794dad36552cf17b4fad2f`  
+		Last Modified: Fri, 08 Nov 2019 03:55:45 GMT  
 		Size: 2.4 KB (2404 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `xwiki:10-postgres-tomcat`
 
 ```console
-$ docker pull xwiki@sha256:73fccaaa608864b5b071af07e057613e197031530c2a981718e3827f4cd8dc00
+$ docker pull xwiki@sha256:2cf75066811db036a72feaa2c476773888ec9e34d14b8186424224101659ad63
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -1056,14 +1056,14 @@ $ docker pull xwiki@sha256:73fccaaa608864b5b071af07e057613e197031530c2a981718e38
 ### `xwiki:10-postgres-tomcat` - linux; amd64
 
 ```console
-$ docker pull xwiki@sha256:510720581fca923293bfeef79c0a8224b4e3f5717bdedb2eeeb77d79f9954384
+$ docker pull xwiki@sha256:7336446a1f272ff98fc5fc226351e5b019d411718f51f6b8f977b7d94aef754f
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **582.5 MB (582549609 bytes)**  
+-	Total Size: **582.5 MB (582471163 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:8ff560e664b744450f13c4bdf12f8e8d4e74ec87490f4110956734077fa1c26a`
+-	Image ID: `sha256:6d9ce4ab486781eee5120459565ad0d301f0458a52556b0cde046e86de3ece6d`
 -	Entrypoint: `["docker-entrypoint.sh"]`
 -	Default Command: `["xwiki"]`
 
@@ -1080,69 +1080,69 @@ RUN mkdir -p /run/systemd && echo 'docker' > /run/systemd/container
 CMD ["/bin/bash"]
 # Thu, 31 Oct 2019 22:37:37 GMT
 ENV LANG=en_US.UTF-8 LANGUAGE=en_US:en LC_ALL=en_US.UTF-8
-# Thu, 31 Oct 2019 22:38:04 GMT
-RUN apt-get update     && apt-get install -y --no-install-recommends curl ca-certificates locales     && echo "en_US.UTF-8 UTF-8" >> /etc/locale.gen     && locale-gen en_US.UTF-8     && rm -rf /var/lib/apt/lists/*
-# Thu, 31 Oct 2019 22:38:04 GMT
-ENV JAVA_VERSION=jdk8u222-b10
-# Thu, 31 Oct 2019 22:38:10 GMT
-RUN set -eux;     ARCH="$(dpkg --print-architecture)";     case "${ARCH}" in        aarch64|arm64)          ESUM='652776586ede124189dc218174b5922cc97feac81021ad81905900b349a352d2';          BINARY_URL='https://github.com/AdoptOpenJDK/openjdk8-binaries/releases/download/jdk8u222-b10/OpenJDK8U-jdk_aarch64_linux_hotspot_8u222b10.tar.gz';          ;;        armhf)          ESUM='7b3d6ade8c25adca01095ba66642132d8c87a1a8caf3883850e34778453afcec';          BINARY_URL='https://github.com/AdoptOpenJDK/openjdk8-binaries/releases/download/jdk8u222-b10/OpenJDK8U-jdk_arm_linux_hotspot_8u222b10.tar.gz';          ;;        ppc64el|ppc64le)          ESUM='f85de48f1dcfd78a39bf5817d3c2f8247c75df6abd56c8721172bf2bd757eb69';          BINARY_URL='https://github.com/AdoptOpenJDK/openjdk8-binaries/releases/download/jdk8u222-b10/OpenJDK8U-jdk_ppc64le_linux_hotspot_8u222b10.tar.gz';          ;;        s390x)          ESUM='d56d6a128f8827e5baeae379bcb1b3ead2cfd5b1abb03befa4588f89f08ea626';          BINARY_URL='https://github.com/AdoptOpenJDK/openjdk8-binaries/releases/download/jdk8u222-b10/OpenJDK8U-jdk_s390x_linux_hotspot_8u222b10.tar.gz';          ;;        amd64|x86_64)          ESUM='37356281345b93feb4212e6267109b4409b55b06f107619dde4960e402bafa77';          BINARY_URL='https://github.com/AdoptOpenJDK/openjdk8-binaries/releases/download/jdk8u222-b10/OpenJDK8U-jdk_x64_linux_hotspot_8u222b10.tar.gz';          ;;        *)          echo "Unsupported arch: ${ARCH}";          exit 1;          ;;     esac;     curl -LfsSo /tmp/openjdk.tar.gz ${BINARY_URL};     echo "${ESUM} */tmp/openjdk.tar.gz" | sha256sum -c -;     mkdir -p /opt/java/openjdk;     cd /opt/java/openjdk;     tar -xf /tmp/openjdk.tar.gz --strip-components=1;     rm -rf /tmp/openjdk.tar.gz;
-# Thu, 31 Oct 2019 22:38:11 GMT
+# Fri, 08 Nov 2019 02:20:03 GMT
+RUN apt-get update     && apt-get install -y --no-install-recommends curl ca-certificates fontconfig locales     && echo "en_US.UTF-8 UTF-8" >> /etc/locale.gen     && locale-gen en_US.UTF-8     && rm -rf /var/lib/apt/lists/*
+# Fri, 08 Nov 2019 02:20:03 GMT
+ENV JAVA_VERSION=jdk8u232-b09
+# Fri, 08 Nov 2019 02:20:09 GMT
+RUN set -eux;     ARCH="$(dpkg --print-architecture)";     case "${ARCH}" in        ppc64el|ppc64le)          ESUM='da87bdc04b47477b42afc76066dbd96efa35ad967238be03a0081f8840e893a8';          BINARY_URL='https://github.com/AdoptOpenJDK/openjdk8-binaries/releases/download/jdk8u232-b09/OpenJDK8U-jdk_ppc64le_linux_hotspot_8u232b09.tar.gz';          ;;        s390x)          ESUM='bd20cb8bf4cfab9d3e2b2ccfb9a6f9eda1e4e67b4103b9975d29de12c05ad1f5';          BINARY_URL='https://github.com/AdoptOpenJDK/openjdk8-binaries/releases/download/jdk8u232-b09/OpenJDK8U-jdk_s390x_linux_hotspot_8u232b09.tar.gz';          ;;        amd64|x86_64)          ESUM='7b7884f2eb2ba2d47f4c0bf3bb1a2a95b73a3a7734bd47ebf9798483a7bcc423';          BINARY_URL='https://github.com/AdoptOpenJDK/openjdk8-binaries/releases/download/jdk8u232-b09/OpenJDK8U-jdk_x64_linux_hotspot_8u232b09.tar.gz';          ;;        *)          echo "Unsupported arch: ${ARCH}";          exit 1;          ;;     esac;     curl -LfsSo /tmp/openjdk.tar.gz ${BINARY_URL};     echo "${ESUM} */tmp/openjdk.tar.gz" | sha256sum -c -;     mkdir -p /opt/java/openjdk;     cd /opt/java/openjdk;     tar -xf /tmp/openjdk.tar.gz --strip-components=1;     rm -rf /tmp/openjdk.tar.gz;
+# Fri, 08 Nov 2019 02:20:09 GMT
 ENV JAVA_HOME=/opt/java/openjdk PATH=/opt/java/openjdk/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Fri, 01 Nov 2019 02:29:48 GMT
+# Fri, 08 Nov 2019 02:52:20 GMT
 ENV CATALINA_HOME=/usr/local/tomcat
-# Fri, 01 Nov 2019 02:29:48 GMT
+# Fri, 08 Nov 2019 02:52:21 GMT
 ENV PATH=/usr/local/tomcat/bin:/opt/java/openjdk/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Fri, 01 Nov 2019 02:29:49 GMT
+# Fri, 08 Nov 2019 02:52:22 GMT
 RUN mkdir -p "$CATALINA_HOME"
-# Fri, 01 Nov 2019 02:29:49 GMT
+# Fri, 08 Nov 2019 02:52:22 GMT
 WORKDIR /usr/local/tomcat
-# Fri, 01 Nov 2019 02:29:49 GMT
+# Fri, 08 Nov 2019 02:52:23 GMT
 ENV TOMCAT_NATIVE_LIBDIR=/usr/local/tomcat/native-jni-lib
-# Fri, 01 Nov 2019 02:29:49 GMT
+# Fri, 08 Nov 2019 02:52:23 GMT
 ENV LD_LIBRARY_PATH=/usr/local/tomcat/native-jni-lib
-# Fri, 01 Nov 2019 02:34:53 GMT
+# Fri, 08 Nov 2019 02:58:08 GMT
 ENV GPG_KEYS=05AB33110949707C93A279E3D3EFE6B686867BA6 07E48665A34DCAFAE522E5E6266191C37C037D42 47309207D818FFD8DCD3F83F1931D684307A10A5 541FBE7D8F78B25E055DDEE13C370389288584E7 61B832AC2F1C5A90F0F9B00A1C506407564C17A3 713DA88BE50911535FE716F5208B0AB1D63011C7 79F7026C690BAA50B92CD8B66A3AD3F4F22C4FED 9BA44C2621385CB966EBA586F72C284D731FABEE A27677289986DB50844682F8ACB77FC2E86E29AC A9C5DF4D22E99998D9875A5110C01C5A2F6059E7 DCFD35E0BF8CA7344752DE8B6FB21E8933C60243 F3A04C595DB5B6A5F1ECA43E3B7BBB100D811BBE F7DA48BB64BCB84ECBA7EE6935CD23C10D498E23
-# Fri, 01 Nov 2019 02:34:53 GMT
+# Fri, 08 Nov 2019 02:58:08 GMT
 ENV TOMCAT_MAJOR=8
-# Fri, 01 Nov 2019 02:34:53 GMT
+# Fri, 08 Nov 2019 02:58:09 GMT
 ENV TOMCAT_VERSION=8.5.47
-# Fri, 01 Nov 2019 02:34:53 GMT
+# Fri, 08 Nov 2019 02:58:09 GMT
 ENV TOMCAT_SHA512=079b85f3dfca2b137634859208fae6012860201d720d12ff0add3473f1e267d332cb12803958754e1f922599e0d42b7e97f00bcd62584d9148a6f45fde091716
-# Fri, 01 Nov 2019 02:35:26 GMT
+# Fri, 08 Nov 2019 02:59:03 GMT
 RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		gnupg dirmngr 		wget ca-certificates 	; 		ddist() { 		local f="$1"; shift; 		local distFile="$1"; shift; 		local success=; 		local distUrl=; 		for distUrl in 			'https://www.apache.org/dyn/closer.cgi?action=download&filename=' 			https://www-us.apache.org/dist/ 			https://www.apache.org/dist/ 			https://archive.apache.org/dist/ 		; do 			if wget -O "$f" "$distUrl$distFile" && [ -s "$f" ]; then 				success=1; 				break; 			fi; 		done; 		[ -n "$success" ]; 	}; 		ddist 'tomcat.tar.gz' "tomcat/tomcat-$TOMCAT_MAJOR/v$TOMCAT_VERSION/bin/apache-tomcat-$TOMCAT_VERSION.tar.gz"; 	echo "$TOMCAT_SHA512 *tomcat.tar.gz" | sha512sum --strict --check -; 	ddist 'tomcat.tar.gz.asc' "tomcat/tomcat-$TOMCAT_MAJOR/v$TOMCAT_VERSION/bin/apache-tomcat-$TOMCAT_VERSION.tar.gz.asc"; 	export GNUPGHOME="$(mktemp -d)"; 	for key in $GPG_KEYS; do 		gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys "$key"; 	done; 	gpg --batch --verify tomcat.tar.gz.asc tomcat.tar.gz; 	tar -xf tomcat.tar.gz --strip-components=1; 	rm bin/*.bat; 	rm tomcat.tar.gz*; 	command -v gpgconf && gpgconf --kill all || :; 	rm -rf "$GNUPGHOME"; 		nativeBuildDir="$(mktemp -d)"; 	tar -xf bin/tomcat-native.tar.gz -C "$nativeBuildDir" --strip-components=1; 	apt-get install -y --no-install-recommends 		dpkg-dev 		gcc 		libapr1-dev 		libssl-dev 		make 	; 	( 		export CATALINA_HOME="$PWD"; 		cd "$nativeBuildDir/native"; 		gnuArch="$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)"; 		aprConfig="$(command -v apr-1-config)"; 		./configure 			--build="$gnuArch" 			--libdir="$TOMCAT_NATIVE_LIBDIR" 			--prefix="$CATALINA_HOME" 			--with-apr="$aprConfig" 			--with-java-home="$JAVA_HOME" 			--with-ssl=yes; 		make -j "$(nproc)"; 		make install; 	); 	rm -rf "$nativeBuildDir"; 	rm bin/tomcat-native.tar.gz; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark > /dev/null; 	find "$TOMCAT_NATIVE_LIBDIR" -type f -executable -exec ldd '{}' ';' 		| awk '/=>/ { print $(NF-1) }' 		| sort -u 		| xargs -r dpkg-query --search 		| cut -d: -f1 		| sort -u 		| xargs -r apt-mark manual 	; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 	rm -rf /var/lib/apt/lists/*; 		find ./bin/ -name '*.sh' -exec sed -ri 's|^#!/bin/sh$|#!/usr/bin/env bash|' '{}' +; 		chmod -R +rX .; 	chmod 777 logs temp work
-# Fri, 01 Nov 2019 02:35:29 GMT
+# Fri, 08 Nov 2019 02:59:07 GMT
 RUN set -e 	&& nativeLines="$(catalina.sh configtest 2>&1)" 	&& nativeLines="$(echo "$nativeLines" | grep 'Apache Tomcat Native')" 	&& nativeLines="$(echo "$nativeLines" | sort -u)" 	&& if ! echo "$nativeLines" | grep 'INFO: Loaded APR based Apache Tomcat Native library' >&2; then 		echo >&2 "$nativeLines"; 		exit 1; 	fi
-# Fri, 01 Nov 2019 02:35:29 GMT
+# Fri, 08 Nov 2019 02:59:07 GMT
 EXPOSE 8080
-# Fri, 01 Nov 2019 02:35:30 GMT
+# Fri, 08 Nov 2019 02:59:08 GMT
 CMD ["catalina.sh" "run"]
-# Fri, 01 Nov 2019 05:46:09 GMT
+# Fri, 08 Nov 2019 03:47:57 GMT
 MAINTAINER Vincent Massol <vincent@massol.net>
-# Fri, 01 Nov 2019 05:49:41 GMT
+# Fri, 08 Nov 2019 03:51:28 GMT
 RUN apt-get update &&   apt-get --no-install-recommends -y install     curl     libreoffice     unzip     procps     libpostgresql-jdbc-java &&   rm -rf /var/lib/apt/lists/*
-# Fri, 01 Nov 2019 05:49:41 GMT
+# Fri, 08 Nov 2019 03:51:28 GMT
 ENV XWIKI_VERSION=10.11.9
-# Fri, 01 Nov 2019 05:49:41 GMT
+# Fri, 08 Nov 2019 03:51:29 GMT
 ENV XWIKI_URL_PREFIX=https://maven.xwiki.org/releases/org/xwiki/platform/xwiki-platform-distribution-war/10.11.9
-# Fri, 01 Nov 2019 05:49:42 GMT
+# Fri, 08 Nov 2019 03:51:29 GMT
 ENV XWIKI_DOWNLOAD_SHA256=299fe60d5b32ee1a363ba48ff2346e78eea5f713a0174c20fe9d7531be426a58
-# Fri, 01 Nov 2019 05:50:14 GMT
+# Fri, 08 Nov 2019 03:51:59 GMT
 RUN rm -rf /usr/local/tomcat/webapps/* &&   mkdir -p /usr/local/tomcat/temp &&   mkdir -p /usr/local/xwiki/data &&   curl -fSL "${XWIKI_URL_PREFIX}/xwiki-platform-distribution-war-${XWIKI_VERSION}.war" -o xwiki.war &&   echo "$XWIKI_DOWNLOAD_SHA256 xwiki.war" | sha256sum -c - &&   unzip -d /usr/local/tomcat/webapps/ROOT xwiki.war &&   rm -f xwiki.war
-# Fri, 01 Nov 2019 05:50:15 GMT
+# Fri, 08 Nov 2019 03:52:01 GMT
 RUN cp /usr/share/java/postgresql-jdbc4.jar /usr/local/tomcat/webapps/ROOT/WEB-INF/lib/
-# Fri, 01 Nov 2019 05:50:15 GMT
+# Fri, 08 Nov 2019 03:52:01 GMT
 COPY file:0a1be11e2eb610a1dbcd415404e3a592641110b93090030cb831e3a19a163017 in /usr/local/tomcat/bin/ 
-# Fri, 01 Nov 2019 05:50:15 GMT
+# Fri, 08 Nov 2019 03:52:02 GMT
 COPY file:bd68ae28ec068b0f89a2e05a10b1098af3b375c97a69f9255831e8fa6e87f773 in /usr/local/tomcat/webapps/ROOT/WEB-INF/hibernate.cfg.xml 
-# Fri, 01 Nov 2019 05:50:16 GMT
+# Fri, 08 Nov 2019 03:52:02 GMT
 RUN sed -i 's/<id>org.xwiki.platform:xwiki-platform-distribution-war/<id>org.xwiki.platform:xwiki-platform-distribution-docker/'   /usr/local/tomcat/webapps/ROOT/META-INF/extension.xed
-# Fri, 01 Nov 2019 05:50:16 GMT
+# Fri, 08 Nov 2019 03:52:03 GMT
 COPY file:f901b2d7ac3d76cd8346f9aee81b40529183e81d8aa027bb390856ac01fa6cc0 in /usr/local/bin/docker-entrypoint.sh 
-# Fri, 01 Nov 2019 05:50:16 GMT
+# Fri, 08 Nov 2019 03:52:03 GMT
 VOLUME [/usr/local/xwiki]
-# Fri, 01 Nov 2019 05:50:16 GMT
+# Fri, 08 Nov 2019 03:52:03 GMT
 ENTRYPOINT ["docker-entrypoint.sh"]
-# Fri, 01 Nov 2019 05:50:17 GMT
+# Fri, 08 Nov 2019 03:52:03 GMT
 CMD ["xwiki"]
 ```
 
@@ -1163,59 +1163,59 @@ CMD ["xwiki"]
 		Last Modified: Thu, 31 Oct 2019 22:21:39 GMT  
 		Size: 162.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:b5035666b1cd262e3117ca99ecbe11fc92c973a1164cd5c69bca60165f501520`  
-		Last Modified: Thu, 31 Oct 2019 22:40:53 GMT  
-		Size: 10.8 MB (10842099 bytes)  
+	-	`sha256:da4c04c54fa4a9b55ddef0b116fa7969185639621c525e1fe19f2b194f1ca4bc`  
+		Last Modified: Fri, 08 Nov 2019 02:22:45 GMT  
+		Size: 13.3 MB (13322685 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:efde61b742b5cb70e5b4addf1af5ad7280bffe7d8dd1df5eff600523285f3ea4`  
-		Last Modified: Thu, 31 Oct 2019 22:41:03 GMT  
-		Size: 105.0 MB (105002961 bytes)  
+	-	`sha256:2e619a1c4087f3c7f3728ceb4445f1a7a5039161cf3289478a8883c6ee035404`  
+		Last Modified: Fri, 08 Nov 2019 02:22:53 GMT  
+		Size: 105.1 MB (105052686 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:225d7996c0304b5ffbdcf6098af5c263ffc4d1b4179e9dca599cea72150685aa`  
-		Last Modified: Fri, 01 Nov 2019 02:39:12 GMT  
-		Size: 138.0 B  
+	-	`sha256:9d52f3e37b5909a34e61705bcdbc8935d682242f0c5fccdb29e117df8639b535`  
+		Last Modified: Fri, 08 Nov 2019 03:05:59 GMT  
+		Size: 139.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:79ec1eb33f408e2e622babc4045fe851ed5836f38b9e58daa1eb39284ace03cf`  
-		Last Modified: Fri, 01 Nov 2019 02:39:56 GMT  
-		Size: 11.2 MB (11233772 bytes)  
+	-	`sha256:e36d9bbb9a695ea2424edb1ab9bbf4fd43d87d68ad2e511fed36af7a18d3d3e8`  
+		Last Modified: Fri, 08 Nov 2019 03:06:53 GMT  
+		Size: 11.3 MB (11250353 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:1e181f3682b7d9ea77955bcda4108fc60c381f24ed390b0a3d08b67642aef2a7`  
-		Last Modified: Fri, 01 Nov 2019 02:39:55 GMT  
-		Size: 131.0 B  
+	-	`sha256:32d2a60a869b7029538438ffc8b6bc2975016c77fd3d3e4bc74b106903b3cca4`  
+		Last Modified: Fri, 08 Nov 2019 03:06:51 GMT  
+		Size: 132.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:dcf4aa8aa7a3257538cad7f9faea616c74da5211891ba894dbcc9b9710a0c249`  
-		Last Modified: Fri, 01 Nov 2019 05:55:36 GMT  
-		Size: 182.2 MB (182185768 bytes)  
+	-	`sha256:2fcdae1100d077d3795b80a5e54c0346fc292b4d314721bf81cbeab5d1cad0c9`  
+		Last Modified: Fri, 08 Nov 2019 03:57:01 GMT  
+		Size: 179.6 MB (179560416 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:271eddddcf5db8b7382c4a5a27d9848fb7d5fb21f33540c4d568551f8d1a1d74`  
-		Last Modified: Fri, 01 Nov 2019 05:55:05 GMT  
-		Size: 245.9 MB (245930609 bytes)  
+	-	`sha256:e9c0195e272b852492c7f599358c99e7712204ed7071a3f7d48bfa5edc8429b3`  
+		Last Modified: Fri, 08 Nov 2019 03:56:51 GMT  
+		Size: 245.9 MB (245930599 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:65ae8c33ab10be903ca209e3b0340dd40b0ac013067b5905dce5b1590fb6eb25`  
-		Last Modified: Fri, 01 Nov 2019 05:54:46 GMT  
-		Size: 618.9 KB (618853 bytes)  
+	-	`sha256:95965084b5e2103657f340e4d45f96ad9dbc8c820257fb84fab6f3bbd0833ceb`  
+		Last Modified: Fri, 08 Nov 2019 03:56:28 GMT  
+		Size: 618.9 KB (618865 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:5eaf917a4793b28e0de2cf6064d02c2c7f23165867f7200f26e9262942bb5113`  
-		Last Modified: Fri, 01 Nov 2019 05:54:46 GMT  
+	-	`sha256:08f9eccff140a38ee9c426aae4c63d8c21f0e92db3348820c411240df0156827`  
+		Last Modified: Fri, 08 Nov 2019 03:56:28 GMT  
 		Size: 1.3 KB (1344 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:224c12cf161cb91df2d9a67077c6c1fb00abcbb4811ddfd497905f0462cfe175`  
-		Last Modified: Fri, 01 Nov 2019 05:54:46 GMT  
-		Size: 2.5 KB (2481 bytes)  
+	-	`sha256:5069dc1afa774e636d3eb81c76fb8d2a9622cb5847696c251fd5f78cfea28948`  
+		Last Modified: Fri, 08 Nov 2019 03:56:28 GMT  
+		Size: 2.5 KB (2487 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:a92741fd543e631d383d8c7fc2e68c724ddf6802f40e7ca99c5d4de11260cf88`  
-		Last Modified: Fri, 01 Nov 2019 05:54:46 GMT  
-		Size: 3.8 KB (3836 bytes)  
+	-	`sha256:09af7f365508bef54bba891ca7da80be68278562b25792cf5c05e9556188d9b5`  
+		Last Modified: Fri, 08 Nov 2019 03:56:28 GMT  
+		Size: 3.8 KB (3838 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:6bb237db7536872170fc150a94fc0259404a88eb600a3ce9f61e0d20b9dffe3a`  
-		Last Modified: Fri, 01 Nov 2019 05:54:46 GMT  
-		Size: 2.4 KB (2401 bytes)  
+	-	`sha256:df4e73de1508117ac4210c94c2f4e2f8abf840ab184be9fed77905f71b14e600`  
+		Last Modified: Fri, 08 Nov 2019 03:56:28 GMT  
+		Size: 2.4 KB (2403 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `xwiki:11`
 
 ```console
-$ docker pull xwiki@sha256:53a75d8da3c537c83fcaa909aad516c621db42254f9339405d1da00a69e46958
+$ docker pull xwiki@sha256:ffe63967f89e99e68d856ee74850c7a77221dc49a3ea312b352d7e1c19e61c2a
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -1225,14 +1225,14 @@ $ docker pull xwiki@sha256:53a75d8da3c537c83fcaa909aad516c621db42254f9339405d1da
 ### `xwiki:11` - linux; amd64
 
 ```console
-$ docker pull xwiki@sha256:cc179298fdf56b4959adf41e8d1dfc6b6f436bfb2e2eecd999d3d4503ca9ab9d
+$ docker pull xwiki@sha256:b2b5d7d74a28e5a95df8ff0fb3b3bbcc1b9e2153891d62fc0df196a7464edcd3
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **714.2 MB (714193662 bytes)**  
+-	Total Size: **714.2 MB (714231275 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:163f00c14c053c3ae84dd9cc03a9dd6f3685e3c76ec000534299ce2ecd71323e`
+-	Image ID: `sha256:4050fb76b936f3f7dcfe96bae527ffb80bf0c01df874a5e3e86d8c4b56a824e0`
 -	Entrypoint: `["docker-entrypoint.sh"]`
 -	Default Command: `["xwiki"]`
 
@@ -1249,71 +1249,71 @@ RUN mkdir -p /run/systemd && echo 'docker' > /run/systemd/container
 CMD ["/bin/bash"]
 # Thu, 31 Oct 2019 22:37:37 GMT
 ENV LANG=en_US.UTF-8 LANGUAGE=en_US:en LC_ALL=en_US.UTF-8
-# Thu, 31 Oct 2019 22:38:04 GMT
-RUN apt-get update     && apt-get install -y --no-install-recommends curl ca-certificates locales     && echo "en_US.UTF-8 UTF-8" >> /etc/locale.gen     && locale-gen en_US.UTF-8     && rm -rf /var/lib/apt/lists/*
-# Thu, 31 Oct 2019 22:38:23 GMT
-ENV JAVA_VERSION=jdk-11.0.4+11
-# Thu, 31 Oct 2019 22:38:32 GMT
-RUN set -eux;     ARCH="$(dpkg --print-architecture)";     case "${ARCH}" in        aarch64|arm64)          ESUM='10e33e1862638e11a9158947b3d7b461727d8e396e378b171be1eb4dfe12f1ed';          BINARY_URL='https://github.com/AdoptOpenJDK/openjdk11-binaries/releases/download/jdk-11.0.4%2B11/OpenJDK11U-jdk_aarch64_linux_hotspot_11.0.4_11.tar.gz';          ;;        armhf)          ESUM='19f16c4b905055a13457d06ce9a107a54289d3828bf3ae378efc6deb908a5572';          BINARY_URL='https://github.com/AdoptOpenJDK/openjdk11-binaries/releases/download/jdk-11.0.4%2B11/OpenJDK11U-jdk_arm_linux_hotspot_11.0.4_11.tar.gz';          ;;        ppc64el|ppc64le)          ESUM='fc6b616f83fea033edd836c934f3e70764b5aa1dac0446df8a8b49297ca40a5e';          BINARY_URL='https://github.com/AdoptOpenJDK/openjdk11-binaries/releases/download/jdk-11.0.4%2B11/OpenJDK11U-jdk_ppc64le_linux_hotspot_11.0.4_11.tar.gz';          ;;        s390x)          ESUM='9487d27ef65b0cc30481cd0d23466aa6b36c90dfaa8a033166fad67bc37891de';          BINARY_URL='https://github.com/AdoptOpenJDK/openjdk11-binaries/releases/download/jdk-11.0.4%2B11/OpenJDK11U-jdk_s390x_linux_hotspot_11.0.4_11.tar.gz';          ;;        amd64|x86_64)          ESUM='90c33cf3f2ed0bd773f648815de7347e69cfbb3416ef3bf41616ab1c4aa0f5a8';          BINARY_URL='https://github.com/AdoptOpenJDK/openjdk11-binaries/releases/download/jdk-11.0.4%2B11/OpenJDK11U-jdk_x64_linux_hotspot_11.0.4_11.tar.gz';          ;;        *)          echo "Unsupported arch: ${ARCH}";          exit 1;          ;;     esac;     curl -LfsSo /tmp/openjdk.tar.gz ${BINARY_URL};     echo "${ESUM} */tmp/openjdk.tar.gz" | sha256sum -c -;     mkdir -p /opt/java/openjdk;     cd /opt/java/openjdk;     tar -xf /tmp/openjdk.tar.gz --strip-components=1;     rm -rf /tmp/openjdk.tar.gz;
-# Thu, 31 Oct 2019 22:38:32 GMT
+# Fri, 08 Nov 2019 02:20:03 GMT
+RUN apt-get update     && apt-get install -y --no-install-recommends curl ca-certificates fontconfig locales     && echo "en_US.UTF-8 UTF-8" >> /etc/locale.gen     && locale-gen en_US.UTF-8     && rm -rf /var/lib/apt/lists/*
+# Fri, 08 Nov 2019 02:20:26 GMT
+ENV JAVA_VERSION=jdk-11.0.5+10
+# Fri, 08 Nov 2019 02:20:35 GMT
+RUN set -eux;     ARCH="$(dpkg --print-architecture)";     case "${ARCH}" in        armhf)          ESUM='c6b1fda3f8807028cbfcc34a4ded2e8a5a6b6239d2bcc1f06673ea6b1530df94';          BINARY_URL='https://github.com/AdoptOpenJDK/openjdk11-binaries/releases/download/jdk-11.0.5%2B10/OpenJDK11U-jdk_arm_linux_hotspot_11.0.5_10.tar.gz';          ;;        ppc64el|ppc64le)          ESUM='d763481ddc29ac0bdefb24216b3a0bf9afbb058552682567a075f9c0f7da5814';          BINARY_URL='https://github.com/AdoptOpenJDK/openjdk11-binaries/releases/download/jdk-11.0.5%2B10/OpenJDK11U-jdk_ppc64le_linux_hotspot_11.0.5_10.tar.gz';          ;;        amd64|x86_64)          ESUM='6dd0c9c8a740e6c19149e98034fba8e368fd9aa16ab417aa636854d40db1a161';          BINARY_URL='https://github.com/AdoptOpenJDK/openjdk11-binaries/releases/download/jdk-11.0.5%2B10/OpenJDK11U-jdk_x64_linux_hotspot_11.0.5_10.tar.gz';          ;;        *)          echo "Unsupported arch: ${ARCH}";          exit 1;          ;;     esac;     curl -LfsSo /tmp/openjdk.tar.gz ${BINARY_URL};     echo "${ESUM} */tmp/openjdk.tar.gz" | sha256sum -c -;     mkdir -p /opt/java/openjdk;     cd /opt/java/openjdk;     tar -xf /tmp/openjdk.tar.gz --strip-components=1;     rm -rf /tmp/openjdk.tar.gz;
+# Fri, 08 Nov 2019 02:20:36 GMT
 ENV JAVA_HOME=/opt/java/openjdk PATH=/opt/java/openjdk/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Thu, 31 Oct 2019 22:38:33 GMT
+# Fri, 08 Nov 2019 02:20:36 GMT
 CMD ["jshell"]
-# Fri, 01 Nov 2019 02:28:08 GMT
+# Fri, 08 Nov 2019 02:49:06 GMT
 ENV CATALINA_HOME=/usr/local/tomcat
-# Fri, 01 Nov 2019 02:28:08 GMT
+# Fri, 08 Nov 2019 02:49:07 GMT
 ENV PATH=/usr/local/tomcat/bin:/opt/java/openjdk/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Fri, 01 Nov 2019 02:28:09 GMT
+# Fri, 08 Nov 2019 02:49:08 GMT
 RUN mkdir -p "$CATALINA_HOME"
-# Fri, 01 Nov 2019 02:28:09 GMT
+# Fri, 08 Nov 2019 02:49:08 GMT
 WORKDIR /usr/local/tomcat
-# Fri, 01 Nov 2019 02:28:09 GMT
+# Fri, 08 Nov 2019 02:49:09 GMT
 ENV TOMCAT_NATIVE_LIBDIR=/usr/local/tomcat/native-jni-lib
-# Fri, 01 Nov 2019 02:28:09 GMT
+# Fri, 08 Nov 2019 02:49:09 GMT
 ENV LD_LIBRARY_PATH=/usr/local/tomcat/native-jni-lib
-# Fri, 01 Nov 2019 02:33:11 GMT
+# Fri, 08 Nov 2019 02:55:21 GMT
 ENV GPG_KEYS=05AB33110949707C93A279E3D3EFE6B686867BA6 07E48665A34DCAFAE522E5E6266191C37C037D42 47309207D818FFD8DCD3F83F1931D684307A10A5 541FBE7D8F78B25E055DDEE13C370389288584E7 61B832AC2F1C5A90F0F9B00A1C506407564C17A3 713DA88BE50911535FE716F5208B0AB1D63011C7 79F7026C690BAA50B92CD8B66A3AD3F4F22C4FED 9BA44C2621385CB966EBA586F72C284D731FABEE A27677289986DB50844682F8ACB77FC2E86E29AC A9C5DF4D22E99998D9875A5110C01C5A2F6059E7 DCFD35E0BF8CA7344752DE8B6FB21E8933C60243 F3A04C595DB5B6A5F1ECA43E3B7BBB100D811BBE F7DA48BB64BCB84ECBA7EE6935CD23C10D498E23
-# Fri, 01 Nov 2019 02:33:11 GMT
+# Fri, 08 Nov 2019 02:55:21 GMT
 ENV TOMCAT_MAJOR=8
-# Fri, 01 Nov 2019 02:33:11 GMT
+# Fri, 08 Nov 2019 02:55:21 GMT
 ENV TOMCAT_VERSION=8.5.47
-# Fri, 01 Nov 2019 02:33:11 GMT
+# Fri, 08 Nov 2019 02:55:21 GMT
 ENV TOMCAT_SHA512=079b85f3dfca2b137634859208fae6012860201d720d12ff0add3473f1e267d332cb12803958754e1f922599e0d42b7e97f00bcd62584d9148a6f45fde091716
-# Fri, 01 Nov 2019 02:33:46 GMT
+# Fri, 08 Nov 2019 02:56:17 GMT
 RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		gnupg dirmngr 		wget ca-certificates 	; 		ddist() { 		local f="$1"; shift; 		local distFile="$1"; shift; 		local success=; 		local distUrl=; 		for distUrl in 			'https://www.apache.org/dyn/closer.cgi?action=download&filename=' 			https://www-us.apache.org/dist/ 			https://www.apache.org/dist/ 			https://archive.apache.org/dist/ 		; do 			if wget -O "$f" "$distUrl$distFile" && [ -s "$f" ]; then 				success=1; 				break; 			fi; 		done; 		[ -n "$success" ]; 	}; 		ddist 'tomcat.tar.gz' "tomcat/tomcat-$TOMCAT_MAJOR/v$TOMCAT_VERSION/bin/apache-tomcat-$TOMCAT_VERSION.tar.gz"; 	echo "$TOMCAT_SHA512 *tomcat.tar.gz" | sha512sum --strict --check -; 	ddist 'tomcat.tar.gz.asc' "tomcat/tomcat-$TOMCAT_MAJOR/v$TOMCAT_VERSION/bin/apache-tomcat-$TOMCAT_VERSION.tar.gz.asc"; 	export GNUPGHOME="$(mktemp -d)"; 	for key in $GPG_KEYS; do 		gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys "$key"; 	done; 	gpg --batch --verify tomcat.tar.gz.asc tomcat.tar.gz; 	tar -xf tomcat.tar.gz --strip-components=1; 	rm bin/*.bat; 	rm tomcat.tar.gz*; 	command -v gpgconf && gpgconf --kill all || :; 	rm -rf "$GNUPGHOME"; 		nativeBuildDir="$(mktemp -d)"; 	tar -xf bin/tomcat-native.tar.gz -C "$nativeBuildDir" --strip-components=1; 	apt-get install -y --no-install-recommends 		dpkg-dev 		gcc 		libapr1-dev 		libssl-dev 		make 	; 	( 		export CATALINA_HOME="$PWD"; 		cd "$nativeBuildDir/native"; 		gnuArch="$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)"; 		aprConfig="$(command -v apr-1-config)"; 		./configure 			--build="$gnuArch" 			--libdir="$TOMCAT_NATIVE_LIBDIR" 			--prefix="$CATALINA_HOME" 			--with-apr="$aprConfig" 			--with-java-home="$JAVA_HOME" 			--with-ssl=yes; 		make -j "$(nproc)"; 		make install; 	); 	rm -rf "$nativeBuildDir"; 	rm bin/tomcat-native.tar.gz; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark > /dev/null; 	find "$TOMCAT_NATIVE_LIBDIR" -type f -executable -exec ldd '{}' ';' 		| awk '/=>/ { print $(NF-1) }' 		| sort -u 		| xargs -r dpkg-query --search 		| cut -d: -f1 		| sort -u 		| xargs -r apt-mark manual 	; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 	rm -rf /var/lib/apt/lists/*; 		find ./bin/ -name '*.sh' -exec sed -ri 's|^#!/bin/sh$|#!/usr/bin/env bash|' '{}' +; 		chmod -R +rX .; 	chmod 777 logs temp work
-# Fri, 01 Nov 2019 02:33:48 GMT
+# Fri, 08 Nov 2019 02:56:22 GMT
 RUN set -e 	&& nativeLines="$(catalina.sh configtest 2>&1)" 	&& nativeLines="$(echo "$nativeLines" | grep 'Apache Tomcat Native')" 	&& nativeLines="$(echo "$nativeLines" | sort -u)" 	&& if ! echo "$nativeLines" | grep 'INFO: Loaded APR based Apache Tomcat Native library' >&2; then 		echo >&2 "$nativeLines"; 		exit 1; 	fi
-# Fri, 01 Nov 2019 02:33:49 GMT
+# Fri, 08 Nov 2019 02:56:22 GMT
 EXPOSE 8080
-# Fri, 01 Nov 2019 02:33:49 GMT
+# Fri, 08 Nov 2019 02:56:22 GMT
 CMD ["catalina.sh" "run"]
-# Fri, 01 Nov 2019 05:50:23 GMT
+# Fri, 08 Nov 2019 03:52:11 GMT
 MAINTAINER Vincent Massol <vincent@massol.net>
-# Fri, 01 Nov 2019 05:51:08 GMT
+# Fri, 08 Nov 2019 03:52:56 GMT
 RUN apt-get update &&   apt-get --no-install-recommends -y install     curl     libreoffice     unzip     procps     libmysql-java &&   rm -rf /var/lib/apt/lists/*
-# Fri, 01 Nov 2019 05:51:09 GMT
+# Fri, 08 Nov 2019 03:52:57 GMT
 ENV XWIKI_VERSION=11.9
-# Fri, 01 Nov 2019 05:51:09 GMT
+# Fri, 08 Nov 2019 03:52:57 GMT
 ENV XWIKI_URL_PREFIX=https://maven.xwiki.org/releases/org/xwiki/platform/xwiki-platform-distribution-war/11.9
-# Fri, 01 Nov 2019 05:51:09 GMT
+# Fri, 08 Nov 2019 03:52:57 GMT
 ENV XWIKI_DOWNLOAD_SHA256=f4fc420b570c5da374492b236cca5df1239793979126722c1adcc642ee9b335c
-# Fri, 01 Nov 2019 05:51:43 GMT
+# Fri, 08 Nov 2019 03:53:35 GMT
 RUN rm -rf /usr/local/tomcat/webapps/* &&   mkdir -p /usr/local/tomcat/temp &&   mkdir -p /usr/local/xwiki/data &&   curl -fSL "${XWIKI_URL_PREFIX}/xwiki-platform-distribution-war-${XWIKI_VERSION}.war" -o xwiki.war &&   echo "$XWIKI_DOWNLOAD_SHA256 xwiki.war" | sha256sum -c - &&   unzip -d /usr/local/tomcat/webapps/ROOT xwiki.war &&   rm -f xwiki.war
-# Fri, 01 Nov 2019 05:51:44 GMT
+# Fri, 08 Nov 2019 03:53:36 GMT
 RUN cp /usr/share/java/mysql-connector-java-*.jar /usr/local/tomcat/webapps/ROOT/WEB-INF/lib/
-# Fri, 01 Nov 2019 05:51:44 GMT
+# Fri, 08 Nov 2019 03:53:36 GMT
 COPY file:0a1be11e2eb610a1dbcd415404e3a592641110b93090030cb831e3a19a163017 in /usr/local/tomcat/bin/ 
-# Fri, 01 Nov 2019 05:51:44 GMT
+# Fri, 08 Nov 2019 03:53:36 GMT
 COPY file:406eb381f87e0aed57baf469c64efee52199868e8fc75ff865a9661b47910460 in /usr/local/tomcat/webapps/ROOT/WEB-INF/hibernate.cfg.xml 
-# Fri, 01 Nov 2019 05:51:45 GMT
+# Fri, 08 Nov 2019 03:53:37 GMT
 RUN sed -i 's/<id>org.xwiki.platform:xwiki-platform-distribution-war/<id>org.xwiki.platform:xwiki-platform-distribution-docker/'   /usr/local/tomcat/webapps/ROOT/META-INF/extension.xed
-# Fri, 01 Nov 2019 05:51:45 GMT
+# Fri, 08 Nov 2019 03:53:37 GMT
 COPY file:f901b2d7ac3d76cd8346f9aee81b40529183e81d8aa027bb390856ac01fa6cc0 in /usr/local/bin/docker-entrypoint.sh 
-# Fri, 01 Nov 2019 05:51:45 GMT
+# Fri, 08 Nov 2019 03:53:38 GMT
 VOLUME [/usr/local/xwiki]
-# Fri, 01 Nov 2019 05:51:45 GMT
+# Fri, 08 Nov 2019 03:53:38 GMT
 ENTRYPOINT ["docker-entrypoint.sh"]
-# Fri, 01 Nov 2019 05:51:45 GMT
+# Fri, 08 Nov 2019 03:53:38 GMT
 CMD ["xwiki"]
 ```
 
@@ -1334,59 +1334,59 @@ CMD ["xwiki"]
 		Last Modified: Thu, 31 Oct 2019 22:21:39 GMT  
 		Size: 162.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:b5035666b1cd262e3117ca99ecbe11fc92c973a1164cd5c69bca60165f501520`  
-		Last Modified: Thu, 31 Oct 2019 22:40:53 GMT  
-		Size: 10.8 MB (10842099 bytes)  
+	-	`sha256:da4c04c54fa4a9b55ddef0b116fa7969185639621c525e1fe19f2b194f1ca4bc`  
+		Last Modified: Fri, 08 Nov 2019 02:22:45 GMT  
+		Size: 13.3 MB (13322685 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:60e5b903fb31d874f9a1c331071b5e855634a3ae4fa5db5a3ba0dc027bbc9c5f`  
-		Last Modified: Thu, 31 Oct 2019 22:41:36 GMT  
-		Size: 197.7 MB (197657372 bytes)  
+	-	`sha256:10235b1a516d4b068683fe79fb89be475cb2fc41b1ea76fcb4b13872bee27da0`  
+		Last Modified: Fri, 08 Nov 2019 02:23:23 GMT  
+		Size: 197.8 MB (197822335 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:f578b1f2cf8f2f5876b3185c7edd79990e67ec624e21b05b0614d04c5acb0106`  
-		Last Modified: Fri, 01 Nov 2019 02:38:58 GMT  
-		Size: 136.0 B  
+	-	`sha256:24154429346fe2204e6d5dab3868244db95f4163d1be3905621fb2b53653eb2c`  
+		Last Modified: Fri, 08 Nov 2019 03:05:39 GMT  
+		Size: 139.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c12bb0162813b1b0c82e82d87b9bdf6e96ef46d7c3aa9408a9c8d9de7c9a575a`  
-		Last Modified: Fri, 01 Nov 2019 02:39:41 GMT  
-		Size: 11.2 MB (11234934 bytes)  
+	-	`sha256:c572a63a7a797dd43aa600f689a0e6d3c85b8f94a138c2d3181801cd788b36c9`  
+		Last Modified: Fri, 08 Nov 2019 03:06:29 GMT  
+		Size: 11.3 MB (11251478 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:469391c4f542e184022627170e76ee20d527d65dfda5b22daebd7187925accb7`  
-		Last Modified: Fri, 01 Nov 2019 02:39:39 GMT  
-		Size: 133.0 B  
+	-	`sha256:a016684a4a3052bad801984d71c411cd2e4fade815d50a5ad7b5f228041d0b56`  
+		Last Modified: Fri, 08 Nov 2019 03:06:27 GMT  
+		Size: 132.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:a9cb5d6ac8ff25f915684ed166cd0c7ac4a92a7b8f447f7b573721d4e4862395`  
-		Last Modified: Fri, 01 Nov 2019 05:56:17 GMT  
-		Size: 182.5 MB (182519866 bytes)  
+	-	`sha256:c91247e8560d3e2c0be69d9c20160a5c7b9e23fdec44b0fc06fb0dd678003c6f`  
+		Last Modified: Fri, 08 Nov 2019 03:57:46 GMT  
+		Size: 179.9 MB (179895305 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:f1fb9e179e1e0794b0e3ab1fa75f30babb21fe494a3c009b61a9f0bdc94a8007`  
-		Last Modified: Fri, 01 Nov 2019 05:56:06 GMT  
-		Size: 284.2 MB (284247999 bytes)  
+	-	`sha256:a43a14f8330f2612a59d1aa4cab49393e380b7f4f788380e090d66aeeec27413`  
+		Last Modified: Fri, 08 Nov 2019 03:57:35 GMT  
+		Size: 284.2 MB (284248060 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:f55b66004ada5c63d908ecf104a82e72fbc834488f3d3268937752fff2d7cfc1`  
-		Last Modified: Fri, 01 Nov 2019 05:55:45 GMT  
-		Size: 955.6 KB (955598 bytes)  
+	-	`sha256:1829bd8f4cffb2971f321018ab8b1ff5890d9f709c1d694725799bfc7b299f6f`  
+		Last Modified: Fri, 08 Nov 2019 03:57:13 GMT  
+		Size: 955.6 KB (955603 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:d3e3aefe7f08df3a904bfa1b6fb484544d4abf98f8e67e22a29a878e40e9a1eb`  
-		Last Modified: Fri, 01 Nov 2019 05:55:45 GMT  
-		Size: 1.3 KB (1341 bytes)  
+	-	`sha256:444ce5df0050d115c048cca2619eb9669dfd6a497d0b53af7e212670c7e181a2`  
+		Last Modified: Fri, 08 Nov 2019 03:57:13 GMT  
+		Size: 1.3 KB (1346 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:f4f03a2f5eb6e67eb8d75bd2641d80a18e30ecc78cbbbbdb7def4322ba44e011`  
-		Last Modified: Fri, 01 Nov 2019 05:55:45 GMT  
-		Size: 2.3 KB (2334 bytes)  
+	-	`sha256:537505f100251872fe038c9e7189a1515539e54e927362e7a074ddda578b1430`  
+		Last Modified: Fri, 08 Nov 2019 03:57:14 GMT  
+		Size: 2.3 KB (2337 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:137909c9c97785a04ee164d5f5078d18ba1c0764e84e7c1756806863792b9645`  
-		Last Modified: Fri, 01 Nov 2019 05:55:45 GMT  
-		Size: 4.2 KB (4234 bytes)  
+	-	`sha256:93d47669c79bd6ba35cbfae545a94c242480372296a9aa60cd24044cfeb730d7`  
+		Last Modified: Fri, 08 Nov 2019 03:57:13 GMT  
+		Size: 4.2 KB (4235 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:0bea17859d854d5e0c2ad02328d87ec74e591d8c0c40dbae70b52cf059f3826a`  
-		Last Modified: Fri, 01 Nov 2019 05:55:45 GMT  
-		Size: 2.4 KB (2400 bytes)  
+	-	`sha256:0edda1fa0cef0bd96542fe7f721070f136ce34a02bc2976de8f72b54b9fca7f8`  
+		Last Modified: Fri, 08 Nov 2019 03:57:14 GMT  
+		Size: 2.4 KB (2404 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `xwiki:11.9`
 
 ```console
-$ docker pull xwiki@sha256:53a75d8da3c537c83fcaa909aad516c621db42254f9339405d1da00a69e46958
+$ docker pull xwiki@sha256:ffe63967f89e99e68d856ee74850c7a77221dc49a3ea312b352d7e1c19e61c2a
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -1396,14 +1396,14 @@ $ docker pull xwiki@sha256:53a75d8da3c537c83fcaa909aad516c621db42254f9339405d1da
 ### `xwiki:11.9` - linux; amd64
 
 ```console
-$ docker pull xwiki@sha256:cc179298fdf56b4959adf41e8d1dfc6b6f436bfb2e2eecd999d3d4503ca9ab9d
+$ docker pull xwiki@sha256:b2b5d7d74a28e5a95df8ff0fb3b3bbcc1b9e2153891d62fc0df196a7464edcd3
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **714.2 MB (714193662 bytes)**  
+-	Total Size: **714.2 MB (714231275 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:163f00c14c053c3ae84dd9cc03a9dd6f3685e3c76ec000534299ce2ecd71323e`
+-	Image ID: `sha256:4050fb76b936f3f7dcfe96bae527ffb80bf0c01df874a5e3e86d8c4b56a824e0`
 -	Entrypoint: `["docker-entrypoint.sh"]`
 -	Default Command: `["xwiki"]`
 
@@ -1420,71 +1420,71 @@ RUN mkdir -p /run/systemd && echo 'docker' > /run/systemd/container
 CMD ["/bin/bash"]
 # Thu, 31 Oct 2019 22:37:37 GMT
 ENV LANG=en_US.UTF-8 LANGUAGE=en_US:en LC_ALL=en_US.UTF-8
-# Thu, 31 Oct 2019 22:38:04 GMT
-RUN apt-get update     && apt-get install -y --no-install-recommends curl ca-certificates locales     && echo "en_US.UTF-8 UTF-8" >> /etc/locale.gen     && locale-gen en_US.UTF-8     && rm -rf /var/lib/apt/lists/*
-# Thu, 31 Oct 2019 22:38:23 GMT
-ENV JAVA_VERSION=jdk-11.0.4+11
-# Thu, 31 Oct 2019 22:38:32 GMT
-RUN set -eux;     ARCH="$(dpkg --print-architecture)";     case "${ARCH}" in        aarch64|arm64)          ESUM='10e33e1862638e11a9158947b3d7b461727d8e396e378b171be1eb4dfe12f1ed';          BINARY_URL='https://github.com/AdoptOpenJDK/openjdk11-binaries/releases/download/jdk-11.0.4%2B11/OpenJDK11U-jdk_aarch64_linux_hotspot_11.0.4_11.tar.gz';          ;;        armhf)          ESUM='19f16c4b905055a13457d06ce9a107a54289d3828bf3ae378efc6deb908a5572';          BINARY_URL='https://github.com/AdoptOpenJDK/openjdk11-binaries/releases/download/jdk-11.0.4%2B11/OpenJDK11U-jdk_arm_linux_hotspot_11.0.4_11.tar.gz';          ;;        ppc64el|ppc64le)          ESUM='fc6b616f83fea033edd836c934f3e70764b5aa1dac0446df8a8b49297ca40a5e';          BINARY_URL='https://github.com/AdoptOpenJDK/openjdk11-binaries/releases/download/jdk-11.0.4%2B11/OpenJDK11U-jdk_ppc64le_linux_hotspot_11.0.4_11.tar.gz';          ;;        s390x)          ESUM='9487d27ef65b0cc30481cd0d23466aa6b36c90dfaa8a033166fad67bc37891de';          BINARY_URL='https://github.com/AdoptOpenJDK/openjdk11-binaries/releases/download/jdk-11.0.4%2B11/OpenJDK11U-jdk_s390x_linux_hotspot_11.0.4_11.tar.gz';          ;;        amd64|x86_64)          ESUM='90c33cf3f2ed0bd773f648815de7347e69cfbb3416ef3bf41616ab1c4aa0f5a8';          BINARY_URL='https://github.com/AdoptOpenJDK/openjdk11-binaries/releases/download/jdk-11.0.4%2B11/OpenJDK11U-jdk_x64_linux_hotspot_11.0.4_11.tar.gz';          ;;        *)          echo "Unsupported arch: ${ARCH}";          exit 1;          ;;     esac;     curl -LfsSo /tmp/openjdk.tar.gz ${BINARY_URL};     echo "${ESUM} */tmp/openjdk.tar.gz" | sha256sum -c -;     mkdir -p /opt/java/openjdk;     cd /opt/java/openjdk;     tar -xf /tmp/openjdk.tar.gz --strip-components=1;     rm -rf /tmp/openjdk.tar.gz;
-# Thu, 31 Oct 2019 22:38:32 GMT
+# Fri, 08 Nov 2019 02:20:03 GMT
+RUN apt-get update     && apt-get install -y --no-install-recommends curl ca-certificates fontconfig locales     && echo "en_US.UTF-8 UTF-8" >> /etc/locale.gen     && locale-gen en_US.UTF-8     && rm -rf /var/lib/apt/lists/*
+# Fri, 08 Nov 2019 02:20:26 GMT
+ENV JAVA_VERSION=jdk-11.0.5+10
+# Fri, 08 Nov 2019 02:20:35 GMT
+RUN set -eux;     ARCH="$(dpkg --print-architecture)";     case "${ARCH}" in        armhf)          ESUM='c6b1fda3f8807028cbfcc34a4ded2e8a5a6b6239d2bcc1f06673ea6b1530df94';          BINARY_URL='https://github.com/AdoptOpenJDK/openjdk11-binaries/releases/download/jdk-11.0.5%2B10/OpenJDK11U-jdk_arm_linux_hotspot_11.0.5_10.tar.gz';          ;;        ppc64el|ppc64le)          ESUM='d763481ddc29ac0bdefb24216b3a0bf9afbb058552682567a075f9c0f7da5814';          BINARY_URL='https://github.com/AdoptOpenJDK/openjdk11-binaries/releases/download/jdk-11.0.5%2B10/OpenJDK11U-jdk_ppc64le_linux_hotspot_11.0.5_10.tar.gz';          ;;        amd64|x86_64)          ESUM='6dd0c9c8a740e6c19149e98034fba8e368fd9aa16ab417aa636854d40db1a161';          BINARY_URL='https://github.com/AdoptOpenJDK/openjdk11-binaries/releases/download/jdk-11.0.5%2B10/OpenJDK11U-jdk_x64_linux_hotspot_11.0.5_10.tar.gz';          ;;        *)          echo "Unsupported arch: ${ARCH}";          exit 1;          ;;     esac;     curl -LfsSo /tmp/openjdk.tar.gz ${BINARY_URL};     echo "${ESUM} */tmp/openjdk.tar.gz" | sha256sum -c -;     mkdir -p /opt/java/openjdk;     cd /opt/java/openjdk;     tar -xf /tmp/openjdk.tar.gz --strip-components=1;     rm -rf /tmp/openjdk.tar.gz;
+# Fri, 08 Nov 2019 02:20:36 GMT
 ENV JAVA_HOME=/opt/java/openjdk PATH=/opt/java/openjdk/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Thu, 31 Oct 2019 22:38:33 GMT
+# Fri, 08 Nov 2019 02:20:36 GMT
 CMD ["jshell"]
-# Fri, 01 Nov 2019 02:28:08 GMT
+# Fri, 08 Nov 2019 02:49:06 GMT
 ENV CATALINA_HOME=/usr/local/tomcat
-# Fri, 01 Nov 2019 02:28:08 GMT
+# Fri, 08 Nov 2019 02:49:07 GMT
 ENV PATH=/usr/local/tomcat/bin:/opt/java/openjdk/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Fri, 01 Nov 2019 02:28:09 GMT
+# Fri, 08 Nov 2019 02:49:08 GMT
 RUN mkdir -p "$CATALINA_HOME"
-# Fri, 01 Nov 2019 02:28:09 GMT
+# Fri, 08 Nov 2019 02:49:08 GMT
 WORKDIR /usr/local/tomcat
-# Fri, 01 Nov 2019 02:28:09 GMT
+# Fri, 08 Nov 2019 02:49:09 GMT
 ENV TOMCAT_NATIVE_LIBDIR=/usr/local/tomcat/native-jni-lib
-# Fri, 01 Nov 2019 02:28:09 GMT
+# Fri, 08 Nov 2019 02:49:09 GMT
 ENV LD_LIBRARY_PATH=/usr/local/tomcat/native-jni-lib
-# Fri, 01 Nov 2019 02:33:11 GMT
+# Fri, 08 Nov 2019 02:55:21 GMT
 ENV GPG_KEYS=05AB33110949707C93A279E3D3EFE6B686867BA6 07E48665A34DCAFAE522E5E6266191C37C037D42 47309207D818FFD8DCD3F83F1931D684307A10A5 541FBE7D8F78B25E055DDEE13C370389288584E7 61B832AC2F1C5A90F0F9B00A1C506407564C17A3 713DA88BE50911535FE716F5208B0AB1D63011C7 79F7026C690BAA50B92CD8B66A3AD3F4F22C4FED 9BA44C2621385CB966EBA586F72C284D731FABEE A27677289986DB50844682F8ACB77FC2E86E29AC A9C5DF4D22E99998D9875A5110C01C5A2F6059E7 DCFD35E0BF8CA7344752DE8B6FB21E8933C60243 F3A04C595DB5B6A5F1ECA43E3B7BBB100D811BBE F7DA48BB64BCB84ECBA7EE6935CD23C10D498E23
-# Fri, 01 Nov 2019 02:33:11 GMT
+# Fri, 08 Nov 2019 02:55:21 GMT
 ENV TOMCAT_MAJOR=8
-# Fri, 01 Nov 2019 02:33:11 GMT
+# Fri, 08 Nov 2019 02:55:21 GMT
 ENV TOMCAT_VERSION=8.5.47
-# Fri, 01 Nov 2019 02:33:11 GMT
+# Fri, 08 Nov 2019 02:55:21 GMT
 ENV TOMCAT_SHA512=079b85f3dfca2b137634859208fae6012860201d720d12ff0add3473f1e267d332cb12803958754e1f922599e0d42b7e97f00bcd62584d9148a6f45fde091716
-# Fri, 01 Nov 2019 02:33:46 GMT
+# Fri, 08 Nov 2019 02:56:17 GMT
 RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		gnupg dirmngr 		wget ca-certificates 	; 		ddist() { 		local f="$1"; shift; 		local distFile="$1"; shift; 		local success=; 		local distUrl=; 		for distUrl in 			'https://www.apache.org/dyn/closer.cgi?action=download&filename=' 			https://www-us.apache.org/dist/ 			https://www.apache.org/dist/ 			https://archive.apache.org/dist/ 		; do 			if wget -O "$f" "$distUrl$distFile" && [ -s "$f" ]; then 				success=1; 				break; 			fi; 		done; 		[ -n "$success" ]; 	}; 		ddist 'tomcat.tar.gz' "tomcat/tomcat-$TOMCAT_MAJOR/v$TOMCAT_VERSION/bin/apache-tomcat-$TOMCAT_VERSION.tar.gz"; 	echo "$TOMCAT_SHA512 *tomcat.tar.gz" | sha512sum --strict --check -; 	ddist 'tomcat.tar.gz.asc' "tomcat/tomcat-$TOMCAT_MAJOR/v$TOMCAT_VERSION/bin/apache-tomcat-$TOMCAT_VERSION.tar.gz.asc"; 	export GNUPGHOME="$(mktemp -d)"; 	for key in $GPG_KEYS; do 		gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys "$key"; 	done; 	gpg --batch --verify tomcat.tar.gz.asc tomcat.tar.gz; 	tar -xf tomcat.tar.gz --strip-components=1; 	rm bin/*.bat; 	rm tomcat.tar.gz*; 	command -v gpgconf && gpgconf --kill all || :; 	rm -rf "$GNUPGHOME"; 		nativeBuildDir="$(mktemp -d)"; 	tar -xf bin/tomcat-native.tar.gz -C "$nativeBuildDir" --strip-components=1; 	apt-get install -y --no-install-recommends 		dpkg-dev 		gcc 		libapr1-dev 		libssl-dev 		make 	; 	( 		export CATALINA_HOME="$PWD"; 		cd "$nativeBuildDir/native"; 		gnuArch="$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)"; 		aprConfig="$(command -v apr-1-config)"; 		./configure 			--build="$gnuArch" 			--libdir="$TOMCAT_NATIVE_LIBDIR" 			--prefix="$CATALINA_HOME" 			--with-apr="$aprConfig" 			--with-java-home="$JAVA_HOME" 			--with-ssl=yes; 		make -j "$(nproc)"; 		make install; 	); 	rm -rf "$nativeBuildDir"; 	rm bin/tomcat-native.tar.gz; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark > /dev/null; 	find "$TOMCAT_NATIVE_LIBDIR" -type f -executable -exec ldd '{}' ';' 		| awk '/=>/ { print $(NF-1) }' 		| sort -u 		| xargs -r dpkg-query --search 		| cut -d: -f1 		| sort -u 		| xargs -r apt-mark manual 	; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 	rm -rf /var/lib/apt/lists/*; 		find ./bin/ -name '*.sh' -exec sed -ri 's|^#!/bin/sh$|#!/usr/bin/env bash|' '{}' +; 		chmod -R +rX .; 	chmod 777 logs temp work
-# Fri, 01 Nov 2019 02:33:48 GMT
+# Fri, 08 Nov 2019 02:56:22 GMT
 RUN set -e 	&& nativeLines="$(catalina.sh configtest 2>&1)" 	&& nativeLines="$(echo "$nativeLines" | grep 'Apache Tomcat Native')" 	&& nativeLines="$(echo "$nativeLines" | sort -u)" 	&& if ! echo "$nativeLines" | grep 'INFO: Loaded APR based Apache Tomcat Native library' >&2; then 		echo >&2 "$nativeLines"; 		exit 1; 	fi
-# Fri, 01 Nov 2019 02:33:49 GMT
+# Fri, 08 Nov 2019 02:56:22 GMT
 EXPOSE 8080
-# Fri, 01 Nov 2019 02:33:49 GMT
+# Fri, 08 Nov 2019 02:56:22 GMT
 CMD ["catalina.sh" "run"]
-# Fri, 01 Nov 2019 05:50:23 GMT
+# Fri, 08 Nov 2019 03:52:11 GMT
 MAINTAINER Vincent Massol <vincent@massol.net>
-# Fri, 01 Nov 2019 05:51:08 GMT
+# Fri, 08 Nov 2019 03:52:56 GMT
 RUN apt-get update &&   apt-get --no-install-recommends -y install     curl     libreoffice     unzip     procps     libmysql-java &&   rm -rf /var/lib/apt/lists/*
-# Fri, 01 Nov 2019 05:51:09 GMT
+# Fri, 08 Nov 2019 03:52:57 GMT
 ENV XWIKI_VERSION=11.9
-# Fri, 01 Nov 2019 05:51:09 GMT
+# Fri, 08 Nov 2019 03:52:57 GMT
 ENV XWIKI_URL_PREFIX=https://maven.xwiki.org/releases/org/xwiki/platform/xwiki-platform-distribution-war/11.9
-# Fri, 01 Nov 2019 05:51:09 GMT
+# Fri, 08 Nov 2019 03:52:57 GMT
 ENV XWIKI_DOWNLOAD_SHA256=f4fc420b570c5da374492b236cca5df1239793979126722c1adcc642ee9b335c
-# Fri, 01 Nov 2019 05:51:43 GMT
+# Fri, 08 Nov 2019 03:53:35 GMT
 RUN rm -rf /usr/local/tomcat/webapps/* &&   mkdir -p /usr/local/tomcat/temp &&   mkdir -p /usr/local/xwiki/data &&   curl -fSL "${XWIKI_URL_PREFIX}/xwiki-platform-distribution-war-${XWIKI_VERSION}.war" -o xwiki.war &&   echo "$XWIKI_DOWNLOAD_SHA256 xwiki.war" | sha256sum -c - &&   unzip -d /usr/local/tomcat/webapps/ROOT xwiki.war &&   rm -f xwiki.war
-# Fri, 01 Nov 2019 05:51:44 GMT
+# Fri, 08 Nov 2019 03:53:36 GMT
 RUN cp /usr/share/java/mysql-connector-java-*.jar /usr/local/tomcat/webapps/ROOT/WEB-INF/lib/
-# Fri, 01 Nov 2019 05:51:44 GMT
+# Fri, 08 Nov 2019 03:53:36 GMT
 COPY file:0a1be11e2eb610a1dbcd415404e3a592641110b93090030cb831e3a19a163017 in /usr/local/tomcat/bin/ 
-# Fri, 01 Nov 2019 05:51:44 GMT
+# Fri, 08 Nov 2019 03:53:36 GMT
 COPY file:406eb381f87e0aed57baf469c64efee52199868e8fc75ff865a9661b47910460 in /usr/local/tomcat/webapps/ROOT/WEB-INF/hibernate.cfg.xml 
-# Fri, 01 Nov 2019 05:51:45 GMT
+# Fri, 08 Nov 2019 03:53:37 GMT
 RUN sed -i 's/<id>org.xwiki.platform:xwiki-platform-distribution-war/<id>org.xwiki.platform:xwiki-platform-distribution-docker/'   /usr/local/tomcat/webapps/ROOT/META-INF/extension.xed
-# Fri, 01 Nov 2019 05:51:45 GMT
+# Fri, 08 Nov 2019 03:53:37 GMT
 COPY file:f901b2d7ac3d76cd8346f9aee81b40529183e81d8aa027bb390856ac01fa6cc0 in /usr/local/bin/docker-entrypoint.sh 
-# Fri, 01 Nov 2019 05:51:45 GMT
+# Fri, 08 Nov 2019 03:53:38 GMT
 VOLUME [/usr/local/xwiki]
-# Fri, 01 Nov 2019 05:51:45 GMT
+# Fri, 08 Nov 2019 03:53:38 GMT
 ENTRYPOINT ["docker-entrypoint.sh"]
-# Fri, 01 Nov 2019 05:51:45 GMT
+# Fri, 08 Nov 2019 03:53:38 GMT
 CMD ["xwiki"]
 ```
 
@@ -1505,59 +1505,59 @@ CMD ["xwiki"]
 		Last Modified: Thu, 31 Oct 2019 22:21:39 GMT  
 		Size: 162.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:b5035666b1cd262e3117ca99ecbe11fc92c973a1164cd5c69bca60165f501520`  
-		Last Modified: Thu, 31 Oct 2019 22:40:53 GMT  
-		Size: 10.8 MB (10842099 bytes)  
+	-	`sha256:da4c04c54fa4a9b55ddef0b116fa7969185639621c525e1fe19f2b194f1ca4bc`  
+		Last Modified: Fri, 08 Nov 2019 02:22:45 GMT  
+		Size: 13.3 MB (13322685 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:60e5b903fb31d874f9a1c331071b5e855634a3ae4fa5db5a3ba0dc027bbc9c5f`  
-		Last Modified: Thu, 31 Oct 2019 22:41:36 GMT  
-		Size: 197.7 MB (197657372 bytes)  
+	-	`sha256:10235b1a516d4b068683fe79fb89be475cb2fc41b1ea76fcb4b13872bee27da0`  
+		Last Modified: Fri, 08 Nov 2019 02:23:23 GMT  
+		Size: 197.8 MB (197822335 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:f578b1f2cf8f2f5876b3185c7edd79990e67ec624e21b05b0614d04c5acb0106`  
-		Last Modified: Fri, 01 Nov 2019 02:38:58 GMT  
-		Size: 136.0 B  
+	-	`sha256:24154429346fe2204e6d5dab3868244db95f4163d1be3905621fb2b53653eb2c`  
+		Last Modified: Fri, 08 Nov 2019 03:05:39 GMT  
+		Size: 139.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c12bb0162813b1b0c82e82d87b9bdf6e96ef46d7c3aa9408a9c8d9de7c9a575a`  
-		Last Modified: Fri, 01 Nov 2019 02:39:41 GMT  
-		Size: 11.2 MB (11234934 bytes)  
+	-	`sha256:c572a63a7a797dd43aa600f689a0e6d3c85b8f94a138c2d3181801cd788b36c9`  
+		Last Modified: Fri, 08 Nov 2019 03:06:29 GMT  
+		Size: 11.3 MB (11251478 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:469391c4f542e184022627170e76ee20d527d65dfda5b22daebd7187925accb7`  
-		Last Modified: Fri, 01 Nov 2019 02:39:39 GMT  
-		Size: 133.0 B  
+	-	`sha256:a016684a4a3052bad801984d71c411cd2e4fade815d50a5ad7b5f228041d0b56`  
+		Last Modified: Fri, 08 Nov 2019 03:06:27 GMT  
+		Size: 132.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:a9cb5d6ac8ff25f915684ed166cd0c7ac4a92a7b8f447f7b573721d4e4862395`  
-		Last Modified: Fri, 01 Nov 2019 05:56:17 GMT  
-		Size: 182.5 MB (182519866 bytes)  
+	-	`sha256:c91247e8560d3e2c0be69d9c20160a5c7b9e23fdec44b0fc06fb0dd678003c6f`  
+		Last Modified: Fri, 08 Nov 2019 03:57:46 GMT  
+		Size: 179.9 MB (179895305 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:f1fb9e179e1e0794b0e3ab1fa75f30babb21fe494a3c009b61a9f0bdc94a8007`  
-		Last Modified: Fri, 01 Nov 2019 05:56:06 GMT  
-		Size: 284.2 MB (284247999 bytes)  
+	-	`sha256:a43a14f8330f2612a59d1aa4cab49393e380b7f4f788380e090d66aeeec27413`  
+		Last Modified: Fri, 08 Nov 2019 03:57:35 GMT  
+		Size: 284.2 MB (284248060 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:f55b66004ada5c63d908ecf104a82e72fbc834488f3d3268937752fff2d7cfc1`  
-		Last Modified: Fri, 01 Nov 2019 05:55:45 GMT  
-		Size: 955.6 KB (955598 bytes)  
+	-	`sha256:1829bd8f4cffb2971f321018ab8b1ff5890d9f709c1d694725799bfc7b299f6f`  
+		Last Modified: Fri, 08 Nov 2019 03:57:13 GMT  
+		Size: 955.6 KB (955603 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:d3e3aefe7f08df3a904bfa1b6fb484544d4abf98f8e67e22a29a878e40e9a1eb`  
-		Last Modified: Fri, 01 Nov 2019 05:55:45 GMT  
-		Size: 1.3 KB (1341 bytes)  
+	-	`sha256:444ce5df0050d115c048cca2619eb9669dfd6a497d0b53af7e212670c7e181a2`  
+		Last Modified: Fri, 08 Nov 2019 03:57:13 GMT  
+		Size: 1.3 KB (1346 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:f4f03a2f5eb6e67eb8d75bd2641d80a18e30ecc78cbbbbdb7def4322ba44e011`  
-		Last Modified: Fri, 01 Nov 2019 05:55:45 GMT  
-		Size: 2.3 KB (2334 bytes)  
+	-	`sha256:537505f100251872fe038c9e7189a1515539e54e927362e7a074ddda578b1430`  
+		Last Modified: Fri, 08 Nov 2019 03:57:14 GMT  
+		Size: 2.3 KB (2337 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:137909c9c97785a04ee164d5f5078d18ba1c0764e84e7c1756806863792b9645`  
-		Last Modified: Fri, 01 Nov 2019 05:55:45 GMT  
-		Size: 4.2 KB (4234 bytes)  
+	-	`sha256:93d47669c79bd6ba35cbfae545a94c242480372296a9aa60cd24044cfeb730d7`  
+		Last Modified: Fri, 08 Nov 2019 03:57:13 GMT  
+		Size: 4.2 KB (4235 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:0bea17859d854d5e0c2ad02328d87ec74e591d8c0c40dbae70b52cf059f3826a`  
-		Last Modified: Fri, 01 Nov 2019 05:55:45 GMT  
-		Size: 2.4 KB (2400 bytes)  
+	-	`sha256:0edda1fa0cef0bd96542fe7f721070f136ce34a02bc2976de8f72b54b9fca7f8`  
+		Last Modified: Fri, 08 Nov 2019 03:57:14 GMT  
+		Size: 2.4 KB (2404 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `xwiki:11.9-mysql-tomcat`
 
 ```console
-$ docker pull xwiki@sha256:53a75d8da3c537c83fcaa909aad516c621db42254f9339405d1da00a69e46958
+$ docker pull xwiki@sha256:ffe63967f89e99e68d856ee74850c7a77221dc49a3ea312b352d7e1c19e61c2a
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -1567,14 +1567,14 @@ $ docker pull xwiki@sha256:53a75d8da3c537c83fcaa909aad516c621db42254f9339405d1da
 ### `xwiki:11.9-mysql-tomcat` - linux; amd64
 
 ```console
-$ docker pull xwiki@sha256:cc179298fdf56b4959adf41e8d1dfc6b6f436bfb2e2eecd999d3d4503ca9ab9d
+$ docker pull xwiki@sha256:b2b5d7d74a28e5a95df8ff0fb3b3bbcc1b9e2153891d62fc0df196a7464edcd3
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **714.2 MB (714193662 bytes)**  
+-	Total Size: **714.2 MB (714231275 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:163f00c14c053c3ae84dd9cc03a9dd6f3685e3c76ec000534299ce2ecd71323e`
+-	Image ID: `sha256:4050fb76b936f3f7dcfe96bae527ffb80bf0c01df874a5e3e86d8c4b56a824e0`
 -	Entrypoint: `["docker-entrypoint.sh"]`
 -	Default Command: `["xwiki"]`
 
@@ -1591,71 +1591,71 @@ RUN mkdir -p /run/systemd && echo 'docker' > /run/systemd/container
 CMD ["/bin/bash"]
 # Thu, 31 Oct 2019 22:37:37 GMT
 ENV LANG=en_US.UTF-8 LANGUAGE=en_US:en LC_ALL=en_US.UTF-8
-# Thu, 31 Oct 2019 22:38:04 GMT
-RUN apt-get update     && apt-get install -y --no-install-recommends curl ca-certificates locales     && echo "en_US.UTF-8 UTF-8" >> /etc/locale.gen     && locale-gen en_US.UTF-8     && rm -rf /var/lib/apt/lists/*
-# Thu, 31 Oct 2019 22:38:23 GMT
-ENV JAVA_VERSION=jdk-11.0.4+11
-# Thu, 31 Oct 2019 22:38:32 GMT
-RUN set -eux;     ARCH="$(dpkg --print-architecture)";     case "${ARCH}" in        aarch64|arm64)          ESUM='10e33e1862638e11a9158947b3d7b461727d8e396e378b171be1eb4dfe12f1ed';          BINARY_URL='https://github.com/AdoptOpenJDK/openjdk11-binaries/releases/download/jdk-11.0.4%2B11/OpenJDK11U-jdk_aarch64_linux_hotspot_11.0.4_11.tar.gz';          ;;        armhf)          ESUM='19f16c4b905055a13457d06ce9a107a54289d3828bf3ae378efc6deb908a5572';          BINARY_URL='https://github.com/AdoptOpenJDK/openjdk11-binaries/releases/download/jdk-11.0.4%2B11/OpenJDK11U-jdk_arm_linux_hotspot_11.0.4_11.tar.gz';          ;;        ppc64el|ppc64le)          ESUM='fc6b616f83fea033edd836c934f3e70764b5aa1dac0446df8a8b49297ca40a5e';          BINARY_URL='https://github.com/AdoptOpenJDK/openjdk11-binaries/releases/download/jdk-11.0.4%2B11/OpenJDK11U-jdk_ppc64le_linux_hotspot_11.0.4_11.tar.gz';          ;;        s390x)          ESUM='9487d27ef65b0cc30481cd0d23466aa6b36c90dfaa8a033166fad67bc37891de';          BINARY_URL='https://github.com/AdoptOpenJDK/openjdk11-binaries/releases/download/jdk-11.0.4%2B11/OpenJDK11U-jdk_s390x_linux_hotspot_11.0.4_11.tar.gz';          ;;        amd64|x86_64)          ESUM='90c33cf3f2ed0bd773f648815de7347e69cfbb3416ef3bf41616ab1c4aa0f5a8';          BINARY_URL='https://github.com/AdoptOpenJDK/openjdk11-binaries/releases/download/jdk-11.0.4%2B11/OpenJDK11U-jdk_x64_linux_hotspot_11.0.4_11.tar.gz';          ;;        *)          echo "Unsupported arch: ${ARCH}";          exit 1;          ;;     esac;     curl -LfsSo /tmp/openjdk.tar.gz ${BINARY_URL};     echo "${ESUM} */tmp/openjdk.tar.gz" | sha256sum -c -;     mkdir -p /opt/java/openjdk;     cd /opt/java/openjdk;     tar -xf /tmp/openjdk.tar.gz --strip-components=1;     rm -rf /tmp/openjdk.tar.gz;
-# Thu, 31 Oct 2019 22:38:32 GMT
+# Fri, 08 Nov 2019 02:20:03 GMT
+RUN apt-get update     && apt-get install -y --no-install-recommends curl ca-certificates fontconfig locales     && echo "en_US.UTF-8 UTF-8" >> /etc/locale.gen     && locale-gen en_US.UTF-8     && rm -rf /var/lib/apt/lists/*
+# Fri, 08 Nov 2019 02:20:26 GMT
+ENV JAVA_VERSION=jdk-11.0.5+10
+# Fri, 08 Nov 2019 02:20:35 GMT
+RUN set -eux;     ARCH="$(dpkg --print-architecture)";     case "${ARCH}" in        armhf)          ESUM='c6b1fda3f8807028cbfcc34a4ded2e8a5a6b6239d2bcc1f06673ea6b1530df94';          BINARY_URL='https://github.com/AdoptOpenJDK/openjdk11-binaries/releases/download/jdk-11.0.5%2B10/OpenJDK11U-jdk_arm_linux_hotspot_11.0.5_10.tar.gz';          ;;        ppc64el|ppc64le)          ESUM='d763481ddc29ac0bdefb24216b3a0bf9afbb058552682567a075f9c0f7da5814';          BINARY_URL='https://github.com/AdoptOpenJDK/openjdk11-binaries/releases/download/jdk-11.0.5%2B10/OpenJDK11U-jdk_ppc64le_linux_hotspot_11.0.5_10.tar.gz';          ;;        amd64|x86_64)          ESUM='6dd0c9c8a740e6c19149e98034fba8e368fd9aa16ab417aa636854d40db1a161';          BINARY_URL='https://github.com/AdoptOpenJDK/openjdk11-binaries/releases/download/jdk-11.0.5%2B10/OpenJDK11U-jdk_x64_linux_hotspot_11.0.5_10.tar.gz';          ;;        *)          echo "Unsupported arch: ${ARCH}";          exit 1;          ;;     esac;     curl -LfsSo /tmp/openjdk.tar.gz ${BINARY_URL};     echo "${ESUM} */tmp/openjdk.tar.gz" | sha256sum -c -;     mkdir -p /opt/java/openjdk;     cd /opt/java/openjdk;     tar -xf /tmp/openjdk.tar.gz --strip-components=1;     rm -rf /tmp/openjdk.tar.gz;
+# Fri, 08 Nov 2019 02:20:36 GMT
 ENV JAVA_HOME=/opt/java/openjdk PATH=/opt/java/openjdk/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Thu, 31 Oct 2019 22:38:33 GMT
+# Fri, 08 Nov 2019 02:20:36 GMT
 CMD ["jshell"]
-# Fri, 01 Nov 2019 02:28:08 GMT
+# Fri, 08 Nov 2019 02:49:06 GMT
 ENV CATALINA_HOME=/usr/local/tomcat
-# Fri, 01 Nov 2019 02:28:08 GMT
+# Fri, 08 Nov 2019 02:49:07 GMT
 ENV PATH=/usr/local/tomcat/bin:/opt/java/openjdk/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Fri, 01 Nov 2019 02:28:09 GMT
+# Fri, 08 Nov 2019 02:49:08 GMT
 RUN mkdir -p "$CATALINA_HOME"
-# Fri, 01 Nov 2019 02:28:09 GMT
+# Fri, 08 Nov 2019 02:49:08 GMT
 WORKDIR /usr/local/tomcat
-# Fri, 01 Nov 2019 02:28:09 GMT
+# Fri, 08 Nov 2019 02:49:09 GMT
 ENV TOMCAT_NATIVE_LIBDIR=/usr/local/tomcat/native-jni-lib
-# Fri, 01 Nov 2019 02:28:09 GMT
+# Fri, 08 Nov 2019 02:49:09 GMT
 ENV LD_LIBRARY_PATH=/usr/local/tomcat/native-jni-lib
-# Fri, 01 Nov 2019 02:33:11 GMT
+# Fri, 08 Nov 2019 02:55:21 GMT
 ENV GPG_KEYS=05AB33110949707C93A279E3D3EFE6B686867BA6 07E48665A34DCAFAE522E5E6266191C37C037D42 47309207D818FFD8DCD3F83F1931D684307A10A5 541FBE7D8F78B25E055DDEE13C370389288584E7 61B832AC2F1C5A90F0F9B00A1C506407564C17A3 713DA88BE50911535FE716F5208B0AB1D63011C7 79F7026C690BAA50B92CD8B66A3AD3F4F22C4FED 9BA44C2621385CB966EBA586F72C284D731FABEE A27677289986DB50844682F8ACB77FC2E86E29AC A9C5DF4D22E99998D9875A5110C01C5A2F6059E7 DCFD35E0BF8CA7344752DE8B6FB21E8933C60243 F3A04C595DB5B6A5F1ECA43E3B7BBB100D811BBE F7DA48BB64BCB84ECBA7EE6935CD23C10D498E23
-# Fri, 01 Nov 2019 02:33:11 GMT
+# Fri, 08 Nov 2019 02:55:21 GMT
 ENV TOMCAT_MAJOR=8
-# Fri, 01 Nov 2019 02:33:11 GMT
+# Fri, 08 Nov 2019 02:55:21 GMT
 ENV TOMCAT_VERSION=8.5.47
-# Fri, 01 Nov 2019 02:33:11 GMT
+# Fri, 08 Nov 2019 02:55:21 GMT
 ENV TOMCAT_SHA512=079b85f3dfca2b137634859208fae6012860201d720d12ff0add3473f1e267d332cb12803958754e1f922599e0d42b7e97f00bcd62584d9148a6f45fde091716
-# Fri, 01 Nov 2019 02:33:46 GMT
+# Fri, 08 Nov 2019 02:56:17 GMT
 RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		gnupg dirmngr 		wget ca-certificates 	; 		ddist() { 		local f="$1"; shift; 		local distFile="$1"; shift; 		local success=; 		local distUrl=; 		for distUrl in 			'https://www.apache.org/dyn/closer.cgi?action=download&filename=' 			https://www-us.apache.org/dist/ 			https://www.apache.org/dist/ 			https://archive.apache.org/dist/ 		; do 			if wget -O "$f" "$distUrl$distFile" && [ -s "$f" ]; then 				success=1; 				break; 			fi; 		done; 		[ -n "$success" ]; 	}; 		ddist 'tomcat.tar.gz' "tomcat/tomcat-$TOMCAT_MAJOR/v$TOMCAT_VERSION/bin/apache-tomcat-$TOMCAT_VERSION.tar.gz"; 	echo "$TOMCAT_SHA512 *tomcat.tar.gz" | sha512sum --strict --check -; 	ddist 'tomcat.tar.gz.asc' "tomcat/tomcat-$TOMCAT_MAJOR/v$TOMCAT_VERSION/bin/apache-tomcat-$TOMCAT_VERSION.tar.gz.asc"; 	export GNUPGHOME="$(mktemp -d)"; 	for key in $GPG_KEYS; do 		gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys "$key"; 	done; 	gpg --batch --verify tomcat.tar.gz.asc tomcat.tar.gz; 	tar -xf tomcat.tar.gz --strip-components=1; 	rm bin/*.bat; 	rm tomcat.tar.gz*; 	command -v gpgconf && gpgconf --kill all || :; 	rm -rf "$GNUPGHOME"; 		nativeBuildDir="$(mktemp -d)"; 	tar -xf bin/tomcat-native.tar.gz -C "$nativeBuildDir" --strip-components=1; 	apt-get install -y --no-install-recommends 		dpkg-dev 		gcc 		libapr1-dev 		libssl-dev 		make 	; 	( 		export CATALINA_HOME="$PWD"; 		cd "$nativeBuildDir/native"; 		gnuArch="$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)"; 		aprConfig="$(command -v apr-1-config)"; 		./configure 			--build="$gnuArch" 			--libdir="$TOMCAT_NATIVE_LIBDIR" 			--prefix="$CATALINA_HOME" 			--with-apr="$aprConfig" 			--with-java-home="$JAVA_HOME" 			--with-ssl=yes; 		make -j "$(nproc)"; 		make install; 	); 	rm -rf "$nativeBuildDir"; 	rm bin/tomcat-native.tar.gz; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark > /dev/null; 	find "$TOMCAT_NATIVE_LIBDIR" -type f -executable -exec ldd '{}' ';' 		| awk '/=>/ { print $(NF-1) }' 		| sort -u 		| xargs -r dpkg-query --search 		| cut -d: -f1 		| sort -u 		| xargs -r apt-mark manual 	; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 	rm -rf /var/lib/apt/lists/*; 		find ./bin/ -name '*.sh' -exec sed -ri 's|^#!/bin/sh$|#!/usr/bin/env bash|' '{}' +; 		chmod -R +rX .; 	chmod 777 logs temp work
-# Fri, 01 Nov 2019 02:33:48 GMT
+# Fri, 08 Nov 2019 02:56:22 GMT
 RUN set -e 	&& nativeLines="$(catalina.sh configtest 2>&1)" 	&& nativeLines="$(echo "$nativeLines" | grep 'Apache Tomcat Native')" 	&& nativeLines="$(echo "$nativeLines" | sort -u)" 	&& if ! echo "$nativeLines" | grep 'INFO: Loaded APR based Apache Tomcat Native library' >&2; then 		echo >&2 "$nativeLines"; 		exit 1; 	fi
-# Fri, 01 Nov 2019 02:33:49 GMT
+# Fri, 08 Nov 2019 02:56:22 GMT
 EXPOSE 8080
-# Fri, 01 Nov 2019 02:33:49 GMT
+# Fri, 08 Nov 2019 02:56:22 GMT
 CMD ["catalina.sh" "run"]
-# Fri, 01 Nov 2019 05:50:23 GMT
+# Fri, 08 Nov 2019 03:52:11 GMT
 MAINTAINER Vincent Massol <vincent@massol.net>
-# Fri, 01 Nov 2019 05:51:08 GMT
+# Fri, 08 Nov 2019 03:52:56 GMT
 RUN apt-get update &&   apt-get --no-install-recommends -y install     curl     libreoffice     unzip     procps     libmysql-java &&   rm -rf /var/lib/apt/lists/*
-# Fri, 01 Nov 2019 05:51:09 GMT
+# Fri, 08 Nov 2019 03:52:57 GMT
 ENV XWIKI_VERSION=11.9
-# Fri, 01 Nov 2019 05:51:09 GMT
+# Fri, 08 Nov 2019 03:52:57 GMT
 ENV XWIKI_URL_PREFIX=https://maven.xwiki.org/releases/org/xwiki/platform/xwiki-platform-distribution-war/11.9
-# Fri, 01 Nov 2019 05:51:09 GMT
+# Fri, 08 Nov 2019 03:52:57 GMT
 ENV XWIKI_DOWNLOAD_SHA256=f4fc420b570c5da374492b236cca5df1239793979126722c1adcc642ee9b335c
-# Fri, 01 Nov 2019 05:51:43 GMT
+# Fri, 08 Nov 2019 03:53:35 GMT
 RUN rm -rf /usr/local/tomcat/webapps/* &&   mkdir -p /usr/local/tomcat/temp &&   mkdir -p /usr/local/xwiki/data &&   curl -fSL "${XWIKI_URL_PREFIX}/xwiki-platform-distribution-war-${XWIKI_VERSION}.war" -o xwiki.war &&   echo "$XWIKI_DOWNLOAD_SHA256 xwiki.war" | sha256sum -c - &&   unzip -d /usr/local/tomcat/webapps/ROOT xwiki.war &&   rm -f xwiki.war
-# Fri, 01 Nov 2019 05:51:44 GMT
+# Fri, 08 Nov 2019 03:53:36 GMT
 RUN cp /usr/share/java/mysql-connector-java-*.jar /usr/local/tomcat/webapps/ROOT/WEB-INF/lib/
-# Fri, 01 Nov 2019 05:51:44 GMT
+# Fri, 08 Nov 2019 03:53:36 GMT
 COPY file:0a1be11e2eb610a1dbcd415404e3a592641110b93090030cb831e3a19a163017 in /usr/local/tomcat/bin/ 
-# Fri, 01 Nov 2019 05:51:44 GMT
+# Fri, 08 Nov 2019 03:53:36 GMT
 COPY file:406eb381f87e0aed57baf469c64efee52199868e8fc75ff865a9661b47910460 in /usr/local/tomcat/webapps/ROOT/WEB-INF/hibernate.cfg.xml 
-# Fri, 01 Nov 2019 05:51:45 GMT
+# Fri, 08 Nov 2019 03:53:37 GMT
 RUN sed -i 's/<id>org.xwiki.platform:xwiki-platform-distribution-war/<id>org.xwiki.platform:xwiki-platform-distribution-docker/'   /usr/local/tomcat/webapps/ROOT/META-INF/extension.xed
-# Fri, 01 Nov 2019 05:51:45 GMT
+# Fri, 08 Nov 2019 03:53:37 GMT
 COPY file:f901b2d7ac3d76cd8346f9aee81b40529183e81d8aa027bb390856ac01fa6cc0 in /usr/local/bin/docker-entrypoint.sh 
-# Fri, 01 Nov 2019 05:51:45 GMT
+# Fri, 08 Nov 2019 03:53:38 GMT
 VOLUME [/usr/local/xwiki]
-# Fri, 01 Nov 2019 05:51:45 GMT
+# Fri, 08 Nov 2019 03:53:38 GMT
 ENTRYPOINT ["docker-entrypoint.sh"]
-# Fri, 01 Nov 2019 05:51:45 GMT
+# Fri, 08 Nov 2019 03:53:38 GMT
 CMD ["xwiki"]
 ```
 
@@ -1676,59 +1676,59 @@ CMD ["xwiki"]
 		Last Modified: Thu, 31 Oct 2019 22:21:39 GMT  
 		Size: 162.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:b5035666b1cd262e3117ca99ecbe11fc92c973a1164cd5c69bca60165f501520`  
-		Last Modified: Thu, 31 Oct 2019 22:40:53 GMT  
-		Size: 10.8 MB (10842099 bytes)  
+	-	`sha256:da4c04c54fa4a9b55ddef0b116fa7969185639621c525e1fe19f2b194f1ca4bc`  
+		Last Modified: Fri, 08 Nov 2019 02:22:45 GMT  
+		Size: 13.3 MB (13322685 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:60e5b903fb31d874f9a1c331071b5e855634a3ae4fa5db5a3ba0dc027bbc9c5f`  
-		Last Modified: Thu, 31 Oct 2019 22:41:36 GMT  
-		Size: 197.7 MB (197657372 bytes)  
+	-	`sha256:10235b1a516d4b068683fe79fb89be475cb2fc41b1ea76fcb4b13872bee27da0`  
+		Last Modified: Fri, 08 Nov 2019 02:23:23 GMT  
+		Size: 197.8 MB (197822335 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:f578b1f2cf8f2f5876b3185c7edd79990e67ec624e21b05b0614d04c5acb0106`  
-		Last Modified: Fri, 01 Nov 2019 02:38:58 GMT  
-		Size: 136.0 B  
+	-	`sha256:24154429346fe2204e6d5dab3868244db95f4163d1be3905621fb2b53653eb2c`  
+		Last Modified: Fri, 08 Nov 2019 03:05:39 GMT  
+		Size: 139.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c12bb0162813b1b0c82e82d87b9bdf6e96ef46d7c3aa9408a9c8d9de7c9a575a`  
-		Last Modified: Fri, 01 Nov 2019 02:39:41 GMT  
-		Size: 11.2 MB (11234934 bytes)  
+	-	`sha256:c572a63a7a797dd43aa600f689a0e6d3c85b8f94a138c2d3181801cd788b36c9`  
+		Last Modified: Fri, 08 Nov 2019 03:06:29 GMT  
+		Size: 11.3 MB (11251478 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:469391c4f542e184022627170e76ee20d527d65dfda5b22daebd7187925accb7`  
-		Last Modified: Fri, 01 Nov 2019 02:39:39 GMT  
-		Size: 133.0 B  
+	-	`sha256:a016684a4a3052bad801984d71c411cd2e4fade815d50a5ad7b5f228041d0b56`  
+		Last Modified: Fri, 08 Nov 2019 03:06:27 GMT  
+		Size: 132.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:a9cb5d6ac8ff25f915684ed166cd0c7ac4a92a7b8f447f7b573721d4e4862395`  
-		Last Modified: Fri, 01 Nov 2019 05:56:17 GMT  
-		Size: 182.5 MB (182519866 bytes)  
+	-	`sha256:c91247e8560d3e2c0be69d9c20160a5c7b9e23fdec44b0fc06fb0dd678003c6f`  
+		Last Modified: Fri, 08 Nov 2019 03:57:46 GMT  
+		Size: 179.9 MB (179895305 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:f1fb9e179e1e0794b0e3ab1fa75f30babb21fe494a3c009b61a9f0bdc94a8007`  
-		Last Modified: Fri, 01 Nov 2019 05:56:06 GMT  
-		Size: 284.2 MB (284247999 bytes)  
+	-	`sha256:a43a14f8330f2612a59d1aa4cab49393e380b7f4f788380e090d66aeeec27413`  
+		Last Modified: Fri, 08 Nov 2019 03:57:35 GMT  
+		Size: 284.2 MB (284248060 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:f55b66004ada5c63d908ecf104a82e72fbc834488f3d3268937752fff2d7cfc1`  
-		Last Modified: Fri, 01 Nov 2019 05:55:45 GMT  
-		Size: 955.6 KB (955598 bytes)  
+	-	`sha256:1829bd8f4cffb2971f321018ab8b1ff5890d9f709c1d694725799bfc7b299f6f`  
+		Last Modified: Fri, 08 Nov 2019 03:57:13 GMT  
+		Size: 955.6 KB (955603 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:d3e3aefe7f08df3a904bfa1b6fb484544d4abf98f8e67e22a29a878e40e9a1eb`  
-		Last Modified: Fri, 01 Nov 2019 05:55:45 GMT  
-		Size: 1.3 KB (1341 bytes)  
+	-	`sha256:444ce5df0050d115c048cca2619eb9669dfd6a497d0b53af7e212670c7e181a2`  
+		Last Modified: Fri, 08 Nov 2019 03:57:13 GMT  
+		Size: 1.3 KB (1346 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:f4f03a2f5eb6e67eb8d75bd2641d80a18e30ecc78cbbbbdb7def4322ba44e011`  
-		Last Modified: Fri, 01 Nov 2019 05:55:45 GMT  
-		Size: 2.3 KB (2334 bytes)  
+	-	`sha256:537505f100251872fe038c9e7189a1515539e54e927362e7a074ddda578b1430`  
+		Last Modified: Fri, 08 Nov 2019 03:57:14 GMT  
+		Size: 2.3 KB (2337 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:137909c9c97785a04ee164d5f5078d18ba1c0764e84e7c1756806863792b9645`  
-		Last Modified: Fri, 01 Nov 2019 05:55:45 GMT  
-		Size: 4.2 KB (4234 bytes)  
+	-	`sha256:93d47669c79bd6ba35cbfae545a94c242480372296a9aa60cd24044cfeb730d7`  
+		Last Modified: Fri, 08 Nov 2019 03:57:13 GMT  
+		Size: 4.2 KB (4235 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:0bea17859d854d5e0c2ad02328d87ec74e591d8c0c40dbae70b52cf059f3826a`  
-		Last Modified: Fri, 01 Nov 2019 05:55:45 GMT  
-		Size: 2.4 KB (2400 bytes)  
+	-	`sha256:0edda1fa0cef0bd96542fe7f721070f136ce34a02bc2976de8f72b54b9fca7f8`  
+		Last Modified: Fri, 08 Nov 2019 03:57:14 GMT  
+		Size: 2.4 KB (2404 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `xwiki:11.9-postgres-tomcat`
 
 ```console
-$ docker pull xwiki@sha256:c390781c299203e3a155c5cd02a310cb07ce0923227a0a0450f5c5cf27fa03a8
+$ docker pull xwiki@sha256:6aac021f2896446f7dc9812d47cfab5f33c14abff540e56b2898d2ce48d9f61b
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -1739,14 +1739,14 @@ $ docker pull xwiki@sha256:c390781c299203e3a155c5cd02a310cb07ce0923227a0a0450f5c
 ### `xwiki:11.9-postgres-tomcat` - linux; amd64
 
 ```console
-$ docker pull xwiki@sha256:45cc76f7068c4a776a32d76d17c4396d928467c26e2621eb95afd04fd0968203
+$ docker pull xwiki@sha256:cac9f8446174cb20ccaa7188b1288a226bfe66784def15d4c8faf65e6d135589
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **713.5 MB (713522889 bytes)**  
+-	Total Size: **713.6 MB (713559715 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:8cfd018e9b18bf45e28be5a1dc903ef92f7ffd845fe3cd718dc6fdce304e21cc`
+-	Image ID: `sha256:0c0766a91ac95edb9ac0ee19721ebb86c2d4b43bb3b51ef65edf06cb61719b94`
 -	Entrypoint: `["docker-entrypoint.sh"]`
 -	Default Command: `["xwiki"]`
 
@@ -1763,71 +1763,71 @@ RUN mkdir -p /run/systemd && echo 'docker' > /run/systemd/container
 CMD ["/bin/bash"]
 # Thu, 31 Oct 2019 22:37:37 GMT
 ENV LANG=en_US.UTF-8 LANGUAGE=en_US:en LC_ALL=en_US.UTF-8
-# Thu, 31 Oct 2019 22:38:04 GMT
-RUN apt-get update     && apt-get install -y --no-install-recommends curl ca-certificates locales     && echo "en_US.UTF-8 UTF-8" >> /etc/locale.gen     && locale-gen en_US.UTF-8     && rm -rf /var/lib/apt/lists/*
-# Thu, 31 Oct 2019 22:38:23 GMT
-ENV JAVA_VERSION=jdk-11.0.4+11
-# Thu, 31 Oct 2019 22:38:32 GMT
-RUN set -eux;     ARCH="$(dpkg --print-architecture)";     case "${ARCH}" in        aarch64|arm64)          ESUM='10e33e1862638e11a9158947b3d7b461727d8e396e378b171be1eb4dfe12f1ed';          BINARY_URL='https://github.com/AdoptOpenJDK/openjdk11-binaries/releases/download/jdk-11.0.4%2B11/OpenJDK11U-jdk_aarch64_linux_hotspot_11.0.4_11.tar.gz';          ;;        armhf)          ESUM='19f16c4b905055a13457d06ce9a107a54289d3828bf3ae378efc6deb908a5572';          BINARY_URL='https://github.com/AdoptOpenJDK/openjdk11-binaries/releases/download/jdk-11.0.4%2B11/OpenJDK11U-jdk_arm_linux_hotspot_11.0.4_11.tar.gz';          ;;        ppc64el|ppc64le)          ESUM='fc6b616f83fea033edd836c934f3e70764b5aa1dac0446df8a8b49297ca40a5e';          BINARY_URL='https://github.com/AdoptOpenJDK/openjdk11-binaries/releases/download/jdk-11.0.4%2B11/OpenJDK11U-jdk_ppc64le_linux_hotspot_11.0.4_11.tar.gz';          ;;        s390x)          ESUM='9487d27ef65b0cc30481cd0d23466aa6b36c90dfaa8a033166fad67bc37891de';          BINARY_URL='https://github.com/AdoptOpenJDK/openjdk11-binaries/releases/download/jdk-11.0.4%2B11/OpenJDK11U-jdk_s390x_linux_hotspot_11.0.4_11.tar.gz';          ;;        amd64|x86_64)          ESUM='90c33cf3f2ed0bd773f648815de7347e69cfbb3416ef3bf41616ab1c4aa0f5a8';          BINARY_URL='https://github.com/AdoptOpenJDK/openjdk11-binaries/releases/download/jdk-11.0.4%2B11/OpenJDK11U-jdk_x64_linux_hotspot_11.0.4_11.tar.gz';          ;;        *)          echo "Unsupported arch: ${ARCH}";          exit 1;          ;;     esac;     curl -LfsSo /tmp/openjdk.tar.gz ${BINARY_URL};     echo "${ESUM} */tmp/openjdk.tar.gz" | sha256sum -c -;     mkdir -p /opt/java/openjdk;     cd /opt/java/openjdk;     tar -xf /tmp/openjdk.tar.gz --strip-components=1;     rm -rf /tmp/openjdk.tar.gz;
-# Thu, 31 Oct 2019 22:38:32 GMT
+# Fri, 08 Nov 2019 02:20:03 GMT
+RUN apt-get update     && apt-get install -y --no-install-recommends curl ca-certificates fontconfig locales     && echo "en_US.UTF-8 UTF-8" >> /etc/locale.gen     && locale-gen en_US.UTF-8     && rm -rf /var/lib/apt/lists/*
+# Fri, 08 Nov 2019 02:20:26 GMT
+ENV JAVA_VERSION=jdk-11.0.5+10
+# Fri, 08 Nov 2019 02:20:35 GMT
+RUN set -eux;     ARCH="$(dpkg --print-architecture)";     case "${ARCH}" in        armhf)          ESUM='c6b1fda3f8807028cbfcc34a4ded2e8a5a6b6239d2bcc1f06673ea6b1530df94';          BINARY_URL='https://github.com/AdoptOpenJDK/openjdk11-binaries/releases/download/jdk-11.0.5%2B10/OpenJDK11U-jdk_arm_linux_hotspot_11.0.5_10.tar.gz';          ;;        ppc64el|ppc64le)          ESUM='d763481ddc29ac0bdefb24216b3a0bf9afbb058552682567a075f9c0f7da5814';          BINARY_URL='https://github.com/AdoptOpenJDK/openjdk11-binaries/releases/download/jdk-11.0.5%2B10/OpenJDK11U-jdk_ppc64le_linux_hotspot_11.0.5_10.tar.gz';          ;;        amd64|x86_64)          ESUM='6dd0c9c8a740e6c19149e98034fba8e368fd9aa16ab417aa636854d40db1a161';          BINARY_URL='https://github.com/AdoptOpenJDK/openjdk11-binaries/releases/download/jdk-11.0.5%2B10/OpenJDK11U-jdk_x64_linux_hotspot_11.0.5_10.tar.gz';          ;;        *)          echo "Unsupported arch: ${ARCH}";          exit 1;          ;;     esac;     curl -LfsSo /tmp/openjdk.tar.gz ${BINARY_URL};     echo "${ESUM} */tmp/openjdk.tar.gz" | sha256sum -c -;     mkdir -p /opt/java/openjdk;     cd /opt/java/openjdk;     tar -xf /tmp/openjdk.tar.gz --strip-components=1;     rm -rf /tmp/openjdk.tar.gz;
+# Fri, 08 Nov 2019 02:20:36 GMT
 ENV JAVA_HOME=/opt/java/openjdk PATH=/opt/java/openjdk/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Thu, 31 Oct 2019 22:38:33 GMT
+# Fri, 08 Nov 2019 02:20:36 GMT
 CMD ["jshell"]
-# Fri, 01 Nov 2019 02:28:08 GMT
+# Fri, 08 Nov 2019 02:49:06 GMT
 ENV CATALINA_HOME=/usr/local/tomcat
-# Fri, 01 Nov 2019 02:28:08 GMT
+# Fri, 08 Nov 2019 02:49:07 GMT
 ENV PATH=/usr/local/tomcat/bin:/opt/java/openjdk/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Fri, 01 Nov 2019 02:28:09 GMT
+# Fri, 08 Nov 2019 02:49:08 GMT
 RUN mkdir -p "$CATALINA_HOME"
-# Fri, 01 Nov 2019 02:28:09 GMT
+# Fri, 08 Nov 2019 02:49:08 GMT
 WORKDIR /usr/local/tomcat
-# Fri, 01 Nov 2019 02:28:09 GMT
+# Fri, 08 Nov 2019 02:49:09 GMT
 ENV TOMCAT_NATIVE_LIBDIR=/usr/local/tomcat/native-jni-lib
-# Fri, 01 Nov 2019 02:28:09 GMT
+# Fri, 08 Nov 2019 02:49:09 GMT
 ENV LD_LIBRARY_PATH=/usr/local/tomcat/native-jni-lib
-# Fri, 01 Nov 2019 02:33:11 GMT
+# Fri, 08 Nov 2019 02:55:21 GMT
 ENV GPG_KEYS=05AB33110949707C93A279E3D3EFE6B686867BA6 07E48665A34DCAFAE522E5E6266191C37C037D42 47309207D818FFD8DCD3F83F1931D684307A10A5 541FBE7D8F78B25E055DDEE13C370389288584E7 61B832AC2F1C5A90F0F9B00A1C506407564C17A3 713DA88BE50911535FE716F5208B0AB1D63011C7 79F7026C690BAA50B92CD8B66A3AD3F4F22C4FED 9BA44C2621385CB966EBA586F72C284D731FABEE A27677289986DB50844682F8ACB77FC2E86E29AC A9C5DF4D22E99998D9875A5110C01C5A2F6059E7 DCFD35E0BF8CA7344752DE8B6FB21E8933C60243 F3A04C595DB5B6A5F1ECA43E3B7BBB100D811BBE F7DA48BB64BCB84ECBA7EE6935CD23C10D498E23
-# Fri, 01 Nov 2019 02:33:11 GMT
+# Fri, 08 Nov 2019 02:55:21 GMT
 ENV TOMCAT_MAJOR=8
-# Fri, 01 Nov 2019 02:33:11 GMT
+# Fri, 08 Nov 2019 02:55:21 GMT
 ENV TOMCAT_VERSION=8.5.47
-# Fri, 01 Nov 2019 02:33:11 GMT
+# Fri, 08 Nov 2019 02:55:21 GMT
 ENV TOMCAT_SHA512=079b85f3dfca2b137634859208fae6012860201d720d12ff0add3473f1e267d332cb12803958754e1f922599e0d42b7e97f00bcd62584d9148a6f45fde091716
-# Fri, 01 Nov 2019 02:33:46 GMT
+# Fri, 08 Nov 2019 02:56:17 GMT
 RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		gnupg dirmngr 		wget ca-certificates 	; 		ddist() { 		local f="$1"; shift; 		local distFile="$1"; shift; 		local success=; 		local distUrl=; 		for distUrl in 			'https://www.apache.org/dyn/closer.cgi?action=download&filename=' 			https://www-us.apache.org/dist/ 			https://www.apache.org/dist/ 			https://archive.apache.org/dist/ 		; do 			if wget -O "$f" "$distUrl$distFile" && [ -s "$f" ]; then 				success=1; 				break; 			fi; 		done; 		[ -n "$success" ]; 	}; 		ddist 'tomcat.tar.gz' "tomcat/tomcat-$TOMCAT_MAJOR/v$TOMCAT_VERSION/bin/apache-tomcat-$TOMCAT_VERSION.tar.gz"; 	echo "$TOMCAT_SHA512 *tomcat.tar.gz" | sha512sum --strict --check -; 	ddist 'tomcat.tar.gz.asc' "tomcat/tomcat-$TOMCAT_MAJOR/v$TOMCAT_VERSION/bin/apache-tomcat-$TOMCAT_VERSION.tar.gz.asc"; 	export GNUPGHOME="$(mktemp -d)"; 	for key in $GPG_KEYS; do 		gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys "$key"; 	done; 	gpg --batch --verify tomcat.tar.gz.asc tomcat.tar.gz; 	tar -xf tomcat.tar.gz --strip-components=1; 	rm bin/*.bat; 	rm tomcat.tar.gz*; 	command -v gpgconf && gpgconf --kill all || :; 	rm -rf "$GNUPGHOME"; 		nativeBuildDir="$(mktemp -d)"; 	tar -xf bin/tomcat-native.tar.gz -C "$nativeBuildDir" --strip-components=1; 	apt-get install -y --no-install-recommends 		dpkg-dev 		gcc 		libapr1-dev 		libssl-dev 		make 	; 	( 		export CATALINA_HOME="$PWD"; 		cd "$nativeBuildDir/native"; 		gnuArch="$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)"; 		aprConfig="$(command -v apr-1-config)"; 		./configure 			--build="$gnuArch" 			--libdir="$TOMCAT_NATIVE_LIBDIR" 			--prefix="$CATALINA_HOME" 			--with-apr="$aprConfig" 			--with-java-home="$JAVA_HOME" 			--with-ssl=yes; 		make -j "$(nproc)"; 		make install; 	); 	rm -rf "$nativeBuildDir"; 	rm bin/tomcat-native.tar.gz; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark > /dev/null; 	find "$TOMCAT_NATIVE_LIBDIR" -type f -executable -exec ldd '{}' ';' 		| awk '/=>/ { print $(NF-1) }' 		| sort -u 		| xargs -r dpkg-query --search 		| cut -d: -f1 		| sort -u 		| xargs -r apt-mark manual 	; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 	rm -rf /var/lib/apt/lists/*; 		find ./bin/ -name '*.sh' -exec sed -ri 's|^#!/bin/sh$|#!/usr/bin/env bash|' '{}' +; 		chmod -R +rX .; 	chmod 777 logs temp work
-# Fri, 01 Nov 2019 02:33:48 GMT
+# Fri, 08 Nov 2019 02:56:22 GMT
 RUN set -e 	&& nativeLines="$(catalina.sh configtest 2>&1)" 	&& nativeLines="$(echo "$nativeLines" | grep 'Apache Tomcat Native')" 	&& nativeLines="$(echo "$nativeLines" | sort -u)" 	&& if ! echo "$nativeLines" | grep 'INFO: Loaded APR based Apache Tomcat Native library' >&2; then 		echo >&2 "$nativeLines"; 		exit 1; 	fi
-# Fri, 01 Nov 2019 02:33:49 GMT
+# Fri, 08 Nov 2019 02:56:22 GMT
 EXPOSE 8080
-# Fri, 01 Nov 2019 02:33:49 GMT
+# Fri, 08 Nov 2019 02:56:22 GMT
 CMD ["catalina.sh" "run"]
-# Fri, 01 Nov 2019 05:50:23 GMT
+# Fri, 08 Nov 2019 03:52:11 GMT
 MAINTAINER Vincent Massol <vincent@massol.net>
-# Fri, 01 Nov 2019 05:52:38 GMT
+# Fri, 08 Nov 2019 03:54:40 GMT
 RUN apt-get update &&   apt-get --no-install-recommends -y install     curl     libreoffice     unzip     procps     libpostgresql-jdbc-java &&   rm -rf /var/lib/apt/lists/*
-# Fri, 01 Nov 2019 05:52:39 GMT
+# Fri, 08 Nov 2019 03:54:41 GMT
 ENV XWIKI_VERSION=11.9
-# Fri, 01 Nov 2019 05:52:39 GMT
+# Fri, 08 Nov 2019 03:54:41 GMT
 ENV XWIKI_URL_PREFIX=https://maven.xwiki.org/releases/org/xwiki/platform/xwiki-platform-distribution-war/11.9
-# Fri, 01 Nov 2019 05:52:39 GMT
+# Fri, 08 Nov 2019 03:54:41 GMT
 ENV XWIKI_DOWNLOAD_SHA256=f4fc420b570c5da374492b236cca5df1239793979126722c1adcc642ee9b335c
-# Fri, 01 Nov 2019 05:53:19 GMT
+# Fri, 08 Nov 2019 03:55:15 GMT
 RUN rm -rf /usr/local/tomcat/webapps/* &&   mkdir -p /usr/local/tomcat/temp &&   mkdir -p /usr/local/xwiki/data &&   curl -fSL "${XWIKI_URL_PREFIX}/xwiki-platform-distribution-war-${XWIKI_VERSION}.war" -o xwiki.war &&   echo "$XWIKI_DOWNLOAD_SHA256 xwiki.war" | sha256sum -c - &&   unzip -d /usr/local/tomcat/webapps/ROOT xwiki.war &&   rm -f xwiki.war
-# Fri, 01 Nov 2019 05:53:20 GMT
+# Fri, 08 Nov 2019 03:55:16 GMT
 RUN cp /usr/share/java/postgresql-jdbc4.jar /usr/local/tomcat/webapps/ROOT/WEB-INF/lib/
-# Fri, 01 Nov 2019 05:53:20 GMT
+# Fri, 08 Nov 2019 03:55:16 GMT
 COPY file:0a1be11e2eb610a1dbcd415404e3a592641110b93090030cb831e3a19a163017 in /usr/local/tomcat/bin/ 
-# Fri, 01 Nov 2019 05:53:20 GMT
+# Fri, 08 Nov 2019 03:55:16 GMT
 COPY file:bb513b07693b0f03295b679c3da15a7fa3d7769583b3db4897a41cfec3529978 in /usr/local/tomcat/webapps/ROOT/WEB-INF/hibernate.cfg.xml 
-# Fri, 01 Nov 2019 05:53:21 GMT
+# Fri, 08 Nov 2019 03:55:17 GMT
 RUN sed -i 's/<id>org.xwiki.platform:xwiki-platform-distribution-war/<id>org.xwiki.platform:xwiki-platform-distribution-docker/'   /usr/local/tomcat/webapps/ROOT/META-INF/extension.xed
-# Fri, 01 Nov 2019 05:53:21 GMT
+# Fri, 08 Nov 2019 03:55:17 GMT
 COPY file:f901b2d7ac3d76cd8346f9aee81b40529183e81d8aa027bb390856ac01fa6cc0 in /usr/local/bin/docker-entrypoint.sh 
-# Fri, 01 Nov 2019 05:53:21 GMT
+# Fri, 08 Nov 2019 03:55:18 GMT
 VOLUME [/usr/local/xwiki]
-# Fri, 01 Nov 2019 05:53:22 GMT
+# Fri, 08 Nov 2019 03:55:18 GMT
 ENTRYPOINT ["docker-entrypoint.sh"]
-# Fri, 01 Nov 2019 05:53:22 GMT
+# Fri, 08 Nov 2019 03:55:18 GMT
 CMD ["xwiki"]
 ```
 
@@ -1848,53 +1848,53 @@ CMD ["xwiki"]
 		Last Modified: Thu, 31 Oct 2019 22:21:39 GMT  
 		Size: 162.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:b5035666b1cd262e3117ca99ecbe11fc92c973a1164cd5c69bca60165f501520`  
-		Last Modified: Thu, 31 Oct 2019 22:40:53 GMT  
-		Size: 10.8 MB (10842099 bytes)  
+	-	`sha256:da4c04c54fa4a9b55ddef0b116fa7969185639621c525e1fe19f2b194f1ca4bc`  
+		Last Modified: Fri, 08 Nov 2019 02:22:45 GMT  
+		Size: 13.3 MB (13322685 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:60e5b903fb31d874f9a1c331071b5e855634a3ae4fa5db5a3ba0dc027bbc9c5f`  
-		Last Modified: Thu, 31 Oct 2019 22:41:36 GMT  
-		Size: 197.7 MB (197657372 bytes)  
+	-	`sha256:10235b1a516d4b068683fe79fb89be475cb2fc41b1ea76fcb4b13872bee27da0`  
+		Last Modified: Fri, 08 Nov 2019 02:23:23 GMT  
+		Size: 197.8 MB (197822335 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:f578b1f2cf8f2f5876b3185c7edd79990e67ec624e21b05b0614d04c5acb0106`  
-		Last Modified: Fri, 01 Nov 2019 02:38:58 GMT  
-		Size: 136.0 B  
+	-	`sha256:24154429346fe2204e6d5dab3868244db95f4163d1be3905621fb2b53653eb2c`  
+		Last Modified: Fri, 08 Nov 2019 03:05:39 GMT  
+		Size: 139.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c12bb0162813b1b0c82e82d87b9bdf6e96ef46d7c3aa9408a9c8d9de7c9a575a`  
-		Last Modified: Fri, 01 Nov 2019 02:39:41 GMT  
-		Size: 11.2 MB (11234934 bytes)  
+	-	`sha256:c572a63a7a797dd43aa600f689a0e6d3c85b8f94a138c2d3181801cd788b36c9`  
+		Last Modified: Fri, 08 Nov 2019 03:06:29 GMT  
+		Size: 11.3 MB (11251478 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:469391c4f542e184022627170e76ee20d527d65dfda5b22daebd7187925accb7`  
-		Last Modified: Fri, 01 Nov 2019 02:39:39 GMT  
-		Size: 133.0 B  
+	-	`sha256:a016684a4a3052bad801984d71c411cd2e4fade815d50a5ad7b5f228041d0b56`  
+		Last Modified: Fri, 08 Nov 2019 03:06:27 GMT  
+		Size: 132.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:b1abd62c53b3e223d5fb653d9221f3a82085f6983b1282f1d6136eae7846f035`  
-		Last Modified: Fri, 01 Nov 2019 05:57:01 GMT  
-		Size: 182.2 MB (182185615 bytes)  
+	-	`sha256:c6c389865c6b163f05cd9fb7175a147244f1fe7f2e875e7e9254fba9d4355ac6`  
+		Last Modified: Fri, 08 Nov 2019 03:58:52 GMT  
+		Size: 179.6 MB (179560341 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:b2412a2e75bce567834b7b0300b4f76b590e2d88009e6832016c2e569bd196db`  
-		Last Modified: Fri, 01 Nov 2019 05:56:57 GMT  
-		Size: 284.2 MB (284248067 bytes)  
+	-	`sha256:562aa1e5b86036561bf92eeb259a1874ef32891c757288834b9b2b719eaa9fa4`  
+		Last Modified: Fri, 08 Nov 2019 03:58:40 GMT  
+		Size: 284.2 MB (284248070 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:8886f5e85572a235e74cde689873e6d0609f55bda56c7cacaeca9f8412ae394e`  
-		Last Modified: Fri, 01 Nov 2019 05:56:28 GMT  
-		Size: 618.9 KB (618861 bytes)  
+	-	`sha256:0b004eb7bf4e98f684ef042ba415dc8f6b8fe6dd200b909e709adb0773d5895a`  
+		Last Modified: Fri, 08 Nov 2019 03:58:19 GMT  
+		Size: 618.9 KB (618859 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:d49fa8b65c25d20f133021be9df1aa2dfadede3479c41d19345618f21a7f48f9`  
-		Last Modified: Fri, 01 Nov 2019 05:56:29 GMT  
+	-	`sha256:0541b695898dc98f9d4d23fe1965e1456ccb9e3b06a73d14fcd69584b0910eff`  
+		Last Modified: Fri, 08 Nov 2019 03:58:19 GMT  
 		Size: 1.3 KB (1346 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:3a1150187c99c2a8c3205299f27bfaff6828c5f49f0982f27abe3adf5353b961`  
-		Last Modified: Fri, 01 Nov 2019 05:56:28 GMT  
+	-	`sha256:265ff15371c618be572359f343975265a764c4b35dffcd18d06e1e7f7c22755b`  
+		Last Modified: Fri, 08 Nov 2019 03:58:20 GMT  
 		Size: 2.5 KB (2476 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c851b19a77e3895b2caa2812152a5fe78de8be85ee949e8c0c36db12f9930159`  
-		Last Modified: Fri, 01 Nov 2019 05:56:28 GMT  
+	-	`sha256:3e0231d408083ed04206ee491020508906d4a82d15c98adbb1f9c7f83f07915e`  
+		Last Modified: Fri, 08 Nov 2019 03:58:19 GMT  
 		Size: 4.2 KB (4235 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:d2d5f5d7278c16dddfc7c6238b563e24bb09515286c9438f4bdba4b02f7003a9`  
-		Last Modified: Fri, 01 Nov 2019 05:56:28 GMT  
-		Size: 2.4 KB (2399 bytes)  
+	-	`sha256:61f95c3de4daec2356b89cdb675a548338445969c3b925d74dc86f622893d833`  
+		Last Modified: Fri, 08 Nov 2019 03:58:19 GMT  
+		Size: 2.4 KB (2403 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `xwiki:11.9-postgres-tomcat` - linux; arm64 variant v8
@@ -2061,7 +2061,7 @@ CMD ["xwiki"]
 ## `xwiki:11-mysql-tomcat`
 
 ```console
-$ docker pull xwiki@sha256:53a75d8da3c537c83fcaa909aad516c621db42254f9339405d1da00a69e46958
+$ docker pull xwiki@sha256:ffe63967f89e99e68d856ee74850c7a77221dc49a3ea312b352d7e1c19e61c2a
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -2071,14 +2071,14 @@ $ docker pull xwiki@sha256:53a75d8da3c537c83fcaa909aad516c621db42254f9339405d1da
 ### `xwiki:11-mysql-tomcat` - linux; amd64
 
 ```console
-$ docker pull xwiki@sha256:cc179298fdf56b4959adf41e8d1dfc6b6f436bfb2e2eecd999d3d4503ca9ab9d
+$ docker pull xwiki@sha256:b2b5d7d74a28e5a95df8ff0fb3b3bbcc1b9e2153891d62fc0df196a7464edcd3
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **714.2 MB (714193662 bytes)**  
+-	Total Size: **714.2 MB (714231275 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:163f00c14c053c3ae84dd9cc03a9dd6f3685e3c76ec000534299ce2ecd71323e`
+-	Image ID: `sha256:4050fb76b936f3f7dcfe96bae527ffb80bf0c01df874a5e3e86d8c4b56a824e0`
 -	Entrypoint: `["docker-entrypoint.sh"]`
 -	Default Command: `["xwiki"]`
 
@@ -2095,71 +2095,71 @@ RUN mkdir -p /run/systemd && echo 'docker' > /run/systemd/container
 CMD ["/bin/bash"]
 # Thu, 31 Oct 2019 22:37:37 GMT
 ENV LANG=en_US.UTF-8 LANGUAGE=en_US:en LC_ALL=en_US.UTF-8
-# Thu, 31 Oct 2019 22:38:04 GMT
-RUN apt-get update     && apt-get install -y --no-install-recommends curl ca-certificates locales     && echo "en_US.UTF-8 UTF-8" >> /etc/locale.gen     && locale-gen en_US.UTF-8     && rm -rf /var/lib/apt/lists/*
-# Thu, 31 Oct 2019 22:38:23 GMT
-ENV JAVA_VERSION=jdk-11.0.4+11
-# Thu, 31 Oct 2019 22:38:32 GMT
-RUN set -eux;     ARCH="$(dpkg --print-architecture)";     case "${ARCH}" in        aarch64|arm64)          ESUM='10e33e1862638e11a9158947b3d7b461727d8e396e378b171be1eb4dfe12f1ed';          BINARY_URL='https://github.com/AdoptOpenJDK/openjdk11-binaries/releases/download/jdk-11.0.4%2B11/OpenJDK11U-jdk_aarch64_linux_hotspot_11.0.4_11.tar.gz';          ;;        armhf)          ESUM='19f16c4b905055a13457d06ce9a107a54289d3828bf3ae378efc6deb908a5572';          BINARY_URL='https://github.com/AdoptOpenJDK/openjdk11-binaries/releases/download/jdk-11.0.4%2B11/OpenJDK11U-jdk_arm_linux_hotspot_11.0.4_11.tar.gz';          ;;        ppc64el|ppc64le)          ESUM='fc6b616f83fea033edd836c934f3e70764b5aa1dac0446df8a8b49297ca40a5e';          BINARY_URL='https://github.com/AdoptOpenJDK/openjdk11-binaries/releases/download/jdk-11.0.4%2B11/OpenJDK11U-jdk_ppc64le_linux_hotspot_11.0.4_11.tar.gz';          ;;        s390x)          ESUM='9487d27ef65b0cc30481cd0d23466aa6b36c90dfaa8a033166fad67bc37891de';          BINARY_URL='https://github.com/AdoptOpenJDK/openjdk11-binaries/releases/download/jdk-11.0.4%2B11/OpenJDK11U-jdk_s390x_linux_hotspot_11.0.4_11.tar.gz';          ;;        amd64|x86_64)          ESUM='90c33cf3f2ed0bd773f648815de7347e69cfbb3416ef3bf41616ab1c4aa0f5a8';          BINARY_URL='https://github.com/AdoptOpenJDK/openjdk11-binaries/releases/download/jdk-11.0.4%2B11/OpenJDK11U-jdk_x64_linux_hotspot_11.0.4_11.tar.gz';          ;;        *)          echo "Unsupported arch: ${ARCH}";          exit 1;          ;;     esac;     curl -LfsSo /tmp/openjdk.tar.gz ${BINARY_URL};     echo "${ESUM} */tmp/openjdk.tar.gz" | sha256sum -c -;     mkdir -p /opt/java/openjdk;     cd /opt/java/openjdk;     tar -xf /tmp/openjdk.tar.gz --strip-components=1;     rm -rf /tmp/openjdk.tar.gz;
-# Thu, 31 Oct 2019 22:38:32 GMT
+# Fri, 08 Nov 2019 02:20:03 GMT
+RUN apt-get update     && apt-get install -y --no-install-recommends curl ca-certificates fontconfig locales     && echo "en_US.UTF-8 UTF-8" >> /etc/locale.gen     && locale-gen en_US.UTF-8     && rm -rf /var/lib/apt/lists/*
+# Fri, 08 Nov 2019 02:20:26 GMT
+ENV JAVA_VERSION=jdk-11.0.5+10
+# Fri, 08 Nov 2019 02:20:35 GMT
+RUN set -eux;     ARCH="$(dpkg --print-architecture)";     case "${ARCH}" in        armhf)          ESUM='c6b1fda3f8807028cbfcc34a4ded2e8a5a6b6239d2bcc1f06673ea6b1530df94';          BINARY_URL='https://github.com/AdoptOpenJDK/openjdk11-binaries/releases/download/jdk-11.0.5%2B10/OpenJDK11U-jdk_arm_linux_hotspot_11.0.5_10.tar.gz';          ;;        ppc64el|ppc64le)          ESUM='d763481ddc29ac0bdefb24216b3a0bf9afbb058552682567a075f9c0f7da5814';          BINARY_URL='https://github.com/AdoptOpenJDK/openjdk11-binaries/releases/download/jdk-11.0.5%2B10/OpenJDK11U-jdk_ppc64le_linux_hotspot_11.0.5_10.tar.gz';          ;;        amd64|x86_64)          ESUM='6dd0c9c8a740e6c19149e98034fba8e368fd9aa16ab417aa636854d40db1a161';          BINARY_URL='https://github.com/AdoptOpenJDK/openjdk11-binaries/releases/download/jdk-11.0.5%2B10/OpenJDK11U-jdk_x64_linux_hotspot_11.0.5_10.tar.gz';          ;;        *)          echo "Unsupported arch: ${ARCH}";          exit 1;          ;;     esac;     curl -LfsSo /tmp/openjdk.tar.gz ${BINARY_URL};     echo "${ESUM} */tmp/openjdk.tar.gz" | sha256sum -c -;     mkdir -p /opt/java/openjdk;     cd /opt/java/openjdk;     tar -xf /tmp/openjdk.tar.gz --strip-components=1;     rm -rf /tmp/openjdk.tar.gz;
+# Fri, 08 Nov 2019 02:20:36 GMT
 ENV JAVA_HOME=/opt/java/openjdk PATH=/opt/java/openjdk/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Thu, 31 Oct 2019 22:38:33 GMT
+# Fri, 08 Nov 2019 02:20:36 GMT
 CMD ["jshell"]
-# Fri, 01 Nov 2019 02:28:08 GMT
+# Fri, 08 Nov 2019 02:49:06 GMT
 ENV CATALINA_HOME=/usr/local/tomcat
-# Fri, 01 Nov 2019 02:28:08 GMT
+# Fri, 08 Nov 2019 02:49:07 GMT
 ENV PATH=/usr/local/tomcat/bin:/opt/java/openjdk/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Fri, 01 Nov 2019 02:28:09 GMT
+# Fri, 08 Nov 2019 02:49:08 GMT
 RUN mkdir -p "$CATALINA_HOME"
-# Fri, 01 Nov 2019 02:28:09 GMT
+# Fri, 08 Nov 2019 02:49:08 GMT
 WORKDIR /usr/local/tomcat
-# Fri, 01 Nov 2019 02:28:09 GMT
+# Fri, 08 Nov 2019 02:49:09 GMT
 ENV TOMCAT_NATIVE_LIBDIR=/usr/local/tomcat/native-jni-lib
-# Fri, 01 Nov 2019 02:28:09 GMT
+# Fri, 08 Nov 2019 02:49:09 GMT
 ENV LD_LIBRARY_PATH=/usr/local/tomcat/native-jni-lib
-# Fri, 01 Nov 2019 02:33:11 GMT
+# Fri, 08 Nov 2019 02:55:21 GMT
 ENV GPG_KEYS=05AB33110949707C93A279E3D3EFE6B686867BA6 07E48665A34DCAFAE522E5E6266191C37C037D42 47309207D818FFD8DCD3F83F1931D684307A10A5 541FBE7D8F78B25E055DDEE13C370389288584E7 61B832AC2F1C5A90F0F9B00A1C506407564C17A3 713DA88BE50911535FE716F5208B0AB1D63011C7 79F7026C690BAA50B92CD8B66A3AD3F4F22C4FED 9BA44C2621385CB966EBA586F72C284D731FABEE A27677289986DB50844682F8ACB77FC2E86E29AC A9C5DF4D22E99998D9875A5110C01C5A2F6059E7 DCFD35E0BF8CA7344752DE8B6FB21E8933C60243 F3A04C595DB5B6A5F1ECA43E3B7BBB100D811BBE F7DA48BB64BCB84ECBA7EE6935CD23C10D498E23
-# Fri, 01 Nov 2019 02:33:11 GMT
+# Fri, 08 Nov 2019 02:55:21 GMT
 ENV TOMCAT_MAJOR=8
-# Fri, 01 Nov 2019 02:33:11 GMT
+# Fri, 08 Nov 2019 02:55:21 GMT
 ENV TOMCAT_VERSION=8.5.47
-# Fri, 01 Nov 2019 02:33:11 GMT
+# Fri, 08 Nov 2019 02:55:21 GMT
 ENV TOMCAT_SHA512=079b85f3dfca2b137634859208fae6012860201d720d12ff0add3473f1e267d332cb12803958754e1f922599e0d42b7e97f00bcd62584d9148a6f45fde091716
-# Fri, 01 Nov 2019 02:33:46 GMT
+# Fri, 08 Nov 2019 02:56:17 GMT
 RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		gnupg dirmngr 		wget ca-certificates 	; 		ddist() { 		local f="$1"; shift; 		local distFile="$1"; shift; 		local success=; 		local distUrl=; 		for distUrl in 			'https://www.apache.org/dyn/closer.cgi?action=download&filename=' 			https://www-us.apache.org/dist/ 			https://www.apache.org/dist/ 			https://archive.apache.org/dist/ 		; do 			if wget -O "$f" "$distUrl$distFile" && [ -s "$f" ]; then 				success=1; 				break; 			fi; 		done; 		[ -n "$success" ]; 	}; 		ddist 'tomcat.tar.gz' "tomcat/tomcat-$TOMCAT_MAJOR/v$TOMCAT_VERSION/bin/apache-tomcat-$TOMCAT_VERSION.tar.gz"; 	echo "$TOMCAT_SHA512 *tomcat.tar.gz" | sha512sum --strict --check -; 	ddist 'tomcat.tar.gz.asc' "tomcat/tomcat-$TOMCAT_MAJOR/v$TOMCAT_VERSION/bin/apache-tomcat-$TOMCAT_VERSION.tar.gz.asc"; 	export GNUPGHOME="$(mktemp -d)"; 	for key in $GPG_KEYS; do 		gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys "$key"; 	done; 	gpg --batch --verify tomcat.tar.gz.asc tomcat.tar.gz; 	tar -xf tomcat.tar.gz --strip-components=1; 	rm bin/*.bat; 	rm tomcat.tar.gz*; 	command -v gpgconf && gpgconf --kill all || :; 	rm -rf "$GNUPGHOME"; 		nativeBuildDir="$(mktemp -d)"; 	tar -xf bin/tomcat-native.tar.gz -C "$nativeBuildDir" --strip-components=1; 	apt-get install -y --no-install-recommends 		dpkg-dev 		gcc 		libapr1-dev 		libssl-dev 		make 	; 	( 		export CATALINA_HOME="$PWD"; 		cd "$nativeBuildDir/native"; 		gnuArch="$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)"; 		aprConfig="$(command -v apr-1-config)"; 		./configure 			--build="$gnuArch" 			--libdir="$TOMCAT_NATIVE_LIBDIR" 			--prefix="$CATALINA_HOME" 			--with-apr="$aprConfig" 			--with-java-home="$JAVA_HOME" 			--with-ssl=yes; 		make -j "$(nproc)"; 		make install; 	); 	rm -rf "$nativeBuildDir"; 	rm bin/tomcat-native.tar.gz; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark > /dev/null; 	find "$TOMCAT_NATIVE_LIBDIR" -type f -executable -exec ldd '{}' ';' 		| awk '/=>/ { print $(NF-1) }' 		| sort -u 		| xargs -r dpkg-query --search 		| cut -d: -f1 		| sort -u 		| xargs -r apt-mark manual 	; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 	rm -rf /var/lib/apt/lists/*; 		find ./bin/ -name '*.sh' -exec sed -ri 's|^#!/bin/sh$|#!/usr/bin/env bash|' '{}' +; 		chmod -R +rX .; 	chmod 777 logs temp work
-# Fri, 01 Nov 2019 02:33:48 GMT
+# Fri, 08 Nov 2019 02:56:22 GMT
 RUN set -e 	&& nativeLines="$(catalina.sh configtest 2>&1)" 	&& nativeLines="$(echo "$nativeLines" | grep 'Apache Tomcat Native')" 	&& nativeLines="$(echo "$nativeLines" | sort -u)" 	&& if ! echo "$nativeLines" | grep 'INFO: Loaded APR based Apache Tomcat Native library' >&2; then 		echo >&2 "$nativeLines"; 		exit 1; 	fi
-# Fri, 01 Nov 2019 02:33:49 GMT
+# Fri, 08 Nov 2019 02:56:22 GMT
 EXPOSE 8080
-# Fri, 01 Nov 2019 02:33:49 GMT
+# Fri, 08 Nov 2019 02:56:22 GMT
 CMD ["catalina.sh" "run"]
-# Fri, 01 Nov 2019 05:50:23 GMT
+# Fri, 08 Nov 2019 03:52:11 GMT
 MAINTAINER Vincent Massol <vincent@massol.net>
-# Fri, 01 Nov 2019 05:51:08 GMT
+# Fri, 08 Nov 2019 03:52:56 GMT
 RUN apt-get update &&   apt-get --no-install-recommends -y install     curl     libreoffice     unzip     procps     libmysql-java &&   rm -rf /var/lib/apt/lists/*
-# Fri, 01 Nov 2019 05:51:09 GMT
+# Fri, 08 Nov 2019 03:52:57 GMT
 ENV XWIKI_VERSION=11.9
-# Fri, 01 Nov 2019 05:51:09 GMT
+# Fri, 08 Nov 2019 03:52:57 GMT
 ENV XWIKI_URL_PREFIX=https://maven.xwiki.org/releases/org/xwiki/platform/xwiki-platform-distribution-war/11.9
-# Fri, 01 Nov 2019 05:51:09 GMT
+# Fri, 08 Nov 2019 03:52:57 GMT
 ENV XWIKI_DOWNLOAD_SHA256=f4fc420b570c5da374492b236cca5df1239793979126722c1adcc642ee9b335c
-# Fri, 01 Nov 2019 05:51:43 GMT
+# Fri, 08 Nov 2019 03:53:35 GMT
 RUN rm -rf /usr/local/tomcat/webapps/* &&   mkdir -p /usr/local/tomcat/temp &&   mkdir -p /usr/local/xwiki/data &&   curl -fSL "${XWIKI_URL_PREFIX}/xwiki-platform-distribution-war-${XWIKI_VERSION}.war" -o xwiki.war &&   echo "$XWIKI_DOWNLOAD_SHA256 xwiki.war" | sha256sum -c - &&   unzip -d /usr/local/tomcat/webapps/ROOT xwiki.war &&   rm -f xwiki.war
-# Fri, 01 Nov 2019 05:51:44 GMT
+# Fri, 08 Nov 2019 03:53:36 GMT
 RUN cp /usr/share/java/mysql-connector-java-*.jar /usr/local/tomcat/webapps/ROOT/WEB-INF/lib/
-# Fri, 01 Nov 2019 05:51:44 GMT
+# Fri, 08 Nov 2019 03:53:36 GMT
 COPY file:0a1be11e2eb610a1dbcd415404e3a592641110b93090030cb831e3a19a163017 in /usr/local/tomcat/bin/ 
-# Fri, 01 Nov 2019 05:51:44 GMT
+# Fri, 08 Nov 2019 03:53:36 GMT
 COPY file:406eb381f87e0aed57baf469c64efee52199868e8fc75ff865a9661b47910460 in /usr/local/tomcat/webapps/ROOT/WEB-INF/hibernate.cfg.xml 
-# Fri, 01 Nov 2019 05:51:45 GMT
+# Fri, 08 Nov 2019 03:53:37 GMT
 RUN sed -i 's/<id>org.xwiki.platform:xwiki-platform-distribution-war/<id>org.xwiki.platform:xwiki-platform-distribution-docker/'   /usr/local/tomcat/webapps/ROOT/META-INF/extension.xed
-# Fri, 01 Nov 2019 05:51:45 GMT
+# Fri, 08 Nov 2019 03:53:37 GMT
 COPY file:f901b2d7ac3d76cd8346f9aee81b40529183e81d8aa027bb390856ac01fa6cc0 in /usr/local/bin/docker-entrypoint.sh 
-# Fri, 01 Nov 2019 05:51:45 GMT
+# Fri, 08 Nov 2019 03:53:38 GMT
 VOLUME [/usr/local/xwiki]
-# Fri, 01 Nov 2019 05:51:45 GMT
+# Fri, 08 Nov 2019 03:53:38 GMT
 ENTRYPOINT ["docker-entrypoint.sh"]
-# Fri, 01 Nov 2019 05:51:45 GMT
+# Fri, 08 Nov 2019 03:53:38 GMT
 CMD ["xwiki"]
 ```
 
@@ -2180,59 +2180,59 @@ CMD ["xwiki"]
 		Last Modified: Thu, 31 Oct 2019 22:21:39 GMT  
 		Size: 162.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:b5035666b1cd262e3117ca99ecbe11fc92c973a1164cd5c69bca60165f501520`  
-		Last Modified: Thu, 31 Oct 2019 22:40:53 GMT  
-		Size: 10.8 MB (10842099 bytes)  
+	-	`sha256:da4c04c54fa4a9b55ddef0b116fa7969185639621c525e1fe19f2b194f1ca4bc`  
+		Last Modified: Fri, 08 Nov 2019 02:22:45 GMT  
+		Size: 13.3 MB (13322685 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:60e5b903fb31d874f9a1c331071b5e855634a3ae4fa5db5a3ba0dc027bbc9c5f`  
-		Last Modified: Thu, 31 Oct 2019 22:41:36 GMT  
-		Size: 197.7 MB (197657372 bytes)  
+	-	`sha256:10235b1a516d4b068683fe79fb89be475cb2fc41b1ea76fcb4b13872bee27da0`  
+		Last Modified: Fri, 08 Nov 2019 02:23:23 GMT  
+		Size: 197.8 MB (197822335 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:f578b1f2cf8f2f5876b3185c7edd79990e67ec624e21b05b0614d04c5acb0106`  
-		Last Modified: Fri, 01 Nov 2019 02:38:58 GMT  
-		Size: 136.0 B  
+	-	`sha256:24154429346fe2204e6d5dab3868244db95f4163d1be3905621fb2b53653eb2c`  
+		Last Modified: Fri, 08 Nov 2019 03:05:39 GMT  
+		Size: 139.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c12bb0162813b1b0c82e82d87b9bdf6e96ef46d7c3aa9408a9c8d9de7c9a575a`  
-		Last Modified: Fri, 01 Nov 2019 02:39:41 GMT  
-		Size: 11.2 MB (11234934 bytes)  
+	-	`sha256:c572a63a7a797dd43aa600f689a0e6d3c85b8f94a138c2d3181801cd788b36c9`  
+		Last Modified: Fri, 08 Nov 2019 03:06:29 GMT  
+		Size: 11.3 MB (11251478 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:469391c4f542e184022627170e76ee20d527d65dfda5b22daebd7187925accb7`  
-		Last Modified: Fri, 01 Nov 2019 02:39:39 GMT  
-		Size: 133.0 B  
+	-	`sha256:a016684a4a3052bad801984d71c411cd2e4fade815d50a5ad7b5f228041d0b56`  
+		Last Modified: Fri, 08 Nov 2019 03:06:27 GMT  
+		Size: 132.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:a9cb5d6ac8ff25f915684ed166cd0c7ac4a92a7b8f447f7b573721d4e4862395`  
-		Last Modified: Fri, 01 Nov 2019 05:56:17 GMT  
-		Size: 182.5 MB (182519866 bytes)  
+	-	`sha256:c91247e8560d3e2c0be69d9c20160a5c7b9e23fdec44b0fc06fb0dd678003c6f`  
+		Last Modified: Fri, 08 Nov 2019 03:57:46 GMT  
+		Size: 179.9 MB (179895305 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:f1fb9e179e1e0794b0e3ab1fa75f30babb21fe494a3c009b61a9f0bdc94a8007`  
-		Last Modified: Fri, 01 Nov 2019 05:56:06 GMT  
-		Size: 284.2 MB (284247999 bytes)  
+	-	`sha256:a43a14f8330f2612a59d1aa4cab49393e380b7f4f788380e090d66aeeec27413`  
+		Last Modified: Fri, 08 Nov 2019 03:57:35 GMT  
+		Size: 284.2 MB (284248060 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:f55b66004ada5c63d908ecf104a82e72fbc834488f3d3268937752fff2d7cfc1`  
-		Last Modified: Fri, 01 Nov 2019 05:55:45 GMT  
-		Size: 955.6 KB (955598 bytes)  
+	-	`sha256:1829bd8f4cffb2971f321018ab8b1ff5890d9f709c1d694725799bfc7b299f6f`  
+		Last Modified: Fri, 08 Nov 2019 03:57:13 GMT  
+		Size: 955.6 KB (955603 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:d3e3aefe7f08df3a904bfa1b6fb484544d4abf98f8e67e22a29a878e40e9a1eb`  
-		Last Modified: Fri, 01 Nov 2019 05:55:45 GMT  
-		Size: 1.3 KB (1341 bytes)  
+	-	`sha256:444ce5df0050d115c048cca2619eb9669dfd6a497d0b53af7e212670c7e181a2`  
+		Last Modified: Fri, 08 Nov 2019 03:57:13 GMT  
+		Size: 1.3 KB (1346 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:f4f03a2f5eb6e67eb8d75bd2641d80a18e30ecc78cbbbbdb7def4322ba44e011`  
-		Last Modified: Fri, 01 Nov 2019 05:55:45 GMT  
-		Size: 2.3 KB (2334 bytes)  
+	-	`sha256:537505f100251872fe038c9e7189a1515539e54e927362e7a074ddda578b1430`  
+		Last Modified: Fri, 08 Nov 2019 03:57:14 GMT  
+		Size: 2.3 KB (2337 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:137909c9c97785a04ee164d5f5078d18ba1c0764e84e7c1756806863792b9645`  
-		Last Modified: Fri, 01 Nov 2019 05:55:45 GMT  
-		Size: 4.2 KB (4234 bytes)  
+	-	`sha256:93d47669c79bd6ba35cbfae545a94c242480372296a9aa60cd24044cfeb730d7`  
+		Last Modified: Fri, 08 Nov 2019 03:57:13 GMT  
+		Size: 4.2 KB (4235 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:0bea17859d854d5e0c2ad02328d87ec74e591d8c0c40dbae70b52cf059f3826a`  
-		Last Modified: Fri, 01 Nov 2019 05:55:45 GMT  
-		Size: 2.4 KB (2400 bytes)  
+	-	`sha256:0edda1fa0cef0bd96542fe7f721070f136ce34a02bc2976de8f72b54b9fca7f8`  
+		Last Modified: Fri, 08 Nov 2019 03:57:14 GMT  
+		Size: 2.4 KB (2404 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `xwiki:11-postgres-tomcat`
 
 ```console
-$ docker pull xwiki@sha256:c390781c299203e3a155c5cd02a310cb07ce0923227a0a0450f5c5cf27fa03a8
+$ docker pull xwiki@sha256:6aac021f2896446f7dc9812d47cfab5f33c14abff540e56b2898d2ce48d9f61b
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -2243,14 +2243,14 @@ $ docker pull xwiki@sha256:c390781c299203e3a155c5cd02a310cb07ce0923227a0a0450f5c
 ### `xwiki:11-postgres-tomcat` - linux; amd64
 
 ```console
-$ docker pull xwiki@sha256:45cc76f7068c4a776a32d76d17c4396d928467c26e2621eb95afd04fd0968203
+$ docker pull xwiki@sha256:cac9f8446174cb20ccaa7188b1288a226bfe66784def15d4c8faf65e6d135589
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **713.5 MB (713522889 bytes)**  
+-	Total Size: **713.6 MB (713559715 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:8cfd018e9b18bf45e28be5a1dc903ef92f7ffd845fe3cd718dc6fdce304e21cc`
+-	Image ID: `sha256:0c0766a91ac95edb9ac0ee19721ebb86c2d4b43bb3b51ef65edf06cb61719b94`
 -	Entrypoint: `["docker-entrypoint.sh"]`
 -	Default Command: `["xwiki"]`
 
@@ -2267,71 +2267,71 @@ RUN mkdir -p /run/systemd && echo 'docker' > /run/systemd/container
 CMD ["/bin/bash"]
 # Thu, 31 Oct 2019 22:37:37 GMT
 ENV LANG=en_US.UTF-8 LANGUAGE=en_US:en LC_ALL=en_US.UTF-8
-# Thu, 31 Oct 2019 22:38:04 GMT
-RUN apt-get update     && apt-get install -y --no-install-recommends curl ca-certificates locales     && echo "en_US.UTF-8 UTF-8" >> /etc/locale.gen     && locale-gen en_US.UTF-8     && rm -rf /var/lib/apt/lists/*
-# Thu, 31 Oct 2019 22:38:23 GMT
-ENV JAVA_VERSION=jdk-11.0.4+11
-# Thu, 31 Oct 2019 22:38:32 GMT
-RUN set -eux;     ARCH="$(dpkg --print-architecture)";     case "${ARCH}" in        aarch64|arm64)          ESUM='10e33e1862638e11a9158947b3d7b461727d8e396e378b171be1eb4dfe12f1ed';          BINARY_URL='https://github.com/AdoptOpenJDK/openjdk11-binaries/releases/download/jdk-11.0.4%2B11/OpenJDK11U-jdk_aarch64_linux_hotspot_11.0.4_11.tar.gz';          ;;        armhf)          ESUM='19f16c4b905055a13457d06ce9a107a54289d3828bf3ae378efc6deb908a5572';          BINARY_URL='https://github.com/AdoptOpenJDK/openjdk11-binaries/releases/download/jdk-11.0.4%2B11/OpenJDK11U-jdk_arm_linux_hotspot_11.0.4_11.tar.gz';          ;;        ppc64el|ppc64le)          ESUM='fc6b616f83fea033edd836c934f3e70764b5aa1dac0446df8a8b49297ca40a5e';          BINARY_URL='https://github.com/AdoptOpenJDK/openjdk11-binaries/releases/download/jdk-11.0.4%2B11/OpenJDK11U-jdk_ppc64le_linux_hotspot_11.0.4_11.tar.gz';          ;;        s390x)          ESUM='9487d27ef65b0cc30481cd0d23466aa6b36c90dfaa8a033166fad67bc37891de';          BINARY_URL='https://github.com/AdoptOpenJDK/openjdk11-binaries/releases/download/jdk-11.0.4%2B11/OpenJDK11U-jdk_s390x_linux_hotspot_11.0.4_11.tar.gz';          ;;        amd64|x86_64)          ESUM='90c33cf3f2ed0bd773f648815de7347e69cfbb3416ef3bf41616ab1c4aa0f5a8';          BINARY_URL='https://github.com/AdoptOpenJDK/openjdk11-binaries/releases/download/jdk-11.0.4%2B11/OpenJDK11U-jdk_x64_linux_hotspot_11.0.4_11.tar.gz';          ;;        *)          echo "Unsupported arch: ${ARCH}";          exit 1;          ;;     esac;     curl -LfsSo /tmp/openjdk.tar.gz ${BINARY_URL};     echo "${ESUM} */tmp/openjdk.tar.gz" | sha256sum -c -;     mkdir -p /opt/java/openjdk;     cd /opt/java/openjdk;     tar -xf /tmp/openjdk.tar.gz --strip-components=1;     rm -rf /tmp/openjdk.tar.gz;
-# Thu, 31 Oct 2019 22:38:32 GMT
+# Fri, 08 Nov 2019 02:20:03 GMT
+RUN apt-get update     && apt-get install -y --no-install-recommends curl ca-certificates fontconfig locales     && echo "en_US.UTF-8 UTF-8" >> /etc/locale.gen     && locale-gen en_US.UTF-8     && rm -rf /var/lib/apt/lists/*
+# Fri, 08 Nov 2019 02:20:26 GMT
+ENV JAVA_VERSION=jdk-11.0.5+10
+# Fri, 08 Nov 2019 02:20:35 GMT
+RUN set -eux;     ARCH="$(dpkg --print-architecture)";     case "${ARCH}" in        armhf)          ESUM='c6b1fda3f8807028cbfcc34a4ded2e8a5a6b6239d2bcc1f06673ea6b1530df94';          BINARY_URL='https://github.com/AdoptOpenJDK/openjdk11-binaries/releases/download/jdk-11.0.5%2B10/OpenJDK11U-jdk_arm_linux_hotspot_11.0.5_10.tar.gz';          ;;        ppc64el|ppc64le)          ESUM='d763481ddc29ac0bdefb24216b3a0bf9afbb058552682567a075f9c0f7da5814';          BINARY_URL='https://github.com/AdoptOpenJDK/openjdk11-binaries/releases/download/jdk-11.0.5%2B10/OpenJDK11U-jdk_ppc64le_linux_hotspot_11.0.5_10.tar.gz';          ;;        amd64|x86_64)          ESUM='6dd0c9c8a740e6c19149e98034fba8e368fd9aa16ab417aa636854d40db1a161';          BINARY_URL='https://github.com/AdoptOpenJDK/openjdk11-binaries/releases/download/jdk-11.0.5%2B10/OpenJDK11U-jdk_x64_linux_hotspot_11.0.5_10.tar.gz';          ;;        *)          echo "Unsupported arch: ${ARCH}";          exit 1;          ;;     esac;     curl -LfsSo /tmp/openjdk.tar.gz ${BINARY_URL};     echo "${ESUM} */tmp/openjdk.tar.gz" | sha256sum -c -;     mkdir -p /opt/java/openjdk;     cd /opt/java/openjdk;     tar -xf /tmp/openjdk.tar.gz --strip-components=1;     rm -rf /tmp/openjdk.tar.gz;
+# Fri, 08 Nov 2019 02:20:36 GMT
 ENV JAVA_HOME=/opt/java/openjdk PATH=/opt/java/openjdk/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Thu, 31 Oct 2019 22:38:33 GMT
+# Fri, 08 Nov 2019 02:20:36 GMT
 CMD ["jshell"]
-# Fri, 01 Nov 2019 02:28:08 GMT
+# Fri, 08 Nov 2019 02:49:06 GMT
 ENV CATALINA_HOME=/usr/local/tomcat
-# Fri, 01 Nov 2019 02:28:08 GMT
+# Fri, 08 Nov 2019 02:49:07 GMT
 ENV PATH=/usr/local/tomcat/bin:/opt/java/openjdk/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Fri, 01 Nov 2019 02:28:09 GMT
+# Fri, 08 Nov 2019 02:49:08 GMT
 RUN mkdir -p "$CATALINA_HOME"
-# Fri, 01 Nov 2019 02:28:09 GMT
+# Fri, 08 Nov 2019 02:49:08 GMT
 WORKDIR /usr/local/tomcat
-# Fri, 01 Nov 2019 02:28:09 GMT
+# Fri, 08 Nov 2019 02:49:09 GMT
 ENV TOMCAT_NATIVE_LIBDIR=/usr/local/tomcat/native-jni-lib
-# Fri, 01 Nov 2019 02:28:09 GMT
+# Fri, 08 Nov 2019 02:49:09 GMT
 ENV LD_LIBRARY_PATH=/usr/local/tomcat/native-jni-lib
-# Fri, 01 Nov 2019 02:33:11 GMT
+# Fri, 08 Nov 2019 02:55:21 GMT
 ENV GPG_KEYS=05AB33110949707C93A279E3D3EFE6B686867BA6 07E48665A34DCAFAE522E5E6266191C37C037D42 47309207D818FFD8DCD3F83F1931D684307A10A5 541FBE7D8F78B25E055DDEE13C370389288584E7 61B832AC2F1C5A90F0F9B00A1C506407564C17A3 713DA88BE50911535FE716F5208B0AB1D63011C7 79F7026C690BAA50B92CD8B66A3AD3F4F22C4FED 9BA44C2621385CB966EBA586F72C284D731FABEE A27677289986DB50844682F8ACB77FC2E86E29AC A9C5DF4D22E99998D9875A5110C01C5A2F6059E7 DCFD35E0BF8CA7344752DE8B6FB21E8933C60243 F3A04C595DB5B6A5F1ECA43E3B7BBB100D811BBE F7DA48BB64BCB84ECBA7EE6935CD23C10D498E23
-# Fri, 01 Nov 2019 02:33:11 GMT
+# Fri, 08 Nov 2019 02:55:21 GMT
 ENV TOMCAT_MAJOR=8
-# Fri, 01 Nov 2019 02:33:11 GMT
+# Fri, 08 Nov 2019 02:55:21 GMT
 ENV TOMCAT_VERSION=8.5.47
-# Fri, 01 Nov 2019 02:33:11 GMT
+# Fri, 08 Nov 2019 02:55:21 GMT
 ENV TOMCAT_SHA512=079b85f3dfca2b137634859208fae6012860201d720d12ff0add3473f1e267d332cb12803958754e1f922599e0d42b7e97f00bcd62584d9148a6f45fde091716
-# Fri, 01 Nov 2019 02:33:46 GMT
+# Fri, 08 Nov 2019 02:56:17 GMT
 RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		gnupg dirmngr 		wget ca-certificates 	; 		ddist() { 		local f="$1"; shift; 		local distFile="$1"; shift; 		local success=; 		local distUrl=; 		for distUrl in 			'https://www.apache.org/dyn/closer.cgi?action=download&filename=' 			https://www-us.apache.org/dist/ 			https://www.apache.org/dist/ 			https://archive.apache.org/dist/ 		; do 			if wget -O "$f" "$distUrl$distFile" && [ -s "$f" ]; then 				success=1; 				break; 			fi; 		done; 		[ -n "$success" ]; 	}; 		ddist 'tomcat.tar.gz' "tomcat/tomcat-$TOMCAT_MAJOR/v$TOMCAT_VERSION/bin/apache-tomcat-$TOMCAT_VERSION.tar.gz"; 	echo "$TOMCAT_SHA512 *tomcat.tar.gz" | sha512sum --strict --check -; 	ddist 'tomcat.tar.gz.asc' "tomcat/tomcat-$TOMCAT_MAJOR/v$TOMCAT_VERSION/bin/apache-tomcat-$TOMCAT_VERSION.tar.gz.asc"; 	export GNUPGHOME="$(mktemp -d)"; 	for key in $GPG_KEYS; do 		gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys "$key"; 	done; 	gpg --batch --verify tomcat.tar.gz.asc tomcat.tar.gz; 	tar -xf tomcat.tar.gz --strip-components=1; 	rm bin/*.bat; 	rm tomcat.tar.gz*; 	command -v gpgconf && gpgconf --kill all || :; 	rm -rf "$GNUPGHOME"; 		nativeBuildDir="$(mktemp -d)"; 	tar -xf bin/tomcat-native.tar.gz -C "$nativeBuildDir" --strip-components=1; 	apt-get install -y --no-install-recommends 		dpkg-dev 		gcc 		libapr1-dev 		libssl-dev 		make 	; 	( 		export CATALINA_HOME="$PWD"; 		cd "$nativeBuildDir/native"; 		gnuArch="$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)"; 		aprConfig="$(command -v apr-1-config)"; 		./configure 			--build="$gnuArch" 			--libdir="$TOMCAT_NATIVE_LIBDIR" 			--prefix="$CATALINA_HOME" 			--with-apr="$aprConfig" 			--with-java-home="$JAVA_HOME" 			--with-ssl=yes; 		make -j "$(nproc)"; 		make install; 	); 	rm -rf "$nativeBuildDir"; 	rm bin/tomcat-native.tar.gz; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark > /dev/null; 	find "$TOMCAT_NATIVE_LIBDIR" -type f -executable -exec ldd '{}' ';' 		| awk '/=>/ { print $(NF-1) }' 		| sort -u 		| xargs -r dpkg-query --search 		| cut -d: -f1 		| sort -u 		| xargs -r apt-mark manual 	; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 	rm -rf /var/lib/apt/lists/*; 		find ./bin/ -name '*.sh' -exec sed -ri 's|^#!/bin/sh$|#!/usr/bin/env bash|' '{}' +; 		chmod -R +rX .; 	chmod 777 logs temp work
-# Fri, 01 Nov 2019 02:33:48 GMT
+# Fri, 08 Nov 2019 02:56:22 GMT
 RUN set -e 	&& nativeLines="$(catalina.sh configtest 2>&1)" 	&& nativeLines="$(echo "$nativeLines" | grep 'Apache Tomcat Native')" 	&& nativeLines="$(echo "$nativeLines" | sort -u)" 	&& if ! echo "$nativeLines" | grep 'INFO: Loaded APR based Apache Tomcat Native library' >&2; then 		echo >&2 "$nativeLines"; 		exit 1; 	fi
-# Fri, 01 Nov 2019 02:33:49 GMT
+# Fri, 08 Nov 2019 02:56:22 GMT
 EXPOSE 8080
-# Fri, 01 Nov 2019 02:33:49 GMT
+# Fri, 08 Nov 2019 02:56:22 GMT
 CMD ["catalina.sh" "run"]
-# Fri, 01 Nov 2019 05:50:23 GMT
+# Fri, 08 Nov 2019 03:52:11 GMT
 MAINTAINER Vincent Massol <vincent@massol.net>
-# Fri, 01 Nov 2019 05:52:38 GMT
+# Fri, 08 Nov 2019 03:54:40 GMT
 RUN apt-get update &&   apt-get --no-install-recommends -y install     curl     libreoffice     unzip     procps     libpostgresql-jdbc-java &&   rm -rf /var/lib/apt/lists/*
-# Fri, 01 Nov 2019 05:52:39 GMT
+# Fri, 08 Nov 2019 03:54:41 GMT
 ENV XWIKI_VERSION=11.9
-# Fri, 01 Nov 2019 05:52:39 GMT
+# Fri, 08 Nov 2019 03:54:41 GMT
 ENV XWIKI_URL_PREFIX=https://maven.xwiki.org/releases/org/xwiki/platform/xwiki-platform-distribution-war/11.9
-# Fri, 01 Nov 2019 05:52:39 GMT
+# Fri, 08 Nov 2019 03:54:41 GMT
 ENV XWIKI_DOWNLOAD_SHA256=f4fc420b570c5da374492b236cca5df1239793979126722c1adcc642ee9b335c
-# Fri, 01 Nov 2019 05:53:19 GMT
+# Fri, 08 Nov 2019 03:55:15 GMT
 RUN rm -rf /usr/local/tomcat/webapps/* &&   mkdir -p /usr/local/tomcat/temp &&   mkdir -p /usr/local/xwiki/data &&   curl -fSL "${XWIKI_URL_PREFIX}/xwiki-platform-distribution-war-${XWIKI_VERSION}.war" -o xwiki.war &&   echo "$XWIKI_DOWNLOAD_SHA256 xwiki.war" | sha256sum -c - &&   unzip -d /usr/local/tomcat/webapps/ROOT xwiki.war &&   rm -f xwiki.war
-# Fri, 01 Nov 2019 05:53:20 GMT
+# Fri, 08 Nov 2019 03:55:16 GMT
 RUN cp /usr/share/java/postgresql-jdbc4.jar /usr/local/tomcat/webapps/ROOT/WEB-INF/lib/
-# Fri, 01 Nov 2019 05:53:20 GMT
+# Fri, 08 Nov 2019 03:55:16 GMT
 COPY file:0a1be11e2eb610a1dbcd415404e3a592641110b93090030cb831e3a19a163017 in /usr/local/tomcat/bin/ 
-# Fri, 01 Nov 2019 05:53:20 GMT
+# Fri, 08 Nov 2019 03:55:16 GMT
 COPY file:bb513b07693b0f03295b679c3da15a7fa3d7769583b3db4897a41cfec3529978 in /usr/local/tomcat/webapps/ROOT/WEB-INF/hibernate.cfg.xml 
-# Fri, 01 Nov 2019 05:53:21 GMT
+# Fri, 08 Nov 2019 03:55:17 GMT
 RUN sed -i 's/<id>org.xwiki.platform:xwiki-platform-distribution-war/<id>org.xwiki.platform:xwiki-platform-distribution-docker/'   /usr/local/tomcat/webapps/ROOT/META-INF/extension.xed
-# Fri, 01 Nov 2019 05:53:21 GMT
+# Fri, 08 Nov 2019 03:55:17 GMT
 COPY file:f901b2d7ac3d76cd8346f9aee81b40529183e81d8aa027bb390856ac01fa6cc0 in /usr/local/bin/docker-entrypoint.sh 
-# Fri, 01 Nov 2019 05:53:21 GMT
+# Fri, 08 Nov 2019 03:55:18 GMT
 VOLUME [/usr/local/xwiki]
-# Fri, 01 Nov 2019 05:53:22 GMT
+# Fri, 08 Nov 2019 03:55:18 GMT
 ENTRYPOINT ["docker-entrypoint.sh"]
-# Fri, 01 Nov 2019 05:53:22 GMT
+# Fri, 08 Nov 2019 03:55:18 GMT
 CMD ["xwiki"]
 ```
 
@@ -2352,53 +2352,53 @@ CMD ["xwiki"]
 		Last Modified: Thu, 31 Oct 2019 22:21:39 GMT  
 		Size: 162.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:b5035666b1cd262e3117ca99ecbe11fc92c973a1164cd5c69bca60165f501520`  
-		Last Modified: Thu, 31 Oct 2019 22:40:53 GMT  
-		Size: 10.8 MB (10842099 bytes)  
+	-	`sha256:da4c04c54fa4a9b55ddef0b116fa7969185639621c525e1fe19f2b194f1ca4bc`  
+		Last Modified: Fri, 08 Nov 2019 02:22:45 GMT  
+		Size: 13.3 MB (13322685 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:60e5b903fb31d874f9a1c331071b5e855634a3ae4fa5db5a3ba0dc027bbc9c5f`  
-		Last Modified: Thu, 31 Oct 2019 22:41:36 GMT  
-		Size: 197.7 MB (197657372 bytes)  
+	-	`sha256:10235b1a516d4b068683fe79fb89be475cb2fc41b1ea76fcb4b13872bee27da0`  
+		Last Modified: Fri, 08 Nov 2019 02:23:23 GMT  
+		Size: 197.8 MB (197822335 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:f578b1f2cf8f2f5876b3185c7edd79990e67ec624e21b05b0614d04c5acb0106`  
-		Last Modified: Fri, 01 Nov 2019 02:38:58 GMT  
-		Size: 136.0 B  
+	-	`sha256:24154429346fe2204e6d5dab3868244db95f4163d1be3905621fb2b53653eb2c`  
+		Last Modified: Fri, 08 Nov 2019 03:05:39 GMT  
+		Size: 139.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c12bb0162813b1b0c82e82d87b9bdf6e96ef46d7c3aa9408a9c8d9de7c9a575a`  
-		Last Modified: Fri, 01 Nov 2019 02:39:41 GMT  
-		Size: 11.2 MB (11234934 bytes)  
+	-	`sha256:c572a63a7a797dd43aa600f689a0e6d3c85b8f94a138c2d3181801cd788b36c9`  
+		Last Modified: Fri, 08 Nov 2019 03:06:29 GMT  
+		Size: 11.3 MB (11251478 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:469391c4f542e184022627170e76ee20d527d65dfda5b22daebd7187925accb7`  
-		Last Modified: Fri, 01 Nov 2019 02:39:39 GMT  
-		Size: 133.0 B  
+	-	`sha256:a016684a4a3052bad801984d71c411cd2e4fade815d50a5ad7b5f228041d0b56`  
+		Last Modified: Fri, 08 Nov 2019 03:06:27 GMT  
+		Size: 132.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:b1abd62c53b3e223d5fb653d9221f3a82085f6983b1282f1d6136eae7846f035`  
-		Last Modified: Fri, 01 Nov 2019 05:57:01 GMT  
-		Size: 182.2 MB (182185615 bytes)  
+	-	`sha256:c6c389865c6b163f05cd9fb7175a147244f1fe7f2e875e7e9254fba9d4355ac6`  
+		Last Modified: Fri, 08 Nov 2019 03:58:52 GMT  
+		Size: 179.6 MB (179560341 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:b2412a2e75bce567834b7b0300b4f76b590e2d88009e6832016c2e569bd196db`  
-		Last Modified: Fri, 01 Nov 2019 05:56:57 GMT  
-		Size: 284.2 MB (284248067 bytes)  
+	-	`sha256:562aa1e5b86036561bf92eeb259a1874ef32891c757288834b9b2b719eaa9fa4`  
+		Last Modified: Fri, 08 Nov 2019 03:58:40 GMT  
+		Size: 284.2 MB (284248070 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:8886f5e85572a235e74cde689873e6d0609f55bda56c7cacaeca9f8412ae394e`  
-		Last Modified: Fri, 01 Nov 2019 05:56:28 GMT  
-		Size: 618.9 KB (618861 bytes)  
+	-	`sha256:0b004eb7bf4e98f684ef042ba415dc8f6b8fe6dd200b909e709adb0773d5895a`  
+		Last Modified: Fri, 08 Nov 2019 03:58:19 GMT  
+		Size: 618.9 KB (618859 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:d49fa8b65c25d20f133021be9df1aa2dfadede3479c41d19345618f21a7f48f9`  
-		Last Modified: Fri, 01 Nov 2019 05:56:29 GMT  
+	-	`sha256:0541b695898dc98f9d4d23fe1965e1456ccb9e3b06a73d14fcd69584b0910eff`  
+		Last Modified: Fri, 08 Nov 2019 03:58:19 GMT  
 		Size: 1.3 KB (1346 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:3a1150187c99c2a8c3205299f27bfaff6828c5f49f0982f27abe3adf5353b961`  
-		Last Modified: Fri, 01 Nov 2019 05:56:28 GMT  
+	-	`sha256:265ff15371c618be572359f343975265a764c4b35dffcd18d06e1e7f7c22755b`  
+		Last Modified: Fri, 08 Nov 2019 03:58:20 GMT  
 		Size: 2.5 KB (2476 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c851b19a77e3895b2caa2812152a5fe78de8be85ee949e8c0c36db12f9930159`  
-		Last Modified: Fri, 01 Nov 2019 05:56:28 GMT  
+	-	`sha256:3e0231d408083ed04206ee491020508906d4a82d15c98adbb1f9c7f83f07915e`  
+		Last Modified: Fri, 08 Nov 2019 03:58:19 GMT  
 		Size: 4.2 KB (4235 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:d2d5f5d7278c16dddfc7c6238b563e24bb09515286c9438f4bdba4b02f7003a9`  
-		Last Modified: Fri, 01 Nov 2019 05:56:28 GMT  
-		Size: 2.4 KB (2399 bytes)  
+	-	`sha256:61f95c3de4daec2356b89cdb675a548338445969c3b925d74dc86f622893d833`  
+		Last Modified: Fri, 08 Nov 2019 03:58:19 GMT  
+		Size: 2.4 KB (2403 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `xwiki:11-postgres-tomcat` - linux; arm64 variant v8
@@ -2565,7 +2565,7 @@ CMD ["xwiki"]
 ## `xwiki:latest`
 
 ```console
-$ docker pull xwiki@sha256:53a75d8da3c537c83fcaa909aad516c621db42254f9339405d1da00a69e46958
+$ docker pull xwiki@sha256:ffe63967f89e99e68d856ee74850c7a77221dc49a3ea312b352d7e1c19e61c2a
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -2575,14 +2575,14 @@ $ docker pull xwiki@sha256:53a75d8da3c537c83fcaa909aad516c621db42254f9339405d1da
 ### `xwiki:latest` - linux; amd64
 
 ```console
-$ docker pull xwiki@sha256:cc179298fdf56b4959adf41e8d1dfc6b6f436bfb2e2eecd999d3d4503ca9ab9d
+$ docker pull xwiki@sha256:b2b5d7d74a28e5a95df8ff0fb3b3bbcc1b9e2153891d62fc0df196a7464edcd3
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **714.2 MB (714193662 bytes)**  
+-	Total Size: **714.2 MB (714231275 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:163f00c14c053c3ae84dd9cc03a9dd6f3685e3c76ec000534299ce2ecd71323e`
+-	Image ID: `sha256:4050fb76b936f3f7dcfe96bae527ffb80bf0c01df874a5e3e86d8c4b56a824e0`
 -	Entrypoint: `["docker-entrypoint.sh"]`
 -	Default Command: `["xwiki"]`
 
@@ -2599,71 +2599,71 @@ RUN mkdir -p /run/systemd && echo 'docker' > /run/systemd/container
 CMD ["/bin/bash"]
 # Thu, 31 Oct 2019 22:37:37 GMT
 ENV LANG=en_US.UTF-8 LANGUAGE=en_US:en LC_ALL=en_US.UTF-8
-# Thu, 31 Oct 2019 22:38:04 GMT
-RUN apt-get update     && apt-get install -y --no-install-recommends curl ca-certificates locales     && echo "en_US.UTF-8 UTF-8" >> /etc/locale.gen     && locale-gen en_US.UTF-8     && rm -rf /var/lib/apt/lists/*
-# Thu, 31 Oct 2019 22:38:23 GMT
-ENV JAVA_VERSION=jdk-11.0.4+11
-# Thu, 31 Oct 2019 22:38:32 GMT
-RUN set -eux;     ARCH="$(dpkg --print-architecture)";     case "${ARCH}" in        aarch64|arm64)          ESUM='10e33e1862638e11a9158947b3d7b461727d8e396e378b171be1eb4dfe12f1ed';          BINARY_URL='https://github.com/AdoptOpenJDK/openjdk11-binaries/releases/download/jdk-11.0.4%2B11/OpenJDK11U-jdk_aarch64_linux_hotspot_11.0.4_11.tar.gz';          ;;        armhf)          ESUM='19f16c4b905055a13457d06ce9a107a54289d3828bf3ae378efc6deb908a5572';          BINARY_URL='https://github.com/AdoptOpenJDK/openjdk11-binaries/releases/download/jdk-11.0.4%2B11/OpenJDK11U-jdk_arm_linux_hotspot_11.0.4_11.tar.gz';          ;;        ppc64el|ppc64le)          ESUM='fc6b616f83fea033edd836c934f3e70764b5aa1dac0446df8a8b49297ca40a5e';          BINARY_URL='https://github.com/AdoptOpenJDK/openjdk11-binaries/releases/download/jdk-11.0.4%2B11/OpenJDK11U-jdk_ppc64le_linux_hotspot_11.0.4_11.tar.gz';          ;;        s390x)          ESUM='9487d27ef65b0cc30481cd0d23466aa6b36c90dfaa8a033166fad67bc37891de';          BINARY_URL='https://github.com/AdoptOpenJDK/openjdk11-binaries/releases/download/jdk-11.0.4%2B11/OpenJDK11U-jdk_s390x_linux_hotspot_11.0.4_11.tar.gz';          ;;        amd64|x86_64)          ESUM='90c33cf3f2ed0bd773f648815de7347e69cfbb3416ef3bf41616ab1c4aa0f5a8';          BINARY_URL='https://github.com/AdoptOpenJDK/openjdk11-binaries/releases/download/jdk-11.0.4%2B11/OpenJDK11U-jdk_x64_linux_hotspot_11.0.4_11.tar.gz';          ;;        *)          echo "Unsupported arch: ${ARCH}";          exit 1;          ;;     esac;     curl -LfsSo /tmp/openjdk.tar.gz ${BINARY_URL};     echo "${ESUM} */tmp/openjdk.tar.gz" | sha256sum -c -;     mkdir -p /opt/java/openjdk;     cd /opt/java/openjdk;     tar -xf /tmp/openjdk.tar.gz --strip-components=1;     rm -rf /tmp/openjdk.tar.gz;
-# Thu, 31 Oct 2019 22:38:32 GMT
+# Fri, 08 Nov 2019 02:20:03 GMT
+RUN apt-get update     && apt-get install -y --no-install-recommends curl ca-certificates fontconfig locales     && echo "en_US.UTF-8 UTF-8" >> /etc/locale.gen     && locale-gen en_US.UTF-8     && rm -rf /var/lib/apt/lists/*
+# Fri, 08 Nov 2019 02:20:26 GMT
+ENV JAVA_VERSION=jdk-11.0.5+10
+# Fri, 08 Nov 2019 02:20:35 GMT
+RUN set -eux;     ARCH="$(dpkg --print-architecture)";     case "${ARCH}" in        armhf)          ESUM='c6b1fda3f8807028cbfcc34a4ded2e8a5a6b6239d2bcc1f06673ea6b1530df94';          BINARY_URL='https://github.com/AdoptOpenJDK/openjdk11-binaries/releases/download/jdk-11.0.5%2B10/OpenJDK11U-jdk_arm_linux_hotspot_11.0.5_10.tar.gz';          ;;        ppc64el|ppc64le)          ESUM='d763481ddc29ac0bdefb24216b3a0bf9afbb058552682567a075f9c0f7da5814';          BINARY_URL='https://github.com/AdoptOpenJDK/openjdk11-binaries/releases/download/jdk-11.0.5%2B10/OpenJDK11U-jdk_ppc64le_linux_hotspot_11.0.5_10.tar.gz';          ;;        amd64|x86_64)          ESUM='6dd0c9c8a740e6c19149e98034fba8e368fd9aa16ab417aa636854d40db1a161';          BINARY_URL='https://github.com/AdoptOpenJDK/openjdk11-binaries/releases/download/jdk-11.0.5%2B10/OpenJDK11U-jdk_x64_linux_hotspot_11.0.5_10.tar.gz';          ;;        *)          echo "Unsupported arch: ${ARCH}";          exit 1;          ;;     esac;     curl -LfsSo /tmp/openjdk.tar.gz ${BINARY_URL};     echo "${ESUM} */tmp/openjdk.tar.gz" | sha256sum -c -;     mkdir -p /opt/java/openjdk;     cd /opt/java/openjdk;     tar -xf /tmp/openjdk.tar.gz --strip-components=1;     rm -rf /tmp/openjdk.tar.gz;
+# Fri, 08 Nov 2019 02:20:36 GMT
 ENV JAVA_HOME=/opt/java/openjdk PATH=/opt/java/openjdk/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Thu, 31 Oct 2019 22:38:33 GMT
+# Fri, 08 Nov 2019 02:20:36 GMT
 CMD ["jshell"]
-# Fri, 01 Nov 2019 02:28:08 GMT
+# Fri, 08 Nov 2019 02:49:06 GMT
 ENV CATALINA_HOME=/usr/local/tomcat
-# Fri, 01 Nov 2019 02:28:08 GMT
+# Fri, 08 Nov 2019 02:49:07 GMT
 ENV PATH=/usr/local/tomcat/bin:/opt/java/openjdk/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Fri, 01 Nov 2019 02:28:09 GMT
+# Fri, 08 Nov 2019 02:49:08 GMT
 RUN mkdir -p "$CATALINA_HOME"
-# Fri, 01 Nov 2019 02:28:09 GMT
+# Fri, 08 Nov 2019 02:49:08 GMT
 WORKDIR /usr/local/tomcat
-# Fri, 01 Nov 2019 02:28:09 GMT
+# Fri, 08 Nov 2019 02:49:09 GMT
 ENV TOMCAT_NATIVE_LIBDIR=/usr/local/tomcat/native-jni-lib
-# Fri, 01 Nov 2019 02:28:09 GMT
+# Fri, 08 Nov 2019 02:49:09 GMT
 ENV LD_LIBRARY_PATH=/usr/local/tomcat/native-jni-lib
-# Fri, 01 Nov 2019 02:33:11 GMT
+# Fri, 08 Nov 2019 02:55:21 GMT
 ENV GPG_KEYS=05AB33110949707C93A279E3D3EFE6B686867BA6 07E48665A34DCAFAE522E5E6266191C37C037D42 47309207D818FFD8DCD3F83F1931D684307A10A5 541FBE7D8F78B25E055DDEE13C370389288584E7 61B832AC2F1C5A90F0F9B00A1C506407564C17A3 713DA88BE50911535FE716F5208B0AB1D63011C7 79F7026C690BAA50B92CD8B66A3AD3F4F22C4FED 9BA44C2621385CB966EBA586F72C284D731FABEE A27677289986DB50844682F8ACB77FC2E86E29AC A9C5DF4D22E99998D9875A5110C01C5A2F6059E7 DCFD35E0BF8CA7344752DE8B6FB21E8933C60243 F3A04C595DB5B6A5F1ECA43E3B7BBB100D811BBE F7DA48BB64BCB84ECBA7EE6935CD23C10D498E23
-# Fri, 01 Nov 2019 02:33:11 GMT
+# Fri, 08 Nov 2019 02:55:21 GMT
 ENV TOMCAT_MAJOR=8
-# Fri, 01 Nov 2019 02:33:11 GMT
+# Fri, 08 Nov 2019 02:55:21 GMT
 ENV TOMCAT_VERSION=8.5.47
-# Fri, 01 Nov 2019 02:33:11 GMT
+# Fri, 08 Nov 2019 02:55:21 GMT
 ENV TOMCAT_SHA512=079b85f3dfca2b137634859208fae6012860201d720d12ff0add3473f1e267d332cb12803958754e1f922599e0d42b7e97f00bcd62584d9148a6f45fde091716
-# Fri, 01 Nov 2019 02:33:46 GMT
+# Fri, 08 Nov 2019 02:56:17 GMT
 RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		gnupg dirmngr 		wget ca-certificates 	; 		ddist() { 		local f="$1"; shift; 		local distFile="$1"; shift; 		local success=; 		local distUrl=; 		for distUrl in 			'https://www.apache.org/dyn/closer.cgi?action=download&filename=' 			https://www-us.apache.org/dist/ 			https://www.apache.org/dist/ 			https://archive.apache.org/dist/ 		; do 			if wget -O "$f" "$distUrl$distFile" && [ -s "$f" ]; then 				success=1; 				break; 			fi; 		done; 		[ -n "$success" ]; 	}; 		ddist 'tomcat.tar.gz' "tomcat/tomcat-$TOMCAT_MAJOR/v$TOMCAT_VERSION/bin/apache-tomcat-$TOMCAT_VERSION.tar.gz"; 	echo "$TOMCAT_SHA512 *tomcat.tar.gz" | sha512sum --strict --check -; 	ddist 'tomcat.tar.gz.asc' "tomcat/tomcat-$TOMCAT_MAJOR/v$TOMCAT_VERSION/bin/apache-tomcat-$TOMCAT_VERSION.tar.gz.asc"; 	export GNUPGHOME="$(mktemp -d)"; 	for key in $GPG_KEYS; do 		gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys "$key"; 	done; 	gpg --batch --verify tomcat.tar.gz.asc tomcat.tar.gz; 	tar -xf tomcat.tar.gz --strip-components=1; 	rm bin/*.bat; 	rm tomcat.tar.gz*; 	command -v gpgconf && gpgconf --kill all || :; 	rm -rf "$GNUPGHOME"; 		nativeBuildDir="$(mktemp -d)"; 	tar -xf bin/tomcat-native.tar.gz -C "$nativeBuildDir" --strip-components=1; 	apt-get install -y --no-install-recommends 		dpkg-dev 		gcc 		libapr1-dev 		libssl-dev 		make 	; 	( 		export CATALINA_HOME="$PWD"; 		cd "$nativeBuildDir/native"; 		gnuArch="$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)"; 		aprConfig="$(command -v apr-1-config)"; 		./configure 			--build="$gnuArch" 			--libdir="$TOMCAT_NATIVE_LIBDIR" 			--prefix="$CATALINA_HOME" 			--with-apr="$aprConfig" 			--with-java-home="$JAVA_HOME" 			--with-ssl=yes; 		make -j "$(nproc)"; 		make install; 	); 	rm -rf "$nativeBuildDir"; 	rm bin/tomcat-native.tar.gz; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark > /dev/null; 	find "$TOMCAT_NATIVE_LIBDIR" -type f -executable -exec ldd '{}' ';' 		| awk '/=>/ { print $(NF-1) }' 		| sort -u 		| xargs -r dpkg-query --search 		| cut -d: -f1 		| sort -u 		| xargs -r apt-mark manual 	; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 	rm -rf /var/lib/apt/lists/*; 		find ./bin/ -name '*.sh' -exec sed -ri 's|^#!/bin/sh$|#!/usr/bin/env bash|' '{}' +; 		chmod -R +rX .; 	chmod 777 logs temp work
-# Fri, 01 Nov 2019 02:33:48 GMT
+# Fri, 08 Nov 2019 02:56:22 GMT
 RUN set -e 	&& nativeLines="$(catalina.sh configtest 2>&1)" 	&& nativeLines="$(echo "$nativeLines" | grep 'Apache Tomcat Native')" 	&& nativeLines="$(echo "$nativeLines" | sort -u)" 	&& if ! echo "$nativeLines" | grep 'INFO: Loaded APR based Apache Tomcat Native library' >&2; then 		echo >&2 "$nativeLines"; 		exit 1; 	fi
-# Fri, 01 Nov 2019 02:33:49 GMT
+# Fri, 08 Nov 2019 02:56:22 GMT
 EXPOSE 8080
-# Fri, 01 Nov 2019 02:33:49 GMT
+# Fri, 08 Nov 2019 02:56:22 GMT
 CMD ["catalina.sh" "run"]
-# Fri, 01 Nov 2019 05:50:23 GMT
+# Fri, 08 Nov 2019 03:52:11 GMT
 MAINTAINER Vincent Massol <vincent@massol.net>
-# Fri, 01 Nov 2019 05:51:08 GMT
+# Fri, 08 Nov 2019 03:52:56 GMT
 RUN apt-get update &&   apt-get --no-install-recommends -y install     curl     libreoffice     unzip     procps     libmysql-java &&   rm -rf /var/lib/apt/lists/*
-# Fri, 01 Nov 2019 05:51:09 GMT
+# Fri, 08 Nov 2019 03:52:57 GMT
 ENV XWIKI_VERSION=11.9
-# Fri, 01 Nov 2019 05:51:09 GMT
+# Fri, 08 Nov 2019 03:52:57 GMT
 ENV XWIKI_URL_PREFIX=https://maven.xwiki.org/releases/org/xwiki/platform/xwiki-platform-distribution-war/11.9
-# Fri, 01 Nov 2019 05:51:09 GMT
+# Fri, 08 Nov 2019 03:52:57 GMT
 ENV XWIKI_DOWNLOAD_SHA256=f4fc420b570c5da374492b236cca5df1239793979126722c1adcc642ee9b335c
-# Fri, 01 Nov 2019 05:51:43 GMT
+# Fri, 08 Nov 2019 03:53:35 GMT
 RUN rm -rf /usr/local/tomcat/webapps/* &&   mkdir -p /usr/local/tomcat/temp &&   mkdir -p /usr/local/xwiki/data &&   curl -fSL "${XWIKI_URL_PREFIX}/xwiki-platform-distribution-war-${XWIKI_VERSION}.war" -o xwiki.war &&   echo "$XWIKI_DOWNLOAD_SHA256 xwiki.war" | sha256sum -c - &&   unzip -d /usr/local/tomcat/webapps/ROOT xwiki.war &&   rm -f xwiki.war
-# Fri, 01 Nov 2019 05:51:44 GMT
+# Fri, 08 Nov 2019 03:53:36 GMT
 RUN cp /usr/share/java/mysql-connector-java-*.jar /usr/local/tomcat/webapps/ROOT/WEB-INF/lib/
-# Fri, 01 Nov 2019 05:51:44 GMT
+# Fri, 08 Nov 2019 03:53:36 GMT
 COPY file:0a1be11e2eb610a1dbcd415404e3a592641110b93090030cb831e3a19a163017 in /usr/local/tomcat/bin/ 
-# Fri, 01 Nov 2019 05:51:44 GMT
+# Fri, 08 Nov 2019 03:53:36 GMT
 COPY file:406eb381f87e0aed57baf469c64efee52199868e8fc75ff865a9661b47910460 in /usr/local/tomcat/webapps/ROOT/WEB-INF/hibernate.cfg.xml 
-# Fri, 01 Nov 2019 05:51:45 GMT
+# Fri, 08 Nov 2019 03:53:37 GMT
 RUN sed -i 's/<id>org.xwiki.platform:xwiki-platform-distribution-war/<id>org.xwiki.platform:xwiki-platform-distribution-docker/'   /usr/local/tomcat/webapps/ROOT/META-INF/extension.xed
-# Fri, 01 Nov 2019 05:51:45 GMT
+# Fri, 08 Nov 2019 03:53:37 GMT
 COPY file:f901b2d7ac3d76cd8346f9aee81b40529183e81d8aa027bb390856ac01fa6cc0 in /usr/local/bin/docker-entrypoint.sh 
-# Fri, 01 Nov 2019 05:51:45 GMT
+# Fri, 08 Nov 2019 03:53:38 GMT
 VOLUME [/usr/local/xwiki]
-# Fri, 01 Nov 2019 05:51:45 GMT
+# Fri, 08 Nov 2019 03:53:38 GMT
 ENTRYPOINT ["docker-entrypoint.sh"]
-# Fri, 01 Nov 2019 05:51:45 GMT
+# Fri, 08 Nov 2019 03:53:38 GMT
 CMD ["xwiki"]
 ```
 
@@ -2684,59 +2684,59 @@ CMD ["xwiki"]
 		Last Modified: Thu, 31 Oct 2019 22:21:39 GMT  
 		Size: 162.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:b5035666b1cd262e3117ca99ecbe11fc92c973a1164cd5c69bca60165f501520`  
-		Last Modified: Thu, 31 Oct 2019 22:40:53 GMT  
-		Size: 10.8 MB (10842099 bytes)  
+	-	`sha256:da4c04c54fa4a9b55ddef0b116fa7969185639621c525e1fe19f2b194f1ca4bc`  
+		Last Modified: Fri, 08 Nov 2019 02:22:45 GMT  
+		Size: 13.3 MB (13322685 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:60e5b903fb31d874f9a1c331071b5e855634a3ae4fa5db5a3ba0dc027bbc9c5f`  
-		Last Modified: Thu, 31 Oct 2019 22:41:36 GMT  
-		Size: 197.7 MB (197657372 bytes)  
+	-	`sha256:10235b1a516d4b068683fe79fb89be475cb2fc41b1ea76fcb4b13872bee27da0`  
+		Last Modified: Fri, 08 Nov 2019 02:23:23 GMT  
+		Size: 197.8 MB (197822335 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:f578b1f2cf8f2f5876b3185c7edd79990e67ec624e21b05b0614d04c5acb0106`  
-		Last Modified: Fri, 01 Nov 2019 02:38:58 GMT  
-		Size: 136.0 B  
+	-	`sha256:24154429346fe2204e6d5dab3868244db95f4163d1be3905621fb2b53653eb2c`  
+		Last Modified: Fri, 08 Nov 2019 03:05:39 GMT  
+		Size: 139.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c12bb0162813b1b0c82e82d87b9bdf6e96ef46d7c3aa9408a9c8d9de7c9a575a`  
-		Last Modified: Fri, 01 Nov 2019 02:39:41 GMT  
-		Size: 11.2 MB (11234934 bytes)  
+	-	`sha256:c572a63a7a797dd43aa600f689a0e6d3c85b8f94a138c2d3181801cd788b36c9`  
+		Last Modified: Fri, 08 Nov 2019 03:06:29 GMT  
+		Size: 11.3 MB (11251478 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:469391c4f542e184022627170e76ee20d527d65dfda5b22daebd7187925accb7`  
-		Last Modified: Fri, 01 Nov 2019 02:39:39 GMT  
-		Size: 133.0 B  
+	-	`sha256:a016684a4a3052bad801984d71c411cd2e4fade815d50a5ad7b5f228041d0b56`  
+		Last Modified: Fri, 08 Nov 2019 03:06:27 GMT  
+		Size: 132.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:a9cb5d6ac8ff25f915684ed166cd0c7ac4a92a7b8f447f7b573721d4e4862395`  
-		Last Modified: Fri, 01 Nov 2019 05:56:17 GMT  
-		Size: 182.5 MB (182519866 bytes)  
+	-	`sha256:c91247e8560d3e2c0be69d9c20160a5c7b9e23fdec44b0fc06fb0dd678003c6f`  
+		Last Modified: Fri, 08 Nov 2019 03:57:46 GMT  
+		Size: 179.9 MB (179895305 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:f1fb9e179e1e0794b0e3ab1fa75f30babb21fe494a3c009b61a9f0bdc94a8007`  
-		Last Modified: Fri, 01 Nov 2019 05:56:06 GMT  
-		Size: 284.2 MB (284247999 bytes)  
+	-	`sha256:a43a14f8330f2612a59d1aa4cab49393e380b7f4f788380e090d66aeeec27413`  
+		Last Modified: Fri, 08 Nov 2019 03:57:35 GMT  
+		Size: 284.2 MB (284248060 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:f55b66004ada5c63d908ecf104a82e72fbc834488f3d3268937752fff2d7cfc1`  
-		Last Modified: Fri, 01 Nov 2019 05:55:45 GMT  
-		Size: 955.6 KB (955598 bytes)  
+	-	`sha256:1829bd8f4cffb2971f321018ab8b1ff5890d9f709c1d694725799bfc7b299f6f`  
+		Last Modified: Fri, 08 Nov 2019 03:57:13 GMT  
+		Size: 955.6 KB (955603 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:d3e3aefe7f08df3a904bfa1b6fb484544d4abf98f8e67e22a29a878e40e9a1eb`  
-		Last Modified: Fri, 01 Nov 2019 05:55:45 GMT  
-		Size: 1.3 KB (1341 bytes)  
+	-	`sha256:444ce5df0050d115c048cca2619eb9669dfd6a497d0b53af7e212670c7e181a2`  
+		Last Modified: Fri, 08 Nov 2019 03:57:13 GMT  
+		Size: 1.3 KB (1346 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:f4f03a2f5eb6e67eb8d75bd2641d80a18e30ecc78cbbbbdb7def4322ba44e011`  
-		Last Modified: Fri, 01 Nov 2019 05:55:45 GMT  
-		Size: 2.3 KB (2334 bytes)  
+	-	`sha256:537505f100251872fe038c9e7189a1515539e54e927362e7a074ddda578b1430`  
+		Last Modified: Fri, 08 Nov 2019 03:57:14 GMT  
+		Size: 2.3 KB (2337 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:137909c9c97785a04ee164d5f5078d18ba1c0764e84e7c1756806863792b9645`  
-		Last Modified: Fri, 01 Nov 2019 05:55:45 GMT  
-		Size: 4.2 KB (4234 bytes)  
+	-	`sha256:93d47669c79bd6ba35cbfae545a94c242480372296a9aa60cd24044cfeb730d7`  
+		Last Modified: Fri, 08 Nov 2019 03:57:13 GMT  
+		Size: 4.2 KB (4235 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:0bea17859d854d5e0c2ad02328d87ec74e591d8c0c40dbae70b52cf059f3826a`  
-		Last Modified: Fri, 01 Nov 2019 05:55:45 GMT  
-		Size: 2.4 KB (2400 bytes)  
+	-	`sha256:0edda1fa0cef0bd96542fe7f721070f136ce34a02bc2976de8f72b54b9fca7f8`  
+		Last Modified: Fri, 08 Nov 2019 03:57:14 GMT  
+		Size: 2.4 KB (2404 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `xwiki:lts`
 
 ```console
-$ docker pull xwiki@sha256:c304d3bfc03954a3669f47757a63918a4d36af088c34537e15093d7cbb2192e5
+$ docker pull xwiki@sha256:e50eee1ee16e97510d2c2878b44ba59cff37121d520dcfcc6ab39815203541fc
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -2746,14 +2746,14 @@ $ docker pull xwiki@sha256:c304d3bfc03954a3669f47757a63918a4d36af088c34537e15093
 ### `xwiki:lts` - linux; amd64
 
 ```console
-$ docker pull xwiki@sha256:031e6cf9f5f62c9ac15be9a93473d15a5cb805445d8efbdb68835da5502d7999
+$ docker pull xwiki@sha256:1eac0ad7e3285c13b277110fd956cc05a3c5774a7c8d88207eff821713040840
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **583.2 MB (583220294 bytes)**  
+-	Total Size: **583.1 MB (583142464 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:5ed311c670c181f7bd2a3837a9ba97b7629e74b535eb19efdb8e7d33871c9a2d`
+-	Image ID: `sha256:a9f71ff8b734e920564dff7b18c8327bdac99724df51a87a2bc0f57ed06bd995`
 -	Entrypoint: `["docker-entrypoint.sh"]`
 -	Default Command: `["xwiki"]`
 
@@ -2770,69 +2770,69 @@ RUN mkdir -p /run/systemd && echo 'docker' > /run/systemd/container
 CMD ["/bin/bash"]
 # Thu, 31 Oct 2019 22:37:37 GMT
 ENV LANG=en_US.UTF-8 LANGUAGE=en_US:en LC_ALL=en_US.UTF-8
-# Thu, 31 Oct 2019 22:38:04 GMT
-RUN apt-get update     && apt-get install -y --no-install-recommends curl ca-certificates locales     && echo "en_US.UTF-8 UTF-8" >> /etc/locale.gen     && locale-gen en_US.UTF-8     && rm -rf /var/lib/apt/lists/*
-# Thu, 31 Oct 2019 22:38:04 GMT
-ENV JAVA_VERSION=jdk8u222-b10
-# Thu, 31 Oct 2019 22:38:10 GMT
-RUN set -eux;     ARCH="$(dpkg --print-architecture)";     case "${ARCH}" in        aarch64|arm64)          ESUM='652776586ede124189dc218174b5922cc97feac81021ad81905900b349a352d2';          BINARY_URL='https://github.com/AdoptOpenJDK/openjdk8-binaries/releases/download/jdk8u222-b10/OpenJDK8U-jdk_aarch64_linux_hotspot_8u222b10.tar.gz';          ;;        armhf)          ESUM='7b3d6ade8c25adca01095ba66642132d8c87a1a8caf3883850e34778453afcec';          BINARY_URL='https://github.com/AdoptOpenJDK/openjdk8-binaries/releases/download/jdk8u222-b10/OpenJDK8U-jdk_arm_linux_hotspot_8u222b10.tar.gz';          ;;        ppc64el|ppc64le)          ESUM='f85de48f1dcfd78a39bf5817d3c2f8247c75df6abd56c8721172bf2bd757eb69';          BINARY_URL='https://github.com/AdoptOpenJDK/openjdk8-binaries/releases/download/jdk8u222-b10/OpenJDK8U-jdk_ppc64le_linux_hotspot_8u222b10.tar.gz';          ;;        s390x)          ESUM='d56d6a128f8827e5baeae379bcb1b3ead2cfd5b1abb03befa4588f89f08ea626';          BINARY_URL='https://github.com/AdoptOpenJDK/openjdk8-binaries/releases/download/jdk8u222-b10/OpenJDK8U-jdk_s390x_linux_hotspot_8u222b10.tar.gz';          ;;        amd64|x86_64)          ESUM='37356281345b93feb4212e6267109b4409b55b06f107619dde4960e402bafa77';          BINARY_URL='https://github.com/AdoptOpenJDK/openjdk8-binaries/releases/download/jdk8u222-b10/OpenJDK8U-jdk_x64_linux_hotspot_8u222b10.tar.gz';          ;;        *)          echo "Unsupported arch: ${ARCH}";          exit 1;          ;;     esac;     curl -LfsSo /tmp/openjdk.tar.gz ${BINARY_URL};     echo "${ESUM} */tmp/openjdk.tar.gz" | sha256sum -c -;     mkdir -p /opt/java/openjdk;     cd /opt/java/openjdk;     tar -xf /tmp/openjdk.tar.gz --strip-components=1;     rm -rf /tmp/openjdk.tar.gz;
-# Thu, 31 Oct 2019 22:38:11 GMT
+# Fri, 08 Nov 2019 02:20:03 GMT
+RUN apt-get update     && apt-get install -y --no-install-recommends curl ca-certificates fontconfig locales     && echo "en_US.UTF-8 UTF-8" >> /etc/locale.gen     && locale-gen en_US.UTF-8     && rm -rf /var/lib/apt/lists/*
+# Fri, 08 Nov 2019 02:20:03 GMT
+ENV JAVA_VERSION=jdk8u232-b09
+# Fri, 08 Nov 2019 02:20:09 GMT
+RUN set -eux;     ARCH="$(dpkg --print-architecture)";     case "${ARCH}" in        ppc64el|ppc64le)          ESUM='da87bdc04b47477b42afc76066dbd96efa35ad967238be03a0081f8840e893a8';          BINARY_URL='https://github.com/AdoptOpenJDK/openjdk8-binaries/releases/download/jdk8u232-b09/OpenJDK8U-jdk_ppc64le_linux_hotspot_8u232b09.tar.gz';          ;;        s390x)          ESUM='bd20cb8bf4cfab9d3e2b2ccfb9a6f9eda1e4e67b4103b9975d29de12c05ad1f5';          BINARY_URL='https://github.com/AdoptOpenJDK/openjdk8-binaries/releases/download/jdk8u232-b09/OpenJDK8U-jdk_s390x_linux_hotspot_8u232b09.tar.gz';          ;;        amd64|x86_64)          ESUM='7b7884f2eb2ba2d47f4c0bf3bb1a2a95b73a3a7734bd47ebf9798483a7bcc423';          BINARY_URL='https://github.com/AdoptOpenJDK/openjdk8-binaries/releases/download/jdk8u232-b09/OpenJDK8U-jdk_x64_linux_hotspot_8u232b09.tar.gz';          ;;        *)          echo "Unsupported arch: ${ARCH}";          exit 1;          ;;     esac;     curl -LfsSo /tmp/openjdk.tar.gz ${BINARY_URL};     echo "${ESUM} */tmp/openjdk.tar.gz" | sha256sum -c -;     mkdir -p /opt/java/openjdk;     cd /opt/java/openjdk;     tar -xf /tmp/openjdk.tar.gz --strip-components=1;     rm -rf /tmp/openjdk.tar.gz;
+# Fri, 08 Nov 2019 02:20:09 GMT
 ENV JAVA_HOME=/opt/java/openjdk PATH=/opt/java/openjdk/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Fri, 01 Nov 2019 02:29:48 GMT
+# Fri, 08 Nov 2019 02:52:20 GMT
 ENV CATALINA_HOME=/usr/local/tomcat
-# Fri, 01 Nov 2019 02:29:48 GMT
+# Fri, 08 Nov 2019 02:52:21 GMT
 ENV PATH=/usr/local/tomcat/bin:/opt/java/openjdk/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Fri, 01 Nov 2019 02:29:49 GMT
+# Fri, 08 Nov 2019 02:52:22 GMT
 RUN mkdir -p "$CATALINA_HOME"
-# Fri, 01 Nov 2019 02:29:49 GMT
+# Fri, 08 Nov 2019 02:52:22 GMT
 WORKDIR /usr/local/tomcat
-# Fri, 01 Nov 2019 02:29:49 GMT
+# Fri, 08 Nov 2019 02:52:23 GMT
 ENV TOMCAT_NATIVE_LIBDIR=/usr/local/tomcat/native-jni-lib
-# Fri, 01 Nov 2019 02:29:49 GMT
+# Fri, 08 Nov 2019 02:52:23 GMT
 ENV LD_LIBRARY_PATH=/usr/local/tomcat/native-jni-lib
-# Fri, 01 Nov 2019 02:34:53 GMT
+# Fri, 08 Nov 2019 02:58:08 GMT
 ENV GPG_KEYS=05AB33110949707C93A279E3D3EFE6B686867BA6 07E48665A34DCAFAE522E5E6266191C37C037D42 47309207D818FFD8DCD3F83F1931D684307A10A5 541FBE7D8F78B25E055DDEE13C370389288584E7 61B832AC2F1C5A90F0F9B00A1C506407564C17A3 713DA88BE50911535FE716F5208B0AB1D63011C7 79F7026C690BAA50B92CD8B66A3AD3F4F22C4FED 9BA44C2621385CB966EBA586F72C284D731FABEE A27677289986DB50844682F8ACB77FC2E86E29AC A9C5DF4D22E99998D9875A5110C01C5A2F6059E7 DCFD35E0BF8CA7344752DE8B6FB21E8933C60243 F3A04C595DB5B6A5F1ECA43E3B7BBB100D811BBE F7DA48BB64BCB84ECBA7EE6935CD23C10D498E23
-# Fri, 01 Nov 2019 02:34:53 GMT
+# Fri, 08 Nov 2019 02:58:08 GMT
 ENV TOMCAT_MAJOR=8
-# Fri, 01 Nov 2019 02:34:53 GMT
+# Fri, 08 Nov 2019 02:58:09 GMT
 ENV TOMCAT_VERSION=8.5.47
-# Fri, 01 Nov 2019 02:34:53 GMT
+# Fri, 08 Nov 2019 02:58:09 GMT
 ENV TOMCAT_SHA512=079b85f3dfca2b137634859208fae6012860201d720d12ff0add3473f1e267d332cb12803958754e1f922599e0d42b7e97f00bcd62584d9148a6f45fde091716
-# Fri, 01 Nov 2019 02:35:26 GMT
+# Fri, 08 Nov 2019 02:59:03 GMT
 RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		gnupg dirmngr 		wget ca-certificates 	; 		ddist() { 		local f="$1"; shift; 		local distFile="$1"; shift; 		local success=; 		local distUrl=; 		for distUrl in 			'https://www.apache.org/dyn/closer.cgi?action=download&filename=' 			https://www-us.apache.org/dist/ 			https://www.apache.org/dist/ 			https://archive.apache.org/dist/ 		; do 			if wget -O "$f" "$distUrl$distFile" && [ -s "$f" ]; then 				success=1; 				break; 			fi; 		done; 		[ -n "$success" ]; 	}; 		ddist 'tomcat.tar.gz' "tomcat/tomcat-$TOMCAT_MAJOR/v$TOMCAT_VERSION/bin/apache-tomcat-$TOMCAT_VERSION.tar.gz"; 	echo "$TOMCAT_SHA512 *tomcat.tar.gz" | sha512sum --strict --check -; 	ddist 'tomcat.tar.gz.asc' "tomcat/tomcat-$TOMCAT_MAJOR/v$TOMCAT_VERSION/bin/apache-tomcat-$TOMCAT_VERSION.tar.gz.asc"; 	export GNUPGHOME="$(mktemp -d)"; 	for key in $GPG_KEYS; do 		gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys "$key"; 	done; 	gpg --batch --verify tomcat.tar.gz.asc tomcat.tar.gz; 	tar -xf tomcat.tar.gz --strip-components=1; 	rm bin/*.bat; 	rm tomcat.tar.gz*; 	command -v gpgconf && gpgconf --kill all || :; 	rm -rf "$GNUPGHOME"; 		nativeBuildDir="$(mktemp -d)"; 	tar -xf bin/tomcat-native.tar.gz -C "$nativeBuildDir" --strip-components=1; 	apt-get install -y --no-install-recommends 		dpkg-dev 		gcc 		libapr1-dev 		libssl-dev 		make 	; 	( 		export CATALINA_HOME="$PWD"; 		cd "$nativeBuildDir/native"; 		gnuArch="$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)"; 		aprConfig="$(command -v apr-1-config)"; 		./configure 			--build="$gnuArch" 			--libdir="$TOMCAT_NATIVE_LIBDIR" 			--prefix="$CATALINA_HOME" 			--with-apr="$aprConfig" 			--with-java-home="$JAVA_HOME" 			--with-ssl=yes; 		make -j "$(nproc)"; 		make install; 	); 	rm -rf "$nativeBuildDir"; 	rm bin/tomcat-native.tar.gz; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark > /dev/null; 	find "$TOMCAT_NATIVE_LIBDIR" -type f -executable -exec ldd '{}' ';' 		| awk '/=>/ { print $(NF-1) }' 		| sort -u 		| xargs -r dpkg-query --search 		| cut -d: -f1 		| sort -u 		| xargs -r apt-mark manual 	; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 	rm -rf /var/lib/apt/lists/*; 		find ./bin/ -name '*.sh' -exec sed -ri 's|^#!/bin/sh$|#!/usr/bin/env bash|' '{}' +; 		chmod -R +rX .; 	chmod 777 logs temp work
-# Fri, 01 Nov 2019 02:35:29 GMT
+# Fri, 08 Nov 2019 02:59:07 GMT
 RUN set -e 	&& nativeLines="$(catalina.sh configtest 2>&1)" 	&& nativeLines="$(echo "$nativeLines" | grep 'Apache Tomcat Native')" 	&& nativeLines="$(echo "$nativeLines" | sort -u)" 	&& if ! echo "$nativeLines" | grep 'INFO: Loaded APR based Apache Tomcat Native library' >&2; then 		echo >&2 "$nativeLines"; 		exit 1; 	fi
-# Fri, 01 Nov 2019 02:35:29 GMT
+# Fri, 08 Nov 2019 02:59:07 GMT
 EXPOSE 8080
-# Fri, 01 Nov 2019 02:35:30 GMT
+# Fri, 08 Nov 2019 02:59:08 GMT
 CMD ["catalina.sh" "run"]
-# Fri, 01 Nov 2019 05:46:09 GMT
+# Fri, 08 Nov 2019 03:47:57 GMT
 MAINTAINER Vincent Massol <vincent@massol.net>
-# Fri, 01 Nov 2019 05:48:00 GMT
+# Fri, 08 Nov 2019 03:49:52 GMT
 RUN apt-get update &&   apt-get --no-install-recommends -y install     curl     libreoffice     unzip     procps     libmysql-java &&   rm -rf /var/lib/apt/lists/*
-# Fri, 01 Nov 2019 05:48:01 GMT
+# Fri, 08 Nov 2019 03:49:52 GMT
 ENV XWIKI_VERSION=10.11.9
-# Fri, 01 Nov 2019 05:48:01 GMT
+# Fri, 08 Nov 2019 03:49:53 GMT
 ENV XWIKI_URL_PREFIX=https://maven.xwiki.org/releases/org/xwiki/platform/xwiki-platform-distribution-war/10.11.9
-# Fri, 01 Nov 2019 05:48:01 GMT
+# Fri, 08 Nov 2019 03:49:53 GMT
 ENV XWIKI_DOWNLOAD_SHA256=299fe60d5b32ee1a363ba48ff2346e78eea5f713a0174c20fe9d7531be426a58
-# Fri, 01 Nov 2019 05:48:35 GMT
+# Fri, 08 Nov 2019 03:50:25 GMT
 RUN rm -rf /usr/local/tomcat/webapps/* &&   mkdir -p /usr/local/tomcat/temp &&   mkdir -p /usr/local/xwiki/data &&   curl -fSL "${XWIKI_URL_PREFIX}/xwiki-platform-distribution-war-${XWIKI_VERSION}.war" -o xwiki.war &&   echo "$XWIKI_DOWNLOAD_SHA256 xwiki.war" | sha256sum -c - &&   unzip -d /usr/local/tomcat/webapps/ROOT xwiki.war &&   rm -f xwiki.war
-# Fri, 01 Nov 2019 05:48:36 GMT
+# Fri, 08 Nov 2019 03:50:26 GMT
 RUN cp /usr/share/java/mysql-connector-java-*.jar /usr/local/tomcat/webapps/ROOT/WEB-INF/lib/
-# Fri, 01 Nov 2019 05:48:36 GMT
+# Fri, 08 Nov 2019 03:50:26 GMT
 COPY file:0a1be11e2eb610a1dbcd415404e3a592641110b93090030cb831e3a19a163017 in /usr/local/tomcat/bin/ 
-# Fri, 01 Nov 2019 05:48:36 GMT
+# Fri, 08 Nov 2019 03:50:26 GMT
 COPY file:c4e95f70490b423a9379f336f8f4d780824e06f56fa73bc69a238e245b53e842 in /usr/local/tomcat/webapps/ROOT/WEB-INF/hibernate.cfg.xml 
-# Fri, 01 Nov 2019 05:48:37 GMT
+# Fri, 08 Nov 2019 03:50:27 GMT
 RUN sed -i 's/<id>org.xwiki.platform:xwiki-platform-distribution-war/<id>org.xwiki.platform:xwiki-platform-distribution-docker/'   /usr/local/tomcat/webapps/ROOT/META-INF/extension.xed
-# Fri, 01 Nov 2019 05:48:37 GMT
+# Fri, 08 Nov 2019 03:50:27 GMT
 COPY file:f901b2d7ac3d76cd8346f9aee81b40529183e81d8aa027bb390856ac01fa6cc0 in /usr/local/bin/docker-entrypoint.sh 
-# Fri, 01 Nov 2019 05:48:37 GMT
+# Fri, 08 Nov 2019 03:50:27 GMT
 VOLUME [/usr/local/xwiki]
-# Fri, 01 Nov 2019 05:48:37 GMT
+# Fri, 08 Nov 2019 03:50:27 GMT
 ENTRYPOINT ["docker-entrypoint.sh"]
-# Fri, 01 Nov 2019 05:48:37 GMT
+# Fri, 08 Nov 2019 03:50:27 GMT
 CMD ["xwiki"]
 ```
 
@@ -2853,59 +2853,59 @@ CMD ["xwiki"]
 		Last Modified: Thu, 31 Oct 2019 22:21:39 GMT  
 		Size: 162.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:b5035666b1cd262e3117ca99ecbe11fc92c973a1164cd5c69bca60165f501520`  
-		Last Modified: Thu, 31 Oct 2019 22:40:53 GMT  
-		Size: 10.8 MB (10842099 bytes)  
+	-	`sha256:da4c04c54fa4a9b55ddef0b116fa7969185639621c525e1fe19f2b194f1ca4bc`  
+		Last Modified: Fri, 08 Nov 2019 02:22:45 GMT  
+		Size: 13.3 MB (13322685 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:efde61b742b5cb70e5b4addf1af5ad7280bffe7d8dd1df5eff600523285f3ea4`  
-		Last Modified: Thu, 31 Oct 2019 22:41:03 GMT  
-		Size: 105.0 MB (105002961 bytes)  
+	-	`sha256:2e619a1c4087f3c7f3728ceb4445f1a7a5039161cf3289478a8883c6ee035404`  
+		Last Modified: Fri, 08 Nov 2019 02:22:53 GMT  
+		Size: 105.1 MB (105052686 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:225d7996c0304b5ffbdcf6098af5c263ffc4d1b4179e9dca599cea72150685aa`  
-		Last Modified: Fri, 01 Nov 2019 02:39:12 GMT  
-		Size: 138.0 B  
+	-	`sha256:9d52f3e37b5909a34e61705bcdbc8935d682242f0c5fccdb29e117df8639b535`  
+		Last Modified: Fri, 08 Nov 2019 03:05:59 GMT  
+		Size: 139.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:79ec1eb33f408e2e622babc4045fe851ed5836f38b9e58daa1eb39284ace03cf`  
-		Last Modified: Fri, 01 Nov 2019 02:39:56 GMT  
-		Size: 11.2 MB (11233772 bytes)  
+	-	`sha256:e36d9bbb9a695ea2424edb1ab9bbf4fd43d87d68ad2e511fed36af7a18d3d3e8`  
+		Last Modified: Fri, 08 Nov 2019 03:06:53 GMT  
+		Size: 11.3 MB (11250353 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:1e181f3682b7d9ea77955bcda4108fc60c381f24ed390b0a3d08b67642aef2a7`  
-		Last Modified: Fri, 01 Nov 2019 02:39:55 GMT  
-		Size: 131.0 B  
+	-	`sha256:32d2a60a869b7029538438ffc8b6bc2975016c77fd3d3e4bc74b106903b3cca4`  
+		Last Modified: Fri, 08 Nov 2019 03:06:51 GMT  
+		Size: 132.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:248409c0f5d78edeb3d761e8c51a335df3b426a41b4ec8cde818dc7c42ac9303`  
-		Last Modified: Fri, 01 Nov 2019 05:54:24 GMT  
-		Size: 182.5 MB (182519889 bytes)  
+	-	`sha256:a0ecb74c3432d2f07db2c599a41070972647d5e39217a796364ea9f894433395`  
+		Last Modified: Fri, 08 Nov 2019 03:56:18 GMT  
+		Size: 179.9 MB (179895164 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:59e11cead95223d99208c1a56b2ff70a4c400bce48fc1a180c920bb8bdfe9b9e`  
-		Last Modified: Fri, 01 Nov 2019 05:54:10 GMT  
-		Size: 245.9 MB (245930567 bytes)  
+	-	`sha256:f60cc6c4e6989a78ffa4eda461e37f0c14fa8d1664ed98154a893b743a133b53`  
+		Last Modified: Fri, 08 Nov 2019 03:56:08 GMT  
+		Size: 245.9 MB (245930552 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:d6d385233a9152fa2829ee24a53aff146593c925d7cbdd903fc89fb68831abb3`  
-		Last Modified: Fri, 01 Nov 2019 05:53:51 GMT  
-		Size: 955.6 KB (955596 bytes)  
+	-	`sha256:211a8ff63ee53dd83cfb2ef14fd7c5f220e870f7b4a24bd7c056a6dfb3ea3195`  
+		Last Modified: Fri, 08 Nov 2019 03:55:45 GMT  
+		Size: 955.6 KB (955606 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:f4c1267abe977a216254032c7bdae4dc95710175a32b47d20bb86fcfab611e53`  
-		Last Modified: Fri, 01 Nov 2019 05:53:51 GMT  
+	-	`sha256:d2e0a05a7c703bf048e0d1025315d34bd397200ba693101fd6293aaa24e39665`  
+		Last Modified: Fri, 08 Nov 2019 03:55:45 GMT  
 		Size: 1.3 KB (1345 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:e0a9fd9bde07de0f3b22e22358c5a553b96b8ffb94f7efdf54be1acb865f294f`  
-		Last Modified: Fri, 01 Nov 2019 05:53:51 GMT  
-		Size: 2.3 KB (2341 bytes)  
+	-	`sha256:07de7e380b498b0a7a00eab52eb6163ee8c032a35ec4b2597ffc611f6c9f7f18`  
+		Last Modified: Fri, 08 Nov 2019 03:55:45 GMT  
+		Size: 2.3 KB (2344 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:9c5892c3d351297bbd95311554d447023392f4d53a0602c76eaaf171fc22a791`  
-		Last Modified: Fri, 01 Nov 2019 05:53:51 GMT  
-		Size: 3.8 KB (3835 bytes)  
+	-	`sha256:360a0fed78607fc123133c9c254e66bd48facd092ed428ed26198dc6bfc0260a`  
+		Last Modified: Fri, 08 Nov 2019 03:55:45 GMT  
+		Size: 3.8 KB (3838 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:6958577bb68ad9dd0aac0e54301206f89b27e741e2a11bf454642821ffe148e6`  
-		Last Modified: Fri, 01 Nov 2019 05:53:51 GMT  
+	-	`sha256:f8f1d28ac8dbc927cf661687f024476d2558c833a1794dad36552cf17b4fad2f`  
+		Last Modified: Fri, 08 Nov 2019 03:55:45 GMT  
 		Size: 2.4 KB (2404 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `xwiki:lts-mysql`
 
 ```console
-$ docker pull xwiki@sha256:c304d3bfc03954a3669f47757a63918a4d36af088c34537e15093d7cbb2192e5
+$ docker pull xwiki@sha256:e50eee1ee16e97510d2c2878b44ba59cff37121d520dcfcc6ab39815203541fc
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -2915,14 +2915,14 @@ $ docker pull xwiki@sha256:c304d3bfc03954a3669f47757a63918a4d36af088c34537e15093
 ### `xwiki:lts-mysql` - linux; amd64
 
 ```console
-$ docker pull xwiki@sha256:031e6cf9f5f62c9ac15be9a93473d15a5cb805445d8efbdb68835da5502d7999
+$ docker pull xwiki@sha256:1eac0ad7e3285c13b277110fd956cc05a3c5774a7c8d88207eff821713040840
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **583.2 MB (583220294 bytes)**  
+-	Total Size: **583.1 MB (583142464 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:5ed311c670c181f7bd2a3837a9ba97b7629e74b535eb19efdb8e7d33871c9a2d`
+-	Image ID: `sha256:a9f71ff8b734e920564dff7b18c8327bdac99724df51a87a2bc0f57ed06bd995`
 -	Entrypoint: `["docker-entrypoint.sh"]`
 -	Default Command: `["xwiki"]`
 
@@ -2939,69 +2939,69 @@ RUN mkdir -p /run/systemd && echo 'docker' > /run/systemd/container
 CMD ["/bin/bash"]
 # Thu, 31 Oct 2019 22:37:37 GMT
 ENV LANG=en_US.UTF-8 LANGUAGE=en_US:en LC_ALL=en_US.UTF-8
-# Thu, 31 Oct 2019 22:38:04 GMT
-RUN apt-get update     && apt-get install -y --no-install-recommends curl ca-certificates locales     && echo "en_US.UTF-8 UTF-8" >> /etc/locale.gen     && locale-gen en_US.UTF-8     && rm -rf /var/lib/apt/lists/*
-# Thu, 31 Oct 2019 22:38:04 GMT
-ENV JAVA_VERSION=jdk8u222-b10
-# Thu, 31 Oct 2019 22:38:10 GMT
-RUN set -eux;     ARCH="$(dpkg --print-architecture)";     case "${ARCH}" in        aarch64|arm64)          ESUM='652776586ede124189dc218174b5922cc97feac81021ad81905900b349a352d2';          BINARY_URL='https://github.com/AdoptOpenJDK/openjdk8-binaries/releases/download/jdk8u222-b10/OpenJDK8U-jdk_aarch64_linux_hotspot_8u222b10.tar.gz';          ;;        armhf)          ESUM='7b3d6ade8c25adca01095ba66642132d8c87a1a8caf3883850e34778453afcec';          BINARY_URL='https://github.com/AdoptOpenJDK/openjdk8-binaries/releases/download/jdk8u222-b10/OpenJDK8U-jdk_arm_linux_hotspot_8u222b10.tar.gz';          ;;        ppc64el|ppc64le)          ESUM='f85de48f1dcfd78a39bf5817d3c2f8247c75df6abd56c8721172bf2bd757eb69';          BINARY_URL='https://github.com/AdoptOpenJDK/openjdk8-binaries/releases/download/jdk8u222-b10/OpenJDK8U-jdk_ppc64le_linux_hotspot_8u222b10.tar.gz';          ;;        s390x)          ESUM='d56d6a128f8827e5baeae379bcb1b3ead2cfd5b1abb03befa4588f89f08ea626';          BINARY_URL='https://github.com/AdoptOpenJDK/openjdk8-binaries/releases/download/jdk8u222-b10/OpenJDK8U-jdk_s390x_linux_hotspot_8u222b10.tar.gz';          ;;        amd64|x86_64)          ESUM='37356281345b93feb4212e6267109b4409b55b06f107619dde4960e402bafa77';          BINARY_URL='https://github.com/AdoptOpenJDK/openjdk8-binaries/releases/download/jdk8u222-b10/OpenJDK8U-jdk_x64_linux_hotspot_8u222b10.tar.gz';          ;;        *)          echo "Unsupported arch: ${ARCH}";          exit 1;          ;;     esac;     curl -LfsSo /tmp/openjdk.tar.gz ${BINARY_URL};     echo "${ESUM} */tmp/openjdk.tar.gz" | sha256sum -c -;     mkdir -p /opt/java/openjdk;     cd /opt/java/openjdk;     tar -xf /tmp/openjdk.tar.gz --strip-components=1;     rm -rf /tmp/openjdk.tar.gz;
-# Thu, 31 Oct 2019 22:38:11 GMT
+# Fri, 08 Nov 2019 02:20:03 GMT
+RUN apt-get update     && apt-get install -y --no-install-recommends curl ca-certificates fontconfig locales     && echo "en_US.UTF-8 UTF-8" >> /etc/locale.gen     && locale-gen en_US.UTF-8     && rm -rf /var/lib/apt/lists/*
+# Fri, 08 Nov 2019 02:20:03 GMT
+ENV JAVA_VERSION=jdk8u232-b09
+# Fri, 08 Nov 2019 02:20:09 GMT
+RUN set -eux;     ARCH="$(dpkg --print-architecture)";     case "${ARCH}" in        ppc64el|ppc64le)          ESUM='da87bdc04b47477b42afc76066dbd96efa35ad967238be03a0081f8840e893a8';          BINARY_URL='https://github.com/AdoptOpenJDK/openjdk8-binaries/releases/download/jdk8u232-b09/OpenJDK8U-jdk_ppc64le_linux_hotspot_8u232b09.tar.gz';          ;;        s390x)          ESUM='bd20cb8bf4cfab9d3e2b2ccfb9a6f9eda1e4e67b4103b9975d29de12c05ad1f5';          BINARY_URL='https://github.com/AdoptOpenJDK/openjdk8-binaries/releases/download/jdk8u232-b09/OpenJDK8U-jdk_s390x_linux_hotspot_8u232b09.tar.gz';          ;;        amd64|x86_64)          ESUM='7b7884f2eb2ba2d47f4c0bf3bb1a2a95b73a3a7734bd47ebf9798483a7bcc423';          BINARY_URL='https://github.com/AdoptOpenJDK/openjdk8-binaries/releases/download/jdk8u232-b09/OpenJDK8U-jdk_x64_linux_hotspot_8u232b09.tar.gz';          ;;        *)          echo "Unsupported arch: ${ARCH}";          exit 1;          ;;     esac;     curl -LfsSo /tmp/openjdk.tar.gz ${BINARY_URL};     echo "${ESUM} */tmp/openjdk.tar.gz" | sha256sum -c -;     mkdir -p /opt/java/openjdk;     cd /opt/java/openjdk;     tar -xf /tmp/openjdk.tar.gz --strip-components=1;     rm -rf /tmp/openjdk.tar.gz;
+# Fri, 08 Nov 2019 02:20:09 GMT
 ENV JAVA_HOME=/opt/java/openjdk PATH=/opt/java/openjdk/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Fri, 01 Nov 2019 02:29:48 GMT
+# Fri, 08 Nov 2019 02:52:20 GMT
 ENV CATALINA_HOME=/usr/local/tomcat
-# Fri, 01 Nov 2019 02:29:48 GMT
+# Fri, 08 Nov 2019 02:52:21 GMT
 ENV PATH=/usr/local/tomcat/bin:/opt/java/openjdk/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Fri, 01 Nov 2019 02:29:49 GMT
+# Fri, 08 Nov 2019 02:52:22 GMT
 RUN mkdir -p "$CATALINA_HOME"
-# Fri, 01 Nov 2019 02:29:49 GMT
+# Fri, 08 Nov 2019 02:52:22 GMT
 WORKDIR /usr/local/tomcat
-# Fri, 01 Nov 2019 02:29:49 GMT
+# Fri, 08 Nov 2019 02:52:23 GMT
 ENV TOMCAT_NATIVE_LIBDIR=/usr/local/tomcat/native-jni-lib
-# Fri, 01 Nov 2019 02:29:49 GMT
+# Fri, 08 Nov 2019 02:52:23 GMT
 ENV LD_LIBRARY_PATH=/usr/local/tomcat/native-jni-lib
-# Fri, 01 Nov 2019 02:34:53 GMT
+# Fri, 08 Nov 2019 02:58:08 GMT
 ENV GPG_KEYS=05AB33110949707C93A279E3D3EFE6B686867BA6 07E48665A34DCAFAE522E5E6266191C37C037D42 47309207D818FFD8DCD3F83F1931D684307A10A5 541FBE7D8F78B25E055DDEE13C370389288584E7 61B832AC2F1C5A90F0F9B00A1C506407564C17A3 713DA88BE50911535FE716F5208B0AB1D63011C7 79F7026C690BAA50B92CD8B66A3AD3F4F22C4FED 9BA44C2621385CB966EBA586F72C284D731FABEE A27677289986DB50844682F8ACB77FC2E86E29AC A9C5DF4D22E99998D9875A5110C01C5A2F6059E7 DCFD35E0BF8CA7344752DE8B6FB21E8933C60243 F3A04C595DB5B6A5F1ECA43E3B7BBB100D811BBE F7DA48BB64BCB84ECBA7EE6935CD23C10D498E23
-# Fri, 01 Nov 2019 02:34:53 GMT
+# Fri, 08 Nov 2019 02:58:08 GMT
 ENV TOMCAT_MAJOR=8
-# Fri, 01 Nov 2019 02:34:53 GMT
+# Fri, 08 Nov 2019 02:58:09 GMT
 ENV TOMCAT_VERSION=8.5.47
-# Fri, 01 Nov 2019 02:34:53 GMT
+# Fri, 08 Nov 2019 02:58:09 GMT
 ENV TOMCAT_SHA512=079b85f3dfca2b137634859208fae6012860201d720d12ff0add3473f1e267d332cb12803958754e1f922599e0d42b7e97f00bcd62584d9148a6f45fde091716
-# Fri, 01 Nov 2019 02:35:26 GMT
+# Fri, 08 Nov 2019 02:59:03 GMT
 RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		gnupg dirmngr 		wget ca-certificates 	; 		ddist() { 		local f="$1"; shift; 		local distFile="$1"; shift; 		local success=; 		local distUrl=; 		for distUrl in 			'https://www.apache.org/dyn/closer.cgi?action=download&filename=' 			https://www-us.apache.org/dist/ 			https://www.apache.org/dist/ 			https://archive.apache.org/dist/ 		; do 			if wget -O "$f" "$distUrl$distFile" && [ -s "$f" ]; then 				success=1; 				break; 			fi; 		done; 		[ -n "$success" ]; 	}; 		ddist 'tomcat.tar.gz' "tomcat/tomcat-$TOMCAT_MAJOR/v$TOMCAT_VERSION/bin/apache-tomcat-$TOMCAT_VERSION.tar.gz"; 	echo "$TOMCAT_SHA512 *tomcat.tar.gz" | sha512sum --strict --check -; 	ddist 'tomcat.tar.gz.asc' "tomcat/tomcat-$TOMCAT_MAJOR/v$TOMCAT_VERSION/bin/apache-tomcat-$TOMCAT_VERSION.tar.gz.asc"; 	export GNUPGHOME="$(mktemp -d)"; 	for key in $GPG_KEYS; do 		gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys "$key"; 	done; 	gpg --batch --verify tomcat.tar.gz.asc tomcat.tar.gz; 	tar -xf tomcat.tar.gz --strip-components=1; 	rm bin/*.bat; 	rm tomcat.tar.gz*; 	command -v gpgconf && gpgconf --kill all || :; 	rm -rf "$GNUPGHOME"; 		nativeBuildDir="$(mktemp -d)"; 	tar -xf bin/tomcat-native.tar.gz -C "$nativeBuildDir" --strip-components=1; 	apt-get install -y --no-install-recommends 		dpkg-dev 		gcc 		libapr1-dev 		libssl-dev 		make 	; 	( 		export CATALINA_HOME="$PWD"; 		cd "$nativeBuildDir/native"; 		gnuArch="$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)"; 		aprConfig="$(command -v apr-1-config)"; 		./configure 			--build="$gnuArch" 			--libdir="$TOMCAT_NATIVE_LIBDIR" 			--prefix="$CATALINA_HOME" 			--with-apr="$aprConfig" 			--with-java-home="$JAVA_HOME" 			--with-ssl=yes; 		make -j "$(nproc)"; 		make install; 	); 	rm -rf "$nativeBuildDir"; 	rm bin/tomcat-native.tar.gz; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark > /dev/null; 	find "$TOMCAT_NATIVE_LIBDIR" -type f -executable -exec ldd '{}' ';' 		| awk '/=>/ { print $(NF-1) }' 		| sort -u 		| xargs -r dpkg-query --search 		| cut -d: -f1 		| sort -u 		| xargs -r apt-mark manual 	; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 	rm -rf /var/lib/apt/lists/*; 		find ./bin/ -name '*.sh' -exec sed -ri 's|^#!/bin/sh$|#!/usr/bin/env bash|' '{}' +; 		chmod -R +rX .; 	chmod 777 logs temp work
-# Fri, 01 Nov 2019 02:35:29 GMT
+# Fri, 08 Nov 2019 02:59:07 GMT
 RUN set -e 	&& nativeLines="$(catalina.sh configtest 2>&1)" 	&& nativeLines="$(echo "$nativeLines" | grep 'Apache Tomcat Native')" 	&& nativeLines="$(echo "$nativeLines" | sort -u)" 	&& if ! echo "$nativeLines" | grep 'INFO: Loaded APR based Apache Tomcat Native library' >&2; then 		echo >&2 "$nativeLines"; 		exit 1; 	fi
-# Fri, 01 Nov 2019 02:35:29 GMT
+# Fri, 08 Nov 2019 02:59:07 GMT
 EXPOSE 8080
-# Fri, 01 Nov 2019 02:35:30 GMT
+# Fri, 08 Nov 2019 02:59:08 GMT
 CMD ["catalina.sh" "run"]
-# Fri, 01 Nov 2019 05:46:09 GMT
+# Fri, 08 Nov 2019 03:47:57 GMT
 MAINTAINER Vincent Massol <vincent@massol.net>
-# Fri, 01 Nov 2019 05:48:00 GMT
+# Fri, 08 Nov 2019 03:49:52 GMT
 RUN apt-get update &&   apt-get --no-install-recommends -y install     curl     libreoffice     unzip     procps     libmysql-java &&   rm -rf /var/lib/apt/lists/*
-# Fri, 01 Nov 2019 05:48:01 GMT
+# Fri, 08 Nov 2019 03:49:52 GMT
 ENV XWIKI_VERSION=10.11.9
-# Fri, 01 Nov 2019 05:48:01 GMT
+# Fri, 08 Nov 2019 03:49:53 GMT
 ENV XWIKI_URL_PREFIX=https://maven.xwiki.org/releases/org/xwiki/platform/xwiki-platform-distribution-war/10.11.9
-# Fri, 01 Nov 2019 05:48:01 GMT
+# Fri, 08 Nov 2019 03:49:53 GMT
 ENV XWIKI_DOWNLOAD_SHA256=299fe60d5b32ee1a363ba48ff2346e78eea5f713a0174c20fe9d7531be426a58
-# Fri, 01 Nov 2019 05:48:35 GMT
+# Fri, 08 Nov 2019 03:50:25 GMT
 RUN rm -rf /usr/local/tomcat/webapps/* &&   mkdir -p /usr/local/tomcat/temp &&   mkdir -p /usr/local/xwiki/data &&   curl -fSL "${XWIKI_URL_PREFIX}/xwiki-platform-distribution-war-${XWIKI_VERSION}.war" -o xwiki.war &&   echo "$XWIKI_DOWNLOAD_SHA256 xwiki.war" | sha256sum -c - &&   unzip -d /usr/local/tomcat/webapps/ROOT xwiki.war &&   rm -f xwiki.war
-# Fri, 01 Nov 2019 05:48:36 GMT
+# Fri, 08 Nov 2019 03:50:26 GMT
 RUN cp /usr/share/java/mysql-connector-java-*.jar /usr/local/tomcat/webapps/ROOT/WEB-INF/lib/
-# Fri, 01 Nov 2019 05:48:36 GMT
+# Fri, 08 Nov 2019 03:50:26 GMT
 COPY file:0a1be11e2eb610a1dbcd415404e3a592641110b93090030cb831e3a19a163017 in /usr/local/tomcat/bin/ 
-# Fri, 01 Nov 2019 05:48:36 GMT
+# Fri, 08 Nov 2019 03:50:26 GMT
 COPY file:c4e95f70490b423a9379f336f8f4d780824e06f56fa73bc69a238e245b53e842 in /usr/local/tomcat/webapps/ROOT/WEB-INF/hibernate.cfg.xml 
-# Fri, 01 Nov 2019 05:48:37 GMT
+# Fri, 08 Nov 2019 03:50:27 GMT
 RUN sed -i 's/<id>org.xwiki.platform:xwiki-platform-distribution-war/<id>org.xwiki.platform:xwiki-platform-distribution-docker/'   /usr/local/tomcat/webapps/ROOT/META-INF/extension.xed
-# Fri, 01 Nov 2019 05:48:37 GMT
+# Fri, 08 Nov 2019 03:50:27 GMT
 COPY file:f901b2d7ac3d76cd8346f9aee81b40529183e81d8aa027bb390856ac01fa6cc0 in /usr/local/bin/docker-entrypoint.sh 
-# Fri, 01 Nov 2019 05:48:37 GMT
+# Fri, 08 Nov 2019 03:50:27 GMT
 VOLUME [/usr/local/xwiki]
-# Fri, 01 Nov 2019 05:48:37 GMT
+# Fri, 08 Nov 2019 03:50:27 GMT
 ENTRYPOINT ["docker-entrypoint.sh"]
-# Fri, 01 Nov 2019 05:48:37 GMT
+# Fri, 08 Nov 2019 03:50:27 GMT
 CMD ["xwiki"]
 ```
 
@@ -3022,59 +3022,59 @@ CMD ["xwiki"]
 		Last Modified: Thu, 31 Oct 2019 22:21:39 GMT  
 		Size: 162.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:b5035666b1cd262e3117ca99ecbe11fc92c973a1164cd5c69bca60165f501520`  
-		Last Modified: Thu, 31 Oct 2019 22:40:53 GMT  
-		Size: 10.8 MB (10842099 bytes)  
+	-	`sha256:da4c04c54fa4a9b55ddef0b116fa7969185639621c525e1fe19f2b194f1ca4bc`  
+		Last Modified: Fri, 08 Nov 2019 02:22:45 GMT  
+		Size: 13.3 MB (13322685 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:efde61b742b5cb70e5b4addf1af5ad7280bffe7d8dd1df5eff600523285f3ea4`  
-		Last Modified: Thu, 31 Oct 2019 22:41:03 GMT  
-		Size: 105.0 MB (105002961 bytes)  
+	-	`sha256:2e619a1c4087f3c7f3728ceb4445f1a7a5039161cf3289478a8883c6ee035404`  
+		Last Modified: Fri, 08 Nov 2019 02:22:53 GMT  
+		Size: 105.1 MB (105052686 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:225d7996c0304b5ffbdcf6098af5c263ffc4d1b4179e9dca599cea72150685aa`  
-		Last Modified: Fri, 01 Nov 2019 02:39:12 GMT  
-		Size: 138.0 B  
+	-	`sha256:9d52f3e37b5909a34e61705bcdbc8935d682242f0c5fccdb29e117df8639b535`  
+		Last Modified: Fri, 08 Nov 2019 03:05:59 GMT  
+		Size: 139.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:79ec1eb33f408e2e622babc4045fe851ed5836f38b9e58daa1eb39284ace03cf`  
-		Last Modified: Fri, 01 Nov 2019 02:39:56 GMT  
-		Size: 11.2 MB (11233772 bytes)  
+	-	`sha256:e36d9bbb9a695ea2424edb1ab9bbf4fd43d87d68ad2e511fed36af7a18d3d3e8`  
+		Last Modified: Fri, 08 Nov 2019 03:06:53 GMT  
+		Size: 11.3 MB (11250353 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:1e181f3682b7d9ea77955bcda4108fc60c381f24ed390b0a3d08b67642aef2a7`  
-		Last Modified: Fri, 01 Nov 2019 02:39:55 GMT  
-		Size: 131.0 B  
+	-	`sha256:32d2a60a869b7029538438ffc8b6bc2975016c77fd3d3e4bc74b106903b3cca4`  
+		Last Modified: Fri, 08 Nov 2019 03:06:51 GMT  
+		Size: 132.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:248409c0f5d78edeb3d761e8c51a335df3b426a41b4ec8cde818dc7c42ac9303`  
-		Last Modified: Fri, 01 Nov 2019 05:54:24 GMT  
-		Size: 182.5 MB (182519889 bytes)  
+	-	`sha256:a0ecb74c3432d2f07db2c599a41070972647d5e39217a796364ea9f894433395`  
+		Last Modified: Fri, 08 Nov 2019 03:56:18 GMT  
+		Size: 179.9 MB (179895164 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:59e11cead95223d99208c1a56b2ff70a4c400bce48fc1a180c920bb8bdfe9b9e`  
-		Last Modified: Fri, 01 Nov 2019 05:54:10 GMT  
-		Size: 245.9 MB (245930567 bytes)  
+	-	`sha256:f60cc6c4e6989a78ffa4eda461e37f0c14fa8d1664ed98154a893b743a133b53`  
+		Last Modified: Fri, 08 Nov 2019 03:56:08 GMT  
+		Size: 245.9 MB (245930552 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:d6d385233a9152fa2829ee24a53aff146593c925d7cbdd903fc89fb68831abb3`  
-		Last Modified: Fri, 01 Nov 2019 05:53:51 GMT  
-		Size: 955.6 KB (955596 bytes)  
+	-	`sha256:211a8ff63ee53dd83cfb2ef14fd7c5f220e870f7b4a24bd7c056a6dfb3ea3195`  
+		Last Modified: Fri, 08 Nov 2019 03:55:45 GMT  
+		Size: 955.6 KB (955606 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:f4c1267abe977a216254032c7bdae4dc95710175a32b47d20bb86fcfab611e53`  
-		Last Modified: Fri, 01 Nov 2019 05:53:51 GMT  
+	-	`sha256:d2e0a05a7c703bf048e0d1025315d34bd397200ba693101fd6293aaa24e39665`  
+		Last Modified: Fri, 08 Nov 2019 03:55:45 GMT  
 		Size: 1.3 KB (1345 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:e0a9fd9bde07de0f3b22e22358c5a553b96b8ffb94f7efdf54be1acb865f294f`  
-		Last Modified: Fri, 01 Nov 2019 05:53:51 GMT  
-		Size: 2.3 KB (2341 bytes)  
+	-	`sha256:07de7e380b498b0a7a00eab52eb6163ee8c032a35ec4b2597ffc611f6c9f7f18`  
+		Last Modified: Fri, 08 Nov 2019 03:55:45 GMT  
+		Size: 2.3 KB (2344 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:9c5892c3d351297bbd95311554d447023392f4d53a0602c76eaaf171fc22a791`  
-		Last Modified: Fri, 01 Nov 2019 05:53:51 GMT  
-		Size: 3.8 KB (3835 bytes)  
+	-	`sha256:360a0fed78607fc123133c9c254e66bd48facd092ed428ed26198dc6bfc0260a`  
+		Last Modified: Fri, 08 Nov 2019 03:55:45 GMT  
+		Size: 3.8 KB (3838 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:6958577bb68ad9dd0aac0e54301206f89b27e741e2a11bf454642821ffe148e6`  
-		Last Modified: Fri, 01 Nov 2019 05:53:51 GMT  
+	-	`sha256:f8f1d28ac8dbc927cf661687f024476d2558c833a1794dad36552cf17b4fad2f`  
+		Last Modified: Fri, 08 Nov 2019 03:55:45 GMT  
 		Size: 2.4 KB (2404 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `xwiki:lts-mysql-tomcat`
 
 ```console
-$ docker pull xwiki@sha256:c304d3bfc03954a3669f47757a63918a4d36af088c34537e15093d7cbb2192e5
+$ docker pull xwiki@sha256:e50eee1ee16e97510d2c2878b44ba59cff37121d520dcfcc6ab39815203541fc
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -3084,14 +3084,14 @@ $ docker pull xwiki@sha256:c304d3bfc03954a3669f47757a63918a4d36af088c34537e15093
 ### `xwiki:lts-mysql-tomcat` - linux; amd64
 
 ```console
-$ docker pull xwiki@sha256:031e6cf9f5f62c9ac15be9a93473d15a5cb805445d8efbdb68835da5502d7999
+$ docker pull xwiki@sha256:1eac0ad7e3285c13b277110fd956cc05a3c5774a7c8d88207eff821713040840
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **583.2 MB (583220294 bytes)**  
+-	Total Size: **583.1 MB (583142464 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:5ed311c670c181f7bd2a3837a9ba97b7629e74b535eb19efdb8e7d33871c9a2d`
+-	Image ID: `sha256:a9f71ff8b734e920564dff7b18c8327bdac99724df51a87a2bc0f57ed06bd995`
 -	Entrypoint: `["docker-entrypoint.sh"]`
 -	Default Command: `["xwiki"]`
 
@@ -3108,69 +3108,69 @@ RUN mkdir -p /run/systemd && echo 'docker' > /run/systemd/container
 CMD ["/bin/bash"]
 # Thu, 31 Oct 2019 22:37:37 GMT
 ENV LANG=en_US.UTF-8 LANGUAGE=en_US:en LC_ALL=en_US.UTF-8
-# Thu, 31 Oct 2019 22:38:04 GMT
-RUN apt-get update     && apt-get install -y --no-install-recommends curl ca-certificates locales     && echo "en_US.UTF-8 UTF-8" >> /etc/locale.gen     && locale-gen en_US.UTF-8     && rm -rf /var/lib/apt/lists/*
-# Thu, 31 Oct 2019 22:38:04 GMT
-ENV JAVA_VERSION=jdk8u222-b10
-# Thu, 31 Oct 2019 22:38:10 GMT
-RUN set -eux;     ARCH="$(dpkg --print-architecture)";     case "${ARCH}" in        aarch64|arm64)          ESUM='652776586ede124189dc218174b5922cc97feac81021ad81905900b349a352d2';          BINARY_URL='https://github.com/AdoptOpenJDK/openjdk8-binaries/releases/download/jdk8u222-b10/OpenJDK8U-jdk_aarch64_linux_hotspot_8u222b10.tar.gz';          ;;        armhf)          ESUM='7b3d6ade8c25adca01095ba66642132d8c87a1a8caf3883850e34778453afcec';          BINARY_URL='https://github.com/AdoptOpenJDK/openjdk8-binaries/releases/download/jdk8u222-b10/OpenJDK8U-jdk_arm_linux_hotspot_8u222b10.tar.gz';          ;;        ppc64el|ppc64le)          ESUM='f85de48f1dcfd78a39bf5817d3c2f8247c75df6abd56c8721172bf2bd757eb69';          BINARY_URL='https://github.com/AdoptOpenJDK/openjdk8-binaries/releases/download/jdk8u222-b10/OpenJDK8U-jdk_ppc64le_linux_hotspot_8u222b10.tar.gz';          ;;        s390x)          ESUM='d56d6a128f8827e5baeae379bcb1b3ead2cfd5b1abb03befa4588f89f08ea626';          BINARY_URL='https://github.com/AdoptOpenJDK/openjdk8-binaries/releases/download/jdk8u222-b10/OpenJDK8U-jdk_s390x_linux_hotspot_8u222b10.tar.gz';          ;;        amd64|x86_64)          ESUM='37356281345b93feb4212e6267109b4409b55b06f107619dde4960e402bafa77';          BINARY_URL='https://github.com/AdoptOpenJDK/openjdk8-binaries/releases/download/jdk8u222-b10/OpenJDK8U-jdk_x64_linux_hotspot_8u222b10.tar.gz';          ;;        *)          echo "Unsupported arch: ${ARCH}";          exit 1;          ;;     esac;     curl -LfsSo /tmp/openjdk.tar.gz ${BINARY_URL};     echo "${ESUM} */tmp/openjdk.tar.gz" | sha256sum -c -;     mkdir -p /opt/java/openjdk;     cd /opt/java/openjdk;     tar -xf /tmp/openjdk.tar.gz --strip-components=1;     rm -rf /tmp/openjdk.tar.gz;
-# Thu, 31 Oct 2019 22:38:11 GMT
+# Fri, 08 Nov 2019 02:20:03 GMT
+RUN apt-get update     && apt-get install -y --no-install-recommends curl ca-certificates fontconfig locales     && echo "en_US.UTF-8 UTF-8" >> /etc/locale.gen     && locale-gen en_US.UTF-8     && rm -rf /var/lib/apt/lists/*
+# Fri, 08 Nov 2019 02:20:03 GMT
+ENV JAVA_VERSION=jdk8u232-b09
+# Fri, 08 Nov 2019 02:20:09 GMT
+RUN set -eux;     ARCH="$(dpkg --print-architecture)";     case "${ARCH}" in        ppc64el|ppc64le)          ESUM='da87bdc04b47477b42afc76066dbd96efa35ad967238be03a0081f8840e893a8';          BINARY_URL='https://github.com/AdoptOpenJDK/openjdk8-binaries/releases/download/jdk8u232-b09/OpenJDK8U-jdk_ppc64le_linux_hotspot_8u232b09.tar.gz';          ;;        s390x)          ESUM='bd20cb8bf4cfab9d3e2b2ccfb9a6f9eda1e4e67b4103b9975d29de12c05ad1f5';          BINARY_URL='https://github.com/AdoptOpenJDK/openjdk8-binaries/releases/download/jdk8u232-b09/OpenJDK8U-jdk_s390x_linux_hotspot_8u232b09.tar.gz';          ;;        amd64|x86_64)          ESUM='7b7884f2eb2ba2d47f4c0bf3bb1a2a95b73a3a7734bd47ebf9798483a7bcc423';          BINARY_URL='https://github.com/AdoptOpenJDK/openjdk8-binaries/releases/download/jdk8u232-b09/OpenJDK8U-jdk_x64_linux_hotspot_8u232b09.tar.gz';          ;;        *)          echo "Unsupported arch: ${ARCH}";          exit 1;          ;;     esac;     curl -LfsSo /tmp/openjdk.tar.gz ${BINARY_URL};     echo "${ESUM} */tmp/openjdk.tar.gz" | sha256sum -c -;     mkdir -p /opt/java/openjdk;     cd /opt/java/openjdk;     tar -xf /tmp/openjdk.tar.gz --strip-components=1;     rm -rf /tmp/openjdk.tar.gz;
+# Fri, 08 Nov 2019 02:20:09 GMT
 ENV JAVA_HOME=/opt/java/openjdk PATH=/opt/java/openjdk/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Fri, 01 Nov 2019 02:29:48 GMT
+# Fri, 08 Nov 2019 02:52:20 GMT
 ENV CATALINA_HOME=/usr/local/tomcat
-# Fri, 01 Nov 2019 02:29:48 GMT
+# Fri, 08 Nov 2019 02:52:21 GMT
 ENV PATH=/usr/local/tomcat/bin:/opt/java/openjdk/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Fri, 01 Nov 2019 02:29:49 GMT
+# Fri, 08 Nov 2019 02:52:22 GMT
 RUN mkdir -p "$CATALINA_HOME"
-# Fri, 01 Nov 2019 02:29:49 GMT
+# Fri, 08 Nov 2019 02:52:22 GMT
 WORKDIR /usr/local/tomcat
-# Fri, 01 Nov 2019 02:29:49 GMT
+# Fri, 08 Nov 2019 02:52:23 GMT
 ENV TOMCAT_NATIVE_LIBDIR=/usr/local/tomcat/native-jni-lib
-# Fri, 01 Nov 2019 02:29:49 GMT
+# Fri, 08 Nov 2019 02:52:23 GMT
 ENV LD_LIBRARY_PATH=/usr/local/tomcat/native-jni-lib
-# Fri, 01 Nov 2019 02:34:53 GMT
+# Fri, 08 Nov 2019 02:58:08 GMT
 ENV GPG_KEYS=05AB33110949707C93A279E3D3EFE6B686867BA6 07E48665A34DCAFAE522E5E6266191C37C037D42 47309207D818FFD8DCD3F83F1931D684307A10A5 541FBE7D8F78B25E055DDEE13C370389288584E7 61B832AC2F1C5A90F0F9B00A1C506407564C17A3 713DA88BE50911535FE716F5208B0AB1D63011C7 79F7026C690BAA50B92CD8B66A3AD3F4F22C4FED 9BA44C2621385CB966EBA586F72C284D731FABEE A27677289986DB50844682F8ACB77FC2E86E29AC A9C5DF4D22E99998D9875A5110C01C5A2F6059E7 DCFD35E0BF8CA7344752DE8B6FB21E8933C60243 F3A04C595DB5B6A5F1ECA43E3B7BBB100D811BBE F7DA48BB64BCB84ECBA7EE6935CD23C10D498E23
-# Fri, 01 Nov 2019 02:34:53 GMT
+# Fri, 08 Nov 2019 02:58:08 GMT
 ENV TOMCAT_MAJOR=8
-# Fri, 01 Nov 2019 02:34:53 GMT
+# Fri, 08 Nov 2019 02:58:09 GMT
 ENV TOMCAT_VERSION=8.5.47
-# Fri, 01 Nov 2019 02:34:53 GMT
+# Fri, 08 Nov 2019 02:58:09 GMT
 ENV TOMCAT_SHA512=079b85f3dfca2b137634859208fae6012860201d720d12ff0add3473f1e267d332cb12803958754e1f922599e0d42b7e97f00bcd62584d9148a6f45fde091716
-# Fri, 01 Nov 2019 02:35:26 GMT
+# Fri, 08 Nov 2019 02:59:03 GMT
 RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		gnupg dirmngr 		wget ca-certificates 	; 		ddist() { 		local f="$1"; shift; 		local distFile="$1"; shift; 		local success=; 		local distUrl=; 		for distUrl in 			'https://www.apache.org/dyn/closer.cgi?action=download&filename=' 			https://www-us.apache.org/dist/ 			https://www.apache.org/dist/ 			https://archive.apache.org/dist/ 		; do 			if wget -O "$f" "$distUrl$distFile" && [ -s "$f" ]; then 				success=1; 				break; 			fi; 		done; 		[ -n "$success" ]; 	}; 		ddist 'tomcat.tar.gz' "tomcat/tomcat-$TOMCAT_MAJOR/v$TOMCAT_VERSION/bin/apache-tomcat-$TOMCAT_VERSION.tar.gz"; 	echo "$TOMCAT_SHA512 *tomcat.tar.gz" | sha512sum --strict --check -; 	ddist 'tomcat.tar.gz.asc' "tomcat/tomcat-$TOMCAT_MAJOR/v$TOMCAT_VERSION/bin/apache-tomcat-$TOMCAT_VERSION.tar.gz.asc"; 	export GNUPGHOME="$(mktemp -d)"; 	for key in $GPG_KEYS; do 		gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys "$key"; 	done; 	gpg --batch --verify tomcat.tar.gz.asc tomcat.tar.gz; 	tar -xf tomcat.tar.gz --strip-components=1; 	rm bin/*.bat; 	rm tomcat.tar.gz*; 	command -v gpgconf && gpgconf --kill all || :; 	rm -rf "$GNUPGHOME"; 		nativeBuildDir="$(mktemp -d)"; 	tar -xf bin/tomcat-native.tar.gz -C "$nativeBuildDir" --strip-components=1; 	apt-get install -y --no-install-recommends 		dpkg-dev 		gcc 		libapr1-dev 		libssl-dev 		make 	; 	( 		export CATALINA_HOME="$PWD"; 		cd "$nativeBuildDir/native"; 		gnuArch="$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)"; 		aprConfig="$(command -v apr-1-config)"; 		./configure 			--build="$gnuArch" 			--libdir="$TOMCAT_NATIVE_LIBDIR" 			--prefix="$CATALINA_HOME" 			--with-apr="$aprConfig" 			--with-java-home="$JAVA_HOME" 			--with-ssl=yes; 		make -j "$(nproc)"; 		make install; 	); 	rm -rf "$nativeBuildDir"; 	rm bin/tomcat-native.tar.gz; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark > /dev/null; 	find "$TOMCAT_NATIVE_LIBDIR" -type f -executable -exec ldd '{}' ';' 		| awk '/=>/ { print $(NF-1) }' 		| sort -u 		| xargs -r dpkg-query --search 		| cut -d: -f1 		| sort -u 		| xargs -r apt-mark manual 	; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 	rm -rf /var/lib/apt/lists/*; 		find ./bin/ -name '*.sh' -exec sed -ri 's|^#!/bin/sh$|#!/usr/bin/env bash|' '{}' +; 		chmod -R +rX .; 	chmod 777 logs temp work
-# Fri, 01 Nov 2019 02:35:29 GMT
+# Fri, 08 Nov 2019 02:59:07 GMT
 RUN set -e 	&& nativeLines="$(catalina.sh configtest 2>&1)" 	&& nativeLines="$(echo "$nativeLines" | grep 'Apache Tomcat Native')" 	&& nativeLines="$(echo "$nativeLines" | sort -u)" 	&& if ! echo "$nativeLines" | grep 'INFO: Loaded APR based Apache Tomcat Native library' >&2; then 		echo >&2 "$nativeLines"; 		exit 1; 	fi
-# Fri, 01 Nov 2019 02:35:29 GMT
+# Fri, 08 Nov 2019 02:59:07 GMT
 EXPOSE 8080
-# Fri, 01 Nov 2019 02:35:30 GMT
+# Fri, 08 Nov 2019 02:59:08 GMT
 CMD ["catalina.sh" "run"]
-# Fri, 01 Nov 2019 05:46:09 GMT
+# Fri, 08 Nov 2019 03:47:57 GMT
 MAINTAINER Vincent Massol <vincent@massol.net>
-# Fri, 01 Nov 2019 05:48:00 GMT
+# Fri, 08 Nov 2019 03:49:52 GMT
 RUN apt-get update &&   apt-get --no-install-recommends -y install     curl     libreoffice     unzip     procps     libmysql-java &&   rm -rf /var/lib/apt/lists/*
-# Fri, 01 Nov 2019 05:48:01 GMT
+# Fri, 08 Nov 2019 03:49:52 GMT
 ENV XWIKI_VERSION=10.11.9
-# Fri, 01 Nov 2019 05:48:01 GMT
+# Fri, 08 Nov 2019 03:49:53 GMT
 ENV XWIKI_URL_PREFIX=https://maven.xwiki.org/releases/org/xwiki/platform/xwiki-platform-distribution-war/10.11.9
-# Fri, 01 Nov 2019 05:48:01 GMT
+# Fri, 08 Nov 2019 03:49:53 GMT
 ENV XWIKI_DOWNLOAD_SHA256=299fe60d5b32ee1a363ba48ff2346e78eea5f713a0174c20fe9d7531be426a58
-# Fri, 01 Nov 2019 05:48:35 GMT
+# Fri, 08 Nov 2019 03:50:25 GMT
 RUN rm -rf /usr/local/tomcat/webapps/* &&   mkdir -p /usr/local/tomcat/temp &&   mkdir -p /usr/local/xwiki/data &&   curl -fSL "${XWIKI_URL_PREFIX}/xwiki-platform-distribution-war-${XWIKI_VERSION}.war" -o xwiki.war &&   echo "$XWIKI_DOWNLOAD_SHA256 xwiki.war" | sha256sum -c - &&   unzip -d /usr/local/tomcat/webapps/ROOT xwiki.war &&   rm -f xwiki.war
-# Fri, 01 Nov 2019 05:48:36 GMT
+# Fri, 08 Nov 2019 03:50:26 GMT
 RUN cp /usr/share/java/mysql-connector-java-*.jar /usr/local/tomcat/webapps/ROOT/WEB-INF/lib/
-# Fri, 01 Nov 2019 05:48:36 GMT
+# Fri, 08 Nov 2019 03:50:26 GMT
 COPY file:0a1be11e2eb610a1dbcd415404e3a592641110b93090030cb831e3a19a163017 in /usr/local/tomcat/bin/ 
-# Fri, 01 Nov 2019 05:48:36 GMT
+# Fri, 08 Nov 2019 03:50:26 GMT
 COPY file:c4e95f70490b423a9379f336f8f4d780824e06f56fa73bc69a238e245b53e842 in /usr/local/tomcat/webapps/ROOT/WEB-INF/hibernate.cfg.xml 
-# Fri, 01 Nov 2019 05:48:37 GMT
+# Fri, 08 Nov 2019 03:50:27 GMT
 RUN sed -i 's/<id>org.xwiki.platform:xwiki-platform-distribution-war/<id>org.xwiki.platform:xwiki-platform-distribution-docker/'   /usr/local/tomcat/webapps/ROOT/META-INF/extension.xed
-# Fri, 01 Nov 2019 05:48:37 GMT
+# Fri, 08 Nov 2019 03:50:27 GMT
 COPY file:f901b2d7ac3d76cd8346f9aee81b40529183e81d8aa027bb390856ac01fa6cc0 in /usr/local/bin/docker-entrypoint.sh 
-# Fri, 01 Nov 2019 05:48:37 GMT
+# Fri, 08 Nov 2019 03:50:27 GMT
 VOLUME [/usr/local/xwiki]
-# Fri, 01 Nov 2019 05:48:37 GMT
+# Fri, 08 Nov 2019 03:50:27 GMT
 ENTRYPOINT ["docker-entrypoint.sh"]
-# Fri, 01 Nov 2019 05:48:37 GMT
+# Fri, 08 Nov 2019 03:50:27 GMT
 CMD ["xwiki"]
 ```
 
@@ -3191,59 +3191,59 @@ CMD ["xwiki"]
 		Last Modified: Thu, 31 Oct 2019 22:21:39 GMT  
 		Size: 162.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:b5035666b1cd262e3117ca99ecbe11fc92c973a1164cd5c69bca60165f501520`  
-		Last Modified: Thu, 31 Oct 2019 22:40:53 GMT  
-		Size: 10.8 MB (10842099 bytes)  
+	-	`sha256:da4c04c54fa4a9b55ddef0b116fa7969185639621c525e1fe19f2b194f1ca4bc`  
+		Last Modified: Fri, 08 Nov 2019 02:22:45 GMT  
+		Size: 13.3 MB (13322685 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:efde61b742b5cb70e5b4addf1af5ad7280bffe7d8dd1df5eff600523285f3ea4`  
-		Last Modified: Thu, 31 Oct 2019 22:41:03 GMT  
-		Size: 105.0 MB (105002961 bytes)  
+	-	`sha256:2e619a1c4087f3c7f3728ceb4445f1a7a5039161cf3289478a8883c6ee035404`  
+		Last Modified: Fri, 08 Nov 2019 02:22:53 GMT  
+		Size: 105.1 MB (105052686 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:225d7996c0304b5ffbdcf6098af5c263ffc4d1b4179e9dca599cea72150685aa`  
-		Last Modified: Fri, 01 Nov 2019 02:39:12 GMT  
-		Size: 138.0 B  
+	-	`sha256:9d52f3e37b5909a34e61705bcdbc8935d682242f0c5fccdb29e117df8639b535`  
+		Last Modified: Fri, 08 Nov 2019 03:05:59 GMT  
+		Size: 139.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:79ec1eb33f408e2e622babc4045fe851ed5836f38b9e58daa1eb39284ace03cf`  
-		Last Modified: Fri, 01 Nov 2019 02:39:56 GMT  
-		Size: 11.2 MB (11233772 bytes)  
+	-	`sha256:e36d9bbb9a695ea2424edb1ab9bbf4fd43d87d68ad2e511fed36af7a18d3d3e8`  
+		Last Modified: Fri, 08 Nov 2019 03:06:53 GMT  
+		Size: 11.3 MB (11250353 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:1e181f3682b7d9ea77955bcda4108fc60c381f24ed390b0a3d08b67642aef2a7`  
-		Last Modified: Fri, 01 Nov 2019 02:39:55 GMT  
-		Size: 131.0 B  
+	-	`sha256:32d2a60a869b7029538438ffc8b6bc2975016c77fd3d3e4bc74b106903b3cca4`  
+		Last Modified: Fri, 08 Nov 2019 03:06:51 GMT  
+		Size: 132.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:248409c0f5d78edeb3d761e8c51a335df3b426a41b4ec8cde818dc7c42ac9303`  
-		Last Modified: Fri, 01 Nov 2019 05:54:24 GMT  
-		Size: 182.5 MB (182519889 bytes)  
+	-	`sha256:a0ecb74c3432d2f07db2c599a41070972647d5e39217a796364ea9f894433395`  
+		Last Modified: Fri, 08 Nov 2019 03:56:18 GMT  
+		Size: 179.9 MB (179895164 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:59e11cead95223d99208c1a56b2ff70a4c400bce48fc1a180c920bb8bdfe9b9e`  
-		Last Modified: Fri, 01 Nov 2019 05:54:10 GMT  
-		Size: 245.9 MB (245930567 bytes)  
+	-	`sha256:f60cc6c4e6989a78ffa4eda461e37f0c14fa8d1664ed98154a893b743a133b53`  
+		Last Modified: Fri, 08 Nov 2019 03:56:08 GMT  
+		Size: 245.9 MB (245930552 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:d6d385233a9152fa2829ee24a53aff146593c925d7cbdd903fc89fb68831abb3`  
-		Last Modified: Fri, 01 Nov 2019 05:53:51 GMT  
-		Size: 955.6 KB (955596 bytes)  
+	-	`sha256:211a8ff63ee53dd83cfb2ef14fd7c5f220e870f7b4a24bd7c056a6dfb3ea3195`  
+		Last Modified: Fri, 08 Nov 2019 03:55:45 GMT  
+		Size: 955.6 KB (955606 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:f4c1267abe977a216254032c7bdae4dc95710175a32b47d20bb86fcfab611e53`  
-		Last Modified: Fri, 01 Nov 2019 05:53:51 GMT  
+	-	`sha256:d2e0a05a7c703bf048e0d1025315d34bd397200ba693101fd6293aaa24e39665`  
+		Last Modified: Fri, 08 Nov 2019 03:55:45 GMT  
 		Size: 1.3 KB (1345 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:e0a9fd9bde07de0f3b22e22358c5a553b96b8ffb94f7efdf54be1acb865f294f`  
-		Last Modified: Fri, 01 Nov 2019 05:53:51 GMT  
-		Size: 2.3 KB (2341 bytes)  
+	-	`sha256:07de7e380b498b0a7a00eab52eb6163ee8c032a35ec4b2597ffc611f6c9f7f18`  
+		Last Modified: Fri, 08 Nov 2019 03:55:45 GMT  
+		Size: 2.3 KB (2344 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:9c5892c3d351297bbd95311554d447023392f4d53a0602c76eaaf171fc22a791`  
-		Last Modified: Fri, 01 Nov 2019 05:53:51 GMT  
-		Size: 3.8 KB (3835 bytes)  
+	-	`sha256:360a0fed78607fc123133c9c254e66bd48facd092ed428ed26198dc6bfc0260a`  
+		Last Modified: Fri, 08 Nov 2019 03:55:45 GMT  
+		Size: 3.8 KB (3838 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:6958577bb68ad9dd0aac0e54301206f89b27e741e2a11bf454642821ffe148e6`  
-		Last Modified: Fri, 01 Nov 2019 05:53:51 GMT  
+	-	`sha256:f8f1d28ac8dbc927cf661687f024476d2558c833a1794dad36552cf17b4fad2f`  
+		Last Modified: Fri, 08 Nov 2019 03:55:45 GMT  
 		Size: 2.4 KB (2404 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `xwiki:lts-postgres`
 
 ```console
-$ docker pull xwiki@sha256:73fccaaa608864b5b071af07e057613e197031530c2a981718e3827f4cd8dc00
+$ docker pull xwiki@sha256:2cf75066811db036a72feaa2c476773888ec9e34d14b8186424224101659ad63
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -3253,14 +3253,14 @@ $ docker pull xwiki@sha256:73fccaaa608864b5b071af07e057613e197031530c2a981718e38
 ### `xwiki:lts-postgres` - linux; amd64
 
 ```console
-$ docker pull xwiki@sha256:510720581fca923293bfeef79c0a8224b4e3f5717bdedb2eeeb77d79f9954384
+$ docker pull xwiki@sha256:7336446a1f272ff98fc5fc226351e5b019d411718f51f6b8f977b7d94aef754f
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **582.5 MB (582549609 bytes)**  
+-	Total Size: **582.5 MB (582471163 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:8ff560e664b744450f13c4bdf12f8e8d4e74ec87490f4110956734077fa1c26a`
+-	Image ID: `sha256:6d9ce4ab486781eee5120459565ad0d301f0458a52556b0cde046e86de3ece6d`
 -	Entrypoint: `["docker-entrypoint.sh"]`
 -	Default Command: `["xwiki"]`
 
@@ -3277,69 +3277,69 @@ RUN mkdir -p /run/systemd && echo 'docker' > /run/systemd/container
 CMD ["/bin/bash"]
 # Thu, 31 Oct 2019 22:37:37 GMT
 ENV LANG=en_US.UTF-8 LANGUAGE=en_US:en LC_ALL=en_US.UTF-8
-# Thu, 31 Oct 2019 22:38:04 GMT
-RUN apt-get update     && apt-get install -y --no-install-recommends curl ca-certificates locales     && echo "en_US.UTF-8 UTF-8" >> /etc/locale.gen     && locale-gen en_US.UTF-8     && rm -rf /var/lib/apt/lists/*
-# Thu, 31 Oct 2019 22:38:04 GMT
-ENV JAVA_VERSION=jdk8u222-b10
-# Thu, 31 Oct 2019 22:38:10 GMT
-RUN set -eux;     ARCH="$(dpkg --print-architecture)";     case "${ARCH}" in        aarch64|arm64)          ESUM='652776586ede124189dc218174b5922cc97feac81021ad81905900b349a352d2';          BINARY_URL='https://github.com/AdoptOpenJDK/openjdk8-binaries/releases/download/jdk8u222-b10/OpenJDK8U-jdk_aarch64_linux_hotspot_8u222b10.tar.gz';          ;;        armhf)          ESUM='7b3d6ade8c25adca01095ba66642132d8c87a1a8caf3883850e34778453afcec';          BINARY_URL='https://github.com/AdoptOpenJDK/openjdk8-binaries/releases/download/jdk8u222-b10/OpenJDK8U-jdk_arm_linux_hotspot_8u222b10.tar.gz';          ;;        ppc64el|ppc64le)          ESUM='f85de48f1dcfd78a39bf5817d3c2f8247c75df6abd56c8721172bf2bd757eb69';          BINARY_URL='https://github.com/AdoptOpenJDK/openjdk8-binaries/releases/download/jdk8u222-b10/OpenJDK8U-jdk_ppc64le_linux_hotspot_8u222b10.tar.gz';          ;;        s390x)          ESUM='d56d6a128f8827e5baeae379bcb1b3ead2cfd5b1abb03befa4588f89f08ea626';          BINARY_URL='https://github.com/AdoptOpenJDK/openjdk8-binaries/releases/download/jdk8u222-b10/OpenJDK8U-jdk_s390x_linux_hotspot_8u222b10.tar.gz';          ;;        amd64|x86_64)          ESUM='37356281345b93feb4212e6267109b4409b55b06f107619dde4960e402bafa77';          BINARY_URL='https://github.com/AdoptOpenJDK/openjdk8-binaries/releases/download/jdk8u222-b10/OpenJDK8U-jdk_x64_linux_hotspot_8u222b10.tar.gz';          ;;        *)          echo "Unsupported arch: ${ARCH}";          exit 1;          ;;     esac;     curl -LfsSo /tmp/openjdk.tar.gz ${BINARY_URL};     echo "${ESUM} */tmp/openjdk.tar.gz" | sha256sum -c -;     mkdir -p /opt/java/openjdk;     cd /opt/java/openjdk;     tar -xf /tmp/openjdk.tar.gz --strip-components=1;     rm -rf /tmp/openjdk.tar.gz;
-# Thu, 31 Oct 2019 22:38:11 GMT
+# Fri, 08 Nov 2019 02:20:03 GMT
+RUN apt-get update     && apt-get install -y --no-install-recommends curl ca-certificates fontconfig locales     && echo "en_US.UTF-8 UTF-8" >> /etc/locale.gen     && locale-gen en_US.UTF-8     && rm -rf /var/lib/apt/lists/*
+# Fri, 08 Nov 2019 02:20:03 GMT
+ENV JAVA_VERSION=jdk8u232-b09
+# Fri, 08 Nov 2019 02:20:09 GMT
+RUN set -eux;     ARCH="$(dpkg --print-architecture)";     case "${ARCH}" in        ppc64el|ppc64le)          ESUM='da87bdc04b47477b42afc76066dbd96efa35ad967238be03a0081f8840e893a8';          BINARY_URL='https://github.com/AdoptOpenJDK/openjdk8-binaries/releases/download/jdk8u232-b09/OpenJDK8U-jdk_ppc64le_linux_hotspot_8u232b09.tar.gz';          ;;        s390x)          ESUM='bd20cb8bf4cfab9d3e2b2ccfb9a6f9eda1e4e67b4103b9975d29de12c05ad1f5';          BINARY_URL='https://github.com/AdoptOpenJDK/openjdk8-binaries/releases/download/jdk8u232-b09/OpenJDK8U-jdk_s390x_linux_hotspot_8u232b09.tar.gz';          ;;        amd64|x86_64)          ESUM='7b7884f2eb2ba2d47f4c0bf3bb1a2a95b73a3a7734bd47ebf9798483a7bcc423';          BINARY_URL='https://github.com/AdoptOpenJDK/openjdk8-binaries/releases/download/jdk8u232-b09/OpenJDK8U-jdk_x64_linux_hotspot_8u232b09.tar.gz';          ;;        *)          echo "Unsupported arch: ${ARCH}";          exit 1;          ;;     esac;     curl -LfsSo /tmp/openjdk.tar.gz ${BINARY_URL};     echo "${ESUM} */tmp/openjdk.tar.gz" | sha256sum -c -;     mkdir -p /opt/java/openjdk;     cd /opt/java/openjdk;     tar -xf /tmp/openjdk.tar.gz --strip-components=1;     rm -rf /tmp/openjdk.tar.gz;
+# Fri, 08 Nov 2019 02:20:09 GMT
 ENV JAVA_HOME=/opt/java/openjdk PATH=/opt/java/openjdk/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Fri, 01 Nov 2019 02:29:48 GMT
+# Fri, 08 Nov 2019 02:52:20 GMT
 ENV CATALINA_HOME=/usr/local/tomcat
-# Fri, 01 Nov 2019 02:29:48 GMT
+# Fri, 08 Nov 2019 02:52:21 GMT
 ENV PATH=/usr/local/tomcat/bin:/opt/java/openjdk/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Fri, 01 Nov 2019 02:29:49 GMT
+# Fri, 08 Nov 2019 02:52:22 GMT
 RUN mkdir -p "$CATALINA_HOME"
-# Fri, 01 Nov 2019 02:29:49 GMT
+# Fri, 08 Nov 2019 02:52:22 GMT
 WORKDIR /usr/local/tomcat
-# Fri, 01 Nov 2019 02:29:49 GMT
+# Fri, 08 Nov 2019 02:52:23 GMT
 ENV TOMCAT_NATIVE_LIBDIR=/usr/local/tomcat/native-jni-lib
-# Fri, 01 Nov 2019 02:29:49 GMT
+# Fri, 08 Nov 2019 02:52:23 GMT
 ENV LD_LIBRARY_PATH=/usr/local/tomcat/native-jni-lib
-# Fri, 01 Nov 2019 02:34:53 GMT
+# Fri, 08 Nov 2019 02:58:08 GMT
 ENV GPG_KEYS=05AB33110949707C93A279E3D3EFE6B686867BA6 07E48665A34DCAFAE522E5E6266191C37C037D42 47309207D818FFD8DCD3F83F1931D684307A10A5 541FBE7D8F78B25E055DDEE13C370389288584E7 61B832AC2F1C5A90F0F9B00A1C506407564C17A3 713DA88BE50911535FE716F5208B0AB1D63011C7 79F7026C690BAA50B92CD8B66A3AD3F4F22C4FED 9BA44C2621385CB966EBA586F72C284D731FABEE A27677289986DB50844682F8ACB77FC2E86E29AC A9C5DF4D22E99998D9875A5110C01C5A2F6059E7 DCFD35E0BF8CA7344752DE8B6FB21E8933C60243 F3A04C595DB5B6A5F1ECA43E3B7BBB100D811BBE F7DA48BB64BCB84ECBA7EE6935CD23C10D498E23
-# Fri, 01 Nov 2019 02:34:53 GMT
+# Fri, 08 Nov 2019 02:58:08 GMT
 ENV TOMCAT_MAJOR=8
-# Fri, 01 Nov 2019 02:34:53 GMT
+# Fri, 08 Nov 2019 02:58:09 GMT
 ENV TOMCAT_VERSION=8.5.47
-# Fri, 01 Nov 2019 02:34:53 GMT
+# Fri, 08 Nov 2019 02:58:09 GMT
 ENV TOMCAT_SHA512=079b85f3dfca2b137634859208fae6012860201d720d12ff0add3473f1e267d332cb12803958754e1f922599e0d42b7e97f00bcd62584d9148a6f45fde091716
-# Fri, 01 Nov 2019 02:35:26 GMT
+# Fri, 08 Nov 2019 02:59:03 GMT
 RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		gnupg dirmngr 		wget ca-certificates 	; 		ddist() { 		local f="$1"; shift; 		local distFile="$1"; shift; 		local success=; 		local distUrl=; 		for distUrl in 			'https://www.apache.org/dyn/closer.cgi?action=download&filename=' 			https://www-us.apache.org/dist/ 			https://www.apache.org/dist/ 			https://archive.apache.org/dist/ 		; do 			if wget -O "$f" "$distUrl$distFile" && [ -s "$f" ]; then 				success=1; 				break; 			fi; 		done; 		[ -n "$success" ]; 	}; 		ddist 'tomcat.tar.gz' "tomcat/tomcat-$TOMCAT_MAJOR/v$TOMCAT_VERSION/bin/apache-tomcat-$TOMCAT_VERSION.tar.gz"; 	echo "$TOMCAT_SHA512 *tomcat.tar.gz" | sha512sum --strict --check -; 	ddist 'tomcat.tar.gz.asc' "tomcat/tomcat-$TOMCAT_MAJOR/v$TOMCAT_VERSION/bin/apache-tomcat-$TOMCAT_VERSION.tar.gz.asc"; 	export GNUPGHOME="$(mktemp -d)"; 	for key in $GPG_KEYS; do 		gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys "$key"; 	done; 	gpg --batch --verify tomcat.tar.gz.asc tomcat.tar.gz; 	tar -xf tomcat.tar.gz --strip-components=1; 	rm bin/*.bat; 	rm tomcat.tar.gz*; 	command -v gpgconf && gpgconf --kill all || :; 	rm -rf "$GNUPGHOME"; 		nativeBuildDir="$(mktemp -d)"; 	tar -xf bin/tomcat-native.tar.gz -C "$nativeBuildDir" --strip-components=1; 	apt-get install -y --no-install-recommends 		dpkg-dev 		gcc 		libapr1-dev 		libssl-dev 		make 	; 	( 		export CATALINA_HOME="$PWD"; 		cd "$nativeBuildDir/native"; 		gnuArch="$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)"; 		aprConfig="$(command -v apr-1-config)"; 		./configure 			--build="$gnuArch" 			--libdir="$TOMCAT_NATIVE_LIBDIR" 			--prefix="$CATALINA_HOME" 			--with-apr="$aprConfig" 			--with-java-home="$JAVA_HOME" 			--with-ssl=yes; 		make -j "$(nproc)"; 		make install; 	); 	rm -rf "$nativeBuildDir"; 	rm bin/tomcat-native.tar.gz; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark > /dev/null; 	find "$TOMCAT_NATIVE_LIBDIR" -type f -executable -exec ldd '{}' ';' 		| awk '/=>/ { print $(NF-1) }' 		| sort -u 		| xargs -r dpkg-query --search 		| cut -d: -f1 		| sort -u 		| xargs -r apt-mark manual 	; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 	rm -rf /var/lib/apt/lists/*; 		find ./bin/ -name '*.sh' -exec sed -ri 's|^#!/bin/sh$|#!/usr/bin/env bash|' '{}' +; 		chmod -R +rX .; 	chmod 777 logs temp work
-# Fri, 01 Nov 2019 02:35:29 GMT
+# Fri, 08 Nov 2019 02:59:07 GMT
 RUN set -e 	&& nativeLines="$(catalina.sh configtest 2>&1)" 	&& nativeLines="$(echo "$nativeLines" | grep 'Apache Tomcat Native')" 	&& nativeLines="$(echo "$nativeLines" | sort -u)" 	&& if ! echo "$nativeLines" | grep 'INFO: Loaded APR based Apache Tomcat Native library' >&2; then 		echo >&2 "$nativeLines"; 		exit 1; 	fi
-# Fri, 01 Nov 2019 02:35:29 GMT
+# Fri, 08 Nov 2019 02:59:07 GMT
 EXPOSE 8080
-# Fri, 01 Nov 2019 02:35:30 GMT
+# Fri, 08 Nov 2019 02:59:08 GMT
 CMD ["catalina.sh" "run"]
-# Fri, 01 Nov 2019 05:46:09 GMT
+# Fri, 08 Nov 2019 03:47:57 GMT
 MAINTAINER Vincent Massol <vincent@massol.net>
-# Fri, 01 Nov 2019 05:49:41 GMT
+# Fri, 08 Nov 2019 03:51:28 GMT
 RUN apt-get update &&   apt-get --no-install-recommends -y install     curl     libreoffice     unzip     procps     libpostgresql-jdbc-java &&   rm -rf /var/lib/apt/lists/*
-# Fri, 01 Nov 2019 05:49:41 GMT
+# Fri, 08 Nov 2019 03:51:28 GMT
 ENV XWIKI_VERSION=10.11.9
-# Fri, 01 Nov 2019 05:49:41 GMT
+# Fri, 08 Nov 2019 03:51:29 GMT
 ENV XWIKI_URL_PREFIX=https://maven.xwiki.org/releases/org/xwiki/platform/xwiki-platform-distribution-war/10.11.9
-# Fri, 01 Nov 2019 05:49:42 GMT
+# Fri, 08 Nov 2019 03:51:29 GMT
 ENV XWIKI_DOWNLOAD_SHA256=299fe60d5b32ee1a363ba48ff2346e78eea5f713a0174c20fe9d7531be426a58
-# Fri, 01 Nov 2019 05:50:14 GMT
+# Fri, 08 Nov 2019 03:51:59 GMT
 RUN rm -rf /usr/local/tomcat/webapps/* &&   mkdir -p /usr/local/tomcat/temp &&   mkdir -p /usr/local/xwiki/data &&   curl -fSL "${XWIKI_URL_PREFIX}/xwiki-platform-distribution-war-${XWIKI_VERSION}.war" -o xwiki.war &&   echo "$XWIKI_DOWNLOAD_SHA256 xwiki.war" | sha256sum -c - &&   unzip -d /usr/local/tomcat/webapps/ROOT xwiki.war &&   rm -f xwiki.war
-# Fri, 01 Nov 2019 05:50:15 GMT
+# Fri, 08 Nov 2019 03:52:01 GMT
 RUN cp /usr/share/java/postgresql-jdbc4.jar /usr/local/tomcat/webapps/ROOT/WEB-INF/lib/
-# Fri, 01 Nov 2019 05:50:15 GMT
+# Fri, 08 Nov 2019 03:52:01 GMT
 COPY file:0a1be11e2eb610a1dbcd415404e3a592641110b93090030cb831e3a19a163017 in /usr/local/tomcat/bin/ 
-# Fri, 01 Nov 2019 05:50:15 GMT
+# Fri, 08 Nov 2019 03:52:02 GMT
 COPY file:bd68ae28ec068b0f89a2e05a10b1098af3b375c97a69f9255831e8fa6e87f773 in /usr/local/tomcat/webapps/ROOT/WEB-INF/hibernate.cfg.xml 
-# Fri, 01 Nov 2019 05:50:16 GMT
+# Fri, 08 Nov 2019 03:52:02 GMT
 RUN sed -i 's/<id>org.xwiki.platform:xwiki-platform-distribution-war/<id>org.xwiki.platform:xwiki-platform-distribution-docker/'   /usr/local/tomcat/webapps/ROOT/META-INF/extension.xed
-# Fri, 01 Nov 2019 05:50:16 GMT
+# Fri, 08 Nov 2019 03:52:03 GMT
 COPY file:f901b2d7ac3d76cd8346f9aee81b40529183e81d8aa027bb390856ac01fa6cc0 in /usr/local/bin/docker-entrypoint.sh 
-# Fri, 01 Nov 2019 05:50:16 GMT
+# Fri, 08 Nov 2019 03:52:03 GMT
 VOLUME [/usr/local/xwiki]
-# Fri, 01 Nov 2019 05:50:16 GMT
+# Fri, 08 Nov 2019 03:52:03 GMT
 ENTRYPOINT ["docker-entrypoint.sh"]
-# Fri, 01 Nov 2019 05:50:17 GMT
+# Fri, 08 Nov 2019 03:52:03 GMT
 CMD ["xwiki"]
 ```
 
@@ -3360,59 +3360,59 @@ CMD ["xwiki"]
 		Last Modified: Thu, 31 Oct 2019 22:21:39 GMT  
 		Size: 162.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:b5035666b1cd262e3117ca99ecbe11fc92c973a1164cd5c69bca60165f501520`  
-		Last Modified: Thu, 31 Oct 2019 22:40:53 GMT  
-		Size: 10.8 MB (10842099 bytes)  
+	-	`sha256:da4c04c54fa4a9b55ddef0b116fa7969185639621c525e1fe19f2b194f1ca4bc`  
+		Last Modified: Fri, 08 Nov 2019 02:22:45 GMT  
+		Size: 13.3 MB (13322685 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:efde61b742b5cb70e5b4addf1af5ad7280bffe7d8dd1df5eff600523285f3ea4`  
-		Last Modified: Thu, 31 Oct 2019 22:41:03 GMT  
-		Size: 105.0 MB (105002961 bytes)  
+	-	`sha256:2e619a1c4087f3c7f3728ceb4445f1a7a5039161cf3289478a8883c6ee035404`  
+		Last Modified: Fri, 08 Nov 2019 02:22:53 GMT  
+		Size: 105.1 MB (105052686 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:225d7996c0304b5ffbdcf6098af5c263ffc4d1b4179e9dca599cea72150685aa`  
-		Last Modified: Fri, 01 Nov 2019 02:39:12 GMT  
-		Size: 138.0 B  
+	-	`sha256:9d52f3e37b5909a34e61705bcdbc8935d682242f0c5fccdb29e117df8639b535`  
+		Last Modified: Fri, 08 Nov 2019 03:05:59 GMT  
+		Size: 139.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:79ec1eb33f408e2e622babc4045fe851ed5836f38b9e58daa1eb39284ace03cf`  
-		Last Modified: Fri, 01 Nov 2019 02:39:56 GMT  
-		Size: 11.2 MB (11233772 bytes)  
+	-	`sha256:e36d9bbb9a695ea2424edb1ab9bbf4fd43d87d68ad2e511fed36af7a18d3d3e8`  
+		Last Modified: Fri, 08 Nov 2019 03:06:53 GMT  
+		Size: 11.3 MB (11250353 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:1e181f3682b7d9ea77955bcda4108fc60c381f24ed390b0a3d08b67642aef2a7`  
-		Last Modified: Fri, 01 Nov 2019 02:39:55 GMT  
-		Size: 131.0 B  
+	-	`sha256:32d2a60a869b7029538438ffc8b6bc2975016c77fd3d3e4bc74b106903b3cca4`  
+		Last Modified: Fri, 08 Nov 2019 03:06:51 GMT  
+		Size: 132.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:dcf4aa8aa7a3257538cad7f9faea616c74da5211891ba894dbcc9b9710a0c249`  
-		Last Modified: Fri, 01 Nov 2019 05:55:36 GMT  
-		Size: 182.2 MB (182185768 bytes)  
+	-	`sha256:2fcdae1100d077d3795b80a5e54c0346fc292b4d314721bf81cbeab5d1cad0c9`  
+		Last Modified: Fri, 08 Nov 2019 03:57:01 GMT  
+		Size: 179.6 MB (179560416 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:271eddddcf5db8b7382c4a5a27d9848fb7d5fb21f33540c4d568551f8d1a1d74`  
-		Last Modified: Fri, 01 Nov 2019 05:55:05 GMT  
-		Size: 245.9 MB (245930609 bytes)  
+	-	`sha256:e9c0195e272b852492c7f599358c99e7712204ed7071a3f7d48bfa5edc8429b3`  
+		Last Modified: Fri, 08 Nov 2019 03:56:51 GMT  
+		Size: 245.9 MB (245930599 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:65ae8c33ab10be903ca209e3b0340dd40b0ac013067b5905dce5b1590fb6eb25`  
-		Last Modified: Fri, 01 Nov 2019 05:54:46 GMT  
-		Size: 618.9 KB (618853 bytes)  
+	-	`sha256:95965084b5e2103657f340e4d45f96ad9dbc8c820257fb84fab6f3bbd0833ceb`  
+		Last Modified: Fri, 08 Nov 2019 03:56:28 GMT  
+		Size: 618.9 KB (618865 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:5eaf917a4793b28e0de2cf6064d02c2c7f23165867f7200f26e9262942bb5113`  
-		Last Modified: Fri, 01 Nov 2019 05:54:46 GMT  
+	-	`sha256:08f9eccff140a38ee9c426aae4c63d8c21f0e92db3348820c411240df0156827`  
+		Last Modified: Fri, 08 Nov 2019 03:56:28 GMT  
 		Size: 1.3 KB (1344 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:224c12cf161cb91df2d9a67077c6c1fb00abcbb4811ddfd497905f0462cfe175`  
-		Last Modified: Fri, 01 Nov 2019 05:54:46 GMT  
-		Size: 2.5 KB (2481 bytes)  
+	-	`sha256:5069dc1afa774e636d3eb81c76fb8d2a9622cb5847696c251fd5f78cfea28948`  
+		Last Modified: Fri, 08 Nov 2019 03:56:28 GMT  
+		Size: 2.5 KB (2487 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:a92741fd543e631d383d8c7fc2e68c724ddf6802f40e7ca99c5d4de11260cf88`  
-		Last Modified: Fri, 01 Nov 2019 05:54:46 GMT  
-		Size: 3.8 KB (3836 bytes)  
+	-	`sha256:09af7f365508bef54bba891ca7da80be68278562b25792cf5c05e9556188d9b5`  
+		Last Modified: Fri, 08 Nov 2019 03:56:28 GMT  
+		Size: 3.8 KB (3838 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:6bb237db7536872170fc150a94fc0259404a88eb600a3ce9f61e0d20b9dffe3a`  
-		Last Modified: Fri, 01 Nov 2019 05:54:46 GMT  
-		Size: 2.4 KB (2401 bytes)  
+	-	`sha256:df4e73de1508117ac4210c94c2f4e2f8abf840ab184be9fed77905f71b14e600`  
+		Last Modified: Fri, 08 Nov 2019 03:56:28 GMT  
+		Size: 2.4 KB (2403 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `xwiki:lts-postgres-tomcat`
 
 ```console
-$ docker pull xwiki@sha256:73fccaaa608864b5b071af07e057613e197031530c2a981718e3827f4cd8dc00
+$ docker pull xwiki@sha256:2cf75066811db036a72feaa2c476773888ec9e34d14b8186424224101659ad63
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -3422,14 +3422,14 @@ $ docker pull xwiki@sha256:73fccaaa608864b5b071af07e057613e197031530c2a981718e38
 ### `xwiki:lts-postgres-tomcat` - linux; amd64
 
 ```console
-$ docker pull xwiki@sha256:510720581fca923293bfeef79c0a8224b4e3f5717bdedb2eeeb77d79f9954384
+$ docker pull xwiki@sha256:7336446a1f272ff98fc5fc226351e5b019d411718f51f6b8f977b7d94aef754f
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **582.5 MB (582549609 bytes)**  
+-	Total Size: **582.5 MB (582471163 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:8ff560e664b744450f13c4bdf12f8e8d4e74ec87490f4110956734077fa1c26a`
+-	Image ID: `sha256:6d9ce4ab486781eee5120459565ad0d301f0458a52556b0cde046e86de3ece6d`
 -	Entrypoint: `["docker-entrypoint.sh"]`
 -	Default Command: `["xwiki"]`
 
@@ -3446,69 +3446,69 @@ RUN mkdir -p /run/systemd && echo 'docker' > /run/systemd/container
 CMD ["/bin/bash"]
 # Thu, 31 Oct 2019 22:37:37 GMT
 ENV LANG=en_US.UTF-8 LANGUAGE=en_US:en LC_ALL=en_US.UTF-8
-# Thu, 31 Oct 2019 22:38:04 GMT
-RUN apt-get update     && apt-get install -y --no-install-recommends curl ca-certificates locales     && echo "en_US.UTF-8 UTF-8" >> /etc/locale.gen     && locale-gen en_US.UTF-8     && rm -rf /var/lib/apt/lists/*
-# Thu, 31 Oct 2019 22:38:04 GMT
-ENV JAVA_VERSION=jdk8u222-b10
-# Thu, 31 Oct 2019 22:38:10 GMT
-RUN set -eux;     ARCH="$(dpkg --print-architecture)";     case "${ARCH}" in        aarch64|arm64)          ESUM='652776586ede124189dc218174b5922cc97feac81021ad81905900b349a352d2';          BINARY_URL='https://github.com/AdoptOpenJDK/openjdk8-binaries/releases/download/jdk8u222-b10/OpenJDK8U-jdk_aarch64_linux_hotspot_8u222b10.tar.gz';          ;;        armhf)          ESUM='7b3d6ade8c25adca01095ba66642132d8c87a1a8caf3883850e34778453afcec';          BINARY_URL='https://github.com/AdoptOpenJDK/openjdk8-binaries/releases/download/jdk8u222-b10/OpenJDK8U-jdk_arm_linux_hotspot_8u222b10.tar.gz';          ;;        ppc64el|ppc64le)          ESUM='f85de48f1dcfd78a39bf5817d3c2f8247c75df6abd56c8721172bf2bd757eb69';          BINARY_URL='https://github.com/AdoptOpenJDK/openjdk8-binaries/releases/download/jdk8u222-b10/OpenJDK8U-jdk_ppc64le_linux_hotspot_8u222b10.tar.gz';          ;;        s390x)          ESUM='d56d6a128f8827e5baeae379bcb1b3ead2cfd5b1abb03befa4588f89f08ea626';          BINARY_URL='https://github.com/AdoptOpenJDK/openjdk8-binaries/releases/download/jdk8u222-b10/OpenJDK8U-jdk_s390x_linux_hotspot_8u222b10.tar.gz';          ;;        amd64|x86_64)          ESUM='37356281345b93feb4212e6267109b4409b55b06f107619dde4960e402bafa77';          BINARY_URL='https://github.com/AdoptOpenJDK/openjdk8-binaries/releases/download/jdk8u222-b10/OpenJDK8U-jdk_x64_linux_hotspot_8u222b10.tar.gz';          ;;        *)          echo "Unsupported arch: ${ARCH}";          exit 1;          ;;     esac;     curl -LfsSo /tmp/openjdk.tar.gz ${BINARY_URL};     echo "${ESUM} */tmp/openjdk.tar.gz" | sha256sum -c -;     mkdir -p /opt/java/openjdk;     cd /opt/java/openjdk;     tar -xf /tmp/openjdk.tar.gz --strip-components=1;     rm -rf /tmp/openjdk.tar.gz;
-# Thu, 31 Oct 2019 22:38:11 GMT
+# Fri, 08 Nov 2019 02:20:03 GMT
+RUN apt-get update     && apt-get install -y --no-install-recommends curl ca-certificates fontconfig locales     && echo "en_US.UTF-8 UTF-8" >> /etc/locale.gen     && locale-gen en_US.UTF-8     && rm -rf /var/lib/apt/lists/*
+# Fri, 08 Nov 2019 02:20:03 GMT
+ENV JAVA_VERSION=jdk8u232-b09
+# Fri, 08 Nov 2019 02:20:09 GMT
+RUN set -eux;     ARCH="$(dpkg --print-architecture)";     case "${ARCH}" in        ppc64el|ppc64le)          ESUM='da87bdc04b47477b42afc76066dbd96efa35ad967238be03a0081f8840e893a8';          BINARY_URL='https://github.com/AdoptOpenJDK/openjdk8-binaries/releases/download/jdk8u232-b09/OpenJDK8U-jdk_ppc64le_linux_hotspot_8u232b09.tar.gz';          ;;        s390x)          ESUM='bd20cb8bf4cfab9d3e2b2ccfb9a6f9eda1e4e67b4103b9975d29de12c05ad1f5';          BINARY_URL='https://github.com/AdoptOpenJDK/openjdk8-binaries/releases/download/jdk8u232-b09/OpenJDK8U-jdk_s390x_linux_hotspot_8u232b09.tar.gz';          ;;        amd64|x86_64)          ESUM='7b7884f2eb2ba2d47f4c0bf3bb1a2a95b73a3a7734bd47ebf9798483a7bcc423';          BINARY_URL='https://github.com/AdoptOpenJDK/openjdk8-binaries/releases/download/jdk8u232-b09/OpenJDK8U-jdk_x64_linux_hotspot_8u232b09.tar.gz';          ;;        *)          echo "Unsupported arch: ${ARCH}";          exit 1;          ;;     esac;     curl -LfsSo /tmp/openjdk.tar.gz ${BINARY_URL};     echo "${ESUM} */tmp/openjdk.tar.gz" | sha256sum -c -;     mkdir -p /opt/java/openjdk;     cd /opt/java/openjdk;     tar -xf /tmp/openjdk.tar.gz --strip-components=1;     rm -rf /tmp/openjdk.tar.gz;
+# Fri, 08 Nov 2019 02:20:09 GMT
 ENV JAVA_HOME=/opt/java/openjdk PATH=/opt/java/openjdk/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Fri, 01 Nov 2019 02:29:48 GMT
+# Fri, 08 Nov 2019 02:52:20 GMT
 ENV CATALINA_HOME=/usr/local/tomcat
-# Fri, 01 Nov 2019 02:29:48 GMT
+# Fri, 08 Nov 2019 02:52:21 GMT
 ENV PATH=/usr/local/tomcat/bin:/opt/java/openjdk/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Fri, 01 Nov 2019 02:29:49 GMT
+# Fri, 08 Nov 2019 02:52:22 GMT
 RUN mkdir -p "$CATALINA_HOME"
-# Fri, 01 Nov 2019 02:29:49 GMT
+# Fri, 08 Nov 2019 02:52:22 GMT
 WORKDIR /usr/local/tomcat
-# Fri, 01 Nov 2019 02:29:49 GMT
+# Fri, 08 Nov 2019 02:52:23 GMT
 ENV TOMCAT_NATIVE_LIBDIR=/usr/local/tomcat/native-jni-lib
-# Fri, 01 Nov 2019 02:29:49 GMT
+# Fri, 08 Nov 2019 02:52:23 GMT
 ENV LD_LIBRARY_PATH=/usr/local/tomcat/native-jni-lib
-# Fri, 01 Nov 2019 02:34:53 GMT
+# Fri, 08 Nov 2019 02:58:08 GMT
 ENV GPG_KEYS=05AB33110949707C93A279E3D3EFE6B686867BA6 07E48665A34DCAFAE522E5E6266191C37C037D42 47309207D818FFD8DCD3F83F1931D684307A10A5 541FBE7D8F78B25E055DDEE13C370389288584E7 61B832AC2F1C5A90F0F9B00A1C506407564C17A3 713DA88BE50911535FE716F5208B0AB1D63011C7 79F7026C690BAA50B92CD8B66A3AD3F4F22C4FED 9BA44C2621385CB966EBA586F72C284D731FABEE A27677289986DB50844682F8ACB77FC2E86E29AC A9C5DF4D22E99998D9875A5110C01C5A2F6059E7 DCFD35E0BF8CA7344752DE8B6FB21E8933C60243 F3A04C595DB5B6A5F1ECA43E3B7BBB100D811BBE F7DA48BB64BCB84ECBA7EE6935CD23C10D498E23
-# Fri, 01 Nov 2019 02:34:53 GMT
+# Fri, 08 Nov 2019 02:58:08 GMT
 ENV TOMCAT_MAJOR=8
-# Fri, 01 Nov 2019 02:34:53 GMT
+# Fri, 08 Nov 2019 02:58:09 GMT
 ENV TOMCAT_VERSION=8.5.47
-# Fri, 01 Nov 2019 02:34:53 GMT
+# Fri, 08 Nov 2019 02:58:09 GMT
 ENV TOMCAT_SHA512=079b85f3dfca2b137634859208fae6012860201d720d12ff0add3473f1e267d332cb12803958754e1f922599e0d42b7e97f00bcd62584d9148a6f45fde091716
-# Fri, 01 Nov 2019 02:35:26 GMT
+# Fri, 08 Nov 2019 02:59:03 GMT
 RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		gnupg dirmngr 		wget ca-certificates 	; 		ddist() { 		local f="$1"; shift; 		local distFile="$1"; shift; 		local success=; 		local distUrl=; 		for distUrl in 			'https://www.apache.org/dyn/closer.cgi?action=download&filename=' 			https://www-us.apache.org/dist/ 			https://www.apache.org/dist/ 			https://archive.apache.org/dist/ 		; do 			if wget -O "$f" "$distUrl$distFile" && [ -s "$f" ]; then 				success=1; 				break; 			fi; 		done; 		[ -n "$success" ]; 	}; 		ddist 'tomcat.tar.gz' "tomcat/tomcat-$TOMCAT_MAJOR/v$TOMCAT_VERSION/bin/apache-tomcat-$TOMCAT_VERSION.tar.gz"; 	echo "$TOMCAT_SHA512 *tomcat.tar.gz" | sha512sum --strict --check -; 	ddist 'tomcat.tar.gz.asc' "tomcat/tomcat-$TOMCAT_MAJOR/v$TOMCAT_VERSION/bin/apache-tomcat-$TOMCAT_VERSION.tar.gz.asc"; 	export GNUPGHOME="$(mktemp -d)"; 	for key in $GPG_KEYS; do 		gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys "$key"; 	done; 	gpg --batch --verify tomcat.tar.gz.asc tomcat.tar.gz; 	tar -xf tomcat.tar.gz --strip-components=1; 	rm bin/*.bat; 	rm tomcat.tar.gz*; 	command -v gpgconf && gpgconf --kill all || :; 	rm -rf "$GNUPGHOME"; 		nativeBuildDir="$(mktemp -d)"; 	tar -xf bin/tomcat-native.tar.gz -C "$nativeBuildDir" --strip-components=1; 	apt-get install -y --no-install-recommends 		dpkg-dev 		gcc 		libapr1-dev 		libssl-dev 		make 	; 	( 		export CATALINA_HOME="$PWD"; 		cd "$nativeBuildDir/native"; 		gnuArch="$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)"; 		aprConfig="$(command -v apr-1-config)"; 		./configure 			--build="$gnuArch" 			--libdir="$TOMCAT_NATIVE_LIBDIR" 			--prefix="$CATALINA_HOME" 			--with-apr="$aprConfig" 			--with-java-home="$JAVA_HOME" 			--with-ssl=yes; 		make -j "$(nproc)"; 		make install; 	); 	rm -rf "$nativeBuildDir"; 	rm bin/tomcat-native.tar.gz; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark > /dev/null; 	find "$TOMCAT_NATIVE_LIBDIR" -type f -executable -exec ldd '{}' ';' 		| awk '/=>/ { print $(NF-1) }' 		| sort -u 		| xargs -r dpkg-query --search 		| cut -d: -f1 		| sort -u 		| xargs -r apt-mark manual 	; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 	rm -rf /var/lib/apt/lists/*; 		find ./bin/ -name '*.sh' -exec sed -ri 's|^#!/bin/sh$|#!/usr/bin/env bash|' '{}' +; 		chmod -R +rX .; 	chmod 777 logs temp work
-# Fri, 01 Nov 2019 02:35:29 GMT
+# Fri, 08 Nov 2019 02:59:07 GMT
 RUN set -e 	&& nativeLines="$(catalina.sh configtest 2>&1)" 	&& nativeLines="$(echo "$nativeLines" | grep 'Apache Tomcat Native')" 	&& nativeLines="$(echo "$nativeLines" | sort -u)" 	&& if ! echo "$nativeLines" | grep 'INFO: Loaded APR based Apache Tomcat Native library' >&2; then 		echo >&2 "$nativeLines"; 		exit 1; 	fi
-# Fri, 01 Nov 2019 02:35:29 GMT
+# Fri, 08 Nov 2019 02:59:07 GMT
 EXPOSE 8080
-# Fri, 01 Nov 2019 02:35:30 GMT
+# Fri, 08 Nov 2019 02:59:08 GMT
 CMD ["catalina.sh" "run"]
-# Fri, 01 Nov 2019 05:46:09 GMT
+# Fri, 08 Nov 2019 03:47:57 GMT
 MAINTAINER Vincent Massol <vincent@massol.net>
-# Fri, 01 Nov 2019 05:49:41 GMT
+# Fri, 08 Nov 2019 03:51:28 GMT
 RUN apt-get update &&   apt-get --no-install-recommends -y install     curl     libreoffice     unzip     procps     libpostgresql-jdbc-java &&   rm -rf /var/lib/apt/lists/*
-# Fri, 01 Nov 2019 05:49:41 GMT
+# Fri, 08 Nov 2019 03:51:28 GMT
 ENV XWIKI_VERSION=10.11.9
-# Fri, 01 Nov 2019 05:49:41 GMT
+# Fri, 08 Nov 2019 03:51:29 GMT
 ENV XWIKI_URL_PREFIX=https://maven.xwiki.org/releases/org/xwiki/platform/xwiki-platform-distribution-war/10.11.9
-# Fri, 01 Nov 2019 05:49:42 GMT
+# Fri, 08 Nov 2019 03:51:29 GMT
 ENV XWIKI_DOWNLOAD_SHA256=299fe60d5b32ee1a363ba48ff2346e78eea5f713a0174c20fe9d7531be426a58
-# Fri, 01 Nov 2019 05:50:14 GMT
+# Fri, 08 Nov 2019 03:51:59 GMT
 RUN rm -rf /usr/local/tomcat/webapps/* &&   mkdir -p /usr/local/tomcat/temp &&   mkdir -p /usr/local/xwiki/data &&   curl -fSL "${XWIKI_URL_PREFIX}/xwiki-platform-distribution-war-${XWIKI_VERSION}.war" -o xwiki.war &&   echo "$XWIKI_DOWNLOAD_SHA256 xwiki.war" | sha256sum -c - &&   unzip -d /usr/local/tomcat/webapps/ROOT xwiki.war &&   rm -f xwiki.war
-# Fri, 01 Nov 2019 05:50:15 GMT
+# Fri, 08 Nov 2019 03:52:01 GMT
 RUN cp /usr/share/java/postgresql-jdbc4.jar /usr/local/tomcat/webapps/ROOT/WEB-INF/lib/
-# Fri, 01 Nov 2019 05:50:15 GMT
+# Fri, 08 Nov 2019 03:52:01 GMT
 COPY file:0a1be11e2eb610a1dbcd415404e3a592641110b93090030cb831e3a19a163017 in /usr/local/tomcat/bin/ 
-# Fri, 01 Nov 2019 05:50:15 GMT
+# Fri, 08 Nov 2019 03:52:02 GMT
 COPY file:bd68ae28ec068b0f89a2e05a10b1098af3b375c97a69f9255831e8fa6e87f773 in /usr/local/tomcat/webapps/ROOT/WEB-INF/hibernate.cfg.xml 
-# Fri, 01 Nov 2019 05:50:16 GMT
+# Fri, 08 Nov 2019 03:52:02 GMT
 RUN sed -i 's/<id>org.xwiki.platform:xwiki-platform-distribution-war/<id>org.xwiki.platform:xwiki-platform-distribution-docker/'   /usr/local/tomcat/webapps/ROOT/META-INF/extension.xed
-# Fri, 01 Nov 2019 05:50:16 GMT
+# Fri, 08 Nov 2019 03:52:03 GMT
 COPY file:f901b2d7ac3d76cd8346f9aee81b40529183e81d8aa027bb390856ac01fa6cc0 in /usr/local/bin/docker-entrypoint.sh 
-# Fri, 01 Nov 2019 05:50:16 GMT
+# Fri, 08 Nov 2019 03:52:03 GMT
 VOLUME [/usr/local/xwiki]
-# Fri, 01 Nov 2019 05:50:16 GMT
+# Fri, 08 Nov 2019 03:52:03 GMT
 ENTRYPOINT ["docker-entrypoint.sh"]
-# Fri, 01 Nov 2019 05:50:17 GMT
+# Fri, 08 Nov 2019 03:52:03 GMT
 CMD ["xwiki"]
 ```
 
@@ -3529,59 +3529,59 @@ CMD ["xwiki"]
 		Last Modified: Thu, 31 Oct 2019 22:21:39 GMT  
 		Size: 162.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:b5035666b1cd262e3117ca99ecbe11fc92c973a1164cd5c69bca60165f501520`  
-		Last Modified: Thu, 31 Oct 2019 22:40:53 GMT  
-		Size: 10.8 MB (10842099 bytes)  
+	-	`sha256:da4c04c54fa4a9b55ddef0b116fa7969185639621c525e1fe19f2b194f1ca4bc`  
+		Last Modified: Fri, 08 Nov 2019 02:22:45 GMT  
+		Size: 13.3 MB (13322685 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:efde61b742b5cb70e5b4addf1af5ad7280bffe7d8dd1df5eff600523285f3ea4`  
-		Last Modified: Thu, 31 Oct 2019 22:41:03 GMT  
-		Size: 105.0 MB (105002961 bytes)  
+	-	`sha256:2e619a1c4087f3c7f3728ceb4445f1a7a5039161cf3289478a8883c6ee035404`  
+		Last Modified: Fri, 08 Nov 2019 02:22:53 GMT  
+		Size: 105.1 MB (105052686 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:225d7996c0304b5ffbdcf6098af5c263ffc4d1b4179e9dca599cea72150685aa`  
-		Last Modified: Fri, 01 Nov 2019 02:39:12 GMT  
-		Size: 138.0 B  
+	-	`sha256:9d52f3e37b5909a34e61705bcdbc8935d682242f0c5fccdb29e117df8639b535`  
+		Last Modified: Fri, 08 Nov 2019 03:05:59 GMT  
+		Size: 139.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:79ec1eb33f408e2e622babc4045fe851ed5836f38b9e58daa1eb39284ace03cf`  
-		Last Modified: Fri, 01 Nov 2019 02:39:56 GMT  
-		Size: 11.2 MB (11233772 bytes)  
+	-	`sha256:e36d9bbb9a695ea2424edb1ab9bbf4fd43d87d68ad2e511fed36af7a18d3d3e8`  
+		Last Modified: Fri, 08 Nov 2019 03:06:53 GMT  
+		Size: 11.3 MB (11250353 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:1e181f3682b7d9ea77955bcda4108fc60c381f24ed390b0a3d08b67642aef2a7`  
-		Last Modified: Fri, 01 Nov 2019 02:39:55 GMT  
-		Size: 131.0 B  
+	-	`sha256:32d2a60a869b7029538438ffc8b6bc2975016c77fd3d3e4bc74b106903b3cca4`  
+		Last Modified: Fri, 08 Nov 2019 03:06:51 GMT  
+		Size: 132.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:dcf4aa8aa7a3257538cad7f9faea616c74da5211891ba894dbcc9b9710a0c249`  
-		Last Modified: Fri, 01 Nov 2019 05:55:36 GMT  
-		Size: 182.2 MB (182185768 bytes)  
+	-	`sha256:2fcdae1100d077d3795b80a5e54c0346fc292b4d314721bf81cbeab5d1cad0c9`  
+		Last Modified: Fri, 08 Nov 2019 03:57:01 GMT  
+		Size: 179.6 MB (179560416 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:271eddddcf5db8b7382c4a5a27d9848fb7d5fb21f33540c4d568551f8d1a1d74`  
-		Last Modified: Fri, 01 Nov 2019 05:55:05 GMT  
-		Size: 245.9 MB (245930609 bytes)  
+	-	`sha256:e9c0195e272b852492c7f599358c99e7712204ed7071a3f7d48bfa5edc8429b3`  
+		Last Modified: Fri, 08 Nov 2019 03:56:51 GMT  
+		Size: 245.9 MB (245930599 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:65ae8c33ab10be903ca209e3b0340dd40b0ac013067b5905dce5b1590fb6eb25`  
-		Last Modified: Fri, 01 Nov 2019 05:54:46 GMT  
-		Size: 618.9 KB (618853 bytes)  
+	-	`sha256:95965084b5e2103657f340e4d45f96ad9dbc8c820257fb84fab6f3bbd0833ceb`  
+		Last Modified: Fri, 08 Nov 2019 03:56:28 GMT  
+		Size: 618.9 KB (618865 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:5eaf917a4793b28e0de2cf6064d02c2c7f23165867f7200f26e9262942bb5113`  
-		Last Modified: Fri, 01 Nov 2019 05:54:46 GMT  
+	-	`sha256:08f9eccff140a38ee9c426aae4c63d8c21f0e92db3348820c411240df0156827`  
+		Last Modified: Fri, 08 Nov 2019 03:56:28 GMT  
 		Size: 1.3 KB (1344 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:224c12cf161cb91df2d9a67077c6c1fb00abcbb4811ddfd497905f0462cfe175`  
-		Last Modified: Fri, 01 Nov 2019 05:54:46 GMT  
-		Size: 2.5 KB (2481 bytes)  
+	-	`sha256:5069dc1afa774e636d3eb81c76fb8d2a9622cb5847696c251fd5f78cfea28948`  
+		Last Modified: Fri, 08 Nov 2019 03:56:28 GMT  
+		Size: 2.5 KB (2487 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:a92741fd543e631d383d8c7fc2e68c724ddf6802f40e7ca99c5d4de11260cf88`  
-		Last Modified: Fri, 01 Nov 2019 05:54:46 GMT  
-		Size: 3.8 KB (3836 bytes)  
+	-	`sha256:09af7f365508bef54bba891ca7da80be68278562b25792cf5c05e9556188d9b5`  
+		Last Modified: Fri, 08 Nov 2019 03:56:28 GMT  
+		Size: 3.8 KB (3838 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:6bb237db7536872170fc150a94fc0259404a88eb600a3ce9f61e0d20b9dffe3a`  
-		Last Modified: Fri, 01 Nov 2019 05:54:46 GMT  
-		Size: 2.4 KB (2401 bytes)  
+	-	`sha256:df4e73de1508117ac4210c94c2f4e2f8abf840ab184be9fed77905f71b14e600`  
+		Last Modified: Fri, 08 Nov 2019 03:56:28 GMT  
+		Size: 2.4 KB (2403 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `xwiki:mysql-tomcat`
 
 ```console
-$ docker pull xwiki@sha256:c304d3bfc03954a3669f47757a63918a4d36af088c34537e15093d7cbb2192e5
+$ docker pull xwiki@sha256:e50eee1ee16e97510d2c2878b44ba59cff37121d520dcfcc6ab39815203541fc
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -3591,14 +3591,14 @@ $ docker pull xwiki@sha256:c304d3bfc03954a3669f47757a63918a4d36af088c34537e15093
 ### `xwiki:mysql-tomcat` - linux; amd64
 
 ```console
-$ docker pull xwiki@sha256:031e6cf9f5f62c9ac15be9a93473d15a5cb805445d8efbdb68835da5502d7999
+$ docker pull xwiki@sha256:1eac0ad7e3285c13b277110fd956cc05a3c5774a7c8d88207eff821713040840
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **583.2 MB (583220294 bytes)**  
+-	Total Size: **583.1 MB (583142464 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:5ed311c670c181f7bd2a3837a9ba97b7629e74b535eb19efdb8e7d33871c9a2d`
+-	Image ID: `sha256:a9f71ff8b734e920564dff7b18c8327bdac99724df51a87a2bc0f57ed06bd995`
 -	Entrypoint: `["docker-entrypoint.sh"]`
 -	Default Command: `["xwiki"]`
 
@@ -3615,69 +3615,69 @@ RUN mkdir -p /run/systemd && echo 'docker' > /run/systemd/container
 CMD ["/bin/bash"]
 # Thu, 31 Oct 2019 22:37:37 GMT
 ENV LANG=en_US.UTF-8 LANGUAGE=en_US:en LC_ALL=en_US.UTF-8
-# Thu, 31 Oct 2019 22:38:04 GMT
-RUN apt-get update     && apt-get install -y --no-install-recommends curl ca-certificates locales     && echo "en_US.UTF-8 UTF-8" >> /etc/locale.gen     && locale-gen en_US.UTF-8     && rm -rf /var/lib/apt/lists/*
-# Thu, 31 Oct 2019 22:38:04 GMT
-ENV JAVA_VERSION=jdk8u222-b10
-# Thu, 31 Oct 2019 22:38:10 GMT
-RUN set -eux;     ARCH="$(dpkg --print-architecture)";     case "${ARCH}" in        aarch64|arm64)          ESUM='652776586ede124189dc218174b5922cc97feac81021ad81905900b349a352d2';          BINARY_URL='https://github.com/AdoptOpenJDK/openjdk8-binaries/releases/download/jdk8u222-b10/OpenJDK8U-jdk_aarch64_linux_hotspot_8u222b10.tar.gz';          ;;        armhf)          ESUM='7b3d6ade8c25adca01095ba66642132d8c87a1a8caf3883850e34778453afcec';          BINARY_URL='https://github.com/AdoptOpenJDK/openjdk8-binaries/releases/download/jdk8u222-b10/OpenJDK8U-jdk_arm_linux_hotspot_8u222b10.tar.gz';          ;;        ppc64el|ppc64le)          ESUM='f85de48f1dcfd78a39bf5817d3c2f8247c75df6abd56c8721172bf2bd757eb69';          BINARY_URL='https://github.com/AdoptOpenJDK/openjdk8-binaries/releases/download/jdk8u222-b10/OpenJDK8U-jdk_ppc64le_linux_hotspot_8u222b10.tar.gz';          ;;        s390x)          ESUM='d56d6a128f8827e5baeae379bcb1b3ead2cfd5b1abb03befa4588f89f08ea626';          BINARY_URL='https://github.com/AdoptOpenJDK/openjdk8-binaries/releases/download/jdk8u222-b10/OpenJDK8U-jdk_s390x_linux_hotspot_8u222b10.tar.gz';          ;;        amd64|x86_64)          ESUM='37356281345b93feb4212e6267109b4409b55b06f107619dde4960e402bafa77';          BINARY_URL='https://github.com/AdoptOpenJDK/openjdk8-binaries/releases/download/jdk8u222-b10/OpenJDK8U-jdk_x64_linux_hotspot_8u222b10.tar.gz';          ;;        *)          echo "Unsupported arch: ${ARCH}";          exit 1;          ;;     esac;     curl -LfsSo /tmp/openjdk.tar.gz ${BINARY_URL};     echo "${ESUM} */tmp/openjdk.tar.gz" | sha256sum -c -;     mkdir -p /opt/java/openjdk;     cd /opt/java/openjdk;     tar -xf /tmp/openjdk.tar.gz --strip-components=1;     rm -rf /tmp/openjdk.tar.gz;
-# Thu, 31 Oct 2019 22:38:11 GMT
+# Fri, 08 Nov 2019 02:20:03 GMT
+RUN apt-get update     && apt-get install -y --no-install-recommends curl ca-certificates fontconfig locales     && echo "en_US.UTF-8 UTF-8" >> /etc/locale.gen     && locale-gen en_US.UTF-8     && rm -rf /var/lib/apt/lists/*
+# Fri, 08 Nov 2019 02:20:03 GMT
+ENV JAVA_VERSION=jdk8u232-b09
+# Fri, 08 Nov 2019 02:20:09 GMT
+RUN set -eux;     ARCH="$(dpkg --print-architecture)";     case "${ARCH}" in        ppc64el|ppc64le)          ESUM='da87bdc04b47477b42afc76066dbd96efa35ad967238be03a0081f8840e893a8';          BINARY_URL='https://github.com/AdoptOpenJDK/openjdk8-binaries/releases/download/jdk8u232-b09/OpenJDK8U-jdk_ppc64le_linux_hotspot_8u232b09.tar.gz';          ;;        s390x)          ESUM='bd20cb8bf4cfab9d3e2b2ccfb9a6f9eda1e4e67b4103b9975d29de12c05ad1f5';          BINARY_URL='https://github.com/AdoptOpenJDK/openjdk8-binaries/releases/download/jdk8u232-b09/OpenJDK8U-jdk_s390x_linux_hotspot_8u232b09.tar.gz';          ;;        amd64|x86_64)          ESUM='7b7884f2eb2ba2d47f4c0bf3bb1a2a95b73a3a7734bd47ebf9798483a7bcc423';          BINARY_URL='https://github.com/AdoptOpenJDK/openjdk8-binaries/releases/download/jdk8u232-b09/OpenJDK8U-jdk_x64_linux_hotspot_8u232b09.tar.gz';          ;;        *)          echo "Unsupported arch: ${ARCH}";          exit 1;          ;;     esac;     curl -LfsSo /tmp/openjdk.tar.gz ${BINARY_URL};     echo "${ESUM} */tmp/openjdk.tar.gz" | sha256sum -c -;     mkdir -p /opt/java/openjdk;     cd /opt/java/openjdk;     tar -xf /tmp/openjdk.tar.gz --strip-components=1;     rm -rf /tmp/openjdk.tar.gz;
+# Fri, 08 Nov 2019 02:20:09 GMT
 ENV JAVA_HOME=/opt/java/openjdk PATH=/opt/java/openjdk/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Fri, 01 Nov 2019 02:29:48 GMT
+# Fri, 08 Nov 2019 02:52:20 GMT
 ENV CATALINA_HOME=/usr/local/tomcat
-# Fri, 01 Nov 2019 02:29:48 GMT
+# Fri, 08 Nov 2019 02:52:21 GMT
 ENV PATH=/usr/local/tomcat/bin:/opt/java/openjdk/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Fri, 01 Nov 2019 02:29:49 GMT
+# Fri, 08 Nov 2019 02:52:22 GMT
 RUN mkdir -p "$CATALINA_HOME"
-# Fri, 01 Nov 2019 02:29:49 GMT
+# Fri, 08 Nov 2019 02:52:22 GMT
 WORKDIR /usr/local/tomcat
-# Fri, 01 Nov 2019 02:29:49 GMT
+# Fri, 08 Nov 2019 02:52:23 GMT
 ENV TOMCAT_NATIVE_LIBDIR=/usr/local/tomcat/native-jni-lib
-# Fri, 01 Nov 2019 02:29:49 GMT
+# Fri, 08 Nov 2019 02:52:23 GMT
 ENV LD_LIBRARY_PATH=/usr/local/tomcat/native-jni-lib
-# Fri, 01 Nov 2019 02:34:53 GMT
+# Fri, 08 Nov 2019 02:58:08 GMT
 ENV GPG_KEYS=05AB33110949707C93A279E3D3EFE6B686867BA6 07E48665A34DCAFAE522E5E6266191C37C037D42 47309207D818FFD8DCD3F83F1931D684307A10A5 541FBE7D8F78B25E055DDEE13C370389288584E7 61B832AC2F1C5A90F0F9B00A1C506407564C17A3 713DA88BE50911535FE716F5208B0AB1D63011C7 79F7026C690BAA50B92CD8B66A3AD3F4F22C4FED 9BA44C2621385CB966EBA586F72C284D731FABEE A27677289986DB50844682F8ACB77FC2E86E29AC A9C5DF4D22E99998D9875A5110C01C5A2F6059E7 DCFD35E0BF8CA7344752DE8B6FB21E8933C60243 F3A04C595DB5B6A5F1ECA43E3B7BBB100D811BBE F7DA48BB64BCB84ECBA7EE6935CD23C10D498E23
-# Fri, 01 Nov 2019 02:34:53 GMT
+# Fri, 08 Nov 2019 02:58:08 GMT
 ENV TOMCAT_MAJOR=8
-# Fri, 01 Nov 2019 02:34:53 GMT
+# Fri, 08 Nov 2019 02:58:09 GMT
 ENV TOMCAT_VERSION=8.5.47
-# Fri, 01 Nov 2019 02:34:53 GMT
+# Fri, 08 Nov 2019 02:58:09 GMT
 ENV TOMCAT_SHA512=079b85f3dfca2b137634859208fae6012860201d720d12ff0add3473f1e267d332cb12803958754e1f922599e0d42b7e97f00bcd62584d9148a6f45fde091716
-# Fri, 01 Nov 2019 02:35:26 GMT
+# Fri, 08 Nov 2019 02:59:03 GMT
 RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		gnupg dirmngr 		wget ca-certificates 	; 		ddist() { 		local f="$1"; shift; 		local distFile="$1"; shift; 		local success=; 		local distUrl=; 		for distUrl in 			'https://www.apache.org/dyn/closer.cgi?action=download&filename=' 			https://www-us.apache.org/dist/ 			https://www.apache.org/dist/ 			https://archive.apache.org/dist/ 		; do 			if wget -O "$f" "$distUrl$distFile" && [ -s "$f" ]; then 				success=1; 				break; 			fi; 		done; 		[ -n "$success" ]; 	}; 		ddist 'tomcat.tar.gz' "tomcat/tomcat-$TOMCAT_MAJOR/v$TOMCAT_VERSION/bin/apache-tomcat-$TOMCAT_VERSION.tar.gz"; 	echo "$TOMCAT_SHA512 *tomcat.tar.gz" | sha512sum --strict --check -; 	ddist 'tomcat.tar.gz.asc' "tomcat/tomcat-$TOMCAT_MAJOR/v$TOMCAT_VERSION/bin/apache-tomcat-$TOMCAT_VERSION.tar.gz.asc"; 	export GNUPGHOME="$(mktemp -d)"; 	for key in $GPG_KEYS; do 		gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys "$key"; 	done; 	gpg --batch --verify tomcat.tar.gz.asc tomcat.tar.gz; 	tar -xf tomcat.tar.gz --strip-components=1; 	rm bin/*.bat; 	rm tomcat.tar.gz*; 	command -v gpgconf && gpgconf --kill all || :; 	rm -rf "$GNUPGHOME"; 		nativeBuildDir="$(mktemp -d)"; 	tar -xf bin/tomcat-native.tar.gz -C "$nativeBuildDir" --strip-components=1; 	apt-get install -y --no-install-recommends 		dpkg-dev 		gcc 		libapr1-dev 		libssl-dev 		make 	; 	( 		export CATALINA_HOME="$PWD"; 		cd "$nativeBuildDir/native"; 		gnuArch="$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)"; 		aprConfig="$(command -v apr-1-config)"; 		./configure 			--build="$gnuArch" 			--libdir="$TOMCAT_NATIVE_LIBDIR" 			--prefix="$CATALINA_HOME" 			--with-apr="$aprConfig" 			--with-java-home="$JAVA_HOME" 			--with-ssl=yes; 		make -j "$(nproc)"; 		make install; 	); 	rm -rf "$nativeBuildDir"; 	rm bin/tomcat-native.tar.gz; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark > /dev/null; 	find "$TOMCAT_NATIVE_LIBDIR" -type f -executable -exec ldd '{}' ';' 		| awk '/=>/ { print $(NF-1) }' 		| sort -u 		| xargs -r dpkg-query --search 		| cut -d: -f1 		| sort -u 		| xargs -r apt-mark manual 	; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 	rm -rf /var/lib/apt/lists/*; 		find ./bin/ -name '*.sh' -exec sed -ri 's|^#!/bin/sh$|#!/usr/bin/env bash|' '{}' +; 		chmod -R +rX .; 	chmod 777 logs temp work
-# Fri, 01 Nov 2019 02:35:29 GMT
+# Fri, 08 Nov 2019 02:59:07 GMT
 RUN set -e 	&& nativeLines="$(catalina.sh configtest 2>&1)" 	&& nativeLines="$(echo "$nativeLines" | grep 'Apache Tomcat Native')" 	&& nativeLines="$(echo "$nativeLines" | sort -u)" 	&& if ! echo "$nativeLines" | grep 'INFO: Loaded APR based Apache Tomcat Native library' >&2; then 		echo >&2 "$nativeLines"; 		exit 1; 	fi
-# Fri, 01 Nov 2019 02:35:29 GMT
+# Fri, 08 Nov 2019 02:59:07 GMT
 EXPOSE 8080
-# Fri, 01 Nov 2019 02:35:30 GMT
+# Fri, 08 Nov 2019 02:59:08 GMT
 CMD ["catalina.sh" "run"]
-# Fri, 01 Nov 2019 05:46:09 GMT
+# Fri, 08 Nov 2019 03:47:57 GMT
 MAINTAINER Vincent Massol <vincent@massol.net>
-# Fri, 01 Nov 2019 05:48:00 GMT
+# Fri, 08 Nov 2019 03:49:52 GMT
 RUN apt-get update &&   apt-get --no-install-recommends -y install     curl     libreoffice     unzip     procps     libmysql-java &&   rm -rf /var/lib/apt/lists/*
-# Fri, 01 Nov 2019 05:48:01 GMT
+# Fri, 08 Nov 2019 03:49:52 GMT
 ENV XWIKI_VERSION=10.11.9
-# Fri, 01 Nov 2019 05:48:01 GMT
+# Fri, 08 Nov 2019 03:49:53 GMT
 ENV XWIKI_URL_PREFIX=https://maven.xwiki.org/releases/org/xwiki/platform/xwiki-platform-distribution-war/10.11.9
-# Fri, 01 Nov 2019 05:48:01 GMT
+# Fri, 08 Nov 2019 03:49:53 GMT
 ENV XWIKI_DOWNLOAD_SHA256=299fe60d5b32ee1a363ba48ff2346e78eea5f713a0174c20fe9d7531be426a58
-# Fri, 01 Nov 2019 05:48:35 GMT
+# Fri, 08 Nov 2019 03:50:25 GMT
 RUN rm -rf /usr/local/tomcat/webapps/* &&   mkdir -p /usr/local/tomcat/temp &&   mkdir -p /usr/local/xwiki/data &&   curl -fSL "${XWIKI_URL_PREFIX}/xwiki-platform-distribution-war-${XWIKI_VERSION}.war" -o xwiki.war &&   echo "$XWIKI_DOWNLOAD_SHA256 xwiki.war" | sha256sum -c - &&   unzip -d /usr/local/tomcat/webapps/ROOT xwiki.war &&   rm -f xwiki.war
-# Fri, 01 Nov 2019 05:48:36 GMT
+# Fri, 08 Nov 2019 03:50:26 GMT
 RUN cp /usr/share/java/mysql-connector-java-*.jar /usr/local/tomcat/webapps/ROOT/WEB-INF/lib/
-# Fri, 01 Nov 2019 05:48:36 GMT
+# Fri, 08 Nov 2019 03:50:26 GMT
 COPY file:0a1be11e2eb610a1dbcd415404e3a592641110b93090030cb831e3a19a163017 in /usr/local/tomcat/bin/ 
-# Fri, 01 Nov 2019 05:48:36 GMT
+# Fri, 08 Nov 2019 03:50:26 GMT
 COPY file:c4e95f70490b423a9379f336f8f4d780824e06f56fa73bc69a238e245b53e842 in /usr/local/tomcat/webapps/ROOT/WEB-INF/hibernate.cfg.xml 
-# Fri, 01 Nov 2019 05:48:37 GMT
+# Fri, 08 Nov 2019 03:50:27 GMT
 RUN sed -i 's/<id>org.xwiki.platform:xwiki-platform-distribution-war/<id>org.xwiki.platform:xwiki-platform-distribution-docker/'   /usr/local/tomcat/webapps/ROOT/META-INF/extension.xed
-# Fri, 01 Nov 2019 05:48:37 GMT
+# Fri, 08 Nov 2019 03:50:27 GMT
 COPY file:f901b2d7ac3d76cd8346f9aee81b40529183e81d8aa027bb390856ac01fa6cc0 in /usr/local/bin/docker-entrypoint.sh 
-# Fri, 01 Nov 2019 05:48:37 GMT
+# Fri, 08 Nov 2019 03:50:27 GMT
 VOLUME [/usr/local/xwiki]
-# Fri, 01 Nov 2019 05:48:37 GMT
+# Fri, 08 Nov 2019 03:50:27 GMT
 ENTRYPOINT ["docker-entrypoint.sh"]
-# Fri, 01 Nov 2019 05:48:37 GMT
+# Fri, 08 Nov 2019 03:50:27 GMT
 CMD ["xwiki"]
 ```
 
@@ -3698,59 +3698,59 @@ CMD ["xwiki"]
 		Last Modified: Thu, 31 Oct 2019 22:21:39 GMT  
 		Size: 162.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:b5035666b1cd262e3117ca99ecbe11fc92c973a1164cd5c69bca60165f501520`  
-		Last Modified: Thu, 31 Oct 2019 22:40:53 GMT  
-		Size: 10.8 MB (10842099 bytes)  
+	-	`sha256:da4c04c54fa4a9b55ddef0b116fa7969185639621c525e1fe19f2b194f1ca4bc`  
+		Last Modified: Fri, 08 Nov 2019 02:22:45 GMT  
+		Size: 13.3 MB (13322685 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:efde61b742b5cb70e5b4addf1af5ad7280bffe7d8dd1df5eff600523285f3ea4`  
-		Last Modified: Thu, 31 Oct 2019 22:41:03 GMT  
-		Size: 105.0 MB (105002961 bytes)  
+	-	`sha256:2e619a1c4087f3c7f3728ceb4445f1a7a5039161cf3289478a8883c6ee035404`  
+		Last Modified: Fri, 08 Nov 2019 02:22:53 GMT  
+		Size: 105.1 MB (105052686 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:225d7996c0304b5ffbdcf6098af5c263ffc4d1b4179e9dca599cea72150685aa`  
-		Last Modified: Fri, 01 Nov 2019 02:39:12 GMT  
-		Size: 138.0 B  
+	-	`sha256:9d52f3e37b5909a34e61705bcdbc8935d682242f0c5fccdb29e117df8639b535`  
+		Last Modified: Fri, 08 Nov 2019 03:05:59 GMT  
+		Size: 139.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:79ec1eb33f408e2e622babc4045fe851ed5836f38b9e58daa1eb39284ace03cf`  
-		Last Modified: Fri, 01 Nov 2019 02:39:56 GMT  
-		Size: 11.2 MB (11233772 bytes)  
+	-	`sha256:e36d9bbb9a695ea2424edb1ab9bbf4fd43d87d68ad2e511fed36af7a18d3d3e8`  
+		Last Modified: Fri, 08 Nov 2019 03:06:53 GMT  
+		Size: 11.3 MB (11250353 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:1e181f3682b7d9ea77955bcda4108fc60c381f24ed390b0a3d08b67642aef2a7`  
-		Last Modified: Fri, 01 Nov 2019 02:39:55 GMT  
-		Size: 131.0 B  
+	-	`sha256:32d2a60a869b7029538438ffc8b6bc2975016c77fd3d3e4bc74b106903b3cca4`  
+		Last Modified: Fri, 08 Nov 2019 03:06:51 GMT  
+		Size: 132.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:248409c0f5d78edeb3d761e8c51a335df3b426a41b4ec8cde818dc7c42ac9303`  
-		Last Modified: Fri, 01 Nov 2019 05:54:24 GMT  
-		Size: 182.5 MB (182519889 bytes)  
+	-	`sha256:a0ecb74c3432d2f07db2c599a41070972647d5e39217a796364ea9f894433395`  
+		Last Modified: Fri, 08 Nov 2019 03:56:18 GMT  
+		Size: 179.9 MB (179895164 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:59e11cead95223d99208c1a56b2ff70a4c400bce48fc1a180c920bb8bdfe9b9e`  
-		Last Modified: Fri, 01 Nov 2019 05:54:10 GMT  
-		Size: 245.9 MB (245930567 bytes)  
+	-	`sha256:f60cc6c4e6989a78ffa4eda461e37f0c14fa8d1664ed98154a893b743a133b53`  
+		Last Modified: Fri, 08 Nov 2019 03:56:08 GMT  
+		Size: 245.9 MB (245930552 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:d6d385233a9152fa2829ee24a53aff146593c925d7cbdd903fc89fb68831abb3`  
-		Last Modified: Fri, 01 Nov 2019 05:53:51 GMT  
-		Size: 955.6 KB (955596 bytes)  
+	-	`sha256:211a8ff63ee53dd83cfb2ef14fd7c5f220e870f7b4a24bd7c056a6dfb3ea3195`  
+		Last Modified: Fri, 08 Nov 2019 03:55:45 GMT  
+		Size: 955.6 KB (955606 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:f4c1267abe977a216254032c7bdae4dc95710175a32b47d20bb86fcfab611e53`  
-		Last Modified: Fri, 01 Nov 2019 05:53:51 GMT  
+	-	`sha256:d2e0a05a7c703bf048e0d1025315d34bd397200ba693101fd6293aaa24e39665`  
+		Last Modified: Fri, 08 Nov 2019 03:55:45 GMT  
 		Size: 1.3 KB (1345 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:e0a9fd9bde07de0f3b22e22358c5a553b96b8ffb94f7efdf54be1acb865f294f`  
-		Last Modified: Fri, 01 Nov 2019 05:53:51 GMT  
-		Size: 2.3 KB (2341 bytes)  
+	-	`sha256:07de7e380b498b0a7a00eab52eb6163ee8c032a35ec4b2597ffc611f6c9f7f18`  
+		Last Modified: Fri, 08 Nov 2019 03:55:45 GMT  
+		Size: 2.3 KB (2344 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:9c5892c3d351297bbd95311554d447023392f4d53a0602c76eaaf171fc22a791`  
-		Last Modified: Fri, 01 Nov 2019 05:53:51 GMT  
-		Size: 3.8 KB (3835 bytes)  
+	-	`sha256:360a0fed78607fc123133c9c254e66bd48facd092ed428ed26198dc6bfc0260a`  
+		Last Modified: Fri, 08 Nov 2019 03:55:45 GMT  
+		Size: 3.8 KB (3838 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:6958577bb68ad9dd0aac0e54301206f89b27e741e2a11bf454642821ffe148e6`  
-		Last Modified: Fri, 01 Nov 2019 05:53:51 GMT  
+	-	`sha256:f8f1d28ac8dbc927cf661687f024476d2558c833a1794dad36552cf17b4fad2f`  
+		Last Modified: Fri, 08 Nov 2019 03:55:45 GMT  
 		Size: 2.4 KB (2404 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `xwiki:postgres-tomcat`
 
 ```console
-$ docker pull xwiki@sha256:73fccaaa608864b5b071af07e057613e197031530c2a981718e3827f4cd8dc00
+$ docker pull xwiki@sha256:2cf75066811db036a72feaa2c476773888ec9e34d14b8186424224101659ad63
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -3760,14 +3760,14 @@ $ docker pull xwiki@sha256:73fccaaa608864b5b071af07e057613e197031530c2a981718e38
 ### `xwiki:postgres-tomcat` - linux; amd64
 
 ```console
-$ docker pull xwiki@sha256:510720581fca923293bfeef79c0a8224b4e3f5717bdedb2eeeb77d79f9954384
+$ docker pull xwiki@sha256:7336446a1f272ff98fc5fc226351e5b019d411718f51f6b8f977b7d94aef754f
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **582.5 MB (582549609 bytes)**  
+-	Total Size: **582.5 MB (582471163 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:8ff560e664b744450f13c4bdf12f8e8d4e74ec87490f4110956734077fa1c26a`
+-	Image ID: `sha256:6d9ce4ab486781eee5120459565ad0d301f0458a52556b0cde046e86de3ece6d`
 -	Entrypoint: `["docker-entrypoint.sh"]`
 -	Default Command: `["xwiki"]`
 
@@ -3784,69 +3784,69 @@ RUN mkdir -p /run/systemd && echo 'docker' > /run/systemd/container
 CMD ["/bin/bash"]
 # Thu, 31 Oct 2019 22:37:37 GMT
 ENV LANG=en_US.UTF-8 LANGUAGE=en_US:en LC_ALL=en_US.UTF-8
-# Thu, 31 Oct 2019 22:38:04 GMT
-RUN apt-get update     && apt-get install -y --no-install-recommends curl ca-certificates locales     && echo "en_US.UTF-8 UTF-8" >> /etc/locale.gen     && locale-gen en_US.UTF-8     && rm -rf /var/lib/apt/lists/*
-# Thu, 31 Oct 2019 22:38:04 GMT
-ENV JAVA_VERSION=jdk8u222-b10
-# Thu, 31 Oct 2019 22:38:10 GMT
-RUN set -eux;     ARCH="$(dpkg --print-architecture)";     case "${ARCH}" in        aarch64|arm64)          ESUM='652776586ede124189dc218174b5922cc97feac81021ad81905900b349a352d2';          BINARY_URL='https://github.com/AdoptOpenJDK/openjdk8-binaries/releases/download/jdk8u222-b10/OpenJDK8U-jdk_aarch64_linux_hotspot_8u222b10.tar.gz';          ;;        armhf)          ESUM='7b3d6ade8c25adca01095ba66642132d8c87a1a8caf3883850e34778453afcec';          BINARY_URL='https://github.com/AdoptOpenJDK/openjdk8-binaries/releases/download/jdk8u222-b10/OpenJDK8U-jdk_arm_linux_hotspot_8u222b10.tar.gz';          ;;        ppc64el|ppc64le)          ESUM='f85de48f1dcfd78a39bf5817d3c2f8247c75df6abd56c8721172bf2bd757eb69';          BINARY_URL='https://github.com/AdoptOpenJDK/openjdk8-binaries/releases/download/jdk8u222-b10/OpenJDK8U-jdk_ppc64le_linux_hotspot_8u222b10.tar.gz';          ;;        s390x)          ESUM='d56d6a128f8827e5baeae379bcb1b3ead2cfd5b1abb03befa4588f89f08ea626';          BINARY_URL='https://github.com/AdoptOpenJDK/openjdk8-binaries/releases/download/jdk8u222-b10/OpenJDK8U-jdk_s390x_linux_hotspot_8u222b10.tar.gz';          ;;        amd64|x86_64)          ESUM='37356281345b93feb4212e6267109b4409b55b06f107619dde4960e402bafa77';          BINARY_URL='https://github.com/AdoptOpenJDK/openjdk8-binaries/releases/download/jdk8u222-b10/OpenJDK8U-jdk_x64_linux_hotspot_8u222b10.tar.gz';          ;;        *)          echo "Unsupported arch: ${ARCH}";          exit 1;          ;;     esac;     curl -LfsSo /tmp/openjdk.tar.gz ${BINARY_URL};     echo "${ESUM} */tmp/openjdk.tar.gz" | sha256sum -c -;     mkdir -p /opt/java/openjdk;     cd /opt/java/openjdk;     tar -xf /tmp/openjdk.tar.gz --strip-components=1;     rm -rf /tmp/openjdk.tar.gz;
-# Thu, 31 Oct 2019 22:38:11 GMT
+# Fri, 08 Nov 2019 02:20:03 GMT
+RUN apt-get update     && apt-get install -y --no-install-recommends curl ca-certificates fontconfig locales     && echo "en_US.UTF-8 UTF-8" >> /etc/locale.gen     && locale-gen en_US.UTF-8     && rm -rf /var/lib/apt/lists/*
+# Fri, 08 Nov 2019 02:20:03 GMT
+ENV JAVA_VERSION=jdk8u232-b09
+# Fri, 08 Nov 2019 02:20:09 GMT
+RUN set -eux;     ARCH="$(dpkg --print-architecture)";     case "${ARCH}" in        ppc64el|ppc64le)          ESUM='da87bdc04b47477b42afc76066dbd96efa35ad967238be03a0081f8840e893a8';          BINARY_URL='https://github.com/AdoptOpenJDK/openjdk8-binaries/releases/download/jdk8u232-b09/OpenJDK8U-jdk_ppc64le_linux_hotspot_8u232b09.tar.gz';          ;;        s390x)          ESUM='bd20cb8bf4cfab9d3e2b2ccfb9a6f9eda1e4e67b4103b9975d29de12c05ad1f5';          BINARY_URL='https://github.com/AdoptOpenJDK/openjdk8-binaries/releases/download/jdk8u232-b09/OpenJDK8U-jdk_s390x_linux_hotspot_8u232b09.tar.gz';          ;;        amd64|x86_64)          ESUM='7b7884f2eb2ba2d47f4c0bf3bb1a2a95b73a3a7734bd47ebf9798483a7bcc423';          BINARY_URL='https://github.com/AdoptOpenJDK/openjdk8-binaries/releases/download/jdk8u232-b09/OpenJDK8U-jdk_x64_linux_hotspot_8u232b09.tar.gz';          ;;        *)          echo "Unsupported arch: ${ARCH}";          exit 1;          ;;     esac;     curl -LfsSo /tmp/openjdk.tar.gz ${BINARY_URL};     echo "${ESUM} */tmp/openjdk.tar.gz" | sha256sum -c -;     mkdir -p /opt/java/openjdk;     cd /opt/java/openjdk;     tar -xf /tmp/openjdk.tar.gz --strip-components=1;     rm -rf /tmp/openjdk.tar.gz;
+# Fri, 08 Nov 2019 02:20:09 GMT
 ENV JAVA_HOME=/opt/java/openjdk PATH=/opt/java/openjdk/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Fri, 01 Nov 2019 02:29:48 GMT
+# Fri, 08 Nov 2019 02:52:20 GMT
 ENV CATALINA_HOME=/usr/local/tomcat
-# Fri, 01 Nov 2019 02:29:48 GMT
+# Fri, 08 Nov 2019 02:52:21 GMT
 ENV PATH=/usr/local/tomcat/bin:/opt/java/openjdk/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Fri, 01 Nov 2019 02:29:49 GMT
+# Fri, 08 Nov 2019 02:52:22 GMT
 RUN mkdir -p "$CATALINA_HOME"
-# Fri, 01 Nov 2019 02:29:49 GMT
+# Fri, 08 Nov 2019 02:52:22 GMT
 WORKDIR /usr/local/tomcat
-# Fri, 01 Nov 2019 02:29:49 GMT
+# Fri, 08 Nov 2019 02:52:23 GMT
 ENV TOMCAT_NATIVE_LIBDIR=/usr/local/tomcat/native-jni-lib
-# Fri, 01 Nov 2019 02:29:49 GMT
+# Fri, 08 Nov 2019 02:52:23 GMT
 ENV LD_LIBRARY_PATH=/usr/local/tomcat/native-jni-lib
-# Fri, 01 Nov 2019 02:34:53 GMT
+# Fri, 08 Nov 2019 02:58:08 GMT
 ENV GPG_KEYS=05AB33110949707C93A279E3D3EFE6B686867BA6 07E48665A34DCAFAE522E5E6266191C37C037D42 47309207D818FFD8DCD3F83F1931D684307A10A5 541FBE7D8F78B25E055DDEE13C370389288584E7 61B832AC2F1C5A90F0F9B00A1C506407564C17A3 713DA88BE50911535FE716F5208B0AB1D63011C7 79F7026C690BAA50B92CD8B66A3AD3F4F22C4FED 9BA44C2621385CB966EBA586F72C284D731FABEE A27677289986DB50844682F8ACB77FC2E86E29AC A9C5DF4D22E99998D9875A5110C01C5A2F6059E7 DCFD35E0BF8CA7344752DE8B6FB21E8933C60243 F3A04C595DB5B6A5F1ECA43E3B7BBB100D811BBE F7DA48BB64BCB84ECBA7EE6935CD23C10D498E23
-# Fri, 01 Nov 2019 02:34:53 GMT
+# Fri, 08 Nov 2019 02:58:08 GMT
 ENV TOMCAT_MAJOR=8
-# Fri, 01 Nov 2019 02:34:53 GMT
+# Fri, 08 Nov 2019 02:58:09 GMT
 ENV TOMCAT_VERSION=8.5.47
-# Fri, 01 Nov 2019 02:34:53 GMT
+# Fri, 08 Nov 2019 02:58:09 GMT
 ENV TOMCAT_SHA512=079b85f3dfca2b137634859208fae6012860201d720d12ff0add3473f1e267d332cb12803958754e1f922599e0d42b7e97f00bcd62584d9148a6f45fde091716
-# Fri, 01 Nov 2019 02:35:26 GMT
+# Fri, 08 Nov 2019 02:59:03 GMT
 RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		gnupg dirmngr 		wget ca-certificates 	; 		ddist() { 		local f="$1"; shift; 		local distFile="$1"; shift; 		local success=; 		local distUrl=; 		for distUrl in 			'https://www.apache.org/dyn/closer.cgi?action=download&filename=' 			https://www-us.apache.org/dist/ 			https://www.apache.org/dist/ 			https://archive.apache.org/dist/ 		; do 			if wget -O "$f" "$distUrl$distFile" && [ -s "$f" ]; then 				success=1; 				break; 			fi; 		done; 		[ -n "$success" ]; 	}; 		ddist 'tomcat.tar.gz' "tomcat/tomcat-$TOMCAT_MAJOR/v$TOMCAT_VERSION/bin/apache-tomcat-$TOMCAT_VERSION.tar.gz"; 	echo "$TOMCAT_SHA512 *tomcat.tar.gz" | sha512sum --strict --check -; 	ddist 'tomcat.tar.gz.asc' "tomcat/tomcat-$TOMCAT_MAJOR/v$TOMCAT_VERSION/bin/apache-tomcat-$TOMCAT_VERSION.tar.gz.asc"; 	export GNUPGHOME="$(mktemp -d)"; 	for key in $GPG_KEYS; do 		gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys "$key"; 	done; 	gpg --batch --verify tomcat.tar.gz.asc tomcat.tar.gz; 	tar -xf tomcat.tar.gz --strip-components=1; 	rm bin/*.bat; 	rm tomcat.tar.gz*; 	command -v gpgconf && gpgconf --kill all || :; 	rm -rf "$GNUPGHOME"; 		nativeBuildDir="$(mktemp -d)"; 	tar -xf bin/tomcat-native.tar.gz -C "$nativeBuildDir" --strip-components=1; 	apt-get install -y --no-install-recommends 		dpkg-dev 		gcc 		libapr1-dev 		libssl-dev 		make 	; 	( 		export CATALINA_HOME="$PWD"; 		cd "$nativeBuildDir/native"; 		gnuArch="$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)"; 		aprConfig="$(command -v apr-1-config)"; 		./configure 			--build="$gnuArch" 			--libdir="$TOMCAT_NATIVE_LIBDIR" 			--prefix="$CATALINA_HOME" 			--with-apr="$aprConfig" 			--with-java-home="$JAVA_HOME" 			--with-ssl=yes; 		make -j "$(nproc)"; 		make install; 	); 	rm -rf "$nativeBuildDir"; 	rm bin/tomcat-native.tar.gz; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark > /dev/null; 	find "$TOMCAT_NATIVE_LIBDIR" -type f -executable -exec ldd '{}' ';' 		| awk '/=>/ { print $(NF-1) }' 		| sort -u 		| xargs -r dpkg-query --search 		| cut -d: -f1 		| sort -u 		| xargs -r apt-mark manual 	; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 	rm -rf /var/lib/apt/lists/*; 		find ./bin/ -name '*.sh' -exec sed -ri 's|^#!/bin/sh$|#!/usr/bin/env bash|' '{}' +; 		chmod -R +rX .; 	chmod 777 logs temp work
-# Fri, 01 Nov 2019 02:35:29 GMT
+# Fri, 08 Nov 2019 02:59:07 GMT
 RUN set -e 	&& nativeLines="$(catalina.sh configtest 2>&1)" 	&& nativeLines="$(echo "$nativeLines" | grep 'Apache Tomcat Native')" 	&& nativeLines="$(echo "$nativeLines" | sort -u)" 	&& if ! echo "$nativeLines" | grep 'INFO: Loaded APR based Apache Tomcat Native library' >&2; then 		echo >&2 "$nativeLines"; 		exit 1; 	fi
-# Fri, 01 Nov 2019 02:35:29 GMT
+# Fri, 08 Nov 2019 02:59:07 GMT
 EXPOSE 8080
-# Fri, 01 Nov 2019 02:35:30 GMT
+# Fri, 08 Nov 2019 02:59:08 GMT
 CMD ["catalina.sh" "run"]
-# Fri, 01 Nov 2019 05:46:09 GMT
+# Fri, 08 Nov 2019 03:47:57 GMT
 MAINTAINER Vincent Massol <vincent@massol.net>
-# Fri, 01 Nov 2019 05:49:41 GMT
+# Fri, 08 Nov 2019 03:51:28 GMT
 RUN apt-get update &&   apt-get --no-install-recommends -y install     curl     libreoffice     unzip     procps     libpostgresql-jdbc-java &&   rm -rf /var/lib/apt/lists/*
-# Fri, 01 Nov 2019 05:49:41 GMT
+# Fri, 08 Nov 2019 03:51:28 GMT
 ENV XWIKI_VERSION=10.11.9
-# Fri, 01 Nov 2019 05:49:41 GMT
+# Fri, 08 Nov 2019 03:51:29 GMT
 ENV XWIKI_URL_PREFIX=https://maven.xwiki.org/releases/org/xwiki/platform/xwiki-platform-distribution-war/10.11.9
-# Fri, 01 Nov 2019 05:49:42 GMT
+# Fri, 08 Nov 2019 03:51:29 GMT
 ENV XWIKI_DOWNLOAD_SHA256=299fe60d5b32ee1a363ba48ff2346e78eea5f713a0174c20fe9d7531be426a58
-# Fri, 01 Nov 2019 05:50:14 GMT
+# Fri, 08 Nov 2019 03:51:59 GMT
 RUN rm -rf /usr/local/tomcat/webapps/* &&   mkdir -p /usr/local/tomcat/temp &&   mkdir -p /usr/local/xwiki/data &&   curl -fSL "${XWIKI_URL_PREFIX}/xwiki-platform-distribution-war-${XWIKI_VERSION}.war" -o xwiki.war &&   echo "$XWIKI_DOWNLOAD_SHA256 xwiki.war" | sha256sum -c - &&   unzip -d /usr/local/tomcat/webapps/ROOT xwiki.war &&   rm -f xwiki.war
-# Fri, 01 Nov 2019 05:50:15 GMT
+# Fri, 08 Nov 2019 03:52:01 GMT
 RUN cp /usr/share/java/postgresql-jdbc4.jar /usr/local/tomcat/webapps/ROOT/WEB-INF/lib/
-# Fri, 01 Nov 2019 05:50:15 GMT
+# Fri, 08 Nov 2019 03:52:01 GMT
 COPY file:0a1be11e2eb610a1dbcd415404e3a592641110b93090030cb831e3a19a163017 in /usr/local/tomcat/bin/ 
-# Fri, 01 Nov 2019 05:50:15 GMT
+# Fri, 08 Nov 2019 03:52:02 GMT
 COPY file:bd68ae28ec068b0f89a2e05a10b1098af3b375c97a69f9255831e8fa6e87f773 in /usr/local/tomcat/webapps/ROOT/WEB-INF/hibernate.cfg.xml 
-# Fri, 01 Nov 2019 05:50:16 GMT
+# Fri, 08 Nov 2019 03:52:02 GMT
 RUN sed -i 's/<id>org.xwiki.platform:xwiki-platform-distribution-war/<id>org.xwiki.platform:xwiki-platform-distribution-docker/'   /usr/local/tomcat/webapps/ROOT/META-INF/extension.xed
-# Fri, 01 Nov 2019 05:50:16 GMT
+# Fri, 08 Nov 2019 03:52:03 GMT
 COPY file:f901b2d7ac3d76cd8346f9aee81b40529183e81d8aa027bb390856ac01fa6cc0 in /usr/local/bin/docker-entrypoint.sh 
-# Fri, 01 Nov 2019 05:50:16 GMT
+# Fri, 08 Nov 2019 03:52:03 GMT
 VOLUME [/usr/local/xwiki]
-# Fri, 01 Nov 2019 05:50:16 GMT
+# Fri, 08 Nov 2019 03:52:03 GMT
 ENTRYPOINT ["docker-entrypoint.sh"]
-# Fri, 01 Nov 2019 05:50:17 GMT
+# Fri, 08 Nov 2019 03:52:03 GMT
 CMD ["xwiki"]
 ```
 
@@ -3867,59 +3867,59 @@ CMD ["xwiki"]
 		Last Modified: Thu, 31 Oct 2019 22:21:39 GMT  
 		Size: 162.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:b5035666b1cd262e3117ca99ecbe11fc92c973a1164cd5c69bca60165f501520`  
-		Last Modified: Thu, 31 Oct 2019 22:40:53 GMT  
-		Size: 10.8 MB (10842099 bytes)  
+	-	`sha256:da4c04c54fa4a9b55ddef0b116fa7969185639621c525e1fe19f2b194f1ca4bc`  
+		Last Modified: Fri, 08 Nov 2019 02:22:45 GMT  
+		Size: 13.3 MB (13322685 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:efde61b742b5cb70e5b4addf1af5ad7280bffe7d8dd1df5eff600523285f3ea4`  
-		Last Modified: Thu, 31 Oct 2019 22:41:03 GMT  
-		Size: 105.0 MB (105002961 bytes)  
+	-	`sha256:2e619a1c4087f3c7f3728ceb4445f1a7a5039161cf3289478a8883c6ee035404`  
+		Last Modified: Fri, 08 Nov 2019 02:22:53 GMT  
+		Size: 105.1 MB (105052686 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:225d7996c0304b5ffbdcf6098af5c263ffc4d1b4179e9dca599cea72150685aa`  
-		Last Modified: Fri, 01 Nov 2019 02:39:12 GMT  
-		Size: 138.0 B  
+	-	`sha256:9d52f3e37b5909a34e61705bcdbc8935d682242f0c5fccdb29e117df8639b535`  
+		Last Modified: Fri, 08 Nov 2019 03:05:59 GMT  
+		Size: 139.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:79ec1eb33f408e2e622babc4045fe851ed5836f38b9e58daa1eb39284ace03cf`  
-		Last Modified: Fri, 01 Nov 2019 02:39:56 GMT  
-		Size: 11.2 MB (11233772 bytes)  
+	-	`sha256:e36d9bbb9a695ea2424edb1ab9bbf4fd43d87d68ad2e511fed36af7a18d3d3e8`  
+		Last Modified: Fri, 08 Nov 2019 03:06:53 GMT  
+		Size: 11.3 MB (11250353 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:1e181f3682b7d9ea77955bcda4108fc60c381f24ed390b0a3d08b67642aef2a7`  
-		Last Modified: Fri, 01 Nov 2019 02:39:55 GMT  
-		Size: 131.0 B  
+	-	`sha256:32d2a60a869b7029538438ffc8b6bc2975016c77fd3d3e4bc74b106903b3cca4`  
+		Last Modified: Fri, 08 Nov 2019 03:06:51 GMT  
+		Size: 132.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:dcf4aa8aa7a3257538cad7f9faea616c74da5211891ba894dbcc9b9710a0c249`  
-		Last Modified: Fri, 01 Nov 2019 05:55:36 GMT  
-		Size: 182.2 MB (182185768 bytes)  
+	-	`sha256:2fcdae1100d077d3795b80a5e54c0346fc292b4d314721bf81cbeab5d1cad0c9`  
+		Last Modified: Fri, 08 Nov 2019 03:57:01 GMT  
+		Size: 179.6 MB (179560416 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:271eddddcf5db8b7382c4a5a27d9848fb7d5fb21f33540c4d568551f8d1a1d74`  
-		Last Modified: Fri, 01 Nov 2019 05:55:05 GMT  
-		Size: 245.9 MB (245930609 bytes)  
+	-	`sha256:e9c0195e272b852492c7f599358c99e7712204ed7071a3f7d48bfa5edc8429b3`  
+		Last Modified: Fri, 08 Nov 2019 03:56:51 GMT  
+		Size: 245.9 MB (245930599 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:65ae8c33ab10be903ca209e3b0340dd40b0ac013067b5905dce5b1590fb6eb25`  
-		Last Modified: Fri, 01 Nov 2019 05:54:46 GMT  
-		Size: 618.9 KB (618853 bytes)  
+	-	`sha256:95965084b5e2103657f340e4d45f96ad9dbc8c820257fb84fab6f3bbd0833ceb`  
+		Last Modified: Fri, 08 Nov 2019 03:56:28 GMT  
+		Size: 618.9 KB (618865 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:5eaf917a4793b28e0de2cf6064d02c2c7f23165867f7200f26e9262942bb5113`  
-		Last Modified: Fri, 01 Nov 2019 05:54:46 GMT  
+	-	`sha256:08f9eccff140a38ee9c426aae4c63d8c21f0e92db3348820c411240df0156827`  
+		Last Modified: Fri, 08 Nov 2019 03:56:28 GMT  
 		Size: 1.3 KB (1344 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:224c12cf161cb91df2d9a67077c6c1fb00abcbb4811ddfd497905f0462cfe175`  
-		Last Modified: Fri, 01 Nov 2019 05:54:46 GMT  
-		Size: 2.5 KB (2481 bytes)  
+	-	`sha256:5069dc1afa774e636d3eb81c76fb8d2a9622cb5847696c251fd5f78cfea28948`  
+		Last Modified: Fri, 08 Nov 2019 03:56:28 GMT  
+		Size: 2.5 KB (2487 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:a92741fd543e631d383d8c7fc2e68c724ddf6802f40e7ca99c5d4de11260cf88`  
-		Last Modified: Fri, 01 Nov 2019 05:54:46 GMT  
-		Size: 3.8 KB (3836 bytes)  
+	-	`sha256:09af7f365508bef54bba891ca7da80be68278562b25792cf5c05e9556188d9b5`  
+		Last Modified: Fri, 08 Nov 2019 03:56:28 GMT  
+		Size: 3.8 KB (3838 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:6bb237db7536872170fc150a94fc0259404a88eb600a3ce9f61e0d20b9dffe3a`  
-		Last Modified: Fri, 01 Nov 2019 05:54:46 GMT  
-		Size: 2.4 KB (2401 bytes)  
+	-	`sha256:df4e73de1508117ac4210c94c2f4e2f8abf840ab184be9fed77905f71b14e600`  
+		Last Modified: Fri, 08 Nov 2019 03:56:28 GMT  
+		Size: 2.4 KB (2403 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `xwiki:stable`
 
 ```console
-$ docker pull xwiki@sha256:53a75d8da3c537c83fcaa909aad516c621db42254f9339405d1da00a69e46958
+$ docker pull xwiki@sha256:ffe63967f89e99e68d856ee74850c7a77221dc49a3ea312b352d7e1c19e61c2a
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -3929,14 +3929,14 @@ $ docker pull xwiki@sha256:53a75d8da3c537c83fcaa909aad516c621db42254f9339405d1da
 ### `xwiki:stable` - linux; amd64
 
 ```console
-$ docker pull xwiki@sha256:cc179298fdf56b4959adf41e8d1dfc6b6f436bfb2e2eecd999d3d4503ca9ab9d
+$ docker pull xwiki@sha256:b2b5d7d74a28e5a95df8ff0fb3b3bbcc1b9e2153891d62fc0df196a7464edcd3
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **714.2 MB (714193662 bytes)**  
+-	Total Size: **714.2 MB (714231275 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:163f00c14c053c3ae84dd9cc03a9dd6f3685e3c76ec000534299ce2ecd71323e`
+-	Image ID: `sha256:4050fb76b936f3f7dcfe96bae527ffb80bf0c01df874a5e3e86d8c4b56a824e0`
 -	Entrypoint: `["docker-entrypoint.sh"]`
 -	Default Command: `["xwiki"]`
 
@@ -3953,71 +3953,71 @@ RUN mkdir -p /run/systemd && echo 'docker' > /run/systemd/container
 CMD ["/bin/bash"]
 # Thu, 31 Oct 2019 22:37:37 GMT
 ENV LANG=en_US.UTF-8 LANGUAGE=en_US:en LC_ALL=en_US.UTF-8
-# Thu, 31 Oct 2019 22:38:04 GMT
-RUN apt-get update     && apt-get install -y --no-install-recommends curl ca-certificates locales     && echo "en_US.UTF-8 UTF-8" >> /etc/locale.gen     && locale-gen en_US.UTF-8     && rm -rf /var/lib/apt/lists/*
-# Thu, 31 Oct 2019 22:38:23 GMT
-ENV JAVA_VERSION=jdk-11.0.4+11
-# Thu, 31 Oct 2019 22:38:32 GMT
-RUN set -eux;     ARCH="$(dpkg --print-architecture)";     case "${ARCH}" in        aarch64|arm64)          ESUM='10e33e1862638e11a9158947b3d7b461727d8e396e378b171be1eb4dfe12f1ed';          BINARY_URL='https://github.com/AdoptOpenJDK/openjdk11-binaries/releases/download/jdk-11.0.4%2B11/OpenJDK11U-jdk_aarch64_linux_hotspot_11.0.4_11.tar.gz';          ;;        armhf)          ESUM='19f16c4b905055a13457d06ce9a107a54289d3828bf3ae378efc6deb908a5572';          BINARY_URL='https://github.com/AdoptOpenJDK/openjdk11-binaries/releases/download/jdk-11.0.4%2B11/OpenJDK11U-jdk_arm_linux_hotspot_11.0.4_11.tar.gz';          ;;        ppc64el|ppc64le)          ESUM='fc6b616f83fea033edd836c934f3e70764b5aa1dac0446df8a8b49297ca40a5e';          BINARY_URL='https://github.com/AdoptOpenJDK/openjdk11-binaries/releases/download/jdk-11.0.4%2B11/OpenJDK11U-jdk_ppc64le_linux_hotspot_11.0.4_11.tar.gz';          ;;        s390x)          ESUM='9487d27ef65b0cc30481cd0d23466aa6b36c90dfaa8a033166fad67bc37891de';          BINARY_URL='https://github.com/AdoptOpenJDK/openjdk11-binaries/releases/download/jdk-11.0.4%2B11/OpenJDK11U-jdk_s390x_linux_hotspot_11.0.4_11.tar.gz';          ;;        amd64|x86_64)          ESUM='90c33cf3f2ed0bd773f648815de7347e69cfbb3416ef3bf41616ab1c4aa0f5a8';          BINARY_URL='https://github.com/AdoptOpenJDK/openjdk11-binaries/releases/download/jdk-11.0.4%2B11/OpenJDK11U-jdk_x64_linux_hotspot_11.0.4_11.tar.gz';          ;;        *)          echo "Unsupported arch: ${ARCH}";          exit 1;          ;;     esac;     curl -LfsSo /tmp/openjdk.tar.gz ${BINARY_URL};     echo "${ESUM} */tmp/openjdk.tar.gz" | sha256sum -c -;     mkdir -p /opt/java/openjdk;     cd /opt/java/openjdk;     tar -xf /tmp/openjdk.tar.gz --strip-components=1;     rm -rf /tmp/openjdk.tar.gz;
-# Thu, 31 Oct 2019 22:38:32 GMT
+# Fri, 08 Nov 2019 02:20:03 GMT
+RUN apt-get update     && apt-get install -y --no-install-recommends curl ca-certificates fontconfig locales     && echo "en_US.UTF-8 UTF-8" >> /etc/locale.gen     && locale-gen en_US.UTF-8     && rm -rf /var/lib/apt/lists/*
+# Fri, 08 Nov 2019 02:20:26 GMT
+ENV JAVA_VERSION=jdk-11.0.5+10
+# Fri, 08 Nov 2019 02:20:35 GMT
+RUN set -eux;     ARCH="$(dpkg --print-architecture)";     case "${ARCH}" in        armhf)          ESUM='c6b1fda3f8807028cbfcc34a4ded2e8a5a6b6239d2bcc1f06673ea6b1530df94';          BINARY_URL='https://github.com/AdoptOpenJDK/openjdk11-binaries/releases/download/jdk-11.0.5%2B10/OpenJDK11U-jdk_arm_linux_hotspot_11.0.5_10.tar.gz';          ;;        ppc64el|ppc64le)          ESUM='d763481ddc29ac0bdefb24216b3a0bf9afbb058552682567a075f9c0f7da5814';          BINARY_URL='https://github.com/AdoptOpenJDK/openjdk11-binaries/releases/download/jdk-11.0.5%2B10/OpenJDK11U-jdk_ppc64le_linux_hotspot_11.0.5_10.tar.gz';          ;;        amd64|x86_64)          ESUM='6dd0c9c8a740e6c19149e98034fba8e368fd9aa16ab417aa636854d40db1a161';          BINARY_URL='https://github.com/AdoptOpenJDK/openjdk11-binaries/releases/download/jdk-11.0.5%2B10/OpenJDK11U-jdk_x64_linux_hotspot_11.0.5_10.tar.gz';          ;;        *)          echo "Unsupported arch: ${ARCH}";          exit 1;          ;;     esac;     curl -LfsSo /tmp/openjdk.tar.gz ${BINARY_URL};     echo "${ESUM} */tmp/openjdk.tar.gz" | sha256sum -c -;     mkdir -p /opt/java/openjdk;     cd /opt/java/openjdk;     tar -xf /tmp/openjdk.tar.gz --strip-components=1;     rm -rf /tmp/openjdk.tar.gz;
+# Fri, 08 Nov 2019 02:20:36 GMT
 ENV JAVA_HOME=/opt/java/openjdk PATH=/opt/java/openjdk/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Thu, 31 Oct 2019 22:38:33 GMT
+# Fri, 08 Nov 2019 02:20:36 GMT
 CMD ["jshell"]
-# Fri, 01 Nov 2019 02:28:08 GMT
+# Fri, 08 Nov 2019 02:49:06 GMT
 ENV CATALINA_HOME=/usr/local/tomcat
-# Fri, 01 Nov 2019 02:28:08 GMT
+# Fri, 08 Nov 2019 02:49:07 GMT
 ENV PATH=/usr/local/tomcat/bin:/opt/java/openjdk/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Fri, 01 Nov 2019 02:28:09 GMT
+# Fri, 08 Nov 2019 02:49:08 GMT
 RUN mkdir -p "$CATALINA_HOME"
-# Fri, 01 Nov 2019 02:28:09 GMT
+# Fri, 08 Nov 2019 02:49:08 GMT
 WORKDIR /usr/local/tomcat
-# Fri, 01 Nov 2019 02:28:09 GMT
+# Fri, 08 Nov 2019 02:49:09 GMT
 ENV TOMCAT_NATIVE_LIBDIR=/usr/local/tomcat/native-jni-lib
-# Fri, 01 Nov 2019 02:28:09 GMT
+# Fri, 08 Nov 2019 02:49:09 GMT
 ENV LD_LIBRARY_PATH=/usr/local/tomcat/native-jni-lib
-# Fri, 01 Nov 2019 02:33:11 GMT
+# Fri, 08 Nov 2019 02:55:21 GMT
 ENV GPG_KEYS=05AB33110949707C93A279E3D3EFE6B686867BA6 07E48665A34DCAFAE522E5E6266191C37C037D42 47309207D818FFD8DCD3F83F1931D684307A10A5 541FBE7D8F78B25E055DDEE13C370389288584E7 61B832AC2F1C5A90F0F9B00A1C506407564C17A3 713DA88BE50911535FE716F5208B0AB1D63011C7 79F7026C690BAA50B92CD8B66A3AD3F4F22C4FED 9BA44C2621385CB966EBA586F72C284D731FABEE A27677289986DB50844682F8ACB77FC2E86E29AC A9C5DF4D22E99998D9875A5110C01C5A2F6059E7 DCFD35E0BF8CA7344752DE8B6FB21E8933C60243 F3A04C595DB5B6A5F1ECA43E3B7BBB100D811BBE F7DA48BB64BCB84ECBA7EE6935CD23C10D498E23
-# Fri, 01 Nov 2019 02:33:11 GMT
+# Fri, 08 Nov 2019 02:55:21 GMT
 ENV TOMCAT_MAJOR=8
-# Fri, 01 Nov 2019 02:33:11 GMT
+# Fri, 08 Nov 2019 02:55:21 GMT
 ENV TOMCAT_VERSION=8.5.47
-# Fri, 01 Nov 2019 02:33:11 GMT
+# Fri, 08 Nov 2019 02:55:21 GMT
 ENV TOMCAT_SHA512=079b85f3dfca2b137634859208fae6012860201d720d12ff0add3473f1e267d332cb12803958754e1f922599e0d42b7e97f00bcd62584d9148a6f45fde091716
-# Fri, 01 Nov 2019 02:33:46 GMT
+# Fri, 08 Nov 2019 02:56:17 GMT
 RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		gnupg dirmngr 		wget ca-certificates 	; 		ddist() { 		local f="$1"; shift; 		local distFile="$1"; shift; 		local success=; 		local distUrl=; 		for distUrl in 			'https://www.apache.org/dyn/closer.cgi?action=download&filename=' 			https://www-us.apache.org/dist/ 			https://www.apache.org/dist/ 			https://archive.apache.org/dist/ 		; do 			if wget -O "$f" "$distUrl$distFile" && [ -s "$f" ]; then 				success=1; 				break; 			fi; 		done; 		[ -n "$success" ]; 	}; 		ddist 'tomcat.tar.gz' "tomcat/tomcat-$TOMCAT_MAJOR/v$TOMCAT_VERSION/bin/apache-tomcat-$TOMCAT_VERSION.tar.gz"; 	echo "$TOMCAT_SHA512 *tomcat.tar.gz" | sha512sum --strict --check -; 	ddist 'tomcat.tar.gz.asc' "tomcat/tomcat-$TOMCAT_MAJOR/v$TOMCAT_VERSION/bin/apache-tomcat-$TOMCAT_VERSION.tar.gz.asc"; 	export GNUPGHOME="$(mktemp -d)"; 	for key in $GPG_KEYS; do 		gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys "$key"; 	done; 	gpg --batch --verify tomcat.tar.gz.asc tomcat.tar.gz; 	tar -xf tomcat.tar.gz --strip-components=1; 	rm bin/*.bat; 	rm tomcat.tar.gz*; 	command -v gpgconf && gpgconf --kill all || :; 	rm -rf "$GNUPGHOME"; 		nativeBuildDir="$(mktemp -d)"; 	tar -xf bin/tomcat-native.tar.gz -C "$nativeBuildDir" --strip-components=1; 	apt-get install -y --no-install-recommends 		dpkg-dev 		gcc 		libapr1-dev 		libssl-dev 		make 	; 	( 		export CATALINA_HOME="$PWD"; 		cd "$nativeBuildDir/native"; 		gnuArch="$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)"; 		aprConfig="$(command -v apr-1-config)"; 		./configure 			--build="$gnuArch" 			--libdir="$TOMCAT_NATIVE_LIBDIR" 			--prefix="$CATALINA_HOME" 			--with-apr="$aprConfig" 			--with-java-home="$JAVA_HOME" 			--with-ssl=yes; 		make -j "$(nproc)"; 		make install; 	); 	rm -rf "$nativeBuildDir"; 	rm bin/tomcat-native.tar.gz; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark > /dev/null; 	find "$TOMCAT_NATIVE_LIBDIR" -type f -executable -exec ldd '{}' ';' 		| awk '/=>/ { print $(NF-1) }' 		| sort -u 		| xargs -r dpkg-query --search 		| cut -d: -f1 		| sort -u 		| xargs -r apt-mark manual 	; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 	rm -rf /var/lib/apt/lists/*; 		find ./bin/ -name '*.sh' -exec sed -ri 's|^#!/bin/sh$|#!/usr/bin/env bash|' '{}' +; 		chmod -R +rX .; 	chmod 777 logs temp work
-# Fri, 01 Nov 2019 02:33:48 GMT
+# Fri, 08 Nov 2019 02:56:22 GMT
 RUN set -e 	&& nativeLines="$(catalina.sh configtest 2>&1)" 	&& nativeLines="$(echo "$nativeLines" | grep 'Apache Tomcat Native')" 	&& nativeLines="$(echo "$nativeLines" | sort -u)" 	&& if ! echo "$nativeLines" | grep 'INFO: Loaded APR based Apache Tomcat Native library' >&2; then 		echo >&2 "$nativeLines"; 		exit 1; 	fi
-# Fri, 01 Nov 2019 02:33:49 GMT
+# Fri, 08 Nov 2019 02:56:22 GMT
 EXPOSE 8080
-# Fri, 01 Nov 2019 02:33:49 GMT
+# Fri, 08 Nov 2019 02:56:22 GMT
 CMD ["catalina.sh" "run"]
-# Fri, 01 Nov 2019 05:50:23 GMT
+# Fri, 08 Nov 2019 03:52:11 GMT
 MAINTAINER Vincent Massol <vincent@massol.net>
-# Fri, 01 Nov 2019 05:51:08 GMT
+# Fri, 08 Nov 2019 03:52:56 GMT
 RUN apt-get update &&   apt-get --no-install-recommends -y install     curl     libreoffice     unzip     procps     libmysql-java &&   rm -rf /var/lib/apt/lists/*
-# Fri, 01 Nov 2019 05:51:09 GMT
+# Fri, 08 Nov 2019 03:52:57 GMT
 ENV XWIKI_VERSION=11.9
-# Fri, 01 Nov 2019 05:51:09 GMT
+# Fri, 08 Nov 2019 03:52:57 GMT
 ENV XWIKI_URL_PREFIX=https://maven.xwiki.org/releases/org/xwiki/platform/xwiki-platform-distribution-war/11.9
-# Fri, 01 Nov 2019 05:51:09 GMT
+# Fri, 08 Nov 2019 03:52:57 GMT
 ENV XWIKI_DOWNLOAD_SHA256=f4fc420b570c5da374492b236cca5df1239793979126722c1adcc642ee9b335c
-# Fri, 01 Nov 2019 05:51:43 GMT
+# Fri, 08 Nov 2019 03:53:35 GMT
 RUN rm -rf /usr/local/tomcat/webapps/* &&   mkdir -p /usr/local/tomcat/temp &&   mkdir -p /usr/local/xwiki/data &&   curl -fSL "${XWIKI_URL_PREFIX}/xwiki-platform-distribution-war-${XWIKI_VERSION}.war" -o xwiki.war &&   echo "$XWIKI_DOWNLOAD_SHA256 xwiki.war" | sha256sum -c - &&   unzip -d /usr/local/tomcat/webapps/ROOT xwiki.war &&   rm -f xwiki.war
-# Fri, 01 Nov 2019 05:51:44 GMT
+# Fri, 08 Nov 2019 03:53:36 GMT
 RUN cp /usr/share/java/mysql-connector-java-*.jar /usr/local/tomcat/webapps/ROOT/WEB-INF/lib/
-# Fri, 01 Nov 2019 05:51:44 GMT
+# Fri, 08 Nov 2019 03:53:36 GMT
 COPY file:0a1be11e2eb610a1dbcd415404e3a592641110b93090030cb831e3a19a163017 in /usr/local/tomcat/bin/ 
-# Fri, 01 Nov 2019 05:51:44 GMT
+# Fri, 08 Nov 2019 03:53:36 GMT
 COPY file:406eb381f87e0aed57baf469c64efee52199868e8fc75ff865a9661b47910460 in /usr/local/tomcat/webapps/ROOT/WEB-INF/hibernate.cfg.xml 
-# Fri, 01 Nov 2019 05:51:45 GMT
+# Fri, 08 Nov 2019 03:53:37 GMT
 RUN sed -i 's/<id>org.xwiki.platform:xwiki-platform-distribution-war/<id>org.xwiki.platform:xwiki-platform-distribution-docker/'   /usr/local/tomcat/webapps/ROOT/META-INF/extension.xed
-# Fri, 01 Nov 2019 05:51:45 GMT
+# Fri, 08 Nov 2019 03:53:37 GMT
 COPY file:f901b2d7ac3d76cd8346f9aee81b40529183e81d8aa027bb390856ac01fa6cc0 in /usr/local/bin/docker-entrypoint.sh 
-# Fri, 01 Nov 2019 05:51:45 GMT
+# Fri, 08 Nov 2019 03:53:38 GMT
 VOLUME [/usr/local/xwiki]
-# Fri, 01 Nov 2019 05:51:45 GMT
+# Fri, 08 Nov 2019 03:53:38 GMT
 ENTRYPOINT ["docker-entrypoint.sh"]
-# Fri, 01 Nov 2019 05:51:45 GMT
+# Fri, 08 Nov 2019 03:53:38 GMT
 CMD ["xwiki"]
 ```
 
@@ -4038,59 +4038,59 @@ CMD ["xwiki"]
 		Last Modified: Thu, 31 Oct 2019 22:21:39 GMT  
 		Size: 162.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:b5035666b1cd262e3117ca99ecbe11fc92c973a1164cd5c69bca60165f501520`  
-		Last Modified: Thu, 31 Oct 2019 22:40:53 GMT  
-		Size: 10.8 MB (10842099 bytes)  
+	-	`sha256:da4c04c54fa4a9b55ddef0b116fa7969185639621c525e1fe19f2b194f1ca4bc`  
+		Last Modified: Fri, 08 Nov 2019 02:22:45 GMT  
+		Size: 13.3 MB (13322685 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:60e5b903fb31d874f9a1c331071b5e855634a3ae4fa5db5a3ba0dc027bbc9c5f`  
-		Last Modified: Thu, 31 Oct 2019 22:41:36 GMT  
-		Size: 197.7 MB (197657372 bytes)  
+	-	`sha256:10235b1a516d4b068683fe79fb89be475cb2fc41b1ea76fcb4b13872bee27da0`  
+		Last Modified: Fri, 08 Nov 2019 02:23:23 GMT  
+		Size: 197.8 MB (197822335 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:f578b1f2cf8f2f5876b3185c7edd79990e67ec624e21b05b0614d04c5acb0106`  
-		Last Modified: Fri, 01 Nov 2019 02:38:58 GMT  
-		Size: 136.0 B  
+	-	`sha256:24154429346fe2204e6d5dab3868244db95f4163d1be3905621fb2b53653eb2c`  
+		Last Modified: Fri, 08 Nov 2019 03:05:39 GMT  
+		Size: 139.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c12bb0162813b1b0c82e82d87b9bdf6e96ef46d7c3aa9408a9c8d9de7c9a575a`  
-		Last Modified: Fri, 01 Nov 2019 02:39:41 GMT  
-		Size: 11.2 MB (11234934 bytes)  
+	-	`sha256:c572a63a7a797dd43aa600f689a0e6d3c85b8f94a138c2d3181801cd788b36c9`  
+		Last Modified: Fri, 08 Nov 2019 03:06:29 GMT  
+		Size: 11.3 MB (11251478 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:469391c4f542e184022627170e76ee20d527d65dfda5b22daebd7187925accb7`  
-		Last Modified: Fri, 01 Nov 2019 02:39:39 GMT  
-		Size: 133.0 B  
+	-	`sha256:a016684a4a3052bad801984d71c411cd2e4fade815d50a5ad7b5f228041d0b56`  
+		Last Modified: Fri, 08 Nov 2019 03:06:27 GMT  
+		Size: 132.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:a9cb5d6ac8ff25f915684ed166cd0c7ac4a92a7b8f447f7b573721d4e4862395`  
-		Last Modified: Fri, 01 Nov 2019 05:56:17 GMT  
-		Size: 182.5 MB (182519866 bytes)  
+	-	`sha256:c91247e8560d3e2c0be69d9c20160a5c7b9e23fdec44b0fc06fb0dd678003c6f`  
+		Last Modified: Fri, 08 Nov 2019 03:57:46 GMT  
+		Size: 179.9 MB (179895305 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:f1fb9e179e1e0794b0e3ab1fa75f30babb21fe494a3c009b61a9f0bdc94a8007`  
-		Last Modified: Fri, 01 Nov 2019 05:56:06 GMT  
-		Size: 284.2 MB (284247999 bytes)  
+	-	`sha256:a43a14f8330f2612a59d1aa4cab49393e380b7f4f788380e090d66aeeec27413`  
+		Last Modified: Fri, 08 Nov 2019 03:57:35 GMT  
+		Size: 284.2 MB (284248060 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:f55b66004ada5c63d908ecf104a82e72fbc834488f3d3268937752fff2d7cfc1`  
-		Last Modified: Fri, 01 Nov 2019 05:55:45 GMT  
-		Size: 955.6 KB (955598 bytes)  
+	-	`sha256:1829bd8f4cffb2971f321018ab8b1ff5890d9f709c1d694725799bfc7b299f6f`  
+		Last Modified: Fri, 08 Nov 2019 03:57:13 GMT  
+		Size: 955.6 KB (955603 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:d3e3aefe7f08df3a904bfa1b6fb484544d4abf98f8e67e22a29a878e40e9a1eb`  
-		Last Modified: Fri, 01 Nov 2019 05:55:45 GMT  
-		Size: 1.3 KB (1341 bytes)  
+	-	`sha256:444ce5df0050d115c048cca2619eb9669dfd6a497d0b53af7e212670c7e181a2`  
+		Last Modified: Fri, 08 Nov 2019 03:57:13 GMT  
+		Size: 1.3 KB (1346 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:f4f03a2f5eb6e67eb8d75bd2641d80a18e30ecc78cbbbbdb7def4322ba44e011`  
-		Last Modified: Fri, 01 Nov 2019 05:55:45 GMT  
-		Size: 2.3 KB (2334 bytes)  
+	-	`sha256:537505f100251872fe038c9e7189a1515539e54e927362e7a074ddda578b1430`  
+		Last Modified: Fri, 08 Nov 2019 03:57:14 GMT  
+		Size: 2.3 KB (2337 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:137909c9c97785a04ee164d5f5078d18ba1c0764e84e7c1756806863792b9645`  
-		Last Modified: Fri, 01 Nov 2019 05:55:45 GMT  
-		Size: 4.2 KB (4234 bytes)  
+	-	`sha256:93d47669c79bd6ba35cbfae545a94c242480372296a9aa60cd24044cfeb730d7`  
+		Last Modified: Fri, 08 Nov 2019 03:57:13 GMT  
+		Size: 4.2 KB (4235 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:0bea17859d854d5e0c2ad02328d87ec74e591d8c0c40dbae70b52cf059f3826a`  
-		Last Modified: Fri, 01 Nov 2019 05:55:45 GMT  
-		Size: 2.4 KB (2400 bytes)  
+	-	`sha256:0edda1fa0cef0bd96542fe7f721070f136ce34a02bc2976de8f72b54b9fca7f8`  
+		Last Modified: Fri, 08 Nov 2019 03:57:14 GMT  
+		Size: 2.4 KB (2404 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `xwiki:stable-mysql`
 
 ```console
-$ docker pull xwiki@sha256:53a75d8da3c537c83fcaa909aad516c621db42254f9339405d1da00a69e46958
+$ docker pull xwiki@sha256:ffe63967f89e99e68d856ee74850c7a77221dc49a3ea312b352d7e1c19e61c2a
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -4100,14 +4100,14 @@ $ docker pull xwiki@sha256:53a75d8da3c537c83fcaa909aad516c621db42254f9339405d1da
 ### `xwiki:stable-mysql` - linux; amd64
 
 ```console
-$ docker pull xwiki@sha256:cc179298fdf56b4959adf41e8d1dfc6b6f436bfb2e2eecd999d3d4503ca9ab9d
+$ docker pull xwiki@sha256:b2b5d7d74a28e5a95df8ff0fb3b3bbcc1b9e2153891d62fc0df196a7464edcd3
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **714.2 MB (714193662 bytes)**  
+-	Total Size: **714.2 MB (714231275 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:163f00c14c053c3ae84dd9cc03a9dd6f3685e3c76ec000534299ce2ecd71323e`
+-	Image ID: `sha256:4050fb76b936f3f7dcfe96bae527ffb80bf0c01df874a5e3e86d8c4b56a824e0`
 -	Entrypoint: `["docker-entrypoint.sh"]`
 -	Default Command: `["xwiki"]`
 
@@ -4124,71 +4124,71 @@ RUN mkdir -p /run/systemd && echo 'docker' > /run/systemd/container
 CMD ["/bin/bash"]
 # Thu, 31 Oct 2019 22:37:37 GMT
 ENV LANG=en_US.UTF-8 LANGUAGE=en_US:en LC_ALL=en_US.UTF-8
-# Thu, 31 Oct 2019 22:38:04 GMT
-RUN apt-get update     && apt-get install -y --no-install-recommends curl ca-certificates locales     && echo "en_US.UTF-8 UTF-8" >> /etc/locale.gen     && locale-gen en_US.UTF-8     && rm -rf /var/lib/apt/lists/*
-# Thu, 31 Oct 2019 22:38:23 GMT
-ENV JAVA_VERSION=jdk-11.0.4+11
-# Thu, 31 Oct 2019 22:38:32 GMT
-RUN set -eux;     ARCH="$(dpkg --print-architecture)";     case "${ARCH}" in        aarch64|arm64)          ESUM='10e33e1862638e11a9158947b3d7b461727d8e396e378b171be1eb4dfe12f1ed';          BINARY_URL='https://github.com/AdoptOpenJDK/openjdk11-binaries/releases/download/jdk-11.0.4%2B11/OpenJDK11U-jdk_aarch64_linux_hotspot_11.0.4_11.tar.gz';          ;;        armhf)          ESUM='19f16c4b905055a13457d06ce9a107a54289d3828bf3ae378efc6deb908a5572';          BINARY_URL='https://github.com/AdoptOpenJDK/openjdk11-binaries/releases/download/jdk-11.0.4%2B11/OpenJDK11U-jdk_arm_linux_hotspot_11.0.4_11.tar.gz';          ;;        ppc64el|ppc64le)          ESUM='fc6b616f83fea033edd836c934f3e70764b5aa1dac0446df8a8b49297ca40a5e';          BINARY_URL='https://github.com/AdoptOpenJDK/openjdk11-binaries/releases/download/jdk-11.0.4%2B11/OpenJDK11U-jdk_ppc64le_linux_hotspot_11.0.4_11.tar.gz';          ;;        s390x)          ESUM='9487d27ef65b0cc30481cd0d23466aa6b36c90dfaa8a033166fad67bc37891de';          BINARY_URL='https://github.com/AdoptOpenJDK/openjdk11-binaries/releases/download/jdk-11.0.4%2B11/OpenJDK11U-jdk_s390x_linux_hotspot_11.0.4_11.tar.gz';          ;;        amd64|x86_64)          ESUM='90c33cf3f2ed0bd773f648815de7347e69cfbb3416ef3bf41616ab1c4aa0f5a8';          BINARY_URL='https://github.com/AdoptOpenJDK/openjdk11-binaries/releases/download/jdk-11.0.4%2B11/OpenJDK11U-jdk_x64_linux_hotspot_11.0.4_11.tar.gz';          ;;        *)          echo "Unsupported arch: ${ARCH}";          exit 1;          ;;     esac;     curl -LfsSo /tmp/openjdk.tar.gz ${BINARY_URL};     echo "${ESUM} */tmp/openjdk.tar.gz" | sha256sum -c -;     mkdir -p /opt/java/openjdk;     cd /opt/java/openjdk;     tar -xf /tmp/openjdk.tar.gz --strip-components=1;     rm -rf /tmp/openjdk.tar.gz;
-# Thu, 31 Oct 2019 22:38:32 GMT
+# Fri, 08 Nov 2019 02:20:03 GMT
+RUN apt-get update     && apt-get install -y --no-install-recommends curl ca-certificates fontconfig locales     && echo "en_US.UTF-8 UTF-8" >> /etc/locale.gen     && locale-gen en_US.UTF-8     && rm -rf /var/lib/apt/lists/*
+# Fri, 08 Nov 2019 02:20:26 GMT
+ENV JAVA_VERSION=jdk-11.0.5+10
+# Fri, 08 Nov 2019 02:20:35 GMT
+RUN set -eux;     ARCH="$(dpkg --print-architecture)";     case "${ARCH}" in        armhf)          ESUM='c6b1fda3f8807028cbfcc34a4ded2e8a5a6b6239d2bcc1f06673ea6b1530df94';          BINARY_URL='https://github.com/AdoptOpenJDK/openjdk11-binaries/releases/download/jdk-11.0.5%2B10/OpenJDK11U-jdk_arm_linux_hotspot_11.0.5_10.tar.gz';          ;;        ppc64el|ppc64le)          ESUM='d763481ddc29ac0bdefb24216b3a0bf9afbb058552682567a075f9c0f7da5814';          BINARY_URL='https://github.com/AdoptOpenJDK/openjdk11-binaries/releases/download/jdk-11.0.5%2B10/OpenJDK11U-jdk_ppc64le_linux_hotspot_11.0.5_10.tar.gz';          ;;        amd64|x86_64)          ESUM='6dd0c9c8a740e6c19149e98034fba8e368fd9aa16ab417aa636854d40db1a161';          BINARY_URL='https://github.com/AdoptOpenJDK/openjdk11-binaries/releases/download/jdk-11.0.5%2B10/OpenJDK11U-jdk_x64_linux_hotspot_11.0.5_10.tar.gz';          ;;        *)          echo "Unsupported arch: ${ARCH}";          exit 1;          ;;     esac;     curl -LfsSo /tmp/openjdk.tar.gz ${BINARY_URL};     echo "${ESUM} */tmp/openjdk.tar.gz" | sha256sum -c -;     mkdir -p /opt/java/openjdk;     cd /opt/java/openjdk;     tar -xf /tmp/openjdk.tar.gz --strip-components=1;     rm -rf /tmp/openjdk.tar.gz;
+# Fri, 08 Nov 2019 02:20:36 GMT
 ENV JAVA_HOME=/opt/java/openjdk PATH=/opt/java/openjdk/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Thu, 31 Oct 2019 22:38:33 GMT
+# Fri, 08 Nov 2019 02:20:36 GMT
 CMD ["jshell"]
-# Fri, 01 Nov 2019 02:28:08 GMT
+# Fri, 08 Nov 2019 02:49:06 GMT
 ENV CATALINA_HOME=/usr/local/tomcat
-# Fri, 01 Nov 2019 02:28:08 GMT
+# Fri, 08 Nov 2019 02:49:07 GMT
 ENV PATH=/usr/local/tomcat/bin:/opt/java/openjdk/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Fri, 01 Nov 2019 02:28:09 GMT
+# Fri, 08 Nov 2019 02:49:08 GMT
 RUN mkdir -p "$CATALINA_HOME"
-# Fri, 01 Nov 2019 02:28:09 GMT
+# Fri, 08 Nov 2019 02:49:08 GMT
 WORKDIR /usr/local/tomcat
-# Fri, 01 Nov 2019 02:28:09 GMT
+# Fri, 08 Nov 2019 02:49:09 GMT
 ENV TOMCAT_NATIVE_LIBDIR=/usr/local/tomcat/native-jni-lib
-# Fri, 01 Nov 2019 02:28:09 GMT
+# Fri, 08 Nov 2019 02:49:09 GMT
 ENV LD_LIBRARY_PATH=/usr/local/tomcat/native-jni-lib
-# Fri, 01 Nov 2019 02:33:11 GMT
+# Fri, 08 Nov 2019 02:55:21 GMT
 ENV GPG_KEYS=05AB33110949707C93A279E3D3EFE6B686867BA6 07E48665A34DCAFAE522E5E6266191C37C037D42 47309207D818FFD8DCD3F83F1931D684307A10A5 541FBE7D8F78B25E055DDEE13C370389288584E7 61B832AC2F1C5A90F0F9B00A1C506407564C17A3 713DA88BE50911535FE716F5208B0AB1D63011C7 79F7026C690BAA50B92CD8B66A3AD3F4F22C4FED 9BA44C2621385CB966EBA586F72C284D731FABEE A27677289986DB50844682F8ACB77FC2E86E29AC A9C5DF4D22E99998D9875A5110C01C5A2F6059E7 DCFD35E0BF8CA7344752DE8B6FB21E8933C60243 F3A04C595DB5B6A5F1ECA43E3B7BBB100D811BBE F7DA48BB64BCB84ECBA7EE6935CD23C10D498E23
-# Fri, 01 Nov 2019 02:33:11 GMT
+# Fri, 08 Nov 2019 02:55:21 GMT
 ENV TOMCAT_MAJOR=8
-# Fri, 01 Nov 2019 02:33:11 GMT
+# Fri, 08 Nov 2019 02:55:21 GMT
 ENV TOMCAT_VERSION=8.5.47
-# Fri, 01 Nov 2019 02:33:11 GMT
+# Fri, 08 Nov 2019 02:55:21 GMT
 ENV TOMCAT_SHA512=079b85f3dfca2b137634859208fae6012860201d720d12ff0add3473f1e267d332cb12803958754e1f922599e0d42b7e97f00bcd62584d9148a6f45fde091716
-# Fri, 01 Nov 2019 02:33:46 GMT
+# Fri, 08 Nov 2019 02:56:17 GMT
 RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		gnupg dirmngr 		wget ca-certificates 	; 		ddist() { 		local f="$1"; shift; 		local distFile="$1"; shift; 		local success=; 		local distUrl=; 		for distUrl in 			'https://www.apache.org/dyn/closer.cgi?action=download&filename=' 			https://www-us.apache.org/dist/ 			https://www.apache.org/dist/ 			https://archive.apache.org/dist/ 		; do 			if wget -O "$f" "$distUrl$distFile" && [ -s "$f" ]; then 				success=1; 				break; 			fi; 		done; 		[ -n "$success" ]; 	}; 		ddist 'tomcat.tar.gz' "tomcat/tomcat-$TOMCAT_MAJOR/v$TOMCAT_VERSION/bin/apache-tomcat-$TOMCAT_VERSION.tar.gz"; 	echo "$TOMCAT_SHA512 *tomcat.tar.gz" | sha512sum --strict --check -; 	ddist 'tomcat.tar.gz.asc' "tomcat/tomcat-$TOMCAT_MAJOR/v$TOMCAT_VERSION/bin/apache-tomcat-$TOMCAT_VERSION.tar.gz.asc"; 	export GNUPGHOME="$(mktemp -d)"; 	for key in $GPG_KEYS; do 		gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys "$key"; 	done; 	gpg --batch --verify tomcat.tar.gz.asc tomcat.tar.gz; 	tar -xf tomcat.tar.gz --strip-components=1; 	rm bin/*.bat; 	rm tomcat.tar.gz*; 	command -v gpgconf && gpgconf --kill all || :; 	rm -rf "$GNUPGHOME"; 		nativeBuildDir="$(mktemp -d)"; 	tar -xf bin/tomcat-native.tar.gz -C "$nativeBuildDir" --strip-components=1; 	apt-get install -y --no-install-recommends 		dpkg-dev 		gcc 		libapr1-dev 		libssl-dev 		make 	; 	( 		export CATALINA_HOME="$PWD"; 		cd "$nativeBuildDir/native"; 		gnuArch="$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)"; 		aprConfig="$(command -v apr-1-config)"; 		./configure 			--build="$gnuArch" 			--libdir="$TOMCAT_NATIVE_LIBDIR" 			--prefix="$CATALINA_HOME" 			--with-apr="$aprConfig" 			--with-java-home="$JAVA_HOME" 			--with-ssl=yes; 		make -j "$(nproc)"; 		make install; 	); 	rm -rf "$nativeBuildDir"; 	rm bin/tomcat-native.tar.gz; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark > /dev/null; 	find "$TOMCAT_NATIVE_LIBDIR" -type f -executable -exec ldd '{}' ';' 		| awk '/=>/ { print $(NF-1) }' 		| sort -u 		| xargs -r dpkg-query --search 		| cut -d: -f1 		| sort -u 		| xargs -r apt-mark manual 	; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 	rm -rf /var/lib/apt/lists/*; 		find ./bin/ -name '*.sh' -exec sed -ri 's|^#!/bin/sh$|#!/usr/bin/env bash|' '{}' +; 		chmod -R +rX .; 	chmod 777 logs temp work
-# Fri, 01 Nov 2019 02:33:48 GMT
+# Fri, 08 Nov 2019 02:56:22 GMT
 RUN set -e 	&& nativeLines="$(catalina.sh configtest 2>&1)" 	&& nativeLines="$(echo "$nativeLines" | grep 'Apache Tomcat Native')" 	&& nativeLines="$(echo "$nativeLines" | sort -u)" 	&& if ! echo "$nativeLines" | grep 'INFO: Loaded APR based Apache Tomcat Native library' >&2; then 		echo >&2 "$nativeLines"; 		exit 1; 	fi
-# Fri, 01 Nov 2019 02:33:49 GMT
+# Fri, 08 Nov 2019 02:56:22 GMT
 EXPOSE 8080
-# Fri, 01 Nov 2019 02:33:49 GMT
+# Fri, 08 Nov 2019 02:56:22 GMT
 CMD ["catalina.sh" "run"]
-# Fri, 01 Nov 2019 05:50:23 GMT
+# Fri, 08 Nov 2019 03:52:11 GMT
 MAINTAINER Vincent Massol <vincent@massol.net>
-# Fri, 01 Nov 2019 05:51:08 GMT
+# Fri, 08 Nov 2019 03:52:56 GMT
 RUN apt-get update &&   apt-get --no-install-recommends -y install     curl     libreoffice     unzip     procps     libmysql-java &&   rm -rf /var/lib/apt/lists/*
-# Fri, 01 Nov 2019 05:51:09 GMT
+# Fri, 08 Nov 2019 03:52:57 GMT
 ENV XWIKI_VERSION=11.9
-# Fri, 01 Nov 2019 05:51:09 GMT
+# Fri, 08 Nov 2019 03:52:57 GMT
 ENV XWIKI_URL_PREFIX=https://maven.xwiki.org/releases/org/xwiki/platform/xwiki-platform-distribution-war/11.9
-# Fri, 01 Nov 2019 05:51:09 GMT
+# Fri, 08 Nov 2019 03:52:57 GMT
 ENV XWIKI_DOWNLOAD_SHA256=f4fc420b570c5da374492b236cca5df1239793979126722c1adcc642ee9b335c
-# Fri, 01 Nov 2019 05:51:43 GMT
+# Fri, 08 Nov 2019 03:53:35 GMT
 RUN rm -rf /usr/local/tomcat/webapps/* &&   mkdir -p /usr/local/tomcat/temp &&   mkdir -p /usr/local/xwiki/data &&   curl -fSL "${XWIKI_URL_PREFIX}/xwiki-platform-distribution-war-${XWIKI_VERSION}.war" -o xwiki.war &&   echo "$XWIKI_DOWNLOAD_SHA256 xwiki.war" | sha256sum -c - &&   unzip -d /usr/local/tomcat/webapps/ROOT xwiki.war &&   rm -f xwiki.war
-# Fri, 01 Nov 2019 05:51:44 GMT
+# Fri, 08 Nov 2019 03:53:36 GMT
 RUN cp /usr/share/java/mysql-connector-java-*.jar /usr/local/tomcat/webapps/ROOT/WEB-INF/lib/
-# Fri, 01 Nov 2019 05:51:44 GMT
+# Fri, 08 Nov 2019 03:53:36 GMT
 COPY file:0a1be11e2eb610a1dbcd415404e3a592641110b93090030cb831e3a19a163017 in /usr/local/tomcat/bin/ 
-# Fri, 01 Nov 2019 05:51:44 GMT
+# Fri, 08 Nov 2019 03:53:36 GMT
 COPY file:406eb381f87e0aed57baf469c64efee52199868e8fc75ff865a9661b47910460 in /usr/local/tomcat/webapps/ROOT/WEB-INF/hibernate.cfg.xml 
-# Fri, 01 Nov 2019 05:51:45 GMT
+# Fri, 08 Nov 2019 03:53:37 GMT
 RUN sed -i 's/<id>org.xwiki.platform:xwiki-platform-distribution-war/<id>org.xwiki.platform:xwiki-platform-distribution-docker/'   /usr/local/tomcat/webapps/ROOT/META-INF/extension.xed
-# Fri, 01 Nov 2019 05:51:45 GMT
+# Fri, 08 Nov 2019 03:53:37 GMT
 COPY file:f901b2d7ac3d76cd8346f9aee81b40529183e81d8aa027bb390856ac01fa6cc0 in /usr/local/bin/docker-entrypoint.sh 
-# Fri, 01 Nov 2019 05:51:45 GMT
+# Fri, 08 Nov 2019 03:53:38 GMT
 VOLUME [/usr/local/xwiki]
-# Fri, 01 Nov 2019 05:51:45 GMT
+# Fri, 08 Nov 2019 03:53:38 GMT
 ENTRYPOINT ["docker-entrypoint.sh"]
-# Fri, 01 Nov 2019 05:51:45 GMT
+# Fri, 08 Nov 2019 03:53:38 GMT
 CMD ["xwiki"]
 ```
 
@@ -4209,59 +4209,59 @@ CMD ["xwiki"]
 		Last Modified: Thu, 31 Oct 2019 22:21:39 GMT  
 		Size: 162.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:b5035666b1cd262e3117ca99ecbe11fc92c973a1164cd5c69bca60165f501520`  
-		Last Modified: Thu, 31 Oct 2019 22:40:53 GMT  
-		Size: 10.8 MB (10842099 bytes)  
+	-	`sha256:da4c04c54fa4a9b55ddef0b116fa7969185639621c525e1fe19f2b194f1ca4bc`  
+		Last Modified: Fri, 08 Nov 2019 02:22:45 GMT  
+		Size: 13.3 MB (13322685 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:60e5b903fb31d874f9a1c331071b5e855634a3ae4fa5db5a3ba0dc027bbc9c5f`  
-		Last Modified: Thu, 31 Oct 2019 22:41:36 GMT  
-		Size: 197.7 MB (197657372 bytes)  
+	-	`sha256:10235b1a516d4b068683fe79fb89be475cb2fc41b1ea76fcb4b13872bee27da0`  
+		Last Modified: Fri, 08 Nov 2019 02:23:23 GMT  
+		Size: 197.8 MB (197822335 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:f578b1f2cf8f2f5876b3185c7edd79990e67ec624e21b05b0614d04c5acb0106`  
-		Last Modified: Fri, 01 Nov 2019 02:38:58 GMT  
-		Size: 136.0 B  
+	-	`sha256:24154429346fe2204e6d5dab3868244db95f4163d1be3905621fb2b53653eb2c`  
+		Last Modified: Fri, 08 Nov 2019 03:05:39 GMT  
+		Size: 139.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c12bb0162813b1b0c82e82d87b9bdf6e96ef46d7c3aa9408a9c8d9de7c9a575a`  
-		Last Modified: Fri, 01 Nov 2019 02:39:41 GMT  
-		Size: 11.2 MB (11234934 bytes)  
+	-	`sha256:c572a63a7a797dd43aa600f689a0e6d3c85b8f94a138c2d3181801cd788b36c9`  
+		Last Modified: Fri, 08 Nov 2019 03:06:29 GMT  
+		Size: 11.3 MB (11251478 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:469391c4f542e184022627170e76ee20d527d65dfda5b22daebd7187925accb7`  
-		Last Modified: Fri, 01 Nov 2019 02:39:39 GMT  
-		Size: 133.0 B  
+	-	`sha256:a016684a4a3052bad801984d71c411cd2e4fade815d50a5ad7b5f228041d0b56`  
+		Last Modified: Fri, 08 Nov 2019 03:06:27 GMT  
+		Size: 132.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:a9cb5d6ac8ff25f915684ed166cd0c7ac4a92a7b8f447f7b573721d4e4862395`  
-		Last Modified: Fri, 01 Nov 2019 05:56:17 GMT  
-		Size: 182.5 MB (182519866 bytes)  
+	-	`sha256:c91247e8560d3e2c0be69d9c20160a5c7b9e23fdec44b0fc06fb0dd678003c6f`  
+		Last Modified: Fri, 08 Nov 2019 03:57:46 GMT  
+		Size: 179.9 MB (179895305 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:f1fb9e179e1e0794b0e3ab1fa75f30babb21fe494a3c009b61a9f0bdc94a8007`  
-		Last Modified: Fri, 01 Nov 2019 05:56:06 GMT  
-		Size: 284.2 MB (284247999 bytes)  
+	-	`sha256:a43a14f8330f2612a59d1aa4cab49393e380b7f4f788380e090d66aeeec27413`  
+		Last Modified: Fri, 08 Nov 2019 03:57:35 GMT  
+		Size: 284.2 MB (284248060 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:f55b66004ada5c63d908ecf104a82e72fbc834488f3d3268937752fff2d7cfc1`  
-		Last Modified: Fri, 01 Nov 2019 05:55:45 GMT  
-		Size: 955.6 KB (955598 bytes)  
+	-	`sha256:1829bd8f4cffb2971f321018ab8b1ff5890d9f709c1d694725799bfc7b299f6f`  
+		Last Modified: Fri, 08 Nov 2019 03:57:13 GMT  
+		Size: 955.6 KB (955603 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:d3e3aefe7f08df3a904bfa1b6fb484544d4abf98f8e67e22a29a878e40e9a1eb`  
-		Last Modified: Fri, 01 Nov 2019 05:55:45 GMT  
-		Size: 1.3 KB (1341 bytes)  
+	-	`sha256:444ce5df0050d115c048cca2619eb9669dfd6a497d0b53af7e212670c7e181a2`  
+		Last Modified: Fri, 08 Nov 2019 03:57:13 GMT  
+		Size: 1.3 KB (1346 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:f4f03a2f5eb6e67eb8d75bd2641d80a18e30ecc78cbbbbdb7def4322ba44e011`  
-		Last Modified: Fri, 01 Nov 2019 05:55:45 GMT  
-		Size: 2.3 KB (2334 bytes)  
+	-	`sha256:537505f100251872fe038c9e7189a1515539e54e927362e7a074ddda578b1430`  
+		Last Modified: Fri, 08 Nov 2019 03:57:14 GMT  
+		Size: 2.3 KB (2337 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:137909c9c97785a04ee164d5f5078d18ba1c0764e84e7c1756806863792b9645`  
-		Last Modified: Fri, 01 Nov 2019 05:55:45 GMT  
-		Size: 4.2 KB (4234 bytes)  
+	-	`sha256:93d47669c79bd6ba35cbfae545a94c242480372296a9aa60cd24044cfeb730d7`  
+		Last Modified: Fri, 08 Nov 2019 03:57:13 GMT  
+		Size: 4.2 KB (4235 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:0bea17859d854d5e0c2ad02328d87ec74e591d8c0c40dbae70b52cf059f3826a`  
-		Last Modified: Fri, 01 Nov 2019 05:55:45 GMT  
-		Size: 2.4 KB (2400 bytes)  
+	-	`sha256:0edda1fa0cef0bd96542fe7f721070f136ce34a02bc2976de8f72b54b9fca7f8`  
+		Last Modified: Fri, 08 Nov 2019 03:57:14 GMT  
+		Size: 2.4 KB (2404 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `xwiki:stable-mysql-tomcat`
 
 ```console
-$ docker pull xwiki@sha256:53a75d8da3c537c83fcaa909aad516c621db42254f9339405d1da00a69e46958
+$ docker pull xwiki@sha256:ffe63967f89e99e68d856ee74850c7a77221dc49a3ea312b352d7e1c19e61c2a
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -4271,14 +4271,14 @@ $ docker pull xwiki@sha256:53a75d8da3c537c83fcaa909aad516c621db42254f9339405d1da
 ### `xwiki:stable-mysql-tomcat` - linux; amd64
 
 ```console
-$ docker pull xwiki@sha256:cc179298fdf56b4959adf41e8d1dfc6b6f436bfb2e2eecd999d3d4503ca9ab9d
+$ docker pull xwiki@sha256:b2b5d7d74a28e5a95df8ff0fb3b3bbcc1b9e2153891d62fc0df196a7464edcd3
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **714.2 MB (714193662 bytes)**  
+-	Total Size: **714.2 MB (714231275 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:163f00c14c053c3ae84dd9cc03a9dd6f3685e3c76ec000534299ce2ecd71323e`
+-	Image ID: `sha256:4050fb76b936f3f7dcfe96bae527ffb80bf0c01df874a5e3e86d8c4b56a824e0`
 -	Entrypoint: `["docker-entrypoint.sh"]`
 -	Default Command: `["xwiki"]`
 
@@ -4295,71 +4295,71 @@ RUN mkdir -p /run/systemd && echo 'docker' > /run/systemd/container
 CMD ["/bin/bash"]
 # Thu, 31 Oct 2019 22:37:37 GMT
 ENV LANG=en_US.UTF-8 LANGUAGE=en_US:en LC_ALL=en_US.UTF-8
-# Thu, 31 Oct 2019 22:38:04 GMT
-RUN apt-get update     && apt-get install -y --no-install-recommends curl ca-certificates locales     && echo "en_US.UTF-8 UTF-8" >> /etc/locale.gen     && locale-gen en_US.UTF-8     && rm -rf /var/lib/apt/lists/*
-# Thu, 31 Oct 2019 22:38:23 GMT
-ENV JAVA_VERSION=jdk-11.0.4+11
-# Thu, 31 Oct 2019 22:38:32 GMT
-RUN set -eux;     ARCH="$(dpkg --print-architecture)";     case "${ARCH}" in        aarch64|arm64)          ESUM='10e33e1862638e11a9158947b3d7b461727d8e396e378b171be1eb4dfe12f1ed';          BINARY_URL='https://github.com/AdoptOpenJDK/openjdk11-binaries/releases/download/jdk-11.0.4%2B11/OpenJDK11U-jdk_aarch64_linux_hotspot_11.0.4_11.tar.gz';          ;;        armhf)          ESUM='19f16c4b905055a13457d06ce9a107a54289d3828bf3ae378efc6deb908a5572';          BINARY_URL='https://github.com/AdoptOpenJDK/openjdk11-binaries/releases/download/jdk-11.0.4%2B11/OpenJDK11U-jdk_arm_linux_hotspot_11.0.4_11.tar.gz';          ;;        ppc64el|ppc64le)          ESUM='fc6b616f83fea033edd836c934f3e70764b5aa1dac0446df8a8b49297ca40a5e';          BINARY_URL='https://github.com/AdoptOpenJDK/openjdk11-binaries/releases/download/jdk-11.0.4%2B11/OpenJDK11U-jdk_ppc64le_linux_hotspot_11.0.4_11.tar.gz';          ;;        s390x)          ESUM='9487d27ef65b0cc30481cd0d23466aa6b36c90dfaa8a033166fad67bc37891de';          BINARY_URL='https://github.com/AdoptOpenJDK/openjdk11-binaries/releases/download/jdk-11.0.4%2B11/OpenJDK11U-jdk_s390x_linux_hotspot_11.0.4_11.tar.gz';          ;;        amd64|x86_64)          ESUM='90c33cf3f2ed0bd773f648815de7347e69cfbb3416ef3bf41616ab1c4aa0f5a8';          BINARY_URL='https://github.com/AdoptOpenJDK/openjdk11-binaries/releases/download/jdk-11.0.4%2B11/OpenJDK11U-jdk_x64_linux_hotspot_11.0.4_11.tar.gz';          ;;        *)          echo "Unsupported arch: ${ARCH}";          exit 1;          ;;     esac;     curl -LfsSo /tmp/openjdk.tar.gz ${BINARY_URL};     echo "${ESUM} */tmp/openjdk.tar.gz" | sha256sum -c -;     mkdir -p /opt/java/openjdk;     cd /opt/java/openjdk;     tar -xf /tmp/openjdk.tar.gz --strip-components=1;     rm -rf /tmp/openjdk.tar.gz;
-# Thu, 31 Oct 2019 22:38:32 GMT
+# Fri, 08 Nov 2019 02:20:03 GMT
+RUN apt-get update     && apt-get install -y --no-install-recommends curl ca-certificates fontconfig locales     && echo "en_US.UTF-8 UTF-8" >> /etc/locale.gen     && locale-gen en_US.UTF-8     && rm -rf /var/lib/apt/lists/*
+# Fri, 08 Nov 2019 02:20:26 GMT
+ENV JAVA_VERSION=jdk-11.0.5+10
+# Fri, 08 Nov 2019 02:20:35 GMT
+RUN set -eux;     ARCH="$(dpkg --print-architecture)";     case "${ARCH}" in        armhf)          ESUM='c6b1fda3f8807028cbfcc34a4ded2e8a5a6b6239d2bcc1f06673ea6b1530df94';          BINARY_URL='https://github.com/AdoptOpenJDK/openjdk11-binaries/releases/download/jdk-11.0.5%2B10/OpenJDK11U-jdk_arm_linux_hotspot_11.0.5_10.tar.gz';          ;;        ppc64el|ppc64le)          ESUM='d763481ddc29ac0bdefb24216b3a0bf9afbb058552682567a075f9c0f7da5814';          BINARY_URL='https://github.com/AdoptOpenJDK/openjdk11-binaries/releases/download/jdk-11.0.5%2B10/OpenJDK11U-jdk_ppc64le_linux_hotspot_11.0.5_10.tar.gz';          ;;        amd64|x86_64)          ESUM='6dd0c9c8a740e6c19149e98034fba8e368fd9aa16ab417aa636854d40db1a161';          BINARY_URL='https://github.com/AdoptOpenJDK/openjdk11-binaries/releases/download/jdk-11.0.5%2B10/OpenJDK11U-jdk_x64_linux_hotspot_11.0.5_10.tar.gz';          ;;        *)          echo "Unsupported arch: ${ARCH}";          exit 1;          ;;     esac;     curl -LfsSo /tmp/openjdk.tar.gz ${BINARY_URL};     echo "${ESUM} */tmp/openjdk.tar.gz" | sha256sum -c -;     mkdir -p /opt/java/openjdk;     cd /opt/java/openjdk;     tar -xf /tmp/openjdk.tar.gz --strip-components=1;     rm -rf /tmp/openjdk.tar.gz;
+# Fri, 08 Nov 2019 02:20:36 GMT
 ENV JAVA_HOME=/opt/java/openjdk PATH=/opt/java/openjdk/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Thu, 31 Oct 2019 22:38:33 GMT
+# Fri, 08 Nov 2019 02:20:36 GMT
 CMD ["jshell"]
-# Fri, 01 Nov 2019 02:28:08 GMT
+# Fri, 08 Nov 2019 02:49:06 GMT
 ENV CATALINA_HOME=/usr/local/tomcat
-# Fri, 01 Nov 2019 02:28:08 GMT
+# Fri, 08 Nov 2019 02:49:07 GMT
 ENV PATH=/usr/local/tomcat/bin:/opt/java/openjdk/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Fri, 01 Nov 2019 02:28:09 GMT
+# Fri, 08 Nov 2019 02:49:08 GMT
 RUN mkdir -p "$CATALINA_HOME"
-# Fri, 01 Nov 2019 02:28:09 GMT
+# Fri, 08 Nov 2019 02:49:08 GMT
 WORKDIR /usr/local/tomcat
-# Fri, 01 Nov 2019 02:28:09 GMT
+# Fri, 08 Nov 2019 02:49:09 GMT
 ENV TOMCAT_NATIVE_LIBDIR=/usr/local/tomcat/native-jni-lib
-# Fri, 01 Nov 2019 02:28:09 GMT
+# Fri, 08 Nov 2019 02:49:09 GMT
 ENV LD_LIBRARY_PATH=/usr/local/tomcat/native-jni-lib
-# Fri, 01 Nov 2019 02:33:11 GMT
+# Fri, 08 Nov 2019 02:55:21 GMT
 ENV GPG_KEYS=05AB33110949707C93A279E3D3EFE6B686867BA6 07E48665A34DCAFAE522E5E6266191C37C037D42 47309207D818FFD8DCD3F83F1931D684307A10A5 541FBE7D8F78B25E055DDEE13C370389288584E7 61B832AC2F1C5A90F0F9B00A1C506407564C17A3 713DA88BE50911535FE716F5208B0AB1D63011C7 79F7026C690BAA50B92CD8B66A3AD3F4F22C4FED 9BA44C2621385CB966EBA586F72C284D731FABEE A27677289986DB50844682F8ACB77FC2E86E29AC A9C5DF4D22E99998D9875A5110C01C5A2F6059E7 DCFD35E0BF8CA7344752DE8B6FB21E8933C60243 F3A04C595DB5B6A5F1ECA43E3B7BBB100D811BBE F7DA48BB64BCB84ECBA7EE6935CD23C10D498E23
-# Fri, 01 Nov 2019 02:33:11 GMT
+# Fri, 08 Nov 2019 02:55:21 GMT
 ENV TOMCAT_MAJOR=8
-# Fri, 01 Nov 2019 02:33:11 GMT
+# Fri, 08 Nov 2019 02:55:21 GMT
 ENV TOMCAT_VERSION=8.5.47
-# Fri, 01 Nov 2019 02:33:11 GMT
+# Fri, 08 Nov 2019 02:55:21 GMT
 ENV TOMCAT_SHA512=079b85f3dfca2b137634859208fae6012860201d720d12ff0add3473f1e267d332cb12803958754e1f922599e0d42b7e97f00bcd62584d9148a6f45fde091716
-# Fri, 01 Nov 2019 02:33:46 GMT
+# Fri, 08 Nov 2019 02:56:17 GMT
 RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		gnupg dirmngr 		wget ca-certificates 	; 		ddist() { 		local f="$1"; shift; 		local distFile="$1"; shift; 		local success=; 		local distUrl=; 		for distUrl in 			'https://www.apache.org/dyn/closer.cgi?action=download&filename=' 			https://www-us.apache.org/dist/ 			https://www.apache.org/dist/ 			https://archive.apache.org/dist/ 		; do 			if wget -O "$f" "$distUrl$distFile" && [ -s "$f" ]; then 				success=1; 				break; 			fi; 		done; 		[ -n "$success" ]; 	}; 		ddist 'tomcat.tar.gz' "tomcat/tomcat-$TOMCAT_MAJOR/v$TOMCAT_VERSION/bin/apache-tomcat-$TOMCAT_VERSION.tar.gz"; 	echo "$TOMCAT_SHA512 *tomcat.tar.gz" | sha512sum --strict --check -; 	ddist 'tomcat.tar.gz.asc' "tomcat/tomcat-$TOMCAT_MAJOR/v$TOMCAT_VERSION/bin/apache-tomcat-$TOMCAT_VERSION.tar.gz.asc"; 	export GNUPGHOME="$(mktemp -d)"; 	for key in $GPG_KEYS; do 		gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys "$key"; 	done; 	gpg --batch --verify tomcat.tar.gz.asc tomcat.tar.gz; 	tar -xf tomcat.tar.gz --strip-components=1; 	rm bin/*.bat; 	rm tomcat.tar.gz*; 	command -v gpgconf && gpgconf --kill all || :; 	rm -rf "$GNUPGHOME"; 		nativeBuildDir="$(mktemp -d)"; 	tar -xf bin/tomcat-native.tar.gz -C "$nativeBuildDir" --strip-components=1; 	apt-get install -y --no-install-recommends 		dpkg-dev 		gcc 		libapr1-dev 		libssl-dev 		make 	; 	( 		export CATALINA_HOME="$PWD"; 		cd "$nativeBuildDir/native"; 		gnuArch="$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)"; 		aprConfig="$(command -v apr-1-config)"; 		./configure 			--build="$gnuArch" 			--libdir="$TOMCAT_NATIVE_LIBDIR" 			--prefix="$CATALINA_HOME" 			--with-apr="$aprConfig" 			--with-java-home="$JAVA_HOME" 			--with-ssl=yes; 		make -j "$(nproc)"; 		make install; 	); 	rm -rf "$nativeBuildDir"; 	rm bin/tomcat-native.tar.gz; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark > /dev/null; 	find "$TOMCAT_NATIVE_LIBDIR" -type f -executable -exec ldd '{}' ';' 		| awk '/=>/ { print $(NF-1) }' 		| sort -u 		| xargs -r dpkg-query --search 		| cut -d: -f1 		| sort -u 		| xargs -r apt-mark manual 	; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 	rm -rf /var/lib/apt/lists/*; 		find ./bin/ -name '*.sh' -exec sed -ri 's|^#!/bin/sh$|#!/usr/bin/env bash|' '{}' +; 		chmod -R +rX .; 	chmod 777 logs temp work
-# Fri, 01 Nov 2019 02:33:48 GMT
+# Fri, 08 Nov 2019 02:56:22 GMT
 RUN set -e 	&& nativeLines="$(catalina.sh configtest 2>&1)" 	&& nativeLines="$(echo "$nativeLines" | grep 'Apache Tomcat Native')" 	&& nativeLines="$(echo "$nativeLines" | sort -u)" 	&& if ! echo "$nativeLines" | grep 'INFO: Loaded APR based Apache Tomcat Native library' >&2; then 		echo >&2 "$nativeLines"; 		exit 1; 	fi
-# Fri, 01 Nov 2019 02:33:49 GMT
+# Fri, 08 Nov 2019 02:56:22 GMT
 EXPOSE 8080
-# Fri, 01 Nov 2019 02:33:49 GMT
+# Fri, 08 Nov 2019 02:56:22 GMT
 CMD ["catalina.sh" "run"]
-# Fri, 01 Nov 2019 05:50:23 GMT
+# Fri, 08 Nov 2019 03:52:11 GMT
 MAINTAINER Vincent Massol <vincent@massol.net>
-# Fri, 01 Nov 2019 05:51:08 GMT
+# Fri, 08 Nov 2019 03:52:56 GMT
 RUN apt-get update &&   apt-get --no-install-recommends -y install     curl     libreoffice     unzip     procps     libmysql-java &&   rm -rf /var/lib/apt/lists/*
-# Fri, 01 Nov 2019 05:51:09 GMT
+# Fri, 08 Nov 2019 03:52:57 GMT
 ENV XWIKI_VERSION=11.9
-# Fri, 01 Nov 2019 05:51:09 GMT
+# Fri, 08 Nov 2019 03:52:57 GMT
 ENV XWIKI_URL_PREFIX=https://maven.xwiki.org/releases/org/xwiki/platform/xwiki-platform-distribution-war/11.9
-# Fri, 01 Nov 2019 05:51:09 GMT
+# Fri, 08 Nov 2019 03:52:57 GMT
 ENV XWIKI_DOWNLOAD_SHA256=f4fc420b570c5da374492b236cca5df1239793979126722c1adcc642ee9b335c
-# Fri, 01 Nov 2019 05:51:43 GMT
+# Fri, 08 Nov 2019 03:53:35 GMT
 RUN rm -rf /usr/local/tomcat/webapps/* &&   mkdir -p /usr/local/tomcat/temp &&   mkdir -p /usr/local/xwiki/data &&   curl -fSL "${XWIKI_URL_PREFIX}/xwiki-platform-distribution-war-${XWIKI_VERSION}.war" -o xwiki.war &&   echo "$XWIKI_DOWNLOAD_SHA256 xwiki.war" | sha256sum -c - &&   unzip -d /usr/local/tomcat/webapps/ROOT xwiki.war &&   rm -f xwiki.war
-# Fri, 01 Nov 2019 05:51:44 GMT
+# Fri, 08 Nov 2019 03:53:36 GMT
 RUN cp /usr/share/java/mysql-connector-java-*.jar /usr/local/tomcat/webapps/ROOT/WEB-INF/lib/
-# Fri, 01 Nov 2019 05:51:44 GMT
+# Fri, 08 Nov 2019 03:53:36 GMT
 COPY file:0a1be11e2eb610a1dbcd415404e3a592641110b93090030cb831e3a19a163017 in /usr/local/tomcat/bin/ 
-# Fri, 01 Nov 2019 05:51:44 GMT
+# Fri, 08 Nov 2019 03:53:36 GMT
 COPY file:406eb381f87e0aed57baf469c64efee52199868e8fc75ff865a9661b47910460 in /usr/local/tomcat/webapps/ROOT/WEB-INF/hibernate.cfg.xml 
-# Fri, 01 Nov 2019 05:51:45 GMT
+# Fri, 08 Nov 2019 03:53:37 GMT
 RUN sed -i 's/<id>org.xwiki.platform:xwiki-platform-distribution-war/<id>org.xwiki.platform:xwiki-platform-distribution-docker/'   /usr/local/tomcat/webapps/ROOT/META-INF/extension.xed
-# Fri, 01 Nov 2019 05:51:45 GMT
+# Fri, 08 Nov 2019 03:53:37 GMT
 COPY file:f901b2d7ac3d76cd8346f9aee81b40529183e81d8aa027bb390856ac01fa6cc0 in /usr/local/bin/docker-entrypoint.sh 
-# Fri, 01 Nov 2019 05:51:45 GMT
+# Fri, 08 Nov 2019 03:53:38 GMT
 VOLUME [/usr/local/xwiki]
-# Fri, 01 Nov 2019 05:51:45 GMT
+# Fri, 08 Nov 2019 03:53:38 GMT
 ENTRYPOINT ["docker-entrypoint.sh"]
-# Fri, 01 Nov 2019 05:51:45 GMT
+# Fri, 08 Nov 2019 03:53:38 GMT
 CMD ["xwiki"]
 ```
 
@@ -4380,59 +4380,59 @@ CMD ["xwiki"]
 		Last Modified: Thu, 31 Oct 2019 22:21:39 GMT  
 		Size: 162.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:b5035666b1cd262e3117ca99ecbe11fc92c973a1164cd5c69bca60165f501520`  
-		Last Modified: Thu, 31 Oct 2019 22:40:53 GMT  
-		Size: 10.8 MB (10842099 bytes)  
+	-	`sha256:da4c04c54fa4a9b55ddef0b116fa7969185639621c525e1fe19f2b194f1ca4bc`  
+		Last Modified: Fri, 08 Nov 2019 02:22:45 GMT  
+		Size: 13.3 MB (13322685 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:60e5b903fb31d874f9a1c331071b5e855634a3ae4fa5db5a3ba0dc027bbc9c5f`  
-		Last Modified: Thu, 31 Oct 2019 22:41:36 GMT  
-		Size: 197.7 MB (197657372 bytes)  
+	-	`sha256:10235b1a516d4b068683fe79fb89be475cb2fc41b1ea76fcb4b13872bee27da0`  
+		Last Modified: Fri, 08 Nov 2019 02:23:23 GMT  
+		Size: 197.8 MB (197822335 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:f578b1f2cf8f2f5876b3185c7edd79990e67ec624e21b05b0614d04c5acb0106`  
-		Last Modified: Fri, 01 Nov 2019 02:38:58 GMT  
-		Size: 136.0 B  
+	-	`sha256:24154429346fe2204e6d5dab3868244db95f4163d1be3905621fb2b53653eb2c`  
+		Last Modified: Fri, 08 Nov 2019 03:05:39 GMT  
+		Size: 139.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c12bb0162813b1b0c82e82d87b9bdf6e96ef46d7c3aa9408a9c8d9de7c9a575a`  
-		Last Modified: Fri, 01 Nov 2019 02:39:41 GMT  
-		Size: 11.2 MB (11234934 bytes)  
+	-	`sha256:c572a63a7a797dd43aa600f689a0e6d3c85b8f94a138c2d3181801cd788b36c9`  
+		Last Modified: Fri, 08 Nov 2019 03:06:29 GMT  
+		Size: 11.3 MB (11251478 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:469391c4f542e184022627170e76ee20d527d65dfda5b22daebd7187925accb7`  
-		Last Modified: Fri, 01 Nov 2019 02:39:39 GMT  
-		Size: 133.0 B  
+	-	`sha256:a016684a4a3052bad801984d71c411cd2e4fade815d50a5ad7b5f228041d0b56`  
+		Last Modified: Fri, 08 Nov 2019 03:06:27 GMT  
+		Size: 132.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:a9cb5d6ac8ff25f915684ed166cd0c7ac4a92a7b8f447f7b573721d4e4862395`  
-		Last Modified: Fri, 01 Nov 2019 05:56:17 GMT  
-		Size: 182.5 MB (182519866 bytes)  
+	-	`sha256:c91247e8560d3e2c0be69d9c20160a5c7b9e23fdec44b0fc06fb0dd678003c6f`  
+		Last Modified: Fri, 08 Nov 2019 03:57:46 GMT  
+		Size: 179.9 MB (179895305 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:f1fb9e179e1e0794b0e3ab1fa75f30babb21fe494a3c009b61a9f0bdc94a8007`  
-		Last Modified: Fri, 01 Nov 2019 05:56:06 GMT  
-		Size: 284.2 MB (284247999 bytes)  
+	-	`sha256:a43a14f8330f2612a59d1aa4cab49393e380b7f4f788380e090d66aeeec27413`  
+		Last Modified: Fri, 08 Nov 2019 03:57:35 GMT  
+		Size: 284.2 MB (284248060 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:f55b66004ada5c63d908ecf104a82e72fbc834488f3d3268937752fff2d7cfc1`  
-		Last Modified: Fri, 01 Nov 2019 05:55:45 GMT  
-		Size: 955.6 KB (955598 bytes)  
+	-	`sha256:1829bd8f4cffb2971f321018ab8b1ff5890d9f709c1d694725799bfc7b299f6f`  
+		Last Modified: Fri, 08 Nov 2019 03:57:13 GMT  
+		Size: 955.6 KB (955603 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:d3e3aefe7f08df3a904bfa1b6fb484544d4abf98f8e67e22a29a878e40e9a1eb`  
-		Last Modified: Fri, 01 Nov 2019 05:55:45 GMT  
-		Size: 1.3 KB (1341 bytes)  
+	-	`sha256:444ce5df0050d115c048cca2619eb9669dfd6a497d0b53af7e212670c7e181a2`  
+		Last Modified: Fri, 08 Nov 2019 03:57:13 GMT  
+		Size: 1.3 KB (1346 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:f4f03a2f5eb6e67eb8d75bd2641d80a18e30ecc78cbbbbdb7def4322ba44e011`  
-		Last Modified: Fri, 01 Nov 2019 05:55:45 GMT  
-		Size: 2.3 KB (2334 bytes)  
+	-	`sha256:537505f100251872fe038c9e7189a1515539e54e927362e7a074ddda578b1430`  
+		Last Modified: Fri, 08 Nov 2019 03:57:14 GMT  
+		Size: 2.3 KB (2337 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:137909c9c97785a04ee164d5f5078d18ba1c0764e84e7c1756806863792b9645`  
-		Last Modified: Fri, 01 Nov 2019 05:55:45 GMT  
-		Size: 4.2 KB (4234 bytes)  
+	-	`sha256:93d47669c79bd6ba35cbfae545a94c242480372296a9aa60cd24044cfeb730d7`  
+		Last Modified: Fri, 08 Nov 2019 03:57:13 GMT  
+		Size: 4.2 KB (4235 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:0bea17859d854d5e0c2ad02328d87ec74e591d8c0c40dbae70b52cf059f3826a`  
-		Last Modified: Fri, 01 Nov 2019 05:55:45 GMT  
-		Size: 2.4 KB (2400 bytes)  
+	-	`sha256:0edda1fa0cef0bd96542fe7f721070f136ce34a02bc2976de8f72b54b9fca7f8`  
+		Last Modified: Fri, 08 Nov 2019 03:57:14 GMT  
+		Size: 2.4 KB (2404 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `xwiki:stable-postgres`
 
 ```console
-$ docker pull xwiki@sha256:c390781c299203e3a155c5cd02a310cb07ce0923227a0a0450f5c5cf27fa03a8
+$ docker pull xwiki@sha256:6aac021f2896446f7dc9812d47cfab5f33c14abff540e56b2898d2ce48d9f61b
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -4443,14 +4443,14 @@ $ docker pull xwiki@sha256:c390781c299203e3a155c5cd02a310cb07ce0923227a0a0450f5c
 ### `xwiki:stable-postgres` - linux; amd64
 
 ```console
-$ docker pull xwiki@sha256:45cc76f7068c4a776a32d76d17c4396d928467c26e2621eb95afd04fd0968203
+$ docker pull xwiki@sha256:cac9f8446174cb20ccaa7188b1288a226bfe66784def15d4c8faf65e6d135589
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **713.5 MB (713522889 bytes)**  
+-	Total Size: **713.6 MB (713559715 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:8cfd018e9b18bf45e28be5a1dc903ef92f7ffd845fe3cd718dc6fdce304e21cc`
+-	Image ID: `sha256:0c0766a91ac95edb9ac0ee19721ebb86c2d4b43bb3b51ef65edf06cb61719b94`
 -	Entrypoint: `["docker-entrypoint.sh"]`
 -	Default Command: `["xwiki"]`
 
@@ -4467,71 +4467,71 @@ RUN mkdir -p /run/systemd && echo 'docker' > /run/systemd/container
 CMD ["/bin/bash"]
 # Thu, 31 Oct 2019 22:37:37 GMT
 ENV LANG=en_US.UTF-8 LANGUAGE=en_US:en LC_ALL=en_US.UTF-8
-# Thu, 31 Oct 2019 22:38:04 GMT
-RUN apt-get update     && apt-get install -y --no-install-recommends curl ca-certificates locales     && echo "en_US.UTF-8 UTF-8" >> /etc/locale.gen     && locale-gen en_US.UTF-8     && rm -rf /var/lib/apt/lists/*
-# Thu, 31 Oct 2019 22:38:23 GMT
-ENV JAVA_VERSION=jdk-11.0.4+11
-# Thu, 31 Oct 2019 22:38:32 GMT
-RUN set -eux;     ARCH="$(dpkg --print-architecture)";     case "${ARCH}" in        aarch64|arm64)          ESUM='10e33e1862638e11a9158947b3d7b461727d8e396e378b171be1eb4dfe12f1ed';          BINARY_URL='https://github.com/AdoptOpenJDK/openjdk11-binaries/releases/download/jdk-11.0.4%2B11/OpenJDK11U-jdk_aarch64_linux_hotspot_11.0.4_11.tar.gz';          ;;        armhf)          ESUM='19f16c4b905055a13457d06ce9a107a54289d3828bf3ae378efc6deb908a5572';          BINARY_URL='https://github.com/AdoptOpenJDK/openjdk11-binaries/releases/download/jdk-11.0.4%2B11/OpenJDK11U-jdk_arm_linux_hotspot_11.0.4_11.tar.gz';          ;;        ppc64el|ppc64le)          ESUM='fc6b616f83fea033edd836c934f3e70764b5aa1dac0446df8a8b49297ca40a5e';          BINARY_URL='https://github.com/AdoptOpenJDK/openjdk11-binaries/releases/download/jdk-11.0.4%2B11/OpenJDK11U-jdk_ppc64le_linux_hotspot_11.0.4_11.tar.gz';          ;;        s390x)          ESUM='9487d27ef65b0cc30481cd0d23466aa6b36c90dfaa8a033166fad67bc37891de';          BINARY_URL='https://github.com/AdoptOpenJDK/openjdk11-binaries/releases/download/jdk-11.0.4%2B11/OpenJDK11U-jdk_s390x_linux_hotspot_11.0.4_11.tar.gz';          ;;        amd64|x86_64)          ESUM='90c33cf3f2ed0bd773f648815de7347e69cfbb3416ef3bf41616ab1c4aa0f5a8';          BINARY_URL='https://github.com/AdoptOpenJDK/openjdk11-binaries/releases/download/jdk-11.0.4%2B11/OpenJDK11U-jdk_x64_linux_hotspot_11.0.4_11.tar.gz';          ;;        *)          echo "Unsupported arch: ${ARCH}";          exit 1;          ;;     esac;     curl -LfsSo /tmp/openjdk.tar.gz ${BINARY_URL};     echo "${ESUM} */tmp/openjdk.tar.gz" | sha256sum -c -;     mkdir -p /opt/java/openjdk;     cd /opt/java/openjdk;     tar -xf /tmp/openjdk.tar.gz --strip-components=1;     rm -rf /tmp/openjdk.tar.gz;
-# Thu, 31 Oct 2019 22:38:32 GMT
+# Fri, 08 Nov 2019 02:20:03 GMT
+RUN apt-get update     && apt-get install -y --no-install-recommends curl ca-certificates fontconfig locales     && echo "en_US.UTF-8 UTF-8" >> /etc/locale.gen     && locale-gen en_US.UTF-8     && rm -rf /var/lib/apt/lists/*
+# Fri, 08 Nov 2019 02:20:26 GMT
+ENV JAVA_VERSION=jdk-11.0.5+10
+# Fri, 08 Nov 2019 02:20:35 GMT
+RUN set -eux;     ARCH="$(dpkg --print-architecture)";     case "${ARCH}" in        armhf)          ESUM='c6b1fda3f8807028cbfcc34a4ded2e8a5a6b6239d2bcc1f06673ea6b1530df94';          BINARY_URL='https://github.com/AdoptOpenJDK/openjdk11-binaries/releases/download/jdk-11.0.5%2B10/OpenJDK11U-jdk_arm_linux_hotspot_11.0.5_10.tar.gz';          ;;        ppc64el|ppc64le)          ESUM='d763481ddc29ac0bdefb24216b3a0bf9afbb058552682567a075f9c0f7da5814';          BINARY_URL='https://github.com/AdoptOpenJDK/openjdk11-binaries/releases/download/jdk-11.0.5%2B10/OpenJDK11U-jdk_ppc64le_linux_hotspot_11.0.5_10.tar.gz';          ;;        amd64|x86_64)          ESUM='6dd0c9c8a740e6c19149e98034fba8e368fd9aa16ab417aa636854d40db1a161';          BINARY_URL='https://github.com/AdoptOpenJDK/openjdk11-binaries/releases/download/jdk-11.0.5%2B10/OpenJDK11U-jdk_x64_linux_hotspot_11.0.5_10.tar.gz';          ;;        *)          echo "Unsupported arch: ${ARCH}";          exit 1;          ;;     esac;     curl -LfsSo /tmp/openjdk.tar.gz ${BINARY_URL};     echo "${ESUM} */tmp/openjdk.tar.gz" | sha256sum -c -;     mkdir -p /opt/java/openjdk;     cd /opt/java/openjdk;     tar -xf /tmp/openjdk.tar.gz --strip-components=1;     rm -rf /tmp/openjdk.tar.gz;
+# Fri, 08 Nov 2019 02:20:36 GMT
 ENV JAVA_HOME=/opt/java/openjdk PATH=/opt/java/openjdk/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Thu, 31 Oct 2019 22:38:33 GMT
+# Fri, 08 Nov 2019 02:20:36 GMT
 CMD ["jshell"]
-# Fri, 01 Nov 2019 02:28:08 GMT
+# Fri, 08 Nov 2019 02:49:06 GMT
 ENV CATALINA_HOME=/usr/local/tomcat
-# Fri, 01 Nov 2019 02:28:08 GMT
+# Fri, 08 Nov 2019 02:49:07 GMT
 ENV PATH=/usr/local/tomcat/bin:/opt/java/openjdk/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Fri, 01 Nov 2019 02:28:09 GMT
+# Fri, 08 Nov 2019 02:49:08 GMT
 RUN mkdir -p "$CATALINA_HOME"
-# Fri, 01 Nov 2019 02:28:09 GMT
+# Fri, 08 Nov 2019 02:49:08 GMT
 WORKDIR /usr/local/tomcat
-# Fri, 01 Nov 2019 02:28:09 GMT
+# Fri, 08 Nov 2019 02:49:09 GMT
 ENV TOMCAT_NATIVE_LIBDIR=/usr/local/tomcat/native-jni-lib
-# Fri, 01 Nov 2019 02:28:09 GMT
+# Fri, 08 Nov 2019 02:49:09 GMT
 ENV LD_LIBRARY_PATH=/usr/local/tomcat/native-jni-lib
-# Fri, 01 Nov 2019 02:33:11 GMT
+# Fri, 08 Nov 2019 02:55:21 GMT
 ENV GPG_KEYS=05AB33110949707C93A279E3D3EFE6B686867BA6 07E48665A34DCAFAE522E5E6266191C37C037D42 47309207D818FFD8DCD3F83F1931D684307A10A5 541FBE7D8F78B25E055DDEE13C370389288584E7 61B832AC2F1C5A90F0F9B00A1C506407564C17A3 713DA88BE50911535FE716F5208B0AB1D63011C7 79F7026C690BAA50B92CD8B66A3AD3F4F22C4FED 9BA44C2621385CB966EBA586F72C284D731FABEE A27677289986DB50844682F8ACB77FC2E86E29AC A9C5DF4D22E99998D9875A5110C01C5A2F6059E7 DCFD35E0BF8CA7344752DE8B6FB21E8933C60243 F3A04C595DB5B6A5F1ECA43E3B7BBB100D811BBE F7DA48BB64BCB84ECBA7EE6935CD23C10D498E23
-# Fri, 01 Nov 2019 02:33:11 GMT
+# Fri, 08 Nov 2019 02:55:21 GMT
 ENV TOMCAT_MAJOR=8
-# Fri, 01 Nov 2019 02:33:11 GMT
+# Fri, 08 Nov 2019 02:55:21 GMT
 ENV TOMCAT_VERSION=8.5.47
-# Fri, 01 Nov 2019 02:33:11 GMT
+# Fri, 08 Nov 2019 02:55:21 GMT
 ENV TOMCAT_SHA512=079b85f3dfca2b137634859208fae6012860201d720d12ff0add3473f1e267d332cb12803958754e1f922599e0d42b7e97f00bcd62584d9148a6f45fde091716
-# Fri, 01 Nov 2019 02:33:46 GMT
+# Fri, 08 Nov 2019 02:56:17 GMT
 RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		gnupg dirmngr 		wget ca-certificates 	; 		ddist() { 		local f="$1"; shift; 		local distFile="$1"; shift; 		local success=; 		local distUrl=; 		for distUrl in 			'https://www.apache.org/dyn/closer.cgi?action=download&filename=' 			https://www-us.apache.org/dist/ 			https://www.apache.org/dist/ 			https://archive.apache.org/dist/ 		; do 			if wget -O "$f" "$distUrl$distFile" && [ -s "$f" ]; then 				success=1; 				break; 			fi; 		done; 		[ -n "$success" ]; 	}; 		ddist 'tomcat.tar.gz' "tomcat/tomcat-$TOMCAT_MAJOR/v$TOMCAT_VERSION/bin/apache-tomcat-$TOMCAT_VERSION.tar.gz"; 	echo "$TOMCAT_SHA512 *tomcat.tar.gz" | sha512sum --strict --check -; 	ddist 'tomcat.tar.gz.asc' "tomcat/tomcat-$TOMCAT_MAJOR/v$TOMCAT_VERSION/bin/apache-tomcat-$TOMCAT_VERSION.tar.gz.asc"; 	export GNUPGHOME="$(mktemp -d)"; 	for key in $GPG_KEYS; do 		gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys "$key"; 	done; 	gpg --batch --verify tomcat.tar.gz.asc tomcat.tar.gz; 	tar -xf tomcat.tar.gz --strip-components=1; 	rm bin/*.bat; 	rm tomcat.tar.gz*; 	command -v gpgconf && gpgconf --kill all || :; 	rm -rf "$GNUPGHOME"; 		nativeBuildDir="$(mktemp -d)"; 	tar -xf bin/tomcat-native.tar.gz -C "$nativeBuildDir" --strip-components=1; 	apt-get install -y --no-install-recommends 		dpkg-dev 		gcc 		libapr1-dev 		libssl-dev 		make 	; 	( 		export CATALINA_HOME="$PWD"; 		cd "$nativeBuildDir/native"; 		gnuArch="$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)"; 		aprConfig="$(command -v apr-1-config)"; 		./configure 			--build="$gnuArch" 			--libdir="$TOMCAT_NATIVE_LIBDIR" 			--prefix="$CATALINA_HOME" 			--with-apr="$aprConfig" 			--with-java-home="$JAVA_HOME" 			--with-ssl=yes; 		make -j "$(nproc)"; 		make install; 	); 	rm -rf "$nativeBuildDir"; 	rm bin/tomcat-native.tar.gz; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark > /dev/null; 	find "$TOMCAT_NATIVE_LIBDIR" -type f -executable -exec ldd '{}' ';' 		| awk '/=>/ { print $(NF-1) }' 		| sort -u 		| xargs -r dpkg-query --search 		| cut -d: -f1 		| sort -u 		| xargs -r apt-mark manual 	; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 	rm -rf /var/lib/apt/lists/*; 		find ./bin/ -name '*.sh' -exec sed -ri 's|^#!/bin/sh$|#!/usr/bin/env bash|' '{}' +; 		chmod -R +rX .; 	chmod 777 logs temp work
-# Fri, 01 Nov 2019 02:33:48 GMT
+# Fri, 08 Nov 2019 02:56:22 GMT
 RUN set -e 	&& nativeLines="$(catalina.sh configtest 2>&1)" 	&& nativeLines="$(echo "$nativeLines" | grep 'Apache Tomcat Native')" 	&& nativeLines="$(echo "$nativeLines" | sort -u)" 	&& if ! echo "$nativeLines" | grep 'INFO: Loaded APR based Apache Tomcat Native library' >&2; then 		echo >&2 "$nativeLines"; 		exit 1; 	fi
-# Fri, 01 Nov 2019 02:33:49 GMT
+# Fri, 08 Nov 2019 02:56:22 GMT
 EXPOSE 8080
-# Fri, 01 Nov 2019 02:33:49 GMT
+# Fri, 08 Nov 2019 02:56:22 GMT
 CMD ["catalina.sh" "run"]
-# Fri, 01 Nov 2019 05:50:23 GMT
+# Fri, 08 Nov 2019 03:52:11 GMT
 MAINTAINER Vincent Massol <vincent@massol.net>
-# Fri, 01 Nov 2019 05:52:38 GMT
+# Fri, 08 Nov 2019 03:54:40 GMT
 RUN apt-get update &&   apt-get --no-install-recommends -y install     curl     libreoffice     unzip     procps     libpostgresql-jdbc-java &&   rm -rf /var/lib/apt/lists/*
-# Fri, 01 Nov 2019 05:52:39 GMT
+# Fri, 08 Nov 2019 03:54:41 GMT
 ENV XWIKI_VERSION=11.9
-# Fri, 01 Nov 2019 05:52:39 GMT
+# Fri, 08 Nov 2019 03:54:41 GMT
 ENV XWIKI_URL_PREFIX=https://maven.xwiki.org/releases/org/xwiki/platform/xwiki-platform-distribution-war/11.9
-# Fri, 01 Nov 2019 05:52:39 GMT
+# Fri, 08 Nov 2019 03:54:41 GMT
 ENV XWIKI_DOWNLOAD_SHA256=f4fc420b570c5da374492b236cca5df1239793979126722c1adcc642ee9b335c
-# Fri, 01 Nov 2019 05:53:19 GMT
+# Fri, 08 Nov 2019 03:55:15 GMT
 RUN rm -rf /usr/local/tomcat/webapps/* &&   mkdir -p /usr/local/tomcat/temp &&   mkdir -p /usr/local/xwiki/data &&   curl -fSL "${XWIKI_URL_PREFIX}/xwiki-platform-distribution-war-${XWIKI_VERSION}.war" -o xwiki.war &&   echo "$XWIKI_DOWNLOAD_SHA256 xwiki.war" | sha256sum -c - &&   unzip -d /usr/local/tomcat/webapps/ROOT xwiki.war &&   rm -f xwiki.war
-# Fri, 01 Nov 2019 05:53:20 GMT
+# Fri, 08 Nov 2019 03:55:16 GMT
 RUN cp /usr/share/java/postgresql-jdbc4.jar /usr/local/tomcat/webapps/ROOT/WEB-INF/lib/
-# Fri, 01 Nov 2019 05:53:20 GMT
+# Fri, 08 Nov 2019 03:55:16 GMT
 COPY file:0a1be11e2eb610a1dbcd415404e3a592641110b93090030cb831e3a19a163017 in /usr/local/tomcat/bin/ 
-# Fri, 01 Nov 2019 05:53:20 GMT
+# Fri, 08 Nov 2019 03:55:16 GMT
 COPY file:bb513b07693b0f03295b679c3da15a7fa3d7769583b3db4897a41cfec3529978 in /usr/local/tomcat/webapps/ROOT/WEB-INF/hibernate.cfg.xml 
-# Fri, 01 Nov 2019 05:53:21 GMT
+# Fri, 08 Nov 2019 03:55:17 GMT
 RUN sed -i 's/<id>org.xwiki.platform:xwiki-platform-distribution-war/<id>org.xwiki.platform:xwiki-platform-distribution-docker/'   /usr/local/tomcat/webapps/ROOT/META-INF/extension.xed
-# Fri, 01 Nov 2019 05:53:21 GMT
+# Fri, 08 Nov 2019 03:55:17 GMT
 COPY file:f901b2d7ac3d76cd8346f9aee81b40529183e81d8aa027bb390856ac01fa6cc0 in /usr/local/bin/docker-entrypoint.sh 
-# Fri, 01 Nov 2019 05:53:21 GMT
+# Fri, 08 Nov 2019 03:55:18 GMT
 VOLUME [/usr/local/xwiki]
-# Fri, 01 Nov 2019 05:53:22 GMT
+# Fri, 08 Nov 2019 03:55:18 GMT
 ENTRYPOINT ["docker-entrypoint.sh"]
-# Fri, 01 Nov 2019 05:53:22 GMT
+# Fri, 08 Nov 2019 03:55:18 GMT
 CMD ["xwiki"]
 ```
 
@@ -4552,53 +4552,53 @@ CMD ["xwiki"]
 		Last Modified: Thu, 31 Oct 2019 22:21:39 GMT  
 		Size: 162.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:b5035666b1cd262e3117ca99ecbe11fc92c973a1164cd5c69bca60165f501520`  
-		Last Modified: Thu, 31 Oct 2019 22:40:53 GMT  
-		Size: 10.8 MB (10842099 bytes)  
+	-	`sha256:da4c04c54fa4a9b55ddef0b116fa7969185639621c525e1fe19f2b194f1ca4bc`  
+		Last Modified: Fri, 08 Nov 2019 02:22:45 GMT  
+		Size: 13.3 MB (13322685 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:60e5b903fb31d874f9a1c331071b5e855634a3ae4fa5db5a3ba0dc027bbc9c5f`  
-		Last Modified: Thu, 31 Oct 2019 22:41:36 GMT  
-		Size: 197.7 MB (197657372 bytes)  
+	-	`sha256:10235b1a516d4b068683fe79fb89be475cb2fc41b1ea76fcb4b13872bee27da0`  
+		Last Modified: Fri, 08 Nov 2019 02:23:23 GMT  
+		Size: 197.8 MB (197822335 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:f578b1f2cf8f2f5876b3185c7edd79990e67ec624e21b05b0614d04c5acb0106`  
-		Last Modified: Fri, 01 Nov 2019 02:38:58 GMT  
-		Size: 136.0 B  
+	-	`sha256:24154429346fe2204e6d5dab3868244db95f4163d1be3905621fb2b53653eb2c`  
+		Last Modified: Fri, 08 Nov 2019 03:05:39 GMT  
+		Size: 139.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c12bb0162813b1b0c82e82d87b9bdf6e96ef46d7c3aa9408a9c8d9de7c9a575a`  
-		Last Modified: Fri, 01 Nov 2019 02:39:41 GMT  
-		Size: 11.2 MB (11234934 bytes)  
+	-	`sha256:c572a63a7a797dd43aa600f689a0e6d3c85b8f94a138c2d3181801cd788b36c9`  
+		Last Modified: Fri, 08 Nov 2019 03:06:29 GMT  
+		Size: 11.3 MB (11251478 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:469391c4f542e184022627170e76ee20d527d65dfda5b22daebd7187925accb7`  
-		Last Modified: Fri, 01 Nov 2019 02:39:39 GMT  
-		Size: 133.0 B  
+	-	`sha256:a016684a4a3052bad801984d71c411cd2e4fade815d50a5ad7b5f228041d0b56`  
+		Last Modified: Fri, 08 Nov 2019 03:06:27 GMT  
+		Size: 132.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:b1abd62c53b3e223d5fb653d9221f3a82085f6983b1282f1d6136eae7846f035`  
-		Last Modified: Fri, 01 Nov 2019 05:57:01 GMT  
-		Size: 182.2 MB (182185615 bytes)  
+	-	`sha256:c6c389865c6b163f05cd9fb7175a147244f1fe7f2e875e7e9254fba9d4355ac6`  
+		Last Modified: Fri, 08 Nov 2019 03:58:52 GMT  
+		Size: 179.6 MB (179560341 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:b2412a2e75bce567834b7b0300b4f76b590e2d88009e6832016c2e569bd196db`  
-		Last Modified: Fri, 01 Nov 2019 05:56:57 GMT  
-		Size: 284.2 MB (284248067 bytes)  
+	-	`sha256:562aa1e5b86036561bf92eeb259a1874ef32891c757288834b9b2b719eaa9fa4`  
+		Last Modified: Fri, 08 Nov 2019 03:58:40 GMT  
+		Size: 284.2 MB (284248070 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:8886f5e85572a235e74cde689873e6d0609f55bda56c7cacaeca9f8412ae394e`  
-		Last Modified: Fri, 01 Nov 2019 05:56:28 GMT  
-		Size: 618.9 KB (618861 bytes)  
+	-	`sha256:0b004eb7bf4e98f684ef042ba415dc8f6b8fe6dd200b909e709adb0773d5895a`  
+		Last Modified: Fri, 08 Nov 2019 03:58:19 GMT  
+		Size: 618.9 KB (618859 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:d49fa8b65c25d20f133021be9df1aa2dfadede3479c41d19345618f21a7f48f9`  
-		Last Modified: Fri, 01 Nov 2019 05:56:29 GMT  
+	-	`sha256:0541b695898dc98f9d4d23fe1965e1456ccb9e3b06a73d14fcd69584b0910eff`  
+		Last Modified: Fri, 08 Nov 2019 03:58:19 GMT  
 		Size: 1.3 KB (1346 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:3a1150187c99c2a8c3205299f27bfaff6828c5f49f0982f27abe3adf5353b961`  
-		Last Modified: Fri, 01 Nov 2019 05:56:28 GMT  
+	-	`sha256:265ff15371c618be572359f343975265a764c4b35dffcd18d06e1e7f7c22755b`  
+		Last Modified: Fri, 08 Nov 2019 03:58:20 GMT  
 		Size: 2.5 KB (2476 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c851b19a77e3895b2caa2812152a5fe78de8be85ee949e8c0c36db12f9930159`  
-		Last Modified: Fri, 01 Nov 2019 05:56:28 GMT  
+	-	`sha256:3e0231d408083ed04206ee491020508906d4a82d15c98adbb1f9c7f83f07915e`  
+		Last Modified: Fri, 08 Nov 2019 03:58:19 GMT  
 		Size: 4.2 KB (4235 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:d2d5f5d7278c16dddfc7c6238b563e24bb09515286c9438f4bdba4b02f7003a9`  
-		Last Modified: Fri, 01 Nov 2019 05:56:28 GMT  
-		Size: 2.4 KB (2399 bytes)  
+	-	`sha256:61f95c3de4daec2356b89cdb675a548338445969c3b925d74dc86f622893d833`  
+		Last Modified: Fri, 08 Nov 2019 03:58:19 GMT  
+		Size: 2.4 KB (2403 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `xwiki:stable-postgres` - linux; arm64 variant v8
@@ -4765,7 +4765,7 @@ CMD ["xwiki"]
 ## `xwiki:stable-postgres-tomcat`
 
 ```console
-$ docker pull xwiki@sha256:c390781c299203e3a155c5cd02a310cb07ce0923227a0a0450f5c5cf27fa03a8
+$ docker pull xwiki@sha256:6aac021f2896446f7dc9812d47cfab5f33c14abff540e56b2898d2ce48d9f61b
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -4776,14 +4776,14 @@ $ docker pull xwiki@sha256:c390781c299203e3a155c5cd02a310cb07ce0923227a0a0450f5c
 ### `xwiki:stable-postgres-tomcat` - linux; amd64
 
 ```console
-$ docker pull xwiki@sha256:45cc76f7068c4a776a32d76d17c4396d928467c26e2621eb95afd04fd0968203
+$ docker pull xwiki@sha256:cac9f8446174cb20ccaa7188b1288a226bfe66784def15d4c8faf65e6d135589
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **713.5 MB (713522889 bytes)**  
+-	Total Size: **713.6 MB (713559715 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:8cfd018e9b18bf45e28be5a1dc903ef92f7ffd845fe3cd718dc6fdce304e21cc`
+-	Image ID: `sha256:0c0766a91ac95edb9ac0ee19721ebb86c2d4b43bb3b51ef65edf06cb61719b94`
 -	Entrypoint: `["docker-entrypoint.sh"]`
 -	Default Command: `["xwiki"]`
 
@@ -4800,71 +4800,71 @@ RUN mkdir -p /run/systemd && echo 'docker' > /run/systemd/container
 CMD ["/bin/bash"]
 # Thu, 31 Oct 2019 22:37:37 GMT
 ENV LANG=en_US.UTF-8 LANGUAGE=en_US:en LC_ALL=en_US.UTF-8
-# Thu, 31 Oct 2019 22:38:04 GMT
-RUN apt-get update     && apt-get install -y --no-install-recommends curl ca-certificates locales     && echo "en_US.UTF-8 UTF-8" >> /etc/locale.gen     && locale-gen en_US.UTF-8     && rm -rf /var/lib/apt/lists/*
-# Thu, 31 Oct 2019 22:38:23 GMT
-ENV JAVA_VERSION=jdk-11.0.4+11
-# Thu, 31 Oct 2019 22:38:32 GMT
-RUN set -eux;     ARCH="$(dpkg --print-architecture)";     case "${ARCH}" in        aarch64|arm64)          ESUM='10e33e1862638e11a9158947b3d7b461727d8e396e378b171be1eb4dfe12f1ed';          BINARY_URL='https://github.com/AdoptOpenJDK/openjdk11-binaries/releases/download/jdk-11.0.4%2B11/OpenJDK11U-jdk_aarch64_linux_hotspot_11.0.4_11.tar.gz';          ;;        armhf)          ESUM='19f16c4b905055a13457d06ce9a107a54289d3828bf3ae378efc6deb908a5572';          BINARY_URL='https://github.com/AdoptOpenJDK/openjdk11-binaries/releases/download/jdk-11.0.4%2B11/OpenJDK11U-jdk_arm_linux_hotspot_11.0.4_11.tar.gz';          ;;        ppc64el|ppc64le)          ESUM='fc6b616f83fea033edd836c934f3e70764b5aa1dac0446df8a8b49297ca40a5e';          BINARY_URL='https://github.com/AdoptOpenJDK/openjdk11-binaries/releases/download/jdk-11.0.4%2B11/OpenJDK11U-jdk_ppc64le_linux_hotspot_11.0.4_11.tar.gz';          ;;        s390x)          ESUM='9487d27ef65b0cc30481cd0d23466aa6b36c90dfaa8a033166fad67bc37891de';          BINARY_URL='https://github.com/AdoptOpenJDK/openjdk11-binaries/releases/download/jdk-11.0.4%2B11/OpenJDK11U-jdk_s390x_linux_hotspot_11.0.4_11.tar.gz';          ;;        amd64|x86_64)          ESUM='90c33cf3f2ed0bd773f648815de7347e69cfbb3416ef3bf41616ab1c4aa0f5a8';          BINARY_URL='https://github.com/AdoptOpenJDK/openjdk11-binaries/releases/download/jdk-11.0.4%2B11/OpenJDK11U-jdk_x64_linux_hotspot_11.0.4_11.tar.gz';          ;;        *)          echo "Unsupported arch: ${ARCH}";          exit 1;          ;;     esac;     curl -LfsSo /tmp/openjdk.tar.gz ${BINARY_URL};     echo "${ESUM} */tmp/openjdk.tar.gz" | sha256sum -c -;     mkdir -p /opt/java/openjdk;     cd /opt/java/openjdk;     tar -xf /tmp/openjdk.tar.gz --strip-components=1;     rm -rf /tmp/openjdk.tar.gz;
-# Thu, 31 Oct 2019 22:38:32 GMT
+# Fri, 08 Nov 2019 02:20:03 GMT
+RUN apt-get update     && apt-get install -y --no-install-recommends curl ca-certificates fontconfig locales     && echo "en_US.UTF-8 UTF-8" >> /etc/locale.gen     && locale-gen en_US.UTF-8     && rm -rf /var/lib/apt/lists/*
+# Fri, 08 Nov 2019 02:20:26 GMT
+ENV JAVA_VERSION=jdk-11.0.5+10
+# Fri, 08 Nov 2019 02:20:35 GMT
+RUN set -eux;     ARCH="$(dpkg --print-architecture)";     case "${ARCH}" in        armhf)          ESUM='c6b1fda3f8807028cbfcc34a4ded2e8a5a6b6239d2bcc1f06673ea6b1530df94';          BINARY_URL='https://github.com/AdoptOpenJDK/openjdk11-binaries/releases/download/jdk-11.0.5%2B10/OpenJDK11U-jdk_arm_linux_hotspot_11.0.5_10.tar.gz';          ;;        ppc64el|ppc64le)          ESUM='d763481ddc29ac0bdefb24216b3a0bf9afbb058552682567a075f9c0f7da5814';          BINARY_URL='https://github.com/AdoptOpenJDK/openjdk11-binaries/releases/download/jdk-11.0.5%2B10/OpenJDK11U-jdk_ppc64le_linux_hotspot_11.0.5_10.tar.gz';          ;;        amd64|x86_64)          ESUM='6dd0c9c8a740e6c19149e98034fba8e368fd9aa16ab417aa636854d40db1a161';          BINARY_URL='https://github.com/AdoptOpenJDK/openjdk11-binaries/releases/download/jdk-11.0.5%2B10/OpenJDK11U-jdk_x64_linux_hotspot_11.0.5_10.tar.gz';          ;;        *)          echo "Unsupported arch: ${ARCH}";          exit 1;          ;;     esac;     curl -LfsSo /tmp/openjdk.tar.gz ${BINARY_URL};     echo "${ESUM} */tmp/openjdk.tar.gz" | sha256sum -c -;     mkdir -p /opt/java/openjdk;     cd /opt/java/openjdk;     tar -xf /tmp/openjdk.tar.gz --strip-components=1;     rm -rf /tmp/openjdk.tar.gz;
+# Fri, 08 Nov 2019 02:20:36 GMT
 ENV JAVA_HOME=/opt/java/openjdk PATH=/opt/java/openjdk/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Thu, 31 Oct 2019 22:38:33 GMT
+# Fri, 08 Nov 2019 02:20:36 GMT
 CMD ["jshell"]
-# Fri, 01 Nov 2019 02:28:08 GMT
+# Fri, 08 Nov 2019 02:49:06 GMT
 ENV CATALINA_HOME=/usr/local/tomcat
-# Fri, 01 Nov 2019 02:28:08 GMT
+# Fri, 08 Nov 2019 02:49:07 GMT
 ENV PATH=/usr/local/tomcat/bin:/opt/java/openjdk/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-# Fri, 01 Nov 2019 02:28:09 GMT
+# Fri, 08 Nov 2019 02:49:08 GMT
 RUN mkdir -p "$CATALINA_HOME"
-# Fri, 01 Nov 2019 02:28:09 GMT
+# Fri, 08 Nov 2019 02:49:08 GMT
 WORKDIR /usr/local/tomcat
-# Fri, 01 Nov 2019 02:28:09 GMT
+# Fri, 08 Nov 2019 02:49:09 GMT
 ENV TOMCAT_NATIVE_LIBDIR=/usr/local/tomcat/native-jni-lib
-# Fri, 01 Nov 2019 02:28:09 GMT
+# Fri, 08 Nov 2019 02:49:09 GMT
 ENV LD_LIBRARY_PATH=/usr/local/tomcat/native-jni-lib
-# Fri, 01 Nov 2019 02:33:11 GMT
+# Fri, 08 Nov 2019 02:55:21 GMT
 ENV GPG_KEYS=05AB33110949707C93A279E3D3EFE6B686867BA6 07E48665A34DCAFAE522E5E6266191C37C037D42 47309207D818FFD8DCD3F83F1931D684307A10A5 541FBE7D8F78B25E055DDEE13C370389288584E7 61B832AC2F1C5A90F0F9B00A1C506407564C17A3 713DA88BE50911535FE716F5208B0AB1D63011C7 79F7026C690BAA50B92CD8B66A3AD3F4F22C4FED 9BA44C2621385CB966EBA586F72C284D731FABEE A27677289986DB50844682F8ACB77FC2E86E29AC A9C5DF4D22E99998D9875A5110C01C5A2F6059E7 DCFD35E0BF8CA7344752DE8B6FB21E8933C60243 F3A04C595DB5B6A5F1ECA43E3B7BBB100D811BBE F7DA48BB64BCB84ECBA7EE6935CD23C10D498E23
-# Fri, 01 Nov 2019 02:33:11 GMT
+# Fri, 08 Nov 2019 02:55:21 GMT
 ENV TOMCAT_MAJOR=8
-# Fri, 01 Nov 2019 02:33:11 GMT
+# Fri, 08 Nov 2019 02:55:21 GMT
 ENV TOMCAT_VERSION=8.5.47
-# Fri, 01 Nov 2019 02:33:11 GMT
+# Fri, 08 Nov 2019 02:55:21 GMT
 ENV TOMCAT_SHA512=079b85f3dfca2b137634859208fae6012860201d720d12ff0add3473f1e267d332cb12803958754e1f922599e0d42b7e97f00bcd62584d9148a6f45fde091716
-# Fri, 01 Nov 2019 02:33:46 GMT
+# Fri, 08 Nov 2019 02:56:17 GMT
 RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		gnupg dirmngr 		wget ca-certificates 	; 		ddist() { 		local f="$1"; shift; 		local distFile="$1"; shift; 		local success=; 		local distUrl=; 		for distUrl in 			'https://www.apache.org/dyn/closer.cgi?action=download&filename=' 			https://www-us.apache.org/dist/ 			https://www.apache.org/dist/ 			https://archive.apache.org/dist/ 		; do 			if wget -O "$f" "$distUrl$distFile" && [ -s "$f" ]; then 				success=1; 				break; 			fi; 		done; 		[ -n "$success" ]; 	}; 		ddist 'tomcat.tar.gz' "tomcat/tomcat-$TOMCAT_MAJOR/v$TOMCAT_VERSION/bin/apache-tomcat-$TOMCAT_VERSION.tar.gz"; 	echo "$TOMCAT_SHA512 *tomcat.tar.gz" | sha512sum --strict --check -; 	ddist 'tomcat.tar.gz.asc' "tomcat/tomcat-$TOMCAT_MAJOR/v$TOMCAT_VERSION/bin/apache-tomcat-$TOMCAT_VERSION.tar.gz.asc"; 	export GNUPGHOME="$(mktemp -d)"; 	for key in $GPG_KEYS; do 		gpg --batch --keyserver ha.pool.sks-keyservers.net --recv-keys "$key"; 	done; 	gpg --batch --verify tomcat.tar.gz.asc tomcat.tar.gz; 	tar -xf tomcat.tar.gz --strip-components=1; 	rm bin/*.bat; 	rm tomcat.tar.gz*; 	command -v gpgconf && gpgconf --kill all || :; 	rm -rf "$GNUPGHOME"; 		nativeBuildDir="$(mktemp -d)"; 	tar -xf bin/tomcat-native.tar.gz -C "$nativeBuildDir" --strip-components=1; 	apt-get install -y --no-install-recommends 		dpkg-dev 		gcc 		libapr1-dev 		libssl-dev 		make 	; 	( 		export CATALINA_HOME="$PWD"; 		cd "$nativeBuildDir/native"; 		gnuArch="$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)"; 		aprConfig="$(command -v apr-1-config)"; 		./configure 			--build="$gnuArch" 			--libdir="$TOMCAT_NATIVE_LIBDIR" 			--prefix="$CATALINA_HOME" 			--with-apr="$aprConfig" 			--with-java-home="$JAVA_HOME" 			--with-ssl=yes; 		make -j "$(nproc)"; 		make install; 	); 	rm -rf "$nativeBuildDir"; 	rm bin/tomcat-native.tar.gz; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark > /dev/null; 	find "$TOMCAT_NATIVE_LIBDIR" -type f -executable -exec ldd '{}' ';' 		| awk '/=>/ { print $(NF-1) }' 		| sort -u 		| xargs -r dpkg-query --search 		| cut -d: -f1 		| sort -u 		| xargs -r apt-mark manual 	; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 	rm -rf /var/lib/apt/lists/*; 		find ./bin/ -name '*.sh' -exec sed -ri 's|^#!/bin/sh$|#!/usr/bin/env bash|' '{}' +; 		chmod -R +rX .; 	chmod 777 logs temp work
-# Fri, 01 Nov 2019 02:33:48 GMT
+# Fri, 08 Nov 2019 02:56:22 GMT
 RUN set -e 	&& nativeLines="$(catalina.sh configtest 2>&1)" 	&& nativeLines="$(echo "$nativeLines" | grep 'Apache Tomcat Native')" 	&& nativeLines="$(echo "$nativeLines" | sort -u)" 	&& if ! echo "$nativeLines" | grep 'INFO: Loaded APR based Apache Tomcat Native library' >&2; then 		echo >&2 "$nativeLines"; 		exit 1; 	fi
-# Fri, 01 Nov 2019 02:33:49 GMT
+# Fri, 08 Nov 2019 02:56:22 GMT
 EXPOSE 8080
-# Fri, 01 Nov 2019 02:33:49 GMT
+# Fri, 08 Nov 2019 02:56:22 GMT
 CMD ["catalina.sh" "run"]
-# Fri, 01 Nov 2019 05:50:23 GMT
+# Fri, 08 Nov 2019 03:52:11 GMT
 MAINTAINER Vincent Massol <vincent@massol.net>
-# Fri, 01 Nov 2019 05:52:38 GMT
+# Fri, 08 Nov 2019 03:54:40 GMT
 RUN apt-get update &&   apt-get --no-install-recommends -y install     curl     libreoffice     unzip     procps     libpostgresql-jdbc-java &&   rm -rf /var/lib/apt/lists/*
-# Fri, 01 Nov 2019 05:52:39 GMT
+# Fri, 08 Nov 2019 03:54:41 GMT
 ENV XWIKI_VERSION=11.9
-# Fri, 01 Nov 2019 05:52:39 GMT
+# Fri, 08 Nov 2019 03:54:41 GMT
 ENV XWIKI_URL_PREFIX=https://maven.xwiki.org/releases/org/xwiki/platform/xwiki-platform-distribution-war/11.9
-# Fri, 01 Nov 2019 05:52:39 GMT
+# Fri, 08 Nov 2019 03:54:41 GMT
 ENV XWIKI_DOWNLOAD_SHA256=f4fc420b570c5da374492b236cca5df1239793979126722c1adcc642ee9b335c
-# Fri, 01 Nov 2019 05:53:19 GMT
+# Fri, 08 Nov 2019 03:55:15 GMT
 RUN rm -rf /usr/local/tomcat/webapps/* &&   mkdir -p /usr/local/tomcat/temp &&   mkdir -p /usr/local/xwiki/data &&   curl -fSL "${XWIKI_URL_PREFIX}/xwiki-platform-distribution-war-${XWIKI_VERSION}.war" -o xwiki.war &&   echo "$XWIKI_DOWNLOAD_SHA256 xwiki.war" | sha256sum -c - &&   unzip -d /usr/local/tomcat/webapps/ROOT xwiki.war &&   rm -f xwiki.war
-# Fri, 01 Nov 2019 05:53:20 GMT
+# Fri, 08 Nov 2019 03:55:16 GMT
 RUN cp /usr/share/java/postgresql-jdbc4.jar /usr/local/tomcat/webapps/ROOT/WEB-INF/lib/
-# Fri, 01 Nov 2019 05:53:20 GMT
+# Fri, 08 Nov 2019 03:55:16 GMT
 COPY file:0a1be11e2eb610a1dbcd415404e3a592641110b93090030cb831e3a19a163017 in /usr/local/tomcat/bin/ 
-# Fri, 01 Nov 2019 05:53:20 GMT
+# Fri, 08 Nov 2019 03:55:16 GMT
 COPY file:bb513b07693b0f03295b679c3da15a7fa3d7769583b3db4897a41cfec3529978 in /usr/local/tomcat/webapps/ROOT/WEB-INF/hibernate.cfg.xml 
-# Fri, 01 Nov 2019 05:53:21 GMT
+# Fri, 08 Nov 2019 03:55:17 GMT
 RUN sed -i 's/<id>org.xwiki.platform:xwiki-platform-distribution-war/<id>org.xwiki.platform:xwiki-platform-distribution-docker/'   /usr/local/tomcat/webapps/ROOT/META-INF/extension.xed
-# Fri, 01 Nov 2019 05:53:21 GMT
+# Fri, 08 Nov 2019 03:55:17 GMT
 COPY file:f901b2d7ac3d76cd8346f9aee81b40529183e81d8aa027bb390856ac01fa6cc0 in /usr/local/bin/docker-entrypoint.sh 
-# Fri, 01 Nov 2019 05:53:21 GMT
+# Fri, 08 Nov 2019 03:55:18 GMT
 VOLUME [/usr/local/xwiki]
-# Fri, 01 Nov 2019 05:53:22 GMT
+# Fri, 08 Nov 2019 03:55:18 GMT
 ENTRYPOINT ["docker-entrypoint.sh"]
-# Fri, 01 Nov 2019 05:53:22 GMT
+# Fri, 08 Nov 2019 03:55:18 GMT
 CMD ["xwiki"]
 ```
 
@@ -4885,53 +4885,53 @@ CMD ["xwiki"]
 		Last Modified: Thu, 31 Oct 2019 22:21:39 GMT  
 		Size: 162.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:b5035666b1cd262e3117ca99ecbe11fc92c973a1164cd5c69bca60165f501520`  
-		Last Modified: Thu, 31 Oct 2019 22:40:53 GMT  
-		Size: 10.8 MB (10842099 bytes)  
+	-	`sha256:da4c04c54fa4a9b55ddef0b116fa7969185639621c525e1fe19f2b194f1ca4bc`  
+		Last Modified: Fri, 08 Nov 2019 02:22:45 GMT  
+		Size: 13.3 MB (13322685 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:60e5b903fb31d874f9a1c331071b5e855634a3ae4fa5db5a3ba0dc027bbc9c5f`  
-		Last Modified: Thu, 31 Oct 2019 22:41:36 GMT  
-		Size: 197.7 MB (197657372 bytes)  
+	-	`sha256:10235b1a516d4b068683fe79fb89be475cb2fc41b1ea76fcb4b13872bee27da0`  
+		Last Modified: Fri, 08 Nov 2019 02:23:23 GMT  
+		Size: 197.8 MB (197822335 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:f578b1f2cf8f2f5876b3185c7edd79990e67ec624e21b05b0614d04c5acb0106`  
-		Last Modified: Fri, 01 Nov 2019 02:38:58 GMT  
-		Size: 136.0 B  
+	-	`sha256:24154429346fe2204e6d5dab3868244db95f4163d1be3905621fb2b53653eb2c`  
+		Last Modified: Fri, 08 Nov 2019 03:05:39 GMT  
+		Size: 139.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c12bb0162813b1b0c82e82d87b9bdf6e96ef46d7c3aa9408a9c8d9de7c9a575a`  
-		Last Modified: Fri, 01 Nov 2019 02:39:41 GMT  
-		Size: 11.2 MB (11234934 bytes)  
+	-	`sha256:c572a63a7a797dd43aa600f689a0e6d3c85b8f94a138c2d3181801cd788b36c9`  
+		Last Modified: Fri, 08 Nov 2019 03:06:29 GMT  
+		Size: 11.3 MB (11251478 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:469391c4f542e184022627170e76ee20d527d65dfda5b22daebd7187925accb7`  
-		Last Modified: Fri, 01 Nov 2019 02:39:39 GMT  
-		Size: 133.0 B  
+	-	`sha256:a016684a4a3052bad801984d71c411cd2e4fade815d50a5ad7b5f228041d0b56`  
+		Last Modified: Fri, 08 Nov 2019 03:06:27 GMT  
+		Size: 132.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:b1abd62c53b3e223d5fb653d9221f3a82085f6983b1282f1d6136eae7846f035`  
-		Last Modified: Fri, 01 Nov 2019 05:57:01 GMT  
-		Size: 182.2 MB (182185615 bytes)  
+	-	`sha256:c6c389865c6b163f05cd9fb7175a147244f1fe7f2e875e7e9254fba9d4355ac6`  
+		Last Modified: Fri, 08 Nov 2019 03:58:52 GMT  
+		Size: 179.6 MB (179560341 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:b2412a2e75bce567834b7b0300b4f76b590e2d88009e6832016c2e569bd196db`  
-		Last Modified: Fri, 01 Nov 2019 05:56:57 GMT  
-		Size: 284.2 MB (284248067 bytes)  
+	-	`sha256:562aa1e5b86036561bf92eeb259a1874ef32891c757288834b9b2b719eaa9fa4`  
+		Last Modified: Fri, 08 Nov 2019 03:58:40 GMT  
+		Size: 284.2 MB (284248070 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:8886f5e85572a235e74cde689873e6d0609f55bda56c7cacaeca9f8412ae394e`  
-		Last Modified: Fri, 01 Nov 2019 05:56:28 GMT  
-		Size: 618.9 KB (618861 bytes)  
+	-	`sha256:0b004eb7bf4e98f684ef042ba415dc8f6b8fe6dd200b909e709adb0773d5895a`  
+		Last Modified: Fri, 08 Nov 2019 03:58:19 GMT  
+		Size: 618.9 KB (618859 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:d49fa8b65c25d20f133021be9df1aa2dfadede3479c41d19345618f21a7f48f9`  
-		Last Modified: Fri, 01 Nov 2019 05:56:29 GMT  
+	-	`sha256:0541b695898dc98f9d4d23fe1965e1456ccb9e3b06a73d14fcd69584b0910eff`  
+		Last Modified: Fri, 08 Nov 2019 03:58:19 GMT  
 		Size: 1.3 KB (1346 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:3a1150187c99c2a8c3205299f27bfaff6828c5f49f0982f27abe3adf5353b961`  
-		Last Modified: Fri, 01 Nov 2019 05:56:28 GMT  
+	-	`sha256:265ff15371c618be572359f343975265a764c4b35dffcd18d06e1e7f7c22755b`  
+		Last Modified: Fri, 08 Nov 2019 03:58:20 GMT  
 		Size: 2.5 KB (2476 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c851b19a77e3895b2caa2812152a5fe78de8be85ee949e8c0c36db12f9930159`  
-		Last Modified: Fri, 01 Nov 2019 05:56:28 GMT  
+	-	`sha256:3e0231d408083ed04206ee491020508906d4a82d15c98adbb1f9c7f83f07915e`  
+		Last Modified: Fri, 08 Nov 2019 03:58:19 GMT  
 		Size: 4.2 KB (4235 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:d2d5f5d7278c16dddfc7c6238b563e24bb09515286c9438f4bdba4b02f7003a9`  
-		Last Modified: Fri, 01 Nov 2019 05:56:28 GMT  
-		Size: 2.4 KB (2399 bytes)  
+	-	`sha256:61f95c3de4daec2356b89cdb675a548338445969c3b925d74dc86f622893d833`  
+		Last Modified: Fri, 08 Nov 2019 03:58:19 GMT  
+		Size: 2.4 KB (2403 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `xwiki:stable-postgres-tomcat` - linux; arm64 variant v8
