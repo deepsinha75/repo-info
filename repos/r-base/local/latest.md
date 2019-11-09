@@ -1395,20 +1395,13 @@ Licenses: (parsed from: `/usr/share/doc/libharfbuzz0b/copyright`)
 
 - `MIT`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris harfbuzz=2.6.2-1
-'http://deb.debian.org/debian/pool/main/h/harfbuzz/harfbuzz_2.6.2-1.dsc' harfbuzz_2.6.2-1.dsc 2308 SHA256:fa8388c5808e0c4a2d2088f3c6d747322e88d7b2c0dfdf688a8df96eaf5c26cf
-'http://deb.debian.org/debian/pool/main/h/harfbuzz/harfbuzz_2.6.2.orig.tar.xz' harfbuzz_2.6.2.orig.tar.xz 5769792 SHA256:3b4c6a72f7f2b05d54f6c3112b3ebee5131c199fe4de4cf9bbbf71a56666f624
-'http://deb.debian.org/debian/pool/main/h/harfbuzz/harfbuzz_2.6.2-1.debian.tar.xz' harfbuzz_2.6.2-1.debian.tar.xz 10920 SHA256:ed10e8d9084d6886cddc9ce912b5540a6c548b4cce5c425a72876ff6f4bf88d7
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/harfbuzz/2.6.2-1/
 
-- https://sources.debian.net/src/harfbuzz/2.6.2-1/ (for browsing the source)
-- https://sources.debian.net/src/harfbuzz/2.6.2-1/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/harfbuzz/2.6.2-1/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `hostname=3.22`
 
