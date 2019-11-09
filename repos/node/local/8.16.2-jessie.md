@@ -877,20 +877,13 @@ Licenses: (parsed from: `/usr/share/doc/libdjvulibre-dev/copyright`, `/usr/share
 
 - `GPL-2`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris djvulibre=3.5.25.4-4+deb8u1
-'http://security.debian.org/debian-security/pool/updates/main/d/djvulibre/djvulibre_3.5.25.4-4+deb8u1.dsc' djvulibre_3.5.25.4-4+deb8u1.dsc 2646 SHA256:1df07686a48d19bbde8c1aa5b074c70fb501ba17731b790db62d72983deaa5f9
-'http://security.debian.org/debian-security/pool/updates/main/d/djvulibre/djvulibre_3.5.25.4.orig.tar.gz' djvulibre_3.5.25.4.orig.tar.gz 3575460 SHA256:6d8b3414d8ec87c5a40d3dde6fee54beebee6cbf6ec56aa7851dfbca9aaa3f36
-'http://security.debian.org/debian-security/pool/updates/main/d/djvulibre/djvulibre_3.5.25.4-4+deb8u1.debian.tar.xz' djvulibre_3.5.25.4-4+deb8u1.debian.tar.xz 83912 SHA256:11a972cb069d96a63ba3a3a313c2e8142e4384bcb657e1398b6dfa5eb4fd19f8
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/djvulibre/3.5.25.4-4+deb8u1/
 
-- https://sources.debian.net/src/djvulibre/3.5.25.4-4+deb8u1/ (for browsing the source)
-- https://sources.debian.net/src/djvulibre/3.5.25.4-4+deb8u1/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/djvulibre/3.5.25.4-4+deb8u1/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `dpkg=1.17.27`
 
