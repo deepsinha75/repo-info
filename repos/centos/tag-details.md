@@ -16,6 +16,7 @@
 -	[`centos:7.4.1708`](#centos741708)
 -	[`centos:7.5.1804`](#centos751804)
 -	[`centos:7.6.1810`](#centos761810)
+-	[`centos:7.7.1908`](#centos771908)
 -	[`centos:8`](#centos8)
 -	[`centos:centos6`](#centoscentos6)
 -	[`centos:centos6.10`](#centoscentos610)
@@ -31,6 +32,7 @@
 -	[`centos:centos7.4.1708`](#centoscentos741708)
 -	[`centos:centos7.5.1804`](#centoscentos751804)
 -	[`centos:centos7.6.1810`](#centoscentos761810)
+-	[`centos:centos7.7.1908`](#centoscentos771908)
 -	[`centos:centos8`](#centoscentos8)
 -	[`centos:latest`](#centoslatest)
 
@@ -753,6 +755,15 @@ CMD ["/bin/bash"]
 		Last Modified: Fri, 15 Mar 2019 08:18:34 GMT  
 		Size: 76.5 MB (76454310 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+
+## `centos:7.7.1908`
+
+```console
+$ docker pull centos@sha256:a8409dff6597f2ef5f7ecd3c672671bb2af9a390073efd74f95c54aa41cba22a
+```
+
+-	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
+-	Platforms:
 
 ## `centos:8`
 
@@ -1511,6 +1522,15 @@ CMD ["/bin/bash"]
 		Last Modified: Fri, 15 Mar 2019 08:18:34 GMT  
 		Size: 76.5 MB (76454310 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+
+## `centos:centos7.7.1908`
+
+```console
+$ docker pull centos@sha256:a8409dff6597f2ef5f7ecd3c672671bb2af9a390073efd74f95c54aa41cba22a
+```
+
+-	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
+-	Platforms:
 
 ## `centos:centos8`
 
