@@ -41,6 +41,10 @@
 -	[`solr:8.2.0`](#solr820)
 -	[`solr:8.2.0-slim`](#solr820-slim)
 -	[`solr:8.2-slim`](#solr82-slim)
+-	[`solr:8.3`](#solr83)
+-	[`solr:8.3.0`](#solr830)
+-	[`solr:8.3.0-slim`](#solr830-slim)
+-	[`solr:8.3-slim`](#solr83-slim)
 -	[`solr:8-slim`](#solr8-slim)
 -	[`solr:latest`](#solrlatest)
 -	[`solr:slim`](#solrslim)
@@ -8655,6 +8659,22 @@ CMD ["solr-foreground"]
 		Last Modified: Sat, 19 Oct 2019 00:46:00 GMT  
 		Size: 4.8 KB (4820 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+
+## `solr:8.3`
+
+**does not exist** (yet?)
+
+## `solr:8.3.0`
+
+**does not exist** (yet?)
+
+## `solr:8.3.0-slim`
+
+**does not exist** (yet?)
+
+## `solr:8.3-slim`
+
+**does not exist** (yet?)
 
 ## `solr:8-slim`
 
