@@ -1101,20 +1101,13 @@ Licenses: (parsed from: `/usr/share/doc/libfribidi0/copyright`)
 - `LGPL-2.1`
 - `LGPL-2.1+`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris fribidi=1.0.7-1
-'http://deb.debian.org/debian/pool/main/f/fribidi/fribidi_1.0.7-1.dsc' fribidi_1.0.7-1.dsc 1855 SHA256:74222d86501c22626d0f66900c030b200e596e967669c888ad70c83fd0d4d715
-'http://deb.debian.org/debian/pool/main/f/fribidi/fribidi_1.0.7.orig.tar.bz2' fribidi_1.0.7.orig.tar.bz2 2074943 SHA256:5ab5f21e9f2fc57b4b40f8ea8f14dba78a5cc46d9cf94bc5e00a58e6886a935d
-'http://deb.debian.org/debian/pool/main/f/fribidi/fribidi_1.0.7-1.debian.tar.xz' fribidi_1.0.7-1.debian.tar.xz 8436 SHA256:1bff6fe04b5c46fc3477686a2feede2455c617a027bc1b5d10f672a17a6ed6e0
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/fribidi/1.0.7-1/
 
-- https://sources.debian.net/src/fribidi/1.0.7-1/ (for browsing the source)
-- https://sources.debian.net/src/fribidi/1.0.7-1/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/fribidi/1.0.7-1/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `gcc-9=9.2.1-8`
 
@@ -1626,19 +1619,13 @@ Licenses: (parsed from: `/usr/share/doc/hostname/copyright`)
 
 - `GPL-2`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris hostname=3.22
-'http://deb.debian.org/debian/pool/main/h/hostname/hostname_3.22.dsc' hostname_3.22.dsc 1396 SHA256:778995b1edea78bb96c07ca916dd7a681f4d109582551db355738b421801efd4
-'http://deb.debian.org/debian/pool/main/h/hostname/hostname_3.22.tar.gz' hostname_3.22.tar.gz 13565 SHA256:b6d712d9e65687755e77b2451165bfd6ee72b4418300edfc4b718d347be256a4
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/hostname/3.22/
 
-- https://sources.debian.net/src/hostname/3.22/ (for browsing the source)
-- https://sources.debian.net/src/hostname/3.22/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/hostname/3.22/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `icu=63.2-2`
 
@@ -3483,20 +3470,13 @@ Licenses: (parsed from: `/usr/share/doc/liblz4-1/copyright`)
 - `GPL-2`
 - `GPL-2+`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris lz4=1.9.1-2
-'http://deb.debian.org/debian/pool/main/l/lz4/lz4_1.9.1-2.dsc' lz4_1.9.1-2.dsc 1932 SHA256:178e39c5e5b44f7c97a49e518fd69338e3720078639be82cc3e596e5e593748d
-'http://deb.debian.org/debian/pool/main/l/lz4/lz4_1.9.1.orig.tar.gz' lz4_1.9.1.orig.tar.gz 285336 SHA256:f8377c89dad5c9f266edc0be9b73595296ecafd5bfa1000de148096c50052dc4
-'http://deb.debian.org/debian/pool/main/l/lz4/lz4_1.9.1-2.debian.tar.xz' lz4_1.9.1-2.debian.tar.xz 11812 SHA256:7dd45dd23232d3059d69558161a11143e68e3fb850c6a4061da9ccbcb52f9675
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/lz4/1.9.1-2/
 
-- https://sources.debian.net/src/lz4/1.9.1-2/ (for browsing the source)
-- https://sources.debian.net/src/lz4/1.9.1-2/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/lz4/1.9.1-2/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `lzo2=2.10-0.1`
 
@@ -3599,21 +3579,13 @@ Licenses: (parsed from: `/usr/share/doc/libmariadb-dev/copyright`, `/usr/share/d
 - `unlimited-free-doc`
 - `zlib/libpng`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris mariadb-10.3=1:10.3.18-1
-'http://deb.debian.org/debian/pool/main/m/mariadb-10.3/mariadb-10.3_10.3.18-1.dsc' mariadb-10.3_10.3.18-1.dsc 4780 SHA256:9ac8ef87a15d014fd3aa18497dbed39fab32d938a3b1fc17f4c1745a4580af59
-'http://deb.debian.org/debian/pool/main/m/mariadb-10.3/mariadb-10.3_10.3.18.orig.tar.gz' mariadb-10.3_10.3.18.orig.tar.gz 71950543 SHA256:69456ca85bf9d96c6d28b4ade2a9f6787d79a602e27ef941f9ba4e0b55dddedc
-'http://deb.debian.org/debian/pool/main/m/mariadb-10.3/mariadb-10.3_10.3.18.orig.tar.gz.asc' mariadb-10.3_10.3.18.orig.tar.gz.asc 195 SHA256:a906486edc01f4bef7bc479d9b05b162bac7fff30ea1b0e9138d6c1e81ca76ae
-'http://deb.debian.org/debian/pool/main/m/mariadb-10.3/mariadb-10.3_10.3.18-1.debian.tar.xz' mariadb-10.3_10.3.18-1.debian.tar.xz 214368 SHA256:b341567e23fcce7270cec1e3ea7bfff73479384de91f663ecb54ac45e76aecca
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/mariadb-10.3/1:10.3.18-1/
 
-- https://sources.debian.net/src/mariadb-10.3/1:10.3.18-1/ (for browsing the source)
-- https://sources.debian.net/src/mariadb-10.3/1:10.3.18-1/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/mariadb-10.3/1:10.3.18-1/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `mawk=1.3.3-17`
 
@@ -3654,21 +3626,13 @@ Licenses: (parsed from: `/usr/share/doc/mercurial/copyright`, `/usr/share/doc/me
 - `LGPL-2.1`
 - `LGPL-2.1+`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris mercurial=5.1.1-1
-'http://deb.debian.org/debian/pool/main/m/mercurial/mercurial_5.1.1-1.dsc' mercurial_5.1.1-1.dsc 2757 SHA256:71b21e8e4e8558ccb5aea151fad5ad9efa0111e55d5243a3fd93ba3c56136401
-'http://deb.debian.org/debian/pool/main/m/mercurial/mercurial_5.1.1.orig.tar.gz' mercurial_5.1.1.orig.tar.gz 7285831 SHA256:35fc8ba5e0379c1b3affa2757e83fb0509e8ac314cbd9f1fd133cf265d16e49f
-'http://deb.debian.org/debian/pool/main/m/mercurial/mercurial_5.1.1.orig.tar.gz.asc' mercurial_5.1.1.orig.tar.gz.asc 833 SHA256:0163ec056ae70283c7a09f4d07c76182af9c30963583db564e285639123fd5a9
-'http://deb.debian.org/debian/pool/main/m/mercurial/mercurial_5.1.1-1.debian.tar.xz' mercurial_5.1.1-1.debian.tar.xz 62668 SHA256:7abcf76f29e478e1131f5883553cc3733092b17c332540773d741d29ded8a5b2
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/mercurial/5.1.1-1/
 
-- https://sources.debian.net/src/mercurial/5.1.1-1/ (for browsing the source)
-- https://sources.debian.net/src/mercurial/5.1.1-1/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/mercurial/5.1.1-1/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `mime-support=3.64`
 
@@ -4887,20 +4851,13 @@ Licenses: (parsed from: `/usr/share/doc/libsystemd0/copyright`, `/usr/share/doc/
 - `LGPL-2.1+`
 - `public-domain`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris systemd=242-7
-'http://deb.debian.org/debian/pool/main/s/systemd/systemd_242-7.dsc' systemd_242-7.dsc 4973 SHA256:54fc1409b26dfbe49e56f763a45d763b93f910156a898d30029182eedbe657d0
-'http://deb.debian.org/debian/pool/main/s/systemd/systemd_242.orig.tar.gz' systemd_242.orig.tar.gz 7831435 SHA256:ec22be9a5dd94c9640e6348ed8391d1499af8ca2c2f01109198a414cff6c6cba
-'http://deb.debian.org/debian/pool/main/s/systemd/systemd_242-7.debian.tar.xz' systemd_242-7.debian.tar.xz 159704 SHA256:a742a675c9fad620f6592437ecb4ad7101d36b4e624d4fcae51c50683fabca2e
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/systemd/242-7/
 
-- https://sources.debian.net/src/systemd/242-7/ (for browsing the source)
-- https://sources.debian.net/src/systemd/242-7/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/systemd/242-7/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `sysvinit=2.96~beta-3`
 
@@ -4959,20 +4916,13 @@ Licenses: (parsed from: `/usr/share/doc/libtiff-dev/copyright`, `/usr/share/doc/
 
 - `Hylafax`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris tiff=4.0.10+git191003-1
-'http://deb.debian.org/debian/pool/main/t/tiff/tiff_4.0.10+git191003-1.dsc' tiff_4.0.10+git191003-1.dsc 2243 SHA256:13fc55bc813ae19ccc26dd64ab01c18f50a77eaa86054a987a18e2d694bd88a5
-'http://deb.debian.org/debian/pool/main/t/tiff/tiff_4.0.10+git191003.orig.tar.xz' tiff_4.0.10+git191003.orig.tar.xz 1478116 SHA256:24cd81288a9cfd9d031dc44e1c4ee020b5d4e8ecbffcef3f8949e55f20e9dd50
-'http://deb.debian.org/debian/pool/main/t/tiff/tiff_4.0.10+git191003-1.debian.tar.xz' tiff_4.0.10+git191003-1.debian.tar.xz 18696 SHA256:1557b9d3a0be9331fe53479a42bf8ef5611a7b980eb55bb3bf4ee3bd3f46da42
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/tiff/4.0.10+git191003-1/
 
-- https://sources.debian.net/src/tiff/4.0.10+git191003-1/ (for browsing the source)
-- https://sources.debian.net/src/tiff/4.0.10+git191003-1/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/tiff/4.0.10+git191003-1/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `tzdata=2019c-3`
 

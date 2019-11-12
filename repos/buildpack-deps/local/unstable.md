@@ -356,20 +356,13 @@ Licenses: (parsed from: `/usr/share/doc/bash/copyright`)
 
 - `GPL-3`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris bash=5.0-4
-'http://deb.debian.org/debian/pool/main/b/bash/bash_5.0-4.dsc' bash_5.0-4.dsc 2305 SHA256:fe746c72de6e61866a0ed4e21a5b9d154966a8684ec3bdf5bacc70d5351f6282
-'http://deb.debian.org/debian/pool/main/b/bash/bash_5.0.orig.tar.xz' bash_5.0.orig.tar.xz 5554808 SHA256:893858ba233d65bda38039e99dd96a4102b2f6a2d5e6c1c546e0794a60beed97
-'http://deb.debian.org/debian/pool/main/b/bash/bash_5.0-4.debian.tar.xz' bash_5.0-4.debian.tar.xz 91884 SHA256:1e33dff5dd8604fa4205a1746828063cd96a1e635355f3626b54fef155b8c4e5
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/bash/5.0-4/
 
-- https://sources.debian.net/src/bash/5.0-4/ (for browsing the source)
-- https://sources.debian.net/src/bash/5.0-4/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/bash/5.0-4/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `binutils=2.33.1-1`
 
@@ -1116,20 +1109,13 @@ Licenses: (parsed from: `/usr/share/doc/libfribidi0/copyright`)
 - `LGPL-2.1`
 - `LGPL-2.1+`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris fribidi=1.0.7-1
-'http://deb.debian.org/debian/pool/main/f/fribidi/fribidi_1.0.7-1.dsc' fribidi_1.0.7-1.dsc 1855 SHA256:74222d86501c22626d0f66900c030b200e596e967669c888ad70c83fd0d4d715
-'http://deb.debian.org/debian/pool/main/f/fribidi/fribidi_1.0.7.orig.tar.bz2' fribidi_1.0.7.orig.tar.bz2 2074943 SHA256:5ab5f21e9f2fc57b4b40f8ea8f14dba78a5cc46d9cf94bc5e00a58e6886a935d
-'http://deb.debian.org/debian/pool/main/f/fribidi/fribidi_1.0.7-1.debian.tar.xz' fribidi_1.0.7-1.debian.tar.xz 8436 SHA256:1bff6fe04b5c46fc3477686a2feede2455c617a027bc1b5d10f672a17a6ed6e0
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/fribidi/1.0.7-1/
 
-- https://sources.debian.net/src/fribidi/1.0.7-1/ (for browsing the source)
-- https://sources.debian.net/src/fribidi/1.0.7-1/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/fribidi/1.0.7-1/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `gcc-9=9.2.1-9`
 
@@ -2439,20 +2425,13 @@ Licenses: (parsed from: `/usr/share/doc/libheif1/copyright`)
 - `LGPL-3+`
 - `MIT`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris libheif=1.5.1-1
-'http://deb.debian.org/debian/pool/main/libh/libheif/libheif_1.5.1-1.dsc' libheif_1.5.1-1.dsc 2239 SHA256:b77c1ba6f9ab37bb112309e3a3784d2610d4146bff7c4806eff7d3889bd59d3b
-'http://deb.debian.org/debian/pool/main/libh/libheif/libheif_1.5.1.orig.tar.gz' libheif_1.5.1.orig.tar.gz 1510087 SHA256:b134d0219dd2639cc13b8a8bcb8f264834593dd0417da1973fbe96e810918a8b
-'http://deb.debian.org/debian/pool/main/libh/libheif/libheif_1.5.1-1.debian.tar.xz' libheif_1.5.1-1.debian.tar.xz 6292 SHA256:717a477bcac77e5ae70a42b4307dfeefe2cb12b54bf9f4daee242738f97cff65
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/libheif/1.5.1-1/
 
-- https://sources.debian.net/src/libheif/1.5.1-1/ (for browsing the source)
-- https://sources.debian.net/src/libheif/1.5.1-1/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/libheif/1.5.1-1/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `libice=2:1.0.9-2`
 
@@ -4893,20 +4872,13 @@ Licenses: (parsed from: `/usr/share/doc/libsystemd0/copyright`, `/usr/share/doc/
 - `LGPL-2.1+`
 - `public-domain`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris systemd=242-7
-'http://deb.debian.org/debian/pool/main/s/systemd/systemd_242-7.dsc' systemd_242-7.dsc 4973 SHA256:54fc1409b26dfbe49e56f763a45d763b93f910156a898d30029182eedbe657d0
-'http://deb.debian.org/debian/pool/main/s/systemd/systemd_242.orig.tar.gz' systemd_242.orig.tar.gz 7831435 SHA256:ec22be9a5dd94c9640e6348ed8391d1499af8ca2c2f01109198a414cff6c6cba
-'http://deb.debian.org/debian/pool/main/s/systemd/systemd_242-7.debian.tar.xz' systemd_242-7.debian.tar.xz 159704 SHA256:a742a675c9fad620f6592437ecb4ad7101d36b4e624d4fcae51c50683fabca2e
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/systemd/242-7/
 
-- https://sources.debian.net/src/systemd/242-7/ (for browsing the source)
-- https://sources.debian.net/src/systemd/242-7/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/systemd/242-7/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `sysvinit=2.96~beta-3`
 
