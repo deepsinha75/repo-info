@@ -1,17 +1,17 @@
-# `centos:centos7`
+# `centos:centos7.7.1908`
 
 ## Docker Metadata
 
-- Image ID: `sha256:5e35e350aded98340bc8fcb0ba392d809c807bc3eb5c618d4a0674d98d88bccd`
-- Created: `2019-11-12T00:20:33.943019377Z`
-- Virtual Size: ~ 203.00 Mb  
+- Image ID: `sha256:08d05d1d5859ebcfb3312d246e2082e46cb307f0e896c9ac097185f0b0b19e56`
+- Created: `2019-11-12T00:21:02.570857002Z`
+- Virtual Size: ~ 203.61 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Command: `["/bin/bash"]`
 - Environment:
   - `PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
 - Labels:
-  - `org.label-schema.build-date=20191001`
+  - `org.label-schema.build-date=20191024`
   - `org.label-schema.license=GPLv2`
   - `org.label-schema.name=CentOS Base Image`
   - `org.label-schema.schema-version=1.0`
@@ -761,18 +761,18 @@ Enabling extras-source repository
 http://vault.centos.org/centos/7/os/Source//SPackages/device-mapper-multipath-0.4.9-127.el7.src.rpm
 ```
 
-### `rpm` package: `krb5-libs-1.15.1-37.el7_7.2.x86_64`
+### `rpm` package: `krb5-libs-1.15.1-37.el7_6.x86_64`
 
 Licenses (from `rpm --query`): MIT
 
 Source:
 
 ```console
-$ yumdownloader --quiet --source --urls krb5-libs-1.15.1-37.el7_7.2
+$ yumdownloader --quiet --source --urls krb5-libs-1.15.1-37.el7_6
 Enabling updates-source repository
 Enabling base-source repository
 Enabling extras-source repository
-http://vault.centos.org/centos/7/updates/Source//SPackages/krb5-1.15.1-37.el7_7.2.src.rpm
+http://vault.centos.org/centos/7/os/Source//SPackages/krb5-1.15.1-37.el7_6.src.rpm
 ```
 
 ### `rpm` package: `libacl-2.2.51-14.el7.x86_64`
@@ -1867,32 +1867,32 @@ Enabling extras-source repository
 http://vault.centos.org/centos/7/os/Source//SPackages/sqlite-3.7.17-8.el7.src.rpm
 ```
 
-### `rpm` package: `systemd-219-67.el7_7.1.x86_64`
+### `rpm` package: `systemd-219-67.el7.x86_64`
 
 Licenses (from `rpm --query`): LGPLv2+ and MIT and GPLv2+
 
 Source:
 
 ```console
-$ yumdownloader --quiet --source --urls systemd-219-67.el7_7.1
+$ yumdownloader --quiet --source --urls systemd-219-67.el7
 Enabling updates-source repository
 Enabling base-source repository
 Enabling extras-source repository
-http://vault.centos.org/centos/7/updates/Source//SPackages/systemd-219-67.el7_7.1.src.rpm
+http://vault.centos.org/centos/7/os/Source//SPackages/systemd-219-67.el7.src.rpm
 ```
 
-### `rpm` package: `systemd-libs-219-67.el7_7.1.x86_64`
+### `rpm` package: `systemd-libs-219-67.el7.x86_64`
 
 Licenses (from `rpm --query`): LGPLv2+ and MIT
 
 Source:
 
 ```console
-$ yumdownloader --quiet --source --urls systemd-libs-219-67.el7_7.1
+$ yumdownloader --quiet --source --urls systemd-libs-219-67.el7
 Enabling updates-source repository
 Enabling base-source repository
 Enabling extras-source repository
-http://vault.centos.org/centos/7/updates/Source//SPackages/systemd-219-67.el7_7.1.src.rpm
+http://vault.centos.org/centos/7/os/Source//SPackages/systemd-219-67.el7.src.rpm
 ```
 
 ### `rpm` package: `tar-1.26-35.el7.x86_64`
