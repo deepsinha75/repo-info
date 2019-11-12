@@ -2,9 +2,9 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:5cd78c49ac27e77a96ca50c76f27b71bfcb25d4276db617c84dc7cd7238dd4f9`
-- Created: `2019-10-29T23:56:32.339019819Z`
-- Virtual Size: ~ 367.39 Mb  
+- Image ID: `sha256:c3e4631dd9150f5e486d0be88097d9a69d60ce26cbccafd4fe982786af718831`
+- Created: `2019-11-08T18:06:58.390184106Z`
+- Virtual Size: ~ 378.90 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["/docker-entrypoint.sh"]`
@@ -531,16 +531,16 @@ MIT
 ### `apk` package: `libxslt`
 
 ```console
-libxslt-1.1.33-r1 description:
+libxslt-1.1.33-r2 description:
 XML stylesheet transformation library
 
-libxslt-1.1.33-r1 webpage:
+libxslt-1.1.33-r2 webpage:
 http://xmlsoft.org/XSLT/
 
-libxslt-1.1.33-r1 installed size:
+libxslt-1.1.33-r2 installed size:
 368640
 
-libxslt-1.1.33-r1 license:
+libxslt-1.1.33-r2 license:
 custom
 
 ```
