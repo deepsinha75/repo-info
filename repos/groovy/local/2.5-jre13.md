@@ -1,10 +1,10 @@
-# `groovy:2.5.8-jdk12`
+# `groovy:2.5.8-jre13`
 
 ## Docker Metadata
 
-- Image ID: `sha256:3f15e207a358d44f315405e03591ddb69bb437438a51f75483216d1693477887`
-- Created: `2019-11-01T01:46:52.495444035Z`
-- Virtual Size: ~ 490.46 Mb  
+- Image ID: `sha256:8b50565bbc39674e3b7424bf7c23aefbbe56c979af9008808c2ee474cb6f9838`
+- Created: `2019-11-12T00:40:12.878334944Z`
+- Virtual Size: ~ 280.86 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Command: `["groovysh"]`
@@ -13,7 +13,7 @@
   - `LANG=en_US.UTF-8`
   - `LANGUAGE=en_US:en`
   - `LC_ALL=en_US.UTF-8`
-  - `JAVA_VERSION=jdk-12.0.2+10`
+  - `JAVA_VERSION=jdk-13.0.1+9`
   - `JAVA_HOME=/opt/java/openjdk`
   - `GROOVY_HOME=/opt/groovy`
   - `GROOVY_VERSION=2.5.8`
