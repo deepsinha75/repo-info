@@ -1,10 +1,10 @@
-# `nextcloud:15.0.12-fpm-alpine`
+# `nextcloud:16.0.6-fpm-alpine`
 
 ## Docker Metadata
 
-- Image ID: `sha256:fcd8e0c63c268616e13bb9fd0c3f3dec6a3d03566019f4811e56b4e39fcc076a`
-- Created: `2019-10-29T02:21:54.479968128Z`
-- Virtual Size: ~ 321.81 Mb  
+- Image ID: `sha256:338b1f1d6fb9f1bf04ac24f476d74f78abb55adaa3b8d4c5bd997275234e778f`
+- Created: `2019-11-12T00:44:53.463770965Z`
+- Virtual Size: ~ 342.96 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["/entrypoint.sh"]`
@@ -23,7 +23,7 @@
   - `PHP_ASC_URL=https://www.php.net/get/php-7.3.11.tar.xz.asc/from/this/mirror`
   - `PHP_SHA256=657cf6464bac28e9490c59c07a2cf7bb76c200f09cfadf6e44ea64e95fa01021`
   - `PHP_MD5=`
-  - `NEXTCLOUD_VERSION=15.0.12`
+  - `NEXTCLOUD_VERSION=16.0.6`
 
 ## `apk` (`.apk`-based packages)
 

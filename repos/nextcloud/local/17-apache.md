@@ -1,10 +1,10 @@
-# `nextcloud:17.0.0-apache`
+# `nextcloud:17.0.1-apache`
 
 ## Docker Metadata
 
-- Image ID: `sha256:946bbb8f3cf4786d25d6cb7674964ea4702545af7dab7fa946b49b1382fc37fb`
-- Created: `2019-10-29T02:35:51.594049171Z`
-- Virtual Size: ~ 676.69 Mb  
+- Image ID: `sha256:e73f7e331f7430e9db28c0f19b19ecf915478db973d0a29f087b1b6c962454a8`
+- Created: `2019-11-12T00:46:19.514608736Z`
+- Virtual Size: ~ 680.39 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["/entrypoint.sh"]`
@@ -26,7 +26,7 @@
   - `PHP_ASC_URL=https://www.php.net/get/php-7.3.11.tar.xz.asc/from/this/mirror`
   - `PHP_SHA256=657cf6464bac28e9490c59c07a2cf7bb76c200f09cfadf6e44ea64e95fa01021`
   - `PHP_MD5=`
-  - `NEXTCLOUD_VERSION=17.0.0`
+  - `NEXTCLOUD_VERSION=17.0.1`
 
 ## `dpkg` (`.deb`-based packages)
 
@@ -2601,20 +2601,13 @@ Licenses: (parsed from: `/usr/share/doc/linux-libc-dev/copyright`)
 - `X11`
 - `Xen-interface`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris linux=4.19.67-2+deb10u1
-'http://security.debian.org/debian-security/pool/updates/main/l/linux/linux_4.19.67-2+deb10u1.dsc' linux_4.19.67-2+deb10u1.dsc 189311 SHA256:aafa032cc941968d13ab80e1a12f9e94fb52bb75ec1a536a2a666ce4b455e1f9
-'http://security.debian.org/debian-security/pool/updates/main/l/linux/linux_4.19.67.orig.tar.xz' linux_4.19.67.orig.tar.xz 107294428 SHA256:b7f55fff0fe9a1129d31be4fb7193bd564ba064cf638cac7625640e12755b0ab
-'http://security.debian.org/debian-security/pool/updates/main/l/linux/linux_4.19.67-2+deb10u1.debian.tar.xz' linux_4.19.67-2+deb10u1.debian.tar.xz 3143752 SHA256:9a062609222354301df211e6921873d5b351769b1103a5cf52a822662cd17e07
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/linux/4.19.67-2+deb10u1/
 
-- https://sources.debian.net/src/linux/4.19.67-2+deb10u1/ (for browsing the source)
-- https://sources.debian.net/src/linux/4.19.67-2+deb10u1/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/linux/4.19.67-2+deb10u1/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `lsb=10.2019051400`
 
