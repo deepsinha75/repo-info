@@ -1,10 +1,10 @@
-# `solr:8.2.0-slim`
+# `solr:8.3.0-slim`
 
 ## Docker Metadata
 
-- Image ID: `sha256:c0c569638e58ccc0397d228ae1c145e105cb8879f91b4edfcd04b09f486f2b33`
-- Created: `2019-10-19T07:47:10.170748779Z`
-- Virtual Size: ~ 624.26 Mb  
+- Image ID: `sha256:67738a35a1d50c6095deaffedaa80604a87222023abf2dc907ba6258bda8ebb0`
+- Created: `2019-11-12T02:49:54.835554622Z`
+- Virtual Size: ~ 629.09 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["docker-entrypoint.sh"]`
@@ -20,10 +20,10 @@
   - `SOLR_UID=8983`
   - `SOLR_GROUP=solr`
   - `SOLR_GID=8983`
-  - `SOLR_VERSION=8.2.0`
-  - `SOLR_URL=https://archive.apache.org/dist/lucene/solr/8.2.0/solr-8.2.0.tgz`
-  - `SOLR_SHA256=bfa4b39b236e5d714f4233138b8b5cb7e1996ddc0aad60052ce83c4b7bf33449`
-  - `SOLR_KEYS=E58A6F4D5B2B48AC66D5E53BD4F181881A42F9E6`
+  - `SOLR_VERSION=8.3.0`
+  - `SOLR_URL=https://archive.apache.org/dist/lucene/solr/8.3.0/solr-8.3.0.tgz`
+  - `SOLR_SHA256=1a9820915186227eaf6fcb851d60690853911b92a15b4e0b7f046324eb8d1387`
+  - `SOLR_KEYS=2085660D9C1FCCACC4A479A3BF160FF14992A24C`
   - `SOLR_INCLUDE=/etc/default/solr.in.sh`
   - `SOLR_HOME=/var/solr/data`
   - `SOLR_PID_DIR=/var/solr`
@@ -1475,6 +1475,32 @@ Other potentially useful URLs:
 - https://sources.debian.net/src/ncurses/6.1+20181013-2+deb10u1/ (for browsing the source)
 - https://sources.debian.net/src/ncurses/6.1+20181013-2+deb10u1/debian/copyright/ (for direct copyright/license information)
 - http://snapshot.debian.org/package/ncurses/6.1+20181013-2+deb10u1/ (for access to the source package after it no longer exists in the archive)
+
+### `dpkg` source package: `netcat=1.10-41.1`
+
+Binary Packages:
+
+- `netcat=1.10-41.1`
+- `netcat-traditional=1.10-41.1`
+
+**WARNING:** unable to detect licenses! (package likely not compliant with DEP-5)  
+If source is available (seen below), check the contents of `debian/copyright` within it.
+
+
+Source:
+
+```console
+$ apt-get source -qq --print-uris netcat=1.10-41.1
+'http://deb.debian.org/debian/pool/main/n/netcat/netcat_1.10-41.1.dsc' netcat_1.10-41.1.dsc 1826 SHA256:95728b99f9b6c4cb81a71bf388926dbd9cb013f473c8159e05b7e122011c47c6
+'http://deb.debian.org/debian/pool/main/n/netcat/netcat_1.10.orig.tar.bz2' netcat_1.10.orig.tar.bz2 64363 SHA256:64913dc3f0b4a96c3ab04d062d84f28ba6854152c94344e3985458b2aebca3d5
+'http://deb.debian.org/debian/pool/main/n/netcat/netcat_1.10-41.1.debian.tar.xz' netcat_1.10-41.1.debian.tar.xz 20876 SHA256:340ecf24e3024f7a6d10f4790d9f571ee65161924fb917d7c2ae0f9577904837
+```
+
+Other potentially useful URLs:
+
+- https://sources.debian.net/src/netcat/1.10-41.1/ (for browsing the source)
+- https://sources.debian.net/src/netcat/1.10-41.1/debian/copyright/ (for direct copyright/license information)
+- http://snapshot.debian.org/package/netcat/1.10-41.1/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `nettle=3.4.1-1`
 
