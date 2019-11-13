@@ -2891,20 +2891,13 @@ Licenses: (parsed from: `/usr/share/doc/libssh2-1/copyright`)
 
 - `BSD`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris libssh2=1.4.3-4.1+deb8u5
-'http://security.debian.org/debian-security/pool/updates/main/libs/libssh2/libssh2_1.4.3-4.1+deb8u5.dsc' libssh2_1.4.3-4.1+deb8u5.dsc 1928 SHA256:868c726083fa684919aacf88a4384a0457ba6a931d2582db9f32c320b6c0a1ba
-'http://security.debian.org/debian-security/pool/updates/main/libs/libssh2/libssh2_1.4.3.orig.tar.gz' libssh2_1.4.3.orig.tar.gz 685712 SHA256:eac6f85f9df9db2e6386906a6227eb2cd7b3245739561cad7d6dc1d5d021b96d
-'http://security.debian.org/debian-security/pool/updates/main/libs/libssh2/libssh2_1.4.3-4.1+deb8u5.debian.tar.xz' libssh2_1.4.3-4.1+deb8u5.debian.tar.xz 21604 SHA256:8c0347bf417e8008792eaaf9eb2ce9e0c6bce88c97de0c47c04c8dea1176fa7a
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/libssh2/1.4.3-4.1+deb8u5/
 
-- https://sources.debian.net/src/libssh2/1.4.3-4.1+deb8u5/ (for browsing the source)
-- https://sources.debian.net/src/libssh2/1.4.3-4.1+deb8u5/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/libssh2/1.4.3-4.1+deb8u5/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `libtasn1-6=4.2-3+deb8u3`
 
@@ -3497,20 +3490,13 @@ Licenses: (parsed from: `/usr/share/doc/linux-libc-dev/copyright`)
 - `Unicode-data`
 - `Xen-interface`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris linux=3.16.74-1
-'http://security.debian.org/debian-security/pool/updates/main/l/linux/linux_3.16.74-1.dsc' linux_3.16.74-1.dsc 143027 SHA256:6971ce4cbd4b0468875f944a0de446b6fcf42d279792e56b4b1eaa20446d3954
-'http://security.debian.org/debian-security/pool/updates/main/l/linux/linux_3.16.74.orig.tar.xz' linux_3.16.74.orig.tar.xz 82058548 SHA256:0196deabe4c21c5582ea6b1ee081b1367a07294d701715eb1ef665187b453834
-'http://security.debian.org/debian-security/pool/updates/main/l/linux/linux_3.16.74-1.debian.tar.xz' linux_3.16.74-1.debian.tar.xz 1849152 SHA256:7e341fe84f48da743788ca05048783212da189057ef52c905cd9cea71675b43a
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/linux/3.16.74-1/
 
-- https://sources.debian.net/src/linux/3.16.74-1/ (for browsing the source)
-- https://sources.debian.net/src/linux/3.16.74-1/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/linux/3.16.74-1/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `lsb=4.1+Debian13+nmu1`
 
