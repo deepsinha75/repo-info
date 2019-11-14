@@ -1,9 +1,9 @@
-# `docker:19.03.5-beta2-git`
+# `docker:19.03.5-rc1-git`
 
 ## Docker Metadata
 
-- Image ID: `sha256:37a31722b08bc1e271281ce753510b5eb7baa614f273ab151e7f3a8f9570c1b5`
-- Created: `2019-11-05T22:22:20.620030875Z`
+- Image ID: `sha256:d55a0e0e0041238f292ea566db38d2571383c905fa20414dc2d12574e8ab327b`
+- Created: `2019-11-12T00:26:06.65718692Z`
 - Virtual Size: ~ 237.52 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
@@ -12,7 +12,7 @@
 - Environment:
   - `PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
   - `DOCKER_CHANNEL=test`
-  - `DOCKER_VERSION=19.03.5-beta2`
+  - `DOCKER_VERSION=19.03.5-rc1`
   - `DOCKER_TLS_CERTDIR=/certs`
 
 ## `apk` (`.apk`-based packages)

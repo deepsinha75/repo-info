@@ -1,9 +1,9 @@
-# `docker:19.03.5-beta2-dind`
+# `docker:19.03.5-rc1-dind`
 
 ## Docker Metadata
 
-- Image ID: `sha256:b837d553b8e78d432b4433535260482971c095e5dc499aaa12132d9d410e9aad`
-- Created: `2019-11-05T22:21:55.043172029Z`
+- Image ID: `sha256:447d74b8707445b802067e1c4ad4d8060333eddad1eb8e059c63e55573c0c721`
+- Created: `2019-11-12T00:25:39.422867913Z`
 - Virtual Size: ~ 229.77 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
@@ -11,7 +11,7 @@
 - Environment:
   - `PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
   - `DOCKER_CHANNEL=test`
-  - `DOCKER_VERSION=19.03.5-beta2`
+  - `DOCKER_VERSION=19.03.5-rc1`
   - `DOCKER_TLS_CERTDIR=/certs`
   - `DIND_COMMIT=37498f009d8bf25fbb6199e8ccd34bed84f2874b`
 
