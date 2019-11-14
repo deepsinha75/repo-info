@@ -1,7 +1,7 @@
 ## `memcached:1-alpine`
 
 ```console
-$ docker pull memcached@sha256:05d23726609084b5d9d4a87d94e4fca67968078e561155d88088e68836e2fab3
+$ docker pull memcached@sha256:3cfb2eee0b618722a62f4cc907fa0ede848efa87d773bb9384044f490926e7ce
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -155,69 +155,69 @@ CMD ["memcached"]
 ### `memcached:1-alpine` - linux; arm variant v7
 
 ```console
-$ docker pull memcached@sha256:2ae0975d5a274ddcf124b843ea92c5c938b9455787c541ca5db0b5cda96303a5
+$ docker pull memcached@sha256:3427ce84491e7d2b40efbaf37360a8fea1f1693d176ac0f465ab3e78e1395ed3
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **3.7 MB (3724529 bytes)**  
+-	Total Size: **3.7 MB (3727635 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:c25306fecea9b861b3d0eb2cf0b9465e4f726a9f874b2a425fb8dc64fcab938f`
+-	Image ID: `sha256:97f03e8f3ae94dd49c8466796f328789ee84fb5f532bca13838aabc950d3675e`
 -	Entrypoint: `["docker-entrypoint.sh"]`
 -	Default Command: `["memcached"]`
 
 ```dockerfile
-# Tue, 20 Aug 2019 19:57:31 GMT
-ADD file:fb8f939a5c1daf46111639106cd1ae6ee37e1cda1e10da42617adfcbd3f9b2cb in / 
-# Tue, 20 Aug 2019 19:57:32 GMT
+# Mon, 21 Oct 2019 18:15:18 GMT
+ADD file:6b2893134302eabeb80e356fc4e5a29d9cd442362c382b3504688c014a734bb9 in / 
+# Mon, 21 Oct 2019 18:15:31 GMT
 CMD ["/bin/sh"]
-# Tue, 20 Aug 2019 21:10:42 GMT
+# Mon, 21 Oct 2019 19:36:02 GMT
 RUN addgroup -g 11211 memcache && adduser -D -u 11211 -G memcache memcache
-# Tue, 20 Aug 2019 21:10:53 GMT
+# Mon, 21 Oct 2019 19:36:14 GMT
 RUN apk add --no-cache cyrus-sasl-plain
-# Wed, 02 Oct 2019 02:11:36 GMT
-ENV MEMCACHED_VERSION=1.5.19
-# Wed, 02 Oct 2019 02:11:37 GMT
-ENV MEMCACHED_SHA1=14e6a02e743838696fcb620edf6a2fd7e60cabec
-# Wed, 02 Oct 2019 06:34:30 GMT
+# Thu, 14 Nov 2019 00:03:34 GMT
+ENV MEMCACHED_VERSION=1.5.20
+# Thu, 14 Nov 2019 00:03:36 GMT
+ENV MEMCACHED_SHA1=5d3b5af3ce0a1483d655017db7228bcaeff10d47
+# Thu, 14 Nov 2019 04:49:12 GMT
 RUN set -x 		&& apk add --no-cache --virtual .build-deps 		ca-certificates 		coreutils 		cyrus-sasl-dev 		dpkg-dev dpkg 		gcc 		libc-dev 		libevent-dev 		linux-headers 		make 		openssl 		perl 		perl-utils 		tar 		wget 		&& wget -O memcached.tar.gz "https://memcached.org/files/memcached-$MEMCACHED_VERSION.tar.gz" 	&& echo "$MEMCACHED_SHA1  memcached.tar.gz" | sha1sum -c - 	&& mkdir -p /usr/src/memcached 	&& tar -xzf memcached.tar.gz -C /usr/src/memcached --strip-components=1 	&& rm memcached.tar.gz 		&& cd /usr/src/memcached 		&& gnuArch="$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)" 	&& enableExtstore="$( 		case "$gnuArch" in 			s390x-*) ;; 			*) echo '--enable-extstore' ;; 		esac 	)" 	&& ./configure 		--build="$gnuArch" 		--enable-sasl 		--enable-sasl-pwdb 		$enableExtstore 	&& make -j "$(nproc)" 		&& make test 	&& make install 		&& cd / && rm -rf /usr/src/memcached 		&& runDeps="$( 		scanelf --needed --nobanner --format '%n#p' --recursive /usr/local 			| tr ',' '\n' 			| sort -u 			| awk 'system("[ -e /usr/local/lib/" $1 " ]") == 0 { next } { print "so:" $1 }' 	)" 	&& apk add --no-network --virtual .memcached-rundeps $runDeps 	&& apk del --no-network .build-deps 		&& memcached -V
-# Wed, 02 Oct 2019 06:34:32 GMT
+# Thu, 14 Nov 2019 04:49:15 GMT
 COPY file:bf641b13ea5b37f5830b299ebe9d72f194ee5d897db14faf8b133dc7a66a48ad in /usr/local/bin/ 
-# Wed, 02 Oct 2019 06:34:42 GMT
+# Thu, 14 Nov 2019 04:49:25 GMT
 RUN ln -s usr/local/bin/docker-entrypoint.sh /entrypoint.sh # backwards compat
-# Wed, 02 Oct 2019 06:34:44 GMT
+# Thu, 14 Nov 2019 04:49:27 GMT
 ENTRYPOINT ["docker-entrypoint.sh"]
-# Wed, 02 Oct 2019 06:34:46 GMT
+# Thu, 14 Nov 2019 04:49:29 GMT
 USER memcache
-# Wed, 02 Oct 2019 06:34:48 GMT
+# Thu, 14 Nov 2019 04:49:30 GMT
 EXPOSE 11211
-# Wed, 02 Oct 2019 06:34:49 GMT
+# Thu, 14 Nov 2019 04:49:32 GMT
 CMD ["memcached"]
 ```
 
 -	Layers:
-	-	`sha256:33b18ff7f9b776f4049934d6f7e29a4dc7b45b42e5e686425c7673b2bbfec7de`  
-		Last Modified: Tue, 20 Aug 2019 19:57:53 GMT  
-		Size: 2.4 MB (2375481 bytes)  
+	-	`sha256:99fc70ac0b64db67086f98ceb3942600816eed98046abd6be5ad66f4614a9ca2`  
+		Last Modified: Mon, 21 Oct 2019 18:16:16 GMT  
+		Size: 2.4 MB (2378437 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:5f692cb0b470c4bfb10efe78a9b16b72170fe64425e2fe3b4a20a538e44112cc`  
-		Last Modified: Fri, 30 Aug 2019 04:14:18 GMT  
+	-	`sha256:5e161725687f6377d8205abd585e5959827287329f4b405cd2ecd3e321823106`  
+		Last Modified: Thu, 14 Nov 2019 04:49:48 GMT  
 		Size: 1.3 KB (1287 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:98fa506fa7abc246c5c9c9c450951927702a447440ccdf2b80610bf12461ee58`  
-		Last Modified: Fri, 30 Aug 2019 04:14:18 GMT  
-		Size: 13.3 KB (13280 bytes)  
+	-	`sha256:efb27d52388da7ce283887c26dac5326de1e291c37bd1d45b5566686174aa973`  
+		Last Modified: Thu, 14 Nov 2019 04:49:48 GMT  
+		Size: 13.3 KB (13273 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:b4784f5eae9c048e9c931091649ad771fd1c1fce96dfe97c12095abf494ccfc3`  
-		Last Modified: Wed, 02 Oct 2019 06:35:07 GMT  
-		Size: 1.3 MB (1334072 bytes)  
+	-	`sha256:d082e305949849336aef28acf8cce48d4171e143799caa7bdd33e044be376d72`  
+		Last Modified: Thu, 14 Nov 2019 04:49:49 GMT  
+		Size: 1.3 MB (1334228 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:37b200db9539e32c2dade84c7008ea93e6c79c51d9d11b86f3a7dbe1b1db5df5`  
-		Last Modified: Wed, 02 Oct 2019 06:35:05 GMT  
-		Size: 288.0 B  
+	-	`sha256:2bd3fa87fa42e46a85b8bcc1ab625676380bddfc0c3205ac52d7b4b402618f9b`  
+		Last Modified: Thu, 14 Nov 2019 04:49:48 GMT  
+		Size: 289.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:87ccda97e70279649083e75c7b1a2c87a125a27c63a2601118293f7bb136fcb7`  
-		Last Modified: Wed, 02 Oct 2019 06:35:05 GMT  
+	-	`sha256:2998243d90904d089977545d497cc67994e9eb21e6526fadced1ee4bba17b862`  
+		Last Modified: Thu, 14 Nov 2019 04:49:48 GMT  
 		Size: 121.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
