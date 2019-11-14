@@ -1,10 +1,10 @@
-# `drupal:8.7.8-fpm`
+# `drupal:8.7.9-fpm`
 
 ## Docker Metadata
 
-- Image ID: `sha256:ca80330cb0a013e098d0f69d014109641cf663dbce40ff1a822fddb3fe165e8e`
-- Created: `2019-10-25T08:50:14.507813492Z`
-- Virtual Size: ~ 438.62 Mb  
+- Image ID: `sha256:bb14e7e7c9ad8d4ee44c3f26a4abe68137c397e55fc2930348aebfe769da9462`
+- Created: `2019-11-12T00:27:54.188340111Z`
+- Virtual Size: ~ 438.65 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["docker-php-entrypoint"]`
@@ -23,8 +23,8 @@
   - `PHP_ASC_URL=https://www.php.net/get/php-7.3.11.tar.xz.asc/from/this/mirror`
   - `PHP_SHA256=657cf6464bac28e9490c59c07a2cf7bb76c200f09cfadf6e44ea64e95fa01021`
   - `PHP_MD5=`
-  - `DRUPAL_VERSION=8.7.8`
-  - `DRUPAL_MD5=f281eb14d8aabf0c3e78dd519ca4b640`
+  - `DRUPAL_VERSION=8.7.9`
+  - `DRUPAL_MD5=fce471e505f03164ec1cfafffc1d85ad`
 
 ## `dpkg` (`.deb`-based packages)
 
@@ -1845,20 +1845,13 @@ Licenses: (parsed from: `/usr/share/doc/linux-libc-dev/copyright`)
 - `Unicode-data`
 - `Xen-interface`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris linux=4.9.189-3+deb9u1
-'http://security.debian.org/debian-security/pool/updates/main/l/linux/linux_4.9.189-3+deb9u1.dsc' linux_4.9.189-3+deb9u1.dsc 125208 SHA256:c0222eaa59ac2702aac81f1c29df942486a7de47ecd13c519b6b81e09beb8c78
-'http://security.debian.org/debian-security/pool/updates/main/l/linux/linux_4.9.189.orig.tar.xz' linux_4.9.189.orig.tar.xz 94807908 SHA256:f16329e227a1d4e359bd251fcaca21b0da83f1f00f03adc66e1062a479e1e5c4
-'http://security.debian.org/debian-security/pool/updates/main/l/linux/linux_4.9.189-3+deb9u1.debian.tar.xz' linux_4.9.189-3+deb9u1.debian.tar.xz 2644508 SHA256:612bd11c21c632fa8a180ab059a90f43a0ff3287554fe7a456554800eb9a9ee5
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/linux/4.9.189-3+deb9u1/
 
-- https://sources.debian.net/src/linux/4.9.189-3+deb9u1/ (for browsing the source)
-- https://sources.debian.net/src/linux/4.9.189-3+deb9u1/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/linux/4.9.189-3+deb9u1/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `lsb=9.20161125`
 
