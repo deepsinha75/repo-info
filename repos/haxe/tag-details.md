@@ -138,71 +138,71 @@
 ## `haxe:3.1`
 
 ```console
-$ docker pull haxe@sha256:8be8feb2a03e3c46f51cf49e151e57428164aa72c1e063e0581058645919bc9a
+$ docker pull haxe@sha256:3da6aebe400f195fea12986e203b1a8a9c54fb7a3dd2429e5c78fc7459d278eb
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
 -	Platforms:
-	-	windows version 10.0.17763.805; amd64
-	-	windows version 10.0.17134.1069; amd64
-	-	windows version 10.0.14393.3274; amd64
+	-	windows version 10.0.17763.864; amd64
+	-	windows version 10.0.17134.1130; amd64
+	-	windows version 10.0.14393.3326; amd64
 
-### `haxe:3.1` - windows version 10.0.17763.805; amd64
+### `haxe:3.1` - windows version 10.0.17763.864; amd64
 
 ```console
-$ docker pull haxe@sha256:70cca081014ca1b49fb90b08b28c396d8d6d3a88512e5c71d14c01a949f8462a
+$ docker pull haxe@sha256:5d072b92b219aee61fa2829e4b0a00c4a808bb36b3e49ed57213888620b8a239
 ```
 
 -	Docker Version: 18.03.1-ee-4
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **2.2 GB (2226432984 bytes)**  
+-	Total Size: **2.2 GB (2240831591 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:927147728aa2754a054789a1749ccbd18d72135e85bef2043408e9acd5613b6b`
+-	Image ID: `sha256:96017a7358f36d1e7c6d58e59bda53dd3211cd6ed9b433453eb3ff0091848024`
 -	Default Command: `["haxe"]`
 -	`SHELL`: `["powershell","-Command","$ErrorActionPreference = 'Stop';"]`
 
 ```dockerfile
 # Sat, 15 Sep 2018 09:10:26 GMT
 RUN Apply image 1809-RTM-amd64
-# Sun, 06 Oct 2019 10:02:47 GMT
+# Sat, 09 Nov 2019 02:48:55 GMT
 RUN Install update 1809-amd64
-# Wed, 09 Oct 2019 14:22:24 GMT
+# Tue, 12 Nov 2019 23:49:55 GMT
 SHELL [powershell -Command $ErrorActionPreference = 'Stop';]
-# Wed, 09 Oct 2019 14:22:26 GMT
+# Tue, 12 Nov 2019 23:49:56 GMT
 ENV HAXETOOLKIT_PATH=C:\HaxeToolkit
-# Wed, 09 Oct 2019 14:22:27 GMT
+# Tue, 12 Nov 2019 23:49:57 GMT
 ENV NEKOPATH=C:\HaxeToolkit\neko
-# Wed, 09 Oct 2019 14:22:28 GMT
+# Tue, 12 Nov 2019 23:49:59 GMT
 ENV HAXEPATH=C:\HaxeToolkit\haxe
-# Wed, 09 Oct 2019 14:22:29 GMT
+# Tue, 12 Nov 2019 23:50:00 GMT
 ENV HAXE_STD_PATH=C:\HaxeToolkit\haxe\std
-# Wed, 09 Oct 2019 14:22:31 GMT
+# Tue, 12 Nov 2019 23:50:01 GMT
 ENV HAXELIB_PATH=C:\HaxeToolkit\haxe\lib
-# Wed, 09 Oct 2019 14:23:13 GMT
+# Tue, 12 Nov 2019 23:50:59 GMT
 RUN $newPath = ('{0};{1};{2}' -f $env:HAXEPATH, $env:NEKOPATH, $env:PATH); 	Write-Host ('Updating PATH: {0}' -f $newPath); 	[Environment]::SetEnvironmentVariable('PATH', $newPath, [EnvironmentVariableTarget]::Machine);
-# Wed, 09 Oct 2019 14:24:25 GMT
+# Tue, 12 Nov 2019 23:52:16 GMT
 RUN $url = 'https://download.microsoft.com/download/0/5/6/056dcda9-d667-4e27-8001-8a0c6971d6b1/vcredist_x86.exe'; 	Write-Host ('Downloading {0} ...' -f $url); 	[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12; 	Invoke-WebRequest -Uri $url -OutFile 'vcredist_x86.exe'; 		Write-Host 'Verifying sha256 (89f4e593ea5541d1c53f983923124f9fd061a1c0c967339109e375c661573c17) ...'; 	if ((Get-FileHash vcredist_x86.exe -Algorithm sha256).Hash -ne '89f4e593ea5541d1c53f983923124f9fd061a1c0c967339109e375c661573c17') { 		Write-Host 'FAILED!'; 		exit 1; 	}; 		Write-Host 'Installing ...'; 	Start-Process -FilePath "vcredist_x86.exe" -ArgumentList "/Q" -Wait; 		Write-Host 'Removing installer...'; 	Remove-Item .\vcredist_x86.exe; 		Write-Host 'Complete.';
-# Wed, 09 Oct 2019 14:24:51 GMT
+# Tue, 12 Nov 2019 23:52:46 GMT
 RUN New-Item -ItemType directory -Path $env:HAXETOOLKIT_PATH;
-# Mon, 28 Oct 2019 22:19:20 GMT
+# Tue, 12 Nov 2019 23:52:47 GMT
 ENV NEKO_VERSION=2.3.0
-# Mon, 28 Oct 2019 23:16:50 GMT
+# Wed, 13 Nov 2019 00:59:42 GMT
 RUN $url = 'https://github.com/HaxeFoundation/neko/releases/download/v2-3-0/neko-2.3.0-win.zip'; 	Write-Host ('Downloading {0} ...' -f $url); 	[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12; 	Invoke-WebRequest -Uri $url -OutFile 'neko.zip'; 		Write-Host 'Verifying sha256 (fe5a11350d2dd74338f971d62115f2bd21ec6912f193db04c5d28eb987a50485) ...'; 	if ((Get-FileHash neko.zip -Algorithm sha256).Hash -ne 'fe5a11350d2dd74338f971d62115f2bd21ec6912f193db04c5d28eb987a50485') { 		Write-Host 'FAILED!'; 		exit 1; 	}; 		Write-Host 'Expanding ...'; 	New-Item -ItemType directory -Path tmp; 	Expand-Archive -Path neko.zip -DestinationPath tmp; 	if (Test-Path tmp\neko.exe) { Move-Item tmp $env:NEKOPATH } 	else { Move-Item (Resolve-Path tmp\neko* | Select -ExpandProperty Path) $env:NEKOPATH }; 		Write-Host 'Removing ...'; 	Remove-Item -Path neko.zip, tmp -Force -Recurse -ErrorAction Ignore; 		Write-Host 'Verifying install ...'; 	Write-Host '  neko -version'; neko -version; 		Write-Host 'Complete.';
-# Tue, 29 Oct 2019 00:50:49 GMT
+# Wed, 13 Nov 2019 02:37:36 GMT
 ENV HAXE_VERSION=3.1.3
-# Tue, 29 Oct 2019 00:53:45 GMT
+# Wed, 13 Nov 2019 02:40:34 GMT
 RUN $url = 'https://github.com/HaxeFoundation/haxe/releases/download/3.1.3/haxe-3.1.3-win.zip'; 	Write-Host ('Downloading {0} ...' -f $url); 	[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12; 	Invoke-WebRequest -Uri $url -OutFile haxe.zip; 		Write-Host 'Verifying sha256 (4cf84cdbf7960a61ae70b0d9166c6f9bde16388c3b81e54af91446f4c9e44ae4) ...'; 	if ((Get-FileHash haxe.zip -Algorithm sha256).Hash -ne '4cf84cdbf7960a61ae70b0d9166c6f9bde16388c3b81e54af91446f4c9e44ae4') { 		Write-Host 'FAILED!'; 		exit 1; 	}; 		Write-Host 'Expanding ...'; 	New-Item -ItemType directory -Path tmp; 	Expand-Archive -Path haxe.zip -DestinationPath tmp; 	if (Test-Path tmp\haxe.exe) { Move-Item tmp $env:HAXEPATH } 	else { Move-Item (Resolve-Path tmp\haxe* | Select -ExpandProperty Path) $env:HAXEPATH }; 		Write-Host 'Removing ...'; 	Remove-Item -Path haxe.zip, tmp -Force -Recurse -ErrorAction Ignore; 		Write-Host 'Verifying install ...'; 	Write-Host '  haxe -version'; haxe -version; 	Write-Host '  haxelib version'; haxelib version; 		Write-Host 'Complete.';
-# Tue, 29 Oct 2019 00:54:12 GMT
+# Wed, 13 Nov 2019 02:40:59 GMT
 RUN New-Item -ItemType directory -Path $env:HAXELIB_PATH;
-# Tue, 29 Oct 2019 00:54:13 GMT
+# Wed, 13 Nov 2019 02:41:00 GMT
 ENV HOMEDRIVE=C:
-# Tue, 29 Oct 2019 00:54:40 GMT
+# Wed, 13 Nov 2019 02:41:26 GMT
 RUN $newPath = ('{0}\Users\{1}' -f $env:HOMEDRIVE, $env:USERNAME); 	Write-Host ('Updating HOMEPATH: {0}' -f $newPath); 	[Environment]::SetEnvironmentVariable('HOMEPATH', $newPath, [EnvironmentVariableTarget]::Machine);
-# Tue, 29 Oct 2019 00:55:10 GMT
+# Wed, 13 Nov 2019 02:41:54 GMT
 RUN (New-Object System.Net.WebClient).DownloadString('https://lib.haxe.org') >$null
-# Tue, 29 Oct 2019 00:55:36 GMT
+# Wed, 13 Nov 2019 02:42:21 GMT
 RUN (New-Object System.Net.WebClient).DownloadString('https://d1smpvufia21az.cloudfront.net') >$null
-# Tue, 29 Oct 2019 00:55:37 GMT
+# Wed, 13 Nov 2019 02:42:22 GMT
 CMD ["haxe"]
 ```
 
@@ -211,143 +211,142 @@ CMD ["haxe"]
 		Last Modified: Tue, 13 Nov 2018 18:50:17 GMT  
 		Size: 1.5 GB (1534685324 bytes)  
 		MIME: application/vnd.docker.image.rootfs.foreign.diff.tar.gzip
-	-	`sha256:12c8dbabfd62cb512baca43f0d1e9588127e6bd66641e93a5e6f7e89e1bf7656`  
-		Last Modified: Sun, 06 Oct 2019 17:38:47 GMT  
-		Size: 666.6 MB (666618146 bytes)  
+	-	`sha256:e96b0897c5d1cc4214a97d25769f32df19da79456e0f1086d52497677a2a2bb6`  
+		Size: 681.0 MB (681015397 bytes)  
 		MIME: application/vnd.docker.image.rootfs.foreign.diff.tar.gzip
-	-	`sha256:9697a02cbf136853a1a6d136ec00a5ff02b44ae75db8a0b5ae353549d77aea63`  
-		Last Modified: Wed, 09 Oct 2019 16:41:08 GMT  
+	-	`sha256:907461e7e3e37e44cbbf832e53a080dfd3599a15f60436161a3687445bc811a0`  
+		Last Modified: Wed, 13 Nov 2019 02:58:27 GMT  
+		Size: 1.2 KB (1185 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:bfe86c76591b06caa55136e145b560d106273a30b3d2ed3089787fecf49b7dca`  
+		Last Modified: Wed, 13 Nov 2019 02:58:26 GMT  
+		Size: 1.2 KB (1189 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:3d2ec4931c7a61303dd15038b45bed240558340474add393a6a1f7100f0bc88f`  
+		Last Modified: Wed, 13 Nov 2019 02:58:26 GMT  
+		Size: 1.2 KB (1187 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:dd39ff557c2bbbf8047a995824999a335215d593df5c5c4e7461162e464cbe69`  
+		Last Modified: Wed, 13 Nov 2019 02:58:25 GMT  
+		Size: 1.2 KB (1200 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:b427ceec07a96f67e14be18f2f2480075f30cce723fea51389806a355744fb28`  
+		Last Modified: Wed, 13 Nov 2019 02:58:23 GMT  
+		Size: 1.2 KB (1210 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:e27f29fe5b3718cf86dfbb08df8751545cb10c1a1f7fd677cedab980e5255567`  
+		Last Modified: Wed, 13 Nov 2019 02:58:22 GMT  
 		Size: 1.2 KB (1206 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:5249a3833b8d297b13b68f3f11dce3747c88e4b5fb954b71f885822fb61b11e9`  
-		Last Modified: Wed, 09 Oct 2019 16:41:07 GMT  
-		Size: 1.2 KB (1212 bytes)  
+	-	`sha256:8d8b3151b7b9d5c53f0cee0128518e2fefe9e165c9a7fde480f50256f0dfb196`  
+		Last Modified: Wed, 13 Nov 2019 02:58:23 GMT  
+		Size: 4.6 MB (4561228 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:663e4184d6c8ea3d3f65dd41528d304b1c885a23692dbe54c99ec8ab35b2ec4d`  
-		Last Modified: Wed, 09 Oct 2019 16:41:06 GMT  
-		Size: 1.2 KB (1178 bytes)  
+	-	`sha256:0a61b180fdbafca7789ccd7a28d623116451ab0166df6943858559649fbd7415`  
+		Last Modified: Wed, 13 Nov 2019 02:58:24 GMT  
+		Size: 12.9 MB (12910600 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:bf4771f64d98aefaa0bc7467bfd397e8ee6efe1bc7f5959a7d8357da6b1ee38b`  
-		Last Modified: Wed, 09 Oct 2019 16:41:06 GMT  
-		Size: 1.2 KB (1192 bytes)  
+	-	`sha256:cac7ef27a98c9d1de916b734e2d52da7310aa93ce10ca5c79f8ccc01736ac746`  
+		Last Modified: Wed, 13 Nov 2019 02:58:20 GMT  
+		Size: 307.0 KB (307046 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:62400fe0ded518e8851bbf001266058a5bb5487e1372f11d8ea64bb0e9a48e12`  
-		Last Modified: Wed, 09 Oct 2019 16:41:04 GMT  
-		Size: 1.2 KB (1175 bytes)  
+	-	`sha256:27db2d883c2a40c4be0632feb93418a2d6415688b01c69c302a02f7d594997d6`  
+		Last Modified: Wed, 13 Nov 2019 02:58:17 GMT  
+		Size: 1.2 KB (1182 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c9c34cc510a2c4853535c6c9e35ba68aacbe71abad1cfe9695b45fe2e60defc0`  
-		Last Modified: Wed, 09 Oct 2019 16:41:03 GMT  
-		Size: 1.2 KB (1203 bytes)  
+	-	`sha256:6b4d761fbb625bc3d476f33ca19e9a68aca85e65df1c09ab1a1dcdf3514cc8c4`  
+		Last Modified: Thu, 14 Nov 2019 02:18:14 GMT  
+		Size: 1.9 MB (1923147 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:0945d46b6128884e9d2e76ec9a970e6177cfefd1f9210c6aaa782bec89043806`  
-		Last Modified: Wed, 09 Oct 2019 16:41:04 GMT  
-		Size: 4.5 MB (4523541 bytes)  
+	-	`sha256:4b146c0d52ca2a520d6caa2303241ce9a701ccf0d12e7df65a8e321cde8761d3`  
+		Last Modified: Thu, 14 Nov 2019 04:22:05 GMT  
+		Size: 1.2 KB (1207 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c732966829b6eb22941fc2b3c17944790355a222f2b1abe9a8748aab63e036c0`  
-		Last Modified: Wed, 09 Oct 2019 16:41:05 GMT  
-		Size: 12.9 MB (12896579 bytes)  
+	-	`sha256:e667da10259d2f2832fca1b6bb0876c4b2190d01ae84120805bcd8b410dea947`  
+		Last Modified: Thu, 14 Nov 2019 04:22:15 GMT  
+		Size: 4.0 MB (4038540 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:282cf55939cdb517908a8df38ee7c0b344fcfc722c736019e22112bede01684e`  
-		Last Modified: Wed, 09 Oct 2019 16:41:00 GMT  
-		Size: 295.3 KB (295286 bytes)  
+	-	`sha256:73a735b61eeeb2e99cb4bba5513529a125dbfd1637a94cda5ec450a72e9af3a1`  
+		Last Modified: Thu, 14 Nov 2019 04:22:04 GMT  
+		Size: 329.9 KB (329870 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:fdd5720e2e2419c07a84874ed376f2e7bfa7aeb3ff67d69d16742ec5237a563b`  
-		Last Modified: Tue, 29 Oct 2019 01:10:01 GMT  
-		Size: 1.2 KB (1192 bytes)  
+	-	`sha256:81ce6c800ccd4160e14db57cfb3a870e60e9c61d736645c54dea124d1a4c2be2`  
+		Last Modified: Thu, 14 Nov 2019 04:22:01 GMT  
+		Size: 1.2 KB (1181 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:5b3112e25e95abc8545eda9b997d9cc4eb896eca6b914023634f8fb4f5388faa`  
-		Last Modified: Tue, 29 Oct 2019 01:12:24 GMT  
-		Size: 1.9 MB (1947578 bytes)  
+	-	`sha256:c1ed64adec43db9906676b735bd50bfa6af6abd236d8bad4a71bbbf1d4ce1483`  
+		Last Modified: Thu, 14 Nov 2019 04:22:02 GMT  
+		Size: 333.4 KB (333402 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:16f2c4e45e9cf9c1b076ea355a48de52aa83adebc828900524d0c14477ee45a6`  
-		Last Modified: Tue, 29 Oct 2019 01:19:12 GMT  
-		Size: 1.2 KB (1190 bytes)  
+	-	`sha256:a7e6777a0bd5091e59c647ca13b7ee544a195ebcf0aede43a930bd0333b860df`  
+		Last Modified: Thu, 14 Nov 2019 04:22:02 GMT  
+		Size: 350.9 KB (350929 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:6836cdba57b654395d2edeea68ffec8104776207c4c1656f48484437b42c060f`  
-		Last Modified: Tue, 29 Oct 2019 01:19:23 GMT  
-		Size: 4.0 MB (4039431 bytes)  
+	-	`sha256:ee00c566dbba6f8f73ce9e7b3be6b595eacf88a0bef58391eb13bb2f180866cf`  
+		Last Modified: Thu, 14 Nov 2019 04:22:01 GMT  
+		Size: 364.2 KB (364194 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:4a010fb314bde6fe6c205a29ebcf9e7311ce17537272724148bd20e94397e38e`  
-		Last Modified: Tue, 29 Oct 2019 01:19:12 GMT  
-		Size: 341.3 KB (341332 bytes)  
-		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:dcdeaac372762f069ac1d4dff1202afa70b30c94bdd4390c2527fe788ce33d06`  
-		Last Modified: Tue, 29 Oct 2019 01:19:09 GMT  
-		Size: 1.2 KB (1170 bytes)  
-		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:73efc3c081eb5262c5b3348c7657c3d7d6967637d397536e39b001b24277b5a3`  
-		Last Modified: Tue, 29 Oct 2019 01:19:09 GMT  
-		Size: 344.0 KB (343959 bytes)  
-		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:a91662264b5e48f799c69fdce93e97eedae8c80e41333534004dc25dd2350b90`  
-		Last Modified: Tue, 29 Oct 2019 01:19:09 GMT  
-		Size: 358.3 KB (358305 bytes)  
-		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:d2a3361721dfaeb74821c389b0c280731a5bfd76728552852b296724f5a314f7`  
-		Last Modified: Tue, 29 Oct 2019 01:19:09 GMT  
-		Size: 371.6 KB (371591 bytes)  
-		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:f759f187e8709098bfa4ef025d48b5ac2458c16af7f187f4efc19b294e71381e`  
-		Last Modified: Tue, 29 Oct 2019 01:19:09 GMT  
-		Size: 1.2 KB (1194 bytes)  
+	-	`sha256:045336b180f04ff3f577e1bdbe93b61dc48de5b1607de23ef41b69f821c8f8e1`  
+		Last Modified: Thu, 14 Nov 2019 04:22:01 GMT  
+		Size: 1.2 KB (1167 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
-### `haxe:3.1` - windows version 10.0.17134.1069; amd64
+### `haxe:3.1` - windows version 10.0.17134.1130; amd64
 
 ```console
-$ docker pull haxe@sha256:0b564b0d1897a6ec78888c77b0cfc868d330d5f015648dc1466dd505c7540123
+$ docker pull haxe@sha256:e0e39763784f8920f856aeed153bc59ac54cae9585a9bcc4fed93c2a890b164f
 ```
 
 -	Docker Version: 18.03.1-ee-4
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **2.4 GB (2373876050 bytes)**  
+-	Total Size: **2.4 GB (2381214151 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:6b8d35418297aae1d458c771a04c35df9e78ae985d96aa0497ac5885ff60e36a`
+-	Image ID: `sha256:f5e528775470b028e457e120466d68f94d7e59b35e742d3e745ec980edf68eb9`
 -	Default Command: `["haxe"]`
 -	`SHELL`: `["powershell","-Command","$ErrorActionPreference = 'Stop';"]`
 
 ```dockerfile
 # Thu, 12 Apr 2018 09:20:54 GMT
 RUN Apply image 1803-RTM-amd64
-# Sun, 06 Oct 2019 14:03:04 GMT
+# Sat, 09 Nov 2019 08:10:48 GMT
 RUN Install update 1803-amd64
-# Wed, 09 Oct 2019 14:30:59 GMT
+# Wed, 13 Nov 2019 00:30:55 GMT
 SHELL [powershell -Command $ErrorActionPreference = 'Stop';]
-# Wed, 09 Oct 2019 14:31:00 GMT
+# Wed, 13 Nov 2019 00:30:56 GMT
 ENV HAXETOOLKIT_PATH=C:\HaxeToolkit
-# Wed, 09 Oct 2019 14:31:01 GMT
+# Wed, 13 Nov 2019 00:30:57 GMT
 ENV NEKOPATH=C:\HaxeToolkit\neko
-# Wed, 09 Oct 2019 14:31:03 GMT
+# Wed, 13 Nov 2019 00:30:59 GMT
 ENV HAXEPATH=C:\HaxeToolkit\haxe
-# Wed, 09 Oct 2019 14:31:04 GMT
+# Wed, 13 Nov 2019 00:31:00 GMT
 ENV HAXE_STD_PATH=C:\HaxeToolkit\haxe\std
-# Wed, 09 Oct 2019 14:31:05 GMT
+# Wed, 13 Nov 2019 00:31:01 GMT
 ENV HAXELIB_PATH=C:\HaxeToolkit\haxe\lib
-# Wed, 09 Oct 2019 14:31:52 GMT
+# Wed, 13 Nov 2019 00:32:01 GMT
 RUN $newPath = ('{0};{1};{2}' -f $env:HAXEPATH, $env:NEKOPATH, $env:PATH); 	Write-Host ('Updating PATH: {0}' -f $newPath); 	[Environment]::SetEnvironmentVariable('PATH', $newPath, [EnvironmentVariableTarget]::Machine);
-# Wed, 09 Oct 2019 14:33:06 GMT
+# Wed, 13 Nov 2019 00:33:21 GMT
 RUN $url = 'https://download.microsoft.com/download/0/5/6/056dcda9-d667-4e27-8001-8a0c6971d6b1/vcredist_x86.exe'; 	Write-Host ('Downloading {0} ...' -f $url); 	[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12; 	Invoke-WebRequest -Uri $url -OutFile 'vcredist_x86.exe'; 		Write-Host 'Verifying sha256 (89f4e593ea5541d1c53f983923124f9fd061a1c0c967339109e375c661573c17) ...'; 	if ((Get-FileHash vcredist_x86.exe -Algorithm sha256).Hash -ne '89f4e593ea5541d1c53f983923124f9fd061a1c0c967339109e375c661573c17') { 		Write-Host 'FAILED!'; 		exit 1; 	}; 		Write-Host 'Installing ...'; 	Start-Process -FilePath "vcredist_x86.exe" -ArgumentList "/Q" -Wait; 		Write-Host 'Removing installer...'; 	Remove-Item .\vcredist_x86.exe; 		Write-Host 'Complete.';
-# Wed, 09 Oct 2019 14:33:32 GMT
+# Wed, 13 Nov 2019 00:33:51 GMT
 RUN New-Item -ItemType directory -Path $env:HAXETOOLKIT_PATH;
-# Mon, 28 Oct 2019 22:57:11 GMT
+# Wed, 13 Nov 2019 00:33:52 GMT
 ENV NEKO_VERSION=2.3.0
-# Mon, 28 Oct 2019 23:23:45 GMT
+# Wed, 13 Nov 2019 01:36:48 GMT
 RUN $url = 'https://github.com/HaxeFoundation/neko/releases/download/v2-3-0/neko-2.3.0-win.zip'; 	Write-Host ('Downloading {0} ...' -f $url); 	[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12; 	Invoke-WebRequest -Uri $url -OutFile 'neko.zip'; 		Write-Host 'Verifying sha256 (fe5a11350d2dd74338f971d62115f2bd21ec6912f193db04c5d28eb987a50485) ...'; 	if ((Get-FileHash neko.zip -Algorithm sha256).Hash -ne 'fe5a11350d2dd74338f971d62115f2bd21ec6912f193db04c5d28eb987a50485') { 		Write-Host 'FAILED!'; 		exit 1; 	}; 		Write-Host 'Expanding ...'; 	New-Item -ItemType directory -Path tmp; 	Expand-Archive -Path neko.zip -DestinationPath tmp; 	if (Test-Path tmp\neko.exe) { Move-Item tmp $env:NEKOPATH } 	else { Move-Item (Resolve-Path tmp\neko* | Select -ExpandProperty Path) $env:NEKOPATH }; 		Write-Host 'Removing ...'; 	Remove-Item -Path neko.zip, tmp -Force -Recurse -ErrorAction Ignore; 		Write-Host 'Verifying install ...'; 	Write-Host '  neko -version'; neko -version; 		Write-Host 'Complete.';
-# Tue, 29 Oct 2019 00:55:52 GMT
+# Wed, 13 Nov 2019 02:42:39 GMT
 ENV HAXE_VERSION=3.1.3
-# Tue, 29 Oct 2019 00:58:49 GMT
+# Wed, 13 Nov 2019 02:45:49 GMT
 RUN $url = 'https://github.com/HaxeFoundation/haxe/releases/download/3.1.3/haxe-3.1.3-win.zip'; 	Write-Host ('Downloading {0} ...' -f $url); 	[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12; 	Invoke-WebRequest -Uri $url -OutFile haxe.zip; 		Write-Host 'Verifying sha256 (4cf84cdbf7960a61ae70b0d9166c6f9bde16388c3b81e54af91446f4c9e44ae4) ...'; 	if ((Get-FileHash haxe.zip -Algorithm sha256).Hash -ne '4cf84cdbf7960a61ae70b0d9166c6f9bde16388c3b81e54af91446f4c9e44ae4') { 		Write-Host 'FAILED!'; 		exit 1; 	}; 		Write-Host 'Expanding ...'; 	New-Item -ItemType directory -Path tmp; 	Expand-Archive -Path haxe.zip -DestinationPath tmp; 	if (Test-Path tmp\haxe.exe) { Move-Item tmp $env:HAXEPATH } 	else { Move-Item (Resolve-Path tmp\haxe* | Select -ExpandProperty Path) $env:HAXEPATH }; 		Write-Host 'Removing ...'; 	Remove-Item -Path haxe.zip, tmp -Force -Recurse -ErrorAction Ignore; 		Write-Host 'Verifying install ...'; 	Write-Host '  haxe -version'; haxe -version; 	Write-Host '  haxelib version'; haxelib version; 		Write-Host 'Complete.';
-# Tue, 29 Oct 2019 00:59:14 GMT
+# Wed, 13 Nov 2019 02:46:20 GMT
 RUN New-Item -ItemType directory -Path $env:HAXELIB_PATH;
-# Tue, 29 Oct 2019 00:59:15 GMT
+# Wed, 13 Nov 2019 02:46:21 GMT
 ENV HOMEDRIVE=C:
-# Tue, 29 Oct 2019 00:59:43 GMT
+# Wed, 13 Nov 2019 02:46:50 GMT
 RUN $newPath = ('{0}\Users\{1}' -f $env:HOMEDRIVE, $env:USERNAME); 	Write-Host ('Updating HOMEPATH: {0}' -f $newPath); 	[Environment]::SetEnvironmentVariable('HOMEPATH', $newPath, [EnvironmentVariableTarget]::Machine);
-# Tue, 29 Oct 2019 01:00:16 GMT
+# Wed, 13 Nov 2019 02:47:23 GMT
 RUN (New-Object System.Net.WebClient).DownloadString('https://lib.haxe.org') >$null
-# Tue, 29 Oct 2019 01:00:43 GMT
+# Wed, 13 Nov 2019 02:47:54 GMT
 RUN (New-Object System.Net.WebClient).DownloadString('https://d1smpvufia21az.cloudfront.net') >$null
-# Tue, 29 Oct 2019 01:00:45 GMT
+# Wed, 13 Nov 2019 02:47:55 GMT
 CMD ["haxe"]
 ```
 
@@ -356,143 +355,142 @@ CMD ["haxe"]
 		Last Modified: Tue, 18 Sep 2018 22:43:55 GMT  
 		Size: 1.7 GB (1659688273 bytes)  
 		MIME: application/vnd.docker.image.rootfs.foreign.diff.tar.gzip
-	-	`sha256:d8f170766a535406983bc5b2ee79c71e7926e6f5580d50e3cb2540aaf4aeb32a`  
-		Last Modified: Sun, 06 Oct 2019 14:26:48 GMT  
-		Size: 688.6 MB (688636945 bytes)  
+	-	`sha256:3eb83143ff4b7dafaf8aee4e558c4743488812347fac8581e8b2f61b8e5d06e0`  
+		Size: 696.1 MB (696065307 bytes)  
 		MIME: application/vnd.docker.image.rootfs.foreign.diff.tar.gzip
-	-	`sha256:90030bef52c1e56c368152caf2b49023ca68edf1bf671c52894a0ddc874d529d`  
-		Last Modified: Wed, 09 Oct 2019 16:41:49 GMT  
-		Size: 1.2 KB (1196 bytes)  
+	-	`sha256:d0a17adb4893def55112c23d32072d37d4dd6a77910448ebf86e70c2380583f6`  
+		Last Modified: Thu, 14 Nov 2019 01:17:22 GMT  
+		Size: 1.2 KB (1187 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:14a3f3aa3c69879c65c0f02241d27c1831311d3fde39c597808c2ef30c2a2911`  
-		Last Modified: Wed, 09 Oct 2019 16:41:49 GMT  
+	-	`sha256:fa773b255e6433ec944c431b21edfcd65fa4b7d10a7b06d1dbad8745960cdb5f`  
+		Last Modified: Thu, 14 Nov 2019 01:17:22 GMT  
 		Size: 1.2 KB (1203 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:2292a578d93d97407b29cb40eadab55cf1c54c2bfe73e40534dcd5e7563550bc`  
-		Last Modified: Wed, 09 Oct 2019 16:41:48 GMT  
-		Size: 1.2 KB (1184 bytes)  
+	-	`sha256:333aee55688437818eac6dfb7a1c659aebd4a1f306bfb11c82d8e8ca581bd310`  
+		Last Modified: Thu, 14 Nov 2019 01:17:22 GMT  
+		Size: 1.2 KB (1187 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c4d2c680a99e0ae3847637e5a3f708ed0dc4de74b356b6462b39c7838c2569c8`  
-		Last Modified: Wed, 09 Oct 2019 16:41:47 GMT  
-		Size: 1.2 KB (1192 bytes)  
+	-	`sha256:2e31b4fb755985e1d413436629cfc8b3587d9558c735cebbe7e172fb1226f266`  
+		Last Modified: Thu, 14 Nov 2019 01:17:19 GMT  
+		Size: 1.2 KB (1210 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:54e6e159b1c5c45204ad079f31591b297f120961d603188c7fdcd10dc9c02376`  
-		Last Modified: Wed, 09 Oct 2019 16:41:45 GMT  
-		Size: 1.2 KB (1185 bytes)  
+	-	`sha256:b429839636da90a1ab247fa1fba4a113b233b91caffb1f7b8785a5146f728fe8`  
+		Last Modified: Thu, 14 Nov 2019 01:17:19 GMT  
+		Size: 1.2 KB (1189 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:0594c785a423bf8e989928cfa5accef7e4269433e0b81de9e7485d55a446a7b8`  
-		Last Modified: Wed, 09 Oct 2019 16:41:44 GMT  
-		Size: 1.2 KB (1214 bytes)  
-		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:09d2745fd2b8937d7f254629ff6d585b822a7e714a8d739b6eda95b1cc4f09bc`  
-		Last Modified: Wed, 09 Oct 2019 16:41:46 GMT  
-		Size: 4.9 MB (4852499 bytes)  
-		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:51da8cf1bcf4160f908a58579ad7d9725468a6d1ecf3e01c80839ff2dc3bc7ab`  
-		Last Modified: Wed, 09 Oct 2019 16:41:47 GMT  
-		Size: 12.9 MB (12899726 bytes)  
-		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:5f7b0108f3aa4af20acbee0fbd2387f49240d281d846584fa9f4d2399a0f2beb`  
-		Last Modified: Wed, 09 Oct 2019 16:41:41 GMT  
-		Size: 293.1 KB (293114 bytes)  
-		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:edf56f7ef717428e8437e4f6fdfb7f43898eafa5a02ce1b55259e1d6e3d5109b`  
-		Last Modified: Tue, 29 Oct 2019 01:10:46 GMT  
-		Size: 1.2 KB (1178 bytes)  
-		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:49bc7bd42e687cc87a1c01b69b2af2c3abd63ccfa22150237e0fab51005665db`  
-		Last Modified: Tue, 29 Oct 2019 01:13:04 GMT  
-		Size: 2.0 MB (1958688 bytes)  
-		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:fc02122f7bace0ee9a441a27154a8c691d4992fe12730eb54c7a2a97aa9dc866`  
-		Last Modified: Tue, 29 Oct 2019 01:19:50 GMT  
+	-	`sha256:9ae46d62efed37e0ce844887aa321f0d776001996a3727741fa89f05a8e43657`  
+		Last Modified: Thu, 14 Nov 2019 01:17:17 GMT  
 		Size: 1.2 KB (1182 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:4cc63330fd8560da39f33c624c78a97a95e509b6543878f791d252975c3610a8`  
-		Last Modified: Tue, 29 Oct 2019 01:19:59 GMT  
-		Size: 4.1 MB (4064709 bytes)  
+	-	`sha256:eeae44bf27c5eb613ac98ffbcefef4f3650a86109430e4266792d2a1bd5badea`  
+		Last Modified: Thu, 14 Nov 2019 01:17:18 GMT  
+		Size: 4.9 MB (4859060 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:8b9a0ad0b067a12d681424e908e5ca0c8a129cf0301d2eb350d949569017cc0c`  
-		Last Modified: Tue, 29 Oct 2019 01:19:50 GMT  
-		Size: 342.6 KB (342555 bytes)  
+	-	`sha256:be9a91ff8d1f5bc81fee01e125994316e92e1ae94ac5abb836a391c35be262d9`  
+		Last Modified: Thu, 14 Nov 2019 01:17:19 GMT  
+		Size: 12.9 MB (12899755 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c45e50c492b3af436740eb445af0bb3200b339b22ccaffbe6006dfbf66061572`  
-		Last Modified: Tue, 29 Oct 2019 01:19:47 GMT  
-		Size: 1.2 KB (1179 bytes)  
+	-	`sha256:d977c2e38fb721f6c7b1c2202a7a41e482711178660238df5b5637584bd7a84c`  
+		Last Modified: Thu, 14 Nov 2019 01:17:15 GMT  
+		Size: 295.1 KB (295062 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:85d664a2c7026c2e83b368f7140ef761ec101d58362c66a8eb08fd64e87d1ea0`  
-		Last Modified: Tue, 29 Oct 2019 01:19:47 GMT  
-		Size: 352.1 KB (352122 bytes)  
+	-	`sha256:fc4146c775bd297283720ee6622f656b7b24943cb08027079eed9d0af17d827a`  
+		Last Modified: Thu, 14 Nov 2019 01:17:13 GMT  
+		Size: 1.2 KB (1167 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c17df02e7b472f415b40f553f940ab07ffcf8b3369abccd6526ceb8450fdb8a2`  
-		Last Modified: Tue, 29 Oct 2019 01:19:48 GMT  
-		Size: 371.3 KB (371307 bytes)  
+	-	`sha256:3323d382bc8313a2382391d100f0266be6bb61a6011912e08976fec119d4cd0c`  
+		Last Modified: Thu, 14 Nov 2019 02:18:55 GMT  
+		Size: 1.9 MB (1933639 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:a83a197a80883e38e8f1e36ebd8f0f0e3806331cd42c46d80d66822dadc9f51f`  
-		Last Modified: Tue, 29 Oct 2019 01:19:47 GMT  
-		Size: 404.2 KB (404217 bytes)  
+	-	`sha256:168d0a2e5b102477dc9d791dfe404bb223dfc547c630bd1f8846524b826b7bf4`  
+		Last Modified: Thu, 14 Nov 2019 04:22:40 GMT  
+		Size: 1.2 KB (1203 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:f82be1919cb7303abcaef34ab4e14a24f2078ba69f2093918235494a1e5ec6be`  
-		Last Modified: Tue, 29 Oct 2019 01:19:47 GMT  
-		Size: 1.2 KB (1182 bytes)  
+	-	`sha256:37c52366513348dc23971b122641f1587c5fc9fc280c3a61722783b9a6da2343`  
+		Last Modified: Thu, 14 Nov 2019 04:22:50 GMT  
+		Size: 4.1 MB (4052961 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:ac632c93f31bec92a93da613845930727f64fa96c8bf47a8f09e18b6b2174c4f`  
+		Last Modified: Thu, 14 Nov 2019 04:22:39 GMT  
+		Size: 325.8 KB (325820 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:58ec29b4ff8f5325dc724c55fba7064f30ef79f7fb2f9cb062375cbdb40b6775`  
+		Last Modified: Thu, 14 Nov 2019 04:22:37 GMT  
+		Size: 1.2 KB (1177 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:dde9dad36d51c4fba560d4203ca2b0b4b25384758dfa6409ae3fd869667e8ed2`  
+		Last Modified: Thu, 14 Nov 2019 04:22:37 GMT  
+		Size: 340.7 KB (340676 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:7d8fa2e07dd4da4e47c8a630a8aaa1428949392e625ae8b2aa83205b3c9b3e4b`  
+		Last Modified: Thu, 14 Nov 2019 04:22:37 GMT  
+		Size: 352.0 KB (352022 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:66c77e17b232eb472b6dd094c09c78491b1eda9be077dd003a5eb63645bda35e`  
+		Last Modified: Thu, 14 Nov 2019 04:22:37 GMT  
+		Size: 389.7 KB (389709 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:467ebf7a1c79014a9780243d5ea665aa35467dd24b364dac85f01727a7edff3e`  
+		Last Modified: Thu, 14 Nov 2019 04:22:37 GMT  
+		Size: 1.2 KB (1162 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
-### `haxe:3.1` - windows version 10.0.14393.3274; amd64
+### `haxe:3.1` - windows version 10.0.14393.3326; amd64
 
 ```console
-$ docker pull haxe@sha256:50053211d2a903f6f75066609c39930326cc28ce759770ad88ce7e9248c12a09
+$ docker pull haxe@sha256:731313bdeaab0439d643d91577aa148e346b96d6be285ed5186b9f0be0ad0ce3
 ```
 
 -	Docker Version: 18.03.1-ee-4
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **5.8 GB (5796040436 bytes)**  
+-	Total Size: **5.8 GB (5794788767 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:30f335dc784b4a19874375c0a1c74d41172f7d10f0bc3b4fa5574f7119ed36bd`
+-	Image ID: `sha256:11da6a1f49f12247b53295de094a77d707b316d7eb64d7973276822700c9e697`
 -	Default Command: `["haxe"]`
 -	`SHELL`: `["powershell","-Command","$ErrorActionPreference = 'Stop';"]`
 
 ```dockerfile
-# Tue, 22 Nov 2016 23:24:34 GMT
+# Sat, 19 Nov 2016 17:05:00 GMT
 RUN Apply image 1607-RTM-amd64
-# Sat, 05 Oct 2019 16:15:00 GMT
+# Thu, 07 Nov 2019 14:16:00 GMT
 RUN Install update ltsc2016-amd64
-# Wed, 09 Oct 2019 14:39:48 GMT
+# Wed, 13 Nov 2019 00:41:31 GMT
 SHELL [powershell -Command $ErrorActionPreference = 'Stop';]
-# Wed, 09 Oct 2019 14:39:49 GMT
+# Wed, 13 Nov 2019 00:41:32 GMT
 ENV HAXETOOLKIT_PATH=C:\HaxeToolkit
-# Wed, 09 Oct 2019 14:39:50 GMT
+# Wed, 13 Nov 2019 00:41:33 GMT
 ENV NEKOPATH=C:\HaxeToolkit\neko
-# Wed, 09 Oct 2019 14:39:51 GMT
+# Wed, 13 Nov 2019 00:41:34 GMT
 ENV HAXEPATH=C:\HaxeToolkit\haxe
-# Wed, 09 Oct 2019 14:39:52 GMT
+# Wed, 13 Nov 2019 00:41:36 GMT
 ENV HAXE_STD_PATH=C:\HaxeToolkit\haxe\std
-# Wed, 09 Oct 2019 14:39:54 GMT
+# Wed, 13 Nov 2019 00:41:37 GMT
 ENV HAXELIB_PATH=C:\HaxeToolkit\haxe\lib
-# Wed, 09 Oct 2019 14:41:10 GMT
+# Wed, 13 Nov 2019 00:43:10 GMT
 RUN $newPath = ('{0};{1};{2}' -f $env:HAXEPATH, $env:NEKOPATH, $env:PATH); 	Write-Host ('Updating PATH: {0}' -f $newPath); 	[Environment]::SetEnvironmentVariable('PATH', $newPath, [EnvironmentVariableTarget]::Machine);
-# Wed, 09 Oct 2019 14:43:12 GMT
+# Wed, 13 Nov 2019 00:45:24 GMT
 RUN $url = 'https://download.microsoft.com/download/0/5/6/056dcda9-d667-4e27-8001-8a0c6971d6b1/vcredist_x86.exe'; 	Write-Host ('Downloading {0} ...' -f $url); 	[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12; 	Invoke-WebRequest -Uri $url -OutFile 'vcredist_x86.exe'; 		Write-Host 'Verifying sha256 (89f4e593ea5541d1c53f983923124f9fd061a1c0c967339109e375c661573c17) ...'; 	if ((Get-FileHash vcredist_x86.exe -Algorithm sha256).Hash -ne '89f4e593ea5541d1c53f983923124f9fd061a1c0c967339109e375c661573c17') { 		Write-Host 'FAILED!'; 		exit 1; 	}; 		Write-Host 'Installing ...'; 	Start-Process -FilePath "vcredist_x86.exe" -ArgumentList "/Q" -Wait; 		Write-Host 'Removing installer...'; 	Remove-Item .\vcredist_x86.exe; 		Write-Host 'Complete.';
-# Wed, 09 Oct 2019 14:44:21 GMT
+# Wed, 13 Nov 2019 00:46:40 GMT
 RUN New-Item -ItemType directory -Path $env:HAXETOOLKIT_PATH;
-# Mon, 28 Oct 2019 23:04:46 GMT
+# Wed, 13 Nov 2019 00:46:42 GMT
 ENV NEKO_VERSION=2.3.0
-# Mon, 28 Oct 2019 23:31:23 GMT
+# Wed, 13 Nov 2019 01:44:34 GMT
 RUN $url = 'https://github.com/HaxeFoundation/neko/releases/download/v2-3-0/neko-2.3.0-win.zip'; 	Write-Host ('Downloading {0} ...' -f $url); 	[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12; 	Invoke-WebRequest -Uri $url -OutFile 'neko.zip'; 		Write-Host 'Verifying sha256 (fe5a11350d2dd74338f971d62115f2bd21ec6912f193db04c5d28eb987a50485) ...'; 	if ((Get-FileHash neko.zip -Algorithm sha256).Hash -ne 'fe5a11350d2dd74338f971d62115f2bd21ec6912f193db04c5d28eb987a50485') { 		Write-Host 'FAILED!'; 		exit 1; 	}; 		Write-Host 'Expanding ...'; 	New-Item -ItemType directory -Path tmp; 	Expand-Archive -Path neko.zip -DestinationPath tmp; 	if (Test-Path tmp\neko.exe) { Move-Item tmp $env:NEKOPATH } 	else { Move-Item (Resolve-Path tmp\neko* | Select -ExpandProperty Path) $env:NEKOPATH }; 		Write-Host 'Removing ...'; 	Remove-Item -Path neko.zip, tmp -Force -Recurse -ErrorAction Ignore; 		Write-Host 'Verifying install ...'; 	Write-Host '  neko -version'; neko -version; 		Write-Host 'Complete.';
-# Tue, 29 Oct 2019 01:00:56 GMT
+# Wed, 13 Nov 2019 02:48:12 GMT
 ENV HAXE_VERSION=3.1.3
-# Tue, 29 Oct 2019 01:04:23 GMT
+# Wed, 13 Nov 2019 02:51:54 GMT
 RUN $url = 'https://github.com/HaxeFoundation/haxe/releases/download/3.1.3/haxe-3.1.3-win.zip'; 	Write-Host ('Downloading {0} ...' -f $url); 	[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12; 	Invoke-WebRequest -Uri $url -OutFile haxe.zip; 		Write-Host 'Verifying sha256 (4cf84cdbf7960a61ae70b0d9166c6f9bde16388c3b81e54af91446f4c9e44ae4) ...'; 	if ((Get-FileHash haxe.zip -Algorithm sha256).Hash -ne '4cf84cdbf7960a61ae70b0d9166c6f9bde16388c3b81e54af91446f4c9e44ae4') { 		Write-Host 'FAILED!'; 		exit 1; 	}; 		Write-Host 'Expanding ...'; 	New-Item -ItemType directory -Path tmp; 	Expand-Archive -Path haxe.zip -DestinationPath tmp; 	if (Test-Path tmp\haxe.exe) { Move-Item tmp $env:HAXEPATH } 	else { Move-Item (Resolve-Path tmp\haxe* | Select -ExpandProperty Path) $env:HAXEPATH }; 		Write-Host 'Removing ...'; 	Remove-Item -Path haxe.zip, tmp -Force -Recurse -ErrorAction Ignore; 		Write-Host 'Verifying install ...'; 	Write-Host '  haxe -version'; haxe -version; 	Write-Host '  haxelib version'; haxelib version; 		Write-Host 'Complete.';
-# Tue, 29 Oct 2019 01:05:28 GMT
+# Wed, 13 Nov 2019 02:53:08 GMT
 RUN New-Item -ItemType directory -Path $env:HAXELIB_PATH;
-# Tue, 29 Oct 2019 01:05:29 GMT
+# Wed, 13 Nov 2019 02:53:10 GMT
 ENV HOMEDRIVE=C:
-# Tue, 29 Oct 2019 01:06:32 GMT
+# Wed, 13 Nov 2019 02:54:27 GMT
 RUN $newPath = ('{0}\Users\{1}' -f $env:HOMEDRIVE, $env:USERNAME); 	Write-Host ('Updating HOMEPATH: {0}' -f $newPath); 	[Environment]::SetEnvironmentVariable('HOMEPATH', $newPath, [EnvironmentVariableTarget]::Machine);
-# Tue, 29 Oct 2019 01:07:45 GMT
+# Wed, 13 Nov 2019 02:55:46 GMT
 RUN (New-Object System.Net.WebClient).DownloadString('https://lib.haxe.org') >$null
-# Tue, 29 Oct 2019 01:08:46 GMT
+# Wed, 13 Nov 2019 02:57:03 GMT
 RUN (New-Object System.Net.WebClient).DownloadString('https://d1smpvufia21az.cloudfront.net') >$null
-# Tue, 29 Oct 2019 01:08:48 GMT
+# Wed, 13 Nov 2019 02:57:04 GMT
 CMD ["haxe"]
 ```
 
@@ -501,155 +499,154 @@ CMD ["haxe"]
 		Last Modified: Tue, 18 Sep 2018 20:20:50 GMT  
 		Size: 4.1 GB (4069985900 bytes)  
 		MIME: application/vnd.docker.image.rootfs.foreign.diff.tar.gzip
-	-	`sha256:b4f320e456fcdbb0a55de06f153ad96f144c8c14e452ac7f20896ce2509d170f`  
-		Last Modified: Sun, 06 Oct 2019 17:29:40 GMT  
-		Size: 1.7 GB (1651218786 bytes)  
+	-	`sha256:57e8a97eaa75b4ef91d6df4454d12d3b43e629b80dd937008efb8d9eed5f0208`  
+		Size: 1.7 GB (1650127385 bytes)  
 		MIME: application/vnd.docker.image.rootfs.foreign.diff.tar.gzip
-	-	`sha256:29c2f8f4d6816f29c915ea3b2b780c2f4df1eba46b16d0b1a33b59c62c1953c1`  
-		Last Modified: Wed, 09 Oct 2019 16:42:42 GMT  
-		Size: 1.2 KB (1211 bytes)  
+	-	`sha256:60b3361980878b3668e4eb07fb90b61f37029e500df17dc50d49de9e0c64994c`  
+		Last Modified: Thu, 14 Nov 2019 01:18:29 GMT  
+		Size: 1.2 KB (1209 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:7645418a01f2ee59582d47751b1361304cd4c7b1e4ab9565a77f917133a6331f`  
-		Last Modified: Wed, 09 Oct 2019 16:42:41 GMT  
-		Size: 1.2 KB (1216 bytes)  
-		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:a160c1b66f2191549584f4d2dca6aa032d7cfd95254a52b0b21f15bf89219532`  
-		Last Modified: Wed, 09 Oct 2019 16:42:41 GMT  
-		Size: 1.2 KB (1191 bytes)  
-		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:3ffae54200a2c5c29c85de0df96e06fa3e0e6034ec312173af3141705d3a5869`  
-		Last Modified: Wed, 09 Oct 2019 16:42:40 GMT  
-		Size: 1.2 KB (1212 bytes)  
-		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:2ab228dbc093a4784702b1be54fadeb1765832b2bfb345b919847d2288e2e2ba`  
-		Last Modified: Wed, 09 Oct 2019 16:42:39 GMT  
-		Size: 1.2 KB (1183 bytes)  
-		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:0b721aa81f4ae2d422eb232a21ed8864e213333df1c5aaf52c7ba236321b64d8`  
-		Last Modified: Wed, 09 Oct 2019 16:42:37 GMT  
-		Size: 1.2 KB (1191 bytes)  
-		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:31856421a051a2f9c7f7aca3660a5a81075d578c7dfa8c833443ac53f444a470`  
-		Last Modified: Wed, 09 Oct 2019 16:42:38 GMT  
-		Size: 5.4 MB (5351990 bytes)  
-		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:b9725648368ad472f5048c8757c7b70ef9173f5e597d8a253c15dc95c17fb518`  
-		Last Modified: Wed, 09 Oct 2019 16:42:39 GMT  
-		Size: 22.4 MB (22411447 bytes)  
-		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:11e54e24a5ba6d08457408eb4f91ecbd0d8af4aa5cc6be967298128d89a88816`  
-		Last Modified: Wed, 09 Oct 2019 16:42:33 GMT  
-		Size: 5.3 MB (5293650 bytes)  
-		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:e563d354afc49cb8b46fedb6a404f5e42a82ca9dc7fc4c496edaf5edaf185ff6`  
-		Last Modified: Tue, 29 Oct 2019 01:11:34 GMT  
-		Size: 1.2 KB (1188 bytes)  
-		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:4dabc15e94406c4709eca6d64dce40fe5ac92772317a9978c88ea7565110191b`  
-		Last Modified: Tue, 29 Oct 2019 01:13:59 GMT  
-		Size: 6.9 MB (6929912 bytes)  
-		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:b45867efb240cb8c14a82d0ddf195a2a610721adc57657f227f5a895a0f3b13c`  
-		Last Modified: Tue, 29 Oct 2019 01:20:29 GMT  
+	-	`sha256:6c62938738e5c25fbf816031925d415178c189dbfc8cfcbef86710f350aaedc4`  
+		Last Modified: Thu, 14 Nov 2019 01:18:27 GMT  
 		Size: 1.2 KB (1208 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:50461c4ea282c8c036bd8c69cbe566ecb86b2bbef5c92257c27e9bdee438e415`  
-		Last Modified: Tue, 29 Oct 2019 01:20:38 GMT  
-		Size: 13.6 MB (13560979 bytes)  
+	-	`sha256:056ab1a915111a170d9799fa1c746a2a7c12d8e9f835eb329531d26263d59dce`  
+		Last Modified: Thu, 14 Nov 2019 01:18:27 GMT  
+		Size: 1.2 KB (1182 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:497ed214674dca3b931cf872c9bb3b987e5f28a93c161515fa940fd61f975ff5`  
-		Last Modified: Tue, 29 Oct 2019 01:20:27 GMT  
-		Size: 5.3 MB (5317167 bytes)  
+	-	`sha256:bf63f39d70fd70d7d1039b869d8c6a805ebece06060f3671f6034cbaff189ef5`  
+		Last Modified: Thu, 14 Nov 2019 01:18:27 GMT  
+		Size: 1.2 KB (1212 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c6a31a94a9dca4f4d861e7f92325a1073ebf484d898f1c27aa60822b18b31d12`  
-		Last Modified: Tue, 29 Oct 2019 01:20:22 GMT  
+	-	`sha256:dd3769a4a773e323244572e92a72843d47ad96442582438e90bda329c3fe848d`  
+		Last Modified: Thu, 14 Nov 2019 01:18:24 GMT  
+		Size: 1.2 KB (1168 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:e4f9ce1244e198e81f5ab1a1aaadd8120aa9e7fbbf2314971610df0562669410`  
+		Last Modified: Thu, 14 Nov 2019 01:18:24 GMT  
+		Size: 1.2 KB (1184 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:d6fab71888a2ba793cca8c76b3a98537701fc6fbd7f535aad6fca91550c7189d`  
+		Last Modified: Thu, 14 Nov 2019 01:18:24 GMT  
+		Size: 5.4 MB (5351053 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:d3d720c1893d2b5713eb8da2bcd7a8a4a06c4146a2e2f7fd20f5af35ab119590`  
+		Last Modified: Thu, 14 Nov 2019 01:18:28 GMT  
+		Size: 22.4 MB (22380375 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:32cb4919f4d959711cde03ea1ce713a699584962a975b719189242311f460704`  
+		Last Modified: Thu, 14 Nov 2019 01:18:21 GMT  
+		Size: 5.3 MB (5293824 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:282f0c1a088692ed3ed1acb119f857709f2039314b83e72e2ab374284ae4a7bc`  
+		Last Modified: Thu, 14 Nov 2019 01:18:17 GMT  
 		Size: 1.2 KB (1188 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:8267c1824fb227570c799a9a18e60c693c10e96f26f8cf9d3c6a4943cb9ee99f`  
-		Last Modified: Tue, 29 Oct 2019 01:20:25 GMT  
-		Size: 5.3 MB (5316318 bytes)  
+	-	`sha256:098debff455b5735064a1e62a85c2e7409079cc490c72ca26340d0603b744819`  
+		Last Modified: Thu, 14 Nov 2019 04:17:07 GMT  
+		Size: 6.9 MB (6905786 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:ef3b1200e470c2d91cdc60e5e74b123c5818ac5e541ab54c3fec43ba04ce5222`  
-		Last Modified: Tue, 29 Oct 2019 01:20:25 GMT  
-		Size: 5.3 MB (5319979 bytes)  
+	-	`sha256:d3adb395dc84889c0d11cbcc7f8d58844a9d2b6567a8c934b4f8ec111b97d79e`  
+		Last Modified: Thu, 14 Nov 2019 04:23:19 GMT  
+		Size: 1.2 KB (1190 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:cccbda56392f6210d62be20f3d4d6c93f9b9d411250dd787f05360d3647d86b5`  
-		Last Modified: Tue, 29 Oct 2019 01:20:24 GMT  
-		Size: 5.3 MB (5322357 bytes)  
+	-	`sha256:4e2c64e75a48762f6da1254e92f7b4f0399ca542de7d68d97613ab1aeec85f86`  
+		Last Modified: Thu, 14 Nov 2019 04:23:29 GMT  
+		Size: 13.5 MB (13486693 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:9bfffa6439c00d6a385abda19d73c0efc05eb948899f99feb0972e0288ba0247`  
-		Last Modified: Tue, 29 Oct 2019 01:20:22 GMT  
-		Size: 1.2 KB (1163 bytes)  
+	-	`sha256:060bc5f1df2ccb7c914a5c9e4a272e01446d1e8db559bc1053550a14a7e7c44c`  
+		Last Modified: Thu, 14 Nov 2019 04:23:17 GMT  
+		Size: 5.3 MB (5309957 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:028ecb4d8959600e1974b13f5ccc23334de9f15de61c6ea8416ed43e417d320c`  
+		Last Modified: Thu, 14 Nov 2019 04:23:12 GMT  
+		Size: 1.2 KB (1188 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:5be7e11c9b71352147c606202e98e79e092d881cbbadc5a756a7b95de4ed5bb7`  
+		Last Modified: Thu, 14 Nov 2019 04:23:16 GMT  
+		Size: 5.3 MB (5308183 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:de2591828ebe2ac54a527ca99fdac77015781a601e9fece386b212765f4e2247`  
+		Last Modified: Thu, 14 Nov 2019 04:23:16 GMT  
+		Size: 5.3 MB (5313378 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:5cf8028209b0859e9ec44e724a65b19a7ba67f1f7b95cfd46433691c0e92a8ae`  
+		Last Modified: Thu, 14 Nov 2019 04:23:17 GMT  
+		Size: 5.3 MB (5314318 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:b0bb885a9bda36e80b6b664a6f36f9a5ca8f34bc8e8e82c916e7802576c1710f`  
+		Last Modified: Thu, 14 Nov 2019 04:23:12 GMT  
+		Size: 1.2 KB (1186 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `haxe:3.1.3`
 
 ```console
-$ docker pull haxe@sha256:8be8feb2a03e3c46f51cf49e151e57428164aa72c1e063e0581058645919bc9a
+$ docker pull haxe@sha256:3da6aebe400f195fea12986e203b1a8a9c54fb7a3dd2429e5c78fc7459d278eb
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
 -	Platforms:
-	-	windows version 10.0.17763.805; amd64
-	-	windows version 10.0.17134.1069; amd64
-	-	windows version 10.0.14393.3274; amd64
+	-	windows version 10.0.17763.864; amd64
+	-	windows version 10.0.17134.1130; amd64
+	-	windows version 10.0.14393.3326; amd64
 
-### `haxe:3.1.3` - windows version 10.0.17763.805; amd64
+### `haxe:3.1.3` - windows version 10.0.17763.864; amd64
 
 ```console
-$ docker pull haxe@sha256:70cca081014ca1b49fb90b08b28c396d8d6d3a88512e5c71d14c01a949f8462a
+$ docker pull haxe@sha256:5d072b92b219aee61fa2829e4b0a00c4a808bb36b3e49ed57213888620b8a239
 ```
 
 -	Docker Version: 18.03.1-ee-4
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **2.2 GB (2226432984 bytes)**  
+-	Total Size: **2.2 GB (2240831591 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:927147728aa2754a054789a1749ccbd18d72135e85bef2043408e9acd5613b6b`
+-	Image ID: `sha256:96017a7358f36d1e7c6d58e59bda53dd3211cd6ed9b433453eb3ff0091848024`
 -	Default Command: `["haxe"]`
 -	`SHELL`: `["powershell","-Command","$ErrorActionPreference = 'Stop';"]`
 
 ```dockerfile
 # Sat, 15 Sep 2018 09:10:26 GMT
 RUN Apply image 1809-RTM-amd64
-# Sun, 06 Oct 2019 10:02:47 GMT
+# Sat, 09 Nov 2019 02:48:55 GMT
 RUN Install update 1809-amd64
-# Wed, 09 Oct 2019 14:22:24 GMT
+# Tue, 12 Nov 2019 23:49:55 GMT
 SHELL [powershell -Command $ErrorActionPreference = 'Stop';]
-# Wed, 09 Oct 2019 14:22:26 GMT
+# Tue, 12 Nov 2019 23:49:56 GMT
 ENV HAXETOOLKIT_PATH=C:\HaxeToolkit
-# Wed, 09 Oct 2019 14:22:27 GMT
+# Tue, 12 Nov 2019 23:49:57 GMT
 ENV NEKOPATH=C:\HaxeToolkit\neko
-# Wed, 09 Oct 2019 14:22:28 GMT
+# Tue, 12 Nov 2019 23:49:59 GMT
 ENV HAXEPATH=C:\HaxeToolkit\haxe
-# Wed, 09 Oct 2019 14:22:29 GMT
+# Tue, 12 Nov 2019 23:50:00 GMT
 ENV HAXE_STD_PATH=C:\HaxeToolkit\haxe\std
-# Wed, 09 Oct 2019 14:22:31 GMT
+# Tue, 12 Nov 2019 23:50:01 GMT
 ENV HAXELIB_PATH=C:\HaxeToolkit\haxe\lib
-# Wed, 09 Oct 2019 14:23:13 GMT
+# Tue, 12 Nov 2019 23:50:59 GMT
 RUN $newPath = ('{0};{1};{2}' -f $env:HAXEPATH, $env:NEKOPATH, $env:PATH); 	Write-Host ('Updating PATH: {0}' -f $newPath); 	[Environment]::SetEnvironmentVariable('PATH', $newPath, [EnvironmentVariableTarget]::Machine);
-# Wed, 09 Oct 2019 14:24:25 GMT
+# Tue, 12 Nov 2019 23:52:16 GMT
 RUN $url = 'https://download.microsoft.com/download/0/5/6/056dcda9-d667-4e27-8001-8a0c6971d6b1/vcredist_x86.exe'; 	Write-Host ('Downloading {0} ...' -f $url); 	[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12; 	Invoke-WebRequest -Uri $url -OutFile 'vcredist_x86.exe'; 		Write-Host 'Verifying sha256 (89f4e593ea5541d1c53f983923124f9fd061a1c0c967339109e375c661573c17) ...'; 	if ((Get-FileHash vcredist_x86.exe -Algorithm sha256).Hash -ne '89f4e593ea5541d1c53f983923124f9fd061a1c0c967339109e375c661573c17') { 		Write-Host 'FAILED!'; 		exit 1; 	}; 		Write-Host 'Installing ...'; 	Start-Process -FilePath "vcredist_x86.exe" -ArgumentList "/Q" -Wait; 		Write-Host 'Removing installer...'; 	Remove-Item .\vcredist_x86.exe; 		Write-Host 'Complete.';
-# Wed, 09 Oct 2019 14:24:51 GMT
+# Tue, 12 Nov 2019 23:52:46 GMT
 RUN New-Item -ItemType directory -Path $env:HAXETOOLKIT_PATH;
-# Mon, 28 Oct 2019 22:19:20 GMT
+# Tue, 12 Nov 2019 23:52:47 GMT
 ENV NEKO_VERSION=2.3.0
-# Mon, 28 Oct 2019 23:16:50 GMT
+# Wed, 13 Nov 2019 00:59:42 GMT
 RUN $url = 'https://github.com/HaxeFoundation/neko/releases/download/v2-3-0/neko-2.3.0-win.zip'; 	Write-Host ('Downloading {0} ...' -f $url); 	[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12; 	Invoke-WebRequest -Uri $url -OutFile 'neko.zip'; 		Write-Host 'Verifying sha256 (fe5a11350d2dd74338f971d62115f2bd21ec6912f193db04c5d28eb987a50485) ...'; 	if ((Get-FileHash neko.zip -Algorithm sha256).Hash -ne 'fe5a11350d2dd74338f971d62115f2bd21ec6912f193db04c5d28eb987a50485') { 		Write-Host 'FAILED!'; 		exit 1; 	}; 		Write-Host 'Expanding ...'; 	New-Item -ItemType directory -Path tmp; 	Expand-Archive -Path neko.zip -DestinationPath tmp; 	if (Test-Path tmp\neko.exe) { Move-Item tmp $env:NEKOPATH } 	else { Move-Item (Resolve-Path tmp\neko* | Select -ExpandProperty Path) $env:NEKOPATH }; 		Write-Host 'Removing ...'; 	Remove-Item -Path neko.zip, tmp -Force -Recurse -ErrorAction Ignore; 		Write-Host 'Verifying install ...'; 	Write-Host '  neko -version'; neko -version; 		Write-Host 'Complete.';
-# Tue, 29 Oct 2019 00:50:49 GMT
+# Wed, 13 Nov 2019 02:37:36 GMT
 ENV HAXE_VERSION=3.1.3
-# Tue, 29 Oct 2019 00:53:45 GMT
+# Wed, 13 Nov 2019 02:40:34 GMT
 RUN $url = 'https://github.com/HaxeFoundation/haxe/releases/download/3.1.3/haxe-3.1.3-win.zip'; 	Write-Host ('Downloading {0} ...' -f $url); 	[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12; 	Invoke-WebRequest -Uri $url -OutFile haxe.zip; 		Write-Host 'Verifying sha256 (4cf84cdbf7960a61ae70b0d9166c6f9bde16388c3b81e54af91446f4c9e44ae4) ...'; 	if ((Get-FileHash haxe.zip -Algorithm sha256).Hash -ne '4cf84cdbf7960a61ae70b0d9166c6f9bde16388c3b81e54af91446f4c9e44ae4') { 		Write-Host 'FAILED!'; 		exit 1; 	}; 		Write-Host 'Expanding ...'; 	New-Item -ItemType directory -Path tmp; 	Expand-Archive -Path haxe.zip -DestinationPath tmp; 	if (Test-Path tmp\haxe.exe) { Move-Item tmp $env:HAXEPATH } 	else { Move-Item (Resolve-Path tmp\haxe* | Select -ExpandProperty Path) $env:HAXEPATH }; 		Write-Host 'Removing ...'; 	Remove-Item -Path haxe.zip, tmp -Force -Recurse -ErrorAction Ignore; 		Write-Host 'Verifying install ...'; 	Write-Host '  haxe -version'; haxe -version; 	Write-Host '  haxelib version'; haxelib version; 		Write-Host 'Complete.';
-# Tue, 29 Oct 2019 00:54:12 GMT
+# Wed, 13 Nov 2019 02:40:59 GMT
 RUN New-Item -ItemType directory -Path $env:HAXELIB_PATH;
-# Tue, 29 Oct 2019 00:54:13 GMT
+# Wed, 13 Nov 2019 02:41:00 GMT
 ENV HOMEDRIVE=C:
-# Tue, 29 Oct 2019 00:54:40 GMT
+# Wed, 13 Nov 2019 02:41:26 GMT
 RUN $newPath = ('{0}\Users\{1}' -f $env:HOMEDRIVE, $env:USERNAME); 	Write-Host ('Updating HOMEPATH: {0}' -f $newPath); 	[Environment]::SetEnvironmentVariable('HOMEPATH', $newPath, [EnvironmentVariableTarget]::Machine);
-# Tue, 29 Oct 2019 00:55:10 GMT
+# Wed, 13 Nov 2019 02:41:54 GMT
 RUN (New-Object System.Net.WebClient).DownloadString('https://lib.haxe.org') >$null
-# Tue, 29 Oct 2019 00:55:36 GMT
+# Wed, 13 Nov 2019 02:42:21 GMT
 RUN (New-Object System.Net.WebClient).DownloadString('https://d1smpvufia21az.cloudfront.net') >$null
-# Tue, 29 Oct 2019 00:55:37 GMT
+# Wed, 13 Nov 2019 02:42:22 GMT
 CMD ["haxe"]
 ```
 
@@ -658,143 +655,142 @@ CMD ["haxe"]
 		Last Modified: Tue, 13 Nov 2018 18:50:17 GMT  
 		Size: 1.5 GB (1534685324 bytes)  
 		MIME: application/vnd.docker.image.rootfs.foreign.diff.tar.gzip
-	-	`sha256:12c8dbabfd62cb512baca43f0d1e9588127e6bd66641e93a5e6f7e89e1bf7656`  
-		Last Modified: Sun, 06 Oct 2019 17:38:47 GMT  
-		Size: 666.6 MB (666618146 bytes)  
+	-	`sha256:e96b0897c5d1cc4214a97d25769f32df19da79456e0f1086d52497677a2a2bb6`  
+		Size: 681.0 MB (681015397 bytes)  
 		MIME: application/vnd.docker.image.rootfs.foreign.diff.tar.gzip
-	-	`sha256:9697a02cbf136853a1a6d136ec00a5ff02b44ae75db8a0b5ae353549d77aea63`  
-		Last Modified: Wed, 09 Oct 2019 16:41:08 GMT  
+	-	`sha256:907461e7e3e37e44cbbf832e53a080dfd3599a15f60436161a3687445bc811a0`  
+		Last Modified: Wed, 13 Nov 2019 02:58:27 GMT  
+		Size: 1.2 KB (1185 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:bfe86c76591b06caa55136e145b560d106273a30b3d2ed3089787fecf49b7dca`  
+		Last Modified: Wed, 13 Nov 2019 02:58:26 GMT  
+		Size: 1.2 KB (1189 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:3d2ec4931c7a61303dd15038b45bed240558340474add393a6a1f7100f0bc88f`  
+		Last Modified: Wed, 13 Nov 2019 02:58:26 GMT  
+		Size: 1.2 KB (1187 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:dd39ff557c2bbbf8047a995824999a335215d593df5c5c4e7461162e464cbe69`  
+		Last Modified: Wed, 13 Nov 2019 02:58:25 GMT  
+		Size: 1.2 KB (1200 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:b427ceec07a96f67e14be18f2f2480075f30cce723fea51389806a355744fb28`  
+		Last Modified: Wed, 13 Nov 2019 02:58:23 GMT  
+		Size: 1.2 KB (1210 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:e27f29fe5b3718cf86dfbb08df8751545cb10c1a1f7fd677cedab980e5255567`  
+		Last Modified: Wed, 13 Nov 2019 02:58:22 GMT  
 		Size: 1.2 KB (1206 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:5249a3833b8d297b13b68f3f11dce3747c88e4b5fb954b71f885822fb61b11e9`  
-		Last Modified: Wed, 09 Oct 2019 16:41:07 GMT  
-		Size: 1.2 KB (1212 bytes)  
+	-	`sha256:8d8b3151b7b9d5c53f0cee0128518e2fefe9e165c9a7fde480f50256f0dfb196`  
+		Last Modified: Wed, 13 Nov 2019 02:58:23 GMT  
+		Size: 4.6 MB (4561228 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:663e4184d6c8ea3d3f65dd41528d304b1c885a23692dbe54c99ec8ab35b2ec4d`  
-		Last Modified: Wed, 09 Oct 2019 16:41:06 GMT  
-		Size: 1.2 KB (1178 bytes)  
+	-	`sha256:0a61b180fdbafca7789ccd7a28d623116451ab0166df6943858559649fbd7415`  
+		Last Modified: Wed, 13 Nov 2019 02:58:24 GMT  
+		Size: 12.9 MB (12910600 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:bf4771f64d98aefaa0bc7467bfd397e8ee6efe1bc7f5959a7d8357da6b1ee38b`  
-		Last Modified: Wed, 09 Oct 2019 16:41:06 GMT  
-		Size: 1.2 KB (1192 bytes)  
+	-	`sha256:cac7ef27a98c9d1de916b734e2d52da7310aa93ce10ca5c79f8ccc01736ac746`  
+		Last Modified: Wed, 13 Nov 2019 02:58:20 GMT  
+		Size: 307.0 KB (307046 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:62400fe0ded518e8851bbf001266058a5bb5487e1372f11d8ea64bb0e9a48e12`  
-		Last Modified: Wed, 09 Oct 2019 16:41:04 GMT  
-		Size: 1.2 KB (1175 bytes)  
+	-	`sha256:27db2d883c2a40c4be0632feb93418a2d6415688b01c69c302a02f7d594997d6`  
+		Last Modified: Wed, 13 Nov 2019 02:58:17 GMT  
+		Size: 1.2 KB (1182 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c9c34cc510a2c4853535c6c9e35ba68aacbe71abad1cfe9695b45fe2e60defc0`  
-		Last Modified: Wed, 09 Oct 2019 16:41:03 GMT  
-		Size: 1.2 KB (1203 bytes)  
+	-	`sha256:6b4d761fbb625bc3d476f33ca19e9a68aca85e65df1c09ab1a1dcdf3514cc8c4`  
+		Last Modified: Thu, 14 Nov 2019 02:18:14 GMT  
+		Size: 1.9 MB (1923147 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:0945d46b6128884e9d2e76ec9a970e6177cfefd1f9210c6aaa782bec89043806`  
-		Last Modified: Wed, 09 Oct 2019 16:41:04 GMT  
-		Size: 4.5 MB (4523541 bytes)  
+	-	`sha256:4b146c0d52ca2a520d6caa2303241ce9a701ccf0d12e7df65a8e321cde8761d3`  
+		Last Modified: Thu, 14 Nov 2019 04:22:05 GMT  
+		Size: 1.2 KB (1207 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c732966829b6eb22941fc2b3c17944790355a222f2b1abe9a8748aab63e036c0`  
-		Last Modified: Wed, 09 Oct 2019 16:41:05 GMT  
-		Size: 12.9 MB (12896579 bytes)  
+	-	`sha256:e667da10259d2f2832fca1b6bb0876c4b2190d01ae84120805bcd8b410dea947`  
+		Last Modified: Thu, 14 Nov 2019 04:22:15 GMT  
+		Size: 4.0 MB (4038540 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:282cf55939cdb517908a8df38ee7c0b344fcfc722c736019e22112bede01684e`  
-		Last Modified: Wed, 09 Oct 2019 16:41:00 GMT  
-		Size: 295.3 KB (295286 bytes)  
+	-	`sha256:73a735b61eeeb2e99cb4bba5513529a125dbfd1637a94cda5ec450a72e9af3a1`  
+		Last Modified: Thu, 14 Nov 2019 04:22:04 GMT  
+		Size: 329.9 KB (329870 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:fdd5720e2e2419c07a84874ed376f2e7bfa7aeb3ff67d69d16742ec5237a563b`  
-		Last Modified: Tue, 29 Oct 2019 01:10:01 GMT  
-		Size: 1.2 KB (1192 bytes)  
+	-	`sha256:81ce6c800ccd4160e14db57cfb3a870e60e9c61d736645c54dea124d1a4c2be2`  
+		Last Modified: Thu, 14 Nov 2019 04:22:01 GMT  
+		Size: 1.2 KB (1181 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:5b3112e25e95abc8545eda9b997d9cc4eb896eca6b914023634f8fb4f5388faa`  
-		Last Modified: Tue, 29 Oct 2019 01:12:24 GMT  
-		Size: 1.9 MB (1947578 bytes)  
+	-	`sha256:c1ed64adec43db9906676b735bd50bfa6af6abd236d8bad4a71bbbf1d4ce1483`  
+		Last Modified: Thu, 14 Nov 2019 04:22:02 GMT  
+		Size: 333.4 KB (333402 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:16f2c4e45e9cf9c1b076ea355a48de52aa83adebc828900524d0c14477ee45a6`  
-		Last Modified: Tue, 29 Oct 2019 01:19:12 GMT  
-		Size: 1.2 KB (1190 bytes)  
+	-	`sha256:a7e6777a0bd5091e59c647ca13b7ee544a195ebcf0aede43a930bd0333b860df`  
+		Last Modified: Thu, 14 Nov 2019 04:22:02 GMT  
+		Size: 350.9 KB (350929 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:6836cdba57b654395d2edeea68ffec8104776207c4c1656f48484437b42c060f`  
-		Last Modified: Tue, 29 Oct 2019 01:19:23 GMT  
-		Size: 4.0 MB (4039431 bytes)  
+	-	`sha256:ee00c566dbba6f8f73ce9e7b3be6b595eacf88a0bef58391eb13bb2f180866cf`  
+		Last Modified: Thu, 14 Nov 2019 04:22:01 GMT  
+		Size: 364.2 KB (364194 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:4a010fb314bde6fe6c205a29ebcf9e7311ce17537272724148bd20e94397e38e`  
-		Last Modified: Tue, 29 Oct 2019 01:19:12 GMT  
-		Size: 341.3 KB (341332 bytes)  
-		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:dcdeaac372762f069ac1d4dff1202afa70b30c94bdd4390c2527fe788ce33d06`  
-		Last Modified: Tue, 29 Oct 2019 01:19:09 GMT  
-		Size: 1.2 KB (1170 bytes)  
-		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:73efc3c081eb5262c5b3348c7657c3d7d6967637d397536e39b001b24277b5a3`  
-		Last Modified: Tue, 29 Oct 2019 01:19:09 GMT  
-		Size: 344.0 KB (343959 bytes)  
-		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:a91662264b5e48f799c69fdce93e97eedae8c80e41333534004dc25dd2350b90`  
-		Last Modified: Tue, 29 Oct 2019 01:19:09 GMT  
-		Size: 358.3 KB (358305 bytes)  
-		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:d2a3361721dfaeb74821c389b0c280731a5bfd76728552852b296724f5a314f7`  
-		Last Modified: Tue, 29 Oct 2019 01:19:09 GMT  
-		Size: 371.6 KB (371591 bytes)  
-		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:f759f187e8709098bfa4ef025d48b5ac2458c16af7f187f4efc19b294e71381e`  
-		Last Modified: Tue, 29 Oct 2019 01:19:09 GMT  
-		Size: 1.2 KB (1194 bytes)  
+	-	`sha256:045336b180f04ff3f577e1bdbe93b61dc48de5b1607de23ef41b69f821c8f8e1`  
+		Last Modified: Thu, 14 Nov 2019 04:22:01 GMT  
+		Size: 1.2 KB (1167 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
-### `haxe:3.1.3` - windows version 10.0.17134.1069; amd64
+### `haxe:3.1.3` - windows version 10.0.17134.1130; amd64
 
 ```console
-$ docker pull haxe@sha256:0b564b0d1897a6ec78888c77b0cfc868d330d5f015648dc1466dd505c7540123
+$ docker pull haxe@sha256:e0e39763784f8920f856aeed153bc59ac54cae9585a9bcc4fed93c2a890b164f
 ```
 
 -	Docker Version: 18.03.1-ee-4
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **2.4 GB (2373876050 bytes)**  
+-	Total Size: **2.4 GB (2381214151 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:6b8d35418297aae1d458c771a04c35df9e78ae985d96aa0497ac5885ff60e36a`
+-	Image ID: `sha256:f5e528775470b028e457e120466d68f94d7e59b35e742d3e745ec980edf68eb9`
 -	Default Command: `["haxe"]`
 -	`SHELL`: `["powershell","-Command","$ErrorActionPreference = 'Stop';"]`
 
 ```dockerfile
 # Thu, 12 Apr 2018 09:20:54 GMT
 RUN Apply image 1803-RTM-amd64
-# Sun, 06 Oct 2019 14:03:04 GMT
+# Sat, 09 Nov 2019 08:10:48 GMT
 RUN Install update 1803-amd64
-# Wed, 09 Oct 2019 14:30:59 GMT
+# Wed, 13 Nov 2019 00:30:55 GMT
 SHELL [powershell -Command $ErrorActionPreference = 'Stop';]
-# Wed, 09 Oct 2019 14:31:00 GMT
+# Wed, 13 Nov 2019 00:30:56 GMT
 ENV HAXETOOLKIT_PATH=C:\HaxeToolkit
-# Wed, 09 Oct 2019 14:31:01 GMT
+# Wed, 13 Nov 2019 00:30:57 GMT
 ENV NEKOPATH=C:\HaxeToolkit\neko
-# Wed, 09 Oct 2019 14:31:03 GMT
+# Wed, 13 Nov 2019 00:30:59 GMT
 ENV HAXEPATH=C:\HaxeToolkit\haxe
-# Wed, 09 Oct 2019 14:31:04 GMT
+# Wed, 13 Nov 2019 00:31:00 GMT
 ENV HAXE_STD_PATH=C:\HaxeToolkit\haxe\std
-# Wed, 09 Oct 2019 14:31:05 GMT
+# Wed, 13 Nov 2019 00:31:01 GMT
 ENV HAXELIB_PATH=C:\HaxeToolkit\haxe\lib
-# Wed, 09 Oct 2019 14:31:52 GMT
+# Wed, 13 Nov 2019 00:32:01 GMT
 RUN $newPath = ('{0};{1};{2}' -f $env:HAXEPATH, $env:NEKOPATH, $env:PATH); 	Write-Host ('Updating PATH: {0}' -f $newPath); 	[Environment]::SetEnvironmentVariable('PATH', $newPath, [EnvironmentVariableTarget]::Machine);
-# Wed, 09 Oct 2019 14:33:06 GMT
+# Wed, 13 Nov 2019 00:33:21 GMT
 RUN $url = 'https://download.microsoft.com/download/0/5/6/056dcda9-d667-4e27-8001-8a0c6971d6b1/vcredist_x86.exe'; 	Write-Host ('Downloading {0} ...' -f $url); 	[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12; 	Invoke-WebRequest -Uri $url -OutFile 'vcredist_x86.exe'; 		Write-Host 'Verifying sha256 (89f4e593ea5541d1c53f983923124f9fd061a1c0c967339109e375c661573c17) ...'; 	if ((Get-FileHash vcredist_x86.exe -Algorithm sha256).Hash -ne '89f4e593ea5541d1c53f983923124f9fd061a1c0c967339109e375c661573c17') { 		Write-Host 'FAILED!'; 		exit 1; 	}; 		Write-Host 'Installing ...'; 	Start-Process -FilePath "vcredist_x86.exe" -ArgumentList "/Q" -Wait; 		Write-Host 'Removing installer...'; 	Remove-Item .\vcredist_x86.exe; 		Write-Host 'Complete.';
-# Wed, 09 Oct 2019 14:33:32 GMT
+# Wed, 13 Nov 2019 00:33:51 GMT
 RUN New-Item -ItemType directory -Path $env:HAXETOOLKIT_PATH;
-# Mon, 28 Oct 2019 22:57:11 GMT
+# Wed, 13 Nov 2019 00:33:52 GMT
 ENV NEKO_VERSION=2.3.0
-# Mon, 28 Oct 2019 23:23:45 GMT
+# Wed, 13 Nov 2019 01:36:48 GMT
 RUN $url = 'https://github.com/HaxeFoundation/neko/releases/download/v2-3-0/neko-2.3.0-win.zip'; 	Write-Host ('Downloading {0} ...' -f $url); 	[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12; 	Invoke-WebRequest -Uri $url -OutFile 'neko.zip'; 		Write-Host 'Verifying sha256 (fe5a11350d2dd74338f971d62115f2bd21ec6912f193db04c5d28eb987a50485) ...'; 	if ((Get-FileHash neko.zip -Algorithm sha256).Hash -ne 'fe5a11350d2dd74338f971d62115f2bd21ec6912f193db04c5d28eb987a50485') { 		Write-Host 'FAILED!'; 		exit 1; 	}; 		Write-Host 'Expanding ...'; 	New-Item -ItemType directory -Path tmp; 	Expand-Archive -Path neko.zip -DestinationPath tmp; 	if (Test-Path tmp\neko.exe) { Move-Item tmp $env:NEKOPATH } 	else { Move-Item (Resolve-Path tmp\neko* | Select -ExpandProperty Path) $env:NEKOPATH }; 		Write-Host 'Removing ...'; 	Remove-Item -Path neko.zip, tmp -Force -Recurse -ErrorAction Ignore; 		Write-Host 'Verifying install ...'; 	Write-Host '  neko -version'; neko -version; 		Write-Host 'Complete.';
-# Tue, 29 Oct 2019 00:55:52 GMT
+# Wed, 13 Nov 2019 02:42:39 GMT
 ENV HAXE_VERSION=3.1.3
-# Tue, 29 Oct 2019 00:58:49 GMT
+# Wed, 13 Nov 2019 02:45:49 GMT
 RUN $url = 'https://github.com/HaxeFoundation/haxe/releases/download/3.1.3/haxe-3.1.3-win.zip'; 	Write-Host ('Downloading {0} ...' -f $url); 	[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12; 	Invoke-WebRequest -Uri $url -OutFile haxe.zip; 		Write-Host 'Verifying sha256 (4cf84cdbf7960a61ae70b0d9166c6f9bde16388c3b81e54af91446f4c9e44ae4) ...'; 	if ((Get-FileHash haxe.zip -Algorithm sha256).Hash -ne '4cf84cdbf7960a61ae70b0d9166c6f9bde16388c3b81e54af91446f4c9e44ae4') { 		Write-Host 'FAILED!'; 		exit 1; 	}; 		Write-Host 'Expanding ...'; 	New-Item -ItemType directory -Path tmp; 	Expand-Archive -Path haxe.zip -DestinationPath tmp; 	if (Test-Path tmp\haxe.exe) { Move-Item tmp $env:HAXEPATH } 	else { Move-Item (Resolve-Path tmp\haxe* | Select -ExpandProperty Path) $env:HAXEPATH }; 		Write-Host 'Removing ...'; 	Remove-Item -Path haxe.zip, tmp -Force -Recurse -ErrorAction Ignore; 		Write-Host 'Verifying install ...'; 	Write-Host '  haxe -version'; haxe -version; 	Write-Host '  haxelib version'; haxelib version; 		Write-Host 'Complete.';
-# Tue, 29 Oct 2019 00:59:14 GMT
+# Wed, 13 Nov 2019 02:46:20 GMT
 RUN New-Item -ItemType directory -Path $env:HAXELIB_PATH;
-# Tue, 29 Oct 2019 00:59:15 GMT
+# Wed, 13 Nov 2019 02:46:21 GMT
 ENV HOMEDRIVE=C:
-# Tue, 29 Oct 2019 00:59:43 GMT
+# Wed, 13 Nov 2019 02:46:50 GMT
 RUN $newPath = ('{0}\Users\{1}' -f $env:HOMEDRIVE, $env:USERNAME); 	Write-Host ('Updating HOMEPATH: {0}' -f $newPath); 	[Environment]::SetEnvironmentVariable('HOMEPATH', $newPath, [EnvironmentVariableTarget]::Machine);
-# Tue, 29 Oct 2019 01:00:16 GMT
+# Wed, 13 Nov 2019 02:47:23 GMT
 RUN (New-Object System.Net.WebClient).DownloadString('https://lib.haxe.org') >$null
-# Tue, 29 Oct 2019 01:00:43 GMT
+# Wed, 13 Nov 2019 02:47:54 GMT
 RUN (New-Object System.Net.WebClient).DownloadString('https://d1smpvufia21az.cloudfront.net') >$null
-# Tue, 29 Oct 2019 01:00:45 GMT
+# Wed, 13 Nov 2019 02:47:55 GMT
 CMD ["haxe"]
 ```
 
@@ -803,143 +799,142 @@ CMD ["haxe"]
 		Last Modified: Tue, 18 Sep 2018 22:43:55 GMT  
 		Size: 1.7 GB (1659688273 bytes)  
 		MIME: application/vnd.docker.image.rootfs.foreign.diff.tar.gzip
-	-	`sha256:d8f170766a535406983bc5b2ee79c71e7926e6f5580d50e3cb2540aaf4aeb32a`  
-		Last Modified: Sun, 06 Oct 2019 14:26:48 GMT  
-		Size: 688.6 MB (688636945 bytes)  
+	-	`sha256:3eb83143ff4b7dafaf8aee4e558c4743488812347fac8581e8b2f61b8e5d06e0`  
+		Size: 696.1 MB (696065307 bytes)  
 		MIME: application/vnd.docker.image.rootfs.foreign.diff.tar.gzip
-	-	`sha256:90030bef52c1e56c368152caf2b49023ca68edf1bf671c52894a0ddc874d529d`  
-		Last Modified: Wed, 09 Oct 2019 16:41:49 GMT  
-		Size: 1.2 KB (1196 bytes)  
+	-	`sha256:d0a17adb4893def55112c23d32072d37d4dd6a77910448ebf86e70c2380583f6`  
+		Last Modified: Thu, 14 Nov 2019 01:17:22 GMT  
+		Size: 1.2 KB (1187 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:14a3f3aa3c69879c65c0f02241d27c1831311d3fde39c597808c2ef30c2a2911`  
-		Last Modified: Wed, 09 Oct 2019 16:41:49 GMT  
+	-	`sha256:fa773b255e6433ec944c431b21edfcd65fa4b7d10a7b06d1dbad8745960cdb5f`  
+		Last Modified: Thu, 14 Nov 2019 01:17:22 GMT  
 		Size: 1.2 KB (1203 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:2292a578d93d97407b29cb40eadab55cf1c54c2bfe73e40534dcd5e7563550bc`  
-		Last Modified: Wed, 09 Oct 2019 16:41:48 GMT  
-		Size: 1.2 KB (1184 bytes)  
+	-	`sha256:333aee55688437818eac6dfb7a1c659aebd4a1f306bfb11c82d8e8ca581bd310`  
+		Last Modified: Thu, 14 Nov 2019 01:17:22 GMT  
+		Size: 1.2 KB (1187 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c4d2c680a99e0ae3847637e5a3f708ed0dc4de74b356b6462b39c7838c2569c8`  
-		Last Modified: Wed, 09 Oct 2019 16:41:47 GMT  
-		Size: 1.2 KB (1192 bytes)  
+	-	`sha256:2e31b4fb755985e1d413436629cfc8b3587d9558c735cebbe7e172fb1226f266`  
+		Last Modified: Thu, 14 Nov 2019 01:17:19 GMT  
+		Size: 1.2 KB (1210 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:54e6e159b1c5c45204ad079f31591b297f120961d603188c7fdcd10dc9c02376`  
-		Last Modified: Wed, 09 Oct 2019 16:41:45 GMT  
-		Size: 1.2 KB (1185 bytes)  
+	-	`sha256:b429839636da90a1ab247fa1fba4a113b233b91caffb1f7b8785a5146f728fe8`  
+		Last Modified: Thu, 14 Nov 2019 01:17:19 GMT  
+		Size: 1.2 KB (1189 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:0594c785a423bf8e989928cfa5accef7e4269433e0b81de9e7485d55a446a7b8`  
-		Last Modified: Wed, 09 Oct 2019 16:41:44 GMT  
-		Size: 1.2 KB (1214 bytes)  
-		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:09d2745fd2b8937d7f254629ff6d585b822a7e714a8d739b6eda95b1cc4f09bc`  
-		Last Modified: Wed, 09 Oct 2019 16:41:46 GMT  
-		Size: 4.9 MB (4852499 bytes)  
-		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:51da8cf1bcf4160f908a58579ad7d9725468a6d1ecf3e01c80839ff2dc3bc7ab`  
-		Last Modified: Wed, 09 Oct 2019 16:41:47 GMT  
-		Size: 12.9 MB (12899726 bytes)  
-		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:5f7b0108f3aa4af20acbee0fbd2387f49240d281d846584fa9f4d2399a0f2beb`  
-		Last Modified: Wed, 09 Oct 2019 16:41:41 GMT  
-		Size: 293.1 KB (293114 bytes)  
-		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:edf56f7ef717428e8437e4f6fdfb7f43898eafa5a02ce1b55259e1d6e3d5109b`  
-		Last Modified: Tue, 29 Oct 2019 01:10:46 GMT  
-		Size: 1.2 KB (1178 bytes)  
-		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:49bc7bd42e687cc87a1c01b69b2af2c3abd63ccfa22150237e0fab51005665db`  
-		Last Modified: Tue, 29 Oct 2019 01:13:04 GMT  
-		Size: 2.0 MB (1958688 bytes)  
-		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:fc02122f7bace0ee9a441a27154a8c691d4992fe12730eb54c7a2a97aa9dc866`  
-		Last Modified: Tue, 29 Oct 2019 01:19:50 GMT  
+	-	`sha256:9ae46d62efed37e0ce844887aa321f0d776001996a3727741fa89f05a8e43657`  
+		Last Modified: Thu, 14 Nov 2019 01:17:17 GMT  
 		Size: 1.2 KB (1182 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:4cc63330fd8560da39f33c624c78a97a95e509b6543878f791d252975c3610a8`  
-		Last Modified: Tue, 29 Oct 2019 01:19:59 GMT  
-		Size: 4.1 MB (4064709 bytes)  
+	-	`sha256:eeae44bf27c5eb613ac98ffbcefef4f3650a86109430e4266792d2a1bd5badea`  
+		Last Modified: Thu, 14 Nov 2019 01:17:18 GMT  
+		Size: 4.9 MB (4859060 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:8b9a0ad0b067a12d681424e908e5ca0c8a129cf0301d2eb350d949569017cc0c`  
-		Last Modified: Tue, 29 Oct 2019 01:19:50 GMT  
-		Size: 342.6 KB (342555 bytes)  
+	-	`sha256:be9a91ff8d1f5bc81fee01e125994316e92e1ae94ac5abb836a391c35be262d9`  
+		Last Modified: Thu, 14 Nov 2019 01:17:19 GMT  
+		Size: 12.9 MB (12899755 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c45e50c492b3af436740eb445af0bb3200b339b22ccaffbe6006dfbf66061572`  
-		Last Modified: Tue, 29 Oct 2019 01:19:47 GMT  
-		Size: 1.2 KB (1179 bytes)  
+	-	`sha256:d977c2e38fb721f6c7b1c2202a7a41e482711178660238df5b5637584bd7a84c`  
+		Last Modified: Thu, 14 Nov 2019 01:17:15 GMT  
+		Size: 295.1 KB (295062 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:85d664a2c7026c2e83b368f7140ef761ec101d58362c66a8eb08fd64e87d1ea0`  
-		Last Modified: Tue, 29 Oct 2019 01:19:47 GMT  
-		Size: 352.1 KB (352122 bytes)  
+	-	`sha256:fc4146c775bd297283720ee6622f656b7b24943cb08027079eed9d0af17d827a`  
+		Last Modified: Thu, 14 Nov 2019 01:17:13 GMT  
+		Size: 1.2 KB (1167 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c17df02e7b472f415b40f553f940ab07ffcf8b3369abccd6526ceb8450fdb8a2`  
-		Last Modified: Tue, 29 Oct 2019 01:19:48 GMT  
-		Size: 371.3 KB (371307 bytes)  
+	-	`sha256:3323d382bc8313a2382391d100f0266be6bb61a6011912e08976fec119d4cd0c`  
+		Last Modified: Thu, 14 Nov 2019 02:18:55 GMT  
+		Size: 1.9 MB (1933639 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:a83a197a80883e38e8f1e36ebd8f0f0e3806331cd42c46d80d66822dadc9f51f`  
-		Last Modified: Tue, 29 Oct 2019 01:19:47 GMT  
-		Size: 404.2 KB (404217 bytes)  
+	-	`sha256:168d0a2e5b102477dc9d791dfe404bb223dfc547c630bd1f8846524b826b7bf4`  
+		Last Modified: Thu, 14 Nov 2019 04:22:40 GMT  
+		Size: 1.2 KB (1203 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:f82be1919cb7303abcaef34ab4e14a24f2078ba69f2093918235494a1e5ec6be`  
-		Last Modified: Tue, 29 Oct 2019 01:19:47 GMT  
-		Size: 1.2 KB (1182 bytes)  
+	-	`sha256:37c52366513348dc23971b122641f1587c5fc9fc280c3a61722783b9a6da2343`  
+		Last Modified: Thu, 14 Nov 2019 04:22:50 GMT  
+		Size: 4.1 MB (4052961 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:ac632c93f31bec92a93da613845930727f64fa96c8bf47a8f09e18b6b2174c4f`  
+		Last Modified: Thu, 14 Nov 2019 04:22:39 GMT  
+		Size: 325.8 KB (325820 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:58ec29b4ff8f5325dc724c55fba7064f30ef79f7fb2f9cb062375cbdb40b6775`  
+		Last Modified: Thu, 14 Nov 2019 04:22:37 GMT  
+		Size: 1.2 KB (1177 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:dde9dad36d51c4fba560d4203ca2b0b4b25384758dfa6409ae3fd869667e8ed2`  
+		Last Modified: Thu, 14 Nov 2019 04:22:37 GMT  
+		Size: 340.7 KB (340676 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:7d8fa2e07dd4da4e47c8a630a8aaa1428949392e625ae8b2aa83205b3c9b3e4b`  
+		Last Modified: Thu, 14 Nov 2019 04:22:37 GMT  
+		Size: 352.0 KB (352022 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:66c77e17b232eb472b6dd094c09c78491b1eda9be077dd003a5eb63645bda35e`  
+		Last Modified: Thu, 14 Nov 2019 04:22:37 GMT  
+		Size: 389.7 KB (389709 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:467ebf7a1c79014a9780243d5ea665aa35467dd24b364dac85f01727a7edff3e`  
+		Last Modified: Thu, 14 Nov 2019 04:22:37 GMT  
+		Size: 1.2 KB (1162 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
-### `haxe:3.1.3` - windows version 10.0.14393.3274; amd64
+### `haxe:3.1.3` - windows version 10.0.14393.3326; amd64
 
 ```console
-$ docker pull haxe@sha256:50053211d2a903f6f75066609c39930326cc28ce759770ad88ce7e9248c12a09
+$ docker pull haxe@sha256:731313bdeaab0439d643d91577aa148e346b96d6be285ed5186b9f0be0ad0ce3
 ```
 
 -	Docker Version: 18.03.1-ee-4
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **5.8 GB (5796040436 bytes)**  
+-	Total Size: **5.8 GB (5794788767 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:30f335dc784b4a19874375c0a1c74d41172f7d10f0bc3b4fa5574f7119ed36bd`
+-	Image ID: `sha256:11da6a1f49f12247b53295de094a77d707b316d7eb64d7973276822700c9e697`
 -	Default Command: `["haxe"]`
 -	`SHELL`: `["powershell","-Command","$ErrorActionPreference = 'Stop';"]`
 
 ```dockerfile
-# Tue, 22 Nov 2016 23:24:34 GMT
+# Sat, 19 Nov 2016 17:05:00 GMT
 RUN Apply image 1607-RTM-amd64
-# Sat, 05 Oct 2019 16:15:00 GMT
+# Thu, 07 Nov 2019 14:16:00 GMT
 RUN Install update ltsc2016-amd64
-# Wed, 09 Oct 2019 14:39:48 GMT
+# Wed, 13 Nov 2019 00:41:31 GMT
 SHELL [powershell -Command $ErrorActionPreference = 'Stop';]
-# Wed, 09 Oct 2019 14:39:49 GMT
+# Wed, 13 Nov 2019 00:41:32 GMT
 ENV HAXETOOLKIT_PATH=C:\HaxeToolkit
-# Wed, 09 Oct 2019 14:39:50 GMT
+# Wed, 13 Nov 2019 00:41:33 GMT
 ENV NEKOPATH=C:\HaxeToolkit\neko
-# Wed, 09 Oct 2019 14:39:51 GMT
+# Wed, 13 Nov 2019 00:41:34 GMT
 ENV HAXEPATH=C:\HaxeToolkit\haxe
-# Wed, 09 Oct 2019 14:39:52 GMT
+# Wed, 13 Nov 2019 00:41:36 GMT
 ENV HAXE_STD_PATH=C:\HaxeToolkit\haxe\std
-# Wed, 09 Oct 2019 14:39:54 GMT
+# Wed, 13 Nov 2019 00:41:37 GMT
 ENV HAXELIB_PATH=C:\HaxeToolkit\haxe\lib
-# Wed, 09 Oct 2019 14:41:10 GMT
+# Wed, 13 Nov 2019 00:43:10 GMT
 RUN $newPath = ('{0};{1};{2}' -f $env:HAXEPATH, $env:NEKOPATH, $env:PATH); 	Write-Host ('Updating PATH: {0}' -f $newPath); 	[Environment]::SetEnvironmentVariable('PATH', $newPath, [EnvironmentVariableTarget]::Machine);
-# Wed, 09 Oct 2019 14:43:12 GMT
+# Wed, 13 Nov 2019 00:45:24 GMT
 RUN $url = 'https://download.microsoft.com/download/0/5/6/056dcda9-d667-4e27-8001-8a0c6971d6b1/vcredist_x86.exe'; 	Write-Host ('Downloading {0} ...' -f $url); 	[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12; 	Invoke-WebRequest -Uri $url -OutFile 'vcredist_x86.exe'; 		Write-Host 'Verifying sha256 (89f4e593ea5541d1c53f983923124f9fd061a1c0c967339109e375c661573c17) ...'; 	if ((Get-FileHash vcredist_x86.exe -Algorithm sha256).Hash -ne '89f4e593ea5541d1c53f983923124f9fd061a1c0c967339109e375c661573c17') { 		Write-Host 'FAILED!'; 		exit 1; 	}; 		Write-Host 'Installing ...'; 	Start-Process -FilePath "vcredist_x86.exe" -ArgumentList "/Q" -Wait; 		Write-Host 'Removing installer...'; 	Remove-Item .\vcredist_x86.exe; 		Write-Host 'Complete.';
-# Wed, 09 Oct 2019 14:44:21 GMT
+# Wed, 13 Nov 2019 00:46:40 GMT
 RUN New-Item -ItemType directory -Path $env:HAXETOOLKIT_PATH;
-# Mon, 28 Oct 2019 23:04:46 GMT
+# Wed, 13 Nov 2019 00:46:42 GMT
 ENV NEKO_VERSION=2.3.0
-# Mon, 28 Oct 2019 23:31:23 GMT
+# Wed, 13 Nov 2019 01:44:34 GMT
 RUN $url = 'https://github.com/HaxeFoundation/neko/releases/download/v2-3-0/neko-2.3.0-win.zip'; 	Write-Host ('Downloading {0} ...' -f $url); 	[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12; 	Invoke-WebRequest -Uri $url -OutFile 'neko.zip'; 		Write-Host 'Verifying sha256 (fe5a11350d2dd74338f971d62115f2bd21ec6912f193db04c5d28eb987a50485) ...'; 	if ((Get-FileHash neko.zip -Algorithm sha256).Hash -ne 'fe5a11350d2dd74338f971d62115f2bd21ec6912f193db04c5d28eb987a50485') { 		Write-Host 'FAILED!'; 		exit 1; 	}; 		Write-Host 'Expanding ...'; 	New-Item -ItemType directory -Path tmp; 	Expand-Archive -Path neko.zip -DestinationPath tmp; 	if (Test-Path tmp\neko.exe) { Move-Item tmp $env:NEKOPATH } 	else { Move-Item (Resolve-Path tmp\neko* | Select -ExpandProperty Path) $env:NEKOPATH }; 		Write-Host 'Removing ...'; 	Remove-Item -Path neko.zip, tmp -Force -Recurse -ErrorAction Ignore; 		Write-Host 'Verifying install ...'; 	Write-Host '  neko -version'; neko -version; 		Write-Host 'Complete.';
-# Tue, 29 Oct 2019 01:00:56 GMT
+# Wed, 13 Nov 2019 02:48:12 GMT
 ENV HAXE_VERSION=3.1.3
-# Tue, 29 Oct 2019 01:04:23 GMT
+# Wed, 13 Nov 2019 02:51:54 GMT
 RUN $url = 'https://github.com/HaxeFoundation/haxe/releases/download/3.1.3/haxe-3.1.3-win.zip'; 	Write-Host ('Downloading {0} ...' -f $url); 	[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12; 	Invoke-WebRequest -Uri $url -OutFile haxe.zip; 		Write-Host 'Verifying sha256 (4cf84cdbf7960a61ae70b0d9166c6f9bde16388c3b81e54af91446f4c9e44ae4) ...'; 	if ((Get-FileHash haxe.zip -Algorithm sha256).Hash -ne '4cf84cdbf7960a61ae70b0d9166c6f9bde16388c3b81e54af91446f4c9e44ae4') { 		Write-Host 'FAILED!'; 		exit 1; 	}; 		Write-Host 'Expanding ...'; 	New-Item -ItemType directory -Path tmp; 	Expand-Archive -Path haxe.zip -DestinationPath tmp; 	if (Test-Path tmp\haxe.exe) { Move-Item tmp $env:HAXEPATH } 	else { Move-Item (Resolve-Path tmp\haxe* | Select -ExpandProperty Path) $env:HAXEPATH }; 		Write-Host 'Removing ...'; 	Remove-Item -Path haxe.zip, tmp -Force -Recurse -ErrorAction Ignore; 		Write-Host 'Verifying install ...'; 	Write-Host '  haxe -version'; haxe -version; 	Write-Host '  haxelib version'; haxelib version; 		Write-Host 'Complete.';
-# Tue, 29 Oct 2019 01:05:28 GMT
+# Wed, 13 Nov 2019 02:53:08 GMT
 RUN New-Item -ItemType directory -Path $env:HAXELIB_PATH;
-# Tue, 29 Oct 2019 01:05:29 GMT
+# Wed, 13 Nov 2019 02:53:10 GMT
 ENV HOMEDRIVE=C:
-# Tue, 29 Oct 2019 01:06:32 GMT
+# Wed, 13 Nov 2019 02:54:27 GMT
 RUN $newPath = ('{0}\Users\{1}' -f $env:HOMEDRIVE, $env:USERNAME); 	Write-Host ('Updating HOMEPATH: {0}' -f $newPath); 	[Environment]::SetEnvironmentVariable('HOMEPATH', $newPath, [EnvironmentVariableTarget]::Machine);
-# Tue, 29 Oct 2019 01:07:45 GMT
+# Wed, 13 Nov 2019 02:55:46 GMT
 RUN (New-Object System.Net.WebClient).DownloadString('https://lib.haxe.org') >$null
-# Tue, 29 Oct 2019 01:08:46 GMT
+# Wed, 13 Nov 2019 02:57:03 GMT
 RUN (New-Object System.Net.WebClient).DownloadString('https://d1smpvufia21az.cloudfront.net') >$null
-# Tue, 29 Oct 2019 01:08:48 GMT
+# Wed, 13 Nov 2019 02:57:04 GMT
 CMD ["haxe"]
 ```
 
@@ -948,85 +943,84 @@ CMD ["haxe"]
 		Last Modified: Tue, 18 Sep 2018 20:20:50 GMT  
 		Size: 4.1 GB (4069985900 bytes)  
 		MIME: application/vnd.docker.image.rootfs.foreign.diff.tar.gzip
-	-	`sha256:b4f320e456fcdbb0a55de06f153ad96f144c8c14e452ac7f20896ce2509d170f`  
-		Last Modified: Sun, 06 Oct 2019 17:29:40 GMT  
-		Size: 1.7 GB (1651218786 bytes)  
+	-	`sha256:57e8a97eaa75b4ef91d6df4454d12d3b43e629b80dd937008efb8d9eed5f0208`  
+		Size: 1.7 GB (1650127385 bytes)  
 		MIME: application/vnd.docker.image.rootfs.foreign.diff.tar.gzip
-	-	`sha256:29c2f8f4d6816f29c915ea3b2b780c2f4df1eba46b16d0b1a33b59c62c1953c1`  
-		Last Modified: Wed, 09 Oct 2019 16:42:42 GMT  
-		Size: 1.2 KB (1211 bytes)  
+	-	`sha256:60b3361980878b3668e4eb07fb90b61f37029e500df17dc50d49de9e0c64994c`  
+		Last Modified: Thu, 14 Nov 2019 01:18:29 GMT  
+		Size: 1.2 KB (1209 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:7645418a01f2ee59582d47751b1361304cd4c7b1e4ab9565a77f917133a6331f`  
-		Last Modified: Wed, 09 Oct 2019 16:42:41 GMT  
-		Size: 1.2 KB (1216 bytes)  
-		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:a160c1b66f2191549584f4d2dca6aa032d7cfd95254a52b0b21f15bf89219532`  
-		Last Modified: Wed, 09 Oct 2019 16:42:41 GMT  
-		Size: 1.2 KB (1191 bytes)  
-		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:3ffae54200a2c5c29c85de0df96e06fa3e0e6034ec312173af3141705d3a5869`  
-		Last Modified: Wed, 09 Oct 2019 16:42:40 GMT  
-		Size: 1.2 KB (1212 bytes)  
-		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:2ab228dbc093a4784702b1be54fadeb1765832b2bfb345b919847d2288e2e2ba`  
-		Last Modified: Wed, 09 Oct 2019 16:42:39 GMT  
-		Size: 1.2 KB (1183 bytes)  
-		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:0b721aa81f4ae2d422eb232a21ed8864e213333df1c5aaf52c7ba236321b64d8`  
-		Last Modified: Wed, 09 Oct 2019 16:42:37 GMT  
-		Size: 1.2 KB (1191 bytes)  
-		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:31856421a051a2f9c7f7aca3660a5a81075d578c7dfa8c833443ac53f444a470`  
-		Last Modified: Wed, 09 Oct 2019 16:42:38 GMT  
-		Size: 5.4 MB (5351990 bytes)  
-		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:b9725648368ad472f5048c8757c7b70ef9173f5e597d8a253c15dc95c17fb518`  
-		Last Modified: Wed, 09 Oct 2019 16:42:39 GMT  
-		Size: 22.4 MB (22411447 bytes)  
-		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:11e54e24a5ba6d08457408eb4f91ecbd0d8af4aa5cc6be967298128d89a88816`  
-		Last Modified: Wed, 09 Oct 2019 16:42:33 GMT  
-		Size: 5.3 MB (5293650 bytes)  
-		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:e563d354afc49cb8b46fedb6a404f5e42a82ca9dc7fc4c496edaf5edaf185ff6`  
-		Last Modified: Tue, 29 Oct 2019 01:11:34 GMT  
-		Size: 1.2 KB (1188 bytes)  
-		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:4dabc15e94406c4709eca6d64dce40fe5ac92772317a9978c88ea7565110191b`  
-		Last Modified: Tue, 29 Oct 2019 01:13:59 GMT  
-		Size: 6.9 MB (6929912 bytes)  
-		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:b45867efb240cb8c14a82d0ddf195a2a610721adc57657f227f5a895a0f3b13c`  
-		Last Modified: Tue, 29 Oct 2019 01:20:29 GMT  
+	-	`sha256:6c62938738e5c25fbf816031925d415178c189dbfc8cfcbef86710f350aaedc4`  
+		Last Modified: Thu, 14 Nov 2019 01:18:27 GMT  
 		Size: 1.2 KB (1208 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:50461c4ea282c8c036bd8c69cbe566ecb86b2bbef5c92257c27e9bdee438e415`  
-		Last Modified: Tue, 29 Oct 2019 01:20:38 GMT  
-		Size: 13.6 MB (13560979 bytes)  
+	-	`sha256:056ab1a915111a170d9799fa1c746a2a7c12d8e9f835eb329531d26263d59dce`  
+		Last Modified: Thu, 14 Nov 2019 01:18:27 GMT  
+		Size: 1.2 KB (1182 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:497ed214674dca3b931cf872c9bb3b987e5f28a93c161515fa940fd61f975ff5`  
-		Last Modified: Tue, 29 Oct 2019 01:20:27 GMT  
-		Size: 5.3 MB (5317167 bytes)  
+	-	`sha256:bf63f39d70fd70d7d1039b869d8c6a805ebece06060f3671f6034cbaff189ef5`  
+		Last Modified: Thu, 14 Nov 2019 01:18:27 GMT  
+		Size: 1.2 KB (1212 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c6a31a94a9dca4f4d861e7f92325a1073ebf484d898f1c27aa60822b18b31d12`  
-		Last Modified: Tue, 29 Oct 2019 01:20:22 GMT  
+	-	`sha256:dd3769a4a773e323244572e92a72843d47ad96442582438e90bda329c3fe848d`  
+		Last Modified: Thu, 14 Nov 2019 01:18:24 GMT  
+		Size: 1.2 KB (1168 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:e4f9ce1244e198e81f5ab1a1aaadd8120aa9e7fbbf2314971610df0562669410`  
+		Last Modified: Thu, 14 Nov 2019 01:18:24 GMT  
+		Size: 1.2 KB (1184 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:d6fab71888a2ba793cca8c76b3a98537701fc6fbd7f535aad6fca91550c7189d`  
+		Last Modified: Thu, 14 Nov 2019 01:18:24 GMT  
+		Size: 5.4 MB (5351053 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:d3d720c1893d2b5713eb8da2bcd7a8a4a06c4146a2e2f7fd20f5af35ab119590`  
+		Last Modified: Thu, 14 Nov 2019 01:18:28 GMT  
+		Size: 22.4 MB (22380375 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:32cb4919f4d959711cde03ea1ce713a699584962a975b719189242311f460704`  
+		Last Modified: Thu, 14 Nov 2019 01:18:21 GMT  
+		Size: 5.3 MB (5293824 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:282f0c1a088692ed3ed1acb119f857709f2039314b83e72e2ab374284ae4a7bc`  
+		Last Modified: Thu, 14 Nov 2019 01:18:17 GMT  
 		Size: 1.2 KB (1188 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:8267c1824fb227570c799a9a18e60c693c10e96f26f8cf9d3c6a4943cb9ee99f`  
-		Last Modified: Tue, 29 Oct 2019 01:20:25 GMT  
-		Size: 5.3 MB (5316318 bytes)  
+	-	`sha256:098debff455b5735064a1e62a85c2e7409079cc490c72ca26340d0603b744819`  
+		Last Modified: Thu, 14 Nov 2019 04:17:07 GMT  
+		Size: 6.9 MB (6905786 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:ef3b1200e470c2d91cdc60e5e74b123c5818ac5e541ab54c3fec43ba04ce5222`  
-		Last Modified: Tue, 29 Oct 2019 01:20:25 GMT  
-		Size: 5.3 MB (5319979 bytes)  
+	-	`sha256:d3adb395dc84889c0d11cbcc7f8d58844a9d2b6567a8c934b4f8ec111b97d79e`  
+		Last Modified: Thu, 14 Nov 2019 04:23:19 GMT  
+		Size: 1.2 KB (1190 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:cccbda56392f6210d62be20f3d4d6c93f9b9d411250dd787f05360d3647d86b5`  
-		Last Modified: Tue, 29 Oct 2019 01:20:24 GMT  
-		Size: 5.3 MB (5322357 bytes)  
+	-	`sha256:4e2c64e75a48762f6da1254e92f7b4f0399ca542de7d68d97613ab1aeec85f86`  
+		Last Modified: Thu, 14 Nov 2019 04:23:29 GMT  
+		Size: 13.5 MB (13486693 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:9bfffa6439c00d6a385abda19d73c0efc05eb948899f99feb0972e0288ba0247`  
-		Last Modified: Tue, 29 Oct 2019 01:20:22 GMT  
-		Size: 1.2 KB (1163 bytes)  
+	-	`sha256:060bc5f1df2ccb7c914a5c9e4a272e01446d1e8db559bc1053550a14a7e7c44c`  
+		Last Modified: Thu, 14 Nov 2019 04:23:17 GMT  
+		Size: 5.3 MB (5309957 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:028ecb4d8959600e1974b13f5ccc23334de9f15de61c6ea8416ed43e417d320c`  
+		Last Modified: Thu, 14 Nov 2019 04:23:12 GMT  
+		Size: 1.2 KB (1188 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:5be7e11c9b71352147c606202e98e79e092d881cbbadc5a756a7b95de4ed5bb7`  
+		Last Modified: Thu, 14 Nov 2019 04:23:16 GMT  
+		Size: 5.3 MB (5308183 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:de2591828ebe2ac54a527ca99fdac77015781a601e9fece386b212765f4e2247`  
+		Last Modified: Thu, 14 Nov 2019 04:23:16 GMT  
+		Size: 5.3 MB (5313378 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:5cf8028209b0859e9ec44e724a65b19a7ba67f1f7b95cfd46433691c0e92a8ae`  
+		Last Modified: Thu, 14 Nov 2019 04:23:17 GMT  
+		Size: 5.3 MB (5314318 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:b0bb885a9bda36e80b6b664a6f36f9a5ca8f34bc8e8e82c916e7802576c1710f`  
+		Last Modified: Thu, 14 Nov 2019 04:23:12 GMT  
+		Size: 1.2 KB (1186 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `haxe:3.1.3-jessie`
@@ -1338,71 +1332,71 @@ CMD ["haxe"]
 ## `haxe:3.1.3-windowsservercore`
 
 ```console
-$ docker pull haxe@sha256:8be8feb2a03e3c46f51cf49e151e57428164aa72c1e063e0581058645919bc9a
+$ docker pull haxe@sha256:3da6aebe400f195fea12986e203b1a8a9c54fb7a3dd2429e5c78fc7459d278eb
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
 -	Platforms:
-	-	windows version 10.0.17763.805; amd64
-	-	windows version 10.0.17134.1069; amd64
-	-	windows version 10.0.14393.3274; amd64
+	-	windows version 10.0.17763.864; amd64
+	-	windows version 10.0.17134.1130; amd64
+	-	windows version 10.0.14393.3326; amd64
 
-### `haxe:3.1.3-windowsservercore` - windows version 10.0.17763.805; amd64
+### `haxe:3.1.3-windowsservercore` - windows version 10.0.17763.864; amd64
 
 ```console
-$ docker pull haxe@sha256:70cca081014ca1b49fb90b08b28c396d8d6d3a88512e5c71d14c01a949f8462a
+$ docker pull haxe@sha256:5d072b92b219aee61fa2829e4b0a00c4a808bb36b3e49ed57213888620b8a239
 ```
 
 -	Docker Version: 18.03.1-ee-4
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **2.2 GB (2226432984 bytes)**  
+-	Total Size: **2.2 GB (2240831591 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:927147728aa2754a054789a1749ccbd18d72135e85bef2043408e9acd5613b6b`
+-	Image ID: `sha256:96017a7358f36d1e7c6d58e59bda53dd3211cd6ed9b433453eb3ff0091848024`
 -	Default Command: `["haxe"]`
 -	`SHELL`: `["powershell","-Command","$ErrorActionPreference = 'Stop';"]`
 
 ```dockerfile
 # Sat, 15 Sep 2018 09:10:26 GMT
 RUN Apply image 1809-RTM-amd64
-# Sun, 06 Oct 2019 10:02:47 GMT
+# Sat, 09 Nov 2019 02:48:55 GMT
 RUN Install update 1809-amd64
-# Wed, 09 Oct 2019 14:22:24 GMT
+# Tue, 12 Nov 2019 23:49:55 GMT
 SHELL [powershell -Command $ErrorActionPreference = 'Stop';]
-# Wed, 09 Oct 2019 14:22:26 GMT
+# Tue, 12 Nov 2019 23:49:56 GMT
 ENV HAXETOOLKIT_PATH=C:\HaxeToolkit
-# Wed, 09 Oct 2019 14:22:27 GMT
+# Tue, 12 Nov 2019 23:49:57 GMT
 ENV NEKOPATH=C:\HaxeToolkit\neko
-# Wed, 09 Oct 2019 14:22:28 GMT
+# Tue, 12 Nov 2019 23:49:59 GMT
 ENV HAXEPATH=C:\HaxeToolkit\haxe
-# Wed, 09 Oct 2019 14:22:29 GMT
+# Tue, 12 Nov 2019 23:50:00 GMT
 ENV HAXE_STD_PATH=C:\HaxeToolkit\haxe\std
-# Wed, 09 Oct 2019 14:22:31 GMT
+# Tue, 12 Nov 2019 23:50:01 GMT
 ENV HAXELIB_PATH=C:\HaxeToolkit\haxe\lib
-# Wed, 09 Oct 2019 14:23:13 GMT
+# Tue, 12 Nov 2019 23:50:59 GMT
 RUN $newPath = ('{0};{1};{2}' -f $env:HAXEPATH, $env:NEKOPATH, $env:PATH); 	Write-Host ('Updating PATH: {0}' -f $newPath); 	[Environment]::SetEnvironmentVariable('PATH', $newPath, [EnvironmentVariableTarget]::Machine);
-# Wed, 09 Oct 2019 14:24:25 GMT
+# Tue, 12 Nov 2019 23:52:16 GMT
 RUN $url = 'https://download.microsoft.com/download/0/5/6/056dcda9-d667-4e27-8001-8a0c6971d6b1/vcredist_x86.exe'; 	Write-Host ('Downloading {0} ...' -f $url); 	[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12; 	Invoke-WebRequest -Uri $url -OutFile 'vcredist_x86.exe'; 		Write-Host 'Verifying sha256 (89f4e593ea5541d1c53f983923124f9fd061a1c0c967339109e375c661573c17) ...'; 	if ((Get-FileHash vcredist_x86.exe -Algorithm sha256).Hash -ne '89f4e593ea5541d1c53f983923124f9fd061a1c0c967339109e375c661573c17') { 		Write-Host 'FAILED!'; 		exit 1; 	}; 		Write-Host 'Installing ...'; 	Start-Process -FilePath "vcredist_x86.exe" -ArgumentList "/Q" -Wait; 		Write-Host 'Removing installer...'; 	Remove-Item .\vcredist_x86.exe; 		Write-Host 'Complete.';
-# Wed, 09 Oct 2019 14:24:51 GMT
+# Tue, 12 Nov 2019 23:52:46 GMT
 RUN New-Item -ItemType directory -Path $env:HAXETOOLKIT_PATH;
-# Mon, 28 Oct 2019 22:19:20 GMT
+# Tue, 12 Nov 2019 23:52:47 GMT
 ENV NEKO_VERSION=2.3.0
-# Mon, 28 Oct 2019 23:16:50 GMT
+# Wed, 13 Nov 2019 00:59:42 GMT
 RUN $url = 'https://github.com/HaxeFoundation/neko/releases/download/v2-3-0/neko-2.3.0-win.zip'; 	Write-Host ('Downloading {0} ...' -f $url); 	[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12; 	Invoke-WebRequest -Uri $url -OutFile 'neko.zip'; 		Write-Host 'Verifying sha256 (fe5a11350d2dd74338f971d62115f2bd21ec6912f193db04c5d28eb987a50485) ...'; 	if ((Get-FileHash neko.zip -Algorithm sha256).Hash -ne 'fe5a11350d2dd74338f971d62115f2bd21ec6912f193db04c5d28eb987a50485') { 		Write-Host 'FAILED!'; 		exit 1; 	}; 		Write-Host 'Expanding ...'; 	New-Item -ItemType directory -Path tmp; 	Expand-Archive -Path neko.zip -DestinationPath tmp; 	if (Test-Path tmp\neko.exe) { Move-Item tmp $env:NEKOPATH } 	else { Move-Item (Resolve-Path tmp\neko* | Select -ExpandProperty Path) $env:NEKOPATH }; 		Write-Host 'Removing ...'; 	Remove-Item -Path neko.zip, tmp -Force -Recurse -ErrorAction Ignore; 		Write-Host 'Verifying install ...'; 	Write-Host '  neko -version'; neko -version; 		Write-Host 'Complete.';
-# Tue, 29 Oct 2019 00:50:49 GMT
+# Wed, 13 Nov 2019 02:37:36 GMT
 ENV HAXE_VERSION=3.1.3
-# Tue, 29 Oct 2019 00:53:45 GMT
+# Wed, 13 Nov 2019 02:40:34 GMT
 RUN $url = 'https://github.com/HaxeFoundation/haxe/releases/download/3.1.3/haxe-3.1.3-win.zip'; 	Write-Host ('Downloading {0} ...' -f $url); 	[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12; 	Invoke-WebRequest -Uri $url -OutFile haxe.zip; 		Write-Host 'Verifying sha256 (4cf84cdbf7960a61ae70b0d9166c6f9bde16388c3b81e54af91446f4c9e44ae4) ...'; 	if ((Get-FileHash haxe.zip -Algorithm sha256).Hash -ne '4cf84cdbf7960a61ae70b0d9166c6f9bde16388c3b81e54af91446f4c9e44ae4') { 		Write-Host 'FAILED!'; 		exit 1; 	}; 		Write-Host 'Expanding ...'; 	New-Item -ItemType directory -Path tmp; 	Expand-Archive -Path haxe.zip -DestinationPath tmp; 	if (Test-Path tmp\haxe.exe) { Move-Item tmp $env:HAXEPATH } 	else { Move-Item (Resolve-Path tmp\haxe* | Select -ExpandProperty Path) $env:HAXEPATH }; 		Write-Host 'Removing ...'; 	Remove-Item -Path haxe.zip, tmp -Force -Recurse -ErrorAction Ignore; 		Write-Host 'Verifying install ...'; 	Write-Host '  haxe -version'; haxe -version; 	Write-Host '  haxelib version'; haxelib version; 		Write-Host 'Complete.';
-# Tue, 29 Oct 2019 00:54:12 GMT
+# Wed, 13 Nov 2019 02:40:59 GMT
 RUN New-Item -ItemType directory -Path $env:HAXELIB_PATH;
-# Tue, 29 Oct 2019 00:54:13 GMT
+# Wed, 13 Nov 2019 02:41:00 GMT
 ENV HOMEDRIVE=C:
-# Tue, 29 Oct 2019 00:54:40 GMT
+# Wed, 13 Nov 2019 02:41:26 GMT
 RUN $newPath = ('{0}\Users\{1}' -f $env:HOMEDRIVE, $env:USERNAME); 	Write-Host ('Updating HOMEPATH: {0}' -f $newPath); 	[Environment]::SetEnvironmentVariable('HOMEPATH', $newPath, [EnvironmentVariableTarget]::Machine);
-# Tue, 29 Oct 2019 00:55:10 GMT
+# Wed, 13 Nov 2019 02:41:54 GMT
 RUN (New-Object System.Net.WebClient).DownloadString('https://lib.haxe.org') >$null
-# Tue, 29 Oct 2019 00:55:36 GMT
+# Wed, 13 Nov 2019 02:42:21 GMT
 RUN (New-Object System.Net.WebClient).DownloadString('https://d1smpvufia21az.cloudfront.net') >$null
-# Tue, 29 Oct 2019 00:55:37 GMT
+# Wed, 13 Nov 2019 02:42:22 GMT
 CMD ["haxe"]
 ```
 
@@ -1411,143 +1405,142 @@ CMD ["haxe"]
 		Last Modified: Tue, 13 Nov 2018 18:50:17 GMT  
 		Size: 1.5 GB (1534685324 bytes)  
 		MIME: application/vnd.docker.image.rootfs.foreign.diff.tar.gzip
-	-	`sha256:12c8dbabfd62cb512baca43f0d1e9588127e6bd66641e93a5e6f7e89e1bf7656`  
-		Last Modified: Sun, 06 Oct 2019 17:38:47 GMT  
-		Size: 666.6 MB (666618146 bytes)  
+	-	`sha256:e96b0897c5d1cc4214a97d25769f32df19da79456e0f1086d52497677a2a2bb6`  
+		Size: 681.0 MB (681015397 bytes)  
 		MIME: application/vnd.docker.image.rootfs.foreign.diff.tar.gzip
-	-	`sha256:9697a02cbf136853a1a6d136ec00a5ff02b44ae75db8a0b5ae353549d77aea63`  
-		Last Modified: Wed, 09 Oct 2019 16:41:08 GMT  
+	-	`sha256:907461e7e3e37e44cbbf832e53a080dfd3599a15f60436161a3687445bc811a0`  
+		Last Modified: Wed, 13 Nov 2019 02:58:27 GMT  
+		Size: 1.2 KB (1185 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:bfe86c76591b06caa55136e145b560d106273a30b3d2ed3089787fecf49b7dca`  
+		Last Modified: Wed, 13 Nov 2019 02:58:26 GMT  
+		Size: 1.2 KB (1189 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:3d2ec4931c7a61303dd15038b45bed240558340474add393a6a1f7100f0bc88f`  
+		Last Modified: Wed, 13 Nov 2019 02:58:26 GMT  
+		Size: 1.2 KB (1187 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:dd39ff557c2bbbf8047a995824999a335215d593df5c5c4e7461162e464cbe69`  
+		Last Modified: Wed, 13 Nov 2019 02:58:25 GMT  
+		Size: 1.2 KB (1200 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:b427ceec07a96f67e14be18f2f2480075f30cce723fea51389806a355744fb28`  
+		Last Modified: Wed, 13 Nov 2019 02:58:23 GMT  
+		Size: 1.2 KB (1210 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:e27f29fe5b3718cf86dfbb08df8751545cb10c1a1f7fd677cedab980e5255567`  
+		Last Modified: Wed, 13 Nov 2019 02:58:22 GMT  
 		Size: 1.2 KB (1206 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:5249a3833b8d297b13b68f3f11dce3747c88e4b5fb954b71f885822fb61b11e9`  
-		Last Modified: Wed, 09 Oct 2019 16:41:07 GMT  
-		Size: 1.2 KB (1212 bytes)  
+	-	`sha256:8d8b3151b7b9d5c53f0cee0128518e2fefe9e165c9a7fde480f50256f0dfb196`  
+		Last Modified: Wed, 13 Nov 2019 02:58:23 GMT  
+		Size: 4.6 MB (4561228 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:663e4184d6c8ea3d3f65dd41528d304b1c885a23692dbe54c99ec8ab35b2ec4d`  
-		Last Modified: Wed, 09 Oct 2019 16:41:06 GMT  
-		Size: 1.2 KB (1178 bytes)  
+	-	`sha256:0a61b180fdbafca7789ccd7a28d623116451ab0166df6943858559649fbd7415`  
+		Last Modified: Wed, 13 Nov 2019 02:58:24 GMT  
+		Size: 12.9 MB (12910600 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:bf4771f64d98aefaa0bc7467bfd397e8ee6efe1bc7f5959a7d8357da6b1ee38b`  
-		Last Modified: Wed, 09 Oct 2019 16:41:06 GMT  
-		Size: 1.2 KB (1192 bytes)  
+	-	`sha256:cac7ef27a98c9d1de916b734e2d52da7310aa93ce10ca5c79f8ccc01736ac746`  
+		Last Modified: Wed, 13 Nov 2019 02:58:20 GMT  
+		Size: 307.0 KB (307046 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:62400fe0ded518e8851bbf001266058a5bb5487e1372f11d8ea64bb0e9a48e12`  
-		Last Modified: Wed, 09 Oct 2019 16:41:04 GMT  
-		Size: 1.2 KB (1175 bytes)  
+	-	`sha256:27db2d883c2a40c4be0632feb93418a2d6415688b01c69c302a02f7d594997d6`  
+		Last Modified: Wed, 13 Nov 2019 02:58:17 GMT  
+		Size: 1.2 KB (1182 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c9c34cc510a2c4853535c6c9e35ba68aacbe71abad1cfe9695b45fe2e60defc0`  
-		Last Modified: Wed, 09 Oct 2019 16:41:03 GMT  
-		Size: 1.2 KB (1203 bytes)  
+	-	`sha256:6b4d761fbb625bc3d476f33ca19e9a68aca85e65df1c09ab1a1dcdf3514cc8c4`  
+		Last Modified: Thu, 14 Nov 2019 02:18:14 GMT  
+		Size: 1.9 MB (1923147 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:0945d46b6128884e9d2e76ec9a970e6177cfefd1f9210c6aaa782bec89043806`  
-		Last Modified: Wed, 09 Oct 2019 16:41:04 GMT  
-		Size: 4.5 MB (4523541 bytes)  
+	-	`sha256:4b146c0d52ca2a520d6caa2303241ce9a701ccf0d12e7df65a8e321cde8761d3`  
+		Last Modified: Thu, 14 Nov 2019 04:22:05 GMT  
+		Size: 1.2 KB (1207 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c732966829b6eb22941fc2b3c17944790355a222f2b1abe9a8748aab63e036c0`  
-		Last Modified: Wed, 09 Oct 2019 16:41:05 GMT  
-		Size: 12.9 MB (12896579 bytes)  
+	-	`sha256:e667da10259d2f2832fca1b6bb0876c4b2190d01ae84120805bcd8b410dea947`  
+		Last Modified: Thu, 14 Nov 2019 04:22:15 GMT  
+		Size: 4.0 MB (4038540 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:282cf55939cdb517908a8df38ee7c0b344fcfc722c736019e22112bede01684e`  
-		Last Modified: Wed, 09 Oct 2019 16:41:00 GMT  
-		Size: 295.3 KB (295286 bytes)  
+	-	`sha256:73a735b61eeeb2e99cb4bba5513529a125dbfd1637a94cda5ec450a72e9af3a1`  
+		Last Modified: Thu, 14 Nov 2019 04:22:04 GMT  
+		Size: 329.9 KB (329870 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:fdd5720e2e2419c07a84874ed376f2e7bfa7aeb3ff67d69d16742ec5237a563b`  
-		Last Modified: Tue, 29 Oct 2019 01:10:01 GMT  
-		Size: 1.2 KB (1192 bytes)  
+	-	`sha256:81ce6c800ccd4160e14db57cfb3a870e60e9c61d736645c54dea124d1a4c2be2`  
+		Last Modified: Thu, 14 Nov 2019 04:22:01 GMT  
+		Size: 1.2 KB (1181 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:5b3112e25e95abc8545eda9b997d9cc4eb896eca6b914023634f8fb4f5388faa`  
-		Last Modified: Tue, 29 Oct 2019 01:12:24 GMT  
-		Size: 1.9 MB (1947578 bytes)  
+	-	`sha256:c1ed64adec43db9906676b735bd50bfa6af6abd236d8bad4a71bbbf1d4ce1483`  
+		Last Modified: Thu, 14 Nov 2019 04:22:02 GMT  
+		Size: 333.4 KB (333402 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:16f2c4e45e9cf9c1b076ea355a48de52aa83adebc828900524d0c14477ee45a6`  
-		Last Modified: Tue, 29 Oct 2019 01:19:12 GMT  
-		Size: 1.2 KB (1190 bytes)  
+	-	`sha256:a7e6777a0bd5091e59c647ca13b7ee544a195ebcf0aede43a930bd0333b860df`  
+		Last Modified: Thu, 14 Nov 2019 04:22:02 GMT  
+		Size: 350.9 KB (350929 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:6836cdba57b654395d2edeea68ffec8104776207c4c1656f48484437b42c060f`  
-		Last Modified: Tue, 29 Oct 2019 01:19:23 GMT  
-		Size: 4.0 MB (4039431 bytes)  
+	-	`sha256:ee00c566dbba6f8f73ce9e7b3be6b595eacf88a0bef58391eb13bb2f180866cf`  
+		Last Modified: Thu, 14 Nov 2019 04:22:01 GMT  
+		Size: 364.2 KB (364194 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:4a010fb314bde6fe6c205a29ebcf9e7311ce17537272724148bd20e94397e38e`  
-		Last Modified: Tue, 29 Oct 2019 01:19:12 GMT  
-		Size: 341.3 KB (341332 bytes)  
-		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:dcdeaac372762f069ac1d4dff1202afa70b30c94bdd4390c2527fe788ce33d06`  
-		Last Modified: Tue, 29 Oct 2019 01:19:09 GMT  
-		Size: 1.2 KB (1170 bytes)  
-		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:73efc3c081eb5262c5b3348c7657c3d7d6967637d397536e39b001b24277b5a3`  
-		Last Modified: Tue, 29 Oct 2019 01:19:09 GMT  
-		Size: 344.0 KB (343959 bytes)  
-		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:a91662264b5e48f799c69fdce93e97eedae8c80e41333534004dc25dd2350b90`  
-		Last Modified: Tue, 29 Oct 2019 01:19:09 GMT  
-		Size: 358.3 KB (358305 bytes)  
-		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:d2a3361721dfaeb74821c389b0c280731a5bfd76728552852b296724f5a314f7`  
-		Last Modified: Tue, 29 Oct 2019 01:19:09 GMT  
-		Size: 371.6 KB (371591 bytes)  
-		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:f759f187e8709098bfa4ef025d48b5ac2458c16af7f187f4efc19b294e71381e`  
-		Last Modified: Tue, 29 Oct 2019 01:19:09 GMT  
-		Size: 1.2 KB (1194 bytes)  
+	-	`sha256:045336b180f04ff3f577e1bdbe93b61dc48de5b1607de23ef41b69f821c8f8e1`  
+		Last Modified: Thu, 14 Nov 2019 04:22:01 GMT  
+		Size: 1.2 KB (1167 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
-### `haxe:3.1.3-windowsservercore` - windows version 10.0.17134.1069; amd64
+### `haxe:3.1.3-windowsservercore` - windows version 10.0.17134.1130; amd64
 
 ```console
-$ docker pull haxe@sha256:0b564b0d1897a6ec78888c77b0cfc868d330d5f015648dc1466dd505c7540123
+$ docker pull haxe@sha256:e0e39763784f8920f856aeed153bc59ac54cae9585a9bcc4fed93c2a890b164f
 ```
 
 -	Docker Version: 18.03.1-ee-4
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **2.4 GB (2373876050 bytes)**  
+-	Total Size: **2.4 GB (2381214151 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:6b8d35418297aae1d458c771a04c35df9e78ae985d96aa0497ac5885ff60e36a`
+-	Image ID: `sha256:f5e528775470b028e457e120466d68f94d7e59b35e742d3e745ec980edf68eb9`
 -	Default Command: `["haxe"]`
 -	`SHELL`: `["powershell","-Command","$ErrorActionPreference = 'Stop';"]`
 
 ```dockerfile
 # Thu, 12 Apr 2018 09:20:54 GMT
 RUN Apply image 1803-RTM-amd64
-# Sun, 06 Oct 2019 14:03:04 GMT
+# Sat, 09 Nov 2019 08:10:48 GMT
 RUN Install update 1803-amd64
-# Wed, 09 Oct 2019 14:30:59 GMT
+# Wed, 13 Nov 2019 00:30:55 GMT
 SHELL [powershell -Command $ErrorActionPreference = 'Stop';]
-# Wed, 09 Oct 2019 14:31:00 GMT
+# Wed, 13 Nov 2019 00:30:56 GMT
 ENV HAXETOOLKIT_PATH=C:\HaxeToolkit
-# Wed, 09 Oct 2019 14:31:01 GMT
+# Wed, 13 Nov 2019 00:30:57 GMT
 ENV NEKOPATH=C:\HaxeToolkit\neko
-# Wed, 09 Oct 2019 14:31:03 GMT
+# Wed, 13 Nov 2019 00:30:59 GMT
 ENV HAXEPATH=C:\HaxeToolkit\haxe
-# Wed, 09 Oct 2019 14:31:04 GMT
+# Wed, 13 Nov 2019 00:31:00 GMT
 ENV HAXE_STD_PATH=C:\HaxeToolkit\haxe\std
-# Wed, 09 Oct 2019 14:31:05 GMT
+# Wed, 13 Nov 2019 00:31:01 GMT
 ENV HAXELIB_PATH=C:\HaxeToolkit\haxe\lib
-# Wed, 09 Oct 2019 14:31:52 GMT
+# Wed, 13 Nov 2019 00:32:01 GMT
 RUN $newPath = ('{0};{1};{2}' -f $env:HAXEPATH, $env:NEKOPATH, $env:PATH); 	Write-Host ('Updating PATH: {0}' -f $newPath); 	[Environment]::SetEnvironmentVariable('PATH', $newPath, [EnvironmentVariableTarget]::Machine);
-# Wed, 09 Oct 2019 14:33:06 GMT
+# Wed, 13 Nov 2019 00:33:21 GMT
 RUN $url = 'https://download.microsoft.com/download/0/5/6/056dcda9-d667-4e27-8001-8a0c6971d6b1/vcredist_x86.exe'; 	Write-Host ('Downloading {0} ...' -f $url); 	[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12; 	Invoke-WebRequest -Uri $url -OutFile 'vcredist_x86.exe'; 		Write-Host 'Verifying sha256 (89f4e593ea5541d1c53f983923124f9fd061a1c0c967339109e375c661573c17) ...'; 	if ((Get-FileHash vcredist_x86.exe -Algorithm sha256).Hash -ne '89f4e593ea5541d1c53f983923124f9fd061a1c0c967339109e375c661573c17') { 		Write-Host 'FAILED!'; 		exit 1; 	}; 		Write-Host 'Installing ...'; 	Start-Process -FilePath "vcredist_x86.exe" -ArgumentList "/Q" -Wait; 		Write-Host 'Removing installer...'; 	Remove-Item .\vcredist_x86.exe; 		Write-Host 'Complete.';
-# Wed, 09 Oct 2019 14:33:32 GMT
+# Wed, 13 Nov 2019 00:33:51 GMT
 RUN New-Item -ItemType directory -Path $env:HAXETOOLKIT_PATH;
-# Mon, 28 Oct 2019 22:57:11 GMT
+# Wed, 13 Nov 2019 00:33:52 GMT
 ENV NEKO_VERSION=2.3.0
-# Mon, 28 Oct 2019 23:23:45 GMT
+# Wed, 13 Nov 2019 01:36:48 GMT
 RUN $url = 'https://github.com/HaxeFoundation/neko/releases/download/v2-3-0/neko-2.3.0-win.zip'; 	Write-Host ('Downloading {0} ...' -f $url); 	[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12; 	Invoke-WebRequest -Uri $url -OutFile 'neko.zip'; 		Write-Host 'Verifying sha256 (fe5a11350d2dd74338f971d62115f2bd21ec6912f193db04c5d28eb987a50485) ...'; 	if ((Get-FileHash neko.zip -Algorithm sha256).Hash -ne 'fe5a11350d2dd74338f971d62115f2bd21ec6912f193db04c5d28eb987a50485') { 		Write-Host 'FAILED!'; 		exit 1; 	}; 		Write-Host 'Expanding ...'; 	New-Item -ItemType directory -Path tmp; 	Expand-Archive -Path neko.zip -DestinationPath tmp; 	if (Test-Path tmp\neko.exe) { Move-Item tmp $env:NEKOPATH } 	else { Move-Item (Resolve-Path tmp\neko* | Select -ExpandProperty Path) $env:NEKOPATH }; 		Write-Host 'Removing ...'; 	Remove-Item -Path neko.zip, tmp -Force -Recurse -ErrorAction Ignore; 		Write-Host 'Verifying install ...'; 	Write-Host '  neko -version'; neko -version; 		Write-Host 'Complete.';
-# Tue, 29 Oct 2019 00:55:52 GMT
+# Wed, 13 Nov 2019 02:42:39 GMT
 ENV HAXE_VERSION=3.1.3
-# Tue, 29 Oct 2019 00:58:49 GMT
+# Wed, 13 Nov 2019 02:45:49 GMT
 RUN $url = 'https://github.com/HaxeFoundation/haxe/releases/download/3.1.3/haxe-3.1.3-win.zip'; 	Write-Host ('Downloading {0} ...' -f $url); 	[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12; 	Invoke-WebRequest -Uri $url -OutFile haxe.zip; 		Write-Host 'Verifying sha256 (4cf84cdbf7960a61ae70b0d9166c6f9bde16388c3b81e54af91446f4c9e44ae4) ...'; 	if ((Get-FileHash haxe.zip -Algorithm sha256).Hash -ne '4cf84cdbf7960a61ae70b0d9166c6f9bde16388c3b81e54af91446f4c9e44ae4') { 		Write-Host 'FAILED!'; 		exit 1; 	}; 		Write-Host 'Expanding ...'; 	New-Item -ItemType directory -Path tmp; 	Expand-Archive -Path haxe.zip -DestinationPath tmp; 	if (Test-Path tmp\haxe.exe) { Move-Item tmp $env:HAXEPATH } 	else { Move-Item (Resolve-Path tmp\haxe* | Select -ExpandProperty Path) $env:HAXEPATH }; 		Write-Host 'Removing ...'; 	Remove-Item -Path haxe.zip, tmp -Force -Recurse -ErrorAction Ignore; 		Write-Host 'Verifying install ...'; 	Write-Host '  haxe -version'; haxe -version; 	Write-Host '  haxelib version'; haxelib version; 		Write-Host 'Complete.';
-# Tue, 29 Oct 2019 00:59:14 GMT
+# Wed, 13 Nov 2019 02:46:20 GMT
 RUN New-Item -ItemType directory -Path $env:HAXELIB_PATH;
-# Tue, 29 Oct 2019 00:59:15 GMT
+# Wed, 13 Nov 2019 02:46:21 GMT
 ENV HOMEDRIVE=C:
-# Tue, 29 Oct 2019 00:59:43 GMT
+# Wed, 13 Nov 2019 02:46:50 GMT
 RUN $newPath = ('{0}\Users\{1}' -f $env:HOMEDRIVE, $env:USERNAME); 	Write-Host ('Updating HOMEPATH: {0}' -f $newPath); 	[Environment]::SetEnvironmentVariable('HOMEPATH', $newPath, [EnvironmentVariableTarget]::Machine);
-# Tue, 29 Oct 2019 01:00:16 GMT
+# Wed, 13 Nov 2019 02:47:23 GMT
 RUN (New-Object System.Net.WebClient).DownloadString('https://lib.haxe.org') >$null
-# Tue, 29 Oct 2019 01:00:43 GMT
+# Wed, 13 Nov 2019 02:47:54 GMT
 RUN (New-Object System.Net.WebClient).DownloadString('https://d1smpvufia21az.cloudfront.net') >$null
-# Tue, 29 Oct 2019 01:00:45 GMT
+# Wed, 13 Nov 2019 02:47:55 GMT
 CMD ["haxe"]
 ```
 
@@ -1556,143 +1549,142 @@ CMD ["haxe"]
 		Last Modified: Tue, 18 Sep 2018 22:43:55 GMT  
 		Size: 1.7 GB (1659688273 bytes)  
 		MIME: application/vnd.docker.image.rootfs.foreign.diff.tar.gzip
-	-	`sha256:d8f170766a535406983bc5b2ee79c71e7926e6f5580d50e3cb2540aaf4aeb32a`  
-		Last Modified: Sun, 06 Oct 2019 14:26:48 GMT  
-		Size: 688.6 MB (688636945 bytes)  
+	-	`sha256:3eb83143ff4b7dafaf8aee4e558c4743488812347fac8581e8b2f61b8e5d06e0`  
+		Size: 696.1 MB (696065307 bytes)  
 		MIME: application/vnd.docker.image.rootfs.foreign.diff.tar.gzip
-	-	`sha256:90030bef52c1e56c368152caf2b49023ca68edf1bf671c52894a0ddc874d529d`  
-		Last Modified: Wed, 09 Oct 2019 16:41:49 GMT  
-		Size: 1.2 KB (1196 bytes)  
+	-	`sha256:d0a17adb4893def55112c23d32072d37d4dd6a77910448ebf86e70c2380583f6`  
+		Last Modified: Thu, 14 Nov 2019 01:17:22 GMT  
+		Size: 1.2 KB (1187 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:14a3f3aa3c69879c65c0f02241d27c1831311d3fde39c597808c2ef30c2a2911`  
-		Last Modified: Wed, 09 Oct 2019 16:41:49 GMT  
+	-	`sha256:fa773b255e6433ec944c431b21edfcd65fa4b7d10a7b06d1dbad8745960cdb5f`  
+		Last Modified: Thu, 14 Nov 2019 01:17:22 GMT  
 		Size: 1.2 KB (1203 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:2292a578d93d97407b29cb40eadab55cf1c54c2bfe73e40534dcd5e7563550bc`  
-		Last Modified: Wed, 09 Oct 2019 16:41:48 GMT  
-		Size: 1.2 KB (1184 bytes)  
+	-	`sha256:333aee55688437818eac6dfb7a1c659aebd4a1f306bfb11c82d8e8ca581bd310`  
+		Last Modified: Thu, 14 Nov 2019 01:17:22 GMT  
+		Size: 1.2 KB (1187 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c4d2c680a99e0ae3847637e5a3f708ed0dc4de74b356b6462b39c7838c2569c8`  
-		Last Modified: Wed, 09 Oct 2019 16:41:47 GMT  
-		Size: 1.2 KB (1192 bytes)  
+	-	`sha256:2e31b4fb755985e1d413436629cfc8b3587d9558c735cebbe7e172fb1226f266`  
+		Last Modified: Thu, 14 Nov 2019 01:17:19 GMT  
+		Size: 1.2 KB (1210 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:54e6e159b1c5c45204ad079f31591b297f120961d603188c7fdcd10dc9c02376`  
-		Last Modified: Wed, 09 Oct 2019 16:41:45 GMT  
-		Size: 1.2 KB (1185 bytes)  
+	-	`sha256:b429839636da90a1ab247fa1fba4a113b233b91caffb1f7b8785a5146f728fe8`  
+		Last Modified: Thu, 14 Nov 2019 01:17:19 GMT  
+		Size: 1.2 KB (1189 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:0594c785a423bf8e989928cfa5accef7e4269433e0b81de9e7485d55a446a7b8`  
-		Last Modified: Wed, 09 Oct 2019 16:41:44 GMT  
-		Size: 1.2 KB (1214 bytes)  
-		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:09d2745fd2b8937d7f254629ff6d585b822a7e714a8d739b6eda95b1cc4f09bc`  
-		Last Modified: Wed, 09 Oct 2019 16:41:46 GMT  
-		Size: 4.9 MB (4852499 bytes)  
-		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:51da8cf1bcf4160f908a58579ad7d9725468a6d1ecf3e01c80839ff2dc3bc7ab`  
-		Last Modified: Wed, 09 Oct 2019 16:41:47 GMT  
-		Size: 12.9 MB (12899726 bytes)  
-		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:5f7b0108f3aa4af20acbee0fbd2387f49240d281d846584fa9f4d2399a0f2beb`  
-		Last Modified: Wed, 09 Oct 2019 16:41:41 GMT  
-		Size: 293.1 KB (293114 bytes)  
-		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:edf56f7ef717428e8437e4f6fdfb7f43898eafa5a02ce1b55259e1d6e3d5109b`  
-		Last Modified: Tue, 29 Oct 2019 01:10:46 GMT  
-		Size: 1.2 KB (1178 bytes)  
-		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:49bc7bd42e687cc87a1c01b69b2af2c3abd63ccfa22150237e0fab51005665db`  
-		Last Modified: Tue, 29 Oct 2019 01:13:04 GMT  
-		Size: 2.0 MB (1958688 bytes)  
-		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:fc02122f7bace0ee9a441a27154a8c691d4992fe12730eb54c7a2a97aa9dc866`  
-		Last Modified: Tue, 29 Oct 2019 01:19:50 GMT  
+	-	`sha256:9ae46d62efed37e0ce844887aa321f0d776001996a3727741fa89f05a8e43657`  
+		Last Modified: Thu, 14 Nov 2019 01:17:17 GMT  
 		Size: 1.2 KB (1182 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:4cc63330fd8560da39f33c624c78a97a95e509b6543878f791d252975c3610a8`  
-		Last Modified: Tue, 29 Oct 2019 01:19:59 GMT  
-		Size: 4.1 MB (4064709 bytes)  
+	-	`sha256:eeae44bf27c5eb613ac98ffbcefef4f3650a86109430e4266792d2a1bd5badea`  
+		Last Modified: Thu, 14 Nov 2019 01:17:18 GMT  
+		Size: 4.9 MB (4859060 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:8b9a0ad0b067a12d681424e908e5ca0c8a129cf0301d2eb350d949569017cc0c`  
-		Last Modified: Tue, 29 Oct 2019 01:19:50 GMT  
-		Size: 342.6 KB (342555 bytes)  
+	-	`sha256:be9a91ff8d1f5bc81fee01e125994316e92e1ae94ac5abb836a391c35be262d9`  
+		Last Modified: Thu, 14 Nov 2019 01:17:19 GMT  
+		Size: 12.9 MB (12899755 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c45e50c492b3af436740eb445af0bb3200b339b22ccaffbe6006dfbf66061572`  
-		Last Modified: Tue, 29 Oct 2019 01:19:47 GMT  
-		Size: 1.2 KB (1179 bytes)  
+	-	`sha256:d977c2e38fb721f6c7b1c2202a7a41e482711178660238df5b5637584bd7a84c`  
+		Last Modified: Thu, 14 Nov 2019 01:17:15 GMT  
+		Size: 295.1 KB (295062 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:85d664a2c7026c2e83b368f7140ef761ec101d58362c66a8eb08fd64e87d1ea0`  
-		Last Modified: Tue, 29 Oct 2019 01:19:47 GMT  
-		Size: 352.1 KB (352122 bytes)  
+	-	`sha256:fc4146c775bd297283720ee6622f656b7b24943cb08027079eed9d0af17d827a`  
+		Last Modified: Thu, 14 Nov 2019 01:17:13 GMT  
+		Size: 1.2 KB (1167 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c17df02e7b472f415b40f553f940ab07ffcf8b3369abccd6526ceb8450fdb8a2`  
-		Last Modified: Tue, 29 Oct 2019 01:19:48 GMT  
-		Size: 371.3 KB (371307 bytes)  
+	-	`sha256:3323d382bc8313a2382391d100f0266be6bb61a6011912e08976fec119d4cd0c`  
+		Last Modified: Thu, 14 Nov 2019 02:18:55 GMT  
+		Size: 1.9 MB (1933639 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:a83a197a80883e38e8f1e36ebd8f0f0e3806331cd42c46d80d66822dadc9f51f`  
-		Last Modified: Tue, 29 Oct 2019 01:19:47 GMT  
-		Size: 404.2 KB (404217 bytes)  
+	-	`sha256:168d0a2e5b102477dc9d791dfe404bb223dfc547c630bd1f8846524b826b7bf4`  
+		Last Modified: Thu, 14 Nov 2019 04:22:40 GMT  
+		Size: 1.2 KB (1203 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:f82be1919cb7303abcaef34ab4e14a24f2078ba69f2093918235494a1e5ec6be`  
-		Last Modified: Tue, 29 Oct 2019 01:19:47 GMT  
-		Size: 1.2 KB (1182 bytes)  
+	-	`sha256:37c52366513348dc23971b122641f1587c5fc9fc280c3a61722783b9a6da2343`  
+		Last Modified: Thu, 14 Nov 2019 04:22:50 GMT  
+		Size: 4.1 MB (4052961 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:ac632c93f31bec92a93da613845930727f64fa96c8bf47a8f09e18b6b2174c4f`  
+		Last Modified: Thu, 14 Nov 2019 04:22:39 GMT  
+		Size: 325.8 KB (325820 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:58ec29b4ff8f5325dc724c55fba7064f30ef79f7fb2f9cb062375cbdb40b6775`  
+		Last Modified: Thu, 14 Nov 2019 04:22:37 GMT  
+		Size: 1.2 KB (1177 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:dde9dad36d51c4fba560d4203ca2b0b4b25384758dfa6409ae3fd869667e8ed2`  
+		Last Modified: Thu, 14 Nov 2019 04:22:37 GMT  
+		Size: 340.7 KB (340676 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:7d8fa2e07dd4da4e47c8a630a8aaa1428949392e625ae8b2aa83205b3c9b3e4b`  
+		Last Modified: Thu, 14 Nov 2019 04:22:37 GMT  
+		Size: 352.0 KB (352022 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:66c77e17b232eb472b6dd094c09c78491b1eda9be077dd003a5eb63645bda35e`  
+		Last Modified: Thu, 14 Nov 2019 04:22:37 GMT  
+		Size: 389.7 KB (389709 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:467ebf7a1c79014a9780243d5ea665aa35467dd24b364dac85f01727a7edff3e`  
+		Last Modified: Thu, 14 Nov 2019 04:22:37 GMT  
+		Size: 1.2 KB (1162 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
-### `haxe:3.1.3-windowsservercore` - windows version 10.0.14393.3274; amd64
+### `haxe:3.1.3-windowsservercore` - windows version 10.0.14393.3326; amd64
 
 ```console
-$ docker pull haxe@sha256:50053211d2a903f6f75066609c39930326cc28ce759770ad88ce7e9248c12a09
+$ docker pull haxe@sha256:731313bdeaab0439d643d91577aa148e346b96d6be285ed5186b9f0be0ad0ce3
 ```
 
 -	Docker Version: 18.03.1-ee-4
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **5.8 GB (5796040436 bytes)**  
+-	Total Size: **5.8 GB (5794788767 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:30f335dc784b4a19874375c0a1c74d41172f7d10f0bc3b4fa5574f7119ed36bd`
+-	Image ID: `sha256:11da6a1f49f12247b53295de094a77d707b316d7eb64d7973276822700c9e697`
 -	Default Command: `["haxe"]`
 -	`SHELL`: `["powershell","-Command","$ErrorActionPreference = 'Stop';"]`
 
 ```dockerfile
-# Tue, 22 Nov 2016 23:24:34 GMT
+# Sat, 19 Nov 2016 17:05:00 GMT
 RUN Apply image 1607-RTM-amd64
-# Sat, 05 Oct 2019 16:15:00 GMT
+# Thu, 07 Nov 2019 14:16:00 GMT
 RUN Install update ltsc2016-amd64
-# Wed, 09 Oct 2019 14:39:48 GMT
+# Wed, 13 Nov 2019 00:41:31 GMT
 SHELL [powershell -Command $ErrorActionPreference = 'Stop';]
-# Wed, 09 Oct 2019 14:39:49 GMT
+# Wed, 13 Nov 2019 00:41:32 GMT
 ENV HAXETOOLKIT_PATH=C:\HaxeToolkit
-# Wed, 09 Oct 2019 14:39:50 GMT
+# Wed, 13 Nov 2019 00:41:33 GMT
 ENV NEKOPATH=C:\HaxeToolkit\neko
-# Wed, 09 Oct 2019 14:39:51 GMT
+# Wed, 13 Nov 2019 00:41:34 GMT
 ENV HAXEPATH=C:\HaxeToolkit\haxe
-# Wed, 09 Oct 2019 14:39:52 GMT
+# Wed, 13 Nov 2019 00:41:36 GMT
 ENV HAXE_STD_PATH=C:\HaxeToolkit\haxe\std
-# Wed, 09 Oct 2019 14:39:54 GMT
+# Wed, 13 Nov 2019 00:41:37 GMT
 ENV HAXELIB_PATH=C:\HaxeToolkit\haxe\lib
-# Wed, 09 Oct 2019 14:41:10 GMT
+# Wed, 13 Nov 2019 00:43:10 GMT
 RUN $newPath = ('{0};{1};{2}' -f $env:HAXEPATH, $env:NEKOPATH, $env:PATH); 	Write-Host ('Updating PATH: {0}' -f $newPath); 	[Environment]::SetEnvironmentVariable('PATH', $newPath, [EnvironmentVariableTarget]::Machine);
-# Wed, 09 Oct 2019 14:43:12 GMT
+# Wed, 13 Nov 2019 00:45:24 GMT
 RUN $url = 'https://download.microsoft.com/download/0/5/6/056dcda9-d667-4e27-8001-8a0c6971d6b1/vcredist_x86.exe'; 	Write-Host ('Downloading {0} ...' -f $url); 	[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12; 	Invoke-WebRequest -Uri $url -OutFile 'vcredist_x86.exe'; 		Write-Host 'Verifying sha256 (89f4e593ea5541d1c53f983923124f9fd061a1c0c967339109e375c661573c17) ...'; 	if ((Get-FileHash vcredist_x86.exe -Algorithm sha256).Hash -ne '89f4e593ea5541d1c53f983923124f9fd061a1c0c967339109e375c661573c17') { 		Write-Host 'FAILED!'; 		exit 1; 	}; 		Write-Host 'Installing ...'; 	Start-Process -FilePath "vcredist_x86.exe" -ArgumentList "/Q" -Wait; 		Write-Host 'Removing installer...'; 	Remove-Item .\vcredist_x86.exe; 		Write-Host 'Complete.';
-# Wed, 09 Oct 2019 14:44:21 GMT
+# Wed, 13 Nov 2019 00:46:40 GMT
 RUN New-Item -ItemType directory -Path $env:HAXETOOLKIT_PATH;
-# Mon, 28 Oct 2019 23:04:46 GMT
+# Wed, 13 Nov 2019 00:46:42 GMT
 ENV NEKO_VERSION=2.3.0
-# Mon, 28 Oct 2019 23:31:23 GMT
+# Wed, 13 Nov 2019 01:44:34 GMT
 RUN $url = 'https://github.com/HaxeFoundation/neko/releases/download/v2-3-0/neko-2.3.0-win.zip'; 	Write-Host ('Downloading {0} ...' -f $url); 	[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12; 	Invoke-WebRequest -Uri $url -OutFile 'neko.zip'; 		Write-Host 'Verifying sha256 (fe5a11350d2dd74338f971d62115f2bd21ec6912f193db04c5d28eb987a50485) ...'; 	if ((Get-FileHash neko.zip -Algorithm sha256).Hash -ne 'fe5a11350d2dd74338f971d62115f2bd21ec6912f193db04c5d28eb987a50485') { 		Write-Host 'FAILED!'; 		exit 1; 	}; 		Write-Host 'Expanding ...'; 	New-Item -ItemType directory -Path tmp; 	Expand-Archive -Path neko.zip -DestinationPath tmp; 	if (Test-Path tmp\neko.exe) { Move-Item tmp $env:NEKOPATH } 	else { Move-Item (Resolve-Path tmp\neko* | Select -ExpandProperty Path) $env:NEKOPATH }; 		Write-Host 'Removing ...'; 	Remove-Item -Path neko.zip, tmp -Force -Recurse -ErrorAction Ignore; 		Write-Host 'Verifying install ...'; 	Write-Host '  neko -version'; neko -version; 		Write-Host 'Complete.';
-# Tue, 29 Oct 2019 01:00:56 GMT
+# Wed, 13 Nov 2019 02:48:12 GMT
 ENV HAXE_VERSION=3.1.3
-# Tue, 29 Oct 2019 01:04:23 GMT
+# Wed, 13 Nov 2019 02:51:54 GMT
 RUN $url = 'https://github.com/HaxeFoundation/haxe/releases/download/3.1.3/haxe-3.1.3-win.zip'; 	Write-Host ('Downloading {0} ...' -f $url); 	[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12; 	Invoke-WebRequest -Uri $url -OutFile haxe.zip; 		Write-Host 'Verifying sha256 (4cf84cdbf7960a61ae70b0d9166c6f9bde16388c3b81e54af91446f4c9e44ae4) ...'; 	if ((Get-FileHash haxe.zip -Algorithm sha256).Hash -ne '4cf84cdbf7960a61ae70b0d9166c6f9bde16388c3b81e54af91446f4c9e44ae4') { 		Write-Host 'FAILED!'; 		exit 1; 	}; 		Write-Host 'Expanding ...'; 	New-Item -ItemType directory -Path tmp; 	Expand-Archive -Path haxe.zip -DestinationPath tmp; 	if (Test-Path tmp\haxe.exe) { Move-Item tmp $env:HAXEPATH } 	else { Move-Item (Resolve-Path tmp\haxe* | Select -ExpandProperty Path) $env:HAXEPATH }; 		Write-Host 'Removing ...'; 	Remove-Item -Path haxe.zip, tmp -Force -Recurse -ErrorAction Ignore; 		Write-Host 'Verifying install ...'; 	Write-Host '  haxe -version'; haxe -version; 	Write-Host '  haxelib version'; haxelib version; 		Write-Host 'Complete.';
-# Tue, 29 Oct 2019 01:05:28 GMT
+# Wed, 13 Nov 2019 02:53:08 GMT
 RUN New-Item -ItemType directory -Path $env:HAXELIB_PATH;
-# Tue, 29 Oct 2019 01:05:29 GMT
+# Wed, 13 Nov 2019 02:53:10 GMT
 ENV HOMEDRIVE=C:
-# Tue, 29 Oct 2019 01:06:32 GMT
+# Wed, 13 Nov 2019 02:54:27 GMT
 RUN $newPath = ('{0}\Users\{1}' -f $env:HOMEDRIVE, $env:USERNAME); 	Write-Host ('Updating HOMEPATH: {0}' -f $newPath); 	[Environment]::SetEnvironmentVariable('HOMEPATH', $newPath, [EnvironmentVariableTarget]::Machine);
-# Tue, 29 Oct 2019 01:07:45 GMT
+# Wed, 13 Nov 2019 02:55:46 GMT
 RUN (New-Object System.Net.WebClient).DownloadString('https://lib.haxe.org') >$null
-# Tue, 29 Oct 2019 01:08:46 GMT
+# Wed, 13 Nov 2019 02:57:03 GMT
 RUN (New-Object System.Net.WebClient).DownloadString('https://d1smpvufia21az.cloudfront.net') >$null
-# Tue, 29 Oct 2019 01:08:48 GMT
+# Wed, 13 Nov 2019 02:57:04 GMT
 CMD ["haxe"]
 ```
 
@@ -1701,85 +1693,84 @@ CMD ["haxe"]
 		Last Modified: Tue, 18 Sep 2018 20:20:50 GMT  
 		Size: 4.1 GB (4069985900 bytes)  
 		MIME: application/vnd.docker.image.rootfs.foreign.diff.tar.gzip
-	-	`sha256:b4f320e456fcdbb0a55de06f153ad96f144c8c14e452ac7f20896ce2509d170f`  
-		Last Modified: Sun, 06 Oct 2019 17:29:40 GMT  
-		Size: 1.7 GB (1651218786 bytes)  
+	-	`sha256:57e8a97eaa75b4ef91d6df4454d12d3b43e629b80dd937008efb8d9eed5f0208`  
+		Size: 1.7 GB (1650127385 bytes)  
 		MIME: application/vnd.docker.image.rootfs.foreign.diff.tar.gzip
-	-	`sha256:29c2f8f4d6816f29c915ea3b2b780c2f4df1eba46b16d0b1a33b59c62c1953c1`  
-		Last Modified: Wed, 09 Oct 2019 16:42:42 GMT  
-		Size: 1.2 KB (1211 bytes)  
+	-	`sha256:60b3361980878b3668e4eb07fb90b61f37029e500df17dc50d49de9e0c64994c`  
+		Last Modified: Thu, 14 Nov 2019 01:18:29 GMT  
+		Size: 1.2 KB (1209 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:7645418a01f2ee59582d47751b1361304cd4c7b1e4ab9565a77f917133a6331f`  
-		Last Modified: Wed, 09 Oct 2019 16:42:41 GMT  
-		Size: 1.2 KB (1216 bytes)  
-		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:a160c1b66f2191549584f4d2dca6aa032d7cfd95254a52b0b21f15bf89219532`  
-		Last Modified: Wed, 09 Oct 2019 16:42:41 GMT  
-		Size: 1.2 KB (1191 bytes)  
-		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:3ffae54200a2c5c29c85de0df96e06fa3e0e6034ec312173af3141705d3a5869`  
-		Last Modified: Wed, 09 Oct 2019 16:42:40 GMT  
-		Size: 1.2 KB (1212 bytes)  
-		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:2ab228dbc093a4784702b1be54fadeb1765832b2bfb345b919847d2288e2e2ba`  
-		Last Modified: Wed, 09 Oct 2019 16:42:39 GMT  
-		Size: 1.2 KB (1183 bytes)  
-		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:0b721aa81f4ae2d422eb232a21ed8864e213333df1c5aaf52c7ba236321b64d8`  
-		Last Modified: Wed, 09 Oct 2019 16:42:37 GMT  
-		Size: 1.2 KB (1191 bytes)  
-		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:31856421a051a2f9c7f7aca3660a5a81075d578c7dfa8c833443ac53f444a470`  
-		Last Modified: Wed, 09 Oct 2019 16:42:38 GMT  
-		Size: 5.4 MB (5351990 bytes)  
-		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:b9725648368ad472f5048c8757c7b70ef9173f5e597d8a253c15dc95c17fb518`  
-		Last Modified: Wed, 09 Oct 2019 16:42:39 GMT  
-		Size: 22.4 MB (22411447 bytes)  
-		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:11e54e24a5ba6d08457408eb4f91ecbd0d8af4aa5cc6be967298128d89a88816`  
-		Last Modified: Wed, 09 Oct 2019 16:42:33 GMT  
-		Size: 5.3 MB (5293650 bytes)  
-		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:e563d354afc49cb8b46fedb6a404f5e42a82ca9dc7fc4c496edaf5edaf185ff6`  
-		Last Modified: Tue, 29 Oct 2019 01:11:34 GMT  
-		Size: 1.2 KB (1188 bytes)  
-		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:4dabc15e94406c4709eca6d64dce40fe5ac92772317a9978c88ea7565110191b`  
-		Last Modified: Tue, 29 Oct 2019 01:13:59 GMT  
-		Size: 6.9 MB (6929912 bytes)  
-		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:b45867efb240cb8c14a82d0ddf195a2a610721adc57657f227f5a895a0f3b13c`  
-		Last Modified: Tue, 29 Oct 2019 01:20:29 GMT  
+	-	`sha256:6c62938738e5c25fbf816031925d415178c189dbfc8cfcbef86710f350aaedc4`  
+		Last Modified: Thu, 14 Nov 2019 01:18:27 GMT  
 		Size: 1.2 KB (1208 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:50461c4ea282c8c036bd8c69cbe566ecb86b2bbef5c92257c27e9bdee438e415`  
-		Last Modified: Tue, 29 Oct 2019 01:20:38 GMT  
-		Size: 13.6 MB (13560979 bytes)  
+	-	`sha256:056ab1a915111a170d9799fa1c746a2a7c12d8e9f835eb329531d26263d59dce`  
+		Last Modified: Thu, 14 Nov 2019 01:18:27 GMT  
+		Size: 1.2 KB (1182 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:497ed214674dca3b931cf872c9bb3b987e5f28a93c161515fa940fd61f975ff5`  
-		Last Modified: Tue, 29 Oct 2019 01:20:27 GMT  
-		Size: 5.3 MB (5317167 bytes)  
+	-	`sha256:bf63f39d70fd70d7d1039b869d8c6a805ebece06060f3671f6034cbaff189ef5`  
+		Last Modified: Thu, 14 Nov 2019 01:18:27 GMT  
+		Size: 1.2 KB (1212 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c6a31a94a9dca4f4d861e7f92325a1073ebf484d898f1c27aa60822b18b31d12`  
-		Last Modified: Tue, 29 Oct 2019 01:20:22 GMT  
+	-	`sha256:dd3769a4a773e323244572e92a72843d47ad96442582438e90bda329c3fe848d`  
+		Last Modified: Thu, 14 Nov 2019 01:18:24 GMT  
+		Size: 1.2 KB (1168 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:e4f9ce1244e198e81f5ab1a1aaadd8120aa9e7fbbf2314971610df0562669410`  
+		Last Modified: Thu, 14 Nov 2019 01:18:24 GMT  
+		Size: 1.2 KB (1184 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:d6fab71888a2ba793cca8c76b3a98537701fc6fbd7f535aad6fca91550c7189d`  
+		Last Modified: Thu, 14 Nov 2019 01:18:24 GMT  
+		Size: 5.4 MB (5351053 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:d3d720c1893d2b5713eb8da2bcd7a8a4a06c4146a2e2f7fd20f5af35ab119590`  
+		Last Modified: Thu, 14 Nov 2019 01:18:28 GMT  
+		Size: 22.4 MB (22380375 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:32cb4919f4d959711cde03ea1ce713a699584962a975b719189242311f460704`  
+		Last Modified: Thu, 14 Nov 2019 01:18:21 GMT  
+		Size: 5.3 MB (5293824 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:282f0c1a088692ed3ed1acb119f857709f2039314b83e72e2ab374284ae4a7bc`  
+		Last Modified: Thu, 14 Nov 2019 01:18:17 GMT  
 		Size: 1.2 KB (1188 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:8267c1824fb227570c799a9a18e60c693c10e96f26f8cf9d3c6a4943cb9ee99f`  
-		Last Modified: Tue, 29 Oct 2019 01:20:25 GMT  
-		Size: 5.3 MB (5316318 bytes)  
+	-	`sha256:098debff455b5735064a1e62a85c2e7409079cc490c72ca26340d0603b744819`  
+		Last Modified: Thu, 14 Nov 2019 04:17:07 GMT  
+		Size: 6.9 MB (6905786 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:ef3b1200e470c2d91cdc60e5e74b123c5818ac5e541ab54c3fec43ba04ce5222`  
-		Last Modified: Tue, 29 Oct 2019 01:20:25 GMT  
-		Size: 5.3 MB (5319979 bytes)  
+	-	`sha256:d3adb395dc84889c0d11cbcc7f8d58844a9d2b6567a8c934b4f8ec111b97d79e`  
+		Last Modified: Thu, 14 Nov 2019 04:23:19 GMT  
+		Size: 1.2 KB (1190 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:cccbda56392f6210d62be20f3d4d6c93f9b9d411250dd787f05360d3647d86b5`  
-		Last Modified: Tue, 29 Oct 2019 01:20:24 GMT  
-		Size: 5.3 MB (5322357 bytes)  
+	-	`sha256:4e2c64e75a48762f6da1254e92f7b4f0399ca542de7d68d97613ab1aeec85f86`  
+		Last Modified: Thu, 14 Nov 2019 04:23:29 GMT  
+		Size: 13.5 MB (13486693 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:9bfffa6439c00d6a385abda19d73c0efc05eb948899f99feb0972e0288ba0247`  
-		Last Modified: Tue, 29 Oct 2019 01:20:22 GMT  
-		Size: 1.2 KB (1163 bytes)  
+	-	`sha256:060bc5f1df2ccb7c914a5c9e4a272e01446d1e8db559bc1053550a14a7e7c44c`  
+		Last Modified: Thu, 14 Nov 2019 04:23:17 GMT  
+		Size: 5.3 MB (5309957 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:028ecb4d8959600e1974b13f5ccc23334de9f15de61c6ea8416ed43e417d320c`  
+		Last Modified: Thu, 14 Nov 2019 04:23:12 GMT  
+		Size: 1.2 KB (1188 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:5be7e11c9b71352147c606202e98e79e092d881cbbadc5a756a7b95de4ed5bb7`  
+		Last Modified: Thu, 14 Nov 2019 04:23:16 GMT  
+		Size: 5.3 MB (5308183 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:de2591828ebe2ac54a527ca99fdac77015781a601e9fece386b212765f4e2247`  
+		Last Modified: Thu, 14 Nov 2019 04:23:16 GMT  
+		Size: 5.3 MB (5313378 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:5cf8028209b0859e9ec44e724a65b19a7ba67f1f7b95cfd46433691c0e92a8ae`  
+		Last Modified: Thu, 14 Nov 2019 04:23:17 GMT  
+		Size: 5.3 MB (5314318 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:b0bb885a9bda36e80b6b664a6f36f9a5ca8f34bc8e8e82c916e7802576c1710f`  
+		Last Modified: Thu, 14 Nov 2019 04:23:12 GMT  
+		Size: 1.2 KB (1186 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `haxe:3.1.3-windowsservercore-1803`
@@ -2553,71 +2544,71 @@ CMD ["haxe"]
 ## `haxe:3.1-windowsservercore`
 
 ```console
-$ docker pull haxe@sha256:8be8feb2a03e3c46f51cf49e151e57428164aa72c1e063e0581058645919bc9a
+$ docker pull haxe@sha256:3da6aebe400f195fea12986e203b1a8a9c54fb7a3dd2429e5c78fc7459d278eb
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
 -	Platforms:
-	-	windows version 10.0.17763.805; amd64
-	-	windows version 10.0.17134.1069; amd64
-	-	windows version 10.0.14393.3274; amd64
+	-	windows version 10.0.17763.864; amd64
+	-	windows version 10.0.17134.1130; amd64
+	-	windows version 10.0.14393.3326; amd64
 
-### `haxe:3.1-windowsservercore` - windows version 10.0.17763.805; amd64
+### `haxe:3.1-windowsservercore` - windows version 10.0.17763.864; amd64
 
 ```console
-$ docker pull haxe@sha256:70cca081014ca1b49fb90b08b28c396d8d6d3a88512e5c71d14c01a949f8462a
+$ docker pull haxe@sha256:5d072b92b219aee61fa2829e4b0a00c4a808bb36b3e49ed57213888620b8a239
 ```
 
 -	Docker Version: 18.03.1-ee-4
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **2.2 GB (2226432984 bytes)**  
+-	Total Size: **2.2 GB (2240831591 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:927147728aa2754a054789a1749ccbd18d72135e85bef2043408e9acd5613b6b`
+-	Image ID: `sha256:96017a7358f36d1e7c6d58e59bda53dd3211cd6ed9b433453eb3ff0091848024`
 -	Default Command: `["haxe"]`
 -	`SHELL`: `["powershell","-Command","$ErrorActionPreference = 'Stop';"]`
 
 ```dockerfile
 # Sat, 15 Sep 2018 09:10:26 GMT
 RUN Apply image 1809-RTM-amd64
-# Sun, 06 Oct 2019 10:02:47 GMT
+# Sat, 09 Nov 2019 02:48:55 GMT
 RUN Install update 1809-amd64
-# Wed, 09 Oct 2019 14:22:24 GMT
+# Tue, 12 Nov 2019 23:49:55 GMT
 SHELL [powershell -Command $ErrorActionPreference = 'Stop';]
-# Wed, 09 Oct 2019 14:22:26 GMT
+# Tue, 12 Nov 2019 23:49:56 GMT
 ENV HAXETOOLKIT_PATH=C:\HaxeToolkit
-# Wed, 09 Oct 2019 14:22:27 GMT
+# Tue, 12 Nov 2019 23:49:57 GMT
 ENV NEKOPATH=C:\HaxeToolkit\neko
-# Wed, 09 Oct 2019 14:22:28 GMT
+# Tue, 12 Nov 2019 23:49:59 GMT
 ENV HAXEPATH=C:\HaxeToolkit\haxe
-# Wed, 09 Oct 2019 14:22:29 GMT
+# Tue, 12 Nov 2019 23:50:00 GMT
 ENV HAXE_STD_PATH=C:\HaxeToolkit\haxe\std
-# Wed, 09 Oct 2019 14:22:31 GMT
+# Tue, 12 Nov 2019 23:50:01 GMT
 ENV HAXELIB_PATH=C:\HaxeToolkit\haxe\lib
-# Wed, 09 Oct 2019 14:23:13 GMT
+# Tue, 12 Nov 2019 23:50:59 GMT
 RUN $newPath = ('{0};{1};{2}' -f $env:HAXEPATH, $env:NEKOPATH, $env:PATH); 	Write-Host ('Updating PATH: {0}' -f $newPath); 	[Environment]::SetEnvironmentVariable('PATH', $newPath, [EnvironmentVariableTarget]::Machine);
-# Wed, 09 Oct 2019 14:24:25 GMT
+# Tue, 12 Nov 2019 23:52:16 GMT
 RUN $url = 'https://download.microsoft.com/download/0/5/6/056dcda9-d667-4e27-8001-8a0c6971d6b1/vcredist_x86.exe'; 	Write-Host ('Downloading {0} ...' -f $url); 	[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12; 	Invoke-WebRequest -Uri $url -OutFile 'vcredist_x86.exe'; 		Write-Host 'Verifying sha256 (89f4e593ea5541d1c53f983923124f9fd061a1c0c967339109e375c661573c17) ...'; 	if ((Get-FileHash vcredist_x86.exe -Algorithm sha256).Hash -ne '89f4e593ea5541d1c53f983923124f9fd061a1c0c967339109e375c661573c17') { 		Write-Host 'FAILED!'; 		exit 1; 	}; 		Write-Host 'Installing ...'; 	Start-Process -FilePath "vcredist_x86.exe" -ArgumentList "/Q" -Wait; 		Write-Host 'Removing installer...'; 	Remove-Item .\vcredist_x86.exe; 		Write-Host 'Complete.';
-# Wed, 09 Oct 2019 14:24:51 GMT
+# Tue, 12 Nov 2019 23:52:46 GMT
 RUN New-Item -ItemType directory -Path $env:HAXETOOLKIT_PATH;
-# Mon, 28 Oct 2019 22:19:20 GMT
+# Tue, 12 Nov 2019 23:52:47 GMT
 ENV NEKO_VERSION=2.3.0
-# Mon, 28 Oct 2019 23:16:50 GMT
+# Wed, 13 Nov 2019 00:59:42 GMT
 RUN $url = 'https://github.com/HaxeFoundation/neko/releases/download/v2-3-0/neko-2.3.0-win.zip'; 	Write-Host ('Downloading {0} ...' -f $url); 	[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12; 	Invoke-WebRequest -Uri $url -OutFile 'neko.zip'; 		Write-Host 'Verifying sha256 (fe5a11350d2dd74338f971d62115f2bd21ec6912f193db04c5d28eb987a50485) ...'; 	if ((Get-FileHash neko.zip -Algorithm sha256).Hash -ne 'fe5a11350d2dd74338f971d62115f2bd21ec6912f193db04c5d28eb987a50485') { 		Write-Host 'FAILED!'; 		exit 1; 	}; 		Write-Host 'Expanding ...'; 	New-Item -ItemType directory -Path tmp; 	Expand-Archive -Path neko.zip -DestinationPath tmp; 	if (Test-Path tmp\neko.exe) { Move-Item tmp $env:NEKOPATH } 	else { Move-Item (Resolve-Path tmp\neko* | Select -ExpandProperty Path) $env:NEKOPATH }; 		Write-Host 'Removing ...'; 	Remove-Item -Path neko.zip, tmp -Force -Recurse -ErrorAction Ignore; 		Write-Host 'Verifying install ...'; 	Write-Host '  neko -version'; neko -version; 		Write-Host 'Complete.';
-# Tue, 29 Oct 2019 00:50:49 GMT
+# Wed, 13 Nov 2019 02:37:36 GMT
 ENV HAXE_VERSION=3.1.3
-# Tue, 29 Oct 2019 00:53:45 GMT
+# Wed, 13 Nov 2019 02:40:34 GMT
 RUN $url = 'https://github.com/HaxeFoundation/haxe/releases/download/3.1.3/haxe-3.1.3-win.zip'; 	Write-Host ('Downloading {0} ...' -f $url); 	[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12; 	Invoke-WebRequest -Uri $url -OutFile haxe.zip; 		Write-Host 'Verifying sha256 (4cf84cdbf7960a61ae70b0d9166c6f9bde16388c3b81e54af91446f4c9e44ae4) ...'; 	if ((Get-FileHash haxe.zip -Algorithm sha256).Hash -ne '4cf84cdbf7960a61ae70b0d9166c6f9bde16388c3b81e54af91446f4c9e44ae4') { 		Write-Host 'FAILED!'; 		exit 1; 	}; 		Write-Host 'Expanding ...'; 	New-Item -ItemType directory -Path tmp; 	Expand-Archive -Path haxe.zip -DestinationPath tmp; 	if (Test-Path tmp\haxe.exe) { Move-Item tmp $env:HAXEPATH } 	else { Move-Item (Resolve-Path tmp\haxe* | Select -ExpandProperty Path) $env:HAXEPATH }; 		Write-Host 'Removing ...'; 	Remove-Item -Path haxe.zip, tmp -Force -Recurse -ErrorAction Ignore; 		Write-Host 'Verifying install ...'; 	Write-Host '  haxe -version'; haxe -version; 	Write-Host '  haxelib version'; haxelib version; 		Write-Host 'Complete.';
-# Tue, 29 Oct 2019 00:54:12 GMT
+# Wed, 13 Nov 2019 02:40:59 GMT
 RUN New-Item -ItemType directory -Path $env:HAXELIB_PATH;
-# Tue, 29 Oct 2019 00:54:13 GMT
+# Wed, 13 Nov 2019 02:41:00 GMT
 ENV HOMEDRIVE=C:
-# Tue, 29 Oct 2019 00:54:40 GMT
+# Wed, 13 Nov 2019 02:41:26 GMT
 RUN $newPath = ('{0}\Users\{1}' -f $env:HOMEDRIVE, $env:USERNAME); 	Write-Host ('Updating HOMEPATH: {0}' -f $newPath); 	[Environment]::SetEnvironmentVariable('HOMEPATH', $newPath, [EnvironmentVariableTarget]::Machine);
-# Tue, 29 Oct 2019 00:55:10 GMT
+# Wed, 13 Nov 2019 02:41:54 GMT
 RUN (New-Object System.Net.WebClient).DownloadString('https://lib.haxe.org') >$null
-# Tue, 29 Oct 2019 00:55:36 GMT
+# Wed, 13 Nov 2019 02:42:21 GMT
 RUN (New-Object System.Net.WebClient).DownloadString('https://d1smpvufia21az.cloudfront.net') >$null
-# Tue, 29 Oct 2019 00:55:37 GMT
+# Wed, 13 Nov 2019 02:42:22 GMT
 CMD ["haxe"]
 ```
 
@@ -2626,143 +2617,142 @@ CMD ["haxe"]
 		Last Modified: Tue, 13 Nov 2018 18:50:17 GMT  
 		Size: 1.5 GB (1534685324 bytes)  
 		MIME: application/vnd.docker.image.rootfs.foreign.diff.tar.gzip
-	-	`sha256:12c8dbabfd62cb512baca43f0d1e9588127e6bd66641e93a5e6f7e89e1bf7656`  
-		Last Modified: Sun, 06 Oct 2019 17:38:47 GMT  
-		Size: 666.6 MB (666618146 bytes)  
+	-	`sha256:e96b0897c5d1cc4214a97d25769f32df19da79456e0f1086d52497677a2a2bb6`  
+		Size: 681.0 MB (681015397 bytes)  
 		MIME: application/vnd.docker.image.rootfs.foreign.diff.tar.gzip
-	-	`sha256:9697a02cbf136853a1a6d136ec00a5ff02b44ae75db8a0b5ae353549d77aea63`  
-		Last Modified: Wed, 09 Oct 2019 16:41:08 GMT  
+	-	`sha256:907461e7e3e37e44cbbf832e53a080dfd3599a15f60436161a3687445bc811a0`  
+		Last Modified: Wed, 13 Nov 2019 02:58:27 GMT  
+		Size: 1.2 KB (1185 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:bfe86c76591b06caa55136e145b560d106273a30b3d2ed3089787fecf49b7dca`  
+		Last Modified: Wed, 13 Nov 2019 02:58:26 GMT  
+		Size: 1.2 KB (1189 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:3d2ec4931c7a61303dd15038b45bed240558340474add393a6a1f7100f0bc88f`  
+		Last Modified: Wed, 13 Nov 2019 02:58:26 GMT  
+		Size: 1.2 KB (1187 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:dd39ff557c2bbbf8047a995824999a335215d593df5c5c4e7461162e464cbe69`  
+		Last Modified: Wed, 13 Nov 2019 02:58:25 GMT  
+		Size: 1.2 KB (1200 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:b427ceec07a96f67e14be18f2f2480075f30cce723fea51389806a355744fb28`  
+		Last Modified: Wed, 13 Nov 2019 02:58:23 GMT  
+		Size: 1.2 KB (1210 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:e27f29fe5b3718cf86dfbb08df8751545cb10c1a1f7fd677cedab980e5255567`  
+		Last Modified: Wed, 13 Nov 2019 02:58:22 GMT  
 		Size: 1.2 KB (1206 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:5249a3833b8d297b13b68f3f11dce3747c88e4b5fb954b71f885822fb61b11e9`  
-		Last Modified: Wed, 09 Oct 2019 16:41:07 GMT  
-		Size: 1.2 KB (1212 bytes)  
+	-	`sha256:8d8b3151b7b9d5c53f0cee0128518e2fefe9e165c9a7fde480f50256f0dfb196`  
+		Last Modified: Wed, 13 Nov 2019 02:58:23 GMT  
+		Size: 4.6 MB (4561228 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:663e4184d6c8ea3d3f65dd41528d304b1c885a23692dbe54c99ec8ab35b2ec4d`  
-		Last Modified: Wed, 09 Oct 2019 16:41:06 GMT  
-		Size: 1.2 KB (1178 bytes)  
+	-	`sha256:0a61b180fdbafca7789ccd7a28d623116451ab0166df6943858559649fbd7415`  
+		Last Modified: Wed, 13 Nov 2019 02:58:24 GMT  
+		Size: 12.9 MB (12910600 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:bf4771f64d98aefaa0bc7467bfd397e8ee6efe1bc7f5959a7d8357da6b1ee38b`  
-		Last Modified: Wed, 09 Oct 2019 16:41:06 GMT  
-		Size: 1.2 KB (1192 bytes)  
+	-	`sha256:cac7ef27a98c9d1de916b734e2d52da7310aa93ce10ca5c79f8ccc01736ac746`  
+		Last Modified: Wed, 13 Nov 2019 02:58:20 GMT  
+		Size: 307.0 KB (307046 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:62400fe0ded518e8851bbf001266058a5bb5487e1372f11d8ea64bb0e9a48e12`  
-		Last Modified: Wed, 09 Oct 2019 16:41:04 GMT  
-		Size: 1.2 KB (1175 bytes)  
+	-	`sha256:27db2d883c2a40c4be0632feb93418a2d6415688b01c69c302a02f7d594997d6`  
+		Last Modified: Wed, 13 Nov 2019 02:58:17 GMT  
+		Size: 1.2 KB (1182 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c9c34cc510a2c4853535c6c9e35ba68aacbe71abad1cfe9695b45fe2e60defc0`  
-		Last Modified: Wed, 09 Oct 2019 16:41:03 GMT  
-		Size: 1.2 KB (1203 bytes)  
+	-	`sha256:6b4d761fbb625bc3d476f33ca19e9a68aca85e65df1c09ab1a1dcdf3514cc8c4`  
+		Last Modified: Thu, 14 Nov 2019 02:18:14 GMT  
+		Size: 1.9 MB (1923147 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:0945d46b6128884e9d2e76ec9a970e6177cfefd1f9210c6aaa782bec89043806`  
-		Last Modified: Wed, 09 Oct 2019 16:41:04 GMT  
-		Size: 4.5 MB (4523541 bytes)  
+	-	`sha256:4b146c0d52ca2a520d6caa2303241ce9a701ccf0d12e7df65a8e321cde8761d3`  
+		Last Modified: Thu, 14 Nov 2019 04:22:05 GMT  
+		Size: 1.2 KB (1207 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c732966829b6eb22941fc2b3c17944790355a222f2b1abe9a8748aab63e036c0`  
-		Last Modified: Wed, 09 Oct 2019 16:41:05 GMT  
-		Size: 12.9 MB (12896579 bytes)  
+	-	`sha256:e667da10259d2f2832fca1b6bb0876c4b2190d01ae84120805bcd8b410dea947`  
+		Last Modified: Thu, 14 Nov 2019 04:22:15 GMT  
+		Size: 4.0 MB (4038540 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:282cf55939cdb517908a8df38ee7c0b344fcfc722c736019e22112bede01684e`  
-		Last Modified: Wed, 09 Oct 2019 16:41:00 GMT  
-		Size: 295.3 KB (295286 bytes)  
+	-	`sha256:73a735b61eeeb2e99cb4bba5513529a125dbfd1637a94cda5ec450a72e9af3a1`  
+		Last Modified: Thu, 14 Nov 2019 04:22:04 GMT  
+		Size: 329.9 KB (329870 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:fdd5720e2e2419c07a84874ed376f2e7bfa7aeb3ff67d69d16742ec5237a563b`  
-		Last Modified: Tue, 29 Oct 2019 01:10:01 GMT  
-		Size: 1.2 KB (1192 bytes)  
+	-	`sha256:81ce6c800ccd4160e14db57cfb3a870e60e9c61d736645c54dea124d1a4c2be2`  
+		Last Modified: Thu, 14 Nov 2019 04:22:01 GMT  
+		Size: 1.2 KB (1181 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:5b3112e25e95abc8545eda9b997d9cc4eb896eca6b914023634f8fb4f5388faa`  
-		Last Modified: Tue, 29 Oct 2019 01:12:24 GMT  
-		Size: 1.9 MB (1947578 bytes)  
+	-	`sha256:c1ed64adec43db9906676b735bd50bfa6af6abd236d8bad4a71bbbf1d4ce1483`  
+		Last Modified: Thu, 14 Nov 2019 04:22:02 GMT  
+		Size: 333.4 KB (333402 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:16f2c4e45e9cf9c1b076ea355a48de52aa83adebc828900524d0c14477ee45a6`  
-		Last Modified: Tue, 29 Oct 2019 01:19:12 GMT  
-		Size: 1.2 KB (1190 bytes)  
+	-	`sha256:a7e6777a0bd5091e59c647ca13b7ee544a195ebcf0aede43a930bd0333b860df`  
+		Last Modified: Thu, 14 Nov 2019 04:22:02 GMT  
+		Size: 350.9 KB (350929 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:6836cdba57b654395d2edeea68ffec8104776207c4c1656f48484437b42c060f`  
-		Last Modified: Tue, 29 Oct 2019 01:19:23 GMT  
-		Size: 4.0 MB (4039431 bytes)  
+	-	`sha256:ee00c566dbba6f8f73ce9e7b3be6b595eacf88a0bef58391eb13bb2f180866cf`  
+		Last Modified: Thu, 14 Nov 2019 04:22:01 GMT  
+		Size: 364.2 KB (364194 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:4a010fb314bde6fe6c205a29ebcf9e7311ce17537272724148bd20e94397e38e`  
-		Last Modified: Tue, 29 Oct 2019 01:19:12 GMT  
-		Size: 341.3 KB (341332 bytes)  
-		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:dcdeaac372762f069ac1d4dff1202afa70b30c94bdd4390c2527fe788ce33d06`  
-		Last Modified: Tue, 29 Oct 2019 01:19:09 GMT  
-		Size: 1.2 KB (1170 bytes)  
-		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:73efc3c081eb5262c5b3348c7657c3d7d6967637d397536e39b001b24277b5a3`  
-		Last Modified: Tue, 29 Oct 2019 01:19:09 GMT  
-		Size: 344.0 KB (343959 bytes)  
-		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:a91662264b5e48f799c69fdce93e97eedae8c80e41333534004dc25dd2350b90`  
-		Last Modified: Tue, 29 Oct 2019 01:19:09 GMT  
-		Size: 358.3 KB (358305 bytes)  
-		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:d2a3361721dfaeb74821c389b0c280731a5bfd76728552852b296724f5a314f7`  
-		Last Modified: Tue, 29 Oct 2019 01:19:09 GMT  
-		Size: 371.6 KB (371591 bytes)  
-		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:f759f187e8709098bfa4ef025d48b5ac2458c16af7f187f4efc19b294e71381e`  
-		Last Modified: Tue, 29 Oct 2019 01:19:09 GMT  
-		Size: 1.2 KB (1194 bytes)  
+	-	`sha256:045336b180f04ff3f577e1bdbe93b61dc48de5b1607de23ef41b69f821c8f8e1`  
+		Last Modified: Thu, 14 Nov 2019 04:22:01 GMT  
+		Size: 1.2 KB (1167 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
-### `haxe:3.1-windowsservercore` - windows version 10.0.17134.1069; amd64
+### `haxe:3.1-windowsservercore` - windows version 10.0.17134.1130; amd64
 
 ```console
-$ docker pull haxe@sha256:0b564b0d1897a6ec78888c77b0cfc868d330d5f015648dc1466dd505c7540123
+$ docker pull haxe@sha256:e0e39763784f8920f856aeed153bc59ac54cae9585a9bcc4fed93c2a890b164f
 ```
 
 -	Docker Version: 18.03.1-ee-4
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **2.4 GB (2373876050 bytes)**  
+-	Total Size: **2.4 GB (2381214151 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:6b8d35418297aae1d458c771a04c35df9e78ae985d96aa0497ac5885ff60e36a`
+-	Image ID: `sha256:f5e528775470b028e457e120466d68f94d7e59b35e742d3e745ec980edf68eb9`
 -	Default Command: `["haxe"]`
 -	`SHELL`: `["powershell","-Command","$ErrorActionPreference = 'Stop';"]`
 
 ```dockerfile
 # Thu, 12 Apr 2018 09:20:54 GMT
 RUN Apply image 1803-RTM-amd64
-# Sun, 06 Oct 2019 14:03:04 GMT
+# Sat, 09 Nov 2019 08:10:48 GMT
 RUN Install update 1803-amd64
-# Wed, 09 Oct 2019 14:30:59 GMT
+# Wed, 13 Nov 2019 00:30:55 GMT
 SHELL [powershell -Command $ErrorActionPreference = 'Stop';]
-# Wed, 09 Oct 2019 14:31:00 GMT
+# Wed, 13 Nov 2019 00:30:56 GMT
 ENV HAXETOOLKIT_PATH=C:\HaxeToolkit
-# Wed, 09 Oct 2019 14:31:01 GMT
+# Wed, 13 Nov 2019 00:30:57 GMT
 ENV NEKOPATH=C:\HaxeToolkit\neko
-# Wed, 09 Oct 2019 14:31:03 GMT
+# Wed, 13 Nov 2019 00:30:59 GMT
 ENV HAXEPATH=C:\HaxeToolkit\haxe
-# Wed, 09 Oct 2019 14:31:04 GMT
+# Wed, 13 Nov 2019 00:31:00 GMT
 ENV HAXE_STD_PATH=C:\HaxeToolkit\haxe\std
-# Wed, 09 Oct 2019 14:31:05 GMT
+# Wed, 13 Nov 2019 00:31:01 GMT
 ENV HAXELIB_PATH=C:\HaxeToolkit\haxe\lib
-# Wed, 09 Oct 2019 14:31:52 GMT
+# Wed, 13 Nov 2019 00:32:01 GMT
 RUN $newPath = ('{0};{1};{2}' -f $env:HAXEPATH, $env:NEKOPATH, $env:PATH); 	Write-Host ('Updating PATH: {0}' -f $newPath); 	[Environment]::SetEnvironmentVariable('PATH', $newPath, [EnvironmentVariableTarget]::Machine);
-# Wed, 09 Oct 2019 14:33:06 GMT
+# Wed, 13 Nov 2019 00:33:21 GMT
 RUN $url = 'https://download.microsoft.com/download/0/5/6/056dcda9-d667-4e27-8001-8a0c6971d6b1/vcredist_x86.exe'; 	Write-Host ('Downloading {0} ...' -f $url); 	[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12; 	Invoke-WebRequest -Uri $url -OutFile 'vcredist_x86.exe'; 		Write-Host 'Verifying sha256 (89f4e593ea5541d1c53f983923124f9fd061a1c0c967339109e375c661573c17) ...'; 	if ((Get-FileHash vcredist_x86.exe -Algorithm sha256).Hash -ne '89f4e593ea5541d1c53f983923124f9fd061a1c0c967339109e375c661573c17') { 		Write-Host 'FAILED!'; 		exit 1; 	}; 		Write-Host 'Installing ...'; 	Start-Process -FilePath "vcredist_x86.exe" -ArgumentList "/Q" -Wait; 		Write-Host 'Removing installer...'; 	Remove-Item .\vcredist_x86.exe; 		Write-Host 'Complete.';
-# Wed, 09 Oct 2019 14:33:32 GMT
+# Wed, 13 Nov 2019 00:33:51 GMT
 RUN New-Item -ItemType directory -Path $env:HAXETOOLKIT_PATH;
-# Mon, 28 Oct 2019 22:57:11 GMT
+# Wed, 13 Nov 2019 00:33:52 GMT
 ENV NEKO_VERSION=2.3.0
-# Mon, 28 Oct 2019 23:23:45 GMT
+# Wed, 13 Nov 2019 01:36:48 GMT
 RUN $url = 'https://github.com/HaxeFoundation/neko/releases/download/v2-3-0/neko-2.3.0-win.zip'; 	Write-Host ('Downloading {0} ...' -f $url); 	[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12; 	Invoke-WebRequest -Uri $url -OutFile 'neko.zip'; 		Write-Host 'Verifying sha256 (fe5a11350d2dd74338f971d62115f2bd21ec6912f193db04c5d28eb987a50485) ...'; 	if ((Get-FileHash neko.zip -Algorithm sha256).Hash -ne 'fe5a11350d2dd74338f971d62115f2bd21ec6912f193db04c5d28eb987a50485') { 		Write-Host 'FAILED!'; 		exit 1; 	}; 		Write-Host 'Expanding ...'; 	New-Item -ItemType directory -Path tmp; 	Expand-Archive -Path neko.zip -DestinationPath tmp; 	if (Test-Path tmp\neko.exe) { Move-Item tmp $env:NEKOPATH } 	else { Move-Item (Resolve-Path tmp\neko* | Select -ExpandProperty Path) $env:NEKOPATH }; 		Write-Host 'Removing ...'; 	Remove-Item -Path neko.zip, tmp -Force -Recurse -ErrorAction Ignore; 		Write-Host 'Verifying install ...'; 	Write-Host '  neko -version'; neko -version; 		Write-Host 'Complete.';
-# Tue, 29 Oct 2019 00:55:52 GMT
+# Wed, 13 Nov 2019 02:42:39 GMT
 ENV HAXE_VERSION=3.1.3
-# Tue, 29 Oct 2019 00:58:49 GMT
+# Wed, 13 Nov 2019 02:45:49 GMT
 RUN $url = 'https://github.com/HaxeFoundation/haxe/releases/download/3.1.3/haxe-3.1.3-win.zip'; 	Write-Host ('Downloading {0} ...' -f $url); 	[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12; 	Invoke-WebRequest -Uri $url -OutFile haxe.zip; 		Write-Host 'Verifying sha256 (4cf84cdbf7960a61ae70b0d9166c6f9bde16388c3b81e54af91446f4c9e44ae4) ...'; 	if ((Get-FileHash haxe.zip -Algorithm sha256).Hash -ne '4cf84cdbf7960a61ae70b0d9166c6f9bde16388c3b81e54af91446f4c9e44ae4') { 		Write-Host 'FAILED!'; 		exit 1; 	}; 		Write-Host 'Expanding ...'; 	New-Item -ItemType directory -Path tmp; 	Expand-Archive -Path haxe.zip -DestinationPath tmp; 	if (Test-Path tmp\haxe.exe) { Move-Item tmp $env:HAXEPATH } 	else { Move-Item (Resolve-Path tmp\haxe* | Select -ExpandProperty Path) $env:HAXEPATH }; 		Write-Host 'Removing ...'; 	Remove-Item -Path haxe.zip, tmp -Force -Recurse -ErrorAction Ignore; 		Write-Host 'Verifying install ...'; 	Write-Host '  haxe -version'; haxe -version; 	Write-Host '  haxelib version'; haxelib version; 		Write-Host 'Complete.';
-# Tue, 29 Oct 2019 00:59:14 GMT
+# Wed, 13 Nov 2019 02:46:20 GMT
 RUN New-Item -ItemType directory -Path $env:HAXELIB_PATH;
-# Tue, 29 Oct 2019 00:59:15 GMT
+# Wed, 13 Nov 2019 02:46:21 GMT
 ENV HOMEDRIVE=C:
-# Tue, 29 Oct 2019 00:59:43 GMT
+# Wed, 13 Nov 2019 02:46:50 GMT
 RUN $newPath = ('{0}\Users\{1}' -f $env:HOMEDRIVE, $env:USERNAME); 	Write-Host ('Updating HOMEPATH: {0}' -f $newPath); 	[Environment]::SetEnvironmentVariable('HOMEPATH', $newPath, [EnvironmentVariableTarget]::Machine);
-# Tue, 29 Oct 2019 01:00:16 GMT
+# Wed, 13 Nov 2019 02:47:23 GMT
 RUN (New-Object System.Net.WebClient).DownloadString('https://lib.haxe.org') >$null
-# Tue, 29 Oct 2019 01:00:43 GMT
+# Wed, 13 Nov 2019 02:47:54 GMT
 RUN (New-Object System.Net.WebClient).DownloadString('https://d1smpvufia21az.cloudfront.net') >$null
-# Tue, 29 Oct 2019 01:00:45 GMT
+# Wed, 13 Nov 2019 02:47:55 GMT
 CMD ["haxe"]
 ```
 
@@ -2771,143 +2761,142 @@ CMD ["haxe"]
 		Last Modified: Tue, 18 Sep 2018 22:43:55 GMT  
 		Size: 1.7 GB (1659688273 bytes)  
 		MIME: application/vnd.docker.image.rootfs.foreign.diff.tar.gzip
-	-	`sha256:d8f170766a535406983bc5b2ee79c71e7926e6f5580d50e3cb2540aaf4aeb32a`  
-		Last Modified: Sun, 06 Oct 2019 14:26:48 GMT  
-		Size: 688.6 MB (688636945 bytes)  
+	-	`sha256:3eb83143ff4b7dafaf8aee4e558c4743488812347fac8581e8b2f61b8e5d06e0`  
+		Size: 696.1 MB (696065307 bytes)  
 		MIME: application/vnd.docker.image.rootfs.foreign.diff.tar.gzip
-	-	`sha256:90030bef52c1e56c368152caf2b49023ca68edf1bf671c52894a0ddc874d529d`  
-		Last Modified: Wed, 09 Oct 2019 16:41:49 GMT  
-		Size: 1.2 KB (1196 bytes)  
+	-	`sha256:d0a17adb4893def55112c23d32072d37d4dd6a77910448ebf86e70c2380583f6`  
+		Last Modified: Thu, 14 Nov 2019 01:17:22 GMT  
+		Size: 1.2 KB (1187 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:14a3f3aa3c69879c65c0f02241d27c1831311d3fde39c597808c2ef30c2a2911`  
-		Last Modified: Wed, 09 Oct 2019 16:41:49 GMT  
+	-	`sha256:fa773b255e6433ec944c431b21edfcd65fa4b7d10a7b06d1dbad8745960cdb5f`  
+		Last Modified: Thu, 14 Nov 2019 01:17:22 GMT  
 		Size: 1.2 KB (1203 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:2292a578d93d97407b29cb40eadab55cf1c54c2bfe73e40534dcd5e7563550bc`  
-		Last Modified: Wed, 09 Oct 2019 16:41:48 GMT  
-		Size: 1.2 KB (1184 bytes)  
+	-	`sha256:333aee55688437818eac6dfb7a1c659aebd4a1f306bfb11c82d8e8ca581bd310`  
+		Last Modified: Thu, 14 Nov 2019 01:17:22 GMT  
+		Size: 1.2 KB (1187 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c4d2c680a99e0ae3847637e5a3f708ed0dc4de74b356b6462b39c7838c2569c8`  
-		Last Modified: Wed, 09 Oct 2019 16:41:47 GMT  
-		Size: 1.2 KB (1192 bytes)  
+	-	`sha256:2e31b4fb755985e1d413436629cfc8b3587d9558c735cebbe7e172fb1226f266`  
+		Last Modified: Thu, 14 Nov 2019 01:17:19 GMT  
+		Size: 1.2 KB (1210 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:54e6e159b1c5c45204ad079f31591b297f120961d603188c7fdcd10dc9c02376`  
-		Last Modified: Wed, 09 Oct 2019 16:41:45 GMT  
-		Size: 1.2 KB (1185 bytes)  
+	-	`sha256:b429839636da90a1ab247fa1fba4a113b233b91caffb1f7b8785a5146f728fe8`  
+		Last Modified: Thu, 14 Nov 2019 01:17:19 GMT  
+		Size: 1.2 KB (1189 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:0594c785a423bf8e989928cfa5accef7e4269433e0b81de9e7485d55a446a7b8`  
-		Last Modified: Wed, 09 Oct 2019 16:41:44 GMT  
-		Size: 1.2 KB (1214 bytes)  
-		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:09d2745fd2b8937d7f254629ff6d585b822a7e714a8d739b6eda95b1cc4f09bc`  
-		Last Modified: Wed, 09 Oct 2019 16:41:46 GMT  
-		Size: 4.9 MB (4852499 bytes)  
-		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:51da8cf1bcf4160f908a58579ad7d9725468a6d1ecf3e01c80839ff2dc3bc7ab`  
-		Last Modified: Wed, 09 Oct 2019 16:41:47 GMT  
-		Size: 12.9 MB (12899726 bytes)  
-		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:5f7b0108f3aa4af20acbee0fbd2387f49240d281d846584fa9f4d2399a0f2beb`  
-		Last Modified: Wed, 09 Oct 2019 16:41:41 GMT  
-		Size: 293.1 KB (293114 bytes)  
-		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:edf56f7ef717428e8437e4f6fdfb7f43898eafa5a02ce1b55259e1d6e3d5109b`  
-		Last Modified: Tue, 29 Oct 2019 01:10:46 GMT  
-		Size: 1.2 KB (1178 bytes)  
-		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:49bc7bd42e687cc87a1c01b69b2af2c3abd63ccfa22150237e0fab51005665db`  
-		Last Modified: Tue, 29 Oct 2019 01:13:04 GMT  
-		Size: 2.0 MB (1958688 bytes)  
-		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:fc02122f7bace0ee9a441a27154a8c691d4992fe12730eb54c7a2a97aa9dc866`  
-		Last Modified: Tue, 29 Oct 2019 01:19:50 GMT  
+	-	`sha256:9ae46d62efed37e0ce844887aa321f0d776001996a3727741fa89f05a8e43657`  
+		Last Modified: Thu, 14 Nov 2019 01:17:17 GMT  
 		Size: 1.2 KB (1182 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:4cc63330fd8560da39f33c624c78a97a95e509b6543878f791d252975c3610a8`  
-		Last Modified: Tue, 29 Oct 2019 01:19:59 GMT  
-		Size: 4.1 MB (4064709 bytes)  
+	-	`sha256:eeae44bf27c5eb613ac98ffbcefef4f3650a86109430e4266792d2a1bd5badea`  
+		Last Modified: Thu, 14 Nov 2019 01:17:18 GMT  
+		Size: 4.9 MB (4859060 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:8b9a0ad0b067a12d681424e908e5ca0c8a129cf0301d2eb350d949569017cc0c`  
-		Last Modified: Tue, 29 Oct 2019 01:19:50 GMT  
-		Size: 342.6 KB (342555 bytes)  
+	-	`sha256:be9a91ff8d1f5bc81fee01e125994316e92e1ae94ac5abb836a391c35be262d9`  
+		Last Modified: Thu, 14 Nov 2019 01:17:19 GMT  
+		Size: 12.9 MB (12899755 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c45e50c492b3af436740eb445af0bb3200b339b22ccaffbe6006dfbf66061572`  
-		Last Modified: Tue, 29 Oct 2019 01:19:47 GMT  
-		Size: 1.2 KB (1179 bytes)  
+	-	`sha256:d977c2e38fb721f6c7b1c2202a7a41e482711178660238df5b5637584bd7a84c`  
+		Last Modified: Thu, 14 Nov 2019 01:17:15 GMT  
+		Size: 295.1 KB (295062 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:85d664a2c7026c2e83b368f7140ef761ec101d58362c66a8eb08fd64e87d1ea0`  
-		Last Modified: Tue, 29 Oct 2019 01:19:47 GMT  
-		Size: 352.1 KB (352122 bytes)  
+	-	`sha256:fc4146c775bd297283720ee6622f656b7b24943cb08027079eed9d0af17d827a`  
+		Last Modified: Thu, 14 Nov 2019 01:17:13 GMT  
+		Size: 1.2 KB (1167 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c17df02e7b472f415b40f553f940ab07ffcf8b3369abccd6526ceb8450fdb8a2`  
-		Last Modified: Tue, 29 Oct 2019 01:19:48 GMT  
-		Size: 371.3 KB (371307 bytes)  
+	-	`sha256:3323d382bc8313a2382391d100f0266be6bb61a6011912e08976fec119d4cd0c`  
+		Last Modified: Thu, 14 Nov 2019 02:18:55 GMT  
+		Size: 1.9 MB (1933639 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:a83a197a80883e38e8f1e36ebd8f0f0e3806331cd42c46d80d66822dadc9f51f`  
-		Last Modified: Tue, 29 Oct 2019 01:19:47 GMT  
-		Size: 404.2 KB (404217 bytes)  
+	-	`sha256:168d0a2e5b102477dc9d791dfe404bb223dfc547c630bd1f8846524b826b7bf4`  
+		Last Modified: Thu, 14 Nov 2019 04:22:40 GMT  
+		Size: 1.2 KB (1203 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:f82be1919cb7303abcaef34ab4e14a24f2078ba69f2093918235494a1e5ec6be`  
-		Last Modified: Tue, 29 Oct 2019 01:19:47 GMT  
-		Size: 1.2 KB (1182 bytes)  
+	-	`sha256:37c52366513348dc23971b122641f1587c5fc9fc280c3a61722783b9a6da2343`  
+		Last Modified: Thu, 14 Nov 2019 04:22:50 GMT  
+		Size: 4.1 MB (4052961 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:ac632c93f31bec92a93da613845930727f64fa96c8bf47a8f09e18b6b2174c4f`  
+		Last Modified: Thu, 14 Nov 2019 04:22:39 GMT  
+		Size: 325.8 KB (325820 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:58ec29b4ff8f5325dc724c55fba7064f30ef79f7fb2f9cb062375cbdb40b6775`  
+		Last Modified: Thu, 14 Nov 2019 04:22:37 GMT  
+		Size: 1.2 KB (1177 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:dde9dad36d51c4fba560d4203ca2b0b4b25384758dfa6409ae3fd869667e8ed2`  
+		Last Modified: Thu, 14 Nov 2019 04:22:37 GMT  
+		Size: 340.7 KB (340676 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:7d8fa2e07dd4da4e47c8a630a8aaa1428949392e625ae8b2aa83205b3c9b3e4b`  
+		Last Modified: Thu, 14 Nov 2019 04:22:37 GMT  
+		Size: 352.0 KB (352022 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:66c77e17b232eb472b6dd094c09c78491b1eda9be077dd003a5eb63645bda35e`  
+		Last Modified: Thu, 14 Nov 2019 04:22:37 GMT  
+		Size: 389.7 KB (389709 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:467ebf7a1c79014a9780243d5ea665aa35467dd24b364dac85f01727a7edff3e`  
+		Last Modified: Thu, 14 Nov 2019 04:22:37 GMT  
+		Size: 1.2 KB (1162 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
-### `haxe:3.1-windowsservercore` - windows version 10.0.14393.3274; amd64
+### `haxe:3.1-windowsservercore` - windows version 10.0.14393.3326; amd64
 
 ```console
-$ docker pull haxe@sha256:50053211d2a903f6f75066609c39930326cc28ce759770ad88ce7e9248c12a09
+$ docker pull haxe@sha256:731313bdeaab0439d643d91577aa148e346b96d6be285ed5186b9f0be0ad0ce3
 ```
 
 -	Docker Version: 18.03.1-ee-4
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **5.8 GB (5796040436 bytes)**  
+-	Total Size: **5.8 GB (5794788767 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:30f335dc784b4a19874375c0a1c74d41172f7d10f0bc3b4fa5574f7119ed36bd`
+-	Image ID: `sha256:11da6a1f49f12247b53295de094a77d707b316d7eb64d7973276822700c9e697`
 -	Default Command: `["haxe"]`
 -	`SHELL`: `["powershell","-Command","$ErrorActionPreference = 'Stop';"]`
 
 ```dockerfile
-# Tue, 22 Nov 2016 23:24:34 GMT
+# Sat, 19 Nov 2016 17:05:00 GMT
 RUN Apply image 1607-RTM-amd64
-# Sat, 05 Oct 2019 16:15:00 GMT
+# Thu, 07 Nov 2019 14:16:00 GMT
 RUN Install update ltsc2016-amd64
-# Wed, 09 Oct 2019 14:39:48 GMT
+# Wed, 13 Nov 2019 00:41:31 GMT
 SHELL [powershell -Command $ErrorActionPreference = 'Stop';]
-# Wed, 09 Oct 2019 14:39:49 GMT
+# Wed, 13 Nov 2019 00:41:32 GMT
 ENV HAXETOOLKIT_PATH=C:\HaxeToolkit
-# Wed, 09 Oct 2019 14:39:50 GMT
+# Wed, 13 Nov 2019 00:41:33 GMT
 ENV NEKOPATH=C:\HaxeToolkit\neko
-# Wed, 09 Oct 2019 14:39:51 GMT
+# Wed, 13 Nov 2019 00:41:34 GMT
 ENV HAXEPATH=C:\HaxeToolkit\haxe
-# Wed, 09 Oct 2019 14:39:52 GMT
+# Wed, 13 Nov 2019 00:41:36 GMT
 ENV HAXE_STD_PATH=C:\HaxeToolkit\haxe\std
-# Wed, 09 Oct 2019 14:39:54 GMT
+# Wed, 13 Nov 2019 00:41:37 GMT
 ENV HAXELIB_PATH=C:\HaxeToolkit\haxe\lib
-# Wed, 09 Oct 2019 14:41:10 GMT
+# Wed, 13 Nov 2019 00:43:10 GMT
 RUN $newPath = ('{0};{1};{2}' -f $env:HAXEPATH, $env:NEKOPATH, $env:PATH); 	Write-Host ('Updating PATH: {0}' -f $newPath); 	[Environment]::SetEnvironmentVariable('PATH', $newPath, [EnvironmentVariableTarget]::Machine);
-# Wed, 09 Oct 2019 14:43:12 GMT
+# Wed, 13 Nov 2019 00:45:24 GMT
 RUN $url = 'https://download.microsoft.com/download/0/5/6/056dcda9-d667-4e27-8001-8a0c6971d6b1/vcredist_x86.exe'; 	Write-Host ('Downloading {0} ...' -f $url); 	[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12; 	Invoke-WebRequest -Uri $url -OutFile 'vcredist_x86.exe'; 		Write-Host 'Verifying sha256 (89f4e593ea5541d1c53f983923124f9fd061a1c0c967339109e375c661573c17) ...'; 	if ((Get-FileHash vcredist_x86.exe -Algorithm sha256).Hash -ne '89f4e593ea5541d1c53f983923124f9fd061a1c0c967339109e375c661573c17') { 		Write-Host 'FAILED!'; 		exit 1; 	}; 		Write-Host 'Installing ...'; 	Start-Process -FilePath "vcredist_x86.exe" -ArgumentList "/Q" -Wait; 		Write-Host 'Removing installer...'; 	Remove-Item .\vcredist_x86.exe; 		Write-Host 'Complete.';
-# Wed, 09 Oct 2019 14:44:21 GMT
+# Wed, 13 Nov 2019 00:46:40 GMT
 RUN New-Item -ItemType directory -Path $env:HAXETOOLKIT_PATH;
-# Mon, 28 Oct 2019 23:04:46 GMT
+# Wed, 13 Nov 2019 00:46:42 GMT
 ENV NEKO_VERSION=2.3.0
-# Mon, 28 Oct 2019 23:31:23 GMT
+# Wed, 13 Nov 2019 01:44:34 GMT
 RUN $url = 'https://github.com/HaxeFoundation/neko/releases/download/v2-3-0/neko-2.3.0-win.zip'; 	Write-Host ('Downloading {0} ...' -f $url); 	[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12; 	Invoke-WebRequest -Uri $url -OutFile 'neko.zip'; 		Write-Host 'Verifying sha256 (fe5a11350d2dd74338f971d62115f2bd21ec6912f193db04c5d28eb987a50485) ...'; 	if ((Get-FileHash neko.zip -Algorithm sha256).Hash -ne 'fe5a11350d2dd74338f971d62115f2bd21ec6912f193db04c5d28eb987a50485') { 		Write-Host 'FAILED!'; 		exit 1; 	}; 		Write-Host 'Expanding ...'; 	New-Item -ItemType directory -Path tmp; 	Expand-Archive -Path neko.zip -DestinationPath tmp; 	if (Test-Path tmp\neko.exe) { Move-Item tmp $env:NEKOPATH } 	else { Move-Item (Resolve-Path tmp\neko* | Select -ExpandProperty Path) $env:NEKOPATH }; 		Write-Host 'Removing ...'; 	Remove-Item -Path neko.zip, tmp -Force -Recurse -ErrorAction Ignore; 		Write-Host 'Verifying install ...'; 	Write-Host '  neko -version'; neko -version; 		Write-Host 'Complete.';
-# Tue, 29 Oct 2019 01:00:56 GMT
+# Wed, 13 Nov 2019 02:48:12 GMT
 ENV HAXE_VERSION=3.1.3
-# Tue, 29 Oct 2019 01:04:23 GMT
+# Wed, 13 Nov 2019 02:51:54 GMT
 RUN $url = 'https://github.com/HaxeFoundation/haxe/releases/download/3.1.3/haxe-3.1.3-win.zip'; 	Write-Host ('Downloading {0} ...' -f $url); 	[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12; 	Invoke-WebRequest -Uri $url -OutFile haxe.zip; 		Write-Host 'Verifying sha256 (4cf84cdbf7960a61ae70b0d9166c6f9bde16388c3b81e54af91446f4c9e44ae4) ...'; 	if ((Get-FileHash haxe.zip -Algorithm sha256).Hash -ne '4cf84cdbf7960a61ae70b0d9166c6f9bde16388c3b81e54af91446f4c9e44ae4') { 		Write-Host 'FAILED!'; 		exit 1; 	}; 		Write-Host 'Expanding ...'; 	New-Item -ItemType directory -Path tmp; 	Expand-Archive -Path haxe.zip -DestinationPath tmp; 	if (Test-Path tmp\haxe.exe) { Move-Item tmp $env:HAXEPATH } 	else { Move-Item (Resolve-Path tmp\haxe* | Select -ExpandProperty Path) $env:HAXEPATH }; 		Write-Host 'Removing ...'; 	Remove-Item -Path haxe.zip, tmp -Force -Recurse -ErrorAction Ignore; 		Write-Host 'Verifying install ...'; 	Write-Host '  haxe -version'; haxe -version; 	Write-Host '  haxelib version'; haxelib version; 		Write-Host 'Complete.';
-# Tue, 29 Oct 2019 01:05:28 GMT
+# Wed, 13 Nov 2019 02:53:08 GMT
 RUN New-Item -ItemType directory -Path $env:HAXELIB_PATH;
-# Tue, 29 Oct 2019 01:05:29 GMT
+# Wed, 13 Nov 2019 02:53:10 GMT
 ENV HOMEDRIVE=C:
-# Tue, 29 Oct 2019 01:06:32 GMT
+# Wed, 13 Nov 2019 02:54:27 GMT
 RUN $newPath = ('{0}\Users\{1}' -f $env:HOMEDRIVE, $env:USERNAME); 	Write-Host ('Updating HOMEPATH: {0}' -f $newPath); 	[Environment]::SetEnvironmentVariable('HOMEPATH', $newPath, [EnvironmentVariableTarget]::Machine);
-# Tue, 29 Oct 2019 01:07:45 GMT
+# Wed, 13 Nov 2019 02:55:46 GMT
 RUN (New-Object System.Net.WebClient).DownloadString('https://lib.haxe.org') >$null
-# Tue, 29 Oct 2019 01:08:46 GMT
+# Wed, 13 Nov 2019 02:57:03 GMT
 RUN (New-Object System.Net.WebClient).DownloadString('https://d1smpvufia21az.cloudfront.net') >$null
-# Tue, 29 Oct 2019 01:08:48 GMT
+# Wed, 13 Nov 2019 02:57:04 GMT
 CMD ["haxe"]
 ```
 
@@ -2916,85 +2905,84 @@ CMD ["haxe"]
 		Last Modified: Tue, 18 Sep 2018 20:20:50 GMT  
 		Size: 4.1 GB (4069985900 bytes)  
 		MIME: application/vnd.docker.image.rootfs.foreign.diff.tar.gzip
-	-	`sha256:b4f320e456fcdbb0a55de06f153ad96f144c8c14e452ac7f20896ce2509d170f`  
-		Last Modified: Sun, 06 Oct 2019 17:29:40 GMT  
-		Size: 1.7 GB (1651218786 bytes)  
+	-	`sha256:57e8a97eaa75b4ef91d6df4454d12d3b43e629b80dd937008efb8d9eed5f0208`  
+		Size: 1.7 GB (1650127385 bytes)  
 		MIME: application/vnd.docker.image.rootfs.foreign.diff.tar.gzip
-	-	`sha256:29c2f8f4d6816f29c915ea3b2b780c2f4df1eba46b16d0b1a33b59c62c1953c1`  
-		Last Modified: Wed, 09 Oct 2019 16:42:42 GMT  
-		Size: 1.2 KB (1211 bytes)  
+	-	`sha256:60b3361980878b3668e4eb07fb90b61f37029e500df17dc50d49de9e0c64994c`  
+		Last Modified: Thu, 14 Nov 2019 01:18:29 GMT  
+		Size: 1.2 KB (1209 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:7645418a01f2ee59582d47751b1361304cd4c7b1e4ab9565a77f917133a6331f`  
-		Last Modified: Wed, 09 Oct 2019 16:42:41 GMT  
-		Size: 1.2 KB (1216 bytes)  
-		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:a160c1b66f2191549584f4d2dca6aa032d7cfd95254a52b0b21f15bf89219532`  
-		Last Modified: Wed, 09 Oct 2019 16:42:41 GMT  
-		Size: 1.2 KB (1191 bytes)  
-		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:3ffae54200a2c5c29c85de0df96e06fa3e0e6034ec312173af3141705d3a5869`  
-		Last Modified: Wed, 09 Oct 2019 16:42:40 GMT  
-		Size: 1.2 KB (1212 bytes)  
-		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:2ab228dbc093a4784702b1be54fadeb1765832b2bfb345b919847d2288e2e2ba`  
-		Last Modified: Wed, 09 Oct 2019 16:42:39 GMT  
-		Size: 1.2 KB (1183 bytes)  
-		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:0b721aa81f4ae2d422eb232a21ed8864e213333df1c5aaf52c7ba236321b64d8`  
-		Last Modified: Wed, 09 Oct 2019 16:42:37 GMT  
-		Size: 1.2 KB (1191 bytes)  
-		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:31856421a051a2f9c7f7aca3660a5a81075d578c7dfa8c833443ac53f444a470`  
-		Last Modified: Wed, 09 Oct 2019 16:42:38 GMT  
-		Size: 5.4 MB (5351990 bytes)  
-		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:b9725648368ad472f5048c8757c7b70ef9173f5e597d8a253c15dc95c17fb518`  
-		Last Modified: Wed, 09 Oct 2019 16:42:39 GMT  
-		Size: 22.4 MB (22411447 bytes)  
-		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:11e54e24a5ba6d08457408eb4f91ecbd0d8af4aa5cc6be967298128d89a88816`  
-		Last Modified: Wed, 09 Oct 2019 16:42:33 GMT  
-		Size: 5.3 MB (5293650 bytes)  
-		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:e563d354afc49cb8b46fedb6a404f5e42a82ca9dc7fc4c496edaf5edaf185ff6`  
-		Last Modified: Tue, 29 Oct 2019 01:11:34 GMT  
-		Size: 1.2 KB (1188 bytes)  
-		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:4dabc15e94406c4709eca6d64dce40fe5ac92772317a9978c88ea7565110191b`  
-		Last Modified: Tue, 29 Oct 2019 01:13:59 GMT  
-		Size: 6.9 MB (6929912 bytes)  
-		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:b45867efb240cb8c14a82d0ddf195a2a610721adc57657f227f5a895a0f3b13c`  
-		Last Modified: Tue, 29 Oct 2019 01:20:29 GMT  
+	-	`sha256:6c62938738e5c25fbf816031925d415178c189dbfc8cfcbef86710f350aaedc4`  
+		Last Modified: Thu, 14 Nov 2019 01:18:27 GMT  
 		Size: 1.2 KB (1208 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:50461c4ea282c8c036bd8c69cbe566ecb86b2bbef5c92257c27e9bdee438e415`  
-		Last Modified: Tue, 29 Oct 2019 01:20:38 GMT  
-		Size: 13.6 MB (13560979 bytes)  
+	-	`sha256:056ab1a915111a170d9799fa1c746a2a7c12d8e9f835eb329531d26263d59dce`  
+		Last Modified: Thu, 14 Nov 2019 01:18:27 GMT  
+		Size: 1.2 KB (1182 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:497ed214674dca3b931cf872c9bb3b987e5f28a93c161515fa940fd61f975ff5`  
-		Last Modified: Tue, 29 Oct 2019 01:20:27 GMT  
-		Size: 5.3 MB (5317167 bytes)  
+	-	`sha256:bf63f39d70fd70d7d1039b869d8c6a805ebece06060f3671f6034cbaff189ef5`  
+		Last Modified: Thu, 14 Nov 2019 01:18:27 GMT  
+		Size: 1.2 KB (1212 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c6a31a94a9dca4f4d861e7f92325a1073ebf484d898f1c27aa60822b18b31d12`  
-		Last Modified: Tue, 29 Oct 2019 01:20:22 GMT  
+	-	`sha256:dd3769a4a773e323244572e92a72843d47ad96442582438e90bda329c3fe848d`  
+		Last Modified: Thu, 14 Nov 2019 01:18:24 GMT  
+		Size: 1.2 KB (1168 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:e4f9ce1244e198e81f5ab1a1aaadd8120aa9e7fbbf2314971610df0562669410`  
+		Last Modified: Thu, 14 Nov 2019 01:18:24 GMT  
+		Size: 1.2 KB (1184 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:d6fab71888a2ba793cca8c76b3a98537701fc6fbd7f535aad6fca91550c7189d`  
+		Last Modified: Thu, 14 Nov 2019 01:18:24 GMT  
+		Size: 5.4 MB (5351053 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:d3d720c1893d2b5713eb8da2bcd7a8a4a06c4146a2e2f7fd20f5af35ab119590`  
+		Last Modified: Thu, 14 Nov 2019 01:18:28 GMT  
+		Size: 22.4 MB (22380375 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:32cb4919f4d959711cde03ea1ce713a699584962a975b719189242311f460704`  
+		Last Modified: Thu, 14 Nov 2019 01:18:21 GMT  
+		Size: 5.3 MB (5293824 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:282f0c1a088692ed3ed1acb119f857709f2039314b83e72e2ab374284ae4a7bc`  
+		Last Modified: Thu, 14 Nov 2019 01:18:17 GMT  
 		Size: 1.2 KB (1188 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:8267c1824fb227570c799a9a18e60c693c10e96f26f8cf9d3c6a4943cb9ee99f`  
-		Last Modified: Tue, 29 Oct 2019 01:20:25 GMT  
-		Size: 5.3 MB (5316318 bytes)  
+	-	`sha256:098debff455b5735064a1e62a85c2e7409079cc490c72ca26340d0603b744819`  
+		Last Modified: Thu, 14 Nov 2019 04:17:07 GMT  
+		Size: 6.9 MB (6905786 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:ef3b1200e470c2d91cdc60e5e74b123c5818ac5e541ab54c3fec43ba04ce5222`  
-		Last Modified: Tue, 29 Oct 2019 01:20:25 GMT  
-		Size: 5.3 MB (5319979 bytes)  
+	-	`sha256:d3adb395dc84889c0d11cbcc7f8d58844a9d2b6567a8c934b4f8ec111b97d79e`  
+		Last Modified: Thu, 14 Nov 2019 04:23:19 GMT  
+		Size: 1.2 KB (1190 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:cccbda56392f6210d62be20f3d4d6c93f9b9d411250dd787f05360d3647d86b5`  
-		Last Modified: Tue, 29 Oct 2019 01:20:24 GMT  
-		Size: 5.3 MB (5322357 bytes)  
+	-	`sha256:4e2c64e75a48762f6da1254e92f7b4f0399ca542de7d68d97613ab1aeec85f86`  
+		Last Modified: Thu, 14 Nov 2019 04:23:29 GMT  
+		Size: 13.5 MB (13486693 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:9bfffa6439c00d6a385abda19d73c0efc05eb948899f99feb0972e0288ba0247`  
-		Last Modified: Tue, 29 Oct 2019 01:20:22 GMT  
-		Size: 1.2 KB (1163 bytes)  
+	-	`sha256:060bc5f1df2ccb7c914a5c9e4a272e01446d1e8db559bc1053550a14a7e7c44c`  
+		Last Modified: Thu, 14 Nov 2019 04:23:17 GMT  
+		Size: 5.3 MB (5309957 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:028ecb4d8959600e1974b13f5ccc23334de9f15de61c6ea8416ed43e417d320c`  
+		Last Modified: Thu, 14 Nov 2019 04:23:12 GMT  
+		Size: 1.2 KB (1188 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:5be7e11c9b71352147c606202e98e79e092d881cbbadc5a756a7b95de4ed5bb7`  
+		Last Modified: Thu, 14 Nov 2019 04:23:16 GMT  
+		Size: 5.3 MB (5308183 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:de2591828ebe2ac54a527ca99fdac77015781a601e9fece386b212765f4e2247`  
+		Last Modified: Thu, 14 Nov 2019 04:23:16 GMT  
+		Size: 5.3 MB (5313378 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:5cf8028209b0859e9ec44e724a65b19a7ba67f1f7b95cfd46433691c0e92a8ae`  
+		Last Modified: Thu, 14 Nov 2019 04:23:17 GMT  
+		Size: 5.3 MB (5314318 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:b0bb885a9bda36e80b6b664a6f36f9a5ca8f34bc8e8e82c916e7802576c1710f`  
+		Last Modified: Thu, 14 Nov 2019 04:23:12 GMT  
+		Size: 1.2 KB (1186 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `haxe:3.1-windowsservercore-1803`
@@ -3462,7 +3450,7 @@ CMD ["haxe"]
 ## `haxe:3.2`
 
 ```console
-$ docker pull haxe@sha256:4639a735c74f1a77c72eba3420a31743f6bbc13978bdc90b3ffcbbeaa1c16920
+$ docker pull haxe@sha256:8e54b313a991534410e9932c94cfc3d455186deacc6fb8cfaf8f3f20b9aa42a8
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -3470,9 +3458,9 @@ $ docker pull haxe@sha256:4639a735c74f1a77c72eba3420a31743f6bbc13978bdc90b3ffcbb
 	-	linux; amd64
 	-	linux; arm variant v7
 	-	linux; arm64 variant v8
-	-	windows version 10.0.17763.805; amd64
-	-	windows version 10.0.17134.1069; amd64
-	-	windows version 10.0.14393.3274; amd64
+	-	windows version 10.0.17763.864; amd64
+	-	windows version 10.0.17134.1130; amd64
+	-	windows version 10.0.14393.3326; amd64
 
 ### `haxe:3.2` - linux; amd64
 
@@ -3690,62 +3678,62 @@ CMD ["haxe"]
 		Size: 5.7 MB (5689891 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
-### `haxe:3.2` - windows version 10.0.17763.805; amd64
+### `haxe:3.2` - windows version 10.0.17763.864; amd64
 
 ```console
-$ docker pull haxe@sha256:38ed7615fd017a455738dc2774b93b6f605724c2df68a7f66d81eab9f0333b1d
+$ docker pull haxe@sha256:0828271c4aa94b8457b1bbd550575b5d1c401ec54523a0a8b44c0c885805e26b
 ```
 
 -	Docker Version: 18.03.1-ee-4
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **2.2 GB (2226752601 bytes)**  
+-	Total Size: **2.2 GB (2241139764 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:3b401a90ae1188b7c26b3542a956bb86938bc63ea9688b2490751d674941a8d9`
+-	Image ID: `sha256:f1815d58fc23d7c04a0a860c2947e85f76b06af66126b5c1013edfbd3e6e0bc2`
 -	Default Command: `["haxe"]`
 -	`SHELL`: `["powershell","-Command","$ErrorActionPreference = 'Stop';"]`
 
 ```dockerfile
 # Sat, 15 Sep 2018 09:10:26 GMT
 RUN Apply image 1809-RTM-amd64
-# Sun, 06 Oct 2019 10:02:47 GMT
+# Sat, 09 Nov 2019 02:48:55 GMT
 RUN Install update 1809-amd64
-# Wed, 09 Oct 2019 14:22:24 GMT
+# Tue, 12 Nov 2019 23:49:55 GMT
 SHELL [powershell -Command $ErrorActionPreference = 'Stop';]
-# Wed, 09 Oct 2019 14:22:26 GMT
+# Tue, 12 Nov 2019 23:49:56 GMT
 ENV HAXETOOLKIT_PATH=C:\HaxeToolkit
-# Wed, 09 Oct 2019 14:22:27 GMT
+# Tue, 12 Nov 2019 23:49:57 GMT
 ENV NEKOPATH=C:\HaxeToolkit\neko
-# Wed, 09 Oct 2019 14:22:28 GMT
+# Tue, 12 Nov 2019 23:49:59 GMT
 ENV HAXEPATH=C:\HaxeToolkit\haxe
-# Wed, 09 Oct 2019 14:22:29 GMT
+# Tue, 12 Nov 2019 23:50:00 GMT
 ENV HAXE_STD_PATH=C:\HaxeToolkit\haxe\std
-# Wed, 09 Oct 2019 14:22:31 GMT
+# Tue, 12 Nov 2019 23:50:01 GMT
 ENV HAXELIB_PATH=C:\HaxeToolkit\haxe\lib
-# Wed, 09 Oct 2019 14:23:13 GMT
+# Tue, 12 Nov 2019 23:50:59 GMT
 RUN $newPath = ('{0};{1};{2}' -f $env:HAXEPATH, $env:NEKOPATH, $env:PATH); 	Write-Host ('Updating PATH: {0}' -f $newPath); 	[Environment]::SetEnvironmentVariable('PATH', $newPath, [EnvironmentVariableTarget]::Machine);
-# Wed, 09 Oct 2019 14:24:25 GMT
+# Tue, 12 Nov 2019 23:52:16 GMT
 RUN $url = 'https://download.microsoft.com/download/0/5/6/056dcda9-d667-4e27-8001-8a0c6971d6b1/vcredist_x86.exe'; 	Write-Host ('Downloading {0} ...' -f $url); 	[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12; 	Invoke-WebRequest -Uri $url -OutFile 'vcredist_x86.exe'; 		Write-Host 'Verifying sha256 (89f4e593ea5541d1c53f983923124f9fd061a1c0c967339109e375c661573c17) ...'; 	if ((Get-FileHash vcredist_x86.exe -Algorithm sha256).Hash -ne '89f4e593ea5541d1c53f983923124f9fd061a1c0c967339109e375c661573c17') { 		Write-Host 'FAILED!'; 		exit 1; 	}; 		Write-Host 'Installing ...'; 	Start-Process -FilePath "vcredist_x86.exe" -ArgumentList "/Q" -Wait; 		Write-Host 'Removing installer...'; 	Remove-Item .\vcredist_x86.exe; 		Write-Host 'Complete.';
-# Wed, 09 Oct 2019 14:24:51 GMT
+# Tue, 12 Nov 2019 23:52:46 GMT
 RUN New-Item -ItemType directory -Path $env:HAXETOOLKIT_PATH;
-# Mon, 28 Oct 2019 22:19:20 GMT
+# Tue, 12 Nov 2019 23:52:47 GMT
 ENV NEKO_VERSION=2.3.0
-# Mon, 28 Oct 2019 23:16:50 GMT
+# Wed, 13 Nov 2019 00:59:42 GMT
 RUN $url = 'https://github.com/HaxeFoundation/neko/releases/download/v2-3-0/neko-2.3.0-win.zip'; 	Write-Host ('Downloading {0} ...' -f $url); 	[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12; 	Invoke-WebRequest -Uri $url -OutFile 'neko.zip'; 		Write-Host 'Verifying sha256 (fe5a11350d2dd74338f971d62115f2bd21ec6912f193db04c5d28eb987a50485) ...'; 	if ((Get-FileHash neko.zip -Algorithm sha256).Hash -ne 'fe5a11350d2dd74338f971d62115f2bd21ec6912f193db04c5d28eb987a50485') { 		Write-Host 'FAILED!'; 		exit 1; 	}; 		Write-Host 'Expanding ...'; 	New-Item -ItemType directory -Path tmp; 	Expand-Archive -Path neko.zip -DestinationPath tmp; 	if (Test-Path tmp\neko.exe) { Move-Item tmp $env:NEKOPATH } 	else { Move-Item (Resolve-Path tmp\neko* | Select -ExpandProperty Path) $env:NEKOPATH }; 		Write-Host 'Removing ...'; 	Remove-Item -Path neko.zip, tmp -Force -Recurse -ErrorAction Ignore; 		Write-Host 'Verifying install ...'; 	Write-Host '  neko -version'; neko -version; 		Write-Host 'Complete.';
-# Tue, 29 Oct 2019 00:00:51 GMT
+# Wed, 13 Nov 2019 02:16:53 GMT
 ENV HAXE_VERSION=3.2.1
-# Tue, 29 Oct 2019 00:04:11 GMT
+# Wed, 13 Nov 2019 02:20:15 GMT
 RUN $url = 'https://github.com/HaxeFoundation/haxe/releases/download/3.2.1/haxe-3.2.1-win.zip'; 	Write-Host ('Downloading {0} ...' -f $url); 	[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12; 	Invoke-WebRequest -Uri $url -OutFile haxe.zip; 		Write-Host 'Verifying sha256 (af57d42ca474bba826426e9403b2cb21c210d56addc8bbc0e8fafa88b3660db3) ...'; 	if ((Get-FileHash haxe.zip -Algorithm sha256).Hash -ne 'af57d42ca474bba826426e9403b2cb21c210d56addc8bbc0e8fafa88b3660db3') { 		Write-Host 'FAILED!'; 		exit 1; 	}; 		Write-Host 'Expanding ...'; 	New-Item -ItemType directory -Path tmp; 	Expand-Archive -Path haxe.zip -DestinationPath tmp; 	if (Test-Path tmp\haxe.exe) { Move-Item tmp $env:HAXEPATH } 	else { Move-Item (Resolve-Path tmp\haxe* | Select -ExpandProperty Path) $env:HAXEPATH }; 		Write-Host 'Removing ...'; 	Remove-Item -Path haxe.zip, tmp -Force -Recurse -ErrorAction Ignore; 		Write-Host 'Verifying install ...'; 	Write-Host '  haxe -version'; haxe -version; 	Write-Host '  haxelib version'; haxelib version; 		Write-Host 'Complete.';
-# Tue, 29 Oct 2019 00:04:37 GMT
+# Wed, 13 Nov 2019 02:20:41 GMT
 RUN New-Item -ItemType directory -Path $env:HAXELIB_PATH;
-# Tue, 29 Oct 2019 00:04:38 GMT
+# Wed, 13 Nov 2019 02:20:42 GMT
 ENV HOMEDRIVE=C:
-# Tue, 29 Oct 2019 00:05:04 GMT
+# Wed, 13 Nov 2019 02:21:07 GMT
 RUN $newPath = ('{0}\Users\{1}' -f $env:HOMEDRIVE, $env:USERNAME); 	Write-Host ('Updating HOMEPATH: {0}' -f $newPath); 	[Environment]::SetEnvironmentVariable('HOMEPATH', $newPath, [EnvironmentVariableTarget]::Machine);
-# Tue, 29 Oct 2019 00:36:01 GMT
+# Wed, 13 Nov 2019 02:21:37 GMT
 RUN (New-Object System.Net.WebClient).DownloadString('https://lib.haxe.org') >$null
-# Tue, 29 Oct 2019 00:36:27 GMT
+# Wed, 13 Nov 2019 02:22:04 GMT
 RUN (New-Object System.Net.WebClient).DownloadString('https://d1smpvufia21az.cloudfront.net') >$null
-# Tue, 29 Oct 2019 00:36:29 GMT
+# Wed, 13 Nov 2019 02:22:05 GMT
 CMD ["haxe"]
 ```
 
@@ -3754,143 +3742,142 @@ CMD ["haxe"]
 		Last Modified: Tue, 13 Nov 2018 18:50:17 GMT  
 		Size: 1.5 GB (1534685324 bytes)  
 		MIME: application/vnd.docker.image.rootfs.foreign.diff.tar.gzip
-	-	`sha256:12c8dbabfd62cb512baca43f0d1e9588127e6bd66641e93a5e6f7e89e1bf7656`  
-		Last Modified: Sun, 06 Oct 2019 17:38:47 GMT  
-		Size: 666.6 MB (666618146 bytes)  
+	-	`sha256:e96b0897c5d1cc4214a97d25769f32df19da79456e0f1086d52497677a2a2bb6`  
+		Size: 681.0 MB (681015397 bytes)  
 		MIME: application/vnd.docker.image.rootfs.foreign.diff.tar.gzip
-	-	`sha256:9697a02cbf136853a1a6d136ec00a5ff02b44ae75db8a0b5ae353549d77aea63`  
-		Last Modified: Wed, 09 Oct 2019 16:41:08 GMT  
+	-	`sha256:907461e7e3e37e44cbbf832e53a080dfd3599a15f60436161a3687445bc811a0`  
+		Last Modified: Wed, 13 Nov 2019 02:58:27 GMT  
+		Size: 1.2 KB (1185 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:bfe86c76591b06caa55136e145b560d106273a30b3d2ed3089787fecf49b7dca`  
+		Last Modified: Wed, 13 Nov 2019 02:58:26 GMT  
+		Size: 1.2 KB (1189 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:3d2ec4931c7a61303dd15038b45bed240558340474add393a6a1f7100f0bc88f`  
+		Last Modified: Wed, 13 Nov 2019 02:58:26 GMT  
+		Size: 1.2 KB (1187 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:dd39ff557c2bbbf8047a995824999a335215d593df5c5c4e7461162e464cbe69`  
+		Last Modified: Wed, 13 Nov 2019 02:58:25 GMT  
+		Size: 1.2 KB (1200 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:b427ceec07a96f67e14be18f2f2480075f30cce723fea51389806a355744fb28`  
+		Last Modified: Wed, 13 Nov 2019 02:58:23 GMT  
+		Size: 1.2 KB (1210 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:e27f29fe5b3718cf86dfbb08df8751545cb10c1a1f7fd677cedab980e5255567`  
+		Last Modified: Wed, 13 Nov 2019 02:58:22 GMT  
 		Size: 1.2 KB (1206 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:5249a3833b8d297b13b68f3f11dce3747c88e4b5fb954b71f885822fb61b11e9`  
-		Last Modified: Wed, 09 Oct 2019 16:41:07 GMT  
-		Size: 1.2 KB (1212 bytes)  
+	-	`sha256:8d8b3151b7b9d5c53f0cee0128518e2fefe9e165c9a7fde480f50256f0dfb196`  
+		Last Modified: Wed, 13 Nov 2019 02:58:23 GMT  
+		Size: 4.6 MB (4561228 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:663e4184d6c8ea3d3f65dd41528d304b1c885a23692dbe54c99ec8ab35b2ec4d`  
-		Last Modified: Wed, 09 Oct 2019 16:41:06 GMT  
-		Size: 1.2 KB (1178 bytes)  
+	-	`sha256:0a61b180fdbafca7789ccd7a28d623116451ab0166df6943858559649fbd7415`  
+		Last Modified: Wed, 13 Nov 2019 02:58:24 GMT  
+		Size: 12.9 MB (12910600 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:bf4771f64d98aefaa0bc7467bfd397e8ee6efe1bc7f5959a7d8357da6b1ee38b`  
-		Last Modified: Wed, 09 Oct 2019 16:41:06 GMT  
-		Size: 1.2 KB (1192 bytes)  
+	-	`sha256:cac7ef27a98c9d1de916b734e2d52da7310aa93ce10ca5c79f8ccc01736ac746`  
+		Last Modified: Wed, 13 Nov 2019 02:58:20 GMT  
+		Size: 307.0 KB (307046 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:62400fe0ded518e8851bbf001266058a5bb5487e1372f11d8ea64bb0e9a48e12`  
-		Last Modified: Wed, 09 Oct 2019 16:41:04 GMT  
-		Size: 1.2 KB (1175 bytes)  
+	-	`sha256:27db2d883c2a40c4be0632feb93418a2d6415688b01c69c302a02f7d594997d6`  
+		Last Modified: Wed, 13 Nov 2019 02:58:17 GMT  
+		Size: 1.2 KB (1182 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c9c34cc510a2c4853535c6c9e35ba68aacbe71abad1cfe9695b45fe2e60defc0`  
-		Last Modified: Wed, 09 Oct 2019 16:41:03 GMT  
-		Size: 1.2 KB (1203 bytes)  
+	-	`sha256:6b4d761fbb625bc3d476f33ca19e9a68aca85e65df1c09ab1a1dcdf3514cc8c4`  
+		Last Modified: Thu, 14 Nov 2019 02:18:14 GMT  
+		Size: 1.9 MB (1923147 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:0945d46b6128884e9d2e76ec9a970e6177cfefd1f9210c6aaa782bec89043806`  
-		Last Modified: Wed, 09 Oct 2019 16:41:04 GMT  
-		Size: 4.5 MB (4523541 bytes)  
+	-	`sha256:bd2416e3798d2effa7330947538190889e9b024386fe17056461c72cd073a449`  
+		Last Modified: Thu, 14 Nov 2019 04:20:14 GMT  
+		Size: 1.2 KB (1188 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c732966829b6eb22941fc2b3c17944790355a222f2b1abe9a8748aab63e036c0`  
-		Last Modified: Wed, 09 Oct 2019 16:41:05 GMT  
-		Size: 12.9 MB (12896579 bytes)  
+	-	`sha256:6a1f30f4675d9808397c03b506e95602f09e4280a13b2f4025e38442719ec62e`  
+		Last Modified: Thu, 14 Nov 2019 04:20:26 GMT  
+		Size: 4.3 MB (4345075 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:282cf55939cdb517908a8df38ee7c0b344fcfc722c736019e22112bede01684e`  
-		Last Modified: Wed, 09 Oct 2019 16:41:00 GMT  
-		Size: 295.3 KB (295286 bytes)  
+	-	`sha256:bdb6c8345c101635dd1e5bedee042da771d24204bf139b09642e3217efe67a30`  
+		Last Modified: Thu, 14 Nov 2019 04:20:13 GMT  
+		Size: 330.4 KB (330431 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:fdd5720e2e2419c07a84874ed376f2e7bfa7aeb3ff67d69d16742ec5237a563b`  
-		Last Modified: Tue, 29 Oct 2019 01:10:01 GMT  
-		Size: 1.2 KB (1192 bytes)  
+	-	`sha256:ab294d9fd11840940e7fc01dfd9a969a8999bf54e4cfe77b34b6a07ba638ca43`  
+		Last Modified: Thu, 14 Nov 2019 04:20:09 GMT  
+		Size: 1.2 KB (1193 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:5b3112e25e95abc8545eda9b997d9cc4eb896eca6b914023634f8fb4f5388faa`  
-		Last Modified: Tue, 29 Oct 2019 01:12:24 GMT  
-		Size: 1.9 MB (1947578 bytes)  
+	-	`sha256:12114259832f11011cd8eec12f8f23f23fa98e0b90d970bcacf24462b739873f`  
+		Last Modified: Thu, 14 Nov 2019 04:20:10 GMT  
+		Size: 334.2 KB (334161 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:325b9a6f024b8ba718325f16760707eac743ee1b3e7aef0f21b2daec23ed9775`  
-		Last Modified: Tue, 29 Oct 2019 01:17:09 GMT  
+	-	`sha256:1b167ad37127fc326059941f26b2b1d8c3b3f58b3e45ca413803f7dd11c21205`  
+		Last Modified: Thu, 14 Nov 2019 04:20:10 GMT  
+		Size: 351.1 KB (351064 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:27f9bffd588d5d75984b9ccc97b9c1518a7ea39f2f5c7498320fea0c4f58e5df`  
+		Last Modified: Thu, 14 Nov 2019 04:20:10 GMT  
+		Size: 364.4 KB (364365 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:babc38ce56ad781fea7d1f2da90fe4dfcf971f775ee516a2cc4ca79e7c8351dc`  
+		Last Modified: Thu, 14 Nov 2019 04:20:09 GMT  
 		Size: 1.2 KB (1186 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:7053669f527cfb688b74afa176ad2db98fcd04d93df88b71b167d19e72fa3a1b`  
-		Last Modified: Tue, 29 Oct 2019 01:17:21 GMT  
-		Size: 4.4 MB (4353308 bytes)  
-		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:a4b6c4298b686340316b7ec1f03a7ed14d5b1ad9ad4dd2dba91a8bb60c5cd513`  
-		Last Modified: Tue, 29 Oct 2019 01:17:08 GMT  
-		Size: 341.7 KB (341733 bytes)  
-		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:bea53bb7910e230c65abb15dce3f923df5f6620b40016b6128c604f851282441`  
-		Last Modified: Tue, 29 Oct 2019 01:17:06 GMT  
-		Size: 1.2 KB (1183 bytes)  
-		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:3b411f86bb45e3dd49ae0ee233db63e0737e2bd19ebd20845b5236ee02b8cea3`  
-		Last Modified: Tue, 29 Oct 2019 01:17:06 GMT  
-		Size: 345.0 KB (345025 bytes)  
-		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:4acc6b962509d9d2a45d4b84b040bde4e4035c8e14961cecf140e534f7552f41`  
-		Last Modified: Tue, 29 Oct 2019 01:17:06 GMT  
-		Size: 360.6 KB (360595 bytes)  
-		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:b12e5d8e59bee9c53e2d6a14a39b8541095459b295e16bdb634eb89bbeb2e387`  
-		Last Modified: Tue, 29 Oct 2019 01:17:06 GMT  
-		Size: 373.6 KB (373590 bytes)  
-		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:cef446398b085eb113d78cfaaaa535efa2ac099957b2d57027a673ff70145278`  
-		Last Modified: Tue, 29 Oct 2019 01:17:05 GMT  
-		Size: 1.2 KB (1169 bytes)  
-		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
-### `haxe:3.2` - windows version 10.0.17134.1069; amd64
+### `haxe:3.2` - windows version 10.0.17134.1130; amd64
 
 ```console
-$ docker pull haxe@sha256:2518ff958594264cbb3075cae4e7165f2c1978394f8b91c78433ee568e689bba
+$ docker pull haxe@sha256:9b183b7ab600edcac09cec20e0e82c3787afd4f77e8d997449710e00ce2cff97
 ```
 
 -	Docker Version: 18.03.1-ee-4
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **2.4 GB (2374176159 bytes)**  
+-	Total Size: **2.4 GB (2381535072 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:2bd3bca0b48c63c66f9fd5f4f4e2080e3f7ee4a165fa23147bf81137c9c52241`
+-	Image ID: `sha256:bd93a3610ff2fbf4d05a8da7747101c21dbd7447310a0c35bae918f5b3b967db`
 -	Default Command: `["haxe"]`
 -	`SHELL`: `["powershell","-Command","$ErrorActionPreference = 'Stop';"]`
 
 ```dockerfile
 # Thu, 12 Apr 2018 09:20:54 GMT
 RUN Apply image 1803-RTM-amd64
-# Sun, 06 Oct 2019 14:03:04 GMT
+# Sat, 09 Nov 2019 08:10:48 GMT
 RUN Install update 1803-amd64
-# Wed, 09 Oct 2019 14:30:59 GMT
+# Wed, 13 Nov 2019 00:30:55 GMT
 SHELL [powershell -Command $ErrorActionPreference = 'Stop';]
-# Wed, 09 Oct 2019 14:31:00 GMT
+# Wed, 13 Nov 2019 00:30:56 GMT
 ENV HAXETOOLKIT_PATH=C:\HaxeToolkit
-# Wed, 09 Oct 2019 14:31:01 GMT
+# Wed, 13 Nov 2019 00:30:57 GMT
 ENV NEKOPATH=C:\HaxeToolkit\neko
-# Wed, 09 Oct 2019 14:31:03 GMT
+# Wed, 13 Nov 2019 00:30:59 GMT
 ENV HAXEPATH=C:\HaxeToolkit\haxe
-# Wed, 09 Oct 2019 14:31:04 GMT
+# Wed, 13 Nov 2019 00:31:00 GMT
 ENV HAXE_STD_PATH=C:\HaxeToolkit\haxe\std
-# Wed, 09 Oct 2019 14:31:05 GMT
+# Wed, 13 Nov 2019 00:31:01 GMT
 ENV HAXELIB_PATH=C:\HaxeToolkit\haxe\lib
-# Wed, 09 Oct 2019 14:31:52 GMT
+# Wed, 13 Nov 2019 00:32:01 GMT
 RUN $newPath = ('{0};{1};{2}' -f $env:HAXEPATH, $env:NEKOPATH, $env:PATH); 	Write-Host ('Updating PATH: {0}' -f $newPath); 	[Environment]::SetEnvironmentVariable('PATH', $newPath, [EnvironmentVariableTarget]::Machine);
-# Wed, 09 Oct 2019 14:33:06 GMT
+# Wed, 13 Nov 2019 00:33:21 GMT
 RUN $url = 'https://download.microsoft.com/download/0/5/6/056dcda9-d667-4e27-8001-8a0c6971d6b1/vcredist_x86.exe'; 	Write-Host ('Downloading {0} ...' -f $url); 	[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12; 	Invoke-WebRequest -Uri $url -OutFile 'vcredist_x86.exe'; 		Write-Host 'Verifying sha256 (89f4e593ea5541d1c53f983923124f9fd061a1c0c967339109e375c661573c17) ...'; 	if ((Get-FileHash vcredist_x86.exe -Algorithm sha256).Hash -ne '89f4e593ea5541d1c53f983923124f9fd061a1c0c967339109e375c661573c17') { 		Write-Host 'FAILED!'; 		exit 1; 	}; 		Write-Host 'Installing ...'; 	Start-Process -FilePath "vcredist_x86.exe" -ArgumentList "/Q" -Wait; 		Write-Host 'Removing installer...'; 	Remove-Item .\vcredist_x86.exe; 		Write-Host 'Complete.';
-# Wed, 09 Oct 2019 14:33:32 GMT
+# Wed, 13 Nov 2019 00:33:51 GMT
 RUN New-Item -ItemType directory -Path $env:HAXETOOLKIT_PATH;
-# Mon, 28 Oct 2019 22:57:11 GMT
+# Wed, 13 Nov 2019 00:33:52 GMT
 ENV NEKO_VERSION=2.3.0
-# Mon, 28 Oct 2019 23:23:45 GMT
+# Wed, 13 Nov 2019 01:36:48 GMT
 RUN $url = 'https://github.com/HaxeFoundation/neko/releases/download/v2-3-0/neko-2.3.0-win.zip'; 	Write-Host ('Downloading {0} ...' -f $url); 	[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12; 	Invoke-WebRequest -Uri $url -OutFile 'neko.zip'; 		Write-Host 'Verifying sha256 (fe5a11350d2dd74338f971d62115f2bd21ec6912f193db04c5d28eb987a50485) ...'; 	if ((Get-FileHash neko.zip -Algorithm sha256).Hash -ne 'fe5a11350d2dd74338f971d62115f2bd21ec6912f193db04c5d28eb987a50485') { 		Write-Host 'FAILED!'; 		exit 1; 	}; 		Write-Host 'Expanding ...'; 	New-Item -ItemType directory -Path tmp; 	Expand-Archive -Path neko.zip -DestinationPath tmp; 	if (Test-Path tmp\neko.exe) { Move-Item tmp $env:NEKOPATH } 	else { Move-Item (Resolve-Path tmp\neko* | Select -ExpandProperty Path) $env:NEKOPATH }; 		Write-Host 'Removing ...'; 	Remove-Item -Path neko.zip, tmp -Force -Recurse -ErrorAction Ignore; 		Write-Host 'Verifying install ...'; 	Write-Host '  neko -version'; neko -version; 		Write-Host 'Complete.';
-# Tue, 29 Oct 2019 00:36:41 GMT
+# Wed, 13 Nov 2019 02:22:27 GMT
 ENV HAXE_VERSION=3.2.1
-# Tue, 29 Oct 2019 00:40:01 GMT
+# Wed, 13 Nov 2019 02:25:53 GMT
 RUN $url = 'https://github.com/HaxeFoundation/haxe/releases/download/3.2.1/haxe-3.2.1-win.zip'; 	Write-Host ('Downloading {0} ...' -f $url); 	[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12; 	Invoke-WebRequest -Uri $url -OutFile haxe.zip; 		Write-Host 'Verifying sha256 (af57d42ca474bba826426e9403b2cb21c210d56addc8bbc0e8fafa88b3660db3) ...'; 	if ((Get-FileHash haxe.zip -Algorithm sha256).Hash -ne 'af57d42ca474bba826426e9403b2cb21c210d56addc8bbc0e8fafa88b3660db3') { 		Write-Host 'FAILED!'; 		exit 1; 	}; 		Write-Host 'Expanding ...'; 	New-Item -ItemType directory -Path tmp; 	Expand-Archive -Path haxe.zip -DestinationPath tmp; 	if (Test-Path tmp\haxe.exe) { Move-Item tmp $env:HAXEPATH } 	else { Move-Item (Resolve-Path tmp\haxe* | Select -ExpandProperty Path) $env:HAXEPATH }; 		Write-Host 'Removing ...'; 	Remove-Item -Path haxe.zip, tmp -Force -Recurse -ErrorAction Ignore; 		Write-Host 'Verifying install ...'; 	Write-Host '  haxe -version'; haxe -version; 	Write-Host '  haxelib version'; haxelib version; 		Write-Host 'Complete.';
-# Tue, 29 Oct 2019 00:40:28 GMT
+# Wed, 13 Nov 2019 02:26:23 GMT
 RUN New-Item -ItemType directory -Path $env:HAXELIB_PATH;
-# Tue, 29 Oct 2019 00:40:30 GMT
+# Wed, 13 Nov 2019 02:26:25 GMT
 ENV HOMEDRIVE=C:
-# Tue, 29 Oct 2019 00:40:56 GMT
+# Wed, 13 Nov 2019 02:26:55 GMT
 RUN $newPath = ('{0}\Users\{1}' -f $env:HOMEDRIVE, $env:USERNAME); 	Write-Host ('Updating HOMEPATH: {0}' -f $newPath); 	[Environment]::SetEnvironmentVariable('HOMEPATH', $newPath, [EnvironmentVariableTarget]::Machine);
-# Tue, 29 Oct 2019 00:41:26 GMT
+# Wed, 13 Nov 2019 02:27:28 GMT
 RUN (New-Object System.Net.WebClient).DownloadString('https://lib.haxe.org') >$null
-# Tue, 29 Oct 2019 00:41:53 GMT
+# Wed, 13 Nov 2019 02:27:59 GMT
 RUN (New-Object System.Net.WebClient).DownloadString('https://d1smpvufia21az.cloudfront.net') >$null
-# Tue, 29 Oct 2019 00:41:54 GMT
+# Wed, 13 Nov 2019 02:28:00 GMT
 CMD ["haxe"]
 ```
 
@@ -3899,143 +3886,142 @@ CMD ["haxe"]
 		Last Modified: Tue, 18 Sep 2018 22:43:55 GMT  
 		Size: 1.7 GB (1659688273 bytes)  
 		MIME: application/vnd.docker.image.rootfs.foreign.diff.tar.gzip
-	-	`sha256:d8f170766a535406983bc5b2ee79c71e7926e6f5580d50e3cb2540aaf4aeb32a`  
-		Last Modified: Sun, 06 Oct 2019 14:26:48 GMT  
-		Size: 688.6 MB (688636945 bytes)  
+	-	`sha256:3eb83143ff4b7dafaf8aee4e558c4743488812347fac8581e8b2f61b8e5d06e0`  
+		Size: 696.1 MB (696065307 bytes)  
 		MIME: application/vnd.docker.image.rootfs.foreign.diff.tar.gzip
-	-	`sha256:90030bef52c1e56c368152caf2b49023ca68edf1bf671c52894a0ddc874d529d`  
-		Last Modified: Wed, 09 Oct 2019 16:41:49 GMT  
-		Size: 1.2 KB (1196 bytes)  
+	-	`sha256:d0a17adb4893def55112c23d32072d37d4dd6a77910448ebf86e70c2380583f6`  
+		Last Modified: Thu, 14 Nov 2019 01:17:22 GMT  
+		Size: 1.2 KB (1187 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:14a3f3aa3c69879c65c0f02241d27c1831311d3fde39c597808c2ef30c2a2911`  
-		Last Modified: Wed, 09 Oct 2019 16:41:49 GMT  
+	-	`sha256:fa773b255e6433ec944c431b21edfcd65fa4b7d10a7b06d1dbad8745960cdb5f`  
+		Last Modified: Thu, 14 Nov 2019 01:17:22 GMT  
 		Size: 1.2 KB (1203 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:2292a578d93d97407b29cb40eadab55cf1c54c2bfe73e40534dcd5e7563550bc`  
-		Last Modified: Wed, 09 Oct 2019 16:41:48 GMT  
+	-	`sha256:333aee55688437818eac6dfb7a1c659aebd4a1f306bfb11c82d8e8ca581bd310`  
+		Last Modified: Thu, 14 Nov 2019 01:17:22 GMT  
+		Size: 1.2 KB (1187 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:2e31b4fb755985e1d413436629cfc8b3587d9558c735cebbe7e172fb1226f266`  
+		Last Modified: Thu, 14 Nov 2019 01:17:19 GMT  
+		Size: 1.2 KB (1210 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:b429839636da90a1ab247fa1fba4a113b233b91caffb1f7b8785a5146f728fe8`  
+		Last Modified: Thu, 14 Nov 2019 01:17:19 GMT  
+		Size: 1.2 KB (1189 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:9ae46d62efed37e0ce844887aa321f0d776001996a3727741fa89f05a8e43657`  
+		Last Modified: Thu, 14 Nov 2019 01:17:17 GMT  
+		Size: 1.2 KB (1182 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:eeae44bf27c5eb613ac98ffbcefef4f3650a86109430e4266792d2a1bd5badea`  
+		Last Modified: Thu, 14 Nov 2019 01:17:18 GMT  
+		Size: 4.9 MB (4859060 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:be9a91ff8d1f5bc81fee01e125994316e92e1ae94ac5abb836a391c35be262d9`  
+		Last Modified: Thu, 14 Nov 2019 01:17:19 GMT  
+		Size: 12.9 MB (12899755 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:d977c2e38fb721f6c7b1c2202a7a41e482711178660238df5b5637584bd7a84c`  
+		Last Modified: Thu, 14 Nov 2019 01:17:15 GMT  
+		Size: 295.1 KB (295062 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:fc4146c775bd297283720ee6622f656b7b24943cb08027079eed9d0af17d827a`  
+		Last Modified: Thu, 14 Nov 2019 01:17:13 GMT  
+		Size: 1.2 KB (1167 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:3323d382bc8313a2382391d100f0266be6bb61a6011912e08976fec119d4cd0c`  
+		Last Modified: Thu, 14 Nov 2019 02:18:55 GMT  
+		Size: 1.9 MB (1933639 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:e02f3258a8362600722801b7611d489c6c156882cbf688e636cf8847bd148618`  
+		Last Modified: Thu, 14 Nov 2019 04:20:50 GMT  
+		Size: 1.2 KB (1180 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:8f8d34e47372ee3ba98e177b1d16f7bab6b468c4818f5688752070f4a7dc75a0`  
+		Last Modified: Thu, 14 Nov 2019 04:21:02 GMT  
+		Size: 4.4 MB (4363431 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:35ee2016e5c3e32306f0012b8dcb0a46982f38cf2d57bb5a688d0040ef2c922c`  
+		Last Modified: Thu, 14 Nov 2019 04:20:49 GMT  
+		Size: 325.7 KB (325726 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:091cbc5983414b78fa82a1e9fd9f8d6e805bcb9dbc9b9b42322853aa67034b45`  
+		Last Modified: Thu, 14 Nov 2019 04:20:46 GMT  
+		Size: 1.2 KB (1186 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:c8542156fb01e2ab30e2ef65b1491d90dc989fe28bca04e04b66caa8c405cafe`  
+		Last Modified: Thu, 14 Nov 2019 04:20:47 GMT  
+		Size: 340.4 KB (340384 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:e2cfe388b491d7d0e11f6fa4873a98a6b4b3579fe9a4621975409aecf42e2de9`  
+		Last Modified: Thu, 14 Nov 2019 04:20:47 GMT  
+		Size: 363.4 KB (363419 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:9b610e0177381b941cb02ad98e96324b2c550c3d77af8c44a44800334c002234`  
+		Last Modified: Thu, 14 Nov 2019 04:20:47 GMT  
+		Size: 389.1 KB (389141 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:36ac4b367e83182a82c5d67af1133820f0a2333e390ddb0ec6c4f86f9cf313c3`  
+		Last Modified: Thu, 14 Nov 2019 04:20:46 GMT  
 		Size: 1.2 KB (1184 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c4d2c680a99e0ae3847637e5a3f708ed0dc4de74b356b6462b39c7838c2569c8`  
-		Last Modified: Wed, 09 Oct 2019 16:41:47 GMT  
-		Size: 1.2 KB (1192 bytes)  
-		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:54e6e159b1c5c45204ad079f31591b297f120961d603188c7fdcd10dc9c02376`  
-		Last Modified: Wed, 09 Oct 2019 16:41:45 GMT  
-		Size: 1.2 KB (1185 bytes)  
-		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:0594c785a423bf8e989928cfa5accef7e4269433e0b81de9e7485d55a446a7b8`  
-		Last Modified: Wed, 09 Oct 2019 16:41:44 GMT  
-		Size: 1.2 KB (1214 bytes)  
-		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:09d2745fd2b8937d7f254629ff6d585b822a7e714a8d739b6eda95b1cc4f09bc`  
-		Last Modified: Wed, 09 Oct 2019 16:41:46 GMT  
-		Size: 4.9 MB (4852499 bytes)  
-		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:51da8cf1bcf4160f908a58579ad7d9725468a6d1ecf3e01c80839ff2dc3bc7ab`  
-		Last Modified: Wed, 09 Oct 2019 16:41:47 GMT  
-		Size: 12.9 MB (12899726 bytes)  
-		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:5f7b0108f3aa4af20acbee0fbd2387f49240d281d846584fa9f4d2399a0f2beb`  
-		Last Modified: Wed, 09 Oct 2019 16:41:41 GMT  
-		Size: 293.1 KB (293114 bytes)  
-		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:edf56f7ef717428e8437e4f6fdfb7f43898eafa5a02ce1b55259e1d6e3d5109b`  
-		Last Modified: Tue, 29 Oct 2019 01:10:46 GMT  
-		Size: 1.2 KB (1178 bytes)  
-		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:49bc7bd42e687cc87a1c01b69b2af2c3abd63ccfa22150237e0fab51005665db`  
-		Last Modified: Tue, 29 Oct 2019 01:13:04 GMT  
-		Size: 2.0 MB (1958688 bytes)  
-		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:d4f84540f94756b1d264a9cd10c646dfce03f8156886c989291d7244aa588292`  
-		Last Modified: Tue, 29 Oct 2019 01:17:45 GMT  
-		Size: 1.2 KB (1174 bytes)  
-		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:a2866ca0422a4f198b095a367752826b85555e339562decc5e44d85c2e80b164`  
-		Last Modified: Tue, 29 Oct 2019 01:17:56 GMT  
-		Size: 4.4 MB (4363936 bytes)  
-		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:db0b33ad446234bc0d5d81d70e8235e9f2a2defaba8a3c47afd49789b794f82b`  
-		Last Modified: Tue, 29 Oct 2019 01:17:45 GMT  
-		Size: 342.9 KB (342883 bytes)  
-		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:0b2788a23d75a683d60f6de6592ffeafeceb6fd029645bc60db24a24c6f579a2`  
-		Last Modified: Tue, 29 Oct 2019 01:17:42 GMT  
-		Size: 1.2 KB (1175 bytes)  
-		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:93e935f5efc87a9992eedba02c14c7ea95cc88f8001c90b02602f90be225224f`  
-		Last Modified: Tue, 29 Oct 2019 01:17:42 GMT  
-		Size: 352.4 KB (352365 bytes)  
-		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:80ec880bc00b8a709e1319e07d60d1b8c6c78d30316d837be5a9a0726cdf8b2d`  
-		Last Modified: Tue, 29 Oct 2019 01:17:42 GMT  
-		Size: 371.3 KB (371320 bytes)  
-		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:323f893d394298069760d142f0b30943c5aa76ce199d2cdc1a6f9388e8ac910e`  
-		Last Modified: Tue, 29 Oct 2019 01:17:42 GMT  
-		Size: 404.5 KB (404533 bytes)  
-		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:e80dcc119bf90da1613e007b2ef0c06a7a17ef135580869890629afb74fc64ec`  
-		Last Modified: Tue, 29 Oct 2019 01:17:42 GMT  
-		Size: 1.2 KB (1176 bytes)  
-		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
-### `haxe:3.2` - windows version 10.0.14393.3274; amd64
+### `haxe:3.2` - windows version 10.0.14393.3326; amd64
 
 ```console
-$ docker pull haxe@sha256:8522eade998d44c9e68dc7930862b13997dea03496629f429a2f12a713e49dd5
+$ docker pull haxe@sha256:8ae6c575574ee541ed18ab8d7408e1f51baad4d6cadeffe585d163c8a449ba4b
 ```
 
 -	Docker Version: 18.03.1-ee-4
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **5.8 GB (5796329277 bytes)**  
+-	Total Size: **5.8 GB (5795082502 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:814f4061d71678540f83160b51b5d15eb93fd6b10c2cd4988c325c309b3b75d5`
+-	Image ID: `sha256:13731c23467087f9009bed6f084ed501caa86654a89d1573cf2bfe2646db4ff6`
 -	Default Command: `["haxe"]`
 -	`SHELL`: `["powershell","-Command","$ErrorActionPreference = 'Stop';"]`
 
 ```dockerfile
-# Tue, 22 Nov 2016 23:24:34 GMT
+# Sat, 19 Nov 2016 17:05:00 GMT
 RUN Apply image 1607-RTM-amd64
-# Sat, 05 Oct 2019 16:15:00 GMT
+# Thu, 07 Nov 2019 14:16:00 GMT
 RUN Install update ltsc2016-amd64
-# Wed, 09 Oct 2019 14:39:48 GMT
+# Wed, 13 Nov 2019 00:41:31 GMT
 SHELL [powershell -Command $ErrorActionPreference = 'Stop';]
-# Wed, 09 Oct 2019 14:39:49 GMT
+# Wed, 13 Nov 2019 00:41:32 GMT
 ENV HAXETOOLKIT_PATH=C:\HaxeToolkit
-# Wed, 09 Oct 2019 14:39:50 GMT
+# Wed, 13 Nov 2019 00:41:33 GMT
 ENV NEKOPATH=C:\HaxeToolkit\neko
-# Wed, 09 Oct 2019 14:39:51 GMT
+# Wed, 13 Nov 2019 00:41:34 GMT
 ENV HAXEPATH=C:\HaxeToolkit\haxe
-# Wed, 09 Oct 2019 14:39:52 GMT
+# Wed, 13 Nov 2019 00:41:36 GMT
 ENV HAXE_STD_PATH=C:\HaxeToolkit\haxe\std
-# Wed, 09 Oct 2019 14:39:54 GMT
+# Wed, 13 Nov 2019 00:41:37 GMT
 ENV HAXELIB_PATH=C:\HaxeToolkit\haxe\lib
-# Wed, 09 Oct 2019 14:41:10 GMT
+# Wed, 13 Nov 2019 00:43:10 GMT
 RUN $newPath = ('{0};{1};{2}' -f $env:HAXEPATH, $env:NEKOPATH, $env:PATH); 	Write-Host ('Updating PATH: {0}' -f $newPath); 	[Environment]::SetEnvironmentVariable('PATH', $newPath, [EnvironmentVariableTarget]::Machine);
-# Wed, 09 Oct 2019 14:43:12 GMT
+# Wed, 13 Nov 2019 00:45:24 GMT
 RUN $url = 'https://download.microsoft.com/download/0/5/6/056dcda9-d667-4e27-8001-8a0c6971d6b1/vcredist_x86.exe'; 	Write-Host ('Downloading {0} ...' -f $url); 	[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12; 	Invoke-WebRequest -Uri $url -OutFile 'vcredist_x86.exe'; 		Write-Host 'Verifying sha256 (89f4e593ea5541d1c53f983923124f9fd061a1c0c967339109e375c661573c17) ...'; 	if ((Get-FileHash vcredist_x86.exe -Algorithm sha256).Hash -ne '89f4e593ea5541d1c53f983923124f9fd061a1c0c967339109e375c661573c17') { 		Write-Host 'FAILED!'; 		exit 1; 	}; 		Write-Host 'Installing ...'; 	Start-Process -FilePath "vcredist_x86.exe" -ArgumentList "/Q" -Wait; 		Write-Host 'Removing installer...'; 	Remove-Item .\vcredist_x86.exe; 		Write-Host 'Complete.';
-# Wed, 09 Oct 2019 14:44:21 GMT
+# Wed, 13 Nov 2019 00:46:40 GMT
 RUN New-Item -ItemType directory -Path $env:HAXETOOLKIT_PATH;
-# Mon, 28 Oct 2019 23:04:46 GMT
+# Wed, 13 Nov 2019 00:46:42 GMT
 ENV NEKO_VERSION=2.3.0
-# Mon, 28 Oct 2019 23:31:23 GMT
+# Wed, 13 Nov 2019 01:44:34 GMT
 RUN $url = 'https://github.com/HaxeFoundation/neko/releases/download/v2-3-0/neko-2.3.0-win.zip'; 	Write-Host ('Downloading {0} ...' -f $url); 	[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12; 	Invoke-WebRequest -Uri $url -OutFile 'neko.zip'; 		Write-Host 'Verifying sha256 (fe5a11350d2dd74338f971d62115f2bd21ec6912f193db04c5d28eb987a50485) ...'; 	if ((Get-FileHash neko.zip -Algorithm sha256).Hash -ne 'fe5a11350d2dd74338f971d62115f2bd21ec6912f193db04c5d28eb987a50485') { 		Write-Host 'FAILED!'; 		exit 1; 	}; 		Write-Host 'Expanding ...'; 	New-Item -ItemType directory -Path tmp; 	Expand-Archive -Path neko.zip -DestinationPath tmp; 	if (Test-Path tmp\neko.exe) { Move-Item tmp $env:NEKOPATH } 	else { Move-Item (Resolve-Path tmp\neko* | Select -ExpandProperty Path) $env:NEKOPATH }; 		Write-Host 'Removing ...'; 	Remove-Item -Path neko.zip, tmp -Force -Recurse -ErrorAction Ignore; 		Write-Host 'Verifying install ...'; 	Write-Host '  neko -version'; neko -version; 		Write-Host 'Complete.';
-# Tue, 29 Oct 2019 00:42:14 GMT
+# Wed, 13 Nov 2019 02:28:16 GMT
 ENV HAXE_VERSION=3.2.1
-# Tue, 29 Oct 2019 00:46:03 GMT
+# Wed, 13 Nov 2019 02:32:15 GMT
 RUN $url = 'https://github.com/HaxeFoundation/haxe/releases/download/3.2.1/haxe-3.2.1-win.zip'; 	Write-Host ('Downloading {0} ...' -f $url); 	[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12; 	Invoke-WebRequest -Uri $url -OutFile haxe.zip; 		Write-Host 'Verifying sha256 (af57d42ca474bba826426e9403b2cb21c210d56addc8bbc0e8fafa88b3660db3) ...'; 	if ((Get-FileHash haxe.zip -Algorithm sha256).Hash -ne 'af57d42ca474bba826426e9403b2cb21c210d56addc8bbc0e8fafa88b3660db3') { 		Write-Host 'FAILED!'; 		exit 1; 	}; 		Write-Host 'Expanding ...'; 	New-Item -ItemType directory -Path tmp; 	Expand-Archive -Path haxe.zip -DestinationPath tmp; 	if (Test-Path tmp\haxe.exe) { Move-Item tmp $env:HAXEPATH } 	else { Move-Item (Resolve-Path tmp\haxe* | Select -ExpandProperty Path) $env:HAXEPATH }; 		Write-Host 'Removing ...'; 	Remove-Item -Path haxe.zip, tmp -Force -Recurse -ErrorAction Ignore; 		Write-Host 'Verifying install ...'; 	Write-Host '  haxe -version'; haxe -version; 	Write-Host '  haxelib version'; haxelib version; 		Write-Host 'Complete.';
-# Tue, 29 Oct 2019 00:47:07 GMT
+# Wed, 13 Nov 2019 02:33:30 GMT
 RUN New-Item -ItemType directory -Path $env:HAXELIB_PATH;
-# Tue, 29 Oct 2019 00:47:08 GMT
+# Wed, 13 Nov 2019 02:33:32 GMT
 ENV HOMEDRIVE=C:
-# Tue, 29 Oct 2019 00:48:10 GMT
+# Wed, 13 Nov 2019 02:34:48 GMT
 RUN $newPath = ('{0}\Users\{1}' -f $env:HOMEDRIVE, $env:USERNAME); 	Write-Host ('Updating HOMEPATH: {0}' -f $newPath); 	[Environment]::SetEnvironmentVariable('HOMEPATH', $newPath, [EnvironmentVariableTarget]::Machine);
-# Tue, 29 Oct 2019 00:49:20 GMT
+# Wed, 13 Nov 2019 02:36:06 GMT
 RUN (New-Object System.Net.WebClient).DownloadString('https://lib.haxe.org') >$null
-# Tue, 29 Oct 2019 00:50:22 GMT
+# Wed, 13 Nov 2019 02:37:20 GMT
 RUN (New-Object System.Net.WebClient).DownloadString('https://d1smpvufia21az.cloudfront.net') >$null
-# Tue, 29 Oct 2019 00:50:24 GMT
+# Wed, 13 Nov 2019 02:37:22 GMT
 CMD ["haxe"]
 ```
 
@@ -4044,85 +4030,84 @@ CMD ["haxe"]
 		Last Modified: Tue, 18 Sep 2018 20:20:50 GMT  
 		Size: 4.1 GB (4069985900 bytes)  
 		MIME: application/vnd.docker.image.rootfs.foreign.diff.tar.gzip
-	-	`sha256:b4f320e456fcdbb0a55de06f153ad96f144c8c14e452ac7f20896ce2509d170f`  
-		Last Modified: Sun, 06 Oct 2019 17:29:40 GMT  
-		Size: 1.7 GB (1651218786 bytes)  
+	-	`sha256:57e8a97eaa75b4ef91d6df4454d12d3b43e629b80dd937008efb8d9eed5f0208`  
+		Size: 1.7 GB (1650127385 bytes)  
 		MIME: application/vnd.docker.image.rootfs.foreign.diff.tar.gzip
-	-	`sha256:29c2f8f4d6816f29c915ea3b2b780c2f4df1eba46b16d0b1a33b59c62c1953c1`  
-		Last Modified: Wed, 09 Oct 2019 16:42:42 GMT  
-		Size: 1.2 KB (1211 bytes)  
+	-	`sha256:60b3361980878b3668e4eb07fb90b61f37029e500df17dc50d49de9e0c64994c`  
+		Last Modified: Thu, 14 Nov 2019 01:18:29 GMT  
+		Size: 1.2 KB (1209 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:7645418a01f2ee59582d47751b1361304cd4c7b1e4ab9565a77f917133a6331f`  
-		Last Modified: Wed, 09 Oct 2019 16:42:41 GMT  
-		Size: 1.2 KB (1216 bytes)  
+	-	`sha256:6c62938738e5c25fbf816031925d415178c189dbfc8cfcbef86710f350aaedc4`  
+		Last Modified: Thu, 14 Nov 2019 01:18:27 GMT  
+		Size: 1.2 KB (1208 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:a160c1b66f2191549584f4d2dca6aa032d7cfd95254a52b0b21f15bf89219532`  
-		Last Modified: Wed, 09 Oct 2019 16:42:41 GMT  
-		Size: 1.2 KB (1191 bytes)  
+	-	`sha256:056ab1a915111a170d9799fa1c746a2a7c12d8e9f835eb329531d26263d59dce`  
+		Last Modified: Thu, 14 Nov 2019 01:18:27 GMT  
+		Size: 1.2 KB (1182 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:3ffae54200a2c5c29c85de0df96e06fa3e0e6034ec312173af3141705d3a5869`  
-		Last Modified: Wed, 09 Oct 2019 16:42:40 GMT  
+	-	`sha256:bf63f39d70fd70d7d1039b869d8c6a805ebece06060f3671f6034cbaff189ef5`  
+		Last Modified: Thu, 14 Nov 2019 01:18:27 GMT  
 		Size: 1.2 KB (1212 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:2ab228dbc093a4784702b1be54fadeb1765832b2bfb345b919847d2288e2e2ba`  
-		Last Modified: Wed, 09 Oct 2019 16:42:39 GMT  
-		Size: 1.2 KB (1183 bytes)  
+	-	`sha256:dd3769a4a773e323244572e92a72843d47ad96442582438e90bda329c3fe848d`  
+		Last Modified: Thu, 14 Nov 2019 01:18:24 GMT  
+		Size: 1.2 KB (1168 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:0b721aa81f4ae2d422eb232a21ed8864e213333df1c5aaf52c7ba236321b64d8`  
-		Last Modified: Wed, 09 Oct 2019 16:42:37 GMT  
-		Size: 1.2 KB (1191 bytes)  
+	-	`sha256:e4f9ce1244e198e81f5ab1a1aaadd8120aa9e7fbbf2314971610df0562669410`  
+		Last Modified: Thu, 14 Nov 2019 01:18:24 GMT  
+		Size: 1.2 KB (1184 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:31856421a051a2f9c7f7aca3660a5a81075d578c7dfa8c833443ac53f444a470`  
-		Last Modified: Wed, 09 Oct 2019 16:42:38 GMT  
-		Size: 5.4 MB (5351990 bytes)  
+	-	`sha256:d6fab71888a2ba793cca8c76b3a98537701fc6fbd7f535aad6fca91550c7189d`  
+		Last Modified: Thu, 14 Nov 2019 01:18:24 GMT  
+		Size: 5.4 MB (5351053 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:b9725648368ad472f5048c8757c7b70ef9173f5e597d8a253c15dc95c17fb518`  
-		Last Modified: Wed, 09 Oct 2019 16:42:39 GMT  
-		Size: 22.4 MB (22411447 bytes)  
+	-	`sha256:d3d720c1893d2b5713eb8da2bcd7a8a4a06c4146a2e2f7fd20f5af35ab119590`  
+		Last Modified: Thu, 14 Nov 2019 01:18:28 GMT  
+		Size: 22.4 MB (22380375 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:11e54e24a5ba6d08457408eb4f91ecbd0d8af4aa5cc6be967298128d89a88816`  
-		Last Modified: Wed, 09 Oct 2019 16:42:33 GMT  
-		Size: 5.3 MB (5293650 bytes)  
+	-	`sha256:32cb4919f4d959711cde03ea1ce713a699584962a975b719189242311f460704`  
+		Last Modified: Thu, 14 Nov 2019 01:18:21 GMT  
+		Size: 5.3 MB (5293824 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:e563d354afc49cb8b46fedb6a404f5e42a82ca9dc7fc4c496edaf5edaf185ff6`  
-		Last Modified: Tue, 29 Oct 2019 01:11:34 GMT  
+	-	`sha256:282f0c1a088692ed3ed1acb119f857709f2039314b83e72e2ab374284ae4a7bc`  
+		Last Modified: Thu, 14 Nov 2019 01:18:17 GMT  
 		Size: 1.2 KB (1188 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:4dabc15e94406c4709eca6d64dce40fe5ac92772317a9978c88ea7565110191b`  
-		Last Modified: Tue, 29 Oct 2019 01:13:59 GMT  
-		Size: 6.9 MB (6929912 bytes)  
+	-	`sha256:098debff455b5735064a1e62a85c2e7409079cc490c72ca26340d0603b744819`  
+		Last Modified: Thu, 14 Nov 2019 04:17:07 GMT  
+		Size: 6.9 MB (6905786 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:8871634145420a3a5f5bebe6659a1ebebf9c312ccf886979780a995d5a669915`  
-		Last Modified: Tue, 29 Oct 2019 01:18:27 GMT  
-		Size: 1.2 KB (1180 bytes)  
+	-	`sha256:60c6877ad7a7cfa3a607b26125fa8e5d12a0c818ac83898445d492846156bb33`  
+		Last Modified: Thu, 14 Nov 2019 04:21:28 GMT  
+		Size: 1.2 KB (1203 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:ac6deb082a25cb455fdd8f1cb4b65f8d3a66923c7105b497a5c76d78ae00e632`  
-		Last Modified: Tue, 29 Oct 2019 01:18:39 GMT  
-		Size: 13.8 MB (13848787 bytes)  
+	-	`sha256:5b52f3c26c206ef301d09052a324ddf1421258d5ce24247dd1315d2ac4045d51`  
+		Last Modified: Thu, 14 Nov 2019 04:21:40 GMT  
+		Size: 13.8 MB (13782707 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:4dfb4ff59dba4d61a3c74ff06450ab05b9b17e44d767ea6f97cbfc35553c9afb`  
-		Last Modified: Tue, 29 Oct 2019 01:18:26 GMT  
-		Size: 5.3 MB (5317364 bytes)  
+	-	`sha256:2fde8352921f50789705b0ca2007fdb88d2793a533323e9469294a925dfd84bf`  
+		Last Modified: Thu, 14 Nov 2019 04:21:27 GMT  
+		Size: 5.3 MB (5308875 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:afbbd8c31d33e2292e03754798d193f3a7da2e79e5c9193c683f9c6e29a1bdaa`  
-		Last Modified: Tue, 29 Oct 2019 01:18:21 GMT  
-		Size: 1.2 KB (1163 bytes)  
+	-	`sha256:38cec9c118693d6afb124d84e8bdf1daf93b6eb9c29a8268c238821465d70ffc`  
+		Last Modified: Thu, 14 Nov 2019 04:21:22 GMT  
+		Size: 1.2 KB (1185 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:6f924904fb1fc58b75eba6c60acf6d2c51cca1255676a696c1ebc9e1cf447168`  
-		Last Modified: Tue, 29 Oct 2019 01:18:23 GMT  
-		Size: 5.3 MB (5315969 bytes)  
+	-	`sha256:512ba889bb1e935f8b63ec5819485b43fe20a42e6ad6f69582dfce2e71a70921`  
+		Last Modified: Thu, 14 Nov 2019 04:21:25 GMT  
+		Size: 5.3 MB (5307518 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:170a27052c9ab26192b4d254220f00c554e11793fdcb43788c45d16c115257be`  
-		Last Modified: Tue, 29 Oct 2019 01:18:23 GMT  
-		Size: 5.3 MB (5321019 bytes)  
+	-	`sha256:8a58cecbc50bd97f07fdaaeb5934e34d31b50808a47a834de2d55c9d838ad23f`  
+		Last Modified: Thu, 14 Nov 2019 04:21:26 GMT  
+		Size: 5.3 MB (5312855 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:62a77b414589dabbb61ec521f5b3838fbc0e776cfc5a6d877445eeac6a797507`  
-		Last Modified: Tue, 29 Oct 2019 01:18:24 GMT  
-		Size: 5.3 MB (5322555 bytes)  
+	-	`sha256:35e88aaf222640838ee4b5d6ee888144bfcba9851f92b8d1413c7765e5c3a0d8`  
+		Last Modified: Thu, 14 Nov 2019 04:21:25 GMT  
+		Size: 5.3 MB (5314298 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:9cfed8cfb973e636aee1123f4954a792bd8357948c3d423d2b6892dabb0b2e97`  
-		Last Modified: Tue, 29 Oct 2019 01:18:21 GMT  
-		Size: 1.2 KB (1163 bytes)  
+	-	`sha256:24e40d6bd8d03feca84fe7093d773ffb2826bdf06b95a0d9c880908ff0ae91cd`  
+		Last Modified: Thu, 14 Nov 2019 04:21:22 GMT  
+		Size: 1.2 KB (1187 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `haxe:3.2.1`
@@ -7835,71 +7820,71 @@ CMD ["haxe"]
 ## `haxe:3.2-windowsservercore`
 
 ```console
-$ docker pull haxe@sha256:c40fefe03291034ce3c5d472e6b12a71660d8e92ea9bfb2a5f0a45be948cd2ee
+$ docker pull haxe@sha256:1ce6a89c4f3cfad5f0876825ffb4327de2069fd750147bcd3e74dcf58ba8f92d
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
 -	Platforms:
-	-	windows version 10.0.17763.805; amd64
-	-	windows version 10.0.17134.1069; amd64
-	-	windows version 10.0.14393.3274; amd64
+	-	windows version 10.0.17763.864; amd64
+	-	windows version 10.0.17134.1130; amd64
+	-	windows version 10.0.14393.3326; amd64
 
-### `haxe:3.2-windowsservercore` - windows version 10.0.17763.805; amd64
+### `haxe:3.2-windowsservercore` - windows version 10.0.17763.864; amd64
 
 ```console
-$ docker pull haxe@sha256:38ed7615fd017a455738dc2774b93b6f605724c2df68a7f66d81eab9f0333b1d
+$ docker pull haxe@sha256:0828271c4aa94b8457b1bbd550575b5d1c401ec54523a0a8b44c0c885805e26b
 ```
 
 -	Docker Version: 18.03.1-ee-4
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **2.2 GB (2226752601 bytes)**  
+-	Total Size: **2.2 GB (2241139764 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:3b401a90ae1188b7c26b3542a956bb86938bc63ea9688b2490751d674941a8d9`
+-	Image ID: `sha256:f1815d58fc23d7c04a0a860c2947e85f76b06af66126b5c1013edfbd3e6e0bc2`
 -	Default Command: `["haxe"]`
 -	`SHELL`: `["powershell","-Command","$ErrorActionPreference = 'Stop';"]`
 
 ```dockerfile
 # Sat, 15 Sep 2018 09:10:26 GMT
 RUN Apply image 1809-RTM-amd64
-# Sun, 06 Oct 2019 10:02:47 GMT
+# Sat, 09 Nov 2019 02:48:55 GMT
 RUN Install update 1809-amd64
-# Wed, 09 Oct 2019 14:22:24 GMT
+# Tue, 12 Nov 2019 23:49:55 GMT
 SHELL [powershell -Command $ErrorActionPreference = 'Stop';]
-# Wed, 09 Oct 2019 14:22:26 GMT
+# Tue, 12 Nov 2019 23:49:56 GMT
 ENV HAXETOOLKIT_PATH=C:\HaxeToolkit
-# Wed, 09 Oct 2019 14:22:27 GMT
+# Tue, 12 Nov 2019 23:49:57 GMT
 ENV NEKOPATH=C:\HaxeToolkit\neko
-# Wed, 09 Oct 2019 14:22:28 GMT
+# Tue, 12 Nov 2019 23:49:59 GMT
 ENV HAXEPATH=C:\HaxeToolkit\haxe
-# Wed, 09 Oct 2019 14:22:29 GMT
+# Tue, 12 Nov 2019 23:50:00 GMT
 ENV HAXE_STD_PATH=C:\HaxeToolkit\haxe\std
-# Wed, 09 Oct 2019 14:22:31 GMT
+# Tue, 12 Nov 2019 23:50:01 GMT
 ENV HAXELIB_PATH=C:\HaxeToolkit\haxe\lib
-# Wed, 09 Oct 2019 14:23:13 GMT
+# Tue, 12 Nov 2019 23:50:59 GMT
 RUN $newPath = ('{0};{1};{2}' -f $env:HAXEPATH, $env:NEKOPATH, $env:PATH); 	Write-Host ('Updating PATH: {0}' -f $newPath); 	[Environment]::SetEnvironmentVariable('PATH', $newPath, [EnvironmentVariableTarget]::Machine);
-# Wed, 09 Oct 2019 14:24:25 GMT
+# Tue, 12 Nov 2019 23:52:16 GMT
 RUN $url = 'https://download.microsoft.com/download/0/5/6/056dcda9-d667-4e27-8001-8a0c6971d6b1/vcredist_x86.exe'; 	Write-Host ('Downloading {0} ...' -f $url); 	[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12; 	Invoke-WebRequest -Uri $url -OutFile 'vcredist_x86.exe'; 		Write-Host 'Verifying sha256 (89f4e593ea5541d1c53f983923124f9fd061a1c0c967339109e375c661573c17) ...'; 	if ((Get-FileHash vcredist_x86.exe -Algorithm sha256).Hash -ne '89f4e593ea5541d1c53f983923124f9fd061a1c0c967339109e375c661573c17') { 		Write-Host 'FAILED!'; 		exit 1; 	}; 		Write-Host 'Installing ...'; 	Start-Process -FilePath "vcredist_x86.exe" -ArgumentList "/Q" -Wait; 		Write-Host 'Removing installer...'; 	Remove-Item .\vcredist_x86.exe; 		Write-Host 'Complete.';
-# Wed, 09 Oct 2019 14:24:51 GMT
+# Tue, 12 Nov 2019 23:52:46 GMT
 RUN New-Item -ItemType directory -Path $env:HAXETOOLKIT_PATH;
-# Mon, 28 Oct 2019 22:19:20 GMT
+# Tue, 12 Nov 2019 23:52:47 GMT
 ENV NEKO_VERSION=2.3.0
-# Mon, 28 Oct 2019 23:16:50 GMT
+# Wed, 13 Nov 2019 00:59:42 GMT
 RUN $url = 'https://github.com/HaxeFoundation/neko/releases/download/v2-3-0/neko-2.3.0-win.zip'; 	Write-Host ('Downloading {0} ...' -f $url); 	[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12; 	Invoke-WebRequest -Uri $url -OutFile 'neko.zip'; 		Write-Host 'Verifying sha256 (fe5a11350d2dd74338f971d62115f2bd21ec6912f193db04c5d28eb987a50485) ...'; 	if ((Get-FileHash neko.zip -Algorithm sha256).Hash -ne 'fe5a11350d2dd74338f971d62115f2bd21ec6912f193db04c5d28eb987a50485') { 		Write-Host 'FAILED!'; 		exit 1; 	}; 		Write-Host 'Expanding ...'; 	New-Item -ItemType directory -Path tmp; 	Expand-Archive -Path neko.zip -DestinationPath tmp; 	if (Test-Path tmp\neko.exe) { Move-Item tmp $env:NEKOPATH } 	else { Move-Item (Resolve-Path tmp\neko* | Select -ExpandProperty Path) $env:NEKOPATH }; 		Write-Host 'Removing ...'; 	Remove-Item -Path neko.zip, tmp -Force -Recurse -ErrorAction Ignore; 		Write-Host 'Verifying install ...'; 	Write-Host '  neko -version'; neko -version; 		Write-Host 'Complete.';
-# Tue, 29 Oct 2019 00:00:51 GMT
+# Wed, 13 Nov 2019 02:16:53 GMT
 ENV HAXE_VERSION=3.2.1
-# Tue, 29 Oct 2019 00:04:11 GMT
+# Wed, 13 Nov 2019 02:20:15 GMT
 RUN $url = 'https://github.com/HaxeFoundation/haxe/releases/download/3.2.1/haxe-3.2.1-win.zip'; 	Write-Host ('Downloading {0} ...' -f $url); 	[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12; 	Invoke-WebRequest -Uri $url -OutFile haxe.zip; 		Write-Host 'Verifying sha256 (af57d42ca474bba826426e9403b2cb21c210d56addc8bbc0e8fafa88b3660db3) ...'; 	if ((Get-FileHash haxe.zip -Algorithm sha256).Hash -ne 'af57d42ca474bba826426e9403b2cb21c210d56addc8bbc0e8fafa88b3660db3') { 		Write-Host 'FAILED!'; 		exit 1; 	}; 		Write-Host 'Expanding ...'; 	New-Item -ItemType directory -Path tmp; 	Expand-Archive -Path haxe.zip -DestinationPath tmp; 	if (Test-Path tmp\haxe.exe) { Move-Item tmp $env:HAXEPATH } 	else { Move-Item (Resolve-Path tmp\haxe* | Select -ExpandProperty Path) $env:HAXEPATH }; 		Write-Host 'Removing ...'; 	Remove-Item -Path haxe.zip, tmp -Force -Recurse -ErrorAction Ignore; 		Write-Host 'Verifying install ...'; 	Write-Host '  haxe -version'; haxe -version; 	Write-Host '  haxelib version'; haxelib version; 		Write-Host 'Complete.';
-# Tue, 29 Oct 2019 00:04:37 GMT
+# Wed, 13 Nov 2019 02:20:41 GMT
 RUN New-Item -ItemType directory -Path $env:HAXELIB_PATH;
-# Tue, 29 Oct 2019 00:04:38 GMT
+# Wed, 13 Nov 2019 02:20:42 GMT
 ENV HOMEDRIVE=C:
-# Tue, 29 Oct 2019 00:05:04 GMT
+# Wed, 13 Nov 2019 02:21:07 GMT
 RUN $newPath = ('{0}\Users\{1}' -f $env:HOMEDRIVE, $env:USERNAME); 	Write-Host ('Updating HOMEPATH: {0}' -f $newPath); 	[Environment]::SetEnvironmentVariable('HOMEPATH', $newPath, [EnvironmentVariableTarget]::Machine);
-# Tue, 29 Oct 2019 00:36:01 GMT
+# Wed, 13 Nov 2019 02:21:37 GMT
 RUN (New-Object System.Net.WebClient).DownloadString('https://lib.haxe.org') >$null
-# Tue, 29 Oct 2019 00:36:27 GMT
+# Wed, 13 Nov 2019 02:22:04 GMT
 RUN (New-Object System.Net.WebClient).DownloadString('https://d1smpvufia21az.cloudfront.net') >$null
-# Tue, 29 Oct 2019 00:36:29 GMT
+# Wed, 13 Nov 2019 02:22:05 GMT
 CMD ["haxe"]
 ```
 
@@ -7908,143 +7893,142 @@ CMD ["haxe"]
 		Last Modified: Tue, 13 Nov 2018 18:50:17 GMT  
 		Size: 1.5 GB (1534685324 bytes)  
 		MIME: application/vnd.docker.image.rootfs.foreign.diff.tar.gzip
-	-	`sha256:12c8dbabfd62cb512baca43f0d1e9588127e6bd66641e93a5e6f7e89e1bf7656`  
-		Last Modified: Sun, 06 Oct 2019 17:38:47 GMT  
-		Size: 666.6 MB (666618146 bytes)  
+	-	`sha256:e96b0897c5d1cc4214a97d25769f32df19da79456e0f1086d52497677a2a2bb6`  
+		Size: 681.0 MB (681015397 bytes)  
 		MIME: application/vnd.docker.image.rootfs.foreign.diff.tar.gzip
-	-	`sha256:9697a02cbf136853a1a6d136ec00a5ff02b44ae75db8a0b5ae353549d77aea63`  
-		Last Modified: Wed, 09 Oct 2019 16:41:08 GMT  
+	-	`sha256:907461e7e3e37e44cbbf832e53a080dfd3599a15f60436161a3687445bc811a0`  
+		Last Modified: Wed, 13 Nov 2019 02:58:27 GMT  
+		Size: 1.2 KB (1185 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:bfe86c76591b06caa55136e145b560d106273a30b3d2ed3089787fecf49b7dca`  
+		Last Modified: Wed, 13 Nov 2019 02:58:26 GMT  
+		Size: 1.2 KB (1189 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:3d2ec4931c7a61303dd15038b45bed240558340474add393a6a1f7100f0bc88f`  
+		Last Modified: Wed, 13 Nov 2019 02:58:26 GMT  
+		Size: 1.2 KB (1187 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:dd39ff557c2bbbf8047a995824999a335215d593df5c5c4e7461162e464cbe69`  
+		Last Modified: Wed, 13 Nov 2019 02:58:25 GMT  
+		Size: 1.2 KB (1200 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:b427ceec07a96f67e14be18f2f2480075f30cce723fea51389806a355744fb28`  
+		Last Modified: Wed, 13 Nov 2019 02:58:23 GMT  
+		Size: 1.2 KB (1210 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:e27f29fe5b3718cf86dfbb08df8751545cb10c1a1f7fd677cedab980e5255567`  
+		Last Modified: Wed, 13 Nov 2019 02:58:22 GMT  
 		Size: 1.2 KB (1206 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:5249a3833b8d297b13b68f3f11dce3747c88e4b5fb954b71f885822fb61b11e9`  
-		Last Modified: Wed, 09 Oct 2019 16:41:07 GMT  
-		Size: 1.2 KB (1212 bytes)  
+	-	`sha256:8d8b3151b7b9d5c53f0cee0128518e2fefe9e165c9a7fde480f50256f0dfb196`  
+		Last Modified: Wed, 13 Nov 2019 02:58:23 GMT  
+		Size: 4.6 MB (4561228 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:663e4184d6c8ea3d3f65dd41528d304b1c885a23692dbe54c99ec8ab35b2ec4d`  
-		Last Modified: Wed, 09 Oct 2019 16:41:06 GMT  
-		Size: 1.2 KB (1178 bytes)  
+	-	`sha256:0a61b180fdbafca7789ccd7a28d623116451ab0166df6943858559649fbd7415`  
+		Last Modified: Wed, 13 Nov 2019 02:58:24 GMT  
+		Size: 12.9 MB (12910600 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:bf4771f64d98aefaa0bc7467bfd397e8ee6efe1bc7f5959a7d8357da6b1ee38b`  
-		Last Modified: Wed, 09 Oct 2019 16:41:06 GMT  
-		Size: 1.2 KB (1192 bytes)  
+	-	`sha256:cac7ef27a98c9d1de916b734e2d52da7310aa93ce10ca5c79f8ccc01736ac746`  
+		Last Modified: Wed, 13 Nov 2019 02:58:20 GMT  
+		Size: 307.0 KB (307046 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:62400fe0ded518e8851bbf001266058a5bb5487e1372f11d8ea64bb0e9a48e12`  
-		Last Modified: Wed, 09 Oct 2019 16:41:04 GMT  
-		Size: 1.2 KB (1175 bytes)  
+	-	`sha256:27db2d883c2a40c4be0632feb93418a2d6415688b01c69c302a02f7d594997d6`  
+		Last Modified: Wed, 13 Nov 2019 02:58:17 GMT  
+		Size: 1.2 KB (1182 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c9c34cc510a2c4853535c6c9e35ba68aacbe71abad1cfe9695b45fe2e60defc0`  
-		Last Modified: Wed, 09 Oct 2019 16:41:03 GMT  
-		Size: 1.2 KB (1203 bytes)  
+	-	`sha256:6b4d761fbb625bc3d476f33ca19e9a68aca85e65df1c09ab1a1dcdf3514cc8c4`  
+		Last Modified: Thu, 14 Nov 2019 02:18:14 GMT  
+		Size: 1.9 MB (1923147 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:0945d46b6128884e9d2e76ec9a970e6177cfefd1f9210c6aaa782bec89043806`  
-		Last Modified: Wed, 09 Oct 2019 16:41:04 GMT  
-		Size: 4.5 MB (4523541 bytes)  
+	-	`sha256:bd2416e3798d2effa7330947538190889e9b024386fe17056461c72cd073a449`  
+		Last Modified: Thu, 14 Nov 2019 04:20:14 GMT  
+		Size: 1.2 KB (1188 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c732966829b6eb22941fc2b3c17944790355a222f2b1abe9a8748aab63e036c0`  
-		Last Modified: Wed, 09 Oct 2019 16:41:05 GMT  
-		Size: 12.9 MB (12896579 bytes)  
+	-	`sha256:6a1f30f4675d9808397c03b506e95602f09e4280a13b2f4025e38442719ec62e`  
+		Last Modified: Thu, 14 Nov 2019 04:20:26 GMT  
+		Size: 4.3 MB (4345075 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:282cf55939cdb517908a8df38ee7c0b344fcfc722c736019e22112bede01684e`  
-		Last Modified: Wed, 09 Oct 2019 16:41:00 GMT  
-		Size: 295.3 KB (295286 bytes)  
+	-	`sha256:bdb6c8345c101635dd1e5bedee042da771d24204bf139b09642e3217efe67a30`  
+		Last Modified: Thu, 14 Nov 2019 04:20:13 GMT  
+		Size: 330.4 KB (330431 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:fdd5720e2e2419c07a84874ed376f2e7bfa7aeb3ff67d69d16742ec5237a563b`  
-		Last Modified: Tue, 29 Oct 2019 01:10:01 GMT  
-		Size: 1.2 KB (1192 bytes)  
+	-	`sha256:ab294d9fd11840940e7fc01dfd9a969a8999bf54e4cfe77b34b6a07ba638ca43`  
+		Last Modified: Thu, 14 Nov 2019 04:20:09 GMT  
+		Size: 1.2 KB (1193 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:5b3112e25e95abc8545eda9b997d9cc4eb896eca6b914023634f8fb4f5388faa`  
-		Last Modified: Tue, 29 Oct 2019 01:12:24 GMT  
-		Size: 1.9 MB (1947578 bytes)  
+	-	`sha256:12114259832f11011cd8eec12f8f23f23fa98e0b90d970bcacf24462b739873f`  
+		Last Modified: Thu, 14 Nov 2019 04:20:10 GMT  
+		Size: 334.2 KB (334161 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:325b9a6f024b8ba718325f16760707eac743ee1b3e7aef0f21b2daec23ed9775`  
-		Last Modified: Tue, 29 Oct 2019 01:17:09 GMT  
+	-	`sha256:1b167ad37127fc326059941f26b2b1d8c3b3f58b3e45ca413803f7dd11c21205`  
+		Last Modified: Thu, 14 Nov 2019 04:20:10 GMT  
+		Size: 351.1 KB (351064 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:27f9bffd588d5d75984b9ccc97b9c1518a7ea39f2f5c7498320fea0c4f58e5df`  
+		Last Modified: Thu, 14 Nov 2019 04:20:10 GMT  
+		Size: 364.4 KB (364365 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:babc38ce56ad781fea7d1f2da90fe4dfcf971f775ee516a2cc4ca79e7c8351dc`  
+		Last Modified: Thu, 14 Nov 2019 04:20:09 GMT  
 		Size: 1.2 KB (1186 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:7053669f527cfb688b74afa176ad2db98fcd04d93df88b71b167d19e72fa3a1b`  
-		Last Modified: Tue, 29 Oct 2019 01:17:21 GMT  
-		Size: 4.4 MB (4353308 bytes)  
-		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:a4b6c4298b686340316b7ec1f03a7ed14d5b1ad9ad4dd2dba91a8bb60c5cd513`  
-		Last Modified: Tue, 29 Oct 2019 01:17:08 GMT  
-		Size: 341.7 KB (341733 bytes)  
-		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:bea53bb7910e230c65abb15dce3f923df5f6620b40016b6128c604f851282441`  
-		Last Modified: Tue, 29 Oct 2019 01:17:06 GMT  
-		Size: 1.2 KB (1183 bytes)  
-		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:3b411f86bb45e3dd49ae0ee233db63e0737e2bd19ebd20845b5236ee02b8cea3`  
-		Last Modified: Tue, 29 Oct 2019 01:17:06 GMT  
-		Size: 345.0 KB (345025 bytes)  
-		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:4acc6b962509d9d2a45d4b84b040bde4e4035c8e14961cecf140e534f7552f41`  
-		Last Modified: Tue, 29 Oct 2019 01:17:06 GMT  
-		Size: 360.6 KB (360595 bytes)  
-		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:b12e5d8e59bee9c53e2d6a14a39b8541095459b295e16bdb634eb89bbeb2e387`  
-		Last Modified: Tue, 29 Oct 2019 01:17:06 GMT  
-		Size: 373.6 KB (373590 bytes)  
-		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:cef446398b085eb113d78cfaaaa535efa2ac099957b2d57027a673ff70145278`  
-		Last Modified: Tue, 29 Oct 2019 01:17:05 GMT  
-		Size: 1.2 KB (1169 bytes)  
-		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
-### `haxe:3.2-windowsservercore` - windows version 10.0.17134.1069; amd64
+### `haxe:3.2-windowsservercore` - windows version 10.0.17134.1130; amd64
 
 ```console
-$ docker pull haxe@sha256:2518ff958594264cbb3075cae4e7165f2c1978394f8b91c78433ee568e689bba
+$ docker pull haxe@sha256:9b183b7ab600edcac09cec20e0e82c3787afd4f77e8d997449710e00ce2cff97
 ```
 
 -	Docker Version: 18.03.1-ee-4
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **2.4 GB (2374176159 bytes)**  
+-	Total Size: **2.4 GB (2381535072 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:2bd3bca0b48c63c66f9fd5f4f4e2080e3f7ee4a165fa23147bf81137c9c52241`
+-	Image ID: `sha256:bd93a3610ff2fbf4d05a8da7747101c21dbd7447310a0c35bae918f5b3b967db`
 -	Default Command: `["haxe"]`
 -	`SHELL`: `["powershell","-Command","$ErrorActionPreference = 'Stop';"]`
 
 ```dockerfile
 # Thu, 12 Apr 2018 09:20:54 GMT
 RUN Apply image 1803-RTM-amd64
-# Sun, 06 Oct 2019 14:03:04 GMT
+# Sat, 09 Nov 2019 08:10:48 GMT
 RUN Install update 1803-amd64
-# Wed, 09 Oct 2019 14:30:59 GMT
+# Wed, 13 Nov 2019 00:30:55 GMT
 SHELL [powershell -Command $ErrorActionPreference = 'Stop';]
-# Wed, 09 Oct 2019 14:31:00 GMT
+# Wed, 13 Nov 2019 00:30:56 GMT
 ENV HAXETOOLKIT_PATH=C:\HaxeToolkit
-# Wed, 09 Oct 2019 14:31:01 GMT
+# Wed, 13 Nov 2019 00:30:57 GMT
 ENV NEKOPATH=C:\HaxeToolkit\neko
-# Wed, 09 Oct 2019 14:31:03 GMT
+# Wed, 13 Nov 2019 00:30:59 GMT
 ENV HAXEPATH=C:\HaxeToolkit\haxe
-# Wed, 09 Oct 2019 14:31:04 GMT
+# Wed, 13 Nov 2019 00:31:00 GMT
 ENV HAXE_STD_PATH=C:\HaxeToolkit\haxe\std
-# Wed, 09 Oct 2019 14:31:05 GMT
+# Wed, 13 Nov 2019 00:31:01 GMT
 ENV HAXELIB_PATH=C:\HaxeToolkit\haxe\lib
-# Wed, 09 Oct 2019 14:31:52 GMT
+# Wed, 13 Nov 2019 00:32:01 GMT
 RUN $newPath = ('{0};{1};{2}' -f $env:HAXEPATH, $env:NEKOPATH, $env:PATH); 	Write-Host ('Updating PATH: {0}' -f $newPath); 	[Environment]::SetEnvironmentVariable('PATH', $newPath, [EnvironmentVariableTarget]::Machine);
-# Wed, 09 Oct 2019 14:33:06 GMT
+# Wed, 13 Nov 2019 00:33:21 GMT
 RUN $url = 'https://download.microsoft.com/download/0/5/6/056dcda9-d667-4e27-8001-8a0c6971d6b1/vcredist_x86.exe'; 	Write-Host ('Downloading {0} ...' -f $url); 	[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12; 	Invoke-WebRequest -Uri $url -OutFile 'vcredist_x86.exe'; 		Write-Host 'Verifying sha256 (89f4e593ea5541d1c53f983923124f9fd061a1c0c967339109e375c661573c17) ...'; 	if ((Get-FileHash vcredist_x86.exe -Algorithm sha256).Hash -ne '89f4e593ea5541d1c53f983923124f9fd061a1c0c967339109e375c661573c17') { 		Write-Host 'FAILED!'; 		exit 1; 	}; 		Write-Host 'Installing ...'; 	Start-Process -FilePath "vcredist_x86.exe" -ArgumentList "/Q" -Wait; 		Write-Host 'Removing installer...'; 	Remove-Item .\vcredist_x86.exe; 		Write-Host 'Complete.';
-# Wed, 09 Oct 2019 14:33:32 GMT
+# Wed, 13 Nov 2019 00:33:51 GMT
 RUN New-Item -ItemType directory -Path $env:HAXETOOLKIT_PATH;
-# Mon, 28 Oct 2019 22:57:11 GMT
+# Wed, 13 Nov 2019 00:33:52 GMT
 ENV NEKO_VERSION=2.3.0
-# Mon, 28 Oct 2019 23:23:45 GMT
+# Wed, 13 Nov 2019 01:36:48 GMT
 RUN $url = 'https://github.com/HaxeFoundation/neko/releases/download/v2-3-0/neko-2.3.0-win.zip'; 	Write-Host ('Downloading {0} ...' -f $url); 	[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12; 	Invoke-WebRequest -Uri $url -OutFile 'neko.zip'; 		Write-Host 'Verifying sha256 (fe5a11350d2dd74338f971d62115f2bd21ec6912f193db04c5d28eb987a50485) ...'; 	if ((Get-FileHash neko.zip -Algorithm sha256).Hash -ne 'fe5a11350d2dd74338f971d62115f2bd21ec6912f193db04c5d28eb987a50485') { 		Write-Host 'FAILED!'; 		exit 1; 	}; 		Write-Host 'Expanding ...'; 	New-Item -ItemType directory -Path tmp; 	Expand-Archive -Path neko.zip -DestinationPath tmp; 	if (Test-Path tmp\neko.exe) { Move-Item tmp $env:NEKOPATH } 	else { Move-Item (Resolve-Path tmp\neko* | Select -ExpandProperty Path) $env:NEKOPATH }; 		Write-Host 'Removing ...'; 	Remove-Item -Path neko.zip, tmp -Force -Recurse -ErrorAction Ignore; 		Write-Host 'Verifying install ...'; 	Write-Host '  neko -version'; neko -version; 		Write-Host 'Complete.';
-# Tue, 29 Oct 2019 00:36:41 GMT
+# Wed, 13 Nov 2019 02:22:27 GMT
 ENV HAXE_VERSION=3.2.1
-# Tue, 29 Oct 2019 00:40:01 GMT
+# Wed, 13 Nov 2019 02:25:53 GMT
 RUN $url = 'https://github.com/HaxeFoundation/haxe/releases/download/3.2.1/haxe-3.2.1-win.zip'; 	Write-Host ('Downloading {0} ...' -f $url); 	[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12; 	Invoke-WebRequest -Uri $url -OutFile haxe.zip; 		Write-Host 'Verifying sha256 (af57d42ca474bba826426e9403b2cb21c210d56addc8bbc0e8fafa88b3660db3) ...'; 	if ((Get-FileHash haxe.zip -Algorithm sha256).Hash -ne 'af57d42ca474bba826426e9403b2cb21c210d56addc8bbc0e8fafa88b3660db3') { 		Write-Host 'FAILED!'; 		exit 1; 	}; 		Write-Host 'Expanding ...'; 	New-Item -ItemType directory -Path tmp; 	Expand-Archive -Path haxe.zip -DestinationPath tmp; 	if (Test-Path tmp\haxe.exe) { Move-Item tmp $env:HAXEPATH } 	else { Move-Item (Resolve-Path tmp\haxe* | Select -ExpandProperty Path) $env:HAXEPATH }; 		Write-Host 'Removing ...'; 	Remove-Item -Path haxe.zip, tmp -Force -Recurse -ErrorAction Ignore; 		Write-Host 'Verifying install ...'; 	Write-Host '  haxe -version'; haxe -version; 	Write-Host '  haxelib version'; haxelib version; 		Write-Host 'Complete.';
-# Tue, 29 Oct 2019 00:40:28 GMT
+# Wed, 13 Nov 2019 02:26:23 GMT
 RUN New-Item -ItemType directory -Path $env:HAXELIB_PATH;
-# Tue, 29 Oct 2019 00:40:30 GMT
+# Wed, 13 Nov 2019 02:26:25 GMT
 ENV HOMEDRIVE=C:
-# Tue, 29 Oct 2019 00:40:56 GMT
+# Wed, 13 Nov 2019 02:26:55 GMT
 RUN $newPath = ('{0}\Users\{1}' -f $env:HOMEDRIVE, $env:USERNAME); 	Write-Host ('Updating HOMEPATH: {0}' -f $newPath); 	[Environment]::SetEnvironmentVariable('HOMEPATH', $newPath, [EnvironmentVariableTarget]::Machine);
-# Tue, 29 Oct 2019 00:41:26 GMT
+# Wed, 13 Nov 2019 02:27:28 GMT
 RUN (New-Object System.Net.WebClient).DownloadString('https://lib.haxe.org') >$null
-# Tue, 29 Oct 2019 00:41:53 GMT
+# Wed, 13 Nov 2019 02:27:59 GMT
 RUN (New-Object System.Net.WebClient).DownloadString('https://d1smpvufia21az.cloudfront.net') >$null
-# Tue, 29 Oct 2019 00:41:54 GMT
+# Wed, 13 Nov 2019 02:28:00 GMT
 CMD ["haxe"]
 ```
 
@@ -8053,143 +8037,142 @@ CMD ["haxe"]
 		Last Modified: Tue, 18 Sep 2018 22:43:55 GMT  
 		Size: 1.7 GB (1659688273 bytes)  
 		MIME: application/vnd.docker.image.rootfs.foreign.diff.tar.gzip
-	-	`sha256:d8f170766a535406983bc5b2ee79c71e7926e6f5580d50e3cb2540aaf4aeb32a`  
-		Last Modified: Sun, 06 Oct 2019 14:26:48 GMT  
-		Size: 688.6 MB (688636945 bytes)  
+	-	`sha256:3eb83143ff4b7dafaf8aee4e558c4743488812347fac8581e8b2f61b8e5d06e0`  
+		Size: 696.1 MB (696065307 bytes)  
 		MIME: application/vnd.docker.image.rootfs.foreign.diff.tar.gzip
-	-	`sha256:90030bef52c1e56c368152caf2b49023ca68edf1bf671c52894a0ddc874d529d`  
-		Last Modified: Wed, 09 Oct 2019 16:41:49 GMT  
-		Size: 1.2 KB (1196 bytes)  
+	-	`sha256:d0a17adb4893def55112c23d32072d37d4dd6a77910448ebf86e70c2380583f6`  
+		Last Modified: Thu, 14 Nov 2019 01:17:22 GMT  
+		Size: 1.2 KB (1187 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:14a3f3aa3c69879c65c0f02241d27c1831311d3fde39c597808c2ef30c2a2911`  
-		Last Modified: Wed, 09 Oct 2019 16:41:49 GMT  
+	-	`sha256:fa773b255e6433ec944c431b21edfcd65fa4b7d10a7b06d1dbad8745960cdb5f`  
+		Last Modified: Thu, 14 Nov 2019 01:17:22 GMT  
 		Size: 1.2 KB (1203 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:2292a578d93d97407b29cb40eadab55cf1c54c2bfe73e40534dcd5e7563550bc`  
-		Last Modified: Wed, 09 Oct 2019 16:41:48 GMT  
+	-	`sha256:333aee55688437818eac6dfb7a1c659aebd4a1f306bfb11c82d8e8ca581bd310`  
+		Last Modified: Thu, 14 Nov 2019 01:17:22 GMT  
+		Size: 1.2 KB (1187 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:2e31b4fb755985e1d413436629cfc8b3587d9558c735cebbe7e172fb1226f266`  
+		Last Modified: Thu, 14 Nov 2019 01:17:19 GMT  
+		Size: 1.2 KB (1210 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:b429839636da90a1ab247fa1fba4a113b233b91caffb1f7b8785a5146f728fe8`  
+		Last Modified: Thu, 14 Nov 2019 01:17:19 GMT  
+		Size: 1.2 KB (1189 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:9ae46d62efed37e0ce844887aa321f0d776001996a3727741fa89f05a8e43657`  
+		Last Modified: Thu, 14 Nov 2019 01:17:17 GMT  
+		Size: 1.2 KB (1182 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:eeae44bf27c5eb613ac98ffbcefef4f3650a86109430e4266792d2a1bd5badea`  
+		Last Modified: Thu, 14 Nov 2019 01:17:18 GMT  
+		Size: 4.9 MB (4859060 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:be9a91ff8d1f5bc81fee01e125994316e92e1ae94ac5abb836a391c35be262d9`  
+		Last Modified: Thu, 14 Nov 2019 01:17:19 GMT  
+		Size: 12.9 MB (12899755 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:d977c2e38fb721f6c7b1c2202a7a41e482711178660238df5b5637584bd7a84c`  
+		Last Modified: Thu, 14 Nov 2019 01:17:15 GMT  
+		Size: 295.1 KB (295062 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:fc4146c775bd297283720ee6622f656b7b24943cb08027079eed9d0af17d827a`  
+		Last Modified: Thu, 14 Nov 2019 01:17:13 GMT  
+		Size: 1.2 KB (1167 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:3323d382bc8313a2382391d100f0266be6bb61a6011912e08976fec119d4cd0c`  
+		Last Modified: Thu, 14 Nov 2019 02:18:55 GMT  
+		Size: 1.9 MB (1933639 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:e02f3258a8362600722801b7611d489c6c156882cbf688e636cf8847bd148618`  
+		Last Modified: Thu, 14 Nov 2019 04:20:50 GMT  
+		Size: 1.2 KB (1180 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:8f8d34e47372ee3ba98e177b1d16f7bab6b468c4818f5688752070f4a7dc75a0`  
+		Last Modified: Thu, 14 Nov 2019 04:21:02 GMT  
+		Size: 4.4 MB (4363431 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:35ee2016e5c3e32306f0012b8dcb0a46982f38cf2d57bb5a688d0040ef2c922c`  
+		Last Modified: Thu, 14 Nov 2019 04:20:49 GMT  
+		Size: 325.7 KB (325726 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:091cbc5983414b78fa82a1e9fd9f8d6e805bcb9dbc9b9b42322853aa67034b45`  
+		Last Modified: Thu, 14 Nov 2019 04:20:46 GMT  
+		Size: 1.2 KB (1186 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:c8542156fb01e2ab30e2ef65b1491d90dc989fe28bca04e04b66caa8c405cafe`  
+		Last Modified: Thu, 14 Nov 2019 04:20:47 GMT  
+		Size: 340.4 KB (340384 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:e2cfe388b491d7d0e11f6fa4873a98a6b4b3579fe9a4621975409aecf42e2de9`  
+		Last Modified: Thu, 14 Nov 2019 04:20:47 GMT  
+		Size: 363.4 KB (363419 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:9b610e0177381b941cb02ad98e96324b2c550c3d77af8c44a44800334c002234`  
+		Last Modified: Thu, 14 Nov 2019 04:20:47 GMT  
+		Size: 389.1 KB (389141 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:36ac4b367e83182a82c5d67af1133820f0a2333e390ddb0ec6c4f86f9cf313c3`  
+		Last Modified: Thu, 14 Nov 2019 04:20:46 GMT  
 		Size: 1.2 KB (1184 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c4d2c680a99e0ae3847637e5a3f708ed0dc4de74b356b6462b39c7838c2569c8`  
-		Last Modified: Wed, 09 Oct 2019 16:41:47 GMT  
-		Size: 1.2 KB (1192 bytes)  
-		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:54e6e159b1c5c45204ad079f31591b297f120961d603188c7fdcd10dc9c02376`  
-		Last Modified: Wed, 09 Oct 2019 16:41:45 GMT  
-		Size: 1.2 KB (1185 bytes)  
-		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:0594c785a423bf8e989928cfa5accef7e4269433e0b81de9e7485d55a446a7b8`  
-		Last Modified: Wed, 09 Oct 2019 16:41:44 GMT  
-		Size: 1.2 KB (1214 bytes)  
-		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:09d2745fd2b8937d7f254629ff6d585b822a7e714a8d739b6eda95b1cc4f09bc`  
-		Last Modified: Wed, 09 Oct 2019 16:41:46 GMT  
-		Size: 4.9 MB (4852499 bytes)  
-		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:51da8cf1bcf4160f908a58579ad7d9725468a6d1ecf3e01c80839ff2dc3bc7ab`  
-		Last Modified: Wed, 09 Oct 2019 16:41:47 GMT  
-		Size: 12.9 MB (12899726 bytes)  
-		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:5f7b0108f3aa4af20acbee0fbd2387f49240d281d846584fa9f4d2399a0f2beb`  
-		Last Modified: Wed, 09 Oct 2019 16:41:41 GMT  
-		Size: 293.1 KB (293114 bytes)  
-		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:edf56f7ef717428e8437e4f6fdfb7f43898eafa5a02ce1b55259e1d6e3d5109b`  
-		Last Modified: Tue, 29 Oct 2019 01:10:46 GMT  
-		Size: 1.2 KB (1178 bytes)  
-		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:49bc7bd42e687cc87a1c01b69b2af2c3abd63ccfa22150237e0fab51005665db`  
-		Last Modified: Tue, 29 Oct 2019 01:13:04 GMT  
-		Size: 2.0 MB (1958688 bytes)  
-		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:d4f84540f94756b1d264a9cd10c646dfce03f8156886c989291d7244aa588292`  
-		Last Modified: Tue, 29 Oct 2019 01:17:45 GMT  
-		Size: 1.2 KB (1174 bytes)  
-		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:a2866ca0422a4f198b095a367752826b85555e339562decc5e44d85c2e80b164`  
-		Last Modified: Tue, 29 Oct 2019 01:17:56 GMT  
-		Size: 4.4 MB (4363936 bytes)  
-		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:db0b33ad446234bc0d5d81d70e8235e9f2a2defaba8a3c47afd49789b794f82b`  
-		Last Modified: Tue, 29 Oct 2019 01:17:45 GMT  
-		Size: 342.9 KB (342883 bytes)  
-		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:0b2788a23d75a683d60f6de6592ffeafeceb6fd029645bc60db24a24c6f579a2`  
-		Last Modified: Tue, 29 Oct 2019 01:17:42 GMT  
-		Size: 1.2 KB (1175 bytes)  
-		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:93e935f5efc87a9992eedba02c14c7ea95cc88f8001c90b02602f90be225224f`  
-		Last Modified: Tue, 29 Oct 2019 01:17:42 GMT  
-		Size: 352.4 KB (352365 bytes)  
-		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:80ec880bc00b8a709e1319e07d60d1b8c6c78d30316d837be5a9a0726cdf8b2d`  
-		Last Modified: Tue, 29 Oct 2019 01:17:42 GMT  
-		Size: 371.3 KB (371320 bytes)  
-		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:323f893d394298069760d142f0b30943c5aa76ce199d2cdc1a6f9388e8ac910e`  
-		Last Modified: Tue, 29 Oct 2019 01:17:42 GMT  
-		Size: 404.5 KB (404533 bytes)  
-		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:e80dcc119bf90da1613e007b2ef0c06a7a17ef135580869890629afb74fc64ec`  
-		Last Modified: Tue, 29 Oct 2019 01:17:42 GMT  
-		Size: 1.2 KB (1176 bytes)  
-		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
-### `haxe:3.2-windowsservercore` - windows version 10.0.14393.3274; amd64
+### `haxe:3.2-windowsservercore` - windows version 10.0.14393.3326; amd64
 
 ```console
-$ docker pull haxe@sha256:8522eade998d44c9e68dc7930862b13997dea03496629f429a2f12a713e49dd5
+$ docker pull haxe@sha256:8ae6c575574ee541ed18ab8d7408e1f51baad4d6cadeffe585d163c8a449ba4b
 ```
 
 -	Docker Version: 18.03.1-ee-4
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **5.8 GB (5796329277 bytes)**  
+-	Total Size: **5.8 GB (5795082502 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:814f4061d71678540f83160b51b5d15eb93fd6b10c2cd4988c325c309b3b75d5`
+-	Image ID: `sha256:13731c23467087f9009bed6f084ed501caa86654a89d1573cf2bfe2646db4ff6`
 -	Default Command: `["haxe"]`
 -	`SHELL`: `["powershell","-Command","$ErrorActionPreference = 'Stop';"]`
 
 ```dockerfile
-# Tue, 22 Nov 2016 23:24:34 GMT
+# Sat, 19 Nov 2016 17:05:00 GMT
 RUN Apply image 1607-RTM-amd64
-# Sat, 05 Oct 2019 16:15:00 GMT
+# Thu, 07 Nov 2019 14:16:00 GMT
 RUN Install update ltsc2016-amd64
-# Wed, 09 Oct 2019 14:39:48 GMT
+# Wed, 13 Nov 2019 00:41:31 GMT
 SHELL [powershell -Command $ErrorActionPreference = 'Stop';]
-# Wed, 09 Oct 2019 14:39:49 GMT
+# Wed, 13 Nov 2019 00:41:32 GMT
 ENV HAXETOOLKIT_PATH=C:\HaxeToolkit
-# Wed, 09 Oct 2019 14:39:50 GMT
+# Wed, 13 Nov 2019 00:41:33 GMT
 ENV NEKOPATH=C:\HaxeToolkit\neko
-# Wed, 09 Oct 2019 14:39:51 GMT
+# Wed, 13 Nov 2019 00:41:34 GMT
 ENV HAXEPATH=C:\HaxeToolkit\haxe
-# Wed, 09 Oct 2019 14:39:52 GMT
+# Wed, 13 Nov 2019 00:41:36 GMT
 ENV HAXE_STD_PATH=C:\HaxeToolkit\haxe\std
-# Wed, 09 Oct 2019 14:39:54 GMT
+# Wed, 13 Nov 2019 00:41:37 GMT
 ENV HAXELIB_PATH=C:\HaxeToolkit\haxe\lib
-# Wed, 09 Oct 2019 14:41:10 GMT
+# Wed, 13 Nov 2019 00:43:10 GMT
 RUN $newPath = ('{0};{1};{2}' -f $env:HAXEPATH, $env:NEKOPATH, $env:PATH); 	Write-Host ('Updating PATH: {0}' -f $newPath); 	[Environment]::SetEnvironmentVariable('PATH', $newPath, [EnvironmentVariableTarget]::Machine);
-# Wed, 09 Oct 2019 14:43:12 GMT
+# Wed, 13 Nov 2019 00:45:24 GMT
 RUN $url = 'https://download.microsoft.com/download/0/5/6/056dcda9-d667-4e27-8001-8a0c6971d6b1/vcredist_x86.exe'; 	Write-Host ('Downloading {0} ...' -f $url); 	[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12; 	Invoke-WebRequest -Uri $url -OutFile 'vcredist_x86.exe'; 		Write-Host 'Verifying sha256 (89f4e593ea5541d1c53f983923124f9fd061a1c0c967339109e375c661573c17) ...'; 	if ((Get-FileHash vcredist_x86.exe -Algorithm sha256).Hash -ne '89f4e593ea5541d1c53f983923124f9fd061a1c0c967339109e375c661573c17') { 		Write-Host 'FAILED!'; 		exit 1; 	}; 		Write-Host 'Installing ...'; 	Start-Process -FilePath "vcredist_x86.exe" -ArgumentList "/Q" -Wait; 		Write-Host 'Removing installer...'; 	Remove-Item .\vcredist_x86.exe; 		Write-Host 'Complete.';
-# Wed, 09 Oct 2019 14:44:21 GMT
+# Wed, 13 Nov 2019 00:46:40 GMT
 RUN New-Item -ItemType directory -Path $env:HAXETOOLKIT_PATH;
-# Mon, 28 Oct 2019 23:04:46 GMT
+# Wed, 13 Nov 2019 00:46:42 GMT
 ENV NEKO_VERSION=2.3.0
-# Mon, 28 Oct 2019 23:31:23 GMT
+# Wed, 13 Nov 2019 01:44:34 GMT
 RUN $url = 'https://github.com/HaxeFoundation/neko/releases/download/v2-3-0/neko-2.3.0-win.zip'; 	Write-Host ('Downloading {0} ...' -f $url); 	[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12; 	Invoke-WebRequest -Uri $url -OutFile 'neko.zip'; 		Write-Host 'Verifying sha256 (fe5a11350d2dd74338f971d62115f2bd21ec6912f193db04c5d28eb987a50485) ...'; 	if ((Get-FileHash neko.zip -Algorithm sha256).Hash -ne 'fe5a11350d2dd74338f971d62115f2bd21ec6912f193db04c5d28eb987a50485') { 		Write-Host 'FAILED!'; 		exit 1; 	}; 		Write-Host 'Expanding ...'; 	New-Item -ItemType directory -Path tmp; 	Expand-Archive -Path neko.zip -DestinationPath tmp; 	if (Test-Path tmp\neko.exe) { Move-Item tmp $env:NEKOPATH } 	else { Move-Item (Resolve-Path tmp\neko* | Select -ExpandProperty Path) $env:NEKOPATH }; 		Write-Host 'Removing ...'; 	Remove-Item -Path neko.zip, tmp -Force -Recurse -ErrorAction Ignore; 		Write-Host 'Verifying install ...'; 	Write-Host '  neko -version'; neko -version; 		Write-Host 'Complete.';
-# Tue, 29 Oct 2019 00:42:14 GMT
+# Wed, 13 Nov 2019 02:28:16 GMT
 ENV HAXE_VERSION=3.2.1
-# Tue, 29 Oct 2019 00:46:03 GMT
+# Wed, 13 Nov 2019 02:32:15 GMT
 RUN $url = 'https://github.com/HaxeFoundation/haxe/releases/download/3.2.1/haxe-3.2.1-win.zip'; 	Write-Host ('Downloading {0} ...' -f $url); 	[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12; 	Invoke-WebRequest -Uri $url -OutFile haxe.zip; 		Write-Host 'Verifying sha256 (af57d42ca474bba826426e9403b2cb21c210d56addc8bbc0e8fafa88b3660db3) ...'; 	if ((Get-FileHash haxe.zip -Algorithm sha256).Hash -ne 'af57d42ca474bba826426e9403b2cb21c210d56addc8bbc0e8fafa88b3660db3') { 		Write-Host 'FAILED!'; 		exit 1; 	}; 		Write-Host 'Expanding ...'; 	New-Item -ItemType directory -Path tmp; 	Expand-Archive -Path haxe.zip -DestinationPath tmp; 	if (Test-Path tmp\haxe.exe) { Move-Item tmp $env:HAXEPATH } 	else { Move-Item (Resolve-Path tmp\haxe* | Select -ExpandProperty Path) $env:HAXEPATH }; 		Write-Host 'Removing ...'; 	Remove-Item -Path haxe.zip, tmp -Force -Recurse -ErrorAction Ignore; 		Write-Host 'Verifying install ...'; 	Write-Host '  haxe -version'; haxe -version; 	Write-Host '  haxelib version'; haxelib version; 		Write-Host 'Complete.';
-# Tue, 29 Oct 2019 00:47:07 GMT
+# Wed, 13 Nov 2019 02:33:30 GMT
 RUN New-Item -ItemType directory -Path $env:HAXELIB_PATH;
-# Tue, 29 Oct 2019 00:47:08 GMT
+# Wed, 13 Nov 2019 02:33:32 GMT
 ENV HOMEDRIVE=C:
-# Tue, 29 Oct 2019 00:48:10 GMT
+# Wed, 13 Nov 2019 02:34:48 GMT
 RUN $newPath = ('{0}\Users\{1}' -f $env:HOMEDRIVE, $env:USERNAME); 	Write-Host ('Updating HOMEPATH: {0}' -f $newPath); 	[Environment]::SetEnvironmentVariable('HOMEPATH', $newPath, [EnvironmentVariableTarget]::Machine);
-# Tue, 29 Oct 2019 00:49:20 GMT
+# Wed, 13 Nov 2019 02:36:06 GMT
 RUN (New-Object System.Net.WebClient).DownloadString('https://lib.haxe.org') >$null
-# Tue, 29 Oct 2019 00:50:22 GMT
+# Wed, 13 Nov 2019 02:37:20 GMT
 RUN (New-Object System.Net.WebClient).DownloadString('https://d1smpvufia21az.cloudfront.net') >$null
-# Tue, 29 Oct 2019 00:50:24 GMT
+# Wed, 13 Nov 2019 02:37:22 GMT
 CMD ["haxe"]
 ```
 
@@ -8198,85 +8181,84 @@ CMD ["haxe"]
 		Last Modified: Tue, 18 Sep 2018 20:20:50 GMT  
 		Size: 4.1 GB (4069985900 bytes)  
 		MIME: application/vnd.docker.image.rootfs.foreign.diff.tar.gzip
-	-	`sha256:b4f320e456fcdbb0a55de06f153ad96f144c8c14e452ac7f20896ce2509d170f`  
-		Last Modified: Sun, 06 Oct 2019 17:29:40 GMT  
-		Size: 1.7 GB (1651218786 bytes)  
+	-	`sha256:57e8a97eaa75b4ef91d6df4454d12d3b43e629b80dd937008efb8d9eed5f0208`  
+		Size: 1.7 GB (1650127385 bytes)  
 		MIME: application/vnd.docker.image.rootfs.foreign.diff.tar.gzip
-	-	`sha256:29c2f8f4d6816f29c915ea3b2b780c2f4df1eba46b16d0b1a33b59c62c1953c1`  
-		Last Modified: Wed, 09 Oct 2019 16:42:42 GMT  
-		Size: 1.2 KB (1211 bytes)  
+	-	`sha256:60b3361980878b3668e4eb07fb90b61f37029e500df17dc50d49de9e0c64994c`  
+		Last Modified: Thu, 14 Nov 2019 01:18:29 GMT  
+		Size: 1.2 KB (1209 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:7645418a01f2ee59582d47751b1361304cd4c7b1e4ab9565a77f917133a6331f`  
-		Last Modified: Wed, 09 Oct 2019 16:42:41 GMT  
-		Size: 1.2 KB (1216 bytes)  
+	-	`sha256:6c62938738e5c25fbf816031925d415178c189dbfc8cfcbef86710f350aaedc4`  
+		Last Modified: Thu, 14 Nov 2019 01:18:27 GMT  
+		Size: 1.2 KB (1208 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:a160c1b66f2191549584f4d2dca6aa032d7cfd95254a52b0b21f15bf89219532`  
-		Last Modified: Wed, 09 Oct 2019 16:42:41 GMT  
-		Size: 1.2 KB (1191 bytes)  
+	-	`sha256:056ab1a915111a170d9799fa1c746a2a7c12d8e9f835eb329531d26263d59dce`  
+		Last Modified: Thu, 14 Nov 2019 01:18:27 GMT  
+		Size: 1.2 KB (1182 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:3ffae54200a2c5c29c85de0df96e06fa3e0e6034ec312173af3141705d3a5869`  
-		Last Modified: Wed, 09 Oct 2019 16:42:40 GMT  
+	-	`sha256:bf63f39d70fd70d7d1039b869d8c6a805ebece06060f3671f6034cbaff189ef5`  
+		Last Modified: Thu, 14 Nov 2019 01:18:27 GMT  
 		Size: 1.2 KB (1212 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:2ab228dbc093a4784702b1be54fadeb1765832b2bfb345b919847d2288e2e2ba`  
-		Last Modified: Wed, 09 Oct 2019 16:42:39 GMT  
-		Size: 1.2 KB (1183 bytes)  
+	-	`sha256:dd3769a4a773e323244572e92a72843d47ad96442582438e90bda329c3fe848d`  
+		Last Modified: Thu, 14 Nov 2019 01:18:24 GMT  
+		Size: 1.2 KB (1168 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:0b721aa81f4ae2d422eb232a21ed8864e213333df1c5aaf52c7ba236321b64d8`  
-		Last Modified: Wed, 09 Oct 2019 16:42:37 GMT  
-		Size: 1.2 KB (1191 bytes)  
+	-	`sha256:e4f9ce1244e198e81f5ab1a1aaadd8120aa9e7fbbf2314971610df0562669410`  
+		Last Modified: Thu, 14 Nov 2019 01:18:24 GMT  
+		Size: 1.2 KB (1184 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:31856421a051a2f9c7f7aca3660a5a81075d578c7dfa8c833443ac53f444a470`  
-		Last Modified: Wed, 09 Oct 2019 16:42:38 GMT  
-		Size: 5.4 MB (5351990 bytes)  
+	-	`sha256:d6fab71888a2ba793cca8c76b3a98537701fc6fbd7f535aad6fca91550c7189d`  
+		Last Modified: Thu, 14 Nov 2019 01:18:24 GMT  
+		Size: 5.4 MB (5351053 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:b9725648368ad472f5048c8757c7b70ef9173f5e597d8a253c15dc95c17fb518`  
-		Last Modified: Wed, 09 Oct 2019 16:42:39 GMT  
-		Size: 22.4 MB (22411447 bytes)  
+	-	`sha256:d3d720c1893d2b5713eb8da2bcd7a8a4a06c4146a2e2f7fd20f5af35ab119590`  
+		Last Modified: Thu, 14 Nov 2019 01:18:28 GMT  
+		Size: 22.4 MB (22380375 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:11e54e24a5ba6d08457408eb4f91ecbd0d8af4aa5cc6be967298128d89a88816`  
-		Last Modified: Wed, 09 Oct 2019 16:42:33 GMT  
-		Size: 5.3 MB (5293650 bytes)  
+	-	`sha256:32cb4919f4d959711cde03ea1ce713a699584962a975b719189242311f460704`  
+		Last Modified: Thu, 14 Nov 2019 01:18:21 GMT  
+		Size: 5.3 MB (5293824 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:e563d354afc49cb8b46fedb6a404f5e42a82ca9dc7fc4c496edaf5edaf185ff6`  
-		Last Modified: Tue, 29 Oct 2019 01:11:34 GMT  
+	-	`sha256:282f0c1a088692ed3ed1acb119f857709f2039314b83e72e2ab374284ae4a7bc`  
+		Last Modified: Thu, 14 Nov 2019 01:18:17 GMT  
 		Size: 1.2 KB (1188 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:4dabc15e94406c4709eca6d64dce40fe5ac92772317a9978c88ea7565110191b`  
-		Last Modified: Tue, 29 Oct 2019 01:13:59 GMT  
-		Size: 6.9 MB (6929912 bytes)  
+	-	`sha256:098debff455b5735064a1e62a85c2e7409079cc490c72ca26340d0603b744819`  
+		Last Modified: Thu, 14 Nov 2019 04:17:07 GMT  
+		Size: 6.9 MB (6905786 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:8871634145420a3a5f5bebe6659a1ebebf9c312ccf886979780a995d5a669915`  
-		Last Modified: Tue, 29 Oct 2019 01:18:27 GMT  
-		Size: 1.2 KB (1180 bytes)  
+	-	`sha256:60c6877ad7a7cfa3a607b26125fa8e5d12a0c818ac83898445d492846156bb33`  
+		Last Modified: Thu, 14 Nov 2019 04:21:28 GMT  
+		Size: 1.2 KB (1203 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:ac6deb082a25cb455fdd8f1cb4b65f8d3a66923c7105b497a5c76d78ae00e632`  
-		Last Modified: Tue, 29 Oct 2019 01:18:39 GMT  
-		Size: 13.8 MB (13848787 bytes)  
+	-	`sha256:5b52f3c26c206ef301d09052a324ddf1421258d5ce24247dd1315d2ac4045d51`  
+		Last Modified: Thu, 14 Nov 2019 04:21:40 GMT  
+		Size: 13.8 MB (13782707 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:4dfb4ff59dba4d61a3c74ff06450ab05b9b17e44d767ea6f97cbfc35553c9afb`  
-		Last Modified: Tue, 29 Oct 2019 01:18:26 GMT  
-		Size: 5.3 MB (5317364 bytes)  
+	-	`sha256:2fde8352921f50789705b0ca2007fdb88d2793a533323e9469294a925dfd84bf`  
+		Last Modified: Thu, 14 Nov 2019 04:21:27 GMT  
+		Size: 5.3 MB (5308875 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:afbbd8c31d33e2292e03754798d193f3a7da2e79e5c9193c683f9c6e29a1bdaa`  
-		Last Modified: Tue, 29 Oct 2019 01:18:21 GMT  
-		Size: 1.2 KB (1163 bytes)  
+	-	`sha256:38cec9c118693d6afb124d84e8bdf1daf93b6eb9c29a8268c238821465d70ffc`  
+		Last Modified: Thu, 14 Nov 2019 04:21:22 GMT  
+		Size: 1.2 KB (1185 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:6f924904fb1fc58b75eba6c60acf6d2c51cca1255676a696c1ebc9e1cf447168`  
-		Last Modified: Tue, 29 Oct 2019 01:18:23 GMT  
-		Size: 5.3 MB (5315969 bytes)  
+	-	`sha256:512ba889bb1e935f8b63ec5819485b43fe20a42e6ad6f69582dfce2e71a70921`  
+		Last Modified: Thu, 14 Nov 2019 04:21:25 GMT  
+		Size: 5.3 MB (5307518 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:170a27052c9ab26192b4d254220f00c554e11793fdcb43788c45d16c115257be`  
-		Last Modified: Tue, 29 Oct 2019 01:18:23 GMT  
-		Size: 5.3 MB (5321019 bytes)  
+	-	`sha256:8a58cecbc50bd97f07fdaaeb5934e34d31b50808a47a834de2d55c9d838ad23f`  
+		Last Modified: Thu, 14 Nov 2019 04:21:26 GMT  
+		Size: 5.3 MB (5312855 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:62a77b414589dabbb61ec521f5b3838fbc0e776cfc5a6d877445eeac6a797507`  
-		Last Modified: Tue, 29 Oct 2019 01:18:24 GMT  
-		Size: 5.3 MB (5322555 bytes)  
+	-	`sha256:35e88aaf222640838ee4b5d6ee888144bfcba9851f92b8d1413c7765e5c3a0d8`  
+		Last Modified: Thu, 14 Nov 2019 04:21:25 GMT  
+		Size: 5.3 MB (5314298 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:9cfed8cfb973e636aee1123f4954a792bd8357948c3d423d2b6892dabb0b2e97`  
-		Last Modified: Tue, 29 Oct 2019 01:18:21 GMT  
-		Size: 1.2 KB (1163 bytes)  
+	-	`sha256:24e40d6bd8d03feca84fe7093d773ffb2826bdf06b95a0d9c880908ff0ae91cd`  
+		Last Modified: Thu, 14 Nov 2019 04:21:22 GMT  
+		Size: 1.2 KB (1187 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ## `haxe:3.2-windowsservercore-1803`
