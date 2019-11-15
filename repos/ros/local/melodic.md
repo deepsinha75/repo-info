@@ -2749,14 +2749,9 @@ Licenses: (parsed from: `/usr/share/doc/libjpeg-turbo8/copyright`)
 - `JPEG`
 - `LGPL-2.1`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris libjpeg-turbo=1.5.2-0ubuntu5.18.04.1
-'http://archive.ubuntu.com/ubuntu/pool/main/libj/libjpeg-turbo/libjpeg-turbo_1.5.2-0ubuntu5.18.04.1.dsc' libjpeg-turbo_1.5.2-0ubuntu5.18.04.1.dsc 2391 SHA256:d73d719393b288466b4028b54c4307551efdc9a14abd480d02d0c61b2d4431be
-'http://archive.ubuntu.com/ubuntu/pool/main/libj/libjpeg-turbo/libjpeg-turbo_1.5.2.orig.tar.gz' libjpeg-turbo_1.5.2.orig.tar.gz 1657235 SHA256:9098943b270388727ae61de82adec73cf9f0dbb240b3bc8b172595ebf405b528
-'http://archive.ubuntu.com/ubuntu/pool/main/libj/libjpeg-turbo/libjpeg-turbo_1.5.2-0ubuntu5.18.04.1.debian.tar.xz' libjpeg-turbo_1.5.2-0ubuntu5.18.04.1.debian.tar.xz 29492 SHA256:2224964b4f5429223aa7d31db8eb6ac06339dcfe50489484d1fdbfe7ef938073
-```
 
 ### `dpkg` source package: `libjpeg8-empty=8c-2ubuntu8`
 
@@ -3675,14 +3670,9 @@ Licenses: (parsed from: `/usr/share/doc/linux-libc-dev/copyright`)
 
 - `GPL-2`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris linux=4.15.0-66.75
-'http://archive.ubuntu.com/ubuntu/pool/main/l/linux/linux_4.15.0-66.75.dsc' linux_4.15.0-66.75.dsc 7304 SHA256:5964d5d5710195b66afd5070138df2603d6f67c10f283f4e1267043f006afb4d
-'http://archive.ubuntu.com/ubuntu/pool/main/l/linux/linux_4.15.0.orig.tar.gz' linux_4.15.0.orig.tar.gz 157656459 SHA256:c33b8ba5c45a40b689979caa2421c4d933864cd70eb93c00eb69adf43e9a24fc
-'http://archive.ubuntu.com/ubuntu/pool/main/l/linux/linux_4.15.0-66.75.diff.gz' linux_4.15.0-66.75.diff.gz 8440678 SHA256:3130f9b7d12bf209cbec5dce3dc8ab2a089d213869f5109a836bb46e1bb1c250
-```
 
 ### `dpkg` source package: `lksctp-tools=1.0.17+dfsg-2`
 
