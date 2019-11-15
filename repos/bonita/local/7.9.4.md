@@ -1282,14 +1282,9 @@ Licenses: (parsed from: `/usr/share/doc/libjpeg-turbo8/copyright`)
 - `JPEG`
 - `LGPL-2.1`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris libjpeg-turbo=1.5.2-0ubuntu5.18.04.1
-'http://archive.ubuntu.com/ubuntu/pool/main/libj/libjpeg-turbo/libjpeg-turbo_1.5.2-0ubuntu5.18.04.1.dsc' libjpeg-turbo_1.5.2-0ubuntu5.18.04.1.dsc 2391 SHA256:d73d719393b288466b4028b54c4307551efdc9a14abd480d02d0c61b2d4431be
-'http://archive.ubuntu.com/ubuntu/pool/main/libj/libjpeg-turbo/libjpeg-turbo_1.5.2.orig.tar.gz' libjpeg-turbo_1.5.2.orig.tar.gz 1657235 SHA256:9098943b270388727ae61de82adec73cf9f0dbb240b3bc8b172595ebf405b528
-'http://archive.ubuntu.com/ubuntu/pool/main/libj/libjpeg-turbo/libjpeg-turbo_1.5.2-0ubuntu5.18.04.1.debian.tar.xz' libjpeg-turbo_1.5.2-0ubuntu5.18.04.1.debian.tar.xz 29492 SHA256:2224964b4f5429223aa7d31db8eb6ac06339dcfe50489484d1fdbfe7ef938073
-```
 
 ### `dpkg` source package: `libjpeg8-empty=8c-2ubuntu8`
 
