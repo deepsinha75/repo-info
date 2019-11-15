@@ -1,10 +1,10 @@
-# `alpine:20190925`
+# `alpine:20191114`
 
 ## Docker Metadata
 
-- Image ID: `sha256:7eacb6761fa13753aa186e673635ad07f27d6fa26ca06de4ec04216b17b16dbc`
-- Created: `2019-09-25T21:20:01.648231122Z`
-- Virtual Size: ~ 5.59 Mb  
+- Image ID: `sha256:60d63d8e1431962d47b266192f3caa2147c43c3701e2f639d3b5cdb443c5771f`
+- Created: `2019-11-14T22:19:47.728044204Z`
+- Virtual Size: ~ 5.60 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Command: `["/bin/sh"]`
@@ -67,16 +67,16 @@ GPL2
 ### `apk` package: `busybox`
 
 ```console
-busybox-1.31.0-r1 description:
+busybox-1.31.1-r0 description:
 Size optimized toolbox of many common UNIX utilities
 
-busybox-1.31.0-r1 webpage:
+busybox-1.31.1-r0 webpage:
 https://busybox.net/
 
-busybox-1.31.0-r1 installed size:
+busybox-1.31.1-r0 installed size:
 950272
 
-busybox-1.31.0-r1 license:
+busybox-1.31.1-r0 license:
 GPL-2.0
 
 ```
@@ -169,16 +169,16 @@ ISC
 ### `apk` package: `musl`
 
 ```console
-musl-1.1.23-r3 description:
+musl-1.1.24-r0 description:
 the musl c library (libc) implementation
 
-musl-1.1.23-r3 webpage:
+musl-1.1.24-r0 webpage:
 http://www.musl-libc.org/
 
-musl-1.1.23-r3 installed size:
-610304
+musl-1.1.24-r0 installed size:
+614400
 
-musl-1.1.23-r3 license:
+musl-1.1.24-r0 license:
 MIT
 
 ```
@@ -186,16 +186,16 @@ MIT
 ### `apk` package: `musl-utils`
 
 ```console
-musl-utils-1.1.23-r3 description:
+musl-utils-1.1.24-r0 description:
 the musl c library (libc) implementation
 
-musl-utils-1.1.23-r3 webpage:
+musl-utils-1.1.24-r0 webpage:
 http://www.musl-libc.org/
 
-musl-utils-1.1.23-r3 installed size:
-147456
+musl-utils-1.1.24-r0 installed size:
+151552
 
-musl-utils-1.1.23-r3 license:
+musl-utils-1.1.24-r0 license:
 MIT BSD GPL2+
 
 ```
@@ -220,16 +220,16 @@ GPL-2.0-only
 ### `apk` package: `ssl_client`
 
 ```console
-ssl_client-1.31.0-r1 description:
+ssl_client-1.31.1-r0 description:
 EXternal ssl_client for busybox wget
 
-ssl_client-1.31.0-r1 webpage:
+ssl_client-1.31.1-r0 webpage:
 https://busybox.net/
 
-ssl_client-1.31.0-r1 installed size:
+ssl_client-1.31.1-r0 installed size:
 28672
 
-ssl_client-1.31.0-r1 license:
+ssl_client-1.31.1-r0 license:
 GPL-2.0
 
 ```
