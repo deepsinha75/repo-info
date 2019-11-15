@@ -2,19 +2,19 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:6396bcd2cc42438a93088809d97a1a95f15545ea7610b04aadae5a064a46bf0d`
-- Created: `2019-11-07T03:22:27.790966Z`
-- Virtual Size: ~ 270.70 Mb  
+- Image ID: `sha256:2b0dcc5ea49138b7207d696b1c975cbaefb9272f15b7e997e7d58315b4623580`
+- Created: `2019-11-12T04:53:07.586553295Z`
+- Virtual Size: ~ 270.72 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Command: `["iex"]`
 - Environment:
   - `PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
-  - `OTP_VERSION=22.1.6`
+  - `OTP_VERSION=22.1.7`
   - `ELIXIR_VERSION=v1.9.4`
   - `LANG=C.UTF-8`
 - Labels:
-  - `org.opencontainers.image.version=22.1.6`
+  - `org.opencontainers.image.version=22.1.7`
 
 ## `dpkg` (`.deb`-based packages)
 
@@ -1091,20 +1091,13 @@ Licenses: (parsed from: `/usr/share/doc/linux-libc-dev/copyright`)
 - `Unicode-data`
 - `Xen-interface`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris linux=4.9.189-3+deb9u1
-'http://security.debian.org/debian-security/pool/updates/main/l/linux/linux_4.9.189-3+deb9u1.dsc' linux_4.9.189-3+deb9u1.dsc 125208 SHA256:c0222eaa59ac2702aac81f1c29df942486a7de47ecd13c519b6b81e09beb8c78
-'http://security.debian.org/debian-security/pool/updates/main/l/linux/linux_4.9.189.orig.tar.xz' linux_4.9.189.orig.tar.xz 94807908 SHA256:f16329e227a1d4e359bd251fcaca21b0da83f1f00f03adc66e1062a479e1e5c4
-'http://security.debian.org/debian-security/pool/updates/main/l/linux/linux_4.9.189-3+deb9u1.debian.tar.xz' linux_4.9.189-3+deb9u1.debian.tar.xz 2644508 SHA256:612bd11c21c632fa8a180ab059a90f43a0ff3287554fe7a456554800eb9a9ee5
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/linux/4.9.189-3+deb9u1/
 
-- https://sources.debian.net/src/linux/4.9.189-3+deb9u1/ (for browsing the source)
-- https://sources.debian.net/src/linux/4.9.189-3+deb9u1/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/linux/4.9.189-3+deb9u1/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `lksctp-tools=1.0.17+dfsg-1`
 
