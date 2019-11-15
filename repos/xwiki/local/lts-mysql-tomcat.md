@@ -2,8 +2,8 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:a9f71ff8b734e920564dff7b18c8327bdac99724df51a87a2bc0f57ed06bd995`
-- Created: `2019-11-08T03:50:27.977936214Z`
+- Image ID: `sha256:e7fc6597c74404df723ef71c485395217f9a1f595cae751ea5fe74674f60158a`
+- Created: `2019-11-13T23:20:49.034084891Z`
 - Virtual Size: ~ 1.13 Gb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
@@ -23,9 +23,9 @@
   - `TOMCAT_MAJOR=8`
   - `TOMCAT_VERSION=8.5.47`
   - `TOMCAT_SHA512=079b85f3dfca2b137634859208fae6012860201d720d12ff0add3473f1e267d332cb12803958754e1f922599e0d42b7e97f00bcd62584d9148a6f45fde091716`
-  - `XWIKI_VERSION=10.11.9`
-  - `XWIKI_URL_PREFIX=https://maven.xwiki.org/releases/org/xwiki/platform/xwiki-platform-distribution-war/10.11.9`
-  - `XWIKI_DOWNLOAD_SHA256=299fe60d5b32ee1a363ba48ff2346e78eea5f713a0174c20fe9d7531be426a58`
+  - `XWIKI_VERSION=10.11.10`
+  - `XWIKI_URL_PREFIX=https://maven.xwiki.org/releases/org/xwiki/platform/xwiki-platform-distribution-war/10.11.10`
+  - `XWIKI_DOWNLOAD_SHA256=e1feedd24f0a27ba4e36464913a2fcb43a60f9310283a8a6be017a1979618bb7`
 
 ## `dpkg` (`.deb`-based packages)
 
@@ -2072,14 +2072,9 @@ Licenses: (parsed from: `/usr/share/doc/libjpeg-turbo8/copyright`)
 - `JPEG`
 - `LGPL-2.1`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris libjpeg-turbo=1.5.2-0ubuntu5.18.04.1
-'http://archive.ubuntu.com/ubuntu/pool/main/libj/libjpeg-turbo/libjpeg-turbo_1.5.2-0ubuntu5.18.04.1.dsc' libjpeg-turbo_1.5.2-0ubuntu5.18.04.1.dsc 2391 SHA256:d73d719393b288466b4028b54c4307551efdc9a14abd480d02d0c61b2d4431be
-'http://archive.ubuntu.com/ubuntu/pool/main/libj/libjpeg-turbo/libjpeg-turbo_1.5.2.orig.tar.gz' libjpeg-turbo_1.5.2.orig.tar.gz 1657235 SHA256:9098943b270388727ae61de82adec73cf9f0dbb240b3bc8b172595ebf405b528
-'http://archive.ubuntu.com/ubuntu/pool/main/libj/libjpeg-turbo/libjpeg-turbo_1.5.2-0ubuntu5.18.04.1.debian.tar.xz' libjpeg-turbo_1.5.2-0ubuntu5.18.04.1.debian.tar.xz 29492 SHA256:2224964b4f5429223aa7d31db8eb6ac06339dcfe50489484d1fdbfe7ef938073
-```
 
 ### `dpkg` source package: `libjpeg8-empty=8c-2ubuntu8`
 
