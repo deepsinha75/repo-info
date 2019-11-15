@@ -1489,14 +1489,9 @@ Licenses: (parsed from: `/usr/share/doc/imagemagick/copyright`, `/usr/share/doc/
 - `Perllikelicence`
 - `TatcherUlrichPublicDomain`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris imagemagick=8:6.9.10.14+dfsg-7ubuntu2.2
-'http://archive.ubuntu.com/ubuntu/pool/main/i/imagemagick/imagemagick_6.9.10.14+dfsg-7ubuntu2.2.dsc' imagemagick_6.9.10.14+dfsg-7ubuntu2.2.dsc 5193 SHA256:6a36801bffee0dbe5612b9d26a6494c4add889a3defcb25549abd8db486573c7
-'http://archive.ubuntu.com/ubuntu/pool/main/i/imagemagick/imagemagick_6.9.10.14+dfsg.orig.tar.xz' imagemagick_6.9.10.14+dfsg.orig.tar.xz 9064460 SHA256:20f48004c696eee645c5e468b1ff291ceed2759d9c0ed75eb9e616067cc096fd
-'http://archive.ubuntu.com/ubuntu/pool/main/i/imagemagick/imagemagick_6.9.10.14+dfsg-7ubuntu2.2.debian.tar.xz' imagemagick_6.9.10.14+dfsg-7ubuntu2.2.debian.tar.xz 231448 SHA256:3684a3b0d5802c5537ef44c92a53da314b82ac23f593451d8e17cdfdddab7904
-```
 
 ### `dpkg` source package: `init-system-helpers=1.56+nmu1`
 
@@ -2699,14 +2694,9 @@ Licenses: (parsed from: `/usr/share/doc/linux-libc-dev/copyright`)
 
 - `GPL-2`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris linux=5.0.0-32.34
-'http://archive.ubuntu.com/ubuntu/pool/main/l/linux/linux_5.0.0-32.34.dsc' linux_5.0.0-32.34.dsc 7253 SHA256:2fa3131128df6cb82778c28f8d19cc54c959aae5754fcd0178b1dbc1059fefa3
-'http://archive.ubuntu.com/ubuntu/pool/main/l/linux/linux_5.0.0.orig.tar.gz' linux_5.0.0.orig.tar.gz 162593848 SHA256:d9dcf8bafdd5778274c3f9d2634500d4cc186f3ba80fc71ea1a1a100aa65ad6f
-'http://archive.ubuntu.com/ubuntu/pool/main/l/linux/linux_5.0.0-32.34.diff.gz' linux_5.0.0-32.34.diff.gz 5811438 SHA256:df830ecb466d368df993c26f6c687de4830548ada4339ddefe346d716d6cba7d
-```
 
 ### `dpkg` source package: `lsb=10.2019031300ubuntu1`
 
