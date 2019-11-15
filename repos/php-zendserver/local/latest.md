@@ -2,9 +2,9 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:d684d5fd41f7b4741936845f5884b5b2dffad1f764623e128025510a6865dcc3`
-- Created: `2019-09-19T01:03:19.639349471Z`
-- Virtual Size: ~ 1.11 Gb  
+- Image ID: `sha256:11fcb29f12d446855a94acdb1fb1a62faaeadeb8c7ca3814f37ec2fa027ace36`
+- Created: `2019-11-14T00:26:23.555373813Z`
+- Virtual Size: ~ 1.17 Gb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Command: `["/usr/local/bin/run"]`
@@ -53,14 +53,14 @@ $ apt-get source -qq --print-uris adduser=3.113+nmu3ubuntu4
 'http://archive.ubuntu.com/ubuntu/pool/main/a/adduser/adduser_3.113+nmu3ubuntu4.tar.gz' adduser_3.113+nmu3ubuntu4.tar.gz 367980 SHA256:6e4d44c8388b9ba85fc175fa4a48ed43bf6500913c2c631fda0e4419ae63c65a
 ```
 
-### `dpkg` source package: `apache2=2.4.18-2ubuntu3.13`
+### `dpkg` source package: `apache2=2.4.18-2ubuntu3.14`
 
 Binary Packages:
 
-- `apache2=2.4.18-2ubuntu3.13`
-- `apache2-bin=2.4.18-2ubuntu3.13`
-- `apache2-data=2.4.18-2ubuntu3.13`
-- `apache2-utils=2.4.18-2ubuntu3.13`
+- `apache2=2.4.18-2ubuntu3.14`
+- `apache2-bin=2.4.18-2ubuntu3.14`
+- `apache2-data=2.4.18-2ubuntu3.14`
+- `apache2-utils=2.4.18-2ubuntu3.14`
 
 Licenses: (parsed from: `/usr/share/doc/apache2/copyright`, `/usr/share/doc/apache2-bin/copyright`, `/usr/share/doc/apache2-data/copyright`, `/usr/share/doc/apache2-utils/copyright`)
 
@@ -83,10 +83,10 @@ Licenses: (parsed from: `/usr/share/doc/apache2/copyright`, `/usr/share/doc/apac
 Source:
 
 ```console
-$ apt-get source -qq --print-uris apache2=2.4.18-2ubuntu3.13
-'http://security.ubuntu.com/ubuntu/pool/main/a/apache2/apache2_2.4.18-2ubuntu3.13.dsc' apache2_2.4.18-2ubuntu3.13.dsc 2791 SHA256:9e1f0f972b6e3b64a2f0fa807d2f28a60dac05e22020fa199d2f34bf93b415f9
-'http://security.ubuntu.com/ubuntu/pool/main/a/apache2/apache2_2.4.18.orig.tar.bz2' apache2_2.4.18.orig.tar.bz2 5181291 SHA256:0644b050de41f5c9f67c825285049b144690421acb709b06fe53eddfa8a9fd4c
-'http://security.ubuntu.com/ubuntu/pool/main/a/apache2/apache2_2.4.18-2ubuntu3.13.debian.tar.xz' apache2_2.4.18-2ubuntu3.13.debian.tar.xz 407508 SHA256:d95274526dccec0eceebcebde7a48806c874a6bf3df7a2caac95881724c34554
+$ apt-get source -qq --print-uris apache2=2.4.18-2ubuntu3.14
+'http://archive.ubuntu.com/ubuntu/pool/main/a/apache2/apache2_2.4.18-2ubuntu3.14.dsc' apache2_2.4.18-2ubuntu3.14.dsc 2446 SHA256:4615dd67c0b5ba0ac2294d0508a59e5047957a0785978e961780e9820254f8ab
+'http://archive.ubuntu.com/ubuntu/pool/main/a/apache2/apache2_2.4.18.orig.tar.bz2' apache2_2.4.18.orig.tar.bz2 5181291 SHA256:0644b050de41f5c9f67c825285049b144690421acb709b06fe53eddfa8a9fd4c
+'http://archive.ubuntu.com/ubuntu/pool/main/a/apache2/apache2_2.4.18-2ubuntu3.14.debian.tar.xz' apache2_2.4.18-2ubuntu3.14.debian.tar.xz 412140 SHA256:cd0fe699355bd37fa7c60a29d553d59b1afe7b72c2ea0b2fe52810f82d0aa8fe
 ```
 
 ### `dpkg` source package: `apparmor=2.10.95-0ubuntu2.11`
@@ -213,19 +213,23 @@ $ apt-get source -qq --print-uris audit=1:2.4.5-1ubuntu2.1
 'http://archive.ubuntu.com/ubuntu/pool/main/a/audit/audit_2.4.5-1ubuntu2.1.debian.tar.xz' audit_2.4.5-1ubuntu2.1.debian.tar.xz 19292 SHA256:285eef1a789f47c9ad6a30dc8427822b624146715a8f603d011bdc117529d5b2
 ```
 
-### `dpkg` source package: `base-files=9.4ubuntu4.8`
+### `dpkg` source package: `base-files=9.4ubuntu4.11`
 
 Binary Packages:
 
-- `base-files=9.4ubuntu4.8`
+- `base-files=9.4ubuntu4.11`
 
 Licenses: (parsed from: `/usr/share/doc/base-files/copyright`)
 
 - `GPL`
 
-**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
-This is *usually* due to a new package version being released and the old version being removed.
+Source:
 
+```console
+$ apt-get source -qq --print-uris base-files=9.4ubuntu4.11
+'http://archive.ubuntu.com/ubuntu/pool/main/b/base-files/base-files_9.4ubuntu4.11.dsc' base-files_9.4ubuntu4.11.dsc 1575 SHA256:916072c008683dbd6468e04ad140eab668d9e511c888836f4280d0434b8ed065
+'http://archive.ubuntu.com/ubuntu/pool/main/b/base-files/base-files_9.4ubuntu4.11.tar.xz' base-files_9.4ubuntu4.11.tar.xz 65368 SHA256:0e65fae9f9d964c2d0539b79f2fa10591f9ca96a9e415828dc58560dfd97b92a
+```
 
 ### `dpkg` source package: `base-passwd=3.5.39`
 
@@ -549,14 +553,14 @@ $ apt-get source -qq --print-uris dpkg=1.18.4ubuntu1.6
 'http://archive.ubuntu.com/ubuntu/pool/main/d/dpkg/dpkg_1.18.4ubuntu1.6.tar.xz' dpkg_1.18.4ubuntu1.6.tar.xz 4297512 SHA256:9e1e85e9a4d015b1b446d9da5cbec225830a6a1807a93ab32e559c06761187a5
 ```
 
-### `dpkg` source package: `e2fsprogs=1.42.13-1ubuntu1`
+### `dpkg` source package: `e2fsprogs=1.42.13-1ubuntu1.1`
 
 Binary Packages:
 
-- `e2fslibs:amd64=1.42.13-1ubuntu1`
-- `e2fsprogs=1.42.13-1ubuntu1`
-- `libcomerr2:amd64=1.42.13-1ubuntu1`
-- `libss2:amd64=1.42.13-1ubuntu1`
+- `e2fslibs:amd64=1.42.13-1ubuntu1.1`
+- `e2fsprogs=1.42.13-1ubuntu1.1`
+- `libcomerr2:amd64=1.42.13-1ubuntu1.1`
+- `libss2:amd64=1.42.13-1ubuntu1.1`
 
 Licenses: (parsed from: `/usr/share/doc/e2fslibs/copyright`, `/usr/share/doc/e2fsprogs/copyright`, `/usr/share/doc/libcomerr2/copyright`, `/usr/share/doc/libss2/copyright`)
 
@@ -566,10 +570,10 @@ Licenses: (parsed from: `/usr/share/doc/e2fslibs/copyright`, `/usr/share/doc/e2f
 Source:
 
 ```console
-$ apt-get source -qq --print-uris e2fsprogs=1.42.13-1ubuntu1
-'http://archive.ubuntu.com/ubuntu/pool/main/e/e2fsprogs/e2fsprogs_1.42.13-1ubuntu1.dsc' e2fsprogs_1.42.13-1ubuntu1.dsc 2600 SHA256:03d2a33abd1037df7949405721903469fc526c07ac9ca0c5a01f273f7f506b05
+$ apt-get source -qq --print-uris e2fsprogs=1.42.13-1ubuntu1.1
+'http://archive.ubuntu.com/ubuntu/pool/main/e/e2fsprogs/e2fsprogs_1.42.13-1ubuntu1.1.dsc' e2fsprogs_1.42.13-1ubuntu1.1.dsc 2606 SHA256:da94f9eb8dc9ecd99a79d2773a95d79b7ab062b3b404f33c25d53f15bfb958a2
 'http://archive.ubuntu.com/ubuntu/pool/main/e/e2fsprogs/e2fsprogs_1.42.13.orig.tar.gz' e2fsprogs_1.42.13.orig.tar.gz 6511931 SHA256:59993ff3a44f82e504561e0ebf95e8c8fa9f9f5746eb6a7182239605d2a4e2d4
-'http://archive.ubuntu.com/ubuntu/pool/main/e/e2fsprogs/e2fsprogs_1.42.13-1ubuntu1.debian.tar.xz' e2fsprogs_1.42.13-1ubuntu1.debian.tar.xz 69196 SHA256:90326bf4bd93d01fbd9dc73803cc58c8d98ff67e1469e4cbbe672169aa048220
+'http://archive.ubuntu.com/ubuntu/pool/main/e/e2fsprogs/e2fsprogs_1.42.13-1ubuntu1.1.debian.tar.xz' e2fsprogs_1.42.13-1ubuntu1.1.debian.tar.xz 71176 SHA256:2765f0d7ddb32e08b91966376093b833a0b8abec6958d59a715dc1de98f98e82
 ```
 
 ### `dpkg` source package: `elfutils=0.165-3ubuntu1.2`
@@ -610,12 +614,12 @@ $ apt-get source -qq --print-uris expat=2.1.0-7ubuntu0.16.04.5
 'http://archive.ubuntu.com/ubuntu/pool/main/e/expat/expat_2.1.0-7ubuntu0.16.04.5.debian.tar.xz' expat_2.1.0-7ubuntu0.16.04.5.debian.tar.xz 23116 SHA256:f422e05965440e42c030904fc6605c39cb5477c114ac7b172427ce96d63e97e0
 ```
 
-### `dpkg` source package: `file=1:5.25-2ubuntu1.2`
+### `dpkg` source package: `file=1:5.25-2ubuntu1.3`
 
 Binary Packages:
 
-- `file=1:5.25-2ubuntu1.2`
-- `libmagic1:amd64=1:5.25-2ubuntu1.2`
+- `file=1:5.25-2ubuntu1.3`
+- `libmagic1:amd64=1:5.25-2ubuntu1.3`
 
 Licenses: (parsed from: `/usr/share/doc/file/copyright`, `/usr/share/doc/libmagic1/copyright`)
 
@@ -625,9 +629,14 @@ Licenses: (parsed from: `/usr/share/doc/file/copyright`, `/usr/share/doc/libmagi
 - `MIT-Old-Style-with-legal-disclaimer-2`
 - `public-domain`
 
-**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
-This is *usually* due to a new package version being released and the old version being removed.
+Source:
 
+```console
+$ apt-get source -qq --print-uris file=1:5.25-2ubuntu1.3
+'http://archive.ubuntu.com/ubuntu/pool/main/f/file/file_5.25-2ubuntu1.3.dsc' file_5.25-2ubuntu1.3.dsc 2252 SHA256:a6dcb0bd9ce6962897fd16cedb2a189ffc0152eada59e5ece522b67bae71766c
+'http://archive.ubuntu.com/ubuntu/pool/main/f/file/file_5.25.orig.tar.xz' file_5.25.orig.tar.xz 537916 SHA256:8062cae8be640ff8583b8714e394dc73c3127d23f8fe9097f1433cdb36bff31c
+'http://archive.ubuntu.com/ubuntu/pool/main/f/file/file_5.25-2ubuntu1.3.debian.tar.xz' file_5.25-2ubuntu1.3.debian.tar.xz 35184 SHA256:5eafa8f4a72094feb7d212fdea29d9aefcfd3d928788ad0e8ac96a01c8930389
+```
 
 ### `dpkg` source package: `findutils=4.6.0+git+20160126-2`
 
@@ -672,13 +681,13 @@ $ apt-get source -qq --print-uris freetds=0.91-6.1build1
 'http://archive.ubuntu.com/ubuntu/pool/main/f/freetds/freetds_0.91-6.1build1.diff.gz' freetds_0.91-6.1build1.diff.gz 23086 SHA256:b12f50c8923f8b0da8a0e22fb8a2ef93e4317862ab19799c480a1aaa903ecfaf
 ```
 
-### `dpkg` source package: `gcc-5=5.4.0-6ubuntu1~16.04.11`
+### `dpkg` source package: `gcc-5=5.4.0-6ubuntu1~16.04.12`
 
 Binary Packages:
 
-- `gcc-5-base:amd64=5.4.0-6ubuntu1~16.04.11`
-- `libgomp1:amd64=5.4.0-6ubuntu1~16.04.11`
-- `libstdc++6:amd64=5.4.0-6ubuntu1~16.04.11`
+- `gcc-5-base:amd64=5.4.0-6ubuntu1~16.04.12`
+- `libgomp1:amd64=5.4.0-6ubuntu1~16.04.12`
+- `libstdc++6:amd64=5.4.0-6ubuntu1~16.04.12`
 
 Licenses: (parsed from: `/usr/share/doc/gcc-5-base/copyright`, `/usr/share/doc/libgomp1/copyright`, `/usr/share/doc/libstdc++6/copyright`)
 
@@ -688,9 +697,14 @@ Licenses: (parsed from: `/usr/share/doc/gcc-5-base/copyright`, `/usr/share/doc/l
 - `GPL-2`
 - `GPL-3`
 
-**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
-This is *usually* due to a new package version being released and the old version being removed.
+Source:
 
+```console
+$ apt-get source -qq --print-uris gcc-5=5.4.0-6ubuntu1~16.04.12
+'http://archive.ubuntu.com/ubuntu/pool/main/g/gcc-5/gcc-5_5.4.0-6ubuntu1~16.04.12.dsc' gcc-5_5.4.0-6ubuntu1~16.04.12.dsc 28298 SHA256:4f6afb05c2f291aff65695bbf9f561106789f48b89d34d80ded9797c2acb4499
+'http://archive.ubuntu.com/ubuntu/pool/main/g/gcc-5/gcc-5_5.4.0.orig.tar.gz' gcc-5_5.4.0.orig.tar.gz 73530162 SHA256:00f73e8382aa8653aa501ce2263597c2c4429912bfa18102f47cc362f00ed88d
+'http://archive.ubuntu.com/ubuntu/pool/main/g/gcc-5/gcc-5_5.4.0-6ubuntu1~16.04.12.diff.gz' gcc-5_5.4.0-6ubuntu1~16.04.12.diff.gz 1486130 SHA256:d0c772f3f39df2dedaf74b8e5ded301ae77a6f9d1fca4072690d812bd3b0bb69
+```
 
 ### `dpkg` source package: `gccgo-6=6.0.1-0ubuntu1`
 
@@ -1486,7 +1500,7 @@ This is *usually* due to a new package version being released and the old versio
 
 Binary Packages:
 
-- `libapache2-mod-php-zend-server=7.2.15+b70`
+- `libapache2-mod-php-zend-server=7.2.24+b98`
 
 **WARNING:** unable to detect licenses! (package likely not compliant with DEP-5)  
 If source is available (seen below), check the contents of `debian/copyright` within it.
@@ -1515,6 +1529,20 @@ $ apt-get source -qq --print-uris libpng=1.2.54-1ubuntu1.1
 'http://archive.ubuntu.com/ubuntu/pool/main/libp/libpng/libpng_1.2.54.orig.tar.xz' libpng_1.2.54.orig.tar.xz 571448 SHA256:cf85516482780f2bc2c5b5073902f12b1519019d47bf473326c2018bdff1d272
 'http://archive.ubuntu.com/ubuntu/pool/main/libp/libpng/libpng_1.2.54-1ubuntu1.1.debian.tar.xz' libpng_1.2.54-1ubuntu1.1.debian.tar.xz 18820 SHA256:2c3fa2d8bb8df50a89680fecc288b95e9f1c4bf809797f7e85e90c22031a1a2e
 ```
+
+### `dpkg` source package: `libpq-zend-pe=1.0-1`
+
+Binary Packages:
+
+- `libpq-zend-server=1.0-1`
+
+**WARNING:** unable to detect licenses! (package likely not compliant with DEP-5)  
+If source is available (seen below), check the contents of `debian/copyright` within it.
+
+
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
+
 
 ### `dpkg` source package: `libseccomp=2.4.1-0ubuntu0.16.04.2`
 
@@ -1815,7 +1843,7 @@ $ apt-get source -qq --print-uris libxmu=2:1.1.2-2
 
 Binary Packages:
 
-- `lighttpd-zend-server=1.4.41+b17`
+- `lighttpd-zend-server=1.4.41+b54`
 
 **WARNING:** unable to detect licenses! (package likely not compliant with DEP-5)  
 If source is available (seen below), check the contents of `debian/copyright` within it.
@@ -2233,7 +2261,7 @@ $ apt-get source -qq --print-uris pcre3=2:8.38-3.1
 
 Binary Packages:
 
-- `php-pdo-mysql-zend-server=7.2.15+b61`
+- `php-pdo-mysql-zend-server=7.2.24+b86`
 
 **WARNING:** unable to detect licenses! (package likely not compliant with DEP-5)  
 If source is available (seen below), check the contents of `debian/copyright` within it.
@@ -2294,7 +2322,7 @@ $ apt-get source -qq --print-uris perl=5.22.1-9ubuntu0.6
 
 Binary Packages:
 
-- `php-bcmath-zend-server=7.2.15+b63`
+- `php-bcmath-zend-server=7.2.24+b91`
 
 **WARNING:** unable to detect licenses! (package likely not compliant with DEP-5)  
 If source is available (seen below), check the contents of `debian/copyright` within it.
@@ -2308,7 +2336,7 @@ This is *usually* due to a new package version being released and the old versio
 
 Binary Packages:
 
-- `php-bin-zend-server=7.2.15+b70`
+- `php-bin-zend-server=7.2.24+b99`
 
 **WARNING:** unable to detect licenses! (package likely not compliant with DEP-5)  
 If source is available (seen below), check the contents of `debian/copyright` within it.
@@ -2322,7 +2350,7 @@ This is *usually* due to a new package version being released and the old versio
 
 Binary Packages:
 
-- `php-bz2-zend-server=7.2.15+b62`
+- `php-bz2-zend-server=7.2.24+b90`
 
 **WARNING:** unable to detect licenses! (package likely not compliant with DEP-5)  
 If source is available (seen below), check the contents of `debian/copyright` within it.
@@ -2336,7 +2364,7 @@ This is *usually* due to a new package version being released and the old versio
 
 Binary Packages:
 
-- `php-calendar-zend-server=7.2.15+b61`
+- `php-calendar-zend-server=7.2.24+b89`
 
 **WARNING:** unable to detect licenses! (package likely not compliant with DEP-5)  
 If source is available (seen below), check the contents of `debian/copyright` within it.
@@ -2350,7 +2378,7 @@ This is *usually* due to a new package version being released and the old versio
 
 Binary Packages:
 
-- `php-ctype-zend-server=7.2.15+b61`
+- `php-ctype-zend-server=7.2.24+b89`
 
 **WARNING:** unable to detect licenses! (package likely not compliant with DEP-5)  
 If source is available (seen below), check the contents of `debian/copyright` within it.
@@ -2364,7 +2392,7 @@ This is *usually* due to a new package version being released and the old versio
 
 Binary Packages:
 
-- `php-curl-zend-server=7.2.15+b64`
+- `php-curl-zend-server=7.2.24+b92`
 
 **WARNING:** unable to detect licenses! (package likely not compliant with DEP-5)  
 If source is available (seen below), check the contents of `debian/copyright` within it.
@@ -2378,7 +2406,7 @@ This is *usually* due to a new package version being released and the old versio
 
 Binary Packages:
 
-- `php-dev-zend-server=7.2.15+b61`
+- `php-dev-zend-server=7.2.24+b93`
 
 **WARNING:** unable to detect licenses! (package likely not compliant with DEP-5)  
 If source is available (seen below), check the contents of `debian/copyright` within it.
@@ -2392,7 +2420,7 @@ This is *usually* due to a new package version being released and the old versio
 
 Binary Packages:
 
-- `php-exif-zend-server=7.2.15+b61`
+- `php-exif-zend-server=7.2.24+b89`
 
 **WARNING:** unable to detect licenses! (package likely not compliant with DEP-5)  
 If source is available (seen below), check the contents of `debian/copyright` within it.
@@ -2406,7 +2434,7 @@ This is *usually* due to a new package version being released and the old versio
 
 Binary Packages:
 
-- `php-fcgi-zend-server=7.2.15+b63`
+- `php-fcgi-zend-server=7.3.11+b89`
 
 **WARNING:** unable to detect licenses! (package likely not compliant with DEP-5)  
 If source is available (seen below), check the contents of `debian/copyright` within it.
@@ -2420,7 +2448,7 @@ This is *usually* due to a new package version being released and the old versio
 
 Binary Packages:
 
-- `php-fileinfo-zend-server=7.2.15+b61`
+- `php-fileinfo-zend-server=7.2.24+b89`
 
 **WARNING:** unable to detect licenses! (package likely not compliant with DEP-5)  
 If source is available (seen below), check the contents of `debian/copyright` within it.
@@ -2434,7 +2462,7 @@ This is *usually* due to a new package version being released and the old versio
 
 Binary Packages:
 
-- `php-ftp-zend-server=7.2.15+b61`
+- `php-ftp-zend-server=7.2.24+b89`
 
 **WARNING:** unable to detect licenses! (package likely not compliant with DEP-5)  
 If source is available (seen below), check the contents of `debian/copyright` within it.
@@ -2448,7 +2476,7 @@ This is *usually* due to a new package version being released and the old versio
 
 Binary Packages:
 
-- `php-gd-zend-server=7.2.15+b61`
+- `php-gd-zend-server=7.2.24+b89`
 
 **WARNING:** unable to detect licenses! (package likely not compliant with DEP-5)  
 If source is available (seen below), check the contents of `debian/copyright` within it.
@@ -2462,7 +2490,7 @@ This is *usually* due to a new package version being released and the old versio
 
 Binary Packages:
 
-- `php-gettext-zend-server=7.2.15+b61`
+- `php-gettext-zend-server=7.2.24+b89`
 
 **WARNING:** unable to detect licenses! (package likely not compliant with DEP-5)  
 If source is available (seen below), check the contents of `debian/copyright` within it.
@@ -2476,7 +2504,7 @@ This is *usually* due to a new package version being released and the old versio
 
 Binary Packages:
 
-- `php-gmp-zend-server=7.2.15+b61`
+- `php-gmp-zend-server=7.2.24+b89`
 
 **WARNING:** unable to detect licenses! (package likely not compliant with DEP-5)  
 If source is available (seen below), check the contents of `debian/copyright` within it.
@@ -2490,7 +2518,7 @@ This is *usually* due to a new package version being released and the old versio
 
 Binary Packages:
 
-- `php-imagick-zend-server=7.2.15+b61`
+- `php-imagick-zend-server=7.2.24+b89`
 
 **WARNING:** unable to detect licenses! (package likely not compliant with DEP-5)  
 If source is available (seen below), check the contents of `debian/copyright` within it.
@@ -2504,7 +2532,7 @@ This is *usually* due to a new package version being released and the old versio
 
 Binary Packages:
 
-- `php-imap-zend-server=7.2.15+b61`
+- `php-imap-zend-server=7.2.24+b89`
 
 **WARNING:** unable to detect licenses! (package likely not compliant with DEP-5)  
 If source is available (seen below), check the contents of `debian/copyright` within it.
@@ -2518,7 +2546,7 @@ This is *usually* due to a new package version being released and the old versio
 
 Binary Packages:
 
-- `php-intl-zend-server=7.2.15+b61`
+- `php-intl-zend-server=7.2.24+b89`
 
 **WARNING:** unable to detect licenses! (package likely not compliant with DEP-5)  
 If source is available (seen below), check the contents of `debian/copyright` within it.
@@ -2532,7 +2560,7 @@ This is *usually* due to a new package version being released and the old versio
 
 Binary Packages:
 
-- `php-ldap-zend-server=7.2.15+b63`
+- `php-ldap-zend-server=7.2.24+b91`
 
 **WARNING:** unable to detect licenses! (package likely not compliant with DEP-5)  
 If source is available (seen below), check the contents of `debian/copyright` within it.
@@ -2546,7 +2574,7 @@ This is *usually* due to a new package version being released and the old versio
 
 Binary Packages:
 
-- `php-mbstring-zend-server=7.2.15+b60`
+- `php-mbstring-zend-server=7.2.24+b86`
 
 **WARNING:** unable to detect licenses! (package likely not compliant with DEP-5)  
 If source is available (seen below), check the contents of `debian/copyright` within it.
@@ -2560,7 +2588,7 @@ This is *usually* due to a new package version being released and the old versio
 
 Binary Packages:
 
-- `php-mcrypt-zend-server=7.1.26+b1`
+- `php-mcrypt-zend-server=7.1.33+b26`
 
 **WARNING:** unable to detect licenses! (package likely not compliant with DEP-5)  
 If source is available (seen below), check the contents of `debian/copyright` within it.
@@ -2574,7 +2602,7 @@ This is *usually* due to a new package version being released and the old versio
 
 Binary Packages:
 
-- `php-memcached-zend-server=7.2.15+b60`
+- `php-memcached-zend-server=7.2.24+b86`
 
 **WARNING:** unable to detect licenses! (package likely not compliant with DEP-5)  
 If source is available (seen below), check the contents of `debian/copyright` within it.
@@ -2588,7 +2616,7 @@ This is *usually* due to a new package version being released and the old versio
 
 Binary Packages:
 
-- `php-mongodb-zend-server=7.2.15+b61`
+- `php-mongodb-zend-server=7.2.24+b87`
 
 **WARNING:** unable to detect licenses! (package likely not compliant with DEP-5)  
 If source is available (seen below), check the contents of `debian/copyright` within it.
@@ -2602,7 +2630,7 @@ This is *usually* due to a new package version being released and the old versio
 
 Binary Packages:
 
-- `php-mysqli-zend-server=7.2.15+b59`
+- `php-mysqli-zend-server=7.2.24+b85`
 
 **WARNING:** unable to detect licenses! (package likely not compliant with DEP-5)  
 If source is available (seen below), check the contents of `debian/copyright` within it.
@@ -2616,7 +2644,7 @@ This is *usually* due to a new package version being released and the old versio
 
 Binary Packages:
 
-- `php-oci8-zend-server=7.2.15+b60`
+- `php-oci8-zend-server=7.2.24+b86`
 
 **WARNING:** unable to detect licenses! (package likely not compliant with DEP-5)  
 If source is available (seen below), check the contents of `debian/copyright` within it.
@@ -2630,7 +2658,7 @@ This is *usually* due to a new package version being released and the old versio
 
 Binary Packages:
 
-- `php-odbc-zend-server=7.2.15+b60`
+- `php-odbc-zend-server=7.2.24+b85`
 
 **WARNING:** unable to detect licenses! (package likely not compliant with DEP-5)  
 If source is available (seen below), check the contents of `debian/copyright` within it.
@@ -2644,7 +2672,7 @@ This is *usually* due to a new package version being released and the old versio
 
 Binary Packages:
 
-- `php-pcntl-zend-server=7.2.15+b59`
+- `php-pcntl-zend-server=7.2.24+b84`
 
 **WARNING:** unable to detect licenses! (package likely not compliant with DEP-5)  
 If source is available (seen below), check the contents of `debian/copyright` within it.
@@ -2658,7 +2686,7 @@ This is *usually* due to a new package version being released and the old versio
 
 Binary Packages:
 
-- `php-pdo-dblib-zend-server=7.2.15+b59`
+- `php-pdo-dblib-zend-server=7.2.24+b84`
 
 **WARNING:** unable to detect licenses! (package likely not compliant with DEP-5)  
 If source is available (seen below), check the contents of `debian/copyright` within it.
@@ -2672,7 +2700,7 @@ This is *usually* due to a new package version being released and the old versio
 
 Binary Packages:
 
-- `php-pdo-odbc-zend-server=7.2.15+b60`
+- `php-pdo-odbc-zend-server=7.2.24+b85`
 
 **WARNING:** unable to detect licenses! (package likely not compliant with DEP-5)  
 If source is available (seen below), check the contents of `debian/copyright` within it.
@@ -2686,7 +2714,7 @@ This is *usually* due to a new package version being released and the old versio
 
 Binary Packages:
 
-- `php-pdo-pgsql-zend-server=7.2.15+b60`
+- `php-pdo-pgsql-zend-server=7.2.24+b86`
 
 **WARNING:** unable to detect licenses! (package likely not compliant with DEP-5)  
 If source is available (seen below), check the contents of `debian/copyright` within it.
@@ -2700,7 +2728,7 @@ This is *usually* due to a new package version being released and the old versio
 
 Binary Packages:
 
-- `php-pgsql-zend-server=7.2.15+b60`
+- `php-pgsql-zend-server=7.2.24+b86`
 
 **WARNING:** unable to detect licenses! (package likely not compliant with DEP-5)  
 If source is available (seen below), check the contents of `debian/copyright` within it.
@@ -2714,7 +2742,7 @@ This is *usually* due to a new package version being released and the old versio
 
 Binary Packages:
 
-- `php-phar-zend-server=7.2.15+b60`
+- `php-phar-zend-server=7.2.24+b85`
 
 **WARNING:** unable to detect licenses! (package likely not compliant with DEP-5)  
 If source is available (seen below), check the contents of `debian/copyright` within it.
@@ -2728,7 +2756,7 @@ This is *usually* due to a new package version being released and the old versio
 
 Binary Packages:
 
-- `php-posix-zend-server=7.2.15+b59`
+- `php-posix-zend-server=7.2.24+b84`
 
 **WARNING:** unable to detect licenses! (package likely not compliant with DEP-5)  
 If source is available (seen below), check the contents of `debian/copyright` within it.
@@ -2742,7 +2770,7 @@ This is *usually* due to a new package version being released and the old versio
 
 Binary Packages:
 
-- `php-redis-zend-server=7.2.15+b61`
+- `php-redis-zend-server=7.2.24+b86`
 
 **WARNING:** unable to detect licenses! (package likely not compliant with DEP-5)  
 If source is available (seen below), check the contents of `debian/copyright` within it.
@@ -2756,7 +2784,7 @@ This is *usually* due to a new package version being released and the old versio
 
 Binary Packages:
 
-- `php-shmop-zend-server=7.2.15+b59`
+- `php-shmop-zend-server=7.2.24+b84`
 
 **WARNING:** unable to detect licenses! (package likely not compliant with DEP-5)  
 If source is available (seen below), check the contents of `debian/copyright` within it.
@@ -2770,7 +2798,7 @@ This is *usually* due to a new package version being released and the old versio
 
 Binary Packages:
 
-- `php-soap-zend-server=7.2.15+b59`
+- `php-soap-zend-server=7.2.24+b84`
 
 **WARNING:** unable to detect licenses! (package likely not compliant with DEP-5)  
 If source is available (seen below), check the contents of `debian/copyright` within it.
@@ -2784,7 +2812,7 @@ This is *usually* due to a new package version being released and the old versio
 
 Binary Packages:
 
-- `php-sockets-zend-server=7.2.15+b59`
+- `php-sockets-zend-server=7.2.24+b84`
 
 **WARNING:** unable to detect licenses! (package likely not compliant with DEP-5)  
 If source is available (seen below), check the contents of `debian/copyright` within it.
@@ -2798,7 +2826,7 @@ This is *usually* due to a new package version being released and the old versio
 
 Binary Packages:
 
-- `php-ssh2-zend-server=7.2.15+b58`
+- `php-ssh2-zend-server=7.2.24+b83`
 
 **WARNING:** unable to detect licenses! (package likely not compliant with DEP-5)  
 If source is available (seen below), check the contents of `debian/copyright` within it.
@@ -2812,7 +2840,7 @@ This is *usually* due to a new package version being released and the old versio
 
 Binary Packages:
 
-- `php-sysvmsg-zend-server=7.2.15+b58`
+- `php-sysvmsg-zend-server=7.2.24+b83`
 
 **WARNING:** unable to detect licenses! (package likely not compliant with DEP-5)  
 If source is available (seen below), check the contents of `debian/copyright` within it.
@@ -2826,7 +2854,7 @@ This is *usually* due to a new package version being released and the old versio
 
 Binary Packages:
 
-- `php-sysvsem-zend-server=7.2.15+b58`
+- `php-sysvsem-zend-server=7.2.24+b83`
 
 **WARNING:** unable to detect licenses! (package likely not compliant with DEP-5)  
 If source is available (seen below), check the contents of `debian/copyright` within it.
@@ -2840,7 +2868,7 @@ This is *usually* due to a new package version being released and the old versio
 
 Binary Packages:
 
-- `php-sysvshm-zend-server=7.2.15+b58`
+- `php-sysvshm-zend-server=7.2.24+b83`
 
 **WARNING:** unable to detect licenses! (package likely not compliant with DEP-5)  
 If source is available (seen below), check the contents of `debian/copyright` within it.
@@ -2854,7 +2882,7 @@ This is *usually* due to a new package version being released and the old versio
 
 Binary Packages:
 
-- `php-tidy-zend-server=7.2.15+b58`
+- `php-tidy-zend-server=7.2.24+b83`
 
 **WARNING:** unable to detect licenses! (package likely not compliant with DEP-5)  
 If source is available (seen below), check the contents of `debian/copyright` within it.
@@ -2868,7 +2896,7 @@ This is *usually* due to a new package version being released and the old versio
 
 Binary Packages:
 
-- `php-tokenizer-zend-server=7.2.15+b58`
+- `php-tokenizer-zend-server=7.2.24+b83`
 
 **WARNING:** unable to detect licenses! (package likely not compliant with DEP-5)  
 If source is available (seen below), check the contents of `debian/copyright` within it.
@@ -2882,7 +2910,7 @@ This is *usually* due to a new package version being released and the old versio
 
 Binary Packages:
 
-- `php-wddx-zend-server=7.2.15+b58`
+- `php-wddx-zend-server=7.2.24+b83`
 
 **WARNING:** unable to detect licenses! (package likely not compliant with DEP-5)  
 If source is available (seen below), check the contents of `debian/copyright` within it.
@@ -2896,7 +2924,7 @@ This is *usually* due to a new package version being released and the old versio
 
 Binary Packages:
 
-- `php-xdebug-zend-server=7.2.15+b59`
+- `php-xdebug-zend-server=7.2.24+b84`
 
 **WARNING:** unable to detect licenses! (package likely not compliant with DEP-5)  
 If source is available (seen below), check the contents of `debian/copyright` within it.
@@ -2910,7 +2938,7 @@ This is *usually* due to a new package version being released and the old versio
 
 Binary Packages:
 
-- `php-xmlrpc-zend-server=7.2.15+b58`
+- `php-xmlrpc-zend-server=7.2.24+b83`
 
 **WARNING:** unable to detect licenses! (package likely not compliant with DEP-5)  
 If source is available (seen below), check the contents of `debian/copyright` within it.
@@ -2924,7 +2952,7 @@ This is *usually* due to a new package version being released and the old versio
 
 Binary Packages:
 
-- `php-xsl-zend-server=7.2.15+b58`
+- `php-xsl-zend-server=7.2.24+b83`
 
 **WARNING:** unable to detect licenses! (package likely not compliant with DEP-5)  
 If source is available (seen below), check the contents of `debian/copyright` within it.
@@ -2938,7 +2966,7 @@ This is *usually* due to a new package version being released and the old versio
 
 Binary Packages:
 
-- `php-zip-zend-server=7.2.15+b62`
+- `php-zip-zend-server=7.2.24+b87`
 
 **WARNING:** unable to detect licenses! (package likely not compliant with DEP-5)  
 If source is available (seen below), check the contents of `debian/copyright` within it.
@@ -2967,30 +2995,6 @@ $ apt-get source -qq --print-uris popt=1.16-10
 'http://archive.ubuntu.com/ubuntu/pool/main/p/popt/popt_1.16-10.dsc' popt_1.16-10.dsc 1800 SHA256:874c8f002ef0f8d0c704cf136af58079983e7dc2646bf4322f6fe9261ddfe4a7
 'http://archive.ubuntu.com/ubuntu/pool/main/p/popt/popt_1.16.orig.tar.gz' popt_1.16.orig.tar.gz 702769 SHA256:e728ed296fe9f069a0e005003c3d6b2dde3d9cad453422a10d6558616d304cc8
 'http://archive.ubuntu.com/ubuntu/pool/main/p/popt/popt_1.16-10.debian.tar.xz' popt_1.16-10.debian.tar.xz 14136 SHA256:8300cbb47148f59fc6edc2f8ebe227a319b080ed26d17db846d1e346f0614899
-```
-
-### `dpkg` source package: `postgresql-9.5=9.5.19-0ubuntu0.16.04.1`
-
-Binary Packages:
-
-- `libpq5:amd64=9.5.19-0ubuntu0.16.04.1`
-
-Licenses: (parsed from: `/usr/share/doc/libpq5/copyright`)
-
-- `Custom-Unicode`
-- `Custom-pg_dump`
-- `Custom-regex`
-- `PostgreSQL`
-- `Tcl`
-- `almost exclusively BSD`
-
-Source:
-
-```console
-$ apt-get source -qq --print-uris postgresql-9.5=9.5.19-0ubuntu0.16.04.1
-'http://archive.ubuntu.com/ubuntu/pool/main/p/postgresql-9.5/postgresql-9.5_9.5.19-0ubuntu0.16.04.1.dsc' postgresql-9.5_9.5.19-0ubuntu0.16.04.1.dsc 3678 SHA256:ca6876c5aba55931f867aba213136850543eafdd466200b793b9a9811a93f3ff
-'http://archive.ubuntu.com/ubuntu/pool/main/p/postgresql-9.5/postgresql-9.5_9.5.19.orig.tar.bz2' postgresql-9.5_9.5.19.orig.tar.bz2 17571998 SHA256:960caa26612bca8a3791d1c0bdc5c6d24b3d15841becb617470424edbc5e1bb3
-'http://archive.ubuntu.com/ubuntu/pool/main/p/postgresql-9.5/postgresql-9.5_9.5.19-0ubuntu0.16.04.1.debian.tar.xz' postgresql-9.5_9.5.19-0ubuntu0.16.04.1.debian.tar.xz 27480 SHA256:59d45160ee46fb64f800b37a0017dc285e16847a04d344f4097cfc9b1269ff3b
 ```
 
 ### `dpkg` source package: `prelink=0.0.20130503-1.1`
@@ -3393,18 +3397,18 @@ $ apt-get source -qq --print-uris ustr=1.0.4-5
 'http://archive.ubuntu.com/ubuntu/pool/main/u/ustr/ustr_1.0.4-5.debian.tar.xz' ustr_1.0.4-5.debian.tar.xz 24948 SHA256:a21e78acf82dcccef2893932ef7b85852419bfd9b18382e63c34e7710c1d7762
 ```
 
-### `dpkg` source package: `util-linux=2.27.1-6ubuntu3.8`
+### `dpkg` source package: `util-linux=2.27.1-6ubuntu3.9`
 
 Binary Packages:
 
-- `bsdutils=1:2.27.1-6ubuntu3.8`
-- `libblkid1:amd64=2.27.1-6ubuntu3.8`
-- `libfdisk1:amd64=2.27.1-6ubuntu3.8`
-- `libmount1:amd64=2.27.1-6ubuntu3.8`
-- `libsmartcols1:amd64=2.27.1-6ubuntu3.8`
-- `libuuid1:amd64=2.27.1-6ubuntu3.8`
-- `mount=2.27.1-6ubuntu3.8`
-- `util-linux=2.27.1-6ubuntu3.8`
+- `bsdutils=1:2.27.1-6ubuntu3.9`
+- `libblkid1:amd64=2.27.1-6ubuntu3.9`
+- `libfdisk1:amd64=2.27.1-6ubuntu3.9`
+- `libmount1:amd64=2.27.1-6ubuntu3.9`
+- `libsmartcols1:amd64=2.27.1-6ubuntu3.9`
+- `libuuid1:amd64=2.27.1-6ubuntu3.9`
+- `mount=2.27.1-6ubuntu3.9`
+- `util-linux=2.27.1-6ubuntu3.9`
 
 Licenses: (parsed from: `/usr/share/doc/bsdutils/copyright`, `/usr/share/doc/libblkid1/copyright`, `/usr/share/doc/libfdisk1/copyright`, `/usr/share/doc/libmount1/copyright`, `/usr/share/doc/libsmartcols1/copyright`, `/usr/share/doc/libuuid1/copyright`, `/usr/share/doc/mount/copyright`, `/usr/share/doc/util-linux/copyright`)
 
@@ -3425,9 +3429,14 @@ Licenses: (parsed from: `/usr/share/doc/bsdutils/copyright`, `/usr/share/doc/lib
 - `MIT`
 - `public-domain`
 
-**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
-This is *usually* due to a new package version being released and the old version being removed.
+Source:
 
+```console
+$ apt-get source -qq --print-uris util-linux=2.27.1-6ubuntu3.9
+'http://archive.ubuntu.com/ubuntu/pool/main/u/util-linux/util-linux_2.27.1-6ubuntu3.9.dsc' util-linux_2.27.1-6ubuntu3.9.dsc 3586 SHA256:184c6e918aab02046b1f8769e488013a4da2c59d9108123447ead31ee9270d72
+'http://archive.ubuntu.com/ubuntu/pool/main/u/util-linux/util-linux_2.27.1.orig.tar.xz' util-linux_2.27.1.orig.tar.xz 3964512 SHA256:0a818fcdede99aec43ffe6ca5b5388bff80d162f2f7bd4541dca94fecb87a290
+'http://archive.ubuntu.com/ubuntu/pool/main/u/util-linux/util-linux_2.27.1-6ubuntu3.9.debian.tar.xz' util-linux_2.27.1-6ubuntu3.9.debian.tar.xz 88260 SHA256:6d82ba9a363e1c5aa96b8ee964808d5678bb1749547bc173a701e70082e223bd
+```
 
 ### `dpkg` source package: `xauth=1:1.0.9-1ubuntu2`
 
@@ -3503,7 +3512,7 @@ $ apt-get source -qq --print-uris xz-utils=5.1.1alpha+20120614-2ubuntu2
 
 Binary Packages:
 
-- `zend-base=2019.0.0`
+- `zend-base=2019.0.3`
 
 **WARNING:** unable to detect licenses! (package likely not compliant with DEP-5)  
 If source is available (seen below), check the contents of `debian/copyright` within it.
@@ -3531,11 +3540,11 @@ This is *usually* due to a new package version being released and the old versio
 
 Binary Packages:
 
-- `php-common-extensions-zend-server=9.2.0+b60`
-- `php-extra-extensions-zend-server=9.2.0+b60`
-- `php-unix-extensions-zend-server=9.2.0+b60`
-- `zend-server=2019.0.0+b260`
-- `zend-server-common=2019.0.0+b260`
+- `php-common-extensions-zend-server=9.2.0+b87`
+- `php-extra-extensions-zend-server=9.2.0+b87`
+- `php-unix-extensions-zend-server=9.2.0+b87`
+- `zend-server=2019.0.3+b345`
+- `zend-server-common=2019.0.3+b345`
 
 **WARNING:** unable to detect licenses! (package likely not compliant with DEP-5)  
 If source is available (seen below), check the contents of `debian/copyright` within it.
