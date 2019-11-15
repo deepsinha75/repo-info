@@ -1,10 +1,10 @@
-# `wordpress:5.2.4-apache`
+# `wordpress:5.3.0-apache`
 
 ## Docker Metadata
 
-- Image ID: `sha256:c3a1256d5af517887e91eb5fc17f3d9e6e9f16d5e4cb1ee7b15538cdd1ef4be4`
-- Created: `2019-10-25T09:55:19.590625169Z`
-- Virtual Size: ~ 537.32 Mb  
+- Image ID: `sha256:e4bd752aeb0d6925fa64c8adbcceca63b72ec0a9aba63e251b8c8bc3522be964`
+- Created: `2019-11-14T00:31:34.485947743Z`
+- Virtual Size: ~ 539.36 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["docker-entrypoint.sh"]`
@@ -26,8 +26,8 @@
   - `PHP_ASC_URL=https://www.php.net/get/php-7.3.11.tar.xz.asc/from/this/mirror`
   - `PHP_SHA256=657cf6464bac28e9490c59c07a2cf7bb76c200f09cfadf6e44ea64e95fa01021`
   - `PHP_MD5=`
-  - `WORDPRESS_VERSION=5.2.4`
-  - `WORDPRESS_SHA1=9eb002761fc8b424727d8c9d291a6ecfde0c53b7`
+  - `WORDPRESS_VERSION=5.3`
+  - `WORDPRESS_SHA1=e3edcb1131e539c2b2e10fed37f8b6683c824a98`
 
 ## `dpkg` (`.deb`-based packages)
 
@@ -1266,20 +1266,13 @@ Licenses: (parsed from: `/usr/share/doc/ghostscript/copyright`, `/usr/share/doc/
 - `other`
 - `public-domain`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris ghostscript=9.27~dfsg-2+deb10u2
-'http://security.debian.org/debian-security/pool/updates/main/g/ghostscript/ghostscript_9.27~dfsg-2+deb10u2.dsc' ghostscript_9.27~dfsg-2+deb10u2.dsc 2950 SHA256:d097adcef5fc7fe41f8ff6913db35d7332ed6e74f8721db1aba7667f53e370c0
-'http://security.debian.org/debian-security/pool/updates/main/g/ghostscript/ghostscript_9.27~dfsg.orig.tar.xz' ghostscript_9.27~dfsg.orig.tar.xz 17723588 SHA256:b90d2117e93c63d774a5ab0a4d6a19c5dcbfd877462ee39a405262948e23ff9b
-'http://security.debian.org/debian-security/pool/updates/main/g/ghostscript/ghostscript_9.27~dfsg-2+deb10u2.debian.tar.xz' ghostscript_9.27~dfsg-2+deb10u2.debian.tar.xz 113084 SHA256:6a97e2b02946ba929bdca19376dd0dad9c918f6a3d08690e88e17e9603ef887b
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/ghostscript/9.27~dfsg-2+deb10u2/
 
-- https://sources.debian.net/src/ghostscript/9.27~dfsg-2+deb10u2/ (for browsing the source)
-- https://sources.debian.net/src/ghostscript/9.27~dfsg-2+deb10u2/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/ghostscript/9.27~dfsg-2+deb10u2/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `glib2.0=2.58.3-2+deb10u1`
 
@@ -2817,20 +2810,13 @@ Licenses: (parsed from: `/usr/share/doc/linux-libc-dev/copyright`)
 - `X11`
 - `Xen-interface`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris linux=4.19.67-2+deb10u1
-'http://security.debian.org/debian-security/pool/updates/main/l/linux/linux_4.19.67-2+deb10u1.dsc' linux_4.19.67-2+deb10u1.dsc 189311 SHA256:aafa032cc941968d13ab80e1a12f9e94fb52bb75ec1a536a2a666ce4b455e1f9
-'http://security.debian.org/debian-security/pool/updates/main/l/linux/linux_4.19.67.orig.tar.xz' linux_4.19.67.orig.tar.xz 107294428 SHA256:b7f55fff0fe9a1129d31be4fb7193bd564ba064cf638cac7625640e12755b0ab
-'http://security.debian.org/debian-security/pool/updates/main/l/linux/linux_4.19.67-2+deb10u1.debian.tar.xz' linux_4.19.67-2+deb10u1.debian.tar.xz 3143752 SHA256:9a062609222354301df211e6921873d5b351769b1103a5cf52a822662cd17e07
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/linux/4.19.67-2+deb10u1/
 
-- https://sources.debian.net/src/linux/4.19.67-2+deb10u1/ (for browsing the source)
-- https://sources.debian.net/src/linux/4.19.67-2+deb10u1/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/linux/4.19.67-2+deb10u1/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `lsb=10.2019051400`
 

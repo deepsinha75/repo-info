@@ -1,10 +1,10 @@
-# `wordpress:5.2.4-php7.2-fpm-alpine`
+# `wordpress:5.3.0-php7.2-fpm-alpine`
 
 ## Docker Metadata
 
-- Image ID: `sha256:fc683598589ab5cbed470d5eb44011b9f095174902ffa8f70af261667406d0d9`
-- Created: `2019-10-25T09:53:03.649764357Z`
-- Virtual Size: ~ 192.98 Mb  
+- Image ID: `sha256:87e4ad4197812fe1a115d2ff1f34f937a4c745141b5449abc2b7292e6971e334`
+- Created: `2019-11-14T00:31:20.246054598Z`
+- Virtual Size: ~ 195.01 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["docker-entrypoint.sh"]`
@@ -23,8 +23,8 @@
   - `PHP_ASC_URL=https://www.php.net/get/php-7.2.24.tar.xz.asc/from/this/mirror`
   - `PHP_SHA256=a6a6cc03388060aa5f8f9e45799b72bce1c7ed7b9d7b3f1187787202aad91d25`
   - `PHP_MD5=`
-  - `WORDPRESS_VERSION=5.2.4`
-  - `WORDPRESS_SHA1=9eb002761fc8b424727d8c9d291a6ecfde0c53b7`
+  - `WORDPRESS_VERSION=5.3`
+  - `WORDPRESS_SHA1=e3edcb1131e539c2b2e10fed37f8b6683c824a98`
 
 ## `apk` (`.apk`-based packages)
 
