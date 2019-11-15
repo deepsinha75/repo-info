@@ -2,9 +2,9 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:2bc254ad1db5e13023b0040826d7aa9140962312c021ed3a4b32dff53224742b`
-- Created: `2019-10-24T00:04:05.426573691Z`
-- Virtual Size: ~ 915.12 Mb  
+- Image ID: `sha256:2658555e4b5346527cb21ca68abb292f2b7d2264b0d3e0544fe5c5d80d8e211f`
+- Created: `2019-11-15T07:54:05.998332398Z`
+- Virtual Size: ~ 914.99 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Command: `["python2"]`
@@ -3908,20 +3908,13 @@ Licenses: (parsed from: `/usr/share/doc/linux-libc-dev/copyright`)
 - `Unicode-data`
 - `Xen-interface`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris linux=4.9.189-3+deb9u1
-'http://security.debian.org/debian-security/pool/updates/main/l/linux/linux_4.9.189-3+deb9u1.dsc' linux_4.9.189-3+deb9u1.dsc 125208 SHA256:c0222eaa59ac2702aac81f1c29df942486a7de47ecd13c519b6b81e09beb8c78
-'http://security.debian.org/debian-security/pool/updates/main/l/linux/linux_4.9.189.orig.tar.xz' linux_4.9.189.orig.tar.xz 94807908 SHA256:f16329e227a1d4e359bd251fcaca21b0da83f1f00f03adc66e1062a479e1e5c4
-'http://security.debian.org/debian-security/pool/updates/main/l/linux/linux_4.9.189-3+deb9u1.debian.tar.xz' linux_4.9.189-3+deb9u1.debian.tar.xz 2644508 SHA256:612bd11c21c632fa8a180ab059a90f43a0ff3287554fe7a456554800eb9a9ee5
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/linux/4.9.189-3+deb9u1/
 
-- https://sources.debian.net/src/linux/4.9.189-3+deb9u1/ (for browsing the source)
-- https://sources.debian.net/src/linux/4.9.189-3+deb9u1/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/linux/4.9.189-3+deb9u1/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `lsb=9.20161125`
 
