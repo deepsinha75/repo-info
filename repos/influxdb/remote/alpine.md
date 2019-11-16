@@ -1,7 +1,7 @@
 ## `influxdb:alpine`
 
 ```console
-$ docker pull influxdb@sha256:4f114d500540666e5f2cc142b0f00aeffe534fa4d4393711f538aff51012ee0a
+$ docker pull influxdb@sha256:1971b2a84fae4040da62c684da559548a97620664bdb9457bcc444f4f8a25c12
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -11,14 +11,14 @@ $ docker pull influxdb@sha256:4f114d500540666e5f2cc142b0f00aeffe534fa4d4393711f5
 ### `influxdb:alpine` - linux; amd64
 
 ```console
-$ docker pull influxdb@sha256:3e6e4f7bdc0eb18c8857facc912fe72d57fc4c1edfda75c86c3af7e68e3fe5bf
+$ docker pull influxdb@sha256:d2e06d2bbb162bef098cee3d5d257521fc98febebe792e7dc73164985b15c48e
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **68.5 MB (68509227 bytes)**  
+-	Total Size: **68.5 MB (68509340 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:257f8877b9b87166f0c165c796055913e67d265f75ecdb8cc078b8546dd33b27`
+-	Image ID: `sha256:5819404363fdb8f1a07c94f41b069299181c330e67d8a64f5c8490db2393425a`
 -	Entrypoint: `["\/entrypoint.sh"]`
 -	Default Command: `["influxd"]`
 
@@ -43,11 +43,11 @@ EXPOSE 8086
 VOLUME [/var/lib/influxdb]
 # Tue, 12 Nov 2019 21:34:39 GMT
 COPY file:61c4af7a0e637328374ec46266ed6dde40adf7d14ac6c5081100924991beb7f3 in /entrypoint.sh 
-# Tue, 12 Nov 2019 21:34:39 GMT
-COPY file:892fcd3130baa17c0b88866ac37e7fe0b7b420a67105d9cd99803c685eaf9df4 in /init-influxdb.sh 
-# Tue, 12 Nov 2019 21:34:39 GMT
+# Sat, 16 Nov 2019 00:25:47 GMT
+COPY file:e7af69cde81ffb6eddc175488941183d1244772c36c27b74751d54389fb71701 in /init-influxdb.sh 
+# Sat, 16 Nov 2019 00:25:47 GMT
 ENTRYPOINT ["/entrypoint.sh"]
-# Tue, 12 Nov 2019 21:34:39 GMT
+# Sat, 16 Nov 2019 00:25:47 GMT
 CMD ["influxd"]
 ```
 
@@ -76,7 +76,7 @@ CMD ["influxd"]
 		Last Modified: Tue, 12 Nov 2019 21:35:57 GMT  
 		Size: 211.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:03a091065025fa5886759a2eefc8e3022bbd58c305be52de3cdaeac2c11d79aa`  
-		Last Modified: Tue, 12 Nov 2019 21:35:57 GMT  
-		Size: 1.2 KB (1167 bytes)  
+	-	`sha256:6568280a4cf882386ca87eaa7ce8f99b08e4533f14cebf530753f1d4b269ddcc`  
+		Last Modified: Sat, 16 Nov 2019 00:27:00 GMT  
+		Size: 1.3 KB (1280 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
