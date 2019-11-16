@@ -216,20 +216,13 @@ Licenses: (parsed from: `/usr/share/doc/bash/copyright`)
 
 - `GPL-3`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris bash=5.0-4
-'http://deb.debian.org/debian/pool/main/b/bash/bash_5.0-4.dsc' bash_5.0-4.dsc 2305 SHA256:fe746c72de6e61866a0ed4e21a5b9d154966a8684ec3bdf5bacc70d5351f6282
-'http://deb.debian.org/debian/pool/main/b/bash/bash_5.0.orig.tar.xz' bash_5.0.orig.tar.xz 5554808 SHA256:893858ba233d65bda38039e99dd96a4102b2f6a2d5e6c1c546e0794a60beed97
-'http://deb.debian.org/debian/pool/main/b/bash/bash_5.0-4.debian.tar.xz' bash_5.0-4.debian.tar.xz 91884 SHA256:1e33dff5dd8604fa4205a1746828063cd96a1e635355f3626b54fef155b8c4e5
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/bash/5.0-4/
 
-- https://sources.debian.net/src/bash/5.0-4/ (for browsing the source)
-- https://sources.debian.net/src/bash/5.0-4/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/bash/5.0-4/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `binutils=2.33.1-1`
 
@@ -3007,20 +3000,13 @@ Licenses: (parsed from: `/usr/share/doc/r-cran-nlme/copyright`)
 - `GPL`
 - `GPL `
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris nlme=3.1.141-1
-'http://deb.debian.org/debian/pool/main/n/nlme/nlme_3.1.141-1.dsc' nlme_3.1.141-1.dsc 1837 SHA256:939e52aac3fb8f9b4a8a7560be24b8984a0edf9a7a55c94b85ac924bb46d7ff4
-'http://deb.debian.org/debian/pool/main/n/nlme/nlme_3.1.141.orig.tar.gz' nlme_3.1.141.orig.tar.gz 775617 SHA256:910046260a03d8f776ac7b0766b5adee91556829d0d8a70165b2c695ce038056
-'http://deb.debian.org/debian/pool/main/n/nlme/nlme_3.1.141-1.debian.tar.xz' nlme_3.1.141-1.debian.tar.xz 7032 SHA256:eac42ef3ac6401890467eaf560ff2c5373759488cf5b47f8bc5b3a3b4dbc4c2a
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/nlme/3.1.141-1/
 
-- https://sources.debian.net/src/nlme/3.1.141-1/ (for browsing the source)
-- https://sources.debian.net/src/nlme/3.1.141-1/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/nlme/3.1.141-1/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `openldap=2.4.48+dfsg-1`
 
@@ -3664,20 +3650,13 @@ Licenses: (parsed from: `/usr/share/doc/r-cran-survival/copyright`)
 
 - `GPL-2`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris survival=2.44-1.1-2
-'http://deb.debian.org/debian/pool/main/s/survival/survival_2.44-1.1-2.dsc' survival_2.44-1.1-2.dsc 1876 SHA256:fbef25076aa9f67e09e250f2cc0dff31bda0b3ffd7438c6f5e1b0b1bb8bd6732
-'http://deb.debian.org/debian/pool/main/s/survival/survival_2.44-1.1.orig.tar.gz' survival_2.44-1.1.orig.tar.gz 4597096 SHA256:55b151e15fcd24ccb3acf60331c9a7ad82bc10f3841ab3be9bc2a37e9ee751b9
-'http://deb.debian.org/debian/pool/main/s/survival/survival_2.44-1.1-2.debian.tar.xz' survival_2.44-1.1-2.debian.tar.xz 5928 SHA256:b48c2a252888537dd99db7df63e8d18a69399751dd2508a755cc5f346a0df52f
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/survival/2.44-1.1-2/
 
-- https://sources.debian.net/src/survival/2.44-1.1-2/ (for browsing the source)
-- https://sources.debian.net/src/survival/2.44-1.1-2/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/survival/2.44-1.1-2/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `systemd=242-7`
 
