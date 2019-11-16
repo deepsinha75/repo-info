@@ -1,10 +1,10 @@
-# `adminer:4.7.4-fastcgi`
+# `adminer:4.7.5-fastcgi`
 
 ## Docker Metadata
 
-- Image ID: `sha256:1930709e6c7ea96d3d3dfb229153f3982876ca22e40b7e7c2314d7e2f4cf21d3`
-- Created: `2019-10-30T23:19:27.143552667Z`
-- Virtual Size: ~ 80.93 Mb  
+- Image ID: `sha256:52d9fe3834cec81d6b86d8daf3b0c025483ac43881510ced16b13fd8a24d9b75`
+- Created: `2019-11-16T00:19:34.990258551Z`
+- Virtual Size: ~ 80.94 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["entrypoint.sh","docker-php-entrypoint"]`
@@ -23,9 +23,9 @@
   - `PHP_ASC_URL=https://www.php.net/get/php-7.3.11.tar.xz.asc/from/this/mirror`
   - `PHP_SHA256=657cf6464bac28e9490c59c07a2cf7bb76c200f09cfadf6e44ea64e95fa01021`
   - `PHP_MD5=`
-  - `ADMINER_VERSION=4.7.4`
-  - `ADMINER_DOWNLOAD_SHA256=b8c4e0c6f7dfd9b7a7421be17ec5d6b1259e180d5ff4b79645621ce1d5575e66`
-  - `ADMINER_SRC_DOWNLOAD_SHA256=aa28890a1c1832c81329d18b72f05145fb9f78b13062129319256c3231b50e85`
+  - `ADMINER_VERSION=4.7.5`
+  - `ADMINER_DOWNLOAD_SHA256=857351da4d8963ad5621f1a696bd2396b3c28d7f41284ab741fed65dec95539c`
+  - `ADMINER_SRC_DOWNLOAD_SHA256=07f47b70560bb5eaeeb6ffc3d3b53f038e10ffe582e6e16cd218221365f19677`
 
 ## `apk` (`.apk`-based packages)
 
