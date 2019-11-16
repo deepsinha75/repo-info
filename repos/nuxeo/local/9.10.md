@@ -2077,20 +2077,13 @@ Licenses: (parsed from: `/usr/share/doc/ghostscript/copyright`, `/usr/share/doc/
 - `other`
 - `public-domain`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris ghostscript=9.26a~dfsg-0+deb9u5
-'http://security.debian.org/debian-security/pool/updates/main/g/ghostscript/ghostscript_9.26a~dfsg-0+deb9u5.dsc' ghostscript_9.26a~dfsg-0+deb9u5.dsc 3052 SHA256:3ad8b7f18322d2d5ff4f8109d52786896b2b8f12abe170937bef029911aeac39
-'http://security.debian.org/debian-security/pool/updates/main/g/ghostscript/ghostscript_9.26a~dfsg.orig.tar.xz' ghostscript_9.26a~dfsg.orig.tar.xz 17614652 SHA256:1c3647c42a3f894df22a7a12473f60ff4be38c38ed97232ecfab9b7f3a4fc8f4
-'http://security.debian.org/debian-security/pool/updates/main/g/ghostscript/ghostscript_9.26a~dfsg-0+deb9u5.debian.tar.xz' ghostscript_9.26a~dfsg-0+deb9u5.debian.tar.xz 120904 SHA256:5aa8a187a6eacba0314e1d7fe6202775523fe2ecee8a1fd0efa7fad9e54664c5
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/ghostscript/9.26a~dfsg-0+deb9u5/
 
-- https://sources.debian.net/src/ghostscript/9.26a~dfsg-0+deb9u5/ (for browsing the source)
-- https://sources.debian.net/src/ghostscript/9.26a~dfsg-0+deb9u5/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/ghostscript/9.26a~dfsg-0+deb9u5/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `git=1:2.11.0-3+deb9u4`
 
