@@ -12,6 +12,12 @@
 -	[`traefik:2.0.5`](#traefik205)
 -	[`traefik:2.0.5-windowsservercore-1809`](#traefik205-windowsservercore-1809)
 -	[`traefik:2.0-windowsservercore-1809`](#traefik20-windowsservercore-1809)
+-	[`traefik:2.1`](#traefik21)
+-	[`traefik:2.1.0-rc2`](#traefik210-rc2)
+-	[`traefik:2.1.0-rc2-windowsservercore-1809`](#traefik210-rc2-windowsservercore-1809)
+-	[`traefik:2.1-windowsservercore-1809`](#traefik21-windowsservercore-1809)
+-	[`traefik:cantal`](#traefikcantal)
+-	[`traefik:cantal-windowsservercore-1809`](#traefikcantal-windowsservercore-1809)
 -	[`traefik:latest`](#traefiklatest)
 -	[`traefik:maroilles`](#traefikmaroilles)
 -	[`traefik:maroilles-alpine`](#traefikmaroilles-alpine)
@@ -28,6 +34,10 @@
 -	[`traefik:v2.0.5`](#traefikv205)
 -	[`traefik:v2.0.5-windowsservercore-1809`](#traefikv205-windowsservercore-1809)
 -	[`traefik:v2.0-windowsservercore-1809`](#traefikv20-windowsservercore-1809)
+-	[`traefik:v2.1`](#traefikv21)
+-	[`traefik:v2.1.0-rc2`](#traefikv210-rc2)
+-	[`traefik:v2.1.0-rc2-windowsservercore-1809`](#traefikv210-rc2-windowsservercore-1809)
+-	[`traefik:v2.1-windowsservercore-1809`](#traefikv21-windowsservercore-1809)
 -	[`traefik:windowsservercore-1809`](#traefikwindowsservercore-1809)
 
 ## `traefik:1.7`
@@ -1281,6 +1291,30 @@ LABEL org.opencontainers.image.vendor=Containous org.opencontainers.image.url=ht
 		Last Modified: Thu, 14 Nov 2019 22:23:10 GMT  
 		Size: 1.2 KB (1206 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+
+## `traefik:2.1`
+
+**does not exist** (yet?)
+
+## `traefik:2.1.0-rc2`
+
+**does not exist** (yet?)
+
+## `traefik:2.1.0-rc2-windowsservercore-1809`
+
+**does not exist** (yet?)
+
+## `traefik:2.1-windowsservercore-1809`
+
+**does not exist** (yet?)
+
+## `traefik:cantal`
+
+**does not exist** (yet?)
+
+## `traefik:cantal-windowsservercore-1809`
+
+**does not exist** (yet?)
 
 ## `traefik:latest`
 
@@ -3330,6 +3364,22 @@ LABEL org.opencontainers.image.vendor=Containous org.opencontainers.image.url=ht
 		Last Modified: Thu, 14 Nov 2019 22:23:10 GMT  
 		Size: 1.2 KB (1206 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+
+## `traefik:v2.1`
+
+**does not exist** (yet?)
+
+## `traefik:v2.1.0-rc2`
+
+**does not exist** (yet?)
+
+## `traefik:v2.1.0-rc2-windowsservercore-1809`
+
+**does not exist** (yet?)
+
+## `traefik:v2.1-windowsservercore-1809`
+
+**does not exist** (yet?)
 
 ## `traefik:windowsservercore-1809`
 
