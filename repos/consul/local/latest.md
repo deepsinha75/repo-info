@@ -1,17 +1,17 @@
-# `consul:1.6.1`
+# `consul:1.6.2`
 
 ## Docker Metadata
 
-- Image ID: `sha256:48b314e920d681cf3a5161fc4fbac1e3e4cf2480ecaedd3150ae36e3b49f5944`
-- Created: `2019-09-13T06:21:13.106489061Z`
-- Virtual Size: ~ 116.25 Mb  
+- Image ID: `sha256:ebeb0282cc7c2462de750c0b8e741034df92a1e95cd0d1f9eb917a04c627565f`
+- Created: `2019-11-14T22:37:44.362762239Z`
+- Virtual Size: ~ 116.68 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["docker-entrypoint.sh"]`
 - Command: `["agent","-dev","-client","0.0.0.0"]`
 - Environment:
   - `PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
-  - `CONSUL_VERSION=1.6.1`
+  - `CONSUL_VERSION=1.6.2`
   - `HASHICORP_RELEASES=https://releases.hashicorp.com`
 
 ## `apk` (`.apk`-based packages)
@@ -121,16 +121,16 @@ MPL-2.0 GPL-2.0-or-later
 ### `apk` package: `curl`
 
 ```console
-curl-7.64.0-r2 description:
+curl-7.64.0-r3 description:
 URL retrival utility and library
 
-curl-7.64.0-r2 webpage:
+curl-7.64.0-r3 webpage:
 https://curl.haxx.se
 
-curl-7.64.0-r2 installed size:
+curl-7.64.0-r3 installed size:
 233472
 
-curl-7.64.0-r2 license:
+curl-7.64.0-r3 license:
 MIT
 
 ```
@@ -240,16 +240,16 @@ OpenSSL
 ### `apk` package: `libcurl`
 
 ```console
-libcurl-7.64.0-r2 description:
+libcurl-7.64.0-r3 description:
 The multiprotocol file transfer library
 
-libcurl-7.64.0-r2 webpage:
+libcurl-7.64.0-r3 webpage:
 https://curl.haxx.se
 
-libcurl-7.64.0-r2 installed size:
+libcurl-7.64.0-r3 installed size:
 487424
 
-libcurl-7.64.0-r2 license:
+libcurl-7.64.0-r3 license:
 MIT
 
 ```
@@ -257,16 +257,16 @@ MIT
 ### `apk` package: `libssh2`
 
 ```console
-libssh2-1.8.2-r0 description:
+libssh2-1.9.0-r1 description:
 library for accessing ssh1/ssh2 protocol servers
 
-libssh2-1.8.2-r0 webpage:
+libssh2-1.9.0-r1 webpage:
 https://libssh2.org/
 
-libssh2-1.8.2-r0 installed size:
-180224
+libssh2-1.9.0-r1 installed size:
+241664
 
-libssh2-1.8.2-r0 license:
+libssh2-1.9.0-r1 license:
 BSD
 
 ```
@@ -359,16 +359,16 @@ MIT
 ### `apk` package: `oniguruma`
 
 ```console
-oniguruma-6.9.1-r0 description:
+oniguruma-6.9.3-r0 description:
 a regular expressions library
 
-oniguruma-6.9.1-r0 webpage:
+oniguruma-6.9.3-r0 webpage:
 http://www.geocities.jp/kosako3/oniguruma/
 
-oniguruma-6.9.1-r0 installed size:
-544768
+oniguruma-6.9.3-r0 installed size:
+561152
 
-oniguruma-6.9.1-r0 license:
+oniguruma-6.9.3-r0 license:
 BSD
 
 ```
