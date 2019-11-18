@@ -18828,47 +18828,102 @@ CMD ["perl5.30.0" "-de0"]
 
 ## `perl:5.30.1-buster`
 
-**does not exist** (yet?)
+```console
+$ docker pull perl@sha256:a8409dff6597f2ef5f7ecd3c672671bb2af9a390073efd74f95c54aa41cba22a
+```
+
+-	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
+-	Platforms:
 
 ## `perl:5.30.1-slim`
 
-**does not exist** (yet?)
+```console
+$ docker pull perl@sha256:a8409dff6597f2ef5f7ecd3c672671bb2af9a390073efd74f95c54aa41cba22a
+```
+
+-	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
+-	Platforms:
 
 ## `perl:5.30.1-slim-buster`
 
-**does not exist** (yet?)
+```console
+$ docker pull perl@sha256:a8409dff6597f2ef5f7ecd3c672671bb2af9a390073efd74f95c54aa41cba22a
+```
+
+-	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
+-	Platforms:
 
 ## `perl:5.30.1-slim-stretch`
 
-**does not exist** (yet?)
+```console
+$ docker pull perl@sha256:a8409dff6597f2ef5f7ecd3c672671bb2af9a390073efd74f95c54aa41cba22a
+```
+
+-	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
+-	Platforms:
 
 ## `perl:5.30.1-slim-threaded`
 
-**does not exist** (yet?)
+```console
+$ docker pull perl@sha256:a8409dff6597f2ef5f7ecd3c672671bb2af9a390073efd74f95c54aa41cba22a
+```
+
+-	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
+-	Platforms:
 
 ## `perl:5.30.1-slim-threaded-buster`
 
-**does not exist** (yet?)
+```console
+$ docker pull perl@sha256:a8409dff6597f2ef5f7ecd3c672671bb2af9a390073efd74f95c54aa41cba22a
+```
+
+-	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
+-	Platforms:
 
 ## `perl:5.30.1-slim-threaded-stretch`
 
-**does not exist** (yet?)
+```console
+$ docker pull perl@sha256:a8409dff6597f2ef5f7ecd3c672671bb2af9a390073efd74f95c54aa41cba22a
+```
+
+-	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
+-	Platforms:
 
 ## `perl:5.30.1-stretch`
 
-**does not exist** (yet?)
+```console
+$ docker pull perl@sha256:a8409dff6597f2ef5f7ecd3c672671bb2af9a390073efd74f95c54aa41cba22a
+```
+
+-	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
+-	Platforms:
 
 ## `perl:5.30.1-threaded`
 
-**does not exist** (yet?)
+```console
+$ docker pull perl@sha256:a8409dff6597f2ef5f7ecd3c672671bb2af9a390073efd74f95c54aa41cba22a
+```
+
+-	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
+-	Platforms:
 
 ## `perl:5.30.1-threaded-buster`
 
-**does not exist** (yet?)
+```console
+$ docker pull perl@sha256:a8409dff6597f2ef5f7ecd3c672671bb2af9a390073efd74f95c54aa41cba22a
+```
+
+-	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
+-	Platforms:
 
 ## `perl:5.30.1-threaded-stretch`
 
-**does not exist** (yet?)
+```console
+$ docker pull perl@sha256:a8409dff6597f2ef5f7ecd3c672671bb2af9a390073efd74f95c54aa41cba22a
+```
+
+-	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
+-	Platforms:
 
 ## `perl:5.30-buster`
 
