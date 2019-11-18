@@ -1,20 +1,20 @@
-# `docker:19.03.4-dind-rootless`
+# `docker:19.03.5-dind-rootless`
 
 ## Docker Metadata
 
-- Image ID: `sha256:62f58c18449c808752bb9774c10a1c5b908ba0ab64f889d2690c1f7b3d73138f`
-- Created: `2019-10-21T18:19:30.007853732Z`
-- Virtual Size: ~ 294.47 Mb  
+- Image ID: `sha256:fcf6ac9da1532b437ab4db6cde95c422152b62b17597873c6142f4240be27ad9`
+- Created: `2019-11-16T00:20:41.358466336Z`
+- Virtual Size: ~ 293.87 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["dockerd-entrypoint.sh"]`
 - Environment:
   - `PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
   - `DOCKER_CHANNEL=stable`
-  - `DOCKER_VERSION=19.03.4`
+  - `DOCKER_VERSION=19.03.5`
   - `DOCKER_TLS_CERTDIR=/certs`
   - `DIND_COMMIT=37498f009d8bf25fbb6199e8ccd34bed84f2874b`
-  - `ROOTLESSKIT_VERSION=0.6.0`
+  - `ROOTLESSKIT_VERSION=0.7.0`
 
 ## `apk` (`.apk`-based packages)
 
