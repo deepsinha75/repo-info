@@ -6,7 +6,7 @@
 -	[`oraclelinux:6.10`](#oraclelinux610)
 -	[`oraclelinux:6-slim`](#oraclelinux6-slim)
 -	[`oraclelinux:7`](#oraclelinux7)
--	[`oraclelinux:7.6`](#oraclelinux76)
+-	[`oraclelinux:7.7`](#oraclelinux77)
 -	[`oraclelinux:7-slim`](#oraclelinux7-slim)
 -	[`oraclelinux:8`](#oraclelinux8)
 -	[`oraclelinux:8.0`](#oraclelinux80)
@@ -194,72 +194,9 @@ CMD ["/bin/bash"]
 		Size: 88.1 MB (88086507 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
-## `oraclelinux:7.6`
+## `oraclelinux:7.7`
 
-```console
-$ docker pull oraclelinux@sha256:27c0c3e5ca8ce6e9ef8121c106de2d8ad28067074d7f5f5ce4e5cb78a0f07b3d
-```
-
--	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
--	Platforms:
-	-	linux; amd64
-	-	linux; arm64 variant v8
-
-### `oraclelinux:7.6` - linux; amd64
-
-```console
-$ docker pull oraclelinux@sha256:a6ee3b4c6a52a529a6de77bb25c3d0a99e99e1ad81cd936cd14b100288ffe246
-```
-
--	Docker Version: 18.06.1-ce
--	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **86.9 MB (86927181 bytes)**  
-	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:5f993b1aafe52e8dfb3198b7cb3f405f36e5cf71a73452184cf70e8b59b5836e`
--	Default Command: `["\/bin\/bash"]`
-
-```dockerfile
-# Thu, 30 Aug 2018 21:49:27 GMT
-MAINTAINER Oracle Linux Product Team <ol-ovm-info_ww@oracle.com>
-# Thu, 08 Aug 2019 22:29:00 GMT
-ADD file:72293484c037377c071a18f15e98a93b7a172b2fcffede26ef2e23826e96bff9 in / 
-# Thu, 08 Aug 2019 22:29:01 GMT
-CMD ["/bin/bash"]
-```
-
--	Layers:
-	-	`sha256:04e172e76262829dadf10ff0f7a1087da36568d344fa44465a7cbe2a17add9ec`  
-		Last Modified: Thu, 08 Aug 2019 22:30:03 GMT  
-		Size: 86.9 MB (86927181 bytes)  
-		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-
-### `oraclelinux:7.6` - linux; arm64 variant v8
-
-```console
-$ docker pull oraclelinux@sha256:41c8d76c635ae1c84105ab14d4e79fc0bdb65ab92aeed501878c5f204259302f
-```
-
--	Docker Version: 18.06.1-ce
--	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **88.1 MB (88086507 bytes)**  
-	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:efdcffbc8f7c9fbcc739d0990117aac2ee1357e5796d501ae07b787fbe66239f`
--	Default Command: `["\/bin\/bash"]`
-
-```dockerfile
-# Fri, 31 May 2019 21:40:52 GMT
-MAINTAINER Oracle Linux Product Team <ol-ovm-info_ww@oracle.com>
-# Tue, 02 Jul 2019 22:40:16 GMT
-ADD file:c5c9b0b4779b045761e0b0c00d96005e060d1028a7876eb14e8b8d3073859366 in / 
-# Tue, 02 Jul 2019 22:40:18 GMT
-CMD ["/bin/bash"]
-```
-
--	Layers:
-	-	`sha256:7cb1c14b32f977705e3c48205f2af43f659ea818553bf29eefe0e210e658b0a6`  
-		Last Modified: Tue, 02 Jul 2019 22:41:03 GMT  
-		Size: 88.1 MB (88086507 bytes)  
-		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+**does not exist** (yet?)
 
 ## `oraclelinux:7-slim`
 
