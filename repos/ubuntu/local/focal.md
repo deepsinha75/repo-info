@@ -164,14 +164,9 @@ Licenses: (parsed from: `/usr/share/doc/bash/copyright`)
 
 - `GPL-3`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris bash=5.0-4ubuntu1
-'http://archive.ubuntu.com/ubuntu/pool/main/b/bash/bash_5.0-4ubuntu1.dsc' bash_5.0-4ubuntu1.dsc 2447 SHA256:4f398f60ff0d21b0b4a03ee0e8bc95f9bb9b10cdba716d48f6c5c67184fc3976
-'http://archive.ubuntu.com/ubuntu/pool/main/b/bash/bash_5.0.orig.tar.xz' bash_5.0.orig.tar.xz 5554808 SHA256:893858ba233d65bda38039e99dd96a4102b2f6a2d5e6c1c546e0794a60beed97
-'http://archive.ubuntu.com/ubuntu/pool/main/b/bash/bash_5.0-4ubuntu1.debian.tar.xz' bash_5.0-4ubuntu1.debian.tar.xz 67512 SHA256:25c5b39768e4570b8f66252242e710cc4eb3f682d287f393dc982e40a6d91a75
-```
 
 ### `dpkg` source package: `bzip2=1.0.8-2`
 
@@ -848,14 +843,13 @@ Licenses: (parsed from: `/usr/share/doc/libzstd1/copyright`)
 - `GPL-2+`
 - `zlib`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris libzstd=1.4.3+dfsg-1
-'http://archive.ubuntu.com/ubuntu/pool/main/libz/libzstd/libzstd_1.4.3+dfsg-1.dsc' libzstd_1.4.3+dfsg-1.dsc 2285 SHA256:8b99efda28257570300dc9116340224861ccf3acdf49e223a9f861ba4d3d19ac
-'http://archive.ubuntu.com/ubuntu/pool/main/libz/libzstd/libzstd_1.4.3+dfsg.orig.tar.xz' libzstd_1.4.3+dfsg.orig.tar.xz 1320940 SHA256:fb24c19891043b13d5225af41306789d65e16f6cd04176ca7410056bf0f13d0f
-'http://archive.ubuntu.com/ubuntu/pool/main/libz/libzstd/libzstd_1.4.3+dfsg-1.debian.tar.xz' libzstd_1.4.3+dfsg-1.debian.tar.xz 16108 SHA256:3dbb5f5d3e6c4c0f43a5f6d6803327bf9c330efdb0b3da461613971af506796b
-```
+The source package *may* still be available for download from:
+
+- http://snapshot.debian.org/package/libzstd/1.4.3+dfsg-1/
+
 
 ### `dpkg` source package: `lsb=11.1.0ubuntu1`
 
