@@ -1,10 +1,10 @@
-# `php:7.4.0RC5-zts-alpine3.10`
+# `php:7.4.0RC6-zts-alpine3.10`
 
 ## Docker Metadata
 
-- Image ID: `sha256:c6a4fd9fed38a867b160831e0c05453a57be9923ce359bad16cd0d20ea936766`
-- Created: `2019-11-01T04:31:08.658364207Z`
-- Virtual Size: ~ 66.60 Mb  
+- Image ID: `sha256:31f94b5e9246990401fa51116fe8ee1a8715e2f4172598ae65f49fad61bfd097`
+- Created: `2019-11-15T08:41:59.306209263Z`
+- Virtual Size: ~ 66.59 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["docker-php-entrypoint"]`
@@ -18,10 +18,10 @@
   - `PHP_CPPFLAGS=-fstack-protector-strong -fpic -fpie -O2 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64`
   - `PHP_LDFLAGS=-Wl,-O1 -Wl,--hash-style=both -pie`
   - `GPG_KEYS=42670A7FE4D0441C8E4632349E4FDC074A4EF02D 5A52880781F755608BF815FC910DEB46F53EA312`
-  - `PHP_VERSION=7.4.0RC5`
-  - `PHP_URL=https://downloads.php.net/~derick/php-7.4.0RC5.tar.xz`
-  - `PHP_ASC_URL=https://downloads.php.net/~derick/php-7.4.0RC5.tar.xz.asc`
-  - `PHP_SHA256=329f32afe06f2ac627da9294e164b73c19329c430a3f105324faf1b344a896e1`
+  - `PHP_VERSION=7.4.0RC6`
+  - `PHP_URL=https://downloads.php.net/~derick/php-7.4.0RC6.tar.xz`
+  - `PHP_ASC_URL=https://downloads.php.net/~derick/php-7.4.0RC6.tar.xz.asc`
+  - `PHP_SHA256=6873a51f56a2c6bba192ff38e33158578c2a4380c2e2f0758949ebf55cc915a7`
   - `PHP_MD5=`
 
 ## `apk` (`.apk`-based packages)
@@ -403,16 +403,16 @@ MIT
 ### `apk` package: `oniguruma`
 
 ```console
-oniguruma-6.9.2-r0 description:
+oniguruma-6.9.3-r0 description:
 a regular expressions library
 
-oniguruma-6.9.2-r0 webpage:
+oniguruma-6.9.3-r0 webpage:
 https://github.com/kkos/oniguruma
 
-oniguruma-6.9.2-r0 installed size:
+oniguruma-6.9.3-r0 installed size:
 561152
 
-oniguruma-6.9.2-r0 license:
+oniguruma-6.9.3-r0 license:
 BSD-2-Clause
 
 ```
