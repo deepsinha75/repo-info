@@ -2,9 +2,9 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:ebeb0282cc7c2462de750c0b8e741034df92a1e95cd0d1f9eb917a04c627565f`
-- Created: `2019-11-14T22:37:44.362762239Z`
-- Virtual Size: ~ 116.68 Mb  
+- Image ID: `sha256:61c55d0793c656ad421bd952f3f897b6d6db45d72410440e81c59b08304102c9`
+- Created: `2019-11-20T00:19:56.05850086Z`
+- Virtual Size: ~ 117.38 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["docker-entrypoint.sh"]`
@@ -203,6 +203,23 @@ BSD
 
 ```
 
+### `apk` package: `libc6-compat`
+
+```console
+libc6-compat-1.1.20-r5 description:
+compatibility libraries for glibc
+
+libc6-compat-1.1.20-r5 webpage:
+http://www.musl-libc.org/
+
+libc6-compat-1.1.20-r5 installed size:
+12288
+
+libc6-compat-1.1.20-r5 license:
+MIT
+
+```
+
 ### `apk` package: `libcap`
 
 ```console
@@ -308,16 +325,16 @@ ISC
 ### `apk` package: `musl`
 
 ```console
-musl-1.1.20-r4 description:
+musl-1.1.20-r5 description:
 the musl c library (libc) implementation
 
-musl-1.1.20-r4 webpage:
+musl-1.1.20-r5 webpage:
 http://www.musl-libc.org/
 
-musl-1.1.20-r4 installed size:
+musl-1.1.20-r5 installed size:
 602112
 
-musl-1.1.20-r4 license:
+musl-1.1.20-r5 license:
 MIT
 
 ```
@@ -325,16 +342,16 @@ MIT
 ### `apk` package: `musl-utils`
 
 ```console
-musl-utils-1.1.20-r4 description:
+musl-utils-1.1.20-r5 description:
 the musl c library (libc) implementation
 
-musl-utils-1.1.20-r4 webpage:
+musl-utils-1.1.20-r5 webpage:
 http://www.musl-libc.org/
 
-musl-utils-1.1.20-r4 installed size:
+musl-utils-1.1.20-r5 installed size:
 139264
 
-musl-utils-1.1.20-r4 license:
+musl-utils-1.1.20-r5 license:
 MIT BSD GPL2+
 
 ```
