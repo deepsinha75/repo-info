@@ -1,7 +1,7 @@
 ## `nginx:mainline-perl`
 
 ```console
-$ docker pull nginx@sha256:d98bea11d3c9650c6c0a3efa988083c02b243504be22f9e402d66b35f67267a5
+$ docker pull nginx@sha256:80c934d434ffb1a114c225cd85e3290b48701d052bd21163c5ffef5275b5d47a
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -68,14 +68,14 @@ CMD ["nginx" "-g" "daemon off;"]
 ### `nginx:mainline-perl` - linux; arm variant v7
 
 ```console
-$ docker pull nginx@sha256:1fabc6afc90e449b8285392e12bdbe00b5f752d7567ffb55f0f653be02ef6c81
+$ docker pull nginx@sha256:f03e2bc0178c135155b7334921b7c7410318458e7f90104b7c086e1ad0b1be9e
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **54.8 MB (54776388 bytes)**  
+-	Total Size: **55.1 MB (55061031 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:fa5f998ef178fea77871dc96b668d700f1e60b7df750d8d0337afdc653bc70e5`
+-	Image ID: `sha256:de2d99888b06be4ee5d50701f4ceb388bcf37b24d4bbb3f3abbb26953e1b3db4`
 -	Default Command: `["nginx","-g","daemon off;"]`
 
 ```dockerfile
@@ -85,21 +85,21 @@ ADD file:aec8ae5d1bd3bffdcab55efc79e947f802af8efa4266cc074679cc305949f7b9 in /
 CMD ["bash"]
 # Thu, 17 Oct 2019 01:03:55 GMT
 LABEL maintainer=NGINX Docker Maintainers <docker-maint@nginx.com>
-# Wed, 23 Oct 2019 00:26:00 GMT
-ENV NGINX_VERSION=1.17.5
-# Wed, 23 Oct 2019 00:26:01 GMT
-ENV NJS_VERSION=0.3.6
-# Wed, 23 Oct 2019 00:26:01 GMT
+# Wed, 20 Nov 2019 00:31:30 GMT
+ENV NGINX_VERSION=1.17.6
+# Wed, 20 Nov 2019 00:31:31 GMT
+ENV NJS_VERSION=0.3.7
+# Wed, 20 Nov 2019 00:31:32 GMT
 ENV PKG_RELEASE=1~buster
-# Wed, 23 Oct 2019 00:38:26 GMT
+# Wed, 20 Nov 2019 00:44:40 GMT
 RUN set -x     && addgroup --system --gid 101 nginx     && adduser --system --disabled-login --ingroup nginx --no-create-home --home /nonexistent --gecos "nginx user" --shell /bin/false --uid 101 nginx     && apt-get update     && apt-get install --no-install-recommends --no-install-suggests -y gnupg1 ca-certificates     &&     NGINX_GPGKEY=573BFD6B3D8FBC641079A6ABABF5BD827BD9BF62;     found='';     for server in         ha.pool.sks-keyservers.net         hkp://keyserver.ubuntu.com:80         hkp://p80.pool.sks-keyservers.net:80         pgp.mit.edu     ; do         echo "Fetching GPG key $NGINX_GPGKEY from $server";         apt-key adv --keyserver "$server" --keyserver-options timeout=10 --recv-keys "$NGINX_GPGKEY" && found=yes && break;     done;     test -z "$found" && echo >&2 "error: failed to fetch GPG key $NGINX_GPGKEY" && exit 1;     apt-get remove --purge --auto-remove -y gnupg1 && rm -rf /var/lib/apt/lists/*     && dpkgArch="$(dpkg --print-architecture)"     && nginxPackages="         nginx=${NGINX_VERSION}-${PKG_RELEASE}         nginx-module-xslt=${NGINX_VERSION}-${PKG_RELEASE}         nginx-module-geoip=${NGINX_VERSION}-${PKG_RELEASE}         nginx-module-image-filter=${NGINX_VERSION}-${PKG_RELEASE}         nginx-module-perl=${NGINX_VERSION}-${PKG_RELEASE}         nginx-module-njs=${NGINX_VERSION}.${NJS_VERSION}-${PKG_RELEASE}     "     && case "$dpkgArch" in         amd64|i386)             echo "deb https://nginx.org/packages/mainline/debian/ buster nginx" >> /etc/apt/sources.list.d/nginx.list             && apt-get update             ;;         *)             echo "deb-src https://nginx.org/packages/mainline/debian/ buster nginx" >> /etc/apt/sources.list.d/nginx.list                         && tempDir="$(mktemp -d)"             && chmod 777 "$tempDir"                         && savedAptMark="$(apt-mark showmanual)"                         && apt-get update             && apt-get build-dep -y $nginxPackages             && (                 cd "$tempDir"                 && DEB_BUILD_OPTIONS="nocheck parallel=$(nproc)"                     apt-get source --compile $nginxPackages             )                         && apt-mark showmanual | xargs apt-mark auto > /dev/null             && { [ -z "$savedAptMark" ] || apt-mark manual $savedAptMark; }                         && ls -lAFh "$tempDir"             && ( cd "$tempDir" && dpkg-scanpackages . > Packages )             && grep '^Package: ' "$tempDir/Packages"             && echo "deb [ trusted=yes ] file://$tempDir ./" > /etc/apt/sources.list.d/temp.list             && apt-get -o Acquire::GzipIndexes=false update             ;;     esac         && apt-get install --no-install-recommends --no-install-suggests -y                         $nginxPackages                         gettext-base     && apt-get remove --purge --auto-remove -y ca-certificates && rm -rf /var/lib/apt/lists/* /etc/apt/sources.list.d/nginx.list         && if [ -n "$tempDir" ]; then         apt-get purge -y --auto-remove         && rm -rf "$tempDir" /etc/apt/sources.list.d/temp.list;     fi
-# Wed, 23 Oct 2019 00:38:29 GMT
+# Wed, 20 Nov 2019 00:44:44 GMT
 RUN ln -sf /dev/stdout /var/log/nginx/access.log     && ln -sf /dev/stderr /var/log/nginx/error.log
-# Wed, 23 Oct 2019 00:38:30 GMT
+# Wed, 20 Nov 2019 00:44:44 GMT
 EXPOSE 80
-# Wed, 23 Oct 2019 00:38:30 GMT
+# Wed, 20 Nov 2019 00:44:45 GMT
 STOPSIGNAL SIGTERM
-# Wed, 23 Oct 2019 00:38:31 GMT
+# Wed, 20 Nov 2019 00:44:46 GMT
 CMD ["nginx" "-g" "daemon off;"]
 ```
 
@@ -108,12 +108,12 @@ CMD ["nginx" "-g" "daemon off;"]
 		Last Modified: Thu, 17 Oct 2019 00:15:00 GMT  
 		Size: 22.7 MB (22711906 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:cd48681d0eb2f2a384f78238cfe6de506af6e21d31bc9905c194ee4ba16127fb`  
-		Last Modified: Wed, 23 Oct 2019 00:39:32 GMT  
-		Size: 32.1 MB (32064279 bytes)  
+	-	`sha256:4b9180cd97598912b91c57b9a2b059ff1ee5c08c4cbf820ba3a0c132cbe538c1`  
+		Last Modified: Wed, 20 Nov 2019 00:45:50 GMT  
+		Size: 32.3 MB (32348922 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:4f5c2f71be4d3c31f370f64b242cbf57bc4f694138264034ec9d581803eadaa4`  
-		Last Modified: Wed, 23 Oct 2019 00:39:21 GMT  
+	-	`sha256:2c7dfdbb43ff40f3c65772d6e854999bc7e2e1da15bab1878788408d6d24cdfe`  
+		Last Modified: Wed, 20 Nov 2019 00:45:38 GMT  
 		Size: 203.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
