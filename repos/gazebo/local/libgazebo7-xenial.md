@@ -4277,14 +4277,9 @@ Licenses: (parsed from: `/usr/share/doc/libmysqlclient-dev/copyright`, `/usr/sha
 - `public-domain`
 - `zlib/libpng`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris mysql-5.7=5.7.27-0ubuntu0.16.04.1
-'http://archive.ubuntu.com/ubuntu/pool/main/m/mysql-5.7/mysql-5.7_5.7.27-0ubuntu0.16.04.1.dsc' mysql-5.7_5.7.27-0ubuntu0.16.04.1.dsc 3381 SHA256:e9e75d84a3a25f6829475b3910e8d034bbf2a32b3595c302157f57311511b667
-'http://archive.ubuntu.com/ubuntu/pool/main/m/mysql-5.7/mysql-5.7_5.7.27.orig.tar.gz' mysql-5.7_5.7.27.orig.tar.gz 51436383 SHA256:036ab46a8a1216cfc1e87374bd1cba12e2208c02cf328a31851be7e1c7f57a2b
-'http://archive.ubuntu.com/ubuntu/pool/main/m/mysql-5.7/mysql-5.7_5.7.27-0ubuntu0.16.04.1.debian.tar.xz' mysql-5.7_5.7.27-0ubuntu0.16.04.1.debian.tar.xz 250976 SHA256:ba7852b7c279f1920ecc97167c5949288453250de0575cb2ef6c23d241a947bb
-```
 
 ### `dpkg` source package: `nas=1.9.4-4`
 
