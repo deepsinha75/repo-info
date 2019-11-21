@@ -1,10 +1,10 @@
-# `postgres:9.6.15-alpine`
+# `postgres:9.6.16-alpine`
 
 ## Docker Metadata
 
-- Image ID: `sha256:081f7129326442032531804733cb9d86ff2621a50d77d2241437f7dfb0d972ce`
-- Created: `2019-10-21T19:37:27.060300512Z`
-- Virtual Size: ~ 37.89 Mb  
+- Image ID: `sha256:8cf0a138d86a4d70f3a0040765a40f04d99ff577dea93582a7a30c6112b39fcb`
+- Created: `2019-11-18T22:41:07.782590137Z`
+- Virtual Size: ~ 37.91 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["docker-entrypoint.sh"]`
@@ -13,8 +13,8 @@
   - `PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
   - `LANG=en_US.utf8`
   - `PG_MAJOR=9.6`
-  - `PG_VERSION=9.6.15`
-  - `PG_SHA256=3cd9fe9af247167f863030842c1a57f58bdf3e5d50a94997d34a802b6032170a`
+  - `PG_VERSION=9.6.16`
+  - `PG_SHA256=5c6cba9cc0df70ba2b128c4a87d0babfce7c0e2b888f70a9c8485745f66b22e7`
   - `PGDATA=/var/lib/postgresql/data`
 
 ## `apk` (`.apk`-based packages)
@@ -277,16 +277,16 @@ MIT
 ### `apk` package: `libxslt`
 
 ```console
-libxslt-1.1.33-r1 description:
+libxslt-1.1.33-r2 description:
 XML stylesheet transformation library
 
-libxslt-1.1.33-r1 webpage:
+libxslt-1.1.33-r2 webpage:
 http://xmlsoft.org/XSLT/
 
-libxslt-1.1.33-r1 installed size:
+libxslt-1.1.33-r2 installed size:
 368640
 
-libxslt-1.1.33-r1 license:
+libxslt-1.1.33-r2 license:
 custom
 
 ```
