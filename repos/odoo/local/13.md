@@ -9844,14 +9844,9 @@ Licenses: (parsed from: `/usr/share/doc/python3-psycopg2/copyright`)
 
 - `LGPL-3`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris psycopg2=2.8.3-2~pgdg100+1
-'http://apt.postgresql.org/pub/repos/apt/pool/main/p/psycopg2/psycopg2_2.8.3-2~pgdg100+1.dsc' psycopg2_2.8.3-2~pgdg100+1.dsc 1768 SHA256:22689704e0a51aee80a1e1543a2e6bf2a2c90e2d7d3dc8ddef565a9954566516
-'http://apt.postgresql.org/pub/repos/apt/pool/main/p/psycopg2/psycopg2_2.8.3.orig.tar.gz' psycopg2_2.8.3.orig.tar.gz 377333 SHA256:897a6e838319b4bf648a574afb6cabcb17d0488f8c7195100d48d872419f4457
-'http://apt.postgresql.org/pub/repos/apt/pool/main/p/psycopg2/psycopg2_2.8.3-2~pgdg100+1.debian.tar.xz' psycopg2_2.8.3-2~pgdg100+1.debian.tar.xz 15604 SHA256:0d2f1317a269bdd80751678aa9126025d37956c1779c11a3f08ea4f5fc266990
-```
 
 ### `dpkg` source package: `pyasn1=0.4.2-3`
 
