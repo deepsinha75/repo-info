@@ -2,8 +2,8 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:4a755ab5a0de80da84ea577755e4c65f5a99b202e7f6cf7fde92e48e518c2b40`
-- Created: `2019-10-16T23:26:45.251235442Z`
+- Image ID: `sha256:02461709b73602620529e0f0fa44aed9b68b2d730e6dcee3264e58dfafcbb33d`
+- Created: `2019-11-22T14:56:04.45322748Z`
 - Virtual Size: ~ 81.35 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
@@ -1578,23 +1578,30 @@ Other potentially useful URLs:
 - https://sources.debian.net/src/tar/1.27.1-2+deb8u2/debian/copyright/ (for direct copyright/license information)
 - http://snapshot.debian.org/package/tar/1.27.1-2+deb8u2/ (for access to the source package after it no longer exists in the archive)
 
-### `dpkg` source package: `tzdata=2019a-0+deb8u1`
+### `dpkg` source package: `tzdata=2019c-0+deb8u1`
 
 Binary Packages:
 
-- `tzdata=2019a-0+deb8u1`
+- `tzdata=2019c-0+deb8u1`
 
 **WARNING:** unable to detect licenses! (package likely not compliant with DEP-5)  
 If source is available (seen below), check the contents of `debian/copyright` within it.
 
 
-**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
-This is *usually* due to a new package version being released and the old version being removed.
+Source:
 
-The source package *may* still be available for download from:
+```console
+$ apt-get source -qq --print-uris tzdata=2019c-0+deb8u1
+'http://security.debian.org/debian-security/pool/updates/main/t/tzdata/tzdata_2019c-0+deb8u1.dsc' tzdata_2019c-0+deb8u1.dsc 1985 SHA256:554948d9fdd1ceaa3a6aa3b5134c46f3608bd35365159ec2fe63b2e06bf2d4ab
+'http://security.debian.org/debian-security/pool/updates/main/t/tzdata/tzdata_2019c.orig.tar.gz' tzdata_2019c.orig.tar.gz 392087 SHA256:79c7806dab09072308da0e3d22c37d3b245015a591891ea147d3b133b60ffc7c
+'http://security.debian.org/debian-security/pool/updates/main/t/tzdata/tzdata_2019c-0+deb8u1.debian.tar.xz' tzdata_2019c-0+deb8u1.debian.tar.xz 103804 SHA256:104ee8c849bbcea67914610ac439ccff4d3a716026d190c8321a60a047ddd16b
+```
 
-- http://snapshot.debian.org/package/tzdata/2019a-0+deb8u1/
+Other potentially useful URLs:
 
+- https://sources.debian.net/src/tzdata/2019c-0+deb8u1/ (for browsing the source)
+- https://sources.debian.net/src/tzdata/2019c-0+deb8u1/debian/copyright/ (for direct copyright/license information)
+- http://snapshot.debian.org/package/tzdata/2019c-0+deb8u1/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `ustr=1.0.4-3`
 
