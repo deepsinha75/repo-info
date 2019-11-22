@@ -1,15 +1,49 @@
 ## `debian:experimental-20191118`
 
 ```console
-$ docker pull debian@sha256:8fafd2519cff3410e33653cd9685103076e9f60474619fb4815c44b55fb431e5
+$ docker pull debian@sha256:80f8e11b1d46a5ab2763305db346ee4789cda7637e61c11e3dd70b388e8807d0
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
 -	Platforms:
+	-	linux; amd64
 	-	linux; arm variant v5
 	-	linux; arm variant v7
 	-	linux; arm64 variant v8
+	-	linux; ppc64le
 	-	linux; s390x
+
+### `debian:experimental-20191118` - linux; amd64
+
+```console
+$ docker pull debian@sha256:f7634f9920e6d9b5d0f01a65855c55405458755d9eac219e1cb7bf9bf60565ed
+```
+
+-	Docker Version: 18.06.1-ce
+-	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
+-	Total Size: **51.3 MB (51303221 bytes)**  
+	(compressed transfer size, not on-disk size)
+-	Image ID: `sha256:8a1a59129cadfe4e10217b39d18e9b55371d992252ebdcdc9a2eb4de3630f178`
+-	Default Command: `["bash"]`
+
+```dockerfile
+# Fri, 22 Nov 2019 15:00:50 GMT
+ADD file:c4b847cdda68b6a6926e91e1841008363228d4c6585f0dd2ad1a72985ba3a90d in / 
+# Fri, 22 Nov 2019 15:00:50 GMT
+CMD ["bash"]
+# Fri, 22 Nov 2019 15:01:20 GMT
+RUN echo 'deb http://deb.debian.org/debian experimental main' > /etc/apt/sources.list.d/experimental.list
+```
+
+-	Layers:
+	-	`sha256:1840c70ced5fa3cc5a2231f2d03dcc40e73dbfdf6baa29c0f666a29a85c5520e`  
+		Last Modified: Fri, 22 Nov 2019 15:07:27 GMT  
+		Size: 51.3 MB (51302998 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:a682cc9ff71031158edb99a56b9b39bb1bd6edee8bf88fc1a32c41a9332c6c1e`  
+		Last Modified: Fri, 22 Nov 2019 15:07:41 GMT  
+		Size: 223.0 B  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `debian:experimental-20191118` - linux; arm variant v5
 
@@ -104,6 +138,38 @@ RUN echo 'deb http://deb.debian.org/debian experimental main' > /etc/apt/sources
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 	-	`sha256:0582c5d0558c594b31e04c028fdcd9cd860dbd345060647808818831b8479ca7`  
 		Last Modified: Fri, 22 Nov 2019 13:53:40 GMT  
+		Size: 224.0 B  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+
+### `debian:experimental-20191118` - linux; ppc64le
+
+```console
+$ docker pull debian@sha256:8503b2ff3aba818c0b8a72e41d16d9d0857f00d16dfea3107eaa8a85f1dae4bd
+```
+
+-	Docker Version: 18.06.1-ce
+-	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
+-	Total Size: **55.1 MB (55128615 bytes)**  
+	(compressed transfer size, not on-disk size)
+-	Image ID: `sha256:0928e281d4d23b8e57d064935f399c9018945daaa63f942062927653d3cfbbb1`
+-	Default Command: `["bash"]`
+
+```dockerfile
+# Fri, 22 Nov 2019 15:00:18 GMT
+ADD file:59ce243e90cfd48d8f0b061ce62c0496a6cf0d1cf3b92d6c4c51def6112e0918 in / 
+# Fri, 22 Nov 2019 15:00:23 GMT
+CMD ["bash"]
+# Fri, 22 Nov 2019 15:00:52 GMT
+RUN echo 'deb http://deb.debian.org/debian experimental main' > /etc/apt/sources.list.d/experimental.list
+```
+
+-	Layers:
+	-	`sha256:7c02dc093077fae7b08c4042993c9f1a455e05270c15de0ae0373667f1384961`  
+		Last Modified: Fri, 22 Nov 2019 15:10:06 GMT  
+		Size: 55.1 MB (55128391 bytes)  
+		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+	-	`sha256:429e2f9eaf22bee11596e7e4473efc56193bb161b61ae1605bda9f851be77a25`  
+		Last Modified: Fri, 22 Nov 2019 15:10:39 GMT  
 		Size: 224.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
