@@ -1,18 +1,18 @@
-# `erlang:21.3.8.10-slim`
+# `erlang:21.3.8.11-slim`
 
 ## Docker Metadata
 
-- Image ID: `sha256:8a4feb2430f9b11a49c7a154156a09d8d4ca30fac519ac4ebd9f0c481611ee0c`
-- Created: `2019-11-01T23:52:57.402647737Z`
-- Virtual Size: ~ 250.73 Mb  
+- Image ID: `sha256:0b080d332dec61e63e8609c8c00670a023b079f911c692df30519f620c893932`
+- Created: `2019-11-20T00:47:59.203262012Z`
+- Virtual Size: ~ 250.74 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Command: `["erl"]`
 - Environment:
   - `PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
-  - `OTP_VERSION=21.3.8.10`
+  - `OTP_VERSION=21.3.8.11`
 - Labels:
-  - `org.opencontainers.image.version=21.3.8.10`
+  - `org.opencontainers.image.version=21.3.8.11`
 
 ## `dpkg` (`.deb`-based packages)
 
@@ -1075,11 +1075,11 @@ Other potentially useful URLs:
 - https://sources.debian.net/src/libtool/2.4.6-2/debian/copyright/ (for direct copyright/license information)
 - http://snapshot.debian.org/package/libtool/2.4.6-2/ (for access to the source package after it no longer exists in the archive)
 
-### `dpkg` source package: `linux=4.9.189-3+deb9u1`
+### `dpkg` source package: `linux=4.9.189-3+deb9u2`
 
 Binary Packages:
 
-- `linux-libc-dev:amd64=4.9.189-3+deb9u1`
+- `linux-libc-dev:amd64=4.9.189-3+deb9u2`
 
 Licenses: (parsed from: `/usr/share/doc/linux-libc-dev/copyright`)
 
@@ -1089,13 +1089,20 @@ Licenses: (parsed from: `/usr/share/doc/linux-libc-dev/copyright`)
 - `Unicode-data`
 - `Xen-interface`
 
-**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
-This is *usually* due to a new package version being released and the old version being removed.
+Source:
 
-The source package *may* still be available for download from:
+```console
+$ apt-get source -qq --print-uris linux=4.9.189-3+deb9u2
+'http://security.debian.org/debian-security/pool/updates/main/l/linux/linux_4.9.189-3+deb9u2.dsc' linux_4.9.189-3+deb9u2.dsc 125053 SHA256:c4cacfcfcbe73bb61796e75c767d89542cb85bcd8b9c0cb12c5b85f909df0e01
+'http://security.debian.org/debian-security/pool/updates/main/l/linux/linux_4.9.189.orig.tar.xz' linux_4.9.189.orig.tar.xz 94807908 SHA256:f16329e227a1d4e359bd251fcaca21b0da83f1f00f03adc66e1062a479e1e5c4
+'http://security.debian.org/debian-security/pool/updates/main/l/linux/linux_4.9.189-3+deb9u2.debian.tar.xz' linux_4.9.189-3+deb9u2.debian.tar.xz 2699452 SHA256:1ae7dacd952ddf39a6d54058f91384eb5214f37e7267deb67b269b66b8f94837
+```
 
-- http://snapshot.debian.org/package/linux/4.9.189-3+deb9u1/
+Other potentially useful URLs:
 
+- https://sources.debian.net/src/linux/4.9.189-3+deb9u2/ (for browsing the source)
+- https://sources.debian.net/src/linux/4.9.189-3+deb9u2/debian/copyright/ (for direct copyright/license information)
+- http://snapshot.debian.org/package/linux/4.9.189-3+deb9u2/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `lksctp-tools=1.0.17+dfsg-1`
 
