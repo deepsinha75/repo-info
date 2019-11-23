@@ -2,9 +2,9 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:9a15bb75f84dc278f8f84223a34dcf5054f53b8695f11de9d436c61dbf67ca29`
-- Created: `2019-10-18T23:53:19.395475391Z`
-- Virtual Size: ~ 221.32 Mb  
+- Image ID: `sha256:ec8fce63ce4afa9fce33ea6776b1d3c5bb2a43b2b2f874c3f37b7db09fda9bc1`
+- Created: `2019-11-23T01:08:06.382435584Z`
+- Virtual Size: ~ 221.33 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Command: `["pypy"]`
@@ -1212,11 +1212,11 @@ Other potentially useful URLs:
 - https://sources.debian.net/src/libusb/2:0.1.12-25/debian/copyright/ (for direct copyright/license information)
 - http://snapshot.debian.org/package/libusb/2:0.1.12-25/ (for access to the source package after it no longer exists in the archive)
 
-### `dpkg` source package: `linux=3.16.74-1`
+### `dpkg` source package: `linux=3.16.76-1`
 
 Binary Packages:
 
-- `linux-libc-dev:amd64=3.16.74-1`
+- `linux-libc-dev:amd64=3.16.76-1`
 
 Licenses: (parsed from: `/usr/share/doc/linux-libc-dev/copyright`)
 
@@ -1224,13 +1224,20 @@ Licenses: (parsed from: `/usr/share/doc/linux-libc-dev/copyright`)
 - `Unicode-data`
 - `Xen-interface`
 
-**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
-This is *usually* due to a new package version being released and the old version being removed.
+Source:
 
-The source package *may* still be available for download from:
+```console
+$ apt-get source -qq --print-uris linux=3.16.76-1
+'http://security.debian.org/debian-security/pool/updates/main/l/linux/linux_3.16.76-1.dsc' linux_3.16.76-1.dsc 143027 SHA256:6988745d192ca70642abeaa1b44778984c09e80d7c904fdcab4a6b6e02aeed72
+'http://security.debian.org/debian-security/pool/updates/main/l/linux/linux_3.16.76.orig.tar.xz' linux_3.16.76.orig.tar.xz 82072428 SHA256:f6d2ad9253cab4725fd97948447055ec56dabb18252d32a7fe55622a7744a912
+'http://security.debian.org/debian-security/pool/updates/main/l/linux/linux_3.16.76-1.debian.tar.xz' linux_3.16.76-1.debian.tar.xz 1867528 SHA256:0c2da4c7ea60ffff716cb09c8e1deb9552357b9fa22f3819d164ada01673469b
+```
 
-- http://snapshot.debian.org/package/linux/3.16.74-1/
+Other potentially useful URLs:
 
+- https://sources.debian.net/src/linux/3.16.76-1/ (for browsing the source)
+- https://sources.debian.net/src/linux/3.16.76-1/debian/copyright/ (for direct copyright/license information)
+- http://snapshot.debian.org/package/linux/3.16.76-1/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `lsb=4.1+Debian13+nmu1`
 
@@ -1760,23 +1767,30 @@ Other potentially useful URLs:
 - https://sources.debian.net/src/tar/1.27.1-2+deb8u2/debian/copyright/ (for direct copyright/license information)
 - http://snapshot.debian.org/package/tar/1.27.1-2+deb8u2/ (for access to the source package after it no longer exists in the archive)
 
-### `dpkg` source package: `tzdata=2019a-0+deb8u1`
+### `dpkg` source package: `tzdata=2019c-0+deb8u1`
 
 Binary Packages:
 
-- `tzdata=2019a-0+deb8u1`
+- `tzdata=2019c-0+deb8u1`
 
 **WARNING:** unable to detect licenses! (package likely not compliant with DEP-5)  
 If source is available (seen below), check the contents of `debian/copyright` within it.
 
 
-**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
-This is *usually* due to a new package version being released and the old version being removed.
+Source:
 
-The source package *may* still be available for download from:
+```console
+$ apt-get source -qq --print-uris tzdata=2019c-0+deb8u1
+'http://security.debian.org/debian-security/pool/updates/main/t/tzdata/tzdata_2019c-0+deb8u1.dsc' tzdata_2019c-0+deb8u1.dsc 1985 SHA256:554948d9fdd1ceaa3a6aa3b5134c46f3608bd35365159ec2fe63b2e06bf2d4ab
+'http://security.debian.org/debian-security/pool/updates/main/t/tzdata/tzdata_2019c.orig.tar.gz' tzdata_2019c.orig.tar.gz 392087 SHA256:79c7806dab09072308da0e3d22c37d3b245015a591891ea147d3b133b60ffc7c
+'http://security.debian.org/debian-security/pool/updates/main/t/tzdata/tzdata_2019c-0+deb8u1.debian.tar.xz' tzdata_2019c-0+deb8u1.debian.tar.xz 103804 SHA256:104ee8c849bbcea67914610ac439ccff4d3a716026d190c8321a60a047ddd16b
+```
 
-- http://snapshot.debian.org/package/tzdata/2019a-0+deb8u1/
+Other potentially useful URLs:
 
+- https://sources.debian.net/src/tzdata/2019c-0+deb8u1/ (for browsing the source)
+- https://sources.debian.net/src/tzdata/2019c-0+deb8u1/debian/copyright/ (for direct copyright/license information)
+- http://snapshot.debian.org/package/tzdata/2019c-0+deb8u1/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `ustr=1.0.4-3`
 
