@@ -2,9 +2,9 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:dbc29ea9e03c49aab43f9a017c22374a1e72298c49baf27387832fef672ad22e`
-- Created: `2019-10-18T01:47:05.686715965Z`
-- Virtual Size: ~ 676.37 Mb  
+- Image ID: `sha256:0b7ed2e9e06c0124cbd4184305920fc42d21e53b52fa17f99eaea9f9b07d67e0`
+- Created: `2019-11-23T14:19:50.265580825Z`
+- Virtual Size: ~ 676.38 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Command: `["node"]`
@@ -864,25 +864,32 @@ Other potentially useful URLs:
 - https://sources.debian.net/src/diffutils/1:3.3-1/debian/copyright/ (for direct copyright/license information)
 - http://snapshot.debian.org/package/diffutils/1:3.3-1/ (for access to the source package after it no longer exists in the archive)
 
-### `dpkg` source package: `djvulibre=3.5.25.4-4+deb8u1`
+### `dpkg` source package: `djvulibre=3.5.25.4-4+deb8u2`
 
 Binary Packages:
 
-- `libdjvulibre-dev:amd64=3.5.25.4-4+deb8u1`
-- `libdjvulibre-text=3.5.25.4-4+deb8u1`
-- `libdjvulibre21:amd64=3.5.25.4-4+deb8u1`
+- `libdjvulibre-dev:amd64=3.5.25.4-4+deb8u2`
+- `libdjvulibre-text=3.5.25.4-4+deb8u2`
+- `libdjvulibre21:amd64=3.5.25.4-4+deb8u2`
 
 Licenses: (parsed from: `/usr/share/doc/libdjvulibre-dev/copyright`, `/usr/share/doc/libdjvulibre-text/copyright`, `/usr/share/doc/libdjvulibre21/copyright`)
 
 - `GPL-2`
 
-**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
-This is *usually* due to a new package version being released and the old version being removed.
+Source:
 
-The source package *may* still be available for download from:
+```console
+$ apt-get source -qq --print-uris djvulibre=3.5.25.4-4+deb8u2
+'http://security.debian.org/debian-security/pool/updates/main/d/djvulibre/djvulibre_3.5.25.4-4+deb8u2.dsc' djvulibre_3.5.25.4-4+deb8u2.dsc 2487 SHA256:30a1aaa4896e9c0b042c6f34024e20b77e33f709848e8020c09ef3de542a0299
+'http://security.debian.org/debian-security/pool/updates/main/d/djvulibre/djvulibre_3.5.25.4.orig.tar.gz' djvulibre_3.5.25.4.orig.tar.gz 3575460 SHA256:6d8b3414d8ec87c5a40d3dde6fee54beebee6cbf6ec56aa7851dfbca9aaa3f36
+'http://security.debian.org/debian-security/pool/updates/main/d/djvulibre/djvulibre_3.5.25.4-4+deb8u2.debian.tar.xz' djvulibre_3.5.25.4-4+deb8u2.debian.tar.xz 84264 SHA256:5c3b67bdb1e16245e5f32107d7ea8a8c63616b2d6dbcace571b6cbcfbcfa2195
+```
 
-- http://snapshot.debian.org/package/djvulibre/3.5.25.4-4+deb8u1/
+Other potentially useful URLs:
 
+- https://sources.debian.net/src/djvulibre/3.5.25.4-4+deb8u2/ (for browsing the source)
+- https://sources.debian.net/src/djvulibre/3.5.25.4-4+deb8u2/debian/copyright/ (for direct copyright/license information)
+- http://snapshot.debian.org/package/djvulibre/3.5.25.4-4+deb8u2/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `dpkg=1.17.27`
 
@@ -1019,12 +1026,12 @@ Other potentially useful URLs:
 - https://sources.debian.net/src/fftw3/3.3.4-2/debian/copyright/ (for direct copyright/license information)
 - http://snapshot.debian.org/package/fftw3/3.3.4-2/ (for access to the source package after it no longer exists in the archive)
 
-### `dpkg` source package: `file=1:5.22+15-2+deb8u5`
+### `dpkg` source package: `file=1:5.22+15-2+deb8u6`
 
 Binary Packages:
 
-- `file=1:5.22+15-2+deb8u5`
-- `libmagic1:amd64=1:5.22+15-2+deb8u5`
+- `file=1:5.22+15-2+deb8u6`
+- `libmagic1:amd64=1:5.22+15-2+deb8u6`
 
 Licenses: (parsed from: `/usr/share/doc/file/copyright`, `/usr/share/doc/libmagic1/copyright`)
 
@@ -1034,13 +1041,20 @@ Licenses: (parsed from: `/usr/share/doc/file/copyright`, `/usr/share/doc/libmagi
 - `MIT-Old-Style-with-legal-disclaimer-2`
 - `public-domain`
 
-**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
-This is *usually* due to a new package version being released and the old version being removed.
+Source:
 
-The source package *may* still be available for download from:
+```console
+$ apt-get source -qq --print-uris file=1:5.22+15-2+deb8u6
+'http://security.debian.org/debian-security/pool/updates/main/f/file/file_5.22+15-2+deb8u6.dsc' file_5.22+15-2+deb8u6.dsc 2255 SHA256:418531a7257b0498e3923f131476f870d913804ecf2316b957eb43616e0a76d3
+'http://security.debian.org/debian-security/pool/updates/main/f/file/file_5.22+15.orig.tar.xz' file_5.22+15.orig.tar.xz 569332 SHA256:c021e9f73b3eb3b6cc2532c5d9a77af1a92902935013c2740ba3fef83f1804d2
+'http://security.debian.org/debian-security/pool/updates/main/f/file/file_5.22+15-2+deb8u6.debian.tar.xz' file_5.22+15-2+deb8u6.debian.tar.xz 32508 SHA256:982a2847250b5db25990a1b9625bb8c933fef3ac3367157f1d79084cfa2c4b9d
+```
 
-- http://snapshot.debian.org/package/file/1:5.22+15-2+deb8u5/
+Other potentially useful URLs:
 
+- https://sources.debian.net/src/file/1:5.22+15-2+deb8u6/ (for browsing the source)
+- https://sources.debian.net/src/file/1:5.22+15-2+deb8u6/debian/copyright/ (for direct copyright/license information)
+- http://snapshot.debian.org/package/file/1:5.22+15-2+deb8u6/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `findutils=4.4.2-9`
 
@@ -1773,23 +1787,23 @@ Other potentially useful URLs:
 - https://sources.debian.net/src/ilmbase/1.0.1-6.1/debian/copyright/ (for direct copyright/license information)
 - http://snapshot.debian.org/package/ilmbase/1.0.1-6.1/ (for access to the source package after it no longer exists in the archive)
 
-### `dpkg` source package: `imagemagick=8:6.8.9.9-5+deb8u17`
+### `dpkg` source package: `imagemagick=8:6.8.9.9-5+deb8u18`
 
 Binary Packages:
 
-- `imagemagick=8:6.8.9.9-5+deb8u17`
-- `imagemagick-6.q16=8:6.8.9.9-5+deb8u17`
-- `imagemagick-common=8:6.8.9.9-5+deb8u17`
-- `libmagickcore-6-arch-config:amd64=8:6.8.9.9-5+deb8u17`
-- `libmagickcore-6-headers=8:6.8.9.9-5+deb8u17`
-- `libmagickcore-6.q16-2:amd64=8:6.8.9.9-5+deb8u17`
-- `libmagickcore-6.q16-2-extra:amd64=8:6.8.9.9-5+deb8u17`
-- `libmagickcore-6.q16-dev:amd64=8:6.8.9.9-5+deb8u17`
-- `libmagickcore-dev=8:6.8.9.9-5+deb8u17`
-- `libmagickwand-6-headers=8:6.8.9.9-5+deb8u17`
-- `libmagickwand-6.q16-2:amd64=8:6.8.9.9-5+deb8u17`
-- `libmagickwand-6.q16-dev:amd64=8:6.8.9.9-5+deb8u17`
-- `libmagickwand-dev=8:6.8.9.9-5+deb8u17`
+- `imagemagick=8:6.8.9.9-5+deb8u18`
+- `imagemagick-6.q16=8:6.8.9.9-5+deb8u18`
+- `imagemagick-common=8:6.8.9.9-5+deb8u18`
+- `libmagickcore-6-arch-config:amd64=8:6.8.9.9-5+deb8u18`
+- `libmagickcore-6-headers=8:6.8.9.9-5+deb8u18`
+- `libmagickcore-6.q16-2:amd64=8:6.8.9.9-5+deb8u18`
+- `libmagickcore-6.q16-2-extra:amd64=8:6.8.9.9-5+deb8u18`
+- `libmagickcore-6.q16-dev:amd64=8:6.8.9.9-5+deb8u18`
+- `libmagickcore-dev=8:6.8.9.9-5+deb8u18`
+- `libmagickwand-6-headers=8:6.8.9.9-5+deb8u18`
+- `libmagickwand-6.q16-2:amd64=8:6.8.9.9-5+deb8u18`
+- `libmagickwand-6.q16-dev:amd64=8:6.8.9.9-5+deb8u18`
+- `libmagickwand-dev=8:6.8.9.9-5+deb8u18`
 
 Licenses: (parsed from: `/usr/share/doc/imagemagick/copyright`, `/usr/share/doc/imagemagick-6.q16/copyright`, `/usr/share/doc/imagemagick-common/copyright`, `/usr/share/doc/libmagickcore-6-arch-config/copyright`, `/usr/share/doc/libmagickcore-6-headers/copyright`, `/usr/share/doc/libmagickcore-6.q16-2/copyright`, `/usr/share/doc/libmagickcore-6.q16-2-extra/copyright`, `/usr/share/doc/libmagickcore-6.q16-dev/copyright`, `/usr/share/doc/libmagickcore-dev/copyright`, `/usr/share/doc/libmagickwand-6-headers/copyright`, `/usr/share/doc/libmagickwand-6.q16-2/copyright`, `/usr/share/doc/libmagickwand-6.q16-dev/copyright`, `/usr/share/doc/libmagickwand-dev/copyright`)
 
@@ -1807,13 +1821,20 @@ Licenses: (parsed from: `/usr/share/doc/imagemagick/copyright`, `/usr/share/doc/
 - `Perllikelicence`
 - `TatcherUlrichPublicDomain`
 
-**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
-This is *usually* due to a new package version being released and the old version being removed.
+Source:
 
-The source package *may* still be available for download from:
+```console
+$ apt-get source -qq --print-uris imagemagick=8:6.8.9.9-5+deb8u18
+'http://security.debian.org/debian-security/pool/updates/main/i/imagemagick/imagemagick_6.8.9.9-5+deb8u18.dsc' imagemagick_6.8.9.9-5+deb8u18.dsc 4054 SHA256:84c294ac4e5efc0a0e5c13360984a54413a41736dd4903f6fe642d8b1ceb843e
+'http://security.debian.org/debian-security/pool/updates/main/i/imagemagick/imagemagick_6.8.9.9.orig.tar.xz' imagemagick_6.8.9.9.orig.tar.xz 7891624 SHA256:a4cccc70179ff2c67550e063cdcb2e62907338ef3e68b45bb1c41931e515b3eb
+'http://security.debian.org/debian-security/pool/updates/main/i/imagemagick/imagemagick_6.8.9.9-5+deb8u18.debian.tar.xz' imagemagick_6.8.9.9-5+deb8u18.debian.tar.xz 313232 SHA256:d9aaa4b141efae5c2e4de94ff1dcdf6b4187f2d50d888479c0a9d078a2aad3cb
+```
 
-- http://snapshot.debian.org/package/imagemagick/8:6.8.9.9-5+deb8u17/
+Other potentially useful URLs:
 
+- https://sources.debian.net/src/imagemagick/8:6.8.9.9-5+deb8u18/ (for browsing the source)
+- https://sources.debian.net/src/imagemagick/8:6.8.9.9-5+deb8u18/debian/copyright/ (for direct copyright/license information)
+- http://snapshot.debian.org/package/imagemagick/8:6.8.9.9-5+deb8u18/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `init-system-helpers=1.22`
 
@@ -2880,23 +2901,30 @@ Other potentially useful URLs:
 - https://sources.debian.net/src/libsm/2:1.2.2-1/debian/copyright/ (for direct copyright/license information)
 - http://snapshot.debian.org/package/libsm/2:1.2.2-1/ (for access to the source package after it no longer exists in the archive)
 
-### `dpkg` source package: `libssh2=1.4.3-4.1+deb8u5`
+### `dpkg` source package: `libssh2=1.4.3-4.1+deb8u6`
 
 Binary Packages:
 
-- `libssh2-1:amd64=1.4.3-4.1+deb8u5`
+- `libssh2-1:amd64=1.4.3-4.1+deb8u6`
 
 Licenses: (parsed from: `/usr/share/doc/libssh2-1/copyright`)
 
 - `BSD`
 
-**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
-This is *usually* due to a new package version being released and the old version being removed.
+Source:
 
-The source package *may* still be available for download from:
+```console
+$ apt-get source -qq --print-uris libssh2=1.4.3-4.1+deb8u6
+'http://security.debian.org/debian-security/pool/updates/main/libs/libssh2/libssh2_1.4.3-4.1+deb8u6.dsc' libssh2_1.4.3-4.1+deb8u6.dsc 1928 SHA256:472132e47027254028064c6e7ff9e08f3788bdf3a7d9126a31a60fc4d4318601
+'http://security.debian.org/debian-security/pool/updates/main/libs/libssh2/libssh2_1.4.3.orig.tar.gz' libssh2_1.4.3.orig.tar.gz 685712 SHA256:eac6f85f9df9db2e6386906a6227eb2cd7b3245739561cad7d6dc1d5d021b96d
+'http://security.debian.org/debian-security/pool/updates/main/libs/libssh2/libssh2_1.4.3-4.1+deb8u6.debian.tar.xz' libssh2_1.4.3-4.1+deb8u6.debian.tar.xz 22832 SHA256:a4784e7a346017251f032e67efc8b5a293189e2a2e25f7c2c0df87f1539d7d99
+```
 
-- http://snapshot.debian.org/package/libssh2/1.4.3-4.1+deb8u5/
+Other potentially useful URLs:
 
+- https://sources.debian.net/src/libssh2/1.4.3-4.1+deb8u6/ (for browsing the source)
+- https://sources.debian.net/src/libssh2/1.4.3-4.1+deb8u6/debian/copyright/ (for direct copyright/license information)
+- http://snapshot.debian.org/package/libssh2/1.4.3-4.1+deb8u6/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `libtasn1-6=4.2-3+deb8u3`
 
@@ -3405,24 +3433,31 @@ Other potentially useful URLs:
 - https://sources.debian.net/src/libxrender/1:0.9.8-1/debian/copyright/ (for direct copyright/license information)
 - http://snapshot.debian.org/package/libxrender/1:0.9.8-1/ (for access to the source package after it no longer exists in the archive)
 
-### `dpkg` source package: `libxslt=1.1.28-2+deb8u5`
+### `dpkg` source package: `libxslt=1.1.28-2+deb8u6`
 
 Binary Packages:
 
-- `libxslt1-dev:amd64=1.1.28-2+deb8u5`
-- `libxslt1.1:amd64=1.1.28-2+deb8u5`
+- `libxslt1-dev:amd64=1.1.28-2+deb8u6`
+- `libxslt1.1:amd64=1.1.28-2+deb8u6`
 
 **WARNING:** unable to detect licenses! (package likely not compliant with DEP-5)  
 If source is available (seen below), check the contents of `debian/copyright` within it.
 
 
-**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
-This is *usually* due to a new package version being released and the old version being removed.
+Source:
 
-The source package *may* still be available for download from:
+```console
+$ apt-get source -qq --print-uris libxslt=1.1.28-2+deb8u6
+'http://security.debian.org/debian-security/pool/updates/main/libx/libxslt/libxslt_1.1.28-2+deb8u6.dsc' libxslt_1.1.28-2+deb8u6.dsc 2554 SHA256:ff3073e4ee00c3b3a43867e65c69886c104ce71cd02d0960610345a00f974e66
+'http://security.debian.org/debian-security/pool/updates/main/libx/libxslt/libxslt_1.1.28.orig.tar.gz' libxslt_1.1.28.orig.tar.gz 3435907 SHA256:5fc7151a57b89c03d7b825df5a0fae0a8d5f05674c0e7cf2937ecec4d54a028c
+'http://security.debian.org/debian-security/pool/updates/main/libx/libxslt/libxslt_1.1.28-2+deb8u6.debian.tar.xz' libxslt_1.1.28-2+deb8u6.debian.tar.xz 41288 SHA256:43c944cc8671b1ba89b34d385629baa276cf5d58d48d5c70403ec4b95e564658
+```
 
-- http://snapshot.debian.org/package/libxslt/1.1.28-2+deb8u5/
+Other potentially useful URLs:
 
+- https://sources.debian.net/src/libxslt/1.1.28-2+deb8u6/ (for browsing the source)
+- https://sources.debian.net/src/libxslt/1.1.28-2+deb8u6/debian/copyright/ (for direct copyright/license information)
+- http://snapshot.debian.org/package/libxslt/1.1.28-2+deb8u6/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `libxt=1:1.1.4-1`
 
@@ -3477,11 +3512,11 @@ Other potentially useful URLs:
 - https://sources.debian.net/src/libyaml/0.1.6-3/debian/copyright/ (for direct copyright/license information)
 - http://snapshot.debian.org/package/libyaml/0.1.6-3/ (for access to the source package after it no longer exists in the archive)
 
-### `dpkg` source package: `linux=3.16.74-1`
+### `dpkg` source package: `linux=3.16.76-1`
 
 Binary Packages:
 
-- `linux-libc-dev:amd64=3.16.74-1`
+- `linux-libc-dev:amd64=3.16.76-1`
 
 Licenses: (parsed from: `/usr/share/doc/linux-libc-dev/copyright`)
 
@@ -3489,13 +3524,20 @@ Licenses: (parsed from: `/usr/share/doc/linux-libc-dev/copyright`)
 - `Unicode-data`
 - `Xen-interface`
 
-**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
-This is *usually* due to a new package version being released and the old version being removed.
+Source:
 
-The source package *may* still be available for download from:
+```console
+$ apt-get source -qq --print-uris linux=3.16.76-1
+'http://security.debian.org/debian-security/pool/updates/main/l/linux/linux_3.16.76-1.dsc' linux_3.16.76-1.dsc 143027 SHA256:6988745d192ca70642abeaa1b44778984c09e80d7c904fdcab4a6b6e02aeed72
+'http://security.debian.org/debian-security/pool/updates/main/l/linux/linux_3.16.76.orig.tar.xz' linux_3.16.76.orig.tar.xz 82072428 SHA256:f6d2ad9253cab4725fd97948447055ec56dabb18252d32a7fe55622a7744a912
+'http://security.debian.org/debian-security/pool/updates/main/l/linux/linux_3.16.76-1.debian.tar.xz' linux_3.16.76-1.debian.tar.xz 1867528 SHA256:0c2da4c7ea60ffff716cb09c8e1deb9552357b9fa22f3819d164ada01673469b
+```
 
-- http://snapshot.debian.org/package/linux/3.16.74-1/
+Other potentially useful URLs:
 
+- https://sources.debian.net/src/linux/3.16.76-1/ (for browsing the source)
+- https://sources.debian.net/src/linux/3.16.76-1/debian/copyright/ (for direct copyright/license information)
+- http://snapshot.debian.org/package/linux/3.16.76-1/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `lsb=4.1+Debian13+nmu1`
 
@@ -4222,25 +4264,32 @@ Other potentially useful URLs:
 - https://sources.debian.net/src/pkg-config/0.28-1/debian/copyright/ (for direct copyright/license information)
 - http://snapshot.debian.org/package/pkg-config/0.28-1/ (for access to the source package after it no longer exists in the archive)
 
-### `dpkg` source package: `postgresql-9.4=9.4.24-0+deb8u1`
+### `dpkg` source package: `postgresql-9.4=9.4.25-0+deb8u1`
 
 Binary Packages:
 
-- `libpq-dev=9.4.24-0+deb8u1`
-- `libpq5:amd64=9.4.24-0+deb8u1`
+- `libpq-dev=9.4.25-0+deb8u1`
+- `libpq5:amd64=9.4.25-0+deb8u1`
 
 Licenses: (parsed from: `/usr/share/doc/libpq-dev/copyright`, `/usr/share/doc/libpq5/copyright`)
 
 - `Tcl`
 - `almost exclusively BSD`
 
-**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
-This is *usually* due to a new package version being released and the old version being removed.
+Source:
 
-The source package *may* still be available for download from:
+```console
+$ apt-get source -qq --print-uris postgresql-9.4=9.4.25-0+deb8u1
+'http://security.debian.org/debian-security/pool/updates/main/p/postgresql-9.4/postgresql-9.4_9.4.25-0+deb8u1.dsc' postgresql-9.4_9.4.25-0+deb8u1.dsc 3535 SHA256:36a5c894ca0537ad6c0744f14e00d7d41424f3ddcf9764b838101378cd43a32a
+'http://security.debian.org/debian-security/pool/updates/main/p/postgresql-9.4/postgresql-9.4_9.4.25.orig.tar.bz2' postgresql-9.4_9.4.25.orig.tar.bz2 16849015 SHA256:cb98afaef4748de76c13202c14198e3e4717adde49fd9c90fdc81da877520928
+'http://security.debian.org/debian-security/pool/updates/main/p/postgresql-9.4/postgresql-9.4_9.4.25-0+deb8u1.debian.tar.xz' postgresql-9.4_9.4.25-0+deb8u1.debian.tar.xz 32224 SHA256:63ced96ee18f3babf7979d819d74ee2ceb0dfbb87c691fa16f40eb389bc52289
+```
 
-- http://snapshot.debian.org/package/postgresql-9.4/9.4.24-0+deb8u1/
+Other potentially useful URLs:
 
+- https://sources.debian.net/src/postgresql-9.4/9.4.25-0+deb8u1/ (for browsing the source)
+- https://sources.debian.net/src/postgresql-9.4/9.4.25-0+deb8u1/debian/copyright/ (for direct copyright/license information)
+- http://snapshot.debian.org/package/postgresql-9.4/9.4.25-0+deb8u1/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `procps=2:3.3.9-9+deb8u1`
 
@@ -4757,23 +4806,30 @@ Other potentially useful URLs:
 - https://sources.debian.net/src/tiff/4.0.3-12.3+deb8u9/debian/copyright/ (for direct copyright/license information)
 - http://snapshot.debian.org/package/tiff/4.0.3-12.3+deb8u9/ (for access to the source package after it no longer exists in the archive)
 
-### `dpkg` source package: `tzdata=2019a-0+deb8u1`
+### `dpkg` source package: `tzdata=2019c-0+deb8u1`
 
 Binary Packages:
 
-- `tzdata=2019a-0+deb8u1`
+- `tzdata=2019c-0+deb8u1`
 
 **WARNING:** unable to detect licenses! (package likely not compliant with DEP-5)  
 If source is available (seen below), check the contents of `debian/copyright` within it.
 
 
-**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
-This is *usually* due to a new package version being released and the old version being removed.
+Source:
 
-The source package *may* still be available for download from:
+```console
+$ apt-get source -qq --print-uris tzdata=2019c-0+deb8u1
+'http://security.debian.org/debian-security/pool/updates/main/t/tzdata/tzdata_2019c-0+deb8u1.dsc' tzdata_2019c-0+deb8u1.dsc 1985 SHA256:554948d9fdd1ceaa3a6aa3b5134c46f3608bd35365159ec2fe63b2e06bf2d4ab
+'http://security.debian.org/debian-security/pool/updates/main/t/tzdata/tzdata_2019c.orig.tar.gz' tzdata_2019c.orig.tar.gz 392087 SHA256:79c7806dab09072308da0e3d22c37d3b245015a591891ea147d3b133b60ffc7c
+'http://security.debian.org/debian-security/pool/updates/main/t/tzdata/tzdata_2019c-0+deb8u1.debian.tar.xz' tzdata_2019c-0+deb8u1.debian.tar.xz 103804 SHA256:104ee8c849bbcea67914610ac439ccff4d3a716026d190c8321a60a047ddd16b
+```
 
-- http://snapshot.debian.org/package/tzdata/2019a-0+deb8u1/
+Other potentially useful URLs:
 
+- https://sources.debian.net/src/tzdata/2019c-0+deb8u1/ (for browsing the source)
+- https://sources.debian.net/src/tzdata/2019c-0+deb8u1/debian/copyright/ (for direct copyright/license information)
+- http://snapshot.debian.org/package/tzdata/2019c-0+deb8u1/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `ucf=3.0030`
 
