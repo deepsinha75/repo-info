@@ -2,8 +2,8 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:545300952a928e3d76b418b086135605276148d0fa81821a2875fe0bb76494e1`
-- Created: `2019-11-14T23:26:27.710837211Z`
+- Image ID: `sha256:dbf066dbace4e877e0ddd309fd64fa6c833f97ee641b9d588f87f388295c868b`
+- Created: `2019-11-22T20:25:15.041193073Z`
 - Virtual Size: ~ 438.69 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
@@ -18,10 +18,10 @@
   - `PHP_CPPFLAGS=-fstack-protector-strong -fpic -fpie -O2 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64`
   - `PHP_LDFLAGS=-Wl,-O1 -Wl,--hash-style=both -pie`
   - `GPG_KEYS=CBAF69F173A0FEA4B537F470D66C9593118BCCB6 F38252826ACD957EF380D39F2F7956BC5DA04B5D`
-  - `PHP_VERSION=7.3.11`
-  - `PHP_URL=https://www.php.net/get/php-7.3.11.tar.xz/from/this/mirror`
-  - `PHP_ASC_URL=https://www.php.net/get/php-7.3.11.tar.xz.asc/from/this/mirror`
-  - `PHP_SHA256=657cf6464bac28e9490c59c07a2cf7bb76c200f09cfadf6e44ea64e95fa01021`
+  - `PHP_VERSION=7.3.12`
+  - `PHP_URL=https://www.php.net/get/php-7.3.12.tar.xz/from/this/mirror`
+  - `PHP_ASC_URL=https://www.php.net/get/php-7.3.12.tar.xz.asc/from/this/mirror`
+  - `PHP_SHA256=aafe5e9861ad828860c6af8c88cdc1488314785962328eb1783607c1fdd855df`
   - `PHP_MD5=`
   - `DRUPAL_VERSION=8.7.10`
   - `DRUPAL_MD5=83a01a3f8bcb2a8db5e91ad1dfdde24f`
@@ -693,13 +693,13 @@ Other potentially useful URLs:
 - https://sources.debian.net/src/e2fsprogs/1.43.4-2+deb9u1/debian/copyright/ (for direct copyright/license information)
 - http://snapshot.debian.org/package/e2fsprogs/1.43.4-2+deb9u1/ (for access to the source package after it no longer exists in the archive)
 
-### `dpkg` source package: `file=1:5.30-1+deb9u2`
+### `dpkg` source package: `file=1:5.30-1+deb9u3`
 
 Binary Packages:
 
-- `file=1:5.30-1+deb9u2`
-- `libmagic-mgc=1:5.30-1+deb9u2`
-- `libmagic1:amd64=1:5.30-1+deb9u2`
+- `file=1:5.30-1+deb9u3`
+- `libmagic-mgc=1:5.30-1+deb9u3`
+- `libmagic1:amd64=1:5.30-1+deb9u3`
 
 Licenses: (parsed from: `/usr/share/doc/file/copyright`, `/usr/share/doc/libmagic-mgc/copyright`, `/usr/share/doc/libmagic1/copyright`)
 
@@ -712,17 +712,17 @@ Licenses: (parsed from: `/usr/share/doc/file/copyright`, `/usr/share/doc/libmagi
 Source:
 
 ```console
-$ apt-get source -qq --print-uris file=1:5.30-1+deb9u2
-'http://deb.debian.org/debian/pool/main/f/file/file_5.30-1+deb9u2.dsc' file_5.30-1+deb9u2.dsc 2166 SHA256:18a1366842ea3434545d86c10edcf38147e818d9d4e31aa44cc4be7b412553f1
-'http://deb.debian.org/debian/pool/main/f/file/file_5.30.orig.tar.xz' file_5.30.orig.tar.xz 578628 SHA256:813feaa00da67897b652aa2f0bdeba46f1a265223071a3ea0591476b4e1b0291
-'http://deb.debian.org/debian/pool/main/f/file/file_5.30-1+deb9u2.debian.tar.xz' file_5.30-1+deb9u2.debian.tar.xz 39892 SHA256:80ff891aabcba79494ec356ca4dabe44b8808cfa2707522a13814d7153685ab1
+$ apt-get source -qq --print-uris file=1:5.30-1+deb9u3
+'http://security.debian.org/debian-security/pool/updates/main/f/file/file_5.30-1+deb9u3.dsc' file_5.30-1+deb9u3.dsc 2166 SHA256:ef90aa103f3ed04e3c8b199533a2197405599a38bc8091fb8170b20d6d7a18c2
+'http://security.debian.org/debian-security/pool/updates/main/f/file/file_5.30.orig.tar.xz' file_5.30.orig.tar.xz 578628 SHA256:813feaa00da67897b652aa2f0bdeba46f1a265223071a3ea0591476b4e1b0291
+'http://security.debian.org/debian-security/pool/updates/main/f/file/file_5.30-1+deb9u3.debian.tar.xz' file_5.30-1+deb9u3.debian.tar.xz 40224 SHA256:03fa6392b9681915e386d93baa729ebbde3fa1d204a34368eb1877302ebbf4d7
 ```
 
 Other potentially useful URLs:
 
-- https://sources.debian.net/src/file/1:5.30-1+deb9u2/ (for browsing the source)
-- https://sources.debian.net/src/file/1:5.30-1+deb9u2/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/file/1:5.30-1+deb9u2/ (for access to the source package after it no longer exists in the archive)
+- https://sources.debian.net/src/file/1:5.30-1+deb9u3/ (for browsing the source)
+- https://sources.debian.net/src/file/1:5.30-1+deb9u3/debian/copyright/ (for direct copyright/license information)
+- http://snapshot.debian.org/package/file/1:5.30-1+deb9u3/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `findutils=4.6.0+git+20161106-2`
 
@@ -1831,11 +1831,11 @@ Other potentially useful URLs:
 - https://sources.debian.net/src/libzip/1.1.2-1.1/debian/copyright/ (for direct copyright/license information)
 - http://snapshot.debian.org/package/libzip/1.1.2-1.1/ (for access to the source package after it no longer exists in the archive)
 
-### `dpkg` source package: `linux=4.9.189-3+deb9u1`
+### `dpkg` source package: `linux=4.9.189-3+deb9u2`
 
 Binary Packages:
 
-- `linux-libc-dev:amd64=4.9.189-3+deb9u1`
+- `linux-libc-dev:amd64=4.9.189-3+deb9u2`
 
 Licenses: (parsed from: `/usr/share/doc/linux-libc-dev/copyright`)
 
@@ -1845,13 +1845,20 @@ Licenses: (parsed from: `/usr/share/doc/linux-libc-dev/copyright`)
 - `Unicode-data`
 - `Xen-interface`
 
-**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
-This is *usually* due to a new package version being released and the old version being removed.
+Source:
 
-The source package *may* still be available for download from:
+```console
+$ apt-get source -qq --print-uris linux=4.9.189-3+deb9u2
+'http://security.debian.org/debian-security/pool/updates/main/l/linux/linux_4.9.189-3+deb9u2.dsc' linux_4.9.189-3+deb9u2.dsc 125053 SHA256:c4cacfcfcbe73bb61796e75c767d89542cb85bcd8b9c0cb12c5b85f909df0e01
+'http://security.debian.org/debian-security/pool/updates/main/l/linux/linux_4.9.189.orig.tar.xz' linux_4.9.189.orig.tar.xz 94807908 SHA256:f16329e227a1d4e359bd251fcaca21b0da83f1f00f03adc66e1062a479e1e5c4
+'http://security.debian.org/debian-security/pool/updates/main/l/linux/linux_4.9.189-3+deb9u2.debian.tar.xz' linux_4.9.189-3+deb9u2.debian.tar.xz 2699452 SHA256:1ae7dacd952ddf39a6d54058f91384eb5214f37e7267deb67b269b66b8f94837
+```
 
-- http://snapshot.debian.org/package/linux/4.9.189-3+deb9u1/
+Other potentially useful URLs:
 
+- https://sources.debian.net/src/linux/4.9.189-3+deb9u2/ (for browsing the source)
+- https://sources.debian.net/src/linux/4.9.189-3+deb9u2/debian/copyright/ (for direct copyright/license information)
+- http://snapshot.debian.org/package/linux/4.9.189-3+deb9u2/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `lsb=9.20161125`
 

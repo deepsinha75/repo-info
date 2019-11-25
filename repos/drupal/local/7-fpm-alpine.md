@@ -2,9 +2,9 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:53f521feaa3ef0778e8ceb3e5ff1a23ba4ec94d39ed58dff055235e2e41cd406`
-- Created: `2019-10-25T08:55:19.755554435Z`
-- Virtual Size: ~ 97.04 Mb  
+- Image ID: `sha256:be248cc122d9cd286f57e27026da150a680ad7ef93e2d89e349da6d955a699f6`
+- Created: `2019-11-22T20:32:08.134681247Z`
+- Virtual Size: ~ 97.02 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["docker-php-entrypoint"]`
@@ -18,10 +18,10 @@
   - `PHP_CPPFLAGS=-fstack-protector-strong -fpic -fpie -O2 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64`
   - `PHP_LDFLAGS=-Wl,-O1 -Wl,--hash-style=both -pie`
   - `GPG_KEYS=1729F83938DA44E27BA0F4D3DBDB397470D12172 B1B44D8F021E4E2D6021E995DC9FF8D3EE5AF27F`
-  - `PHP_VERSION=7.2.24`
-  - `PHP_URL=https://www.php.net/get/php-7.2.24.tar.xz/from/this/mirror`
-  - `PHP_ASC_URL=https://www.php.net/get/php-7.2.24.tar.xz.asc/from/this/mirror`
-  - `PHP_SHA256=a6a6cc03388060aa5f8f9e45799b72bce1c7ed7b9d7b3f1187787202aad91d25`
+  - `PHP_VERSION=7.2.25`
+  - `PHP_URL=https://www.php.net/get/php-7.2.25.tar.xz/from/this/mirror`
+  - `PHP_ASC_URL=https://www.php.net/get/php-7.2.25.tar.xz.asc/from/this/mirror`
+  - `PHP_SHA256=746efeedc38e6ff7b1ec1432440f5fa801537adf6cd21e4afb3f040e5b0760a9`
   - `PHP_MD5=`
   - `DRUPAL_VERSION=7.67`
   - `DRUPAL_MD5=78b1814e55fdaf40e753fd523d059f8d`
@@ -286,16 +286,16 @@ BSD-3-Clause
 ### `apk` package: `libjpeg-turbo`
 
 ```console
-libjpeg-turbo-2.0.2-r0 description:
+libjpeg-turbo-2.0.3-r0 description:
 Accelerated baseline JPEG compression and decompression library
 
-libjpeg-turbo-2.0.2-r0 webpage:
+libjpeg-turbo-2.0.3-r0 webpage:
 https://libjpeg-turbo.org/
 
-libjpeg-turbo-2.0.2-r0 installed size:
+libjpeg-turbo-2.0.3-r0 installed size:
 1343488
 
-libjpeg-turbo-2.0.2-r0 license:
+libjpeg-turbo-2.0.3-r0 license:
 BSD-3-Clause IJG Zlib
 
 ```
@@ -337,16 +337,16 @@ Libpng
 ### `apk` package: `libpq`
 
 ```console
-libpq-11.5-r1 description:
+libpq-11.6-r0 description:
 PostgreSQL libraries
 
-libpq-11.5-r1 webpage:
+libpq-11.6-r0 webpage:
 https://www.postgresql.org/
 
-libpq-11.5-r1 installed size:
+libpq-11.6-r0 installed size:
 315392
 
-libpq-11.5-r1 license:
+libpq-11.6-r0 license:
 PostgreSQL
 
 ```
