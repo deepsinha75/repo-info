@@ -2,9 +2,9 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:9eb7b0ce936d2eac8150df3de7496067d56bf4c1957404525fd60c3640dfd450`
-- Created: `2019-11-18T22:16:41.967025085Z`
-- Virtual Size: ~ 394.30 Mb  
+- Image ID: `sha256:7363c5bcdbcef03530f19b204aeedbac35b4868b1a523be5b8e6551430f94873`
+- Created: `2019-11-23T08:10:17.839500854Z`
+- Virtual Size: ~ 393.59 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["docker-entrypoint.sh"]`
@@ -155,23 +155,29 @@ Other potentially useful URLs:
 - https://sources.debian.net/src/audit/1:2.8.4-3/debian/copyright/ (for direct copyright/license information)
 - http://snapshot.debian.org/package/audit/1:2.8.4-3/ (for access to the source package after it no longer exists in the archive)
 
-### `dpkg` source package: `base-files=10.3+deb10u1`
+### `dpkg` source package: `base-files=10.3+deb10u2`
 
 Binary Packages:
 
-- `base-files=10.3+deb10u1`
+- `base-files=10.3+deb10u2`
 
 Licenses: (parsed from: `/usr/share/doc/base-files/copyright`)
 
 - `GPL`
 
-**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
-This is *usually* due to a new package version being released and the old version being removed.
+Source:
 
-The source package *may* still be available for download from:
+```console
+$ apt-get source -qq --print-uris base-files=10.3+deb10u2
+'http://deb.debian.org/debian/pool/main/b/base-files/base-files_10.3+deb10u2.dsc' base-files_10.3+deb10u2.dsc 1103 SHA256:fef7e9a1640ebad9a182839b36ec9af2148b3997c994f0ffe971e4659b4d119f
+'http://deb.debian.org/debian/pool/main/b/base-files/base-files_10.3+deb10u2.tar.xz' base-files_10.3+deb10u2.tar.xz 65300 SHA256:bf7fe4f15b5ae89622c471b8d0ad0dac24409b5045499c1c399c9d1b68feb31f
+```
 
-- http://snapshot.debian.org/package/base-files/10.3+deb10u1/
+Other potentially useful URLs:
 
+- https://sources.debian.net/src/base-files/10.3+deb10u2/ (for browsing the source)
+- https://sources.debian.net/src/base-files/10.3+deb10u2/debian/copyright/ (for direct copyright/license information)
+- http://snapshot.debian.org/package/base-files/10.3+deb10u2/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `base-passwd=3.5.46`
 
@@ -2187,25 +2193,6 @@ Other potentially useful URLs:
 - https://sources.debian.net/src/mysql-defaults/1.0.5/debian/copyright/ (for direct copyright/license information)
 - http://snapshot.debian.org/package/mysql-defaults/1.0.5/ (for access to the source package after it no longer exists in the archive)
 
-### `dpkg` source package: `ncurses=6.1+20181013-2+deb10u1`
-
-Binary Packages:
-
-- `ncurses-base=6.1+20181013-2+deb10u1`
-- `ncurses-bin=6.1+20181013-2+deb10u1`
-
-**WARNING:** unable to detect licenses! (package likely not compliant with DEP-5)  
-If source is available (seen below), check the contents of `debian/copyright` within it.
-
-
-**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
-This is *usually* due to a new package version being released and the old version being removed.
-
-The source package *may* still be available for download from:
-
-- http://snapshot.debian.org/package/ncurses/6.1+20181013-2+deb10u1/
-
-
 ### `dpkg` source package: `ncurses=6.1+20181013-2+deb10u2`
 
 Binary Packages:
@@ -2213,6 +2200,8 @@ Binary Packages:
 - `libncurses6:amd64=6.1+20181013-2+deb10u2`
 - `libncursesw6:amd64=6.1+20181013-2+deb10u2`
 - `libtinfo6:amd64=6.1+20181013-2+deb10u2`
+- `ncurses-base=6.1+20181013-2+deb10u2`
+- `ncurses-bin=6.1+20181013-2+deb10u2`
 
 **WARNING:** unable to detect licenses! (package likely not compliant with DEP-5)  
 If source is available (seen below), check the contents of `debian/copyright` within it.
@@ -2950,12 +2939,12 @@ Other potentially useful URLs:
 - https://sources.debian.net/src/sysstat/12.0.3-2/debian/copyright/ (for direct copyright/license information)
 - http://snapshot.debian.org/package/sysstat/12.0.3-2/ (for access to the source package after it no longer exists in the archive)
 
-### `dpkg` source package: `systemd=241-7~deb10u1`
+### `dpkg` source package: `systemd=241-7~deb10u2`
 
 Binary Packages:
 
-- `libsystemd0:amd64=241-7~deb10u1`
-- `libudev1:amd64=241-7~deb10u1`
+- `libsystemd0:amd64=241-7~deb10u2`
+- `libudev1:amd64=241-7~deb10u2`
 
 Licenses: (parsed from: `/usr/share/doc/libsystemd0/copyright`, `/usr/share/doc/libudev1/copyright`)
 
@@ -2967,13 +2956,20 @@ Licenses: (parsed from: `/usr/share/doc/libsystemd0/copyright`, `/usr/share/doc/
 - `LGPL-2.1+`
 - `public-domain`
 
-**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
-This is *usually* due to a new package version being released and the old version being removed.
+Source:
 
-The source package *may* still be available for download from:
+```console
+$ apt-get source -qq --print-uris systemd=241-7~deb10u2
+'http://deb.debian.org/debian/pool/main/s/systemd/systemd_241-7~deb10u2.dsc' systemd_241-7~deb10u2.dsc 4946 SHA256:b31ef8786d0b9ebb8a66d8921fbe19233d968e35ca1678d665c1b37117878386
+'http://deb.debian.org/debian/pool/main/s/systemd/systemd_241.orig.tar.gz' systemd_241.orig.tar.gz 7640538 SHA256:b2561a8e1d10a2c248253f0dda31a85dd6d69f2b54177de55e02cd1d2778316e
+'http://deb.debian.org/debian/pool/main/s/systemd/systemd_241-7~deb10u2.debian.tar.xz' systemd_241-7~deb10u2.debian.tar.xz 167956 SHA256:8462a1fb3bea0f771112eb96e161c940212a7fffbef26a204ff4c5e91b428fca
+```
 
-- http://snapshot.debian.org/package/systemd/241-7~deb10u1/
+Other potentially useful URLs:
 
+- https://sources.debian.net/src/systemd/241-7~deb10u2/ (for browsing the source)
+- https://sources.debian.net/src/systemd/241-7~deb10u2/debian/copyright/ (for direct copyright/license information)
+- http://snapshot.debian.org/package/systemd/241-7~deb10u2/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `sysvinit=2.93-8`
 
