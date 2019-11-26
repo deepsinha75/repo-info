@@ -2,9 +2,9 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:d7a9eb4b82cb909c3836a6d36acde1f3f21fcf13a93254ef6c8a3107d2bc5f61`
-- Created: `2019-10-17T02:41:36.817783651Z`
-- Virtual Size: ~ 689.60 Mb  
+- Image ID: `sha256:2ba93b1033ba2ccaf8b5dbe036fab3faba421ea1b94e183c9cfac7feee17c507`
+- Created: `2019-11-22T23:10:02.84261211Z`
+- Virtual Size: ~ 689.66 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Command: `["bash"]`
@@ -1472,19 +1472,24 @@ Other potentially useful URLs:
 - https://sources.debian.net/src/libgcrypt20/1.7.6-2+deb9u3/debian/copyright/ (for direct copyright/license information)
 - http://snapshot.debian.org/package/libgcrypt20/1.7.6-2+deb9u3/ (for access to the source package after it no longer exists in the archive)
 
-### `dpkg` source package: `libgdiplus=6.0.2-0xamarin1+debian9b1`
+### `dpkg` source package: `libgdiplus=6.0.4-0xamarin1+debian9b1`
 
 Binary Packages:
 
-- `libgdiplus=6.0.2-0xamarin1+debian9b1`
+- `libgdiplus=6.0.4-0xamarin1+debian9b1`
 
 **WARNING:** unable to detect licenses! (package likely not compliant with DEP-5)  
 If source is available (seen below), check the contents of `debian/copyright` within it.
 
 
-**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
-This is *usually* due to a new package version being released and the old version being removed.
+Source:
 
+```console
+$ apt-get source -qq --print-uris libgdiplus=6.0.4-0xamarin1+debian9b1
+'http://download.mono-project.com/repo/debian/pool/main/libg/libgdiplus/libgdiplus_6.0.4-0xamarin1+debian9b1.dsc' libgdiplus_6.0.4-0xamarin1+debian9b1.dsc 1625 SHA256:6c9fd17087a0d7a0d63611b192ebd610334e920903a97d5bd802290162f29168
+'http://download.mono-project.com/repo/debian/pool/main/libg/libgdiplus/libgdiplus_6.0.4.orig.tar.gz' libgdiplus_6.0.4.orig.tar.gz 1390998 SHA256:b75c38c9765d5b3e2fb3da4435f169c732983878c0f94b8bf9012137022abf29
+'http://download.mono-project.com/repo/debian/pool/main/libg/libgdiplus/libgdiplus_6.0.4-0xamarin1+debian9b1.debian.tar.xz' libgdiplus_6.0.4-0xamarin1+debian9b1.debian.tar.xz 7312 SHA256:0bad841e1e69ee15751fa4ad6defbadd39ae3f7601b7ab0a33bc309d16dce393
+```
 
 ### `dpkg` source package: `libgpg-error=1.26-2`
 
