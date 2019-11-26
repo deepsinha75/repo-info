@@ -2,8 +2,8 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:061081ba76c27ee991952241cf543873fb9ecb14e8a6ffec5df273174a0443a8`
-- Created: `2019-10-17T08:15:40.007398625Z`
+- Image ID: `sha256:20ed8cc810d8560c7b1b72b0f095806b88eecef3bc995217a404b6a2b510f353`
+- Created: `2019-11-23T05:25:17.468045804Z`
 - Virtual Size: ~ 145.80 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
@@ -1032,11 +1032,11 @@ Other potentially useful URLs:
 - https://sources.debian.net/src/krb5/1.15-1+deb9u1/debian/copyright/ (for direct copyright/license information)
 - http://snapshot.debian.org/package/krb5/1.15-1+deb9u1/ (for access to the source package after it no longer exists in the archive)
 
-### `dpkg` source package: `libarchive=3.2.2-2+deb9u1`
+### `dpkg` source package: `libarchive=3.2.2-2+deb9u2`
 
 Binary Packages:
 
-- `libarchive13:amd64=3.2.2-2+deb9u1`
+- `libarchive13:amd64=3.2.2-2+deb9u2`
 
 Licenses: (parsed from: `/usr/share/doc/libarchive13/copyright`)
 
@@ -1052,17 +1052,17 @@ Licenses: (parsed from: `/usr/share/doc/libarchive13/copyright`)
 Source:
 
 ```console
-$ apt-get source -qq --print-uris libarchive=3.2.2-2+deb9u1
-'http://deb.debian.org/debian/pool/main/liba/libarchive/libarchive_3.2.2-2+deb9u1.dsc' libarchive_3.2.2-2+deb9u1.dsc 2636 SHA256:aca78d3d03fd5ef9ab4ec3e42a701ec8f767ab7757c459c168c56229165bb5a5
-'http://deb.debian.org/debian/pool/main/liba/libarchive/libarchive_3.2.2.orig.tar.gz' libarchive_3.2.2.orig.tar.gz 5458241 SHA256:691c194ee132d1f0f7a42541f091db811bc2e56f7107e9121be2bc8c04f1060f
-'http://deb.debian.org/debian/pool/main/liba/libarchive/libarchive_3.2.2-2+deb9u1.debian.tar.xz' libarchive_3.2.2-2+deb9u1.debian.tar.xz 18624 SHA256:0e22308dbacd841ab4c2a0f04ad343afa24d398e69c31064df84c70f4589307c
+$ apt-get source -qq --print-uris libarchive=3.2.2-2+deb9u2
+'http://security.debian.org/debian-security/pool/updates/main/liba/libarchive/libarchive_3.2.2-2+deb9u2.dsc' libarchive_3.2.2-2+deb9u2.dsc 2644 SHA256:188d14846701eba7e6caaba30bbccc178b2fbce8690964bb2356018c7a0d438e
+'http://security.debian.org/debian-security/pool/updates/main/liba/libarchive/libarchive_3.2.2.orig.tar.gz' libarchive_3.2.2.orig.tar.gz 5458241 SHA256:691c194ee132d1f0f7a42541f091db811bc2e56f7107e9121be2bc8c04f1060f
+'http://security.debian.org/debian-security/pool/updates/main/liba/libarchive/libarchive_3.2.2-2+deb9u2.debian.tar.xz' libarchive_3.2.2-2+deb9u2.debian.tar.xz 20628 SHA256:0374969f2be08877324a97cf21a3e6ac73c1cde07c30d2b15b005a7da8429334
 ```
 
 Other potentially useful URLs:
 
-- https://sources.debian.net/src/libarchive/3.2.2-2+deb9u1/ (for browsing the source)
-- https://sources.debian.net/src/libarchive/3.2.2-2+deb9u1/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/libarchive/3.2.2-2+deb9u1/ (for access to the source package after it no longer exists in the archive)
+- https://sources.debian.net/src/libarchive/3.2.2-2+deb9u2/ (for browsing the source)
+- https://sources.debian.net/src/libarchive/3.2.2-2+deb9u2/debian/copyright/ (for direct copyright/license information)
+- http://snapshot.debian.org/package/libarchive/3.2.2-2+deb9u2/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `libbsd=0.8.3-1`
 
