@@ -1,10 +1,10 @@
-# `php:7.3.11-fpm-alpine3.9`
+# `php:7.3.12-fpm-alpine3.9`
 
 ## Docker Metadata
 
-- Image ID: `sha256:be2c87399d5865734c033003b4c6e638ad38715c4ad7295e641aca8f970349a3`
-- Created: `2019-10-25T03:58:46.457124685Z`
-- Virtual Size: ~ 81.86 Mb  
+- Image ID: `sha256:34533626c78fb1e6dd3e087973c6b926fdb145094d09bef1639ed9d69c09f1cf`
+- Created: `2019-11-22T12:26:31.883043934Z`
+- Virtual Size: ~ 81.87 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["docker-php-entrypoint"]`
@@ -18,10 +18,10 @@
   - `PHP_CPPFLAGS=-fstack-protector-strong -fpic -fpie -O2 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64`
   - `PHP_LDFLAGS=-Wl,-O1 -Wl,--hash-style=both -pie`
   - `GPG_KEYS=CBAF69F173A0FEA4B537F470D66C9593118BCCB6 F38252826ACD957EF380D39F2F7956BC5DA04B5D`
-  - `PHP_VERSION=7.3.11`
-  - `PHP_URL=https://www.php.net/get/php-7.3.11.tar.xz/from/this/mirror`
-  - `PHP_ASC_URL=https://www.php.net/get/php-7.3.11.tar.xz.asc/from/this/mirror`
-  - `PHP_SHA256=657cf6464bac28e9490c59c07a2cf7bb76c200f09cfadf6e44ea64e95fa01021`
+  - `PHP_VERSION=7.3.12`
+  - `PHP_URL=https://www.php.net/get/php-7.3.12.tar.xz/from/this/mirror`
+  - `PHP_ASC_URL=https://www.php.net/get/php-7.3.12.tar.xz.asc/from/this/mirror`
+  - `PHP_SHA256=aafe5e9861ad828860c6af8c88cdc1488314785962328eb1783607c1fdd855df`
   - `PHP_MD5=`
 
 ## `apk` (`.apk`-based packages)
@@ -250,16 +250,16 @@ ISC
 ### `apk` package: `libssh2`
 
 ```console
-libssh2-1.9.0-r0 description:
+libssh2-1.9.0-r1 description:
 library for accessing ssh1/ssh2 protocol servers
 
-libssh2-1.9.0-r0 webpage:
+libssh2-1.9.0-r1 webpage:
 https://libssh2.org/
 
-libssh2-1.9.0-r0 installed size:
+libssh2-1.9.0-r1 installed size:
 241664
 
-libssh2-1.9.0-r0 license:
+libssh2-1.9.0-r1 license:
 BSD
 
 ```
