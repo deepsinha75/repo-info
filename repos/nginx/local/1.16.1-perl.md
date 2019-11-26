@@ -2,9 +2,9 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:9d71697f592477c22e58561175e247a6da1accf9ace3ca5bc47c53d6533dc1f7`
-- Created: `2019-10-17T04:46:05.355210601Z`
-- Virtual Size: ~ 171.65 Mb  
+- Image ID: `sha256:6d4edb7fa6701b6b9c7fea3d94cd1fae26c67e730995e242eaca91a60dff8ad1`
+- Created: `2019-11-23T01:14:14.944123593Z`
+- Virtual Size: ~ 171.63 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Command: `["nginx","-g","daemon off;"]`
@@ -154,23 +154,29 @@ Other potentially useful URLs:
 - https://sources.debian.net/src/audit/1:2.8.4-3/debian/copyright/ (for direct copyright/license information)
 - http://snapshot.debian.org/package/audit/1:2.8.4-3/ (for access to the source package after it no longer exists in the archive)
 
-### `dpkg` source package: `base-files=10.3+deb10u1`
+### `dpkg` source package: `base-files=10.3+deb10u2`
 
 Binary Packages:
 
-- `base-files=10.3+deb10u1`
+- `base-files=10.3+deb10u2`
 
 Licenses: (parsed from: `/usr/share/doc/base-files/copyright`)
 
 - `GPL`
 
-**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
-This is *usually* due to a new package version being released and the old version being removed.
+Source:
 
-The source package *may* still be available for download from:
+```console
+$ apt-get source -qq --print-uris base-files=10.3+deb10u2
+'http://deb.debian.org/debian/pool/main/b/base-files/base-files_10.3+deb10u2.dsc' base-files_10.3+deb10u2.dsc 1103 SHA256:fef7e9a1640ebad9a182839b36ec9af2148b3997c994f0ffe971e4659b4d119f
+'http://deb.debian.org/debian/pool/main/b/base-files/base-files_10.3+deb10u2.tar.xz' base-files_10.3+deb10u2.tar.xz 65300 SHA256:bf7fe4f15b5ae89622c471b8d0ad0dac24409b5045499c1c399c9d1b68feb31f
+```
 
-- http://snapshot.debian.org/package/base-files/10.3+deb10u1/
+Other potentially useful URLs:
 
+- https://sources.debian.net/src/base-files/10.3+deb10u2/ (for browsing the source)
+- https://sources.debian.net/src/base-files/10.3+deb10u2/debian/copyright/ (for direct copyright/license information)
+- http://snapshot.debian.org/package/base-files/10.3+deb10u2/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `base-passwd=3.5.46`
 
@@ -607,11 +613,11 @@ Other potentially useful URLs:
 - https://sources.debian.net/src/fonts-dejavu/2.37-1/debian/copyright/ (for direct copyright/license information)
 - http://snapshot.debian.org/package/fonts-dejavu/2.37-1/ (for access to the source package after it no longer exists in the archive)
 
-### `dpkg` source package: `freetype=2.9.1-3`
+### `dpkg` source package: `freetype=2.9.1-3+deb10u1`
 
 Binary Packages:
 
-- `libfreetype6:amd64=2.9.1-3`
+- `libfreetype6:amd64=2.9.1-3+deb10u1`
 
 Licenses: (parsed from: `/usr/share/doc/libfreetype6/copyright`)
 
@@ -630,13 +636,25 @@ Licenses: (parsed from: `/usr/share/doc/libfreetype6/copyright`)
 - `Public-Domain`
 - `Zlib`
 
-**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
-This is *usually* due to a new package version being released and the old version being removed.
+Source:
 
-The source package *may* still be available for download from:
+```console
+$ apt-get source -qq --print-uris freetype=2.9.1-3+deb10u1
+'http://deb.debian.org/debian/pool/main/f/freetype/freetype_2.9.1-3+deb10u1.dsc' freetype_2.9.1-3+deb10u1.dsc 3690 SHA256:ef4825d67d044be4ea2e86444eae166057f8bd7d5606abf82d5095f47a3a7bd1
+'http://deb.debian.org/debian/pool/main/f/freetype/freetype_2.9.1.orig-ft2demos.tar.gz' freetype_2.9.1.orig-ft2demos.tar.gz 294850 SHA256:3d440aad3481285c7455f1593577e375c9d5792c800bbaba68d46fd75130fab9
+'http://deb.debian.org/debian/pool/main/f/freetype/freetype_2.9.1.orig-ft2demos.tar.gz.asc' freetype_2.9.1.orig-ft2demos.tar.gz.asc 359 SHA256:665b8357378dc715fbac964d05cdcc2a2f7fd1e9d7918a27bf50f4d0a17f0d30
+'http://deb.debian.org/debian/pool/main/f/freetype/freetype_2.9.1.orig-ft2docs.tar.gz' freetype_2.9.1.orig-ft2docs.tar.gz 2123920 SHA256:f57c1297f5ad2ad4764f491317fa0f548bd307c4513185d4a0602412e83b1dc9
+'http://deb.debian.org/debian/pool/main/f/freetype/freetype_2.9.1.orig-ft2docs.tar.gz.asc' freetype_2.9.1.orig-ft2docs.tar.gz.asc 359 SHA256:c4c674db43603f719018716970569d1722d0de46fa94757eb7f39266d72cdbd1
+'http://deb.debian.org/debian/pool/main/f/freetype/freetype_2.9.1.orig.tar.gz' freetype_2.9.1.orig.tar.gz 2533956 SHA256:ec391504e55498adceb30baceebd147a6e963f636eb617424bcfc47a169898ce
+'http://deb.debian.org/debian/pool/main/f/freetype/freetype_2.9.1.orig.tar.gz.asc' freetype_2.9.1.orig.tar.gz.asc 359 SHA256:2c2c5ae3b3838053b94366639e802b18bc4761003ea15ce73402d276baec424d
+'http://deb.debian.org/debian/pool/main/f/freetype/freetype_2.9.1-3+deb10u1.debian.tar.xz' freetype_2.9.1-3+deb10u1.debian.tar.xz 111972 SHA256:7a2765961a01332f2d402d86a126a9480efb326c995b0db2108c0f825d78cbe2
+```
 
-- http://snapshot.debian.org/package/freetype/2.9.1-3/
+Other potentially useful URLs:
 
+- https://sources.debian.net/src/freetype/2.9.1-3+deb10u1/ (for browsing the source)
+- https://sources.debian.net/src/freetype/2.9.1-3+deb10u1/debian/copyright/ (for direct copyright/license information)
+- http://snapshot.debian.org/package/freetype/2.9.1-3+deb10u1/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `gcc-8=8.3.0-6`
 
@@ -1659,23 +1677,31 @@ Other potentially useful URLs:
 - https://sources.debian.net/src/libxpm/1:3.5.12-1/debian/copyright/ (for direct copyright/license information)
 - http://snapshot.debian.org/package/libxpm/1:3.5.12-1/ (for access to the source package after it no longer exists in the archive)
 
-### `dpkg` source package: `libxslt=1.1.32-2.1~deb10u1`
+### `dpkg` source package: `libxslt=1.1.32-2.2~deb10u1`
 
 Binary Packages:
 
-- `libxslt1.1:amd64=1.1.32-2.1~deb10u1`
+- `libxslt1.1:amd64=1.1.32-2.2~deb10u1`
 
 **WARNING:** unable to detect licenses! (package likely not compliant with DEP-5)  
 If source is available (seen below), check the contents of `debian/copyright` within it.
 
 
-**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
-This is *usually* due to a new package version being released and the old version being removed.
+Source:
 
-The source package *may* still be available for download from:
+```console
+$ apt-get source -qq --print-uris libxslt=1.1.32-2.2~deb10u1
+'http://deb.debian.org/debian/pool/main/libx/libxslt/libxslt_1.1.32-2.2~deb10u1.dsc' libxslt_1.1.32-2.2~deb10u1.dsc 2781 SHA256:ae3c135ea738ba088bda7dc76fb63cb68920a1fac0514aa5ff8761182d48b1f3
+'http://deb.debian.org/debian/pool/main/libx/libxslt/libxslt_1.1.32.orig.tar.gz' libxslt_1.1.32.orig.tar.gz 3440715 SHA256:526ecd0abaf4a7789041622c3950c0e7f2c4c8835471515fd77eec684a355460
+'http://deb.debian.org/debian/pool/main/libx/libxslt/libxslt_1.1.32.orig.tar.gz.asc' libxslt_1.1.32.orig.tar.gz.asc 455 SHA256:68b374a73747c57a17d62f0ccc1e9714f68a292e700fe4c88e3c2d9dcba71871
+'http://deb.debian.org/debian/pool/main/libx/libxslt/libxslt_1.1.32-2.2~deb10u1.debian.tar.xz' libxslt_1.1.32-2.2~deb10u1.debian.tar.xz 34232 SHA256:1ac65664ec024a34da9c4180778073198868fb4ce78fb9bc936564dd61cc57e5
+```
 
-- http://snapshot.debian.org/package/libxslt/1.1.32-2.1~deb10u1/
+Other potentially useful URLs:
 
+- https://sources.debian.net/src/libxslt/1.1.32-2.2~deb10u1/ (for browsing the source)
+- https://sources.debian.net/src/libxslt/1.1.32-2.2~deb10u1/debian/copyright/ (for direct copyright/license information)
+- http://snapshot.debian.org/package/libxslt/1.1.32-2.2~deb10u1/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `libzstd=1.3.8+dfsg-3`
 
@@ -1783,26 +1809,34 @@ Other potentially useful URLs:
 - https://sources.debian.net/src/mawk/1.3.3-17/debian/copyright/ (for direct copyright/license information)
 - http://snapshot.debian.org/package/mawk/1.3.3-17/ (for access to the source package after it no longer exists in the archive)
 
-### `dpkg` source package: `ncurses=6.1+20181013-2+deb10u1`
+### `dpkg` source package: `ncurses=6.1+20181013-2+deb10u2`
 
 Binary Packages:
 
-- `libncursesw6:amd64=6.1+20181013-2+deb10u1`
-- `libtinfo6:amd64=6.1+20181013-2+deb10u1`
-- `ncurses-base=6.1+20181013-2+deb10u1`
-- `ncurses-bin=6.1+20181013-2+deb10u1`
+- `libncursesw6:amd64=6.1+20181013-2+deb10u2`
+- `libtinfo6:amd64=6.1+20181013-2+deb10u2`
+- `ncurses-base=6.1+20181013-2+deb10u2`
+- `ncurses-bin=6.1+20181013-2+deb10u2`
 
 **WARNING:** unable to detect licenses! (package likely not compliant with DEP-5)  
 If source is available (seen below), check the contents of `debian/copyright` within it.
 
 
-**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
-This is *usually* due to a new package version being released and the old version being removed.
+Source:
 
-The source package *may* still be available for download from:
+```console
+$ apt-get source -qq --print-uris ncurses=6.1+20181013-2+deb10u2
+'http://deb.debian.org/debian/pool/main/n/ncurses/ncurses_6.1+20181013-2+deb10u2.dsc' ncurses_6.1+20181013-2+deb10u2.dsc 4179 SHA256:8318631ff3298951a93d6dd6c20bd47c9e5fdaaf30578d541bd6404bdd5317ea
+'http://deb.debian.org/debian/pool/main/n/ncurses/ncurses_6.1+20181013.orig.tar.gz' ncurses_6.1+20181013.orig.tar.gz 3411288 SHA256:aeb1d098ee90b39a763b57b00da19ff5bbb573dea077f98fbd85d59444bb3b59
+'http://deb.debian.org/debian/pool/main/n/ncurses/ncurses_6.1+20181013.orig.tar.gz.asc' ncurses_6.1+20181013.orig.tar.gz.asc 251 SHA256:865931406e519909a4d0ab87b14d0c6d3ebccb7b3e0dac5c6095f0dfce5e14cf
+'http://deb.debian.org/debian/pool/main/n/ncurses/ncurses_6.1+20181013-2+deb10u2.debian.tar.xz' ncurses_6.1+20181013-2+deb10u2.debian.tar.xz 61664 SHA256:4574ec11ce2577e76f30f8d40cc2a9ebf94d8208f47247021da88b7b09e77df9
+```
 
-- http://snapshot.debian.org/package/ncurses/6.1+20181013-2+deb10u1/
+Other potentially useful URLs:
 
+- https://sources.debian.net/src/ncurses/6.1+20181013-2+deb10u2/ (for browsing the source)
+- https://sources.debian.net/src/ncurses/6.1+20181013-2+deb10u2/debian/copyright/ (for direct copyright/license information)
+- http://snapshot.debian.org/package/ncurses/6.1+20181013-2+deb10u2/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `nettle=3.4.1-1`
 
@@ -2196,12 +2230,12 @@ Other potentially useful URLs:
 - https://sources.debian.net/src/shadow/1:4.5-1.1/debian/copyright/ (for direct copyright/license information)
 - http://snapshot.debian.org/package/shadow/1:4.5-1.1/ (for access to the source package after it no longer exists in the archive)
 
-### `dpkg` source package: `systemd=241-7~deb10u1`
+### `dpkg` source package: `systemd=241-7~deb10u2`
 
 Binary Packages:
 
-- `libsystemd0:amd64=241-7~deb10u1`
-- `libudev1:amd64=241-7~deb10u1`
+- `libsystemd0:amd64=241-7~deb10u2`
+- `libudev1:amd64=241-7~deb10u2`
 
 Licenses: (parsed from: `/usr/share/doc/libsystemd0/copyright`, `/usr/share/doc/libudev1/copyright`)
 
@@ -2213,13 +2247,20 @@ Licenses: (parsed from: `/usr/share/doc/libsystemd0/copyright`, `/usr/share/doc/
 - `LGPL-2.1+`
 - `public-domain`
 
-**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
-This is *usually* due to a new package version being released and the old version being removed.
+Source:
 
-The source package *may* still be available for download from:
+```console
+$ apt-get source -qq --print-uris systemd=241-7~deb10u2
+'http://deb.debian.org/debian/pool/main/s/systemd/systemd_241-7~deb10u2.dsc' systemd_241-7~deb10u2.dsc 4946 SHA256:b31ef8786d0b9ebb8a66d8921fbe19233d968e35ca1678d665c1b37117878386
+'http://deb.debian.org/debian/pool/main/s/systemd/systemd_241.orig.tar.gz' systemd_241.orig.tar.gz 7640538 SHA256:b2561a8e1d10a2c248253f0dda31a85dd6d69f2b54177de55e02cd1d2778316e
+'http://deb.debian.org/debian/pool/main/s/systemd/systemd_241-7~deb10u2.debian.tar.xz' systemd_241-7~deb10u2.debian.tar.xz 167956 SHA256:8462a1fb3bea0f771112eb96e161c940212a7fffbef26a204ff4c5e91b428fca
+```
 
-- http://snapshot.debian.org/package/systemd/241-7~deb10u1/
+Other potentially useful URLs:
 
+- https://sources.debian.net/src/systemd/241-7~deb10u2/ (for browsing the source)
+- https://sources.debian.net/src/systemd/241-7~deb10u2/debian/copyright/ (for direct copyright/license information)
+- http://snapshot.debian.org/package/systemd/241-7~deb10u2/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `sysvinit=2.93-8`
 
