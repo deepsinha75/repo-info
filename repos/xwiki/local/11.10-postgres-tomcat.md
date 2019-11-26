@@ -2,8 +2,8 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:4096fd6a6a5c81035d38f6ef1b67f10f860a507d9383c146f3119e9e496bad42`
-- Created: `2019-11-22T02:57:21.478622234Z`
+- Image ID: `sha256:9557feba9d5f1dff604652f0c860a089e6f3a7a974693d7ea55d9b3982b3990d`
+- Created: `2019-11-26T01:27:40.844542782Z`
 - Virtual Size: ~ 1.30 Gb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
@@ -23,9 +23,9 @@
   - `TOMCAT_MAJOR=8`
   - `TOMCAT_VERSION=8.5.49`
   - `TOMCAT_SHA512=263480a91a3678120bd3150e6a2b4cc48881bfe110eeb91c01f89ee13e2ef3c9f149bc7bdcbb3187f80ecaa3bad42c77ad38d56675b64af1afc4c4ca1d1eb9e6`
-  - `XWIKI_VERSION=11.9`
-  - `XWIKI_URL_PREFIX=https://maven.xwiki.org/releases/org/xwiki/platform/xwiki-platform-distribution-war/11.9`
-  - `XWIKI_DOWNLOAD_SHA256=f4fc420b570c5da374492b236cca5df1239793979126722c1adcc642ee9b335c`
+  - `XWIKI_VERSION=11.10`
+  - `XWIKI_URL_PREFIX=https://maven.xwiki.org/releases/org/xwiki/platform/xwiki-platform-distribution-war/11.10`
+  - `XWIKI_DOWNLOAD_SHA256=793266765290a43776b73862773dd76106b496010969822f093b31e16e9c7a3e`
 
 ## `dpkg` (`.deb`-based packages)
 
@@ -3735,9 +3735,9 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris python3.6=3.6.8-1~18.04.3
-'http://archive.ubuntu.com/ubuntu/pool/main/p/python3.6/python3.6_3.6.8-1~18.04.3.dsc' python3.6_3.6.8-1~18.04.3.dsc 3442 SHA256:e2c90a908ea841a600b86b48e2972614acbf3f599ade8fe820cb6ee2451ff9ce
-'http://archive.ubuntu.com/ubuntu/pool/main/p/python3.6/python3.6_3.6.8.orig.tar.xz' python3.6_3.6.8.orig.tar.xz 17212420 SHA256:35446241e995773b1bed7d196f4b624dadcadc8429f26282e756b2fb8a351193
-'http://archive.ubuntu.com/ubuntu/pool/main/p/python3.6/python3.6_3.6.8-1~18.04.3.debian.tar.xz' python3.6_3.6.8-1~18.04.3.debian.tar.xz 219568 SHA256:471019002d17b33edfa6e4dd4a18b22b9602ab39d87077ac94886f7243b6ad94
+'http://security.ubuntu.com/ubuntu/pool/main/p/python3.6/python3.6_3.6.8-1~18.04.3.dsc' python3.6_3.6.8-1~18.04.3.dsc 3442 SHA256:e2c90a908ea841a600b86b48e2972614acbf3f599ade8fe820cb6ee2451ff9ce
+'http://security.ubuntu.com/ubuntu/pool/main/p/python3.6/python3.6_3.6.8.orig.tar.xz' python3.6_3.6.8.orig.tar.xz 17212420 SHA256:35446241e995773b1bed7d196f4b624dadcadc8429f26282e756b2fb8a351193
+'http://security.ubuntu.com/ubuntu/pool/main/p/python3.6/python3.6_3.6.8-1~18.04.3.debian.tar.xz' python3.6_3.6.8-1~18.04.3.debian.tar.xz 219568 SHA256:471019002d17b33edfa6e4dd4a18b22b9602ab39d87077ac94886f7243b6ad94
 ```
 
 ### `dpkg` source package: `raptor2=2.0.14-1build1`
