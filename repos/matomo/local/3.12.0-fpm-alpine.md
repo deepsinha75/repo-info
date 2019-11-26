@@ -2,9 +2,9 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:0f9b840f2139d3f191291545c0d9a7b8caacd5ea550ec2236a469281fe671fa5`
-- Created: `2019-11-05T01:34:13.566967147Z`
-- Virtual Size: ~ 201.08 Mb  
+- Image ID: `sha256:566ce1a1cf42cb0a3c07638878219de3f12b5d3d267c58244e4c5a2bbbf2c79d`
+- Created: `2019-11-22T19:42:22.411000406Z`
+- Virtual Size: ~ 200.60 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["/entrypoint.sh"]`
@@ -18,10 +18,10 @@
   - `PHP_CPPFLAGS=-fstack-protector-strong -fpic -fpie -O2 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64`
   - `PHP_LDFLAGS=-Wl,-O1 -Wl,--hash-style=both -pie`
   - `GPG_KEYS=CBAF69F173A0FEA4B537F470D66C9593118BCCB6 F38252826ACD957EF380D39F2F7956BC5DA04B5D`
-  - `PHP_VERSION=7.3.11`
-  - `PHP_URL=https://www.php.net/get/php-7.3.11.tar.xz/from/this/mirror`
-  - `PHP_ASC_URL=https://www.php.net/get/php-7.3.11.tar.xz.asc/from/this/mirror`
-  - `PHP_SHA256=657cf6464bac28e9490c59c07a2cf7bb76c200f09cfadf6e44ea64e95fa01021`
+  - `PHP_VERSION=7.3.12`
+  - `PHP_URL=https://www.php.net/get/php-7.3.12.tar.xz/from/this/mirror`
+  - `PHP_ASC_URL=https://www.php.net/get/php-7.3.12.tar.xz.asc/from/this/mirror`
+  - `PHP_SHA256=aafe5e9861ad828860c6af8c88cdc1488314785962328eb1783607c1fdd855df`
   - `PHP_MD5=`
   - `MATOMO_VERSION=3.12.0`
 - Labels:
@@ -287,16 +287,16 @@ BSD-3-Clause
 ### `apk` package: `libjpeg-turbo`
 
 ```console
-libjpeg-turbo-2.0.2-r0 description:
+libjpeg-turbo-2.0.3-r0 description:
 Accelerated baseline JPEG compression and decompression library
 
-libjpeg-turbo-2.0.2-r0 webpage:
+libjpeg-turbo-2.0.3-r0 webpage:
 https://libjpeg-turbo.org/
 
-libjpeg-turbo-2.0.2-r0 installed size:
+libjpeg-turbo-2.0.3-r0 installed size:
 1343488
 
-libjpeg-turbo-2.0.2-r0 license:
+libjpeg-turbo-2.0.3-r0 license:
 BSD-3-Clause IJG Zlib
 
 ```
