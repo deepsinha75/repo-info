@@ -2,9 +2,9 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:b2e73d7cb2bc62d49d0c2c2a45786f914c86815efccd7e7f737749fb3c8dd59d`
-- Created: `2019-11-13T00:21:43.906969816Z`
-- Virtual Size: ~ 132.05 Mb  
+- Image ID: `sha256:4208fd1e4883bb3e29b82eaf96955e2858dfc641671fdeb56a40d5a09da97d84`
+- Created: `2019-11-22T21:25:03.335178565Z`
+- Virtual Size: ~ 132.03 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["docker-entrypoint.sh"]`
@@ -17,10 +17,10 @@
   - `PHP_CPPFLAGS=-fstack-protector-strong -fpic -fpie -O2 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64`
   - `PHP_LDFLAGS=-Wl,-O1 -Wl,--hash-style=both -pie`
   - `GPG_KEYS=1729F83938DA44E27BA0F4D3DBDB397470D12172 B1B44D8F021E4E2D6021E995DC9FF8D3EE5AF27F`
-  - `PHP_VERSION=7.2.24`
-  - `PHP_URL=https://www.php.net/get/php-7.2.24.tar.xz/from/this/mirror`
-  - `PHP_ASC_URL=https://www.php.net/get/php-7.2.24.tar.xz.asc/from/this/mirror`
-  - `PHP_SHA256=a6a6cc03388060aa5f8f9e45799b72bce1c7ed7b9d7b3f1187787202aad91d25`
+  - `PHP_VERSION=7.2.25`
+  - `PHP_URL=https://www.php.net/get/php-7.2.25.tar.xz/from/this/mirror`
+  - `PHP_ASC_URL=https://www.php.net/get/php-7.2.25.tar.xz.asc/from/this/mirror`
+  - `PHP_SHA256=746efeedc38e6ff7b1ec1432440f5fa801537adf6cd21e4afb3f040e5b0760a9`
   - `PHP_MD5=`
   - `WORDPRESS_CLI_GPG_KEY=63AF7AA15067C05616FDDD88A3A2E8F226F0BC06`
   - `WORDPRESS_CLI_VERSION=2.4.0`
@@ -405,16 +405,16 @@ GPL LGPL
 ### `apk` package: `libjpeg-turbo`
 
 ```console
-libjpeg-turbo-2.0.2-r0 description:
+libjpeg-turbo-2.0.3-r0 description:
 Accelerated baseline JPEG compression and decompression library
 
-libjpeg-turbo-2.0.2-r0 webpage:
+libjpeg-turbo-2.0.3-r0 webpage:
 https://libjpeg-turbo.org/
 
-libjpeg-turbo-2.0.2-r0 installed size:
+libjpeg-turbo-2.0.3-r0 installed size:
 1343488
 
-libjpeg-turbo-2.0.2-r0 license:
+libjpeg-turbo-2.0.3-r0 license:
 BSD-3-Clause IJG Zlib
 
 ```

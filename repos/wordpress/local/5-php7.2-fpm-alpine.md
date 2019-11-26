@@ -2,9 +2,9 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:87e4ad4197812fe1a115d2ff1f34f937a4c745141b5449abc2b7292e6971e334`
-- Created: `2019-11-14T00:31:20.246054598Z`
-- Virtual Size: ~ 195.01 Mb  
+- Image ID: `sha256:f4b43d25399bc54ef0ae74d8c4bc312d5ec56535bea06a11a8b8c10253d9d7bc`
+- Created: `2019-11-22T21:15:38.762654629Z`
+- Virtual Size: ~ 195.06 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["docker-entrypoint.sh"]`
@@ -18,10 +18,10 @@
   - `PHP_CPPFLAGS=-fstack-protector-strong -fpic -fpie -O2 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64`
   - `PHP_LDFLAGS=-Wl,-O1 -Wl,--hash-style=both -pie`
   - `GPG_KEYS=1729F83938DA44E27BA0F4D3DBDB397470D12172 B1B44D8F021E4E2D6021E995DC9FF8D3EE5AF27F`
-  - `PHP_VERSION=7.2.24`
-  - `PHP_URL=https://www.php.net/get/php-7.2.24.tar.xz/from/this/mirror`
-  - `PHP_ASC_URL=https://www.php.net/get/php-7.2.24.tar.xz.asc/from/this/mirror`
-  - `PHP_SHA256=a6a6cc03388060aa5f8f9e45799b72bce1c7ed7b9d7b3f1187787202aad91d25`
+  - `PHP_VERSION=7.2.25`
+  - `PHP_URL=https://www.php.net/get/php-7.2.25.tar.xz/from/this/mirror`
+  - `PHP_ASC_URL=https://www.php.net/get/php-7.2.25.tar.xz.asc/from/this/mirror`
+  - `PHP_SHA256=746efeedc38e6ff7b1ec1432440f5fa801537adf6cd21e4afb3f040e5b0760a9`
   - `PHP_MD5=`
   - `WORDPRESS_VERSION=5.3`
   - `WORDPRESS_SHA1=e3edcb1131e539c2b2e10fed37f8b6683c824a98`
@@ -286,16 +286,16 @@ FTL GPL-2.0-or-later
 ### `apk` package: `ghostscript`
 
 ```console
-ghostscript-9.27-r4 description:
+ghostscript-9.27-r5 description:
 An interpreter for the PostScript language and for PDF
 
-ghostscript-9.27-r4 webpage:
+ghostscript-9.27-r5 webpage:
 https://ghostscript.com/
 
-ghostscript-9.27-r4 installed size:
-50577408
+ghostscript-9.27-r5 installed size:
+50642944
 
-ghostscript-9.27-r4 license:
+ghostscript-9.27-r5 license:
 AGPL-3.0-or-later
 
 ```
@@ -524,16 +524,16 @@ LGPL-2.1+
 ### `apk` package: `libjpeg-turbo`
 
 ```console
-libjpeg-turbo-2.0.2-r0 description:
+libjpeg-turbo-2.0.3-r0 description:
 Accelerated baseline JPEG compression and decompression library
 
-libjpeg-turbo-2.0.2-r0 webpage:
+libjpeg-turbo-2.0.3-r0 webpage:
 https://libjpeg-turbo.org/
 
-libjpeg-turbo-2.0.2-r0 installed size:
+libjpeg-turbo-2.0.3-r0 installed size:
 1343488
 
-libjpeg-turbo-2.0.2-r0 license:
+libjpeg-turbo-2.0.3-r0 license:
 BSD-3-Clause IJG Zlib
 
 ```
@@ -1034,16 +1034,16 @@ GPL
 ### `apk` package: `tiff`
 
 ```console
-tiff-4.0.10-r1 description:
+tiff-4.0.10-r2 description:
 Provides support for the Tag Image File Format or TIFF
 
-tiff-4.0.10-r1 webpage:
+tiff-4.0.10-r2 webpage:
 http://www.libtiff.org
 
-tiff-4.0.10-r1 installed size:
+tiff-4.0.10-r2 installed size:
 442368
 
-tiff-4.0.10-r1 license:
+tiff-4.0.10-r2 license:
 libtiff
 
 ```
