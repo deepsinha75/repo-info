@@ -3919,9 +3919,9 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris python3.6=3.6.8-1~18.04.3
-'http://archive.ubuntu.com/ubuntu/pool/main/p/python3.6/python3.6_3.6.8-1~18.04.3.dsc' python3.6_3.6.8-1~18.04.3.dsc 3442 SHA256:e2c90a908ea841a600b86b48e2972614acbf3f599ade8fe820cb6ee2451ff9ce
-'http://archive.ubuntu.com/ubuntu/pool/main/p/python3.6/python3.6_3.6.8.orig.tar.xz' python3.6_3.6.8.orig.tar.xz 17212420 SHA256:35446241e995773b1bed7d196f4b624dadcadc8429f26282e756b2fb8a351193
-'http://archive.ubuntu.com/ubuntu/pool/main/p/python3.6/python3.6_3.6.8-1~18.04.3.debian.tar.xz' python3.6_3.6.8-1~18.04.3.debian.tar.xz 219568 SHA256:471019002d17b33edfa6e4dd4a18b22b9602ab39d87077ac94886f7243b6ad94
+'http://security.ubuntu.com/ubuntu/pool/main/p/python3.6/python3.6_3.6.8-1~18.04.3.dsc' python3.6_3.6.8-1~18.04.3.dsc 3442 SHA256:e2c90a908ea841a600b86b48e2972614acbf3f599ade8fe820cb6ee2451ff9ce
+'http://security.ubuntu.com/ubuntu/pool/main/p/python3.6/python3.6_3.6.8.orig.tar.xz' python3.6_3.6.8.orig.tar.xz 17212420 SHA256:35446241e995773b1bed7d196f4b624dadcadc8429f26282e756b2fb8a351193
+'http://security.ubuntu.com/ubuntu/pool/main/p/python3.6/python3.6_3.6.8-1~18.04.3.debian.tar.xz' python3.6_3.6.8-1~18.04.3.debian.tar.xz 219568 SHA256:471019002d17b33edfa6e4dd4a18b22b9602ab39d87077ac94886f7243b6ad94
 ```
 
 ### `dpkg` source package: `pyyaml=3.12-1build2`
