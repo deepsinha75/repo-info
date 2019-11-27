@@ -2,8 +2,8 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:60b01da07729bc0fd4a5f6ff6c9cce4a99f246a6918106a1a0bdec7fe28c42d7`
-- Created: `2019-10-31T23:14:58.35439921Z`
+- Image ID: `sha256:b752a2cc070795debb0fa90fc18c18eadfb4ef01b8ac516cef8c6bdf4da81146`
+- Created: `2019-11-27T01:18:51.568547209Z`
 - Virtual Size: ~ 1.54 Gb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
@@ -596,12 +596,12 @@ $ apt-get source -qq --print-uris diffutils=1:3.3-3
 'http://archive.ubuntu.com/ubuntu/pool/main/d/diffutils/diffutils_3.3-3.debian.tar.xz' diffutils_3.3-3.debian.tar.xz 18356 SHA256:a0d1946979196f793a8ca55b21ab7891227de08f15bac2578ed84f4911e8b755
 ```
 
-### `dpkg` source package: `djvulibre=3.5.27.1-5`
+### `dpkg` source package: `djvulibre=3.5.27.1-5ubuntu0.1`
 
 Binary Packages:
 
-- `libdjvulibre-text=3.5.27.1-5`
-- `libdjvulibre21:amd64=3.5.27.1-5`
+- `libdjvulibre-text=3.5.27.1-5ubuntu0.1`
+- `libdjvulibre21:amd64=3.5.27.1-5ubuntu0.1`
 
 Licenses: (parsed from: `/usr/share/doc/libdjvulibre-text/copyright`, `/usr/share/doc/libdjvulibre21/copyright`)
 
@@ -610,10 +610,10 @@ Licenses: (parsed from: `/usr/share/doc/libdjvulibre-text/copyright`, `/usr/shar
 Source:
 
 ```console
-$ apt-get source -qq --print-uris djvulibre=3.5.27.1-5
-'http://archive.ubuntu.com/ubuntu/pool/main/d/djvulibre/djvulibre_3.5.27.1-5.dsc' djvulibre_3.5.27.1-5.dsc 2455 SHA256:7fe9dec01ae25f84db61c766b57de760ff4cda81fd84b22fc2932f3d439ea03b
+$ apt-get source -qq --print-uris djvulibre=3.5.27.1-5ubuntu0.1
+'http://archive.ubuntu.com/ubuntu/pool/main/d/djvulibre/djvulibre_3.5.27.1-5ubuntu0.1.dsc' djvulibre_3.5.27.1-5ubuntu0.1.dsc 2586 SHA256:3650e888f71dbb3929bd663cd192f900e430db70894d75970555788229d0dd4e
 'http://archive.ubuntu.com/ubuntu/pool/main/d/djvulibre/djvulibre_3.5.27.1.orig.tar.gz' djvulibre_3.5.27.1.orig.tar.gz 3231662 SHA256:77f07de3f1039aa19eba2eb3170d9ce9a0918ba7b704a59cfaf08f42fcc52144
-'http://archive.ubuntu.com/ubuntu/pool/main/d/djvulibre/djvulibre_3.5.27.1-5.debian.tar.xz' djvulibre_3.5.27.1-5.debian.tar.xz 19860 SHA256:a7005e62356e0ea62362119aea70783cbe1ead79a5949af9a5adba2432e3254e
+'http://archive.ubuntu.com/ubuntu/pool/main/d/djvulibre/djvulibre_3.5.27.1-5ubuntu0.1.debian.tar.xz' djvulibre_3.5.27.1-5ubuntu0.1.debian.tar.xz 23060 SHA256:681551c3d72edf03c25b0be79bca38c220b4e97bbea718025506a807df63a5ac
 ```
 
 ### `dpkg` source package: `dpkg=1.18.4ubuntu1.6`
@@ -939,13 +939,13 @@ $ apt-get source -qq --print-uris game-music-emu=0.6.0-3ubuntu0.16.04.1
 'http://archive.ubuntu.com/ubuntu/pool/universe/g/game-music-emu/game-music-emu_0.6.0-3ubuntu0.16.04.1.debian.tar.xz' game-music-emu_0.6.0-3ubuntu0.16.04.1.debian.tar.xz 5592 SHA256:a4d7a4f5d9df23098abc4c1fe82696ed8f93d893c50bb8fc14a4de84e705810d
 ```
 
-### `dpkg` source package: `gcc-5=5.4.0-6ubuntu1~16.04.11`
+### `dpkg` source package: `gcc-5=5.4.0-6ubuntu1~16.04.12`
 
 Binary Packages:
 
-- `gcc-5-base:amd64=5.4.0-6ubuntu1~16.04.11`
-- `libgomp1:amd64=5.4.0-6ubuntu1~16.04.11`
-- `libstdc++6:amd64=5.4.0-6ubuntu1~16.04.11`
+- `gcc-5-base:amd64=5.4.0-6ubuntu1~16.04.12`
+- `libgomp1:amd64=5.4.0-6ubuntu1~16.04.12`
+- `libstdc++6:amd64=5.4.0-6ubuntu1~16.04.12`
 
 Licenses: (parsed from: `/usr/share/doc/gcc-5-base/copyright`, `/usr/share/doc/libgomp1/copyright`, `/usr/share/doc/libstdc++6/copyright`)
 
@@ -955,9 +955,14 @@ Licenses: (parsed from: `/usr/share/doc/gcc-5-base/copyright`, `/usr/share/doc/l
 - `GPL-2`
 - `GPL-3`
 
-**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
-This is *usually* due to a new package version being released and the old version being removed.
+Source:
 
+```console
+$ apt-get source -qq --print-uris gcc-5=5.4.0-6ubuntu1~16.04.12
+'http://archive.ubuntu.com/ubuntu/pool/main/g/gcc-5/gcc-5_5.4.0-6ubuntu1~16.04.12.dsc' gcc-5_5.4.0-6ubuntu1~16.04.12.dsc 28298 SHA256:4f6afb05c2f291aff65695bbf9f561106789f48b89d34d80ded9797c2acb4499
+'http://archive.ubuntu.com/ubuntu/pool/main/g/gcc-5/gcc-5_5.4.0.orig.tar.gz' gcc-5_5.4.0.orig.tar.gz 73530162 SHA256:00f73e8382aa8653aa501ce2263597c2c4429912bfa18102f47cc362f00ed88d
+'http://archive.ubuntu.com/ubuntu/pool/main/g/gcc-5/gcc-5_5.4.0-6ubuntu1~16.04.12.diff.gz' gcc-5_5.4.0-6ubuntu1~16.04.12.diff.gz 1486130 SHA256:d0c772f3f39df2dedaf74b8e5ded301ae77a6f9d1fca4072690d812bd3b0bb69
+```
 
 ### `dpkg` source package: `gccgo-6=6.0.1-0ubuntu1`
 
@@ -1004,13 +1009,13 @@ $ apt-get source -qq --print-uris gdk-pixbuf=2.32.2-1ubuntu1.6
 'http://archive.ubuntu.com/ubuntu/pool/main/g/gdk-pixbuf/gdk-pixbuf_2.32.2-1ubuntu1.6.debian.tar.xz' gdk-pixbuf_2.32.2-1ubuntu1.6.debian.tar.xz 19956 SHA256:89b307e6007e8acec4038bdc994c81d36f3371d3ea5ccc2877d697cb0a6c445b
 ```
 
-### `dpkg` source package: `ghostscript=9.26~dfsg+0-0ubuntu0.16.04.11`
+### `dpkg` source package: `ghostscript=9.26~dfsg+0-0ubuntu0.16.04.12`
 
 Binary Packages:
 
-- `ghostscript=9.26~dfsg+0-0ubuntu0.16.04.11`
-- `libgs9:amd64=9.26~dfsg+0-0ubuntu0.16.04.11`
-- `libgs9-common=9.26~dfsg+0-0ubuntu0.16.04.11`
+- `ghostscript=9.26~dfsg+0-0ubuntu0.16.04.12`
+- `libgs9:amd64=9.26~dfsg+0-0ubuntu0.16.04.12`
+- `libgs9-common=9.26~dfsg+0-0ubuntu0.16.04.12`
 
 Licenses: (parsed from: `/usr/share/doc/ghostscript/copyright`, `/usr/share/doc/libgs9/copyright`, `/usr/share/doc/libgs9-common/copyright`)
 
@@ -1041,9 +1046,14 @@ Licenses: (parsed from: `/usr/share/doc/ghostscript/copyright`, `/usr/share/doc/
 - `other`
 - `public-domain`
 
-**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
-This is *usually* due to a new package version being released and the old version being removed.
+Source:
 
+```console
+$ apt-get source -qq --print-uris ghostscript=9.26~dfsg+0-0ubuntu0.16.04.12
+'http://archive.ubuntu.com/ubuntu/pool/main/g/ghostscript/ghostscript_9.26~dfsg+0-0ubuntu0.16.04.12.dsc' ghostscript_9.26~dfsg+0-0ubuntu0.16.04.12.dsc 2930 SHA256:ddf8d72b36c9656432c0908b8f3be7aabc72f44151ecd2a85079ccce928bed75
+'http://archive.ubuntu.com/ubuntu/pool/main/g/ghostscript/ghostscript_9.26~dfsg+0.orig.tar.xz' ghostscript_9.26~dfsg+0.orig.tar.xz 27040868 SHA256:f13dd2be0499ae47f508d66be4f7a61056674c2ee6ff53d954e84bc634986bd7
+'http://archive.ubuntu.com/ubuntu/pool/main/g/ghostscript/ghostscript_9.26~dfsg+0-0ubuntu0.16.04.12.debian.tar.xz' ghostscript_9.26~dfsg+0-0ubuntu0.16.04.12.debian.tar.xz 148768 SHA256:ba69fab2e0c40472a6e680908cd5c3df4b0e729c30e85a4092b26701ea8f914c
+```
 
 ### `dpkg` source package: `giflib=5.1.4-0.3~16.04.1`
 
@@ -1408,16 +1418,16 @@ $ apt-get source -qq --print-uris ilmbase=2.2.0-11ubuntu2
 'http://archive.ubuntu.com/ubuntu/pool/main/i/ilmbase/ilmbase_2.2.0-11ubuntu2.debian.tar.xz' ilmbase_2.2.0-11ubuntu2.debian.tar.xz 13400 SHA256:400b77a32f7a04d78ff0462f32dc1e4073f5e1225ed070c63fa6a0ec619905c5
 ```
 
-### `dpkg` source package: `imagemagick=8:6.8.9.9-7ubuntu5.14`
+### `dpkg` source package: `imagemagick=8:6.8.9.9-7ubuntu5.15`
 
 Binary Packages:
 
-- `imagemagick=8:6.8.9.9-7ubuntu5.14`
-- `imagemagick-6.q16=8:6.8.9.9-7ubuntu5.14`
-- `imagemagick-common=8:6.8.9.9-7ubuntu5.14`
-- `libmagickcore-6.q16-2:amd64=8:6.8.9.9-7ubuntu5.14`
-- `libmagickcore-6.q16-2-extra:amd64=8:6.8.9.9-7ubuntu5.14`
-- `libmagickwand-6.q16-2:amd64=8:6.8.9.9-7ubuntu5.14`
+- `imagemagick=8:6.8.9.9-7ubuntu5.15`
+- `imagemagick-6.q16=8:6.8.9.9-7ubuntu5.15`
+- `imagemagick-common=8:6.8.9.9-7ubuntu5.15`
+- `libmagickcore-6.q16-2:amd64=8:6.8.9.9-7ubuntu5.15`
+- `libmagickcore-6.q16-2-extra:amd64=8:6.8.9.9-7ubuntu5.15`
+- `libmagickwand-6.q16-2:amd64=8:6.8.9.9-7ubuntu5.15`
 
 Licenses: (parsed from: `/usr/share/doc/imagemagick/copyright`, `/usr/share/doc/imagemagick-6.q16/copyright`, `/usr/share/doc/imagemagick-common/copyright`, `/usr/share/doc/libmagickcore-6.q16-2/copyright`, `/usr/share/doc/libmagickcore-6.q16-2-extra/copyright`, `/usr/share/doc/libmagickwand-6.q16-2/copyright`)
 
@@ -1435,9 +1445,14 @@ Licenses: (parsed from: `/usr/share/doc/imagemagick/copyright`, `/usr/share/doc/
 - `Perllikelicence`
 - `TatcherUlrichPublicDomain`
 
-**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
-This is *usually* due to a new package version being released and the old version being removed.
+Source:
 
+```console
+$ apt-get source -qq --print-uris imagemagick=8:6.8.9.9-7ubuntu5.15
+'http://archive.ubuntu.com/ubuntu/pool/main/i/imagemagick/imagemagick_6.8.9.9-7ubuntu5.15.dsc' imagemagick_6.8.9.9-7ubuntu5.15.dsc 4337 SHA256:46263aa987b6f93e2214cda73c49e2a46a20ff407cb807eb379dcc402056cf2c
+'http://archive.ubuntu.com/ubuntu/pool/main/i/imagemagick/imagemagick_6.8.9.9.orig.tar.xz' imagemagick_6.8.9.9.orig.tar.xz 7891624 SHA256:a4cccc70179ff2c67550e063cdcb2e62907338ef3e68b45bb1c41931e515b3eb
+'http://archive.ubuntu.com/ubuntu/pool/main/i/imagemagick/imagemagick_6.8.9.9-7ubuntu5.15.debian.tar.xz' imagemagick_6.8.9.9-7ubuntu5.15.debian.tar.xz 318708 SHA256:51dde4d550d998d8f771421b512ccde3c4cc2d368aaeb6d318da15f7e7d14295
+```
 
 ### `dpkg` source package: `init-system-helpers=1.29ubuntu4`
 
@@ -2258,20 +2273,25 @@ $ apt-get source -qq --print-uris libiec61883=1.2.0-0.2
 'http://archive.ubuntu.com/ubuntu/pool/main/libi/libiec61883/libiec61883_1.2.0-0.2.diff.gz' libiec61883_1.2.0-0.2.diff.gz 6711 SHA256:84c54267c7fec62d2dbf9123057eba1ea9cffc0d29968cd747feb22020ddf71d
 ```
 
-### `dpkg` source package: `libjpeg-turbo=1.4.2-0ubuntu3.1`
+### `dpkg` source package: `libjpeg-turbo=1.4.2-0ubuntu3.3`
 
 Binary Packages:
 
-- `libjpeg-turbo8:amd64=1.4.2-0ubuntu3.1`
+- `libjpeg-turbo8:amd64=1.4.2-0ubuntu3.3`
 
 Licenses: (parsed from: `/usr/share/doc/libjpeg-turbo8/copyright`)
 
 - `JPEG`
 - `LGPL-2.1`
 
-**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
-This is *usually* due to a new package version being released and the old version being removed.
+Source:
 
+```console
+$ apt-get source -qq --print-uris libjpeg-turbo=1.4.2-0ubuntu3.3
+'http://archive.ubuntu.com/ubuntu/pool/main/libj/libjpeg-turbo/libjpeg-turbo_1.4.2-0ubuntu3.3.dsc' libjpeg-turbo_1.4.2-0ubuntu3.3.dsc 2286 SHA256:9db340b995c90aa65172783bc80fc7af4a2ac0103ade1001797abca558f02dd7
+'http://archive.ubuntu.com/ubuntu/pool/main/libj/libjpeg-turbo/libjpeg-turbo_1.4.2.orig.tar.gz' libjpeg-turbo_1.4.2.orig.tar.gz 1569306 SHA256:521bb5d3043e7ac063ce3026d9a59cc2ab2e9636c655a2515af5f4706122233e
+'http://archive.ubuntu.com/ubuntu/pool/main/libj/libjpeg-turbo/libjpeg-turbo_1.4.2-0ubuntu3.3.debian.tar.xz' libjpeg-turbo_1.4.2-0ubuntu3.3.debian.tar.xz 29632 SHA256:59e308a4ead3c152ecf512f6e31aaaca3e6be9067dae157113d2a8ce209cf06c
+```
 
 ### `dpkg` source package: `libjpeg8-empty=8c-2ubuntu8`
 
@@ -2938,11 +2958,11 @@ $ apt-get source -qq --print-uris libvorbis=1.3.5-3ubuntu0.2
 'http://archive.ubuntu.com/ubuntu/pool/main/libv/libvorbis/libvorbis_1.3.5-3ubuntu0.2.debian.tar.xz' libvorbis_1.3.5-3ubuntu0.2.debian.tar.xz 12340 SHA256:7b5a461437a2666ec6c3efb06153a415339d89aca4adba19fd0ca235f6a7afc6
 ```
 
-### `dpkg` source package: `libvpx=1.5.0-2ubuntu1`
+### `dpkg` source package: `libvpx=1.5.0-2ubuntu1.1`
 
 Binary Packages:
 
-- `libvpx3:amd64=1.5.0-2ubuntu1`
+- `libvpx3:amd64=1.5.0-2ubuntu1.1`
 
 Licenses: (parsed from: `/usr/share/doc/libvpx3/copyright`)
 
@@ -2952,10 +2972,10 @@ Licenses: (parsed from: `/usr/share/doc/libvpx3/copyright`)
 Source:
 
 ```console
-$ apt-get source -qq --print-uris libvpx=1.5.0-2ubuntu1
-'http://archive.ubuntu.com/ubuntu/pool/main/libv/libvpx/libvpx_1.5.0-2ubuntu1.dsc' libvpx_1.5.0-2ubuntu1.dsc 2105 SHA256:f290896db2c2cf8d6838d3bf8cb0293857bbba4742ce7ee4d5cfc6fec7dc1ff7
+$ apt-get source -qq --print-uris libvpx=1.5.0-2ubuntu1.1
+'http://archive.ubuntu.com/ubuntu/pool/main/libv/libvpx/libvpx_1.5.0-2ubuntu1.1.dsc' libvpx_1.5.0-2ubuntu1.1.dsc 2127 SHA256:4bdbcd90cd8d09cf96f1ecf2295526510d24ab3bbd5915a12e7500f0ac437179
 'http://archive.ubuntu.com/ubuntu/pool/main/libv/libvpx/libvpx_1.5.0.orig.tar.bz2' libvpx_1.5.0.orig.tar.bz2 1906571 SHA256:306d67908625675f8e188d37a81fbfafdf5068b09d9aa52702b6fbe601c76797
-'http://archive.ubuntu.com/ubuntu/pool/main/libv/libvpx/libvpx_1.5.0-2ubuntu1.debian.tar.xz' libvpx_1.5.0-2ubuntu1.debian.tar.xz 12488 SHA256:a213fd843941bc7c0c6cc6309ee7f44fab517281793a50345ef3d68823e5c402
+'http://archive.ubuntu.com/ubuntu/pool/main/libv/libvpx/libvpx_1.5.0-2ubuntu1.1.debian.tar.xz' libvpx_1.5.0-2ubuntu1.1.debian.tar.xz 17492 SHA256:b7a61dfb8e9c26a93c9ab55eca39dc98111e0c5c3470e25343bcb5cff0087e80
 ```
 
 ### `dpkg` source package: `libwebp=0.4.4-1`
