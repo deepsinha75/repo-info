@@ -250,10 +250,16 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris binutils=2.33.1-4
-'http://http.debian.net/debian/pool/main/b/binutils/binutils_2.33.1-4.dsc' binutils_2.33.1-4.dsc 11016 SHA256:d95e4238bce4e3325b746387d5837a174bb6c09e173b27f288264355b62f05ca
-'http://http.debian.net/debian/pool/main/b/binutils/binutils_2.33.1.orig.tar.xz' binutils_2.33.1.orig.tar.xz 22843896 SHA256:675684a650b3ad67471c6edca30da393630c94a54bc0f889492daa9e57d9db8e
-'http://http.debian.net/debian/pool/main/b/binutils/binutils_2.33.1-4.debian.tar.xz' binutils_2.33.1-4.debian.tar.xz 89120 SHA256:2664e97177904a46e8eda8a5b9e67d9a12839ab265a30a980174f2923b1ed164
+'http://deb.debian.org/debian/pool/main/b/binutils/binutils_2.33.1-4.dsc' binutils_2.33.1-4.dsc 11016 SHA256:d95e4238bce4e3325b746387d5837a174bb6c09e173b27f288264355b62f05ca
+'http://deb.debian.org/debian/pool/main/b/binutils/binutils_2.33.1.orig.tar.xz' binutils_2.33.1.orig.tar.xz 22843896 SHA256:675684a650b3ad67471c6edca30da393630c94a54bc0f889492daa9e57d9db8e
+'http://deb.debian.org/debian/pool/main/b/binutils/binutils_2.33.1-4.debian.tar.xz' binutils_2.33.1-4.debian.tar.xz 89120 SHA256:2664e97177904a46e8eda8a5b9e67d9a12839ab265a30a980174f2923b1ed164
 ```
+
+Other potentially useful URLs:
+
+- https://sources.debian.net/src/binutils/2.33.1-4/ (for browsing the source)
+- https://sources.debian.net/src/binutils/2.33.1-4/debian/copyright/ (for direct copyright/license information)
+- http://snapshot.debian.org/package/binutils/2.33.1-4/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `boot=1.3-23-2`
 
@@ -2721,10 +2727,16 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris linux=5.3.9-3
-'http://http.debian.net/debian/pool/main/l/linux/linux_5.3.9-3.dsc' linux_5.3.9-3.dsc 197528 SHA256:1f5c530d62e625e896aa0489629e30dcc1af58cf40001afdfe7e7ffa90a88704
-'http://http.debian.net/debian/pool/main/l/linux/linux_5.3.9.orig.tar.xz' linux_5.3.9.orig.tar.xz 112779172 SHA256:c2cefda8b78aa056737888f36a851f18cb0f4467f94fa3f22d41ff1642e427f4
-'http://http.debian.net/debian/pool/main/l/linux/linux_5.3.9-3.debian.tar.xz' linux_5.3.9-3.debian.tar.xz 3554012 SHA256:3e64a08da44e6d306b79004ba390089457ceef5a81b9f44aa66496bbe6dd24f2
+'http://deb.debian.org/debian/pool/main/l/linux/linux_5.3.9-3.dsc' linux_5.3.9-3.dsc 197528 SHA256:1f5c530d62e625e896aa0489629e30dcc1af58cf40001afdfe7e7ffa90a88704
+'http://deb.debian.org/debian/pool/main/l/linux/linux_5.3.9.orig.tar.xz' linux_5.3.9.orig.tar.xz 112779172 SHA256:c2cefda8b78aa056737888f36a851f18cb0f4467f94fa3f22d41ff1642e427f4
+'http://deb.debian.org/debian/pool/main/l/linux/linux_5.3.9-3.debian.tar.xz' linux_5.3.9-3.debian.tar.xz 3554012 SHA256:3e64a08da44e6d306b79004ba390089457ceef5a81b9f44aa66496bbe6dd24f2
 ```
+
+Other potentially useful URLs:
+
+- https://sources.debian.net/src/linux/5.3.9-3/ (for browsing the source)
+- https://sources.debian.net/src/linux/5.3.9-3/debian/copyright/ (for direct copyright/license information)
+- http://snapshot.debian.org/package/linux/5.3.9-3/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `littler=0.3.9-1`
 
@@ -3016,20 +3028,13 @@ Licenses: (parsed from: `/usr/share/doc/libnghttp2-14/copyright`)
 - `SIL-OFL-1.1`
 - `all-permissive`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris nghttp2=1.39.2-1
-'http://deb.debian.org/debian/pool/main/n/nghttp2/nghttp2_1.39.2-1.dsc' nghttp2_1.39.2-1.dsc 2548 SHA256:2703b5c0cc8d92997f4b250297eeaff4b76aca7267d6d1cca6631a525559d55b
-'http://deb.debian.org/debian/pool/main/n/nghttp2/nghttp2_1.39.2.orig.tar.bz2' nghttp2_1.39.2.orig.tar.bz2 2002397 SHA256:92a23e4522328c8565028ee0c7270e74add7990614fd1148f2a79d873bc2a1d0
-'http://deb.debian.org/debian/pool/main/n/nghttp2/nghttp2_1.39.2-1.debian.tar.xz' nghttp2_1.39.2-1.debian.tar.xz 12600 SHA256:30493844780721041ab46ee4c951b9841ba8a0df3692340d540f116897a3bcfa
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/nghttp2/1.39.2-1/
 
-- https://sources.debian.net/src/nghttp2/1.39.2-1/ (for browsing the source)
-- https://sources.debian.net/src/nghttp2/1.39.2-1/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/nghttp2/1.39.2-1/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `nlme=3.1.142-1`
 
@@ -3879,10 +3884,16 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris tiff=4.1.0+git191117-1
-'http://http.debian.net/debian/pool/main/t/tiff/tiff_4.1.0+git191117-1.dsc' tiff_4.1.0+git191117-1.dsc 2242 SHA256:719b2652bb6ac2bfe0cb6728cfdb267b320a8dc7c1250940ce567e022876b867
-'http://http.debian.net/debian/pool/main/t/tiff/tiff_4.1.0+git191117.orig.tar.xz' tiff_4.1.0+git191117.orig.tar.xz 1533524 SHA256:67e1d045e994adb7144b0cca228d70dd6d520aaf8c75c342064bc0fd601e6e42
-'http://http.debian.net/debian/pool/main/t/tiff/tiff_4.1.0+git191117-1.debian.tar.xz' tiff_4.1.0+git191117-1.debian.tar.xz 18896 SHA256:15bfa5a520c58b41a67b6ac211feae21159a02acd45965ceb1831a5fd06ebf33
+'http://deb.debian.org/debian/pool/main/t/tiff/tiff_4.1.0+git191117-1.dsc' tiff_4.1.0+git191117-1.dsc 2242 SHA256:719b2652bb6ac2bfe0cb6728cfdb267b320a8dc7c1250940ce567e022876b867
+'http://deb.debian.org/debian/pool/main/t/tiff/tiff_4.1.0+git191117.orig.tar.xz' tiff_4.1.0+git191117.orig.tar.xz 1533524 SHA256:67e1d045e994adb7144b0cca228d70dd6d520aaf8c75c342064bc0fd601e6e42
+'http://deb.debian.org/debian/pool/main/t/tiff/tiff_4.1.0+git191117-1.debian.tar.xz' tiff_4.1.0+git191117-1.debian.tar.xz 18896 SHA256:15bfa5a520c58b41a67b6ac211feae21159a02acd45965ceb1831a5fd06ebf33
 ```
+
+Other potentially useful URLs:
+
+- https://sources.debian.net/src/tiff/4.1.0+git191117-1/ (for browsing the source)
+- https://sources.debian.net/src/tiff/4.1.0+git191117-1/debian/copyright/ (for direct copyright/license information)
+- http://snapshot.debian.org/package/tiff/4.1.0+git191117-1/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `tk8.6=8.6.9-2`
 
