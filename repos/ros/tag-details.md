@@ -12,6 +12,11 @@
 -	[`ros:dashing-ros-base-bionic`](#rosdashing-ros-base-bionic)
 -	[`ros:dashing-ros-core`](#rosdashing-ros-core)
 -	[`ros:dashing-ros-core-bionic`](#rosdashing-ros-core-bionic)
+-	[`ros:eloquent`](#roseloquent)
+-	[`ros:eloquent-ros-base`](#roseloquent-ros-base)
+-	[`ros:eloquent-ros-base-bionic`](#roseloquent-ros-base-bionic)
+-	[`ros:eloquent-ros-core`](#roseloquent-ros-core)
+-	[`ros:eloquent-ros-core-bionic`](#roseloquent-ros-core-bionic)
 -	[`ros:kinetic`](#roskinetic)
 -	[`ros:kinetic-perception`](#roskinetic-perception)
 -	[`ros:kinetic-perception-xenial`](#roskinetic-perception-xenial)
@@ -2517,6 +2522,51 @@ CMD ["bash"]
 		Last Modified: Thu, 31 Oct 2019 23:58:04 GMT  
 		Size: 195.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+
+## `ros:eloquent`
+
+```console
+$ docker pull ros@sha256:a8409dff6597f2ef5f7ecd3c672671bb2af9a390073efd74f95c54aa41cba22a
+```
+
+-	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
+-	Platforms:
+
+## `ros:eloquent-ros-base`
+
+```console
+$ docker pull ros@sha256:a8409dff6597f2ef5f7ecd3c672671bb2af9a390073efd74f95c54aa41cba22a
+```
+
+-	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
+-	Platforms:
+
+## `ros:eloquent-ros-base-bionic`
+
+```console
+$ docker pull ros@sha256:a8409dff6597f2ef5f7ecd3c672671bb2af9a390073efd74f95c54aa41cba22a
+```
+
+-	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
+-	Platforms:
+
+## `ros:eloquent-ros-core`
+
+```console
+$ docker pull ros@sha256:a8409dff6597f2ef5f7ecd3c672671bb2af9a390073efd74f95c54aa41cba22a
+```
+
+-	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
+-	Platforms:
+
+## `ros:eloquent-ros-core-bionic`
+
+```console
+$ docker pull ros@sha256:a8409dff6597f2ef5f7ecd3c672671bb2af9a390073efd74f95c54aa41cba22a
+```
+
+-	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
+-	Platforms:
 
 ## `ros:kinetic`
 
