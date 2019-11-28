@@ -5065,14 +5065,9 @@ Binary Packages:
 If source is available (seen below), check the contents of `debian/copyright` within it.
 
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris nss=2:3.35-2ubuntu2.3
-'http://archive.ubuntu.com/ubuntu/pool/main/n/nss/nss_3.35-2ubuntu2.3.dsc' nss_3.35-2ubuntu2.3.dsc 2347 SHA256:e2df435da3243286feb02c6d9449db9a5cf0e97fc7c5f562577f241bb558f4b3
-'http://archive.ubuntu.com/ubuntu/pool/main/n/nss/nss_3.35.orig.tar.gz' nss_3.35.orig.tar.gz 9620041 SHA256:f4127de09bede39f5fd0f789d33c3504c5d261e69ea03022d46b319b3e32f6fa
-'http://archive.ubuntu.com/ubuntu/pool/main/n/nss/nss_3.35-2ubuntu2.3.debian.tar.xz' nss_3.35-2ubuntu2.3.debian.tar.xz 42356 SHA256:a820d8a823193a05aef7ee3534695f41e37173ee98967ab128f6ba67eb2958c5
-```
 
 ### `dpkg` source package: `numactl=2.0.11-2.1ubuntu0.1`
 
@@ -5716,9 +5711,9 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris python3.6=3.6.8-1~18.04.3
-'http://archive.ubuntu.com/ubuntu/pool/main/p/python3.6/python3.6_3.6.8-1~18.04.3.dsc' python3.6_3.6.8-1~18.04.3.dsc 3442 SHA256:e2c90a908ea841a600b86b48e2972614acbf3f599ade8fe820cb6ee2451ff9ce
-'http://archive.ubuntu.com/ubuntu/pool/main/p/python3.6/python3.6_3.6.8.orig.tar.xz' python3.6_3.6.8.orig.tar.xz 17212420 SHA256:35446241e995773b1bed7d196f4b624dadcadc8429f26282e756b2fb8a351193
-'http://archive.ubuntu.com/ubuntu/pool/main/p/python3.6/python3.6_3.6.8-1~18.04.3.debian.tar.xz' python3.6_3.6.8-1~18.04.3.debian.tar.xz 219568 SHA256:471019002d17b33edfa6e4dd4a18b22b9602ab39d87077ac94886f7243b6ad94
+'http://security.ubuntu.com/ubuntu/pool/main/p/python3.6/python3.6_3.6.8-1~18.04.3.dsc' python3.6_3.6.8-1~18.04.3.dsc 3442 SHA256:e2c90a908ea841a600b86b48e2972614acbf3f599ade8fe820cb6ee2451ff9ce
+'http://security.ubuntu.com/ubuntu/pool/main/p/python3.6/python3.6_3.6.8.orig.tar.xz' python3.6_3.6.8.orig.tar.xz 17212420 SHA256:35446241e995773b1bed7d196f4b624dadcadc8429f26282e756b2fb8a351193
+'http://security.ubuntu.com/ubuntu/pool/main/p/python3.6/python3.6_3.6.8-1~18.04.3.debian.tar.xz' python3.6_3.6.8-1~18.04.3.debian.tar.xz 219568 SHA256:471019002d17b33edfa6e4dd4a18b22b9602ab39d87077ac94886f7243b6ad94
 ```
 
 ### `dpkg` source package: `qhull=2015.2-4`
@@ -6233,14 +6228,9 @@ Licenses: (parsed from: `/usr/share/doc/libsystemd0/copyright`, `/usr/share/doc/
 - `LGPL-2.1+`
 - `public-domain`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris systemd=237-3ubuntu10.31
-'http://archive.ubuntu.com/ubuntu/pool/main/s/systemd/systemd_237-3ubuntu10.31.dsc' systemd_237-3ubuntu10.31.dsc 5174 SHA256:5ebc0759403bfae88395aebdbba0edd453f86de993780c01471687176bcea943
-'http://archive.ubuntu.com/ubuntu/pool/main/s/systemd/systemd_237.orig.tar.gz' systemd_237.orig.tar.gz 6871350 SHA256:c83dabbe1c9de6b9db1dafdb7e04140c7d0535705c68842f6c0768653ba4913c
-'http://archive.ubuntu.com/ubuntu/pool/main/s/systemd/systemd_237-3ubuntu10.31.debian.tar.xz' systemd_237-3ubuntu10.31.debian.tar.xz 223856 SHA256:c4741f0b70bcfb88ece8b88bbbcfb14d59ca18dc8c25e6fbf4ab594ae3669eed
-```
 
 ### `dpkg` source package: `sysvinit=2.88dsf-59.10ubuntu1`
 

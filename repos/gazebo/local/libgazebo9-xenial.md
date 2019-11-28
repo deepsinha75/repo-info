@@ -2,8 +2,8 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:eef9a2d6ff2605318f545f7706359ee91abfe393cb60d2f88e2b0a0b40b4a051`
-- Created: `2019-11-01T01:03:39.722167856Z`
+- Image ID: `sha256:38db3ff5237ef5cf4d11f714fb972f3d0c5a57e0ddcc82501a6d1cc8ffb0353b`
+- Created: `2019-11-27T01:08:07.005934179Z`
 - Virtual Size: ~ 1.49 Gb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
@@ -1368,31 +1368,31 @@ Licenses: (parsed from: `/usr/share/doc/gazebo9/copyright`, `/usr/share/doc/gaze
 This is *usually* due to a new package version being released and the old version being removed.
 
 
-### `dpkg` source package: `gcc-5=5.4.0-6ubuntu1~16.04.11`
+### `dpkg` source package: `gcc-5=5.4.0-6ubuntu1~16.04.12`
 
 Binary Packages:
 
-- `cpp-5=5.4.0-6ubuntu1~16.04.11`
-- `g++-5=5.4.0-6ubuntu1~16.04.11`
-- `gcc-5=5.4.0-6ubuntu1~16.04.11`
-- `gcc-5-base:amd64=5.4.0-6ubuntu1~16.04.11`
-- `gfortran-5=5.4.0-6ubuntu1~16.04.11`
-- `libasan2:amd64=5.4.0-6ubuntu1~16.04.11`
-- `libatomic1:amd64=5.4.0-6ubuntu1~16.04.11`
-- `libcc1-0:amd64=5.4.0-6ubuntu1~16.04.11`
-- `libcilkrts5:amd64=5.4.0-6ubuntu1~16.04.11`
-- `libgcc-5-dev:amd64=5.4.0-6ubuntu1~16.04.11`
-- `libgfortran-5-dev:amd64=5.4.0-6ubuntu1~16.04.11`
-- `libgfortran3:amd64=5.4.0-6ubuntu1~16.04.11`
-- `libgomp1:amd64=5.4.0-6ubuntu1~16.04.11`
-- `libitm1:amd64=5.4.0-6ubuntu1~16.04.11`
-- `liblsan0:amd64=5.4.0-6ubuntu1~16.04.11`
-- `libmpx0:amd64=5.4.0-6ubuntu1~16.04.11`
-- `libquadmath0:amd64=5.4.0-6ubuntu1~16.04.11`
-- `libstdc++-5-dev:amd64=5.4.0-6ubuntu1~16.04.11`
-- `libstdc++6:amd64=5.4.0-6ubuntu1~16.04.11`
-- `libtsan0:amd64=5.4.0-6ubuntu1~16.04.11`
-- `libubsan0:amd64=5.4.0-6ubuntu1~16.04.11`
+- `cpp-5=5.4.0-6ubuntu1~16.04.12`
+- `g++-5=5.4.0-6ubuntu1~16.04.12`
+- `gcc-5=5.4.0-6ubuntu1~16.04.12`
+- `gcc-5-base:amd64=5.4.0-6ubuntu1~16.04.12`
+- `gfortran-5=5.4.0-6ubuntu1~16.04.12`
+- `libasan2:amd64=5.4.0-6ubuntu1~16.04.12`
+- `libatomic1:amd64=5.4.0-6ubuntu1~16.04.12`
+- `libcc1-0:amd64=5.4.0-6ubuntu1~16.04.12`
+- `libcilkrts5:amd64=5.4.0-6ubuntu1~16.04.12`
+- `libgcc-5-dev:amd64=5.4.0-6ubuntu1~16.04.12`
+- `libgfortran-5-dev:amd64=5.4.0-6ubuntu1~16.04.12`
+- `libgfortran3:amd64=5.4.0-6ubuntu1~16.04.12`
+- `libgomp1:amd64=5.4.0-6ubuntu1~16.04.12`
+- `libitm1:amd64=5.4.0-6ubuntu1~16.04.12`
+- `liblsan0:amd64=5.4.0-6ubuntu1~16.04.12`
+- `libmpx0:amd64=5.4.0-6ubuntu1~16.04.12`
+- `libquadmath0:amd64=5.4.0-6ubuntu1~16.04.12`
+- `libstdc++-5-dev:amd64=5.4.0-6ubuntu1~16.04.12`
+- `libstdc++6:amd64=5.4.0-6ubuntu1~16.04.12`
+- `libtsan0:amd64=5.4.0-6ubuntu1~16.04.12`
+- `libubsan0:amd64=5.4.0-6ubuntu1~16.04.12`
 
 Licenses: (parsed from: `/usr/share/doc/cpp-5/copyright`, `/usr/share/doc/g++-5/copyright`, `/usr/share/doc/gcc-5/copyright`, `/usr/share/doc/gcc-5-base/copyright`, `/usr/share/doc/gfortran-5/copyright`, `/usr/share/doc/libasan2/copyright`, `/usr/share/doc/libatomic1/copyright`, `/usr/share/doc/libcc1-0/copyright`, `/usr/share/doc/libcilkrts5/copyright`, `/usr/share/doc/libgcc-5-dev/copyright`, `/usr/share/doc/libgfortran-5-dev/copyright`, `/usr/share/doc/libgfortran3/copyright`, `/usr/share/doc/libgomp1/copyright`, `/usr/share/doc/libitm1/copyright`, `/usr/share/doc/liblsan0/copyright`, `/usr/share/doc/libmpx0/copyright`, `/usr/share/doc/libquadmath0/copyright`, `/usr/share/doc/libstdc++-5-dev/copyright`, `/usr/share/doc/libstdc++6/copyright`, `/usr/share/doc/libtsan0/copyright`, `/usr/share/doc/libubsan0/copyright`)
 
@@ -1402,9 +1402,14 @@ Licenses: (parsed from: `/usr/share/doc/cpp-5/copyright`, `/usr/share/doc/g++-5/
 - `GPL-2`
 - `GPL-3`
 
-**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
-This is *usually* due to a new package version being released and the old version being removed.
+Source:
 
+```console
+$ apt-get source -qq --print-uris gcc-5=5.4.0-6ubuntu1~16.04.12
+'http://archive.ubuntu.com/ubuntu/pool/main/g/gcc-5/gcc-5_5.4.0-6ubuntu1~16.04.12.dsc' gcc-5_5.4.0-6ubuntu1~16.04.12.dsc 28298 SHA256:4f6afb05c2f291aff65695bbf9f561106789f48b89d34d80ded9797c2acb4499
+'http://archive.ubuntu.com/ubuntu/pool/main/g/gcc-5/gcc-5_5.4.0.orig.tar.gz' gcc-5_5.4.0.orig.tar.gz 73530162 SHA256:00f73e8382aa8653aa501ce2263597c2c4429912bfa18102f47cc362f00ed88d
+'http://archive.ubuntu.com/ubuntu/pool/main/g/gcc-5/gcc-5_5.4.0-6ubuntu1~16.04.12.diff.gz' gcc-5_5.4.0-6ubuntu1~16.04.12.diff.gz 1486130 SHA256:d0c772f3f39df2dedaf74b8e5ded301ae77a6f9d1fca4072690d812bd3b0bb69
+```
 
 ### `dpkg` source package: `gcc-defaults=1.150ubuntu1`
 
@@ -3275,21 +3280,26 @@ $ apt-get source -qq --print-uris libinput=1.6.3-1ubuntu1~16.04.1
 'http://archive.ubuntu.com/ubuntu/pool/main/libi/libinput/libinput_1.6.3-1ubuntu1~16.04.1.debian.tar.xz' libinput_1.6.3-1ubuntu1~16.04.1.debian.tar.xz 19324 SHA256:021d03b082d8169f5f3a02086b822de458109362a236b0030e60d2b4205c4f6f
 ```
 
-### `dpkg` source package: `libjpeg-turbo=1.4.2-0ubuntu3.1`
+### `dpkg` source package: `libjpeg-turbo=1.4.2-0ubuntu3.3`
 
 Binary Packages:
 
-- `libjpeg-turbo8:amd64=1.4.2-0ubuntu3.1`
-- `libjpeg-turbo8-dev:amd64=1.4.2-0ubuntu3.1`
+- `libjpeg-turbo8:amd64=1.4.2-0ubuntu3.3`
+- `libjpeg-turbo8-dev:amd64=1.4.2-0ubuntu3.3`
 
 Licenses: (parsed from: `/usr/share/doc/libjpeg-turbo8/copyright`, `/usr/share/doc/libjpeg-turbo8-dev/copyright`)
 
 - `JPEG`
 - `LGPL-2.1`
 
-**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
-This is *usually* due to a new package version being released and the old version being removed.
+Source:
 
+```console
+$ apt-get source -qq --print-uris libjpeg-turbo=1.4.2-0ubuntu3.3
+'http://archive.ubuntu.com/ubuntu/pool/main/libj/libjpeg-turbo/libjpeg-turbo_1.4.2-0ubuntu3.3.dsc' libjpeg-turbo_1.4.2-0ubuntu3.3.dsc 2286 SHA256:9db340b995c90aa65172783bc80fc7af4a2ac0103ade1001797abca558f02dd7
+'http://archive.ubuntu.com/ubuntu/pool/main/libj/libjpeg-turbo/libjpeg-turbo_1.4.2.orig.tar.gz' libjpeg-turbo_1.4.2.orig.tar.gz 1569306 SHA256:521bb5d3043e7ac063ce3026d9a59cc2ab2e9636c655a2515af5f4706122233e
+'http://archive.ubuntu.com/ubuntu/pool/main/libj/libjpeg-turbo/libjpeg-turbo_1.4.2-0ubuntu3.3.debian.tar.xz' libjpeg-turbo_1.4.2-0ubuntu3.3.debian.tar.xz 29632 SHA256:59e308a4ead3c152ecf512f6e31aaaca3e6be9067dae157113d2a8ce209cf06c
+```
 
 ### `dpkg` source package: `libjpeg8-empty=8c-2ubuntu8`
 
@@ -3977,11 +3987,11 @@ $ apt-get source -qq --print-uris libvorbis=1.3.5-3ubuntu0.2
 'http://archive.ubuntu.com/ubuntu/pool/main/libv/libvorbis/libvorbis_1.3.5-3ubuntu0.2.debian.tar.xz' libvorbis_1.3.5-3ubuntu0.2.debian.tar.xz 12340 SHA256:7b5a461437a2666ec6c3efb06153a415339d89aca4adba19fd0ca235f6a7afc6
 ```
 
-### `dpkg` source package: `libvpx=1.5.0-2ubuntu1`
+### `dpkg` source package: `libvpx=1.5.0-2ubuntu1.1`
 
 Binary Packages:
 
-- `libvpx3:amd64=1.5.0-2ubuntu1`
+- `libvpx3:amd64=1.5.0-2ubuntu1.1`
 
 Licenses: (parsed from: `/usr/share/doc/libvpx3/copyright`)
 
@@ -3991,10 +4001,10 @@ Licenses: (parsed from: `/usr/share/doc/libvpx3/copyright`)
 Source:
 
 ```console
-$ apt-get source -qq --print-uris libvpx=1.5.0-2ubuntu1
-'http://archive.ubuntu.com/ubuntu/pool/main/libv/libvpx/libvpx_1.5.0-2ubuntu1.dsc' libvpx_1.5.0-2ubuntu1.dsc 2105 SHA256:f290896db2c2cf8d6838d3bf8cb0293857bbba4742ce7ee4d5cfc6fec7dc1ff7
+$ apt-get source -qq --print-uris libvpx=1.5.0-2ubuntu1.1
+'http://archive.ubuntu.com/ubuntu/pool/main/libv/libvpx/libvpx_1.5.0-2ubuntu1.1.dsc' libvpx_1.5.0-2ubuntu1.1.dsc 2127 SHA256:4bdbcd90cd8d09cf96f1ecf2295526510d24ab3bbd5915a12e7500f0ac437179
 'http://archive.ubuntu.com/ubuntu/pool/main/libv/libvpx/libvpx_1.5.0.orig.tar.bz2' libvpx_1.5.0.orig.tar.bz2 1906571 SHA256:306d67908625675f8e188d37a81fbfafdf5068b09d9aa52702b6fbe601c76797
-'http://archive.ubuntu.com/ubuntu/pool/main/libv/libvpx/libvpx_1.5.0-2ubuntu1.debian.tar.xz' libvpx_1.5.0-2ubuntu1.debian.tar.xz 12488 SHA256:a213fd843941bc7c0c6cc6309ee7f44fab517281793a50345ef3d68823e5c402
+'http://archive.ubuntu.com/ubuntu/pool/main/libv/libvpx/libvpx_1.5.0-2ubuntu1.1.debian.tar.xz' libvpx_1.5.0-2ubuntu1.1.debian.tar.xz 17492 SHA256:b7a61dfb8e9c26a93c9ab55eca39dc98111e0c5c3470e25343bcb5cff0087e80
 ```
 
 ### `dpkg` source package: `libwacom=0.22-1~ubuntu16.04.1`
@@ -4502,20 +4512,25 @@ $ apt-get source -qq --print-uris linux-atm=1:2.5.1-1.5
 'http://archive.ubuntu.com/ubuntu/pool/main/l/linux-atm/linux-atm_2.5.1-1.5.debian.tar.gz' linux-atm_2.5.1-1.5.debian.tar.gz 10723 SHA256:9b2325859b3fd008b588a3897e713f52137abae08d1f5a44f5661f45a87f4d29
 ```
 
-### `dpkg` source package: `linux=4.4.0-166.195`
+### `dpkg` source package: `linux=4.4.0-169.198`
 
 Binary Packages:
 
-- `linux-libc-dev:amd64=4.4.0-166.195`
+- `linux-libc-dev:amd64=4.4.0-169.198`
 
 Licenses: (parsed from: `/usr/share/doc/linux-libc-dev/copyright`)
 
 - `GPL-2`
 - `redpine-signals`
 
-**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
-This is *usually* due to a new package version being released and the old version being removed.
+Source:
 
+```console
+$ apt-get source -qq --print-uris linux=4.4.0-169.198
+'http://archive.ubuntu.com/ubuntu/pool/main/l/linux/linux_4.4.0-169.198.dsc' linux_4.4.0-169.198.dsc 11909 SHA256:a9650d834f951df2e2021371c7b855fa27007851ba1e1e28d1c8f55ad5c97c34
+'http://archive.ubuntu.com/ubuntu/pool/main/l/linux/linux_4.4.0.orig.tar.gz' linux_4.4.0.orig.tar.gz 132860730 SHA256:730e75919b5d30a9bc934ccb300eaedfdf44994ca9ee1d07a46901c46c221357
+'http://archive.ubuntu.com/ubuntu/pool/main/l/linux/linux_4.4.0-169.198.diff.gz' linux_4.4.0-169.198.diff.gz 15931998 SHA256:adffbe1ad300fc7e907e0b5c8907a7e480cc39f5574208ef2229285583ff69fa
+```
 
 ### `dpkg` source package: `llvm-toolchain-6.0=1:6.0-1ubuntu2~16.04.1`
 
@@ -4943,13 +4958,13 @@ $ apt-get source -qq --print-uris mtdev=1.1.5-1ubuntu2
 'http://archive.ubuntu.com/ubuntu/pool/main/m/mtdev/mtdev_1.1.5-1ubuntu2.debian.tar.xz' mtdev_1.1.5-1ubuntu2.debian.tar.xz 6224 SHA256:daf836ba10f7a870df957d1b5fcdb98dca302cbdc901baae91a3d7f6a5b2dd90
 ```
 
-### `dpkg` source package: `mysql-5.7=5.7.27-0ubuntu0.16.04.1`
+### `dpkg` source package: `mysql-5.7=5.7.28-0ubuntu0.16.04.2`
 
 Binary Packages:
 
-- `libmysqlclient-dev=5.7.27-0ubuntu0.16.04.1`
-- `libmysqlclient20:amd64=5.7.27-0ubuntu0.16.04.1`
-- `mysql-common=5.7.27-0ubuntu0.16.04.1`
+- `libmysqlclient-dev=5.7.28-0ubuntu0.16.04.2`
+- `libmysqlclient20:amd64=5.7.28-0ubuntu0.16.04.2`
+- `mysql-common=5.7.28-0ubuntu0.16.04.2`
 
 Licenses: (parsed from: `/usr/share/doc/libmysqlclient-dev/copyright`, `/usr/share/doc/libmysqlclient20/copyright`, `/usr/share/doc/mysql-common/copyright`)
 
@@ -4967,9 +4982,14 @@ Licenses: (parsed from: `/usr/share/doc/libmysqlclient-dev/copyright`, `/usr/sha
 - `public-domain`
 - `zlib/libpng`
 
-**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
-This is *usually* due to a new package version being released and the old version being removed.
+Source:
 
+```console
+$ apt-get source -qq --print-uris mysql-5.7=5.7.28-0ubuntu0.16.04.2
+'http://archive.ubuntu.com/ubuntu/pool/main/m/mysql-5.7/mysql-5.7_5.7.28-0ubuntu0.16.04.2.dsc' mysql-5.7_5.7.28-0ubuntu0.16.04.2.dsc 3393 SHA256:9d3d7f98b59ee11b1de60b01ebf3790b1da6f00ee78727304437701dc8d0594c
+'http://archive.ubuntu.com/ubuntu/pool/main/m/mysql-5.7/mysql-5.7_5.7.28.orig.tar.gz' mysql-5.7_5.7.28.orig.tar.gz 51409668 SHA256:f16399315212117c08f9bdf8a0d682728b2ce82d691bcfbf25a770f413b6f2da
+'http://archive.ubuntu.com/ubuntu/pool/main/m/mysql-5.7/mysql-5.7_5.7.28-0ubuntu0.16.04.2.debian.tar.xz' mysql-5.7_5.7.28-0ubuntu0.16.04.2.debian.tar.xz 250808 SHA256:680e84911af63e5e80fe0318b0d2766f0885f99a831f43835aeacb877d1335ea
+```
 
 ### `dpkg` source package: `ncurses=6.0+20160213-1ubuntu1`
 
