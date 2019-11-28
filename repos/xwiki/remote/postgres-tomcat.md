@@ -1,7 +1,7 @@
 ## `xwiki:postgres-tomcat`
 
 ```console
-$ docker pull xwiki@sha256:ab20b997dba7c823b622f7aef544cb85009885ecd4fa3e3bff37032577853655
+$ docker pull xwiki@sha256:fba32900ff0eae4c469e248ac86e35e7b04fe8e1b167dadabfa257e80a7ddcc7
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -11,14 +11,14 @@ $ docker pull xwiki@sha256:ab20b997dba7c823b622f7aef544cb85009885ecd4fa3e3bff370
 ### `xwiki:postgres-tomcat` - linux; amd64
 
 ```console
-$ docker pull xwiki@sha256:0c371c3d989f24ff9b7a1b66d0b0026761b81a9ef50fe72b3edac82f12184a96
+$ docker pull xwiki@sha256:e6bdba0f2ab59084254052d996f97e24c54c375a7d5a82c87b7c37b7ee7daeae
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **584.3 MB (584331551 bytes)**  
+-	Total Size: **584.3 MB (584331604 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:69c6f917c0fad9fbc55d6f2fcac5565a675da99f5619163ec3959e712bee1767`
+-	Image ID: `sha256:d58390625acd7526b1463572f2a1e4da36de767e6f76603ba8e59a6917ef8f86`
 -	Entrypoint: `["docker-entrypoint.sh"]`
 -	Default Command: `["xwiki"]`
 
@@ -91,13 +91,13 @@ COPY file:0a1be11e2eb610a1dbcd415404e3a592641110b93090030cb831e3a19a163017 in /u
 COPY file:bd68ae28ec068b0f89a2e05a10b1098af3b375c97a69f9255831e8fa6e87f773 in /usr/local/tomcat/webapps/ROOT/WEB-INF/hibernate.cfg.xml 
 # Fri, 22 Nov 2019 02:54:15 GMT
 RUN sed -i 's/<id>org.xwiki.platform:xwiki-platform-distribution-war/<id>org.xwiki.platform:xwiki-platform-distribution-docker/'   /usr/local/tomcat/webapps/ROOT/META-INF/extension.xed
-# Fri, 22 Nov 2019 02:54:15 GMT
-COPY file:f901b2d7ac3d76cd8346f9aee81b40529183e81d8aa027bb390856ac01fa6cc0 in /usr/local/bin/docker-entrypoint.sh 
-# Fri, 22 Nov 2019 02:54:15 GMT
+# Thu, 28 Nov 2019 17:48:16 GMT
+COPY file:815463388fe7ed027546f64c4118a53d9979192231bb194a93fb02ffcb9bf5c1 in /usr/local/bin/docker-entrypoint.sh 
+# Thu, 28 Nov 2019 17:48:16 GMT
 VOLUME [/usr/local/xwiki]
-# Fri, 22 Nov 2019 02:54:15 GMT
+# Thu, 28 Nov 2019 17:48:16 GMT
 ENTRYPOINT ["docker-entrypoint.sh"]
-# Fri, 22 Nov 2019 02:54:16 GMT
+# Thu, 28 Nov 2019 17:48:17 GMT
 CMD ["xwiki"]
 ```
 
@@ -162,7 +162,7 @@ CMD ["xwiki"]
 		Last Modified: Fri, 22 Nov 2019 02:58:27 GMT  
 		Size: 3.8 KB (3842 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:e214d19e7f4477c6e8e7d6ce3026f658c9b146137a378e1d8b1096c0ca0ebcf3`  
-		Last Modified: Fri, 22 Nov 2019 02:58:27 GMT  
-		Size: 2.4 KB (2404 bytes)  
+	-	`sha256:7b1c0be11fb30e40fdb61299cf485622b6593b3d84ddc7f874566fad14cd7f4e`  
+		Last Modified: Thu, 28 Nov 2019 17:48:52 GMT  
+		Size: 2.5 KB (2457 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
