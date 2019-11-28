@@ -2,8 +2,8 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:0b8dbe967a8de589b87a7e90afa424ce89eeb5d2401c061b5acd66c7ea97f29b`
-- Created: `2019-11-09T01:28:49.354974186Z`
+- Image ID: `sha256:7fcb81d750fbca0ac9010fddc6c8e73017b9b5b50c8238f7a77d4377e3c7e6c7`
+- Created: `2019-11-27T01:37:50.286362174Z`
 - Virtual Size: ~ 1.51 Gb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
@@ -631,28 +631,28 @@ $ apt-get source -qq --print-uris findutils=4.6.0+git+20160126-2
 'http://archive.ubuntu.com/ubuntu/pool/main/f/findutils/findutils_4.6.0+git+20160126-2.debian.tar.xz' findutils_4.6.0+git+20160126-2.debian.tar.xz 25080 SHA256:58bf1e7a07fbac6a68693b099ec6fc9a6166e0b1b60cebe6bac3b90287a8dc3f
 ```
 
-### `dpkg` source package: `gcc-5=5.4.0-6ubuntu1~16.04.11`
+### `dpkg` source package: `gcc-5=5.4.0-6ubuntu1~16.04.12`
 
 Binary Packages:
 
-- `cpp-5=5.4.0-6ubuntu1~16.04.11`
-- `g++-5=5.4.0-6ubuntu1~16.04.11`
-- `gcc-5=5.4.0-6ubuntu1~16.04.11`
-- `gcc-5-base:amd64=5.4.0-6ubuntu1~16.04.11`
-- `libasan2:amd64=5.4.0-6ubuntu1~16.04.11`
-- `libatomic1:amd64=5.4.0-6ubuntu1~16.04.11`
-- `libcc1-0:amd64=5.4.0-6ubuntu1~16.04.11`
-- `libcilkrts5:amd64=5.4.0-6ubuntu1~16.04.11`
-- `libgcc-5-dev:amd64=5.4.0-6ubuntu1~16.04.11`
-- `libgomp1:amd64=5.4.0-6ubuntu1~16.04.11`
-- `libitm1:amd64=5.4.0-6ubuntu1~16.04.11`
-- `liblsan0:amd64=5.4.0-6ubuntu1~16.04.11`
-- `libmpx0:amd64=5.4.0-6ubuntu1~16.04.11`
-- `libquadmath0:amd64=5.4.0-6ubuntu1~16.04.11`
-- `libstdc++-5-dev:amd64=5.4.0-6ubuntu1~16.04.11`
-- `libstdc++6:amd64=5.4.0-6ubuntu1~16.04.11`
-- `libtsan0:amd64=5.4.0-6ubuntu1~16.04.11`
-- `libubsan0:amd64=5.4.0-6ubuntu1~16.04.11`
+- `cpp-5=5.4.0-6ubuntu1~16.04.12`
+- `g++-5=5.4.0-6ubuntu1~16.04.12`
+- `gcc-5=5.4.0-6ubuntu1~16.04.12`
+- `gcc-5-base:amd64=5.4.0-6ubuntu1~16.04.12`
+- `libasan2:amd64=5.4.0-6ubuntu1~16.04.12`
+- `libatomic1:amd64=5.4.0-6ubuntu1~16.04.12`
+- `libcc1-0:amd64=5.4.0-6ubuntu1~16.04.12`
+- `libcilkrts5:amd64=5.4.0-6ubuntu1~16.04.12`
+- `libgcc-5-dev:amd64=5.4.0-6ubuntu1~16.04.12`
+- `libgomp1:amd64=5.4.0-6ubuntu1~16.04.12`
+- `libitm1:amd64=5.4.0-6ubuntu1~16.04.12`
+- `liblsan0:amd64=5.4.0-6ubuntu1~16.04.12`
+- `libmpx0:amd64=5.4.0-6ubuntu1~16.04.12`
+- `libquadmath0:amd64=5.4.0-6ubuntu1~16.04.12`
+- `libstdc++-5-dev:amd64=5.4.0-6ubuntu1~16.04.12`
+- `libstdc++6:amd64=5.4.0-6ubuntu1~16.04.12`
+- `libtsan0:amd64=5.4.0-6ubuntu1~16.04.12`
+- `libubsan0:amd64=5.4.0-6ubuntu1~16.04.12`
 
 Licenses: (parsed from: `/usr/share/doc/cpp-5/copyright`, `/usr/share/doc/g++-5/copyright`, `/usr/share/doc/gcc-5/copyright`, `/usr/share/doc/gcc-5-base/copyright`, `/usr/share/doc/libasan2/copyright`, `/usr/share/doc/libatomic1/copyright`, `/usr/share/doc/libcc1-0/copyright`, `/usr/share/doc/libcilkrts5/copyright`, `/usr/share/doc/libgcc-5-dev/copyright`, `/usr/share/doc/libgomp1/copyright`, `/usr/share/doc/libitm1/copyright`, `/usr/share/doc/liblsan0/copyright`, `/usr/share/doc/libmpx0/copyright`, `/usr/share/doc/libquadmath0/copyright`, `/usr/share/doc/libstdc++-5-dev/copyright`, `/usr/share/doc/libstdc++6/copyright`, `/usr/share/doc/libtsan0/copyright`, `/usr/share/doc/libubsan0/copyright`)
 
@@ -662,9 +662,14 @@ Licenses: (parsed from: `/usr/share/doc/cpp-5/copyright`, `/usr/share/doc/g++-5/
 - `GPL-2`
 - `GPL-3`
 
-**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
-This is *usually* due to a new package version being released and the old version being removed.
+Source:
 
+```console
+$ apt-get source -qq --print-uris gcc-5=5.4.0-6ubuntu1~16.04.12
+'http://archive.ubuntu.com/ubuntu/pool/main/g/gcc-5/gcc-5_5.4.0-6ubuntu1~16.04.12.dsc' gcc-5_5.4.0-6ubuntu1~16.04.12.dsc 28298 SHA256:4f6afb05c2f291aff65695bbf9f561106789f48b89d34d80ded9797c2acb4499
+'http://archive.ubuntu.com/ubuntu/pool/main/g/gcc-5/gcc-5_5.4.0.orig.tar.gz' gcc-5_5.4.0.orig.tar.gz 73530162 SHA256:00f73e8382aa8653aa501ce2263597c2c4429912bfa18102f47cc362f00ed88d
+'http://archive.ubuntu.com/ubuntu/pool/main/g/gcc-5/gcc-5_5.4.0-6ubuntu1~16.04.12.diff.gz' gcc-5_5.4.0-6ubuntu1~16.04.12.diff.gz 1486130 SHA256:d0c772f3f39df2dedaf74b8e5ded301ae77a6f9d1fca4072690d812bd3b0bb69
+```
 
 ### `dpkg` source package: `gcc-defaults=1.150ubuntu1`
 
@@ -1774,20 +1779,25 @@ $ apt-get source -qq --print-uris linux-atm=1:2.5.1-1.5
 'http://archive.ubuntu.com/ubuntu/pool/main/l/linux-atm/linux-atm_2.5.1-1.5.debian.tar.gz' linux-atm_2.5.1-1.5.debian.tar.gz 10723 SHA256:9b2325859b3fd008b588a3897e713f52137abae08d1f5a44f5661f45a87f4d29
 ```
 
-### `dpkg` source package: `linux=4.4.0-166.195`
+### `dpkg` source package: `linux=4.4.0-169.198`
 
 Binary Packages:
 
-- `linux-libc-dev:amd64=4.4.0-166.195`
+- `linux-libc-dev:amd64=4.4.0-169.198`
 
 Licenses: (parsed from: `/usr/share/doc/linux-libc-dev/copyright`)
 
 - `GPL-2`
 - `redpine-signals`
 
-**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
-This is *usually* due to a new package version being released and the old version being removed.
+Source:
 
+```console
+$ apt-get source -qq --print-uris linux=4.4.0-169.198
+'http://archive.ubuntu.com/ubuntu/pool/main/l/linux/linux_4.4.0-169.198.dsc' linux_4.4.0-169.198.dsc 11909 SHA256:a9650d834f951df2e2021371c7b855fa27007851ba1e1e28d1c8f55ad5c97c34
+'http://archive.ubuntu.com/ubuntu/pool/main/l/linux/linux_4.4.0.orig.tar.gz' linux_4.4.0.orig.tar.gz 132860730 SHA256:730e75919b5d30a9bc934ccb300eaedfdf44994ca9ee1d07a46901c46c221357
+'http://archive.ubuntu.com/ubuntu/pool/main/l/linux/linux_4.4.0-169.198.diff.gz' linux_4.4.0-169.198.diff.gz 15931998 SHA256:adffbe1ad300fc7e907e0b5c8907a7e480cc39f5574208ef2229285583ff69fa
+```
 
 ### `dpkg` source package: `lsb=9.20160110ubuntu0.2`
 
