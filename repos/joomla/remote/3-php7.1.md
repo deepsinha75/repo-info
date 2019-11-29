@@ -1,7 +1,7 @@
 ## `joomla:3-php7.1`
 
 ```console
-$ docker pull joomla@sha256:ffe359232fae3c044bb9815f4d1511ad54283bf66f94b86a498fe671cc34c052
+$ docker pull joomla@sha256:2cf35407d35302a85e0a305ff314c2aa1d9716247587c550bf585140d138acd7
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -17,14 +17,14 @@ $ docker pull joomla@sha256:ffe359232fae3c044bb9815f4d1511ad54283bf66f94b86a498f
 ### `joomla:3-php7.1` - linux; amd64
 
 ```console
-$ docker pull joomla@sha256:c50b4fc9ad424a1102374caf7a0724043e300d9a8b300ff8b5270bc4f32bf59e
+$ docker pull joomla@sha256:083fcb3f2b8298685ad7e5a6895ca6d2d8f16d2934362ca7dfb21f0b639fdd55
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **161.0 MB (161048965 bytes)**  
+-	Total Size: **161.0 MB (161049060 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:530f18de756a8d04b811f78e98e1acffcb6a6e5f2f288ef63366d99557232314`
+-	Image ID: `sha256:340493ab4fdb08cd44d704847598b371370cbea145a60ec8fee338a18a97a183`
 -	Entrypoint: `["\/entrypoint.sh"]`
 -	Default Command: `["apache2-foreground"]`
 
@@ -83,39 +83,39 @@ COPY multi:99e4ad617c6193834e78d12470f6dde09f70f4d40463009c5724954902e60676 in /
 RUN { echo '#!/bin/sh'; echo 'exec pkg-config "$@" freetype2'; } > /usr/local/bin/freetype-config && chmod +x /usr/local/bin/freetype-config
 # Fri, 22 Nov 2019 18:29:11 GMT
 ENTRYPOINT ["docker-php-entrypoint"]
-# Fri, 22 Nov 2019 18:29:11 GMT
-STOPSIGNAL WINCH
-# Fri, 22 Nov 2019 18:29:11 GMT
+# Thu, 28 Nov 2019 21:10:24 GMT
+STOPSIGNAL SIGWINCH
+# Thu, 28 Nov 2019 21:10:24 GMT
 COPY file:e3123fcb6566efa979f945bfac1c94c854a559d7b82723e42118882a8ac4de66 in /usr/local/bin/ 
-# Fri, 22 Nov 2019 18:29:12 GMT
+# Thu, 28 Nov 2019 21:10:24 GMT
 WORKDIR /var/www/html
-# Fri, 22 Nov 2019 18:29:12 GMT
+# Thu, 28 Nov 2019 21:10:25 GMT
 EXPOSE 80
-# Fri, 22 Nov 2019 18:29:12 GMT
+# Thu, 28 Nov 2019 21:10:25 GMT
 CMD ["apache2-foreground"]
-# Fri, 22 Nov 2019 20:34:48 GMT
+# Thu, 28 Nov 2019 22:06:31 GMT
 LABEL maintainer=Michael Babker <michael.babker@joomla.org> (@mbabker)
-# Fri, 22 Nov 2019 20:34:48 GMT
+# Thu, 28 Nov 2019 22:06:32 GMT
 ENV JOOMLA_INSTALLATION_DISABLE_LOCALHOST_CHECK=1
-# Fri, 22 Nov 2019 20:34:50 GMT
+# Thu, 28 Nov 2019 22:06:32 GMT
 RUN a2enmod rewrite
-# Fri, 22 Nov 2019 20:36:38 GMT
+# Thu, 28 Nov 2019 22:08:10 GMT
 RUN set -ex; 		savedAptMark="$(apt-mark showmanual)"; 		apt-get update; 	apt-get install -y --no-install-recommends 		libbz2-dev 		libjpeg-dev 		libldap2-dev 		libmcrypt-dev 		libmemcached-dev 		libpng-dev 		libpq-dev 	; 		docker-php-ext-configure gd --with-png-dir=/usr --with-jpeg-dir=/usr; 	debMultiarch="$(dpkg-architecture --query DEB_BUILD_MULTIARCH)"; 	docker-php-ext-configure ldap --with-libdir="lib/$debMultiarch"; 	docker-php-ext-install -j "$(nproc)" 		bz2 		gd 		ldap 		mcrypt 		mysqli 		pdo_mysql 		pdo_pgsql 		pgsql 		zip 	; 		pecl install APCu-5.1.17; 	pecl install memcached-3.1.4; 	pecl install redis-4.3.0; 		docker-php-ext-enable 		apcu 		memcached 		redis 	; 		apt-mark auto '.*' > /dev/null; 	apt-mark manual $savedAptMark; 	ldd "$(php -r 'echo ini_get("extension_dir");')"/*.so 		| awk '/=>/ { print $3 }' 		| sort -u 		| xargs -r dpkg-query -S 		| cut -d: -f1 		| sort -u 		| xargs -rt apt-mark manual; 		apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 	rm -rf /var/lib/apt/lists/*
-# Fri, 22 Nov 2019 20:36:38 GMT
+# Thu, 28 Nov 2019 22:08:11 GMT
 VOLUME [/var/www/html]
-# Fri, 22 Nov 2019 20:36:38 GMT
+# Thu, 28 Nov 2019 22:08:11 GMT
 ENV JOOMLA_VERSION=3.9.13
-# Fri, 22 Nov 2019 20:36:38 GMT
+# Thu, 28 Nov 2019 22:08:11 GMT
 ENV JOOMLA_SHA512=366101203f24a19464d3c86472dd937bb4c192b2621f1245f8907a3c5565594417baa79a19002eda84ac939b92376501a5300dc35a64c0c06df163d2e460550f
-# Fri, 22 Nov 2019 20:36:43 GMT
+# Thu, 28 Nov 2019 22:08:15 GMT
 RUN set -ex; 	curl -o joomla.tar.bz2 -SL https://github.com/joomla/joomla-cms/releases/download/${JOOMLA_VERSION}/Joomla_${JOOMLA_VERSION}-Stable-Full_Package.tar.bz2; 	echo "$JOOMLA_SHA512 *joomla.tar.bz2" | sha512sum -c -; 	mkdir /usr/src/joomla; 	tar -xf joomla.tar.bz2 -C /usr/src/joomla; 	rm joomla.tar.bz2; 	chown -R www-data:www-data /usr/src/joomla
-# Fri, 22 Nov 2019 20:36:44 GMT
+# Thu, 28 Nov 2019 22:08:16 GMT
 COPY file:fcc18c5b9c2d514cfb965bab84e10b4f924a39a5f202055df75d7990da099d8f in /entrypoint.sh 
-# Fri, 22 Nov 2019 20:36:44 GMT
+# Thu, 28 Nov 2019 22:08:16 GMT
 COPY file:5a85d779aaae74cfa3ab6228df0f24236d4d5ad9097e2a1b277e3daea0d6d3dc in /makedb.php 
-# Fri, 22 Nov 2019 20:36:44 GMT
+# Thu, 28 Nov 2019 22:08:16 GMT
 ENTRYPOINT ["/entrypoint.sh"]
-# Fri, 22 Nov 2019 20:36:44 GMT
+# Thu, 28 Nov 2019 22:08:16 GMT
 CMD ["apache2-foreground"]
 ```
 
@@ -168,42 +168,42 @@ CMD ["apache2-foreground"]
 		Last Modified: Fri, 22 Nov 2019 19:12:58 GMT  
 		Size: 212.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:4e3960832c100c280f7ec228befffa9432f3cd23ac186ecb72af169f1249ecb9`  
-		Last Modified: Fri, 22 Nov 2019 19:12:57 GMT  
-		Size: 892.0 B  
+	-	`sha256:01848ea209b526414bdc69c038ed8d867e7af64082f7a468a2d7d7cec7675fd6`  
+		Last Modified: Thu, 28 Nov 2019 21:14:31 GMT  
+		Size: 894.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c37ebffa25673a9f58fd1cdfcf57cb054c4d1fc069ab8c4101bf98224e5fa491`  
-		Last Modified: Fri, 22 Nov 2019 20:55:13 GMT  
+	-	`sha256:198eb067d2218f725dd5bf6a93a651006205957616e0b8fd3c445c5500e62fd7`  
+		Last Modified: Thu, 28 Nov 2019 22:12:39 GMT  
 		Size: 309.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:0792d2b280520771793011a674d91909e7204ca6a93bb8a83dede4eb81fcf451`  
-		Last Modified: Fri, 22 Nov 2019 20:55:14 GMT  
-		Size: 3.5 MB (3455585 bytes)  
+	-	`sha256:9db2064eb118c049915d709974fb728626f3f43f4255856d46cbf3b7a8fabe80`  
+		Last Modified: Thu, 28 Nov 2019 22:12:39 GMT  
+		Size: 3.5 MB (3455678 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:3a17bd34e81e6f806945edc8dbb22c48df45bc52fad5314f5f5977ace77f9254`  
-		Last Modified: Fri, 22 Nov 2019 20:55:18 GMT  
-		Size: 9.6 MB (9649329 bytes)  
+	-	`sha256:8b2e36741234bdc57793e58be9b737043ab31d6e1871d4b26466b1ce7d1268be`  
+		Last Modified: Thu, 28 Nov 2019 22:12:41 GMT  
+		Size: 9.6 MB (9649330 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:ca1a6c8dc7f9f376e1c1f9d4a51a39c4fb716b97f813721a3151cb6a561c4cf5`  
-		Last Modified: Fri, 22 Nov 2019 20:55:13 GMT  
-		Size: 1.2 KB (1173 bytes)  
+	-	`sha256:e594c722bbb5a4000d9b0852e75af6765abe9e5c2b7616c7fc083e6aacd34424`  
+		Last Modified: Thu, 28 Nov 2019 22:12:39 GMT  
+		Size: 1.2 KB (1172 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:f1af098657e3dd8d864244be5ae43962d25d51fcfe618c7a1f5adc0e650935b3`  
-		Last Modified: Fri, 22 Nov 2019 20:55:12 GMT  
+	-	`sha256:937a43667fad2dade7e684c0ea7e588931ddb808156a6337b310831206788ae0`  
+		Last Modified: Thu, 28 Nov 2019 22:12:39 GMT  
 		Size: 615.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `joomla:3-php7.1` - linux; arm variant v5
 
 ```console
-$ docker pull joomla@sha256:74e5e34563e1a44dca482384cefd318bea8e473b3b53139dd57effd8433b7ea2
+$ docker pull joomla@sha256:2310ced269838cd4f177219ffc703041d1b5dc129b18817dd4191d2390f93c40
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **139.4 MB (139369151 bytes)**  
+-	Total Size: **139.4 MB (139369162 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:36f8f45aaef1cd6c058bbb81a0a6e67533f2593fbb48ace3663f40d632c83dc3`
+-	Image ID: `sha256:d3ee0408ddfc46ac4cfec3db8bb03bbb232c500de9d102d5e8e1cc4dfcd7820c`
 -	Entrypoint: `["\/entrypoint.sh"]`
 -	Default Command: `["apache2-foreground"]`
 
@@ -262,39 +262,39 @@ COPY multi:99e4ad617c6193834e78d12470f6dde09f70f4d40463009c5724954902e60676 in /
 RUN { echo '#!/bin/sh'; echo 'exec pkg-config "$@" freetype2'; } > /usr/local/bin/freetype-config && chmod +x /usr/local/bin/freetype-config
 # Fri, 22 Nov 2019 14:12:29 GMT
 ENTRYPOINT ["docker-php-entrypoint"]
-# Fri, 22 Nov 2019 14:12:30 GMT
-STOPSIGNAL WINCH
-# Fri, 22 Nov 2019 14:12:31 GMT
+# Thu, 28 Nov 2019 20:11:58 GMT
+STOPSIGNAL SIGWINCH
+# Thu, 28 Nov 2019 20:11:59 GMT
 COPY file:e3123fcb6566efa979f945bfac1c94c854a559d7b82723e42118882a8ac4de66 in /usr/local/bin/ 
-# Fri, 22 Nov 2019 14:12:31 GMT
+# Thu, 28 Nov 2019 20:12:01 GMT
 WORKDIR /var/www/html
-# Fri, 22 Nov 2019 14:12:33 GMT
+# Thu, 28 Nov 2019 20:12:03 GMT
 EXPOSE 80
-# Fri, 22 Nov 2019 14:12:34 GMT
+# Thu, 28 Nov 2019 20:12:05 GMT
 CMD ["apache2-foreground"]
-# Fri, 22 Nov 2019 15:13:51 GMT
+# Thu, 28 Nov 2019 20:32:24 GMT
 LABEL maintainer=Michael Babker <michael.babker@joomla.org> (@mbabker)
-# Fri, 22 Nov 2019 15:13:52 GMT
+# Thu, 28 Nov 2019 20:32:24 GMT
 ENV JOOMLA_INSTALLATION_DISABLE_LOCALHOST_CHECK=1
-# Fri, 22 Nov 2019 15:13:54 GMT
+# Thu, 28 Nov 2019 20:32:28 GMT
 RUN a2enmod rewrite
-# Fri, 22 Nov 2019 15:17:03 GMT
+# Thu, 28 Nov 2019 20:35:45 GMT
 RUN set -ex; 		savedAptMark="$(apt-mark showmanual)"; 		apt-get update; 	apt-get install -y --no-install-recommends 		libbz2-dev 		libjpeg-dev 		libldap2-dev 		libmcrypt-dev 		libmemcached-dev 		libpng-dev 		libpq-dev 	; 		docker-php-ext-configure gd --with-png-dir=/usr --with-jpeg-dir=/usr; 	debMultiarch="$(dpkg-architecture --query DEB_BUILD_MULTIARCH)"; 	docker-php-ext-configure ldap --with-libdir="lib/$debMultiarch"; 	docker-php-ext-install -j "$(nproc)" 		bz2 		gd 		ldap 		mcrypt 		mysqli 		pdo_mysql 		pdo_pgsql 		pgsql 		zip 	; 		pecl install APCu-5.1.17; 	pecl install memcached-3.1.4; 	pecl install redis-4.3.0; 		docker-php-ext-enable 		apcu 		memcached 		redis 	; 		apt-mark auto '.*' > /dev/null; 	apt-mark manual $savedAptMark; 	ldd "$(php -r 'echo ini_get("extension_dir");')"/*.so 		| awk '/=>/ { print $3 }' 		| sort -u 		| xargs -r dpkg-query -S 		| cut -d: -f1 		| sort -u 		| xargs -rt apt-mark manual; 		apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 	rm -rf /var/lib/apt/lists/*
-# Fri, 22 Nov 2019 15:17:03 GMT
+# Thu, 28 Nov 2019 20:35:45 GMT
 VOLUME [/var/www/html]
-# Fri, 22 Nov 2019 15:17:05 GMT
+# Thu, 28 Nov 2019 20:35:46 GMT
 ENV JOOMLA_VERSION=3.9.13
-# Fri, 22 Nov 2019 15:17:05 GMT
+# Thu, 28 Nov 2019 20:35:47 GMT
 ENV JOOMLA_SHA512=366101203f24a19464d3c86472dd937bb4c192b2621f1245f8907a3c5565594417baa79a19002eda84ac939b92376501a5300dc35a64c0c06df163d2e460550f
-# Fri, 22 Nov 2019 15:17:14 GMT
+# Thu, 28 Nov 2019 20:35:59 GMT
 RUN set -ex; 	curl -o joomla.tar.bz2 -SL https://github.com/joomla/joomla-cms/releases/download/${JOOMLA_VERSION}/Joomla_${JOOMLA_VERSION}-Stable-Full_Package.tar.bz2; 	echo "$JOOMLA_SHA512 *joomla.tar.bz2" | sha512sum -c -; 	mkdir /usr/src/joomla; 	tar -xf joomla.tar.bz2 -C /usr/src/joomla; 	rm joomla.tar.bz2; 	chown -R www-data:www-data /usr/src/joomla
-# Fri, 22 Nov 2019 15:17:19 GMT
+# Thu, 28 Nov 2019 20:36:00 GMT
 COPY file:fcc18c5b9c2d514cfb965bab84e10b4f924a39a5f202055df75d7990da099d8f in /entrypoint.sh 
-# Fri, 22 Nov 2019 15:17:20 GMT
+# Thu, 28 Nov 2019 20:36:01 GMT
 COPY file:5a85d779aaae74cfa3ab6228df0f24236d4d5ad9097e2a1b277e3daea0d6d3dc in /makedb.php 
-# Fri, 22 Nov 2019 15:17:21 GMT
+# Thu, 28 Nov 2019 20:36:01 GMT
 ENTRYPOINT ["/entrypoint.sh"]
-# Fri, 22 Nov 2019 15:17:22 GMT
+# Thu, 28 Nov 2019 20:36:02 GMT
 CMD ["apache2-foreground"]
 ```
 
@@ -347,42 +347,42 @@ CMD ["apache2-foreground"]
 		Last Modified: Fri, 22 Nov 2019 14:50:40 GMT  
 		Size: 212.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:5224dc1605fb340b462b5b8e4f698ea65c58cbe859c26debe2868520f5998621`  
-		Last Modified: Fri, 22 Nov 2019 14:50:40 GMT  
-		Size: 893.0 B  
+	-	`sha256:6e8da8c9eeb17613f1f6ef606c1bd45cbcf7f36d2becc2e216b59b272f768e7e`  
+		Last Modified: Thu, 28 Nov 2019 20:16:32 GMT  
+		Size: 897.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:04f07a3e41a5de2fd91ee0f94954bd2b28c436f54b180d668ff2c9f99148c0ce`  
-		Last Modified: Fri, 22 Nov 2019 15:36:27 GMT  
-		Size: 314.0 B  
+	-	`sha256:100f66bbd2da38f93d39bfe4d4e60b0498ac7f8f410888cad19b473a9c3fa98c`  
+		Last Modified: Thu, 28 Nov 2019 20:43:55 GMT  
+		Size: 315.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:a7235ce5287684a0b18c8f5b72b591edab226da0ea671f53df152bfd3a9a6047`  
-		Last Modified: Fri, 22 Nov 2019 15:36:29 GMT  
-		Size: 3.3 MB (3263816 bytes)  
+	-	`sha256:bfcfac054104b28eee42ed7d42463a5e2602e3e5ada65cb75ce5047be88f2395`  
+		Last Modified: Thu, 28 Nov 2019 20:43:56 GMT  
+		Size: 3.3 MB (3263824 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:d7617ae73f208e21840827d9f5e6024088998a892067652bca759f748935e516`  
-		Last Modified: Fri, 22 Nov 2019 15:36:33 GMT  
+	-	`sha256:67fbf59765c66aaea2b4736969730936195b6af945f3428778e4d0e7915580f9`  
+		Last Modified: Thu, 28 Nov 2019 20:44:01 GMT  
 		Size: 9.6 MB (9649428 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:3048ffdae040b5e4fb238df666d089637914a57d24278efe8301b29cbf8cd051`  
-		Last Modified: Fri, 22 Nov 2019 15:36:27 GMT  
-		Size: 1.2 KB (1173 bytes)  
+	-	`sha256:a4c133d340a0646d42abf3597b9b8c2b65eb07080e557192bd3f2a94e7d96d96`  
+		Last Modified: Thu, 28 Nov 2019 20:43:55 GMT  
+		Size: 1.2 KB (1171 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:e6d8f8f2d136c460ef80e78911d8ca6897ba644c0eae83061103f0088981cec7`  
-		Last Modified: Fri, 22 Nov 2019 15:36:27 GMT  
+	-	`sha256:ab793ee669ac2f96a05862832767e3fb5a11deefcdf871c13df0ad700190408b`  
+		Last Modified: Thu, 28 Nov 2019 20:43:55 GMT  
 		Size: 615.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `joomla:3-php7.1` - linux; arm variant v7
 
 ```console
-$ docker pull joomla@sha256:387e1173a40c09d83b1f61ca4836983dae5004a14ac2644deca0fbfee2c3fbc7
+$ docker pull joomla@sha256:dfcf78762e47ec1c1f9479d1bb2186c9c492a4fcbbbb59234d05d2f74a00d791
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **136.6 MB (136616993 bytes)**  
+-	Total Size: **136.6 MB (136617083 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:9fd7e3046e26417b8f5d60820d14cf119efbf3a099b3f8c6e3e83faaa20c5831`
+-	Image ID: `sha256:603bede57a23bedfaf5b096f09329b280246f2eb1bc630a3e643dc02f00c90fa`
 -	Entrypoint: `["\/entrypoint.sh"]`
 -	Default Command: `["apache2-foreground"]`
 
@@ -441,39 +441,39 @@ COPY multi:99e4ad617c6193834e78d12470f6dde09f70f4d40463009c5724954902e60676 in /
 RUN { echo '#!/bin/sh'; echo 'exec pkg-config "$@" freetype2'; } > /usr/local/bin/freetype-config && chmod +x /usr/local/bin/freetype-config
 # Fri, 22 Nov 2019 17:07:31 GMT
 ENTRYPOINT ["docker-php-entrypoint"]
-# Fri, 22 Nov 2019 17:07:31 GMT
-STOPSIGNAL WINCH
-# Fri, 22 Nov 2019 17:07:32 GMT
+# Thu, 28 Nov 2019 20:32:14 GMT
+STOPSIGNAL SIGWINCH
+# Thu, 28 Nov 2019 20:32:16 GMT
 COPY file:e3123fcb6566efa979f945bfac1c94c854a559d7b82723e42118882a8ac4de66 in /usr/local/bin/ 
-# Fri, 22 Nov 2019 17:07:32 GMT
+# Thu, 28 Nov 2019 20:32:17 GMT
 WORKDIR /var/www/html
-# Fri, 22 Nov 2019 17:07:33 GMT
+# Thu, 28 Nov 2019 20:32:17 GMT
 EXPOSE 80
-# Fri, 22 Nov 2019 17:07:34 GMT
+# Thu, 28 Nov 2019 20:32:19 GMT
 CMD ["apache2-foreground"]
-# Fri, 22 Nov 2019 18:01:36 GMT
+# Thu, 28 Nov 2019 21:18:29 GMT
 LABEL maintainer=Michael Babker <michael.babker@joomla.org> (@mbabker)
-# Fri, 22 Nov 2019 18:01:37 GMT
+# Thu, 28 Nov 2019 21:18:31 GMT
 ENV JOOMLA_INSTALLATION_DISABLE_LOCALHOST_CHECK=1
-# Fri, 22 Nov 2019 18:01:39 GMT
+# Thu, 28 Nov 2019 21:18:43 GMT
 RUN a2enmod rewrite
-# Fri, 22 Nov 2019 18:04:39 GMT
+# Thu, 28 Nov 2019 21:21:51 GMT
 RUN set -ex; 		savedAptMark="$(apt-mark showmanual)"; 		apt-get update; 	apt-get install -y --no-install-recommends 		libbz2-dev 		libjpeg-dev 		libldap2-dev 		libmcrypt-dev 		libmemcached-dev 		libpng-dev 		libpq-dev 	; 		docker-php-ext-configure gd --with-png-dir=/usr --with-jpeg-dir=/usr; 	debMultiarch="$(dpkg-architecture --query DEB_BUILD_MULTIARCH)"; 	docker-php-ext-configure ldap --with-libdir="lib/$debMultiarch"; 	docker-php-ext-install -j "$(nproc)" 		bz2 		gd 		ldap 		mcrypt 		mysqli 		pdo_mysql 		pdo_pgsql 		pgsql 		zip 	; 		pecl install APCu-5.1.17; 	pecl install memcached-3.1.4; 	pecl install redis-4.3.0; 		docker-php-ext-enable 		apcu 		memcached 		redis 	; 		apt-mark auto '.*' > /dev/null; 	apt-mark manual $savedAptMark; 	ldd "$(php -r 'echo ini_get("extension_dir");')"/*.so 		| awk '/=>/ { print $3 }' 		| sort -u 		| xargs -r dpkg-query -S 		| cut -d: -f1 		| sort -u 		| xargs -rt apt-mark manual; 		apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 	rm -rf /var/lib/apt/lists/*
-# Fri, 22 Nov 2019 18:04:41 GMT
+# Thu, 28 Nov 2019 21:21:54 GMT
 VOLUME [/var/www/html]
-# Fri, 22 Nov 2019 18:04:42 GMT
+# Thu, 28 Nov 2019 21:21:57 GMT
 ENV JOOMLA_VERSION=3.9.13
-# Fri, 22 Nov 2019 18:04:43 GMT
+# Thu, 28 Nov 2019 21:21:58 GMT
 ENV JOOMLA_SHA512=366101203f24a19464d3c86472dd937bb4c192b2621f1245f8907a3c5565594417baa79a19002eda84ac939b92376501a5300dc35a64c0c06df163d2e460550f
-# Fri, 22 Nov 2019 18:04:53 GMT
+# Thu, 28 Nov 2019 21:22:09 GMT
 RUN set -ex; 	curl -o joomla.tar.bz2 -SL https://github.com/joomla/joomla-cms/releases/download/${JOOMLA_VERSION}/Joomla_${JOOMLA_VERSION}-Stable-Full_Package.tar.bz2; 	echo "$JOOMLA_SHA512 *joomla.tar.bz2" | sha512sum -c -; 	mkdir /usr/src/joomla; 	tar -xf joomla.tar.bz2 -C /usr/src/joomla; 	rm joomla.tar.bz2; 	chown -R www-data:www-data /usr/src/joomla
-# Fri, 22 Nov 2019 18:04:56 GMT
+# Thu, 28 Nov 2019 21:22:11 GMT
 COPY file:fcc18c5b9c2d514cfb965bab84e10b4f924a39a5f202055df75d7990da099d8f in /entrypoint.sh 
-# Fri, 22 Nov 2019 18:04:57 GMT
+# Thu, 28 Nov 2019 21:22:12 GMT
 COPY file:5a85d779aaae74cfa3ab6228df0f24236d4d5ad9097e2a1b277e3daea0d6d3dc in /makedb.php 
-# Fri, 22 Nov 2019 18:04:58 GMT
+# Thu, 28 Nov 2019 21:22:13 GMT
 ENTRYPOINT ["/entrypoint.sh"]
-# Fri, 22 Nov 2019 18:04:59 GMT
+# Thu, 28 Nov 2019 21:22:14 GMT
 CMD ["apache2-foreground"]
 ```
 
@@ -526,42 +526,42 @@ CMD ["apache2-foreground"]
 		Last Modified: Fri, 22 Nov 2019 17:43:30 GMT  
 		Size: 213.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:4a9cb8f13104856d633123133e8be50af21d0ce24d95a01f1bd590aa047e4f7d`  
-		Last Modified: Fri, 22 Nov 2019 17:43:31 GMT  
-		Size: 893.0 B  
+	-	`sha256:dd7ab0b873e6261c92bd16c8a208b002fd6c1248064c939214415021e490e324`  
+		Last Modified: Thu, 28 Nov 2019 20:39:16 GMT  
+		Size: 898.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:7b137a64a93393af5f3a051ff1096db642281495c56ab7081130f6878533f67d`  
-		Last Modified: Fri, 22 Nov 2019 18:28:53 GMT  
-		Size: 312.0 B  
+	-	`sha256:d20918595173530a769b504e39eda0092e2234b69611a0aeb8d867a7a5c04744`  
+		Last Modified: Thu, 28 Nov 2019 21:30:26 GMT  
+		Size: 315.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:8e6807c0ad35065458fbdb5c1714f198c6a24db5e0ea4f4aeff1b29933dcef73`  
-		Last Modified: Fri, 22 Nov 2019 18:28:54 GMT  
-		Size: 3.2 MB (3173566 bytes)  
+	-	`sha256:66f7f601ddb7b6ba19a4538dad9d569a60c22fb8cf9bb79e1aa731b8d8a08520`  
+		Last Modified: Thu, 28 Nov 2019 21:30:27 GMT  
+		Size: 3.2 MB (3173633 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:14437394182fb6703d00c2d2c876160b58a8d38d58d3c703838ac992f369f405`  
-		Last Modified: Fri, 22 Nov 2019 18:28:58 GMT  
-		Size: 9.6 MB (9649424 bytes)  
+	-	`sha256:4716c494476bd8686b6dab90637ca19d3cb8adcb52cf2e4e4763d2412d67d15a`  
+		Last Modified: Thu, 28 Nov 2019 21:30:31 GMT  
+		Size: 9.6 MB (9649433 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:b69bb6f8a713fe8038a6fc560eacc37518786671573ef89927eda37adca88493`  
-		Last Modified: Fri, 22 Nov 2019 18:28:53 GMT  
-		Size: 1.2 KB (1169 bytes)  
+	-	`sha256:433fa16002b20f0fb985ff1b496b1316858d2622b7e452f662dc35e9112e9cb3`  
+		Last Modified: Thu, 28 Nov 2019 21:30:26 GMT  
+		Size: 1.2 KB (1174 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:da116c30f2839ec6667f7d3141c7cb625cf7c68c1068772d0bcfa60c5b2108b6`  
-		Last Modified: Fri, 22 Nov 2019 18:28:53 GMT  
-		Size: 614.0 B  
+	-	`sha256:b03bc07ae2323b1845212f609f9085f958c4b784d6012c0ce454a6ed903da56b`  
+		Last Modified: Thu, 28 Nov 2019 21:30:26 GMT  
+		Size: 615.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `joomla:3-php7.1` - linux; arm64 variant v8
 
 ```console
-$ docker pull joomla@sha256:41b90d43b0a80748bd56090576b370031cefb1f48fb1e4c7db3fdf78fda112c3
+$ docker pull joomla@sha256:4755a864487afe9f67c50603b644b4dcb7c76ef280f46ae3516753eca8a5c47a
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **153.2 MB (153223550 bytes)**  
+-	Total Size: **153.2 MB (153223509 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:e67d6fab4b73dce877f16257dcf4b5ae641704de23fc62e39ac7035b00043cd4`
+-	Image ID: `sha256:3f9bb9ba85174a1db81b76e7e4d9a3d8e0f50a6d975a1dce347cd3a8768da3f6`
 -	Entrypoint: `["\/entrypoint.sh"]`
 -	Default Command: `["apache2-foreground"]`
 
@@ -620,39 +620,39 @@ COPY multi:99e4ad617c6193834e78d12470f6dde09f70f4d40463009c5724954902e60676 in /
 RUN { echo '#!/bin/sh'; echo 'exec pkg-config "$@" freetype2'; } > /usr/local/bin/freetype-config && chmod +x /usr/local/bin/freetype-config
 # Fri, 22 Nov 2019 16:05:18 GMT
 ENTRYPOINT ["docker-php-entrypoint"]
-# Fri, 22 Nov 2019 16:05:20 GMT
-STOPSIGNAL WINCH
-# Fri, 22 Nov 2019 16:05:21 GMT
+# Thu, 28 Nov 2019 20:18:16 GMT
+STOPSIGNAL SIGWINCH
+# Thu, 28 Nov 2019 20:18:17 GMT
 COPY file:e3123fcb6566efa979f945bfac1c94c854a559d7b82723e42118882a8ac4de66 in /usr/local/bin/ 
-# Fri, 22 Nov 2019 16:05:23 GMT
+# Thu, 28 Nov 2019 20:18:18 GMT
 WORKDIR /var/www/html
-# Fri, 22 Nov 2019 16:05:24 GMT
+# Thu, 28 Nov 2019 20:18:18 GMT
 EXPOSE 80
-# Fri, 22 Nov 2019 16:05:25 GMT
+# Thu, 28 Nov 2019 20:18:19 GMT
 CMD ["apache2-foreground"]
-# Fri, 22 Nov 2019 17:19:33 GMT
+# Thu, 28 Nov 2019 21:19:00 GMT
 LABEL maintainer=Michael Babker <michael.babker@joomla.org> (@mbabker)
-# Fri, 22 Nov 2019 17:19:33 GMT
+# Thu, 28 Nov 2019 21:19:01 GMT
 ENV JOOMLA_INSTALLATION_DISABLE_LOCALHOST_CHECK=1
-# Fri, 22 Nov 2019 17:19:35 GMT
+# Thu, 28 Nov 2019 21:19:04 GMT
 RUN a2enmod rewrite
-# Fri, 22 Nov 2019 17:22:30 GMT
+# Thu, 28 Nov 2019 21:22:23 GMT
 RUN set -ex; 		savedAptMark="$(apt-mark showmanual)"; 		apt-get update; 	apt-get install -y --no-install-recommends 		libbz2-dev 		libjpeg-dev 		libldap2-dev 		libmcrypt-dev 		libmemcached-dev 		libpng-dev 		libpq-dev 	; 		docker-php-ext-configure gd --with-png-dir=/usr --with-jpeg-dir=/usr; 	debMultiarch="$(dpkg-architecture --query DEB_BUILD_MULTIARCH)"; 	docker-php-ext-configure ldap --with-libdir="lib/$debMultiarch"; 	docker-php-ext-install -j "$(nproc)" 		bz2 		gd 		ldap 		mcrypt 		mysqli 		pdo_mysql 		pdo_pgsql 		pgsql 		zip 	; 		pecl install APCu-5.1.17; 	pecl install memcached-3.1.4; 	pecl install redis-4.3.0; 		docker-php-ext-enable 		apcu 		memcached 		redis 	; 		apt-mark auto '.*' > /dev/null; 	apt-mark manual $savedAptMark; 	ldd "$(php -r 'echo ini_get("extension_dir");')"/*.so 		| awk '/=>/ { print $3 }' 		| sort -u 		| xargs -r dpkg-query -S 		| cut -d: -f1 		| sort -u 		| xargs -rt apt-mark manual; 		apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 	rm -rf /var/lib/apt/lists/*
-# Fri, 22 Nov 2019 17:22:31 GMT
+# Thu, 28 Nov 2019 21:22:24 GMT
 VOLUME [/var/www/html]
-# Fri, 22 Nov 2019 17:22:32 GMT
+# Thu, 28 Nov 2019 21:22:25 GMT
 ENV JOOMLA_VERSION=3.9.13
-# Fri, 22 Nov 2019 17:22:33 GMT
+# Thu, 28 Nov 2019 21:22:26 GMT
 ENV JOOMLA_SHA512=366101203f24a19464d3c86472dd937bb4c192b2621f1245f8907a3c5565594417baa79a19002eda84ac939b92376501a5300dc35a64c0c06df163d2e460550f
-# Fri, 22 Nov 2019 17:22:45 GMT
+# Thu, 28 Nov 2019 21:22:34 GMT
 RUN set -ex; 	curl -o joomla.tar.bz2 -SL https://github.com/joomla/joomla-cms/releases/download/${JOOMLA_VERSION}/Joomla_${JOOMLA_VERSION}-Stable-Full_Package.tar.bz2; 	echo "$JOOMLA_SHA512 *joomla.tar.bz2" | sha512sum -c -; 	mkdir /usr/src/joomla; 	tar -xf joomla.tar.bz2 -C /usr/src/joomla; 	rm joomla.tar.bz2; 	chown -R www-data:www-data /usr/src/joomla
-# Fri, 22 Nov 2019 17:22:49 GMT
+# Thu, 28 Nov 2019 21:22:36 GMT
 COPY file:fcc18c5b9c2d514cfb965bab84e10b4f924a39a5f202055df75d7990da099d8f in /entrypoint.sh 
-# Fri, 22 Nov 2019 17:22:51 GMT
+# Thu, 28 Nov 2019 21:22:37 GMT
 COPY file:5a85d779aaae74cfa3ab6228df0f24236d4d5ad9097e2a1b277e3daea0d6d3dc in /makedb.php 
-# Fri, 22 Nov 2019 17:22:53 GMT
+# Thu, 28 Nov 2019 21:22:37 GMT
 ENTRYPOINT ["/entrypoint.sh"]
-# Fri, 22 Nov 2019 17:22:56 GMT
+# Thu, 28 Nov 2019 21:22:39 GMT
 CMD ["apache2-foreground"]
 ```
 
@@ -705,42 +705,42 @@ CMD ["apache2-foreground"]
 		Last Modified: Fri, 22 Nov 2019 16:43:51 GMT  
 		Size: 213.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:22c475ec6e2bc40be209fffa25b2d48d9f5549162eaee89af1339d0afdff1dd6`  
-		Last Modified: Fri, 22 Nov 2019 16:43:51 GMT  
-		Size: 894.0 B  
+	-	`sha256:1655465dc068bfe1f71e34cf4d8cab912d2c9b9da134a1ffd2f8a685e25fd1d6`  
+		Last Modified: Thu, 28 Nov 2019 20:25:28 GMT  
+		Size: 899.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:fa979f0d2574aa4fbc97e93123f175e7f58f7b6d6cb88e76d1d430346dd0029d`  
-		Last Modified: Fri, 22 Nov 2019 17:47:02 GMT  
-		Size: 313.0 B  
+	-	`sha256:c29ff490ea1fa441f83edf49ac151d073a5cce2bb7e30ec4bc7f49d889e039f7`  
+		Last Modified: Thu, 28 Nov 2019 21:30:42 GMT  
+		Size: 314.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:7b8addeccaf078f8ded641f221b52b6470aab8266ff9051d844e606f8a9378c3`  
-		Last Modified: Fri, 22 Nov 2019 17:47:02 GMT  
-		Size: 3.4 MB (3401974 bytes)  
+	-	`sha256:5503fcc144129db3b61f125e0590aee63dbf5f6c84272078a81fba7d17108854`  
+		Last Modified: Thu, 28 Nov 2019 21:30:43 GMT  
+		Size: 3.4 MB (3401928 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:64378956b096fc4f6004c05c02f2b559c35b7d856eb326a82307f84221639b7d`  
-		Last Modified: Fri, 22 Nov 2019 17:47:03 GMT  
+	-	`sha256:4a8b054a3bdca7f549e752372f2f92c64110b74008964127b311f9b3c9b44855`  
+		Last Modified: Thu, 28 Nov 2019 21:30:48 GMT  
 		Size: 9.6 MB (9649427 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:aa8219c0e3396676b0a51cae6ad25b29bbd40346f8c9fdc59f70c2dfbc453964`  
-		Last Modified: Fri, 22 Nov 2019 17:47:02 GMT  
+	-	`sha256:b10dbf999047a7c62a9748b3188da7492e4347de494af415ae6081f2e232172d`  
+		Last Modified: Thu, 28 Nov 2019 21:30:42 GMT  
 		Size: 1.2 KB (1172 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:af3b6f02aaf7e790090c707725cb5b1e9b01c5312128baffaad25355794da23a`  
-		Last Modified: Fri, 22 Nov 2019 17:47:02 GMT  
-		Size: 615.0 B  
+	-	`sha256:190f107f844c8933b9ef1163f17a370fd356e8191e8a34a21231fc64890a96aa`  
+		Last Modified: Thu, 28 Nov 2019 21:30:42 GMT  
+		Size: 614.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `joomla:3-php7.1` - linux; 386
 
 ```console
-$ docker pull joomla@sha256:b0f77b25e894ad431b69747fa8043100b4ad2579cafce9139c515322dfb288d2
+$ docker pull joomla@sha256:6d8a9cd6dd635468cc42ea7d7cb51fffe13a973df1a4b5dece472bcda3568168
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **167.0 MB (167028847 bytes)**  
+-	Total Size: **167.0 MB (167028882 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:8d1168ba878cfacfdfbf2d700c70766be7546796d9af0f549fcb3c81555de329`
+-	Image ID: `sha256:18a70d09e2773e1af6697a4bede8ca7735c8a11e0e91959a65b4d908b62d2389`
 -	Entrypoint: `["\/entrypoint.sh"]`
 -	Default Command: `["apache2-foreground"]`
 
@@ -799,39 +799,39 @@ COPY multi:99e4ad617c6193834e78d12470f6dde09f70f4d40463009c5724954902e60676 in /
 RUN { echo '#!/bin/sh'; echo 'exec pkg-config "$@" freetype2'; } > /usr/local/bin/freetype-config && chmod +x /usr/local/bin/freetype-config
 # Fri, 22 Nov 2019 21:36:26 GMT
 ENTRYPOINT ["docker-php-entrypoint"]
-# Fri, 22 Nov 2019 21:36:26 GMT
-STOPSIGNAL WINCH
-# Fri, 22 Nov 2019 21:36:26 GMT
+# Thu, 28 Nov 2019 20:22:35 GMT
+STOPSIGNAL SIGWINCH
+# Thu, 28 Nov 2019 20:22:36 GMT
 COPY file:e3123fcb6566efa979f945bfac1c94c854a559d7b82723e42118882a8ac4de66 in /usr/local/bin/ 
-# Fri, 22 Nov 2019 21:36:26 GMT
+# Thu, 28 Nov 2019 20:22:36 GMT
 WORKDIR /var/www/html
-# Fri, 22 Nov 2019 21:36:27 GMT
+# Thu, 28 Nov 2019 20:22:36 GMT
 EXPOSE 80
-# Fri, 22 Nov 2019 21:36:27 GMT
+# Thu, 28 Nov 2019 20:22:36 GMT
 CMD ["apache2-foreground"]
-# Fri, 22 Nov 2019 23:46:41 GMT
+# Thu, 28 Nov 2019 21:31:12 GMT
 LABEL maintainer=Michael Babker <michael.babker@joomla.org> (@mbabker)
-# Fri, 22 Nov 2019 23:46:41 GMT
+# Thu, 28 Nov 2019 21:31:12 GMT
 ENV JOOMLA_INSTALLATION_DISABLE_LOCALHOST_CHECK=1
-# Fri, 22 Nov 2019 23:46:42 GMT
+# Thu, 28 Nov 2019 21:31:13 GMT
 RUN a2enmod rewrite
-# Fri, 22 Nov 2019 23:48:40 GMT
+# Thu, 28 Nov 2019 21:33:10 GMT
 RUN set -ex; 		savedAptMark="$(apt-mark showmanual)"; 		apt-get update; 	apt-get install -y --no-install-recommends 		libbz2-dev 		libjpeg-dev 		libldap2-dev 		libmcrypt-dev 		libmemcached-dev 		libpng-dev 		libpq-dev 	; 		docker-php-ext-configure gd --with-png-dir=/usr --with-jpeg-dir=/usr; 	debMultiarch="$(dpkg-architecture --query DEB_BUILD_MULTIARCH)"; 	docker-php-ext-configure ldap --with-libdir="lib/$debMultiarch"; 	docker-php-ext-install -j "$(nproc)" 		bz2 		gd 		ldap 		mcrypt 		mysqli 		pdo_mysql 		pdo_pgsql 		pgsql 		zip 	; 		pecl install APCu-5.1.17; 	pecl install memcached-3.1.4; 	pecl install redis-4.3.0; 		docker-php-ext-enable 		apcu 		memcached 		redis 	; 		apt-mark auto '.*' > /dev/null; 	apt-mark manual $savedAptMark; 	ldd "$(php -r 'echo ini_get("extension_dir");')"/*.so 		| awk '/=>/ { print $3 }' 		| sort -u 		| xargs -r dpkg-query -S 		| cut -d: -f1 		| sort -u 		| xargs -rt apt-mark manual; 		apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 	rm -rf /var/lib/apt/lists/*
-# Fri, 22 Nov 2019 23:48:40 GMT
+# Thu, 28 Nov 2019 21:33:10 GMT
 VOLUME [/var/www/html]
-# Fri, 22 Nov 2019 23:48:40 GMT
+# Thu, 28 Nov 2019 21:33:10 GMT
 ENV JOOMLA_VERSION=3.9.13
-# Fri, 22 Nov 2019 23:48:40 GMT
+# Thu, 28 Nov 2019 21:33:10 GMT
 ENV JOOMLA_SHA512=366101203f24a19464d3c86472dd937bb4c192b2621f1245f8907a3c5565594417baa79a19002eda84ac939b92376501a5300dc35a64c0c06df163d2e460550f
-# Fri, 22 Nov 2019 23:48:46 GMT
+# Thu, 28 Nov 2019 21:33:16 GMT
 RUN set -ex; 	curl -o joomla.tar.bz2 -SL https://github.com/joomla/joomla-cms/releases/download/${JOOMLA_VERSION}/Joomla_${JOOMLA_VERSION}-Stable-Full_Package.tar.bz2; 	echo "$JOOMLA_SHA512 *joomla.tar.bz2" | sha512sum -c -; 	mkdir /usr/src/joomla; 	tar -xf joomla.tar.bz2 -C /usr/src/joomla; 	rm joomla.tar.bz2; 	chown -R www-data:www-data /usr/src/joomla
-# Fri, 22 Nov 2019 23:48:46 GMT
+# Thu, 28 Nov 2019 21:33:16 GMT
 COPY file:fcc18c5b9c2d514cfb965bab84e10b4f924a39a5f202055df75d7990da099d8f in /entrypoint.sh 
-# Fri, 22 Nov 2019 23:48:47 GMT
+# Thu, 28 Nov 2019 21:33:16 GMT
 COPY file:5a85d779aaae74cfa3ab6228df0f24236d4d5ad9097e2a1b277e3daea0d6d3dc in /makedb.php 
-# Fri, 22 Nov 2019 23:48:47 GMT
+# Thu, 28 Nov 2019 21:33:17 GMT
 ENTRYPOINT ["/entrypoint.sh"]
-# Fri, 22 Nov 2019 23:48:47 GMT
+# Thu, 28 Nov 2019 21:33:17 GMT
 CMD ["apache2-foreground"]
 ```
 
@@ -884,42 +884,42 @@ CMD ["apache2-foreground"]
 		Last Modified: Fri, 22 Nov 2019 22:19:28 GMT  
 		Size: 212.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:93e5adaac355e702452b419b4bec3fb6683d78179dab53cbc715df8e3003e84b`  
-		Last Modified: Fri, 22 Nov 2019 22:19:29 GMT  
-		Size: 894.0 B  
+	-	`sha256:136fd54903519082d8739dc7386bd1fdf33f25b8fd348dfa6d393d39e2368650`  
+		Last Modified: Thu, 28 Nov 2019 20:27:05 GMT  
+		Size: 898.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:d310520de04224426473d9cff5dd976d052760f35de8be438c61da473dfd25ef`  
-		Last Modified: Sat, 23 Nov 2019 00:04:02 GMT  
-		Size: 309.0 B  
+	-	`sha256:b763ed3eb2d3e7368d22749fea4cf09bd57141197a5d56e3654da2b7e6f5afac`  
+		Last Modified: Thu, 28 Nov 2019 21:38:21 GMT  
+		Size: 312.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:637c4df19e929ce1803e6d0e7668282bc937c7dc746845daf7227abf4dce4b78`  
-		Last Modified: Sat, 23 Nov 2019 00:04:03 GMT  
-		Size: 3.4 MB (3421044 bytes)  
+	-	`sha256:5e8c8661935633607222e266d89b5c2527766b87d00d5f035706ee8047b98cf2`  
+		Last Modified: Thu, 28 Nov 2019 21:38:22 GMT  
+		Size: 3.4 MB (3421072 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:dd6d1ed7f045a1849b215b294de28c70ddda4fdb5b042f271ada246fb55507c3`  
-		Last Modified: Sat, 23 Nov 2019 00:04:09 GMT  
-		Size: 9.6 MB (9649331 bytes)  
+	-	`sha256:cb9c897da2d78de86e686724914cd6e90eed426fed0a9b70e85da9e9d8d36dd0`  
+		Last Modified: Thu, 28 Nov 2019 21:38:24 GMT  
+		Size: 9.6 MB (9649329 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:6ede8ea888e61f89305c590ce9dae4d930f9467184c9219a80a1b8f3d8e46d7c`  
-		Last Modified: Sat, 23 Nov 2019 00:04:03 GMT  
-		Size: 1.2 KB (1172 bytes)  
+	-	`sha256:8ba468fe20bc50cf01d39443b8654db7b504e5cd9eafb25cb4c3cd460cdbd9be`  
+		Last Modified: Thu, 28 Nov 2019 21:38:21 GMT  
+		Size: 1.2 KB (1173 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:15f67a7da9aeec4eb2e90edf413a4160ee355d9a79d09c09c1ccdc4b28894735`  
-		Last Modified: Sat, 23 Nov 2019 00:04:02 GMT  
-		Size: 614.0 B  
+	-	`sha256:5590d97319b250ec577f635f68c818457fd603bda6a2d74ac1f705e651d128ec`  
+		Last Modified: Thu, 28 Nov 2019 21:38:21 GMT  
+		Size: 615.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `joomla:3-php7.1` - linux; ppc64le
 
 ```console
-$ docker pull joomla@sha256:1b7cfc7370f0b86e65bd4e2023fb93945a8c38f876c303b95fee407722ee9a9e
+$ docker pull joomla@sha256:9979bee425a1dff77becabc84958a3ac876acc38e2139ac2a2d61c6a42d84653
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **172.4 MB (172419337 bytes)**  
+-	Total Size: **172.4 MB (172419290 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:be80e0ed1e783893c9fbb369ffc5d123734c807a94608d2d27a3319535daa0af`
+-	Image ID: `sha256:34c9ff7ef05d0df617d48fed2d058d29091fc4534e8107211cb8e8a6b36b6fd2`
 -	Entrypoint: `["\/entrypoint.sh"]`
 -	Default Command: `["apache2-foreground"]`
 
@@ -978,39 +978,39 @@ COPY multi:99e4ad617c6193834e78d12470f6dde09f70f4d40463009c5724954902e60676 in /
 RUN { echo '#!/bin/sh'; echo 'exec pkg-config "$@" freetype2'; } > /usr/local/bin/freetype-config && chmod +x /usr/local/bin/freetype-config
 # Fri, 22 Nov 2019 18:12:50 GMT
 ENTRYPOINT ["docker-php-entrypoint"]
-# Fri, 22 Nov 2019 18:12:52 GMT
-STOPSIGNAL WINCH
-# Fri, 22 Nov 2019 18:12:54 GMT
+# Thu, 28 Nov 2019 21:02:41 GMT
+STOPSIGNAL SIGWINCH
+# Thu, 28 Nov 2019 21:02:43 GMT
 COPY file:e3123fcb6566efa979f945bfac1c94c854a559d7b82723e42118882a8ac4de66 in /usr/local/bin/ 
-# Fri, 22 Nov 2019 18:12:57 GMT
+# Thu, 28 Nov 2019 21:02:45 GMT
 WORKDIR /var/www/html
-# Fri, 22 Nov 2019 18:12:58 GMT
+# Thu, 28 Nov 2019 21:02:48 GMT
 EXPOSE 80
-# Fri, 22 Nov 2019 18:13:00 GMT
+# Thu, 28 Nov 2019 21:02:51 GMT
 CMD ["apache2-foreground"]
-# Fri, 22 Nov 2019 21:43:10 GMT
+# Thu, 28 Nov 2019 23:04:05 GMT
 LABEL maintainer=Michael Babker <michael.babker@joomla.org> (@mbabker)
-# Fri, 22 Nov 2019 21:43:13 GMT
+# Thu, 28 Nov 2019 23:04:09 GMT
 ENV JOOMLA_INSTALLATION_DISABLE_LOCALHOST_CHECK=1
-# Fri, 22 Nov 2019 21:43:20 GMT
+# Thu, 28 Nov 2019 23:04:17 GMT
 RUN a2enmod rewrite
-# Fri, 22 Nov 2019 21:46:17 GMT
+# Thu, 28 Nov 2019 23:06:55 GMT
 RUN set -ex; 		savedAptMark="$(apt-mark showmanual)"; 		apt-get update; 	apt-get install -y --no-install-recommends 		libbz2-dev 		libjpeg-dev 		libldap2-dev 		libmcrypt-dev 		libmemcached-dev 		libpng-dev 		libpq-dev 	; 		docker-php-ext-configure gd --with-png-dir=/usr --with-jpeg-dir=/usr; 	debMultiarch="$(dpkg-architecture --query DEB_BUILD_MULTIARCH)"; 	docker-php-ext-configure ldap --with-libdir="lib/$debMultiarch"; 	docker-php-ext-install -j "$(nproc)" 		bz2 		gd 		ldap 		mcrypt 		mysqli 		pdo_mysql 		pdo_pgsql 		pgsql 		zip 	; 		pecl install APCu-5.1.17; 	pecl install memcached-3.1.4; 	pecl install redis-4.3.0; 		docker-php-ext-enable 		apcu 		memcached 		redis 	; 		apt-mark auto '.*' > /dev/null; 	apt-mark manual $savedAptMark; 	ldd "$(php -r 'echo ini_get("extension_dir");')"/*.so 		| awk '/=>/ { print $3 }' 		| sort -u 		| xargs -r dpkg-query -S 		| cut -d: -f1 		| sort -u 		| xargs -rt apt-mark manual; 		apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 	rm -rf /var/lib/apt/lists/*
-# Fri, 22 Nov 2019 21:46:21 GMT
+# Thu, 28 Nov 2019 23:06:57 GMT
 VOLUME [/var/www/html]
-# Fri, 22 Nov 2019 21:46:25 GMT
+# Thu, 28 Nov 2019 23:07:01 GMT
 ENV JOOMLA_VERSION=3.9.13
-# Fri, 22 Nov 2019 21:46:27 GMT
+# Thu, 28 Nov 2019 23:07:03 GMT
 ENV JOOMLA_SHA512=366101203f24a19464d3c86472dd937bb4c192b2621f1245f8907a3c5565594417baa79a19002eda84ac939b92376501a5300dc35a64c0c06df163d2e460550f
-# Fri, 22 Nov 2019 21:46:42 GMT
+# Thu, 28 Nov 2019 23:07:14 GMT
 RUN set -ex; 	curl -o joomla.tar.bz2 -SL https://github.com/joomla/joomla-cms/releases/download/${JOOMLA_VERSION}/Joomla_${JOOMLA_VERSION}-Stable-Full_Package.tar.bz2; 	echo "$JOOMLA_SHA512 *joomla.tar.bz2" | sha512sum -c -; 	mkdir /usr/src/joomla; 	tar -xf joomla.tar.bz2 -C /usr/src/joomla; 	rm joomla.tar.bz2; 	chown -R www-data:www-data /usr/src/joomla
-# Fri, 22 Nov 2019 21:46:45 GMT
+# Thu, 28 Nov 2019 23:07:17 GMT
 COPY file:fcc18c5b9c2d514cfb965bab84e10b4f924a39a5f202055df75d7990da099d8f in /entrypoint.sh 
-# Fri, 22 Nov 2019 21:46:47 GMT
+# Thu, 28 Nov 2019 23:07:18 GMT
 COPY file:5a85d779aaae74cfa3ab6228df0f24236d4d5ad9097e2a1b277e3daea0d6d3dc in /makedb.php 
-# Fri, 22 Nov 2019 21:46:49 GMT
+# Thu, 28 Nov 2019 23:07:20 GMT
 ENTRYPOINT ["/entrypoint.sh"]
-# Fri, 22 Nov 2019 21:46:53 GMT
+# Thu, 28 Nov 2019 23:07:23 GMT
 CMD ["apache2-foreground"]
 ```
 
@@ -1063,29 +1063,29 @@ CMD ["apache2-foreground"]
 		Last Modified: Fri, 22 Nov 2019 19:04:40 GMT  
 		Size: 212.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:fc32d145603d1c872fa12c059ae359d97ab91fa9b8bfafe8b042468c17f14f2e`  
-		Last Modified: Fri, 22 Nov 2019 19:04:41 GMT  
-		Size: 893.0 B  
+	-	`sha256:e9cccf6034e7116991a51a1a75fb228aaab263f017559d86e324e2544b2028ec`  
+		Last Modified: Thu, 28 Nov 2019 21:13:40 GMT  
+		Size: 898.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c65e7b0d3e2cc9b35b8741d0c8713d6edf5275c94a910c46795b8d998d653610`  
-		Last Modified: Fri, 22 Nov 2019 22:09:14 GMT  
-		Size: 313.0 B  
+	-	`sha256:3cd4b479316bd6ca8506d49b832322da809dd44ab719b9fe9560df376c6179da`  
+		Last Modified: Thu, 28 Nov 2019 23:15:12 GMT  
+		Size: 316.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:a3951ad9eb73ce3544dd4c199fafc52eb3e75783dc08b3c1e87a188fb6b67ecf`  
-		Last Modified: Fri, 22 Nov 2019 22:09:17 GMT  
-		Size: 3.6 MB (3641424 bytes)  
+	-	`sha256:b742752fef2fbb13d34a43fe667cec66bc09a81aa78625c490bb2a48ef091e9e`  
+		Last Modified: Thu, 28 Nov 2019 23:15:13 GMT  
+		Size: 3.6 MB (3641360 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:0909fe8c9929e32fdbc0fef4e52a33d253b1bd39e945081a93cce871187f99f3`  
-		Last Modified: Fri, 22 Nov 2019 22:09:24 GMT  
-		Size: 9.6 MB (9649424 bytes)  
+	-	`sha256:129fe3602af7461a739b0e7be875c72a045d5e996185fbc07ea56d75b43e8a25`  
+		Last Modified: Thu, 28 Nov 2019 23:15:15 GMT  
+		Size: 9.6 MB (9649433 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:abb1290c5fa86b4a9fcb57d239ae8241862bf2e937b34e44bf006ca53062cee4`  
-		Last Modified: Fri, 22 Nov 2019 22:09:14 GMT  
-		Size: 1.2 KB (1171 bytes)  
+	-	`sha256:24393eb3ead1e44949a01ce6e361e3b912de2376ea6bfc1319c19ff41fec984f`  
+		Last Modified: Thu, 28 Nov 2019 23:15:12 GMT  
+		Size: 1.2 KB (1173 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:fef6883b6cc020c5bbda61d4d2f8b676dbf2086d53b3c1aef5cfdd3db7b5415a`  
-		Last Modified: Fri, 22 Nov 2019 22:09:14 GMT  
-		Size: 615.0 B  
+	-	`sha256:e7bd19362522ab356b99dd702b5c83aade211c838755e85caba9c249f2c7482d`  
+		Last Modified: Thu, 28 Nov 2019 23:15:12 GMT  
+		Size: 613.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `joomla:3-php7.1` - linux; s390x
