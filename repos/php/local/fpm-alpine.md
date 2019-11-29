@@ -1,10 +1,10 @@
-# `php:7.3.12-fpm-alpine3.10`
+# `php:7.4.0-fpm-alpine3.10`
 
 ## Docker Metadata
 
-- Image ID: `sha256:3fc70c6602c0112973bc0f485c06e6286dcc3e98908eea583f020c7a1408deb9`
-- Created: `2019-11-22T11:53:08.212027708Z`
-- Virtual Size: ~ 76.75 Mb  
+- Image ID: `sha256:c6d45e0eb6ac05b7b27e31a49df92ad9d64d59bdd19918f53abc3f430682e1d0`
+- Created: `2019-11-28T21:01:45.535182402Z`
+- Virtual Size: ~ 83.46 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["docker-php-entrypoint"]`
@@ -17,11 +17,11 @@
   - `PHP_CFLAGS=-fstack-protector-strong -fpic -fpie -O2 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64`
   - `PHP_CPPFLAGS=-fstack-protector-strong -fpic -fpie -O2 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64`
   - `PHP_LDFLAGS=-Wl,-O1 -Wl,--hash-style=both -pie`
-  - `GPG_KEYS=CBAF69F173A0FEA4B537F470D66C9593118BCCB6 F38252826ACD957EF380D39F2F7956BC5DA04B5D`
-  - `PHP_VERSION=7.3.12`
-  - `PHP_URL=https://www.php.net/get/php-7.3.12.tar.xz/from/this/mirror`
-  - `PHP_ASC_URL=https://www.php.net/get/php-7.3.12.tar.xz.asc/from/this/mirror`
-  - `PHP_SHA256=aafe5e9861ad828860c6af8c88cdc1488314785962328eb1783607c1fdd855df`
+  - `GPG_KEYS=42670A7FE4D0441C8E4632349E4FDC074A4EF02D 5A52880781F755608BF815FC910DEB46F53EA312`
+  - `PHP_VERSION=7.4.0`
+  - `PHP_URL=https://www.php.net/get/php-7.4.0.tar.xz/from/this/mirror`
+  - `PHP_ASC_URL=https://www.php.net/get/php-7.4.0.tar.xz.asc/from/this/mirror`
+  - `PHP_SHA256=9bb751b20e5d6cc1ea9b1ebf23ef2d5f07f99b2d9cc417bf1d70c04f8b20ec42`
   - `PHP_MD5=`
 
 ## `apk` (`.apk`-based packages)
@@ -397,6 +397,23 @@ nghttp2-libs-1.39.2-r0 installed size:
 
 nghttp2-libs-1.39.2-r0 license:
 MIT
+
+```
+
+### `apk` package: `oniguruma`
+
+```console
+oniguruma-6.9.3-r0 description:
+a regular expressions library
+
+oniguruma-6.9.3-r0 webpage:
+https://github.com/kkos/oniguruma
+
+oniguruma-6.9.3-r0 installed size:
+561152
+
+oniguruma-6.9.3-r0 license:
+BSD-2-Clause
 
 ```
 
