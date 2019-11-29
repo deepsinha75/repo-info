@@ -2,15 +2,15 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:d90eeb02c4a7e6bc54946e278614e95eeed98a6b6fff0066ed19f483154c0130`
-- Created: `2019-10-31T23:18:18.885639652Z`
-- Virtual Size: ~ 167.27 Mb  
+- Image ID: `sha256:b27826a6b1cc00fc04e779bbb449fa3b26204cfbf56f11bf2b446f152acc02f2`
+- Created: `2019-11-28T20:22:29.316134784Z`
+- Virtual Size: ~ 167.28 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Command: `["/bin/bash"]`
 - Environment:
   - `PATH=/opt/ibm/java/jre/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
-  - `JAVA_VERSION=1.8.0_sr5fp41`
+  - `JAVA_VERSION=1.8.0_sr6`
   - `JAVA_HOME=/opt/ibm/java/jre`
   - `IBM_JAVA_OPTIONS=-XX:+UseContainerSupport`
 
@@ -1243,14 +1243,9 @@ Licenses: (parsed from: `/usr/share/doc/libsystemd0/copyright`, `/usr/share/doc/
 - `LGPL-2.1+`
 - `public-domain`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris systemd=237-3ubuntu10.31
-'http://archive.ubuntu.com/ubuntu/pool/main/s/systemd/systemd_237-3ubuntu10.31.dsc' systemd_237-3ubuntu10.31.dsc 5174 SHA256:5ebc0759403bfae88395aebdbba0edd453f86de993780c01471687176bcea943
-'http://archive.ubuntu.com/ubuntu/pool/main/s/systemd/systemd_237.orig.tar.gz' systemd_237.orig.tar.gz 6871350 SHA256:c83dabbe1c9de6b9db1dafdb7e04140c7d0535705c68842f6c0768653ba4913c
-'http://archive.ubuntu.com/ubuntu/pool/main/s/systemd/systemd_237-3ubuntu10.31.debian.tar.xz' systemd_237-3ubuntu10.31.debian.tar.xz 223856 SHA256:c4741f0b70bcfb88ece8b88bbbcfb14d59ca18dc8c25e6fbf4ab594ae3669eed
-```
 
 ### `dpkg` source package: `sysvinit=2.88dsf-59.10ubuntu1`
 
