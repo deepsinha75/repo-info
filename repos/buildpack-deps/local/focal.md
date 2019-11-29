@@ -2150,14 +2150,9 @@ Licenses: (parsed from: `/usr/share/doc/libselinux1/copyright`, `/usr/share/doc/
 - `GPL-2`
 - `LGPL-2.1`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris libselinux=2.9-2build1
-'http://archive.ubuntu.com/ubuntu/pool/main/libs/libselinux/libselinux_2.9-2build1.dsc' libselinux_2.9-2build1.dsc 2717 SHA256:df4a752914fcb96c77476a3143fb2f3b7a56f0075ea3e7b0827a3b689ecb0628
-'http://archive.ubuntu.com/ubuntu/pool/main/libs/libselinux/libselinux_2.9.orig.tar.gz' libselinux_2.9.orig.tar.gz 211546 SHA256:1bccc8873e449587d9a2b2cf253de9b89a8291b9fbc7c59393ca9e5f5f4d2693
-'http://archive.ubuntu.com/ubuntu/pool/main/libs/libselinux/libselinux_2.9-2build1.debian.tar.xz' libselinux_2.9-2build1.debian.tar.xz 23580 SHA256:00c23791979fc386e90534f025bb43ce1b50c5c971d6840b9208ea8726420cde
-```
 
 ### `dpkg` source package: `libsemanage=2.9-3build1`
 
@@ -3449,14 +3444,13 @@ Licenses: (parsed from: `/usr/share/doc/libpq-dev/copyright`, `/usr/share/doc/li
 - `nagaysau-ishii`
 - `rijndael`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris postgresql-12=12.0-1
-'http://archive.ubuntu.com/ubuntu/pool/main/p/postgresql-12/postgresql-12_12.0-1.dsc' postgresql-12_12.0-1.dsc 3603 SHA256:8047b6c61c978215b117482a883a0acd998a9d79e745d4322996cf89fd0ca7ec
-'http://archive.ubuntu.com/ubuntu/pool/main/p/postgresql-12/postgresql-12_12.0.orig.tar.bz2' postgresql-12_12.0.orig.tar.bz2 20177458 SHA256:cda2397215f758b793f741c86be05468257b0e6bcb1a6113882ab5d0df0855c6
-'http://archive.ubuntu.com/ubuntu/pool/main/p/postgresql-12/postgresql-12_12.0-1.debian.tar.xz' postgresql-12_12.0-1.debian.tar.xz 22388 SHA256:976075727c61d7ee512efc9bf2af73effc73394fc631a2ffa8d6761cd3dbf314
-```
+The source package *may* still be available for download from:
+
+- http://snapshot.debian.org/package/postgresql-12/12.0-1/
+
 
 ### `dpkg` source package: `procps=2:3.3.15-2ubuntu3`
 

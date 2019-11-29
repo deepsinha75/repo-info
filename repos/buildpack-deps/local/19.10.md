@@ -2,9 +2,9 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:47aad408df1db25cd48e18e097cc9a9ca35edf8983e60ca8a191c52b16a3ca45`
-- Created: `2019-10-18T20:08:09.071491812Z`
-- Virtual Size: ~ 675.55 Mb  
+- Image ID: `sha256:395f927aedae84f537bf563e47317f833451c5fe0238c4e0f18d6eb1c308bf93`
+- Created: `2019-11-27T00:53:32.792798075Z`
+- Virtual Size: ~ 676.72 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Command: `["/bin/bash"]`
@@ -620,13 +620,13 @@ $ apt-get source -qq --print-uris diffutils=1:3.7-3
 'http://archive.ubuntu.com/ubuntu/pool/main/d/diffutils/diffutils_3.7-3.debian.tar.xz' diffutils_3.7-3.debian.tar.xz 11116 SHA256:a455228f12283b5f3c0165db4ab9b12071adc37fb9dd50dcb5e1b8851c524f1f
 ```
 
-### `dpkg` source package: `djvulibre=3.5.27.1-13`
+### `dpkg` source package: `djvulibre=3.5.27.1-13ubuntu0.1`
 
 Binary Packages:
 
-- `libdjvulibre-dev:amd64=3.5.27.1-13`
-- `libdjvulibre-text=3.5.27.1-13`
-- `libdjvulibre21:amd64=3.5.27.1-13`
+- `libdjvulibre-dev:amd64=3.5.27.1-13ubuntu0.1`
+- `libdjvulibre-text=3.5.27.1-13ubuntu0.1`
+- `libdjvulibre21:amd64=3.5.27.1-13ubuntu0.1`
 
 Licenses: (parsed from: `/usr/share/doc/libdjvulibre-dev/copyright`, `/usr/share/doc/libdjvulibre-text/copyright`, `/usr/share/doc/libdjvulibre21/copyright`)
 
@@ -635,10 +635,10 @@ Licenses: (parsed from: `/usr/share/doc/libdjvulibre-dev/copyright`, `/usr/share
 Source:
 
 ```console
-$ apt-get source -qq --print-uris djvulibre=3.5.27.1-13
-'http://archive.ubuntu.com/ubuntu/pool/main/d/djvulibre/djvulibre_3.5.27.1-13.dsc' djvulibre_3.5.27.1-13.dsc 2406 SHA256:99c82c7f63bff1a61b85f68c8f3e68457028b28cf1105bac614e307661d964e4
+$ apt-get source -qq --print-uris djvulibre=3.5.27.1-13ubuntu0.1
+'http://archive.ubuntu.com/ubuntu/pool/main/d/djvulibre/djvulibre_3.5.27.1-13ubuntu0.1.dsc' djvulibre_3.5.27.1-13ubuntu0.1.dsc 2500 SHA256:2b2d729869a0062e444b3f93c0338859b2e44d5db3aa6a53f7deb554cd5d25fb
 'http://archive.ubuntu.com/ubuntu/pool/main/d/djvulibre/djvulibre_3.5.27.1.orig.tar.gz' djvulibre_3.5.27.1.orig.tar.gz 3231662 SHA256:77f07de3f1039aa19eba2eb3170d9ce9a0918ba7b704a59cfaf08f42fcc52144
-'http://archive.ubuntu.com/ubuntu/pool/main/d/djvulibre/djvulibre_3.5.27.1-13.debian.tar.xz' djvulibre_3.5.27.1-13.debian.tar.xz 75956 SHA256:b1f13bd5d7f2eace52cb805b6206e1855b1a36180e0c4a461f654f672917dc9c
+'http://archive.ubuntu.com/ubuntu/pool/main/d/djvulibre/djvulibre_3.5.27.1-13ubuntu0.1.debian.tar.xz' djvulibre_3.5.27.1-13ubuntu0.1.debian.tar.xz 76504 SHA256:0138dcb05dca644c7240c3cdab94b5e0aa715a975f1de3f38cd68100e5d9b77e
 ```
 
 ### `dpkg` source package: `dpkg=1.19.7ubuntu2`
@@ -752,13 +752,13 @@ $ apt-get source -qq --print-uris fftw3=3.3.8-2
 'http://archive.ubuntu.com/ubuntu/pool/main/f/fftw3/fftw3_3.3.8-2.debian.tar.xz' fftw3_3.3.8-2.debian.tar.xz 13696 SHA256:684dede6b4124f309033d128dc7bdf1eb394984e6e8dd79e1fd5d73b95b12461
 ```
 
-### `dpkg` source package: `file=1:5.37-5`
+### `dpkg` source package: `file=1:5.37-5ubuntu0.1`
 
 Binary Packages:
 
-- `file=1:5.37-5`
-- `libmagic-mgc=1:5.37-5`
-- `libmagic1:amd64=1:5.37-5`
+- `file=1:5.37-5ubuntu0.1`
+- `libmagic-mgc=1:5.37-5ubuntu0.1`
+- `libmagic1:amd64=1:5.37-5ubuntu0.1`
 
 Licenses: (parsed from: `/usr/share/doc/file/copyright`, `/usr/share/doc/libmagic-mgc/copyright`, `/usr/share/doc/libmagic1/copyright`)
 
@@ -771,11 +771,11 @@ Licenses: (parsed from: `/usr/share/doc/file/copyright`, `/usr/share/doc/libmagi
 Source:
 
 ```console
-$ apt-get source -qq --print-uris file=1:5.37-5
-'http://archive.ubuntu.com/ubuntu/pool/main/f/file/file_5.37-5.dsc' file_5.37-5.dsc 2214 SHA256:dd2899078d7e497ca9d9a4f1a20f7a3ef499851e07e6e99c1ef22f59735416f1
+$ apt-get source -qq --print-uris file=1:5.37-5ubuntu0.1
+'http://archive.ubuntu.com/ubuntu/pool/main/f/file/file_5.37-5ubuntu0.1.dsc' file_5.37-5ubuntu0.1.dsc 2329 SHA256:73276b2ea707bf62bae3624037d85dd577dd004e3e6c2c4375eabd496e1b980e
 'http://archive.ubuntu.com/ubuntu/pool/main/f/file/file_5.37.orig.tar.gz' file_5.37.orig.tar.gz 887682 SHA256:e9c13967f7dd339a3c241b7710ba093560b9a33013491318e88e6b8b57bae07f
 'http://archive.ubuntu.com/ubuntu/pool/main/f/file/file_5.37.orig.tar.gz.asc' file_5.37.orig.tar.gz.asc 169 SHA256:f73642d84908665dad226f247ae223e6bf52da8b2ca20ca88bd4e4966eef6bc7
-'http://archive.ubuntu.com/ubuntu/pool/main/f/file/file_5.37-5.debian.tar.xz' file_5.37-5.debian.tar.xz 37212 SHA256:6ab5ab73da113ca3a910fd8e773d52c6d0719560193f3d64e376b23ef95dd100
+'http://archive.ubuntu.com/ubuntu/pool/main/f/file/file_5.37-5ubuntu0.1.debian.tar.xz' file_5.37-5ubuntu0.1.debian.tar.xz 37868 SHA256:bc4c913a5fb53914cb6ed1c15bd89956a1f1fb18e5770a4badd5c249609849d1
 ```
 
 ### `dpkg` source package: `findutils=4.6.0+git+20190209-2ubuntu1`
@@ -879,11 +879,11 @@ $ apt-get source -qq --print-uris freetype=2.9.1-4
 'http://archive.ubuntu.com/ubuntu/pool/main/f/freetype/freetype_2.9.1-4.debian.tar.xz' freetype_2.9.1-4.debian.tar.xz 111992 SHA256:94311247da835d2b32e5e7a00e5db998e87e79a20948d9c526e44a17efa0e3af
 ```
 
-### `dpkg` source package: `fribidi=1.0.5-3.1`
+### `dpkg` source package: `fribidi=1.0.5-3.1ubuntu0.19.10.1`
 
 Binary Packages:
 
-- `libfribidi0:amd64=1.0.5-3.1`
+- `libfribidi0:amd64=1.0.5-3.1ubuntu0.19.10.1`
 
 Licenses: (parsed from: `/usr/share/doc/libfribidi0/copyright`)
 
@@ -893,10 +893,10 @@ Licenses: (parsed from: `/usr/share/doc/libfribidi0/copyright`)
 Source:
 
 ```console
-$ apt-get source -qq --print-uris fribidi=1.0.5-3.1
-'http://archive.ubuntu.com/ubuntu/pool/main/f/fribidi/fribidi_1.0.5-3.1.dsc' fribidi_1.0.5-3.1.dsc 2289 SHA256:189f702ee524774f17199f9bceedf35d7744f447bf6f259797bf2edef224b840
+$ apt-get source -qq --print-uris fribidi=1.0.5-3.1ubuntu0.19.10.1
+'http://archive.ubuntu.com/ubuntu/pool/main/f/fribidi/fribidi_1.0.5-3.1ubuntu0.19.10.1.dsc' fribidi_1.0.5-3.1ubuntu0.19.10.1.dsc 2120 SHA256:c0a47ae5dd21413171519770ae298472c73c2ee0921ce81a1936bf85fdc19f39
 'http://archive.ubuntu.com/ubuntu/pool/main/f/fribidi/fribidi_1.0.5.orig.tar.bz2' fribidi_1.0.5.orig.tar.bz2 2082617 SHA256:6a64f2a687f5c4f203a46fa659f43dd43d1f8b845df8d723107e8a7e6158e4ce
-'http://archive.ubuntu.com/ubuntu/pool/main/f/fribidi/fribidi_1.0.5-3.1.debian.tar.xz' fribidi_1.0.5-3.1.debian.tar.xz 9212 SHA256:77345023d3e5f29aec20bf2dd743ff6d4cfab61f4ec3b7006e57d962e98d6d85
+'http://archive.ubuntu.com/ubuntu/pool/main/f/fribidi/fribidi_1.0.5-3.1ubuntu0.19.10.1.debian.tar.xz' fribidi_1.0.5-3.1ubuntu0.19.10.1.debian.tar.xz 9756 SHA256:2fe1f6b51f404b0d69a16d7d074904605d0de2630ca7767c38299c4b24faa630
 ```
 
 ### `dpkg` source package: `gcc-9=9.2.1-9ubuntu2`
@@ -1419,23 +1419,23 @@ $ apt-get source -qq --print-uris ilmbase=2.2.1-2ubuntu1
 'http://archive.ubuntu.com/ubuntu/pool/main/i/ilmbase/ilmbase_2.2.1-2ubuntu1.debian.tar.xz' ilmbase_2.2.1-2ubuntu1.debian.tar.xz 14108 SHA256:56af498f0567bc49745c224b09065a59777f600b576353a93bdf2fd1e687d36a
 ```
 
-### `dpkg` source package: `imagemagick=8:6.9.10.23+dfsg-2.1ubuntu3`
+### `dpkg` source package: `imagemagick=8:6.9.10.23+dfsg-2.1ubuntu3.1`
 
 Binary Packages:
 
-- `imagemagick=8:6.9.10.23+dfsg-2.1ubuntu3`
-- `imagemagick-6-common=8:6.9.10.23+dfsg-2.1ubuntu3`
-- `imagemagick-6.q16=8:6.9.10.23+dfsg-2.1ubuntu3`
-- `libmagickcore-6-arch-config:amd64=8:6.9.10.23+dfsg-2.1ubuntu3`
-- `libmagickcore-6-headers=8:6.9.10.23+dfsg-2.1ubuntu3`
-- `libmagickcore-6.q16-6:amd64=8:6.9.10.23+dfsg-2.1ubuntu3`
-- `libmagickcore-6.q16-6-extra:amd64=8:6.9.10.23+dfsg-2.1ubuntu3`
-- `libmagickcore-6.q16-dev:amd64=8:6.9.10.23+dfsg-2.1ubuntu3`
-- `libmagickcore-dev=8:6.9.10.23+dfsg-2.1ubuntu3`
-- `libmagickwand-6-headers=8:6.9.10.23+dfsg-2.1ubuntu3`
-- `libmagickwand-6.q16-6:amd64=8:6.9.10.23+dfsg-2.1ubuntu3`
-- `libmagickwand-6.q16-dev:amd64=8:6.9.10.23+dfsg-2.1ubuntu3`
-- `libmagickwand-dev=8:6.9.10.23+dfsg-2.1ubuntu3`
+- `imagemagick=8:6.9.10.23+dfsg-2.1ubuntu3.1`
+- `imagemagick-6-common=8:6.9.10.23+dfsg-2.1ubuntu3.1`
+- `imagemagick-6.q16=8:6.9.10.23+dfsg-2.1ubuntu3.1`
+- `libmagickcore-6-arch-config:amd64=8:6.9.10.23+dfsg-2.1ubuntu3.1`
+- `libmagickcore-6-headers=8:6.9.10.23+dfsg-2.1ubuntu3.1`
+- `libmagickcore-6.q16-6:amd64=8:6.9.10.23+dfsg-2.1ubuntu3.1`
+- `libmagickcore-6.q16-6-extra:amd64=8:6.9.10.23+dfsg-2.1ubuntu3.1`
+- `libmagickcore-6.q16-dev:amd64=8:6.9.10.23+dfsg-2.1ubuntu3.1`
+- `libmagickcore-dev=8:6.9.10.23+dfsg-2.1ubuntu3.1`
+- `libmagickwand-6-headers=8:6.9.10.23+dfsg-2.1ubuntu3.1`
+- `libmagickwand-6.q16-6:amd64=8:6.9.10.23+dfsg-2.1ubuntu3.1`
+- `libmagickwand-6.q16-dev:amd64=8:6.9.10.23+dfsg-2.1ubuntu3.1`
+- `libmagickwand-dev=8:6.9.10.23+dfsg-2.1ubuntu3.1`
 
 Licenses: (parsed from: `/usr/share/doc/imagemagick/copyright`, `/usr/share/doc/imagemagick-6-common/copyright`, `/usr/share/doc/imagemagick-6.q16/copyright`, `/usr/share/doc/libmagickcore-6-arch-config/copyright`, `/usr/share/doc/libmagickcore-6-headers/copyright`, `/usr/share/doc/libmagickcore-6.q16-6/copyright`, `/usr/share/doc/libmagickcore-6.q16-6-extra/copyright`, `/usr/share/doc/libmagickcore-6.q16-dev/copyright`, `/usr/share/doc/libmagickcore-dev/copyright`, `/usr/share/doc/libmagickwand-6-headers/copyright`, `/usr/share/doc/libmagickwand-6.q16-6/copyright`, `/usr/share/doc/libmagickwand-6.q16-dev/copyright`, `/usr/share/doc/libmagickwand-dev/copyright`)
 
@@ -1469,10 +1469,10 @@ Licenses: (parsed from: `/usr/share/doc/imagemagick/copyright`, `/usr/share/doc/
 Source:
 
 ```console
-$ apt-get source -qq --print-uris imagemagick=8:6.9.10.23+dfsg-2.1ubuntu3
-'http://archive.ubuntu.com/ubuntu/pool/main/i/imagemagick/imagemagick_6.9.10.23+dfsg-2.1ubuntu3.dsc' imagemagick_6.9.10.23+dfsg-2.1ubuntu3.dsc 5206 SHA256:01409f74c61fce6558d89f612446ef33780e09728ebfc7d3cd6ae22aa684e87e
+$ apt-get source -qq --print-uris imagemagick=8:6.9.10.23+dfsg-2.1ubuntu3.1
+'http://archive.ubuntu.com/ubuntu/pool/main/i/imagemagick/imagemagick_6.9.10.23+dfsg-2.1ubuntu3.1.dsc' imagemagick_6.9.10.23+dfsg-2.1ubuntu3.1.dsc 5214 SHA256:80842ea414e8e0d74e37966b8f8982e890a4c421cb0628904ce10b86487c2a7d
 'http://archive.ubuntu.com/ubuntu/pool/main/i/imagemagick/imagemagick_6.9.10.23+dfsg.orig.tar.xz' imagemagick_6.9.10.23+dfsg.orig.tar.xz 9081188 SHA256:44249112b624f2cc315573fa96685e547da27ebb321432259290c407023c531e
-'http://archive.ubuntu.com/ubuntu/pool/main/i/imagemagick/imagemagick_6.9.10.23+dfsg-2.1ubuntu3.debian.tar.xz' imagemagick_6.9.10.23+dfsg-2.1ubuntu3.debian.tar.xz 232304 SHA256:2ca2ebdb53d38996331aaa4e0b9c2ab2a0638270b9196afd9307dec7b724a6bc
+'http://archive.ubuntu.com/ubuntu/pool/main/i/imagemagick/imagemagick_6.9.10.23+dfsg-2.1ubuntu3.1.debian.tar.xz' imagemagick_6.9.10.23+dfsg-2.1ubuntu3.1.debian.tar.xz 240708 SHA256:a34d4ac482d5c50524f565c262973369a6bba32a5f20fa911e6ff71e413780d2
 ```
 
 ### `dpkg` source package: `init-system-helpers=1.57`
@@ -2582,12 +2582,12 @@ $ apt-get source -qq --print-uris libxrender=1:0.9.10-1
 'http://archive.ubuntu.com/ubuntu/pool/main/libx/libxrender/libxrender_0.9.10-1.diff.gz' libxrender_0.9.10-1.diff.gz 15399 SHA256:ff56a0a00119383adc5f1731e86155ae5c2de069e1d059a9da1d777917430588
 ```
 
-### `dpkg` source package: `libxslt=1.1.33-0ubuntu1`
+### `dpkg` source package: `libxslt=1.1.33-0ubuntu1.1`
 
 Binary Packages:
 
-- `libxslt1-dev:amd64=1.1.33-0ubuntu1`
-- `libxslt1.1:amd64=1.1.33-0ubuntu1`
+- `libxslt1-dev:amd64=1.1.33-0ubuntu1.1`
+- `libxslt1.1:amd64=1.1.33-0ubuntu1.1`
 
 **WARNING:** unable to detect licenses! (package likely not compliant with DEP-5)  
 If source is available (seen below), check the contents of `debian/copyright` within it.
@@ -2596,10 +2596,10 @@ If source is available (seen below), check the contents of `debian/copyright` wi
 Source:
 
 ```console
-$ apt-get source -qq --print-uris libxslt=1.1.33-0ubuntu1
-'http://archive.ubuntu.com/ubuntu/pool/main/libx/libxslt/libxslt_1.1.33-0ubuntu1.dsc' libxslt_1.1.33-0ubuntu1.dsc 1831 SHA256:63052574e1121b8f83f3720ea399999145d82c7bb435149ac8cb189fae133e01
+$ apt-get source -qq --print-uris libxslt=1.1.33-0ubuntu1.1
+'http://archive.ubuntu.com/ubuntu/pool/main/libx/libxslt/libxslt_1.1.33-0ubuntu1.1.dsc' libxslt_1.1.33-0ubuntu1.1.dsc 2438 SHA256:b435fd92a4eff1ef99caf179e8e12f2fe6d2a63bc6d33d1f82e9786d903898d2
 'http://archive.ubuntu.com/ubuntu/pool/main/libx/libxslt/libxslt_1.1.33.orig.tar.gz' libxslt_1.1.33.orig.tar.gz 3444093 SHA256:8e36605144409df979cab43d835002f63988f3dc94d5d3537c12796db90e38c8
-'http://archive.ubuntu.com/ubuntu/pool/main/libx/libxslt/libxslt_1.1.33-0ubuntu1.debian.tar.xz' libxslt_1.1.33-0ubuntu1.debian.tar.xz 33796 SHA256:26327ed5a6210f0376ef19757c7e36385ff540fdc97fcb0a9245e4eb1e00c2c7
+'http://archive.ubuntu.com/ubuntu/pool/main/libx/libxslt/libxslt_1.1.33-0ubuntu1.1.debian.tar.xz' libxslt_1.1.33-0ubuntu1.1.debian.tar.xz 34172 SHA256:f6cf29959be9db4df09c49e9bab5a87a8517d8d2b18db505613fafed18d3829d
 ```
 
 ### `dpkg` source package: `libxt=1:1.1.5-1`
@@ -2666,11 +2666,11 @@ $ apt-get source -qq --print-uris libzstd=1.4.3+dfsg-1
 'http://archive.ubuntu.com/ubuntu/pool/main/libz/libzstd/libzstd_1.4.3+dfsg-1.debian.tar.xz' libzstd_1.4.3+dfsg-1.debian.tar.xz 16108 SHA256:3dbb5f5d3e6c4c0f43a5f6d6803327bf9c330efdb0b3da461613971af506796b
 ```
 
-### `dpkg` source package: `linux=5.3.0-18.19`
+### `dpkg` source package: `linux=5.3.0-23.25`
 
 Binary Packages:
 
-- `linux-libc-dev:amd64=5.3.0-18.19`
+- `linux-libc-dev:amd64=5.3.0-23.25`
 
 Licenses: (parsed from: `/usr/share/doc/linux-libc-dev/copyright`)
 
@@ -2679,10 +2679,10 @@ Licenses: (parsed from: `/usr/share/doc/linux-libc-dev/copyright`)
 Source:
 
 ```console
-$ apt-get source -qq --print-uris linux=5.3.0-18.19
-'http://archive.ubuntu.com/ubuntu/pool/main/l/linux/linux_5.3.0-18.19.dsc' linux_5.3.0-18.19.dsc 7978 SHA256:bd86169f6513e18d555cb324d493db432a238d1e8e6446a631b4263582c22f11
+$ apt-get source -qq --print-uris linux=5.3.0-23.25
+'http://archive.ubuntu.com/ubuntu/pool/main/l/linux/linux_5.3.0-23.25.dsc' linux_5.3.0-23.25.dsc 8286 SHA256:828c79c919af601c3fbf3420fe8f9a0c6c38573e9cff1488f42b1a896eecba00
 'http://archive.ubuntu.com/ubuntu/pool/main/l/linux/linux_5.3.0.orig.tar.gz' linux_5.3.0.orig.tar.gz 168029263 SHA256:44edffd835819ac7156f2f4bb7512d25f8cf6eab098b09c9ef0c3c06a01148ef
-'http://archive.ubuntu.com/ubuntu/pool/main/l/linux/linux_5.3.0-18.19.diff.gz' linux_5.3.0-18.19.diff.gz 2368515 SHA256:37b6fe7bc80ccda6dcdb927a251e3adf6d99519148d70c62e64a84acd5ea7bb4
+'http://archive.ubuntu.com/ubuntu/pool/main/l/linux/linux_5.3.0-23.25.diff.gz' linux_5.3.0-23.25.diff.gz 2879324 SHA256:c3bbd4fa946b158e8cf7c9041fa69d9418e6344f3a19647b5d71366f494b647f
 ```
 
 ### `dpkg` source package: `lsb=11.0.1ubuntu1`
@@ -2906,12 +2906,12 @@ $ apt-get source -qq --print-uris mpfr4=4.0.2-1
 'http://archive.ubuntu.com/ubuntu/pool/main/m/mpfr4/mpfr4_4.0.2-1.debian.tar.xz' mpfr4_4.0.2-1.debian.tar.xz 10544 SHA256:99c4d35654f33340f0efdec67142a34753157b20334cadad9018f5eab29738da
 ```
 
-### `dpkg` source package: `mysql-8.0=8.0.17-0ubuntu2`
+### `dpkg` source package: `mysql-8.0=8.0.18-0ubuntu0.19.10.1`
 
 Binary Packages:
 
-- `libmysqlclient-dev=8.0.17-0ubuntu2`
-- `libmysqlclient21:amd64=8.0.17-0ubuntu2`
+- `libmysqlclient-dev=8.0.18-0ubuntu0.19.10.1`
+- `libmysqlclient21:amd64=8.0.18-0ubuntu0.19.10.1`
 
 Licenses: (parsed from: `/usr/share/doc/libmysqlclient-dev/copyright`, `/usr/share/doc/libmysqlclient21/copyright`)
 
@@ -2931,10 +2931,10 @@ Licenses: (parsed from: `/usr/share/doc/libmysqlclient-dev/copyright`, `/usr/sha
 Source:
 
 ```console
-$ apt-get source -qq --print-uris mysql-8.0=8.0.17-0ubuntu2
-'http://archive.ubuntu.com/ubuntu/pool/main/m/mysql-8.0/mysql-8.0_8.0.17-0ubuntu2.dsc' mysql-8.0_8.0.17-0ubuntu2.dsc 3388 SHA256:178d4c03263c501f05be40bcd271f8eb5854cedbf9d7d3a34db92cef647cc265
-'http://archive.ubuntu.com/ubuntu/pool/main/m/mysql-8.0/mysql-8.0_8.0.17.orig.tar.gz' mysql-8.0_8.0.17.orig.tar.gz 189322239 SHA256:d44231316ce30a1d1189125ceed86d3388409778e17d0e3b9a060f532463e29a
-'http://archive.ubuntu.com/ubuntu/pool/main/m/mysql-8.0/mysql-8.0_8.0.17-0ubuntu2.debian.tar.xz' mysql-8.0_8.0.17-0ubuntu2.debian.tar.xz 158188 SHA256:e92ce2f9c3654fbf1262840bdb40143a97cd5c77fde1935ef19cf36dd298a74d
+$ apt-get source -qq --print-uris mysql-8.0=8.0.18-0ubuntu0.19.10.1
+'http://archive.ubuntu.com/ubuntu/pool/main/m/mysql-8.0/mysql-8.0_8.0.18-0ubuntu0.19.10.1.dsc' mysql-8.0_8.0.18-0ubuntu0.19.10.1.dsc 3434 SHA256:e4ff42596e5f2792e65c863c4df703583e7b839284a03a488aec3315cda1edda
+'http://archive.ubuntu.com/ubuntu/pool/main/m/mysql-8.0/mysql-8.0_8.0.18.orig.tar.gz' mysql-8.0_8.0.18.orig.tar.gz 194953221 SHA256:0eccd9d79c04ba0ca661136bb29085e3833d9c48ed022d0b9aba12236994186b
+'http://archive.ubuntu.com/ubuntu/pool/main/m/mysql-8.0/mysql-8.0_8.0.18-0ubuntu0.19.10.1.debian.tar.xz' mysql-8.0_8.0.18-0ubuntu0.19.10.1.debian.tar.xz 156828 SHA256:ab2f88e1dce922b7a34ac52a3733ee559cf0a06c2b46ab20fe2a3c1103368cd3
 ```
 
 ### `dpkg` source package: `mysql-defaults=1.0.5ubuntu2`
@@ -3555,12 +3555,12 @@ $ apt-get source -qq --print-uris python3-defaults=3.7.5-1
 'http://archive.ubuntu.com/ubuntu/pool/main/p/python3-defaults/python3-defaults_3.7.5-1.tar.gz' python3-defaults_3.7.5-1.tar.gz 137429 SHA256:7cdf04f1ac1dbbca89c45d9f7922b6b2049f879fad06dbad39278cac478117a2
 ```
 
-### `dpkg` source package: `python3-stdlib-extensions=3.7.5~rc1-1`
+### `dpkg` source package: `python3-stdlib-extensions=3.7.5-1build1`
 
 Binary Packages:
 
-- `python3-distutils=3.7.5~rc1-1`
-- `python3-lib2to3=3.7.5~rc1-1`
+- `python3-distutils=3.7.5-1build1`
+- `python3-lib2to3=3.7.5-1build1`
 
 **WARNING:** unable to detect licenses! (package likely not compliant with DEP-5)  
 If source is available (seen below), check the contents of `debian/copyright` within it.
@@ -3569,20 +3569,20 @@ If source is available (seen below), check the contents of `debian/copyright` wi
 Source:
 
 ```console
-$ apt-get source -qq --print-uris python3-stdlib-extensions=3.7.5~rc1-1
-'http://archive.ubuntu.com/ubuntu/pool/main/p/python3-stdlib-extensions/python3-stdlib-extensions_3.7.5~rc1-1.dsc' python3-stdlib-extensions_3.7.5~rc1-1.dsc 2567 SHA256:706f11315743d17ce9f4dd7dee68eaddb0a011d5cf2270681313f252a1f112d5
-'http://archive.ubuntu.com/ubuntu/pool/main/p/python3-stdlib-extensions/python3-stdlib-extensions_3.7.5~rc1.orig.tar.xz' python3-stdlib-extensions_3.7.5~rc1.orig.tar.xz 1056844 SHA256:b6a0d3d070f2970293af7ed3d7ba48a809608692ce399b483edb9518ba13c574
-'http://archive.ubuntu.com/ubuntu/pool/main/p/python3-stdlib-extensions/python3-stdlib-extensions_3.7.5~rc1-1.debian.tar.xz' python3-stdlib-extensions_3.7.5~rc1-1.debian.tar.xz 17212 SHA256:d9dfb35f2e73490c189e0ba4fea835ff2b5fb63dedd05636cdac219236e0d1ce
+$ apt-get source -qq --print-uris python3-stdlib-extensions=3.7.5-1build1
+'http://archive.ubuntu.com/ubuntu/pool/main/p/python3-stdlib-extensions/python3-stdlib-extensions_3.7.5-1build1.dsc' python3-stdlib-extensions_3.7.5-1build1.dsc 2563 SHA256:87242f5fd50eae5b5a31004def3b5f60e7d5421bddd5a1d0528547c6eb4e3cd0
+'http://archive.ubuntu.com/ubuntu/pool/main/p/python3-stdlib-extensions/python3-stdlib-extensions_3.7.5.orig.tar.xz' python3-stdlib-extensions_3.7.5.orig.tar.xz 1058456 SHA256:e4a158e0c1571a831c51cff2e785b9c06340b363756ffe9615593b11f63b2a3f
+'http://archive.ubuntu.com/ubuntu/pool/main/p/python3-stdlib-extensions/python3-stdlib-extensions_3.7.5-1build1.debian.tar.xz' python3-stdlib-extensions_3.7.5-1build1.debian.tar.xz 17260 SHA256:e3e5da632a94f45ac802c358fbc6130e2ef0035755263d3046f343b6e087e910
 ```
 
-### `dpkg` source package: `python3.7=3.7.5~rc1-2`
+### `dpkg` source package: `python3.7=3.7.5-2~19.10`
 
 Binary Packages:
 
-- `libpython3.7-minimal:amd64=3.7.5~rc1-2`
-- `libpython3.7-stdlib:amd64=3.7.5~rc1-2`
-- `python3.7=3.7.5~rc1-2`
-- `python3.7-minimal=3.7.5~rc1-2`
+- `libpython3.7-minimal:amd64=3.7.5-2~19.10`
+- `libpython3.7-stdlib:amd64=3.7.5-2~19.10`
+- `python3.7=3.7.5-2~19.10`
+- `python3.7-minimal=3.7.5-2~19.10`
 
 Licenses: (parsed from: `/usr/share/doc/libpython3.7-minimal/copyright`, `/usr/share/doc/libpython3.7-stdlib/copyright`, `/usr/share/doc/python3.7/copyright`, `/usr/share/doc/python3.7-minimal/copyright`)
 
@@ -3607,10 +3607,10 @@ Licenses: (parsed from: `/usr/share/doc/libpython3.7-minimal/copyright`, `/usr/s
 Source:
 
 ```console
-$ apt-get source -qq --print-uris python3.7=3.7.5~rc1-2
-'http://archive.ubuntu.com/ubuntu/pool/main/p/python3.7/python3.7_3.7.5~rc1-2.dsc' python3.7_3.7.5~rc1-2.dsc 3447 SHA256:59776ecf138fe9f50034a88bb05e2e7b8a55f3278903780c16587291843df4b3
-'http://archive.ubuntu.com/ubuntu/pool/main/p/python3.7/python3.7_3.7.5~rc1.orig.tar.xz' python3.7_3.7.5~rc1.orig.tar.xz 17238100 SHA256:6aea4110c8cb9c828b149041f03b01a1247497b8b587b39e5857cdc53179373a
-'http://archive.ubuntu.com/ubuntu/pool/main/p/python3.7/python3.7_3.7.5~rc1-2.debian.tar.xz' python3.7_3.7.5~rc1-2.debian.tar.xz 213648 SHA256:04e6372b036ed26bcdee4a4ab44624b253832430f1b035325dd8174585c40190
+$ apt-get source -qq --print-uris python3.7=3.7.5-2~19.10
+'http://archive.ubuntu.com/ubuntu/pool/main/p/python3.7/python3.7_3.7.5-2~19.10.dsc' python3.7_3.7.5-2~19.10.dsc 3443 SHA256:108d01fba4b18b7545216952ab129d326e32b9e0595b935acd1f00c8daeb9ee3
+'http://archive.ubuntu.com/ubuntu/pool/main/p/python3.7/python3.7_3.7.5.orig.tar.xz' python3.7_3.7.5.orig.tar.xz 17236432 SHA256:e85a76ea9f3d6c485ec1780fca4e500725a4a7bbc63c78ebc44170de9b619d94
+'http://archive.ubuntu.com/ubuntu/pool/main/p/python3.7/python3.7_3.7.5-2~19.10.debian.tar.xz' python3.7_3.7.5-2~19.10.debian.tar.xz 210968 SHA256:5b50a0c7e838073577e67ce4ca8fde136148e2c26832a747f1afb38acd0a6848
 ```
 
 ### `dpkg` source package: `readline=8.0-3`

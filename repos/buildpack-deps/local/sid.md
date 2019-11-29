@@ -1843,20 +1843,13 @@ Licenses: (parsed from: `/usr/share/doc/iproute2/copyright`)
 
 - `GPL-2`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris iproute2=5.3.0-1
-'http://deb.debian.org/debian/pool/main/i/iproute2/iproute2_5.3.0-1.dsc' iproute2_5.3.0-1.dsc 1915 SHA256:c5128eedcb764048421c58fdb8bcdf980cd4ac7d695209c5e2448447f0742989
-'http://deb.debian.org/debian/pool/main/i/iproute2/iproute2_5.3.0.orig.tar.xz' iproute2_5.3.0.orig.tar.xz 742660 SHA256:cb1c1e45993a3bd2438543fd4332d70f1726a6e6ff97dc613a8258c993117b3f
-'http://deb.debian.org/debian/pool/main/i/iproute2/iproute2_5.3.0-1.debian.tar.xz' iproute2_5.3.0-1.debian.tar.xz 144292 SHA256:e9b8a6d0cdaa5605442386996a7499957867f73eef6c1317e31986bafd139202
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/iproute2/5.3.0-1/
 
-- https://sources.debian.net/src/iproute2/5.3.0-1/ (for browsing the source)
-- https://sources.debian.net/src/iproute2/5.3.0-1/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/iproute2/5.3.0-1/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `iptables=1.8.3-2`
 
@@ -4850,19 +4843,13 @@ Licenses: (parsed from: `/usr/share/doc/sensible-utils/copyright`)
 - `configure`
 - `installsh`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris sensible-utils=0.0.12
-'http://deb.debian.org/debian/pool/main/s/sensible-utils/sensible-utils_0.0.12.dsc' sensible-utils_0.0.12.dsc 1732 SHA256:1b62cc5f7561b3f5692a6edaec942e2e97e8368dabff8c865867d428eecb1221
-'http://deb.debian.org/debian/pool/main/s/sensible-utils/sensible-utils_0.0.12.tar.xz' sensible-utils_0.0.12.tar.xz 62152 SHA256:99ba2ebf8c57447c69d426b99b84ff9dc817be0bc4988ec6890a14558c529e2e
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/sensible-utils/0.0.12/
 
-- https://sources.debian.net/src/sensible-utils/0.0.12/ (for browsing the source)
-- https://sources.debian.net/src/sensible-utils/0.0.12/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/sensible-utils/0.0.12/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `serf=1.3.9-7`
 
