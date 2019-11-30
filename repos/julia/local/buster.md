@@ -2,9 +2,9 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:a50a637c232d519be3cfaa06c1b6aa7edca5392a433af4ab4bf48448710ebd1d`
-- Created: `2019-11-23T01:29:26.243247705Z`
-- Virtual Size: ~ 431.33 Mb  
+- Image ID: `sha256:74ff4467bc504928bc38c4e9e0e1de1c3155e963b2e4740d343626ee4ac083ce`
+- Created: `2019-11-27T02:48:15.811459857Z`
+- Virtual Size: ~ 431.38 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Command: `["julia"]`
@@ -12,7 +12,7 @@
   - `PATH=/usr/local/julia/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
   - `JULIA_PATH=/usr/local/julia`
   - `JULIA_GPG=3673DF529D9049477F76B37566E3C7DC03D6E495`
-  - `JULIA_VERSION=1.3.0-rc5`
+  - `JULIA_VERSION=1.3.0`
 
 ## `dpkg` (`.deb`-based packages)
 
