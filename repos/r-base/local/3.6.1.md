@@ -1166,20 +1166,13 @@ Licenses: (parsed from: `/usr/share/doc/libglib2.0-0/copyright`)
 - `GPL-2+`
 - `LGPL`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris glib2.0=2.62.2-3
-'http://deb.debian.org/debian/pool/main/g/glib2.0/glib2.0_2.62.2-3.dsc' glib2.0_2.62.2-3.dsc 3353 SHA256:575302d923bf3de5c59de234e717de40bf2c95141f9c531bc4be60a471759580
-'http://deb.debian.org/debian/pool/main/g/glib2.0/glib2.0_2.62.2.orig.tar.xz' glib2.0_2.62.2.orig.tar.xz 4682000 SHA256:698824a413f76df039739c2a78f45b10939d526ae7495bab4e694e6730deb3f1
-'http://deb.debian.org/debian/pool/main/g/glib2.0/glib2.0_2.62.2-3.debian.tar.xz' glib2.0_2.62.2-3.debian.tar.xz 107692 SHA256:02161310b6422a683b40381f506a51d575569fd89dd11d956e23ef4650c399fe
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/glib2.0/2.62.2-3/
 
-- https://sources.debian.net/src/glib2.0/2.62.2-3/ (for browsing the source)
-- https://sources.debian.net/src/glib2.0/2.62.2-3/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/glib2.0/2.62.2-3/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `glibc=2.29-3`
 
@@ -1720,20 +1713,13 @@ Licenses: (parsed from: `/usr/share/doc/libblas-dev/copyright`, `/usr/share/doc/
 - `BSD-3-clause`
 - `BSD-3-clause-intel`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris lapack=3.8.0-8
-'http://deb.debian.org/debian/pool/main/l/lapack/lapack_3.8.0-8.dsc' lapack_3.8.0-8.dsc 3383 SHA256:60fa8a410bff18f0289af083f1327d2436c5e00405c0c9118c0fb7ba01b293b2
-'http://deb.debian.org/debian/pool/main/l/lapack/lapack_3.8.0.orig.tar.gz' lapack_3.8.0.orig.tar.gz 7426094 SHA256:deb22cc4a6120bff72621155a9917f485f96ef8319ac074a7afbc68aab88bcf6
-'http://deb.debian.org/debian/pool/main/l/lapack/lapack_3.8.0-8.debian.tar.xz' lapack_3.8.0-8.debian.tar.xz 26360 SHA256:01831d023f6859abd707b9cd7fcd8a5b73dd4b4e66ba6fc4d2b59202afc2fdd4
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/lapack/3.8.0-8/
 
-- https://sources.debian.net/src/lapack/3.8.0-8/ (for browsing the source)
-- https://sources.debian.net/src/lapack/3.8.0-8/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/lapack/3.8.0-8/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `lattice=0.20-38-1`
 
@@ -3676,19 +3662,13 @@ Licenses: (parsed from: `/usr/share/doc/sensible-utils/copyright`)
 - `configure`
 - `installsh`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris sensible-utils=0.0.12
-'http://deb.debian.org/debian/pool/main/s/sensible-utils/sensible-utils_0.0.12.dsc' sensible-utils_0.0.12.dsc 1732 SHA256:1b62cc5f7561b3f5692a6edaec942e2e97e8368dabff8c865867d428eecb1221
-'http://deb.debian.org/debian/pool/main/s/sensible-utils/sensible-utils_0.0.12.tar.xz' sensible-utils_0.0.12.tar.xz 62152 SHA256:99ba2ebf8c57447c69d426b99b84ff9dc817be0bc4988ec6890a14558c529e2e
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/sensible-utils/0.0.12/
 
-- https://sources.debian.net/src/sensible-utils/0.0.12/ (for browsing the source)
-- https://sources.debian.net/src/sensible-utils/0.0.12/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/sensible-utils/0.0.12/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `shadow=1:4.7-2`
 
