@@ -1,10 +1,10 @@
-# `maven:3.6.2-jdk-8-openj9`
+# `maven:3.6.3-jdk-8-openj9`
 
 ## Docker Metadata
 
-- Image ID: `sha256:a60c70c1003a4fbcc33543af76653c65be6b0a3149c73866a38dd5f2fdcc36b1`
-- Created: `2019-11-08T03:44:57.146845132Z`
-- Virtual Size: ~ 364.56 Mb  
+- Image ID: `sha256:184b1bcc5f9338ac21f24504b5539e2259596413c882489dfedc5d02096d2f0c`
+- Created: `2019-11-28T17:26:17.285712476Z`
+- Virtual Size: ~ 365.29 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["/usr/local/bin/mvn-entrypoint.sh"]`

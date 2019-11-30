@@ -1,10 +1,10 @@
-# `maven:3.6.2-jdk-11-openj9`
+# `maven:3.6.3-jdk-11-openj9`
 
 ## Docker Metadata
 
-- Image ID: `sha256:046c76dcb3ec74cde9d009a1f9c7495b23196b3c7343c4753ceb9b660dfa8ad7`
-- Created: `2019-11-08T03:44:31.239080721Z`
-- Virtual Size: ~ 426.58 Mb  
+- Image ID: `sha256:02984c3bca8d7e3a6af0a9d457bb86595a2d6a69ed4e469a1994f0ea018da025`
+- Created: `2019-11-28T17:25:15.357957243Z`
+- Virtual Size: ~ 427.14 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["/usr/local/bin/mvn-entrypoint.sh"]`
@@ -1572,14 +1572,9 @@ Licenses: (parsed from: `/usr/share/doc/libsystemd0/copyright`, `/usr/share/doc/
 - `LGPL-2.1+`
 - `public-domain`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris systemd=237-3ubuntu10.31
-'http://archive.ubuntu.com/ubuntu/pool/main/s/systemd/systemd_237-3ubuntu10.31.dsc' systemd_237-3ubuntu10.31.dsc 5174 SHA256:5ebc0759403bfae88395aebdbba0edd453f86de993780c01471687176bcea943
-'http://archive.ubuntu.com/ubuntu/pool/main/s/systemd/systemd_237.orig.tar.gz' systemd_237.orig.tar.gz 6871350 SHA256:c83dabbe1c9de6b9db1dafdb7e04140c7d0535705c68842f6c0768653ba4913c
-'http://archive.ubuntu.com/ubuntu/pool/main/s/systemd/systemd_237-3ubuntu10.31.debian.tar.xz' systemd_237-3ubuntu10.31.debian.tar.xz 223856 SHA256:c4741f0b70bcfb88ece8b88bbbcfb14d59ca18dc8c25e6fbf4ab594ae3669eed
-```
 
 ### `dpkg` source package: `sysvinit=2.88dsf-59.10ubuntu1`
 
