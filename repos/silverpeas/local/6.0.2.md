@@ -3698,14 +3698,9 @@ Binary Packages:
 If source is available (seen below), check the contents of `debian/copyright` within it.
 
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris nss=2:3.28.4-0ubuntu0.16.04.6
-'http://archive.ubuntu.com/ubuntu/pool/main/n/nss/nss_3.28.4-0ubuntu0.16.04.6.dsc' nss_3.28.4-0ubuntu0.16.04.6.dsc 2444 SHA256:85ea27ef35dbd43750c22fdfa3026350901134f4cad6f4db1bed8d9531037008
-'http://archive.ubuntu.com/ubuntu/pool/main/n/nss/nss_3.28.4.orig.tar.gz' nss_3.28.4.orig.tar.gz 7453282 SHA256:d5d4761778b8d4c378b2174c9e13e7abd20a6961f557d4fcc029af723ffd7189
-'http://archive.ubuntu.com/ubuntu/pool/main/n/nss/nss_3.28.4-0ubuntu0.16.04.6.debian.tar.xz' nss_3.28.4-0ubuntu0.16.04.6.debian.tar.xz 42708 SHA256:9974c437ad05693b455d9451407836b05d0852526f76b486ef7e56e1b106e92a
-```
 
 ### `dpkg` source package: `numactl=2.0.11-1ubuntu1.1`
 
