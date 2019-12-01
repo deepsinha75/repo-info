@@ -1042,20 +1042,13 @@ Licenses: (parsed from: `/usr/share/doc/file/copyright`, `/usr/share/doc/libmagi
 - `MIT-Old-Style-with-legal-disclaimer-2`
 - `public-domain`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris file=1:5.22+15-2+deb8u6
-'http://security.debian.org/debian-security/pool/updates/main/f/file/file_5.22+15-2+deb8u6.dsc' file_5.22+15-2+deb8u6.dsc 2255 SHA256:418531a7257b0498e3923f131476f870d913804ecf2316b957eb43616e0a76d3
-'http://security.debian.org/debian-security/pool/updates/main/f/file/file_5.22+15.orig.tar.xz' file_5.22+15.orig.tar.xz 569332 SHA256:c021e9f73b3eb3b6cc2532c5d9a77af1a92902935013c2740ba3fef83f1804d2
-'http://security.debian.org/debian-security/pool/updates/main/f/file/file_5.22+15-2+deb8u6.debian.tar.xz' file_5.22+15-2+deb8u6.debian.tar.xz 32508 SHA256:982a2847250b5db25990a1b9625bb8c933fef3ac3367157f1d79084cfa2c4b9d
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/file/1:5.22+15-2+deb8u6/
 
-- https://sources.debian.net/src/file/1:5.22+15-2+deb8u6/ (for browsing the source)
-- https://sources.debian.net/src/file/1:5.22+15-2+deb8u6/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/file/1:5.22+15-2+deb8u6/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `findutils=4.4.2-9`
 
