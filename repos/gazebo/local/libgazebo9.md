@@ -6599,14 +6599,9 @@ Licenses: (parsed from: `/usr/share/doc/libqt5concurrent5/copyright`, `/usr/shar
 - `public-domain`
 - `wintab`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris qtbase-opensource-src=5.9.5+dfsg-0ubuntu2.3
-'http://archive.ubuntu.com/ubuntu/pool/main/q/qtbase-opensource-src/qtbase-opensource-src_5.9.5+dfsg-0ubuntu2.3.dsc' qtbase-opensource-src_5.9.5+dfsg-0ubuntu2.3.dsc 4743 SHA256:8ea9547323ae73a7cb2b6b9c070bb46fe16380bd301ed4428c7bb81157878844
-'http://archive.ubuntu.com/ubuntu/pool/main/q/qtbase-opensource-src/qtbase-opensource-src_5.9.5+dfsg.orig.tar.xz' qtbase-opensource-src_5.9.5+dfsg.orig.tar.xz 44935364 SHA256:09dd1f0b484b6b521181774de0fd13e179dce4614fb5e308f1c9435082750e59
-'http://archive.ubuntu.com/ubuntu/pool/main/q/qtbase-opensource-src/qtbase-opensource-src_5.9.5+dfsg-0ubuntu2.3.debian.tar.xz' qtbase-opensource-src_5.9.5+dfsg-0ubuntu2.3.debian.tar.xz 262780 SHA256:9ea56bbd8b5d7b119e8b6475f5e754bf302411e5b81bdcd51461e536d43c9f65
-```
 
 ### `dpkg` source package: `qtchooser=64-ga1b6736-5`
 
