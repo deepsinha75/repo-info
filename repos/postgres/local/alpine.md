@@ -2,9 +2,9 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:ac3ea0e60533e21e27d7f7a47abd0ab561fea48e36b90b74aae0ebfc7aa34273`
-- Created: `2019-11-27T02:50:13.513063916Z`
-- Virtual Size: ~ 72.79 Mb  
+- Image ID: `sha256:3268bee8d0210193f51bc8fd69086df604e0c953e3ccb4e1c6bead7c704f11f0`
+- Created: `2019-11-28T17:37:34.697823641Z`
+- Virtual Size: ~ 146.24 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["docker-entrypoint.sh"]`
@@ -189,6 +189,23 @@ BSD-3-Clause
 
 ```
 
+### `apk` package: `libffi`
+
+```console
+libffi-3.2.1-r6 description:
+A portable, high level programming interface to various calling conventions.
+
+libffi-3.2.1-r6 webpage:
+http://sourceware.org/libffi
+
+libffi-3.2.1-r6 installed size:
+49152
+
+libffi-3.2.1-r6 license:
+MIT
+
+```
+
 ### `apk` package: `libgcc`
 
 ```console
@@ -339,6 +356,23 @@ libxslt-1.1.33-r2 installed size:
 
 libxslt-1.1.33-r2 license:
 custom
+
+```
+
+### `apk` package: `llvm8-libs`
+
+```console
+llvm8-libs-8.0.0-r1 description:
+LLVM 8 runtime library
+
+llvm8-libs-8.0.0-r1 webpage:
+https://llvm.org/
+
+llvm8-libs-8.0.0-r1 installed size:
+52895744
+
+llvm8-libs-8.0.0-r1 license:
+NCSA
 
 ```
 
