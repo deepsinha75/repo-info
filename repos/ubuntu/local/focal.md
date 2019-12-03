@@ -711,14 +711,9 @@ Licenses: (parsed from: `/usr/share/doc/libselinux1/copyright`)
 - `GPL-2`
 - `LGPL-2.1`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris libselinux=2.9-2build1
-'http://archive.ubuntu.com/ubuntu/pool/main/libs/libselinux/libselinux_2.9-2build1.dsc' libselinux_2.9-2build1.dsc 2717 SHA256:df4a752914fcb96c77476a3143fb2f3b7a56f0075ea3e7b0827a3b689ecb0628
-'http://archive.ubuntu.com/ubuntu/pool/main/libs/libselinux/libselinux_2.9.orig.tar.gz' libselinux_2.9.orig.tar.gz 211546 SHA256:1bccc8873e449587d9a2b2cf253de9b89a8291b9fbc7c59393ca9e5f5f4d2693
-'http://archive.ubuntu.com/ubuntu/pool/main/libs/libselinux/libselinux_2.9-2build1.debian.tar.xz' libselinux_2.9-2build1.debian.tar.xz 23580 SHA256:00c23791979fc386e90534f025bb43ce1b50c5c971d6840b9208ea8726420cde
-```
 
 ### `dpkg` source package: `libsemanage=2.9-3build1`
 
