@@ -1,7 +1,7 @@
 ## `joomla:3-php7.3-fpm-alpine`
 
 ```console
-$ docker pull joomla@sha256:2b74c63812e3c524792691ec79b57ef378c4a79a96037636191a39fae6a5fc85
+$ docker pull joomla@sha256:123a1841b9b4d12056cc52f3b376ee2e0d1e8be99dcb103036a911dd733913d7
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -326,14 +326,14 @@ CMD ["php-fpm"]
 ### `joomla:3-php7.3-fpm-alpine` - linux; arm variant v7
 
 ```console
-$ docker pull joomla@sha256:0fd5d46d0b60731342b829499d7deecb2b07111afe938f6edb5dce7f5ed8c8a0
+$ docker pull joomla@sha256:88d7dc124cf2e74b2103af49b5760faab897cf301a31a8c68a6bd33e78f050ac
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **44.6 MB (44613970 bytes)**  
+-	Total Size: **44.6 MB (44605602 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:791ca9e38a27fec2c3a7dcbc4cbf8aac6b2d87d60b2f2d6b5baaf7fcd3fe2129`
+-	Image ID: `sha256:4e4b4cfc210cd468dbabe093d51e3c469fb7633388b9ea94c09f0317552e1587`
 -	Entrypoint: `["\/entrypoint.sh"]`
 -	Default Command: `["php-fpm"]`
 
@@ -396,23 +396,23 @@ LABEL maintainer=Michael Babker <michael.babker@joomla.org> (@mbabker)
 ENV JOOMLA_INSTALLATION_DISABLE_LOCALHOST_CHECK=1
 # Fri, 22 Nov 2019 18:25:17 GMT
 RUN apk add --no-cache 	bash
-# Fri, 22 Nov 2019 18:27:36 GMT
-RUN set -ex; 		apk add --no-cache --virtual .build-deps 		$PHPIZE_DEPS 		autoconf 		bzip2-dev 		libjpeg-turbo-dev 		libmemcached-dev 		libpng-dev 		libzip-dev 		openldap-dev 		pcre-dev 		postgresql-dev 	; 		docker-php-ext-configure gd --with-png-dir=/usr --with-jpeg-dir=/usr; 	docker-php-ext-configure ldap; 	docker-php-ext-install -j "$(nproc)" 		bz2 		gd 		ldap 		mysqli 		pdo_mysql 		pdo_pgsql 		pgsql 		zip 	; 		pecl install APCu-5.1.17; 	pecl install memcached-3.1.4; 	pecl install redis-4.3.0; 		docker-php-ext-enable 		apcu 		memcached 		redis 	; 		runDeps="$( 		scanelf --needed --nobanner --format '%n#p' --recursive /usr/local/lib/php/extensions 		| tr ',' '\n' 		| sort -u 		| awk 'system("[ -e /usr/local/lib/" $1 " ]") == 0 { next } { print "so:" $1 }' 		)"; 	apk add --virtual .joomla-phpext-rundeps $runDeps; 	apk del .build-deps
-# Fri, 22 Nov 2019 18:27:37 GMT
+# Tue, 03 Dec 2019 02:34:36 GMT
+RUN set -ex; 		apk add --no-cache --virtual .build-deps 		$PHPIZE_DEPS 		autoconf 		bzip2-dev 		libjpeg-turbo-dev 		libmemcached-dev 		libpng-dev 		libzip-dev 		openldap-dev 		pcre-dev 		postgresql-dev 	; 		docker-php-ext-configure gd --with-png-dir=/usr --with-jpeg-dir=/usr; 	docker-php-ext-configure ldap; 	docker-php-ext-install -j "$(nproc)" 		bz2 		gd 		ldap 		mysqli 		pdo_mysql 		pdo_pgsql 		pgsql 		zip 	; 		pecl install APCu-5.1.18; 	pecl install memcached-3.1.4; 	pecl install redis-4.3.0; 		docker-php-ext-enable 		apcu 		memcached 		redis 	; 		runDeps="$( 		scanelf --needed --nobanner --format '%n#p' --recursive /usr/local/lib/php/extensions 		| tr ',' '\n' 		| sort -u 		| awk 'system("[ -e /usr/local/lib/" $1 " ]") == 0 { next } { print "so:" $1 }' 		)"; 	apk add --virtual .joomla-phpext-rundeps $runDeps; 	apk del .build-deps
+# Tue, 03 Dec 2019 02:34:48 GMT
 VOLUME [/var/www/html]
-# Fri, 22 Nov 2019 18:27:38 GMT
+# Tue, 03 Dec 2019 02:34:51 GMT
 ENV JOOMLA_VERSION=3.9.13
-# Fri, 22 Nov 2019 18:27:39 GMT
+# Tue, 03 Dec 2019 02:34:56 GMT
 ENV JOOMLA_SHA512=366101203f24a19464d3c86472dd937bb4c192b2621f1245f8907a3c5565594417baa79a19002eda84ac939b92376501a5300dc35a64c0c06df163d2e460550f
-# Fri, 22 Nov 2019 18:27:50 GMT
+# Tue, 03 Dec 2019 02:35:16 GMT
 RUN set -ex; 	curl -o joomla.tar.bz2 -SL https://github.com/joomla/joomla-cms/releases/download/${JOOMLA_VERSION}/Joomla_${JOOMLA_VERSION}-Stable-Full_Package.tar.bz2; 	echo "$JOOMLA_SHA512 *joomla.tar.bz2" | sha512sum -c -; 	mkdir /usr/src/joomla; 	tar -xf joomla.tar.bz2 -C /usr/src/joomla; 	rm joomla.tar.bz2; 	chown -R www-data:www-data /usr/src/joomla
-# Fri, 22 Nov 2019 18:27:54 GMT
+# Tue, 03 Dec 2019 02:35:21 GMT
 COPY file:fcc18c5b9c2d514cfb965bab84e10b4f924a39a5f202055df75d7990da099d8f in /entrypoint.sh 
-# Fri, 22 Nov 2019 18:27:56 GMT
+# Tue, 03 Dec 2019 02:35:23 GMT
 COPY file:5a85d779aaae74cfa3ab6228df0f24236d4d5ad9097e2a1b277e3daea0d6d3dc in /makedb.php 
-# Fri, 22 Nov 2019 18:27:57 GMT
+# Tue, 03 Dec 2019 02:35:29 GMT
 ENTRYPOINT ["/entrypoint.sh"]
-# Fri, 22 Nov 2019 18:27:59 GMT
+# Tue, 03 Dec 2019 02:35:40 GMT
 CMD ["php-fpm"]
 ```
 
@@ -461,21 +461,21 @@ CMD ["php-fpm"]
 		Last Modified: Fri, 22 Nov 2019 18:32:11 GMT  
 		Size: 539.5 KB (539521 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:90bd689490de03f19b33ff28f303af98c36e11f52189937b43da2c3b68ae80bd`  
-		Last Modified: Fri, 22 Nov 2019 18:32:12 GMT  
-		Size: 5.7 MB (5732493 bytes)  
+	-	`sha256:caeb6dff32d221e49cd14aff2d9334d2d5adc11b26a9bcd8dc87bc1ef6a04933`  
+		Last Modified: Tue, 03 Dec 2019 02:53:43 GMT  
+		Size: 5.7 MB (5724116 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:0fa11e737a9b1c6dabf85bd15a02af68c087183c3d9d49175d1ad468b7d31682`  
-		Last Modified: Fri, 22 Nov 2019 18:32:16 GMT  
-		Size: 9.7 MB (9650080 bytes)  
+	-	`sha256:07460b24f931df2eddf33d46b0ab0d899c3c37ce77f20e167e56f85db14dadff`  
+		Last Modified: Tue, 03 Dec 2019 02:53:47 GMT  
+		Size: 9.7 MB (9650088 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:3d7dbef067a4df26e818a99d0b1de8aa98203d1afd83b5ae6fc4625bb486a616`  
-		Last Modified: Fri, 22 Nov 2019 18:32:12 GMT  
-		Size: 1.2 KB (1173 bytes)  
+	-	`sha256:452d7ecf133161e830aee12ba765a3d6cbbedf01610e96a18a63147098889f6e`  
+		Last Modified: Tue, 03 Dec 2019 02:53:43 GMT  
+		Size: 1.2 KB (1172 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:10e63566d09026737108c4f420152b73bc5c0d49de6516e1d0b53e3b5a1a34db`  
-		Last Modified: Fri, 22 Nov 2019 18:32:11 GMT  
-		Size: 613.0 B  
+	-	`sha256:63ceec50519b5466bbc930481a6963fbf3ff9c27f7c8c0a39e94012e30343eb0`  
+		Last Modified: Tue, 03 Dec 2019 02:53:43 GMT  
+		Size: 615.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
 ### `joomla:3-php7.3-fpm-alpine` - linux; arm64 variant v8
