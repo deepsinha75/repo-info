@@ -1,7 +1,7 @@
 ## `clojure:openjdk-14-boot-slim-buster`
 
 ```console
-$ docker pull clojure@sha256:ef7889e5640b8d1b214ca611de7ce714fc4df56a06e167dcf4450a8019bfea43
+$ docker pull clojure@sha256:9c5554e49bbc574a1dd1480f94aa016d8d211d5821452d3107627884bfb55ebc
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -11,14 +11,14 @@ $ docker pull clojure@sha256:ef7889e5640b8d1b214ca611de7ce714fc4df56a06e167dcf44
 ### `clojure:openjdk-14-boot-slim-buster` - linux; amd64
 
 ```console
-$ docker pull clojure@sha256:5f381d05fb955a21480f038e28417d40aeefa59b954d414bbe9168e65cad3283
+$ docker pull clojure@sha256:44388a08be5de59d38dc40feef0b7a93723a1c2854e1aceecda55a7f4c775bad
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **287.9 MB (287895024 bytes)**  
+-	Total Size: **288.0 MB (287952999 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:042a2fb893479d6afbe7ba0a8ebe5763f3a52d6f0f3412f78c3a5e18d9547877`
+-	Image ID: `sha256:1bdb9b3ff47c515b18d3bb0d50ed996c20bd9250c20f9600bb4f37b1fe6c82d1`
 -	Default Command: `["boot","repl"]`
 
 ```dockerfile
@@ -36,31 +36,31 @@ ENV JAVA_HOME=/usr/java/openjdk-14
 ENV PATH=/usr/java/openjdk-14/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
 # Fri, 22 Nov 2019 19:14:46 GMT
 RUN { echo '#/bin/sh'; echo 'echo "$JAVA_HOME"'; } > /usr/local/bin/docker-java-home && chmod +x /usr/local/bin/docker-java-home && [ "$JAVA_HOME" = "$(docker-java-home)" ]
-# Fri, 22 Nov 2019 19:14:46 GMT
-ENV JAVA_VERSION=14-ea+24
-# Fri, 22 Nov 2019 19:14:47 GMT
-ENV JAVA_URL=https://download.java.net/java/early_access/jdk14/24/GPL/openjdk-14-ea+24_linux-x64_bin.tar.gz
-# Fri, 22 Nov 2019 19:14:47 GMT
-ENV JAVA_SHA256=d200bacb3c8225d17acbd4806892f1b219510b5566a350ecd9c8bc952513b4b1
-# Fri, 22 Nov 2019 19:15:25 GMT
+# Tue, 03 Dec 2019 23:30:18 GMT
+ENV JAVA_VERSION=14-ea+25
+# Tue, 03 Dec 2019 23:30:18 GMT
+ENV JAVA_URL=https://download.java.net/java/early_access/jdk14/25/GPL/openjdk-14-ea+25_linux-x64_bin.tar.gz
+# Tue, 03 Dec 2019 23:30:19 GMT
+ENV JAVA_SHA256=8ab14076215808c3bb38636660900d3cf34eb6e15f44ea91c1dde2f0db9e891a
+# Tue, 03 Dec 2019 23:30:36 GMT
 RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	apt-get update; 	apt-get install -y --no-install-recommends 		wget 	; 	rm -rf /var/lib/apt/lists/*; 		wget -O openjdk.tgz "$JAVA_URL"; 	echo "$JAVA_SHA256 */openjdk.tgz" | sha256sum -c -; 		mkdir -p "$JAVA_HOME"; 	tar --extract 		--file openjdk.tgz 		--directory "$JAVA_HOME" 		--strip-components 1 		--no-same-owner 	; 	rm openjdk.tgz; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark > /dev/null; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 		{ 		echo '#!/usr/bin/env bash'; 		echo 'set -Eeuo pipefail'; 		echo 'if ! [ -d "$JAVA_HOME" ]; then echo >&2 "error: missing JAVA_HOME environment variable"; exit 1; fi'; 		echo 'cacertsFile=; for f in "$JAVA_HOME/lib/security/cacerts" "$JAVA_HOME/jre/lib/security/cacerts"; do if [ -e "$f" ]; then cacertsFile="$f"; break; fi; done'; 		echo 'if [ -z "$cacertsFile" ] || ! [ -f "$cacertsFile" ]; then echo >&2 "error: failed to find cacerts file in $JAVA_HOME"; exit 1; fi'; 		echo 'trust extract --overwrite --format=java-cacerts --filter=ca-anchors --purpose=server-auth "$cacertsFile"'; 	} > /etc/ca-certificates/update.d/docker-openjdk; 	chmod +x /etc/ca-certificates/update.d/docker-openjdk; 	/etc/ca-certificates/update.d/docker-openjdk; 		find "$JAVA_HOME/lib" -name '*.so' -exec dirname '{}' ';' | sort -u > /etc/ld.so.conf.d/docker-openjdk.conf; 	ldconfig; 		java -Xshare:dump; 		javac --version; 	java --version
-# Fri, 22 Nov 2019 19:15:25 GMT
+# Tue, 03 Dec 2019 23:30:36 GMT
 CMD ["jshell"]
-# Fri, 22 Nov 2019 21:41:18 GMT
+# Tue, 03 Dec 2019 23:58:00 GMT
 ENV BOOT_VERSION=2.8.3
-# Fri, 22 Nov 2019 21:41:18 GMT
+# Tue, 03 Dec 2019 23:58:00 GMT
 ENV BOOT_INSTALL=/usr/local/bin/
-# Fri, 22 Nov 2019 21:41:19 GMT
+# Tue, 03 Dec 2019 23:58:00 GMT
 WORKDIR /tmp
-# Fri, 22 Nov 2019 21:41:27 GMT
+# Tue, 03 Dec 2019 23:58:05 GMT
 RUN apt-get update && apt-get install -y wget && rm -rf /var/lib/apt/lists/* && mkdir -p $BOOT_INSTALL && wget -q https://github.com/boot-clj/boot-bin/releases/download/latest/boot.sh && echo "Comparing installer checksum..." && echo "f717ef381f2863a4cad47bf0dcc61e923b3d2afb *boot.sh" | sha1sum -c - && mv boot.sh $BOOT_INSTALL/boot && chmod 0755 $BOOT_INSTALL/boot && apt-get remove -y --purge wget && apt-get autoremove -y
-# Fri, 22 Nov 2019 21:41:28 GMT
+# Tue, 03 Dec 2019 23:58:06 GMT
 ENV PATH=/usr/java/openjdk-14/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/local/bin/
-# Fri, 22 Nov 2019 21:41:28 GMT
+# Tue, 03 Dec 2019 23:58:06 GMT
 ENV BOOT_AS_ROOT=yes
-# Fri, 22 Nov 2019 21:42:20 GMT
+# Tue, 03 Dec 2019 23:59:27 GMT
 RUN boot
-# Fri, 22 Nov 2019 21:42:20 GMT
+# Tue, 03 Dec 2019 23:59:27 GMT
 CMD ["boot" "repl"]
 ```
 
@@ -77,15 +77,15 @@ CMD ["boot" "repl"]
 		Last Modified: Fri, 22 Nov 2019 19:19:07 GMT  
 		Size: 210.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:64b767b68b181e8afdf01c6fb8f5fab87401a64e176100f2be81de9b08bc511e`  
-		Last Modified: Fri, 22 Nov 2019 19:19:26 GMT  
-		Size: 198.5 MB (198452311 bytes)  
+	-	`sha256:408b16a3b2900e7686adf020667dafa79dc0ed264fd63d36975a3641ced746f5`  
+		Last Modified: Tue, 03 Dec 2019 23:33:25 GMT  
+		Size: 198.5 MB (198510078 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:6e680d388e2f67141353993a24932226e8ace8816f23d3d0c2ab2e9bec3efc90`  
-		Last Modified: Fri, 22 Nov 2019 21:48:40 GMT  
-		Size: 279.6 KB (279625 bytes)  
+	-	`sha256:9a74e315c61e5d54c0012de1b7312df9195e0bfbb8a60139118adeec230fb474`  
+		Last Modified: Wed, 04 Dec 2019 00:02:22 GMT  
+		Size: 279.6 KB (279626 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:18b83151e41852c317bb0ed109b79c6e68c3cf7bfcb88a608dd09fe3d8a5f5b3`  
-		Last Modified: Fri, 22 Nov 2019 21:48:44 GMT  
-		Size: 58.8 MB (58821105 bytes)  
+	-	`sha256:0471ffa6de87a0e1326470ed99dde3041226f5bf3b7f69f639d0b0e6f2ba2a62`  
+		Last Modified: Wed, 04 Dec 2019 00:02:25 GMT  
+		Size: 58.8 MB (58821312 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
