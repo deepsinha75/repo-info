@@ -1,10 +1,10 @@
-# `joomla:3.9.13-fpm-alpine`
+# `joomla:3.9.13-php7.2-fpm-alpine`
 
 ## Docker Metadata
 
-- Image ID: `sha256:b068441afe8b77f5852b19fc93d020577497fd62c3a7a5db205a990f99395ff0`
-- Created: `2019-11-22T20:47:28.950661092Z`
-- Virtual Size: ~ 129.84 Mb  
+- Image ID: `sha256:280ee2b5245d5903d17791d24e9dbe6b35d1ebfac919910c1962566576464e85`
+- Created: `2019-12-03T01:24:48.639013249Z`
+- Virtual Size: ~ 129.83 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["/entrypoint.sh"]`

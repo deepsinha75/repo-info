@@ -1,9 +1,9 @@
-# `joomla:3.9.13-fpm`
+# `joomla:3.9.13-php7.2-fpm`
 
 ## Docker Metadata
 
-- Image ID: `sha256:2d5b158efb060692a795798d460e177a87b76de18a5ce9b2e19847f2b03c627c`
-- Created: `2019-11-22T20:44:50.118144825Z`
+- Image ID: `sha256:19b776715174f3b5162f7d3e5ca9f28823abd71f8549cec1f9d4b6659f4911e6`
+- Created: `2019-12-03T01:23:15.518889689Z`
 - Virtual Size: ~ 445.01 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
