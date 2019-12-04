@@ -1,18 +1,18 @@
-# `kong:1.4.0-alpine`
+# `kong:1.4.1-alpine`
 
 ## Docker Metadata
 
-- Image ID: `sha256:b7e52ad94da3807c43c965810f0260effb333ee71f5b9c805d1a8204f590660c`
-- Created: `2019-10-23T20:27:22.242574731Z`
-- Virtual Size: ~ 129.88 Mb  
+- Image ID: `sha256:c60ce2ccc6b376b2bd0fcc97b1c5b83b62bfa95b951d98e9daa25f6d1ef859c5`
+- Created: `2019-12-04T00:21:37.038544406Z`
+- Virtual Size: ~ 128.57 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["/docker-entrypoint.sh"]`
 - Command: `["kong","docker-start"]`
 - Environment:
   - `PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
-  - `KONG_VERSION=1.4.0`
-  - `KONG_SHA256=e31080487cfb8262a839c19d5e8fdb18b7686e9e4cc594803eaa565e0b34ff7a`
+  - `KONG_VERSION=1.4.1`
+  - `KONG_SHA256=19c689f064b7811b2de7a9108c474484e7fc123a47d29f32f1cf4df1f692d8e4`
 - Labels:
   - `maintainer=Kong Core Team <team-core@konghq.com>`
 
@@ -86,23 +86,6 @@ GPL-2.0
 
 ```
 
-### `apk` package: `ca-certificates`
-
-```console
-ca-certificates-20190108-r0 description:
-Common CA certificates PEM files
-
-ca-certificates-20190108-r0 webpage:
-https://www.mozilla.org/en-US/about/governance/policies/security-group/certs/
-
-ca-certificates-20190108-r0 installed size:
-737280
-
-ca-certificates-20190108-r0 license:
-MPL-2.0 GPL-2.0-or-later
-
-```
-
 ### `apk` package: `ca-certificates-cacert`
 
 ```console
@@ -117,23 +100,6 @@ ca-certificates-cacert-20190108-r0 installed size:
 
 ca-certificates-cacert-20190108-r0 license:
 MPL-2.0 GPL-2.0-or-later
-
-```
-
-### `apk` package: `curl`
-
-```console
-curl-7.66.0-r0 description:
-URL retrival utility and library
-
-curl-7.66.0-r0 webpage:
-https://curl.haxx.se/
-
-curl-7.66.0-r0 installed size:
-225280
-
-curl-7.66.0-r0 license:
-MIT
 
 ```
 
@@ -202,23 +168,6 @@ libcrypto1.1-1.1.1d-r0 installed size:
 
 libcrypto1.1-1.1.1d-r0 license:
 OpenSSL
-
-```
-
-### `apk` package: `libcurl`
-
-```console
-libcurl-7.66.0-r0 description:
-The multiprotocol file transfer library
-
-libcurl-7.66.0-r0 webpage:
-https://curl.haxx.se/
-
-libcurl-7.66.0-r0 installed size:
-454656
-
-libcurl-7.66.0-r0 license:
-MIT
 
 ```
 
@@ -304,23 +253,6 @@ musl-utils-1.1.22-r3 installed size:
 
 musl-utils-1.1.22-r3 license:
 MIT BSD GPL2+
-
-```
-
-### `apk` package: `nghttp2-libs`
-
-```console
-nghttp2-libs-1.39.2-r0 description:
-Experimental HTTP/2 client, server and proxy (libraries)
-
-nghttp2-libs-1.39.2-r0 webpage:
-https://nghttp2.org
-
-nghttp2-libs-1.39.2-r0 installed size:
-155648
-
-nghttp2-libs-1.39.2-r0 license:
-MIT
 
 ```
 
