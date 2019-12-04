@@ -27,10 +27,12 @@
 -	[`mongo:4.0.13`](#mongo4013)
 -	[`mongo:4.0.13-windowsservercore`](#mongo4013-windowsservercore)
 -	[`mongo:4.0.13-windowsservercore-1803`](#mongo4013-windowsservercore-1803)
+-	[`mongo:4.0.13-windowsservercore-1809`](#mongo4013-windowsservercore-1809)
 -	[`mongo:4.0.13-windowsservercore-ltsc2016`](#mongo4013-windowsservercore-ltsc2016)
 -	[`mongo:4.0.13-xenial`](#mongo4013-xenial)
 -	[`mongo:4.0-windowsservercore`](#mongo40-windowsservercore)
 -	[`mongo:4.0-windowsservercore-1803`](#mongo40-windowsservercore-1803)
+-	[`mongo:4.0-windowsservercore-1809`](#mongo40-windowsservercore-1809)
 -	[`mongo:4.0-windowsservercore-ltsc2016`](#mongo40-windowsservercore-ltsc2016)
 -	[`mongo:4.0-xenial`](#mongo40-xenial)
 -	[`mongo:4.2`](#mongo42)
@@ -38,19 +40,23 @@
 -	[`mongo:4.2.1-bionic`](#mongo421-bionic)
 -	[`mongo:4.2.1-windowsservercore`](#mongo421-windowsservercore)
 -	[`mongo:4.2.1-windowsservercore-1803`](#mongo421-windowsservercore-1803)
+-	[`mongo:4.2.1-windowsservercore-1809`](#mongo421-windowsservercore-1809)
 -	[`mongo:4.2.1-windowsservercore-ltsc2016`](#mongo421-windowsservercore-ltsc2016)
 -	[`mongo:4.2-bionic`](#mongo42-bionic)
 -	[`mongo:4.2-windowsservercore`](#mongo42-windowsservercore)
 -	[`mongo:4.2-windowsservercore-1803`](#mongo42-windowsservercore-1803)
+-	[`mongo:4.2-windowsservercore-1809`](#mongo42-windowsservercore-1809)
 -	[`mongo:4.2-windowsservercore-ltsc2016`](#mongo42-windowsservercore-ltsc2016)
 -	[`mongo:4-bionic`](#mongo4-bionic)
 -	[`mongo:4-windowsservercore`](#mongo4-windowsservercore)
 -	[`mongo:4-windowsservercore-1803`](#mongo4-windowsservercore-1803)
+-	[`mongo:4-windowsservercore-1809`](#mongo4-windowsservercore-1809)
 -	[`mongo:4-windowsservercore-ltsc2016`](#mongo4-windowsservercore-ltsc2016)
 -	[`mongo:bionic`](#mongobionic)
 -	[`mongo:latest`](#mongolatest)
 -	[`mongo:windowsservercore`](#mongowindowsservercore)
 -	[`mongo:windowsservercore-1803`](#mongowindowsservercore-1803)
+-	[`mongo:windowsservercore-1809`](#mongowindowsservercore-1809)
 -	[`mongo:windowsservercore-ltsc2016`](#mongowindowsservercore-ltsc2016)
 
 ## `mongo:3`
@@ -5570,6 +5576,15 @@ CMD ["mongod" "--bind_ip_all"]
 		Size: 1.2 KB (1178 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
+## `mongo:4.0.13-windowsservercore-1809`
+
+```console
+$ docker pull mongo@sha256:a8409dff6597f2ef5f7ecd3c672671bb2af9a390073efd74f95c54aa41cba22a
+```
+
+-	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
+-	Platforms:
+
 ## `mongo:4.0.13-windowsservercore-ltsc2016`
 
 ```console
@@ -6169,6 +6184,15 @@ CMD ["mongod" "--bind_ip_all"]
 		Last Modified: Wed, 20 Nov 2019 16:05:19 GMT  
 		Size: 1.2 KB (1178 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+
+## `mongo:4.0-windowsservercore-1809`
+
+```console
+$ docker pull mongo@sha256:a8409dff6597f2ef5f7ecd3c672671bb2af9a390073efd74f95c54aa41cba22a
+```
+
+-	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
+-	Platforms:
 
 ## `mongo:4.0-windowsservercore-ltsc2016`
 
@@ -8229,6 +8253,15 @@ CMD ["mongod" "--bind_ip_all"]
 		Size: 1.2 KB (1167 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
+## `mongo:4.2.1-windowsservercore-1809`
+
+```console
+$ docker pull mongo@sha256:a8409dff6597f2ef5f7ecd3c672671bb2af9a390073efd74f95c54aa41cba22a
+```
+
+-	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
+-	Platforms:
+
 ## `mongo:4.2.1-windowsservercore-ltsc2016`
 
 ```console
@@ -8953,6 +8986,15 @@ CMD ["mongod" "--bind_ip_all"]
 		Size: 1.2 KB (1167 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
 
+## `mongo:4.2-windowsservercore-1809`
+
+```console
+$ docker pull mongo@sha256:a8409dff6597f2ef5f7ecd3c672671bb2af9a390073efd74f95c54aa41cba22a
+```
+
+-	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
+-	Platforms:
+
 ## `mongo:4.2-windowsservercore-ltsc2016`
 
 ```console
@@ -9676,6 +9718,15 @@ CMD ["mongod" "--bind_ip_all"]
 		Last Modified: Wed, 20 Nov 2019 16:07:45 GMT  
 		Size: 1.2 KB (1167 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+
+## `mongo:4-windowsservercore-1809`
+
+```console
+$ docker pull mongo@sha256:a8409dff6597f2ef5f7ecd3c672671bb2af9a390073efd74f95c54aa41cba22a
+```
+
+-	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
+-	Platforms:
 
 ## `mongo:4-windowsservercore-ltsc2016`
 
@@ -10939,6 +10990,15 @@ CMD ["mongod" "--bind_ip_all"]
 		Last Modified: Wed, 20 Nov 2019 16:07:45 GMT  
 		Size: 1.2 KB (1167 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
+
+## `mongo:windowsservercore-1809`
+
+```console
+$ docker pull mongo@sha256:a8409dff6597f2ef5f7ecd3c672671bb2af9a390073efd74f95c54aa41cba22a
+```
+
+-	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
+-	Platforms:
 
 ## `mongo:windowsservercore-ltsc2016`
 
