@@ -2,16 +2,16 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:20f7f931585a8d9ed0dc94168ec754b27d51fcdf9e1e6d76a28fe1cb65ac98ca`
-- Created: `2019-11-01T21:22:51.475733824Z`
-- Virtual Size: ~ 35.04 Mb  
+- Image ID: `sha256:7495a0332b43bc0b514a090d7722cdb44b4441d8b15faa7c11ce206cfe1e0fe4`
+- Created: `2019-12-02T22:00:02.931364274Z`
+- Virtual Size: ~ 35.06 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Command: `["/bin/bash"]`
 - Environment:
   - `PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
 - Labels:
-  - `build-date=20191101`
+  - `build-date=20191129`
   - `name=Photon OS x86_64/3.0 Base Image`
   - `vendor=VMware`
 
@@ -53,7 +53,7 @@ Licenses (from `rpm --query`): MIT
 
 **WARNING:** unable to find source (`yumdownloader` failed or returned no results)!
 
-### `rpm` package: `e2fsprogs-libs-1.44.3-3.ph3.x86_64`
+### `rpm` package: `e2fsprogs-libs-1.44.3-4.ph3.x86_64`
 
 Licenses (from `rpm --query`): GPLv2+
 
@@ -203,7 +203,7 @@ Licenses (from `rpm --query`): LGPLv2.1,GPLv2
 
 **WARNING:** unable to find source (`yumdownloader` failed or returned no results)!
 
-### `rpm` package: `toybox-0.7.7-1.ph3.x86_64`
+### `rpm` package: `toybox-0.8.2-1.ph3.x86_64`
 
 Licenses (from `rpm --query`): BSD
 
