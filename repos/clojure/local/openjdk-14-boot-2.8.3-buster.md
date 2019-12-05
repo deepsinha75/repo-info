@@ -2,9 +2,9 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:741a7860c711338706e976ad9c72c79f7ab64ec1ecc870fd8973cd6b28749889`
-- Created: `2019-11-23T15:00:17.338402948Z`
-- Virtual Size: ~ 728.91 Mb  
+- Image ID: `sha256:e61895cd53e98abbc6bef71831f411829cb67e8c3b501f0af925c7d042c87743`
+- Created: `2019-12-04T00:00:27.394884816Z`
+- Virtual Size: ~ 729.03 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Command: `["boot","repl"]`
@@ -12,9 +12,9 @@
   - `PATH=/usr/java/openjdk-14/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/local/bin/`
   - `LANG=C.UTF-8`
   - `JAVA_HOME=/usr/java/openjdk-14`
-  - `JAVA_VERSION=14-ea+24`
-  - `JAVA_URL=https://download.java.net/java/early_access/jdk14/24/GPL/openjdk-14-ea+24_linux-x64_bin.tar.gz`
-  - `JAVA_SHA256=d200bacb3c8225d17acbd4806892f1b219510b5566a350ecd9c8bc952513b4b1`
+  - `JAVA_VERSION=14-ea+25`
+  - `JAVA_URL=https://download.java.net/java/early_access/jdk14/25/GPL/openjdk-14-ea+25_linux-x64_bin.tar.gz`
+  - `JAVA_SHA256=8ab14076215808c3bb38636660900d3cf34eb6e15f44ea91c1dde2f0db9e891a`
   - `BOOT_VERSION=2.8.3`
   - `BOOT_INSTALL=/usr/local/bin/`
   - `BOOT_AS_ROOT=yes`
