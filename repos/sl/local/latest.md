@@ -2,16 +2,16 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:e5c591654b9ce9f711425049bb7b40dcfff21a73c4b53f9d6176e002c9eda5c1`
-- Created: `2019-11-05T20:20:41.194703582Z`
-- Virtual Size: ~ 176.79 Mb  
+- Image ID: `sha256:ebe94530ce97093072c078f2b734fba001d2425d8cd0dc6de0e2874907917a53`
+- Created: `2019-12-03T23:43:45.884077843Z`
+- Virtual Size: ~ 176.82 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Command: `["/bin/bash"]`
 - Environment:
   - `PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
 - Labels:
-  - `build-date=20191105`
+  - `build-date=20191203`
   - `name=SL7 Base Image`
   - `vendor=Scientific Linux`
 
@@ -134,18 +134,11 @@ Enabling repos-source repository
 http://ftp.scientificlinux.org/linux/scientific/7/SRPMS//vendor/bzip2-1.0.6-13.el7.src.rpm
 ```
 
-### `rpm` package: `ca-certificates-2018.2.22-70.0.el7_5.noarch`
+### `rpm` package: `ca-certificates-2019.2.32-76.el7_7.noarch`
 
 Licenses (from `rpm --query`): Public Domain
 
-Source:
-
-```console
-$ yumdownloader --quiet --source --urls ca-certificates-2018.2.22-70.0.el7_5.noarch
-Enabling sl-source repository
-Enabling repos-source repository
-http://ftp.scientificlinux.org/linux/scientific/7/SRPMS//vendor/ca-certificates-2018.2.22-70.0.el7_5.src.rpm
-```
+**WARNING:** unable to find source (`yumdownloader` failed or returned no results)!
 
 ### `rpm` package: `chkconfig-1.7.4-1.el7.x86_64`
 
@@ -225,18 +218,11 @@ Enabling repos-source repository
 http://ftp.scientificlinux.org/linux/scientific/7/SRPMS//vendor/cryptsetup-2.0.3-5.el7.src.rpm
 ```
 
-### `rpm` package: `curl-7.29.0-54.el7.x86_64`
+### `rpm` package: `curl-7.29.0-54.el7_7.1.x86_64`
 
 Licenses (from `rpm --query`): MIT
 
-Source:
-
-```console
-$ yumdownloader --quiet --source --urls curl-7.29.0-54.el7
-Enabling sl-source repository
-Enabling repos-source repository
-http://ftp.scientificlinux.org/linux/scientific/7/SRPMS//vendor/curl-7.29.0-54.el7.src.rpm
-```
+**WARNING:** unable to find source (`yumdownloader` failed or returned no results)!
 
 ### `rpm` package: `cyrus-sasl-lib-2.1.26-23.el7.x86_64`
 
@@ -757,18 +743,11 @@ Enabling repos-source repository
 http://ftp.scientificlinux.org/linux/scientific/7/SRPMS//vendor/attr-2.4.46-13.el7.src.rpm
 ```
 
-### `rpm` package: `libblkid-2.23.2-61.el7.x86_64`
+### `rpm` package: `libblkid-2.23.2-61.el7_7.1.x86_64`
 
 Licenses (from `rpm --query`): LGPLv2+
 
-Source:
-
-```console
-$ yumdownloader --quiet --source --urls libblkid-2.23.2-61.el7
-Enabling sl-source repository
-Enabling repos-source repository
-http://ftp.scientificlinux.org/linux/scientific/7/SRPMS//vendor/util-linux-2.23.2-61.el7.src.rpm
-```
+**WARNING:** unable to find source (`yumdownloader` failed or returned no results)!
 
 ### `rpm` package: `libcap-2.22-10.el7.x86_64`
 
@@ -809,18 +788,11 @@ Enabling repos-source repository
 http://ftp.scientificlinux.org/linux/scientific/7/SRPMS//vendor/e2fsprogs-1.42.9-16.el7.src.rpm
 ```
 
-### `rpm` package: `libcurl-7.29.0-54.el7.x86_64`
+### `rpm` package: `libcurl-7.29.0-54.el7_7.1.x86_64`
 
 Licenses (from `rpm --query`): MIT
 
-Source:
-
-```console
-$ yumdownloader --quiet --source --urls libcurl-7.29.0-54.el7
-Enabling sl-source repository
-Enabling repos-source repository
-http://ftp.scientificlinux.org/linux/scientific/7/SRPMS//vendor/curl-7.29.0-54.el7.src.rpm
-```
+**WARNING:** unable to find source (`yumdownloader` failed or returned no results)!
 
 ### `rpm` package: `libdb-5.3.21-25.el7.x86_64`
 
@@ -913,18 +885,11 @@ Enabling repos-source repository
 http://ftp.scientificlinux.org/linux/scientific/7/SRPMS//vendor/libidn-1.28-4.el7.src.rpm
 ```
 
-### `rpm` package: `libmount-2.23.2-61.el7.x86_64`
+### `rpm` package: `libmount-2.23.2-61.el7_7.1.x86_64`
 
 Licenses (from `rpm --query`): LGPLv2+
 
-Source:
-
-```console
-$ yumdownloader --quiet --source --urls libmount-2.23.2-61.el7
-Enabling sl-source repository
-Enabling repos-source repository
-http://ftp.scientificlinux.org/linux/scientific/7/SRPMS//vendor/util-linux-2.23.2-61.el7.src.rpm
-```
+**WARNING:** unable to find source (`yumdownloader` failed or returned no results)!
 
 ### `rpm` package: `libpwquality-1.2.3-5.el7.x86_64`
 
@@ -978,18 +943,11 @@ Enabling repos-source repository
 http://ftp.scientificlinux.org/linux/scientific/7/SRPMS//vendor/libsepol-2.5-10.el7.src.rpm
 ```
 
-### `rpm` package: `libsmartcols-2.23.2-61.el7.x86_64`
+### `rpm` package: `libsmartcols-2.23.2-61.el7_7.1.x86_64`
 
 Licenses (from `rpm --query`): LGPLv2+
 
-Source:
-
-```console
-$ yumdownloader --quiet --source --urls libsmartcols-2.23.2-61.el7
-Enabling sl-source repository
-Enabling repos-source repository
-http://ftp.scientificlinux.org/linux/scientific/7/SRPMS//vendor/util-linux-2.23.2-61.el7.src.rpm
-```
+**WARNING:** unable to find source (`yumdownloader` failed or returned no results)!
 
 ### `rpm` package: `libssh2-1.8.0-3.el7.x86_64`
 
@@ -1056,18 +1014,11 @@ Enabling repos-source repository
 http://ftp.scientificlinux.org/linux/scientific/7/SRPMS//vendor/libutempter-1.1.6-4.el7.src.rpm
 ```
 
-### `rpm` package: `libuuid-2.23.2-61.el7.x86_64`
+### `rpm` package: `libuuid-2.23.2-61.el7_7.1.x86_64`
 
 Licenses (from `rpm --query`): BSD
 
-Source:
-
-```console
-$ yumdownloader --quiet --source --urls libuuid-2.23.2-61.el7
-Enabling sl-source repository
-Enabling repos-source repository
-http://ftp.scientificlinux.org/linux/scientific/7/SRPMS//vendor/util-linux-2.23.2-61.el7.src.rpm
-```
+**WARNING:** unable to find source (`yumdownloader` failed or returned no results)!
 
 ### `rpm` package: `libverto-0.2.5-4.el7.x86_64`
 
@@ -1771,18 +1722,11 @@ Enabling repos-source repository
 http://ftp.scientificlinux.org/linux/scientific/7/SRPMS//vendor/ustr-1.0.4-16.el7.src.rpm
 ```
 
-### `rpm` package: `util-linux-2.23.2-61.el7.x86_64`
+### `rpm` package: `util-linux-2.23.2-61.el7_7.1.x86_64`
 
 Licenses (from `rpm --query`): GPLv2 and GPLv2+ and LGPLv2+ and BSD with advertising and Public Domain
 
-Source:
-
-```console
-$ yumdownloader --quiet --source --urls util-linux-2.23.2-61.el7
-Enabling sl-source repository
-Enabling repos-source repository
-http://ftp.scientificlinux.org/linux/scientific/7/SRPMS//vendor/util-linux-2.23.2-61.el7.src.rpm
-```
+**WARNING:** unable to find source (`yumdownloader` failed or returned no results)!
 
 ### `rpm` package: `vim-minimal-7.4.629-6.el7.x86_64`
 
