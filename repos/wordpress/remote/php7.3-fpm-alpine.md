@@ -1,7 +1,7 @@
 ## `wordpress:php7.3-fpm-alpine`
 
 ```console
-$ docker pull wordpress@sha256:ffe9a18ce181c69b876491b933c626388425f2af5e3be53f8bfc5599c9e2815d
+$ docker pull wordpress@sha256:afc0a376dbf4a9a14c7e8ff2a4b4f00dde5fc6f50bd5d8aad284499d64446aaf
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -801,14 +801,14 @@ CMD ["php-fpm"]
 ### `wordpress:php7.3-fpm-alpine` - linux; ppc64le
 
 ```console
-$ docker pull wordpress@sha256:327e6b4ebf3a4037783a1e59092a888c1214daef4184272e645b71d52890d6f9
+$ docker pull wordpress@sha256:d28f379503e775d2ad1b19ab5dc383a5f85b14b7ab0bb633b4b27fc28678ea08
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **69.9 MB (69889706 bytes)**  
+-	Total Size: **69.9 MB (69889680 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:63a50c7a59d259333257493fb09f4a0be8f64839d9375a36e083f79511d99cf3`
+-	Image ID: `sha256:93741fe02dcf09fd0d682409d619f3caec6a0787e463d82d07fc27cbc931f6b8`
 -	Entrypoint: `["docker-entrypoint.sh"]`
 -	Default Command: `["php-fpm"]`
 
@@ -849,43 +849,43 @@ RUN set -eux; 		apk add --no-cache --virtual .fetch-deps gnupg; 		mkdir -p /usr/
 COPY file:ce57c04b70896f77cc11eb2766417d8a1240fcffe5bba92179ec78c458844110 in /usr/local/bin/ 
 # Fri, 22 Nov 2019 12:21:07 GMT
 RUN set -eux; 	apk add --no-cache --virtual .build-deps 		$PHPIZE_DEPS 		argon2-dev 		coreutils 		curl-dev 		libedit-dev 		libsodium-dev 		libxml2-dev 		openssl-dev 		sqlite-dev 	; 		export CFLAGS="$PHP_CFLAGS" 		CPPFLAGS="$PHP_CPPFLAGS" 		LDFLAGS="$PHP_LDFLAGS" 	; 	docker-php-source extract; 	cd /usr/src/php; 	gnuArch="$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)"; 	./configure 		--build="$gnuArch" 		--with-config-file-path="$PHP_INI_DIR" 		--with-config-file-scan-dir="$PHP_INI_DIR/conf.d" 				--enable-option-checking=fatal 				--with-mhash 				--enable-ftp 		--enable-mbstring 		--enable-mysqlnd 		--with-password-argon2 		--with-sodium=shared 		--with-pdo-sqlite=/usr 		--with-sqlite3=/usr 				--with-curl 		--with-libedit 		--with-openssl 		--with-zlib 				$(test "$gnuArch" = 's390x-linux-musl' && echo '--without-pcre-jit') 				${PHP_EXTRA_CONFIGURE_ARGS:-} 	; 	make -j "$(nproc)"; 	find -type f -name '*.a' -delete; 	make install; 	find /usr/local/bin /usr/local/sbin -type f -perm +0111 -exec strip --strip-all '{}' + || true; 	make clean; 		cp -v php.ini-* "$PHP_INI_DIR/"; 		cd /; 	docker-php-source delete; 		runDeps="$( 		scanelf --needed --nobanner --format '%n#p' --recursive /usr/local 			| tr ',' '\n' 			| sort -u 			| awk 'system("[ -e /usr/local/lib/" $1 " ]") == 0 { next } { print "so:" $1 }' 	)"; 	apk add --no-cache $runDeps; 		apk del --no-network .build-deps; 		pecl update-channels; 	rm -rf /tmp/pear ~/.pearrc; 	php --version
-# Fri, 22 Nov 2019 12:21:10 GMT
-COPY multi:c1ff99c7805e8f41fdb0717f754884884ce2157d746a82343d7c737c86ded761 in /usr/local/bin/ 
-# Fri, 22 Nov 2019 12:21:16 GMT
+# Fri, 06 Dec 2019 01:27:33 GMT
+COPY multi:5581a34bba21fbf2472e857e8cdc8db6d57694020e568954d2fd5901ee074da0 in /usr/local/bin/ 
+# Fri, 06 Dec 2019 01:27:44 GMT
 RUN docker-php-ext-enable sodium
-# Fri, 22 Nov 2019 12:21:18 GMT
+# Fri, 06 Dec 2019 01:27:47 GMT
 ENTRYPOINT ["docker-php-entrypoint"]
-# Fri, 22 Nov 2019 12:21:24 GMT
+# Fri, 06 Dec 2019 01:27:51 GMT
 WORKDIR /var/www/html
-# Fri, 22 Nov 2019 12:21:30 GMT
+# Fri, 06 Dec 2019 01:27:57 GMT
 RUN set -eux; 	cd /usr/local/etc; 	if [ -d php-fpm.d ]; then 		sed 's!=NONE/!=!g' php-fpm.conf.default | tee php-fpm.conf > /dev/null; 		cp php-fpm.d/www.conf.default php-fpm.d/www.conf; 	else 		mkdir php-fpm.d; 		cp php-fpm.conf.default php-fpm.d/www.conf; 		{ 			echo '[global]'; 			echo 'include=etc/php-fpm.d/*.conf'; 		} | tee php-fpm.conf; 	fi; 	{ 		echo '[global]'; 		echo 'error_log = /proc/self/fd/2'; 		echo; echo '; https://github.com/docker-library/php/pull/725#issuecomment-443540114'; echo 'log_limit = 8192'; 		echo; 		echo '[www]'; 		echo '; if we send this to /proc/self/fd/1, it never appears'; 		echo 'access.log = /proc/self/fd/2'; 		echo; 		echo 'clear_env = no'; 		echo; 		echo '; Ensure worker stdout and stderr are sent to the main error log.'; 		echo 'catch_workers_output = yes'; 		echo 'decorate_workers_output = no'; 	} | tee php-fpm.d/docker.conf; 	{ 		echo '[global]'; 		echo 'daemonize = no'; 		echo; 		echo '[www]'; 		echo 'listen = 9000'; 	} | tee php-fpm.d/zz-docker.conf
-# Fri, 22 Nov 2019 12:21:33 GMT
+# Fri, 06 Dec 2019 01:27:59 GMT
 STOPSIGNAL SIGQUIT
-# Fri, 22 Nov 2019 12:21:34 GMT
+# Fri, 06 Dec 2019 01:28:01 GMT
 EXPOSE 9000
-# Fri, 22 Nov 2019 12:21:38 GMT
+# Fri, 06 Dec 2019 01:28:03 GMT
 CMD ["php-fpm"]
-# Fri, 22 Nov 2019 22:49:23 GMT
+# Fri, 06 Dec 2019 05:46:33 GMT
 RUN apk add --no-cache 		bash 		sed 		ghostscript
-# Thu, 05 Dec 2019 00:08:30 GMT
+# Fri, 06 Dec 2019 05:47:54 GMT
 RUN set -ex; 		apk add --no-cache --virtual .build-deps 		$PHPIZE_DEPS 		freetype-dev 		imagemagick-dev 		libjpeg-turbo-dev 		libpng-dev 		libzip-dev 	; 		docker-php-ext-configure gd --with-freetype-dir=/usr --with-jpeg-dir=/usr --with-png-dir=/usr; 	docker-php-ext-install -j "$(nproc)" 		bcmath 		exif 		gd 		mysqli 		opcache 		zip 	; 	pecl install imagick-3.4.4; 	docker-php-ext-enable imagick; 		runDeps="$( 		scanelf --needed --nobanner --format '%n#p' --recursive /usr/local/lib/php/extensions 			| tr ',' '\n' 			| sort -u 			| awk 'system("[ -e /usr/local/lib/" $1 " ]") == 0 { next } { print "so:" $1 }' 	)"; 	apk add --virtual .wordpress-phpexts-rundeps $runDeps; 	apk del .build-deps
-# Thu, 05 Dec 2019 00:08:37 GMT
+# Fri, 06 Dec 2019 05:48:02 GMT
 RUN { 		echo 'opcache.memory_consumption=128'; 		echo 'opcache.interned_strings_buffer=8'; 		echo 'opcache.max_accelerated_files=4000'; 		echo 'opcache.revalidate_freq=2'; 		echo 'opcache.fast_shutdown=1'; 	} > /usr/local/etc/php/conf.d/opcache-recommended.ini
-# Thu, 05 Dec 2019 00:08:42 GMT
+# Fri, 06 Dec 2019 05:48:10 GMT
 RUN { 		echo 'error_reporting = E_ERROR | E_WARNING | E_PARSE | E_CORE_ERROR | E_CORE_WARNING | E_COMPILE_ERROR | E_COMPILE_WARNING | E_RECOVERABLE_ERROR'; 		echo 'display_errors = Off'; 		echo 'display_startup_errors = Off'; 		echo 'log_errors = On'; 		echo 'error_log = /dev/stderr'; 		echo 'log_errors_max_len = 1024'; 		echo 'ignore_repeated_errors = On'; 		echo 'ignore_repeated_source = Off'; 		echo 'html_errors = Off'; 	} > /usr/local/etc/php/conf.d/error-logging.ini
-# Thu, 05 Dec 2019 00:08:44 GMT
+# Fri, 06 Dec 2019 05:48:12 GMT
 VOLUME [/var/www/html]
-# Thu, 05 Dec 2019 00:08:47 GMT
+# Fri, 06 Dec 2019 05:48:15 GMT
 ENV WORDPRESS_VERSION=5.3
-# Thu, 05 Dec 2019 00:08:51 GMT
+# Fri, 06 Dec 2019 05:48:18 GMT
 ENV WORDPRESS_SHA1=e3edcb1131e539c2b2e10fed37f8b6683c824a98
-# Thu, 05 Dec 2019 00:08:59 GMT
+# Fri, 06 Dec 2019 05:48:30 GMT
 RUN set -ex; 	curl -o wordpress.tar.gz -fSL "https://wordpress.org/wordpress-${WORDPRESS_VERSION}.tar.gz"; 	echo "$WORDPRESS_SHA1 *wordpress.tar.gz" | sha1sum -c -; 	tar -xzf wordpress.tar.gz -C /usr/src/; 	rm wordpress.tar.gz; 	chown -R www-data:www-data /usr/src/wordpress
-# Thu, 05 Dec 2019 00:09:01 GMT
+# Fri, 06 Dec 2019 05:48:32 GMT
 COPY file:2413d0c63f9d7b1d114697b18317719a02eadaaa61fc5d0c1edd96c027bc57a4 in /usr/local/bin/ 
-# Thu, 05 Dec 2019 00:09:03 GMT
+# Fri, 06 Dec 2019 05:48:35 GMT
 ENTRYPOINT ["docker-entrypoint.sh"]
-# Thu, 05 Dec 2019 00:09:04 GMT
+# Fri, 06 Dec 2019 05:48:38 GMT
 CMD ["php-fpm"]
 ```
 
@@ -918,39 +918,39 @@ CMD ["php-fpm"]
 		Last Modified: Fri, 22 Nov 2019 14:15:33 GMT  
 		Size: 16.0 MB (16036706 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:d56aa4f0d8ed56392f6c03c64f07f9cf751b1bc39ad2434cb8150a5ac1cf7e00`  
-		Last Modified: Fri, 22 Nov 2019 14:15:26 GMT  
-		Size: 2.2 KB (2201 bytes)  
+	-	`sha256:21c64a4d724b5c14c1496f45d6f64b0fb2a1b740d4fbe509fc5a16bb3f3620e3`  
+		Last Modified: Fri, 06 Dec 2019 01:44:46 GMT  
+		Size: 2.2 KB (2217 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:5467edd1d19fa029a9b05c1646917a960ef7add7daccd7842a868bb95e62064d`  
-		Last Modified: Fri, 22 Nov 2019 14:15:26 GMT  
-		Size: 71.9 KB (71939 bytes)  
+	-	`sha256:2db415dfabe7cdae46fc24900a7a2350d12ac6a41bc20e9922d2c05236eed187`  
+		Last Modified: Fri, 06 Dec 2019 01:44:46 GMT  
+		Size: 71.9 KB (71946 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:b2e1f0600f1577411014f1061c3a577fa52b161c7ab7e75c623e68d29110bc40`  
-		Last Modified: Fri, 22 Nov 2019 14:15:26 GMT  
-		Size: 8.4 KB (8413 bytes)  
+	-	`sha256:57cfdc7210714e2b3546d8c3613a57e4a15d9d7d8a187956b4a1bcfd541d323c`  
+		Last Modified: Fri, 06 Dec 2019 01:44:46 GMT  
+		Size: 8.4 KB (8419 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:4e55c9603bbfc92eb91c99652f3d9b7d26ffcc6522492bd84044b4534639330d`  
-		Last Modified: Fri, 22 Nov 2019 23:00:47 GMT  
-		Size: 19.7 MB (19705610 bytes)  
+	-	`sha256:9e1e034cc65c42b1672ca9bbbc5a1c7436f2075dbbb9fb15d3add241998751d2`  
+		Last Modified: Fri, 06 Dec 2019 06:31:23 GMT  
+		Size: 19.7 MB (19705624 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:f730ad0ffcd2f4d2e668c6e1be5b64a9be653c5b0655b15818c69a8a043b3a29`  
-		Last Modified: Thu, 05 Dec 2019 00:37:21 GMT  
-		Size: 5.5 MB (5538809 bytes)  
+	-	`sha256:1e1cff2864048add8fb839c3bea9ea8466dca3af4b118d9d40e29bac4c8a2a94`  
+		Last Modified: Fri, 06 Dec 2019 06:31:14 GMT  
+		Size: 5.5 MB (5538736 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:c98804c144e4cfc0011e6c9b6d6106514b0f207fc51cd470aee83f18c6d0077c`  
-		Last Modified: Thu, 05 Dec 2019 00:37:20 GMT  
-		Size: 329.0 B  
+	-	`sha256:42d0735d4eff34f0906943e17676684d24b48e8bc1d786991e4a7d4ebfc30b28`  
+		Last Modified: Fri, 06 Dec 2019 06:31:09 GMT  
+		Size: 331.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:5eeba154618d6b5f0fb21abffb69a1c2e7f70c199a280528d0c3de3427cd6776`  
-		Last Modified: Thu, 05 Dec 2019 00:37:20 GMT  
+	-	`sha256:84aa4c5044f46a9b3d3eaea27d721bafccac70c76618dd4b15a03e74260fa120`  
+		Last Modified: Fri, 06 Dec 2019 06:31:10 GMT  
 		Size: 395.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:7c2a3a51cfda3cd9a45d8dbf1d4c9623b7851803d791e1bd835e3af51345bcbd`  
-		Last Modified: Thu, 05 Dec 2019 00:37:23 GMT  
+	-	`sha256:a85c10994ca1137798285e37b9e5659ee9889e22ccd9410b94b910377ecb6f91`  
+		Last Modified: Fri, 06 Dec 2019 06:31:31 GMT  
 		Size: 12.2 MB (12210056 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:b3647c2f1cddfa0e400504c3f73ab36802000b7a99df797d78992372ed8f65fa`  
-		Last Modified: Thu, 05 Dec 2019 00:37:20 GMT  
-		Size: 3.9 KB (3893 bytes)  
+	-	`sha256:d0b2acf5a37ddf40c4439cc5d768ec4c862b2841c19c9f2f5d3c90e4ee580f87`  
+		Last Modified: Fri, 06 Dec 2019 06:31:09 GMT  
+		Size: 3.9 KB (3895 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
