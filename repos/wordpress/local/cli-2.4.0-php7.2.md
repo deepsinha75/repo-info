@@ -2,9 +2,9 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:4208fd1e4883bb3e29b82eaf96955e2858dfc641671fdeb56a40d5a09da97d84`
-- Created: `2019-11-22T21:25:03.335178565Z`
-- Virtual Size: ~ 132.03 Mb  
+- Image ID: `sha256:74a6e11cd6e3da93ae764d15685cf801afcfc84498a670279895241340e7e490`
+- Created: `2019-12-06T03:33:27.766912809Z`
+- Virtual Size: ~ 132.04 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["docker-entrypoint.sh"]`
@@ -643,16 +643,16 @@ MIT
 ### `apk` package: `mariadb-client`
 
 ```console
-mariadb-client-10.3.18-r0 description:
+mariadb-client-10.3.20-r0 description:
 Client for the MariaDB database
 
-mariadb-client-10.3.18-r0 webpage:
+mariadb-client-10.3.20-r0 webpage:
 https://www.mariadb.org/
 
-mariadb-client-10.3.18-r0 installed size:
-29376512
+mariadb-client-10.3.20-r0 installed size:
+29388800
 
-mariadb-client-10.3.18-r0 license:
+mariadb-client-10.3.20-r0 license:
 GPL-2.0-or-later
 
 ```
@@ -660,16 +660,16 @@ GPL-2.0-or-later
 ### `apk` package: `mariadb-common`
 
 ```console
-mariadb-common-10.3.18-r0 description:
+mariadb-common-10.3.20-r0 description:
 MariaDB common files for both server and client
 
-mariadb-common-10.3.18-r0 webpage:
+mariadb-common-10.3.20-r0 webpage:
 https://www.mariadb.org/
 
-mariadb-common-10.3.18-r0 installed size:
+mariadb-common-10.3.20-r0 installed size:
 2240512
 
-mariadb-common-10.3.18-r0 license:
+mariadb-common-10.3.20-r0 license:
 GPL-2.0-or-later
 
 ```
@@ -711,16 +711,16 @@ MIT BSD GPL2+
 ### `apk` package: `mysql-client`
 
 ```console
-mysql-client-10.3.18-r0 description:
+mysql-client-10.3.20-r0 description:
 Dummy package for mysql-client migration
 
-mysql-client-10.3.18-r0 webpage:
+mysql-client-10.3.20-r0 webpage:
 https://www.mariadb.org/
 
-mysql-client-10.3.18-r0 installed size:
+mysql-client-10.3.20-r0 installed size:
 4096
 
-mysql-client-10.3.18-r0 license:
+mysql-client-10.3.20-r0 license:
 GPL-2.0-or-later
 
 ```

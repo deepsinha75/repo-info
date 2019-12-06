@@ -2,8 +2,8 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:0419fd775514061028f8b0bdbe799100437d6141b9486ab8c5190bb5ec9aca57`
-- Created: `2019-11-22T21:23:05.26333597Z`
+- Image ID: `sha256:c5af3b70e77d242f79e59949cbe2f4e81319a5002c2b14538ca57bbc6a9100d3`
+- Created: `2019-12-06T03:27:18.33121109Z`
 - Virtual Size: ~ 195.48 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
@@ -1051,16 +1051,16 @@ GPL
 ### `apk` package: `tiff`
 
 ```console
-tiff-4.0.10-r2 description:
+tiff-4.0.10-r3 description:
 Provides support for the Tag Image File Format or TIFF
 
-tiff-4.0.10-r2 webpage:
+tiff-4.0.10-r3 webpage:
 http://www.libtiff.org
 
-tiff-4.0.10-r2 installed size:
+tiff-4.0.10-r3 installed size:
 442368
 
-tiff-4.0.10-r2 license:
+tiff-4.0.10-r3 license:
 libtiff
 
 ```

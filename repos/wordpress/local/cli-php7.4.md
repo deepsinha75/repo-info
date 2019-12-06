@@ -1,10 +1,10 @@
-# `wordpress:cli-2.4.0-php7.1`
+# `wordpress:cli-2.4.0-php7.4`
 
 ## Docker Metadata
 
-- Image ID: `sha256:dd8464d733befd8ffe293bee757ac3b7a9c86b710a738eda8d3605fab2004469`
-- Created: `2019-11-13T00:21:36.445655871Z`
-- Virtual Size: ~ 123.35 Mb  
+- Image ID: `sha256:ac0611bc7024915006070ee555cc013c3343fe55d9ad83a4559ad4276a45361e`
+- Created: `2019-12-06T03:35:19.202591147Z`
+- Virtual Size: ~ 139.20 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["docker-entrypoint.sh"]`
@@ -16,11 +16,11 @@
   - `PHP_CFLAGS=-fstack-protector-strong -fpic -fpie -O2 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64`
   - `PHP_CPPFLAGS=-fstack-protector-strong -fpic -fpie -O2 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64`
   - `PHP_LDFLAGS=-Wl,-O1 -Wl,--hash-style=both -pie`
-  - `GPG_KEYS=A917B1ECDA84AEC2B568FED6F50ABC807BD5DCD0 528995BFEDFBA7191D46839EF9BA0ADA31CBD89E 1729F83938DA44E27BA0F4D3DBDB397470D12172`
-  - `PHP_VERSION=7.1.33`
-  - `PHP_URL=https://www.php.net/get/php-7.1.33.tar.xz/from/this/mirror`
-  - `PHP_ASC_URL=https://www.php.net/get/php-7.1.33.tar.xz.asc/from/this/mirror`
-  - `PHP_SHA256=bd7c0a9bd5433289ee01fd440af3715309faf583f75832b64fe169c100d52968`
+  - `GPG_KEYS=42670A7FE4D0441C8E4632349E4FDC074A4EF02D 5A52880781F755608BF815FC910DEB46F53EA312`
+  - `PHP_VERSION=7.4.0`
+  - `PHP_URL=https://www.php.net/get/php-7.4.0.tar.xz/from/this/mirror`
+  - `PHP_ASC_URL=https://www.php.net/get/php-7.4.0.tar.xz.asc/from/this/mirror`
+  - `PHP_SHA256=9bb751b20e5d6cc1ea9b1ebf23ef2d5f07f99b2d9cc417bf1d70c04f8b20ec42`
   - `PHP_MD5=`
   - `WORDPRESS_CLI_GPG_KEY=63AF7AA15067C05616FDDD88A3A2E8F226F0BC06`
   - `WORDPRESS_CLI_VERSION=2.4.0`
@@ -76,6 +76,23 @@ apk-tools-2.10.4-r2 installed size:
 
 apk-tools-2.10.4-r2 license:
 GPL2
+
+```
+
+### `apk` package: `argon2-libs`
+
+```console
+argon2-libs-20171227-r2 description:
+The password hash Argon2, winner of PHC (libraries)
+
+argon2-libs-20171227-r2 webpage:
+https://github.com/P-H-C/phc-winner-argon2
+
+argon2-libs-20171227-r2 installed size:
+53248
+
+argon2-libs-20171227-r2 license:
+Apache-2.0 CC0-1.0
 
 ```
 
@@ -388,16 +405,16 @@ GPL LGPL
 ### `apk` package: `libjpeg-turbo`
 
 ```console
-libjpeg-turbo-2.0.2-r0 description:
+libjpeg-turbo-2.0.3-r0 description:
 Accelerated baseline JPEG compression and decompression library
 
-libjpeg-turbo-2.0.2-r0 webpage:
+libjpeg-turbo-2.0.3-r0 webpage:
 https://libjpeg-turbo.org/
 
-libjpeg-turbo-2.0.2-r0 installed size:
+libjpeg-turbo-2.0.3-r0 installed size:
 1343488
 
-libjpeg-turbo-2.0.2-r0 license:
+libjpeg-turbo-2.0.3-r0 license:
 BSD-3-Clause IJG Zlib
 
 ```
@@ -433,6 +450,23 @@ libpng-1.6.37-r1 installed size:
 
 libpng-1.6.37-r1 license:
 Libpng
+
+```
+
+### `apk` package: `libsodium`
+
+```console
+libsodium-1.0.18-r0 description:
+P(ortable|ackageable) NaCl-based crypto library
+
+libsodium-1.0.18-r0 webpage:
+https://github.com/jedisct1/libsodium
+
+libsodium-1.0.18-r0 installed size:
+344064
+
+libsodium-1.0.18-r0 license:
+ISC
 
 ```
 
@@ -606,19 +640,36 @@ MIT
 
 ```
 
+### `apk` package: `libzip`
+
+```console
+libzip-1.5.2-r0 description:
+C library for manipulating zip archives
+
+libzip-1.5.2-r0 webpage:
+http://www.nih.at/libzip/index.html
+
+libzip-1.5.2-r0 installed size:
+122880
+
+libzip-1.5.2-r0 license:
+BSD-3-Clause
+
+```
+
 ### `apk` package: `mariadb-client`
 
 ```console
-mariadb-client-10.3.18-r0 description:
+mariadb-client-10.3.20-r0 description:
 Client for the MariaDB database
 
-mariadb-client-10.3.18-r0 webpage:
+mariadb-client-10.3.20-r0 webpage:
 https://www.mariadb.org/
 
-mariadb-client-10.3.18-r0 installed size:
-29376512
+mariadb-client-10.3.20-r0 installed size:
+29388800
 
-mariadb-client-10.3.18-r0 license:
+mariadb-client-10.3.20-r0 license:
 GPL-2.0-or-later
 
 ```
@@ -626,16 +677,16 @@ GPL-2.0-or-later
 ### `apk` package: `mariadb-common`
 
 ```console
-mariadb-common-10.3.18-r0 description:
+mariadb-common-10.3.20-r0 description:
 MariaDB common files for both server and client
 
-mariadb-common-10.3.18-r0 webpage:
+mariadb-common-10.3.20-r0 webpage:
 https://www.mariadb.org/
 
-mariadb-common-10.3.18-r0 installed size:
+mariadb-common-10.3.20-r0 installed size:
 2240512
 
-mariadb-common-10.3.18-r0 license:
+mariadb-common-10.3.20-r0 license:
 GPL-2.0-or-later
 
 ```
@@ -677,16 +728,16 @@ MIT BSD GPL2+
 ### `apk` package: `mysql-client`
 
 ```console
-mysql-client-10.3.18-r0 description:
+mysql-client-10.3.20-r0 description:
 Dummy package for mysql-client migration
 
-mysql-client-10.3.18-r0 webpage:
+mysql-client-10.3.20-r0 webpage:
 https://www.mariadb.org/
 
-mysql-client-10.3.18-r0 installed size:
+mysql-client-10.3.20-r0 installed size:
 4096
 
-mysql-client-10.3.18-r0 license:
+mysql-client-10.3.20-r0 license:
 GPL-2.0-or-later
 
 ```
@@ -756,6 +807,23 @@ nghttp2-libs-1.39.2-r0 installed size:
 
 nghttp2-libs-1.39.2-r0 license:
 MIT
+
+```
+
+### `apk` package: `oniguruma`
+
+```console
+oniguruma-6.9.3-r0 description:
+a regular expressions library
+
+oniguruma-6.9.3-r0 webpage:
+https://github.com/kkos/oniguruma
+
+oniguruma-6.9.3-r0 installed size:
+561152
+
+oniguruma-6.9.3-r0 license:
+BSD-2-Clause
 
 ```
 
