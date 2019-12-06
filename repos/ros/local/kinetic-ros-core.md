@@ -2177,14 +2177,9 @@ Licenses: (parsed from: `/usr/share/doc/linux-libc-dev/copyright`)
 - `GPL-2`
 - `redpine-signals`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris linux=4.4.0-169.198
-'http://archive.ubuntu.com/ubuntu/pool/main/l/linux/linux_4.4.0-169.198.dsc' linux_4.4.0-169.198.dsc 11909 SHA256:a9650d834f951df2e2021371c7b855fa27007851ba1e1e28d1c8f55ad5c97c34
-'http://archive.ubuntu.com/ubuntu/pool/main/l/linux/linux_4.4.0.orig.tar.gz' linux_4.4.0.orig.tar.gz 132860730 SHA256:730e75919b5d30a9bc934ccb300eaedfdf44994ca9ee1d07a46901c46c221357
-'http://archive.ubuntu.com/ubuntu/pool/main/l/linux/linux_4.4.0-169.198.diff.gz' linux_4.4.0-169.198.diff.gz 15931998 SHA256:adffbe1ad300fc7e907e0b5c8907a7e480cc39f5574208ef2229285583ff69fa
-```
 
 ### `dpkg` source package: `lksctp-tools=1.0.16+dfsg-3`
 
@@ -3168,14 +3163,9 @@ Binary Packages:
 If source is available (seen below), check the contents of `debian/copyright` within it.
 
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris python-rosdep=0.17.1-1
-'http://packages.ros.org/ros/ubuntu/pool/main/p/python-rosdep/python-rosdep_0.17.1-1.debian.tar.xz' python-rosdep_0.17.1-1.debian.tar.xz 1908 SHA512:b36a0f73fc1e2547f90f28c924cbea22fa880bad5061a2e1f90143ff318d2f73216faae55f3868d55c9327db1c766e02e2706bb3c03ee39083320bb6ece16ade
-'http://packages.ros.org/ros/ubuntu/pool/main/p/python-rosdep/python-rosdep_0.17.1-1.dsc' python-rosdep_0.17.1-1.dsc 905 SHA512:b2b3fb9bd38eaa4798b856fdaa0db1362dff64edd6a8490f3d455e02fa3a36e45b36f59bc2bfaacb07bc184d982b80b72f8d87d091affb52eab152da4a66b264
-'http://packages.ros.org/ros/ubuntu/pool/main/p/python-rosdep/python-rosdep_0.17.1.orig.tar.gz' python-rosdep_0.17.1.orig.tar.gz 87669 SHA512:fe1f509050daeb32bfabbe767ae1677d34d2e177bceabc48763a92dbd0aabb5239a5af1037b854b537b217dd549c067c167e86709db9e91c20fcbdb74e6ce910
-```
 
 ### `dpkg` source package: `python-rosdistro-modules=0.7.5-1`
 
@@ -3244,14 +3234,9 @@ Binary Packages:
 If source is available (seen below), check the contents of `debian/copyright` within it.
 
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris python-rospkg-modules=1.1.10-1
-'http://packages.ros.org/ros/ubuntu/pool/main/p/python-rospkg-modules/python-rospkg-modules_1.1.10-1.debian.tar.xz' python-rospkg-modules_1.1.10-1.debian.tar.xz 1088 SHA512:cbfcc2ebb36b5c0380f71835024e753270634dfc30b872347b3b18d3195a9e1f485677cb53976f89745d5277b3c36e9bbc3ce54278f6e07c35b597f4bf955672
-'http://packages.ros.org/ros/ubuntu/pool/main/p/python-rospkg-modules/python-rospkg-modules_1.1.10-1.dsc' python-rospkg-modules_1.1.10-1.dsc 1004 SHA512:091a55136ed89ab4f7a87cc61549f264fb1b81d849f40ca0dbd2246dfe525281ad6be0e974129a8788453c9acaf613ede64a30c45363dde9a056a165842f25c4
-'http://packages.ros.org/ros/ubuntu/pool/main/p/python-rospkg-modules/python-rospkg-modules_1.1.10.orig.tar.gz' python-rospkg-modules_1.1.10.orig.tar.gz 41076 SHA512:784f648ee16e6aa1df85a830cfa4fc6149d53383aa00af675124ab5751c01d0dd97e5d29a63f977579dace25973d1510072d9bbb4012d0ceca22b8f62c6b2a57
-```
 
 ### `dpkg` source package: `python-rospkg=1.1.10-100`
 
@@ -3263,14 +3248,9 @@ Binary Packages:
 If source is available (seen below), check the contents of `debian/copyright` within it.
 
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris python-rospkg=1.1.10-100
-'http://packages.ros.org/ros/ubuntu/pool/main/p/python-rospkg/python-rospkg_1.1.10-100.debian.tar.xz' python-rospkg_1.1.10-100.debian.tar.xz 1064 SHA512:00995a275a5694dca835e91dcafdf0cfcb34aeda1f1e352d4b3b72972fc33e6b42a042b31841c299a52112c2078739f02b68434661973ae03382df4ec591cdea
-'http://packages.ros.org/ros/ubuntu/pool/main/p/python-rospkg/python-rospkg_1.1.10-100.dsc' python-rospkg_1.1.10-100.dsc 940 SHA512:2adbf19825b64f833bf338a149b4d1c4229d1edccc96d156afac8819ba964500794ed1f20525e92175e7fad0f149b39f8c1ead0c38999918311e632bd4d64f20
-'http://packages.ros.org/ros/ubuntu/pool/main/p/python-rospkg/python-rospkg_1.1.10.orig.tar.gz' python-rospkg_1.1.10.orig.tar.gz 17931 SHA512:1fb8384a625a5f75b1764e39db5c38ad26b56c0de1e8bc189155f69199b84ea7cd50d784a3e6aa5063e4c309ca456705a79c241d88855d78647e0af92a72d031
-```
 
 ### `dpkg` source package: `python-setuptools=20.7.0-1`
 
@@ -4582,15 +4562,9 @@ Licenses: (parsed from: `/usr/share/doc/libsqlite3-0/copyright`)
 - `GPL-2+`
 - `public-domain`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris sqlite3=3.11.0-1ubuntu1.2
-'http://archive.ubuntu.com/ubuntu/pool/main/s/sqlite3/sqlite3_3.11.0-1ubuntu1.2.dsc' sqlite3_3.11.0-1ubuntu1.2.dsc 2609 SHA256:4ff8c009cfc90745ed22805357a55f653b60c03e116d04227bbd8e444cb5ea94
-'http://archive.ubuntu.com/ubuntu/pool/main/s/sqlite3/sqlite3_3.11.0.orig-www.tar.xz' sqlite3_3.11.0.orig-www.tar.xz 3135012 SHA256:99843a91a1da29cf07269df49b37b0cd8a75035a88aacdb1186f94a9a217bab3
-'http://archive.ubuntu.com/ubuntu/pool/main/s/sqlite3/sqlite3_3.11.0.orig.tar.xz' sqlite3_3.11.0.orig.tar.xz 5122440 SHA256:79fb8800b8744337d5317270899a5a40612bb76f81517e131bf496c26b044490
-'http://archive.ubuntu.com/ubuntu/pool/main/s/sqlite3/sqlite3_3.11.0-1ubuntu1.2.debian.tar.xz' sqlite3_3.11.0-1ubuntu1.2.debian.tar.xz 34840 SHA256:8756e8b38a41cad6c3fca5aeb286f28a8ceab68e193a9a2ca7b2049d43ee3237
-```
 
 ### `dpkg` source package: `subversion=1.9.3-2ubuntu1.3`
 

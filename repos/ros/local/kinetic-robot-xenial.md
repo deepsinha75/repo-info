@@ -4347,14 +4347,9 @@ Licenses: (parsed from: `/usr/share/doc/linux-libc-dev/copyright`)
 - `GPL-2`
 - `redpine-signals`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris linux=4.4.0-169.198
-'http://security.ubuntu.com/ubuntu/pool/main/l/linux/linux_4.4.0-169.198.dsc' linux_4.4.0-169.198.dsc 11909 SHA256:a9650d834f951df2e2021371c7b855fa27007851ba1e1e28d1c8f55ad5c97c34
-'http://security.ubuntu.com/ubuntu/pool/main/l/linux/linux_4.4.0.orig.tar.gz' linux_4.4.0.orig.tar.gz 132860730 SHA256:730e75919b5d30a9bc934ccb300eaedfdf44994ca9ee1d07a46901c46c221357
-'http://security.ubuntu.com/ubuntu/pool/main/l/linux/linux_4.4.0-169.198.diff.gz' linux_4.4.0-169.198.diff.gz 15931998 SHA256:adffbe1ad300fc7e907e0b5c8907a7e480cc39f5574208ef2229285583ff69fa
-```
 
 ### `dpkg` source package: `lksctp-tools=1.0.16+dfsg-3`
 
@@ -5812,14 +5807,9 @@ Binary Packages:
 If source is available (seen below), check the contents of `debian/copyright` within it.
 
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris python-rosdep=0.17.1-1
-'http://packages.ros.org/ros/ubuntu/pool/main/p/python-rosdep/python-rosdep_0.17.1-1.debian.tar.xz' python-rosdep_0.17.1-1.debian.tar.xz 1908 SHA512:b36a0f73fc1e2547f90f28c924cbea22fa880bad5061a2e1f90143ff318d2f73216faae55f3868d55c9327db1c766e02e2706bb3c03ee39083320bb6ece16ade
-'http://packages.ros.org/ros/ubuntu/pool/main/p/python-rosdep/python-rosdep_0.17.1-1.dsc' python-rosdep_0.17.1-1.dsc 905 SHA512:b2b3fb9bd38eaa4798b856fdaa0db1362dff64edd6a8490f3d455e02fa3a36e45b36f59bc2bfaacb07bc184d982b80b72f8d87d091affb52eab152da4a66b264
-'http://packages.ros.org/ros/ubuntu/pool/main/p/python-rosdep/python-rosdep_0.17.1.orig.tar.gz' python-rosdep_0.17.1.orig.tar.gz 87669 SHA512:fe1f509050daeb32bfabbe767ae1677d34d2e177bceabc48763a92dbd0aabb5239a5af1037b854b537b217dd549c067c167e86709db9e91c20fcbdb74e6ce910
-```
 
 ### `dpkg` source package: `python-rosdistro-modules=0.7.5-1`
 
@@ -5888,14 +5878,9 @@ Binary Packages:
 If source is available (seen below), check the contents of `debian/copyright` within it.
 
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris python-rospkg-modules=1.1.10-1
-'http://packages.ros.org/ros/ubuntu/pool/main/p/python-rospkg-modules/python-rospkg-modules_1.1.10-1.debian.tar.xz' python-rospkg-modules_1.1.10-1.debian.tar.xz 1088 SHA512:cbfcc2ebb36b5c0380f71835024e753270634dfc30b872347b3b18d3195a9e1f485677cb53976f89745d5277b3c36e9bbc3ce54278f6e07c35b597f4bf955672
-'http://packages.ros.org/ros/ubuntu/pool/main/p/python-rospkg-modules/python-rospkg-modules_1.1.10-1.dsc' python-rospkg-modules_1.1.10-1.dsc 1004 SHA512:091a55136ed89ab4f7a87cc61549f264fb1b81d849f40ca0dbd2246dfe525281ad6be0e974129a8788453c9acaf613ede64a30c45363dde9a056a165842f25c4
-'http://packages.ros.org/ros/ubuntu/pool/main/p/python-rospkg-modules/python-rospkg-modules_1.1.10.orig.tar.gz' python-rospkg-modules_1.1.10.orig.tar.gz 41076 SHA512:784f648ee16e6aa1df85a830cfa4fc6149d53383aa00af675124ab5751c01d0dd97e5d29a63f977579dace25973d1510072d9bbb4012d0ceca22b8f62c6b2a57
-```
 
 ### `dpkg` source package: `python-rospkg=1.1.10-100`
 
@@ -5907,14 +5892,9 @@ Binary Packages:
 If source is available (seen below), check the contents of `debian/copyright` within it.
 
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris python-rospkg=1.1.10-100
-'http://packages.ros.org/ros/ubuntu/pool/main/p/python-rospkg/python-rospkg_1.1.10-100.debian.tar.xz' python-rospkg_1.1.10-100.debian.tar.xz 1064 SHA512:00995a275a5694dca835e91dcafdf0cfcb34aeda1f1e352d4b3b72972fc33e6b42a042b31841c299a52112c2078739f02b68434661973ae03382df4ec591cdea
-'http://packages.ros.org/ros/ubuntu/pool/main/p/python-rospkg/python-rospkg_1.1.10-100.dsc' python-rospkg_1.1.10-100.dsc 940 SHA512:2adbf19825b64f833bf338a149b4d1c4229d1edccc96d156afac8819ba964500794ed1f20525e92175e7fad0f149b39f8c1ead0c38999918311e632bd4d64f20
-'http://packages.ros.org/ros/ubuntu/pool/main/p/python-rospkg/python-rospkg_1.1.10.orig.tar.gz' python-rospkg_1.1.10.orig.tar.gz 17931 SHA512:1fb8384a625a5f75b1764e39db5c38ad26b56c0de1e8bc189155f69199b84ea7cd50d784a3e6aa5063e4c309ca456705a79c241d88855d78647e0af92a72d031
-```
 
 ### `dpkg` source package: `python-setuptools=20.7.0-1`
 
@@ -8502,14 +8482,9 @@ Licenses: (parsed from: `/usr/share/doc/libpam-systemd/copyright`, `/usr/share/d
 - `LGPL-2.1+`
 - `public-domain`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris systemd=229-4ubuntu21.22
-'http://archive.ubuntu.com/ubuntu/pool/main/s/systemd/systemd_229-4ubuntu21.22.dsc' systemd_229-4ubuntu21.22.dsc 4367 SHA256:aa5d6d56a02940ffe9058537a01e43268f03753f27193aa3ed0c1adfc1e33b04
-'http://archive.ubuntu.com/ubuntu/pool/main/s/systemd/systemd_229.orig.tar.gz' systemd_229.orig.tar.gz 4319173 SHA256:b51b0a48d1beb388d95bd6a98d62be05490335d4bb388aefecdcb576e91e0741
-'http://archive.ubuntu.com/ubuntu/pool/main/s/systemd/systemd_229-4ubuntu21.22.debian.tar.xz' systemd_229-4ubuntu21.22.debian.tar.xz 298616 SHA256:44e82fff84de08c37970964cb776efbdb3a6cc7d77be26e92aa2800617ef23ec
-```
 
 ### `dpkg` source package: `sysvinit=2.88dsf-59.3ubuntu2`
 
