@@ -162,13 +162,9 @@ Licenses: (parsed from: `/usr/share/doc/base-files/copyright`)
 
 - `GPL`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris base-files=11ubuntu1
-'http://archive.ubuntu.com/ubuntu/pool/main/b/base-files/base-files_11ubuntu1.dsc' base-files_11ubuntu1.dsc 1604 SHA256:01d85441b02f82c40f79d411b44d49ddfa1b07fc600ac3a16a4f5e27edb48540
-'http://archive.ubuntu.com/ubuntu/pool/main/b/base-files/base-files_11ubuntu1.tar.xz' base-files_11ubuntu1.tar.xz 78932 SHA256:befac052647f609c21bb6200f0f69477ce78092c3d24fd601290252ea2119e1a
-```
 
 ### `dpkg` source package: `base-passwd=3.5.46`
 
@@ -1933,13 +1929,13 @@ Licenses: (parsed from: `/usr/share/doc/sensible-utils/copyright`)
 - `configure`
 - `installsh`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris sensible-utils=0.0.12
-'http://archive.ubuntu.com/ubuntu/pool/main/s/sensible-utils/sensible-utils_0.0.12.dsc' sensible-utils_0.0.12.dsc 1732 SHA256:1b62cc5f7561b3f5692a6edaec942e2e97e8368dabff8c865867d428eecb1221
-'http://archive.ubuntu.com/ubuntu/pool/main/s/sensible-utils/sensible-utils_0.0.12.tar.xz' sensible-utils_0.0.12.tar.xz 62152 SHA256:99ba2ebf8c57447c69d426b99b84ff9dc817be0bc4988ec6890a14558c529e2e
-```
+The source package *may* still be available for download from:
+
+- http://snapshot.debian.org/package/sensible-utils/0.0.12/
+
 
 ### `dpkg` source package: `serf=1.3.9-7`
 
@@ -2016,10 +2012,10 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris sqlite3=3.30.1-1
-'http://archive.ubuntu.com/ubuntu/pool/main/s/sqlite3/sqlite3_3.30.1-1.dsc' sqlite3_3.30.1-1.dsc 2398 SHA256:546c5fc8110776be41bc7f2d3752a4b72e131d53291d39710c3ccaa6514ad51c
+'http://archive.ubuntu.com/ubuntu/pool/main/s/sqlite3/sqlite3_3.30.1-1ubuntu1.dsc' sqlite3_3.30.1-1ubuntu1.dsc 2505 SHA256:5ecf906bdfc87b81d588396cce7c3572a8caaadd304c8d04936fa0c503de93c6
 'http://archive.ubuntu.com/ubuntu/pool/main/s/sqlite3/sqlite3_3.30.1.orig-www.tar.xz' sqlite3_3.30.1.orig-www.tar.xz 5700856 SHA256:da1965166e3e9aac2cb1e3b5822945b639b78247599bf4cef361cadbc333d8e9
 'http://archive.ubuntu.com/ubuntu/pool/main/s/sqlite3/sqlite3_3.30.1.orig.tar.xz' sqlite3_3.30.1.orig.tar.xz 7044280 SHA256:20792693194546c8ae60906fdcda1cd2796d0b6e585e6e5bcf36146f2db2dd4e
-'http://archive.ubuntu.com/ubuntu/pool/main/s/sqlite3/sqlite3_3.30.1-1.debian.tar.xz' sqlite3_3.30.1-1.debian.tar.xz 19352 SHA256:340a6d04b85e1858f5631c0493389aa4d11a666de3899b6bae8de50b15e555fe
+'http://archive.ubuntu.com/ubuntu/pool/main/s/sqlite3/sqlite3_3.30.1-1ubuntu1.debian.tar.xz' sqlite3_3.30.1-1ubuntu1.debian.tar.xz 20616 SHA256:7f76814b9050d39d52194c65853c8d2700928a8fbec8d35b11a175ce1700a09d
 ```
 
 ### `dpkg` source package: `subversion=1.10.6-1build1`

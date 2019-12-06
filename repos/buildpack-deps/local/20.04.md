@@ -240,13 +240,9 @@ Licenses: (parsed from: `/usr/share/doc/base-files/copyright`)
 
 - `GPL`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris base-files=11ubuntu1
-'http://archive.ubuntu.com/ubuntu/pool/main/b/base-files/base-files_11ubuntu1.dsc' base-files_11ubuntu1.dsc 1604 SHA256:01d85441b02f82c40f79d411b44d49ddfa1b07fc600ac3a16a4f5e27edb48540
-'http://archive.ubuntu.com/ubuntu/pool/main/b/base-files/base-files_11ubuntu1.tar.xz' base-files_11ubuntu1.tar.xz 78932 SHA256:befac052647f609c21bb6200f0f69477ce78092c3d24fd601290252ea2119e1a
-```
 
 ### `dpkg` source package: `base-passwd=3.5.46`
 
@@ -1463,14 +1459,13 @@ Licenses: (parsed from: `/usr/share/doc/libisl21/copyright`)
 - `LGPL-2.1+`
 - `MIT`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris isl=0.21-2
-'http://archive.ubuntu.com/ubuntu/pool/main/i/isl/isl_0.21-2.dsc' isl_0.21-2.dsc 1846 SHA256:561e5a9234ff4f1dcab8f57b703ed8fc4a5aadbf3cc0a31ece57a00b4d65f7d5
-'http://archive.ubuntu.com/ubuntu/pool/main/i/isl/isl_0.21.orig.tar.xz' isl_0.21.orig.tar.xz 1621680 SHA256:777058852a3db9500954361e294881214f6ecd4b594c00da5eee974cd6a54960
-'http://archive.ubuntu.com/ubuntu/pool/main/i/isl/isl_0.21-2.debian.tar.xz' isl_0.21-2.debian.tar.xz 23724 SHA256:ca40ff6d2a6e80dabf018a6c249d9899866af20c30fb828d7194711d3e9cb9bd
-```
+The source package *may* still be available for download from:
+
+- http://snapshot.debian.org/package/isl/0.21-2/
+
 
 ### `dpkg` source package: `jbigkit=2.1-3.1build1`
 
@@ -1985,9 +1980,9 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris liblqr=0.4.2-2.1
-'http://archive.ubuntu.com/ubuntu/pool/main/libl/liblqr/liblqr_0.4.2-2.1.dsc' liblqr_0.4.2-2.1.dsc 2095 SHA256:c54c34cd2f7470a29366eeacde2ca4859a97d684a406fb81a918b970c01d617c
-'http://archive.ubuntu.com/ubuntu/pool/main/libl/liblqr/liblqr_0.4.2.orig.tar.gz' liblqr_0.4.2.orig.tar.gz 439884 SHA256:d4c22373432cca749e4326cd41fce365e6ff857c0bfd7a5302b8eb34b69f0336
-'http://archive.ubuntu.com/ubuntu/pool/main/libl/liblqr/liblqr_0.4.2-2.1.debian.tar.xz' liblqr_0.4.2-2.1.debian.tar.xz 5300 SHA256:284a002f1ecac63ac17b1aafbb230da9ce7bd9efe2d5b94e8cad49b607eb2564
+'http://archive.ubuntu.com/ubuntu/pool/universe/libl/liblqr/liblqr_0.4.2-2.1.dsc' liblqr_0.4.2-2.1.dsc 2095 SHA256:c54c34cd2f7470a29366eeacde2ca4859a97d684a406fb81a918b970c01d617c
+'http://archive.ubuntu.com/ubuntu/pool/universe/libl/liblqr/liblqr_0.4.2.orig.tar.gz' liblqr_0.4.2.orig.tar.gz 439884 SHA256:d4c22373432cca749e4326cd41fce365e6ff857c0bfd7a5302b8eb34b69f0336
+'http://archive.ubuntu.com/ubuntu/pool/universe/libl/liblqr/liblqr_0.4.2-2.1.debian.tar.xz' liblqr_0.4.2-2.1.debian.tar.xz 5300 SHA256:284a002f1ecac63ac17b1aafbb230da9ce7bd9efe2d5b94e8cad49b607eb2564
 ```
 
 ### `dpkg` source package: `libmaxminddb=1.3.2-1`
@@ -2636,14 +2631,9 @@ Licenses: (parsed from: `/usr/share/doc/linux-libc-dev/copyright`)
 
 - `GPL-2`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris linux=5.3.0-18.19
-'http://archive.ubuntu.com/ubuntu/pool/main/l/linux/linux_5.3.0-18.19.dsc' linux_5.3.0-18.19.dsc 7978 SHA256:bd86169f6513e18d555cb324d493db432a238d1e8e6446a631b4263582c22f11
-'http://archive.ubuntu.com/ubuntu/pool/main/l/linux/linux_5.3.0.orig.tar.gz' linux_5.3.0.orig.tar.gz 168029263 SHA256:44edffd835819ac7156f2f4bb7512d25f8cf6eab098b09c9ef0c3c06a01148ef
-'http://archive.ubuntu.com/ubuntu/pool/main/l/linux/linux_5.3.0-18.19.diff.gz' linux_5.3.0-18.19.diff.gz 2368515 SHA256:37b6fe7bc80ccda6dcdb927a251e3adf6d99519148d70c62e64a84acd5ea7bb4
-```
 
 ### `dpkg` source package: `lsb=11.1.0ubuntu1`
 
@@ -3681,13 +3671,13 @@ Licenses: (parsed from: `/usr/share/doc/sensible-utils/copyright`)
 - `configure`
 - `installsh`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris sensible-utils=0.0.12
-'http://archive.ubuntu.com/ubuntu/pool/main/s/sensible-utils/sensible-utils_0.0.12.dsc' sensible-utils_0.0.12.dsc 1732 SHA256:1b62cc5f7561b3f5692a6edaec942e2e97e8368dabff8c865867d428eecb1221
-'http://archive.ubuntu.com/ubuntu/pool/main/s/sensible-utils/sensible-utils_0.0.12.tar.xz' sensible-utils_0.0.12.tar.xz 62152 SHA256:99ba2ebf8c57447c69d426b99b84ff9dc817be0bc4988ec6890a14558c529e2e
-```
+The source package *may* still be available for download from:
+
+- http://snapshot.debian.org/package/sensible-utils/0.0.12/
+
 
 ### `dpkg` source package: `serf=1.3.9-7`
 
@@ -3784,10 +3774,10 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris sqlite3=3.30.1-1
-'http://archive.ubuntu.com/ubuntu/pool/main/s/sqlite3/sqlite3_3.30.1-1.dsc' sqlite3_3.30.1-1.dsc 2398 SHA256:546c5fc8110776be41bc7f2d3752a4b72e131d53291d39710c3ccaa6514ad51c
+'http://archive.ubuntu.com/ubuntu/pool/main/s/sqlite3/sqlite3_3.30.1-1ubuntu1.dsc' sqlite3_3.30.1-1ubuntu1.dsc 2505 SHA256:5ecf906bdfc87b81d588396cce7c3572a8caaadd304c8d04936fa0c503de93c6
 'http://archive.ubuntu.com/ubuntu/pool/main/s/sqlite3/sqlite3_3.30.1.orig-www.tar.xz' sqlite3_3.30.1.orig-www.tar.xz 5700856 SHA256:da1965166e3e9aac2cb1e3b5822945b639b78247599bf4cef361cadbc333d8e9
 'http://archive.ubuntu.com/ubuntu/pool/main/s/sqlite3/sqlite3_3.30.1.orig.tar.xz' sqlite3_3.30.1.orig.tar.xz 7044280 SHA256:20792693194546c8ae60906fdcda1cd2796d0b6e585e6e5bcf36146f2db2dd4e
-'http://archive.ubuntu.com/ubuntu/pool/main/s/sqlite3/sqlite3_3.30.1-1.debian.tar.xz' sqlite3_3.30.1-1.debian.tar.xz 19352 SHA256:340a6d04b85e1858f5631c0493389aa4d11a666de3899b6bae8de50b15e555fe
+'http://archive.ubuntu.com/ubuntu/pool/main/s/sqlite3/sqlite3_3.30.1-1ubuntu1.debian.tar.xz' sqlite3_3.30.1-1ubuntu1.debian.tar.xz 20616 SHA256:7f76814b9050d39d52194c65853c8d2700928a8fbec8d35b11a175ce1700a09d
 ```
 
 ### `dpkg` source package: `subversion=1.10.6-1build1`

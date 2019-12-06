@@ -945,20 +945,13 @@ Licenses: (parsed from: `/usr/share/doc/iproute2/copyright`)
 
 - `GPL-2`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris iproute2=5.3.0-1
-'http://deb.debian.org/debian/pool/main/i/iproute2/iproute2_5.3.0-1.dsc' iproute2_5.3.0-1.dsc 1915 SHA256:c5128eedcb764048421c58fdb8bcdf980cd4ac7d695209c5e2448447f0742989
-'http://deb.debian.org/debian/pool/main/i/iproute2/iproute2_5.3.0.orig.tar.xz' iproute2_5.3.0.orig.tar.xz 742660 SHA256:cb1c1e45993a3bd2438543fd4332d70f1726a6e6ff97dc613a8258c993117b3f
-'http://deb.debian.org/debian/pool/main/i/iproute2/iproute2_5.3.0-1.debian.tar.xz' iproute2_5.3.0-1.debian.tar.xz 144292 SHA256:e9b8a6d0cdaa5605442386996a7499957867f73eef6c1317e31986bafd139202
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/iproute2/5.3.0-1/
 
-- https://sources.debian.net/src/iproute2/5.3.0-1/ (for browsing the source)
-- https://sources.debian.net/src/iproute2/5.3.0-1/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/iproute2/5.3.0-1/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `iptables=1.8.3-2`
 
@@ -1720,19 +1713,13 @@ Licenses: (parsed from: `/usr/share/doc/netbase/copyright`)
 
 - `GPL-2`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris netbase=5.6
-'http://deb.debian.org/debian/pool/main/n/netbase/netbase_5.6.dsc' netbase_5.6.dsc 1306 SHA256:fea82cc64b508a8f5ff3a16dfadce1660468d0a347df5c0ff56a2caaa57668a6
-'http://deb.debian.org/debian/pool/main/n/netbase/netbase_5.6.tar.xz' netbase_5.6.tar.xz 31684 SHA256:5d93a099deb28869b7306e914700fafbd293b55bdb5df05a5aa6effd0af5930c
-```
+The source package *may* still be available for download from:
 
-Other potentially useful URLs:
+- http://snapshot.debian.org/package/netbase/5.6/
 
-- https://sources.debian.net/src/netbase/5.6/ (for browsing the source)
-- https://sources.debian.net/src/netbase/5.6/debian/copyright/ (for direct copyright/license information)
-- http://snapshot.debian.org/package/netbase/5.6/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `nettle=3.5.1+really3.5.1-2`
 
