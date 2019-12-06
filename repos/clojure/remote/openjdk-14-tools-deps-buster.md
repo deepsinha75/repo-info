@@ -1,7 +1,7 @@
 ## `clojure:openjdk-14-tools-deps-buster`
 
 ```console
-$ docker pull clojure@sha256:c5f99b1e786e7513293588ecf1063b3156e41c43f8cb6842d3d14ad3de9e0943
+$ docker pull clojure@sha256:f0f6ff39d66aead41ca7aebb723f49c0212c0c52aa2266db68f5f02f1e8b37d8
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -11,14 +11,14 @@ $ docker pull clojure@sha256:c5f99b1e786e7513293588ecf1063b3156e41c43f8cb6842d3d
 ### `clojure:openjdk-14-tools-deps-buster` - linux; amd64
 
 ```console
-$ docker pull clojure@sha256:c24ae6039426e1065e7b1991ef77da9aa0435dff6203cfe42bf26a24d025be74
+$ docker pull clojure@sha256:7be48a39265e164e7cadc7eee1da6278ec4f16aa97795ae25b51338a2aec1268
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **356.0 MB (356034513 bytes)**  
+-	Total Size: **356.1 MB (356058189 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:82b59148acff5e5e2536d2c28f99c60fb3e9b2342ba8feacb41e222e1b628f4d`
+-	Image ID: `sha256:b8663fcde853026318c3134134abce6d8579fe23daf90ca378f2112b42779eb5`
 -	Default Command: `["sh","-c","sleep 1 && exec clj"]`
 
 ```dockerfile
@@ -42,23 +42,23 @@ ENV JAVA_HOME=/usr/java/openjdk-14
 ENV PATH=/usr/java/openjdk-14/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
 # Sat, 23 Nov 2019 14:31:19 GMT
 RUN { echo '#/bin/sh'; echo 'echo "$JAVA_HOME"'; } > /usr/local/bin/docker-java-home && chmod +x /usr/local/bin/docker-java-home && [ "$JAVA_HOME" = "$(docker-java-home)" ]
-# Tue, 03 Dec 2019 23:29:25 GMT
-ENV JAVA_VERSION=14-ea+25
-# Tue, 03 Dec 2019 23:29:25 GMT
-ENV JAVA_URL=https://download.java.net/java/early_access/jdk14/25/GPL/openjdk-14-ea+25_linux-x64_bin.tar.gz
-# Tue, 03 Dec 2019 23:29:25 GMT
-ENV JAVA_SHA256=8ab14076215808c3bb38636660900d3cf34eb6e15f44ea91c1dde2f0db9e891a
-# Tue, 03 Dec 2019 23:30:09 GMT
+# Fri, 06 Dec 2019 00:21:48 GMT
+ENV JAVA_VERSION=14-ea+26
+# Fri, 06 Dec 2019 00:21:48 GMT
+ENV JAVA_URL=https://download.java.net/java/early_access/jdk14/26/GPL/openjdk-14-ea+26_linux-x64_bin.tar.gz
+# Fri, 06 Dec 2019 00:21:48 GMT
+ENV JAVA_SHA256=abe716bf202ab8afe33e422bf83d05743def6a08b3b9843339cde74d1690e7cc
+# Fri, 06 Dec 2019 00:22:19 GMT
 RUN set -eux; 		wget -O openjdk.tgz "$JAVA_URL"; 	echo "$JAVA_SHA256 */openjdk.tgz" | sha256sum -c -; 		mkdir -p "$JAVA_HOME"; 	tar --extract 		--file openjdk.tgz 		--directory "$JAVA_HOME" 		--strip-components 1 		--no-same-owner 	; 	rm openjdk.tgz; 		{ 		echo '#!/usr/bin/env bash'; 		echo 'set -Eeuo pipefail'; 		echo 'if ! [ -d "$JAVA_HOME" ]; then echo >&2 "error: missing JAVA_HOME environment variable"; exit 1; fi'; 		echo 'cacertsFile=; for f in "$JAVA_HOME/lib/security/cacerts" "$JAVA_HOME/jre/lib/security/cacerts"; do if [ -e "$f" ]; then cacertsFile="$f"; break; fi; done'; 		echo 'if [ -z "$cacertsFile" ] || ! [ -f "$cacertsFile" ]; then echo >&2 "error: failed to find cacerts file in $JAVA_HOME"; exit 1; fi'; 		echo 'trust extract --overwrite --format=java-cacerts --filter=ca-anchors --purpose=server-auth "$cacertsFile"'; 	} > /etc/ca-certificates/update.d/docker-openjdk; 	chmod +x /etc/ca-certificates/update.d/docker-openjdk; 	/etc/ca-certificates/update.d/docker-openjdk; 		find "$JAVA_HOME/lib" -name '*.so' -exec dirname '{}' ';' | sort -u > /etc/ld.so.conf.d/docker-openjdk.conf; 	ldconfig; 		java -Xshare:dump; 		javac --version; 	java --version
-# Tue, 03 Dec 2019 23:30:09 GMT
+# Fri, 06 Dec 2019 00:22:19 GMT
 CMD ["jshell"]
-# Wed, 04 Dec 2019 00:01:05 GMT
+# Fri, 06 Dec 2019 00:49:28 GMT
 ENV CLOJURE_VERSION=1.10.1.483
-# Wed, 04 Dec 2019 00:01:06 GMT
+# Fri, 06 Dec 2019 00:49:28 GMT
 WORKDIR /tmp
-# Wed, 04 Dec 2019 00:01:13 GMT
+# Fri, 06 Dec 2019 00:49:36 GMT
 RUN wget https://download.clojure.org/install/linux-install-$CLOJURE_VERSION.sh && chmod +x linux-install-$CLOJURE_VERSION.sh && ./linux-install-$CLOJURE_VERSION.sh && clojure -e "(clojure-version)"
-# Wed, 04 Dec 2019 00:01:13 GMT
+# Fri, 06 Dec 2019 00:49:36 GMT
 CMD ["sh" "-c" "sleep 1 && exec clj"]
 ```
 
@@ -87,11 +87,11 @@ CMD ["sh" "-c" "sleep 1 && exec clj"]
 		Last Modified: Sat, 23 Nov 2019 14:35:38 GMT  
 		Size: 212.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:b4319a3f94a6c0ed0b1556a71ab214275dff8341829aa7adb1a1fdde95242171`  
-		Last Modified: Tue, 03 Dec 2019 23:33:00 GMT  
-		Size: 198.2 MB (198243299 bytes)  
+	-	`sha256:c3a94875ebbf0c6d55f0fec785c094074d5605ec7f2ce0de01bb6c63945e84c9`  
+		Last Modified: Fri, 06 Dec 2019 00:25:26 GMT  
+		Size: 198.3 MB (198266984 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:b9f96f06e45dcd1cd5d9c93cdc7d77f7c64909a13f0dede03970ddecd0686f39`  
-		Last Modified: Wed, 04 Dec 2019 00:02:57 GMT  
-		Size: 23.9 MB (23896635 bytes)  
+	-	`sha256:67fe27e1f8167e6f5bd4a577519c4a0a594070d247262b1c78c25098884a6e78`  
+		Last Modified: Fri, 06 Dec 2019 00:51:30 GMT  
+		Size: 23.9 MB (23896626 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
