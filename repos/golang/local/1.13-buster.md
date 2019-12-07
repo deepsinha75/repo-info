@@ -1,16 +1,16 @@
-# `golang:1.13.4-buster`
+# `golang:1.13.5-buster`
 
 ## Docker Metadata
 
-- Image ID: `sha256:a2e245db8bd33174f8fe8cdeed17136905f76b789039ae42e455aabf6dc6d135`
-- Created: `2019-11-23T23:05:55.018090112Z`
-- Virtual Size: ~ 802.67 Mb  
+- Image ID: `sha256:a1072a0788901abf246e0447a8c4d409918a4fc93c8ad129981d448df4d75ca7`
+- Created: `2019-12-05T22:19:54.952608448Z`
+- Virtual Size: ~ 802.77 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Command: `["bash"]`
 - Environment:
   - `PATH=/go/bin:/usr/local/go/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin`
-  - `GOLANG_VERSION=1.13.4`
+  - `GOLANG_VERSION=1.13.5`
   - `GOPATH=/go`
 
 ## `dpkg` (`.deb`-based packages)
