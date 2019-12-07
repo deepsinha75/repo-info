@@ -2,9 +2,9 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:698d972b2c4b2e7ff179ce9a826d003bea6b1cd56696167260053c9d51773894`
-- Created: `2019-12-03T01:33:18.198135059Z`
-- Virtual Size: ~ 451.81 Mb  
+- Image ID: `sha256:04d42c12842dd00f5e33d299c687b3427e722e912926755c001aee7ea1d092a0`
+- Created: `2019-12-06T02:15:32.370019929Z`
+- Virtual Size: ~ 452.27 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["/entrypoint.sh"]`
@@ -1443,6 +1443,33 @@ Other potentially useful URLs:
 - https://sources.debian.net/src/libidn2/2.0.5-1/ (for browsing the source)
 - https://sources.debian.net/src/libidn2/2.0.5-1/debian/copyright/ (for direct copyright/license information)
 - http://snapshot.debian.org/package/libidn2/2.0.5-1/ (for access to the source package after it no longer exists in the archive)
+
+### `dpkg` source package: `libjpeg-turbo=1:1.5.2-2`
+
+Binary Packages:
+
+- `libjpeg62-turbo:amd64=1:1.5.2-2+b1`
+
+Licenses: (parsed from: `/usr/share/doc/libjpeg62-turbo/copyright`)
+
+- `BSD-3`
+- `BSD-BY-LC-NE`
+- `Expat`
+
+Source:
+
+```console
+$ apt-get source -qq --print-uris libjpeg-turbo=1:1.5.2-2
+'http://deb.debian.org/debian/pool/main/libj/libjpeg-turbo/libjpeg-turbo_1.5.2-2.dsc' libjpeg-turbo_1.5.2-2.dsc 2434 SHA256:f975bd4b2192e3f1aeacef7f0de33035f386225035aea6157b413b1c500d46a1
+'http://deb.debian.org/debian/pool/main/libj/libjpeg-turbo/libjpeg-turbo_1.5.2.orig.tar.gz' libjpeg-turbo_1.5.2.orig.tar.gz 1657235 SHA256:9098943b270388727ae61de82adec73cf9f0dbb240b3bc8b172595ebf405b528
+'http://deb.debian.org/debian/pool/main/libj/libjpeg-turbo/libjpeg-turbo_1.5.2-2.debian.tar.xz' libjpeg-turbo_1.5.2-2.debian.tar.xz 78360 SHA256:964a2d747f8e74cbd558f343afd11b7dfe37212a611eeca863f1908eba66f728
+```
+
+Other potentially useful URLs:
+
+- https://sources.debian.net/src/libjpeg-turbo/1:1.5.2-2/ (for browsing the source)
+- https://sources.debian.net/src/libjpeg-turbo/1:1.5.2-2/debian/copyright/ (for direct copyright/license information)
+- http://snapshot.debian.org/package/libjpeg-turbo/1:1.5.2-2/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `libmemcached=1.0.18-4.2`
 

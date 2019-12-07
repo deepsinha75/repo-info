@@ -2,9 +2,9 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:a8256865a8452c81db885b93ad4fa437696b0fd9eeda33cd846dba1e5ae4a3e1`
-- Created: `2019-12-03T01:34:56.302691653Z`
-- Virtual Size: ~ 135.80 Mb  
+- Image ID: `sha256:e2642620ac0f270d2aa7375063849fe516c50b0dbf8b54e9d2fea299cd16253f`
+- Created: `2019-12-06T02:17:23.166891574Z`
+- Virtual Size: ~ 137.14 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["/entrypoint.sh"]`
@@ -300,6 +300,23 @@ libgcc-8.3.0-r0 installed size:
 
 libgcc-8.3.0-r0 license:
 GPL LGPL
+
+```
+
+### `apk` package: `libjpeg-turbo`
+
+```console
+libjpeg-turbo-2.0.3-r0 description:
+Accelerated baseline JPEG compression and decompression library
+
+libjpeg-turbo-2.0.3-r0 webpage:
+https://libjpeg-turbo.org/
+
+libjpeg-turbo-2.0.3-r0 installed size:
+1343488
+
+libjpeg-turbo-2.0.3-r0 license:
+BSD-3-Clause IJG Zlib
 
 ```
 
