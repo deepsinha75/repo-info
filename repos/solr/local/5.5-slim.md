@@ -2,8 +2,8 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:cf814d64e74034e97528c4beb2716f0b66d6862f223bb2f5b1ec7238db78befc`
-- Created: `2019-11-22T22:19:39.198348058Z`
+- Image ID: `sha256:ebde4f9ec8f59380a25c18cb0828769dedb0cc9d706aec1f62237b1973ac36a0`
+- Created: `2019-12-05T23:53:53.791347386Z`
 - Virtual Size: ~ 354.10 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
@@ -21,7 +21,9 @@
   - `SOLR_GROUP=solr`
   - `SOLR_GID=8983`
   - `SOLR_VERSION=5.5.5`
-  - `SOLR_URL=https://archive.apache.org/dist/lucene/solr/5.5.5/solr-5.5.5.tgz`
+  - `SOLR_CLOSER_URL=http://www.apache.org/dyn/closer.lua?filename=lucene/solr/5.5.5/solr-5.5.5.tgz&action=download`
+  - `SOLR_DIST_URL=https://www.apache.org/dist/lucene/solr/5.5.5/solr-5.5.5.tgz`
+  - `SOLR_ARCHIVE_URL=https://archive.apache.org/dist/lucene/solr/5.5.5/solr-5.5.5.tgz`
   - `SOLR_SHA256=2bbe3a55976f118c5d8c2382d4591257f6e2af779c08c6561e44afa3181a87c1`
   - `SOLR_KEYS=5F55943E13D49059D3F342777186B06E1ED139E7`
   - `GOSU_VERSION=1.11`
