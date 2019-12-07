@@ -2,9 +2,9 @@
 
 ## Docker Metadata
 
-- Image ID: `sha256:05f465baa390b5fb50fdd12bfc182aeae0e57aeaa76e1e4a9ef0b9b9f0e55cb5`
-- Created: `2019-11-23T15:08:49.954694749Z`
-- Virtual Size: ~ 531.20 Mb  
+- Image ID: `sha256:90fcc5a3f41bfd23d42c2a6e3f87d78014872fde153e7bfe1c812975de44f54c`
+- Created: `2019-12-04T22:21:35.359458464Z`
+- Virtual Size: ~ 531.81 Mb  
   (total size of all layers on-disk)
 - Arch: `linux`/`amd64`
 - Entrypoint: `["/docker-entrypoint.sh"]`
@@ -791,6 +791,33 @@ Other potentially useful URLs:
 - https://sources.debian.net/src/gcc-6/6.3.0-18+deb9u1/ (for browsing the source)
 - https://sources.debian.net/src/gcc-6/6.3.0-18+deb9u1/debian/copyright/ (for direct copyright/license information)
 - http://snapshot.debian.org/package/gcc-6/6.3.0-18+deb9u1/ (for access to the source package after it no longer exists in the archive)
+
+### `dpkg` source package: `gettext=0.19.8.1-2+deb9u1`
+
+Binary Packages:
+
+- `gettext-base=0.19.8.1-2+deb9u1`
+
+Licenses: (parsed from: `/usr/share/doc/gettext-base/copyright`)
+
+- `GFDL`
+- `GPL`
+- `LGPL`
+
+Source:
+
+```console
+$ apt-get source -qq --print-uris gettext=0.19.8.1-2+deb9u1
+'http://deb.debian.org/debian/pool/main/g/gettext/gettext_0.19.8.1-2+deb9u1.dsc' gettext_0.19.8.1-2+deb9u1.dsc 1989 SHA256:7eb5a7f3a6a9da58ff39ca3f4a8ca8fcf379ece5bb98b75c24f8cc3fb5cfaafc
+'http://deb.debian.org/debian/pool/main/g/gettext/gettext_0.19.8.1.orig.tar.xz' gettext_0.19.8.1.orig.tar.xz 7209808 SHA256:105556dbc5c3fbbc2aa0edb46d22d055748b6f5c7cd7a8d99f8e7eb84e938be4
+'http://deb.debian.org/debian/pool/main/g/gettext/gettext_0.19.8.1-2+deb9u1.debian.tar.xz' gettext_0.19.8.1-2+deb9u1.debian.tar.xz 22320 SHA256:4f24f8d2b3716329697672d61045e0e01f642a4e70886bb557aeb3a25daec9a4
+```
+
+Other potentially useful URLs:
+
+- https://sources.debian.net/src/gettext/0.19.8.1-2+deb9u1/ (for browsing the source)
+- https://sources.debian.net/src/gettext/0.19.8.1-2+deb9u1/debian/copyright/ (for direct copyright/license information)
+- http://snapshot.debian.org/package/gettext/0.19.8.1-2+deb9u1/ (for access to the source package after it no longer exists in the archive)
 
 ### `dpkg` source package: `glibc=2.24-11+deb9u4`
 
