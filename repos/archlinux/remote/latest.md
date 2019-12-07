@@ -1,7 +1,7 @@
 ## `archlinux:latest`
 
 ```console
-$ docker pull archlinux@sha256:3fcb6f0c3a1266b579f7d5a89cbb66db1530e8dd533794b9c9588b630255b754
+$ docker pull archlinux@sha256:4e758a6fa19533f6c5367a740ab6868c78a87bbc06f710fb8e336d3bde248833
 ```
 
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
@@ -11,51 +11,51 @@ $ docker pull archlinux@sha256:3fcb6f0c3a1266b579f7d5a89cbb66db1530e8dd533794b9c
 ### `archlinux:latest` - linux; amd64
 
 ```console
-$ docker pull archlinux@sha256:1097437745db73ba839d60b9b9b96e6648e62751519a1319bfccc849f6a3f74c
+$ docker pull archlinux@sha256:ba3d8ab3f76c7c218c6c98380763514e84724f0afae9dcbb61c2125dcf720781
 ```
 
 -	Docker Version: 18.06.1-ce
 -	Manifest MIME: `application/vnd.docker.distribution.manifest.v2+json`
--	Total Size: **166.6 MB (166570023 bytes)**  
+-	Total Size: **118.1 MB (118073105 bytes)**  
 	(compressed transfer size, not on-disk size)
--	Image ID: `sha256:5ee688d008f44d8f6e19d23f251f1b3c7031b51e79ddc0f84e956fc6b0176187`
+-	Image ID: `sha256:b389db977f2cac6eef00cb5e54a80794adc1ebeecb46186e8deaed6b0637919b`
 -	Default Command: `["\/usr\/bin\/bash"]`
 
 ```dockerfile
-# Tue, 05 Nov 2019 22:20:12 GMT
-ADD file:25458d2f6ada9b844ffbbc2f5667646cc2125a77e52ced2e2dbb013bc191f7ce in / 
-# Tue, 05 Nov 2019 22:20:16 GMT
+# Fri, 06 Dec 2019 23:20:25 GMT
+ADD file:0ecbe6fb215979f96729ee65e033dcaac423bc16836b4675135fc3bd3b419148 in / 
+# Fri, 06 Dec 2019 23:20:29 GMT
 RUN ldconfig && update-ca-trust && locale-gen
-# Tue, 05 Nov 2019 22:20:17 GMT
+# Fri, 06 Dec 2019 23:20:30 GMT
 RUN sh -c 'ls usr/lib/sysusers.d/*.conf | /usr/share/libalpm/scripts/systemd-hook sysusers '
-# Tue, 05 Nov 2019 22:20:27 GMT
+# Fri, 06 Dec 2019 23:20:37 GMT
 RUN pacman-key --init && pacman-key --populate archlinux
-# Tue, 05 Nov 2019 22:20:28 GMT
+# Fri, 06 Dec 2019 23:20:38 GMT
 RUN rm -rf etc/pacman.d/gnupg/{openpgp-revocs.d/,private-keys-v1.d/,pugring.gpg~,gnupg.S.}*
-# Tue, 05 Nov 2019 22:20:28 GMT
+# Fri, 06 Dec 2019 23:20:38 GMT
 ENV LANG=en_US.UTF-8
-# Tue, 05 Nov 2019 22:20:28 GMT
+# Fri, 06 Dec 2019 23:20:39 GMT
 CMD ["/usr/bin/bash"]
 ```
 
 -	Layers:
-	-	`sha256:611c498dd85ddec8b455110ddb6d783509f75f7ed38b6384e242ca0390fe47d8`  
-		Last Modified: Tue, 05 Nov 2019 22:21:16 GMT  
-		Size: 163.2 MB (163241551 bytes)  
+	-	`sha256:94012c774717588b98c5f341e992b71387f9bc2432c3dec54e2a16a7b20639a4`  
+		Last Modified: Fri, 06 Dec 2019 23:21:18 GMT  
+		Size: 114.9 MB (114877731 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:75ef025d1fb2b09b7399e9f351b9e7a5a34698003f00a173270385712b53e0eb`  
-		Last Modified: Tue, 05 Nov 2019 22:20:48 GMT  
-		Size: 1.6 MB (1591867 bytes)  
+	-	`sha256:bb303f4daf3192919262552f62e04d8a54d5a5515e6746690d53124f7aa886f9`  
+		Last Modified: Fri, 06 Dec 2019 23:20:56 GMT  
+		Size: 1.6 MB (1591886 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:2881a4bfd8618552d2839ddd5b13e6bca53709d76df4ec1fd30b1190fc275867`  
-		Last Modified: Tue, 05 Nov 2019 22:20:48 GMT  
-		Size: 1.1 KB (1128 bytes)  
+	-	`sha256:c003ccab720b38b82a49b1bcf487d3a652fb7d4b86857caf1b1cfbac9d14848c`  
+		Last Modified: Fri, 06 Dec 2019 23:20:56 GMT  
+		Size: 1.1 KB (1131 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:8a6ad23bc3869ebf1fa12e9f8f90ba46d33fe06c10597de0d2554a63d19492c9`  
-		Last Modified: Tue, 05 Nov 2019 22:20:48 GMT  
-		Size: 1.7 MB (1735178 bytes)  
+	-	`sha256:611e91f2fbf878b3a7bfda348cf0722517fc043a16464d63ed705c3672d000be`  
+		Last Modified: Fri, 06 Dec 2019 23:20:56 GMT  
+		Size: 1.6 MB (1602059 bytes)  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
-	-	`sha256:080b3ed0e730c2f009727cf32abf849de02ab889163c160724b19c0ba2f5faac`  
-		Last Modified: Tue, 05 Nov 2019 22:20:48 GMT  
-		Size: 299.0 B  
+	-	`sha256:d71957b4d7f770a5c5771580b8785bd2b37b01046f7a3be2b550f363b4c5cda6`  
+		Last Modified: Fri, 06 Dec 2019 23:20:56 GMT  
+		Size: 298.0 B  
 		MIME: application/vnd.docker.image.rootfs.diff.tar.gzip
