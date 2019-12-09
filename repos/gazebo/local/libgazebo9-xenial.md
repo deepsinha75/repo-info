@@ -806,9 +806,9 @@ Source:
 
 ```console
 $ apt-get source -qq --print-uris dbus=1.10.6-1ubuntu3.4
-'http://archive.ubuntu.com/ubuntu/pool/main/d/dbus/dbus_1.10.6-1ubuntu3.4.dsc' dbus_1.10.6-1ubuntu3.4.dsc 3090 SHA256:df5d05a48c337920048af94f2cb081160dfb1d513ce3196f661d1502c13874e1
-'http://archive.ubuntu.com/ubuntu/pool/main/d/dbus/dbus_1.10.6.orig.tar.gz' dbus_1.10.6.orig.tar.gz 1952608 SHA256:b5fefa08a77edd76cd64d872db949eebc02cf6f3f8be82e4bbc641742af5d35f
-'http://archive.ubuntu.com/ubuntu/pool/main/d/dbus/dbus_1.10.6-1ubuntu3.4.debian.tar.xz' dbus_1.10.6-1ubuntu3.4.debian.tar.xz 60544 SHA256:d31b892dd8faadea89009be7403164fb0beb2da59c0f3871282f5cbfc1071a73
+'http://security.ubuntu.com/ubuntu/pool/main/d/dbus/dbus_1.10.6-1ubuntu3.4.dsc' dbus_1.10.6-1ubuntu3.4.dsc 3090 SHA256:df5d05a48c337920048af94f2cb081160dfb1d513ce3196f661d1502c13874e1
+'http://security.ubuntu.com/ubuntu/pool/main/d/dbus/dbus_1.10.6.orig.tar.gz' dbus_1.10.6.orig.tar.gz 1952608 SHA256:b5fefa08a77edd76cd64d872db949eebc02cf6f3f8be82e4bbc641742af5d35f
+'http://security.ubuntu.com/ubuntu/pool/main/d/dbus/dbus_1.10.6-1ubuntu3.4.debian.tar.xz' dbus_1.10.6-1ubuntu3.4.debian.tar.xz 60544 SHA256:d31b892dd8faadea89009be7403164fb0beb2da59c0f3871282f5cbfc1071a73
 ```
 
 ### `dpkg` source package: `debconf=1.5.58ubuntu2`
@@ -6463,14 +6463,9 @@ Licenses: (parsed from: `/usr/share/doc/libsystemd0/copyright`, `/usr/share/doc/
 - `LGPL-2.1+`
 - `public-domain`
 
-Source:
+**WARNING:** unable to find source (`apt-get source` failed or returned no results)!  
+This is *usually* due to a new package version being released and the old version being removed.
 
-```console
-$ apt-get source -qq --print-uris systemd=229-4ubuntu21.22
-'http://archive.ubuntu.com/ubuntu/pool/main/s/systemd/systemd_229-4ubuntu21.22.dsc' systemd_229-4ubuntu21.22.dsc 4367 SHA256:aa5d6d56a02940ffe9058537a01e43268f03753f27193aa3ed0c1adfc1e33b04
-'http://archive.ubuntu.com/ubuntu/pool/main/s/systemd/systemd_229.orig.tar.gz' systemd_229.orig.tar.gz 4319173 SHA256:b51b0a48d1beb388d95bd6a98d62be05490335d4bb388aefecdcb576e91e0741
-'http://archive.ubuntu.com/ubuntu/pool/main/s/systemd/systemd_229-4ubuntu21.22.debian.tar.xz' systemd_229-4ubuntu21.22.debian.tar.xz 298616 SHA256:44e82fff84de08c37970964cb776efbdb3a6cc7d77be26e92aa2800617ef23ec
-```
 
 ### `dpkg` source package: `sysvinit=2.88dsf-59.3ubuntu2`
 
