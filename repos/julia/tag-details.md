@@ -1426,7 +1426,12 @@ CMD ["julia"]
 
 ## `julia:1.0.5-windowsservercore-1809`
 
-**does not exist** (yet?)
+```console
+$ docker pull julia@sha256:a8409dff6597f2ef5f7ecd3c672671bb2af9a390073efd74f95c54aa41cba22a
+```
+
+-	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
+-	Platforms:
 
 ## `julia:1.0.5-windowsservercore-ltsc2016`
 
@@ -1910,7 +1915,12 @@ CMD ["julia"]
 
 ## `julia:1.0-windowsservercore-1809`
 
-**does not exist** (yet?)
+```console
+$ docker pull julia@sha256:a8409dff6597f2ef5f7ecd3c672671bb2af9a390073efd74f95c54aa41cba22a
+```
+
+-	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
+-	Platforms:
 
 ## `julia:1.0-windowsservercore-ltsc2016`
 
@@ -3048,7 +3058,12 @@ CMD ["julia"]
 
 ## `julia:1.3.0-windowsservercore-1809`
 
-**does not exist** (yet?)
+```console
+$ docker pull julia@sha256:a8409dff6597f2ef5f7ecd3c672671bb2af9a390073efd74f95c54aa41cba22a
+```
+
+-	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
+-	Platforms:
 
 ## `julia:1.3.0-windowsservercore-ltsc2016`
 
@@ -3532,7 +3547,12 @@ CMD ["julia"]
 
 ## `julia:1.3-windowsservercore-1809`
 
-**does not exist** (yet?)
+```console
+$ docker pull julia@sha256:a8409dff6597f2ef5f7ecd3c672671bb2af9a390073efd74f95c54aa41cba22a
+```
+
+-	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
+-	Platforms:
 
 ## `julia:1.3-windowsservercore-ltsc2016`
 
@@ -4016,7 +4036,12 @@ CMD ["julia"]
 
 ## `julia:1-windowsservercore-1809`
 
-**does not exist** (yet?)
+```console
+$ docker pull julia@sha256:a8409dff6597f2ef5f7ecd3c672671bb2af9a390073efd74f95c54aa41cba22a
+```
+
+-	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
+-	Platforms:
 
 ## `julia:1-windowsservercore-ltsc2016`
 
@@ -4827,7 +4852,12 @@ CMD ["julia"]
 
 ## `julia:windowsservercore-1809`
 
-**does not exist** (yet?)
+```console
+$ docker pull julia@sha256:a8409dff6597f2ef5f7ecd3c672671bb2af9a390073efd74f95c54aa41cba22a
+```
+
+-	Manifest MIME: `application/vnd.docker.distribution.manifest.list.v2+json`
+-	Platforms:
 
 ## `julia:windowsservercore-ltsc2016`
 
